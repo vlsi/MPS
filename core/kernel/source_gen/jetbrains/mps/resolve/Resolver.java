@@ -15,12 +15,9 @@ import jetbrains.mps.smodel.search.SModelSearchUtil;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.typesystem.inference.TypeContextManager;
 import jetbrains.mps.util.Computable;
-import jetbrains.mps.smodel.constraints.SearchScopeStatus;
+import jetbrains.mps.scope.Scope;
 import jetbrains.mps.smodel.constraints.ModelConstraintsUtil;
-import jetbrains.mps.smodel.search.ISearchScope;
-import jetbrains.mps.smodel.search.IsInstanceCondition;
-import jetbrains.mps.util.Condition;
-import jetbrains.mps.util.CollectionUtil;
+import jetbrains.mps.scope.ErrorScope;
 
 public class Resolver {
   private static final Logger LOG = Logger.getLogger(Resolver.class);
@@ -71,8 +68,7 @@ public class Resolver {
     if (referenceNode == null) {
       return false;
     }
-    final SNode referenceNodeConcept = referenceNode.getConceptDeclarationNode();
-    final SNode linkDeclaration = SModelSearchUtil.findLinkDeclaration(referenceNodeConcept, reference.getRole());
+    final SNode linkDeclaration = SModelSearchUtil.findLinkDeclaration(referenceNode.getConceptDeclarationNode(), reference.getRole());
     if (linkDeclaration == null) {
       return false;
     }
@@ -80,22 +76,28 @@ public class Resolver {
     Boolean result = TypeContextManager.getInstance().runResolveAction(new Computable<Boolean>() {
       @Override
       public Boolean compute() {
-        SearchScopeStatus status = ModelConstraintsUtil.getSearchScope(referenceNode.getParent(), referenceNode, referenceNodeConcept, linkDeclaration, referenceNode.getRoleLink(), operationContext);
-        if (status.isError()) {
-          Resolver.LOG.error("Couldn't create referent search scope : " + status.getMessage());
+        Scope refScope = ModelConstraintsUtil.getScope(reference, operationContext);
+        if (refScope instanceof ErrorScope) {
+          Resolver.LOG.error("Couldn't create referent search scope : " + ((ErrorScope) refScope).getMessage());
           return false;
         }
-        ISearchScope searchScope = status.getSearchScope();
-        List<SNode> nodes = searchScope.getNodes(new IsInstanceCondition(referentConcept));
-        Condition<SNode> nameMatchesCondition = new Condition<SNode>() {
-          public boolean met(SNode object) {
-            String resolveInfo = reference.getResolveInfo();
-            return resolveInfo != null && resolveInfo.equals(object.getName());
+        SNode result = null;
+        for (SNode node : refScope.getAvailableElements(null)) {
+          if (!(node.isInstanceOfConcept(referentConcept))) {
+            continue;
           }
-        };
-        List<SNode> filtered = CollectionUtil.filter(nodes, nameMatchesCondition);
-        if (filtered.size() == 1) {
-          ResolveResult resolveResult = new ResolveResult(referenceNode, filtered.get(0), reference.getRole(), null);
+          String resolveInfo = reference.getResolveInfo();
+          if (resolveInfo != null && resolveInfo.equals(node.getName())) {
+            if (result == null) {
+              result = node;
+            } else {
+              // ambiguity 
+              return false;
+            }
+          }
+        }
+        if (result != null) {
+          ResolveResult resolveResult = new ResolveResult(referenceNode, result, reference.getRole(), null);
           results.add(resolveResult);
           if (forceResolve) {
             resolveResult.setTarget();

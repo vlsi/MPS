@@ -15,10 +15,7 @@
  */
 package jetbrains.mps.smodel.loading;
 
-import jetbrains.mps.smodel.NodeReadAccessCasterInEditor;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.UndoHelper;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Computable;
 import org.jetbrains.annotations.Nullable;
 
@@ -26,24 +23,38 @@ import org.jetbrains.annotations.Nullable;
  * This class consists of 2 methods
  * getModel(state) returns model loaded up to the given state or further
  * getState() returns the state to which the model is loaded
- * Ass all calls are synchronized and sequential, we can guarantee that getState() will return a real state of a model
+ *
+ * The aim of the class
+ * When we have model write-access, all model changes are made in single thread, so there will not be any threading problems
+ * The only problem appears when there are no write-actions and at least two concurring reads. In this case, the only thing
+ * that can change model is loading/replacing.
+ * This class has an aim to synchronize all loading processes
  */
 public abstract class UpdateableModel {
   private final SModelDescriptor myDescriptor;
 
-  private ModelLoadingState myState = ModelLoadingState.NOT_LOADED;
-  private SModel myModel = null;
+  private volatile ModelLoadingState myState = ModelLoadingState.NOT_LOADED;
+  private volatile SModel myModel = null;
 
   public UpdateableModel(SModelDescriptor descriptor) {
     myDescriptor = descriptor;
   }
 
-  public final synchronized ModelLoadingState getState() {
+  public final ModelLoadingState getState() {
     return myState;
   }
 
-  public final synchronized SModel getModel(ModelLoadingState state) {
-    ensureLoadedTo(state);
+  //null in parameter means "give me th current model, don't attempt to load"
+  //with null parameter, no synch should occur
+  public final SModel getModel(@Nullable ModelLoadingState state) {
+    if (state == null) return myModel;
+    if (!ModelAccess.instance().canWrite()) {
+      synchronized (this) {
+        ensureLoadedTo(state);
+      }
+    } else {
+      ensureLoadedTo(state);
+    }
     return myModel;
   }
 
@@ -68,9 +79,19 @@ public abstract class UpdateableModel {
     myState = res.getState();
   }
 
-  protected abstract ModelLoadResult doLoad(ModelLoadingState state,@Nullable SModel current);
+  protected abstract ModelLoadResult doLoad(ModelLoadingState state, @Nullable SModel current);
 
-  public synchronized void replaceWith(SModel newModel, ModelLoadingState state) {
+  public void replaceWith(SModel newModel, ModelLoadingState state) {
+    if (!ModelAccess.instance().canWrite()) {
+      synchronized (this) {
+        doReplace(newModel, state);
+      }
+    } else {
+      doReplace(newModel, state);
+    }
+  }
+
+  private void doReplace(SModel newModel, ModelLoadingState state) {
     myModel = newModel;
     myState = state;
   }

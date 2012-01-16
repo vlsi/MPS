@@ -13,9 +13,16 @@
     <scopeInfo nodeId="1161622665029" fileName="ConceptFunctionParameter_model.java" startLine="14" startPosition="53" endLine="15" endPosition="16" />
     <scopeInfo nodeId="1161622665029" fileName="ConceptFunctionParameter_model.java" startLine="18" startPosition="85" endLine="19" endPosition="217" />
     <scopeInfo nodeId="1161622665029" fileName="ConceptFunctionParameter_model.java" startLine="22" startPosition="71" endLine="23" endPosition="65" />
-    <scopeInfo nodeId="1161622665029" fileName="ConceptFunctionParameter_model.java" startLine="13" startPosition="0" endLine="16" endPosition="3" />
-    <scopeInfo nodeId="1161622665029" fileName="ConceptFunctionParameter_model.java" startLine="17" startPosition="0" endLine="21" endPosition="0" />
-    <scopeInfo nodeId="1161622665029" fileName="ConceptFunctionParameter_model.java" startLine="21" startPosition="0" endLine="25" endPosition="0" />
+    <scopeInfo nodeId="1161622665029" fileName="ConceptFunctionParameter_model.java" startLine="13" startPosition="0" endLine="16" endPosition="3">
+      <varInfo nodeId="1161622665029" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1161622665029" fileName="ConceptFunctionParameter_model.java" startLine="17" startPosition="0" endLine="21" endPosition="0">
+      <varInfo nodeId="1161622665029" varName="init" />
+      <varInfo nodeId="1161622665029" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="1161622665029" fileName="ConceptFunctionParameter_model.java" startLine="21" startPosition="0" endLine="25" endPosition="0">
+      <varInfo nodeId="1161622665029" varName="sm" />
+    </scopeInfo>
     <unitInfo nodeId="1161622665029" fileName="ConceptFunctionParameter_model.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.lang.sharedConcepts.structure.ConceptFunctionParameter_model" />
   </root>
   <root nodeId="1161622753914">
@@ -29,9 +36,16 @@
     <scopeInfo nodeId="1161622753914" fileName="ConceptFunctionParameter_operationContext.java" startLine="14" startPosition="64" endLine="15" endPosition="16" />
     <scopeInfo nodeId="1161622753914" fileName="ConceptFunctionParameter_operationContext.java" startLine="18" startPosition="96" endLine="19" endPosition="239" />
     <scopeInfo nodeId="1161622753914" fileName="ConceptFunctionParameter_operationContext.java" startLine="22" startPosition="82" endLine="23" endPosition="76" />
-    <scopeInfo nodeId="1161622753914" fileName="ConceptFunctionParameter_operationContext.java" startLine="13" startPosition="0" endLine="16" endPosition="3" />
-    <scopeInfo nodeId="1161622753914" fileName="ConceptFunctionParameter_operationContext.java" startLine="17" startPosition="0" endLine="21" endPosition="0" />
-    <scopeInfo nodeId="1161622753914" fileName="ConceptFunctionParameter_operationContext.java" startLine="21" startPosition="0" endLine="25" endPosition="0" />
+    <scopeInfo nodeId="1161622753914" fileName="ConceptFunctionParameter_operationContext.java" startLine="13" startPosition="0" endLine="16" endPosition="3">
+      <varInfo nodeId="1161622753914" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1161622753914" fileName="ConceptFunctionParameter_operationContext.java" startLine="17" startPosition="0" endLine="21" endPosition="0">
+      <varInfo nodeId="1161622753914" varName="init" />
+      <varInfo nodeId="1161622753914" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="1161622753914" fileName="ConceptFunctionParameter_operationContext.java" startLine="21" startPosition="0" endLine="25" endPosition="0">
+      <varInfo nodeId="1161622753914" varName="sm" />
+    </scopeInfo>
     <unitInfo nodeId="1161622753914" fileName="ConceptFunctionParameter_operationContext.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.lang.sharedConcepts.structure.ConceptFunctionParameter_operationContext" />
   </root>
   <root nodeId="1161622878565">
@@ -45,9 +59,16 @@
     <scopeInfo nodeId="1161622878565" fileName="ConceptFunctionParameter_scope.java" startLine="14" startPosition="53" endLine="15" endPosition="16" />
     <scopeInfo nodeId="1161622878565" fileName="ConceptFunctionParameter_scope.java" startLine="18" startPosition="85" endLine="19" endPosition="217" />
     <scopeInfo nodeId="1161622878565" fileName="ConceptFunctionParameter_scope.java" startLine="22" startPosition="71" endLine="23" endPosition="65" />
-    <scopeInfo nodeId="1161622878565" fileName="ConceptFunctionParameter_scope.java" startLine="13" startPosition="0" endLine="16" endPosition="3" />
-    <scopeInfo nodeId="1161622878565" fileName="ConceptFunctionParameter_scope.java" startLine="17" startPosition="0" endLine="21" endPosition="0" />
-    <scopeInfo nodeId="1161622878565" fileName="ConceptFunctionParameter_scope.java" startLine="21" startPosition="0" endLine="25" endPosition="0" />
+    <scopeInfo nodeId="1161622878565" fileName="ConceptFunctionParameter_scope.java" startLine="13" startPosition="0" endLine="16" endPosition="3">
+      <varInfo nodeId="1161622878565" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1161622878565" fileName="ConceptFunctionParameter_scope.java" startLine="17" startPosition="0" endLine="21" endPosition="0">
+      <varInfo nodeId="1161622878565" varName="init" />
+      <varInfo nodeId="1161622878565" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="1161622878565" fileName="ConceptFunctionParameter_scope.java" startLine="21" startPosition="0" endLine="25" endPosition="0">
+      <varInfo nodeId="1161622878565" varName="sm" />
+    </scopeInfo>
     <unitInfo nodeId="1161622878565" fileName="ConceptFunctionParameter_scope.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.lang.sharedConcepts.structure.ConceptFunctionParameter_scope" />
   </root>
   <root nodeId="1161807239261">
@@ -113,23 +134,46 @@
     <scopeInfo nodeId="1161807239261" fileName="Options_DefaultCustom.java" startLine="48" startPosition="74" endLine="49" endPosition="44" />
     <scopeInfo nodeId="1161807239261" fileName="Options_DefaultCustom.java" startLine="51" startPosition="73" endLine="52" endPosition="43" />
     <scopeInfo nodeId="1161807239261" fileName="Options_DefaultCustom.java" startLine="16" startPosition="52" endLine="18" endPosition="25" />
-    <scopeInfo nodeId="1161807239261" fileName="Options_DefaultCustom.java" startLine="15" startPosition="0" endLine="19" endPosition="3" />
-    <scopeInfo nodeId="1161807239261" fileName="Options_DefaultCustom_PropertySupport.java" startLine="15" startPosition="33" endLine="19" endPosition="7" />
+    <scopeInfo nodeId="1161807239261" fileName="Options_DefaultCustom.java" startLine="15" startPosition="0" endLine="19" endPosition="3">
+      <varInfo nodeId="1161807239261" varName="name" />
+      <varInfo nodeId="1161807239261" varName="value" />
+    </scopeInfo>
+    <scopeInfo nodeId="1161807239261" fileName="Options_DefaultCustom_PropertySupport.java" startLine="15" startPosition="33" endLine="19" endPosition="7">
+      <varInfo nodeId="1161807239261" varName="constant" />
+    </scopeInfo>
     <scopeInfo nodeId="1161807239261" fileName="Options_DefaultCustom.java" startLine="20" startPosition="0" endLine="24" endPosition="0" />
     <scopeInfo nodeId="1161807239261" fileName="Options_DefaultCustom.java" startLine="24" startPosition="0" endLine="28" endPosition="0" />
     <scopeInfo nodeId="1161807239261" fileName="Options_DefaultCustom.java" startLine="28" startPosition="0" endLine="32" endPosition="0" />
-    <scopeInfo nodeId="1161807239261" fileName="Options_DefaultCustom_PropertySupport.java" startLine="29" startPosition="33" endLine="33" endPosition="7" />
-    <scopeInfo nodeId="1161807239261" fileName="Options_DefaultCustom.java" startLine="33" startPosition="60" endLine="37" endPosition="16" />
+    <scopeInfo nodeId="1161807239261" fileName="Options_DefaultCustom_PropertySupport.java" startLine="29" startPosition="33" endLine="33" endPosition="7">
+      <varInfo nodeId="1161807239261" varName="constant" />
+    </scopeInfo>
+    <scopeInfo nodeId="1161807239261" fileName="Options_DefaultCustom.java" startLine="33" startPosition="60" endLine="37" endPosition="16">
+      <varInfo nodeId="1161807239261" varName="list" />
+    </scopeInfo>
     <scopeInfo nodeId="1161807239261" fileName="Options_DefaultCustom.java" startLine="39" startPosition="0" endLine="43" endPosition="0" />
-    <scopeInfo nodeId="1161807239261" fileName="Options_DefaultCustom_PropertySupport.java" startLine="38" startPosition="49" endLine="43" endPosition="14" />
+    <scopeInfo nodeId="1161807239261" fileName="Options_DefaultCustom_PropertySupport.java" startLine="38" startPosition="49" endLine="43" endPosition="14">
+      <varInfo nodeId="1161807239261" varName="constant" />
+    </scopeInfo>
     <scopeInfo nodeId="1161807239261" fileName="Options_DefaultCustom.java" startLine="32" startPosition="0" endLine="39" endPosition="0" />
-    <scopeInfo nodeId="1161807239261" fileName="Options_DefaultCustom_PropertySupport.java" startLine="37" startPosition="0" endLine="45" endPosition="0" />
+    <scopeInfo nodeId="1161807239261" fileName="Options_DefaultCustom_PropertySupport.java" startLine="37" startPosition="0" endLine="45" endPosition="0">
+      <varInfo nodeId="1161807239261" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="1161807239261" fileName="Options_DefaultCustom.java" startLine="44" startPosition="64" endLine="54" endPosition="46" />
-    <scopeInfo nodeId="1161807239261" fileName="Options_DefaultCustom_PropertySupport.java" startLine="10" startPosition="44" endLine="21" endPosition="17" />
-    <scopeInfo nodeId="1161807239261" fileName="Options_DefaultCustom_PropertySupport.java" startLine="24" startPosition="47" endLine="35" endPosition="16" />
-    <scopeInfo nodeId="1161807239261" fileName="Options_DefaultCustom.java" startLine="43" startPosition="0" endLine="56" endPosition="0" />
-    <scopeInfo nodeId="1161807239261" fileName="Options_DefaultCustom_PropertySupport.java" startLine="9" startPosition="76" endLine="23" endPosition="0" />
-    <scopeInfo nodeId="1161807239261" fileName="Options_DefaultCustom_PropertySupport.java" startLine="23" startPosition="0" endLine="37" endPosition="0" />
+    <scopeInfo nodeId="1161807239261" fileName="Options_DefaultCustom_PropertySupport.java" startLine="10" startPosition="44" endLine="21" endPosition="17">
+      <varInfo nodeId="1161807239261" varName="constants" />
+    </scopeInfo>
+    <scopeInfo nodeId="1161807239261" fileName="Options_DefaultCustom_PropertySupport.java" startLine="24" startPosition="47" endLine="35" endPosition="16">
+      <varInfo nodeId="1161807239261" varName="constants" />
+    </scopeInfo>
+    <scopeInfo nodeId="1161807239261" fileName="Options_DefaultCustom.java" startLine="43" startPosition="0" endLine="56" endPosition="0">
+      <varInfo nodeId="1161807239261" varName="value" />
+    </scopeInfo>
+    <scopeInfo nodeId="1161807239261" fileName="Options_DefaultCustom_PropertySupport.java" startLine="9" startPosition="76" endLine="23" endPosition="0">
+      <varInfo nodeId="1161807239261" varName="value" />
+    </scopeInfo>
+    <scopeInfo nodeId="1161807239261" fileName="Options_DefaultCustom_PropertySupport.java" startLine="23" startPosition="0" endLine="37" endPosition="0">
+      <varInfo nodeId="1161807239261" varName="value" />
+    </scopeInfo>
     <unitInfo nodeId="1161807239261" fileName="Options_DefaultCustom.java" startLine="9" startPosition="0" endLine="57" endPosition="0" unitName="jetbrains.mps.lang.sharedConcepts.structure.Options_DefaultCustom" />
     <unitInfo nodeId="1161807239261" fileName="Options_DefaultCustom_PropertySupport.java" startLine="9" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.lang.sharedConcepts.structure.Options_DefaultCustom_PropertySupport" />
   </root>
@@ -200,23 +244,46 @@
     <scopeInfo nodeId="1165007009656" fileName="NodePresentationOptions.java" startLine="53" startPosition="77" endLine="54" endPosition="47" />
     <scopeInfo nodeId="1165007009656" fileName="NodePresentationOptions.java" startLine="56" startPosition="75" endLine="57" endPosition="45" />
     <scopeInfo nodeId="1165007009656" fileName="NodePresentationOptions.java" startLine="17" startPosition="54" endLine="19" endPosition="25" />
-    <scopeInfo nodeId="1165007009656" fileName="NodePresentationOptions_PropertySupport.java" startLine="15" startPosition="33" endLine="19" endPosition="7" />
-    <scopeInfo nodeId="1165007009656" fileName="NodePresentationOptions.java" startLine="16" startPosition="0" endLine="20" endPosition="3" />
+    <scopeInfo nodeId="1165007009656" fileName="NodePresentationOptions_PropertySupport.java" startLine="15" startPosition="33" endLine="19" endPosition="7">
+      <varInfo nodeId="1165007009656" varName="constant" />
+    </scopeInfo>
+    <scopeInfo nodeId="1165007009656" fileName="NodePresentationOptions.java" startLine="16" startPosition="0" endLine="20" endPosition="3">
+      <varInfo nodeId="1165007009656" varName="name" />
+      <varInfo nodeId="1165007009656" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="1165007009656" fileName="NodePresentationOptions.java" startLine="21" startPosition="0" endLine="25" endPosition="0" />
     <scopeInfo nodeId="1165007009656" fileName="NodePresentationOptions.java" startLine="25" startPosition="0" endLine="29" endPosition="0" />
     <scopeInfo nodeId="1165007009656" fileName="NodePresentationOptions.java" startLine="29" startPosition="0" endLine="33" endPosition="0" />
-    <scopeInfo nodeId="1165007009656" fileName="NodePresentationOptions_PropertySupport.java" startLine="29" startPosition="33" endLine="33" endPosition="7" />
+    <scopeInfo nodeId="1165007009656" fileName="NodePresentationOptions_PropertySupport.java" startLine="29" startPosition="33" endLine="33" endPosition="7">
+      <varInfo nodeId="1165007009656" varName="constant" />
+    </scopeInfo>
     <scopeInfo nodeId="1165007009656" fileName="NodePresentationOptions.java" startLine="41" startPosition="0" endLine="45" endPosition="0" />
-    <scopeInfo nodeId="1165007009656" fileName="NodePresentationOptions.java" startLine="34" startPosition="62" endLine="39" endPosition="16" />
-    <scopeInfo nodeId="1165007009656" fileName="NodePresentationOptions_PropertySupport.java" startLine="38" startPosition="49" endLine="43" endPosition="14" />
+    <scopeInfo nodeId="1165007009656" fileName="NodePresentationOptions.java" startLine="34" startPosition="62" endLine="39" endPosition="16">
+      <varInfo nodeId="1165007009656" varName="list" />
+    </scopeInfo>
+    <scopeInfo nodeId="1165007009656" fileName="NodePresentationOptions_PropertySupport.java" startLine="38" startPosition="49" endLine="43" endPosition="14">
+      <varInfo nodeId="1165007009656" varName="constant" />
+    </scopeInfo>
     <scopeInfo nodeId="1165007009656" fileName="NodePresentationOptions.java" startLine="33" startPosition="0" endLine="41" endPosition="0" />
-    <scopeInfo nodeId="1165007009656" fileName="NodePresentationOptions_PropertySupport.java" startLine="37" startPosition="0" endLine="45" endPosition="0" />
-    <scopeInfo nodeId="1165007009656" fileName="NodePresentationOptions_PropertySupport.java" startLine="10" startPosition="44" endLine="21" endPosition="17" />
-    <scopeInfo nodeId="1165007009656" fileName="NodePresentationOptions_PropertySupport.java" startLine="24" startPosition="47" endLine="35" endPosition="16" />
+    <scopeInfo nodeId="1165007009656" fileName="NodePresentationOptions_PropertySupport.java" startLine="37" startPosition="0" endLine="45" endPosition="0">
+      <varInfo nodeId="1165007009656" varName="value" />
+    </scopeInfo>
+    <scopeInfo nodeId="1165007009656" fileName="NodePresentationOptions_PropertySupport.java" startLine="10" startPosition="44" endLine="21" endPosition="17">
+      <varInfo nodeId="1165007009656" varName="constants" />
+    </scopeInfo>
+    <scopeInfo nodeId="1165007009656" fileName="NodePresentationOptions_PropertySupport.java" startLine="24" startPosition="47" endLine="35" endPosition="16">
+      <varInfo nodeId="1165007009656" varName="constants" />
+    </scopeInfo>
     <scopeInfo nodeId="1165007009656" fileName="NodePresentationOptions.java" startLine="46" startPosition="66" endLine="59" endPosition="48" />
-    <scopeInfo nodeId="1165007009656" fileName="NodePresentationOptions_PropertySupport.java" startLine="9" startPosition="78" endLine="23" endPosition="0" />
-    <scopeInfo nodeId="1165007009656" fileName="NodePresentationOptions_PropertySupport.java" startLine="23" startPosition="0" endLine="37" endPosition="0" />
-    <scopeInfo nodeId="1165007009656" fileName="NodePresentationOptions.java" startLine="45" startPosition="0" endLine="61" endPosition="0" />
+    <scopeInfo nodeId="1165007009656" fileName="NodePresentationOptions_PropertySupport.java" startLine="9" startPosition="78" endLine="23" endPosition="0">
+      <varInfo nodeId="1165007009656" varName="value" />
+    </scopeInfo>
+    <scopeInfo nodeId="1165007009656" fileName="NodePresentationOptions_PropertySupport.java" startLine="23" startPosition="0" endLine="37" endPosition="0">
+      <varInfo nodeId="1165007009656" varName="value" />
+    </scopeInfo>
+    <scopeInfo nodeId="1165007009656" fileName="NodePresentationOptions.java" startLine="45" startPosition="0" endLine="61" endPosition="0">
+      <varInfo nodeId="1165007009656" varName="value" />
+    </scopeInfo>
     <unitInfo nodeId="1165007009656" fileName="NodePresentationOptions.java" startLine="9" startPosition="0" endLine="62" endPosition="0" unitName="jetbrains.mps.lang.sharedConcepts.structure.NodePresentationOptions" />
     <unitInfo nodeId="1165007009656" fileName="NodePresentationOptions_PropertySupport.java" startLine="9" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.lang.sharedConcepts.structure.NodePresentationOptions_PropertySupport" />
   </root>
@@ -283,23 +350,46 @@
     <scopeInfo nodeId="1177964585679" fileName="Options_DefaultTrue.java" startLine="48" startPosition="72" endLine="49" endPosition="42" />
     <scopeInfo nodeId="1177964585679" fileName="Options_DefaultTrue.java" startLine="51" startPosition="69" endLine="52" endPosition="39" />
     <scopeInfo nodeId="1177964585679" fileName="Options_DefaultTrue.java" startLine="16" startPosition="50" endLine="18" endPosition="25" />
-    <scopeInfo nodeId="1177964585679" fileName="Options_DefaultTrue.java" startLine="15" startPosition="0" endLine="19" endPosition="3" />
-    <scopeInfo nodeId="1177964585679" fileName="Options_DefaultTrue_PropertySupport.java" startLine="15" startPosition="33" endLine="19" endPosition="7" />
+    <scopeInfo nodeId="1177964585679" fileName="Options_DefaultTrue.java" startLine="15" startPosition="0" endLine="19" endPosition="3">
+      <varInfo nodeId="1177964585679" varName="name" />
+      <varInfo nodeId="1177964585679" varName="value" />
+    </scopeInfo>
+    <scopeInfo nodeId="1177964585679" fileName="Options_DefaultTrue_PropertySupport.java" startLine="15" startPosition="33" endLine="19" endPosition="7">
+      <varInfo nodeId="1177964585679" varName="constant" />
+    </scopeInfo>
     <scopeInfo nodeId="1177964585679" fileName="Options_DefaultTrue.java" startLine="20" startPosition="0" endLine="24" endPosition="0" />
     <scopeInfo nodeId="1177964585679" fileName="Options_DefaultTrue.java" startLine="24" startPosition="0" endLine="28" endPosition="0" />
     <scopeInfo nodeId="1177964585679" fileName="Options_DefaultTrue.java" startLine="28" startPosition="0" endLine="32" endPosition="0" />
-    <scopeInfo nodeId="1177964585679" fileName="Options_DefaultTrue_PropertySupport.java" startLine="29" startPosition="33" endLine="33" endPosition="7" />
-    <scopeInfo nodeId="1177964585679" fileName="Options_DefaultTrue.java" startLine="33" startPosition="58" endLine="37" endPosition="16" />
+    <scopeInfo nodeId="1177964585679" fileName="Options_DefaultTrue_PropertySupport.java" startLine="29" startPosition="33" endLine="33" endPosition="7">
+      <varInfo nodeId="1177964585679" varName="constant" />
+    </scopeInfo>
+    <scopeInfo nodeId="1177964585679" fileName="Options_DefaultTrue.java" startLine="33" startPosition="58" endLine="37" endPosition="16">
+      <varInfo nodeId="1177964585679" varName="list" />
+    </scopeInfo>
     <scopeInfo nodeId="1177964585679" fileName="Options_DefaultTrue.java" startLine="39" startPosition="0" endLine="43" endPosition="0" />
-    <scopeInfo nodeId="1177964585679" fileName="Options_DefaultTrue_PropertySupport.java" startLine="38" startPosition="49" endLine="43" endPosition="14" />
+    <scopeInfo nodeId="1177964585679" fileName="Options_DefaultTrue_PropertySupport.java" startLine="38" startPosition="49" endLine="43" endPosition="14">
+      <varInfo nodeId="1177964585679" varName="constant" />
+    </scopeInfo>
     <scopeInfo nodeId="1177964585679" fileName="Options_DefaultTrue.java" startLine="32" startPosition="0" endLine="39" endPosition="0" />
-    <scopeInfo nodeId="1177964585679" fileName="Options_DefaultTrue_PropertySupport.java" startLine="37" startPosition="0" endLine="45" endPosition="0" />
+    <scopeInfo nodeId="1177964585679" fileName="Options_DefaultTrue_PropertySupport.java" startLine="37" startPosition="0" endLine="45" endPosition="0">
+      <varInfo nodeId="1177964585679" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="1177964585679" fileName="Options_DefaultTrue.java" startLine="44" startPosition="62" endLine="54" endPosition="44" />
-    <scopeInfo nodeId="1177964585679" fileName="Options_DefaultTrue_PropertySupport.java" startLine="10" startPosition="44" endLine="21" endPosition="17" />
-    <scopeInfo nodeId="1177964585679" fileName="Options_DefaultTrue_PropertySupport.java" startLine="24" startPosition="47" endLine="35" endPosition="16" />
-    <scopeInfo nodeId="1177964585679" fileName="Options_DefaultTrue.java" startLine="43" startPosition="0" endLine="56" endPosition="0" />
-    <scopeInfo nodeId="1177964585679" fileName="Options_DefaultTrue_PropertySupport.java" startLine="9" startPosition="74" endLine="23" endPosition="0" />
-    <scopeInfo nodeId="1177964585679" fileName="Options_DefaultTrue_PropertySupport.java" startLine="23" startPosition="0" endLine="37" endPosition="0" />
+    <scopeInfo nodeId="1177964585679" fileName="Options_DefaultTrue_PropertySupport.java" startLine="10" startPosition="44" endLine="21" endPosition="17">
+      <varInfo nodeId="1177964585679" varName="constants" />
+    </scopeInfo>
+    <scopeInfo nodeId="1177964585679" fileName="Options_DefaultTrue_PropertySupport.java" startLine="24" startPosition="47" endLine="35" endPosition="16">
+      <varInfo nodeId="1177964585679" varName="constants" />
+    </scopeInfo>
+    <scopeInfo nodeId="1177964585679" fileName="Options_DefaultTrue.java" startLine="43" startPosition="0" endLine="56" endPosition="0">
+      <varInfo nodeId="1177964585679" varName="value" />
+    </scopeInfo>
+    <scopeInfo nodeId="1177964585679" fileName="Options_DefaultTrue_PropertySupport.java" startLine="9" startPosition="74" endLine="23" endPosition="0">
+      <varInfo nodeId="1177964585679" varName="value" />
+    </scopeInfo>
+    <scopeInfo nodeId="1177964585679" fileName="Options_DefaultTrue_PropertySupport.java" startLine="23" startPosition="0" endLine="37" endPosition="0">
+      <varInfo nodeId="1177964585679" varName="value" />
+    </scopeInfo>
     <unitInfo nodeId="1177964585679" fileName="Options_DefaultTrue.java" startLine="9" startPosition="0" endLine="57" endPosition="0" unitName="jetbrains.mps.lang.sharedConcepts.structure.Options_DefaultTrue" />
     <unitInfo nodeId="1177964585679" fileName="Options_DefaultTrue_PropertySupport.java" startLine="9" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.lang.sharedConcepts.structure.Options_DefaultTrue_PropertySupport" />
   </root>
@@ -314,9 +404,16 @@
     <scopeInfo nodeId="1194033889146" fileName="ConceptFunctionParameter_editorContext.java" startLine="14" startPosition="61" endLine="15" endPosition="16" />
     <scopeInfo nodeId="1194033889146" fileName="ConceptFunctionParameter_editorContext.java" startLine="18" startPosition="93" endLine="19" endPosition="233" />
     <scopeInfo nodeId="1194033889146" fileName="ConceptFunctionParameter_editorContext.java" startLine="22" startPosition="79" endLine="23" endPosition="73" />
-    <scopeInfo nodeId="1194033889146" fileName="ConceptFunctionParameter_editorContext.java" startLine="13" startPosition="0" endLine="16" endPosition="3" />
-    <scopeInfo nodeId="1194033889146" fileName="ConceptFunctionParameter_editorContext.java" startLine="17" startPosition="0" endLine="21" endPosition="0" />
-    <scopeInfo nodeId="1194033889146" fileName="ConceptFunctionParameter_editorContext.java" startLine="21" startPosition="0" endLine="25" endPosition="0" />
+    <scopeInfo nodeId="1194033889146" fileName="ConceptFunctionParameter_editorContext.java" startLine="13" startPosition="0" endLine="16" endPosition="3">
+      <varInfo nodeId="1194033889146" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1194033889146" fileName="ConceptFunctionParameter_editorContext.java" startLine="17" startPosition="0" endLine="21" endPosition="0">
+      <varInfo nodeId="1194033889146" varName="init" />
+      <varInfo nodeId="1194033889146" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="1194033889146" fileName="ConceptFunctionParameter_editorContext.java" startLine="21" startPosition="0" endLine="25" endPosition="0">
+      <varInfo nodeId="1194033889146" varName="sm" />
+    </scopeInfo>
     <unitInfo nodeId="1194033889146" fileName="ConceptFunctionParameter_editorContext.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.lang.sharedConcepts.structure.ConceptFunctionParameter_editorContext" />
   </root>
   <root nodeId="1206467714548">
@@ -330,9 +427,16 @@
     <scopeInfo nodeId="1206467714548" fileName="ConceptFunctionParameter_node.java" startLine="14" startPosition="52" endLine="15" endPosition="16" />
     <scopeInfo nodeId="1206467714548" fileName="ConceptFunctionParameter_node.java" startLine="18" startPosition="84" endLine="19" endPosition="215" />
     <scopeInfo nodeId="1206467714548" fileName="ConceptFunctionParameter_node.java" startLine="22" startPosition="70" endLine="23" endPosition="64" />
-    <scopeInfo nodeId="1206467714548" fileName="ConceptFunctionParameter_node.java" startLine="13" startPosition="0" endLine="16" endPosition="3" />
-    <scopeInfo nodeId="1206467714548" fileName="ConceptFunctionParameter_node.java" startLine="17" startPosition="0" endLine="21" endPosition="0" />
-    <scopeInfo nodeId="1206467714548" fileName="ConceptFunctionParameter_node.java" startLine="21" startPosition="0" endLine="25" endPosition="0" />
+    <scopeInfo nodeId="1206467714548" fileName="ConceptFunctionParameter_node.java" startLine="13" startPosition="0" endLine="16" endPosition="3">
+      <varInfo nodeId="1206467714548" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1206467714548" fileName="ConceptFunctionParameter_node.java" startLine="17" startPosition="0" endLine="21" endPosition="0">
+      <varInfo nodeId="1206467714548" varName="init" />
+      <varInfo nodeId="1206467714548" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="1206467714548" fileName="ConceptFunctionParameter_node.java" startLine="21" startPosition="0" endLine="25" endPosition="0">
+      <varInfo nodeId="1206467714548" varName="sm" />
+    </scopeInfo>
     <unitInfo nodeId="1206467714548" fileName="ConceptFunctionParameter_node.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.lang.sharedConcepts.structure.ConceptFunctionParameter_node" />
   </root>
 </debugInfo>

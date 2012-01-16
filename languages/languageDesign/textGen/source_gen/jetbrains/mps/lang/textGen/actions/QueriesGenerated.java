@@ -10,7 +10,7 @@ import jetbrains.mps.smodel.action.INodeSubstituteAction;
 import jetbrains.mps.smodel.action.NodeSubstituteActionsFactoryContext;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import jetbrains.mps.util.Calculable;
+import jetbrains.mps.util.Computable;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.textGen.behavior.LanguageTextGenDeclaration_Behavior;
 import jetbrains.mps.smodel.action.ChildSubstituteActionsHelper;
@@ -31,8 +31,8 @@ public class QueriesGenerated {
   public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_Expression_1234362700251(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
     List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
     {
-      Calculable calc = new Calculable() {
-        public Object calculate() {
+      Computable computable = new Computable() {
+        public Object compute() {
           List<SNode> langTextGenComponents = SNodeOperations.getAncestors(_context.getParentNode(), "jetbrains.mps.lang.textGen.structure.LanguageTextGenDeclaration", false);
           SNode langTextGen = ListSequence.fromList(langTextGenComponents).first();
           if (langTextGen != null) {
@@ -42,7 +42,7 @@ public class QueriesGenerated {
           }
         }
       };
-      Iterable queryResult = (Iterable) calc.calculate();
+      Iterable queryResult = (Iterable) computable.compute();
       if (queryResult != null) {
         for (Object item : queryResult) {
           List<INodeSubstituteAction> defaultActions = ChildSubstituteActionsHelper.createDefaultActions((SNode) item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext);

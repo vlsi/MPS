@@ -56,7 +56,7 @@ public class TypeContextManager implements CoreComponent {
     public void beforeModelDisposed(SModel sm) {
       synchronized (myLock) {
         for (SNodePointer nodePointer : new ArrayList<SNodePointer>(myTypeCheckingContexts.keySet())) {
-          if (sm == nodePointer.getModel()) {
+          if (sm.getSModelReference().equals(nodePointer.getModelReference())) {
             removeContextForNode(nodePointer);
           }
         }
@@ -67,7 +67,8 @@ public class TypeContextManager implements CoreComponent {
       SModelReference modelRef = md.getSModelReference();
       synchronized (myLock) {
         for (SNodePointer nodePointer : new ArrayList<SNodePointer>(myTypeCheckingContexts.keySet())) {
-          if (nodePointer.getNode() != null && nodePointer.getNode().shouldHaveBeenDisposed() || modelRef == nodePointer.getModel().getSModelReference()) {
+          if (nodePointer == null || nodePointer.getNode() == null || nodePointer.getModel() == null ||
+            nodePointer.getNode().shouldHaveBeenDisposed() || modelRef.equals(nodePointer.getModelReference())) {
             removeContextForNode(nodePointer);
           }
         }
@@ -183,6 +184,11 @@ public class TypeContextManager implements CoreComponent {
         }
       } else {
         TypeCheckingContext context = contextWithOwners.o1;
+        if (context.getNode().isDisposed()) {
+          removeContextForNode(new SNodePointer(node));
+          LOG.error("Type Checking Context had a disposed node inside. Node: " + node + " model: " + node.getModel());
+          return getOrCreateContext(node, owner, createIfAbsent);
+        }
         if (!contextWithOwners.o2.contains(owner)) {
           contextWithOwners.o2.add(owner);
         }

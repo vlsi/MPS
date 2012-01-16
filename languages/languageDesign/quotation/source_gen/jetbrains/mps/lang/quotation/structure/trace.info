@@ -11,9 +11,13 @@
     <nodeInfo nodeId="1196350785110" fileName="AbstractAntiquotation.java" startLine="14" startPosition="37" endLine="15" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getExpression#()Ljetbrains/mps/smodel/INodeAdapter;" />
     <nodeInfo nodeId="1196350785110" fileName="AbstractAntiquotation.java" startLine="15" startPosition="36" endLine="16" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setExpression#(Ljetbrains/mps/smodel/INodeAdapter;)V" />
     <scopeInfo nodeId="1196350785110" fileName="AbstractAntiquotation.java" startLine="12" startPosition="0" endLine="13" endPosition="27" />
-    <scopeInfo nodeId="1196350785110" fileName="AbstractAntiquotation.java" startLine="13" startPosition="27" endLine="14" endPosition="37" />
+    <scopeInfo nodeId="1196350785110" fileName="AbstractAntiquotation.java" startLine="13" startPosition="27" endLine="14" endPosition="37">
+      <varInfo nodeId="1196350785110" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="1196350785110" fileName="AbstractAntiquotation.java" startLine="14" startPosition="37" endLine="15" endPosition="36" />
-    <scopeInfo nodeId="1196350785110" fileName="AbstractAntiquotation.java" startLine="15" startPosition="36" endLine="16" endPosition="45" />
+    <scopeInfo nodeId="1196350785110" fileName="AbstractAntiquotation.java" startLine="15" startPosition="36" endLine="16" endPosition="45">
+      <varInfo nodeId="1196350785110" varName="node" />
+    </scopeInfo>
     <unitInfo nodeId="1196350785110" fileName="AbstractAntiquotation.java" startLine="8" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.lang.quotation.structure.AbstractAntiquotation" />
   </root>
   <root nodeId="1196350785112">
@@ -78,24 +82,46 @@
     <scopeInfo nodeId="1196350785112" fileName="Antiquotation.java" startLine="84" startPosition="69" endLine="85" endPosition="65" />
     <scopeInfo nodeId="1196350785112" fileName="Antiquotation.java" startLine="88" startPosition="68" endLine="89" endPosition="178" />
     <scopeInfo nodeId="1196350785112" fileName="Antiquotation.java" startLine="92" startPosition="54" endLine="93" endPosition="48" />
-    <scopeInfo nodeId="1196350785112" fileName="Antiquotation.java" startLine="23" startPosition="0" endLine="26" endPosition="3" />
+    <scopeInfo nodeId="1196350785112" fileName="Antiquotation.java" startLine="23" startPosition="0" endLine="26" endPosition="3">
+      <varInfo nodeId="1196350785112" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1196350785112" fileName="Antiquotation.java" startLine="27" startPosition="0" endLine="31" endPosition="0" />
-    <scopeInfo nodeId="1196350785112" fileName="Antiquotation.java" startLine="31" startPosition="0" endLine="35" endPosition="0" />
+    <scopeInfo nodeId="1196350785112" fileName="Antiquotation.java" startLine="31" startPosition="0" endLine="35" endPosition="0">
+      <varInfo nodeId="1196350785112" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="1196350785112" fileName="Antiquotation.java" startLine="35" startPosition="0" endLine="39" endPosition="0" />
-    <scopeInfo nodeId="1196350785112" fileName="Antiquotation.java" startLine="39" startPosition="0" endLine="43" endPosition="0" />
+    <scopeInfo nodeId="1196350785112" fileName="Antiquotation.java" startLine="39" startPosition="0" endLine="43" endPosition="0">
+      <varInfo nodeId="1196350785112" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="1196350785112" fileName="Antiquotation.java" startLine="43" startPosition="0" endLine="47" endPosition="0" />
-    <scopeInfo nodeId="1196350785112" fileName="Antiquotation.java" startLine="47" startPosition="0" endLine="51" endPosition="0" />
+    <scopeInfo nodeId="1196350785112" fileName="Antiquotation.java" startLine="47" startPosition="0" endLine="51" endPosition="0">
+      <varInfo nodeId="1196350785112" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="1196350785112" fileName="Antiquotation.java" startLine="51" startPosition="0" endLine="55" endPosition="0" />
-    <scopeInfo nodeId="1196350785112" fileName="Antiquotation.java" startLine="55" startPosition="0" endLine="59" endPosition="0" />
+    <scopeInfo nodeId="1196350785112" fileName="Antiquotation.java" startLine="55" startPosition="0" endLine="59" endPosition="0">
+      <varInfo nodeId="1196350785112" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="1196350785112" fileName="Antiquotation.java" startLine="59" startPosition="0" endLine="63" endPosition="0" />
-    <scopeInfo nodeId="1196350785112" fileName="Antiquotation.java" startLine="63" startPosition="0" endLine="67" endPosition="0" />
+    <scopeInfo nodeId="1196350785112" fileName="Antiquotation.java" startLine="63" startPosition="0" endLine="67" endPosition="0">
+      <varInfo nodeId="1196350785112" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1196350785112" fileName="Antiquotation.java" startLine="67" startPosition="0" endLine="71" endPosition="0" />
     <scopeInfo nodeId="1196350785112" fileName="Antiquotation.java" startLine="71" startPosition="0" endLine="75" endPosition="0" />
     <scopeInfo nodeId="1196350785112" fileName="Antiquotation.java" startLine="75" startPosition="0" endLine="79" endPosition="0" />
-    <scopeInfo nodeId="1196350785112" fileName="Antiquotation.java" startLine="79" startPosition="0" endLine="83" endPosition="0" />
-    <scopeInfo nodeId="1196350785112" fileName="Antiquotation.java" startLine="83" startPosition="0" endLine="87" endPosition="0" />
-    <scopeInfo nodeId="1196350785112" fileName="Antiquotation.java" startLine="87" startPosition="0" endLine="91" endPosition="0" />
-    <scopeInfo nodeId="1196350785112" fileName="Antiquotation.java" startLine="91" startPosition="0" endLine="95" endPosition="0" />
+    <scopeInfo nodeId="1196350785112" fileName="Antiquotation.java" startLine="79" startPosition="0" endLine="83" endPosition="0">
+      <varInfo nodeId="1196350785112" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1196350785112" fileName="Antiquotation.java" startLine="83" startPosition="0" endLine="87" endPosition="0">
+      <varInfo nodeId="1196350785112" varName="node" />
+      <varInfo nodeId="1196350785112" varName="prev" />
+    </scopeInfo>
+    <scopeInfo nodeId="1196350785112" fileName="Antiquotation.java" startLine="87" startPosition="0" endLine="91" endPosition="0">
+      <varInfo nodeId="1196350785112" varName="init" />
+      <varInfo nodeId="1196350785112" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="1196350785112" fileName="Antiquotation.java" startLine="91" startPosition="0" endLine="95" endPosition="0">
+      <varInfo nodeId="1196350785112" varName="sm" />
+    </scopeInfo>
     <unitInfo nodeId="1196350785112" fileName="Antiquotation.java" startLine="15" startPosition="0" endLine="96" endPosition="0" unitName="jetbrains.mps.lang.quotation.structure.Antiquotation" />
   </root>
   <root nodeId="1196350785113">
@@ -160,24 +186,46 @@
     <scopeInfo nodeId="1196350785113" fileName="Quotation.java" startLine="85" startPosition="69" endLine="86" endPosition="61" />
     <scopeInfo nodeId="1196350785113" fileName="Quotation.java" startLine="89" startPosition="64" endLine="90" endPosition="170" />
     <scopeInfo nodeId="1196350785113" fileName="Quotation.java" startLine="93" startPosition="50" endLine="94" endPosition="44" />
-    <scopeInfo nodeId="1196350785113" fileName="Quotation.java" startLine="24" startPosition="0" endLine="27" endPosition="3" />
+    <scopeInfo nodeId="1196350785113" fileName="Quotation.java" startLine="24" startPosition="0" endLine="27" endPosition="3">
+      <varInfo nodeId="1196350785113" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1196350785113" fileName="Quotation.java" startLine="28" startPosition="0" endLine="32" endPosition="0" />
-    <scopeInfo nodeId="1196350785113" fileName="Quotation.java" startLine="32" startPosition="0" endLine="36" endPosition="0" />
+    <scopeInfo nodeId="1196350785113" fileName="Quotation.java" startLine="32" startPosition="0" endLine="36" endPosition="0">
+      <varInfo nodeId="1196350785113" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="1196350785113" fileName="Quotation.java" startLine="36" startPosition="0" endLine="40" endPosition="0" />
-    <scopeInfo nodeId="1196350785113" fileName="Quotation.java" startLine="40" startPosition="0" endLine="44" endPosition="0" />
+    <scopeInfo nodeId="1196350785113" fileName="Quotation.java" startLine="40" startPosition="0" endLine="44" endPosition="0">
+      <varInfo nodeId="1196350785113" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="1196350785113" fileName="Quotation.java" startLine="44" startPosition="0" endLine="48" endPosition="0" />
-    <scopeInfo nodeId="1196350785113" fileName="Quotation.java" startLine="48" startPosition="0" endLine="52" endPosition="0" />
+    <scopeInfo nodeId="1196350785113" fileName="Quotation.java" startLine="48" startPosition="0" endLine="52" endPosition="0">
+      <varInfo nodeId="1196350785113" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="1196350785113" fileName="Quotation.java" startLine="52" startPosition="0" endLine="56" endPosition="0" />
-    <scopeInfo nodeId="1196350785113" fileName="Quotation.java" startLine="56" startPosition="0" endLine="60" endPosition="0" />
+    <scopeInfo nodeId="1196350785113" fileName="Quotation.java" startLine="56" startPosition="0" endLine="60" endPosition="0">
+      <varInfo nodeId="1196350785113" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1196350785113" fileName="Quotation.java" startLine="60" startPosition="0" endLine="64" endPosition="0" />
-    <scopeInfo nodeId="1196350785113" fileName="Quotation.java" startLine="64" startPosition="0" endLine="68" endPosition="0" />
+    <scopeInfo nodeId="1196350785113" fileName="Quotation.java" startLine="64" startPosition="0" endLine="68" endPosition="0">
+      <varInfo nodeId="1196350785113" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1196350785113" fileName="Quotation.java" startLine="68" startPosition="0" endLine="72" endPosition="0" />
     <scopeInfo nodeId="1196350785113" fileName="Quotation.java" startLine="72" startPosition="0" endLine="76" endPosition="0" />
     <scopeInfo nodeId="1196350785113" fileName="Quotation.java" startLine="76" startPosition="0" endLine="80" endPosition="0" />
-    <scopeInfo nodeId="1196350785113" fileName="Quotation.java" startLine="80" startPosition="0" endLine="84" endPosition="0" />
-    <scopeInfo nodeId="1196350785113" fileName="Quotation.java" startLine="84" startPosition="0" endLine="88" endPosition="0" />
-    <scopeInfo nodeId="1196350785113" fileName="Quotation.java" startLine="88" startPosition="0" endLine="92" endPosition="0" />
-    <scopeInfo nodeId="1196350785113" fileName="Quotation.java" startLine="92" startPosition="0" endLine="96" endPosition="0" />
+    <scopeInfo nodeId="1196350785113" fileName="Quotation.java" startLine="80" startPosition="0" endLine="84" endPosition="0">
+      <varInfo nodeId="1196350785113" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1196350785113" fileName="Quotation.java" startLine="84" startPosition="0" endLine="88" endPosition="0">
+      <varInfo nodeId="1196350785113" varName="node" />
+      <varInfo nodeId="1196350785113" varName="prev" />
+    </scopeInfo>
+    <scopeInfo nodeId="1196350785113" fileName="Quotation.java" startLine="88" startPosition="0" endLine="92" endPosition="0">
+      <varInfo nodeId="1196350785113" varName="init" />
+      <varInfo nodeId="1196350785113" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="1196350785113" fileName="Quotation.java" startLine="92" startPosition="0" endLine="96" endPosition="0">
+      <varInfo nodeId="1196350785113" varName="sm" />
+    </scopeInfo>
     <unitInfo nodeId="1196350785113" fileName="Quotation.java" startLine="16" startPosition="0" endLine="97" endPosition="0" unitName="jetbrains.mps.lang.quotation.structure.Quotation" />
   </root>
   <root nodeId="1196350785117">
@@ -242,24 +290,46 @@
     <scopeInfo nodeId="1196350785117" fileName="ReferenceAntiquotation.java" startLine="84" startPosition="69" endLine="85" endPosition="74" />
     <scopeInfo nodeId="1196350785117" fileName="ReferenceAntiquotation.java" startLine="88" startPosition="77" endLine="89" endPosition="196" />
     <scopeInfo nodeId="1196350785117" fileName="ReferenceAntiquotation.java" startLine="92" startPosition="63" endLine="93" endPosition="57" />
-    <scopeInfo nodeId="1196350785117" fileName="ReferenceAntiquotation.java" startLine="23" startPosition="0" endLine="26" endPosition="3" />
+    <scopeInfo nodeId="1196350785117" fileName="ReferenceAntiquotation.java" startLine="23" startPosition="0" endLine="26" endPosition="3">
+      <varInfo nodeId="1196350785117" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1196350785117" fileName="ReferenceAntiquotation.java" startLine="27" startPosition="0" endLine="31" endPosition="0" />
-    <scopeInfo nodeId="1196350785117" fileName="ReferenceAntiquotation.java" startLine="31" startPosition="0" endLine="35" endPosition="0" />
+    <scopeInfo nodeId="1196350785117" fileName="ReferenceAntiquotation.java" startLine="31" startPosition="0" endLine="35" endPosition="0">
+      <varInfo nodeId="1196350785117" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="1196350785117" fileName="ReferenceAntiquotation.java" startLine="35" startPosition="0" endLine="39" endPosition="0" />
-    <scopeInfo nodeId="1196350785117" fileName="ReferenceAntiquotation.java" startLine="39" startPosition="0" endLine="43" endPosition="0" />
+    <scopeInfo nodeId="1196350785117" fileName="ReferenceAntiquotation.java" startLine="39" startPosition="0" endLine="43" endPosition="0">
+      <varInfo nodeId="1196350785117" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="1196350785117" fileName="ReferenceAntiquotation.java" startLine="43" startPosition="0" endLine="47" endPosition="0" />
-    <scopeInfo nodeId="1196350785117" fileName="ReferenceAntiquotation.java" startLine="47" startPosition="0" endLine="51" endPosition="0" />
+    <scopeInfo nodeId="1196350785117" fileName="ReferenceAntiquotation.java" startLine="47" startPosition="0" endLine="51" endPosition="0">
+      <varInfo nodeId="1196350785117" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="1196350785117" fileName="ReferenceAntiquotation.java" startLine="51" startPosition="0" endLine="55" endPosition="0" />
-    <scopeInfo nodeId="1196350785117" fileName="ReferenceAntiquotation.java" startLine="55" startPosition="0" endLine="59" endPosition="0" />
+    <scopeInfo nodeId="1196350785117" fileName="ReferenceAntiquotation.java" startLine="55" startPosition="0" endLine="59" endPosition="0">
+      <varInfo nodeId="1196350785117" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="1196350785117" fileName="ReferenceAntiquotation.java" startLine="59" startPosition="0" endLine="63" endPosition="0" />
-    <scopeInfo nodeId="1196350785117" fileName="ReferenceAntiquotation.java" startLine="63" startPosition="0" endLine="67" endPosition="0" />
+    <scopeInfo nodeId="1196350785117" fileName="ReferenceAntiquotation.java" startLine="63" startPosition="0" endLine="67" endPosition="0">
+      <varInfo nodeId="1196350785117" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1196350785117" fileName="ReferenceAntiquotation.java" startLine="67" startPosition="0" endLine="71" endPosition="0" />
     <scopeInfo nodeId="1196350785117" fileName="ReferenceAntiquotation.java" startLine="71" startPosition="0" endLine="75" endPosition="0" />
     <scopeInfo nodeId="1196350785117" fileName="ReferenceAntiquotation.java" startLine="75" startPosition="0" endLine="79" endPosition="0" />
-    <scopeInfo nodeId="1196350785117" fileName="ReferenceAntiquotation.java" startLine="79" startPosition="0" endLine="83" endPosition="0" />
-    <scopeInfo nodeId="1196350785117" fileName="ReferenceAntiquotation.java" startLine="83" startPosition="0" endLine="87" endPosition="0" />
-    <scopeInfo nodeId="1196350785117" fileName="ReferenceAntiquotation.java" startLine="87" startPosition="0" endLine="91" endPosition="0" />
-    <scopeInfo nodeId="1196350785117" fileName="ReferenceAntiquotation.java" startLine="91" startPosition="0" endLine="95" endPosition="0" />
+    <scopeInfo nodeId="1196350785117" fileName="ReferenceAntiquotation.java" startLine="79" startPosition="0" endLine="83" endPosition="0">
+      <varInfo nodeId="1196350785117" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1196350785117" fileName="ReferenceAntiquotation.java" startLine="83" startPosition="0" endLine="87" endPosition="0">
+      <varInfo nodeId="1196350785117" varName="node" />
+      <varInfo nodeId="1196350785117" varName="prev" />
+    </scopeInfo>
+    <scopeInfo nodeId="1196350785117" fileName="ReferenceAntiquotation.java" startLine="87" startPosition="0" endLine="91" endPosition="0">
+      <varInfo nodeId="1196350785117" varName="init" />
+      <varInfo nodeId="1196350785117" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="1196350785117" fileName="ReferenceAntiquotation.java" startLine="91" startPosition="0" endLine="95" endPosition="0">
+      <varInfo nodeId="1196350785117" varName="sm" />
+    </scopeInfo>
     <unitInfo nodeId="1196350785117" fileName="ReferenceAntiquotation.java" startLine="15" startPosition="0" endLine="96" endPosition="0" unitName="jetbrains.mps.lang.quotation.structure.ReferenceAntiquotation" />
   </root>
   <root nodeId="1196350785118">
@@ -324,24 +394,46 @@
     <scopeInfo nodeId="1196350785118" fileName="ListAntiquotation.java" startLine="84" startPosition="69" endLine="85" endPosition="69" />
     <scopeInfo nodeId="1196350785118" fileName="ListAntiquotation.java" startLine="88" startPosition="72" endLine="89" endPosition="186" />
     <scopeInfo nodeId="1196350785118" fileName="ListAntiquotation.java" startLine="92" startPosition="58" endLine="93" endPosition="52" />
-    <scopeInfo nodeId="1196350785118" fileName="ListAntiquotation.java" startLine="23" startPosition="0" endLine="26" endPosition="3" />
+    <scopeInfo nodeId="1196350785118" fileName="ListAntiquotation.java" startLine="23" startPosition="0" endLine="26" endPosition="3">
+      <varInfo nodeId="1196350785118" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1196350785118" fileName="ListAntiquotation.java" startLine="27" startPosition="0" endLine="31" endPosition="0" />
-    <scopeInfo nodeId="1196350785118" fileName="ListAntiquotation.java" startLine="31" startPosition="0" endLine="35" endPosition="0" />
+    <scopeInfo nodeId="1196350785118" fileName="ListAntiquotation.java" startLine="31" startPosition="0" endLine="35" endPosition="0">
+      <varInfo nodeId="1196350785118" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="1196350785118" fileName="ListAntiquotation.java" startLine="35" startPosition="0" endLine="39" endPosition="0" />
-    <scopeInfo nodeId="1196350785118" fileName="ListAntiquotation.java" startLine="39" startPosition="0" endLine="43" endPosition="0" />
+    <scopeInfo nodeId="1196350785118" fileName="ListAntiquotation.java" startLine="39" startPosition="0" endLine="43" endPosition="0">
+      <varInfo nodeId="1196350785118" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="1196350785118" fileName="ListAntiquotation.java" startLine="43" startPosition="0" endLine="47" endPosition="0" />
-    <scopeInfo nodeId="1196350785118" fileName="ListAntiquotation.java" startLine="47" startPosition="0" endLine="51" endPosition="0" />
+    <scopeInfo nodeId="1196350785118" fileName="ListAntiquotation.java" startLine="47" startPosition="0" endLine="51" endPosition="0">
+      <varInfo nodeId="1196350785118" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="1196350785118" fileName="ListAntiquotation.java" startLine="51" startPosition="0" endLine="55" endPosition="0" />
-    <scopeInfo nodeId="1196350785118" fileName="ListAntiquotation.java" startLine="55" startPosition="0" endLine="59" endPosition="0" />
+    <scopeInfo nodeId="1196350785118" fileName="ListAntiquotation.java" startLine="55" startPosition="0" endLine="59" endPosition="0">
+      <varInfo nodeId="1196350785118" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="1196350785118" fileName="ListAntiquotation.java" startLine="59" startPosition="0" endLine="63" endPosition="0" />
-    <scopeInfo nodeId="1196350785118" fileName="ListAntiquotation.java" startLine="63" startPosition="0" endLine="67" endPosition="0" />
+    <scopeInfo nodeId="1196350785118" fileName="ListAntiquotation.java" startLine="63" startPosition="0" endLine="67" endPosition="0">
+      <varInfo nodeId="1196350785118" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1196350785118" fileName="ListAntiquotation.java" startLine="67" startPosition="0" endLine="71" endPosition="0" />
     <scopeInfo nodeId="1196350785118" fileName="ListAntiquotation.java" startLine="71" startPosition="0" endLine="75" endPosition="0" />
     <scopeInfo nodeId="1196350785118" fileName="ListAntiquotation.java" startLine="75" startPosition="0" endLine="79" endPosition="0" />
-    <scopeInfo nodeId="1196350785118" fileName="ListAntiquotation.java" startLine="79" startPosition="0" endLine="83" endPosition="0" />
-    <scopeInfo nodeId="1196350785118" fileName="ListAntiquotation.java" startLine="83" startPosition="0" endLine="87" endPosition="0" />
-    <scopeInfo nodeId="1196350785118" fileName="ListAntiquotation.java" startLine="87" startPosition="0" endLine="91" endPosition="0" />
-    <scopeInfo nodeId="1196350785118" fileName="ListAntiquotation.java" startLine="91" startPosition="0" endLine="95" endPosition="0" />
+    <scopeInfo nodeId="1196350785118" fileName="ListAntiquotation.java" startLine="79" startPosition="0" endLine="83" endPosition="0">
+      <varInfo nodeId="1196350785118" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1196350785118" fileName="ListAntiquotation.java" startLine="83" startPosition="0" endLine="87" endPosition="0">
+      <varInfo nodeId="1196350785118" varName="node" />
+      <varInfo nodeId="1196350785118" varName="prev" />
+    </scopeInfo>
+    <scopeInfo nodeId="1196350785118" fileName="ListAntiquotation.java" startLine="87" startPosition="0" endLine="91" endPosition="0">
+      <varInfo nodeId="1196350785118" varName="init" />
+      <varInfo nodeId="1196350785118" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="1196350785118" fileName="ListAntiquotation.java" startLine="91" startPosition="0" endLine="95" endPosition="0">
+      <varInfo nodeId="1196350785118" varName="sm" />
+    </scopeInfo>
     <unitInfo nodeId="1196350785118" fileName="ListAntiquotation.java" startLine="15" startPosition="0" endLine="96" endPosition="0" unitName="jetbrains.mps.lang.quotation.structure.ListAntiquotation" />
   </root>
   <root nodeId="1196350785119">
@@ -352,8 +444,13 @@
     <nodeInfo nodeId="1196350785119" fileName="Antiquotation_AnnotationLink.java" startLine="13" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getAntiquotation#(Ljetbrains/mps/lang/core/structure/BaseConcept;)Ljetbrains/mps/lang/core/structure/BaseConcept;" />
     <scopeInfo nodeId="1196350785119" fileName="Antiquotation_AnnotationLink.java" startLine="10" startPosition="81" endLine="11" endPosition="76" />
     <scopeInfo nodeId="1196350785119" fileName="Antiquotation_AnnotationLink.java" startLine="14" startPosition="68" endLine="15" endPosition="91" />
-    <scopeInfo nodeId="1196350785119" fileName="Antiquotation_AnnotationLink.java" startLine="9" startPosition="0" endLine="13" endPosition="0" />
-    <scopeInfo nodeId="1196350785119" fileName="Antiquotation_AnnotationLink.java" startLine="13" startPosition="0" endLine="17" endPosition="0" />
+    <scopeInfo nodeId="1196350785119" fileName="Antiquotation_AnnotationLink.java" startLine="9" startPosition="0" endLine="13" endPosition="0">
+      <varInfo nodeId="1196350785119" varName="source" />
+      <varInfo nodeId="1196350785119" varName="target" />
+    </scopeInfo>
+    <scopeInfo nodeId="1196350785119" fileName="Antiquotation_AnnotationLink.java" startLine="13" startPosition="0" endLine="17" endPosition="0">
+      <varInfo nodeId="1196350785119" varName="source" />
+    </scopeInfo>
     <unitInfo nodeId="1196350785119" fileName="Antiquotation_AnnotationLink.java" startLine="7" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.lang.quotation.structure.Antiquotation_AnnotationLink" />
   </root>
   <root nodeId="1196350785120">
@@ -364,8 +461,13 @@
     <nodeInfo nodeId="1196350785120" fileName="ListAntiquotation_AnnotationLink.java" startLine="13" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getListAntiquotation#(Ljetbrains/mps/lang/core/structure/BaseConcept;)Ljetbrains/mps/lang/core/structure/BaseConcept;" />
     <scopeInfo nodeId="1196350785120" fileName="ListAntiquotation_AnnotationLink.java" startLine="10" startPosition="89" endLine="11" endPosition="85" />
     <scopeInfo nodeId="1196350785120" fileName="ListAntiquotation_AnnotationLink.java" startLine="14" startPosition="76" endLine="15" endPosition="104" />
-    <scopeInfo nodeId="1196350785120" fileName="ListAntiquotation_AnnotationLink.java" startLine="9" startPosition="0" endLine="13" endPosition="0" />
-    <scopeInfo nodeId="1196350785120" fileName="ListAntiquotation_AnnotationLink.java" startLine="13" startPosition="0" endLine="17" endPosition="0" />
+    <scopeInfo nodeId="1196350785120" fileName="ListAntiquotation_AnnotationLink.java" startLine="9" startPosition="0" endLine="13" endPosition="0">
+      <varInfo nodeId="1196350785120" varName="source" />
+      <varInfo nodeId="1196350785120" varName="target" />
+    </scopeInfo>
+    <scopeInfo nodeId="1196350785120" fileName="ListAntiquotation_AnnotationLink.java" startLine="13" startPosition="0" endLine="17" endPosition="0">
+      <varInfo nodeId="1196350785120" varName="source" />
+    </scopeInfo>
     <unitInfo nodeId="1196350785120" fileName="ListAntiquotation_AnnotationLink.java" startLine="7" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.lang.quotation.structure.ListAntiquotation_AnnotationLink" />
   </root>
   <root nodeId="1196350785121">
@@ -376,8 +478,15 @@
     <nodeInfo nodeId="1196350785121" fileName="ReferenceAntiquotation_AnnotationLink.java" startLine="13" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getReferenceAntiquotation#(Ljetbrains/mps/lang/core/structure/BaseConcept;Ljava/lang/String;)Ljetbrains/mps/lang/core/structure/BaseConcept;" />
     <scopeInfo nodeId="1196350785121" fileName="ReferenceAntiquotation_AnnotationLink.java" startLine="10" startPosition="120" endLine="11" endPosition="113" />
     <scopeInfo nodeId="1196350785121" fileName="ReferenceAntiquotation_AnnotationLink.java" startLine="14" startPosition="103" endLine="15" endPosition="133" />
-    <scopeInfo nodeId="1196350785121" fileName="ReferenceAntiquotation_AnnotationLink.java" startLine="9" startPosition="0" endLine="13" endPosition="0" />
-    <scopeInfo nodeId="1196350785121" fileName="ReferenceAntiquotation_AnnotationLink.java" startLine="13" startPosition="0" endLine="17" endPosition="0" />
+    <scopeInfo nodeId="1196350785121" fileName="ReferenceAntiquotation_AnnotationLink.java" startLine="9" startPosition="0" endLine="13" endPosition="0">
+      <varInfo nodeId="1196350785121" varName="propertyName" />
+      <varInfo nodeId="1196350785121" varName="source" />
+      <varInfo nodeId="1196350785121" varName="target" />
+    </scopeInfo>
+    <scopeInfo nodeId="1196350785121" fileName="ReferenceAntiquotation_AnnotationLink.java" startLine="13" startPosition="0" endLine="17" endPosition="0">
+      <varInfo nodeId="1196350785121" varName="linkRole" />
+      <varInfo nodeId="1196350785121" varName="source" />
+    </scopeInfo>
     <unitInfo nodeId="1196350785121" fileName="ReferenceAntiquotation_AnnotationLink.java" startLine="7" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.lang.quotation.structure.ReferenceAntiquotation_AnnotationLink" />
   </root>
   <root nodeId="1196866233735">
@@ -442,24 +551,46 @@
     <scopeInfo nodeId="1196866233735" fileName="PropertyAntiquotation.java" startLine="84" startPosition="69" endLine="85" endPosition="73" />
     <scopeInfo nodeId="1196866233735" fileName="PropertyAntiquotation.java" startLine="88" startPosition="76" endLine="89" endPosition="194" />
     <scopeInfo nodeId="1196866233735" fileName="PropertyAntiquotation.java" startLine="92" startPosition="62" endLine="93" endPosition="56" />
-    <scopeInfo nodeId="1196866233735" fileName="PropertyAntiquotation.java" startLine="23" startPosition="0" endLine="26" endPosition="3" />
+    <scopeInfo nodeId="1196866233735" fileName="PropertyAntiquotation.java" startLine="23" startPosition="0" endLine="26" endPosition="3">
+      <varInfo nodeId="1196866233735" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1196866233735" fileName="PropertyAntiquotation.java" startLine="27" startPosition="0" endLine="31" endPosition="0" />
-    <scopeInfo nodeId="1196866233735" fileName="PropertyAntiquotation.java" startLine="31" startPosition="0" endLine="35" endPosition="0" />
+    <scopeInfo nodeId="1196866233735" fileName="PropertyAntiquotation.java" startLine="31" startPosition="0" endLine="35" endPosition="0">
+      <varInfo nodeId="1196866233735" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="1196866233735" fileName="PropertyAntiquotation.java" startLine="35" startPosition="0" endLine="39" endPosition="0" />
-    <scopeInfo nodeId="1196866233735" fileName="PropertyAntiquotation.java" startLine="39" startPosition="0" endLine="43" endPosition="0" />
+    <scopeInfo nodeId="1196866233735" fileName="PropertyAntiquotation.java" startLine="39" startPosition="0" endLine="43" endPosition="0">
+      <varInfo nodeId="1196866233735" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="1196866233735" fileName="PropertyAntiquotation.java" startLine="43" startPosition="0" endLine="47" endPosition="0" />
-    <scopeInfo nodeId="1196866233735" fileName="PropertyAntiquotation.java" startLine="47" startPosition="0" endLine="51" endPosition="0" />
+    <scopeInfo nodeId="1196866233735" fileName="PropertyAntiquotation.java" startLine="47" startPosition="0" endLine="51" endPosition="0">
+      <varInfo nodeId="1196866233735" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="1196866233735" fileName="PropertyAntiquotation.java" startLine="51" startPosition="0" endLine="55" endPosition="0" />
-    <scopeInfo nodeId="1196866233735" fileName="PropertyAntiquotation.java" startLine="55" startPosition="0" endLine="59" endPosition="0" />
+    <scopeInfo nodeId="1196866233735" fileName="PropertyAntiquotation.java" startLine="55" startPosition="0" endLine="59" endPosition="0">
+      <varInfo nodeId="1196866233735" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="1196866233735" fileName="PropertyAntiquotation.java" startLine="59" startPosition="0" endLine="63" endPosition="0" />
-    <scopeInfo nodeId="1196866233735" fileName="PropertyAntiquotation.java" startLine="63" startPosition="0" endLine="67" endPosition="0" />
+    <scopeInfo nodeId="1196866233735" fileName="PropertyAntiquotation.java" startLine="63" startPosition="0" endLine="67" endPosition="0">
+      <varInfo nodeId="1196866233735" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1196866233735" fileName="PropertyAntiquotation.java" startLine="67" startPosition="0" endLine="71" endPosition="0" />
     <scopeInfo nodeId="1196866233735" fileName="PropertyAntiquotation.java" startLine="71" startPosition="0" endLine="75" endPosition="0" />
     <scopeInfo nodeId="1196866233735" fileName="PropertyAntiquotation.java" startLine="75" startPosition="0" endLine="79" endPosition="0" />
-    <scopeInfo nodeId="1196866233735" fileName="PropertyAntiquotation.java" startLine="79" startPosition="0" endLine="83" endPosition="0" />
-    <scopeInfo nodeId="1196866233735" fileName="PropertyAntiquotation.java" startLine="83" startPosition="0" endLine="87" endPosition="0" />
-    <scopeInfo nodeId="1196866233735" fileName="PropertyAntiquotation.java" startLine="87" startPosition="0" endLine="91" endPosition="0" />
-    <scopeInfo nodeId="1196866233735" fileName="PropertyAntiquotation.java" startLine="91" startPosition="0" endLine="95" endPosition="0" />
+    <scopeInfo nodeId="1196866233735" fileName="PropertyAntiquotation.java" startLine="79" startPosition="0" endLine="83" endPosition="0">
+      <varInfo nodeId="1196866233735" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1196866233735" fileName="PropertyAntiquotation.java" startLine="83" startPosition="0" endLine="87" endPosition="0">
+      <varInfo nodeId="1196866233735" varName="node" />
+      <varInfo nodeId="1196866233735" varName="prev" />
+    </scopeInfo>
+    <scopeInfo nodeId="1196866233735" fileName="PropertyAntiquotation.java" startLine="87" startPosition="0" endLine="91" endPosition="0">
+      <varInfo nodeId="1196866233735" varName="init" />
+      <varInfo nodeId="1196866233735" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="1196866233735" fileName="PropertyAntiquotation.java" startLine="91" startPosition="0" endLine="95" endPosition="0">
+      <varInfo nodeId="1196866233735" varName="sm" />
+    </scopeInfo>
     <unitInfo nodeId="1196866233735" fileName="PropertyAntiquotation.java" startLine="15" startPosition="0" endLine="96" endPosition="0" unitName="jetbrains.mps.lang.quotation.structure.PropertyAntiquotation" />
   </root>
   <root nodeId="1196866560540">
@@ -470,8 +601,15 @@
     <nodeInfo nodeId="1196866560540" fileName="PropertyAntiquotation_AnnotationLink.java" startLine="13" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getPropertyAntiquotation#(Ljetbrains/mps/lang/core/structure/BaseConcept;Ljava/lang/String;)Ljetbrains/mps/lang/core/structure/BaseConcept;" />
     <scopeInfo nodeId="1196866560540" fileName="PropertyAntiquotation_AnnotationLink.java" startLine="10" startPosition="118" endLine="11" endPosition="115" />
     <scopeInfo nodeId="1196866560540" fileName="PropertyAntiquotation_AnnotationLink.java" startLine="14" startPosition="105" endLine="15" endPosition="138" />
-    <scopeInfo nodeId="1196866560540" fileName="PropertyAntiquotation_AnnotationLink.java" startLine="9" startPosition="0" endLine="13" endPosition="0" />
-    <scopeInfo nodeId="1196866560540" fileName="PropertyAntiquotation_AnnotationLink.java" startLine="13" startPosition="0" endLine="17" endPosition="0" />
+    <scopeInfo nodeId="1196866560540" fileName="PropertyAntiquotation_AnnotationLink.java" startLine="9" startPosition="0" endLine="13" endPosition="0">
+      <varInfo nodeId="1196866560540" varName="propertyName" />
+      <varInfo nodeId="1196866560540" varName="source" />
+      <varInfo nodeId="1196866560540" varName="target" />
+    </scopeInfo>
+    <scopeInfo nodeId="1196866560540" fileName="PropertyAntiquotation_AnnotationLink.java" startLine="13" startPosition="0" endLine="17" endPosition="0">
+      <varInfo nodeId="1196866560540" varName="propertyName" />
+      <varInfo nodeId="1196866560540" varName="source" />
+    </scopeInfo>
     <unitInfo nodeId="1196866560540" fileName="PropertyAntiquotation_AnnotationLink.java" startLine="7" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.lang.quotation.structure.PropertyAntiquotation_AnnotationLink" />
   </root>
 </debugInfo>

@@ -5,7 +5,6 @@ package jetbrains.mps.workbench.make;
 import com.intellij.openapi.vfs.newvfs.impl.StubVirtualFile;
 import java.util.Map;
 import java.util.Arrays;
-import javax.swing.Icon;
 import org.jetbrains.annotations.NotNull;
 import java.io.IOException;
 import java.nio.charset.Charset;
@@ -44,11 +43,6 @@ public class TextPreviewFile extends StubVirtualFile {
       (String) contents :
       "<binary content>"
     );
-  }
-
-  @Override
-  public Icon getIcon() {
-    return Icons.GENERATED;
   }
 
   @NotNull

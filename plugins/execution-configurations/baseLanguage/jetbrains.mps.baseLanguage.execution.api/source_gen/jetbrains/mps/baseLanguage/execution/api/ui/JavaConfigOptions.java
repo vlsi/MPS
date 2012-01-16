@@ -19,9 +19,7 @@ import org.jdesktop.beansbinding.BeanProperty;
 import org.jdesktop.beansbinding.Bindings;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
-import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.Nullable;
-import jetbrains.mps.baseLanguage.execution.api.ConfigRunParameters;
 import jetbrains.mps.baseLanguage.execution.api.JavaRunParameters;
 
 public class JavaConfigOptions extends JPanel {
@@ -52,14 +50,14 @@ public class JavaConfigOptions extends JPanel {
     this.myThis = this;
     JavaConfigOptions component = this;
     component.setLayout(new GridBagLayout());
-    component.add(this.createComponent_b0(), LayoutUtil.createLabelConstraints(0));
-    component.add(this.createComponent_c0(), LayoutUtil.createPanelConstraints(1));
-    component.add(this.createComponent_d0(), LayoutUtil.createLabelConstraints(2));
-    component.add(this.createComponent_e0(), LayoutUtil.createPanelConstraints(3));
-    component.add(this.createComponent_f0(), LayoutUtil.createLabelConstraints(4));
-    component.add(this.createComponent_g0(), LayoutUtil.createPanelConstraints(5));
-    component.add(this.createComponent_h0(), LayoutUtil.createLabelConstraints(9));
-    component.add(this.createComponent_i0(), LayoutUtil.createPanelConstraints(10));
+    component.add(this.createComponent_jy82jx_b0(), LayoutUtil.createLabelConstraints(0));
+    component.add(this.createComponent_jy82jx_c0(), LayoutUtil.createPanelConstraints(1));
+    component.add(this.createComponent_jy82jx_d0(), LayoutUtil.createLabelConstraints(2));
+    component.add(this.createComponent_jy82jx_e0(), LayoutUtil.createPanelConstraints(3));
+    component.add(this.createComponent_jy82jx_f0(), LayoutUtil.createLabelConstraints(4));
+    component.add(this.createComponent_jy82jx_g0(), LayoutUtil.createPanelConstraints(5));
+    component.add(this.createComponent_jy82jx_h0(), LayoutUtil.createLabelConstraints(9));
+    component.add(this.createComponent_jy82jx_i0(), LayoutUtil.createPanelConstraints(10));
     this.myEvents.initialize();
   }
 
@@ -142,14 +140,14 @@ public class JavaConfigOptions extends JPanel {
     }
   }
 
-  private JLabel createComponent_b0() {
+  private JLabel createComponent_jy82jx_b0() {
     JLabel component = new JLabel();
     this.myComponent_b0 = component;
     component.setText("VM Parameters:");
     return component;
   }
 
-  private RawLineEditorComponent createComponent_c0() {
+  private RawLineEditorComponent createComponent_jy82jx_c0() {
     RawLineEditorComponent component = new RawLineEditorComponent();
     this.myVmParam_c0 = component;
     component.setDialogCaption("VM Parameters");
@@ -161,14 +159,14 @@ public class JavaConfigOptions extends JPanel {
     return component;
   }
 
-  private JLabel createComponent_d0() {
+  private JLabel createComponent_jy82jx_d0() {
     JLabel component = new JLabel();
     this.myComponent_d0 = component;
     component.setText("Program Parameters:");
     return component;
   }
 
-  private RawLineEditorComponent createComponent_e0() {
+  private RawLineEditorComponent createComponent_jy82jx_e0() {
     RawLineEditorComponent component = new RawLineEditorComponent();
     this.myProgramParam_e0 = component;
     component.setDialogCaption("Program Parameters");
@@ -180,14 +178,14 @@ public class JavaConfigOptions extends JPanel {
     return component;
   }
 
-  private JLabel createComponent_f0() {
+  private JLabel createComponent_jy82jx_f0() {
     JLabel component = new JLabel();
     this.myComponent_f0 = component;
     component.setText("Working Directory:");
     return component;
   }
 
-  private FieldWithPathChooseDialog createComponent_g0() {
+  private FieldWithPathChooseDialog createComponent_jy82jx_g0() {
     FieldWithPathChooseDialog component = new FieldWithPathChooseDialog();
     this.myWorkingDir_g0 = component;
     component.setTitle("Select Working Directory");
@@ -199,7 +197,7 @@ public class JavaConfigOptions extends JPanel {
     return component;
   }
 
-  private JCheckBox createComponent_h0() {
+  private JCheckBox createComponent_jy82jx_h0() {
     JCheckBox component = new JCheckBox();
     this.myComponent_h0 = component;
     component.setText("Use alternative JRE");
@@ -211,7 +209,7 @@ public class JavaConfigOptions extends JPanel {
     return component;
   }
 
-  private FieldWithPathChooseDialog createComponent_i0() {
+  private FieldWithPathChooseDialog createComponent_jy82jx_i0() {
     FieldWithPathChooseDialog component = new FieldWithPathChooseDialog();
     this.myJreHome_i0 = component;
     component.setTitle("Select Alternative JRE home");
@@ -271,30 +269,6 @@ public class JavaConfigOptions extends JPanel {
     boolean oldValue = this.myUseAlternativeJRE;
     this.myUseAlternativeJRE = newValue;
     this.firePropertyChange("useAlternativeJRE", oldValue, newValue);
-  }
-
-  @Deprecated
-  @ToRemove(version = 2.0)
-  public void reset(@Nullable ConfigRunParameters config) {
-    if (config != null) {
-      myThis.setProgramParameters(config.getProgramParameters());
-      myThis.setVmOptions(config.getVMParameters());
-      myThis.setWorkingDirectory(config.getWorkingDirectory());
-      myThis.setJrePath(config.getAlternativeJRE());
-      myThis.setUseAlternativeJRE(config.getUseAlternativeJRE());
-    }
-  }
-
-  @Deprecated
-  @ToRemove(version = 2.0)
-  public void apply(@Nullable ConfigRunParameters config) {
-    if (config != null) {
-      config.setVMParameters(myThis.getVmOptions());
-      config.setProgramParameters(myThis.getProgramParameters());
-      config.setWorkingDirectory(myThis.getWorkingDirectory());
-      config.setAlternativeJRE(myThis.getJrePath());
-      config.setUseAlternativeJRE(myThis.getUseAlternativeJRE());
-    }
   }
 
   public void reset(@Nullable JavaRunParameters javaOptions) {

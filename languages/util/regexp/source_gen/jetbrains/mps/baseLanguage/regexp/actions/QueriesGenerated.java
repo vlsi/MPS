@@ -26,9 +26,9 @@ import jetbrains.mps.smodel.action.SideTransformActionsBuilderContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
 import jetbrains.mps.smodel.action.AbstractSideTransformHintSubstituteAction;
 import java.util.regex.Matcher;
-import jetbrains.mps.util.Calculable;
+import jetbrains.mps.util.Computable;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.smodel.constraints.SearchScopeStatus;
+import jetbrains.mps.scope.Scope;
 import jetbrains.mps.smodel.constraints.ModelConstraintsUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import java.util.Set;
@@ -572,12 +572,12 @@ public class QueriesGenerated {
     }
     {
       final SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.UnaryRegexp");
-      Calculable calculable = new Calculable() {
-        public Object calculate() {
+      Computable computable = new Computable() {
+        public Object compute() {
           return ListSequence.fromListAndArray(new ArrayList<SNode>(), SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.StarRegexp"), SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.PlusRegexp"), SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.QuestionRegexp"), SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.LazyPlusRegexp"), SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.LazyQuestionRegexp"), SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.LazyStarRegexp"));
         }
       };
-      Iterable<SNode> parameterObjects = (Iterable<SNode>) calculable.calculate();
+      Iterable<SNode> parameterObjects = (Iterable<SNode>) computable.compute();
       assert parameterObjects != null;
       for (final SNode item : parameterObjects) {
         ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, item, _context.getSourceNode()) {
@@ -649,8 +649,8 @@ public class QueriesGenerated {
     List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
     {
       final SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.Regexp");
-      Calculable calculable = new Calculable() {
-        public Object calculate() {
+      Computable computable = new Computable() {
+        public Object compute() {
           final List<SNode> excludeList = ListSequence.fromListAndArray(new ArrayList<SNode>(), SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.BinaryRegexp"), SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.UnaryRegexp"), SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.PredefinedSymbolClassRegexp"), SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.RegexpDeclarationReferenceRegexp"), SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.MatchVariableReferenceRegexp"));
           List<SNode> regexps = SConceptOperations.getAllSubConcepts(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.Regexp"), _context.getModel(), operationContext.getScope());
           return ListSequence.fromList(regexps).where(new IWhereFilter<SNode>() {
@@ -665,7 +665,7 @@ public class QueriesGenerated {
           }).toListSequence();
         }
       };
-      Iterable<SNode> parameterObjects = (Iterable<SNode>) calculable.calculate();
+      Iterable<SNode> parameterObjects = (Iterable<SNode>) computable.compute();
       assert parameterObjects != null;
       for (final SNode item : parameterObjects) {
         ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, item, _context.getSourceNode()) {
@@ -687,13 +687,13 @@ public class QueriesGenerated {
     List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
     {
       final SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.MatchVariableReferenceRegexp");
-      Calculable calculable = new Calculable() {
-        public Object calculate() {
-          SearchScopeStatus status = ModelConstraintsUtil.getSearchScope(null, _context.getSourceNode(), SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.MatchVariableReferenceRegexp"), "match", SNodeOperations.getContainingLinkDeclaration(_context.getSourceNode()), operationContext);
-          return (List<SNode>) status.getSearchScope().getNodes();
+      Computable computable = new Computable() {
+        public Object compute() {
+          Scope refScope = ModelConstraintsUtil.getScope(_context.getSourceNode(), null, 0, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.MatchVariableReferenceRegexp"), operationContext);
+          return (List<SNode>) refScope.getAvailableElements(null);
         }
       };
-      Iterable<SNode> parameterObjects = (Iterable<SNode>) calculable.calculate();
+      Iterable<SNode> parameterObjects = (Iterable<SNode>) computable.compute();
       assert parameterObjects != null;
       for (final SNode item : parameterObjects) {
         ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, item, _context.getSourceNode()) {
@@ -723,12 +723,12 @@ public class QueriesGenerated {
     }
     {
       final SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.PredefinedSymbolClassRegexp");
-      Calculable calculable = new Calculable() {
-        public Object calculate() {
+      Computable computable = new Computable() {
+        public Object compute() {
           return SModelOperations.getNodesIncludingImported(SNodeOperations.getModel(_context.getSourceNode()), operationContext.getScope(), "jetbrains.mps.baseLanguage.regexp.structure.PredefinedSymbolClassDeclaration");
         }
       };
-      Iterable<SNode> parameterObjects = (Iterable<SNode>) calculable.calculate();
+      Iterable<SNode> parameterObjects = (Iterable<SNode>) computable.compute();
       assert parameterObjects != null;
       for (final SNode item : parameterObjects) {
         ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, item, _context.getSourceNode()) {
@@ -758,12 +758,12 @@ public class QueriesGenerated {
     }
     {
       final SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.RegexpDeclarationReferenceRegexp");
-      Calculable calculable = new Calculable() {
-        public Object calculate() {
+      Computable computable = new Computable() {
+        public Object compute() {
           return SModelOperations.getNodesIncludingImported(SNodeOperations.getModel(_context.getSourceNode()), operationContext.getScope(), "jetbrains.mps.baseLanguage.regexp.structure.RegexpDeclaration");
         }
       };
-      Iterable<SNode> parameterObjects = (Iterable<SNode>) calculable.calculate();
+      Iterable<SNode> parameterObjects = (Iterable<SNode>) computable.compute();
       assert parameterObjects != null;
       for (final SNode item : parameterObjects) {
         ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, item, _context.getSourceNode()) {

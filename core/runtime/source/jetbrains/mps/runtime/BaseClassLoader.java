@@ -17,7 +17,11 @@ package jetbrains.mps.runtime;
 
 abstract class BaseClassLoader extends ClassLoader {
   protected BaseClassLoader() {
-    super(BaseClassLoader.class.getClassLoader());
+    this(BaseClassLoader.class.getClassLoader());
+  }
+
+  protected BaseClassLoader(ClassLoader parent) {
+    super(parent);
   }
 
   protected abstract byte[] findInCurrent(String name);

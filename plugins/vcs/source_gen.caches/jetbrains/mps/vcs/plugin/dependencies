@@ -2,28 +2,27 @@
 <dependenciesRoot>
   <dependency className="jetbrains.mps.vcs.plugin.AddModuleToVcs_Action" file="AddModuleToVcs_Action.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
+    <classNode dependClassName="com.intellij.openapi.actionSystem.PlatformDataKeys" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.Presentation" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
-    <classNode dependClassName="com.intellij.openapi.util.io.StreamUtil" />
     <classNode dependClassName="com.intellij.openapi.vcs.changes.ChangeListManagerImpl" />
     <classNode dependClassName="com.intellij.openapi.vfs.VirtualFile" />
-    <classNode dependClassName="java.io.IOException" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="javax.swing.Icon" />
-    <classNode dependClassName="javax.swing.ImageIcon" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
     <classNode dependClassName="jetbrains.mps.project.IModule" />
+    <classNode dependClassName="jetbrains.mps.util.IconUtil" />
     <classNode dependClassName="jetbrains.mps.vcs.plugin.VcsActionsUtil" />
     <classNode dependClassName="jetbrains.mps.workbench.MPSDataKeys" />
     <classNode dependClassName="org.apache.commons.logging.Log" />
     <classNode dependClassName="org.apache.commons.logging.LogFactory" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
-    <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.actions.GeneratedAction" />
+    <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
   <dependency className="jetbrains.mps.vcs.plugin.AnnotateGroup_ActionGroup" file="AnnotateGroup_ActionGroup.java">
     <classNode dependClassName="java.lang.String" />
@@ -38,14 +37,14 @@
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="javax.swing.Icon" />
+    <classNode dependClassName="jetbrains.mps.ide.editor.MPSEditorDataKeys" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorComponent" />
     <classNode dependClassName="jetbrains.mps.vcs.annotate.AnnotationHelper" />
-    <classNode dependClassName="jetbrains.mps.workbench.MPSDataKeys" />
     <classNode dependClassName="org.apache.commons.logging.Log" />
     <classNode dependClassName="org.apache.commons.logging.LogFactory" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
-    <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.actions.GeneratedAction" />
+    <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
   <dependency className="jetbrains.mps.vcs.plugin.ChangesStrip_ActionGroup" file="ChangesStrip_ActionGroup.java">
     <classNode dependClassName="java.lang.String" />
@@ -53,62 +52,84 @@
     <classNode dependClassName="jetbrains.mps.logging.Logger" />
     <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup" />
   </dependency>
+  <dependency className="jetbrains.mps.vcs.plugin.CompareTransientModels_Action" file="CompareTransientModels_Action.java">
+    <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
+    <classNode dependClassName="com.intellij.openapi.actionSystem.PlatformDataKeys" />
+    <classNode dependClassName="com.intellij.openapi.application.ApplicationManager" />
+    <classNode dependClassName="com.intellij.openapi.project.Project" />
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.Runnable" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.lang.Throwable" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="java.util.Map" />
+    <classNode dependClassName="javax.swing.Icon" />
+    <classNode dependClassName="jetbrains.mps.generator.TransientModelsModule" />
+    <classNode dependClassName="jetbrains.mps.ide.actions.MPSCommonDataKeys" />
+    <classNode dependClassName="jetbrains.mps.ide.projectPane.SortUtil" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
+    <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModel" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelDescriptor" />
+    <classNode dependClassName="jetbrains.mps.util.IconUtil" />
+    <classNode dependClassName="jetbrains.mps.vcs.diff.ui.ModelDifferenceDialog" />
+    <classNode dependClassName="jetbrains.mps.vcs.diff.ui.common.SimpleDiffRequest" />
+    <classNode dependClassName="org.apache.commons.logging.Log" />
+    <classNode dependClassName="org.apache.commons.logging.LogFactory" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
+  </dependency>
   <dependency className="jetbrains.mps.vcs.plugin.CopyOldNodes_Action" file="CopyOldNodes_Action.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
-    <classNode dependClassName="com.intellij.openapi.util.io.StreamUtil" />
-    <classNode dependClassName="java.io.IOException" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="javax.swing.Icon" />
-    <classNode dependClassName="javax.swing.ImageIcon" />
+    <classNode dependClassName="jetbrains.mps.ide.editor.MPSEditorDataKeys" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorContext" />
+    <classNode dependClassName="jetbrains.mps.util.IconUtil" />
     <classNode dependClassName="jetbrains.mps.vcs.changesmanager.editor.ChangesStripActionsHelper" />
-    <classNode dependClassName="jetbrains.mps.workbench.MPSDataKeys" />
     <classNode dependClassName="org.apache.commons.logging.Log" />
     <classNode dependClassName="org.apache.commons.logging.LogFactory" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
-    <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.actions.GeneratedAction" />
+    <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
   <dependency className="jetbrains.mps.vcs.plugin.GoToNextChange_Action" file="GoToNextChange_Action.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
-    <classNode dependClassName="com.intellij.openapi.util.io.StreamUtil" />
-    <classNode dependClassName="java.io.IOException" />
+    <classNode dependClassName="com.intellij.openapi.actionSystem.PlatformDataKeys" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="javax.swing.Icon" />
-    <classNode dependClassName="javax.swing.ImageIcon" />
+    <classNode dependClassName="jetbrains.mps.ide.editor.MPSEditorDataKeys" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorContext" />
+    <classNode dependClassName="jetbrains.mps.util.IconUtil" />
     <classNode dependClassName="jetbrains.mps.vcs.changesmanager.editor.ChangesStripActionsHelper" />
-    <classNode dependClassName="jetbrains.mps.workbench.MPSDataKeys" />
     <classNode dependClassName="org.apache.commons.logging.Log" />
     <classNode dependClassName="org.apache.commons.logging.LogFactory" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
-    <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.actions.GeneratedAction" />
+    <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
   <dependency className="jetbrains.mps.vcs.plugin.GoToPreviousChange_Action" file="GoToPreviousChange_Action.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
-    <classNode dependClassName="com.intellij.openapi.util.io.StreamUtil" />
-    <classNode dependClassName="java.io.IOException" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="javax.swing.Icon" />
-    <classNode dependClassName="javax.swing.ImageIcon" />
+    <classNode dependClassName="jetbrains.mps.ide.editor.MPSEditorDataKeys" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorContext" />
+    <classNode dependClassName="jetbrains.mps.util.IconUtil" />
     <classNode dependClassName="jetbrains.mps.vcs.changesmanager.editor.ChangesStripActionsHelper" />
-    <classNode dependClassName="jetbrains.mps.workbench.MPSDataKeys" />
     <classNode dependClassName="org.apache.commons.logging.Log" />
     <classNode dependClassName="org.apache.commons.logging.LogFactory" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
-    <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.actions.GeneratedAction" />
+    <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
   <dependency className="jetbrains.mps.vcs.plugin.GoToVCS_ActionGroup" file="GoToVCS_ActionGroup.java">
     <classNode dependClassName="java.lang.String" />
@@ -118,6 +139,7 @@
   </dependency>
   <dependency className="jetbrains.mps.vcs.plugin.IgnoreModuleInVcs_Action" file="IgnoreModuleInVcs_Action.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
+    <classNode dependClassName="com.intellij.openapi.actionSystem.PlatformDataKeys" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.Presentation" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="com.intellij.openapi.vcs.changes.ui.IgnoreUnversionedDialog" />
@@ -136,10 +158,11 @@
     <classNode dependClassName="org.apache.commons.logging.Log" />
     <classNode dependClassName="org.apache.commons.logging.LogFactory" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
-    <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.actions.GeneratedAction" />
+    <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
   <dependency className="jetbrains.mps.vcs.plugin.InstalVcsAddons_Action" file="InstalVcsAddons_Action.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
+    <classNode dependClassName="com.intellij.openapi.actionSystem.PlatformDataKeys" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
@@ -148,11 +171,10 @@
     <classNode dependClassName="javax.swing.Icon" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
     <classNode dependClassName="jetbrains.mps.vcs.mergedriver.MergeDriverInstaller" />
-    <classNode dependClassName="jetbrains.mps.workbench.MPSDataKeys" />
     <classNode dependClassName="org.apache.commons.logging.Log" />
     <classNode dependClassName="org.apache.commons.logging.LogFactory" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
-    <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.actions.GeneratedAction" />
+    <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
   <dependency className="jetbrains.mps.vcs.plugin.MPSGlobalVcsGroup_ActionGroup" file="MPSGlobalVcsGroup_ActionGroup.java">
     <classNode dependClassName="java.lang.String" />
@@ -170,6 +192,7 @@
   </dependency>
   <dependency className="jetbrains.mps.vcs.plugin.MakeOrRebuildModelsFromChangeList_Action" file="MakeOrRebuildModelsFromChangeList_Action.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
+    <classNode dependClassName="com.intellij.openapi.actionSystem.PlatformDataKeys" />
     <classNode dependClassName="com.intellij.openapi.vfs.VirtualFile" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
@@ -178,6 +201,7 @@
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="javax.swing.Icon" />
+    <classNode dependClassName="jetbrains.mps.ide.actions.MPSCommonDataKeys" />
     <classNode dependClassName="jetbrains.mps.ide.make.actions.MakeActionImpl" />
     <classNode dependClassName="jetbrains.mps.ide.make.actions.MakeActionParameters" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
@@ -186,11 +210,10 @@
     <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelDescriptor" />
     <classNode dependClassName="jetbrains.mps.vcs.plugin.VcsActionsUtil" />
-    <classNode dependClassName="jetbrains.mps.workbench.MPSDataKeys" />
     <classNode dependClassName="org.apache.commons.logging.Log" />
     <classNode dependClassName="org.apache.commons.logging.LogFactory" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
-    <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.actions.GeneratedAction" />
+    <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
   <dependency className="jetbrains.mps.vcs.plugin.ModuleVcsActions_ActionGroup" file="ModuleVcsActions_ActionGroup.java">
     <classNode dependClassName="java.lang.String" />
@@ -206,66 +229,64 @@
   </dependency>
   <dependency className="jetbrains.mps.vcs.plugin.OldGoToNextChange_Action" file="OldGoToNextChange_Action.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
+    <classNode dependClassName="com.intellij.openapi.actionSystem.PlatformDataKeys" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
-    <classNode dependClassName="com.intellij.openapi.util.io.StreamUtil" />
-    <classNode dependClassName="java.io.IOException" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="javax.swing.Icon" />
-    <classNode dependClassName="javax.swing.ImageIcon" />
+    <classNode dependClassName="jetbrains.mps.ide.editor.MPSEditorDataKeys" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorContext" />
+    <classNode dependClassName="jetbrains.mps.util.IconUtil" />
     <classNode dependClassName="jetbrains.mps.vcs.changesmanager.deprecated.OldEditorChangesHighlighter" />
-    <classNode dependClassName="jetbrains.mps.workbench.MPSDataKeys" />
     <classNode dependClassName="org.apache.commons.logging.Log" />
     <classNode dependClassName="org.apache.commons.logging.LogFactory" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
-    <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.actions.GeneratedAction" />
+    <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
   <dependency className="jetbrains.mps.vcs.plugin.OldGoToPreviousChange_Action" file="OldGoToPreviousChange_Action.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
+    <classNode dependClassName="com.intellij.openapi.actionSystem.PlatformDataKeys" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
-    <classNode dependClassName="com.intellij.openapi.util.io.StreamUtil" />
-    <classNode dependClassName="java.io.IOException" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="javax.swing.Icon" />
-    <classNode dependClassName="javax.swing.ImageIcon" />
+    <classNode dependClassName="jetbrains.mps.ide.editor.MPSEditorDataKeys" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorContext" />
+    <classNode dependClassName="jetbrains.mps.util.IconUtil" />
     <classNode dependClassName="jetbrains.mps.vcs.changesmanager.deprecated.OldEditorChangesHighlighter" />
-    <classNode dependClassName="jetbrains.mps.workbench.MPSDataKeys" />
     <classNode dependClassName="org.apache.commons.logging.Log" />
     <classNode dependClassName="org.apache.commons.logging.LogFactory" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
-    <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.actions.GeneratedAction" />
+    <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
   <dependency className="jetbrains.mps.vcs.plugin.OldRollbackChanges_Action" file="OldRollbackChanges_Action.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
+    <classNode dependClassName="com.intellij.openapi.actionSystem.PlatformDataKeys" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
-    <classNode dependClassName="com.intellij.openapi.util.io.StreamUtil" />
-    <classNode dependClassName="java.io.IOException" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="javax.swing.Icon" />
-    <classNode dependClassName="javax.swing.ImageIcon" />
+    <classNode dependClassName="jetbrains.mps.ide.editor.MPSEditorDataKeys" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorContext" />
+    <classNode dependClassName="jetbrains.mps.util.IconUtil" />
     <classNode dependClassName="jetbrains.mps.vcs.changesmanager.deprecated.OldEditorChangesHighlighter" />
-    <classNode dependClassName="jetbrains.mps.workbench.MPSDataKeys" />
     <classNode dependClassName="org.apache.commons.logging.Log" />
     <classNode dependClassName="org.apache.commons.logging.LogFactory" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
-    <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.actions.GeneratedAction" />
+    <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
   <dependency className="jetbrains.mps.vcs.plugin.ReRunMergeFromBackup_Action" file="ReRunMergeFromBackup_Action.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
+    <classNode dependClassName="com.intellij.openapi.actionSystem.PlatformDataKeys" />
     <classNode dependClassName="com.intellij.openapi.diff.DiffManager" />
     <classNode dependClassName="com.intellij.openapi.diff.DiffRequestFactory" />
     <classNode dependClassName="com.intellij.openapi.diff.MergeRequest" />
@@ -282,6 +303,7 @@
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="javax.swing.Icon" />
     <classNode dependClassName="jetbrains.mps.generator.ModelDigestUtil" />
+    <classNode dependClassName="jetbrains.mps.ide.actions.MPSCommonDataKeys" />
     <classNode dependClassName="jetbrains.mps.ide.vfs.VirtualFileUtils" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
@@ -291,14 +313,14 @@
     <classNode dependClassName="jetbrains.mps.vcs.MergeBackupUtil" />
     <classNode dependClassName="jetbrains.mps.vcs.MergeVersion" />
     <classNode dependClassName="jetbrains.mps.vfs.IFile" />
-    <classNode dependClassName="jetbrains.mps.workbench.MPSDataKeys" />
     <classNode dependClassName="org.apache.commons.logging.Log" />
     <classNode dependClassName="org.apache.commons.logging.LogFactory" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
-    <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.actions.GeneratedAction" />
+    <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
   <dependency className="jetbrains.mps.vcs.plugin.ReportModelMergeProblem_Action" file="ReportModelMergeProblem_Action.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
+    <classNode dependClassName="com.intellij.openapi.actionSystem.PlatformDataKeys" />
     <classNode dependClassName="com.intellij.openapi.application.PathManager" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="com.intellij.openapi.ui.Messages" />
@@ -316,6 +338,7 @@
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="javax.swing.Icon" />
+    <classNode dependClassName="jetbrains.mps.ide.actions.MPSCommonDataKeys" />
     <classNode dependClassName="jetbrains.mps.ide.blame.dialog.BlameDialog" />
     <classNode dependClassName="jetbrains.mps.ide.blame.dialog.BlameDialogComponent" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
@@ -325,60 +348,56 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="jetbrains.mps.vcs.MergeBackupUtil" />
-    <classNode dependClassName="jetbrains.mps.workbench.MPSDataKeys" />
     <classNode dependClassName="jetbrains.mps.workbench.WorkbenchPathManager" />
     <classNode dependClassName="org.apache.commons.lang.StringUtils" />
     <classNode dependClassName="org.apache.commons.logging.Log" />
     <classNode dependClassName="org.apache.commons.logging.LogFactory" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
-    <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.actions.GeneratedAction" />
+    <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
   <dependency className="jetbrains.mps.vcs.plugin.RollbackChanges_Action" file="RollbackChanges_Action.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
-    <classNode dependClassName="com.intellij.openapi.util.io.StreamUtil" />
-    <classNode dependClassName="java.io.IOException" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="javax.swing.Icon" />
-    <classNode dependClassName="javax.swing.ImageIcon" />
+    <classNode dependClassName="jetbrains.mps.ide.editor.MPSEditorDataKeys" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorContext" />
+    <classNode dependClassName="jetbrains.mps.util.IconUtil" />
     <classNode dependClassName="jetbrains.mps.vcs.changesmanager.editor.ChangesStripActionsHelper" />
-    <classNode dependClassName="jetbrains.mps.workbench.MPSDataKeys" />
     <classNode dependClassName="org.apache.commons.logging.Log" />
     <classNode dependClassName="org.apache.commons.logging.LogFactory" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
-    <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.actions.GeneratedAction" />
+    <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
   <dependency className="jetbrains.mps.vcs.plugin.ShowDiffFromChanges_Action" file="ShowDiffFromChanges_Action.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
+    <classNode dependClassName="com.intellij.openapi.actionSystem.PlatformDataKeys" />
     <classNode dependClassName="com.intellij.openapi.application.ApplicationManager" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
-    <classNode dependClassName="com.intellij.openapi.util.io.StreamUtil" />
-    <classNode dependClassName="java.io.IOException" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="javax.swing.Icon" />
-    <classNode dependClassName="javax.swing.ImageIcon" />
+    <classNode dependClassName="jetbrains.mps.ide.editor.MPSEditorDataKeys" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.smodel.descriptor.EditableSModelDescriptor" />
+    <classNode dependClassName="jetbrains.mps.util.IconUtil" />
     <classNode dependClassName="jetbrains.mps.vcs.changesmanager.editor.ChangesStripActionsHelper" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.ui.common.Bounds" />
     <classNode dependClassName="jetbrains.mps.vcs.plugin.VcsActionsUtil" />
-    <classNode dependClassName="jetbrains.mps.workbench.MPSDataKeys" />
     <classNode dependClassName="org.apache.commons.logging.Log" />
     <classNode dependClassName="org.apache.commons.logging.LogFactory" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
-    <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.actions.GeneratedAction" />
+    <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
   <dependency className="jetbrains.mps.vcs.plugin.ShowDiffWithCurrRev_ActionGroup" file="ShowDiffWithCurrRev_ActionGroup.java">
     <classNode dependClassName="java.lang.String" />
@@ -388,6 +407,7 @@
   </dependency>
   <dependency className="jetbrains.mps.vcs.plugin.ShowDifferencesWithModelOnDisk_Action" file="ShowDifferencesWithModelOnDisk_Action.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
+    <classNode dependClassName="com.intellij.openapi.actionSystem.PlatformDataKeys" />
     <classNode dependClassName="com.intellij.openapi.application.ApplicationManager" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="java.lang.Object" />
@@ -396,6 +416,7 @@
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="javax.swing.Icon" />
+    <classNode dependClassName="jetbrains.mps.ide.actions.MPSCommonDataKeys" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelDescriptor" />
@@ -403,38 +424,36 @@
     <classNode dependClassName="jetbrains.mps.smodel.persistence.def.ModelPersistence" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.ui.ModelDifferenceDialog" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.ui.common.SimpleDiffRequest" />
-    <classNode dependClassName="jetbrains.mps.workbench.MPSDataKeys" />
     <classNode dependClassName="org.apache.commons.logging.Log" />
     <classNode dependClassName="org.apache.commons.logging.LogFactory" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
-    <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.actions.GeneratedAction" />
+    <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
   <dependency className="jetbrains.mps.vcs.plugin.ShowDiffererenceWithCurrentRevision_Action" file="ShowDiffererenceWithCurrentRevision_Action.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
+    <classNode dependClassName="com.intellij.openapi.actionSystem.PlatformDataKeys" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
-    <classNode dependClassName="com.intellij.openapi.util.io.StreamUtil" />
     <classNode dependClassName="com.intellij.openapi.vcs.FileStatus" />
     <classNode dependClassName="com.intellij.openapi.vcs.ProjectLevelVcsManager" />
     <classNode dependClassName="com.intellij.openapi.vcs.impl.VcsFileStatusProvider" />
     <classNode dependClassName="com.intellij.openapi.vfs.VirtualFile" />
-    <classNode dependClassName="java.io.IOException" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="javax.swing.Icon" />
-    <classNode dependClassName="javax.swing.ImageIcon" />
+    <classNode dependClassName="jetbrains.mps.ide.actions.MPSCommonDataKeys" />
     <classNode dependClassName="jetbrains.mps.ide.vfs.VirtualFileUtils" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.smodel.descriptor.EditableSModelDescriptor" />
+    <classNode dependClassName="jetbrains.mps.util.IconUtil" />
     <classNode dependClassName="jetbrains.mps.vcs.plugin.VcsActionsUtil" />
-    <classNode dependClassName="jetbrains.mps.workbench.MPSDataKeys" />
     <classNode dependClassName="org.apache.commons.logging.Log" />
     <classNode dependClassName="org.apache.commons.logging.LogFactory" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
-    <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.actions.GeneratedAction" />
+    <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
   <dependency className="jetbrains.mps.vcs.plugin.VCSModelActions_ActionGroup" file="VCSModelActions_ActionGroup.java">
     <classNode dependClassName="java.lang.String" />
@@ -503,6 +522,7 @@
     <classNode dependClassName="jetbrains.mps.vcs.plugin.AnnotateGroup_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.vcs.plugin.Annotate_Action" />
     <classNode dependClassName="jetbrains.mps.vcs.plugin.ChangesStrip_ActionGroup" />
+    <classNode dependClassName="jetbrains.mps.vcs.plugin.CompareTransientModels_Action" />
     <classNode dependClassName="jetbrains.mps.vcs.plugin.CopyOldNodes_Action" />
     <classNode dependClassName="jetbrains.mps.vcs.plugin.GoToNextChange_Action" />
     <classNode dependClassName="jetbrains.mps.vcs.plugin.GoToPreviousChange_Action" />
@@ -527,19 +547,16 @@
     <classNode extendsClassName="jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin" />
   </dependency>
   <dependency className="jetbrains.mps.vcs.plugin.Vcs_PluginInitializer" file="Vcs_PluginInitializer.java">
+    <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.plugins.PluginContributor" />
-    <classNode dependClassName="jetbrains.mps.plugins.PluginUtil" />
+    <classNode dependClassName="java.lang.SuppressWarnings" />
+    <classNode dependClassName="jetbrains.mps.plugins.AbstractPluginFactory" />
+    <classNode dependClassName="jetbrains.mps.plugins.PluginFactoriesRegistry" />
     <classNode dependClassName="jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin" />
-    <classNode dependClassName="jetbrains.mps.plugins.projectplugins.BaseProjectPlugin" />
     <classNode dependClassName="jetbrains.mps.vcs.plugin.Vcs_ApplicationPlugin" />
-    <classNode dependClassName="jetbrains.mps.vcs.plugin.Vcs_ProjectPlugin" />
     <classNode dependClassName="org.jetbrains.annotations.NonNls" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="com.intellij.openapi.components.ApplicationComponent" />
-  </dependency>
-  <dependency className="jetbrains.mps.vcs.plugin.Vcs_ProjectPlugin" file="Vcs_ProjectPlugin.java">
-    <classNode extendsClassName="jetbrains.mps.plugins.projectplugins.BaseProjectPlugin" />
   </dependency>
   <dependency className="jetbrains.mps.vcs.plugin.plugin" file="plugin.xml" />
 </dependenciesRoot>

@@ -71,7 +71,6 @@
     <classNode dependClassName="com.intellij.util.messages.MessageBusConnection" />
     <classNode dependClassName="com.intellij.util.ui.Timer" />
     <classNode dependClassName="java.io.File" />
-    <classNode dependClassName="java.io.IOException" />
     <classNode dependClassName="java.lang.InterruptedException" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Runnable" />

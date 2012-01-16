@@ -20,10 +20,6 @@
       </implementation-class>
     </component>
     <component>
-      <interface-class>com.intellij.openapi.project.ProjectManager</interface-class>
-      <implementation-class>com.intellij.openapi.project.impl.ProjectManagerImpl</implementation-class>
-    </component>
-    <component>
       <interface-class>com.intellij.psi.statistics.StatisticsManager</interface-class>
       <implementation-class>com.intellij.psi.statistics.impl.StatisticsManagerImpl</implementation-class>
     </component>
@@ -37,11 +33,22 @@
     <component>
       <implementation-class>jetbrains.mps.ide.generator.TransientSwapOwnerComponent</implementation-class>
     </component>
+    <component>
+      <interface-class>com.intellij.psi.stubs.SerializationManager</interface-class>
+      <implementation-class>com.intellij.psi.stubs.SerializationManagerImpl</implementation-class>
+    </component>
   </application-components>
 
   <project-components>
     <component>
       <implementation-class>com.intellij.openapi.components.impl.ServiceManagerImpl</implementation-class>
+      <loadForDefaultProject/>
+    </component>
+    <component>
+      <interface-class>com.intellij.problems.WolfTheProblemSolver</interface-class>
+      <implementation-class>com.intellij.codeInsight.problems.WolfTheProblemSolverImpl</implementation-class>
+      <headless-implementation-class>com.intellij.codeInsight.problems.MockWolfTheProblemSolver
+      </headless-implementation-class>
     </component>
     <component>
       <implementation-class>jetbrains.mps.project.MPSProjectVersion</implementation-class>
@@ -64,7 +71,6 @@
   <xi:include href="/componentSets/Execution.xml" xpointer="xpointer(/components/*)"/>
   <xi:include href="/META-INF/MPSCore.xml" xpointer="xpointer(/components/*)"/>
   <xi:include href="/META-INF/MPSEditor.xml" xpointer="xpointer(/components/*)"/>
-  <xi:include href="/META-INF/MPSDebuggerComponents.xml" xpointer="xpointer(/components/*)"/>
 
   <application-components>
     <component>
@@ -129,6 +135,7 @@
     </component>
 
     <component>
+      <interface-class>jetbrains.mps.plugins.applicationplugins.IRegistryManager</interface-class>
       <implementation-class>jetbrains.mps.plugins.applicationplugins.ApplicationPluginManager</implementation-class>
     </component>
 
@@ -175,6 +182,10 @@
     <component>
       <implementation-class>jetbrains.mps.workbench.structureview.NodeStructureViewProviderImpl</implementation-class>
     </component>
+
+    <component>
+      <implementation-class>jetbrains.mps.ideaPlugins.PluginBundleInstaller</implementation-class>
+    </component>
   </application-components>
 
   <project-components>
@@ -218,11 +229,13 @@
     <component>
       <interface-class>com.intellij.psi.PsiManager</interface-class>
       <implementation-class>jetbrains.mps.workbench.psi.NullPsiManager</implementation-class>
+      <loadForDefaultProject/>
     </component>
 
     <component>
       <interface-class>com.intellij.psi.PsiDocumentManager</interface-class>
       <implementation-class>jetbrains.mps.workbench.psi.NullPsiDocumentManager</implementation-class>
+      <loadForDefaultProject/>
     </component>
 
     <component>
@@ -315,10 +328,6 @@
     </component>
 
     <component>
-      <implementation-class>jetbrains.mps.workbench.editors.IconUpdater</implementation-class>
-    </component>
-
-    <component>
       <implementation-class>jetbrains.mps.ide.script.plugin.migrationtool.MigrationScriptsTool
       </implementation-class>
     </component>
@@ -339,7 +348,7 @@
 
     <component>
       <interface-class>com.intellij.openapi.module.ModuleManager</interface-class>
-      <implementation-class>com.intellij.openapi.module.impl.ModuleManagerImpl</implementation-class>
+      <implementation-class>jetbrains.mps.EmptyModuleManager</implementation-class>
     </component>
 
     <component>

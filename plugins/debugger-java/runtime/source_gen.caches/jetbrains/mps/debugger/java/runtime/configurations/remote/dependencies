@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dependenciesRoot>
+  <dependency className="jetbrains.mps.debugger.java.runtime.configurations.remote.RemoteProcessHandler" file="RemoteProcessHandler.java">
+    <classNode dependClassName="com.intellij.openapi.project.Project" />
+    <classNode dependClassName="java.io.OutputStream" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="jetbrains.mps.debug.api.AbstractDebugSession" />
+    <classNode dependClassName="jetbrains.mps.debug.api.DebugSessionManagerComponent" />
+    <classNode dependClassName="jetbrains.mps.debugger.java.runtime.DebugProcessAdapter" />
+    <classNode dependClassName="jetbrains.mps.debugger.java.runtime.DebugSession" />
+    <classNode dependClassName="jetbrains.mps.debugger.java.runtime.DebugVMEventsProcessor" />
+    <classNode dependClassName="jetbrains.mps.debugger.java.runtime.VMEventsProcessorManagerComponent" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode extendsClassName="com.intellij.execution.process.ProcessHandler" />
+  </dependency>
+</dependenciesRoot>
+

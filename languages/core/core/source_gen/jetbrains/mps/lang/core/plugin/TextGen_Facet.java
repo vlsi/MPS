@@ -19,6 +19,7 @@ import jetbrains.mps.make.resources.IPropertiesAccessor;
 import jetbrains.mps.smodel.resources.GResource;
 import jetbrains.mps.make.script.IFeedback;
 import jetbrains.mps.make.delta.IDelta;
+import jetbrains.mps.lang.core.pluginSolution.plugin.RetainedUtil;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.generator.GenerationFacade;

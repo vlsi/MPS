@@ -307,28 +307,30 @@ public class MergeRootsDialog extends BaseDialog {
 
   @Override
   public void dispose() {
-    if (myDisposed) {
-      return;
-    }
-    if (myStateToRestore == null) {
-      myModelsDialog.rebuildLater();
-    } else {
-      resetState();
-    }
-    myModelsDialog.rootsDialogClosed();
-    myMineEditor.dispose();
-    myMineEditor = null;
-    myResultEditor.dispose();
-    myResultEditor = null;
-    myRepositoryEditor.dispose();
-    myRepositoryEditor = null;
-    ListSequence.fromList(myEdtiorSeparators).visitAll(new IVisitor<DiffEditorSeparator>() {
-      public void visit(DiffEditorSeparator s) {
-        s.dispose();
+    synchronized (this) {
+      if (myDisposed) {
+        return;
       }
-    });
-    ListSequence.fromList(myEdtiorSeparators).clear();
-    myDisposed = true;
+      if (myStateToRestore == null) {
+        myModelsDialog.rebuildLater();
+      } else {
+        resetState();
+      }
+      myModelsDialog.rootsDialogClosed();
+      myMineEditor.dispose();
+      myMineEditor = null;
+      myResultEditor.dispose();
+      myResultEditor = null;
+      myRepositoryEditor.dispose();
+      myRepositoryEditor = null;
+      ListSequence.fromList(myEdtiorSeparators).visitAll(new IVisitor<DiffEditorSeparator>() {
+        public void visit(DiffEditorSeparator s) {
+          s.dispose();
+        }
+      });
+      ListSequence.fromList(myEdtiorSeparators).clear();
+      myDisposed = true;
+    }
     super.dispose();
   }
 

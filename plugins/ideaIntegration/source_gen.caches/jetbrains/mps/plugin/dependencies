@@ -121,29 +121,38 @@
     <classNode extendsClassName="jetbrains.mps.plugin.IMPSIDEHandler" />
   </dependency>
   <dependency className="jetbrains.mps.plugin.PluginStateMonitor" file="PluginStateMonitor.java">
-    <classNode dependClassName="com.intellij.openapi.application.ApplicationManager" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="com.intellij.openapi.wm.IdeFrame" />
     <classNode dependClassName="com.intellij.openapi.wm.StatusBar" />
     <classNode dependClassName="com.intellij.openapi.wm.WindowManager" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.plugin.PluginStateWidget" />
+    <classNode dependClassName="org.jetbrains.annotations.NonNls" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode extendsClassName="com.intellij.openapi.components.ProjectComponent" />
+  </dependency>
+  <dependency className="jetbrains.mps.plugin.PluginStateWidget" file="PluginStateWidget.java">
+    <classNode dependClassName="com.intellij.openapi.application.ApplicationManager" />
+    <classNode dependClassName="com.intellij.openapi.project.Project" />
+    <classNode dependClassName="com.intellij.openapi.wm.StatusBar" />
+    <classNode dependClassName="com.intellij.util.Consumer" />
     <classNode dependClassName="java.awt.event.ActionEvent" />
     <classNode dependClassName="java.awt.event.ActionListener" />
-    <classNode dependClassName="java.awt.event.MouseAdapter" />
     <classNode dependClassName="java.awt.event.MouseEvent" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="javax.swing.Icon" />
-    <classNode dependClassName="javax.swing.JLabel" />
     <classNode dependClassName="javax.swing.SwingUtilities" />
     <classNode dependClassName="jetbrains.mps.ide.ThreadUtils" />
     <classNode dependClassName="jetbrains.mps.logging.Logger" />
     <classNode dependClassName="jetbrains.mps.plugin.MPSPlugin" />
     <classNode dependClassName="jetbrains.mps.plugin.icons.Icons" />
-    <classNode dependClassName="org.jetbrains.annotations.NonNls" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
-    <classNode extendsClassName="com.intellij.openapi.components.ProjectComponent" />
+    <classNode extendsClassName="com.intellij.openapi.wm.IconPresentation" />
+    <classNode extendsClassName="com.intellij.openapi.wm.StatusBarWidget" />
     <classNode extendsClassName="javax.swing.Timer" />
   </dependency>
 </dependenciesRoot>

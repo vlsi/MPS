@@ -23,8 +23,8 @@
   </generators>
   <sourcePath />
   <dependencies>
-    <dependency reexport="false">18bc6592-03a6-4e29-a83a-7ff23bde13ba(jetbrains.mps.lang.editor)</dependency>
     <dependency reexport="false">ab0ae915-e3b5-4f35-b55a-c655d649a03c(jetbrains.mps.transformation.test.inputLang)</dependency>
+    <dependency reexport="false">2d3c70e9-aab2-4870-8d8d-6036800e4103(jetbrains.mps.kernel)</dependency>
   </dependencies>
   <usedLanguages>
     <usedLanguage>157a9668-bf58-417b-893e-53d86388dc56(jetbrains.mps.transformation.test.outputLang)</usedLanguage>

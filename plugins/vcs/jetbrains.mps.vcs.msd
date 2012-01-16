@@ -4,10 +4,13 @@
     <modelRoot path="${mps_home}/plugins/git4idea/lib/git4idea.jar">
       <manager moduleId="f3061a53-9226-4cc5-a443-f952ceaf5816" className="jetbrains.mps.baseLanguage.stubs.JavaStubs" />
     </modelRoot>
-    <modelRoot path="${mps_home}/plugins/svn4idea/lib/svn4idea.jar">
+    <modelRoot path="${mps_home}/plugins/svn4ideaOld/lib/sequence-library.jar">
       <manager moduleId="f3061a53-9226-4cc5-a443-f952ceaf5816" className="jetbrains.mps.baseLanguage.stubs.JavaStubs" />
     </modelRoot>
-    <modelRoot path="${mps_home}/plugins/svn4idea/lib/svnkit.jar">
+    <modelRoot path="${mps_home}/plugins/svn4ideaOld/lib/svn4ideaOld.jar">
+      <manager moduleId="f3061a53-9226-4cc5-a443-f952ceaf5816" className="jetbrains.mps.baseLanguage.stubs.JavaStubs" />
+    </modelRoot>
+    <modelRoot path="${mps_home}/plugins/svn4ideaOld/lib/svnkit.jar">
       <manager moduleId="f3061a53-9226-4cc5-a443-f952ceaf5816" className="jetbrains.mps.baseLanguage.stubs.JavaStubs" />
     </modelRoot>
     <modelRoot path="${solution_descriptor}/models" />
@@ -18,6 +21,7 @@
     <dependency reexport="false">6ed54515-acc8-4d1e-a16c-9fd6cfe951ea(MPS.Core)</dependency>
     <dependency reexport="false">1ed103c3-3aa6-49b7-9c21-6765ee11f224(MPS.Editor)</dependency>
     <dependency reexport="false">86441d7a-e194-42da-81a5-2161ec62a379(MPS.Workbench)</dependency>
+    <dependency reexport="false">985c8c6a-64b4-486d-a91e-7d4112742556(jetbrains.mps.baseLanguage#1129914002933)</dependency>
     <dependency reexport="false">83f155ff-422c-4b5a-a2f2-b459302dd215(jetbrains.mps.baseLanguage.unitTest.libs)</dependency>
     <dependency reexport="false">019b622b-0aef-4dd3-86d0-4eef01f3f6bb(jetbrains.mps.ide)</dependency>
     <dependency reexport="false">8f6725be-608d-433b-98fd-844f816eb05f(jetbrains.mps.ide.make)</dependency>
@@ -28,7 +32,6 @@
     <dependency reexport="false">a1250a4d-c090-42c3-ad7c-d298a3357dd4(jetbrains.mps.make.runtime)</dependency>
     <dependency reexport="false">b0d98700-54f0-4c39-a8e0-bb27733b8b38(jetbrains.mps.vcs)</dependency>
     <dependency reexport="false">1c0088d4-c911-46d4-ace1-4500911173b5(jetbrains.mps.workbench.make)</dependency>
-    <dependency reexport="false">985c8c6a-64b4-486d-a91e-7d4112742556(jetbrains.mps.baseLanguage#1129914002933)</dependency>
   </dependencies>
   <usedLanguages>
     <usedLanguage>f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)</usedLanguage>

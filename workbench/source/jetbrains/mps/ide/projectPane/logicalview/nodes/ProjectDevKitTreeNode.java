@@ -39,10 +39,6 @@ public class ProjectDevKitTreeNode extends ProjectModuleTreeNode {
     setIcon(Icons.DEVKIT_ICON);
   }
 
-  public Object getUserObject() {
-    return myDevKit;
-  }
-
   public IModule getModule() {
     return myDevKit;
   }

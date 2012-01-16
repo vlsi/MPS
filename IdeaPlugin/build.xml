@@ -23,6 +23,7 @@
     <property name="plugins.sandbox.dir" value="${build.home}/plugins-sandbox"/>
     <property file="build.properties"/>
     <property name="ideaPath" value="${home.idea_ce}"/>
+    <property name="javac.debug" value="true"/>
 
     <path id="javac2.classpath">
         <fileset dir="${ideaPath}/lib">
@@ -70,7 +71,7 @@
         <delete dir="${build.home}"/>
     </target>
 
-    <target name="compile" depends="clean">
+    <target name="compile">
         <mkdir dir="${dist.dir}"/>
         <mkdir dir="${dist.dir}/lib"/>
         <mkdir dir="${dist.dir}/languages"/>
@@ -84,12 +85,13 @@
         <mkdir dir="${build_dir}/mpscore_jar"/>
         <javac classpathref="mps.core.libraries" destdir="${build_dir}/mpscore_jar" fork="true"
                memorymaximumsize="1024m"
-               includeantruntime="false">
+               includeantruntime="false"
+               debug="${javac.debug}" debuglevel="lines,vars,source">
             <compilerarg value="-Xlint:none"/>
             <src>
-                <path path="${base_dir}/core/baseLanguage/collections/runtime/source_gen"/>
-                <path path="${base_dir}/core/baseLanguage/closures/runtime/source_gen"/>
-                <path path="${base_dir}/core/baseLanguage/tuples/runtime/source_gen"/>
+                <path path="${base_dir}/languages/baseLanguage/collections/runtime/source_gen"/>
+                <path path="${base_dir}/languages/baseLanguage/closures/runtime/source_gen"/>
+                <path path="${base_dir}/languages/baseLanguage/tuples/runtime/source_gen"/>
 
                 <!-- runtime -->
                 <path path="${base_dir}/core/runtime/source"/>
@@ -123,19 +125,64 @@
                 <path path="${base_dir}/core/findUsages-runtime/source"/>
                 <path path="${base_dir}/core/findUsages-runtime/source_gen"/>
 
+                <!-- refactoring-runtime -->
+                <path path="${base_dir}/core/refactoring-runtime/source_gen"/>
+
                 <!-- analyzers -->
                 <path path="${base_dir}/core/analyzers/solutions/jetbrains.mps.analyzers.runtime/source_gen"/>
 
                 <!-- baseLanguage search -->
-                <path path="${base_dir}/core/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/source_gen"/>
+                <path path="${base_dir}/languages/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/source_gen"/>
+                <path path="${base_dir}/languages/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.util/source_gen"/>
             </src>
         </javac>
         <jar destfile="${dist.dir}/lib/mps-core.jar">
-            <fileset dir="${build_dir}/mpscore_jar"/>
+            <fileset dir="${build_dir}/mpscore_jar" includes="**/*">
+                <exclude name="jetbrains/mps/internal/collections/**"/>
+                <exclude name="jetbrains/mps/baseLanguage/closures/runtime/**"/>
+                <exclude name="jetbrains/mps/baseLanguage/closures/runtime.gwt.xml"/>
+                <exclude name="jetbrains/mps/baseLanguage/tuples/runtime/**"/>
+                <exclude name="jetbrains/mps/baseLanguage/tuples/runtime.gwt.xml"/>
+            </fileset>
             <manifest>
                 <attribute name="Built-By" value="${user.name}"/>
                 <attribute name="Implementation-Vendor" value="JetBrains s.r.o."/>
                 <attribute name="Implementation-Title" value="MPS Core modeling framework"/>
+                <attribute name="Implementation-Version" value="1.0"/>
+            </manifest>
+        </jar>
+        <jar destfile="${dist.dir}/lib/mps-collections.jar">
+            <fileset dir="${build_dir}/mpscore_jar" includes="">
+                <include name="jetbrains/mps/internal/collections/**"/>
+            </fileset>
+            <manifest>
+                <attribute name="Built-By" value="${user.name}"/>
+                <attribute name="Implementation-Vendor" value="JetBrains s.r.o."/>
+                <attribute name="Implementation-Title" value="MPS Collections language runtime"/>
+                <attribute name="Implementation-Version" value="1.0"/>
+            </manifest>
+        </jar>
+        <jar destfile="${dist.dir}/lib/mps-closures.jar">
+            <fileset dir="${build_dir}/mpscore_jar" includes="">
+                <include name="jetbrains/mps/baseLanguage/closures/runtime/**"/>
+                <include name="jetbrains/mps/baseLanguage/closures/runtime.gwt.xml"/>
+            </fileset>
+            <manifest>
+                <attribute name="Built-By" value="${user.name}"/>
+                <attribute name="Implementation-Vendor" value="JetBrains s.r.o."/>
+                <attribute name="Implementation-Title" value="MPS Closure language runtime"/>
+                <attribute name="Implementation-Version" value="1.0"/>
+            </manifest>
+        </jar>
+        <jar destfile="${dist.dir}/lib/mps-tuples.jar">
+            <fileset dir="${build_dir}/mpscore_jar" includes="">
+                <include name="jetbrains/mps/baseLanguage/tuples/runtime/**"/>
+                <include name="jetbrains/mps/baseLanguage/tuples/runtime.gwt.xml"/>
+            </fileset>
+            <manifest>
+                <attribute name="Built-By" value="${user.name}"/>
+                <attribute name="Implementation-Vendor" value="JetBrains s.r.o."/>
+                <attribute name="Implementation-Title" value="MPS Tuples language runtime"/>
                 <attribute name="Implementation-Version" value="1.0"/>
             </manifest>
         </jar>
@@ -150,7 +197,8 @@
         <mkdir dir="${build_dir}/mpsworkbench_jar"/>
         <javac destdir="${build_dir}/mpsworkbench_jar" fork="true"
                memorymaximumsize="1024m"
-               includeantruntime="false">
+               includeantruntime="false"
+               debug="${javac.debug}" debuglevel="lines,vars,source">
             <compilerarg value="-Xlint:none"/>
             <src>
                 <!-- idea-workbench -->
@@ -179,17 +227,20 @@
         <mkdir dir="${build_dir}/mpseditor_jar"/>
         <javac destdir="${build_dir}/mpseditor_jar" fork="true"
                memorymaximumsize="1024m"
-               includeantruntime="false">
+               includeantruntime="false"
+               debug="${javac.debug}" debuglevel="lines,vars,source">
             <compilerarg value="-Xlint:none"/>
             <src>
                 <!-- editor-api -->
                 <path path="${base_dir}/editor/editor-api/source"/>
-                <path path="${base_dir}/core/editor-runtime/source"/>
-                <path path="${base_dir}/core/editor-runtime/source_gen"/>
-                <path path="${base_dir}/core/actions-runtime/source"/>
-                <path path="${base_dir}/core/actions-runtime/source_gen"/>
-                <path path="${base_dir}/core/intentions-runtime/source"/>
+                <path path="${base_dir}/editor/editor-runtime/source"/>
+                <path path="${base_dir}/editor/editor-runtime/source_gen"/>
+                <path path="${base_dir}/editor/actions-runtime/source"/>
+                <path path="${base_dir}/editor/actions-runtime/source_gen"/>
+                <path path="${base_dir}/editor/intentions-runtime/source"/>
+                <path path="${base_dir}/editor/typesystemIntegration/source"/>
                 <path path="${base_dir}/workbench/mps-editor/source"/>
+                <path path="${base_dir}/workbench/mps-editor/source_gen"/>
             </src>
             <classpath>
                 <fileset dir="${dist.dir}/lib" includes="*.jar"/>
@@ -198,11 +249,11 @@
         </javac>
         <copy includeemptydirs="false" todir="${build_dir}/mpseditor_jar">
             <fileset dir="${base_dir}/editor/editor-api/source" includes="**/*.png"/>
-            <fileset dir="${base_dir}/core/editor-runtime/source" includes="**/*.png"/>
-            <fileset dir="${base_dir}/core/editor-runtime/source_gen" includes="**/*.png"/>
-            <fileset dir="${base_dir}/core/actions-runtime/source" includes="**/*.png"/>
-            <fileset dir="${base_dir}/core/actions-runtime/source_gen" includes="**/*.png"/>
-            <fileset dir="${base_dir}/core/intentions-runtime/source" includes="**/*.png"/>
+            <fileset dir="${base_dir}/editor/editor-runtime/source" includes="**/*.png"/>
+            <fileset dir="${base_dir}/editor/editor-runtime/source_gen" includes="**/*.png"/>
+            <fileset dir="${base_dir}/editor/actions-runtime/source" includes="**/*.png"/>
+            <fileset dir="${base_dir}/editor/actions-runtime/source_gen" includes="**/*.png"/>
+            <fileset dir="${base_dir}/editor/intentions-runtime/source" includes="**/*.png"/>
             <fileset dir="${base_dir}/workbench/mps-editor/source" includes="**/*.png"/>
         </copy>
         <jar destfile="${dist.dir}/lib/mps-editor.jar">
@@ -219,7 +270,8 @@
         <mkdir dir="${build_dir}/mpsplugin_jar"/>
         <javac2 destdir="${build_dir}/mpsplugin_jar" fork="true"
                 memorymaximumsize="1024m"
-                includeantruntime="false">
+                includeantruntime="false"
+                debug="${javac.debug}" debuglevel="lines,vars,source">
             <compilerarg value="-Xlint:none"/>
             <src>
                 <!-- plugin -->
@@ -235,12 +287,14 @@
             <fileset dir="${base_dir}/IdeaPlugin/mps-core/resources" includes="**/*.png, **/*.properties"/>
             <fileset dir="${base_dir}/workbench/mps-platform/source" includes="META-INF/*"/>
             <fileset dir="${base_dir}/workbench/mps-editor/source" includes="META-INF/*"/>
+            <fileset dir="${base_dir}/workbench/mps-editor/source_gen" includes="**/*.png, **/*.xml"/>
         </copy>
         <copy file="${base_dir}/IdeaPlugin/mps-core/META-INF/plugin.xml"
               tofile="${build_dir}/mpsplugin_jar/META-INF/plugin.xml">
             <filterchain>
                 <tokenfilter>
                     <replaceregex pattern="../classes/META-INF/" replace="" flags="gi"/>
+                    <replaceregex pattern="../classes/jetbrains/" replace="../jetbrains/" flags="gi"/>
                 </tokenfilter>
             </filterchain>
         </copy>
@@ -259,17 +313,24 @@
         <mkdir dir="${build_dir}/mpsplugintests_jar"/>
         <javac2 destdir="${build_dir}/mpsplugintests_jar" fork="true"
                 memorymaximumsize="1024m"
-                includeantruntime="false">
+                includeantruntime="false"
+                debug="${javac.debug}" debuglevel="lines,vars,source">
             <compilerarg value="-Xlint:none"/>
             <src>
                 <!-- plugin tests -->
                 <path path="${base_dir}/IdeaPlugin/mps-core/testSrc"/>
+                <path path="${base_dir}/languages/languageDesign/editor/tests/jetbrains.mps.lang.editor.tests/testSrc"/>
+                <path path="${base_dir}/languages/languageDesign/editor/tests/jetbrains.mps.lang.editor.tests/source_gen"/>
             </src>
             <classpath>
                 <fileset dir="${dist.dir}/lib" includes="*.jar"/>
+                <!-- TODO remove dependency on languages!!!!!! -->
+                <fileset dir="${dist.dir}/languages/languageDesign" includes="jetbrains.mps.lang.test.runtime.jar"/>
                 <fileset dir="${ideaPath}/lib" includes="*.jar"/>
             </classpath>
         </javac2>
+        <copy todir="${build_dir}/mpsplugintests_jar/jetbrains/mps/idea/core/tests"
+              file="${base_dir}/IdeaPlugin/tests/editorTests/models/test.mps"/>
         <jar destfile="${dist.dir}/lib/mps-plugin-tests.jar">
             <fileset dir="${build_dir}/mpsplugintests_jar"/>
             <manifest>
@@ -292,11 +353,12 @@
                dir="."
                haltonfailure="true"
                showoutput="true"
-               enableTestListenerEvents="true">
+               enableTestListenerEvents="false">
             <jvmarg value="-ea"/>
             <jvmarg value="-Xss1024k"/>
             <jvmarg value="-Xmx1024m"/>
             <jvmarg value="-Xbootclasspath/a:${ideaPath}/lib/boot.jar"/>
+            <formatter type="xml"/>
             <sysproperty key="idea.platform.prefix" value="Idea"/>
             <sysproperty key="idea.config.path" value="${plugins.sandbox.dir}/config"/>
             <sysproperty key="idea.system.path" value="${plugins.sandbox.dir}/system"/>
@@ -314,6 +376,9 @@
                 </fileset>
                 <fileset dir="${plugins.sandbox.dir}/plugins/mps-core/lib">
                     <include name="*.jar"/>
+                </fileset>
+                <fileset dir="${plugins.sandbox.dir}/plugins/mps-core/languages/languageDesign">
+                    <include name="jetbrains.mps.lang.test.runtime.jar"/>
                 </fileset>
                 <pathelement path="${java.class.path}"/>
             </classpath>

@@ -189,7 +189,26 @@ public class DefaultQueryExecutionContext implements QueryExecutionContext {
         new TemplateQueryContext(inputNode, query.getParent(), context, generator),
         query.getModel());
     } catch (NoSuchMethodException e) {
-      generator.getLogger().warning(query.getParent(), "cannot find nodes query '" + methodName + "' : evaluate to null");
+      generator.getLogger().warning(query.getParent(), "cannot find argument query '" + methodName + "' : evaluate to null");
+      return null;
+    } catch (Exception e) {
+      generator.getLogger().handleException(e);
+      generator.showErrorMessage(inputNode, query, "cannot evaluate query, exception was thrown");
+      return null;
+    }
+  }
+
+  @Override
+  public Object evaluateVariableQuery(SNode inputNode, SNode query, @Nullable TemplateContext context) {
+    String methodName = TemplateFunctionMethodName.varValue_Query(query);
+    try {
+      return QueryMethodGenerated.invoke(
+        methodName,
+        generator.getGeneratorSessionContext(),
+        new TemplateQueryContext(inputNode, query.getParent(), context, generator),
+        query.getModel());
+    } catch (NoSuchMethodException e) {
+      generator.getLogger().warning(query.getParent(), "cannot find variable value query '" + methodName + "' : evaluate to null");
       return null;
     } catch (Exception e) {
       generator.getLogger().handleException(e);

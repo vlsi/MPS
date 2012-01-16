@@ -49,7 +49,7 @@ import java.util.regex.Pattern;
 public class DiskMemoryConflictsTest {
   private static final File DESTINATION_PROJECT_DIR = new File(FileUtil.getTempDir(), "testConflicts");
   private static final File PROJECT_ARCHIVE = new File("testbench/modules/simpleProject.zip");
-  private static final String PROJECT_FILE = "simpleProject.mpr";
+  private static final String PROJECT_FILE = "simpleProject.ipr";
   private static final SModelReference MODEL_REFERENCE = SModelReference.fromString("r:21cf9f47-5464-40f2-9509-d94ba20bfe82(simpleModel)");
   private static final File MODEL_FILE = new File(DESTINATION_PROJECT_DIR, "solutions/simpleProject/simpleModel.mps");
   private Project myProject;

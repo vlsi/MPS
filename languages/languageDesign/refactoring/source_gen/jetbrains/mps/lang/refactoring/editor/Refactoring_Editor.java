@@ -469,7 +469,7 @@ public class Refactoring_Editor extends DefaultNodeEditor {
   }
 
   private static boolean renderingCondition_kt8f5i_a2a(SNode node, EditorContext editorContext, IScope scope) {
-    return (SLinkOperations.getTarget(node, "overrides", false) == null);
+    return (SLinkOperations.getTarget(node, "overrides", false) == null) && (SLinkOperations.getTarget(node, "keystroke", true) != null);
   }
 
   public static class _Inline_kt8f5i_a6a0 extends InlineCellProvider {

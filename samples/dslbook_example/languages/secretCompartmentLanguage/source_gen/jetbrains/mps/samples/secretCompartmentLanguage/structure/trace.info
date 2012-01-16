@@ -103,36 +103,70 @@
     <scopeInfo nodeId="1197149564476" fileName="StateMachine.java" startLine="135" startPosition="69" endLine="136" endPosition="64" />
     <scopeInfo nodeId="1197149564476" fileName="StateMachine.java" startLine="139" startPosition="67" endLine="140" endPosition="195" />
     <scopeInfo nodeId="1197149564476" fileName="StateMachine.java" startLine="143" startPosition="53" endLine="144" endPosition="47" />
-    <scopeInfo nodeId="1197149564476" fileName="StateMachine.java" startLine="26" startPosition="0" endLine="29" endPosition="3" />
+    <scopeInfo nodeId="1197149564476" fileName="StateMachine.java" startLine="26" startPosition="0" endLine="29" endPosition="3">
+      <varInfo nodeId="1197149564476" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1197149564476" fileName="StateMachine.java" startLine="30" startPosition="0" endLine="34" endPosition="0" />
-    <scopeInfo nodeId="1197149564476" fileName="StateMachine.java" startLine="34" startPosition="0" endLine="38" endPosition="0" />
+    <scopeInfo nodeId="1197149564476" fileName="StateMachine.java" startLine="34" startPosition="0" endLine="38" endPosition="0">
+      <varInfo nodeId="1197149564476" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="1197149564476" fileName="StateMachine.java" startLine="38" startPosition="0" endLine="42" endPosition="0" />
-    <scopeInfo nodeId="1197149564476" fileName="StateMachine.java" startLine="42" startPosition="0" endLine="46" endPosition="0" />
+    <scopeInfo nodeId="1197149564476" fileName="StateMachine.java" startLine="42" startPosition="0" endLine="46" endPosition="0">
+      <varInfo nodeId="1197149564476" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="1197149564476" fileName="StateMachine.java" startLine="46" startPosition="0" endLine="50" endPosition="0" />
-    <scopeInfo nodeId="1197149564476" fileName="StateMachine.java" startLine="50" startPosition="0" endLine="54" endPosition="0" />
+    <scopeInfo nodeId="1197149564476" fileName="StateMachine.java" startLine="50" startPosition="0" endLine="54" endPosition="0">
+      <varInfo nodeId="1197149564476" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="1197149564476" fileName="StateMachine.java" startLine="54" startPosition="0" endLine="58" endPosition="0" />
-    <scopeInfo nodeId="1197149564476" fileName="StateMachine.java" startLine="58" startPosition="0" endLine="62" endPosition="0" />
+    <scopeInfo nodeId="1197149564476" fileName="StateMachine.java" startLine="58" startPosition="0" endLine="62" endPosition="0">
+      <varInfo nodeId="1197149564476" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="1197149564476" fileName="StateMachine.java" startLine="62" startPosition="0" endLine="66" endPosition="0" />
-    <scopeInfo nodeId="1197149564476" fileName="StateMachine.java" startLine="66" startPosition="0" endLine="70" endPosition="0" />
+    <scopeInfo nodeId="1197149564476" fileName="StateMachine.java" startLine="66" startPosition="0" endLine="70" endPosition="0">
+      <varInfo nodeId="1197149564476" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="1197149564476" fileName="StateMachine.java" startLine="70" startPosition="0" endLine="74" endPosition="0" />
-    <scopeInfo nodeId="1197149564476" fileName="StateMachine.java" startLine="74" startPosition="0" endLine="78" endPosition="0" />
+    <scopeInfo nodeId="1197149564476" fileName="StateMachine.java" startLine="74" startPosition="0" endLine="78" endPosition="0">
+      <varInfo nodeId="1197149564476" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1197149564476" fileName="StateMachine.java" startLine="78" startPosition="0" endLine="82" endPosition="0" />
     <scopeInfo nodeId="1197149564476" fileName="StateMachine.java" startLine="82" startPosition="0" endLine="86" endPosition="0" />
     <scopeInfo nodeId="1197149564476" fileName="StateMachine.java" startLine="86" startPosition="0" endLine="90" endPosition="0" />
-    <scopeInfo nodeId="1197149564476" fileName="StateMachine.java" startLine="90" startPosition="0" endLine="94" endPosition="0" />
-    <scopeInfo nodeId="1197149564476" fileName="StateMachine.java" startLine="94" startPosition="0" endLine="98" endPosition="0" />
+    <scopeInfo nodeId="1197149564476" fileName="StateMachine.java" startLine="90" startPosition="0" endLine="94" endPosition="0">
+      <varInfo nodeId="1197149564476" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1197149564476" fileName="StateMachine.java" startLine="94" startPosition="0" endLine="98" endPosition="0">
+      <varInfo nodeId="1197149564476" varName="node" />
+      <varInfo nodeId="1197149564476" varName="prev" />
+    </scopeInfo>
     <scopeInfo nodeId="1197149564476" fileName="StateMachine.java" startLine="98" startPosition="0" endLine="102" endPosition="0" />
     <scopeInfo nodeId="1197149564476" fileName="StateMachine.java" startLine="102" startPosition="0" endLine="106" endPosition="0" />
     <scopeInfo nodeId="1197149564476" fileName="StateMachine.java" startLine="106" startPosition="0" endLine="110" endPosition="0" />
-    <scopeInfo nodeId="1197149564476" fileName="StateMachine.java" startLine="110" startPosition="0" endLine="114" endPosition="0" />
-    <scopeInfo nodeId="1197149564476" fileName="StateMachine.java" startLine="114" startPosition="0" endLine="118" endPosition="0" />
+    <scopeInfo nodeId="1197149564476" fileName="StateMachine.java" startLine="110" startPosition="0" endLine="114" endPosition="0">
+      <varInfo nodeId="1197149564476" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1197149564476" fileName="StateMachine.java" startLine="114" startPosition="0" endLine="118" endPosition="0">
+      <varInfo nodeId="1197149564476" varName="node" />
+      <varInfo nodeId="1197149564476" varName="prev" />
+    </scopeInfo>
     <scopeInfo nodeId="1197149564476" fileName="StateMachine.java" startLine="118" startPosition="0" endLine="122" endPosition="0" />
     <scopeInfo nodeId="1197149564476" fileName="StateMachine.java" startLine="122" startPosition="0" endLine="126" endPosition="0" />
     <scopeInfo nodeId="1197149564476" fileName="StateMachine.java" startLine="126" startPosition="0" endLine="130" endPosition="0" />
-    <scopeInfo nodeId="1197149564476" fileName="StateMachine.java" startLine="130" startPosition="0" endLine="134" endPosition="0" />
-    <scopeInfo nodeId="1197149564476" fileName="StateMachine.java" startLine="134" startPosition="0" endLine="138" endPosition="0" />
-    <scopeInfo nodeId="1197149564476" fileName="StateMachine.java" startLine="138" startPosition="0" endLine="142" endPosition="0" />
-    <scopeInfo nodeId="1197149564476" fileName="StateMachine.java" startLine="142" startPosition="0" endLine="146" endPosition="0" />
+    <scopeInfo nodeId="1197149564476" fileName="StateMachine.java" startLine="130" startPosition="0" endLine="134" endPosition="0">
+      <varInfo nodeId="1197149564476" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1197149564476" fileName="StateMachine.java" startLine="134" startPosition="0" endLine="138" endPosition="0">
+      <varInfo nodeId="1197149564476" varName="node" />
+      <varInfo nodeId="1197149564476" varName="prev" />
+    </scopeInfo>
+    <scopeInfo nodeId="1197149564476" fileName="StateMachine.java" startLine="138" startPosition="0" endLine="142" endPosition="0">
+      <varInfo nodeId="1197149564476" varName="init" />
+      <varInfo nodeId="1197149564476" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="1197149564476" fileName="StateMachine.java" startLine="142" startPosition="0" endLine="146" endPosition="0">
+      <varInfo nodeId="1197149564476" varName="sm" />
+    </scopeInfo>
     <unitInfo nodeId="1197149564476" fileName="StateMachine.java" startLine="15" startPosition="0" endLine="147" endPosition="0" unitName="jetbrains.mps.samples.secretCompartmentLanguage.structure.StateMachine" />
   </root>
   <root nodeId="1197169363230">
@@ -204,26 +238,50 @@
     <scopeInfo nodeId="1197169363230" fileName="Event.java" startLine="93" startPosition="69" endLine="94" endPosition="57" />
     <scopeInfo nodeId="1197169363230" fileName="Event.java" startLine="97" startPosition="60" endLine="98" endPosition="181" />
     <scopeInfo nodeId="1197169363230" fileName="Event.java" startLine="101" startPosition="46" endLine="102" endPosition="40" />
-    <scopeInfo nodeId="1197169363230" fileName="Event.java" startLine="24" startPosition="0" endLine="27" endPosition="3" />
+    <scopeInfo nodeId="1197169363230" fileName="Event.java" startLine="24" startPosition="0" endLine="27" endPosition="3">
+      <varInfo nodeId="1197169363230" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1197169363230" fileName="Event.java" startLine="28" startPosition="0" endLine="32" endPosition="0" />
-    <scopeInfo nodeId="1197169363230" fileName="Event.java" startLine="32" startPosition="0" endLine="36" endPosition="0" />
+    <scopeInfo nodeId="1197169363230" fileName="Event.java" startLine="32" startPosition="0" endLine="36" endPosition="0">
+      <varInfo nodeId="1197169363230" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="1197169363230" fileName="Event.java" startLine="36" startPosition="0" endLine="40" endPosition="0" />
-    <scopeInfo nodeId="1197169363230" fileName="Event.java" startLine="40" startPosition="0" endLine="44" endPosition="0" />
+    <scopeInfo nodeId="1197169363230" fileName="Event.java" startLine="40" startPosition="0" endLine="44" endPosition="0">
+      <varInfo nodeId="1197169363230" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="1197169363230" fileName="Event.java" startLine="44" startPosition="0" endLine="48" endPosition="0" />
-    <scopeInfo nodeId="1197169363230" fileName="Event.java" startLine="48" startPosition="0" endLine="52" endPosition="0" />
+    <scopeInfo nodeId="1197169363230" fileName="Event.java" startLine="48" startPosition="0" endLine="52" endPosition="0">
+      <varInfo nodeId="1197169363230" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="1197169363230" fileName="Event.java" startLine="52" startPosition="0" endLine="56" endPosition="0" />
-    <scopeInfo nodeId="1197169363230" fileName="Event.java" startLine="56" startPosition="0" endLine="60" endPosition="0" />
+    <scopeInfo nodeId="1197169363230" fileName="Event.java" startLine="56" startPosition="0" endLine="60" endPosition="0">
+      <varInfo nodeId="1197169363230" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="1197169363230" fileName="Event.java" startLine="60" startPosition="0" endLine="64" endPosition="0" />
-    <scopeInfo nodeId="1197169363230" fileName="Event.java" startLine="64" startPosition="0" endLine="68" endPosition="0" />
+    <scopeInfo nodeId="1197169363230" fileName="Event.java" startLine="64" startPosition="0" endLine="68" endPosition="0">
+      <varInfo nodeId="1197169363230" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="1197169363230" fileName="Event.java" startLine="68" startPosition="0" endLine="72" endPosition="0" />
-    <scopeInfo nodeId="1197169363230" fileName="Event.java" startLine="72" startPosition="0" endLine="76" endPosition="0" />
+    <scopeInfo nodeId="1197169363230" fileName="Event.java" startLine="72" startPosition="0" endLine="76" endPosition="0">
+      <varInfo nodeId="1197169363230" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="1197169363230" fileName="Event.java" startLine="76" startPosition="0" endLine="80" endPosition="0" />
     <scopeInfo nodeId="1197169363230" fileName="Event.java" startLine="80" startPosition="0" endLine="84" endPosition="0" />
     <scopeInfo nodeId="1197169363230" fileName="Event.java" startLine="84" startPosition="0" endLine="88" endPosition="0" />
-    <scopeInfo nodeId="1197169363230" fileName="Event.java" startLine="88" startPosition="0" endLine="92" endPosition="0" />
-    <scopeInfo nodeId="1197169363230" fileName="Event.java" startLine="92" startPosition="0" endLine="96" endPosition="0" />
-    <scopeInfo nodeId="1197169363230" fileName="Event.java" startLine="96" startPosition="0" endLine="100" endPosition="0" />
-    <scopeInfo nodeId="1197169363230" fileName="Event.java" startLine="100" startPosition="0" endLine="104" endPosition="0" />
+    <scopeInfo nodeId="1197169363230" fileName="Event.java" startLine="88" startPosition="0" endLine="92" endPosition="0">
+      <varInfo nodeId="1197169363230" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1197169363230" fileName="Event.java" startLine="92" startPosition="0" endLine="96" endPosition="0">
+      <varInfo nodeId="1197169363230" varName="node" />
+      <varInfo nodeId="1197169363230" varName="prev" />
+    </scopeInfo>
+    <scopeInfo nodeId="1197169363230" fileName="Event.java" startLine="96" startPosition="0" endLine="100" endPosition="0">
+      <varInfo nodeId="1197169363230" varName="init" />
+      <varInfo nodeId="1197169363230" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="1197169363230" fileName="Event.java" startLine="100" startPosition="0" endLine="104" endPosition="0">
+      <varInfo nodeId="1197169363230" varName="sm" />
+    </scopeInfo>
     <unitInfo nodeId="1197169363230" fileName="Event.java" startLine="15" startPosition="0" endLine="105" endPosition="0" unitName="jetbrains.mps.samples.secretCompartmentLanguage.structure.Event" />
   </root>
   <root nodeId="1197170590231">
@@ -304,29 +362,56 @@
     <scopeInfo nodeId="1197170590231" fileName="State.java" startLine="105" startPosition="69" endLine="106" endPosition="57" />
     <scopeInfo nodeId="1197170590231" fileName="State.java" startLine="109" startPosition="60" endLine="110" endPosition="181" />
     <scopeInfo nodeId="1197170590231" fileName="State.java" startLine="113" startPosition="46" endLine="114" endPosition="40" />
-    <scopeInfo nodeId="1197170590231" fileName="State.java" startLine="24" startPosition="0" endLine="27" endPosition="3" />
+    <scopeInfo nodeId="1197170590231" fileName="State.java" startLine="24" startPosition="0" endLine="27" endPosition="3">
+      <varInfo nodeId="1197170590231" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1197170590231" fileName="State.java" startLine="28" startPosition="0" endLine="32" endPosition="0" />
-    <scopeInfo nodeId="1197170590231" fileName="State.java" startLine="32" startPosition="0" endLine="36" endPosition="0" />
+    <scopeInfo nodeId="1197170590231" fileName="State.java" startLine="32" startPosition="0" endLine="36" endPosition="0">
+      <varInfo nodeId="1197170590231" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="1197170590231" fileName="State.java" startLine="36" startPosition="0" endLine="40" endPosition="0" />
-    <scopeInfo nodeId="1197170590231" fileName="State.java" startLine="40" startPosition="0" endLine="44" endPosition="0" />
+    <scopeInfo nodeId="1197170590231" fileName="State.java" startLine="40" startPosition="0" endLine="44" endPosition="0">
+      <varInfo nodeId="1197170590231" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="1197170590231" fileName="State.java" startLine="44" startPosition="0" endLine="48" endPosition="0" />
-    <scopeInfo nodeId="1197170590231" fileName="State.java" startLine="48" startPosition="0" endLine="52" endPosition="0" />
+    <scopeInfo nodeId="1197170590231" fileName="State.java" startLine="48" startPosition="0" endLine="52" endPosition="0">
+      <varInfo nodeId="1197170590231" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="1197170590231" fileName="State.java" startLine="52" startPosition="0" endLine="56" endPosition="0" />
-    <scopeInfo nodeId="1197170590231" fileName="State.java" startLine="56" startPosition="0" endLine="60" endPosition="0" />
+    <scopeInfo nodeId="1197170590231" fileName="State.java" startLine="56" startPosition="0" endLine="60" endPosition="0">
+      <varInfo nodeId="1197170590231" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="1197170590231" fileName="State.java" startLine="60" startPosition="0" endLine="64" endPosition="0" />
-    <scopeInfo nodeId="1197170590231" fileName="State.java" startLine="64" startPosition="0" endLine="68" endPosition="0" />
+    <scopeInfo nodeId="1197170590231" fileName="State.java" startLine="64" startPosition="0" endLine="68" endPosition="0">
+      <varInfo nodeId="1197170590231" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="1197170590231" fileName="State.java" startLine="68" startPosition="0" endLine="72" endPosition="0" />
     <scopeInfo nodeId="1197170590231" fileName="State.java" startLine="72" startPosition="0" endLine="76" endPosition="0" />
     <scopeInfo nodeId="1197170590231" fileName="State.java" startLine="76" startPosition="0" endLine="80" endPosition="0" />
-    <scopeInfo nodeId="1197170590231" fileName="State.java" startLine="80" startPosition="0" endLine="84" endPosition="0" />
-    <scopeInfo nodeId="1197170590231" fileName="State.java" startLine="84" startPosition="0" endLine="88" endPosition="0" />
+    <scopeInfo nodeId="1197170590231" fileName="State.java" startLine="80" startPosition="0" endLine="84" endPosition="0">
+      <varInfo nodeId="1197170590231" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1197170590231" fileName="State.java" startLine="84" startPosition="0" endLine="88" endPosition="0">
+      <varInfo nodeId="1197170590231" varName="node" />
+      <varInfo nodeId="1197170590231" varName="prev" />
+    </scopeInfo>
     <scopeInfo nodeId="1197170590231" fileName="State.java" startLine="88" startPosition="0" endLine="92" endPosition="0" />
     <scopeInfo nodeId="1197170590231" fileName="State.java" startLine="92" startPosition="0" endLine="96" endPosition="0" />
     <scopeInfo nodeId="1197170590231" fileName="State.java" startLine="96" startPosition="0" endLine="100" endPosition="0" />
-    <scopeInfo nodeId="1197170590231" fileName="State.java" startLine="100" startPosition="0" endLine="104" endPosition="0" />
-    <scopeInfo nodeId="1197170590231" fileName="State.java" startLine="104" startPosition="0" endLine="108" endPosition="0" />
-    <scopeInfo nodeId="1197170590231" fileName="State.java" startLine="108" startPosition="0" endLine="112" endPosition="0" />
-    <scopeInfo nodeId="1197170590231" fileName="State.java" startLine="112" startPosition="0" endLine="116" endPosition="0" />
+    <scopeInfo nodeId="1197170590231" fileName="State.java" startLine="100" startPosition="0" endLine="104" endPosition="0">
+      <varInfo nodeId="1197170590231" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1197170590231" fileName="State.java" startLine="104" startPosition="0" endLine="108" endPosition="0">
+      <varInfo nodeId="1197170590231" varName="node" />
+      <varInfo nodeId="1197170590231" varName="prev" />
+    </scopeInfo>
+    <scopeInfo nodeId="1197170590231" fileName="State.java" startLine="108" startPosition="0" endLine="112" endPosition="0">
+      <varInfo nodeId="1197170590231" varName="init" />
+      <varInfo nodeId="1197170590231" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="1197170590231" fileName="State.java" startLine="112" startPosition="0" endLine="116" endPosition="0">
+      <varInfo nodeId="1197170590231" varName="sm" />
+    </scopeInfo>
     <unitInfo nodeId="1197170590231" fileName="State.java" startLine="15" startPosition="0" endLine="117" endPosition="0" unitName="jetbrains.mps.samples.secretCompartmentLanguage.structure.State" />
   </root>
   <root nodeId="1197240155690">
@@ -354,13 +439,24 @@
     <scopeInfo nodeId="1197240155690" fileName="Transition.java" startLine="32" startPosition="37" endLine="33" endPosition="47" />
     <scopeInfo nodeId="1197240155690" fileName="Transition.java" startLine="36" startPosition="65" endLine="37" endPosition="191" />
     <scopeInfo nodeId="1197240155690" fileName="Transition.java" startLine="40" startPosition="51" endLine="41" endPosition="45" />
-    <scopeInfo nodeId="1197240155690" fileName="Transition.java" startLine="15" startPosition="0" endLine="18" endPosition="3" />
+    <scopeInfo nodeId="1197240155690" fileName="Transition.java" startLine="15" startPosition="0" endLine="18" endPosition="3">
+      <varInfo nodeId="1197240155690" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1197240155690" fileName="Transition.java" startLine="19" startPosition="0" endLine="23" endPosition="0" />
-    <scopeInfo nodeId="1197240155690" fileName="Transition.java" startLine="23" startPosition="0" endLine="27" endPosition="0" />
+    <scopeInfo nodeId="1197240155690" fileName="Transition.java" startLine="23" startPosition="0" endLine="27" endPosition="0">
+      <varInfo nodeId="1197240155690" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1197240155690" fileName="Transition.java" startLine="27" startPosition="0" endLine="31" endPosition="0" />
-    <scopeInfo nodeId="1197240155690" fileName="Transition.java" startLine="31" startPosition="0" endLine="35" endPosition="0" />
-    <scopeInfo nodeId="1197240155690" fileName="Transition.java" startLine="35" startPosition="0" endLine="39" endPosition="0" />
-    <scopeInfo nodeId="1197240155690" fileName="Transition.java" startLine="39" startPosition="0" endLine="43" endPosition="0" />
+    <scopeInfo nodeId="1197240155690" fileName="Transition.java" startLine="31" startPosition="0" endLine="35" endPosition="0">
+      <varInfo nodeId="1197240155690" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1197240155690" fileName="Transition.java" startLine="35" startPosition="0" endLine="39" endPosition="0">
+      <varInfo nodeId="1197240155690" varName="init" />
+      <varInfo nodeId="1197240155690" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="1197240155690" fileName="Transition.java" startLine="39" startPosition="0" endLine="43" endPosition="0">
+      <varInfo nodeId="1197240155690" varName="sm" />
+    </scopeInfo>
     <unitInfo nodeId="1197240155690" fileName="Transition.java" startLine="11" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.samples.secretCompartmentLanguage.structure.Transition" />
   </root>
   <root nodeId="1197246912613">
@@ -441,29 +537,56 @@
     <scopeInfo nodeId="1197246912613" fileName="StateMachineTest.java" startLine="105" startPosition="69" endLine="106" endPosition="68" />
     <scopeInfo nodeId="1197246912613" fileName="StateMachineTest.java" startLine="109" startPosition="71" endLine="110" endPosition="203" />
     <scopeInfo nodeId="1197246912613" fileName="StateMachineTest.java" startLine="113" startPosition="57" endLine="114" endPosition="51" />
-    <scopeInfo nodeId="1197246912613" fileName="StateMachineTest.java" startLine="24" startPosition="0" endLine="27" endPosition="3" />
+    <scopeInfo nodeId="1197246912613" fileName="StateMachineTest.java" startLine="24" startPosition="0" endLine="27" endPosition="3">
+      <varInfo nodeId="1197246912613" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1197246912613" fileName="StateMachineTest.java" startLine="28" startPosition="0" endLine="32" endPosition="0" />
-    <scopeInfo nodeId="1197246912613" fileName="StateMachineTest.java" startLine="32" startPosition="0" endLine="36" endPosition="0" />
+    <scopeInfo nodeId="1197246912613" fileName="StateMachineTest.java" startLine="32" startPosition="0" endLine="36" endPosition="0">
+      <varInfo nodeId="1197246912613" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="1197246912613" fileName="StateMachineTest.java" startLine="36" startPosition="0" endLine="40" endPosition="0" />
-    <scopeInfo nodeId="1197246912613" fileName="StateMachineTest.java" startLine="40" startPosition="0" endLine="44" endPosition="0" />
+    <scopeInfo nodeId="1197246912613" fileName="StateMachineTest.java" startLine="40" startPosition="0" endLine="44" endPosition="0">
+      <varInfo nodeId="1197246912613" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="1197246912613" fileName="StateMachineTest.java" startLine="44" startPosition="0" endLine="48" endPosition="0" />
-    <scopeInfo nodeId="1197246912613" fileName="StateMachineTest.java" startLine="48" startPosition="0" endLine="52" endPosition="0" />
+    <scopeInfo nodeId="1197246912613" fileName="StateMachineTest.java" startLine="48" startPosition="0" endLine="52" endPosition="0">
+      <varInfo nodeId="1197246912613" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="1197246912613" fileName="StateMachineTest.java" startLine="52" startPosition="0" endLine="56" endPosition="0" />
-    <scopeInfo nodeId="1197246912613" fileName="StateMachineTest.java" startLine="56" startPosition="0" endLine="60" endPosition="0" />
+    <scopeInfo nodeId="1197246912613" fileName="StateMachineTest.java" startLine="56" startPosition="0" endLine="60" endPosition="0">
+      <varInfo nodeId="1197246912613" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="1197246912613" fileName="StateMachineTest.java" startLine="60" startPosition="0" endLine="64" endPosition="0" />
-    <scopeInfo nodeId="1197246912613" fileName="StateMachineTest.java" startLine="64" startPosition="0" endLine="68" endPosition="0" />
+    <scopeInfo nodeId="1197246912613" fileName="StateMachineTest.java" startLine="64" startPosition="0" endLine="68" endPosition="0">
+      <varInfo nodeId="1197246912613" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1197246912613" fileName="StateMachineTest.java" startLine="68" startPosition="0" endLine="72" endPosition="0" />
     <scopeInfo nodeId="1197246912613" fileName="StateMachineTest.java" startLine="72" startPosition="0" endLine="76" endPosition="0" />
     <scopeInfo nodeId="1197246912613" fileName="StateMachineTest.java" startLine="76" startPosition="0" endLine="80" endPosition="0" />
-    <scopeInfo nodeId="1197246912613" fileName="StateMachineTest.java" startLine="80" startPosition="0" endLine="84" endPosition="0" />
-    <scopeInfo nodeId="1197246912613" fileName="StateMachineTest.java" startLine="84" startPosition="0" endLine="88" endPosition="0" />
+    <scopeInfo nodeId="1197246912613" fileName="StateMachineTest.java" startLine="80" startPosition="0" endLine="84" endPosition="0">
+      <varInfo nodeId="1197246912613" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1197246912613" fileName="StateMachineTest.java" startLine="84" startPosition="0" endLine="88" endPosition="0">
+      <varInfo nodeId="1197246912613" varName="node" />
+      <varInfo nodeId="1197246912613" varName="prev" />
+    </scopeInfo>
     <scopeInfo nodeId="1197246912613" fileName="StateMachineTest.java" startLine="88" startPosition="0" endLine="92" endPosition="0" />
     <scopeInfo nodeId="1197246912613" fileName="StateMachineTest.java" startLine="92" startPosition="0" endLine="96" endPosition="0" />
     <scopeInfo nodeId="1197246912613" fileName="StateMachineTest.java" startLine="96" startPosition="0" endLine="100" endPosition="0" />
-    <scopeInfo nodeId="1197246912613" fileName="StateMachineTest.java" startLine="100" startPosition="0" endLine="104" endPosition="0" />
-    <scopeInfo nodeId="1197246912613" fileName="StateMachineTest.java" startLine="104" startPosition="0" endLine="108" endPosition="0" />
-    <scopeInfo nodeId="1197246912613" fileName="StateMachineTest.java" startLine="108" startPosition="0" endLine="112" endPosition="0" />
-    <scopeInfo nodeId="1197246912613" fileName="StateMachineTest.java" startLine="112" startPosition="0" endLine="116" endPosition="0" />
+    <scopeInfo nodeId="1197246912613" fileName="StateMachineTest.java" startLine="100" startPosition="0" endLine="104" endPosition="0">
+      <varInfo nodeId="1197246912613" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1197246912613" fileName="StateMachineTest.java" startLine="104" startPosition="0" endLine="108" endPosition="0">
+      <varInfo nodeId="1197246912613" varName="node" />
+      <varInfo nodeId="1197246912613" varName="prev" />
+    </scopeInfo>
+    <scopeInfo nodeId="1197246912613" fileName="StateMachineTest.java" startLine="108" startPosition="0" endLine="112" endPosition="0">
+      <varInfo nodeId="1197246912613" varName="init" />
+      <varInfo nodeId="1197246912613" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="1197246912613" fileName="StateMachineTest.java" startLine="112" startPosition="0" endLine="116" endPosition="0">
+      <varInfo nodeId="1197246912613" varName="sm" />
+    </scopeInfo>
     <unitInfo nodeId="1197246912613" fileName="StateMachineTest.java" startLine="15" startPosition="0" endLine="117" endPosition="0" unitName="jetbrains.mps.samples.secretCompartmentLanguage.structure.StateMachineTest" />
   </root>
   <root nodeId="1197252718474">
@@ -507,18 +630,34 @@
     <scopeInfo nodeId="1197252718474" fileName="StateMachineTestMethod.java" startLine="55" startPosition="69" endLine="56" endPosition="70" />
     <scopeInfo nodeId="1197252718474" fileName="StateMachineTestMethod.java" startLine="59" startPosition="77" endLine="60" endPosition="215" />
     <scopeInfo nodeId="1197252718474" fileName="StateMachineTestMethod.java" startLine="63" startPosition="63" endLine="64" endPosition="57" />
-    <scopeInfo nodeId="1197252718474" fileName="StateMachineTestMethod.java" startLine="18" startPosition="0" endLine="21" endPosition="3" />
+    <scopeInfo nodeId="1197252718474" fileName="StateMachineTestMethod.java" startLine="18" startPosition="0" endLine="21" endPosition="3">
+      <varInfo nodeId="1197252718474" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1197252718474" fileName="StateMachineTestMethod.java" startLine="22" startPosition="0" endLine="26" endPosition="0" />
-    <scopeInfo nodeId="1197252718474" fileName="StateMachineTestMethod.java" startLine="26" startPosition="0" endLine="30" endPosition="0" />
+    <scopeInfo nodeId="1197252718474" fileName="StateMachineTestMethod.java" startLine="26" startPosition="0" endLine="30" endPosition="0">
+      <varInfo nodeId="1197252718474" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="1197252718474" fileName="StateMachineTestMethod.java" startLine="30" startPosition="0" endLine="34" endPosition="0" />
-    <scopeInfo nodeId="1197252718474" fileName="StateMachineTestMethod.java" startLine="34" startPosition="0" endLine="38" endPosition="0" />
+    <scopeInfo nodeId="1197252718474" fileName="StateMachineTestMethod.java" startLine="34" startPosition="0" endLine="38" endPosition="0">
+      <varInfo nodeId="1197252718474" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1197252718474" fileName="StateMachineTestMethod.java" startLine="38" startPosition="0" endLine="42" endPosition="0" />
     <scopeInfo nodeId="1197252718474" fileName="StateMachineTestMethod.java" startLine="42" startPosition="0" endLine="46" endPosition="0" />
     <scopeInfo nodeId="1197252718474" fileName="StateMachineTestMethod.java" startLine="46" startPosition="0" endLine="50" endPosition="0" />
-    <scopeInfo nodeId="1197252718474" fileName="StateMachineTestMethod.java" startLine="50" startPosition="0" endLine="54" endPosition="0" />
-    <scopeInfo nodeId="1197252718474" fileName="StateMachineTestMethod.java" startLine="54" startPosition="0" endLine="58" endPosition="0" />
-    <scopeInfo nodeId="1197252718474" fileName="StateMachineTestMethod.java" startLine="58" startPosition="0" endLine="62" endPosition="0" />
-    <scopeInfo nodeId="1197252718474" fileName="StateMachineTestMethod.java" startLine="62" startPosition="0" endLine="66" endPosition="0" />
+    <scopeInfo nodeId="1197252718474" fileName="StateMachineTestMethod.java" startLine="50" startPosition="0" endLine="54" endPosition="0">
+      <varInfo nodeId="1197252718474" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1197252718474" fileName="StateMachineTestMethod.java" startLine="54" startPosition="0" endLine="58" endPosition="0">
+      <varInfo nodeId="1197252718474" varName="node" />
+      <varInfo nodeId="1197252718474" varName="prev" />
+    </scopeInfo>
+    <scopeInfo nodeId="1197252718474" fileName="StateMachineTestMethod.java" startLine="58" startPosition="0" endLine="62" endPosition="0">
+      <varInfo nodeId="1197252718474" varName="init" />
+      <varInfo nodeId="1197252718474" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="1197252718474" fileName="StateMachineTestMethod.java" startLine="62" startPosition="0" endLine="66" endPosition="0">
+      <varInfo nodeId="1197252718474" varName="sm" />
+    </scopeInfo>
     <unitInfo nodeId="1197252718474" fileName="StateMachineTestMethod.java" startLine="13" startPosition="0" endLine="67" endPosition="0" unitName="jetbrains.mps.samples.secretCompartmentLanguage.structure.StateMachineTestMethod" />
   </root>
   <root nodeId="1197255776563">
@@ -539,11 +678,20 @@
     <scopeInfo nodeId="1197255776563" fileName="HandleEvent.java" startLine="23" startPosition="36" endLine="24" endPosition="47" />
     <scopeInfo nodeId="1197255776563" fileName="HandleEvent.java" startLine="27" startPosition="66" endLine="28" endPosition="193" />
     <scopeInfo nodeId="1197255776563" fileName="HandleEvent.java" startLine="31" startPosition="52" endLine="32" endPosition="46" />
-    <scopeInfo nodeId="1197255776563" fileName="HandleEvent.java" startLine="14" startPosition="0" endLine="17" endPosition="3" />
+    <scopeInfo nodeId="1197255776563" fileName="HandleEvent.java" startLine="14" startPosition="0" endLine="17" endPosition="3">
+      <varInfo nodeId="1197255776563" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1197255776563" fileName="HandleEvent.java" startLine="18" startPosition="0" endLine="22" endPosition="0" />
-    <scopeInfo nodeId="1197255776563" fileName="HandleEvent.java" startLine="22" startPosition="0" endLine="26" endPosition="0" />
-    <scopeInfo nodeId="1197255776563" fileName="HandleEvent.java" startLine="26" startPosition="0" endLine="30" endPosition="0" />
-    <scopeInfo nodeId="1197255776563" fileName="HandleEvent.java" startLine="30" startPosition="0" endLine="34" endPosition="0" />
+    <scopeInfo nodeId="1197255776563" fileName="HandleEvent.java" startLine="22" startPosition="0" endLine="26" endPosition="0">
+      <varInfo nodeId="1197255776563" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1197255776563" fileName="HandleEvent.java" startLine="26" startPosition="0" endLine="30" endPosition="0">
+      <varInfo nodeId="1197255776563" varName="init" />
+      <varInfo nodeId="1197255776563" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="1197255776563" fileName="HandleEvent.java" startLine="30" startPosition="0" endLine="34" endPosition="0">
+      <varInfo nodeId="1197255776563" varName="sm" />
+    </scopeInfo>
     <unitInfo nodeId="1197255776563" fileName="HandleEvent.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.samples.secretCompartmentLanguage.structure.HandleEvent" />
   </root>
 </debugInfo>

@@ -6,9 +6,7 @@
   <accessoryModels />
   <generators />
   <sourcePath />
-  <dependencies>
-    <dependency reexport="false">18bc6592-03a6-4e29-a83a-7ff23bde13ba(jetbrains.mps.lang.editor)</dependency>
-  </dependencies>
+  <dependencies />
   <usedLanguages>
     <usedLanguage>daafa647-f1f7-4b0b-b096-69cd7c8408c0(jetbrains.mps.baseLanguage.regexp)</usedLanguage>
     <usedLanguage>3fe6ec39-7405-4314-abfd-5964c9c40e6b(jetbrains.mpslite)</usedLanguage>

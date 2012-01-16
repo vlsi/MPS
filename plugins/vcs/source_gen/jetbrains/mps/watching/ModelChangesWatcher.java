@@ -18,10 +18,10 @@ import jetbrains.mps.make.MakeNotification;
 import jetbrains.mps.make.IMakeService;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vcs.ProjectLevelVcsManager;
+import com.intellij.openapi.application.ApplicationManager;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.MPSCore;
-import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.application.ModalityState;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.library.ProjectLibraryManager;
@@ -31,7 +31,6 @@ import java.util.Arrays;
 import jetbrains.mps.library.LibraryManager;
 import java.io.File;
 import com.intellij.openapi.util.io.FileUtil;
-import java.io.IOException;
 import jetbrains.mps.util.Computable;
 import java.util.List;
 import com.intellij.openapi.vfs.newvfs.events.VFileEvent;
@@ -85,8 +84,8 @@ public class ModelChangesWatcher implements ApplicationComponent {
           if (myReloadSession != null) {
             doReload();
           }
-          myTimer.suspend();
         }
+        myTimer.suspend();
       }
     };
     myTimer.setTakeInitialDelay(true);
@@ -107,13 +106,21 @@ public class ModelChangesWatcher implements ApplicationComponent {
           return;
         }
       }
-      myTimer.resume();
     }
+    ApplicationManager.getApplication().executeOnPooledThread(new Runnable() {
+      public void run() {
+        myTimer.resume();
+      }
+    });
   }
 
   public void suspendTasksProcessing() {
+    ApplicationManager.getApplication().executeOnPooledThread(new Runnable() {
+      public void run() {
+        myTimer.suspend();
+      }
+    });
     synchronized (myLock) {
-      myTimer.suspend();
       myBans++;
     }
   }
@@ -146,6 +153,9 @@ public class ModelChangesWatcher implements ApplicationComponent {
   private void doReload() {
     final ReloadSession session = myReloadSession;
     myReloadSession = null;
+    if (!(session.hasAnythingToDo())) {
+      return;
+    }
     ApplicationManager.getApplication().invokeLater(new Runnable() {
       public void run() {
         session.doReload();
@@ -183,12 +193,8 @@ public class ModelChangesWatcher implements ApplicationComponent {
 
   private boolean isUnderSignificantRoots(File file) {
     for (VirtualFile f : getSignificantRoots()) {
-      try {
-        if (FileUtil.isAncestor(VirtualFileUtils.toFile(f), file, false)) {
-          return true;
-        }
-      } catch (IOException e) {
-        LOG.error(e);
+      if (FileUtil.isAncestor(VirtualFileUtils.toFile(f), file, false)) {
+        return true;
       }
     }
     return false;
@@ -280,6 +286,7 @@ public class ModelChangesWatcher implements ApplicationComponent {
       if (application.isDisposeInProgress() || application.isDisposed()) {
         return;
       }
+      boolean resume = false;
       synchronized (myLock) {
         if (myReloadSession == null) {
           myReloadSession = new ReloadSession(getReloadListeners());
@@ -301,8 +308,15 @@ public class ModelChangesWatcher implements ApplicationComponent {
           processAfterEvent(path, event, myReloadSession);
         }
         if (myBans == 0) {
-          myTimer.resume();
+          resume = true;
         }
+      }
+      if (resume) {
+        ApplicationManager.getApplication().executeOnPooledThread(new Runnable() {
+          public void run() {
+            myTimer.resume();
+          }
+        });
       }
     }
 

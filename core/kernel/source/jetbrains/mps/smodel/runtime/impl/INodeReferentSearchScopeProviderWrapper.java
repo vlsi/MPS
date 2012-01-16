@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.smodel.runtime.impl;
 
+import jetbrains.mps.scope.Scope;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.constraints.INodeReferentSearchScopeProvider;
@@ -24,6 +25,8 @@ import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
 import jetbrains.mps.smodel.runtime.ReferencePresentationContext;
 import jetbrains.mps.smodel.runtime.ReferenceScopeProvider;
 import jetbrains.mps.smodel.search.ISearchScope;
+import jetbrains.mps.smodel.search.ISearchScope.Adapter;
+import jetbrains.mps.smodel.search.UndefinedSearchScope;
 
 public class INodeReferentSearchScopeProviderWrapper implements ReferenceScopeProvider {
   private final INodeReferentSearchScopeProvider inner;
@@ -42,6 +45,15 @@ public class INodeReferentSearchScopeProviderWrapper implements ReferenceScopePr
       _context.getContainingLink()
     );
     return inner.createNodeReferentSearchScope(operationContext, context);
+  }
+
+  @Override
+  public Scope createScope(IOperationContext operationContext, ReferenceConstraintsContext _context) {
+    ISearchScope searchScope = createSearchScope(operationContext, _context);
+    if(searchScope instanceof UndefinedSearchScope || searchScope == null) {
+      return null;
+    }
+    return new Adapter(searchScope);
   }
 
   @Override

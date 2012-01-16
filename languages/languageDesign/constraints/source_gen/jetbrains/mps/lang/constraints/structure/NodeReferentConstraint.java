@@ -30,11 +30,11 @@ public class NodeReferentConstraint extends BaseConcept {
     super.setReferent(NodeReferentConstraint.APPLICABLE_LINK, node);
   }
 
-  public ConstraintFunction_ReferentSearchScope_Factory getSearchScopeFactory() {
-    return (ConstraintFunction_ReferentSearchScope_Factory) this.getChild(ConstraintFunction_ReferentSearchScope_Factory.class, NodeReferentConstraint.SEARCH_SCOPE_FACTORY);
+  public NodeScopeFactory getSearchScopeFactory() {
+    return (NodeScopeFactory) this.getChild(NodeScopeFactory.class, NodeReferentConstraint.SEARCH_SCOPE_FACTORY);
   }
 
-  public void setSearchScopeFactory(ConstraintFunction_ReferentSearchScope_Factory node) {
+  public void setSearchScopeFactory(NodeScopeFactory node) {
     super.setChild(NodeReferentConstraint.SEARCH_SCOPE_FACTORY, node);
   }
 

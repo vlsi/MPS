@@ -25,6 +25,7 @@ public class Vcs_ApplicationPlugin extends BaseApplicationPlugin {
     // actions w/o parameters 
     addAction(new AddModuleToVcs_Action());
     addAction(new Annotate_Action());
+    addAction(new CompareTransientModels_Action());
     addAction(new CopyOldNodes_Action());
     addAction(new GoToNextChange_Action());
     addAction(new GoToPreviousChange_Action());

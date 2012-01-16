@@ -37,7 +37,10 @@ public class IoFileSystemProvider implements FileSystemProvider {
       }
 
       File jarFile = new File(jarPath);
-      return new JarEntryFile(JarFileDataCache.instance().getDataFor(jarFile), jarFile, entryPath);
+
+      return new JarEntryFile(
+        jarFile.exists() ? JarFileDataCache.instance().getDataFor(jarFile) : new AbstractJarFileData (jarFile),
+        jarFile, entryPath);
     } else {
       return new IoFile(path);
     }

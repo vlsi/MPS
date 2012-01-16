@@ -35,7 +35,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.action.SideTransformPreconditionContext" />
     <classNode dependClassName="jetbrains.mps.typesystem.inference.TypeChecker" />
     <classNode dependClassName="jetbrains.mps.ui.modeling.behavior.UIObject_Behavior" />
-    <classNode dependClassName="jetbrains.mps.util.Calculable" />
+    <classNode dependClassName="jetbrains.mps.util.Computable" />
     <classNode dependClassName="jetbrains.mps.util.NameUtil" />
   </dependency>
 </dependenciesRoot>

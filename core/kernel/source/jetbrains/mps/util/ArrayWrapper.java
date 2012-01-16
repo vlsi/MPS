@@ -15,6 +15,8 @@
  */
 package jetbrains.mps.util;
 
+import org.jetbrains.annotations.NotNull;
+
 import java.util.AbstractList;
 import java.util.Arrays;
 
@@ -29,13 +31,13 @@ public abstract class ArrayWrapper<T> extends AbstractList<T> {
     return myArray[index];
   }
 
-  public T set(int index, T element) {
+  public T set(int index, @NotNull T element) {
     T oldItem = myArray[index];
     myArray[index] = element;
     return oldItem;
   }
 
-  public void add(int index, T element) {
+  public void add(int index, @NotNull T element) {
     T[] oldArray = myArray;
     T[] newArray = newArray(oldArray.length + 1);
     System.arraycopy(oldArray, 0, newArray, 0, index);

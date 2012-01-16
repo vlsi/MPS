@@ -46,6 +46,7 @@ import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.openapi.editor.EditorComponent;
 import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SNode;
@@ -132,6 +133,13 @@ public class ProjectPane extends BaseLogicalViewProjectPane {
     projectView.getSelectInTargets();
 
     return (ProjectPane) projectView.getProjectViewPaneById(ID);
+  }
+
+  public static ProjectPane getInstance (jetbrains.mps.project.Project mpsProject) {
+    if (mpsProject instanceof MPSProject) {
+      return getInstance(((MPSProject)mpsProject).getProject());
+    }
+    return null;
   }
 
   public ProjectTree getTree() {

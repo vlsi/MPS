@@ -153,4 +153,9 @@ public class MPSChooseSNodeDescriptor extends BaseMPSChooseModel<BaseSNodeDescri
   protected String doGetCheckBoxName() {
     return "Include &non-&&project models";
   }
+
+  @Override
+  public boolean willOpenEditor() {
+    return true;
+  }
 }

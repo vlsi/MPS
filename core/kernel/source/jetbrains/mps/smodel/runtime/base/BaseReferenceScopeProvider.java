@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.smodel.runtime.base;
 
+import jetbrains.mps.scope.Scope;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
@@ -22,6 +23,7 @@ import jetbrains.mps.smodel.runtime.ReferencePresentationContext;
 import jetbrains.mps.smodel.runtime.ReferenceScopeProvider;
 import jetbrains.mps.smodel.search.EmptySearchScope;
 import jetbrains.mps.smodel.search.ISearchScope;
+import jetbrains.mps.smodel.search.ISearchScope.Adapter;
 import jetbrains.mps.smodel.search.SimpleSearchScope;
 import jetbrains.mps.smodel.search.UndefinedSearchScope;
 import jetbrains.mps.util.CollectionUtil;
@@ -50,6 +52,15 @@ public class BaseReferenceScopeProvider implements ReferenceScopeProvider {
       return new SimpleSearchScope(IterableUtil.asList(iterable));
     }
     throw new RuntimeException("unexpected type in search-scope provider " + searchScopeOrListOfNodes.getClass());
+  }
+
+  @Override
+  public Scope createScope(IOperationContext operationContext, ReferenceConstraintsContext _context) {
+    ISearchScope searchScope = createSearchScope(operationContext, _context);
+    if(searchScope instanceof UndefinedSearchScope || searchScope == null) {
+      return null;
+    }
+    return new Adapter(searchScope);
   }
 
   @Override

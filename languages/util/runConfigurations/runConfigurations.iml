@@ -4,8 +4,10 @@
     <output url="file://$MODULE_DIR$/classes" />
     <output-test url="file://$MODULE_DIR$/classes" />
     <exclude-output />
-    <content url="file://$MODULE_DIR$">
+    <content url="file://$MODULE_DIR$/solutions/jetbrains.mps.execution.api">
       <sourceFolder url="file://$MODULE_DIR$/solutions/jetbrains.mps.execution.api/source_gen" isTestSource="false" />
+    </content>
+    <content url="file://$MODULE_DIR$/solutions/jetbrains.mps.execution.impl">
       <sourceFolder url="file://$MODULE_DIR$/solutions/jetbrains.mps.execution.impl/source_gen" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
@@ -14,12 +16,10 @@
     <orderEntry type="module" module-name="collections-runtime" />
     <orderEntry type="module" module-name="Closures-runtime" />
     <orderEntry type="module" module-name="kernel" />
-    <orderEntry type="module" module-name="debug-api" />
     <orderEntry type="module" module-name="generator-engine" />
     <orderEntry type="module" module-name="typesystemEngine" />
     <orderEntry type="module" module-name="plugin-runtime" />
     <orderEntry type="module" module-name="workbench" />
-    <orderEntry type="module" module-name="debug" />
     <orderEntry type="module" module-name="make-runtime" />
     <orderEntry type="module" module-name="mps-platform" />
     <orderEntry type="library" name="JDOM" level="project" />

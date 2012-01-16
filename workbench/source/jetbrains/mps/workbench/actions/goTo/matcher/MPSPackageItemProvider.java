@@ -16,23 +16,25 @@
 
 package jetbrains.mps.workbench.actions.goTo.matcher;
 
-import com.intellij.ide.util.gotoByName.temp.IdeaItemProvider;
+import com.intellij.ide.util.gotoByName.ChooseByNameBase;
+import com.intellij.ide.util.gotoByName.DefaultChooseByNameItemProvider;
+import com.intellij.openapi.util.Computable;
 import com.intellij.psi.PsiElement;
-import jetbrains.mps.util.Computable;
+import com.intellij.util.Processor;
 
 import java.util.List;
 
-public class MPSPackageItemProvider extends IdeaItemProvider {
+public class MPSPackageItemProvider extends DefaultChooseByNameItemProvider {
   public MPSPackageItemProvider(PsiElement context) {
     super(context);
   }
 
-  public List<Object> filterElements(String pattern, boolean everywhere, Computable<Boolean> cancelled, int maxListSize, String extra) {
-    return super.filterElements(transformPattern(pattern), everywhere, cancelled, maxListSize, extra);
+  public void filterElements(ChooseByNameBase base, String pattern, boolean everywhere, Computable<Boolean> cancelled, Processor<Object> consumer) {
+    super.filterElements(base, transformPattern(pattern), everywhere, cancelled, consumer);
   }
 
-  public List<String> getNamesByPattern(String[] names, String pattern) {
-    return super.getNamesByPattern(names, transformPattern(pattern));
+  public List<String> filterNames(ChooseByNameBase base, String[] names, String pattern) {
+    return super.filterNames(base, names, transformPattern(pattern));
   }
 
   private String transformPattern(String pattern) {

@@ -9,18 +9,19 @@ import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.kernel.model.SModelUtil;
-import jetbrains.mps.smodel.constraints.INodeReferentSearchScopeProvider;
+import jetbrains.mps.scope.Scope;
 import jetbrains.mps.smodel.constraints.ModelConstraintsUtil;
-import jetbrains.mps.smodel.constraints.SearchScopeStatus;
-import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
+import jetbrains.mps.scope.ErrorScope;
 import jetbrains.mps.errors.messageTargets.ReferenceMessageTarget;
+import jetbrains.mps.scope.DefaultScope;
+import jetbrains.mps.smodel.runtime.ReferenceScopeProvider;
+import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 
 public class RefScopeChecker extends AbstractConstraintsChecker {
   public RefScopeChecker() {
   }
 
-  public void checkNode(final SNode node, LanguageErrorsComponent component, final IOperationContext operationContext, IScope scope) {
+  public void checkNode(SNode node, LanguageErrorsComponent component, IOperationContext operationContext, IScope scope) {
     if (operationContext == null) {
       return;
     }
@@ -42,22 +43,23 @@ public class RefScopeChecker extends AbstractConstraintsChecker {
       for (SNode c : SNodeOperations.getChildren(node)) {
         component.addDependency(c);
       }
-      String linkRole = SModelUtil.getGenuineLinkRole(ld);
-      final SNode linkTarget = SLinkOperations.getTarget(ld, "target", false);
-      final INodeReferentSearchScopeProvider scopeProvider = ModelConstraintsUtil.getSearchScopeProvider(concept, linkRole);
-      SearchScopeStatus searchScopeStatus = component.runCheckingAction(new _FunctionTypes._return_P0_E0<SearchScopeStatus>() {
-        public SearchScopeStatus invoke() {
-          return ModelConstraintsUtil.createSearchScope(scopeProvider, SNodeOperations.getModel(node), SNodeOperations.getParent(node), node, linkTarget, SNodeOperations.getContainingLinkDeclaration(node), operationContext);
-        }
-      });
-      if (searchScopeStatus.isError()) {
-        component.addError(node, searchScopeStatus.getMessage(), (SNode) null, new ReferenceMessageTarget(SLinkOperations.getRole(ref)));
-      } else if (!(searchScopeStatus.isDefault() || searchScopeStatus.getSearchScope().isInScope(target))) {
+
+      Scope refScope = ModelConstraintsUtil.getScope(ref, operationContext);
+      if (refScope instanceof ErrorScope) {
+        component.addError(node, ((ErrorScope) refScope).getMessage(), (SNode) null, new ReferenceMessageTarget(SLinkOperations.getRole(ref)));
+      } else if (!(refScope instanceof DefaultScope || refScope.contains(target))) {
         String name = target.getName();
+
+        ReferenceScopeProvider scopeProvider = ModelConstraintsManager.getNodeReferentSearchScopeProvider(concept, ref.getRole());
+        SNode ruleNode = (scopeProvider.getSearchScopeValidatorNode() != null ?
+          scopeProvider.getSearchScopeValidatorNode().getNode() :
+          null
+        );
+
         component.addError(node, "reference" + ((name == null ?
           "" :
           " " + name
-        )) + " (" + SLinkOperations.getRole(ref) + ") is out of search scope", searchScopeStatus.getReferenceValidatorNode(), new ReferenceMessageTarget(SLinkOperations.getRole(ref)));
+        )) + " (" + SLinkOperations.getRole(ref) + ") is out of search scope", ruleNode, new ReferenceMessageTarget(SLinkOperations.getRole(ref)));
       }
     }
   }

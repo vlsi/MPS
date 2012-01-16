@@ -24,6 +24,10 @@ import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.workbench.choose.base.BaseMPSChooseModel;
 
 public abstract class BaseModuleModel extends BaseMPSChooseModel<ModuleReference> {
+  public boolean willOpenEditor() {
+    return false;
+  }
+
   public BaseModuleModel(Project project, String entityName) {
     super(project, entityName);
   }

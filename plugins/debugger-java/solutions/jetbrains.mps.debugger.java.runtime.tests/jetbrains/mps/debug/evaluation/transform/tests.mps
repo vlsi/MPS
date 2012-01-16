@@ -6,9 +6,7 @@
   <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
   <language namespace="7da4580f-9d75-4603-8162-51a896d78375(jetbrains.mps.debugger.java.evaluation)" />
   <language namespace="df345b11-b8c7-4213-ac66-48d2a9b75d88(jetbrains.mps.baseLanguageInternal)" />
-  <language namespace="7a5dda62-9140-4668-ab76-d5ed1746f2b2(jetbrains.mps.lang.typesystem)" />
   <language namespace="3a13115c-633c-4c5c-bbcc-75c4219e9555(jetbrains.mps.lang.quotation)" />
-  <language namespace="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" />
   <language namespace="443f4c36-fcf5-4eb6-9500-8d06ed259e3e(jetbrains.mps.baseLanguage.classifiers)" />
   <language namespace="83888646-71ce-4f1c-9c53-c54016f6ad4f(jetbrains.mps.baseLanguage.collections)" />
   <language namespace="80208897-4572-437d-b50e-8f050cba9566(jetbrains.mps.debugger.java.privateMembers)" />
@@ -16,15 +14,13 @@
   <import index="e2lb" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(java.lang@java_stub)" version="-1" />
   <import index="22fg" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.net(JDK/java.net@java_stub)" version="-1" />
   <import index="4c6z" modelUID="f:java_stub#fdb93da0-59ed-4001-b2aa-4fad79ec058e#com.sun.jdi(JDK.Tools/com.sun.jdi@java_stub)" version="-1" />
-  <import index="4tse" modelUID="f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#jetbrains.mps.debug.evaluation(MPS.Workbench/jetbrains.mps.debug.evaluation@java_stub)" version="-1" />
   <import index="cu2c" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)" version="-1" />
   <import index="a52w" modelUID="f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#com.intellij.tests(MPS.Workbench/com.intellij.tests@java_stub)" version="-1" />
-  <import index="3be4" modelUID="f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#jetbrains.mps.debug.evaluation.proxies(MPS.Workbench/jetbrains.mps.debug.evaluation.proxies@java_stub)" version="-1" />
   <import index="cvs4" modelUID="r:7f073096-c94d-44be-8c16-e03c412508f0(jetbrains.mps.debugger.java.runtime.evaluation.transform)" version="-1" />
   <import index="cdx8" modelUID="r:9e383f3b-cf02-4e9f-861b-72b030ba5e68(jetbrains.mps.debug.evaluation.transform)" version="-1" />
-  <import index="vdiq" modelUID="r:4b47d87b-c63f-4029-bce0-f6c8adde3fa8(jetbrains.mps.debugger.java)" version="-1" />
-  <import index="ifim" modelUID="r:6dff38c0-3c4e-455b-9e65-d46014c8a7f5(jetbrains.mps.debugger.java.runtime.proxies)" version="-1" />
   <import index="4are" modelUID="r:88da44e4-ffd4-490b-bf61-1da15124dd34(jetbrains.mps.debugger.java.runtime.evaluation.proxies)" version="-1" />
+  <import index="qgwr" modelUID="r:f326a98e-32f7-47a0-ba29-239107a89ca4(jetbrains.mps.debug.evaluation)" version="-1" />
+  <import index="dcbi" modelUID="r:ea2e6d1f-eab5-4a08-8299-1abe57148f37(jetbrains.mps.debug.evaluation.proxies)" version="-1" />
   <import index="tp5g" modelUID="r:00000000-0000-4000-0000-011c89590388(jetbrains.mps.lang.test.structure)" version="4" implicit="yes" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <import index="tp25" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" implicit="yes" />
@@ -34,7 +30,6 @@
   <import index="wch2" modelUID="r:886e64b3-d82c-4444-8cd9-9ede48ec4a0f(jetbrains.mps.debugger.java.privateMembers.structure)" version="0" implicit="yes" />
   <import index="8sls" modelUID="r:3a27a6eb-dfce-419d-9e4c-ca44cc01a2e2(jetbrains.mps.debugger.java.evaluation.structure)" version="0" implicit="yes" />
   <import index="tp4f" modelUID="r:00000000-0000-4000-0000-011c89590373(jetbrains.mps.baseLanguage.classifiers.structure)" version="0" implicit="yes" />
-  <import index="dcbi" modelUID="r:ea2e6d1f-eab5-4a08-8299-1abe57148f37(jetbrains.mps.debug.evaluation.proxies)" version="-1" implicit="yes" />
   <roots>
     <node type="tp5g.NodesTestCase" typeId="tp5g.1216913645126" id="5543996881668550053">
       <property name="name" nameId="tpck.1169194664001" value="TransformationUtil_Expressions" />
@@ -43,7 +38,7 @@
       <property name="name" nameId="tpck.1169194664001" value="TransformationUtil_Complex" />
     </node>
     <node type="tp5g.TestInfo" typeId="tp5g.5097124989038916362" id="7744266994038462827">
-      <property name="projectPath" nameId="tp5g.5097124989038916363" value="${mps_home}/MPS.mpr" />
+      <property name="projectPath" nameId="tp5g.5097124989038916363" value="${mps_home}/MPS.ipr" />
     </node>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="3102837338445023976">
       <property name="name" nameId="tpck.1169194664001" value="DebuggerInitializer" />
@@ -1864,11 +1859,11 @@
           <node role="expression" roleId="tpee.1068581517676" type="tpee.ParenthesizedExpression" typeId="tpee.1079359253375" id="2717152680784277099">
             <node role="expression" roleId="tpee.1079359253376" type="tpee.CastExpression" typeId="tpee.1070534934090" id="2717152680784277101">
               <node role="type" roleId="tpee.1070534934091" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2717152680784277103">
-                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="3be4.~PrimitiveValueProxy" resolveInfo="PrimitiveValueProxy" />
+                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="dcbi.4727801710070563929" resolveInfo="PrimitiveValueProxy" />
               </node>
               <node role="expression" roleId="tpee.1070534934092" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2377722529357878024">
                 <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2377722529357878025">
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4tse.~EvaluationUtils%dgetVariableValue(java%dlang%dString,com%dsun%djdi%dStackFrame,com%dsun%djdi%dThreadReference)%cjetbrains%dmps%ddebug%devaluation%dproxies%dIValueProxy" resolveInfo="getVariableValue" />
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="qgwr.7494124042451515356" resolveInfo="getVariableValue" />
                   <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="2377722529357878026">
                     <property name="value" nameId="tpee.1070475926801" value="var" />
                   </node>
@@ -1888,8 +1883,8 @@
                   </node>
                 </node>
                 <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="2377722529357878033">
-                  <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="4tse.~EvaluationUtils" resolveInfo="EvaluationUtils" />
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4tse.~EvaluationUtils%dgetInstance()%cjetbrains%dmps%ddebug%devaluation%dEvaluationUtils" resolveInfo="getInstance" />
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="qgwr.7494124042451449889" resolveInfo="getInstance" />
+                  <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="qgwr.4727801710070561555" resolveInfo="EvaluationUtils" />
                 </node>
               </node>
             </node>
@@ -1929,11 +1924,11 @@
           <node role="expression" roleId="tpee.1068581517676" type="tpee.ParenthesizedExpression" typeId="tpee.1079359253375" id="1454920206667908413">
             <node role="expression" roleId="tpee.1079359253376" type="tpee.CastExpression" typeId="tpee.1070534934090" id="1454920206667908414">
               <node role="type" roleId="tpee.1070534934091" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1454920206667908415">
-                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="3be4.~PrimitiveValueProxy" resolveInfo="PrimitiveValueProxy" />
+                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="dcbi.4727801710070563929" resolveInfo="PrimitiveValueProxy" />
               </node>
               <node role="expression" roleId="tpee.1070534934092" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2377722529357878287">
                 <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2377722529357878288">
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4tse.~EvaluationUtils%dgetVariableValue(java%dlang%dString,com%dsun%djdi%dStackFrame,com%dsun%djdi%dThreadReference)%cjetbrains%dmps%ddebug%devaluation%dproxies%dIValueProxy" resolveInfo="getVariableValue" />
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="qgwr.7494124042451515356" resolveInfo="getVariableValue" />
                   <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="2377722529357878289">
                     <property name="value" nameId="tpee.1070475926801" value="var" />
                   </node>
@@ -1953,8 +1948,8 @@
                   </node>
                 </node>
                 <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="2377722529357878296">
-                  <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="4tse.~EvaluationUtils" resolveInfo="EvaluationUtils" />
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4tse.~EvaluationUtils%dgetInstance()%cjetbrains%dmps%ddebug%devaluation%dEvaluationUtils" resolveInfo="getInstance" />
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="qgwr.7494124042451449889" resolveInfo="getInstance" />
+                  <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="qgwr.4727801710070561555" resolveInfo="EvaluationUtils" />
                 </node>
               </node>
             </node>
@@ -2081,7 +2076,7 @@
           <node role="expression" roleId="tpee.1068581517676" type="tp68.InternalPartialInstanceMethodCall" typeId="tp68.1174294166120" id="5543996881668550229">
             <property name="methodName" nameId="tp68.1174294288199" value="getThisObject" />
             <node role="returnType" roleId="tp68.1174313653259" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5543996881668550230">
-              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="3be4.~IObjectValueProxy" resolveInfo="IObjectValueProxy" />
+              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="dcbi.4727801710070563570" resolveInfo="IObjectValueProxy" />
             </node>
             <node role="instance" roleId="tp68.1174317636233" type="tp68.InternalThisExpression" typeId="tp68.1202838164916" id="5543996881668550231" />
           </node>
@@ -2113,7 +2108,7 @@
           <node role="expression" roleId="tpee.1068581517676" type="tp68.InternalPartialInstanceMethodCall" typeId="tp68.1174294166120" id="1454920206667900333">
             <property name="methodName" nameId="tp68.1174294288199" value="getThisObject" />
             <node role="returnType" roleId="tp68.1174313653259" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1454920206667900334">
-              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="3be4.~IObjectValueProxy" resolveInfo="IObjectValueProxy" />
+              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="dcbi.4727801710070563570" resolveInfo="IObjectValueProxy" />
             </node>
             <node role="instance" roleId="tp68.1174317636233" type="tp68.InternalThisExpression" typeId="tp68.1202838164916" id="1454920206667900335" />
           </node>
@@ -2153,17 +2148,17 @@
           <node role="expression" roleId="tpee.1068581517676" type="tpee.ParenthesizedExpression" typeId="tpee.1079359253375" id="5543996881668550248">
             <node role="expression" roleId="tpee.1079359253376" type="tpee.CastExpression" typeId="tpee.1070534934090" id="5543996881668550249">
               <node role="type" roleId="tpee.1070534934091" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5543996881668550250">
-                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="3be4.~PrimitiveValueProxy" resolveInfo="PrimitiveValueProxy" />
+                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="dcbi.4727801710070563929" resolveInfo="PrimitiveValueProxy" />
               </node>
               <node role="expression" roleId="tpee.1070534934092" type="tp68.InternalPartialInstanceMethodCall" typeId="tp68.1174294166120" id="5543996881668550251">
                 <property name="methodName" nameId="tp68.1174294288199" value="getFieldValue" />
                 <node role="returnType" roleId="tp68.1174313653259" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5543996881668550252">
-                  <link role="classifier" roleId="tpee.1107535924139" targetNodeId="3be4.~PrimitiveValueProxy" resolveInfo="PrimitiveValueProxy" />
+                  <link role="classifier" roleId="tpee.1107535924139" targetNodeId="dcbi.4727801710070563929" resolveInfo="PrimitiveValueProxy" />
                 </node>
                 <node role="instance" roleId="tp68.1174317636233" type="tp68.InternalPartialInstanceMethodCall" typeId="tp68.1174294166120" id="5543996881668550253">
                   <property name="methodName" nameId="tp68.1174294288199" value="getThisObject" />
                   <node role="returnType" roleId="tp68.1174313653259" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5543996881668550254">
-                    <link role="classifier" roleId="tpee.1107535924139" targetNodeId="3be4.~IObjectValueProxy" resolveInfo="IObjectValueProxy" />
+                    <link role="classifier" roleId="tpee.1107535924139" targetNodeId="dcbi.4727801710070563570" resolveInfo="IObjectValueProxy" />
                   </node>
                   <node role="instance" roleId="tp68.1174317636233" type="tp68.InternalThisExpression" typeId="tp68.1202838164916" id="5543996881668550255" />
                 </node>
@@ -2205,17 +2200,17 @@
           <node role="expression" roleId="tpee.1068581517676" type="tpee.ParenthesizedExpression" typeId="tpee.1079359253375" id="1454920206667900351">
             <node role="expression" roleId="tpee.1079359253376" type="tpee.CastExpression" typeId="tpee.1070534934090" id="1454920206667900352">
               <node role="type" roleId="tpee.1070534934091" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1454920206667900353">
-                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="3be4.~PrimitiveValueProxy" resolveInfo="PrimitiveValueProxy" />
+                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="dcbi.4727801710070563929" resolveInfo="PrimitiveValueProxy" />
               </node>
               <node role="expression" roleId="tpee.1070534934092" type="tp68.InternalPartialInstanceMethodCall" typeId="tp68.1174294166120" id="1454920206667900354">
                 <property name="methodName" nameId="tp68.1174294288199" value="getFieldValue" />
                 <node role="returnType" roleId="tp68.1174313653259" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1454920206667900355">
-                  <link role="classifier" roleId="tpee.1107535924139" targetNodeId="3be4.~PrimitiveValueProxy" resolveInfo="PrimitiveValueProxy" />
+                  <link role="classifier" roleId="tpee.1107535924139" targetNodeId="dcbi.4727801710070563929" resolveInfo="PrimitiveValueProxy" />
                 </node>
                 <node role="instance" roleId="tp68.1174317636233" type="tp68.InternalPartialInstanceMethodCall" typeId="tp68.1174294166120" id="1454920206667900356">
                   <property name="methodName" nameId="tp68.1174294288199" value="getThisObject" />
                   <node role="returnType" roleId="tp68.1174313653259" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1454920206667900357">
-                    <link role="classifier" roleId="tpee.1107535924139" targetNodeId="3be4.~IObjectValueProxy" resolveInfo="IObjectValueProxy" />
+                    <link role="classifier" roleId="tpee.1107535924139" targetNodeId="dcbi.4727801710070563570" resolveInfo="IObjectValueProxy" />
                   </node>
                   <node role="instance" roleId="tp68.1174317636233" type="tp68.InternalThisExpression" typeId="tp68.1202838164916" id="1454920206667900358" />
                 </node>
@@ -2262,11 +2257,11 @@
           <node role="expression" roleId="tpee.1068581517676" type="tpee.ParenthesizedExpression" typeId="tpee.1079359253375" id="1051067612668763787">
             <node role="expression" roleId="tpee.1079359253376" type="tpee.CastExpression" typeId="tpee.1070534934090" id="1051067612668763789">
               <node role="type" roleId="tpee.1070534934091" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1051067612668763791">
-                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="3be4.~PrimitiveValueProxy" resolveInfo="PrimitiveValueProxy" />
+                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="dcbi.4727801710070563929" resolveInfo="PrimitiveValueProxy" />
               </node>
               <node role="expression" roleId="tpee.1070534934092" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2377722529357878277">
                 <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2377722529357878278">
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4tse.~EvaluationUtils%dgetStaticField(java%dlang%dString,java%dlang%dString,com%dsun%djdi%dThreadReference)%cjetbrains%dmps%ddebug%devaluation%dproxies%dIValueProxy" resolveInfo="getStaticField" />
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="qgwr.7494124042451515517" resolveInfo="getStaticField" />
                   <node role="actualArgument" roleId="tpee.1068499141038" type="tp68.InternalPartialInstanceMethodCall" typeId="tp68.1174294166120" id="2377722529357878279">
                     <property name="methodName" nameId="tp68.1174294288199" value="getThisFQName" />
                     <node role="returnType" roleId="tp68.1174313653259" type="tpee.StringType" typeId="tpee.1225271177708" id="2377722529357878280" />
@@ -2284,8 +2279,8 @@
                   </node>
                 </node>
                 <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="2377722529357878286">
-                  <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="4tse.~EvaluationUtils" resolveInfo="EvaluationUtils" />
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4tse.~EvaluationUtils%dgetInstance()%cjetbrains%dmps%ddebug%devaluation%dEvaluationUtils" resolveInfo="getInstance" />
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="qgwr.7494124042451449889" resolveInfo="getInstance" />
+                  <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="qgwr.4727801710070561555" resolveInfo="EvaluationUtils" />
                 </node>
               </node>
             </node>
@@ -2324,11 +2319,11 @@
           <node role="expression" roleId="tpee.1068581517676" type="tpee.ParenthesizedExpression" typeId="tpee.1079359253375" id="1454920206667900380">
             <node role="expression" roleId="tpee.1079359253376" type="tpee.CastExpression" typeId="tpee.1070534934090" id="1454920206667900381">
               <node role="type" roleId="tpee.1070534934091" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="4583341770697725555">
-                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="3be4.~IValueProxy" resolveInfo="IValueProxy" />
+                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="dcbi.4727801710070560812" resolveInfo="IValueProxy" />
               </node>
               <node role="expression" roleId="tpee.1070534934092" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2377722529357878307">
                 <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2377722529357878308">
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4tse.~EvaluationUtils%dgetStaticField(java%dlang%dString,java%dlang%dString,com%dsun%djdi%dThreadReference)%cjetbrains%dmps%ddebug%devaluation%dproxies%dIValueProxy" resolveInfo="getStaticField" />
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="qgwr.7494124042451515517" resolveInfo="getStaticField" />
                   <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="2377722529357878309">
                     <property name="value" nameId="tpee.1070475926801" value="java.lang.System" />
                   </node>
@@ -2344,8 +2339,8 @@
                   </node>
                 </node>
                 <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="2377722529357878314">
-                  <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="4tse.~EvaluationUtils" resolveInfo="EvaluationUtils" />
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4tse.~EvaluationUtils%dgetInstance()%cjetbrains%dmps%ddebug%devaluation%dEvaluationUtils" resolveInfo="getInstance" />
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="qgwr.7494124042451449889" resolveInfo="getInstance" />
+                  <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="qgwr.4727801710070561555" resolveInfo="EvaluationUtils" />
                 </node>
               </node>
             </node>
@@ -2389,7 +2384,7 @@
           <node role="expression" roleId="tpee.1068581517676" type="tpee.ParenthesizedExpression" typeId="tpee.1079359253375" id="2662691822046453411">
             <node role="expression" roleId="tpee.1079359253376" type="tpee.CastExpression" typeId="tpee.1070534934090" id="2662691822046453412">
               <node role="type" roleId="tpee.1070534934091" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2662691822046453413">
-                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="3be4.~IObjectValueProxy" resolveInfo="IObjectValueProxy" />
+                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="dcbi.4727801710070563570" resolveInfo="IObjectValueProxy" />
               </node>
               <node role="expression" roleId="tpee.1070534934092" type="tp68.InternalPartialInstanceMethodCall" typeId="tp68.1174294166120" id="2662691822046453424">
                 <property name="methodName" nameId="tp68.1174294288199" value="invokeMethod" />
@@ -2403,12 +2398,12 @@
                   <property name="value" nameId="tpee.1068580320021" value="0" />
                 </node>
                 <node role="returnType" roleId="tp68.1174313653259" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2662691822046453426">
-                  <link role="classifier" roleId="tpee.1107535924139" targetNodeId="3be4.~IObjectValueProxy" resolveInfo="IObjectValueProxy" />
+                  <link role="classifier" roleId="tpee.1107535924139" targetNodeId="dcbi.4727801710070563570" resolveInfo="IObjectValueProxy" />
                 </node>
                 <node role="instance" roleId="tp68.1174317636233" type="tp68.InternalPartialInstanceMethodCall" typeId="tp68.1174294166120" id="2662691822046453427">
                   <property name="methodName" nameId="tp68.1174294288199" value="getThisObject" />
                   <node role="returnType" roleId="tp68.1174313653259" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2662691822046453428">
-                    <link role="classifier" roleId="tpee.1107535924139" targetNodeId="3be4.~IObjectValueProxy" resolveInfo="IObjectValueProxy" />
+                    <link role="classifier" roleId="tpee.1107535924139" targetNodeId="dcbi.4727801710070563570" resolveInfo="IObjectValueProxy" />
                   </node>
                   <node role="instance" roleId="tp68.1174317636233" type="tp68.InternalThisExpression" typeId="tp68.1202838164916" id="2662691822046453429" />
                 </node>
@@ -2452,7 +2447,7 @@
           <node role="expression" roleId="tpee.1068581517676" type="tpee.ParenthesizedExpression" typeId="tpee.1079359253375" id="2662691822046542629">
             <node role="expression" roleId="tpee.1079359253376" type="tpee.CastExpression" typeId="tpee.1070534934090" id="2662691822046542630">
               <node role="type" roleId="tpee.1070534934091" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2662691822046542631">
-                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="3be4.~IObjectValueProxy" resolveInfo="IObjectValueProxy" />
+                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="dcbi.4727801710070563570" resolveInfo="IObjectValueProxy" />
               </node>
               <node role="expression" roleId="tpee.1070534934092" type="tp68.InternalPartialInstanceMethodCall" typeId="tp68.1174294166120" id="2662691822046542632">
                 <property name="methodName" nameId="tp68.1174294288199" value="invokeMethod" />
@@ -2466,12 +2461,12 @@
                   <property name="value" nameId="tpee.1068580320021" value="0" />
                 </node>
                 <node role="returnType" roleId="tp68.1174313653259" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2662691822046542636">
-                  <link role="classifier" roleId="tpee.1107535924139" targetNodeId="3be4.~IObjectValueProxy" resolveInfo="IObjectValueProxy" />
+                  <link role="classifier" roleId="tpee.1107535924139" targetNodeId="dcbi.4727801710070563570" resolveInfo="IObjectValueProxy" />
                 </node>
                 <node role="instance" roleId="tp68.1174317636233" type="tp68.InternalPartialInstanceMethodCall" typeId="tp68.1174294166120" id="2662691822046542637">
                   <property name="methodName" nameId="tp68.1174294288199" value="getThisObject" />
                   <node role="returnType" roleId="tp68.1174313653259" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2662691822046542638">
-                    <link role="classifier" roleId="tpee.1107535924139" targetNodeId="3be4.~IObjectValueProxy" resolveInfo="IObjectValueProxy" />
+                    <link role="classifier" roleId="tpee.1107535924139" targetNodeId="dcbi.4727801710070563570" resolveInfo="IObjectValueProxy" />
                   </node>
                   <node role="instance" roleId="tp68.1174317636233" type="tp68.InternalThisExpression" typeId="tp68.1202838164916" id="2662691822046542639" />
                 </node>
@@ -2521,11 +2516,11 @@
           <node role="expression" roleId="tpee.1068581517676" type="tpee.ParenthesizedExpression" typeId="tpee.1079359253375" id="1051067612668763830">
             <node role="expression" roleId="tpee.1079359253376" type="tpee.CastExpression" typeId="tpee.1070534934090" id="1051067612668763831">
               <node role="type" roleId="tpee.1070534934091" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1051067612668763832">
-                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="3be4.~IObjectValueProxy" resolveInfo="IObjectValueProxy" />
+                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="dcbi.4727801710070563570" resolveInfo="IObjectValueProxy" />
               </node>
               <node role="expression" roleId="tpee.1070534934092" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2377722529357878150">
                 <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2377722529357878151">
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4tse.~EvaluationUtils%dinvokeStaticMethod(java%dlang%dString,java%dlang%dString,java%dlang%dString,com%dsun%djdi%dThreadReference,java%dlang%dObject%d%d%d)%cjetbrains%dmps%ddebug%devaluation%dproxies%dIValueProxy" resolveInfo="invokeStaticMethod" />
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="qgwr.7494124042451515467" resolveInfo="invokeStaticMethod" />
                   <node role="actualArgument" roleId="tpee.1068499141038" type="tp68.InternalPartialInstanceMethodCall" typeId="tp68.1174294166120" id="2377722529357878152">
                     <property name="methodName" nameId="tp68.1174294288199" value="getThisFQName" />
                     <node role="returnType" roleId="tp68.1174313653259" type="tpee.StringType" typeId="tpee.1225271177708" id="2377722529357878153" />
@@ -2552,8 +2547,8 @@
                   </node>
                 </node>
                 <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="2377722529357878162">
-                  <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="4tse.~EvaluationUtils" resolveInfo="EvaluationUtils" />
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4tse.~EvaluationUtils%dgetInstance()%cjetbrains%dmps%ddebug%devaluation%dEvaluationUtils" resolveInfo="getInstance" />
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="qgwr.7494124042451449889" resolveInfo="getInstance" />
+                  <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="qgwr.4727801710070561555" resolveInfo="EvaluationUtils" />
                 </node>
               </node>
             </node>
@@ -2596,11 +2591,11 @@
           <node role="expression" roleId="tpee.1068580123156" type="tpee.ParenthesizedExpression" typeId="tpee.1079359253375" id="2717152680784277209">
             <node role="expression" roleId="tpee.1079359253376" type="tpee.CastExpression" typeId="tpee.1070534934090" id="2717152680784277210">
               <node role="type" roleId="tpee.1070534934091" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2717152680784277211">
-                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="3be4.~IObjectValueProxy" resolveInfo="IObjectValueProxy" />
+                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="dcbi.4727801710070563570" resolveInfo="IObjectValueProxy" />
               </node>
               <node role="expression" roleId="tpee.1070534934092" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2377722529357878044">
                 <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2377722529357878045">
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4tse.~EvaluationUtils%dinvokeStaticMethod(java%dlang%dString,java%dlang%dString,java%dlang%dString,com%dsun%djdi%dThreadReference,java%dlang%dObject%d%d%d)%cjetbrains%dmps%ddebug%devaluation%dproxies%dIValueProxy" resolveInfo="invokeStaticMethod" />
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="qgwr.7494124042451515467" resolveInfo="invokeStaticMethod" />
                   <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="2377722529357878046">
                     <property name="value" nameId="tpee.1070475926801" value="java.lang.Thread" />
                   </node>
@@ -2622,8 +2617,8 @@
                   </node>
                 </node>
                 <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="2377722529357878053">
-                  <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="4tse.~EvaluationUtils" resolveInfo="EvaluationUtils" />
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4tse.~EvaluationUtils%dgetInstance()%cjetbrains%dmps%ddebug%devaluation%dEvaluationUtils" resolveInfo="getInstance" />
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="qgwr.7494124042451449889" resolveInfo="getInstance" />
+                  <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="qgwr.4727801710070561555" resolveInfo="EvaluationUtils" />
                 </node>
               </node>
             </node>
@@ -2671,7 +2666,7 @@
           <node role="expression" roleId="tpee.1068581517676" type="tpee.ParenthesizedExpression" typeId="tpee.1079359253375" id="2717152680784277229">
             <node role="expression" roleId="tpee.1079359253376" type="tpee.CastExpression" typeId="tpee.1070534934090" id="2717152680784277230">
               <node role="type" roleId="tpee.1070534934091" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2717152680784277231">
-                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="3be4.~PrimitiveValueProxy" resolveInfo="PrimitiveValueProxy" />
+                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="dcbi.4727801710070563929" resolveInfo="PrimitiveValueProxy" />
               </node>
               <node role="expression" roleId="tpee.1070534934092" type="tp68.InternalPartialInstanceMethodCall" typeId="tp68.1174294166120" id="2717152680784277232">
                 <property name="methodName" nameId="tp68.1174294288199" value="getElementAt" />
@@ -2679,16 +2674,16 @@
                   <property name="value" nameId="tpee.1068580320021" value="0" />
                 </node>
                 <node role="returnType" roleId="tp68.1174313653259" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2717152680784277234">
-                  <link role="classifier" roleId="tpee.1107535924139" targetNodeId="3be4.~PrimitiveValueProxy" resolveInfo="PrimitiveValueProxy" />
+                  <link role="classifier" roleId="tpee.1107535924139" targetNodeId="dcbi.4727801710070563929" resolveInfo="PrimitiveValueProxy" />
                 </node>
                 <node role="instance" roleId="tp68.1174317636233" type="tpee.ParenthesizedExpression" typeId="tpee.1079359253375" id="2717152680784277235">
                   <node role="expression" roleId="tpee.1079359253376" type="tpee.CastExpression" typeId="tpee.1070534934090" id="2717152680784277236">
                     <node role="type" roleId="tpee.1070534934091" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2717152680784277237">
-                      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="3be4.~IArrayValueProxy" resolveInfo="IArrayValueProxy" />
+                      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="dcbi.4727801710070562884" resolveInfo="IArrayValueProxy" />
                     </node>
                     <node role="expression" roleId="tpee.1070534934092" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2377722529357878343">
                       <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2377722529357878344">
-                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4tse.~EvaluationUtils%dgetVariableValue(java%dlang%dString,com%dsun%djdi%dStackFrame,com%dsun%djdi%dThreadReference)%cjetbrains%dmps%ddebug%devaluation%dproxies%dIValueProxy" resolveInfo="getVariableValue" />
+                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="qgwr.7494124042451515356" resolveInfo="getVariableValue" />
                         <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="2377722529357878345">
                           <property name="value" nameId="tpee.1070475926801" value="array" />
                         </node>
@@ -2708,8 +2703,8 @@
                         </node>
                       </node>
                       <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="2377722529357878352">
-                        <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="4tse.~EvaluationUtils" resolveInfo="EvaluationUtils" />
-                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4tse.~EvaluationUtils%dgetInstance()%cjetbrains%dmps%ddebug%devaluation%dEvaluationUtils" resolveInfo="getInstance" />
+                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="qgwr.7494124042451449889" resolveInfo="getInstance" />
+                        <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="qgwr.4727801710070561555" resolveInfo="EvaluationUtils" />
                       </node>
                     </node>
                   </node>
@@ -2768,16 +2763,16 @@
                 <node role="instance" roleId="tp68.1174317636233" type="tpee.ParenthesizedExpression" typeId="tpee.1079359253375" id="3102837338444999252">
                   <node role="expression" roleId="tpee.1079359253376" type="tpee.CastExpression" typeId="tpee.1070534934090" id="3102837338444999253">
                     <node role="type" roleId="tpee.1070534934091" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="3102837338444999254">
-                      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="3be4.~IArrayValueProxy" resolveInfo="IArrayValueProxy" />
+                      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="dcbi.4727801710070562884" resolveInfo="IArrayValueProxy" />
                     </node>
                     <node role="expression" roleId="tpee.1070534934092" type="tpee.ParenthesizedExpression" typeId="tpee.1079359253375" id="3102837338444999255">
                       <node role="expression" roleId="tpee.1079359253376" type="tpee.CastExpression" typeId="tpee.1070534934090" id="3102837338444999256">
                         <node role="type" roleId="tpee.1070534934091" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="3102837338444999257">
-                          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="3be4.~IArrayValueProxy" resolveInfo="IArrayValueProxy" />
+                          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="dcbi.4727801710070562884" resolveInfo="IArrayValueProxy" />
                         </node>
                         <node role="expression" roleId="tpee.1070534934092" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2377722529357878103">
                           <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2377722529357878104">
-                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4tse.~EvaluationUtils%dgetVariableValue(java%dlang%dString,com%dsun%djdi%dStackFrame,com%dsun%djdi%dThreadReference)%cjetbrains%dmps%ddebug%devaluation%dproxies%dIValueProxy" resolveInfo="getVariableValue" />
+                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="qgwr.7494124042451515356" resolveInfo="getVariableValue" />
                             <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="2377722529357878105">
                               <property name="value" nameId="tpee.1070475926801" value="array" />
                             </node>
@@ -2797,8 +2792,8 @@
                             </node>
                           </node>
                           <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="2377722529357878112">
-                            <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="4tse.~EvaluationUtils" resolveInfo="EvaluationUtils" />
-                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4tse.~EvaluationUtils%dgetInstance()%cjetbrains%dmps%ddebug%devaluation%dEvaluationUtils" resolveInfo="getInstance" />
+                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="qgwr.7494124042451449889" resolveInfo="getInstance" />
+                            <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="qgwr.4727801710070561555" resolveInfo="EvaluationUtils" />
                           </node>
                         </node>
                       </node>
@@ -2858,12 +2853,12 @@
                 <node role="instance" roleId="tp68.1174317636233" type="tpee.ParenthesizedExpression" typeId="tpee.1079359253375" id="3102837338444999274">
                   <node role="expression" roleId="tpee.1079359253376" type="tpee.CastExpression" typeId="tpee.1070534934090" id="3102837338444999275">
                     <node role="type" roleId="tpee.1070534934091" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="3102837338444999276">
-                      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="3be4.~IObjectValueProxy" resolveInfo="IObjectValueProxy" />
+                      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="dcbi.4727801710070563570" resolveInfo="IObjectValueProxy" />
                     </node>
                     <node role="expression" roleId="tpee.1070534934092" type="tp68.InternalPartialInstanceMethodCall" typeId="tp68.1174294166120" id="3102837338444999277">
                       <property name="methodName" nameId="tp68.1174294288199" value="getThisObject" />
                       <node role="returnType" roleId="tp68.1174313653259" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="3102837338444999278">
-                        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="3be4.~IObjectValueProxy" resolveInfo="IObjectValueProxy" />
+                        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="dcbi.4727801710070563570" resolveInfo="IObjectValueProxy" />
                       </node>
                       <node role="instance" roleId="tp68.1174317636233" type="tp68.InternalThisExpression" typeId="tp68.1202838164916" id="3102837338444999279" />
                     </node>
@@ -2915,7 +2910,7 @@
           <node role="expression" roleId="tpee.1068581517676" type="tpee.ParenthesizedExpression" typeId="tpee.1079359253375" id="8092021695490157001">
             <node role="expression" roleId="tpee.1079359253376" type="tpee.CastExpression" typeId="tpee.1070534934090" id="8092021695490157003">
               <node role="type" roleId="tpee.1070534934091" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="8092021695490157005">
-                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="3be4.~IObjectValueProxy" resolveInfo="IObjectValueProxy" />
+                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="dcbi.4727801710070563570" resolveInfo="IObjectValueProxy" />
               </node>
               <node role="expression" roleId="tpee.1070534934092" type="tp68.InternalPartialInstanceMethodCall" typeId="tp68.1174294166120" id="8092021695490157006">
                 <property name="methodName" nameId="tp68.1174294288199" value="invokeSuperMethod" />
@@ -2929,12 +2924,12 @@
                   <property name="value" nameId="tpee.1068580320021" value="0" />
                 </node>
                 <node role="returnType" roleId="tp68.1174313653259" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="8092021695490157010">
-                  <link role="classifier" roleId="tpee.1107535924139" targetNodeId="3be4.~IObjectValueProxy" resolveInfo="IObjectValueProxy" />
+                  <link role="classifier" roleId="tpee.1107535924139" targetNodeId="dcbi.4727801710070563570" resolveInfo="IObjectValueProxy" />
                 </node>
                 <node role="instance" roleId="tp68.1174317636233" type="tp68.InternalPartialInstanceMethodCall" typeId="tp68.1174294166120" id="8092021695490157011">
                   <property name="methodName" nameId="tp68.1174294288199" value="getThisObject" />
                   <node role="returnType" roleId="tp68.1174313653259" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="8092021695490157012">
-                    <link role="classifier" roleId="tpee.1107535924139" targetNodeId="3be4.~IObjectValueProxy" resolveInfo="IObjectValueProxy" />
+                    <link role="classifier" roleId="tpee.1107535924139" targetNodeId="dcbi.4727801710070563570" resolveInfo="IObjectValueProxy" />
                   </node>
                   <node role="instance" roleId="tp68.1174317636233" type="tp68.InternalThisExpression" typeId="tp68.1202838164916" id="8092021695490157013" />
                 </node>
@@ -2975,7 +2970,7 @@
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="7843490654472659453">
           <node role="expression" roleId="tpee.1068581517676" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2377722529357878054">
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2377722529357878055">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4tse.~EvaluationUtils%dinvokeConstructorProxy(java%dlang%dString,java%dlang%dString,com%dsun%djdi%dThreadReference,java%dlang%dObject%d%d%d)%cjetbrains%dmps%ddebug%devaluation%dproxies%dIObjectValueProxy" resolveInfo="invokeConstructorProxy" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="qgwr.7494124042451515567" resolveInfo="invokeConstructorProxy" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="2377722529357878056">
                 <property name="value" nameId="tpee.1070475926801" value="java.lang.StringBuffer" />
               </node>
@@ -2994,8 +2989,8 @@
               </node>
             </node>
             <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="2377722529357878062">
-              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="4tse.~EvaluationUtils" resolveInfo="EvaluationUtils" />
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4tse.~EvaluationUtils%dgetInstance()%cjetbrains%dmps%ddebug%devaluation%dEvaluationUtils" resolveInfo="getInstance" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="qgwr.7494124042451449889" resolveInfo="getInstance" />
+              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="qgwr.4727801710070561555" resolveInfo="EvaluationUtils" />
             </node>
           </node>
         </node>
@@ -3033,7 +3028,7 @@
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="7843490654472659439">
           <node role="expression" roleId="tpee.1068581517676" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2377722529357878214">
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2377722529357878215">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4tse.~EvaluationUtils%dinvokeConstructorProxy(java%dlang%dString,java%dlang%dString,com%dsun%djdi%dThreadReference,java%dlang%dObject%d%d%d)%cjetbrains%dmps%ddebug%devaluation%dproxies%dIObjectValueProxy" resolveInfo="invokeConstructorProxy" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="qgwr.7494124042451515567" resolveInfo="invokeConstructorProxy" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="2377722529357878216">
                 <property name="value" nameId="tpee.1070475926801" value="java.lang.StringBuffer" />
               </node>
@@ -3052,8 +3047,8 @@
               </node>
             </node>
             <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="2377722529357878222">
-              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="4tse.~EvaluationUtils" resolveInfo="EvaluationUtils" />
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4tse.~EvaluationUtils%dgetInstance()%cjetbrains%dmps%ddebug%devaluation%dEvaluationUtils" resolveInfo="getInstance" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="qgwr.7494124042451449889" resolveInfo="getInstance" />
+              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="qgwr.4727801710070561555" resolveInfo="EvaluationUtils" />
             </node>
           </node>
         </node>
@@ -3120,11 +3115,11 @@
                       <node role="expression" roleId="tpee.1079359253376" type="tpee.ParenthesizedExpression" typeId="tpee.1079359253375" id="3102837338444999542">
                         <node role="expression" roleId="tpee.1079359253376" type="tpee.CastExpression" typeId="tpee.1070534934090" id="3102837338444999543">
                           <node role="type" roleId="tpee.1070534934091" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="3102837338444999544">
-                            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="3be4.~PrimitiveValueProxy" resolveInfo="PrimitiveValueProxy" />
+                            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="dcbi.4727801710070563929" resolveInfo="PrimitiveValueProxy" />
                           </node>
                           <node role="expression" roleId="tpee.1070534934092" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2377722529357877910">
                             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2377722529357877911">
-                              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4tse.~EvaluationUtils%dgetVariableValue(java%dlang%dString,com%dsun%djdi%dStackFrame,com%dsun%djdi%dThreadReference)%cjetbrains%dmps%ddebug%devaluation%dproxies%dIValueProxy" resolveInfo="getVariableValue" />
+                              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="qgwr.7494124042451515356" resolveInfo="getVariableValue" />
                               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="2377722529357877912">
                                 <property name="value" nameId="tpee.1070475926801" value="intVar" />
                               </node>
@@ -3144,8 +3139,8 @@
                               </node>
                             </node>
                             <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="2377722529357877919">
-                              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="4tse.~EvaluationUtils" resolveInfo="EvaluationUtils" />
-                              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4tse.~EvaluationUtils%dgetInstance()%cjetbrains%dmps%ddebug%devaluation%dEvaluationUtils" resolveInfo="getInstance" />
+                              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="qgwr.7494124042451449889" resolveInfo="getInstance" />
+                              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="qgwr.4727801710070561555" resolveInfo="EvaluationUtils" />
                             </node>
                           </node>
                         </node>
@@ -3166,11 +3161,11 @@
                       <node role="expression" roleId="tpee.1079359253376" type="tpee.ParenthesizedExpression" typeId="tpee.1079359253375" id="3102837338444999558">
                         <node role="expression" roleId="tpee.1079359253376" type="tpee.CastExpression" typeId="tpee.1070534934090" id="3102837338444999559">
                           <node role="type" roleId="tpee.1070534934091" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="3102837338444999560">
-                            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="3be4.~PrimitiveValueProxy" resolveInfo="PrimitiveValueProxy" />
+                            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="dcbi.4727801710070563929" resolveInfo="PrimitiveValueProxy" />
                           </node>
                           <node role="expression" roleId="tpee.1070534934092" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2377722529357878491">
                             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2377722529357878492">
-                              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4tse.~EvaluationUtils%dgetVariableValue(java%dlang%dString,com%dsun%djdi%dStackFrame,com%dsun%djdi%dThreadReference)%cjetbrains%dmps%ddebug%devaluation%dproxies%dIValueProxy" resolveInfo="getVariableValue" />
+                              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="qgwr.7494124042451515356" resolveInfo="getVariableValue" />
                               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="2377722529357878493">
                                 <property name="value" nameId="tpee.1070475926801" value="doubleVar" />
                               </node>
@@ -3190,8 +3185,8 @@
                               </node>
                             </node>
                             <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="2377722529357878500">
-                              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="4tse.~EvaluationUtils" resolveInfo="EvaluationUtils" />
-                              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4tse.~EvaluationUtils%dgetInstance()%cjetbrains%dmps%ddebug%devaluation%dEvaluationUtils" resolveInfo="getInstance" />
+                              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="qgwr.7494124042451449889" resolveInfo="getInstance" />
+                              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="qgwr.4727801710070561555" resolveInfo="EvaluationUtils" />
                             </node>
                           </node>
                         </node>
@@ -3275,11 +3270,11 @@
                       <node role="expression" roleId="tpee.1079359253376" type="tpee.ParenthesizedExpression" typeId="tpee.1079359253375" id="3102837338444999386">
                         <node role="expression" roleId="tpee.1079359253376" type="tpee.CastExpression" typeId="tpee.1070534934090" id="3102837338444999387">
                           <node role="type" roleId="tpee.1070534934091" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="3102837338444999388">
-                            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="3be4.~IObjectValueProxy" resolveInfo="IObjectValueProxy" />
+                            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="dcbi.4727801710070563570" resolveInfo="IObjectValueProxy" />
                           </node>
                           <node role="expression" roleId="tpee.1070534934092" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2377722529357878539">
                             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2377722529357878540">
-                              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4tse.~EvaluationUtils%dgetVariableValue(java%dlang%dString,com%dsun%djdi%dStackFrame,com%dsun%djdi%dThreadReference)%cjetbrains%dmps%ddebug%devaluation%dproxies%dIValueProxy" resolveInfo="getVariableValue" />
+                              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="qgwr.7494124042451515356" resolveInfo="getVariableValue" />
                               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="2377722529357878541">
                                 <property name="value" nameId="tpee.1070475926801" value="stringVar" />
                               </node>
@@ -3299,8 +3294,8 @@
                               </node>
                             </node>
                             <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="2377722529357878548">
-                              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="4tse.~EvaluationUtils" resolveInfo="EvaluationUtils" />
-                              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4tse.~EvaluationUtils%dgetInstance()%cjetbrains%dmps%ddebug%devaluation%dEvaluationUtils" resolveInfo="getInstance" />
+                              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="qgwr.7494124042451449889" resolveInfo="getInstance" />
+                              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="qgwr.4727801710070561555" resolveInfo="EvaluationUtils" />
                             </node>
                           </node>
                         </node>
@@ -3320,17 +3315,17 @@
                     <node role="instance" roleId="tp68.1174317636233" type="tp68.InternalPartialInstanceMethodCall" typeId="tp68.1174294166120" id="3102837338444999401">
                       <property name="methodName" nameId="tp68.1174294288199" value="invokeMethod" />
                       <node role="returnType" roleId="tp68.1174313653259" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="3102837338444999402">
-                        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="3be4.~IValueProxy" resolveInfo="IValueProxy" />
+                        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="dcbi.4727801710070560812" resolveInfo="IValueProxy" />
                       </node>
                       <node role="instance" roleId="tp68.1174317636233" type="tpee.ParenthesizedExpression" typeId="tpee.1079359253375" id="3102837338444999403">
                         <node role="expression" roleId="tpee.1079359253376" type="tpee.ParenthesizedExpression" typeId="tpee.1079359253375" id="3102837338444999404">
                           <node role="expression" roleId="tpee.1079359253376" type="tpee.CastExpression" typeId="tpee.1070534934090" id="3102837338444999405">
                             <node role="type" roleId="tpee.1070534934091" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="3102837338444999406">
-                              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="3be4.~IObjectValueProxy" resolveInfo="IObjectValueProxy" />
+                              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="dcbi.4727801710070563570" resolveInfo="IObjectValueProxy" />
                             </node>
                             <node role="expression" roleId="tpee.1070534934092" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2377722529357877920">
                               <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2377722529357877921">
-                                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4tse.~EvaluationUtils%dgetVariableValue(java%dlang%dString,com%dsun%djdi%dStackFrame,com%dsun%djdi%dThreadReference)%cjetbrains%dmps%ddebug%devaluation%dproxies%dIValueProxy" resolveInfo="getVariableValue" />
+                                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="qgwr.7494124042451515356" resolveInfo="getVariableValue" />
                                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="2377722529357877922">
                                   <property name="value" nameId="tpee.1070475926801" value="objectVar" />
                                 </node>
@@ -3350,8 +3345,8 @@
                                 </node>
                               </node>
                               <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="2377722529357877929">
-                                <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="4tse.~EvaluationUtils" resolveInfo="EvaluationUtils" />
-                                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4tse.~EvaluationUtils%dgetInstance()%cjetbrains%dmps%ddebug%devaluation%dEvaluationUtils" resolveInfo="getInstance" />
+                                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="qgwr.7494124042451449889" resolveInfo="getInstance" />
+                                <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="qgwr.4727801710070561555" resolveInfo="EvaluationUtils" />
                               </node>
                             </node>
                           </node>
@@ -3435,16 +3430,16 @@
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="3102837338444999350">
               <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="dcbi.3102837338444217531" resolveInfo="getValueProxyFromJava" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="3102837338444999351">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="3be4.~ProxyEqualsUtil%djavaEquals(jetbrains%dmps%ddebug%devaluation%dproxies%dIValueProxy,jetbrains%dmps%ddebug%devaluation%dproxies%dIValueProxy)%cboolean" resolveInfo="javaEquals" />
-                <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="3be4.~ProxyEqualsUtil" resolveInfo="ProxyEqualsUtil" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="dcbi.4727801710070562913" resolveInfo="javaEquals" />
+                <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="dcbi.4727801710070562907" resolveInfo="ProxyEqualsUtil" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParenthesizedExpression" typeId="tpee.1079359253375" id="3102837338444999352">
                   <node role="expression" roleId="tpee.1079359253376" type="tpee.CastExpression" typeId="tpee.1070534934090" id="3102837338444999353">
                     <node role="type" roleId="tpee.1070534934091" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="3102837338444999354">
-                      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="3be4.~IObjectValueProxy" resolveInfo="IObjectValueProxy" />
+                      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="dcbi.4727801710070563570" resolveInfo="IObjectValueProxy" />
                     </node>
                     <node role="expression" roleId="tpee.1070534934092" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2377722529357878549">
                       <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2377722529357878550">
-                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4tse.~EvaluationUtils%dgetVariableValue(java%dlang%dString,com%dsun%djdi%dStackFrame,com%dsun%djdi%dThreadReference)%cjetbrains%dmps%ddebug%devaluation%dproxies%dIValueProxy" resolveInfo="getVariableValue" />
+                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="qgwr.7494124042451515356" resolveInfo="getVariableValue" />
                         <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="2377722529357878551">
                           <property name="value" nameId="tpee.1070475926801" value="var1" />
                         </node>
@@ -3464,8 +3459,8 @@
                         </node>
                       </node>
                       <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="2377722529357878558">
-                        <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="4tse.~EvaluationUtils" resolveInfo="EvaluationUtils" />
-                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4tse.~EvaluationUtils%dgetInstance()%cjetbrains%dmps%ddebug%devaluation%dEvaluationUtils" resolveInfo="getInstance" />
+                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="qgwr.7494124042451449889" resolveInfo="getInstance" />
+                        <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="qgwr.4727801710070561555" resolveInfo="EvaluationUtils" />
                       </node>
                     </node>
                   </node>
@@ -3473,11 +3468,11 @@
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParenthesizedExpression" typeId="tpee.1079359253375" id="3102837338444999363">
                   <node role="expression" roleId="tpee.1079359253376" type="tpee.CastExpression" typeId="tpee.1070534934090" id="3102837338444999364">
                     <node role="type" roleId="tpee.1070534934091" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="3102837338444999365">
-                      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="3be4.~IObjectValueProxy" resolveInfo="IObjectValueProxy" />
+                      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="dcbi.4727801710070563570" resolveInfo="IObjectValueProxy" />
                     </node>
                     <node role="expression" roleId="tpee.1070534934092" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2377722529357878439">
                       <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2377722529357878440">
-                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4tse.~EvaluationUtils%dgetVariableValue(java%dlang%dString,com%dsun%djdi%dStackFrame,com%dsun%djdi%dThreadReference)%cjetbrains%dmps%ddebug%devaluation%dproxies%dIValueProxy" resolveInfo="getVariableValue" />
+                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="qgwr.7494124042451515356" resolveInfo="getVariableValue" />
                         <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="2377722529357878441">
                           <property name="value" nameId="tpee.1070475926801" value="var2" />
                         </node>
@@ -3497,8 +3492,8 @@
                         </node>
                       </node>
                       <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="2377722529357878448">
-                        <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="4tse.~EvaluationUtils" resolveInfo="EvaluationUtils" />
-                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4tse.~EvaluationUtils%dgetInstance()%cjetbrains%dmps%ddebug%devaluation%dEvaluationUtils" resolveInfo="getInstance" />
+                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="qgwr.7494124042451449889" resolveInfo="getInstance" />
+                        <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="qgwr.4727801710070561555" resolveInfo="EvaluationUtils" />
                       </node>
                     </node>
                   </node>
@@ -3573,16 +3568,16 @@
               <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="dcbi.3102837338444217531" resolveInfo="getValueProxyFromJava" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.NotExpression" typeId="tpee.1081516740877" id="3102837338444999455">
                 <node role="expression" roleId="tpee.1081516765348" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="3102837338444999456">
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="3be4.~ProxyEqualsUtil%djavaEquals(jetbrains%dmps%ddebug%devaluation%dproxies%dIValueProxy,jetbrains%dmps%ddebug%devaluation%dproxies%dIValueProxy)%cboolean" resolveInfo="javaEquals" />
-                  <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="3be4.~ProxyEqualsUtil" resolveInfo="ProxyEqualsUtil" />
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="dcbi.4727801710070562913" resolveInfo="javaEquals" />
+                  <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="dcbi.4727801710070562907" resolveInfo="ProxyEqualsUtil" />
                   <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParenthesizedExpression" typeId="tpee.1079359253375" id="3102837338444999457">
                     <node role="expression" roleId="tpee.1079359253376" type="tpee.CastExpression" typeId="tpee.1070534934090" id="3102837338444999458">
                       <node role="type" roleId="tpee.1070534934091" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="3102837338444999459">
-                        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="3be4.~IObjectValueProxy" resolveInfo="IObjectValueProxy" />
+                        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="dcbi.4727801710070563570" resolveInfo="IObjectValueProxy" />
                       </node>
                       <node role="expression" roleId="tpee.1070534934092" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2377722529357878693">
                         <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2377722529357878694">
-                          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4tse.~EvaluationUtils%dgetVariableValue(java%dlang%dString,com%dsun%djdi%dStackFrame,com%dsun%djdi%dThreadReference)%cjetbrains%dmps%ddebug%devaluation%dproxies%dIValueProxy" resolveInfo="getVariableValue" />
+                          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="qgwr.7494124042451515356" resolveInfo="getVariableValue" />
                           <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="2377722529357878695">
                             <property name="value" nameId="tpee.1070475926801" value="var1" />
                           </node>
@@ -3602,8 +3597,8 @@
                           </node>
                         </node>
                         <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="2377722529357878702">
-                          <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="4tse.~EvaluationUtils" resolveInfo="EvaluationUtils" />
-                          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4tse.~EvaluationUtils%dgetInstance()%cjetbrains%dmps%ddebug%devaluation%dEvaluationUtils" resolveInfo="getInstance" />
+                          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="qgwr.7494124042451449889" resolveInfo="getInstance" />
+                          <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="qgwr.4727801710070561555" resolveInfo="EvaluationUtils" />
                         </node>
                       </node>
                     </node>
@@ -3611,11 +3606,11 @@
                   <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParenthesizedExpression" typeId="tpee.1079359253375" id="3102837338444999468">
                     <node role="expression" roleId="tpee.1079359253376" type="tpee.CastExpression" typeId="tpee.1070534934090" id="3102837338444999469">
                       <node role="type" roleId="tpee.1070534934091" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="3102837338444999470">
-                        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="3be4.~IObjectValueProxy" resolveInfo="IObjectValueProxy" />
+                        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="dcbi.4727801710070563570" resolveInfo="IObjectValueProxy" />
                       </node>
                       <node role="expression" roleId="tpee.1070534934092" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2377722529357878363">
                         <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2377722529357878364">
-                          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4tse.~EvaluationUtils%dgetVariableValue(java%dlang%dString,com%dsun%djdi%dStackFrame,com%dsun%djdi%dThreadReference)%cjetbrains%dmps%ddebug%devaluation%dproxies%dIValueProxy" resolveInfo="getVariableValue" />
+                          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="qgwr.7494124042451515356" resolveInfo="getVariableValue" />
                           <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="2377722529357878365">
                             <property name="value" nameId="tpee.1070475926801" value="var2" />
                           </node>
@@ -3635,8 +3630,8 @@
                           </node>
                         </node>
                         <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="2377722529357878372">
-                          <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="4tse.~EvaluationUtils" resolveInfo="EvaluationUtils" />
-                          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4tse.~EvaluationUtils%dgetInstance()%cjetbrains%dmps%ddebug%devaluation%dEvaluationUtils" resolveInfo="getInstance" />
+                          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="qgwr.7494124042451449889" resolveInfo="getInstance" />
+                          <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="qgwr.4727801710070561555" resolveInfo="EvaluationUtils" />
                         </node>
                       </node>
                     </node>
@@ -3706,11 +3701,11 @@
                       <node role="expression" roleId="tpee.1079359253376" type="tpee.ParenthesizedExpression" typeId="tpee.1079359253375" id="3102837338444999300">
                         <node role="expression" roleId="tpee.1079359253376" type="tpee.CastExpression" typeId="tpee.1070534934090" id="3102837338444999301">
                           <node role="type" roleId="tpee.1070534934091" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="3102837338444999302">
-                            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="3be4.~PrimitiveValueProxy" resolveInfo="PrimitiveValueProxy" />
+                            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="dcbi.4727801710070563929" resolveInfo="PrimitiveValueProxy" />
                           </node>
                           <node role="expression" roleId="tpee.1070534934092" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2377722529357878333">
                             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2377722529357878334">
-                              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4tse.~EvaluationUtils%dgetVariableValue(java%dlang%dString,com%dsun%djdi%dStackFrame,com%dsun%djdi%dThreadReference)%cjetbrains%dmps%ddebug%devaluation%dproxies%dIValueProxy" resolveInfo="getVariableValue" />
+                              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="qgwr.7494124042451515356" resolveInfo="getVariableValue" />
                               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="2377722529357878335">
                                 <property name="value" nameId="tpee.1070475926801" value="var1" />
                               </node>
@@ -3730,8 +3725,8 @@
                               </node>
                             </node>
                             <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="2377722529357878342">
-                              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="4tse.~EvaluationUtils" resolveInfo="EvaluationUtils" />
-                              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4tse.~EvaluationUtils%dgetInstance()%cjetbrains%dmps%ddebug%devaluation%dEvaluationUtils" resolveInfo="getInstance" />
+                              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="qgwr.7494124042451449889" resolveInfo="getInstance" />
+                              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="qgwr.4727801710070561555" resolveInfo="EvaluationUtils" />
                             </node>
                           </node>
                         </node>
@@ -3776,11 +3771,11 @@
           <node role="expression" roleId="tpee.1068581517676" type="tpee.ParenthesizedExpression" typeId="tpee.1079359253375" id="4693929676428718768">
             <node role="expression" roleId="tpee.1079359253376" type="tpee.CastExpression" typeId="tpee.1070534934090" id="4693929676428718770">
               <node role="type" roleId="tpee.1070534934091" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="4693929676428718772">
-                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="3be4.~IObjectValueProxy" resolveInfo="IObjectValueProxy" />
+                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="dcbi.4727801710070563570" resolveInfo="IObjectValueProxy" />
               </node>
               <node role="expression" roleId="tpee.1070534934092" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2377722529357878113">
                 <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2377722529357878114">
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4tse.~EvaluationUtils%dgetClass(java%dlang%dString,com%dsun%djdi%dThreadReference)%cjetbrains%dmps%ddebug%devaluation%dproxies%dIValueProxy" resolveInfo="getClass" />
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="qgwr.7494124042451515717" resolveInfo="getClass" />
                   <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="2377722529357878115">
                     <property name="value" nameId="tpee.1070475926801" value="java.lang.Object" />
                   </node>
@@ -3793,8 +3788,8 @@
                   </node>
                 </node>
                 <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="2377722529357878119">
-                  <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="4tse.~EvaluationUtils" resolveInfo="EvaluationUtils" />
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4tse.~EvaluationUtils%dgetInstance()%cjetbrains%dmps%ddebug%devaluation%dEvaluationUtils" resolveInfo="getInstance" />
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="qgwr.7494124042451449889" resolveInfo="getInstance" />
+                  <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="qgwr.4727801710070561555" resolveInfo="EvaluationUtils" />
                 </node>
               </node>
             </node>
@@ -3826,11 +3821,11 @@
           <node role="expression" roleId="tpee.1068581517676" type="tpee.ParenthesizedExpression" typeId="tpee.1079359253375" id="8441349676536441162">
             <node role="expression" roleId="tpee.1079359253376" type="tpee.CastExpression" typeId="tpee.1070534934090" id="8441349676536441163">
               <node role="type" roleId="tpee.1070534934091" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="8441349676536441168">
-                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="3be4.~IObjectValueProxy" resolveInfo="IObjectValueProxy" />
+                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="dcbi.4727801710070563570" resolveInfo="IObjectValueProxy" />
               </node>
               <node role="expression" roleId="tpee.1070534934092" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2377722529357878686">
                 <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2377722529357878687">
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4tse.~EvaluationUtils%dgetClass(java%dlang%dString,com%dsun%djdi%dThreadReference)%cjetbrains%dmps%ddebug%devaluation%dproxies%dIValueProxy" resolveInfo="getClass" />
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="qgwr.7494124042451515717" resolveInfo="getClass" />
                   <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="2377722529357878688">
                     <property name="value" nameId="tpee.1070475926801" value="java.lang.String" />
                   </node>
@@ -3843,8 +3838,8 @@
                   </node>
                 </node>
                 <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="2377722529357878692">
-                  <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="4tse.~EvaluationUtils" resolveInfo="EvaluationUtils" />
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4tse.~EvaluationUtils%dgetInstance()%cjetbrains%dmps%ddebug%devaluation%dEvaluationUtils" resolveInfo="getInstance" />
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="qgwr.7494124042451449889" resolveInfo="getInstance" />
+                  <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="qgwr.4727801710070561555" resolveInfo="EvaluationUtils" />
                 </node>
               </node>
             </node>
@@ -5708,18 +5703,18 @@
         <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="7696059916860914291">
           <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="7696059916860914292">
             <property name="name" nameId="tpck.1169194664001" value="intValue" />
-            <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="7413144797245878256">
-              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="3be4.~PrimitiveValueProxy" resolveInfo="PrimitiveValueProxy" />
+            <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="9218072571024221019">
+              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="dcbi.4727801710070563929" resolveInfo="PrimitiveValueProxy" />
             </node>
             <node role="initializer" roleId="tpee.1068431790190" type="tpee.ParenthesizedExpression" typeId="tpee.1079359253375" id="7413144797245878258">
               <node role="expression" roleId="tpee.1079359253376" type="tpee.CastExpression" typeId="tpee.1070534934090" id="7413144797245878259">
-                <node role="type" roleId="tpee.1070534934091" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="7413144797245878260">
-                  <link role="classifier" roleId="tpee.1107535924139" targetNodeId="3be4.~PrimitiveValueProxy" resolveInfo="PrimitiveValueProxy" />
+                <node role="type" roleId="tpee.1070534934091" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="9218072571024221020">
+                  <link role="classifier" roleId="tpee.1107535924139" targetNodeId="dcbi.4727801710070563929" resolveInfo="PrimitiveValueProxy" />
                 </node>
                 <node role="expression" roleId="tpee.1070534934092" type="tp68.InternalPartialInstanceMethodCall" typeId="tp68.1174294166120" id="7413144797245878261">
                   <property name="methodName" nameId="tp68.1174294288199" value="invokeMethod" />
                   <node role="returnType" roleId="tp68.1174313653259" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="7413144797245878262">
-                    <link role="classifier" roleId="tpee.1107535924139" targetNodeId="3be4.~PrimitiveValueProxy" resolveInfo="PrimitiveValueProxy" />
+                    <link role="classifier" roleId="tpee.1107535924139" targetNodeId="dcbi.4727801710070563929" resolveInfo="PrimitiveValueProxy" />
                   </node>
                   <node role="actualArgument" roleId="tp68.1174318197094" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="7413144797245878263">
                     <property name="value" nameId="tpee.1070475926801" value="intValue" />
@@ -5730,11 +5725,11 @@
                   <node role="instance" roleId="tp68.1174317636233" type="tpee.ParenthesizedExpression" typeId="tpee.1079359253375" id="7413144797245878265">
                     <node role="expression" roleId="tpee.1079359253376" type="tpee.CastExpression" typeId="tpee.1070534934090" id="7413144797245878266">
                       <node role="type" roleId="tpee.1070534934091" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="7413144797245878267">
-                        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="3be4.~IObjectValueProxy" resolveInfo="IObjectValueProxy" />
+                        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="dcbi.4727801710070563570" resolveInfo="IObjectValueProxy" />
                       </node>
                       <node role="expression" roleId="tpee.1070534934092" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2377722529357878429">
                         <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2377722529357878430">
-                          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4tse.~EvaluationUtils%dgetVariableValue(java%dlang%dString,com%dsun%djdi%dStackFrame,com%dsun%djdi%dThreadReference)%cjetbrains%dmps%ddebug%devaluation%dproxies%dIValueProxy" resolveInfo="getVariableValue" />
+                          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="qgwr.7494124042451515356" resolveInfo="getVariableValue" />
                           <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="2377722529357878431">
                             <property name="value" nameId="tpee.1070475926801" value="intVar" />
                           </node>
@@ -5754,8 +5749,8 @@
                           </node>
                         </node>
                         <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="2377722529357878438">
-                          <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="4tse.~EvaluationUtils" resolveInfo="EvaluationUtils" />
-                          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4tse.~EvaluationUtils%dgetInstance()%cjetbrains%dmps%ddebug%devaluation%dEvaluationUtils" resolveInfo="getInstance" />
+                          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="qgwr.7494124042451449889" resolveInfo="getInstance" />
+                          <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="qgwr.4727801710070561555" resolveInfo="EvaluationUtils" />
                         </node>
                       </node>
                     </node>
@@ -5828,7 +5823,7 @@
           <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="7413144797245913911">
             <property name="name" nameId="tpck.1169194664001" value="intValue" />
             <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="7413144797245913912">
-              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="3be4.~PrimitiveValueProxy" resolveInfo="PrimitiveValueProxy" />
+              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="dcbi.4727801710070563929" resolveInfo="PrimitiveValueProxy" />
             </node>
           </node>
         </node>
@@ -5837,12 +5832,12 @@
             <node role="rValue" roleId="tpee.1068498886297" type="tpee.ParenthesizedExpression" typeId="tpee.1079359253375" id="7413144797245913913">
               <node role="expression" roleId="tpee.1079359253376" type="tpee.CastExpression" typeId="tpee.1070534934090" id="7413144797245913914">
                 <node role="type" roleId="tpee.1070534934091" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="7413144797245913915">
-                  <link role="classifier" roleId="tpee.1107535924139" targetNodeId="3be4.~PrimitiveValueProxy" resolveInfo="PrimitiveValueProxy" />
+                  <link role="classifier" roleId="tpee.1107535924139" targetNodeId="dcbi.4727801710070563929" resolveInfo="PrimitiveValueProxy" />
                 </node>
                 <node role="expression" roleId="tpee.1070534934092" type="tp68.InternalPartialInstanceMethodCall" typeId="tp68.1174294166120" id="7413144797245913916">
                   <property name="methodName" nameId="tp68.1174294288199" value="invokeMethod" />
                   <node role="returnType" roleId="tp68.1174313653259" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="7413144797245913917">
-                    <link role="classifier" roleId="tpee.1107535924139" targetNodeId="3be4.~PrimitiveValueProxy" resolveInfo="PrimitiveValueProxy" />
+                    <link role="classifier" roleId="tpee.1107535924139" targetNodeId="dcbi.4727801710070563929" resolveInfo="PrimitiveValueProxy" />
                   </node>
                   <node role="actualArgument" roleId="tp68.1174318197094" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="7413144797245913918">
                     <property name="value" nameId="tpee.1070475926801" value="intValue" />
@@ -5853,11 +5848,11 @@
                   <node role="instance" roleId="tp68.1174317636233" type="tpee.ParenthesizedExpression" typeId="tpee.1079359253375" id="7413144797245913920">
                     <node role="expression" roleId="tpee.1079359253376" type="tpee.CastExpression" typeId="tpee.1070534934090" id="7413144797245913921">
                       <node role="type" roleId="tpee.1070534934091" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="7413144797245913922">
-                        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="3be4.~IObjectValueProxy" resolveInfo="IObjectValueProxy" />
+                        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="dcbi.4727801710070563570" resolveInfo="IObjectValueProxy" />
                       </node>
                       <node role="expression" roleId="tpee.1070534934092" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2377722529357878676">
                         <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2377722529357878677">
-                          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4tse.~EvaluationUtils%dgetVariableValue(java%dlang%dString,com%dsun%djdi%dStackFrame,com%dsun%djdi%dThreadReference)%cjetbrains%dmps%ddebug%devaluation%dproxies%dIValueProxy" resolveInfo="getVariableValue" />
+                          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="qgwr.7494124042451515356" resolveInfo="getVariableValue" />
                           <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="2377722529357878678">
                             <property name="value" nameId="tpee.1070475926801" value="intVar" />
                           </node>
@@ -5877,8 +5872,8 @@
                           </node>
                         </node>
                         <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="2377722529357878685">
-                          <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="4tse.~EvaluationUtils" resolveInfo="EvaluationUtils" />
-                          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4tse.~EvaluationUtils%dgetInstance()%cjetbrains%dmps%ddebug%devaluation%dEvaluationUtils" resolveInfo="getInstance" />
+                          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="qgwr.7494124042451449889" resolveInfo="getInstance" />
+                          <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="qgwr.4727801710070561555" resolveInfo="EvaluationUtils" />
                         </node>
                       </node>
                     </node>
@@ -5954,15 +5949,15 @@
           <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="2717152680784273380">
             <property name="name" nameId="tpck.1169194664001" value="intValue" />
             <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2717152680784273381">
-              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="3be4.~IObjectValueProxy" resolveInfo="IObjectValueProxy" />
+              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="dcbi.4727801710070563570" resolveInfo="IObjectValueProxy" />
             </node>
             <node role="initializer" roleId="tpee.1068431790190" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2377722529357878190">
               <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2377722529357878191">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4tse.~EvaluationUtils%dboxValue(jetbrains%dmps%ddebug%devaluation%dproxies%dPrimitiveValueProxy,com%dsun%djdi%dThreadReference)%cjetbrains%dmps%ddebug%devaluation%dproxies%dIObjectValueProxy" resolveInfo="boxValue" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="qgwr.7494124042451515767" resolveInfo="boxValue" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParenthesizedExpression" typeId="tpee.1079359253375" id="2377722529357878192">
                   <node role="expression" roleId="tpee.1079359253376" type="tpee.CastExpression" typeId="tpee.1070534934090" id="2377722529357878193">
                     <node role="type" roleId="tpee.1070534934091" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2377722529357878194">
-                      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="3be4.~PrimitiveValueProxy" resolveInfo="PrimitiveValueProxy" />
+                      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="dcbi.4727801710070563929" resolveInfo="PrimitiveValueProxy" />
                     </node>
                     <node role="expression" roleId="tpee.1070534934092" type="tp68.InternalPartialInstanceMethodCall" typeId="tp68.1174294166120" id="2377722529357878195">
                       <property name="methodName" nameId="tp68.1174294288199" value="invokeMethod" />
@@ -5973,20 +5968,20 @@
                         <property name="value" nameId="tpee.1070475926801" value="()I" />
                       </node>
                       <node role="returnType" roleId="tp68.1174313653259" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2377722529357878198">
-                        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="3be4.~PrimitiveValueProxy" resolveInfo="PrimitiveValueProxy" />
+                        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="dcbi.4727801710070563929" resolveInfo="PrimitiveValueProxy" />
                       </node>
                       <node role="instance" roleId="tp68.1174317636233" type="tpee.ParenthesizedExpression" typeId="tpee.1079359253375" id="2377722529357878199">
                         <node role="expression" roleId="tpee.1079359253376" type="tpee.CastExpression" typeId="tpee.1070534934090" id="2377722529357878200">
                           <node role="type" roleId="tpee.1070534934091" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2377722529357878201">
-                            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="3be4.~IObjectValueProxy" resolveInfo="IObjectValueProxy" />
+                            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="dcbi.4727801710070563570" resolveInfo="IObjectValueProxy" />
                           </node>
                           <node role="expression" roleId="tpee.1070534934092" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2377722529357973605">
                             <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="2377722529357973597">
-                              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4tse.~EvaluationUtils%dgetInstance()%cjetbrains%dmps%ddebug%devaluation%dEvaluationUtils" resolveInfo="getInstance" />
-                              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="4tse.~EvaluationUtils" resolveInfo="EvaluationUtils" />
+                              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="qgwr.7494124042451449889" resolveInfo="getInstance" />
+                              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="qgwr.4727801710070561555" resolveInfo="EvaluationUtils" />
                             </node>
                             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2377722529357973609">
-                              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4tse.~EvaluationUtils%dgetVariableValue(java%dlang%dString,com%dsun%djdi%dStackFrame,com%dsun%djdi%dThreadReference)%cjetbrains%dmps%ddebug%devaluation%dproxies%dIValueProxy" resolveInfo="getVariableValue" />
+                              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="qgwr.7494124042451515356" resolveInfo="getVariableValue" />
                               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="2377722529357973598">
                                 <property name="value" nameId="tpee.1070475926801" value="intVar" />
                               </node>
@@ -6020,8 +6015,8 @@
                 </node>
               </node>
               <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="2377722529357878213">
-                <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="4tse.~EvaluationUtils" resolveInfo="EvaluationUtils" />
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4tse.~EvaluationUtils%dgetInstance()%cjetbrains%dmps%ddebug%devaluation%dEvaluationUtils" resolveInfo="getInstance" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="qgwr.7494124042451449889" resolveInfo="getInstance" />
+                <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="qgwr.4727801710070561555" resolveInfo="EvaluationUtils" />
               </node>
             </node>
           </node>
@@ -6030,12 +6025,12 @@
           <node role="expression" roleId="tpee.1068581517676" type="tpee.ParenthesizedExpression" typeId="tpee.1079359253375" id="7413144797245878299">
             <node role="expression" roleId="tpee.1079359253376" type="tpee.CastExpression" typeId="tpee.1070534934090" id="7413144797245878301">
               <node role="type" roleId="tpee.1070534934091" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="7413144797245878304">
-                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="3be4.~PrimitiveValueProxy" resolveInfo="PrimitiveValueProxy" />
+                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="dcbi.4727801710070563929" resolveInfo="PrimitiveValueProxy" />
               </node>
               <node role="expression" roleId="tpee.1070534934092" type="tp68.InternalPartialInstanceMethodCall" typeId="tp68.1174294166120" id="7413144797245878292">
                 <property name="methodName" nameId="tp68.1174294288199" value="invokeMethod" />
                 <node role="returnType" roleId="tp68.1174313653259" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="7413144797245878298">
-                  <link role="classifier" roleId="tpee.1107535924139" targetNodeId="3be4.~PrimitiveValueProxy" resolveInfo="PrimitiveValueProxy" />
+                  <link role="classifier" roleId="tpee.1107535924139" targetNodeId="dcbi.4727801710070563929" resolveInfo="PrimitiveValueProxy" />
                 </node>
                 <node role="instance" roleId="tp68.1174317636233" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="7413144797245878294">
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2717152680784273380" resolveInfo="intValue" />
@@ -6126,15 +6121,15 @@
           <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="5325372602757295200">
             <property name="name" nameId="tpck.1169194664001" value="intValue" />
             <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5325372602757295201">
-              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="3be4.~IObjectValueProxy" resolveInfo="IObjectValueProxy" />
+              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="dcbi.4727801710070563570" resolveInfo="IObjectValueProxy" />
             </node>
             <node role="initializer" roleId="tpee.1068431790190" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2377722529357878449">
               <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2377722529357878450">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4tse.~EvaluationUtils%dboxValue(jetbrains%dmps%ddebug%devaluation%dproxies%dPrimitiveValueProxy,com%dsun%djdi%dThreadReference)%cjetbrains%dmps%ddebug%devaluation%dproxies%dIObjectValueProxy" resolveInfo="boxValue" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="qgwr.7494124042451515767" resolveInfo="boxValue" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParenthesizedExpression" typeId="tpee.1079359253375" id="2377722529357878451">
                   <node role="expression" roleId="tpee.1079359253376" type="tpee.CastExpression" typeId="tpee.1070534934090" id="2377722529357878452">
                     <node role="type" roleId="tpee.1070534934091" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2377722529357878453">
-                      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="3be4.~PrimitiveValueProxy" resolveInfo="PrimitiveValueProxy" />
+                      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="dcbi.4727801710070563929" resolveInfo="PrimitiveValueProxy" />
                     </node>
                     <node role="expression" roleId="tpee.1070534934092" type="tp68.InternalPartialInstanceMethodCall" typeId="tp68.1174294166120" id="2377722529357878454">
                       <property name="methodName" nameId="tp68.1174294288199" value="invokeMethod" />
@@ -6145,16 +6140,16 @@
                         <property name="value" nameId="tpee.1070475926801" value="()I" />
                       </node>
                       <node role="returnType" roleId="tp68.1174313653259" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2377722529357878457">
-                        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="3be4.~PrimitiveValueProxy" resolveInfo="PrimitiveValueProxy" />
+                        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="dcbi.4727801710070563929" resolveInfo="PrimitiveValueProxy" />
                       </node>
                       <node role="instance" roleId="tp68.1174317636233" type="tpee.ParenthesizedExpression" typeId="tpee.1079359253375" id="2377722529357878458">
                         <node role="expression" roleId="tpee.1079359253376" type="tpee.CastExpression" typeId="tpee.1070534934090" id="2377722529357878459">
                           <node role="type" roleId="tpee.1070534934091" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2377722529357878460">
-                            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="3be4.~IObjectValueProxy" resolveInfo="IObjectValueProxy" />
+                            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="dcbi.4727801710070563570" resolveInfo="IObjectValueProxy" />
                           </node>
                           <node role="expression" roleId="tpee.1070534934092" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2377722529357878461">
                             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2377722529357878462">
-                              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4tse.~EvaluationUtils%dgetVariableValue(java%dlang%dString,com%dsun%djdi%dStackFrame,com%dsun%djdi%dThreadReference)%cjetbrains%dmps%ddebug%devaluation%dproxies%dIValueProxy" resolveInfo="getVariableValue" />
+                              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="qgwr.7494124042451515356" resolveInfo="getVariableValue" />
                               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="2377722529357878463">
                                 <property name="value" nameId="tpee.1070475926801" value="intVar" />
                               </node>
@@ -6174,8 +6169,8 @@
                               </node>
                             </node>
                             <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="2377722529357878470">
-                              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="4tse.~EvaluationUtils" resolveInfo="EvaluationUtils" />
-                              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4tse.~EvaluationUtils%dgetInstance()%cjetbrains%dmps%ddebug%devaluation%dEvaluationUtils" resolveInfo="getInstance" />
+                              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="qgwr.7494124042451449889" resolveInfo="getInstance" />
+                              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="qgwr.4727801710070561555" resolveInfo="EvaluationUtils" />
                             </node>
                           </node>
                         </node>
@@ -6192,8 +6187,8 @@
                 </node>
               </node>
               <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="2377722529357878474">
-                <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="4tse.~EvaluationUtils" resolveInfo="EvaluationUtils" />
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4tse.~EvaluationUtils%dgetInstance()%cjetbrains%dmps%ddebug%devaluation%dEvaluationUtils" resolveInfo="getInstance" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="qgwr.7494124042451449889" resolveInfo="getInstance" />
+                <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="qgwr.4727801710070561555" resolveInfo="EvaluationUtils" />
               </node>
             </node>
           </node>
@@ -6202,12 +6197,12 @@
           <node role="expression" roleId="tpee.1068581517676" type="tpee.ParenthesizedExpression" typeId="tpee.1079359253375" id="5325372602757295225">
             <node role="expression" roleId="tpee.1079359253376" type="tpee.CastExpression" typeId="tpee.1070534934090" id="5325372602757295226">
               <node role="type" roleId="tpee.1070534934091" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5325372602757295227">
-                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="3be4.~PrimitiveValueProxy" resolveInfo="PrimitiveValueProxy" />
+                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="dcbi.4727801710070563929" resolveInfo="PrimitiveValueProxy" />
               </node>
               <node role="expression" roleId="tpee.1070534934092" type="tp68.InternalPartialInstanceMethodCall" typeId="tp68.1174294166120" id="5325372602757295228">
                 <property name="methodName" nameId="tp68.1174294288199" value="invokeMethod" />
                 <node role="returnType" roleId="tp68.1174313653259" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5325372602757295229">
-                  <link role="classifier" roleId="tpee.1107535924139" targetNodeId="3be4.~PrimitiveValueProxy" resolveInfo="PrimitiveValueProxy" />
+                  <link role="classifier" roleId="tpee.1107535924139" targetNodeId="dcbi.4727801710070563929" resolveInfo="PrimitiveValueProxy" />
                 </node>
                 <node role="instance" roleId="tp68.1174317636233" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="5325372602757295230">
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5325372602757295200" resolveInfo="intValue" />
@@ -6287,7 +6282,7 @@
           <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="2717152680784463465">
             <property name="name" nameId="tpck.1169194664001" value="intValue" />
             <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2717152680784463466">
-              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="3be4.~IObjectValueProxy" resolveInfo="IObjectValueProxy" />
+              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="dcbi.4727801710070563570" resolveInfo="IObjectValueProxy" />
             </node>
           </node>
         </node>
@@ -6298,11 +6293,11 @@
             </node>
             <node role="rValue" roleId="tpee.1068498886297" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2377722529357878253">
               <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2377722529357878254">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4tse.~EvaluationUtils%dboxValue(jetbrains%dmps%ddebug%devaluation%dproxies%dPrimitiveValueProxy,com%dsun%djdi%dThreadReference)%cjetbrains%dmps%ddebug%devaluation%dproxies%dIObjectValueProxy" resolveInfo="boxValue" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="qgwr.7494124042451515767" resolveInfo="boxValue" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParenthesizedExpression" typeId="tpee.1079359253375" id="2377722529357878255">
                   <node role="expression" roleId="tpee.1079359253376" type="tpee.CastExpression" typeId="tpee.1070534934090" id="2377722529357878256">
                     <node role="type" roleId="tpee.1070534934091" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2377722529357878257">
-                      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="3be4.~PrimitiveValueProxy" resolveInfo="PrimitiveValueProxy" />
+                      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="dcbi.4727801710070563929" resolveInfo="PrimitiveValueProxy" />
                     </node>
                     <node role="expression" roleId="tpee.1070534934092" type="tp68.InternalPartialInstanceMethodCall" typeId="tp68.1174294166120" id="2377722529357878258">
                       <property name="methodName" nameId="tp68.1174294288199" value="invokeMethod" />
@@ -6313,20 +6308,20 @@
                         <property name="value" nameId="tpee.1070475926801" value="()I" />
                       </node>
                       <node role="returnType" roleId="tp68.1174313653259" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2377722529357878261">
-                        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="3be4.~PrimitiveValueProxy" resolveInfo="PrimitiveValueProxy" />
+                        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="dcbi.4727801710070563929" resolveInfo="PrimitiveValueProxy" />
                       </node>
                       <node role="instance" roleId="tp68.1174317636233" type="tpee.ParenthesizedExpression" typeId="tpee.1079359253375" id="2377722529357878262">
                         <node role="expression" roleId="tpee.1079359253376" type="tpee.CastExpression" typeId="tpee.1070534934090" id="2377722529357878263">
                           <node role="type" roleId="tpee.1070534934091" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2377722529357878264">
-                            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="3be4.~IObjectValueProxy" resolveInfo="IObjectValueProxy" />
+                            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="dcbi.4727801710070563570" resolveInfo="IObjectValueProxy" />
                           </node>
                           <node role="expression" roleId="tpee.1070534934092" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2377722529357973619">
                             <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="2377722529357973611">
-                              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4tse.~EvaluationUtils%dgetInstance()%cjetbrains%dmps%ddebug%devaluation%dEvaluationUtils" resolveInfo="getInstance" />
-                              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="4tse.~EvaluationUtils" resolveInfo="EvaluationUtils" />
+                              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="qgwr.7494124042451449889" resolveInfo="getInstance" />
+                              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="qgwr.4727801710070561555" resolveInfo="EvaluationUtils" />
                             </node>
                             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2377722529357973623">
-                              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4tse.~EvaluationUtils%dgetVariableValue(java%dlang%dString,com%dsun%djdi%dStackFrame,com%dsun%djdi%dThreadReference)%cjetbrains%dmps%ddebug%devaluation%dproxies%dIValueProxy" resolveInfo="getVariableValue" />
+                              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="qgwr.7494124042451515356" resolveInfo="getVariableValue" />
                               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="2377722529357973612">
                                 <property name="value" nameId="tpee.1070475926801" value="intVar" />
                               </node>
@@ -6360,8 +6355,8 @@
                 </node>
               </node>
               <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="2377722529357878276">
-                <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="4tse.~EvaluationUtils" resolveInfo="EvaluationUtils" />
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4tse.~EvaluationUtils%dgetInstance()%cjetbrains%dmps%ddebug%devaluation%dEvaluationUtils" resolveInfo="getInstance" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="qgwr.7494124042451449889" resolveInfo="getInstance" />
+                <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="qgwr.4727801710070561555" resolveInfo="EvaluationUtils" />
               </node>
             </node>
           </node>
@@ -6370,12 +6365,12 @@
           <node role="expression" roleId="tpee.1068581517676" type="tpee.ParenthesizedExpression" typeId="tpee.1079359253375" id="2717152680784463490">
             <node role="expression" roleId="tpee.1079359253376" type="tpee.CastExpression" typeId="tpee.1070534934090" id="2717152680784463491">
               <node role="type" roleId="tpee.1070534934091" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2717152680784463492">
-                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="3be4.~PrimitiveValueProxy" resolveInfo="PrimitiveValueProxy" />
+                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="dcbi.4727801710070563929" resolveInfo="PrimitiveValueProxy" />
               </node>
               <node role="expression" roleId="tpee.1070534934092" type="tp68.InternalPartialInstanceMethodCall" typeId="tp68.1174294166120" id="2717152680784463493">
                 <property name="methodName" nameId="tp68.1174294288199" value="invokeMethod" />
                 <node role="returnType" roleId="tp68.1174313653259" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2717152680784463494">
-                  <link role="classifier" roleId="tpee.1107535924139" targetNodeId="3be4.~PrimitiveValueProxy" resolveInfo="PrimitiveValueProxy" />
+                  <link role="classifier" roleId="tpee.1107535924139" targetNodeId="dcbi.4727801710070563929" resolveInfo="PrimitiveValueProxy" />
                 </node>
                 <node role="instance" roleId="tp68.1174317636233" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="2717152680784463495">
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2717152680784463465" resolveInfo="intValue" />
@@ -6443,17 +6438,17 @@
           <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="770214570644685991">
             <property name="name" nameId="tpck.1169194664001" value="classValue" />
             <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="770214570644686035">
-              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="3be4.~IObjectValueProxy" resolveInfo="IObjectValueProxy" />
+              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="dcbi.4727801710070563570" resolveInfo="IObjectValueProxy" />
             </node>
             <node role="initializer" roleId="tpee.1068431790190" type="tpee.ParenthesizedExpression" typeId="tpee.1079359253375" id="770214570644686142">
               <node role="expression" roleId="tpee.1079359253376" type="tpee.CastExpression" typeId="tpee.1070534934090" id="770214570644686143">
                 <node role="type" roleId="tpee.1070534934091" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="770214570644686156">
-                  <link role="classifier" roleId="tpee.1107535924139" targetNodeId="3be4.~IObjectValueProxy" resolveInfo="IObjectValueProxy" />
+                  <link role="classifier" roleId="tpee.1107535924139" targetNodeId="dcbi.4727801710070563570" resolveInfo="IObjectValueProxy" />
                 </node>
                 <node role="expression" roleId="tpee.1070534934092" type="tp68.InternalPartialInstanceMethodCall" typeId="tp68.1174294166120" id="770214570644686145">
                   <property name="methodName" nameId="tp68.1174294288199" value="invokeMethod" />
                   <node role="returnType" roleId="tp68.1174313653259" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="770214570644686157">
-                    <link role="classifier" roleId="tpee.1107535924139" targetNodeId="3be4.~IObjectValueProxy" resolveInfo="IObjectValueProxy" />
+                    <link role="classifier" roleId="tpee.1107535924139" targetNodeId="dcbi.4727801710070563570" resolveInfo="IObjectValueProxy" />
                   </node>
                   <node role="actualArgument" roleId="tp68.1174318197094" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="770214570644686147">
                     <property name="value" nameId="tpee.1070475926801" value="getClass" />
@@ -6464,11 +6459,11 @@
                   <node role="instance" roleId="tp68.1174317636233" type="tpee.ParenthesizedExpression" typeId="tpee.1079359253375" id="770214570644686149">
                     <node role="expression" roleId="tpee.1079359253376" type="tpee.CastExpression" typeId="tpee.1070534934090" id="770214570644686150">
                       <node role="type" roleId="tpee.1070534934091" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="770214570644686151">
-                        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="3be4.~IObjectValueProxy" resolveInfo="IObjectValueProxy" />
+                        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="dcbi.4727801710070563570" resolveInfo="IObjectValueProxy" />
                       </node>
                       <node role="expression" roleId="tpee.1070534934092" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2377722529357878223">
                         <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2377722529357878224">
-                          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4tse.~EvaluationUtils%dgetVariableValue(java%dlang%dString,com%dsun%djdi%dStackFrame,com%dsun%djdi%dThreadReference)%cjetbrains%dmps%ddebug%devaluation%dproxies%dIValueProxy" resolveInfo="getVariableValue" />
+                          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="qgwr.7494124042451515356" resolveInfo="getVariableValue" />
                           <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="2377722529357878225">
                             <property name="value" nameId="tpee.1070475926801" value="intVar" />
                           </node>
@@ -6488,8 +6483,8 @@
                           </node>
                         </node>
                         <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="2377722529357878232">
-                          <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="4tse.~EvaluationUtils" resolveInfo="EvaluationUtils" />
-                          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4tse.~EvaluationUtils%dgetInstance()%cjetbrains%dmps%ddebug%devaluation%dEvaluationUtils" resolveInfo="getInstance" />
+                          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="qgwr.7494124042451449889" resolveInfo="getInstance" />
+                          <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="qgwr.4727801710070561555" resolveInfo="EvaluationUtils" />
                         </node>
                       </node>
                     </node>
@@ -6564,7 +6559,7 @@
           <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="7413144797245757974">
             <property name="name" nameId="tpck.1169194664001" value="classValue" />
             <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="7413144797245757975">
-              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="3be4.~IObjectValueProxy" resolveInfo="IObjectValueProxy" />
+              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="dcbi.4727801710070563570" resolveInfo="IObjectValueProxy" />
             </node>
           </node>
         </node>
@@ -6573,12 +6568,12 @@
             <node role="rValue" roleId="tpee.1068498886297" type="tpee.ParenthesizedExpression" typeId="tpee.1079359253375" id="7413144797245757976">
               <node role="expression" roleId="tpee.1079359253376" type="tpee.CastExpression" typeId="tpee.1070534934090" id="7413144797245757977">
                 <node role="type" roleId="tpee.1070534934091" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="7413144797245757978">
-                  <link role="classifier" roleId="tpee.1107535924139" targetNodeId="3be4.~IObjectValueProxy" resolveInfo="IObjectValueProxy" />
+                  <link role="classifier" roleId="tpee.1107535924139" targetNodeId="dcbi.4727801710070563570" resolveInfo="IObjectValueProxy" />
                 </node>
                 <node role="expression" roleId="tpee.1070534934092" type="tp68.InternalPartialInstanceMethodCall" typeId="tp68.1174294166120" id="7413144797245757979">
                   <property name="methodName" nameId="tp68.1174294288199" value="invokeMethod" />
                   <node role="returnType" roleId="tp68.1174313653259" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="7413144797245757980">
-                    <link role="classifier" roleId="tpee.1107535924139" targetNodeId="3be4.~IObjectValueProxy" resolveInfo="IObjectValueProxy" />
+                    <link role="classifier" roleId="tpee.1107535924139" targetNodeId="dcbi.4727801710070563570" resolveInfo="IObjectValueProxy" />
                   </node>
                   <node role="actualArgument" roleId="tp68.1174318197094" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="7413144797245757981">
                     <property name="value" nameId="tpee.1070475926801" value="getClass" />
@@ -6589,11 +6584,11 @@
                   <node role="instance" roleId="tp68.1174317636233" type="tpee.ParenthesizedExpression" typeId="tpee.1079359253375" id="7413144797245757983">
                     <node role="expression" roleId="tpee.1079359253376" type="tpee.CastExpression" typeId="tpee.1070534934090" id="7413144797245757984">
                       <node role="type" roleId="tpee.1070534934091" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="7413144797245757985">
-                        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="3be4.~IObjectValueProxy" resolveInfo="IObjectValueProxy" />
+                        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="dcbi.4727801710070563570" resolveInfo="IObjectValueProxy" />
                       </node>
                       <node role="expression" roleId="tpee.1070534934092" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2377722529357878130">
                         <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2377722529357878131">
-                          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4tse.~EvaluationUtils%dgetVariableValue(java%dlang%dString,com%dsun%djdi%dStackFrame,com%dsun%djdi%dThreadReference)%cjetbrains%dmps%ddebug%devaluation%dproxies%dIValueProxy" resolveInfo="getVariableValue" />
+                          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="qgwr.7494124042451515356" resolveInfo="getVariableValue" />
                           <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="2377722529357878132">
                             <property name="value" nameId="tpee.1070475926801" value="intVar" />
                           </node>
@@ -6613,8 +6608,8 @@
                           </node>
                         </node>
                         <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="2377722529357878139">
-                          <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="4tse.~EvaluationUtils" resolveInfo="EvaluationUtils" />
-                          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4tse.~EvaluationUtils%dgetInstance()%cjetbrains%dmps%ddebug%devaluation%dEvaluationUtils" resolveInfo="getInstance" />
+                          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="qgwr.7494124042451449889" resolveInfo="getInstance" />
+                          <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="qgwr.4727801710070561555" resolveInfo="EvaluationUtils" />
                         </node>
                       </node>
                     </node>
@@ -6685,7 +6680,7 @@
           <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="7413144797245923878">
             <property name="name" nameId="tpck.1169194664001" value="intValue" />
             <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="7413144797245923911">
-              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="3be4.~PrimitiveValueProxy" resolveInfo="PrimitiveValueProxy" />
+              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="dcbi.4727801710070563929" resolveInfo="PrimitiveValueProxy" />
             </node>
           </node>
         </node>
@@ -6693,15 +6688,15 @@
           <node role="expression" roleId="tpee.1068580123156" type="tpee.AssignmentExpression" typeId="tpee.1068498886294" id="2717152680784273449">
             <node role="rValue" roleId="tpee.1068498886297" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2377722529357878608">
               <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2377722529357878609">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4tse.~EvaluationUtils%dunboxValue(jetbrains%dmps%ddebug%devaluation%dproxies%dIObjectValueProxy)%cjetbrains%dmps%ddebug%devaluation%dproxies%dPrimitiveValueProxy" resolveInfo="unboxValue" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="qgwr.7494124042451515817" resolveInfo="unboxValue" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParenthesizedExpression" typeId="tpee.1079359253375" id="2377722529357878610">
                   <node role="expression" roleId="tpee.1079359253376" type="tpee.CastExpression" typeId="tpee.1070534934090" id="2377722529357878611">
                     <node role="type" roleId="tpee.1070534934091" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2377722529357878612">
-                      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="3be4.~IObjectValueProxy" resolveInfo="IObjectValueProxy" />
+                      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="dcbi.4727801710070563570" resolveInfo="IObjectValueProxy" />
                     </node>
                     <node role="expression" roleId="tpee.1070534934092" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2377722529357878613">
                       <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2377722529357878614">
-                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4tse.~EvaluationUtils%dgetVariableValue(java%dlang%dString,com%dsun%djdi%dStackFrame,com%dsun%djdi%dThreadReference)%cjetbrains%dmps%ddebug%devaluation%dproxies%dIValueProxy" resolveInfo="getVariableValue" />
+                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="qgwr.7494124042451515356" resolveInfo="getVariableValue" />
                         <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="2377722529357878615">
                           <property name="value" nameId="tpee.1070475926801" value="intVar" />
                         </node>
@@ -6721,16 +6716,16 @@
                         </node>
                       </node>
                       <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="2377722529357878622">
-                        <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="4tse.~EvaluationUtils" resolveInfo="EvaluationUtils" />
-                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4tse.~EvaluationUtils%dgetInstance()%cjetbrains%dmps%ddebug%devaluation%dEvaluationUtils" resolveInfo="getInstance" />
+                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="qgwr.7494124042451449889" resolveInfo="getInstance" />
+                        <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="qgwr.4727801710070561555" resolveInfo="EvaluationUtils" />
                       </node>
                     </node>
                   </node>
                 </node>
               </node>
               <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="2377722529357878623">
-                <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="4tse.~EvaluationUtils" resolveInfo="EvaluationUtils" />
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4tse.~EvaluationUtils%dgetInstance()%cjetbrains%dmps%ddebug%devaluation%dEvaluationUtils" resolveInfo="getInstance" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="qgwr.7494124042451449889" resolveInfo="getInstance" />
+                <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="qgwr.4727801710070561555" resolveInfo="EvaluationUtils" />
               </node>
             </node>
             <node role="lValue" roleId="tpee.1068498886295" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="7413144797245923899">
@@ -6742,11 +6737,11 @@
           <node role="expression" roleId="tpee.1068581517676" type="tpee.ParenthesizedExpression" typeId="tpee.1079359253375" id="7413144797245923924">
             <node role="expression" roleId="tpee.1079359253376" type="tpee.CastExpression" typeId="tpee.1070534934090" id="7413144797245923925">
               <node role="type" roleId="tpee.1070534934091" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="7413144797245923926">
-                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="3be4.~IObjectValueProxy" resolveInfo="IObjectValueProxy" />
+                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="dcbi.4727801710070563570" resolveInfo="IObjectValueProxy" />
               </node>
               <node role="expression" roleId="tpee.1070534934092" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2377722529357878233">
                 <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2377722529357878234">
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4tse.~EvaluationUtils%dgetVariableValue(java%dlang%dString,com%dsun%djdi%dStackFrame,com%dsun%djdi%dThreadReference)%cjetbrains%dmps%ddebug%devaluation%dproxies%dIValueProxy" resolveInfo="getVariableValue" />
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="qgwr.7494124042451515356" resolveInfo="getVariableValue" />
                   <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="2377722529357878235">
                     <property name="value" nameId="tpee.1070475926801" value="intVar" />
                   </node>
@@ -6766,8 +6761,8 @@
                   </node>
                 </node>
                 <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="2377722529357878242">
-                  <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="4tse.~EvaluationUtils" resolveInfo="EvaluationUtils" />
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4tse.~EvaluationUtils%dgetInstance()%cjetbrains%dmps%ddebug%devaluation%dEvaluationUtils" resolveInfo="getInstance" />
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="qgwr.7494124042451449889" resolveInfo="getInstance" />
+                  <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="qgwr.4727801710070561555" resolveInfo="EvaluationUtils" />
                 </node>
               </node>
             </node>
@@ -6819,19 +6814,19 @@
           <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="7413144797245923935">
             <property name="name" nameId="tpck.1169194664001" value="intValue" />
             <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="7413144797245923936">
-              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="3be4.~PrimitiveValueProxy" resolveInfo="PrimitiveValueProxy" />
+              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="dcbi.4727801710070563929" resolveInfo="PrimitiveValueProxy" />
             </node>
             <node role="initializer" roleId="tpee.1068431790190" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2377722529357878640">
               <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2377722529357878641">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4tse.~EvaluationUtils%dunboxValue(jetbrains%dmps%ddebug%devaluation%dproxies%dIObjectValueProxy)%cjetbrains%dmps%ddebug%devaluation%dproxies%dPrimitiveValueProxy" resolveInfo="unboxValue" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="qgwr.7494124042451515817" resolveInfo="unboxValue" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParenthesizedExpression" typeId="tpee.1079359253375" id="2377722529357878642">
                   <node role="expression" roleId="tpee.1079359253376" type="tpee.CastExpression" typeId="tpee.1070534934090" id="2377722529357878643">
                     <node role="type" roleId="tpee.1070534934091" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2377722529357878644">
-                      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="3be4.~IObjectValueProxy" resolveInfo="IObjectValueProxy" />
+                      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="dcbi.4727801710070563570" resolveInfo="IObjectValueProxy" />
                     </node>
                     <node role="expression" roleId="tpee.1070534934092" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2377722529357878645">
                       <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2377722529357878646">
-                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4tse.~EvaluationUtils%dgetVariableValue(java%dlang%dString,com%dsun%djdi%dStackFrame,com%dsun%djdi%dThreadReference)%cjetbrains%dmps%ddebug%devaluation%dproxies%dIValueProxy" resolveInfo="getVariableValue" />
+                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="qgwr.7494124042451515356" resolveInfo="getVariableValue" />
                         <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="2377722529357878647">
                           <property name="value" nameId="tpee.1070475926801" value="intVar" />
                         </node>
@@ -6851,16 +6846,16 @@
                         </node>
                       </node>
                       <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="2377722529357878654">
-                        <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="4tse.~EvaluationUtils" resolveInfo="EvaluationUtils" />
-                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4tse.~EvaluationUtils%dgetInstance()%cjetbrains%dmps%ddebug%devaluation%dEvaluationUtils" resolveInfo="getInstance" />
+                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="qgwr.7494124042451449889" resolveInfo="getInstance" />
+                        <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="qgwr.4727801710070561555" resolveInfo="EvaluationUtils" />
                       </node>
                     </node>
                   </node>
                 </node>
               </node>
               <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="2377722529357878655">
-                <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="4tse.~EvaluationUtils" resolveInfo="EvaluationUtils" />
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4tse.~EvaluationUtils%dgetInstance()%cjetbrains%dmps%ddebug%devaluation%dEvaluationUtils" resolveInfo="getInstance" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="qgwr.7494124042451449889" resolveInfo="getInstance" />
+                <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="qgwr.4727801710070561555" resolveInfo="EvaluationUtils" />
               </node>
             </node>
           </node>
@@ -6869,11 +6864,11 @@
           <node role="expression" roleId="tpee.1068581517676" type="tpee.ParenthesizedExpression" typeId="tpee.1079359253375" id="7413144797245923948">
             <node role="expression" roleId="tpee.1079359253376" type="tpee.CastExpression" typeId="tpee.1070534934090" id="7413144797245923949">
               <node role="type" roleId="tpee.1070534934091" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="7413144797245923950">
-                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="3be4.~IObjectValueProxy" resolveInfo="IObjectValueProxy" />
+                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="dcbi.4727801710070563570" resolveInfo="IObjectValueProxy" />
               </node>
               <node role="expression" roleId="tpee.1070534934092" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2377722529357878501">
                 <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2377722529357878502">
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4tse.~EvaluationUtils%dgetVariableValue(java%dlang%dString,com%dsun%djdi%dStackFrame,com%dsun%djdi%dThreadReference)%cjetbrains%dmps%ddebug%devaluation%dproxies%dIValueProxy" resolveInfo="getVariableValue" />
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="qgwr.7494124042451515356" resolveInfo="getVariableValue" />
                   <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="2377722529357878503">
                     <property name="value" nameId="tpee.1070475926801" value="intVar" />
                   </node>
@@ -6893,8 +6888,8 @@
                   </node>
                 </node>
                 <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="2377722529357878510">
-                  <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="4tse.~EvaluationUtils" resolveInfo="EvaluationUtils" />
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4tse.~EvaluationUtils%dgetInstance()%cjetbrains%dmps%ddebug%devaluation%dEvaluationUtils" resolveInfo="getInstance" />
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="qgwr.7494124042451449889" resolveInfo="getInstance" />
+                  <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="qgwr.4727801710070561555" resolveInfo="EvaluationUtils" />
                 </node>
               </node>
             </node>
@@ -6973,11 +6968,11 @@
                     <node role="expression" roleId="tpee.1079359253376" type="tpee.ParenthesizedExpression" typeId="tpee.1079359253375" id="473795539390535180">
                       <node role="expression" roleId="tpee.1079359253376" type="tpee.CastExpression" typeId="tpee.1070534934090" id="473795539390535181">
                         <node role="type" roleId="tpee.1070534934091" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="473795539390535182">
-                          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="3be4.~PrimitiveValueProxy" resolveInfo="PrimitiveValueProxy" />
+                          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="dcbi.4727801710070563929" resolveInfo="PrimitiveValueProxy" />
                         </node>
                         <node role="expression" roleId="tpee.1070534934092" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2377722529357878419">
                           <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2377722529357878420">
-                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4tse.~EvaluationUtils%dgetVariableValue(java%dlang%dString,com%dsun%djdi%dStackFrame,com%dsun%djdi%dThreadReference)%cjetbrains%dmps%ddebug%devaluation%dproxies%dIValueProxy" resolveInfo="getVariableValue" />
+                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="qgwr.7494124042451515356" resolveInfo="getVariableValue" />
                             <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="2377722529357878421">
                               <property name="value" nameId="tpee.1070475926801" value="var" />
                             </node>
@@ -6997,8 +6992,8 @@
                             </node>
                           </node>
                           <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="2377722529357878428">
-                            <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="4tse.~EvaluationUtils" resolveInfo="EvaluationUtils" />
-                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4tse.~EvaluationUtils%dgetInstance()%cjetbrains%dmps%ddebug%devaluation%dEvaluationUtils" resolveInfo="getInstance" />
+                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="qgwr.7494124042451449889" resolveInfo="getInstance" />
+                            <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="qgwr.4727801710070561555" resolveInfo="EvaluationUtils" />
                           </node>
                         </node>
                       </node>
@@ -7019,11 +7014,11 @@
           <node role="expression" roleId="tpee.1068581517676" type="tpee.ParenthesizedExpression" typeId="tpee.1079359253375" id="89292631370179191">
             <node role="expression" roleId="tpee.1079359253376" type="tpee.CastExpression" typeId="tpee.1070534934090" id="89292631370179192">
               <node role="type" roleId="tpee.1070534934091" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="89292631370179247">
-                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="3be4.~PrimitiveValueProxy" resolveInfo="PrimitiveValueProxy" />
+                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="dcbi.4727801710070563929" resolveInfo="PrimitiveValueProxy" />
               </node>
               <node role="expression" roleId="tpee.1070534934092" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2377722529357878529">
                 <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2377722529357878530">
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4tse.~EvaluationUtils%dgetVariableValue(java%dlang%dString,com%dsun%djdi%dStackFrame,com%dsun%djdi%dThreadReference)%cjetbrains%dmps%ddebug%devaluation%dproxies%dIValueProxy" resolveInfo="getVariableValue" />
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="qgwr.7494124042451515356" resolveInfo="getVariableValue" />
                   <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="2377722529357878531">
                     <property name="value" nameId="tpee.1070475926801" value="var" />
                   </node>
@@ -7043,8 +7038,8 @@
                   </node>
                 </node>
                 <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="2377722529357878538">
-                  <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="4tse.~EvaluationUtils" resolveInfo="EvaluationUtils" />
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4tse.~EvaluationUtils%dgetInstance()%cjetbrains%dmps%ddebug%devaluation%dEvaluationUtils" resolveInfo="getInstance" />
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="qgwr.7494124042451449889" resolveInfo="getInstance" />
+                  <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="qgwr.4727801710070561555" resolveInfo="EvaluationUtils" />
                 </node>
               </node>
             </node>
@@ -7123,11 +7118,11 @@
                     <node role="expression" roleId="tpee.1079359253376" type="tpee.ParenthesizedExpression" typeId="tpee.1079359253375" id="7289900034067460951">
                       <node role="expression" roleId="tpee.1079359253376" type="tpee.CastExpression" typeId="tpee.1070534934090" id="7289900034067460953">
                         <node role="type" roleId="tpee.1070534934091" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="7289900034067460954">
-                          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="3be4.~PrimitiveValueProxy" resolveInfo="PrimitiveValueProxy" />
+                          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="dcbi.4727801710070563929" resolveInfo="PrimitiveValueProxy" />
                         </node>
                         <node role="expression" roleId="tpee.1070534934092" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2377722529357878666">
                           <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2377722529357878667">
-                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4tse.~EvaluationUtils%dgetVariableValue(java%dlang%dString,com%dsun%djdi%dStackFrame,com%dsun%djdi%dThreadReference)%cjetbrains%dmps%ddebug%devaluation%dproxies%dIValueProxy" resolveInfo="getVariableValue" />
+                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="qgwr.7494124042451515356" resolveInfo="getVariableValue" />
                             <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="2377722529357878668">
                               <property name="value" nameId="tpee.1070475926801" value="var" />
                             </node>
@@ -7147,8 +7142,8 @@
                             </node>
                           </node>
                           <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="2377722529357878675">
-                            <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="4tse.~EvaluationUtils" resolveInfo="EvaluationUtils" />
-                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4tse.~EvaluationUtils%dgetInstance()%cjetbrains%dmps%ddebug%devaluation%dEvaluationUtils" resolveInfo="getInstance" />
+                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="qgwr.7494124042451449889" resolveInfo="getInstance" />
+                            <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="qgwr.4727801710070561555" resolveInfo="EvaluationUtils" />
                           </node>
                         </node>
                       </node>
@@ -7169,11 +7164,11 @@
           <node role="expression" roleId="tpee.1068581517676" type="tpee.ParenthesizedExpression" typeId="tpee.1079359253375" id="89292631370193161">
             <node role="expression" roleId="tpee.1079359253376" type="tpee.CastExpression" typeId="tpee.1070534934090" id="89292631370193162">
               <node role="type" roleId="tpee.1070534934091" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="89292631370193163">
-                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="3be4.~PrimitiveValueProxy" resolveInfo="PrimitiveValueProxy" />
+                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="dcbi.4727801710070563929" resolveInfo="PrimitiveValueProxy" />
               </node>
               <node role="expression" roleId="tpee.1070534934092" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2377722529357878588">
                 <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2377722529357878589">
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4tse.~EvaluationUtils%dgetVariableValue(java%dlang%dString,com%dsun%djdi%dStackFrame,com%dsun%djdi%dThreadReference)%cjetbrains%dmps%ddebug%devaluation%dproxies%dIValueProxy" resolveInfo="getVariableValue" />
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="qgwr.7494124042451515356" resolveInfo="getVariableValue" />
                   <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="2377722529357878590">
                     <property name="value" nameId="tpee.1070475926801" value="var" />
                   </node>
@@ -7193,8 +7188,8 @@
                   </node>
                 </node>
                 <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="2377722529357878597">
-                  <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="4tse.~EvaluationUtils" resolveInfo="EvaluationUtils" />
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4tse.~EvaluationUtils%dgetInstance()%cjetbrains%dmps%ddebug%devaluation%dEvaluationUtils" resolveInfo="getInstance" />
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="qgwr.7494124042451449889" resolveInfo="getInstance" />
+                  <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="qgwr.4727801710070561555" resolveInfo="EvaluationUtils" />
                 </node>
               </node>
             </node>
@@ -7273,11 +7268,11 @@
                     <node role="expression" roleId="tpee.1079359253376" type="tpee.ParenthesizedExpression" typeId="tpee.1079359253375" id="7289900034067460961">
                       <node role="expression" roleId="tpee.1079359253376" type="tpee.CastExpression" typeId="tpee.1070534934090" id="7289900034067460963">
                         <node role="type" roleId="tpee.1070534934091" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="7289900034067460964">
-                          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="3be4.~PrimitiveValueProxy" resolveInfo="PrimitiveValueProxy" />
+                          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="dcbi.4727801710070563929" resolveInfo="PrimitiveValueProxy" />
                         </node>
                         <node role="expression" roleId="tpee.1070534934092" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2377722529357878120">
                           <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2377722529357878121">
-                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4tse.~EvaluationUtils%dgetVariableValue(java%dlang%dString,com%dsun%djdi%dStackFrame,com%dsun%djdi%dThreadReference)%cjetbrains%dmps%ddebug%devaluation%dproxies%dIValueProxy" resolveInfo="getVariableValue" />
+                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="qgwr.7494124042451515356" resolveInfo="getVariableValue" />
                             <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="2377722529357878122">
                               <property name="value" nameId="tpee.1070475926801" value="var" />
                             </node>
@@ -7297,8 +7292,8 @@
                             </node>
                           </node>
                           <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="2377722529357878129">
-                            <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="4tse.~EvaluationUtils" resolveInfo="EvaluationUtils" />
-                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4tse.~EvaluationUtils%dgetInstance()%cjetbrains%dmps%ddebug%devaluation%dEvaluationUtils" resolveInfo="getInstance" />
+                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="qgwr.7494124042451449889" resolveInfo="getInstance" />
+                            <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="qgwr.4727801710070561555" resolveInfo="EvaluationUtils" />
                           </node>
                         </node>
                       </node>
@@ -7319,11 +7314,11 @@
           <node role="expression" roleId="tpee.1068581517676" type="tpee.ParenthesizedExpression" typeId="tpee.1079359253375" id="89292631370193112">
             <node role="expression" roleId="tpee.1079359253376" type="tpee.CastExpression" typeId="tpee.1070534934090" id="89292631370193113">
               <node role="type" roleId="tpee.1070534934091" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="89292631370193114">
-                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="3be4.~PrimitiveValueProxy" resolveInfo="PrimitiveValueProxy" />
+                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="dcbi.4727801710070563929" resolveInfo="PrimitiveValueProxy" />
               </node>
               <node role="expression" roleId="tpee.1070534934092" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2377722529357877944">
                 <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2377722529357877945">
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4tse.~EvaluationUtils%dgetVariableValue(java%dlang%dString,com%dsun%djdi%dStackFrame,com%dsun%djdi%dThreadReference)%cjetbrains%dmps%ddebug%devaluation%dproxies%dIValueProxy" resolveInfo="getVariableValue" />
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="qgwr.7494124042451515356" resolveInfo="getVariableValue" />
                   <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="2377722529357877946">
                     <property name="value" nameId="tpee.1070475926801" value="var" />
                   </node>
@@ -7343,8 +7338,8 @@
                   </node>
                 </node>
                 <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="2377722529357877953">
-                  <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="4tse.~EvaluationUtils" resolveInfo="EvaluationUtils" />
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4tse.~EvaluationUtils%dgetInstance()%cjetbrains%dmps%ddebug%devaluation%dEvaluationUtils" resolveInfo="getInstance" />
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="qgwr.7494124042451449889" resolveInfo="getInstance" />
+                  <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="qgwr.4727801710070561555" resolveInfo="EvaluationUtils" />
                 </node>
               </node>
             </node>
@@ -7423,11 +7418,11 @@
                     <node role="expression" roleId="tpee.1079359253376" type="tpee.ParenthesizedExpression" typeId="tpee.1079359253375" id="7289900034067460971">
                       <node role="expression" roleId="tpee.1079359253376" type="tpee.CastExpression" typeId="tpee.1070534934090" id="7289900034067460973">
                         <node role="type" roleId="tpee.1070534934091" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="7289900034067460974">
-                          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="3be4.~PrimitiveValueProxy" resolveInfo="PrimitiveValueProxy" />
+                          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="dcbi.4727801710070563929" resolveInfo="PrimitiveValueProxy" />
                         </node>
                         <node role="expression" roleId="tpee.1070534934092" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2377722529357878389">
                           <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2377722529357878390">
-                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4tse.~EvaluationUtils%dgetVariableValue(java%dlang%dString,com%dsun%djdi%dStackFrame,com%dsun%djdi%dThreadReference)%cjetbrains%dmps%ddebug%devaluation%dproxies%dIValueProxy" resolveInfo="getVariableValue" />
+                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="qgwr.7494124042451515356" resolveInfo="getVariableValue" />
                             <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="2377722529357878391">
                               <property name="value" nameId="tpee.1070475926801" value="var" />
                             </node>
@@ -7447,8 +7442,8 @@
                             </node>
                           </node>
                           <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="2377722529357878398">
-                            <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="4tse.~EvaluationUtils" resolveInfo="EvaluationUtils" />
-                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4tse.~EvaluationUtils%dgetInstance()%cjetbrains%dmps%ddebug%devaluation%dEvaluationUtils" resolveInfo="getInstance" />
+                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="qgwr.7494124042451449889" resolveInfo="getInstance" />
+                            <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="qgwr.4727801710070561555" resolveInfo="EvaluationUtils" />
                           </node>
                         </node>
                       </node>
@@ -7469,11 +7464,11 @@
           <node role="expression" roleId="tpee.1068581517676" type="tpee.ParenthesizedExpression" typeId="tpee.1079359253375" id="89292631370192743">
             <node role="expression" roleId="tpee.1079359253376" type="tpee.CastExpression" typeId="tpee.1070534934090" id="89292631370192744">
               <node role="type" roleId="tpee.1070534934091" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="89292631370192745">
-                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="3be4.~PrimitiveValueProxy" resolveInfo="PrimitiveValueProxy" />
+                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="dcbi.4727801710070563929" resolveInfo="PrimitiveValueProxy" />
               </node>
               <node role="expression" roleId="tpee.1070534934092" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2377722529357878559">
                 <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2377722529357878560">
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4tse.~EvaluationUtils%dgetVariableValue(java%dlang%dString,com%dsun%djdi%dStackFrame,com%dsun%djdi%dThreadReference)%cjetbrains%dmps%ddebug%devaluation%dproxies%dIValueProxy" resolveInfo="getVariableValue" />
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="qgwr.7494124042451515356" resolveInfo="getVariableValue" />
                   <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="2377722529357878561">
                     <property name="value" nameId="tpee.1070475926801" value="var" />
                   </node>
@@ -7493,8 +7488,8 @@
                   </node>
                 </node>
                 <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="2377722529357878568">
-                  <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="4tse.~EvaluationUtils" resolveInfo="EvaluationUtils" />
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4tse.~EvaluationUtils%dgetInstance()%cjetbrains%dmps%ddebug%devaluation%dEvaluationUtils" resolveInfo="getInstance" />
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="qgwr.7494124042451449889" resolveInfo="getInstance" />
+                  <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="qgwr.4727801710070561555" resolveInfo="EvaluationUtils" />
                 </node>
               </node>
             </node>
@@ -7573,11 +7568,11 @@
                     <node role="expression" roleId="tpee.1079359253376" type="tpee.ParenthesizedExpression" typeId="tpee.1079359253375" id="7289900034067460981">
                       <node role="expression" roleId="tpee.1079359253376" type="tpee.CastExpression" typeId="tpee.1070534934090" id="7289900034067460983">
                         <node role="type" roleId="tpee.1070534934091" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="7289900034067460984">
-                          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="3be4.~PrimitiveValueProxy" resolveInfo="PrimitiveValueProxy" />
+                          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="dcbi.4727801710070563929" resolveInfo="PrimitiveValueProxy" />
                         </node>
                         <node role="expression" roleId="tpee.1070534934092" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2377722529357878297">
                           <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2377722529357878298">
-                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4tse.~EvaluationUtils%dgetVariableValue(java%dlang%dString,com%dsun%djdi%dStackFrame,com%dsun%djdi%dThreadReference)%cjetbrains%dmps%ddebug%devaluation%dproxies%dIValueProxy" resolveInfo="getVariableValue" />
+                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="qgwr.7494124042451515356" resolveInfo="getVariableValue" />
                             <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="2377722529357878299">
                               <property name="value" nameId="tpee.1070475926801" value="var" />
                             </node>
@@ -7597,8 +7592,8 @@
                             </node>
                           </node>
                           <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="2377722529357878306">
-                            <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="4tse.~EvaluationUtils" resolveInfo="EvaluationUtils" />
-                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4tse.~EvaluationUtils%dgetInstance()%cjetbrains%dmps%ddebug%devaluation%dEvaluationUtils" resolveInfo="getInstance" />
+                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="qgwr.7494124042451449889" resolveInfo="getInstance" />
+                            <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="qgwr.4727801710070561555" resolveInfo="EvaluationUtils" />
                           </node>
                         </node>
                       </node>
@@ -7619,11 +7614,11 @@
           <node role="expression" roleId="tpee.1068581517676" type="tpee.ParenthesizedExpression" typeId="tpee.1079359253375" id="89292631370192819">
             <node role="expression" roleId="tpee.1079359253376" type="tpee.CastExpression" typeId="tpee.1070534934090" id="89292631370192820">
               <node role="type" roleId="tpee.1070534934091" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="89292631370192821">
-                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="3be4.~PrimitiveValueProxy" resolveInfo="PrimitiveValueProxy" />
+                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="dcbi.4727801710070563929" resolveInfo="PrimitiveValueProxy" />
               </node>
               <node role="expression" roleId="tpee.1070534934092" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2377722529357877964">
                 <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2377722529357877965">
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4tse.~EvaluationUtils%dgetVariableValue(java%dlang%dString,com%dsun%djdi%dStackFrame,com%dsun%djdi%dThreadReference)%cjetbrains%dmps%ddebug%devaluation%dproxies%dIValueProxy" resolveInfo="getVariableValue" />
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="qgwr.7494124042451515356" resolveInfo="getVariableValue" />
                   <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="2377722529357877966">
                     <property name="value" nameId="tpee.1070475926801" value="var" />
                   </node>
@@ -7643,8 +7638,8 @@
                   </node>
                 </node>
                 <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="2377722529357877973">
-                  <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="4tse.~EvaluationUtils" resolveInfo="EvaluationUtils" />
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4tse.~EvaluationUtils%dgetInstance()%cjetbrains%dmps%ddebug%devaluation%dEvaluationUtils" resolveInfo="getInstance" />
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="qgwr.7494124042451449889" resolveInfo="getInstance" />
+                  <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="qgwr.4727801710070561555" resolveInfo="EvaluationUtils" />
                 </node>
               </node>
             </node>
@@ -7723,11 +7718,11 @@
                     <node role="expression" roleId="tpee.1079359253376" type="tpee.ParenthesizedExpression" typeId="tpee.1079359253375" id="7289900034067460991">
                       <node role="expression" roleId="tpee.1079359253376" type="tpee.CastExpression" typeId="tpee.1070534934090" id="7289900034067460993">
                         <node role="type" roleId="tpee.1070534934091" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="7289900034067460994">
-                          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="3be4.~PrimitiveValueProxy" resolveInfo="PrimitiveValueProxy" />
+                          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="dcbi.4727801710070563929" resolveInfo="PrimitiveValueProxy" />
                         </node>
                         <node role="expression" roleId="tpee.1070534934092" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2377722529357878140">
                           <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2377722529357878141">
-                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4tse.~EvaluationUtils%dgetVariableValue(java%dlang%dString,com%dsun%djdi%dStackFrame,com%dsun%djdi%dThreadReference)%cjetbrains%dmps%ddebug%devaluation%dproxies%dIValueProxy" resolveInfo="getVariableValue" />
+                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="qgwr.7494124042451515356" resolveInfo="getVariableValue" />
                             <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="2377722529357878142">
                               <property name="value" nameId="tpee.1070475926801" value="var" />
                             </node>
@@ -7747,8 +7742,8 @@
                             </node>
                           </node>
                           <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="2377722529357878149">
-                            <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="4tse.~EvaluationUtils" resolveInfo="EvaluationUtils" />
-                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4tse.~EvaluationUtils%dgetInstance()%cjetbrains%dmps%ddebug%devaluation%dEvaluationUtils" resolveInfo="getInstance" />
+                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="qgwr.7494124042451449889" resolveInfo="getInstance" />
+                            <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="qgwr.4727801710070561555" resolveInfo="EvaluationUtils" />
                           </node>
                         </node>
                       </node>
@@ -7769,11 +7764,11 @@
           <node role="expression" roleId="tpee.1068581517676" type="tpee.ParenthesizedExpression" typeId="tpee.1079359253375" id="89292631370193063">
             <node role="expression" roleId="tpee.1079359253376" type="tpee.CastExpression" typeId="tpee.1070534934090" id="89292631370193064">
               <node role="type" roleId="tpee.1070534934091" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="89292631370193065">
-                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="3be4.~PrimitiveValueProxy" resolveInfo="PrimitiveValueProxy" />
+                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="dcbi.4727801710070563929" resolveInfo="PrimitiveValueProxy" />
               </node>
               <node role="expression" roleId="tpee.1070534934092" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2377722529357878063">
                 <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2377722529357878064">
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4tse.~EvaluationUtils%dgetVariableValue(java%dlang%dString,com%dsun%djdi%dStackFrame,com%dsun%djdi%dThreadReference)%cjetbrains%dmps%ddebug%devaluation%dproxies%dIValueProxy" resolveInfo="getVariableValue" />
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="qgwr.7494124042451515356" resolveInfo="getVariableValue" />
                   <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="2377722529357878065">
                     <property name="value" nameId="tpee.1070475926801" value="var" />
                   </node>
@@ -7793,8 +7788,8 @@
                   </node>
                 </node>
                 <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="2377722529357878072">
-                  <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="4tse.~EvaluationUtils" resolveInfo="EvaluationUtils" />
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4tse.~EvaluationUtils%dgetInstance()%cjetbrains%dmps%ddebug%devaluation%dEvaluationUtils" resolveInfo="getInstance" />
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="qgwr.7494124042451449889" resolveInfo="getInstance" />
+                  <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="qgwr.4727801710070561555" resolveInfo="EvaluationUtils" />
                 </node>
               </node>
             </node>
@@ -7873,11 +7868,11 @@
                     <node role="expression" roleId="tpee.1079359253376" type="tpee.ParenthesizedExpression" typeId="tpee.1079359253375" id="7289900034067461001">
                       <node role="expression" roleId="tpee.1079359253376" type="tpee.CastExpression" typeId="tpee.1070534934090" id="7289900034067461003">
                         <node role="type" roleId="tpee.1070534934091" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="7289900034067461004">
-                          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="3be4.~PrimitiveValueProxy" resolveInfo="PrimitiveValueProxy" />
+                          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="dcbi.4727801710070563929" resolveInfo="PrimitiveValueProxy" />
                         </node>
                         <node role="expression" roleId="tpee.1070534934092" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2377722529357878578">
                           <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2377722529357878579">
-                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4tse.~EvaluationUtils%dgetVariableValue(java%dlang%dString,com%dsun%djdi%dStackFrame,com%dsun%djdi%dThreadReference)%cjetbrains%dmps%ddebug%devaluation%dproxies%dIValueProxy" resolveInfo="getVariableValue" />
+                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="qgwr.7494124042451515356" resolveInfo="getVariableValue" />
                             <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="2377722529357878580">
                               <property name="value" nameId="tpee.1070475926801" value="var" />
                             </node>
@@ -7897,8 +7892,8 @@
                             </node>
                           </node>
                           <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="2377722529357878587">
-                            <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="4tse.~EvaluationUtils" resolveInfo="EvaluationUtils" />
-                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4tse.~EvaluationUtils%dgetInstance()%cjetbrains%dmps%ddebug%devaluation%dEvaluationUtils" resolveInfo="getInstance" />
+                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="qgwr.7494124042451449889" resolveInfo="getInstance" />
+                            <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="qgwr.4727801710070561555" resolveInfo="EvaluationUtils" />
                           </node>
                         </node>
                       </node>
@@ -7919,11 +7914,11 @@
           <node role="expression" roleId="tpee.1068581517676" type="tpee.ParenthesizedExpression" typeId="tpee.1079359253375" id="89292631370193014">
             <node role="expression" roleId="tpee.1079359253376" type="tpee.CastExpression" typeId="tpee.1070534934090" id="89292631370193015">
               <node role="type" roleId="tpee.1070534934091" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="89292631370193016">
-                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="3be4.~PrimitiveValueProxy" resolveInfo="PrimitiveValueProxy" />
+                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="dcbi.4727801710070563929" resolveInfo="PrimitiveValueProxy" />
               </node>
               <node role="expression" roleId="tpee.1070534934092" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2377722529357878703">
                 <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2377722529357878704">
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4tse.~EvaluationUtils%dgetVariableValue(java%dlang%dString,com%dsun%djdi%dStackFrame,com%dsun%djdi%dThreadReference)%cjetbrains%dmps%ddebug%devaluation%dproxies%dIValueProxy" resolveInfo="getVariableValue" />
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="qgwr.7494124042451515356" resolveInfo="getVariableValue" />
                   <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="2377722529357878705">
                     <property name="value" nameId="tpee.1070475926801" value="var" />
                   </node>
@@ -7943,8 +7938,8 @@
                   </node>
                 </node>
                 <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="2377722529357878712">
-                  <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="4tse.~EvaluationUtils" resolveInfo="EvaluationUtils" />
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4tse.~EvaluationUtils%dgetInstance()%cjetbrains%dmps%ddebug%devaluation%dEvaluationUtils" resolveInfo="getInstance" />
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="qgwr.7494124042451449889" resolveInfo="getInstance" />
+                  <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="qgwr.4727801710070561555" resolveInfo="EvaluationUtils" />
                 </node>
               </node>
             </node>
@@ -8023,11 +8018,11 @@
                     <node role="expression" roleId="tpee.1079359253376" type="tpee.ParenthesizedExpression" typeId="tpee.1079359253375" id="7289900034067461011">
                       <node role="expression" roleId="tpee.1079359253376" type="tpee.CastExpression" typeId="tpee.1070534934090" id="7289900034067461013">
                         <node role="type" roleId="tpee.1070534934091" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="7289900034067461014">
-                          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="3be4.~PrimitiveValueProxy" resolveInfo="PrimitiveValueProxy" />
+                          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="dcbi.4727801710070563929" resolveInfo="PrimitiveValueProxy" />
                         </node>
                         <node role="expression" roleId="tpee.1070534934092" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2377722529357878243">
                           <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2377722529357878244">
-                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4tse.~EvaluationUtils%dgetVariableValue(java%dlang%dString,com%dsun%djdi%dStackFrame,com%dsun%djdi%dThreadReference)%cjetbrains%dmps%ddebug%devaluation%dproxies%dIValueProxy" resolveInfo="getVariableValue" />
+                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="qgwr.7494124042451515356" resolveInfo="getVariableValue" />
                             <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="2377722529357878245">
                               <property name="value" nameId="tpee.1070475926801" value="var" />
                             </node>
@@ -8047,8 +8042,8 @@
                             </node>
                           </node>
                           <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="2377722529357878252">
-                            <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="4tse.~EvaluationUtils" resolveInfo="EvaluationUtils" />
-                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4tse.~EvaluationUtils%dgetInstance()%cjetbrains%dmps%ddebug%devaluation%dEvaluationUtils" resolveInfo="getInstance" />
+                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="qgwr.7494124042451449889" resolveInfo="getInstance" />
+                            <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="qgwr.4727801710070561555" resolveInfo="EvaluationUtils" />
                           </node>
                         </node>
                       </node>
@@ -8069,11 +8064,11 @@
           <node role="expression" roleId="tpee.1068581517676" type="tpee.ParenthesizedExpression" typeId="tpee.1079359253375" id="89292631370192965">
             <node role="expression" roleId="tpee.1079359253376" type="tpee.CastExpression" typeId="tpee.1070534934090" id="89292631370192966">
               <node role="type" roleId="tpee.1070534934091" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="89292631370192967">
-                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="3be4.~PrimitiveValueProxy" resolveInfo="PrimitiveValueProxy" />
+                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="dcbi.4727801710070563929" resolveInfo="PrimitiveValueProxy" />
               </node>
               <node role="expression" roleId="tpee.1070534934092" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2377722529357878093">
                 <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2377722529357878094">
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4tse.~EvaluationUtils%dgetVariableValue(java%dlang%dString,com%dsun%djdi%dStackFrame,com%dsun%djdi%dThreadReference)%cjetbrains%dmps%ddebug%devaluation%dproxies%dIValueProxy" resolveInfo="getVariableValue" />
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="qgwr.7494124042451515356" resolveInfo="getVariableValue" />
                   <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="2377722529357878095">
                     <property name="value" nameId="tpee.1070475926801" value="var" />
                   </node>
@@ -8093,8 +8088,8 @@
                   </node>
                 </node>
                 <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="2377722529357878102">
-                  <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="4tse.~EvaluationUtils" resolveInfo="EvaluationUtils" />
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4tse.~EvaluationUtils%dgetInstance()%cjetbrains%dmps%ddebug%devaluation%dEvaluationUtils" resolveInfo="getInstance" />
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="qgwr.7494124042451449889" resolveInfo="getInstance" />
+                  <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="qgwr.4727801710070561555" resolveInfo="EvaluationUtils" />
                 </node>
               </node>
             </node>
@@ -8173,11 +8168,11 @@
                     <node role="expression" roleId="tpee.1079359253376" type="tpee.ParenthesizedExpression" typeId="tpee.1079359253375" id="7289900034067461021">
                       <node role="expression" roleId="tpee.1079359253376" type="tpee.CastExpression" typeId="tpee.1070534934090" id="7289900034067461023">
                         <node role="type" roleId="tpee.1070534934091" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="7289900034067461024">
-                          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="3be4.~PrimitiveValueProxy" resolveInfo="PrimitiveValueProxy" />
+                          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="dcbi.4727801710070563929" resolveInfo="PrimitiveValueProxy" />
                         </node>
                         <node role="expression" roleId="tpee.1070534934092" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2377722529357878409">
                           <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2377722529357878410">
-                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4tse.~EvaluationUtils%dgetVariableValue(java%dlang%dString,com%dsun%djdi%dStackFrame,com%dsun%djdi%dThreadReference)%cjetbrains%dmps%ddebug%devaluation%dproxies%dIValueProxy" resolveInfo="getVariableValue" />
+                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="qgwr.7494124042451515356" resolveInfo="getVariableValue" />
                             <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="2377722529357878411">
                               <property name="value" nameId="tpee.1070475926801" value="var" />
                             </node>
@@ -8197,8 +8192,8 @@
                             </node>
                           </node>
                           <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="2377722529357878418">
-                            <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="4tse.~EvaluationUtils" resolveInfo="EvaluationUtils" />
-                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4tse.~EvaluationUtils%dgetInstance()%cjetbrains%dmps%ddebug%devaluation%dEvaluationUtils" resolveInfo="getInstance" />
+                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="qgwr.7494124042451449889" resolveInfo="getInstance" />
+                            <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="qgwr.4727801710070561555" resolveInfo="EvaluationUtils" />
                           </node>
                         </node>
                       </node>
@@ -8219,11 +8214,11 @@
           <node role="expression" roleId="tpee.1068581517676" type="tpee.ParenthesizedExpression" typeId="tpee.1079359253375" id="89292631370192916">
             <node role="expression" roleId="tpee.1079359253376" type="tpee.CastExpression" typeId="tpee.1070534934090" id="89292631370192917">
               <node role="type" roleId="tpee.1070534934091" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="89292631370192918">
-                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="3be4.~PrimitiveValueProxy" resolveInfo="PrimitiveValueProxy" />
+                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="dcbi.4727801710070563929" resolveInfo="PrimitiveValueProxy" />
               </node>
               <node role="expression" roleId="tpee.1070534934092" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2377722529357878656">
                 <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2377722529357878657">
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4tse.~EvaluationUtils%dgetVariableValue(java%dlang%dString,com%dsun%djdi%dStackFrame,com%dsun%djdi%dThreadReference)%cjetbrains%dmps%ddebug%devaluation%dproxies%dIValueProxy" resolveInfo="getVariableValue" />
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="qgwr.7494124042451515356" resolveInfo="getVariableValue" />
                   <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="2377722529357878658">
                     <property name="value" nameId="tpee.1070475926801" value="var" />
                   </node>
@@ -8243,8 +8238,8 @@
                   </node>
                 </node>
                 <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="2377722529357878665">
-                  <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="4tse.~EvaluationUtils" resolveInfo="EvaluationUtils" />
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4tse.~EvaluationUtils%dgetInstance()%cjetbrains%dmps%ddebug%devaluation%dEvaluationUtils" resolveInfo="getInstance" />
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="qgwr.7494124042451449889" resolveInfo="getInstance" />
+                  <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="qgwr.4727801710070561555" resolveInfo="EvaluationUtils" />
                 </node>
               </node>
             </node>
@@ -8323,11 +8318,11 @@
                     <node role="expression" roleId="tpee.1079359253376" type="tpee.ParenthesizedExpression" typeId="tpee.1079359253375" id="7289900034067461031">
                       <node role="expression" roleId="tpee.1079359253376" type="tpee.CastExpression" typeId="tpee.1070534934090" id="7289900034067461033">
                         <node role="type" roleId="tpee.1070534934091" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="7289900034067461034">
-                          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="3be4.~PrimitiveValueProxy" resolveInfo="PrimitiveValueProxy" />
+                          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="dcbi.4727801710070563929" resolveInfo="PrimitiveValueProxy" />
                         </node>
                         <node role="expression" roleId="tpee.1070534934092" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2377722529357878511">
                           <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2377722529357878512">
-                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4tse.~EvaluationUtils%dgetVariableValue(java%dlang%dString,com%dsun%djdi%dStackFrame,com%dsun%djdi%dThreadReference)%cjetbrains%dmps%ddebug%devaluation%dproxies%dIValueProxy" resolveInfo="getVariableValue" />
+                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="qgwr.7494124042451515356" resolveInfo="getVariableValue" />
                             <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="2377722529357878513">
                               <property name="value" nameId="tpee.1070475926801" value="var" />
                             </node>
@@ -8347,8 +8342,8 @@
                             </node>
                           </node>
                           <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="2377722529357878520">
-                            <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="4tse.~EvaluationUtils" resolveInfo="EvaluationUtils" />
-                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4tse.~EvaluationUtils%dgetInstance()%cjetbrains%dmps%ddebug%devaluation%dEvaluationUtils" resolveInfo="getInstance" />
+                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="qgwr.7494124042451449889" resolveInfo="getInstance" />
+                            <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="qgwr.4727801710070561555" resolveInfo="EvaluationUtils" />
                           </node>
                         </node>
                       </node>
@@ -8369,11 +8364,11 @@
           <node role="expression" roleId="tpee.1068581517676" type="tpee.ParenthesizedExpression" typeId="tpee.1079359253375" id="89292631370196912">
             <node role="expression" roleId="tpee.1079359253376" type="tpee.CastExpression" typeId="tpee.1070534934090" id="89292631370196913">
               <node role="type" roleId="tpee.1070534934091" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="89292631370196914">
-                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="3be4.~PrimitiveValueProxy" resolveInfo="PrimitiveValueProxy" />
+                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="dcbi.4727801710070563929" resolveInfo="PrimitiveValueProxy" />
               </node>
               <node role="expression" roleId="tpee.1070534934092" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2377722529357877974">
                 <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2377722529357877975">
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4tse.~EvaluationUtils%dgetVariableValue(java%dlang%dString,com%dsun%djdi%dStackFrame,com%dsun%djdi%dThreadReference)%cjetbrains%dmps%ddebug%devaluation%dproxies%dIValueProxy" resolveInfo="getVariableValue" />
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="qgwr.7494124042451515356" resolveInfo="getVariableValue" />
                   <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="2377722529357877976">
                     <property name="value" nameId="tpee.1070475926801" value="var" />
                   </node>
@@ -8393,8 +8388,8 @@
                   </node>
                 </node>
                 <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="2377722529357877983">
-                  <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="4tse.~EvaluationUtils" resolveInfo="EvaluationUtils" />
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4tse.~EvaluationUtils%dgetInstance()%cjetbrains%dmps%ddebug%devaluation%dEvaluationUtils" resolveInfo="getInstance" />
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="qgwr.7494124042451449889" resolveInfo="getInstance" />
+                  <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="qgwr.4727801710070561555" resolveInfo="EvaluationUtils" />
                 </node>
               </node>
             </node>
@@ -8476,7 +8471,7 @@
           <node role="variable" roleId="tpee.1144230900587" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="8638796163619040063">
             <property name="name" nameId="tpck.1169194664001" value="s" />
             <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="8638796163619040074">
-              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="3be4.~IObjectValueProxy" resolveInfo="IObjectValueProxy" />
+              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="dcbi.4727801710070563570" resolveInfo="IObjectValueProxy" />
             </node>
           </node>
           <node role="body" roleId="tpee.1154032183016" type="tpee.StatementList" typeId="tpee.1068580123136" id="8638796163619040066">
@@ -8509,19 +8504,19 @@
           </node>
           <node role="iterable" roleId="tpee.1144226360166" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2377722529357877930">
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2377722529357877931">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4tse.~EvaluationUtils%dtoIterableProxy(jetbrains%dmps%ddebug%devaluation%dproxies%dIObjectValueProxy)%cjava%dlang%dIterable" resolveInfo="toIterableProxy" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="qgwr.7494124042451515380" resolveInfo="toIterableProxy" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParenthesizedExpression" typeId="tpee.1079359253375" id="2377722529357877932">
                 <node role="expression" roleId="tpee.1079359253376" type="tpee.CastExpression" typeId="tpee.1070534934090" id="2377722529357877933">
                   <node role="type" roleId="tpee.1070534934091" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2377722529357877934">
-                    <link role="classifier" roleId="tpee.1107535924139" targetNodeId="3be4.~IObjectValueProxy" resolveInfo="IObjectValueProxy" />
+                    <link role="classifier" roleId="tpee.1107535924139" targetNodeId="dcbi.4727801710070563570" resolveInfo="IObjectValueProxy" />
                   </node>
                   <node role="expression" roleId="tpee.1070534934092" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2377722529357973634">
                     <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="2377722529357973626">
-                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4tse.~EvaluationUtils%dgetInstance()%cjetbrains%dmps%ddebug%devaluation%dEvaluationUtils" resolveInfo="getInstance" />
-                      <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="4tse.~EvaluationUtils" resolveInfo="EvaluationUtils" />
+                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="qgwr.7494124042451449889" resolveInfo="getInstance" />
+                      <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="qgwr.4727801710070561555" resolveInfo="EvaluationUtils" />
                     </node>
                     <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2377722529357973638">
-                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4tse.~EvaluationUtils%dgetVariableValue(java%dlang%dString,com%dsun%djdi%dStackFrame,com%dsun%djdi%dThreadReference)%cjetbrains%dmps%ddebug%devaluation%dproxies%dIValueProxy" resolveInfo="getVariableValue" />
+                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="qgwr.7494124042451515356" resolveInfo="getVariableValue" />
                       <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="2377722529357973627">
                         <property name="value" nameId="tpee.1070475926801" value="strings" />
                       </node>
@@ -8544,12 +8539,12 @@
                 </node>
               </node>
               <node role="typeArgument" roleId="tpee.4972241301747169160" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="3187167456722442449">
-                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="3be4.~IObjectValueProxy" resolveInfo="IObjectValueProxy" />
+                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="dcbi.4727801710070563570" resolveInfo="IObjectValueProxy" />
               </node>
             </node>
             <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="2377722529357877943">
-              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="4tse.~EvaluationUtils" resolveInfo="EvaluationUtils" />
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4tse.~EvaluationUtils%dgetInstance()%cjetbrains%dmps%ddebug%devaluation%dEvaluationUtils" resolveInfo="getInstance" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="qgwr.7494124042451449889" resolveInfo="getInstance" />
+              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="qgwr.4727801710070561555" resolveInfo="EvaluationUtils" />
             </node>
           </node>
         </node>
@@ -8650,7 +8645,7 @@
           <node role="variable" roleId="tpee.1144230900587" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="1774703052633005897">
             <property name="name" nameId="tpck.1169194664001" value="i" />
             <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1774703052633005952">
-              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="3be4.~PrimitiveValueProxy" resolveInfo="PrimitiveValueProxy" />
+              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="dcbi.4727801710070563929" resolveInfo="PrimitiveValueProxy" />
             </node>
           </node>
           <node role="body" roleId="tpee.1154032183016" type="tpee.StatementList" typeId="tpee.1068580123136" id="1774703052633005899">
@@ -8685,15 +8680,15 @@
           </node>
           <node role="iterable" roleId="tpee.1144226360166" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2377722529357878624">
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2377722529357878625">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4tse.~EvaluationUtils%dtoIterableProxy(jetbrains%dmps%ddebug%devaluation%dproxies%dIObjectValueProxy)%cjava%dlang%dIterable" resolveInfo="toIterableProxy" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="qgwr.7494124042451515380" resolveInfo="toIterableProxy" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParenthesizedExpression" typeId="tpee.1079359253375" id="2377722529357878626">
                 <node role="expression" roleId="tpee.1079359253376" type="tpee.CastExpression" typeId="tpee.1070534934090" id="2377722529357878627">
                   <node role="type" roleId="tpee.1070534934091" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2377722529357878628">
-                    <link role="classifier" roleId="tpee.1107535924139" targetNodeId="3be4.~IObjectValueProxy" resolveInfo="IObjectValueProxy" />
+                    <link role="classifier" roleId="tpee.1107535924139" targetNodeId="dcbi.4727801710070563570" resolveInfo="IObjectValueProxy" />
                   </node>
                   <node role="expression" roleId="tpee.1070534934092" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2377722529357878629">
                     <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2377722529357878630">
-                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4tse.~EvaluationUtils%dgetVariableValue(java%dlang%dString,com%dsun%djdi%dStackFrame,com%dsun%djdi%dThreadReference)%cjetbrains%dmps%ddebug%devaluation%dproxies%dIValueProxy" resolveInfo="getVariableValue" />
+                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="qgwr.7494124042451515356" resolveInfo="getVariableValue" />
                       <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="2377722529357878631">
                         <property name="value" nameId="tpee.1070475926801" value="integers" />
                       </node>
@@ -8713,19 +8708,19 @@
                       </node>
                     </node>
                     <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="2377722529357878638">
-                      <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="4tse.~EvaluationUtils" resolveInfo="EvaluationUtils" />
-                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4tse.~EvaluationUtils%dgetInstance()%cjetbrains%dmps%ddebug%devaluation%dEvaluationUtils" resolveInfo="getInstance" />
+                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="qgwr.7494124042451449889" resolveInfo="getInstance" />
+                      <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="qgwr.4727801710070561555" resolveInfo="EvaluationUtils" />
                     </node>
                   </node>
                 </node>
               </node>
               <node role="typeArgument" roleId="tpee.4972241301747169160" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="3187167456722442451">
-                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="3be4.~PrimitiveValueProxy" resolveInfo="PrimitiveValueProxy" />
+                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="dcbi.4727801710070563929" resolveInfo="PrimitiveValueProxy" />
               </node>
             </node>
             <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="2377722529357878639">
-              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="4tse.~EvaluationUtils" resolveInfo="EvaluationUtils" />
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4tse.~EvaluationUtils%dgetInstance()%cjetbrains%dmps%ddebug%devaluation%dEvaluationUtils" resolveInfo="getInstance" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="qgwr.7494124042451449889" resolveInfo="getInstance" />
+              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="qgwr.4727801710070561555" resolveInfo="EvaluationUtils" />
             </node>
           </node>
         </node>
@@ -8812,16 +8807,16 @@
           <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="6583956526375658323">
             <property name="name" nameId="tpck.1169194664001" value="notNullStringValue" />
             <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="6583956526375658367">
-              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="3be4.~IObjectValueProxy" resolveInfo="IObjectValueProxy" />
+              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="dcbi.4727801710070563570" resolveInfo="IObjectValueProxy" />
             </node>
             <node role="initializer" roleId="tpee.1068431790190" type="tpee.ParenthesizedExpression" typeId="tpee.1079359253375" id="6583956526375658356">
               <node role="expression" roleId="tpee.1079359253376" type="tpee.CastExpression" typeId="tpee.1070534934090" id="6583956526375658357">
                 <node role="type" roleId="tpee.1070534934091" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="6583956526375658358">
-                  <link role="classifier" roleId="tpee.1107535924139" targetNodeId="3be4.~IObjectValueProxy" resolveInfo="IObjectValueProxy" />
+                  <link role="classifier" roleId="tpee.1107535924139" targetNodeId="dcbi.4727801710070563570" resolveInfo="IObjectValueProxy" />
                 </node>
                 <node role="expression" roleId="tpee.1070534934092" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2377722529357877954">
                   <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2377722529357877955">
-                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4tse.~EvaluationUtils%dgetVariableValue(java%dlang%dString,com%dsun%djdi%dStackFrame,com%dsun%djdi%dThreadReference)%cjetbrains%dmps%ddebug%devaluation%dproxies%dIValueProxy" resolveInfo="getVariableValue" />
+                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="qgwr.7494124042451515356" resolveInfo="getVariableValue" />
                     <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="2377722529357877956">
                       <property name="value" nameId="tpee.1070475926801" value="stringValue" />
                     </node>
@@ -8841,8 +8836,8 @@
                     </node>
                   </node>
                   <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="2377722529357877963">
-                    <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="4tse.~EvaluationUtils" resolveInfo="EvaluationUtils" />
-                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4tse.~EvaluationUtils%dgetInstance()%cjetbrains%dmps%ddebug%devaluation%dEvaluationUtils" resolveInfo="getInstance" />
+                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="qgwr.7494124042451449889" resolveInfo="getInstance" />
+                    <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="qgwr.4727801710070561555" resolveInfo="EvaluationUtils" />
                   </node>
                 </node>
               </node>
@@ -8859,7 +8854,7 @@
                 <node role="rValue" roleId="tpee.1068498886297" type="tpee.ParenthesizedExpression" typeId="tpee.1079359253375" id="6583956526375659754">
                   <node role="expression" roleId="tpee.1079359253376" type="tpee.CastExpression" typeId="tpee.1070534934090" id="6583956526375659756">
                     <node role="type" roleId="tpee.1070534934091" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="6583956526375659758">
-                      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="3be4.~IObjectValueProxy" resolveInfo="IObjectValueProxy" />
+                      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="dcbi.4727801710070563570" resolveInfo="IObjectValueProxy" />
                     </node>
                     <node role="expression" roleId="tpee.1070534934092" type="tpee.DotExpression" typeId="tpee.1197027756228" id="3102837338444999341">
                       <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="3102837338444999342">
@@ -8886,8 +8881,8 @@
             </node>
           </node>
           <node role="condition" roleId="tpee.1068580123160" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="6583956526375658369">
-            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="3be4.~ProxyEqualsUtil%djavaEquals(jetbrains%dmps%ddebug%devaluation%dproxies%dIValueProxy,jetbrains%dmps%ddebug%devaluation%dproxies%dIValueProxy)%cboolean" resolveInfo="javaEquals" />
-            <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="3be4.~ProxyEqualsUtil" resolveInfo="ProxyEqualsUtil" />
+            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="dcbi.4727801710070562913" resolveInfo="javaEquals" />
+            <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="dcbi.4727801710070562907" resolveInfo="ProxyEqualsUtil" />
             <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="6583956526375658370">
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="6583956526375658323" resolveInfo="notNullStringValue" />
             </node>
@@ -8958,26 +8953,26 @@
           <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="4322674958982459698">
             <property name="name" nameId="tpck.1169194664001" value="references" />
             <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="4322674958982459716">
-              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="3be4.~IArrayValueProxy" resolveInfo="IArrayValueProxy" />
+              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="dcbi.4727801710070562884" resolveInfo="IArrayValueProxy" />
             </node>
             <node role="initializer" roleId="tpee.1068431790190" type="tpee.ParenthesizedExpression" typeId="tpee.1079359253375" id="4322674958982459733">
               <node role="expression" roleId="tpee.1079359253376" type="tpee.CastExpression" typeId="tpee.1070534934090" id="4322674958982459730">
                 <node role="type" roleId="tpee.1070534934091" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="4322674958982459731">
-                  <link role="classifier" roleId="tpee.1107535924139" targetNodeId="3be4.~IArrayValueProxy" resolveInfo="IArrayValueProxy" />
+                  <link role="classifier" roleId="tpee.1107535924139" targetNodeId="dcbi.4727801710070562884" resolveInfo="IArrayValueProxy" />
                 </node>
                 <node role="expression" roleId="tpee.1070534934092" type="tp68.InternalPartialInstanceMethodCall" typeId="tp68.1174294166120" id="4322674958982464646">
                   <property name="methodName" nameId="tp68.1174294288199" value="getFieldValue" />
                   <node role="returnType" roleId="tp68.1174313653259" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="4322674958982464648">
-                    <link role="classifier" roleId="tpee.1107535924139" targetNodeId="3be4.~IArrayValueProxy" resolveInfo="IArrayValueProxy" />
+                    <link role="classifier" roleId="tpee.1107535924139" targetNodeId="dcbi.4727801710070562884" resolveInfo="IArrayValueProxy" />
                   </node>
                   <node role="instance" roleId="tp68.1174317636233" type="tpee.ParenthesizedExpression" typeId="tpee.1079359253375" id="4322674958982464649">
                     <node role="expression" roleId="tpee.1079359253376" type="tpee.CastExpression" typeId="tpee.1070534934090" id="4322674958982464650">
                       <node role="type" roleId="tpee.1070534934091" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="4322674958982464651">
-                        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="3be4.~IObjectValueProxy" resolveInfo="IObjectValueProxy" />
+                        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="dcbi.4727801710070563570" resolveInfo="IObjectValueProxy" />
                       </node>
                       <node role="expression" roleId="tpee.1070534934092" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2377722529357878073">
                         <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2377722529357878074">
-                          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4tse.~EvaluationUtils%dgetVariableValue(java%dlang%dString,com%dsun%djdi%dStackFrame,com%dsun%djdi%dThreadReference)%cjetbrains%dmps%ddebug%devaluation%dproxies%dIValueProxy" resolveInfo="getVariableValue" />
+                          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="qgwr.7494124042451515356" resolveInfo="getVariableValue" />
                           <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="2377722529357878075">
                             <property name="value" nameId="tpee.1070475926801" value="node" />
                           </node>
@@ -8997,8 +8992,8 @@
                           </node>
                         </node>
                         <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="2377722529357878082">
-                          <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="4tse.~EvaluationUtils" resolveInfo="EvaluationUtils" />
-                          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4tse.~EvaluationUtils%dgetInstance()%cjetbrains%dmps%ddebug%devaluation%dEvaluationUtils" resolveInfo="getInstance" />
+                          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="qgwr.7494124042451449889" resolveInfo="getInstance" />
+                          <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="qgwr.4727801710070561555" resolveInfo="EvaluationUtils" />
                         </node>
                       </node>
                     </node>
@@ -9015,8 +9010,8 @@
           <node role="ifTrue" roleId="tpee.1068580123161" type="tpee.StatementList" typeId="tpee.1068580123136" id="4322674958982459706" />
           <node role="condition" roleId="tpee.1068580123160" type="tpee.NotExpression" typeId="tpee.1081516740877" id="3473983539747082588">
             <node role="expression" roleId="tpee.1081516765348" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="3741995341062090759">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="3be4.~ProxyEqualsUtil%djavaEquals(jetbrains%dmps%ddebug%devaluation%dproxies%dIValueProxy,jetbrains%dmps%ddebug%devaluation%dproxies%dIValueProxy)%cboolean" resolveInfo="javaEquals" />
-              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="3be4.~ProxyEqualsUtil" resolveInfo="ProxyEqualsUtil" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="dcbi.4727801710070562913" resolveInfo="javaEquals" />
+              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="dcbi.4727801710070562907" resolveInfo="ProxyEqualsUtil" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="3741995341062090760">
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4322674958982459698" resolveInfo="references" />
               </node>
@@ -9072,21 +9067,21 @@
           <node role="variable" roleId="tpee.1144230900587" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="2281056005883150455">
             <property name="name" nameId="tpck.1169194664001" value="o" />
             <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2281056005883150458">
-              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="3be4.~IObjectValueProxy" resolveInfo="IObjectValueProxy" />
+              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="dcbi.4727801710070563570" resolveInfo="IObjectValueProxy" />
             </node>
           </node>
           <node role="body" roleId="tpee.1154032183016" type="tpee.StatementList" typeId="tpee.1068580123136" id="2281056005883150457" />
           <node role="iterable" roleId="tpee.1144226360166" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2377722529357878475">
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2377722529357878476">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4tse.~EvaluationUtils%dtoIterableProxyFromArray(jetbrains%dmps%ddebug%devaluation%dproxies%dIArrayValueProxy)%cjava%dlang%dIterable" resolveInfo="toIterableProxyFromArray" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="qgwr.7494124042451515417" resolveInfo="toIterableProxyFromArray" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParenthesizedExpression" typeId="tpee.1079359253375" id="2377722529357878477">
                 <node role="expression" roleId="tpee.1079359253376" type="tpee.CastExpression" typeId="tpee.1070534934090" id="2377722529357878478">
                   <node role="type" roleId="tpee.1070534934091" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2377722529357878479">
-                    <link role="classifier" roleId="tpee.1107535924139" targetNodeId="3be4.~IArrayValueProxy" resolveInfo="IArrayValueProxy" />
+                    <link role="classifier" roleId="tpee.1107535924139" targetNodeId="dcbi.4727801710070562884" resolveInfo="IArrayValueProxy" />
                   </node>
                   <node role="expression" roleId="tpee.1070534934092" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2377722529357878480">
                     <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2377722529357878481">
-                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4tse.~EvaluationUtils%dgetVariableValue(java%dlang%dString,com%dsun%djdi%dStackFrame,com%dsun%djdi%dThreadReference)%cjetbrains%dmps%ddebug%devaluation%dproxies%dIValueProxy" resolveInfo="getVariableValue" />
+                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="qgwr.7494124042451515356" resolveInfo="getVariableValue" />
                       <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="2377722529357878482">
                         <property name="value" nameId="tpee.1070475926801" value="objectVar" />
                       </node>
@@ -9106,19 +9101,19 @@
                       </node>
                     </node>
                     <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="2377722529357878489">
-                      <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="4tse.~EvaluationUtils" resolveInfo="EvaluationUtils" />
-                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4tse.~EvaluationUtils%dgetInstance()%cjetbrains%dmps%ddebug%devaluation%dEvaluationUtils" resolveInfo="getInstance" />
+                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="qgwr.7494124042451449889" resolveInfo="getInstance" />
+                      <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="qgwr.4727801710070561555" resolveInfo="EvaluationUtils" />
                     </node>
                   </node>
                 </node>
               </node>
               <node role="typeArgument" roleId="tpee.4972241301747169160" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="3187167456722442453">
-                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="3be4.~IObjectValueProxy" resolveInfo="IObjectValueProxy" />
+                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="dcbi.4727801710070563570" resolveInfo="IObjectValueProxy" />
               </node>
             </node>
             <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="2377722529357878490">
-              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="4tse.~EvaluationUtils" resolveInfo="EvaluationUtils" />
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4tse.~EvaluationUtils%dgetInstance()%cjetbrains%dmps%ddebug%devaluation%dEvaluationUtils" resolveInfo="getInstance" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="qgwr.7494124042451449889" resolveInfo="getInstance" />
+              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="qgwr.4727801710070561555" resolveInfo="EvaluationUtils" />
             </node>
           </node>
         </node>
@@ -9157,7 +9152,7 @@
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="215665606921554813">
           <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2377722529357878569">
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2377722529357878570">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4tse.~EvaluationUtils%dcreateArrayProxyFromValues(java%dlang%dString,com%dsun%djdi%dThreadReference,java%dlang%dObject%d%d%d)%cjetbrains%dmps%ddebug%devaluation%dproxies%dIArrayValueProxy" resolveInfo="createArrayProxyFromValues" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="qgwr.7494124042451515667" resolveInfo="createArrayProxyFromValues" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="2377722529357878571">
                 <property name="value" nameId="tpee.1070475926801" value="java.lang.String" />
               </node>
@@ -9176,8 +9171,8 @@
               </node>
             </node>
             <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="2377722529357878577">
-              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="4tse.~EvaluationUtils" resolveInfo="EvaluationUtils" />
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4tse.~EvaluationUtils%dgetInstance()%cjetbrains%dmps%ddebug%devaluation%dEvaluationUtils" resolveInfo="getInstance" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="qgwr.7494124042451449889" resolveInfo="getInstance" />
+              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="qgwr.4727801710070561555" resolveInfo="EvaluationUtils" />
             </node>
           </node>
         </node>
@@ -9215,7 +9210,7 @@
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="215665606921554821">
           <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2377722529357878521">
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2377722529357878522">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4tse.~EvaluationUtils%dcreateArrayProxy(java%dlang%dString,com%dsun%djdi%dThreadReference,int)%cjetbrains%dmps%ddebug%devaluation%dproxies%dIArrayValueProxy" resolveInfo="createArrayProxy" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="qgwr.7494124042451515617" resolveInfo="createArrayProxy" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="2377722529357878523">
                 <property name="value" nameId="tpee.1070475926801" value="java.lang.String" />
               </node>
@@ -9231,8 +9226,8 @@
               </node>
             </node>
             <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="2377722529357878528">
-              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="4tse.~EvaluationUtils" resolveInfo="EvaluationUtils" />
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4tse.~EvaluationUtils%dgetInstance()%cjetbrains%dmps%ddebug%devaluation%dEvaluationUtils" resolveInfo="getInstance" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="qgwr.7494124042451449889" resolveInfo="getInstance" />
+              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="qgwr.4727801710070561555" resolveInfo="EvaluationUtils" />
             </node>
           </node>
         </node>
@@ -9268,7 +9263,7 @@
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="4609929908986493493">
           <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2377722529357878325">
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2377722529357878326">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4tse.~EvaluationUtils%dcreateArrayProxy(java%dlang%dString,com%dsun%djdi%dThreadReference,int)%cjetbrains%dmps%ddebug%devaluation%dproxies%dIArrayValueProxy" resolveInfo="createArrayProxy" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="qgwr.7494124042451515617" resolveInfo="createArrayProxy" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="2377722529357878327">
                 <property name="value" nameId="tpee.1070475926801" value="int" />
               </node>
@@ -9284,8 +9279,8 @@
               </node>
             </node>
             <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="2377722529357878332">
-              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="4tse.~EvaluationUtils" resolveInfo="EvaluationUtils" />
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4tse.~EvaluationUtils%dgetInstance()%cjetbrains%dmps%ddebug%devaluation%dEvaluationUtils" resolveInfo="getInstance" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="qgwr.7494124042451449889" resolveInfo="getInstance" />
+              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="qgwr.4727801710070561555" resolveInfo="EvaluationUtils" />
             </node>
           </node>
         </node>
@@ -9362,11 +9357,11 @@
                       <node role="expression" roleId="tpee.1079359253376" type="tpee.ParenthesizedExpression" typeId="tpee.1079359253375" id="3102837338444999518">
                         <node role="expression" roleId="tpee.1079359253376" type="tpee.CastExpression" typeId="tpee.1070534934090" id="3102837338444999519">
                           <node role="type" roleId="tpee.1070534934091" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="3102837338444999520">
-                            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="3be4.~IObjectValueProxy" resolveInfo="IObjectValueProxy" />
+                            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="dcbi.4727801710070563570" resolveInfo="IObjectValueProxy" />
                           </node>
                           <node role="expression" roleId="tpee.1070534934092" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2377722529357878598">
                             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2377722529357878599">
-                              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4tse.~EvaluationUtils%dgetVariableValue(java%dlang%dString,com%dsun%djdi%dStackFrame,com%dsun%djdi%dThreadReference)%cjetbrains%dmps%ddebug%devaluation%dproxies%dIValueProxy" resolveInfo="getVariableValue" />
+                              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="qgwr.7494124042451515356" resolveInfo="getVariableValue" />
                               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="2377722529357878600">
                                 <property name="value" nameId="tpee.1070475926801" value="var" />
                               </node>
@@ -9386,8 +9381,8 @@
                               </node>
                             </node>
                             <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="2377722529357878607">
-                              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="4tse.~EvaluationUtils" resolveInfo="EvaluationUtils" />
-                              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4tse.~EvaluationUtils%dgetInstance()%cjetbrains%dmps%ddebug%devaluation%dEvaluationUtils" resolveInfo="getInstance" />
+                              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="qgwr.7494124042451449889" resolveInfo="getInstance" />
+                              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="qgwr.4727801710070561555" resolveInfo="EvaluationUtils" />
                             </node>
                           </node>
                         </node>
@@ -9497,11 +9492,11 @@
                       <node role="expression" roleId="tpee.1079359253376" type="tpee.ParenthesizedExpression" typeId="tpee.1079359253375" id="3102837338444999495">
                         <node role="expression" roleId="tpee.1079359253376" type="tpee.CastExpression" typeId="tpee.1070534934090" id="3102837338444999496">
                           <node role="type" roleId="tpee.1070534934091" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="3102837338444999497">
-                            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="3be4.~IObjectValueProxy" resolveInfo="IObjectValueProxy" />
+                            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="dcbi.4727801710070563570" resolveInfo="IObjectValueProxy" />
                           </node>
                           <node role="expression" roleId="tpee.1070534934092" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2377722529357878014">
                             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2377722529357878015">
-                              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4tse.~EvaluationUtils%dgetVariableValue(java%dlang%dString,com%dsun%djdi%dStackFrame,com%dsun%djdi%dThreadReference)%cjetbrains%dmps%ddebug%devaluation%dproxies%dIValueProxy" resolveInfo="getVariableValue" />
+                              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="qgwr.7494124042451515356" resolveInfo="getVariableValue" />
                               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="2377722529357878016">
                                 <property name="value" nameId="tpee.1070475926801" value="var" />
                               </node>
@@ -9521,8 +9516,8 @@
                               </node>
                             </node>
                             <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="2377722529357878023">
-                              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="4tse.~EvaluationUtils" resolveInfo="EvaluationUtils" />
-                              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4tse.~EvaluationUtils%dgetInstance()%cjetbrains%dmps%ddebug%devaluation%dEvaluationUtils" resolveInfo="getInstance" />
+                              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="qgwr.7494124042451449889" resolveInfo="getInstance" />
+                              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="qgwr.4727801710070561555" resolveInfo="EvaluationUtils" />
                             </node>
                           </node>
                         </node>
@@ -9626,11 +9621,11 @@
                       <node role="expression" roleId="tpee.1079359253376" type="tpee.ParenthesizedExpression" typeId="tpee.1079359253375" id="3102837338444999326">
                         <node role="expression" roleId="tpee.1079359253376" type="tpee.CastExpression" typeId="tpee.1070534934090" id="3102837338444999327">
                           <node role="type" roleId="tpee.1070534934091" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="3102837338444999328">
-                            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="3be4.~IObjectValueProxy" resolveInfo="IObjectValueProxy" />
+                            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="dcbi.4727801710070563570" resolveInfo="IObjectValueProxy" />
                           </node>
                           <node role="expression" roleId="tpee.1070534934092" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2377722529357878180">
                             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2377722529357878181">
-                              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4tse.~EvaluationUtils%dgetVariableValue(java%dlang%dString,com%dsun%djdi%dStackFrame,com%dsun%djdi%dThreadReference)%cjetbrains%dmps%ddebug%devaluation%dproxies%dIValueProxy" resolveInfo="getVariableValue" />
+                              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="qgwr.7494124042451515356" resolveInfo="getVariableValue" />
                               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="2377722529357878182">
                                 <property name="value" nameId="tpee.1070475926801" value="var" />
                               </node>
@@ -9650,8 +9645,8 @@
                               </node>
                             </node>
                             <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="2377722529357878189">
-                              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="4tse.~EvaluationUtils" resolveInfo="EvaluationUtils" />
-                              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4tse.~EvaluationUtils%dgetInstance()%cjetbrains%dmps%ddebug%devaluation%dEvaluationUtils" resolveInfo="getInstance" />
+                              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="qgwr.7494124042451449889" resolveInfo="getInstance" />
+                              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="qgwr.4727801710070561555" resolveInfo="EvaluationUtils" />
                             </node>
                           </node>
                         </node>
@@ -9730,11 +9725,11 @@
                       <node role="expression" roleId="tpee.1079359253376" type="tpee.ParenthesizedExpression" typeId="tpee.1079359253375" id="3102837338444999435">
                         <node role="expression" roleId="tpee.1079359253376" type="tpee.CastExpression" typeId="tpee.1070534934090" id="3102837338444999436">
                           <node role="type" roleId="tpee.1070534934091" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="3102837338444999437">
-                            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="3be4.~PrimitiveValueProxy" resolveInfo="PrimitiveValueProxy" />
+                            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="dcbi.4727801710070563929" resolveInfo="PrimitiveValueProxy" />
                           </node>
                           <node role="expression" roleId="tpee.1070534934092" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2377722529357878004">
                             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2377722529357878005">
-                              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4tse.~EvaluationUtils%dgetVariableValue(java%dlang%dString,com%dsun%djdi%dStackFrame,com%dsun%djdi%dThreadReference)%cjetbrains%dmps%ddebug%devaluation%dproxies%dIValueProxy" resolveInfo="getVariableValue" />
+                              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="qgwr.7494124042451515356" resolveInfo="getVariableValue" />
                               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="2377722529357878006">
                                 <property name="value" nameId="tpee.1070475926801" value="var" />
                               </node>
@@ -9754,8 +9749,8 @@
                               </node>
                             </node>
                             <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="2377722529357878013">
-                              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="4tse.~EvaluationUtils" resolveInfo="EvaluationUtils" />
-                              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4tse.~EvaluationUtils%dgetInstance()%cjetbrains%dmps%ddebug%devaluation%dEvaluationUtils" resolveInfo="getInstance" />
+                              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="qgwr.7494124042451449889" resolveInfo="getInstance" />
+                              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="qgwr.4727801710070561555" resolveInfo="EvaluationUtils" />
                             </node>
                           </node>
                         </node>
@@ -9827,17 +9822,17 @@
               <node role="expression" roleId="tpee.1070534934092" type="tp68.InternalPartialInstanceMethodCall" typeId="tp68.1174294166120" id="8057800702000505878">
                 <property name="methodName" nameId="tp68.1174294288199" value="invokeMethod" />
                 <node role="returnType" roleId="tp68.1174313653259" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="8057800702000505880">
-                  <link role="classifier" roleId="tpee.1107535924139" targetNodeId="3be4.~IArrayValueProxy" resolveInfo="IArrayValueProxy" />
+                  <link role="classifier" roleId="tpee.1107535924139" targetNodeId="dcbi.4727801710070562884" resolveInfo="IArrayValueProxy" />
                 </node>
                 <node role="instance" roleId="tp68.1174317636233" type="tpee.ParenthesizedExpression" typeId="tpee.1079359253375" id="9117676066431104284">
                   <node role="expression" roleId="tpee.1079359253376" type="tpee.CastExpression" typeId="tpee.1070534934090" id="4370794800458755688">
                     <node role="type" roleId="tpee.1070534934091" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="4370794800458755691">
-                      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="3be4.~IObjectValueProxy" resolveInfo="IObjectValueProxy" />
+                      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="dcbi.4727801710070563570" resolveInfo="IObjectValueProxy" />
                     </node>
                     <node role="expression" roleId="tpee.1070534934092" type="tp68.InternalPartialInstanceMethodCall" typeId="tp68.1174294166120" id="9117676066431104281">
                       <property name="methodName" nameId="tp68.1174294288199" value="getThisObject" />
                       <node role="returnType" roleId="tp68.1174313653259" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="9117676066431104282">
-                        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="3be4.~IObjectValueProxy" resolveInfo="IObjectValueProxy" />
+                        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="dcbi.4727801710070563570" resolveInfo="IObjectValueProxy" />
                       </node>
                       <node role="instance" roleId="tp68.1174317636233" type="tp68.InternalThisExpression" typeId="tp68.1202838164916" id="9117676066431104283" />
                     </node>
@@ -9851,7 +9846,7 @@
                 </node>
               </node>
               <node role="type" roleId="tpee.1070534934091" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="8057800702000453159">
-                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="3be4.~IArrayValueProxy" resolveInfo="IArrayValueProxy" />
+                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="dcbi.4727801710070562884" resolveInfo="IArrayValueProxy" />
               </node>
             </node>
           </node>
@@ -9896,12 +9891,12 @@
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="5586226261252332108">
           <node role="expression" roleId="tpee.1068581517676" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2377722529357878373">
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2377722529357878374">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4tse.~EvaluationUtils%dunboxValue(jetbrains%dmps%ddebug%devaluation%dproxies%dIObjectValueProxy)%cjetbrains%dmps%ddebug%devaluation%dproxies%dPrimitiveValueProxy" resolveInfo="unboxValue" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="qgwr.7494124042451515817" resolveInfo="unboxValue" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParenthesizedExpression" typeId="tpee.1079359253375" id="2377722529357878375">
                 <node role="expression" roleId="tpee.1079359253376" type="tpee.CastExpression" typeId="tpee.1070534934090" id="2377722529357878376">
                   <node role="expression" roleId="tpee.1070534934092" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2377722529357878377">
                     <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2377722529357878378">
-                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4tse.~EvaluationUtils%dgetVariableValue(java%dlang%dString,com%dsun%djdi%dStackFrame,com%dsun%djdi%dThreadReference)%cjetbrains%dmps%ddebug%devaluation%dproxies%dIValueProxy" resolveInfo="getVariableValue" />
+                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="qgwr.7494124042451515356" resolveInfo="getVariableValue" />
                       <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="2377722529357878379">
                         <property name="value" nameId="tpee.1070475926801" value="value" />
                       </node>
@@ -9921,19 +9916,19 @@
                       </node>
                     </node>
                     <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="2377722529357878386">
-                      <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="4tse.~EvaluationUtils" resolveInfo="EvaluationUtils" />
-                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4tse.~EvaluationUtils%dgetInstance()%cjetbrains%dmps%ddebug%devaluation%dEvaluationUtils" resolveInfo="getInstance" />
+                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="qgwr.7494124042451449889" resolveInfo="getInstance" />
+                      <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="qgwr.4727801710070561555" resolveInfo="EvaluationUtils" />
                     </node>
                   </node>
                   <node role="type" roleId="tpee.1070534934091" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2377722529357878387">
-                    <link role="classifier" roleId="tpee.1107535924139" targetNodeId="3be4.~IObjectValueProxy" resolveInfo="IObjectValueProxy" />
+                    <link role="classifier" roleId="tpee.1107535924139" targetNodeId="dcbi.4727801710070563570" resolveInfo="IObjectValueProxy" />
                   </node>
                 </node>
               </node>
             </node>
             <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="2377722529357878388">
-              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="4tse.~EvaluationUtils" resolveInfo="EvaluationUtils" />
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4tse.~EvaluationUtils%dgetInstance()%cjetbrains%dmps%ddebug%devaluation%dEvaluationUtils" resolveInfo="getInstance" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="qgwr.7494124042451449889" resolveInfo="getInstance" />
+              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="qgwr.4727801710070561555" resolveInfo="EvaluationUtils" />
             </node>
           </node>
         </node>
@@ -9975,16 +9970,16 @@
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="3525964900474412369">
           <node role="expression" roleId="tpee.1068581517676" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2377722529357878163">
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2377722529357878164">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4tse.~EvaluationUtils%dboxValue(jetbrains%dmps%ddebug%devaluation%dproxies%dPrimitiveValueProxy,com%dsun%djdi%dThreadReference)%cjetbrains%dmps%ddebug%devaluation%dproxies%dIObjectValueProxy" resolveInfo="boxValue" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="qgwr.7494124042451515767" resolveInfo="boxValue" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParenthesizedExpression" typeId="tpee.1079359253375" id="2377722529357878165">
                 <node role="expression" roleId="tpee.1079359253376" type="tpee.CastExpression" typeId="tpee.1070534934090" id="2377722529357878166">
                   <node role="expression" roleId="tpee.1070534934092" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2377722529357973649">
                     <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="2377722529357973641">
-                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4tse.~EvaluationUtils%dgetInstance()%cjetbrains%dmps%ddebug%devaluation%dEvaluationUtils" resolveInfo="getInstance" />
-                      <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="4tse.~EvaluationUtils" resolveInfo="EvaluationUtils" />
+                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="qgwr.7494124042451449889" resolveInfo="getInstance" />
+                      <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="qgwr.4727801710070561555" resolveInfo="EvaluationUtils" />
                     </node>
                     <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2377722529357973653">
-                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4tse.~EvaluationUtils%dgetVariableValue(java%dlang%dString,com%dsun%djdi%dStackFrame,com%dsun%djdi%dThreadReference)%cjetbrains%dmps%ddebug%devaluation%dproxies%dIValueProxy" resolveInfo="getVariableValue" />
+                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="qgwr.7494124042451515356" resolveInfo="getVariableValue" />
                       <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="2377722529357973642">
                         <property name="value" nameId="tpee.1070475926801" value="value" />
                       </node>
@@ -10005,7 +10000,7 @@
                     </node>
                   </node>
                   <node role="type" roleId="tpee.1070534934091" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2377722529357878175">
-                    <link role="classifier" roleId="tpee.1107535924139" targetNodeId="3be4.~PrimitiveValueProxy" resolveInfo="PrimitiveValueProxy" />
+                    <link role="classifier" roleId="tpee.1107535924139" targetNodeId="dcbi.4727801710070563929" resolveInfo="PrimitiveValueProxy" />
                   </node>
                 </node>
               </node>
@@ -10018,8 +10013,8 @@
               </node>
             </node>
             <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="2377722529357878179">
-              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="4tse.~EvaluationUtils" resolveInfo="EvaluationUtils" />
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4tse.~EvaluationUtils%dgetInstance()%cjetbrains%dmps%ddebug%devaluation%dEvaluationUtils" resolveInfo="getInstance" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="qgwr.7494124042451449889" resolveInfo="getInstance" />
+              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="qgwr.4727801710070561555" resolveInfo="EvaluationUtils" />
             </node>
           </node>
         </node>
@@ -10067,13 +10062,13 @@
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="5586226261252332079">
           <node role="expression" roleId="tpee.1068581517676" type="tpee.CastExpression" typeId="tpee.1070534934090" id="5586226261252384887">
             <node role="type" roleId="tpee.1070534934091" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5586226261252384900">
-              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="3be4.~IArrayValueProxy" resolveInfo="IArrayValueProxy" />
+              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="dcbi.4727801710070562884" resolveInfo="IArrayValueProxy" />
             </node>
             <node role="expression" roleId="tpee.1070534934092" type="tpee.ParenthesizedExpression" typeId="tpee.1079359253375" id="5586226261252384889">
               <node role="expression" roleId="tpee.1079359253376" type="tpee.CastExpression" typeId="tpee.1070534934090" id="5586226261252384890">
                 <node role="expression" roleId="tpee.1070534934092" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2377722529357877994">
                   <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2377722529357877995">
-                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4tse.~EvaluationUtils%dgetVariableValue(java%dlang%dString,com%dsun%djdi%dStackFrame,com%dsun%djdi%dThreadReference)%cjetbrains%dmps%ddebug%devaluation%dproxies%dIValueProxy" resolveInfo="getVariableValue" />
+                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="qgwr.7494124042451515356" resolveInfo="getVariableValue" />
                     <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="2377722529357877996">
                       <property name="value" nameId="tpee.1070475926801" value="value" />
                     </node>
@@ -10093,12 +10088,12 @@
                     </node>
                   </node>
                   <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="2377722529357878003">
-                    <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="4tse.~EvaluationUtils" resolveInfo="EvaluationUtils" />
-                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4tse.~EvaluationUtils%dgetInstance()%cjetbrains%dmps%ddebug%devaluation%dEvaluationUtils" resolveInfo="getInstance" />
+                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="qgwr.7494124042451449889" resolveInfo="getInstance" />
+                    <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="qgwr.4727801710070561555" resolveInfo="EvaluationUtils" />
                   </node>
                 </node>
                 <node role="type" roleId="tpee.1070534934091" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5586226261252384899">
-                  <link role="classifier" roleId="tpee.1107535924139" targetNodeId="3be4.~IObjectValueProxy" resolveInfo="IObjectValueProxy" />
+                  <link role="classifier" roleId="tpee.1107535924139" targetNodeId="dcbi.4727801710070563570" resolveInfo="IObjectValueProxy" />
                 </node>
               </node>
             </node>

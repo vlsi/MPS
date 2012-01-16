@@ -47,6 +47,11 @@ public class RunConfigurationsInitializer_CustomApplicationPlugin extends BaseCu
       ListSequence.fromList(RunConfigurationsInitializer_CustomApplicationPlugin.this.myRegisteredKinds).addElement(runConfigurationKind);
       configurationExtensionPoint.registerExtension(runConfigurationKind);
     }
+    {
+      Remote_Kind runConfigurationKind = new Remote_Kind();
+      ListSequence.fromList(RunConfigurationsInitializer_CustomApplicationPlugin.this.myRegisteredKinds).addElement(runConfigurationKind);
+      configurationExtensionPoint.registerExtension(runConfigurationKind);
+    }
 
     // add foreign factories 
     _FunctionTypes._return_P1_E0<? extends Class<ConfigurationType>, ? super String> getClassFunction = new _FunctionTypes._return_P1_E0<Class<ConfigurationType>, String>() {

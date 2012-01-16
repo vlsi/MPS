@@ -29,16 +29,18 @@ import java.util.HashMap;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.ide.actions.MissingDependenciesFixer;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.search.ISearchScope;
-import jetbrains.mps.typesystem.inference.TypeContextManager;
-import jetbrains.mps.util.Computable;
-import jetbrains.mps.util.Condition;
 import jetbrains.mps.project.OptimizeImportsHelper;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.scope.Scope;
+import jetbrains.mps.smodel.constraints.ModelConstraintsUtil;
+import jetbrains.mps.scope.ErrorScope;
+import jetbrains.mps.typesystem.inference.TypeContextManager;
+import jetbrains.mps.util.Computable;
+import jetbrains.mps.internal.collections.runtime.IListSequence;
 
 public class StubResolver {
   private static final String JAVA_STUB = SModelStereotype.getStubStereotypeForId(LanguageID.JAVA);
@@ -105,43 +107,7 @@ public class StubResolver {
       new MissingDependenciesFixer(null, model.getModelDescriptor()).fix(false);
     }
 
-    int cnt = 0;
-    boolean found;
-    do {
-      found = false;
-      for (SReference ref : ListSequence.fromList(toResolve).toGenericArray(SReference.class)) {
-        SNode node = ref.getSourceNode();
-        final SModelReference modelRef = MapSequence.fromMap(models).get(ref.getTargetSModelReference());
-        final String resolveInfo = SLinkOperations.getResolveInfo(ref);
-        if (modelRef == null || resolveInfo == null) {
-          continue;
-        }
-        final ISearchScope scope = SNodeOperations.getReferentSearchScope(node, SLinkOperations.getRole(ref), context);
-        if (scope == null) {
-          continue;
-        }
-        List<SNode> resolved = TypeContextManager.getInstance().runResolveAction(new Computable<List<SNode>>() {
-          public List<SNode> compute() {
-            return scope.getNodes(new Condition<SNode>() {
-              public boolean met(SNode n) {
-                return modelRef.equals(SNodeOperations.getModel(n).getSModelReference()) && resolveInfo.equals(n.getResolveInfo());
-              }
-            });
-          }
-        });
-        if (ListSequence.fromList(resolved).count() > 1) {
-          if (log.isErrorEnabled()) {
-            log.error("more than 1 possible resolution for " + SLinkOperations.getResolveInfo(ref) + " in model " + modelRef.getLongName());
-          }
-        }
-        if (ListSequence.fromList(resolved).count() > 0) {
-          node.setReferent(SLinkOperations.getRole(ref), ListSequence.fromList(resolved).first());
-          ListSequence.fromList(toResolve).removeElement(ref);
-          ++cnt;
-          found = true;
-        }
-      }
-    } while (found);
+    int cnt = StubResolver.resolveReferences(toResolve, models, context);
 
     new OptimizeImportsHelper(context).optimizeModelImports(model.getModelDescriptor());
     if (log.isInfoEnabled()) {
@@ -166,6 +132,47 @@ public class StubResolver {
         }
       }
     }
+  }
+
+  public static int resolveReferences(List<SReference> toResolve, Map<SModelReference, SModelReference> models, IOperationContext context) {
+    int cnt = 0;
+    boolean found;
+    do {
+      found = false;
+      for (SReference ref : ListSequence.fromList(toResolve).toGenericArray(SReference.class)) {
+        SNode node = ref.getSourceNode();
+        final SModelReference modelRef = MapSequence.fromMap(models).get(ref.getTargetSModelReference());
+        final String resolveInfo = SLinkOperations.getResolveInfo(ref);
+        if (modelRef == null || resolveInfo == null) {
+          continue;
+        }
+        final Scope refScope = ModelConstraintsUtil.getScope(ref, context);
+        if (refScope instanceof ErrorScope) {
+          continue;
+        }
+        List<SNode> resolved = TypeContextManager.getInstance().runResolveAction(new Computable<IListSequence<SNode>>() {
+          public IListSequence<SNode> compute() {
+            return ListSequence.fromList(refScope.getAvailableElements(null)).where(new IWhereFilter<SNode>() {
+              public boolean accept(SNode n) {
+                return modelRef.equals(SNodeOperations.getModel(n).getSModelReference()) && resolveInfo.equals(n.getResolveInfo());
+              }
+            }).toListSequence();
+          }
+        });
+        if (ListSequence.fromList(resolved).count() > 1) {
+          if (log.isErrorEnabled()) {
+            log.error("more than 1 possible resolution for " + SLinkOperations.getResolveInfo(ref) + " in model " + modelRef.getLongName());
+          }
+        }
+        if (ListSequence.fromList(resolved).count() > 0) {
+          node.setReferent(SLinkOperations.getRole(ref), ListSequence.fromList(resolved).first());
+          ListSequence.fromList(toResolve).removeElement(ref);
+          ++cnt;
+          found = true;
+        }
+      }
+    } while (found);
+    return cnt;
   }
 
   private static SModelReference check_ar1im2_a0e0a0c0a(SModelDescriptor checkedDotOperand) {

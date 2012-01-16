@@ -8,9 +8,6 @@ import jetbrains.mps.smodel.SModel;
 import java.util.Map;
 import jetbrains.mps.project.IModule;
 import java.util.ArrayList;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.ide.navigation.NavigationSupport;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.smodel.SModelDescriptor;
 
@@ -41,7 +38,7 @@ public class OldRefactoringAdapter implements IRefactoring {
   }
 
   public boolean init(RefactoringContext refactoringContext) {
-    return myOldRefactoring.askForInfo(refactoringContext);
+    return false;
   }
 
   public void refactor(final RefactoringContext refactoringContext) {
@@ -62,16 +59,6 @@ public class OldRefactoringAdapter implements IRefactoring {
   }
 
   public void doWhenDone(final RefactoringContext refactoringContext) {
-    if (myNodesToOpen != null && !(myNodesToOpen.isEmpty())) {
-      ModelAccess.instance().runReadInEDT(new Runnable() {
-        public void run() {
-          IOperationContext context = refactoringContext.getCurrentOperationContext();
-          for (SNode nodeToOpen : myNodesToOpen) {
-            NavigationSupport.getInstance().openNode(context, nodeToOpen, true, true);
-          }
-        }
-      });
-    }
   }
 
   public SearchResults getAffectedNodes(RefactoringContext refactoringContext) {

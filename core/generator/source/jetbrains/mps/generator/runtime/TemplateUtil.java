@@ -16,6 +16,7 @@
 package jetbrains.mps.generator.runtime;
 
 import jetbrains.mps.generator.impl.interpreted.TemplateModuleInterpreted;
+import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.project.structure.modules.mappingpriorities.*;
 import jetbrains.mps.smodel.Generator;
@@ -31,18 +32,20 @@ import java.util.*;
  */
 public class TemplateUtil {
 
+  private static final Logger LOG = Logger.getLogger(TemplateUtil.class);
+
   public static Collection<SNode> singletonList(SNode node) {
     return node != null ? Collections.singletonList(node) : Collections.<SNode>emptyList();
   }
 
   public static Collection<SNode> asList(SNode... nodes) {
-    if(nodes == null || nodes.length ==0 ) {
+    if (nodes == null || nodes.length == 0) {
       return Collections.emptyList();
     }
 
     List<SNode> result = new ArrayList<SNode>(nodes.length);
-    for(SNode node : nodes) {
-      if(node != null) {
+    for (SNode node : nodes) {
+      if (node != null) {
         result.add(node);
       }
     }
@@ -106,6 +109,10 @@ public class TemplateUtil {
 
   public static TemplateModule createInterpretedGenerator(LanguageRuntime sourceLanguage, String moduleReference) {
     Generator g = MPSModuleRepository.getInstance().getGenerator(ModuleReference.fromString(moduleReference));
+    if (g == null) {
+      LOG.error("language " + sourceLanguage.getNamespace() + " doesn't contain generator `" + moduleReference + "': try to regenerate language");
+      return null;
+    }
     return new TemplateModuleInterpreted(sourceLanguage, g);
   }
 
@@ -157,7 +164,7 @@ public class TemplateUtil {
     return new MappingConfig_RefAllLocal();
   }
 
-  public static TemplateMappingConfigRef createRefSet(TemplateMappingConfigRef ...elements) {
+  public static TemplateMappingConfigRef createRefSet(TemplateMappingConfigRef... elements) {
     MappingConfig_RefSet result = new MappingConfig_RefSet();
     for (TemplateMappingConfigRef element : elements) {
       result.getMappingConfigs().add((MappingConfig_AbstractRef) element);

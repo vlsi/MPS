@@ -14,9 +14,10 @@ import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Indent;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
-import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
+import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
+import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.nodeEditor.CellActionType;
@@ -44,6 +45,8 @@ public class IdeaInitializerDescriptor_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createCollection_bmlzqh_i0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_bmlzqh_j0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_bmlzqh_k0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_bmlzqh_l0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_bmlzqh_m0(editorContext, node));
     return editorCell;
   }
 
@@ -244,6 +247,13 @@ public class IdeaInitializerDescriptor_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
+  private EditorCell createConstant_bmlzqh_l0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
+    editorCell.setCellId("Constant_bmlzqh_l0");
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
   private EditorCell createRefNodeList_bmlzqh_b1i0(EditorContext editorContext, SNode node) {
     AbstractCellListHandler handler = new IdeaInitializerDescriptor_Editor.dependencyListHandler_bmlzqh_b1i0(node, "dependency", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Vertical(), false);
@@ -255,6 +265,23 @@ public class IdeaInitializerDescriptor_Editor extends DefaultNodeEditor {
   private EditorCell createIndentCell_bmlzqh_a1i0(EditorContext editorContext, SNode node) {
     EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
     return result;
+  }
+
+  private EditorCell createRefNode_bmlzqh_m0(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
+    provider.setRole("actions");
+    provider.setNoTargetText("<no actions>");
+    EditorCell editorCell;
+    editorCell = provider.createEditorCell(editorContext);
+    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    SNode attributeConcept = provider.getRoleAttribute();
+    Class attributeKind = provider.getRoleAttributeClass();
+    if (attributeConcept != null) {
+      IOperationContext opContext = editorContext.getOperationContext();
+      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+      return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
+    } else
+    return editorCell;
   }
 
   private EditorCell createProperty_bmlzqh_b0a(EditorContext editorContext, SNode node) {

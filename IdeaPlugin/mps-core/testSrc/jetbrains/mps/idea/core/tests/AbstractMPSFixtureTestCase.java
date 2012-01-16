@@ -37,6 +37,7 @@ import jetbrains.mps.idea.core.facet.MPSFacet;
 import jetbrains.mps.idea.core.facet.MPSFacetConfiguration;
 import jetbrains.mps.idea.core.facet.MPSFacetType;
 import jetbrains.mps.smodel.ModelAccess;
+import junit.framework.Assert;
 
 import javax.swing.*;
 import java.io.File;
@@ -86,7 +87,7 @@ public abstract class AbstractMPSFixtureTestCase extends UsefulTestCase {
         // we can remove these lines and extend from JavaCodeInsightFixtureTestCase in IDEA 11.
         myProjectBuilder = IdeaTestFixtureFactory.getFixtureFactory().createFixtureBuilder();
         myFixture = JavaTestFixtureFactory.getFixtureFactory().createCodeInsightFixture(myProjectBuilder.getFixture());
-        JavaModuleFixtureBuilder moduleFixtureBuilder = myProjectBuilder.addModule(CustomJavaModuleFixtureBuilder.class);
+        final JavaModuleFixtureBuilder moduleFixtureBuilder = myProjectBuilder.addModule(CustomJavaModuleFixtureBuilder.class);
         moduleFixtureBuilder.addSourceContentRoot(myFixture.getTempDirPath());
         tuneFixture(moduleFixtureBuilder);
 
@@ -97,8 +98,16 @@ public abstract class AbstractMPSFixtureTestCase extends UsefulTestCase {
         myFacet = addMPSFacet(myModule);
     }
 
-    protected Module addModule(TestFixtureBuilder<IdeaProjectTestFixture> projectBuilder) {
+    @Override
+    protected void tearDown() throws Exception {
+        if (!ModelAccess.instance().isInEDT()) ModelAccess.instance().flushEventQueue();
+        myFixture.tearDown();
+        super.tearDown();
+    }
+
+    protected Module addModuleAndSetupFixture(TestFixtureBuilder<IdeaProjectTestFixture> projectBuilder) throws Exception {
         CustomJavaModuleFixtureBuilder moduleFixtureBuilder = projectBuilder.addModule(CustomJavaModuleFixtureBuilder.class);
+        moduleFixtureBuilder.getFixture().setUp();
         String moduleFolderName = "module" + getNextIndex();
         File moduleFolder = new File(myFixture.getTempDirPath() + File.separator + moduleFolderName);
         assertTrue(moduleFolder.mkdirs());
@@ -125,6 +134,7 @@ public abstract class AbstractMPSFixtureTestCase extends UsefulTestCase {
     protected MPSFacet addMPSFacet(Module module) {
         FacetManager facetManager = FacetManager.getInstance(module);
         FacetType<MPSFacet, MPSFacetConfiguration> facetType = FacetTypeRegistry.getInstance().findFacetType(MPSFacetType.ID);
+        Assert.assertNotNull("MPS facet type is not found", facetType);
         MPSFacet facet = facetManager.createFacet(facetType, "MPS", null);
         final MPSFacetConfiguration configuration = facet.getConfiguration();
         preConfigureFacet(configuration);

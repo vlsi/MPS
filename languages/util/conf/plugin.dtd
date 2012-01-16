@@ -57,6 +57,8 @@
     plugin could work with
 -->
 <!ELEMENT idea-version EMPTY>
+<!-- min / max attributes are left for compatibility -->
+
 <!ATTLIST idea-version
     since-build CDATA #REQUIRED
     until-build CDATA #IMPLIED
@@ -69,13 +71,18 @@
 
 <!ELEMENT depends (#PCDATA)>
 <!ATTLIST depends
-   optional (true | false) #IMPLIED>
+   optional (true | false) #IMPLIED
+   config-file CDATA #IMPLIED
+   >
 
-<!-- extensions. Most relaxed constraints since content of the particular extension cannot be expressed with DTD -->
+<!-- extensions. Most relaxed constraints since content of the particular extension cannot be expressed with DTD
+  defaultExtensionNs - namespace prepended to referenced extension name to get qname,
+  xmlns same as previous, left for compatibility 
+ -->
 <!ELEMENT extensions ANY>
 <!ATTLIST extensions
    defaultExtensionNs CDATA #REQUIRED
-   xmlns CDATA #IMPLIED 
+   xmlns CDATA #IMPLIED
    >
 
 <!ELEMENT application-components (component*)>
@@ -107,7 +114,8 @@
 <!ATTLIST keyboard-shortcut
     first-keystroke CDATA #REQUIRED
     second-keystroke CDATA #IMPLIED
-    keymap CDATA #REQUIRED>
+    keymap CDATA #REQUIRED
+    use-shortcut-of CDATA #IMPLIED>
 <!ELEMENT mouse-shortcut EMPTY>
 <!ATTLIST mouse-shortcut
     keystroke CDATA #REQUIRED
@@ -127,7 +135,7 @@
     icon CDATA #IMPLIED>
 <!ELEMENT reference EMPTY>
 <!ATTLIST reference
-    id CDATA #REQUIRED>
+    ref CDATA #REQUIRED>
 <!ELEMENT add-to-group EMPTY>
 <!--
     <add-to-group> tag use an 'id' attribute

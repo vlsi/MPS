@@ -15,16 +15,13 @@
  */
 package jetbrains.mps.smodel;
 
-import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.project.StandaloneMPSContext;
+import jetbrains.mps.scope.ErrorScope;
+import jetbrains.mps.scope.Scope;
 import jetbrains.mps.smodel.constraints.ModelConstraintsUtil;
-import jetbrains.mps.smodel.constraints.SearchScopeStatus;
-import jetbrains.mps.smodel.search.ConceptAndSuperConceptsScope;
-import jetbrains.mps.smodel.search.IReferenceInfoResolver;
-import jetbrains.mps.smodel.search.ISearchScope;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -55,7 +52,7 @@ public class DynamicReference extends SReferenceBase {
   }
 
   protected SNode getTargetNode_internal(boolean silently) {
-    if(myImmatureTargetNode != null) {
+    if (myImmatureTargetNode != null) {
       synchronized (this) {
         if (!mature()) {
           return myImmatureTargetNode;
@@ -70,41 +67,16 @@ public class DynamicReference extends SReferenceBase {
       return null;
     }
 
-    SNode referenceNode = getSourceNode();
-    SNode referenceNodeConcept = referenceNode.getConceptDeclarationNode();
-    SNode enclosingNode = getSourceNode().getParent();
-    SearchScopeStatus status = ModelConstraintsUtil.getSearchScope(
-      enclosingNode,
-      referenceNode,
-      referenceNodeConcept,
-      getRole(), // "genuine" role here
-      referenceNode.getRoleLink(),
-      new ReferenceResolvingContext(getModule()));
-    if (status.isError()) {
+    Scope scope = ModelConstraintsUtil.getScope(this, new ReferenceResolvingContext(getModule()));
+    if (scope instanceof ErrorScope) {
       if (!silently) {
-        reportErrorWithOrigin("cannot obtain search scope: " + status.getMessage());
+        reportErrorWithOrigin("cannot obtain scope for reference `" + getRole() + "': " + ((ErrorScope) scope).getMessage());
       }
       return null;
+
     }
 
-    SNode mostSpecificForRole = new ConceptAndSuperConceptsScope(referenceNodeConcept).getMostSpecificLinkDeclarationByRole(getRole());
-    if (mostSpecificForRole == null) {
-      if (!silently) {
-        reportErrorWithOrigin("cannot find link declaration '" + getRole() + "' in concept '" + referenceNode.getConceptFqName() + "'");
-      }
-      return null;
-    }
-
-    ISearchScope searchScope = status.getSearchScope();
-    IReferenceInfoResolver infoResolver = searchScope.getReferenceInfoResolver(referenceNode, SModelUtil.getLinkDeclarationTarget(mostSpecificForRole));
-    if (infoResolver == null) {
-      if (!silently) {
-        reportErrorWithOrigin("cannot obtain resolver for reference: '" + getRole() + "'");
-      }
-      return null;
-    }
-
-    SNode targetNode = infoResolver.resolve(getResolveInfo(), getTargetSModelReference());
+    SNode targetNode = scope.resolve(getSourceNode(), getResolveInfo());
     if (targetNode == null) {
       if (!silently) {
         reportErrorWithOrigin("cannot resolve reference by string: '" + getResolveInfo() + "'");
@@ -115,15 +87,15 @@ public class DynamicReference extends SReferenceBase {
   }
 
   private final void reportErrorWithOrigin(String message) {
-    if(myOrigin != null) {
+    if (myOrigin != null) {
       List<ProblemDescription> result = new ArrayList<ProblemDescription>(2);
-      if(myOrigin.getInputNode() != null) {
+      if (myOrigin.getInputNode() != null) {
         result.add(new ProblemDescription(myOrigin.getInputNode(), " -- was input: " + myOrigin.getInputNode().getDebugText()));
       }
-      if(myOrigin.getTemplate() != null) {
+      if (myOrigin.getTemplate() != null) {
         result.add(new ProblemDescription(myOrigin.getTemplate(), " -- was template: " + myOrigin.getTemplate().getDebugText()));
       }
-      if(result.size() > 0) {
+      if (result.size() > 0) {
         error(message, result.toArray(new ProblemDescription[result.size()]));
         return;
       }

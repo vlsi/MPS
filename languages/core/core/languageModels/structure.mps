@@ -88,6 +88,9 @@
       <property name="name" nameId="1169194664001" value="PropertyAttribute" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="5169995583184591161" resolveInfo="Attribute" />
     </node>
+    <node type="tpce.InterfaceConceptDeclaration" typeId="tpce.1169125989551" id="3734116213129792499">
+      <property name="name" nameId="1169194664001" value="ScopeProvider" />
+    </node>
   </roots>
   <root id="1082983041843" />
   <root id="1082983657062" />
@@ -225,5 +228,6 @@
       <link role="dataType" roleId="tpce.1082985295845" targetNodeId="1082983041843" resolveInfo="string" />
     </node>
   </root>
+  <root id="3734116213129792499" />
 </model>
 

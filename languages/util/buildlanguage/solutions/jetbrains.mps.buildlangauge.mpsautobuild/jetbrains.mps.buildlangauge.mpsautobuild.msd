@@ -7,7 +7,6 @@
   <dependencies>
     <dependency reexport="false">50240497-028c-45fc-a657-4fa2488251db(jetbrains.mps.debugger.api.languages.plugin)</dependency>
     <dependency reexport="false">754e95cf-5780-40da-99c6-8f6584d9c260(jetbrains.mps.debugger.java.customViewers.plugin)</dependency>
-    <dependency reexport="false">6862df80-d13f-4553-9827-397603773647(jetbrains.mps.debugger.java.languages)</dependency>
     <dependency reexport="false">bf659d6c-5638-4ea1-972b-4d492b5a91f2(jetbrains.mps.execution.configurations.implementation.plugin)</dependency>
     <dependency reexport="false">2fe588b4-688c-48ba-b903-0b7dc3d30070(jetbrains.mps.execution.languages)</dependency>
   </dependencies>

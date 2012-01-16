@@ -146,6 +146,9 @@ public class CommonPaths {
 
   private static void addCoreJars(CompositeClassPathItem result) {
     addIfExists(result, "/lib/mps-core.jar");
+    addIfExists(result, "/lib/mps-closures.jar");
+    addIfExists(result, "/lib/mps-collections.jar");
+    addIfExists(result, "/lib/mps-tuples.jar");
     addIfExists(result, "/lib/annotations.jar");
     addIfExists(result, "/lib/log4j.jar");
     addIfExists(result, "/lib/commons-lang-2.4.jar");

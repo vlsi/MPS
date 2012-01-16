@@ -35,8 +35,11 @@ public class ThreadWatcher implements Output {
     private static Pattern IGNORED_THREAD = Pattern.compile(
         "(AWT\\-.*)|" +
         "(Image Fetch.*)|" +
+        "(Progress Cancel Checker)|" +
+        "(Flushing thread)|" +
         "(Keep\\-Alive.*)|" +
         "(Finalizer.*)|" +
+        "(MPS interrupting thread)|" +
         "(caret blinker.*)|" +
         "(ApplicationImpl.*)|" +
         "(Executor)|" +
@@ -52,7 +55,8 @@ public class ThreadWatcher implements Output {
         "(timed reference disposer)|" +
         "(Alarm pool\\(own\\))|" +
         "(Poller SunPKCS11-Darwin)|" +
-        "(MPS interrupt.*)");
+        "(MPS interrupt.*)|" +
+        "(RefCountingStorage.*)");
 
     private TLongObjectHashMap<ThreadInfo> allThreads = new TLongObjectHashMap<ThreadInfo> ();
     private TLongObjectHashMap<ThreadInfo> runningThreads = new TLongObjectHashMap<ThreadInfo> ();

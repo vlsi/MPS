@@ -4,7 +4,7 @@ package jetbrains.mps.ide.devkit.actions;
 
 import jetbrains.mps.plugins.pluginparts.tool.GeneratedTool;
 import javax.swing.Icon;
-import javax.swing.ImageIcon;
+import jetbrains.mps.util.IconUtil;
 import jetbrains.mps.ide.devkit.components.NodeExplorerComponent;
 import javax.swing.JPanel;
 import com.intellij.openapi.project.Project;
@@ -19,7 +19,7 @@ import com.intellij.openapi.actionSystem.ActionPlaces;
 import java.awt.Container;
 
 public class NodeExplorer_Tool extends GeneratedTool {
-  private static final Icon ICON = new ImageIcon(NodeExplorer_Tool.class.getResource("default.png"));
+  private static final Icon ICON = IconUtil.getIcon("default.png");
 
   private NodeExplorerComponent myNodeExplorer;
   private JPanel myPanel;

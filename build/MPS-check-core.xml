@@ -31,10 +31,10 @@
     <path path="core/kernel/traceinfo/solutions/jetbrains.mps.debug.api.info/source_gen" />
 
     <!-- runtime -->
-    <path path="core/baseLanguage/collections/runtime/source_gen/jetbrains/mps/internal/collections/runtime"/>
-    <path path="core/baseLanguage/closures/runtime/source"/>
-    <path path="core/baseLanguage/closures/runtime/source_gen"/>
-    <path path="core/baseLanguage/tuples/runtime/source_gen"/>
+    <path path="languages/baseLanguage/collections/runtime/source_gen/jetbrains/mps/internal/collections/runtime"/>
+    <path path="languages/baseLanguage/closures/runtime/source"/>
+    <path path="languages/baseLanguage/closures/runtime/source_gen"/>
+    <path path="languages/baseLanguage/tuples/runtime/source_gen"/>
     <path path="core/make-runtime/solutions/jetbrains.mps.make.runtime/source_gen"/>
   </path>
 
@@ -57,12 +57,12 @@
     <!--TODO<path path="languages/languageDesign/typesystem/source_gen/jetbrains/mps/lang/typesystem/behavior"/>-->
 
     <!-- baseLanguage -->
-    <path path="core/baseLanguage/baseLanguage/source/jetbrains/mps/baseLanguage/icons"/>
-    <path path="core/baseLanguage/baseLanguage/source_gen/jetbrains/mps/baseLanguage/behavior"/>
-    <path path="core/baseLanguage/baseLanguage/source_gen/jetbrains/mps/baseLanguage/stubs"/>
-    <path path="core/baseLanguage/baseLanguage/source_gen/jetbrains/mps/stubs"/>
-    <path path="core/baseLanguage/baseLanguage/source_gen/jetbrains/mps/baseLanguage/search"/>
-    <path path="core/baseLanguage/baseLanguage/source_gen/jetbrains/mps/baseLanguage/textGen"/>
+    <path path="languages/baseLanguage/baseLanguage/source/jetbrains/mps/baseLanguage/icons"/>
+    <path path="languages/baseLanguage/baseLanguage/source_gen/jetbrains/mps/baseLanguage/behavior"/>
+    <path path="languages/baseLanguage/baseLanguage/source_gen/jetbrains/mps/baseLanguage/stubs"/>
+    <path path="languages/baseLanguage/baseLanguage/source_gen/jetbrains/mps/stubs"/>
+    <path path="languages/baseLanguage/baseLanguage/source_gen/jetbrains/mps/baseLanguage/search"/>
+    <path path="languages/baseLanguage/baseLanguage/source_gen/jetbrains/mps/baseLanguage/textGen"/>
 
   </path>
 

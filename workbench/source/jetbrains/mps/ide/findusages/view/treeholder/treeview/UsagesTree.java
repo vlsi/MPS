@@ -300,12 +300,16 @@ public class UsagesTree extends MPSTree {
   private void sortByCaption(List<UsagesTreeNode> children) {
     Collections.sort(children, new Comparator<UsagesTreeNode>() {
       private boolean isIgnored(UsagesTreeNode node) {
-        Object idObject = node.getUserObject().getData().getIdObject();
-        if (idObject instanceof SNode) {
-          SNode nodeObject = (SNode) idObject;
-          return !nodeObject.isRoot();
+        BaseNodeData data = node.getUserObject().getData();
+        SNode snode = null;
+        if (data instanceof NodeNodeData) {
+          snode = ((NodeNodeData) data).getNode();
+        } else {
+          if (data.getIdObject() instanceof SNode) {
+            snode = (SNode) data.getIdObject();
+          }
         }
-        return false;
+        return snode != null && !snode.isRoot();
       }
 
       public int compare(UsagesTreeNode o1, UsagesTreeNode o2) {
@@ -515,12 +519,12 @@ public class UsagesTree extends MPSTree {
             LOG.info("clicked node was deleted");
           }
         } else if (data instanceof ModelNodeData) {
-          SModel model = (SModel) ((ModelNodeData) data).getIdObject();
+          SModel model = ((ModelNodeData) data).getModel();
           if (model != null) {
             navigateInTree(model, focus);
           }
         } else if (data instanceof ModuleNodeData) {
-          IModule module = (IModule) ((ModuleNodeData) data).getIdObject();
+          IModule module = ((ModuleNodeData) data).getModule();
           if (module != null) {
             navigateInTree(module, focus);
           }

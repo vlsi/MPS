@@ -9,7 +9,7 @@ import java.util.HashMap;
 import jetbrains.mps.smodel.runtime.base.BaseReferenceConstraintsDescriptor;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.runtime.ReferenceScopeProvider;
-import jetbrains.mps.smodel.runtime.base.BaseReferenceScopeProvider;
+import jetbrains.mps.smodel.runtime.base.BaseScopeProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.runtime.ReferencePresentationContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -27,7 +27,7 @@ public class GeneratorParameterReference_Constraints extends BaseConstraintsDesc
       @Nullable
       @Override
       public ReferenceScopeProvider getScopeProvider() {
-        return new BaseReferenceScopeProvider() {
+        return new BaseScopeProvider() {
           @Override
           public boolean hasPresentation() {
             return true;

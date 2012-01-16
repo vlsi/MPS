@@ -13,7 +13,7 @@ import java.util.ArrayList;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.util.Calculable;
+import jetbrains.mps.util.Computable;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.action.DefaultChildNodeSubstituteAction;
 import jetbrains.mps.smodel.SModel;
@@ -30,12 +30,12 @@ public class QueriesGenerated {
       SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.execution.configurations.structure.ConfigurationFromExecutorReference");
       SNode childConcept = (SNode) _context.getChildConcept();
       if (SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
-        Calculable calc = new Calculable() {
-          public Object calculate() {
+        Computable computable = new Computable() {
+          public Object compute() {
             return ListSequence.fromListAndArray(new ArrayList<String>(), SPropertyOperations.getString(SNodeOperations.cast(SNodeOperations.getContainingRoot(_context.getParentNode()), "jetbrains.mps.execution.configurations.structure.AbstractRunConfigurationExecutor"), "configurationName"));
           }
         };
-        Iterable<String> queryResult = (Iterable) calc.calculate();
+        Iterable<String> queryResult = (Iterable) computable.compute();
         if (queryResult != null) {
           for (final String item : queryResult) {
             ListSequence.fromList(result).addElement(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {

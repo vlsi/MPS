@@ -217,7 +217,7 @@ public class TestMain {
     ThreadUtils.runInUIThreadAndWait(new Runnable() {
       public void run() {
         try {
-          project[0] = projectManager.loadAndOpenProject(filePath, false);
+          project[0] = projectManager.loadAndOpenProject(filePath);
         } catch (IOException e) {
           throw new RuntimeException(e);
         } catch (JDOMException e) {
@@ -466,7 +466,6 @@ public class TestMain {
     System.setProperty("idea.is.internal", mpsInternal == null ? "false" : mpsInternal);
     System.setProperty("idea.no.jre.check", "true");
     // Not necessary to set this property for loading listed plugins - see PluginManager.loadDescriptors()
-    System.setProperty("idea.load.plugins", "false");
     System.setProperty("idea.platform.prefix", "Idea");
 
     StringBuffer pluginPath = new StringBuffer();
@@ -479,7 +478,9 @@ public class TestMain {
     }
     System.setProperty("plugin.path", pluginPath.toString());
     // Value of this property is comma-separated list of plugin IDs intended to load by platform
-    System.setProperty("idea.load.plugins.id", StringUtils.join(plugins, ","));
+    if (System.getProperty("idea.load.plugins") == null || System.getProperty("idea.load.plugins").equals("false")) {
+      System.setProperty("idea.load.plugins.id", StringUtils.join(plugins, ","));
+    }
     if (!cachesInvalidated) {
       FSRecords.invalidateCaches();
       cachesInvalidated = true;

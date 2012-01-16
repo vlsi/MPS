@@ -8,7 +8,10 @@
     <scopeInfo nodeId="1207243664442" fileName="AbstractAntiquotation_DataFlow.java" startLine="12" startPosition="43" endLine="12" endPosition="43" />
     <scopeInfo nodeId="1207243664444" fileName="AbstractAntiquotation_DataFlow.java" startLine="15" startPosition="102" endLine="16" endPosition="107" />
     <scopeInfo nodeId="1207243664442" fileName="AbstractAntiquotation_DataFlow.java" startLine="11" startPosition="69" endLine="13" endPosition="3" />
-    <scopeInfo nodeId="1207243664442" fileName="AbstractAntiquotation_DataFlow.java" startLine="14" startPosition="0" endLine="18" endPosition="0" />
+    <scopeInfo nodeId="1207243664442" fileName="AbstractAntiquotation_DataFlow.java" startLine="14" startPosition="0" endLine="18" endPosition="0">
+      <varInfo nodeId="1207243664442" varName="_context" />
+      <varInfo nodeId="1207243664442" varName="operationContext" />
+    </scopeInfo>
     <unitInfo nodeId="1207243664442" fileName="AbstractAntiquotation_DataFlow.java" startLine="11" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.lang.quotation.dataFlow.AbstractAntiquotation_DataFlow" />
   </root>
   <root nodeId="1207243772639">
@@ -23,7 +26,10 @@
     <scopeInfo nodeId="1207243785969" fileName="Quotation_DataFlow.java" startLine="15" startPosition="102" endLine="18" endPosition="5">
       <varInfo nodeId="1207243785971" varName="antiquotation" />
     </scopeInfo>
-    <scopeInfo nodeId="1207243772639" fileName="Quotation_DataFlow.java" startLine="14" startPosition="0" endLine="20" endPosition="0" />
+    <scopeInfo nodeId="1207243772639" fileName="Quotation_DataFlow.java" startLine="14" startPosition="0" endLine="20" endPosition="0">
+      <varInfo nodeId="1207243772639" varName="_context" />
+      <varInfo nodeId="1207243772639" varName="operationContext" />
+    </scopeInfo>
     <unitInfo nodeId="1207243772639" fileName="Quotation_DataFlow.java" startLine="11" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.lang.quotation.dataFlow.Quotation_DataFlow" />
   </root>
 </debugInfo>

@@ -26,7 +26,7 @@ import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.generator.IModifiableGenerationSettings;
 import jetbrains.mps.generator.GenerationSettingsProvider;
 import jetbrains.mps.generator.GenerationOptions;
-import jetbrains.mps.make.facet.plugin.MakeGenerationStrategy;
+import jetbrains.mps.make.facet.pluginSolution.plugin.MakeGenerationStrategy;
 import jetbrains.mps.ide.generator.GeneratorCacheComponent;
 import jetbrains.mps.generator.IGenerationTracer;
 import jetbrains.mps.generator.NullGenerationTracer;
@@ -42,8 +42,9 @@ import jetbrains.mps.smodel.loading.ModelLoadingState;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import java.util.Map;
 import jetbrains.mps.project.IModule;
+import jetbrains.mps.lang.core.pluginSolution.plugin.RetainedUtil;
 import jetbrains.mps.generator.generationTypes.IGenerationHandler;
-import jetbrains.mps.make.facet.plugin.MakeGenerationHandler;
+import jetbrains.mps.make.facet.pluginSolution.plugin.MakeGenerationHandler;
 import jetbrains.mps.smodel.resources.GResource;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.messages.IMessageHandler;
@@ -279,27 +280,7 @@ public class Generate_Facet extends IFacet.Stub {
           switch (0) {
             case 0:
               IModifiableGenerationSettings settings = GenerationSettingsProvider.getInstance().getGenerationSettings();
-              if (pa.global().properties(Target_configure.this.getName(), Generate_Facet.Target_configure.Variables.class).saveTransient() != null) {
-                return true;
-              }
-              if (settings.isSaveTransientModels()) {
-                switch (cmonitor.<SaveTransient_Option>relayQuery(new SaveTransientModels_Query())) {
-                  case SAVE_fi61u2_a0a0b:
-                    pa.global().properties(Target_configure.this.getName(), Generate_Facet.Target_configure.Variables.class).saveTransient(true);
-                    break;
-                  case DONT_SAVE_fi61u2_b0a0b:
-                    pa.global().properties(Target_configure.this.getName(), Generate_Facet.Target_configure.Variables.class).saveTransient(false);
-                    break;
-                  case BUGGER_OFF_fi61u2_c0a0b:
-                    pa.global().properties(Target_configure.this.getName(), Generate_Facet.Target_configure.Variables.class).saveTransient(false);
-                    settings.setSaveTransientModels(false);
-                    break;
-                  default:
-                    return false;
-                }
-              } else {
-                pa.global().properties(Target_configure.this.getName(), Generate_Facet.Target_configure.Variables.class).saveTransient(false);
-              }
+              pa.global().properties(Target_configure.this.getName(), Generate_Facet.Target_configure.Variables.class).saveTransient(settings.isSaveTransientModels());
             default:
               return true;
           }

@@ -5,6 +5,8 @@ package jetbrains.mps.build.ant.make;
 import jetbrains.mps.build.ant.Environment;
 import org.apache.log4j.BasicConfigurator;
 import org.apache.log4j.ConsoleAppender;
+import org.apache.log4j.Logger;
+import org.apache.log4j.Level;
 import jetbrains.mps.ide.IdeMain;
 import javax.swing.SwingUtilities;
 import jetbrains.mps.project.StandaloneMPSProject;
@@ -23,6 +25,7 @@ public class MakeEnvironment extends Environment {
   @Override
   public void setup() {
     BasicConfigurator.configure(new ConsoleAppender());
+    Logger.getRootLogger().setLevel(Level.ERROR);
     IdeMain.setTestMode(IdeMain.TestMode.CORE_TEST);
     try {
       configureMPS();

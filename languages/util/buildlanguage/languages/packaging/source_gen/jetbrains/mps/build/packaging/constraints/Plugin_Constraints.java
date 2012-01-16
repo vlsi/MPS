@@ -9,6 +9,7 @@ import java.util.HashMap;
 import jetbrains.mps.smodel.runtime.base.BasePropertyConstraintsDescriptor;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.build.packaging.behavior.IStringExpression_Behavior;
 import jetbrains.mps.build.packaging.behavior.Path_Behavior;
@@ -30,10 +31,16 @@ public class Plugin_Constraints extends BaseConstraintsDescriptor {
       @Override
       public Object getValue(SNode node, IScope scope) {
         String propertyName = "name";
-        if ((SLinkOperations.getTarget(node, "title", true) != null)) {
-          return IStringExpression_Behavior.call_getValue_1213877173054(SLinkOperations.getTarget(node, "title", true)) + ".jar";
+        {
+          String suffix = "";
+          if (ListSequence.fromList(SLinkOperations.getTargets(node, "entry", true)).isEmpty()) {
+            suffix = ".jar";
+          }
+          if ((SLinkOperations.getTarget(node, "title", true) != null)) {
+            return IStringExpression_Behavior.call_getValue_1213877173054(SLinkOperations.getTarget(node, "title", true)) + suffix;
+          }
+          return Path_Behavior.call_getName_1221141245424(SLinkOperations.getTarget(node, "sourcePath", true)) + suffix;
         }
-        return Path_Behavior.call_getName_1221141245424(SLinkOperations.getTarget(node, "sourcePath", true)) + ".jar";
       }
     });
     return properties;

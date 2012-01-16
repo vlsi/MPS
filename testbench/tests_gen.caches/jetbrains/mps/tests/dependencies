@@ -48,6 +48,10 @@
     <classNode dependClassName="jetbrains.mps.testbench.junit.runners.ModuleSymbolicSuite" />
     <classNode dependClassName="org.junit.runner.RunWith" />
   </dependency>
+  <dependency className="jetbrains.mps.tests.TestModule_jetbrains_mps_build_mpsautobuild_test" file="TestModule_jetbrains_mps_build_mpsautobuild_test.java">
+    <classNode dependClassName="jetbrains.mps.testbench.junit.runners.ModuleSymbolicSuite" />
+    <classNode dependClassName="org.junit.runner.RunWith" />
+  </dependency>
   <dependency className="jetbrains.mps.tests.TestModule_jetbrains_mps_debugger_java_runtime_tests" file="TestModule_jetbrains_mps_debugger_java_runtime_tests.java">
     <classNode dependClassName="jetbrains.mps.testbench.junit.runners.ModuleSymbolicSuite" />
     <classNode dependClassName="org.junit.runner.RunWith" />
@@ -93,6 +97,10 @@
     <classNode dependClassName="org.junit.runner.RunWith" />
   </dependency>
   <dependency className="jetbrains.mps.tests.TestModule_jetbrains_mps_traceInfo_testWeaving" file="TestModule_jetbrains_mps_traceInfo_testWeaving.java">
+    <classNode dependClassName="jetbrains.mps.testbench.junit.runners.ModuleSymbolicSuite" />
+    <classNode dependClassName="org.junit.runner.RunWith" />
+  </dependency>
+  <dependency className="jetbrains.mps.tests.TestModule_jetbrains_mps_transformation_test_inputModels" file="TestModule_jetbrains_mps_transformation_test_inputModels.java">
     <classNode dependClassName="jetbrains.mps.testbench.junit.runners.ModuleSymbolicSuite" />
     <classNode dependClassName="org.junit.runner.RunWith" />
   </dependency>

@@ -130,6 +130,7 @@ public enum LanguageAspect {
     }
   },
 
+  @Deprecated
   PLUGIN("plugin") {
     public ModuleReference getMainLanguage() {
       return BootstrapLanguages.PLUGIN;

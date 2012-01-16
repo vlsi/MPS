@@ -47,6 +47,7 @@ public class StartupModuleMaker extends AbstractProjectComponent {
 
     monitor.start("Making modules", 10);
     try {
+      //todo eliminate read access as it can potentially lead to a deadlock
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
           ClassLoaderManager.getInstance().updateClassPath();

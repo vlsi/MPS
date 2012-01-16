@@ -16,6 +16,7 @@
     <classNode dependClassName="jetbrains.mps.build.distrib.behavior.SystemSpecificConfig_Behavior" />
     <classNode dependClassName="jetbrains.mps.build.distrib.behavior.UniversalConfig_Behavior" />
     <classNode dependClassName="jetbrains.mps.build.distrib.behavior.WindowsConfig_Behavior" />
+    <classNode dependClassName="jetbrains.mps.build.packaging.behavior.AbstractProjectComponent_Behavior" />
     <classNode dependClassName="jetbrains.mps.build.packaging.behavior.Configuration_Behavior" />
     <classNode dependClassName="jetbrains.mps.build.packaging.behavior.IAbstractCompositeComponent_Behavior" />
     <classNode dependClassName="jetbrains.mps.build.packaging.behavior.IMacroHolder_Behavior" />

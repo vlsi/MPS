@@ -30,8 +30,13 @@ public class BundleClassLoader<T> extends BaseClassLoader {
   private boolean myDisposed;
   private RBundle<T> myBundle;
 
-  BundleClassLoader(RBundle<T> bundle) {
+  public BundleClassLoader(RBundle<T> bundle, ClassLoader parent) {
+    super(parent);
     myBundle = bundle;
+  }
+
+  BundleClassLoader(RBundle<T> bundle) {
+    this(bundle, BaseClassLoader.class.getClassLoader());
   }
 
   public Class getClass(String fqName) {
@@ -102,6 +107,15 @@ public class BundleClassLoader<T> extends BaseClassLoader {
     }
 
     return new IterableToEnumWrapper<URL>(result);
+  }
+
+  @Override
+  protected String findLibrary(String name) {
+    String libraryPath = myBundle.getLocator().findLibrary(name);
+    if (libraryPath != null) {
+      return libraryPath;
+    }
+    return super.findLibrary(name);
   }
 
   public void dispose() {

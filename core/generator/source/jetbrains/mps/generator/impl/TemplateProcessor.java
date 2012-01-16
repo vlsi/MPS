@@ -317,6 +317,16 @@ public class TemplateProcessor {
       if (_outputNodes != null) outputNodes.addAll(_outputNodes);
       return outputNodes;
 
+    } else if (macroConceptFQName.equals(RuleUtil.concept_VarMacro)) {
+      // $VAR$
+      String varName = RuleUtil.getVarMacro_Name(macro);
+      Object varValue = myReductionContext.getQueryExecutor().evaluateVariableQuery(templateContext.getInput(), RuleUtil.getVarMacro_Query(macro), templateContext);
+      TemplateContext newContext = templateContext.subContext(Collections.singletonMap(varName, varValue));
+
+      List<SNode> _outputNodes = createOutputNodesForTemplateNode(mappingName, templateNode, newContext.subContext(mappingName), nodeMacrosToSkip + 1);
+      if (_outputNodes != null) outputNodes.addAll(_outputNodes);
+      return outputNodes;
+
     } else if (macroConceptFQName.equals(RuleUtil.concept_IfMacro)) {
       // $IF$
       List<SNode> _outputNodes = null;

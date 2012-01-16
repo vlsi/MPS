@@ -45,10 +45,10 @@ public class GetSolutionContentsFromSourceDialogContentPane extends JPanel {
     this.myThis = this;
     GetSolutionContentsFromSourceDialogContentPane component = this;
     component.setLayout(new GridLayout(4, 1));
-    component.add(this.createComponent_b0());
-    component.add(this.createComponent_c0());
-    component.add(this.createComponent_d0());
-    component.add(this.createComponent_e0());
+    component.add(this.createComponent_4taa7p_b0());
+    component.add(this.createComponent_4taa7p_c0());
+    component.add(this.createComponent_4taa7p_d0());
+    component.add(this.createComponent_4taa7p_e0());
     this.myEvents.initialize();
   }
 
@@ -95,27 +95,27 @@ public class GetSolutionContentsFromSourceDialogContentPane extends JPanel {
     }
   }
 
-  private JLabel createComponent_b0() {
+  private JLabel createComponent_4taa7p_b0() {
     JLabel component = new JLabel();
     this.myComponent_b0 = component;
     component.setText("Name:");
     return component;
   }
 
-  private JTextField createComponent_c0() {
+  private JTextField createComponent_4taa7p_c0() {
     JTextField component = new JTextField();
     this.myName_c0 = component;
     return component;
   }
 
-  private JLabel createComponent_d0() {
+  private JLabel createComponent_4taa7p_d0() {
     JLabel component = new JLabel();
     this.myComponent_d0 = component;
     component.setText("Source Path:");
     return component;
   }
 
-  private PathField createComponent_e0() {
+  private PathField createComponent_4taa7p_e0() {
     PathField component = new PathField();
     this.mySourcePath_e0 = component;
     return component;

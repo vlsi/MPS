@@ -21,6 +21,12 @@
     <node role="dependency" roleId="tp4k.5864553086652219115" type="tp4k.MPSPluginDependency" typeId="tp4k.203415309825565488" id="2162966196215578044">
       <link role="plugin" roleId="tp4k.203415309825565489" targetNodeId="mjd0.2162966196215564401" resolveInfo="Debugger Api Languages" />
     </node>
+    <node role="dependency" roleId="tp4k.5864553086652219115" type="tp4k.IdeaPluginDependency" typeId="tp4k.5864553086652219116" id="375000982841836968">
+      <property name="pluginId" nameId="tp4k.5864553086652219119" value="jetbrains.mps.debugger-java" />
+    </node>
+    <node role="dependency" roleId="tp4k.5864553086652219115" type="tp4k.IdeaPluginDependency" typeId="tp4k.5864553086652219116" id="375000982841836970">
+      <property name="pluginId" nameId="tp4k.5864553086652219119" value="jetbrains.mps.debugger-api" />
+    </node>
   </root>
 </model>
 

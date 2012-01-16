@@ -124,9 +124,7 @@
     <classNode dependClassName="java.nio.charset.Charset" />
     <classNode dependClassName="java.util.Arrays" />
     <classNode dependClassName="java.util.Map" />
-    <classNode dependClassName="javax.swing.Icon" />
     <classNode dependClassName="jetbrains.mps.util.FileUtil" />
-    <classNode dependClassName="jetbrains.mps.workbench.make.Icons" />
     <classNode dependClassName="org.jetbrains.annotations.NonNls" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
@@ -144,6 +142,7 @@
     <classNode dependClassName="java.util.concurrent.Future" />
     <classNode dependClassName="javax.swing.SwingUtilities" />
     <classNode dependClassName="jetbrains.mps.ide.project.ProjectHelper" />
+    <classNode dependClassName="jetbrains.mps.ide.projectPane.ProjectPane" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="jetbrains.mps.make.IMakeService" />
     <classNode dependClassName="jetbrains.mps.make.MakeSession" />

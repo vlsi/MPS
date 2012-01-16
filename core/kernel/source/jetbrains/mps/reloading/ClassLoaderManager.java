@@ -19,7 +19,6 @@ import jetbrains.mps.cleanup.CleanupManager;
 import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.progress.ProgressMonitor;
-import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.runtime.RBundle;
@@ -87,7 +86,9 @@ public class ClassLoaderManager implements CoreComponent {
       RBundle<ModuleReference> bundle = myRuntimeEnvironment.get(module.getModuleReference());
 
       if (bundle == null) {
-        LOG.error("Can't find a bundle " + module.getModuleReference().getModuleFqName(), new Throwable());
+        new Throwable().printStackTrace();
+        System.out.printf("Can't find a bundle " + module.getModuleReference().getModuleFqName());
+        
         return null;
       }
 
@@ -239,6 +240,10 @@ public class ClassLoaderManager implements CoreComponent {
       RBundle<ModuleReference> bundle = new RBundle<ModuleReference>(ref, module.getBytecodeLocator());
       myRuntimeEnvironment.add(bundle);
     }
+  }
+
+  public RuntimeEnvironment<ModuleReference> getRuntimeEnvironment() {
+    return myRuntimeEnvironment;
   }
 
   public boolean canLoadClasses(IModule m) {

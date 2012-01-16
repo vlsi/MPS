@@ -18,6 +18,7 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.util.Collections;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.smodel.runtime.base.BaseScopeProvider;
 
 public class Antcall_Constraints extends BaseConstraintsDescriptor {
   private static SNodePointer breakingNode_adydoe_a0a1a0a0a1a0b0a1a0 = new SNodePointer("r:00000000-0000-4000-0000-011c895904d4(jetbrains.mps.build.packaging.constraints)", "1224178316888");
@@ -75,7 +76,7 @@ public class Antcall_Constraints extends BaseConstraintsDescriptor {
       @Nullable
       @Override
       public ReferenceScopeProvider getScopeProvider() {
-        return new BaseReferenceScopeProvider();
+        return new BaseScopeProvider();
       }
     });
     return references;

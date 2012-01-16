@@ -84,6 +84,11 @@ class NullPsiManager extends PsiManagerEx {
     return null;
   }
 
+  @Override
+  public void beforeChildAddition(@NotNull PsiTreeChangeEventImpl event) {
+
+  }
+
   public void invalidateFile(PsiFile file) {
 
   }
@@ -94,6 +99,16 @@ class NullPsiManager extends PsiManagerEx {
 
   public void beforeChildReplacement(@NotNull PsiTreeChangeEventImpl psiTreeChangeEvent) {
     
+  }
+
+  @Override
+  public void beforeChange(boolean isPhysical) {
+
+  }
+
+  @Override
+  public void afterChange(boolean isPhysical) {
+
   }
 
   public CacheManager getCacheManager() {
@@ -169,11 +184,6 @@ class NullPsiManager extends PsiManagerEx {
 
       @Override
       public long getJavaStructureModificationCount() {
-        return 0;
-      }
-
-      @Override
-      public long getAnnotationModificationCount() {
         return 0;
       }
     };

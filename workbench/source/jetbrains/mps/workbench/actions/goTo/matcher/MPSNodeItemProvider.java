@@ -16,19 +16,11 @@
 
 package jetbrains.mps.workbench.actions.goTo.matcher;
 
-import com.intellij.ide.util.gotoByName.temp.IdeaItemProvider;
+import com.intellij.ide.util.gotoByName.DefaultChooseByNameItemProvider;
 import com.intellij.psi.PsiElement;
 
-public class MPSNodeItemProvider extends IdeaItemProvider {
+public class MPSNodeItemProvider extends DefaultChooseByNameItemProvider {
   public MPSNodeItemProvider(PsiElement context) {
     super(context);
-  }
-
-  public String getNamePattern(String pattern) {
-    return pattern;
-  }
-
-  public String getQualifierPattern(String pattern) {
-    return "";
   }
 }

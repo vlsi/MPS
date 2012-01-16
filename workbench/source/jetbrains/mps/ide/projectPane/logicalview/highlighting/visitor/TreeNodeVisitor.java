@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.ide.projectPane.logicalview.highlighting.visitor;
 
+import jetbrains.mps.ide.projectPane.logicalview.highlighting.visitor.updates.TreeNodeUpdater;
 import jetbrains.mps.ide.projectPane.logicalview.nodes.ProjectModuleTreeNode;
 import jetbrains.mps.ide.projectPane.logicalview.nodes.ProjectTreeNode;
 import jetbrains.mps.ide.ui.MPSTreeNode;
@@ -26,6 +27,7 @@ import java.util.concurrent.TimeUnit;
 
 public abstract class TreeNodeVisitor {
   private static ThreadPoolExecutor myExecutor = new ThreadPoolExecutor(0, 2, 5, TimeUnit.SECONDS, new LinkedBlockingDeque<Runnable>());
+  protected static final TreeNodeUpdater ourUpdater = new TreeNodeUpdater();
 
   public final void visitNode(final MPSTreeNode node) {
     if (!(node instanceof SModelTreeNode || node instanceof ProjectModuleTreeNode || node instanceof ProjectTreeNode)) {
@@ -33,6 +35,8 @@ public abstract class TreeNodeVisitor {
     }
     myExecutor.execute(new Runnable() {
       public void run() {
+        if (!TreeNodeUpdater.checkDisposed(node)) return;
+
         if (node instanceof SModelTreeNode) {
           visitModelNode(((SModelTreeNode) node));
         }
@@ -46,9 +50,15 @@ public abstract class TreeNodeVisitor {
     });
   }
 
-  protected abstract void visitModelNode(SModelTreeNode node);
+  protected void visitModelNode(SModelTreeNode node) {
 
-  protected abstract void visitModuleNode(ProjectModuleTreeNode node);
+  }
 
-  protected abstract void visitProjectNode(ProjectTreeNode node);
+  protected void visitModuleNode(ProjectModuleTreeNode node) {
+
+  }
+
+  protected void visitProjectNode(ProjectTreeNode node) {
+
+  }
 }

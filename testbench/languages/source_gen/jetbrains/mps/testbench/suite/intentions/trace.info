@@ -32,8 +32,14 @@
     <scopeInfo nodeId="8605005254686393770" fileName="editoMute_Intention.java" startLine="26" startPosition="0" endLine="30" endPosition="0" />
     <scopeInfo nodeId="8605005254686393772" fileName="editoMute_Intention.java" startLine="31" startPosition="85" endLine="35" endPosition="6" />
     <scopeInfo nodeId="8605005254686393770" fileName="editoMute_Intention.java" startLine="42" startPosition="0" endLine="46" endPosition="0" />
-    <scopeInfo nodeId="8605005254686393770" fileName="editoMute_Intention.java" startLine="37" startPosition="0" endLine="42" endPosition="0" />
-    <scopeInfo nodeId="8605005254686393770" fileName="editoMute_Intention.java" startLine="30" startPosition="0" endLine="37" endPosition="0" />
+    <scopeInfo nodeId="8605005254686393770" fileName="editoMute_Intention.java" startLine="37" startPosition="0" endLine="42" endPosition="0">
+      <varInfo nodeId="8605005254686393770" varName="editorContext" />
+      <varInfo nodeId="8605005254686393770" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="8605005254686393770" fileName="editoMute_Intention.java" startLine="30" startPosition="0" endLine="37" endPosition="0">
+      <varInfo nodeId="8605005254686393770" varName="editorContext" />
+      <varInfo nodeId="8605005254686393770" varName="node" />
+    </scopeInfo>
     <unitInfo nodeId="8605005254686393770" fileName="editoMute_Intention.java" startLine="11" startPosition="0" endLine="47" endPosition="0" unitName="jetbrains.mps.testbench.suite.intentions.editoMute_Intention" />
   </root>
 </debugInfo>

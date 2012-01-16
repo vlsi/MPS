@@ -59,28 +59,28 @@ public class SNodeViewer_WrapperFactory extends ValueWrapperFactory {
     protected List<CustomJavaWatchable> getSubvaluesImpl(IObjectValueProxy value) throws EvaluationException {
       List<CustomJavaWatchable> result = new ArrayList<CustomJavaWatchable>();
 
-      result.add(new SNodeWatchables.MyWatchable_text(ValueUtil.getInstance().fromJDIValue(((IObjectValueProxy) value.invokeMethod("toString", "()Ljava/lang/String;")).getJDIValue(), getThreadReference()), "text"));
-      result.add(new SNodeWatchables.MyWatchable_id(ValueUtil.getInstance().fromJDIValue(((IObjectValueProxy) value.getFieldValue("myId")).getJDIValue(), getThreadReference()), "id"));
-      result.add(new SNodeWatchables.MyWatchable_model(ValueUtil.getInstance().fromJDIValue(((IObjectValueProxy) value.getFieldValue("myModel")).getJDIValue(), getThreadReference()), "model"));
-      result.add(new SNodeWatchables.MyWatchable_concept(ValueUtil.getInstance().fromJDIValue(((IObjectValueProxy) EvaluationUtils.getInstance().invokeStaticMethod("jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations", "getConceptDeclaration", "(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;", getThreadReference(), value)).getJDIValue(), getThreadReference()), "concept"));
+      result.add(new SNodeWatchables.MyWatchable_text(ValueUtil.getInstance().fromJDI(((IObjectValueProxy) value.invokeMethod("toString", "()Ljava/lang/String;")).getJDIValue(), getThreadReference()), "text"));
+      result.add(new SNodeWatchables.MyWatchable_id(ValueUtil.getInstance().fromJDI(((IObjectValueProxy) value.getFieldValue("myId")).getJDIValue(), getThreadReference()), "id"));
+      result.add(new SNodeWatchables.MyWatchable_model(ValueUtil.getInstance().fromJDI(((IObjectValueProxy) value.getFieldValue("myModel")).getJDIValue(), getThreadReference()), "model"));
+      result.add(new SNodeWatchables.MyWatchable_concept(ValueUtil.getInstance().fromJDI(((IObjectValueProxy) EvaluationUtils.getInstance().invokeStaticMethod("jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations", "getConceptDeclaration", "(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;", getThreadReference(), value)).getJDIValue(), getThreadReference()), "concept"));
 
       IArrayValueProxy properties = ((IArrayValueProxy) value.getFieldValue("myProperties"));
       if (!(ProxyEqualsUtil.javaEquals(properties, null))) {
         for (IObjectValueProxy property : EvaluationUtils.getInstance().<IObjectValueProxy>toIterableProxy(((IObjectValueProxy) ((IObjectValueProxy) value.invokeMethod("getProperties", "()Ljava/util/Map;")).invokeMethod("entrySet", "()Ljava/util/Set;")))) {
-          result.add(new SNodeWatchables.MyWatchable_property(ValueUtil.getInstance().fromJDIValue(property.getJDIValue(), getThreadReference()), "property"));
+          result.add(new SNodeWatchables.MyWatchable_property(ValueUtil.getInstance().fromJDI(property.getJDIValue(), getThreadReference()), "property"));
         }
       }
 
       IObjectValueProxy currentChild = ((IObjectValueProxy) value.getFieldValue("myFirstChild"));
       while (!(ProxyEqualsUtil.javaEquals(currentChild, null))) {
-        result.add(new SNodeWatchables.MyWatchable_child(ValueUtil.getInstance().fromJDIValue(currentChild.getJDIValue(), getThreadReference()), "child"));
+        result.add(new SNodeWatchables.MyWatchable_child(ValueUtil.getInstance().fromJDI(currentChild.getJDIValue(), getThreadReference()), "child"));
         currentChild = ((IObjectValueProxy) currentChild.getFieldValue("myNextSibling"));
       }
 
       IArrayValueProxy references = ((IArrayValueProxy) value.getFieldValue("myReferences"));
       if (!(ProxyEqualsUtil.javaEquals(references, null))) {
         for (int i = 0; i < ((IArrayValueProxy) references).getLength(); i++) {
-          result.add(new SNodeWatchables.MyWatchable_reference(ValueUtil.getInstance().fromJDIValue(((IObjectValueProxy) references.getElementAt(i)).getJDIValue(), getThreadReference()), "reference"));
+          result.add(new SNodeWatchables.MyWatchable_reference(ValueUtil.getInstance().fromJDI(((IObjectValueProxy) references.getElementAt(i)).getJDIValue(), getThreadReference()), "reference"));
         }
       }
 

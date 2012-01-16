@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-c7pux41lm8assrdvcz6uuan6xak7eqj">
+<dependencies version="2" modelHash="cfntvf4kgubflecyue0gc8pz6ab0ahs">
   <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" hash="-3g2jui8rirnxhruh8t7p7qk3adnr3f9" />
-  <common hash="cw2mq1lgl8mb8cemr8fbr2k0zpqyyel" />
-  <source id="263837413765000620" name="DefaultTestSuite" hash="-rfh9iyj15k9a687of1nqhwqy3ag4cj">
+  <common hash="-41wshfqlxfmiri7krem3r8vz2sulacg" />
+  <source id="263837413765000620" name="DefaultTestSuite" hash="-eac9nsbxgbapubqnst6ukta2403arbf">
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <file name="DefaultTestSuite.java" />
   </source>
-  <source id="7906452883299946797" name="ExecuteProjectTests" hash="4zn4s81x6jsu5tg0jh1fjsyy32f01ax">
+  <source id="7906452883299946797" name="ExecuteProjectTests" hash="-ebiaxzvoakqvtfm9d7943avseh0debx">
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <file name="ExecuteProjectTests.java" />
   </source>

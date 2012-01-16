@@ -36,6 +36,7 @@ import org.junit.runners.Parameterized.Parameters;
 import org.junit.runners.model.FrameworkMethod;
 import org.junit.runners.model.TestClass;
 
+import javax.swing.SwingUtilities;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -50,7 +51,7 @@ import java.util.List;
 @RunWith(WatchingParameterized.class)
 public class ProjectTest {
 
-  public static String PROJECT = "/MPS.mpr";
+  public static String PROJECT = "/MPS.ipr";
 
   private static ProjectTestHelper HELPER;
   private static List<FrameworkMethod> METHODS = new TestClass(ProjectTest.class).getAnnotatedMethods(Test.class);
@@ -158,6 +159,14 @@ public class ProjectTest {
         System.gc();
       }
     });
+    // magic
+    ModelAccess.instance().flushEventQueue();
+    ThreadUtils.runInUIThreadAndWait(new Runnable() {
+      public void run() {
+        IdeEventQueue.getInstance().flushQueue();
+      }
+    });
+    HELPER.dispose();
   }
 
 

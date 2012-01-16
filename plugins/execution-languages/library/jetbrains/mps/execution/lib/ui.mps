@@ -4029,7 +4029,7 @@
             </node>
             <node role="initializer" roleId="tpee.1068431790190" type="tp4k.IconResourceExpression" typeId="tp4k.6759767305207977805" id="1240470842553500531">
               <node role="icon" roleId="tp4k.6759767305207977806" type="tp4k.IconResource" typeId="tp4k.2330114057060456691" id="1240470842553500532">
-                <property name="path" nameId="tp4k.7855019336153226684" value="${mps_home}/core/baseLanguage/baseLanguage/icons/showViewer.png" />
+                <property name="path" nameId="tp4k.7855019336153226684" value="${mps_home}/languages/baseLanguage/baseLanguage/icons/showViewer.png" />
               </node>
             </node>
           </node>

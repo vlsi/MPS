@@ -18,6 +18,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.baseLanguage.regexp.behavior.ReplaceRegexpOperation_Behavior;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
+import jetbrains.mps.generator.template.IfMacroContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
@@ -172,6 +173,14 @@ public class QueriesGenerated {
     );
   }
 
+  public static boolean ifMacro_Condition_3731567766880801943(final IOperationContext operationContext, final IfMacroContext _context) {
+    return SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration") && SNodeOperations.isInstanceOf(ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "statement", true)).first(), "jetbrains.mps.baseLanguage.structure.ConstructorInvocationStatement");
+  }
+
+  public static SNode sourceNodeQuery_3731567766880801972(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "statement", true)).first();
+  }
+
   public static SNode sourceNodeQuery_1174512824855(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "regexp", true);
   }
@@ -303,6 +312,9 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_7048923897763033509(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+    if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration") && SNodeOperations.isInstanceOf(ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "statement", true)).first(), "jetbrains.mps.baseLanguage.structure.ConstructorInvocationStatement")) {
+      return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "statement", true)).tailListSequence(1);
+    }
     return SLinkOperations.getTargets(_context.getNode(), "statement", true);
   }
 

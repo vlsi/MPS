@@ -270,6 +270,10 @@ public abstract class AbstractModule implements IModule {
       packagedSourcesPath = null;
     }
 
+    if (addBundleAsLibrary() && descriptor.getDeploymentDescriptor() != null) {
+      descriptor.getDeploymentDescriptor().getLibraries().add(bundleHomeFile.getName());
+    }
+
     List<ModelRoot> toRemove = new ArrayList<ModelRoot>();
     for (ModelRoot sme : descriptor.getStubModelEntries()) {
       String path = sme.getPath();
@@ -281,7 +285,6 @@ public abstract class AbstractModule implements IModule {
     }
     descriptor.getStubModelEntries().removeAll(toRemove);
     descriptor.getModelRoots().removeAll(toRemove);
-
 
     DeploymentDescriptor dd = descriptor.getDeploymentDescriptor();
     if (dd == null) return;
@@ -298,6 +301,19 @@ public abstract class AbstractModule implements IModule {
         descriptor.getModelRoots().add(mr);
       }
     }
+  }
+
+  protected boolean addBundleAsLibrary() {
+    if (getModuleDescriptor() != null && !getModuleDescriptor().getCompileInMPS()) {
+      for (ModelRoot sme : getModuleDescriptor().getStubModelEntries()) {
+        if (sme.getManager().getClassName().startsWith("JavaStubs") &&
+           (MacrosFactory.SOLUTION_DESCRIPTOR+"/classes").equals(sme.getPath()))
+        {
+          return true;
+        }
+      }
+    }
+    return false;
   }
 
   public IClassPathItem getClassPathItem() {
@@ -606,6 +622,11 @@ public abstract class AbstractModule implements IModule {
 
     public URL findResource(String name) {
       return getClassPathItem().getResource(name);
+    }
+
+    @Override
+    public String findLibrary(String name) {
+      return null;
     }
   }
 }
