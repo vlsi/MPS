@@ -529,7 +529,6 @@
     </zip>
     <delete dir="${deploy.dir}/MPS/samples.zip.tmp" />
     <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage" />
-    <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.util" />
     <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.pluginSolution" />
     <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguageInternal" />
     <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.blTypes" />
