@@ -405,6 +405,8 @@ public class CommonChangesManagerTest {
   }
 
   private void doSomethingAndUndo(CurrentDifference diff, boolean checkAfterEachUndo, List<_FunctionTypes._return_P0_E0<? extends SNode>> tasks) {
+    checkRootStatuses();
+    Map<String, FileStatus> statusesBefore = new HashMap<String, FileStatus>(myExpectedFileStatuses);
     String stringBefore = getChangeSetString(diff.getChangeSet());
 
     final List<SNodePointer> affectedNodePointers = ListSequence.fromList(new ArrayList<SNodePointer>());
@@ -420,10 +422,14 @@ public class CommonChangesManagerTest {
         }
       });
       waitAndCheck(diff);
+      checkRootStatuses();
     }
 
     undoAndCheck(diff, affectedNodePointers, checkAfterEachUndo);
     Assert.assertEquals(stringBefore, getChangeSetString(diff.getChangeSet()));
+
+    myExpectedFileStatuses = statusesBefore;
+    checkRootStatuses();
   }
 
   private void undoAndCheck(CurrentDifference diff, List<SNodePointer> affectedNodePointers, boolean checkAfterEachUndo) {
@@ -493,11 +499,14 @@ public class CommonChangesManagerTest {
       public SNode invoke() {
         SModel model = myUiDiff.getModelDescriptor().getSModel();
         root.value = createNewRoot(model);
+        MapSequence.fromMap(myExpectedFileStatuses).put("ui.NewRoot", FileStatus.ADDED);
         return (SNode) null;
       }
     }, new _FunctionTypes._return_P0_E0<SNode>() {
       public SNode invoke() {
         SPropertyOperations.set(root.value, "name", "NewRootName");
+        MapSequence.fromMap(myExpectedFileStatuses).removeKey("ui.NewRootName");
+        MapSequence.fromMap(myExpectedFileStatuses).put("ui.NewRootName", FileStatus.ADDED);
         return root.value;
       }
     });
@@ -646,6 +655,8 @@ public class CommonChangesManagerTest {
 
   @Test
   public void rollbackAllSerially() {
+    checkRootStatuses();
+
     Random random = new Random(239);
     String stringBeforeAll = getChangeSetString(myUiDiff.getChangeSet());
     final SModel model = myUiDiff.getModelDescriptor().getSModel();
@@ -671,12 +682,22 @@ public class CommonChangesManagerTest {
       ListSequence.fromList(affectedNodePointers).addElement(new SNodePointer(myUiDiff.getModelDescriptor().getSModelReference(), changeToPick.getRootId()));
     }
 
+    MapSequence.fromMap(myExpectedFileStatuses).removeKey("ui.DocumentLayout");
+    MapSequence.fromMap(myExpectedFileStatuses).removeKey("ui.HTMLPanel");
+    checkRootStatuses();
+
     undoAndCheck(myUiDiff, affectedNodePointers, false);
     Assert.assertEquals(stringBeforeAll, getChangeSetString(myUiDiff.getChangeSet()));
+
+    MapSequence.fromMap(myExpectedFileStatuses).put("ui.DocumentLayout", FileStatus.MODIFIED);
+    MapSequence.fromMap(myExpectedFileStatuses).put("ui.HTMLPanel", FileStatus.MODIFIED);
+    checkRootStatuses();
   }
 
   @Test
   public void rollbackAllAtomically() {
+    checkRootStatuses();
+
     String stringBeforeAll = getChangeSetString(myUiDiff.getChangeSet());
     final SModel model = myUiDiff.getModelDescriptor().getSModel();
 
@@ -713,8 +734,16 @@ public class CommonChangesManagerTest {
     waitAndCheck(myUiDiff);
     Assert.assertTrue(ListSequence.fromList(myUiDiff.getChangeSet().getModelChanges()).isEmpty());
 
+    MapSequence.fromMap(myExpectedFileStatuses).removeKey("ui.DocumentLayout");
+    MapSequence.fromMap(myExpectedFileStatuses).removeKey("ui.HTMLPanel");
+    checkRootStatuses();
+
     undoAndCheck(myUiDiff, Arrays.asList(ListSequence.fromList(affectedRootPointers).first()), false);
     Assert.assertEquals(stringBeforeAll, getChangeSetString(myUiDiff.getChangeSet()));
+
+    MapSequence.fromMap(myExpectedFileStatuses).put("ui.DocumentLayout", FileStatus.MODIFIED);
+    MapSequence.fromMap(myExpectedFileStatuses).put("ui.HTMLPanel", FileStatus.MODIFIED);
+    checkRootStatuses();
   }
 
   private void checkOneAddedRoot(CurrentDifference newModelDiff) {
