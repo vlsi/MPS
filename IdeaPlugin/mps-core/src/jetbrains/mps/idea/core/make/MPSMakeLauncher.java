@@ -70,7 +70,7 @@ public class MPSMakeLauncher {
         this.myValid = true;
     }
     
-    public void launch () {
+    public void launch (MPSMakeCallback callback) {
         if (!isValid()) {
             throw new IllegalStateException("Unable to launch without validation");
         }

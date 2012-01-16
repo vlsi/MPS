@@ -26,6 +26,9 @@ import com.intellij.openapi.fileTypes.FileType;
 import com.intellij.openapi.fileTypes.FileTypeManager;
 import com.intellij.openapi.module.Module;
 import com.intellij.openapi.project.Project;
+import com.intellij.openapi.roots.ContentEntry;
+import com.intellij.openapi.roots.ModuleRootManager;
+import com.intellij.openapi.roots.SourceFolder;
 import com.intellij.openapi.roots.ui.configuration.ModulesConfigurator;
 import com.intellij.openapi.ui.Messages;
 import com.intellij.openapi.vfs.VirtualFile;
@@ -132,7 +135,8 @@ public class MPSCompiler implements TranslatingCompiler {
 
         final Set<File> modelsToMake = new HashSet<File>();
         for (Map.Entry<MPSFacet, List<File>> chunk : moduleWithModels.entrySet()) {
-            String outputFolder = chunk.getKey().getSolution().getGeneratorOutputPath();
+            MPSFacet facet = chunk.getKey();
+            String outputFolder = facet.getSolution().getGeneratorOutputPath();
             MessagesViewTool.log(myProject, MessageKind.INFORMATION, "Generating into " + outputFolder);
             List<OutputItem> outitems = new ArrayList<OutputItem>();
             for (final File f : chunk.getValue()) {
@@ -167,19 +171,28 @@ public class MPSCompiler implements TranslatingCompiler {
                     outitems.add(new OutputItemImpl(com.intellij.openapi.util.io.FileUtil.toSystemIndependentName(genFile.getPath()), source));
                 }
             }
+            MPSMakeConfiguration makeConfiguration = new MPSMakeConfiguration();
+            makeConfiguration.addConfiguredModels(modelsToMake);
+
+            // TODO avoid passing the project base dir as library, use the appropriate source root(s) instead
+            makeConfiguration.addConfiguredLibrary(myProject.getName(), new File(myProject.getBaseDir().getPath()), false);
+//            for (VirtualFile sf: ModuleRootManager.getInstance(facet.getModule()).getSourceRoots()) {
+//                makeConfiguration.addConfiguredLibrary(
+//                    facet.getModule().getName()+"_"+sf.getPresentableName(),
+//                    new File(sf.getPath()), false);
+//            }
+
+            MPSMakeLauncher gl = new MPSMakeLauncher(makeConfiguration, myProject);
+            gl.validate();
+            if (gl.isValid()) {
+                gl.launch(new MPSMakeCallback());
+            } else {
+                MessagesViewTool.log(myProject, MessageKind.ERROR, "Invalid MPS make configuration, unable to make models");
+            }
+
             outputs.put(outputFolder, outitems);
         }
 
-        MPSMakeConfiguration makeConfiguration = new MPSMakeConfiguration();
-        makeConfiguration.addConfiguredModels(modelsToMake);
-        makeConfiguration.addConfiguredLibrary(myProject.getName(), new File(myProject.getBaseDir().getPath()),false);
-        MPSMakeLauncher gl = new MPSMakeLauncher(makeConfiguration, myProject);
-        gl.validate();
-        if (gl.isValid()) {
-            gl.launch();
-        } else {
-            MessagesViewTool.log(myProject, MessageKind.ERROR, "Invalid MPS make configuration, unable to make models");
-        }
     }
 
     public boolean validateConfiguration(CompileScope compileScope) {
