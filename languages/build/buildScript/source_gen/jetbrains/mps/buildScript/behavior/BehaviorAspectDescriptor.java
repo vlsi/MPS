@@ -7,45 +7,47 @@ import java.util.Arrays;
 import jetbrains.mps.smodel.runtime.interpreted.BehaviorAspectInterpreted;
 
 public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor {
-  private static String[] stringSwitchCases_846f5o_a0a0a = new String[]{"jetbrains.mps.buildScript.structure.BuildArtifact_NamedContainer", "jetbrains.mps.buildScript.structure.BuildDependency", "jetbrains.mps.buildScript.structure.BuildFolderMacro", "jetbrains.mps.buildScript.structure.BuildLayout", "jetbrains.mps.buildScript.structure.BuildLayout_Folder", "jetbrains.mps.buildScript.structure.BuildLayout_Jar", "jetbrains.mps.buildScript.structure.BuildLayout_JavaOutput", "jetbrains.mps.buildScript.structure.BuildLayout_NamedContainer", "jetbrains.mps.buildScript.structure.BuildLayout_Zip", "jetbrains.mps.buildScript.structure.BuildScript", "jetbrains.mps.buildScript.structure.BuildSourceMacroRelativePath", "jetbrains.mps.buildScript.structure.BuildSourcePath", "jetbrains.mps.buildScript.structure.BuildSource_JavaContentFolder", "jetbrains.mps.buildScript.structure.BuildSource_JavaContentRoot", "jetbrains.mps.buildScript.structure.BuildSource_JavaModule", "jetbrains.mps.buildScript.structure.BuildSource_JavaModuleDependency"};
+  private static String[] stringSwitchCases_846f5o_a0a0a = new String[]{"jetbrains.mps.buildScript.structure.BuildFolderMacro", "jetbrains.mps.buildScript.structure.BuildLayout", "jetbrains.mps.buildScript.structure.BuildLayout_Folder", "jetbrains.mps.buildScript.structure.BuildLayout_Jar", "jetbrains.mps.buildScript.structure.BuildLayout_JavaOutput", "jetbrains.mps.buildScript.structure.BuildLayout_Zip", "jetbrains.mps.buildScript.structure.BuildProject", "jetbrains.mps.buildScript.structure.BuildProjectDependency", "jetbrains.mps.buildScript.structure.BuildSourceMacroRelativePath", "jetbrains.mps.buildScript.structure.BuildSourcePath", "jetbrains.mps.buildScript.structure.BuildSource_JavaContentFolder", "jetbrains.mps.buildScript.structure.BuildSource_JavaContentRoot", "jetbrains.mps.buildScript.structure.BuildSource_JavaDependencyLibrary", "jetbrains.mps.buildScript.structure.BuildSource_JavaDependencyModule", "jetbrains.mps.buildScript.structure.BuildSource_JavaLibrary", "jetbrains.mps.buildScript.structure.BuildSource_JavaLibraryJar", "jetbrains.mps.buildScript.structure.BuildSource_JavaModule"};
 
   public BehaviorAspectDescriptor() {
   }
 
   public BehaviorDescriptor getDescriptor(String fqName) {
     switch (Arrays.binarySearch(stringSwitchCases_846f5o_a0a0a, fqName)) {
-      case 9:
-        return new BuildScript_BehaviorDescriptor();
-      case 3:
-        return new BuildLayout_BehaviorDescriptor();
+      case 6:
+        return new BuildProject_BehaviorDescriptor();
       case 1:
-        return new BuildDependency_BehaviorDescriptor();
-      case 4:
+        return new BuildLayout_BehaviorDescriptor();
+      case 2:
         return new BuildLayout_Folder_BehaviorDescriptor();
-      case 7:
-        return new BuildLayout_NamedContainer_BehaviorDescriptor();
-      case 8:
-        return new BuildLayout_Zip_BehaviorDescriptor();
       case 5:
+        return new BuildLayout_Zip_BehaviorDescriptor();
+      case 3:
         return new BuildLayout_Jar_BehaviorDescriptor();
-      case 14:
+      case 16:
         return new BuildSource_JavaModule_BehaviorDescriptor();
-      case 11:
+      case 9:
         return new BuildSourcePath_BehaviorDescriptor();
-      case 13:
+      case 11:
         return new BuildSource_JavaContentRoot_BehaviorDescriptor();
       case 0:
-        return new BuildArtifact_NamedContainer_BehaviorDescriptor();
-      case 2:
         return new BuildFolderMacro_BehaviorDescriptor();
-      case 10:
+      case 8:
         return new BuildSourceMacroRelativePath_BehaviorDescriptor();
-      case 6:
+      case 4:
         return new BuildLayout_JavaOutput_BehaviorDescriptor();
-      case 12:
+      case 10:
         return new BuildSource_JavaContentFolder_BehaviorDescriptor();
+      case 13:
+        return new BuildSource_JavaDependencyModule_BehaviorDescriptor();
+      case 14:
+        return new BuildSource_JavaLibrary_BehaviorDescriptor();
       case 15:
-        return new BuildSource_JavaModuleDependency_BehaviorDescriptor();
+        return new BuildSource_JavaLibraryJar_BehaviorDescriptor();
+      case 12:
+        return new BuildSource_JavaDependencyLibrary_BehaviorDescriptor();
+      case 7:
+        return new BuildProjectDependency_BehaviorDescriptor();
       default:
         return BehaviorAspectInterpreted.getInstance().getDescriptor(fqName);
     }

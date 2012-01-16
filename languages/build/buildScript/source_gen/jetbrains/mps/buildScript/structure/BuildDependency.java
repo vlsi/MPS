@@ -10,18 +10,9 @@ import jetbrains.mps.project.GlobalScope;
 
 public class BuildDependency extends BaseConcept {
   public static final String concept = "jetbrains.mps.buildScript.structure.BuildDependency";
-  public static final String SCRIPT = "script";
 
   public BuildDependency(SNode node) {
     super(node);
-  }
-
-  public BuildScript getScript() {
-    return (BuildScript) this.getReferent(BuildScript.class, BuildDependency.SCRIPT);
-  }
-
-  public void setScript(BuildScript node) {
-    super.setReferent(BuildDependency.SCRIPT, node);
   }
 
   public static BuildDependency newInstance(SModel sm, boolean init) {

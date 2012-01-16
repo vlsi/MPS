@@ -10,8 +10,8 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.core.behavior.ScopeProvider_Behavior;
 import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 
-public class BuildScript_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements ScopeProvider_BehaviorDescriptor, INamedConcept_BehaviorDescriptor {
-  public BuildScript_BehaviorDescriptor() {
+public class BuildProject_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements ScopeProvider_BehaviorDescriptor, INamedConcept_BehaviorDescriptor {
+  public BuildProject_BehaviorDescriptor() {
   }
 
   public Scope virtual_getScope_7722139651431880752(SNode thisNode, SNode kind, String role, int index) {
@@ -23,11 +23,11 @@ public class BuildScript_BehaviorDescriptor extends BaseConcept_BehaviorDescript
   }
 
   public Scope virtual_getScope_3734116213129936182(SNode thisNode, SNode kind, SNode child) {
-    return BuildScript_Behavior.virtual_getScope_3734116213129936182(thisNode, kind, child);
+    return BuildProject_Behavior.virtual_getScope_3734116213129936182(thisNode, kind, child);
   }
 
   @Override
   public String getConceptFqName() {
-    return "jetbrains.mps.buildScript.structure.BuildScript";
+    return "jetbrains.mps.buildScript.structure.BuildProject";
   }
 }

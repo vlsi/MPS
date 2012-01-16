@@ -12,17 +12,17 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Error;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.style.Padding;
 
-public class BuildArtifact_Editor extends DefaultNodeEditor {
+public class BuildSource_JavaLibraryElement_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCustom_ibs4dy_a(editorContext, node);
+    return this.createCustom_8mhou1_a(editorContext, node);
   }
 
-  private EditorCell createCustom_ibs4dy_a(final EditorContext editorContext, final SNode node) {
+  private EditorCell createCustom_8mhou1_a(final EditorContext editorContext, final SNode node) {
     AbstractCellProvider provider = new _FunctionTypes._return_P0_E0<AbstractCellProvider>() {
       public AbstractCellProvider invoke() {
         return new AbstractCellProvider() {
           public EditorCell createEditorCell(EditorContext context) {
-            EditorCell_Error result = new EditorCell_Error(editorContext, node, "<no artifact>");
+            EditorCell_Error result = new EditorCell_Error(editorContext, node, "<no element>");
             result.getStyle().set(StyleAttributes.PADDING_LEFT, new Padding(0.0));
             result.getStyle().set(StyleAttributes.PADDING_RIGHT, new Padding(0.0));
             return result;
@@ -31,7 +31,7 @@ public class BuildArtifact_Editor extends DefaultNodeEditor {
       }
     }.invoke();
     EditorCell editorCell = provider.createEditorCell(editorContext);
-    editorCell.setCellId("Custom_ibs4dy_a");
+    editorCell.setCellId("Custom_8mhou1_a");
     return editorCell;
   }
 }

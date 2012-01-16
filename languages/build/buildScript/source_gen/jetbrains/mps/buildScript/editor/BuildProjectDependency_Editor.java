@@ -7,7 +7,6 @@ import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
@@ -15,33 +14,24 @@ import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.InlineCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 
-public class BuildSource_JavaModuleDependency_Editor extends DefaultNodeEditor {
+public class BuildProjectDependency_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_gltkwe_a(editorContext, node);
+    return this.createCollection_jumb3f_a(editorContext, node);
   }
 
-  private EditorCell createCollection_gltkwe_a(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_jumb3f_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_gltkwe_a");
-    editorCell.addEditorCell(this.createConstant_gltkwe_a0(editorContext, node));
-    editorCell.addEditorCell(this.createRefCell_gltkwe_b0(editorContext, node));
+    editorCell.setCellId("Collection_jumb3f_a");
+    editorCell.addEditorCell(this.createRefCell_jumb3f_a0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_gltkwe_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "module");
-    editorCell.setCellId("Constant_gltkwe_a0");
-    buildStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-  private EditorCell createRefCell_gltkwe_b0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefCell_jumb3f_a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
-    provider.setRole("module");
-    provider.setNoTargetText("<no module>");
+    provider.setRole("script");
+    provider.setNoTargetText("<no script>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new BuildSource_JavaModuleDependency_Editor._Inline_gltkwe_a1a());
+    provider.setAuxiliaryCellProvider(new BuildProjectDependency_Editor._Inline_jumb3f_a0a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -54,8 +44,8 @@ public class BuildSource_JavaModuleDependency_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class _Inline_gltkwe_a1a extends InlineCellProvider {
-    public _Inline_gltkwe_a1a() {
+  public static class _Inline_jumb3f_a0a extends InlineCellProvider {
+    public _Inline_jumb3f_a0a() {
       super();
     }
 
@@ -64,10 +54,10 @@ public class BuildSource_JavaModuleDependency_Editor extends DefaultNodeEditor {
     }
 
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-      return this.createProperty_gltkwe_a0b0(editorContext, node);
+      return this.createProperty_jumb3f_a0a0(editorContext, node);
     }
 
-    private EditorCell createProperty_gltkwe_a0b0(EditorContext editorContext, SNode node) {
+    private EditorCell createProperty_jumb3f_a0a0(EditorContext editorContext, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
       provider.setRole("name");
       provider.setNoTargetText("<no name>");

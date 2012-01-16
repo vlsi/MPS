@@ -45,7 +45,7 @@ public class BuildSourceMacroRelativePath_Constraints extends BaseConstraintsDes
 
           @Override
           public String getPresentation(final IOperationContext operationContext, final ReferencePresentationContext _context) {
-            return (_context.getInEditor() ?
+            return (!(_context.getSmartReference()) ?
               SPropertyOperations.getString(_context.getParameterNode(), "name") :
               "$" + SPropertyOperations.getString(_context.getParameterNode(), "name")
             );

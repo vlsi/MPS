@@ -11,18 +11,19 @@ import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Error;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.style.Padding;
+import jetbrains.mps.nodeEditor.style.Style;
 
-public class BuildSourceModule_Editor extends DefaultNodeEditor {
+public class BuildProjectPart_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCustom_gnhcij_a(editorContext, node);
+    return this.createCustom_boaldj_a(editorContext, node);
   }
 
-  private EditorCell createCustom_gnhcij_a(final EditorContext editorContext, final SNode node) {
+  private EditorCell createCustom_boaldj_a(final EditorContext editorContext, final SNode node) {
     AbstractCellProvider provider = new _FunctionTypes._return_P0_E0<AbstractCellProvider>() {
       public AbstractCellProvider invoke() {
         return new AbstractCellProvider() {
           public EditorCell createEditorCell(EditorContext context) {
-            EditorCell_Error result = new EditorCell_Error(editorContext, node, "<source module>");
+            EditorCell_Error result = new EditorCell_Error(editorContext, node, "<project structure>");
             result.getStyle().set(StyleAttributes.PADDING_LEFT, new Padding(0.0));
             result.getStyle().set(StyleAttributes.PADDING_RIGHT, new Padding(0.0));
             return result;
@@ -31,7 +32,11 @@ public class BuildSourceModule_Editor extends DefaultNodeEditor {
       }
     }.invoke();
     EditorCell editorCell = provider.createEditorCell(editorContext);
-    editorCell.setCellId("Custom_gnhcij_a");
+    editorCell.setCellId("Custom_boaldj_a");
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+    }
     return editorCell;
   }
 }

@@ -15,33 +15,33 @@ import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.InlineCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 
-public class BuildArtifact_NamedContainer_Editor extends DefaultNodeEditor {
+public class BuildSource_JavaDependencyLibrary_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_veeeo2_a(editorContext, node);
+    return this.createCollection_n4mr7u_a(editorContext, node);
   }
 
-  private EditorCell createCollection_veeeo2_a(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_n4mr7u_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_veeeo2_a");
-    editorCell.addEditorCell(this.createConstant_veeeo2_a0(editorContext, node));
-    editorCell.addEditorCell(this.createRefCell_veeeo2_b0(editorContext, node));
+    editorCell.setCellId("Collection_n4mr7u_a");
+    editorCell.addEditorCell(this.createConstant_n4mr7u_a0(editorContext, node));
+    editorCell.addEditorCell(this.createRefCell_n4mr7u_b0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_veeeo2_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "export");
-    editorCell.setCellId("Constant_veeeo2_a0");
-    buildStyles_StyleSheet.getArtifactKeyword(editorCell).apply(editorCell);
+  private EditorCell createConstant_n4mr7u_a0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "library");
+    editorCell.setCellId("Constant_n4mr7u_a0");
+    buildStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createRefCell_veeeo2_b0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefCell_n4mr7u_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
-    provider.setRole("container");
-    provider.setNoTargetText("<no container>");
+    provider.setRole("library");
+    provider.setNoTargetText("<no library>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new BuildArtifact_NamedContainer_Editor._Inline_veeeo2_a1a());
+    provider.setAuxiliaryCellProvider(new BuildSource_JavaDependencyLibrary_Editor._Inline_n4mr7u_a1a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -54,8 +54,8 @@ public class BuildArtifact_NamedContainer_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class _Inline_veeeo2_a1a extends InlineCellProvider {
-    public _Inline_veeeo2_a1a() {
+  public static class _Inline_n4mr7u_a1a extends InlineCellProvider {
+    public _Inline_n4mr7u_a1a() {
       super();
     }
 
@@ -64,10 +64,10 @@ public class BuildArtifact_NamedContainer_Editor extends DefaultNodeEditor {
     }
 
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-      return this.createProperty_veeeo2_a0b0(editorContext, node);
+      return this.createProperty_n4mr7u_a0b0(editorContext, node);
     }
 
-    private EditorCell createProperty_veeeo2_a0b0(EditorContext editorContext, SNode node) {
+    private EditorCell createProperty_n4mr7u_a0b0(EditorContext editorContext, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
       provider.setRole("name");
       provider.setNoTargetText("<no name>");

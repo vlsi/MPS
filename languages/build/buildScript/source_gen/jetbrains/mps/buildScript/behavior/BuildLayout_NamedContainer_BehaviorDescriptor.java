@@ -6,7 +6,7 @@ import jetbrains.mps.lang.core.behavior.INamedConcept_BehaviorDescriptor;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 
-public class BuildLayout_NamedContainer_BehaviorDescriptor extends BuildLayout_AbstractContainer_BehaviorDescriptor implements INamedConcept_BehaviorDescriptor {
+public abstract class BuildLayout_NamedContainer_BehaviorDescriptor extends BuildLayout_AbstractContainer_BehaviorDescriptor implements INamedConcept_BehaviorDescriptor {
   public BuildLayout_NamedContainer_BehaviorDescriptor() {
   }
 

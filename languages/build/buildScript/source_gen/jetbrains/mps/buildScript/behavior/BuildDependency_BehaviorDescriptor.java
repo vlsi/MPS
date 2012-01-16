@@ -4,7 +4,7 @@ package jetbrains.mps.buildScript.behavior;
 
 import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 
-public class BuildDependency_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor {
+public abstract class BuildDependency_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor {
   public BuildDependency_BehaviorDescriptor() {
   }
 
