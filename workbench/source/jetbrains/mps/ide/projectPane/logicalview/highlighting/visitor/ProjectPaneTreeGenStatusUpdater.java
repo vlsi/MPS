@@ -158,6 +158,7 @@ public class ProjectPaneTreeGenStatusUpdater extends TreeNodeVisitor {
   }
 
   private void updateNodeLater(final MPSTreeNode node, final String addText) {
+    if (node.getAdditionalText().equals(addText)) return;
     SwingUtilities.invokeLater(new Runnable() {
       public void run() {
         if (!checkDisposed(node)) return;

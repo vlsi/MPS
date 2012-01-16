@@ -15,15 +15,18 @@
  */
 package jetbrains.mps.ide.projectPane.logicalview.highlighting.visitor;
 
+import com.intellij.ide.IdeEventQueue;
+import com.intellij.openapi.application.Application;
+import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.ui.LayeredIcon;
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.ide.projectPane.logicalview.nodes.ProjectModuleTreeNode;
 import jetbrains.mps.ide.projectPane.logicalview.nodes.ProjectTreeNode;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
-import jetbrains.mps.smodel.loading.ModelLoadingState;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
+import jetbrains.mps.smodel.loading.ModelLoadingState;
 
 import javax.swing.Icon;
 import javax.swing.SwingUtilities;
@@ -35,6 +38,7 @@ public class ProjectPaneModifiedMarker extends TreeNodeVisitor {
     if (!(md instanceof EditableSModelDescriptor)) return;
 
     boolean changed = ((EditableSModelDescriptor) md).isChanged();
+
     updateNodeLater(node, changed ? new LayeredIcon(node.getDefaultIcon(), Icons.MODIFIED_ICON) : node.getDefaultIcon());
   }
 
@@ -47,6 +51,8 @@ public class ProjectPaneModifiedMarker extends TreeNodeVisitor {
   }
 
   private void updateNodeLater(final MPSTreeNode node, final Icon icon) {
+    if (node.getIcon(false) == icon) return;
+
     SwingUtilities.invokeLater(new Runnable() {
       public void run() {
         if (!checkDisposed(node)) return;

@@ -101,11 +101,14 @@ public class ProjectPaneTreeErrorChecker extends TreeNodeVisitor {
   }
 
   private void updateNodeLater(final MPSTreeNode node, final String tooltipText, final boolean isWarning) {
+    final ErrorState errorState = tooltipText == null ? ErrorState.NONE : (isWarning ? ErrorState.WARNING : ErrorState.ERROR);
+    if (node.getErrorState().equals(errorState) && node.getTooltipText().equals(tooltipText)) return;
+
     SwingUtilities.invokeLater(new Runnable() {
       public void run() {
         if (!checkDisposed(node)) return;
 
-        node.setErrorState(tooltipText == null ? ErrorState.NONE : (isWarning ? ErrorState.WARNING : ErrorState.ERROR));
+        node.setErrorState(errorState);
         node.setTooltipText(tooltipText);
         node.updateNodePresentationInTree();
       }
