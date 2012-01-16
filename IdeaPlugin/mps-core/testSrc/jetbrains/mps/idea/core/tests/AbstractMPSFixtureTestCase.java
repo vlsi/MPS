@@ -55,6 +55,7 @@ import java.io.File;
  */
 public abstract class AbstractMPSFixtureTestCase extends UsefulTestCase {
     private static int ourIndex = 0;
+    private static boolean TRACE_ON_HACK = false;
 
     protected MPSFacet myFacet;
     private JavaCodeInsightTestFixture myFixture;
@@ -62,6 +63,7 @@ public abstract class AbstractMPSFixtureTestCase extends UsefulTestCase {
     protected TestFixtureBuilder<IdeaProjectTestFixture> myProjectBuilder;
 
     static {
+        if (TRACE_ON_HACK) BasicConfigurator.configure();
         IdeaTestFixtureFactory.getFixtureFactory().registerFixtureBuilder(CustomJavaModuleFixtureBuilder.class, CustomJavaModuleFixtureBuilder.class);
     }
 
@@ -99,6 +101,8 @@ public abstract class AbstractMPSFixtureTestCase extends UsefulTestCase {
         myFixture.setTestDataPath(getTestDataPath());
         myModule = moduleFixtureBuilder.getFixture().getModule();
         myFacet = addMPSFacet(myModule);
+
+        if (TRACE_ON_HACK) Logger.setFactory(LoggerFactory.getInstance());
     }
 
     @Override
@@ -167,7 +171,7 @@ public abstract class AbstractMPSFixtureTestCase extends UsefulTestCase {
         @Override
         protected void initModule(Module module) {
             // turn on trace
-//            Logger.setFactory(LoggerFactory.getInstance());
+            if (TRACE_ON_HACK) Logger.setFactory(LoggerFactory.getInstance());
             super.initModule(module);
         }
 
