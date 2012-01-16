@@ -53,6 +53,10 @@ public class SimpleCommandQueue {
     }
   }
 
+  public void setHadExceptions(boolean value) {
+    myHadExceptions = value;
+  }
+
   public boolean hadExceptions() {
     return myHadExceptions;
   }

@@ -46,6 +46,7 @@ import jetbrains.mps.vcs.diff.changes.ModelChange;
       try {
         task.invoke(listener);
       } catch (Throwable t) {
+        myCommandQueue.setHadExceptions(true);
         if (log.isErrorEnabled()) {
           log.error("Exception on firing " + name + " event", t);
         }

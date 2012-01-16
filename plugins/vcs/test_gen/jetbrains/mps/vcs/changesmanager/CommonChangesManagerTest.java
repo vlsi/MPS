@@ -99,7 +99,7 @@ public class CommonChangesManagerTest {
   private static boolean ourEnabled;
 
   private CurrentDifferenceRegistry myRegistry;
-  private Project myPrroject;
+  private Project myProject;
   private boolean myWaitCompleted;
   private final Object myWaitLock = new Object();
   private ChangeListManagerImpl myChangeListManager;
@@ -116,8 +116,8 @@ public class CommonChangesManagerTest {
 
   @Before
   public void init() {
-    myPrroject = ourProject;
-    myIdeaProject = ProjectHelper.toIdeaProject(myPrroject);
+    myProject = ourProject;
+    myIdeaProject = ProjectHelper.toIdeaProject(myProject);
     myRegistry = CurrentDifferenceRegistry.getInstance(myIdeaProject);
     waitForChangesManager();
 
@@ -135,6 +135,8 @@ public class CommonChangesManagerTest {
     myUtilVirtualFile = VirtualFileUtils.getVirtualFile(myUtilDiff.getModelDescriptor().getModelFile());
 
     ModelChangesWatcher.instance().addReloadListener(new CommonChangesManagerTest.MyReloadListener());
+
+    myRegistry.getCommandQueue().setHadExceptions(false);
 
     if (!(ourEnabled)) {
       checkAndEnable();
@@ -332,7 +334,7 @@ public class CommonChangesManagerTest {
   }
 
   private void runCommandAndWait(Runnable r) {
-    ModelAccess.instance().runCommandInEDT(r, myPrroject);
+    ModelAccess.instance().runCommandInEDT(r, myProject);
     ModelAccess.instance().flushEventQueue();
   }
 
