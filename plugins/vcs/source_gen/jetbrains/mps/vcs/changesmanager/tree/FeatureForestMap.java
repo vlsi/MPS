@@ -27,6 +27,7 @@ import org.jetbrains.annotations.Nullable;
  * @param V map value
  */
 public class FeatureForestMap<V> {
+  private static boolean ourLoggingEnabled = "true".equals(System.getProperty("changesmanager.debug"));
   protected static Log log = LogFactory.getLog(FeatureForestMap.class);
 
   private Map<Feature, V> myFeatureToValue = MapSequence.fromMap(new HashMap<Feature, V>());
@@ -40,15 +41,16 @@ public class FeatureForestMap<V> {
   public void put(@NotNull Feature feature, @NotNull V value) {
     ModelAccess.assertLegalRead();
     if (MapSequence.fromMap(myFeatureToValue).containsKey(feature)) {
-      throw new IllegalArgumentException("Trying to put already present feature");
+      log("Trying to put already present feature " + feature);
     }
     Feature[] ancestors = feature.getAncestors();
-    if (Sequence.fromIterable(Sequence.fromArray(ancestors)).any(new IWhereFilter<Feature>() {
+    Feature ancestor = Sequence.fromIterable(Sequence.fromArray(ancestors)).findFirst(new IWhereFilter<Feature>() {
       public boolean accept(Feature a) {
         return MapSequence.fromMap(myFeatureToValue).containsKey(a);
       }
-    })) {
-      throw new IllegalAccessError("Trying to put feature which is ancestor of already added one");
+    });
+    if (ancestor != null) {
+      log(String.format("Trying to put feature (%s) which is ancestor of already added (%s)", feature, ancestor));
     }
 
     MapSequence.fromMap(myFeatureToValue).put(feature, value);
@@ -63,7 +65,7 @@ public class FeatureForestMap<V> {
 
   public void removeKey(@NotNull Feature feature) {
     if (!(MapSequence.fromMap(myFeatureToValue).containsKey(feature))) {
-      throw new IllegalArgumentException("Trying to remove feature which is not added");
+      log("Trying to remove feature which is not added: " + feature);
     }
 
     Feature[] ancestors = MapSequence.fromMap(myFeatureToAncestors).get(feature);
@@ -129,6 +131,18 @@ public class FeatureForestMap<V> {
         if (log.isErrorEnabled()) {
           log.error("Exception on firing featureStateChanged event", t);
         }
+      }
+    }
+  }
+
+  public static void setLoggingEnabled(boolean loggingEnabled) {
+    ourLoggingEnabled = loggingEnabled;
+  }
+
+  private static void log(String msg) {
+    if (ourLoggingEnabled) {
+      if (log.isErrorEnabled()) {
+        log.error(msg);
       }
     }
   }
