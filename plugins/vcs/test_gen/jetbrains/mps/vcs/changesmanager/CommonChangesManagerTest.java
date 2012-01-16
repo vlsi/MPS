@@ -8,6 +8,10 @@ import jetbrains.mps.project.Project;
 import com.intellij.openapi.vcs.changes.ChangeListManagerImpl;
 import com.intellij.openapi.vcs.AbstractVcs;
 import com.intellij.openapi.vfs.VirtualFile;
+import java.util.Map;
+import com.intellij.openapi.vcs.FileStatus;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
+import java.util.HashMap;
 import org.junit.Before;
 import jetbrains.mps.ide.project.ProjectHelper;
 import com.intellij.openapi.vcs.impl.projectlevelman.AllVcses;
@@ -27,28 +31,32 @@ import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelFqName;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.vcs.changesmanager.roots.NodeFileStatusMapping;
+import java.util.List;
+import java.util.Arrays;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.internal.collections.runtime.IVisitor;
+import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import com.intellij.openapi.vcs.changes.Change;
-import java.util.Arrays;
 import com.intellij.openapi.vcs.changes.VcsDirtyScopeManager;
 import com.intellij.openapi.vcs.VcsException;
 import jetbrains.mps.vcs.concrete.GitUtils;
 import java.io.IOException;
 import jetbrains.mps.smodel.persistence.def.ModelReadException;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
-import java.util.List;
 import java.util.ArrayList;
 import com.intellij.openapi.vcs.rollback.RollbackProgressListener;
 import jetbrains.mps.vcs.diff.ChangeSet;
 import jetbrains.mps.vcs.diff.changes.ModelChange;
 import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.internal.collections.runtime.ISelector;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.vcs.diff.ChangeSetBuilder;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
@@ -58,7 +66,6 @@ import com.intellij.openapi.command.undo.UndoManager;
 import org.junit.Test;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.mps.internal.collections.runtime.IVisitor;
 import java.util.Random;
 import jetbrains.mps.vcs.diff.changes.NodeCopier;
 import jetbrains.mps.vcs.diff.changes.NodeGroupChange;
@@ -93,6 +100,7 @@ public class CommonChangesManagerTest {
   private com.intellij.openapi.project.Project myIdeaProject;
   private VirtualFile myUtilVirtualFile;
   private Runnable myAfterReloadTask;
+  private Map<String, FileStatus> myExpectedFileStatuses = MapSequence.fromMap(new HashMap<String, FileStatus>());
 
   public CommonChangesManagerTest() {
   }
@@ -120,6 +128,10 @@ public class CommonChangesManagerTest {
     ModelChangesWatcher.instance().addReloadListener(new CommonChangesManagerTest.MyReloadListener());
 
     myRegistry.getCommandQueue().setHadExceptions(false);
+
+    MapSequence.fromMap(myExpectedFileStatuses).put("html.SAHParser", FileStatus.MODIFIED);
+    MapSequence.fromMap(myExpectedFileStatuses).put("ui.DocumentLayout", FileStatus.MODIFIED);
+    MapSequence.fromMap(myExpectedFileStatuses).put("ui.HTMLPanel", FileStatus.MODIFIED);
 
     if (!(ourEnabled)) {
       checkAndEnable();
@@ -208,6 +220,45 @@ public class CommonChangesManagerTest {
     Assert.assertNull(myUtilDiff.getChangeSet());
   }
 
+  private void checkRootStatuses() {
+    final NodeFileStatusMapping fsm = myIdeaProject.getComponent(NodeFileStatusMapping.class);
+    final List<EditableSModelDescriptor> interestingModels = Arrays.asList(myHtmlDiff.getModelDescriptor(), myUiDiff.getModelDescriptor(), myUtilDiff.getModelDescriptor());
+    // query for first time 
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        ListSequence.fromList(interestingModels).translate(new ITranslator2<EditableSModelDescriptor, SNode>() {
+          public Iterable<SNode> translate(EditableSModelDescriptor md) {
+            return md.getSModel().roots();
+          }
+        }).visitAll(new IVisitor<SNode>() {
+          public void visit(SNode r) {
+            fsm.getStatus(r);
+          }
+        });
+      }
+    });
+    // wait while statuses update 
+    waitForChangesManager();
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        for (SNode r : ListSequence.fromList(interestingModels).translate(new ITranslator2<EditableSModelDescriptor, SNode>() {
+          public Iterable<SNode> translate(EditableSModelDescriptor md) {
+            return md.getSModel().roots();
+          }
+        })) {
+          String simpleName = NameUtil.shortNameFromLongName(r.getModel().getLongName()) + "." + r.getName();
+          FileStatus expectedStatus = MapSequence.fromMap(myExpectedFileStatuses).get(simpleName);
+          FileStatus actualStatus = fsm.getStatus(r);
+          actualStatus = (FileStatus.NOT_CHANGED == actualStatus ?
+            null :
+            actualStatus
+          );
+          Assert.assertSame(expectedStatus, actualStatus);
+        }
+      }
+    });
+  }
+
   private void modifyModel() {
     runCommandAndWait(new Runnable() {
       public void run() {
@@ -227,7 +278,7 @@ public class CommonChangesManagerTest {
     });
 
     waitForChangesManager();
-    Assert.assertTrue(ListSequence.fromList(check_orwzer_a0a3a9(myUtilDiff.getChangeSet())).isNotEmpty());
+    Assert.assertTrue(ListSequence.fromList(check_orwzer_a0a3a01(myUtilDiff.getChangeSet())).isNotEmpty());
   }
 
   private void saveAndCommit() {
@@ -254,7 +305,7 @@ public class CommonChangesManagerTest {
     myChangeListManager.ensureUpToDate(false);
 
     waitForChangesManager();
-    Assert.assertTrue(ListSequence.fromList(check_orwzer_a0a5a11(myUtilDiff.getChangeSet())).isNotEmpty());
+    Assert.assertTrue(ListSequence.fromList(check_orwzer_a0a5a21(myUtilDiff.getChangeSet())).isNotEmpty());
   }
 
   private SNode createNewRoot(SModel modelContent) {
@@ -361,7 +412,7 @@ public class CommonChangesManagerTest {
               fe = new DummyFileEditor(np);
             }
             UndoManager.getInstance(myIdeaProject).undo(fe);
-            check_orwzer_a3a0a0a0a0a32(fe);
+            check_orwzer_a3a0a0a0a0a42(fe);
           }
         });
       } catch (Throwable t) {
@@ -387,6 +438,7 @@ public class CommonChangesManagerTest {
 
   @Test
   public void modifySaveCommit() throws VcsException {
+    checkRootStatuses();
     modifyModel();
     saveAndCommit();
     uncommit();
@@ -779,21 +831,21 @@ public class CommonChangesManagerTest {
     return null;
   }
 
-  private static List<ModelChange> check_orwzer_a0a3a9(ChangeSet checkedDotOperand) {
+  private static List<ModelChange> check_orwzer_a0a3a01(ChangeSet checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModelChanges();
     }
     return null;
   }
 
-  private static List<ModelChange> check_orwzer_a0a5a11(ChangeSet checkedDotOperand) {
+  private static List<ModelChange> check_orwzer_a0a5a21(ChangeSet checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModelChanges();
     }
     return null;
   }
 
-  private static void check_orwzer_a3a0a0a0a0a32(FileEditor checkedDotOperand) {
+  private static void check_orwzer_a3a0a0a0a0a42(FileEditor checkedDotOperand) {
     if (null != checkedDotOperand) {
       checkedDotOperand.dispose();
     }
