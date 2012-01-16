@@ -15,11 +15,11 @@
  */
 package jetbrains.mps.ide.projectPane.logicalview.highlighting.visitor;
 
+import jetbrains.mps.ide.projectPane.logicalview.highlighting.visitor.updates.TreeNodeUpdater;
 import jetbrains.mps.ide.projectPane.logicalview.nodes.ProjectModuleTreeNode;
 import jetbrains.mps.ide.projectPane.logicalview.nodes.ProjectTreeNode;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
-import jetbrains.mps.smodel.IOperationContext;
 
 import java.util.concurrent.LinkedBlockingDeque;
 import java.util.concurrent.ThreadPoolExecutor;
@@ -27,6 +27,7 @@ import java.util.concurrent.TimeUnit;
 
 public abstract class TreeNodeVisitor {
   private static ThreadPoolExecutor myExecutor = new ThreadPoolExecutor(0, 2, 5, TimeUnit.SECONDS, new LinkedBlockingDeque<Runnable>());
+  protected static final TreeNodeUpdater ourUpdater = new TreeNodeUpdater();
 
   public final void visitNode(final MPSTreeNode node) {
     if (!(node instanceof SModelTreeNode || node instanceof ProjectModuleTreeNode || node instanceof ProjectTreeNode)) {
@@ -34,7 +35,7 @@ public abstract class TreeNodeVisitor {
     }
     myExecutor.execute(new Runnable() {
       public void run() {
-        if (!checkDisposed(node)) return;
+        if (!ourUpdater.checkDisposed(node)) return;
 
         if (node instanceof SModelTreeNode) {
           visitModelNode(((SModelTreeNode) node));
@@ -49,14 +50,15 @@ public abstract class TreeNodeVisitor {
     });
   }
 
-  protected boolean checkDisposed(MPSTreeNode node) {
-    IOperationContext context = node.getOperationContext();
-    return !context.getProject().isDisposed() && context.isValid();
+  protected void visitModelNode(SModelTreeNode node) {
+
   }
 
-  protected abstract void visitModelNode(SModelTreeNode node);
+  protected void visitModuleNode(ProjectModuleTreeNode node) {
 
-  protected abstract void visitModuleNode(ProjectModuleTreeNode node);
+  }
 
-  protected abstract void visitProjectNode(ProjectTreeNode node);
+  protected void visitProjectNode(ProjectTreeNode node) {
+
+  }
 }
