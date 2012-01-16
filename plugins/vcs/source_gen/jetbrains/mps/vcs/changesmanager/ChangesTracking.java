@@ -96,6 +96,11 @@ public class ChangesTracking {
       if (!(myDisposed)) {
         myDisposed = true;
         myModelDescriptor.removeModelListener(myModelListener);
+        myQueue.runTask(new Runnable() {
+          public void run() {
+            myDifference.removeChangeSet();
+          }
+        });
       }
     }
   }
