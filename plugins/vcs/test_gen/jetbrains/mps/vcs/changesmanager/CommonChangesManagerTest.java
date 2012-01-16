@@ -414,7 +414,7 @@ public class CommonChangesManagerTest {
       runCommandAndWait(new Runnable() {
         public void run() {
           SNode node = t.invoke();
-          assert node.isRoot();
+          assert node == null || node.isRoot();
           ListSequence.fromList(affectedNodePointers).addElement((node == null ?
             null :
             new SNodePointer(node)
