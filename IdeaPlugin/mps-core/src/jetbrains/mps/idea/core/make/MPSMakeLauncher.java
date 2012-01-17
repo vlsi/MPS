@@ -20,6 +20,7 @@ import com.intellij.openapi.diagnostic.Logger;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.build.ant.AntBootstrap;
 import jetbrains.mps.build.ant.generation.workers.GeneratorWorker;
+import jetbrains.mps.build.ant.generation.workers.ReducedGenerationWorker;
 import jetbrains.mps.build.ant.generation.workers.TestGenerationWorker;
 import jetbrains.mps.ide.messages.MessagesViewTool;
 import jetbrains.mps.messages.MessageKind;
@@ -70,12 +71,17 @@ public class MPSMakeLauncher {
         this.myValid = true;
     }
     
-    public void launch (MPSMakeCallback callback) {
+    public void launch (final MPSMakeCallback callback) {
         if (!isValid()) {
             throw new IllegalStateException("Unable to launch without validation");
         }
 
-        Execute execute = new Execute(new MyExecuteStreamHandler(myProject, "Make"));
+        Execute execute = new Execute(new MyExecuteStreamHandler(myProject, "Make") {
+            @Override
+            protected void reportWrittenFile(String file) {
+                callback.fileWritten(file);
+            }
+        });
         execute.setWorkingDirectory(new File(myProject.getBaseDir().getPath()));
         execute.setCommandline(myCommandLine.toArray(new String[myCommandLine.size()]));
 
@@ -105,8 +111,8 @@ public class MPSMakeLauncher {
         commandLine.add(sb.toString());
 
         // TODO remove debug
-        commandLine.add("-Xdebug");
-        commandLine.add("-Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=5005");
+//        commandLine.add("-Xdebug");
+//        commandLine.add("-Xrunjdwp:transport=dt_socket,server=y,suspend=y,address=5005");
 
         commandLine.add(AntBootstrap.class.getCanonicalName());
         commandLine.add(getWorkerClass().getCanonicalName());
@@ -122,7 +128,7 @@ public class MPSMakeLauncher {
     }
 
     private Class getWorkerClass() {
-        return GeneratorWorker.class;
+        return ReducedGenerationWorker.class;
     }
 
     private String getResource(Class<?> cls) {

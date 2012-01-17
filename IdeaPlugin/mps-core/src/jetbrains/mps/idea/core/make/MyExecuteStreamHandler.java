@@ -34,7 +34,8 @@ import java.util.Scanner;
  * To change this template use File | Settings | File Templates.
  */
 
-public class MyExecuteStreamHandler implements ExecuteStreamHandler {
+public abstract class MyExecuteStreamHandler implements ExecuteStreamHandler {
+    public static final String WRITTEN = "##WRITTEN##";
     private Thread myOutputReadingThread;
     private Thread myErrorReadingThread;
     private Project myProject;
@@ -70,7 +71,12 @@ public class MyExecuteStreamHandler implements ExecuteStreamHandler {
             public void run() {
                 Scanner s = new Scanner(is);
                 while (s.hasNextLine()) {
-                    logOutput(s.nextLine());
+                    String line = s.nextLine();
+                    if (line.indexOf(WRITTEN) == 0) {
+                        reportWrittenFile(line.substring(WRITTEN.length()));
+                    }else {
+                        logOutput(line);
+                    }
                 }
             }
 
@@ -80,6 +86,8 @@ public class MyExecuteStreamHandler implements ExecuteStreamHandler {
     protected void logOutput(String line) {
         MessagesViewTool.log(myProject, MessageKind.INFORMATION, myPrefix + " - " + line);
     }
+    
+    abstract protected void reportWrittenFile (String file);
 
     public void start() throws IOException {
         myOutputReadingThread.start();

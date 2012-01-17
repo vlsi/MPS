@@ -27,4 +27,6 @@ public class MPSMakeCallback {
 
     public void makeFinished () {}
 
+    public void fileWritten (String path) {}
+
 }

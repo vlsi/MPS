@@ -132,67 +132,55 @@ public class MPSCompiler implements TranslatingCompiler {
 
     // TODO replace with external make process
     private void fakeGenerator(Map<String, VirtualFile> vfile, Map<MPSFacet, List<File>> moduleWithModels, Map<String, Collection<OutputItem>> outputs, List<File> filesToRefresh) {
-
-        final Set<File> modelsToMake = new HashSet<File>();
         for (Map.Entry<MPSFacet, List<File>> chunk : moduleWithModels.entrySet()) {
             MPSFacet facet = chunk.getKey();
             String outputFolder = facet.getSolution().getGeneratorOutputPath();
             MessagesViewTool.log(myProject, MessageKind.INFORMATION, "Generating into " + outputFolder);
             List<OutputItem> outitems = new ArrayList<OutputItem>();
-            for (final File f : chunk.getValue()) {
-                String packageName = f.getName();
-                if (packageName.indexOf('.') > 0) {
-                    packageName = packageName.substring(0, packageName.indexOf('.'));
-                }
-                File output = new File(outputFolder, packageName);
-                Collection<String> rootNames = ModelAccess.instance().runReadAction(new Computable<Collection<String>>() {
+            
+            for (final File modelFile : chunk.getValue()) {
+                final Set<File> modelsToMake = new HashSet<File>();
+                ModelAccess.instance().runReadAction(new Runnable() {
                     @Override
-                    public Collection<String> compute() {
-                        IFile file = FileSystem.getInstance().getFileByPath(f.getAbsolutePath());
+                    public void run() {
+                        IFile file = FileSystem.getInstance().getFileByPath(modelFile.getAbsolutePath());
                         EditableSModelDescriptor model = SModelRepository.getInstance().findModel(file);
                         modelsToMake.add(new File(model.getModelFile().getPath()));
-                        List<String> result = new ArrayList<String>();
-                        for (SNode root : model.getSModel().roots()) {
-                            result.add(root.getName());
-                        }
-                        return result;
                     }
                 });
-                for (String root : rootNames) {
-                    File genFile = new File(output, root + ".java");
-                    String content = "package " + packageName + ";\npublic class " + root + " {}";
-//                    try {
-//                        FileUtil.writeFile(genFile, content);
-//                    } catch (IOException e) {
-//                        e.printStackTrace();
-//                    }
-                    filesToRefresh.add(genFile);
-                    VirtualFile source = vfile.get(com.intellij.openapi.util.io.FileUtil.toSystemIndependentName(f.getPath()));
-                    outitems.add(new OutputItemImpl(com.intellij.openapi.util.io.FileUtil.toSystemIndependentName(genFile.getPath()), source));
-                }
-            }
-            MPSMakeConfiguration makeConfiguration = new MPSMakeConfiguration();
-            makeConfiguration.addConfiguredModels(modelsToMake);
+                MPSMakeConfiguration makeConfiguration = new MPSMakeConfiguration();
+                makeConfiguration.addConfiguredModels(modelsToMake);
 
-            // TODO avoid passing the project base dir as library, use the appropriate source root(s) instead
-            makeConfiguration.addConfiguredLibrary(myProject.getName(), new File(myProject.getBaseDir().getPath()), false);
+                // TODO avoid passing the project base dir as library, use the appropriate source root(s) instead
+                makeConfiguration.addConfiguredLibrary(myProject.getName(), new File(myProject.getBaseDir().getPath()), false);
 //            for (VirtualFile sf: ModuleRootManager.getInstance(facet.getModule()).getSourceRoots()) {
 //                makeConfiguration.addConfiguredLibrary(
 //                    facet.getModule().getName()+"_"+sf.getPresentableName(),
 //                    new File(sf.getPath()), false);
 //            }
 
-            MPSMakeLauncher gl = new MPSMakeLauncher(makeConfiguration, myProject);
-            gl.validate();
-            if (gl.isValid()) {
-                gl.launch(new MPSMakeCallback());
-            } else {
-                MessagesViewTool.log(myProject, MessageKind.ERROR, "Invalid MPS make configuration, unable to make models");
-            }
+                final List<File> files = new ArrayList<File>();
+                MPSMakeLauncher gl = new MPSMakeLauncher(makeConfiguration, myProject);
+                gl.validate();
+                if (gl.isValid()) {
+                    gl.launch(new MPSMakeCallback() {
+                        @Override
+                        public void fileWritten(String path) {
+                            files.add(new File(path));
+                        }
+                    });
+                } else {
+                    MessagesViewTool.log(myProject, MessageKind.ERROR, "Invalid MPS make configuration, unable to make models");
+                }
 
+                for (File file: files) {
+                    filesToRefresh.add(file);
+                    VirtualFile source = vfile.get(com.intellij.openapi.util.io.FileUtil.toSystemIndependentName(modelFile.getPath()));
+                    outitems.add(new OutputItemImpl(com.intellij.openapi.util.io.FileUtil.toSystemIndependentName(file.getPath()), source));
+                }
+            }
             outputs.put(outputFolder, outitems);
         }
-
     }
 
     public boolean validateConfiguration(CompileScope compileScope) {
