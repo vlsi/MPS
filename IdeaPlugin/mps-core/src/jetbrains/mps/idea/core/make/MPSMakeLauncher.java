@@ -16,8 +16,15 @@
 
 package jetbrains.mps.idea.core.make;
 
+import com.intellij.execution.ExecutionException;
+import com.intellij.execution.configurations.GeneralCommandLine;
+import com.intellij.execution.process.OSProcessHandler;
+import com.intellij.execution.process.ProcessAdapter;
+import com.intellij.execution.process.ProcessEvent;
+import com.intellij.execution.process.ProcessOutputTypes;
 import com.intellij.openapi.diagnostic.Logger;
 import com.intellij.openapi.project.Project;
+import com.intellij.openapi.util.Key;
 import jetbrains.mps.build.ant.AntBootstrap;
 import jetbrains.mps.build.ant.generation.workers.GeneratorWorker;
 import jetbrains.mps.build.ant.generation.workers.ReducedGenerationWorker;
@@ -31,10 +38,7 @@ import org.apache.tools.ant.util.JavaEnvUtils;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.LinkedHashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 /**
  * Created by IntelliJ IDEA.
@@ -76,23 +80,38 @@ public class MPSMakeLauncher {
             throw new IllegalStateException("Unable to launch without validation");
         }
 
-        Execute execute = new Execute(new MyExecuteStreamHandler(myProject, "Make") {
+        GeneralCommandLine gcl = new GeneralCommandLine(myCommandLine);
+        gcl.setWorkDirectory(myProject.getBaseDir().getPath());
+        final TextEventProcessor tep = new TextEventProcessor(myProject, "Make") {
             @Override
-            protected void reportWrittenFile(String file) {
+            public void reportWrittenFile(String file) {
+                LOG.debug("written file: "+file);
                 callback.fileWritten(file);
             }
-        });
-        execute.setWorkingDirectory(new File(myProject.getBaseDir().getPath()));
-        execute.setCommandline(myCommandLine.toArray(new String[myCommandLine.size()]));
-
+        };
         try {
-            int ret = execute.execute();
-            if (ret != 0) {
+            OSProcessHandler processHandler = new OSProcessHandler(gcl.createProcess(), myCommandLine.get(0));
+            processHandler.addProcessListener(new ProcessAdapter() {
+                @Override
+                public void onTextAvailable(ProcessEvent event, Key outputType) {
+                    if (outputType == ProcessOutputTypes.STDERR) {
+                        tep.processStderr(event.getText());
+                    }
+                    else if (outputType == ProcessOutputTypes.STDOUT) {
+                        tep.processStdout(event.getText());
+                    }
+                }
+            });            
+            processHandler.startNotify();
+
+            processHandler.waitFor();
+            if (processHandler.getProcess().exitValue() != 0) {
                 MessagesViewTool.log(myProject, MessageKind.ERROR, "External process returned non-zero");
             }
-        } catch (IOException e) {
+            
+        } catch (ExecutionException e) {
             LOG.debug(e);
-            MessagesViewTool.log(myProject, MessageKind.ERROR, "IO error: " + e.getMessage());
+            MessagesViewTool.log(myProject, MessageKind.ERROR, "Error running process: " + e.getMessage());
         }
     }
 
@@ -209,5 +228,46 @@ public class MPSMakeLauncher {
 
     public List<String> getCommandLine() {
         return myCommandLine;
+    }
+    
+    public abstract static class TextEventProcessor {
+        public static final String WRITTEN = "##WRITTEN##";
+        private Project myProject;
+        private String myPrefix;
+        
+        public  TextEventProcessor (Project project, String prefix) {
+            this.myProject = project;
+            this.myPrefix = prefix;
+        }
+        
+        public void processStdout (String text) {
+            Scanner s = new Scanner(text);
+            while (s.hasNextLine()) {
+                String line = s.nextLine();
+                if (line.indexOf(WRITTEN) == 0) {
+                    reportWrittenFile(line.substring(WRITTEN.length()));
+                }else {
+                    logOutput(line);
+                }
+            }
+        }
+        
+        public void processStderr (String text) {
+            Scanner s = new Scanner(text);
+            while (s.hasNextLine()) {
+                logError(s.nextLine());
+            }
+        }
+        
+        public abstract void  reportWrittenFile (String file);
+
+        protected void logOutput(String line) {
+            MessagesViewTool.log(myProject, MessageKind.INFORMATION, myPrefix + " - " + line);
+        }
+
+        protected void logError(String line) {
+            MessagesViewTool.log(myProject, MessageKind.ERROR, myPrefix + " - " + line);
+        }
+
     }
 }
