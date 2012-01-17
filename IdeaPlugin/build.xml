@@ -367,7 +367,7 @@
         <!-- Test data copied here -->
         <copy todir="${build_dir}/mpsplugintests_jar/jetbrains/mps/idea/core/tests" flatten="true">
             <fileset dir="${base_dir}/IdeaPlugin/tests/editorTests">
-                <include name="/models/test.mps"/>
+                <include name="models/test.mps"/>
             </fileset>
             <fileset dir="${base_dir}/IdeaPlugin/tests/blProject">
                 <include name="blProject.msd"/>
