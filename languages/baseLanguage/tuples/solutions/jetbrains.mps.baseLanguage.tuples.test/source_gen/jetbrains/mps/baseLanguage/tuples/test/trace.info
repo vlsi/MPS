@@ -1055,9 +1055,6 @@
     </scopeInfo>
     <unitInfo nodeId="6562295948842315074" fileName="Sample.java" startLine="8" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.baseLanguage.tuples.test.Sample" />
   </root>
-  <root nodeId="7392128331043290874">
-    <unitInfo nodeId="7392128331043290874" fileName="MPS15234_Test.java" startLine="7" startPosition="0" endLine="9" endPosition="0" unitName="jetbrains.mps.baseLanguage.tuples.test.MPS15234_Test" />
-  </root>
   <root nodeId="7781156898616395636">
     <nodeInfo nodeId="7781156898616395636" fileName="IntPair.java" startLine="9" startPosition="20" endLine="10" endPosition="12" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="7781156898616395636" fileName="IntPair.java" startLine="13" startPosition="40" endLine="14" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
@@ -1097,6 +1094,19 @@
       <varInfo nodeId="7781156898616395636" varName="from" />
     </scopeInfo>
     <unitInfo nodeId="7781156898616395636" fileName="IntPair.java" startLine="8" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.baseLanguage.tuples.test.IntPair" />
+  </root>
+  <root nodeId="7782532150063714697">
+    <nodeInfo nodeId="7782532150063714717" fileName="MPS15234_Test.java" startLine="13" startPosition="64" endLine="14" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7782532150063714728" fileName="MPS15234_Test.java" startLine="14" startPosition="70" endLine="15" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7782532150063714752" fileName="MPS15234_Test.java" startLine="15" startPosition="67" endLine="16" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7782532150063714761" fileName="MPS15234_Test.java" startLine="16" startPosition="77" endLine="17" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7782532150063714705" fileName="MPS15234_Test.java" startLine="12" startPosition="45" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_coerceInternalClassifier#()V" />
+    <scopeInfo nodeId="7782532150063714708" fileName="MPS15234_Test.java" startLine="13" startPosition="64" endLine="17" endPosition="59">
+      <varInfo nodeId="7782532150063714753" varName="array" />
+      <varInfo nodeId="7782532150063714718" varName="lot" />
+    </scopeInfo>
+    <scopeInfo nodeId="7782532150063714705" fileName="MPS15234_Test.java" startLine="12" startPosition="45" endLine="19" endPosition="0" />
+    <unitInfo nodeId="7782532150063714697" fileName="MPS15234_Test.java" startLine="12" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.baseLanguage.tuples.test.MPS15234_Test" />
   </root>
   <root nodeId="8209339320719679363">
     <nodeInfo nodeId="8209339320719679369" fileName="MPS7408.java" startLine="12" startPosition="22" endLine="13" endPosition="241" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="jobs" />
