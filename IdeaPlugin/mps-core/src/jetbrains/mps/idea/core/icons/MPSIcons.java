@@ -29,6 +29,7 @@ public class MPSIcons {
     public static final Icon SOURCES_TAB_ICON = IconLoader.findIcon("/icons/sourcesTab.png");
     public static final Icon PATHS_TAB_ICON = IconLoader.findIcon("/icons/pathsTab.png");
     public static final Icon LANGUAGES_TAB_ICON = IconLoader.findIcon("/icons/languagesTab.png");
+    public static final Icon MODELS_TAB_ICON = IconLoader.findIcon("/icons/modelsTab.png");
     public static Icon DEVKITS_TAB_ICON = IconLoader.findIcon("/icons/devkitsTab.png");
     public static final Icon LANGUAGE_ICON = IconLoader.findIcon("/icons/language.png");
 }

@@ -28,14 +28,15 @@
             <implementation-class>jetbrains.mps.idea.core.make.NoMakeService</implementation-class>
         </component>
         <component>
-          <interface-class>jetbrains.mps.ide.navigation.NavigationSupport</interface-class>
-          <implementation-class>jetbrains.mps.idea.core.navigation.NavigationSupportImpl</implementation-class>
+            <interface-class>jetbrains.mps.ide.navigation.NavigationSupport</interface-class>
+            <implementation-class>jetbrains.mps.idea.core.navigation.NavigationSupportImpl</implementation-class>
         </component>
     </application-components>
 
     <xi:include href="../classes/META-INF/MPSCore.xml" xpointer="xpointer(/components/*)"/>
     <xi:include href="../classes/META-INF/MPSEditor.xml" xpointer="xpointer(/components/*)"/>
-    <xi:include href="../classes/jetbrains/mps/ide/editor/actions/MPSEditorActions.xml" xpointer="xpointer(/components/*)"/>
+    <xi:include href="../classes/jetbrains/mps/ide/editor/actions/MPSEditorActions.xml"
+                xpointer="xpointer(/components/*)"/>
 
     <project-components>
         <component>
@@ -67,6 +68,12 @@
         <action id="jetbrains.mps.idea.core.actions.UnmarkModelRootAction"
                 class="jetbrains.mps.idea.core.actions.UnmarkModelRootAction">
             <add-to-group group-id="MarkRootGroup"/>
+        </action>
+        <action id="jetbrains.mps.idea.core.actions.OpenModelPropertiesAction"
+                class="jetbrains.mps.idea.core.actions.OpenModelPropertiesAction">
+            <add-to-group group-id="ProjectViewPopupMenuSettingsGroup" relative-to-action="MarkRootGroup"
+                          anchor="after"/>
+            <keyboard-shortcut first-keystroke="alt ENTER" keymap="$default"/>
         </action>
     </actions>
 </idea-plugin>
