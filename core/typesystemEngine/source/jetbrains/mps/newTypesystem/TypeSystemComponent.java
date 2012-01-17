@@ -244,6 +244,9 @@ class TypeSystemComponent extends CheckingComponent {
     SNode type = null;
     SNode prevNode = null;
     SNode node = initialNode;
+    if (myTypeChecker.getRulesManager().getInferenceRules(node).isEmpty()) {
+      return null;
+    }
     long start = System.currentTimeMillis();
 
     while (node != null) {
