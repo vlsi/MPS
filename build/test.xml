@@ -25,7 +25,7 @@
       <fileset dir="${dest}/MPS ${version}/lib">
         <include name="**/*.jar"/>
       </fileset>
-      <path path="${dest}/MPS ${version}/languages/generate.ant.task.jar"/>
+      <path path="${dest}/MPS ${version}/lib/mps-backend.jar"/>
     </path>
     <javac classpathref="tests.classpath" destdir="${dest}/buildtests.tmp" fork="true" includeantruntime="false"
            memorymaximumsize="1024m">
@@ -53,7 +53,7 @@
         <fileset dir="${dest}/MPS ${version}/lib">
           <include name="*.jar"/>
         </fileset>
-        <path path="${dest}/MPS ${version}/languages/generate.ant.task.jar"/>
+        <path path="${dest}/MPS ${version}/lib/mps-backend.jar"/>
       </classpath>
     </junit>
 

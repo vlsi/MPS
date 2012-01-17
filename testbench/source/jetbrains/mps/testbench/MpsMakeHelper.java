@@ -212,7 +212,6 @@ public class MpsMakeHelper {
       };
     } else {
       pathsToLook = new File[]{new File(mpsHome.getAbsolutePath() + File.separator + "lib"),
-        new File(mpsHome.getAbsolutePath() + File.separator + "platform" + File.separator + "generate.ant.task.jar"),
         new File(mpsHome.getAbsolutePath() + File.separator + "plugin")};
     }
 

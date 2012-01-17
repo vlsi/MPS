@@ -277,7 +277,7 @@ public abstract class MpsLoadTask extends Task {
       //         new File(myMpsHome.getAbsolutePath() + File.separator + "platform" + File.separator + "builders"), 
       pathsToLook = new File[]{new File(myMpsHome.getAbsolutePath() + File.separator + "core"), new File(myMpsHome.getAbsolutePath() + File.separator + "workbench" + File.separator + "classes"), new File(myMpsHome.getAbsolutePath() + File.separator + "lib"), new File(myMpsHome.getAbsolutePath() + File.separator + "platform" + File.separator + "buildlanguage" + File.separator + "ant"), new File(myMpsHome.getAbsolutePath() + File.separator + "workbench" + File.separator + "typesystemUi" + File.separator + "classes"), new File(myMpsHome.getAbsolutePath() + File.separator + "MPSPlugin" + File.separator + "apiclasses")};
     } else {
-      pathsToLook = new File[]{new File(myMpsHome.getAbsolutePath() + File.separator + "lib"), new File(myMpsHome.getAbsolutePath() + File.separator + "languages" + File.separator + "generate.ant.task.jar"), new File(myMpsHome.getAbsolutePath() + File.separator + "plugin"), new File(myMpsHome.getAbsolutePath() + File.separator + "plugins")};
+      pathsToLook = new File[]{new File(myMpsHome.getAbsolutePath() + File.separator + "lib"), new File(myMpsHome.getAbsolutePath() + File.separator + "plugin"), new File(myMpsHome.getAbsolutePath() + File.separator + "plugins")};
     }
     Set<File> classPaths = new LinkedHashSet<File>();
     for (File path : pathsToLook) {
