@@ -17,6 +17,7 @@ package jetbrains.mps.ide.editor.warningPanel;
 
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.ProjectComponent;
+import com.intellij.openapi.extensions.Extensions;
 import com.intellij.openapi.fileEditor.FileEditor;
 import com.intellij.openapi.fileEditor.FileEditorManager;
 import com.intellij.openapi.fileEditor.FileEditorManagerEvent;
@@ -24,6 +25,7 @@ import com.intellij.openapi.fileEditor.FileEditorManagerListener;
 import com.intellij.openapi.project.DumbService;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vfs.VirtualFile;
+import com.jgoodies.looks.common.ExtPasswordView;
 import jetbrains.mps.openapi.editor.Editor;
 import jetbrains.mps.generator.TransientModelsModule.TransientSModelDescriptor;
 import jetbrains.mps.ide.editor.MPSFileNodeEditor;
@@ -127,19 +129,13 @@ public class MPSEditorWarningsManager implements ProjectComponent {
     SNode node = editor.getFile().getNode();
     if (node == null) return;
 
-    SModel smodel = node.getModel();
-    if (smodel == null) return;
+    EditorWarningsProvider[] providers = Extensions.getExtensions(EditorWarningsProvider.EP_NAME);
 
-    final SModelDescriptor model = smodel.getModelDescriptor();
-    if (model == null) return;
-
-    if (model instanceof TransientSModelDescriptor) {
-      addWarningPanel(editor, "Warning: the node is in a transient model. Your changes won't be saved.");
-    }
-
-    IModule module = model.getModule();
-    if (module != null && module.isPackaged()) {
-      addWarningPanel(editor, "Warning: the node is in a packaged model. Your changes won't be saved");
+    for (EditorWarningsProvider provider : providers) {
+      WarningPanel panel = provider.getWarningPanel(node);
+      if (panel != null) {
+        addWarningPanel(editor, panel);
+      }
     }
   }
 
@@ -153,15 +149,10 @@ public class MPSEditorWarningsManager implements ProjectComponent {
     }
   }
 
-  private void addWarningPanel(MPSFileNodeEditor editor, String text) {
-    addWarningPanel(editor, text, null, null);
-  }
-
-  private void addWarningPanel(MPSFileNodeEditor editor, String text, String linkText, Runnable handler) {
+  private void addWarningPanel(MPSFileNodeEditor editor, WarningPanel panel) {
     if (!myWarnings.containsKey(editor)) {
       myWarnings.put(editor, new HashSet<WarningPanel>());
     }
-    WarningPanel panel = new WarningPanel(text, linkText, handler);
     myFileEditorManager.addTopComponent(editor, panel);
     myWarnings.get(editor).add(panel);
   }

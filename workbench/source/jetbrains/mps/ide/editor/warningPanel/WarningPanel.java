@@ -25,7 +25,7 @@ import javax.swing.event.HyperlinkEvent;
 import javax.swing.event.HyperlinkListener;
 import java.awt.BorderLayout;
 
-class WarningPanel extends JPanel {
+public class WarningPanel extends JPanel {
   WarningPanel(String text) {
     this(text, null, null);
   }
