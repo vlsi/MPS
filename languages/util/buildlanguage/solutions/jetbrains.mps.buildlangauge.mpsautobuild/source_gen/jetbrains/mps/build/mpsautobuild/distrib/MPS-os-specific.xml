@@ -98,7 +98,7 @@
     <exec executable="${input.dir}/nsis/makensis.exe" osfamily="windows" failonerror="true">
       <arg file="${input.dir}/${installer.nsi}" />
     </exec>
-    <exec executable="${input.dir}/signtool.exe" osfamily="windows" failonerror="true" dir="${scripts.folder}">
+    <exec executable="${input.dir}/signtool.exe" osfamily="windows" failonerror="true" dir="${input.dir}">
       <arg line="sign /f ${mps_home}/build/sign/cs_cert2011.pfx /p 123 ${output.dir}/${build.number}-windows.exe" />
     </exec>
   </target>
