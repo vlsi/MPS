@@ -29,7 +29,7 @@ public class BuildLayout_JavaOutput_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_slj1tt_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "output of");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "compile output of");
     editorCell.setCellId("Constant_slj1tt_a0");
     buildStyles_StyleSheet.getOutputLayout(editorCell).apply(editorCell);
     editorCell.setDefaultText("");

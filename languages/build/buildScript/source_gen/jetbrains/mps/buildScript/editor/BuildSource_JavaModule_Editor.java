@@ -22,7 +22,6 @@ import jetbrains.mps.nodeEditor.CellActionType;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultReferenceSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
-import jetbrains.mps.nodeEditor.MPSColors;
 
 public class BuildSource_JavaModule_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -186,8 +185,7 @@ public class BuildSource_JavaModule_Editor extends DefaultNodeEditor {
       editorCell.setCellId("Constant_kr3er8_a1c0");
       {
         Style style = editorCell.getStyle();
-        style.set(StyleAttributes.TEXT_COLOR, MPSColors.gray);
-        style.set(StyleAttributes.SELECTABLE, true);
+        style.set(StyleAttributes.EDITABLE, true);
       }
       editorCell.setDefaultText("<no sources>");
       return editorCell;
@@ -236,6 +234,10 @@ public class BuildSource_JavaModule_Editor extends DefaultNodeEditor {
     private EditorCell createConstant_kr3er8_a3c0(EditorContext editorContext, SNode node) {
       EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
       editorCell.setCellId("Constant_kr3er8_a3c0");
+      {
+        Style style = editorCell.getStyle();
+        style.set(StyleAttributes.EDITABLE, true);
+      }
       editorCell.setDefaultText("<no dependencies>");
       return editorCell;
     }

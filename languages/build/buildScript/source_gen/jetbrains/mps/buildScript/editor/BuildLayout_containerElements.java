@@ -87,9 +87,13 @@ public class BuildLayout_containerElements extends AbstractCellProvider {
 
     public EditorCell createEmptyCell(EditorContext editorContext) {
       EditorCell emptyCell = null;
-      emptyCell = super.createEmptyCell(editorContext);
+      emptyCell = this.createEmptyCell_internal(editorContext, this.getOwner());
       this.installElementCellActions(super.getOwner(), null, emptyCell, editorContext);
       return emptyCell;
+    }
+
+    public EditorCell createEmptyCell_internal(EditorContext editorContext, SNode node) {
+      return this.createConstant_hdw7mg_a0a(editorContext, node);
     }
 
     public void installElementCellActions(SNode listOwner, SNode elementNode, EditorCell elementCell, EditorContext editorContext) {
@@ -102,6 +106,17 @@ public class BuildLayout_containerElements extends AbstractCellProvider {
           elementCell.setSubstituteInfo(new DefaultChildSubstituteInfo(listOwner, elementNode, super.getLinkDeclaration(), editorContext));
         }
       }
+    }
+
+    private EditorCell createConstant_hdw7mg_a0a(EditorContext editorContext, SNode node) {
+      EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
+      editorCell.setCellId("Constant_hdw7mg_a0a");
+      {
+        Style style = editorCell.getStyle();
+        style.set(StyleAttributes.EDITABLE, true);
+      }
+      editorCell.setDefaultText("<empty>");
+      return editorCell;
     }
   }
 }

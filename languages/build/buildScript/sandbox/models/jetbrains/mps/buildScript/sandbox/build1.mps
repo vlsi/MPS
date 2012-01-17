@@ -34,12 +34,6 @@
     <node role="layout" roleId="3ior.5617550519002745372" type="3ior.BuildLayout" typeId="3ior.5617550519002745364" id="4993211115183387840">
       <node role="children" roleId="3ior.7389400916848037006" type="3ior.BuildLayout_Folder" typeId="3ior.7389400916848036984" id="4993211115183387843">
         <property name="name" nameId="tpck.1169194664001" value="default" />
-        <node role="children" roleId="3ior.7389400916848037006" type="3ior.BuildLayout_Jar" typeId="3ior.7389400916848050074" id="4993211115183392387">
-          <property name="name" nameId="tpck.1169194664001" value="asd" />
-          <node role="children" roleId="3ior.7389400916848037006" type="3ior.BuildLayout_JavaOutput" typeId="3ior.5966744135495979931" id="4993211115183392388">
-            <link role="module" roleId="3ior.5966744135495979932" targetNodeId="3695638809903322726" resolveInfo="mps-core" />
-          </node>
-        </node>
       </node>
     </node>
     <node role="macros" roleId="3ior.5617550519002745378" type="3ior.BuildFolderMacro" typeId="3ior.7389400916848136194" id="4993211115183392374">
@@ -50,9 +44,31 @@
     </node>
   </root>
   <root id="4993211115183416028">
-    <node role="layout" roleId="3ior.5617550519002745372" type="3ior.BuildLayout" typeId="3ior.5617550519002745364" id="4993211115183416029" />
+    <node role="layout" roleId="3ior.5617550519002745372" type="3ior.BuildLayout" typeId="3ior.5617550519002745364" id="4993211115183416029">
+      <node role="children" roleId="3ior.7389400916848037006" type="3ior.BuildLayout_Folder" typeId="3ior.7389400916848036984" id="3542413272732928479">
+        <property name="name" nameId="tpck.1169194664001" value="xx" />
+        <node role="children" roleId="3ior.7389400916848037006" type="3ior.BuildLayout_Jar" typeId="3ior.7389400916848050074" id="3542413272732928480">
+          <property name="name" nameId="tpck.1169194664001" value="xx" />
+        </node>
+      </node>
+    </node>
     <node role="dependencies" roleId="3ior.5617550519002745381" type="3ior.BuildProjectDependency" typeId="3ior.4993211115183325728" id="4993211115183420535">
       <link role="script" roleId="3ior.5617550519002745380" targetNodeId="4993211115183387839" resolveInfo="buildCore" />
+    </node>
+    <node role="parts" roleId="3ior.7389400916848080626" type="3ior.BuildSource_JavaLibrary" typeId="3ior.6057319140845467763" id="3542413272732920801">
+      <property name="name" nameId="tpck.1169194664001" value="asd" />
+      <node role="elements" roleId="3ior.6057319140845478673" type="3ior.BuildSource_JavaLibraryJar" typeId="3ior.6057319140845478671" id="3542413272732920802">
+        <node role="path" roleId="3ior.6057319140845478672" type="3ior.BuildSourcePath" typeId="3ior.7389400916848073790" id="3542413272732920803" />
+      </node>
+    </node>
+    <node role="parts" roleId="3ior.7389400916848080626" type="3ior.BuildSource_JavaModule" typeId="3ior.7389400916848073784" id="3542413272732920808">
+      <property name="name" nameId="tpck.1169194664001" value="asd" />
+      <node role="contentRoots" roleId="3ior.7389400916848073826" type="3ior.BuildSource_JavaContentRoot" typeId="3ior.7389400916848073810" id="3542413272732920809">
+        <node role="basePath" roleId="3ior.7389400916848073811" type="3ior.BuildSourcePath" typeId="3ior.7389400916848073790" id="3542413272732920810" />
+      </node>
+      <node role="dependencies" roleId="3ior.2754769020641646251" type="3ior.BuildSource_JavaDependencyLibrary" typeId="3ior.4993211115183250894" id="3542413272732920811">
+        <link role="library" roleId="3ior.4993211115183250895" targetNodeId="3695638809903322719" resolveInfo="apache-collections" />
+      </node>
     </node>
   </root>
 </model>

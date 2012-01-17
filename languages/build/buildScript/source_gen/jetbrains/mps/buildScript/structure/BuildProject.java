@@ -23,6 +23,7 @@ public class BuildProject extends BaseConcept implements ScopeProvider, INamedCo
   public static final String DEPENDENCIES = "dependencies";
   public static final String MACROS = "macros";
   public static final String PARTS = "parts";
+  public static final String ASPECTS = "aspects";
   public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
 
   public BuildProject(SNode node) {
@@ -127,6 +128,26 @@ public class BuildProject extends BaseConcept implements ScopeProvider, INamedCo
 
   public void insertParts(BuildProjectPart prev, BuildProjectPart node) {
     this.insertChild(prev, BuildProject.PARTS, node);
+  }
+
+  public int getAspectsesCount() {
+    return this.getChildCount(BuildProject.ASPECTS);
+  }
+
+  public Iterator<BuildAspect> aspectses() {
+    return this.children(BuildAspect.class, BuildProject.ASPECTS);
+  }
+
+  public List<BuildAspect> getAspectses() {
+    return this.getChildren(BuildAspect.class, BuildProject.ASPECTS);
+  }
+
+  public void addAspects(BuildAspect node) {
+    this.addChild(BuildProject.ASPECTS, node);
+  }
+
+  public void insertAspects(BuildAspect prev, BuildAspect node) {
+    this.insertChild(prev, BuildProject.ASPECTS, node);
   }
 
   public int getSmodelAttributesCount() {

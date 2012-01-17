@@ -1,5 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
+  <dependency className="jetbrains.mps.buildScript.structure.BuildArtifact" file="BuildArtifact.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.Iterator" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.buildScript.structure.BuildAspect" />
+    <classNode dependClassName="jetbrains.mps.buildScript.structure.BuildLayout_Node" />
+    <classNode dependClassName="jetbrains.mps.lang.core.structure.Attribute" />
+    <classNode dependClassName="jetbrains.mps.lang.core.structure.INamedConcept" />
+    <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModel" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
+  </dependency>
+  <dependency className="jetbrains.mps.buildScript.structure.BuildAspect" file="BuildAspect.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModel" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
+  </dependency>
   <dependency className="jetbrains.mps.buildScript.structure.BuildDependency" file="BuildDependency.java">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
@@ -112,6 +134,7 @@
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Iterator" />
     <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.buildScript.structure.BuildAspect" />
     <classNode dependClassName="jetbrains.mps.buildScript.structure.BuildDependency" />
     <classNode dependClassName="jetbrains.mps.buildScript.structure.BuildLayout" />
     <classNode dependClassName="jetbrains.mps.buildScript.structure.BuildMacro" />

@@ -55,6 +55,7 @@ public class BuildProject_Editor extends DefaultNodeEditor {
     }
     editorCell.addEditorCell(this.createConstant_vny568_n0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_vny568_o0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNodeList_vny568_p0(editorContext, node));
     return editorCell;
   }
 
@@ -160,7 +161,7 @@ public class BuildProject_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_vny568_n0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "output layout:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "default layout:");
     editorCell.setCellId("Constant_vny568_n0");
     buildStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     {
@@ -208,6 +209,19 @@ public class BuildProject_Editor extends DefaultNodeEditor {
       style.set(StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE, true);
       style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
       style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
+    }
+    editorCell.setRole(handler.getElementRole());
+    return editorCell;
+  }
+
+  private EditorCell createRefNodeList_vny568_p0(EditorContext editorContext, SNode node) {
+    AbstractCellListHandler handler = new BuildProject_Editor.aspectsListHandler_vny568_p0(node, "aspects", editorContext);
+    EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
+    editorCell.setCellId("refNodeList_aspects");
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE, true);
+      style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     }
     editorCell.setRole(handler.getElementRole());
     return editorCell;
@@ -362,6 +376,57 @@ public class BuildProject_Editor extends DefaultNodeEditor {
           elementCell.setSubstituteInfo(new DefaultChildSubstituteInfo(listOwner, elementNode, super.getLinkDeclaration(), editorContext));
         }
       }
+    }
+  }
+
+  private static class aspectsListHandler_vny568_p0 extends RefNodeListHandler {
+    public aspectsListHandler_vny568_p0(SNode ownerNode, String childRole, EditorContext context) {
+      super(ownerNode, childRole, context, false);
+    }
+
+    public SNode createNodeToInsert(EditorContext editorContext) {
+      SNode listOwner = super.getOwner();
+      return NodeFactoryManager.createNode(listOwner, editorContext, super.getElementRole());
+    }
+
+    public EditorCell createNodeCell(EditorContext editorContext, SNode elementNode) {
+      EditorCell elementCell = super.createNodeCell(editorContext, elementNode);
+      this.installElementCellActions(this.getOwner(), elementNode, elementCell, editorContext);
+      return elementCell;
+    }
+
+    public EditorCell createEmptyCell(EditorContext editorContext) {
+      EditorCell emptyCell = null;
+      emptyCell = this.createEmptyCell_internal(editorContext, this.getOwner());
+      this.installElementCellActions(super.getOwner(), null, emptyCell, editorContext);
+      return emptyCell;
+    }
+
+    public EditorCell createEmptyCell_internal(EditorContext editorContext, SNode node) {
+      return this.createConstant_vny568_a51a(editorContext, node);
+    }
+
+    public void installElementCellActions(SNode listOwner, SNode elementNode, EditorCell elementCell, EditorContext editorContext) {
+      if (elementCell.getUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET) == null) {
+        elementCell.putUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET, AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET);
+        if (elementNode != null) {
+          elementCell.setAction(CellActionType.DELETE, new CellAction_DeleteNode(elementNode));
+        }
+        if (elementCell.getSubstituteInfo() == null || elementCell.getSubstituteInfo() instanceof DefaultReferenceSubstituteInfo) {
+          elementCell.setSubstituteInfo(new DefaultChildSubstituteInfo(listOwner, elementNode, super.getLinkDeclaration(), editorContext));
+        }
+      }
+    }
+
+    private EditorCell createConstant_vny568_a51a(EditorContext editorContext, SNode node) {
+      EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
+      editorCell.setCellId("Constant_vny568_a51a");
+      {
+        Style style = editorCell.getStyle();
+        style.set(StyleAttributes.EDITABLE, true);
+      }
+      editorCell.setDefaultText("<<additional aspects>>");
+      return editorCell;
     }
   }
 }
