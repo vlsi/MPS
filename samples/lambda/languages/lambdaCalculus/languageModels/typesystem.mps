@@ -59,6 +59,9 @@
     <node type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="6997567109318694516">
       <property name="name" nameId="tpck.1169194664001" value="typeof_AbstractionVarRef" />
     </node>
+    <node type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="4566051064524832993">
+      <property name="name" nameId="tpck.1169194664001" value="typeof_Variable" />
+    </node>
   </roots>
   <root id="6645816968628516758">
     <node role="body" roleId="tpd4.1195213635060" type="tpee.StatementList" typeId="tpee.1068580123136" id="6645816968628516759">
@@ -912,6 +915,13 @@
     <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="6997567109318694518">
       <property name="name" nameId="tpck.1169194664001" value="abstractionVarRef" />
       <link role="concept" roleId="tpd4.1174642800329" targetNodeId="qjd.4022026349915821199" resolveInfo="AbstractionVarRef" />
+    </node>
+  </root>
+  <root id="4566051064524832993">
+    <node role="body" roleId="tpd4.1195213635060" type="tpee.StatementList" typeId="tpee.1068580123136" id="4566051064524832994" />
+    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="4566051064524832995">
+      <property name="name" nameId="tpck.1169194664001" value="var" />
+      <link role="concept" roleId="tpd4.1174642800329" targetNodeId="qjd.5249919352014727954" resolveInfo="Variable" />
     </node>
   </root>
 </model>
