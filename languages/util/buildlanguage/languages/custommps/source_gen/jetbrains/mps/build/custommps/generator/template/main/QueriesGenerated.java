@@ -4,8 +4,8 @@ package jetbrains.mps.build.custommps.generator.template.main;
 
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.generator.template.BaseMappingRuleContext;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.build.custommps.behavior.MPSBuild_Behavior;
 import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.build.packaging.behavior.Layout_Behavior;
@@ -15,29 +15,19 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.library.BuiltInLibrariesIO;
 import java.io.File;
 import jetbrains.mps.build.packaging.behavior.Module_Behavior;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.generator.template.IfMacroContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.generator.template.WeavingMappingRuleContext;
+import jetbrains.mps.generator.template.MappingScriptContext;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 
 public class QueriesGenerated {
-  public static boolean baseMappingRule_Condition_1234891560671(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return (SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.build.distrib.structure.DistribConfiguration", true, false) != null);
-  }
-
   public static boolean baseMappingRule_Condition_8716889635481504738(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
     return ListSequence.fromList(SNodeOperations.getDescendants(_context.getNode(), "jetbrains.mps.build.custommps.structure.MPSBuild", false, new String[]{})).isNotEmpty() && MPSBuild_Behavior.isInMPSBuild_1239995424995();
-  }
-
-  public static boolean baseMappingRule_Condition_1236880986480(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.packaging.structure.Layout");
-  }
-
-  public static boolean baseMappingRule_Condition_1240396552572(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return ListSequence.fromList(SNodeOperations.getDescendants(_context.getNode(), "jetbrains.mps.build.custommps.structure.MPSBuild", false, new String[]{})).isNotEmpty();
   }
 
   public static Object propertyMacro_GetPropertyValue_4738159245302641861(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -92,7 +82,11 @@ public class QueriesGenerated {
     return Module_Behavior.call_getModule_1213877515148(_context.getNode()).getModuleFqName();
   }
 
-  public static Object referenceMacro_GetReferent_6128676491055272269(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+  public static Object propertyMacro_GetPropertyValue_4514696390935110029(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.build.packaging.structure.Layout", false, false), "name");
+  }
+
+  public static Object referenceMacro_GetReferent_4514696390935110062(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "CustomMPSBuildToUnpackZipAntcall");
   }
 
@@ -122,6 +116,10 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_4514696390934965694(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return _context.getNode();
+  }
+
+  public static SNode sourceNodeQuery_4514696390935114249(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "licencePath", true);
   }
 
   public static Iterable sourceNodesQuery_8716889635481488810(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
@@ -160,11 +158,9 @@ public class QueriesGenerated {
     });
   }
 
-  public static SNode weaving_MappingRule_ContextNodeQuery_1236880980817(final IOperationContext opereationContext, final WeavingMappingRuleContext _context) {
-    return _context.getCopiedOutputNodeForInputNode(SNodeOperations.getParent(_context.getNode()));
-  }
-
-  public static SNode weaving_MappingRule_ContextNodeQuery_1240396533793(final IOperationContext opereationContext, final WeavingMappingRuleContext _context) {
-    return _context.getCopiedOutputNodeForInputNode(_context.getNode());
+  public static void mappingScript_CodeBlock_4514696390935114319(final IOperationContext operationContext, final MappingScriptContext _context) {
+    SModelOperations.addRootNode(_context.getModel(), SNodeOperations.copyNode(SNodeOperations.getNode("r:ac652b40-7fbf-42e0-aa7e-798b06f8ad7f(jetbrains.mps.build.mpsautobuild.distrib)", "3765863190879880927")));
+    SModelOperations.addRootNode(_context.getModel(), SNodeOperations.copyNode(SNodeOperations.getNode("r:ac652b40-7fbf-42e0-aa7e-798b06f8ad7f(jetbrains.mps.build.mpsautobuild.distrib)", "4514696390935059944")));
+    SModelOperations.addRootNode(_context.getModel(), SNodeOperations.copyNode(SNodeOperations.getNode("r:ac652b40-7fbf-42e0-aa7e-798b06f8ad7f(jetbrains.mps.build.mpsautobuild.distrib)", "3885435385580582779")));
   }
 }
