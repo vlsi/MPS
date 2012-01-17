@@ -185,6 +185,7 @@
       <modulePath path="${project}/languages/util/buildlanguage/languages/startup/startup.mpl" folder="languages.build" />
       <modulePath path="${project}/languages/util/buildlanguage/solutions/jetbrains.mps.build.antsupport/jetbrains.mps.build.antsupport.msd" folder="languages.build" />
       <modulePath path="${project}/languages/util/buildlanguage/solutions/jetbrains.mps.build.mpsautobuild.test/test.msd" folder="languages.build" />
+      <modulePath path="${project}/languages/util/buildlanguage/solutions/jetbrains.mps.build.mpsdist/mpsdist.msd" folder="languages.build" />
       <modulePath path="${project}/languages/util/buildlanguage/solutions/jetbrains.mps.buildlangauge.mpsautobuild/jetbrains.mps.buildlangauge.mpsautobuild.msd" folder="languages.build" />
       <modulePath path="${project}/languages/util/conf/languages/conf/conf.mpl" folder="languages" />
       <modulePath path="${project}/languages/util/conf/solutions/jetbrains.mps.platform.conf.sandbox/jetbrains.mps.platform.conf.sandbox.msd" folder="languages" />
