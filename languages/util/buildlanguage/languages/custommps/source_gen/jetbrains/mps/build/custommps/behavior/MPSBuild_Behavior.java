@@ -14,22 +14,8 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.project.ModuleId;
-import java.util.ArrayList;
-import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.vfs.FileSystem;
-import jetbrains.mps.util.PathManager;
 import java.io.File;
-import jetbrains.mps.project.IModule;
-import java.util.Set;
-import jetbrains.mps.internal.collections.runtime.SetSequence;
-import java.util.HashSet;
-import jetbrains.mps.project.structure.modules.ModuleReference;
-import jetbrains.mps.internal.collections.runtime.ISelector;
-import jetbrains.mps.build.packaging.behavior.Module_Behavior;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.project.MPSExtentions;
-import jetbrains.mps.project.StubPath;
+import jetbrains.mps.util.PathManager;
 import java.util.Properties;
 import java.io.BufferedInputStream;
 import java.io.FileInputStream;
@@ -71,46 +57,6 @@ public class MPSBuild_Behavior {
       return false;
     }
     return moduleId.equals(language.getModuleReference().getModuleId());
-  }
-
-  public static Iterable<SNode> getClassPathModules_1238502072959(String prefix) {
-    List<SNode> paths = new ArrayList<SNode>();
-    IFile dir = FileSystem.getInstance().getFileByPath(PathManager.getHomePath() + File.separator + prefix.replace("/", File.separator));
-    List<IModule> modulesList = MPSModuleRepository.getInstance().getAllModulesInDirectory(dir);
-    Set<IModule> modulesInClasspath = SetSequence.fromSet(new HashSet<IModule>());
-    for (IModule module : ListSequence.fromList(modulesList)) {
-      if (module instanceof Language) {
-        Language language = (Language) module;
-        SetSequence.fromSet(modulesInClasspath).addElement(language);
-        List<ModuleReference> list = language.getRuntimeModulesReferences();
-        SetSequence.fromSet(modulesInClasspath).addSequence(ListSequence.fromList(list).select(new ISelector<ModuleReference, IModule>() {
-          public IModule select(ModuleReference it) {
-            return MPSModuleRepository.getInstance().getModule(it);
-          }
-        }));
-      }
-    }
-    for (IModule module : SetSequence.fromSet(modulesInClasspath)) {
-      String moduleProperName = Module_Behavior.extractModuleProperName_1235487584035(module);
-      SNode path = SConceptOperations.createNewNode("jetbrains.mps.build.distrib.structure.SimplePath", null);
-      SPropertyOperations.set(path, "path", prefix + "/" + moduleProperName + "." + MPSExtentions.MPS_ARCH);
-      ListSequence.fromList(paths).addElement(path);
-      if (module instanceof Language) {
-        Language language = (Language) module;
-        List<StubPath> runtimeCP = language.getRuntimeStubPaths();
-        ListSequence.fromList(runtimeCP).removeSequence(ListSequence.fromList(language.getAllStubPaths()));
-        if (!(ListSequence.fromList(runtimeCP).isEmpty())) {
-          path = SConceptOperations.createNewNode("jetbrains.mps.build.distrib.structure.SimplePath", null);
-          SPropertyOperations.set(path, "path", prefix + "/" + moduleProperName + "." + MPSExtentions.RUNTIME_ARCH);
-          ListSequence.fromList(paths).addElement(path);
-        }
-      }
-    }
-    return ListSequence.fromList(paths).sort(new ISelector<SNode, Comparable<?>>() {
-      public Comparable<?> select(SNode it) {
-        return SPropertyOperations.getString(it, "path");
-      }
-    }, true);
   }
 
   public static boolean isInMPSBuild_1239995424995() {

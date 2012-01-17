@@ -629,7 +629,6 @@
     <mkdir dir="${deploy.dir}/MPS/languages/util/ui" />
     <antcall target="MPS-languages.pack.jetbrains.mps.buildlanguage" />
     <antcall target="MPS-languages.pack.jetbrains.mps.build.custommps" />
-    <antcall target="MPS-languages.pack.jetbrains.mps.build.distrib" />
     <antcall target="MPS-languages.pack.jetbrains.mps.build.generictasks" />
     <antcall target="MPS-languages.pack.jetbrains.mps.build.packaging" />
     <antcall target="MPS-languages.pack.jetbrains.mps.build.dependency" />

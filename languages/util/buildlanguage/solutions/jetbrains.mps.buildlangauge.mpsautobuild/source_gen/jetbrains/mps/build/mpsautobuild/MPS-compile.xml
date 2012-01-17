@@ -35,7 +35,6 @@
   <property name="jetbrains.mps.bash.classes" value="${base_dir}/languages/util/bash/languages/bash/classes_gen" />
   <property name="jetbrains.mps.build.custommps.classes" value="${base_dir}/languages/util/buildlanguage/languages/custommps/classes_gen" />
   <property name="jetbrains.mps.build.dependency.classes" value="${base_dir}/languages/util/buildlanguage/languages/dependency/classes_gen" />
-  <property name="jetbrains.mps.build.distrib.classes" value="${base_dir}/languages/util/buildlanguage/languages/distrib/classes_gen" />
   <property name="jetbrains.mps.build.generictasks.classes" value="${base_dir}/languages/util/buildlanguage/languages/generictasks/classes_gen" />
   <property name="jetbrains.mps.build.gentest.classes" value="${base_dir}/languages/util/buildlanguage/languages/gentest/classes_gen" />
   <property name="jetbrains.mps.build.mpsdist.classes" value="${base_dir}/languages/util/buildlanguage/solutions/jetbrains.mps.build.mpsdist/classes_gen" />
@@ -327,8 +326,6 @@
   <path id="cycle.jetbrains.mps.build.custommps_tjc.src">
     <path path="${base_dir}/languages/util/buildlanguage/languages/custommps/source_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/custommps/test_gen" />
-    <path path="${base_dir}/languages/util/buildlanguage/languages/distrib/source_gen" />
-    <path path="${base_dir}/languages/util/buildlanguage/languages/distrib/test_gen" />
   </path>
   <path id="cycle.jetbrains.mps.build.dependency_tjc.src">
     <path path="${base_dir}/languages/util/buildlanguage/languages/dependency/source_gen" />
@@ -2960,7 +2957,6 @@
   </path>
   <path id="cycle.jetbrains.mps.build.custommps_tjc.classpaths">
     <path path="${base_dir}/languages/util/buildlanguage/languages/custommps/classes_gen" />
-    <path path="${base_dir}/languages/util/buildlanguage/languages/distrib/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
@@ -3037,7 +3033,6 @@
     <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/custommps/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/distrib/classes" />
-    <path path="${base_dir}/languages/util/buildlanguage/languages/distrib/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/gentest/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/packaging/classes_gen" />
@@ -11103,11 +11098,8 @@
     <fail unless="base_dir" message="Property base_dir unspecified." />
     <mkdir dir="${base_dir}/languages/util/buildlanguage/languages/custommps/source_gen" />
     <mkdir dir="${base_dir}/languages/util/buildlanguage/languages/custommps/test_gen" />
-    <mkdir dir="${base_dir}/languages/util/buildlanguage/languages/distrib/source_gen" />
-    <mkdir dir="${base_dir}/languages/util/buildlanguage/languages/distrib/test_gen" />
     <mkdir dir="${classes.dump}" />
     <mkdir dir="${jetbrains.mps.build.custommps.classes}" />
-    <mkdir dir="${jetbrains.mps.build.distrib.classes}" />
     <javac classpathref="cycle.jetbrains.mps.build.custommps_tjc.classpaths" destdir="${classes.dump}" fork="true" includeantruntime="false" memorymaximumsize="1024m">
       <src refid="cycle.jetbrains.mps.build.custommps_tjc.src" />
     </javac>
@@ -11115,20 +11107,10 @@
       <fileset includes="**/*.png" dir="${base_dir}/languages/util/buildlanguage/languages/custommps/source_gen" />
       <fileset includes="**/*.png" dir="${base_dir}/languages/util/buildlanguage/languages/custommps/test_gen" />
     </copy>
-    <copy todir="${jetbrains.mps.build.distrib.classes}">
-      <fileset includes="**/*.png" dir="${base_dir}/languages/util/buildlanguage/languages/distrib/source_gen" />
-      <fileset includes="**/*.png" dir="${base_dir}/languages/util/buildlanguage/languages/distrib/test_gen" />
-    </copy>
     <javac classpathref="cycle.jetbrains.mps.build.custommps_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.build.custommps.classes}" fork="true" includeantruntime="false" memorymaximumsize="1024m" debug="true">
       <src>
         <path path="${base_dir}/languages/util/buildlanguage/languages/custommps/source_gen" />
         <path path="${base_dir}/languages/util/buildlanguage/languages/custommps/test_gen" />
-      </src>
-    </javac>
-    <javac classpathref="cycle.jetbrains.mps.build.custommps_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.build.distrib.classes}" fork="true" includeantruntime="false" memorymaximumsize="1024m" debug="true">
-      <src>
-        <path path="${base_dir}/languages/util/buildlanguage/languages/distrib/source_gen" />
-        <path path="${base_dir}/languages/util/buildlanguage/languages/distrib/test_gen" />
       </src>
     </javac>
     <delete dir="${classes.dump}" />
@@ -12421,7 +12403,6 @@
     <delete dir="${jetbrains.mps.baseLanguage.unitTest.execution.classes}" />
     <delete dir="${jetbrains.mps.bash.classes}" />
     <delete dir="${jetbrains.mps.build.custommps.classes}" />
-    <delete dir="${jetbrains.mps.build.distrib.classes}" />
     <delete dir="${jetbrains.mps.build.dependency.classes}" />
     <delete dir="${jetbrains.mps.build.generictasks.classes}" />
     <delete dir="${jetbrains.mps.build.property.classes}" />
