@@ -91,6 +91,7 @@
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.build.packaging.behavior.AbstractProjectComponent_Behavior" />
     <classNode dependClassName="jetbrains.mps.build.packaging.behavior.Configuration_Behavior" />
+    <classNode dependClassName="jetbrains.mps.build.packaging.behavior.IMacroHolder_Behavior" />
     <classNode dependClassName="jetbrains.mps.build.packaging.behavior.IStringExpression_Behavior" />
     <classNode dependClassName="jetbrains.mps.build.packaging.behavior.IVariableHolder_Behavior" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />

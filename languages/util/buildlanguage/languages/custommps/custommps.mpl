@@ -18,6 +18,7 @@
         <dependency reexport="false">02824ec0-c6a4-4517-a484-12d85172bbaa(jetbrains.mps.build.distrib)</dependency>
         <dependency reexport="false">86441d7a-e194-42da-81a5-2161ec62a379(MPS.Workbench)</dependency>
         <dependency reexport="false">6ed54515-acc8-4d1e-a16c-9fd6cfe951ea(MPS.Core)</dependency>
+        <dependency reexport="false">77cb4ae5-2831-4e0c-b819-c00e2c16c1b2(jetbrains.mps.build.mpsdist)</dependency>
       </dependencies>
       <usedLanguages>
         <usedLanguage>02824ec0-c6a4-4517-a484-12d85172bbaa(jetbrains.mps.build.distrib)</usedLanguage>

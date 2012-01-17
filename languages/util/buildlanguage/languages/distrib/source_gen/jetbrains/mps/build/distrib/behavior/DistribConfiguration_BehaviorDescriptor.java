@@ -15,6 +15,10 @@ public class DistribConfiguration_BehaviorDescriptor extends BaseConcept_Behavio
   public DistribConfiguration_BehaviorDescriptor() {
   }
 
+  public String virtual_evaluateMacro_1234975967990(SNode thisNode, String macroName) {
+    return DistribConfiguration_Behavior.virtual_evaluateMacro_1234975967990(thisNode, macroName);
+  }
+
   public String virtual_getPath_1234976932856(SNode thisNode) {
     return DistribConfiguration_Behavior.virtual_getPath_1234976932856(thisNode);
   }

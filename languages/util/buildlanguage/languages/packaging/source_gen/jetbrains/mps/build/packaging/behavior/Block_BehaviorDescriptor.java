@@ -12,6 +12,10 @@ public class Block_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor imp
   public Block_BehaviorDescriptor() {
   }
 
+  public String virtual_evaluateMacro_1234975967990(SNode thisNode, String macroName) {
+    return IMacroHolder_Behavior.virtual_evaluateMacro_1234975967990(thisNode, macroName);
+  }
+
   public String virtual_getPath_1234976932856(SNode thisNode) {
     return Block_Behavior.virtual_getPath_1234976932856(thisNode);
   }

@@ -15,6 +15,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.build.packaging.behavior.AbstractProjectComponent_Behavior;
+import jetbrains.mps.build.packaging.behavior.IMacroHolder_Behavior;
 import jetbrains.mps.build.packaging.behavior.IStringExpression_Behavior;
 import jetbrains.mps.build.packaging.behavior.IVariableHolder_Behavior;
 
@@ -56,6 +57,10 @@ public class DistribConfiguration_Behavior {
 
   public static String call_getVMOptionsExt_1231692561653(SNode thisNode) {
     return "vmoptions";
+  }
+
+  public static String virtual_evaluateMacro_1234975967990(SNode thisNode, String macroName) {
+    return IMacroHolder_Behavior.callSuper_evaluateMacro_1234975967990(thisNode, "jetbrains.mps.build.distrib.structure.DistribConfiguration", macroName);
   }
 
   public static String call_getVMOptionsFileName_1231749012626(SNode thisNode) {

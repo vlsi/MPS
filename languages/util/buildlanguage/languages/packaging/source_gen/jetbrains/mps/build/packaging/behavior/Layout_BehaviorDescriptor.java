@@ -13,6 +13,10 @@ public class Layout_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor im
   public Layout_BehaviorDescriptor() {
   }
 
+  public String virtual_evaluateMacro_1234975967990(SNode thisNode, String macroName) {
+    return Layout_Behavior.virtual_evaluateMacro_1234975967990(thisNode, macroName);
+  }
+
   public String virtual_getPath_1234976932856(SNode thisNode) {
     return Layout_Behavior.virtual_getPath_1234976932856(thisNode);
   }
@@ -26,7 +30,7 @@ public class Layout_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor im
   }
 
   public List<String> virtual_getAllMacroNames_1234975567387(SNode thisNode, boolean addBasedir) {
-    return IMacroHolder_Behavior.virtual_getAllMacroNames_1234975567387(thisNode, addBasedir);
+    return Layout_Behavior.virtual_getAllMacroNames_1234975567387(thisNode, addBasedir);
   }
 
   @Override
