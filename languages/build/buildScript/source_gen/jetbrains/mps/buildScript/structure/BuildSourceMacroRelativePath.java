@@ -9,10 +9,19 @@ import jetbrains.mps.project.GlobalScope;
 
 public class BuildSourceMacroRelativePath extends BuildSourcePath {
   public static final String concept = "jetbrains.mps.buildScript.structure.BuildSourceMacroRelativePath";
+  public static final String RELATIVE_PATH = "relativePath";
   public static final String MACRO = "macro";
 
   public BuildSourceMacroRelativePath(SNode node) {
     super(node);
+  }
+
+  public String getRelativePath() {
+    return this.getProperty(BuildSourceMacroRelativePath.RELATIVE_PATH);
+  }
+
+  public void setRelativePath(String value) {
+    this.setProperty(BuildSourceMacroRelativePath.RELATIVE_PATH, value);
   }
 
   public BuildFolderMacro getMacro() {

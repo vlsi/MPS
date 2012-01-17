@@ -8,9 +8,15 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class QueriesGenerated {
-  public static void nodeFactory_NodeSetup_BuildSourcePath_7389400916848172016(final IOperationContext operationContext, final NodeSetupContext _context) {
-    if (SNodeOperations.isInstanceOf(_context.getSampleNode(), "jetbrains.mps.buildScript.structure.BuildSourcePath")) {
-      SPropertyOperations.set(_context.getNewNode(), "relativePath", SPropertyOperations.getString(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.buildScript.structure.BuildSourcePath"), "relativePath"));
+  public static void nodeFactory_NodeSetup_BuildSourceMacroRelativePath_7389400916848172016(final IOperationContext operationContext, final NodeSetupContext _context) {
+    if (SNodeOperations.isInstanceOf(_context.getSampleNode(), "jetbrains.mps.buildScript.structure.BuildSourceProjectRelativePath")) {
+      SPropertyOperations.set(_context.getNewNode(), "relativePath", SPropertyOperations.getString(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.buildScript.structure.BuildSourceProjectRelativePath"), "relativePath"));
+    }
+  }
+
+  public static void nodeFactory_NodeSetup_BuildSourceProjectRelativePath_5481553824944787387(final IOperationContext operationContext, final NodeSetupContext _context) {
+    if (SNodeOperations.isInstanceOf(_context.getSampleNode(), "jetbrains.mps.buildScript.structure.BuildSourceMacroRelativePath")) {
+      SPropertyOperations.set(_context.getNewNode(), "relativePath", SPropertyOperations.getString(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.buildScript.structure.BuildSourceMacroRelativePath"), "relativePath"));
     }
   }
 }

@@ -10,18 +10,9 @@ import jetbrains.mps.project.GlobalScope;
 
 public class BuildSourcePath extends BaseConcept {
   public static final String concept = "jetbrains.mps.buildScript.structure.BuildSourcePath";
-  public static final String RELATIVE_PATH = "relativePath";
 
   public BuildSourcePath(SNode node) {
     super(node);
-  }
-
-  public String getRelativePath() {
-    return this.getProperty(BuildSourcePath.RELATIVE_PATH);
-  }
-
-  public void setRelativePath(String value) {
-    this.setProperty(BuildSourcePath.RELATIVE_PATH, value);
   }
 
   public static BuildSourcePath newInstance(SModel sm, boolean init) {

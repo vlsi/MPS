@@ -26,6 +26,7 @@ public class BuildFolderMacro_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createProperty_io6s4u_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_io6s4u_c0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_io6s4u_d0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_io6s4u_e0(editorContext, node));
     return editorCell;
   }
 
@@ -40,6 +41,13 @@ public class BuildFolderMacro_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_io6s4u_c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "=");
     editorCell.setCellId("Constant_io6s4u_c0");
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createConstant_io6s4u_e0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
+    editorCell.setCellId("Constant_io6s4u_e0");
     editorCell.setDefaultText("");
     return editorCell;
   }

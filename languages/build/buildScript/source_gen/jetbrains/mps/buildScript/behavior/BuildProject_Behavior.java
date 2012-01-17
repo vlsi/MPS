@@ -28,4 +28,8 @@ public class BuildProject_Behavior {
     }
     return null;
   }
+
+  public static String call_getBasePath_5481553824944773325(SNode thisNode) {
+    return thisNode.getModel().getModelDescriptor().getModule().getDescriptorFile().getParent().getPath();
+  }
 }
