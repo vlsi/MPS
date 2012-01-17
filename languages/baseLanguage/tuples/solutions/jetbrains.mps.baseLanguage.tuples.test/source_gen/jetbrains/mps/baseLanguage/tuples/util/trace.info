@@ -165,12 +165,21 @@
     <scopeInfo nodeId="9171470541351200515" fileName="Sample.java" startLine="29" startPosition="23" endLine="30" endPosition="22" />
     <scopeInfo nodeId="9171470541351200515" fileName="Sample.java" startLine="34" startPosition="59" endLine="35" endPosition="39" />
     <scopeInfo nodeId="9171470541351200515" fileName="Sample.java" startLine="8" startPosition="58" endLine="11" endPosition="3" />
-    <scopeInfo nodeId="9171470541351200515" fileName="Sample.java" startLine="12" startPosition="0" endLine="15" endPosition="3" />
-    <scopeInfo nodeId="9171470541351200515" fileName="Sample.java" startLine="16" startPosition="0" endLine="20" endPosition="0" />
-    <scopeInfo nodeId="9171470541351200515" fileName="Sample.java" startLine="20" startPosition="0" endLine="24" endPosition="0" />
+    <scopeInfo nodeId="9171470541351200515" fileName="Sample.java" startLine="12" startPosition="0" endLine="15" endPosition="3">
+      <varInfo nodeId="9171470541351200515" varName="count" />
+      <varInfo nodeId="9171470541351200515" varName="num" />
+    </scopeInfo>
+    <scopeInfo nodeId="9171470541351200515" fileName="Sample.java" startLine="16" startPosition="0" endLine="20" endPosition="0">
+      <varInfo nodeId="9171470541351200515" varName="value" />
+    </scopeInfo>
+    <scopeInfo nodeId="9171470541351200515" fileName="Sample.java" startLine="20" startPosition="0" endLine="24" endPosition="0">
+      <varInfo nodeId="9171470541351200515" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="9171470541351200515" fileName="Sample.java" startLine="24" startPosition="0" endLine="28" endPosition="0" />
     <scopeInfo nodeId="9171470541351200515" fileName="Sample.java" startLine="28" startPosition="0" endLine="32" endPosition="0" />
-    <scopeInfo nodeId="9171470541351200515" fileName="Sample.java" startLine="32" startPosition="0" endLine="37" endPosition="0" />
+    <scopeInfo nodeId="9171470541351200515" fileName="Sample.java" startLine="32" startPosition="0" endLine="37" endPosition="0">
+      <varInfo nodeId="9171470541351200515" varName="from" />
+    </scopeInfo>
     <unitInfo nodeId="9171470541351200515" fileName="Sample.java" startLine="8" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.baseLanguage.tuples.util.Sample" />
   </root>
   <root nodeId="974579920306753652">
