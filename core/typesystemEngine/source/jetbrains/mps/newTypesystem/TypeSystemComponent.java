@@ -18,7 +18,6 @@ package jetbrains.mps.newTypesystem;
 import gnu.trove.THashMap;
 import gnu.trove.THashSet;
 import jetbrains.mps.errors.IErrorReporter;
-import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.logging.Logger;
@@ -208,6 +207,11 @@ class TypeSystemComponent extends CheckingComponent {
     addDependentNodesTypeSystem(myCurrentCheckedNode, hashSet, true);
   }
 
+  protected void computeTypesSpecial(SNode nodeToCheck, boolean forceChildrenCheck, List<SNode> additionalNodes, boolean finalExpansion, SNode initialNode) {
+    computeTypesForNode(nodeToCheck, forceChildrenCheck, additionalNodes, initialNode);
+    if (typeCalculated(initialNode) != null) return;
+    solveInequalitiesAndExpandTypes(finalExpansion);
+  }
 
   protected void computeTypes(SNode nodeToCheck, boolean refreshTypes, boolean forceChildrenCheck, List<SNode> additionalNodes, boolean finalExpansion, SNode initialNode) {
     try {
@@ -254,7 +258,7 @@ class TypeSystemComponent extends CheckingComponent {
       if (prevNode != null) {
         additionalNodes.add(prevNode);
       }
-      computeTypes(node, false, false, additionalNodes, false, initialNode);
+      computeTypesSpecial(node, false, additionalNodes, false, initialNode);
       type = typeCalculated(initialNode);
       if (type == null) {
         if (node.isRoot()) {
