@@ -11,7 +11,16 @@
   </target>
   <target name="default" depends="base">
     <antcall target="MPS-os-specific-default.main" />
+    <antcall target="MPS-distribution.sign" />
     <antcall target="MPS-distribution.clean" />
+  </target>
+  <target name="sign" if="windows">
+    <fail unless="deploy.dir" message="Property deploy.dir unspecified." />
+    <fail unless="build.number" message="Property build.number unspecified." />
+    <fail unless="scripts.dir" message="Property scripts.dir unspecified." />
+    <exec executable="${scripts.dir}/sign/signtool.exe" osfamily="windows" failonerror="true" dir="${deploy.dir}">
+      <arg line="sign /f ${scripts.dir}/sign/cs_cert2011.pfx /p 123 ${deploy.dir}/${build.number}-windows.exe" />
+    </exec>
   </target>
   <target name="clean">
     <delete dir="${deploy.dir}/MPS" />

@@ -108,7 +108,6 @@
     <copy file="${base_dir}/build/resources/homepage.ico" tofile="${deploy.dir}/MPS-os-specific.exe/homepage.ico" />
     <copy file="${base_dir}/build/tools/jre.zip" tofile="${deploy.dir}/MPS-os-specific.exe/jre.zip" />
     <copy file="${base_dir}/build/tools/nsis.zip" tofile="${deploy.dir}/MPS-os-specific.exe/nsis.zip" />
-    <copy file="${base_dir}/build/sign/signtool.exe" tofile="${deploy.dir}/MPS-os-specific.exe/signtool.exe" />
     <copy file="${base_dir}/build/installer.nsi" tofile="${deploy.dir}/MPS-os-specific.exe/installer.nsi" />
     <copy file="${base_dir}/license/mps_license.txt" tofile="${deploy.dir}/MPS-os-specific.exe/license.txt" />
     <antcall target="MPS-os-specific.exe" inheritall="true">
@@ -119,5 +118,37 @@
     </antcall>
     <delete dir="${deploy.dir}/MPS-os-specific.exe" />
   </target>
-  <target name="clean.after" depends="do.the.job" />
+  <target name="clean.after" depends="do.the.job">
+    <delete dir="${deploy.dir}/MPS/lib/MPS-src.zip.tmp" />
+    <delete dir="${deploy.dir}/MPS/samples.zip.tmp" />
+    <delete dir="${deploy.dir}/${build.number}-buildTools.zip.tmp" />
+    <delete dir="${deploy.dir}/MPS/lib/idea-patch.jar.tmp" />
+    <delete dir="${deploy.dir}/MPS/lib/mps-core.jar.tmp" />
+    <delete dir="${deploy.dir}/MPS/lib/mps-editor.jar.tmp" />
+    <delete dir="${deploy.dir}/MPS/lib/mps-platform.jar.tmp" />
+    <delete dir="${deploy.dir}/MPS/lib/mps-workbench.jar.tmp" />
+    <delete dir="${deploy.dir}/MPS/lib/mps-boot.jar.tmp" />
+    <delete dir="${deploy.dir}/MPS/lib/mps-test.jar.tmp" />
+    <delete dir="${deploy.dir}/MPS/lib/mps-collections.jar.tmp" />
+    <delete dir="${deploy.dir}/MPS/lib/mps-closures.jar.tmp" />
+    <delete dir="${deploy.dir}/MPS/lib/mps-tuples.jar.tmp" />
+    <delete dir="${deploy.dir}/MPS/plugins/ideaIntegration.jar.tmp" />
+    <delete dir="${deploy.dir}/MPS/plugins/vcs.jar.tmp" />
+    <delete dir="${deploy.dir}/MPS/plugins/mpsmake.jar.tmp" />
+    <delete dir="${deploy.dir}/MPS/plugins/migration.jar.tmp" />
+    <delete dir="${deploy.dir}/MPS/plugins/mpsjava.jar.tmp" />
+    <delete dir="${deploy.dir}/MPS/plugins/modelchecker.jar.tmp" />
+    <delete dir="${deploy.dir}/MPS/plugins/samples.jar.tmp" />
+    <delete dir="${deploy.dir}/MPS/plugins/debugger-api/lib/debugger-api.jar.tmp" />
+    <delete dir="${deploy.dir}/MPS/plugins/debugger-java/lib/debugger-java.jar.tmp" />
+    <delete dir="${deploy.dir}/MPS/plugins/jetbrains.mps.debugger.java.customViewers.plugin.jar.tmp" />
+    <delete dir="${deploy.dir}/MPS/plugins/jetbrains.mps.debugger.api.languages.plugin/lib/jetbrains.mps.debugger.api.languages.plugin.jar.tmp" />
+    <delete dir="${deploy.dir}/MPS/plugins/jetbrains.mps.execution.configurations.implementation.plugin/lib/jetbrains.mps.execution.configurations.implementation.plugin.jar.tmp" />
+    <delete dir="${deploy.dir}/MPS/plugins/jetbrains.mps.execution.languages/lib/jetbrains.mps.execution.languages.jar.tmp" />
+    <delete dir="${deploy.dir}/MPS/languages/baseLanguage/jetbrains.mps.baseLanguage.collections.runtime.gwt-src.jar.tmp" />
+    <delete dir="${deploy.dir}/MPS/languages/baseLanguage/jetbrains.mps.baseLanguage.collections.runtime-src.jar.tmp" />
+    <delete dir="${deploy.dir}/MPS/languages/baseLanguage/jetbrains.mps.baseLanguage.closures.runtime-src.jar.tmp" />
+    <delete dir="${deploy.dir}/MPS/languages/baseLanguage/jetbrains.mps.baseLanguage.tuples.runtime-src.jar.tmp" />
+    <delete dir="${deploy.dir}/MPS/languages/generate.ant.task.jar.tmp" />
+  </target>
 </project>

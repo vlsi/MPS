@@ -5,6 +5,8 @@
   <dependency className="jetbrains.mps.build.mpsautobuild.MPS-distribution" file="MPS-distribution.xml" />
   <dependency className="jetbrains.mps.build.mpsautobuild.MPS-external" file="MPS-external.xml" />
   <dependency className="jetbrains.mps.build.mpsautobuild.MPS-languages" file="MPS-languages.xml" />
+  <dependency className="jetbrains.mps.build.mpsautobuild.MPS-os-specific-default" file="MPS-os-specific-default.xml" />
+  <dependency className="jetbrains.mps.build.mpsautobuild.MPS-os-specific" file="MPS-os-specific.properties" />
   <dependency className="jetbrains.mps.build.mpsautobuild.MPS" file="MPS.properties" />
   <dependency className="jetbrains.mps.build.mpsautobuild.branding_b1a" file="branding_b1a.xml" />
   <dependency className="jetbrains.mps.build.mpsautobuild.help-build" file="help-build.xml" />
