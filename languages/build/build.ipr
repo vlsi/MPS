@@ -8,6 +8,7 @@
     <projectModules>
       <modulePath path="${project}/buildScript/buildScript.mpl" />
       <modulePath path="${project}/buildScript/sandbox/sandbox.msd" />
+      <modulePath path="${project}/workflow/workflow.mpl" folder="" />
     </projectModules>
     <genConfs />
   </component>
