@@ -100,15 +100,19 @@ public class ChangeSetBuilder {
       null :
       check_nbyrtw_a0a3a3(newReference)
     );
-    if (eq_nbyrtw_a0a0e0d(oldTargetId, newTargetId) && eq_nbyrtw_a0a0e0d_0(check_nbyrtw_a0a0e0d(oldReference), check_nbyrtw_a0a0e0d_0(newReference)) && eq_nbyrtw_a0a4a3(check_nbyrtw_a0a4a3(oldReference), check_nbyrtw_a0a4a3_0(newReference))) {
+    SModelReference oldTargetModel = check_nbyrtw_a0e0d(oldReference);
+    if (SNodeOperations.getModel(oldNode).getSModelReference().equals(oldTargetModel)) {
+      oldTargetModel = null;
+    }
+    SModelReference newTargetModel = check_nbyrtw_a0g0d(newReference);
+    if (SNodeOperations.getModel(newNode).getSModelReference().equals(newTargetModel)) {
+      newTargetModel = null;
+    }
+    if (eq_nbyrtw_a0a0i0d(oldTargetId, newTargetId) && eq_nbyrtw_a0a0i0d_0(oldTargetModel, newTargetModel) && eq_nbyrtw_a0a8a3(check_nbyrtw_a0a8a3(oldReference), check_nbyrtw_a0a8a3_0(newReference))) {
       // same references 
     } else {
-      SModelReference targetModel = check_nbyrtw_a0a0a4a3(newReference);
-      if (eq_nbyrtw_a0b0a4a3(SNodeOperations.getModel(newNode).getSModelReference(), targetModel)) {
-        // This is internal reference 
-        targetModel = null;
-      }
-      ListSequence.fromList(myNewChanges).addElement(new SetReferenceChange(myChangeSet, oldNode.getSNodeId(), role, targetModel, newTargetId, check_nbyrtw_f0a0a2a0e0d(newReference)));
+      SModelReference targetModel = check_nbyrtw_a0a0a8a3(newReference);
+      ListSequence.fromList(myNewChanges).addElement(new SetReferenceChange(myChangeSet, oldNode.getSNodeId(), role, targetModel, newTargetId, check_nbyrtw_f0a0a1a0i0d(newReference)));
     }
   }
 
@@ -323,70 +327,63 @@ public class ChangeSetBuilder {
     return null;
   }
 
-  private static SModelReference check_nbyrtw_a0a0e0d(SReference checkedDotOperand) {
+  private static SModelReference check_nbyrtw_a0e0d(SReference checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getTargetSModelReference();
     }
     return null;
   }
 
-  private static SModelReference check_nbyrtw_a0a0e0d_0(SReference checkedDotOperand) {
+  private static SModelReference check_nbyrtw_a0g0d(SReference checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getTargetSModelReference();
     }
     return null;
   }
 
-  private static String check_nbyrtw_a0a4a3(SReference checkedDotOperand) {
+  private static String check_nbyrtw_a0a8a3(SReference checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getResolveInfo();
     }
     return null;
   }
 
-  private static String check_nbyrtw_a0a4a3_0(SReference checkedDotOperand) {
+  private static String check_nbyrtw_a0a8a3_0(SReference checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getResolveInfo();
     }
     return null;
   }
 
-  private static SModelReference check_nbyrtw_a0a0a4a3(SReference checkedDotOperand) {
+  private static SModelReference check_nbyrtw_a0a0a8a3(SReference checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getTargetSModelReference();
     }
     return null;
   }
 
-  private static String check_nbyrtw_f0a0a2a0e0d(SReference checkedDotOperand) {
+  private static String check_nbyrtw_f0a0a1a0i0d(SReference checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getResolveInfo();
     }
     return null;
   }
 
-  private static boolean eq_nbyrtw_a0a0e0d(Object a, Object b) {
+  private static boolean eq_nbyrtw_a0a0i0d(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b
     );
   }
 
-  private static boolean eq_nbyrtw_a0a0e0d_0(Object a, Object b) {
+  private static boolean eq_nbyrtw_a0a0i0d_0(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b
     );
   }
 
-  private static boolean eq_nbyrtw_a0a4a3(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
-  }
-
-  private static boolean eq_nbyrtw_a0b0a4a3(Object a, Object b) {
+  private static boolean eq_nbyrtw_a0a8a3(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b
