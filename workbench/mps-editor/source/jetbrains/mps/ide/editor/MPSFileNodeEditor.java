@@ -54,6 +54,7 @@ public class MPSFileNodeEditor extends UserDataHolderBase implements DocumentsEd
   private MPSNodeVirtualFile myFile;
   private IOperationContext myContext;
   private boolean myIsValid = true;
+  private boolean myDisposed = false;
 
   public MPSFileNodeEditor(IOperationContext context, final MPSNodeVirtualFile file) {
     this(ProjectHelper.toIdeaProject(context.getProject()), file, context);
@@ -187,14 +188,12 @@ public class MPSFileNodeEditor extends UserDataHolderBase implements DocumentsEd
 
   public void dispose() {
     myNodeEditor.dispose();
-    myNodeEditor = null;
-
     myComponent.removeAll();
-    myComponent = null;
+    myDisposed = true;
   }
 
-  private boolean isDisposed() {
-    return myNodeEditor == null;
+  public boolean isDisposed() {
+    return myDisposed;
   }
 
   public void recreateEditor() {

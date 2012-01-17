@@ -227,8 +227,14 @@ public abstract class ProjectStructureBuilder {
   }
 
   private SNode convert(ModuleReference ref) {
+    if (ref == null) {
+      return null;
+    }
     SNode result = SModelOperations.createNewNode(myModel, "jetbrains.mps.lang.project.structure.ModuleReference", null);
-    SPropertyOperations.set(result, "uuid", ref.getModuleId().toString());
+    SPropertyOperations.set(result, "uuid", (ref.getModuleId() != null ?
+      ref.getModuleId().toString() :
+      null
+    ));
     SPropertyOperations.set(result, "qualifiedName", ref.getModuleFqName());
     return result;
   }

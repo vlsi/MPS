@@ -2,7 +2,7 @@
 <dependenciesRoot>
   <dependency className="jetbrains.mps.debugger.java.runtime.ui.IconContainer" file="IconContainer.java">
     <classNode dependClassName="javax.swing.Icon" />
-    <classNode dependClassName="javax.swing.ImageIcon" />
+    <classNode dependClassName="jetbrains.mps.util.IconUtil" />
   </dependency>
   <dependency className="jetbrains.mps.debugger.java.runtime.ui.Icons" file="Icons.java">
     <classNode dependClassName="javax.swing.Icon" />

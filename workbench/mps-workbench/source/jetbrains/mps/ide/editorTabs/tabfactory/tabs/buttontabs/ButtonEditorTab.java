@@ -16,17 +16,21 @@
 package jetbrains.mps.ide.editorTabs.tabfactory.tabs.buttontabs;
 
 import com.intellij.openapi.actionSystem.*;
+import com.intellij.util.ui.UIUtil;
 import jetbrains.mps.ide.editorTabs.EditorTabDescriptor;
+import jetbrains.mps.ide.editorTabs.TabColorProvider;
 import jetbrains.mps.ide.editorTabs.tabfactory.NodeChangeCallback;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.util.Computable;
+import org.jetbrains.annotations.Nullable;
 
-import javax.swing.JComponent;
-import javax.swing.KeyStroke;
-import java.awt.Component;
+import javax.swing.*;
+import java.awt.*;
+import java.awt.image.BufferedImage;
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -37,13 +41,15 @@ class ButtonEditorTab {
   private int myIndex;
   private EditorTabDescriptor myDescriptor;
   private SNodePointer myBaseNode;
+  private TabColorProvider myTabColorProvider;
 
-  public ButtonEditorTab(ButtonTabsComponent tabComponent, NodeChangeCallback callback, int index, EditorTabDescriptor descriptor, SNodePointer baseNode) {
+  public ButtonEditorTab(ButtonTabsComponent tabComponent, NodeChangeCallback callback, int index, EditorTabDescriptor descriptor, SNodePointer baseNode, TabColorProvider tabColorProvider) {
     myTabComponent = tabComponent;
     myCallback = callback;
     myIndex = index;
     myDescriptor = descriptor;
     myBaseNode = baseNode;
+    myTabColorProvider = tabColorProvider;
   }
 
   public EditorTabDescriptor getDescriptor() {
@@ -102,9 +108,86 @@ class ButtonEditorTab {
     }
   }
 
+  @Nullable
+  private Color getButtonForegroundColor() {
+    if (myTabColorProvider != null) {
+      List<SNodePointer> nodePointers = ModelAccess.instance().runReadAction(new Computable<List<SNodePointer>>() {
+        @Override
+        public List<SNodePointer> compute() {
+          List<SNode> nodes = myDescriptor.getNodes(myBaseNode.getNode());
+          List<SNodePointer> nodePointers = new ArrayList<SNodePointer>();
+          for (SNode n : nodes) {
+            nodePointers.add(new SNodePointer(n));
+          }
+          return nodePointers;
+        }
+      });
+
+      Color aspectColor = myTabColorProvider.getAspectColor(nodePointers);
+      if (aspectColor != null) {
+        return aspectColor;
+      }
+    }
+    return UIUtil.getLabelForeground();
+  }
+
+  private Icon getCompositeTabIcon() {
+    Font font = UIUtil.getLabelFont();
+    FontMetrics fontMetrics = myTabComponent.getComponent().getFontMetrics(font);
+    Icon icon = myDescriptor.getIcon();
+
+    Dimension size = new Dimension(ActionToolbar.DEFAULT_MINIMUM_BUTTON_SIZE);
+    size.width -= 4;
+    size.height -= 4;
+    if (icon != null && (icon.getIconWidth() > size.width && icon.getIconHeight() > size.height)) {
+      size.width = icon.getIconWidth();
+      size.height = icon.getIconHeight();
+    }
+
+    String text = myDescriptor.getTitle();
+    int textWidth = fontMetrics.stringWidth(text);
+    int textHeight = fontMetrics.getMaxAscent() + fontMetrics.getMaxDescent();
+
+    size.width += 2 + textWidth;
+    BufferedImage image = new BufferedImage(size.width, size.height, BufferedImage.TYPE_INT_ARGB);
+    Graphics g = image.getGraphics();
+
+    int textX = 0;
+    int textY = (size.height - textHeight) / 2 + fontMetrics.getMaxAscent();
+
+    if (icon != null) {
+      int x = (size.width - icon.getIconWidth() - textWidth) / 2;
+      int y = (size.height - icon.getIconHeight()) / 2;
+      icon.paintIcon(null, g, x, y);
+      textX = x + icon.getIconWidth() + 2;
+    }
+
+    UIUtil.applyRenderingHints(g);
+    Color color = getButtonForegroundColor();
+    if (color != null) {
+      g.setColor(color);
+    }
+    g.setFont(font);
+    g.drawString(text, textX, textY);
+
+    Character shortcutChar = myDescriptor.getShortcutChar();
+    if (shortcutChar != null) {
+      final int mnemonicIndex = text.indexOf(shortcutChar);
+      if (mnemonicIndex >= 0) {
+        final char[] chars = text.toCharArray();
+        final int startX = textX + fontMetrics.charsWidth(chars, 0, mnemonicIndex);
+        final int startY = textY + fontMetrics.getMaxDescent();
+        final int endX = startX + fontMetrics.charWidth(text.charAt(mnemonicIndex));
+        UIUtil.drawLine(g, startX, startY, endX, startY);
+      }
+    }
+
+    return new ImageIcon(image);
+  }
+
   private class SelectTabAction extends ToggleAction {
     public SelectTabAction() {
-      super(myDescriptor.getTitle(), "", myDescriptor.getIcon());
+      super("", "", getCompositeTabIcon());
     }
 
     public boolean displayTextInToolbar() {
@@ -133,7 +216,20 @@ class ButtonEditorTab {
           ActionGroup group = getGotoGroup();
           assert group != null : "no nodes to go, but tab is visible";
           ActionPopupMenu popup = ActionManager.getInstance().createActionPopupMenu(ActionPlaces.UNKNOWN, group);
-          popup.getComponent().show(component, 0, 0);
+          JPopupMenu popupMenu = popup.getComponent();
+          popupMenu.show(component, 0, 0);
+
+          if (myTabColorProvider != null && popupMenu.getComponents().length == nodes.size()) {
+            for (int i = 0; i < nodes.size(); i++) {
+              SNode node = nodes.get(i);
+              Component menuItem = popupMenu.getComponents()[i];
+              Color color = myTabColorProvider.getNodeColor(node);
+
+              if (color != null) {
+                menuItem.setForeground(color);
+              }
+            }
+          }
         }
       });
     }

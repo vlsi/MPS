@@ -21,6 +21,7 @@ import jetbrains.mps.ide.editorTabs.EditorTabComparator;
 import jetbrains.mps.ide.editorTabs.EditorTabDescriptor;
 import jetbrains.mps.ide.editorTabs.tabfactory.NodeChangeCallback;
 import jetbrains.mps.ide.editorTabs.tabfactory.tabs.BaseTabsComponent;
+import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.workbench.action.ActionUtils;
@@ -34,8 +35,8 @@ public class ButtonTabsComponent extends BaseTabsComponent {
   private List<ButtonEditorTab> myRealTabs = new ArrayList<ButtonEditorTab>();
   private JComponent myToolbar = null;
 
-  public ButtonTabsComponent(SNodePointer baseNode, Set<EditorTabDescriptor> possibleTabs, JComponent editor, NodeChangeCallback callback, boolean showGrayed) {
-    super(baseNode, possibleTabs, editor, callback, showGrayed, null);
+  public ButtonTabsComponent(SNodePointer baseNode, Set<EditorTabDescriptor> possibleTabs, JComponent editor, NodeChangeCallback callback, boolean showGrayed, IOperationContext operationContext) {
+    super(baseNode, possibleTabs, editor, callback, showGrayed, null, operationContext);
     updateTabs();
   }
 
@@ -70,7 +71,7 @@ public class ButtonTabsComponent extends BaseTabsComponent {
           public void changeNode(SNode newNode) {
             onNodeChange(newNode);
           }
-        }, myRealTabs.size(), tab, myBaseNode));
+        }, myRealTabs.size(), tab, myBaseNode, getColorProvider()));
       }
     }
 

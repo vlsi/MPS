@@ -18,10 +18,10 @@ import jetbrains.mps.make.MakeNotification;
 import jetbrains.mps.make.IMakeService;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vcs.ProjectLevelVcsManager;
+import com.intellij.openapi.application.ApplicationManager;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.MPSCore;
-import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.application.ModalityState;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.library.ProjectLibraryManager;
@@ -41,6 +41,7 @@ import com.intellij.openapi.application.Application;
 
 public class ModelChangesWatcher implements ApplicationComponent {
   public static final Logger LOG = Logger.getLogger(ModelChangesWatcher.class);
+  private static boolean ourForceProcessingEnabled = false;
 
   private final MessageBus myBus;
   private final ProjectManager myProjectManager;
@@ -106,11 +107,19 @@ public class ModelChangesWatcher implements ApplicationComponent {
         }
       }
     }
-    myTimer.resume();
+    ApplicationManager.getApplication().executeOnPooledThread(new Runnable() {
+      public void run() {
+        myTimer.resume();
+      }
+    });
   }
 
   public void suspendTasksProcessing() {
-    myTimer.suspend();
+    ApplicationManager.getApplication().executeOnPooledThread(new Runnable() {
+      public void run() {
+        myTimer.suspend();
+      }
+    });
     synchronized (myLock) {
       myBans++;
     }
@@ -123,20 +132,20 @@ public class ModelChangesWatcher implements ApplicationComponent {
   }
 
   public void initComponent() {
-    if (MPSCore.getInstance().isTestMode()) {
+    if (MPSCore.getInstance().isTestMode() && !(ourForceProcessingEnabled)) {
       return;
     }
     myConnection = myBus.connect();
     myConnection.subscribe(VirtualFileManager.VFS_CHANGES, myBusListener);
     myVirtualFileManager.addVirtualFileManagerListener(myVirtualFileManagerListener);
-    myMakeService.addListener(this.myMakeListener);
+    myMakeService.addListener(myMakeListener);
   }
 
   public void disposeComponent() {
-    if (MPSCore.getInstance().isTestMode()) {
+    if (MPSCore.getInstance().isTestMode() && !(ourForceProcessingEnabled)) {
       return;
     }
-    myMakeService.removeListener(this.myMakeListener);
+    myMakeService.removeListener(myMakeListener);
     myVirtualFileManager.removeVirtualFileManagerListener(myVirtualFileManagerListener);
     myConnection.disconnect();
   }
@@ -144,6 +153,9 @@ public class ModelChangesWatcher implements ApplicationComponent {
   private void doReload() {
     final ReloadSession session = myReloadSession;
     myReloadSession = null;
+    if (!(session.hasAnythingToDo())) {
+      return;
+    }
     ApplicationManager.getApplication().invokeLater(new Runnable() {
       public void run() {
         session.doReload();
@@ -221,6 +233,10 @@ public class ModelChangesWatcher implements ApplicationComponent {
     return ApplicationManager.getApplication().getComponent(ModelChangesWatcher.class);
   }
 
+  public static void setForceProcessingEnabled(boolean value) {
+    ourForceProcessingEnabled = value;
+  }
+
   private class BulkFileChangesListener implements BulkFileListener {
     private BulkFileChangesListener() {
     }
@@ -296,7 +312,11 @@ public class ModelChangesWatcher implements ApplicationComponent {
         }
       }
       if (resume) {
-        myTimer.resume();
+        ApplicationManager.getApplication().executeOnPooledThread(new Runnable() {
+          public void run() {
+            myTimer.resume();
+          }
+        });
       }
     }
 

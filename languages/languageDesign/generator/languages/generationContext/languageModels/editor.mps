@@ -36,7 +36,7 @@
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tpf3.1217960314443" resolveInfo="GenerationContextOp_ShowMessageBase" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="1218047951855">
-      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tpf3.1218047638031" resolveInfo="GenerationContextOp_GenerateUniqueName" />
+      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tpf3.1218047638031" resolveInfo="GenerationContextOp_CreateUniqueName" />
     </node>
     <node type="tpc2.StyleSheet" typeId="tpc2.1186402211651" id="1218067348270">
       <property name="name" nameId="tpck.1169194664001" value="Styles" />
@@ -48,10 +48,10 @@
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tpf3.1221218985173" resolveInfo="GenerationContextOp_GetOutputByLabelAndInputAndReferenceScope" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="1229477688085">
-      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tpf3.1229477454423" resolveInfo="GenerationContextOp_GetCopiedOriginalInputByOutput" />
+      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tpf3.1229477454423" resolveInfo="GenerationContextOp_GetOriginalCopiedInputByOutput" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="4589968773278063830">
-      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tpf3.4589968773278056990" resolveInfo="GenerationContextOp_PatternRef" />
+      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tpf3.4589968773278056990" resolveInfo="GenerationContextOp_NodePatternRef" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="5190093307972736267">
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tpf3.5190093307972723402" resolveInfo="GenerationContextOp_ParameterRef" />
@@ -68,6 +68,9 @@
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="2507865635201650193">
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tpf3.2507865635201615235" resolveInfo="GenerationContextOp_GenParameterRef" />
     </node>
+    <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="2721957369897614811">
+      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tpf3.2721957369897614808" resolveInfo="GenerationContextOp_VarRef" />
+    </node>
   </roots>
   <root id="1216860146338">
     <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="1216860146339">
@@ -79,7 +82,7 @@
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_RefCell" typeId="tpc2.1088013125922" id="1216860146341">
         <property name="noTargetText" nameId="tpc2.1139852716018" value="&lt;choose mapping label&gt;" />
         <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tpf3.1216860049628" />
-        <link role="styleClass" roleId="tpc2.1186406756722" targetNodeId="tpfj.1216755869996" resolveInfo="mappingLableReference" />
+        <link role="styleClass" roleId="tpc2.1186406756722" targetNodeId="tpfj.1216755869996" resolveInfo="mappingLabelReference" />
         <node role="editorComponent" roleId="tpc2.1088186146602" type="tpc2.InlineEditorComponent" typeId="tpc2.1088185857835" id="1216860146342">
           <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Property" typeId="tpc2.1073389658414" id="1216860146343">
             <property name="readOnly" nameId="tpc2.1140017977771" value="true" />
@@ -117,7 +120,7 @@
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_RefCell" typeId="tpc2.1088013125922" id="1216860254150">
         <property name="noTargetText" nameId="tpc2.1139852716018" value="&lt;choose mapping label&gt;" />
         <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tpf3.1216860049623" />
-        <link role="styleClass" roleId="tpc2.1186406756722" targetNodeId="tpfj.1216755869996" resolveInfo="mappingLableReference" />
+        <link role="styleClass" roleId="tpc2.1186406756722" targetNodeId="tpfj.1216755869996" resolveInfo="mappingLabelReference" />
         <node role="editorComponent" roleId="tpc2.1088186146602" type="tpc2.InlineEditorComponent" typeId="tpc2.1088185857835" id="1216860254151">
           <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Property" typeId="tpc2.1073389658414" id="1216860264996">
             <property name="readOnly" nameId="tpc2.1140017977771" value="true" />
@@ -146,7 +149,7 @@
       </node>
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_RefCell" typeId="tpc2.1088013125922" id="1217882112381">
         <property name="noTargetText" nameId="tpc2.1139852716018" value="&lt;choose mapping label&gt;" />
-        <link role="styleClass" roleId="tpc2.1186406756722" targetNodeId="tpfj.1216755869996" resolveInfo="mappingLableReference" />
+        <link role="styleClass" roleId="tpc2.1186406756722" targetNodeId="tpfj.1216755869996" resolveInfo="mappingLabelReference" />
         <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tpf3.1217881979075" />
         <node role="editorComponent" roleId="tpc2.1088186146602" type="tpc2.InlineEditorComponent" typeId="tpc2.1088185857835" id="1217882112382">
           <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Property" typeId="tpc2.1073389658414" id="1217882112383">
@@ -523,6 +526,23 @@
         </node>
       </node>
       <node role="cellLayout" roleId="tpc2.1106270802874" type="tpc2.CellLayout_Indent" typeId="tpc2.1237303669825" id="2507865635201650197" />
+    </node>
+  </root>
+  <root id="2721957369897614811">
+    <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_RefCell" typeId="tpc2.1088013125922" id="2721957369897614813">
+      <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tpf3.2721957369897614810" />
+      <node role="editorComponent" roleId="tpc2.1088186146602" type="tpc2.InlineEditorComponent" typeId="tpc2.1088185857835" id="2721957369897614814">
+        <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Property" typeId="tpc2.1073389658414" id="2721957369897614816">
+          <property name="readOnly" nameId="tpc2.1140017977771" value="true" />
+          <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tpck.1169194664001" resolveInfo="name" />
+          <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.FontStyleStyleClassItem" typeId="tpc2.1186403751766" id="2721957369897614817">
+            <property name="style" nameId="tpc2.1186403771423" value="BOLD" />
+          </node>
+          <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.ForegroundColorStyleClassItem" typeId="tpc2.1186404549998" id="2721957369897614818">
+            <property name="color" nameId="tpc2.1186403713874" value="DARK_GREEN" />
+          </node>
+        </node>
+      </node>
     </node>
   </root>
 </model>

@@ -33,6 +33,7 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="jetbrains.mps.lang.generator.behavior.IGeneratorParameter_Behavior" />
+    <classNode dependClassName="jetbrains.mps.lang.generator.behavior.VarMacro_Behavior" />
     <classNode dependClassName="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_PatternRef_Behavior" />
     <classNode dependClassName="jetbrains.mps.lang.generator.generator.baseLanguage.template.util.GenUtil" />
     <classNode dependClassName="jetbrains.mps.lang.pattern.behavior.PatternVarsUtil" />

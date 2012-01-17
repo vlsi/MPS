@@ -21,4 +21,6 @@ public interface MPSTreeNodeListener {
   public void treeNodeRemoved(MPSTreeNode treeNode, MPSTree tree);
 
   public void treeNodeUpdated(MPSTreeNode treeNode, MPSTree tree);
+
+  public void beforeTreeDisposed(MPSTree tree);
 }

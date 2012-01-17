@@ -107,7 +107,6 @@ public class OptimizeImportsCheckinHandler extends CheckinHandler {
     }
 
     @NotNull
-    @Override
     public CheckinHandler createHandler(CheckinProjectPanel panel, CommitContext context) {
       return new OptimizeImportsCheckinHandler(panel.getProject(), panel);
     }

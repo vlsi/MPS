@@ -11,6 +11,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class RuleUtil {
   public static final String concept_AbstractMacro = "jetbrains.mps.lang.generator.structure.AbstractMacro";
@@ -23,6 +24,7 @@ public class RuleUtil {
   public static final String concept_IncludeMacro = "jetbrains.mps.lang.generator.structure.IncludeMacro";
   public static final String concept_LoopMacro = "jetbrains.mps.lang.generator.structure.LoopMacro";
   public static final String concept_LabelMacro = "jetbrains.mps.lang.generator.structure.LabelMacro";
+  public static final String concept_VarMacro = "jetbrains.mps.lang.generator.structure.VarMacro";
   public static final String concept_InsertMacro = "jetbrains.mps.lang.generator.structure.InsertMacro";
   public static final String concept_WeaveMacro = "jetbrains.mps.lang.generator.structure.WeaveMacro";
   public static final String concept_MapSrcNodeMacro = "jetbrains.mps.lang.generator.structure.MapSrcNodeMacro";
@@ -334,5 +336,13 @@ public class RuleUtil {
 
   public static SNode getMappingConfiguration_IsApplicable(SNode mapping) {
     return SLinkOperations.getTarget(mapping, "condition", true);
+  }
+
+  public static String getVarMacro_Name(SNode macro) {
+    return ((String) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(macro, "jetbrains.mps.lang.generator.structure.VarMacro"), "call_getName_2721957369897649366", new Class[]{SNode.class}));
+  }
+
+  public static SNode getVarMacro_Query(SNode macro) {
+    return SLinkOperations.getTarget(macro, "value", true);
   }
 }

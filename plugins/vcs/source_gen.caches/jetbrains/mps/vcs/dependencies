@@ -59,8 +59,8 @@
     <classNode dependClassName="jetbrains.mps.logging.Logger" />
     <classNode dependClassName="jetbrains.mps.smodel.DiskMemoryConflictResolver" />
     <classNode dependClassName="jetbrains.mps.vcs.DiskMemoryConflictResolverImpl" />
+    <classNode dependClassName="jetbrains.mps.vcs.concrete.MPSSourceRevision" />
     <classNode dependClassName="jetbrains.mps.vcs.mergedriver.MergeDriverNotification" />
-    <classNode dependClassName="jetbrains.mps.vcs.revision.MPSSourceRevision" />
     <classNode dependClassName="org.jetbrains.annotations.NonNls" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />

@@ -110,6 +110,8 @@
   <import index="ieao" modelUID="r:171d7488-7735-44dd-8049-f905d8fca4b0(jetbrains.mps.debugger.java.runtime)" version="-1" />
   <import index="j9pa" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.text(JDK/java.text@java_stub)" version="-1" />
   <import index="44uo" modelUID="r:40062e7d-2d40-4964-a55f-255e1fee23d7(jetbrains.mps.debugger.java.runtime.configurations.remote)" version="-1" />
+  <import index="eva" modelUID="r:a1b1112d-dd34-4046-a6a3-811fd290d232(jetbrains.mps.execution.configurations.pluginSolution.plugin)" version="-1" />
+  <import index="23ba" modelUID="r:617d428e-053e-4709-b131-8488ed0ab049(jetbrains.mps.build.packaging.pluginSolution.plugin)" version="-1" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <import index="tp4k" modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" version="5" implicit="yes" />
   <import index="fb9u" modelUID="r:0194e190-08ef-44f6-ab95-d9cffdb7e27b(jetbrains.mps.execution.settings.structure)" version="0" implicit="yes" />
@@ -763,7 +765,7 @@
   </root>
   <root id="6062668769033909643">
     <node role="beforeTask" roleId="uhxm.6550182048787537895" type="uhxm.BeforeTaskCall" typeId="uhxm.6550182048787537880" id="6062668769033909644">
-      <link role="beforeTask" roleId="uhxm.6550182048787537881" targetNodeId="879s.259833884788814900" resolveInfo="MakeNodePointers" />
+      <link role="beforeTask" roleId="uhxm.6550182048787537881" targetNodeId="eva.5487985028841950959" resolveInfo="MakeNodePointers" />
       <node role="parameter" roleId="uhxm.5475888311765521408" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="6062668769033909645">
         <node role="creator" roleId="tpee.1145553007750" type="tp2q.ListCreatorWithInit" typeId="tp2q.1160600644654" id="6062668769033909646">
           <node role="elementType" roleId="tp2q.1237721435807" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="6062668769033909647">
@@ -1981,7 +1983,7 @@
       </node>
     </node>
     <node role="beforeTask" roleId="uhxm.6550182048787537895" type="uhxm.BeforeTaskCall" typeId="uhxm.6550182048787537880" id="6062668769034010991">
-      <link role="beforeTask" roleId="uhxm.6550182048787537881" targetNodeId="879s.259833884788814900" resolveInfo="MakeNodePointers" />
+      <link role="beforeTask" roleId="uhxm.6550182048787537881" targetNodeId="eva.5487985028841950959" resolveInfo="MakeNodePointers" />
       <node role="parameter" roleId="uhxm.5475888311765521408" type="tpee.DotExpression" typeId="tpee.1197027756228" id="6062668769034010992">
         <node role="operand" roleId="tpee.1197027771414" type="uhxm.ConfigurationFromExecutorReference" typeId="uhxm.7806358006983738927" id="6062668769034010993" />
         <node role="operation" roleId="tpee.1197027833540" type="tp4f.DefaultClassifierMethodCallOperation" typeId="tp4f.1205769149993" id="6062668769034642343">
@@ -2965,8 +2967,8 @@
         </node>
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="6062668769034021928">
           <node role="expression" roleId="tpee.1068580123156" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="6062668769034021929">
-            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tpsb.4869723224670718284" resolveInfo="generate" />
-            <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="tpsb.4869723224670718012" resolveInfo="GenerateBuildUtil" />
+            <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="23ba.5487985028841940984" resolveInfo="GenerateBuildUtil" />
+            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="23ba.5487985028841941065" resolveInfo="generate" />
             <node role="actualArgument" roleId="tpee.1068499141038" type="uhxm.BeforeTaskParameterReference" typeId="uhxm.6550182048787583936" id="6062668769034021930">
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="6062668769034021920" resolveInfo="layout" />
             </node>
@@ -3604,8 +3606,8 @@
             <node role="argument" roleId="rzqf.856705193941281781" type="rzqf.CommandParameterAssignment" typeId="rzqf.856705193941281764" id="6062668769034022135">
               <link role="parameterDeclaration" roleId="rzqf.856705193941281765" targetNodeId="6062668769034023064" resolveInfo="antFilePath" />
               <node role="value" roleId="rzqf.856705193941281766" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="6062668769034022136">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tpsb.4869723224670718052" resolveInfo="getGeneratedFilePath" />
-                <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="tpsb.4869723224670718012" resolveInfo="GenerateBuildUtil" />
+                <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="23ba.5487985028841940984" resolveInfo="GenerateBuildUtil" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="23ba.5487985028841941007" resolveInfo="getGeneratedFilePath" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="6062668769034022137">
                   <node role="operand" roleId="tpee.1197027771414" type="uhxm.ConfigurationFromExecutorReference" typeId="uhxm.7806358006983738927" id="6062668769034022138" />
                   <node role="operation" roleId="tpee.1197027833540" type="tp4f.DefaultClassifierMethodCallOperation" typeId="tp4f.1205769149993" id="6062668769034022139">
@@ -4753,8 +4755,8 @@
               <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="6062668769034022658">
                 <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="fxg7.~File%d&lt;init&gt;(java%dlang%dString)" resolveInfo="File" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="6062668769034022659">
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tpsb.4869723224670718052" resolveInfo="getGeneratedFilePath" />
-                  <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="tpsb.4869723224670718012" resolveInfo="GenerateBuildUtil" />
+                  <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="23ba.5487985028841940984" resolveInfo="GenerateBuildUtil" />
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="23ba.5487985028841941007" resolveInfo="getGeneratedFilePath" />
                   <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="6062668769034022660">
                     <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="6062668769034022592" resolveInfo="configuration" />
                   </node>
@@ -8086,7 +8088,7 @@
       </node>
     </node>
     <node role="beforeTask" roleId="uhxm.6550182048787537895" type="uhxm.BeforeTaskCall" typeId="uhxm.6550182048787537880" id="6062668769034024103">
-      <link role="beforeTask" roleId="uhxm.6550182048787537881" targetNodeId="879s.259833884788814900" resolveInfo="MakeNodePointers" />
+      <link role="beforeTask" roleId="uhxm.6550182048787537881" targetNodeId="eva.5487985028841950959" resolveInfo="MakeNodePointers" />
       <node role="parameter" roleId="uhxm.5475888311765521408" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="6062668769034024104">
         <node role="creator" roleId="tpee.1145553007750" type="tp2q.ListCreatorWithInit" typeId="tp2q.1160600644654" id="6062668769034024105">
           <node role="elementType" roleId="tp2q.1237721435807" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="6062668769034024106">

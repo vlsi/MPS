@@ -22,7 +22,7 @@ import jetbrains.mps.vcs.mergedriver.MergeDriverNotification;
 import com.intellij.openapi.vcs.VcsListener;
 import jetbrains.mps.InternalFlag;
 import jetbrains.mps.ide.vcs.SourceRevision;
-import jetbrains.mps.vcs.revision.MPSSourceRevision;
+import jetbrains.mps.vcs.concrete.MPSSourceRevision;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import java.util.List;

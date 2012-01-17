@@ -19,8 +19,9 @@
     <tar destfile="${output.dir}/${build.number}-linux.tar.gz" compression="gzip">
       <tarfileset dir="${input.dir}/${MPS}" excludes="**/*.dll, **/*.exe, **/bin/linux/, **/bin/mac/, **/bin/nix/, **/bin/win/" prefix="${dist.folder.name}" />
       <tarfileset file="${input.dir}/${mps.sh}" prefix="${dist.folder.name}" filemode="755" />
-      <tarfileset dir="${input.dir}/bin/linux" prefix="${dist.folder.name}/bin" excludes="**/fsnotifier" />
+      <tarfileset dir="${input.dir}/bin/linux" prefix="${dist.folder.name}/bin" excludes="**/fsnotifier, **/fsnotifier64" />
       <tarfileset file="${input.dir}/bin/linux/fsnotifier" prefix="${dist.folder.name}/bin" filemode="755" />
+      <tarfileset file="${input.dir}/bin/linux/fsnotifier64" prefix="${dist.folder.name}/bin" filemode="755" />
       <tarfileset file="${input.dir}/${mps.vmoptions}" prefix="${dist.folder.name}/bin" />
       <tarfileset file="${input.dir}/${mpshelp.jar}" prefix="${dist.folder.name}/help" />
     </tar>
@@ -34,10 +35,11 @@
     <fixcrlf file="${input.dir}/${mps.vmoptions}" eof="remove" eol="unix" />
     <fixcrlf file="${input.dir}/${mps.exe.vmoptions}" eof="asis" eol="dos" />
     <zip destfile="${output.dir}/${build.number}.zip">
-      <zipfileset dir="${input.dir}/${MPS}" prefix="${dist.folder.name}" />
+      <zipfileset dir="${input.dir}/${MPS}" prefix="${dist.folder.name}" excludes="**/bin/mac/fsnotifier, **/bin/linux/fsnotifier, **/bin/linux/fsnotifier64" />
       <zipfileset file="${mps.sh}" prefix="${dist.folder.name}" filemode="755" />
       <zipfileset file="${input.dir}/bin/mac/fsnotifier" prefix="${dist.folder.name}/bin/mac" filemode="755" />
       <zipfileset file="${input.dir}/bin/linux/fsnotifier" prefix="${dist.folder.name}/bin/linux" filemode="755" />
+      <zipfileset file="${input.dir}/bin/linux/fsnotifier64" prefix="${dist.folder.name}/bin/linux" filemode="755" />
       <zipfileset file="${input.dir}/${mps.bat}" prefix="${dist.folder.name}" />
       <zipfileset file="${input.dir}/${mps.vmoptions}" prefix="${dist.folder.name}/bin" />
       <zipfileset file="${input.dir}/${mps.exe.vmoptions}" prefix="${dist.folder.name}/bin" />

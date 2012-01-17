@@ -82,6 +82,10 @@ public class QueriesGenerated {
     return SPropertyOperations.getString(_context.getNode(), "name_intern");
   }
 
+  public static Object propertyMacro_GetPropertyValue_2721957369897649341(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(_context.getNode(), "name_intern");
+  }
+
   public static Object propertyMacro_GetPropertyValue_212805959602503363(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), "name_intern");
   }
@@ -205,6 +209,14 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_8224086392574896900(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return ClassifierTypeUtil.getTypeCoercedToClassifierType(SNodeOperations.copyNode(TypeChecker.getInstance().getTypeOf(SNodeOperations.getParent(IOperation_Behavior.call_getDotExpression_1224687669172(_context.getNode())))));
+  }
+
+  public static SNode sourceNodeQuery_2721957369897649329(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operand", true);
+  }
+
+  public static SNode sourceNodeQuery_2721957369897649349(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return ClassifierTypeUtil.getTypeCoercedToClassifierType(SNodeOperations.copyNode(TypeChecker.getInstance().getTypeOf(SNodeOperations.getParent(IOperation_Behavior.call_getDotExpression_1224687669172(_context.getNode())))));
   }
 

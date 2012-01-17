@@ -18,6 +18,7 @@ package jetbrains.mps.ide.ui.smodel;
 import com.intellij.openapi.actionSystem.ActionGroup;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.TextTreeNode;
+import jetbrains.mps.smodel.SModelReference;
 
 import java.awt.Color;
 
@@ -25,19 +26,20 @@ public class SNodeGroupTreeNode extends TextTreeNode {
 
   private boolean myAutoDelete;
 
+  private SModelReference myModelReference;
 
-  public SNodeGroupTreeNode(SModelTreeNode model, String text) {
-    this(model, null, text, false);
-  }
-
-  public SNodeGroupTreeNode(SModelTreeNode model, SNodeGroupTreeNode group, String text) {
-    this(model, group, text, false);
-  }
-
-  public SNodeGroupTreeNode(SModelTreeNode model, SNodeGroupTreeNode parentGroup, String text, boolean autoDelete) {
+  public SNodeGroupTreeNode(SModelTreeNode model, String text, boolean autoDelete) {
     super(text);
-    model.register(parentGroup, this);
+    myModelReference = model.getSModelDescriptor().getSModelReference();
     myAutoDelete = autoDelete;
+  }
+
+  public SModelReference getModelReference() {
+    return myModelReference;
+  }
+
+  public void registerInModelNode(SModelTreeNode model, SNodeGroupTreeNode parentGroup) {
+    model.register(parentGroup, this);
   }
 
   protected void doUpdatePresentation() {

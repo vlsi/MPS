@@ -60,6 +60,9 @@ public class CreatePropertyAntiquotation_Intention extends BaseIntention impleme
   }
 
   public void execute(final SNode node, final EditorContext editorContext) {
+    if (editorContext == null) {
+      return;
+    }
     EditorCell selectedCell = editorContext.getSelectedCell();
     SNode contextNode = SNodeOperations.cast(selectedCell.getSNode(), "jetbrains.mps.lang.core.structure.BaseConcept");
     if (contextNode == null) {

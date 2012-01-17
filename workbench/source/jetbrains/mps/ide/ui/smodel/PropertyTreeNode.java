@@ -20,13 +20,14 @@ import com.intellij.openapi.actionSystem.ActionManager;
 import jetbrains.mps.ide.actions.PropertyNodeActions_ActionGroup;
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.ide.ui.TextTreeNode;
+import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNode;
 
 public class PropertyTreeNode extends TextTreeNode {
   private String myProperty;
 
-  public PropertyTreeNode(SNode mainNode, String p) {
-    super(p + " = " + mainNode.getProperty(p));
+  public PropertyTreeNode(IOperationContext context, SNode mainNode, String p) {
+    super(p + " = " + mainNode.getProperty(p), context);
     myProperty = p;
     setIcon(Icons.DEFAULT_ICON);
     setNodeIdentifier(myProperty);

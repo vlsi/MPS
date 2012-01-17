@@ -105,8 +105,8 @@ public class QueriesGenerated {
     return WindowsConfig_Behavior.call_getStartupFileExtension_1230208056584(_context.getNode());
   }
 
-  public static Object propertyMacro_GetPropertyValue_8530197237434074506(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return Configuration_Behavior.call_getBuildFileName_1230217425313(SLinkOperations.getTarget(_context.getNode(), "buildScriptConfiguration", false)) + DistribConfiguration_Behavior.getSuffix_1240229578757();
+  public static Object propertyMacro_GetPropertyValue_5198087850870256035(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return "${ant.file." + Configuration_Behavior.call_getBuildFileName_1230217425313(SLinkOperations.getTarget(_context.getNode(), "buildScriptConfiguration", false)) + DistribConfiguration_Behavior.getSuffix_1240229578757() + "}/../";
   }
 
   public static Object propertyMacro_GetPropertyValue_4738159245302510147(final IOperationContext operationContext, final PropertyMacroContext _context) {

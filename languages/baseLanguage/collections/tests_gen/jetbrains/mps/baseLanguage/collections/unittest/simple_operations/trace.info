@@ -1,245 +1,254 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <root nodeId="1165526591424">
-    <nodeInfo nodeId="1224596674628" fileName="SimpleOperations1.java" startLine="55" startPosition="27" endLine="55" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1224596674659" fileName="SimpleOperations1.java" startLine="108" startPosition="27" endLine="108" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1165526704346" fileName="SimpleOperations1.java" startLine="17" startPosition="25" endLine="18" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1165526833446" fileName="SimpleOperations1.java" startLine="18" startPosition="80" endLine="19" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1165526923814" fileName="SimpleOperations1.java" startLine="19" startPosition="64" endLine="20" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1165596492253" fileName="SimpleOperations1.java" startLine="20" startPosition="64" endLine="21" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1165596493532" fileName="SimpleOperations1.java" startLine="21" startPosition="63" endLine="22" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1165531544180" fileName="SimpleOperations1.java" startLine="22" startPosition="63" endLine="23" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1193919151109" fileName="SimpleOperations1.java" startLine="23" startPosition="66" endLine="24" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1224596674627" fileName="SimpleOperations1.java" startLine="32" startPosition="51" endLine="33" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="__CP__" />
-    <nodeInfo nodeId="1224596674627" fileName="SimpleOperations1.java" startLine="40" startPosition="28" endLine="41" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
-    <nodeInfo nodeId="1224596674627" fileName="SimpleOperations1.java" startLine="41" startPosition="54" endLine="42" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1224596679820" fileName="SimpleOperations1.java" startLine="43" startPosition="27" endLine="44" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1224596679820" fileName="SimpleOperations1.java" startLine="44" startPosition="38" endLine="45" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1224596679820" fileName="SimpleOperations1.java" startLine="45" startPosition="38" endLine="46" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1224596679592" fileName="SimpleOperations1.java" startLine="47" startPosition="27" endLine="48" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1224596679592" fileName="SimpleOperations1.java" startLine="48" startPosition="38" endLine="49" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1224596679592" fileName="SimpleOperations1.java" startLine="49" startPosition="38" endLine="50" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1224596679784" fileName="SimpleOperations1.java" startLine="51" startPosition="27" endLine="52" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1224596679784" fileName="SimpleOperations1.java" startLine="52" startPosition="38" endLine="53" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1224596679784" fileName="SimpleOperations1.java" startLine="53" startPosition="38" endLine="54" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1224596674628" fileName="SimpleOperations1.java" startLine="55" startPosition="27" endLine="56" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1224596674628" fileName="SimpleOperations1.java" startLine="56" startPosition="38" endLine="57" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="1224596674627" fileName="SimpleOperations1.java" startLine="58" startPosition="28" endLine="59" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="1224596674627" fileName="SimpleOperations1.java" startLine="61" startPosition="31" endLine="62" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1165526947964" fileName="SimpleOperations1.java" startLine="68" startPosition="7" endLine="69" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1165526947970" fileName="SimpleOperations1.java" startLine="69" startPosition="63" endLine="70" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1165596516280" fileName="SimpleOperations1.java" startLine="70" startPosition="63" endLine="71" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1165596516286" fileName="SimpleOperations1.java" startLine="71" startPosition="62" endLine="72" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1165531589513" fileName="SimpleOperations1.java" startLine="72" startPosition="62" endLine="73" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1193919359017" fileName="SimpleOperations1.java" startLine="73" startPosition="67" endLine="74" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1193919396557" fileName="SimpleOperations1.java" startLine="74" startPosition="66" endLine="75" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1193919397113" fileName="SimpleOperations1.java" startLine="75" startPosition="66" endLine="76" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1193919397740" fileName="SimpleOperations1.java" startLine="76" startPosition="66" endLine="77" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1224596674658" fileName="SimpleOperations1.java" startLine="85" startPosition="51" endLine="86" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="__CP__" />
-    <nodeInfo nodeId="1224596674658" fileName="SimpleOperations1.java" startLine="93" startPosition="28" endLine="94" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
-    <nodeInfo nodeId="1224596674658" fileName="SimpleOperations1.java" startLine="94" startPosition="54" endLine="95" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1224596680438" fileName="SimpleOperations1.java" startLine="96" startPosition="27" endLine="97" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1224596680438" fileName="SimpleOperations1.java" startLine="97" startPosition="38" endLine="98" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1224596680438" fileName="SimpleOperations1.java" startLine="98" startPosition="38" endLine="99" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1224596679848" fileName="SimpleOperations1.java" startLine="100" startPosition="27" endLine="101" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1224596679848" fileName="SimpleOperations1.java" startLine="101" startPosition="38" endLine="102" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1224596679848" fileName="SimpleOperations1.java" startLine="102" startPosition="38" endLine="103" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1224596680276" fileName="SimpleOperations1.java" startLine="104" startPosition="27" endLine="105" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1224596680276" fileName="SimpleOperations1.java" startLine="105" startPosition="38" endLine="106" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1224596680276" fileName="SimpleOperations1.java" startLine="106" startPosition="38" endLine="107" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1224596674659" fileName="SimpleOperations1.java" startLine="108" startPosition="27" endLine="109" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1224596674659" fileName="SimpleOperations1.java" startLine="109" startPosition="38" endLine="110" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="1224596674658" fileName="SimpleOperations1.java" startLine="111" startPosition="28" endLine="112" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="1224596674658" fileName="SimpleOperations1.java" startLine="114" startPosition="31" endLine="115" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1165597592844" fileName="SimpleOperations1.java" startLine="121" startPosition="7" endLine="122" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1165597609639" fileName="SimpleOperations1.java" startLine="123" startPosition="47" endLine="124" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1165597659870" fileName="SimpleOperations1.java" startLine="124" startPosition="41" endLine="125" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1165597680563" fileName="SimpleOperations1.java" startLine="125" startPosition="14" endLine="126" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1165597680575" fileName="SimpleOperations1.java" startLine="126" startPosition="65" endLine="127" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1165597680587" fileName="SimpleOperations1.java" startLine="127" startPosition="64" endLine="128" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1165527075578" fileName="SimpleOperations1.java" startLine="132" startPosition="25" endLine="133" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1165527140910" fileName="SimpleOperations1.java" startLine="133" startPosition="68" endLine="134" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1165527140916" fileName="SimpleOperations1.java" startLine="134" startPosition="64" endLine="135" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1165596555627" fileName="SimpleOperations1.java" startLine="135" startPosition="64" endLine="136" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1165596555633" fileName="SimpleOperations1.java" startLine="136" startPosition="63" endLine="137" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1165527253056" fileName="SimpleOperations1.java" startLine="137" startPosition="63" endLine="138" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1165531617970" fileName="SimpleOperations1.java" startLine="138" startPosition="61" endLine="139" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1165527190597" fileName="SimpleOperations1.java" startLine="142" startPosition="25" endLine="143" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1165527190604" fileName="SimpleOperations1.java" startLine="143" startPosition="91" endLine="144" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1165527190610" fileName="SimpleOperations1.java" startLine="144" startPosition="63" endLine="145" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1165596592183" fileName="SimpleOperations1.java" startLine="145" startPosition="63" endLine="146" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1165596592189" fileName="SimpleOperations1.java" startLine="146" startPosition="62" endLine="147" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1165527291187" fileName="SimpleOperations1.java" startLine="147" startPosition="62" endLine="148" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1165531640271" fileName="SimpleOperations1.java" startLine="148" startPosition="61" endLine="149" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1165597563931" fileName="SimpleOperations1.java" startLine="122" startPosition="18" endLine="129" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="1165526704344" fileName="SimpleOperations1.java" startLine="16" startPosition="49" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_S1#()V" />
-    <nodeInfo nodeId="1165526992412" fileName="SimpleOperations1.java" startLine="131" startPosition="0" endLine="141" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_L1#()V" />
-    <nodeInfo nodeId="1165527190595" fileName="SimpleOperations1.java" startLine="141" startPosition="0" endLine="151" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_L2#()V" />
-    <nodeInfo nodeId="1224596674627" fileName="SimpleOperations1.java" startLine="37" startPosition="20" endLine="60" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.SwitchStatement" />
-    <nodeInfo nodeId="1224596674658" fileName="SimpleOperations1.java" startLine="90" startPosition="20" endLine="113" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.SwitchStatement" />
-    <nodeInfo nodeId="1224596674627" fileName="SimpleOperations1.java" startLine="35" startPosition="46" endLine="61" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.DoWhileStatement" />
-    <nodeInfo nodeId="1224596674658" fileName="SimpleOperations1.java" startLine="88" startPosition="46" endLine="114" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.DoWhileStatement" />
-    <nodeInfo nodeId="1224596674627" fileName="SimpleOperations1.java" startLine="34" startPosition="0" endLine="64" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="moveToNext#()Z" />
-    <nodeInfo nodeId="1224596674658" fileName="SimpleOperations1.java" startLine="87" startPosition="0" endLine="117" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="moveToNext#()Z" />
-    <nodeInfo nodeId="1224596674627" fileName="SimpleOperations1.java" startLine="31" startPosition="46" endLine="64" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1224596674658" fileName="SimpleOperations1.java" startLine="84" startPosition="46" endLine="117" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1224596674627" fileName="SimpleOperations1.java" startLine="30" startPosition="39" endLine="66" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="iterator#()Ljava/util/Iterator;" />
-    <nodeInfo nodeId="1224596674658" fileName="SimpleOperations1.java" startLine="83" startPosition="39" endLine="119" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="iterator#()Ljava/util/Iterator;" />
-    <nodeInfo nodeId="1224596674627" fileName="SimpleOperations1.java" startLine="29" startPosition="42" endLine="66" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1224596674658" fileName="SimpleOperations1.java" startLine="82" startPosition="42" endLine="119" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1224596674627" fileName="SimpleOperations1.java" startLine="28" startPosition="78" endLine="68" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="iterable#()Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="1224596674658" fileName="SimpleOperations1.java" startLine="81" startPosition="78" endLine="121" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="iterable#()Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="1165526656442" fileName="SimpleOperations1.java" startLine="27" startPosition="25" endLine="68" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1165597541291" fileName="SimpleOperations1.java" startLine="80" startPosition="25" endLine="121" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1165597541289" fileName="SimpleOperations1.java" startLine="79" startPosition="0" endLine="131" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_S3#()V" />
-    <nodeInfo nodeId="1165526644939" fileName="SimpleOperations1.java" startLine="26" startPosition="0" endLine="79" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_S2#()V" />
-    <scopeInfo nodeId="1224596674628" fileName="SimpleOperations1.java" startLine="55" startPosition="27" endLine="55" endPosition="27" />
-    <scopeInfo nodeId="1224596674659" fileName="SimpleOperations1.java" startLine="108" startPosition="27" endLine="108" endPosition="27" />
-    <scopeInfo nodeId="1224596674627" fileName="SimpleOperations1.java" startLine="58" startPosition="28" endLine="59" endPosition="37" />
-    <scopeInfo nodeId="1224596674658" fileName="SimpleOperations1.java" startLine="111" startPosition="28" endLine="112" endPosition="37" />
-    <scopeInfo nodeId="1224596674627" fileName="SimpleOperations1.java" startLine="40" startPosition="28" endLine="42" endPosition="35" />
-    <scopeInfo nodeId="1224596674628" fileName="SimpleOperations1.java" startLine="55" startPosition="27" endLine="57" endPosition="28" />
-    <scopeInfo nodeId="1224596674658" fileName="SimpleOperations1.java" startLine="93" startPosition="28" endLine="95" endPosition="35" />
-    <scopeInfo nodeId="1224596674659" fileName="SimpleOperations1.java" startLine="108" startPosition="27" endLine="110" endPosition="28" />
-    <scopeInfo nodeId="1224596679820" fileName="SimpleOperations1.java" startLine="43" startPosition="27" endLine="46" endPosition="34" />
-    <scopeInfo nodeId="1224596679592" fileName="SimpleOperations1.java" startLine="47" startPosition="27" endLine="50" endPosition="34" />
-    <scopeInfo nodeId="1224596679784" fileName="SimpleOperations1.java" startLine="51" startPosition="27" endLine="54" endPosition="34" />
-    <scopeInfo nodeId="1224596680438" fileName="SimpleOperations1.java" startLine="96" startPosition="27" endLine="99" endPosition="34" />
-    <scopeInfo nodeId="1224596679848" fileName="SimpleOperations1.java" startLine="100" startPosition="27" endLine="103" endPosition="34" />
-    <scopeInfo nodeId="1224596680276" fileName="SimpleOperations1.java" startLine="104" startPosition="27" endLine="107" endPosition="34" />
-    <scopeInfo nodeId="1165597563934" fileName="SimpleOperations1.java" startLine="123" startPosition="47" endLine="128" endPosition="69" />
-    <scopeInfo nodeId="1165526704345" fileName="SimpleOperations1.java" startLine="17" startPosition="25" endLine="24" endPosition="67">
+    <nodeInfo nodeId="1224596674628" fileName="SimpleOperations1.java" startLine="58" startPosition="27" endLine="58" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1224596674659" fileName="SimpleOperations1.java" startLine="111" startPosition="27" endLine="111" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1165526704346" fileName="SimpleOperations1.java" startLine="20" startPosition="25" endLine="21" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1165526833446" fileName="SimpleOperations1.java" startLine="21" startPosition="80" endLine="22" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1165526923814" fileName="SimpleOperations1.java" startLine="22" startPosition="64" endLine="23" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1165596492253" fileName="SimpleOperations1.java" startLine="23" startPosition="64" endLine="24" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1165596493532" fileName="SimpleOperations1.java" startLine="24" startPosition="63" endLine="25" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1165531544180" fileName="SimpleOperations1.java" startLine="25" startPosition="63" endLine="26" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1193919151109" fileName="SimpleOperations1.java" startLine="26" startPosition="66" endLine="27" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1224596674627" fileName="SimpleOperations1.java" startLine="35" startPosition="51" endLine="36" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="__CP__" />
+    <nodeInfo nodeId="1224596674627" fileName="SimpleOperations1.java" startLine="43" startPosition="28" endLine="44" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
+    <nodeInfo nodeId="1224596674627" fileName="SimpleOperations1.java" startLine="44" startPosition="54" endLine="45" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1224596679820" fileName="SimpleOperations1.java" startLine="46" startPosition="27" endLine="47" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1224596679820" fileName="SimpleOperations1.java" startLine="47" startPosition="38" endLine="48" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1224596679820" fileName="SimpleOperations1.java" startLine="48" startPosition="38" endLine="49" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1224596679592" fileName="SimpleOperations1.java" startLine="50" startPosition="27" endLine="51" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1224596679592" fileName="SimpleOperations1.java" startLine="51" startPosition="38" endLine="52" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1224596679592" fileName="SimpleOperations1.java" startLine="52" startPosition="38" endLine="53" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1224596679784" fileName="SimpleOperations1.java" startLine="54" startPosition="27" endLine="55" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1224596679784" fileName="SimpleOperations1.java" startLine="55" startPosition="38" endLine="56" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1224596679784" fileName="SimpleOperations1.java" startLine="56" startPosition="38" endLine="57" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1224596674628" fileName="SimpleOperations1.java" startLine="58" startPosition="27" endLine="59" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1224596674628" fileName="SimpleOperations1.java" startLine="59" startPosition="38" endLine="60" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+    <nodeInfo nodeId="1224596674627" fileName="SimpleOperations1.java" startLine="61" startPosition="28" endLine="62" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+    <nodeInfo nodeId="1224596674627" fileName="SimpleOperations1.java" startLine="64" startPosition="31" endLine="65" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1165526947964" fileName="SimpleOperations1.java" startLine="71" startPosition="7" endLine="72" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1165526947970" fileName="SimpleOperations1.java" startLine="72" startPosition="63" endLine="73" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1165596516280" fileName="SimpleOperations1.java" startLine="73" startPosition="63" endLine="74" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1165596516286" fileName="SimpleOperations1.java" startLine="74" startPosition="62" endLine="75" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1165531589513" fileName="SimpleOperations1.java" startLine="75" startPosition="62" endLine="76" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1193919359017" fileName="SimpleOperations1.java" startLine="76" startPosition="67" endLine="77" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1193919396557" fileName="SimpleOperations1.java" startLine="77" startPosition="66" endLine="78" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1193919397113" fileName="SimpleOperations1.java" startLine="78" startPosition="66" endLine="79" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1193919397740" fileName="SimpleOperations1.java" startLine="79" startPosition="66" endLine="80" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1224596674658" fileName="SimpleOperations1.java" startLine="88" startPosition="51" endLine="89" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="__CP__" />
+    <nodeInfo nodeId="1224596674658" fileName="SimpleOperations1.java" startLine="96" startPosition="28" endLine="97" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
+    <nodeInfo nodeId="1224596674658" fileName="SimpleOperations1.java" startLine="97" startPosition="54" endLine="98" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1224596680438" fileName="SimpleOperations1.java" startLine="99" startPosition="27" endLine="100" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1224596680438" fileName="SimpleOperations1.java" startLine="100" startPosition="38" endLine="101" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1224596680438" fileName="SimpleOperations1.java" startLine="101" startPosition="38" endLine="102" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1224596679848" fileName="SimpleOperations1.java" startLine="103" startPosition="27" endLine="104" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1224596679848" fileName="SimpleOperations1.java" startLine="104" startPosition="38" endLine="105" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1224596679848" fileName="SimpleOperations1.java" startLine="105" startPosition="38" endLine="106" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1224596680276" fileName="SimpleOperations1.java" startLine="107" startPosition="27" endLine="108" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1224596680276" fileName="SimpleOperations1.java" startLine="108" startPosition="38" endLine="109" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1224596680276" fileName="SimpleOperations1.java" startLine="109" startPosition="38" endLine="110" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1224596674659" fileName="SimpleOperations1.java" startLine="111" startPosition="27" endLine="112" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1224596674659" fileName="SimpleOperations1.java" startLine="112" startPosition="38" endLine="113" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+    <nodeInfo nodeId="1224596674658" fileName="SimpleOperations1.java" startLine="114" startPosition="28" endLine="115" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+    <nodeInfo nodeId="1224596674658" fileName="SimpleOperations1.java" startLine="117" startPosition="31" endLine="118" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1165597592844" fileName="SimpleOperations1.java" startLine="124" startPosition="7" endLine="125" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1165597609639" fileName="SimpleOperations1.java" startLine="126" startPosition="47" endLine="127" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1165597659870" fileName="SimpleOperations1.java" startLine="127" startPosition="41" endLine="128" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1165597680563" fileName="SimpleOperations1.java" startLine="128" startPosition="14" endLine="129" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1165597680575" fileName="SimpleOperations1.java" startLine="129" startPosition="65" endLine="130" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1165597680587" fileName="SimpleOperations1.java" startLine="130" startPosition="64" endLine="131" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1165527075578" fileName="SimpleOperations1.java" startLine="135" startPosition="25" endLine="136" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1165527140910" fileName="SimpleOperations1.java" startLine="136" startPosition="68" endLine="137" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1165527140916" fileName="SimpleOperations1.java" startLine="137" startPosition="64" endLine="138" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1165596555627" fileName="SimpleOperations1.java" startLine="138" startPosition="64" endLine="139" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1165596555633" fileName="SimpleOperations1.java" startLine="139" startPosition="63" endLine="140" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1165527253056" fileName="SimpleOperations1.java" startLine="140" startPosition="63" endLine="141" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1165531617970" fileName="SimpleOperations1.java" startLine="141" startPosition="61" endLine="142" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1165527190597" fileName="SimpleOperations1.java" startLine="145" startPosition="25" endLine="146" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1165527190604" fileName="SimpleOperations1.java" startLine="146" startPosition="91" endLine="147" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1165527190610" fileName="SimpleOperations1.java" startLine="147" startPosition="63" endLine="148" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1165596592183" fileName="SimpleOperations1.java" startLine="148" startPosition="63" endLine="149" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1165596592189" fileName="SimpleOperations1.java" startLine="149" startPosition="62" endLine="150" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1165527291187" fileName="SimpleOperations1.java" startLine="150" startPosition="62" endLine="151" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1165531640271" fileName="SimpleOperations1.java" startLine="151" startPosition="61" endLine="152" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3891516456976043506" fileName="SimpleOperations1.java" startLine="16" startPosition="49" endLine="18" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="SimpleOperations1#()V" />
+    <nodeInfo nodeId="1165597563931" fileName="SimpleOperations1.java" startLine="125" startPosition="18" endLine="132" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="1165526704344" fileName="SimpleOperations1.java" startLine="19" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_S1#()V" />
+    <nodeInfo nodeId="1165526992412" fileName="SimpleOperations1.java" startLine="134" startPosition="0" endLine="144" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_L1#()V" />
+    <nodeInfo nodeId="1165527190595" fileName="SimpleOperations1.java" startLine="144" startPosition="0" endLine="154" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_L2#()V" />
+    <nodeInfo nodeId="1224596674627" fileName="SimpleOperations1.java" startLine="40" startPosition="20" endLine="63" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.SwitchStatement" />
+    <nodeInfo nodeId="1224596674658" fileName="SimpleOperations1.java" startLine="93" startPosition="20" endLine="116" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.SwitchStatement" />
+    <nodeInfo nodeId="1224596674627" fileName="SimpleOperations1.java" startLine="38" startPosition="46" endLine="64" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.DoWhileStatement" />
+    <nodeInfo nodeId="1224596674658" fileName="SimpleOperations1.java" startLine="91" startPosition="46" endLine="117" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.DoWhileStatement" />
+    <nodeInfo nodeId="1224596674627" fileName="SimpleOperations1.java" startLine="37" startPosition="0" endLine="67" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="moveToNext#()Z" />
+    <nodeInfo nodeId="1224596674658" fileName="SimpleOperations1.java" startLine="90" startPosition="0" endLine="120" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="moveToNext#()Z" />
+    <nodeInfo nodeId="1224596674627" fileName="SimpleOperations1.java" startLine="34" startPosition="46" endLine="67" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1224596674658" fileName="SimpleOperations1.java" startLine="87" startPosition="46" endLine="120" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1224596674627" fileName="SimpleOperations1.java" startLine="33" startPosition="39" endLine="69" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="iterator#()Ljava/util/Iterator;" />
+    <nodeInfo nodeId="1224596674658" fileName="SimpleOperations1.java" startLine="86" startPosition="39" endLine="122" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="iterator#()Ljava/util/Iterator;" />
+    <nodeInfo nodeId="1224596674627" fileName="SimpleOperations1.java" startLine="32" startPosition="42" endLine="69" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1224596674658" fileName="SimpleOperations1.java" startLine="85" startPosition="42" endLine="122" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1224596674627" fileName="SimpleOperations1.java" startLine="31" startPosition="78" endLine="71" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="iterable#()Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="1224596674658" fileName="SimpleOperations1.java" startLine="84" startPosition="78" endLine="124" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="iterable#()Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="1165526656442" fileName="SimpleOperations1.java" startLine="30" startPosition="25" endLine="71" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1165597541291" fileName="SimpleOperations1.java" startLine="83" startPosition="25" endLine="124" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1165597541289" fileName="SimpleOperations1.java" startLine="82" startPosition="0" endLine="134" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_S3#()V" />
+    <nodeInfo nodeId="1165526644939" fileName="SimpleOperations1.java" startLine="29" startPosition="0" endLine="82" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_S2#()V" />
+    <scopeInfo nodeId="3891516456976043508" fileName="SimpleOperations1.java" startLine="17" startPosition="30" endLine="17" endPosition="30" />
+    <scopeInfo nodeId="1224596674628" fileName="SimpleOperations1.java" startLine="58" startPosition="27" endLine="58" endPosition="27" />
+    <scopeInfo nodeId="1224596674659" fileName="SimpleOperations1.java" startLine="111" startPosition="27" endLine="111" endPosition="27" />
+    <scopeInfo nodeId="1224596674627" fileName="SimpleOperations1.java" startLine="61" startPosition="28" endLine="62" endPosition="37" />
+    <scopeInfo nodeId="1224596674658" fileName="SimpleOperations1.java" startLine="114" startPosition="28" endLine="115" endPosition="37" />
+    <scopeInfo nodeId="3891516456976043506" fileName="SimpleOperations1.java" startLine="16" startPosition="49" endLine="18" endPosition="3" />
+    <scopeInfo nodeId="1224596674627" fileName="SimpleOperations1.java" startLine="43" startPosition="28" endLine="45" endPosition="35" />
+    <scopeInfo nodeId="1224596674628" fileName="SimpleOperations1.java" startLine="58" startPosition="27" endLine="60" endPosition="28" />
+    <scopeInfo nodeId="1224596674658" fileName="SimpleOperations1.java" startLine="96" startPosition="28" endLine="98" endPosition="35" />
+    <scopeInfo nodeId="1224596674659" fileName="SimpleOperations1.java" startLine="111" startPosition="27" endLine="113" endPosition="28" />
+    <scopeInfo nodeId="1224596679820" fileName="SimpleOperations1.java" startLine="46" startPosition="27" endLine="49" endPosition="34" />
+    <scopeInfo nodeId="1224596679592" fileName="SimpleOperations1.java" startLine="50" startPosition="27" endLine="53" endPosition="34" />
+    <scopeInfo nodeId="1224596679784" fileName="SimpleOperations1.java" startLine="54" startPosition="27" endLine="57" endPosition="34" />
+    <scopeInfo nodeId="1224596680438" fileName="SimpleOperations1.java" startLine="99" startPosition="27" endLine="102" endPosition="34" />
+    <scopeInfo nodeId="1224596679848" fileName="SimpleOperations1.java" startLine="103" startPosition="27" endLine="106" endPosition="34" />
+    <scopeInfo nodeId="1224596680276" fileName="SimpleOperations1.java" startLine="107" startPosition="27" endLine="110" endPosition="34" />
+    <scopeInfo nodeId="1165597563934" fileName="SimpleOperations1.java" startLine="126" startPosition="47" endLine="131" endPosition="69" />
+    <scopeInfo nodeId="1165526704345" fileName="SimpleOperations1.java" startLine="20" startPosition="25" endLine="27" endPosition="67">
       <varInfo nodeId="1165526704347" varName="S" />
     </scopeInfo>
-    <scopeInfo nodeId="1165597563931" fileName="SimpleOperations1.java" startLine="122" startPosition="18" endLine="129" endPosition="5">
+    <scopeInfo nodeId="1165597563931" fileName="SimpleOperations1.java" startLine="125" startPosition="18" endLine="132" endPosition="5">
       <varInfo nodeId="1165597563931" varName="s" />
     </scopeInfo>
-    <scopeInfo nodeId="1165526992413" fileName="SimpleOperations1.java" startLine="132" startPosition="25" endLine="139" endPosition="66">
+    <scopeInfo nodeId="1165526992413" fileName="SimpleOperations1.java" startLine="135" startPosition="25" endLine="142" endPosition="66">
       <varInfo nodeId="1165527075579" varName="L" />
     </scopeInfo>
-    <scopeInfo nodeId="1165527190596" fileName="SimpleOperations1.java" startLine="142" startPosition="25" endLine="149" endPosition="67">
+    <scopeInfo nodeId="1165527190596" fileName="SimpleOperations1.java" startLine="145" startPosition="25" endLine="152" endPosition="67">
       <varInfo nodeId="1165527190598" varName="L" />
     </scopeInfo>
-    <scopeInfo nodeId="1165526704344" fileName="SimpleOperations1.java" startLine="16" startPosition="49" endLine="26" endPosition="0" />
-    <scopeInfo nodeId="1165526992412" fileName="SimpleOperations1.java" startLine="131" startPosition="0" endLine="141" endPosition="0" />
-    <scopeInfo nodeId="1165527190595" fileName="SimpleOperations1.java" startLine="141" startPosition="0" endLine="151" endPosition="0" />
-    <scopeInfo nodeId="1224596674627" fileName="SimpleOperations1.java" startLine="37" startPosition="20" endLine="60" endPosition="19" />
-    <scopeInfo nodeId="1224596674658" fileName="SimpleOperations1.java" startLine="90" startPosition="20" endLine="113" endPosition="19" />
-    <scopeInfo nodeId="1224596674627" fileName="SimpleOperations1.java" startLine="35" startPosition="46" endLine="62" endPosition="29" />
-    <scopeInfo nodeId="1224596674658" fileName="SimpleOperations1.java" startLine="88" startPosition="46" endLine="115" endPosition="29" />
-    <scopeInfo nodeId="1224596674627" fileName="SimpleOperations1.java" startLine="34" startPosition="0" endLine="64" endPosition="0" />
-    <scopeInfo nodeId="1224596674658" fileName="SimpleOperations1.java" startLine="87" startPosition="0" endLine="117" endPosition="0" />
-    <scopeInfo nodeId="1224596674627" fileName="SimpleOperations1.java" startLine="31" startPosition="46" endLine="64" endPosition="14" />
-    <scopeInfo nodeId="1224596674658" fileName="SimpleOperations1.java" startLine="84" startPosition="46" endLine="117" endPosition="14" />
-    <scopeInfo nodeId="1224596674627" fileName="SimpleOperations1.java" startLine="30" startPosition="39" endLine="66" endPosition="0" />
-    <scopeInfo nodeId="1224596674658" fileName="SimpleOperations1.java" startLine="83" startPosition="39" endLine="119" endPosition="0" />
-    <scopeInfo nodeId="1224596674627" fileName="SimpleOperations1.java" startLine="29" startPosition="42" endLine="66" endPosition="10" />
-    <scopeInfo nodeId="1224596674658" fileName="SimpleOperations1.java" startLine="82" startPosition="42" endLine="119" endPosition="10" />
-    <scopeInfo nodeId="1224596674627" fileName="SimpleOperations1.java" startLine="28" startPosition="78" endLine="68" endPosition="0" />
-    <scopeInfo nodeId="1224596674658" fileName="SimpleOperations1.java" startLine="81" startPosition="78" endLine="121" endPosition="0" />
-    <scopeInfo nodeId="1165597541290" fileName="SimpleOperations1.java" startLine="80" startPosition="25" endLine="129" endPosition="5">
+    <scopeInfo nodeId="1165526704344" fileName="SimpleOperations1.java" startLine="19" startPosition="0" endLine="29" endPosition="0" />
+    <scopeInfo nodeId="1165526992412" fileName="SimpleOperations1.java" startLine="134" startPosition="0" endLine="144" endPosition="0" />
+    <scopeInfo nodeId="1165527190595" fileName="SimpleOperations1.java" startLine="144" startPosition="0" endLine="154" endPosition="0" />
+    <scopeInfo nodeId="1224596674627" fileName="SimpleOperations1.java" startLine="40" startPosition="20" endLine="63" endPosition="19" />
+    <scopeInfo nodeId="1224596674658" fileName="SimpleOperations1.java" startLine="93" startPosition="20" endLine="116" endPosition="19" />
+    <scopeInfo nodeId="1224596674627" fileName="SimpleOperations1.java" startLine="38" startPosition="46" endLine="65" endPosition="29" />
+    <scopeInfo nodeId="1224596674658" fileName="SimpleOperations1.java" startLine="91" startPosition="46" endLine="118" endPosition="29" />
+    <scopeInfo nodeId="1224596674627" fileName="SimpleOperations1.java" startLine="37" startPosition="0" endLine="67" endPosition="0" />
+    <scopeInfo nodeId="1224596674658" fileName="SimpleOperations1.java" startLine="90" startPosition="0" endLine="120" endPosition="0" />
+    <scopeInfo nodeId="1224596674627" fileName="SimpleOperations1.java" startLine="34" startPosition="46" endLine="67" endPosition="14" />
+    <scopeInfo nodeId="1224596674658" fileName="SimpleOperations1.java" startLine="87" startPosition="46" endLine="120" endPosition="14" />
+    <scopeInfo nodeId="1224596674627" fileName="SimpleOperations1.java" startLine="33" startPosition="39" endLine="69" endPosition="0" />
+    <scopeInfo nodeId="1224596674658" fileName="SimpleOperations1.java" startLine="86" startPosition="39" endLine="122" endPosition="0" />
+    <scopeInfo nodeId="1224596674627" fileName="SimpleOperations1.java" startLine="32" startPosition="42" endLine="69" endPosition="10" />
+    <scopeInfo nodeId="1224596674658" fileName="SimpleOperations1.java" startLine="85" startPosition="42" endLine="122" endPosition="10" />
+    <scopeInfo nodeId="1224596674627" fileName="SimpleOperations1.java" startLine="31" startPosition="78" endLine="71" endPosition="0" />
+    <scopeInfo nodeId="1224596674658" fileName="SimpleOperations1.java" startLine="84" startPosition="78" endLine="124" endPosition="0" />
+    <scopeInfo nodeId="1165597541290" fileName="SimpleOperations1.java" startLine="83" startPosition="25" endLine="132" endPosition="5">
       <varInfo nodeId="1165597541292" varName="S" />
       <varInfo nodeId="1165597592845" varName="count" />
     </scopeInfo>
-    <scopeInfo nodeId="1165526644940" fileName="SimpleOperations1.java" startLine="27" startPosition="25" endLine="77" endPosition="67">
+    <scopeInfo nodeId="1165526644940" fileName="SimpleOperations1.java" startLine="30" startPosition="25" endLine="80" endPosition="67">
       <varInfo nodeId="1165526656443" varName="S" />
     </scopeInfo>
-    <scopeInfo nodeId="1165597541289" fileName="SimpleOperations1.java" startLine="79" startPosition="0" endLine="131" endPosition="0" />
-    <scopeInfo nodeId="1165526644939" fileName="SimpleOperations1.java" startLine="26" startPosition="0" endLine="79" endPosition="0" />
-    <unitInfo nodeId="1165526591424" fileName="SimpleOperations1.java" startLine="16" startPosition="0" endLine="152" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.unittest.simple_operations.SimpleOperations1" />
-    <unitInfo nodeId="1224596674627" fileName="SimpleOperations1.java" startLine="28" startPosition="50" endLine="68" endPosition="5" unitName="jetbrains.mps.baseLanguage.collections.unittest.simple_operations.SimpleOperations1$1" />
-    <unitInfo nodeId="1224596674627" fileName="SimpleOperations1.java" startLine="30" startPosition="19" endLine="66" endPosition="9" unitName="jetbrains.mps.baseLanguage.collections.unittest.simple_operations.SimpleOperations1$2" />
-    <unitInfo nodeId="1224596674658" fileName="SimpleOperations1.java" startLine="81" startPosition="50" endLine="121" endPosition="5" unitName="jetbrains.mps.baseLanguage.collections.unittest.simple_operations.SimpleOperations1$2" />
-    <unitInfo nodeId="1224596674627" fileName="SimpleOperations1.java" startLine="32" startPosition="23" endLine="64" endPosition="13" unitName="jetbrains.mps.baseLanguage.collections.unittest.simple_operations.SimpleOperations1$3" />
-    <unitInfo nodeId="1224596674658" fileName="SimpleOperations1.java" startLine="83" startPosition="19" endLine="119" endPosition="9" unitName="jetbrains.mps.baseLanguage.collections.unittest.simple_operations.SimpleOperations1$3" />
-    <unitInfo nodeId="1224596674658" fileName="SimpleOperations1.java" startLine="85" startPosition="23" endLine="117" endPosition="13" unitName="jetbrains.mps.baseLanguage.collections.unittest.simple_operations.SimpleOperations1$4" />
+    <scopeInfo nodeId="1165597541289" fileName="SimpleOperations1.java" startLine="82" startPosition="0" endLine="134" endPosition="0" />
+    <scopeInfo nodeId="1165526644939" fileName="SimpleOperations1.java" startLine="29" startPosition="0" endLine="82" endPosition="0" />
+    <unitInfo nodeId="1165526591424" fileName="SimpleOperations1.java" startLine="16" startPosition="0" endLine="155" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.unittest.simple_operations.SimpleOperations1" />
+    <unitInfo nodeId="1224596674627" fileName="SimpleOperations1.java" startLine="31" startPosition="50" endLine="71" endPosition="5" unitName="jetbrains.mps.baseLanguage.collections.unittest.simple_operations.SimpleOperations1$1" />
+    <unitInfo nodeId="1224596674627" fileName="SimpleOperations1.java" startLine="33" startPosition="19" endLine="69" endPosition="9" unitName="jetbrains.mps.baseLanguage.collections.unittest.simple_operations.SimpleOperations1$2" />
+    <unitInfo nodeId="1224596674658" fileName="SimpleOperations1.java" startLine="84" startPosition="50" endLine="124" endPosition="5" unitName="jetbrains.mps.baseLanguage.collections.unittest.simple_operations.SimpleOperations1$2" />
+    <unitInfo nodeId="1224596674627" fileName="SimpleOperations1.java" startLine="35" startPosition="23" endLine="67" endPosition="13" unitName="jetbrains.mps.baseLanguage.collections.unittest.simple_operations.SimpleOperations1$3" />
+    <unitInfo nodeId="1224596674658" fileName="SimpleOperations1.java" startLine="86" startPosition="19" endLine="122" endPosition="9" unitName="jetbrains.mps.baseLanguage.collections.unittest.simple_operations.SimpleOperations1$3" />
+    <unitInfo nodeId="1224596674658" fileName="SimpleOperations1.java" startLine="88" startPosition="23" endLine="120" endPosition="13" unitName="jetbrains.mps.baseLanguage.collections.unittest.simple_operations.SimpleOperations1$4" />
   </root>
   <root nodeId="1170977643149">
-    <nodeInfo nodeId="1170977695137" fileName="Sort_Test1.java" startLine="13" startPosition="24" endLine="14" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1170977737761" fileName="Sort_Test1.java" startLine="14" startPosition="100" endLine="15" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1224596675946" fileName="Sort_Test1.java" startLine="17" startPosition="47" endLine="18" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1170979129412" fileName="Sort_Test1.java" startLine="20" startPosition="30" endLine="21" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1170979142808" fileName="Sort_Test1.java" startLine="22" startPosition="58" endLine="23" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1170979225431" fileName="Sort_Test1.java" startLine="23" startPosition="80" endLine="24" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1170979239251" fileName="Sort_Test1.java" startLine="28" startPosition="24" endLine="29" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1170979239263" fileName="Sort_Test1.java" startLine="29" startPosition="100" endLine="30" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1224596675890" fileName="Sort_Test1.java" startLine="32" startPosition="47" endLine="33" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1170979239287" fileName="Sort_Test1.java" startLine="35" startPosition="31" endLine="36" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1170979239295" fileName="Sort_Test1.java" startLine="37" startPosition="58" endLine="38" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1170979239302" fileName="Sort_Test1.java" startLine="38" startPosition="80" endLine="39" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1224596675942" fileName="Sort_Test1.java" startLine="16" startPosition="106" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljava/lang/Integer;)Ljava/lang/Comparable;" />
-    <nodeInfo nodeId="1170979112529" fileName="Sort_Test1.java" startLine="21" startPosition="18" endLine="25" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="1224596675886" fileName="Sort_Test1.java" startLine="31" startPosition="106" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljava/lang/Integer;)Ljava/lang/Comparable;" />
-    <nodeInfo nodeId="1170979239291" fileName="Sort_Test1.java" startLine="36" startPosition="18" endLine="40" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="1170979101304" fileName="Sort_Test1.java" startLine="15" startPosition="96" endLine="20" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1170979239275" fileName="Sort_Test1.java" startLine="30" startPosition="96" endLine="35" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1170977675570" fileName="Sort_Test1.java" startLine="12" startPosition="42" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_1#()V" />
-    <nodeInfo nodeId="1170979239248" fileName="Sort_Test1.java" startLine="27" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_2#()V" />
-    <scopeInfo nodeId="1224596675945" fileName="Sort_Test1.java" startLine="17" startPosition="47" endLine="18" endPosition="18" />
-    <scopeInfo nodeId="1224596675889" fileName="Sort_Test1.java" startLine="32" startPosition="47" endLine="33" endPosition="18" />
-    <scopeInfo nodeId="1170979112532" fileName="Sort_Test1.java" startLine="22" startPosition="58" endLine="24" endPosition="14" />
-    <scopeInfo nodeId="1170979239294" fileName="Sort_Test1.java" startLine="37" startPosition="58" endLine="39" endPosition="14" />
-    <scopeInfo nodeId="1224596675942" fileName="Sort_Test1.java" startLine="16" startPosition="106" endLine="20" endPosition="0">
+    <nodeInfo nodeId="1170977695137" fileName="Sort_Test1.java" startLine="16" startPosition="24" endLine="17" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1170977737761" fileName="Sort_Test1.java" startLine="17" startPosition="100" endLine="18" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1224596675946" fileName="Sort_Test1.java" startLine="20" startPosition="47" endLine="21" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1170979129412" fileName="Sort_Test1.java" startLine="23" startPosition="30" endLine="24" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1170979142808" fileName="Sort_Test1.java" startLine="25" startPosition="58" endLine="26" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1170979225431" fileName="Sort_Test1.java" startLine="26" startPosition="80" endLine="27" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1170979239251" fileName="Sort_Test1.java" startLine="31" startPosition="24" endLine="32" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1170979239263" fileName="Sort_Test1.java" startLine="32" startPosition="100" endLine="33" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1224596675890" fileName="Sort_Test1.java" startLine="35" startPosition="47" endLine="36" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1170979239287" fileName="Sort_Test1.java" startLine="38" startPosition="31" endLine="39" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1170979239295" fileName="Sort_Test1.java" startLine="40" startPosition="58" endLine="41" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1170979239302" fileName="Sort_Test1.java" startLine="41" startPosition="80" endLine="42" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3891516456976043510" fileName="Sort_Test1.java" startLine="12" startPosition="42" endLine="14" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Sort_Test1#()V" />
+    <nodeInfo nodeId="1224596675942" fileName="Sort_Test1.java" startLine="19" startPosition="106" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljava/lang/Integer;)Ljava/lang/Comparable;" />
+    <nodeInfo nodeId="1170979112529" fileName="Sort_Test1.java" startLine="24" startPosition="18" endLine="28" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="1224596675886" fileName="Sort_Test1.java" startLine="34" startPosition="106" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljava/lang/Integer;)Ljava/lang/Comparable;" />
+    <nodeInfo nodeId="1170979239291" fileName="Sort_Test1.java" startLine="39" startPosition="18" endLine="43" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="1170979101304" fileName="Sort_Test1.java" startLine="18" startPosition="96" endLine="23" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1170979239275" fileName="Sort_Test1.java" startLine="33" startPosition="96" endLine="38" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1170977675570" fileName="Sort_Test1.java" startLine="15" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_1#()V" />
+    <nodeInfo nodeId="1170979239248" fileName="Sort_Test1.java" startLine="30" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_2#()V" />
+    <scopeInfo nodeId="3891516456976043512" fileName="Sort_Test1.java" startLine="13" startPosition="23" endLine="13" endPosition="23" />
+    <scopeInfo nodeId="1224596675945" fileName="Sort_Test1.java" startLine="20" startPosition="47" endLine="21" endPosition="18" />
+    <scopeInfo nodeId="1224596675889" fileName="Sort_Test1.java" startLine="35" startPosition="47" endLine="36" endPosition="18" />
+    <scopeInfo nodeId="3891516456976043510" fileName="Sort_Test1.java" startLine="12" startPosition="42" endLine="14" endPosition="3" />
+    <scopeInfo nodeId="1170979112532" fileName="Sort_Test1.java" startLine="25" startPosition="58" endLine="27" endPosition="14" />
+    <scopeInfo nodeId="1170979239294" fileName="Sort_Test1.java" startLine="40" startPosition="58" endLine="42" endPosition="14" />
+    <scopeInfo nodeId="1224596675942" fileName="Sort_Test1.java" startLine="19" startPosition="106" endLine="23" endPosition="0">
       <varInfo nodeId="1224596675942" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="1170979112529" fileName="Sort_Test1.java" startLine="21" startPosition="18" endLine="25" endPosition="5">
+    <scopeInfo nodeId="1170979112529" fileName="Sort_Test1.java" startLine="24" startPosition="18" endLine="28" endPosition="5">
       <varInfo nodeId="1170979112529" varName="i" />
     </scopeInfo>
-    <scopeInfo nodeId="1224596675886" fileName="Sort_Test1.java" startLine="31" startPosition="106" endLine="35" endPosition="0">
+    <scopeInfo nodeId="1224596675886" fileName="Sort_Test1.java" startLine="34" startPosition="106" endLine="38" endPosition="0">
       <varInfo nodeId="1224596675886" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="1170979239291" fileName="Sort_Test1.java" startLine="36" startPosition="18" endLine="40" endPosition="5">
+    <scopeInfo nodeId="1170979239291" fileName="Sort_Test1.java" startLine="39" startPosition="18" endLine="43" endPosition="5">
       <varInfo nodeId="1170979239291" varName="i" />
     </scopeInfo>
-    <scopeInfo nodeId="1170977675572" fileName="Sort_Test1.java" startLine="13" startPosition="24" endLine="25" endPosition="5">
+    <scopeInfo nodeId="1170977675572" fileName="Sort_Test1.java" startLine="16" startPosition="24" endLine="28" endPosition="5">
       <varInfo nodeId="1170977695138" varName="expected" />
       <varInfo nodeId="1170979129413" varName="index" />
       <varInfo nodeId="1170977737762" varName="list" />
       <varInfo nodeId="1170979101305" varName="list_sorted" />
     </scopeInfo>
-    <scopeInfo nodeId="1170979239250" fileName="Sort_Test1.java" startLine="28" startPosition="24" endLine="40" endPosition="5">
+    <scopeInfo nodeId="1170979239250" fileName="Sort_Test1.java" startLine="31" startPosition="24" endLine="43" endPosition="5">
       <varInfo nodeId="1170979239252" varName="expected" />
       <varInfo nodeId="1170979239288" varName="index" />
       <varInfo nodeId="1170979239264" varName="list" />
       <varInfo nodeId="1170979239276" varName="list_sorted" />
     </scopeInfo>
-    <scopeInfo nodeId="1170977675570" fileName="Sort_Test1.java" startLine="12" startPosition="42" endLine="27" endPosition="0" />
-    <scopeInfo nodeId="1170979239248" fileName="Sort_Test1.java" startLine="27" startPosition="0" endLine="42" endPosition="0" />
-    <unitInfo nodeId="1170977643149" fileName="Sort_Test1.java" startLine="12" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.unittest.simple_operations.Sort_Test1" />
-    <unitInfo nodeId="1224596675942" fileName="Sort_Test1.java" startLine="16" startPosition="69" endLine="20" endPosition="5" unitName="jetbrains.mps.baseLanguage.collections.unittest.simple_operations.Sort_Test1$1" />
-    <unitInfo nodeId="1224596675886" fileName="Sort_Test1.java" startLine="31" startPosition="69" endLine="35" endPosition="5" unitName="jetbrains.mps.baseLanguage.collections.unittest.simple_operations.Sort_Test1$2" />
+    <scopeInfo nodeId="1170977675570" fileName="Sort_Test1.java" startLine="15" startPosition="0" endLine="30" endPosition="0" />
+    <scopeInfo nodeId="1170979239248" fileName="Sort_Test1.java" startLine="30" startPosition="0" endLine="45" endPosition="0" />
+    <unitInfo nodeId="1170977643149" fileName="Sort_Test1.java" startLine="12" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.unittest.simple_operations.Sort_Test1" />
+    <unitInfo nodeId="1224596675942" fileName="Sort_Test1.java" startLine="19" startPosition="69" endLine="23" endPosition="5" unitName="jetbrains.mps.baseLanguage.collections.unittest.simple_operations.Sort_Test1$1" />
+    <unitInfo nodeId="1224596675886" fileName="Sort_Test1.java" startLine="34" startPosition="69" endLine="38" endPosition="5" unitName="jetbrains.mps.baseLanguage.collections.unittest.simple_operations.Sort_Test1$2" />
   </root>
   <root nodeId="1171392073356">
-    <nodeInfo nodeId="1171392143009" fileName="ListOperations_Test.java" startLine="13" startPosition="24" endLine="14" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1171392224088" fileName="ListOperations_Test.java" startLine="14" startPosition="96" endLine="15" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1171392231547" fileName="ListOperations_Test.java" startLine="15" startPosition="61" endLine="16" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1171392319786" fileName="ListOperations_Test.java" startLine="16" startPosition="44" endLine="17" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1171392324688" fileName="ListOperations_Test.java" startLine="17" startPosition="60" endLine="18" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1172278352727" fileName="ListOperations_Test.java" startLine="21" startPosition="24" endLine="22" endPosition="162" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1172279133392" fileName="ListOperations_Test.java" startLine="22" startPosition="162" endLine="23" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1172279190074" fileName="ListOperations_Test.java" startLine="23" startPosition="92" endLine="24" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1203978505890" fileName="ListOperations_Test.java" startLine="27" startPosition="24" endLine="28" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1203980123611" fileName="ListOperations_Test.java" startLine="28" startPosition="52" endLine="29" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1203980132963" fileName="ListOperations_Test.java" startLine="29" startPosition="111" endLine="30" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1172278345458" fileName="ListOperations_Test.java" startLine="20" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_2#()V" />
-    <nodeInfo nodeId="1203978489854" fileName="ListOperations_Test.java" startLine="26" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_3#()V" />
-    <nodeInfo nodeId="1171392119645" fileName="ListOperations_Test.java" startLine="12" startPosition="51" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_1#()V" />
-    <scopeInfo nodeId="1172278345460" fileName="ListOperations_Test.java" startLine="21" startPosition="24" endLine="24" endPosition="96">
+    <nodeInfo nodeId="1171392143009" fileName="ListOperations_Test.java" startLine="16" startPosition="24" endLine="17" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1171392224088" fileName="ListOperations_Test.java" startLine="17" startPosition="96" endLine="18" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1171392231547" fileName="ListOperations_Test.java" startLine="18" startPosition="61" endLine="19" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1171392319786" fileName="ListOperations_Test.java" startLine="19" startPosition="44" endLine="20" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1171392324688" fileName="ListOperations_Test.java" startLine="20" startPosition="60" endLine="21" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1172278352727" fileName="ListOperations_Test.java" startLine="24" startPosition="24" endLine="25" endPosition="162" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1172279133392" fileName="ListOperations_Test.java" startLine="25" startPosition="162" endLine="26" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1172279190074" fileName="ListOperations_Test.java" startLine="26" startPosition="92" endLine="27" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1203978505890" fileName="ListOperations_Test.java" startLine="30" startPosition="24" endLine="31" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1203980123611" fileName="ListOperations_Test.java" startLine="31" startPosition="52" endLine="32" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1203980132963" fileName="ListOperations_Test.java" startLine="32" startPosition="111" endLine="33" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3891516456976043514" fileName="ListOperations_Test.java" startLine="12" startPosition="51" endLine="14" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ListOperations_Test#()V" />
+    <nodeInfo nodeId="1172278345458" fileName="ListOperations_Test.java" startLine="23" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_2#()V" />
+    <nodeInfo nodeId="1203978489854" fileName="ListOperations_Test.java" startLine="29" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_3#()V" />
+    <nodeInfo nodeId="1171392119645" fileName="ListOperations_Test.java" startLine="15" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_1#()V" />
+    <scopeInfo nodeId="3891516456976043516" fileName="ListOperations_Test.java" startLine="13" startPosition="32" endLine="13" endPosition="32" />
+    <scopeInfo nodeId="3891516456976043514" fileName="ListOperations_Test.java" startLine="12" startPosition="51" endLine="14" endPosition="3" />
+    <scopeInfo nodeId="1172278345460" fileName="ListOperations_Test.java" startLine="24" startPosition="24" endLine="27" endPosition="96">
       <varInfo nodeId="1172278352728" varName="llb" />
     </scopeInfo>
-    <scopeInfo nodeId="1203978489857" fileName="ListOperations_Test.java" startLine="27" startPosition="24" endLine="30" endPosition="32">
+    <scopeInfo nodeId="1203978489857" fileName="ListOperations_Test.java" startLine="30" startPosition="24" endLine="33" endPosition="32">
       <varInfo nodeId="1203978505891" varName="li" />
       <varInfo nodeId="1203980123612" varName="lo" />
     </scopeInfo>
-    <scopeInfo nodeId="1171392119647" fileName="ListOperations_Test.java" startLine="13" startPosition="24" endLine="18" endPosition="36">
+    <scopeInfo nodeId="1171392119647" fileName="ListOperations_Test.java" startLine="16" startPosition="24" endLine="21" endPosition="36">
       <varInfo nodeId="1171392224089" varName="at_2" />
       <varInfo nodeId="1171392319787" varName="index_2" />
       <varInfo nodeId="1171392143010" varName="list" />
     </scopeInfo>
-    <scopeInfo nodeId="1172278345458" fileName="ListOperations_Test.java" startLine="20" startPosition="0" endLine="26" endPosition="0" />
-    <scopeInfo nodeId="1203978489854" fileName="ListOperations_Test.java" startLine="26" startPosition="0" endLine="32" endPosition="0" />
-    <scopeInfo nodeId="1171392119645" fileName="ListOperations_Test.java" startLine="12" startPosition="51" endLine="20" endPosition="0" />
-    <unitInfo nodeId="1171392073356" fileName="ListOperations_Test.java" startLine="12" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.unittest.simple_operations.ListOperations_Test" />
+    <scopeInfo nodeId="1172278345458" fileName="ListOperations_Test.java" startLine="23" startPosition="0" endLine="29" endPosition="0" />
+    <scopeInfo nodeId="1203978489854" fileName="ListOperations_Test.java" startLine="29" startPosition="0" endLine="35" endPosition="0" />
+    <scopeInfo nodeId="1171392119645" fileName="ListOperations_Test.java" startLine="15" startPosition="0" endLine="23" endPosition="0" />
+    <unitInfo nodeId="1171392073356" fileName="ListOperations_Test.java" startLine="12" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.unittest.simple_operations.ListOperations_Test" />
   </root>
   <root nodeId="1172256754301">
     <nodeInfo nodeId="1224596675029" fileName="Contains_Test.java" startLine="44" startPosition="27" endLine="44" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />

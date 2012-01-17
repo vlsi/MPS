@@ -4,7 +4,7 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.plugins.pluginparts.tool.GeneratedTool;
 import javax.swing.Icon;
-import javax.swing.ImageIcon;
+import jetbrains.mps.util.IconUtil;
 import jetbrains.mps.ide.dependencyViewer.DependenciesPanel;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.wm.ToolWindowAnchor;
@@ -13,7 +13,7 @@ import jetbrains.mps.project.MPSProject;
 import javax.swing.JComponent;
 
 public class AnalyzeDependencies_Tool extends GeneratedTool {
-  private static final Icon ICON = new ImageIcon(AnalyzeDependencies_Tool.class.getResource("inspector.png"));
+  private static final Icon ICON = IconUtil.getIcon("inspector.png");
 
   private DependenciesPanel myDependenciesPanel;
 

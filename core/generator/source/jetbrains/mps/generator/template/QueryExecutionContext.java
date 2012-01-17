@@ -46,6 +46,8 @@ public interface QueryExecutionContext {
 
   Object evaluateArgumentQuery(SNode inputNode, SNode query, @Nullable TemplateContext context);
 
+  Object evaluateVariableQuery(SNode inputNode, SNode query, @Nullable TemplateContext context);
+
   List<SNode> evaluateSourceNodesQuery(SNode inputNode, SNode ruleNode, SNode macroNode, SNode query, @NotNull TemplateContext context);
 
   SNode evaluateInsertQuery(SNode inputNode, SNode macroNode, SNode query, @NotNull TemplateContext context);

@@ -26,11 +26,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class JarEntryFile implements IFileEx {
-  private JarFileData myJarFileData;
+  private AbstractJarFileData myJarFileData;
   private File myJarFile;
   private String myEntryPath;
 
-  JarEntryFile(JarFileData jarFileData, File jarFile, String path) {
+  JarEntryFile(AbstractJarFileData jarFileData, File jarFile, String path) {
     myJarFileData = jarFileData;
     myJarFile = jarFile;
     myEntryPath = path.replace(File.separator, "/");

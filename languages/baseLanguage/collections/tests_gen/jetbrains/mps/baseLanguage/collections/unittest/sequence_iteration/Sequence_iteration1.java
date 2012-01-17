@@ -11,6 +11,9 @@ import junit.framework.Assert;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 
 public class Sequence_iteration1 extends TestCase {
+  public Sequence_iteration1() {
+  }
+
   public void test_shortSequence1() {
     // sequence with no memory 
     Iterable<String> ss = Sequence.fromClosure(new ISequenceClosure<String>() {

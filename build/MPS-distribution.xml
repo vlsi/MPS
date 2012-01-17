@@ -1,5 +1,6 @@
 <project name="MPS-distribution" default="default">
   <property file="${ant.file.MPS-distribution}/../MPS.properties" />
+  <import file="${ant.file.MPS-distribution}/../MPS-distribution.xml" />
   <include file="${ant.file.MPS-distribution}/../MPS-external.xml" />
   <include file="${ant.file.MPS-distribution}/../MPS-os-specific-default.xml" />
   <condition property="windows">

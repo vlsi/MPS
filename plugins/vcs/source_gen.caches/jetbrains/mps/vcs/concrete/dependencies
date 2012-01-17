@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dependenciesRoot>
+  <dependency className="jetbrains.mps.vcs.concrete.GitUtils" file="GitUtils.java">
+    <classNode dependClassName="com.intellij.openapi.project.Project" />
+    <classNode dependClassName="com.intellij.openapi.vcs.VcsException" />
+    <classNode dependClassName="com.intellij.openapi.vfs.VirtualFile" />
+    <classNode dependClassName="git4idea.commands.GitCommand" />
+    <classNode dependClassName="git4idea.commands.GitSimpleHandler" />
+  </dependency>
+  <dependency className="jetbrains.mps.vcs.concrete.MPSSourceRevision" file="MPSSourceRevision.java">
+    <classNode dependClassName="com.intellij.openapi.application.PathManager" />
+    <classNode dependClassName="com.intellij.openapi.project.Project" />
+    <classNode dependClassName="com.intellij.openapi.project.ProjectManager" />
+    <classNode dependClassName="com.intellij.openapi.vcs.VcsException" />
+    <classNode dependClassName="com.intellij.openapi.vfs.LocalFileSystem" />
+    <classNode dependClassName="com.intellij.openapi.vfs.VirtualFile" />
+    <classNode dependClassName="git4idea.GitBranch" />
+    <classNode dependClassName="git4idea.commands.GitCommand" />
+    <classNode dependClassName="git4idea.commands.GitSimpleHandler" />
+    <classNode dependClassName="java.lang.Integer" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.util.NameUtil" />
+    <classNode dependClassName="jetbrains.mps.vcs.concrete.PluginUtil" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode extendsClassName="jetbrains.mps.ide.vcs.SourceRevision" />
+  </dependency>
+  <dependency className="jetbrains.mps.vcs.concrete.PluginUtil" file="PluginUtil.java">
+    <classNode dependClassName="com.intellij.ide.plugins.IdeaPluginDescriptor" />
+    <classNode dependClassName="com.intellij.ide.plugins.IdeaPluginDescriptorImpl" />
+    <classNode dependClassName="com.intellij.ide.plugins.PluginManager" />
+    <classNode dependClassName="com.intellij.openapi.extensions.PluginId" />
+    <classNode dependClassName="java.lang.String" />
+  </dependency>
+</dependenciesRoot>
+

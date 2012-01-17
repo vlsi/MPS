@@ -4,6 +4,7 @@ package jetbrains.mps.debugger.api.ui.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
+import jetbrains.mps.util.IconUtil;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.jetbrains.annotations.NotNull;
@@ -28,12 +29,9 @@ import jetbrains.mps.internal.collections.runtime.ISequenceClosure;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.smodel.IOperationContext;
-import javax.swing.ImageIcon;
-import com.intellij.openapi.util.io.StreamUtil;
-import java.io.IOException;
 
 public class EvaluateExpression_Action extends BaseAction {
-  private static final Icon ICON = getIcon();
+  private static final Icon ICON = IconUtil.getIcon("evaluate.png");
   protected static Log log = LogFactory.getLog(EvaluateExpression_Action.class);
 
   public EvaluateExpression_Action() {
@@ -97,17 +95,6 @@ public class EvaluateExpression_Action extends BaseAction {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "EvaluateExpression", t);
       }
-    }
-  }
-
-  private static Icon getIcon() {
-    try {
-      return new ImageIcon(StreamUtil.loadFromStream(EvaluateExpression_Action.class.getResourceAsStream("evaluate.png")));
-    } catch (IOException e) {
-      if (log.isWarnEnabled()) {
-        log.warn("Couldn't load icon for EvaluateExpression", e);
-      }
-      return null;
     }
   }
 }

@@ -52,6 +52,9 @@ public class TemplateModelScanner {
   }
 
   private void scanTemplateNode(SNode node) {
+    if ((node == null)) {
+      return;
+    }
     SetSequence.fromSet(myTargetLanguages).addElement(node.getLanguageNamespace());
     for (SNode n : node.getChildrenIterable()) {
       if (SNodeOperations.isInstanceOf(n, "jetbrains.mps.lang.generator.structure.IfMacro")) {
@@ -68,6 +71,9 @@ public class TemplateModelScanner {
   }
 
   private void scanTemplateContextNode(SNode node) {
+    if ((node == null)) {
+      return;
+    }
     if (AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.generator.structure.TemplateFragment"))) != null) {
       scanTemplateNode(node);
       return;
