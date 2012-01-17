@@ -190,7 +190,7 @@
   </dependency>
   <dependency className="jetbrains.mps.ide.hierarchy.IconContainer" file="IconContainer.java">
     <classNode dependClassName="javax.swing.Icon" />
-    <classNode dependClassName="javax.swing.ImageIcon" />
+    <classNode dependClassName="jetbrains.mps.util.IconUtil" />
   </dependency>
   <dependency className="jetbrains.mps.ide.hierarchy.LanguageHierarchiesComponent" file="LanguageHierarchiesComponent.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.ActionManager" />

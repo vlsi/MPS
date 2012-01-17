@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="Generator_Language.java" startLine="9" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.generator.structure.Generator_Language" />
-  <unitInfo fileName="StructureAspectDescriptor.java" startLine="10" startPosition="0" endLine="179" endPosition="0" unitName="jetbrains.mps.lang.generator.structure.StructureAspectDescriptor" />
+  <unitInfo fileName="StructureAspectDescriptor.java" startLine="10" startPosition="0" endLine="183" endPosition="0" unitName="jetbrains.mps.lang.generator.structure.StructureAspectDescriptor" />
   <root nodeId="1087833241328">
     <nodeInfo nodeId="1087833241328" fileName="PropertyMacro.java" startLine="14" startPosition="79" endLine="15" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="1087833241328" fileName="PropertyMacro.java" startLine="15" startPosition="94" endLine="16" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="COMMENT" />
@@ -4014,6 +4014,144 @@
       <varInfo nodeId="5005282049925926521" varName="sm" />
     </scopeInfo>
     <unitInfo nodeId="5005282049925926521" fileName="TemplateArgumentParameterExpression.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.lang.generator.structure.TemplateArgumentParameterExpression" />
+  </root>
+  <root nodeId="5015072279636464462">
+    <nodeInfo nodeId="5015072279636464462" fileName="VarMacro.java" startLine="15" startPosition="66" endLine="16" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
+    <nodeInfo nodeId="5015072279636464462" fileName="VarMacro.java" startLine="16" startPosition="89" endLine="17" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="NAME" />
+    <nodeInfo nodeId="5015072279636464462" fileName="VarMacro.java" startLine="17" startPosition="43" endLine="18" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SHORT_DESCRIPTION" />
+    <nodeInfo nodeId="5015072279636464462" fileName="VarMacro.java" startLine="18" startPosition="68" endLine="19" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ALIAS" />
+    <nodeInfo nodeId="5015072279636464462" fileName="VarMacro.java" startLine="19" startPosition="45" endLine="20" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="VIRTUAL_PACKAGE" />
+    <nodeInfo nodeId="5015072279636464462" fileName="VarMacro.java" startLine="20" startPosition="64" endLine="21" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="TYPE" />
+    <nodeInfo nodeId="5015072279636464462" fileName="VarMacro.java" startLine="21" startPosition="43" endLine="22" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="VALUE" />
+    <nodeInfo nodeId="5015072279636464462" fileName="VarMacro.java" startLine="22" startPosition="45" endLine="23" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SMODEL_ATTRIBUTE" />
+    <nodeInfo nodeId="5015072279636464462" fileName="VarMacro.java" startLine="25" startPosition="31" endLine="26" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="5015072279636464462" fileName="VarMacro.java" startLine="29" startPosition="27" endLine="30" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5015072279636464462" fileName="VarMacro.java" startLine="33" startPosition="37" endLine="34" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5015072279636464462" fileName="VarMacro.java" startLine="37" startPosition="39" endLine="38" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5015072279636464462" fileName="VarMacro.java" startLine="41" startPosition="49" endLine="42" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5015072279636464462" fileName="VarMacro.java" startLine="45" startPosition="28" endLine="46" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5015072279636464462" fileName="VarMacro.java" startLine="49" startPosition="38" endLine="50" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5015072279636464462" fileName="VarMacro.java" startLine="53" startPosition="37" endLine="54" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5015072279636464462" fileName="VarMacro.java" startLine="57" startPosition="47" endLine="58" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5015072279636464462" fileName="VarMacro.java" startLine="61" startPosition="25" endLine="62" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5015072279636464462" fileName="VarMacro.java" startLine="65" startPosition="34" endLine="66" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5015072279636464462" fileName="VarMacro.java" startLine="69" startPosition="41" endLine="70" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5015072279636464462" fileName="VarMacro.java" startLine="73" startPosition="50" endLine="74" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5015072279636464462" fileName="VarMacro.java" startLine="77" startPosition="41" endLine="78" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5015072279636464462" fileName="VarMacro.java" startLine="81" startPosition="49" endLine="82" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5015072279636464462" fileName="VarMacro.java" startLine="85" startPosition="48" endLine="86" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5015072279636464462" fileName="VarMacro.java" startLine="89" startPosition="50" endLine="90" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5015072279636464462" fileName="VarMacro.java" startLine="93" startPosition="69" endLine="94" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5015072279636464462" fileName="VarMacro.java" startLine="97" startPosition="63" endLine="98" endPosition="168" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5015072279636464462" fileName="VarMacro.java" startLine="101" startPosition="49" endLine="102" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5015072279636464462" fileName="VarMacro.java" startLine="24" startPosition="0" endLine="27" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="VarMacro#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="5015072279636464462" fileName="VarMacro.java" startLine="28" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="5015072279636464462" fileName="VarMacro.java" startLine="32" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setName#(Ljava/lang/String;)V" />
+    <nodeInfo nodeId="5015072279636464462" fileName="VarMacro.java" startLine="36" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getShortDescription#()Ljava/lang/String;" />
+    <nodeInfo nodeId="5015072279636464462" fileName="VarMacro.java" startLine="40" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setShortDescription#(Ljava/lang/String;)V" />
+    <nodeInfo nodeId="5015072279636464462" fileName="VarMacro.java" startLine="44" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getAlias#()Ljava/lang/String;" />
+    <nodeInfo nodeId="5015072279636464462" fileName="VarMacro.java" startLine="48" startPosition="0" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setAlias#(Ljava/lang/String;)V" />
+    <nodeInfo nodeId="5015072279636464462" fileName="VarMacro.java" startLine="52" startPosition="0" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getVirtualPackage#()Ljava/lang/String;" />
+    <nodeInfo nodeId="5015072279636464462" fileName="VarMacro.java" startLine="56" startPosition="0" endLine="60" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setVirtualPackage#(Ljava/lang/String;)V" />
+    <nodeInfo nodeId="5015072279636464462" fileName="VarMacro.java" startLine="60" startPosition="0" endLine="64" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getType#()Ljetbrains/mps/smodel/INodeAdapter;" />
+    <nodeInfo nodeId="5015072279636464462" fileName="VarMacro.java" startLine="64" startPosition="0" endLine="68" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setType#(Ljetbrains/mps/smodel/INodeAdapter;)V" />
+    <nodeInfo nodeId="5015072279636464462" fileName="VarMacro.java" startLine="68" startPosition="0" endLine="72" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getValue#()Ljetbrains/mps/smodel/INodeAdapter;" />
+    <nodeInfo nodeId="5015072279636464462" fileName="VarMacro.java" startLine="72" startPosition="0" endLine="76" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setValue#(Ljetbrains/mps/smodel/INodeAdapter;)V" />
+    <nodeInfo nodeId="5015072279636464462" fileName="VarMacro.java" startLine="76" startPosition="0" endLine="80" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSmodelAttributesCount#()I" />
+    <nodeInfo nodeId="5015072279636464462" fileName="VarMacro.java" startLine="80" startPosition="0" endLine="84" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="smodelAttributes#()Ljava/util/Iterator;" />
+    <nodeInfo nodeId="5015072279636464462" fileName="VarMacro.java" startLine="84" startPosition="0" endLine="88" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSmodelAttributes#()Ljava/util/List;" />
+    <nodeInfo nodeId="5015072279636464462" fileName="VarMacro.java" startLine="88" startPosition="0" endLine="92" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addSmodelAttribute#(Ljetbrains/mps/smodel/INodeAdapter;)V" />
+    <nodeInfo nodeId="5015072279636464462" fileName="VarMacro.java" startLine="92" startPosition="0" endLine="96" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="insertSmodelAttribute#(Ljetbrains/mps/smodel/INodeAdapter;Ljetbrains/mps/smodel/INodeAdapter;)V" />
+    <nodeInfo nodeId="5015072279636464462" fileName="VarMacro.java" startLine="96" startPosition="0" endLine="100" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="newInstance#(Ljetbrains/mps/smodel/SModel;Z)Ljetbrains/mps/lang/generator/structure/VarMacro;" />
+    <nodeInfo nodeId="5015072279636464462" fileName="VarMacro.java" startLine="100" startPosition="0" endLine="104" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="newInstance#(Ljetbrains/mps/smodel/SModel;)Ljetbrains/mps/lang/generator/structure/VarMacro;" />
+    <scopeInfo nodeId="5015072279636464462" fileName="VarMacro.java" startLine="25" startPosition="31" endLine="26" endPosition="16" />
+    <scopeInfo nodeId="5015072279636464462" fileName="VarMacro.java" startLine="29" startPosition="27" endLine="30" endPosition="43" />
+    <scopeInfo nodeId="5015072279636464462" fileName="VarMacro.java" startLine="33" startPosition="37" endLine="34" endPosition="43" />
+    <scopeInfo nodeId="5015072279636464462" fileName="VarMacro.java" startLine="37" startPosition="39" endLine="38" endPosition="56" />
+    <scopeInfo nodeId="5015072279636464462" fileName="VarMacro.java" startLine="41" startPosition="49" endLine="42" endPosition="56" />
+    <scopeInfo nodeId="5015072279636464462" fileName="VarMacro.java" startLine="45" startPosition="28" endLine="46" endPosition="44" />
+    <scopeInfo nodeId="5015072279636464462" fileName="VarMacro.java" startLine="49" startPosition="38" endLine="50" endPosition="44" />
+    <scopeInfo nodeId="5015072279636464462" fileName="VarMacro.java" startLine="53" startPosition="37" endLine="54" endPosition="54" />
+    <scopeInfo nodeId="5015072279636464462" fileName="VarMacro.java" startLine="57" startPosition="47" endLine="58" endPosition="54" />
+    <scopeInfo nodeId="5015072279636464462" fileName="VarMacro.java" startLine="61" startPosition="25" endLine="62" endPosition="59" />
+    <scopeInfo nodeId="5015072279636464462" fileName="VarMacro.java" startLine="65" startPosition="34" endLine="66" endPosition="40" />
+    <scopeInfo nodeId="5015072279636464462" fileName="VarMacro.java" startLine="69" startPosition="41" endLine="70" endPosition="90" />
+    <scopeInfo nodeId="5015072279636464462" fileName="VarMacro.java" startLine="73" startPosition="50" endLine="74" endPosition="41" />
+    <scopeInfo nodeId="5015072279636464462" fileName="VarMacro.java" startLine="77" startPosition="41" endLine="78" endPosition="57" />
+    <scopeInfo nodeId="5015072279636464462" fileName="VarMacro.java" startLine="81" startPosition="49" endLine="82" endPosition="69" />
+    <scopeInfo nodeId="5015072279636464462" fileName="VarMacro.java" startLine="85" startPosition="48" endLine="86" endPosition="72" />
+    <scopeInfo nodeId="5015072279636464462" fileName="VarMacro.java" startLine="89" startPosition="50" endLine="90" endPosition="51" />
+    <scopeInfo nodeId="5015072279636464462" fileName="VarMacro.java" startLine="93" startPosition="69" endLine="94" endPosition="60" />
+    <scopeInfo nodeId="5015072279636464462" fileName="VarMacro.java" startLine="97" startPosition="63" endLine="98" endPosition="168" />
+    <scopeInfo nodeId="5015072279636464462" fileName="VarMacro.java" startLine="101" startPosition="49" endLine="102" endPosition="43" />
+    <scopeInfo nodeId="5015072279636464462" fileName="VarMacro.java" startLine="24" startPosition="0" endLine="27" endPosition="3">
+      <varInfo nodeId="5015072279636464462" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="5015072279636464462" fileName="VarMacro.java" startLine="28" startPosition="0" endLine="32" endPosition="0" />
+    <scopeInfo nodeId="5015072279636464462" fileName="VarMacro.java" startLine="32" startPosition="0" endLine="36" endPosition="0">
+      <varInfo nodeId="5015072279636464462" varName="value" />
+    </scopeInfo>
+    <scopeInfo nodeId="5015072279636464462" fileName="VarMacro.java" startLine="36" startPosition="0" endLine="40" endPosition="0" />
+    <scopeInfo nodeId="5015072279636464462" fileName="VarMacro.java" startLine="40" startPosition="0" endLine="44" endPosition="0">
+      <varInfo nodeId="5015072279636464462" varName="value" />
+    </scopeInfo>
+    <scopeInfo nodeId="5015072279636464462" fileName="VarMacro.java" startLine="44" startPosition="0" endLine="48" endPosition="0" />
+    <scopeInfo nodeId="5015072279636464462" fileName="VarMacro.java" startLine="48" startPosition="0" endLine="52" endPosition="0">
+      <varInfo nodeId="5015072279636464462" varName="value" />
+    </scopeInfo>
+    <scopeInfo nodeId="5015072279636464462" fileName="VarMacro.java" startLine="52" startPosition="0" endLine="56" endPosition="0" />
+    <scopeInfo nodeId="5015072279636464462" fileName="VarMacro.java" startLine="56" startPosition="0" endLine="60" endPosition="0">
+      <varInfo nodeId="5015072279636464462" varName="value" />
+    </scopeInfo>
+    <scopeInfo nodeId="5015072279636464462" fileName="VarMacro.java" startLine="60" startPosition="0" endLine="64" endPosition="0" />
+    <scopeInfo nodeId="5015072279636464462" fileName="VarMacro.java" startLine="64" startPosition="0" endLine="68" endPosition="0">
+      <varInfo nodeId="5015072279636464462" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="5015072279636464462" fileName="VarMacro.java" startLine="68" startPosition="0" endLine="72" endPosition="0" />
+    <scopeInfo nodeId="5015072279636464462" fileName="VarMacro.java" startLine="72" startPosition="0" endLine="76" endPosition="0">
+      <varInfo nodeId="5015072279636464462" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="5015072279636464462" fileName="VarMacro.java" startLine="76" startPosition="0" endLine="80" endPosition="0" />
+    <scopeInfo nodeId="5015072279636464462" fileName="VarMacro.java" startLine="80" startPosition="0" endLine="84" endPosition="0" />
+    <scopeInfo nodeId="5015072279636464462" fileName="VarMacro.java" startLine="84" startPosition="0" endLine="88" endPosition="0" />
+    <scopeInfo nodeId="5015072279636464462" fileName="VarMacro.java" startLine="88" startPosition="0" endLine="92" endPosition="0">
+      <varInfo nodeId="5015072279636464462" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="5015072279636464462" fileName="VarMacro.java" startLine="92" startPosition="0" endLine="96" endPosition="0">
+      <varInfo nodeId="5015072279636464462" varName="node" />
+      <varInfo nodeId="5015072279636464462" varName="prev" />
+    </scopeInfo>
+    <scopeInfo nodeId="5015072279636464462" fileName="VarMacro.java" startLine="96" startPosition="0" endLine="100" endPosition="0">
+      <varInfo nodeId="5015072279636464462" varName="init" />
+      <varInfo nodeId="5015072279636464462" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="5015072279636464462" fileName="VarMacro.java" startLine="100" startPosition="0" endLine="104" endPosition="0">
+      <varInfo nodeId="5015072279636464462" varName="sm" />
+    </scopeInfo>
+    <unitInfo nodeId="5015072279636464462" fileName="VarMacro.java" startLine="15" startPosition="0" endLine="105" endPosition="0" unitName="jetbrains.mps.lang.generator.structure.VarMacro" />
+  </root>
+  <root nodeId="5015072279636592410">
+    <nodeInfo nodeId="5015072279636592410" fileName="VarMacro_ValueQuery.java" startLine="10" startPosition="60" endLine="11" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
+    <nodeInfo nodeId="5015072279636592410" fileName="VarMacro_ValueQuery.java" startLine="13" startPosition="42" endLine="14" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="5015072279636592410" fileName="VarMacro_ValueQuery.java" startLine="17" startPosition="74" endLine="18" endPosition="190" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5015072279636592410" fileName="VarMacro_ValueQuery.java" startLine="21" startPosition="60" endLine="22" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5015072279636592410" fileName="VarMacro_ValueQuery.java" startLine="12" startPosition="0" endLine="15" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="VarMacro_ValueQuery#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="5015072279636592410" fileName="VarMacro_ValueQuery.java" startLine="16" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="newInstance#(Ljetbrains/mps/smodel/SModel;Z)Ljetbrains/mps/lang/generator/structure/VarMacro_ValueQuery;" />
+    <nodeInfo nodeId="5015072279636592410" fileName="VarMacro_ValueQuery.java" startLine="20" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="newInstance#(Ljetbrains/mps/smodel/SModel;)Ljetbrains/mps/lang/generator/structure/VarMacro_ValueQuery;" />
+    <scopeInfo nodeId="5015072279636592410" fileName="VarMacro_ValueQuery.java" startLine="13" startPosition="42" endLine="14" endPosition="16" />
+    <scopeInfo nodeId="5015072279636592410" fileName="VarMacro_ValueQuery.java" startLine="17" startPosition="74" endLine="18" endPosition="190" />
+    <scopeInfo nodeId="5015072279636592410" fileName="VarMacro_ValueQuery.java" startLine="21" startPosition="60" endLine="22" endPosition="54" />
+    <scopeInfo nodeId="5015072279636592410" fileName="VarMacro_ValueQuery.java" startLine="12" startPosition="0" endLine="15" endPosition="3">
+      <varInfo nodeId="5015072279636592410" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="5015072279636592410" fileName="VarMacro_ValueQuery.java" startLine="16" startPosition="0" endLine="20" endPosition="0">
+      <varInfo nodeId="5015072279636592410" varName="init" />
+      <varInfo nodeId="5015072279636592410" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="5015072279636592410" fileName="VarMacro_ValueQuery.java" startLine="20" startPosition="0" endLine="24" endPosition="0">
+      <varInfo nodeId="5015072279636592410" varName="sm" />
+    </scopeInfo>
+    <unitInfo nodeId="5015072279636592410" fileName="VarMacro_ValueQuery.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.lang.generator.structure.VarMacro_ValueQuery" />
   </root>
   <root nodeId="5133195082121471908">
     <nodeInfo nodeId="5133195082121471908" fileName="LabelMacro.java" startLine="10" startPosition="43" endLine="11" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />

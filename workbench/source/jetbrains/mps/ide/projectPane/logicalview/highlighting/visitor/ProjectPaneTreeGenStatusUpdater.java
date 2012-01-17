@@ -21,23 +21,18 @@ import com.intellij.openapi.project.DumbService;
 import jetbrains.mps.generator.ModelGenerationStatusManager;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.ide.projectPane.ProjectPane;
+import jetbrains.mps.ide.projectPane.logicalview.highlighting.visitor.updates.GenStatusNodeUpdate;
 import jetbrains.mps.ide.projectPane.logicalview.nodes.ProjectModuleTreeNode;
 import jetbrains.mps.ide.projectPane.logicalview.nodes.ProjectTreeNode;
-import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
-import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.util.Computable;
-import jetbrains.mps.util.misc.hash.HashSet;
 import org.jetbrains.annotations.Nullable;
 
-import javax.swing.SwingUtilities;
 import javax.swing.tree.TreeNode;
-import java.util.List;
-import java.util.Set;
 
 public class ProjectPaneTreeGenStatusUpdater extends TreeNodeVisitor {
 
@@ -64,16 +59,16 @@ public class ProjectPaneTreeGenStatusUpdater extends TreeNodeVisitor {
     boolean wasChanged = md instanceof EditableSModelDescriptor && ((EditableSModelDescriptor) md).isChanged();
 
     if (moduleNode.getModule().isPackaged()) {
-      updateNodeLater(modelNode, GenerationStatus.PACKAGED.getMessage());
-      updateNodeLater(moduleNode, GenerationStatus.PACKAGED.getMessage());
+      ourUpdater.addUpdate(modelNode, new GenStatusNodeUpdate(GenerationStatus.PACKAGED.getMessage()));
+      ourUpdater.addUpdate(moduleNode, new GenStatusNodeUpdate(GenerationStatus.PACKAGED.getMessage()));
       return;
     }
 
     if (wasChanged) {
-      updateNodeLater(modelNode, GenerationStatus.REQUIRED.getMessage());
-      updateNodeLater(moduleNode, GenerationStatus.REQUIRED.getMessage());
+      ourUpdater.addUpdate(modelNode, new GenStatusNodeUpdate(GenerationStatus.REQUIRED.getMessage()));
+      ourUpdater.addUpdate(moduleNode, new GenStatusNodeUpdate(GenerationStatus.REQUIRED.getMessage()));
       if (moduleNode.getModule() instanceof Generator) {
-        updateNodeLater(getContainingModuleNode(moduleNode), GenerationStatus.REQUIRED.getMessage());
+        ourUpdater.addUpdate(getContainingModuleNode(moduleNode), new GenStatusNodeUpdate(GenerationStatus.REQUIRED.getMessage()));
       }
       return;
     }
@@ -91,7 +86,7 @@ public class ProjectPaneTreeGenStatusUpdater extends TreeNodeVisitor {
     if (moduleNode.getModule() instanceof Generator) {
       updateModuleStatus(getContainingModuleNode(moduleNode));
     }
-    updateNodeLater(modelNode, modelStatus.getMessage());
+    ourUpdater.addUpdate(modelNode, new GenStatusNodeUpdate(modelStatus.getMessage()));
   }
 
   private void updateModuleStatus(final ProjectModuleTreeNode moduleNode) {
@@ -101,15 +96,7 @@ public class ProjectPaneTreeGenStatusUpdater extends TreeNodeVisitor {
         return generationRequired(moduleNode);
       }
     });
-    updateNodeLater(moduleNode, moduleStatus.getMessage());
-  }
-
-  protected void visitModuleNode(final ProjectModuleTreeNode node) {
-
-  }
-
-  protected void visitProjectNode(ProjectTreeNode node) {
-
+    ourUpdater.addUpdate(moduleNode, new GenStatusNodeUpdate(moduleStatus.getMessage()));
   }
 
   private boolean generationRequired(IModule module, IOperationContext context) {
@@ -155,17 +142,6 @@ public class ProjectPaneTreeGenStatusUpdater extends TreeNodeVisitor {
     SModelDescriptor md = node.getSModelDescriptor();
     if (!(md instanceof DefaultSModelDescriptor)) return false;
     return ((DefaultSModelDescriptor) md).isDoNotGenerate();
-  }
-
-  private void updateNodeLater(final MPSTreeNode node, final String addText) {
-    SwingUtilities.invokeLater(new Runnable() {
-      public void run() {
-        if (!checkDisposed(node)) return;
-
-        node.setAdditionalText(addText);
-        node.updateNodePresentationInTree();
-      }
-    });
   }
 
   public static enum GenerationStatus {

@@ -18,11 +18,10 @@ import jetbrains.mps.make.MakeNotification;
 import jetbrains.mps.make.IMakeService;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vcs.ProjectLevelVcsManager;
-import javax.swing.SwingUtilities;
+import com.intellij.openapi.application.ApplicationManager;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.MPSCore;
-import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.application.ModalityState;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.library.ProjectLibraryManager;
@@ -107,7 +106,7 @@ public class ModelChangesWatcher implements ApplicationComponent {
         }
       }
     }
-    SwingUtilities.invokeLater(new Runnable() {
+    ApplicationManager.getApplication().executeOnPooledThread(new Runnable() {
       public void run() {
         myTimer.resume();
       }
@@ -115,7 +114,7 @@ public class ModelChangesWatcher implements ApplicationComponent {
   }
 
   public void suspendTasksProcessing() {
-    SwingUtilities.invokeLater(new Runnable() {
+    ApplicationManager.getApplication().executeOnPooledThread(new Runnable() {
       public void run() {
         myTimer.suspend();
       }
@@ -153,6 +152,9 @@ public class ModelChangesWatcher implements ApplicationComponent {
   private void doReload() {
     final ReloadSession session = myReloadSession;
     myReloadSession = null;
+    if (!(session.hasAnythingToDo())) {
+      return;
+    }
     ApplicationManager.getApplication().invokeLater(new Runnable() {
       public void run() {
         session.doReload();
@@ -305,7 +307,7 @@ public class ModelChangesWatcher implements ApplicationComponent {
         }
       }
       if (resume) {
-        SwingUtilities.invokeLater(new Runnable() {
+        ApplicationManager.getApplication().executeOnPooledThread(new Runnable() {
           public void run() {
             myTimer.resume();
           }

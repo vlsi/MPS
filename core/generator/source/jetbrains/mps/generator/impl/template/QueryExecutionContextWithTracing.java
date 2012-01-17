@@ -165,6 +165,16 @@ public class QueryExecutionContextWithTracing implements QueryExecutionContext {
   }
 
   @Override
+  public Object evaluateVariableQuery(SNode inputNode, SNode query, @Nullable TemplateContext context) {
+    try {
+      tracer.push(taskName("evaluate variable value query", query), true);
+      return wrapped.evaluateVariableQuery(inputNode, query, context);
+    } finally {
+      tracer.pop();
+    }
+  }
+
+  @Override
   public void executeInContext(SNode outputNode, TemplateContext context, PostProcessor processor) {
     try {
       tracer.push("query in " + processor.getClass().getCanonicalName(), true);

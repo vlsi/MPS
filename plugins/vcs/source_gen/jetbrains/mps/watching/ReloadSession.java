@@ -46,10 +46,6 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
   }
 
   public void doReload() {
-    if (!(hasAnythingToDo())) {
-      return;
-    }
-
     ProgressManager.getInstance().run(new Task.Modal(null, "Reloading", false) {
       public void run(@NotNull final ProgressIndicator progressIndicator) {
         fireReloadStarted();

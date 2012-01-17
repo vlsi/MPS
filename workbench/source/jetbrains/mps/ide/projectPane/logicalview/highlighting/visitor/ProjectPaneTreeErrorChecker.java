@@ -15,10 +15,9 @@
  */
 package jetbrains.mps.ide.projectPane.logicalview.highlighting.visitor;
 
+import jetbrains.mps.ide.projectPane.logicalview.highlighting.visitor.updates.ErrorStateNodeUpdate;
 import jetbrains.mps.ide.projectPane.logicalview.nodes.ProjectModuleTreeNode;
 import jetbrains.mps.ide.projectPane.logicalview.nodes.ProjectTreeNode;
-import jetbrains.mps.ide.ui.ErrorState;
-import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.StandaloneMPSProject;
@@ -30,7 +29,6 @@ import jetbrains.mps.smodel.loading.ModelLoadingState;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.Pair;
 
-import javax.swing.SwingUtilities;
 import java.util.Collections;
 import java.util.List;
 
@@ -57,7 +55,7 @@ public class ProjectPaneTreeErrorChecker extends TreeNodeVisitor {
       }
     }
 
-    updateNodeLater(node, result, false);
+    ourUpdater.addUpdate(node, new ErrorStateNodeUpdate(result, false));
   }
 
   protected void visitModuleNode(final ProjectModuleTreeNode node) {
@@ -92,23 +90,12 @@ public class ProjectPaneTreeErrorChecker extends TreeNodeVisitor {
         }
       }
     }
-    updateNodeLater(node, result, !hasErrors);
+    final boolean warning = !hasErrors;
+    ourUpdater.addUpdate(node, new ErrorStateNodeUpdate(result, warning));
   }
 
   protected void visitProjectNode(final ProjectTreeNode node) {
     String errors = ((StandaloneMPSProject)node.getProject()).getErrors();
-    updateNodeLater(node, errors, false);
-  }
-
-  private void updateNodeLater(final MPSTreeNode node, final String tooltipText, final boolean isWarning) {
-    SwingUtilities.invokeLater(new Runnable() {
-      public void run() {
-        if (!checkDisposed(node)) return;
-
-        node.setErrorState(tooltipText == null ? ErrorState.NONE : (isWarning ? ErrorState.WARNING : ErrorState.ERROR));
-        node.setTooltipText(tooltipText);
-        node.updateNodePresentationInTree();
-      }
-    });
+    ourUpdater.addUpdate(node, new ErrorStateNodeUpdate(errors, false));
   }
 }

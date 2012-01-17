@@ -23,6 +23,7 @@ import com.intellij.openapi.fileEditor.FileDocumentManagerAdapter;
 import com.intellij.util.messages.MessageBusConnection;
 import jetbrains.mps.MPSCore;
 import jetbrains.mps.ide.MPSCoreComponents;
+import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelRepository;
 import org.jetbrains.annotations.NotNull;
@@ -42,11 +43,10 @@ public class ModelsSaver implements ApplicationComponent {
     myMessageBusConnection = ApplicationManager.getApplication().getMessageBus().connect();
     myMessageBusConnection.subscribe(AppTopics.FILE_DOCUMENT_SYNC, new FileDocumentManagerAdapter() {
       public void beforeAllDocumentsSaving() {
-        ModelAccess.instance().runWriteInEDT(new Runnable() {
+        ThreadUtils.assertEDT();
+        ModelAccess.instance().runWriteAction(new Runnable() {
           public void run() {
-            if (MPSCore.getInstance().isTestMode()) {
-              return;
-            }
+            if (MPSCore.getInstance().isTestMode()) return;
             SModelRepository.getInstance().saveAll();
           }
         });

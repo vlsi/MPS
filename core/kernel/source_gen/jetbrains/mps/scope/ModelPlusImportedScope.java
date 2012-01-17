@@ -10,6 +10,7 @@ import java.util.List;
 import java.util.Collections;
 import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.smodel.SNode;
+import org.jetbrains.annotations.Nullable;
 import java.util.ArrayList;
 import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -42,7 +43,7 @@ public class ModelPlusImportedScope extends Scope {
     return myModels;
   }
 
-  public SNode resolve(SNode anchor, String refText) {
+  public SNode resolve(SNode contextNode, String refText) {
     Collection<SModelDescriptor> models = getModels();
     SNode result = null;
     for (SModelDescriptor model : models) {
@@ -83,7 +84,7 @@ public class ModelPlusImportedScope extends Scope {
     return result;
   }
 
-  public List<SNode> getAvailableElements(String prefix) {
+  public List<SNode> getAvailableElements(@Nullable String prefix) {
     Collection<SModelDescriptor> models = getModels();
     List<SNode> result = new ArrayList<SNode>();
     for (SModelDescriptor model : models) {
@@ -120,11 +121,11 @@ public class ModelPlusImportedScope extends Scope {
     return result;
   }
 
-  public String getReferenceText(SNode anchor, SNode target) {
-    String resolveInfo = target.getResolveInfo();
+  public String getReferenceText(SNode contextNode, SNode node) {
+    String resolveInfo = node.getResolveInfo();
     if (StringUtils.isNotEmpty(resolveInfo)) {
       return resolveInfo;
     }
-    return target.getPresentation();
+    return node.getPresentation();
   }
 }

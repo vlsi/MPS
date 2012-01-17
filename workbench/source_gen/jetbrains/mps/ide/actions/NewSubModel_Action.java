@@ -4,6 +4,7 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
+import jetbrains.mps.util.IconUtil;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import com.intellij.openapi.actionSystem.AnActionEvent;
@@ -20,12 +21,9 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import com.intellij.openapi.project.Project;
-import javax.swing.ImageIcon;
-import com.intellij.openapi.util.io.StreamUtil;
-import java.io.IOException;
 
 public class NewSubModel_Action extends BaseAction {
-  private static final Icon ICON = getIcon();
+  private static final Icon ICON = IconUtil.getIcon("model.png");
   protected static Log log = LogFactory.getLog(NewSubModel_Action.class);
 
   public NewSubModel_Action() {
@@ -103,17 +101,6 @@ public class NewSubModel_Action extends BaseAction {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "NewSubModel", t);
       }
-    }
-  }
-
-  private static Icon getIcon() {
-    try {
-      return new ImageIcon(StreamUtil.loadFromStream(NewSubModel_Action.class.getResourceAsStream("model.png")));
-    } catch (IOException e) {
-      if (log.isWarnEnabled()) {
-        log.warn("Couldn't load icon for NewSubModel", e);
-      }
-      return null;
     }
   }
 }

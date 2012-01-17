@@ -39,6 +39,7 @@ public class ThreadWatcher implements Output {
         "(Flushing thread)|" +
         "(Keep\\-Alive.*)|" +
         "(Finalizer.*)|" +
+        "(MPS interrupting thread)|" +
         "(caret blinker.*)|" +
         "(ApplicationImpl.*)|" +
         "(Executor)|" +

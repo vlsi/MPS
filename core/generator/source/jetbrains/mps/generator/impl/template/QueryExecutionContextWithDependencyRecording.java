@@ -114,6 +114,16 @@ public class QueryExecutionContextWithDependencyRecording implements QueryExecut
   }
 
   @Override
+  public Object evaluateVariableQuery(SNode inputNode, SNode query, @Nullable TemplateContext context) {
+    try {
+      NodeReadEventsCaster.setNodesReadListener(listener);
+      return wrapped.evaluateVariableQuery(inputNode, query, context);
+    } finally {
+      NodeReadEventsCaster.removeNodesReadListener();
+    }
+  }
+
+  @Override
   public List<SNode> evaluateSourceNodesQuery(SNode inputNode, SNode ruleNode, SNode macroNode, SNode query, @NotNull TemplateContext context) {
     try {
       NodeReadEventsCaster.setNodesReadListener(listener);

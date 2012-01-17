@@ -7,8 +7,8 @@ import java.util.List;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.scope.Scope;
-import org.apache.commons.lang.StringUtils;
 import org.jetbrains.annotations.Nullable;
+import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -36,7 +36,7 @@ interface ISearchScope {
       return null;
     }
 
-    public List<SNode> getAvailableElements(final String prefix) {
+    public List<SNode> getAvailableElements(@Nullable final String prefix) {
       if (StringUtils.isEmpty(prefix)) {
         return searchScope.getNodes();
       }
@@ -61,6 +61,11 @@ interface ISearchScope {
 
     public ISearchScope getSearchScope() {
       return searchScope;
+    }
+
+    @Override
+    public boolean contains(SNode node) {
+      return this.searchScope.isInScope(node);
     }
   }
 

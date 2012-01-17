@@ -58,7 +58,7 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.math.editor.delete_denominator" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.math.editor.delete_numerator" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.math.plugin.HLineCellProvider" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.math.pluginSolution.plugin.HLineCellProvider" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.EditorCell_Empty" />
     <classNode dependClassName="jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.AbstractCellProvider" />
