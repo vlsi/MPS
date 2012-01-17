@@ -741,6 +741,35 @@
               </node>
             </node>
           </node>
+          <node role="case" roleId="tpee.1163670772911" type="tpee.SwitchCase" typeId="tpee.1163670641947" id="5918030899611541767">
+            <node role="expression" roleId="tpee.1163670677455" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="5918030899611541773">
+              <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="5918030899611535608" resolveInfo="LANGUAGE" />
+              <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="1016968294606545841" resolveInfo="FileType" />
+            </node>
+            <node role="body" roleId="tpee.1163670683720" type="tpee.StatementList" typeId="tpee.1068580123136" id="5918030899611541769" />
+          </node>
+          <node role="case" roleId="tpee.1163670772911" type="tpee.SwitchCase" typeId="tpee.1163670641947" id="5918030899611541780">
+            <node role="expression" roleId="tpee.1163670677455" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="5918030899611541792">
+              <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="5918030899611535619" resolveInfo="SOLUTION" />
+              <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="1016968294606545841" resolveInfo="FileType" />
+            </node>
+            <node role="body" roleId="tpee.1163670683720" type="tpee.StatementList" typeId="tpee.1068580123136" id="5918030899611541782" />
+          </node>
+          <node role="case" roleId="tpee.1163670772911" type="tpee.SwitchCase" typeId="tpee.1163670641947" id="5918030899611541786">
+            <node role="expression" roleId="tpee.1163670677455" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="5918030899611541793">
+              <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="5918030899611535622" resolveInfo="DEVKIT" />
+              <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="1016968294606545841" resolveInfo="FileType" />
+            </node>
+            <node role="body" roleId="tpee.1163670683720" type="tpee.StatementList" typeId="tpee.1068580123136" id="5918030899611541788">
+              <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="5918030899611541789">
+                <node role="expression" roleId="tpee.1068581517676" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="5918030899611541790">
+                  <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="5918030899611541791">
+                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4398460844209836157" resolveInfo="SimpleMerger" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
           <node role="case" roleId="tpee.1163670772911" type="tpee.SwitchCase" typeId="tpee.1163670641947" id="5985671663020947179">
             <node role="expression" roleId="tpee.1163670677455" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="5985671663020947183">
               <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="1016968294606545848" resolveInfo="TRACE_CACHE" />
@@ -1855,8 +1884,61 @@
       <node role="initializer" roleId="tpee.1068431790190" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="428846146748920520">
         <node role="creator" roleId="tpee.1145553007750" type="tp2q.ListCreatorWithInit" typeId="tp2q.1160600644654" id="428846146748920521">
           <node role="elementType" roleId="tp2q.1237721435807" type="tpee.StringType" typeId="tpee.1225271177708" id="428846146748920522" />
-          <node role="initValue" roleId="tp2q.1237721435808" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="428846146748920523">
-            <property name="value" nameId="tpee.1070475926801" value="*.mps" />
+          <node role="initValue" roleId="tp2q.1237721435808" type="tpee.PlusExpression" typeId="tpee.1068581242875" id="5918030899611540713">
+            <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.DotExpression" typeId="tpee.1197027756228" id="5918030899611540718">
+              <node role="operand" roleId="tpee.1197027771414" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="5918030899611540717">
+                <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="1016968294606545847" resolveInfo="MODEL" />
+                <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="1016968294606545841" resolveInfo="FileType" />
+              </node>
+              <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="5918030899611540722">
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="5985671663020948213" resolveInfo="getSuffix" />
+              </node>
+            </node>
+            <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="428846146748920523">
+              <property name="value" nameId="tpee.1070475926801" value="*" />
+            </node>
+          </node>
+          <node role="initValue" roleId="tp2q.1237721435808" type="tpee.PlusExpression" typeId="tpee.1068581242875" id="5918030899611540723">
+            <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.DotExpression" typeId="tpee.1197027756228" id="5918030899611540724">
+              <node role="operand" roleId="tpee.1197027771414" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="5918030899611540734">
+                <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="5918030899611535608" resolveInfo="LANGUAGE" />
+                <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="1016968294606545841" resolveInfo="FileType" />
+              </node>
+              <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="5918030899611540726">
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="5985671663020948213" resolveInfo="getSuffix" />
+              </node>
+            </node>
+            <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="5918030899611540727">
+              <property name="value" nameId="tpee.1070475926801" value="*" />
+            </node>
+          </node>
+          <node role="initValue" roleId="tp2q.1237721435808" type="tpee.PlusExpression" typeId="tpee.1068581242875" id="5918030899611540728">
+            <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.DotExpression" typeId="tpee.1197027756228" id="5918030899611540729">
+              <node role="operand" roleId="tpee.1197027771414" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="5918030899611540735">
+                <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="5918030899611535619" resolveInfo="SOLUTION" />
+                <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="1016968294606545841" resolveInfo="FileType" />
+              </node>
+              <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="5918030899611540731">
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="5985671663020948213" resolveInfo="getSuffix" />
+              </node>
+            </node>
+            <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="5918030899611540732">
+              <property name="value" nameId="tpee.1070475926801" value="*" />
+            </node>
+          </node>
+          <node role="initValue" roleId="tp2q.1237721435808" type="tpee.PlusExpression" typeId="tpee.1068581242875" id="5918030899611540736">
+            <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.DotExpression" typeId="tpee.1197027756228" id="5918030899611540737">
+              <node role="operand" roleId="tpee.1197027771414" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="5918030899611540741">
+                <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="5918030899611535622" resolveInfo="DEVKIT" />
+                <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="1016968294606545841" resolveInfo="FileType" />
+              </node>
+              <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="5918030899611540739">
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="5985671663020948213" resolveInfo="getSuffix" />
+              </node>
+            </node>
+            <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="5918030899611540740">
+              <property name="value" nameId="tpee.1070475926801" value="*" />
+            </node>
           </node>
           <node role="initValue" roleId="tp2q.1237721435808" type="tpee.DotExpression" typeId="tpee.1197027756228" id="5985671663020948205">
             <node role="operand" roleId="tpee.1197027771414" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="5985671663020948204">
@@ -7771,6 +7853,36 @@
       </node>
       <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="1016968294606545892">
         <property name="value" nameId="tpee.1070475926801" value="model" />
+      </node>
+    </node>
+    <node role="enumConstant" roleId="tpee.1083245396908" type="tpee.EnumConstantDeclaration" typeId="tpee.1083245299891" id="5918030899611535608">
+      <property name="name" nameId="tpck.1169194664001" value="LANGUAGE" />
+      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="1016968294606545897" resolveInfo="FileType" />
+      <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="5918030899611535616">
+        <property name="value" nameId="tpee.1070475926801" value=".mpl" />
+      </node>
+      <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="5918030899611535618">
+        <property name="value" nameId="tpee.1070475926801" value="language" />
+      </node>
+    </node>
+    <node role="enumConstant" roleId="tpee.1083245396908" type="tpee.EnumConstantDeclaration" typeId="tpee.1083245299891" id="5918030899611535619">
+      <property name="name" nameId="tpck.1169194664001" value="SOLUTION" />
+      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="1016968294606545897" resolveInfo="FileType" />
+      <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="5918030899611535620">
+        <property name="value" nameId="tpee.1070475926801" value=".msd" />
+      </node>
+      <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="5918030899611535621">
+        <property name="value" nameId="tpee.1070475926801" value="solution" />
+      </node>
+    </node>
+    <node role="enumConstant" roleId="tpee.1083245396908" type="tpee.EnumConstantDeclaration" typeId="tpee.1083245299891" id="5918030899611535622">
+      <property name="name" nameId="tpck.1169194664001" value="DEVKIT" />
+      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="1016968294606545897" resolveInfo="FileType" />
+      <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="5918030899611535623">
+        <property name="value" nameId="tpee.1070475926801" value=".devkit" />
+      </node>
+      <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="5918030899611535624">
+        <property name="value" nameId="tpee.1070475926801" value="dev-kit" />
       </node>
     </node>
     <node role="enumConstant" roleId="tpee.1083245396908" type="tpee.EnumConstantDeclaration" typeId="tpee.1083245299891" id="1016968294606545848">

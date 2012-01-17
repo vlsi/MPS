@@ -76,6 +76,10 @@ public class MergeDriverMain {
     switch (fileType) {
       case MODEL:
         return new ModelMerger();
+      case LANGUAGE:
+      case SOLUTION:
+      case DEVKIT:
+        return new SimpleMerger();
       case TRACE_CACHE:
       case GENERATOR_DEPENDENCIES:
         return new EmptyMerger();
