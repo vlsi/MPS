@@ -18,7 +18,7 @@ public class ApplyNonConflictsForRoot extends BaseAction {
   }
 
   protected void doExecute(AnActionEvent event, Map<String, Object> map) {
-    myDialog.getMergeContext().applyChanges(getChanges());
+    myDialog.getMergeSession().applyChanges(getChanges());
     myDialog.rehighlight();
   }
 
@@ -28,6 +28,6 @@ public class ApplyNonConflictsForRoot extends BaseAction {
   }
 
   private Iterable<ModelChange> getChanges() {
-    return myDialog.getMergeContext().getApplicableChangesForRoot(myDialog.getRootId());
+    return myDialog.getMergeSession().getApplicableChangesForRoot(myDialog.getRootId());
   }
 }

@@ -426,14 +426,6 @@ public class EditorSettings implements SearchableConfigurable, PersistentStateCo
       myPowerSaveMode = powerSaveMode;
     }
 
-    public boolean isHighlightChanges() {
-      return myHighlightChanges;
-    }
-
-    public void setHighlightChanges(boolean highlightChanges) {
-      myHighlightChanges = highlightChanges;
-    }
-
     //setters are for persistence
     public void setShowPlain(boolean showPlain) {
       this.showPlain = showPlain;

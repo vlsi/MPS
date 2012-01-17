@@ -32,7 +32,7 @@ public class PackageNode extends SNodeGroupTreeNode {
   private SModelTreeNode myModelNode;
 
   public PackageNode(SModelTreeNode model, String name, PackageNode parent) {
-    super(model, parent, name, true);
+    super(model, name, true);
     myModelNode = model;
     if (parent != null) {
       myName = parent.getPackage() + "." + name;

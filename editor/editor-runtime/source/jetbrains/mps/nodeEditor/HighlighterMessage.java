@@ -57,21 +57,17 @@ public class HighlighterMessage extends EditorMessageWithTarget {
     return isWarning();
   }
 
+  @Override
+  public boolean showInGutter() {
+    return getStatus() != MessageStatus.OK;
+  }
+
   private boolean isWarning() {
     return getStatus() == MessageStatus.WARNING;
   }
 
   public void paint(Graphics g, EditorComponent editorComponent, EditorCell cell) {
     paintDecorations(g, cell);
-  }
-
-  @Override
-  public LocationOnCell getLocationOnCell() {
-    if (isWarning()) {
-      return LocationOnCell.CENTER;
-    } else {
-      return LocationOnCell.BOTTOM;
-    }
   }
 
   private void paintDecorations(Graphics g, EditorCell cell) {

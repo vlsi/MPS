@@ -18,20 +18,29 @@ package jetbrains.mps.ide.editorTabs.tabfactory.tabs;
 import com.intellij.openapi.actionSystem.*;
 import com.intellij.openapi.actionSystem.impl.ActionButton;
 import com.intellij.openapi.editor.Document;
+import com.intellij.openapi.extensions.Extensions;
+import com.intellij.openapi.fileEditor.FileEditorManager;
+import com.intellij.openapi.fileEditor.impl.FileEditorManagerImpl;
+import com.intellij.openapi.project.Project;
+import com.intellij.openapi.vcs.FileStatusListener;
+import com.intellij.openapi.vcs.FileStatusManager;
+import com.intellij.openapi.vfs.VirtualFile;
 import gnu.trove.THashMap;
 import jetbrains.mps.ide.editorTabs.EditorTabDescriptor;
+import jetbrains.mps.ide.editorTabs.TabColorProvider;
 import jetbrains.mps.ide.editorTabs.tabfactory.NodeChangeCallback;
 import jetbrains.mps.ide.editorTabs.tabfactory.TabsComponent;
 import jetbrains.mps.ide.editorTabs.tabfactory.tabs.baseListening.ModelListener;
+import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.ide.undo.MPSUndoUtil;
-import jetbrains.mps.smodel.GlobalSModelEventsManager;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.event.SModelCommandListener;
 import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.smodel.event.SModelRootEvent;
 import jetbrains.mps.util.Computable;
+import jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 import javax.swing.*;
 import java.awt.BorderLayout;
@@ -50,6 +59,8 @@ public abstract class BaseTabsComponent implements TabsComponent {
   protected final Set<EditorTabDescriptor> myPossibleTabs;
   protected final JComponent myEditor;
   protected final boolean myShowGrayed;
+  private TabColorProvider myColorProvider = null;
+  private IOperationContext myOperationContext;
 
   private List<Document> myEditedDocuments = new ArrayList<Document>();
   private List<SNodePointer> myEditedNodes = new ArrayList<SNodePointer>();
@@ -59,13 +70,17 @@ public abstract class BaseTabsComponent implements TabsComponent {
 
   private JComponent myComponent;
   private MySModelCommandListener myRootAdditionListener = new MySModelCommandListener();
+  private MyFileStatusListener myFileStatusListener = new MyFileStatusListener();
 
-  public BaseTabsComponent(SNodePointer baseNode, Set<EditorTabDescriptor> possibleTabs, JComponent editor, NodeChangeCallback callback, boolean showGrayed, CreateModeCallback createModeCallback) {
+  protected BaseTabsComponent(SNodePointer baseNode, Set<EditorTabDescriptor> possibleTabs, JComponent editor, NodeChangeCallback callback, boolean showGrayed, CreateModeCallback createModeCallback, IOperationContext operationContext) {
     myBaseNode = baseNode;
     myPossibleTabs = possibleTabs;
     myEditor = editor;
     myCallback = callback;
     myShowGrayed = showGrayed;
+    TabColorProvider[] extensions = Extensions.getExtensions(TabColorProvider.EP_NAME, ProjectHelper.toIdeaProject(operationContext.getProject()));
+    myColorProvider = extensions.length > 0 ? extensions[0] : null;
+    myOperationContext = operationContext;
     myCreateModeCallback = createModeCallback;
 
     AnAction addAction = new AddAspectAction(myBaseNode, myPossibleTabs, new NodeChangeCallback() {
@@ -161,16 +176,22 @@ public abstract class BaseTabsComponent implements TabsComponent {
     return result;
   }
 
+  protected TabColorProvider getColorProvider() {
+    return myColorProvider;
+  }
+
   ///-------------events----------------
 
   private void addListeners() {
     myTabRemovalListener.startListening();
     GlobalSModelEventsManager.getInstance().addGlobalCommandListener(myRootAdditionListener);
+    FileStatusManager.getInstance(ProjectHelper.toIdeaProject(myOperationContext.getProject())).addFileStatusListener(myFileStatusListener);
   }
 
   private void removeListeners() {
     GlobalSModelEventsManager.getInstance().removeGlobalCommandListener(myRootAdditionListener);
     myTabRemovalListener.stopListening();
+    FileStatusManager.getInstance(ProjectHelper.toIdeaProject(myOperationContext.getProject())).removeFileStatusListener(myFileStatusListener);
   }
 
   private class MyTabRemovalListener extends ModelListener {
@@ -183,6 +204,29 @@ public abstract class BaseTabsComponent implements TabsComponent {
   protected abstract boolean checkNodeRemoved(SNodePointer node);
 
   protected abstract void updateTabs();
+
+  private class MyFileStatusListener implements FileStatusListener {
+    private void updateTabsLater() {
+      ModelAccess.instance().runReadInEDT(new Runnable() {
+        @Override
+        public void run() {
+          updateTabs();
+        }
+      });
+    }
+
+    @Override
+    public void fileStatusesChanged() {
+      updateTabsLater();
+    }
+
+    @Override
+    public void fileStatusChanged(@NotNull VirtualFile virtualFile) {
+      if (virtualFile instanceof MPSNodeVirtualFile && myBaseNode.equals(((MPSNodeVirtualFile) virtualFile).getSNodePointer())) {
+        updateTabsLater();
+      }
+    }
+  }
 
   ///-------------grayed mode----------------
 
