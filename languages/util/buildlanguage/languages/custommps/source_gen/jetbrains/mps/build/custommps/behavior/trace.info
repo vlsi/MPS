@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.build.custommps.behavior.BehaviorAspectDescriptor" />
+  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.build.custommps.behavior.BehaviorAspectDescriptor" />
   <unitInfo fileName="LibraryFolder_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.build.custommps.behavior.LibraryFolder_BehaviorDescriptor" />
   <unitInfo fileName="MPSBuild_BehaviorDescriptor.java" startLine="11" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.build.custommps.behavior.MPSBuild_BehaviorDescriptor" />
-  <unitInfo fileName="MPSDistribution_BehaviorDescriptor.java" startLine="11" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.build.custommps.behavior.MPSDistribution_BehaviorDescriptor" />
-  <unitInfo fileName="UndeclaredVariableReference_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.build.custommps.behavior.UndeclaredVariableReference_BehaviorDescriptor" />
   <root nodeId="1233155892819">
     <nodeInfo nodeId="8868408063538039041" fileName="MPSBuild_Behavior.java" startLine="40" startPosition="43" endLine="41" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1233155998228" fileName="MPSBuild_Behavior.java" startLine="44" startPosition="83" endLine="45" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -181,51 +179,6 @@
       <varInfo nodeId="1238590347504" varName="thisNode" />
     </scopeInfo>
     <unitInfo nodeId="1238590347504" fileName="LibraryFolder_Behavior.java" startLine="11" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.build.custommps.behavior.LibraryFolder_Behavior" />
-  </root>
-  <root nodeId="8431776905956256044">
-    <nodeInfo nodeId="8431776905956256044" fileName="MPSDistribution_Behavior.java" startLine="11" startPosition="39" endLine="12" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="PARAMETERS_4204903511793403791" />
-    <nodeInfo nodeId="4204903511793489008" fileName="MPSDistribution_Behavior.java" startLine="17" startPosition="83" endLine="18" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
-    <nodeInfo nodeId="8431776905956256044" fileName="MPSDistribution_Behavior.java" startLine="21" startPosition="86" endLine="22" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8431776905956256044" fileName="MPSDistribution_Behavior.java" startLine="22" startPosition="113" endLine="23" endPosition="221" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8431776905956256044" fileName="MPSDistribution_Behavior.java" startLine="26" startPosition="119" endLine="27" endPosition="266" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8431776905956256044" fileName="MPSDistribution_Behavior.java" startLine="13" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
-    <nodeInfo nodeId="8431776905956256044" fileName="MPSDistribution_Behavior.java" startLine="16" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getChildrenTargetDir_1237389224202#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;" />
-    <nodeInfo nodeId="8431776905956256044" fileName="MPSDistribution_Behavior.java" startLine="25" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="callSuper_getChildrenTargetDir_4204903511793403791#(Ljetbrains/mps/smodel/SNode;Ljava/lang/String;)Ljava/lang/String;" />
-    <nodeInfo nodeId="8431776905956256044" fileName="MPSDistribution_Behavior.java" startLine="20" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getChildrenTargetDir_4204903511793403791#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;" />
-    <scopeInfo nodeId="8431776905956256046" fileName="MPSDistribution_Behavior.java" startLine="14" startPosition="43" endLine="14" endPosition="43" />
-    <scopeInfo nodeId="4204903511793403793" fileName="MPSDistribution_Behavior.java" startLine="17" startPosition="83" endLine="18" endPosition="46" />
-    <scopeInfo nodeId="8431776905956256044" fileName="MPSDistribution_Behavior.java" startLine="26" startPosition="119" endLine="27" endPosition="266" />
-    <scopeInfo nodeId="8431776905956256044" fileName="MPSDistribution_Behavior.java" startLine="21" startPosition="86" endLine="23" endPosition="221">
-      <varInfo nodeId="8431776905956256044" varName="descriptor" />
-    </scopeInfo>
-    <scopeInfo nodeId="8431776905956256044" fileName="MPSDistribution_Behavior.java" startLine="13" startPosition="0" endLine="16" endPosition="0">
-      <varInfo nodeId="8431776905956256044" varName="thisNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="8431776905956256044" fileName="MPSDistribution_Behavior.java" startLine="16" startPosition="0" endLine="20" endPosition="0">
-      <varInfo nodeId="8431776905956256044" varName="thisNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="8431776905956256044" fileName="MPSDistribution_Behavior.java" startLine="25" startPosition="0" endLine="29" endPosition="0">
-      <varInfo nodeId="8431776905956256044" varName="callerConceptFqName" />
-      <varInfo nodeId="8431776905956256044" varName="thisNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="8431776905956256044" fileName="MPSDistribution_Behavior.java" startLine="20" startPosition="0" endLine="25" endPosition="0">
-      <varInfo nodeId="8431776905956256044" varName="thisNode" />
-    </scopeInfo>
-    <unitInfo nodeId="8431776905956256044" fileName="MPSDistribution_Behavior.java" startLine="11" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.build.custommps.behavior.MPSDistribution_Behavior" />
-  </root>
-  <root nodeId="8431776905956790251">
-    <nodeInfo nodeId="8431776905956790254" fileName="UndeclaredVariableReference_Behavior.java" startLine="12" startPosition="71" endLine="13" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8431776905956790251" fileName="UndeclaredVariableReference_Behavior.java" startLine="8" startPosition="51" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
-    <nodeInfo nodeId="8431776905956790251" fileName="UndeclaredVariableReference_Behavior.java" startLine="11" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getValue_1213877173054#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;" />
-    <scopeInfo nodeId="8431776905956790265" fileName="UndeclaredVariableReference_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
-    <scopeInfo nodeId="8431776905956790253" fileName="UndeclaredVariableReference_Behavior.java" startLine="12" startPosition="71" endLine="13" endPosition="74" />
-    <scopeInfo nodeId="8431776905956790251" fileName="UndeclaredVariableReference_Behavior.java" startLine="8" startPosition="51" endLine="11" endPosition="0">
-      <varInfo nodeId="8431776905956790251" varName="thisNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="8431776905956790251" fileName="UndeclaredVariableReference_Behavior.java" startLine="11" startPosition="0" endLine="15" endPosition="0">
-      <varInfo nodeId="8431776905956790251" varName="thisNode" />
-    </scopeInfo>
-    <unitInfo nodeId="8431776905956790251" fileName="UndeclaredVariableReference_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.build.custommps.behavior.UndeclaredVariableReference_Behavior" />
   </root>
 </debugInfo>
 
