@@ -101,7 +101,7 @@ public class ModelPropertiesConfigurable implements Configurable, Disposable {
 
     @Override
     public boolean isModified() {
-        return myUsedLanguagesTable.isModified(myUsedLanguages);
+        return myImportedModelsTable.isModified(myImportedModels) || myUsedLanguagesTable.isModified(myUsedLanguages);
     }
 
     @Override
@@ -154,8 +154,8 @@ public class ModelPropertiesConfigurable implements Configurable, Disposable {
 
         Set<SModelReference> modelsToAdd = new HashSet<SModelReference>(importedModels);
         modelsToAdd.removeAll(currentlyImportedModels);
-        for (SModelReference modelReference : modelsToRemove) {
-            sModel.deleteModelImport(modelReference);
+        for (SModelReference modelReference : modelsToAdd) {
+            sModel.addModelImport(modelReference, false);
         }
     }
 

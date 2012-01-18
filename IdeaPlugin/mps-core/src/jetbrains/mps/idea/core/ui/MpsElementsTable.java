@@ -44,7 +44,7 @@ public abstract class MpsElementsTable<T> {
     private JBTable myElementsTable;
 
     public JComponent createComponent() {
-        myElementsTableModel = new MpsElementsTableModel<T>(getComparator());
+        myElementsTableModel = new MpsElementsTableModel<T>(getComparator(), getRendererClass());
 
         myElementsTable = new JBTable(myElementsTableModel);
         myElementsTable.setShowGrid(false);
@@ -151,9 +151,11 @@ public abstract class MpsElementsTable<T> {
                 setPaintFocusBorder(false);
                 setFocusBorderAroundIcon(true);
                 setBorder(NO_FOCUS_BORDER);
-                T tableItem = (T) value;
-                setIcon(MpsElementsTable.this.getIcon(tableItem));
-                append(getText(tableItem), getTextAttributes(tableItem));
+                if (value != null) {
+                    T tableItem = (T) value;
+                    setIcon(MpsElementsTable.this.getIcon(tableItem));
+                    append(getText(tableItem), getTextAttributes(tableItem));
+                }
             }
         };
     }

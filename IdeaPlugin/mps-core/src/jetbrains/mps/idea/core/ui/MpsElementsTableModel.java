@@ -17,7 +17,6 @@
 package jetbrains.mps.idea.core.ui;
 
 import com.intellij.util.ui.ItemRemovable;
-import jetbrains.mps.project.structure.modules.ModuleReference;
 
 import javax.swing.table.AbstractTableModel;
 import java.util.*;
@@ -32,9 +31,11 @@ import java.util.*;
 public class MpsElementsTableModel<T> extends AbstractTableModel implements ItemRemovable {
     private List<T> myElements = Collections.emptyList();
     private Comparator<T> myComparator;
+    private Class<?> myDefaultColumnClass;
 
-    MpsElementsTableModel(Comparator<T> comparator) {
+    MpsElementsTableModel(Comparator<T> comparator, Class<?> defaultColumnClass) {
         myComparator = comparator;
+        myDefaultColumnClass = defaultColumnClass;
     }
 
     @Override
@@ -68,7 +69,7 @@ public class MpsElementsTableModel<T> extends AbstractTableModel implements Item
 
     @Override
     public Class<?> getColumnClass(int columnIndex) {
-        return ModuleReference.class;
+        return myDefaultColumnClass;
     }
 
     @Override
