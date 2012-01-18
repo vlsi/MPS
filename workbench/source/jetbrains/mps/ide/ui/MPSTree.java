@@ -380,6 +380,7 @@ public abstract class MPSTree extends DnDAwareTree implements Disposable {
   public void rebuildLater() {
     ModelAccess.instance().runReadInEDT(new Runnable() {
       public void run() {
+        if (isDisposed()) return;
         rebuildNow();
       }
     });
@@ -389,6 +390,7 @@ public abstract class MPSTree extends DnDAwareTree implements Disposable {
     if (!ThreadUtils.isEventDispatchThread()) {
       throw new RuntimeException("Rebuild now can be only called from UI thread");
     }
+    assert !isDisposed():"Trying to reconstruct disposed tree. Try finding \"later\" in stacktrace";
 
     runRebuildAction(new Runnable() {
       public void run() {
