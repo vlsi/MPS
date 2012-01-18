@@ -41,6 +41,19 @@
 
   <project-components>
     <component>
+      <implementation-class>jetbrains.mps.watching.ModelChangesWatcher</implementation-class>
+    </component>
+    <component>
+      <implementation-class>jetbrains.mps.watching.ModelFocusSynchronizer</implementation-class>
+    </component>
+    <component>
+      <implementation-class>jetbrains.mps.watching.WatchedRoots</implementation-class>
+    </component>
+    <component>
+      <implementation-class>jetbrains.mps.watching.ModelCacheReloader</implementation-class>
+    </component>
+
+    <component>
       <implementation-class>com.intellij.openapi.components.impl.ServiceManagerImpl</implementation-class>
       <loadForDefaultProject/>
     </component>
