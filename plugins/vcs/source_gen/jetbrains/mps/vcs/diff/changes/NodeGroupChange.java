@@ -136,12 +136,20 @@ public class NodeGroupChange extends ModelChange {
   }
 
   public String getDescription() {
-    List<SNode> newChildren = getChangeSet().getNewModel().getNodeById(myParentNodeId).getChildren(myRole);
-    String newIds = IterableUtils.join(ListSequence.fromList(newChildren).page(myResultBegin, myResultEnd).select(new ISelector<SNode, String>() {
-      public String select(SNode n) {
-        return "#" + n.getSNodeId();
-      }
-    }), ", ");
+    return getDescription(true);
+  }
+
+  public String getDescription(boolean verbose) {
+    List<SNode> newChildren = null;
+    String newIds = null;
+    if (verbose) {
+      newChildren = getChangeSet().getNewModel().getNodeById(myParentNodeId).getChildren(myRole);
+      newIds = IterableUtils.join(ListSequence.fromList(newChildren).page(myResultBegin, myResultEnd).select(new ISelector<SNode, String>() {
+        public String select(SNode n) {
+          return "#" + n.getSNodeId();
+        }
+      }), ", ");
+    }
 
     String oldStuff = (myEnd - myBegin == 1 ?
       myRole :
@@ -151,22 +159,30 @@ public class NodeGroupChange extends ModelChange {
       myRole :
       NameUtil.formatNumericalString(myResultEnd - myResultBegin, myRole)
     );
-    if (eq_yjf6x2_a0a5a11(newStuff, myRole) && eq_yjf6x2_a0a5a11_0(oldStuff, myRole)) {
+    if (eq_yjf6x2_a0a6a21(newStuff, myRole) && eq_yjf6x2_a0a6a21_0(oldStuff, myRole)) {
       newStuff = "another";
     } else if (myEnd != myBegin) {
       newStuff = "another " + newStuff;
     }
     if (myEnd == myBegin) {
-      String addedOrInserted = (myResultEnd == (int) ListSequence.fromList(newChildren).count() ?
-        "Added" :
-        "Inserted"
-      );
-      return String.format("%s %s: %s", addedOrInserted, newStuff, newIds);
+      if (verbose) {
+        String addedOrInserted = (myResultEnd == (int) ListSequence.fromList(newChildren).count() ?
+          "Added" :
+          "Inserted"
+        );
+        return String.format("%s %s: %s", addedOrInserted, newStuff, newIds);
+      } else {
+        return String.format("Added %s", newStuff);
+      }
     }
     if (myResultEnd == myResultBegin) {
       return String.format("Removed %s", oldStuff);
     }
-    return String.format("Replaced %s with %s: %s", oldStuff, newStuff, newIds);
+    if (verbose) {
+      return String.format("Replaced %s with %s: %s", oldStuff, newStuff, newIds);
+    } else {
+      return String.format("Replaced %s with %s", oldStuff, newStuff);
+    }
   }
 
   @NotNull
@@ -181,14 +197,14 @@ public class NodeGroupChange extends ModelChange {
     );
   }
 
-  private static boolean eq_yjf6x2_a0a5a11(Object a, Object b) {
+  private static boolean eq_yjf6x2_a0a6a21(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b
     );
   }
 
-  private static boolean eq_yjf6x2_a0a5a11_0(Object a, Object b) {
+  private static boolean eq_yjf6x2_a0a6a21_0(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b

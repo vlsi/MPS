@@ -188,7 +188,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   @NotNull
   private JScrollPane myScrollPane;
   @NotNull
-  private MyScrollBar myVerticalScrollBar;
+  private MyScrollBar myVerticalScrollBar = new MyScrollBar(Adjustable.VERTICAL);
   @NotNull
   private JComponent myContainer;
   protected EditorCell myRootCell;
@@ -217,7 +217,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
   private IOperationContext myOperationContext;
 
-  private MessagesGutter myMessagesGutter = new MessagesGutter(this);
+  private MessagesGutter myMessagesGutter;
   private LeftEditorHighlighter myLeftHighlighter;
   @Nullable
   protected SNode myNode;
@@ -293,8 +293,8 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     if (rightToLeft) {
       myScrollPane.setComponentOrientation(ComponentOrientation.RIGHT_TO_LEFT);
     }
-    myScrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
-    myScrollPane.setVerticalScrollBar(myVerticalScrollBar = new MyScrollBar(Adjustable.VERTICAL));
+    myScrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
+    myScrollPane.setVerticalScrollBar(myVerticalScrollBar);
     myScrollPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
     myScrollPane.setViewportView(this);
     myScrollPane.getViewport().addChangeListener(new ChangeListener() {
@@ -324,7 +324,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     myScrollPane.setBorder(new LineBorder(Color.LIGHT_GRAY));
 
     if (showErrorsGutter) {
-      myContainer.add(myMessagesGutter, BorderLayout.EAST);
+      getVerticalScrollBar().setPersistentUI(myMessagesGutter);
     }
 
     myNodeSubstituteChooser = new NodeSubstituteChooser(this);
@@ -463,6 +463,8 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
         processKeyReleased(e);
       }
     });
+
+    myMessagesGutter = new MessagesGutter(this, rightToLeft);
 
     myLeftHighlighter = new LeftEditorHighlighter(this, rightToLeft);
     myLeftHighlighter.addMouseListener(new MouseAdapter() {
@@ -1461,7 +1463,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     doRelayout();
     revalidate();
     repaint();
-    myMessagesGutter.repaint();
+    getVerticalScrollBar().repaint();
     if (getEditorContext() != null) {
       getEditorContext().popTracerTask();
     }
@@ -3196,7 +3198,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     }
   }
 
-  class MyScrollBar extends JBScrollBar implements IdeGlassPane.TopComponent {
+  class MyScrollBar extends JBScrollBar implements IdeGlassPane.TopComponent, TooltipComponent {
     @NonNls
     private static final String APPLE_LAF_AQUA_SCROLL_BAR_UI_CLASS = "apple.laf.AquaScrollBarUI";
     private ScrollBarUI myPersistentUI;
@@ -3281,6 +3283,14 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
       JViewport vp = myScrollPane.getViewport();
       Rectangle vr = vp.getViewRect();
       return getScrollableBlockIncrement(vr, SwingConstants.VERTICAL, direction);
+    }
+
+    @Override
+    public String getMPSTooltipText(MouseEvent mouseEvent) {
+      if (getUI() instanceof TooltipComponent) {
+        return ((TooltipComponent) getUI()).getMPSTooltipText(mouseEvent);
+      }
+      return null;
     }
   }
 }

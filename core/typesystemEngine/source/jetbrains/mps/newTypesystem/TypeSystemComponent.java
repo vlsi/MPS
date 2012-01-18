@@ -18,6 +18,7 @@ package jetbrains.mps.newTypesystem;
 import gnu.trove.THashMap;
 import gnu.trove.THashSet;
 import jetbrains.mps.errors.IErrorReporter;
+import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.logging.Logger;
@@ -259,11 +260,10 @@ class TypeSystemComponent extends CheckingComponent {
       type = typeCalculated(initialNode);
       if (type == null) {
         if (node.isRoot()) {
-          typeCalculated(initialNode);
           computeTypes(node, true, true, new ArrayList<SNode>(0), true, initialNode);
           type = getType(initialNode);
-          if(type == null && node != initialNode) {
-            LOG.error("No typesystem rule for " + initialNode.getDebugText() + ": type calculation took " + (System.currentTimeMillis() - start) + " ms" , new SNodePointer(initialNode));
+          if (type == null && node != initialNode) {
+            LOG.error("No typesystem rule for " + initialNode.getDebugText() + ": type calculation took " + (System.currentTimeMillis() - start) + " ms", new Throwable(), new SNodePointer(initialNode));
           }
           return type;
         }
@@ -337,7 +337,6 @@ class TypeSystemComponent extends CheckingComponent {
           try {
             myJustInvalidatedNodes.add(sNode);
             typeAffected = applyRulesToNode(sNode);
-            if (myState.isTargetTypeCalculated()) return;
           } finally {
             if (isIncrementalMode()) {
               NodeReadEventsCaster.removeNodesReadListener();
@@ -372,7 +371,7 @@ class TypeSystemComponent extends CheckingComponent {
   }
 
   private SNode typeCalculated(SNode initialNode) {
-    if (myState.getInequalitySystem()!=null) {
+    if (myState.getInequalitySystem() != null) {
       SNode expectedType = myState.getInequalitySystem().getExpectedType();
       if (expectedType != null && !TypesUtil.hasVariablesInside(expectedType)) {
         return expectedType;
@@ -381,7 +380,7 @@ class TypeSystemComponent extends CheckingComponent {
       if (initialNode == null) return null;
       if (!myState.isTargetTypeCalculated()) return null;
       SNode type = getType(initialNode);
-      if (type!= null && !TypesUtil.hasVariablesInside(type)) return type;
+      if (type != null && !TypesUtil.hasVariablesInside(type)) return type;
     }
     return null;
   }

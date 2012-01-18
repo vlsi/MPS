@@ -38,14 +38,14 @@ public class NextPreviousTraverser {
   private static final Icon NEXT_ICON = IconLoader.getIcon("/actions/nextOccurence.png", Icons.class);
   protected static Log log = LogFactory.getLog(NextPreviousTraverser.class);
 
-  private List<ChangeGroupBuilder> myChangeGroupBuilders;
+  private List<ChangeGroupLayout> myChangeGroupLayouts;
   private EditorComponent myLastEditor;
   private NextPreviousTraverser.TheAction myPreviousAction = new NextPreviousTraverser.TheAction(true);
   private NextPreviousTraverser.TheAction myNextAction = new NextPreviousTraverser.TheAction(false);
   private ActionToolbar myActionToolbar = null;
 
-  public NextPreviousTraverser(@NotNull List<ChangeGroupBuilder> changeGroupBuilders, @NotNull EditorComponent firstEditor) {
-    myChangeGroupBuilders = changeGroupBuilders;
+  public NextPreviousTraverser(@NotNull List<ChangeGroupLayout> changeGroupLayouts, @NotNull EditorComponent firstEditor) {
+    myChangeGroupLayouts = changeGroupLayouts;
     myLastEditor = firstEditor;
 
     final SelectionListener selectionListener = new SelectionListener() {
@@ -54,8 +54,8 @@ public class NextPreviousTraverser {
         updateToolbar();
       }
     };
-    ListSequence.fromList(myChangeGroupBuilders).visitAll(new IVisitor<ChangeGroupBuilder>() {
-      public void visit(ChangeGroupBuilder cgb) {
+    ListSequence.fromList(myChangeGroupLayouts).visitAll(new IVisitor<ChangeGroupLayout>() {
+      public void visit(ChangeGroupLayout cgb) {
         cgb.addInvalidateListener(new ChangeGroupInvalidateListener() {
           public void changeGroupsInvalidated() {
             updateToolbar();
@@ -63,8 +63,8 @@ public class NextPreviousTraverser {
         });
       }
     });
-    SetSequence.fromSet(SetSequence.fromSetWithValues(new HashSet<EditorComponent>(), ListSequence.fromList(myChangeGroupBuilders).translate(new ITranslator2<ChangeGroupBuilder, EditorComponent>() {
-      public Iterable<EditorComponent> translate(ChangeGroupBuilder b) {
+    SetSequence.fromSet(SetSequence.fromSetWithValues(new HashSet<EditorComponent>(), ListSequence.fromList(myChangeGroupLayouts).translate(new ITranslator2<ChangeGroupLayout, EditorComponent>() {
+      public Iterable<EditorComponent> translate(ChangeGroupLayout b) {
         return Arrays.asList(b.getLeftComponent(), b.getRightComponent());
       }
     }))).visitAll(new IVisitor<EditorComponent>() {
@@ -89,18 +89,18 @@ public class NextPreviousTraverser {
   }
 
   @Nullable
-  private ChangeGroupBuilder getBuilderAsLeft() {
-    return ListSequence.fromList(myChangeGroupBuilders).findFirst(new IWhereFilter<ChangeGroupBuilder>() {
-      public boolean accept(ChangeGroupBuilder b) {
+  private ChangeGroupLayout getLayoutAsLeft() {
+    return ListSequence.fromList(myChangeGroupLayouts).findFirst(new IWhereFilter<ChangeGroupLayout>() {
+      public boolean accept(ChangeGroupLayout b) {
         return b.getLeftComponent() == myLastEditor;
       }
     });
   }
 
   @Nullable
-  private ChangeGroupBuilder getBuilderAsRight() {
-    return ListSequence.fromList(myChangeGroupBuilders).findFirst(new IWhereFilter<ChangeGroupBuilder>() {
-      public boolean accept(ChangeGroupBuilder b) {
+  private ChangeGroupLayout getLayoutAsRight() {
+    return ListSequence.fromList(myChangeGroupLayouts).findFirst(new IWhereFilter<ChangeGroupLayout>() {
+      public boolean accept(ChangeGroupLayout b) {
         return b.getRightComponent() == myLastEditor;
       }
     });
@@ -108,8 +108,8 @@ public class NextPreviousTraverser {
 
   private synchronized void setLastEditor(EditorComponent editor) {
     myLastEditor = editor;
-    if (!(ListSequence.fromList(myChangeGroupBuilders).any(new IWhereFilter<ChangeGroupBuilder>() {
-      public boolean accept(ChangeGroupBuilder b) {
+    if (!(ListSequence.fromList(myChangeGroupLayouts).any(new IWhereFilter<ChangeGroupLayout>() {
+      public boolean accept(ChangeGroupLayout b) {
         return b.getLeftComponent() == myLastEditor || b.getRightComponent() == myLastEditor;
       }
     }))) {
@@ -120,14 +120,14 @@ public class NextPreviousTraverser {
   }
 
   private Bounds findNeighbourGroupAsLeftOrRight(final int currentY, boolean previous, final boolean left) {
-    ChangeGroupBuilder builder = (left ?
-      getBuilderAsLeft() :
-      getBuilderAsRight()
+    ChangeGroupLayout layout = (left ?
+      getLayoutAsLeft() :
+      getLayoutAsRight()
     );
-    if (builder == null) {
+    if (layout == null) {
       return null;
     }
-    List<ChangeGroup> changeGroups = builder.getChangeGroups();
+    List<ChangeGroup> changeGroups = layout.getChangeGroups();
     ChangeGroup changeGroup;
     if (previous) {
       changeGroup = ListSequence.fromList(changeGroups).findLast(new IWhereFilter<ChangeGroup>() {
@@ -208,12 +208,12 @@ public class NextPreviousTraverser {
     final int maxY = rc.getY() + rc.getHeight() - 2;
     SwingUtilities.invokeLater(new Runnable() {
       public void run() {
-        goToChangeGroup(new Bounds((int) firstGroup.start(), maxY));
+        goToBounds(new Bounds((int) firstGroup.start(), maxY));
       }
     });
   }
 
-  private void goToChangeGroup(Bounds bounds) {
+  public void goToBounds(Bounds bounds) {
     goToY((int) bounds.end());
     goToY((int) bounds.start());
   }
@@ -265,7 +265,7 @@ public class NextPreviousTraverser {
 
     protected void doExecute(AnActionEvent event, Map<String, Object> map) {
       assert getNeighbourGroupBounds(myPrevious) != null;
-      goToChangeGroup(getNeighbourGroupBounds(myPrevious));
+      goToBounds(getNeighbourGroupBounds(myPrevious));
     }
 
     @Override

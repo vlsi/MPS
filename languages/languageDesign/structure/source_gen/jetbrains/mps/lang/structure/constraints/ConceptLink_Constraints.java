@@ -15,7 +15,9 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import java.util.List;
 import jetbrains.mps.smodel.search.ConceptAndSuperConceptsScope;
+import jetbrains.mps.util.Condition;
 
 public class ConceptLink_Constraints extends BaseConstraintsDescriptor {
   private static SNodePointer breakingNode_ujvcv0_a0a1a0a0a1a0b0a1a0 = new SNodePointer("r:00000000-0000-4000-0000-011c8959028c(jetbrains.mps.lang.structure.constraints)", "1213104858463");
@@ -40,8 +42,12 @@ public class ConceptLink_Constraints extends BaseConstraintsDescriptor {
           @Override
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             // concept links declared in hierarchy of enclosing concept 
-            SNode enclosingConcept = SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.lang.structure.structure.ConceptDeclaration", true, false);
-            return new ConceptAndSuperConceptsScope(enclosingConcept);
+            SNode enclosingConcept = SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration", true, false);
+            return (List<SNode>) new ConceptAndSuperConceptsScope(enclosingConcept).getNodes(new Condition<SNode>() {
+              public boolean met(SNode node) {
+                return SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.structure.structure.ConceptLinkDeclaration");
+              }
+            });
           }
 
           @Override

@@ -12,9 +12,7 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
-import com.intellij.openapi.actionSystem.PlatformDataKeys;
-import jetbrains.mps.vcs.changesmanager.EditorChangesHighlighter;
-import com.intellij.openapi.project.Project;
+import jetbrains.mps.vcs.changesmanager.editor.ChangesStripActionsHelper;
 import jetbrains.mps.nodeEditor.EditorContext;
 
 public class RollbackChanges_Action extends BaseAction {
@@ -23,15 +21,13 @@ public class RollbackChanges_Action extends BaseAction {
 
   public RollbackChanges_Action() {
     super("Rollback", "", ICON);
-    this.setIsAlwaysVisible(false);
+    this.setIsAlwaysVisible(true);
     this.setExecuteOutsideCommand(false);
   }
 
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
-      event.getPresentation().setVisible(true);
-      event.getPresentation().setEnabled(true);
-
+      this.enable(event.getPresentation());
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action doUpdate method failed. Action:" + "RollbackChanges", t);
@@ -48,16 +44,12 @@ public class RollbackChanges_Action extends BaseAction {
     if (MapSequence.fromMap(_params).get("editorContext") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("project", event.getData(PlatformDataKeys.PROJECT));
-    if (MapSequence.fromMap(_params).get("project") == null) {
-      return false;
-    }
     return true;
   }
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      EditorChangesHighlighter.getInstance(((Project) MapSequence.fromMap(_params).get("project"))).rollbackChanges(((EditorContext) MapSequence.fromMap(_params).get("editorContext")));
+      ChangesStripActionsHelper.rollbackChanges(((EditorContext) MapSequence.fromMap(_params).get("editorContext")));
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "RollbackChanges", t);

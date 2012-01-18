@@ -22,8 +22,6 @@ import com.intellij.openapi.vcs.impl.VcsFileStatusProvider;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
-import java.awt.Frame;
-import jetbrains.mps.smodel.IOperationContext;
 
 public class ShowDiffererenceWithCurrentRevision_Action extends BaseAction {
   private static final Icon ICON = IconUtil.getIcon("diff.png");
@@ -65,20 +63,12 @@ public class ShowDiffererenceWithCurrentRevision_Action extends BaseAction {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.fromMap(_params).put("frame", event.getData(MPSCommonDataKeys.FRAME));
-    if (MapSequence.fromMap(_params).get("frame") == null) {
-      return false;
-    }
     MapSequence.fromMap(_params).put("node", event.getData(MPSCommonDataKeys.NODE));
     if (MapSequence.fromMap(_params).get("node") == null) {
       return false;
     }
     MapSequence.fromMap(_params).put("project", event.getData(PlatformDataKeys.PROJECT));
     if (MapSequence.fromMap(_params).get("project") == null) {
-      return false;
-    }
-    MapSequence.fromMap(_params).put("context", event.getData(MPSCommonDataKeys.OPERATION_CONTEXT));
-    if (MapSequence.fromMap(_params).get("context") == null) {
       return false;
     }
     MapSequence.fromMap(_params).put("model", event.getData(MPSCommonDataKeys.CONTEXT_MODEL));
@@ -90,7 +80,7 @@ public class ShowDiffererenceWithCurrentRevision_Action extends BaseAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      VcsActionsUtil.showRootDifference(((Frame) MapSequence.fromMap(_params).get("frame")), ((IOperationContext) MapSequence.fromMap(_params).get("context")), ((SModelDescriptor) MapSequence.fromMap(_params).get("model")).getSModel(), ((SNode) MapSequence.fromMap(_params).get("node")), ((Project) MapSequence.fromMap(_params).get("project")));
+      VcsActionsUtil.showRootDifference((EditableSModelDescriptor) ((SModelDescriptor) MapSequence.fromMap(_params).get("model")), ((SNode) MapSequence.fromMap(_params).get("node")), ((Project) MapSequence.fromMap(_params).get("project")), null);
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "ShowDiffererenceWithCurrentRevision", t);

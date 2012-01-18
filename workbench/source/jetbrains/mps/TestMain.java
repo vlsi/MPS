@@ -73,7 +73,7 @@ import java.util.LinkedHashSet;
 import java.util.List;
 
 public class TestMain {
-  private static final String[] DEFAULT_ENABLED_PLUGINS = new String[]{"jetbrains.mps.vcs", "jetbrains.mps.ide.editor", "jetbrains.mps.ide.make"};
+  private static final String[] DEFAULT_ENABLED_PLUGINS = new String[]{"jetbrains.mps.vcs", "jetbrains.mps.ide.editor", "jetbrains.mps.ide.make", "Git4Idea"};
 
   public static final ProjectContainer PROJECT_CONTAINER = new ProjectContainer();
 
@@ -114,6 +114,24 @@ public class TestMain {
   public static boolean testOnProjectCopy(final File source, final File destinationDir,
                                           final String projectName, ProjectRunnable pr,
                                           final String... plugins) {
+    final Project project = startTestOnProjectCopy(source, destinationDir, projectName, plugins);
+    if (project == null) {
+      return false;
+    }
+
+    try {
+      return pr.execute(project);
+    } catch (Throwable t) {
+      t.printStackTrace();
+      return false;
+    } finally {
+      finishTestOnProjectCopy(project, destinationDir);
+    }
+  }
+
+  public static Project startTestOnProjectCopy(final File source, final File destinationDir,
+                                          final String projectName,
+                                          final String... plugins) {
     IdeMain.setTestMode(TestMode.CORE_TEST);
     Logger.setThreshold("WARN");
     org.apache.log4j.BasicConfigurator.configure();
@@ -130,7 +148,7 @@ public class TestMain {
         UnzipUtil.unzip(source, destinationDir);
       } catch (IOException e) {
         e.printStackTrace();
-        return false;
+        return null;
       }
     }
 
@@ -151,27 +169,29 @@ public class TestMain {
       });
 
       waitUntilAllEventsFlushed();
-
-      // execute test
-      return pr.execute(project[0]);
+      
+      return project[0];
     } catch (Throwable t) {
       t.printStackTrace();
-      return false;
-    } finally {
-      waitUntilAllEventsFlushed();
-
-      // clean up
-      ThreadUtils.runInUIThreadAndWait(new Runnable() {
-        public void run() {
-          if (project[0] != null) {
-            project[0].dispose();
-          }
-          FileUtil.delete(destinationDir);
-        }
-      });
+      return null;
     }
   }
 
+  public static void finishTestOnProjectCopy(final Project project, final File destinationDir) {
+    waitUntilAllEventsFlushed();
+
+    // clean up
+    ThreadUtils.runInUIThreadAndWait(new Runnable() {
+      public void run() {
+        if (project != null) {
+          project.dispose();
+        }
+        FileUtil.delete(destinationDir);
+      }
+    });
+  }
+  
+  
   private static void waitUntilAllEventsFlushed() {
     // Wait until last invokeLater() is executed
     ApplicationManager.getApplication().invokeAndWait(new Runnable() {

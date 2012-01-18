@@ -160,7 +160,7 @@ public class CreateRootNodeGroup extends BaseGroup {
       BaseGroup langRootsGroup;
 
       if (!plain) {
-        langRootsGroup = new BaseGroup(name, name, icon);
+        langRootsGroup = new BaseGroup(NameUtil.compactNamespace(name), name, icon);
         langRootsGroup.setPopup(true);
       } else {
         langRootsGroup = this;

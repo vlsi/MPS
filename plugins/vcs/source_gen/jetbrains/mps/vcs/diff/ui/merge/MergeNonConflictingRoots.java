@@ -21,7 +21,7 @@ public class MergeNonConflictingRoots extends BaseAction {
 
   protected void doExecute(AnActionEvent event, Map<String, Object> map) {
     Iterable<ModelChange> changes = getChanges();
-    myDialog.getMergeContext().applyChanges(changes);
+    myDialog.getMergeSession().applyChanges(changes);
     myDialog.markMetadataChangesAsApplied(Sequence.fromIterable(changes).where(new IWhereFilter<ModelChange>() {
       public boolean accept(ModelChange ch) {
         return ch instanceof MetadataChange;
@@ -36,6 +36,6 @@ public class MergeNonConflictingRoots extends BaseAction {
   }
 
   private Iterable<ModelChange> getChanges() {
-    return myDialog.getMergeContext().getApplicableChangesInNonConflictingRoots();
+    return myDialog.getMergeSession().getApplicableChangesInNonConflictingRoots();
   }
 }

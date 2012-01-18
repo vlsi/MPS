@@ -6,12 +6,10 @@ import java.util.List;
 import jetbrains.mps.vcs.diff.changes.ModelChange;
 import jetbrains.mps.vcs.diff.changes.ChangeType;
 import org.jetbrains.annotations.Nullable;
-import jetbrains.mps.vcs.diff.merge.MergeContext;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.ILeftCombinator;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.internal.collections.runtime.Sequence;
 
 public class ChangeGroup {
   private Bounds myLeftBounds;
@@ -19,7 +17,7 @@ public class ChangeGroup {
   private List<ModelChange> myChanges;
   private ChangeType myChangeType;
 
-  public ChangeGroup(Bounds leftBounds, Bounds rightBounds, List<ModelChange> changes, @Nullable final MergeContext mergeContext) {
+  public ChangeGroup(Bounds leftBounds, Bounds rightBounds, List<ModelChange> changes, @Nullable final ChangeEditorMessage.ConflictChecker conflictChecker) {
     myLeftBounds = leftBounds;
     myRightBounds = rightBounds;
     myChanges = changes;
@@ -35,9 +33,9 @@ public class ChangeGroup {
         );
       }
     });
-    if (mergeContext != null && ListSequence.fromList(changes).any(new IWhereFilter<ModelChange>() {
+    if (conflictChecker != null && ListSequence.fromList(changes).any(new IWhereFilter<ModelChange>() {
       public boolean accept(ModelChange ch) {
-        return Sequence.fromIterable(mergeContext.getConflictedWith(ch)).isNotEmpty();
+        return conflictChecker.isChangeConflicted(ch);
       }
     })) {
       myChangeType = ChangeType.CONFLICTED;
