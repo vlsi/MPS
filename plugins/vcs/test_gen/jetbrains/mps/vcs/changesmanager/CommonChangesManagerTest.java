@@ -26,8 +26,6 @@ import javax.swing.SwingUtilities;
 import jetbrains.mps.nodeEditor.InspectorTool;
 import org.junit.Assert;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
-import jetbrains.mps.smodel.SModelAdapter;
-import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelFqName;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -49,9 +47,11 @@ import com.intellij.openapi.vcs.changes.VcsDirtyScopeManager;
 import com.intellij.openapi.vcs.FileStatusManager;
 import com.intellij.openapi.vcs.VcsException;
 import jetbrains.mps.vcs.concrete.GitUtils;
-import java.io.IOException;
 import jetbrains.mps.smodel.persistence.def.ModelReadException;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
+import jetbrains.mps.smodel.SModelAdapter;
+import jetbrains.mps.smodel.SModelDescriptor;
+import java.io.IOException;
 import java.util.ArrayList;
 import com.intellij.openapi.vcs.rollback.RollbackProgressListener;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
@@ -188,20 +188,6 @@ public class CommonChangesManagerTest {
     });
   }
 
-  private void waitForModelReplaced(final EditableSModelDescriptor modelDescriptor) {
-    waitForSomething(new Runnable() {
-      public void run() {
-        modelDescriptor.addModelListener(new SModelAdapter() {
-          @Override
-          public void modelReplaced(SModelDescriptor descriptor) {
-            descriptor.removeModelListener(this);
-            waitCompleted();
-          }
-        });
-      }
-    });
-  }
-
   private CurrentDifference getCurrentDifference(String shortName) {
     return myRegistry.getCurrentDifference((EditableSModelDescriptor) SModelRepository.getInstance().getModelDescriptor(SModelFqName.fromString(MODEL_PREFIX + shortName)));
   }
@@ -216,8 +202,8 @@ public class CommonChangesManagerTest {
     myUtilDiff.setEnabled(true);
     waitForChangesManager();
 
-    Assert.assertTrue(ListSequence.fromList(check_orwzer_a0a9a8(myHtmlDiff.getChangeSet())).isNotEmpty());
-    Assert.assertTrue(ListSequence.fromList(check_orwzer_a0a01a8(myUiDiff.getChangeSet())).isNotEmpty());
+    Assert.assertTrue(ListSequence.fromList(check_orwzer_a0a9a7(myHtmlDiff.getChangeSet())).isNotEmpty());
+    Assert.assertTrue(ListSequence.fromList(check_orwzer_a0a01a7(myUiDiff.getChangeSet())).isNotEmpty());
     Assert.assertNull(myUtilDiff.getChangeSet());
   }
 
@@ -279,7 +265,7 @@ public class CommonChangesManagerTest {
     });
 
     waitForChangesManager();
-    Assert.assertTrue(ListSequence.fromList(check_orwzer_a0a3a01(myUtilDiff.getChangeSet())).isNotEmpty());
+    Assert.assertTrue(ListSequence.fromList(check_orwzer_a0a3a9(myUtilDiff.getChangeSet())).isNotEmpty());
 
     MapSequence.fromMap(myExpectedFileStatuses).put("util.ImageLoader", FileStatus.MODIFIED);
     checkRootStatuses();
@@ -314,7 +300,7 @@ public class CommonChangesManagerTest {
     FileStatusManager.getInstance(myIdeaProject).fileStatusChanged(myUtilVirtualFile);
 
     waitForChangesManager();
-    Assert.assertTrue(ListSequence.fromList(check_orwzer_a0a6a21(myUtilDiff.getChangeSet())).isNotEmpty());
+    Assert.assertTrue(ListSequence.fromList(check_orwzer_a0a6a11(myUtilDiff.getChangeSet())).isNotEmpty());
 
     MapSequence.fromMap(myExpectedFileStatuses).put("util.ImageLoader", FileStatus.MODIFIED);
     checkRootStatuses();
@@ -327,12 +313,32 @@ public class CommonChangesManagerTest {
     return root;
   }
 
-  private void modifyExternally() throws IOException, ModelReadException {
+  private void modifyExternally() throws ModelReadException {
     int changesBefore = ListSequence.fromList(myUtilDiff.getChangeSet().getModelChanges()).count();
-    SModel modelContent = ModelPersistence.readModel(myUtilDiff.getModelDescriptor().getModelFile(), false);
+    final SModel modelContent = ModelPersistence.readModel(myUtilDiff.getModelDescriptor().getModelFile(), false);
     createNewRoot(modelContent);
-    myUtilVirtualFile.setBinaryContent(ModelPersistence.modelToString(modelContent).getBytes(FileUtil.DEFAULT_CHARSET));
-    waitForModelReplaced(myUtilDiff.getModelDescriptor());
+    final EditableSModelDescriptor modelDescriptor = myUtilDiff.getModelDescriptor();
+    waitForSomething(new Runnable() {
+      public void run() {
+        modelDescriptor.addModelListener(new SModelAdapter() {
+          @Override
+          public void modelReplaced(SModelDescriptor descriptor) {
+            descriptor.removeModelListener(this);
+            waitCompleted();
+          }
+        });
+        ModelAccess.instance().runWriteInEDT(new Runnable() {
+          public void run() {
+            try {
+              myUtilVirtualFile.setBinaryContent(ModelPersistence.modelToString(modelContent).getBytes(FileUtil.DEFAULT_CHARSET));
+            } catch (IOException e) {
+              throw new AssertionError(e);
+            }
+          }
+        });
+        ModelAccess.instance().flushEventQueue();
+      }
+    });
     waitForChangesManager();
     Assert.assertEquals(changesBefore + 1, ListSequence.fromList(myUtilDiff.getChangeSet().getModelChanges()).count());
 
@@ -350,7 +356,7 @@ public class CommonChangesManagerTest {
     FileStatusManager.getInstance(myIdeaProject).fileStatusChanged(myUtilVirtualFile);
 
     waitForChangesManager();
-    Assert.assertTrue(ListSequence.fromList(check_orwzer_a0a7a51(myUtilDiff.getChangeSet())).isEmpty());
+    Assert.assertTrue(ListSequence.fromList(check_orwzer_a0a7a41(myUtilDiff.getChangeSet())).isEmpty());
 
     SetSequence.fromSet(MapSequence.fromMap(myExpectedFileStatuses).keySet()).where(new IWhereFilter<String>() {
       public boolean accept(String k) {
@@ -445,7 +451,7 @@ public class CommonChangesManagerTest {
               fe = new DummyFileEditor(np);
             }
             UndoManager.getInstance(myIdeaProject).undo(fe);
-            check_orwzer_a3a0a0a0a0a42(fe);
+            check_orwzer_a3a0a0a0a0a32(fe);
           }
         });
       } catch (Throwable t) {
@@ -886,42 +892,42 @@ public class CommonChangesManagerTest {
     TestMain.finishTestOnProjectCopy(ourProject, DESTINATION_PROJECT_DIR);
   }
 
-  private static List<ModelChange> check_orwzer_a0a9a8(ChangeSet checkedDotOperand) {
+  private static List<ModelChange> check_orwzer_a0a9a7(ChangeSet checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModelChanges();
     }
     return null;
   }
 
-  private static List<ModelChange> check_orwzer_a0a01a8(ChangeSet checkedDotOperand) {
+  private static List<ModelChange> check_orwzer_a0a01a7(ChangeSet checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModelChanges();
     }
     return null;
   }
 
-  private static List<ModelChange> check_orwzer_a0a3a01(ChangeSet checkedDotOperand) {
+  private static List<ModelChange> check_orwzer_a0a3a9(ChangeSet checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModelChanges();
     }
     return null;
   }
 
-  private static List<ModelChange> check_orwzer_a0a6a21(ChangeSet checkedDotOperand) {
+  private static List<ModelChange> check_orwzer_a0a6a11(ChangeSet checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModelChanges();
     }
     return null;
   }
 
-  private static List<ModelChange> check_orwzer_a0a7a51(ChangeSet checkedDotOperand) {
+  private static List<ModelChange> check_orwzer_a0a7a41(ChangeSet checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModelChanges();
     }
     return null;
   }
 
-  private static void check_orwzer_a3a0a0a0a0a42(FileEditor checkedDotOperand) {
+  private static void check_orwzer_a3a0a0a0a0a32(FileEditor checkedDotOperand) {
     if (null != checkedDotOperand) {
       checkedDotOperand.dispose();
     }
