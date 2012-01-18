@@ -17,7 +17,7 @@
 package jetbrains.mps.idea.core.ui;
 
 import jetbrains.mps.fileTypes.FileIcons;
-import jetbrains.mps.idea.core.facet.ui.MpsElementsTable;
+import jetbrains.mps.idea.core.MPSBundle;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelDescriptor;
@@ -35,7 +35,7 @@ import java.util.List;
  * Time: 10:48 AM
  * To change this template use File | Settings | File Templates.
  */
-public class ModelListTable extends MpsElementsTable<SModelReference> {
+public class ImportedModelsTable extends MpsElementsTable<SModelReference> {
     public static Comparator<SModelReference> MODEL_REFERENCE_COMPARATOR = new ModelReferenceComparator();
 
     @Override
@@ -75,7 +75,7 @@ public class ModelListTable extends MpsElementsTable<SModelReference> {
 
     @Override
     protected String getChooserMessage() {
-        return "Choose model to import";
+        return MPSBundle.message("imported.models.chooser.title");
     }
 
     private static final class ModelReferenceComparator implements Comparator<SModelReference> {

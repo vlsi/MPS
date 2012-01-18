@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package jetbrains.mps.idea.core.facet.ui;
+package jetbrains.mps.idea.core.ui;
 
 import com.intellij.util.ui.ItemRemovable;
 import jetbrains.mps.project.structure.modules.ModuleReference;

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package jetbrains.mps.idea.core.facet.ui;
+package jetbrains.mps.idea.core.ui;
 
 import jetbrains.mps.idea.core.MPSBundle;
 import jetbrains.mps.idea.core.facet.MPSConfigurationBean;
@@ -24,7 +24,9 @@ import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleRepository;
 
 import javax.swing.*;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.List;
 
 /**
  * Created by IntelliJ IDEA.
@@ -33,46 +35,32 @@ import java.util.*;
  * Time: 2:11 PM
  * To change this template use File | Settings | File Templates.
  */
-public class UsedLanguagesTab extends MpsElementsTable<ModuleReference> {
+public class UsedLanguagesTable extends MpsElementsTable<ModuleReference> {
     public static Comparator<ModuleReference> MODULE_REFERENCE_COMPARATOR = new ModuleReferenceComparator();
 
-    public void setData(MPSConfigurationBean data) {
+    // TODO: create additional MPSConfigurationBean.get/setUsedLanguageReferences() methods and use it here
+    private static List<ModuleReference> getUsedLanguages(MPSConfigurationBean data) {
         List<ModuleReference> usedLanguages = new ArrayList<ModuleReference>();
-        // TODO: create additional MPSConfigurationBean.get/setUsedLanguageReferences() methods and use it here
         for (String moduleReference : data.getUsedLanguages()) {
             usedLanguages.add(ModuleReference.fromString(moduleReference));
         }
-        setUsedLanguages(usedLanguages);
+        return usedLanguages;
     }
 
-    public void setUsedLanguages(List<ModuleReference> usedLanguages) {
-        getTableModel().setElements(usedLanguages);
-        getTableModel().fireTableDataChanged();
-        if (getTable().getRowCount() > 0) {
-            getTable().getSelectionModel().setSelectionInterval(0, 0);
-        }
+    public void setData(MPSConfigurationBean data) {
+        setElements(getUsedLanguages(data));
     }
 
     public void getData(MPSConfigurationBean data) {
         data.setUsedLanguages(getUsedLanguagesStringArray());
     }
 
-    public List<ModuleReference> getUsedLanguages() {
-        return getTableModel().getElements();
-    }
-
     public boolean isModified(MPSConfigurationBean data) {
-        return !Arrays.equals(getUsedLanguagesStringArray(), data.getUsedLanguages());
-    }
-
-    public boolean isModified(List<ModuleReference> usedLanguages) {
-        List<ModuleReference> sortedLanguagesList = new ArrayList<ModuleReference>(usedLanguages);
-        Collections.sort(sortedLanguagesList, getComparator());
-        return !getUsedLanguages().equals(sortedLanguagesList);
+        return isModified(getUsedLanguages(data));
     }
 
     private String[] getUsedLanguagesStringArray() {
-        List<ModuleReference> moduleReferences = getUsedLanguages();
+        List<ModuleReference> moduleReferences = getElements();
         String[] usedLanguages = new String[moduleReferences.size()];
         int i = 0;
         for (ModuleReference moduleReference : moduleReferences) {
@@ -113,7 +101,7 @@ public class UsedLanguagesTab extends MpsElementsTable<ModuleReference> {
 
     @Override
     protected String getChooserMessage() {
-        return MPSBundle.message("facet.languages.tab.choose.language.title");
+        return MPSBundle.message("used.languages.chooser.title");
     }
 
     private static final class ModuleReferenceComparator implements Comparator<ModuleReference> {

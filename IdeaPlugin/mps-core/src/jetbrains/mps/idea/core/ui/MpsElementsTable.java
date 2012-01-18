@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package jetbrains.mps.idea.core.facet.ui;
+package jetbrains.mps.idea.core.ui;
 
 import com.intellij.ide.util.ChooseElementsDialog;
 import com.intellij.ui.*;
@@ -158,18 +158,6 @@ public abstract class MpsElementsTable<T> {
         };
     }
 
-    protected JTable getTable() {
-        return myElementsTable;
-    }
-
-    protected MpsElementsTableModel<T> getTableModel() {
-        return myElementsTableModel;
-    }
-
-    protected SimpleTextAttributes getTextAttributes(T moduleReference) {
-        return SimpleTextAttributes.REGULAR_ATTRIBUTES;
-    }
-
     protected abstract String getText(T element);
 
     protected abstract Icon getIcon(T element);
@@ -181,4 +169,26 @@ public abstract class MpsElementsTable<T> {
     protected abstract Class<T> getRendererClass();
 
     protected abstract String getChooserMessage();
+
+    public List<T> getElements() {
+        return myElementsTableModel.getElements();
+    }
+
+    public void setElements(List<T> elements) {
+        myElementsTableModel.setElements(elements);
+        myElementsTableModel.fireTableDataChanged();
+        if (myElementsTable.getRowCount() > 0) {
+            myElementsTable.getSelectionModel().setSelectionInterval(0, 0);
+        }
+    }
+
+    public boolean isModified(List<T> elements) {
+        List<T> sortedLanguagesList = new ArrayList<T>(elements);
+        Collections.sort(sortedLanguagesList, getComparator());
+        return !getElements().equals(sortedLanguagesList);
+    }
+
+    protected SimpleTextAttributes getTextAttributes(T moduleReference) {
+        return SimpleTextAttributes.REGULAR_ATTRIBUTES;
+    }
 }

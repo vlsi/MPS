@@ -23,18 +23,19 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.Disposer;
 import com.intellij.ui.TabbedPaneWrapper;
 import jetbrains.mps.ide.project.ProjectHelper;
-import jetbrains.mps.idea.core.facet.ui.UsedLanguagesTab;
 import jetbrains.mps.idea.core.icons.MPSIcons;
-import jetbrains.mps.idea.core.ui.ModelListTable;
+import jetbrains.mps.idea.core.ui.ImportedModelsTable;
+import jetbrains.mps.idea.core.ui.UsedLanguagesTable;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.SModelOperations;
+import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import org.jetbrains.annotations.Nls;
 
 import javax.swing.*;
-import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -48,17 +49,19 @@ import java.util.Set;
  */
 public class ModelPropertiesConfigurable implements Configurable, Disposable {
     private EditableSModelDescriptor myDescriptor;
-    private UsedLanguagesTab myUsedLanguagesTab;
-    private List<ModuleReference> myImportedLanguages;
+    private UsedLanguagesTable myUsedLanguagesTable;
+    private List<ModuleReference> myUsedLanguages;
     private Project myProject;
-    private ModelListTable myImportedModels;
+    private ImportedModelsTable myImportedModelsTable;
+    private List<SModelReference> myImportedModels;
 
     public ModelPropertiesConfigurable(EditableSModelDescriptor descriptor, Project project) {
         ModelAccess.assertLegalRead();
         myDescriptor = descriptor;
         myProject = project;
         SModel sModel = myDescriptor.getSModel();
-        myImportedLanguages = new ArrayList<ModuleReference>(sModel.importedLanguages());
+        myUsedLanguages = sModel.importedLanguages();
+        myImportedModels = SModelOperations.getImportedModelUIDs(sModel);
     }
 
     @Nls
@@ -80,25 +83,25 @@ public class ModelPropertiesConfigurable implements Configurable, Disposable {
     @Override
     public JComponent createComponent() {
         TabbedPaneWrapper tabbedPane = new TabbedPaneWrapper(this);
-        tabbedPane.addTab("Imported Models", MPSIcons.MODELS_TAB_ICON, createImportedModelsTab(), "Models imported into this model");
-        tabbedPane.addTab("Used Languages", MPSIcons.LANGUAGES_TAB_ICON, createUsedLanguagesTab(), "Languages used in this model");
+        tabbedPane.addTab("Imported Models", MPSIcons.MODELS_TAB_ICON, createImportedModelsTable(), "Models imported into this model");
+        tabbedPane.addTab("Used Languages", MPSIcons.LANGUAGES_TAB_ICON, createUsedLanguagesTable(), "Languages used in this model");
         reset();
         return tabbedPane.getComponent();
     }
 
-    private JComponent createUsedLanguagesTab() {
-        myUsedLanguagesTab = new UsedLanguagesTab();
-        return myUsedLanguagesTab.createComponent();
+    private JComponent createUsedLanguagesTable() {
+        myUsedLanguagesTable = new UsedLanguagesTable();
+        return myUsedLanguagesTable.createComponent();
     }
 
-    private JComponent createImportedModelsTab() {
-        myImportedModels = new ModelListTable();
-        return myImportedModels.createComponent();
+    private JComponent createImportedModelsTable() {
+        myImportedModelsTable = new ImportedModelsTable();
+        return myImportedModelsTable.createComponent();
     }
 
     @Override
     public boolean isModified() {
-        return myUsedLanguagesTab.isModified(myImportedLanguages);
+        return myUsedLanguagesTable.isModified(myUsedLanguages);
     }
 
     @Override
@@ -109,30 +112,57 @@ public class ModelPropertiesConfigurable implements Configurable, Disposable {
                 SModel sModel = myDescriptor.getSModel();
                 IModule module = myDescriptor.getModule();
 
-                Set<ModuleReference> languagesToRemove = new HashSet<ModuleReference>(sModel.importedLanguages());
-                languagesToRemove.removeAll(myUsedLanguagesTab.getUsedLanguages());
-                for (ModuleReference language : languagesToRemove) {
-                    sModel.deleteLanguage(language);
-                }
-
-                Set<ModuleReference> languagesToAdd = new HashSet<ModuleReference>(myUsedLanguagesTab.getUsedLanguages());
-                languagesToAdd.removeAll(sModel.importedLanguages());
-                for (ModuleReference language : languagesToAdd) {
-                    if (module.getScope().getLanguage(language) == null) {
-                        module.addUsedLanguage(language);
-                    }
-                    sModel.addLanguage(language);
-                }
+                saveImportedModels(sModel);
+                saveUsedLanguages(sModel, module);
 
                 myDescriptor.save();
-                myImportedLanguages = new ArrayList<ModuleReference>(sModel.importedLanguages());
+                myUsedLanguages = sModel.importedLanguages();
+                myImportedModels = SModelOperations.getImportedModelUIDs(sModel);
             }
         }, ProjectHelper.toMPSProject(myProject));
     }
 
+    private void saveUsedLanguages(SModel sModel, IModule module) {
+        List<ModuleReference> currentlyUsedLanguages = sModel.importedLanguages();
+        List<ModuleReference> usedLanguages = myUsedLanguagesTable.getElements();
+
+        Set<ModuleReference> languagesToRemove = new HashSet<ModuleReference>(currentlyUsedLanguages);
+        languagesToRemove.removeAll(usedLanguages);
+        for (ModuleReference language : languagesToRemove) {
+            sModel.deleteLanguage(language);
+        }
+
+        Set<ModuleReference> languagesToAdd = new HashSet<ModuleReference>(usedLanguages);
+        languagesToAdd.removeAll(currentlyUsedLanguages);
+        for (ModuleReference language : languagesToAdd) {
+            if (module.getScope().getLanguage(language) == null) {
+                module.addUsedLanguage(language);
+            }
+            sModel.addLanguage(language);
+        }
+    }
+
+    private void saveImportedModels(SModel sModel) {
+        List<SModelReference> currentlyImportedModels = SModelOperations.getImportedModelUIDs(sModel);
+        List<SModelReference> importedModels = myImportedModelsTable.getElements();
+
+        Set<SModelReference> modelsToRemove = new HashSet<SModelReference>(currentlyImportedModels);
+        modelsToRemove.removeAll(importedModels);
+        for (SModelReference modelReference : modelsToRemove) {
+            sModel.deleteModelImport(modelReference);
+        }
+
+        Set<SModelReference> modelsToAdd = new HashSet<SModelReference>(importedModels);
+        modelsToAdd.removeAll(currentlyImportedModels);
+        for (SModelReference modelReference : modelsToRemove) {
+            sModel.deleteModelImport(modelReference);
+        }
+    }
+
     @Override
     public void reset() {
-        myUsedLanguagesTab.setUsedLanguages(myImportedLanguages);
+        myImportedModelsTable.setElements(myImportedModels);
+        myUsedLanguagesTable.setElements(myUsedLanguages);
     }
 
     @Override
