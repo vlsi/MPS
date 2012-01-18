@@ -252,7 +252,7 @@ class TypeSystemComponent extends CheckingComponent {
       return null;
     }
     long start = System.currentTimeMillis();
-
+    myState.setTargetNode(initialNode);
     while (node != null) {
       List<SNode> additionalNodes = new ArrayList<SNode>(givenAdditionalNodes);
       if (prevNode != null) {
@@ -262,6 +262,7 @@ class TypeSystemComponent extends CheckingComponent {
       type = typeCalculated(initialNode);
       if (type == null) {
         if (node.isRoot()) {
+          typeCalculated(initialNode);
           computeTypes(node, true, true, new ArrayList<SNode>(0), true, initialNode);
           type = getType(initialNode);
           if(type == null && node != initialNode) {
