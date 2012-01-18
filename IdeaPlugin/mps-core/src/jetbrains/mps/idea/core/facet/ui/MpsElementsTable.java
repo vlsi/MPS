@@ -99,13 +99,13 @@ public abstract class MpsElementsTable<T> {
                 ModelAccess.instance().runReadInEDT(new Runnable() {
                     @Override
                     public void run() {
-                        final java.util.List<T> allModules = getAllVisibleModules();
-                        Collections.sort(allModules, getComparator());
+                        final java.util.List<T> allElements = getAllVisibleElements();
+                        Collections.sort(allElements, getComparator());
 
                         SwingUtilities.invokeLater(new Runnable() {
                             @Override
                             public void run() {
-                                ChooseElementsDialog<T> chooseModulesDialog = new ChooseElementsDialog<T>(myElementsTable, allModules, getChooserMessage()) {
+                                ChooseElementsDialog<T> chooseElementsDialog = new ChooseElementsDialog<T>(myElementsTable, allElements, getChooserMessage()) {
                                     @Override
                                     protected String getItemText(T item) {
                                         return getText(item);
@@ -116,15 +116,15 @@ public abstract class MpsElementsTable<T> {
                                         return getIcon(item);
                                     }
                                 };
-                                chooseModulesDialog.show();
-                                Set<T> modulesToAdd = new HashSet<T>(chooseModulesDialog.getChosenElements());
-                                myElementsTableModel.addElements(modulesToAdd);
+                                chooseElementsDialog.show();
+                                Set<T> elementsToAdd = new HashSet<T>(chooseElementsDialog.getChosenElements());
+                                myElementsTableModel.addElements(elementsToAdd);
                                 myElementsTableModel.fireTableDataChanged();
                                 ListSelectionModel selectionModel = myElementsTable.getSelectionModel();
-                                if (!modulesToAdd.isEmpty()) {
+                                if (!elementsToAdd.isEmpty()) {
                                     selectionModel.clearSelection();
                                     for (int i = 0; i < myElementsTableModel.getRowCount(); i++) {
-                                        if (modulesToAdd.contains(myElementsTableModel.getValueAt(i, 0))) {
+                                        if (elementsToAdd.contains(myElementsTableModel.getValueAt(i, 0))) {
                                             selectionModel.addSelectionInterval(i, i);
                                         }
                                     }
@@ -170,11 +170,11 @@ public abstract class MpsElementsTable<T> {
         return SimpleTextAttributes.REGULAR_ATTRIBUTES;
     }
 
-    protected abstract String getText(T moduleReference);
+    protected abstract String getText(T element);
 
-    protected abstract Icon getIcon(T moduleReference);
+    protected abstract Icon getIcon(T element);
 
-    protected abstract List<T> getAllVisibleModules();
+    protected abstract List<T> getAllVisibleElements();
 
     protected abstract Comparator<T> getComparator();
 

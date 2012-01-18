@@ -93,7 +93,7 @@ public class UsedLanguagesTab extends MpsElementsTable<ModuleReference> {
     }
 
     @Override
-    protected List<ModuleReference> getAllVisibleModules() {
+    protected List<ModuleReference> getAllVisibleElements() {
         final List<ModuleReference> allLanguages = new ArrayList<ModuleReference>();
         for (Language language : MPSModuleRepository.getInstance().getAllLanguages()) {
             allLanguages.add(language.getModuleReference());

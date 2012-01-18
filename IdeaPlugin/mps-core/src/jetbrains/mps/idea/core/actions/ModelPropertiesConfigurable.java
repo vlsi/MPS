@@ -25,6 +25,7 @@ import com.intellij.ui.TabbedPaneWrapper;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.idea.core.facet.ui.UsedLanguagesTab;
 import jetbrains.mps.idea.core.icons.MPSIcons;
+import jetbrains.mps.idea.core.ui.ModelListTable;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.ModelAccess;
@@ -33,7 +34,6 @@ import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import org.jetbrains.annotations.Nls;
 
 import javax.swing.*;
-import java.awt.*;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
@@ -51,6 +51,7 @@ public class ModelPropertiesConfigurable implements Configurable, Disposable {
     private UsedLanguagesTab myUsedLanguagesTab;
     private List<ModuleReference> myImportedLanguages;
     private Project myProject;
+    private ModelListTable myImportedModels;
 
     public ModelPropertiesConfigurable(EditableSModelDescriptor descriptor, Project project) {
         ModelAccess.assertLegalRead();
@@ -91,12 +92,8 @@ public class ModelPropertiesConfigurable implements Configurable, Disposable {
     }
 
     private JComponent createImportedModelsTab() {
-        JPanel centerPanel = new JPanel();
-        centerPanel.setLayout(new BorderLayout());
-
-        JLabel label = new JLabel("Imported models");
-        centerPanel.add(label, BorderLayout.NORTH);
-        return centerPanel;
+        myImportedModels = new ModelListTable();
+        return myImportedModels.createComponent();
     }
 
     @Override
