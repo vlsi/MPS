@@ -10,6 +10,9 @@ import jetbrains.mps.smodel.SNode;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.smodel.SModelDescriptor;
 import com.intellij.openapi.vfs.VirtualFile;
+import jetbrains.mps.util.NameUtil;
+import com.intellij.openapi.vcs.AbstractVcsHelper;
+import java.util.Arrays;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.project.Solution;
@@ -26,40 +29,44 @@ public class ConflictingModelsEditorWarningsProvider implements EditorWarningsPr
   }
 
   @Nullable
-  public WarningPanel getWarningPanel(@NotNull SNode node, @NotNull Project project) {
+  public WarningPanel getWarningPanel(@NotNull SNode node, @NotNull final Project project) {
     SModelDescriptor md = check_smgm7b_a0a0a(node.getModel());
-    VirtualFile modelF = getModelFileIfConflicting(md, project);
-    VirtualFile moduleF = getModuleFileIfConflicting(check_smgm7b_a0a2a0(md), project);
-    if (moduleF != null) {
+    final VirtualFile modelFile = getModelFileIfConflicting(md, project);
+    final VirtualFile moduleFile = getModuleFileIfConflicting(check_smgm7b_a0a2a0(md), project);
+    if (moduleFile != null) {
       String type = getModuleType(md.getModule());
       assert type != null;
-      if (modelF != null) {
+      if (modelFile != null) {
         // conflicting model and module 
         return new WarningPanel(String.format("You are viewing model which is not merged yet. It is owned by %s, which is merged neither." + " You need to merge %s and model (this order is important).", type, type), "Merge Module and Model", new Runnable() {
           public void run() {
-            // TODO invoke merge dialog 
+            invokeMergeDialog(project, moduleFile, modelFile);
           }
         });
       } else {
         // conflicting module 
-        return new WarningPanel(String.format("You are viewing model owned by %s which is not merged yet. You need to merge it before editing.", type, type), "Merge Module", new Runnable() {
+        return new WarningPanel(String.format("You are viewing model owned by %s which is not merged yet. You need to merge it before editing.", type, type), "Merge " + NameUtil.capitalize(type), new Runnable() {
           public void run() {
-            // TODO invoke merge dialog 
+            invokeMergeDialog(project, moduleFile);
           }
         });
       }
     } else {
-      if (modelF != null) {
+      if (modelFile != null) {
         // conflicting model 
         return new WarningPanel("You are viewing model which is not merged yet. You may see very old version of it." + " You need to merge it before editing, otherwise your changes will be lost.", "Merge Model", new Runnable() {
           public void run() {
-            // TODO invoke merge dialog 
+            invokeMergeDialog(project, modelFile);
           }
         });
       } else {
         return null;
       }
     }
+  }
+
+  private void invokeMergeDialog(Project project, VirtualFile... interestingFiles) {
+    AbstractVcsHelper.getInstance(project).showMergeDialog(Arrays.asList(interestingFiles));
   }
 
   @Nullable

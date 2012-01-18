@@ -4927,7 +4927,7 @@
         </node>
         <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="5412004210329572468">
           <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="5412004210329572469">
-            <property name="name" nameId="tpck.1169194664001" value="modelF" />
+            <property name="name" nameId="tpck.1169194664001" value="modelFile" />
             <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5412004210329572470">
               <link role="classifier" roleId="tpee.1107535924139" targetNodeId="zfwc.~VirtualFile" resolveInfo="VirtualFile" />
             </node>
@@ -4944,7 +4944,7 @@
         </node>
         <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="5412004210329573671">
           <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="5412004210329573672">
-            <property name="name" nameId="tpck.1169194664001" value="moduleF" />
+            <property name="name" nameId="tpck.1169194664001" value="moduleFile" />
             <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5412004210329573673">
               <link role="classifier" roleId="tpee.1107535924139" targetNodeId="zfwc.~VirtualFile" resolveInfo="VirtualFile" />
             </node>
@@ -5025,9 +5025,18 @@
                       </node>
                       <node role="actualArgument" roleId="tpee.1068499141038" type="tp2c.ClosureLiteral" typeId="tp2c.1199569711397" id="5412004210329573916">
                         <node role="body" roleId="tp2c.1199569916463" type="tpee.StatementList" typeId="tpee.1068580123136" id="5412004210329573917">
-                          <node role="statement" roleId="tpee.1068581517665" type="tpee.SingleLineComment" typeId="tpee.6329021646629104954" id="5412004210329573918">
-                            <node role="commentPart" roleId="tpee.6329021646629175155" type="tpee.TextCommentPart" typeId="tpee.6329021646629104957" id="5412004210329573919">
-                              <property name="text" nameId="tpee.6329021646629104958" value="TODO invoke merge dialog" />
+                          <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="3725889258238469946">
+                            <node role="expression" roleId="tpee.1068580123156" type="tpee.LocalInstanceMethodCall" typeId="tpee.3066917033203108594" id="3725889258238469947">
+                              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="3725889258238453006" resolveInfo="invokeMergeDialog" />
+                              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="3725889258238469948">
+                                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7187779626553011434" resolveInfo="project" />
+                              </node>
+                              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="3725889258238469951">
+                                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5412004210329573672" resolveInfo="moduleFile" />
+                              </node>
+                              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="3725889258238469952">
+                                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5412004210329572469" resolveInfo="modelFile" />
+                              </node>
                             </node>
                           </node>
                         </node>
@@ -5039,7 +5048,7 @@
               <node role="condition" roleId="tpee.1068580123160" type="tpee.NotEqualsExpression" typeId="tpee.1073239437375" id="5412004210329573714">
                 <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="5412004210329573717" />
                 <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="5412004210329573713">
-                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5412004210329572469" resolveInfo="modelF" />
+                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5412004210329572469" resolveInfo="modelFile" />
                 </node>
               </node>
               <node role="ifFalseStatement" roleId="tpee.1082485599094" type="tpee.BlockStatement" typeId="tpee.1082485599095" id="5412004210329573720">
@@ -5066,14 +5075,29 @@
                             <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5412004210329573754" resolveInfo="type" />
                           </node>
                         </node>
-                        <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="5412004210329573941">
-                          <property name="value" nameId="tpee.1070475926801" value="Merge Module" />
+                        <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.PlusExpression" typeId="tpee.1068581242875" id="2835122602744531132">
+                          <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="2835122602744531136">
+                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="msyo.~NameUtil%dcapitalize(java%dlang%dString)%cjava%dlang%dString" resolveInfo="capitalize" />
+                            <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="msyo.~NameUtil" resolveInfo="NameUtil" />
+                            <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="2835122602744535704">
+                              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5412004210329573754" resolveInfo="type" />
+                            </node>
+                          </node>
+                          <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="5412004210329573941">
+                            <property name="value" nameId="tpee.1070475926801" value="Merge " />
+                          </node>
                         </node>
                         <node role="actualArgument" roleId="tpee.1068499141038" type="tp2c.ClosureLiteral" typeId="tp2c.1199569711397" id="5412004210329573942">
                           <node role="body" roleId="tp2c.1199569916463" type="tpee.StatementList" typeId="tpee.1068580123136" id="5412004210329573943">
-                            <node role="statement" roleId="tpee.1068581517665" type="tpee.SingleLineComment" typeId="tpee.6329021646629104954" id="5412004210329573944">
-                              <node role="commentPart" roleId="tpee.6329021646629175155" type="tpee.TextCommentPart" typeId="tpee.6329021646629104957" id="5412004210329573945">
-                                <property name="text" nameId="tpee.6329021646629104958" value="TODO invoke merge dialog" />
+                            <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="3725889258238469953">
+                              <node role="expression" roleId="tpee.1068580123156" type="tpee.LocalInstanceMethodCall" typeId="tpee.3066917033203108594" id="3725889258238469954">
+                                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="3725889258238453006" resolveInfo="invokeMergeDialog" />
+                                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="3725889258238469955">
+                                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7187779626553011434" resolveInfo="project" />
+                                </node>
+                                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="3725889258238469956">
+                                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5412004210329573672" resolveInfo="moduleFile" />
+                                </node>
                               </node>
                             </node>
                           </node>
@@ -5088,7 +5112,7 @@
           <node role="condition" roleId="tpee.1068580123160" type="tpee.NotEqualsExpression" typeId="tpee.1073239437375" id="5412004210329573704">
             <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="5412004210329573707" />
             <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="5412004210329573703">
-              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5412004210329573672" resolveInfo="moduleF" />
+              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5412004210329573672" resolveInfo="moduleFile" />
             </node>
           </node>
           <node role="ifFalseStatement" roleId="tpee.1082485599094" type="tpee.BlockStatement" typeId="tpee.1082485599095" id="5412004210329574001">
@@ -5117,9 +5141,15 @@
                         </node>
                         <node role="actualArgument" roleId="tpee.1068499141038" type="tp2c.ClosureLiteral" typeId="tp2c.1199569711397" id="5412004210329574014">
                           <node role="body" roleId="tp2c.1199569916463" type="tpee.StatementList" typeId="tpee.1068580123136" id="5412004210329574015">
-                            <node role="statement" roleId="tpee.1068581517665" type="tpee.SingleLineComment" typeId="tpee.6329021646629104954" id="5412004210329574016">
-                              <node role="commentPart" roleId="tpee.6329021646629175155" type="tpee.TextCommentPart" typeId="tpee.6329021646629104957" id="5412004210329574017">
-                                <property name="text" nameId="tpee.6329021646629104958" value="TODO invoke merge dialog" />
+                            <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="3725889258238469958">
+                              <node role="expression" roleId="tpee.1068580123156" type="tpee.LocalInstanceMethodCall" typeId="tpee.3066917033203108594" id="3725889258238469959">
+                                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="3725889258238453006" resolveInfo="invokeMergeDialog" />
+                                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="3725889258238469960">
+                                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7187779626553011434" resolveInfo="project" />
+                                </node>
+                                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="3725889258238469962">
+                                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5412004210329572469" resolveInfo="modelFile" />
+                                </node>
                               </node>
                             </node>
                           </node>
@@ -5130,7 +5160,7 @@
                 </node>
                 <node role="condition" roleId="tpee.1068580123160" type="tpee.NotEqualsExpression" typeId="tpee.1073239437375" id="5412004210329574018">
                   <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="5412004210329574019">
-                    <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5412004210329572469" resolveInfo="modelF" />
+                    <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5412004210329572469" resolveInfo="modelFile" />
                   </node>
                   <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="5412004210329574020" />
                 </node>
@@ -5140,6 +5170,48 @@
                       <node role="expression" roleId="tpee.1068581517676" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="5412004210329574024" />
                     </node>
                   </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="method" roleId="tpee.1107880067339" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="3725889258238453006">
+      <property name="name" nameId="tpck.1169194664001" value="invokeMergeDialog" />
+      <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="3725889258238453019">
+        <property name="name" nameId="tpck.1169194664001" value="project" />
+        <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="3725889258238463136">
+          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="vehe.~Project" resolveInfo="Project" />
+        </node>
+      </node>
+      <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="3725889258238453011">
+        <property name="name" nameId="tpck.1169194664001" value="interestingFiles" />
+        <node role="type" roleId="tpee.5680397130376446158" type="tpee.VariableArityType" typeId="tpee.1219920932475" id="3725889258238453014">
+          <node role="componentType" roleId="tpee.1219921048460" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="3725889258238453013">
+            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="zfwc.~VirtualFile" resolveInfo="VirtualFile" />
+          </node>
+        </node>
+      </node>
+      <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="3725889258238453007" />
+      <node role="visibility" roleId="tpee.1178549979242" type="tpee.PrivateVisibility" typeId="tpee.1146644623116" id="3725889258238453010" />
+      <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="3725889258238453009">
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="3725889258238453016">
+          <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="3725889258238465382">
+            <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="3725889258238453018">
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="zftr.~AbstractVcsHelper%dgetInstance(com%dintellij%dopenapi%dproject%dProject)%ccom%dintellij%dopenapi%dvcs%dAbstractVcsHelper" resolveInfo="getInstance" />
+              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="zftr.~AbstractVcsHelper" resolveInfo="AbstractVcsHelper" />
+              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="3725889258238463137">
+                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3725889258238453019" resolveInfo="project" />
+              </node>
+            </node>
+            <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="3725889258238469941">
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="zftr.~AbstractVcsHelper%dshowMergeDialog(java%dutil%dList)%cjava%dutil%dList" resolveInfo="showMergeDialog" />
+              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="3725889258238469943">
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="k7g3.~Arrays%dasList(java%dlang%dObject%d%d%d)%cjava%dutil%dList" resolveInfo="asList" />
+                <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="k7g3.~Arrays" resolveInfo="Arrays" />
+                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="3725889258238469944">
+                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3725889258238453011" resolveInfo="interestingFiles" />
                 </node>
               </node>
             </node>
