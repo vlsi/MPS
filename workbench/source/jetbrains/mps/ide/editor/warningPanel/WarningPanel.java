@@ -17,6 +17,8 @@ package jetbrains.mps.ide.editor.warningPanel;
 
 import com.intellij.ui.HyperlinkLabel;
 import com.intellij.ui.LightColors;
+import com.intellij.xml.util.HtmlUtil;
+import com.intellij.xml.util.XmlStringUtil;
 
 import javax.swing.BorderFactory;
 import javax.swing.JLabel;
@@ -34,9 +36,9 @@ public class WarningPanel extends JPanel {
     setLayout(new BorderLayout());
 
     setBackground(LightColors.YELLOW);
-    setBorder(BorderFactory.createEmptyBorder(0, 4, 0, 4));
+    setBorder(BorderFactory.createEmptyBorder(4, 4, 4, 4));
 
-    add(new JLabel(text), BorderLayout.CENTER);
+    add(new JLabel("<html>" + XmlStringUtil.escapeString(text) + "</html>"), BorderLayout.CENTER);
 
     if (linkText != null && handler != null) {
       HyperlinkLabel hyperlinkLabel = new HyperlinkLabel(linkText);
