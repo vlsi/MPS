@@ -41,7 +41,6 @@ import com.intellij.openapi.application.Application;
 
 public class ModelChangesWatcher implements ApplicationComponent {
   public static final Logger LOG = Logger.getLogger(ModelChangesWatcher.class);
-  private static boolean ourForceProcessingEnabled = false;
 
   private final MessageBus myBus;
   private final ProjectManager myProjectManager;
@@ -132,30 +131,31 @@ public class ModelChangesWatcher implements ApplicationComponent {
   }
 
   public void initComponent() {
-    if (MPSCore.getInstance().isTestMode() && !(ourForceProcessingEnabled)) {
-      return;
+    initComponent(false);
+  }
+
+  public void initComponent(boolean force) {
+    if (myConnection == null && (force || !(MPSCore.getInstance().isTestMode()))) {
+      myConnection = myBus.connect();
+      myConnection.subscribe(VirtualFileManager.VFS_CHANGES, myBusListener);
+      myVirtualFileManager.addVirtualFileManagerListener(myVirtualFileManagerListener);
+      myMakeService.addListener(myMakeListener);
     }
-    myConnection = myBus.connect();
-    myConnection.subscribe(VirtualFileManager.VFS_CHANGES, myBusListener);
-    myVirtualFileManager.addVirtualFileManagerListener(myVirtualFileManagerListener);
-    myMakeService.addListener(myMakeListener);
   }
 
   public void disposeComponent() {
-    if (MPSCore.getInstance().isTestMode() && !(ourForceProcessingEnabled)) {
+    if (myConnection == null) {
       return;
     }
     myMakeService.removeListener(myMakeListener);
     myVirtualFileManager.removeVirtualFileManagerListener(myVirtualFileManagerListener);
     myConnection.disconnect();
+    myConnection = null;
   }
 
   private void doReload() {
     final ReloadSession session = myReloadSession;
     myReloadSession = null;
-    if (!(session.hasAnythingToDo())) {
-      return;
-    }
     ApplicationManager.getApplication().invokeLater(new Runnable() {
       public void run() {
         session.doReload();
@@ -231,10 +231,6 @@ public class ModelChangesWatcher implements ApplicationComponent {
 
   public static ModelChangesWatcher instance() {
     return ApplicationManager.getApplication().getComponent(ModelChangesWatcher.class);
-  }
-
-  public static void setForceProcessingEnabled(boolean value) {
-    ourForceProcessingEnabled = value;
   }
 
   private class BulkFileChangesListener implements BulkFileListener {
