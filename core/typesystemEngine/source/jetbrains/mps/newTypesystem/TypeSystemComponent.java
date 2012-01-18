@@ -223,9 +223,6 @@ class TypeSystemComponent extends CheckingComponent {
         myPartlyCheckedNodes.addAll(myFullyCheckedNodes);
         myFullyCheckedNodes.clear();
       }
-      //if (!loadTypesystemRules(nodeToCheck)) {
-      //  return;
-      //}
       computeTypesForNode(nodeToCheck, forceChildrenCheck, additionalNodes, initialNode);
       if (typeCalculated(initialNode) != null) return;
       solveInequalitiesAndExpandTypes(finalExpansion);
@@ -305,7 +302,7 @@ class TypeSystemComponent extends CheckingComponent {
     return new THashSet<Pair<String, String>>(set);
   }
 
-  private void computeTypesForNode(SNode node, boolean forceChildrenCheck, List<SNode> additionalNodes, SNode initialNode) {
+  private void computeTypesForNode(SNode node, boolean forceChildrenCheck, List<SNode> additionalNodes, SNode targetNode) {
     if (node == null) return;
     Set<SNode> frontier = new LinkedHashSet<SNode>();
     Set<SNode> newFrontier = new LinkedHashSet<SNode>();
@@ -340,6 +337,7 @@ class TypeSystemComponent extends CheckingComponent {
           try {
             myJustInvalidatedNodes.add(sNode);
             typeAffected = applyRulesToNode(sNode);
+            if (myState.isTargetTypeCalculated()) return;
           } finally {
             if (isIncrementalMode()) {
               NodeReadEventsCaster.removeNodesReadListener();
@@ -364,7 +362,7 @@ class TypeSystemComponent extends CheckingComponent {
           myPartlyCheckedNodes.add(sNode);
         }
         myFullyCheckedNodes.add(sNode);
-        if (typeCalculated(initialNode) != null) return;
+        if (typeCalculated(targetNode) != null) return;
       }
       Set<SNode> newFrontierPopped = myCurrentFrontiers.pop();
       assert newFrontierPopped == newFrontier;
@@ -380,7 +378,8 @@ class TypeSystemComponent extends CheckingComponent {
         return expectedType;
       }
     } else {
-      if (initialNode== null) return null;
+      if (initialNode == null) return null;
+      if (!myState.isTargetTypeCalculated()) return null;
       SNode type = getType(initialNode);
       if (type!= null && !TypesUtil.hasVariablesInside(type)) return type;
     }
