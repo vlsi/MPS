@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2012 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,9 +25,7 @@ import com.intellij.openapi.fileEditor.FileEditorManagerListener;
 import com.intellij.openapi.project.DumbService;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vfs.VirtualFile;
-import com.jgoodies.looks.common.ExtPasswordView;
 import jetbrains.mps.openapi.editor.Editor;
-import jetbrains.mps.generator.TransientModelsModule.TransientSModelDescriptor;
 import jetbrains.mps.ide.editor.MPSFileNodeEditor;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.IdeMain.TestMode;
@@ -35,13 +33,10 @@ import jetbrains.mps.ide.MPSCoreComponents;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.openapi.editor.EditorComponent;
-import jetbrains.mps.project.IModule;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.reloading.ReloadListener;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile;
@@ -132,7 +127,7 @@ public class MPSEditorWarningsManager implements ProjectComponent {
     EditorWarningsProvider[] providers = Extensions.getExtensions(EditorWarningsProvider.EP_NAME);
 
     for (EditorWarningsProvider provider : providers) {
-      WarningPanel panel = provider.getWarningPanel(node);
+      WarningPanel panel = provider.getWarningPanel(node, project);
       if (panel != null) {
         addWarningPanel(editor, panel);
       }
