@@ -55,6 +55,7 @@ import org.junit.runner.RunWith;
 public class GlobalTestSuite extends TestSuite {
   @BeforeClass
   public static void make () throws Exception {
+    System.setProperty("idea.load.plugins.id", "jetbrains.mps.vcs,jetbrains.mps.ide.editor,jetbrains.mps.ide.make,Git4Idea");
     new MpsMakeHelper().make();
   }
 

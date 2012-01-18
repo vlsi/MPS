@@ -58,6 +58,7 @@ public class ThreadWatcher implements Output {
         "(Alarm pool\\(shared\\))|" +
         "(Poller SunPKCS11-Darwin)|" +
         "(MPS interrupt.*)|" +
+        "(process reaper)|" +
         "(RefCountingStorage.*)");
 
     private TLongObjectHashMap<ThreadInfo> allThreads = new TLongObjectHashMap<ThreadInfo> ();

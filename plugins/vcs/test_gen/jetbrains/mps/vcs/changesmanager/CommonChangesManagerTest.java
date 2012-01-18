@@ -78,6 +78,7 @@ import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.workbench.actions.model.DeleteModelHelper;
 import org.junit.BeforeClass;
 import jetbrains.mps.smodel.SReference;
+import com.intellij.openapi.util.registry.Registry;
 import jetbrains.mps.TestMain;
 import org.junit.AfterClass;
 
@@ -882,6 +883,7 @@ public class CommonChangesManagerTest {
   @BeforeClass
   public static void setUp() {
     SReference.disableLogging();
+    Registry.get("vcs.showConsole").setValue(false);
 
     ourProject = TestMain.startTestOnProjectCopy(PROJECT_ARCHIVE, DESTINATION_PROJECT_DIR, PROJECT_FILE, "jetbrains.mps.vcs", "Git4Idea", "jetbrains.mps.ide.make");
     ModelChangesWatcher.instance().initComponent(true);
