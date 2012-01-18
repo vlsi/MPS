@@ -5,13 +5,14 @@ package jetbrains.mps.vcs.mergedriver;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import jetbrains.mps.smodel.SModelFqName;
-import java.io.File;
+import org.jetbrains.annotations.Nullable;
+import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.MPSCore;
 import jetbrains.mps.smodel.persistence.RoleIdsComponent;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
-import jetbrains.mps.vfs.FileSystem;
-import java.io.IOException;
+import jetbrains.mps.util.FileUtil;
+import jetbrains.mps.smodel.persistence.def.ModelReadException;
 import jetbrains.mps.vcs.diff.merge.MergeSession;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
@@ -19,8 +20,9 @@ import jetbrains.mps.vcs.diff.changes.ModelChange;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.ModelAccess;
 import java.io.Writer;
-import java.io.OutputStreamWriter;
-import jetbrains.mps.util.FileUtil;
+import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
+import java.io.IOException;
+import java.io.File;
 import jetbrains.mps.vcs.MergeBackupUtil;
 
 /*package*/ class ModelMerger extends SimpleMerger {
@@ -32,7 +34,8 @@ import jetbrains.mps.vcs.MergeBackupUtil;
   }
 
   @Override
-  protected int mergeFiles(File baseFile, File localFile, File latestFile) {
+  @Nullable
+  public Tuples._2<Integer, byte[]> mergeContents(byte[] baseContent, byte[] localContent, byte[] latestContent) {
     System.setProperty("mps.playRefactorings", "false");
     MPSCore.getInstance().setMergeDriverMode(true);
     try {
@@ -46,25 +49,15 @@ import jetbrains.mps.vcs.MergeBackupUtil;
         if (log.isInfoEnabled()) {
           log.info("Reading models...");
         }
-        baseModel = ModelPersistence.readModel(FileSystem.getInstance().getFileByPath(baseFile.getAbsolutePath()), false);
-        if (baseModel == null) {
-          throw new Exception("Could not read base model");
-        }
-        localModel = ModelPersistence.readModel(FileSystem.getInstance().getFileByPath(localFile.getAbsolutePath()), false);
-        if (localModel == null) {
-          throw new Exception("Could not read local model");
-        }
-        latestModel = ModelPersistence.readModel(FileSystem.getInstance().getFileByPath(latestFile.getAbsolutePath()), false);
-        if (latestModel == null) {
-          throw new Exception("Could not read latest model");
-        }
-      } catch (IOException e) {
-        throw e;
-      } catch (Throwable e) {
+        baseModel = ModelPersistence.readModel(new String(baseContent, FileUtil.DEFAULT_CHARSET), false);
+        myModelFqName = baseModel.getSModelFqName();
+        localModel = ModelPersistence.readModel(new String(localContent, FileUtil.DEFAULT_CHARSET), false);
+        latestModel = ModelPersistence.readModel(new String(latestContent, FileUtil.DEFAULT_CHARSET), false);
+      } catch (ModelReadException e) {
         if (log.isErrorEnabled()) {
           log.error("Exception while reading models", e);
         }
-        return backupAndMergeSimply(baseFile, localFile, latestFile);
+        return backupAndMergeSimply(baseContent, localContent, latestContent);
       }
 
       SModelFqName modelFqName = baseModel.getSModelFqName();
@@ -77,13 +70,13 @@ import jetbrains.mps.vcs.MergeBackupUtil;
         if (log.isErrorEnabled()) {
           log.error(String.format("%s: Conflicting model persistence versions", modelFqName));
         }
-        return backupAndMergeSimply(baseFile, localFile, latestFile);
+        return backupAndMergeSimply(baseContent, localContent, latestContent);
       }
       if (!(roleIdsHandler.isConsistent())) {
         if (log.isErrorEnabled()) {
           log.error(String.format("%s: Inconsistent structure ids or import versions", modelFqName));
         }
-        return backupAndMergeSimply(baseFile, localFile, latestFile);
+        return backupAndMergeSimply(baseContent, localContent, latestContent);
       }
 
       try {
@@ -117,13 +110,11 @@ import jetbrains.mps.vcs.MergeBackupUtil;
             }
             Writer out = null;
             try {
-              out = new OutputStreamWriter(getResultStream(localFile), FileUtil.DEFAULT_CHARSET);
-              out.write(resultString);
-              backup(baseFile, localFile, latestFile);
-              return MERGED;
+              backup(baseContent, localContent, latestContent);
+              return MultiTuple.<Integer,byte[]>from(MERGED, resultString.getBytes(FileUtil.DEFAULT_CHARSET));
             } catch (IOException e) {
               e.printStackTrace();
-              return FATAL_ERROR;
+              return null;
             } finally {
               FileUtil.closeFileSafe(out);
             }
@@ -137,23 +128,23 @@ import jetbrains.mps.vcs.MergeBackupUtil;
         if (log.isErrorEnabled()) {
           log.error("Exception while merging", e);
         }
-        return backupAndMergeSimply(baseFile, localFile, latestFile);
+        return backupAndMergeSimply(baseContent, localContent, latestContent);
       }
 
-      return backupAndMergeSimply(baseFile, localFile, latestFile);
+      return backupAndMergeSimply(baseContent, localContent, latestContent);
     } catch (IOException e) {
       e.printStackTrace();
-      return FATAL_ERROR;
+      return null;
     }
   }
 
-  private int backupAndMergeSimply(File baseFile, File localFile, File latestFile) throws IOException {
-    backup(baseFile, localFile, latestFile);
-    return super.mergeFiles(baseFile, localFile, latestFile);
+  private Tuples._2<Integer, byte[]> backupAndMergeSimply(byte[] baseContent, byte[] localContent, byte[] latestContent) throws IOException {
+    backup(baseContent, localContent, latestContent);
+    return super.mergeContents(baseContent, localContent, latestContent);
   }
 
-  private void backup(File baseFile, File localFile, File latestFile) throws IOException {
-    File zipModel = MergeBackupUtil.zipModel(new String[]{FileUtil.read(baseFile), FileUtil.read(localFile), FileUtil.read(latestFile)}, myModelFqName);
+  private void backup(byte[] baseContent, byte[] localContent, byte[] latestContent) throws IOException {
+    File zipModel = MergeBackupUtil.zipModel(new String[]{new String(baseContent, FileUtil.DEFAULT_CHARSET), new String(localContent, FileUtil.DEFAULT_CHARSET), new String(latestContent, FileUtil.DEFAULT_CHARSET)}, myModelFqName);
     if (zipModel != null) {
       if (log.isInfoEnabled()) {
         log.info("Saved merge backup to " + zipModel);
