@@ -135,9 +135,10 @@ public class MPSMakeLauncher {
         commandLine.add("-classpath");
         commandLine.add(sb.toString());
 
-        // TODO remove debug
-//        commandLine.add("-Xdebug");
-//        commandLine.add("-Xrunjdwp:transport=dt_socket,server=y,suspend=y,address=5005");
+        if ("true".equalsIgnoreCase(System.getProperty("mps.make.debug"))){
+            commandLine.add("-Xdebug");
+            commandLine.add("-Xrunjdwp:transport=dt_socket,server=y,suspend=y,address=5005");
+        }
 
         commandLine.add(AntBootstrap.class.getCanonicalName());
         commandLine.add(getWorkerClass().getCanonicalName());

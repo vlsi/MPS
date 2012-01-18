@@ -159,7 +159,7 @@ public class MakeTests extends DataMPSFixtureTestCase {
         });
 
         assertTrue(errors.toString(),errors.isEmpty());
-        assertTrue(files.size() > 5);
+        assertTrue(files.size() > 4);
     }
     
     
@@ -188,5 +188,10 @@ public class MakeTests extends DataMPSFixtureTestCase {
         assertFalse(module.findChild("source_gen") == null);
         assertFalse(module.findFileByRelativePath("source_gen/main") == null);
         assertTrue(module.findFileByRelativePath("source_gen/main").getChildren().length == 5);
+
+        assertFalse(module.findChild("classes_gen") == null);
+        assertFalse(module.findFileByRelativePath("classes_gen/main") == null);
+        assertTrue(module.findFileByRelativePath("classes_gen/main").getChildren().length == 1);
+        assertFalse(module.findFileByRelativePath("classes_gen/main/trace.info") == null);
     }
 }
