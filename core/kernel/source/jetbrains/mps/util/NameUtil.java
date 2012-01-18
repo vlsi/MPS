@@ -42,9 +42,17 @@ public class NameUtil {
 
   private static final ObjectCache<String, String> ourCompactNamespaceCache = new ObjectCache<String, String>(1000);
 
+  private static final Map<Character, String> ESCAPE_INVISIBLE_CHARS_MAP = new HashMap<Character, String>();
   private static final Map<Character, String> ESCAPE_MAP = new HashMap<Character, String>();
 
   static {
+    ESCAPE_INVISIBLE_CHARS_MAP.put('\000', "\\000");
+    ESCAPE_INVISIBLE_CHARS_MAP.put('\b', "\\b");
+    ESCAPE_INVISIBLE_CHARS_MAP.put('\t', "\\t");
+    ESCAPE_INVISIBLE_CHARS_MAP.put('\n', "\\n");
+    ESCAPE_INVISIBLE_CHARS_MAP.put('\f', "\\f");
+    ESCAPE_INVISIBLE_CHARS_MAP.put('\r', "\\r");
+
     ESCAPE_MAP.put('\000', "\\000");
     ESCAPE_MAP.put('\b', "\\b");
     ESCAPE_MAP.put('\t', "\\t");
@@ -388,14 +396,22 @@ public class NameUtil {
     return cls.getName();
   }
 
+  public static String escapeInvisibleCharacters(String s) {
+    return escapeString(s, ESCAPE_INVISIBLE_CHARS_MAP);
+  }
+
   public static String escapeString(String s) {
+    return escapeString(s, ESCAPE_MAP);
+  }
+
+  private static String escapeString(String s, Map<Character, String> substitutionMap) {
     if (s == null) return null;
     StringBuilder stringBuilder = new StringBuilder();
     int length = s.length();
     for (int idx = 0; idx < length; idx++) {
       char ch = s.charAt(idx);
-      if (ESCAPE_MAP.containsKey(ch)) {
-        stringBuilder.append(ESCAPE_MAP.get(ch));
+      if (substitutionMap.containsKey(ch)) {
+        stringBuilder.append(substitutionMap.get(ch));
       } else {
         stringBuilder.append(ch);
       }
