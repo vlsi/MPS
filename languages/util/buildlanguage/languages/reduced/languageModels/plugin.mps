@@ -39,7 +39,7 @@
   <root id="8795824097439267909">
     <node role="targetDeclaration" roleId="vvvw.6418371274763146558" type="vvvw.TargetDeclaration" typeId="vvvw.6418371274763029565" id="8795824097439267911">
       <property name="name" nameId="tpck.1169194664001" value="report" />
-      <link role="overrides" roleId="vvvw.6418371274763029589" targetNodeId="tpcq.8096124782826059776" resolveInfo="reconcile" />
+      <property name="resourcesPolicy" nameId="vvvw.1675547159918562088" value="TRANSFORM" />
       <node role="dependency" roleId="vvvw.6418371274763146553" type="vvvw.TargetDependency" typeId="vvvw.6418371274763029600" id="10342590403631581">
         <link role="dependsOn" roleId="vvvw.6418371274763029603" targetNodeId="tpcq.8096124782826059776" resolveInfo="reconcile" />
       </node>
@@ -183,8 +183,8 @@
                 </node>
               </node>
             </node>
-            <node role="statement" roleId="tpee.1068581517665" type="q9ra.OutputResources" typeId="q9ra.2360002718792622184" id="10342590403631583">
-              <node role="resource" roleId="q9ra.2360002718792622193" type="q9ra.InputResourcesParameter" typeId="q9ra.2360002718792625580" id="10342590403631585" />
+            <node role="statement" roleId="tpee.1068581517665" type="q9ra.OutputResources" typeId="q9ra.2360002718792622184" id="5256897414278166122">
+              <node role="resource" roleId="q9ra.2360002718792622193" type="q9ra.InputResourcesParameter" typeId="q9ra.2360002718792625580" id="5256897414278166124" />
             </node>
           </node>
         </node>

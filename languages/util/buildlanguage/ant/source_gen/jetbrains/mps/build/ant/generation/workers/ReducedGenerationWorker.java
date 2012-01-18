@@ -65,6 +65,12 @@ public class ReducedGenerationWorker extends GeneratorWorker {
           @Override
           public void setup(IPropertiesPool pp, Iterable<ITarget> toExecute, Iterable<? extends IResource> input) {
             super.setup(pp, toExecute, input);
+            Tuples._1<Boolean> skipReconcile = (Tuples._1<Boolean>) pp.properties(new ITarget.Name("jetbrains.mps.lang.core.Make.reconcile"), Object.class);
+            skipReconcile._0(true);
+
+            Tuples._2<Boolean, Boolean> compileProps = (Tuples._2<Boolean, Boolean>) pp.properties(new ITarget.Name("jetbrains.mps.baseLanguage.JavaCompile.compile"), Object.class);
+            compileProps._1(true);
+
             Tuples._1<List<String>> report = (Tuples._1<List<String>>) pp.properties(new ITarget.Name("jetbrains.mps.build.reduced.ReportFiles.report"), Object.class);
             report._0(ListSequence.fromList(new ArrayList<String>()));
             writtenFiles.value = report._0();
