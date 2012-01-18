@@ -29,6 +29,7 @@ import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.util.NameUtil;
 import org.apache.commons.lang.StringUtils;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -36,14 +37,16 @@ import java.util.Collections;
 import java.util.List;
 
 public class CreateGroupsBuilder {
-  public static List<DefaultActionGroup> getCreateGroups(SNodePointer baseNode, Collection<EditorTabDescriptor> possibleTabs, @NotNull EditorTabDescriptor currentAspect, NodeChangeCallback callback) {
+  public static List<DefaultActionGroup> getCreateGroups(SNodePointer baseNode, Collection<EditorTabDescriptor> possibleTabs, @Nullable EditorTabDescriptor currentAspect, NodeChangeCallback callback) {
     List<DefaultActionGroup> groups = new ArrayList<DefaultActionGroup>();
 
     List<EditorTabDescriptor> tabs = new ArrayList<EditorTabDescriptor>(possibleTabs);
     Collections.sort(tabs, new EditorTabComparator());
 
-    tabs.remove(currentAspect);
-    tabs.add(0, currentAspect);
+    if (currentAspect != null) {
+      tabs.remove(currentAspect);
+      tabs.add(0, currentAspect);
+    }
 
     for (final EditorTabDescriptor d : tabs) {
       List<SNode> nodes = d.getNodes(baseNode.getNode());
@@ -52,7 +55,7 @@ public class CreateGroupsBuilder {
       DefaultActionGroup group = getCreateGroup(baseNode, callback, d);
       if (group == null) continue;
 
-      if (tabs.indexOf(d)==0){
+      if (tabs.indexOf(d) == 0) {
         group.setPopup(false);
       }
 

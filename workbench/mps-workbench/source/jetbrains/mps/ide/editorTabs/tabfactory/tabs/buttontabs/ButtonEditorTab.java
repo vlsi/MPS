@@ -68,7 +68,7 @@ class ButtonEditorTab {
     return action;
   }
 
-  private ActionGroup getGotoGroup() {
+  private DefaultActionGroup getGotoGroup() {
     List<SNode> nodes = myDescriptor.getNodes(myBaseNode.getNode());
     if (nodes.isEmpty()) return null;
 
@@ -213,8 +213,11 @@ class ButtonEditorTab {
 
           Component component = myTabComponent.getComponentForTabIndex(myIndex);
 
-          ActionGroup group = getGotoGroup();
-          assert group != null : "no nodes to go, but tab is visible";
+          DefaultActionGroup group = getGotoGroup();
+          if (group==null){
+            //this is normal since now we can't guarantee button deletion (e.g. remove reduction rule from mapping configuration when it's the last usage of a concept in generator)
+            group  = new DefaultActionGroup();
+          }
           ActionPopupMenu popup = ActionManager.getInstance().createActionPopupMenu(ActionPlaces.UNKNOWN, group);
           JPopupMenu popupMenu = popup.getComponent();
           popupMenu.show(component, 0, 0);
