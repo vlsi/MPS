@@ -81,6 +81,7 @@ public class ConflictingModelsEditorWarningsProvider implements EditorWarningsPr
     return null;
   }
 
+  @Nullable
   private static VirtualFile getModelFileIfConflicting(@Nullable SModelDescriptor md, @NotNull Project project) {
     if (md instanceof EditableSModelDescriptor) {
       VirtualFile vf = VirtualFileUtils.getVirtualFile(((EditableSModelDescriptor) md).getModelFile());
@@ -94,6 +95,7 @@ public class ConflictingModelsEditorWarningsProvider implements EditorWarningsPr
     return null;
   }
 
+  @Nullable
   private static VirtualFile getModuleFileIfConflicting(@Nullable IModule module, @NotNull Project project) {
     if (module instanceof Generator) {
       module = ((Generator) module).getSourceLanguage();
