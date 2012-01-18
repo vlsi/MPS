@@ -53,7 +53,6 @@
   <project-components>
     <component>
       <implementation-class>com.intellij.platform.PlatformVcsDetector</implementation-class>
-      <skipForDefaultProject/>
     </component>
     <component>
       <interface-class>com.intellij.openapi.vcs.impl.VcsPathPresenter</interface-class>
@@ -64,23 +63,18 @@
     </component>
     <component>
       <implementation-class>jetbrains.mps.vcs.changesmanager.CurrentDifferenceRegistry</implementation-class>
-      <skipForDefaultProject/>
     </component>
     <component>
       <implementation-class>jetbrains.mps.vcs.changesmanager.editor.EditorHighlighterFactory</implementation-class>
-      <skipForDefaultProject/>
     </component>
     <component>
       <implementation-class>jetbrains.mps.vcs.changesmanager.roots.NodeFileStatusMapping</implementation-class>
-      <skipForDefaultProject/>
     </component>
     <component>
       <implementation-class>jetbrains.mps.vcs.changesmanager.tree.FeatureForestMapSupport</implementation-class>
-      <skipForDefaultProject/>
     </component>
     <component>
       <implementation-class>jetbrains.mps.vcs.changesmanager.tree.TreeHighlighterFactory</implementation-class>
-      <skipForDefaultProject/>
     </component>
     <component>
       <implementation-class>jetbrains.mps.vcs.MPSVcsProjectConfiguration</implementation-class>
