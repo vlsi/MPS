@@ -46,6 +46,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import com.intellij.openapi.vcs.changes.Change;
 import com.intellij.openapi.vcs.changes.VcsDirtyScopeManager;
+import com.intellij.openapi.vcs.FileStatusManager;
 import com.intellij.openapi.vcs.VcsException;
 import jetbrains.mps.vcs.concrete.GitUtils;
 import java.io.IOException;
@@ -73,7 +74,6 @@ import jetbrains.mps.vcs.diff.changes.NodeGroupChange;
 import jetbrains.mps.vcs.diff.changes.AddRootChange;
 import jetbrains.mps.vcs.diff.changes.ModuleDependencyChange;
 import jetbrains.mps.project.IModule;
-import com.intellij.openapi.vcs.FileStatusManager;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.workbench.actions.model.DeleteModelHelper;
 import org.junit.BeforeClass;
@@ -84,7 +84,7 @@ import org.junit.AfterClass;
 public class CommonChangesManagerTest {
   private static final File DESTINATION_PROJECT_DIR = new File(FileUtil.getTempDir(), "testConflicts");
   private static final File PROJECT_ARCHIVE = new File("testbench/modules/fugue.zip");
-  private static final String PROJECT_FILE = "fugue.mpr";
+  private static final String PROJECT_FILE = "fugue.ipr";
   private static final String MODEL_PREFIX = "ru.geevee.fugue.";
   private static Project ourProject;
   private static boolean ourEnabled;
@@ -298,6 +298,7 @@ public class CommonChangesManagerTest {
     myGitVcs.getCheckinEnvironment().commit(Arrays.asList(change), "dumb commit");
     VcsDirtyScopeManager.getInstance(myIdeaProject).fileDirty(myUtilVirtualFile);
     myChangeListManager.ensureUpToDate(false);
+    FileStatusManager.getInstance(myIdeaProject).fileStatusChanged(myUtilVirtualFile);
 
     waitForChangesManager();
     Assert.assertNull(myUtilDiff.getChangeSet());
@@ -310,9 +311,10 @@ public class CommonChangesManagerTest {
     GitUtils.uncommmit(myIdeaProject, myIdeaProject.getBaseDir());
     VcsDirtyScopeManager.getInstance(myIdeaProject).fileDirty(myUtilVirtualFile);
     myChangeListManager.ensureUpToDate(false);
+    FileStatusManager.getInstance(myIdeaProject).fileStatusChanged(myUtilVirtualFile);
 
     waitForChangesManager();
-    Assert.assertTrue(ListSequence.fromList(check_orwzer_a0a5a21(myUtilDiff.getChangeSet())).isNotEmpty());
+    Assert.assertTrue(ListSequence.fromList(check_orwzer_a0a6a21(myUtilDiff.getChangeSet())).isNotEmpty());
 
     MapSequence.fromMap(myExpectedFileStatuses).put("util.ImageLoader", FileStatus.MODIFIED);
     checkRootStatuses();
@@ -345,9 +347,10 @@ public class CommonChangesManagerTest {
       throw ListSequence.fromList(exceptions).first();
     }
     myChangeListManager.ensureUpToDate(false);
+    FileStatusManager.getInstance(myIdeaProject).fileStatusChanged(myUtilVirtualFile);
 
     waitForChangesManager();
-    Assert.assertNull(myUtilDiff.getChangeSet());
+    Assert.assertTrue(ListSequence.fromList(check_orwzer_a0a7a51(myUtilDiff.getChangeSet())).isEmpty());
 
     SetSequence.fromSet(MapSequence.fromMap(myExpectedFileStatuses).keySet()).where(new IWhereFilter<String>() {
       public boolean accept(String k) {
@@ -872,10 +875,10 @@ public class CommonChangesManagerTest {
 
   @BeforeClass
   public static void setUp() {
-    ModelChangesWatcher.setForceProcessingEnabled(true);
     SReference.disableLogging();
 
     ourProject = TestMain.startTestOnProjectCopy(PROJECT_ARCHIVE, DESTINATION_PROJECT_DIR, PROJECT_FILE, "jetbrains.mps.vcs", "Git4Idea", "jetbrains.mps.ide.make");
+    ModelChangesWatcher.instance().initComponent(true);
   }
 
   @AfterClass
@@ -904,7 +907,14 @@ public class CommonChangesManagerTest {
     return null;
   }
 
-  private static List<ModelChange> check_orwzer_a0a5a21(ChangeSet checkedDotOperand) {
+  private static List<ModelChange> check_orwzer_a0a6a21(ChangeSet checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getModelChanges();
+    }
+    return null;
+  }
+
+  private static List<ModelChange> check_orwzer_a0a7a51(ChangeSet checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModelChanges();
     }
