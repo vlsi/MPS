@@ -73,7 +73,7 @@ public class MakeEnvironment extends Environment {
   protected void configureMPS() {
     super.configureMPS(true);
     //   Value of this property is comma-separated list of plugin IDs intended to load by platform  
-    System.setProperty("idea.load.plugins.id", "jetbrains.mps.vcs,jetbrains.mps.ide.editor,jetbrains.mps.ide.make");
+    System.setProperty("idea.load.plugins.id", "jetbrains.mps.vcs,jetbrains.mps.ide.editor,jetbrains.mps.ide.make,Git4Idea");
     try {
       IdeaTestApplication.getInstance(null);
     } catch (Exception e) {
