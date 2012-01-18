@@ -114,7 +114,7 @@
     <checkinHandlerFactory implementation="jetbrains.mps.vcs.integration.OptimizeImportsCheckinHandler$OptimizeImportsCheckinHandlerFactory"/>
     <directoryIndexExcludePolicy implementation="jetbrains.mps.vcs.integration.GeneratedFilesExcludePolicy"/>
     <mps.projectPrefsPanel implementation="jetbrains.mps.vcs.VcsGeneratedFilesPanel"/>
-    <mps.editorWarningsProvider implementation="jetbrains.mps.vcs.ConflictingModelsEditorWarningsProvider" />
+    <mps.editorWarningsProvider implementation="jetbrains.mps.vcs.ConflictingModelsWarnings" />
 
     <errorHandler implementation="jetbrains.mps.workbench.diagnostics.CharismaReporter"/>
   </extensions>

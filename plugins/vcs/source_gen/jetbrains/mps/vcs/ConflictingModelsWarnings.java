@@ -24,15 +24,15 @@ import com.intellij.openapi.vcs.FileStatusManager;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.smodel.SModel;
 
-public class ConflictingModelsEditorWarningsProvider implements EditorWarningsProvider {
-  public ConflictingModelsEditorWarningsProvider() {
+public class ConflictingModelsWarnings implements EditorWarningsProvider {
+  public ConflictingModelsWarnings() {
   }
 
   @Nullable
   public WarningPanel getWarningPanel(@NotNull SNode node, @NotNull final Project project) {
-    SModelDescriptor md = check_smgm7b_a0a0a(node.getModel());
+    SModelDescriptor md = check_bmsafs_a0a0a(node.getModel());
     final VirtualFile modelFile = getModelFileIfConflicting(md, project);
-    final VirtualFile moduleFile = getModuleFileIfConflicting(check_smgm7b_a0a2a0(md), project);
+    final VirtualFile moduleFile = getModuleFileIfConflicting(check_bmsafs_a0a2a0(md), project);
     if (moduleFile != null) {
       String type = getModuleType(md.getModule());
       assert type != null;
@@ -81,6 +81,10 @@ public class ConflictingModelsEditorWarningsProvider implements EditorWarningsPr
     return null;
   }
 
+  public static boolean isModelOrModuleConflicting(EditableSModelDescriptor emd, Project project) {
+    return getModelFileIfConflicting(emd, project) != null || getModuleFileIfConflicting(check_bmsafs_a0a0a0b(emd), project) != null;
+  }
+
   @Nullable
   private static VirtualFile getModelFileIfConflicting(@Nullable SModelDescriptor md, @NotNull Project project) {
     if (md instanceof EditableSModelDescriptor) {
@@ -100,7 +104,7 @@ public class ConflictingModelsEditorWarningsProvider implements EditorWarningsPr
     if (module instanceof Generator) {
       module = ((Generator) module).getSourceLanguage();
     }
-    VirtualFile vf = VirtualFileUtils.getVirtualFile(check_smgm7b_a0a1a2(module));
+    VirtualFile vf = VirtualFileUtils.getVirtualFile(check_bmsafs_a0a1a3(module));
     if (vf != null) {
       FileStatus status = FileStatusManager.getInstance(project).getStatus(vf);
       if (FileStatus.MERGED_WITH_CONFLICTS == status || FileStatus.MERGED_WITH_BOTH_CONFLICTS == status) {
@@ -110,21 +114,28 @@ public class ConflictingModelsEditorWarningsProvider implements EditorWarningsPr
     return null;
   }
 
-  private static IFile check_smgm7b_a0a1a2(IModule checkedDotOperand) {
+  private static IModule check_bmsafs_a0a0a0b(EditableSModelDescriptor checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getModule();
+    }
+    return null;
+  }
+
+  private static IFile check_bmsafs_a0a1a3(IModule checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getDescriptorFile();
     }
     return null;
   }
 
-  private static SModelDescriptor check_smgm7b_a0a0a(SModel checkedDotOperand) {
+  private static SModelDescriptor check_bmsafs_a0a0a(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModelDescriptor();
     }
     return null;
   }
 
-  private static IModule check_smgm7b_a0a2a0(SModelDescriptor checkedDotOperand) {
+  private static IModule check_bmsafs_a0a2a0(SModelDescriptor checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();
     }

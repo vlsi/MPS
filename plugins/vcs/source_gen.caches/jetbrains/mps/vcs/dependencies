@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.vcs.ConflictingModelsEditorWarningsProvider" file="ConflictingModelsEditorWarningsProvider.java">
+  <dependency className="jetbrains.mps.vcs.ConflictingModelsWarnings" file="ConflictingModelsWarnings.java">
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="com.intellij.openapi.vcs.AbstractVcsHelper" />
     <classNode dependClassName="com.intellij.openapi.vcs.FileStatus" />
