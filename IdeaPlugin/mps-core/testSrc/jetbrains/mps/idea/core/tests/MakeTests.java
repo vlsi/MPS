@@ -36,11 +36,19 @@ import com.intellij.testFramework.TestLoggerFactory;
 import com.intellij.util.ui.UIUtil;
 import jetbrains.mps.idea.core.facet.MPSFacetConfiguration;
 import jetbrains.mps.idea.core.make.MPSCompilerComponent;
+import jetbrains.mps.idea.core.make.MPSMakeCallback;
+import jetbrains.mps.idea.core.make.MPSMakeConfiguration;
+import jetbrains.mps.idea.core.make.MPSMakeLauncher;
+import jetbrains.mps.util.misc.hash.HashSet;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import org.junit.Test;
 
+import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Set;
 
 /**
  * Created by IntelliJ IDEA.
@@ -115,6 +123,39 @@ public class MakeTests extends DataMPSFixtureTestCase {
         }
     }
 
+    
+    public void testMPSMakeLauncher () {
+        ModuleRootManager mrm = ModuleRootManager.getInstance(myFacet.getModule());
+        VirtualFile[] srs = mrm.getSourceRoots();
+        assertTrue(srs.length == 2);
+        assertEquals("models", srs[0].getName());
+
+        VirtualFile[] children = srs[0].getChildren();
+        assertTrue(children.length == 1);
+        assertEquals("main.mps", children[0].getName());
+
+        Set<File> modelsToMake = new HashSet<File>();
+        modelsToMake.add(new File(children[0].getPath()));
+                
+        MPSMakeConfiguration makeConfiguration = new MPSMakeConfiguration();
+        makeConfiguration.addConfiguredModels(modelsToMake);
+        makeConfiguration.addConfiguredLibrary(myModule.getProject().getName(), 
+                new File(myModule.getProject().getBaseDir().getPath()), false);
+        MPSMakeLauncher gl = new MPSMakeLauncher(makeConfiguration, myModule.getProject());
+        gl.validate();
+        assertTrue(gl.isValid());
+        final List<File> files = new ArrayList<File>();
+        gl.launch(new MPSMakeCallback() {
+            @Override
+            public void fileWritten(String path) {
+                files.add(new File(path));
+            }
+        });
+
+        assertTrue(files.size() > 5);
+    }
+    
+    
     public void testMainModel () {
         ModuleRootManager mrm = ModuleRootManager.getInstance(myFacet.getModule());
         VirtualFile[] srs = mrm.getSourceRoots();
