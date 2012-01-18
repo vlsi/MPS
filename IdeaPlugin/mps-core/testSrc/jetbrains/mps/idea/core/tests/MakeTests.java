@@ -145,13 +145,20 @@ public class MakeTests extends DataMPSFixtureTestCase {
         gl.validate();
         assertTrue(gl.isValid());
         final List<File> files = new ArrayList<File>();
+        final List<String> errors = new ArrayList<String>();
         gl.launch(new MPSMakeCallback() {
             @Override
             public void fileWritten(String path) {
                 files.add(new File(path));
             }
+
+            @Override
+            public void error(String text) {
+                errors.add(text);
+            }
         });
 
+        assertTrue(errors.toString(),errors.isEmpty());
         assertTrue(files.size() > 5);
     }
     

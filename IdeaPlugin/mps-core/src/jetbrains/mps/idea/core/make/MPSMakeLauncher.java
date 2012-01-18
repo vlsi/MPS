@@ -88,6 +88,12 @@ public class MPSMakeLauncher {
                 LOG.debug("written file: "+file);
                 callback.fileWritten(file);
             }
+
+            @Override
+            public void error(String text) {
+                LOG.debug("error: "+text);
+                callback.error(text);
+            }
         };
         try {
             OSProcessHandler processHandler = new OSProcessHandler(gcl.createProcess(), myCommandLine.get(0));
@@ -259,13 +265,16 @@ public class MPSMakeLauncher {
             }
         }
         
-        public abstract void  reportWrittenFile (String file);
+        public abstract void reportWrittenFile (String file);
+        
+        public abstract void error (String text);
 
         protected void logOutput(String line) {
             MessagesViewTool.log(myProject, MessageKind.INFORMATION, myPrefix + " - " + line);
         }
 
         protected void logError(String line) {
+            error(line);
             MessagesViewTool.log(myProject, MessageKind.ERROR, myPrefix + " - " + line);
         }
 
