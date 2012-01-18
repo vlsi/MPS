@@ -197,7 +197,8 @@ public class IntelligentInputUtil {
   }
 
   private static boolean applyRigthTransform(EditorContext editorContext, String smallPattern, final String tail, final EditorCell cellForNewNode, SNode newNode) {
-    EditorCellAction rtAction = cellForNewNode.findChild(CellFinders.LAST_SELECTABLE_LEAF, true).getApplicableCellAction(CellActionType.RIGHT_TRANSFORM);
+    EditorCell selectableChild = cellForNewNode.findChild(CellFinders.LAST_SELECTABLE_LEAF, true);
+    EditorCellAction rtAction = selectableChild != null ? selectableChild.getApplicableCellAction(CellActionType.RIGHT_TRANSFORM) : null;
 
     boolean hasSideActions = TypeContextManager.getInstance().runResolveAction(new Computable<Boolean>() {
       @Override
