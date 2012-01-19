@@ -4,7 +4,7 @@ package jetbrains.mps.lang.intentions.pluginSolution.plugin;
 
 import jetbrains.mps.ide.editorTabs.EditorTabDescriptor;
 import javax.swing.Icon;
-import javax.swing.ImageIcon;
+import jetbrains.mps.util.IconUtil;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.structure.pluginSolution.plugin.ConceptEditorOpenHelper;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -15,7 +15,7 @@ import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.lang.structure.pluginSolution.plugin.ConceptEditorHelper;
 
 public class Intentions_TabDescriptor extends EditorTabDescriptor {
-  private static final Icon ICON = new ImageIcon(Intentions_TabDescriptor.class.getResource("intention.png"));
+  private static final Icon ICON = IconUtil.getIcon("intention.png");
 
   public Intentions_TabDescriptor() {
   }

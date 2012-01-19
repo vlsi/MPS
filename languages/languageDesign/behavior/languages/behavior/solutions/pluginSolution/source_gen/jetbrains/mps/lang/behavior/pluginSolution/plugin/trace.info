@@ -260,7 +260,7 @@
   </root>
   <root nodeId="5487985028841895875">
     <nodeInfo nodeId="5487985028841895909" fileName="Behavior_Order.java" startLine="9" startPosition="27" endLine="10" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="5487985028841895875" fileName="Behavior_TabDescriptor.java" startLine="20" startPosition="65" endLine="21" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
+    <nodeInfo nodeId="5487985028841895875" fileName="Behavior_TabDescriptor.java" startLine="20" startPosition="65" endLine="21" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
     <nodeInfo nodeId="5487985028841895875" fileName="Behavior_TabDescriptor.java" startLine="26" startPosition="28" endLine="27" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5487985028841895875" fileName="Behavior_TabDescriptor.java" startLine="30" startPosition="38" endLine="31" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5487985028841895875" fileName="Behavior_TabDescriptor.java" startLine="34" startPosition="56" endLine="35" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

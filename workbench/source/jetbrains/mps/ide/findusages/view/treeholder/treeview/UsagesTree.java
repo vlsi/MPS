@@ -718,7 +718,7 @@ public class UsagesTree extends MPSTree {
     private int mySubresultsCount = 0;
 
     public UsagesTreeNode(String text) {
-      super(text, null);
+      super(text, new ProjectOperationContext(ProjectHelper.toMPSProject(myProject)));
     }
 
     public int getSubresultsCount() {

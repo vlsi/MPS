@@ -101,516 +101,545 @@
     <unitInfo nodeId="278581607615217307" fileName="InvokeRootDifferenceAction.java" startLine="11" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.vcs.diff.ui.InvokeRootDifferenceAction" />
   </root>
   <root nodeId="3724655318819677795">
-    <nodeInfo nodeId="3724655318819766170" fileName="ModelDifferenceDialog.java" startLine="55" startPosition="55" endLine="56" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myProject" />
-    <nodeInfo nodeId="3724655318819766176" fileName="ModelDifferenceDialog.java" startLine="56" startPosition="28" endLine="57" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myChangeSet" />
-    <nodeInfo nodeId="3724655318819766739" fileName="ModelDifferenceDialog.java" startLine="57" startPosition="32" endLine="58" endPosition="123" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myRootToChanges" />
-    <nodeInfo nodeId="6088639354566491056" fileName="ModelDifferenceDialog.java" startLine="58" startPosition="123" endLine="59" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myMetadataChanges" />
-    <nodeInfo nodeId="3724655318819767499" fileName="ModelDifferenceDialog.java" startLine="59" startPosition="100" endLine="60" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myTree" />
-    <nodeInfo nodeId="3724655318819766182" fileName="ModelDifferenceDialog.java" startLine="60" startPosition="59" endLine="61" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myPanel" />
-    <nodeInfo nodeId="7088622708994434945" fileName="ModelDifferenceDialog.java" startLine="61" startPosition="58" endLine="62" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myRootsDialogInvoked" />
-    <nodeInfo nodeId="2090008153514955077" fileName="ModelDifferenceDialog.java" startLine="62" startPosition="47" endLine="63" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myGoingToNeighbour" />
-    <nodeInfo nodeId="3724655318819766197" fileName="ModelDifferenceDialog.java" startLine="63" startPosition="45" endLine="64" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myContentTitles" />
-    <nodeInfo nodeId="3724655318819767371" fileName="ModelDifferenceDialog.java" startLine="66" startPosition="103" endLine="67" endPosition="142" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="54274504926097744" fileName="ModelDifferenceDialog.java" startLine="67" startPosition="142" endLine="68" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1504158228282971696" fileName="ModelDifferenceDialog.java" startLine="68" startPosition="41" endLine="69" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6870244054724031736" fileName="ModelDifferenceDialog.java" startLine="69" startPosition="76" endLine="70" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6870244054724031746" fileName="ModelDifferenceDialog.java" startLine="70" startPosition="65" endLine="71" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3724655318819767387" fileName="ModelDifferenceDialog.java" startLine="71" startPosition="65" endLine="72" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4503715620529484862" fileName="ModelDifferenceDialog.java" startLine="72" startPosition="53" endLine="73" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
-    <nodeInfo nodeId="3784757108400815525" fileName="ModelDifferenceDialog.java" startLine="75" startPosition="25" endLine="76" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3784757108400815533" fileName="ModelDifferenceDialog.java" startLine="76" startPosition="80" endLine="77" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3724655318819767407" fileName="ModelDifferenceDialog.java" startLine="79" startPosition="7" endLine="80" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3724655318819767412" fileName="ModelDifferenceDialog.java" startLine="80" startPosition="61" endLine="81" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="4503715620529484831" fileName="ModelDifferenceDialog.java" startLine="81" startPosition="0" endLine="82" endPosition="238" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4503715620529484841" fileName="ModelDifferenceDialog.java" startLine="82" startPosition="238" endLine="83" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4503715620529484850" fileName="ModelDifferenceDialog.java" startLine="83" startPosition="117" endLine="84" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4503715620529484876" fileName="ModelDifferenceDialog.java" startLine="84" startPosition="39" endLine="85" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3724655318819767447" fileName="ModelDifferenceDialog.java" startLine="85" startPosition="60" endLine="86" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3784757108400815483" fileName="ModelDifferenceDialog.java" startLine="89" startPosition="35" endLine="90" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="493306356999326005" fileName="ModelDifferenceDialog.java" startLine="90" startPosition="49" endLine="91" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1412499365458360079" fileName="ModelDifferenceDialog.java" startLine="92" startPosition="80" endLine="93" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6088639354566491067" fileName="ModelDifferenceDialog.java" startLine="94" startPosition="23" endLine="95" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3784757108400815502" fileName="ModelDifferenceDialog.java" startLine="97" startPosition="70" endLine="98" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3784757108400815512" fileName="ModelDifferenceDialog.java" startLine="99" startPosition="9" endLine="100" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3784757108400815473" fileName="ModelDifferenceDialog.java" startLine="105" startPosition="39" endLine="106" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3784757108400815523" fileName="ModelDifferenceDialog.java" startLine="106" startPosition="51" endLine="107" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6236996727608130410" fileName="ModelDifferenceDialog.java" startLine="107" startPosition="23" endLine="108" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3724655318819767472" fileName="ModelDifferenceDialog.java" startLine="111" startPosition="43" endLine="112" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7088622708994425356" fileName="ModelDifferenceDialog.java" startLine="115" startPosition="35" endLine="116" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7088622708994425304" fileName="ModelDifferenceDialog.java" startLine="119" startPosition="38" endLine="120" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7088622708994425306" fileName="ModelDifferenceDialog.java" startLine="123" startPosition="36" endLine="124" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2090008153514845693" fileName="ModelDifferenceDialog.java" startLine="128" startPosition="74" endLine="129" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2090008153514955087" fileName="ModelDifferenceDialog.java" startLine="132" startPosition="44" endLine="133" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2638118297328304990" fileName="ModelDifferenceDialog.java" startLine="138" startPosition="25" endLine="139" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
-    <nodeInfo nodeId="2638118297328304994" fileName="ModelDifferenceDialog.java" startLine="139" startPosition="59" endLine="140" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="959738663751600644" fileName="ModelDifferenceDialog.java" startLine="140" startPosition="97" endLine="141" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="959738663751511282" fileName="ModelDifferenceDialog.java" startLine="143" startPosition="53" endLine="144" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="959738663751511330" fileName="ModelDifferenceDialog.java" startLine="148" startPosition="46" endLine="149" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="959738663751584834" fileName="ModelDifferenceDialog.java" startLine="153" startPosition="45" endLine="154" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="959738663751600654" fileName="ModelDifferenceDialog.java" startLine="156" startPosition="11" endLine="157" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1372936221592711102" fileName="ModelDifferenceDialog.java" startLine="158" startPosition="28" endLine="159" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6088639354566545315" fileName="ModelDifferenceDialog.java" startLine="166" startPosition="25" endLine="167" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6088639354566546642" fileName="ModelDifferenceDialog.java" startLine="169" startPosition="69" endLine="170" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6088639354566546602" fileName="ModelDifferenceDialog.java" startLine="171" startPosition="9" endLine="172" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6088639354566544930" fileName="ModelDifferenceDialog.java" startLine="173" startPosition="7" endLine="174" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6088639354566544927" fileName="ModelDifferenceDialog.java" startLine="174" startPosition="83" endLine="175" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7088622708994435022" fileName="ModelDifferenceDialog.java" startLine="177" startPosition="31" endLine="178" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2090008153514955094" fileName="ModelDifferenceDialog.java" startLine="179" startPosition="5" endLine="180" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7088622708994435024" fileName="ModelDifferenceDialog.java" startLine="180" startPosition="31" endLine="181" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7088622708994435028" fileName="ModelDifferenceDialog.java" startLine="181" startPosition="32" endLine="182" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7088622708994435034" fileName="ModelDifferenceDialog.java" startLine="185" startPosition="26" endLine="186" endPosition="121" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2090008153514955051" fileName="ModelDifferenceDialog.java" startLine="187" startPosition="16" endLine="188" endPosition="170" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7088622708994435045" fileName="ModelDifferenceDialog.java" startLine="191" startPosition="7" endLine="192" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7088622708994435049" fileName="ModelDifferenceDialog.java" startLine="192" startPosition="34" endLine="193" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7088622708994435100" fileName="ModelDifferenceDialog.java" startLine="196" startPosition="39" endLine="197" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2090008153514955124" fileName="ModelDifferenceDialog.java" startLine="198" startPosition="50" endLine="199" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1885869163710708402" fileName="ModelDifferenceDialog.java" startLine="203" startPosition="62" endLine="204" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5147933446747588762" fileName="ModelDifferenceDialog.java" startLine="207" startPosition="49" endLine="208" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2444696440332090636" fileName="ModelDifferenceDialog.java" startLine="212" startPosition="82" endLine="213" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="278581607615210964" fileName="ModelDifferenceDialog.java" startLine="217" startPosition="35" endLine="218" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="9000192670931887723" fileName="ModelDifferenceDialog.java" startLine="225" startPosition="67" endLine="226" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="9000192670931879390" fileName="ModelDifferenceDialog.java" startLine="231" startPosition="32" endLine="232" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="278581607615211076" fileName="ModelDifferenceDialog.java" startLine="237" startPosition="99" endLine="238" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="278581607615211143" fileName="ModelDifferenceDialog.java" startLine="239" startPosition="45" endLine="240" endPosition="132" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="278581607615211109" fileName="ModelDifferenceDialog.java" startLine="241" startPosition="94" endLine="242" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="278581607615211126" fileName="ModelDifferenceDialog.java" startLine="244" startPosition="7" endLine="245" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="278581607615210997" fileName="ModelDifferenceDialog.java" startLine="248" startPosition="44" endLine="249" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2090008153514955049" fileName="ModelDifferenceDialog.java" startLine="187" startPosition="14" endLine="189" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="3784757108400815493" fileName="ModelDifferenceDialog.java" startLine="96" startPosition="14" endLine="99" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="959738663751511322" fileName="ModelDifferenceDialog.java" startLine="147" startPosition="71" endLine="150" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1372936221592711158" fileName="ModelDifferenceDialog.java" startLine="157" startPosition="28" endLine="160" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6088639354566546615" fileName="ModelDifferenceDialog.java" startLine="168" startPosition="71" endLine="171" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7088622708994435020" fileName="ModelDifferenceDialog.java" startLine="176" startPosition="5" endLine="179" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2090008153514955101" fileName="ModelDifferenceDialog.java" startLine="197" startPosition="33" endLine="200" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="278581607615210959" fileName="ModelDifferenceDialog.java" startLine="216" startPosition="59" endLine="219" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ModelDifferenceTree#()V" />
-    <nodeInfo nodeId="278581607615211022" fileName="ModelDifferenceDialog.java" startLine="240" startPosition="132" endLine="243" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3724655318819767468" fileName="ModelDifferenceDialog.java" startLine="110" startPosition="0" endLine="114" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getMainComponent#()Ljavax/swing/JComponent;" />
-    <nodeInfo nodeId="7088622708994425352" fileName="ModelDifferenceDialog.java" startLine="114" startPosition="0" endLine="118" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getChangeSet#()Ljetbrains/mps/vcs/diff/ChangeSet;" />
-    <nodeInfo nodeId="7088622708994425299" fileName="ModelDifferenceDialog.java" startLine="118" startPosition="0" endLine="122" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getContentTitles#()[Ljava/lang/String;" />
-    <nodeInfo nodeId="7088622708994383465" fileName="ModelDifferenceDialog.java" startLine="122" startPosition="0" endLine="126" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getProject#()Lcom/intellij/openapi/project/Project;" />
-    <nodeInfo nodeId="2090008153514955083" fileName="ModelDifferenceDialog.java" startLine="131" startPosition="0" endLine="135" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="startGoingToNeighbour#()V" />
-    <nodeInfo nodeId="959738663751511280" fileName="ModelDifferenceDialog.java" startLine="142" startPosition="129" endLine="146" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/vcs/diff/changes/ModelChange;)Ljetbrains/mps/vcs/diff/changes/ModelChange;" />
-    <nodeInfo nodeId="959738663751511370" fileName="ModelDifferenceDialog.java" startLine="152" startPosition="85" endLine="156" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visit#(Ljetbrains/mps/vcs/diff/changes/ModelChange;)V" />
-    <nodeInfo nodeId="1885869163710708394" fileName="ModelDifferenceDialog.java" startLine="202" startPosition="0" endLine="206" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getChangesForRoot#(Ljetbrains/mps/smodel/SNodeId;)Ljava/util/List;" />
-    <nodeInfo nodeId="5147933446747588759" fileName="ModelDifferenceDialog.java" startLine="206" startPosition="0" endLine="210" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getMetadataChanges#()Ljava/util/List;" />
-    <nodeInfo nodeId="9000192670931887719" fileName="ModelDifferenceDialog.java" startLine="224" startPosition="178" endLine="228" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/vcs/diff/ui/common/DiffModelTree/RootTreeNode;)Ljetbrains/mps/smodel/SNodeId;" />
-    <nodeInfo nodeId="9000192670931877952" fileName="ModelDifferenceDialog.java" startLine="230" startPosition="0" endLine="234" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="after#()V" />
-    <nodeInfo nodeId="278581607615210983" fileName="ModelDifferenceDialog.java" startLine="247" startPosition="0" endLine="251" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getModels#()Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="6088639354566491077" fileName="ModelDifferenceDialog.java" startLine="252" startPosition="52" endLine="256" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2090008153514927346" fileName="ModelDifferenceDialog.java" startLine="74" startPosition="57" endLine="79" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="1412499365458360100" fileName="ModelDifferenceDialog.java" startLine="96" startPosition="12" endLine="101" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2090008153514845684" fileName="ModelDifferenceDialog.java" startLine="126" startPosition="0" endLine="131" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNeighbourRoot#(Ljetbrains/mps/smodel/SNodeId;Z)Ljetbrains/mps/smodel/SNodeId;" />
-    <nodeInfo nodeId="959738663751511273" fileName="ModelDifferenceDialog.java" startLine="141" startPosition="52" endLine="146" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="959738663751511317" fileName="ModelDifferenceDialog.java" startLine="146" startPosition="11" endLine="151" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="959738663751511363" fileName="ModelDifferenceDialog.java" startLine="151" startPosition="9" endLine="156" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2090008153514955044" fileName="ModelDifferenceDialog.java" startLine="184" startPosition="25" endLine="189" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3724655318819767474" fileName="ModelDifferenceDialog.java" startLine="210" startPosition="0" endLine="215" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDefaultDimensionSettings#()Ljetbrains/mps/ide/dialogs/DialogDimensionsSettings/DialogDimensions;" />
-    <nodeInfo nodeId="9000192670931884567" fileName="ModelDifferenceDialog.java" startLine="223" startPosition="40" endLine="228" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2090008153514927345" fileName="ModelDifferenceDialog.java" startLine="73" startPosition="39" endLine="79" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="959738663751603452" fileName="ModelDifferenceDialog.java" startLine="104" startPosition="0" endLine="110" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="rebuildChangeSet#()V" />
-    <nodeInfo nodeId="6088639354566546597" fileName="ModelDifferenceDialog.java" startLine="167" startPosition="45" endLine="173" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="1412499365458356242" fileName="ModelDifferenceDialog.java" startLine="238" startPosition="57" endLine="244" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7088622708994435096" fileName="ModelDifferenceDialog.java" startLine="195" startPosition="0" endLine="202" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="rootDialogClosed#()V" />
-    <nodeInfo nodeId="278581607615210988" fileName="ModelDifferenceDialog.java" startLine="251" startPosition="0" endLine="258" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getAffectedRoots#()Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="1412499365458360089" fileName="ModelDifferenceDialog.java" startLine="93" startPosition="33" endLine="101" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7088622708994435032" fileName="ModelDifferenceDialog.java" startLine="183" startPosition="57" endLine="191" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="9000192670931877947" fileName="ModelDifferenceDialog.java" startLine="222" startPosition="150" endLine="230" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getRoots#()[Ljetbrains/mps/smodel/SNodeId;" />
-    <nodeInfo nodeId="7088622708994435031" fileName="ModelDifferenceDialog.java" startLine="182" startPosition="97" endLine="191" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3784757108400815487" fileName="ModelDifferenceDialog.java" startLine="91" startPosition="53" endLine="102" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="6088639354566544915" fileName="ModelDifferenceDialog.java" startLine="165" startPosition="58" endLine="176" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="278581607615210977" fileName="ModelDifferenceDialog.java" startLine="236" startPosition="0" endLine="247" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="updateRootCustomPresentation#(Ljetbrains/mps/vcs/diff/ui/common/DiffModelTree/RootTreeNode;)V" />
-    <nodeInfo nodeId="278581607615211157" fileName="ModelDifferenceDialog.java" startLine="221" startPosition="53" endLine="234" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3784757108400815478" fileName="ModelDifferenceDialog.java" startLine="88" startPosition="0" endLine="104" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="fillRootToChange#()V" />
-    <nodeInfo nodeId="278581607615210970" fileName="ModelDifferenceDialog.java" startLine="220" startPosition="0" endLine="236" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getRootActions#()Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="3724655318819767367" fileName="ModelDifferenceDialog.java" startLine="65" startPosition="0" endLine="87" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ModelDifferenceDialog#(Ljetbrains/mps/smodel/SModel;Ljetbrains/mps/smodel/SModel;Lcom/intellij/openapi/diff/DiffRequest;)V" />
-    <nodeInfo nodeId="2638118297328304981" fileName="ModelDifferenceDialog.java" startLine="137" startPosition="67" endLine="162" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="2638118297328304980" fileName="ModelDifferenceDialog.java" startLine="136" startPosition="123" endLine="162" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1372936221592711090" fileName="ModelDifferenceDialog.java" startLine="135" startPosition="0" endLine="164" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="rollbackChanges#(Ljava/lang/Iterable;Ljetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_void_P0_E0;)V" />
-    <nodeInfo nodeId="7088622708994435005" fileName="ModelDifferenceDialog.java" startLine="164" startPosition="0" endLine="195" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invokeRootDifference#(Ljetbrains/mps/smodel/SNodeId;)V" />
-    <scopeInfo nodeId="1412499365458360090" fileName="ModelDifferenceDialog.java" startLine="94" startPosition="23" endLine="95" endPosition="63" />
-    <scopeInfo nodeId="3784757108400815501" fileName="ModelDifferenceDialog.java" startLine="97" startPosition="70" endLine="98" endPosition="108" />
-    <scopeInfo nodeId="3724655318819767471" fileName="ModelDifferenceDialog.java" startLine="111" startPosition="43" endLine="112" endPosition="19" />
-    <scopeInfo nodeId="7088622708994425355" fileName="ModelDifferenceDialog.java" startLine="115" startPosition="35" endLine="116" endPosition="23" />
-    <scopeInfo nodeId="7088622708994425303" fileName="ModelDifferenceDialog.java" startLine="119" startPosition="38" endLine="120" endPosition="27" />
-    <scopeInfo nodeId="7088622708994383468" fileName="ModelDifferenceDialog.java" startLine="123" startPosition="36" endLine="124" endPosition="21" />
-    <scopeInfo nodeId="2090008153514845692" fileName="ModelDifferenceDialog.java" startLine="128" startPosition="74" endLine="129" endPosition="49" />
-    <scopeInfo nodeId="2090008153514955086" fileName="ModelDifferenceDialog.java" startLine="132" startPosition="44" endLine="133" endPosition="30" />
-    <scopeInfo nodeId="959738663751511281" fileName="ModelDifferenceDialog.java" startLine="143" startPosition="53" endLine="144" endPosition="42" />
-    <scopeInfo nodeId="959738663751511324" fileName="ModelDifferenceDialog.java" startLine="148" startPosition="46" endLine="149" endPosition="45" />
-    <scopeInfo nodeId="959738663751511371" fileName="ModelDifferenceDialog.java" startLine="153" startPosition="45" endLine="154" endPosition="32" />
-    <scopeInfo nodeId="1372936221592711159" fileName="ModelDifferenceDialog.java" startLine="158" startPosition="28" endLine="159" endPosition="25" />
-    <scopeInfo nodeId="6088639354566546616" fileName="ModelDifferenceDialog.java" startLine="169" startPosition="69" endLine="170" endPosition="26" />
-    <scopeInfo nodeId="7088622708994435021" fileName="ModelDifferenceDialog.java" startLine="177" startPosition="31" endLine="178" endPosition="13" />
-    <scopeInfo nodeId="2090008153514955045" fileName="ModelDifferenceDialog.java" startLine="185" startPosition="26" endLine="186" endPosition="121" />
-    <scopeInfo nodeId="2090008153514955050" fileName="ModelDifferenceDialog.java" startLine="187" startPosition="16" endLine="188" endPosition="170" />
-    <scopeInfo nodeId="2090008153514955102" fileName="ModelDifferenceDialog.java" startLine="198" startPosition="50" endLine="199" endPosition="16" />
-    <scopeInfo nodeId="1885869163710708397" fileName="ModelDifferenceDialog.java" startLine="203" startPosition="62" endLine="204" endPosition="60" />
-    <scopeInfo nodeId="5147933446747588761" fileName="ModelDifferenceDialog.java" startLine="207" startPosition="49" endLine="208" endPosition="29" />
-    <scopeInfo nodeId="3724655318819767477" fileName="ModelDifferenceDialog.java" startLine="212" startPosition="82" endLine="213" endPosition="71" />
-    <scopeInfo nodeId="278581607615210963" fileName="ModelDifferenceDialog.java" startLine="217" startPosition="35" endLine="218" endPosition="91" />
-    <scopeInfo nodeId="9000192670931887720" fileName="ModelDifferenceDialog.java" startLine="225" startPosition="67" endLine="226" endPosition="37" />
-    <scopeInfo nodeId="9000192670931877955" fileName="ModelDifferenceDialog.java" startLine="231" startPosition="32" endLine="232" endPosition="56" />
-    <scopeInfo nodeId="278581607615211023" fileName="ModelDifferenceDialog.java" startLine="241" startPosition="94" endLine="242" endPosition="54" />
-    <scopeInfo nodeId="278581607615210987" fileName="ModelDifferenceDialog.java" startLine="248" startPosition="44" endLine="249" endPosition="81" />
-    <scopeInfo nodeId="2090008153514927347" fileName="ModelDifferenceDialog.java" startLine="75" startPosition="25" endLine="77" endPosition="27" />
-    <scopeInfo nodeId="959738663751603454" fileName="ModelDifferenceDialog.java" startLine="105" startPosition="39" endLine="108" endPosition="26" />
-    <scopeInfo nodeId="959738663751511320" fileName="ModelDifferenceDialog.java" startLine="147" startPosition="71" endLine="150" endPosition="11" />
-    <scopeInfo nodeId="278581607615210959" fileName="ModelDifferenceDialog.java" startLine="216" startPosition="59" endLine="219" endPosition="5" />
-    <scopeInfo nodeId="1412499365458360101" fileName="ModelDifferenceDialog.java" startLine="96" startPosition="14" endLine="100" endPosition="90" />
-    <scopeInfo nodeId="3724655318819767468" fileName="ModelDifferenceDialog.java" startLine="110" startPosition="0" endLine="114" endPosition="0" />
-    <scopeInfo nodeId="7088622708994425352" fileName="ModelDifferenceDialog.java" startLine="114" startPosition="0" endLine="118" endPosition="0" />
-    <scopeInfo nodeId="7088622708994425299" fileName="ModelDifferenceDialog.java" startLine="118" startPosition="0" endLine="122" endPosition="0" />
-    <scopeInfo nodeId="7088622708994383465" fileName="ModelDifferenceDialog.java" startLine="122" startPosition="0" endLine="126" endPosition="0" />
-    <scopeInfo nodeId="2090008153514955083" fileName="ModelDifferenceDialog.java" startLine="131" startPosition="0" endLine="135" endPosition="0" />
-    <scopeInfo nodeId="959738663751511280" fileName="ModelDifferenceDialog.java" startLine="142" startPosition="129" endLine="146" endPosition="0">
+    <nodeInfo nodeId="3724655318819766170" fileName="ModelDifferenceDialog.java" startLine="56" startPosition="55" endLine="57" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myProject" />
+    <nodeInfo nodeId="3724655318819766176" fileName="ModelDifferenceDialog.java" startLine="57" startPosition="28" endLine="58" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myChangeSet" />
+    <nodeInfo nodeId="3724655318819766739" fileName="ModelDifferenceDialog.java" startLine="58" startPosition="32" endLine="59" endPosition="123" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myRootToChanges" />
+    <nodeInfo nodeId="6088639354566491056" fileName="ModelDifferenceDialog.java" startLine="59" startPosition="123" endLine="60" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myMetadataChanges" />
+    <nodeInfo nodeId="3724655318819767499" fileName="ModelDifferenceDialog.java" startLine="60" startPosition="100" endLine="61" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myTree" />
+    <nodeInfo nodeId="3724655318819766182" fileName="ModelDifferenceDialog.java" startLine="61" startPosition="59" endLine="62" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myPanel" />
+    <nodeInfo nodeId="7088622708994434945" fileName="ModelDifferenceDialog.java" startLine="62" startPosition="58" endLine="63" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myRootsDialogInvoked" />
+    <nodeInfo nodeId="2090008153514955077" fileName="ModelDifferenceDialog.java" startLine="63" startPosition="47" endLine="64" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myGoingToNeighbour" />
+    <nodeInfo nodeId="3724655318819766197" fileName="ModelDifferenceDialog.java" startLine="64" startPosition="45" endLine="65" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myContentTitles" />
+    <nodeInfo nodeId="3724655318819767371" fileName="ModelDifferenceDialog.java" startLine="67" startPosition="103" endLine="68" endPosition="142" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="54274504926097744" fileName="ModelDifferenceDialog.java" startLine="68" startPosition="142" endLine="69" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1504158228282971696" fileName="ModelDifferenceDialog.java" startLine="69" startPosition="41" endLine="70" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6870244054724031736" fileName="ModelDifferenceDialog.java" startLine="70" startPosition="76" endLine="71" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6870244054724031746" fileName="ModelDifferenceDialog.java" startLine="71" startPosition="65" endLine="72" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3724655318819767387" fileName="ModelDifferenceDialog.java" startLine="72" startPosition="65" endLine="73" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4503715620529484862" fileName="ModelDifferenceDialog.java" startLine="73" startPosition="53" endLine="74" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
+    <nodeInfo nodeId="3784757108400815525" fileName="ModelDifferenceDialog.java" startLine="76" startPosition="25" endLine="77" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3784757108400815533" fileName="ModelDifferenceDialog.java" startLine="77" startPosition="80" endLine="78" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3724655318819767407" fileName="ModelDifferenceDialog.java" startLine="80" startPosition="7" endLine="81" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3724655318819767412" fileName="ModelDifferenceDialog.java" startLine="81" startPosition="61" endLine="82" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="4503715620529484831" fileName="ModelDifferenceDialog.java" startLine="82" startPosition="0" endLine="83" endPosition="238" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4503715620529484841" fileName="ModelDifferenceDialog.java" startLine="83" startPosition="238" endLine="84" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4503715620529484850" fileName="ModelDifferenceDialog.java" startLine="84" startPosition="117" endLine="85" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4503715620529484876" fileName="ModelDifferenceDialog.java" startLine="85" startPosition="39" endLine="86" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3724655318819767447" fileName="ModelDifferenceDialog.java" startLine="86" startPosition="60" endLine="87" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3784757108400815483" fileName="ModelDifferenceDialog.java" startLine="90" startPosition="35" endLine="91" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="493306356999326005" fileName="ModelDifferenceDialog.java" startLine="91" startPosition="49" endLine="92" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1412499365458360079" fileName="ModelDifferenceDialog.java" startLine="93" startPosition="80" endLine="94" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6088639354566491067" fileName="ModelDifferenceDialog.java" startLine="95" startPosition="23" endLine="96" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3784757108400815502" fileName="ModelDifferenceDialog.java" startLine="98" startPosition="70" endLine="99" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3784757108400815512" fileName="ModelDifferenceDialog.java" startLine="100" startPosition="9" endLine="101" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3784757108400815473" fileName="ModelDifferenceDialog.java" startLine="106" startPosition="39" endLine="107" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3784757108400815523" fileName="ModelDifferenceDialog.java" startLine="107" startPosition="51" endLine="108" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6236996727608130410" fileName="ModelDifferenceDialog.java" startLine="108" startPosition="23" endLine="109" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3724655318819767472" fileName="ModelDifferenceDialog.java" startLine="112" startPosition="43" endLine="113" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7088622708994425356" fileName="ModelDifferenceDialog.java" startLine="116" startPosition="35" endLine="117" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7088622708994425304" fileName="ModelDifferenceDialog.java" startLine="120" startPosition="38" endLine="121" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7088622708994425306" fileName="ModelDifferenceDialog.java" startLine="124" startPosition="36" endLine="125" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2090008153514845693" fileName="ModelDifferenceDialog.java" startLine="129" startPosition="74" endLine="130" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2090008153514955087" fileName="ModelDifferenceDialog.java" startLine="133" startPosition="44" endLine="134" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2638118297328304990" fileName="ModelDifferenceDialog.java" startLine="139" startPosition="25" endLine="140" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
+    <nodeInfo nodeId="2638118297328304994" fileName="ModelDifferenceDialog.java" startLine="140" startPosition="59" endLine="141" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="959738663751600644" fileName="ModelDifferenceDialog.java" startLine="141" startPosition="97" endLine="142" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="959738663751511282" fileName="ModelDifferenceDialog.java" startLine="144" startPosition="53" endLine="145" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="959738663751511330" fileName="ModelDifferenceDialog.java" startLine="149" startPosition="46" endLine="150" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="959738663751584834" fileName="ModelDifferenceDialog.java" startLine="154" startPosition="45" endLine="155" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="959738663751600654" fileName="ModelDifferenceDialog.java" startLine="157" startPosition="11" endLine="158" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1372936221592711102" fileName="ModelDifferenceDialog.java" startLine="159" startPosition="28" endLine="160" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6498555866783313990" fileName="ModelDifferenceDialog.java" startLine="166" startPosition="52" endLine="167" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6498555866783313892" fileName="ModelDifferenceDialog.java" startLine="171" startPosition="25" endLine="172" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6498555866783313903" fileName="ModelDifferenceDialog.java" startLine="174" startPosition="69" endLine="175" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6498555866783313913" fileName="ModelDifferenceDialog.java" startLine="176" startPosition="9" endLine="177" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6498555866783313918" fileName="ModelDifferenceDialog.java" startLine="178" startPosition="7" endLine="179" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6498555866783313925" fileName="ModelDifferenceDialog.java" startLine="179" startPosition="83" endLine="180" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6498555866783313931" fileName="ModelDifferenceDialog.java" startLine="182" startPosition="31" endLine="183" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6498555866783313933" fileName="ModelDifferenceDialog.java" startLine="184" startPosition="5" endLine="185" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6498555866783313937" fileName="ModelDifferenceDialog.java" startLine="185" startPosition="31" endLine="186" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6498555866783313941" fileName="ModelDifferenceDialog.java" startLine="186" startPosition="32" endLine="187" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6498555866783313949" fileName="ModelDifferenceDialog.java" startLine="190" startPosition="26" endLine="191" endPosition="131" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6498555866783313963" fileName="ModelDifferenceDialog.java" startLine="192" startPosition="16" endLine="193" endPosition="180" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6498555866783313978" fileName="ModelDifferenceDialog.java" startLine="196" startPosition="7" endLine="197" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6498555866783313982" fileName="ModelDifferenceDialog.java" startLine="197" startPosition="34" endLine="198" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7088622708994435100" fileName="ModelDifferenceDialog.java" startLine="201" startPosition="39" endLine="202" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2090008153514955124" fileName="ModelDifferenceDialog.java" startLine="203" startPosition="50" endLine="204" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1885869163710708402" fileName="ModelDifferenceDialog.java" startLine="208" startPosition="62" endLine="209" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5147933446747588762" fileName="ModelDifferenceDialog.java" startLine="212" startPosition="49" endLine="213" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2444696440332090636" fileName="ModelDifferenceDialog.java" startLine="217" startPosition="82" endLine="218" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="278581607615210964" fileName="ModelDifferenceDialog.java" startLine="222" startPosition="35" endLine="223" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="9000192670931887723" fileName="ModelDifferenceDialog.java" startLine="230" startPosition="67" endLine="231" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="9000192670931879390" fileName="ModelDifferenceDialog.java" startLine="236" startPosition="32" endLine="237" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="278581607615211076" fileName="ModelDifferenceDialog.java" startLine="242" startPosition="99" endLine="243" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="278581607615211143" fileName="ModelDifferenceDialog.java" startLine="244" startPosition="45" endLine="245" endPosition="132" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="278581607615211109" fileName="ModelDifferenceDialog.java" startLine="246" startPosition="94" endLine="247" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="278581607615211126" fileName="ModelDifferenceDialog.java" startLine="249" startPosition="7" endLine="250" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="278581607615210997" fileName="ModelDifferenceDialog.java" startLine="253" startPosition="44" endLine="254" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6498555866783313961" fileName="ModelDifferenceDialog.java" startLine="192" startPosition="14" endLine="194" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="3784757108400815493" fileName="ModelDifferenceDialog.java" startLine="97" startPosition="14" endLine="100" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="959738663751511322" fileName="ModelDifferenceDialog.java" startLine="148" startPosition="71" endLine="151" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1372936221592711158" fileName="ModelDifferenceDialog.java" startLine="158" startPosition="28" endLine="161" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6498555866783313901" fileName="ModelDifferenceDialog.java" startLine="173" startPosition="71" endLine="176" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6498555866783313929" fileName="ModelDifferenceDialog.java" startLine="181" startPosition="5" endLine="184" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2090008153514955101" fileName="ModelDifferenceDialog.java" startLine="202" startPosition="33" endLine="205" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="278581607615210959" fileName="ModelDifferenceDialog.java" startLine="221" startPosition="59" endLine="224" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ModelDifferenceTree#()V" />
+    <nodeInfo nodeId="278581607615211022" fileName="ModelDifferenceDialog.java" startLine="245" startPosition="132" endLine="248" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3724655318819767468" fileName="ModelDifferenceDialog.java" startLine="111" startPosition="0" endLine="115" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getMainComponent#()Ljavax/swing/JComponent;" />
+    <nodeInfo nodeId="7088622708994425352" fileName="ModelDifferenceDialog.java" startLine="115" startPosition="0" endLine="119" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getChangeSet#()Ljetbrains/mps/vcs/diff/ChangeSet;" />
+    <nodeInfo nodeId="7088622708994425299" fileName="ModelDifferenceDialog.java" startLine="119" startPosition="0" endLine="123" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getContentTitles#()[Ljava/lang/String;" />
+    <nodeInfo nodeId="7088622708994383465" fileName="ModelDifferenceDialog.java" startLine="123" startPosition="0" endLine="127" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getProject#()Lcom/intellij/openapi/project/Project;" />
+    <nodeInfo nodeId="2090008153514955083" fileName="ModelDifferenceDialog.java" startLine="132" startPosition="0" endLine="136" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="startGoingToNeighbour#()V" />
+    <nodeInfo nodeId="959738663751511280" fileName="ModelDifferenceDialog.java" startLine="143" startPosition="129" endLine="147" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/vcs/diff/changes/ModelChange;)Ljetbrains/mps/vcs/diff/changes/ModelChange;" />
+    <nodeInfo nodeId="959738663751511370" fileName="ModelDifferenceDialog.java" startLine="153" startPosition="85" endLine="157" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visit#(Ljetbrains/mps/vcs/diff/changes/ModelChange;)V" />
+    <nodeInfo nodeId="7088622708994435005" fileName="ModelDifferenceDialog.java" startLine="165" startPosition="0" endLine="169" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invokeRootDifference#(Ljetbrains/mps/smodel/SNodeId;)V" />
+    <nodeInfo nodeId="1885869163710708394" fileName="ModelDifferenceDialog.java" startLine="207" startPosition="0" endLine="211" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getChangesForRoot#(Ljetbrains/mps/smodel/SNodeId;)Ljava/util/List;" />
+    <nodeInfo nodeId="5147933446747588759" fileName="ModelDifferenceDialog.java" startLine="211" startPosition="0" endLine="215" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getMetadataChanges#()Ljava/util/List;" />
+    <nodeInfo nodeId="9000192670931887719" fileName="ModelDifferenceDialog.java" startLine="229" startPosition="178" endLine="233" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/vcs/diff/ui/common/DiffModelTree/RootTreeNode;)Ljetbrains/mps/smodel/SNodeId;" />
+    <nodeInfo nodeId="9000192670931877952" fileName="ModelDifferenceDialog.java" startLine="235" startPosition="0" endLine="239" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="after#()V" />
+    <nodeInfo nodeId="278581607615210983" fileName="ModelDifferenceDialog.java" startLine="252" startPosition="0" endLine="256" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getModels#()Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="6088639354566491077" fileName="ModelDifferenceDialog.java" startLine="257" startPosition="52" endLine="261" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2090008153514927346" fileName="ModelDifferenceDialog.java" startLine="75" startPosition="57" endLine="80" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="1412499365458360100" fileName="ModelDifferenceDialog.java" startLine="97" startPosition="12" endLine="102" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2090008153514845684" fileName="ModelDifferenceDialog.java" startLine="127" startPosition="0" endLine="132" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNeighbourRoot#(Ljetbrains/mps/smodel/SNodeId;Z)Ljetbrains/mps/smodel/SNodeId;" />
+    <nodeInfo nodeId="959738663751511273" fileName="ModelDifferenceDialog.java" startLine="142" startPosition="52" endLine="147" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="959738663751511317" fileName="ModelDifferenceDialog.java" startLine="147" startPosition="11" endLine="152" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="959738663751511363" fileName="ModelDifferenceDialog.java" startLine="152" startPosition="9" endLine="157" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6498555866783313947" fileName="ModelDifferenceDialog.java" startLine="189" startPosition="25" endLine="194" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3724655318819767474" fileName="ModelDifferenceDialog.java" startLine="215" startPosition="0" endLine="220" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDefaultDimensionSettings#()Ljetbrains/mps/ide/dialogs/DialogDimensionsSettings/DialogDimensions;" />
+    <nodeInfo nodeId="9000192670931884567" fileName="ModelDifferenceDialog.java" startLine="228" startPosition="40" endLine="233" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2090008153514927345" fileName="ModelDifferenceDialog.java" startLine="74" startPosition="39" endLine="80" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="959738663751603452" fileName="ModelDifferenceDialog.java" startLine="105" startPosition="0" endLine="111" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="rebuildChangeSet#()V" />
+    <nodeInfo nodeId="6498555866783313897" fileName="ModelDifferenceDialog.java" startLine="172" startPosition="45" endLine="178" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="1412499365458356242" fileName="ModelDifferenceDialog.java" startLine="243" startPosition="57" endLine="249" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7088622708994435096" fileName="ModelDifferenceDialog.java" startLine="200" startPosition="0" endLine="207" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="rootDialogClosed#()V" />
+    <nodeInfo nodeId="278581607615210988" fileName="ModelDifferenceDialog.java" startLine="256" startPosition="0" endLine="263" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getAffectedRoots#()Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="1412499365458360089" fileName="ModelDifferenceDialog.java" startLine="94" startPosition="33" endLine="102" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6498555866783313945" fileName="ModelDifferenceDialog.java" startLine="188" startPosition="57" endLine="196" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="9000192670931877947" fileName="ModelDifferenceDialog.java" startLine="227" startPosition="150" endLine="235" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getRoots#()[Ljetbrains/mps/smodel/SNodeId;" />
+    <nodeInfo nodeId="6498555866783313944" fileName="ModelDifferenceDialog.java" startLine="187" startPosition="97" endLine="196" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3784757108400815487" fileName="ModelDifferenceDialog.java" startLine="92" startPosition="53" endLine="103" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="6498555866783313890" fileName="ModelDifferenceDialog.java" startLine="170" startPosition="91" endLine="181" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="278581607615210977" fileName="ModelDifferenceDialog.java" startLine="241" startPosition="0" endLine="252" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="updateRootCustomPresentation#(Ljetbrains/mps/vcs/diff/ui/common/DiffModelTree/RootTreeNode;)V" />
+    <nodeInfo nodeId="278581607615211157" fileName="ModelDifferenceDialog.java" startLine="226" startPosition="53" endLine="239" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3784757108400815478" fileName="ModelDifferenceDialog.java" startLine="89" startPosition="0" endLine="105" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="fillRootToChange#()V" />
+    <nodeInfo nodeId="278581607615210970" fileName="ModelDifferenceDialog.java" startLine="225" startPosition="0" endLine="241" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getRootActions#()Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="3724655318819767367" fileName="ModelDifferenceDialog.java" startLine="66" startPosition="0" endLine="88" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ModelDifferenceDialog#(Ljetbrains/mps/smodel/SModel;Ljetbrains/mps/smodel/SModel;Lcom/intellij/openapi/diff/DiffRequest;)V" />
+    <nodeInfo nodeId="2638118297328304981" fileName="ModelDifferenceDialog.java" startLine="138" startPosition="67" endLine="163" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="2638118297328304980" fileName="ModelDifferenceDialog.java" startLine="137" startPosition="123" endLine="163" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1372936221592711090" fileName="ModelDifferenceDialog.java" startLine="136" startPosition="0" endLine="165" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="rollbackChanges#(Ljava/lang/Iterable;Ljetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_void_P0_E0;)V" />
+    <nodeInfo nodeId="6498555866783313884" fileName="ModelDifferenceDialog.java" startLine="169" startPosition="0" endLine="200" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invokeRootDifference#(Ljetbrains/mps/smodel/SNodeId;Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_0;)V" />
+    <scopeInfo nodeId="1412499365458360090" fileName="ModelDifferenceDialog.java" startLine="95" startPosition="23" endLine="96" endPosition="63" />
+    <scopeInfo nodeId="3784757108400815501" fileName="ModelDifferenceDialog.java" startLine="98" startPosition="70" endLine="99" endPosition="108" />
+    <scopeInfo nodeId="3724655318819767471" fileName="ModelDifferenceDialog.java" startLine="112" startPosition="43" endLine="113" endPosition="19" />
+    <scopeInfo nodeId="7088622708994425355" fileName="ModelDifferenceDialog.java" startLine="116" startPosition="35" endLine="117" endPosition="23" />
+    <scopeInfo nodeId="7088622708994425303" fileName="ModelDifferenceDialog.java" startLine="120" startPosition="38" endLine="121" endPosition="27" />
+    <scopeInfo nodeId="7088622708994383468" fileName="ModelDifferenceDialog.java" startLine="124" startPosition="36" endLine="125" endPosition="21" />
+    <scopeInfo nodeId="2090008153514845692" fileName="ModelDifferenceDialog.java" startLine="129" startPosition="74" endLine="130" endPosition="49" />
+    <scopeInfo nodeId="2090008153514955086" fileName="ModelDifferenceDialog.java" startLine="133" startPosition="44" endLine="134" endPosition="30" />
+    <scopeInfo nodeId="959738663751511281" fileName="ModelDifferenceDialog.java" startLine="144" startPosition="53" endLine="145" endPosition="42" />
+    <scopeInfo nodeId="959738663751511324" fileName="ModelDifferenceDialog.java" startLine="149" startPosition="46" endLine="150" endPosition="45" />
+    <scopeInfo nodeId="959738663751511371" fileName="ModelDifferenceDialog.java" startLine="154" startPosition="45" endLine="155" endPosition="32" />
+    <scopeInfo nodeId="1372936221592711159" fileName="ModelDifferenceDialog.java" startLine="159" startPosition="28" endLine="160" endPosition="25" />
+    <scopeInfo nodeId="7088622708994435010" fileName="ModelDifferenceDialog.java" startLine="166" startPosition="52" endLine="167" endPosition="39" />
+    <scopeInfo nodeId="6498555866783313902" fileName="ModelDifferenceDialog.java" startLine="174" startPosition="69" endLine="175" endPosition="26" />
+    <scopeInfo nodeId="6498555866783313930" fileName="ModelDifferenceDialog.java" startLine="182" startPosition="31" endLine="183" endPosition="13" />
+    <scopeInfo nodeId="6498555866783313948" fileName="ModelDifferenceDialog.java" startLine="190" startPosition="26" endLine="191" endPosition="131" />
+    <scopeInfo nodeId="6498555866783313962" fileName="ModelDifferenceDialog.java" startLine="192" startPosition="16" endLine="193" endPosition="180" />
+    <scopeInfo nodeId="2090008153514955102" fileName="ModelDifferenceDialog.java" startLine="203" startPosition="50" endLine="204" endPosition="16" />
+    <scopeInfo nodeId="1885869163710708397" fileName="ModelDifferenceDialog.java" startLine="208" startPosition="62" endLine="209" endPosition="60" />
+    <scopeInfo nodeId="5147933446747588761" fileName="ModelDifferenceDialog.java" startLine="212" startPosition="49" endLine="213" endPosition="29" />
+    <scopeInfo nodeId="3724655318819767477" fileName="ModelDifferenceDialog.java" startLine="217" startPosition="82" endLine="218" endPosition="71" />
+    <scopeInfo nodeId="278581607615210963" fileName="ModelDifferenceDialog.java" startLine="222" startPosition="35" endLine="223" endPosition="91" />
+    <scopeInfo nodeId="9000192670931887720" fileName="ModelDifferenceDialog.java" startLine="230" startPosition="67" endLine="231" endPosition="37" />
+    <scopeInfo nodeId="9000192670931877955" fileName="ModelDifferenceDialog.java" startLine="236" startPosition="32" endLine="237" endPosition="56" />
+    <scopeInfo nodeId="278581607615211023" fileName="ModelDifferenceDialog.java" startLine="246" startPosition="94" endLine="247" endPosition="54" />
+    <scopeInfo nodeId="278581607615210987" fileName="ModelDifferenceDialog.java" startLine="253" startPosition="44" endLine="254" endPosition="81" />
+    <scopeInfo nodeId="2090008153514927347" fileName="ModelDifferenceDialog.java" startLine="76" startPosition="25" endLine="78" endPosition="27" />
+    <scopeInfo nodeId="959738663751603454" fileName="ModelDifferenceDialog.java" startLine="106" startPosition="39" endLine="109" endPosition="26" />
+    <scopeInfo nodeId="959738663751511320" fileName="ModelDifferenceDialog.java" startLine="148" startPosition="71" endLine="151" endPosition="11" />
+    <scopeInfo nodeId="278581607615210959" fileName="ModelDifferenceDialog.java" startLine="221" startPosition="59" endLine="224" endPosition="5" />
+    <scopeInfo nodeId="1412499365458360101" fileName="ModelDifferenceDialog.java" startLine="97" startPosition="14" endLine="101" endPosition="90" />
+    <scopeInfo nodeId="3724655318819767468" fileName="ModelDifferenceDialog.java" startLine="111" startPosition="0" endLine="115" endPosition="0" />
+    <scopeInfo nodeId="7088622708994425352" fileName="ModelDifferenceDialog.java" startLine="115" startPosition="0" endLine="119" endPosition="0" />
+    <scopeInfo nodeId="7088622708994425299" fileName="ModelDifferenceDialog.java" startLine="119" startPosition="0" endLine="123" endPosition="0" />
+    <scopeInfo nodeId="7088622708994383465" fileName="ModelDifferenceDialog.java" startLine="123" startPosition="0" endLine="127" endPosition="0" />
+    <scopeInfo nodeId="2090008153514955083" fileName="ModelDifferenceDialog.java" startLine="132" startPosition="0" endLine="136" endPosition="0" />
+    <scopeInfo nodeId="959738663751511280" fileName="ModelDifferenceDialog.java" startLine="143" startPosition="129" endLine="147" endPosition="0">
       <varInfo nodeId="959738663751511280" varName="ch" />
     </scopeInfo>
-    <scopeInfo nodeId="959738663751511370" fileName="ModelDifferenceDialog.java" startLine="152" startPosition="85" endLine="156" endPosition="0">
+    <scopeInfo nodeId="959738663751511370" fileName="ModelDifferenceDialog.java" startLine="153" startPosition="85" endLine="157" endPosition="0">
       <varInfo nodeId="959738663751511370" varName="ch" />
     </scopeInfo>
-    <scopeInfo nodeId="6088639354566546600" fileName="ModelDifferenceDialog.java" startLine="168" startPosition="71" endLine="172" endPosition="22" />
-    <scopeInfo nodeId="7088622708994435099" fileName="ModelDifferenceDialog.java" startLine="196" startPosition="39" endLine="200" endPosition="5" />
-    <scopeInfo nodeId="1885869163710708394" fileName="ModelDifferenceDialog.java" startLine="202" startPosition="0" endLine="206" endPosition="0">
+    <scopeInfo nodeId="7088622708994435005" fileName="ModelDifferenceDialog.java" startLine="165" startPosition="0" endLine="169" endPosition="0">
+      <varInfo nodeId="7088622708994435006" varName="rootId" />
+    </scopeInfo>
+    <scopeInfo nodeId="6498555866783313900" fileName="ModelDifferenceDialog.java" startLine="173" startPosition="71" endLine="177" endPosition="22" />
+    <scopeInfo nodeId="7088622708994435099" fileName="ModelDifferenceDialog.java" startLine="201" startPosition="39" endLine="205" endPosition="5" />
+    <scopeInfo nodeId="1885869163710708394" fileName="ModelDifferenceDialog.java" startLine="207" startPosition="0" endLine="211" endPosition="0">
       <varInfo nodeId="1885869163710708400" varName="rootId" />
     </scopeInfo>
-    <scopeInfo nodeId="5147933446747588759" fileName="ModelDifferenceDialog.java" startLine="206" startPosition="0" endLine="210" endPosition="0" />
-    <scopeInfo nodeId="9000192670931887719" fileName="ModelDifferenceDialog.java" startLine="224" startPosition="178" endLine="228" endPosition="0">
+    <scopeInfo nodeId="5147933446747588759" fileName="ModelDifferenceDialog.java" startLine="211" startPosition="0" endLine="215" endPosition="0" />
+    <scopeInfo nodeId="9000192670931887719" fileName="ModelDifferenceDialog.java" startLine="229" startPosition="178" endLine="233" endPosition="0">
       <varInfo nodeId="9000192670931887719" varName="rtn" />
     </scopeInfo>
-    <scopeInfo nodeId="9000192670931877952" fileName="ModelDifferenceDialog.java" startLine="230" startPosition="0" endLine="234" endPosition="0" />
-    <scopeInfo nodeId="1412499365458356243" fileName="ModelDifferenceDialog.java" startLine="239" startPosition="45" endLine="243" endPosition="9">
+    <scopeInfo nodeId="9000192670931877952" fileName="ModelDifferenceDialog.java" startLine="235" startPosition="0" endLine="239" endPosition="0" />
+    <scopeInfo nodeId="1412499365458356243" fileName="ModelDifferenceDialog.java" startLine="244" startPosition="45" endLine="248" endPosition="9">
       <varInfo nodeId="278581607615211144" varName="firstChange" />
     </scopeInfo>
-    <scopeInfo nodeId="278581607615210983" fileName="ModelDifferenceDialog.java" startLine="247" startPosition="0" endLine="251" endPosition="0" />
-    <scopeInfo nodeId="278581607615210992" fileName="ModelDifferenceDialog.java" startLine="252" startPosition="52" endLine="256" endPosition="8" />
-    <scopeInfo nodeId="2090008153514927346" fileName="ModelDifferenceDialog.java" startLine="74" startPosition="57" endLine="79" endPosition="0" />
-    <scopeInfo nodeId="2090008153514845684" fileName="ModelDifferenceDialog.java" startLine="126" startPosition="0" endLine="131" endPosition="0">
+    <scopeInfo nodeId="278581607615210983" fileName="ModelDifferenceDialog.java" startLine="252" startPosition="0" endLine="256" endPosition="0" />
+    <scopeInfo nodeId="278581607615210992" fileName="ModelDifferenceDialog.java" startLine="257" startPosition="52" endLine="261" endPosition="8" />
+    <scopeInfo nodeId="2090008153514927346" fileName="ModelDifferenceDialog.java" startLine="75" startPosition="57" endLine="80" endPosition="0" />
+    <scopeInfo nodeId="2090008153514845684" fileName="ModelDifferenceDialog.java" startLine="127" startPosition="0" endLine="132" endPosition="0">
       <varInfo nodeId="2090008153514845688" varName="next" />
       <varInfo nodeId="2090008153514845685" varName="rootId" />
     </scopeInfo>
-    <scopeInfo nodeId="959738663751511317" fileName="ModelDifferenceDialog.java" startLine="146" startPosition="11" endLine="151" endPosition="9">
+    <scopeInfo nodeId="959738663751511317" fileName="ModelDifferenceDialog.java" startLine="147" startPosition="11" endLine="152" endPosition="9">
       <varInfo nodeId="959738663751511317" varName="ch" />
     </scopeInfo>
-    <scopeInfo nodeId="7088622708994435033" fileName="ModelDifferenceDialog.java" startLine="184" startPosition="25" endLine="189" endPosition="9" />
-    <scopeInfo nodeId="3724655318819767474" fileName="ModelDifferenceDialog.java" startLine="210" startPosition="0" endLine="215" endPosition="0" />
-    <scopeInfo nodeId="9000192670931877951" fileName="ModelDifferenceDialog.java" startLine="223" startPosition="40" endLine="228" endPosition="43" />
-    <scopeInfo nodeId="959738663751603452" fileName="ModelDifferenceDialog.java" startLine="104" startPosition="0" endLine="110" endPosition="0" />
-    <scopeInfo nodeId="6088639354566546597" fileName="ModelDifferenceDialog.java" startLine="167" startPosition="45" endLine="173" endPosition="7">
-      <varInfo nodeId="6088639354566546597" varName="mc" />
+    <scopeInfo nodeId="6498555866783313946" fileName="ModelDifferenceDialog.java" startLine="189" startPosition="25" endLine="194" endPosition="9" />
+    <scopeInfo nodeId="3724655318819767474" fileName="ModelDifferenceDialog.java" startLine="215" startPosition="0" endLine="220" endPosition="0" />
+    <scopeInfo nodeId="9000192670931877951" fileName="ModelDifferenceDialog.java" startLine="228" startPosition="40" endLine="233" endPosition="43" />
+    <scopeInfo nodeId="959738663751603452" fileName="ModelDifferenceDialog.java" startLine="105" startPosition="0" endLine="111" endPosition="0" />
+    <scopeInfo nodeId="6498555866783313897" fileName="ModelDifferenceDialog.java" startLine="172" startPosition="45" endLine="178" endPosition="7">
+      <varInfo nodeId="6498555866783313897" varName="mc" />
     </scopeInfo>
-    <scopeInfo nodeId="7088622708994435096" fileName="ModelDifferenceDialog.java" startLine="195" startPosition="0" endLine="202" endPosition="0" />
-    <scopeInfo nodeId="278581607615210988" fileName="ModelDifferenceDialog.java" startLine="251" startPosition="0" endLine="258" endPosition="0" />
-    <scopeInfo nodeId="7088622708994435032" fileName="ModelDifferenceDialog.java" startLine="183" startPosition="57" endLine="191" endPosition="0" />
-    <scopeInfo nodeId="9000192670931877947" fileName="ModelDifferenceDialog.java" startLine="222" startPosition="150" endLine="230" endPosition="0" />
-    <scopeInfo nodeId="278581607615210982" fileName="ModelDifferenceDialog.java" startLine="237" startPosition="99" endLine="245" endPosition="74">
+    <scopeInfo nodeId="7088622708994435096" fileName="ModelDifferenceDialog.java" startLine="200" startPosition="0" endLine="207" endPosition="0" />
+    <scopeInfo nodeId="278581607615210988" fileName="ModelDifferenceDialog.java" startLine="256" startPosition="0" endLine="263" endPosition="0" />
+    <scopeInfo nodeId="6498555866783313945" fileName="ModelDifferenceDialog.java" startLine="188" startPosition="57" endLine="196" endPosition="0" />
+    <scopeInfo nodeId="9000192670931877947" fileName="ModelDifferenceDialog.java" startLine="227" startPosition="150" endLine="235" endPosition="0" />
+    <scopeInfo nodeId="278581607615210982" fileName="ModelDifferenceDialog.java" startLine="242" startPosition="99" endLine="250" endPosition="74">
       <varInfo nodeId="278581607615211077" varName="compositeChangeType" />
     </scopeInfo>
-    <scopeInfo nodeId="3784757108400815492" fileName="ModelDifferenceDialog.java" startLine="92" startPosition="80" endLine="101" endPosition="7">
+    <scopeInfo nodeId="3784757108400815492" fileName="ModelDifferenceDialog.java" startLine="93" startPosition="80" endLine="102" endPosition="7">
       <varInfo nodeId="1412499365458360080" varName="id" />
     </scopeInfo>
-    <scopeInfo nodeId="6088639354566544916" fileName="ModelDifferenceDialog.java" startLine="166" startPosition="25" endLine="175" endPosition="13">
-      <varInfo nodeId="6088639354566545316" varName="sb" />
+    <scopeInfo nodeId="6498555866783313891" fileName="ModelDifferenceDialog.java" startLine="171" startPosition="25" endLine="180" endPosition="13">
+      <varInfo nodeId="6498555866783313893" varName="sb" />
     </scopeInfo>
-    <scopeInfo nodeId="3784757108400815487" fileName="ModelDifferenceDialog.java" startLine="91" startPosition="53" endLine="102" endPosition="5">
+    <scopeInfo nodeId="3784757108400815487" fileName="ModelDifferenceDialog.java" startLine="92" startPosition="53" endLine="103" endPosition="5">
       <varInfo nodeId="3784757108400815487" varName="c" />
     </scopeInfo>
-    <scopeInfo nodeId="278581607615210977" fileName="ModelDifferenceDialog.java" startLine="236" startPosition="0" endLine="247" endPosition="0">
+    <scopeInfo nodeId="278581607615210977" fileName="ModelDifferenceDialog.java" startLine="241" startPosition="0" endLine="252" endPosition="0">
       <varInfo nodeId="278581607615210980" varName="rootTreeNode" />
     </scopeInfo>
-    <scopeInfo nodeId="3784757108400815481" fileName="ModelDifferenceDialog.java" startLine="89" startPosition="35" endLine="102" endPosition="5" />
-    <scopeInfo nodeId="278581607615210976" fileName="ModelDifferenceDialog.java" startLine="221" startPosition="53" endLine="234" endPosition="9" />
-    <scopeInfo nodeId="3784757108400815478" fileName="ModelDifferenceDialog.java" startLine="88" startPosition="0" endLine="104" endPosition="0" />
-    <scopeInfo nodeId="278581607615210970" fileName="ModelDifferenceDialog.java" startLine="220" startPosition="0" endLine="236" endPosition="0" />
-    <scopeInfo nodeId="3724655318819767370" fileName="ModelDifferenceDialog.java" startLine="66" startPosition="103" endLine="86" endPosition="81">
+    <scopeInfo nodeId="3784757108400815481" fileName="ModelDifferenceDialog.java" startLine="90" startPosition="35" endLine="103" endPosition="5" />
+    <scopeInfo nodeId="278581607615210976" fileName="ModelDifferenceDialog.java" startLine="226" startPosition="53" endLine="239" endPosition="9" />
+    <scopeInfo nodeId="3784757108400815478" fileName="ModelDifferenceDialog.java" startLine="89" startPosition="0" endLine="105" endPosition="0" />
+    <scopeInfo nodeId="278581607615210970" fileName="ModelDifferenceDialog.java" startLine="225" startPosition="0" endLine="241" endPosition="0" />
+    <scopeInfo nodeId="3724655318819767370" fileName="ModelDifferenceDialog.java" startLine="67" startPosition="103" endLine="87" endPosition="81">
       <varInfo nodeId="4503715620529484832" varName="actionGroup" />
       <varInfo nodeId="1504158228282971697" varName="p" />
       <varInfo nodeId="4503715620529484842" varName="toolbar" />
     </scopeInfo>
-    <scopeInfo nodeId="3724655318819767367" fileName="ModelDifferenceDialog.java" startLine="65" startPosition="0" endLine="87" endPosition="3">
+    <scopeInfo nodeId="3724655318819767367" fileName="ModelDifferenceDialog.java" startLine="66" startPosition="0" endLine="88" endPosition="3">
       <varInfo nodeId="3724655318819767465" varName="diffRequest" />
       <varInfo nodeId="3724655318819767461" varName="newModel" />
       <varInfo nodeId="3724655318819767459" varName="oldModel" />
     </scopeInfo>
-    <scopeInfo nodeId="2638118297328304982" fileName="ModelDifferenceDialog.java" startLine="138" startPosition="25" endLine="160" endPosition="9">
+    <scopeInfo nodeId="2638118297328304982" fileName="ModelDifferenceDialog.java" startLine="139" startPosition="25" endLine="161" endPosition="9">
       <varInfo nodeId="2638118297328304995" varName="model" />
       <varInfo nodeId="959738663751600645" varName="nc" />
       <varInfo nodeId="959738663751511274" varName="oppositeChanges" />
     </scopeInfo>
-    <scopeInfo nodeId="2638118297328304981" fileName="ModelDifferenceDialog.java" startLine="137" startPosition="67" endLine="162" endPosition="0" />
-    <scopeInfo nodeId="1372936221592711092" fileName="ModelDifferenceDialog.java" startLine="136" startPosition="123" endLine="162" endPosition="7" />
-    <scopeInfo nodeId="7088622708994435010" fileName="ModelDifferenceDialog.java" startLine="165" startPosition="58" endLine="193" endPosition="31">
-      <varInfo nodeId="7088622708994435029" varName="rootDialog" />
+    <scopeInfo nodeId="2638118297328304981" fileName="ModelDifferenceDialog.java" startLine="138" startPosition="67" endLine="163" endPosition="0" />
+    <scopeInfo nodeId="1372936221592711092" fileName="ModelDifferenceDialog.java" startLine="137" startPosition="123" endLine="163" endPosition="7" />
+    <scopeInfo nodeId="6498555866783313889" fileName="ModelDifferenceDialog.java" startLine="170" startPosition="91" endLine="198" endPosition="31">
+      <varInfo nodeId="6498555866783313942" varName="rootDialog" />
     </scopeInfo>
-    <scopeInfo nodeId="1372936221592711090" fileName="ModelDifferenceDialog.java" startLine="135" startPosition="0" endLine="164" endPosition="0">
+    <scopeInfo nodeId="1372936221592711090" fileName="ModelDifferenceDialog.java" startLine="136" startPosition="0" endLine="165" endPosition="0">
       <varInfo nodeId="1372936221592711096" varName="after" />
       <varInfo nodeId="1372936221592711093" varName="changes" />
     </scopeInfo>
-    <scopeInfo nodeId="7088622708994435005" fileName="ModelDifferenceDialog.java" startLine="164" startPosition="0" endLine="195" endPosition="0">
-      <varInfo nodeId="7088622708994435006" varName="rootId" />
+    <scopeInfo nodeId="6498555866783313884" fileName="ModelDifferenceDialog.java" startLine="169" startPosition="0" endLine="200" endPosition="0">
+      <varInfo nodeId="6498555866783313886" varName="rootId" />
+      <varInfo nodeId="6498555866783313986" varName="scrollTo" />
     </scopeInfo>
-    <unitInfo nodeId="3724655318819677795" fileName="ModelDifferenceDialog.java" startLine="55" startPosition="0" endLine="260" endPosition="0" unitName="jetbrains.mps.vcs.diff.ui.ModelDifferenceDialog" />
-    <unitInfo nodeId="9000192670931877945" fileName="ModelDifferenceDialog.java" startLine="222" startPosition="103" endLine="234" endPosition="7" unitName="jetbrains.mps.vcs.diff.ui.ModelDifferenceDialog$1" />
-    <unitInfo nodeId="2638118297328304981" fileName="ModelDifferenceDialog.java" startLine="137" startPosition="55" endLine="162" endPosition="5" unitName="jetbrains.mps.vcs.diff.ui.ModelDifferenceDialog$1" />
-    <unitInfo nodeId="959738663751511280" fileName="ModelDifferenceDialog.java" startLine="142" startPosition="90" endLine="146" endPosition="9" unitName="jetbrains.mps.vcs.diff.ui.ModelDifferenceDialog$2" />
-    <unitInfo nodeId="959738663751511370" fileName="ModelDifferenceDialog.java" startLine="152" startPosition="60" endLine="156" endPosition="9" unitName="jetbrains.mps.vcs.diff.ui.ModelDifferenceDialog$2" />
-    <unitInfo nodeId="9000192670931887719" fileName="ModelDifferenceDialog.java" startLine="224" startPosition="128" endLine="228" endPosition="11" unitName="jetbrains.mps.vcs.diff.ui.ModelDifferenceDialog$2" />
-    <unitInfo nodeId="7088622708994435032" fileName="ModelDifferenceDialog.java" startLine="183" startPosition="45" endLine="191" endPosition="5" unitName="jetbrains.mps.vcs.diff.ui.ModelDifferenceDialog$2" />
-    <unitInfo nodeId="2090008153514927346" fileName="ModelDifferenceDialog.java" startLine="74" startPosition="45" endLine="79" endPosition="5" unitName="jetbrains.mps.vcs.diff.ui.ModelDifferenceDialog$3" />
-    <unitInfo nodeId="278581607615210951" fileName="ModelDifferenceDialog.java" startLine="216" startPosition="0" endLine="259" endPosition="0" unitName="jetbrains.mps.vcs.diff.ui.ModelDifferenceDialog$ModelDifferenceTree" />
+    <unitInfo nodeId="3724655318819677795" fileName="ModelDifferenceDialog.java" startLine="56" startPosition="0" endLine="265" endPosition="0" unitName="jetbrains.mps.vcs.diff.ui.ModelDifferenceDialog" />
+    <unitInfo nodeId="9000192670931877945" fileName="ModelDifferenceDialog.java" startLine="227" startPosition="103" endLine="239" endPosition="7" unitName="jetbrains.mps.vcs.diff.ui.ModelDifferenceDialog$1" />
+    <unitInfo nodeId="2638118297328304981" fileName="ModelDifferenceDialog.java" startLine="138" startPosition="55" endLine="163" endPosition="5" unitName="jetbrains.mps.vcs.diff.ui.ModelDifferenceDialog$1" />
+    <unitInfo nodeId="959738663751511280" fileName="ModelDifferenceDialog.java" startLine="143" startPosition="90" endLine="147" endPosition="9" unitName="jetbrains.mps.vcs.diff.ui.ModelDifferenceDialog$2" />
+    <unitInfo nodeId="959738663751511370" fileName="ModelDifferenceDialog.java" startLine="153" startPosition="60" endLine="157" endPosition="9" unitName="jetbrains.mps.vcs.diff.ui.ModelDifferenceDialog$2" />
+    <unitInfo nodeId="9000192670931887719" fileName="ModelDifferenceDialog.java" startLine="229" startPosition="128" endLine="233" endPosition="11" unitName="jetbrains.mps.vcs.diff.ui.ModelDifferenceDialog$2" />
+    <unitInfo nodeId="6498555866783313945" fileName="ModelDifferenceDialog.java" startLine="188" startPosition="45" endLine="196" endPosition="5" unitName="jetbrains.mps.vcs.diff.ui.ModelDifferenceDialog$2" />
+    <unitInfo nodeId="2090008153514927346" fileName="ModelDifferenceDialog.java" startLine="75" startPosition="45" endLine="80" endPosition="5" unitName="jetbrains.mps.vcs.diff.ui.ModelDifferenceDialog$3" />
+    <unitInfo nodeId="278581607615210951" fileName="ModelDifferenceDialog.java" startLine="221" startPosition="0" endLine="264" endPosition="0" unitName="jetbrains.mps.vcs.diff.ui.ModelDifferenceDialog$ModelDifferenceTree" />
   </root>
   <root nodeId="7088622708994254413">
-    <nodeInfo nodeId="7088622708994282560" fileName="RootDifferenceDialog.java" startLine="46" startPosition="78" endLine="47" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myModelDialog" />
-    <nodeInfo nodeId="7088622708994282564" fileName="RootDifferenceDialog.java" startLine="47" startPosition="46" endLine="48" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myRootId" />
-    <nodeInfo nodeId="7088622708994282612" fileName="RootDifferenceDialog.java" startLine="48" startPosition="27" endLine="49" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myOldEditor" />
-    <nodeInfo nodeId="7088622708994282616" fileName="RootDifferenceDialog.java" startLine="49" startPosition="33" endLine="50" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNewEditor" />
-    <nodeInfo nodeId="7253789755339766808" fileName="RootDifferenceDialog.java" startLine="50" startPosition="33" endLine="51" endPosition="118" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myChangeGroupBuilders" />
-    <nodeInfo nodeId="1107292131483544787" fileName="RootDifferenceDialog.java" startLine="51" startPosition="118" endLine="52" endPosition="118" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myTrapeciumStrips" />
-    <nodeInfo nodeId="7088622708994425327" fileName="RootDifferenceDialog.java" startLine="52" startPosition="118" endLine="53" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myDiffEditorsGroup" />
-    <nodeInfo nodeId="7088622708994425308" fileName="RootDifferenceDialog.java" startLine="53" startPosition="71" endLine="54" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myTopPanel" />
-    <nodeInfo nodeId="7088622708994425320" fileName="RootDifferenceDialog.java" startLine="54" startPosition="62" endLine="55" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myBottomPanel" />
-    <nodeInfo nodeId="7088622708994425559" fileName="RootDifferenceDialog.java" startLine="55" startPosition="65" endLine="56" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myContainer" />
-    <nodeInfo nodeId="4644674181061501565" fileName="RootDifferenceDialog.java" startLine="56" startPosition="62" endLine="57" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myStatusBar" />
-    <nodeInfo nodeId="1558573332373557509" fileName="RootDifferenceDialog.java" startLine="57" startPosition="81" endLine="58" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myClosed" />
-    <nodeInfo nodeId="7088622708994282573" fileName="RootDifferenceDialog.java" startLine="60" startPosition="99" endLine="61" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="2090008153514954343" fileName="RootDifferenceDialog.java" startLine="61" startPosition="53" endLine="62" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2090008153514954349" fileName="RootDifferenceDialog.java" startLine="65" startPosition="112" endLine="66" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="2090008153514954362" fileName="RootDifferenceDialog.java" startLine="66" startPosition="47" endLine="67" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2090008153514954394" fileName="RootDifferenceDialog.java" startLine="70" startPosition="72" endLine="71" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="2090008153514954379" fileName="RootDifferenceDialog.java" startLine="71" startPosition="104" endLine="72" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2090008153514954383" fileName="RootDifferenceDialog.java" startLine="72" startPosition="32" endLine="73" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2090008153514954378" fileName="RootDifferenceDialog.java" startLine="73" startPosition="22" endLine="74" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="2090008153514954256" fileName="RootDifferenceDialog.java" startLine="74" startPosition="0" endLine="75" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2090008153514954266" fileName="RootDifferenceDialog.java" startLine="75" startPosition="75" endLine="76" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2090008153514954276" fileName="RootDifferenceDialog.java" startLine="76" startPosition="75" endLine="77" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="2090008153514954277" fileName="RootDifferenceDialog.java" startLine="77" startPosition="0" endLine="78" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2090008153514954280" fileName="RootDifferenceDialog.java" startLine="78" startPosition="22" endLine="79" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2090008153514954283" fileName="RootDifferenceDialog.java" startLine="79" startPosition="23" endLine="80" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="2090008153514954284" fileName="RootDifferenceDialog.java" startLine="80" startPosition="0" endLine="81" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2090008153514954292" fileName="RootDifferenceDialog.java" startLine="81" startPosition="96" endLine="82" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2090008153514954297" fileName="RootDifferenceDialog.java" startLine="82" startPosition="35" endLine="83" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="2090008153514954298" fileName="RootDifferenceDialog.java" startLine="83" startPosition="0" endLine="84" endPosition="125" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5754859358505297887" fileName="RootDifferenceDialog.java" startLine="84" startPosition="125" endLine="85" endPosition="125" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="9000192670931887745" fileName="RootDifferenceDialog.java" startLine="87" startPosition="38" endLine="88" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="9000192670931888483" fileName="RootDifferenceDialog.java" startLine="91" startPosition="30" endLine="92" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2090008153514954313" fileName="RootDifferenceDialog.java" startLine="94" startPosition="7" endLine="95" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5754859358505297905" fileName="RootDifferenceDialog.java" startLine="95" startPosition="117" endLine="96" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2090008153514954326" fileName="RootDifferenceDialog.java" startLine="96" startPosition="49" endLine="97" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="2090008153514954327" fileName="RootDifferenceDialog.java" startLine="97" startPosition="0" endLine="98" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2090008153514954335" fileName="RootDifferenceDialog.java" startLine="98" startPosition="64" endLine="99" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4644674181061433761" fileName="RootDifferenceDialog.java" startLine="99" startPosition="52" endLine="100" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4644674181061433760" fileName="RootDifferenceDialog.java" startLine="100" startPosition="53" endLine="101" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="2090008153514954341" fileName="RootDifferenceDialog.java" startLine="101" startPosition="0" endLine="102" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1607065509089621052" fileName="RootDifferenceDialog.java" startLine="102" startPosition="26" endLine="103" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="1607065509089621045" fileName="RootDifferenceDialog.java" startLine="103" startPosition="0" endLine="104" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2444696440332094012" fileName="RootDifferenceDialog.java" startLine="108" startPosition="82" endLine="109" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7088622708994425210" fileName="RootDifferenceDialog.java" startLine="112" startPosition="57" endLine="113" endPosition="203" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7088622708994425226" fileName="RootDifferenceDialog.java" startLine="113" startPosition="203" endLine="114" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="7088622708994425260" fileName="RootDifferenceDialog.java" startLine="121" startPosition="14" endLine="122" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7088622708994425268" fileName="RootDifferenceDialog.java" startLine="122" startPosition="50" endLine="123" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7088622708994425278" fileName="RootDifferenceDialog.java" startLine="123" startPosition="73" endLine="124" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="7088622708994425279" fileName="RootDifferenceDialog.java" startLine="124" startPosition="0" endLine="125" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7088622708994425284" fileName="RootDifferenceDialog.java" startLine="125" startPosition="35" endLine="126" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5754859358505295905" fileName="RootDifferenceDialog.java" startLine="131" startPosition="47" endLine="132" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5754859358505295898" fileName="RootDifferenceDialog.java" startLine="134" startPosition="7" endLine="135" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="1885869163710647734" fileName="RootDifferenceDialog.java" startLine="136" startPosition="97" endLine="137" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1885869163710708426" fileName="RootDifferenceDialog.java" startLine="137" startPosition="86" endLine="138" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1885869163710708437" fileName="RootDifferenceDialog.java" startLine="139" startPosition="5" endLine="140" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1885869163710708444" fileName="RootDifferenceDialog.java" startLine="140" startPosition="50" endLine="141" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4644674181061513620" fileName="RootDifferenceDialog.java" startLine="141" startPosition="50" endLine="142" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="4644674181061513674" fileName="RootDifferenceDialog.java" startLine="142" startPosition="0" endLine="143" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7253789755339706811" fileName="RootDifferenceDialog.java" startLine="150" startPosition="47" endLine="151" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="7253789755339706813" fileName="RootDifferenceDialog.java" startLine="151" startPosition="78" endLine="152" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="7253789755339706815" fileName="RootDifferenceDialog.java" startLine="152" startPosition="97" endLine="153" endPosition="140" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7253789755339706821" fileName="RootDifferenceDialog.java" startLine="153" startPosition="140" endLine="154" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7253789755339706826" fileName="RootDifferenceDialog.java" startLine="154" startPosition="80" endLine="155" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7253789755339768318" fileName="RootDifferenceDialog.java" startLine="155" startPosition="78" endLine="156" endPosition="152" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1107292131483544841" fileName="RootDifferenceDialog.java" startLine="160" startPosition="23" endLine="161" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7617953927522682386" fileName="RootDifferenceDialog.java" startLine="162" startPosition="72" endLine="163" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7617953927522682398" fileName="RootDifferenceDialog.java" startLine="163" startPosition="81" endLine="164" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1885869163710647784" fileName="RootDifferenceDialog.java" startLine="168" startPosition="88" endLine="169" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="959738663751603400" fileName="RootDifferenceDialog.java" startLine="172" startPosition="29" endLine="173" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3395217057974244136" fileName="RootDifferenceDialog.java" startLine="173" startPosition="37" endLine="174" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3395217057974244140" fileName="RootDifferenceDialog.java" startLine="174" startPosition="40" endLine="175" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5277200897193740427" fileName="RootDifferenceDialog.java" startLine="175" startPosition="40" endLine="176" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="5277200897193755579" fileName="RootDifferenceDialog.java" startLine="177" startPosition="46" endLine="178" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3395217057974244148" fileName="RootDifferenceDialog.java" startLine="179" startPosition="5" endLine="180" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="3395217057974244182" fileName="RootDifferenceDialog.java" startLine="180" startPosition="0" endLine="181" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3395217057974244209" fileName="RootDifferenceDialog.java" startLine="181" startPosition="55" endLine="182" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3395217057974244188" fileName="RootDifferenceDialog.java" startLine="182" startPosition="55" endLine="183" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="3395217057974244202" fileName="RootDifferenceDialog.java" startLine="183" startPosition="0" endLine="184" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1372936221592711109" fileName="RootDifferenceDialog.java" startLine="189" startPosition="28" endLine="190" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7088622708994431705" fileName="RootDifferenceDialog.java" startLine="195" startPosition="43" endLine="196" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5104443509137867614" fileName="RootDifferenceDialog.java" startLine="200" startPosition="47" endLine="201" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5975262091085607317" fileName="RootDifferenceDialog.java" startLine="206" startPosition="22" endLine="207" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7088622708994435122" fileName="RootDifferenceDialog.java" startLine="207" startPosition="22" endLine="208" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7321181436050673786" fileName="RootDifferenceDialog.java" startLine="208" startPosition="39" endLine="209" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7321181436050673802" fileName="RootDifferenceDialog.java" startLine="209" startPosition="28" endLine="210" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7321181436050673794" fileName="RootDifferenceDialog.java" startLine="210" startPosition="25" endLine="211" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7321181436050673809" fileName="RootDifferenceDialog.java" startLine="211" startPosition="28" endLine="212" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1107292131483544820" fileName="RootDifferenceDialog.java" startLine="214" startPosition="51" endLine="215" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1107292131483544828" fileName="RootDifferenceDialog.java" startLine="217" startPosition="9" endLine="218" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1558573332373559487" fileName="RootDifferenceDialog.java" startLine="219" startPosition="5" endLine="220" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7088622708994435119" fileName="RootDifferenceDialog.java" startLine="220" startPosition="20" endLine="221" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1372936221592790790" fileName="RootDifferenceDialog.java" startLine="226" startPosition="51" endLine="227" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1372936221592790787" fileName="RootDifferenceDialog.java" startLine="228" startPosition="5" endLine="229" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2090008153514955117" fileName="RootDifferenceDialog.java" startLine="236" startPosition="50" endLine="237" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2090008153514841445" fileName="RootDifferenceDialog.java" startLine="237" startPosition="44" endLine="238" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2090008153514844402" fileName="RootDifferenceDialog.java" startLine="238" startPosition="16" endLine="239" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2090008153514841433" fileName="RootDifferenceDialog.java" startLine="243" startPosition="52" endLine="244" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2090008153514841439" fileName="RootDifferenceDialog.java" startLine="232" startPosition="76" endLine="234" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MyGoToNeighbourRootActions#()V" />
-    <nodeInfo nodeId="4124845871897267933" fileName="RootDifferenceDialog.java" startLine="176" startPosition="0" endLine="179" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1372936221592790755" fileName="RootDifferenceDialog.java" startLine="225" startPosition="48" endLine="228" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7088622708994282568" fileName="RootDifferenceDialog.java" startLine="59" startPosition="0" endLine="63" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="RootDifferenceDialog#(Ljetbrains/mps/vcs/diff/ui/ModelDifferenceDialog;Ljetbrains/mps/smodel/SNodeId;Ljava/lang/String;)V" />
-    <nodeInfo nodeId="2090008153514954345" fileName="RootDifferenceDialog.java" startLine="64" startPosition="0" endLine="68" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="RootDifferenceDialog#(Ljetbrains/mps/vcs/diff/ui/ModelDifferenceDialog;Ljetbrains/mps/smodel/SNodeId;Ljava/lang/String;Ljava/awt/Frame;)V" />
-    <nodeInfo nodeId="9000192670931887736" fileName="RootDifferenceDialog.java" startLine="86" startPosition="278" endLine="90" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getRoots#()[Ljetbrains/mps/smodel/SNodeId;" />
-    <nodeInfo nodeId="9000192670931887741" fileName="RootDifferenceDialog.java" startLine="90" startPosition="0" endLine="94" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="after#()V" />
-    <nodeInfo nodeId="5754859358505295903" fileName="RootDifferenceDialog.java" startLine="130" startPosition="94" endLine="134" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visit#(Ljetbrains/mps/vcs/diff/ui/common/ChangeGroupBuilder;)V" />
-    <nodeInfo nodeId="1885869163710647725" fileName="RootDifferenceDialog.java" startLine="135" startPosition="0" endLine="139" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="4644674181061513622" fileName="RootDifferenceDialog.java" startLine="143" startPosition="89" endLine="147" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7253789755339706870" fileName="RootDifferenceDialog.java" startLine="156" startPosition="152" endLine="160" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3081893430675670388" fileName="RootDifferenceDialog.java" startLine="161" startPosition="63" endLine="165" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1885869163710647780" fileName="RootDifferenceDialog.java" startLine="167" startPosition="0" endLine="171" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="higlightChange#(Ljetbrains/mps/vcs/diff/ui/common/DiffEditor;Ljetbrains/mps/smodel/SModel;Ljetbrains/mps/vcs/diff/changes/ModelChange;)V" />
-    <nodeInfo nodeId="1372936221592711107" fileName="RootDifferenceDialog.java" startLine="188" startPosition="77" endLine="192" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#()V" />
-    <nodeInfo nodeId="7088622708994431698" fileName="RootDifferenceDialog.java" startLine="194" startPosition="0" endLine="198" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getMainComponent#()Ljavax/swing/JComponent;" />
-    <nodeInfo nodeId="1107292131483544816" fileName="RootDifferenceDialog.java" startLine="213" startPosition="94" endLine="217" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visit#(Ljetbrains/mps/vcs/diff/ui/common/ChangeTrapeciumStrip;)V" />
-    <nodeInfo nodeId="2444696440332094004" fileName="RootDifferenceDialog.java" startLine="106" startPosition="0" endLine="111" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDefaultDimensionSettings#()Ljetbrains/mps/ide/dialogs/DialogDimensionsSettings/DialogDimensions;" />
-    <nodeInfo nodeId="5754859358505295899" fileName="RootDifferenceDialog.java" startLine="129" startPosition="38" endLine="134" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1372936221592711082" fileName="RootDifferenceDialog.java" startLine="187" startPosition="67" endLine="192" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5104443509137865634" fileName="RootDifferenceDialog.java" startLine="198" startPosition="0" endLine="203" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDisposeOnEscapeCondition#()I" />
-    <nodeInfo nodeId="1107292131483544809" fileName="RootDifferenceDialog.java" startLine="212" startPosition="25" endLine="217" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2090008153514841426" fileName="RootDifferenceDialog.java" startLine="241" startPosition="0" endLine="246" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNeighbourId#(Z)Ljetbrains/mps/smodel/SNodeId;" />
-    <nodeInfo nodeId="2090008153514841412" fileName="RootDifferenceDialog.java" startLine="235" startPosition="0" endLine="241" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="goTo#(Ljetbrains/mps/smodel/SNodeId;)V" />
-    <nodeInfo nodeId="7088622708994425227" fileName="RootDifferenceDialog.java" startLine="114" startPosition="0" endLine="121" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2638118297328199953" fileName="RootDifferenceDialog.java" startLine="186" startPosition="0" endLine="194" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="rollbackChanges#(Ljava/lang/Iterable;)V" />
-    <nodeInfo nodeId="1372936221592790743" fileName="RootDifferenceDialog.java" startLine="223" startPosition="0" endLine="231" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getData#(Ljava/lang/String;)Ljava/lang/Object;" />
-    <nodeInfo nodeId="2090008153514954303" fileName="RootDifferenceDialog.java" startLine="85" startPosition="125" endLine="94" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1558573332373559499" fileName="RootDifferenceDialog.java" startLine="205" startPosition="25" endLine="219" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3395217057974244132" fileName="RootDifferenceDialog.java" startLine="171" startPosition="0" endLine="186" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="rehighlight#()V" />
-    <nodeInfo nodeId="7088622708994425202" fileName="RootDifferenceDialog.java" startLine="111" startPosition="0" endLine="128" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addEditor#(ILjetbrains/mps/smodel/SModel;)Ljetbrains/mps/vcs/diff/ui/common/DiffEditor;" />
-    <nodeInfo nodeId="7253789755339706803" fileName="RootDifferenceDialog.java" startLine="149" startPosition="0" endLine="167" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="linkEditors#(Z)V" />
-    <nodeInfo nodeId="7088622708994435114" fileName="RootDifferenceDialog.java" startLine="203" startPosition="0" endLine="223" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="dispose#()V" />
-    <nodeInfo nodeId="1885869163710647721" fileName="RootDifferenceDialog.java" startLine="128" startPosition="0" endLine="149" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="highlightAllChanges#()V" />
-    <nodeInfo nodeId="2090008153514954251" fileName="RootDifferenceDialog.java" startLine="69" startPosition="0" endLine="106" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="init#(Ljetbrains/mps/vcs/diff/ui/ModelDifferenceDialog;Ljetbrains/mps/smodel/SNodeId;)V" />
-    <scopeInfo nodeId="2090008153514841442" fileName="RootDifferenceDialog.java" startLine="233" startPosition="41" endLine="233" endPosition="41" />
-    <scopeInfo nodeId="9000192670931887740" fileName="RootDifferenceDialog.java" startLine="87" startPosition="38" endLine="88" endPosition="39" />
-    <scopeInfo nodeId="9000192670931887744" fileName="RootDifferenceDialog.java" startLine="91" startPosition="30" endLine="92" endPosition="22" />
-    <scopeInfo nodeId="2444696440332094007" fileName="RootDifferenceDialog.java" startLine="108" startPosition="82" endLine="109" endPosition="73" />
-    <scopeInfo nodeId="5754859358505295904" fileName="RootDifferenceDialog.java" startLine="131" startPosition="47" endLine="132" endPosition="23" />
-    <scopeInfo nodeId="1885869163710647783" fileName="RootDifferenceDialog.java" startLine="168" startPosition="88" endLine="169" endPosition="52" />
-    <scopeInfo nodeId="4124845871897267934" fileName="RootDifferenceDialog.java" startLine="177" startPosition="46" endLine="178" endPosition="109" />
-    <scopeInfo nodeId="1372936221592711108" fileName="RootDifferenceDialog.java" startLine="189" startPosition="28" endLine="190" endPosition="22" />
-    <scopeInfo nodeId="7088622708994431701" fileName="RootDifferenceDialog.java" startLine="195" startPosition="43" endLine="196" endPosition="23" />
-    <scopeInfo nodeId="5104443509137865637" fileName="RootDifferenceDialog.java" startLine="200" startPosition="47" endLine="201" endPosition="45" />
-    <scopeInfo nodeId="1107292131483544817" fileName="RootDifferenceDialog.java" startLine="214" startPosition="51" endLine="215" endPosition="22" />
-    <scopeInfo nodeId="1372936221592790759" fileName="RootDifferenceDialog.java" startLine="226" startPosition="51" endLine="227" endPosition="40" />
-    <scopeInfo nodeId="2090008153514841432" fileName="RootDifferenceDialog.java" startLine="243" startPosition="52" endLine="244" endPosition="60" />
-    <scopeInfo nodeId="7088622708994282572" fileName="RootDifferenceDialog.java" startLine="60" startPosition="99" endLine="62" endPosition="30" />
-    <scopeInfo nodeId="2090008153514954348" fileName="RootDifferenceDialog.java" startLine="65" startPosition="112" endLine="67" endPosition="30" />
-    <scopeInfo nodeId="1885869163710647731" fileName="RootDifferenceDialog.java" startLine="136" startPosition="97" endLine="138" endPosition="86" />
-    <scopeInfo nodeId="3081893430675670389" fileName="RootDifferenceDialog.java" startLine="162" startPosition="72" endLine="164" endPosition="81" />
-    <scopeInfo nodeId="2090008153514841439" fileName="RootDifferenceDialog.java" startLine="232" startPosition="76" endLine="234" endPosition="5" />
-    <scopeInfo nodeId="2090008153514841418" fileName="RootDifferenceDialog.java" startLine="236" startPosition="50" endLine="239" endPosition="49" />
-    <scopeInfo nodeId="7088622708994282568" fileName="RootDifferenceDialog.java" startLine="59" startPosition="0" endLine="63" endPosition="3">
+    <nodeInfo nodeId="7088622708994282560" fileName="RootDifferenceDialog.java" startLine="50" startPosition="78" endLine="51" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myModelDialog" />
+    <nodeInfo nodeId="7088622708994282564" fileName="RootDifferenceDialog.java" startLine="51" startPosition="46" endLine="52" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myRootId" />
+    <nodeInfo nodeId="7088622708994282612" fileName="RootDifferenceDialog.java" startLine="52" startPosition="27" endLine="53" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myOldEditor" />
+    <nodeInfo nodeId="7088622708994282616" fileName="RootDifferenceDialog.java" startLine="53" startPosition="33" endLine="54" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNewEditor" />
+    <nodeInfo nodeId="7253789755339766808" fileName="RootDifferenceDialog.java" startLine="54" startPosition="33" endLine="55" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myChangeGroupLayouts" />
+    <nodeInfo nodeId="1107292131483544787" fileName="RootDifferenceDialog.java" startLine="55" startPosition="115" endLine="56" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myEditorSeparators" />
+    <nodeInfo nodeId="7088622708994425327" fileName="RootDifferenceDialog.java" startLine="56" startPosition="117" endLine="57" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myDiffEditorsGroup" />
+    <nodeInfo nodeId="7088622708994425308" fileName="RootDifferenceDialog.java" startLine="57" startPosition="71" endLine="58" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myTopPanel" />
+    <nodeInfo nodeId="7088622708994425320" fileName="RootDifferenceDialog.java" startLine="58" startPosition="62" endLine="59" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myBottomPanel" />
+    <nodeInfo nodeId="7088622708994425559" fileName="RootDifferenceDialog.java" startLine="59" startPosition="65" endLine="60" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myContainer" />
+    <nodeInfo nodeId="4644674181061501565" fileName="RootDifferenceDialog.java" startLine="60" startPosition="62" endLine="61" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myStatusBar" />
+    <nodeInfo nodeId="1558573332373557509" fileName="RootDifferenceDialog.java" startLine="61" startPosition="81" endLine="62" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myClosed" />
+    <nodeInfo nodeId="7088622708994282573" fileName="RootDifferenceDialog.java" startLine="64" startPosition="129" endLine="65" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="2090008153514954343" fileName="RootDifferenceDialog.java" startLine="65" startPosition="53" endLine="66" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2090008153514954349" fileName="RootDifferenceDialog.java" startLine="69" startPosition="142" endLine="70" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="2090008153514954362" fileName="RootDifferenceDialog.java" startLine="70" startPosition="47" endLine="71" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2090008153514954394" fileName="RootDifferenceDialog.java" startLine="74" startPosition="108" endLine="75" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="2090008153514954379" fileName="RootDifferenceDialog.java" startLine="75" startPosition="104" endLine="76" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2090008153514954383" fileName="RootDifferenceDialog.java" startLine="76" startPosition="32" endLine="77" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2090008153514954378" fileName="RootDifferenceDialog.java" startLine="77" startPosition="22" endLine="78" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="2090008153514954256" fileName="RootDifferenceDialog.java" startLine="78" startPosition="0" endLine="79" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2090008153514954266" fileName="RootDifferenceDialog.java" startLine="79" startPosition="75" endLine="80" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2090008153514954276" fileName="RootDifferenceDialog.java" startLine="80" startPosition="75" endLine="81" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="2090008153514954277" fileName="RootDifferenceDialog.java" startLine="81" startPosition="0" endLine="82" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2090008153514954280" fileName="RootDifferenceDialog.java" startLine="82" startPosition="22" endLine="83" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2090008153514954283" fileName="RootDifferenceDialog.java" startLine="83" startPosition="23" endLine="84" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="2090008153514954284" fileName="RootDifferenceDialog.java" startLine="84" startPosition="0" endLine="85" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2090008153514954292" fileName="RootDifferenceDialog.java" startLine="85" startPosition="96" endLine="86" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2090008153514954297" fileName="RootDifferenceDialog.java" startLine="86" startPosition="35" endLine="87" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="2090008153514954298" fileName="RootDifferenceDialog.java" startLine="87" startPosition="0" endLine="88" endPosition="125" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5754859358505297887" fileName="RootDifferenceDialog.java" startLine="88" startPosition="125" endLine="89" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="9000192670931887745" fileName="RootDifferenceDialog.java" startLine="91" startPosition="38" endLine="92" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="9000192670931888483" fileName="RootDifferenceDialog.java" startLine="95" startPosition="30" endLine="96" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2090008153514954313" fileName="RootDifferenceDialog.java" startLine="98" startPosition="7" endLine="99" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5754859358505297905" fileName="RootDifferenceDialog.java" startLine="99" startPosition="117" endLine="100" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2090008153514954326" fileName="RootDifferenceDialog.java" startLine="100" startPosition="49" endLine="101" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="2090008153514954327" fileName="RootDifferenceDialog.java" startLine="101" startPosition="0" endLine="102" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2090008153514954335" fileName="RootDifferenceDialog.java" startLine="102" startPosition="64" endLine="103" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4644674181061433761" fileName="RootDifferenceDialog.java" startLine="103" startPosition="52" endLine="104" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4644674181061433760" fileName="RootDifferenceDialog.java" startLine="104" startPosition="53" endLine="105" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="2090008153514954341" fileName="RootDifferenceDialog.java" startLine="105" startPosition="0" endLine="106" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1607065509089621052" fileName="RootDifferenceDialog.java" startLine="106" startPosition="26" endLine="107" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="4652592318748341025" fileName="RootDifferenceDialog.java" startLine="110" startPosition="27" endLine="111" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1607065509089621045" fileName="RootDifferenceDialog.java" startLine="114" startPosition="12" endLine="115" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2444696440332094012" fileName="RootDifferenceDialog.java" startLine="120" startPosition="82" endLine="121" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7088622708994425210" fileName="RootDifferenceDialog.java" startLine="124" startPosition="57" endLine="125" endPosition="203" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7088622708994425226" fileName="RootDifferenceDialog.java" startLine="125" startPosition="203" endLine="126" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="7088622708994425260" fileName="RootDifferenceDialog.java" startLine="133" startPosition="14" endLine="134" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7088622708994425268" fileName="RootDifferenceDialog.java" startLine="134" startPosition="50" endLine="135" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7088622708994425278" fileName="RootDifferenceDialog.java" startLine="135" startPosition="73" endLine="136" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="7088622708994425279" fileName="RootDifferenceDialog.java" startLine="136" startPosition="0" endLine="137" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7088622708994425284" fileName="RootDifferenceDialog.java" startLine="137" startPosition="35" endLine="138" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5754859358505295905" fileName="RootDifferenceDialog.java" startLine="143" startPosition="46" endLine="144" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1885869163710647734" fileName="RootDifferenceDialog.java" startLine="147" startPosition="97" endLine="148" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1885869163710708426" fileName="RootDifferenceDialog.java" startLine="148" startPosition="86" endLine="149" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="712591095325278170" fileName="RootDifferenceDialog.java" startLine="152" startPosition="46" endLine="153" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="712591095325278163" fileName="RootDifferenceDialog.java" startLine="155" startPosition="7" endLine="156" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="1885869163710708437" fileName="RootDifferenceDialog.java" startLine="156" startPosition="0" endLine="157" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1885869163710708444" fileName="RootDifferenceDialog.java" startLine="157" startPosition="50" endLine="158" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4644674181061513620" fileName="RootDifferenceDialog.java" startLine="158" startPosition="50" endLine="159" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="4644674181061513674" fileName="RootDifferenceDialog.java" startLine="159" startPosition="0" endLine="160" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7253789755339706811" fileName="RootDifferenceDialog.java" startLine="167" startPosition="47" endLine="168" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="7253789755339706813" fileName="RootDifferenceDialog.java" startLine="168" startPosition="78" endLine="169" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="7253789755339706815" fileName="RootDifferenceDialog.java" startLine="169" startPosition="97" endLine="170" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1995253788898152037" fileName="RootDifferenceDialog.java" startLine="170" startPosition="130" endLine="171" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7253789755339706821" fileName="RootDifferenceDialog.java" startLine="171" startPosition="49" endLine="172" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7253789755339706826" fileName="RootDifferenceDialog.java" startLine="172" startPosition="67" endLine="173" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7253789755339768318" fileName="RootDifferenceDialog.java" startLine="173" startPosition="68" endLine="174" endPosition="152" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1107292131483544841" fileName="RootDifferenceDialog.java" startLine="178" startPosition="27" endLine="179" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7617953927522682386" fileName="RootDifferenceDialog.java" startLine="180" startPosition="72" endLine="181" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7617953927522682398" fileName="RootDifferenceDialog.java" startLine="181" startPosition="69" endLine="182" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1885869163710647784" fileName="RootDifferenceDialog.java" startLine="186" startPosition="88" endLine="187" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="959738663751603400" fileName="RootDifferenceDialog.java" startLine="190" startPosition="29" endLine="191" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3395217057974244136" fileName="RootDifferenceDialog.java" startLine="191" startPosition="37" endLine="192" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3395217057974244140" fileName="RootDifferenceDialog.java" startLine="192" startPosition="40" endLine="193" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5277200897193740427" fileName="RootDifferenceDialog.java" startLine="193" startPosition="40" endLine="194" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="5277200897193755579" fileName="RootDifferenceDialog.java" startLine="195" startPosition="46" endLine="196" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3395217057974244148" fileName="RootDifferenceDialog.java" startLine="197" startPosition="5" endLine="198" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="3395217057974244182" fileName="RootDifferenceDialog.java" startLine="198" startPosition="0" endLine="199" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3395217057974244209" fileName="RootDifferenceDialog.java" startLine="199" startPosition="55" endLine="200" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3395217057974244188" fileName="RootDifferenceDialog.java" startLine="200" startPosition="55" endLine="201" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="3395217057974244202" fileName="RootDifferenceDialog.java" startLine="201" startPosition="0" endLine="202" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1372936221592711109" fileName="RootDifferenceDialog.java" startLine="207" startPosition="28" endLine="208" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7088622708994431705" fileName="RootDifferenceDialog.java" startLine="213" startPosition="43" endLine="214" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5104443509137867614" fileName="RootDifferenceDialog.java" startLine="218" startPosition="47" endLine="219" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5975262091085607317" fileName="RootDifferenceDialog.java" startLine="224" startPosition="22" endLine="225" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7088622708994435122" fileName="RootDifferenceDialog.java" startLine="225" startPosition="22" endLine="226" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7321181436050673786" fileName="RootDifferenceDialog.java" startLine="226" startPosition="39" endLine="227" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7321181436050673802" fileName="RootDifferenceDialog.java" startLine="227" startPosition="28" endLine="228" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7321181436050673794" fileName="RootDifferenceDialog.java" startLine="228" startPosition="25" endLine="229" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7321181436050673809" fileName="RootDifferenceDialog.java" startLine="229" startPosition="28" endLine="230" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1107292131483544820" fileName="RootDifferenceDialog.java" startLine="232" startPosition="50" endLine="233" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1107292131483544828" fileName="RootDifferenceDialog.java" startLine="235" startPosition="9" endLine="236" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1558573332373559487" fileName="RootDifferenceDialog.java" startLine="237" startPosition="5" endLine="238" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7088622708994435119" fileName="RootDifferenceDialog.java" startLine="238" startPosition="20" endLine="239" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1372936221592790790" fileName="RootDifferenceDialog.java" startLine="244" startPosition="51" endLine="245" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1372936221592790787" fileName="RootDifferenceDialog.java" startLine="246" startPosition="5" endLine="247" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2090008153514955117" fileName="RootDifferenceDialog.java" startLine="254" startPosition="50" endLine="255" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2090008153514841445" fileName="RootDifferenceDialog.java" startLine="255" startPosition="44" endLine="256" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2090008153514844402" fileName="RootDifferenceDialog.java" startLine="256" startPosition="16" endLine="257" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2090008153514841433" fileName="RootDifferenceDialog.java" startLine="261" startPosition="52" endLine="262" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2344626378399205563" fileName="RootDifferenceDialog.java" startLine="114" startPosition="10" endLine="116" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2090008153514841439" fileName="RootDifferenceDialog.java" startLine="250" startPosition="76" endLine="252" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MyGoToNeighbourRootActions#()V" />
+    <nodeInfo nodeId="4124845871897267933" fileName="RootDifferenceDialog.java" startLine="194" startPosition="0" endLine="197" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1372936221592790755" fileName="RootDifferenceDialog.java" startLine="243" startPosition="48" endLine="246" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7088622708994282568" fileName="RootDifferenceDialog.java" startLine="63" startPosition="0" endLine="67" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="RootDifferenceDialog#(Ljetbrains/mps/vcs/diff/ui/ModelDifferenceDialog;Ljetbrains/mps/smodel/SNodeId;Ljava/lang/String;Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_0;)V" />
+    <nodeInfo nodeId="2090008153514954345" fileName="RootDifferenceDialog.java" startLine="68" startPosition="0" endLine="72" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="RootDifferenceDialog#(Ljetbrains/mps/vcs/diff/ui/ModelDifferenceDialog;Ljetbrains/mps/smodel/SNodeId;Ljava/lang/String;Ljava/awt/Frame;Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_0;)V" />
+    <nodeInfo nodeId="9000192670931887736" fileName="RootDifferenceDialog.java" startLine="90" startPosition="278" endLine="94" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getRoots#()[Ljetbrains/mps/smodel/SNodeId;" />
+    <nodeInfo nodeId="9000192670931887741" fileName="RootDifferenceDialog.java" startLine="94" startPosition="0" endLine="98" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="after#()V" />
+    <nodeInfo nodeId="4652592318748341023" fileName="RootDifferenceDialog.java" startLine="109" startPosition="49" endLine="113" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="5754859358505295903" fileName="RootDifferenceDialog.java" startLine="142" startPosition="92" endLine="146" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visit#(Ljetbrains/mps/vcs/diff/ui/common/ChangeGroupLayout;)V" />
+    <nodeInfo nodeId="1885869163710647725" fileName="RootDifferenceDialog.java" startLine="146" startPosition="7" endLine="150" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="712591095325278168" fileName="RootDifferenceDialog.java" startLine="151" startPosition="92" endLine="155" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visit#(Ljetbrains/mps/vcs/diff/ui/common/ChangeGroupLayout;)V" />
+    <nodeInfo nodeId="4644674181061513622" fileName="RootDifferenceDialog.java" startLine="160" startPosition="89" endLine="164" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7253789755339706870" fileName="RootDifferenceDialog.java" startLine="174" startPosition="152" endLine="178" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3081893430675670388" fileName="RootDifferenceDialog.java" startLine="179" startPosition="68" endLine="183" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1885869163710647780" fileName="RootDifferenceDialog.java" startLine="185" startPosition="0" endLine="189" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="higlightChange#(Ljetbrains/mps/vcs/diff/ui/common/DiffEditor;Ljetbrains/mps/smodel/SModel;Ljetbrains/mps/vcs/diff/changes/ModelChange;)V" />
+    <nodeInfo nodeId="1372936221592711107" fileName="RootDifferenceDialog.java" startLine="206" startPosition="77" endLine="210" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#()V" />
+    <nodeInfo nodeId="7088622708994431698" fileName="RootDifferenceDialog.java" startLine="212" startPosition="0" endLine="216" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getMainComponent#()Ljavax/swing/JComponent;" />
+    <nodeInfo nodeId="1107292131483544816" fileName="RootDifferenceDialog.java" startLine="231" startPosition="94" endLine="235" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visit#(Ljetbrains/mps/vcs/diff/ui/common/DiffEditorSeparator;)V" />
+    <nodeInfo nodeId="4652592318748341021" fileName="RootDifferenceDialog.java" startLine="108" startPosition="30" endLine="113" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2444696440332094004" fileName="RootDifferenceDialog.java" startLine="118" startPosition="0" endLine="123" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDefaultDimensionSettings#()Ljetbrains/mps/ide/dialogs/DialogDimensionsSettings/DialogDimensions;" />
+    <nodeInfo nodeId="5754859358505295899" fileName="RootDifferenceDialog.java" startLine="141" startPosition="38" endLine="146" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="712591095325278164" fileName="RootDifferenceDialog.java" startLine="150" startPosition="5" endLine="155" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1372936221592711082" fileName="RootDifferenceDialog.java" startLine="205" startPosition="67" endLine="210" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5104443509137865634" fileName="RootDifferenceDialog.java" startLine="216" startPosition="0" endLine="221" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDisposeOnEscapeCondition#()I" />
+    <nodeInfo nodeId="1107292131483544809" fileName="RootDifferenceDialog.java" startLine="230" startPosition="25" endLine="235" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2090008153514841426" fileName="RootDifferenceDialog.java" startLine="259" startPosition="0" endLine="264" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNeighbourId#(Z)Ljetbrains/mps/smodel/SNodeId;" />
+    <nodeInfo nodeId="2090008153514841412" fileName="RootDifferenceDialog.java" startLine="253" startPosition="0" endLine="259" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="goTo#(Ljetbrains/mps/smodel/SNodeId;)V" />
+    <nodeInfo nodeId="7088622708994425227" fileName="RootDifferenceDialog.java" startLine="126" startPosition="0" endLine="133" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2638118297328199953" fileName="RootDifferenceDialog.java" startLine="204" startPosition="0" endLine="212" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="rollbackChanges#(Ljava/lang/Iterable;)V" />
+    <nodeInfo nodeId="1372936221592790743" fileName="RootDifferenceDialog.java" startLine="241" startPosition="0" endLine="249" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getData#(Ljava/lang/String;)Ljava/lang/Object;" />
+    <nodeInfo nodeId="2090008153514954303" fileName="RootDifferenceDialog.java" startLine="89" startPosition="130" endLine="98" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2344626378399205550" fileName="RootDifferenceDialog.java" startLine="107" startPosition="0" endLine="116" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1558573332373559499" fileName="RootDifferenceDialog.java" startLine="223" startPosition="25" endLine="237" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3395217057974244132" fileName="RootDifferenceDialog.java" startLine="189" startPosition="0" endLine="204" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="rehighlight#()V" />
+    <nodeInfo nodeId="7088622708994425202" fileName="RootDifferenceDialog.java" startLine="123" startPosition="0" endLine="140" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addEditor#(ILjetbrains/mps/smodel/SModel;)Ljetbrains/mps/vcs/diff/ui/common/DiffEditor;" />
+    <nodeInfo nodeId="7253789755339706803" fileName="RootDifferenceDialog.java" startLine="166" startPosition="0" endLine="185" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="linkEditors#(Z)V" />
+    <nodeInfo nodeId="7088622708994435114" fileName="RootDifferenceDialog.java" startLine="221" startPosition="0" endLine="241" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="dispose#()V" />
+    <nodeInfo nodeId="1885869163710647721" fileName="RootDifferenceDialog.java" startLine="140" startPosition="0" endLine="166" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="highlightAllChanges#()V" />
+    <nodeInfo nodeId="2090008153514954251" fileName="RootDifferenceDialog.java" startLine="73" startPosition="0" endLine="118" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="init#(Ljetbrains/mps/vcs/diff/ui/ModelDifferenceDialog;Ljetbrains/mps/smodel/SNodeId;Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_0;)V" />
+    <scopeInfo nodeId="2090008153514841442" fileName="RootDifferenceDialog.java" startLine="251" startPosition="41" endLine="251" endPosition="41" />
+    <scopeInfo nodeId="9000192670931887740" fileName="RootDifferenceDialog.java" startLine="91" startPosition="38" endLine="92" endPosition="39" />
+    <scopeInfo nodeId="9000192670931887744" fileName="RootDifferenceDialog.java" startLine="95" startPosition="30" endLine="96" endPosition="22" />
+    <scopeInfo nodeId="4652592318748341024" fileName="RootDifferenceDialog.java" startLine="110" startPosition="27" endLine="111" endPosition="53" />
+    <scopeInfo nodeId="2344626378399205564" fileName="RootDifferenceDialog.java" startLine="114" startPosition="12" endLine="115" endPosition="48" />
+    <scopeInfo nodeId="2444696440332094007" fileName="RootDifferenceDialog.java" startLine="120" startPosition="82" endLine="121" endPosition="73" />
+    <scopeInfo nodeId="5754859358505295904" fileName="RootDifferenceDialog.java" startLine="143" startPosition="46" endLine="144" endPosition="23" />
+    <scopeInfo nodeId="712591095325278169" fileName="RootDifferenceDialog.java" startLine="152" startPosition="46" endLine="153" endPosition="23" />
+    <scopeInfo nodeId="1885869163710647783" fileName="RootDifferenceDialog.java" startLine="186" startPosition="88" endLine="187" endPosition="52" />
+    <scopeInfo nodeId="4124845871897267934" fileName="RootDifferenceDialog.java" startLine="195" startPosition="46" endLine="196" endPosition="109" />
+    <scopeInfo nodeId="1372936221592711108" fileName="RootDifferenceDialog.java" startLine="207" startPosition="28" endLine="208" endPosition="22" />
+    <scopeInfo nodeId="7088622708994431701" fileName="RootDifferenceDialog.java" startLine="213" startPosition="43" endLine="214" endPosition="23" />
+    <scopeInfo nodeId="5104443509137865637" fileName="RootDifferenceDialog.java" startLine="218" startPosition="47" endLine="219" endPosition="45" />
+    <scopeInfo nodeId="1107292131483544817" fileName="RootDifferenceDialog.java" startLine="232" startPosition="50" endLine="233" endPosition="22" />
+    <scopeInfo nodeId="1372936221592790759" fileName="RootDifferenceDialog.java" startLine="244" startPosition="51" endLine="245" endPosition="40" />
+    <scopeInfo nodeId="2090008153514841432" fileName="RootDifferenceDialog.java" startLine="261" startPosition="52" endLine="262" endPosition="60" />
+    <scopeInfo nodeId="7088622708994282572" fileName="RootDifferenceDialog.java" startLine="64" startPosition="129" endLine="66" endPosition="43" />
+    <scopeInfo nodeId="2090008153514954348" fileName="RootDifferenceDialog.java" startLine="69" startPosition="142" endLine="71" endPosition="43" />
+    <scopeInfo nodeId="1885869163710647731" fileName="RootDifferenceDialog.java" startLine="147" startPosition="97" endLine="149" endPosition="86" />
+    <scopeInfo nodeId="3081893430675670389" fileName="RootDifferenceDialog.java" startLine="180" startPosition="72" endLine="182" endPosition="69" />
+    <scopeInfo nodeId="2090008153514841439" fileName="RootDifferenceDialog.java" startLine="250" startPosition="76" endLine="252" endPosition="5" />
+    <scopeInfo nodeId="2090008153514841418" fileName="RootDifferenceDialog.java" startLine="254" startPosition="50" endLine="257" endPosition="49" />
+    <scopeInfo nodeId="7088622708994282568" fileName="RootDifferenceDialog.java" startLine="63" startPosition="0" endLine="67" endPosition="3">
+      <varInfo nodeId="2344626378399203562" varName="firstChange" />
       <varInfo nodeId="7088622708994282582" varName="modelDialog" />
       <varInfo nodeId="7088622708994282591" varName="rootId" />
       <varInfo nodeId="7088622708994282606" varName="rootName" />
     </scopeInfo>
-    <scopeInfo nodeId="2090008153514954345" fileName="RootDifferenceDialog.java" startLine="64" startPosition="0" endLine="68" endPosition="3">
+    <scopeInfo nodeId="2090008153514954345" fileName="RootDifferenceDialog.java" startLine="68" startPosition="0" endLine="72" endPosition="3">
+      <varInfo nodeId="2344626378399205533" varName="firstChange" />
       <varInfo nodeId="2090008153514954370" varName="frame" />
       <varInfo nodeId="2090008153514954364" varName="modelDialog" />
       <varInfo nodeId="2090008153514954366" varName="rootId" />
       <varInfo nodeId="2090008153514954368" varName="rootName" />
     </scopeInfo>
-    <scopeInfo nodeId="9000192670931887736" fileName="RootDifferenceDialog.java" startLine="86" startPosition="278" endLine="90" endPosition="0" />
-    <scopeInfo nodeId="9000192670931887741" fileName="RootDifferenceDialog.java" startLine="90" startPosition="0" endLine="94" endPosition="0" />
-    <scopeInfo nodeId="5754859358505295903" fileName="RootDifferenceDialog.java" startLine="130" startPosition="94" endLine="134" endPosition="0">
+    <scopeInfo nodeId="9000192670931887736" fileName="RootDifferenceDialog.java" startLine="90" startPosition="278" endLine="94" endPosition="0" />
+    <scopeInfo nodeId="9000192670931887741" fileName="RootDifferenceDialog.java" startLine="94" startPosition="0" endLine="98" endPosition="0" />
+    <scopeInfo nodeId="4652592318748341023" fileName="RootDifferenceDialog.java" startLine="109" startPosition="49" endLine="113" endPosition="0" />
+    <scopeInfo nodeId="5754859358505295903" fileName="RootDifferenceDialog.java" startLine="142" startPosition="92" endLine="146" endPosition="0">
       <varInfo nodeId="5754859358505295903" varName="b" />
     </scopeInfo>
-    <scopeInfo nodeId="1885869163710647725" fileName="RootDifferenceDialog.java" startLine="135" startPosition="0" endLine="139" endPosition="5">
+    <scopeInfo nodeId="1885869163710647725" fileName="RootDifferenceDialog.java" startLine="146" startPosition="7" endLine="150" endPosition="5">
       <varInfo nodeId="1885869163710647725" varName="change" />
     </scopeInfo>
-    <scopeInfo nodeId="1885869163710647780" fileName="RootDifferenceDialog.java" startLine="167" startPosition="0" endLine="171" endPosition="0">
+    <scopeInfo nodeId="712591095325278168" fileName="RootDifferenceDialog.java" startLine="151" startPosition="92" endLine="155" endPosition="0">
+      <varInfo nodeId="712591095325278168" varName="b" />
+    </scopeInfo>
+    <scopeInfo nodeId="1885869163710647780" fileName="RootDifferenceDialog.java" startLine="185" startPosition="0" endLine="189" endPosition="0">
       <varInfo nodeId="1885869163710647811" varName="change" />
       <varInfo nodeId="1885869163710647807" varName="diffEditor" />
       <varInfo nodeId="1885869163710647809" varName="model" />
     </scopeInfo>
-    <scopeInfo nodeId="1372936221592711107" fileName="RootDifferenceDialog.java" startLine="188" startPosition="77" endLine="192" endPosition="0" />
-    <scopeInfo nodeId="7088622708994431698" fileName="RootDifferenceDialog.java" startLine="194" startPosition="0" endLine="198" endPosition="0" />
-    <scopeInfo nodeId="1107292131483544816" fileName="RootDifferenceDialog.java" startLine="213" startPosition="94" endLine="217" endPosition="0">
+    <scopeInfo nodeId="1372936221592711107" fileName="RootDifferenceDialog.java" startLine="206" startPosition="77" endLine="210" endPosition="0" />
+    <scopeInfo nodeId="7088622708994431698" fileName="RootDifferenceDialog.java" startLine="212" startPosition="0" endLine="216" endPosition="0" />
+    <scopeInfo nodeId="1107292131483544816" fileName="RootDifferenceDialog.java" startLine="231" startPosition="94" endLine="235" endPosition="0">
       <varInfo nodeId="1107292131483544816" varName="s" />
     </scopeInfo>
-    <scopeInfo nodeId="1372936221592790750" fileName="RootDifferenceDialog.java" startLine="225" startPosition="48" endLine="229" endPosition="16" />
-    <scopeInfo nodeId="2444696440332094004" fileName="RootDifferenceDialog.java" startLine="106" startPosition="0" endLine="111" endPosition="0" />
-    <scopeInfo nodeId="2638118297328199956" fileName="RootDifferenceDialog.java" startLine="187" startPosition="67" endLine="192" endPosition="7" />
-    <scopeInfo nodeId="5104443509137865634" fileName="RootDifferenceDialog.java" startLine="198" startPosition="0" endLine="203" endPosition="0" />
-    <scopeInfo nodeId="2090008153514841426" fileName="RootDifferenceDialog.java" startLine="241" startPosition="0" endLine="246" endPosition="0">
+    <scopeInfo nodeId="1372936221592790750" fileName="RootDifferenceDialog.java" startLine="243" startPosition="48" endLine="247" endPosition="16" />
+    <scopeInfo nodeId="2344626378399205551" fileName="RootDifferenceDialog.java" startLine="108" startPosition="30" endLine="113" endPosition="9" />
+    <scopeInfo nodeId="2444696440332094004" fileName="RootDifferenceDialog.java" startLine="118" startPosition="0" endLine="123" endPosition="0" />
+    <scopeInfo nodeId="2638118297328199956" fileName="RootDifferenceDialog.java" startLine="205" startPosition="67" endLine="210" endPosition="7" />
+    <scopeInfo nodeId="5104443509137865634" fileName="RootDifferenceDialog.java" startLine="216" startPosition="0" endLine="221" endPosition="0" />
+    <scopeInfo nodeId="2090008153514841426" fileName="RootDifferenceDialog.java" startLine="259" startPosition="0" endLine="264" endPosition="0">
       <varInfo nodeId="2090008153514841427" varName="next" />
     </scopeInfo>
-    <scopeInfo nodeId="2090008153514841412" fileName="RootDifferenceDialog.java" startLine="235" startPosition="0" endLine="241" endPosition="0">
+    <scopeInfo nodeId="2090008153514841412" fileName="RootDifferenceDialog.java" startLine="253" startPosition="0" endLine="259" endPosition="0">
       <varInfo nodeId="2090008153514841413" varName="rootId" />
     </scopeInfo>
-    <scopeInfo nodeId="2638118297328199953" fileName="RootDifferenceDialog.java" startLine="186" startPosition="0" endLine="194" endPosition="0">
+    <scopeInfo nodeId="2638118297328199953" fileName="RootDifferenceDialog.java" startLine="204" startPosition="0" endLine="212" endPosition="0">
       <varInfo nodeId="2638118297328199957" varName="changes" />
     </scopeInfo>
-    <scopeInfo nodeId="1372936221592790743" fileName="RootDifferenceDialog.java" startLine="223" startPosition="0" endLine="231" endPosition="0">
+    <scopeInfo nodeId="1372936221592790743" fileName="RootDifferenceDialog.java" startLine="241" startPosition="0" endLine="249" endPosition="0">
       <varInfo nodeId="1372936221592790746" varName="dataId" />
     </scopeInfo>
-    <scopeInfo nodeId="3395217057974244135" fileName="RootDifferenceDialog.java" startLine="172" startPosition="29" endLine="184" endPosition="26" />
-    <scopeInfo nodeId="1558573332373559500" fileName="RootDifferenceDialog.java" startLine="206" startPosition="22" endLine="218" endPosition="55" />
-    <scopeInfo nodeId="7088622708994425209" fileName="RootDifferenceDialog.java" startLine="112" startPosition="57" endLine="126" endPosition="18">
+    <scopeInfo nodeId="3395217057974244135" fileName="RootDifferenceDialog.java" startLine="190" startPosition="29" endLine="202" endPosition="26" />
+    <scopeInfo nodeId="1558573332373559500" fileName="RootDifferenceDialog.java" startLine="224" startPosition="22" endLine="236" endPosition="56" />
+    <scopeInfo nodeId="7088622708994425209" fileName="RootDifferenceDialog.java" startLine="124" startPosition="57" endLine="138" endPosition="18">
       <varInfo nodeId="7088622708994425228" varName="gbc" />
       <varInfo nodeId="7088622708994425211" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="7253789755339706810" fileName="RootDifferenceDialog.java" startLine="150" startPosition="47" endLine="165" endPosition="5">
-      <varInfo nodeId="7253789755339706816" varName="changeGroupBuilder" />
+    <scopeInfo nodeId="3395217057974244132" fileName="RootDifferenceDialog.java" startLine="189" startPosition="0" endLine="204" endPosition="0" />
+    <scopeInfo nodeId="7253789755339706810" fileName="RootDifferenceDialog.java" startLine="167" startPosition="47" endLine="183" endPosition="5">
       <varInfo nodeId="7253789755339768319" varName="gbc" />
-      <varInfo nodeId="7253789755339706827" varName="strip" />
+      <varInfo nodeId="7253789755339706816" varName="layout" />
+      <varInfo nodeId="7253789755339706827" varName="separator" />
     </scopeInfo>
-    <scopeInfo nodeId="3395217057974244132" fileName="RootDifferenceDialog.java" startLine="171" startPosition="0" endLine="186" endPosition="0" />
-    <scopeInfo nodeId="7088622708994435117" fileName="RootDifferenceDialog.java" startLine="205" startPosition="25" endLine="221" endPosition="20" />
-    <scopeInfo nodeId="7088622708994425202" fileName="RootDifferenceDialog.java" startLine="111" startPosition="0" endLine="128" endPosition="0">
+    <scopeInfo nodeId="7088622708994435117" fileName="RootDifferenceDialog.java" startLine="223" startPosition="25" endLine="239" endPosition="20" />
+    <scopeInfo nodeId="7088622708994425202" fileName="RootDifferenceDialog.java" startLine="123" startPosition="0" endLine="140" endPosition="0">
       <varInfo nodeId="7088622708994425205" varName="index" />
       <varInfo nodeId="7088622708994425207" varName="model" />
     </scopeInfo>
-    <scopeInfo nodeId="1885869163710647724" fileName="RootDifferenceDialog.java" startLine="129" startPosition="38" endLine="147" endPosition="7">
-      <varInfo nodeId="4644674181061513675" varName="count" />
-    </scopeInfo>
-    <scopeInfo nodeId="7253789755339706803" fileName="RootDifferenceDialog.java" startLine="149" startPosition="0" endLine="167" endPosition="0">
+    <scopeInfo nodeId="7253789755339706803" fileName="RootDifferenceDialog.java" startLine="166" startPosition="0" endLine="185" endPosition="0">
       <varInfo nodeId="7253789755339706806" varName="inspector" />
     </scopeInfo>
-    <scopeInfo nodeId="7088622708994435114" fileName="RootDifferenceDialog.java" startLine="203" startPosition="0" endLine="223" endPosition="0" />
-    <scopeInfo nodeId="1885869163710647721" fileName="RootDifferenceDialog.java" startLine="128" startPosition="0" endLine="149" endPosition="0" />
-    <scopeInfo nodeId="2090008153514954254" fileName="RootDifferenceDialog.java" startLine="70" startPosition="72" endLine="104" endPosition="46">
+    <scopeInfo nodeId="7088622708994435114" fileName="RootDifferenceDialog.java" startLine="221" startPosition="0" endLine="241" endPosition="0" />
+    <scopeInfo nodeId="1885869163710647724" fileName="RootDifferenceDialog.java" startLine="141" startPosition="38" endLine="164" endPosition="7">
+      <varInfo nodeId="4644674181061513675" varName="count" />
+    </scopeInfo>
+    <scopeInfo nodeId="1885869163710647721" fileName="RootDifferenceDialog.java" startLine="140" startPosition="0" endLine="166" endPosition="0" />
+    <scopeInfo nodeId="2090008153514954254" fileName="RootDifferenceDialog.java" startLine="74" startPosition="108" endLine="116" endPosition="5">
       <varInfo nodeId="2090008153514954304" varName="actionGroup" />
       <varInfo nodeId="2090008153514954299" varName="neighbourActions" />
       <varInfo nodeId="5754859358505297888" varName="neighbourTraverser" />
       <varInfo nodeId="2090008153514954285" varName="splitPane" />
       <varInfo nodeId="2090008153514954314" varName="toolbar" />
     </scopeInfo>
-    <scopeInfo nodeId="2090008153514954251" fileName="RootDifferenceDialog.java" startLine="69" startPosition="0" endLine="106" endPosition="0">
+    <scopeInfo nodeId="2090008153514954251" fileName="RootDifferenceDialog.java" startLine="73" startPosition="0" endLine="118" endPosition="0">
+      <varInfo nodeId="2344626378399205538" varName="firstChange" />
       <varInfo nodeId="2090008153514954374" varName="modelDialog" />
       <varInfo nodeId="2090008153514954376" varName="rootId" />
     </scopeInfo>
-    <unitInfo nodeId="7088622708994254413" fileName="RootDifferenceDialog.java" startLine="46" startPosition="0" endLine="248" endPosition="0" unitName="jetbrains.mps.vcs.diff.ui.RootDifferenceDialog" />
-    <unitInfo nodeId="1372936221592790716" fileName="RootDifferenceDialog.java" startLine="86" startPosition="244" endLine="94" endPosition="5" unitName="jetbrains.mps.vcs.diff.ui.RootDifferenceDialog$1" />
-    <unitInfo nodeId="5754859358505295903" fileName="RootDifferenceDialog.java" startLine="130" startPosition="62" endLine="134" endPosition="5" unitName="jetbrains.mps.vcs.diff.ui.RootDifferenceDialog$2" />
-    <unitInfo nodeId="1372936221592711107" fileName="RootDifferenceDialog.java" startLine="188" startPosition="47" endLine="192" endPosition="5" unitName="jetbrains.mps.vcs.diff.ui.RootDifferenceDialog$3" />
-    <unitInfo nodeId="1107292131483544816" fileName="RootDifferenceDialog.java" startLine="213" startPosition="60" endLine="217" endPosition="7" unitName="jetbrains.mps.vcs.diff.ui.RootDifferenceDialog$4" />
-    <unitInfo nodeId="1435884299175246379" fileName="RootDifferenceDialog.java" startLine="232" startPosition="0" endLine="247" endPosition="0" unitName="jetbrains.mps.vcs.diff.ui.RootDifferenceDialog$MyGoToNeighbourRootActions" />
+    <unitInfo nodeId="7088622708994254413" fileName="RootDifferenceDialog.java" startLine="50" startPosition="0" endLine="266" endPosition="0" unitName="jetbrains.mps.vcs.diff.ui.RootDifferenceDialog" />
+    <unitInfo nodeId="1372936221592790716" fileName="RootDifferenceDialog.java" startLine="90" startPosition="244" endLine="98" endPosition="5" unitName="jetbrains.mps.vcs.diff.ui.RootDifferenceDialog$1" />
+    <unitInfo nodeId="4652592318748341023" fileName="RootDifferenceDialog.java" startLine="109" startPosition="37" endLine="113" endPosition="7" unitName="jetbrains.mps.vcs.diff.ui.RootDifferenceDialog$2" />
+    <unitInfo nodeId="5754859358505295903" fileName="RootDifferenceDialog.java" startLine="142" startPosition="61" endLine="146" endPosition="5" unitName="jetbrains.mps.vcs.diff.ui.RootDifferenceDialog$3" />
+    <unitInfo nodeId="712591095325278168" fileName="RootDifferenceDialog.java" startLine="151" startPosition="61" endLine="155" endPosition="5" unitName="jetbrains.mps.vcs.diff.ui.RootDifferenceDialog$4" />
+    <unitInfo nodeId="1372936221592711107" fileName="RootDifferenceDialog.java" startLine="206" startPosition="47" endLine="210" endPosition="5" unitName="jetbrains.mps.vcs.diff.ui.RootDifferenceDialog$5" />
+    <unitInfo nodeId="1107292131483544816" fileName="RootDifferenceDialog.java" startLine="231" startPosition="61" endLine="235" endPosition="7" unitName="jetbrains.mps.vcs.diff.ui.RootDifferenceDialog$6" />
+    <unitInfo nodeId="1435884299175246379" fileName="RootDifferenceDialog.java" startLine="250" startPosition="0" endLine="265" endPosition="0" unitName="jetbrains.mps.vcs.diff.ui.RootDifferenceDialog$MyGoToNeighbourRootActions" />
   </root>
   <root nodeId="7617953927522682042">
     <nodeInfo nodeId="7617953927522682082" fileName="DiffButtonsPainter.java" startLine="19" startPosition="56" endLine="20" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myDialog" />
-    <nodeInfo nodeId="7617953927522682091" fileName="DiffButtonsPainter.java" startLine="22" startPosition="131" endLine="23" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="7617953927522682095" fileName="DiffButtonsPainter.java" startLine="23" startPosition="50" endLine="24" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7617953927522682091" fileName="DiffButtonsPainter.java" startLine="22" startPosition="129" endLine="23" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="7617953927522682095" fileName="DiffButtonsPainter.java" startLine="23" startPosition="49" endLine="24" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5798896029365751697" fileName="DiffButtonsPainter.java" startLine="27" startPosition="101" endLine="28" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2501770235185716624" fileName="DiffButtonsPainter.java" startLine="30" startPosition="44" endLine="31" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5798896029365751740" fileName="DiffButtonsPainter.java" startLine="35" startPosition="25" endLine="36" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5798896029365751792" fileName="DiffButtonsPainter.java" startLine="39" startPosition="22" endLine="40" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5798896029365751717" fileName="DiffButtonsPainter.java" startLine="43" startPosition="25" endLine="44" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5798896029365751730" fileName="DiffButtonsPainter.java" startLine="45" startPosition="12" endLine="46" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7617953927522682047" fileName="DiffButtonsPainter.java" startLine="50" startPosition="152" endLine="51" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7617953927522682054" fileName="DiffButtonsPainter.java" startLine="51" startPosition="79" endLine="52" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7617953927522682062" fileName="DiffButtonsPainter.java" startLine="52" startPosition="101" endLine="53" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7617953927522682047" fileName="DiffButtonsPainter.java" startLine="50" startPosition="150" endLine="51" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7617953927522682054" fileName="DiffButtonsPainter.java" startLine="51" startPosition="79" endLine="52" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7617953927522682062" fileName="DiffButtonsPainter.java" startLine="52" startPosition="100" endLine="53" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7617953927522682069" fileName="DiffButtonsPainter.java" startLine="53" startPosition="78" endLine="54" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7617953927522682190" fileName="DiffButtonsPainter.java" startLine="58" startPosition="85" endLine="59" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="2638118297328305027" fileName="DiffButtonsPainter.java" startLine="62" startPosition="33" endLine="63" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -618,13 +647,13 @@
     <nodeInfo nodeId="2501770235185716595" fileName="DiffButtonsPainter.java" startLine="34" startPosition="28" endLine="37" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="5798896029365751790" fileName="DiffButtonsPainter.java" startLine="38" startPosition="12" endLine="41" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="7617953927522682186" fileName="DiffButtonsPainter.java" startLine="57" startPosition="52" endLine="60" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MyButton#(Ljetbrains/mps/vcs/diff/ui/common/ChangeGroup;IILjava/lang/String;Ljavax/swing/Icon;)V" />
-    <nodeInfo nodeId="7617953927522682087" fileName="DiffButtonsPainter.java" startLine="21" startPosition="0" endLine="25" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="DiffButtonsPainter#(Ljetbrains/mps/vcs/diff/ui/RootDifferenceDialog;Ljetbrains/mps/nodeEditor/EditorComponent;Ljetbrains/mps/vcs/diff/ui/common/ChangeGroupBuilder;)V" />
+    <nodeInfo nodeId="7617953927522682087" fileName="DiffButtonsPainter.java" startLine="21" startPosition="0" endLine="25" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="DiffButtonsPainter#(Ljetbrains/mps/vcs/diff/ui/RootDifferenceDialog;Ljetbrains/mps/nodeEditor/EditorComponent;Ljetbrains/mps/vcs/diff/ui/common/ChangeGroupLayout;)V" />
     <nodeInfo nodeId="2501770235185716622" fileName="DiffButtonsPainter.java" startLine="29" startPosition="109" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/vcs/diff/changes/ModelChange;)Z" />
     <nodeInfo nodeId="5798896029365751788" fileName="DiffButtonsPainter.java" startLine="38" startPosition="10" endLine="42" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="7617953927522682166" fileName="DiffButtonsPainter.java" startLine="61" startPosition="0" endLine="65" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="performAction#()V" />
     <nodeInfo nodeId="2501770235185716614" fileName="DiffButtonsPainter.java" startLine="28" startPosition="36" endLine="33" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5798896029365751715" fileName="DiffButtonsPainter.java" startLine="42" startPosition="5" endLine="47" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7617953927522682043" fileName="DiffButtonsPainter.java" startLine="49" startPosition="0" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="addTo#(Ljetbrains/mps/vcs/diff/ui/RootDifferenceDialog;Ljetbrains/mps/vcs/diff/ui/common/DiffEditor;Ljetbrains/mps/vcs/diff/ui/common/ChangeGroupBuilder;Z)Ljetbrains/mps/vcs/diff/ui/DiffButtonsPainter;" />
+    <nodeInfo nodeId="7617953927522682043" fileName="DiffButtonsPainter.java" startLine="49" startPosition="0" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="addTo#(Ljetbrains/mps/vcs/diff/ui/RootDifferenceDialog;Ljetbrains/mps/vcs/diff/ui/common/DiffEditor;Ljetbrains/mps/vcs/diff/ui/common/ChangeGroupLayout;Z)Ljetbrains/mps/vcs/diff/ui/DiffButtonsPainter;" />
     <nodeInfo nodeId="5798896029365751624" fileName="DiffButtonsPainter.java" startLine="33" startPosition="7" endLine="42" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="7617953927522682216" fileName="DiffButtonsPainter.java" startLine="26" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createButtonsForChangeGroup#(Ljetbrains/mps/vcs/diff/ui/common/ChangeGroup;I)Ljava/lang/Iterable;" />
     <scopeInfo nodeId="2501770235185716623" fileName="DiffButtonsPainter.java" startLine="30" startPosition="44" endLine="31" endPosition="45" />
@@ -634,7 +663,7 @@
     <scopeInfo nodeId="5798896029365751728" fileName="DiffButtonsPainter.java" startLine="45" startPosition="12" endLine="46" endPosition="18" />
     <scopeInfo nodeId="7617953927522682189" fileName="DiffButtonsPainter.java" startLine="58" startPosition="85" endLine="59" endPosition="43" />
     <scopeInfo nodeId="7617953927522682169" fileName="DiffButtonsPainter.java" startLine="62" startPosition="33" endLine="63" endPosition="62" />
-    <scopeInfo nodeId="7617953927522682090" fileName="DiffButtonsPainter.java" startLine="22" startPosition="131" endLine="24" endPosition="22" />
+    <scopeInfo nodeId="7617953927522682090" fileName="DiffButtonsPainter.java" startLine="22" startPosition="129" endLine="24" endPosition="22" />
     <scopeInfo nodeId="5798896029365751736" fileName="DiffButtonsPainter.java" startLine="34" startPosition="28" endLine="37" endPosition="7" />
     <scopeInfo nodeId="5798896029365751789" fileName="DiffButtonsPainter.java" startLine="38" startPosition="12" endLine="41" endPosition="7" />
     <scopeInfo nodeId="7617953927522682186" fileName="DiffButtonsPainter.java" startLine="57" startPosition="52" endLine="60" endPosition="5">
@@ -645,20 +674,20 @@
       <varInfo nodeId="7617953927522682204" varName="y" />
     </scopeInfo>
     <scopeInfo nodeId="7617953927522682087" fileName="DiffButtonsPainter.java" startLine="21" startPosition="0" endLine="25" endPosition="3">
-      <varInfo nodeId="7617953927522682103" varName="changeGroupBuilder" />
+      <varInfo nodeId="7617953927522682103" varName="changeGroupLayout" />
       <varInfo nodeId="7617953927522682099" varName="dialog" />
       <varInfo nodeId="7617953927522682101" varName="editorComponent" />
     </scopeInfo>
     <scopeInfo nodeId="2501770235185716622" fileName="DiffButtonsPainter.java" startLine="29" startPosition="109" endLine="33" endPosition="0">
       <varInfo nodeId="2501770235185716622" varName="c" />
     </scopeInfo>
-    <scopeInfo nodeId="7617953927522682046" fileName="DiffButtonsPainter.java" startLine="50" startPosition="152" endLine="54" endPosition="19">
+    <scopeInfo nodeId="7617953927522682046" fileName="DiffButtonsPainter.java" startLine="50" startPosition="150" endLine="54" endPosition="19">
       <varInfo nodeId="7617953927522682048" varName="editorComponent" />
       <varInfo nodeId="7617953927522682055" varName="painter" />
     </scopeInfo>
     <scopeInfo nodeId="7617953927522682166" fileName="DiffButtonsPainter.java" startLine="61" startPosition="0" endLine="65" endPosition="0" />
     <scopeInfo nodeId="7617953927522682043" fileName="DiffButtonsPainter.java" startLine="49" startPosition="0" endLine="56" endPosition="0">
-      <varInfo nodeId="7617953927522682075" varName="changeGroupBuilder" />
+      <varInfo nodeId="7617953927522682075" varName="changeGroupLayout" />
       <varInfo nodeId="7617953927522682071" varName="dialog" />
       <varInfo nodeId="7617953927522682073" varName="diffEditor" />
       <varInfo nodeId="7617953927522682077" varName="inspector" />

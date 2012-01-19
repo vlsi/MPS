@@ -16,6 +16,7 @@ import java.io.File;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.project.structure.project.ProjectDescriptor;
 import java.lang.reflect.Method;
+import org.apache.commons.lang.StringUtils;
 import com.intellij.idea.IdeaTestApplication;
 
 public class MakeEnvironment extends Environment {
@@ -73,7 +74,10 @@ public class MakeEnvironment extends Environment {
   protected void configureMPS() {
     super.configureMPS(true);
     //   Value of this property is comma-separated list of plugin IDs intended to load by platform  
-    System.setProperty("idea.load.plugins.id", "jetbrains.mps.vcs,jetbrains.mps.ide.editor,jetbrains.mps.ide.make");
+    String loadPlugins = "idea.load.plugins.id";
+    if (StringUtils.isEmpty(System.getProperty(loadPlugins))) {
+      System.setProperty(loadPlugins, "jetbrains.mps.vcs,jetbrains.mps.ide.editor,jetbrains.mps.ide.make");
+    }
     try {
       IdeaTestApplication.getInstance(null);
     } catch (Exception e) {

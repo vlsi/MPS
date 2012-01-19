@@ -4,7 +4,7 @@
   <unitInfo fileName="PluginSolution_ProjectPlugin.java" startLine="11" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.lang.textGen.pluginSolution.plugin.PluginSolution_ProjectPlugin" />
   <root nodeId="5487985028841906245">
     <nodeInfo nodeId="5487985028841906278" fileName="Textgen_Order.java" startLine="9" startPosition="26" endLine="10" endPosition="196" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="5487985028841906245" fileName="Textgen_TabDescriptor.java" startLine="20" startPosition="64" endLine="21" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
+    <nodeInfo nodeId="5487985028841906245" fileName="Textgen_TabDescriptor.java" startLine="20" startPosition="64" endLine="21" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
     <nodeInfo nodeId="5487985028841906245" fileName="Textgen_TabDescriptor.java" startLine="26" startPosition="28" endLine="27" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5487985028841906245" fileName="Textgen_TabDescriptor.java" startLine="30" startPosition="56" endLine="31" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5487985028841906248" fileName="Textgen_TabDescriptor.java" startLine="37" startPosition="40" endLine="38" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

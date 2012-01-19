@@ -31,7 +31,7 @@
   </root>
   <root nodeId="5487985028841896800">
     <nodeInfo nodeId="5487985028841896844" fileName="Editor_Order.java" startLine="9" startPosition="25" endLine="10" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="5487985028841896800" fileName="Editor_TabDescriptor.java" startLine="20" startPosition="63" endLine="21" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
+    <nodeInfo nodeId="5487985028841896800" fileName="Editor_TabDescriptor.java" startLine="20" startPosition="63" endLine="21" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
     <nodeInfo nodeId="5487985028841896800" fileName="Editor_TabDescriptor.java" startLine="26" startPosition="28" endLine="27" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5487985028841896800" fileName="Editor_TabDescriptor.java" startLine="30" startPosition="38" endLine="31" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5487985028841896800" fileName="Editor_TabDescriptor.java" startLine="34" startPosition="56" endLine="35" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

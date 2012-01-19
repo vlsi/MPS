@@ -4,7 +4,7 @@ package jetbrains.mps.vcs.diff.ui;
 
 import jetbrains.mps.vcs.diff.ui.common.ButtonsPainter;
 import jetbrains.mps.nodeEditor.EditorComponent;
-import jetbrains.mps.vcs.diff.ui.common.ChangeGroupBuilder;
+import jetbrains.mps.vcs.diff.ui.common.ChangeGroupLayout;
 import jetbrains.mps.vcs.diff.ui.common.FoldingAreaButton;
 import jetbrains.mps.vcs.diff.ui.common.ChangeGroup;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -19,8 +19,8 @@ import javax.swing.Icon;
 public class DiffButtonsPainter extends ButtonsPainter {
   private RootDifferenceDialog myDialog;
 
-  private DiffButtonsPainter(RootDifferenceDialog dialog, EditorComponent editorComponent, ChangeGroupBuilder changeGroupBuilder) {
-    super(1, editorComponent, changeGroupBuilder);
+  private DiffButtonsPainter(RootDifferenceDialog dialog, EditorComponent editorComponent, ChangeGroupLayout changeGroupLayout) {
+    super(1, editorComponent, changeGroupLayout);
     myDialog = dialog;
   }
 
@@ -47,9 +47,9 @@ public class DiffButtonsPainter extends ButtonsPainter {
     }
   }
 
-  public static DiffButtonsPainter addTo(RootDifferenceDialog dialog, DiffEditor diffEditor, ChangeGroupBuilder changeGroupBuilder, boolean inspector) {
+  public static DiffButtonsPainter addTo(RootDifferenceDialog dialog, DiffEditor diffEditor, ChangeGroupLayout changeGroupLayout, boolean inspector) {
     EditorComponent editorComponent = diffEditor.getEditorComponent(inspector);
-    DiffButtonsPainter painter = new DiffButtonsPainter(dialog, editorComponent, changeGroupBuilder);
+    DiffButtonsPainter painter = new DiffButtonsPainter(dialog, editorComponent, changeGroupLayout);
     editorComponent.getLeftEditorHighlighter().addFoldingAreaPainter(painter);
     return painter;
   }

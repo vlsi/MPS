@@ -40,6 +40,7 @@ import jetbrains.mps.vcs.diff.changes.NodeCopier;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.vcs.diff.changes.NodeGroupChange;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
+import jetbrains.mps.vcs.diff.ui.common.Bounds;
 import com.intellij.openapi.ui.Messages;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.ide.dialogs.DialogDimensionsSettings;
@@ -162,7 +163,11 @@ public class ModelDifferenceDialog extends BaseDialog {
     });
   }
 
-  public void invokeRootDifference(final SNodeId rootId) {
+  public void invokeRootDifference(SNodeId rootId) {
+    invokeRootDifference(rootId, null);
+  }
+
+  public void invokeRootDifference(final SNodeId rootId, @Nullable final Bounds scrollTo) {
     if (rootId == null) {
       StringBuilder sb = new StringBuilder();
       for (ModelChange mc : ListSequence.fromList(myMetadataChanges)) {
@@ -183,9 +188,9 @@ public class ModelDifferenceDialog extends BaseDialog {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         if (isVisible()) {
-          rootDialog.value = new RootDifferenceDialog(ModelDifferenceDialog.this, rootId, myTree.getNameForRoot(rootId));
+          rootDialog.value = new RootDifferenceDialog(ModelDifferenceDialog.this, rootId, myTree.getNameForRoot(rootId), scrollTo);
         } else {
-          rootDialog.value = new RootDifferenceDialog(ModelDifferenceDialog.this, rootId, myTree.getNameForRoot(rootId), WindowManager.getInstance().getFrame(myProject));
+          rootDialog.value = new RootDifferenceDialog(ModelDifferenceDialog.this, rootId, myTree.getNameForRoot(rootId), WindowManager.getInstance().getFrame(myProject), scrollTo);
         }
       }
     });

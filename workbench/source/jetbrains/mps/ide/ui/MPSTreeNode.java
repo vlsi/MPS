@@ -249,7 +249,7 @@ public abstract class MPSTreeNode extends DefaultMutableTreeNode implements Iter
 
   @Nullable
   public final MPSTreeNode findDescendantWith(Object userObject) {
-    if (getUserObject() == userObject) return this;
+    if (getUserObject().equals(userObject)) return this;
     if (isInitialized()) {
       for (int i = 0; i < getChildCount(); i++) {
         MPSTreeNode result = ((MPSTreeNode) getChildAt(i)).findDescendantWith(userObject);

@@ -55,14 +55,13 @@ public class DevKit extends AbstractModule implements MPSModuleOwner {
     }
     devKit.myDescriptorFile = descriptorFile;
 
-    MPSModuleRepository repository = MPSModuleRepository.getInstance();
-    if (repository.existsModule(descriptor.getModuleReference())) {
-      LOG.error("Loading module " + descriptor.getNamespace() + " for the second time");
-      return repository.getDevKit(descriptor.getModuleReference());
+    IModule d = MPSModuleRepository.checkRegistered(descriptor.getModuleReference(), descriptorFile);
+    if (d != null) {
+      return (DevKit) d;
     }
 
     devKit.setDevKitDescriptor(descriptor, false);
-    repository.addModule(devKit, moduleOwner);
+    MPSModuleRepository.getInstance().addModule(devKit, moduleOwner);
 
     return devKit;
   }
@@ -77,7 +76,7 @@ public class DevKit extends AbstractModule implements MPSModuleOwner {
   @Deprecated
   public static DevKit newInstance(IFile descriptorFile, MPSModuleOwner moduleOwner) {
     ModuleDescriptor desciptor = null;
-    if(descriptorFile.exists()) {
+    if (descriptorFile.exists()) {
       desciptor = ModulesMiner.getInstance().loadModuleDescriptor(descriptorFile);
     }
     return newInstance(new ModuleHandle(descriptorFile, desciptor), moduleOwner);

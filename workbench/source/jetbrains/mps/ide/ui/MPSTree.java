@@ -22,6 +22,7 @@ import com.intellij.openapi.actionSystem.ActionGroup;
 import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.actionSystem.ActionPlaces;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
+import com.intellij.openapi.extensions.Extensions;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.wm.IdeFocusManager;
 import com.intellij.openapi.wm.impl.IdeFocusManagerHeadless;
@@ -32,6 +33,7 @@ import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.Computable;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import javax.swing.AbstractAction;
@@ -129,6 +131,12 @@ public abstract class MPSTree extends DnDAwareTree implements Disposable {
 
   public void removeTreeNodeListener(MPSTreeNodeListener listener) {
     myTreeNodeListeners.remove(listener);
+  }
+
+  public void fireBeforeTreeDisposed() {
+    for (MPSTreeNodeListener listener : new HashSet<MPSTreeNodeListener>(myTreeNodeListeners)) {
+      listener.beforeTreeDisposed(this);
+    }
   }
 
   void fireTreeNodeUpdated(MPSTreeNode node) {
@@ -372,6 +380,7 @@ public abstract class MPSTree extends DnDAwareTree implements Disposable {
   public void rebuildLater() {
     ModelAccess.instance().runReadInEDT(new Runnable() {
       public void run() {
+        if (isDisposed()) return;
         rebuildNow();
       }
     });
@@ -381,6 +390,7 @@ public abstract class MPSTree extends DnDAwareTree implements Disposable {
     if (!ThreadUtils.isEventDispatchThread()) {
       throw new RuntimeException("Rebuild now can be only called from UI thread");
     }
+    assert !isDisposed():"Trying to reconstruct disposed tree. Try finding \"later\" in stacktrace";
 
     runRebuildAction(new Runnable() {
       public void run() {
@@ -573,6 +583,15 @@ public abstract class MPSTree extends DnDAwareTree implements Disposable {
     return -1;
   }
 
+  public void fireTreeCreated(@NotNull Project project) {
+    if (!project.isDefault()) {
+      MPSTreeCreationHandler[] handlers = Extensions.getExtensions(MPSTreeCreationHandler.EP_NAME, project);
+      for (MPSTreeCreationHandler handler : handlers) {
+        handler.treeCreated(this);
+      }
+    }
+  }
+
   public boolean isDisposed() {
     return myDisposed;
   }
@@ -580,6 +599,7 @@ public abstract class MPSTree extends DnDAwareTree implements Disposable {
   public void dispose() {
     assert !myDisposed;
 
+    fireBeforeTreeDisposed();
     myDisposed = true;
     if (getModel().getRoot() instanceof MPSTreeNode) {
       ((MPSTreeNode) getModel().getRoot()).removeThisAndChildren();

@@ -4,7 +4,7 @@ package jetbrains.mps.lang.generator.pluginSolution.plugin;
 
 import jetbrains.mps.ide.editorTabs.EditorTabDescriptor;
 import javax.swing.Icon;
-import javax.swing.ImageIcon;
+import jetbrains.mps.util.IconUtil;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.structure.pluginSolution.plugin.ConceptEditorOpenHelper;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -39,12 +39,11 @@ import java.util.ArrayList;
 import jetbrains.mps.generator.GenerationFacade;
 import javax.swing.JOptionPane;
 import jetbrains.mps.ide.actions.MappingDialog;
-import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.generator.behavior.MappingConfiguration_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class Generator_TabDescriptor extends EditorTabDescriptor {
-  private static final Icon ICON = new ImageIcon(Generator_TabDescriptor.class.getResource("reduction.png"));
+  private static final Icon ICON = IconUtil.getIcon("reduction.png");
 
   public Generator_TabDescriptor() {
   }
@@ -195,11 +194,10 @@ public class Generator_TabDescriptor extends EditorTabDescriptor {
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
       public void run() {
         SModel model = SNodeOperations.getModel(mapping.value);
-        result.value = SConceptOperations.createNewNode(NameUtil.nodeFQName(concept), null);
-        if (SNodeOperations.isInstanceOf(result.value, "jetbrains.mps.lang.structure.structure.IConceptAspect")) {
+        if (SConceptOperations.isSubConceptOf(concept, "jetbrains.mps.lang.structure.structure.IConceptAspect")) {
           result.value = ConceptEditorHelper.createNewConceptAspectInstance(node, concept, model);
           MappingConfiguration_Behavior.call_addMember_3166264919334415805(mapping.value, result.value);
-        } else if (SNodeOperations.isInstanceOf(result.value, "jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence") || SNodeOperations.isInstanceOf(result.value, "jetbrains.mps.lang.generator.structure.InlineTemplateWithContext_RuleConsequence")) {
+        } else if (SConceptOperations.isSubConceptOf(concept, "jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence") || SNodeOperations.isInstanceOf(result.value, "jetbrains.mps.lang.generator.structure.InlineTemplateWithContext_RuleConsequence")) {
           SNode mappingRule = SLinkOperations.addNewChild(mapping.value, "reductionMappingRule", "jetbrains.mps.lang.generator.structure.Reduction_MappingRule");
           SLinkOperations.setTarget(mappingRule, "applicableConcept", node, false);
           SLinkOperations.setTarget(mappingRule, "ruleConsequence", SNodeOperations.cast(result.value, "jetbrains.mps.lang.generator.structure.RuleConsequence"), true);

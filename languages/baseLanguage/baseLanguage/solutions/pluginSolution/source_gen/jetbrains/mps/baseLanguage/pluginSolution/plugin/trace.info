@@ -336,7 +336,7 @@
     <unitInfo nodeId="5487985028841874063" fileName="BaseLanguageCustomPlugin_CustomProjectPlugin.java" startLine="10" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.baseLanguage.pluginSolution.plugin.BaseLanguageCustomPlugin_CustomProjectPlugin" />
   </root>
   <root nodeId="5487985028841874190">
-    <nodeInfo nodeId="5487985028841874190" fileName="TodoViewer_Tool.java" startLine="14" startPosition="52" endLine="15" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
+    <nodeInfo nodeId="5487985028841874190" fileName="TodoViewer_Tool.java" startLine="14" startPosition="52" endLine="15" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
     <nodeInfo nodeId="5487985028841874197" fileName="TodoViewer_Tool.java" startLine="16" startPosition="0" endLine="17" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myComponent" />
     <nodeInfo nodeId="5487985028841874190" fileName="TodoViewer_Tool.java" startLine="19" startPosition="43" endLine="20" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="5487985028841874190" fileName="TodoViewer_Tool.java" startLine="23" startPosition="37" endLine="24" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />

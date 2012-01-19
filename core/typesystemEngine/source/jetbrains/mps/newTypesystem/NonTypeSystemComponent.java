@@ -282,16 +282,12 @@ class NonTypeSystemComponent extends CheckingComponent {
     myNodeTypesComponent.setNonTypeSystemCheckingInProgress(true);
     getTypeCheckingContext().setOperationContext(context);
     try {
-      Set<SNode> frontier = new LinkedHashSet<SNode>();
-      Set<SNode> newFrontier = new LinkedHashSet<SNode>();
+      Queue<SNode> frontier = new LinkedList<SNode>();
       frontier.add(root);
       while (!(frontier.isEmpty())) {
-        for (SNode sNode : frontier) {
-          newFrontier.addAll(sNode.getChildren());
-          applyNonTypesystemRulesToNode(sNode);
-        }
-        frontier = newFrontier;
-        newFrontier = new LinkedHashSet<SNode>();
+        SNode sNode = frontier.remove();
+        applyNonTypesystemRulesToNode(sNode);
+        frontier.addAll(sNode.getChildren());
       }
       //all error reporters must be simple reporters, no error expansion needed
     } finally {

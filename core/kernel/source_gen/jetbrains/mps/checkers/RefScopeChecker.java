@@ -47,7 +47,7 @@ public class RefScopeChecker extends AbstractConstraintsChecker {
       Scope refScope = ModelConstraintsUtil.getScope(ref, operationContext);
       if (refScope instanceof ErrorScope) {
         component.addError(node, ((ErrorScope) refScope).getMessage(), (SNode) null, new ReferenceMessageTarget(SLinkOperations.getRole(ref)));
-      } else if (!(refScope instanceof DefaultScope || refScope.getAvailableElements(null).contains(target))) {
+      } else if (!(refScope instanceof DefaultScope || refScope.contains(target))) {
         String name = target.getName();
 
         ReferenceScopeProvider scopeProvider = ModelConstraintsManager.getNodeReferentSearchScopeProvider(concept, ref.getRole());

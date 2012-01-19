@@ -4,6 +4,7 @@ package jetbrains.mps.ide.modelchecker.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
+import jetbrains.mps.util.IconUtil;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.jetbrains.annotations.NotNull;
@@ -15,12 +16,9 @@ import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.plugins.projectplugins.ProjectPluginManager;
 import jetbrains.mps.smodel.IOperationContext;
-import javax.swing.ImageIcon;
-import com.intellij.openapi.util.io.StreamUtil;
-import java.io.IOException;
 
 public class CheckProject_Action extends BaseAction {
-  private static final Icon ICON = getIcon();
+  private static final Icon ICON = IconUtil.getIcon("modelChecker.png");
   protected static Log log = LogFactory.getLog(CheckProject_Action.class);
 
   public CheckProject_Action() {
@@ -62,17 +60,6 @@ public class CheckProject_Action extends BaseAction {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "CheckProject", t);
       }
-    }
-  }
-
-  private static Icon getIcon() {
-    try {
-      return new ImageIcon(StreamUtil.loadFromStream(CheckProject_Action.class.getResourceAsStream("modelChecker.png")));
-    } catch (IOException e) {
-      if (log.isWarnEnabled()) {
-        log.warn("Couldn't load icon for CheckProject", e);
-      }
-      return null;
     }
   }
 }

@@ -4,7 +4,7 @@ package jetbrains.mps.lang.typesystem.pluginSolution.plugin;
 
 import jetbrains.mps.ide.editorTabs.EditorTabDescriptor;
 import javax.swing.Icon;
-import javax.swing.ImageIcon;
+import jetbrains.mps.util.IconUtil;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.structure.pluginSolution.plugin.ConceptEditorOpenHelper;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -20,7 +20,7 @@ import jetbrains.mps.lang.structure.pluginSolution.plugin.ConceptEditorHelper;
 import jetbrains.mps.smodel.LanguageAspect;
 
 public class Typesystem_TabDescriptor extends EditorTabDescriptor {
-  private static final Icon ICON = new ImageIcon(Typesystem_TabDescriptor.class.getResource("rule.png"));
+  private static final Icon ICON = IconUtil.getIcon("rule.png");
 
   public Typesystem_TabDescriptor() {
   }

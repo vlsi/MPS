@@ -4,21 +4,22 @@ package jetbrains.mps.scope;
 
 import jetbrains.mps.smodel.SNode;
 import java.util.List;
+import org.jetbrains.annotations.Nullable;
 import java.util.ArrayList;
 
 public class EmptyScope extends Scope {
   public EmptyScope() {
   }
 
-  public SNode resolve(SNode anchor, String refText) {
+  public SNode resolve(SNode contextNode, String refText) {
     return null;
   }
 
-  public List<SNode> getAvailableElements(String prefix) {
+  public List<SNode> getAvailableElements(@Nullable String prefix) {
     return new ArrayList<SNode>();
   }
 
-  public String getReferenceText(SNode anchor, SNode target) {
+  public String getReferenceText(SNode contextNode, SNode node) {
     return null;
   }
 }

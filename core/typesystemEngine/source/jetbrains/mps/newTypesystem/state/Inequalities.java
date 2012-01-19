@@ -87,7 +87,7 @@ public class Inequalities {
   public List<RelationBlock> getRelationsToSolve() {
     List<RelationBlock> result = new LinkedList<RelationBlock>();
     for (Block block : myState.getBlocks()) {
-      if (block.getBlockKind() != BlockKind.WHEN_CONCRETE) {
+      if (block.getBlockKind() != BlockKind.WHEN_CONCRETE && block.getBlockKind() != BlockKind.TARGET) {
         RelationBlock relationBlock = (RelationBlock) block;
         if (!relationBlock.isCheckOnly()) {
           result.add(relationBlock);
@@ -101,7 +101,7 @@ public class Inequalities {
     solvingInProcess = true;
     List<RelationBlock> inequalities = getRelationsToSolve();
     initializeMapsInc(inequalities);
-    while (iteration(inequalities)) {
+    while (iteration(inequalities) && !myState.isTargetTypeCalculated()) {
       inequalities = getRelationsToSolve();
     }
     solvingInProcess = false;

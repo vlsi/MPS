@@ -335,7 +335,7 @@
   </root>
   <root nodeId="5487985028841896668">
     <nodeInfo nodeId="5487985028841896701" fileName="DataFlow_Order.java" startLine="9" startPosition="27" endLine="10" endPosition="172" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="5487985028841896668" fileName="Data_Flow_TabDescriptor.java" startLine="20" startPosition="66" endLine="21" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
+    <nodeInfo nodeId="5487985028841896668" fileName="Data_Flow_TabDescriptor.java" startLine="20" startPosition="66" endLine="21" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
     <nodeInfo nodeId="5487985028841896668" fileName="Data_Flow_TabDescriptor.java" startLine="26" startPosition="28" endLine="27" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5487985028841896668" fileName="Data_Flow_TabDescriptor.java" startLine="30" startPosition="38" endLine="31" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5487985028841896668" fileName="Data_Flow_TabDescriptor.java" startLine="34" startPosition="56" endLine="35" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

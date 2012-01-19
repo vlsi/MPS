@@ -4,7 +4,7 @@ package jetbrains.mps.ide.devkit.actions;
 
 import jetbrains.mps.plugins.pluginparts.tool.GeneratedTool;
 import javax.swing.Icon;
-import javax.swing.ImageIcon;
+import jetbrains.mps.util.IconUtil;
 import jetbrains.mps.ide.moduleRepositoryViewer.ModuleRepositoryComponent;
 import javax.swing.JPanel;
 import com.intellij.openapi.project.Project;
@@ -17,7 +17,7 @@ import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.actionSystem.ActionPlaces;
 
 public class ModuleRepository_Tool extends GeneratedTool {
-  private static final Icon ICON = new ImageIcon(ModuleRepository_Tool.class.getResource("project.png"));
+  private static final Icon ICON = IconUtil.getIcon("project.png");
 
   private ModuleRepositoryComponent myComponent;
   private JPanel myPanel;

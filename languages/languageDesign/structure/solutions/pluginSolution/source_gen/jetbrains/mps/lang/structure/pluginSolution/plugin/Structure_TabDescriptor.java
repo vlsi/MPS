@@ -4,7 +4,7 @@ package jetbrains.mps.lang.structure.pluginSolution.plugin;
 
 import jetbrains.mps.ide.editorTabs.EditorTabDescriptor;
 import javax.swing.Icon;
-import javax.swing.ImageIcon;
+import jetbrains.mps.util.IconUtil;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.annotations.Nullable;
@@ -13,7 +13,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 
 public class Structure_TabDescriptor extends EditorTabDescriptor {
-  private static final Icon ICON = new ImageIcon(Structure_TabDescriptor.class.getResource("structure.png"));
+  private static final Icon ICON = IconUtil.getIcon("structure.png");
 
   public Structure_TabDescriptor() {
   }

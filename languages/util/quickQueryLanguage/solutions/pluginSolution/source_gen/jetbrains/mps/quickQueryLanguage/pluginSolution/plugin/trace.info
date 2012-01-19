@@ -755,7 +755,7 @@
     <unitInfo nodeId="5487985028841944069" fileName="QueryFinder.java" startLine="17" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.quickQueryLanguage.pluginSolution.plugin.QueryFinder" />
   </root>
   <root nodeId="5487985028841944176">
-    <nodeInfo nodeId="5487985028841944176" fileName="RunReplacement_Tool.java" startLine="18" startPosition="62" endLine="19" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
+    <nodeInfo nodeId="5487985028841944176" fileName="RunReplacement_Tool.java" startLine="18" startPosition="62" endLine="19" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
     <nodeInfo nodeId="5487985028841944177" fileName="RunReplacement_Tool.java" startLine="20" startPosition="0" endLine="21" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myProject" />
     <nodeInfo nodeId="5487985028841944176" fileName="RunReplacement_Tool.java" startLine="23" startPosition="47" endLine="24" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="5487985028841944176" fileName="RunReplacement_Tool.java" startLine="27" startPosition="37" endLine="28" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />

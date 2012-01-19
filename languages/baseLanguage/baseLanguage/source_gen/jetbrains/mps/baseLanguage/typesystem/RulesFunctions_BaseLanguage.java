@@ -249,6 +249,19 @@ __switch__:
 
   @InferenceMethod
   public static void inference_equateParametersAndReturnType(final TypeCheckingContext typeCheckingContext, final SNode mc, SNode returnType, Map<SNode, List<SNode>> mmap) {
+    if (returnType != null) {
+      SNode matchedType = inference_matchTypeWithTypeVariables(typeCheckingContext, returnType, mmap);
+      {
+        SNode _nodeToCheck_1029348928467 = mc;
+        EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1203441371359", 0, null);
+        typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1203441371361", true), (SNode) matchedType, _info_12389875345);
+      }
+      {
+        SNode _nodeToCheck_1029348928467 = null;
+        EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "3254522536313044080", 0, null);
+        typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(mc, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "3254522536313044077", true), (SNode) new RulesFunctions_BaseLanguage.QuotationClass_5ahx9e_a0a2a0a7().createNode(typeCheckingContext), false, true, _info_12389875345);
+      }
+    }
     List<SNode> parameterDeclarations = SLinkOperations.getTargets(SLinkOperations.getTarget(mc, "baseMethodDeclaration", false), "parameter", true);
     if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(ListSequence.fromList(parameterDeclarations).last(), "type", true), "jetbrains.mps.baseLanguage.structure.VariableArityType")) {
       Iterator<SNode> formalIterator = ListSequence.fromList(parameterDeclarations).iterator();
@@ -275,18 +288,18 @@ __switch__:
         }
       }
       {
-        SNode matchedNode_5ahx9e_f0b0h = SLinkOperations.getTarget(formalParam, "type", true);
+        SNode matchedNode_5ahx9e_f0c0h = SLinkOperations.getTarget(formalParam, "type", true);
         {
-          boolean matches_5ahx9e_a5a1a7 = false;
+          boolean matches_5ahx9e_a5a2a7 = false;
           {
-            SNode matchingNode_5ahx9e_a5a1a7 = SLinkOperations.getTarget(formalParam, "type", true);
-            if (matchingNode_5ahx9e_a5a1a7 != null) {
-              matches_5ahx9e_a5a1a7 = SModelUtil_new.isAssignableConcept(matchingNode_5ahx9e_a5a1a7.getConceptFqName(), "jetbrains.mps.baseLanguage.structure.VariableArityType");
+            SNode matchingNode_5ahx9e_a5a2a7 = SLinkOperations.getTarget(formalParam, "type", true);
+            if (matchingNode_5ahx9e_a5a2a7 != null) {
+              matches_5ahx9e_a5a2a7 = SModelUtil_new.isAssignableConcept(matchingNode_5ahx9e_a5a2a7.getConceptFqName(), "jetbrains.mps.baseLanguage.structure.VariableArityType");
             }
           }
-          if (matches_5ahx9e_a5a1a7) {
+          if (matches_5ahx9e_a5a2a7) {
             {
-              SNode componentType = SLinkOperations.getTarget(matchedNode_5ahx9e_f0b0h, "componentType", true);
+              SNode componentType = SLinkOperations.getTarget(matchedNode_5ahx9e_f0c0h, "componentType", true);
               final SNode matchedType = inference_matchTypeWithTypeVariables(typeCheckingContext, componentType, mmap);
               if ((int) ListSequence.fromList(SLinkOperations.getTargets(mc, "actualArgument", true)).count() == (int) ListSequence.fromList(parameterDeclarations).count()) {
                 // the actual parameter may appear to be an array instead of vararg 
@@ -338,19 +351,6 @@ __switch__:
           EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "4293892367838067557", 0, null);
           typeCheckingContext.createGreaterThanInequality((SNode) matchedType, (SNode) typeCheckingContext.typeOf(arg_var, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "4293892367838067559", true), false, true, _info_12389875345);
         }
-      }
-    }
-    if (returnType != null) {
-      SNode matchedType = inference_matchTypeWithTypeVariables(typeCheckingContext, returnType, mmap);
-      {
-        SNode _nodeToCheck_1029348928467 = mc;
-        EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1203441371359", 0, null);
-        typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1203441371361", true), (SNode) matchedType, _info_12389875345);
-      }
-      {
-        SNode _nodeToCheck_1029348928467 = null;
-        EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "3254522536313044080", 0, null);
-        typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(mc, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "3254522536313044077", true), (SNode) new RulesFunctions_BaseLanguage.QuotationClass_5ahx9e_a0a2a2a7().createNode(typeCheckingContext), false, true, _info_12389875345);
       }
     }
   }
@@ -822,8 +822,8 @@ __switch__:
     }
   }
 
-  public static class QuotationClass_5ahx9e_a0a2a2a7 {
-    public QuotationClass_5ahx9e_a0a2a2a7() {
+  public static class QuotationClass_5ahx9e_a0a2a0a7 {
+    public QuotationClass_5ahx9e_a0a2a0a7() {
     }
 
     public SNode createNode(final TypeCheckingContext typeCheckingContext) {

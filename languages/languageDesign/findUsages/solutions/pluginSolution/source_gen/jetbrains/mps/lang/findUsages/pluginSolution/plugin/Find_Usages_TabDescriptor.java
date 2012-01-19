@@ -4,7 +4,7 @@ package jetbrains.mps.lang.findUsages.pluginSolution.plugin;
 
 import jetbrains.mps.ide.editorTabs.EditorTabDescriptor;
 import javax.swing.Icon;
-import javax.swing.ImageIcon;
+import jetbrains.mps.util.IconUtil;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.structure.pluginSolution.plugin.ConceptEditorOpenHelper;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -15,7 +15,7 @@ import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.lang.structure.pluginSolution.plugin.ConceptEditorHelper;
 
 public class Find_Usages_TabDescriptor extends EditorTabDescriptor {
-  private static final Icon ICON = new ImageIcon(Find_Usages_TabDescriptor.class.getResource("usagesFinder.png"));
+  private static final Icon ICON = IconUtil.getIcon("usagesFinder.png");
 
   public Find_Usages_TabDescriptor() {
   }
