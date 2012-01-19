@@ -31,6 +31,7 @@ import jetbrains.mps.runtime.BytecodeLocator;
 import jetbrains.mps.smodel.MPSModuleOwner;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 
 import java.net.URL;
@@ -66,14 +67,13 @@ public class Solution extends AbstractModule {
     }
     solution.myDescriptorFile = descriptorFile;
 
-    MPSModuleRepository repository = MPSModuleRepository.getInstance();
-    if (repository.existsModule(descriptor.getModuleReference())) {
-      LOG.error("Loading module " + descriptor.getNamespace() + " for the second time");
-      return repository.getSolution(descriptor.getModuleReference());
+    IModule d = MPSModuleRepository.checkRegistered(descriptor.getModuleReference(), descriptorFile);
+    if (d != null) {
+      return (Solution) d;
     }
 
     solution.setSolutionDescriptor(descriptor, false);
-    repository.addModule(solution, moduleOwner);
+    MPSModuleRepository.getInstance().addModule(solution, moduleOwner);
 
     return solution;
   }
@@ -94,14 +94,13 @@ public class Solution extends AbstractModule {
       }
     };
 
-    MPSModuleRepository repository = MPSModuleRepository.getInstance();
-    if (repository.existsModule(descriptor.getModuleReference())) {
-      LOG.error("Loading module " + descriptor.getNamespace() + " for the second time");
-      return repository.getSolution(descriptor.getModuleReference());
+    IModule d = MPSModuleRepository.checkRegistered(descriptor.getModuleReference(), FileSystem.getInstance().getFileByPath("NO FILE"));
+    if (d != null) {
+      return (Solution) d;
     }
 
     solution.setSolutionDescriptor(descriptor, false);
-    repository.addModule(solution, moduleOwner);
+    MPSModuleRepository.getInstance().addModule(solution, moduleOwner);
 
     return solution;
   }
@@ -117,27 +116,26 @@ public class Solution extends AbstractModule {
 
   public static Solution newInstance(ModuleHandle handle, MPSModuleOwner moduleOwner) {
     Solution solution = new Solution();
-    SolutionDescriptor solutionDescriptor;
+    SolutionDescriptor descriptor;
     if (handle.getDescriptor() != null) {
-      solutionDescriptor = (SolutionDescriptor) handle.getDescriptor();
-      if (solutionDescriptor.getUUID() == null) {
-        solutionDescriptor.setUUID(UUID.randomUUID().toString());
-        SolutionDescriptorPersistence.saveSolutionDescriptor(handle.getFile(), solutionDescriptor);
+      descriptor = (SolutionDescriptor) handle.getDescriptor();
+      if (descriptor.getUUID() == null) {
+        descriptor.setUUID(UUID.randomUUID().toString());
+        SolutionDescriptorPersistence.saveSolutionDescriptor(handle.getFile(), descriptor);
       }
     } else {
-      solutionDescriptor = new SolutionDescriptor();
-      solutionDescriptor.setUUID(UUID.randomUUID().toString());
+      descriptor = new SolutionDescriptor();
+      descriptor.setUUID(UUID.randomUUID().toString());
     }
     solution.myDescriptorFile = handle.getFile();
 
-    MPSModuleRepository repository = MPSModuleRepository.getInstance();
-    if (repository.existsModule(solutionDescriptor.getModuleReference())) {
-      LOG.error("Loading module " + solutionDescriptor.getNamespace() + " for the second time");
-      return repository.getSolution(solutionDescriptor.getModuleReference());
+    IModule d = MPSModuleRepository.checkRegistered(descriptor.getModuleReference(), handle.getFile());
+    if (d != null) {
+      return (Solution) d;
     }
 
-    solution.setSolutionDescriptor(solutionDescriptor, false);
-    repository.addModule(solution, moduleOwner);
+    solution.setSolutionDescriptor(descriptor, false);
+    MPSModuleRepository.getInstance().addModule(solution, moduleOwner);
 
     return solution;
   }
