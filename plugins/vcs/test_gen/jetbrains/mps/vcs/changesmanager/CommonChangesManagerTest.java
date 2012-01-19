@@ -28,9 +28,9 @@ import jetbrains.mps.nodeEditor.InspectorTool;
 import org.junit.Assert;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import com.intellij.openapi.vcs.FileStatusListener;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import com.intellij.openapi.vcs.changes.VcsDirtyScopeManager;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.smodel.SModelRepository;
@@ -188,22 +188,13 @@ public class CommonChangesManagerTest {
     waitForSomething(new Runnable() {
       public void run() {
         final FileStatus statusBefore = myFileStatusManager.getStatus(file);
-        final _FunctionTypes._return_P0_E0<? extends Boolean> shouldStopWaiting = (expectedFileStatus == null ?
-          new _FunctionTypes._return_P0_E0<Boolean>() {
-            public Boolean invoke() {
-              return statusBefore != myFileStatusManager.getStatus(file);
-            }
-          } :
-          new _FunctionTypes._return_P0_E0<Boolean>() {
-            public Boolean invoke() {
-              return expectedFileStatus == myFileStatusManager.getStatus(file);
-            }
-          }
-        );
         final Wrappers._T<FileStatusListener> listener = new Wrappers._T<FileStatusListener>();
         final _FunctionTypes._void_P0_E0 stopIfNeeded = new _FunctionTypes._void_P0_E0() {
           public void invoke() {
-            if (shouldStopWaiting.invoke()) {
+            if ((expectedFileStatus == null ?
+              statusBefore != myFileStatusManager.getStatus(file) :
+              expectedFileStatus == myFileStatusManager.getStatus(file)
+            )) {
               myFileStatusManager.removeFileStatusListener(listener.value);
               waitCompleted();
             }
@@ -221,7 +212,7 @@ public class CommonChangesManagerTest {
         myFileStatusManager.addFileStatusListener(listener.value);
         task.run();
         VcsDirtyScopeManager.getInstance(myIdeaProject).fileDirty(file);
-        myChangeListManager.ensureUpToDate(false);
+        myChangeListManager.scheduleUpdate();
         stopIfNeeded.invoke();
       }
     });
