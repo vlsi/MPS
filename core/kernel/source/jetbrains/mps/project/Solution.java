@@ -45,7 +45,7 @@ public class Solution extends AbstractModule {
   private static final Logger LOG = Logger.getLogger(Solution.class);
 
   private SolutionDescriptor mySolutionDescriptor;
-  private static final String SOLUTION_MODELS = "models";
+  public static final String SOLUTION_MODELS = "models";
 
   // -------------------------------------------------------------------
 
