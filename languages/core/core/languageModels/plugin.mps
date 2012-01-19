@@ -1985,29 +1985,19 @@
               </node>
               <node role="elsifClauses" roleId="tpee.1206060520071" type="tpee.ElsifClause" typeId="tpee.1206060495898" id="7390982340086718431">
                 <node role="condition" roleId="tpee.1206060619838" type="tpee.NotExpression" typeId="tpee.1081516740877" id="7390982340086718432">
-                  <node role="expression" roleId="tpee.1081516765348" type="tpee.OrExpression" typeId="tpee.1080223426719" id="7390982340086718433">
-                    <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7390982340086718434">
-                      <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="7390982340086718435">
+                  <node role="expression" roleId="tpee.1081516765348" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7390982340086718437">
+                    <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7390982340086718438">
+                      <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="7390982340086718439">
                         <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7390982340086718391" resolveInfo="searchScopeStatus" />
                       </node>
-                      <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="7390982340086718436">
-                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="8sbz.~SearchScopeStatus%disDefault()%cboolean" resolveInfo="isDefault" />
+                      <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="7390982340086718440">
+                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="8sbz.~SearchScopeStatus%dgetSearchScope()%cjetbrains%dmps%dsmodel%dsearch%dISearchScope" resolveInfo="getSearchScope" />
                       </node>
                     </node>
-                    <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7390982340086718437">
-                      <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7390982340086718438">
-                        <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="7390982340086718439">
-                          <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7390982340086718391" resolveInfo="searchScopeStatus" />
-                        </node>
-                        <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="7390982340086718440">
-                          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="8sbz.~SearchScopeStatus%dgetSearchScope()%cjetbrains%dmps%dsmodel%dsearch%dISearchScope" resolveInfo="getSearchScope" />
-                        </node>
-                      </node>
-                      <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="7390982340086718441">
-                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="espb.~ISearchScope%disInScope(jetbrains%dmps%dsmodel%dSNode)%cboolean" resolveInfo="isInScope" />
-                        <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="7390982340086718442">
-                          <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7390982340086718340" resolveInfo="target" />
-                        </node>
+                    <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="7390982340086718441">
+                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="espb.~ISearchScope%disInScope(jetbrains%dmps%dsmodel%dSNode)%cboolean" resolveInfo="isInScope" />
+                      <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="7390982340086718442">
+                        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7390982340086718340" resolveInfo="target" />
                       </node>
                     </node>
                   </node>
