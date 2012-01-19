@@ -1890,8 +1890,8 @@
     <nodeInfo nodeId="6062668769034022332" fileName="CustomMPSApplication_Producer.java" startLine="46" startPosition="65" endLine="47" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6062668769034022335" fileName="CustomMPSApplication_Producer.java" startLine="47" startPosition="69" endLine="48" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6062668769034022341" fileName="CustomMPSApplication_Producer.java" startLine="50" startPosition="27" endLine="51" endPosition="124" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6062668769034022350" fileName="CustomMPSApplication_Producer.java" startLine="51" startPosition="124" endLine="52" endPosition="381" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6062668769034022373" fileName="CustomMPSApplication_Producer.java" startLine="52" startPosition="381" endLine="53" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6062668769034022350" fileName="CustomMPSApplication_Producer.java" startLine="51" startPosition="124" endLine="52" endPosition="215" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6062668769034022373" fileName="CustomMPSApplication_Producer.java" startLine="52" startPosition="215" endLine="53" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6062668769034022382" fileName="CustomMPSApplication_Producer.java" startLine="56" startPosition="34" endLine="57" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6062668769034022386" fileName="CustomMPSApplication_Producer.java" startLine="58" startPosition="7" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="6062668769034022387" fileName="CustomMPSApplication_Producer.java" startLine="59" startPosition="0" endLine="60" endPosition="302" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -1903,7 +1903,7 @@
     <nodeInfo nodeId="6062668769034022325" fileName="CustomMPSApplication_Producer.java" startLine="77" startPosition="51" endLine="78" endPosition="137" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6062668769034022325" fileName="CustomMPSApplication_Producer.java" startLine="81" startPosition="92" endLine="82" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6062668769034022420" fileName="CustomMPSApplication_Producer.java" startLine="82" startPosition="50" endLine="83" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6062668769034022426" fileName="CustomMPSApplication_Producer.java" startLine="85" startPosition="27" endLine="86" endPosition="341" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6062668769034022426" fileName="CustomMPSApplication_Producer.java" startLine="85" startPosition="27" endLine="86" endPosition="181" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6062668769034022448" fileName="CustomMPSApplication_Producer.java" startLine="89" startPosition="34" endLine="90" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6062668769034022450" fileName="CustomMPSApplication_Producer.java" startLine="91" startPosition="7" endLine="92" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="6062668769034022451" fileName="CustomMPSApplication_Producer.java" startLine="92" startPosition="0" endLine="93" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -1966,7 +1966,7 @@
     <scopeInfo nodeId="6062668769034022325" fileName="CustomMPSApplication_Producer.java" startLine="67" startPosition="90" endLine="68" endPosition="99" />
     <scopeInfo nodeId="6062668769034022325" fileName="CustomMPSApplication_Producer.java" startLine="73" startPosition="102" endLine="74" endPosition="44" />
     <scopeInfo nodeId="6062668769034022325" fileName="CustomMPSApplication_Producer.java" startLine="77" startPosition="51" endLine="78" endPosition="137" />
-    <scopeInfo nodeId="6062668769034022425" fileName="CustomMPSApplication_Producer.java" startLine="85" startPosition="27" endLine="86" endPosition="341" />
+    <scopeInfo nodeId="6062668769034022425" fileName="CustomMPSApplication_Producer.java" startLine="85" startPosition="27" endLine="86" endPosition="181" />
     <scopeInfo nodeId="6062668769034022447" fileName="CustomMPSApplication_Producer.java" startLine="89" startPosition="34" endLine="90" endPosition="20" />
     <scopeInfo nodeId="6062668769034022456" fileName="CustomMPSApplication_Producer.java" startLine="95" startPosition="27" endLine="96" endPosition="131" />
     <scopeInfo nodeId="6062668769034022325" fileName="CustomMPSApplication_Producer.java" startLine="107" startPosition="83" endLine="108" endPosition="92" />
@@ -2065,45 +2065,45 @@
     <nodeInfo nodeId="6062668769034022614" fileName="CustomMPSApplication_Configuration_RunProfileState.java" startLine="61" startPosition="5" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="6062668769034022615" fileName="CustomMPSApplication_Configuration_RunProfileState.java" startLine="62" startPosition="0" endLine="63" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6062668769034022621" fileName="CustomMPSApplication_Configuration_RunProfileState.java" startLine="65" startPosition="25" endLine="66" endPosition="170" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6062668769034022633" fileName="CustomMPSApplication_Configuration_RunProfileState.java" startLine="67" startPosition="33" endLine="68" endPosition="173" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6062668769034022646" fileName="CustomMPSApplication_Configuration_RunProfileState.java" startLine="69" startPosition="9" endLine="70" endPosition="284" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6062668769034022653" fileName="CustomMPSApplication_Configuration_RunProfileState.java" startLine="72" startPosition="7" endLine="73" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="6062668769034022654" fileName="CustomMPSApplication_Configuration_RunProfileState.java" startLine="73" startPosition="0" endLine="74" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6062668769034022661" fileName="CustomMPSApplication_Configuration_RunProfileState.java" startLine="74" startPosition="80" endLine="75" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="6062668769034022665" fileName="CustomMPSApplication_Configuration_RunProfileState.java" startLine="76" startPosition="35" endLine="77" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6062668769034022671" fileName="CustomMPSApplication_Configuration_RunProfileState.java" startLine="77" startPosition="43" endLine="78" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6062668769034022675" fileName="CustomMPSApplication_Configuration_RunProfileState.java" startLine="78" startPosition="29" endLine="79" endPosition="141" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6062668769034022696" fileName="CustomMPSApplication_Configuration_RunProfileState.java" startLine="80" startPosition="5" endLine="81" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="6062668769034022697" fileName="CustomMPSApplication_Configuration_RunProfileState.java" startLine="86" startPosition="115" endLine="87" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6062668769034022697" fileName="CustomMPSApplication_Configuration_RunProfileState.java" startLine="87" startPosition="88" endLine="88" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6062668769034022697" fileName="CustomMPSApplication_Configuration_RunProfileState.java" startLine="90" startPosition="30" endLine="91" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6062668769034022588" fileName="CustomMPSApplication_Configuration_RunProfileState.java" startLine="98" startPosition="60" endLine="99" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6062668769034022588" fileName="CustomMPSApplication_Configuration_RunProfileState.java" startLine="100" startPosition="5" endLine="101" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6062668769034022646" fileName="CustomMPSApplication_Configuration_RunProfileState.java" startLine="66" startPosition="170" endLine="67" endPosition="284" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6062668769034022653" fileName="CustomMPSApplication_Configuration_RunProfileState.java" startLine="69" startPosition="7" endLine="70" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="6062668769034022654" fileName="CustomMPSApplication_Configuration_RunProfileState.java" startLine="70" startPosition="0" endLine="71" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6062668769034022661" fileName="CustomMPSApplication_Configuration_RunProfileState.java" startLine="71" startPosition="80" endLine="72" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="6062668769034022665" fileName="CustomMPSApplication_Configuration_RunProfileState.java" startLine="73" startPosition="35" endLine="74" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6062668769034022671" fileName="CustomMPSApplication_Configuration_RunProfileState.java" startLine="74" startPosition="43" endLine="75" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6062668769034022675" fileName="CustomMPSApplication_Configuration_RunProfileState.java" startLine="75" startPosition="29" endLine="76" endPosition="141" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6062668769034022696" fileName="CustomMPSApplication_Configuration_RunProfileState.java" startLine="77" startPosition="5" endLine="78" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="6062668769034022697" fileName="CustomMPSApplication_Configuration_RunProfileState.java" startLine="83" startPosition="115" endLine="84" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6062668769034022697" fileName="CustomMPSApplication_Configuration_RunProfileState.java" startLine="84" startPosition="88" endLine="85" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6062668769034022697" fileName="CustomMPSApplication_Configuration_RunProfileState.java" startLine="87" startPosition="30" endLine="88" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6062668769034022588" fileName="CustomMPSApplication_Configuration_RunProfileState.java" startLine="95" startPosition="60" endLine="96" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6062668769034022588" fileName="CustomMPSApplication_Configuration_RunProfileState.java" startLine="97" startPosition="5" endLine="98" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6062668769034022588" fileName="CustomMPSApplication_Configuration_RunProfileState.java" startLine="34" startPosition="92" endLine="36" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myRunConfiguration" />
     <nodeInfo nodeId="6062668769034022588" fileName="CustomMPSApplication_Configuration_RunProfileState.java" startLine="36" startPosition="70" endLine="38" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myEnvironment" />
     <nodeInfo nodeId="6062668769034022607" fileName="CustomMPSApplication_Configuration_RunProfileState.java" startLine="58" startPosition="0" endLine="61" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6062668769034022631" fileName="CustomMPSApplication_Configuration_RunProfileState.java" startLine="66" startPosition="170" endLine="69" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6062668769034022588" fileName="CustomMPSApplication_Configuration_RunProfileState.java" startLine="97" startPosition="55" endLine="100" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6062668769034022588" fileName="CustomMPSApplication_Configuration_RunProfileState.java" startLine="94" startPosition="55" endLine="97" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="6062668769034022588" fileName="CustomMPSApplication_Configuration_RunProfileState.java" startLine="39" startPosition="0" endLine="43" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="CustomMPSApplication_Configuration_RunProfileState#(Ljetbrains/mps/execution/configurations/implementation/plugin/plugin/CustomMPSApplication_Configuration;Lcom/intellij/execution/Executor;Lcom/intellij/execution/runners/ExecutionEnvironment;)V" />
     <nodeInfo nodeId="6062668769034022588" fileName="CustomMPSApplication_Configuration_RunProfileState.java" startLine="44" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getConfigurationSettings#()Lcom/intellij/execution/configurations/ConfigurationPerRunnerSettings;" />
     <nodeInfo nodeId="6062668769034022588" fileName="CustomMPSApplication_Configuration_RunProfileState.java" startLine="48" startPosition="0" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getRunnerSettings#()Lcom/intellij/execution/configurations/RunnerSettings;" />
-    <nodeInfo nodeId="6062668769034022697" fileName="CustomMPSApplication_Configuration_RunProfileState.java" startLine="82" startPosition="5" endLine="86" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6062668769034022697" fileName="CustomMPSApplication_Configuration_RunProfileState.java" startLine="89" startPosition="148" endLine="93" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#()V" />
-    <nodeInfo nodeId="6062668769034022663" fileName="CustomMPSApplication_Configuration_RunProfileState.java" startLine="75" startPosition="91" endLine="80" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6062668769034022697" fileName="CustomMPSApplication_Configuration_RunProfileState.java" startLine="88" startPosition="83" endLine="93" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6062668769034022588" fileName="CustomMPSApplication_Configuration_RunProfileState.java" startLine="96" startPosition="0" endLine="103" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="canExecute#(Ljava/lang/String;)Z" />
-    <nodeInfo nodeId="6062668769034022619" fileName="CustomMPSApplication_Configuration_RunProfileState.java" startLine="64" startPosition="57" endLine="72" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="6062668769034022618" fileName="CustomMPSApplication_Configuration_RunProfileState.java" startLine="63" startPosition="73" endLine="72" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6062668769034022697" fileName="CustomMPSApplication_Configuration_RunProfileState.java" startLine="81" startPosition="0" endLine="94" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="6062668769034022588" fileName="CustomMPSApplication_Configuration_RunProfileState.java" startLine="52" startPosition="0" endLine="96" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Lcom/intellij/execution/Executor;Lcom/intellij/execution/runners/ProgramRunner;)Lcom/intellij/execution/ExecutionResult;" />
+    <nodeInfo nodeId="6062668769034022697" fileName="CustomMPSApplication_Configuration_RunProfileState.java" startLine="79" startPosition="5" endLine="83" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6062668769034022697" fileName="CustomMPSApplication_Configuration_RunProfileState.java" startLine="86" startPosition="148" endLine="90" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#()V" />
+    <nodeInfo nodeId="6062668769034022619" fileName="CustomMPSApplication_Configuration_RunProfileState.java" startLine="64" startPosition="57" endLine="69" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="6062668769034022663" fileName="CustomMPSApplication_Configuration_RunProfileState.java" startLine="72" startPosition="91" endLine="77" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6062668769034022697" fileName="CustomMPSApplication_Configuration_RunProfileState.java" startLine="85" startPosition="83" endLine="90" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6062668769034022618" fileName="CustomMPSApplication_Configuration_RunProfileState.java" startLine="63" startPosition="73" endLine="69" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6062668769034022588" fileName="CustomMPSApplication_Configuration_RunProfileState.java" startLine="93" startPosition="0" endLine="100" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="canExecute#(Ljava/lang/String;)Z" />
+    <nodeInfo nodeId="6062668769034022697" fileName="CustomMPSApplication_Configuration_RunProfileState.java" startLine="78" startPosition="0" endLine="91" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="6062668769034022588" fileName="CustomMPSApplication_Configuration_RunProfileState.java" startLine="52" startPosition="0" endLine="93" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Lcom/intellij/execution/Executor;Lcom/intellij/execution/runners/ProgramRunner;)Lcom/intellij/execution/ExecutionResult;" />
     <scopeInfo nodeId="6062668769034022588" fileName="CustomMPSApplication_Configuration_RunProfileState.java" startLine="45" startPosition="68" endLine="46" endPosition="16" />
     <scopeInfo nodeId="6062668769034022588" fileName="CustomMPSApplication_Configuration_RunProfileState.java" startLine="49" startPosition="45" endLine="50" endPosition="16" />
     <scopeInfo nodeId="6062668769034022608" fileName="CustomMPSApplication_Configuration_RunProfileState.java" startLine="59" startPosition="32" endLine="60" endPosition="66" />
-    <scopeInfo nodeId="6062668769034022632" fileName="CustomMPSApplication_Configuration_RunProfileState.java" startLine="67" startPosition="33" endLine="68" endPosition="173" />
-    <scopeInfo nodeId="6062668769034022697" fileName="CustomMPSApplication_Configuration_RunProfileState.java" startLine="90" startPosition="30" endLine="91" endPosition="33" />
-    <scopeInfo nodeId="6062668769034022588" fileName="CustomMPSApplication_Configuration_RunProfileState.java" startLine="98" startPosition="60" endLine="99" endPosition="18" />
+    <scopeInfo nodeId="6062668769034022697" fileName="CustomMPSApplication_Configuration_RunProfileState.java" startLine="87" startPosition="30" endLine="88" endPosition="33" />
+    <scopeInfo nodeId="6062668769034022588" fileName="CustomMPSApplication_Configuration_RunProfileState.java" startLine="95" startPosition="60" endLine="96" endPosition="18" />
     <scopeInfo nodeId="6062668769034022588" fileName="CustomMPSApplication_Configuration_RunProfileState.java" startLine="40" startPosition="191" endLine="42" endPosition="32" />
-    <scopeInfo nodeId="6062668769034022664" fileName="CustomMPSApplication_Configuration_RunProfileState.java" startLine="76" startPosition="35" endLine="79" endPosition="141">
+    <scopeInfo nodeId="6062668769034022620" fileName="CustomMPSApplication_Configuration_RunProfileState.java" startLine="65" startPosition="25" endLine="67" endPosition="284">
+      <varInfo nodeId="6062668769034022622" varName="mpsbuild" />
+    </scopeInfo>
+    <scopeInfo nodeId="6062668769034022664" fileName="CustomMPSApplication_Configuration_RunProfileState.java" startLine="73" startPosition="35" endLine="76" endPosition="141">
       <varInfo nodeId="6062668769034022666" varName="path" />
       <varInfo nodeId="6062668769034022672" varName="suffix" />
     </scopeInfo>
@@ -2114,33 +2114,30 @@
     </scopeInfo>
     <scopeInfo nodeId="6062668769034022588" fileName="CustomMPSApplication_Configuration_RunProfileState.java" startLine="44" startPosition="0" endLine="48" endPosition="0" />
     <scopeInfo nodeId="6062668769034022588" fileName="CustomMPSApplication_Configuration_RunProfileState.java" startLine="48" startPosition="0" endLine="52" endPosition="0" />
-    <scopeInfo nodeId="6062668769034022697" fileName="CustomMPSApplication_Configuration_RunProfileState.java" startLine="89" startPosition="148" endLine="93" endPosition="0" />
-    <scopeInfo nodeId="6062668769034022588" fileName="CustomMPSApplication_Configuration_RunProfileState.java" startLine="97" startPosition="55" endLine="101" endPosition="17" />
-    <scopeInfo nodeId="6062668769034022620" fileName="CustomMPSApplication_Configuration_RunProfileState.java" startLine="65" startPosition="25" endLine="70" endPosition="284">
-      <varInfo nodeId="6062668769034022622" varName="mpsbuild" />
-    </scopeInfo>
-    <scopeInfo nodeId="6062668769034022588" fileName="CustomMPSApplication_Configuration_RunProfileState.java" startLine="96" startPosition="0" endLine="103" endPosition="0">
+    <scopeInfo nodeId="6062668769034022697" fileName="CustomMPSApplication_Configuration_RunProfileState.java" startLine="86" startPosition="148" endLine="90" endPosition="0" />
+    <scopeInfo nodeId="6062668769034022588" fileName="CustomMPSApplication_Configuration_RunProfileState.java" startLine="94" startPosition="55" endLine="98" endPosition="17" />
+    <scopeInfo nodeId="6062668769034022619" fileName="CustomMPSApplication_Configuration_RunProfileState.java" startLine="64" startPosition="57" endLine="69" endPosition="0" />
+    <scopeInfo nodeId="6062668769034022588" fileName="CustomMPSApplication_Configuration_RunProfileState.java" startLine="93" startPosition="0" endLine="100" endPosition="0">
       <varInfo nodeId="6062668769034022588" varName="executorId" />
     </scopeInfo>
-    <scopeInfo nodeId="6062668769034022619" fileName="CustomMPSApplication_Configuration_RunProfileState.java" startLine="64" startPosition="57" endLine="72" endPosition="0" />
-    <scopeInfo nodeId="6062668769034022697" fileName="CustomMPSApplication_Configuration_RunProfileState.java" startLine="82" startPosition="5" endLine="93" endPosition="10">
+    <scopeInfo nodeId="6062668769034022697" fileName="CustomMPSApplication_Configuration_RunProfileState.java" startLine="79" startPosition="5" endLine="90" endPosition="10">
       <varInfo nodeId="6062668769034022697" varName="_consoleView" />
       <varInfo nodeId="6062668769034022697" varName="_processHandler" />
     </scopeInfo>
-    <scopeInfo nodeId="6062668769034022588" fileName="CustomMPSApplication_Configuration_RunProfileState.java" startLine="54" startPosition="110" endLine="94" endPosition="5">
+    <scopeInfo nodeId="6062668769034022588" fileName="CustomMPSApplication_Configuration_RunProfileState.java" startLine="54" startPosition="110" endLine="91" endPosition="5">
       <varInfo nodeId="6062668769034022592" varName="configuration" />
       <varInfo nodeId="6062668769034022655" varName="file" />
       <varInfo nodeId="6062668769034022616" varName="isMPSBuildIncluded" />
       <varInfo nodeId="6062668769034022598" varName="layout" />
       <varInfo nodeId="6062668769034022588" varName="project" />
     </scopeInfo>
-    <scopeInfo nodeId="6062668769034022588" fileName="CustomMPSApplication_Configuration_RunProfileState.java" startLine="52" startPosition="0" endLine="96" endPosition="0">
+    <scopeInfo nodeId="6062668769034022588" fileName="CustomMPSApplication_Configuration_RunProfileState.java" startLine="52" startPosition="0" endLine="93" endPosition="0">
       <varInfo nodeId="6062668769034022588" varName="executor" />
       <varInfo nodeId="6062668769034022588" varName="runner" />
     </scopeInfo>
-    <unitInfo nodeId="6062668769034022588" fileName="CustomMPSApplication_Configuration_RunProfileState.java" startLine="34" startPosition="0" endLine="104" endPosition="0" unitName="jetbrains.mps.execution.configurations.implementation.plugin.plugin.CustomMPSApplication_Configuration_RunProfileState" />
-    <unitInfo nodeId="6062668769034022619" fileName="CustomMPSApplication_Configuration_RunProfileState.java" startLine="64" startPosition="45" endLine="72" endPosition="5" unitName="jetbrains.mps.execution.configurations.implementation.plugin.plugin.CustomMPSApplication_Configuration_RunProfileState$1" />
-    <unitInfo nodeId="6062668769034022697" fileName="CustomMPSApplication_Configuration_RunProfileState.java" startLine="89" startPosition="118" endLine="93" endPosition="7" unitName="jetbrains.mps.execution.configurations.implementation.plugin.plugin.CustomMPSApplication_Configuration_RunProfileState$2" />
+    <unitInfo nodeId="6062668769034022588" fileName="CustomMPSApplication_Configuration_RunProfileState.java" startLine="34" startPosition="0" endLine="101" endPosition="0" unitName="jetbrains.mps.execution.configurations.implementation.plugin.plugin.CustomMPSApplication_Configuration_RunProfileState" />
+    <unitInfo nodeId="6062668769034022619" fileName="CustomMPSApplication_Configuration_RunProfileState.java" startLine="64" startPosition="45" endLine="69" endPosition="5" unitName="jetbrains.mps.execution.configurations.implementation.plugin.plugin.CustomMPSApplication_Configuration_RunProfileState$1" />
+    <unitInfo nodeId="6062668769034022697" fileName="CustomMPSApplication_Configuration_RunProfileState.java" startLine="86" startPosition="118" endLine="90" endPosition="7" unitName="jetbrains.mps.execution.configurations.implementation.plugin.plugin.CustomMPSApplication_Configuration_RunProfileState$2" />
   </root>
   <root nodeId="6062668769034022729">
     <nodeInfo nodeId="6062668769034022729" fileName="CustomMPSApplication_Configuration_Factory.java" startLine="10" startPosition="68" endLine="11" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
@@ -2170,10 +2167,10 @@
     <nodeInfo nodeId="6062668769034022766" fileName="CustomMPSApplication_Configuration.java" startLine="47" startPosition="45" endLine="48" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6062668769034022851" fileName="CustomMPSApplication_Configuration_Editor.java" startLine="48" startPosition="80" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="6062668769034022852" fileName="CustomMPSApplication_Configuration_Editor.java" startLine="49" startPosition="0" endLine="50" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6062668769034022772" fileName="CustomMPSApplication_Configuration.java" startLine="50" startPosition="27" endLine="51" endPosition="337" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6062668769034022772" fileName="CustomMPSApplication_Configuration.java" startLine="50" startPosition="27" endLine="51" endPosition="179" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6062668769034022861" fileName="CustomMPSApplication_Configuration_Editor.java" startLine="50" startPosition="79" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="6062668769034022790" fileName="CustomMPSApplication_Configuration.java" startLine="53" startPosition="9" endLine="54" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6062668769034022867" fileName="CustomMPSApplication_Configuration_Editor.java" startLine="53" startPosition="43" endLine="54" endPosition="125" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6062668769034022867" fileName="CustomMPSApplication_Configuration_Editor.java" startLine="53" startPosition="38" endLine="54" endPosition="125" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6062668769034022796" fileName="CustomMPSApplication_Configuration.java" startLine="56" startPosition="5" endLine="57" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="mySettings" />
     <nodeInfo nodeId="6062668769034022876" fileName="CustomMPSApplication_Configuration_Editor.java" startLine="56" startPosition="7" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="6062668769034022877" fileName="CustomMPSApplication_Configuration_Editor.java" startLine="57" startPosition="0" endLine="58" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -2245,7 +2242,7 @@
     <nodeInfo nodeId="6062668769034022729" fileName="CustomMPSApplication_Configuration_Editor.java" startLine="28" startPosition="0" endLine="32" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="CustomMPSApplication_Configuration_Editor#(Lcom/intellij/openapi/options/SettingsEditor;Lcom/intellij/openapi/options/SettingsEditor;)V" />
     <nodeInfo nodeId="6062668769034022763" fileName="CustomMPSApplication_Configuration.java" startLine="42" startPosition="123" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="compute#()Ljetbrains/mps/smodel/SNode;" />
     <nodeInfo nodeId="6062668769034022770" fileName="CustomMPSApplication_Configuration.java" startLine="49" startPosition="59" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="6062668769034022865" fileName="CustomMPSApplication_Configuration_Editor.java" startLine="52" startPosition="67" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="nodeChanged#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="6062668769034022865" fileName="CustomMPSApplication_Configuration_Editor.java" startLine="52" startPosition="77" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#(Ljetbrains/mps/smodel/SNode;)V" />
     <nodeInfo nodeId="6062668769034022729" fileName="CustomMPSApplication_Configuration.java" startLine="96" startPosition="12" endLine="100" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="6062668769034022729" fileName="CustomMPSApplication_Configuration.java" startLine="106" startPosition="12" endLine="110" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="6062668769034022729" fileName="CustomMPSApplication_Configuration.java" startLine="113" startPosition="0" endLine="117" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNode#()Ljetbrains/mps/execution/api/settings/ITemplatePersistentConfiguration;" />
@@ -2292,8 +2289,8 @@
     <scopeInfo nodeId="6062668769034022729" fileName="CustomMPSApplication_Configuration_Factory.java" startLine="19" startPosition="27" endLine="20" endPosition="36" />
     <scopeInfo nodeId="6062668769034022933" fileName="CustomMPSApplication_Configuration_Editor.java" startLine="34" startPosition="31" endLine="35" endPosition="24" />
     <scopeInfo nodeId="6062668769034022763" fileName="CustomMPSApplication_Configuration.java" startLine="43" startPosition="28" endLine="44" endPosition="105" />
-    <scopeInfo nodeId="6062668769034022771" fileName="CustomMPSApplication_Configuration.java" startLine="50" startPosition="27" endLine="51" endPosition="337" />
-    <scopeInfo nodeId="6062668769034022866" fileName="CustomMPSApplication_Configuration_Editor.java" startLine="53" startPosition="43" endLine="54" endPosition="125" />
+    <scopeInfo nodeId="6062668769034022771" fileName="CustomMPSApplication_Configuration.java" startLine="50" startPosition="27" endLine="51" endPosition="179" />
+    <scopeInfo nodeId="6062668769034022866" fileName="CustomMPSApplication_Configuration_Editor.java" startLine="53" startPosition="38" endLine="54" endPosition="125" />
     <scopeInfo nodeId="6062668769034022729" fileName="CustomMPSApplication_Configuration.java" startLine="59" startPosition="127" endLine="60" endPosition="34" />
     <scopeInfo nodeId="6062668769034022947" fileName="CustomMPSApplication_Configuration.java" startLine="64" startPosition="57" endLine="65" endPosition="87" />
     <scopeInfo nodeId="6062668769034022956" fileName="CustomMPSApplication_Configuration.java" startLine="66" startPosition="46" endLine="67" endPosition="121" />
@@ -2355,7 +2352,7 @@
     </scopeInfo>
     <scopeInfo nodeId="6062668769034022763" fileName="CustomMPSApplication_Configuration.java" startLine="42" startPosition="123" endLine="46" endPosition="0" />
     <scopeInfo nodeId="6062668769034022770" fileName="CustomMPSApplication_Configuration.java" startLine="49" startPosition="59" endLine="53" endPosition="0" />
-    <scopeInfo nodeId="6062668769034022865" fileName="CustomMPSApplication_Configuration_Editor.java" startLine="52" startPosition="67" endLine="56" endPosition="0">
+    <scopeInfo nodeId="6062668769034022865" fileName="CustomMPSApplication_Configuration_Editor.java" startLine="52" startPosition="77" endLine="56" endPosition="0">
       <varInfo nodeId="6062668769034022865" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="6062668769034022729" fileName="CustomMPSApplication_Configuration.java" startLine="113" startPosition="0" endLine="117" endPosition="0" />
@@ -4356,10 +4353,12 @@
     <nodeInfo nodeId="6893245555985399815" fileName="plugin.xml" startLine="24" startPosition="2" endLine="24" endPosition="48" conceptFqName="jetbrains.mps.gtext.structure.GText" />
     <nodeInfo nodeId="6893245555985399815" fileName="plugin.xml" startLine="25" startPosition="0" endLine="25" endPosition="4" conceptFqName="jetbrains.mps.gtext.structure.GIndent" />
     <nodeInfo nodeId="6893245555985399815" fileName="plugin.xml" startLine="25" startPosition="4" endLine="25" endPosition="55" conceptFqName="jetbrains.mps.gtext.structure.GText" />
-    <nodeInfo nodeId="6893245555985399815" fileName="plugin.xml" startLine="26" startPosition="0" endLine="26" endPosition="2" conceptFqName="jetbrains.mps.gtext.structure.GIndent" />
-    <nodeInfo nodeId="6893245555985399815" fileName="plugin.xml" startLine="26" startPosition="2" endLine="26" endPosition="15" conceptFqName="jetbrains.mps.gtext.structure.GText" />
-    <nodeInfo nodeId="6893245555985399815" fileName="plugin.xml" startLine="27" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GIndent" />
-    <nodeInfo nodeId="6893245555985399815" fileName="plugin.xml" startLine="27" startPosition="0" endLine="27" endPosition="14" conceptFqName="jetbrains.mps.gtext.structure.GText" />
+    <nodeInfo nodeId="6893245555985399815" fileName="plugin.xml" startLine="26" startPosition="0" endLine="26" endPosition="4" conceptFqName="jetbrains.mps.gtext.structure.GIndent" />
+    <nodeInfo nodeId="6893245555985399815" fileName="plugin.xml" startLine="26" startPosition="4" endLine="26" endPosition="23" conceptFqName="jetbrains.mps.gtext.structure.GText" />
+    <nodeInfo nodeId="6893245555985399815" fileName="plugin.xml" startLine="27" startPosition="0" endLine="27" endPosition="2" conceptFqName="jetbrains.mps.gtext.structure.GIndent" />
+    <nodeInfo nodeId="6893245555985399815" fileName="plugin.xml" startLine="27" startPosition="2" endLine="27" endPosition="15" conceptFqName="jetbrains.mps.gtext.structure.GText" />
+    <nodeInfo nodeId="6893245555985399815" fileName="plugin.xml" startLine="28" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GIndent" />
+    <nodeInfo nodeId="6893245555985399815" fileName="plugin.xml" startLine="28" startPosition="0" endLine="28" endPosition="14" conceptFqName="jetbrains.mps.gtext.structure.GText" />
     <nodeInfo nodeId="6893245555985399815" fileName="plugin.xml" startLine="1" startPosition="21" endLine="2" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />
     <nodeInfo nodeId="6893245555985399815" fileName="plugin.xml" startLine="2" startPosition="8" endLine="3" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />
     <nodeInfo nodeId="6893245555985399815" fileName="plugin.xml" startLine="3" startPosition="16" endLine="4" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />
@@ -4389,15 +4388,16 @@
     <nodeInfo nodeId="6893245555985399815" fileName="plugin.xml" startLine="23" startPosition="4" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />
     <nodeInfo nodeId="6893245555985399815" fileName="Plugin_PluginInitializer.java" startLine="23" startPosition="9" endLine="24" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6893245555985399815" fileName="plugin.xml" startLine="24" startPosition="48" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />
-    <nodeInfo nodeId="6893245555985399815" fileName="plugin.xml" startLine="25" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GIndentBlock" />
-    <nodeInfo nodeId="6893245555985399815" fileName="plugin.xml" startLine="25" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="6893245555985399815" fileName="plugin.xml" startLine="25" startPosition="55" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />
-    <nodeInfo nodeId="6893245555985399815" fileName="plugin.xml" startLine="26" startPosition="15" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />
-    <nodeInfo nodeId="6893245555985399815" fileName="plugin.xml" startLine="27" startPosition="14" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />
+    <nodeInfo nodeId="6893245555985399815" fileName="plugin.xml" startLine="26" startPosition="23" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />
+    <nodeInfo nodeId="6893245555985399815" fileName="plugin.xml" startLine="27" startPosition="15" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />
+    <nodeInfo nodeId="6893245555985399815" fileName="plugin.xml" startLine="28" startPosition="14" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />
     <nodeInfo nodeId="6893245555985399815" fileName="Plugin_PluginInitializer.java" startLine="31" startPosition="36" endLine="32" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="6893245555985399815" fileName="Plugin_PluginInitializer.java" startLine="32" startPosition="83" endLine="33" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6893245555985399815" fileName="plugin.xml" startLine="3" startPosition="0" endLine="5" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GIndentBlock" />
     <nodeInfo nodeId="6893245555985399815" fileName="plugin.xml" startLine="3" startPosition="0" endLine="5" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
+    <nodeInfo nodeId="6893245555985399815" fileName="plugin.xml" startLine="25" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GIndentBlock" />
+    <nodeInfo nodeId="6893245555985399815" fileName="plugin.xml" startLine="25" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="6893245555985399815" fileName="plugin.xml" startLine="2" startPosition="0" endLine="5" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GIndentBlock" />
     <nodeInfo nodeId="6893245555985399815" fileName="plugin.xml" startLine="2" startPosition="0" endLine="5" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="6893245555985399815" fileName="Plugin_PluginInitializer.java" startLine="17" startPosition="43" endLine="20" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -4410,9 +4410,9 @@
     <nodeInfo nodeId="6893245555985399815" fileName="Plugin_PluginInitializer.java" startLine="15" startPosition="79" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="create#(Ljava/lang/Class;)null" />
     <nodeInfo nodeId="6893245555985399815" fileName="Plugin_PluginInitializer.java" startLine="14" startPosition="37" endLine="26" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6893245555985399815" fileName="Plugin_PluginInitializer.java" startLine="13" startPosition="71" endLine="27" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Plugin_PluginInitializer#()V" />
-    <nodeInfo nodeId="6893245555985399815" fileName="plugin.xml" startLine="7" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GIndentBlock" />
-    <nodeInfo nodeId="6893245555985399815" fileName="plugin.xml" startLine="7" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
-    <nodeInfo nodeId="6893245555985399815" fileName="plugin.xml" startLine="1" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
+    <nodeInfo nodeId="6893245555985399815" fileName="plugin.xml" startLine="7" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GIndentBlock" />
+    <nodeInfo nodeId="6893245555985399815" fileName="plugin.xml" startLine="7" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
+    <nodeInfo nodeId="6893245555985399815" fileName="plugin.xml" startLine="1" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <scopeInfo nodeId="6893245555985399815" fileName="Plugin_PluginInitializer.java" startLine="36" startPosition="31" endLine="36" endPosition="31" />
     <scopeInfo nodeId="6893245555985399815" fileName="Plugin_PluginInitializer.java" startLine="39" startPosition="34" endLine="39" endPosition="34" />
     <scopeInfo nodeId="6893245555985399815" fileName="Plugin_PluginInitializer.java" startLine="18" startPosition="51" endLine="19" endPosition="52" />
@@ -4429,7 +4429,7 @@
     <scopeInfo nodeId="6893245555985399815" fileName="Plugin_PluginInitializer.java" startLine="13" startPosition="71" endLine="27" endPosition="3" />
     <unitInfo nodeId="6893245555985399815" fileName="Plugin_PluginInitializer.java" startLine="13" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.execution.configurations.implementation.plugin.plugin.Plugin_PluginInitializer" />
     <unitInfo nodeId="6893245555985399815" fileName="Plugin_PluginInitializer.java" startLine="15" startPosition="54" endLine="26" endPosition="5" unitName="jetbrains.mps.execution.configurations.implementation.plugin.plugin.Plugin_PluginInitializer$1" />
-    <unitInfo nodeId="6893245555985399815" fileName="plugin.xml" startLine="1" startPosition="0" endLine="28" endPosition="0" unitName="plugin.xml" />
+    <unitInfo nodeId="6893245555985399815" fileName="plugin.xml" startLine="1" startPosition="0" endLine="29" endPosition="0" unitName="plugin.xml" />
   </root>
 </debugInfo>
 
