@@ -24,7 +24,11 @@ import com.intellij.openapi.fileEditor.FileEditorManagerEvent;
 import com.intellij.openapi.fileEditor.FileEditorManagerListener;
 import com.intellij.openapi.project.DumbService;
 import com.intellij.openapi.project.Project;
+import com.intellij.openapi.vcs.FileStatusListener;
+import com.intellij.openapi.vcs.FileStatusManager;
 import com.intellij.openapi.vfs.VirtualFile;
+import com.intellij.util.containers.MultiMap;
+import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import jetbrains.mps.openapi.editor.Editor;
 import jetbrains.mps.ide.editor.MPSFileNodeEditor;
 import jetbrains.mps.ide.IdeMain;
@@ -33,15 +37,18 @@ import jetbrains.mps.ide.MPSCoreComponents;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.openapi.editor.EditorComponent;
+import jetbrains.mps.project.IModule;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.reloading.ReloadListener;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.util.Computable;
+import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.*;
 
@@ -51,10 +58,11 @@ public class MPSEditorWarningsManager implements ProjectComponent {
   private FileEditorManager myFileEditorManager;
   private ClassLoaderManager myClassLoaderManager;
   private ReloadListener myReloadListener = new MyReloadListener();
+  private MyFileStatusListener myFileStatusListener = new MyFileStatusListener();
   private Project myProject;
 
   private MyFileEditorManagerListener myFileEditorManagerListener = new MyFileEditorManagerListener();
-  private Map<MPSFileNodeEditor, Set<WarningPanel>> myWarnings = new HashMap<MPSFileNodeEditor, Set<WarningPanel>>();
+  private MultiMap<MPSFileNodeEditor, WarningPanel> myWarnings = new MultiMap<MPSFileNodeEditor, WarningPanel>();
 
   public MPSEditorWarningsManager(Project project, FileEditorManager fileEditorManager, MPSCoreComponents coreComponents) {
     myProject = project;
@@ -78,9 +86,11 @@ public class MPSEditorWarningsManager implements ProjectComponent {
 
   public void initComponent() {
     myClassLoaderManager.addReloadHandler(myReloadListener);
+    FileStatusManager.getInstance(myProject).addFileStatusListener(myFileStatusListener);
   }
 
   public void disposeComponent() {
+    FileStatusManager.getInstance(myProject).removeFileStatusListener(myFileStatusListener);
     myClassLoaderManager.removeReloadHandler(myReloadListener);
   }
 
@@ -109,12 +119,8 @@ public class MPSEditorWarningsManager implements ProjectComponent {
   }
 
   private void doUpdateWarnings(final MPSFileNodeEditor editor, Project project) {
-    if (myWarnings.containsKey(editor)) {
-      for (WarningPanel panel : myWarnings.get(editor)) {
-        myFileEditorManager.removeTopComponent(editor, panel);
-      }
-      myWarnings.remove(editor);
-    }
+    List<WarningPanel> newWarnings = new ArrayList<WarningPanel>();
+    
     Editor nodeEditor = editor.getNodeEditor();
     if (nodeEditor == null) return;
 
@@ -129,27 +135,48 @@ public class MPSEditorWarningsManager implements ProjectComponent {
     for (EditorWarningsProvider provider : providers) {
       WarningPanel panel = provider.getWarningPanel(node, project);
       if (panel != null) {
-        addWarningPanel(editor, panel);
+        newWarnings.add(panel);
+      }
+    }
+
+    replaceWarningPanels(editor, newWarnings);
+  }
+
+  private void updateAllWarnings(@Nullable VirtualFile vf) {
+    if (IdeMain.getTestMode() == TestMode.CORE_TEST) return;
+
+    for (FileEditor editor : myFileEditorManager.getAllEditors()) {
+      if (editor instanceof MPSFileNodeEditor) {
+        MPSFileNodeEditor mpsEditor = (MPSFileNodeEditor) editor;
+        if (!mpsEditor.isDisposed()) {
+          if (vf == null || vf.equals(mpsEditor.getFile())) {
+            updateWarnings(mpsEditor);
+          }
+        }
       }
     }
   }
 
   private void updateAllWarnings() {
-    if (IdeMain.getTestMode() == TestMode.CORE_TEST) return;
-
-    for (FileEditor editor : myFileEditorManager.getAllEditors()) {
-      if (editor instanceof MPSFileNodeEditor && !((MPSFileNodeEditor) editor).isDisposed()) {
-        updateWarnings((MPSFileNodeEditor) editor);
-      }
-    }
+    updateAllWarnings(null);
   }
 
-  private void addWarningPanel(MPSFileNodeEditor editor, WarningPanel panel) {
-    if (!myWarnings.containsKey(editor)) {
-      myWarnings.put(editor, new HashSet<WarningPanel>());
+  private void replaceWarningPanels(MPSFileNodeEditor editor, List<WarningPanel> newPanels) {
+    Collection<WarningPanel> oldPanels = myWarnings.get(editor);
+    List<WarningPanel> toRemove = new ArrayList<WarningPanel>(oldPanels);
+    toRemove.removeAll(newPanels);
+    List<WarningPanel> toAdd = new ArrayList<WarningPanel>(newPanels);
+    toAdd.removeAll(oldPanels);
+
+    for (WarningPanel panel : toRemove) {
+      myFileEditorManager.removeTopComponent(editor, panel);
+      myWarnings.removeValue(editor, panel);
     }
-    myFileEditorManager.addTopComponent(editor, panel);
-    myWarnings.get(editor).add(panel);
+
+    for (WarningPanel panel : toAdd) {
+      myFileEditorManager.addTopComponent(editor, panel);
+      myWarnings.putValue(editor, panel);
+    }
   }
 
   private class MyFileEditorManagerListener implements FileEditorManagerListener {
@@ -180,6 +207,18 @@ public class MPSEditorWarningsManager implements ProjectComponent {
           updateAllWarnings();
         }
       });
+    }
+  }
+
+  private class MyFileStatusListener implements FileStatusListener {
+    @Override
+    public void fileStatusChanged(@NotNull final VirtualFile virtualFile) {
+      updateAllWarnings(virtualFile);
+    }
+
+    @Override
+    public void fileStatusesChanged() {
+      updateAllWarnings();
     }
   }
 }

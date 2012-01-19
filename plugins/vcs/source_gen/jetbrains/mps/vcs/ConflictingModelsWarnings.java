@@ -38,14 +38,14 @@ public class ConflictingModelsWarnings implements EditorWarningsProvider {
       assert type != null;
       if (modelFile != null) {
         // conflicting model and module 
-        return new WarningPanel(String.format("You are viewing model which is not merged yet. It is owned by %s, which is merged neither." + " You need to merge %s and model (this order is important).", type, type), "Merge Module and Model", new Runnable() {
+        return new WarningPanel(this, String.format("You are viewing model which is not merged yet. It is owned by %s, which is merged neither." + " You need to merge %s and model (this order is important).", type, type), String.format("Merge %s and Model", NameUtil.capitalize(type)), new Runnable() {
           public void run() {
             invokeMergeDialog(project, moduleFile, modelFile);
           }
         });
       } else {
         // conflicting module 
-        return new WarningPanel(String.format("You are viewing model owned by %s which is not merged yet. You need to merge it before editing.", type, type), "Merge " + NameUtil.capitalize(type), new Runnable() {
+        return new WarningPanel(this, String.format("You are viewing model owned by %s which is not merged yet. You need to merge it before editing.", type), "Merge " + NameUtil.capitalize(type), new Runnable() {
           public void run() {
             invokeMergeDialog(project, moduleFile);
           }
@@ -54,7 +54,7 @@ public class ConflictingModelsWarnings implements EditorWarningsProvider {
     } else {
       if (modelFile != null) {
         // conflicting model 
-        return new WarningPanel("You are viewing model which is not merged yet. You may see very old version of it." + " You need to merge it before editing, otherwise your changes will be lost.", "Merge Model", new Runnable() {
+        return new WarningPanel(this, "You are viewing model which is not merged yet. You may see very old version of it." + " You need to merge it before editing, otherwise your changes will be lost.", "Merge Model", new Runnable() {
           public void run() {
             invokeMergeDialog(project, modelFile);
           }

@@ -32,7 +32,7 @@ public class PackagedModelWarningsProvider implements EditorWarningsProvider {
       SModelDescriptor md = model.getModelDescriptor();
       IModule module = md.getModule();
       if (module != null && module.isPackaged()) {
-        return new WarningPanel("Warning: the node is in a packaged model. Your changes won't be saved");
+        return new WarningPanel(this, "Warning: the node is in a packaged model. Your changes won't be saved");
       }
     }
     return null;
