@@ -31,6 +31,18 @@
       <implementation-class>jetbrains.mps.vcs.plugin.Vcs_PluginInitializer</implementation-class>
     </component>
     <component>
+      <implementation-class>jetbrains.mps.watching.ModelChangesWatcher</implementation-class>
+    </component>
+    <component>
+      <implementation-class>jetbrains.mps.watching.ModelFocusSynchronizer</implementation-class>
+    </component>
+    <component>
+      <implementation-class>jetbrains.mps.watching.WatchedRoots</implementation-class>
+    </component>
+    <component>
+      <implementation-class>jetbrains.mps.watching.ModelCacheReloader</implementation-class>
+    </component>
+    <component>
       <implementation-class>jetbrains.mps.vcs.suspicious.SuspiciousModelIndex</implementation-class>
     </component>
     <component>
@@ -41,6 +53,7 @@
   <project-components>
     <component>
       <implementation-class>com.intellij.platform.PlatformVcsDetector</implementation-class>
+      <skipForDefaultProject/>
     </component>
     <component>
       <interface-class>com.intellij.openapi.vcs.impl.VcsPathPresenter</interface-class>
@@ -51,18 +64,23 @@
     </component>
     <component>
       <implementation-class>jetbrains.mps.vcs.changesmanager.CurrentDifferenceRegistry</implementation-class>
+      <skipForDefaultProject/>
     </component>
     <component>
       <implementation-class>jetbrains.mps.vcs.changesmanager.editor.EditorHighlighterFactory</implementation-class>
+      <skipForDefaultProject/>
     </component>
     <component>
       <implementation-class>jetbrains.mps.vcs.changesmanager.roots.NodeFileStatusMapping</implementation-class>
+      <skipForDefaultProject/>
     </component>
     <component>
       <implementation-class>jetbrains.mps.vcs.changesmanager.tree.FeatureForestMapSupport</implementation-class>
+      <skipForDefaultProject/>
     </component>
     <component>
       <implementation-class>jetbrains.mps.vcs.changesmanager.tree.TreeHighlighterFactory</implementation-class>
+      <skipForDefaultProject/>
     </component>
     <component>
       <implementation-class>jetbrains.mps.vcs.MPSVcsProjectConfiguration</implementation-class>

@@ -34,14 +34,12 @@ import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.util.Computable;
-import jetbrains.mps.watching.ModelChangesWatcher;
 
 import java.util.LinkedHashSet;
 
 public class StartupModuleMaker extends AbstractProjectComponent {
   @SuppressWarnings({"UnusedDeclaration"})
-  public StartupModuleMaker(Project project, MPSProject mpsProject, ProjectLibraryManager plm, final ModelChangesWatcher watcher) {
+  public StartupModuleMaker(Project project, MPSProject mpsProject, ProjectLibraryManager plm) {
     super(project);
 
     final ProgressIndicator indicator = ProgressManager.getInstance().getProgressIndicator();
@@ -55,14 +53,8 @@ public class StartupModuleMaker extends AbstractProjectComponent {
           ClassLoaderManager.getInstance().updateClassPath();
           monitor.advance(1);
 
-          final ModuleMaker maker = new ModuleMaker(new MessageHandler(), MessageKind.ERROR);
-
-          watcher.executeUnderBlockedReload(new Computable<Object>() {
-            public Object compute() {
-              maker.make(new LinkedHashSet<IModule>(MPSModuleRepository.getInstance().getAllModules()), monitor.subTask(9));
-              return null;
-            }
-          });
+          ModuleMaker maker = new ModuleMaker(new MessageHandler(), MessageKind.ERROR);
+          maker.make(new LinkedHashSet<IModule>(MPSModuleRepository.getInstance().getAllModules()), monitor.subTask(9));
         }
       });
 
