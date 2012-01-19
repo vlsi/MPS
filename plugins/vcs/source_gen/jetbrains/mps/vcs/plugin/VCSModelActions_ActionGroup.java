@@ -16,6 +16,7 @@ public class VCSModelActions_ActionGroup extends GeneratedActionGroup {
     try {
       VCSModelActions_ActionGroup.this.addAction("jetbrains.mps.vcs.plugin.ShowDifferencesWithModelOnDisk_Action");
       VCSModelActions_ActionGroup.this.addAction("jetbrains.mps.vcs.plugin.ReRunMergeFromBackup_Action");
+      VCSModelActions_ActionGroup.this.addAction("jetbrains.mps.vcs.plugin.CompareTransientModels_Action");
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }

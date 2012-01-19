@@ -39,7 +39,7 @@ public class ScopeAdapter implements ISearchScope {
   }
 
   public boolean isInScope(SNode node) {
-    return ListSequence.fromList(scope.getAvailableElements(null)).contains(node);
+    return scope.contains(node);
   }
 
   @NotNull

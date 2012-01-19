@@ -1,7 +1,7 @@
 <project name="MPS-external-dist" default="default">
-  <property file="${ant.file}/../MPS.properties" />
-  <import file="${ant.file}/../MPS-external-dist.xml" />
-  <import file="${ant.file}/../MPS-external.xml" />
+  <property file="${ant.file.MPS-external-dist}/../MPS.properties" />
+  <import file="${ant.file.MPS-external-dist}/../MPS-external-dist.xml" />
+  <import file="${ant.file.MPS-external-dist}/../MPS-external.xml" />
   <condition property="windows">
     <os family="windows" />
   </condition>
@@ -45,6 +45,7 @@
     <property name="fsnotifier.src.mac" value="${fsnotifier.src}${fsnotifier.mac.suffix}" />
     <property name="fsnotifier.linux.suffix" value="/linux/fsnotifier" />
     <property name="fsnotifier.src.linux" value="${fsnotifier.src}${fsnotifier.linux.suffix}" />
+    <property name="fsnotifier.src.linux64" value="${fsnotifier.src}${fsnotifier.linux.suffix}64" />
     <property name="zip.file" value="${build.number}.zip" />
     <property name="unix.startup.file" value="${scripts.dir}/mps.sh" />
     <property name="windows.startup.file" value="${scripts.dir}/mps.bat" />
@@ -54,10 +55,11 @@
     <fixcrlf file="${windows.startup.file}" eof="asis" eol="dos" />
     <fixcrlf file="${vmoptions.file}" eof="remove" eol="unix" />
     <zip destfile="${deploy.dir}/${zip.file}">
-      <zipfileset dir="${deploy.dir}/${root.folder}" prefix="${dist.folder.name}" />
+      <zipfileset dir="${deploy.dir}/${root.folder}" prefix="${dist.folder.name}" excludes="**/bin/mac/fsnotifier, **/bin/linux/fsnotifier, **/bin/linux/fsnotifier64" />
       <zipfileset file="${unix.startup.file}" prefix="${dist.folder.name}" filemode="755" />
       <zipfileset file="${fsnotifier.src.mac}" prefix="${dist.folder.name}/bin/mac" filemode="755" />
       <zipfileset file="${fsnotifier.src.linux}" prefix="${dist.folder.name}/bin/linux" filemode="755" />
+      <zipfileset file="${fsnotifier.src.linux64}" prefix="${dist.folder.name}/bin/linux" filemode="755" />
       <zipfileset file="${windows.startup.file}" prefix="${dist.folder.name}" />
       <zipfileset file="${vmoptions.file}" prefix="${dist.folder.name}/bin" />
       <zipfileset file="${vmoptions.file}" fullpath="${dist.folder.name}/bin/mps.exe.vmoptions" />
@@ -79,8 +81,9 @@
     <tar destfile="${deploy.dir}/${tar.gz.file}" compression="gzip">
       <tarfileset dir="${deploy.dir}/${root.folder}" prefix="${dist.folder.name}" excludes="**/*.dll, **/*.exe, **/bin/linux/, **/bin/mac/, **/bin/nix/, **/bin/win/" />
       <tarfileset file="${unix.startup.file}" prefix="${dist.folder.name}" filemode="755" />
-      <tarfileset dir="${fsnotifier.dir}" prefix="${dist.folder.name}/bin" excludes="**/fsnotifier" />
+      <tarfileset dir="${fsnotifier.dir}" prefix="${dist.folder.name}/bin" excludes="**/fsnotifier, **/fsnotifier64" />
       <tarfileset file="${fsnotifier.dir}/fsnotifier" prefix="${dist.folder.name}/bin" filemode="755" />
+      <tarfileset file="${fsnotifier.dir}/fsnotifier64" prefix="${dist.folder.name}/bin" filemode="755" />
       <tarfileset file="${vmoptions.file}" prefix="${dist.folder.name}/bin" />
       <tarfileset file="${help.file}" prefix="${dist.folder.name}/help" />
     </tar>

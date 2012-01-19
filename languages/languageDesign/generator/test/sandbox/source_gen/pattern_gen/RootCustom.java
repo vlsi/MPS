@@ -4,7 +4,11 @@ package pattern_gen;
 
 
 public class RootCustom {
+  private int q;
+
   public RootCustom() {
+    int i = 42;
+    q = i;
     // in ctor 2681305894288275125 
     // in ctor 4146564171992399882 
     // in ctor 4146564171992399888 

@@ -43,6 +43,7 @@ import org.junit.runner.RunWith;
   "jetbrains.mps.refactoring.RefactoringTest",
   "jetbrains.mps.runtime.BundleLoadingTest",
   "jetbrains.mps.runtime.BundleTest",
+  "jetbrains.mps.vcs.changesmanager.CommonChangesManagerTest",
   "jetbrains.mps.vcs.diff.MergeConceptAndImportsTest",
   "jetbrains.mps.vcs.diff.MergeNotLoseExternalChangesTest",
   "jetbrains.mps.vcs.diff.MergeReferencesTest",
@@ -54,6 +55,7 @@ import org.junit.runner.RunWith;
 public class GlobalTestSuite extends TestSuite {
   @BeforeClass
   public static void make () throws Exception {
+    System.setProperty("idea.load.plugins.id", "jetbrains.mps.vcs,jetbrains.mps.ide.editor,jetbrains.mps.ide.make,Git4Idea");
     new MpsMakeHelper().make();
   }
 

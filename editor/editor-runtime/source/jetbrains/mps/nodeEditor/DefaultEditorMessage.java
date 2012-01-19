@@ -50,10 +50,6 @@ public class DefaultEditorMessage implements EditorMessage {
     myOwner = owner;
   }
 
-  public LocationOnCell getLocationOnCell() {
-    return LocationOnCell.CENTER;
-  }
-
   public DefaultEditorMessage(SNode node, MessageStatus status, Color color, String message, EditorMessageOwner owner) {
     this(node, color, message, owner);
     myStatus = status;
@@ -200,16 +196,6 @@ public class DefaultEditorMessage implements EditorMessage {
       result.addAll(myIntentionProviders);
     }
     return result;
-  }
-
-  @Override
-  public boolean isLongInGutter() {
-    return false;
-  }
-
-  @Override
-  public Color getColorInGutter() {
-    return getColor();
   }
 
   @Override

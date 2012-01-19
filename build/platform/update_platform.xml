@@ -14,7 +14,7 @@
   ~ limitations under the License.
   -->
 <project name="update_platform" default="default" basedir="..">
-  <property name="main.url" value="http://buildserver/guestAuth/repository/download/bt1069/latest.lastSuccessful"/>
+  <property name="main.url" value="http://buildserver/guestAuth/repository/download/bt1681/latest.lastSuccessful"/>
   <property name="platform.file" value="platform.zip"/>
   <property name="platform.src.file" value="platform.src.zip"/>
 
@@ -22,10 +22,11 @@
   <property name="home.path" value="${ant.dir}/../../"/>
   <property name="platform.lib.dir" value="${home.path}/lib"/>
   <property name="platform.plugin.dir" value="${home.path}/plugins"/>
-  <property name="platform.sources.dir" value="${home.path}/platform_src"/>
+  <property name="platform.sources.dir" value="${home.path}/lib/src"/>
 
   <property name="tmp" value="${java.io.tmpdir}/idea.new"/>
   <property name="tmp.platform" value="${tmp}/platform"/>
+  <property name="tmp.mpslib" value="${tmp}/mpslib"/>
 
   <target name="default">
     <antcall target="prepare"/>
@@ -43,8 +44,29 @@
   </target>
 
   <target name="update.platform">
-    <move overwrite="true" todir="${platform.lib.dir}">
+    <mkdir dir="${tmp.mpslib}"/>
+    <move todir="${tmp.mpslib}">
+      <fileset file="${platform.lib.dir}/beansbinding-1.2.1.jar"/>
+      <fileset file="${platform.lib.dir}/ecj.jar"/>
+      <fileset file="${platform.lib.dir}/tools.jar"/>
+      <fileset file="${platform.lib.dir}/asm.jar"/>
+      <fileset file="${platform.lib.dir}/diffutils-1.2.1.jar"/>
+      <fileset file="${platform.lib.dir}/log4j.jar"/>
+    </move>
+    <move todir="${tmp.mpslib}/src">
+      <fileset dir="${platform.lib.dir}/src"/>
+    </move>
+
+
+    <deltree dir="${platform.lib.dir}" />
+    <mkdir dir="${platform.lib.dir}"/>
+
+    <move todir="${platform.lib.dir}">
       <fileset dir="${tmp.platform}/lib"/>
+    </move>
+
+    <move overwrite="true" todir="${platform.lib.dir}">
+      <fileset dir="${tmp.mpslib}"/>
     </move>
   </target>
 

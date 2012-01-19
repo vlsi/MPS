@@ -80,7 +80,7 @@ public class NodeNodeData extends BaseNodeData {
   }
 
   public SNode getNode() {
-    return (SNode) getIdObject();
+    return myNodePointer.getNode();
   }
 
   public Icon getIcon() {
@@ -89,7 +89,7 @@ public class NodeNodeData extends BaseNodeData {
   }
 
   public Object getIdObject() {
-    return myNodePointer.getNode();
+    return isResultNode() ? (getNodePointer().getModelReference() + "/" + getNodePointer().getNodeId() + "/" + getPlainText()) : getNode();
   }
 
   public void write(Element element, Project project) throws CantSaveSomethingException {

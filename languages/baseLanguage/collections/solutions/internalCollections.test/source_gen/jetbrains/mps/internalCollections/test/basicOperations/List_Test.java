@@ -436,6 +436,13 @@ __switch__:
     Assert.assertTrue(9999 == (int) ListSequence.fromList(listi).getElement(2));
   }
 
+  public void test_mps15234() throws Exception {
+    List<String> los = ListSequence.fromListAndArray(new ArrayList<String>(), "foo", "bar");
+    String[] strings = ListSequence.fromList(los).toGenericArray(String.class);
+    Assert.assertEquals("foo", strings[0]);
+    Assert.assertEquals("bar", strings[1]);
+  }
+
   public List<Foo> mps5684helper() {
     List<Bar> bars = ListSequence.fromListAndArray(new ArrayList<Bar>(), new Bar());
     return ListSequence.fromListWithValues(new ArrayList<Foo>(), bars);

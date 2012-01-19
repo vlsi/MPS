@@ -1,82 +1,87 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <root nodeId="1117107720588641319">
-    <nodeInfo nodeId="1117107720588671451" fileName="MakeEnvironment.java" startLine="22" startPosition="23" endLine="23" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7594169443024054735" fileName="MakeEnvironment.java" startLine="23" startPosition="55" endLine="24" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1117107720588671455" fileName="MakeEnvironment.java" startLine="24" startPosition="49" endLine="25" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1117107720588671468" fileName="MakeEnvironment.java" startLine="26" startPosition="9" endLine="27" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1117107720588671461" fileName="MakeEnvironment.java" startLine="28" startPosition="28" endLine="29" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
-    <nodeInfo nodeId="1117107720588671470" fileName="MakeEnvironment.java" startLine="30" startPosition="5" endLine="31" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1117107720588671472" fileName="MakeEnvironment.java" startLine="31" startPosition="15" endLine="32" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6554363941515227959" fileName="MakeEnvironment.java" startLine="42" startPosition="29" endLine="43" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4003657351907887855" fileName="MakeEnvironment.java" startLine="48" startPosition="48" endLine="49" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4003657351907887868" fileName="MakeEnvironment.java" startLine="50" startPosition="9" endLine="51" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4003657351907887874" fileName="MakeEnvironment.java" startLine="51" startPosition="61" endLine="52" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4003657351907887882" fileName="MakeEnvironment.java" startLine="52" startPosition="61" endLine="53" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4003657351907887861" fileName="MakeEnvironment.java" startLine="54" startPosition="28" endLine="55" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
-    <nodeInfo nodeId="8401097797600995468" fileName="MakeEnvironment.java" startLine="56" startPosition="5" endLine="57" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3513010440363257755" fileName="MakeEnvironment.java" startLine="60" startPosition="33" endLine="61" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1638690917443621454" fileName="MakeEnvironment.java" startLine="61" startPosition="29" endLine="62" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="1638690917443621456" fileName="MakeEnvironment.java" startLine="62" startPosition="100" endLine="63" endPosition="116" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3513010440363257768" fileName="MakeEnvironment.java" startLine="64" startPosition="9" endLine="65" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3513010440363257761" fileName="MakeEnvironment.java" startLine="66" startPosition="27" endLine="67" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
-    <nodeInfo nodeId="1117107720588641321" fileName="MakeEnvironment.java" startLine="17" startPosition="50" endLine="19" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MakeEnvironment#()V" />
-    <nodeInfo nodeId="6554363941515227971" fileName="MakeEnvironment.java" startLine="38" startPosition="53" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="6554363941515227966" fileName="MakeEnvironment.java" startLine="37" startPosition="11" endLine="41" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1117107720588671458" fileName="MakeEnvironment.java" startLine="25" startPosition="52" endLine="30" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="3513010440363257758" fileName="MakeEnvironment.java" startLine="63" startPosition="116" endLine="68" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="4003657351907887858" fileName="MakeEnvironment.java" startLine="49" startPosition="20" endLine="56" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="6554363941515227956" fileName="MakeEnvironment.java" startLine="36" startPosition="33" endLine="44" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="6554363941515227946" fileName="MakeEnvironment.java" startLine="35" startPosition="25" endLine="45" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
-    <nodeInfo nodeId="3513010440363257750" fileName="MakeEnvironment.java" startLine="59" startPosition="0" endLine="70" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="configureMPS#()V" />
-    <nodeInfo nodeId="8401097797600990509" fileName="MakeEnvironment.java" startLine="47" startPosition="0" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="loadProject#(Ljava/io/File;)Ljetbrains/mps/project/Project;" />
-    <nodeInfo nodeId="6554363941515227942" fileName="MakeEnvironment.java" startLine="34" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="dispose#()V" />
-    <nodeInfo nodeId="1117107720588671444" fileName="MakeEnvironment.java" startLine="20" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setup#()V" />
-    <scopeInfo nodeId="1117107720588641324" fileName="MakeEnvironment.java" startLine="18" startPosition="28" endLine="18" endPosition="28" />
-    <scopeInfo nodeId="6554363941515227974" fileName="MakeEnvironment.java" startLine="39" startPosition="29" endLine="39" endPosition="29" />
-    <scopeInfo nodeId="1117107720588671467" fileName="MakeEnvironment.java" startLine="26" startPosition="9" endLine="27" endPosition="21" />
-    <scopeInfo nodeId="1117107720588671459" fileName="MakeEnvironment.java" startLine="28" startPosition="0" endLine="29" endPosition="37">
+    <nodeInfo nodeId="1117107720588671451" fileName="MakeEnvironment.java" startLine="23" startPosition="23" endLine="24" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7594169443024054735" fileName="MakeEnvironment.java" startLine="24" startPosition="55" endLine="25" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1117107720588671455" fileName="MakeEnvironment.java" startLine="25" startPosition="49" endLine="26" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1117107720588671468" fileName="MakeEnvironment.java" startLine="27" startPosition="9" endLine="28" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1117107720588671461" fileName="MakeEnvironment.java" startLine="29" startPosition="28" endLine="30" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
+    <nodeInfo nodeId="1117107720588671470" fileName="MakeEnvironment.java" startLine="31" startPosition="5" endLine="32" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1117107720588671472" fileName="MakeEnvironment.java" startLine="32" startPosition="15" endLine="33" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6554363941515227959" fileName="MakeEnvironment.java" startLine="43" startPosition="29" endLine="44" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4003657351907887855" fileName="MakeEnvironment.java" startLine="49" startPosition="48" endLine="50" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4003657351907887868" fileName="MakeEnvironment.java" startLine="51" startPosition="9" endLine="52" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4003657351907887874" fileName="MakeEnvironment.java" startLine="52" startPosition="61" endLine="53" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4003657351907887882" fileName="MakeEnvironment.java" startLine="53" startPosition="61" endLine="54" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4003657351907887861" fileName="MakeEnvironment.java" startLine="55" startPosition="28" endLine="56" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
+    <nodeInfo nodeId="8401097797600995468" fileName="MakeEnvironment.java" startLine="57" startPosition="5" endLine="58" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3513010440363257755" fileName="MakeEnvironment.java" startLine="61" startPosition="33" endLine="62" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1638690917443621454" fileName="MakeEnvironment.java" startLine="62" startPosition="29" endLine="63" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="2329659746120839872" fileName="MakeEnvironment.java" startLine="63" startPosition="100" endLine="64" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1638690917443621456" fileName="MakeEnvironment.java" startLine="65" startPosition="63" endLine="66" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3513010440363257768" fileName="MakeEnvironment.java" startLine="68" startPosition="9" endLine="69" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3513010440363257761" fileName="MakeEnvironment.java" startLine="70" startPosition="27" endLine="71" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
+    <nodeInfo nodeId="1117107720588641321" fileName="MakeEnvironment.java" startLine="18" startPosition="50" endLine="20" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MakeEnvironment#()V" />
+    <nodeInfo nodeId="6554363941515227971" fileName="MakeEnvironment.java" startLine="39" startPosition="53" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="2329659746120838909" fileName="MakeEnvironment.java" startLine="64" startPosition="48" endLine="67" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6554363941515227966" fileName="MakeEnvironment.java" startLine="38" startPosition="11" endLine="42" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1117107720588671458" fileName="MakeEnvironment.java" startLine="26" startPosition="52" endLine="31" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="3513010440363257758" fileName="MakeEnvironment.java" startLine="67" startPosition="5" endLine="72" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="4003657351907887858" fileName="MakeEnvironment.java" startLine="50" startPosition="20" endLine="57" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="6554363941515227956" fileName="MakeEnvironment.java" startLine="37" startPosition="33" endLine="45" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="6554363941515227946" fileName="MakeEnvironment.java" startLine="36" startPosition="25" endLine="46" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
+    <nodeInfo nodeId="8401097797600990509" fileName="MakeEnvironment.java" startLine="48" startPosition="0" endLine="60" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="loadProject#(Ljava/io/File;)Ljetbrains/mps/project/Project;" />
+    <nodeInfo nodeId="6554363941515227942" fileName="MakeEnvironment.java" startLine="35" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="dispose#()V" />
+    <nodeInfo nodeId="1117107720588671444" fileName="MakeEnvironment.java" startLine="21" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setup#()V" />
+    <nodeInfo nodeId="3513010440363257750" fileName="MakeEnvironment.java" startLine="60" startPosition="0" endLine="74" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="configureMPS#()V" />
+    <scopeInfo nodeId="1117107720588641324" fileName="MakeEnvironment.java" startLine="19" startPosition="28" endLine="19" endPosition="28" />
+    <scopeInfo nodeId="6554363941515227974" fileName="MakeEnvironment.java" startLine="40" startPosition="29" endLine="40" endPosition="29" />
+    <scopeInfo nodeId="1117107720588671467" fileName="MakeEnvironment.java" startLine="27" startPosition="9" endLine="28" endPosition="21" />
+    <scopeInfo nodeId="1117107720588671459" fileName="MakeEnvironment.java" startLine="29" startPosition="0" endLine="30" endPosition="37">
       <varInfo nodeId="1117107720588671465" varName="ex" />
     </scopeInfo>
-    <scopeInfo nodeId="1117107720588671460" fileName="MakeEnvironment.java" startLine="28" startPosition="28" endLine="29" endPosition="37" />
-    <scopeInfo nodeId="6554363941515227957" fileName="MakeEnvironment.java" startLine="42" startPosition="0" endLine="43" endPosition="28">
+    <scopeInfo nodeId="1117107720588671460" fileName="MakeEnvironment.java" startLine="29" startPosition="28" endLine="30" endPosition="37" />
+    <scopeInfo nodeId="6554363941515227957" fileName="MakeEnvironment.java" startLine="43" startPosition="0" endLine="44" endPosition="28">
       <varInfo nodeId="6554363941515227963" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="6554363941515227958" fileName="MakeEnvironment.java" startLine="42" startPosition="29" endLine="43" endPosition="28" />
-    <scopeInfo nodeId="4003657351907887859" fileName="MakeEnvironment.java" startLine="54" startPosition="0" endLine="55" endPosition="37">
+    <scopeInfo nodeId="6554363941515227958" fileName="MakeEnvironment.java" startLine="43" startPosition="29" endLine="44" endPosition="28" />
+    <scopeInfo nodeId="4003657351907887859" fileName="MakeEnvironment.java" startLine="55" startPosition="0" endLine="56" endPosition="37">
       <varInfo nodeId="4003657351907887865" varName="ex" />
     </scopeInfo>
-    <scopeInfo nodeId="4003657351907887860" fileName="MakeEnvironment.java" startLine="54" startPosition="28" endLine="55" endPosition="37" />
-    <scopeInfo nodeId="3513010440363257767" fileName="MakeEnvironment.java" startLine="64" startPosition="9" endLine="65" endPosition="44" />
-    <scopeInfo nodeId="3513010440363257759" fileName="MakeEnvironment.java" startLine="66" startPosition="0" endLine="67" endPosition="36">
+    <scopeInfo nodeId="4003657351907887860" fileName="MakeEnvironment.java" startLine="55" startPosition="28" endLine="56" endPosition="37" />
+    <scopeInfo nodeId="2329659746120838910" fileName="MakeEnvironment.java" startLine="65" startPosition="63" endLine="66" endPosition="107" />
+    <scopeInfo nodeId="3513010440363257767" fileName="MakeEnvironment.java" startLine="68" startPosition="9" endLine="69" endPosition="44" />
+    <scopeInfo nodeId="3513010440363257759" fileName="MakeEnvironment.java" startLine="70" startPosition="0" endLine="71" endPosition="36">
       <varInfo nodeId="3513010440363257765" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="3513010440363257760" fileName="MakeEnvironment.java" startLine="66" startPosition="27" endLine="67" endPosition="36" />
-    <scopeInfo nodeId="1117107720588641321" fileName="MakeEnvironment.java" startLine="17" startPosition="50" endLine="19" endPosition="3" />
-    <scopeInfo nodeId="6554363941515227971" fileName="MakeEnvironment.java" startLine="38" startPosition="53" endLine="41" endPosition="0" />
-    <scopeInfo nodeId="4003657351907887867" fileName="MakeEnvironment.java" startLine="50" startPosition="9" endLine="53" endPosition="57">
+    <scopeInfo nodeId="3513010440363257760" fileName="MakeEnvironment.java" startLine="70" startPosition="27" endLine="71" endPosition="36" />
+    <scopeInfo nodeId="1117107720588641321" fileName="MakeEnvironment.java" startLine="18" startPosition="50" endLine="20" endPosition="3" />
+    <scopeInfo nodeId="6554363941515227971" fileName="MakeEnvironment.java" startLine="39" startPosition="53" endLine="42" endPosition="0" />
+    <scopeInfo nodeId="4003657351907887867" fileName="MakeEnvironment.java" startLine="51" startPosition="9" endLine="54" endPosition="57">
       <varInfo nodeId="4003657351907887869" varName="cls" />
       <varInfo nodeId="4003657351907887875" varName="meth" />
     </scopeInfo>
-    <scopeInfo nodeId="6554363941515227965" fileName="MakeEnvironment.java" startLine="37" startPosition="11" endLine="41" endPosition="11" />
-    <scopeInfo nodeId="6554363941515227955" fileName="MakeEnvironment.java" startLine="36" startPosition="33" endLine="44" endPosition="7" />
-    <scopeInfo nodeId="3513010440363257753" fileName="MakeEnvironment.java" startLine="60" startPosition="33" endLine="68" endPosition="5" />
-    <scopeInfo nodeId="8401097797600990512" fileName="MakeEnvironment.java" startLine="48" startPosition="48" endLine="57" endPosition="19">
+    <scopeInfo nodeId="6554363941515227965" fileName="MakeEnvironment.java" startLine="38" startPosition="11" endLine="42" endPosition="11" />
+    <scopeInfo nodeId="6554363941515227955" fileName="MakeEnvironment.java" startLine="37" startPosition="33" endLine="45" endPosition="7" />
+    <scopeInfo nodeId="8401097797600990512" fileName="MakeEnvironment.java" startLine="49" startPosition="48" endLine="58" endPosition="19">
       <varInfo nodeId="4003657351907887856" varName="project" />
     </scopeInfo>
-    <scopeInfo nodeId="1117107720588671447" fileName="MakeEnvironment.java" startLine="22" startPosition="23" endLine="32" endPosition="20" />
-    <scopeInfo nodeId="6554363941515227945" fileName="MakeEnvironment.java" startLine="35" startPosition="25" endLine="45" endPosition="5" />
-    <scopeInfo nodeId="6554363941515227946" fileName="MakeEnvironment.java" startLine="35" startPosition="25" endLine="45" endPosition="5">
+    <scopeInfo nodeId="1117107720588671447" fileName="MakeEnvironment.java" startLine="23" startPosition="23" endLine="33" endPosition="20" />
+    <scopeInfo nodeId="6554363941515227945" fileName="MakeEnvironment.java" startLine="36" startPosition="25" endLine="46" endPosition="5" />
+    <scopeInfo nodeId="6554363941515227946" fileName="MakeEnvironment.java" startLine="36" startPosition="25" endLine="46" endPosition="5">
       <varInfo nodeId="6554363941515227947" varName="i" />
     </scopeInfo>
-    <scopeInfo nodeId="3513010440363257750" fileName="MakeEnvironment.java" startLine="59" startPosition="0" endLine="70" endPosition="0" />
-    <scopeInfo nodeId="8401097797600990509" fileName="MakeEnvironment.java" startLine="47" startPosition="0" endLine="59" endPosition="0">
+    <scopeInfo nodeId="3513010440363257753" fileName="MakeEnvironment.java" startLine="61" startPosition="33" endLine="72" endPosition="5">
+      <varInfo nodeId="2329659746120839873" varName="loadPlugins" />
+    </scopeInfo>
+    <scopeInfo nodeId="8401097797600990509" fileName="MakeEnvironment.java" startLine="48" startPosition="0" endLine="60" endPosition="0">
       <varInfo nodeId="8401097797600990516" varName="projectFile" />
     </scopeInfo>
-    <scopeInfo nodeId="6554363941515227942" fileName="MakeEnvironment.java" startLine="34" startPosition="0" endLine="47" endPosition="0" />
-    <scopeInfo nodeId="1117107720588671444" fileName="MakeEnvironment.java" startLine="20" startPosition="0" endLine="34" endPosition="0" />
-    <unitInfo nodeId="1117107720588641319" fileName="MakeEnvironment.java" startLine="17" startPosition="0" endLine="71" endPosition="0" unitName="jetbrains.mps.build.ant.make.MakeEnvironment" />
-    <unitInfo nodeId="6554363941515227970" fileName="MakeEnvironment.java" startLine="38" startPosition="41" endLine="41" endPosition="9" unitName="jetbrains.mps.build.ant.make.MakeEnvironment$1" />
+    <scopeInfo nodeId="6554363941515227942" fileName="MakeEnvironment.java" startLine="35" startPosition="0" endLine="48" endPosition="0" />
+    <scopeInfo nodeId="1117107720588671444" fileName="MakeEnvironment.java" startLine="21" startPosition="0" endLine="35" endPosition="0" />
+    <scopeInfo nodeId="3513010440363257750" fileName="MakeEnvironment.java" startLine="60" startPosition="0" endLine="74" endPosition="0" />
+    <unitInfo nodeId="1117107720588641319" fileName="MakeEnvironment.java" startLine="18" startPosition="0" endLine="75" endPosition="0" unitName="jetbrains.mps.build.ant.make.MakeEnvironment" />
+    <unitInfo nodeId="6554363941515227970" fileName="MakeEnvironment.java" startLine="39" startPosition="41" endLine="42" endPosition="9" unitName="jetbrains.mps.build.ant.make.MakeEnvironment$1" />
   </root>
   <root nodeId="4003657351907888946">
     <nodeInfo nodeId="4003657351907888992" fileName="MakeWorker.java" startLine="23" startPosition="68" endLine="24" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />

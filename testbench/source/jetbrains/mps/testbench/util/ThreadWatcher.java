@@ -39,8 +39,10 @@ public class ThreadWatcher implements Output {
         "(Flushing thread)|" +
         "(Keep\\-Alive.*)|" +
         "(Finalizer.*)|" +
+        "(MPS interrupting thread)|" +
         "(caret blinker.*)|" +
         "(ApplicationImpl.*)|" +
+        "(AnimatorThread)|" +
         "(Executor)|" +
         "(ChangesManager command queue)|" +
         "(TimerQueue)|" +
@@ -53,8 +55,10 @@ public class ThreadWatcher implements Output {
         "(FS Sync.*)|" +
         "(timed reference disposer)|" +
         "(Alarm pool\\(own\\))|" +
+        "(Alarm pool\\(shared\\))|" +
         "(Poller SunPKCS11-Darwin)|" +
         "(MPS interrupt.*)|" +
+        "(process reaper)|" +
         "(RefCountingStorage.*)");
 
     private TLongObjectHashMap<ThreadInfo> allThreads = new TLongObjectHashMap<ThreadInfo> ();

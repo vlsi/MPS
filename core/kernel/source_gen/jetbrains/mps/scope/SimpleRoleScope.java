@@ -6,29 +6,31 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.kernel.model.SModelUtil;
 import java.util.List;
+import org.jetbrains.annotations.Nullable;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public abstract class SimpleRoleScope extends Scope {
-  private final SNode node;
-  private final SNode link;
+  private final SNode myNode;
+  private final SNode myLink;
   private final String conceptFqName;
 
   public SimpleRoleScope(SNode node, SNode link, String conceptFqName) {
-    this.node = node;
-    this.link = link;
+    this.myNode = node;
+    this.myLink = link;
     this.conceptFqName = conceptFqName;
   }
 
   public SimpleRoleScope(SNode node, SNode link) {
-    this.node = node;
-    this.link = link;
+    this.myNode = node;
+    this.myLink = link;
     this.conceptFqName = null;
   }
 
-  public SNode resolve(SNode anchor, String refText) {
+  public SNode resolve(SNode contextNode, String refText) {
     SNode result = null;
-    for (SNode n : SNodeOperations.getChildren(node, link)) {
+    for (SNode n : SNodeOperations.getChildren(myNode, myLink)) {
       if (this.conceptFqName != null && !(SModelUtil.isAssignableConcept(n.getConceptFqName(), conceptFqName))) {
         continue;
       }
@@ -44,9 +46,9 @@ public abstract class SimpleRoleScope extends Scope {
     return result;
   }
 
-  public List<SNode> getAvailableElements(String prefix) {
+  public List<SNode> getAvailableElements(@Nullable String prefix) {
     List<SNode> result = new ArrayList<SNode>();
-    for (SNode n : SNodeOperations.getChildren(node, link)) {
+    for (SNode n : SNodeOperations.getChildren(myNode, myLink)) {
       if (this.conceptFqName != null && !(SModelUtil.isAssignableConcept(n.getConceptFqName(), conceptFqName))) {
         continue;
       }
@@ -58,17 +60,17 @@ public abstract class SimpleRoleScope extends Scope {
     return result;
   }
 
-  public String getReferenceText(SNode anchor, SNode target) {
-    if (target == null || SNodeOperations.getParent(target) != node) {
+  public String getReferenceText(SNode contextNode, SNode node) {
+    if (node == null || SNodeOperations.getParent(node) != myNode) {
       return null;
     }
-    if (this.conceptFqName != null && !(SModelUtil.isAssignableConcept(target.getConceptFqName(), conceptFqName))) {
+    if (this.conceptFqName != null && !(SModelUtil.isAssignableConcept(node.getConceptFqName(), conceptFqName))) {
       return null;
     }
 
-    String result = getName(target);
-    for (SNode n : SNodeOperations.getChildren(node, link)) {
-      if (n == target) {
+    String result = getName(node);
+    for (SNode n : SNodeOperations.getChildren(myNode, myLink)) {
+      if (n == node) {
         continue;
       }
       if (this.conceptFqName != null && !(SModelUtil.isAssignableConcept(n.getConceptFqName(), conceptFqName))) {
@@ -84,4 +86,12 @@ public abstract class SimpleRoleScope extends Scope {
   }
 
   public abstract String getName(SNode child);
+
+  public static SimpleRoleScope forNamedElements(SNode node, SNode linkDeclaration) {
+    return new SimpleRoleScope(node, linkDeclaration) {
+      public String getName(SNode child) {
+        return SPropertyOperations.getString(SNodeOperations.cast(child, "jetbrains.mps.lang.core.structure.INamedConcept"), "name");
+      }
+    };
+  }
 }

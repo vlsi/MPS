@@ -4,18 +4,18 @@ package jetbrains.mps.vcs.plugin;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import java.awt.Frame;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.smodel.SNode;
 import com.intellij.openapi.project.Project;
+import org.jetbrains.annotations.Nullable;
+import jetbrains.mps.vcs.diff.ui.common.Bounds;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
-import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import com.intellij.openapi.vcs.AbstractVcs;
 import com.intellij.openapi.vcs.ProjectLevelVcsManager;
 import com.intellij.openapi.vcs.history.VcsRevisionNumber;
 import com.intellij.openapi.vcs.changes.ContentRevision;
+import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.vcs.diff.ui.ModelDifferenceDialog;
@@ -39,7 +39,6 @@ import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.smodel.SModelDescriptor;
-import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.smodel.SModelRepository;
@@ -55,9 +54,9 @@ public class VcsActionsUtil {
   private VcsActionsUtil() {
   }
 
-  public static void showRootDifference(Frame frame, IOperationContext context, final SModel model, final SNode node, final Project project) {
+  public static void showRootDifference(EditableSModelDescriptor modelDescriptor, final SNode node, final Project project, @Nullable Bounds bounds) {
     try {
-      VirtualFile file = VirtualFileUtils.getVirtualFile(((EditableSModelDescriptor) model.getModelDescriptor()).getModelFile());
+      VirtualFile file = VirtualFileUtils.getVirtualFile((modelDescriptor).getModelFile());
       AbstractVcs vcs = ProjectLevelVcsManager.getInstance(project).getVcsFor(file);
       final VcsRevisionNumber revisionNumber = vcs.getDiffProvider().getCurrentRevision(file);
       ContentRevision content = vcs.getDiffProvider().createFileContent(revisionNumber, file);
@@ -66,11 +65,11 @@ public class VcsActionsUtil {
       final Wrappers._T<SNodeId> id = new Wrappers._T<SNodeId>();
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
-          modelDialog.value = new ModelDifferenceDialog(oldModel, model, new SimpleDiffRequest(project, revisionNumber.asString() + " (Read-Only)", "Your Version"));
+          modelDialog.value = new ModelDifferenceDialog(oldModel, node.getModel(), new SimpleDiffRequest(project, revisionNumber.asString() + " (Read-Only)", "Your Version"));
           id.value = node.getSNodeId();
         }
       });
-      modelDialog.value.invokeRootDifference(id.value);
+      modelDialog.value.invokeRootDifference(id.value, bounds);
     } catch (VcsException e) {
       if (log.isWarnEnabled()) {
         log.warn("", e);

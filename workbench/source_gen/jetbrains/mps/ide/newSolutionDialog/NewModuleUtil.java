@@ -8,16 +8,16 @@ import java.io.File;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.smodel.Language;
+import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
-import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
-import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.project.StandaloneMPSProject;
-import jetbrains.mps.project.Solution;
-import jetbrains.mps.project.structure.model.ModelRoot;
+import jetbrains.mps.vfs.FileSystem;
 
 public class NewModuleUtil {
   public NewModuleUtil() {
@@ -43,14 +43,16 @@ public class NewModuleUtil {
     if (NameUtil.shortNameFromLongName(namespace).length() == 0) {
       return "Enter valid namespace";
     }
+    IFile moduleDir = getModuleFile(namespace, rootPath, extension).getParent();
+    if (moduleDir.getDescendant(Language.LANGUAGE_MODELS).exists() || moduleDir.getDescendant(Solution.SOLUTION_MODELS).exists()) {
+      return "Module already exists in this folder";
+    }
 
     return null;
   }
 
   public static <T extends IModule> T createModule(String extension, String namespace, String rootPath, MPSProject project, _FunctionTypes._return_P3_E0<? extends T, ? super String, ? super IFile, ? super MPSProject> creator, _FunctionTypes._void_P1_E0<? super ModuleDescriptor> adjuster, boolean reload) {
-    String shortName = NameUtil.shortNameFromLongName(namespace);
-    String path = rootPath + File.separator + shortName + extension;
-    IFile descriptorFile = FileSystem.getInstance().getFileByPath(path);
+    IFile descriptorFile = NewModuleUtil.getModuleFile(namespace, rootPath, extension);
     final IModule module = creator.invoke(namespace, descriptorFile, project);
     ModuleDescriptor d = module.getModuleDescriptor();
     adjuster.invoke(d);
@@ -67,18 +69,19 @@ public class NewModuleUtil {
     return ((T) module);
   }
 
-  public static Solution createSolution(String namespace, final String rootPath, MPSProject p, boolean reload) {
+  private static IFile getModuleFile(String namespace, String rootPath, String extension) {
+    String shortName = NameUtil.shortNameFromLongName(namespace);
+    String path = rootPath + File.separator + shortName + extension;
+    return FileSystem.getInstance().getFileByPath(path);
+  }
+
+  public static Solution createSolution(String namespace, String rootPath, MPSProject p, boolean reload) {
     return NewModuleUtil.createModule(MPSExtentions.DOT_SOLUTION, namespace, rootPath, p, new _FunctionTypes._return_P3_E0<Solution, String, IFile, MPSProject>() {
       public Solution invoke(String s, IFile f, MPSProject p) {
         return Solution.createSolution(s, f, p);
       }
     }, new _FunctionTypes._void_P1_E0<ModuleDescriptor>() {
       public void invoke(ModuleDescriptor d) {
-        ModelRoot modelRoot = new ModelRoot();
-        modelRoot.setPath(rootPath);
-        d.getModelRoots().add(modelRoot);
-
-        d.setCompileInMPS(true);
       }
     }, reload);
   }

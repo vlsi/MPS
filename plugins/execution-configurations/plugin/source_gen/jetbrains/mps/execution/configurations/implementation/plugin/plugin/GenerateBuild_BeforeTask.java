@@ -6,7 +6,7 @@ import jetbrains.mps.execution.api.configurations.BaseMpsBeforeTaskProvider;
 import com.intellij.openapi.util.Key;
 import jetbrains.mps.smodel.SNode;
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.build.packaging.plugin.GenerateBuildUtil;
+import jetbrains.mps.build.packaging.pluginSolution.plugin.GenerateBuildUtil;
 
 public class GenerateBuild_BeforeTask extends BaseMpsBeforeTaskProvider<GenerateBuild_BeforeTask.GenerateBuild_BeforeTask_RunTask> {
   private static final Key<GenerateBuild_BeforeTask.GenerateBuild_BeforeTask_RunTask> KEY = Key.create("jetbrains.mps.execution.configurations.implementation.plugin.plugin.GenerateBuild_BeforeTask");

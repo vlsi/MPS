@@ -97,7 +97,10 @@ public class ProjectPaneTreeHighlighter {
     }
 
     public void treeNodeUpdated(MPSTreeNode treeNode, MPSTree tree) {
+    }
 
+    @Override
+    public void beforeTreeDisposed(MPSTree tree) {
     }
   }
 }

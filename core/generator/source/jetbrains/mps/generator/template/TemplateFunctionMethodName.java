@@ -89,4 +89,8 @@ public class TemplateFunctionMethodName {
   public static String insertMacro_Query(SNode function) {
     return "insertMacro_Query_" + function.getId();
   }
+
+  public static String varValue_Query(SNode function) {
+    return "insertMacro_varValue_" + function.getId();
+  }
 }

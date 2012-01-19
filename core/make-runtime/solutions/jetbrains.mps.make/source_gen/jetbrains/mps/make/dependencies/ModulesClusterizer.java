@@ -115,6 +115,9 @@ public class ModulesClusterizer {
           Collection<TemplateModule> gens = lr.getGenerators();
           if (gens != null) {
             for (TemplateModule tm : gens) {
+              if (tm == null) {
+                continue;
+              }
               if (!(SetSequence.fromSet(seen).contains(tm))) {
                 QueueSequence.fromQueue(nsq).addSequence(Sequence.fromIterable(tm.getUsedLanguages()));
                 SetSequence.fromSet(seen).addElement(tm);

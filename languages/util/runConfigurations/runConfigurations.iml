@@ -4,8 +4,10 @@
     <output url="file://$MODULE_DIR$/classes" />
     <output-test url="file://$MODULE_DIR$/classes" />
     <exclude-output />
-    <content url="file://$MODULE_DIR$">
+    <content url="file://$MODULE_DIR$/solutions/jetbrains.mps.execution.api">
       <sourceFolder url="file://$MODULE_DIR$/solutions/jetbrains.mps.execution.api/source_gen" isTestSource="false" />
+    </content>
+    <content url="file://$MODULE_DIR$/solutions/jetbrains.mps.execution.impl">
       <sourceFolder url="file://$MODULE_DIR$/solutions/jetbrains.mps.execution.impl/source_gen" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />

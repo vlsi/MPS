@@ -31,6 +31,7 @@ import jetbrains.mps.ide.editorTabs.tabfactory.NodeChangeCallback;
 import jetbrains.mps.ide.editorTabs.tabfactory.tabs.BaseTabsComponent;
 import jetbrains.mps.ide.editorTabs.tabfactory.tabs.CreateModeCallback;
 import jetbrains.mps.ide.icons.IconManager;
+import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
@@ -55,8 +56,8 @@ public class PlainTabsComponent extends BaseTabsComponent {
     }
   };
 
-  public PlainTabsComponent(SNodePointer baseNode, Set<EditorTabDescriptor> possibleTabs, JComponent editor, NodeChangeCallback callback, boolean showGrayed, CreateModeCallback createModeCallback) {
-    super(baseNode, possibleTabs, editor, callback, showGrayed, createModeCallback);
+  public PlainTabsComponent(SNodePointer baseNode, Set<EditorTabDescriptor> possibleTabs, JComponent editor, NodeChangeCallback callback, boolean showGrayed, CreateModeCallback createModeCallback, IOperationContext operationContext) {
+    super(baseNode, possibleTabs, editor, callback, showGrayed, createModeCallback, operationContext);
 
     DataContext dataContext = DataManager.getInstance().getDataContext(myEditor);
     Project project = PlatformDataKeys.PROJECT.getData(dataContext);
@@ -133,6 +134,12 @@ public class PlainTabsComponent extends BaseTabsComponent {
         for (SNode node : nodes) {
           myRealTabs.add(new PlainEditorTab(new SNodePointer(node), tab));
           myJbTabs.addTab(node.getPresentation(), IconManager.getIconFor(node), fill, "");
+          if (getColorProvider() != null) {
+            Color color = getColorProvider().getNodeColor(node);
+            if (color != null) {
+              myJbTabs.setForegroundAt(myJbTabs.getTabCount() - 1, color);
+            }
+          }
         }
       } else if (myShowGrayed) {
         myRealTabs.add(new PlainEditorTab(null, tab));

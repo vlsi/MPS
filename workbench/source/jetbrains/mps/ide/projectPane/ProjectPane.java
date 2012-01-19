@@ -201,6 +201,7 @@ public class ProjectPane extends BaseLogicalViewProjectPane {
         }
       });
     }
+    tree.fireTreeCreated(myProject);
     fireComponentCreated();
     return myScrollPane;
   }

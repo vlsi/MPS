@@ -142,6 +142,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   private boolean myIsEditable = true;
 
   private boolean myDisposed = false;
+  // additional debugging field
   private StackTraceElement[] myModelDisposedStackTrace = null;
   private Throwable myDisposedTrace = null;
 
@@ -187,7 +188,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   @NotNull
   private JScrollPane myScrollPane;
   @NotNull
-  private MyScrollBar myVerticalScrollBar;
+  private MyScrollBar myVerticalScrollBar = new MyScrollBar(Adjustable.VERTICAL);
   @NotNull
   private JComponent myContainer;
   protected EditorCell myRootCell;
@@ -216,7 +217,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
   private IOperationContext myOperationContext;
 
-  private MessagesGutter myMessagesGutter = new MessagesGutter(this);
+  private MessagesGutter myMessagesGutter;
   private LeftEditorHighlighter myLeftHighlighter;
   @Nullable
   protected SNode myNode;
@@ -292,8 +293,8 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     if (rightToLeft) {
       myScrollPane.setComponentOrientation(ComponentOrientation.RIGHT_TO_LEFT);
     }
-    myScrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
-    myScrollPane.setVerticalScrollBar(myVerticalScrollBar = new MyScrollBar(Adjustable.VERTICAL));
+    myScrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
+    myScrollPane.setVerticalScrollBar(myVerticalScrollBar);
     myScrollPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
     myScrollPane.setViewportView(this);
     myScrollPane.getViewport().addChangeListener(new ChangeListener() {
@@ -323,7 +324,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     myScrollPane.setBorder(new LineBorder(Color.LIGHT_GRAY));
 
     if (showErrorsGutter) {
-      myContainer.add(myMessagesGutter, BorderLayout.EAST);
+      getVerticalScrollBar().setPersistentUI(myMessagesGutter);
     }
 
     myNodeSubstituteChooser = new NodeSubstituteChooser(this);
@@ -462,6 +463,8 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
         processKeyReleased(e);
       }
     });
+
+    myMessagesGutter = new MessagesGutter(this, rightToLeft);
 
     myLeftHighlighter = new LeftEditorHighlighter(this, rightToLeft);
     myLeftHighlighter.addMouseListener(new MouseAdapter() {
@@ -708,7 +711,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
         if (cell == null) {
           return null;
         }
-        return getMessageTextFor(cell);
+        return getMessagesTextFor(cell);
       }
     });
   }
@@ -725,7 +728,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
         if (cell == null) {
           return null;
         }
-        if (getMessageTextFor(cell) != null) {
+        if (getMessagesTextFor(cell) != null) {
           return new Point(event.getX(), event.getY());
         } else {
           return null;
@@ -744,9 +747,9 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
         EditorCell selection = getSelectedCell();
         String info = "";
         if (selection != null) {
-          String message = getMessageTextFor(selection);
-          if (message != null) {
-            info = message;
+          List<HighlighterMessage> messages = getHighlighterMessagesFor(selection);
+          if (!messages.isEmpty()) {
+            info = messages.get(0).getMessage();
           }
         }
 
@@ -765,14 +768,38 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     });
   }
 
-  private String getMessageTextFor(EditorCell cell) {
-    EditorMessage message = getHighlighterMessageFor(cell);
-    if (message != null) {
-      return message.getMessage();
+  private String getMessagesTextFor(EditorCell cell) {
+    List<HighlighterMessage> messages = getHighlighterMessagesFor(cell);
+    if (messages.isEmpty()) {
+      return null;
     }
-    return null;
+    StringBuilder result = new StringBuilder();
+    for (HighlighterMessage message : messages) {
+      if (result.length() != 0) {
+        result.append("\n");
+      }
+      result.append(message.getMessage());
+    }
+    return result.toString();
   }
 
+  private List<HighlighterMessage> getHighlighterMessagesFor(EditorCell cell) {
+    EditorCell parent = cell;
+    while (parent != null) {
+      if (cell.getBounds().getMaxY() < parent.getBounds().getMaxY() && parent.getSNode() != cell.getSNode()) {
+        return Collections.emptyList();
+      }
+      List<HighlighterMessage> messages = parent.getMessages(HighlighterMessage.class);
+      if (!messages.isEmpty()) {
+        return messages;
+      }
+      parent = parent.getParent();
+    }
+
+    return Collections.emptyList();
+  }
+
+  // TODO: remove this method and use getHighlighterMessagesFor(EditorCell cell) instead
   private HighlighterMessage getHighlighterMessageFor(EditorCell cell) {
     EditorCell parent = cell;
     while (parent != null) {
@@ -800,7 +827,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     if (cell == null) {
       return;
     }
-    String text = getMessageTextFor(cell);
+    String text = getMessagesTextFor(cell);
     Point point = new Point(cell.getX(), cell.getY() + cell.getHeight());
     MPSToolTipManager.getInstance().showToolTip(text, this, point);
   }
@@ -823,6 +850,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
       public void run() {
         IOperationContext operationContext = getOperationContext();
         disposeTypeCheckingContext();
+        clearModelDisposedTrace();
         myNode = node;
         //todo this is because of type system nodes, which are not registered in models. This code should be removed ASAP
         if (myNode != null && myNode.isRegistered()) {
@@ -1190,7 +1218,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   private String getModelDisposedMessage() {
     StringBuilder sb = new StringBuilder("Model was disposed through:");
     for (int i = 0; i < myModelDisposedStackTrace.length; i++) {
-      sb.append("\n");
+      sb.append("\nat ");
       sb.append(myModelDisposedStackTrace[i]);
     }
     sb.append("\n");
@@ -1198,6 +1226,11 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     sb.append(myDisposed);
     sb.append("\n");
     return sb.toString();
+  }
+
+  // This method should be called each time we set new node for and editor
+  protected void clearModelDisposedTrace() {
+    myModelDisposedStackTrace = null;
   }
 
   /*
@@ -1430,7 +1463,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     doRelayout();
     revalidate();
     repaint();
-    myMessagesGutter.repaint();
+    getVerticalScrollBar().repaint();
     if (getEditorContext() != null) {
       getEditorContext().popTracerTask();
     }
@@ -2928,6 +2961,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
       assert SwingUtilities.isEventDispatchThread() : "Model reloaded notification expected in EventDispatchThread";
       if (myNode != null) {
         if (myNode.getModel().getSModelReference().equals(sm.getSModelReference())) {
+          clearModelDisposedTrace();
           SNodeId oldId = myNode.getSNodeId();
           myNode = sm.getSModel().getNodeById(oldId);
         }
@@ -3164,7 +3198,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     }
   }
 
-  class MyScrollBar extends JBScrollBar implements IdeGlassPane.TopComponent {
+  class MyScrollBar extends JBScrollBar implements IdeGlassPane.TopComponent, TooltipComponent {
     @NonNls
     private static final String APPLE_LAF_AQUA_SCROLL_BAR_UI_CLASS = "apple.laf.AquaScrollBarUI";
     private ScrollBarUI myPersistentUI;
@@ -3249,6 +3283,14 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
       JViewport vp = myScrollPane.getViewport();
       Rectangle vr = vp.getViewRect();
       return getScrollableBlockIncrement(vr, SwingConstants.VERTICAL, direction);
+    }
+
+    @Override
+    public String getMPSTooltipText(MouseEvent mouseEvent) {
+      if (getUI() instanceof TooltipComponent) {
+        return ((TooltipComponent) getUI()).getMPSTooltipText(mouseEvent);
+      }
+      return null;
     }
   }
 }
