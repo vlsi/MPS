@@ -42,15 +42,19 @@
   <project-components>
     <component>
       <implementation-class>jetbrains.mps.watching.ModelChangesWatcher</implementation-class>
+      <loadForDefaultProject/>
     </component>
     <component>
       <implementation-class>jetbrains.mps.watching.ModelFocusSynchronizer</implementation-class>
+      <loadForDefaultProject/>
     </component>
     <component>
       <implementation-class>jetbrains.mps.watching.WatchedRoots</implementation-class>
+      <loadForDefaultProject/>
     </component>
     <component>
       <implementation-class>jetbrains.mps.watching.ModelCacheReloader</implementation-class>
+      <loadForDefaultProject/>
     </component>
 
     <component>
