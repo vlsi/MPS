@@ -30,6 +30,10 @@ public class QueriesGenerated {
     return ListSequence.fromList(SNodeOperations.getDescendants(_context.getNode(), "jetbrains.mps.build.custommps.structure.MPSBuild", false, new String[]{})).isNotEmpty() && MPSBuild_Behavior.isInMPSBuild_1239995424995();
   }
 
+  public static boolean baseMappingRule_Condition_949575146483127028(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
+    return ListSequence.fromList(SNodeOperations.getDescendants(_context.getNode(), "jetbrains.mps.build.custommps.structure.MPSBuild", false, new String[]{})).isNotEmpty() && MPSBuild_Behavior.isInMPSBuild_1239995424995();
+  }
+
   public static Object propertyMacro_GetPropertyValue_4738159245302641861(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return Layout_Behavior.getScriptsDirName_462257719548547202();
   }
@@ -70,6 +74,10 @@ public class QueriesGenerated {
     return _context.createUniqueName("add.libraries", null);
   }
 
+  public static Object propertyMacro_GetPropertyValue_3824558134315984538(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return _context.createUniqueName(_context.getTemplateValue(), null);
+  }
+
   public static Object propertyMacro_GetPropertyValue_4514696390934965610(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return LibraryFolder_Behavior.call_getLibraryPathRelativeToMPSBuild_1240408519032(_context.getNode());
   }
@@ -83,15 +91,15 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_4514696390935110029(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.build.packaging.structure.Layout", false, false), "name");
+    return SPropertyOperations.getString(_context.getNode(), "name");
   }
 
   public static Object referenceMacro_GetReferent_4514696390935110062(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "CustomMPSBuildToUnpackZipAntcall");
+    return _context.getOutputNodeByInputNodeAndMappingLabel(ListSequence.fromList(SNodeOperations.getDescendants(_context.getNode(), "jetbrains.mps.build.custommps.structure.MPSBuild", false, new String[]{})).first(), "CustomMPSBuildToUnpackZipAntcall");
   }
 
   public static boolean ifMacro_Condition_8716889635481488827(final IOperationContext operationContext, final IfMacroContext _context) {
-    return (SLinkOperations.getTarget(_context.getNode(), "pathToBuildToolsZip", true) != null);
+    return (SLinkOperations.getTarget(ListSequence.fromList(SNodeOperations.getDescendants(_context.getNode(), "jetbrains.mps.build.custommps.structure.MPSBuild", false, new String[]{})).first(), "pathToBuildToolsZip", true) != null);
   }
 
   public static boolean ifMacro_Condition_8716889635481488963(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -103,15 +111,15 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_4514696390934965519(final IOperationContext operationContext, final IfMacroContext _context) {
-    return (SLinkOperations.getTarget(_context.getNode(), "licencePath", true) != null);
+    return (SLinkOperations.getTarget(ListSequence.fromList(SNodeOperations.getDescendants(_context.getNode(), "jetbrains.mps.build.custommps.structure.MPSBuild", false, new String[]{})).first(), "licencePath", true) != null);
   }
 
   public static SNode sourceNodeQuery_8716889635481488789(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), "pathToBuildToolsZip", true);
+    return SLinkOperations.getTarget(ListSequence.fromList(SNodeOperations.getDescendants(_context.getNode(), "jetbrains.mps.build.custommps.structure.MPSBuild", false, new String[]{})).first(), "pathToBuildToolsZip", true);
   }
 
   public static SNode sourceNodeQuery_4514696390934965512(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), "licencePath", true);
+    return SLinkOperations.getTarget(ListSequence.fromList(SNodeOperations.getDescendants(_context.getNode(), "jetbrains.mps.build.custommps.structure.MPSBuild", false, new String[]{})).first(), "licencePath", true);
   }
 
   public static SNode sourceNodeQuery_4514696390934965694(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -119,19 +127,11 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_4514696390935114249(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), "licencePath", true);
-  }
-
-  public static Iterable sourceNodesQuery_8716889635481488810(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return SNodeOperations.getDescendants(_context.getNode(), "jetbrains.mps.build.custommps.structure.MPSBuild", false, new String[]{});
+    return SLinkOperations.getTarget(ListSequence.fromList(SNodeOperations.getDescendants(_context.getNode(), "jetbrains.mps.build.custommps.structure.MPSBuild", false, new String[]{})).first(), "licencePath", true);
   }
 
   public static Iterable sourceNodesQuery_8716889635481488899(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return SNodeOperations.getDescendants(_context.getNode(), "jetbrains.mps.build.custommps.structure.LibraryFolder", false, new String[]{});
-  }
-
-  public static Iterable sourceNodesQuery_8716889635481488946(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return SNodeOperations.getDescendants(_context.getNode(), "jetbrains.mps.build.custommps.structure.MPSBuild", false, new String[]{});
   }
 
   public static Iterable sourceNodesQuery_4514696390934965661(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
@@ -143,11 +143,11 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_4514696390934965687(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return SLinkOperations.getTargets(_context.getNode(), "entry", true);
+    return SLinkOperations.getTargets(ListSequence.fromList(SNodeOperations.getDescendants(_context.getNode(), "jetbrains.mps.build.custommps.structure.MPSBuild", false, new String[]{})).first(), "entry", true);
   }
 
   public static Iterable sourceNodesQuery_4514696390934965701(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return SLinkOperations.getTargets(_context.getNode(), "configuration", true);
+    return SLinkOperations.getTargets(ListSequence.fromList(SNodeOperations.getDescendants(_context.getNode(), "jetbrains.mps.build.custommps.structure.MPSBuild", false, new String[]{})).first(), "configuration", true);
   }
 
   public static Iterable sourceNodesQuery_4514696390935109323(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
