@@ -72,7 +72,9 @@ public class ModelChangesWatcher implements ApplicationComponent {
   };
   private IMakeService myMakeService;
 
-  public ModelChangesWatcher(IMakeService ms, MessageBus bus, ProjectManager projectManager, VirtualFileManager virtualFileManager) {
+  //do not remove the LibraryManager parameter - can cause cyclic dependency if this component is initialized before it
+  @SuppressWarnings("UnusedParameters")
+  public ModelChangesWatcher(IMakeService ms, MessageBus bus, ProjectManager projectManager, VirtualFileManager virtualFileManager, LibraryManager libMan) {
     myMakeService = ms;
     myBus = bus;
     myVirtualFileManager = virtualFileManager;
