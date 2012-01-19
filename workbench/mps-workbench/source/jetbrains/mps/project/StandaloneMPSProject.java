@@ -217,7 +217,7 @@ public class StandaloneMPSProject extends MPSProject implements PersistentStateC
     assert file != null;
     String path = file.getPath();
     for (Path sp : getAllModulePaths()) {
-      if (sp.getPath().equals(path)) {
+      if (FileSystem.getInstance().getFileByPath(sp.getPath()).getPath().equals(path)) {
         return sp.getMPSFolder();
       }
     }
@@ -229,7 +229,7 @@ public class StandaloneMPSProject extends MPSProject implements PersistentStateC
     assert file != null;
     String path = file.getPath();
     for (Path sp : getAllModulePaths()) {
-      if (sp.getPath().equals(path)) {
+      if (FileSystem.getInstance().getFileByPath(sp.getPath()).getPath().equals(path)) {
         sp.setMPSFolder(newFolder);
         return;
       }
