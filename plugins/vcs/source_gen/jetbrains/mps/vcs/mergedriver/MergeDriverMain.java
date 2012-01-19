@@ -79,6 +79,7 @@ public class MergeDriverMain {
       case LANGUAGE:
       case SOLUTION:
       case DEVKIT:
+      case PROJECT:
         return new CompositeMerger(new TextMerger(), new SimpleMerger());
       case TRACE_CACHE:
       case GENERATOR_DEPENDENCIES:
