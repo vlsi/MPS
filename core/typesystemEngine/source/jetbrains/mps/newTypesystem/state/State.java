@@ -348,6 +348,8 @@ public class State {
     myNodeMaps.clear();
     myVariableIdentifier.clear();
     myBlocks.clear();
+    myTargetNode = null;
+    myTargetTypeCalculated = false;
     for (ManyToManyMap map : myBlocksAndInputs.values()) {
       map.clear();
     }
