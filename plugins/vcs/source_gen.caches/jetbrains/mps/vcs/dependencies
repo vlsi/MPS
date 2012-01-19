@@ -58,8 +58,11 @@
     <classNode dependClassName="com.intellij.openapi.application.ApplicationManager" />
     <classNode dependClassName="com.intellij.openapi.progress.EmptyProgressIndicator" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
+    <classNode dependClassName="com.intellij.openapi.ui.Messages" />
     <classNode dependClassName="com.intellij.openapi.vcs.AbstractVcs" />
+    <classNode dependClassName="com.intellij.openapi.vcs.AbstractVcsHelper" />
     <classNode dependClassName="com.intellij.openapi.vcs.FileStatus" />
+    <classNode dependClassName="com.intellij.openapi.vcs.FileStatusManager" />
     <classNode dependClassName="com.intellij.openapi.vcs.ProjectLevelVcsManager" />
     <classNode dependClassName="com.intellij.openapi.vcs.VcsException" />
     <classNode dependClassName="com.intellij.openapi.vcs.VcsKey" />
@@ -77,6 +80,7 @@
     <classNode dependClassName="com.intellij.openapi.vfs.VirtualFile" />
     <classNode dependClassName="com.intellij.util.messages.MessageBusConnection" />
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.Arrays" />
     <classNode dependClassName="java.util.Collection" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.InternalFlag" />
@@ -90,6 +94,7 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode extendsClassName="com.intellij.openapi.components.ProjectComponent" />
+    <classNode extendsClassName="com.intellij.openapi.vcs.FileStatusListener" />
     <classNode extendsClassName="com.intellij.openapi.vcs.changes.ChangeListManagerGate" />
     <classNode extendsClassName="com.intellij.openapi.vcs.changes.EmptyChangelistBuilder" />
   </dependency>

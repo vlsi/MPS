@@ -5,6 +5,7 @@ package jetbrains.mps.vcs;
 import com.intellij.openapi.components.ProjectComponent;
 import jetbrains.mps.logging.Logger;
 import com.intellij.openapi.project.Project;
+import com.intellij.openapi.vcs.FileStatus;
 import com.intellij.openapi.vcs.ProjectLevelVcsManager;
 import com.intellij.openapi.vcs.changes.ChangeListManager;
 import com.intellij.openapi.vcs.changes.ChangeListAdapter;
@@ -23,8 +24,12 @@ import com.intellij.openapi.vcs.VcsListener;
 import jetbrains.mps.InternalFlag;
 import jetbrains.mps.ide.vcs.SourceRevision;
 import jetbrains.mps.vcs.concrete.MPSSourceRevision;
+import com.intellij.openapi.vcs.FileStatusManager;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
+import com.intellij.openapi.ui.Messages;
+import com.intellij.openapi.vcs.AbstractVcsHelper;
+import java.util.Arrays;
 import java.util.List;
 import com.intellij.openapi.vcs.changes.ChangeListManagerImpl;
 import com.intellij.openapi.vcs.changes.ChangeListManagerGate;
@@ -32,16 +37,17 @@ import com.intellij.openapi.vcs.changes.LocalChangeList;
 import org.jetbrains.annotations.Nullable;
 import java.util.Collection;
 import com.intellij.openapi.vcs.changes.Change;
-import com.intellij.openapi.vcs.FileStatus;
 import com.intellij.openapi.vcs.changes.EmptyChangelistBuilder;
 import com.intellij.openapi.vcs.changes.ChangeList;
 import com.intellij.openapi.vcs.VcsKey;
 import com.intellij.openapi.vcs.changes.ContentRevision;
+import com.intellij.openapi.vcs.FileStatusListener;
 
 public class MPSVcsManager implements ProjectComponent {
   private static final Logger LOG = Logger.getLogger(MPSVcsManager.class);
 
   private final Project myProject;
+  private FileStatus myLastProjectStatus;
   private final ProjectLevelVcsManager myManager;
   private final ChangeListManager myChangeListManager;
   private volatile boolean myChangeListManagerInitialized = false;
@@ -50,6 +56,7 @@ public class MPSVcsManager implements ProjectComponent {
       myChangeListManagerInitialized = true;
     }
   };
+  private MPSVcsManager.MyFileStatusListener myFileStatusListener = new MPSVcsManager.MyFileStatusListener();
   private MessageBusConnection myMessageBusConnection;
 
   public MPSVcsManager(Project project, ProjectLevelVcsManager manager, ChangeListManager clmanager) {
@@ -95,10 +102,12 @@ public class MPSVcsManager implements ProjectComponent {
     if (InternalFlag.isInternalMode()) {
       SourceRevision.setProvider(new MPSSourceRevision());
     }
+    FileStatusManager.getInstance(myProject).addFileStatusListener(myFileStatusListener);
   }
 
   public void projectClosed() {
-    check_2eqssr_a0a2(myMessageBusConnection);
+    FileStatusManager.getInstance(myProject).removeFileStatusListener(myFileStatusListener);
+    check_2eqssr_a1a2(myMessageBusConnection);
   }
 
   @NonNls
@@ -119,6 +128,19 @@ public class MPSVcsManager implements ProjectComponent {
     myChangeListManager.removeChangeListListener(myChangeListUpdateListener);
   }
 
+  private void checkIfProjectIsConflicting() {
+    FileStatus currentStatus = FileStatusManager.getInstance(myProject).getStatus(myProject.getProjectFile());
+    if (currentStatus != myLastProjectStatus) {
+      if (currentStatus == FileStatus.MERGED_WITH_CONFLICTS || currentStatus == FileStatus.MERGED_WITH_BOTH_CONFLICTS) {
+        int answer = Messages.showYesNoDialog(myProject, "You have yor project file unmerged. It is strongly recommended to merge it before continuing. " + "\nDo you want to merge it now?", "Unmerged Project File", Messages.getWarningIcon());
+        if (answer == 0) {
+          AbstractVcsHelper.getInstance(myProject).showMergeDialog(Arrays.asList(myProject.getProjectFile()));
+        }
+      }
+      myLastProjectStatus = currentStatus;
+    }
+  }
+
   public List<VirtualFile> getUnversionedFilesFromChangeListManager() {
     return ChangeListManagerImpl.getInstanceImpl(myProject).getUnversionedFiles();
   }
@@ -127,7 +149,7 @@ public class MPSVcsManager implements ProjectComponent {
     return project.getComponent(MPSVcsManager.class);
   }
 
-  private static void check_2eqssr_a0a2(MessageBusConnection checkedDotOperand) {
+  private static void check_2eqssr_a1a2(MessageBusConnection checkedDotOperand) {
     if (null != checkedDotOperand) {
       checkedDotOperand.disconnect();
     }
@@ -201,6 +223,21 @@ public class MPSVcsManager implements ProjectComponent {
 
     public boolean isInConflict() {
       return myIsMergedWithConflict;
+    }
+  }
+
+  public class MyFileStatusListener implements FileStatusListener {
+    private MyFileStatusListener() {
+    }
+
+    public void fileStatusesChanged() {
+      checkIfProjectIsConflicting();
+    }
+
+    public void fileStatusChanged(@NotNull VirtualFile file) {
+      if (file.equals(myProject.getProjectFile())) {
+        checkIfProjectIsConflicting();
+      }
     }
   }
 }
