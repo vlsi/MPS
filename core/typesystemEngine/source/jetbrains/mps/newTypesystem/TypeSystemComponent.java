@@ -18,6 +18,7 @@ package jetbrains.mps.newTypesystem;
 import gnu.trove.THashMap;
 import gnu.trove.THashSet;
 import jetbrains.mps.errors.IErrorReporter;
+import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.logging.Logger;
@@ -207,6 +208,11 @@ class TypeSystemComponent extends CheckingComponent {
     addDependentNodesTypeSystem(myCurrentCheckedNode, hashSet, true);
   }
 
+  protected void computeTypesSpecial(SNode nodeToCheck, boolean forceChildrenCheck, List<SNode> additionalNodes, boolean finalExpansion, SNode initialNode) {
+    computeTypesForNode(nodeToCheck, forceChildrenCheck, additionalNodes, initialNode);
+    if (typeCalculated(initialNode) != null) return;
+    solveInequalitiesAndExpandTypes(finalExpansion);
+  }
 
   protected void computeTypes(SNode nodeToCheck, boolean refreshTypes, boolean forceChildrenCheck, List<SNode> additionalNodes, boolean finalExpansion, SNode initialNode) {
     try {
@@ -218,9 +224,6 @@ class TypeSystemComponent extends CheckingComponent {
         myPartlyCheckedNodes.addAll(myFullyCheckedNodes);
         myFullyCheckedNodes.clear();
       }
-      //if (!loadTypesystemRules(nodeToCheck)) {
-      //  return;
-      //}
       computeTypesForNode(nodeToCheck, forceChildrenCheck, additionalNodes, initialNode);
       if (typeCalculated(initialNode) != null) return;
       solveInequalitiesAndExpandTypes(finalExpansion);
@@ -247,20 +250,20 @@ class TypeSystemComponent extends CheckingComponent {
       return null;
     }
     long start = System.currentTimeMillis();
-
+    myState.setTargetNode(initialNode);
     while (node != null) {
       List<SNode> additionalNodes = new ArrayList<SNode>(givenAdditionalNodes);
       if (prevNode != null) {
         additionalNodes.add(prevNode);
       }
-      computeTypes(node, false, false, additionalNodes, false, initialNode);
+      computeTypesSpecial(node, false, additionalNodes, false, initialNode);
       type = typeCalculated(initialNode);
       if (type == null) {
         if (node.isRoot()) {
           computeTypes(node, true, true, new ArrayList<SNode>(0), true, initialNode);
           type = getType(initialNode);
           if (type == null && node != initialNode) {
-            LOG.error("No typesystem rule for " + initialNode.getDebugText() + ": type calculation took " + (System.currentTimeMillis() - start) + " ms", new Throwable(), new SNodePointer(initialNode));
+            LOG.error("No typesystem rule for " + initialNode.getDebugText() + " in root " + initialNode.getContainingRoot() + ": type calculation took " + (System.currentTimeMillis() - start) + " ms", new Throwable(), new SNodePointer(initialNode));
           }
           return type;
         }
@@ -299,7 +302,7 @@ class TypeSystemComponent extends CheckingComponent {
     return new THashSet<Pair<String, String>>(set);
   }
 
-  private void computeTypesForNode(SNode node, boolean forceChildrenCheck, List<SNode> additionalNodes, SNode initialNode) {
+  private void computeTypesForNode(SNode node, boolean forceChildrenCheck, List<SNode> additionalNodes, SNode targetNode) {
     if (node == null) return;
     Set<SNode> frontier = new LinkedHashSet<SNode>();
     Set<SNode> newFrontier = new LinkedHashSet<SNode>();
@@ -358,7 +361,7 @@ class TypeSystemComponent extends CheckingComponent {
           myPartlyCheckedNodes.add(sNode);
         }
         myFullyCheckedNodes.add(sNode);
-        if (typeCalculated(initialNode) != null) return;
+        if (typeCalculated(targetNode) != null) return;
       }
       Set<SNode> newFrontierPopped = myCurrentFrontiers.pop();
       assert newFrontierPopped == newFrontier;
@@ -375,6 +378,7 @@ class TypeSystemComponent extends CheckingComponent {
       }
     } else {
       if (initialNode == null) return null;
+      if (!myState.isTargetTypeCalculated()) return null;
       SNode type = getType(initialNode);
       if (type != null && !TypesUtil.hasVariablesInside(type)) return type;
     }
