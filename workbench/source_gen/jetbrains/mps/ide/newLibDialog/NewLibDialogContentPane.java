@@ -29,10 +29,10 @@ import java.io.File;
 
 public class NewLibDialogContentPane extends JPanel {
   public NewLibDialogContentPane myThis;
-  private JLabel myComponent_b0;
-  private JTextField myName_c0;
-  private JLabel myComponent_d0;
-  private PathField myPath_e0;
+  private JLabel myComponent_zd23x6_b0;
+  private JTextField myName_zd23x6_c0;
+  private JLabel myComponent_zd23x6_d0;
+  private PathField myPath_zd23x6_e0;
   private String myLibraryName;
   private String myLibraryPath;
   private MPSProject myProject;
@@ -58,8 +58,8 @@ public class NewLibDialogContentPane extends JPanel {
     this.myEvents.initialize();
     myThis.setLibraryPath("");
     myThis.setLibraryName("NewLibrary");
-    myThis.myName_c0.setName("Name");
-    myThis.myPath_e0.setName("Path");
+    myThis.myName_zd23x6_c0.setName("Name");
+    myThis.myPath_zd23x6_e0.setName("Path");
   }
 
   public Events getEvents() {
@@ -80,7 +80,7 @@ public class NewLibDialogContentPane extends JPanel {
     {
       Object sourceObject = myThis;
       Property sourceProperty = BeanProperty.create("libraryName");
-      Object targetObject = this.myName_c0;
+      Object targetObject = this.myName_zd23x6_c0;
       Property targetProperty = BeanProperty.create("text");
       AutoBinding binding = Bindings.createAutoBinding(AutoBinding.UpdateStrategy.READ_WRITE, sourceObject, sourceProperty, targetObject, targetProperty);
       binding.bind();
@@ -89,7 +89,7 @@ public class NewLibDialogContentPane extends JPanel {
     {
       Object sourceObject = myThis;
       Property sourceProperty = BeanProperty.create("libraryPath");
-      Object targetObject = this.myPath_e0;
+      Object targetObject = this.myPath_zd23x6_e0;
       Property targetProperty = BeanProperty.create("path");
       AutoBinding binding = Bindings.createAutoBinding(AutoBinding.UpdateStrategy.READ_WRITE, sourceObject, sourceProperty, targetObject, targetProperty);
       binding.bind();
@@ -107,27 +107,27 @@ public class NewLibDialogContentPane extends JPanel {
 
   private JLabel createComponent_zd23x6_b0() {
     JLabel component = new JLabel();
-    this.myComponent_b0 = component;
+    this.myComponent_zd23x6_b0 = component;
     component.setText("Name:");
     return component;
   }
 
   private JTextField createComponent_zd23x6_c0() {
     JTextField component = new JTextField();
-    this.myName_c0 = component;
+    this.myName_zd23x6_c0 = component;
     return component;
   }
 
   private JLabel createComponent_zd23x6_d0() {
     JLabel component = new JLabel();
-    this.myComponent_d0 = component;
+    this.myComponent_zd23x6_d0 = component;
     component.setText("Library Path:");
     return component;
   }
 
   private PathField createComponent_zd23x6_e0() {
     PathField component = new PathField();
-    this.myPath_e0 = component;
+    this.myPath_zd23x6_e0 = component;
     return component;
   }
 

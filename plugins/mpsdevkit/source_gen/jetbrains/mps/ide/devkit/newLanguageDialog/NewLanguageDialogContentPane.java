@@ -39,12 +39,12 @@ import java.io.File;
 
 public class NewLanguageDialogContentPane extends JPanel {
   public NewLanguageDialogContentPane myThis;
-  private JLabel myComponent_b0;
-  private JTextField myName_c0;
-  private JLabel myComponent_d0;
-  private PathField myPath_e0;
-  private JCheckBox myNeedRuntime_f0;
-  private JCheckBox myNeedSandbox_g0;
+  private JLabel myComponent_hneum8_b0;
+  private JTextField myName_hneum8_c0;
+  private JLabel myComponent_hneum8_d0;
+  private PathField myPath_hneum8_e0;
+  private JCheckBox myNeedRuntime_hneum8_f0;
+  private JCheckBox myNeedSandbox_hneum8_g0;
   private String myLanguageNamespace;
   private String myLanguagePath;
   private MPSProject myProject;
@@ -72,8 +72,8 @@ public class NewLanguageDialogContentPane extends JPanel {
     this.myEvents.initialize();
     myThis.setLanguageNamespace("");
     myThis.setLanguagePath("");
-    myThis.myName_c0.setName("Name");
-    myThis.myPath_e0.setName("Path");
+    myThis.myName_hneum8_c0.setName("Name");
+    myThis.myPath_hneum8_e0.setName("Path");
   }
 
   public Events getEvents() {
@@ -94,7 +94,7 @@ public class NewLanguageDialogContentPane extends JPanel {
     {
       Object sourceObject = myThis;
       Property sourceProperty = BeanProperty.create("languageNamespace");
-      Object targetObject = this.myName_c0;
+      Object targetObject = this.myName_hneum8_c0;
       Property targetProperty = BeanProperty.create("text");
       AutoBinding binding = Bindings.createAutoBinding(AutoBinding.UpdateStrategy.READ_WRITE, sourceObject, sourceProperty, targetObject, targetProperty);
       binding.bind();
@@ -103,7 +103,7 @@ public class NewLanguageDialogContentPane extends JPanel {
     {
       Object sourceObject = myThis;
       Property sourceProperty = BeanProperty.create("languagePath");
-      Object targetObject = this.myPath_e0;
+      Object targetObject = this.myPath_hneum8_e0;
       Property targetProperty = BeanProperty.create("path");
       AutoBinding binding = Bindings.createAutoBinding(AutoBinding.UpdateStrategy.READ_WRITE, sourceObject, sourceProperty, targetObject, targetProperty);
       binding.bind();
@@ -121,40 +121,40 @@ public class NewLanguageDialogContentPane extends JPanel {
 
   private JLabel createComponent_hneum8_b0() {
     JLabel component = new JLabel();
-    this.myComponent_b0 = component;
+    this.myComponent_hneum8_b0 = component;
     component.setText("Language Namespace:");
     return component;
   }
 
   private JTextField createComponent_hneum8_c0() {
     JTextField component = new JTextField();
-    this.myName_c0 = component;
+    this.myName_hneum8_c0 = component;
     return component;
   }
 
   private JLabel createComponent_hneum8_d0() {
     JLabel component = new JLabel();
-    this.myComponent_d0 = component;
+    this.myComponent_hneum8_d0 = component;
     component.setText("Language Path:");
     return component;
   }
 
   private PathField createComponent_hneum8_e0() {
     PathField component = new PathField();
-    this.myPath_e0 = component;
+    this.myPath_hneum8_e0 = component;
     return component;
   }
 
   private JCheckBox createComponent_hneum8_f0() {
     JCheckBox component = new JCheckBox();
-    this.myNeedRuntime_f0 = component;
+    this.myNeedRuntime_hneum8_f0 = component;
     component.setText("Create Runtime Solution");
     return component;
   }
 
   private JCheckBox createComponent_hneum8_g0() {
     JCheckBox component = new JCheckBox();
-    this.myNeedSandbox_g0 = component;
+    this.myNeedSandbox_hneum8_g0 = component;
     component.setText("Create Sandbox Solution");
     return component;
   }
@@ -236,11 +236,11 @@ public class NewLanguageDialogContentPane extends JPanel {
           LanguageAspect.BEHAVIOR.createNew(language.value, false);
           LanguageAspect.TYPESYSTEM.createNew(language.value, false);
         }
-        if (myThis.myNeedRuntime_f0.isSelected()) {
+        if (myThis.myNeedRuntime_hneum8_f0.isSelected()) {
           Solution runtime = myThis.createRuntimeSolution();
           runtime.createModel(SModelFqName.fromString(myThis.getLanguageNamespace() + ".runtime"), runtime.getSModelRoots().get(0));
         }
-        if (myThis.myNeedSandbox_g0.isSelected()) {
+        if (myThis.myNeedSandbox_hneum8_g0.isSelected()) {
           Solution sandbox = myThis.createSandboxSolution();
           SModel createdModel = sandbox.createModel(SModelFqName.fromString(myThis.getLanguageNamespace() + ".sandbox"), sandbox.getSModelRoots().get(0)).getSModel();
           createdModel.addLanguage(myThis.getResult().getModuleReference());

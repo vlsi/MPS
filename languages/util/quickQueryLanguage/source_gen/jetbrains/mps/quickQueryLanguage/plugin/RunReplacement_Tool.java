@@ -4,7 +4,6 @@ package jetbrains.mps.quickQueryLanguage.plugin;
 
 import jetbrains.mps.plugins.pluginparts.tool.GeneratedTool;
 import javax.swing.Icon;
-import jetbrains.mps.ide.icons.IconManager;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
@@ -16,10 +15,11 @@ import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.quickQueryLanguage.runtime.Query;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.ide.findusages.view.FindUtils;
+import jetbrains.mps.ide.findusages.view.icons.IconManager;
 import javax.swing.JComponent;
 
 public class RunReplacement_Tool extends GeneratedTool {
-  private static final Icon ICON = IconManager.EMPTY_ICON;
+  private static final Icon ICON = null;
 
   private List<ReplacementView> myViews = ListSequence.fromList(new ArrayList<ReplacementView>());
 
@@ -50,7 +50,7 @@ public class RunReplacement_Tool extends GeneratedTool {
         if (ListSequence.fromList(RunReplacement_Tool.this.myViews).count() > 1) {
           name += String.valueOf(ListSequence.fromList(RunReplacement_Tool.this.myViews).count());
         }
-        Content content = RunReplacement_Tool.this.addContent(view.getComponent(), name, jetbrains.mps.ide.findusages.view.icons.IconManager.getIconForIHolder(searchQuery.getObjectHolder()), false);
+        Content content = RunReplacement_Tool.this.addContent(view.getComponent(), name, IconManager.getIconForIHolder(searchQuery.getObjectHolder()), false);
         RunReplacement_Tool.this.setAvailable(true);
         RunReplacement_Tool.this.openTool(true);
         RunReplacement_Tool.this.getContentManager().setSelectedContent(content);

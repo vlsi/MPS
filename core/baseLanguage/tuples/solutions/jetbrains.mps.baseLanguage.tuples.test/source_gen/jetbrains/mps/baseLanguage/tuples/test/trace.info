@@ -408,10 +408,10 @@
     <nodeInfo nodeId="6278501903477416704" fileName="NamedTuples_Test.java" startLine="24" startPosition="35" endLine="27" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="8755343252890010279" fileName="NamedTuples_Test.java" startLine="146" startPosition="98" endLine="149" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
     <nodeInfo nodeId="1239720139050" fileName="NamedTuples_Test.java" startLine="58" startPosition="44" endLine="62" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="1240933105391" fileName="NamedTuples_Test.java" startLine="101" startPosition="61" endLine="105" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_2;)Z" />
-    <nodeInfo nodeId="1241009587748" fileName="NamedTuples_Test.java" startLine="190" startPosition="134" endLine="194" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_2;)Ljava/lang/String;" />
-    <nodeInfo nodeId="1241009714386" fileName="NamedTuples_Test.java" startLine="198" startPosition="146" endLine="202" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_2;)Ljava/lang/String;" />
-    <nodeInfo nodeId="1239719969664" fileName="NamedTuples_Test.java" startLine="204" startPosition="0" endLine="208" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getData#()Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_2;" />
+    <nodeInfo nodeId="1240933105391" fileName="NamedTuples_Test.java" startLine="101" startPosition="61" endLine="105" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_0;)Z" />
+    <nodeInfo nodeId="1241009587748" fileName="NamedTuples_Test.java" startLine="190" startPosition="134" endLine="194" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_0;)Ljava/lang/String;" />
+    <nodeInfo nodeId="1241009714386" fileName="NamedTuples_Test.java" startLine="198" startPosition="146" endLine="202" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_0;)Ljava/lang/String;" />
+    <nodeInfo nodeId="1239719969664" fileName="NamedTuples_Test.java" startLine="204" startPosition="0" endLine="208" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getData#()Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_0;" />
     <nodeInfo nodeId="1239722643439" fileName="NamedTuples_Test.java" startLine="73" startPosition="15" endLine="78" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1240574553396" fileName="NamedTuples_Test.java" startLine="93" startPosition="0" endLine="98" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_boolean#()V" />
     <nodeInfo nodeId="1240933104041" fileName="NamedTuples_Test.java" startLine="100" startPosition="44" endLine="105" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -625,7 +625,7 @@
     <nodeInfo nodeId="1239977286033" fileName="GenericNamedTuples_Test.java" startLine="27" startPosition="5" endLine="28" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1239977290885" fileName="GenericNamedTuples_Test.java" startLine="28" startPosition="28" endLine="29" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1240073873703" fileName="GenericNamedTuples_Test.java" startLine="32" startPosition="47" endLine="33" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1240073848853" fileName="GenericNamedTuples_Test.java" startLine="31" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="pairOfStrings#()Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_2;" />
+    <nodeInfo nodeId="1240073848853" fileName="GenericNamedTuples_Test.java" startLine="31" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="pairOfStrings#()Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_0;" />
     <nodeInfo nodeId="1239977231412" fileName="GenericNamedTuples_Test.java" startLine="22" startPosition="13" endLine="27" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1239977032461" fileName="GenericNamedTuples_Test.java" startLine="9" startPosition="55" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_pair#()V" />
     <nodeInfo nodeId="1239977136862" fileName="GenericNamedTuples_Test.java" startLine="18" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_pairToIndexedTuple#()V" />
@@ -953,6 +953,19 @@
     <scopeInfo nodeId="6562295948842609625" fileName="Sample.java" startLine="33" startPosition="0" endLine="37" endPosition="0" />
     <scopeInfo nodeId="6562295948842315074" fileName="Sample.java" startLine="24" startPosition="0" endLine="29" endPosition="0" />
     <unitInfo nodeId="6562295948842315074" fileName="Sample.java" startLine="8" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.baseLanguage.tuples.test.Sample" />
+  </root>
+  <root nodeId="7392128331043290874">
+    <nodeInfo nodeId="7392128331043290885" fileName="MPS15234_Test.java" startLine="13" startPosition="64" endLine="14" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7392128331043388369" fileName="MPS15234_Test.java" startLine="14" startPosition="70" endLine="15" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7392128331043385904" fileName="MPS15234_Test.java" startLine="15" startPosition="67" endLine="16" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7392128331043388386" fileName="MPS15234_Test.java" startLine="16" startPosition="77" endLine="17" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7392128331043290881" fileName="MPS15234_Test.java" startLine="12" startPosition="45" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_coerceinternalClassifier#()V" />
+    <scopeInfo nodeId="7392128331043290884" fileName="MPS15234_Test.java" startLine="13" startPosition="64" endLine="17" endPosition="59">
+      <varInfo nodeId="7392128331043385905" varName="pairs" />
+      <varInfo nodeId="7392128331043290886" varName="lot" />
+    </scopeInfo>
+    <scopeInfo nodeId="7392128331043290881" fileName="MPS15234_Test.java" startLine="12" startPosition="45" endLine="19" endPosition="0" />
+    <unitInfo nodeId="7392128331043290874" fileName="MPS15234_Test.java" startLine="12" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.baseLanguage.tuples.test.MPS15234_Test" />
   </root>
   <root nodeId="7781156898616395636">
     <nodeInfo nodeId="7781156898616395636" fileName="IntPair.java" startLine="9" startPosition="20" endLine="10" endPosition="12" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
