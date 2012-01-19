@@ -72,10 +72,7 @@ public class ModelChangesWatcher implements ApplicationComponent {
   };
   private IMakeService myMakeService;
 
-  //do not remove the LibraryManager parameter - can cause cyclic dependency if this component is initialized before it
-  @SuppressWarnings("UnusedParameters")
-  public ModelChangesWatcher(IMakeService ms, MessageBus bus, ProjectManager projectManager, VirtualFileManager virtualFileManager, LibraryManager libMan) {
-    myMakeService = ms;
+  public ModelChangesWatcher(MessageBus bus, ProjectManager projectManager, VirtualFileManager virtualFileManager) {
     myBus = bus;
     myVirtualFileManager = virtualFileManager;
     myProjectManager = projectManager;
@@ -136,12 +133,22 @@ public class ModelChangesWatcher implements ApplicationComponent {
     initComponent(false);
   }
 
+  public void setMakeService(IMakeService ms) {
+    if (ms != null) {
+      ms.addListener(myMakeListener);
+    } else {
+      if (myMakeService != null) {
+        myMakeService.removeListener(myMakeListener);
+      }
+    }
+    myMakeService = ms;
+  }
+
   public void initComponent(boolean force) {
     if (myConnection == null && (force || !(MPSCore.getInstance().isTestMode()))) {
       myConnection = myBus.connect();
       myConnection.subscribe(VirtualFileManager.VFS_CHANGES, myBusListener);
       myVirtualFileManager.addVirtualFileManagerListener(myVirtualFileManagerListener);
-      myMakeService.addListener(myMakeListener);
     }
   }
 
@@ -149,7 +156,10 @@ public class ModelChangesWatcher implements ApplicationComponent {
     if (myConnection == null) {
       return;
     }
-    myMakeService.removeListener(myMakeListener);
+    if (myMakeService != null) {
+      myMakeService.removeListener(myMakeListener);
+      myMakeService = null;
+    }
     myVirtualFileManager.removeVirtualFileManagerListener(myVirtualFileManagerListener);
     myConnection.disconnect();
     myConnection = null;

@@ -246,6 +246,7 @@
     <classNode dependClassName="jetbrains.mps.progress.ProgressMonitor" />
     <classNode dependClassName="jetbrains.mps.project.Project" />
     <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
+    <classNode dependClassName="jetbrains.mps.watching.ModelChangesWatcher" />
     <classNode dependClassName="jetbrains.mps.workbench.make.MakeTask" />
     <classNode dependClassName="jetbrains.mps.workbench.make.UIFeedbackStrategy" />
     <classNode dependClassName="jetbrains.mps.workbench.make.UIQueryRelayStrategy" />
