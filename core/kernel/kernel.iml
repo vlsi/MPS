@@ -42,6 +42,7 @@
     <orderEntry type="library" name="Commons-lang" level="project" />
     <orderEntry type="library" name="Commons-logging" level="project" />
     <orderEntry type="library" name="Diff-utils" level="project" />
+    <orderEntry type="library" name="Idea-plaform" level="project" />
   </component>
 </module>
 
