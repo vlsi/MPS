@@ -17,7 +17,6 @@ import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.project.StandaloneMPSProject;
 import jetbrains.mps.project.Solution;
-import jetbrains.mps.project.structure.model.ModelRoot;
 
 public class NewModuleUtil {
   public NewModuleUtil() {
@@ -67,18 +66,13 @@ public class NewModuleUtil {
     return ((T) module);
   }
 
-  public static Solution createSolution(String namespace, final String rootPath, MPSProject p, boolean reload) {
+  public static Solution createSolution(String namespace, String rootPath, MPSProject p, boolean reload) {
     return NewModuleUtil.createModule(MPSExtentions.DOT_SOLUTION, namespace, rootPath, p, new _FunctionTypes._return_P3_E0<Solution, String, IFile, MPSProject>() {
       public Solution invoke(String s, IFile f, MPSProject p) {
         return Solution.createSolution(s, f, p);
       }
     }, new _FunctionTypes._void_P1_E0<ModuleDescriptor>() {
       public void invoke(ModuleDescriptor d) {
-        ModelRoot modelRoot = new ModelRoot();
-        modelRoot.setPath(rootPath);
-        d.getModelRoots().add(modelRoot);
-
-        d.setCompileInMPS(true);
       }
     }, reload);
   }
