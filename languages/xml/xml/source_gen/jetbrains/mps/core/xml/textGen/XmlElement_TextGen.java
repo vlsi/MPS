@@ -4,6 +4,7 @@ package jetbrains.mps.core.xml.textGen;
 
 import jetbrains.mps.textGen.SNodeTextGen;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -12,12 +13,16 @@ import jetbrains.mps.core.xml.behavior.XmlElement_Behavior;
 
 public class XmlElement_TextGen extends SNodeTextGen {
   public void doGenerateText(SNode node) {
-    this.indentBuffer();
+    if ((SNodeOperations.getPrevSibling(node) != null)) {
+      this.appendNewLine();
+      this.indentBuffer();
+    }
     this.append("<");
     this.append(SPropertyOperations.getString(node, "tagName"));
     if (ListSequence.fromList(SLinkOperations.getTargets(node, "attributes", true)).isNotEmpty()) {
       this.append(" ");
     }
+    this.increaseDepth();
     if (ListSequence.fromList(SLinkOperations.getTargets(node, "attributes", true)).isNotEmpty()) {
       for (SNode item : SLinkOperations.getTargets(node, "attributes", true)) {
         TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), item, this.getSNode());
@@ -26,6 +31,7 @@ public class XmlElement_TextGen extends SNodeTextGen {
         }
       }
     }
+    this.decreaseDepth();
     if (ListSequence.fromList(SLinkOperations.getTargets(node, "content", true)).isEmpty() && SPropertyOperations.getBoolean(node, "shortEmptyNotation")) {
       this.append(" />");
       this.appendNewLine();
@@ -35,6 +41,7 @@ public class XmlElement_TextGen extends SNodeTextGen {
     if (XmlElement_Behavior.call_isMultiline_8886258982030574875(node)) {
       this.appendNewLine();
       this.increaseDepth();
+      this.indentBuffer();
       if (ListSequence.fromList(SLinkOperations.getTargets(node, "content", true)).isNotEmpty()) {
         for (SNode item : SLinkOperations.getTargets(node, "content", true)) {
           TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), item, this.getSNode());
@@ -57,6 +64,5 @@ public class XmlElement_TextGen extends SNodeTextGen {
     this.append("</");
     this.append(SPropertyOperations.getString(node, "tagName"));
     this.append(">");
-    this.appendNewLine();
   }
 }
