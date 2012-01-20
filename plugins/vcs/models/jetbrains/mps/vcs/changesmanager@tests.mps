@@ -63,7 +63,7 @@
   <import index="tp4k" modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" version="5" implicit="yes" />
   <roots>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="3089989024970166387">
-      <property name="name" nameId="tpck.1169194664001" value="CommonChangesManagerTest" />
+      <property name="name" nameId="tpck.1169194664001" value="ChangesManagerTest" />
     </node>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="3619977242337243528">
       <property name="nonStatic" nameId="tpee.521412098689998745" value="true" />
@@ -324,7 +324,7 @@
               <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="9hkw.4707157387247363086" resolveInfo="addReloadListener" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="599918025274822344">
                 <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="599918025274823008">
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="599918025274823004" resolveInfo="CommonChangesManagerTest.MyReloadListener" />
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="599918025274823004" resolveInfo="ChangesManagerTest.MyReloadListener" />
                 </node>
               </node>
             </node>

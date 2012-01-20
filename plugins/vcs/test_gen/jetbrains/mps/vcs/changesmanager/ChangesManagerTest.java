@@ -85,7 +85,7 @@ import com.intellij.openapi.util.registry.Registry;
 import jetbrains.mps.TestMain;
 import org.junit.AfterClass;
 
-public class CommonChangesManagerTest {
+public class ChangesManagerTest {
   private static final File DESTINATION_PROJECT_DIR = new File(FileUtil.getTempDir(), "testConflicts");
   private static final File PROJECT_ARCHIVE = new File("testbench/modules/fugue.zip");
   private static final String PROJECT_FILE = "fugue.ipr";
@@ -108,7 +108,7 @@ public class CommonChangesManagerTest {
   private Map<String, FileStatus> myExpectedFileStatuses = MapSequence.fromMap(new HashMap<String, FileStatus>());
   private FileStatusManager myFileStatusManager;
 
-  public CommonChangesManagerTest() {
+  public ChangesManagerTest() {
   }
 
   @Before
@@ -132,7 +132,7 @@ public class CommonChangesManagerTest {
 
     myUtilVirtualFile = VirtualFileUtils.getVirtualFile(myUtilDiff.getModelDescriptor().getModelFile());
 
-    ModelChangesWatcher.instance().addReloadListener(new CommonChangesManagerTest.MyReloadListener());
+    ModelChangesWatcher.instance().addReloadListener(new ChangesManagerTest.MyReloadListener());
 
     myRegistry.getCommandQueue().setHadExceptions(false);
 
@@ -244,8 +244,8 @@ public class CommonChangesManagerTest {
     myUtilDiff.setEnabled(true);
     waitForChangesManager();
 
-    Assert.assertTrue(ListSequence.fromList(check_orwzer_a0a9a8(myHtmlDiff.getChangeSet())).isNotEmpty());
-    Assert.assertTrue(ListSequence.fromList(check_orwzer_a0a01a8(myUiDiff.getChangeSet())).isNotEmpty());
+    Assert.assertTrue(ListSequence.fromList(check_4gxggu_a0a9a8(myHtmlDiff.getChangeSet())).isNotEmpty());
+    Assert.assertTrue(ListSequence.fromList(check_4gxggu_a0a01a8(myUiDiff.getChangeSet())).isNotEmpty());
     Assert.assertNull(myUtilDiff.getChangeSet());
   }
 
@@ -307,7 +307,7 @@ public class CommonChangesManagerTest {
     });
 
     waitForChangesManager();
-    Assert.assertTrue(ListSequence.fromList(check_orwzer_a0a3a01(myUtilDiff.getChangeSet())).isNotEmpty());
+    Assert.assertTrue(ListSequence.fromList(check_4gxggu_a0a3a01(myUtilDiff.getChangeSet())).isNotEmpty());
 
     MapSequence.fromMap(myExpectedFileStatuses).put("util.ImageLoader", FileStatus.MODIFIED);
     checkRootStatuses();
@@ -348,7 +348,7 @@ public class CommonChangesManagerTest {
     }, myUtilVirtualFile, null);
 
     waitForChangesManager();
-    Assert.assertTrue(ListSequence.fromList(check_orwzer_a0a3a21(myUtilDiff.getChangeSet())).isNotEmpty());
+    Assert.assertTrue(ListSequence.fromList(check_4gxggu_a0a3a21(myUtilDiff.getChangeSet())).isNotEmpty());
 
     MapSequence.fromMap(myExpectedFileStatuses).put("util.ImageLoader", FileStatus.MODIFIED);
     checkRootStatuses();
@@ -406,7 +406,7 @@ public class CommonChangesManagerTest {
       throw ListSequence.fromList(exceptions).first();
     }
     waitForChangesManager();
-    Assert.assertTrue(ListSequence.fromList(check_orwzer_a0a5a51(myUtilDiff.getChangeSet())).isEmpty());
+    Assert.assertTrue(ListSequence.fromList(check_4gxggu_a0a5a51(myUtilDiff.getChangeSet())).isEmpty());
 
     SetSequence.fromSet(MapSequence.fromMap(myExpectedFileStatuses).keySet()).where(new IWhereFilter<String>() {
       public boolean accept(String k) {
@@ -501,7 +501,7 @@ public class CommonChangesManagerTest {
               fe = new DummyFileEditor(np);
             }
             UndoManager.getInstance(myIdeaProject).undo(fe);
-            check_orwzer_a3a0a0a0a0a42(fe);
+            check_4gxggu_a3a0a0a0a0a42(fe);
           }
         });
       } catch (Throwable t) {
@@ -880,10 +880,10 @@ public class CommonChangesManagerTest {
   private void waitForReloadFinished() {
     waitForSomething(new Runnable() {
       public void run() {
-        synchronized (CommonChangesManagerTest.this) {
+        synchronized (ChangesManagerTest.this) {
           myAfterReloadTask = new Runnable() {
             public void run() {
-              synchronized (CommonChangesManagerTest.this) {
+              synchronized (ChangesManagerTest.this) {
                 myAfterReloadTask = null;
               }
               waitCompleted();
@@ -951,49 +951,49 @@ public class CommonChangesManagerTest {
     TestMain.finishTestOnProjectCopy(ourProject, DESTINATION_PROJECT_DIR);
   }
 
-  private static List<ModelChange> check_orwzer_a0a9a8(ChangeSet checkedDotOperand) {
+  private static List<ModelChange> check_4gxggu_a0a9a8(ChangeSet checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModelChanges();
     }
     return null;
   }
 
-  private static List<ModelChange> check_orwzer_a0a01a8(ChangeSet checkedDotOperand) {
+  private static List<ModelChange> check_4gxggu_a0a01a8(ChangeSet checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModelChanges();
     }
     return null;
   }
 
-  private static List<ModelChange> check_orwzer_a0a3a01(ChangeSet checkedDotOperand) {
+  private static List<ModelChange> check_4gxggu_a0a3a01(ChangeSet checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModelChanges();
     }
     return null;
   }
 
-  private static List<ModelChange> check_orwzer_a0a3a21(ChangeSet checkedDotOperand) {
+  private static List<ModelChange> check_4gxggu_a0a3a21(ChangeSet checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModelChanges();
     }
     return null;
   }
 
-  private static List<ModelChange> check_orwzer_a0a5a51(ChangeSet checkedDotOperand) {
+  private static List<ModelChange> check_4gxggu_a0a5a51(ChangeSet checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModelChanges();
     }
     return null;
   }
 
-  private static void check_orwzer_a3a0a0a0a0a42(FileEditor checkedDotOperand) {
+  private static void check_4gxggu_a3a0a0a0a0a42(FileEditor checkedDotOperand) {
     if (null != checkedDotOperand) {
       checkedDotOperand.dispose();
     }
 
   }
 
-  private static void check_orwzer_a0a0a1a(Runnable checkedDotOperand) {
+  private static void check_4gxggu_a0a0a1a(Runnable checkedDotOperand) {
     if (null != checkedDotOperand) {
       checkedDotOperand.run();
     }
@@ -1009,7 +1009,7 @@ public class CommonChangesManagerTest {
 
     public void reloadFinished() {
       synchronized (this) {
-        check_orwzer_a0a0a1a(myAfterReloadTask);
+        check_4gxggu_a0a0a1a(myAfterReloadTask);
       }
     }
   }

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.vcs.changesmanager.CommonChangesManagerTest" file="CommonChangesManagerTest.java">
+  <dependency className="jetbrains.mps.vcs.changesmanager.ChangesManagerTest" file="ChangesManagerTest.java">
     <classNode dependClassName="com.intellij.openapi.command.undo.UndoManager" />
     <classNode dependClassName="com.intellij.openapi.fileEditor.FileEditor" />
     <classNode dependClassName="com.intellij.openapi.util.registry.Registry" />
