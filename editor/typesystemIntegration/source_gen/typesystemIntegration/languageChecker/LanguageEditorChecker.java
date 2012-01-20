@@ -206,7 +206,6 @@ public class LanguageEditorChecker extends BaseEditorChecker {
     }
     myMessagesChanged = changed;
     for (IErrorReporter errorReporter : errorsComponent.getErrors()) {
-
       MessageStatus status = errorReporter.getMessageStatus();
       String errorString = errorReporter.reportError();
       HighlighterMessage message = HighlightUtil.createHighlighterMessage(errorReporter.getSNode(), NameUtil.capitalize(status.getPresentation()) + ": " + errorString, errorReporter, LanguageEditorChecker.this, editorContext);
