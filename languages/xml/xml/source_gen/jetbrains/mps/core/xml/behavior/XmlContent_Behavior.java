@@ -24,17 +24,23 @@ public class XmlContent_Behavior {
   }
 
   public static boolean virtual_isFirstPositionAllowed_6999033275467334890(SNode thisNode) {
-    SNode prevSibling = SNodeOperations.getPrevSibling(thisNode);
-    if (SNodeOperations.isInstanceOf(prevSibling, "jetbrains.mps.core.xml.structure.XmlText")) {
-      return XmlContent_Behavior.call_hasNewLineAfter_6999033275467469870(SNodeOperations.cast(prevSibling, "jetbrains.mps.core.xml.structure.XmlText"));
+    if (SNodeOperations.isInstanceOf(SNodeOperations.getPrevSibling(thisNode), "jetbrains.mps.core.xml.structure.XmlContent")) {
+      SNode left = SNodeOperations.cast(SNodeOperations.getPrevSibling(thisNode), "jetbrains.mps.core.xml.structure.XmlContent");
+      if (SNodeOperations.isInstanceOf(left, "jetbrains.mps.core.xml.structure.XmlText")) {
+        return XmlContent_Behavior.call_hasNewLineAfter_6999033275467469870(SNodeOperations.cast(left, "jetbrains.mps.core.xml.structure.XmlText"));
+      }
+      return !(SConceptPropertyOperations.getBoolean(left, "textLike") || XmlContent_Behavior.call_isOneLineBlock_1622293396949044231(left));
     }
-    return !(SNodeOperations.isInstanceOf(prevSibling, "jetbrains.mps.core.xml.structure.XmlContent") && SConceptPropertyOperations.getBoolean(SNodeOperations.cast(prevSibling, "jetbrains.mps.core.xml.structure.XmlContent"), "textLike"));
+    return true;
   }
 
   public static boolean virtual_isLastPositionAllowed_6999033275467334895(SNode thisNode) {
     if (SNodeOperations.isInstanceOf(SNodeOperations.getNextSibling(thisNode), "jetbrains.mps.core.xml.structure.XmlContent")) {
       SNode right = SNodeOperations.cast(SNodeOperations.getNextSibling(thisNode), "jetbrains.mps.core.xml.structure.XmlContent");
-      return !(SConceptPropertyOperations.getBoolean(right, "textLike") || XmlContent_Behavior.call_isOneLineBlock_1622293396949044231(right));
+      if (SNodeOperations.isInstanceOf(right, "jetbrains.mps.core.xml.structure.XmlText")) {
+        return XmlContent_Behavior.call_onNewLine_6999033275467469862(SNodeOperations.cast(right, "jetbrains.mps.core.xml.structure.XmlText"));
+      }
+      return !(SConceptPropertyOperations.getBoolean(right, "textLike"));
     }
     return true;
   }

@@ -6,34 +6,57 @@ import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
+import jetbrains.mps.nodeEditor.style.Style;
+import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Error;
-import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.style.Padding;
-import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
+import jetbrains.mps.core.xml.behavior.XmlContent_Behavior;
 
 public class XmlContent_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createAlternation_91idit_a(editorContext, node);
+    return this.createCollection_91idit_a(editorContext, node);
   }
 
-  private EditorCell createAlternation_91idit_a(EditorContext editorContext, SNode node) {
+  private EditorCell createAlternation_91idit_a0(EditorContext editorContext, SNode node) {
     boolean alternationCondition = true;
-    alternationCondition = XmlContent_Editor.renderingCondition_91idit_a0(node, editorContext, editorContext.getOperationContext().getScope());
+    alternationCondition = XmlContent_Editor.renderingCondition_91idit_a0a(node, editorContext, editorContext.getOperationContext().getScope());
     EditorCell editorCell = null;
     if (alternationCondition) {
-      editorCell = this.createCustom_91idit_a0(editorContext, node);
+      editorCell = this.createCustom_91idit_a0a(editorContext, node);
     } else {
-      editorCell = this.createCustom_91idit_a0_0(editorContext, node);
+      editorCell = this.createCustom_91idit_a0a_0(editorContext, node);
     }
     return editorCell;
   }
 
-  private EditorCell createCustom_91idit_a0(final EditorContext editorContext, final SNode node) {
+  private EditorCell createCollection_91idit_a(EditorContext editorContext, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
+    editorCell.setCellId("Collection_91idit_a");
+    editorCell.addEditorCell(this.createAlternation_91idit_a0(editorContext, node));
+    if (renderingCondition_91idit_a1a(node, editorContext, editorContext.getOperationContext().getScope())) {
+      editorCell.addEditorCell(this.createConstant_91idit_b0(editorContext, node));
+    }
+    return editorCell;
+  }
+
+  private EditorCell createConstant_91idit_b0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
+    editorCell.setCellId("Constant_91idit_b0");
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+      style.set(StyleAttributes.SELECTABLE, false);
+    }
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createCustom_91idit_a0a(final EditorContext editorContext, final SNode node) {
     AbstractCellProvider provider = new _FunctionTypes._return_P0_E0<AbstractCellProvider>() {
       public AbstractCellProvider invoke() {
         return new AbstractCellProvider() {
@@ -47,7 +70,7 @@ public class XmlContent_Editor extends DefaultNodeEditor {
       }
     }.invoke();
     EditorCell editorCell = provider.createEditorCell(editorContext);
-    editorCell.setCellId("Custom_91idit_a0");
+    editorCell.setCellId("Custom_91idit_a0a");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.INDENT_LAYOUT_ON_NEW_LINE, true);
@@ -55,7 +78,7 @@ public class XmlContent_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createCustom_91idit_a0_0(final EditorContext editorContext, final SNode node) {
+  private EditorCell createCustom_91idit_a0a_0(final EditorContext editorContext, final SNode node) {
     AbstractCellProvider provider = new _FunctionTypes._return_P0_E0<AbstractCellProvider>() {
       public AbstractCellProvider invoke() {
         return new AbstractCellProvider() {
@@ -69,11 +92,15 @@ public class XmlContent_Editor extends DefaultNodeEditor {
       }
     }.invoke();
     EditorCell editorCell = provider.createEditorCell(editorContext);
-    editorCell.setCellId("Custom_91idit_a0_0");
+    editorCell.setCellId("Custom_91idit_a0a_0");
     return editorCell;
   }
 
-  private static boolean renderingCondition_91idit_a0(SNode node, EditorContext editorContext, IScope scope) {
-    return SNodeOperations.isInstanceOf(SNodeOperations.getPrevSibling(node), "jetbrains.mps.core.xml.structure.XmlContent") && SConceptPropertyOperations.getBoolean(SNodeOperations.cast(SNodeOperations.getPrevSibling(node), "jetbrains.mps.core.xml.structure.XmlContent"), "textLike");
+  private static boolean renderingCondition_91idit_a0a(SNode node, EditorContext editorContext, IScope scope) {
+    return XmlContent_Behavior.call_onNewLine_6999033275467469862(node);
+  }
+
+  private static boolean renderingCondition_91idit_a1a(SNode node, EditorContext editorContext, IScope scope) {
+    return XmlContent_Behavior.call_hasNewLineAfter_6999033275467469870(node);
   }
 }

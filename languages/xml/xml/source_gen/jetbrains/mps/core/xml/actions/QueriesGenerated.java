@@ -6,32 +6,44 @@ import java.util.regex.Pattern;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.action.SideTransformPreconditionContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.SNode;
 import java.util.List;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
 import jetbrains.mps.smodel.action.NodeSubstituteActionsFactoryContext;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.smodel.action.DefaultSimpleSubstituteAction;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.core.xml.constraints.XmlNameUtil;
 import java.util.regex.Matcher;
 import jetbrains.mps.smodel.action.SideTransformActionsBuilderContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
 import jetbrains.mps.smodel.action.AbstractSideTransformHintSubstituteAction;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class QueriesGenerated {
-  private static Pattern REGEXP_x583g4_a0a0a2a0a0a0a0a2a0a1a3 = Pattern.compile("^<([\\w0-9]+)>?$", 0);
-  private static Pattern REGEXP_x583g4_a0a0a1a1a0a0a0a2a0a1a3 = Pattern.compile("^<([\\w0-9]+)>?$", 0);
+  private static Pattern REGEXP_x583g4_a0a0a2a0a0a0a0a2a0a1a5 = Pattern.compile("^<([\\w0-9]+)>?$", 0);
+  private static Pattern REGEXP_x583g4_a0a0a1a1a0a0a0a2a0a1a5 = Pattern.compile("^<([\\w0-9]+)>?$", 0);
 
   public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_XmlBaseAttribute_6666499814681619369(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
     return SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getSourceNode()), "jetbrains.mps.core.xml.structure.XmlElement");
+  }
+
+  public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_XmlElement_6999033275467558444(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
+    return !(SPropertyOperations.getBoolean(_context.getSourceNode(), "shortEmptyNotation")) && ListSequence.fromList(SLinkOperations.getTargets(_context.getSourceNode(), "attributes", true)).isEmpty();
+  }
+
+  public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_XmlBaseAttribute_6999033275467568952(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
+    if (!(SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getSourceNode()), "jetbrains.mps.core.xml.structure.XmlElement")) || (SNodeOperations.getNextSibling(_context.getSourceNode()) != null)) {
+      return false;
+    }
+    SNode elem = SNodeOperations.cast(SNodeOperations.getParent(_context.getSourceNode()), "jetbrains.mps.core.xml.structure.XmlElement");
+    return !(SPropertyOperations.getBoolean(elem, "shortEmptyNotation"));
   }
 
   public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_XmlValuePart_6666499814681567390(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
@@ -145,18 +157,18 @@ public class QueriesGenerated {
       if (outputConcept == null || SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
         ListSequence.fromList(result).addElement(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
           public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-            Matcher _matcher_x583g4_a1a0a0a0a0a2a0a1a3;
+            Matcher _matcher_x583g4_a1a0a0a0a0a2a0a1a5;
             SNode element = SNodeFactoryOperations.createNewNode(model, "jetbrains.mps.core.xml.structure.XmlElement", null);
-            if ((_matcher_x583g4_a1a0a0a0a0a2a0a1a3 = REGEXP_x583g4_a0a0a2a0a0a0a0a2a0a1a3.matcher(pattern)).find()) {
-              SPropertyOperations.set(element, "tagName", _matcher_x583g4_a1a0a0a0a0a2a0a1a3.group(1));
+            if ((_matcher_x583g4_a1a0a0a0a0a2a0a1a5 = REGEXP_x583g4_a0a0a2a0a0a0a0a2a0a1a5.matcher(pattern)).find()) {
+              SPropertyOperations.set(element, "tagName", _matcher_x583g4_a1a0a0a0a0a2a0a1a5.group(1));
             }
             return element;
           }
 
           public String getMatchingText(String pattern) {
-            Matcher _matcher_x583g4_a0a1a0a0a0a2a0a1a3;
-            if ((_matcher_x583g4_a0a1a0a0a0a2a0a1a3 = REGEXP_x583g4_a0a0a1a1a0a0a0a2a0a1a3.matcher(pattern)).find()) {
-              return "<" + _matcher_x583g4_a0a1a0a0a0a2a0a1a3.group(1) + ">";
+            Matcher _matcher_x583g4_a0a1a0a0a0a2a0a1a5;
+            if ((_matcher_x583g4_a0a1a0a0a0a2a0a1a5 = REGEXP_x583g4_a0a0a1a1a0a0a0a2a0a1a5.matcher(pattern)).find()) {
+              return "<" + _matcher_x583g4_a0a1a0a0a0a2a0a1a5.group(1) + ">";
             }
             return "<element/>";
           }
@@ -283,6 +295,61 @@ public class QueriesGenerated {
           }
         });
       }
+    }
+    return result;
+  }
+
+  public static List<INodeSubstituteAction> sideTransform_ActionsFactory_XmlElement_6999033275467558443(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
+    List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
+    {
+      SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.core.xml.structure.XmlElement");
+      ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
+        public SNode doSubstitute(String pattern) {
+          SPropertyOperations.set(_context.getSourceNode(), "shortEmptyNotation", "" + true);
+          ListSequence.fromList(SLinkOperations.getTargets(_context.getSourceNode(), "content", true)).clear();
+          return _context.getSourceNode();
+        }
+
+        public String getMatchingText(String pattern) {
+          return "/";
+        }
+
+        public String getVisibleMatchingText(String pattern) {
+          return this.getMatchingText(pattern);
+        }
+
+        public String getDescriptionText(String pattern) {
+          return "short notation for empty element";
+        }
+      });
+    }
+    return result;
+  }
+
+  public static List<INodeSubstituteAction> sideTransform_ActionsFactory_XmlBaseAttribute_6999033275467568951(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
+    List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
+    {
+      SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.core.xml.structure.XmlElement");
+      ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
+        public SNode doSubstitute(String pattern) {
+          SNode elem = SNodeOperations.cast(SNodeOperations.getParent(_context.getSourceNode()), "jetbrains.mps.core.xml.structure.XmlElement");
+          ListSequence.fromList(SLinkOperations.getTargets(elem, "content", true)).clear();
+          SPropertyOperations.set(elem, "shortEmptyNotation", "" + true);
+          return elem;
+        }
+
+        public String getMatchingText(String pattern) {
+          return "/";
+        }
+
+        public String getVisibleMatchingText(String pattern) {
+          return this.getMatchingText(pattern);
+        }
+
+        public String getDescriptionText(String pattern) {
+          return "short notation for empty element";
+        }
+      });
     }
     return result;
   }

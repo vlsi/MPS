@@ -28,6 +28,11 @@ public class XmlText_Behavior {
   }
 
   public static boolean virtual_onNewLine_6999033275467469862(SNode thisNode) {
-    return SNodeOperations.isInstanceOf(SNodeOperations.getPrevSibling(thisNode), "jetbrains.mps.core.xml.structure.XmlContent") && SConceptPropertyOperations.getBoolean(SNodeOperations.cast(SNodeOperations.getPrevSibling(thisNode), "jetbrains.mps.core.xml.structure.XmlContent"), "textLike");
+    SNode left = SNodeOperations.getPrevSibling(thisNode);
+    if (SNodeOperations.isInstanceOf(left, "jetbrains.mps.core.xml.structure.XmlContent")) {
+      SNode leftContent = SNodeOperations.cast(left, "jetbrains.mps.core.xml.structure.XmlContent");
+      return SConceptPropertyOperations.getBoolean(leftContent, "textLike") || StringUtils.isEmpty(SPropertyOperations.getString(thisNode, "value")) && (SNodeOperations.getNextSibling(thisNode) == null);
+    }
+    return false;
   }
 }

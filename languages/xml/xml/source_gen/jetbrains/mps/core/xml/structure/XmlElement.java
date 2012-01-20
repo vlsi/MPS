@@ -12,6 +12,7 @@ import jetbrains.mps.project.GlobalScope;
 public class XmlElement extends XmlBaseElement {
   public static final String concept = "jetbrains.mps.core.xml.structure.XmlElement";
   public static final String TAG_NAME = "tagName";
+  public static final String SHORT_EMPTY_NOTATION = "shortEmptyNotation";
   public static final String ATTRIBUTES = "attributes";
   public static final String CONTENT = "content";
 
@@ -25,6 +26,14 @@ public class XmlElement extends XmlBaseElement {
 
   public void setTagName(String value) {
     this.setProperty(XmlElement.TAG_NAME, value);
+  }
+
+  public boolean getShortEmptyNotation() {
+    return this.getBooleanProperty(XmlElement.SHORT_EMPTY_NOTATION);
+  }
+
+  public void setShortEmptyNotation(boolean value) {
+    this.setBooleanProperty(XmlElement.SHORT_EMPTY_NOTATION, value);
   }
 
   public int getAttributesesCount() {
