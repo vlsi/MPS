@@ -92,7 +92,7 @@ public class XmlAttribute_Editor extends DefaultNodeEditor {
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_attrName");
-    XmlSS_StyleSheet.getXmlTagName(editorCell).apply(editorCell);
+    XmlSS_StyleSheet.getXmlAttributeName(editorCell).apply(editorCell);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

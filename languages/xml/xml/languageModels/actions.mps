@@ -37,6 +37,9 @@
     <node type="tpdg.NodeSubstituteActions" typeId="tpdg.1112056943463" id="1622293396949093387">
       <property name="name" nameId="tpck.1169194664001" value="create_CommentText" />
     </node>
+    <node type="tpdg.SideTransformHintSubstituteActions" typeId="tpdg.1138079416598" id="6999033275467483656">
+      <property name="name" nameId="tpck.1169194664001" value="transform_Content" />
+    </node>
   </roots>
   <root id="6666499814681529661">
     <node role="actionsBuilder" roleId="tpdg.1138079416599" type="tpdg.SideTransformHintSubstituteActionsBuilder" typeId="tpdg.1138079221458" id="6666499814681619356">
@@ -1065,6 +1068,26 @@
                       </node>
                     </node>
                   </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </root>
+  <root id="6999033275467483656">
+    <node role="actionsBuilder" roleId="tpdg.1138079416599" type="tpdg.SideTransformHintSubstituteActionsBuilder" typeId="tpdg.1138079221458" id="6999033275467483657">
+      <link role="applicableConcept" roleId="tpdg.1138079221462" targetNodeId="iuxj.6666499814681299051" resolveInfo="XmlContent" />
+      <node role="part" roleId="tpdg.1177442283389" type="tpdg.ConceptRightTransformPart" typeId="tpdg.1182819125053" id="6999033275467483659">
+        <link role="concept" roleId="tpdg.1182819234902" targetNodeId="iuxj.6666499814681299051" resolveInfo="XmlContent" />
+        <node role="handler" roleId="tpdg.1182819210322" type="tpdg.QueryFunction_SideTransform_ConceptHandler" typeId="tpdg.1177526592562" id="6999033275467483660">
+          <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="6999033275467483661">
+            <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="6999033275467483662">
+              <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="6999033275467483740">
+                <node role="operand" roleId="tpee.1197027771414" type="tpdg.ConceptFunctionParameter_sourceNode" typeId="tpdg.1177497140107" id="6999033275467483663" />
+                <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_InsertNextSiblingOperation" typeId="tp25.1143224066846" id="6999033275467483746">
+                  <node role="insertedNode" roleId="tp25.1143224066849" type="tpdg.ConceptFunctionParameter_result" typeId="tpdg.1177526535706" id="6999033275467483748" />
                 </node>
               </node>
             </node>

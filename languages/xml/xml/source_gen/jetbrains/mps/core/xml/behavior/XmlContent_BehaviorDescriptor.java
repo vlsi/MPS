@@ -9,8 +9,24 @@ public abstract class XmlContent_BehaviorDescriptor extends BaseConcept_Behavior
   public XmlContent_BehaviorDescriptor() {
   }
 
+  public boolean virtual_isLastPositionAllowed_6999033275467334895(SNode thisNode) {
+    return XmlContent_Behavior.virtual_isLastPositionAllowed_6999033275467334895(thisNode);
+  }
+
+  public boolean virtual_hasNewLineAfter_6999033275467469870(SNode thisNode) {
+    return XmlContent_Behavior.virtual_hasNewLineAfter_6999033275467469870(thisNode);
+  }
+
+  public boolean virtual_isFirstPositionAllowed_6999033275467334890(SNode thisNode) {
+    return XmlContent_Behavior.virtual_isFirstPositionAllowed_6999033275467334890(thisNode);
+  }
+
   public boolean virtual_isOneLineBlock_1622293396949044231(SNode thisNode) {
     return XmlContent_Behavior.virtual_isOneLineBlock_1622293396949044231(thisNode);
+  }
+
+  public boolean virtual_onNewLine_6999033275467469862(SNode thisNode) {
+    return XmlContent_Behavior.virtual_onNewLine_6999033275467469862(thisNode);
   }
 
   @Override

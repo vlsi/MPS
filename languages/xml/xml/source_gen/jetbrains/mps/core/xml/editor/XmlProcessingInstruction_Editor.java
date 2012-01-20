@@ -15,8 +15,6 @@ import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
 import jetbrains.mps.core.xml.behavior.XmlContent_Behavior;
 
 public class XmlProcessingInstruction_Editor extends DefaultNodeEditor {
@@ -65,7 +63,6 @@ public class XmlProcessingInstruction_Editor extends DefaultNodeEditor {
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
-      style.set(StyleAttributes.PUNCTUATION_LEFT, true);
     }
     editorCell.setDefaultText("");
     return editorCell;
@@ -78,6 +75,7 @@ public class XmlProcessingInstruction_Editor extends DefaultNodeEditor {
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
+      style.set(StyleAttributes.PUNCTUATION_LEFT, true);
     }
     editorCell.setDefaultText("");
     return editorCell;
@@ -90,7 +88,6 @@ public class XmlProcessingInstruction_Editor extends DefaultNodeEditor {
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.PUNCTUATION_LEFT, true);
-      style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
     }
     editorCell.setDefaultText("");
     return editorCell;
@@ -103,6 +100,7 @@ public class XmlProcessingInstruction_Editor extends DefaultNodeEditor {
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.PUNCTUATION_LEFT, true);
+      style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
     }
     editorCell.setDefaultText("");
     return editorCell;
@@ -148,15 +146,11 @@ public class XmlProcessingInstruction_Editor extends DefaultNodeEditor {
 
   private static boolean renderingCondition_9277sk_a0a(SNode node, EditorContext editorContext, IScope scope) {
     // see MPS-15260 
-    SNode prevSibling = SNodeOperations.getPrevSibling(node);
-    return SNodeOperations.isInstanceOf(prevSibling, "jetbrains.mps.core.xml.structure.XmlContent") && SConceptPropertyOperations.getBoolean(SNodeOperations.cast(prevSibling, "jetbrains.mps.core.xml.structure.XmlContent"), "textLike");
+    return XmlContent_Behavior.call_isFirstPositionAllowed_6999033275467334890(node);
   }
 
   private static boolean renderingCondition_9277sk_a3a(SNode node, EditorContext editorContext, IScope scope) {
-    if (SNodeOperations.isInstanceOf(SNodeOperations.getNextSibling(node), "jetbrains.mps.core.xml.structure.XmlContent")) {
-      SNode left = SNodeOperations.cast(SNodeOperations.getNextSibling(node), "jetbrains.mps.core.xml.structure.XmlContent");
-      return SConceptPropertyOperations.getBoolean(left, "textLike") || XmlContent_Behavior.call_isOneLineBlock_1622293396949044231(left);
-    }
-    return false;
+    // see MPS-15260 
+    return XmlContent_Behavior.call_isLastPositionAllowed_6999033275467334895(node);
   }
 }

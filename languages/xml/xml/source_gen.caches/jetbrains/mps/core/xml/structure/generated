@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-dsj7rdoko7gt2geow0bwrm6gnqw4snd">
+<dependencies version="2" modelHash="6mry1p7bi49e5xa4v54cxdirkokf51q">
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
   <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)" />
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
@@ -107,7 +107,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="XmlProcessingInstruction.java" />
   </source>
-  <source id="6666499814681299064" name="XmlComment" hash="3fyab93w89mjerfgf7i4a0kjq06lxab">
+  <source id="6666499814681299064" name="XmlComment" hash="31obsnapdrjrkaa5cn8b5swbcth36it">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
@@ -224,7 +224,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="XmlEntityRefValue.java" />
   </source>
-  <source id="1622293396948952339" name="XmlText" hash="-5sub05n9pesdyqet1gg9ds6egwoc8gb">
+  <source id="1622293396948952339" name="XmlText" hash="995hnvbpj2huz9waeopi2wdxeed4552">
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />

@@ -286,4 +286,28 @@ public class QueriesGenerated {
     }
     return result;
   }
+
+  public static List<INodeSubstituteAction> sideTransform_ActionsFactory_XmlContent_6999033275467483657(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
+    List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
+    {
+      SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.core.xml.structure.XmlContent");
+      Iterable<SNode> concepts;
+      concepts = SConceptOperations.getAllSubConcepts(concept, _context.getModel(), operationContext.getScope());
+      for (final SNode subconcept : concepts) {
+        if (!(SNodeOperations.isInstanceOf(subconcept, "jetbrains.mps.lang.structure.structure.ConceptDeclaration"))) {
+          continue;
+        }
+        if (SConceptPropertyOperations.getBoolean(subconcept, "abstract")) {
+          continue;
+        }
+        ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(subconcept, _context.getSourceNode()) {
+          public SNode doSubstitute(String pattern) {
+            SNode result = SNodeFactoryOperations.createNewNode(NameUtil.nodeFQName(subconcept), null);
+            return SNodeOperations.insertNextSiblingChild(_context.getSourceNode(), result);
+          }
+        });
+      }
+    }
+    return result;
+  }
 }

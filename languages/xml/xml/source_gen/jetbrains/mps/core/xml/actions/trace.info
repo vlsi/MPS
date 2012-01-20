@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="QueriesGenerated.java" startLine="29" startPosition="0" endLine="290" endPosition="0" unitName="jetbrains.mps.core.xml.actions.QueriesGenerated" />
+  <unitInfo fileName="QueriesGenerated.java" startLine="29" startPosition="0" endLine="314" endPosition="0" unitName="jetbrains.mps.core.xml.actions.QueriesGenerated" />
   <unitInfo fileName="QueriesGenerated.java" startLine="43" startPosition="53" endLine="55" endPosition="9" unitName="jetbrains.mps.core.xml.actions.QueriesGenerated$1" />
   <unitInfo fileName="QueriesGenerated.java" startLine="62" startPosition="53" endLine="85" endPosition="9" unitName="jetbrains.mps.core.xml.actions.QueriesGenerated$2" />
   <unitInfo fileName="QueriesGenerated.java" startLine="97" startPosition="53" endLine="134" endPosition="9" unitName="jetbrains.mps.core.xml.actions.QueriesGenerated$3" />
@@ -9,6 +9,7 @@
   <unitInfo fileName="QueriesGenerated.java" startLine="209" startPosition="53" endLine="232" endPosition="9" unitName="jetbrains.mps.core.xml.actions.QueriesGenerated$6" />
   <unitInfo fileName="QueriesGenerated.java" startLine="251" startPosition="53" endLine="260" endPosition="9" unitName="jetbrains.mps.core.xml.actions.QueriesGenerated$7" />
   <unitInfo fileName="QueriesGenerated.java" startLine="279" startPosition="53" endLine="284" endPosition="9" unitName="jetbrains.mps.core.xml.actions.QueriesGenerated$8" />
+  <unitInfo fileName="QueriesGenerated.java" startLine="303" startPosition="53" endLine="308" endPosition="9" unitName="jetbrains.mps.core.xml.actions.QueriesGenerated$9" />
   <root nodeId="1622293396948974642">
     <nodeInfo nodeId="1622293396949015926" fileName="QueriesGenerated.java" startLine="29" startPosition="31" endLine="30" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="REGEXP_x583g4_a0a0a2a0a0a0a0a2a0a1a3" />
     <nodeInfo nodeId="1622293396949013944" fileName="QueriesGenerated.java" startLine="30" startPosition="103" endLine="31" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="REGEXP_x583g4_a0a0a1a1a0a0a0a2a0a1a3" />
@@ -176,6 +177,10 @@
       <varInfo nodeId="6666499814681637594" varName="editorContext" />
     </scopeInfo>
     <unitInfo nodeId="6666499814681637420" fileName="AttributeUtil.java" startLine="15" startPosition="0" endLine="48" endPosition="0" unitName="jetbrains.mps.core.xml.actions.AttributeUtil" />
+  </root>
+  <root nodeId="6999033275467483656">
+    <nodeInfo nodeId="6999033275467483662" fileName="QueriesGenerated.java" startLine="305" startPosition="103" endLine="306" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <scopeInfo nodeId="6999033275467483661" fileName="QueriesGenerated.java" startLine="305" startPosition="103" endLine="306" endPosition="92" />
   </root>
 </debugInfo>
 
