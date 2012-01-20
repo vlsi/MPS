@@ -50,7 +50,7 @@ public class LanguageRegistry implements CoreComponent {
     return INSTANCE;
   }
 
-  public LanguageRegistry(MPSModuleRepository repository, ClassLoaderManager loaderManager, ConceptRegistry registry) {
+  public LanguageRegistry(MPSModuleRepository repository, ClassLoaderManager loaderManager, ConceptRegistry registry, ExtensionRegistry extensionRegistry) {
     myConceptRegistry = registry;
   }
 
@@ -96,6 +96,7 @@ public class LanguageRegistry implements CoreComponent {
                 if (runtime != null) {
                   myLanguages.put(namespace, runtime);
                   myLanguageToNamespace.put(l, namespace);
+                  ExtensionRegistry.getInstance().registerExtensionDescriptor(runtime.getExtensionDescriptor());
                   notifyLoad(Collections.singleton(runtime));
                 }
               }
@@ -118,6 +119,7 @@ public class LanguageRegistry implements CoreComponent {
               if (namespace != null) {
                 LanguageRuntime runtime = myLanguages.remove(namespace);
                 if (runtime != null) {
+                  ExtensionRegistry.getInstance().unregisterExtensionDescriptor(runtime.getExtensionDescriptor());
                   myLanguageToNamespace.remove(l);
                   notifyUnload(Collections.singleton(runtime), false);
                 }

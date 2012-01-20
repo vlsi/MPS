@@ -34,6 +34,7 @@ import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.behaviour.OldBehaviorManager;
 import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 import jetbrains.mps.smodel.language.ConceptRegistry;
+import jetbrains.mps.smodel.language.ExtensionRegistry;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.smodel.runtime.interpreted.StructureAspectInterpreted;
 import jetbrains.mps.stubs.LibrariesLoader;
@@ -81,7 +82,8 @@ public class MPSCore extends ComponentPlugin {
     final ClassLoaderManager classLoaderManager = init(new ClassLoaderManager(myModuleRepository));
     init(new QueryMethodGenerated(classLoaderManager));
     final ConceptRegistry conceptRegistry = init(new ConceptRegistry());
-    init(new LanguageRegistry(myModuleRepository, classLoaderManager, conceptRegistry));
+    final ExtensionRegistry extensionRegistry = init(new ExtensionRegistry());
+    init(new LanguageRegistry(myModuleRepository, classLoaderManager, conceptRegistry, extensionRegistry));
     init(new LanguageHierarchyCache(myModuleRepository));
     init(new StructureAspectInterpreted());
     init(new OldBehaviorManager(classLoaderManager));
