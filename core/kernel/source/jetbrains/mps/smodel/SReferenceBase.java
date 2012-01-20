@@ -72,15 +72,34 @@ abstract class SReferenceBase extends SReference {
     myTargetModelReference = modelReference;
   }
 
-  protected synchronized final boolean mature() {
+  protected final boolean mature() {
+    return mature(false);
+  }
+
+  protected synchronized final boolean mature(boolean force) {
     if (myImmatureTargetNode != null) {
       if (getSourceNode().isRegistered() && myImmatureTargetNode.isRegistered() &&
         !(getSourceNode().isDisposed() || myImmatureTargetNode.isDisposed())) {
         // convert 'young' reference to 'mature'
         makeMature();
       }
+      if (force && myImmatureTargetNode != null) {
+        ProblemDescription descriptions[] = new ProblemDescription[2];
+        descriptions[0] = new ProblemDescription(new SNodePointer(getSourceNode()),
+          "SourceNode(" + getNodeIDMessage(getSourceNode()) + "): isRegistered = " + getSourceNode().isRegistered() +
+            ", isDisposed = " + getSourceNode().isDisposed());
+        descriptions[1] = new ProblemDescription(new SNodePointer(myImmatureTargetNode),
+          "ImmatureTargetNode(" + getNodeIDMessage(myImmatureTargetNode) + "): isRegistered = " + myImmatureTargetNode.isRegistered() +
+            ", isDisposed = " + myImmatureTargetNode.isDisposed());
+        error("Impossible to resolve immature reference", descriptions);
+        myImmatureTargetNode = null;
+      }
     }
     return myImmatureTargetNode == null;
+  }
+
+  private static final String getNodeIDMessage(SNode node) {
+    return "modelID: " + (node.getModel() == null ? "null" : node.getModel().toString()) + ", nodeID: " + node.getId();
   }
 
   protected synchronized void makeMature() {
