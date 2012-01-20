@@ -19,9 +19,6 @@ import com.intellij.openapi.actionSystem.*;
 import com.intellij.openapi.actionSystem.impl.ActionButton;
 import com.intellij.openapi.editor.Document;
 import com.intellij.openapi.extensions.Extensions;
-import com.intellij.openapi.fileEditor.FileEditorManager;
-import com.intellij.openapi.fileEditor.impl.FileEditorManagerImpl;
-import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vcs.FileStatusListener;
 import com.intellij.openapi.vcs.FileStatusManager;
 import com.intellij.openapi.vfs.VirtualFile;
@@ -40,7 +37,6 @@ import jetbrains.mps.smodel.event.SModelRootEvent;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 
 import javax.swing.*;
 import java.awt.BorderLayout;
@@ -203,27 +199,29 @@ public abstract class BaseTabsComponent implements TabsComponent {
 
   protected abstract boolean checkNodeRemoved(SNodePointer node);
 
+  protected abstract void updateTabColors();
+
   protected abstract void updateTabs();
 
   private class MyFileStatusListener implements FileStatusListener {
-    private void updateTabsLater() {
+    private void updateTabColorsLater() {
       ModelAccess.instance().runReadInEDT(new Runnable() {
         @Override
         public void run() {
-          updateTabs();
+          updateTabColors();
         }
       });
     }
 
     @Override
     public void fileStatusesChanged() {
-      updateTabsLater();
+      updateTabColorsLater();
     }
 
     @Override
     public void fileStatusChanged(@NotNull VirtualFile virtualFile) {
       if (virtualFile instanceof MPSNodeVirtualFile && myBaseNode.equals(((MPSNodeVirtualFile) virtualFile).getSNodePointer())) {
-        updateTabsLater();
+        updateTabColorsLater();
       }
     }
   }
