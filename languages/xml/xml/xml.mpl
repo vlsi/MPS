@@ -4,7 +4,18 @@
     <modelRoot path="${language_descriptor}/languageModels" />
   </models>
   <accessoryModels />
-  <generators />
+  <generators>
+    <generator name="void" generatorUID="jetbrains.mps.core.xml#3080189811177537724" uuid="db5d1808-b409-4d5e-a418-0ffebefc4266">
+      <models>
+        <modelRoot path="${language_descriptor}/generator/template" />
+      </models>
+      <external-templates />
+      <usedDevKits>
+        <usedDevKit>fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)</usedDevKit>
+      </usedDevKits>
+      <mapping-priorities />
+    </generator>
+  </generators>
   <sourcePath />
   <dependencies>
     <dependency reexport="false">1ed103c3-3aa6-49b7-9c21-6765ee11f224(MPS.Editor)</dependency>

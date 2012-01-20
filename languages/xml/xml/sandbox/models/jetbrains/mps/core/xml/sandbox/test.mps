@@ -36,7 +36,9 @@
           <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlText" typeId="iuxj.1622293396948952339" id="1622293396948999611">
             <property name="value" nameId="iuxj.1622293396948953704" value="asdsdfsdf" />
           </node>
-          <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlText" typeId="iuxj.1622293396948952339" id="1622293396948999615" />
+          <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlText" typeId="iuxj.1622293396948952339" id="1622293396948999615">
+            <property name="value" nameId="iuxj.1622293396948953704" value="asdasdasd" />
+          </node>
           <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlText" typeId="iuxj.1622293396948952339" id="1622293396948999606">
             <property name="value" nameId="iuxj.1622293396948953704" value="sdf" />
           </node>
@@ -70,13 +72,13 @@
               <property name="entityName" nameId="iuxj.6666499814681543256" value="sda" />
             </node>
           </node>
-          <node role="attributes" roleId="iuxj.6666499814681415861" type="iuxj.XmlAttribute" typeId="iuxj.6666499814681447923" id="1622293396948949811">
-            <property name="attrName" nameId="iuxj.6666499814681447926" value="asd" />
-            <node role="value" roleId="iuxj.6666499814681541918" type="iuxj.XmlEntityRefValue" typeId="iuxj.6666499814681541921" id="1622293396948949814">
-              <property name="entityName" nameId="iuxj.6666499814681543256" value="quot" />
+          <node role="attributes" roleId="iuxj.6666499814681415861" type="iuxj.XmlAttribute" typeId="iuxj.6666499814681447923" id="3080189811177505332">
+            <property name="attrName" nameId="iuxj.6666499814681447926" value="a" />
+            <node role="value" roleId="iuxj.6666499814681541918" type="iuxj.XmlCharRefValue" typeId="iuxj.3080189811177215998" id="3080189811177505335">
+              <property name="charCode" nameId="iuxj.3080189811177216006" value="009" />
             </node>
-            <node role="value" roleId="iuxj.6666499814681541918" type="iuxj.XmlTextValue" typeId="iuxj.6666499814681541919" id="1622293396948949813">
-              <property name="text" nameId="iuxj.6666499814681541920" value="asd" />
+            <node role="value" roleId="iuxj.6666499814681541918" type="iuxj.XmlTextValue" typeId="iuxj.6666499814681541919" id="3080189811177505339">
+              <property name="text" nameId="iuxj.6666499814681541920" value="dfs" />
             </node>
           </node>
           <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlText" typeId="iuxj.1622293396948952339" id="1622293396948969894">

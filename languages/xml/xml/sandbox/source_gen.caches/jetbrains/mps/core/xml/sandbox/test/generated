@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-crw7r53a4ygdfk3aaxc1qiw1ngmx63o">
+<dependencies version="2" modelHash="-4kzwegd7m0xn9qjalu5ufohqdj1qhm2">
   <common hash="-3lnpkuibmqhhwog7phcoks4ys4ztyhm" />
-  <source id="6666499814681526040" name="test1" hash="-7uelmhbe8t6gcp9v0samb7wyt7ishga">
-    <file name="test1" />
+  <source id="6666499814681526040" name="test1" hash="-8gxob6t9alzwzowctb53z63tpuyaso">
+    <file name="test1.xml" />
+  </source>
+  <source id="175285232894469943" name="test2" hash="-764zdco66hwkc9kophlkd53ipyg6m6w">
+    <file name="test2.xml" />
   </source>
 </dependencies>
 
