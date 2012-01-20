@@ -349,12 +349,12 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
     if (isUpdated) {
       for (EditorComponent editorComponent : allEditorComponents) {
         editorComponent.repaint();
-        editorComponent.getMessagesGutter().repaint();
+        editorComponent.getVerticalScrollBar().repaint();
       }
     }
     if (inspectorIsUpdated) {
       inspector.repaint();
-      inspector.getMessagesGutter().repaint();
+      inspector.getVerticalScrollBar().repaint();
     }
   }
 

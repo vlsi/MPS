@@ -20,7 +20,7 @@ import com.intellij.openapi.vcs.AbstractVcs;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.smodel.persistence.lines.LineContent;
-import jetbrains.mps.vcs.diff.oldchanges.OldChange;
+import jetbrains.mps.vcs.diff.changes.ModelChange;
 import java.util.Set;
 import com.intellij.util.messages.MessageBusConnection;
 import jetbrains.mps.nodeEditor.leftHighlighter.LeftEditorHighlighter;
@@ -41,16 +41,17 @@ import com.intellij.openapi.ui.MessageType;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import com.intellij.openapi.vcs.actions.AnnotationColors;
-import jetbrains.mps.vcs.changesmanager.ChangesManager;
-import jetbrains.mps.vcs.changesmanager.ModelChangesManager;
+import jetbrains.mps.vcs.changesmanager.CurrentDifferenceRegistry;
+import jetbrains.mps.vcs.changesmanager.CurrentDifference;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.nodeEditor.highlighter.EditorComponentCreateListener;
-import jetbrains.mps.vcs.diff.oldchanges.OldSetPropertyChange;
+import jetbrains.mps.vcs.diff.changes.SetPropertyChange;
 import jetbrains.mps.smodel.persistence.lines.PropertyLineContent;
-import jetbrains.mps.vcs.diff.oldchanges.OldSetReferenceChange;
+import jetbrains.mps.vcs.diff.changes.SetReferenceChange;
 import jetbrains.mps.smodel.persistence.lines.ReferenceLineContent;
+import jetbrains.mps.vcs.diff.changes.NodeGroupChange;
 import jetbrains.mps.smodel.persistence.lines.NodeLineContent;
-import jetbrains.mps.smodel.ModelAccess;
 import java.awt.Graphics;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import java.awt.Graphics2D;
@@ -78,11 +79,12 @@ import jetbrains.mps.workbench.action.ActionUtils;
 import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.actionSystem.ActionPlaces;
 import com.intellij.openapi.project.Project;
+import jetbrains.mps.vcs.diff.ChangeSet;
 import com.intellij.openapi.vcs.FilePath;
 import com.intellij.openapi.util.Pair;
 import com.intellij.openapi.vcs.versionBrowser.CommittedChangeList;
 import com.intellij.openapi.vcs.annotate.AnnotationListener;
-import jetbrains.mps.vcs.changesmanager.ChangeListener;
+import jetbrains.mps.vcs.changesmanager.CurrentDifferenceAdapter;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.progress.Task;
@@ -116,11 +118,11 @@ public class AnnotationColumn extends AbstractLeftColumn {
   private VirtualFile myModelVirtualFile;
   private EditableSModelDescriptor myModelDescriptor;
   private List<LineContent> myFileLineToContent;
-  private Map<OldChange, LineContent> myChangesToLineContents = MapSequence.fromMap(new HashMap<OldChange, LineContent>());
+  private Map<ModelChange, LineContent[]> myChangesToLineContents = MapSequence.fromMap(new HashMap<ModelChange, LineContent[]>());
   private Set<Integer> myCurrentPseudoLines = null;
   private VcsRevisionRange myRevisionRange;
   private ViewActionGroup myViewActionGroup;
-  private AnnotationColumn.MyChangeListener myChangeListener = new AnnotationColumn.MyChangeListener();
+  private AnnotationColumn.MyDifferenceListener myDifferenceListener = new AnnotationColumn.MyDifferenceListener();
   private AnnotationColumn.MyAnnotationListener myAnnotationListener = new AnnotationColumn.MyAnnotationListener();
   private boolean myShowAdditionalInfo = false;
   private MessageBusConnection myMessageBusConnection;
@@ -196,29 +198,41 @@ public class AnnotationColumn extends AbstractLeftColumn {
     myModelVirtualFile = modelVirtualFile;
     myModelDescriptor = (EditableSModelDescriptor) model.getModelDescriptor();
     myVcs = vcs;
-    final ChangesManager changesManager = ChangesManager.getInstance(getProject());
-    changesManager.getCommandQueue().runTask(new Runnable() {
+    final CurrentDifferenceRegistry registry = CurrentDifferenceRegistry.getInstance(getProject());
+    registry.getCommandQueue().runTask(new Runnable() {
       public void run() {
-        ModelChangesManager modelChangesManager = changesManager.getModelChangesManager(myModelDescriptor);
-        ListSequence.fromList(modelChangesManager.getChangeList()).visitAll(new IVisitor<OldChange>() {
-          public void visit(OldChange ch) {
-            saveChange(ch);
+        final CurrentDifference currentDifference = registry.getCurrentDifference(myModelDescriptor);
+        ModelAccess.instance().runReadAction(new Runnable() {
+          public void run() {
+            ListSequence.fromList(check_5mnya_a0a0a1a0a0w0a(currentDifference.getChangeSet())).visitAll(new IVisitor<ModelChange>() {
+              public void visit(ModelChange ch) {
+                saveChange(ch);
+              }
+            });
           }
         });
-        modelChangesManager.addChangeListener(myChangeListener);
+        currentDifference.addDifferenceListener(myDifferenceListener);
       }
     });
     myMessageBusConnection = getProject().getMessageBus().connect();
     myMessageBusConnection.subscribe(EditorComponentCreateListener.EDITOR_COMPONENT_CREATION, new AnnotationColumn.MyEditorComponentCreateListener());
   }
 
-  private void saveChange(OldChange ch) {
-    if (ch instanceof OldSetPropertyChange) {
-      MapSequence.fromMap(myChangesToLineContents).put(ch, new PropertyLineContent(ch.getAffectedNodeId(), ((OldSetPropertyChange) ch).getProperty()));
-    } else if (ch instanceof OldSetReferenceChange) {
-      MapSequence.fromMap(myChangesToLineContents).put(ch, new ReferenceLineContent(ch.getAffectedNodeId(), ((OldSetReferenceChange) ch).getRole()));
-    } else if (ch.getAffectedNodeId() != null) {
-      MapSequence.fromMap(myChangesToLineContents).put(ch, new NodeLineContent(ch.getAffectedNodeId()));
+  private void saveChange(ModelChange ch) {
+    if (ch instanceof SetPropertyChange) {
+      SetPropertyChange spc = (SetPropertyChange) ch;
+      MapSequence.fromMap(myChangesToLineContents).put(ch, new LineContent[]{new PropertyLineContent(spc.getAffectedNodeId(), spc.getPropertyName())});
+    } else if (ch instanceof SetReferenceChange) {
+      SetReferenceChange src = (SetReferenceChange) ch;
+      MapSequence.fromMap(myChangesToLineContents).put(ch, new LineContent[]{new ReferenceLineContent(src.getAffectedNodeId(), src.getRole())});
+    } else if (ch instanceof NodeGroupChange) {
+      NodeGroupChange ngc = (NodeGroupChange) ch;
+      List<SNode> newChildren = myModelDescriptor.getSModel().getNodeById(ngc.getParentNodeId()).getChildren(ngc.getRole());
+      MapSequence.fromMap(myChangesToLineContents).put(ch, ListSequence.fromList(newChildren).page(ngc.getResultBegin(), ngc.getResultEnd()).select(new ISelector<SNode, NodeLineContent>() {
+        public NodeLineContent select(SNode n) {
+          return new NodeLineContent(n.getSNodeId());
+        }
+      }).toGenericArray(NodeLineContent.class));
     }
   }
 
@@ -226,8 +240,10 @@ public class AnnotationColumn extends AbstractLeftColumn {
     ModelAccess.instance().runReadInEDT(new Runnable() {
       public void run() {
         myCurrentPseudoLines = SetSequence.fromSet(new HashSet<Integer>());
-        for (LineContent lineContent : Sequence.fromIterable(MapSequence.fromMap(myChangesToLineContents).values())) {
-          SetSequence.fromSet(myCurrentPseudoLines).addSequence(Sequence.fromIterable(getPseudoLinesForContent(lineContent)));
+        for (LineContent[] lineContents : Sequence.fromIterable(MapSequence.fromMap(myChangesToLineContents).values())) {
+          for (LineContent lc : lineContents) {
+            SetSequence.fromSet(myCurrentPseudoLines).addSequence(Sequence.fromIterable(getPseudoLinesForContent(lc)));
+          }
         }
         getLeftEditorHighlighter().repaint();
       }
@@ -473,10 +489,10 @@ __switch__:
     myMessageBusConnection.disconnect();
     myFileAnnotation.removeListener(myAnnotationListener);
     myFileAnnotation.dispose();
-    final ChangesManager changesManager = ChangesManager.getInstance(getProject());
-    changesManager.getCommandQueue().runTask(new Runnable() {
+    final CurrentDifferenceRegistry registry = CurrentDifferenceRegistry.getInstance(getProject());
+    registry.getCommandQueue().runTask(new Runnable() {
       public void run() {
-        changesManager.getModelChangesManager(myModelDescriptor).removeChangeListener(myChangeListener);
+        registry.getCurrentDifference(myModelDescriptor).removeDifferenceListener(myDifferenceListener);
       }
     });
   }
@@ -594,6 +610,13 @@ __switch__:
     return null;
   }
 
+  private static List<ModelChange> check_5mnya_a0a0a1a0a0w0a(ChangeSet checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getModelChanges();
+    }
+    return null;
+  }
+
   private static FilePath check_5mnya_a0a2a2a0a0a0a1a1a0c(Pair<CommittedChangeList, FilePath> checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getSecond();
@@ -637,19 +660,21 @@ __switch__:
     }
   }
 
-  private class MyChangeListener extends ChangeListener.ChangeAdapter {
-    public MyChangeListener() {
+  private class MyDifferenceListener extends CurrentDifferenceAdapter {
+    public MyDifferenceListener() {
     }
 
     public void changeUpdateFinished() {
       calculateCurrentPseudoLinesLater();
     }
 
-    public void changeRemoved(@NotNull OldChange change, @NotNull SModel model) {
+    @Override
+    public void changeRemoved(@NotNull ModelChange change) {
       MapSequence.fromMap(myChangesToLineContents).removeKey(change);
     }
 
-    public void changeAdded(@NotNull OldChange change, @NotNull SModel model) {
+    @Override
+    public void changeAdded(@NotNull ModelChange change) {
       saveChange(change);
     }
   }

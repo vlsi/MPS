@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 import jetbrains.mps.smodel.SNode;
+import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class CompositeScope extends Scope {
@@ -35,10 +36,10 @@ public class CompositeScope extends Scope {
     return Collections.unmodifiableCollection(myScopes);
   }
 
-  public SNode resolve(SNode anchor, String refText) {
+  public SNode resolve(SNode contextNode, String refText) {
     SNode result = null;
     for (Scope scope : myScopes) {
-      SNode r = scope.resolve(anchor, refText);
+      SNode r = scope.resolve(contextNode, refText);
       if (r != null) {
         if (result == null) {
           result = r;
@@ -51,7 +52,7 @@ public class CompositeScope extends Scope {
     return result;
   }
 
-  public List<SNode> getAvailableElements(String prefix) {
+  public List<SNode> getAvailableElements(@Nullable String prefix) {
     List<SNode> result = new ArrayList<SNode>();
     for (Scope scope : myScopes) {
       ListSequence.fromList(result).addSequence(ListSequence.fromList(scope.getAvailableElements(prefix)));
@@ -59,10 +60,10 @@ public class CompositeScope extends Scope {
     return result;
   }
 
-  public String getReferenceText(SNode anchor, SNode target) {
+  public String getReferenceText(SNode contextNode, SNode node) {
     String result = null;
     for (Scope scope : myScopes) {
-      String refText = scope.getReferenceText(anchor, target);
+      String refText = scope.getReferenceText(contextNode, node);
       if (refText != null) {
         if (result == null) {
           result = refText;

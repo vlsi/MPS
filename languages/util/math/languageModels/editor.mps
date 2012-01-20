@@ -15,6 +15,7 @@
   <import index="b9a3" modelUID="r:9b8daf91-c5ef-4c35-8949-069c5a982883(jetbrains.mps.baseLanguage.math.plugin)" version="-1" />
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
   <import index="tpen" modelUID="r:00000000-0000-4000-0000-011c895902c3(jetbrains.mps.baseLanguage.editor)" version="-1" />
+  <import index="nxkz" modelUID="r:7c9a0254-28cb-4041-adae-094f9953a599(jetbrains.mps.baseLanguage.math.pluginSolution.plugin)" version="-1" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <import index="tpcw" modelUID="r:00000000-0000-4000-0000-011c895902bc(jetbrains.mps.lang.sharedConcepts.structure)" version="0" implicit="yes" />
   <import index="tpc2" modelUID="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" version="32" implicit="yes" />
@@ -41,15 +42,15 @@
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="4815887568697232016">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="matrix" />
-      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="39kg.4815887568697232005" resolveInfo="VectorRowLiteral" />
+      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="39kg.4815887568697232005" resolveInfo="MatrixConstructor" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="1238403050830">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="highPrecisionArithmetic" />
-      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="39kg.1238402702427" resolveInfo="BigDecimalDivisionSpecificator" />
+      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="39kg.1238402702427" resolveInfo="DecimalBinaryOperation" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="1237100894352">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="bigSymbols" />
-      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="39kg.1237100849157" resolveInfo="DivOperationFraction" />
+      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="39kg.1237100849157" resolveInfo="DivExpressionFraction" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="4815887568697035002">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="matrix" />
@@ -73,7 +74,7 @@
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="1236427946821">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="bigSymbols" />
-      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="39kg.1236427936913" resolveInfo="MathSymbolReference" />
+      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="39kg.1236427936913" resolveInfo="MathSymbolIndexReference" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="1236589729677">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="bigSymbols" />
@@ -85,7 +86,7 @@
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="1236427060571">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="bigSymbols" />
-      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="39kg.1236426954905" resolveInfo="MathBigOperator" />
+      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="39kg.1236426954905" resolveInfo="MathSymbol" />
     </node>
     <node type="tpc2.CellActionMapDeclaration" typeId="tpc2.1139535219966" id="1418611629042593538">
       <property name="name" nameId="tpck.1169194664001" value="deleteUpperIndex" />
@@ -98,7 +99,7 @@
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="1238343907176">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="methods" />
-      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="39kg.1238343594087" resolveInfo="TrigonometricExpression" />
+      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="39kg.1238343594087" resolveInfo="MathFuncExpression" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="1418611629042580034">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="matrix" />
@@ -138,7 +139,7 @@
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="1238326514749">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="complex" />
-      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="39kg.1238326494701" resolveInfo="ILiteral" />
+      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="39kg.1238326494701" resolveInfo="LiteralI" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="6219660258344759895">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="matrix" />
@@ -591,7 +592,7 @@
               <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="9151122427738029065">
                 <node role="expression" roleId="tpee.1068581517676" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="9151122427738029067">
                   <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="9151122427738043252">
-                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="b9a3.5990338083470604755" resolveInfo="HLine" />
+                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="nxkz.5487985028841941381" resolveInfo="HLineCellProvider" />
                     <node role="actualArgument" roleId="tpee.1068499141038" type="tpc2.ConceptFunctionParameter_node" typeId="tpc2.1142886811589" id="4253775830168017270" />
                   </node>
                 </node>
@@ -1161,7 +1162,7 @@
         </node>
         <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_RefNode" typeId="tpc2.1073389882823" id="963844843315857811">
           <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="39kg.1238338314983" />
-          <link role="actionMap" roleId="tpc2.1139959269582" targetNodeId="963844843316139392" />
+          <link role="actionMap" roleId="tpc2.1139959269582" targetNodeId="963844843316139392" resolveInfo="delete_exponent" />
           <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.ScriptKindClassItem" typeId="tpc2.8255250703325731016" id="963844843315857812">
             <property name="script" nameId="tpc2.8255250703325731018" value="SUPERSCRIPT" />
           </node>
@@ -1184,7 +1185,7 @@
         <link role="styleClass" roleId="tpc2.1186406756722" targetNodeId="tpen.1186415544875" resolveInfo="KeyWord" />
         <node role="menuDescriptor" roleId="tpc2.1164826688380" type="tpc2.CellMenuDescriptor" typeId="tpc2.1164824717996" id="1238343952550">
           <node role="cellMenuPart" roleId="tpc2.1164824815888" type="tpc2.CellMenuPart_ReplaceNode_CustomNodeConcept" typeId="tpc2.1164914519156" id="1238344045698">
-            <link role="replacementConcept" roleId="tpc2.1164914727930" targetNodeId="39kg.1238343594087" resolveInfo="TrigonometricExpression" />
+            <link role="replacementConcept" roleId="tpc2.1164914727930" targetNodeId="39kg.1238343594087" resolveInfo="MathFuncExpression" />
           </node>
         </node>
         <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.PunctuationRightStyleClassItem" typeId="tpc2.1233759184865" id="1238346064091">

@@ -20704,6 +20704,667 @@
     <unitInfo nodeId="5005282049925926523" fileName="TemplateArgumentParameterExpression_Editor.java" startLine="17" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.TemplateArgumentParameterExpression_Editor" />
     <unitInfo nodeId="5005282049925940091" fileName="TemplateArgumentParameterExpression_Editor.java" startLine="47" startPosition="0" endLine="79" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.TemplateArgumentParameterExpression_Editor$_Inline_k33vz5_a0a" />
   </root>
+  <root nodeId="5015072279636485808">
+    <nodeInfo nodeId="5015072279636485814" fileName="VarMacro_Editor.java" startLine="132" startPosition="69" endLine="132" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5015072279636485835" fileName="VarMacro_Editor.java" startLine="251" startPosition="58" endLine="251" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5015072279636624632" fileName="VarMacro_Editor.java" startLine="268" startPosition="58" endLine="268" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5015072279636624626" fileName="VarMacro_Editor.java" startLine="285" startPosition="58" endLine="285" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5015072279636485808" fileName="VarMacro_Editor.java" startLine="33" startPosition="79" endLine="34" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5015072279636485808" fileName="VarMacro_Editor.java" startLine="37" startPosition="82" endLine="38" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5015072279636485810" fileName="VarMacro_Editor.java" startLine="41" startPosition="89" endLine="42" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5015072279636485810" fileName="VarMacro_Editor.java" startLine="42" startPosition="99" endLine="43" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5015072279636485810" fileName="VarMacro_Editor.java" startLine="42" startPosition="99" endLine="43" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5015072279636485810" fileName="VarMacro_Editor.java" startLine="43" startPosition="48" endLine="44" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5015072279636485810" fileName="VarMacro_Editor.java" startLine="43" startPosition="48" endLine="44" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5015072279636485810" fileName="VarMacro_Editor.java" startLine="44" startPosition="81" endLine="45" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5015072279636485810" fileName="VarMacro_Editor.java" startLine="44" startPosition="81" endLine="45" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5015072279636485810" fileName="VarMacro_Editor.java" startLine="45" startPosition="81" endLine="46" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5015072279636485810" fileName="VarMacro_Editor.java" startLine="45" startPosition="81" endLine="46" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5015072279636485810" fileName="VarMacro_Editor.java" startLine="46" startPosition="82" endLine="47" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5015072279636485816" fileName="VarMacro_Editor.java" startLine="50" startPosition="91" endLine="51" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5015072279636485816" fileName="VarMacro_Editor.java" startLine="51" startPosition="97" endLine="52" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5015072279636485816" fileName="VarMacro_Editor.java" startLine="53" startPosition="5" endLine="54" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5015072279636485816" fileName="VarMacro_Editor.java" startLine="54" startPosition="42" endLine="55" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5015072279636485816" fileName="VarMacro_Editor.java" startLine="56" startPosition="5" endLine="57" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5015072279636485816" fileName="VarMacro_Editor.java" startLine="56" startPosition="5" endLine="57" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5015072279636485816" fileName="VarMacro_Editor.java" startLine="57" startPosition="83" endLine="58" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5015072279636485816" fileName="VarMacro_Editor.java" startLine="57" startPosition="83" endLine="58" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5015072279636485816" fileName="VarMacro_Editor.java" startLine="58" startPosition="81" endLine="59" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5015072279636485816" fileName="VarMacro_Editor.java" startLine="58" startPosition="81" endLine="59" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5015072279636485816" fileName="VarMacro_Editor.java" startLine="59" startPosition="83" endLine="60" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5015072279636485823" fileName="VarMacro_Editor.java" startLine="63" startPosition="90" endLine="64" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5015072279636485823" fileName="VarMacro_Editor.java" startLine="64" startPosition="97" endLine="65" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5015072279636485823" fileName="VarMacro_Editor.java" startLine="66" startPosition="5" endLine="67" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5015072279636485823" fileName="VarMacro_Editor.java" startLine="67" startPosition="42" endLine="68" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5015072279636485823" fileName="VarMacro_Editor.java" startLine="69" startPosition="5" endLine="70" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5015072279636485823" fileName="VarMacro_Editor.java" startLine="70" startPosition="35" endLine="71" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5015072279636485823" fileName="VarMacro_Editor.java" startLine="70" startPosition="35" endLine="71" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5015072279636485823" fileName="VarMacro_Editor.java" startLine="71" startPosition="84" endLine="72" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5015072279636485823" fileName="VarMacro_Editor.java" startLine="71" startPosition="84" endLine="72" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5015072279636485823" fileName="VarMacro_Editor.java" startLine="72" startPosition="84" endLine="73" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5015072279636485823" fileName="VarMacro_Editor.java" startLine="72" startPosition="84" endLine="73" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5015072279636485823" fileName="VarMacro_Editor.java" startLine="73" startPosition="84" endLine="74" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5015072279636485823" fileName="VarMacro_Editor.java" startLine="73" startPosition="84" endLine="74" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5015072279636485823" fileName="VarMacro_Editor.java" startLine="74" startPosition="84" endLine="75" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5015072279636485824" fileName="VarMacro_Editor.java" startLine="78" startPosition="91" endLine="79" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5015072279636485824" fileName="VarMacro_Editor.java" startLine="79" startPosition="99" endLine="80" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5015072279636485824" fileName="VarMacro_Editor.java" startLine="81" startPosition="5" endLine="82" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5015072279636485824" fileName="VarMacro_Editor.java" startLine="82" startPosition="42" endLine="83" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5015072279636485824" fileName="VarMacro_Editor.java" startLine="84" startPosition="5" endLine="85" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5015072279636485824" fileName="VarMacro_Editor.java" startLine="84" startPosition="5" endLine="85" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5015072279636485824" fileName="VarMacro_Editor.java" startLine="85" startPosition="83" endLine="86" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5015072279636485824" fileName="VarMacro_Editor.java" startLine="85" startPosition="83" endLine="86" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5015072279636485824" fileName="VarMacro_Editor.java" startLine="86" startPosition="83" endLine="87" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5015072279636485824" fileName="VarMacro_Editor.java" startLine="86" startPosition="83" endLine="87" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5015072279636485824" fileName="VarMacro_Editor.java" startLine="87" startPosition="83" endLine="88" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5015072279636485831" fileName="VarMacro_Editor.java" startLine="91" startPosition="91" endLine="92" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5015072279636485831" fileName="VarMacro_Editor.java" startLine="92" startPosition="99" endLine="93" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5015072279636485831" fileName="VarMacro_Editor.java" startLine="94" startPosition="5" endLine="95" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5015072279636485831" fileName="VarMacro_Editor.java" startLine="95" startPosition="42" endLine="96" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5015072279636485831" fileName="VarMacro_Editor.java" startLine="97" startPosition="5" endLine="98" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5015072279636485831" fileName="VarMacro_Editor.java" startLine="97" startPosition="5" endLine="98" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5015072279636485831" fileName="VarMacro_Editor.java" startLine="98" startPosition="83" endLine="99" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5015072279636485831" fileName="VarMacro_Editor.java" startLine="98" startPosition="83" endLine="99" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5015072279636485831" fileName="VarMacro_Editor.java" startLine="99" startPosition="83" endLine="100" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5015072279636485831" fileName="VarMacro_Editor.java" startLine="99" startPosition="83" endLine="100" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5015072279636485831" fileName="VarMacro_Editor.java" startLine="100" startPosition="82" endLine="101" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5015072279636624628" fileName="VarMacro_Editor.java" startLine="104" startPosition="91" endLine="105" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5015072279636624628" fileName="VarMacro_Editor.java" startLine="105" startPosition="99" endLine="106" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5015072279636624628" fileName="VarMacro_Editor.java" startLine="107" startPosition="5" endLine="108" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5015072279636624628" fileName="VarMacro_Editor.java" startLine="108" startPosition="42" endLine="109" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5015072279636624628" fileName="VarMacro_Editor.java" startLine="110" startPosition="5" endLine="111" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5015072279636624628" fileName="VarMacro_Editor.java" startLine="110" startPosition="5" endLine="111" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5015072279636624628" fileName="VarMacro_Editor.java" startLine="111" startPosition="83" endLine="112" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5015072279636624628" fileName="VarMacro_Editor.java" startLine="111" startPosition="83" endLine="112" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5015072279636624628" fileName="VarMacro_Editor.java" startLine="112" startPosition="83" endLine="113" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5015072279636624628" fileName="VarMacro_Editor.java" startLine="112" startPosition="83" endLine="113" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5015072279636624628" fileName="VarMacro_Editor.java" startLine="113" startPosition="82" endLine="114" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5015072279636624616" fileName="VarMacro_Editor.java" startLine="117" startPosition="91" endLine="118" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5015072279636624616" fileName="VarMacro_Editor.java" startLine="118" startPosition="99" endLine="119" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5015072279636624616" fileName="VarMacro_Editor.java" startLine="120" startPosition="5" endLine="121" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5015072279636624616" fileName="VarMacro_Editor.java" startLine="121" startPosition="42" endLine="122" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5015072279636624616" fileName="VarMacro_Editor.java" startLine="123" startPosition="5" endLine="124" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5015072279636624616" fileName="VarMacro_Editor.java" startLine="123" startPosition="5" endLine="124" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5015072279636624616" fileName="VarMacro_Editor.java" startLine="124" startPosition="83" endLine="125" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5015072279636624616" fileName="VarMacro_Editor.java" startLine="124" startPosition="83" endLine="125" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5015072279636624616" fileName="VarMacro_Editor.java" startLine="125" startPosition="83" endLine="126" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5015072279636624616" fileName="VarMacro_Editor.java" startLine="125" startPosition="83" endLine="126" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5015072279636624616" fileName="VarMacro_Editor.java" startLine="126" startPosition="82" endLine="127" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5015072279636485814" fileName="VarMacro_Editor.java" startLine="130" startPosition="89" endLine="131" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5015072279636485814" fileName="VarMacro_Editor.java" startLine="131" startPosition="64" endLine="132" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5015072279636485814" fileName="VarMacro_Editor.java" startLine="132" startPosition="69" endLine="133" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5015072279636485811" fileName="VarMacro_Editor.java" startLine="136" startPosition="88" endLine="137" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5015072279636485811" fileName="VarMacro_Editor.java" startLine="137" startPosition="91" endLine="138" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5015072279636485811" fileName="VarMacro_Editor.java" startLine="138" startPosition="47" endLine="139" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5015072279636485811" fileName="VarMacro_Editor.java" startLine="140" startPosition="15" endLine="141" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5015072279636485811" fileName="VarMacro_Editor.java" startLine="142" startPosition="5" endLine="143" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5015072279636485811" fileName="VarMacro_Editor.java" startLine="143" startPosition="72" endLine="144" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5015072279636485811" fileName="VarMacro_Editor.java" startLine="144" startPosition="34" endLine="145" endPosition="187" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5015072279636485811" fileName="VarMacro_Editor.java" startLine="145" startPosition="187" endLine="146" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5015072279636485817" fileName="VarMacro_Editor.java" startLine="149" startPosition="90" endLine="150" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5015072279636485817" fileName="VarMacro_Editor.java" startLine="150" startPosition="100" endLine="151" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5015072279636485817" fileName="VarMacro_Editor.java" startLine="152" startPosition="5" endLine="153" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5015072279636485817" fileName="VarMacro_Editor.java" startLine="153" startPosition="42" endLine="154" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5015072279636485817" fileName="VarMacro_Editor.java" startLine="154" startPosition="51" endLine="155" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5015072279636485817" fileName="VarMacro_Editor.java" startLine="155" startPosition="65" endLine="156" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5015072279636485817" fileName="VarMacro_Editor.java" startLine="157" startPosition="5" endLine="158" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5015072279636485817" fileName="VarMacro_Editor.java" startLine="158" startPosition="34" endLine="159" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5015072279636485821" fileName="VarMacro_Editor.java" startLine="162" startPosition="88" endLine="163" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5015072279636485821" fileName="VarMacro_Editor.java" startLine="163" startPosition="86" endLine="164" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5015072279636485821" fileName="VarMacro_Editor.java" startLine="165" startPosition="5" endLine="166" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5015072279636485821" fileName="VarMacro_Editor.java" startLine="166" startPosition="42" endLine="167" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5015072279636485821" fileName="VarMacro_Editor.java" startLine="168" startPosition="5" endLine="169" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5015072279636485821" fileName="VarMacro_Editor.java" startLine="169" startPosition="34" endLine="170" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5015072279636485825" fileName="VarMacro_Editor.java" startLine="173" startPosition="90" endLine="174" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5015072279636485825" fileName="VarMacro_Editor.java" startLine="174" startPosition="93" endLine="175" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5015072279636485825" fileName="VarMacro_Editor.java" startLine="174" startPosition="93" endLine="175" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5015072279636485825" fileName="VarMacro_Editor.java" startLine="175" startPosition="49" endLine="176" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5015072279636485825" fileName="VarMacro_Editor.java" startLine="176" startPosition="34" endLine="177" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5015072279636485826" fileName="VarMacro_Editor.java" startLine="180" startPosition="90" endLine="181" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5015072279636485826" fileName="VarMacro_Editor.java" startLine="181" startPosition="87" endLine="182" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5015072279636485826" fileName="VarMacro_Editor.java" startLine="183" startPosition="5" endLine="184" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5015072279636485826" fileName="VarMacro_Editor.java" startLine="184" startPosition="42" endLine="185" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5015072279636485826" fileName="VarMacro_Editor.java" startLine="186" startPosition="5" endLine="187" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5015072279636485826" fileName="VarMacro_Editor.java" startLine="187" startPosition="34" endLine="188" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5015072279636485832" fileName="VarMacro_Editor.java" startLine="191" startPosition="90" endLine="192" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5015072279636485832" fileName="VarMacro_Editor.java" startLine="192" startPosition="99" endLine="193" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5015072279636485832" fileName="VarMacro_Editor.java" startLine="192" startPosition="99" endLine="193" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5015072279636485832" fileName="VarMacro_Editor.java" startLine="193" startPosition="49" endLine="194" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5015072279636485832" fileName="VarMacro_Editor.java" startLine="194" startPosition="34" endLine="195" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5015072279636485833" fileName="VarMacro_Editor.java" startLine="198" startPosition="90" endLine="199" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5015072279636485833" fileName="VarMacro_Editor.java" startLine="199" startPosition="87" endLine="200" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5015072279636485833" fileName="VarMacro_Editor.java" startLine="201" startPosition="5" endLine="202" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5015072279636485833" fileName="VarMacro_Editor.java" startLine="202" startPosition="42" endLine="203" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5015072279636485833" fileName="VarMacro_Editor.java" startLine="204" startPosition="5" endLine="205" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5015072279636485833" fileName="VarMacro_Editor.java" startLine="205" startPosition="34" endLine="206" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5015072279636624629" fileName="VarMacro_Editor.java" startLine="209" startPosition="90" endLine="210" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5015072279636624629" fileName="VarMacro_Editor.java" startLine="210" startPosition="90" endLine="211" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5015072279636624629" fileName="VarMacro_Editor.java" startLine="210" startPosition="90" endLine="211" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5015072279636624629" fileName="VarMacro_Editor.java" startLine="211" startPosition="49" endLine="212" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5015072279636624629" fileName="VarMacro_Editor.java" startLine="212" startPosition="34" endLine="213" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5015072279636624630" fileName="VarMacro_Editor.java" startLine="216" startPosition="90" endLine="217" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5015072279636624630" fileName="VarMacro_Editor.java" startLine="217" startPosition="87" endLine="218" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5015072279636624630" fileName="VarMacro_Editor.java" startLine="219" startPosition="5" endLine="220" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5015072279636624630" fileName="VarMacro_Editor.java" startLine="220" startPosition="42" endLine="221" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5015072279636624630" fileName="VarMacro_Editor.java" startLine="222" startPosition="5" endLine="223" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5015072279636624630" fileName="VarMacro_Editor.java" startLine="223" startPosition="34" endLine="224" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5015072279636624617" fileName="VarMacro_Editor.java" startLine="227" startPosition="90" endLine="228" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5015072279636624617" fileName="VarMacro_Editor.java" startLine="228" startPosition="91" endLine="229" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5015072279636624617" fileName="VarMacro_Editor.java" startLine="228" startPosition="91" endLine="229" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5015072279636624617" fileName="VarMacro_Editor.java" startLine="229" startPosition="49" endLine="230" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5015072279636624617" fileName="VarMacro_Editor.java" startLine="230" startPosition="34" endLine="231" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5015072279636624618" fileName="VarMacro_Editor.java" startLine="234" startPosition="90" endLine="235" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5015072279636624618" fileName="VarMacro_Editor.java" startLine="235" startPosition="87" endLine="236" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5015072279636624618" fileName="VarMacro_Editor.java" startLine="237" startPosition="5" endLine="238" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5015072279636624618" fileName="VarMacro_Editor.java" startLine="238" startPosition="42" endLine="239" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5015072279636624618" fileName="VarMacro_Editor.java" startLine="240" startPosition="5" endLine="241" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5015072279636624618" fileName="VarMacro_Editor.java" startLine="241" startPosition="34" endLine="242" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5015072279636485835" fileName="VarMacro_Editor.java" startLine="245" startPosition="89" endLine="246" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5015072279636485835" fileName="VarMacro_Editor.java" startLine="246" startPosition="81" endLine="247" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5015072279636485835" fileName="VarMacro_Editor.java" startLine="247" startPosition="37" endLine="248" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5015072279636485835" fileName="VarMacro_Editor.java" startLine="248" startPosition="43" endLine="249" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5015072279636485835" fileName="VarMacro_Editor.java" startLine="249" startPosition="26" endLine="250" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5015072279636485835" fileName="VarMacro_Editor.java" startLine="250" startPosition="82" endLine="251" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5015072279636485835" fileName="VarMacro_Editor.java" startLine="251" startPosition="58" endLine="252" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5015072279636485835" fileName="VarMacro_Editor.java" startLine="252" startPosition="73" endLine="253" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5015072279636485835" fileName="VarMacro_Editor.java" startLine="253" startPosition="57" endLine="254" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5015072279636485835" fileName="VarMacro_Editor.java" startLine="255" startPosition="35" endLine="256" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5015072279636485835" fileName="VarMacro_Editor.java" startLine="256" startPosition="72" endLine="257" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5015072279636485835" fileName="VarMacro_Editor.java" startLine="257" startPosition="78" endLine="258" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5015072279636485835" fileName="VarMacro_Editor.java" startLine="259" startPosition="10" endLine="260" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5015072279636624632" fileName="VarMacro_Editor.java" startLine="263" startPosition="89" endLine="264" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5015072279636624632" fileName="VarMacro_Editor.java" startLine="264" startPosition="81" endLine="265" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5015072279636624632" fileName="VarMacro_Editor.java" startLine="265" startPosition="29" endLine="266" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5015072279636624632" fileName="VarMacro_Editor.java" startLine="266" startPosition="39" endLine="267" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5015072279636624632" fileName="VarMacro_Editor.java" startLine="267" startPosition="26" endLine="268" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5015072279636624632" fileName="VarMacro_Editor.java" startLine="268" startPosition="58" endLine="269" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5015072279636624632" fileName="VarMacro_Editor.java" startLine="269" startPosition="73" endLine="270" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5015072279636624632" fileName="VarMacro_Editor.java" startLine="270" startPosition="57" endLine="271" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5015072279636624632" fileName="VarMacro_Editor.java" startLine="272" startPosition="35" endLine="273" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5015072279636624632" fileName="VarMacro_Editor.java" startLine="273" startPosition="72" endLine="274" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5015072279636624632" fileName="VarMacro_Editor.java" startLine="274" startPosition="78" endLine="275" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5015072279636624632" fileName="VarMacro_Editor.java" startLine="276" startPosition="10" endLine="277" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5015072279636624626" fileName="VarMacro_Editor.java" startLine="280" startPosition="89" endLine="281" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5015072279636624626" fileName="VarMacro_Editor.java" startLine="281" startPosition="81" endLine="282" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5015072279636624626" fileName="VarMacro_Editor.java" startLine="282" startPosition="30" endLine="283" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5015072279636624626" fileName="VarMacro_Editor.java" startLine="283" startPosition="43" endLine="284" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5015072279636624626" fileName="VarMacro_Editor.java" startLine="284" startPosition="26" endLine="285" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5015072279636624626" fileName="VarMacro_Editor.java" startLine="285" startPosition="58" endLine="286" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5015072279636624626" fileName="VarMacro_Editor.java" startLine="286" startPosition="73" endLine="287" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5015072279636624626" fileName="VarMacro_Editor.java" startLine="287" startPosition="57" endLine="288" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5015072279636624626" fileName="VarMacro_Editor.java" startLine="289" startPosition="35" endLine="290" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5015072279636624626" fileName="VarMacro_Editor.java" startLine="290" startPosition="72" endLine="291" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5015072279636624626" fileName="VarMacro_Editor.java" startLine="291" startPosition="78" endLine="292" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5015072279636624626" fileName="VarMacro_Editor.java" startLine="293" startPosition="10" endLine="294" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5015072279636585813" fileName="VarMacro_Editor.java" startLine="297" startPosition="88" endLine="298" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5015072279636585813" fileName="VarMacro_Editor.java" startLine="298" startPosition="82" endLine="299" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5015072279636585813" fileName="VarMacro_Editor.java" startLine="299" startPosition="29" endLine="300" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5015072279636585813" fileName="VarMacro_Editor.java" startLine="300" startPosition="42" endLine="301" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5015072279636585813" fileName="VarMacro_Editor.java" startLine="301" startPosition="26" endLine="302" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5015072279636585813" fileName="VarMacro_Editor.java" startLine="302" startPosition="58" endLine="303" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5015072279636585813" fileName="VarMacro_Editor.java" startLine="304" startPosition="5" endLine="305" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5015072279636585813" fileName="VarMacro_Editor.java" startLine="305" startPosition="42" endLine="306" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5015072279636585813" fileName="VarMacro_Editor.java" startLine="306" startPosition="62" endLine="307" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5015072279636585813" fileName="VarMacro_Editor.java" startLine="308" startPosition="5" endLine="309" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5015072279636585813" fileName="VarMacro_Editor.java" startLine="309" startPosition="72" endLine="310" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5015072279636585813" fileName="VarMacro_Editor.java" startLine="310" startPosition="73" endLine="311" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5015072279636585813" fileName="VarMacro_Editor.java" startLine="311" startPosition="57" endLine="312" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5015072279636585813" fileName="VarMacro_Editor.java" startLine="313" startPosition="35" endLine="314" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5015072279636585813" fileName="VarMacro_Editor.java" startLine="314" startPosition="72" endLine="315" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5015072279636585813" fileName="VarMacro_Editor.java" startLine="315" startPosition="78" endLine="316" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5015072279636585813" fileName="VarMacro_Editor.java" startLine="317" startPosition="10" endLine="318" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5015072279636485828" fileName="VarMacro_Editor.java" startLine="321" startPosition="90" endLine="322" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5015072279636485828" fileName="VarMacro_Editor.java" startLine="322" startPosition="82" endLine="323" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5015072279636485828" fileName="VarMacro_Editor.java" startLine="323" startPosition="32" endLine="324" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5015072279636485828" fileName="VarMacro_Editor.java" startLine="324" startPosition="39" endLine="325" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5015072279636485828" fileName="VarMacro_Editor.java" startLine="325" startPosition="40" endLine="326" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5015072279636485828" fileName="VarMacro_Editor.java" startLine="326" startPosition="26" endLine="327" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5015072279636485828" fileName="VarMacro_Editor.java" startLine="327" startPosition="58" endLine="328" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5015072279636485828" fileName="VarMacro_Editor.java" startLine="327" startPosition="58" endLine="328" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5015072279636485828" fileName="VarMacro_Editor.java" startLine="328" startPosition="45" endLine="329" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5015072279636485828" fileName="VarMacro_Editor.java" startLine="329" startPosition="73" endLine="330" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5015072279636485828" fileName="VarMacro_Editor.java" startLine="330" startPosition="57" endLine="331" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5015072279636485828" fileName="VarMacro_Editor.java" startLine="332" startPosition="35" endLine="333" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5015072279636485828" fileName="VarMacro_Editor.java" startLine="333" startPosition="72" endLine="334" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5015072279636485828" fileName="VarMacro_Editor.java" startLine="334" startPosition="78" endLine="335" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5015072279636485828" fileName="VarMacro_Editor.java" startLine="336" startPosition="10" endLine="337" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5015072279636485813" fileName="VarMacro_Editor.java" startLine="340" startPosition="86" endLine="341" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myComponent" />
+    <nodeInfo nodeId="5015072279636485813" fileName="VarMacro_Editor.java" startLine="343" startPosition="47" endLine="344" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5015072279636485813" fileName="VarMacro_Editor.java" startLine="347" startPosition="108" endLine="348" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5015072279636485836" fileName="VarMacro_Editor.java" startLine="353" startPosition="35" endLine="354" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="5015072279636485836" fileName="VarMacro_Editor.java" startLine="357" startPosition="69" endLine="358" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5015072279636485836" fileName="VarMacro_Editor.java" startLine="361" startPosition="81" endLine="362" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5015072279636485837" fileName="VarMacro_Editor.java" startLine="365" startPosition="94" endLine="366" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5015072279636485837" fileName="VarMacro_Editor.java" startLine="366" startPosition="84" endLine="367" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5015072279636485837" fileName="VarMacro_Editor.java" startLine="367" startPosition="31" endLine="368" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5015072279636485837" fileName="VarMacro_Editor.java" startLine="368" startPosition="44" endLine="369" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5015072279636485837" fileName="VarMacro_Editor.java" startLine="369" startPosition="33" endLine="370" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5015072279636485837" fileName="VarMacro_Editor.java" startLine="370" startPosition="28" endLine="371" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5015072279636485837" fileName="VarMacro_Editor.java" startLine="371" startPosition="60" endLine="372" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5015072279636485837" fileName="VarMacro_Editor.java" startLine="372" startPosition="46" endLine="373" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5015072279636485837" fileName="VarMacro_Editor.java" startLine="373" startPosition="79" endLine="374" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5015072279636485837" fileName="VarMacro_Editor.java" startLine="374" startPosition="75" endLine="375" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5015072279636485837" fileName="VarMacro_Editor.java" startLine="375" startPosition="59" endLine="376" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5015072279636485837" fileName="VarMacro_Editor.java" startLine="377" startPosition="37" endLine="378" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5015072279636485837" fileName="VarMacro_Editor.java" startLine="378" startPosition="74" endLine="379" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5015072279636485837" fileName="VarMacro_Editor.java" startLine="379" startPosition="80" endLine="380" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5015072279636485837" fileName="VarMacro_Editor.java" startLine="381" startPosition="12" endLine="382" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5015072279636624632" fileName="VarMacro_Editor.java" startLine="267" startPosition="26" endLine="269" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5015072279636624626" fileName="VarMacro_Editor.java" startLine="284" startPosition="26" endLine="286" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5015072279636485837" fileName="VarMacro_Editor.java" startLine="371" startPosition="60" endLine="373" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5015072279636485811" fileName="VarMacro_Editor.java" startLine="139" startPosition="66" endLine="142" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5015072279636485835" fileName="VarMacro_Editor.java" startLine="249" startPosition="26" endLine="252" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5015072279636485828" fileName="VarMacro_Editor.java" startLine="326" startPosition="26" endLine="329" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5015072279636485813" fileName="VarMacro_Editor.java" startLine="342" startPosition="0" endLine="345" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="VarMacro_component_cellMenu_a0a0#()V" />
+    <nodeInfo nodeId="5015072279636485836" fileName="VarMacro_Editor.java" startLine="352" startPosition="71" endLine="355" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="_Inline_cubyf7_a2b2a#()V" />
+    <nodeInfo nodeId="5015072279636485808" fileName="VarMacro_Editor.java" startLine="32" startPosition="56" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/nodeEditor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="5015072279636485808" fileName="VarMacro_Editor.java" startLine="36" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createInspectedCell#(Ljetbrains/mps/nodeEditor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="5015072279636485816" fileName="VarMacro_Editor.java" startLine="52" startPosition="50" endLine="56" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5015072279636485823" fileName="VarMacro_Editor.java" startLine="65" startPosition="49" endLine="69" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5015072279636485824" fileName="VarMacro_Editor.java" startLine="80" startPosition="50" endLine="84" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5015072279636485831" fileName="VarMacro_Editor.java" startLine="93" startPosition="50" endLine="97" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5015072279636624628" fileName="VarMacro_Editor.java" startLine="106" startPosition="50" endLine="110" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5015072279636624616" fileName="VarMacro_Editor.java" startLine="119" startPosition="50" endLine="123" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5015072279636485821" fileName="VarMacro_Editor.java" startLine="164" startPosition="47" endLine="168" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5015072279636485826" fileName="VarMacro_Editor.java" startLine="182" startPosition="49" endLine="186" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5015072279636485833" fileName="VarMacro_Editor.java" startLine="200" startPosition="49" endLine="204" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5015072279636624630" fileName="VarMacro_Editor.java" startLine="218" startPosition="49" endLine="222" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5015072279636624618" fileName="VarMacro_Editor.java" startLine="236" startPosition="49" endLine="240" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5015072279636485813" fileName="VarMacro_Editor.java" startLine="346" startPosition="0" endLine="350" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createActions#(Ljetbrains/mps/nodeEditor/cellMenu/CellContext;Ljetbrains/mps/nodeEditor/EditorContext;)Ljava/util/List;" />
+    <nodeInfo nodeId="5015072279636485836" fileName="VarMacro_Editor.java" startLine="356" startPosition="0" endLine="360" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/nodeEditor/EditorContext;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="5015072279636485836" fileName="VarMacro_Editor.java" startLine="360" startPosition="0" endLine="364" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/nodeEditor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="5015072279636485837" fileName="VarMacro_Editor.java" startLine="370" startPosition="28" endLine="374" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5015072279636485816" fileName="VarMacro_Editor.java" startLine="51" startPosition="97" endLine="56" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5015072279636485823" fileName="VarMacro_Editor.java" startLine="64" startPosition="97" endLine="69" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5015072279636485824" fileName="VarMacro_Editor.java" startLine="79" startPosition="99" endLine="84" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5015072279636485831" fileName="VarMacro_Editor.java" startLine="92" startPosition="99" endLine="97" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5015072279636624628" fileName="VarMacro_Editor.java" startLine="105" startPosition="99" endLine="110" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5015072279636624616" fileName="VarMacro_Editor.java" startLine="118" startPosition="99" endLine="123" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5015072279636485821" fileName="VarMacro_Editor.java" startLine="163" startPosition="86" endLine="168" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5015072279636485826" fileName="VarMacro_Editor.java" startLine="181" startPosition="87" endLine="186" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5015072279636485833" fileName="VarMacro_Editor.java" startLine="199" startPosition="87" endLine="204" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5015072279636624630" fileName="VarMacro_Editor.java" startLine="217" startPosition="87" endLine="222" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5015072279636624618" fileName="VarMacro_Editor.java" startLine="235" startPosition="87" endLine="240" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5015072279636585813" fileName="VarMacro_Editor.java" startLine="303" startPosition="42" endLine="308" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5015072279636485814" fileName="VarMacro_Editor.java" startLine="129" startPosition="0" endLine="135" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createComponent_cubyf7_c0#(Ljetbrains/mps/nodeEditor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="5015072279636485811" fileName="VarMacro_Editor.java" startLine="137" startPosition="91" endLine="143" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5015072279636485817" fileName="VarMacro_Editor.java" startLine="151" startPosition="49" endLine="157" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5015072279636485835" fileName="VarMacro_Editor.java" startLine="254" startPosition="59" endLine="260" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5015072279636624632" fileName="VarMacro_Editor.java" startLine="271" startPosition="59" endLine="277" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5015072279636624626" fileName="VarMacro_Editor.java" startLine="288" startPosition="59" endLine="294" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5015072279636585813" fileName="VarMacro_Editor.java" startLine="312" startPosition="59" endLine="318" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5015072279636485828" fileName="VarMacro_Editor.java" startLine="331" startPosition="59" endLine="337" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5015072279636485837" fileName="VarMacro_Editor.java" startLine="376" startPosition="61" endLine="382" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5015072279636485817" fileName="VarMacro_Editor.java" startLine="150" startPosition="100" endLine="157" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5015072279636485825" fileName="VarMacro_Editor.java" startLine="172" startPosition="0" endLine="179" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_cubyf7_a0c0#(Ljetbrains/mps/nodeEditor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="5015072279636485832" fileName="VarMacro_Editor.java" startLine="190" startPosition="0" endLine="197" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_cubyf7_a1c0#(Ljetbrains/mps/nodeEditor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="5015072279636624629" fileName="VarMacro_Editor.java" startLine="208" startPosition="0" endLine="215" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_cubyf7_a2c0#(Ljetbrains/mps/nodeEditor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="5015072279636624617" fileName="VarMacro_Editor.java" startLine="226" startPosition="0" endLine="233" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_cubyf7_a3c0#(Ljetbrains/mps/nodeEditor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="5015072279636585813" fileName="VarMacro_Editor.java" startLine="302" startPosition="58" endLine="309" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5015072279636485810" fileName="VarMacro_Editor.java" startLine="40" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_cubyf7_a#(Ljetbrains/mps/nodeEditor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="5015072279636585813" fileName="VarMacro_Editor.java" startLine="301" startPosition="26" endLine="310" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5015072279636485821" fileName="VarMacro_Editor.java" startLine="161" startPosition="0" endLine="172" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_cubyf7_b0#(Ljetbrains/mps/nodeEditor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="5015072279636485826" fileName="VarMacro_Editor.java" startLine="179" startPosition="0" endLine="190" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_cubyf7_b0c0#(Ljetbrains/mps/nodeEditor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="5015072279636485833" fileName="VarMacro_Editor.java" startLine="197" startPosition="0" endLine="208" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_cubyf7_b1c0#(Ljetbrains/mps/nodeEditor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="5015072279636624630" fileName="VarMacro_Editor.java" startLine="215" startPosition="0" endLine="226" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_cubyf7_b2c0#(Ljetbrains/mps/nodeEditor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="5015072279636624618" fileName="VarMacro_Editor.java" startLine="233" startPosition="0" endLine="244" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_cubyf7_b3c0#(Ljetbrains/mps/nodeEditor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="5015072279636485816" fileName="VarMacro_Editor.java" startLine="49" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_cubyf7_a_0#(Ljetbrains/mps/nodeEditor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="5015072279636485824" fileName="VarMacro_Editor.java" startLine="77" startPosition="0" endLine="90" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_cubyf7_a2a#(Ljetbrains/mps/nodeEditor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="5015072279636485831" fileName="VarMacro_Editor.java" startLine="90" startPosition="0" endLine="103" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_cubyf7_b2a#(Ljetbrains/mps/nodeEditor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="5015072279636624628" fileName="VarMacro_Editor.java" startLine="103" startPosition="0" endLine="116" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_cubyf7_c2a#(Ljetbrains/mps/nodeEditor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="5015072279636624616" fileName="VarMacro_Editor.java" startLine="116" startPosition="0" endLine="129" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_cubyf7_d2a#(Ljetbrains/mps/nodeEditor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="5015072279636485811" fileName="VarMacro_Editor.java" startLine="135" startPosition="0" endLine="148" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_cubyf7_a0#(Ljetbrains/mps/nodeEditor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="5015072279636485817" fileName="VarMacro_Editor.java" startLine="148" startPosition="0" endLine="161" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_cubyf7_a0_0#(Ljetbrains/mps/nodeEditor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="5015072279636485823" fileName="VarMacro_Editor.java" startLine="62" startPosition="0" endLine="77" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_cubyf7_c0#(Ljetbrains/mps/nodeEditor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="5015072279636624632" fileName="VarMacro_Editor.java" startLine="262" startPosition="0" endLine="279" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createRefNode_cubyf7_c2c0#(Ljetbrains/mps/nodeEditor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="5015072279636624626" fileName="VarMacro_Editor.java" startLine="279" startPosition="0" endLine="296" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createRefNode_cubyf7_c3c0#(Ljetbrains/mps/nodeEditor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="5015072279636485835" fileName="VarMacro_Editor.java" startLine="244" startPosition="0" endLine="262" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createRefCell_cubyf7_c1c0#(Ljetbrains/mps/nodeEditor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="5015072279636485828" fileName="VarMacro_Editor.java" startLine="320" startPosition="0" endLine="339" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createProperty_cubyf7_c0c0#(Ljetbrains/mps/nodeEditor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="5015072279636485837" fileName="VarMacro_Editor.java" startLine="364" startPosition="0" endLine="384" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createProperty_cubyf7_a0c1c0#(Ljetbrains/mps/nodeEditor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="5015072279636585813" fileName="VarMacro_Editor.java" startLine="296" startPosition="0" endLine="320" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createProperty_cubyf7_b0#(Ljetbrains/mps/nodeEditor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <scopeInfo nodeId="5015072279636485814" fileName="VarMacro_Editor.java" startLine="132" startPosition="69" endLine="132" endPosition="69" />
+    <scopeInfo nodeId="5015072279636485835" fileName="VarMacro_Editor.java" startLine="251" startPosition="58" endLine="251" endPosition="58" />
+    <scopeInfo nodeId="5015072279636624632" fileName="VarMacro_Editor.java" startLine="268" startPosition="58" endLine="268" endPosition="58" />
+    <scopeInfo nodeId="5015072279636624626" fileName="VarMacro_Editor.java" startLine="285" startPosition="58" endLine="285" endPosition="58" />
+    <scopeInfo nodeId="5015072279636485808" fileName="VarMacro_Editor.java" startLine="33" startPosition="79" endLine="34" endPosition="63" />
+    <scopeInfo nodeId="5015072279636485808" fileName="VarMacro_Editor.java" startLine="37" startPosition="82" endLine="38" endPosition="65" />
+    <scopeInfo nodeId="5015072279636485810" fileName="VarMacro_Editor.java" startLine="42" startPosition="99" endLine="43" endPosition="48" />
+    <scopeInfo nodeId="5015072279636485810" fileName="VarMacro_Editor.java" startLine="43" startPosition="48" endLine="44" endPosition="81" />
+    <scopeInfo nodeId="5015072279636485810" fileName="VarMacro_Editor.java" startLine="44" startPosition="81" endLine="45" endPosition="81" />
+    <scopeInfo nodeId="5015072279636485810" fileName="VarMacro_Editor.java" startLine="45" startPosition="81" endLine="46" endPosition="82" />
+    <scopeInfo nodeId="5015072279636485816" fileName="VarMacro_Editor.java" startLine="56" startPosition="5" endLine="57" endPosition="83" />
+    <scopeInfo nodeId="5015072279636485816" fileName="VarMacro_Editor.java" startLine="57" startPosition="83" endLine="58" endPosition="81" />
+    <scopeInfo nodeId="5015072279636485816" fileName="VarMacro_Editor.java" startLine="58" startPosition="81" endLine="59" endPosition="83" />
+    <scopeInfo nodeId="5015072279636485823" fileName="VarMacro_Editor.java" startLine="70" startPosition="35" endLine="71" endPosition="84" />
+    <scopeInfo nodeId="5015072279636485823" fileName="VarMacro_Editor.java" startLine="71" startPosition="84" endLine="72" endPosition="84" />
+    <scopeInfo nodeId="5015072279636485823" fileName="VarMacro_Editor.java" startLine="72" startPosition="84" endLine="73" endPosition="84" />
+    <scopeInfo nodeId="5015072279636485823" fileName="VarMacro_Editor.java" startLine="73" startPosition="84" endLine="74" endPosition="84" />
+    <scopeInfo nodeId="5015072279636485824" fileName="VarMacro_Editor.java" startLine="84" startPosition="5" endLine="85" endPosition="83" />
+    <scopeInfo nodeId="5015072279636485824" fileName="VarMacro_Editor.java" startLine="85" startPosition="83" endLine="86" endPosition="83" />
+    <scopeInfo nodeId="5015072279636485824" fileName="VarMacro_Editor.java" startLine="86" startPosition="83" endLine="87" endPosition="83" />
+    <scopeInfo nodeId="5015072279636485831" fileName="VarMacro_Editor.java" startLine="97" startPosition="5" endLine="98" endPosition="83" />
+    <scopeInfo nodeId="5015072279636485831" fileName="VarMacro_Editor.java" startLine="98" startPosition="83" endLine="99" endPosition="83" />
+    <scopeInfo nodeId="5015072279636485831" fileName="VarMacro_Editor.java" startLine="99" startPosition="83" endLine="100" endPosition="82" />
+    <scopeInfo nodeId="5015072279636624628" fileName="VarMacro_Editor.java" startLine="110" startPosition="5" endLine="111" endPosition="83" />
+    <scopeInfo nodeId="5015072279636624628" fileName="VarMacro_Editor.java" startLine="111" startPosition="83" endLine="112" endPosition="83" />
+    <scopeInfo nodeId="5015072279636624628" fileName="VarMacro_Editor.java" startLine="112" startPosition="83" endLine="113" endPosition="82" />
+    <scopeInfo nodeId="5015072279636624616" fileName="VarMacro_Editor.java" startLine="123" startPosition="5" endLine="124" endPosition="83" />
+    <scopeInfo nodeId="5015072279636624616" fileName="VarMacro_Editor.java" startLine="124" startPosition="83" endLine="125" endPosition="83" />
+    <scopeInfo nodeId="5015072279636624616" fileName="VarMacro_Editor.java" startLine="125" startPosition="83" endLine="126" endPosition="82" />
+    <scopeInfo nodeId="5015072279636485811" fileName="VarMacro_Editor.java" startLine="140" startPosition="15" endLine="141" endPosition="60" />
+    <scopeInfo nodeId="5015072279636485825" fileName="VarMacro_Editor.java" startLine="174" startPosition="93" endLine="175" endPosition="49" />
+    <scopeInfo nodeId="5015072279636485832" fileName="VarMacro_Editor.java" startLine="192" startPosition="99" endLine="193" endPosition="49" />
+    <scopeInfo nodeId="5015072279636624629" fileName="VarMacro_Editor.java" startLine="210" startPosition="90" endLine="211" endPosition="49" />
+    <scopeInfo nodeId="5015072279636624617" fileName="VarMacro_Editor.java" startLine="228" startPosition="91" endLine="229" endPosition="49" />
+    <scopeInfo nodeId="5015072279636485828" fileName="VarMacro_Editor.java" startLine="327" startPosition="58" endLine="328" endPosition="45" />
+    <scopeInfo nodeId="5015072279636485813" fileName="VarMacro_Editor.java" startLine="343" startPosition="47" endLine="344" endPosition="50" />
+    <scopeInfo nodeId="5015072279636485813" fileName="VarMacro_Editor.java" startLine="347" startPosition="108" endLine="348" endPosition="72" />
+    <scopeInfo nodeId="5015072279636485836" fileName="VarMacro_Editor.java" startLine="353" startPosition="35" endLine="354" endPosition="14" />
+    <scopeInfo nodeId="5015072279636485836" fileName="VarMacro_Editor.java" startLine="357" startPosition="69" endLine="358" endPosition="67" />
+    <scopeInfo nodeId="5015072279636485836" fileName="VarMacro_Editor.java" startLine="361" startPosition="81" endLine="362" endPosition="68" />
+    <scopeInfo nodeId="5015072279636485816" fileName="VarMacro_Editor.java" startLine="53" startPosition="5" endLine="55" endPosition="51">
+      <varInfo nodeId="5015072279636485816" varName="style" />
+    </scopeInfo>
+    <scopeInfo nodeId="5015072279636485823" fileName="VarMacro_Editor.java" startLine="66" startPosition="5" endLine="68" endPosition="51">
+      <varInfo nodeId="5015072279636485823" varName="style" />
+    </scopeInfo>
+    <scopeInfo nodeId="5015072279636485824" fileName="VarMacro_Editor.java" startLine="81" startPosition="5" endLine="83" endPosition="51">
+      <varInfo nodeId="5015072279636485824" varName="style" />
+    </scopeInfo>
+    <scopeInfo nodeId="5015072279636485831" fileName="VarMacro_Editor.java" startLine="94" startPosition="5" endLine="96" endPosition="51">
+      <varInfo nodeId="5015072279636485831" varName="style" />
+    </scopeInfo>
+    <scopeInfo nodeId="5015072279636624628" fileName="VarMacro_Editor.java" startLine="107" startPosition="5" endLine="109" endPosition="51">
+      <varInfo nodeId="5015072279636624628" varName="style" />
+    </scopeInfo>
+    <scopeInfo nodeId="5015072279636624616" fileName="VarMacro_Editor.java" startLine="120" startPosition="5" endLine="122" endPosition="51">
+      <varInfo nodeId="5015072279636624616" varName="style" />
+    </scopeInfo>
+    <scopeInfo nodeId="5015072279636485821" fileName="VarMacro_Editor.java" startLine="165" startPosition="5" endLine="167" endPosition="51">
+      <varInfo nodeId="5015072279636485821" varName="style" />
+    </scopeInfo>
+    <scopeInfo nodeId="5015072279636485826" fileName="VarMacro_Editor.java" startLine="183" startPosition="5" endLine="185" endPosition="51">
+      <varInfo nodeId="5015072279636485826" varName="style" />
+    </scopeInfo>
+    <scopeInfo nodeId="5015072279636485833" fileName="VarMacro_Editor.java" startLine="201" startPosition="5" endLine="203" endPosition="51">
+      <varInfo nodeId="5015072279636485833" varName="style" />
+    </scopeInfo>
+    <scopeInfo nodeId="5015072279636624630" fileName="VarMacro_Editor.java" startLine="219" startPosition="5" endLine="221" endPosition="51">
+      <varInfo nodeId="5015072279636624630" varName="style" />
+    </scopeInfo>
+    <scopeInfo nodeId="5015072279636624618" fileName="VarMacro_Editor.java" startLine="237" startPosition="5" endLine="239" endPosition="51">
+      <varInfo nodeId="5015072279636624618" varName="style" />
+    </scopeInfo>
+    <scopeInfo nodeId="5015072279636624632" fileName="VarMacro_Editor.java" startLine="267" startPosition="26" endLine="269" endPosition="73" />
+    <scopeInfo nodeId="5015072279636624626" fileName="VarMacro_Editor.java" startLine="284" startPosition="26" endLine="286" endPosition="73" />
+    <scopeInfo nodeId="5015072279636485837" fileName="VarMacro_Editor.java" startLine="371" startPosition="60" endLine="373" endPosition="79" />
+    <scopeInfo nodeId="5015072279636485814" fileName="VarMacro_Editor.java" startLine="130" startPosition="89" endLine="133" endPosition="22">
+      <varInfo nodeId="5015072279636485814" varName="editorCell" />
+      <varInfo nodeId="5015072279636485814" varName="provider" />
+    </scopeInfo>
+    <scopeInfo nodeId="5015072279636485835" fileName="VarMacro_Editor.java" startLine="249" startPosition="26" endLine="252" endPosition="73" />
+    <scopeInfo nodeId="5015072279636485835" fileName="VarMacro_Editor.java" startLine="255" startPosition="35" endLine="258" endPosition="105">
+      <varInfo nodeId="5015072279636485835" varName="manager" />
+      <varInfo nodeId="5015072279636485835" varName="opContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="5015072279636624632" fileName="VarMacro_Editor.java" startLine="272" startPosition="35" endLine="275" endPosition="105">
+      <varInfo nodeId="5015072279636624632" varName="manager" />
+      <varInfo nodeId="5015072279636624632" varName="opContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="5015072279636624626" fileName="VarMacro_Editor.java" startLine="289" startPosition="35" endLine="292" endPosition="105">
+      <varInfo nodeId="5015072279636624626" varName="manager" />
+      <varInfo nodeId="5015072279636624626" varName="opContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="5015072279636585813" fileName="VarMacro_Editor.java" startLine="304" startPosition="5" endLine="307" endPosition="59">
+      <varInfo nodeId="5015072279636585813" varName="style" />
+    </scopeInfo>
+    <scopeInfo nodeId="5015072279636585813" fileName="VarMacro_Editor.java" startLine="313" startPosition="35" endLine="316" endPosition="105">
+      <varInfo nodeId="5015072279636585813" varName="manager" />
+      <varInfo nodeId="5015072279636585813" varName="opContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="5015072279636485828" fileName="VarMacro_Editor.java" startLine="326" startPosition="26" endLine="329" endPosition="73" />
+    <scopeInfo nodeId="5015072279636485828" fileName="VarMacro_Editor.java" startLine="332" startPosition="35" endLine="335" endPosition="105">
+      <varInfo nodeId="5015072279636485828" varName="manager" />
+      <varInfo nodeId="5015072279636485828" varName="opContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="5015072279636485813" fileName="VarMacro_Editor.java" startLine="342" startPosition="0" endLine="345" endPosition="5" />
+    <scopeInfo nodeId="5015072279636485836" fileName="VarMacro_Editor.java" startLine="352" startPosition="71" endLine="355" endPosition="5" />
+    <scopeInfo nodeId="5015072279636485837" fileName="VarMacro_Editor.java" startLine="377" startPosition="37" endLine="380" endPosition="107">
+      <varInfo nodeId="5015072279636485837" varName="manager" />
+      <varInfo nodeId="5015072279636485837" varName="opContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="5015072279636485808" fileName="VarMacro_Editor.java" startLine="32" startPosition="56" endLine="36" endPosition="0">
+      <varInfo nodeId="5015072279636485808" varName="editorContext" />
+      <varInfo nodeId="5015072279636485808" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="5015072279636485808" fileName="VarMacro_Editor.java" startLine="36" startPosition="0" endLine="40" endPosition="0">
+      <varInfo nodeId="5015072279636485808" varName="editorContext" />
+      <varInfo nodeId="5015072279636485808" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="5015072279636485817" fileName="VarMacro_Editor.java" startLine="152" startPosition="5" endLine="156" endPosition="76">
+      <varInfo nodeId="5015072279636485817" varName="style" />
+    </scopeInfo>
+    <scopeInfo nodeId="5015072279636485825" fileName="VarMacro_Editor.java" startLine="173" startPosition="90" endLine="177" endPosition="22">
+      <varInfo nodeId="5015072279636485825" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="5015072279636485832" fileName="VarMacro_Editor.java" startLine="191" startPosition="90" endLine="195" endPosition="22">
+      <varInfo nodeId="5015072279636485832" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="5015072279636624629" fileName="VarMacro_Editor.java" startLine="209" startPosition="90" endLine="213" endPosition="22">
+      <varInfo nodeId="5015072279636624629" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="5015072279636624617" fileName="VarMacro_Editor.java" startLine="227" startPosition="90" endLine="231" endPosition="22">
+      <varInfo nodeId="5015072279636624617" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="5015072279636485813" fileName="VarMacro_Editor.java" startLine="346" startPosition="0" endLine="350" endPosition="0">
+      <varInfo nodeId="5015072279636485813" varName="cellContext" />
+      <varInfo nodeId="5015072279636485813" varName="editorContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="5015072279636485836" fileName="VarMacro_Editor.java" startLine="356" startPosition="0" endLine="360" endPosition="0">
+      <varInfo nodeId="5015072279636485836" varName="editorContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="5015072279636485836" fileName="VarMacro_Editor.java" startLine="360" startPosition="0" endLine="364" endPosition="0">
+      <varInfo nodeId="5015072279636485836" varName="editorContext" />
+      <varInfo nodeId="5015072279636485836" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="5015072279636485837" fileName="VarMacro_Editor.java" startLine="370" startPosition="28" endLine="374" endPosition="75" />
+    <scopeInfo nodeId="5015072279636485816" fileName="VarMacro_Editor.java" startLine="51" startPosition="97" endLine="56" endPosition="5" />
+    <scopeInfo nodeId="5015072279636485823" fileName="VarMacro_Editor.java" startLine="64" startPosition="97" endLine="69" endPosition="5" />
+    <scopeInfo nodeId="5015072279636485824" fileName="VarMacro_Editor.java" startLine="79" startPosition="99" endLine="84" endPosition="5" />
+    <scopeInfo nodeId="5015072279636485831" fileName="VarMacro_Editor.java" startLine="92" startPosition="99" endLine="97" endPosition="5" />
+    <scopeInfo nodeId="5015072279636624628" fileName="VarMacro_Editor.java" startLine="105" startPosition="99" endLine="110" endPosition="5" />
+    <scopeInfo nodeId="5015072279636624616" fileName="VarMacro_Editor.java" startLine="118" startPosition="99" endLine="123" endPosition="5" />
+    <scopeInfo nodeId="5015072279636485821" fileName="VarMacro_Editor.java" startLine="163" startPosition="86" endLine="168" endPosition="5" />
+    <scopeInfo nodeId="5015072279636485826" fileName="VarMacro_Editor.java" startLine="181" startPosition="87" endLine="186" endPosition="5" />
+    <scopeInfo nodeId="5015072279636485833" fileName="VarMacro_Editor.java" startLine="199" startPosition="87" endLine="204" endPosition="5" />
+    <scopeInfo nodeId="5015072279636624630" fileName="VarMacro_Editor.java" startLine="217" startPosition="87" endLine="222" endPosition="5" />
+    <scopeInfo nodeId="5015072279636624618" fileName="VarMacro_Editor.java" startLine="235" startPosition="87" endLine="240" endPosition="5" />
+    <scopeInfo nodeId="5015072279636485810" fileName="VarMacro_Editor.java" startLine="41" startPosition="89" endLine="47" endPosition="22">
+      <varInfo nodeId="5015072279636485810" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="5015072279636485814" fileName="VarMacro_Editor.java" startLine="129" startPosition="0" endLine="135" endPosition="0">
+      <varInfo nodeId="5015072279636485814" varName="editorContext" />
+      <varInfo nodeId="5015072279636485814" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="5015072279636485811" fileName="VarMacro_Editor.java" startLine="137" startPosition="91" endLine="143" endPosition="72" />
+    <scopeInfo nodeId="5015072279636485817" fileName="VarMacro_Editor.java" startLine="150" startPosition="100" endLine="157" endPosition="5" />
+    <scopeInfo nodeId="5015072279636485825" fileName="VarMacro_Editor.java" startLine="172" startPosition="0" endLine="179" endPosition="0">
+      <varInfo nodeId="5015072279636485825" varName="editorContext" />
+      <varInfo nodeId="5015072279636485825" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="5015072279636485832" fileName="VarMacro_Editor.java" startLine="190" startPosition="0" endLine="197" endPosition="0">
+      <varInfo nodeId="5015072279636485832" varName="editorContext" />
+      <varInfo nodeId="5015072279636485832" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="5015072279636624629" fileName="VarMacro_Editor.java" startLine="208" startPosition="0" endLine="215" endPosition="0">
+      <varInfo nodeId="5015072279636624629" varName="editorContext" />
+      <varInfo nodeId="5015072279636624629" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="5015072279636624617" fileName="VarMacro_Editor.java" startLine="226" startPosition="0" endLine="233" endPosition="0">
+      <varInfo nodeId="5015072279636624617" varName="editorContext" />
+      <varInfo nodeId="5015072279636624617" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="5015072279636585813" fileName="VarMacro_Editor.java" startLine="302" startPosition="58" endLine="309" endPosition="72" />
+    <scopeInfo nodeId="5015072279636485821" fileName="VarMacro_Editor.java" startLine="162" startPosition="88" endLine="170" endPosition="22">
+      <varInfo nodeId="5015072279636485821" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="5015072279636485826" fileName="VarMacro_Editor.java" startLine="180" startPosition="90" endLine="188" endPosition="22">
+      <varInfo nodeId="5015072279636485826" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="5015072279636485833" fileName="VarMacro_Editor.java" startLine="198" startPosition="90" endLine="206" endPosition="22">
+      <varInfo nodeId="5015072279636485833" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="5015072279636624630" fileName="VarMacro_Editor.java" startLine="216" startPosition="90" endLine="224" endPosition="22">
+      <varInfo nodeId="5015072279636624630" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="5015072279636624618" fileName="VarMacro_Editor.java" startLine="234" startPosition="90" endLine="242" endPosition="22">
+      <varInfo nodeId="5015072279636624618" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="5015072279636485810" fileName="VarMacro_Editor.java" startLine="40" startPosition="0" endLine="49" endPosition="0">
+      <varInfo nodeId="5015072279636485810" varName="editorContext" />
+      <varInfo nodeId="5015072279636485810" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="5015072279636585813" fileName="VarMacro_Editor.java" startLine="301" startPosition="26" endLine="310" endPosition="73" />
+    <scopeInfo nodeId="5015072279636485816" fileName="VarMacro_Editor.java" startLine="50" startPosition="91" endLine="60" endPosition="22">
+      <varInfo nodeId="5015072279636485816" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="5015072279636485824" fileName="VarMacro_Editor.java" startLine="78" startPosition="91" endLine="88" endPosition="22">
+      <varInfo nodeId="5015072279636485824" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="5015072279636485831" fileName="VarMacro_Editor.java" startLine="91" startPosition="91" endLine="101" endPosition="22">
+      <varInfo nodeId="5015072279636485831" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="5015072279636624628" fileName="VarMacro_Editor.java" startLine="104" startPosition="91" endLine="114" endPosition="22">
+      <varInfo nodeId="5015072279636624628" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="5015072279636624616" fileName="VarMacro_Editor.java" startLine="117" startPosition="91" endLine="127" endPosition="22">
+      <varInfo nodeId="5015072279636624616" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="5015072279636485811" fileName="VarMacro_Editor.java" startLine="136" startPosition="88" endLine="146" endPosition="22">
+      <varInfo nodeId="5015072279636485811" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="5015072279636485817" fileName="VarMacro_Editor.java" startLine="149" startPosition="90" endLine="159" endPosition="22">
+      <varInfo nodeId="5015072279636485817" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="5015072279636485821" fileName="VarMacro_Editor.java" startLine="161" startPosition="0" endLine="172" endPosition="0">
+      <varInfo nodeId="5015072279636485821" varName="editorContext" />
+      <varInfo nodeId="5015072279636485821" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="5015072279636485826" fileName="VarMacro_Editor.java" startLine="179" startPosition="0" endLine="190" endPosition="0">
+      <varInfo nodeId="5015072279636485826" varName="editorContext" />
+      <varInfo nodeId="5015072279636485826" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="5015072279636485833" fileName="VarMacro_Editor.java" startLine="197" startPosition="0" endLine="208" endPosition="0">
+      <varInfo nodeId="5015072279636485833" varName="editorContext" />
+      <varInfo nodeId="5015072279636485833" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="5015072279636624630" fileName="VarMacro_Editor.java" startLine="215" startPosition="0" endLine="226" endPosition="0">
+      <varInfo nodeId="5015072279636624630" varName="editorContext" />
+      <varInfo nodeId="5015072279636624630" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="5015072279636624618" fileName="VarMacro_Editor.java" startLine="233" startPosition="0" endLine="244" endPosition="0">
+      <varInfo nodeId="5015072279636624618" varName="editorContext" />
+      <varInfo nodeId="5015072279636624618" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="5015072279636485823" fileName="VarMacro_Editor.java" startLine="63" startPosition="90" endLine="75" endPosition="22">
+      <varInfo nodeId="5015072279636485823" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="5015072279636485816" fileName="VarMacro_Editor.java" startLine="49" startPosition="0" endLine="62" endPosition="0">
+      <varInfo nodeId="5015072279636485816" varName="editorContext" />
+      <varInfo nodeId="5015072279636485816" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="5015072279636485824" fileName="VarMacro_Editor.java" startLine="77" startPosition="0" endLine="90" endPosition="0">
+      <varInfo nodeId="5015072279636485824" varName="editorContext" />
+      <varInfo nodeId="5015072279636485824" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="5015072279636485831" fileName="VarMacro_Editor.java" startLine="90" startPosition="0" endLine="103" endPosition="0">
+      <varInfo nodeId="5015072279636485831" varName="editorContext" />
+      <varInfo nodeId="5015072279636485831" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="5015072279636624628" fileName="VarMacro_Editor.java" startLine="103" startPosition="0" endLine="116" endPosition="0">
+      <varInfo nodeId="5015072279636624628" varName="editorContext" />
+      <varInfo nodeId="5015072279636624628" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="5015072279636624616" fileName="VarMacro_Editor.java" startLine="116" startPosition="0" endLine="129" endPosition="0">
+      <varInfo nodeId="5015072279636624616" varName="editorContext" />
+      <varInfo nodeId="5015072279636624616" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="5015072279636485811" fileName="VarMacro_Editor.java" startLine="135" startPosition="0" endLine="148" endPosition="0">
+      <varInfo nodeId="5015072279636485811" varName="editorContext" />
+      <varInfo nodeId="5015072279636485811" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="5015072279636485817" fileName="VarMacro_Editor.java" startLine="148" startPosition="0" endLine="161" endPosition="0">
+      <varInfo nodeId="5015072279636485817" varName="editorContext" />
+      <varInfo nodeId="5015072279636485817" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="5015072279636624632" fileName="VarMacro_Editor.java" startLine="263" startPosition="89" endLine="277" endPosition="22">
+      <varInfo nodeId="5015072279636624632" varName="attributeConcept" />
+      <varInfo nodeId="5015072279636624632" varName="attributeKind" />
+      <varInfo nodeId="5015072279636624632" varName="editorCell" />
+      <varInfo nodeId="5015072279636624632" varName="provider" />
+    </scopeInfo>
+    <scopeInfo nodeId="5015072279636624626" fileName="VarMacro_Editor.java" startLine="280" startPosition="89" endLine="294" endPosition="22">
+      <varInfo nodeId="5015072279636624626" varName="attributeConcept" />
+      <varInfo nodeId="5015072279636624626" varName="attributeKind" />
+      <varInfo nodeId="5015072279636624626" varName="editorCell" />
+      <varInfo nodeId="5015072279636624626" varName="provider" />
+    </scopeInfo>
+    <scopeInfo nodeId="5015072279636485823" fileName="VarMacro_Editor.java" startLine="62" startPosition="0" endLine="77" endPosition="0">
+      <varInfo nodeId="5015072279636485823" varName="editorContext" />
+      <varInfo nodeId="5015072279636485823" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="5015072279636485835" fileName="VarMacro_Editor.java" startLine="245" startPosition="89" endLine="260" endPosition="22">
+      <varInfo nodeId="5015072279636485835" varName="attributeConcept" />
+      <varInfo nodeId="5015072279636485835" varName="attributeKind" />
+      <varInfo nodeId="5015072279636485835" varName="editorCell" />
+      <varInfo nodeId="5015072279636485835" varName="provider" />
+    </scopeInfo>
+    <scopeInfo nodeId="5015072279636485828" fileName="VarMacro_Editor.java" startLine="321" startPosition="90" endLine="337" endPosition="22">
+      <varInfo nodeId="5015072279636485828" varName="attributeConcept" />
+      <varInfo nodeId="5015072279636485828" varName="attributeKind" />
+      <varInfo nodeId="5015072279636485828" varName="editorCell" />
+      <varInfo nodeId="5015072279636485828" varName="provider" />
+    </scopeInfo>
+    <scopeInfo nodeId="5015072279636624632" fileName="VarMacro_Editor.java" startLine="262" startPosition="0" endLine="279" endPosition="0">
+      <varInfo nodeId="5015072279636624632" varName="editorContext" />
+      <varInfo nodeId="5015072279636624632" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="5015072279636624626" fileName="VarMacro_Editor.java" startLine="279" startPosition="0" endLine="296" endPosition="0">
+      <varInfo nodeId="5015072279636624626" varName="editorContext" />
+      <varInfo nodeId="5015072279636624626" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="5015072279636485837" fileName="VarMacro_Editor.java" startLine="365" startPosition="94" endLine="382" endPosition="24">
+      <varInfo nodeId="5015072279636485837" varName="attributeConcept" />
+      <varInfo nodeId="5015072279636485837" varName="attributeKind" />
+      <varInfo nodeId="5015072279636485837" varName="editorCell" />
+      <varInfo nodeId="5015072279636485837" varName="provider" />
+    </scopeInfo>
+    <scopeInfo nodeId="5015072279636485835" fileName="VarMacro_Editor.java" startLine="244" startPosition="0" endLine="262" endPosition="0">
+      <varInfo nodeId="5015072279636485835" varName="editorContext" />
+      <varInfo nodeId="5015072279636485835" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="5015072279636485828" fileName="VarMacro_Editor.java" startLine="320" startPosition="0" endLine="339" endPosition="0">
+      <varInfo nodeId="5015072279636485828" varName="editorContext" />
+      <varInfo nodeId="5015072279636485828" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="5015072279636485837" fileName="VarMacro_Editor.java" startLine="364" startPosition="0" endLine="384" endPosition="0">
+      <varInfo nodeId="5015072279636485837" varName="editorContext" />
+      <varInfo nodeId="5015072279636485837" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="5015072279636585813" fileName="VarMacro_Editor.java" startLine="297" startPosition="88" endLine="318" endPosition="22">
+      <varInfo nodeId="5015072279636585813" varName="attributeConcept" />
+      <varInfo nodeId="5015072279636585813" varName="attributeKind" />
+      <varInfo nodeId="5015072279636585813" varName="editorCell" />
+      <varInfo nodeId="5015072279636585813" varName="provider" />
+    </scopeInfo>
+    <scopeInfo nodeId="5015072279636585813" fileName="VarMacro_Editor.java" startLine="296" startPosition="0" endLine="320" endPosition="0">
+      <varInfo nodeId="5015072279636585813" varName="editorContext" />
+      <varInfo nodeId="5015072279636585813" varName="node" />
+    </scopeInfo>
+    <unitInfo nodeId="5015072279636485808" fileName="VarMacro_Editor.java" startLine="32" startPosition="0" endLine="386" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.VarMacro_Editor" />
+    <unitInfo nodeId="5015072279636485813" fileName="VarMacro_Editor.java" startLine="340" startPosition="0" endLine="351" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.VarMacro_Editor$VarMacro_component_cellMenu_a0a0" />
+    <unitInfo nodeId="5015072279636485836" fileName="VarMacro_Editor.java" startLine="352" startPosition="0" endLine="385" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.VarMacro_Editor$_Inline_cubyf7_a2b2a" />
+  </root>
   <root nodeId="5023471013036368458">
     <nodeInfo nodeId="5540778578667697782" fileName="GeneratorParameterReference_Editor.java" startLine="162" startPosition="58" endLine="162" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="5023471013036368458" fileName="GeneratorParameterReference_Editor.java" startLine="30" startPosition="79" endLine="31" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

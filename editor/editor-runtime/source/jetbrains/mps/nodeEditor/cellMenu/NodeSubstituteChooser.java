@@ -632,7 +632,9 @@ public class NodeSubstituteChooser implements KeyboardHandler {
 
       setLocation(newLocation);
 
-      validateTree();
+      synchronized (getTreeLock()) {
+        validateTree();
+      }
       repaint();
     }
 

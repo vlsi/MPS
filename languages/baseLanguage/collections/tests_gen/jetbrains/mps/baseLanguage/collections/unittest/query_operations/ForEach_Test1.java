@@ -15,6 +15,9 @@ import java.util.Iterator;
 import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
 
 public class ForEach_Test1 extends TestCase {
+  public ForEach_Test1() {
+  }
+
   public void test_1() {
     List<Integer> list = ListSequence.fromListAndArray(new ArrayList<Integer>(), 1, 2, 3, 4, 5);
     final Wrappers._int sum = new Wrappers._int(0);

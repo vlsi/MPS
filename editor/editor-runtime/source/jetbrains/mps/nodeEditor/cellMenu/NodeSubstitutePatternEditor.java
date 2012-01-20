@@ -69,20 +69,34 @@ public class NodeSubstitutePatternEditor {
   public boolean processKeyPressed(KeyEvent keyEvent) {
     if (myEditorActivated) {
       if (keyEvent.getKeyCode() == KeyEvent.VK_SPACE && keyEvent.isControlDown()) {
-        TextLine textLine = myEditorWindow.myTextLine;
-        if (mySavedCaretPosition != 0) {
-          textLine.setCaretPosition(mySavedCaretPosition);
-          mySavedCaretPosition = 0;
-        } else {
-          mySavedCaretPosition = textLine.getCaretPosition();
-          textLine.setCaretPosition(0);
-        }
-        myEditorWindow.repaint();
+        toggleReplaceMode();
         return true;
       }
       return myEditorWindow.processKeyPressed(keyEvent);
     }
     return false;
+  }
+
+  public void toggleReplaceMode() {
+    if (myEditorActivated) {
+      TextLine textLine = myEditorWindow.myTextLine;
+      if (mySavedCaretPosition != 0) {
+        textLine.setCaretPosition(mySavedCaretPosition);
+        mySavedCaretPosition = 0;
+      } else {
+        mySavedCaretPosition = textLine.getCaretPosition();
+        textLine.setCaretPosition(0);
+      }
+      myEditorWindow.repaint();
+    } else {
+      if (mySavedCaretPosition != 0) {
+        myCachedCaretPosition = mySavedCaretPosition;
+        mySavedCaretPosition = 0;
+      } else {
+        mySavedCaretPosition = myCachedCaretPosition;
+        myCachedCaretPosition = 0;
+      }
+    }
   }
 
   public boolean processKeyTyped(KeyEvent keyEvent) {

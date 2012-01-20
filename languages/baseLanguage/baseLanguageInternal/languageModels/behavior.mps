@@ -39,6 +39,9 @@
     <node type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="199058371937623738">
       <link role="concept" roleId="1i04.1225194240799" targetNodeId="tp68.7738261905749564104" resolveInfo="ExtractStaticInnerClassExpression" />
     </node>
+    <node type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="1100832983841311076">
+      <link role="concept" roleId="1i04.1225194240799" targetNodeId="tp68.1100832983841311024" resolveInfo="InternalClassCreator" />
+    </node>
   </roots>
   <root id="1230552150899">
     <node role="constructor" roleId="1i04.1225194240801" type="1i04.ConceptConstructorDeclaration" typeId="1i04.1225194413805" id="1230552150900">
@@ -802,6 +805,11 @@
         </node>
       </node>
       <node role="returnType" roleId="tpee.1068580123133" type="tpee.BooleanType" typeId="tpee.1070534644030" id="199058371937623744" />
+    </node>
+  </root>
+  <root id="1100832983841311076">
+    <node role="constructor" roleId="1i04.1225194240801" type="1i04.ConceptConstructorDeclaration" typeId="1i04.1225194413805" id="1100832983841311077">
+      <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="1100832983841311078" />
     </node>
   </root>
 </model>

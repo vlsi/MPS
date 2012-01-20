@@ -66,6 +66,10 @@ public class GeneratorWorker extends MpsWorker {
     super(whatToDo, logger);
   }
 
+  protected GeneratorWorker.MyMessageHandler getMyMessageHandler() {
+    return myMessageHandler;
+  }
+
   @Override
   protected void executeTask(final Project project, MpsWorker.ObjectsToProcess go) {
     setGenerationProperties();
@@ -94,7 +98,7 @@ public class GeneratorWorker extends MpsWorker {
     failBuild("generation");
   }
 
-  private void generate(Project project, MpsWorker.ObjectsToProcess go) {
+  protected void generate(Project project, MpsWorker.ObjectsToProcess go) {
     StringBuffer s = new StringBuffer("Generating:");
     for (Project p : go.getProjects()) {
       s.append("\n    ");
@@ -119,6 +123,7 @@ public class GeneratorWorker extends MpsWorker {
         res.value = new BuildMakeService(ctx, myMessageHandler).make(resources);
       }
     });
+
     try {
       if (!(res.value.get().isSucessful())) {
         myErrors.add("Make was not successful");
@@ -206,7 +211,7 @@ public class GeneratorWorker extends MpsWorker {
     });
   }
 
-  private Iterable<IMResource> collectResources(IOperationContext context, final MpsWorker.ObjectsToProcess go) {
+  protected Iterable<IMResource> collectResources(IOperationContext context, final MpsWorker.ObjectsToProcess go) {
     final Wrappers._T<Iterable<SModelDescriptor>> models = new Wrappers._T<Iterable<SModelDescriptor>>(null);
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {

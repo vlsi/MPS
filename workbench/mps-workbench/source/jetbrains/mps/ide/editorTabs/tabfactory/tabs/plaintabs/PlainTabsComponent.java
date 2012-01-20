@@ -31,6 +31,7 @@ import jetbrains.mps.ide.editorTabs.tabfactory.NodeChangeCallback;
 import jetbrains.mps.ide.editorTabs.tabfactory.tabs.BaseTabsComponent;
 import jetbrains.mps.ide.editorTabs.tabfactory.tabs.CreateModeCallback;
 import jetbrains.mps.ide.icons.IconManager;
+import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
@@ -55,8 +56,8 @@ public class PlainTabsComponent extends BaseTabsComponent {
     }
   };
 
-  public PlainTabsComponent(SNodePointer baseNode, Set<EditorTabDescriptor> possibleTabs, JComponent editor, NodeChangeCallback callback, boolean showGrayed, CreateModeCallback createModeCallback) {
-    super(baseNode, possibleTabs, editor, callback, showGrayed, createModeCallback);
+  public PlainTabsComponent(SNodePointer baseNode, Set<EditorTabDescriptor> possibleTabs, JComponent editor, NodeChangeCallback callback, boolean showGrayed, CreateModeCallback createModeCallback, IOperationContext operationContext) {
+    super(baseNode, possibleTabs, editor, callback, showGrayed, createModeCallback, operationContext);
 
     DataContext dataContext = DataManager.getInstance().getDataContext(myEditor);
     Project project = PlatformDataKeys.PROJECT.getData(dataContext);
@@ -116,6 +117,20 @@ public class PlainTabsComponent extends BaseTabsComponent {
       .setGhostsAlwaysVisible(true);
   }
 
+  protected void updateTabColors() {
+    for (int i = 0; i < myRealTabs.size(); i++) {
+      SNodePointer node = myRealTabs.get(i).getNode();
+      if (node != null && getColorProvider() != null) {
+        Color color = getColorProvider().getNodeColor(node.getNode());
+        if (color != null) {
+          myJbTabs.setForegroundAt(i, color);
+          continue;
+        }
+      }
+      myJbTabs.setForegroundAt(i, null);
+    }
+  }
+  
   protected void updateTabs() {
     myRealTabs.clear();
     myJbTabs.removeAll();
@@ -140,6 +155,7 @@ public class PlainTabsComponent extends BaseTabsComponent {
         myJbTabs.setForegroundAt(myJbTabs.getTabCount() - 1, Color.GRAY);
       }
     }
+    updateTabColors();
   }
 
   private void selectNodeTab() {

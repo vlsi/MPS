@@ -26,7 +26,7 @@ import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.generator.IModifiableGenerationSettings;
 import jetbrains.mps.generator.GenerationSettingsProvider;
 import jetbrains.mps.generator.GenerationOptions;
-import jetbrains.mps.make.facet.plugin.MakeGenerationStrategy;
+import jetbrains.mps.make.facet.pluginSolution.plugin.MakeGenerationStrategy;
 import jetbrains.mps.ide.generator.GeneratorCacheComponent;
 import jetbrains.mps.generator.IGenerationTracer;
 import jetbrains.mps.generator.NullGenerationTracer;
@@ -42,8 +42,9 @@ import jetbrains.mps.smodel.loading.ModelLoadingState;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import java.util.Map;
 import jetbrains.mps.project.IModule;
+import jetbrains.mps.lang.core.pluginSolution.plugin.RetainedUtil;
 import jetbrains.mps.generator.generationTypes.IGenerationHandler;
-import jetbrains.mps.make.facet.plugin.MakeGenerationHandler;
+import jetbrains.mps.make.facet.pluginSolution.plugin.MakeGenerationHandler;
 import jetbrains.mps.smodel.resources.GResource;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.messages.IMessageHandler;
@@ -51,9 +52,7 @@ import jetbrains.mps.messages.IMessage;
 import jetbrains.mps.internal.collections.runtime.ILeftCombinator;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.generator.TransientModelsProvider;
-import jetbrains.mps.ide.generator.TransientModelsComponent;
 import jetbrains.mps.generator.GenerationFacade;
-import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.resources.DResource;
 import jetbrains.mps.make.delta.IDelta;
 import jetbrains.mps.make.delta.IInternalDelta;
@@ -279,27 +278,7 @@ public class Generate_Facet extends IFacet.Stub {
           switch (0) {
             case 0:
               IModifiableGenerationSettings settings = GenerationSettingsProvider.getInstance().getGenerationSettings();
-              if (pa.global().properties(Target_configure.this.getName(), Generate_Facet.Target_configure.Variables.class).saveTransient() != null) {
-                return true;
-              }
-              if (settings.isSaveTransientModels()) {
-                switch (cmonitor.<SaveTransient_Option>relayQuery(new SaveTransientModels_Query())) {
-                  case SAVE_fi61u2_a0a0b:
-                    pa.global().properties(Target_configure.this.getName(), Generate_Facet.Target_configure.Variables.class).saveTransient(true);
-                    break;
-                  case DONT_SAVE_fi61u2_b0a0b:
-                    pa.global().properties(Target_configure.this.getName(), Generate_Facet.Target_configure.Variables.class).saveTransient(false);
-                    break;
-                  case BUGGER_OFF_fi61u2_c0a0b:
-                    pa.global().properties(Target_configure.this.getName(), Generate_Facet.Target_configure.Variables.class).saveTransient(false);
-                    settings.setSaveTransientModels(false);
-                    break;
-                  default:
-                    return false;
-                }
-              } else {
-                pa.global().properties(Target_configure.this.getName(), Generate_Facet.Target_configure.Variables.class).saveTransient(false);
-              }
+              pa.global().properties(Target_configure.this.getName(), Generate_Facet.Target_configure.Variables.class).saveTransient(settings.isSaveTransientModels());
             default:
               return true;
           }
@@ -552,12 +531,18 @@ public class Generate_Facet extends IFacet.Stub {
                 }
               }).toListSequence();
 
-              final TransientModelsProvider transModels = (pa.global().properties(new ITarget.Name("jetbrains.mps.lang.core.Generate.checkParameters"), Generate_Facet.Target_checkParameters.Variables.class).project().getComponent(TransientModelsComponent.class) != null ?
-                pa.global().properties(new ITarget.Name("jetbrains.mps.lang.core.Generate.checkParameters"), Generate_Facet.Target_checkParameters.Variables.class).project().getComponent(TransientModelsComponent.class) :
+              Object tmc = null;
+              try {
+                Class<?> tmcCls = Class.forName("jetbrains.mps.ide.generator.TransientModelsComponent");
+                tmc = pa.global().properties(new ITarget.Name("jetbrains.mps.lang.core.Generate.checkParameters"), Generate_Facet.Target_checkParameters.Variables.class).project().getComponent(tmcCls);
+              } catch (ClassNotFoundException ignore) {
+              }
+
+              final TransientModelsProvider transModels = (tmc != null ?
+                (TransientModelsProvider) tmc :
                 new TransientModelsProvider(pa.global().properties(new ITarget.Name("jetbrains.mps.lang.core.Generate.checkParameters"), Generate_Facet.Target_checkParameters.Variables.class).project(), null)
               );
-
-              generationOk = GenerationFacade.generateModels(pa.global().properties(new ITarget.Name("jetbrains.mps.lang.core.Generate.checkParameters"), Generate_Facet.Target_checkParameters.Variables.class).project().getComponent(MPSProject.class), models, pa.global().properties(new ITarget.Name("jetbrains.mps.lang.core.Generate.checkParameters"), Generate_Facet.Target_checkParameters.Variables.class).operationContext(), gh, pa.global().properties(new ITarget.Name("jetbrains.mps.lang.core.Generate.checkParameters"), Generate_Facet.Target_checkParameters.Variables.class).monitorProvider().invoke(), mh, pa.global().properties(new ITarget.Name("jetbrains.mps.lang.core.Generate.configure"), Generate_Facet.Target_configure.Variables.class).generationOptions().create(), transModels);
+              generationOk = GenerationFacade.generateModels(pa.global().properties(new ITarget.Name("jetbrains.mps.lang.core.Generate.checkParameters"), Generate_Facet.Target_checkParameters.Variables.class).project(), models, pa.global().properties(new ITarget.Name("jetbrains.mps.lang.core.Generate.checkParameters"), Generate_Facet.Target_checkParameters.Variables.class).operationContext(), gh, pa.global().properties(new ITarget.Name("jetbrains.mps.lang.core.Generate.checkParameters"), Generate_Facet.Target_checkParameters.Variables.class).monitorProvider().invoke(), mh, pa.global().properties(new ITarget.Name("jetbrains.mps.lang.core.Generate.configure"), Generate_Facet.Target_configure.Variables.class).generationOptions().create(), transModels);
 
               monitor.currentProgress().finishWork("Generating");
               if (!(generationOk)) {

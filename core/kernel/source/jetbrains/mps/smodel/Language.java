@@ -120,9 +120,9 @@ public class Language extends AbstractModule implements MPSModuleOwner {
     }
 
     MPSModuleRepository repository = MPSModuleRepository.getInstance();
-    if (repository.existsModule(languageDescriptor.getModuleReference())) {
-      LOG.error("Loading module " + languageDescriptor.getNamespace() + " for the second time");
-      return repository.getLanguage(languageDescriptor.getModuleReference());
+    IModule m = MPSModuleRepository.checkRegistered(languageDescriptor.getModuleReference(), handle.getFile());
+    if (m != null) {
+      return (Language) m;
     }
 
     Language language = new Language();
@@ -657,15 +657,15 @@ public class Language extends AbstractModule implements MPSModuleOwner {
       DeploymentDescriptor dd = myLanguageDescriptor.getDeploymentDescriptor();
       if (dd == null) return;
 
-      for (ModuleReference mr:myLanguageDescriptor.getRuntimeModules()) {
+      for (ModuleReference mr : myLanguageDescriptor.getRuntimeModules()) {
         IModule rtm = MPSModuleRepository.getInstance().getModule(mr);
         if (rtm != null && rtm.getBundleHome() != null) {
           if (rtm.getBundleHome().getName().startsWith("mps-") && rtm.getBundleHome().getPath().startsWith(PathManager.getHomePath())) {
-            dd.getRuntimeJars().add("/"+ rtm.getBundleHome().getPath().substring(PathManager.getHomePath().length()));
+            dd.getRuntimeJars().add("/" + rtm.getBundleHome().getPath().substring(PathManager.getHomePath().length()));
           }
         }
       }
-      
+
       for (String jarFile : dd.getRuntimeJars()) {
         IFile jar = jarFile.startsWith("/")
           ? FileSystem.getInstance().getFileByPath(PathManager.getHomePath() + jarFile)

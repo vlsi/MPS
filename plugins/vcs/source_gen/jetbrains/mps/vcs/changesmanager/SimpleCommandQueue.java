@@ -13,6 +13,7 @@ public class SimpleCommandQueue {
 
   private Thread myThread;
   private boolean myDisposed = false;
+  private boolean myHadExceptions = false;
   private final Queue<Runnable> myQueue = new LinkedList<Runnable>();
 
   public SimpleCommandQueue(@NotNull String threadName) {
@@ -52,6 +53,14 @@ public class SimpleCommandQueue {
     }
   }
 
+  public void setHadExceptions(boolean value) {
+    myHadExceptions = value;
+  }
+
+  public boolean hadExceptions() {
+    return myHadExceptions;
+  }
+
   private class MyExecutorThread extends Thread {
     public MyExecutorThread(@NotNull String name) {
       super(name);
@@ -83,6 +92,7 @@ public class SimpleCommandQueue {
           if (log.isErrorEnabled()) {
             log.error(e.getClass().getName() + " exception in " + getName(), e);
           }
+          myHadExceptions = true;
         }
       }
     }

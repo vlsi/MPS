@@ -18,6 +18,7 @@ package jetbrains.mps;
 import com.intellij.ide.Bootstrap;
 import com.intellij.ide.ClassloaderUtil;
 import com.intellij.openapi.application.PathManager;
+import com.intellij.openapi.util.SystemInfo;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -35,7 +36,41 @@ public class Launcher {
     System.setProperty("idea.no.jre.check", "true");
     System.setProperty("idea.load.plugins", "true");
 
+    String fsNotifierKey = "idea.filewatcher.executable.path";
+    String altExecPath = System.getProperty(fsNotifierKey);
+    if (altExecPath == null || !new File(altExecPath).isFile()) {
+      String execPath = PathManager.getBinPath() + File.separatorChar + getFsNotifierName();
+      if (!new File(execPath).exists()) {
+        System.setProperty(fsNotifierKey, PathManager.getBinPath() + File.separatorChar + getFsNotifierDir() + File.separatorChar + getFsNotifierName());
+      }
+    }
+
+
     Bootstrap.main(args, "jetbrains.mps.MPSMainImpl", "start", getAdditionalMPSClasspath());
+  }
+
+  private static String getFsNotifierDir() {
+    if (SystemInfo.isWindows) {
+      return "win";
+    } else if (SystemInfo.isMac) {
+      return "mac";
+    } else if (SystemInfo.isLinux) {
+      return "linux";
+    }
+
+    return null;
+  }
+
+  private static String getFsNotifierName() {
+    if (SystemInfo.isWindows) {
+      return "fsnotifier.exe";
+    } else if (SystemInfo.isMac) {
+      return "fsnotifier";
+    } else if (SystemInfo.isLinux) {
+      return SystemInfo.isAMD64 ? "fsnotifier64" : "fsnotifier";
+    }
+
+    return null;
   }
 
   private static List<URL> getAdditionalMPSClasspath() {
@@ -83,7 +118,7 @@ public class Launcher {
     if (acp.exists()) {
       try {
         Scanner sc;
-        for (sc = new Scanner(acp, "UTF-8"); sc.hasNextLine();) {
+        for (sc = new Scanner(acp, "UTF-8"); sc.hasNextLine(); ) {
           String nl = sc.nextLine();
           if (nl.startsWith(":")) continue;
           File dir = new File(homePath, nl);

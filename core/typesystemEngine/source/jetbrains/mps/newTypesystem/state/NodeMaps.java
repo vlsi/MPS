@@ -155,6 +155,12 @@ public class NodeMaps {
     return result;
   }
 
+  public void expandNode(SNode node) {
+    SNode var = myNodesToTypes.get(node);
+    SNode type = myState.getEquations().expandNode(var, true);
+    updateNodeToType(node, type, null);
+  }
+  
   public void expandAll(Set<SNode> nodes, boolean finalExpansion) {
     Set<SNode> keySet = myNodesToTypes.keySet();
     for (SNode node : nodes) {

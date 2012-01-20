@@ -13,13 +13,14 @@ import jetbrains.mps.build.distrib.behavior.AbstractPath_Behavior;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.build.packaging.behavior.Configuration_Behavior;
+import jetbrains.mps.build.distrib.behavior.DistribConfiguration_Behavior;
 import jetbrains.mps.build.packaging.behavior.IAbstractCompositeComponent_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
-import jetbrains.mps.build.distrib.behavior.DistribConfiguration_Behavior;
 import jetbrains.mps.build.distrib.behavior.ArtifactReferenceCommandLinePart_Behavior;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.build.distrib.behavior.AbstractCommandLinePart_Behavior;
 import jetbrains.mps.build.packaging.behavior.Layout_Behavior;
+import jetbrains.mps.build.packaging.behavior.AbstractProjectComponent_Behavior;
 import jetbrains.mps.build.packaging.behavior.IStringExpression_Behavior;
 import jetbrains.mps.build.distrib.behavior.UniversalConfig_Behavior;
 import jetbrains.mps.build.distrib.behavior.MacConfig_Behavior;
@@ -104,6 +105,10 @@ public class QueriesGenerated {
     return WindowsConfig_Behavior.call_getStartupFileExtension_1230208056584(_context.getNode());
   }
 
+  public static Object propertyMacro_GetPropertyValue_5198087850870256035(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return "${ant.file." + Configuration_Behavior.call_getBuildFileName_1230217425313(SLinkOperations.getTarget(_context.getNode(), "buildScriptConfiguration", false)) + DistribConfiguration_Behavior.getSuffix_1240229578757() + "}/../";
+  }
+
   public static Object propertyMacro_GetPropertyValue_4738159245302510147(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return SPropertyOperations.getString(Configuration_Behavior.call_getLayout_1213877261819(SLinkOperations.getTarget(_context.getNode(), "buildScriptConfiguration", false)), "name");
   }
@@ -176,6 +181,10 @@ public class QueriesGenerated {
     return DistribConfiguration_Behavior.call_getProjectFolderAntName_1230295546376(SystemSpecificConfig_Behavior.call_getDistribConfiguration_1230207861621(_context.getNode()));
   }
 
+  public static Object propertyMacro_GetPropertyValue_7119880619318859074(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return AbstractProjectComponent_Behavior.call_getPath_1213877333777(SLinkOperations.getTarget(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.build.distrib.structure.DistribConfiguration", false, false), "projectFolder", false)).getName();
+  }
+
   public static Object propertyMacro_GetPropertyValue_1230570281835(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return WindowsConfig_Behavior.call_getInstallerScriptName_1234792987224(_context.getNode()) + "." + WindowsConfig_Behavior.call_getInstallerNsiScriptExtension_1234793014843(_context.getNode());
   }
@@ -245,6 +254,10 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_1230565019437(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return DistribConfiguration_Behavior.call_getProjectFolderAntName_1230295546376(SystemSpecificConfig_Behavior.call_getDistribConfiguration_1230207861621(_context.getNode()));
+  }
+
+  public static Object propertyMacro_GetPropertyValue_7119880619318859118(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return AbstractProjectComponent_Behavior.call_getPath_1213877333777(SLinkOperations.getTarget(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.build.distrib.structure.DistribConfiguration", false, false), "projectFolder", false)).getName();
   }
 
   public static Object propertyMacro_GetPropertyValue_1004035210976680164(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -326,6 +339,10 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_1234520360607(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return MacConfig_Behavior.call_getStartupFileName_1234518093971(_context.getNode()) + "." + MacConfig_Behavior.call_getStartupFileExtension_1234518093983(_context.getNode());
+  }
+
+  public static Object propertyMacro_GetPropertyValue_4053804147820304213(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return AbstractProjectComponent_Behavior.call_getPath_1213877333777(SLinkOperations.getTarget(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.build.distrib.structure.DistribConfiguration", false, false), "projectFolder", false)).getName();
   }
 
   public static Object propertyMacro_GetPropertyValue_1234542031178(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -484,6 +501,10 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_1241440614574(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return DistribConfiguration_Behavior.call_getProjectFolderAntName_1230295546376(SystemSpecificConfig_Behavior.call_getDistribConfiguration_1230207861621(_context.getNode()));
+  }
+
+  public static Object propertyMacro_GetPropertyValue_7119880619318859032(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return AbstractProjectComponent_Behavior.call_getPath_1213877333777(SLinkOperations.getTarget(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.build.distrib.structure.DistribConfiguration", false, false), "projectFolder", false)).getName();
   }
 
   public static Object propertyMacro_GetPropertyValue_1004035210976680227(final IOperationContext operationContext, final PropertyMacroContext _context) {

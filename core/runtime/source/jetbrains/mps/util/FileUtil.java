@@ -16,6 +16,8 @@
 package jetbrains.mps.util;
 
 
+import org.jetbrains.annotations.NotNull;
+
 import java.io.*;
 import java.nio.charset.Charset;
 import java.util.Iterator;
@@ -498,5 +500,11 @@ public class FileUtil {
     PathResolutionException(String msg) {
       super(msg);
     }
+  }
+
+  @NotNull
+  public static String unquote(@NotNull String urlString) {
+    urlString = urlString.replace('/', File.separatorChar);
+    return URLUtil.unescapePercentSequences(urlString);
   }
 }

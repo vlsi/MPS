@@ -34,6 +34,7 @@ import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.xmlQuery.runtime.BreakParseSAXException;
 import jetbrains.mps.xmlQuery.runtime.XMLSAXHandler;
+import org.apache.commons.lang.StringEscapeUtils;
 import org.jdom.Document;
 import org.jdom.JDOMException;
 import org.jetbrains.annotations.NotNull;
@@ -140,7 +141,7 @@ public class ModelPersistence {
     parseAndHandleExceptions(source, new MyDescriptorHandler(result), "model descriptor");
   }
 
-  private static DescriptorLoadResult loadDescriptor(InputSource source) throws ModelReadException {
+  public static DescriptorLoadResult loadDescriptor(InputSource source) throws ModelReadException {
     DescriptorLoadResult result = new DescriptorLoadResult();
     loadDescriptor(result, source);
     return result;
@@ -416,6 +417,23 @@ public class ModelPersistence {
     } catch (IOException e) {
       throw new ModelReadException("Couldn't read " + what + ": " + e.getMessage(), e);
     }
+  }
+
+  public static class IndexEntry{
+    public String data;
+    public boolean caseSensitive;
+
+    public IndexEntry(String data, boolean caseSensitive) {
+      this.data = data;
+      this.caseSensitive = caseSensitive;
+    }
+  }
+  
+  public static Map<IndexEntry, Integer> index(char[] data) throws ModelReadException {
+    SModelHeader header = loadDescriptor(new InputSource(new CharArrayReader(data))).getHeader();
+    IModelPersistence mp = getModelPersistence(header);
+    assert mp != null;
+    return mp.index(data);
   }
 
   private static class MyDescriptorHandler extends DefaultHandler {

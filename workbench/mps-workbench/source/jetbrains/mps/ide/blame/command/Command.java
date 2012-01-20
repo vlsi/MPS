@@ -15,9 +15,9 @@
  */
 package jetbrains.mps.ide.blame.command;
 
+import com.intellij.openapi.application.ApplicationInfo;
 import jetbrains.mps.ide.blame.perform.Query;
 import jetbrains.mps.ide.blame.perform.Response;
-import jetbrains.mps.util.JDOMUtil;
 import org.apache.commons.httpclient.HttpClient;
 import org.apache.commons.httpclient.NameValuePair;
 import org.apache.commons.httpclient.methods.PostMethod;
@@ -25,15 +25,10 @@ import org.apache.commons.httpclient.methods.multipart.FilePart;
 import org.apache.commons.httpclient.methods.multipart.MultipartRequestEntity;
 import org.apache.commons.httpclient.methods.multipart.Part;
 import org.apache.commons.httpclient.methods.multipart.StringPart;
-import org.jdom.Document;
-import org.jdom.JDOMException;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
-import org.xml.sax.InputSource;
 
 import java.io.File;
 import java.io.IOException;
-import java.io.StringReader;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -74,7 +69,7 @@ public class Command {
   }
 
   @NotNull
-  public static Response postIssue(HttpClient c, String summary, String description, boolean hidden,  File... files) throws IOException {
+  public static Response postIssue(HttpClient c, String summary, String description, boolean hidden, File... files) throws IOException {
     PostMethod p = new PostMethod(YOUTRACK_BASE_URL + POST_ISSUE);
     p.addParameter(PROJECT_PARAM_NAME, PROJECT);
     p.addParameter(SUMMARY_PARAM_NAME, summary);
@@ -119,4 +114,11 @@ public class Command {
     }
   }
 
+  public static String getVersion() {
+    String full = ApplicationInfo.getInstance().getVersionName();
+    if (full.contains("__VERSION__")) return null; //sources version
+    int index = full.indexOf(PROJECT + " ");
+    assert index > 0 : "wrong version format";
+    return full.substring(index + PROJECT.length() + 1);
+  }
 }

@@ -68,6 +68,7 @@ public class InspectorEditorComponent extends EditorComponent {
     }
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
+        clearModelDisposedTrace();
         myNode = node;
         myNodePointer = myNode != null ? new SNodePointer(myNode) : null;
         myRoot = myNode == null ? null : myNode.getContainingRoot();

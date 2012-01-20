@@ -57,6 +57,10 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       this.myInferenceRules.add(inferenceRule);
     }
     {
+      InferenceRule_Runtime inferenceRule = new typeof_Variable_InferenceRule();
+      this.myInferenceRules.add(inferenceRule);
+    }
+    {
       AbstractDependentComputation_Runtime dependentComputation = new LetReferenceTypeComputation_DependentComputation();
       this.myDependentComputations.add(dependentComputation);
     }

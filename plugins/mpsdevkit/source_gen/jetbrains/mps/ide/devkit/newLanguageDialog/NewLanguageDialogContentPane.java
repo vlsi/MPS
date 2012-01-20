@@ -63,12 +63,12 @@ public class NewLanguageDialogContentPane extends JPanel {
     this.myThis = this;
     NewLanguageDialogContentPane component = this;
     component.setLayout(new GridLayout(6, 1));
-    component.add(this.createComponent_b0());
-    component.add(this.createComponent_c0());
-    component.add(this.createComponent_d0());
-    component.add(this.createComponent_e0());
-    component.add(this.createComponent_f0());
-    component.add(this.createComponent_g0());
+    component.add(this.createComponent_hneum8_b0());
+    component.add(this.createComponent_hneum8_c0());
+    component.add(this.createComponent_hneum8_d0());
+    component.add(this.createComponent_hneum8_e0());
+    component.add(this.createComponent_hneum8_f0());
+    component.add(this.createComponent_hneum8_g0());
     this.myEvents.initialize();
     myThis.setLanguageNamespace("");
     myThis.setLanguagePath("");
@@ -119,40 +119,40 @@ public class NewLanguageDialogContentPane extends JPanel {
     }
   }
 
-  private JLabel createComponent_b0() {
+  private JLabel createComponent_hneum8_b0() {
     JLabel component = new JLabel();
     this.myComponent_b0 = component;
     component.setText("Language Namespace:");
     return component;
   }
 
-  private JTextField createComponent_c0() {
+  private JTextField createComponent_hneum8_c0() {
     JTextField component = new JTextField();
     this.myName_c0 = component;
     return component;
   }
 
-  private JLabel createComponent_d0() {
+  private JLabel createComponent_hneum8_d0() {
     JLabel component = new JLabel();
     this.myComponent_d0 = component;
     component.setText("Language Path:");
     return component;
   }
 
-  private PathField createComponent_e0() {
+  private PathField createComponent_hneum8_e0() {
     PathField component = new PathField();
     this.myPath_e0 = component;
     return component;
   }
 
-  private JCheckBox createComponent_f0() {
+  private JCheckBox createComponent_hneum8_f0() {
     JCheckBox component = new JCheckBox();
     this.myNeedRuntime_f0 = component;
     component.setText("Create Runtime Solution");
     return component;
   }
 
-  private JCheckBox createComponent_g0() {
+  private JCheckBox createComponent_hneum8_g0() {
     JCheckBox component = new JCheckBox();
     this.myNeedSandbox_g0 = component;
     component.setText("Create Sandbox Solution");
@@ -274,21 +274,21 @@ public class NewLanguageDialogContentPane extends JPanel {
         ModuleReference devkitRef = LanguageDesign_DevKit.MODULE_REFERENCE;
         d.getUsedDevkits().add(devkitRef);
       }
-    }));
+    }, true));
     return myThis.getResult();
   }
 
   /*package*/ Solution createRuntimeSolution() {
     String basePath = myThis.getLanguagePath() + File.separator + "runtime";
     String namespace = myThis.getLanguageNamespace() + ".runtime";
-    Solution solution = NewModuleUtil.createSolution(namespace, basePath, myThis.getProject());
+    Solution solution = NewModuleUtil.createSolution(namespace, basePath, myThis.getProject(), true);
     return solution;
   }
 
   /*package*/ Solution createSandboxSolution() {
     String basePath = myThis.getLanguagePath() + File.separator + "sandbox";
     String namespace = myThis.getLanguageNamespace() + ".sandbox";
-    Solution solution = NewModuleUtil.createSolution(namespace, basePath, myThis.getProject());
+    Solution solution = NewModuleUtil.createSolution(namespace, basePath, myThis.getProject(), true);
     return solution;
   }
 

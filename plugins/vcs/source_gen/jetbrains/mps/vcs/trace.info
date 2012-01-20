@@ -478,16 +478,16 @@
   <root nodeId="7184641355071650417">
     <nodeInfo nodeId="7184641355071650417" fileName="MergeBackupUtil.java" startLine="34" startPosition="30" endLine="35" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="log" />
     <nodeInfo nodeId="7184641355071650423" fileName="MergeBackupUtil.java" startLine="37" startPosition="28" endLine="38" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="7184641355071650437" fileName="MergeBackupUtil.java" startLine="41" startPosition="129" endLine="42" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7184641355071650457" fileName="MergeBackupUtil.java" startLine="45" startPosition="92" endLine="46" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7184641355071650461" fileName="MergeBackupUtil.java" startLine="46" startPosition="39" endLine="47" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7184641355071650471" fileName="MergeBackupUtil.java" startLine="47" startPosition="101" endLine="48" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7184641355071650481" fileName="MergeBackupUtil.java" startLine="48" startPosition="100" endLine="49" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7184641355071650491" fileName="MergeBackupUtil.java" startLine="49" startPosition="112" endLine="50" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7184641355071650437" fileName="MergeBackupUtil.java" startLine="41" startPosition="130" endLine="42" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7184641355071650457" fileName="MergeBackupUtil.java" startLine="45" startPosition="92" endLine="46" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7184641355071650461" fileName="MergeBackupUtil.java" startLine="46" startPosition="42" endLine="47" endPosition="138" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7184641355071650471" fileName="MergeBackupUtil.java" startLine="47" startPosition="138" endLine="48" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7184641355071650481" fileName="MergeBackupUtil.java" startLine="48" startPosition="103" endLine="49" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7184641355071650491" fileName="MergeBackupUtil.java" startLine="49" startPosition="115" endLine="50" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7184641355071650498" fileName="MergeBackupUtil.java" startLine="50" startPosition="77" endLine="51" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7184641355071650504" fileName="MergeBackupUtil.java" startLine="51" startPosition="37" endLine="52" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7184641355071650508" fileName="MergeBackupUtil.java" startLine="52" startPosition="31" endLine="53" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7184641355071650511" fileName="MergeBackupUtil.java" startLine="53" startPosition="25" endLine="54" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7184641355071650504" fileName="MergeBackupUtil.java" startLine="51" startPosition="37" endLine="52" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7184641355071650508" fileName="MergeBackupUtil.java" startLine="52" startPosition="34" endLine="53" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7184641355071650511" fileName="MergeBackupUtil.java" startLine="53" startPosition="28" endLine="54" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="43467109180403720" fileName="MergeBackupUtil.java" startLine="57" startPosition="105" endLine="58" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="43467109180403729" fileName="MergeBackupUtil.java" startLine="59" startPosition="30" endLine="60" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="43467109180403628" fileName="MergeBackupUtil.java" startLine="61" startPosition="5" endLine="62" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -587,7 +587,7 @@
     <nodeInfo nodeId="7184641355071650625" fileName="MergeBackupUtil.java" startLine="97" startPosition="0" endLine="124" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="packMergeResult#(Ljava/io/File;Ljava/lang/String;Ljava/lang/String;)V" />
     <nodeInfo nodeId="2445003365367283446" fileName="MergeBackupUtil.java" startLine="128" startPosition="0" endLine="155" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="loadZippedModelsAsText#(Ljava/io/File;[Ljetbrains/mps/vcs/ModelVersion;)[Ljava/lang/String;" />
     <scopeInfo nodeId="7184641355071650422" fileName="MergeBackupUtil.java" startLine="37" startPosition="28" endLine="38" endPosition="38" />
-    <scopeInfo nodeId="7184641355071650436" fileName="MergeBackupUtil.java" startLine="41" startPosition="129" endLine="42" endPosition="115" />
+    <scopeInfo nodeId="7184641355071650436" fileName="MergeBackupUtil.java" startLine="41" startPosition="130" endLine="42" endPosition="115" />
     <scopeInfo nodeId="43467109180403728" fileName="MergeBackupUtil.java" startLine="59" startPosition="30" endLine="60" endPosition="106" />
     <scopeInfo nodeId="43467109180274669" fileName="MergeBackupUtil.java" startLine="80" startPosition="32" endLine="81" endPosition="57" />
     <scopeInfo nodeId="43467109180403756" fileName="MergeBackupUtil.java" startLine="94" startPosition="60" endLine="95" endPosition="125" />
@@ -661,7 +661,7 @@
       <varInfo nodeId="43467109180403908" varName="checkedDotOperand" />
     </scopeInfo>
     <scopeInfo nodeId="7184641355071650456" fileName="MergeBackupUtil.java" startLine="45" startPosition="92" endLine="54" endPosition="19">
-      <varInfo nodeId="7184641355071650458" varName="tmp" />
+      <varInfo nodeId="7184641355071650458" varName="tmpDir" />
       <varInfo nodeId="7184641355071650492" varName="zipfile" />
     </scopeInfo>
     <scopeInfo nodeId="1619763311840993437" fileName="MergeBackupUtil.java" startLine="157" startPosition="121" endLine="166" endPosition="18">

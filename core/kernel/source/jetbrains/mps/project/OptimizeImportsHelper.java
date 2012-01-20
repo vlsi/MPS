@@ -137,7 +137,7 @@ public class OptimizeImportsHelper {
   private Result collectModelDependencies(SModelDescriptor modelDescriptor) {
     Result result = new Result();
 
-    for (ModuleReference ref:modelDescriptor.getSModel().engagedOnGenerationLanguages()){
+    for (ModuleReference ref : modelDescriptor.getSModel().engagedOnGenerationLanguages()) {
       result.myUsedLanguages.add(MPSModuleRepository.getInstance().getLanguage(ref));
     }
     for (SNode node : modelDescriptor.getSModel().nodes()) {
@@ -157,7 +157,7 @@ public class OptimizeImportsHelper {
   private String optimizeModuleImports(ModuleDescriptor descriptor, Result result) {
     List<Dependency> unusedDeps = new ArrayList<Dependency>();
     for (Dependency d : descriptor.getDependencies()) {
-      Dependency dep = getUnusedDependency(result, d);
+      Dependency dep = getUnusedDependency(result, d, descriptor.getModuleReference());
       if (dep != null) unusedDeps.add(dep);
     }
 
@@ -176,8 +176,9 @@ public class OptimizeImportsHelper {
     return removeFromImports(descriptor, unusedLanguages, unusedDevkits, unusedDeps);
   }
 
-  private Dependency getUnusedDependency(Result result, Dependency dep) {
+  private Dependency getUnusedDependency(Result result, Dependency dep, ModuleReference current) {
     if (dep.isReexport()) return null;
+    if (dep.getModuleRef().equals(current)) return dep;
 
     IModule module = MPSModuleRepository.getInstance().getModule(dep.getModuleRef());
     if (module == null) return dep;

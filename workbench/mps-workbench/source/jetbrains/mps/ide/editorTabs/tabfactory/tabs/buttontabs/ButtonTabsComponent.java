@@ -21,6 +21,7 @@ import jetbrains.mps.ide.editorTabs.EditorTabComparator;
 import jetbrains.mps.ide.editorTabs.EditorTabDescriptor;
 import jetbrains.mps.ide.editorTabs.tabfactory.NodeChangeCallback;
 import jetbrains.mps.ide.editorTabs.tabfactory.tabs.BaseTabsComponent;
+import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.workbench.action.ActionUtils;
@@ -32,15 +33,15 @@ import java.util.*;
 
 public class ButtonTabsComponent extends BaseTabsComponent {
   private List<ButtonEditorTab> myRealTabs = new ArrayList<ButtonEditorTab>();
-  private JComponent myToolbar = null;
+  private ActionToolbar myToolbar = null;
 
-  public ButtonTabsComponent(SNodePointer baseNode, Set<EditorTabDescriptor> possibleTabs, JComponent editor, NodeChangeCallback callback, boolean showGrayed) {
-    super(baseNode, possibleTabs, editor, callback, showGrayed, null);
+  public ButtonTabsComponent(SNodePointer baseNode, Set<EditorTabDescriptor> possibleTabs, JComponent editor, NodeChangeCallback callback, boolean showGrayed, IOperationContext operationContext) {
+    super(baseNode, possibleTabs, editor, callback, showGrayed, null, operationContext);
     updateTabs();
   }
 
   public Component getComponentForTabIndex(int index) {
-    return myToolbar.getComponent(index);
+    return myToolbar.getComponent().getComponent(index);
   }
 
   public EditorTabDescriptor getCurrentTabAspect() {
@@ -53,7 +54,7 @@ public class ButtonTabsComponent extends BaseTabsComponent {
       if (nodes.contains(currentAspect)) return d;
     }
 
-    throw new IllegalArgumentException("Node is not in any tab: " + currentAspect);
+    return null;
   }
 
   protected void updateTabs() {
@@ -70,21 +71,21 @@ public class ButtonTabsComponent extends BaseTabsComponent {
           public void changeNode(SNode newNode) {
             onNodeChange(newNode);
           }
-        }, myRealTabs.size(), tab, myBaseNode));
+        }, myRealTabs.size(), tab, myBaseNode, getColorProvider(), myEditor));
       }
     }
 
     DefaultActionGroup group = new DefaultActionGroup();
     for (ButtonEditorTab tab : myRealTabs) {
-      group.add(tab.getAction(myEditor));
+      group.add(tab.getSelectTabAction());
     }
     if (myToolbar != null) {
-      getComponent().remove(myToolbar);
+      getComponent().remove(myToolbar.getComponent());
     }
     ActionToolbar actionToolbar = ActionManager.getInstance().createActionToolbar(ActionPlaces.UNKNOWN, group, true);
     actionToolbar.setLayoutPolicy(ActionToolbar.WRAP_LAYOUT_POLICY);
-    myToolbar = actionToolbar.getComponent();
-    getComponent().add(myToolbar, BorderLayout.CENTER);
+    myToolbar = actionToolbar;
+    getComponent().add(myToolbar.getComponent(), BorderLayout.CENTER);
   }
 
   public void nextTab() {
@@ -132,7 +133,7 @@ public class ButtonTabsComponent extends BaseTabsComponent {
     final DataContext context = DataManager.getInstance().getDataContext(getComponent());
     AnActionEvent event = ActionUtils.createEvent(ActionPlaces.UNKNOWN, context);
 
-    myRealTabs.get(index).getAction(myEditor).actionPerformed(event);
+    myRealTabs.get(index).getSelectTabAction().actionPerformed(event);
   }
 
   protected boolean checkNodeRemoved(SNodePointer node) {
@@ -144,5 +145,13 @@ public class ButtonTabsComponent extends BaseTabsComponent {
     }
 
     return false;
+  }
+
+  @Override
+  protected void updateTabColors() {
+    for (ButtonEditorTab realTab : myRealTabs) {
+      realTab.updateIcon();
+    }
+    myToolbar.updateActionsImmediately();
   }
 }

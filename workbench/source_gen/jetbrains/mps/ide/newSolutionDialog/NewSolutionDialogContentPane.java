@@ -47,10 +47,10 @@ public class NewSolutionDialogContentPane extends JPanel {
     this.myThis = this;
     NewSolutionDialogContentPane component = this;
     component.setLayout(new GridLayout(4, 1));
-    component.add(this.createComponent_b0());
-    component.add(this.createComponent_c0());
-    component.add(this.createComponent_d0());
-    component.add(this.createComponent_e0());
+    component.add(this.createComponent_702hz4_b0());
+    component.add(this.createComponent_702hz4_c0());
+    component.add(this.createComponent_702hz4_d0());
+    component.add(this.createComponent_702hz4_e0());
     this.myEvents.initialize();
     myThis.setSolutionPath("");
     myThis.setSolutionName("NewSolution");
@@ -101,27 +101,27 @@ public class NewSolutionDialogContentPane extends JPanel {
     }
   }
 
-  private JLabel createComponent_b0() {
+  private JLabel createComponent_702hz4_b0() {
     JLabel component = new JLabel();
     this.myComponent_b0 = component;
     component.setText("Name:");
     return component;
   }
 
-  private JTextField createComponent_c0() {
+  private JTextField createComponent_702hz4_c0() {
     JTextField component = new JTextField();
     this.myName_c0 = component;
     return component;
   }
 
-  private JLabel createComponent_d0() {
+  private JLabel createComponent_702hz4_d0() {
     JLabel component = new JLabel();
     this.myComponent_d0 = component;
     component.setText("Solution Path:");
     return component;
   }
 
-  private PathField createComponent_e0() {
+  private PathField createComponent_702hz4_e0() {
     PathField component = new PathField();
     this.myPath_e0 = component;
     return component;
@@ -189,7 +189,7 @@ public class NewSolutionDialogContentPane extends JPanel {
     myThis.getDialog().dispose();
     ModelAccess.instance().runWriteActionWithProgressSynchronously(new ModelCommandExecutor.RunnableWithProgress() {
       public void run(ProgressMonitor monitor) {
-        myThis.setResult(NewModuleUtil.createSolution(myThis.getSolutionName(), myThis.getSolutionPath(), myThis.getProject()));
+        myThis.setResult(NewModuleUtil.createSolution(myThis.getSolutionName(), myThis.getSolutionPath(), myThis.getProject(), true));
       }
     }, "Creating", false, myThis.getProject());
   }

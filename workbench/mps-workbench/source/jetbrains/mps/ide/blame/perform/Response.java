@@ -58,6 +58,10 @@ public class Response {
   @Nullable
   public Element getResponseXml() {
     String responseString = getResponseString();
+    return responseAsElement(responseString);
+  }
+
+  public static Element responseAsElement(String responseString) {
     if (responseString == null || responseString.isEmpty()) {
       return null;
     }

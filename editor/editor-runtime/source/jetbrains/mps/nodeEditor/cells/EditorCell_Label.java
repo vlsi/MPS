@@ -830,7 +830,7 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
     public void execute(EditorContext context) {
       EditorCell_Label cell = (EditorCell_Label) context.getSelectedCell();
       final String s = TextPasteUtil.getStringFromClipboard();
-      cell.insertText(s);
+      cell.insertText(NameUtil.escapeString(s));
       context.getNodeEditorComponent().resetLastCaretX();
       cell.ensureCaretVisible();
     }

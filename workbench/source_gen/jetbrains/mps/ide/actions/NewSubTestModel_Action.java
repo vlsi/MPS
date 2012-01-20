@@ -4,6 +4,7 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
+import jetbrains.mps.util.IconUtil;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import com.intellij.openapi.actionSystem.AnActionEvent;
@@ -26,12 +27,9 @@ import jetbrains.mps.ide.projectPane.ProjectPane;
 import com.intellij.openapi.project.Project;
 import java.util.List;
 import jetbrains.mps.ide.projectPane.SortUtil;
-import javax.swing.ImageIcon;
-import com.intellij.openapi.util.io.StreamUtil;
-import java.io.IOException;
 
 public class NewSubTestModel_Action extends BaseAction {
-  private static final Icon ICON = getIcon();
+  private static final Icon ICON = IconUtil.getIcon("testModel.png");
   protected static Log log = LogFactory.getLog(NewSubTestModel_Action.class);
 
   public NewSubTestModel_Action() {
@@ -135,16 +133,5 @@ public class NewSubTestModel_Action extends BaseAction {
       builder.append(testModelCount + "");
     }
     return builder.toString();
-  }
-
-  private static Icon getIcon() {
-    try {
-      return new ImageIcon(StreamUtil.loadFromStream(NewSubTestModel_Action.class.getResourceAsStream("testModel.png")));
-    } catch (IOException e) {
-      if (log.isWarnEnabled()) {
-        log.warn("Couldn't load icon for NewSubTestModel", e);
-      }
-      return null;
-    }
   }
 }

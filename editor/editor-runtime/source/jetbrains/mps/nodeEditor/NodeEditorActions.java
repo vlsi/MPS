@@ -565,7 +565,7 @@ public class NodeEditorActions {
 
     public void execute(EditorContext context) {
       EditorCell selection = context.getSelectedCell();
-      context.getNodeEditorComponent().activateNodeSubstituteChooser(selection, false);
+      context.getNodeEditorComponent().activateNodeSubstituteChooser(selection, ((selection instanceof EditorCell_Label) && ((EditorCell_Label) selection).isEverythingSelected()), false);
     }
   }
 
@@ -577,7 +577,7 @@ public class NodeEditorActions {
 
     public void execute(EditorContext context) {
       EditorCell selection = context.getSelectedCell();
-      context.getNodeEditorComponent().activateNodeSubstituteChooser(selection, false, true);
+      context.getNodeEditorComponent().activateNodeSubstituteChooser(selection, ((selection instanceof EditorCell_Label) && ((EditorCell_Label) selection).isEverythingSelected()), true);
     }
   }
 

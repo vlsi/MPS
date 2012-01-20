@@ -52,10 +52,10 @@ public class NewDevKitDialogContentPane extends JPanel {
     this.myThis = this;
     NewDevKitDialogContentPane component = this;
     component.setLayout(new GridLayout(4, 1));
-    component.add(this.createComponent_b0());
-    component.add(this.createComponent_c0());
-    component.add(this.createComponent_d0());
-    component.add(this.createComponent_e0());
+    component.add(this.createComponent_t9qnp8_b0());
+    component.add(this.createComponent_t9qnp8_c0());
+    component.add(this.createComponent_t9qnp8_d0());
+    component.add(this.createComponent_t9qnp8_e0());
     this.myEvents.initialize();
     myThis.setDevkitName("");
     myThis.setDevkitDir("");
@@ -106,27 +106,27 @@ public class NewDevKitDialogContentPane extends JPanel {
     }
   }
 
-  private JLabel createComponent_b0() {
+  private JLabel createComponent_t9qnp8_b0() {
     JLabel component = new JLabel();
     this.myComponent_b0 = component;
     component.setText("Devkit Name:");
     return component;
   }
 
-  private JTextField createComponent_c0() {
+  private JTextField createComponent_t9qnp8_c0() {
     JTextField component = new JTextField();
     this.myName_c0 = component;
     return component;
   }
 
-  private JLabel createComponent_d0() {
+  private JLabel createComponent_t9qnp8_d0() {
     JLabel component = new JLabel();
     this.myComponent_d0 = component;
     component.setText("Devkit Path:");
     return component;
   }
 
-  private PathField createComponent_e0() {
+  private PathField createComponent_t9qnp8_e0() {
     PathField component = new PathField();
     this.myPath_e0 = component;
     return component;
@@ -202,7 +202,7 @@ public class NewDevKitDialogContentPane extends JPanel {
         }, new _FunctionTypes._void_P1_E0<ModuleDescriptor>() {
           public void invoke(ModuleDescriptor d) {
           }
-        }));
+        }, true));
       }
     }, "Creating", false, ideaProject.getComponent(MPSProject.class));
   }

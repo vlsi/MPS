@@ -51,7 +51,7 @@ public class PropertiesTreeNode extends MPSTreeNodeEx {
     List<String> props = new ArrayList<String>(myNode.getPropertyNames());
 
     for (final String p : props) {
-      add(new PropertyTreeNode(myNode, p));
+      add(new PropertyTreeNode(getOperationContext(), myNode, p));
     }
 
     myInitialized = true;

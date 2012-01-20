@@ -49,7 +49,7 @@ import java.util.List;
  * Time: 5:04 PM
  * To change this template use File | Settings | File Templates.
  */
-public class EditorTests extends AbstractMPSFixtureTestCase {
+public class EditorTests extends DataMPSFixtureTestCase {
 
     private List<BaseTransformationTest> tests = new ArrayList<BaseTransformationTest>();
 
@@ -62,6 +62,12 @@ public class EditorTests extends AbstractMPSFixtureTestCase {
     protected void invokeTestRunnable(Runnable runnable) throws Exception {
         // superclass's method always starts this in the EDT
         runnable.run();
+    }
+
+    @Override
+    protected void prepareTestData(MPSFacetConfiguration configuration) throws  Exception {
+        IFile test = copyResource("models", "test.mps", "/tests/editorTests/models/test.mps");
+        configuration.getState().setModelRootPaths(new String[]{test.getParent().getPath()});
     }
 
     @Override
@@ -146,47 +152,6 @@ public class EditorTests extends AbstractMPSFixtureTestCase {
         }
     }
 
-
-    @Override
-    protected void preConfigureFacet(final MPSFacetConfiguration configuration) {
-        super.preConfigureFacet(configuration);
-
-        ApplicationManager.getApplication().runWriteAction(new Runnable() {
-            @Override
-            public void run() {
-                IFile modelsDir = FileSystem.getInstance().getFileByPath(myModule.getModuleFilePath()).getDescendant("models");
-                modelsDir.mkdirs();
-                IFile tests = modelsDir.getDescendant("test.mps");
-                IFile modelFile = FileSystem.getInstance().getFileByPath(System.getProperty("idea.plugins.path") + "/tests/editorTests/models/test.mps");
-                if (modelFile.exists()) {
-                    IFileUtils.copyFileContent(modelFile, tests);
-                }
-                else {
-                    InputStream is = null;
-                    OutputStream os = null;
-                    try {
-                        is = new BufferedInputStream(EditorTests.class.getResourceAsStream("test.mps"));
-                        os = new BufferedOutputStream(tests.openOutputStream());
-                        int c;
-                        while ((c = is.read()) >= 0) {
-                            os.write(c);
-                        }
-                    }
-                    catch (IOException e) { }
-                    finally {
-                        if (is != null) try{
-                                            is.close();
-                                        } catch (IOException ignore) {}
-                        if (os != null) try{
-                                            os.close();
-                                        } catch (IOException ignore) {}
-                    }
-                }
-
-                configuration.getState().setModelRootPaths(new String[]{modelsDir.getPath()});
-            }
-        });
-    }
 
     public void test_AllEditorTests() throws Throwable {
         for(BaseTransformationTest btt: tests) {

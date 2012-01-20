@@ -10,6 +10,9 @@ import junit.framework.Assert;
 import java.util.Arrays;
 
 public class ListOperations_Test extends TestCase {
+  public ListOperations_Test() {
+  }
+
   public void test_1() {
     List<Integer> list = ListSequence.fromListAndArray(new ArrayList<Integer>(), 1, 2, 3, 4, 5);
     Integer at_2 = ListSequence.fromList(list).getElement(2);

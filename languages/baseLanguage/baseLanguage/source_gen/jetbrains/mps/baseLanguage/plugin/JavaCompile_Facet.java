@@ -102,6 +102,10 @@ public class JavaCompile_Facet extends IFacet.Stub {
           Iterable<IResource> _output_wf1ya0_a0a = null;
           switch (0) {
             case 0:
+              if (Boolean.TRUE.equals(pa.global().properties(Target_compile.this.getName(), JavaCompile_Facet.Target_compile.Parameters.class).skipCompilation())) {
+                _output_wf1ya0_a0a = Sequence.fromIterable(_output_wf1ya0_a0a).concat(Sequence.fromIterable(input));
+                return new IResult.SUCCESS(_output_wf1ya0_a0a);
+              }
               pa.global().properties(Target_compile.this.getName(), JavaCompile_Facet.Target_compile.Parameters.class).compiledAnything(false);
               int work = Sequence.fromIterable(input).foldLeft(0, new ILeftCombinator<IResource, Integer>() {
                 public Integer combine(Integer s, IResource it) {
@@ -211,30 +215,38 @@ public class JavaCompile_Facet extends IFacet.Stub {
     public <T> T createParameters(Class<T> cls, T copyFrom) {
       T t = createParameters(cls);
       if (t != null) {
-        ((Tuples._1) t).assign((Tuples._1) copyFrom);
+        ((Tuples._2) t).assign((Tuples._2) copyFrom);
       }
       return t;
     }
 
-    public static class Parameters extends MultiTuple._1<Boolean> {
+    public static class Parameters extends MultiTuple._2<Boolean, Boolean> {
       public Parameters() {
         super();
       }
 
-      public Parameters(Boolean compiledAnything) {
-        super(compiledAnything);
+      public Parameters(Boolean compiledAnything, Boolean skipCompilation) {
+        super(compiledAnything, skipCompilation);
       }
 
       public Boolean compiledAnything(Boolean value) {
         return super._0(value);
       }
 
+      public Boolean skipCompilation(Boolean value) {
+        return super._1(value);
+      }
+
       public Boolean compiledAnything() {
         return super._0();
       }
 
+      public Boolean skipCompilation() {
+        return super._1();
+      }
+
       @SuppressWarnings(value = "unchecked")
-      public JavaCompile_Facet.Target_compile.Parameters assignFrom(Tuples._1<Boolean> from) {
+      public JavaCompile_Facet.Target_compile.Parameters assignFrom(Tuples._2<Boolean, Boolean> from) {
         return (JavaCompile_Facet.Target_compile.Parameters) super.assign(from);
       }
     }
@@ -572,6 +584,7 @@ public class JavaCompile_Facet extends IFacet.Stub {
         if (properties.hasProperties(name)) {
           JavaCompile_Facet.Target_compile.Parameters props = properties.properties(name, JavaCompile_Facet.Target_compile.Parameters.class);
           MapSequence.fromMap(store).put("jetbrains.mps.baseLanguage.JavaCompile.compile.compiledAnything", String.valueOf(props.compiledAnything()));
+          MapSequence.fromMap(store).put("jetbrains.mps.baseLanguage.JavaCompile.compile.skipCompilation", String.valueOf(props.skipCompilation()));
         }
       }
       {
@@ -598,6 +611,9 @@ public class JavaCompile_Facet extends IFacet.Stub {
           JavaCompile_Facet.Target_compile.Parameters props = properties.properties(name, JavaCompile_Facet.Target_compile.Parameters.class);
           if (MapSequence.fromMap(store).containsKey("jetbrains.mps.baseLanguage.JavaCompile.compile.compiledAnything")) {
             props.compiledAnything(Boolean.valueOf(MapSequence.fromMap(store).get("jetbrains.mps.baseLanguage.JavaCompile.compile.compiledAnything")));
+          }
+          if (MapSequence.fromMap(store).containsKey("jetbrains.mps.baseLanguage.JavaCompile.compile.skipCompilation")) {
+            props.skipCompilation(Boolean.valueOf(MapSequence.fromMap(store).get("jetbrains.mps.baseLanguage.JavaCompile.compile.skipCompilation")));
           }
         }
         {

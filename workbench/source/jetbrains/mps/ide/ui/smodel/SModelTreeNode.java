@@ -135,8 +135,10 @@ public class SModelTreeNode extends MPSTreeNodeEx {
         pack += aPackage;
 
         if (!myPackageNodes.containsKey(pack)) {
-          current = new PackageNode(this, aPackage, current);
+          PackageNode parent = current;
+          current = new PackageNode(this, aPackage, parent);
           myPackageNodes.put(pack, current);
+          current.registerInModelNode(this, parent);
         }
 
         current = myPackageNodes.get(pack);
