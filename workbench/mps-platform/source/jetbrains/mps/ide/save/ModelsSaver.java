@@ -43,10 +43,10 @@ public class ModelsSaver implements ApplicationComponent {
     myMessageBusConnection = ApplicationManager.getApplication().getMessageBus().connect();
     myMessageBusConnection.subscribe(AppTopics.FILE_DOCUMENT_SYNC, new FileDocumentManagerAdapter() {
       public void beforeAllDocumentsSaving() {
+        if (MPSCore.getInstance().isTestMode()) return;
         ThreadUtils.assertEDT();
         ModelAccess.instance().runWriteAction(new Runnable() {
           public void run() {
-            if (MPSCore.getInstance().isTestMode()) return;
             SModelRepository.getInstance().saveAll();
           }
         });

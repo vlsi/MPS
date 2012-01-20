@@ -216,14 +216,9 @@ public class StandaloneMPSProject extends MPSProject implements PersistentStateC
   public String getFolderFor(IModule module) {
     IFile file = module.getDescriptorFile();
     assert file != null;
-    String canonicalPath;
-    try {
-      canonicalPath = new File(file.getPath()).getCanonicalPath();
-    } catch (IOException e) {
-      return null;
-    }
+    String path = file.getPath();
     for (Path sp : getAllModulePaths()) {
-      if (sp.isSamePath(canonicalPath)) {
+      if (FileSystem.getInstance().getFileByPath(sp.getPath()).getPath().equals(path)) {
         return sp.getMPSFolder();
       }
     }
@@ -233,9 +228,9 @@ public class StandaloneMPSProject extends MPSProject implements PersistentStateC
   public void setFolderFor(IModule module, String newFolder) {
     IFile file = module.getDescriptorFile();
     assert file != null;
-    Path path = new Path(file.getPath());
+    String path = file.getPath();
     for (Path sp : getAllModulePaths()) {
-      if (sp.isSamePath(path)) {
+      if (FileSystem.getInstance().getFileByPath(sp.getPath()).getPath().equals(path)) {
         sp.setMPSFolder(newFolder);
         return;
       }
@@ -268,6 +263,4 @@ public class StandaloneMPSProject extends MPSProject implements PersistentStateC
       }
     }
   }
-
-
 }

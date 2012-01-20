@@ -4,7 +4,6 @@ package jetbrains.mps.build.ant.make;
 
 import jetbrains.mps.build.ant.MpsWorker;
 import jetbrains.mps.build.ant.WhatToDo;
-import org.apache.tools.ant.ProjectComponent;
 import jetbrains.mps.build.ant.Environment;
 import jetbrains.mps.project.Project;
 import java.util.Set;
@@ -21,10 +20,6 @@ import jetbrains.mps.progress.EmptyProgressMonitor;
 import java.io.File;
 
 public class MakeWorker extends MpsWorker {
-  public MakeWorker(WhatToDo whatToDo, ProjectComponent component) {
-    super(whatToDo, component, new MakeEnvironment());
-  }
-
   public MakeWorker(WhatToDo whatToDo, MpsWorker.AntLogger logger) {
     super(whatToDo, logger, new MakeEnvironment());
   }

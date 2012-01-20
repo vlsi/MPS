@@ -49,6 +49,7 @@ import org.junit.runner.RunWith;
   "jetbrains.mps.vcs.diff.MergeReferencesTest",
   "jetbrains.mps.vcs.diff.MergeSymmetricChangesTest",
   "jetbrains.mps.vfs.VfsTest",
+  "jetbrains.mps.ide.blame.command.AffectedVersionTest",
   "jetbrains.mps.workbench.ProjectCreationTest",
   "jetbrains.mps.workbench.dialogs.project.components.parts.lists.SortedListTest"})
 @RunWith(WatchingSuite.class)

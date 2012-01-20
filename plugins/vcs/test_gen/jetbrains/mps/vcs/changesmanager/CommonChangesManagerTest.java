@@ -12,6 +12,7 @@ import java.util.Map;
 import com.intellij.openapi.vcs.FileStatus;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
+import com.intellij.openapi.vcs.FileStatusManager;
 import org.junit.Before;
 import jetbrains.mps.ide.project.ProjectHelper;
 import com.intellij.openapi.vcs.impl.projectlevelman.AllVcses;
@@ -25,6 +26,12 @@ import java.lang.reflect.InvocationTargetException;
 import javax.swing.SwingUtilities;
 import jetbrains.mps.nodeEditor.InspectorTool;
 import org.junit.Assert;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
+import com.intellij.openapi.vcs.FileStatusListener;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
+import com.intellij.openapi.vcs.changes.VcsDirtyScopeManager;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelFqName;
@@ -43,10 +50,8 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import com.intellij.openapi.vcs.changes.Change;
-import com.intellij.openapi.vcs.changes.VcsDirtyScopeManager;
-import com.intellij.openapi.vcs.FileStatusManager;
-import com.intellij.openapi.vcs.VcsException;
 import jetbrains.mps.vcs.concrete.GitUtils;
+import com.intellij.openapi.vcs.VcsException;
 import jetbrains.mps.smodel.persistence.def.ModelReadException;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.smodel.SModelAdapter;
@@ -61,13 +66,11 @@ import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.vcs.diff.ChangeSetBuilder;
-import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.smodel.SNodePointer;
 import com.intellij.openapi.fileEditor.FileEditor;
 import com.intellij.openapi.command.undo.UndoManager;
 import org.junit.Test;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import java.util.Random;
 import jetbrains.mps.vcs.diff.changes.NodeCopier;
 import jetbrains.mps.vcs.diff.changes.NodeGroupChange;
@@ -103,6 +106,7 @@ public class CommonChangesManagerTest {
   private VirtualFile myUtilVirtualFile;
   private Runnable myAfterReloadTask;
   private Map<String, FileStatus> myExpectedFileStatuses = MapSequence.fromMap(new HashMap<String, FileStatus>());
+  private FileStatusManager myFileStatusManager;
 
   public CommonChangesManagerTest() {
   }
@@ -122,6 +126,7 @@ public class CommonChangesManagerTest {
     myUtilDiff = getCurrentDifference("util");
 
     myChangeListManager = ChangeListManagerImpl.getInstanceImpl(myIdeaProject);
+    myFileStatusManager = FileStatusManager.getInstance(myIdeaProject);
 
     setAutoaddPolicy(VcsShowConfirmationOption.Value.DO_NOTHING_SILENTLY);
 
@@ -157,8 +162,10 @@ public class CommonChangesManagerTest {
   }
 
   private void waitForSomething(Runnable waitScheduling) {
-    myWaitCompleted = false;
-    waitScheduling.run();
+    synchronized (myWaitLock) {
+      myWaitCompleted = false;
+      waitScheduling.run();
+    }
     while (!(myWaitCompleted)) {
       synchronized (myWaitLock) {
         try {
@@ -175,6 +182,40 @@ public class CommonChangesManagerTest {
       myWaitCompleted = true;
       myWaitLock.notify();
     }
+  }
+
+  private void doSomethingAndWaitForFileStatusChange(@NotNull final Runnable task, @NotNull final VirtualFile file, @Nullable final FileStatus expectedFileStatus) {
+    waitForSomething(new Runnable() {
+      public void run() {
+        final FileStatus statusBefore = myFileStatusManager.getStatus(file);
+        final Wrappers._T<FileStatusListener> listener = new Wrappers._T<FileStatusListener>();
+        final _FunctionTypes._void_P0_E0 stopIfNeeded = new _FunctionTypes._void_P0_E0() {
+          public void invoke() {
+            if ((expectedFileStatus == null ?
+              statusBefore != myFileStatusManager.getStatus(file) :
+              expectedFileStatus == myFileStatusManager.getStatus(file)
+            )) {
+              myFileStatusManager.removeFileStatusListener(listener.value);
+              waitCompleted();
+            }
+          }
+        };
+        listener.value = new FileStatusListener() {
+          public void fileStatusesChanged() {
+            stopIfNeeded.invoke();
+          }
+
+          public void fileStatusChanged(@NotNull VirtualFile f) {
+            stopIfNeeded.invoke();
+          }
+        };
+        myFileStatusManager.addFileStatusListener(listener.value);
+        task.run();
+        VcsDirtyScopeManager.getInstance(myIdeaProject).fileDirty(file);
+        myChangeListManager.scheduleUpdate();
+        stopIfNeeded.invoke();
+      }
+    });
   }
 
   private void waitForChangesManager() {
@@ -203,8 +244,8 @@ public class CommonChangesManagerTest {
     myUtilDiff.setEnabled(true);
     waitForChangesManager();
 
-    Assert.assertTrue(ListSequence.fromList(check_orwzer_a0a9a7(myHtmlDiff.getChangeSet())).isNotEmpty());
-    Assert.assertTrue(ListSequence.fromList(check_orwzer_a0a01a7(myUiDiff.getChangeSet())).isNotEmpty());
+    Assert.assertTrue(ListSequence.fromList(check_orwzer_a0a9a8(myHtmlDiff.getChangeSet())).isNotEmpty());
+    Assert.assertTrue(ListSequence.fromList(check_orwzer_a0a01a8(myUiDiff.getChangeSet())).isNotEmpty());
     Assert.assertNull(myUtilDiff.getChangeSet());
   }
 
@@ -266,7 +307,7 @@ public class CommonChangesManagerTest {
     });
 
     waitForChangesManager();
-    Assert.assertTrue(ListSequence.fromList(check_orwzer_a0a3a9(myUtilDiff.getChangeSet())).isNotEmpty());
+    Assert.assertTrue(ListSequence.fromList(check_orwzer_a0a3a01(myUtilDiff.getChangeSet())).isNotEmpty());
 
     MapSequence.fromMap(myExpectedFileStatuses).put("util.ImageLoader", FileStatus.MODIFIED);
     checkRootStatuses();
@@ -280,12 +321,13 @@ public class CommonChangesManagerTest {
     });
 
     myChangeListManager.ensureUpToDate(false);
-    Change change = myChangeListManager.getChange(myUtilVirtualFile);
+    final Change change = myChangeListManager.getChange(myUtilVirtualFile);
     assert change != null;
-    myGitVcs.getCheckinEnvironment().commit(Arrays.asList(change), "dumb commit");
-    VcsDirtyScopeManager.getInstance(myIdeaProject).fileDirty(myUtilVirtualFile);
-    myChangeListManager.ensureUpToDate(false);
-    FileStatusManager.getInstance(myIdeaProject).fileStatusChanged(myUtilVirtualFile);
+    doSomethingAndWaitForFileStatusChange(new Runnable() {
+      public void run() {
+        myGitVcs.getCheckinEnvironment().commit(Arrays.asList(change), "dumb commit");
+      }
+    }, myUtilVirtualFile, null);
 
     waitForChangesManager();
     Assert.assertNull(myUtilDiff.getChangeSet());
@@ -294,14 +336,19 @@ public class CommonChangesManagerTest {
     checkRootStatuses();
   }
 
-  private void uncommit() throws VcsException {
-    GitUtils.uncommmit(myIdeaProject, myIdeaProject.getBaseDir());
-    VcsDirtyScopeManager.getInstance(myIdeaProject).fileDirty(myUtilVirtualFile);
-    myChangeListManager.ensureUpToDate(false);
-    FileStatusManager.getInstance(myIdeaProject).fileStatusChanged(myUtilVirtualFile);
+  private void uncommit() {
+    doSomethingAndWaitForFileStatusChange(new Runnable() {
+      public void run() {
+        try {
+          GitUtils.uncommmit(myIdeaProject, myIdeaProject.getBaseDir());
+        } catch (VcsException e) {
+          throw new AssertionError(e);
+        }
+      }
+    }, myUtilVirtualFile, null);
 
     waitForChangesManager();
-    Assert.assertTrue(ListSequence.fromList(check_orwzer_a0a6a11(myUtilDiff.getChangeSet())).isNotEmpty());
+    Assert.assertTrue(ListSequence.fromList(check_orwzer_a0a3a21(myUtilDiff.getChangeSet())).isNotEmpty());
 
     MapSequence.fromMap(myExpectedFileStatuses).put("util.ImageLoader", FileStatus.MODIFIED);
     checkRootStatuses();
@@ -348,16 +395,18 @@ public class CommonChangesManagerTest {
   }
 
   private void rollback() throws VcsException {
-    List<VcsException> exceptions = ListSequence.fromList(new ArrayList<VcsException>());
-    myGitVcs.getRollbackEnvironment().rollbackChanges(Arrays.asList(myChangeListManager.getChange(myUtilVirtualFile)), exceptions, RollbackProgressListener.EMPTY);
+    final List<VcsException> exceptions = ListSequence.fromList(new ArrayList<VcsException>());
+    doSomethingAndWaitForFileStatusChange(new Runnable() {
+      public void run() {
+        myGitVcs.getRollbackEnvironment().rollbackChanges(Arrays.asList(myChangeListManager.getChange(myUtilVirtualFile)), exceptions, RollbackProgressListener.EMPTY);
+      }
+    }, myUtilVirtualFile, null);
+
     if (ListSequence.fromList(exceptions).isNotEmpty()) {
       throw ListSequence.fromList(exceptions).first();
     }
-    myChangeListManager.ensureUpToDate(false);
-    FileStatusManager.getInstance(myIdeaProject).fileStatusChanged(myUtilVirtualFile);
-
     waitForChangesManager();
-    Assert.assertTrue(ListSequence.fromList(check_orwzer_a0a7a41(myUtilDiff.getChangeSet())).isEmpty());
+    Assert.assertTrue(ListSequence.fromList(check_orwzer_a0a5a51(myUtilDiff.getChangeSet())).isEmpty());
 
     SetSequence.fromSet(MapSequence.fromMap(myExpectedFileStatuses).keySet()).where(new IWhereFilter<String>() {
       public boolean accept(String k) {
@@ -452,7 +501,7 @@ public class CommonChangesManagerTest {
               fe = new DummyFileEditor(np);
             }
             UndoManager.getInstance(myIdeaProject).undo(fe);
-            check_orwzer_a3a0a0a0a0a32(fe);
+            check_orwzer_a3a0a0a0a0a42(fe);
           }
         });
       } catch (Throwable t) {
@@ -792,10 +841,11 @@ public class CommonChangesManagerTest {
     });
     ModelAccess.instance().flushEventQueue();
 
-    VirtualFile vf = VirtualFileUtils.getVirtualFile(md.getModelFile());
-    VcsDirtyScopeManager.getInstance(myIdeaProject).fileDirty(vf);
-    myChangeListManager.ensureUpToDate(false);
-    FileStatusManager.getInstance(myIdeaProject).fileStatusChanged(vf);
+    final VirtualFile vf = VirtualFileUtils.getVirtualFile(md.getModelFile());
+    doSomethingAndWaitForFileStatusChange(new Runnable() {
+      public void run() {
+      }
+    }, vf, FileStatus.UNKNOWN);
 
     newModelDiff.value.setEnabled(true);
     waitForChangesManager();
@@ -815,7 +865,11 @@ public class CommonChangesManagerTest {
     MapSequence.fromMap(myExpectedFileStatuses).put("newmodel.NewRoot", FileStatus.UNKNOWN);
     checkRootStatuses();
 
-    myChangeListManager.addUnversionedFiles(myChangeListManager.getDefaultChangeList(), Arrays.asList(vf));
+    doSomethingAndWaitForFileStatusChange(new Runnable() {
+      public void run() {
+        myChangeListManager.addUnversionedFiles(myChangeListManager.getDefaultChangeList(), Arrays.asList(vf));
+      }
+    }, vf, null);
     myChangeListManager.ensureUpToDate(false);
     checkOneAddedRoot(newModelDiff.value);
 
@@ -871,7 +925,10 @@ public class CommonChangesManagerTest {
     myUiDiff = getCurrentDifference("ui");
     myUiDiff.setEnabled(true);
     waitForChangesManager();
-    myChangeListManager.ensureUpToDate(false);
+    doSomethingAndWaitForFileStatusChange(new Runnable() {
+      public void run() {
+      }
+    }, VirtualFileUtils.getVirtualFile(myUiDiff.getModelDescriptor().getModelFile()), FileStatus.MODIFIED);
     waitForChangesManager();
     Assert.assertEquals(changeSetStringBefore, getChangeSetString(myUiDiff.getChangeSet()));
 
@@ -894,42 +951,42 @@ public class CommonChangesManagerTest {
     TestMain.finishTestOnProjectCopy(ourProject, DESTINATION_PROJECT_DIR);
   }
 
-  private static List<ModelChange> check_orwzer_a0a9a7(ChangeSet checkedDotOperand) {
+  private static List<ModelChange> check_orwzer_a0a9a8(ChangeSet checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModelChanges();
     }
     return null;
   }
 
-  private static List<ModelChange> check_orwzer_a0a01a7(ChangeSet checkedDotOperand) {
+  private static List<ModelChange> check_orwzer_a0a01a8(ChangeSet checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModelChanges();
     }
     return null;
   }
 
-  private static List<ModelChange> check_orwzer_a0a3a9(ChangeSet checkedDotOperand) {
+  private static List<ModelChange> check_orwzer_a0a3a01(ChangeSet checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModelChanges();
     }
     return null;
   }
 
-  private static List<ModelChange> check_orwzer_a0a6a11(ChangeSet checkedDotOperand) {
+  private static List<ModelChange> check_orwzer_a0a3a21(ChangeSet checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModelChanges();
     }
     return null;
   }
 
-  private static List<ModelChange> check_orwzer_a0a7a41(ChangeSet checkedDotOperand) {
+  private static List<ModelChange> check_orwzer_a0a5a51(ChangeSet checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModelChanges();
     }
     return null;
   }
 
-  private static void check_orwzer_a3a0a0a0a0a32(FileEditor checkedDotOperand) {
+  private static void check_orwzer_a3a0a0a0a0a42(FileEditor checkedDotOperand) {
     if (null != checkedDotOperand) {
       checkedDotOperand.dispose();
     }
