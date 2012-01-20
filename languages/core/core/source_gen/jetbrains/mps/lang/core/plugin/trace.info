@@ -1332,10 +1332,10 @@
     <scopeInfo nodeId="6648795410103939857" fileName="Generate_Facet.java" startLine="578" startPosition="19" endLine="643" endPosition="21">
       <varInfo nodeId="6648795410103940177" varName="models" />
       <varInfo nodeId="6648795410103939863" varName="gm" />
-      <varInfo nodeId="6648795410103940100" varName="gh" />
       <varInfo nodeId="6648795410103939860" varName="generationOk" />
-      <varInfo nodeId="6648795410103940128" varName="mh" />
+      <varInfo nodeId="6648795410103940100" varName="gh" />
       <varInfo nodeId="6648795410103939896" varName="retainedModels" />
+      <varInfo nodeId="6648795410103940128" varName="mh" />
     </scopeInfo>
     <scopeInfo nodeId="6648795410103939857" fileName="Generate_Facet.java" startLine="575" startPosition="122" endLine="646" endPosition="11" />
     <scopeInfo nodeId="6648795410103939857" fileName="Generate_Facet.java" startLine="574" startPosition="30" endLine="648" endPosition="0" />
@@ -1708,8 +1708,8 @@
     <scopeInfo nodeId="6648795410103966565" fileName="TextGen_Facet.java" startLine="401" startPosition="0" endLine="417" endPosition="0" />
     <scopeInfo nodeId="6648795410103966949" fileName="TextGen_Facet.java" startLine="302" startPosition="61" endLine="321" endPosition="77">
       <varInfo nodeId="6648795410103966951" varName="tgr" />
-      <varInfo nodeId="6648795410103966976" varName="fname" />
       <varInfo nodeId="6648795410103966969" varName="ext" />
+      <varInfo nodeId="6648795410103966976" varName="fname" />
     </scopeInfo>
     <scopeInfo nodeId="6648795410103966948" fileName="TextGen_Facet.java" startLine="301" startPosition="66" endLine="322" endPosition="21">
       <varInfo nodeId="6648795410103967001" varName="root" />
@@ -1717,8 +1717,8 @@
     <scopeInfo nodeId="6648795410103966939" fileName="TextGen_Facet.java" startLine="300" startPosition="37" endLine="322" endPosition="21" />
     <scopeInfo nodeId="6648795410103966938" fileName="TextGen_Facet.java" startLine="299" startPosition="69" endLine="324" endPosition="0" />
     <scopeInfo nodeId="6648795410103966914" fileName="TextGen_Facet.java" startLine="294" startPosition="71" endLine="328" endPosition="231">
-      <varInfo nodeId="6648795410103966931" varName="sModel" />
       <varInfo nodeId="6648795410103966922" varName="texts" />
+      <varInfo nodeId="6648795410103966931" varName="sModel" />
       <varInfo nodeId="6648795410103966934" varName="errors" />
       <varInfo nodeId="6648795410103966916" varName="gres" />
     </scopeInfo>
@@ -1732,12 +1732,12 @@
       <varInfo nodeId="7713872743340736448" varName="retainedFilesDelta" />
       <varInfo nodeId="6648795410103966801" varName="outputMD" />
       <varInfo nodeId="6648795410103966727" varName="ok" />
-      <varInfo nodeId="7713872743340736469" varName="retainedCachesDelta" />
-      <varInfo nodeId="6648795410103966616" varName="output" />
       <varInfo nodeId="6648795410103966582" varName="gres" />
+      <varInfo nodeId="6648795410103966616" varName="output" />
+      <varInfo nodeId="7713872743340736469" varName="retainedCachesDelta" />
       <varInfo nodeId="6648795410103966730" varName="generateDI" />
-      <varInfo nodeId="6648795410103966742" varName="textgen" />
       <varInfo nodeId="6648795410103966717" varName="javaStreamHandler" />
+      <varInfo nodeId="6648795410103966742" varName="textgen" />
     </scopeInfo>
     <scopeInfo nodeId="6648795410103966577" fileName="TextGen_Facet.java" startLine="100" startPosition="143" endLine="186" endPosition="15" />
     <scopeInfo nodeId="6648795410103966568" fileName="TextGen_Facet.java" startLine="99" startPosition="19" endLine="187" endPosition="62" />
@@ -1824,7 +1824,7 @@
     <nodeInfo nodeId="7390982340086718384" fileName="RefScopeChecker.java" startLine="42" startPosition="78" endLine="43" endPosition="124" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7390982340086718398" fileName="RefScopeChecker.java" startLine="45" startPosition="43" endLine="46" endPosition="172" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7390982340086718412" fileName="RefScopeChecker.java" startLine="49" startPosition="40" endLine="50" endPosition="137" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7390982340086718444" fileName="RefScopeChecker.java" startLine="51" startPosition="108" endLine="52" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7390982340086718444" fileName="RefScopeChecker.java" startLine="51" startPosition="75" endLine="52" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7390982340086718299" fileName="RefScopeChecker.java" startLine="19" startPosition="65" endLine="21" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="RefScopeChecker#()V" />
     <nodeInfo nodeId="7390982340086718314" fileName="RefScopeChecker.java" startLine="23" startPosition="134" endLine="26" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="7390982340086718320" fileName="RefScopeChecker.java" startLine="26" startPosition="5" endLine="29" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -1843,7 +1843,7 @@
     <scopeInfo nodeId="7390982340086718411" fileName="RefScopeChecker.java" startLine="49" startPosition="40" endLine="50" endPosition="137" />
     <scopeInfo nodeId="7390982340086718299" fileName="RefScopeChecker.java" startLine="19" startPosition="65" endLine="21" endPosition="3" />
     <scopeInfo nodeId="7390982340086718396" fileName="RefScopeChecker.java" startLine="44" startPosition="127" endLine="48" endPosition="0" />
-    <scopeInfo nodeId="7390982340086718443" fileName="RefScopeChecker.java" startLine="51" startPosition="108" endLine="56" endPosition="184">
+    <scopeInfo nodeId="7390982340086718443" fileName="RefScopeChecker.java" startLine="51" startPosition="75" endLine="56" endPosition="184">
       <varInfo nodeId="7390982340086718445" varName="name" />
     </scopeInfo>
     <scopeInfo nodeId="7390982340086718338" fileName="RefScopeChecker.java" startLine="31" startPosition="64" endLine="57" endPosition="7">
@@ -2171,8 +2171,8 @@
       <varInfo nodeId="7390982340086719161" varName="additional" />
     </scopeInfo>
     <scopeInfo nodeId="7390982340086719287" fileName="LanguageErrorsComponent.java" startLine="263" startPosition="0" endLine="268" endPosition="0">
-      <varInfo nodeId="7390982340086719294" varName="referent" />
       <varInfo nodeId="7390982340086719290" varName="node" />
+      <varInfo nodeId="7390982340086719294" varName="referent" />
       <varInfo nodeId="7390982340086719292" varName="role" />
     </scopeInfo>
     <scopeInfo nodeId="7390982340086719307" fileName="LanguageErrorsComponent.java" startLine="268" startPosition="0" endLine="273" endPosition="0">
@@ -2233,9 +2233,9 @@
     </scopeInfo>
     <scopeInfo nodeId="7390982340086718940" fileName="LanguageErrorsComponent.java" startLine="156" startPosition="56" endLine="173" endPosition="42" />
     <scopeInfo nodeId="7390982340086718721" fileName="LanguageErrorsComponent.java" startLine="97" startPosition="106" endLine="115" endPosition="56">
-      <varInfo nodeId="7390982340086718758" varName="reporter" />
-      <varInfo nodeId="7390982340086718744" varName="modelId" />
       <varInfo nodeId="7390982340086718732" varName="id" />
+      <varInfo nodeId="7390982340086718744" varName="modelId" />
+      <varInfo nodeId="7390982340086718758" varName="reporter" />
       <varInfo nodeId="7390982340086718769" varName="reporters" />
     </scopeInfo>
     <scopeInfo nodeId="7390982340086718835" fileName="LanguageErrorsComponent.java" startLine="127" startPosition="0" endLine="145" endPosition="0">
@@ -2255,18 +2255,18 @@
       <varInfo nodeId="7390982340086719255" varName="listener" />
     </scopeInfo>
     <scopeInfo nodeId="7390982340086718900" fileName="LanguageErrorsComponent.java" startLine="146" startPosition="114" endLine="176" endPosition="16">
-      <varInfo nodeId="7390982340086718928" varName="newFrontier" />
       <varInfo nodeId="7390982340086718915" varName="frontier" />
+      <varInfo nodeId="7390982340086718928" varName="newFrontier" />
       <varInfo nodeId="4723230619342999173" varName="scope" />
     </scopeInfo>
     <scopeInfo nodeId="7390982340086719235" fileName="LanguageErrorsComponent.java" startLine="251" startPosition="99" endLine="282" endPosition="30">
-      <varInfo nodeId="7390982340086719244" varName="result" />
       <varInfo nodeId="7390982340086719237" varName="accessedNodes" />
+      <varInfo nodeId="7390982340086719244" varName="result" />
     </scopeInfo>
     <scopeInfo nodeId="7390982340086718897" fileName="LanguageErrorsComponent.java" startLine="145" startPosition="0" endLine="178" endPosition="0">
       <varInfo nodeId="7390982340086719010" varName="root" />
-      <varInfo nodeId="7390982340086719015" varName="operationContext" />
       <varInfo nodeId="7390982340086719012" varName="checkers" />
+      <varInfo nodeId="7390982340086719015" varName="operationContext" />
     </scopeInfo>
     <scopeInfo nodeId="7390982340086719232" fileName="LanguageErrorsComponent.java" startLine="250" startPosition="0" endLine="284" endPosition="0">
       <varInfo nodeId="7390982340086719355" varName="action" />
@@ -2523,8 +2523,8 @@
       <varInfo nodeId="7390982340086719785" varName="result" />
       <varInfo nodeId="7390982340086719837" varName="errorsComponent" />
       <varInfo nodeId="5150359874269134865" varName="sNodePointer" />
-      <varInfo nodeId="7390982340086719901" varName="typecheckingContext" />
       <varInfo nodeId="7390982340086719805" varName="descriptor" />
+      <varInfo nodeId="7390982340086719901" varName="typecheckingContext" />
       <varInfo nodeId="5150359874269134850" varName="sNode" />
       <varInfo nodeId="7390982340086719773" varName="editorComponent" />
       <varInfo nodeId="7390982340086719897" varName="changed" />
@@ -2678,8 +2678,8 @@
     <scopeInfo nodeId="7390982340086720447" fileName="ConstraintsChecker.java" startLine="115" startPosition="50" endLine="136" endPosition="7">
       <varInfo nodeId="7390982340086720454" varName="propertyName" />
       <varInfo nodeId="7390982340086720501" varName="canSetValue" />
-      <varInfo nodeId="3303031365445380070" varName="propertyDescriptor" />
       <varInfo nodeId="7390982340086720482" varName="value" />
+      <varInfo nodeId="3303031365445380070" varName="propertyDescriptor" />
       <varInfo nodeId="7390982340086720449" varName="ps" />
     </scopeInfo>
     <scopeInfo nodeId="7390982340086720287" fileName="ConstraintsChecker.java" startLine="78" startPosition="0" endLine="101" endPosition="5">
@@ -2689,8 +2689,8 @@
     <scopeInfo nodeId="7390982340086720131" fileName="ConstraintsChecker.java" startLine="42" startPosition="134" endLine="137" endPosition="5">
       <varInfo nodeId="7390982340086720396" varName="concept" />
       <varInfo nodeId="8887378328853569077" varName="checkingNodeContext" />
-      <varInfo nodeId="7390982340086720407" varName="chs" />
       <varInfo nodeId="3303031365445380047" varName="newDescriptor" />
+      <varInfo nodeId="7390982340086720407" varName="chs" />
       <varInfo nodeId="7390982340086720425" varName="props" />
     </scopeInfo>
     <scopeInfo nodeId="7390982340086720128" fileName="ConstraintsChecker.java" startLine="41" startPosition="0" endLine="139" endPosition="0">

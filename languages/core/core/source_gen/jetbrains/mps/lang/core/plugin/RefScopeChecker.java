@@ -48,7 +48,7 @@ public class RefScopeChecker extends AbstractConstraintsChecker {
       });
       if (searchScopeStatus.isError()) {
         component.addError(node, searchScopeStatus.getMessage(), (SNode) null, new ReferenceMessageTarget(SLinkOperations.getRole(ref)));
-      } else if (!(searchScopeStatus.isDefault() || searchScopeStatus.getSearchScope().isInScope(target))) {
+      } else if (!(searchScopeStatus.getSearchScope().isInScope(target))) {
         String name = target.getName();
         component.addError(node, "reference" + ((name == null ?
           "" :
