@@ -23,8 +23,7 @@ import org.junit.BeforeClass;
 import org.junit.runner.RunWith;
 
 
-@SuiteClassSymbols({"jetbrains.mps.DiskMemoryConflictsTest",
-  "jetbrains.mps.dataFlow.lang.InitializedVariablesAnalysisTest",
+@SuiteClassSymbols({"jetbrains.mps.dataFlow.lang.InitializedVariablesAnalysisTest",
   "jetbrains.mps.dataFlow.lang.LivenessAnalysisTest",
   "jetbrains.mps.dataFlow.lang.ProgramTest",
   "jetbrains.mps.dataFlow.lang.ReachabilityAnaysisTest",
@@ -43,6 +42,7 @@ import org.junit.runner.RunWith;
   "jetbrains.mps.refactoring.RefactoringTest",
   "jetbrains.mps.runtime.BundleLoadingTest",
   "jetbrains.mps.runtime.BundleTest",
+  "jetbrains.mps.vcs.DiskMemoryConflictsTest",
   "jetbrains.mps.vcs.changesmanager.ChangesManagerTest",
   "jetbrains.mps.vcs.old.MergeConceptAndImportsTest",
   "jetbrains.mps.vcs.old.MergeNotLoseExternalChangesTest",
