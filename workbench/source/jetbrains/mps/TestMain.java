@@ -73,7 +73,7 @@ import java.util.LinkedHashSet;
 import java.util.List;
 
 public class TestMain {
-  private static final String[] DEFAULT_ENABLED_PLUGINS = new String[]{"jetbrains.mps.vcs", "jetbrains.mps.ide.editor", "jetbrains.mps.ide.make"};
+  private static final String[] DEFAULT_ENABLED_PLUGINS = new String[]{"jetbrains.mps.vcs", "jetbrains.mps.ide.editor", "jetbrains.mps.ide.make", "Git4Idea"};
 
   public static final ProjectContainer PROJECT_CONTAINER = new ProjectContainer();
 

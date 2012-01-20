@@ -24,7 +24,10 @@ import jetbrains.mps.library.ModulesMiner;
 import jetbrains.mps.library.ModulesMiner.ModuleHandle;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.*;
-import jetbrains.mps.project.structure.modules.*;
+import jetbrains.mps.project.structure.modules.DevkitDescriptor;
+import jetbrains.mps.project.structure.modules.LanguageDescriptor;
+import jetbrains.mps.project.structure.modules.ModuleReference;
+import jetbrains.mps.project.structure.modules.SolutionDescriptor;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.ManyToManyMap;
 import jetbrains.mps.vfs.IFile;
@@ -56,6 +59,18 @@ public class MPSModuleRepository implements CoreComponent {
   private boolean myDirtyFlag = false;
 
   public MPSModuleRepository() {
+  }
+
+  public static IModule checkRegistered(ModuleReference ref, IFile fileToReport) {
+    MPSModuleRepository repository = getInstance();
+    if (!repository.existsModule(ref)) return null;
+    LOG.error(
+      "Attempting to load module " + ref.getModuleFqName() + " for the second time.\n" +
+        "Registered module is loaded from " + repository.getModule(ref).getDescriptorFile().getPath() + ";\n" +
+        "New module is loaded from " + fileToReport.getPath() + ".\n" +
+        "Returning registered module."
+    );
+    return repository.getModule(ref);
   }
 
   public void init() {
@@ -157,7 +172,7 @@ public class MPSModuleRepository implements CoreComponent {
       }
     } else {
       if (owner == module) {
-        LOG.warning("module "+ module + " wants to own itself: will be collected very quickly", module);
+        LOG.warning("module " + module + " wants to own itself: will be collected very quickly", module);
       }
       myModuleToOwners.addLink(module, owner);
       myModules.add(module);

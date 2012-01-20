@@ -128,8 +128,12 @@ public class FeatureForestMap<V> {
       try {
         listener.featureStateChanged(feature);
       } catch (Throwable t) {
-        if (log.isErrorEnabled()) {
-          log.error("Exception on firing featureStateChanged event", t);
+        if (t instanceof InterruptedException || check_tcy57o_a0a0a0a0a0j(t) instanceof InterruptedException) {
+          // ignore 
+        } else {
+          if (log.isErrorEnabled()) {
+            log.error("Exception on firing featureStateChanged event", t);
+          }
         }
       }
     }
@@ -145,6 +149,13 @@ public class FeatureForestMap<V> {
         log.error(msg);
       }
     }
+  }
+
+  private static Throwable check_tcy57o_a0a0a0a0a0j(Throwable checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getCause();
+    }
+    return null;
   }
 
   private class MyCounterMapHandler implements CounterMap.CounterMapHandler<Feature> {

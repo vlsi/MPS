@@ -28,6 +28,9 @@
     <node type="cx9y.NamedTupleDeclaration" typeId="cx9y.1239360506533" id="1654804677203278474">
       <property name="name" nameId="tpck.1169194664001" value="Tpl" />
     </node>
+    <node type="cx9y.NamedTupleDeclaration" typeId="cx9y.1239360506533" id="9171470541351200515">
+      <property name="name" nameId="tpck.1169194664001" value="Sample" />
+    </node>
   </roots>
   <root id="1240933467754">
     <node role="component" roleId="cx9y.1239529553065" type="cx9y.NamedTupleComponentDeclaration" typeId="cx9y.1239462176079" id="1240933472056">
@@ -241,6 +244,19 @@
       <node role="type" roleId="cx9y.1239462974287" type="tpee.IntegerType" typeId="tpee.1070534370425" id="1654804677203278486" />
     </node>
     <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1654804677203278475" />
+  </root>
+  <root id="9171470541351200515">
+    <node role="component" roleId="cx9y.1239529553065" type="cx9y.NamedTupleComponentDeclaration" typeId="cx9y.1239462176079" id="9171470541351200517">
+      <property name="final" nameId="cx9y.1240400839614" value="false" />
+      <property name="name" nameId="tpck.1169194664001" value="num" />
+      <node role="type" roleId="cx9y.1239462974287" type="tpee.IntegerType" typeId="tpee.1070534370425" id="9171470541351200519" />
+    </node>
+    <node role="component" roleId="cx9y.1239529553065" type="cx9y.NamedTupleComponentDeclaration" typeId="cx9y.1239462176079" id="9171470541351200520">
+      <property name="final" nameId="cx9y.1240400839614" value="false" />
+      <property name="name" nameId="tpck.1169194664001" value="count" />
+      <node role="type" roleId="cx9y.1239462974287" type="tpee.LongType" typeId="tpee.1068581242867" id="9171470541351200522" />
+    </node>
+    <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="9171470541351200516" />
   </root>
 </model>
 

@@ -22,11 +22,15 @@ import jetbrains.mps.smodel.persistence.def.IHashProvider;
 import jetbrains.mps.smodel.persistence.def.IModelPersistence;
 import jetbrains.mps.smodel.persistence.def.IModelReader;
 import jetbrains.mps.smodel.persistence.def.IModelWriter;
+import jetbrains.mps.smodel.persistence.def.ModelPersistence.IndexEntry;
 import jetbrains.mps.smodel.persistence.lines.LineContent;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.xmlQuery.runtime.XMLSAXHandler;
 
+import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
+import java.util.Map;
 
 public class ModelPersistence3 implements IModelPersistence {
   public IModelWriter getModelWriter() {
@@ -70,5 +74,10 @@ public class ModelPersistence3 implements IModelPersistence {
 
   public SModelReference upgradeModelUID(SModelReference modelReference) {
     return new SModelReference(new SModelFqName(modelReference.getLongName(), upgradeStereotype(modelReference.getStereotype())), modelReference.getSModelId());
+  }
+
+  @Override
+  public Map<IndexEntry, Integer> index(char[] data) {
+    return Collections.emptyMap();
   }
 }

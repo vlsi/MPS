@@ -54,7 +54,7 @@ public class ButtonTabsComponent extends BaseTabsComponent {
       if (nodes.contains(currentAspect)) return d;
     }
 
-    throw new IllegalArgumentException("Node is not in any tab: " + currentAspect);
+    return null;
   }
 
   protected void updateTabs() {
