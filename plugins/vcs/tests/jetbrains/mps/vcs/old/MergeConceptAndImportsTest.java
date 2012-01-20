@@ -13,16 +13,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.vcs.diff;
+package jetbrains.mps.vcs.old;
 
 import java.io.IOException;
 
 /**
- * @author Evgeny Gerashchenko
- * @since 16 Nov 2010
+ * Test is made from MPS-3152
  */
-public class MergeSymmetricChangesTest extends MergeTestCase {
-  public void testSymmetricChanges() throws IOException {
-    testZip("resources/symmetric.mps.zip", false);
+public class MergeConceptAndImportsTest extends MergeTestCase{
+
+  public void testModelImports() throws IOException {
+    testZip("resources/structure.2.mps.zip", false);
   }
 }

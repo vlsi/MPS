@@ -13,12 +13,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.vcs.diff;
+package jetbrains.mps.vcs.old;
 
 import jetbrains.mps.ModelAssert;
-import jetbrains.mps.vcs.diff.MergeTestUtil.TestVersion;
+import jetbrains.mps.vcs.old.MergeTestUtil.TestVersion;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.vcs.diff.Merger;
 import junit.framework.TestCase;
 
 import java.io.File;
