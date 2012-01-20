@@ -12,10 +12,16 @@ import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
+import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
+import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPart;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.core.xml.behavior.XmlValuePart_Behavior;
+import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_PropertyValues;
+import java.util.List;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.core.xml.constraints.XmlNameUtil;
 
 public class XmlEntityRefValue_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -61,7 +67,6 @@ public class XmlEntityRefValue_Editor extends DefaultNodeEditor {
     XmlSS_StyleSheet.getXmlAttrEntityRefValue(editorCell).apply(editorCell);
     {
       Style style = editorCell.getStyle();
-      style.set(StyleAttributes.PUNCTUATION_LEFT, true);
       style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
     }
     delete_XmlEntityRefValueDelete.setCellActions(editorCell, node, editorContext);
@@ -76,6 +81,7 @@ public class XmlEntityRefValue_Editor extends DefaultNodeEditor {
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
+      style.set(StyleAttributes.PUNCTUATION_LEFT, true);
     }
     delete_XmlEntityRefValueDelete.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
@@ -89,7 +95,6 @@ public class XmlEntityRefValue_Editor extends DefaultNodeEditor {
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.PUNCTUATION_LEFT, true);
-      style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
     }
     delete_XmlEntityRefValueDelete.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
@@ -103,6 +108,7 @@ public class XmlEntityRefValue_Editor extends DefaultNodeEditor {
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.PUNCTUATION_LEFT, true);
+      style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
     }
     delete_XmlEntityRefValueDelete.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
@@ -118,7 +124,7 @@ public class XmlEntityRefValue_Editor extends DefaultNodeEditor {
     editorCell.setCellId("property_entityName");
     XmlSS_StyleSheet.getXmlAttrEntityRefValue(editorCell).apply(editorCell);
     delete_XmlEntityRefValueDelete.setCellActions(editorCell, node, editorContext);
-    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPart[]{new XmlEntityRefValue_Editor.XmlEntityRefValue_entityName_cellMenu_a0b0()}));
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -131,12 +137,20 @@ public class XmlEntityRefValue_Editor extends DefaultNodeEditor {
 
   private static boolean renderingCondition_poez2y_a0a(SNode node, EditorContext editorContext, IScope scope) {
     // see MPS-15260 
-    SNode prevSibling = SNodeOperations.getPrevSibling(node);
-    return (prevSibling != null) && !(SNodeOperations.isInstanceOf(prevSibling, "jetbrains.mps.core.xml.structure.XmlEntityRefValue"));
+    return XmlValuePart_Behavior.call_isFirstPositionAllowed_3080189811177340436(node);
   }
 
   private static boolean renderingCondition_poez2y_a2a(SNode node, EditorContext editorContext, IScope scope) {
     // see MPS-15260 
-    return (SNodeOperations.getNextSibling(node) != null);
+    return XmlValuePart_Behavior.call_isLastPositionAllowed_3080189811177340441(node);
+  }
+
+  public static class XmlEntityRefValue_entityName_cellMenu_a0b0 extends AbstractCellMenuPart_PropertyValues {
+    public XmlEntityRefValue_entityName_cellMenu_a0b0() {
+    }
+
+    public List<String> getPropertyValues(SNode node, IScope scope, IOperationContext operationContext) {
+      return Sequence.fromIterable(Sequence.fromArray(XmlNameUtil.getDefaultEntities())).toListSequence();
+    }
   }
 }

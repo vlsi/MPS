@@ -12,10 +12,16 @@ import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
+import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
+import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPart;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.core.xml.behavior.XmlContent_Behavior;
+import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_PropertyValues;
+import java.util.List;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.core.xml.constraints.XmlNameUtil;
 
 public class XmlEntityRef_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -113,7 +119,7 @@ public class XmlEntityRef_Editor extends DefaultNodeEditor {
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_entityName");
     XmlSS_StyleSheet.getXmlEntityRef(editorCell).apply(editorCell);
-    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPart[]{new XmlEntityRef_Editor.XmlEntityRef_entityName_cellMenu_a0b0()}));
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -132,5 +138,14 @@ public class XmlEntityRef_Editor extends DefaultNodeEditor {
   private static boolean renderingCondition_40aq2x_a2a(SNode node, EditorContext editorContext, IScope scope) {
     // see MPS-15260 
     return XmlContent_Behavior.call_isLastPositionAllowed_6999033275467334895(node);
+  }
+
+  public static class XmlEntityRef_entityName_cellMenu_a0b0 extends AbstractCellMenuPart_PropertyValues {
+    public XmlEntityRef_entityName_cellMenu_a0b0() {
+    }
+
+    public List<String> getPropertyValues(SNode node, IScope scope, IOperationContext operationContext) {
+      return Sequence.fromIterable(Sequence.fromArray(XmlNameUtil.getDefaultEntities())).toListSequence();
+    }
   }
 }

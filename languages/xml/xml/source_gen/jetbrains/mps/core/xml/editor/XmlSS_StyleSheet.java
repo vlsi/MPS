@@ -42,7 +42,28 @@ public class XmlSS_StyleSheet {
     return style;
   }
 
+  public static Style getXmlAttrCharRefValue(final EditorCell cell) {
+    Style style = new Style(cell);
+    style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
+    style.set(StyleAttributes.TEXT_COLOR, new Color(32768));
+    return style;
+  }
+
+  public static Style getXmlNoNewLine(final EditorCell cell) {
+    Style style = new Style(cell);
+    style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
+    style.set(StyleAttributes.TEXT_COLOR, new Color(4210816));
+    return style;
+  }
+
   public static Style getXmlEntityRef(final EditorCell cell) {
+    Style style = new Style(cell);
+    style.set(StyleAttributes.TEXT_COLOR, new Color(6684672));
+    style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
+    return style;
+  }
+
+  public static Style getXmlCharRef(final EditorCell cell) {
     Style style = new Style(cell);
     style.set(StyleAttributes.TEXT_COLOR, new Color(6684672));
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);

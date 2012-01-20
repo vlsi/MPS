@@ -153,4 +153,60 @@ public class XmlNameUtil {
   public static boolean isCDATA(String content) {
     return !(content.contains("]]>")) && isXmlString(content);
   }
+
+  public static boolean isAttValue(String text) {
+    for (int i = 0; i < text.length(); i++) {
+      int c = text.codePointAt(i);
+      if (c == '&' || c == '"' || c == '<') {
+        return false;
+      }
+    }
+    return isXmlString(text);
+  }
+
+  /**
+   * Well-formedness constraint: Entity Declared.
+   * need not declare any of the following entities: amp, lt, gt, apos, quot.
+   */
+  public static String[] getDefaultEntities() {
+    return new String[]{"amp", "gt", "lt", "apos", "quot"};
+  }
+
+  public static boolean isValidCharRef(String charRef) {
+    int charCode = 0;
+    if (charRef.startsWith("x")) {
+      // '&#x' [0-9a-fA-F]+ 
+      if (charRef.length() > 8 || charRef.length() < 2) {
+        return false;
+      }
+      for (int i = 1; i < charRef.length(); i++) {
+        int c = charRef.codePointAt(i);
+        if (c >= '0' && c <= '9') {
+          c = c - '0';
+        } else if (c >= 'A' && c <= 'F') {
+          c = c - 'A' + 10;
+        } else if (c >= 'a' && c <= 'f') {
+          c = c - 'a' + 10;
+        } else {
+          return false;
+        }
+        charCode = (charCode << 4) + c;
+      }
+    } else {
+      // '&#' [0-9]+ 
+      if (charRef.length() > 9 || charRef.length() < 1) {
+        return false;
+      }
+      for (int i = 0; i < charRef.length(); i++) {
+        int c = charRef.codePointAt(i);
+        if (c >= '0' && c <= '9') {
+          c = c - '0';
+        } else {
+          return false;
+        }
+        charCode = charCode * 10 + c;
+      }
+    }
+    return isXmlChar(charCode);
+  }
 }

@@ -11,15 +11,15 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
-public class XmlTextValue_Constraints extends BaseConstraintsDescriptor {
-  public XmlTextValue_Constraints() {
-    super("jetbrains.mps.core.xml.structure.XmlTextValue");
+public class XmlCharRefValue_Constraints extends BaseConstraintsDescriptor {
+  public XmlCharRefValue_Constraints() {
+    super("jetbrains.mps.core.xml.structure.XmlCharRefValue");
   }
 
   @Override
   protected Map<String, PropertyConstraintsDescriptor> getNotDefaultProperties() {
     Map<String, PropertyConstraintsDescriptor> properties = new HashMap();
-    properties.put("text", new BasePropertyConstraintsDescriptor("text", this) {
+    properties.put("charCode", new BasePropertyConstraintsDescriptor("charCode", this) {
       @Override
       public boolean hasOwnValidator() {
         return true;
@@ -27,8 +27,8 @@ public class XmlTextValue_Constraints extends BaseConstraintsDescriptor {
 
       @Override
       public boolean validateValue(SNode node, String propertyValue, IScope scope) {
-        String propertyName = "text";
-        return XmlNameUtil.isAttValue((SPropertyOperations.getString(propertyValue)));
+        String propertyName = "charCode";
+        return XmlNameUtil.isValidCharRef((SPropertyOperations.getString(propertyValue)));
       }
     });
     return properties;

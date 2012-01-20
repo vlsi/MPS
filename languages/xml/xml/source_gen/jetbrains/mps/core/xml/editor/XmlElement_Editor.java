@@ -84,20 +84,8 @@ public class XmlElement_Editor extends DefaultNodeEditor {
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
-      style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
     }
-    editorCell.addEditorCell(this.createCollection_vc3gub_a2a(editorContext, node));
-    return editorCell;
-  }
-
-  private EditorCell createCollection_vc3gub_a2a(EditorContext editorContext, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_vc3gub_a2a");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
-    }
-    editorCell.addEditorCell(this.createRefNodeList_vc3gub_a0c0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNodeList_vc3gub_a2a(editorContext, node));
     return editorCell;
   }
 
@@ -167,6 +155,7 @@ public class XmlElement_Editor extends DefaultNodeEditor {
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
+      style.set(StyleAttributes.MATCHING_LABEL, "openTag");
     }
     editorCell.setDefaultText("");
     return editorCell;
@@ -192,6 +181,7 @@ public class XmlElement_Editor extends DefaultNodeEditor {
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.PUNCTUATION_LEFT, true);
+      style.set(StyleAttributes.MATCHING_LABEL, "openTag");
     }
     editorCell.setDefaultText("");
     return editorCell;
@@ -204,6 +194,7 @@ public class XmlElement_Editor extends DefaultNodeEditor {
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.PUNCTUATION_LEFT, true);
+      style.set(StyleAttributes.MATCHING_LABEL, "openTag");
     }
     editorCell.setDefaultText("");
     return editorCell;
@@ -229,6 +220,7 @@ public class XmlElement_Editor extends DefaultNodeEditor {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.PUNCTUATION_LEFT, true);
       style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
+      style.set(StyleAttributes.MATCHING_LABEL, "openTag");
     }
     editorCell.setDefaultText("");
     return editorCell;
@@ -279,12 +271,13 @@ public class XmlElement_Editor extends DefaultNodeEditor {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.EDITABLE, false);
       style.set(StyleAttributes.SELECTABLE, true);
+      style.set(StyleAttributes.MATCHING_LABEL, "xmltag");
     }
     return editorCell;
   }
 
-  private EditorCell createRefNodeList_vc3gub_a0c0(EditorContext editorContext, SNode node) {
-    AbstractCellListHandler handler = new XmlElement_Editor.attributesListHandler_vc3gub_a0c0(node, "attributes", editorContext);
+  private EditorCell createRefNodeList_vc3gub_a2a(EditorContext editorContext, SNode node) {
+    AbstractCellListHandler handler = new XmlElement_Editor.attributesListHandler_vc3gub_a2a(node, "attributes", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_attributes");
     editorCell.setRole(handler.getElementRole());
@@ -324,6 +317,7 @@ public class XmlElement_Editor extends DefaultNodeEditor {
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.RT_ANCHOR_TAG, "ext_1_RTransform");
+      style.set(StyleAttributes.MATCHING_LABEL, "xmltag");
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -348,8 +342,8 @@ public class XmlElement_Editor extends DefaultNodeEditor {
     return XmlElement_Behavior.call_isMultiline_8886258982030574875(node);
   }
 
-  private static class attributesListHandler_vc3gub_a0c0 extends RefNodeListHandler {
-    public attributesListHandler_vc3gub_a0c0(SNode ownerNode, String childRole, EditorContext context) {
+  private static class attributesListHandler_vc3gub_a2a extends RefNodeListHandler {
+    public attributesListHandler_vc3gub_a2a(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 

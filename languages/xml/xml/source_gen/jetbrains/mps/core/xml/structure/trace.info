@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="StructureAspectDescriptor.java" startLine="10" startPosition="0" endLine="57" endPosition="0" unitName="jetbrains.mps.core.xml.structure.StructureAspectDescriptor" />
+  <unitInfo fileName="StructureAspectDescriptor.java" startLine="10" startPosition="0" endLine="63" endPosition="0" unitName="jetbrains.mps.core.xml.structure.StructureAspectDescriptor" />
   <unitInfo fileName="Xml_Language.java" startLine="9" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.core.xml.structure.Xml_Language" />
   <root nodeId="1622293396948952339">
     <nodeInfo nodeId="1622293396948952339" fileName="XmlText.java" startLine="10" startPosition="41" endLine="11" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
@@ -103,6 +103,97 @@
       <varInfo nodeId="1622293396949069645" varName="sm" />
     </scopeInfo>
     <unitInfo nodeId="1622293396949069645" fileName="XmlEntityRef.java" startLine="10" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.core.xml.structure.XmlEntityRef" />
+  </root>
+  <root nodeId="3080189811177199750">
+    <nodeInfo nodeId="3080189811177199750" fileName="XmlCharRef.java" startLine="10" startPosition="44" endLine="11" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
+    <nodeInfo nodeId="3080189811177199750" fileName="XmlCharRef.java" startLine="11" startPosition="85" endLine="12" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="CHAR_CODE" />
+    <nodeInfo nodeId="3080189811177199750" fileName="XmlCharRef.java" startLine="14" startPosition="33" endLine="15" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="3080189811177199750" fileName="XmlCharRef.java" startLine="18" startPosition="31" endLine="19" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3080189811177199750" fileName="XmlCharRef.java" startLine="22" startPosition="41" endLine="23" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3080189811177199750" fileName="XmlCharRef.java" startLine="26" startPosition="65" endLine="27" endPosition="166" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3080189811177199750" fileName="XmlCharRef.java" startLine="30" startPosition="51" endLine="31" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3080189811177199750" fileName="XmlCharRef.java" startLine="13" startPosition="0" endLine="16" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="XmlCharRef#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="3080189811177199750" fileName="XmlCharRef.java" startLine="17" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getCharCode#()Ljava/lang/String;" />
+    <nodeInfo nodeId="3080189811177199750" fileName="XmlCharRef.java" startLine="21" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setCharCode#(Ljava/lang/String;)V" />
+    <nodeInfo nodeId="3080189811177199750" fileName="XmlCharRef.java" startLine="25" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="newInstance#(Ljetbrains/mps/smodel/SModel;Z)Ljetbrains/mps/core/xml/structure/XmlCharRef;" />
+    <nodeInfo nodeId="3080189811177199750" fileName="XmlCharRef.java" startLine="29" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="newInstance#(Ljetbrains/mps/smodel/SModel;)Ljetbrains/mps/core/xml/structure/XmlCharRef;" />
+    <scopeInfo nodeId="3080189811177199750" fileName="XmlCharRef.java" startLine="14" startPosition="33" endLine="15" endPosition="16" />
+    <scopeInfo nodeId="3080189811177199750" fileName="XmlCharRef.java" startLine="18" startPosition="31" endLine="19" endPosition="50" />
+    <scopeInfo nodeId="3080189811177199750" fileName="XmlCharRef.java" startLine="22" startPosition="41" endLine="23" endPosition="50" />
+    <scopeInfo nodeId="3080189811177199750" fileName="XmlCharRef.java" startLine="26" startPosition="65" endLine="27" endPosition="166" />
+    <scopeInfo nodeId="3080189811177199750" fileName="XmlCharRef.java" startLine="30" startPosition="51" endLine="31" endPosition="45" />
+    <scopeInfo nodeId="3080189811177199750" fileName="XmlCharRef.java" startLine="13" startPosition="0" endLine="16" endPosition="3">
+      <varInfo nodeId="3080189811177199750" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="3080189811177199750" fileName="XmlCharRef.java" startLine="17" startPosition="0" endLine="21" endPosition="0" />
+    <scopeInfo nodeId="3080189811177199750" fileName="XmlCharRef.java" startLine="21" startPosition="0" endLine="25" endPosition="0">
+      <varInfo nodeId="3080189811177199750" varName="value" />
+    </scopeInfo>
+    <scopeInfo nodeId="3080189811177199750" fileName="XmlCharRef.java" startLine="25" startPosition="0" endLine="29" endPosition="0">
+      <varInfo nodeId="3080189811177199750" varName="init" />
+      <varInfo nodeId="3080189811177199750" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="3080189811177199750" fileName="XmlCharRef.java" startLine="29" startPosition="0" endLine="33" endPosition="0">
+      <varInfo nodeId="3080189811177199750" varName="sm" />
+    </scopeInfo>
+    <unitInfo nodeId="3080189811177199750" fileName="XmlCharRef.java" startLine="10" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.core.xml.structure.XmlCharRef" />
+  </root>
+  <root nodeId="3080189811177215998">
+    <nodeInfo nodeId="3080189811177215998" fileName="XmlCharRefValue.java" startLine="10" startPosition="51" endLine="11" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
+    <nodeInfo nodeId="3080189811177215998" fileName="XmlCharRefValue.java" startLine="11" startPosition="90" endLine="12" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="CHAR_CODE" />
+    <nodeInfo nodeId="3080189811177215998" fileName="XmlCharRefValue.java" startLine="14" startPosition="38" endLine="15" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="3080189811177215998" fileName="XmlCharRefValue.java" startLine="18" startPosition="31" endLine="19" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3080189811177215998" fileName="XmlCharRefValue.java" startLine="22" startPosition="41" endLine="23" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3080189811177215998" fileName="XmlCharRefValue.java" startLine="26" startPosition="70" endLine="27" endPosition="176" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3080189811177215998" fileName="XmlCharRefValue.java" startLine="30" startPosition="56" endLine="31" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3080189811177215998" fileName="XmlCharRefValue.java" startLine="13" startPosition="0" endLine="16" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="XmlCharRefValue#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="3080189811177215998" fileName="XmlCharRefValue.java" startLine="17" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getCharCode#()Ljava/lang/String;" />
+    <nodeInfo nodeId="3080189811177215998" fileName="XmlCharRefValue.java" startLine="21" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setCharCode#(Ljava/lang/String;)V" />
+    <nodeInfo nodeId="3080189811177215998" fileName="XmlCharRefValue.java" startLine="25" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="newInstance#(Ljetbrains/mps/smodel/SModel;Z)Ljetbrains/mps/core/xml/structure/XmlCharRefValue;" />
+    <nodeInfo nodeId="3080189811177215998" fileName="XmlCharRefValue.java" startLine="29" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="newInstance#(Ljetbrains/mps/smodel/SModel;)Ljetbrains/mps/core/xml/structure/XmlCharRefValue;" />
+    <scopeInfo nodeId="3080189811177215998" fileName="XmlCharRefValue.java" startLine="14" startPosition="38" endLine="15" endPosition="16" />
+    <scopeInfo nodeId="3080189811177215998" fileName="XmlCharRefValue.java" startLine="18" startPosition="31" endLine="19" endPosition="55" />
+    <scopeInfo nodeId="3080189811177215998" fileName="XmlCharRefValue.java" startLine="22" startPosition="41" endLine="23" endPosition="55" />
+    <scopeInfo nodeId="3080189811177215998" fileName="XmlCharRefValue.java" startLine="26" startPosition="70" endLine="27" endPosition="176" />
+    <scopeInfo nodeId="3080189811177215998" fileName="XmlCharRefValue.java" startLine="30" startPosition="56" endLine="31" endPosition="50" />
+    <scopeInfo nodeId="3080189811177215998" fileName="XmlCharRefValue.java" startLine="13" startPosition="0" endLine="16" endPosition="3">
+      <varInfo nodeId="3080189811177215998" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="3080189811177215998" fileName="XmlCharRefValue.java" startLine="17" startPosition="0" endLine="21" endPosition="0" />
+    <scopeInfo nodeId="3080189811177215998" fileName="XmlCharRefValue.java" startLine="21" startPosition="0" endLine="25" endPosition="0">
+      <varInfo nodeId="3080189811177215998" varName="value" />
+    </scopeInfo>
+    <scopeInfo nodeId="3080189811177215998" fileName="XmlCharRefValue.java" startLine="25" startPosition="0" endLine="29" endPosition="0">
+      <varInfo nodeId="3080189811177215998" varName="init" />
+      <varInfo nodeId="3080189811177215998" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="3080189811177215998" fileName="XmlCharRefValue.java" startLine="29" startPosition="0" endLine="33" endPosition="0">
+      <varInfo nodeId="3080189811177215998" varName="sm" />
+    </scopeInfo>
+    <unitInfo nodeId="3080189811177215998" fileName="XmlCharRefValue.java" startLine="10" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.core.xml.structure.XmlCharRefValue" />
+  </root>
+  <root nodeId="3080189811177426492">
+    <nodeInfo nodeId="3080189811177426492" fileName="XmlNoSpaceValue.java" startLine="10" startPosition="51" endLine="11" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
+    <nodeInfo nodeId="3080189811177426492" fileName="XmlNoSpaceValue.java" startLine="13" startPosition="38" endLine="14" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="3080189811177426492" fileName="XmlNoSpaceValue.java" startLine="17" startPosition="70" endLine="18" endPosition="176" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3080189811177426492" fileName="XmlNoSpaceValue.java" startLine="21" startPosition="56" endLine="22" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3080189811177426492" fileName="XmlNoSpaceValue.java" startLine="12" startPosition="0" endLine="15" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="XmlNoSpaceValue#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="3080189811177426492" fileName="XmlNoSpaceValue.java" startLine="16" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="newInstance#(Ljetbrains/mps/smodel/SModel;Z)Ljetbrains/mps/core/xml/structure/XmlNoSpaceValue;" />
+    <nodeInfo nodeId="3080189811177426492" fileName="XmlNoSpaceValue.java" startLine="20" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="newInstance#(Ljetbrains/mps/smodel/SModel;)Ljetbrains/mps/core/xml/structure/XmlNoSpaceValue;" />
+    <scopeInfo nodeId="3080189811177426492" fileName="XmlNoSpaceValue.java" startLine="13" startPosition="38" endLine="14" endPosition="16" />
+    <scopeInfo nodeId="3080189811177426492" fileName="XmlNoSpaceValue.java" startLine="17" startPosition="70" endLine="18" endPosition="176" />
+    <scopeInfo nodeId="3080189811177426492" fileName="XmlNoSpaceValue.java" startLine="21" startPosition="56" endLine="22" endPosition="50" />
+    <scopeInfo nodeId="3080189811177426492" fileName="XmlNoSpaceValue.java" startLine="12" startPosition="0" endLine="15" endPosition="3">
+      <varInfo nodeId="3080189811177426492" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="3080189811177426492" fileName="XmlNoSpaceValue.java" startLine="16" startPosition="0" endLine="20" endPosition="0">
+      <varInfo nodeId="3080189811177426492" varName="init" />
+      <varInfo nodeId="3080189811177426492" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="3080189811177426492" fileName="XmlNoSpaceValue.java" startLine="20" startPosition="0" endLine="24" endPosition="0">
+      <varInfo nodeId="3080189811177426492" varName="sm" />
+    </scopeInfo>
+    <unitInfo nodeId="3080189811177426492" fileName="XmlNoSpaceValue.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.core.xml.structure.XmlNoSpaceValue" />
   </root>
   <root nodeId="6666499814681299051">
     <nodeInfo nodeId="6666499814681299051" fileName="XmlContent.java" startLine="11" startPosition="45" endLine="12" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
