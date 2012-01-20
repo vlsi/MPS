@@ -32,7 +32,7 @@ import javax.swing.JComponent;
 import java.util.List;
 
 public class InspectorEditorComponent extends EditorComponent {
-  private SNode myRoot;
+  private SNodePointer myRootPointer;
 
   public InspectorEditorComponent() {
     this(false);
@@ -71,7 +71,7 @@ public class InspectorEditorComponent extends EditorComponent {
         clearModelDisposedTrace();
         myNode = node;
         myNodePointer = myNode != null ? new SNodePointer(myNode) : null;
-        myRoot = myNode == null ? null : myNode.getContainingRoot();
+        myRootPointer = myNode == null ? null : new SNodePointer(myNode.getContainingRoot());
         setReadOnly(node == null || node.isDeleted() || node.getModel().isDisposed() || node.getModel().isNotEditable());
         if (node == null) {
           setOperationContext(null);
@@ -106,7 +106,7 @@ public class InspectorEditorComponent extends EditorComponent {
   }
 
   @Override
-  protected SNode getNodeForTypechecking() {
-    return myRoot;
+  protected SNodePointer getNodePointerForTypechecking() {
+    return myRootPointer;
   }
 }
