@@ -27,6 +27,7 @@ import jetbrains.mps.smodel.runtime.interpreted.ConstraintsAspectInterpreted;
 import jetbrains.mps.smodel.runtime.interpreted.StructureAspectInterpreted;
 import jetbrains.mps.smodel.structure.*;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.Collection;
 
@@ -40,10 +41,12 @@ public abstract class LanguageRuntime {
   private DescriptorProvider<BehaviorDescriptor> _behaviorDescriptor;
   private DescriptorProvider<ConstraintsDescriptor> _constraintsDescriptor;
   private DescriptorProvider<FacetDescriptor> facetDescriptor;
+  private DescriptorProvider<ExtensionDescriptor> _extensionPointsDescriptor;
 
   private StructureAspectDescriptor structureDescriptor;
   private BehaviorAspectDescriptor behaviorDescriptor;
   private ConstraintsAspectDescriptor constraintsDescriptor;
+  private ExtensionDescriptor myExtensionDescriptor;
 
   public abstract String getNamespace();
 
@@ -143,5 +146,20 @@ public abstract class LanguageRuntime {
     }
 
     return constraintsDescriptor;
+  }
+
+  @Nullable
+  public ExtensionDescriptor getExtensionDescriptor() {
+    if (myExtensionDescriptor == null) {
+      String className = getNamespace() + ".plugin.ExtensionDescriptor";
+      Object compiled = getObjectByClassNameForLanguageNamespace(className, getNamespace(), true);
+      if (compiled instanceof ExtensionDescriptor) {
+        myExtensionDescriptor = (ExtensionDescriptor) compiled;
+      }
+      else {
+        myExtensionDescriptor = new ExtensionDescriptor.Default ();
+      }
+    }
+    return myExtensionDescriptor;
   }
 }
