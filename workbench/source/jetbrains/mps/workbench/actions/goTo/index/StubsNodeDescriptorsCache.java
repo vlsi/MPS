@@ -109,6 +109,6 @@ public class StubsNodeDescriptorsCache implements ApplicationComponent {
 
   private void clearCache(SModelDescriptor modelDescriptor) {
     if (!SModelStereotype.isStubModelStereotype(modelDescriptor.getStereotype())) return;
-    myCache.remove(modelDescriptor.getModule());
+    myCache.remove(modelDescriptor.getSModelReference());
   }
 }
