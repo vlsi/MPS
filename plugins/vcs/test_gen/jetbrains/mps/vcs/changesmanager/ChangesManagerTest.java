@@ -362,7 +362,7 @@ public class ChangesManagerTest {
   }
 
   private void modifyExternally() throws ModelReadException {
-    int changesBefore = ListSequence.fromList(myUtilDiff.getChangeSet().getModelChanges()).count();
+    int changesBefore = ListSequence.fromList(check_4gxggu_a0a0a41(myUtilDiff.getChangeSet())).count();
     final SModel modelContent = ModelPersistence.readModel(myUtilDiff.getModelDescriptor().getModelFile(), false);
     createNewRoot(modelContent);
     final EditableSModelDescriptor modelDescriptor = myUtilDiff.getModelDescriptor();
@@ -388,7 +388,7 @@ public class ChangesManagerTest {
       }
     });
     waitForChangesManager();
-    Assert.assertEquals(changesBefore + 1, ListSequence.fromList(myUtilDiff.getChangeSet().getModelChanges()).count());
+    Assert.assertEquals(changesBefore + 1, ListSequence.fromList(check_4gxggu_a1a6a41(myUtilDiff.getChangeSet())).count());
 
     MapSequence.fromMap(myExpectedFileStatuses).put("util.NewRoot", FileStatus.ADDED);
     checkRootStatuses();
@@ -760,12 +760,12 @@ public class ChangesManagerTest {
     String stringBeforeAll = getChangeSetString(myUiDiff.getChangeSet());
     final SModel model = myUiDiff.getModelDescriptor().getSModel();
 
-    List<SNodePointer> affectedRootPointers = ListSequence.fromList(myUiDiff.getChangeSet().getModelChanges()).select(new ISelector<ModelChange, SNodePointer>() {
+    List<SNodePointer> affectedRootPointers = ListSequence.fromList(check_4gxggu_a0a0a5a53(myUiDiff.getChangeSet())).select(new ISelector<ModelChange, SNodePointer>() {
       public SNodePointer select(ModelChange ch) {
         return new SNodePointer(myUiDiff.getModelDescriptor().getSModelReference(), ch.getRootId());
       }
     }).distinct().toListSequence();
-    final List<ModelChange> oppositeChanges = ListSequence.fromList(myUiDiff.getChangeSet().getModelChanges()).select(new ISelector<ModelChange, ModelChange>() {
+    final List<ModelChange> oppositeChanges = ListSequence.fromList(check_4gxggu_a0a0g0jb(myUiDiff.getChangeSet())).select(new ISelector<ModelChange, ModelChange>() {
       public ModelChange select(ModelChange ch) {
         return ch.getOppositeChange();
       }
@@ -791,7 +791,7 @@ public class ChangesManagerTest {
       }
     });
     waitAndCheck(myUiDiff);
-    Assert.assertTrue(ListSequence.fromList(myUiDiff.getChangeSet().getModelChanges()).isEmpty());
+    Assert.assertTrue(ListSequence.fromList(check_4gxggu_a0a9a53(myUiDiff.getChangeSet())).isEmpty());
 
     MapSequence.fromMap(myExpectedFileStatuses).removeKey("ui.DocumentLayout");
     MapSequence.fromMap(myExpectedFileStatuses).removeKey("ui.HTMLPanel");
@@ -807,7 +807,7 @@ public class ChangesManagerTest {
 
   private void checkOneAddedRoot(CurrentDifference newModelDiff) {
     waitForChangesManager();
-    List<ModelChange> changes = newModelDiff.getChangeSet().getModelChanges();
+    List<ModelChange> changes = check_4gxggu_a0b0kb(newModelDiff.getChangeSet());
     Assert.assertEquals(2, ListSequence.fromList(changes).count());
     Assert.assertTrue(ListSequence.fromList(changes).any(new IWhereFilter<ModelChange>() {
       public boolean accept(ModelChange it) {
@@ -849,7 +849,7 @@ public class ChangesManagerTest {
 
     newModelDiff.value.setEnabled(true);
     waitForChangesManager();
-    Assert.assertTrue((int) ListSequence.fromList(newModelDiff.value.getChangeSet().getModelChanges()).count() == 0);
+    Assert.assertTrue((int) ListSequence.fromList(check_4gxggu_a0a0l0lb(newModelDiff.value.getChangeSet())).count() == 0);
 
     checkRootStatuses();
 
@@ -979,6 +979,20 @@ public class ChangesManagerTest {
     return null;
   }
 
+  private static List<ModelChange> check_4gxggu_a0a0a41(ChangeSet checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getModelChanges();
+    }
+    return null;
+  }
+
+  private static List<ModelChange> check_4gxggu_a1a6a41(ChangeSet checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getModelChanges();
+    }
+    return null;
+  }
+
   private static List<ModelChange> check_4gxggu_a0a5a51(ChangeSet checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModelChanges();
@@ -991,6 +1005,41 @@ public class ChangesManagerTest {
       checkedDotOperand.dispose();
     }
 
+  }
+
+  private static List<ModelChange> check_4gxggu_a0a0a5a53(ChangeSet checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getModelChanges();
+    }
+    return null;
+  }
+
+  private static List<ModelChange> check_4gxggu_a0a0g0jb(ChangeSet checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getModelChanges();
+    }
+    return null;
+  }
+
+  private static List<ModelChange> check_4gxggu_a0a9a53(ChangeSet checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getModelChanges();
+    }
+    return null;
+  }
+
+  private static List<ModelChange> check_4gxggu_a0b0kb(ChangeSet checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getModelChanges();
+    }
+    return null;
+  }
+
+  private static List<ModelChange> check_4gxggu_a0a0l0lb(ChangeSet checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getModelChanges();
+    }
+    return null;
   }
 
   private static void check_4gxggu_a0a0a1a(Runnable checkedDotOperand) {
