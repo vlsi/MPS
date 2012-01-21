@@ -45,8 +45,6 @@ import org.junit.runner.RunWith;
   "jetbrains.mps.vcs.DiskMemoryConflictsTest",
   "jetbrains.mps.vcs.changesmanager.ChangesManagerTest",
   "jetbrains.mps.vcs.diff.merge.MergeCoreTest",
-  "jetbrains.mps.vcs.old.MergeConceptAndImportsTest",
-  "jetbrains.mps.vcs.old.MergeReferencesTest",
   "jetbrains.mps.vfs.VfsTest",
   "jetbrains.mps.ide.blame.command.AffectedVersionTest",
   "jetbrains.mps.workbench.ProjectCreationTest",
