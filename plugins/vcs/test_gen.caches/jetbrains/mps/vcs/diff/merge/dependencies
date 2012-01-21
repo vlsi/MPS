@@ -8,8 +8,10 @@
     <classNode dependClassName="java.lang.System" />
     <classNode dependClassName="java.util.Properties" />
     <classNode dependClassName="jetbrains.mps.MPSCore" />
+    <classNode dependClassName="jetbrains.mps.smodel.persistence.RoleIdsComponent" />
     <classNode dependClassName="jetbrains.mps.smodel.persistence.def.ModelReadException" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.merge.MergeData" />
+    <classNode dependClassName="jetbrains.mps.vcs.mergedriver.MergerRoleIdsHandler" />
     <classNode dependClassName="org.apache.log4j.PropertyConfigurator" />
     <classNode dependClassName="org.junit.AfterClass" />
     <classNode dependClassName="org.junit.Assert" />

@@ -1,67 +1,73 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <root nodeId="445606167100192267">
-    <nodeInfo nodeId="445606167100248122" fileName="MergeCoreTest.java" startLine="16" startPosition="28" endLine="17" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="TESTDATA_HOME" />
-    <nodeInfo nodeId="68133678146704940" fileName="MergeCoreTest.java" startLine="17" startPosition="80" endLine="18" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ourPlayRefactoringWas" />
-    <nodeInfo nodeId="68133678146704944" fileName="MergeCoreTest.java" startLine="18" startPosition="46" endLine="19" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ourMergeDriverModeWas" />
-    <nodeInfo nodeId="1099962754143604836" fileName="MergeCoreTest.java" startLine="19" startPosition="47" endLine="20" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="PLAY_REFACTORINGS_PROPERTY" />
-    <nodeInfo nodeId="68133678146735936" fileName="MergeCoreTest.java" startLine="26" startPosition="25" endLine="27" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="68133678146704967" fileName="MergeCoreTest.java" startLine="31" startPosition="35" endLine="32" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="68133678146704998" fileName="MergeCoreTest.java" startLine="32" startPosition="75" endLine="33" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="68133678146705005" fileName="MergeCoreTest.java" startLine="33" startPosition="70" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="5911625124420701033" fileName="MergeCoreTest.java" startLine="34" startPosition="0" endLine="35" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2445003365367301445" fileName="MergeCoreTest.java" startLine="35" startPosition="60" endLine="36" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1099962754143605124" fileName="MergeCoreTest.java" startLine="36" startPosition="51" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="1099962754143605128" fileName="MergeCoreTest.java" startLine="37" startPosition="0" endLine="38" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1099962754143605136" fileName="MergeCoreTest.java" startLine="38" startPosition="36" endLine="39" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1099962754143605152" fileName="MergeCoreTest.java" startLine="39" startPosition="55" endLine="40" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1099962754143615962" fileName="MergeCoreTest.java" startLine="40" startPosition="80" endLine="41" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1099962754143615968" fileName="MergeCoreTest.java" startLine="41" startPosition="85" endLine="42" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1099962754143627826" fileName="MergeCoreTest.java" startLine="42" startPosition="100" endLine="43" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1099962754143614648" fileName="MergeCoreTest.java" startLine="43" startPosition="65" endLine="44" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1099962754143603858" fileName="MergeCoreTest.java" startLine="49" startPosition="40" endLine="50" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="68133678146705008" fileName="MergeCoreTest.java" startLine="51" startPosition="12" endLine="52" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="68133678146705012" fileName="MergeCoreTest.java" startLine="53" startPosition="5" endLine="54" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="68133678146735036" fileName="MergeCoreTest.java" startLine="58" startPosition="9" endLine="59" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="68133678146735970" fileName="MergeCoreTest.java" startLine="60" startPosition="27" endLine="61" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="68133678146735949" fileName="MergeCoreTest.java" startLine="61" startPosition="26" endLine="62" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="68133678146705022" fileName="MergeCoreTest.java" startLine="66" startPosition="81" endLine="67" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="68133678146703276" fileName="MergeCoreTest.java" startLine="67" startPosition="17" endLine="68" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="445606167100192269" fileName="MergeCoreTest.java" startLine="21" startPosition="0" endLine="23" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MergeCoreTest#()V" />
-    <nodeInfo nodeId="1099962754143603856" fileName="MergeCoreTest.java" startLine="51" startPosition="10" endLine="53" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="68133678146705024" fileName="MergeCoreTest.java" startLine="24" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="sandbox#()V" />
-    <nodeInfo nodeId="1099962754143603844" fileName="MergeCoreTest.java" startLine="48" startPosition="38" endLine="53" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="445606167100282841" fileName="MergeCoreTest.java" startLine="65" startPosition="0" endLine="70" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="main#([Ljava/lang/String;)V" />
-    <nodeInfo nodeId="68133678146735938" fileName="MergeCoreTest.java" startLine="57" startPosition="50" endLine="63" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="68133678146705036" fileName="MergeCoreTest.java" startLine="56" startPosition="0" endLine="65" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="invokeTest#(Ljava/lang/String;)V" />
-    <nodeInfo nodeId="68133678146704948" fileName="MergeCoreTest.java" startLine="46" startPosition="0" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="tearDownClass#()V" />
-    <nodeInfo nodeId="68133678146704928" fileName="MergeCoreTest.java" startLine="29" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="setUpClass#()V" />
-    <scopeInfo nodeId="445606167100192272" fileName="MergeCoreTest.java" startLine="22" startPosition="26" endLine="22" endPosition="26" />
-    <scopeInfo nodeId="68133678146705027" fileName="MergeCoreTest.java" startLine="26" startPosition="25" endLine="27" endPosition="34" />
-    <scopeInfo nodeId="1099962754143603845" fileName="MergeCoreTest.java" startLine="49" startPosition="40" endLine="50" endPosition="64" />
-    <scopeInfo nodeId="1099962754143603857" fileName="MergeCoreTest.java" startLine="51" startPosition="12" endLine="52" endPosition="76" />
-    <scopeInfo nodeId="68133678146735939" fileName="MergeCoreTest.java" startLine="58" startPosition="9" endLine="59" endPosition="81" />
-    <scopeInfo nodeId="445606167100192269" fileName="MergeCoreTest.java" startLine="21" startPosition="0" endLine="23" endPosition="3" />
-    <scopeInfo nodeId="68133678146735940" fileName="MergeCoreTest.java" startLine="60" startPosition="0" endLine="62" endPosition="20">
+    <nodeInfo nodeId="445606167100248122" fileName="MergeCoreTest.java" startLine="18" startPosition="28" endLine="19" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="TESTDATA_HOME" />
+    <nodeInfo nodeId="68133678146704940" fileName="MergeCoreTest.java" startLine="19" startPosition="80" endLine="20" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ourPlayRefactoringWas" />
+    <nodeInfo nodeId="68133678146704944" fileName="MergeCoreTest.java" startLine="20" startPosition="46" endLine="21" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ourMergeDriverModeWas" />
+    <nodeInfo nodeId="1099962754143604836" fileName="MergeCoreTest.java" startLine="21" startPosition="47" endLine="22" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="PLAY_REFACTORINGS_PROPERTY" />
+    <nodeInfo nodeId="68133678146735936" fileName="MergeCoreTest.java" startLine="28" startPosition="25" endLine="29" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1099962754143780794" fileName="MergeCoreTest.java" startLine="33" startPosition="22" endLine="34" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="68133678146704967" fileName="MergeCoreTest.java" startLine="38" startPosition="35" endLine="39" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="68133678146704998" fileName="MergeCoreTest.java" startLine="39" startPosition="75" endLine="40" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="68133678146705005" fileName="MergeCoreTest.java" startLine="40" startPosition="70" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="5911625124420701033" fileName="MergeCoreTest.java" startLine="41" startPosition="0" endLine="42" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2445003365367301445" fileName="MergeCoreTest.java" startLine="42" startPosition="60" endLine="43" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1099962754143759685" fileName="MergeCoreTest.java" startLine="43" startPosition="51" endLine="44" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1099962754143605124" fileName="MergeCoreTest.java" startLine="44" startPosition="60" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="1099962754143605128" fileName="MergeCoreTest.java" startLine="45" startPosition="0" endLine="46" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1099962754143605136" fileName="MergeCoreTest.java" startLine="46" startPosition="36" endLine="47" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1099962754143605152" fileName="MergeCoreTest.java" startLine="47" startPosition="55" endLine="48" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1099962754143615962" fileName="MergeCoreTest.java" startLine="48" startPosition="80" endLine="49" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1099962754143615968" fileName="MergeCoreTest.java" startLine="49" startPosition="85" endLine="50" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1099962754143627826" fileName="MergeCoreTest.java" startLine="50" startPosition="100" endLine="51" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1099962754143614648" fileName="MergeCoreTest.java" startLine="51" startPosition="65" endLine="52" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1099962754143603858" fileName="MergeCoreTest.java" startLine="57" startPosition="40" endLine="58" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="68133678146705008" fileName="MergeCoreTest.java" startLine="59" startPosition="12" endLine="60" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="68133678146705012" fileName="MergeCoreTest.java" startLine="61" startPosition="5" endLine="62" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1099962754143763756" fileName="MergeCoreTest.java" startLine="62" startPosition="68" endLine="63" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="68133678146735036" fileName="MergeCoreTest.java" startLine="67" startPosition="9" endLine="68" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="68133678146735970" fileName="MergeCoreTest.java" startLine="69" startPosition="27" endLine="70" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="68133678146735949" fileName="MergeCoreTest.java" startLine="70" startPosition="26" endLine="71" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="68133678146705022" fileName="MergeCoreTest.java" startLine="75" startPosition="81" endLine="76" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="68133678146703276" fileName="MergeCoreTest.java" startLine="76" startPosition="17" endLine="77" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="445606167100192269" fileName="MergeCoreTest.java" startLine="23" startPosition="0" endLine="25" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MergeCoreTest#()V" />
+    <nodeInfo nodeId="1099962754143603856" fileName="MergeCoreTest.java" startLine="59" startPosition="10" endLine="61" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="68133678146705024" fileName="MergeCoreTest.java" startLine="26" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="sandbox#()V" />
+    <nodeInfo nodeId="1099962754143780790" fileName="MergeCoreTest.java" startLine="31" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="tree#()V" />
+    <nodeInfo nodeId="1099962754143603844" fileName="MergeCoreTest.java" startLine="56" startPosition="38" endLine="61" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="445606167100282841" fileName="MergeCoreTest.java" startLine="74" startPosition="0" endLine="79" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="main#([Ljava/lang/String;)V" />
+    <nodeInfo nodeId="68133678146735938" fileName="MergeCoreTest.java" startLine="66" startPosition="50" endLine="72" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="68133678146705036" fileName="MergeCoreTest.java" startLine="65" startPosition="0" endLine="74" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="invokeTest#(Ljava/lang/String;)V" />
+    <nodeInfo nodeId="68133678146704948" fileName="MergeCoreTest.java" startLine="54" startPosition="0" endLine="65" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="tearDownClass#()V" />
+    <nodeInfo nodeId="68133678146704928" fileName="MergeCoreTest.java" startLine="36" startPosition="0" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="setUpClass#()V" />
+    <scopeInfo nodeId="445606167100192272" fileName="MergeCoreTest.java" startLine="24" startPosition="26" endLine="24" endPosition="26" />
+    <scopeInfo nodeId="68133678146705027" fileName="MergeCoreTest.java" startLine="28" startPosition="25" endLine="29" endPosition="34" />
+    <scopeInfo nodeId="1099962754143780793" fileName="MergeCoreTest.java" startLine="33" startPosition="22" endLine="34" endPosition="31" />
+    <scopeInfo nodeId="1099962754143603845" fileName="MergeCoreTest.java" startLine="57" startPosition="40" endLine="58" endPosition="64" />
+    <scopeInfo nodeId="1099962754143603857" fileName="MergeCoreTest.java" startLine="59" startPosition="12" endLine="60" endPosition="76" />
+    <scopeInfo nodeId="68133678146735939" fileName="MergeCoreTest.java" startLine="67" startPosition="9" endLine="68" endPosition="81" />
+    <scopeInfo nodeId="445606167100192269" fileName="MergeCoreTest.java" startLine="23" startPosition="0" endLine="25" endPosition="3" />
+    <scopeInfo nodeId="68133678146735940" fileName="MergeCoreTest.java" startLine="69" startPosition="0" endLine="71" endPosition="20">
       <varInfo nodeId="68133678146735941" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="68133678146735943" fileName="MergeCoreTest.java" startLine="60" startPosition="27" endLine="62" endPosition="20" />
-    <scopeInfo nodeId="445606167100282844" fileName="MergeCoreTest.java" startLine="66" startPosition="81" endLine="68" endPosition="73" />
-    <scopeInfo nodeId="68133678146705024" fileName="MergeCoreTest.java" startLine="24" startPosition="0" endLine="29" endPosition="0" />
-    <scopeInfo nodeId="445606167100282841" fileName="MergeCoreTest.java" startLine="65" startPosition="0" endLine="70" endPosition="0">
+    <scopeInfo nodeId="68133678146735943" fileName="MergeCoreTest.java" startLine="69" startPosition="27" endLine="71" endPosition="20" />
+    <scopeInfo nodeId="445606167100282844" fileName="MergeCoreTest.java" startLine="75" startPosition="81" endLine="77" endPosition="73" />
+    <scopeInfo nodeId="68133678146705024" fileName="MergeCoreTest.java" startLine="26" startPosition="0" endLine="31" endPosition="0" />
+    <scopeInfo nodeId="1099962754143780790" fileName="MergeCoreTest.java" startLine="31" startPosition="0" endLine="36" endPosition="0" />
+    <scopeInfo nodeId="445606167100282841" fileName="MergeCoreTest.java" startLine="74" startPosition="0" endLine="79" endPosition="0">
       <varInfo nodeId="445606167100282845" varName="args" />
     </scopeInfo>
-    <scopeInfo nodeId="68133678146704951" fileName="MergeCoreTest.java" startLine="48" startPosition="38" endLine="54" endPosition="68" />
-    <scopeInfo nodeId="68133678146705039" fileName="MergeCoreTest.java" startLine="57" startPosition="50" endLine="63" endPosition="5" />
-    <scopeInfo nodeId="68133678146705036" fileName="MergeCoreTest.java" startLine="56" startPosition="0" endLine="65" endPosition="0">
+    <scopeInfo nodeId="68133678146705039" fileName="MergeCoreTest.java" startLine="66" startPosition="50" endLine="72" endPosition="5" />
+    <scopeInfo nodeId="68133678146704951" fileName="MergeCoreTest.java" startLine="56" startPosition="38" endLine="63" endPosition="38" />
+    <scopeInfo nodeId="68133678146705036" fileName="MergeCoreTest.java" startLine="65" startPosition="0" endLine="74" endPosition="0">
       <varInfo nodeId="68133678146705063" varName="zipFile" />
     </scopeInfo>
-    <scopeInfo nodeId="68133678146704948" fileName="MergeCoreTest.java" startLine="46" startPosition="0" endLine="56" endPosition="0" />
-    <scopeInfo nodeId="68133678146704931" fileName="MergeCoreTest.java" startLine="31" startPosition="35" endLine="44" endPosition="38">
+    <scopeInfo nodeId="68133678146704948" fileName="MergeCoreTest.java" startLine="54" startPosition="0" endLine="65" endPosition="0" />
+    <scopeInfo nodeId="68133678146704931" fileName="MergeCoreTest.java" startLine="38" startPosition="35" endLine="52" endPosition="38">
       <varInfo nodeId="1099962754143605129" varName="p" />
     </scopeInfo>
-    <scopeInfo nodeId="68133678146704928" fileName="MergeCoreTest.java" startLine="29" startPosition="0" endLine="46" endPosition="0" />
-    <unitInfo nodeId="445606167100192267" fileName="MergeCoreTest.java" startLine="16" startPosition="0" endLine="71" endPosition="0" unitName="jetbrains.mps.vcs.diff.merge.MergeCoreTest" />
+    <scopeInfo nodeId="68133678146704928" fileName="MergeCoreTest.java" startLine="36" startPosition="0" endLine="54" endPosition="0" />
+    <unitInfo nodeId="445606167100192267" fileName="MergeCoreTest.java" startLine="18" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.vcs.diff.merge.MergeCoreTest" />
   </root>
   <root nodeId="445606167100287301">
     <nodeInfo nodeId="445606167100351130" fileName="MergeData.java" startLine="29" startPosition="24" endLine="30" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="CHANGES_MINE_TXT" />
