@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.vcs.diff.oldchanges.AddLanguageAspectChange" file="AddLanguageAspectChange.java">
+  <dependency className="jetbrains.mps.vcs.changesmanager.deprecated.changes.AddLanguageAspectChange" file="AddLanguageAspectChange.java">
     <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -8,9 +8,9 @@
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelReference" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodeId" />
-    <classNode extendsClassName="jetbrains.mps.vcs.diff.oldchanges.OldChange" />
+    <classNode extendsClassName="jetbrains.mps.vcs.changesmanager.deprecated.changes.OldChange" />
   </dependency>
-  <dependency className="jetbrains.mps.vcs.diff.oldchanges.AddNodeChange" file="AddNodeChange.java">
+  <dependency className="jetbrains.mps.vcs.changesmanager.deprecated.changes.AddNodeChange" file="AddNodeChange.java">
     <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -21,10 +21,10 @@
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodeId" />
-    <classNode dependClassName="jetbrains.mps.vcs.diff.oldchanges.OldChangeType" />
-    <classNode extendsClassName="jetbrains.mps.vcs.diff.oldchanges.NewNodeChange" />
+    <classNode dependClassName="jetbrains.mps.vcs.changesmanager.deprecated.changes.OldChangeType" />
+    <classNode extendsClassName="jetbrains.mps.vcs.changesmanager.deprecated.changes.NewNodeChange" />
   </dependency>
-  <dependency className="jetbrains.mps.vcs.diff.oldchanges.ChangeConceptChange" file="ChangeConceptChange.java">
+  <dependency className="jetbrains.mps.vcs.changesmanager.deprecated.changes.ChangeConceptChange" file="ChangeConceptChange.java">
     <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -33,9 +33,9 @@
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodeId" />
-    <classNode extendsClassName="jetbrains.mps.vcs.diff.oldchanges.OldChange" />
+    <classNode extendsClassName="jetbrains.mps.vcs.changesmanager.deprecated.changes.OldChange" />
   </dependency>
-  <dependency className="jetbrains.mps.vcs.diff.oldchanges.DeleteNodeChange" file="DeleteNodeChange.java">
+  <dependency className="jetbrains.mps.vcs.changesmanager.deprecated.changes.DeleteNodeChange" file="DeleteNodeChange.java">
     <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -47,10 +47,10 @@
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodeId" />
-    <classNode dependClassName="jetbrains.mps.vcs.diff.oldchanges.OldChangeType" />
-    <classNode extendsClassName="jetbrains.mps.vcs.diff.oldchanges.OldChange" />
+    <classNode dependClassName="jetbrains.mps.vcs.changesmanager.deprecated.changes.OldChangeType" />
+    <classNode extendsClassName="jetbrains.mps.vcs.changesmanager.deprecated.changes.OldChange" />
   </dependency>
-  <dependency className="jetbrains.mps.vcs.diff.oldchanges.DeleteReferenceChange" file="DeleteReferenceChange.java">
+  <dependency className="jetbrains.mps.vcs.changesmanager.deprecated.changes.DeleteReferenceChange" file="DeleteReferenceChange.java">
     <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -58,30 +58,30 @@
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodeId" />
     <classNode dependClassName="jetbrains.mps.smodel.SReference" />
-    <classNode extendsClassName="jetbrains.mps.vcs.diff.oldchanges.OldSetReferenceChange" />
+    <classNode extendsClassName="jetbrains.mps.vcs.changesmanager.deprecated.changes.OldSetReferenceChange" />
   </dependency>
-  <dependency className="jetbrains.mps.vcs.diff.oldchanges.EngagedOnGenerationLanguagesChange" file="EngagedOnGenerationLanguagesChange.java">
+  <dependency className="jetbrains.mps.vcs.changesmanager.deprecated.changes.EngagedOnGenerationLanguagesChange" file="EngagedOnGenerationLanguagesChange.java">
     <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.project.structure.modules.ModuleReference" />
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodeId" />
-    <classNode dependClassName="jetbrains.mps.vcs.diff.oldchanges.OldChangeType" />
+    <classNode dependClassName="jetbrains.mps.vcs.changesmanager.deprecated.changes.OldChangeType" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
-    <classNode extendsClassName="jetbrains.mps.vcs.diff.oldchanges.OldChange" />
+    <classNode extendsClassName="jetbrains.mps.vcs.changesmanager.deprecated.changes.OldChange" />
   </dependency>
-  <dependency className="jetbrains.mps.vcs.diff.oldchanges.ModelImportChange" file="ModelImportChange.java">
+  <dependency className="jetbrains.mps.vcs.changesmanager.deprecated.changes.ModelImportChange" file="ModelImportChange.java">
     <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelReference" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodeId" />
-    <classNode dependClassName="jetbrains.mps.vcs.diff.oldchanges.OldChangeType" />
-    <classNode extendsClassName="jetbrains.mps.vcs.diff.oldchanges.OldChange" />
+    <classNode dependClassName="jetbrains.mps.vcs.changesmanager.deprecated.changes.OldChangeType" />
+    <classNode extendsClassName="jetbrains.mps.vcs.changesmanager.deprecated.changes.OldChange" />
   </dependency>
-  <dependency className="jetbrains.mps.vcs.diff.oldchanges.MoveNodeChange" file="MoveNodeChange.java">
+  <dependency className="jetbrains.mps.vcs.changesmanager.deprecated.changes.MoveNodeChange" file="MoveNodeChange.java">
     <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -91,9 +91,9 @@
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodeId" />
-    <classNode extendsClassName="jetbrains.mps.vcs.diff.oldchanges.OldChange" />
+    <classNode extendsClassName="jetbrains.mps.vcs.changesmanager.deprecated.changes.OldChange" />
   </dependency>
-  <dependency className="jetbrains.mps.vcs.diff.oldchanges.NewNodeChange" file="NewNodeChange.java">
+  <dependency className="jetbrains.mps.vcs.changesmanager.deprecated.changes.NewNodeChange" file="NewNodeChange.java">
     <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -101,10 +101,10 @@
     <classNode dependClassName="jetbrains.mps.errors.messageTargets.MessageTarget" />
     <classNode dependClassName="jetbrains.mps.errors.messageTargets.NodeMessageTarget" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodeId" />
-    <classNode dependClassName="jetbrains.mps.vcs.diff.oldchanges.OldChangeType" />
-    <classNode extendsClassName="jetbrains.mps.vcs.diff.oldchanges.OldChange" />
+    <classNode dependClassName="jetbrains.mps.vcs.changesmanager.deprecated.changes.OldChangeType" />
+    <classNode extendsClassName="jetbrains.mps.vcs.changesmanager.deprecated.changes.OldChange" />
   </dependency>
-  <dependency className="jetbrains.mps.vcs.diff.oldchanges.OldAddRootChange" file="OldAddRootChange.java">
+  <dependency className="jetbrains.mps.vcs.changesmanager.deprecated.changes.OldAddRootChange" file="OldAddRootChange.java">
     <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
@@ -112,9 +112,9 @@
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodeId" />
-    <classNode extendsClassName="jetbrains.mps.vcs.diff.oldchanges.NewNodeChange" />
+    <classNode extendsClassName="jetbrains.mps.vcs.changesmanager.deprecated.changes.NewNodeChange" />
   </dependency>
-  <dependency className="jetbrains.mps.vcs.diff.oldchanges.OldChange" file="OldChange.java">
+  <dependency className="jetbrains.mps.vcs.changesmanager.deprecated.changes.OldChange" file="OldChange.java">
     <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -122,13 +122,13 @@
     <classNode dependClassName="jetbrains.mps.errors.messageTargets.MessageTarget" />
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodeId" />
-    <classNode dependClassName="jetbrains.mps.vcs.diff.oldchanges.OldChangeType" />
+    <classNode dependClassName="jetbrains.mps.vcs.changesmanager.deprecated.changes.OldChangeType" />
   </dependency>
-  <dependency className="jetbrains.mps.vcs.diff.oldchanges.OldChangeType" file="OldChangeType.java">
+  <dependency className="jetbrains.mps.vcs.changesmanager.deprecated.changes.OldChangeType" file="OldChangeType.java">
     <classNode dependClassName="java.awt.Color" />
     <classNode dependClassName="java.lang.Deprecated" />
   </dependency>
-  <dependency className="jetbrains.mps.vcs.diff.oldchanges.OldSetPropertyChange" file="OldSetPropertyChange.java">
+  <dependency className="jetbrains.mps.vcs.changesmanager.deprecated.changes.OldSetPropertyChange" file="OldSetPropertyChange.java">
     <classNode dependClassName="com.intellij.openapi.util.Pair" />
     <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Object" />
@@ -141,9 +141,9 @@
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodeId" />
-    <classNode extendsClassName="jetbrains.mps.vcs.diff.oldchanges.OldChange" />
+    <classNode extendsClassName="jetbrains.mps.vcs.changesmanager.deprecated.changes.OldChange" />
   </dependency>
-  <dependency className="jetbrains.mps.vcs.diff.oldchanges.OldSetReferenceChange" file="OldSetReferenceChange.java">
+  <dependency className="jetbrains.mps.vcs.changesmanager.deprecated.changes.OldSetReferenceChange" file="OldSetReferenceChange.java">
     <classNode dependClassName="com.intellij.openapi.util.Pair" />
     <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Object" />
@@ -160,9 +160,9 @@
     <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
     <classNode dependClassName="jetbrains.mps.smodel.SReference" />
     <classNode dependClassName="jetbrains.mps.smodel.StaticReference" />
-    <classNode extendsClassName="jetbrains.mps.vcs.diff.oldchanges.OldChange" />
+    <classNode extendsClassName="jetbrains.mps.vcs.changesmanager.deprecated.changes.OldChange" />
   </dependency>
-  <dependency className="jetbrains.mps.vcs.diff.oldchanges.SetNodeChange" file="SetNodeChange.java">
+  <dependency className="jetbrains.mps.vcs.changesmanager.deprecated.changes.SetNodeChange" file="SetNodeChange.java">
     <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -175,38 +175,38 @@
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodeId" />
     <classNode dependClassName="jetbrains.mps.util.Pair" />
-    <classNode dependClassName="jetbrains.mps.vcs.diff.oldchanges.OldChangeType" />
-    <classNode extendsClassName="jetbrains.mps.vcs.diff.oldchanges.NewNodeChange" />
+    <classNode dependClassName="jetbrains.mps.vcs.changesmanager.deprecated.changes.OldChangeType" />
+    <classNode extendsClassName="jetbrains.mps.vcs.changesmanager.deprecated.changes.NewNodeChange" />
   </dependency>
-  <dependency className="jetbrains.mps.vcs.diff.oldchanges.SubstituteNodeChange" file="SubstituteNodeChange.java">
+  <dependency className="jetbrains.mps.vcs.changesmanager.deprecated.changes.SubstituteNodeChange" file="SubstituteNodeChange.java">
     <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodeId" />
-    <classNode dependClassName="jetbrains.mps.vcs.diff.oldchanges.OldChangeType" />
-    <classNode extendsClassName="jetbrains.mps.vcs.diff.oldchanges.AddNodeChange" />
+    <classNode dependClassName="jetbrains.mps.vcs.changesmanager.deprecated.changes.OldChangeType" />
+    <classNode extendsClassName="jetbrains.mps.vcs.changesmanager.deprecated.changes.AddNodeChange" />
   </dependency>
-  <dependency className="jetbrains.mps.vcs.diff.oldchanges.UsedDevkitsChange" file="UsedDevkitsChange.java">
-    <classNode dependClassName="java.lang.Deprecated" />
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.project.structure.modules.ModuleReference" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModel" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNodeId" />
-    <classNode dependClassName="jetbrains.mps.vcs.diff.oldchanges.OldChangeType" />
-    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
-    <classNode extendsClassName="jetbrains.mps.vcs.diff.oldchanges.OldChange" />
-  </dependency>
-  <dependency className="jetbrains.mps.vcs.diff.oldchanges.UsedLanguagesChange" file="UsedLanguagesChange.java">
+  <dependency className="jetbrains.mps.vcs.changesmanager.deprecated.changes.UsedDevkitsChange" file="UsedDevkitsChange.java">
     <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.project.structure.modules.ModuleReference" />
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodeId" />
-    <classNode dependClassName="jetbrains.mps.vcs.diff.oldchanges.OldChangeType" />
+    <classNode dependClassName="jetbrains.mps.vcs.changesmanager.deprecated.changes.OldChangeType" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
-    <classNode extendsClassName="jetbrains.mps.vcs.diff.oldchanges.OldChange" />
+    <classNode extendsClassName="jetbrains.mps.vcs.changesmanager.deprecated.changes.OldChange" />
+  </dependency>
+  <dependency className="jetbrains.mps.vcs.changesmanager.deprecated.changes.UsedLanguagesChange" file="UsedLanguagesChange.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.project.structure.modules.ModuleReference" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModel" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNodeId" />
+    <classNode dependClassName="jetbrains.mps.vcs.changesmanager.deprecated.changes.OldChangeType" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode extendsClassName="jetbrains.mps.vcs.changesmanager.deprecated.changes.OldChange" />
   </dependency>
 </dependenciesRoot>
 

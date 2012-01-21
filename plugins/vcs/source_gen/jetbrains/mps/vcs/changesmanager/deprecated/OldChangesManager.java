@@ -34,7 +34,7 @@ import jetbrains.mps.smodel.ModelAccess;
 import java.io.PrintStream;
 import jetbrains.mps.internal.collections.runtime.IMapping;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.vcs.diff.oldchanges.OldChange;
+import jetbrains.mps.vcs.changesmanager.deprecated.changes.OldChange;
 import com.intellij.openapi.vcs.changes.ChangeListAdapter;
 import java.util.Collection;
 import com.intellij.openapi.vcs.changes.Change;
