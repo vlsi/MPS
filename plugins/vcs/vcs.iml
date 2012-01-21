@@ -32,6 +32,7 @@
     <orderEntry type="module" module-name="mps-workbench" />
     <orderEntry type="module" module-name="mps-platform" />
     <orderEntry type="module" module-name="mps-editor" />
+    <orderEntry type="library" name="Log4j" level="project" />
   </component>
 </module>
 

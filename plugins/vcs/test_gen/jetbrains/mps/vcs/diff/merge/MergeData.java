@@ -23,6 +23,8 @@ import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.vcs.diff.ChangeSet;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.util.DifflibFacade;
+import jetbrains.mps.internal.collections.runtime.IVisitor;
 
 public class MergeData {
   private static final String CHANGES_MINE_TXT = "changes.mine.txt";
@@ -61,19 +63,19 @@ public class MergeData {
     myModelMpsResult = modelName + ".mps.result";
   }
 
-  public void loadCommonData() throws IOException {
+  private void loadCommonData() throws IOException {
     myBaseModelString = loadString(myModelMpsBase);
     myMineModelString = loadString(myModelMpsMine);
     myRepositoryModelString = loadString(myModelMpsRepository);
   }
 
-  public void loadResultData() throws IOException {
+  private void loadResultData() throws IOException {
     myResultModelString = loadString(myModelMpsResult);
     myChangesMineString = loadString(CHANGES_MINE_TXT);
     myChangesRepositoryString = loadString(CHANGES_REPOSITORY_TXT);
   }
 
-  public void generateResultData() throws ModelReadException {
+  private boolean generateAndCheckResultData() throws ModelReadException {
     SModel baseModel = ModelPersistence.readModel(myBaseModelString, false);
     SModel mineModel = ModelPersistence.readModel(myMineModelString, false);
     SModel repositoryModel = ModelPersistence.readModel(myRepositoryModelString, false);
@@ -93,19 +95,24 @@ public class MergeData {
     String changesMineString = dumpChangeSet(session.getMyChangeSet(), session);
     String changesRepositoryString = dumpChangeSet(session.getRepositoryChangeSet(), session);
 
-    myResultModelString = resultModelString;
-    myChangesMineString = changesMineString;
-    myChangesRepositoryString = changesRepositoryString;
+    if (myResultModelString != null || myChangesMineString != null || myChangesRepositoryString != null) {
+      return check("result model", myResultModelString, resultModelString) && check("my change list", myChangesMineString, changesMineString) && check("my repository list", myChangesRepositoryString, changesRepositoryString);
+    } else {
+      myResultModelString = resultModelString;
+      myChangesMineString = changesMineString;
+      myChangesRepositoryString = changesRepositoryString;
+      return true;
+    }
   }
 
-  public void saveAndClose() throws IOException {
+  private void saveAndClose() throws IOException {
     myZipFile.close();
     ZipOutputStream zos = new ZipOutputStream(new FileOutputStream(myZipFileFile));
     addFileToZos(zos, myModelMpsBase, myBaseModelString);
     addFileToZos(zos, myModelMpsMine, myMineModelString);
     addFileToZos(zos, myModelMpsRepository, myRepositoryModelString);
     if (myResultModelString != null) {
-      addFileToZos(zos, myModelMpsRepository, myRepositoryModelString);
+      addFileToZos(zos, myModelMpsResult, myResultModelString);
     }
     addFileToZos(zos, CHANGES_MINE_TXT, myChangesMineString);
     addFileToZos(zos, CHANGES_REPOSITORY_TXT, myChangesRepositoryString);
@@ -121,10 +128,24 @@ public class MergeData {
     InputStream inputStream = myZipFile.getInputStream(entry);
     byte[] bytes = ReadUtil.read(inputStream);
     inputStream.close();
-    return new String(bytes, FileUtil.DEFAULT_CHARSET).replace("\r\n", "\n");
+    return new String(bytes, FileUtil.DEFAULT_CHARSET);
   }
 
-  public static String dumpChangeSet(ChangeSet changeSet, MergeSession session) {
+  public void generate() throws IOException, ModelReadException {
+    loadCommonData();
+    generateAndCheckResultData();
+    saveAndClose();
+  }
+
+  public boolean check() throws IOException, ModelReadException {
+    loadCommonData();
+    loadResultData();
+    boolean result = generateAndCheckResultData();
+    myZipFile.close();
+    return result;
+  }
+
+  private static String dumpChangeSet(ChangeSet changeSet, MergeSession session) {
     StringBuffer buf = new StringBuffer();
     for (ModelChange change : ListSequence.fromList(changeSet.getModelChanges()).sort(new ISelector<ModelChange, Comparable<?>>() {
       public Comparable<?> select(ModelChange c) {
@@ -147,5 +168,34 @@ public class MergeData {
     zipOutputStream.putNextEntry(new ZipEntry(name));
     zipOutputStream.write(content.getBytes(FileUtil.DEFAULT_CHARSET));
     zipOutputStream.closeEntry();
+  }
+
+  private static boolean check(String what, String expected, String actual) {
+    if (expected == null || actual == null) {
+      if (expected != null || actual != null) {
+        System.err.printf("Expected %s: %s, but actual is %s\n", what, (expected == null ?
+          "null" :
+          "not null"
+        ), (actual == null ?
+          "null" :
+          "not null"
+        ));
+        return false;
+      } else {
+        return true;
+      }
+    }
+    String[] simpleDiff = DifflibFacade.getSimpleDiff(expected, actual);
+    if (simpleDiff.length == 0) {
+      return true;
+    } else {
+      System.err.println("Difference in " + what);
+      Sequence.fromIterable(Sequence.fromArray(simpleDiff)).visitAll(new IVisitor<String>() {
+        public void visit(String line) {
+          System.err.println(line);
+        }
+      });
+      return false;
+    }
   }
 }
