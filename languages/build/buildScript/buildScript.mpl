@@ -2,6 +2,7 @@
 <language namespace="jetbrains.mps.buildScript" uuid="798100da-4f0a-421a-b991-71f8c50ce5d2" compileInMPS="true" doNotGenerateAdapters="false">
   <models>
     <modelRoot path="${language_descriptor}/languageModels" />
+    <modelRoot path="${language_descriptor}/utilModels" />
   </models>
   <accessoryModels />
   <generators />

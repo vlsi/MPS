@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="BuildScript_Language.java" startLine="9" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.buildScript.structure.BuildScript_Language" />
-  <unitInfo fileName="StructureAspectDescriptor.java" startLine="10" startPosition="0" endLine="85" endPosition="0" unitName="jetbrains.mps.buildScript.structure.StructureAspectDescriptor" />
+  <unitInfo fileName="StructureAspectDescriptor.java" startLine="10" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.buildScript.structure.StructureAspectDescriptor" />
   <root nodeId="2754769020641429190">
     <nodeInfo nodeId="2754769020641429190" fileName="BuildSource_JavaContentFolder.java" startLine="11" startPosition="64" endLine="12" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="2754769020641429190" fileName="BuildSource_JavaContentFolder.java" startLine="12" startPosition="107" endLine="13" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="RELATIVE_PATH" />
@@ -235,6 +235,10 @@
     </scopeInfo>
     <unitInfo nodeId="3542413272732750877" fileName="BuildAspect.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.buildScript.structure.BuildAspect" />
   </root>
+  <root nodeId="4959435991187108491">
+    <nodeInfo nodeId="4959435991187108491" fileName="Environment.java" startLine="7" startPosition="51" endLine="8" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
+    <unitInfo nodeId="4959435991187108491" fileName="Environment.java" startLine="7" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.buildScript.structure.Environment" />
+  </root>
   <root nodeId="4993211115183250894">
     <nodeInfo nodeId="4993211115183250894" fileName="BuildSource_JavaDependencyLibrary.java" startLine="10" startPosition="83" endLine="11" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="4993211115183250894" fileName="BuildSource_JavaDependencyLibrary.java" startLine="11" startPosition="111" endLine="12" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LIBRARY" />
@@ -327,7 +331,7 @@
     <unitInfo nodeId="5481553824944787378" fileName="BuildSourceProjectRelativePath.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.buildScript.structure.BuildSourceProjectRelativePath" />
   </root>
   <root nodeId="5617550519002745363">
-    <nodeInfo nodeId="5617550519002745363" fileName="BuildProject.java" startLine="16" startPosition="87" endLine="17" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
+    <nodeInfo nodeId="5617550519002745363" fileName="BuildProject.java" startLine="16" startPosition="100" endLine="17" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="5617550519002745363" fileName="BuildProject.java" startLine="17" startPosition="90" endLine="18" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SHORT_DESCRIPTION" />
     <nodeInfo nodeId="5617550519002745363" fileName="BuildProject.java" startLine="18" startPosition="68" endLine="19" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ALIAS" />
     <nodeInfo nodeId="5617550519002745363" fileName="BuildProject.java" startLine="19" startPosition="45" endLine="20" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="VIRTUAL_PACKAGE" />

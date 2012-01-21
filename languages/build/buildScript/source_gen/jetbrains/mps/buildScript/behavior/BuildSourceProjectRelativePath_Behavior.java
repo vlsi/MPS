@@ -4,7 +4,7 @@ package jetbrains.mps.buildScript.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.buildScript.util.Context;
 
 public class BuildSourceProjectRelativePath_Behavior {
   public static void init(SNode thisNode) {
@@ -14,7 +14,7 @@ public class BuildSourceProjectRelativePath_Behavior {
     return "./" + SPropertyOperations.getString(thisNode, "relativePath");
   }
 
-  public static String virtual_getLocalPath_5481553824944787364(SNode thisNode) {
-    return BuildProject_Behavior.call_getBasePath_5481553824944773325(SNodeOperations.getAncestor(thisNode, "jetbrains.mps.buildScript.structure.BuildProject", false, false)) + ".???";
+  public static String virtual_getBasePath_4959435991187140515(SNode thisNode, Context context) {
+    return Environment_Behavior.call_getBasePath_4959435991187108495(context.getEnvironment());
   }
 }

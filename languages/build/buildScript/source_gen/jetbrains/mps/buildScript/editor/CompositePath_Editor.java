@@ -16,8 +16,14 @@ import jetbrains.mps.nodeEditor.FocusPolicy;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
+import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
+import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPart;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_PropertyValues;
+import java.util.List;
+import jetbrains.mps.buildScript.behavior.CompositePath_Behavior;
+import jetbrains.mps.buildScript.util.Context;
 
 public class CompositePath_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -83,7 +89,7 @@ public class CompositePath_Editor extends DefaultNodeEditor {
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_head");
-    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPart[]{new CompositePath_Editor.CompositePath_head_cellMenu_a0a0()}));
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -96,5 +102,14 @@ public class CompositePath_Editor extends DefaultNodeEditor {
 
   private static boolean renderingCondition_ahdwxs_a1a(SNode node, EditorContext editorContext, IScope scope) {
     return (SLinkOperations.getTarget(node, "tail", true) != null);
+  }
+
+  public static class CompositePath_head_cellMenu_a0a0 extends AbstractCellMenuPart_PropertyValues {
+    public CompositePath_head_cellMenu_a0a0() {
+    }
+
+    public List<String> getPropertyValues(SNode node, IScope scope, IOperationContext operationContext) {
+      return CompositePath_Behavior.call_getHeadSuggestions_4959435991187212109(node, Context.defaultContext(node));
+    }
   }
 }

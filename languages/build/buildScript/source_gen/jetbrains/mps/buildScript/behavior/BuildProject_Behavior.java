@@ -9,6 +9,13 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.scope.SimpleRoleScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import java.util.List;
+import jetbrains.mps.buildScript.util.Context;
+import java.util.Set;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
+import java.util.HashSet;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 
 public class BuildProject_Behavior {
   public static void init(SNode thisNode) {
@@ -29,7 +36,43 @@ public class BuildProject_Behavior {
     return null;
   }
 
-  public static String call_getBasePath_5481553824944773325(SNode thisNode) {
+  public static List<SNode> call_getVisibleMacro_4959435991187146934(SNode thisNode) {
+    return SLinkOperations.getTargets(thisNode, "macros", true);
+  }
+
+  public static String virtual_evaluateMacro_4959435991187146993(SNode thisNode, final String macro, Context context) {
+
+    String key = "usedMacro";
+    Set<String> usedMacro = context.<Set<String>>get(key);
+    if (usedMacro == null) {
+      usedMacro = SetSequence.fromSet(new HashSet<String>());
+      context.put(key, usedMacro);
+    }
+    if (SetSequence.fromSet(usedMacro).contains(macro)) {
+      // cycle 
+      return null;
+    }
+    SetSequence.fromSet(usedMacro).addElement(macro);
+
+    SNode macroNode = ListSequence.fromList(BuildProject_Behavior.call_getVisibleMacro_4959435991187146934(thisNode)).findFirst(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return eq_save77_a0a0a0a0a0a7a3(SPropertyOperations.getString(it, "name"), macro);
+      }
+    });
+    if (SNodeOperations.isInstanceOf(macroNode, "jetbrains.mps.buildScript.structure.BuildFolderMacro")) {
+      return BuildFolderMacro_Behavior.call_evaluate_4959435991187146982(SNodeOperations.cast(macroNode, "jetbrains.mps.buildScript.structure.BuildFolderMacro"), context);
+    }
+    return null;
+  }
+
+  public static String virtual_getBasePath_4959435991187108495(SNode thisNode) {
     return thisNode.getModel().getModelDescriptor().getModule().getDescriptorFile().getParent().getPath();
+  }
+
+  private static boolean eq_save77_a0a0a0a0a0a7a3(Object a, Object b) {
+    return (a != null ?
+      a.equals(b) :
+      a == b
+    );
   }
 }

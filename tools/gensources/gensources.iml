@@ -7,6 +7,7 @@
       <sourceFolder url="file://$MODULE_DIR$/../../core/dependencies/source_gen" isTestSource="false" />
     </content>
     <content url="file://$MODULE_DIR$/../../languages">
+      <sourceFolder url="file://$MODULE_DIR$/../../languages/build/buildScript/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../languages/baseLanguage/baseLanguage/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../languages/baseLanguage/baseLanguageInternal/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../languages/baseLanguage/blTypes/source_gen" isTestSource="false" />

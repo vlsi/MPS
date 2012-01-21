@@ -5,6 +5,14 @@ package jetbrains.mps.buildScript.behavior;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import java.util.List;
+import jetbrains.mps.buildScript.util.Context;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
+import java.io.File;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.ISelector;
 
 public class CompositePath_Behavior {
   public static void init(SNode thisNode) {
@@ -16,5 +24,38 @@ public class CompositePath_Behavior {
       return SPropertyOperations.getString(thisNode, "head") + "/" + CompositePath_Behavior.call_getPath_8618885170173674800(SLinkOperations.getTarget(thisNode, "tail", true));
     }
     return SPropertyOperations.getString(thisNode, "head");
+  }
+
+  public static List<String> call_getHeadSuggestions_4959435991187212109(SNode thisNode, Context context) {
+    // todo 
+    SNode relativePathNode = SNodeOperations.getAncestor(thisNode, "jetbrains.mps.buildScript.structure.BuildRelativePath", false, false);
+    String relativePath = BuildRelativePath_Behavior.call_getBasePath_4959435991187140515(relativePathNode, context);
+    if (relativePath == null) {
+      return ListSequence.fromList(new ArrayList<String>());
+    }
+
+    SNode start = SLinkOperations.getTarget(relativePathNode, "compositePart", true);
+    while (start != thisNode) {
+      if (start == null) {
+        // this is actually wtf 
+        return ListSequence.fromList(new ArrayList<String>());
+      }
+      relativePath += "/" + SPropertyOperations.getString(start, "head");
+      start = SLinkOperations.getTarget(start, "tail", true);
+    }
+
+    File file = new File(relativePath);
+    if (!(file.exists())) {
+      return ListSequence.fromList(new ArrayList<String>());
+    }
+    return Sequence.fromIterable(Sequence.fromArray(file.listFiles())).select(new ISelector<File, String>() {
+      public String select(File it) {
+        return it.getName();
+      }
+    }).union(Sequence.fromIterable(Sequence.<String>singleton(".."))).sort(new ISelector<String, Comparable<?>>() {
+      public Comparable<?> select(String it) {
+        return it;
+      }
+    }, true).toListSequence();
   }
 }

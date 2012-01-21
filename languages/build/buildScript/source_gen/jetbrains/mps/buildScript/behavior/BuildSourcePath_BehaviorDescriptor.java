@@ -4,6 +4,8 @@ package jetbrains.mps.buildScript.behavior;
 
 import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 import jetbrains.mps.smodel.SNode;
+import org.jetbrains.annotations.Nullable;
+import jetbrains.mps.buildScript.util.Context;
 
 public abstract class BuildSourcePath_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor {
   public BuildSourcePath_BehaviorDescriptor() {
@@ -13,8 +15,9 @@ public abstract class BuildSourcePath_BehaviorDescriptor extends BaseConcept_Beh
     return BuildSourcePath_Behavior.virtual_getRelativePath_5481553824944787371(thisNode);
   }
 
-  public String virtual_getLocalPath_5481553824944787364(SNode thisNode) {
-    return BuildSourcePath_Behavior.virtual_getLocalPath_5481553824944787364(thisNode);
+  @Nullable
+  public String virtual_getLocalPath_5481553824944787364(SNode thisNode, Context context) {
+    return BuildSourcePath_Behavior.virtual_getLocalPath_5481553824944787364(thisNode, context);
   }
 
   @Override

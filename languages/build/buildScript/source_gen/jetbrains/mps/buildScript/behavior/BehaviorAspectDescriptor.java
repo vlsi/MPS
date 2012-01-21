@@ -7,7 +7,7 @@ import java.util.Arrays;
 import jetbrains.mps.smodel.runtime.interpreted.BehaviorAspectInterpreted;
 
 public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor {
-  private static String[] stringSwitchCases_846f5o_a0a0a = new String[]{"jetbrains.mps.buildScript.structure.BuildArtifact", "jetbrains.mps.buildScript.structure.BuildFolderMacro", "jetbrains.mps.buildScript.structure.BuildLayout", "jetbrains.mps.buildScript.structure.BuildLayout_Folder", "jetbrains.mps.buildScript.structure.BuildLayout_Jar", "jetbrains.mps.buildScript.structure.BuildLayout_JavaOutput", "jetbrains.mps.buildScript.structure.BuildLayout_Zip", "jetbrains.mps.buildScript.structure.BuildPath", "jetbrains.mps.buildScript.structure.BuildProject", "jetbrains.mps.buildScript.structure.BuildProjectDependency", "jetbrains.mps.buildScript.structure.BuildRelativePath", "jetbrains.mps.buildScript.structure.BuildSourceMacroRelativePath", "jetbrains.mps.buildScript.structure.BuildSourceProjectRelativePath", "jetbrains.mps.buildScript.structure.BuildSource_JavaContentFolder", "jetbrains.mps.buildScript.structure.BuildSource_JavaContentRoot", "jetbrains.mps.buildScript.structure.BuildSource_JavaDependencyLibrary", "jetbrains.mps.buildScript.structure.BuildSource_JavaDependencyModule", "jetbrains.mps.buildScript.structure.BuildSource_JavaLibrary", "jetbrains.mps.buildScript.structure.BuildSource_JavaLibraryJar", "jetbrains.mps.buildScript.structure.BuildSource_JavaModule", "jetbrains.mps.buildScript.structure.CompositePath"};
+  private static String[] stringSwitchCases_846f5o_a0a0a = new String[]{"jetbrains.mps.buildScript.structure.BuildArtifact", "jetbrains.mps.buildScript.structure.BuildFolderMacro", "jetbrains.mps.buildScript.structure.BuildLayout", "jetbrains.mps.buildScript.structure.BuildLayout_Folder", "jetbrains.mps.buildScript.structure.BuildLayout_Jar", "jetbrains.mps.buildScript.structure.BuildLayout_JavaOutput", "jetbrains.mps.buildScript.structure.BuildLayout_Zip", "jetbrains.mps.buildScript.structure.BuildPath", "jetbrains.mps.buildScript.structure.BuildProject", "jetbrains.mps.buildScript.structure.BuildProjectDependency", "jetbrains.mps.buildScript.structure.BuildSourceMacroRelativePath", "jetbrains.mps.buildScript.structure.BuildSourceProjectRelativePath", "jetbrains.mps.buildScript.structure.BuildSource_JavaContentFolder", "jetbrains.mps.buildScript.structure.BuildSource_JavaContentRoot", "jetbrains.mps.buildScript.structure.BuildSource_JavaDependencyLibrary", "jetbrains.mps.buildScript.structure.BuildSource_JavaDependencyModule", "jetbrains.mps.buildScript.structure.BuildSource_JavaLibrary", "jetbrains.mps.buildScript.structure.BuildSource_JavaLibraryJar", "jetbrains.mps.buildScript.structure.BuildSource_JavaModule", "jetbrains.mps.buildScript.structure.CompositePath"};
 
   public BehaviorAspectDescriptor() {
   }
@@ -24,38 +24,36 @@ public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.Be
         return new BuildLayout_Zip_BehaviorDescriptor();
       case 4:
         return new BuildLayout_Jar_BehaviorDescriptor();
-      case 19:
+      case 18:
         return new BuildSource_JavaModule_BehaviorDescriptor();
-      case 14:
+      case 13:
         return new BuildSource_JavaContentRoot_BehaviorDescriptor();
       case 1:
         return new BuildFolderMacro_BehaviorDescriptor();
-      case 11:
+      case 10:
         return new BuildSourceMacroRelativePath_BehaviorDescriptor();
       case 5:
         return new BuildLayout_JavaOutput_BehaviorDescriptor();
-      case 13:
+      case 12:
         return new BuildSource_JavaContentFolder_BehaviorDescriptor();
-      case 16:
-        return new BuildSource_JavaDependencyModule_BehaviorDescriptor();
-      case 17:
-        return new BuildSource_JavaLibrary_BehaviorDescriptor();
-      case 18:
-        return new BuildSource_JavaLibraryJar_BehaviorDescriptor();
       case 15:
+        return new BuildSource_JavaDependencyModule_BehaviorDescriptor();
+      case 16:
+        return new BuildSource_JavaLibrary_BehaviorDescriptor();
+      case 17:
+        return new BuildSource_JavaLibraryJar_BehaviorDescriptor();
+      case 14:
         return new BuildSource_JavaDependencyLibrary_BehaviorDescriptor();
       case 9:
         return new BuildProjectDependency_BehaviorDescriptor();
       case 0:
         return new BuildArtifact_BehaviorDescriptor();
-      case 12:
+      case 11:
         return new BuildSourceProjectRelativePath_BehaviorDescriptor();
       case 7:
         return new BuildPath_BehaviorDescriptor();
-      case 20:
+      case 19:
         return new CompositePath_BehaviorDescriptor();
-      case 10:
-        return new BuildRelativePath_BehaviorDescriptor();
       default:
         return BehaviorAspectInterpreted.getInstance().getDescriptor(fqName);
     }

@@ -167,6 +167,9 @@
       <property name="name" nameId="tpck.1169194664001" value="BuildRelativePath" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="7389400916848073790" resolveInfo="BuildSourcePath" />
     </node>
+    <node type="tpce.InterfaceConceptDeclaration" typeId="tpce.1169125989551" id="4959435991187108491">
+      <property name="name" nameId="tpck.1169194664001" value="Environment" />
+    </node>
   </roots>
   <root id="5617550519002745363">
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="5617550519002745381">
@@ -204,6 +207,9 @@
     </node>
     <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="5617550519002745371">
       <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tpck.1169194658468" resolveInfo="INamedConcept" />
+    </node>
+    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="4959435991187146923">
+      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="4959435991187108491" resolveInfo="Environment" />
     </node>
     <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="7389400916847845504">
       <property name="value" nameId="tpce.1105725733873" value="build project" />
@@ -484,6 +490,10 @@
       <property name="sourceCardinality" nameId="tpce.1071599893252" value="0..1" />
       <link role="target" roleId="tpce.1071599976176" targetNodeId="8618885170173601777" resolveInfo="CompositePath" />
     </node>
+    <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.BooleanConceptProperty" typeId="tpce.1105725574259" id="4959435991187168919">
+      <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473854053" resolveInfo="abstract" />
+    </node>
   </root>
+  <root id="4959435991187108491" />
 </model>
 
