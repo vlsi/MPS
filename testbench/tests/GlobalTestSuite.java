@@ -48,7 +48,6 @@ import org.junit.runner.RunWith;
   "jetbrains.mps.vcs.old.MergeConceptAndImportsTest",
   "jetbrains.mps.vcs.old.MergeNotLoseExternalChangesTest",
   "jetbrains.mps.vcs.old.MergeReferencesTest",
-  "jetbrains.mps.vcs.old.MergeSymmetricChangesTest",
   "jetbrains.mps.vfs.VfsTest",
   "jetbrains.mps.ide.blame.command.AffectedVersionTest",
   "jetbrains.mps.workbench.ProjectCreationTest",
