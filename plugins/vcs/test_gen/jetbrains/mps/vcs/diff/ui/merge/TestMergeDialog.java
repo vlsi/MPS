@@ -5,6 +5,7 @@ package jetbrains.mps.vcs.diff.ui.merge;
 import jetbrains.mps.nodeEditor.EditorManager;
 import com.intellij.openapi.Disposable;
 import com.intellij.openapi.util.Disposer;
+import com.intellij.openapi.extensions.Extensions;
 import com.intellij.openapi.project.Project;
 import com.intellij.mock.MockProjectEx;
 import jetbrains.mps.project.MPSProject;
@@ -12,6 +13,8 @@ import jetbrains.mps.ide.bookmark.BookmarkManager;
 import org.jdom.JDOMException;
 import java.io.IOException;
 import jetbrains.mps.smodel.persistence.def.ModelReadException;
+import java.util.Scanner;
+import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.TestMain;
 import com.intellij.openapi.util.IconLoader;
@@ -34,6 +37,11 @@ import jetbrains.mps.vfs.IFile;
 public class TestMergeDialog {
   private static EditorManager ourEditorManager = new EditorManager();
   private static Disposable myParentDisposable = Disposer.newDisposable();
+  private static Object ___init = new Object() {
+    {
+      Extensions.registerAreaClass("IDEA_PROJECT", null);
+    }
+  };
   private static Project ourProject = new MockProjectEx(myParentDisposable) {
     @Override
     public <T> T getComponent(Class<T> interfaceClass) {
@@ -54,7 +62,12 @@ public class TestMergeDialog {
   public TestMergeDialog() {
   }
 
-  public static void main(final String[] args) throws JDOMException, IOException, ModelReadException {
+  public static void main(String[] args) throws JDOMException, IOException, ModelReadException {
+    if (args.length == 0) {
+      System.out.print("Input path to model zip: ");
+      String line = new Scanner(System.in).nextLine();
+      args = new String[]{StringUtils.trim(line)};
+    }
     IdeMain.setTestMode(IdeMain.TestMode.NO_TEST);
     TestMain.configureMPS();
     IconLoader.activate();

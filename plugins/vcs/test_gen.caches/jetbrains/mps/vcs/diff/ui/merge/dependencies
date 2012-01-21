@@ -4,6 +4,7 @@
     <classNode dependClassName="com.intellij.idea.IdeaTestApplication" />
     <classNode dependClassName="com.intellij.mock.MockProjectEx" />
     <classNode dependClassName="com.intellij.openapi.Disposable" />
+    <classNode dependClassName="com.intellij.openapi.extensions.Extensions" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="com.intellij.openapi.util.Disposer" />
     <classNode dependClassName="com.intellij.openapi.util.IconLoader" />
@@ -11,11 +12,13 @@
     <classNode dependClassName="java.io.IOException" />
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Exception" />
+    <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.System" />
     <classNode dependClassName="java.lang.reflect.Field" />
+    <classNode dependClassName="java.util.Scanner" />
     <classNode dependClassName="javax.swing.SwingUtilities" />
     <classNode dependClassName="javax.swing.WindowConstants" />
     <classNode dependClassName="jetbrains.mps.TestMain" />
@@ -35,6 +38,7 @@
     <classNode dependClassName="jetbrains.mps.vcs.diff.ui.merge.MergeModelsDialog" />
     <classNode dependClassName="jetbrains.mps.vfs.FileSystem" />
     <classNode dependClassName="jetbrains.mps.vfs.IFile" />
+    <classNode dependClassName="org.apache.commons.lang.StringUtils" />
     <classNode dependClassName="org.jdom.JDOMException" />
   </dependency>
 </dependenciesRoot>
