@@ -15,6 +15,7 @@ import com.intellij.openapi.application.ApplicationManager;
 import org.apache.commons.lang.ObjectUtils;
 import jetbrains.mps.vcs.diff.changes.SetPropertyChange;
 import jetbrains.mps.smodel.SReference;
+import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.smodel.DynamicReference;
 import jetbrains.mps.smodel.SModelReference;
@@ -24,7 +25,6 @@ import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.vcs.diff.changes.AddRootChange;
 import jetbrains.mps.vcs.diff.changes.DeleteRootChange;
 import java.util.HashSet;
-import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.util.LongestCommonSubsequenceFinder;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.vcs.diff.changes.NodeGroupChange;
@@ -58,8 +58,8 @@ public class ChangeSetBuilder {
   }
 
   private void buildForProperties(SNode oldNode, SNode newNode) {
-    Set<String> oldProperties = (Set<String>) oldNode.getPropertyNames();
-    Set<String> newProperties = (Set<String>) newNode.getPropertyNames();
+    Set<String> oldProperties = (Set<String>) oldNode.getProperties().keySet();
+    Set<String> newProperties = (Set<String>) newNode.getProperties().keySet();
     for (String name : SetSequence.fromSet(oldProperties).union(SetSequence.fromSet(newProperties))) {
       buildForProperty(oldNode, newNode, name);
     }
@@ -82,9 +82,13 @@ public class ChangeSetBuilder {
   }
 
   private void buildForReferences(SNode oldNode, SNode newNode) {
-    Set<String> oldReferences = (Set<String>) oldNode.getReferenceRoles();
-    Set<String> newReferences = (Set<String>) newNode.getReferenceRoles();
-    for (String role : SetSequence.fromSet(oldReferences).union(SetSequence.fromSet(newReferences))) {
+    List<SReference> oldReferences = (List<SReference>) oldNode.getReferences();
+    List<SReference> newReferences = (List<SReference>) newNode.getReferences();
+    for (String role : ListSequence.fromList(oldReferences).concat(ListSequence.fromList(newReferences)).select(new ISelector<SReference, String>() {
+      public String select(SReference r) {
+        return r.getRole();
+      }
+    }).distinct()) {
       buildForReference(oldNode, newNode, role);
     }
   }
