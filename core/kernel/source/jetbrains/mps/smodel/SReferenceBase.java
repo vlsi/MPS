@@ -84,22 +84,19 @@ abstract class SReferenceBase extends SReference {
         makeMature();
       }
       if (force && myImmatureTargetNode != null) {
-        ProblemDescription descriptions[] = new ProblemDescription[2];
-        descriptions[0] = new ProblemDescription(new SNodePointer(getSourceNode()),
-          "SourceNode(" + getNodeIDMessage(getSourceNode()) + "): isRegistered = " + getSourceNode().isRegistered() +
-            ", isDisposed = " + getSourceNode().isDisposed());
-        descriptions[1] = new ProblemDescription(new SNodePointer(myImmatureTargetNode),
-          "ImmatureTargetNode(" + getNodeIDMessage(myImmatureTargetNode) + "): isRegistered = " + myImmatureTargetNode.isRegistered() +
-            ", isDisposed = " + myImmatureTargetNode.isDisposed());
-        error("Impossible to resolve immature reference", descriptions);
+        if (getSourceNode().isRegistered() && !getSourceNode().isDisposed()) {
+          error("Impossible to resolve immature reference",
+            new ProblemDescription(new SNodePointer(myImmatureTargetNode),
+              "ImmatureTargetNode(modelID: " +
+                (myImmatureTargetNode.getModel() == null ? "null" : myImmatureTargetNode.getModel().toString()) +
+                ", nodeID: " + myImmatureTargetNode.getId() +
+                "): isRegistered = " + myImmatureTargetNode.isRegistered() +
+                ", isDisposed = " + myImmatureTargetNode.isDisposed()));
+        }
         myImmatureTargetNode = null;
       }
     }
     return myImmatureTargetNode == null;
-  }
-
-  private static final String getNodeIDMessage(SNode node) {
-    return "modelID: " + (node.getModel() == null ? "null" : node.getModel().toString()) + ", nodeID: " + node.getId();
   }
 
   protected synchronized void makeMature() {
