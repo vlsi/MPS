@@ -8,48 +8,62 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
+import jetbrains.mps.nodeEditor.style.Style;
+import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
+import jetbrains.mps.nodeEditor.FocusPolicy;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
-public class BuildFolderMacro_Editor extends DefaultNodeEditor {
+public class CompositePath_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_io6s4u_a(editorContext, node);
+    return this.createCollection_ahdwxs_a(editorContext, node);
   }
 
-  private EditorCell createCollection_io6s4u_a(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_ahdwxs_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_io6s4u_a");
-    editorCell.addEditorCell(this.createConstant_io6s4u_a0(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_io6s4u_b0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_io6s4u_c0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_io6s4u_d0(editorContext, node));
+    editorCell.setCellId("Collection_ahdwxs_a");
+    editorCell.addEditorCell(this.createProperty_ahdwxs_a0(editorContext, node));
+    if (renderingCondition_ahdwxs_a1a(node, editorContext, editorContext.getOperationContext().getScope())) {
+      editorCell.addEditorCell(this.createCollection_ahdwxs_b0(editorContext, node));
+    }
     return editorCell;
   }
 
-  private EditorCell createConstant_io6s4u_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "folder");
-    editorCell.setCellId("Constant_io6s4u_a0");
-    buildStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
+  private EditorCell createCollection_ahdwxs_b0(EditorContext editorContext, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
+    editorCell.setCellId("Collection_ahdwxs_b0");
+    editorCell.addEditorCell(this.createConstant_ahdwxs_a1a(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_ahdwxs_b1a(editorContext, node));
+    return editorCell;
+  }
+
+  private EditorCell createConstant_ahdwxs_a1a(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "/");
+    editorCell.setCellId("Constant_ahdwxs_a1a");
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.SELECTABLE, false);
+      style.set(StyleAttributes.PUNCTUATION_LEFT, true);
+      style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
+    }
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_io6s4u_c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "=");
-    editorCell.setCellId("Constant_io6s4u_c0");
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-  private EditorCell createRefNode_io6s4u_d0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_ahdwxs_b1a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
-    provider.setRole("defaultPath");
-    provider.setNoTargetText("<no defaultPath>");
+    provider.setRole("tail");
+    provider.setNoTargetText("<no tail>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    if (true) {
+      editorCell.setFocusPolicy(FocusPolicy.ATTRACTS_RECURSIVELY);
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -61,14 +75,14 @@ public class BuildFolderMacro_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createProperty_io6s4u_b0(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_ahdwxs_a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
-    provider.setRole("name");
-    provider.setNoTargetText("<no name>");
+    provider.setRole("head");
+    provider.setNoTargetText("");
+    provider.setAllowsEmptyTarget(true);
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setCellId("property_name");
-    buildStyles_StyleSheet.getMacro(editorCell).apply(editorCell);
+    editorCell.setCellId("property_head");
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -78,5 +92,9 @@ public class BuildFolderMacro_Editor extends DefaultNodeEditor {
       return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
     } else
     return editorCell;
+  }
+
+  private static boolean renderingCondition_ahdwxs_a1a(SNode node, EditorContext editorContext, IScope scope) {
+    return (SLinkOperations.getTarget(node, "tail", true) != null);
   }
 }

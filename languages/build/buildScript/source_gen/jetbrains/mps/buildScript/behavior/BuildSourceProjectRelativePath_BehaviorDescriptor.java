@@ -4,7 +4,7 @@ package jetbrains.mps.buildScript.behavior;
 
 import jetbrains.mps.smodel.SNode;
 
-public class BuildSourceProjectRelativePath_BehaviorDescriptor extends BuildSourcePath_BehaviorDescriptor {
+public class BuildSourceProjectRelativePath_BehaviorDescriptor extends BuildRelativePath_BehaviorDescriptor {
   public BuildSourceProjectRelativePath_BehaviorDescriptor() {
   }
 

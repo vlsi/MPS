@@ -86,7 +86,7 @@
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="7389400916848153117">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="SourcePath" />
       <property name="name" nameId="tpck.1169194664001" value="BuildSourceMacroRelativePath" />
-      <link role="extends" roleId="tpce.1071489389519" targetNodeId="7389400916848073790" resolveInfo="BuildSourcePath" />
+      <link role="extends" roleId="tpce.1071489389519" targetNodeId="7321017245476976379" resolveInfo="BuildRelativePath" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="5966744135495979931">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Layout.Java" />
@@ -145,12 +145,27 @@
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="5481553824944787378">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="SourcePath" />
       <property name="name" nameId="tpck.1169194664001" value="BuildSourceProjectRelativePath" />
-      <link role="extends" roleId="tpce.1071489389519" targetNodeId="7389400916848073790" resolveInfo="BuildSourcePath" />
+      <link role="extends" roleId="tpce.1071489389519" targetNodeId="7321017245476976379" resolveInfo="BuildRelativePath" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="6627265764879799066">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="DataTypes" />
       <property name="name" nameId="tpck.1169194664001" value="BuildPath" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
+    </node>
+    <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="8618885170173601777">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="SourcePath" />
+      <property name="name" nameId="tpck.1169194664001" value="CompositePath" />
+      <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
+    </node>
+    <node type="tpce.ConstrainedDataTypeDeclaration" typeId="tpce.1082978499127" id="8618885170173708134">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="SourcePath" />
+      <property name="name" nameId="tpck.1169194664001" value="FileName" />
+      <property name="constraint" nameId="tpce.1083066089218" value="[^\\/]*" />
+    </node>
+    <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="7321017245476976379">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="SourcePath" />
+      <property name="name" nameId="tpck.1169194664001" value="BuildRelativePath" />
+      <link role="extends" roleId="tpce.1071489389519" targetNodeId="7389400916848073790" resolveInfo="BuildSourcePath" />
     </node>
   </roots>
   <root id="5617550519002745363">
@@ -320,10 +335,6 @@
     </node>
   </root>
   <root id="7389400916848153117">
-    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="5481553824944787385">
-      <property name="name" nameId="tpck.1169194664001" value="relativePath" />
-      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983041843" resolveInfo="string" />
-    </node>
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="7389400916848153130">
       <property name="metaClass" nameId="tpce.1071599937831" value="reference" />
       <property name="role" nameId="tpce.1071599776563" value="macro" />
@@ -447,11 +458,32 @@
       <property name="value" nameId="tpce.1105725733873" value="./" />
       <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473891462" resolveInfo="alias" />
     </node>
-    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="5481553824944787379">
+  </root>
+  <root id="6627265764879799066" />
+  <root id="8618885170173601777">
+    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="8618885170173601778">
+      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
+      <property name="role" nameId="tpce.1071599776563" value="tail" />
+      <property name="sourceCardinality" nameId="tpce.1071599893252" value="0..1" />
+      <link role="target" roleId="tpce.1071599976176" targetNodeId="8618885170173601777" resolveInfo="CompositePath" />
+    </node>
+    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="8618885170173601779">
+      <property name="name" nameId="tpck.1169194664001" value="head" />
+      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="8618885170173708134" resolveInfo="FileName" />
+    </node>
+  </root>
+  <root id="8618885170173708134" />
+  <root id="7321017245476976379">
+    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="5481553824944787385">
       <property name="name" nameId="tpck.1169194664001" value="relativePath" />
       <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983041843" resolveInfo="string" />
     </node>
+    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="7321017245477039051">
+      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
+      <property name="role" nameId="tpce.1071599776563" value="compositePart" />
+      <property name="sourceCardinality" nameId="tpce.1071599893252" value="0..1" />
+      <link role="target" roleId="tpce.1071599976176" targetNodeId="8618885170173601777" resolveInfo="CompositePath" />
+    </node>
   </root>
-  <root id="6627265764879799066" />
 </model>
 

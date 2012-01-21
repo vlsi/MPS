@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="ConstraintsAspectDescriptor.java" startLine="9" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.buildScript.constraints.ConstraintsAspectDescriptor" />
+  <unitInfo fileName="ConstraintsAspectDescriptor.java" startLine="9" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.buildScript.constraints.ConstraintsAspectDescriptor" />
   <root nodeId="3542413272732788550">
     <nodeInfo nodeId="3542413272732788550" fileName="BuildAspect_Constraints.java" startLine="14" startPosition="72" endLine="15" endPosition="177" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="canBeChildBreakingPoint" />
     <nodeInfo nodeId="3542413272732788550" fileName="BuildAspect_Constraints.java" startLine="17" startPosition="36" endLine="18" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
@@ -74,6 +74,38 @@
       <varInfo nodeId="4993211115183387848" varName="operationContext" />
     </scopeInfo>
     <unitInfo nodeId="4993211115183387848" fileName="BuildLayout_Constraints.java" startLine="14" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.buildScript.constraints.BuildLayout_Constraints" />
+  </root>
+  <root nodeId="7321017245477086834">
+    <nodeInfo nodeId="7321017245477086834" fileName="BuildRelativePath_Constraints.java" startLine="16" startPosition="42" endLine="17" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="7321017245477086834" fileName="BuildRelativePath_Constraints.java" startLine="21" startPosition="82" endLine="22" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7321017245477086834" fileName="BuildRelativePath_Constraints.java" startLine="25" startPosition="37" endLine="26" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7321017245477086834" fileName="BuildRelativePath_Constraints.java" startLine="30" startPosition="56" endLine="31" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7321017245477086834" fileName="BuildRelativePath_Constraints.java" startLine="31" startPosition="45" endLine="32" endPosition="127" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="7321017245477086838" fileName="BuildRelativePath_Constraints.java" startLine="31" startPosition="45" endLine="32" endPosition="127" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7321017245477086834" fileName="BuildRelativePath_Constraints.java" startLine="34" startPosition="7" endLine="35" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7321017245477086834" fileName="BuildRelativePath_Constraints.java" startLine="15" startPosition="78" endLine="18" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="BuildRelativePath_Constraints#()V" />
+    <nodeInfo nodeId="7321017245477086834" fileName="BuildRelativePath_Constraints.java" startLine="23" startPosition="96" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hasOwnGetter#()Z" />
+    <nodeInfo nodeId="7321017245477086834" fileName="BuildRelativePath_Constraints.java" startLine="28" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getValue#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/IScope;)Ljava/lang/Object;" />
+    <nodeInfo nodeId="7321017245477086834" fileName="BuildRelativePath_Constraints.java" startLine="22" startPosition="74" endLine="34" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7321017245477086834" fileName="BuildRelativePath_Constraints.java" startLine="19" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNotDefaultProperties#()Ljava/util/Map;" />
+    <scopeInfo nodeId="7321017245477086834" fileName="BuildRelativePath_Constraints.java" startLine="16" startPosition="42" endLine="17" endPosition="67" />
+    <scopeInfo nodeId="7321017245477086834" fileName="BuildRelativePath_Constraints.java" startLine="25" startPosition="37" endLine="26" endPosition="20" />
+    <scopeInfo nodeId="7321017245477086837" fileName="BuildRelativePath_Constraints.java" startLine="31" startPosition="45" endLine="32" endPosition="127" />
+    <scopeInfo nodeId="7321017245477086834" fileName="BuildRelativePath_Constraints.java" startLine="30" startPosition="56" endLine="32" endPosition="127">
+      <varInfo nodeId="7321017245477086834" varName="propertyName" />
+    </scopeInfo>
+    <scopeInfo nodeId="7321017245477086834" fileName="BuildRelativePath_Constraints.java" startLine="15" startPosition="78" endLine="18" endPosition="3" />
+    <scopeInfo nodeId="7321017245477086834" fileName="BuildRelativePath_Constraints.java" startLine="23" startPosition="96" endLine="28" endPosition="0" />
+    <scopeInfo nodeId="7321017245477086834" fileName="BuildRelativePath_Constraints.java" startLine="28" startPosition="0" endLine="34" endPosition="0">
+      <varInfo nodeId="7321017245477086834" varName="node" />
+      <varInfo nodeId="7321017245477086834" varName="scope" />
+    </scopeInfo>
+    <scopeInfo nodeId="7321017245477086834" fileName="BuildRelativePath_Constraints.java" startLine="21" startPosition="82" endLine="35" endPosition="22">
+      <varInfo nodeId="7321017245477086834" varName="properties" />
+    </scopeInfo>
+    <scopeInfo nodeId="7321017245477086834" fileName="BuildRelativePath_Constraints.java" startLine="19" startPosition="0" endLine="37" endPosition="0" />
+    <unitInfo nodeId="7321017245477086834" fileName="BuildRelativePath_Constraints.java" startLine="15" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.buildScript.constraints.BuildRelativePath_Constraints" />
+    <unitInfo nodeId="7321017245477086834" fileName="BuildRelativePath_Constraints.java" startLine="23" startPosition="39" endLine="34" endPosition="5" unitName="jetbrains.mps.buildScript.constraints.BuildRelativePath_Constraints$1" />
   </root>
   <root nodeId="7389400916848182167">
     <nodeInfo nodeId="7389400916848182167" fileName="BuildSourceMacroRelativePath_Constraints.java" startLine="21" startPosition="89" endLine="22" endPosition="192" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="breakingNode_6szw9x_a0a2a0a0a1a0b0a1a0" />

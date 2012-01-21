@@ -7,20 +7,11 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class BuildSourceProjectRelativePath extends BuildSourcePath {
+public class BuildSourceProjectRelativePath extends BuildRelativePath {
   public static final String concept = "jetbrains.mps.buildScript.structure.BuildSourceProjectRelativePath";
-  public static final String RELATIVE_PATH = "relativePath";
 
   public BuildSourceProjectRelativePath(SNode node) {
     super(node);
-  }
-
-  public String getRelativePath() {
-    return this.getProperty(BuildSourceProjectRelativePath.RELATIVE_PATH);
-  }
-
-  public void setRelativePath(String value) {
-    this.setProperty(BuildSourceProjectRelativePath.RELATIVE_PATH, value);
   }
 
   public static BuildSourceProjectRelativePath newInstance(SModel sm, boolean init) {

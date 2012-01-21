@@ -174,6 +174,16 @@
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
   </dependency>
+  <dependency className="jetbrains.mps.buildScript.structure.BuildRelativePath" file="BuildRelativePath.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.buildScript.structure.BuildSourcePath" />
+    <classNode dependClassName="jetbrains.mps.buildScript.structure.CompositePath" />
+    <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModel" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
+  </dependency>
   <dependency className="jetbrains.mps.buildScript.structure.BuildScript_Language" file="BuildScript_Language.java">
     <classNode dependClassName="jetbrains.mps.project.structure.modules.ModuleReference" />
     <classNode dependClassName="jetbrains.mps.smodel.Language" />
@@ -182,7 +192,7 @@
   <dependency className="jetbrains.mps.buildScript.structure.BuildSourceMacroRelativePath" file="BuildSourceMacroRelativePath.java">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.buildScript.structure.BuildFolderMacro" />
-    <classNode dependClassName="jetbrains.mps.buildScript.structure.BuildSourcePath" />
+    <classNode dependClassName="jetbrains.mps.buildScript.structure.BuildRelativePath" />
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
@@ -199,7 +209,7 @@
   </dependency>
   <dependency className="jetbrains.mps.buildScript.structure.BuildSourceProjectRelativePath" file="BuildSourceProjectRelativePath.java">
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.buildScript.structure.BuildSourcePath" />
+    <classNode dependClassName="jetbrains.mps.buildScript.structure.BuildRelativePath" />
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
@@ -300,6 +310,18 @@
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
+  </dependency>
+  <dependency className="jetbrains.mps.buildScript.structure.CompositePath" file="CompositePath.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModel" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
+  </dependency>
+  <dependency className="jetbrains.mps.buildScript.structure.FileName_PropertySupport" file="FileName_PropertySupport.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode extendsClassName="jetbrains.mps.smodel.PropertySupport" />
   </dependency>
   <dependency className="jetbrains.mps.buildScript.structure.StructureAspectDescriptor" file="StructureAspectDescriptor.java">
     <classNode dependClassName="java.lang.String" />
