@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dependenciesRoot>
+  <dependency className="jetbrains.mps.lang.extension.behavior.BehaviorAspectDescriptor" file="BehaviorAspectDescriptor.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.Arrays" />
+    <classNode dependClassName="jetbrains.mps.lang.extension.behavior.ExtensionDeclaration_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.extension.behavior.ExtensionObjectGetter_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.extension.behavior.ExtensionPointDeclaration_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.interpreted.BehaviorAspectInterpreted" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.extension.behavior.ExtensionDeclaration_BehaviorDescriptor" file="ExtensionDeclaration_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.extension.behavior.ExtensionObjectGetter_Behavior" file="ExtensionObjectGetter_Behavior.java">
+    <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.ConceptFunction_Behavior" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.extension.behavior.ExtensionObjectGetter_BehaviorDescriptor" file="ExtensionObjectGetter_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.ConceptFunction_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.extension.behavior.ExtensionObjectGetter_Behavior" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.extension.behavior.ExtensionPointDeclaration_Behavior" file="ExtensionPointDeclaration_Behavior.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
+    <classNode dependClassName="jetbrains.mps.project.IModule" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.extension.behavior.ExtensionPointDeclaration_BehaviorDescriptor" file="ExtensionPointDeclaration_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.core.behavior.INamedConcept_Behavior" />
+    <classNode dependClassName="jetbrains.mps.lang.core.behavior.INamedConcept_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode extendsClassName="java.lang.Cloneable" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
+  </dependency>
+</dependenciesRoot>
+

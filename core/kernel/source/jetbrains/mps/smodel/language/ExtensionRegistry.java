@@ -59,14 +59,24 @@ public class ExtensionRegistry implements CoreComponent {
     INSTANCE = null;
   }
 
-  public ExtensionPoint getExtensionPoint (String id) {
-    return myExtensionPoints.get(id);
+  @SuppressWarnings("unchecked")
+  public <T> ExtensionPoint<T> getExtensionPoint(String id, Class<T> type) {
+    return (ExtensionPoint<T>)myExtensionPoints.get(id);
   }
   
   public boolean hasExtensionPoint (String id) {
     return myExtensionPoints.containsKey(id);
   }
-  
+
+  public <T> Iterable<Extension<T>> getExtensions (ExtensionPoint<T> extensionPoint) {
+    return optExtensionsBucket(extensionPoint.getId(), activeExtensions(extensionPoint));
+  }
+
+  public <T> boolean hasExtensions (String id, ExtensionPoint<T> extensionPoint) {
+    return !optExtensionsBucket(id, activeExtensions(extensionPoint)).isEmpty();
+  }
+
+  @SuppressWarnings("unchecked")
   public void registerExtensionDescriptor(ExtensionDescriptor extensionDescriptor) {
     for (Extension extension: extensionDescriptor.getExtensions()) {
       if (hasExtensionPoint(extension.getExtensionPointId())) {
@@ -82,6 +92,7 @@ public class ExtensionRegistry implements CoreComponent {
     }
   }
 
+  @SuppressWarnings("unchecked")
   public void unregisterExtensionDescriptor(ExtensionDescriptor extensionDescriptor) {
     for (ExtensionPoint extensionPoint: extensionDescriptor.getExtensionPoints()) {
       deactivateExtensionPoint(extensionPoint);
@@ -97,58 +108,58 @@ public class ExtensionRegistry implements CoreComponent {
     }
   }
 
-  private void registerActiveExtension(Extension extension) {
+  private <T> void registerActiveExtension(Extension<T> extension) {
     if (activateExtension(extension)) {
-      extensionsBucket(extension.getExtensionPointId(), myActiveExtensions).add(extension);
+      extensionsBucket(extension.getExtensionPointId(), activeExtensions(extension)).add(extension);
     }
   }
 
-  private void unregisterActiveExtension(Extension extension) {
-    if (optExtensionsBucket(extension.getExtensionPointId(), myActiveExtensions).remove(extension)) {
+  private <T> void unregisterActiveExtension(Extension<T> extension) {
+    if (optExtensionsBucket(extension.getExtensionPointId(), activeExtensions(extension)).remove(extension)) {
       deactivateExtension(extension);
     }
   }
 
-  private void registerInactiveExtension(Extension extension) {
-    extensionsBucket(extension.getExtensionPointId(), myInactiveExtensions).add(extension);
+  private <T> void registerInactiveExtension(Extension<T> extension) {
+    extensionsBucket(extension.getExtensionPointId(), inactiveExtensions(extension)).add(extension);
   }
 
-  private void unregisterInactiveExtension(Extension extension){
-    extensionsBucket(extension.getExtensionPointId(), myInactiveExtensions).remove(extension);
+  private <T> void unregisterInactiveExtension(Extension<T> extension){
+    extensionsBucket(extension.getExtensionPointId(), inactiveExtensions(extension)).remove(extension);
   }
 
-  private void activateExtensionPoint(ExtensionPoint extensionPoint) {
-    for (Extension extension: optExtensionsBucket(extensionPoint.getId(), myInactiveExtensions)) {
+  private <T> void activateExtensionPoint(ExtensionPoint<T> extensionPoint) {
+    for (Extension<T> extension: optExtensionsBucket(extensionPoint.getId(), inactiveExtensions(extensionPoint))) {
       activateExtension(extension);
-      extensionsBucket(extensionPoint.getId(), myActiveExtensions).add(extension);
+      extensionsBucket(extensionPoint.getId(), activeExtensions(extensionPoint)).add(extension);
     }
-    clearExtensionsBucket(extensionPoint.getId(), myInactiveExtensions);
+    clearExtensionsBucket(extensionPoint.getId(), inactiveExtensions(extensionPoint));
   }
 
-  private void deactivateExtensionPoint(ExtensionPoint extensionPoint) {
-    for (Extension extension: optExtensionsBucket(extensionPoint.getId(), myActiveExtensions)) {
+  private <T> void deactivateExtensionPoint(ExtensionPoint<T> extensionPoint) {
+    for (Extension<T> extension: optExtensionsBucket(extensionPoint.getId(), activeExtensions(extensionPoint))) {
       deactivateExtension(extension);
-      extensionsBucket(extensionPoint.getId(), myInactiveExtensions).add(extension);
+      extensionsBucket(extensionPoint.getId(), inactiveExtensions(extensionPoint)).add(extension);
     }
-    clearExtensionsBucket(extensionPoint.getId(), myActiveExtensions);
+    clearExtensionsBucket(extensionPoint.getId(), activeExtensions(extensionPoint));
   }
 
-  private Collection<Extension> extensionsBucket(String id, Map<String, Collection<Extension>> store) {
-    Collection<Extension> extensions = store.get(id);
+  private <T> Collection<Extension<T>> extensionsBucket(String id, Map<String, Collection<Extension<T>>> store) {
+    Collection<Extension<T>> extensions = (Collection<Extension<T>>) store.get(id);
     if (extensions == null) {
-      extensions = new ArrayList<Extension>();
+      extensions = new ArrayList<Extension<T>>();
       store.put(id, extensions);
     }
     return extensions;
   }
 
-  private Collection<Extension> optExtensionsBucket(String id, Map<String, Collection<Extension>> store) {
-    Collection<Extension> extensions = store.get(id);
-    return extensions != null ? extensions : Collections.<Extension>emptyList();
+  private <T> Collection<Extension<T>> optExtensionsBucket(String id, Map<String, Collection<Extension<T>>> store) {
+    Collection<Extension<T>> extensions = store.get(id);
+    return extensions != null ? extensions : Collections.<Extension<T>>emptyList();
   }
 
-  private void clearExtensionsBucket(String id, Map<String, Collection<Extension>> store) {
-    Collection<Extension> extensions = store.get(id);
+  private <T> void clearExtensionsBucket(String id, Map<String, Collection<Extension<T>>> store) {
+    Collection<Extension<T>> extensions = store.get(id);
     if(extensions != null) {
       extensions.clear();
       store.remove(id);
@@ -165,5 +176,25 @@ public class ExtensionRegistry implements CoreComponent {
     return true;
   }
 
+
+  @SuppressWarnings("unchecked")
+  private <T> Map<String,Collection<Extension<T>>> inactiveExtensions (ExtensionPoint<T> extensionPoint) {
+    return (Map<String,Collection<Extension<T>>>) (Map) myInactiveExtensions;
+  }
+
+  @SuppressWarnings("unchecked")
+  private <T> Map<String,Collection<Extension<T>>> activeExtensions (ExtensionPoint<T> extensionPoint) {
+    return (Map<String,Collection<Extension<T>>>) (Map) myActiveExtensions;
+  }
+
+  @SuppressWarnings("unchecked")
+  private <T> Map<String,Collection<Extension<T>>> inactiveExtensions (Extension<T> extensionPoint) {
+    return (Map<String,Collection<Extension<T>>>) (Map) myInactiveExtensions;
+  }
+
+  @SuppressWarnings("unchecked")
+  private <T> Map<String,Collection<Extension<T>>> activeExtensions (Extension<T> extensionPoint) {
+    return (Map<String,Collection<Extension<T>>>) (Map) myActiveExtensions;
+  }
 
 }

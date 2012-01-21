@@ -22,12 +22,23 @@ package jetbrains.mps.smodel.structure;
  * Time: 4:24 PM
  * To change this template use File | Settings | File Templates.
  */
-public class ExtensionPoint {
+public class ExtensionPoint<T> {
 
   private final String myId;
+  private Class<T> myType = null;
 
+  @Deprecated
   public ExtensionPoint (String id) {
     myId = id;
+  }
+
+  public ExtensionPoint (String id, Class<T> type) {
+    myId = id;
+    myType = type;
+  }
+  
+  Class<T> getType () {
+    return myType;
   }
   
   public String getNamespace () {
