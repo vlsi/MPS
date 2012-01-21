@@ -95,13 +95,13 @@ public class MergeData {
     String changesMineString = dumpChangeSet(session.getMyChangeSet(), session);
     String changesRepositoryString = dumpChangeSet(session.getRepositoryChangeSet(), session);
 
-    if (myResultModelString != null || myChangesMineString != null || myChangesRepositoryString != null) {
-      return check("result model", myResultModelString, resultModelString) && check("my change list", myChangesMineString, changesMineString) && check("my repository list", myChangesRepositoryString, changesRepositoryString);
+    if (check("result model", myResultModelString, resultModelString) & check("my change list", myChangesMineString, changesMineString) & check("my repository list", myChangesRepositoryString, changesRepositoryString)) {
+      return true;
     } else {
       myResultModelString = resultModelString;
       myChangesMineString = changesMineString;
       myChangesRepositoryString = changesRepositoryString;
-      return true;
+      return false;
     }
   }
 
@@ -133,6 +133,7 @@ public class MergeData {
 
   public void generate() throws IOException, ModelReadException {
     loadCommonData();
+    loadResultData();
     if (!(generateAndCheckResultData())) {
       saveAndClose();
     }
