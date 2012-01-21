@@ -133,8 +133,9 @@ public class MergeData {
 
   public void generate() throws IOException, ModelReadException {
     loadCommonData();
-    generateAndCheckResultData();
-    saveAndClose();
+    if (!(generateAndCheckResultData())) {
+      saveAndClose();
+    }
   }
 
   public boolean check() throws IOException, ModelReadException {

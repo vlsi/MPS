@@ -52,7 +52,11 @@ public class MergeCoreTest {
       public boolean accept(String n) {
         return n.endsWith(".mps.zip");
       }
-    }).select(new ISelector<String, Object[]>() {
+    }).sort(new ISelector<String, Comparable<?>>() {
+      public Comparable<?> select(String n) {
+        return n;
+      }
+    }, true).select(new ISelector<String, Object[]>() {
       public Object[] select(String n) {
         return new Object[]{n.replaceAll("\\.|-", "_"), n};
       }

@@ -3,6 +3,7 @@
   <dependency className="jetbrains.mps.vcs.diff.merge.MergeCoreTest" file="MergeCoreTest.java">
     <classNode dependClassName="java.io.File" />
     <classNode dependClassName="java.io.IOException" />
+    <classNode dependClassName="java.lang.Comparable" />
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
