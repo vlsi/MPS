@@ -22,12 +22,33 @@ package jetbrains.mps.smodel.structure;
  * Time: 4:25 PM
  * To change this template use File | Settings | File Templates.
  */
-public interface Extension {
+public interface Extension<T> {
 
   String getExtensionPointId ();
+
+  T get ();
 
   void activate ();
 
   void deactivate ();
+  
+  abstract class Default implements Extension {
+
+    private final String myExtensionPointId;
+
+    public  Default (String extensionPointId) {
+      myExtensionPointId = extensionPointId;
+    }
+
+    @Override
+    public String getExtensionPointId() {
+      return myExtensionPointId;
+    }
+
+    @Override
+    public Object get() {
+      return null;  //To change body of implemented methods use File | Settings | File Templates.
+    }
+  }
 
 }

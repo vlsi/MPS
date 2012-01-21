@@ -66,9 +66,9 @@ public class ExtensionRegistryTest {
       new Extension[]{mockExtension("e1", EP1)}
     );
     ExtensionRegistry.getInstance().registerExtensionDescriptor(ed);
-    assertEquals(ep1, ExtensionRegistry.getInstance().getExtensionPoint(EP1));
+    assertEquals(ep1, ExtensionRegistry.getInstance().getExtensionPoint(EP1, Object.class));
     ExtensionRegistry.getInstance().unregisterExtensionDescriptor(ed);
-    assertNull(ExtensionRegistry.getInstance().getExtensionPoint(EP1));
+    assertNull(ExtensionRegistry.getInstance().getExtensionPoint(EP1, Object.class));
   }
   
   @Test
