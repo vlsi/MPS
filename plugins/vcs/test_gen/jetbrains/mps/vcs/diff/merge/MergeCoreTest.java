@@ -14,8 +14,6 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import org.junit.BeforeClass;
 import jetbrains.mps.MPSCore;
-import jetbrains.mps.smodel.persistence.RoleIdsComponent;
-import jetbrains.mps.vcs.mergedriver.MergerRoleIdsHandler;
 import java.util.Properties;
 import org.apache.log4j.PropertyConfigurator;
 import org.junit.AfterClass;
@@ -70,7 +68,6 @@ public class MergeCoreTest {
 
     System.setProperty(PLAY_REFACTORINGS_PROPERTY, "false");
     MPSCore.getInstance().setMergeDriverMode(true);
-    RoleIdsComponent.setHandler(new MergerRoleIdsHandler());
 
     Properties p = new Properties();
     p.setProperty("log4j.rootLogger", "info, console");
@@ -89,7 +86,6 @@ public class MergeCoreTest {
       System.setProperty(PLAY_REFACTORINGS_PROPERTY, ourPlayRefactoringWas);
     }
     MPSCore.getInstance().setMergeDriverMode(ourMergeDriverModeWas);
-    RoleIdsComponent.setHandler(null);
   }
 
   public static void main(String[] args) throws IOException, ModelReadException {

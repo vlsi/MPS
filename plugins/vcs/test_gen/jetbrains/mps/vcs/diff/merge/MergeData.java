@@ -8,6 +8,8 @@ import java.io.IOException;
 import java.util.Enumeration;
 import java.util.zip.ZipEntry;
 import jetbrains.mps.smodel.persistence.def.ModelReadException;
+import jetbrains.mps.smodel.persistence.RoleIdsComponent;
+import jetbrains.mps.vcs.mergedriver.MergerRoleIdsHandler;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.internal.collections.runtime.Sequence;
@@ -76,6 +78,8 @@ public class MergeData {
   }
 
   private boolean generateAndCheckResultData() throws ModelReadException {
+    RoleIdsComponent.setHandler(new MergerRoleIdsHandler());
+
     SModel baseModel = ModelPersistence.readModel(myBaseModelString, false);
     SModel mineModel = ModelPersistence.readModel(myMineModelString, false);
     SModel repositoryModel = ModelPersistence.readModel(myRepositoryModelString, false);
@@ -91,6 +95,7 @@ public class MergeData {
       session.applyChanges(Sequence.fromIterable(session.getAllChanges()).toListSequence());
       resultModelString = ModelPersistence.modelToString(session.getResultModel());
     }
+    RoleIdsComponent.setHandler(null);
 
     String changesMineString = dumpChangeSet(session.getMyChangeSet(), session);
     String changesRepositoryString = dumpChangeSet(session.getRepositoryChangeSet(), session);
