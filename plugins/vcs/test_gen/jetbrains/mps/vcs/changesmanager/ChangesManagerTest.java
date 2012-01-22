@@ -754,8 +754,7 @@ public class ChangesManagerTest {
       });
       waitAndCheck(myUiDiff);
 
-      ListSequence.fromList(changesBefore).removeElement(changeToPick);
-      Assert.assertEquals(getChangeSetString(changesBefore), getChangeSetString(myUiDiff.getChangeSet()));
+      Assert.assertEquals(ListSequence.fromList(changesBefore).count() - 1, ListSequence.fromList(check_4gxggu_a1a6a8a43(myUiDiff.getChangeSet())).count());
 
       ListSequence.fromList(affectedNodePointers).addElement(new SNodePointer(myUiDiff.getModelDescriptor().getSModelReference(), changeToPick.getRootId()));
     }
@@ -1024,6 +1023,13 @@ public class ChangesManagerTest {
       checkedDotOperand.dispose();
     }
 
+  }
+
+  private static List<ModelChange> check_4gxggu_a1a6a8a43(ChangeSet checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getModelChanges();
+    }
+    return null;
   }
 
   private static List<ModelChange> check_4gxggu_a0a0a5a53(ChangeSet checkedDotOperand) {
