@@ -156,11 +156,11 @@
     <classNode dependClassName="java.awt.GridBagLayout" />
     <classNode dependClassName="javax.swing.JLabel" />
     <classNode dependClassName="javax.swing.JPanel" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
     <classNode dependClassName="jetbrains.mps.execution.configurations.implementation.plugin.plugin.AntSettings_Configuration_Editor" />
     <classNode dependClassName="jetbrains.mps.execution.configurations.implementation.plugin.plugin.BuildLanguageProject_Configuration" />
     <classNode dependClassName="jetbrains.mps.execution.configurations.implementation.plugin.plugin.TargetChoosePanel" />
     <classNode dependClassName="jetbrains.mps.execution.lib.Node_Configuration_Editor" />
-    <classNode dependClassName="jetbrains.mps.execution.lib.ui.IJavaNodeChangeListener" />
     <classNode dependClassName="jetbrains.mps.execution.lib.ui.MainNodeChooser" />
     <classNode dependClassName="jetbrains.mps.ide.common.LayoutUtil" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
@@ -340,7 +340,6 @@
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
-    <classNode dependClassName="jetbrains.mps.build.distrib.behavior.DistribConfiguration_Behavior" />
     <classNode dependClassName="jetbrains.mps.execution.api.configurations.ConsoleCreator" />
     <classNode dependClassName="jetbrains.mps.execution.api.configurations.ConsoleProcessListener" />
     <classNode dependClassName="jetbrains.mps.execution.api.configurations.DefaultExecutionConsole" />

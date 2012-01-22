@@ -20,7 +20,6 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import java.io.File;
-import jetbrains.mps.build.distrib.behavior.DistribConfiguration_Behavior;
 import com.intellij.execution.process.ProcessHandler;
 import com.intellij.execution.ui.ConsoleView;
 import jetbrains.mps.execution.api.configurations.ConsoleCreator;
@@ -69,11 +68,6 @@ public class CustomMPSApplication_Configuration_RunProfileState implements RunPr
 
     File file = new File(GenerateBuildUtil.getGeneratedFilePath(configuration));
     // if MPSBuild was included into this configuration we should run different build file 
-    if (isMPSBuildIncluded.value) {
-      String path = file.getAbsolutePath();
-      String suffix = ".xml";
-      file = new File(path.substring(0, path.length() - suffix.length()) + DistribConfiguration_Behavior.getSuffix_1240229578757() + suffix);
-    }
 
     {
       ProcessHandler _processHandler = new Ant_Command().setAntLocation_String((myRunConfiguration.getSettings().getUseOtherAntLocation() ?
