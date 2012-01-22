@@ -15,7 +15,8 @@
   -->
 <project name="IDEA-plugin-compile" default="compile" basedir=".">
 
-    <property name="base_dir" value=".."/>
+    <dirname property="base_dir" file="${ant.file.IDEA-plugin-compile}/.."/>
+
     <property name="build.home" value="${base_dir}/IdeaPlugin/build"/>
     <property name="build_dir" value="${build.home}/build_dir/"/>
     <property name="artifacts" value="${build.home}/artifacts"/>
@@ -54,6 +55,12 @@
         </fileset>
     </path>
 
+    <path id="ant.libraries">
+        <fileset dir="${ideaPath}/lib/ant/lib">
+            <include name="*.jar"/>
+        </fileset>
+    </path>
+
     <target name="prepare">
         <delete dir="${base_dir}/IdeaPlugin/mps-core/lib"/>
         <mkdir dir="${base_dir}/IdeaPlugin/mps-core/lib"/>
@@ -63,7 +70,6 @@
                 <file file="${base_dir}/lib/diffutils-1.2.1.jar"/>
             </resources>
         </copy>
-        <mkdir dir="${base_dir}/IdeaPlugin/mps-core/languages"/>
         <!-- TODO build languages -->
     </target>
 
@@ -80,7 +86,12 @@
         <copy includeemptydirs="false" todir="${dist.dir}/languages">
             <fileset dir="${base_dir}/IdeaPlugin/mps-core/languages" erroronmissingdir="false"/>
         </copy>
-
+        <copy todir="${dist.dir}/lib" flatten="true">
+            <resources>
+                <file file="${base_dir}/lib/asm.jar"/>
+                <file file="${base_dir}/lib/diffutils-1.2.1.jar"/>
+            </resources>
+        </copy>
         <!-- MPS Core -->
         <mkdir dir="${build_dir}/mpscore_jar"/>
         <javac classpathref="mps.core.libraries" destdir="${build_dir}/mpscore_jar" fork="true"
@@ -186,12 +197,6 @@
                 <attribute name="Implementation-Version" value="1.0"/>
             </manifest>
         </jar>
-        <copy todir="${dist.dir}/lib" flatten="true">
-            <resources>
-                <file file="${base_dir}/lib/asm.jar"/>
-                <file file="${base_dir}/lib/diffutils-1.2.1.jar"/>
-            </resources>
-        </copy>
 
         <!-- IDEA workbench -->
         <mkdir dir="${build_dir}/mpsworkbench_jar"/>
@@ -219,6 +224,35 @@
                 <attribute name="Built-By" value="${user.name}"/>
                 <attribute name="Implementation-Vendor" value="JetBrains s.r.o."/>
                 <attribute name="Implementation-Title" value="IDEA Workbench integration package"/>
+                <attribute name="Implementation-Version" value="1.0"/>
+            </manifest>
+        </jar>
+
+        <!-- Ant integration and backend -->
+        <mkdir dir="${build_dir}/mpsbackend_jar"/>
+        <javac destdir="${build_dir}/mpsbackend_jar" fork="true"
+               memorymaximumsize="1024m"
+               includeantruntime="false"
+               debug="${javac.debug}" debuglevel="lines,vars,source">
+            <compilerarg value="-Xlint:none"/>
+            <src>
+                <path path="${base_dir}/languages/util/buildlanguage/ant/source_gen"/>
+            </src>
+            <classpath>
+                <fileset dir="${dist.dir}/lib" includes="*.jar"/>
+                <fileset dir="${ideaPath}/lib" includes="*.jar"/>
+                <fileset dir="${ideaPath}/lib/ant/lib" includes="*.jar"/>
+            </classpath>
+        </javac>
+        <copy includeemptydirs="false" todir="${build_dir}/mpsbackend_jar">
+            <fileset dir="${base_dir}/languages/util/buildlanguage/ant/source_gen" includes="**/*.png"/>
+        </copy>
+        <jar destfile="${dist.dir}/lib/mps-backend.jar">
+            <fileset dir="${build_dir}/mpsbackend_jar"/>
+            <manifest>
+                <attribute name="Built-By" value="${user.name}"/>
+                <attribute name="Implementation-Vendor" value="JetBrains s.r.o."/>
+                <attribute name="Implementation-Title" value="MPS Ant integration and backend"/>
                 <attribute name="Implementation-Version" value="1.0"/>
             </manifest>
         </jar>
@@ -280,6 +314,7 @@
             <classpath>
                 <fileset dir="${dist.dir}/lib" includes="*.jar"/>
                 <fileset dir="${ideaPath}/lib" includes="*.jar"/>
+                <fileset dir="${ideaPath}/lib/ant/lib" includes="*.jar"/>
             </classpath>
         </javac2>
         <copy includeemptydirs="false" todir="${build_dir}/mpsplugin_jar">
@@ -329,8 +364,16 @@
                 <fileset dir="${ideaPath}/lib" includes="*.jar"/>
             </classpath>
         </javac2>
-        <copy todir="${build_dir}/mpsplugintests_jar/jetbrains/mps/idea/core/tests"
-              file="${base_dir}/IdeaPlugin/tests/editorTests/models/test.mps"/>
+        <!-- Test data copied here -->
+        <copy todir="${build_dir}/mpsplugintests_jar/jetbrains/mps/idea/core/tests" flatten="true">
+            <fileset dir="${base_dir}/IdeaPlugin/tests/editorTests">
+                <include name="models/test.mps"/>
+            </fileset>
+            <fileset dir="${base_dir}/IdeaPlugin/tests/blProject">
+                <include name="blProject.msd"/>
+                <include name="models/main.mps"/>
+            </fileset>
+        </copy>
         <jar destfile="${dist.dir}/lib/mps-plugin-tests.jar">
             <fileset dir="${build_dir}/mpsplugintests_jar"/>
             <manifest>
@@ -342,12 +385,13 @@
         </jar>
     </target>
 
-    <target name="runTests">
+    <target name="runTests" depends="compile, compileTests">
         <delete dir="${plugins.sandbox.dir}"/>
         <mkdir dir="${plugins.sandbox.dir}/plugins"/>
         <copy todir="${plugins.sandbox.dir}/plugins/mps-core">
             <fileset dir="${dist.dir}"/>
         </copy>
+        <mkdir dir="${plugins.sandbox.dir}/test/community/java/mockJDK-1.7"/>
 
         <junit fork="true"
                dir="."
@@ -387,7 +431,7 @@
     </target>
 
     <target name="zip" depends="compile, compileTests">
-        <zip file="${artifacts}/mps-core${plugin.prefix}-${plugin.version}.zip">
+        <zip file="${artifacts}/mps-core-${plugin.prefix}-${plugin.version}.zip">
             <zipfileset dir="${dist.dir}" prefix="mps-core${plugin.prefix}">
                 <exclude name="lib/*-tests.jar"/>
             </zipfileset>

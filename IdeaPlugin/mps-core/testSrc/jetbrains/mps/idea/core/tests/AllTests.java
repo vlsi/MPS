@@ -27,6 +27,6 @@ import org.junit.runners.Suite;
  * To change this template use File | Settings | File Templates.
  */
 @RunWith(Suite.class)
-@Suite.SuiteClasses({FacetTests.class,EditorTests.class})
+@Suite.SuiteClasses({FacetTests.class,EditorTests.class,MakeTests.class})
 public class AllTests {
 }

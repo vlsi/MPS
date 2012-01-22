@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model modelUID="r:cdf0e280-e3c2-44a8-9746-0304f21e463c(jetbrains.mps.plugin.test.blProject.main)">
+<model modelUID="r:cdf0e280-e3c2-44a8-9746-0304f21e463c(main)">
   <persistence version="7" />
   <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />

@@ -218,7 +218,10 @@ public class ImportHelper {
               SModelDescriptor descriptor = GlobalScope.getInstance().getModelDescriptor(object.getModelReference());
               LOG.assertLog(descriptor != null, "Caches seems to be corrupted or the model was removed: model " + object.getModelReference().getLongName() + " does not exist. Please check model existence manually and specify it in bug report");
               SModel modelToImport = descriptor.getSModel();
-              LOG.assertLog(object.getNode(modelToImport) != null, "Caches seems to be corrupted or the node was removed: model " + modelToImport.getLongName() + " does not seem to contain node " + object.getNodeName() + " (id:" + object.getId().toString() + "). Please check node existence manually and specify it in bug report");
+              SNodeId id = object.getId();
+              String idString = id == null ? "" : " (id:" + id.toString() + ")";
+              String nameString = object.getNodeName() == null ? "<no name>" : object.getNodeName();
+              LOG.assertLog(object.getNode(modelToImport) != null, "Caches seems to be corrupted or the node was removed: model " + modelToImport.getLongName() + " does not seem to contain node " + nameString + idString + ". Please check node existence manually and specify it in bug report");
               new AddModelItem(project, model, modelToImport.getSModelReference(), contextModule).navigate(requestFocus);
             }
           };
