@@ -19,11 +19,11 @@ import com.intellij.openapi.vcs.impl.projectlevelman.AllVcses;
 import com.intellij.openapi.vcs.VcsShowConfirmationOption;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import jetbrains.mps.watching.ModelChangesWatcher;
+import javax.swing.SwingUtilities;
+import java.lang.reflect.InvocationTargetException;
 import com.intellij.openapi.vcs.ProjectLevelVcsManager;
 import com.intellij.openapi.vcs.VcsConfiguration;
 import org.junit.After;
-import java.lang.reflect.InvocationTargetException;
-import javax.swing.SwingUtilities;
 import jetbrains.mps.nodeEditor.InspectorTool;
 import org.junit.Assert;
 import org.jetbrains.annotations.NotNull;
@@ -141,6 +141,19 @@ public class ChangesManagerTest {
     MapSequence.fromMap(myExpectedFileStatuses).put("ui.HTMLPanel", FileStatus.MODIFIED);
 
     if (!(ourEnabled)) {
+      myChangeListManager.ensureUpToDate(false);
+      try {
+        SwingUtilities.invokeAndWait(new Runnable() {
+          public void run() {
+            myFileStatusManager.fileStatusesChanged();
+          }
+        });
+      } catch (InterruptedException e) {
+        throw new AssertionError(e);
+      } catch (InvocationTargetException e) {
+        throw new AssertionError(e);
+      }
+
       checkAndEnable();
       ourEnabled = true;
     }
@@ -196,6 +209,12 @@ public class ChangesManagerTest {
               expectedFileStatus == myFileStatusManager.getStatus(file)
             )) {
               myFileStatusManager.removeFileStatusListener(listener.value);
+              // Wait until changes manager is notified about changed file status 
+              try {
+                Thread.sleep(100);
+              } catch (InterruptedException e) {
+                e.printStackTrace();
+              }
               waitCompleted();
             }
           }
