@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="Extension_Language.java" startLine="9" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.extension.structure.Extension_Language" />
-  <unitInfo fileName="StructureAspectDescriptor.java" startLine="10" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.lang.extension.structure.StructureAspectDescriptor" />
+  <unitInfo fileName="StructureAspectDescriptor.java" startLine="10" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.lang.extension.structure.StructureAspectDescriptor" />
   <root nodeId="3729007189729192404">
     <nodeInfo nodeId="3729007189729192404" fileName="ExtensionDeclaration.java" startLine="11" startPosition="55" endLine="12" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="3729007189729192404" fileName="ExtensionDeclaration.java" startLine="12" startPosition="101" endLine="13" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="EXTENSION_POINT" />
@@ -150,6 +150,40 @@
       <varInfo nodeId="3729007189729192406" varName="sm" />
     </scopeInfo>
     <unitInfo nodeId="3729007189729192406" fileName="ExtensionPointDeclaration.java" startLine="16" startPosition="0" endLine="97" endPosition="0" unitName="jetbrains.mps.lang.extension.structure.ExtensionPointDeclaration" />
+  </root>
+  <root nodeId="6626851894249711936">
+    <nodeInfo nodeId="6626851894249711936" fileName="ExtensionPointExpression.java" startLine="11" startPosition="58" endLine="12" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
+    <nodeInfo nodeId="6626851894249711936" fileName="ExtensionPointExpression.java" startLine="12" startPosition="105" endLine="13" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="EXTENSION_POINT" />
+    <nodeInfo nodeId="6626851894249711936" fileName="ExtensionPointExpression.java" startLine="15" startPosition="47" endLine="16" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="6626851894249711936" fileName="ExtensionPointExpression.java" startLine="19" startPosition="56" endLine="20" endPosition="131" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6626851894249711936" fileName="ExtensionPointExpression.java" startLine="23" startPosition="65" endLine="24" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6626851894249711936" fileName="ExtensionPointExpression.java" startLine="27" startPosition="79" endLine="28" endPosition="200" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6626851894249711936" fileName="ExtensionPointExpression.java" startLine="31" startPosition="65" endLine="32" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6626851894249711936" fileName="ExtensionPointExpression.java" startLine="14" startPosition="0" endLine="17" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ExtensionPointExpression#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="6626851894249711936" fileName="ExtensionPointExpression.java" startLine="18" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getExtensionPoint#()Ljetbrains/mps/smodel/INodeAdapter;" />
+    <nodeInfo nodeId="6626851894249711936" fileName="ExtensionPointExpression.java" startLine="22" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setExtensionPoint#(Ljetbrains/mps/smodel/INodeAdapter;)V" />
+    <nodeInfo nodeId="6626851894249711936" fileName="ExtensionPointExpression.java" startLine="26" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="newInstance#(Ljetbrains/mps/smodel/SModel;Z)Ljetbrains/mps/lang/extension/structure/ExtensionPointExpression;" />
+    <nodeInfo nodeId="6626851894249711936" fileName="ExtensionPointExpression.java" startLine="30" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="newInstance#(Ljetbrains/mps/smodel/SModel;)Ljetbrains/mps/lang/extension/structure/ExtensionPointExpression;" />
+    <scopeInfo nodeId="6626851894249711936" fileName="ExtensionPointExpression.java" startLine="15" startPosition="47" endLine="16" endPosition="16" />
+    <scopeInfo nodeId="6626851894249711936" fileName="ExtensionPointExpression.java" startLine="19" startPosition="56" endLine="20" endPosition="131" />
+    <scopeInfo nodeId="6626851894249711936" fileName="ExtensionPointExpression.java" startLine="23" startPosition="65" endLine="24" endPosition="70" />
+    <scopeInfo nodeId="6626851894249711936" fileName="ExtensionPointExpression.java" startLine="27" startPosition="79" endLine="28" endPosition="200" />
+    <scopeInfo nodeId="6626851894249711936" fileName="ExtensionPointExpression.java" startLine="31" startPosition="65" endLine="32" endPosition="59" />
+    <scopeInfo nodeId="6626851894249711936" fileName="ExtensionPointExpression.java" startLine="14" startPosition="0" endLine="17" endPosition="3">
+      <varInfo nodeId="6626851894249711936" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="6626851894249711936" fileName="ExtensionPointExpression.java" startLine="18" startPosition="0" endLine="22" endPosition="0" />
+    <scopeInfo nodeId="6626851894249711936" fileName="ExtensionPointExpression.java" startLine="22" startPosition="0" endLine="26" endPosition="0">
+      <varInfo nodeId="6626851894249711936" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="6626851894249711936" fileName="ExtensionPointExpression.java" startLine="26" startPosition="0" endLine="30" endPosition="0">
+      <varInfo nodeId="6626851894249711936" varName="init" />
+      <varInfo nodeId="6626851894249711936" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="6626851894249711936" fileName="ExtensionPointExpression.java" startLine="30" startPosition="0" endLine="34" endPosition="0">
+      <varInfo nodeId="6626851894249711936" varName="sm" />
+    </scopeInfo>
+    <unitInfo nodeId="6626851894249711936" fileName="ExtensionPointExpression.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.lang.extension.structure.ExtensionPointExpression" />
   </root>
   <root nodeId="8029776554053043557">
     <nodeInfo nodeId="8029776554053043557" fileName="ExtensionObjectGetter.java" startLine="11" startPosition="60" endLine="12" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />

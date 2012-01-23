@@ -15,6 +15,8 @@
  */
 package jetbrains.mps.smodel.structure;
 
+import jetbrains.mps.smodel.language.ExtensionRegistry;
+
 /**
  * Created by IntelliJ IDEA.
  * User: fyodor
@@ -27,6 +29,11 @@ public class ExtensionPoint<T> {
   private final String myId;
   private Class<T> myType = null;
 
+  @SuppressWarnings("unchecked")
+  public static <T> ExtensionPoint<T> generify(ExtensionPoint raw) {
+    return (ExtensionPoint<T>) raw;
+  }
+
   @Deprecated
   public ExtensionPoint (String id) {
     myId = id;
@@ -37,8 +44,12 @@ public class ExtensionPoint<T> {
     myType = type;
   }
   
-  Class<T> getType () {
+  public Class<T> getType () {
     return myType;
+  }
+  
+  public Iterable<Extension<T>> getExtensions () {
+    return ExtensionRegistry.getInstance().getExtensions(this);
   }
   
   public String getNamespace () {

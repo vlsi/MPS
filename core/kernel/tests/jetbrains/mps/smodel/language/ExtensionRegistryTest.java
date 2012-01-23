@@ -27,7 +27,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import static org.junit.Assert.*;
 
-import java.util.Arrays;
+import java.util.*;
 
 /**
  * Created by IntelliJ IDEA.
@@ -135,6 +135,44 @@ public class ExtensionRegistryTest {
     );
     ExtensionRegistry.getInstance().registerExtensionDescriptor(ed2);
     ExtensionRegistry.getInstance().registerExtensionDescriptor(ed1);
+    ExtensionRegistry.getInstance().unregisterExtensionDescriptor(ed2);
+    ExtensionRegistry.getInstance().unregisterExtensionDescriptor(ed1);
+  }
+
+  @Test
+  public void allExtensions () {
+    ExtensionPoint ep1 = mockExtensionPoint("ep1", EP1);
+    ExtensionDescriptor ed1 = mockExtensionDescriptor("ed1",
+      new ExtensionPoint[]{ep1},
+      new Extension[]{}
+    );
+    ExtensionDescriptor ed2 = mockExtensionDescriptor("ed2",
+      new ExtensionPoint[]{},
+      new Extension[]{mockExtension("e1", EP1)}
+    );
+    ExtensionDescriptor ed3 = mockExtensionDescriptor("ed3",
+      new ExtensionPoint[]{},
+      new Extension[]{mockExtension("e2", EP1)}
+    );
+    ExtensionRegistry.getInstance().registerExtensionDescriptor(ed3);
+    ExtensionRegistry.getInstance().registerExtensionDescriptor(ed2);
+    ExtensionRegistry.getInstance().registerExtensionDescriptor(ed1);
+
+    Iterable<Extension<?>> extensions = ep1.getExtensions();
+    List<Extension>  extensionList = new ArrayList();
+    for (Iterator<Extension> it = ExtensionRegistry.getInstance().getExtensions(ep1).iterator(); it.hasNext();) {
+      extensionList.add(it.next());
+    }
+    assertSame(2, extensionList.size());
+    Collections.sort(extensionList, new Comparator<Extension>() {
+      @Override
+      public int compare(Extension o1, Extension o2) {
+        return String.CASE_INSENSITIVE_ORDER.compare(String.valueOf(o1), String.valueOf(o2));
+      }
+    });
+    assertEquals("[e1, e2]", extensionList.toString());
+
+    ExtensionRegistry.getInstance().unregisterExtensionDescriptor(ed3);
     ExtensionRegistry.getInstance().unregisterExtensionDescriptor(ed2);
     ExtensionRegistry.getInstance().unregisterExtensionDescriptor(ed1);
   }
