@@ -27,6 +27,7 @@
   <roots>
     <node type="v54s.ExtensionPointDeclaration" typeId="v54s.3729007189729192406" id="63012922131000005">
       <property name="name" nameId="tpck.1169194664001" value="customContainers" />
+      <property name="extensionName" nameId="v54s.5911785528834333590" value="customContainers" />
     </node>
     <node type="v54s.ExtensionDeclaration" typeId="v54s.3729007189729192404" id="5633688998557455304">
       <link role="extensionPoint" roleId="v54s.3729007189729192405" targetNodeId="63012922131000005" resolveInfo="customContainers" />
