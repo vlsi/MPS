@@ -13,7 +13,6 @@ import jetbrains.mps.scope.Scope;
 import jetbrains.mps.smodel.constraints.ModelConstraintsUtil;
 import jetbrains.mps.scope.ErrorScope;
 import jetbrains.mps.errors.messageTargets.ReferenceMessageTarget;
-import jetbrains.mps.scope.DefaultScope;
 import jetbrains.mps.smodel.runtime.ReferenceScopeProvider;
 import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 
@@ -47,15 +46,16 @@ public class RefScopeChecker extends AbstractConstraintsChecker {
       Scope refScope = ModelConstraintsUtil.getScope(ref, operationContext);
       if (refScope instanceof ErrorScope) {
         component.addError(node, ((ErrorScope) refScope).getMessage(), (SNode) null, new ReferenceMessageTarget(SLinkOperations.getRole(ref)));
-      } else if (!(refScope instanceof DefaultScope || refScope.contains(target))) {
+      } else if (!(refScope.contains(target))) {
         String name = target.getName();
-
         ReferenceScopeProvider scopeProvider = ModelConstraintsManager.getNodeReferentSearchScopeProvider(concept, ref.getRole());
-        SNode ruleNode = (scopeProvider.getSearchScopeValidatorNode() != null ?
-          scopeProvider.getSearchScopeValidatorNode().getNode() :
-          null
-        );
-
+        SNode ruleNode = null;
+        if (scopeProvider != null) {
+          ruleNode = (scopeProvider.getSearchScopeValidatorNode() != null ?
+            scopeProvider.getSearchScopeValidatorNode().getNode() :
+            null
+          );
+        }
         component.addError(node, "reference" + ((name == null ?
           "" :
           " " + name

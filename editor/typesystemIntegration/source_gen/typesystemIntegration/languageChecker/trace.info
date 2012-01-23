@@ -71,17 +71,16 @@
     <nodeInfo nodeId="7390982340086719917" fileName="LanguageEditorChecker.java" startLine="200" startPosition="7" endLine="201" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7390982340086719934" fileName="LanguageEditorChecker.java" startLine="203" startPosition="40" endLine="204" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7390982340086719938" fileName="LanguageEditorChecker.java" startLine="206" startPosition="5" endLine="207" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7390982340086719946" fileName="LanguageEditorChecker.java" startLine="208" startPosition="70" endLine="209" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="7390982340086719947" fileName="LanguageEditorChecker.java" startLine="209" startPosition="0" endLine="210" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7390982340086719953" fileName="LanguageEditorChecker.java" startLine="210" startPosition="62" endLine="211" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7390982340086719959" fileName="LanguageEditorChecker.java" startLine="211" startPosition="55" endLine="212" endPosition="226" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7390982340086719977" fileName="LanguageEditorChecker.java" startLine="212" startPosition="226" endLine="213" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7390982340086719985" fileName="LanguageEditorChecker.java" startLine="214" startPosition="5" endLine="215" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5150359874269134906" fileName="LanguageEditorChecker.java" startLine="218" startPosition="60" endLine="219" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7390982340086720035" fileName="LanguageEditorChecker.java" startLine="220" startPosition="31" endLine="221" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7390982340086720060" fileName="LanguageEditorChecker.java" startLine="222" startPosition="5" endLine="223" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7390982340086720068" fileName="LanguageEditorChecker.java" startLine="224" startPosition="34" endLine="225" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7390982340086720072" fileName="LanguageEditorChecker.java" startLine="226" startPosition="5" endLine="227" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7390982340086719947" fileName="LanguageEditorChecker.java" startLine="208" startPosition="70" endLine="209" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7390982340086719953" fileName="LanguageEditorChecker.java" startLine="209" startPosition="62" endLine="210" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7390982340086719959" fileName="LanguageEditorChecker.java" startLine="210" startPosition="55" endLine="211" endPosition="226" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7390982340086719977" fileName="LanguageEditorChecker.java" startLine="211" startPosition="226" endLine="212" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7390982340086719985" fileName="LanguageEditorChecker.java" startLine="213" startPosition="5" endLine="214" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5150359874269134906" fileName="LanguageEditorChecker.java" startLine="217" startPosition="60" endLine="218" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7390982340086720035" fileName="LanguageEditorChecker.java" startLine="219" startPosition="31" endLine="220" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7390982340086720060" fileName="LanguageEditorChecker.java" startLine="221" startPosition="5" endLine="222" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7390982340086720068" fileName="LanguageEditorChecker.java" startLine="223" startPosition="34" endLine="224" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7390982340086720072" fileName="LanguageEditorChecker.java" startLine="225" startPosition="5" endLine="226" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5150359874269134966" fileName="LanguageEditorChecker.java" startLine="55" startPosition="73" endLine="58" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="7390982340086719556" fileName="LanguageEditorChecker.java" startLine="86" startPosition="27" endLine="89" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="7390982340086719567" fileName="LanguageEditorChecker.java" startLine="89" startPosition="5" endLine="92" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
@@ -95,8 +94,8 @@
     <nodeInfo nodeId="7390982340086719888" fileName="LanguageEditorChecker.java" startLine="191" startPosition="0" endLine="194" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="7390982340086719908" fileName="LanguageEditorChecker.java" startLine="197" startPosition="9" endLine="200" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="7390982340086719929" fileName="LanguageEditorChecker.java" startLine="202" startPosition="15" endLine="205" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7390982340086720030" fileName="LanguageEditorChecker.java" startLine="219" startPosition="65" endLine="222" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7390982340086720066" fileName="LanguageEditorChecker.java" startLine="223" startPosition="112" endLine="226" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7390982340086720030" fileName="LanguageEditorChecker.java" startLine="218" startPosition="65" endLine="221" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7390982340086720066" fileName="LanguageEditorChecker.java" startLine="222" startPosition="112" endLine="225" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="7390982340086720083" fileName="LanguageEditorChecker.java" startLine="61" startPosition="88" endLine="65" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="beforeModelRemoved#(Ljetbrains/mps/smodel/SModelDescriptor;)V" />
     <nodeInfo nodeId="7390982340086720092" fileName="LanguageEditorChecker.java" startLine="65" startPosition="0" endLine="69" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="beforeModelDeleted#(Ljetbrains/mps/smodel/SModelDescriptor;)V" />
     <nodeInfo nodeId="7390982340086720108" fileName="LanguageEditorChecker.java" startLine="70" startPosition="64" endLine="74" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="beforeModelDisposed#(Ljetbrains/mps/smodel/SModel;)V" />
@@ -113,21 +112,21 @@
     <nodeInfo nodeId="7390982340086719813" fileName="LanguageEditorChecker.java" startLine="175" startPosition="87" endLine="180" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="7390982340086719693" fileName="LanguageEditorChecker.java" startLine="127" startPosition="5" endLine="133" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="7390982340086719791" fileName="LanguageEditorChecker.java" startLine="167" startPosition="5" endLine="173" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7390982340086719942" fileName="LanguageEditorChecker.java" startLine="207" startPosition="32" endLine="213" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="7390982340086719613" fileName="LanguageEditorChecker.java" startLine="104" startPosition="0" endLine="111" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="removeModelListener#(Ljetbrains/mps/smodel/SModelDescriptor;)V" />
     <nodeInfo nodeId="7390982340086719635" fileName="LanguageEditorChecker.java" startLine="111" startPosition="0" endLine="118" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addModelListener#(Ljetbrains/mps/smodel/SModelDescriptor;)V" />
     <nodeInfo nodeId="7390982340086719664" fileName="LanguageEditorChecker.java" startLine="120" startPosition="94" endLine="127" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="5150359874269134872" fileName="LanguageEditorChecker.java" startLine="160" startPosition="82" endLine="167" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7390982340086719942" fileName="LanguageEditorChecker.java" startLine="207" startPosition="32" endLine="214" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="7390982340086719485" fileName="LanguageEditorChecker.java" startLine="52" startPosition="113" endLine="60" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="editorWillBeDisposed#(Ljetbrains/mps/nodeEditor/EditorComponent;)V" />
     <nodeInfo nodeId="7390982340086719516" fileName="LanguageEditorChecker.java" startLine="76" startPosition="0" endLine="84" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="LanguageEditorChecker#()V" />
     <nodeInfo nodeId="7390982340086719478" fileName="LanguageEditorChecker.java" startLine="51" startPosition="104" endLine="60" endPosition="4" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myDisposeListener" />
     <nodeInfo nodeId="7390982340086720076" fileName="LanguageEditorChecker.java" startLine="60" startPosition="4" endLine="69" endPosition="4" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myRepositoryListener" />
     <nodeInfo nodeId="7390982340086719730" fileName="LanguageEditorChecker.java" startLine="139" startPosition="0" endLine="149" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isLaterThan#(Ljetbrains/mps/nodeEditor/checking/BaseEditorChecker;)Z" />
     <nodeInfo nodeId="7390982340086719906" fileName="LanguageEditorChecker.java" startLine="196" startPosition="87" endLine="206" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
-    <nodeInfo nodeId="7390982340086720022" fileName="LanguageEditorChecker.java" startLine="217" startPosition="0" endLine="229" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="clear#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/nodeEditor/EditorComponent;)V" />
+    <nodeInfo nodeId="7390982340086720022" fileName="LanguageEditorChecker.java" startLine="216" startPosition="0" endLine="228" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="clear#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/nodeEditor/EditorComponent;)V" />
     <nodeInfo nodeId="7390982340086719552" fileName="LanguageEditorChecker.java" startLine="85" startPosition="0" endLine="99" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doDispose#()V" />
     <nodeInfo nodeId="7390982340086719658" fileName="LanguageEditorChecker.java" startLine="118" startPosition="0" endLine="135" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="clearForModel#(Ljetbrains/mps/smodel/SModelReference;)V" />
-    <nodeInfo nodeId="7390982340086719754" fileName="LanguageEditorChecker.java" startLine="153" startPosition="0" endLine="217" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createMessages#(Ljetbrains/mps/smodel/SNode;Ljava/util/List;ZLjetbrains/mps/nodeEditor/EditorContext;)Ljava/util/Set;" />
+    <nodeInfo nodeId="7390982340086719754" fileName="LanguageEditorChecker.java" startLine="153" startPosition="0" endLine="216" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createMessages#(Ljetbrains/mps/smodel/SNode;Ljava/util/List;ZLjetbrains/mps/nodeEditor/EditorContext;)Ljava/util/Set;" />
     <scopeInfo nodeId="5150359874269134967" fileName="LanguageEditorChecker.java" startLine="56" startPosition="33" endLine="57" endPosition="80" />
     <scopeInfo nodeId="7390982340086720088" fileName="LanguageEditorChecker.java" startLine="62" startPosition="65" endLine="63" endPosition="41" />
     <scopeInfo nodeId="7390982340086720097" fileName="LanguageEditorChecker.java" startLine="66" startPosition="65" endLine="67" endPosition="41" />
@@ -144,8 +143,8 @@
     <scopeInfo nodeId="7390982340086719889" fileName="LanguageEditorChecker.java" startLine="192" startPosition="28" endLine="193" endPosition="30" />
     <scopeInfo nodeId="7390982340086719909" fileName="LanguageEditorChecker.java" startLine="198" startPosition="40" endLine="199" endPosition="60" />
     <scopeInfo nodeId="7390982340086719933" fileName="LanguageEditorChecker.java" startLine="203" startPosition="40" endLine="204" endPosition="62" />
-    <scopeInfo nodeId="7390982340086720034" fileName="LanguageEditorChecker.java" startLine="220" startPosition="31" endLine="221" endPosition="13" />
-    <scopeInfo nodeId="7390982340086720067" fileName="LanguageEditorChecker.java" startLine="224" startPosition="34" endLine="225" endPosition="13" />
+    <scopeInfo nodeId="7390982340086720034" fileName="LanguageEditorChecker.java" startLine="219" startPosition="31" endLine="220" endPosition="13" />
+    <scopeInfo nodeId="7390982340086720067" fileName="LanguageEditorChecker.java" startLine="223" startPosition="34" endLine="224" endPosition="13" />
     <scopeInfo nodeId="7390982340086719598" fileName="LanguageEditorChecker.java" startLine="100" startPosition="73" endLine="102" endPosition="61" />
     <scopeInfo nodeId="7390982340086719620" fileName="LanguageEditorChecker.java" startLine="106" startPosition="74" endLine="108" endPosition="75" />
     <scopeInfo nodeId="7390982340086719645" fileName="LanguageEditorChecker.java" startLine="113" startPosition="77" endLine="115" endPosition="72" />
@@ -184,6 +183,11 @@
     </scopeInfo>
     <scopeInfo nodeId="7390982340086719792" fileName="LanguageEditorChecker.java" startLine="168" startPosition="31" endLine="172" endPosition="20" />
     <scopeInfo nodeId="7390982340086719907" fileName="LanguageEditorChecker.java" startLine="197" startPosition="9" endLine="201" endPosition="90" />
+    <scopeInfo nodeId="7390982340086719945" fileName="LanguageEditorChecker.java" startLine="208" startPosition="70" endLine="212" endPosition="54">
+      <varInfo nodeId="7390982340086719954" varName="errorString" />
+      <varInfo nodeId="7390982340086719960" varName="message" />
+      <varInfo nodeId="7390982340086719948" varName="status" />
+    </scopeInfo>
     <scopeInfo nodeId="7390982340086719490" fileName="LanguageEditorChecker.java" startLine="53" startPosition="71" endLine="58" endPosition="7">
       <varInfo nodeId="5150359874269134960" varName="sNodePointer" />
     </scopeInfo>
@@ -192,14 +196,12 @@
     </scopeInfo>
     <scopeInfo nodeId="7390982340086719673" fileName="LanguageEditorChecker.java" startLine="121" startPosition="156" endLine="126" endPosition="7" />
     <scopeInfo nodeId="5150359874269134873" fileName="LanguageEditorChecker.java" startLine="161" startPosition="24" endLine="166" endPosition="0" />
-    <scopeInfo nodeId="7390982340086719945" fileName="LanguageEditorChecker.java" startLine="208" startPosition="70" endLine="213" endPosition="54">
-      <varInfo nodeId="7390982340086719954" varName="errorString" />
-      <varInfo nodeId="7390982340086719960" varName="message" />
-      <varInfo nodeId="7390982340086719948" varName="status" />
-    </scopeInfo>
     <scopeInfo nodeId="7390982340086719519" fileName="LanguageEditorChecker.java" startLine="77" startPosition="34" endLine="83" endPosition="89" />
     <scopeInfo nodeId="7390982340086719693" fileName="LanguageEditorChecker.java" startLine="127" startPosition="5" endLine="133" endPosition="5">
       <varInfo nodeId="7390982340086719694" varName="component" />
+    </scopeInfo>
+    <scopeInfo nodeId="7390982340086719942" fileName="LanguageEditorChecker.java" startLine="207" startPosition="32" endLine="213" endPosition="5">
+      <varInfo nodeId="7390982340086719943" varName="errorReporter" />
     </scopeInfo>
     <scopeInfo nodeId="7390982340086719613" fileName="LanguageEditorChecker.java" startLine="104" startPosition="0" endLine="111" endPosition="0">
       <varInfo nodeId="7390982340086719616" varName="modelDescriptor" />
@@ -211,14 +213,11 @@
       <varInfo nodeId="7390982340086719665" varName="sNodePointer" />
     </scopeInfo>
     <scopeInfo nodeId="7390982340086719735" fileName="LanguageEditorChecker.java" startLine="140" startPosition="57" endLine="147" endPosition="17" />
-    <scopeInfo nodeId="7390982340086719942" fileName="LanguageEditorChecker.java" startLine="207" startPosition="32" endLine="214" endPosition="5">
-      <varInfo nodeId="7390982340086719943" varName="errorReporter" />
-    </scopeInfo>
     <scopeInfo nodeId="7390982340086719485" fileName="LanguageEditorChecker.java" startLine="52" startPosition="113" endLine="60" endPosition="0">
       <varInfo nodeId="7390982340086719488" varName="editorComponent" />
     </scopeInfo>
     <scopeInfo nodeId="7390982340086719516" fileName="LanguageEditorChecker.java" startLine="76" startPosition="0" endLine="84" endPosition="3" />
-    <scopeInfo nodeId="7390982340086720029" fileName="LanguageEditorChecker.java" startLine="218" startPosition="60" endLine="227" endPosition="28">
+    <scopeInfo nodeId="7390982340086720029" fileName="LanguageEditorChecker.java" startLine="217" startPosition="60" endLine="226" endPosition="28">
       <varInfo nodeId="7390982340086720061" varName="errorsComponent" />
       <varInfo nodeId="5150359874269134907" varName="sNodePointer" />
     </scopeInfo>
@@ -226,7 +225,7 @@
       <varInfo nodeId="7390982340086719733" varName="checker" />
     </scopeInfo>
     <scopeInfo nodeId="7390982340086719555" fileName="LanguageEditorChecker.java" startLine="86" startPosition="27" endLine="97" endPosition="22" />
-    <scopeInfo nodeId="7390982340086720022" fileName="LanguageEditorChecker.java" startLine="217" startPosition="0" endLine="229" endPosition="0">
+    <scopeInfo nodeId="7390982340086720022" fileName="LanguageEditorChecker.java" startLine="216" startPosition="0" endLine="228" endPosition="0">
       <varInfo nodeId="7390982340086720027" varName="component" />
       <varInfo nodeId="7390982340086720025" varName="node" />
     </scopeInfo>
@@ -237,7 +236,7 @@
     <scopeInfo nodeId="7390982340086719658" fileName="LanguageEditorChecker.java" startLine="118" startPosition="0" endLine="135" endPosition="0">
       <varInfo nodeId="7390982340086719661" varName="modelReference" />
     </scopeInfo>
-    <scopeInfo nodeId="7390982340086719767" fileName="LanguageEditorChecker.java" startLine="154" startPosition="133" endLine="215" endPosition="18">
+    <scopeInfo nodeId="7390982340086719767" fileName="LanguageEditorChecker.java" startLine="154" startPosition="133" endLine="214" endPosition="18">
       <varInfo nodeId="7390982340086719897" varName="changed" />
       <varInfo nodeId="7390982340086719805" varName="descriptor" />
       <varInfo nodeId="7390982340086719773" varName="editorComponent" />
@@ -247,13 +246,13 @@
       <varInfo nodeId="5150359874269134865" varName="sNodePointer" />
       <varInfo nodeId="7390982340086719901" varName="typecheckingContext" />
     </scopeInfo>
-    <scopeInfo nodeId="7390982340086719754" fileName="LanguageEditorChecker.java" startLine="153" startPosition="0" endLine="217" endPosition="0">
+    <scopeInfo nodeId="7390982340086719754" fileName="LanguageEditorChecker.java" startLine="153" startPosition="0" endLine="216" endPosition="0">
       <varInfo nodeId="7390982340086719765" varName="editorContext" />
       <varInfo nodeId="7390982340086719760" varName="list" />
       <varInfo nodeId="7390982340086719758" varName="node" />
       <varInfo nodeId="7390982340086719763" varName="wasCheckedOnce" />
     </scopeInfo>
-    <unitInfo nodeId="7390982340086719450" fileName="LanguageEditorChecker.java" startLine="45" startPosition="0" endLine="230" endPosition="0" unitName="typesystemIntegration.languageChecker.LanguageEditorChecker" />
+    <unitInfo nodeId="7390982340086719450" fileName="LanguageEditorChecker.java" startLine="45" startPosition="0" endLine="229" endPosition="0" unitName="typesystemIntegration.languageChecker.LanguageEditorChecker" />
     <unitInfo nodeId="7390982340086719483" fileName="LanguageEditorChecker.java" startLine="52" startPosition="72" endLine="60" endPosition="3" unitName="typesystemIntegration.languageChecker.LanguageEditorChecker$1" />
     <unitInfo nodeId="7390982340086720081" fileName="LanguageEditorChecker.java" startLine="61" startPosition="61" endLine="69" endPosition="3" unitName="typesystemIntegration.languageChecker.LanguageEditorChecker$2" />
     <unitInfo nodeId="7390982340086720106" fileName="LanguageEditorChecker.java" startLine="70" startPosition="47" endLine="74" endPosition="3" unitName="typesystemIntegration.languageChecker.LanguageEditorChecker$3" />
