@@ -133,6 +133,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
+  <dependency className="jetbrains.mps.lang.core.behavior.IAntisuppressErrors_BehaviorDescriptor" file="IAntisuppressErrors_BehaviorDescriptor.java" />
   <dependency className="jetbrains.mps.lang.core.behavior.ICanSuppressErrors_BehaviorDescriptor" file="ICanSuppressErrors_BehaviorDescriptor.java" />
   <dependency className="jetbrains.mps.lang.core.behavior.IContainer_BehaviorDescriptor" file="IContainer_BehaviorDescriptor.java" />
   <dependency className="jetbrains.mps.lang.core.behavior.IDeprecatable_Behavior" file="IDeprecatable_Behavior.java">

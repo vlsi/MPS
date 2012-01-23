@@ -7172,7 +7172,7 @@
     <unitInfo nodeId="1173175405605" fileName="ArrayAccessExpression.java" startLine="10" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.ArrayAccessExpression" />
   </root>
   <root nodeId="1177326519037">
-    <nodeInfo nodeId="1177326519037" fileName="CommentedStatementsBlock.java" startLine="14" startPosition="113" endLine="15" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
+    <nodeInfo nodeId="1177326519037" fileName="CommentedStatementsBlock.java" startLine="14" startPosition="111" endLine="15" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="1177326519037" fileName="CommentedStatementsBlock.java" startLine="15" startPosition="103" endLine="16" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SHORT_DESCRIPTION" />
     <nodeInfo nodeId="1177326519037" fileName="CommentedStatementsBlock.java" startLine="16" startPosition="68" endLine="17" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ALIAS" />
     <nodeInfo nodeId="1177326519037" fileName="CommentedStatementsBlock.java" startLine="17" startPosition="45" endLine="18" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="VIRTUAL_PACKAGE" />
@@ -11482,7 +11482,7 @@
     <unitInfo nodeId="6329021646629104954" fileName="SingleLineComment.java" startLine="12" startPosition="0" endLine="48" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
   </root>
   <root nodeId="6329021646629104955">
-    <nodeInfo nodeId="6329021646629104955" fileName="CommentPart.java" startLine="15" startPosition="75" endLine="16" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
+    <nodeInfo nodeId="6329021646629104955" fileName="CommentPart.java" startLine="15" startPosition="73" endLine="16" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="6329021646629104955" fileName="CommentPart.java" startLine="16" startPosition="90" endLine="17" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SHORT_DESCRIPTION" />
     <nodeInfo nodeId="6329021646629104955" fileName="CommentPart.java" startLine="17" startPosition="68" endLine="18" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ALIAS" />
     <nodeInfo nodeId="6329021646629104955" fileName="CommentPart.java" startLine="18" startPosition="45" endLine="19" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="VIRTUAL_PACKAGE" />

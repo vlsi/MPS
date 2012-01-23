@@ -4,6 +4,7 @@ package jetbrains.mps.lang.quotation.structure;
 
 import jetbrains.mps.baseLanguage.structure.Expression;
 import jetbrains.mps.lang.core.structure.IMetaLevelChanger;
+import jetbrains.mps.lang.core.structure.ISuppressErrors;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.core.structure.BaseConcept;
 import java.util.Iterator;
@@ -13,7 +14,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class Quotation extends Expression implements IMetaLevelChanger {
+public class Quotation extends Expression implements IMetaLevelChanger, ISuppressErrors {
   public static final String concept = "jetbrains.mps.lang.quotation.structure.Quotation";
   public static final String SHORT_DESCRIPTION = "shortDescription";
   public static final String ALIAS = "alias";

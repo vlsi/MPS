@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="Core_Language.java" startLine="9" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.core.structure.Core_Language" />
-  <unitInfo fileName="StructureAspectDescriptor.java" startLine="10" startPosition="0" endLine="63" endPosition="0" unitName="jetbrains.mps.lang.core.structure.StructureAspectDescriptor" />
+  <unitInfo fileName="StructureAspectDescriptor.java" startLine="10" startPosition="0" endLine="65" endPosition="0" unitName="jetbrains.mps.lang.core.structure.StructureAspectDescriptor" />
+  <root nodeId="1047408822409601647">
+    <nodeInfo nodeId="1047408822409601647" fileName="IAntisuppressErrors.java" startLine="7" startPosition="59" endLine="8" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
+    <unitInfo nodeId="1047408822409601647" fileName="IAntisuppressErrors.java" startLine="7" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.lang.core.structure.IAntisuppressErrors" />
+  </root>
   <root nodeId="1133920641626">
     <nodeInfo nodeId="1133920641626" fileName="BaseConcept.java" startLine="13" startPosition="46" endLine="14" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="1133920641626" fileName="BaseConcept.java" startLine="14" startPosition="87" endLine="15" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="CPR_Abstract" />
