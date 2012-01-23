@@ -101,6 +101,9 @@
     <node type="tpce.InterfaceConceptDeclaration" typeId="tpce.1169125989551" id="3393165121846091587">
       <property name="name" nameId="1169194664001" value="ISuppressErrors" />
     </node>
+    <node type="tpce.InterfaceConceptDeclaration" typeId="tpce.1169125989551" id="1047408822409601647">
+      <property name="name" nameId="1169194664001" value="IAntisuppressErrors" />
+    </node>
   </roots>
   <root id="1082983041843" />
   <root id="1082983657062" />
@@ -254,5 +257,6 @@
   </root>
   <root id="3393165121846091586" />
   <root id="3393165121846091587" />
+  <root id="1047408822409601647" />
 </model>
 

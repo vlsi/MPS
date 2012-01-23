@@ -7,6 +7,7 @@
   <unitInfo fileName="ExportScopeNamespace_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.lang.core.behavior.ExportScopeNamespace_BehaviorDescriptor" />
   <unitInfo fileName="ExportScopePublic_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.lang.core.behavior.ExportScopePublic_BehaviorDescriptor" />
   <unitInfo fileName="ExportScope_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.lang.core.behavior.ExportScope_BehaviorDescriptor" />
+  <unitInfo fileName="IAntisuppressErrors_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="8" endPosition="0" unitName="jetbrains.mps.lang.core.behavior.IAntisuppressErrors_BehaviorDescriptor" />
   <unitInfo fileName="ICanSuppressErrors_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="8" endPosition="0" unitName="jetbrains.mps.lang.core.behavior.ICanSuppressErrors_BehaviorDescriptor" />
   <unitInfo fileName="IContainer_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="8" endPosition="0" unitName="jetbrains.mps.lang.core.behavior.IContainer_BehaviorDescriptor" />
   <unitInfo fileName="IDeprecatable_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.lang.core.behavior.IDeprecatable_BehaviorDescriptor" />
