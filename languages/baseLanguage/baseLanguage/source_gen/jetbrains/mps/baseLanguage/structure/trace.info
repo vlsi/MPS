@@ -7172,112 +7172,112 @@
     <unitInfo nodeId="1173175405605" fileName="ArrayAccessExpression.java" startLine="10" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.ArrayAccessExpression" />
   </root>
   <root nodeId="1177326519037">
-    <nodeInfo nodeId="1177326519037" fileName="CommentedStatementsBlock.java" startLine="15" startPosition="130" endLine="16" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
-    <nodeInfo nodeId="1177326519037" fileName="CommentedStatementsBlock.java" startLine="16" startPosition="103" endLine="17" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SHORT_DESCRIPTION" />
-    <nodeInfo nodeId="1177326519037" fileName="CommentedStatementsBlock.java" startLine="17" startPosition="68" endLine="18" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ALIAS" />
-    <nodeInfo nodeId="1177326519037" fileName="CommentedStatementsBlock.java" startLine="18" startPosition="45" endLine="19" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="VIRTUAL_PACKAGE" />
-    <nodeInfo nodeId="1177326519037" fileName="CommentedStatementsBlock.java" startLine="19" startPosition="64" endLine="20" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="STATEMENT" />
-    <nodeInfo nodeId="1177326519037" fileName="CommentedStatementsBlock.java" startLine="20" startPosition="53" endLine="21" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SMODEL_ATTRIBUTE" />
-    <nodeInfo nodeId="1177326519037" fileName="CommentedStatementsBlock.java" startLine="23" startPosition="47" endLine="24" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="1177326519037" fileName="CommentedStatementsBlock.java" startLine="27" startPosition="39" endLine="28" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1177326519037" fileName="CommentedStatementsBlock.java" startLine="31" startPosition="49" endLine="32" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1177326519037" fileName="CommentedStatementsBlock.java" startLine="35" startPosition="28" endLine="36" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1177326519037" fileName="CommentedStatementsBlock.java" startLine="39" startPosition="38" endLine="40" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1177326519037" fileName="CommentedStatementsBlock.java" startLine="43" startPosition="37" endLine="44" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1177326519037" fileName="CommentedStatementsBlock.java" startLine="47" startPosition="47" endLine="48" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1177326519037" fileName="CommentedStatementsBlock.java" startLine="51" startPosition="35" endLine="52" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1177326519037" fileName="CommentedStatementsBlock.java" startLine="55" startPosition="43" endLine="56" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1177326519037" fileName="CommentedStatementsBlock.java" startLine="59" startPosition="42" endLine="60" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1177326519037" fileName="CommentedStatementsBlock.java" startLine="63" startPosition="44" endLine="64" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1177326519037" fileName="CommentedStatementsBlock.java" startLine="67" startPosition="63" endLine="68" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1177326519037" fileName="CommentedStatementsBlock.java" startLine="71" startPosition="41" endLine="72" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1177326519037" fileName="CommentedStatementsBlock.java" startLine="75" startPosition="49" endLine="76" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1177326519037" fileName="CommentedStatementsBlock.java" startLine="79" startPosition="48" endLine="80" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1177326519037" fileName="CommentedStatementsBlock.java" startLine="83" startPosition="50" endLine="84" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1177326519037" fileName="CommentedStatementsBlock.java" startLine="87" startPosition="69" endLine="88" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1177326519037" fileName="CommentedStatementsBlock.java" startLine="91" startPosition="79" endLine="92" endPosition="198" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1177326519037" fileName="CommentedStatementsBlock.java" startLine="95" startPosition="65" endLine="96" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1177326519037" fileName="CommentedStatementsBlock.java" startLine="22" startPosition="0" endLine="25" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="CommentedStatementsBlock#(Ljetbrains/mps/smodel/SNode;)V" />
-    <nodeInfo nodeId="1177326519037" fileName="CommentedStatementsBlock.java" startLine="26" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getShortDescription#()Ljava/lang/String;" />
-    <nodeInfo nodeId="1177326519037" fileName="CommentedStatementsBlock.java" startLine="30" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setShortDescription#(Ljava/lang/String;)V" />
-    <nodeInfo nodeId="1177326519037" fileName="CommentedStatementsBlock.java" startLine="34" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getAlias#()Ljava/lang/String;" />
-    <nodeInfo nodeId="1177326519037" fileName="CommentedStatementsBlock.java" startLine="38" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setAlias#(Ljava/lang/String;)V" />
-    <nodeInfo nodeId="1177326519037" fileName="CommentedStatementsBlock.java" startLine="42" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getVirtualPackage#()Ljava/lang/String;" />
-    <nodeInfo nodeId="1177326519037" fileName="CommentedStatementsBlock.java" startLine="46" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setVirtualPackage#(Ljava/lang/String;)V" />
-    <nodeInfo nodeId="1177326519037" fileName="CommentedStatementsBlock.java" startLine="50" startPosition="0" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getStatementsCount#()I" />
-    <nodeInfo nodeId="1177326519037" fileName="CommentedStatementsBlock.java" startLine="54" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="statements#()Ljava/util/Iterator;" />
-    <nodeInfo nodeId="1177326519037" fileName="CommentedStatementsBlock.java" startLine="58" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getStatements#()Ljava/util/List;" />
-    <nodeInfo nodeId="1177326519037" fileName="CommentedStatementsBlock.java" startLine="62" startPosition="0" endLine="66" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addStatement#(Ljetbrains/mps/smodel/INodeAdapter;)V" />
-    <nodeInfo nodeId="1177326519037" fileName="CommentedStatementsBlock.java" startLine="66" startPosition="0" endLine="70" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="insertStatement#(Ljetbrains/mps/smodel/INodeAdapter;Ljetbrains/mps/smodel/INodeAdapter;)V" />
-    <nodeInfo nodeId="1177326519037" fileName="CommentedStatementsBlock.java" startLine="70" startPosition="0" endLine="74" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSmodelAttributesCount#()I" />
-    <nodeInfo nodeId="1177326519037" fileName="CommentedStatementsBlock.java" startLine="74" startPosition="0" endLine="78" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="smodelAttributes#()Ljava/util/Iterator;" />
-    <nodeInfo nodeId="1177326519037" fileName="CommentedStatementsBlock.java" startLine="78" startPosition="0" endLine="82" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSmodelAttributes#()Ljava/util/List;" />
-    <nodeInfo nodeId="1177326519037" fileName="CommentedStatementsBlock.java" startLine="82" startPosition="0" endLine="86" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addSmodelAttribute#(Ljetbrains/mps/smodel/INodeAdapter;)V" />
-    <nodeInfo nodeId="1177326519037" fileName="CommentedStatementsBlock.java" startLine="86" startPosition="0" endLine="90" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="insertSmodelAttribute#(Ljetbrains/mps/smodel/INodeAdapter;Ljetbrains/mps/smodel/INodeAdapter;)V" />
-    <nodeInfo nodeId="1177326519037" fileName="CommentedStatementsBlock.java" startLine="90" startPosition="0" endLine="94" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="newInstance#(Ljetbrains/mps/smodel/SModel;Z)Ljetbrains/mps/baseLanguage/structure/CommentedStatementsBlock;" />
-    <nodeInfo nodeId="1177326519037" fileName="CommentedStatementsBlock.java" startLine="94" startPosition="0" endLine="98" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="newInstance#(Ljetbrains/mps/smodel/SModel;)Ljetbrains/mps/baseLanguage/structure/CommentedStatementsBlock;" />
-    <scopeInfo nodeId="1177326519037" fileName="CommentedStatementsBlock.java" startLine="23" startPosition="47" endLine="24" endPosition="16" />
-    <scopeInfo nodeId="1177326519037" fileName="CommentedStatementsBlock.java" startLine="27" startPosition="39" endLine="28" endPosition="72" />
-    <scopeInfo nodeId="1177326519037" fileName="CommentedStatementsBlock.java" startLine="31" startPosition="49" endLine="32" endPosition="72" />
-    <scopeInfo nodeId="1177326519037" fileName="CommentedStatementsBlock.java" startLine="35" startPosition="28" endLine="36" endPosition="60" />
-    <scopeInfo nodeId="1177326519037" fileName="CommentedStatementsBlock.java" startLine="39" startPosition="38" endLine="40" endPosition="60" />
-    <scopeInfo nodeId="1177326519037" fileName="CommentedStatementsBlock.java" startLine="43" startPosition="37" endLine="44" endPosition="70" />
-    <scopeInfo nodeId="1177326519037" fileName="CommentedStatementsBlock.java" startLine="47" startPosition="47" endLine="48" endPosition="70" />
-    <scopeInfo nodeId="1177326519037" fileName="CommentedStatementsBlock.java" startLine="51" startPosition="35" endLine="52" endPosition="66" />
-    <scopeInfo nodeId="1177326519037" fileName="CommentedStatementsBlock.java" startLine="55" startPosition="43" endLine="56" endPosition="78" />
-    <scopeInfo nodeId="1177326519037" fileName="CommentedStatementsBlock.java" startLine="59" startPosition="42" endLine="60" endPosition="81" />
-    <scopeInfo nodeId="1177326519037" fileName="CommentedStatementsBlock.java" startLine="63" startPosition="44" endLine="64" endPosition="60" />
-    <scopeInfo nodeId="1177326519037" fileName="CommentedStatementsBlock.java" startLine="67" startPosition="63" endLine="68" endPosition="69" />
-    <scopeInfo nodeId="1177326519037" fileName="CommentedStatementsBlock.java" startLine="71" startPosition="41" endLine="72" endPosition="73" />
-    <scopeInfo nodeId="1177326519037" fileName="CommentedStatementsBlock.java" startLine="75" startPosition="49" endLine="76" endPosition="85" />
-    <scopeInfo nodeId="1177326519037" fileName="CommentedStatementsBlock.java" startLine="79" startPosition="48" endLine="80" endPosition="88" />
-    <scopeInfo nodeId="1177326519037" fileName="CommentedStatementsBlock.java" startLine="83" startPosition="50" endLine="84" endPosition="67" />
-    <scopeInfo nodeId="1177326519037" fileName="CommentedStatementsBlock.java" startLine="87" startPosition="69" endLine="88" endPosition="76" />
-    <scopeInfo nodeId="1177326519037" fileName="CommentedStatementsBlock.java" startLine="91" startPosition="79" endLine="92" endPosition="198" />
-    <scopeInfo nodeId="1177326519037" fileName="CommentedStatementsBlock.java" startLine="95" startPosition="65" endLine="96" endPosition="59" />
-    <scopeInfo nodeId="1177326519037" fileName="CommentedStatementsBlock.java" startLine="22" startPosition="0" endLine="25" endPosition="3">
+    <nodeInfo nodeId="1177326519037" fileName="CommentedStatementsBlock.java" startLine="14" startPosition="111" endLine="15" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
+    <nodeInfo nodeId="1177326519037" fileName="CommentedStatementsBlock.java" startLine="15" startPosition="103" endLine="16" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SHORT_DESCRIPTION" />
+    <nodeInfo nodeId="1177326519037" fileName="CommentedStatementsBlock.java" startLine="16" startPosition="68" endLine="17" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ALIAS" />
+    <nodeInfo nodeId="1177326519037" fileName="CommentedStatementsBlock.java" startLine="17" startPosition="45" endLine="18" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="VIRTUAL_PACKAGE" />
+    <nodeInfo nodeId="1177326519037" fileName="CommentedStatementsBlock.java" startLine="18" startPosition="64" endLine="19" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="STATEMENT" />
+    <nodeInfo nodeId="1177326519037" fileName="CommentedStatementsBlock.java" startLine="19" startPosition="53" endLine="20" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SMODEL_ATTRIBUTE" />
+    <nodeInfo nodeId="1177326519037" fileName="CommentedStatementsBlock.java" startLine="22" startPosition="47" endLine="23" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="1177326519037" fileName="CommentedStatementsBlock.java" startLine="26" startPosition="39" endLine="27" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1177326519037" fileName="CommentedStatementsBlock.java" startLine="30" startPosition="49" endLine="31" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1177326519037" fileName="CommentedStatementsBlock.java" startLine="34" startPosition="28" endLine="35" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1177326519037" fileName="CommentedStatementsBlock.java" startLine="38" startPosition="38" endLine="39" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1177326519037" fileName="CommentedStatementsBlock.java" startLine="42" startPosition="37" endLine="43" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1177326519037" fileName="CommentedStatementsBlock.java" startLine="46" startPosition="47" endLine="47" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1177326519037" fileName="CommentedStatementsBlock.java" startLine="50" startPosition="35" endLine="51" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1177326519037" fileName="CommentedStatementsBlock.java" startLine="54" startPosition="43" endLine="55" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1177326519037" fileName="CommentedStatementsBlock.java" startLine="58" startPosition="42" endLine="59" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1177326519037" fileName="CommentedStatementsBlock.java" startLine="62" startPosition="44" endLine="63" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1177326519037" fileName="CommentedStatementsBlock.java" startLine="66" startPosition="63" endLine="67" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1177326519037" fileName="CommentedStatementsBlock.java" startLine="70" startPosition="41" endLine="71" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1177326519037" fileName="CommentedStatementsBlock.java" startLine="74" startPosition="49" endLine="75" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1177326519037" fileName="CommentedStatementsBlock.java" startLine="78" startPosition="48" endLine="79" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1177326519037" fileName="CommentedStatementsBlock.java" startLine="82" startPosition="50" endLine="83" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1177326519037" fileName="CommentedStatementsBlock.java" startLine="86" startPosition="69" endLine="87" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1177326519037" fileName="CommentedStatementsBlock.java" startLine="90" startPosition="79" endLine="91" endPosition="198" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1177326519037" fileName="CommentedStatementsBlock.java" startLine="94" startPosition="65" endLine="95" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1177326519037" fileName="CommentedStatementsBlock.java" startLine="21" startPosition="0" endLine="24" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="CommentedStatementsBlock#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="1177326519037" fileName="CommentedStatementsBlock.java" startLine="25" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getShortDescription#()Ljava/lang/String;" />
+    <nodeInfo nodeId="1177326519037" fileName="CommentedStatementsBlock.java" startLine="29" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setShortDescription#(Ljava/lang/String;)V" />
+    <nodeInfo nodeId="1177326519037" fileName="CommentedStatementsBlock.java" startLine="33" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getAlias#()Ljava/lang/String;" />
+    <nodeInfo nodeId="1177326519037" fileName="CommentedStatementsBlock.java" startLine="37" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setAlias#(Ljava/lang/String;)V" />
+    <nodeInfo nodeId="1177326519037" fileName="CommentedStatementsBlock.java" startLine="41" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getVirtualPackage#()Ljava/lang/String;" />
+    <nodeInfo nodeId="1177326519037" fileName="CommentedStatementsBlock.java" startLine="45" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setVirtualPackage#(Ljava/lang/String;)V" />
+    <nodeInfo nodeId="1177326519037" fileName="CommentedStatementsBlock.java" startLine="49" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getStatementsCount#()I" />
+    <nodeInfo nodeId="1177326519037" fileName="CommentedStatementsBlock.java" startLine="53" startPosition="0" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="statements#()Ljava/util/Iterator;" />
+    <nodeInfo nodeId="1177326519037" fileName="CommentedStatementsBlock.java" startLine="57" startPosition="0" endLine="61" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getStatements#()Ljava/util/List;" />
+    <nodeInfo nodeId="1177326519037" fileName="CommentedStatementsBlock.java" startLine="61" startPosition="0" endLine="65" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addStatement#(Ljetbrains/mps/smodel/INodeAdapter;)V" />
+    <nodeInfo nodeId="1177326519037" fileName="CommentedStatementsBlock.java" startLine="65" startPosition="0" endLine="69" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="insertStatement#(Ljetbrains/mps/smodel/INodeAdapter;Ljetbrains/mps/smodel/INodeAdapter;)V" />
+    <nodeInfo nodeId="1177326519037" fileName="CommentedStatementsBlock.java" startLine="69" startPosition="0" endLine="73" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSmodelAttributesCount#()I" />
+    <nodeInfo nodeId="1177326519037" fileName="CommentedStatementsBlock.java" startLine="73" startPosition="0" endLine="77" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="smodelAttributes#()Ljava/util/Iterator;" />
+    <nodeInfo nodeId="1177326519037" fileName="CommentedStatementsBlock.java" startLine="77" startPosition="0" endLine="81" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSmodelAttributes#()Ljava/util/List;" />
+    <nodeInfo nodeId="1177326519037" fileName="CommentedStatementsBlock.java" startLine="81" startPosition="0" endLine="85" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addSmodelAttribute#(Ljetbrains/mps/smodel/INodeAdapter;)V" />
+    <nodeInfo nodeId="1177326519037" fileName="CommentedStatementsBlock.java" startLine="85" startPosition="0" endLine="89" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="insertSmodelAttribute#(Ljetbrains/mps/smodel/INodeAdapter;Ljetbrains/mps/smodel/INodeAdapter;)V" />
+    <nodeInfo nodeId="1177326519037" fileName="CommentedStatementsBlock.java" startLine="89" startPosition="0" endLine="93" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="newInstance#(Ljetbrains/mps/smodel/SModel;Z)Ljetbrains/mps/baseLanguage/structure/CommentedStatementsBlock;" />
+    <nodeInfo nodeId="1177326519037" fileName="CommentedStatementsBlock.java" startLine="93" startPosition="0" endLine="97" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="newInstance#(Ljetbrains/mps/smodel/SModel;)Ljetbrains/mps/baseLanguage/structure/CommentedStatementsBlock;" />
+    <scopeInfo nodeId="1177326519037" fileName="CommentedStatementsBlock.java" startLine="22" startPosition="47" endLine="23" endPosition="16" />
+    <scopeInfo nodeId="1177326519037" fileName="CommentedStatementsBlock.java" startLine="26" startPosition="39" endLine="27" endPosition="72" />
+    <scopeInfo nodeId="1177326519037" fileName="CommentedStatementsBlock.java" startLine="30" startPosition="49" endLine="31" endPosition="72" />
+    <scopeInfo nodeId="1177326519037" fileName="CommentedStatementsBlock.java" startLine="34" startPosition="28" endLine="35" endPosition="60" />
+    <scopeInfo nodeId="1177326519037" fileName="CommentedStatementsBlock.java" startLine="38" startPosition="38" endLine="39" endPosition="60" />
+    <scopeInfo nodeId="1177326519037" fileName="CommentedStatementsBlock.java" startLine="42" startPosition="37" endLine="43" endPosition="70" />
+    <scopeInfo nodeId="1177326519037" fileName="CommentedStatementsBlock.java" startLine="46" startPosition="47" endLine="47" endPosition="70" />
+    <scopeInfo nodeId="1177326519037" fileName="CommentedStatementsBlock.java" startLine="50" startPosition="35" endLine="51" endPosition="66" />
+    <scopeInfo nodeId="1177326519037" fileName="CommentedStatementsBlock.java" startLine="54" startPosition="43" endLine="55" endPosition="78" />
+    <scopeInfo nodeId="1177326519037" fileName="CommentedStatementsBlock.java" startLine="58" startPosition="42" endLine="59" endPosition="81" />
+    <scopeInfo nodeId="1177326519037" fileName="CommentedStatementsBlock.java" startLine="62" startPosition="44" endLine="63" endPosition="60" />
+    <scopeInfo nodeId="1177326519037" fileName="CommentedStatementsBlock.java" startLine="66" startPosition="63" endLine="67" endPosition="69" />
+    <scopeInfo nodeId="1177326519037" fileName="CommentedStatementsBlock.java" startLine="70" startPosition="41" endLine="71" endPosition="73" />
+    <scopeInfo nodeId="1177326519037" fileName="CommentedStatementsBlock.java" startLine="74" startPosition="49" endLine="75" endPosition="85" />
+    <scopeInfo nodeId="1177326519037" fileName="CommentedStatementsBlock.java" startLine="78" startPosition="48" endLine="79" endPosition="88" />
+    <scopeInfo nodeId="1177326519037" fileName="CommentedStatementsBlock.java" startLine="82" startPosition="50" endLine="83" endPosition="67" />
+    <scopeInfo nodeId="1177326519037" fileName="CommentedStatementsBlock.java" startLine="86" startPosition="69" endLine="87" endPosition="76" />
+    <scopeInfo nodeId="1177326519037" fileName="CommentedStatementsBlock.java" startLine="90" startPosition="79" endLine="91" endPosition="198" />
+    <scopeInfo nodeId="1177326519037" fileName="CommentedStatementsBlock.java" startLine="94" startPosition="65" endLine="95" endPosition="59" />
+    <scopeInfo nodeId="1177326519037" fileName="CommentedStatementsBlock.java" startLine="21" startPosition="0" endLine="24" endPosition="3">
       <varInfo nodeId="1177326519037" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1177326519037" fileName="CommentedStatementsBlock.java" startLine="26" startPosition="0" endLine="30" endPosition="0" />
-    <scopeInfo nodeId="1177326519037" fileName="CommentedStatementsBlock.java" startLine="30" startPosition="0" endLine="34" endPosition="0">
+    <scopeInfo nodeId="1177326519037" fileName="CommentedStatementsBlock.java" startLine="25" startPosition="0" endLine="29" endPosition="0" />
+    <scopeInfo nodeId="1177326519037" fileName="CommentedStatementsBlock.java" startLine="29" startPosition="0" endLine="33" endPosition="0">
       <varInfo nodeId="1177326519037" varName="value" />
     </scopeInfo>
-    <scopeInfo nodeId="1177326519037" fileName="CommentedStatementsBlock.java" startLine="34" startPosition="0" endLine="38" endPosition="0" />
-    <scopeInfo nodeId="1177326519037" fileName="CommentedStatementsBlock.java" startLine="38" startPosition="0" endLine="42" endPosition="0">
+    <scopeInfo nodeId="1177326519037" fileName="CommentedStatementsBlock.java" startLine="33" startPosition="0" endLine="37" endPosition="0" />
+    <scopeInfo nodeId="1177326519037" fileName="CommentedStatementsBlock.java" startLine="37" startPosition="0" endLine="41" endPosition="0">
       <varInfo nodeId="1177326519037" varName="value" />
     </scopeInfo>
-    <scopeInfo nodeId="1177326519037" fileName="CommentedStatementsBlock.java" startLine="42" startPosition="0" endLine="46" endPosition="0" />
-    <scopeInfo nodeId="1177326519037" fileName="CommentedStatementsBlock.java" startLine="46" startPosition="0" endLine="50" endPosition="0">
+    <scopeInfo nodeId="1177326519037" fileName="CommentedStatementsBlock.java" startLine="41" startPosition="0" endLine="45" endPosition="0" />
+    <scopeInfo nodeId="1177326519037" fileName="CommentedStatementsBlock.java" startLine="45" startPosition="0" endLine="49" endPosition="0">
       <varInfo nodeId="1177326519037" varName="value" />
     </scopeInfo>
-    <scopeInfo nodeId="1177326519037" fileName="CommentedStatementsBlock.java" startLine="50" startPosition="0" endLine="54" endPosition="0" />
-    <scopeInfo nodeId="1177326519037" fileName="CommentedStatementsBlock.java" startLine="54" startPosition="0" endLine="58" endPosition="0" />
-    <scopeInfo nodeId="1177326519037" fileName="CommentedStatementsBlock.java" startLine="58" startPosition="0" endLine="62" endPosition="0" />
-    <scopeInfo nodeId="1177326519037" fileName="CommentedStatementsBlock.java" startLine="62" startPosition="0" endLine="66" endPosition="0">
+    <scopeInfo nodeId="1177326519037" fileName="CommentedStatementsBlock.java" startLine="49" startPosition="0" endLine="53" endPosition="0" />
+    <scopeInfo nodeId="1177326519037" fileName="CommentedStatementsBlock.java" startLine="53" startPosition="0" endLine="57" endPosition="0" />
+    <scopeInfo nodeId="1177326519037" fileName="CommentedStatementsBlock.java" startLine="57" startPosition="0" endLine="61" endPosition="0" />
+    <scopeInfo nodeId="1177326519037" fileName="CommentedStatementsBlock.java" startLine="61" startPosition="0" endLine="65" endPosition="0">
       <varInfo nodeId="1177326519037" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1177326519037" fileName="CommentedStatementsBlock.java" startLine="66" startPosition="0" endLine="70" endPosition="0">
+    <scopeInfo nodeId="1177326519037" fileName="CommentedStatementsBlock.java" startLine="65" startPosition="0" endLine="69" endPosition="0">
       <varInfo nodeId="1177326519037" varName="node" />
       <varInfo nodeId="1177326519037" varName="prev" />
     </scopeInfo>
-    <scopeInfo nodeId="1177326519037" fileName="CommentedStatementsBlock.java" startLine="70" startPosition="0" endLine="74" endPosition="0" />
-    <scopeInfo nodeId="1177326519037" fileName="CommentedStatementsBlock.java" startLine="74" startPosition="0" endLine="78" endPosition="0" />
-    <scopeInfo nodeId="1177326519037" fileName="CommentedStatementsBlock.java" startLine="78" startPosition="0" endLine="82" endPosition="0" />
-    <scopeInfo nodeId="1177326519037" fileName="CommentedStatementsBlock.java" startLine="82" startPosition="0" endLine="86" endPosition="0">
+    <scopeInfo nodeId="1177326519037" fileName="CommentedStatementsBlock.java" startLine="69" startPosition="0" endLine="73" endPosition="0" />
+    <scopeInfo nodeId="1177326519037" fileName="CommentedStatementsBlock.java" startLine="73" startPosition="0" endLine="77" endPosition="0" />
+    <scopeInfo nodeId="1177326519037" fileName="CommentedStatementsBlock.java" startLine="77" startPosition="0" endLine="81" endPosition="0" />
+    <scopeInfo nodeId="1177326519037" fileName="CommentedStatementsBlock.java" startLine="81" startPosition="0" endLine="85" endPosition="0">
       <varInfo nodeId="1177326519037" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1177326519037" fileName="CommentedStatementsBlock.java" startLine="86" startPosition="0" endLine="90" endPosition="0">
+    <scopeInfo nodeId="1177326519037" fileName="CommentedStatementsBlock.java" startLine="85" startPosition="0" endLine="89" endPosition="0">
       <varInfo nodeId="1177326519037" varName="node" />
       <varInfo nodeId="1177326519037" varName="prev" />
     </scopeInfo>
-    <scopeInfo nodeId="1177326519037" fileName="CommentedStatementsBlock.java" startLine="90" startPosition="0" endLine="94" endPosition="0">
+    <scopeInfo nodeId="1177326519037" fileName="CommentedStatementsBlock.java" startLine="89" startPosition="0" endLine="93" endPosition="0">
       <varInfo nodeId="1177326519037" varName="init" />
       <varInfo nodeId="1177326519037" varName="sm" />
     </scopeInfo>
-    <scopeInfo nodeId="1177326519037" fileName="CommentedStatementsBlock.java" startLine="94" startPosition="0" endLine="98" endPosition="0">
+    <scopeInfo nodeId="1177326519037" fileName="CommentedStatementsBlock.java" startLine="93" startPosition="0" endLine="97" endPosition="0">
       <varInfo nodeId="1177326519037" varName="sm" />
     </scopeInfo>
-    <unitInfo nodeId="1177326519037" fileName="CommentedStatementsBlock.java" startLine="15" startPosition="0" endLine="99" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.CommentedStatementsBlock" />
+    <unitInfo nodeId="1177326519037" fileName="CommentedStatementsBlock.java" startLine="14" startPosition="0" endLine="98" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.CommentedStatementsBlock" />
   </root>
   <root nodeId="1177666668936">
     <nodeInfo nodeId="1177666668936" fileName="DoWhileStatement.java" startLine="10" startPosition="61" endLine="11" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
@@ -11482,86 +11482,86 @@
     <unitInfo nodeId="6329021646629104954" fileName="SingleLineComment.java" startLine="12" startPosition="0" endLine="48" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
   </root>
   <root nodeId="6329021646629104955">
-    <nodeInfo nodeId="6329021646629104955" fileName="CommentPart.java" startLine="16" startPosition="92" endLine="17" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
-    <nodeInfo nodeId="6329021646629104955" fileName="CommentPart.java" startLine="17" startPosition="90" endLine="18" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SHORT_DESCRIPTION" />
-    <nodeInfo nodeId="6329021646629104955" fileName="CommentPart.java" startLine="18" startPosition="68" endLine="19" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ALIAS" />
-    <nodeInfo nodeId="6329021646629104955" fileName="CommentPart.java" startLine="19" startPosition="45" endLine="20" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="VIRTUAL_PACKAGE" />
-    <nodeInfo nodeId="6329021646629104955" fileName="CommentPart.java" startLine="20" startPosition="64" endLine="21" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SMODEL_ATTRIBUTE" />
-    <nodeInfo nodeId="6329021646629104955" fileName="CommentPart.java" startLine="23" startPosition="34" endLine="24" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="6329021646629104955" fileName="CommentPart.java" startLine="27" startPosition="39" endLine="28" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6329021646629104955" fileName="CommentPart.java" startLine="31" startPosition="49" endLine="32" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6329021646629104955" fileName="CommentPart.java" startLine="35" startPosition="28" endLine="36" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6329021646629104955" fileName="CommentPart.java" startLine="39" startPosition="38" endLine="40" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6329021646629104955" fileName="CommentPart.java" startLine="43" startPosition="37" endLine="44" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6329021646629104955" fileName="CommentPart.java" startLine="47" startPosition="47" endLine="48" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6329021646629104955" fileName="CommentPart.java" startLine="51" startPosition="41" endLine="52" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6329021646629104955" fileName="CommentPart.java" startLine="55" startPosition="49" endLine="56" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6329021646629104955" fileName="CommentPart.java" startLine="59" startPosition="48" endLine="60" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6329021646629104955" fileName="CommentPart.java" startLine="63" startPosition="50" endLine="64" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6329021646629104955" fileName="CommentPart.java" startLine="67" startPosition="69" endLine="68" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6329021646629104955" fileName="CommentPart.java" startLine="71" startPosition="66" endLine="72" endPosition="172" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6329021646629104955" fileName="CommentPart.java" startLine="75" startPosition="52" endLine="76" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6329021646629104955" fileName="CommentPart.java" startLine="22" startPosition="0" endLine="25" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="CommentPart#(Ljetbrains/mps/smodel/SNode;)V" />
-    <nodeInfo nodeId="6329021646629104955" fileName="CommentPart.java" startLine="26" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getShortDescription#()Ljava/lang/String;" />
-    <nodeInfo nodeId="6329021646629104955" fileName="CommentPart.java" startLine="30" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setShortDescription#(Ljava/lang/String;)V" />
-    <nodeInfo nodeId="6329021646629104955" fileName="CommentPart.java" startLine="34" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getAlias#()Ljava/lang/String;" />
-    <nodeInfo nodeId="6329021646629104955" fileName="CommentPart.java" startLine="38" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setAlias#(Ljava/lang/String;)V" />
-    <nodeInfo nodeId="6329021646629104955" fileName="CommentPart.java" startLine="42" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getVirtualPackage#()Ljava/lang/String;" />
-    <nodeInfo nodeId="6329021646629104955" fileName="CommentPart.java" startLine="46" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setVirtualPackage#(Ljava/lang/String;)V" />
-    <nodeInfo nodeId="6329021646629104955" fileName="CommentPart.java" startLine="50" startPosition="0" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSmodelAttributesCount#()I" />
-    <nodeInfo nodeId="6329021646629104955" fileName="CommentPart.java" startLine="54" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="smodelAttributes#()Ljava/util/Iterator;" />
-    <nodeInfo nodeId="6329021646629104955" fileName="CommentPart.java" startLine="58" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSmodelAttributes#()Ljava/util/List;" />
-    <nodeInfo nodeId="6329021646629104955" fileName="CommentPart.java" startLine="62" startPosition="0" endLine="66" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addSmodelAttribute#(Ljetbrains/mps/smodel/INodeAdapter;)V" />
-    <nodeInfo nodeId="6329021646629104955" fileName="CommentPart.java" startLine="66" startPosition="0" endLine="70" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="insertSmodelAttribute#(Ljetbrains/mps/smodel/INodeAdapter;Ljetbrains/mps/smodel/INodeAdapter;)V" />
-    <nodeInfo nodeId="6329021646629104955" fileName="CommentPart.java" startLine="70" startPosition="0" endLine="74" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="newInstance#(Ljetbrains/mps/smodel/SModel;Z)Ljetbrains/mps/baseLanguage/structure/CommentPart;" />
-    <nodeInfo nodeId="6329021646629104955" fileName="CommentPart.java" startLine="74" startPosition="0" endLine="78" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="newInstance#(Ljetbrains/mps/smodel/SModel;)Ljetbrains/mps/baseLanguage/structure/CommentPart;" />
-    <scopeInfo nodeId="6329021646629104955" fileName="CommentPart.java" startLine="23" startPosition="34" endLine="24" endPosition="16" />
-    <scopeInfo nodeId="6329021646629104955" fileName="CommentPart.java" startLine="27" startPosition="39" endLine="28" endPosition="59" />
-    <scopeInfo nodeId="6329021646629104955" fileName="CommentPart.java" startLine="31" startPosition="49" endLine="32" endPosition="59" />
-    <scopeInfo nodeId="6329021646629104955" fileName="CommentPart.java" startLine="35" startPosition="28" endLine="36" endPosition="47" />
-    <scopeInfo nodeId="6329021646629104955" fileName="CommentPart.java" startLine="39" startPosition="38" endLine="40" endPosition="47" />
-    <scopeInfo nodeId="6329021646629104955" fileName="CommentPart.java" startLine="43" startPosition="37" endLine="44" endPosition="57" />
-    <scopeInfo nodeId="6329021646629104955" fileName="CommentPart.java" startLine="47" startPosition="47" endLine="48" endPosition="57" />
-    <scopeInfo nodeId="6329021646629104955" fileName="CommentPart.java" startLine="51" startPosition="41" endLine="52" endPosition="60" />
-    <scopeInfo nodeId="6329021646629104955" fileName="CommentPart.java" startLine="55" startPosition="49" endLine="56" endPosition="72" />
-    <scopeInfo nodeId="6329021646629104955" fileName="CommentPart.java" startLine="59" startPosition="48" endLine="60" endPosition="75" />
-    <scopeInfo nodeId="6329021646629104955" fileName="CommentPart.java" startLine="63" startPosition="50" endLine="64" endPosition="54" />
-    <scopeInfo nodeId="6329021646629104955" fileName="CommentPart.java" startLine="67" startPosition="69" endLine="68" endPosition="63" />
-    <scopeInfo nodeId="6329021646629104955" fileName="CommentPart.java" startLine="71" startPosition="66" endLine="72" endPosition="172" />
-    <scopeInfo nodeId="6329021646629104955" fileName="CommentPart.java" startLine="75" startPosition="52" endLine="76" endPosition="46" />
-    <scopeInfo nodeId="6329021646629104955" fileName="CommentPart.java" startLine="22" startPosition="0" endLine="25" endPosition="3">
+    <nodeInfo nodeId="6329021646629104955" fileName="CommentPart.java" startLine="15" startPosition="73" endLine="16" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
+    <nodeInfo nodeId="6329021646629104955" fileName="CommentPart.java" startLine="16" startPosition="90" endLine="17" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SHORT_DESCRIPTION" />
+    <nodeInfo nodeId="6329021646629104955" fileName="CommentPart.java" startLine="17" startPosition="68" endLine="18" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ALIAS" />
+    <nodeInfo nodeId="6329021646629104955" fileName="CommentPart.java" startLine="18" startPosition="45" endLine="19" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="VIRTUAL_PACKAGE" />
+    <nodeInfo nodeId="6329021646629104955" fileName="CommentPart.java" startLine="19" startPosition="64" endLine="20" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SMODEL_ATTRIBUTE" />
+    <nodeInfo nodeId="6329021646629104955" fileName="CommentPart.java" startLine="22" startPosition="34" endLine="23" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="6329021646629104955" fileName="CommentPart.java" startLine="26" startPosition="39" endLine="27" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6329021646629104955" fileName="CommentPart.java" startLine="30" startPosition="49" endLine="31" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6329021646629104955" fileName="CommentPart.java" startLine="34" startPosition="28" endLine="35" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6329021646629104955" fileName="CommentPart.java" startLine="38" startPosition="38" endLine="39" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6329021646629104955" fileName="CommentPart.java" startLine="42" startPosition="37" endLine="43" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6329021646629104955" fileName="CommentPart.java" startLine="46" startPosition="47" endLine="47" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6329021646629104955" fileName="CommentPart.java" startLine="50" startPosition="41" endLine="51" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6329021646629104955" fileName="CommentPart.java" startLine="54" startPosition="49" endLine="55" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6329021646629104955" fileName="CommentPart.java" startLine="58" startPosition="48" endLine="59" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6329021646629104955" fileName="CommentPart.java" startLine="62" startPosition="50" endLine="63" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6329021646629104955" fileName="CommentPart.java" startLine="66" startPosition="69" endLine="67" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6329021646629104955" fileName="CommentPart.java" startLine="70" startPosition="66" endLine="71" endPosition="172" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6329021646629104955" fileName="CommentPart.java" startLine="74" startPosition="52" endLine="75" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6329021646629104955" fileName="CommentPart.java" startLine="21" startPosition="0" endLine="24" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="CommentPart#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="6329021646629104955" fileName="CommentPart.java" startLine="25" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getShortDescription#()Ljava/lang/String;" />
+    <nodeInfo nodeId="6329021646629104955" fileName="CommentPart.java" startLine="29" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setShortDescription#(Ljava/lang/String;)V" />
+    <nodeInfo nodeId="6329021646629104955" fileName="CommentPart.java" startLine="33" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getAlias#()Ljava/lang/String;" />
+    <nodeInfo nodeId="6329021646629104955" fileName="CommentPart.java" startLine="37" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setAlias#(Ljava/lang/String;)V" />
+    <nodeInfo nodeId="6329021646629104955" fileName="CommentPart.java" startLine="41" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getVirtualPackage#()Ljava/lang/String;" />
+    <nodeInfo nodeId="6329021646629104955" fileName="CommentPart.java" startLine="45" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setVirtualPackage#(Ljava/lang/String;)V" />
+    <nodeInfo nodeId="6329021646629104955" fileName="CommentPart.java" startLine="49" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSmodelAttributesCount#()I" />
+    <nodeInfo nodeId="6329021646629104955" fileName="CommentPart.java" startLine="53" startPosition="0" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="smodelAttributes#()Ljava/util/Iterator;" />
+    <nodeInfo nodeId="6329021646629104955" fileName="CommentPart.java" startLine="57" startPosition="0" endLine="61" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSmodelAttributes#()Ljava/util/List;" />
+    <nodeInfo nodeId="6329021646629104955" fileName="CommentPart.java" startLine="61" startPosition="0" endLine="65" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addSmodelAttribute#(Ljetbrains/mps/smodel/INodeAdapter;)V" />
+    <nodeInfo nodeId="6329021646629104955" fileName="CommentPart.java" startLine="65" startPosition="0" endLine="69" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="insertSmodelAttribute#(Ljetbrains/mps/smodel/INodeAdapter;Ljetbrains/mps/smodel/INodeAdapter;)V" />
+    <nodeInfo nodeId="6329021646629104955" fileName="CommentPart.java" startLine="69" startPosition="0" endLine="73" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="newInstance#(Ljetbrains/mps/smodel/SModel;Z)Ljetbrains/mps/baseLanguage/structure/CommentPart;" />
+    <nodeInfo nodeId="6329021646629104955" fileName="CommentPart.java" startLine="73" startPosition="0" endLine="77" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="newInstance#(Ljetbrains/mps/smodel/SModel;)Ljetbrains/mps/baseLanguage/structure/CommentPart;" />
+    <scopeInfo nodeId="6329021646629104955" fileName="CommentPart.java" startLine="22" startPosition="34" endLine="23" endPosition="16" />
+    <scopeInfo nodeId="6329021646629104955" fileName="CommentPart.java" startLine="26" startPosition="39" endLine="27" endPosition="59" />
+    <scopeInfo nodeId="6329021646629104955" fileName="CommentPart.java" startLine="30" startPosition="49" endLine="31" endPosition="59" />
+    <scopeInfo nodeId="6329021646629104955" fileName="CommentPart.java" startLine="34" startPosition="28" endLine="35" endPosition="47" />
+    <scopeInfo nodeId="6329021646629104955" fileName="CommentPart.java" startLine="38" startPosition="38" endLine="39" endPosition="47" />
+    <scopeInfo nodeId="6329021646629104955" fileName="CommentPart.java" startLine="42" startPosition="37" endLine="43" endPosition="57" />
+    <scopeInfo nodeId="6329021646629104955" fileName="CommentPart.java" startLine="46" startPosition="47" endLine="47" endPosition="57" />
+    <scopeInfo nodeId="6329021646629104955" fileName="CommentPart.java" startLine="50" startPosition="41" endLine="51" endPosition="60" />
+    <scopeInfo nodeId="6329021646629104955" fileName="CommentPart.java" startLine="54" startPosition="49" endLine="55" endPosition="72" />
+    <scopeInfo nodeId="6329021646629104955" fileName="CommentPart.java" startLine="58" startPosition="48" endLine="59" endPosition="75" />
+    <scopeInfo nodeId="6329021646629104955" fileName="CommentPart.java" startLine="62" startPosition="50" endLine="63" endPosition="54" />
+    <scopeInfo nodeId="6329021646629104955" fileName="CommentPart.java" startLine="66" startPosition="69" endLine="67" endPosition="63" />
+    <scopeInfo nodeId="6329021646629104955" fileName="CommentPart.java" startLine="70" startPosition="66" endLine="71" endPosition="172" />
+    <scopeInfo nodeId="6329021646629104955" fileName="CommentPart.java" startLine="74" startPosition="52" endLine="75" endPosition="46" />
+    <scopeInfo nodeId="6329021646629104955" fileName="CommentPart.java" startLine="21" startPosition="0" endLine="24" endPosition="3">
       <varInfo nodeId="6329021646629104955" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="6329021646629104955" fileName="CommentPart.java" startLine="26" startPosition="0" endLine="30" endPosition="0" />
-    <scopeInfo nodeId="6329021646629104955" fileName="CommentPart.java" startLine="30" startPosition="0" endLine="34" endPosition="0">
+    <scopeInfo nodeId="6329021646629104955" fileName="CommentPart.java" startLine="25" startPosition="0" endLine="29" endPosition="0" />
+    <scopeInfo nodeId="6329021646629104955" fileName="CommentPart.java" startLine="29" startPosition="0" endLine="33" endPosition="0">
       <varInfo nodeId="6329021646629104955" varName="value" />
     </scopeInfo>
-    <scopeInfo nodeId="6329021646629104955" fileName="CommentPart.java" startLine="34" startPosition="0" endLine="38" endPosition="0" />
-    <scopeInfo nodeId="6329021646629104955" fileName="CommentPart.java" startLine="38" startPosition="0" endLine="42" endPosition="0">
+    <scopeInfo nodeId="6329021646629104955" fileName="CommentPart.java" startLine="33" startPosition="0" endLine="37" endPosition="0" />
+    <scopeInfo nodeId="6329021646629104955" fileName="CommentPart.java" startLine="37" startPosition="0" endLine="41" endPosition="0">
       <varInfo nodeId="6329021646629104955" varName="value" />
     </scopeInfo>
-    <scopeInfo nodeId="6329021646629104955" fileName="CommentPart.java" startLine="42" startPosition="0" endLine="46" endPosition="0" />
-    <scopeInfo nodeId="6329021646629104955" fileName="CommentPart.java" startLine="46" startPosition="0" endLine="50" endPosition="0">
+    <scopeInfo nodeId="6329021646629104955" fileName="CommentPart.java" startLine="41" startPosition="0" endLine="45" endPosition="0" />
+    <scopeInfo nodeId="6329021646629104955" fileName="CommentPart.java" startLine="45" startPosition="0" endLine="49" endPosition="0">
       <varInfo nodeId="6329021646629104955" varName="value" />
     </scopeInfo>
-    <scopeInfo nodeId="6329021646629104955" fileName="CommentPart.java" startLine="50" startPosition="0" endLine="54" endPosition="0" />
-    <scopeInfo nodeId="6329021646629104955" fileName="CommentPart.java" startLine="54" startPosition="0" endLine="58" endPosition="0" />
-    <scopeInfo nodeId="6329021646629104955" fileName="CommentPart.java" startLine="58" startPosition="0" endLine="62" endPosition="0" />
-    <scopeInfo nodeId="6329021646629104955" fileName="CommentPart.java" startLine="62" startPosition="0" endLine="66" endPosition="0">
+    <scopeInfo nodeId="6329021646629104955" fileName="CommentPart.java" startLine="49" startPosition="0" endLine="53" endPosition="0" />
+    <scopeInfo nodeId="6329021646629104955" fileName="CommentPart.java" startLine="53" startPosition="0" endLine="57" endPosition="0" />
+    <scopeInfo nodeId="6329021646629104955" fileName="CommentPart.java" startLine="57" startPosition="0" endLine="61" endPosition="0" />
+    <scopeInfo nodeId="6329021646629104955" fileName="CommentPart.java" startLine="61" startPosition="0" endLine="65" endPosition="0">
       <varInfo nodeId="6329021646629104955" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="6329021646629104955" fileName="CommentPart.java" startLine="66" startPosition="0" endLine="70" endPosition="0">
+    <scopeInfo nodeId="6329021646629104955" fileName="CommentPart.java" startLine="65" startPosition="0" endLine="69" endPosition="0">
       <varInfo nodeId="6329021646629104955" varName="node" />
       <varInfo nodeId="6329021646629104955" varName="prev" />
     </scopeInfo>
-    <scopeInfo nodeId="6329021646629104955" fileName="CommentPart.java" startLine="70" startPosition="0" endLine="74" endPosition="0">
+    <scopeInfo nodeId="6329021646629104955" fileName="CommentPart.java" startLine="69" startPosition="0" endLine="73" endPosition="0">
       <varInfo nodeId="6329021646629104955" varName="init" />
       <varInfo nodeId="6329021646629104955" varName="sm" />
     </scopeInfo>
-    <scopeInfo nodeId="6329021646629104955" fileName="CommentPart.java" startLine="74" startPosition="0" endLine="78" endPosition="0">
+    <scopeInfo nodeId="6329021646629104955" fileName="CommentPart.java" startLine="73" startPosition="0" endLine="77" endPosition="0">
       <varInfo nodeId="6329021646629104955" varName="sm" />
     </scopeInfo>
-    <unitInfo nodeId="6329021646629104955" fileName="CommentPart.java" startLine="16" startPosition="0" endLine="79" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.CommentPart" />
+    <unitInfo nodeId="6329021646629104955" fileName="CommentPart.java" startLine="15" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.CommentPart" />
   </root>
   <root nodeId="6329021646629104957">
     <nodeInfo nodeId="6329021646629104957" fileName="TextCommentPart.java" startLine="10" startPosition="50" endLine="11" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
