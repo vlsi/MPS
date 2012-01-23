@@ -89,7 +89,6 @@
       <modulePath path="${project}/languages/baseLanguage/closures/solutions/jetbrains.mps.baseLanguage.closures.unittest/jetbrains.mps.baseLanguage.closures.unittest.msd" folder="baseLanguage.closures" />
       <modulePath path="${project}/languages/baseLanguage/collections/collections.mpl" folder="baseLanguage.collections" />
       <modulePath path="${project}/languages/baseLanguage/collections/languages/trove/runtime/collections_trove.runtime.msd" folder="baseLanguage.collections" />
-      <modulePath path="${project}/languages/baseLanguage/collections/languages/trove/solutions/pluginSolution/pluginSolution.msd" folder="baseLanguage.collections" />
       <modulePath path="${project}/languages/baseLanguage/collections/languages/trove/trove.mpl" folder="baseLanguage.collections" />
       <modulePath path="${project}/languages/baseLanguage/collections/runtime/collections.runtime.msd" folder="baseLanguage.collections" />
       <modulePath path="${project}/languages/baseLanguage/collections/runtime/gwt/collections.runtime.gwt.msd" folder="baseLanguage.collections" />
@@ -99,7 +98,6 @@
       <modulePath path="${project}/languages/baseLanguage/collections/solutions/collections_trove.test/collections_trove.test.msd" folder="baseLanguage.collections" />
       <modulePath path="${project}/languages/baseLanguage/collections/solutions/internalCollections.sandbox/internalCollections.sandbox.msd" folder="baseLanguage.collections" />
       <modulePath path="${project}/languages/baseLanguage/collections/solutions/internalCollections.test/internalCollections.test.msd" folder="baseLanguage.collections" />
-      <modulePath path="${project}/languages/baseLanguage/collections/solutions/pluginSolution/pluginSolution.msd" folder="baseLanguage.collections" />
       <modulePath path="${project}/languages/baseLanguage/constructors/constructors.mpl" folder="baseLanguage.constructors" />
       <modulePath path="${project}/languages/baseLanguage/constructors/solutions/jetbrains.mps.baseLanguage.constructors.sandbox/jetbrains.mps.baseLanguage.constructors.sandbox.msd" folder="baseLanguage.constructors" />
       <modulePath path="${project}/languages/baseLanguage/javadoc/javadoc.mpl" folder="baseLanguage.javadoc" />
