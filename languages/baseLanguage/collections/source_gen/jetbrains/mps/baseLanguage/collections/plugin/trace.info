@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="ExtensionDescriptor.java" startLine="10" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.plugin.ExtensionDescriptor" />
+  <unitInfo fileName="ExtensionDescriptor.java" startLine="11" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.plugin.ExtensionDescriptor" />
   <root nodeId="5633688998557455304">
     <nodeInfo nodeId="5633688998557455304" fileName="Extension_customContainers.java" startLine="18" startPosition="39" endLine="19" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="5633688998557455310" fileName="Extension_customContainers.java" startLine="24" startPosition="35" endLine="25" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

@@ -21,7 +21,7 @@ public class ExtensionPointDeclaration_Behavior {
     if (atIdx >= 0) {
       moduleFqName = moduleFqName.substring(0, atIdx);
     }
-    return moduleFqName + "." + SPropertyOperations.getString(thisNode, "name");
+    return moduleFqName + "." + SPropertyOperations.getString(thisNode, "extensionName");
   }
 
   public static SNode call_getObjectClassifierType_6778078592468845406(SNode thisNode) {

@@ -15,6 +15,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class ExtensionPointDeclaration extends BaseConcept implements INamedConcept {
   public static final String concept = "jetbrains.mps.lang.extension.structure.ExtensionPointDeclaration";
+  public static final String EXTENSION_NAME = "extensionName";
   public static final String NAME = "name";
   public static final String SHORT_DESCRIPTION = "shortDescription";
   public static final String ALIAS = "alias";
@@ -24,6 +25,14 @@ public class ExtensionPointDeclaration extends BaseConcept implements INamedConc
 
   public ExtensionPointDeclaration(SNode node) {
     super(node);
+  }
+
+  public String getExtensionName() {
+    return this.getProperty(ExtensionPointDeclaration.EXTENSION_NAME);
+  }
+
+  public void setExtensionName(String value) {
+    this.setProperty(ExtensionPointDeclaration.EXTENSION_NAME, value);
   }
 
   public String getName() {
