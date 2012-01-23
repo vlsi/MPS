@@ -19,6 +19,9 @@ import jetbrains.mps.util.InternUtil;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
+import java.io.PrintWriter;
+import java.io.StringWriter;
+
 /**
  * Igor Alshannikov
  * Sep 28, 2007
@@ -91,12 +94,26 @@ abstract class SReferenceBase extends SReference {
                 (myImmatureTargetNode.getModel() == null ? "null" : myImmatureTargetNode.getModel().toString()) +
                 ", nodeID: " + myImmatureTargetNode.getId() +
                 "): isRegistered = " + myImmatureTargetNode.isRegistered() +
-                ", isDisposed = " + myImmatureTargetNode.isDisposed()));
+                ", isDisposed = " + myImmatureTargetNode.isDisposed() + dumpUnregisteredTrace()));
+          myImmatureTargetNode = null;
         }
-        myImmatureTargetNode = null;
       }
     }
     return myImmatureTargetNode == null;
+  }
+
+  private String dumpUnregisteredTrace() {
+    Throwable trace = Trace.getInstance().getUnregisteredFromModelTrace(myImmatureTargetNode);
+    if (trace == null) {
+      return "";
+    }
+    StringWriter traceWriter = new StringWriter();
+    PrintWriter printTraceWriter = new PrintWriter(traceWriter);
+    printTraceWriter.println();
+    printTraceWriter.println("Unregistered in:");
+    trace.printStackTrace(printTraceWriter);
+    printTraceWriter.close();
+    return traceWriter.toString();
   }
 
   protected synchronized void makeMature() {

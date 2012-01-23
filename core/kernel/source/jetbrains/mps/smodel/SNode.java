@@ -786,6 +786,7 @@ public final class SNode {
     if (!myRegisteredInModelFlag) return;
     UnregisteredNodes.instance().put(this);
     myRegisteredInModelFlag = false;
+    Trace.getInstance().unregisteredFromModel(this);
 
     if (myAdapter != null) {
       UnregisteredNodesWithAdapters.getInstance().add(this);
@@ -819,6 +820,7 @@ public final class SNode {
     myModel = model;
     myModel.registerNode(this);
     myRegisteredInModelFlag = true;
+    Trace.getInstance().registeredInModel(this);
 
     UnregisteredNodes.instance().remove(this);
 
