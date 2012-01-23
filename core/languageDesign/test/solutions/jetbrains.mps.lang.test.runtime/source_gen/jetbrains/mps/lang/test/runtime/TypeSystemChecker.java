@@ -25,6 +25,9 @@ public class TypeSystemChecker {
     TypeCheckingContext typeCheckingContext2 = TypeContextManager.getInstance().createTypeCheckingContext(node.getContainingRoot());
     for (SNode child : SNodeOperations.getDescendants(node, "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{})) {
       SNode type1 = typeCheckingContext.getTypeDontCheck(child);
+      if (type1 == null) {
+        continue;
+      }
       SNode type2 = typeCheckingContext2.getTypeInGenerationMode(child);
       Assert.assertTrue(TypesUtil.match(type1, type2));
     }
