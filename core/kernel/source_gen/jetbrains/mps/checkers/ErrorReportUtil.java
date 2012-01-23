@@ -33,7 +33,7 @@ public class ErrorReportUtil {
       })) {
         return false;
       }
-      if (ListSequence.fromList(AttributeOperations.getAttributeList(parent, new IAttributeDescriptor.AllAttributes())).any(new IWhereFilter<SNode>() {
+      if (_node.value != parent && ListSequence.fromList(AttributeOperations.getAttributeList(parent, new IAttributeDescriptor.AllAttributes())).any(new IWhereFilter<SNode>() {
         public boolean accept(SNode attr) {
           return SNodeOperations.isInstanceOf(attr, "jetbrains.mps.lang.core.structure.IAntisuppressErrors");
         }
