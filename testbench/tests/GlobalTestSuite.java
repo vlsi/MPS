@@ -43,7 +43,7 @@ import org.junit.runner.RunWith;
   "jetbrains.mps.runtime.BundleLoadingTest",
   "jetbrains.mps.runtime.BundleTest",
   "jetbrains.mps.vcs.DiskMemoryConflictsTest",
-  "jetbrains.mps.vcs.changesmanager.ChangesManagerTest",
+//  "jetbrains.mps.vcs.changesmanager.ChangesManagerTest", [temporarily disabled]
   "jetbrains.mps.vcs.diff.merge.MergeCoreTest",
   "jetbrains.mps.vfs.VfsTest",
   "jetbrains.mps.ide.blame.command.AffectedVersionTest",
