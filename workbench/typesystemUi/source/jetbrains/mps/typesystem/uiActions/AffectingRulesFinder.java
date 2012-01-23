@@ -22,7 +22,10 @@ import jetbrains.mps.ide.findusages.model.SearchResult;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.newTypesystem.NodeTypesComponent;
 import jetbrains.mps.progress.ProgressMonitor;
-import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.SModelReference;
+import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.ITypeContextOwner;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.typesystem.inference.TypeContextManager;
@@ -37,11 +40,12 @@ public class AffectingRulesFinder implements IFinder {
   public SearchResults find(SearchQuery query, ProgressMonitor monitor) {
     SNode term = (SNode) query.getObjectHolder().getObject();
     SNode root = term.getContainingRoot();
-    SNodePointer nodePointer = new SNodePointer(root);
+
     ITypeContextOwner owner = new MyTypeContextOwner();
     TypeContextManager manager = TypeContextManager.getInstance();
-    TypeCheckingContext context = manager.getOrCreateContext(nodePointer, owner, true);
+    TypeCheckingContext context = manager.getOrCreateContext(root, owner, true);
     NodeTypesComponent component = context.getBaseNodeTypesComponent();
+
     try{
       List<SearchResult<SNode>> rules = new ArrayList<SearchResult<SNode>>();
       if (component == null) return createResult(term, rules);
@@ -60,7 +64,7 @@ public class AffectingRulesFinder implements IFinder {
       }
       return createResult(term, rules);
     } finally {
-      manager.removeOwnerForRootNodeContext(nodePointer,owner);
+      manager.removeOwnerForRootNodeContext(root,owner);
     }
   }
 
