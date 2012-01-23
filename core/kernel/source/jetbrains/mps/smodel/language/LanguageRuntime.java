@@ -157,7 +157,7 @@ public abstract class LanguageRuntime {
         myExtensionDescriptor = (ExtensionDescriptor) compiled;
       }
       else {
-        myExtensionDescriptor = new ExtensionDescriptor.Default ();
+        myExtensionDescriptor = new DefaultExtensionDescriptor();
       }
     }
     return myExtensionDescriptor;

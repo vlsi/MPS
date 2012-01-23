@@ -32,7 +32,7 @@ public interface Extension<T> {
 
   void deactivate ();
   
-  abstract class Default implements Extension {
+  abstract class Default<T> implements Extension<T> {
 
     private final String myExtensionPointId;
 
@@ -46,7 +46,7 @@ public interface Extension<T> {
     }
 
     @Override
-    public Object get() {
+    public T get() {
       return null;  //To change body of implemented methods use File | Settings | File Templates.
     }
   }

@@ -18,16 +18,18 @@ package jetbrains.mps.smodel.structure;
 import java.util.Collections;
 
 /**
- * Created by IntelliJ IDEA.
- * User: fyodor
- * Date: 1/20/12
- * Time: 4:13 PM
- * To change this template use File | Settings | File Templates.
- */
-public interface  ExtensionDescriptor {
+* Created by IntelliJ IDEA.
+* User: fyodor
+* Date: 1/23/12
+* Time: 11:18 AM
+* To change this template use File | Settings | File Templates.
+*/
+public class DefaultExtensionDescriptor implements ExtensionDescriptor {
+  public Iterable<? extends ExtensionPoint> getExtensionPoints() {
+      return Collections.emptyList();
+  }
 
-  Iterable<? extends ExtensionPoint> getExtensionPoints();
-
-  Iterable<? extends Extension> getExtensions();
-
+  public Iterable<? extends Extension> getExtensions() {
+    return Collections.emptyList();
+  }
 }

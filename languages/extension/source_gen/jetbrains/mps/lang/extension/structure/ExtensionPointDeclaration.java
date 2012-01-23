@@ -5,7 +5,7 @@ package jetbrains.mps.lang.extension.structure;
 import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.lang.core.structure.INamedConcept;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.baseLanguage.structure.ClassifierType;
+import jetbrains.mps.baseLanguage.structure.Type;
 import java.util.Iterator;
 import jetbrains.mps.lang.core.structure.Attribute;
 import java.util.List;
@@ -58,11 +58,11 @@ public class ExtensionPointDeclaration extends BaseConcept implements INamedConc
     this.setProperty(ExtensionPointDeclaration.VIRTUAL_PACKAGE, value);
   }
 
-  public ClassifierType getObjectType() {
-    return (ClassifierType) this.getChild(ClassifierType.class, ExtensionPointDeclaration.OBJECT_TYPE);
+  public Type getObjectType() {
+    return (Type) this.getChild(Type.class, ExtensionPointDeclaration.OBJECT_TYPE);
   }
 
-  public void setObjectType(ClassifierType node) {
+  public void setObjectType(Type node) {
     super.setChild(ExtensionPointDeclaration.OBJECT_TYPE, node);
   }
 
