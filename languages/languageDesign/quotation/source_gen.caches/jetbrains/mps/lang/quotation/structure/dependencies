@@ -3,6 +3,7 @@
   <dependency className="jetbrains.mps.lang.quotation.structure.AbstractAntiquotation" file="AbstractAntiquotation.java">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.structure.Expression" />
+    <classNode dependClassName="jetbrains.mps.lang.core.structure.IAntisuppressErrors" />
     <classNode dependClassName="jetbrains.mps.lang.core.structure.IMetaLevelChanger" />
     <classNode extendsClassName="jetbrains.mps.smodel.INodeAdapter" />
   </dependency>
@@ -70,6 +71,7 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.structure.Expression" />
     <classNode dependClassName="jetbrains.mps.lang.core.structure.Attribute" />
     <classNode dependClassName="jetbrains.mps.lang.core.structure.IMetaLevelChanger" />
+    <classNode dependClassName="jetbrains.mps.lang.core.structure.ISuppressErrors" />
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />

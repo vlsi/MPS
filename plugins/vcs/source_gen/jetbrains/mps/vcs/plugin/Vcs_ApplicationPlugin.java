@@ -31,9 +31,6 @@ public class Vcs_ApplicationPlugin extends BaseApplicationPlugin {
     addAction(new GoToPreviousChange_Action());
     addAction(new IgnoreModuleInVcs_Action());
     addAction(new InstalVcsAddons_Action());
-    addAction(new OldGoToNextChange_Action());
-    addAction(new OldGoToPreviousChange_Action());
-    addAction(new OldRollbackChanges_Action());
     addAction(new ReRunMergeFromBackup_Action());
     addAction(new ReportModelMergeProblem_Action());
     addAction(new RollbackChanges_Action());
@@ -47,7 +44,6 @@ public class Vcs_ApplicationPlugin extends BaseApplicationPlugin {
     addGroup(new MPSGlobalVcsGroup_ActionGroup());
     addGroup(new MakeFromChangesView_ActionGroup());
     addGroup(new ModuleVcsActions_ActionGroup());
-    addGroup(new OldChangesStrip_ActionGroup());
     addGroup(new ShowDiffWithCurrRev_ActionGroup());
     addGroup(new VCSModelActions_ActionGroup());
   }

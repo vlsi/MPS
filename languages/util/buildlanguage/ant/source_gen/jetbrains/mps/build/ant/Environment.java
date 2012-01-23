@@ -141,13 +141,15 @@ public class Environment {
     System.setProperty("idea.platform.prefix", "Idea");
     StringBuffer pluginPath = new StringBuffer();
     File pluginDir = new File(PathManager.getPreinstalledPluginsPath());
-    for (File pluginFolder : pluginDir.listFiles()) {
-      if (pluginPath.length() > 0) {
-        pluginPath.append(File.pathSeparator);
+    if (pluginDir.exists()) {
+      for (File pluginFolder : pluginDir.listFiles()) {
+        if (pluginPath.length() > 0) {
+          pluginPath.append(File.pathSeparator);
+        }
+        pluginPath.append(pluginFolder.getPath());
       }
-      pluginPath.append(pluginFolder.getPath());
+      System.setProperty("plugin.path", pluginPath.toString());
     }
-    System.setProperty("plugin.path", pluginPath.toString());
   }
 
   private Level getLog4jLevel() {

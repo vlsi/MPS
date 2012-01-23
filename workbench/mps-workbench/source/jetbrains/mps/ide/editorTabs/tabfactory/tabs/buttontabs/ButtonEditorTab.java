@@ -42,22 +42,24 @@ class ButtonEditorTab {
   private EditorTabDescriptor myDescriptor;
   private SNodePointer myBaseNode;
   private TabColorProvider myTabColorProvider;
+  private SelectTabAction mySelectTabAction;
 
-  public ButtonEditorTab(ButtonTabsComponent tabComponent, NodeChangeCallback callback, int index, EditorTabDescriptor descriptor, SNodePointer baseNode, TabColorProvider tabColorProvider) {
+  public ButtonEditorTab(ButtonTabsComponent tabComponent, NodeChangeCallback callback, int index, EditorTabDescriptor descriptor, SNodePointer baseNode, TabColorProvider tabColorProvider, JComponent editor) {
     myTabComponent = tabComponent;
     myCallback = callback;
     myIndex = index;
     myDescriptor = descriptor;
     myBaseNode = baseNode;
     myTabColorProvider = tabColorProvider;
+    mySelectTabAction = createAction(editor);
   }
 
   public EditorTabDescriptor getDescriptor() {
     return myDescriptor;
   }
 
-  public ToggleAction getAction(JComponent shortcutComponent) {
-    ToggleAction action = new SelectTabAction();
+  private SelectTabAction createAction(JComponent shortcutComponent) {
+    SelectTabAction action = new SelectTabAction();
 
     if (myDescriptor.getShortcutChar() != null) {
       KeyStroke keystroke = KeyStroke.getKeyStroke("alt shift " + myDescriptor.getShortcutChar());
@@ -66,6 +68,10 @@ class ButtonEditorTab {
     }
 
     return action;
+  }
+
+  public ToggleAction getSelectTabAction() {
+    return mySelectTabAction;
   }
 
   private DefaultActionGroup getGotoGroup() {
@@ -131,7 +137,7 @@ class ButtonEditorTab {
     return UIUtil.getLabelForeground();
   }
 
-  private Icon getCompositeTabIcon() {
+  private Icon createCompositeTabIcon() {
     Font font = UIUtil.getLabelFont();
     FontMetrics fontMetrics = myTabComponent.getComponent().getFontMetrics(font);
     Icon icon = myDescriptor.getIcon();
@@ -185,9 +191,16 @@ class ButtonEditorTab {
     return new ImageIcon(image);
   }
 
+  public void updateIcon() {
+    mySelectTabAction.myIcon = createCompositeTabIcon();
+  }
+
   private class SelectTabAction extends ToggleAction {
+    private Icon myIcon;
+    
     public SelectTabAction() {
-      super("", "", getCompositeTabIcon());
+      super("", "", createCompositeTabIcon());
+      myIcon = createCompositeTabIcon();
     }
 
     public boolean displayTextInToolbar() {
@@ -202,6 +215,12 @@ class ButtonEditorTab {
       });
     }
 
+    @Override
+    public void update(AnActionEvent e) {
+      super.update(e);
+      e.getPresentation().setIcon(myIcon);
+    }
+
     public void setSelected(AnActionEvent e, boolean state) {
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
@@ -214,7 +233,7 @@ class ButtonEditorTab {
           Component component = myTabComponent.getComponentForTabIndex(myIndex);
 
           DefaultActionGroup group = getGotoGroup();
-          if (group==null){
+          if (group == null){
             //this is normal since now we can't guarantee button deletion (e.g. remove reduction rule from mapping configuration when it's the last usage of a concept in generator)
             group  = new DefaultActionGroup();
           }

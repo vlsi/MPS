@@ -21,8 +21,10 @@ import com.intellij.facet.FacetType;
 import com.intellij.facet.FacetTypeRegistry;
 import com.intellij.facet.ModifiableFacetModel;
 import com.intellij.ide.highlighter.ModuleFileType;
+import com.intellij.idea.LoggerFactory;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.application.PathManager;
+import com.intellij.openapi.diagnostic.Logger;
 import com.intellij.openapi.module.Module;
 import com.intellij.openapi.module.ModuleManager;
 import com.intellij.openapi.module.StdModuleTypes;
@@ -38,6 +40,8 @@ import jetbrains.mps.idea.core.facet.MPSFacetConfiguration;
 import jetbrains.mps.idea.core.facet.MPSFacetType;
 import jetbrains.mps.smodel.ModelAccess;
 import junit.framework.Assert;
+import org.apache.log4j.BasicConfigurator;
+import org.apache.log4j.Category;
 
 import javax.swing.*;
 import java.io.File;
@@ -51,6 +55,7 @@ import java.io.File;
  */
 public abstract class AbstractMPSFixtureTestCase extends UsefulTestCase {
     private static int ourIndex = 0;
+    private static boolean TRACE_ON_HACK = false;
 
     protected MPSFacet myFacet;
     private JavaCodeInsightTestFixture myFixture;
@@ -58,6 +63,7 @@ public abstract class AbstractMPSFixtureTestCase extends UsefulTestCase {
     protected TestFixtureBuilder<IdeaProjectTestFixture> myProjectBuilder;
 
     static {
+        if (TRACE_ON_HACK) BasicConfigurator.configure();
         IdeaTestFixtureFactory.getFixtureFactory().registerFixtureBuilder(CustomJavaModuleFixtureBuilder.class, CustomJavaModuleFixtureBuilder.class);
     }
 
@@ -80,7 +86,7 @@ public abstract class AbstractMPSFixtureTestCase extends UsefulTestCase {
     }
 
     @Override
-    protected void setUp() throws Exception {
+    protected void setUp() throws Exception {;
         super.setUp();
 
         // was copied from JavaCodeInsightFixtureTestCase
@@ -94,8 +100,9 @@ public abstract class AbstractMPSFixtureTestCase extends UsefulTestCase {
         myFixture.setUp();
         myFixture.setTestDataPath(getTestDataPath());
         myModule = moduleFixtureBuilder.getFixture().getModule();
-
         myFacet = addMPSFacet(myModule);
+
+        if (TRACE_ON_HACK) Logger.setFactory(LoggerFactory.getInstance());
     }
 
     @Override
@@ -159,6 +166,13 @@ public abstract class AbstractMPSFixtureTestCase extends UsefulTestCase {
 
         public CustomJavaModuleFixtureBuilder(TestFixtureBuilder<? extends IdeaProjectTestFixture> testFixtureBuilder) {
             super(testFixtureBuilder);
+        }
+
+        @Override
+        protected void initModule(Module module) {
+            // turn on trace
+            if (TRACE_ON_HACK) Logger.setFactory(LoggerFactory.getInstance());
+            super.initModule(module);
         }
 
         protected Module createModule() {

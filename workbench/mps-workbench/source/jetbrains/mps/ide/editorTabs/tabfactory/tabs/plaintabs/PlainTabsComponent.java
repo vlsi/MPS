@@ -117,6 +117,20 @@ public class PlainTabsComponent extends BaseTabsComponent {
       .setGhostsAlwaysVisible(true);
   }
 
+  protected void updateTabColors() {
+    for (int i = 0; i < myRealTabs.size(); i++) {
+      SNodePointer node = myRealTabs.get(i).getNode();
+      if (node != null && getColorProvider() != null) {
+        Color color = getColorProvider().getNodeColor(node.getNode());
+        if (color != null) {
+          myJbTabs.setForegroundAt(i, color);
+          continue;
+        }
+      }
+      myJbTabs.setForegroundAt(i, null);
+    }
+  }
+  
   protected void updateTabs() {
     myRealTabs.clear();
     myJbTabs.removeAll();
@@ -134,12 +148,6 @@ public class PlainTabsComponent extends BaseTabsComponent {
         for (SNode node : nodes) {
           myRealTabs.add(new PlainEditorTab(new SNodePointer(node), tab));
           myJbTabs.addTab(node.getPresentation(), IconManager.getIconFor(node), fill, "");
-          if (getColorProvider() != null) {
-            Color color = getColorProvider().getNodeColor(node);
-            if (color != null) {
-              myJbTabs.setForegroundAt(myJbTabs.getTabCount() - 1, color);
-            }
-          }
         }
       } else if (myShowGrayed) {
         myRealTabs.add(new PlainEditorTab(null, tab));
@@ -147,6 +155,7 @@ public class PlainTabsComponent extends BaseTabsComponent {
         myJbTabs.setForegroundAt(myJbTabs.getTabCount() - 1, Color.GRAY);
       }
     }
+    updateTabColors();
   }
 
   private void selectNodeTab() {
