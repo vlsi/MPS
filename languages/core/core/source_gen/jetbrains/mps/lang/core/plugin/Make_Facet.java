@@ -15,21 +15,22 @@ import jetbrains.mps.make.script.IJob;
 import jetbrains.mps.make.script.IResult;
 import jetbrains.mps.make.script.IJobMonitor;
 import jetbrains.mps.make.resources.IPropertiesAccessor;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.internal.make.runtime.util.DeltaReconciler;
-import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.make.delta.IDelta;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.make.delta.IInternalDelta;
-import jetbrains.mps.make.script.IConfig;
-import jetbrains.mps.make.script.IConfigMonitor;
-import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
-import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.internal.make.runtime.util.FilesDelta;
 import jetbrains.mps.vfs.FileSystem;
+import jetbrains.mps.make.script.IConfig;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
+import jetbrains.mps.make.script.IConfigMonitor;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import java.util.Map;
 import jetbrains.mps.make.script.IPropertiesPool;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
@@ -82,11 +83,16 @@ public class Make_Facet extends IFacet.Stub {
           Iterable<IResource> _output_pm9z_a0a = null;
           switch (0) {
             case 0:
+              if (Boolean.TRUE.equals(pa.global().properties(Target_reconcile.this.getName(), Make_Facet.Target_reconcile.Parameters.class).skipReconcile())) {
+                _output_pm9z_a0a = Sequence.fromIterable(_output_pm9z_a0a).concat(Sequence.fromIterable(input));
+                return new IResult.SUCCESS(_output_pm9z_a0a);
+              }
               ThreadUtils.runInUIThreadAndWait(new Runnable() {
                 public void run() {
                   ModelAccess.instance().requireWrite(new Runnable() {
                     public void run() {
-                      new DeltaReconciler(Sequence.fromIterable(input).translate(new ITranslator2<IResource, IDelta>() {
+                      final List<IFile> writtenFiles = ListSequence.fromList(new ArrayList<IFile>());
+                      DeltaReconciler reconciler = new DeltaReconciler(Sequence.fromIterable(input).translate(new ITranslator2<IResource, IDelta>() {
                         public Iterable<IDelta> translate(IResource res) {
                           return ((IDeltaResource) res).delta();
                         }
@@ -94,8 +100,16 @@ public class Make_Facet extends IFacet.Stub {
                         public boolean accept(IDelta d) {
                           return !(d instanceof IInternalDelta);
                         }
-                      })).reconcileAll();
-                      new DeltaReconciler(Sequence.fromIterable(input).translate(new ITranslator2<IResource, IDelta>() {
+                      }));
+                      reconciler.reconcileAll();
+                      reconciler.visitAll(new FilesDelta.Visitor() {
+                        @Override
+                        public boolean acceptWritten(IFile file) {
+                          ListSequence.fromList(writtenFiles).addElement(file);
+                          return true;
+                        }
+                      });
+                      DeltaReconciler internalReconciler = new DeltaReconciler(Sequence.fromIterable(input).translate(new ITranslator2<IResource, IDelta>() {
                         public Iterable<IDelta> translate(IResource res) {
                           return ((IDeltaResource) res).delta();
                         }
@@ -103,7 +117,16 @@ public class Make_Facet extends IFacet.Stub {
                         public boolean accept(IDelta d) {
                           return d instanceof IInternalDelta;
                         }
-                      })).reconcileAll();
+                      }));
+                      internalReconciler.reconcileAll();
+                      internalReconciler.visitAll(new FilesDelta.Visitor() {
+                        @Override
+                        public boolean acceptWritten(IFile file) {
+                          ListSequence.fromList(writtenFiles).addElement(file);
+                          return true;
+                        }
+                      });
+                      FileSystem.getInstance().scheduleUpdateForWrittenFiles(writtenFiles);
                     }
                   });
                 }
@@ -161,12 +184,38 @@ public class Make_Facet extends IFacet.Stub {
     }
 
     public <T> T createParameters(Class<T> cls) {
-      return null;
+      return cls.cast(new Parameters());
     }
 
     public <T> T createParameters(Class<T> cls, T copyFrom) {
       T t = createParameters(cls);
+      if (t != null) {
+        ((Tuples._1) t).assign((Tuples._1) copyFrom);
+      }
       return t;
+    }
+
+    public static class Parameters extends MultiTuple._1<Boolean> {
+      public Parameters() {
+        super();
+      }
+
+      public Parameters(Boolean skipReconcile) {
+        super(skipReconcile);
+      }
+
+      public Boolean skipReconcile(Boolean value) {
+        return super._0(value);
+      }
+
+      public Boolean skipReconcile() {
+        return super._0();
+      }
+
+      @SuppressWarnings(value = "unchecked")
+      public Make_Facet.Target_reconcile.Parameters assignFrom(Tuples._1<Boolean> from) {
+        return (Make_Facet.Target_reconcile.Parameters) super.assign(from);
+      }
     }
   }
 
@@ -294,6 +343,13 @@ public class Make_Facet extends IFacet.Stub {
 
     public void storeValues(Map<String, String> store, IPropertiesPool properties) {
       {
+        ITarget.Name name = new ITarget.Name("jetbrains.mps.lang.core.Make.reconcile");
+        if (properties.hasProperties(name)) {
+          Make_Facet.Target_reconcile.Parameters props = properties.properties(name, Make_Facet.Target_reconcile.Parameters.class);
+          MapSequence.fromMap(store).put("jetbrains.mps.lang.core.Make.reconcile.skipReconcile", String.valueOf(props.skipReconcile()));
+        }
+      }
+      {
         ITarget.Name name = new ITarget.Name("jetbrains.mps.lang.core.Make.make");
         if (properties.hasProperties(name)) {
           Make_Facet.Target_make.Parameters props = properties.properties(name, Make_Facet.Target_make.Parameters.class);
@@ -304,6 +360,13 @@ public class Make_Facet extends IFacet.Stub {
 
     public void loadValues(Map<String, String> store, IPropertiesPool properties) {
       try {
+        {
+          ITarget.Name name = new ITarget.Name("jetbrains.mps.lang.core.Make.reconcile");
+          Make_Facet.Target_reconcile.Parameters props = properties.properties(name, Make_Facet.Target_reconcile.Parameters.class);
+          if (MapSequence.fromMap(store).containsKey("jetbrains.mps.lang.core.Make.reconcile.skipReconcile")) {
+            props.skipReconcile(Boolean.valueOf(MapSequence.fromMap(store).get("jetbrains.mps.lang.core.Make.reconcile.skipReconcile")));
+          }
+        }
         {
           ITarget.Name name = new ITarget.Name("jetbrains.mps.lang.core.Make.make");
           Make_Facet.Target_make.Parameters props = properties.properties(name, Make_Facet.Target_make.Parameters.class);

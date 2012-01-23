@@ -2056,7 +2056,7 @@
     <unitInfo nodeId="4855776970658455575" fileName="MergeDriverMain.java" startLine="68" startPosition="21" endLine="72" endPosition="5" unitName="jetbrains.mps.vcs.mergedriver.MergeDriverMain$2" />
   </root>
   <root nodeId="980809437931131508">
-    <nodeInfo nodeId="980809437931132294" fileName="MergerRoleIdsHandler.java" startLine="14" startPosition="83" endLine="15" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myConsistent" />
+    <nodeInfo nodeId="980809437931132294" fileName="MergerRoleIdsHandler.java" startLine="14" startPosition="78" endLine="15" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myConsistent" />
     <nodeInfo nodeId="980809437931132307" fileName="MergerRoleIdsHandler.java" startLine="15" startPosition="38" endLine="16" endPosition="116" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myConceptsToPointers" />
     <nodeInfo nodeId="980809437931232177" fileName="MergerRoleIdsHandler.java" startLine="16" startPosition="116" endLine="17" endPosition="155" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNodeRolesToPointers" />
     <nodeInfo nodeId="980809437931232195" fileName="MergerRoleIdsHandler.java" startLine="17" startPosition="155" endLine="18" endPosition="160" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myReferenceRolesToPointers" />
@@ -2092,7 +2092,7 @@
     <nodeInfo nodeId="980809437931298815" fileName="MergerRoleIdsHandler.java" startLine="25" startPosition="82" endLine="30" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="980809437931323333" fileName="MergerRoleIdsHandler.java" startLine="76" startPosition="0" endLine="83" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="eq_clnjnl_a0a0a0a0a#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
     <nodeInfo nodeId="980809437931234647" fileName="MergerRoleIdsHandler.java" startLine="24" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="storeAndCheckConsistency#(Ljava/util/Map;nullnull)V" />
-    <scopeInfo nodeId="980809437931131513" fileName="MergerRoleIdsHandler.java" startLine="22" startPosition="38" endLine="22" endPosition="38" />
+    <scopeInfo nodeId="980809437931131513" fileName="MergerRoleIdsHandler.java" startLine="22" startPosition="33" endLine="22" endPosition="33" />
     <scopeInfo nodeId="980809437931298817" fileName="MergerRoleIdsHandler.java" startLine="26" startPosition="55" endLine="27" endPosition="102" />
     <scopeInfo nodeId="980809437931298866" fileName="MergerRoleIdsHandler.java" startLine="28" startPosition="12" endLine="29" endPosition="50" />
     <scopeInfo nodeId="980809437931132271" fileName="MergerRoleIdsHandler.java" startLine="33" startPosition="78" endLine="34" endPosition="82" />

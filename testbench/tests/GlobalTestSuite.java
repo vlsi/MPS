@@ -23,8 +23,7 @@ import org.junit.BeforeClass;
 import org.junit.runner.RunWith;
 
 
-@SuiteClassSymbols({"jetbrains.mps.DiskMemoryConflictsTest",
-  "jetbrains.mps.dataFlow.lang.InitializedVariablesAnalysisTest",
+@SuiteClassSymbols({"jetbrains.mps.dataFlow.lang.InitializedVariablesAnalysisTest",
   "jetbrains.mps.dataFlow.lang.LivenessAnalysisTest",
   "jetbrains.mps.dataFlow.lang.ProgramTest",
   "jetbrains.mps.dataFlow.lang.ReachabilityAnaysisTest",
@@ -43,12 +42,11 @@ import org.junit.runner.RunWith;
   "jetbrains.mps.refactoring.RefactoringTest",
   "jetbrains.mps.runtime.BundleLoadingTest",
   "jetbrains.mps.runtime.BundleTest",
-  "jetbrains.mps.vcs.changesmanager.CommonChangesManagerTest",
-  "jetbrains.mps.vcs.diff.MergeConceptAndImportsTest",
-  "jetbrains.mps.vcs.diff.MergeNotLoseExternalChangesTest",
-  "jetbrains.mps.vcs.diff.MergeReferencesTest",
-  "jetbrains.mps.vcs.diff.MergeSymmetricChangesTest",
+  "jetbrains.mps.vcs.DiskMemoryConflictsTest",
+  "jetbrains.mps.vcs.changesmanager.ChangesManagerTest",
+  "jetbrains.mps.vcs.diff.merge.MergeCoreTest",
   "jetbrains.mps.vfs.VfsTest",
+  "jetbrains.mps.ide.blame.command.AffectedVersionTest",
   "jetbrains.mps.workbench.ProjectCreationTest",
   "jetbrains.mps.workbench.dialogs.project.components.parts.lists.SortedListTest"})
 @RunWith(WatchingSuite.class)

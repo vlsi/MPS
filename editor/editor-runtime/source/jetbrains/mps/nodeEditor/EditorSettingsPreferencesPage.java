@@ -281,10 +281,6 @@ class EditorSettingsPreferencesPage {
         mySettings.getState().setShowPlain(myTabPerNode.isSelected() || myAllTabs.isSelected());
         mySettings.getState().setShowGrayed(myAllTabs.isSelected());
         applyState();
-// TODO FIXME
-//        for (Project p : ProjectManager.getInstance().getOpenProjects()) {
-//          p.getComponent(ProjectPluginManager.class).recreateTabbedEditors();
-//        }
 
         mySettings.updateCachedValue();
 
