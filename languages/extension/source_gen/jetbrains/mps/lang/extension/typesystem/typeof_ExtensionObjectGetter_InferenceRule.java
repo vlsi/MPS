@@ -20,8 +20,8 @@ public class typeof_ExtensionObjectGetter_InferenceRule extends AbstractInferenc
   public void applyRule(final SNode eog, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     {
       SNode _nodeToCheck_1029348928467 = eog;
-      EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:4b1ddbe6-5067-4a27-8697-eb786b50451b(jetbrains.mps.lang.extension.typesystem)", "8029776554053057830", 0, null);
-      typeCheckingContext.createLessThanInequality((SNode) ConceptFunction_Behavior.call_getExpectedReturnType_1213877374441(eog), (SNode) SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.as(SNodeOperations.getParent(eog), "jetbrains.mps.lang.extension.structure.ExtensionDeclaration"), "extensionPoint", false), "objectType", true), true, false, _info_12389875345);
+      EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:4b1ddbe6-5067-4a27-8697-eb786b50451b(jetbrains.mps.lang.extension.typesystem)", "7261386713308408619", 0, null);
+      typeCheckingContext.createLessThanInequality((SNode) ConceptFunction_Behavior.call_getExpectedReturnType_1213877374441(eog), (SNode) SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.as(SNodeOperations.getParent(eog), "jetbrains.mps.lang.extension.structure.ExtensionDeclaration"), "extensionPoint", false), "objectType", true), false, true, _info_12389875345);
     }
   }
 

@@ -29,18 +29,32 @@
     <unitInfo nodeId="63012922130945360" fileName="ExtensionPointDeclaration_Behavior.java" startLine="10" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.lang.extension.behavior.ExtensionPointDeclaration_Behavior" />
   </root>
   <root nodeId="8029776554053057792">
-    <nodeInfo nodeId="8029776554053057799" fileName="ExtensionObjectGetter_Behavior.java" startLine="12" startPosition="83" endLine="13" endPosition="156" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8029776554053057792" fileName="ExtensionObjectGetter_Behavior.java" startLine="8" startPosition="45" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
-    <nodeInfo nodeId="8029776554053057792" fileName="ExtensionObjectGetter_Behavior.java" startLine="11" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getExpectedReturnType_1213877374441#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
-    <scopeInfo nodeId="8029776554053057794" fileName="ExtensionObjectGetter_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
-    <scopeInfo nodeId="8029776554053057797" fileName="ExtensionObjectGetter_Behavior.java" startLine="12" startPosition="83" endLine="13" endPosition="156" />
-    <scopeInfo nodeId="8029776554053057792" fileName="ExtensionObjectGetter_Behavior.java" startLine="8" startPosition="45" endLine="11" endPosition="0">
+    <nodeInfo nodeId="7261386713308443600" fileName="ExtensionObjectGetter_Behavior.java" startLine="15" startPosition="83" endLine="16" endPosition="225" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7261386713308443949" fileName="ExtensionObjectGetter_Behavior.java" startLine="19" startPosition="88" endLine="20" endPosition="234" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7261386713308444031" fileName="ExtensionObjectGetter_Behavior.java" startLine="21" startPosition="119" endLine="22" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7261386713308444036" fileName="ExtensionObjectGetter_Behavior.java" startLine="23" startPosition="12" endLine="24" endPosition="181" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7261386713308444012" fileName="ExtensionObjectGetter_Behavior.java" startLine="23" startPosition="10" endLine="25" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8029776554053057792" fileName="ExtensionObjectGetter_Behavior.java" startLine="11" startPosition="45" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="8029776554053057792" fileName="ExtensionObjectGetter_Behavior.java" startLine="14" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getExpectedReturnType_1213877374441#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="7261386713308443975" fileName="ExtensionObjectGetter_Behavior.java" startLine="20" startPosition="234" endLine="25" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8029776554053057792" fileName="ExtensionObjectGetter_Behavior.java" startLine="18" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getReturnClassifierType_7261386713308443934#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
+    <scopeInfo nodeId="8029776554053057794" fileName="ExtensionObjectGetter_Behavior.java" startLine="12" startPosition="43" endLine="12" endPosition="43" />
+    <scopeInfo nodeId="8029776554053057797" fileName="ExtensionObjectGetter_Behavior.java" startLine="15" startPosition="83" endLine="16" endPosition="225" />
+    <scopeInfo nodeId="7261386713308443976" fileName="ExtensionObjectGetter_Behavior.java" startLine="21" startPosition="119" endLine="22" endPosition="98" />
+    <scopeInfo nodeId="7261386713308444013" fileName="ExtensionObjectGetter_Behavior.java" startLine="23" startPosition="12" endLine="24" endPosition="181" />
+    <scopeInfo nodeId="8029776554053057792" fileName="ExtensionObjectGetter_Behavior.java" startLine="11" startPosition="45" endLine="14" endPosition="0">
       <varInfo nodeId="8029776554053057792" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="8029776554053057792" fileName="ExtensionObjectGetter_Behavior.java" startLine="11" startPosition="0" endLine="15" endPosition="0">
+    <scopeInfo nodeId="8029776554053057792" fileName="ExtensionObjectGetter_Behavior.java" startLine="14" startPosition="0" endLine="18" endPosition="0">
       <varInfo nodeId="8029776554053057792" varName="thisNode" />
     </scopeInfo>
-    <unitInfo nodeId="8029776554053057792" fileName="ExtensionObjectGetter_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.extension.behavior.ExtensionObjectGetter_Behavior" />
+    <scopeInfo nodeId="7261386713308443937" fileName="ExtensionObjectGetter_Behavior.java" startLine="19" startPosition="88" endLine="25" endPosition="5">
+      <varInfo nodeId="7261386713308443950" varName="expType" />
+    </scopeInfo>
+    <scopeInfo nodeId="8029776554053057792" fileName="ExtensionObjectGetter_Behavior.java" startLine="18" startPosition="0" endLine="27" endPosition="0">
+      <varInfo nodeId="8029776554053057792" varName="thisNode" />
+    </scopeInfo>
+    <unitInfo nodeId="8029776554053057792" fileName="ExtensionObjectGetter_Behavior.java" startLine="11" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.lang.extension.behavior.ExtensionObjectGetter_Behavior" />
   </root>
 </debugInfo>
 

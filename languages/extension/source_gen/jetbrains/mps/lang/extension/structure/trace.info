@@ -64,8 +64,8 @@
     <nodeInfo nodeId="3729007189729192406" fileName="ExtensionPointDeclaration.java" startLine="49" startPosition="38" endLine="50" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3729007189729192406" fileName="ExtensionPointDeclaration.java" startLine="53" startPosition="37" endLine="54" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3729007189729192406" fileName="ExtensionPointDeclaration.java" startLine="57" startPosition="47" endLine="58" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3729007189729192406" fileName="ExtensionPointDeclaration.java" startLine="61" startPosition="41" endLine="62" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3729007189729192406" fileName="ExtensionPointDeclaration.java" startLine="65" startPosition="50" endLine="66" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3729007189729192406" fileName="ExtensionPointDeclaration.java" startLine="61" startPosition="31" endLine="62" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3729007189729192406" fileName="ExtensionPointDeclaration.java" startLine="65" startPosition="40" endLine="66" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3729007189729192406" fileName="ExtensionPointDeclaration.java" startLine="69" startPosition="41" endLine="70" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3729007189729192406" fileName="ExtensionPointDeclaration.java" startLine="73" startPosition="49" endLine="74" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3729007189729192406" fileName="ExtensionPointDeclaration.java" startLine="77" startPosition="48" endLine="78" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -100,8 +100,8 @@
     <scopeInfo nodeId="3729007189729192406" fileName="ExtensionPointDeclaration.java" startLine="49" startPosition="38" endLine="50" endPosition="61" />
     <scopeInfo nodeId="3729007189729192406" fileName="ExtensionPointDeclaration.java" startLine="53" startPosition="37" endLine="54" endPosition="71" />
     <scopeInfo nodeId="3729007189729192406" fileName="ExtensionPointDeclaration.java" startLine="57" startPosition="47" endLine="58" endPosition="71" />
-    <scopeInfo nodeId="3729007189729192406" fileName="ExtensionPointDeclaration.java" startLine="61" startPosition="41" endLine="62" endPosition="103" />
-    <scopeInfo nodeId="3729007189729192406" fileName="ExtensionPointDeclaration.java" startLine="65" startPosition="50" endLine="66" endPosition="64" />
+    <scopeInfo nodeId="3729007189729192406" fileName="ExtensionPointDeclaration.java" startLine="61" startPosition="31" endLine="62" endPosition="83" />
+    <scopeInfo nodeId="3729007189729192406" fileName="ExtensionPointDeclaration.java" startLine="65" startPosition="40" endLine="66" endPosition="64" />
     <scopeInfo nodeId="3729007189729192406" fileName="ExtensionPointDeclaration.java" startLine="69" startPosition="41" endLine="70" endPosition="74" />
     <scopeInfo nodeId="3729007189729192406" fileName="ExtensionPointDeclaration.java" startLine="73" startPosition="49" endLine="74" endPosition="86" />
     <scopeInfo nodeId="3729007189729192406" fileName="ExtensionPointDeclaration.java" startLine="77" startPosition="48" endLine="78" endPosition="89" />
