@@ -91,6 +91,16 @@
     <node type="tpce.InterfaceConceptDeclaration" typeId="tpce.1169125989551" id="3734116213129792499">
       <property name="name" nameId="1169194664001" value="ScopeProvider" />
     </node>
+    <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="4222318806802425298">
+      <property name="name" nameId="1169194664001" value="SuppressErrorsAnnotation" />
+      <link role="extends" roleId="tpce.1071489389519" targetNodeId="3364660638048049748" resolveInfo="NodeAttribute" />
+    </node>
+    <node type="tpce.InterfaceConceptDeclaration" typeId="tpce.1169125989551" id="3393165121846091586">
+      <property name="name" nameId="1169194664001" value="ICanSuppressErrors" />
+    </node>
+    <node type="tpce.InterfaceConceptDeclaration" typeId="tpce.1169125989551" id="3393165121846091587">
+      <property name="name" nameId="1169194664001" value="ISuppressErrors" />
+    </node>
   </roots>
   <root id="1082983041843" />
   <root id="1082983657062" />
@@ -229,5 +239,20 @@
     </node>
   </root>
   <root id="3734116213129792499" />
+  <root id="4222318806802425298">
+    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="2942851545184997136">
+      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="3393165121846091587" resolveInfo="ISuppressErrors" />
+    </node>
+    <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="4222318806802425300">
+      <property name="value" nameId="tpce.1105725733873" value="suppress" />
+      <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="5169995583184591164" resolveInfo="role" />
+    </node>
+    <node role="conceptLink" roleId="tpce.1105736949336" type="tpce.ReferenceConceptLink" typeId="tpce.1105736778597" id="4222318806802425301">
+      <link role="conceptLinkDeclaration" roleId="tpce.1105736734721" targetNodeId="5169995583184591169" resolveInfo="attributed" />
+      <link role="target" roleId="tpce.1105736807942" targetNodeId="3393165121846091586" resolveInfo="ICanSuppressErrors" />
+    </node>
+  </root>
+  <root id="3393165121846091586" />
+  <root id="3393165121846091587" />
 </model>
 
