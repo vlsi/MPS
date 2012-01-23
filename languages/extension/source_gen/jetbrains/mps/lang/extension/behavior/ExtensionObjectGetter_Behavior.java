@@ -5,8 +5,6 @@ package jetbrains.mps.lang.extension.behavior;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.typesystem.inference.TypeChecker;
-import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
 public class ExtensionObjectGetter_Behavior {
   public static void init(SNode thisNode) {
@@ -17,11 +15,6 @@ public class ExtensionObjectGetter_Behavior {
   }
 
   public static SNode call_getReturnClassifierType_7261386713308443934(SNode thisNode) {
-    SNode expType = SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.getAncestor(thisNode, "jetbrains.mps.lang.extension.structure.ExtensionDeclaration", false, false), "extensionPoint", false), "objectType", true);
-    if (SNodeOperations.isInstanceOf(expType, "jetbrains.mps.baseLanguageInternal.structure.InternalClassifierType")) {
-      return SNodeOperations.cast(expType, "jetbrains.mps.baseLanguage.structure.ClassifierType");
-    } else {
-      return TypeChecker.getInstance().getRuntimeSupport().coerce_(expType, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.ClassifierType"), true);
-    }
+    return ExtensionPointDeclaration_Behavior.call_getObjectClassifierType_6778078592468845406(SLinkOperations.getTarget(SNodeOperations.getAncestor(thisNode, "jetbrains.mps.lang.extension.structure.ExtensionDeclaration", false, false), "extensionPoint", false));
   }
 }

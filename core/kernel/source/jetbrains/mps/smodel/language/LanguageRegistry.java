@@ -149,7 +149,9 @@ public class LanguageRegistry implements CoreComponent {
       if (!myLanguages.containsKey(namespace)) {
         existing.remove(l);
         myLanguageToNamespace.put(l, namespace);
-        myLanguages.put(namespace, createRuntime(l, false));
+        LanguageRuntime runtime = createRuntime(l, false);
+        myLanguages.put(namespace, runtime);
+        ExtensionRegistry.getInstance().registerExtensionDescriptor(runtime.getExtensionDescriptor());
       } else {
         // duplicate language, ignore
       }

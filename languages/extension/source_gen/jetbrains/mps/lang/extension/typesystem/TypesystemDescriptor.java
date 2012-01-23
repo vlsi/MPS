@@ -11,5 +11,9 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       InferenceRule_Runtime inferenceRule = new typeof_ExtensionObjectGetter_InferenceRule();
       this.myInferenceRules.add(inferenceRule);
     }
+    {
+      InferenceRule_Runtime inferenceRule = new typeof_ExtensionPointExpression_InferenceRule();
+      this.myInferenceRules.add(inferenceRule);
+    }
   }
 }

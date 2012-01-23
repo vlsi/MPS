@@ -13,6 +13,7 @@ import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.generator.template.IfMacroContext;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.lang.extension.behavior.ExtensionObjectGetter_Behavior;
@@ -21,6 +22,10 @@ import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 public class QueriesGenerated {
   public static boolean createRootRule_Condition_63012922130977735(final IOperationContext operationContext, final CreateRootRuleContext _context) {
     return ListSequence.fromList(SModelOperations.getRoots(_context.getInputModel(), "jetbrains.mps.lang.extension.structure.ExtensionPointDeclaration")).isNotEmpty() || ListSequence.fromList(SModelOperations.getRoots(_context.getInputModel(), "jetbrains.mps.lang.extension.structure.ExtensionDeclaration")).isNotEmpty();
+  }
+
+  public static Object propertyMacro_GetPropertyValue_4230423796260420199(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return ExtensionPointDeclaration_Behavior.call_getId_63012922130945363(SLinkOperations.getTarget(_context.getNode(), "extensionPoint", false));
   }
 
   public static Object propertyMacro_GetPropertyValue_63012922130955117(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -39,8 +44,16 @@ public class QueriesGenerated {
     return "Extension_" + NameUtil.toValidIdentifier(SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "extensionPoint", false), "name"));
   }
 
+  public static Object referenceMacro_GetReferent_4230423796260420235(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+    return SLinkOperations.getTarget(ExtensionPointDeclaration_Behavior.call_getObjectClassifierType_6778078592468845406(SLinkOperations.getTarget(_context.getNode(), "extensionPoint", false)), "classifier", false);
+  }
+
   public static Object referenceMacro_GetReferent_63012922130977670(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     return "Extension_" + NameUtil.toValidIdentifier(SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "extensionPoint", false), "name"));
+  }
+
+  public static boolean ifMacro_Condition_4230423796260420209(final IOperationContext operationContext, final IfMacroContext _context) {
+    return !(SNodeOperations.isInstanceOf(ExtensionPointDeclaration_Behavior.call_getObjectClassifierType_6778078592468845406(SLinkOperations.getTarget(_context.getNode(), "extensionPoint", false)), "jetbrains.mps.baseLanguageInternal.structure.InternalClassifierType"));
   }
 
   public static boolean ifMacro_Condition_63012922130953655(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -57,6 +70,14 @@ public class QueriesGenerated {
 
   public static boolean ifMacro_Condition_8820339482096486138(final IOperationContext operationContext, final IfMacroContext _context) {
     return ListSequence.fromList(SModelOperations.getRoots(_context.getInputModel(), "jetbrains.mps.lang.extension.structure.ExtensionDeclaration")).isNotEmpty();
+  }
+
+  public static SNode sourceNodeQuery_4230423796260420225(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SNodeOperations.cast(ExtensionPointDeclaration_Behavior.call_getObjectClassifierType_6778078592468845406(SLinkOperations.getTarget(_context.getNode(), "extensionPoint", false)), "jetbrains.mps.baseLanguageInternal.structure.InternalClassifierType");
+  }
+
+  public static SNode sourceNodeQuery_4230423796260420184(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return ExtensionPointDeclaration_Behavior.call_getObjectClassifierType_6778078592468845406(SLinkOperations.getTarget(_context.getNode(), "extensionPoint", false));
   }
 
   public static SNode sourceNodeQuery_4585329983368332167(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {

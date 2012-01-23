@@ -7,6 +7,8 @@ import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
+import jetbrains.mps.smodel.structure.Extension;
+import jetbrains.mps.smodel.structure.ExtensionPoint;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -25,6 +27,9 @@ public class CustomContainersRegistry {
   private List<_FunctionTypes._return_P0_E0<? extends List<SNode>>> providers = ListSequence.fromList(new ArrayList<_FunctionTypes._return_P0_E0<? extends List<SNode>>>());
 
   private CustomContainersRegistry() {
+    for (Extension<_FunctionTypes._return_P0_E0<? extends List<SNode>>> e : ExtensionPoint.<_FunctionTypes._return_P0_E0<? extends List<SNode>>>generify(new ExtensionPoint("jetbrains.mps.baseLanguage.collections.customContainers", _FunctionTypes._return_P0_E0.class)).getExtensions()) {
+      ListSequence.fromList(providers).addElement(e.get());
+    }
   }
 
   public List<SNode> allCustomContainerDeclarations() {
@@ -57,18 +62,6 @@ public class CustomContainersRegistry {
       }));
     }
     return res;
-  }
-
-  public void registerProvider(_FunctionTypes._return_P0_E0<? extends List<SNode>> prov) {
-    synchronized (this) {
-      ListSequence.fromList(this.providers).addElement(prov);
-    }
-  }
-
-  public void unRegisterProvider(_FunctionTypes._return_P0_E0<? extends List<SNode>> prov) {
-    synchronized (this) {
-      ListSequence.fromList(this.providers).removeElement(prov);
-    }
   }
 
   public IModule getOwningModule(SModel model) {
