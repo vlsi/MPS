@@ -4019,6 +4019,7 @@
     <path path="${base_dir}/languages/util/buildlanguage/languages/gentest/solutions/pluginSolution/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/packaging/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/property/classes_gen" />
+    <path path="${base_dir}/languages/util/buildlanguage/languages/startup/classes_gen" />
     <path path="${base_dir}/languages/util/conf/languages/conf/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/lib/joda-time-1.6.jar" />
@@ -4188,6 +4189,7 @@
     <path path="${base_dir}/languages/util/buildlanguage/languages/packaging/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/packaging/solutions/pluginSolution/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/property/classes_gen" />
+    <path path="${base_dir}/languages/util/buildlanguage/languages/startup/classes_gen" />
     <path path="${base_dir}/languages/util/conf/languages/conf/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/lib/joda-time-1.6.jar" />
@@ -15274,7 +15276,7 @@
     </javac>
     <delete dir="${classes.dump}" />
   </target>
-  <target name="compile.cycle.jetbrains.mps.build.custommps_tjc" depends="compile.cycle.jetbrains.mps.build.packaging_tjc">
+  <target name="compile.cycle.jetbrains.mps.build.custommps_tjc" depends="compile.cycle.jetbrains.mps.build.startup_tjc">
     <property name="classes.dump" value="${jetbrains.mps.build.custommps.classes}.tmp" />
     <fail unless="base_dir" message="Property base_dir unspecified." />
     <mkdir dir="${base_dir}/languages/util/buildlanguage/languages/custommps/source_gen" />
@@ -15450,7 +15452,7 @@
     </javac>
     <delete dir="${classes.dump}" />
   </target>
-  <target name="compile.cycle.jetbrains.mps.build.startup_tjc" depends="compile.cycle.jetbrains.mps.build.mpsdist_tjc">
+  <target name="compile.cycle.jetbrains.mps.build.startup_tjc" depends="compile.cycle.jetbrains.mps.build.packaging_tjc">
     <property name="classes.dump" value="${jetbrains.mps.build.startup.classes}.tmp" />
     <fail unless="base_dir" message="Property base_dir unspecified." />
     <mkdir dir="${base_dir}/languages/util/buildlanguage/languages/startup/source_gen" />
@@ -15472,7 +15474,7 @@
     </javac>
     <delete dir="${classes.dump}" />
   </target>
-  <target name="compile.cycle.jetbrains.mps.debugger.api.lang_tjc" depends="compile.cycle.jetbrains.mps.build.startup_tjc">
+  <target name="compile.cycle.jetbrains.mps.debugger.api.lang_tjc" depends="compile.cycle.jetbrains.mps.build.mpsdist_tjc">
     <property name="classes.dump" value="${jetbrains.mps.debugger.api.lang.classes}.tmp" />
     <fail unless="base_dir" message="Property base_dir unspecified." />
     <mkdir dir="${base_dir}/plugins/debugger-api-languages/jetbrains.mps.debugger.api.lang/source_gen" />
