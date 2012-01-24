@@ -17,7 +17,7 @@ package jetbrains.mps.ide.editor;
 
 import com.intellij.openapi.components.ApplicationComponent;
 import jetbrains.mps.components.ComponentPlugin;
-//import jetbrains.mps.ide.navigation.NavigationSupportImpl;
+import jetbrains.mps.ide.navigation.NavigationSupportImpl;
 import org.jetbrains.annotations.NotNull;
 
 public class MPSEditorComponents extends ComponentPlugin implements ApplicationComponent {
@@ -38,7 +38,7 @@ public class MPSEditorComponents extends ComponentPlugin implements ApplicationC
   public void init() {
     super.init();
     
-//    init(new NavigationSupportImpl());
+    init(new NavigationSupportImpl());
   }
 
   @Override

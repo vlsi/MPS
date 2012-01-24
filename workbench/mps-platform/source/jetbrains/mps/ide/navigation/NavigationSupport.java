@@ -17,6 +17,7 @@ package jetbrains.mps.ide.navigation;
 
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.ApplicationComponent;
+import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModelDescriptor;
@@ -26,11 +27,25 @@ import org.jetbrains.annotations.NotNull;
 /**
  * evgeny, 11/5/11
  */
-public abstract class NavigationSupport implements ApplicationComponent {
+public abstract class NavigationSupport implements CoreComponent {
+  private static NavigationSupport INSTANCE;
 
   public static NavigationSupport getInstance() {
-    return ApplicationManager.getApplication().getComponent(NavigationSupport.class);
+    return INSTANCE;
   }
+
+  public void init() {
+    if (INSTANCE != null) {
+      throw new IllegalStateException("double initialization");
+    }
+
+    INSTANCE = this;
+  }
+
+  public void dispose() {
+    INSTANCE = null;
+  }
+
 
   /**
    * Opens node in the editor. Requires: model read, EDT.
@@ -65,18 +80,4 @@ public abstract class NavigationSupport implements ApplicationComponent {
    * @param focus  focus on project tree tool
    */
   public abstract void selectInTree(@NotNull IOperationContext context, @NotNull IModule module, boolean focus);
-
-  @Override
-  public void initComponent() {
-  }
-
-  @Override
-  public void disposeComponent() {
-  }
-
-  @NotNull
-  @Override
-  public String getComponentName() {
-    return "Navigation support";
-  }
 }
