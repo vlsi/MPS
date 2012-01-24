@@ -33,11 +33,7 @@ public class ErrorReportUtil {
       })) {
         return false;
       }
-      if (_node.value != parent && ListSequence.fromList(AttributeOperations.getAttributeList(parent, new IAttributeDescriptor.AllAttributes())).any(new IWhereFilter<SNode>() {
-        public boolean accept(SNode attr) {
-          return SNodeOperations.isInstanceOf(attr, "jetbrains.mps.lang.core.structure.IAntisuppressErrors");
-        }
-      })) {
+      if (SNodeOperations.isInstanceOf(parent, "jetbrains.mps.lang.core.structure.IAntisuppressErrors")) {
         return true;
       }
       _node.value = parent;
