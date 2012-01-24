@@ -127,6 +127,9 @@
       <interface-class>jetbrains.mps.ide.navigation.NavigationSupport</interface-class>
       <implementation-class>jetbrains.mps.ide.navigation.NavigationSupportImpl</implementation-class>
     </component>
+    <component>
+      <implementation-class>jetbrains.mps.ide.editor.MPSEditorComponents</implementation-class>
+    </component>
 
     <component>
       <implementation-class>jetbrains.mps.intentions.IntentionsPreferencesPage</implementation-class>
