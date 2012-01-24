@@ -124,7 +124,7 @@
     </component>
 
     <component>
-      <implementation-class>jetbrains.mps.ide.editor.MPSEditorComponents</implementation-class>
+      <implementation-class>jetbrains.mps.ide.navigation.NavigationSupportImpl</implementation-class>
     </component>
 
     <component>
