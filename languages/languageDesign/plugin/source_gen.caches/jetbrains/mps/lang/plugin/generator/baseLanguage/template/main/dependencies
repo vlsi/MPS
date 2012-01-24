@@ -35,6 +35,7 @@
     <classNode dependClassName="jetbrains.mps.lang.plugin.behavior.FileGeneratorDeclaration_Behavior" />
     <classNode dependClassName="jetbrains.mps.lang.plugin.behavior.GenerationListenerDeclaration_Behavior" />
     <classNode dependClassName="jetbrains.mps.lang.plugin.behavior.GroupAnchor_Behavior" />
+    <classNode dependClassName="jetbrains.mps.lang.plugin.behavior.IconResourceBundle_Behavior" />
     <classNode dependClassName="jetbrains.mps.lang.plugin.behavior.IconResource_Behavior" />
     <classNode dependClassName="jetbrains.mps.lang.plugin.behavior.IdeaInitializerDescriptor_Behavior" />
     <classNode dependClassName="jetbrains.mps.lang.plugin.behavior.KeyMapKeystroke_Behavior" />
@@ -63,6 +64,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.SNodeId" />
     <classNode dependClassName="jetbrains.mps.smodel.SReference" />
     <classNode dependClassName="jetbrains.mps.typesystem.inference.TypeChecker" />
+    <classNode dependClassName="jetbrains.mps.util.JavaNameUtil" />
     <classNode dependClassName="org.apache.commons.lang.StringUtils" />
   </dependency>
 </dependenciesRoot>
