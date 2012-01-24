@@ -10,7 +10,7 @@
     <scopeInfo nodeId="7015818220060178411" fileName="MainClass.java" startLine="9" startPosition="0" endLine="13" endPosition="0">
       <varInfo nodeId="7015818220060178412" varName="args" />
     </scopeInfo>
-    <unitInfo nodeId="7015818220060178316" fileName="MainClass.java" startLine="6" startPosition="0" endLine="14" endPosition="0" unitName="jetbrains.mps.plugin.test.blProject.main.MainClass" />
+    <unitInfo nodeId="7015818220060178316" fileName="MainClass.java" startLine="6" startPosition="0" endLine="14" endPosition="0" unitName="main.MainClass" />
   </root>
   <root nodeId="7015818220060279054">
     <nodeInfo nodeId="7015818220060279066" fileName="ConcoleUtil.java" startLine="10" startPosition="37" endLine="11" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
@@ -22,16 +22,16 @@
     <scopeInfo nodeId="7015818220060279060" fileName="ConcoleUtil.java" startLine="9" startPosition="0" endLine="13" endPosition="0">
       <varInfo nodeId="7015818220060279064" varName="s" />
     </scopeInfo>
-    <unitInfo nodeId="7015818220060279054" fileName="ConcoleUtil.java" startLine="6" startPosition="0" endLine="14" endPosition="0" unitName="jetbrains.mps.plugin.test.blProject.main.ConcoleUtil" />
+    <unitInfo nodeId="7015818220060279054" fileName="ConcoleUtil.java" startLine="6" startPosition="0" endLine="14" endPosition="0" unitName="main.ConcoleUtil" />
   </root>
   <root nodeId="7015818220060279072">
     <nodeInfo nodeId="7015818220060279074" fileName="ProjectKind.java" startLine="10" startPosition="0" endLine="12" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ProjectKind#()V" />
     <scopeInfo nodeId="7015818220060279077" fileName="ProjectKind.java" startLine="11" startPosition="17" endLine="11" endPosition="17" />
     <scopeInfo nodeId="7015818220060279074" fileName="ProjectKind.java" startLine="10" startPosition="0" endLine="12" endPosition="3" />
-    <unitInfo nodeId="7015818220060279072" fileName="ProjectKind.java" startLine="6" startPosition="0" endLine="14" endPosition="0" unitName="jetbrains.mps.plugin.test.blProject.main.ProjectKind" />
+    <unitInfo nodeId="7015818220060279072" fileName="ProjectKind.java" startLine="6" startPosition="0" endLine="14" endPosition="0" unitName="main.ProjectKind" />
   </root>
   <root nodeId="7015818220060279086">
-    <unitInfo nodeId="7015818220060279086" fileName="SimpleMarker.java" startLine="6" startPosition="0" endLine="8" endPosition="0" unitName="jetbrains.mps.plugin.test.blProject.main.SimpleMarker" />
+    <unitInfo nodeId="7015818220060279086" fileName="SimpleMarker.java" startLine="6" startPosition="0" endLine="8" endPosition="0" unitName="main.SimpleMarker" />
   </root>
 </debugInfo>
 
