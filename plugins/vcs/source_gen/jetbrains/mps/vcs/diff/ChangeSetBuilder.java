@@ -15,6 +15,7 @@ import com.intellij.openapi.application.ApplicationManager;
 import org.apache.commons.lang.ObjectUtils;
 import jetbrains.mps.vcs.diff.changes.SetPropertyChange;
 import jetbrains.mps.smodel.SReference;
+import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.smodel.DynamicReference;
 import jetbrains.mps.smodel.SModelReference;
@@ -24,7 +25,6 @@ import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.vcs.diff.changes.AddRootChange;
 import jetbrains.mps.vcs.diff.changes.DeleteRootChange;
 import java.util.HashSet;
-import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.util.LongestCommonSubsequenceFinder;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.vcs.diff.changes.NodeGroupChange;
@@ -58,8 +58,8 @@ public class ChangeSetBuilder {
   }
 
   private void buildForProperties(SNode oldNode, SNode newNode) {
-    Set<String> oldProperties = (Set<String>) oldNode.getPropertyNames();
-    Set<String> newProperties = (Set<String>) newNode.getPropertyNames();
+    Set<String> oldProperties = (Set<String>) oldNode.getProperties().keySet();
+    Set<String> newProperties = (Set<String>) newNode.getProperties().keySet();
     for (String name : SetSequence.fromSet(oldProperties).union(SetSequence.fromSet(newProperties))) {
       buildForProperty(oldNode, newNode, name);
     }
@@ -82,9 +82,13 @@ public class ChangeSetBuilder {
   }
 
   private void buildForReferences(SNode oldNode, SNode newNode) {
-    Set<String> oldReferences = (Set<String>) oldNode.getReferenceRoles();
-    Set<String> newReferences = (Set<String>) newNode.getReferenceRoles();
-    for (String role : SetSequence.fromSet(oldReferences).union(SetSequence.fromSet(newReferences))) {
+    List<SReference> oldReferences = (List<SReference>) oldNode.getReferences();
+    List<SReference> newReferences = (List<SReference>) newNode.getReferences();
+    for (String role : ListSequence.fromList(oldReferences).concat(ListSequence.fromList(newReferences)).select(new ISelector<SReference, String>() {
+      public String select(SReference r) {
+        return r.getRole();
+      }
+    }).distinct()) {
       buildForReference(oldNode, newNode, role);
     }
   }
@@ -100,15 +104,19 @@ public class ChangeSetBuilder {
       null :
       check_nbyrtw_a0a3a3(newReference)
     );
-    if (eq_nbyrtw_a0a0e0d(oldTargetId, newTargetId) && eq_nbyrtw_a0a0e0d_0(check_nbyrtw_a0a0e0d(oldReference), check_nbyrtw_a0a0e0d_0(newReference)) && eq_nbyrtw_a0a4a3(check_nbyrtw_a0a4a3(oldReference), check_nbyrtw_a0a4a3_0(newReference))) {
+    SModelReference oldTargetModel = check_nbyrtw_a0e0d(oldReference);
+    if (SNodeOperations.getModel(oldNode).getSModelReference().equals(oldTargetModel)) {
+      oldTargetModel = null;
+    }
+    SModelReference newTargetModel = check_nbyrtw_a0g0d(newReference);
+    if (SNodeOperations.getModel(newNode).getSModelReference().equals(newTargetModel)) {
+      newTargetModel = null;
+    }
+    if (eq_nbyrtw_a0a0i0d(oldTargetId, newTargetId) && eq_nbyrtw_a0a0i0d_0(oldTargetModel, newTargetModel) && eq_nbyrtw_a0a8a3(check_nbyrtw_a0a8a3(oldReference), check_nbyrtw_a0a8a3_0(newReference))) {
       // same references 
     } else {
-      SModelReference targetModel = check_nbyrtw_a0a0a4a3(newReference);
-      if (eq_nbyrtw_a0b0a4a3(SNodeOperations.getModel(newNode).getSModelReference(), targetModel)) {
-        // This is internal reference 
-        targetModel = null;
-      }
-      ListSequence.fromList(myNewChanges).addElement(new SetReferenceChange(myChangeSet, oldNode.getSNodeId(), role, targetModel, newTargetId, check_nbyrtw_f0a0a2a0e0d(newReference)));
+      SModelReference targetModel = check_nbyrtw_a0a0a8a3(newReference);
+      ListSequence.fromList(myNewChanges).addElement(new SetReferenceChange(myChangeSet, oldNode.getSNodeId(), role, targetModel, newTargetId, check_nbyrtw_f0a0a1a0i0d(newReference)));
     }
   }
 
@@ -323,70 +331,63 @@ public class ChangeSetBuilder {
     return null;
   }
 
-  private static SModelReference check_nbyrtw_a0a0e0d(SReference checkedDotOperand) {
+  private static SModelReference check_nbyrtw_a0e0d(SReference checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getTargetSModelReference();
     }
     return null;
   }
 
-  private static SModelReference check_nbyrtw_a0a0e0d_0(SReference checkedDotOperand) {
+  private static SModelReference check_nbyrtw_a0g0d(SReference checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getTargetSModelReference();
     }
     return null;
   }
 
-  private static String check_nbyrtw_a0a4a3(SReference checkedDotOperand) {
+  private static String check_nbyrtw_a0a8a3(SReference checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getResolveInfo();
     }
     return null;
   }
 
-  private static String check_nbyrtw_a0a4a3_0(SReference checkedDotOperand) {
+  private static String check_nbyrtw_a0a8a3_0(SReference checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getResolveInfo();
     }
     return null;
   }
 
-  private static SModelReference check_nbyrtw_a0a0a4a3(SReference checkedDotOperand) {
+  private static SModelReference check_nbyrtw_a0a0a8a3(SReference checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getTargetSModelReference();
     }
     return null;
   }
 
-  private static String check_nbyrtw_f0a0a2a0e0d(SReference checkedDotOperand) {
+  private static String check_nbyrtw_f0a0a1a0i0d(SReference checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getResolveInfo();
     }
     return null;
   }
 
-  private static boolean eq_nbyrtw_a0a0e0d(Object a, Object b) {
+  private static boolean eq_nbyrtw_a0a0i0d(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b
     );
   }
 
-  private static boolean eq_nbyrtw_a0a0e0d_0(Object a, Object b) {
+  private static boolean eq_nbyrtw_a0a0i0d_0(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b
     );
   }
 
-  private static boolean eq_nbyrtw_a0a4a3(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
-  }
-
-  private static boolean eq_nbyrtw_a0b0a4a3(Object a, Object b) {
+  private static boolean eq_nbyrtw_a0a8a3(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b

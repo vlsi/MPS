@@ -16,7 +16,6 @@
 package jetbrains.mps.ide.findusages;
 
 import com.intellij.openapi.components.ApplicationComponent;
-import com.intellij.openapi.fileEditor.impl.LoadTextUtil;
 import com.intellij.openapi.module.Module;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.psi.impl.cache.impl.id.FileTypeIdIndexer;
@@ -27,7 +26,6 @@ import com.intellij.psi.search.GlobalSearchScope;
 import com.intellij.util.indexing.FileBasedIndex;
 import com.intellij.util.indexing.FileContent;
 import com.intellij.util.text.CharArrayUtil;
-import com.intellij.xml.util.XmlUtil;
 import jetbrains.mps.fileTypes.MPSFileTypeFactory;
 import jetbrains.mps.findUsages.FindUsagesManager;
 import jetbrains.mps.findUsages.ProxyFindUsagesManager;
@@ -38,20 +36,18 @@ import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
+import jetbrains.mps.smodel.persistence.def.ModelPersistence;
+import jetbrains.mps.smodel.persistence.def.ModelPersistence.IndexEntry;
+import jetbrains.mps.smodel.persistence.def.ModelReadException;
 import jetbrains.mps.util.CollectionUtil;
-import jetbrains.mps.util.FileUtil;
-import jetbrains.mps.util.JDOMUtil;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.vfs.IFile;
-import org.apache.commons.lang.StringEscapeUtils;
 import org.jetbrains.annotations.NotNull;
 
-import java.nio.charset.Charset;
 import java.util.*;
+import java.util.Map.Entry;
 
 public class FastFindUsagesManager extends FindUsagesManager implements ApplicationComponent {
-  private static final String TARGET_NODE_ID_PREFIX = "targetNodeId=\"";
-  private static final String TYPE_PREFIX = "type=\"";
   private final ProxyFindUsagesManager myProxyManager;
 
   public FastFindUsagesManager(MPSCoreComponents coreComponents) {
@@ -292,115 +288,24 @@ public class FastFindUsagesManager extends FindUsagesManager implements Applicat
   private static class MyFileTypeIdIndexer extends FileTypeIdIndexer {
     @NotNull
     public Map<IdIndexEntry, Integer> map(FileContent inputData) {
-      byte[] content = inputData.getContent();
-      CharSequence data = LoadTextUtil.getTextByBinaryPresentation(content, FileUtil.DEFAULT_CHARSET);
+      CharSequence data = inputData.getContentAsText();
       char[] charsArray = CharArrayUtil.fromSequenceWithoutCopying(data);
-      int len = data.length();
       if (charsArray == null) {
         charsArray = CharArrayUtil.fromSequence(data);
       }
 
-      Map<IdIndexEntry, Integer> result = new HashMap<IdIndexEntry, Integer>();
-      int wordStart = -1;
-      for (int i = 0; i < len; i++) {
-        char c = charsArray[i];
-        if (c >= 'a' && c <= 'z' || c >= 'A' && c <= 'Z') {
-          if (wordStart == -1) {
-            wordStart = i;
-          }
-        } else if (wordStart >= 0) {
-          processWord(result, charsArray, len, wordStart, i - wordStart);
-          wordStart = -1;
-        }
+      final Map<IndexEntry, Integer> res;
+      try {
+        res = ModelPersistence.index(charsArray);
+      } catch (ModelReadException e) {
+        return Collections.emptyMap();
+      }
+
+      HashMap<IdIndexEntry, Integer> result = new HashMap<IdIndexEntry, Integer>();
+      for (Entry<IndexEntry, Integer> ie : res.entrySet()) {
+        result.put(new IdIndexEntry(ie.getKey().data, ie.getKey().caseSensitive), ie.getValue());
       }
       return result;
-    }
-
-    private void processWord(Map<IdIndexEntry, Integer> result, char[] chars, int charsLength, int offset, int len) {
-      if (chars[offset + len] != '=' || chars[offset] != 't') {
-        return; // optimization: ignore
-      }
-
-      if (contains(chars, charsLength, offset, TARGET_NODE_ID_PREFIX)) {
-        // check pattern "targetNodeId=\"(?:[0-9]+v?\\.)?(.+?)\""
-        offset += TARGET_NODE_ID_PREFIX.length();
-        int end = indexOfQuoteAndVersionColon(chars, charsLength, offset)[0];
-        if (end > offset) {
-          int e = offset;
-          // quick temporary fix for new persistences, todo: should be persistence dependent
-//          while (e < end && chars[e] >= '0' && chars[e] <= '9') {
-//            e++;
-//          }
-//          if (e > offset) {
-//            if (e < end && chars[e] == 'v') {
-//              e++;
-//            }
-//            if (e + 1 < end && chars[e] == '.') {
-//              offset = e + 1;
-//            }
-//          }
-//          result.put(new IdIndexEntry(unescape(new String(chars, offset, end - offset)), true), offset);
-          while (e < end && chars[e] != '.') ++e;
-          if (e > offset && e + 1 < end && chars[e] == '.')
-            offset = e + 1;
-          String test = unescape(new String(chars, offset, end - offset)).replace("%d", ".").replace("%c", ":");
-          result.put(new IdIndexEntry(test, true), offset);
-
-        }
-      } else if (contains(chars, charsLength, offset, TYPE_PREFIX)) {
-        // check pattern "type=\"(.+?)\" id=\".+?\""
-        offset += TYPE_PREFIX.length();
-        int[] indices = indexOfQuoteAndVersionColon(chars, charsLength, offset);
-        int end = indices[0];
-        // quick temporary fix for new persistences, todo: should be persistence dependent
-//        int qend = indices[1];
-//        if (end > offset && contains(chars, charsLength, qend + 1, " id=\"")) {
-        // report
-//          result.put(new IdIndexEntry(unescape(new String(chars, offset, end - offset)), true), offset);
-        // use only the name part of type="abcd.name" or type="model.structure.name:0"
-        int start = end;
-        while (start >= offset && chars[start] != '.') --start;
-        offset = start + 1;
-        if (end > offset) {
-          result.put(new IdIndexEntry(unescape(new String(chars, offset, end - offset)), true), offset);
-        }
-        //      }
-      }
-    }
-
-    // result[0] - first index; result[1] - index of quote
-    private int[] indexOfQuoteAndVersionColon(char[] chars, int charsLength, int start) {
-      int[] result = {-1, -1};
-      for (int i = start; i < charsLength; i++) {
-        if (chars[i] == '"') {
-          if (result[0] == -1) result[0] = i;
-          result[1] = i;
-          return result;
-        }
-        if (chars[i] == ':' && (i + 1 < charsLength) && chars[i + 1] >= '0' && chars[i + 1] <= '9') {
-          result[0] = i;
-        }
-        if (chars[i] == '\n') {
-          return new int[]{-1, -1};
-        }
-      }
-      return new int[]{-1, -1};
-    }
-
-    private boolean contains(char[] chars, int charsLength, int offset, String s) {
-      if (offset + s.length() >= charsLength) {
-        return false;
-      }
-      for (int i = 0; i < s.length(); i++) {
-        if (chars[offset + i] != s.charAt(i)) {
-          return false;
-        }
-      }
-      return true;
-    }
-
-    private String unescape(String s) {
-      return StringEscapeUtils.unescapeXml(s);
     }
   }
 }

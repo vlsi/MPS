@@ -32,8 +32,8 @@
       <link role="layout" roleId="tps4.7323449223785753314" targetNodeId="2235195415637073459" resolveInfo="MPS" />
     </node>
     <node type="tps4.Block" typeId="tps4.701559220729212645" id="8431776905956472682">
-      <property name="name" nameId="tpck.1169194664001" value="generate.ant.task.jar" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="stuff" />
+      <property name="name" nameId="tpck.1169194664001" value="mps-backend.jar" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="components" />
       <link role="layout" roleId="tps4.7323449223785753314" targetNodeId="2235195415637073459" resolveInfo="MPS" />
     </node>
     <node type="tps4.Block" typeId="tps4.701559220729212645" id="8431776905956472694">
@@ -245,6 +245,9 @@
         </node>
         <node role="entry" roleId="tps4.1203617897549" type="tps4.BlockReference" typeId="tps4.701559220729139189" id="87733685690769458">
           <link role="block" roleId="tps4.701559220729212648" targetNodeId="87733685690765614" resolveInfo="mps-tuples.jar" />
+        </node>
+        <node role="entry" roleId="tps4.1203617897549" type="tps4.BlockReference" typeId="tps4.701559220729139189" id="542335012514411462">
+          <link role="block" roleId="tps4.701559220729212648" targetNodeId="8431776905956472682" resolveInfo="mps-backend.jar" />
         </node>
       </node>
       <node role="entry" roleId="tps4.1203617897549" type="tps4.Folder" typeId="tps4.1203598512427" id="2235195415637076992">
@@ -491,9 +494,6 @@
         </node>
         <node role="entry" roleId="tps4.1203617897549" type="tps4.BlockReference" typeId="tps4.701559220729139189" id="2235195415637077028">
           <link role="block" roleId="tps4.701559220729212648" targetNodeId="8431776905956472948" resolveInfo="util" />
-        </node>
-        <node role="entry" roleId="tps4.1203617897549" type="tps4.BlockReference" typeId="tps4.701559220729139189" id="2235195415637077029">
-          <link role="block" roleId="tps4.701559220729212648" targetNodeId="8431776905956472682" resolveInfo="generate.ant.task.jar" />
         </node>
       </node>
       <node role="entry" roleId="tps4.1203617897549" type="tps4.Folder" typeId="tps4.1203598512427" id="2235195415637077031">
@@ -1340,7 +1340,7 @@
       <property name="excludes" nameId="tps4.1204107522064" value="" />
       <node role="delete" roleId="tps4.1239622410040" type="tps4.Delete" typeId="tps4.1204122781510" id="8431776905956472684" />
       <node role="title" roleId="tps4.1205340441197" type="tps4.SimpleString" typeId="tps4.1205339044029" id="8431776905956472685">
-        <property name="name" nameId="tps4.1223641503366" value="generate.ant.task.jar" />
+        <property name="name" nameId="tps4.1223641503366" value="mps-backend.jar" />
       </node>
       <node role="entry" roleId="tps4.1203617897549" type="tps4.Copy" typeId="tps4.1204015075559" id="8431776905956472686">
         <property name="name" nameId="tpck.1169194664001" value="" />
@@ -2284,11 +2284,15 @@
       <property name="id" nameId="tps4.1222447189012" value="27124a9a-d335-4efe-87c8-e39f7627229c" />
       <property name="name" nameId="tpck.1169194664001" value="jetbrains.mps.build.gentest.pluginSolution" />
     </node>
-    <node role="entry" roleId="tps4.701559220729212646" type="tps4.Module" typeId="tps4.1203599702327" id="5898484514623997911">
+    <node role="entry" roleId="tps4.701559220729212646" type="tps4.Module" typeId="tps4.1203599702327" id="8795824097439408604">
+      <property name="id" nameId="tps4.1222447189012" value="b608bb31-cbf1-4d56-a8e8-8fa2f751be68" />
+      <property name="name" nameId="tpck.1169194664001" value="jetbrains.mps.build.reduced" />
+    </node>
+    <node role="entry" roleId="tps4.701559220729212646" type="tps4.Module" typeId="tps4.1203599702327" id="4771179612991950368">
       <property name="id" nameId="tps4.1222447189012" value="d5033cee-f632-44b6-b308-89d4fbde34ff" />
       <property name="name" nameId="tpck.1169194664001" value="jetbrains.mps.build.startup" />
     </node>
-    <node role="entry" roleId="tps4.701559220729212646" type="tps4.Module" typeId="tps4.1203599702327" id="5898484514623997913">
+    <node role="entry" roleId="tps4.701559220729212646" type="tps4.Module" typeId="tps4.1203599702327" id="4771179612991950370">
       <property name="id" nameId="tps4.1222447189012" value="77cb4ae5-2831-4e0c-b819-c00e2c16c1b2" />
       <property name="name" nameId="tpck.1169194664001" value="jetbrains.mps.build.mpsdist" />
     </node>

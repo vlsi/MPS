@@ -361,7 +361,12 @@ public final class SNode {
     NodeReadAccessCasterInEditor.firePropertyReadAccessed(this, propertyName, false);
 
     try {
-      String propertyValue = getProperty_internal(propertyName);
+      String propertyValue;
+      if (MPSCore.getInstance().isMergeDriverMode()) {
+        propertyValue = getProperty_simple(propertyName);
+      } else {
+        propertyValue = getProperty_internal(propertyName);
+      }
       NodeReadEventsCaster.fireNodePropertyReadAccess(this, propertyName, propertyValue);
       return propertyValue;
     } catch (Throwable t) {

@@ -19,7 +19,6 @@ import com.intellij.ide.util.gotoByName.ChooseByNamePopup;
 import com.intellij.ide.util.gotoByName.ChooseByNamePopupComponent;
 import com.intellij.navigation.NavigationItem;
 import com.intellij.openapi.application.ModalityState;
-import com.intellij.openapi.progress.EmptyProgressIndicator;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.wm.WindowManager;
 import com.intellij.psi.PsiElement;
@@ -215,10 +214,15 @@ public class ImportHelper {
         public NavigationItem doGetNavigationItem(final BaseSNodeDescriptor object) {
           return new RootNodeElement(object) {
             public void navigate(boolean requestFocus) {
+              ModelAccess.assertLegalRead();
               SModelDescriptor descriptor = GlobalScope.getInstance().getModelDescriptor(object.getModelReference());
-              SModel modelDescriptor = descriptor.getSModel();
-              SNode node = object.getNode(modelDescriptor);
-              new AddModelItem(project, model, node.getModel().getSModelReference(), contextModule).navigate(requestFocus);
+              LOG.assertLog(descriptor != null, "Caches seems to be corrupted or the model was removed: model " + object.getModelReference().getLongName() + " does not exist. Please check model existence manually and specify it in bug report");
+              SModel modelToImport = descriptor.getSModel();
+              SNodeId id = object.getId();
+              String idString = id == null ? "" : " (id:" + id.toString() + ")";
+              String nameString = object.getNodeName() == null ? "<no name>" : object.getNodeName();
+              LOG.assertLog(object.getNode(modelToImport) != null, "Caches seems to be corrupted or the node was removed: model " + modelToImport.getLongName() + " does not seem to contain node " + nameString + idString + ". Please check node existence manually and specify it in bug report");
+              new AddModelItem(project, model, modelToImport.getSModelReference(), contextModule).navigate(requestFocus);
             }
           };
         }

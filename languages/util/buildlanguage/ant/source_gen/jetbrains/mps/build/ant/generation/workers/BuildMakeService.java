@@ -13,8 +13,8 @@ import jetbrains.mps.make.MakeSession;
 import jetbrains.mps.make.resources.IResource;
 import jetbrains.mps.make.script.IScript;
 import jetbrains.mps.make.script.IScriptController;
-import jetbrains.mps.internal.make.runtime.util.FutureValue;
 import jetbrains.mps.make.IMakeNotificationListener;
+import jetbrains.mps.internal.make.runtime.util.FutureValue;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.messages.Message;
 import jetbrains.mps.messages.MessageKind;
@@ -54,15 +54,15 @@ public class BuildMakeService extends AbstractMakeService implements IMakeServic
   }
 
   public Future<IResult> make(MakeSession session, Iterable<? extends IResource> resources, IScript script, IScriptController controller) {
-    return new FutureValue(doMake(session, resources, script, controller));
+    return doMake(session, resources, script, controller);
   }
 
   public Future<IResult> make(MakeSession session, Iterable<? extends IResource> resources, IScript script) {
-    return new FutureValue(doMake(session, resources, script, null));
+    return doMake(session, resources, script, null);
   }
 
   public Future<IResult> make(MakeSession session, Iterable<? extends IResource> resources) {
-    return new FutureValue(doMake(session, resources, defaultMakeScript(), null));
+    return doMake(session, resources, defaultMakeScript(), null);
   }
 
   public boolean isSessionActive() {

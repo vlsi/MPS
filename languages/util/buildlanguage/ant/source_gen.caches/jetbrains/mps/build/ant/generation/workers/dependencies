@@ -106,6 +106,47 @@
     <classNode extendsClassName="jetbrains.mps.build.ant.MpsWorker" />
     <classNode extendsClassName="jetbrains.mps.messages.IMessageHandler" />
   </dependency>
+  <dependency className="jetbrains.mps.build.ant.generation.workers.ReducedGenerationWorker" file="ReducedGenerationWorker.java">
+    <classNode dependClassName="java.io.File" />
+    <classNode dependClassName="java.lang.Boolean" />
+    <classNode dependClassName="java.lang.InterruptedException" />
+    <classNode dependClassName="java.lang.Iterable" />
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.Runnable" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.lang.System" />
+    <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="java.util.HashMap" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="java.util.Map" />
+    <classNode dependClassName="java.util.concurrent.ExecutionException" />
+    <classNode dependClassName="java.util.concurrent.Future" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.Tuples" />
+    <classNode dependClassName="jetbrains.mps.build.ant.MpsWorker" />
+    <classNode dependClassName="jetbrains.mps.build.ant.WhatToDo" />
+    <classNode dependClassName="jetbrains.mps.build.ant.generation.workers.BuildMakeService" />
+    <classNode dependClassName="jetbrains.mps.build.ant.util.ThreadUtils" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
+    <classNode dependClassName="jetbrains.mps.make.MakeSession" />
+    <classNode dependClassName="jetbrains.mps.make.facet.IFacet" />
+    <classNode dependClassName="jetbrains.mps.make.facet.ITarget" />
+    <classNode dependClassName="jetbrains.mps.make.resources.IResource" />
+    <classNode dependClassName="jetbrains.mps.make.script.IPropertiesPool" />
+    <classNode dependClassName="jetbrains.mps.make.script.IResult" />
+    <classNode dependClassName="jetbrains.mps.make.script.IScript" />
+    <classNode dependClassName="jetbrains.mps.make.script.IScriptController" />
+    <classNode dependClassName="jetbrains.mps.make.script.ScriptBuilder" />
+    <classNode dependClassName="jetbrains.mps.project.Project" />
+    <classNode dependClassName="jetbrains.mps.project.ProjectOperationContext" />
+    <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
+    <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
+    <classNode dependClassName="jetbrains.mps.smodel.resources.IMResource" />
+    <classNode extendsClassName="jetbrains.mps.build.ant.generation.workers.GeneratorWorker" />
+  </dependency>
   <dependency className="jetbrains.mps.build.ant.generation.workers.TestGenerationWorker" file="TestGenerationWorker.java">
     <classNode dependClassName="java.io.BufferedOutputStream" />
     <classNode dependClassName="java.io.File" />

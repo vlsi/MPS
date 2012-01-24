@@ -1283,7 +1283,7 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_2712129534618312026(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_context.getNode(), "member", false));
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "member", false), "returnType", true);
   }
 
   public static SNode sourceNodeQuery_7050292266500712641(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
