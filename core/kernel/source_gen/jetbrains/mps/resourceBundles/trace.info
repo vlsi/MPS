@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debugInfo>
+  <root nodeId="2939287019638088102">
+    <unitInfo nodeId="2939287019638088102" fileName="IconResourceBundle.java" startLine="7" startPosition="0" endLine="9" endPosition="0" unitName="jetbrains.mps.resourceBundles.IconResourceBundle" />
+  </root>
+  <root nodeId="2939287019638088106">
+    <nodeInfo nodeId="2939287019638088107" fileName="PluginResourceBundle.java" startLine="6" startPosition="42" endLine="7" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getKeys#()Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="2939287019638088112" fileName="PluginResourceBundle.java" startLine="7" startPosition="36" endLine="8" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getResource#(Ljava/lang/String;)null" />
+    <scopeInfo nodeId="2939287019638088107" fileName="PluginResourceBundle.java" startLine="6" startPosition="42" endLine="7" endPosition="36" />
+    <scopeInfo nodeId="2939287019638088112" fileName="PluginResourceBundle.java" startLine="7" startPosition="36" endLine="8" endPosition="35">
+      <varInfo nodeId="2939287019638088116" varName="key" />
+    </scopeInfo>
+    <unitInfo nodeId="2939287019638088106" fileName="PluginResourceBundle.java" startLine="6" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.resourceBundles.PluginResourceBundle" />
+  </root>
+</debugInfo>
+
