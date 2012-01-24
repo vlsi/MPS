@@ -13,10 +13,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.ide.navigation;
+package jetbrains.mps.openapi.navigation;
 
-import com.intellij.openapi.application.ApplicationManager;
-import com.intellij.openapi.components.ApplicationComponent;
 import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.IOperationContext;

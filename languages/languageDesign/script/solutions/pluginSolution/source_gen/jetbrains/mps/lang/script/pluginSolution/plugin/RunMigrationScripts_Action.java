@@ -23,7 +23,7 @@ import jetbrains.mps.ide.script.plugin.ScriptsActionGroupHelper;
 import jetbrains.mps.ide.script.plugin.RunMigrationScriptsDialog;
 import java.awt.Frame;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.ide.navigation.NavigationSupport;
+import jetbrains.mps.openapi.navigation.NavigationSupport;
 
 public class RunMigrationScripts_Action extends BaseAction {
   private static final Icon ICON = null;
