@@ -15,9 +15,7 @@
  */
 package jetbrains.mps;
 
-import com.intellij.ide.IdeEventQueue;
 import com.intellij.idea.IdeaTestApplication;
-import com.intellij.idea.LoggerFactory;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.application.ModalityState;
 import com.intellij.openapi.project.ex.ProjectManagerEx;
@@ -25,16 +23,10 @@ import com.intellij.openapi.util.InvalidDataException;
 import com.intellij.openapi.vfs.LocalFileSystem;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.vfs.newvfs.persistent.FSRecords;
-import jetbrains.mps.compiler.CompilationResultAdapter;
-import jetbrains.mps.generator.GenParameters;
-import jetbrains.mps.generator.GenerationFacade;
-import jetbrains.mps.generator.GenerationOptions;
-import jetbrains.mps.generator.generationTypes.DiffGenerationHandler;
 import jetbrains.mps.generator.generationTypes.InMemoryJavaGenerationHandler;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.IdeMain.TestMode;
 import jetbrains.mps.ide.ThreadUtils;
-import jetbrains.mps.ide.generator.TransientModelsComponent;
 import jetbrains.mps.logging.ILoggingHandler;
 import jetbrains.mps.logging.LogEntry;
 import jetbrains.mps.logging.Logger;
@@ -42,11 +34,12 @@ import jetbrains.mps.make.ModuleMaker;
 import jetbrains.mps.messages.IMessage;
 import jetbrains.mps.messages.IMessageHandler;
 import jetbrains.mps.progress.EmptyProgressMonitor;
-import jetbrains.mps.project.*;
+import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.MPSExtentions;
+import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.project.Project;
 import jetbrains.mps.project.structure.modules.ClassPathEntry;
 import jetbrains.mps.project.structure.modules.LanguageDescriptor;
-import jetbrains.mps.project.structure.project.testconfigurations.BaseTestConfiguration;
-import jetbrains.mps.project.structure.project.testconfigurations.IllegalGeneratorConfigurationException;
 import jetbrains.mps.refactoring.tests.IRefactoringTester;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.smodel.*;
@@ -79,31 +72,33 @@ public class TestMain {
 
   private static boolean cachesInvalidated = false;
 
-  public static void main(String[] args) {
-    if (args.length != 1) {
-      System.out.println("Usage : TestMain mpsProject");
-      return;
+/*
+    public static void main(String[] args) {
+        if (args.length != 1) {
+            System.out.println("Usage : TestMain mpsProject");
+            return;
+        }
+
+        File projectFile = new File(args[0]);
+        if (!projectFile.exists()) {
+            System.out.println("Can't find a file " + projectFile);
+            return;
+        }
+
+        TestResult result = testProject(projectFile);
+        System.exit(result.isOk() ? 0 : 1);
     }
 
-    File projectFile = new File(args[0]);
-    if (!projectFile.exists()) {
-      System.out.println("Can't find a file " + projectFile);
-      return;
+
+    public static void testProject(File projectFile, ProjectRunnable pr) {
+        IdeMain.setTestMode(TestMode.CORE_TEST);
+        Logger.setThreshold("INFO");
+        org.apache.log4j.BasicConfigurator.configure();
+        TestMain.configureMPS();
+        final Project project = loadProject(projectFile);
+        pr.execute(project);
     }
-
-    TestResult result = testProject(projectFile);
-    System.exit(result.isOk() ? 0 : 1);
-  }
-
-
-  public static void testProject(File projectFile, ProjectRunnable pr) {
-    IdeMain.setTestMode(TestMode.CORE_TEST);
-    Logger.setThreshold("INFO");
-    org.apache.log4j.BasicConfigurator.configure();
-    TestMain.configureMPS();
-    final Project project = loadProject(projectFile);
-    pr.execute(project);
-  }
+*/
 
   public static boolean testOnProjectCopy(final File source, final File destinationDir,
                                           final String projectName, ProjectRunnable pr) {
@@ -130,8 +125,8 @@ public class TestMain {
   }
 
   public static Project startTestOnProjectCopy(final File source, final File destinationDir,
-                                          final String projectName,
-                                          final String... plugins) {
+                                               final String projectName,
+                                               final String... plugins) {
     IdeMain.setTestMode(TestMode.CORE_TEST);
     Logger.setThreshold("WARN");
     org.apache.log4j.BasicConfigurator.configure();
@@ -169,7 +164,7 @@ public class TestMain {
       });
 
       waitUntilAllEventsFlushed();
-      
+
       return project[0];
     } catch (Throwable t) {
       t.printStackTrace();
@@ -190,8 +185,8 @@ public class TestMain {
       }
     });
   }
-  
-  
+
+
   private static void waitUntilAllEventsFlushed() {
     // Wait until last invokeLater() is executed
     ApplicationManager.getApplication().invokeAndWait(new Runnable() {
@@ -245,6 +240,7 @@ public class TestMain {
     return project[0].getComponent(MPSProject.class);
   }
 
+/*
   public static boolean testProjectGenerationForLeaks(File projectFile) {
     return testProjectGenerationForLeaks(projectFile, 1000);
   }
@@ -262,6 +258,7 @@ public class TestMain {
     }, leakThreshold);
   }
 
+*/
 
   public static SModelDescriptor getModel(Project project, String modelName) {
     return project.getScope().getModelDescriptor(SModelReference.fromString(modelName));
@@ -391,20 +388,23 @@ public class TestMain {
     return Runtime.getRuntime().totalMemory() - Runtime.getRuntime().freeMemory();
   }
 
-  public static TestResult testProject(File projectFile) {
-    return testProject(projectFile, false);
-  }
+/*
+    public static TestResult testProject(File projectFile) {
+        return testProject(projectFile, false);
+    }
 
-  public static TestResult testProject(File projectFile, boolean isRunnable) {
-    return testProject(projectFile, isRunnable, new String[0]);
-  }
+    public static TestResult testProject(File projectFile, boolean isRunnable) {
+        return testProject(projectFile, isRunnable, new String[0]);
+    }
+*/
 
-  /**
-   * Null result means no problems, not null result contains error description.
-   *
-   * @param projectFile
-   * @return
-   */
+  /*
+  * Null result means no problems, not null result contains error description.
+  *
+  * @param projectFile
+  * @return
+  */
+/*
   public static TestResult testProject(File projectFile, boolean isRunnable, String[] configurations) {
     com.intellij.openapi.diagnostic.Logger.setFactory(LoggerFactory.getInstance());
     IdeMain.setTestMode(TestMode.CORE_TEST);
@@ -456,7 +456,7 @@ public class TestMain {
 
     return result;
   }
-
+*/
   public static void configureMPS() {
     configureMPS(DEFAULT_ENABLED_PLUGINS);
   }
@@ -490,7 +490,6 @@ public class TestMain {
     } catch (Exception e) {
       throw new RuntimeException(e);
     }
-
   }
 
   public static void disposeMPS() {
@@ -614,10 +613,13 @@ public class TestMain {
       return found;
     }
 
+/*
     public TestResult testProject() {
       return testProject(new String[0]);
     }
+*/
 
+/*
     public TestResult testProject(final String[] configurationsGiven) {
       ClassLoaderManager.getInstance().reloadAll(new EmptyProgressMonitor());
 
@@ -637,7 +639,7 @@ public class TestMain {
 
         ModelAccess.instance().runWriteAction(new Runnable() {
           public void run() {
-            List<BaseTestConfiguration> configurations = new ArrayList<BaseTestConfiguration>(((StandaloneMPSProject)myProject).getProjectDescriptor().getTestConfigurations());
+            List<BaseTestConfiguration> configurations = new ArrayList<BaseTestConfiguration>(((MPSProject) myProject).getProjectDescriptor().getTestConfigurations());
 
             if (configurations.isEmpty()) {
               throw new RuntimeException("tested project has no test configurations");
@@ -719,6 +721,7 @@ public class TestMain {
 
       return new TestResult(errors, warnings, compilationResults, failedTests, diffReports);
     }
+*/
 
     private static class MyIMessageHandler implements IMessageHandler {
       private final List<String> myErrors;

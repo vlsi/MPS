@@ -31,37 +31,8 @@ public class BaseMPSTest extends TestCase {
     waitForEDTTasksToComplete();
   }
 
-  public  static void waitForEDTTasksToComplete() {
+  public static void waitForEDTTasksToComplete() {
     ModelAccess.instance().flushEventQueue();
-  }
-
-  protected void assertGenerates(File project, boolean runnable, String... configurations) {
-    TestResult res = testProject(project, runnable, configurations);
-    assertTrue(res.isOk());
-  }
-
-  protected void assertGenerates(File project, boolean runnable) {
-    assertGenerates(project, runnable, new String[0]);
-  }
-
-  protected void assertGenerates(File project) {
-    assertGenerates(project, false, new String[0]);
-  }
-
-  protected TestResult testProject(File project, String[] configurations) {
-    return TestMain.testProject(project, false, configurations);
-  }
-
-  protected TestResult testProject(File project, boolean runnable, String[] configurations) {
-    return TestMain.testProject(project, runnable, configurations);
-  }
-
-  protected TestResult testProject(File project) {
-    return TestMain.testProject(project, false, new String[0]);
-  }
-
-  protected boolean testProjectGenerationForLeaks(File project) {
-    return TestMain.testProjectGenerationForLeaks(project);
   }
 
   protected boolean testRefactoringTestEnvironment(File projectDirectory) {

@@ -13,9 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.ide.blame.command;
+package jetbrains.mps.ide.test.blame.command;
 
 import jetbrains.mps.TestMain;
+import jetbrains.mps.ide.blame.command.Command;
+import jetbrains.mps.ide.blame.command.Poster;
 import jetbrains.mps.ide.blame.perform.Query;
 import jetbrains.mps.ide.blame.perform.Response;
 import junit.framework.TestCase;

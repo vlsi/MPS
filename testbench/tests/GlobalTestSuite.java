@@ -46,7 +46,7 @@ import org.junit.runner.RunWith;
 //  "jetbrains.mps.vcs.changesmanager.ChangesManagerTest", [temporarily disabled]
   "jetbrains.mps.vcs.diff.merge.MergeCoreTest",
   "jetbrains.mps.vfs.VfsTest",
-  "jetbrains.mps.ide.blame.command.AffectedVersionTest",
+  "jetbrains.mps.ide.test.blame.command.AffectedVersionTest",
   "jetbrains.mps.workbench.ProjectCreationTest",
   "jetbrains.mps.workbench.dialogs.project.components.parts.lists.SortedListTest"})
 @RunWith(WatchingSuite.class)
