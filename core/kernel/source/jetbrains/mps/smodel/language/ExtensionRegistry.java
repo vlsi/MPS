@@ -17,12 +17,20 @@ package jetbrains.mps.smodel.language;
 
 import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.smodel.structure.Extension;
+import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.Solution;
+import jetbrains.mps.project.structure.modules.SolutionDescriptor;
+import jetbrains.mps.reloading.ClassLoaderManager;
+import jetbrains.mps.smodel.Language;
+import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.ModuleRepositoryAdapter;
 import jetbrains.mps.smodel.structure.ExtensionDescriptor;
-import jetbrains.mps.smodel.structure.ExtensionPoint;
 import jetbrains.mps.util.misc.hash.HashMap;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.*;
+import java.util.concurrent.atomic.AtomicBoolean;
 
 /**
  * Created by IntelliJ IDEA.
@@ -31,170 +39,183 @@ import java.util.*;
  * Time: 4:31 PM
  * To change this template use File | Settings | File Templates.
  */
-public class ExtensionRegistry implements CoreComponent {
+public class ExtensionRegistry extends BaseExtensionRegistry implements CoreComponent {
 
   private static Logger LOG = Logger.getLogger(ExtensionRegistry.class);
 
   private static ExtensionRegistry INSTANCE;
-  
-  private Map<String, Collection<Extension>> myActiveExtensions;
-  private Map<String, Collection<Extension>> myInactiveExtensions;
-  private Map<String, ExtensionPoint> myExtensionPoints;
 
-  
+  private Map<IModule, String> myModuleToNamespace = new HashMap<IModule, String>();
+  private HashMap<String, ExtensionDescriptor> myExtensionDescriptors = new HashMap<String, ExtensionDescriptor>();
+  private AtomicBoolean myInitialLoadHappened = new AtomicBoolean(false);
+
   public static ExtensionRegistry getInstance() {
     return INSTANCE;
   }
   
   @Override
   public void init() {
+    if (INSTANCE != null) {
+      throw new IllegalStateException("double initialization");
+    }
     INSTANCE = this;
-    myActiveExtensions = new HashMap<String, Collection<Extension>>();
-    myInactiveExtensions = new HashMap<String, Collection<Extension>>();
-    myExtensionPoints = new HashMap<String, ExtensionPoint>();
   }
 
   @Override
   public void dispose() {
+    ModelAccess.instance().runWriteAction(new Runnable() {
+      public void run() {
+        myModuleToNamespace.clear();
+        myExtensionDescriptors.clear();
+        ExtensionRegistry.this.clear();
+      }
+    });
     INSTANCE = null;
   }
 
-  @SuppressWarnings("unchecked")
-  public <T> ExtensionPoint<T> getExtensionPoint(String id, Class<T> type) {
-    return (ExtensionPoint<T>)myExtensionPoints.get(id);
-  }
-  
-  public boolean hasExtensionPoint (String id) {
-    return myExtensionPoints.containsKey(id);
-  }
+  // can be called multiple times
+  public void loadExtensionDescriptors () {
+    if (!myInitialLoadHappened.compareAndSet(false, true)) return;
 
-  public <T> Iterable<Extension<T>> getExtensions (ExtensionPoint<T> extensionPoint) {
-    return optExtensionsBucket(extensionPoint.getId(), activeExtensions(extensionPoint));
-  }
+    ModelAccess.instance().runWriteAction(new Runnable() {
+      public void run() {
+        MPSModuleRepository.getInstance().addModuleRepositoryListener(new ModuleRepositoryAdapter() {
+          @Override
+          public void moduleAdded(IModule module) {
+            String namespace = module.getModuleFqName();
+            // avoid duplicates in registry
+            if (!myExtensionDescriptors.containsKey(namespace)) {
+              ExtensionDescriptor desc = findExtensionDescriptor(module);
+              if (desc != null) {
+                myExtensionDescriptors.put(namespace, desc);
+                myModuleToNamespace.put(module, namespace);
+                registerExtensionDescriptor(desc);
+              }
+            }
+          }
 
-  public <T> boolean hasExtensions (String id, ExtensionPoint<T> extensionPoint) {
-    return !optExtensionsBucket(id, activeExtensions(extensionPoint)).isEmpty();
-  }
+          @Override
+          public void moduleRemoved(IModule module) {
+            String namespace = myModuleToNamespace.get(module);
+            if (namespace != null) {
+              ExtensionDescriptor desc = myExtensionDescriptors.remove(namespace);
+              if (desc != null) {
+                unregisterExtensionDescriptor(desc);
+                myModuleToNamespace.remove(module);
+              }
+            }
+          }
+        });
 
-  @SuppressWarnings("unchecked")
-  public void registerExtensionDescriptor(ExtensionDescriptor extensionDescriptor) {
-    for (Extension extension: extensionDescriptor.getExtensions()) {
-      if (hasExtensionPoint(extension.getExtensionPointId())) {
-        registerActiveExtension(extension);
+        reloadExtensionDescriptors();
       }
-      else{
-        registerInactiveExtension(extension);
+    });
+  }
+
+  public void reloadExtensionDescriptors () {
+    ModelAccess.assertLegalWrite();
+
+    for (ExtensionDescriptor desc: myExtensionDescriptors.values()) {
+      unregisterExtensionDescriptor(desc);
+    }
+    myExtensionDescriptors.clear();
+
+    Set<IModule> existing = new HashSet<IModule>(myModuleToNamespace.keySet());
+    for (IModule mod : MPSModuleRepository.getInstance().getAllModules()) {
+      String namespace = mod.getModuleFqName();
+      if (!myExtensionDescriptors.containsKey(namespace)) {
+        existing.remove(mod);
+        ExtensionDescriptor desc = findExtensionDescriptor(mod);
+        if (desc != null) {
+          myModuleToNamespace.put(mod, namespace);
+          myExtensionDescriptors.put(namespace, desc);
+          registerExtensionDescriptor(desc);
+        }
+      } else {
+        // duplicate module, ignore
       }
     }
-    for (ExtensionPoint extensionPoint: extensionDescriptor.getExtensionPoints()) {
-      myExtensionPoints.put(extensionPoint.getId(), extensionPoint);
-      activateExtensionPoint(extensionPoint);
+    for (IModule mod : existing) {
+      myModuleToNamespace.remove(mod);
     }
   }
 
   @SuppressWarnings("unchecked")
-  public void unregisterExtensionDescriptor(ExtensionDescriptor extensionDescriptor) {
-    for (ExtensionPoint extensionPoint: extensionDescriptor.getExtensionPoints()) {
-      deactivateExtensionPoint(extensionPoint);
-      myExtensionPoints.remove(extensionPoint.getId());
+  /*package for tests*/ void registerExtensionDescriptor(ExtensionDescriptor extensionDescriptor) {
+    registerExtensions(extensionDescriptor.getExtensions());
+    registerExtensionPoints(extensionDescriptor.getExtensionPoints());
+  }
+
+  @SuppressWarnings("unchecked")
+  /*package for tests*/ void unregisterExtensionDescriptor(ExtensionDescriptor extensionDescriptor) {
+    unregisterExtensionPoints(extensionDescriptor.getExtensionPoints());
+    unregisterExtensions(extensionDescriptor.getExtensions());
+  }
+
+  private ExtensionDescriptor findExtensionDescriptor(IModule mod) {
+    if (mod instanceof Language) {
+      return findLanguageExtensionDescriptor((Language) mod);
     }
-    for (Extension extension: extensionDescriptor.getExtensions()) {
-      if (hasExtensionPoint(extension.getExtensionPointId())) {
-        unregisterActiveExtension(extension);
+    else if (mod instanceof Solution) {
+      SolutionDescriptor sdesc = (SolutionDescriptor) mod.getModuleDescriptor();
+      switch (sdesc.getKind()) {
+        case PLUGIN_CORE:
+        case PLUGIN_EDITOR:
+        case PLUGIN_OTHER:
+          return findPluginSolutionExtensionDescriptor((Solution) mod);
+
+        default: 
+          break;
       }
-      else {
-        unregisterInactiveExtension(extension);
+    }
+    return null;
+  }
+
+  private ExtensionDescriptor findPluginSolutionExtensionDescriptor(Solution solution) {
+    // TODO: more flexible way of loading extensions from plugin solution
+    String namespace = solution.getModuleFqName();
+    String className = namespace + ".plugin.ExtensionDescriptor";
+    Object compiled = getObjectByClassName(className, solution, true);
+    if (compiled instanceof ExtensionDescriptor) {
+      return (ExtensionDescriptor) compiled;
+    }
+    return null;
+  }
+
+  private ExtensionDescriptor findLanguageExtensionDescriptor(Language lang) {
+    String namespace = lang.getModuleFqName();
+    String className = namespace + ".plugin.ExtensionDescriptor";
+    Object compiled = getObjectByClassName(className, lang, true);
+    if (compiled instanceof ExtensionDescriptor) {
+      return (ExtensionDescriptor) compiled;
+    }
+    return null;
+  }
+
+  @Nullable
+  public static Object getObjectByClassName (String className, @Nullable IModule module, boolean avoidLogErrors) {
+    try {
+      if (module == null) {
+        return null;
       }
+
+      if (avoidLogErrors) {
+        ClassLoader cl = ClassLoaderManager.getInstance().getClassLoaderFor(module, false);
+        if (cl == null) {
+          return null;
+        }
+      }
+
+      Class clazz = module.getClass(className);
+      if (clazz == null) {
+        return null;
+      }
+
+      return clazz.newInstance();
+    } catch (Throwable e) {
+      LOG.debug("error loading class\""+className+"\"", e);
     }
-  }
-
-  private <T> void registerActiveExtension(Extension<T> extension) {
-    if (activateExtension(extension)) {
-      extensionsBucket(extension.getExtensionPointId(), activeExtensions(extension)).add(extension);
-    }
-  }
-
-  private <T> void unregisterActiveExtension(Extension<T> extension) {
-    if (optExtensionsBucket(extension.getExtensionPointId(), activeExtensions(extension)).remove(extension)) {
-      deactivateExtension(extension);
-    }
-  }
-
-  private <T> void registerInactiveExtension(Extension<T> extension) {
-    extensionsBucket(extension.getExtensionPointId(), inactiveExtensions(extension)).add(extension);
-  }
-
-  private <T> void unregisterInactiveExtension(Extension<T> extension){
-    extensionsBucket(extension.getExtensionPointId(), inactiveExtensions(extension)).remove(extension);
-  }
-
-  private <T> void activateExtensionPoint(ExtensionPoint<T> extensionPoint) {
-    for (Extension<T> extension: optExtensionsBucket(extensionPoint.getId(), inactiveExtensions(extensionPoint))) {
-      activateExtension(extension);
-      extensionsBucket(extensionPoint.getId(), activeExtensions(extensionPoint)).add(extension);
-    }
-    clearExtensionsBucket(extensionPoint.getId(), inactiveExtensions(extensionPoint));
-  }
-
-  private <T> void deactivateExtensionPoint(ExtensionPoint<T> extensionPoint) {
-    for (Extension<T> extension: optExtensionsBucket(extensionPoint.getId(), activeExtensions(extensionPoint))) {
-      deactivateExtension(extension);
-      extensionsBucket(extensionPoint.getId(), inactiveExtensions(extensionPoint)).add(extension);
-    }
-    clearExtensionsBucket(extensionPoint.getId(), activeExtensions(extensionPoint));
-  }
-
-  private <T> Collection<Extension<T>> extensionsBucket(String id, Map<String, Collection<Extension<T>>> store) {
-    Collection<Extension<T>> extensions = (Collection<Extension<T>>) store.get(id);
-    if (extensions == null) {
-      extensions = new ArrayList<Extension<T>>();
-      store.put(id, extensions);
-    }
-    return extensions;
-  }
-
-  private <T> Collection<Extension<T>> optExtensionsBucket(String id, Map<String, Collection<Extension<T>>> store) {
-    Collection<Extension<T>> extensions = store.get(id);
-    return extensions != null ? extensions : Collections.<Extension<T>>emptyList();
-  }
-
-  private <T> void clearExtensionsBucket(String id, Map<String, Collection<Extension<T>>> store) {
-    Collection<Extension<T>> extensions = store.get(id);
-    if(extensions != null) {
-      extensions.clear();
-      store.remove(id);
-    }
-  }
-
-  private boolean activateExtension(Extension extension) {
-    extension.activate();
-    return true;
-  }
-
-  private boolean deactivateExtension(Extension extension) {
-    extension.deactivate();
-    return true;
-  }
-
-
-  @SuppressWarnings("unchecked")
-  private <T> Map<String,Collection<Extension<T>>> inactiveExtensions (ExtensionPoint<T> extensionPoint) {
-    return (Map<String,Collection<Extension<T>>>) (Map) myInactiveExtensions;
-  }
-
-  @SuppressWarnings("unchecked")
-  private <T> Map<String,Collection<Extension<T>>> activeExtensions (ExtensionPoint<T> extensionPoint) {
-    return (Map<String,Collection<Extension<T>>>) (Map) myActiveExtensions;
-  }
-
-  @SuppressWarnings("unchecked")
-  private <T> Map<String,Collection<Extension<T>>> inactiveExtensions (Extension<T> extensionPoint) {
-    return (Map<String,Collection<Extension<T>>>) (Map) myInactiveExtensions;
-  }
-
-  @SuppressWarnings("unchecked")
-  private <T> Map<String,Collection<Extension<T>>> activeExtensions (Extension<T> extensionPoint) {
-    return (Map<String,Collection<Extension<T>>>) (Map) myActiveExtensions;
+    return null;
   }
 
 }
