@@ -75,6 +75,7 @@
                 <file file="${base_dir}/lib/diffutils-1.2.1.jar"/>
             </resources>
         </copy>
+        <mkdir dir="${base_dir}/IdeaPlugin/mps-core/languages"/>
         <!-- TODO build languages -->
     </target>
 
