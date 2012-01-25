@@ -48,7 +48,8 @@ import org.junit.runner.RunWith;
   "jetbrains.mps.vfs.VfsTest",
   "jetbrains.mps.ide.blame.command.AffectedVersionTest",
   "jetbrains.mps.workbench.ProjectCreationTest",
-  "jetbrains.mps.workbench.dialogs.project.components.parts.lists.SortedListTest"})
+  "jetbrains.mps.workbench.dialogs.project.components.parts.lists.SortedListTest",
+  "jetbrains.mps.smodel.language.ExtensionRegistryTest"})
 @RunWith(WatchingSuite.class)
 public class GlobalTestSuite extends TestSuite {
   @BeforeClass
