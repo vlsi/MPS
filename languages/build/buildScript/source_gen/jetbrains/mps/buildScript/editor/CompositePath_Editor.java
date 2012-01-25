@@ -23,6 +23,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_PropertyValues;
 import java.util.List;
 import jetbrains.mps.buildScript.behavior.CompositePath_Behavior;
+import jetbrains.mps.buildScript.behavior.BuildRelativePath_Behavior;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.buildScript.util.Context;
 
 public class CompositePath_Editor extends DefaultNodeEditor {
@@ -109,7 +111,7 @@ public class CompositePath_Editor extends DefaultNodeEditor {
     }
 
     public List<String> getPropertyValues(SNode node, IScope scope, IOperationContext operationContext) {
-      return CompositePath_Behavior.call_getHeadSuggestions_4959435991187212109(node, Context.defaultContext(node));
+      return CompositePath_Behavior.call_getHeadSuggestions_4959435991187212109(node, BuildRelativePath_Behavior.call_getBasePath_4959435991187140515(SNodeOperations.getAncestor(node, "jetbrains.mps.buildScript.structure.BuildRelativePath", false, false), Context.defaultContext(node)));
     }
   }
 }

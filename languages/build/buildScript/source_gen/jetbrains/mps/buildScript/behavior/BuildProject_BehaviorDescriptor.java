@@ -26,7 +26,7 @@ public class BuildProject_BehaviorDescriptor extends BaseConcept_BehaviorDescrip
     return INamedConcept_Behavior.virtual_getFqName_1213877404258(thisNode);
   }
 
-  public Scope virtual_getScope_3734116213129936182(SNode thisNode, SNode kind, SNode child) {
+  public Scope virtual_getScope_3734116213129936182(SNode thisNode, SNode kind, final SNode child) {
     return BuildProject_Behavior.virtual_getScope_3734116213129936182(thisNode, kind, child);
   }
 

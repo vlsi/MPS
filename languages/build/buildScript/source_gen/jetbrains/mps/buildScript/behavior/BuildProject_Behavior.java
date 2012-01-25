@@ -5,26 +5,40 @@ package jetbrains.mps.buildScript.behavior;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.scope.Scope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.scope.SimpleRoleScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.scope.DelegatingScope;
+import java.util.List;
+import org.jetbrains.annotations.Nullable;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 
 public class BuildProject_Behavior {
   public static void init(SNode thisNode) {
   }
 
-  public static Scope virtual_getScope_3734116213129936182(SNode thisNode, SNode kind, SNode child) {
+  public static Scope virtual_getScope_3734116213129936182(SNode thisNode, SNode kind, final SNode child) {
     if (kind == SConceptOperations.findConceptDeclaration("jetbrains.mps.buildScript.structure.BuildMacro")) {
-      if (child != null && "macros".equals(SNodeOperations.getContainingLinkRole(child))) {
-        // TODO filter 
-      }
-
-      return new SimpleRoleScope(thisNode, SLinkOperations.findLinkDeclaration("jetbrains.mps.buildScript.structure.BuildProject", "macros")) {
+      SimpleRoleScope scope = new SimpleRoleScope(thisNode, SLinkOperations.findLinkDeclaration("jetbrains.mps.buildScript.structure.BuildProject", "macros")) {
         public String getName(SNode child) {
           return SPropertyOperations.getString(SNodeOperations.cast(child, "jetbrains.mps.buildScript.structure.BuildMacro"), "name");
         }
       };
+      if (child != null && "macros".equals(SNodeOperations.getContainingLinkRole(child))) {
+        return new DelegatingScope(scope) {
+          public List<SNode> getAvailableElements(@Nullable String prefix) {
+            return ListSequence.fromList(wrapped.getAvailableElements(prefix)).where(new IWhereFilter<SNode>() {
+              public boolean accept(SNode it) {
+                return !(ListSequence.fromList(SNodeOperations.getNextSiblings(child, false)).contains(it));
+              }
+            }).toListSequence();
+          }
+        };
+      }
+
+      return scope;
     }
     return null;
   }

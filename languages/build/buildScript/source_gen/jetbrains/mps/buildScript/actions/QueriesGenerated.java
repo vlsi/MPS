@@ -17,6 +17,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.buildScript.behavior.CompositePath_Behavior;
+import jetbrains.mps.buildScript.behavior.BuildRelativePath_Behavior;
 import jetbrains.mps.buildScript.util.Context;
 import jetbrains.mps.smodel.action.DefaultChildNodeSubstituteAction;
 import jetbrains.mps.smodel.SModel;
@@ -54,7 +55,7 @@ public class QueriesGenerated {
       if (SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
         Computable computable = new Computable() {
           public Object compute() {
-            return CompositePath_Behavior.call_getHeadSuggestions_4959435991187212109(_context.getCurrentTargetNode(), Context.defaultContext(_context.getCurrentTargetNode()));
+            return CompositePath_Behavior.call_getHeadSuggestions_4959435991187212109(_context.getCurrentTargetNode(), BuildRelativePath_Behavior.call_getBasePath_4959435991187140515(SNodeOperations.getAncestor(_context.getCurrentTargetNode(), "jetbrains.mps.buildScript.structure.BuildRelativePath", false, false), Context.defaultContext(_context.getCurrentTargetNode())));
           }
         };
         Iterable<String> queryResult = (Iterable) computable.compute();

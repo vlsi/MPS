@@ -5,9 +5,8 @@ package jetbrains.mps.buildScript.behavior;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import java.util.List;
-import jetbrains.mps.buildScript.util.Context;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import java.io.File;
@@ -26,22 +25,21 @@ public class CompositePath_Behavior {
     return SPropertyOperations.getString(thisNode, "head");
   }
 
-  public static List<String> call_getHeadSuggestions_4959435991187212109(SNode thisNode, Context context) {
-    // todo 
-    SNode relativePathNode = SNodeOperations.getAncestor(thisNode, "jetbrains.mps.buildScript.structure.BuildRelativePath", false, false);
-    String relativePath = BuildRelativePath_Behavior.call_getBasePath_4959435991187140515(relativePathNode, context);
+  public static String call_getPathToHead_3968971886499106107(SNode thisNode) {
+    if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(thisNode), "jetbrains.mps.buildScript.structure.CompositePath")) {
+      return CompositePath_Behavior.call_getPathToHead_3968971886499106107(SNodeOperations.cast(SNodeOperations.getParent(thisNode), "jetbrains.mps.buildScript.structure.CompositePath")) + "/" + SPropertyOperations.getString(thisNode, "head");
+    }
+    return SPropertyOperations.getString(thisNode, "head");
+  }
+
+  public static List<String> call_getHeadSuggestions_4959435991187212109(SNode thisNode, String basePath) {
+    String relativePath = basePath;
     if (relativePath == null) {
       return ListSequence.fromList(new ArrayList<String>());
     }
 
-    SNode start = SLinkOperations.getTarget(relativePathNode, "compositePart", true);
-    while (start != thisNode) {
-      if (start == null) {
-        // this is actually wtf 
-        return ListSequence.fromList(new ArrayList<String>());
-      }
-      relativePath += "/" + SPropertyOperations.getString(start, "head");
-      start = SLinkOperations.getTarget(start, "tail", true);
+    if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(thisNode), "jetbrains.mps.buildScript.structure.CompositePath")) {
+      relativePath += "/" + CompositePath_Behavior.call_getPathToHead_3968971886499106107(SNodeOperations.cast(SNodeOperations.getParent(thisNode), "jetbrains.mps.buildScript.structure.CompositePath"));
     }
 
     File file = new File(relativePath);
