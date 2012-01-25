@@ -72,6 +72,7 @@
   <import index="lq3" modelUID="f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#com.intellij.openapi.ui(MPS.Workbench/com.intellij.openapi.ui@java_stub)" version="-1" />
   <import index="lzd0" modelUID="r:97aec248-a91c-439e-a7f1-5184e2da6816(jetbrains.mps.lang.dataFlow.pluginSolution.plugin)" version="-1" />
   <import index="oobn" modelUID="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.openapi.navigation(MPS.Editor/jetbrains.mps.openapi.navigation@java_stub)" version="-1" />
+  <import index="5mvf" modelUID="f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#com.intellij.util(MPS.Workbench/com.intellij.util@java_stub)" version="-1" />
   <import index="bj1v" modelUID="r:8b09f5e2-b403-4747-aaa3-eac5acb1f753(jetbrains.mps.analyzers.structure)" version="0" implicit="yes" />
   <import index="tprs" modelUID="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)" version="-1" implicit="yes" />
   <import index="tp4f" modelUID="r:00000000-0000-4000-0000-011c89590373(jetbrains.mps.baseLanguage.classifiers.structure)" version="0" implicit="yes" />
@@ -331,6 +332,9 @@
       <property name="caption" nameId="tp4k.1205250923097" value="Rename Method" />
       <property name="outsideCommandExecution" nameId="tp4k.1211298967294" value="true" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Actions" />
+    </node>
+    <node type="tp4k.IconResourceBundle" typeId="tp4k.7038317550322744766" id="8814893218132245029">
+      <property name="name" nameId="tpck.1169194664001" value="Visibility" />
     </node>
   </roots>
   <root id="5487985028841873794">
@@ -13947,6 +13951,36 @@
             </node>
           </node>
         </node>
+      </node>
+    </node>
+  </root>
+  <root id="8814893218132245029">
+    <node role="icons" roleId="tp4k.7038317550322744874" type="tp4k.IconResourceDeclaration" typeId="tp4k.7038317550322744875" id="8814893218132245030">
+      <property name="name" nameId="tpck.1169194664001" value="PACKAGE_LOCAL" />
+      <node role="iconExpression" roleId="tp4k.7038317550322744876" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="5017341185733869607">
+        <link role="classifier" roleId="tpee.1144433057691" targetNodeId="5mvf.~Icons" resolveInfo="Icons" />
+        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5mvf.~PlatformIcons%dPACKAGE_LOCAL_ICON" resolveInfo="PACKAGE_LOCAL_ICON" />
+      </node>
+    </node>
+    <node role="icons" roleId="tp4k.7038317550322744874" type="tp4k.IconResourceDeclaration" typeId="tp4k.7038317550322744875" id="8814893218132245042">
+      <property name="name" nameId="tpck.1169194664001" value="PUBLIC" />
+      <node role="iconExpression" roleId="tp4k.7038317550322744876" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="5017341185733869617">
+        <link role="classifier" roleId="tpee.1144433057691" targetNodeId="5mvf.~Icons" resolveInfo="Icons" />
+        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5mvf.~PlatformIcons%dPUBLIC_ICON" resolveInfo="PUBLIC_ICON" />
+      </node>
+    </node>
+    <node role="icons" roleId="tp4k.7038317550322744874" type="tp4k.IconResourceDeclaration" typeId="tp4k.7038317550322744875" id="8814893218132245044">
+      <property name="name" nameId="tpck.1169194664001" value="PRIVATE" />
+      <node role="iconExpression" roleId="tp4k.7038317550322744876" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="8814893218132245046">
+        <link role="classifier" roleId="tpee.1144433057691" targetNodeId="5mvf.~Icons" resolveInfo="Icons" />
+        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5mvf.~PlatformIcons%dPRIVATE_ICON" resolveInfo="PRIVATE_ICON" />
+      </node>
+    </node>
+    <node role="icons" roleId="tp4k.7038317550322744874" type="tp4k.IconResourceDeclaration" typeId="tp4k.7038317550322744875" id="8814893218132245047">
+      <property name="name" nameId="tpck.1169194664001" value="PROTECTED" />
+      <node role="iconExpression" roleId="tp4k.7038317550322744876" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="8814893218132245049">
+        <link role="classifier" roleId="tpee.1144433057691" targetNodeId="5mvf.~Icons" resolveInfo="Icons" />
+        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5mvf.~PlatformIcons%dPROTECTED_ICON" resolveInfo="PROTECTED_ICON" />
       </node>
     </node>
   </root>

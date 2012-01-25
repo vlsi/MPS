@@ -7,7 +7,7 @@ import java.util.Map;
 import javax.swing.Icon;
 import java.util.HashMap;
 
-public class IconResourceBundle_Behavior extends IconContainer implements IconResourceBundle {
+public class IconResourceBundle_Behavior implements IconResourceBundle {
   private static IconResourceBundle_Behavior INSTANCE = new IconResourceBundle_Behavior();
 
   private Map<String, Icon> icons = new HashMap<String, Icon>() {

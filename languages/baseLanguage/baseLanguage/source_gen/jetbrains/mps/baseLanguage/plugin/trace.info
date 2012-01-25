@@ -7,7 +7,7 @@
   <unitInfo fileName="FacetManifest.java" startLine="25" startPosition="55" endLine="29" endPosition="5" unitName="jetbrains.mps.baseLanguage.plugin.FacetManifest$1" />
   <unitInfo fileName="IconContainer.java" startLine="8" startPosition="0" endLine="13" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.IconContainer" />
   <root nodeId="2990235398088186554">
-    <nodeInfo nodeId="2990235398088186554" fileName="IconResourceBundle_Behavior.java" startLine="10" startPosition="94" endLine="11" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="INSTANCE" />
+    <nodeInfo nodeId="2990235398088186554" fileName="IconResourceBundle_Behavior.java" startLine="10" startPosition="72" endLine="11" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="INSTANCE" />
     <nodeInfo nodeId="2990235398088186554" fileName="IconResourceBundle_Behavior.java" startLine="14" startPosition="5" endLine="15" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2990235398088186554" fileName="IconResourceBundle_Behavior.java" startLine="15" startPosition="46" endLine="16" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2990235398088186554" fileName="IconResourceBundle_Behavior.java" startLine="16" startPosition="47" endLine="17" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
