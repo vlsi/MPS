@@ -11,10 +11,10 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
+import java.util.List;
 import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.io.File;
-import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
@@ -49,6 +49,19 @@ public class Layout_Behavior {
 
   public static String call_getFolderToGenerate_1229522949966(SNode thisNode) {
     return IPath_Behavior.call_getFile_1233322718999(SLinkOperations.getTarget(thisNode, "scriptsDirectory", true)).getAbsolutePath();
+  }
+
+  public static String virtual_evaluateMacro_1234975967990(SNode thisNode, String macroName) {
+    if (macroName.equals(Layout_Behavior.getScriptsDirName_462257719548547202())) {
+      return Path_Behavior.call_getFullPathWithoutMacro_1226511495568(SLinkOperations.getTarget(thisNode, "scriptsDirectory", true));
+    }
+    return IMacroHolder_Behavior.callSuper_evaluateMacro_1234975967990(thisNode, "jetbrains.mps.build.packaging.structure.Layout", macroName);
+  }
+
+  public static List<String> virtual_getAllMacroNames_1234975567387(SNode thisNode, boolean addBasedir) {
+    List<String> allMacroNames = IMacroHolder_Behavior.callSuper_getAllMacroNames_1234975567387(thisNode, "jetbrains.mps.build.packaging.structure.Layout", addBasedir);
+    ListSequence.fromList(allMacroNames).addElement(Layout_Behavior.getScriptsDirName_462257719548547202());
+    return allMacroNames;
   }
 
   public static String virtual_getPath_1234976932856(SNode thisNode) {

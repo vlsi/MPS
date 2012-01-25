@@ -13,7 +13,7 @@ import javax.swing.JPanel;
 import java.awt.GridBagLayout;
 import javax.swing.JLabel;
 import jetbrains.mps.ide.common.LayoutUtil;
-import jetbrains.mps.execution.lib.ui.IJavaNodeChangeListener;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import com.intellij.openapi.options.ConfigurationException;
@@ -49,8 +49,8 @@ public class CustomMPSApplication_Configuration_Editor extends SettingsEditorEx<
 
     panel.add(mySettings.createEditor(), LayoutUtil.createPanelConstraints(3));
 
-    myChooser.addNodeChangeListener(new IJavaNodeChangeListener() {
-      public void nodeChanged(SNode node) {
+    myChooser.addNodeChangeListener(new _FunctionTypes._void_P1_E0<SNode>() {
+      public void invoke(SNode node) {
         myConfigurationChoosePanel.nodeChanged(SNodeOperations.cast(node, "jetbrains.mps.build.packaging.structure.Layout"));
       }
     });
