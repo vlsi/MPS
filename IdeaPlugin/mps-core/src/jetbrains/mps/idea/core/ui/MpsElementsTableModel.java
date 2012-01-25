@@ -32,10 +32,12 @@ public class MpsElementsTableModel<T> extends AbstractTableModel implements Item
     private List<T> myElements = Collections.emptyList();
     private Comparator<T> myComparator;
     private Class<?> myDefaultColumnClass;
+    private String myColumnTitle;
 
-    MpsElementsTableModel(Comparator<T> comparator, Class<?> defaultColumnClass) {
+    MpsElementsTableModel(Comparator<T> comparator, Class<?> defaultColumnClass, String singleColumnTitle) {
         myComparator = comparator;
         myDefaultColumnClass = defaultColumnClass;
+        myColumnTitle = singleColumnTitle == null ? "" : singleColumnTitle;
     }
 
     @Override
@@ -64,7 +66,7 @@ public class MpsElementsTableModel<T> extends AbstractTableModel implements Item
 
     @Override
     public String getColumnName(int column) {
-        return "";
+        return myColumnTitle;
     }
 
     @Override

@@ -78,6 +78,11 @@ public class ImportedModelsTable extends MpsElementsTable<SModelReference> {
         return MPSBundle.message("imported.models.chooser.title");
     }
 
+    @Override
+    protected String getColumnTitle() {
+        return MPSBundle.message("imported.models.table.column.title");
+    }
+
     private static final class ModelReferenceComparator implements Comparator<SModelReference> {
         @Override
         public int compare(SModelReference o1, SModelReference o2) {

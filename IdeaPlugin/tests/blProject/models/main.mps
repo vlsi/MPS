@@ -2,8 +2,10 @@
 <model modelUID="r:cdf0e280-e3c2-44a8-9746-0304f21e463c(main)">
   <persistence version="7" />
   <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
+  <language namespace="ed6d7656-532c-4bc2-81d1-af945aeb8280(jetbrains.mps.baseLanguage.blTypes)" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="-1" implicit="yes" />
+  <import index="tpdt" modelUID="r:00000000-0000-4000-0000-011c895902dd(jetbrains.mps.baseLanguage.blTypes.structure)" version="-1" implicit="yes" />
   <roots>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="7015818220060178316">
       <property name="name" nameId="tpck.1169194664001" value="MainClass" />
@@ -17,6 +19,7 @@
     <node type="tpee.Interface" typeId="tpee.1107796713796" id="7015818220060279086">
       <property name="name" nameId="tpck.1169194664001" value="SimpleMarker" />
     </node>
+    <node type="tpdt.PrimitiveTypeDescriptor" typeId="tpdt.1159268590033" id="2059914778922453424" />
   </roots>
   <root id="7015818220060178316">
     <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="7015818220060178317" />
@@ -98,5 +101,6 @@
   <root id="7015818220060279086">
     <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="7015818220060279087" />
   </root>
+  <root id="2059914778922453424" />
 </model>
 

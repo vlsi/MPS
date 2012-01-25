@@ -104,6 +104,11 @@ public class UsedLanguagesTable extends MpsElementsTable<ModuleReference> {
         return MPSBundle.message("used.languages.chooser.title");
     }
 
+    @Override
+    protected String getColumnTitle() {
+        return MPSBundle.message("used.languages.table.column.title");
+    }
+
     private static final class ModuleReferenceComparator implements Comparator<ModuleReference> {
         @Override
         public int compare(ModuleReference o1, ModuleReference o2) {

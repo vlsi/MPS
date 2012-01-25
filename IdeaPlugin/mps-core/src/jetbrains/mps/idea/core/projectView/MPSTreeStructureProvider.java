@@ -61,6 +61,9 @@ public class MPSTreeStructureProvider implements TreeStructureProvider, DumbAwar
                             } catch (Exception ex) {
                                 name = "exc: " + ex.getMessage();
                             }
+                            if (name == null) {
+                                name = "unnamed";
+                            }
                             Icon rootIcon = IconManager.getIconFor(root);
                             newChildren.add(new MPSProjectViewNode(parent.getProject(), name, rootIcon, new SNodePointer(root), settings));
                         }

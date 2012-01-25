@@ -44,7 +44,7 @@ public abstract class MpsElementsTable<T> {
     private JBTable myElementsTable;
 
     public JComponent createComponent() {
-        myElementsTableModel = new MpsElementsTableModel<T>(getComparator(), getRendererClass());
+        myElementsTableModel = new MpsElementsTableModel<T>(getComparator(), getRendererClass(), getColumnTitle());
 
         myElementsTable = new JBTable(myElementsTableModel);
         myElementsTable.setShowGrid(false);
@@ -171,6 +171,8 @@ public abstract class MpsElementsTable<T> {
     protected abstract Class<T> getRendererClass();
 
     protected abstract String getChooserMessage();
+
+    protected abstract String getColumnTitle();
 
     public List<T> getElements() {
         return myElementsTableModel.getElements();

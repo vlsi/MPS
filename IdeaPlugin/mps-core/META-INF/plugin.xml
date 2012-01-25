@@ -75,5 +75,14 @@
                           anchor="after"/>
             <keyboard-shortcut first-keystroke="alt ENTER" keymap="$default"/>
         </action>
+
+        <group id="jetbrains.mps.NewGroup">
+            <add-to-group group-id="NewGroup" anchor="first"/>
+            <action id="jetbrains.mps.idea.core.actions.NewModelAction"
+                    class="jetbrains.mps.idea.core.actions.NewModelAction"/>
+            <action id="jetbrains.mps.idea.core.actions.NewRootAction"
+                    class="jetbrains.mps.idea.core.actions.NewRootAction"/>
+            <separator/>
+        </group>
     </actions>
 </idea-plugin>
