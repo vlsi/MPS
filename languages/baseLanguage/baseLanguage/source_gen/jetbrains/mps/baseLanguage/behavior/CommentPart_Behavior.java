@@ -14,10 +14,6 @@ public class CommentPart_Behavior {
   public static void init(SNode thisNode) {
   }
 
-  public static int virtual_getMetaLevelChange_201537367881074474(SNode thisNode) {
-    return Integer.MAX_VALUE;
-  }
-
   public static boolean virtual_isToDo_7236590470026152831(SNode thisNode) {
     return false;
   }

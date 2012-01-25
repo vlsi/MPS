@@ -6,14 +6,19 @@ import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 import jetbrains.mps.lang.core.behavior.INamedConcept_BehaviorDescriptor;
 import jetbrains.mps.baseLanguage.unitTest.behavior.ITestMethod_BehaviorDescriptor;
 import jetbrains.mps.baseLanguage.unitTest.behavior.ITestCase_BehaviorDescriptor;
-import java.util.List;
+import jetbrains.mps.lang.core.behavior.ISuppressErrors_BehaviorDescriptor;
 import jetbrains.mps.smodel.SNode;
+import java.util.List;
 import jetbrains.mps.baseLanguage.unitTest.behavior.ITestCase_Behavior;
 import jetbrains.mps.baseLanguage.unitTest.behavior.ITestable_Behavior;
 import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 
-public class EditorTestCase_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements INamedConcept_BehaviorDescriptor, ITestMethod_BehaviorDescriptor, ITestCase_BehaviorDescriptor {
+public class EditorTestCase_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements INamedConcept_BehaviorDescriptor, ITestMethod_BehaviorDescriptor, ITestCase_BehaviorDescriptor, ISuppressErrors_BehaviorDescriptor {
   public EditorTestCase_BehaviorDescriptor() {
+  }
+
+  public boolean virtual_suppress_3393165121846091591(SNode thisNode, SNode child) {
+    return EditorTestCase_Behavior.virtual_suppress_3393165121846091591(thisNode, child);
   }
 
   public List<SNode> virtual_getTestSet_1216130724401(SNode thisNode) {

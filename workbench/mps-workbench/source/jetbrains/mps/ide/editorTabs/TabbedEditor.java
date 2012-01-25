@@ -17,7 +17,6 @@ package jetbrains.mps.ide.editorTabs;
 
 import com.intellij.openapi.actionSystem.*;
 import com.intellij.openapi.editor.Document;
-import com.intellij.openapi.extensions.Extensions;
 import com.intellij.openapi.fileEditor.FileEditorManager;
 import com.intellij.openapi.fileEditor.impl.FileEditorManagerImpl;
 import com.intellij.openapi.project.Project;
@@ -33,6 +32,8 @@ import jetbrains.mps.ide.editorTabs.tabfactory.tabs.CreateGroupsBuilder;
 import jetbrains.mps.ide.editorTabs.tabfactory.tabs.CreateModeCallback;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.nodeEditor.EditorComponent;
+import jetbrains.mps.nodeEditor.EditorSettings;
+import jetbrains.mps.nodeEditor.EditorSettingsListener;
 import jetbrains.mps.openapi.editor.EditorState;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.ModuleContext;
@@ -58,32 +59,26 @@ public class TabbedEditor extends BaseNodeEditor implements DataProvider {
   private BaseNavigationAction myNextTabAction;
   private BaseNavigationAction myPrevTabAction;
 
+  private EditorSettingsListener mySettingsListener = new EditorSettingsListener() {
+    public void settingsChanged() {
+      SNodePointer node = getCurrentEditorComponent() == null ? null : getCurrentEditorComponent().getEditedNodePointer();
+      getComponent().remove(myTabsComponent.getComponent());
+      installTabsComponent();
+      if (node != null) {
+        myTabsComponent.setLastNode(node);
+      }
+    }
+  };
+
   public TabbedEditor(SNodePointer baseNode, Set<EditorTabDescriptor> possibleTabs, @NotNull IOperationContext context) {
     super(context);
     myBaseNode = baseNode;
     myPossibleTabs = possibleTabs;
     myContext = context;
 
-    myTabsComponent = TabComponentFactory.createTabsComponent(baseNode, possibleTabs, getComponent(), new NodeChangeCallback() {
-        public void changeNode(SNode newNode) {
-          showNodeInternal(newNode, !newNode.isRoot(), true);
-        }
-      }, new CreateModeCallback() {
-      public void exitCreateMode() {
-        showEditor();
-      }
+    installTabsComponent();
 
-      public void enterCreateMode(JComponent replace) {
-        showComponent(replace);
-      }
-    }, context);
-
-    showNode(baseNode.getNode(), false);
-
-    JComponent c = myTabsComponent.getComponent();
-    if (c != null) {
-      getComponent().add(c, BorderLayout.SOUTH);
-    }
+    showNode(myBaseNode.getNode(), false);
 
     myNextTabAction = new BaseNavigationAction(IdeActions.ACTION_NEXT_EDITOR_TAB, getComponent()) {
       public void actionPerformed(AnActionEvent e) {
@@ -103,9 +98,35 @@ public class TabbedEditor extends BaseNodeEditor implements DataProvider {
         });
       }
     };
+
+    EditorSettings.getInstance().addEditorSettingsListener(mySettingsListener);
+  }
+
+  private void installTabsComponent() {
+    myTabsComponent = TabComponentFactory.createTabsComponent(myBaseNode, myPossibleTabs, getComponent(), new NodeChangeCallback() {
+        public void changeNode(SNode newNode) {
+          showNodeInternal(newNode, !newNode.isRoot(), true);
+        }
+      }, new CreateModeCallback() {
+        public void exitCreateMode() {
+          showEditor();
+        }
+
+        public void enterCreateMode(JComponent replace) {
+          showComponent(replace);
+        }
+      }, myContext
+    );
+
+    JComponent c = myTabsComponent.getComponent();
+    if (c != null) {
+      getComponent().add(c, BorderLayout.SOUTH);
+    }
   }
 
   public void dispose() {
+    EditorSettings.getInstance().removeEditorSettingsListener(mySettingsListener);
+
     myNextTabAction.dispose();
     myPrevTabAction.dispose();
     ModelAccess.instance().runReadAction(new Runnable() {

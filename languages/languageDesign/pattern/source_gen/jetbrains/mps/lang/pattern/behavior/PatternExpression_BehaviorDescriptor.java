@@ -4,10 +4,16 @@ package jetbrains.mps.lang.pattern.behavior;
 
 import jetbrains.mps.baseLanguage.behavior.Expression_BehaviorDescriptor;
 import jetbrains.mps.lang.core.behavior.IMetaLevelChanger_BehaviorDescriptor;
+import jetbrains.mps.lang.core.behavior.ISuppressErrors_BehaviorDescriptor;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.lang.core.behavior.ISuppressErrors_Behavior;
 
-public class PatternExpression_BehaviorDescriptor extends Expression_BehaviorDescriptor implements IMetaLevelChanger_BehaviorDescriptor {
+public class PatternExpression_BehaviorDescriptor extends Expression_BehaviorDescriptor implements IMetaLevelChanger_BehaviorDescriptor, ISuppressErrors_BehaviorDescriptor {
   public PatternExpression_BehaviorDescriptor() {
+  }
+
+  public boolean virtual_suppress_3393165121846091591(SNode thisNode, SNode child) {
+    return ISuppressErrors_Behavior.virtual_suppress_3393165121846091591(thisNode, child);
   }
 
   public int virtual_getMetaLevelChange_201537367881074474(SNode thisNode) {

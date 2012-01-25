@@ -13,12 +13,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import jetbrains.mps.TestMain;
 import jetbrains.mps.build.ant.Environment;
 import jetbrains.mps.testbench.MpsMakeHelper;
 import jetbrains.mps.testbench.junit.runners.SymbolicSuite.SuiteClassSymbols;
 import jetbrains.mps.testbench.junit.runners.WatchingSuite;
-import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.runner.RunWith;
 

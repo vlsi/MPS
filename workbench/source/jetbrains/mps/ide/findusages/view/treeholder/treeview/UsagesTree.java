@@ -152,6 +152,11 @@ public class UsagesTree extends MPSTree {
     });
   }
 
+  @Override
+  public boolean isDisposed() {
+    return super.isDisposed() || myProject.isDisposed();
+  }
+
   public void startAdjusting() {
     myIsAdjusting++;
   }

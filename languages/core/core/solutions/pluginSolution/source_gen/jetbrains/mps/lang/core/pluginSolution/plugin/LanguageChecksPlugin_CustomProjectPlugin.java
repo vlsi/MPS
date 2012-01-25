@@ -9,6 +9,7 @@ import jetbrains.mps.project.MPSProject;
 
 public class LanguageChecksPlugin_CustomProjectPlugin extends BaseCustomProjectPlugin {
   private LanguageEditorChecker myConstraintsChecker;
+  private SuppressErrorsChecker mySuppressErrorsChecker;
   private Highlighter myHighlighter;
 
   public LanguageChecksPlugin_CustomProjectPlugin() {
@@ -17,15 +18,19 @@ public class LanguageChecksPlugin_CustomProjectPlugin extends BaseCustomProjectP
   public void doInit(MPSProject project) {
     LanguageChecksPlugin_CustomProjectPlugin.this.myHighlighter = project.getProject().getComponent(Highlighter.class);
     LanguageChecksPlugin_CustomProjectPlugin.this.myConstraintsChecker = new LanguageEditorChecker();
+    LanguageChecksPlugin_CustomProjectPlugin.this.mySuppressErrorsChecker = new SuppressErrorsChecker();
     if (LanguageChecksPlugin_CustomProjectPlugin.this.myHighlighter != null) {
       LanguageChecksPlugin_CustomProjectPlugin.this.myHighlighter.addChecker(LanguageChecksPlugin_CustomProjectPlugin.this.myConstraintsChecker);
+      LanguageChecksPlugin_CustomProjectPlugin.this.myHighlighter.addChecker(LanguageChecksPlugin_CustomProjectPlugin.this.mySuppressErrorsChecker);
     }
   }
 
   public void doDispose(MPSProject project) {
     if (LanguageChecksPlugin_CustomProjectPlugin.this.myHighlighter != null) {
       LanguageChecksPlugin_CustomProjectPlugin.this.myHighlighter.removeChecker(LanguageChecksPlugin_CustomProjectPlugin.this.myConstraintsChecker);
+      LanguageChecksPlugin_CustomProjectPlugin.this.myHighlighter.removeChecker(LanguageChecksPlugin_CustomProjectPlugin.this.mySuppressErrorsChecker);
     }
     LanguageChecksPlugin_CustomProjectPlugin.this.myConstraintsChecker.dispose();
+    LanguageChecksPlugin_CustomProjectPlugin.this.mySuppressErrorsChecker.dispose();
   }
 }

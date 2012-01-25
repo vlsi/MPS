@@ -11,7 +11,7 @@ import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 
-/*package*/ class MergerRoleIdsHandler implements RoleIdsComponent.RoleIdsHandler {
+public class MergerRoleIdsHandler implements RoleIdsComponent.RoleIdsHandler {
   private boolean myConsistent = true;
   private Map<String, SNodePointer> myConceptsToPointers = MapSequence.fromMap(new HashMap<String, SNodePointer>());
   private Map<Tuples._2<String, String>, SNodePointer> myNodeRolesToPointers = MapSequence.fromMap(new HashMap<Tuples._2<String, String>, SNodePointer>());
@@ -19,7 +19,7 @@ import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
   private Map<Tuples._2<String, String>, SNodePointer> myPropertyNamesToPointers = MapSequence.fromMap(new HashMap<Tuples._2<String, String>, SNodePointer>());
   private Map<SModelReference, Integer> myModelVersions = MapSequence.fromMap(new HashMap<SModelReference, Integer>());
 
-  /*package*/ MergerRoleIdsHandler() {
+  public MergerRoleIdsHandler() {
   }
 
   private <K, V> void storeAndCheckConsistency(Map<K, V> theMap, K key, V value) {

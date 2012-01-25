@@ -22,7 +22,6 @@ import com.intellij.openapi.vcs.ProjectLevelVcsManager;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import com.intellij.openapi.vcs.FileStatus;
 import com.intellij.openapi.vcs.FileStatusManager;
-import jetbrains.mps.vcs.changesmanager.deprecated.OldRootNodeFileStatusManager;
 import com.intellij.openapi.vcs.annotate.AnnotationProvider;
 import com.intellij.openapi.progress.Task;
 import com.intellij.openapi.vcs.changes.BackgroundFromStartOption;
@@ -79,9 +78,6 @@ public class AnnotationHelper {
       }
     };
     if (checkFileStatus.invoke(FileStatusManager.getInstance(project).getStatus(file))) {
-      return false;
-    }
-    if (checkFileStatus.invoke(OldRootNodeFileStatusManager.getInstance(project).getStatus(root))) {
       return false;
     }
 

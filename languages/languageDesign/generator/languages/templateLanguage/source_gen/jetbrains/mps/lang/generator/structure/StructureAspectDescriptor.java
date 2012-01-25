@@ -24,9 +24,9 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 3:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.generator.structure.BaseMappingRule_Condition", "jetbrains.mps.lang.generator.structure.TemplateQueryBase", false, new String[]{"jetbrains.mps.lang.generator.structure.TemplateQueryBase"}, new String[]{}, new String[]{});
       case 4:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.generator.structure.CopySrcListMacro", "jetbrains.mps.lang.generator.structure.SourceSubstituteMacro", false, new String[]{"jetbrains.mps.lang.generator.structure.SourceSubstituteMacro"}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.lang.generator.structure.CopySrcListMacro", "jetbrains.mps.lang.generator.structure.SourceSubstituteMacro", false, new String[]{"jetbrains.mps.lang.generator.structure.SourceSubstituteMacro", "jetbrains.mps.lang.core.structure.ISuppressErrors"}, new String[]{}, new String[]{});
       case 5:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.generator.structure.CopySrcNodeMacro", "jetbrains.mps.lang.generator.structure.SourceSubstituteMacro", false, new String[]{"jetbrains.mps.lang.generator.structure.SourceSubstituteMacro"}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.lang.generator.structure.CopySrcNodeMacro", "jetbrains.mps.lang.generator.structure.SourceSubstituteMacro", false, new String[]{"jetbrains.mps.lang.generator.structure.SourceSubstituteMacro", "jetbrains.mps.lang.core.structure.ISuppressErrors"}, new String[]{}, new String[]{});
       case 6:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.generator.structure.CreateRootRule", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{"templateNode", "label"});
       case 7:

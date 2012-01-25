@@ -16,33 +16,29 @@
 
 package jetbrains.mps.idea.core.tests;
 
-import com.intellij.idea.LoggerFactory;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.application.ex.ApplicationManagerEx;
 import com.intellij.openapi.compiler.CompileContext;
 import com.intellij.openapi.compiler.CompileStatusNotification;
 import com.intellij.openapi.compiler.CompilerManager;
 import com.intellij.openapi.components.impl.ComponentManagerImpl;
-import com.intellij.openapi.diagnostic.Logger;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.projectRoots.impl.JavaSdkImpl;
-import com.intellij.openapi.projectRoots.impl.ProjectJdkImpl;
-import com.intellij.openapi.roots.*;
+import com.intellij.openapi.roots.CompilerModuleExtension;
+import com.intellij.openapi.roots.ContentEntry;
+import com.intellij.openapi.roots.ModifiableRootModel;
+import com.intellij.openapi.roots.ModuleRootManager;
 import com.intellij.openapi.util.Disposer;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.vfs.VirtualFileManager;
 import com.intellij.openapi.vfs.VirtualFileSystem;
-import com.intellij.testFramework.TestLoggerFactory;
-import com.intellij.util.ui.UIUtil;
 import jetbrains.mps.idea.core.facet.MPSFacetConfiguration;
 import jetbrains.mps.idea.core.make.MPSCompilerComponent;
 import jetbrains.mps.idea.core.make.MPSMakeCallback;
 import jetbrains.mps.idea.core.make.MPSMakeConfiguration;
 import jetbrains.mps.idea.core.make.MPSMakeLauncher;
 import jetbrains.mps.util.misc.hash.HashSet;
-import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
-import org.junit.Test;
 
 import java.io.File;
 import java.io.IOException;
@@ -185,13 +181,13 @@ public class MakeTests extends DataMPSFixtureTestCase {
         });
 
         vfs.refresh(false);
-        assertFalse(module.findChild("source_gen") == null);
-        assertFalse(module.findFileByRelativePath("source_gen/main") == null);
+        assertNotNull("Not found after refresh: " + module.getPath() + "/source_gen", module.findChild("source_gen"));
+        assertNotNull(module.findFileByRelativePath("source_gen/main"));
         assertTrue(module.findFileByRelativePath("source_gen/main").getChildren().length == 5);
 
-        assertFalse(module.findChild("classes_gen") == null);
-        assertFalse(module.findFileByRelativePath("classes_gen/main") == null);
+        assertNotNull(module.findChild("classes_gen"));
+        assertNotNull(module.findFileByRelativePath("classes_gen/main"));
         assertTrue(module.findFileByRelativePath("classes_gen/main").getChildren().length == 1);
-        assertFalse(module.findFileByRelativePath("classes_gen/main/trace.info") == null);
+        assertNotNull(module.findFileByRelativePath("classes_gen/main/trace.info"));
     }
 }

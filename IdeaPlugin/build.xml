@@ -22,7 +22,7 @@
     <property name="artifacts" value="${build.home}/artifacts"/>
     <property name="dist.dir" value="${build.home}/dist"/>
     <property name="plugins.sandbox.dir" value="${build.home}/plugins-sandbox"/>
-    <property file="build.properties"/>
+    <property file="build.properties-default"/>
     <property name="ideaPath" value="${home.idea_ce}"/>
     <property name="javac.debug" value="true"/>
 
@@ -53,6 +53,11 @@
             <include name="asm.jar"/>
             <include name="diffutils-1.2.1.jar"/>
         </fileset>
+        <fileset dir="${dist.dir}/lib">
+            <include name="mps-closures.jar"/>
+            <include name="mps-collections.jar"/>
+            <include name="mps-tuples.jar"/>
+        </fileset>
     </path>
 
     <path id="ant.libraries">
@@ -70,6 +75,7 @@
                 <file file="${base_dir}/lib/diffutils-1.2.1.jar"/>
             </resources>
         </copy>
+        <mkdir dir="${base_dir}/IdeaPlugin/mps-core/languages"/>
         <!-- TODO build languages -->
     </target>
 
@@ -92,6 +98,73 @@
                 <file file="${base_dir}/lib/diffutils-1.2.1.jar"/>
             </resources>
         </copy>
+
+        <!-- Tuples runtime -->
+        <mkdir dir="${build_dir}/mpstuples_jar"/>
+        <javac destdir="${build_dir}/mpstuples_jar" fork="true"
+               memorymaximumsize="1024m"
+               includeantruntime="false"
+               debug="${javac.debug}" debuglevel="lines,vars,source">
+            <compilerarg value="-Xlint:none"/>
+            <src>
+                <path path="${base_dir}/languages/baseLanguage/tuples/runtime/source_gen"/>
+            </src>
+        </javac>
+        <jar destfile="${dist.dir}/lib/mps-tuples.jar">
+            <fileset dir="${build_dir}/mpstuples_jar"/>
+            <manifest>
+                <attribute name="Built-By" value="${user.name}"/>
+                <attribute name="Implementation-Vendor" value="JetBrains s.r.o."/>
+                <attribute name="Implementation-Title" value="MPS Tuples language runtime"/>
+                <attribute name="Implementation-Version" value="1.0"/>
+            </manifest>
+        </jar>
+
+        <!-- Closures runtime -->
+        <mkdir dir="${build_dir}/mpsclosures_jar"/>
+        <javac destdir="${build_dir}/mpsclosures_jar" fork="true"
+               memorymaximumsize="1024m"
+               includeantruntime="false"
+               debug="${javac.debug}" debuglevel="lines,vars,source">
+            <compilerarg value="-Xlint:none"/>
+            <src>
+                <path path="${base_dir}/languages/baseLanguage/closures/runtime/source_gen"/>
+            </src>
+        </javac>
+        <jar destfile="${dist.dir}/lib/mps-closures.jar">
+            <fileset dir="${build_dir}/mpsclosures_jar"/>
+            <manifest>
+                <attribute name="Built-By" value="${user.name}"/>
+                <attribute name="Implementation-Vendor" value="JetBrains s.r.o."/>
+                <attribute name="Implementation-Title" value="MPS Closure language runtime"/>
+                <attribute name="Implementation-Version" value="1.0"/>
+            </manifest>
+        </jar>
+
+        <!-- Collections runtime -->
+        <mkdir dir="${build_dir}/mpscollections_jar"/>
+        <javac destdir="${build_dir}/mpscollections_jar" fork="true"
+               memorymaximumsize="1024m"
+               includeantruntime="false"
+               debug="${javac.debug}" debuglevel="lines,vars,source">
+            <compilerarg value="-Xlint:none"/>
+            <src>
+                <path path="${base_dir}/languages/baseLanguage/collections/runtime/source_gen"/>
+            </src>
+            <classpath>
+                <pathelement location="${dist.dir}/lib/mps-closures.jar"/>
+            </classpath>
+        </javac>
+        <jar destfile="${dist.dir}/lib/mps-collections.jar">
+            <fileset dir="${build_dir}/mpscollections_jar"/>
+            <manifest>
+                <attribute name="Built-By" value="${user.name}"/>
+                <attribute name="Implementation-Vendor" value="JetBrains s.r.o."/>
+                <attribute name="Implementation-Title" value="MPS Collections language runtime"/>
+                <attribute name="Implementation-Version" value="1.0"/>
+            </manifest>
+        </jar>
+
         <!-- MPS Core -->
         <mkdir dir="${build_dir}/mpscore_jar"/>
         <javac classpathref="mps.core.libraries" destdir="${build_dir}/mpscore_jar" fork="true"
@@ -100,10 +173,6 @@
                debug="${javac.debug}" debuglevel="lines,vars,source">
             <compilerarg value="-Xlint:none"/>
             <src>
-                <path path="${base_dir}/languages/baseLanguage/collections/runtime/source_gen"/>
-                <path path="${base_dir}/languages/baseLanguage/closures/runtime/source_gen"/>
-                <path path="${base_dir}/languages/baseLanguage/tuples/runtime/source_gen"/>
-
                 <!-- runtime -->
                 <path path="${base_dir}/core/runtime/source"/>
 
@@ -148,52 +217,11 @@
             </src>
         </javac>
         <jar destfile="${dist.dir}/lib/mps-core.jar">
-            <fileset dir="${build_dir}/mpscore_jar" includes="**/*">
-                <exclude name="jetbrains/mps/internal/collections/**"/>
-                <exclude name="jetbrains/mps/baseLanguage/closures/runtime/**"/>
-                <exclude name="jetbrains/mps/baseLanguage/closures/runtime.gwt.xml"/>
-                <exclude name="jetbrains/mps/baseLanguage/tuples/runtime/**"/>
-                <exclude name="jetbrains/mps/baseLanguage/tuples/runtime.gwt.xml"/>
-            </fileset>
+            <fileset dir="${build_dir}/mpscore_jar"/>
             <manifest>
                 <attribute name="Built-By" value="${user.name}"/>
                 <attribute name="Implementation-Vendor" value="JetBrains s.r.o."/>
                 <attribute name="Implementation-Title" value="MPS Core modeling framework"/>
-                <attribute name="Implementation-Version" value="1.0"/>
-            </manifest>
-        </jar>
-        <jar destfile="${dist.dir}/lib/mps-collections.jar">
-            <fileset dir="${build_dir}/mpscore_jar" includes="">
-                <include name="jetbrains/mps/internal/collections/**"/>
-            </fileset>
-            <manifest>
-                <attribute name="Built-By" value="${user.name}"/>
-                <attribute name="Implementation-Vendor" value="JetBrains s.r.o."/>
-                <attribute name="Implementation-Title" value="MPS Collections language runtime"/>
-                <attribute name="Implementation-Version" value="1.0"/>
-            </manifest>
-        </jar>
-        <jar destfile="${dist.dir}/lib/mps-closures.jar">
-            <fileset dir="${build_dir}/mpscore_jar" includes="">
-                <include name="jetbrains/mps/baseLanguage/closures/runtime/**"/>
-                <include name="jetbrains/mps/baseLanguage/closures/runtime.gwt.xml"/>
-            </fileset>
-            <manifest>
-                <attribute name="Built-By" value="${user.name}"/>
-                <attribute name="Implementation-Vendor" value="JetBrains s.r.o."/>
-                <attribute name="Implementation-Title" value="MPS Closure language runtime"/>
-                <attribute name="Implementation-Version" value="1.0"/>
-            </manifest>
-        </jar>
-        <jar destfile="${dist.dir}/lib/mps-tuples.jar">
-            <fileset dir="${build_dir}/mpscore_jar" includes="">
-                <include name="jetbrains/mps/baseLanguage/tuples/runtime/**"/>
-                <include name="jetbrains/mps/baseLanguage/tuples/runtime.gwt.xml"/>
-            </fileset>
-            <manifest>
-                <attribute name="Built-By" value="${user.name}"/>
-                <attribute name="Implementation-Vendor" value="JetBrains s.r.o."/>
-                <attribute name="Implementation-Title" value="MPS Tuples language runtime"/>
                 <attribute name="Implementation-Version" value="1.0"/>
             </manifest>
         </jar>
@@ -356,12 +384,14 @@
                 <path path="${base_dir}/IdeaPlugin/mps-core/testSrc"/>
                 <path path="${base_dir}/languages/languageDesign/editor/tests/jetbrains.mps.lang.editor.tests/testSrc"/>
                 <path path="${base_dir}/languages/languageDesign/editor/tests/jetbrains.mps.lang.editor.tests/source_gen"/>
+                <path path="${base_dir}/languages/languageDesign/test/solutions/jetbrains.mps.lang.test.runtime/source_gen"/>
+                <path path="${base_dir}/testbench/source"/>
+                <path path="${base_dir}/testbench/source_gen"/>
             </src>
             <classpath>
                 <fileset dir="${dist.dir}/lib" includes="*.jar"/>
-                <!-- TODO remove dependency on languages!!!!!! -->
-                <fileset dir="${dist.dir}/languages/languageDesign" includes="jetbrains.mps.lang.test.runtime.jar"/>
                 <fileset dir="${ideaPath}/lib" includes="*.jar"/>
+                <fileset dir="${ideaPath}/lib/ant/lib" includes="*.jar"/>
             </classpath>
         </javac2>
         <!-- Test data copied here -->
@@ -391,6 +421,9 @@
         <copy todir="${plugins.sandbox.dir}/plugins/mps-core">
             <fileset dir="${dist.dir}"/>
         </copy>
+        <copy todir="${plugins.sandbox.dir}/plugins/tests/projectView">
+            <fileset dir="${base_dir}/IdeaPlugin/tests/projectView"/>
+        </copy>
         <mkdir dir="${plugins.sandbox.dir}/test/community/java/mockJDK-1.7"/>
 
         <junit fork="true"
@@ -418,11 +451,9 @@
                 <fileset dir="${ideaPath}/plugins/junit/lib">
                     <include name="junit-rt.jar"/>
                 </fileset>
+                <fileset dir="${ideaPath}/lib/ant/lib" includes="*.jar"/>
                 <fileset dir="${plugins.sandbox.dir}/plugins/mps-core/lib">
                     <include name="*.jar"/>
-                </fileset>
-                <fileset dir="${plugins.sandbox.dir}/plugins/mps-core/languages/languageDesign">
-                    <include name="jetbrains.mps.lang.test.runtime.jar"/>
                 </fileset>
                 <pathelement path="${java.class.path}"/>
             </classpath>

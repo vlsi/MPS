@@ -5,7 +5,6 @@
   <language namespace="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" />
   <devkit namespace="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   <import index="tpce" modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
-  <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <roots>
     <node type="tpce.PrimitiveDataTypeDeclaration" typeId="tpce.1083243159079" id="1082983041843">
       <property name="name" nameId="1169194664001" value="string" />
@@ -91,6 +90,19 @@
     <node type="tpce.InterfaceConceptDeclaration" typeId="tpce.1169125989551" id="3734116213129792499">
       <property name="name" nameId="1169194664001" value="ScopeProvider" />
     </node>
+    <node type="tpce.InterfaceConceptDeclaration" typeId="tpce.1169125989551" id="1047408822409601647">
+      <property name="name" nameId="1169194664001" value="IAntisuppressErrors" />
+    </node>
+    <node type="tpce.InterfaceConceptDeclaration" typeId="tpce.1169125989551" id="3393165121846091586">
+      <property name="name" nameId="1169194664001" value="ICanSuppressErrors" />
+    </node>
+    <node type="tpce.InterfaceConceptDeclaration" typeId="tpce.1169125989551" id="3393165121846091587">
+      <property name="name" nameId="1169194664001" value="ISuppressErrors" />
+    </node>
+    <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="4222318806802425298">
+      <property name="name" nameId="1169194664001" value="SuppressErrorsAnnotation" />
+      <link role="extends" roleId="tpce.1071489389519" targetNodeId="3364660638048049748" resolveInfo="NodeAttribute" />
+    </node>
   </roots>
   <root id="1082983041843" />
   <root id="1082983657062" />
@@ -158,7 +170,7 @@
   <root id="1234971358450" />
   <root id="201537367881071930" />
   <root id="376024488709664661">
-    <node role="smodelAttribute" roleId="5169995583184591170" type="tpck.ExportScopePublic" typeId="2565736246230036150" id="9136532523118437100" />
+    <node role="smodelAttribute" roleId="5169995583184591170" type=".jetbrains.mps.lang.core.structure.ExportScopePublic" typeId="2565736246230036150" id="9136532523118437100" />
   </root>
   <root id="5425021671150136555">
     <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.BooleanConceptProperty" typeId="tpce.1105725574259" id="4075196924244385128">
@@ -178,7 +190,7 @@
       <property name="value" nameId="tpce.1105725733873" value="@export(public)" />
       <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="1137473891462" resolveInfo="alias" />
     </node>
-    <node role="smodelAttribute" roleId="5169995583184591170" type="tpck.ExportScopePublic" typeId="2565736246230036150" id="4075196924244431954" />
+    <node role="smodelAttribute" roleId="5169995583184591170" type=".jetbrains.mps.lang.core.structure.ExportScopePublic" typeId="2565736246230036150" id="4075196924244431954" />
   </root>
   <root id="2565736246230036151">
     <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="4075196924244376960">
@@ -189,14 +201,14 @@
       <property name="name" nameId="1169194664001" value="namespace" />
       <link role="dataType" roleId="tpce.1082985295845" targetNodeId="1082983041843" resolveInfo="string" />
     </node>
-    <node role="smodelAttribute" roleId="5169995583184591170" type="tpck.ExportScopePublic" typeId="2565736246230036150" id="4075196924244431953" />
+    <node role="smodelAttribute" roleId="5169995583184591170" type=".jetbrains.mps.lang.core.structure.ExportScopePublic" typeId="2565736246230036150" id="4075196924244431953" />
   </root>
   <root id="2565736246230036154">
     <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="4075196924244376956">
       <property name="value" nameId="tpce.1105725733873" value="@export(module)" />
       <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="1137473891462" resolveInfo="alias" />
     </node>
-    <node role="smodelAttribute" roleId="5169995583184591170" type="tpck.ExportScopePublic" typeId="2565736246230036150" id="4075196924244431952" />
+    <node role="smodelAttribute" roleId="5169995583184591170" type=".jetbrains.mps.lang.core.structure.ExportScopePublic" typeId="2565736246230036150" id="4075196924244431952" />
   </root>
   <root id="5169995583184591161">
     <node role="conceptLinkDeclaration" roleId="tpce.1137532086877" type="tpce.ReferenceConceptLinkDeclaration" typeId="tpce.1105741578420" id="5169995583184591169">
@@ -229,5 +241,21 @@
     </node>
   </root>
   <root id="3734116213129792499" />
+  <root id="1047408822409601647" />
+  <root id="3393165121846091586" />
+  <root id="3393165121846091587" />
+  <root id="4222318806802425298">
+    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="2942851545184997136">
+      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="3393165121846091587" resolveInfo="ISuppressErrors" />
+    </node>
+    <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="4222318806802425300">
+      <property name="value" nameId="tpce.1105725733873" value="suppress" />
+      <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="5169995583184591164" resolveInfo="role" />
+    </node>
+    <node role="conceptLink" roleId="tpce.1105736949336" type="tpce.ReferenceConceptLink" typeId="tpce.1105736778597" id="4222318806802425301">
+      <link role="conceptLinkDeclaration" roleId="tpce.1105736734721" targetNodeId="5169995583184591169" resolveInfo="attributed" />
+      <link role="target" roleId="tpce.1105736807942" targetNodeId="3393165121846091586" resolveInfo="ICanSuppressErrors" />
+    </node>
+  </root>
 </model>
 

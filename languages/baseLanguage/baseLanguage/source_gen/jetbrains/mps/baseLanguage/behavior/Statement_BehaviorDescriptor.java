@@ -4,12 +4,13 @@ package jetbrains.mps.baseLanguage.behavior;
 
 import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 import jetbrains.mps.lang.traceable.behavior.TraceableConcept_BehaviorDescriptor;
+import jetbrains.mps.lang.core.behavior.ICanSuppressErrors_BehaviorDescriptor;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.traceable.behavior.TraceableConcept_Behavior;
 import java.util.Set;
 
-public class Statement_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements ILocalVariableElement_BehaviorDescriptor, TraceableConcept_BehaviorDescriptor {
+public class Statement_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements ILocalVariableElement_BehaviorDescriptor, TraceableConcept_BehaviorDescriptor, ICanSuppressErrors_BehaviorDescriptor {
   public Statement_BehaviorDescriptor() {
   }
 

@@ -7,6 +7,7 @@ import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class EditorTestCase_Behavior {
   public static void init(SNode thisNode) {
@@ -28,5 +29,9 @@ public class EditorTestCase_Behavior {
     List<SNode> result = new ArrayList<SNode>();
     ListSequence.fromList(result).addElement(thisNode);
     return result;
+  }
+
+  public static boolean virtual_suppress_3393165121846091591(SNode thisNode, SNode child) {
+    return SLinkOperations.getTarget(thisNode, "nodeToEdit", true) == child || SLinkOperations.getTarget(thisNode, "result", true) == child;
   }
 }

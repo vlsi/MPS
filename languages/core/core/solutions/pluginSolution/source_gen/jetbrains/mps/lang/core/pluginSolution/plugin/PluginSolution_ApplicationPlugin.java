@@ -24,6 +24,7 @@ public class PluginSolution_ApplicationPlugin extends BaseApplicationPlugin {
 
   public void createGroups() {
     // actions w/o parameters 
+    addAction(new DoNotSuppressErrors_Action());
     addAction(new FindLanguageConceptsUsages_Action());
     addAction(new FindLanguageUsages_Action());
     addAction(new FindModelUsages_Action());
