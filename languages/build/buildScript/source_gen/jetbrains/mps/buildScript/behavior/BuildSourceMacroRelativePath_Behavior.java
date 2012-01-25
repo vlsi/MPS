@@ -4,7 +4,6 @@ package jetbrains.mps.buildScript.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.buildScript.util.Context;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class BuildSourceMacroRelativePath_Behavior {
@@ -12,6 +11,6 @@ public class BuildSourceMacroRelativePath_Behavior {
   }
 
   public static String virtual_getBasePath_4959435991187140515(SNode thisNode, Context context) {
-    return Environment_Behavior.call_evaluateMacro_4959435991187146993(context.getEnvironment(), SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "macro", false), "name"), context);
+    return BuildFolderMacro_Behavior.call_evaluate_4959435991187146982(SLinkOperations.getTarget(thisNode, "macro", false), context);
   }
 }

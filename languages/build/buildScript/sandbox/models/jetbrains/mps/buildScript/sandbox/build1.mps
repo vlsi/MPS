@@ -18,6 +18,12 @@
       <node role="elements" roleId="3ior.6057319140845478673" type="3ior.BuildSource_JavaLibraryJar" typeId="3ior.6057319140845478671" id="5481553824944831595">
         <node role="path" roleId="3ior.6057319140845478672" type="3ior.BuildSourceProjectRelativePath" typeId="3ior.5481553824944787378" id="5481553824944831597">
           <property name="relativePath" nameId="3ior.5481553824944787385" value="sdfsdf" />
+          <node role="compositePart" roleId="3ior.7321017245477039051" type="3ior.CompositePath" typeId="3ior.8618885170173601777" id="3968971886498940807">
+            <property name="head" nameId="3ior.8618885170173601779" value=".." />
+            <node role="tail" roleId="3ior.8618885170173601778" type="3ior.CompositePath" typeId="3ior.8618885170173601777" id="3968971886498940809">
+              <property name="head" nameId="3ior.8618885170173601779" value=".." />
+            </node>
+          </node>
         </node>
       </node>
     </node>
