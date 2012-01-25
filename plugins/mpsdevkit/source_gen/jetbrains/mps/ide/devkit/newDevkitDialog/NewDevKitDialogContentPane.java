@@ -30,10 +30,10 @@ import java.io.File;
 
 public class NewDevKitDialogContentPane extends JPanel {
   public NewDevKitDialogContentPane myThis;
-  private JLabel myComponent_b0;
-  private JTextField myName_c0;
-  private JLabel myComponent_d0;
-  private PathField myPath_e0;
+  private JLabel myComponent_t9qnp8_b0;
+  private JTextField myName_t9qnp8_c0;
+  private JLabel myComponent_t9qnp8_d0;
+  private PathField myPath_t9qnp8_e0;
   private String myDevkitName;
   private String myDevkitDir;
   private MPSProject myProject;
@@ -59,8 +59,8 @@ public class NewDevKitDialogContentPane extends JPanel {
     this.myEvents.initialize();
     myThis.setDevkitName("");
     myThis.setDevkitDir("");
-    myThis.myName_c0.setName("Name");
-    myThis.myPath_e0.setName("Path");
+    myThis.myName_t9qnp8_c0.setName("Name");
+    myThis.myPath_t9qnp8_e0.setName("Path");
   }
 
   public Events getEvents() {
@@ -81,7 +81,7 @@ public class NewDevKitDialogContentPane extends JPanel {
     {
       Object sourceObject = myThis;
       Property sourceProperty = BeanProperty.create("devkitName");
-      Object targetObject = this.myName_c0;
+      Object targetObject = this.myName_t9qnp8_c0;
       Property targetProperty = BeanProperty.create("text");
       AutoBinding binding = Bindings.createAutoBinding(AutoBinding.UpdateStrategy.READ_WRITE, sourceObject, sourceProperty, targetObject, targetProperty);
       binding.bind();
@@ -90,7 +90,7 @@ public class NewDevKitDialogContentPane extends JPanel {
     {
       Object sourceObject = myThis;
       Property sourceProperty = BeanProperty.create("devkitDir");
-      Object targetObject = this.myPath_e0;
+      Object targetObject = this.myPath_t9qnp8_e0;
       Property targetProperty = BeanProperty.create("path");
       AutoBinding binding = Bindings.createAutoBinding(AutoBinding.UpdateStrategy.READ_WRITE, sourceObject, sourceProperty, targetObject, targetProperty);
       binding.bind();
@@ -108,27 +108,27 @@ public class NewDevKitDialogContentPane extends JPanel {
 
   private JLabel createComponent_t9qnp8_b0() {
     JLabel component = new JLabel();
-    this.myComponent_b0 = component;
+    this.myComponent_t9qnp8_b0 = component;
     component.setText("Devkit Name:");
     return component;
   }
 
   private JTextField createComponent_t9qnp8_c0() {
     JTextField component = new JTextField();
-    this.myName_c0 = component;
+    this.myName_t9qnp8_c0 = component;
     return component;
   }
 
   private JLabel createComponent_t9qnp8_d0() {
     JLabel component = new JLabel();
-    this.myComponent_d0 = component;
+    this.myComponent_t9qnp8_d0 = component;
     component.setText("Devkit Path:");
     return component;
   }
 
   private PathField createComponent_t9qnp8_e0() {
     PathField component = new PathField();
-    this.myPath_e0 = component;
+    this.myPath_t9qnp8_e0 = component;
     return component;
   }
 

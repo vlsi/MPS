@@ -8,6 +8,7 @@ import jetbrains.mps.lang.script.runtime.AbstractMigrationRefactoring;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.internal.collections.runtime.IMapping;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
+import jetbrains.mps.util.NameUtil;
 
 public class EscapeSpecialCharactersInProperties_MigrationScript extends BaseMigrationScript {
   public EscapeSpecialCharactersInProperties_MigrationScript(IOperationContext operationContext) {
@@ -27,7 +28,7 @@ public class EscapeSpecialCharactersInProperties_MigrationScript extends BaseMig
 
       public boolean isApplicableInstanceNode(SNode node) {
         for (IMapping<String, String> property : MapSequence.fromMap(node.getProperties())) {
-          if (PropertyValueEscapeUtil.hasCharactersToEscape(property.value())) {
+          if (property.value() != null && !(property.value().equals(NameUtil.escapeInvisibleCharacters(property.value())))) {
             return true;
           }
         }
@@ -39,7 +40,7 @@ public class EscapeSpecialCharactersInProperties_MigrationScript extends BaseMig
           if (property.value() == null) {
             continue;
           }
-          String escapedValue = PropertyValueEscapeUtil.escape(property.value());
+          String escapedValue = NameUtil.escapeInvisibleCharacters(property.value());
           if (!(property.value().equals(escapedValue))) {
             node.setProperty(property.key(), escapedValue);
           }
