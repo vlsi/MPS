@@ -19,14 +19,7 @@ package jetbrains.mps.idea.core.tests;
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 
-/**
- * Created by IntelliJ IDEA.
- * User: shatalin
- * Date: 11/22/11
- * Time: 4:09 PM
- * To change this template use File | Settings | File Templates.
- */
 @RunWith(Suite.class)
-@Suite.SuiteClasses({FacetTests.class,EditorTests.class,MakeTests.class})
+@Suite.SuiteClasses({ProjectViewTests.class,FacetTests.class,EditorTests.class,MakeTests.class})
 public class AllTests {
 }

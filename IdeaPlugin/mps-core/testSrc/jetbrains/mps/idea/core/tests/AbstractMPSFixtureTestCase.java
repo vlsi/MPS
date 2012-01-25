@@ -41,7 +41,6 @@ import jetbrains.mps.idea.core.facet.MPSFacetType;
 import jetbrains.mps.smodel.ModelAccess;
 import junit.framework.Assert;
 import org.apache.log4j.BasicConfigurator;
-import org.apache.log4j.Category;
 
 import javax.swing.*;
 import java.io.File;
