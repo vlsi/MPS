@@ -419,6 +419,9 @@
         <copy todir="${plugins.sandbox.dir}/plugins/mps-core">
             <fileset dir="${dist.dir}"/>
         </copy>
+        <copy todir="${plugins.sandbox.dir}/plugins/tests/projectView">
+            <fileset dir="${base_dir}/IdeaPlugin/tests/projectView"/>
+        </copy>
         <mkdir dir="${plugins.sandbox.dir}/test/community/java/mockJDK-1.7"/>
 
         <junit fork="true"
