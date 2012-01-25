@@ -161,7 +161,6 @@
       <modulePath path="${project}/languages/languageDesign/pattern/solutions/test/test.msd" folder="core.kernel" />
       <modulePath path="${project}/languages/languageDesign/plugin/plugin.mpl" folder="core.language-design" />
       <modulePath path="${project}/languages/languageDesign/plugin/solutions/pluginSolution/pluginSolution.msd" folder="core.language-design" />
-      <modulePath path="${project}/languages/languageDesign/plugin/solutions/runtime/runtime.msd" folder="core.language-design" />
       <modulePath path="${project}/languages/languageDesign/project/project.mpl" folder="core.language-design" />
       <modulePath path="${project}/languages/languageDesign/project/solutions/jetbrains.mps.lang.project.sandbox/jetbrains.mps.lang.project.sandbox.msd" folder="core.language-design" />
       <modulePath path="${project}/languages/languageDesign/quotation/quotation.mpl" folder="core.language-design" />
