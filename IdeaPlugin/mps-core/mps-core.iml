@@ -54,10 +54,17 @@
       <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/editor/tests/jetbrains.mps.lang.editor.tests/source_gen" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/editor/tests/jetbrains.mps.lang.editor.tests/testSrc" isTestSource="true" />
     </content>
+    <content url="file://$MODULE_DIR$/../../languages/languageDesign/test">
+      <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/test/solutions/jetbrains.mps.lang.test.runtime/source_gen" isTestSource="true" />
+    </content>
     <content url="file://$MODULE_DIR$/../../languages/util/buildlanguage/ant">
       <sourceFolder url="file://$MODULE_DIR$/../../languages/util/buildlanguage/ant/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../languages/util/buildlanguage/ant/tests" isTestSource="true" />
       <excludeFolder url="file://$MODULE_DIR$/../../languages/util/buildlanguage/ant/tests" />
+    </content>
+    <content url="file://$MODULE_DIR$/../../testbench">
+      <sourceFolder url="file://$MODULE_DIR$/../../testbench/source" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../../testbench/source_gen" isTestSource="true" />
     </content>
     <content url="file://$MODULE_DIR$/../../workbench">
       <sourceFolder url="file://$MODULE_DIR$/../../workbench/mps-editor/source" isTestSource="false" />
@@ -68,7 +75,6 @@
     <orderEntry type="jdk" jdkName="IDEA IC" jdkType="IDEA JDK" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="MPS-core" level="project" />
-    <orderEntry type="library" scope="TEST" name="Test-runtime" level="project" />
     <orderEntry type="library" name="ant" level="project" />
   </component>
 </module>
