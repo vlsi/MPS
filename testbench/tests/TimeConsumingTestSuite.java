@@ -14,7 +14,6 @@
  * limitations under the License.
  */
 import jetbrains.mps.TestMain;
-import jetbrains.mps.build.ant.Environment;
 import jetbrains.mps.testbench.MpsMakeHelper;
 import jetbrains.mps.testbench.junit.runners.SymbolicSuite.SuiteClassSymbols;
 import jetbrains.mps.testbench.junit.runners.WatchingSuite;

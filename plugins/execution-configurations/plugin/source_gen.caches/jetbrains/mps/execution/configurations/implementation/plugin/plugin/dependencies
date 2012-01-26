@@ -98,6 +98,15 @@
     <classNode dependClassName="jetbrains.mps.project.MPSProject" />
     <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.custom.BaseCustomProjectPlugin" />
   </dependency>
+  <dependency className="jetbrains.mps.execution.configurations.implementation.plugin.plugin.BuildGenerationHandler" file="BuildGenerationHandler.java">
+    <classNode dependClassName="java.io.File" />
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.textGen.TextGenerationResult" />
+    <classNode dependClassName="jetbrains.mps.util.FileUtil" />
+    <classNode extendsClassName="jetbrains.mps.generator.generationTypes.TextGenerationHandler" />
+  </dependency>
   <dependency className="jetbrains.mps.execution.configurations.implementation.plugin.plugin.BuildLanguageProject_Configuration" file="BuildLanguageProject_Configuration.java">
     <classNode dependClassName="com.intellij.execution.ExecutionException" />
     <classNode dependClassName="com.intellij.execution.Executor" />
@@ -147,11 +156,11 @@
     <classNode dependClassName="java.awt.GridBagLayout" />
     <classNode dependClassName="javax.swing.JLabel" />
     <classNode dependClassName="javax.swing.JPanel" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
     <classNode dependClassName="jetbrains.mps.execution.configurations.implementation.plugin.plugin.AntSettings_Configuration_Editor" />
     <classNode dependClassName="jetbrains.mps.execution.configurations.implementation.plugin.plugin.BuildLanguageProject_Configuration" />
     <classNode dependClassName="jetbrains.mps.execution.configurations.implementation.plugin.plugin.TargetChoosePanel" />
     <classNode dependClassName="jetbrains.mps.execution.lib.Node_Configuration_Editor" />
-    <classNode dependClassName="jetbrains.mps.execution.lib.ui.IJavaNodeChangeListener" />
     <classNode dependClassName="jetbrains.mps.execution.lib.ui.MainNodeChooser" />
     <classNode dependClassName="jetbrains.mps.ide.common.LayoutUtil" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
@@ -290,12 +299,12 @@
     <classNode dependClassName="javax.swing.JCheckBox" />
     <classNode dependClassName="javax.swing.JLabel" />
     <classNode dependClassName="javax.swing.JPanel" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
     <classNode dependClassName="jetbrains.mps.execution.configurations.implementation.plugin.plugin.AntSettings_Configuration_Editor" />
     <classNode dependClassName="jetbrains.mps.execution.configurations.implementation.plugin.plugin.ConfigurationChoosePanel" />
     <classNode dependClassName="jetbrains.mps.execution.configurations.implementation.plugin.plugin.CustomMPSApplication_Configuration" />
     <classNode dependClassName="jetbrains.mps.execution.lib.Node_Configuration_Editor" />
     <classNode dependClassName="jetbrains.mps.execution.lib.ui.FieldWithPathChooseDialog" />
-    <classNode dependClassName="jetbrains.mps.execution.lib.ui.IJavaNodeChangeListener" />
     <classNode dependClassName="jetbrains.mps.execution.lib.ui.MainNodeChooser" />
     <classNode dependClassName="jetbrains.mps.ide.common.LayoutUtil" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
@@ -331,14 +340,13 @@
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
-    <classNode dependClassName="jetbrains.mps.build.distrib.behavior.DistribConfiguration_Behavior" />
-    <classNode dependClassName="jetbrains.mps.build.packaging.pluginSolution.plugin.GenerateBuildUtil" />
     <classNode dependClassName="jetbrains.mps.execution.api.configurations.ConsoleCreator" />
     <classNode dependClassName="jetbrains.mps.execution.api.configurations.ConsoleProcessListener" />
     <classNode dependClassName="jetbrains.mps.execution.api.configurations.DefaultExecutionConsole" />
     <classNode dependClassName="jetbrains.mps.execution.api.configurations.DefaultExecutionResult" />
     <classNode dependClassName="jetbrains.mps.execution.configurations.implementation.plugin.plugin.Ant_Command" />
     <classNode dependClassName="jetbrains.mps.execution.configurations.implementation.plugin.plugin.CustomMPSApplication_Configuration" />
+    <classNode dependClassName="jetbrains.mps.execution.configurations.implementation.plugin.plugin.GenerateBuildUtil" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
@@ -387,10 +395,60 @@
     <classNode dependClassName="org.apache.commons.logging.LogFactory" />
     <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.custom.BaseCustomApplicationPlugin" />
   </dependency>
+  <dependency className="jetbrains.mps.execution.configurations.implementation.plugin.plugin.GenerateBuildAction_Action" file="GenerateBuildAction_Action.java">
+    <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
+    <classNode dependClassName="com.intellij.openapi.actionSystem.PlatformDataKeys" />
+    <classNode dependClassName="com.intellij.openapi.project.Project" />
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.lang.Throwable" />
+    <classNode dependClassName="java.util.Map" />
+    <classNode dependClassName="javax.swing.Icon" />
+    <classNode dependClassName="jetbrains.mps.execution.configurations.implementation.plugin.plugin.GenerateBuildUtil" />
+    <classNode dependClassName="jetbrains.mps.ide.actions.MPSCommonDataKeys" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelDescriptor" />
+    <classNode dependClassName="org.apache.commons.logging.Log" />
+    <classNode dependClassName="org.apache.commons.logging.LogFactory" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
+  </dependency>
+  <dependency className="jetbrains.mps.execution.configurations.implementation.plugin.plugin.GenerateBuildUtil" file="GenerateBuildUtil.java">
+    <classNode dependClassName="com.intellij.openapi.application.ApplicationManager" />
+    <classNode dependClassName="com.intellij.openapi.application.ModalityState" />
+    <classNode dependClassName="com.intellij.openapi.project.Project" />
+    <classNode dependClassName="java.io.File" />
+    <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.Runnable" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
+    <classNode dependClassName="jetbrains.mps.execution.configurations.implementation.plugin.plugin.BuildGenerationHandler" />
+    <classNode dependClassName="jetbrains.mps.generator.GenerationFacade" />
+    <classNode dependClassName="jetbrains.mps.generator.GenerationOptions" />
+    <classNode dependClassName="jetbrains.mps.ide.generator.GeneratorUIFacade" />
+    <classNode dependClassName="jetbrains.mps.ide.generator.TransientModelsComponent" />
+    <classNode dependClassName="jetbrains.mps.ide.messages.DefaultMessageHandler" />
+    <classNode dependClassName="jetbrains.mps.ide.project.ProjectHelper" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.progress.EmptyProgressMonitor" />
+    <classNode dependClassName="jetbrains.mps.project.MPSProject" />
+    <classNode dependClassName="jetbrains.mps.project.ProjectOperationContext" />
+    <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModel" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelDescriptor" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorManager" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+  </dependency>
   <dependency className="jetbrains.mps.execution.configurations.implementation.plugin.plugin.GenerateBuild_BeforeTask" file="GenerateBuild_BeforeTask.java">
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="com.intellij.openapi.util.Key" />
-    <classNode dependClassName="jetbrains.mps.build.packaging.pluginSolution.plugin.GenerateBuildUtil" />
+    <classNode dependClassName="jetbrains.mps.execution.configurations.implementation.plugin.plugin.GenerateBuildUtil" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode extendsClassName="jetbrains.mps.execution.api.configurations.BaseMpsBeforeRunTask" />
     <classNode extendsClassName="jetbrains.mps.execution.api.configurations.BaseMpsBeforeTaskProvider" />
@@ -888,12 +946,12 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.execution.api.Java_Command" />
-    <classNode dependClassName="jetbrains.mps.build.packaging.pluginSolution.plugin.GenerateBuildUtil" />
     <classNode dependClassName="jetbrains.mps.execution.api.configurations.ConsoleCreator" />
     <classNode dependClassName="jetbrains.mps.execution.api.configurations.ConsoleProcessListener" />
     <classNode dependClassName="jetbrains.mps.execution.api.configurations.DefaultExecutionConsole" />
     <classNode dependClassName="jetbrains.mps.execution.api.configurations.DefaultExecutionResult" />
     <classNode dependClassName="jetbrains.mps.execution.configurations.implementation.plugin.plugin.Ant_Command" />
+    <classNode dependClassName="jetbrains.mps.execution.configurations.implementation.plugin.plugin.GenerateBuildUtil" />
     <classNode dependClassName="jetbrains.mps.execution.configurations.implementation.plugin.plugin.PackagingBuildScript_Configuration" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
@@ -930,7 +988,10 @@
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.execution.configurations.implementation.plugin.plugin.DebugInfoProvider_CustomApplicationPlugin" />
+    <classNode dependClassName="jetbrains.mps.execution.configurations.implementation.plugin.plugin.GenerateBuildAction_Action" />
+    <classNode dependClassName="jetbrains.mps.execution.configurations.implementation.plugin.plugin.ProjectPaneModelAddition_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.execution.configurations.implementation.plugin.plugin.RunConfigurationsInitializer_CustomApplicationPlugin" />
+    <classNode dependClassName="jetbrains.mps.ide.actions.ModelActions_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.plugins.pluginparts.custom.BaseCustomApplicationPlugin" />
     <classNode extendsClassName="jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin" />
@@ -958,6 +1019,12 @@
     <classNode dependClassName="jetbrains.mps.plugins.pluginparts.custom.BaseCustomProjectPlugin" />
     <classNode dependClassName="jetbrains.mps.project.MPSProject" />
     <classNode extendsClassName="jetbrains.mps.plugins.projectplugins.BaseProjectPlugin" />
+  </dependency>
+  <dependency className="jetbrains.mps.execution.configurations.implementation.plugin.plugin.ProjectPaneModelAddition_ActionGroup" file="ProjectPaneModelAddition_ActionGroup.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.lang.Throwable" />
+    <classNode dependClassName="jetbrains.mps.logging.Logger" />
+    <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup" />
   </dependency>
   <dependency className="jetbrains.mps.execution.configurations.implementation.plugin.plugin.RemoteSettingsEditor" file="RemoteSettingsEditor.java">
     <classNode dependClassName="java.awt.Color" />

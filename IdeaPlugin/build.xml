@@ -75,6 +75,7 @@
                 <file file="${base_dir}/lib/diffutils-1.2.1.jar"/>
             </resources>
         </copy>
+        <mkdir dir="${base_dir}/IdeaPlugin/mps-core/languages"/>
         <!-- TODO build languages -->
     </target>
 
@@ -383,12 +384,14 @@
                 <path path="${base_dir}/IdeaPlugin/mps-core/testSrc"/>
                 <path path="${base_dir}/languages/languageDesign/editor/tests/jetbrains.mps.lang.editor.tests/testSrc"/>
                 <path path="${base_dir}/languages/languageDesign/editor/tests/jetbrains.mps.lang.editor.tests/source_gen"/>
+                <path path="${base_dir}/languages/languageDesign/test/solutions/jetbrains.mps.lang.test.runtime/source_gen"/>
+                <path path="${base_dir}/testbench/source"/>
+                <path path="${base_dir}/testbench/source_gen"/>
             </src>
             <classpath>
                 <fileset dir="${dist.dir}/lib" includes="*.jar"/>
-                <!-- TODO remove dependency on languages!!!!!! -->
-                <fileset dir="${dist.dir}/languages/languageDesign" includes="jetbrains.mps.lang.test.runtime.jar"/>
                 <fileset dir="${ideaPath}/lib" includes="*.jar"/>
+                <fileset dir="${ideaPath}/lib/ant/lib" includes="*.jar"/>
             </classpath>
         </javac2>
         <!-- Test data copied here -->
@@ -418,6 +421,9 @@
         <copy todir="${plugins.sandbox.dir}/plugins/mps-core">
             <fileset dir="${dist.dir}"/>
         </copy>
+        <copy todir="${plugins.sandbox.dir}/plugins/tests/projectView">
+            <fileset dir="${base_dir}/IdeaPlugin/tests/projectView"/>
+        </copy>
         <mkdir dir="${plugins.sandbox.dir}/test/community/java/mockJDK-1.7"/>
 
         <junit fork="true"
@@ -445,11 +451,9 @@
                 <fileset dir="${ideaPath}/plugins/junit/lib">
                     <include name="junit-rt.jar"/>
                 </fileset>
+                <fileset dir="${ideaPath}/lib/ant/lib" includes="*.jar"/>
                 <fileset dir="${plugins.sandbox.dir}/plugins/mps-core/lib">
                     <include name="*.jar"/>
-                </fileset>
-                <fileset dir="${plugins.sandbox.dir}/plugins/mps-core/languages/languageDesign">
-                    <include name="jetbrains.mps.lang.test.runtime.jar"/>
                 </fileset>
                 <pathelement path="${java.class.path}"/>
             </classpath>

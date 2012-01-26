@@ -16,7 +16,6 @@
 
 package jetbrains.mps.idea.core.tests;
 
-import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.application.ex.ApplicationManagerEx;
 import com.intellij.openapi.components.impl.ComponentManagerImpl;
 import com.intellij.openapi.diagnostic.Logger;
@@ -33,10 +32,8 @@ import jetbrains.mps.project.SModelRoot;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.vfs.IFileUtils;
 import org.jetbrains.annotations.NotNull;
 
-import java.io.*;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
