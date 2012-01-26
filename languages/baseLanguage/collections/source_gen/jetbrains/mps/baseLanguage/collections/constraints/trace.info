@@ -1,13 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="ConstraintsAspectDescriptor.java" startLine="9" startPosition="0" endLine="79" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.constraints.ConstraintsAspectDescriptor" />
-  <unitInfo fileName="HashSetCreator_Constraints.java" startLine="7" startPosition="0" endLine="12" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.constraints.HashSetCreator_Constraints" />
-  <unitInfo fileName="IContainerOperation_Constraints.java" startLine="7" startPosition="0" endLine="12" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.constraints.IContainerOperation_Constraints" />
-  <unitInfo fileName="IListOperation_Constraints.java" startLine="7" startPosition="0" endLine="12" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.constraints.IListOperation_Constraints" />
-  <unitInfo fileName="IQueueOperation_Constraints.java" startLine="7" startPosition="0" endLine="12" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.constraints.IQueueOperation_Constraints" />
-  <unitInfo fileName="LinkedListCreator_Constraints.java" startLine="7" startPosition="0" endLine="12" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.constraints.LinkedListCreator_Constraints" />
-  <unitInfo fileName="ListCreatorWithInit_Constraints.java" startLine="7" startPosition="0" endLine="12" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.constraints.ListCreatorWithInit_Constraints" />
-  <unitInfo fileName="TreeSetCreator_Constraints.java" startLine="7" startPosition="0" endLine="12" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.constraints.TreeSetCreator_Constraints" />
   <root nodeId="1204071206995">
     <nodeInfo nodeId="1204071322847" fileName="SmartClosureParameterTypeUtil.java" startLine="20" startPosition="114" endLine="21" endPosition="324" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1206111352089" fileName="SmartClosureParameterTypeUtil.java" startLine="23" startPosition="7" endLine="24" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

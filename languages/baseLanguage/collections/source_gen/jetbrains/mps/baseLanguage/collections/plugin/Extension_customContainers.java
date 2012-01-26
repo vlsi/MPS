@@ -33,10 +33,4 @@ public class Extension_customContainers extends Extension.Default<_FunctionTypes
       }
     };
   }
-
-  public void activate() {
-  }
-
-  public void deactivate() {
-  }
 }

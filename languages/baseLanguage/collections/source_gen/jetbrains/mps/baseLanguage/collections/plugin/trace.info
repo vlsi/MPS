@@ -11,18 +11,12 @@
     <nodeInfo nodeId="5633688998557455344" fileName="Extension_customContainers.java" startLine="31" startPosition="9" endLine="32" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5633688998557455304" fileName="Extension_customContainers.java" startLine="17" startPosition="120" endLine="20" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Extension_customContainers#()V" />
     <nodeInfo nodeId="5633688998557455332" fileName="Extension_customContainers.java" startLine="28" startPosition="38" endLine="31" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5633688998557455304" fileName="Extension_customContainers.java" startLine="36" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="activate#()V" />
-    <nodeInfo nodeId="5633688998557455304" fileName="Extension_customContainers.java" startLine="39" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="deactivate#()V" />
     <nodeInfo nodeId="5633688998557455308" fileName="Extension_customContainers.java" startLine="23" startPosition="60" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#()Ljava/util/List;" />
     <nodeInfo nodeId="5633688998557455307" fileName="Extension_customContainers.java" startLine="22" startPosition="68" endLine="34" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5633688998557455304" fileName="Extension_customContainers.java" startLine="21" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="get#()Ljetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_return_P0_E0;" />
-    <scopeInfo nodeId="5633688998557455304" fileName="Extension_customContainers.java" startLine="37" startPosition="26" endLine="37" endPosition="26" />
-    <scopeInfo nodeId="5633688998557455304" fileName="Extension_customContainers.java" startLine="40" startPosition="28" endLine="40" endPosition="28" />
     <scopeInfo nodeId="5633688998557455304" fileName="Extension_customContainers.java" startLine="18" startPosition="39" endLine="19" endPosition="69" />
     <scopeInfo nodeId="5633688998557455333" fileName="Extension_customContainers.java" startLine="29" startPosition="26" endLine="30" endPosition="173" />
     <scopeInfo nodeId="5633688998557455304" fileName="Extension_customContainers.java" startLine="17" startPosition="120" endLine="20" endPosition="3" />
-    <scopeInfo nodeId="5633688998557455304" fileName="Extension_customContainers.java" startLine="36" startPosition="0" endLine="39" endPosition="0" />
-    <scopeInfo nodeId="5633688998557455304" fileName="Extension_customContainers.java" startLine="39" startPosition="0" endLine="42" endPosition="0" />
     <scopeInfo nodeId="5633688998557455309" fileName="Extension_customContainers.java" startLine="24" startPosition="35" endLine="32" endPosition="19">
       <varInfo nodeId="5633688998557455319" varName="desc" />
       <varInfo nodeId="5633688998557455327" varName="mdl" />
@@ -31,7 +25,7 @@
     <scopeInfo nodeId="5633688998557455308" fileName="Extension_customContainers.java" startLine="23" startPosition="60" endLine="34" endPosition="0" />
     <scopeInfo nodeId="5633688998557455304" fileName="Extension_customContainers.java" startLine="22" startPosition="68" endLine="34" endPosition="6" />
     <scopeInfo nodeId="5633688998557455304" fileName="Extension_customContainers.java" startLine="21" startPosition="0" endLine="36" endPosition="0" />
-    <unitInfo nodeId="5633688998557455304" fileName="Extension_customContainers.java" startLine="17" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.plugin.Extension_customContainers" />
+    <unitInfo nodeId="5633688998557455304" fileName="Extension_customContainers.java" startLine="17" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.plugin.Extension_customContainers" />
     <unitInfo nodeId="5633688998557455308" fileName="Extension_customContainers.java" startLine="23" startPosition="15" endLine="34" endPosition="5" unitName="jetbrains.mps.baseLanguage.collections.plugin.Extension_customContainers$1" />
   </root>
   <root nodeId="5633688998557707567">
