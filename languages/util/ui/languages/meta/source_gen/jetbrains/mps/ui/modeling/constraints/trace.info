@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="ConstraintsAspectDescriptor.java" startLine="9" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.ui.modeling.constraints.ConstraintsAspectDescriptor" />
+  <unitInfo fileName="ContextUIObjectParam_Constraints.java" startLine="7" startPosition="0" endLine="12" endPosition="0" unitName="jetbrains.mps.ui.modeling.constraints.ContextUIObjectParam_Constraints" />
+  <unitInfo fileName="Context_Constraints.java" startLine="7" startPosition="0" endLine="12" endPosition="0" unitName="jetbrains.mps.ui.modeling.constraints.Context_Constraints" />
+  <unitInfo fileName="EventHandlerTemplate_Constraints.java" startLine="7" startPosition="0" endLine="12" endPosition="0" unitName="jetbrains.mps.ui.modeling.constraints.EventHandlerTemplate_Constraints" />
   <root nodeId="1412244996131807617">
     <nodeInfo nodeId="1412244996131807617" fileName="AuxObjectAccessOp_Constraints.java" startLine="23" startPosition="78" endLine="24" endPosition="177" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="canBeChildBreakingPoint" />
     <nodeInfo nodeId="1412244996131807617" fileName="AuxObjectAccessOp_Constraints.java" startLine="24" startPosition="177" endLine="25" endPosition="192" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="breakingNode_qf6rfz_a0a1a0a0a1a0b0a1a2" />

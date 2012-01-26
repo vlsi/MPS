@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <unitInfo fileName="Command_Constraints.java" startLine="7" startPosition="0" endLine="12" endPosition="0" unitName="jetbrains.mps.bash.constraints.Command_Constraints" />
   <unitInfo fileName="ConstraintsAspectDescriptor.java" startLine="9" startPosition="0" endLine="59" endPosition="0" unitName="jetbrains.mps.bash.constraints.ConstraintsAspectDescriptor" />
+  <unitInfo fileName="ExternalCommandDeclaration_Constraints.java" startLine="7" startPosition="0" endLine="12" endPosition="0" unitName="jetbrains.mps.bash.constraints.ExternalCommandDeclaration_Constraints" />
+  <unitInfo fileName="ExternalOptionDeclaration_Constraints.java" startLine="7" startPosition="0" endLine="12" endPosition="0" unitName="jetbrains.mps.bash.constraints.ExternalOptionDeclaration_Constraints" />
+  <unitInfo fileName="OptionSetReference_Constraints.java" startLine="7" startPosition="0" endLine="12" endPosition="0" unitName="jetbrains.mps.bash.constraints.OptionSetReference_Constraints" />
   <root nodeId="3147078024747719682">
     <nodeInfo nodeId="3147078024747719682" fileName="ArgumentList_Constraints.java" startLine="15" startPosition="73" endLine="16" endPosition="170" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="canBeChildBreakingPoint" />
     <nodeInfo nodeId="3147078024747719682" fileName="ArgumentList_Constraints.java" startLine="18" startPosition="37" endLine="19" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />

@@ -9,6 +9,7 @@
   <unitInfo fileName="AbstractSubtypingRule_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="39" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.AbstractSubtypingRule_BehaviorDescriptor" />
   <unitInfo fileName="AddDependencyStatement_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.AddDependencyStatement_BehaviorDescriptor" />
   <unitInfo fileName="ApplicableNodeCondition_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.ApplicableNodeCondition_BehaviorDescriptor" />
+  <unitInfo fileName="ApplicableNodeReference_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.ApplicableNodeReference_Behavior" />
   <unitInfo fileName="ApplicableNodeReference_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.ApplicableNodeReference_BehaviorDescriptor" />
   <unitInfo fileName="AssertStatement_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.AssertStatement_BehaviorDescriptor" />
   <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="254" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.BehaviorAspectDescriptor" />
@@ -68,6 +69,7 @@
   <unitInfo fileName="MatchStatement_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.MatchStatement_BehaviorDescriptor" />
   <unitInfo fileName="MeetContainer_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.MeetContainer_BehaviorDescriptor" />
   <unitInfo fileName="MeetType_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.MeetType_BehaviorDescriptor" />
+  <unitInfo fileName="MessageStatement_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.MessageStatement_Behavior" />
   <unitInfo fileName="MessageStatement_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="8" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.MessageStatement_BehaviorDescriptor" />
   <unitInfo fileName="MessageTarget_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.MessageTarget_BehaviorDescriptor" />
   <unitInfo fileName="MultipleForeachLoopVariable_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.MultipleForeachLoopVariable_BehaviorDescriptor" />
@@ -87,11 +89,13 @@
   <unitInfo fileName="OverloadedOperatorTypeFunction_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.OverloadedOperatorTypeFunction_BehaviorDescriptor" />
   <unitInfo fileName="OverloadedOperatorTypeRule_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.OverloadedOperatorTypeRule_BehaviorDescriptor" />
   <unitInfo fileName="PatternCondition_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.PatternCondition_BehaviorDescriptor" />
+  <unitInfo fileName="PatternVariableReference_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.PatternVariableReference_Behavior" />
   <unitInfo fileName="PatternVariableReference_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.PatternVariableReference_BehaviorDescriptor" />
   <unitInfo fileName="PrintToTrace_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.PrintToTrace_BehaviorDescriptor" />
   <unitInfo fileName="Processed_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.Processed_BehaviorDescriptor" />
   <unitInfo fileName="PropertyMessageTarget_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.PropertyMessageTarget_BehaviorDescriptor" />
   <unitInfo fileName="PropertyNameTarget_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.PropertyNameTarget_BehaviorDescriptor" />
+  <unitInfo fileName="PropertyPatternVariableReference_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.PropertyPatternVariableReference_Behavior" />
   <unitInfo fileName="PropertyPatternVariableReference_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.PropertyPatternVariableReference_BehaviorDescriptor" />
   <unitInfo fileName="QuickFixArgumentReference_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.QuickFixArgumentReference_BehaviorDescriptor" />
   <unitInfo fileName="QuickFixArgument_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.QuickFixArgument_BehaviorDescriptor" />
@@ -115,7 +119,9 @@
   <unitInfo fileName="TypeClause_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.TypeClause_BehaviorDescriptor" />
   <unitInfo fileName="TypeOfExpression_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.TypeOfExpression_BehaviorDescriptor" />
   <unitInfo fileName="TypeVarDeclaration_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.TypeVarDeclaration_BehaviorDescriptor" />
+  <unitInfo fileName="TypeVarReference_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.TypeVarReference_Behavior" />
   <unitInfo fileName="TypeVarReference_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.TypeVarReference_BehaviorDescriptor" />
+  <unitInfo fileName="TypesystemIntentionArgument_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.TypesystemIntentionArgument_Behavior" />
   <unitInfo fileName="TypesystemIntentionArgument_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.TypesystemIntentionArgument_BehaviorDescriptor" />
   <unitInfo fileName="TypesystemIntention_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.TypesystemIntention_BehaviorDescriptor" />
   <unitInfo fileName="TypesystemQuickFix_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.TypesystemQuickFix_BehaviorDescriptor" />
@@ -127,6 +133,7 @@
   <unitInfo fileName="WasSelectedNodeOperation_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.WasSelectedNodeOperation_BehaviorDescriptor" />
   <unitInfo fileName="WhenConcreteStatement_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.WhenConcreteStatement_BehaviorDescriptor" />
   <unitInfo fileName="WhenConcreteVariableDeclaration_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.WhenConcreteVariableDeclaration_BehaviorDescriptor" />
+  <unitInfo fileName="WhenConcreteVariableReference_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.WhenConcreteVariableReference_Behavior" />
   <unitInfo fileName="WhenConcreteVariableReference_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.WhenConcreteVariableReference_BehaviorDescriptor" />
   <root nodeId="1213877218089">
     <nodeInfo nodeId="1213877218089" fileName="LinkPatternVariableReference_Behavior.java" startLine="11" startPosition="52" endLine="12" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="PARAMETERS_1225210740874" />
