@@ -1801,13 +1801,6 @@
         <property name="keycode" nameId="tp4k.1207318242774" value="VK_T" />
       </node>
     </node>
-    <node role="shortcutChange" roleId="tp4k.1562714432501166199" type="tp4k.SimpleShortcutChange" typeId="tp4k.1562714432501166198" id="5487985028841901516">
-      <link role="action" roleId="tp4k.6193305307616734326" targetNodeId="5487985028841901031" resolveInfo="ShowGenerationIntentions" />
-      <node role="keystroke" roleId="tp4k.1562714432501166206" type="tp4k.KeyMapKeystroke" typeId="tp4k.1207318242772" id="5487985028841901517">
-        <property name="modifiers" nameId="tp4k.1207318242773" value="alt" />
-        <property name="keycode" nameId="tp4k.1207318242774" value="VK_INSERT" />
-      </node>
-    </node>
   </root>
   <root id="5487985028841901518">
     <node role="shortcutChange" roleId="tp4k.1562714432501166199" type="tp4k.SimpleShortcutChange" typeId="tp4k.1562714432501166198" id="5487985028841901519">

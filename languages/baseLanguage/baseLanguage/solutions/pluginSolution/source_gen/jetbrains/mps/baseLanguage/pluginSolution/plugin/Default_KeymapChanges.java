@@ -28,6 +28,7 @@ public class Default_KeymapChanges extends BaseKeymapChanges {
     addSimpleShortcut("jetbrains.mps.baseLanguage.pluginSolution.plugin.OverrideMethod_Action", getShortcut("ctrl O"));
     addSimpleShortcut("jetbrains.mps.baseLanguage.pluginSolution.plugin.RenameMethod_Action", getShortcut("shift F6"));
     addSimpleShortcut("jetbrains.mps.baseLanguage.pluginSolution.plugin.RenameVariable_Action", getShortcut("shift F6"));
+    addSimpleShortcut("jetbrains.mps.baseLanguage.pluginSolution.plugin.ShowGenerationActions_Action", getShortcut("alt INSERT"));
     addSimpleShortcut("jetbrains.mps.baseLanguage.pluginSolution.plugin.ShowMembers_Action", getShortcut("ctrl F12"));
     addSimpleShortcut("jetbrains.mps.baseLanguage.pluginSolution.plugin.UncommentStatements_Action", getShortcut("ctrl shift SLASH"));
     // simple parameterized 

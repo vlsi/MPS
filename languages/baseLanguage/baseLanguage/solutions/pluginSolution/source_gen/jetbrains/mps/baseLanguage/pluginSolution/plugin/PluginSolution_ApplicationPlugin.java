@@ -32,6 +32,13 @@ public class PluginSolution_ApplicationPlugin extends BaseApplicationPlugin {
     addAction(new CommentStatements_Action());
     addAction(new ConvertAnonymousClass_Action());
     addAction(new ExtractMethod_Action());
+    addAction(new GenerateConstructor_Action());
+    addAction(new GenerateEqualsAndHashCode_Action());
+    addAction(new GenerateGettersAndSetters_Action());
+    addAction(new GenerateGetters_Action());
+    addAction(new GenerateMainMethod_Action());
+    addAction(new GenerateSetters_Action());
+    addAction(new GenerateToString_Action());
     addAction(new GoToInheritedClassifier_Action());
     addAction(new GoToOverridenMethod_Action());
     addAction(new ImplementMethod_Action());
@@ -47,6 +54,7 @@ public class PluginSolution_ApplicationPlugin extends BaseApplicationPlugin {
     addAction(new OverrideMethod_Action());
     addAction(new RenameMethod_Action());
     addAction(new RenameVariable_Action());
+    addAction(new ShowGenerationActions_Action());
     addAction(new ShowMembers_Action());
     addAction(new ShowNullDFA_Action());
     addAction(new ShowTodoViewer_Action());
@@ -59,6 +67,7 @@ public class PluginSolution_ApplicationPlugin extends BaseApplicationPlugin {
     addGroup(new BaseLanguageNodeActionsInternal_ActionGroup());
     addGroup(new BaseLanguageToolsAddition_ActionGroup());
     addGroup(new BaseLangugeCodeOverrideImplementMenuGroup_ActionGroup());
+    addGroup(new GenerateActions_ActionGroup());
     addGroup(new RefactoringAddition_ActionGroup());
     addGroup(new RefactoringAdditions_ActionGroup());
   }

@@ -43,13 +43,6 @@ public class IntentionsDescriptor extends BaseIntentionsDescriptor {
     add(new ExtractWhileConditionToInternalIfStatement_Intention(), "1199621296757");
     add(new FilpEqualsIntention_Intention(), "1199625900037");
     add(new FlipBinaryOperation_Intention(), "1195647334600");
-    add(new GenerateConstructor_Intention(), "3868795809789198353");
-    add(new GenerateEqualsAndHashcode_Intention(), "5973141109804726331");
-    add(new GenerateGetter_Intention(), "5973141109804726314");
-    add(new GenerateGettersAndSetters_Intention(), "4183818788368444771");
-    add(new GenerateMainMethod_Intention(), "1503864198456688932");
-    add(new GenerateSetter_Intention(), "5973141109804726322");
-    add(new GenerateToString_Intention(), "5973141109804726339");
     add(new ImplementMethods_Intention(), "1221638394062");
     add(new InvertIfCondition_Intention(), "1195647359405");
     add(new IterateOverIterable_Intention(), "1238764345596");
