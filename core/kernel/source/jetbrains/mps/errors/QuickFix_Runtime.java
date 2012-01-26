@@ -38,7 +38,7 @@ public abstract class QuickFix_Runtime {
 
   public abstract void execute(SNode node);
 
-  public String getDescription() {
+  public String getDescription(SNode node) {
     //quickFix w/o description was added to intentions menu
     return "<ERROR>: " + this.getClass().getName();
   }
