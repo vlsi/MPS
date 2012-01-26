@@ -65,4 +65,21 @@ public class ExtensionPoint<T> {
     return myId;
   }
 
+  @Override
+  public boolean equals(Object obj) {
+    if (obj == null || obj.getClass() != ExtensionPoint.class) return false;
+    return eq(((ExtensionPoint)obj).myId, myId) && eq(((ExtensionPoint)obj).myType, myType);
+  }
+
+  @Override
+  public int hashCode() {
+    int h = 37;
+    h += myId != null ? myId.hashCode()*17 : 53;
+    h += myType != null ? myType.hashCode()*23 : 67;
+    return h;
+  }
+  
+  private boolean eq (Object a, Object b) {
+    return a == null ? b == null : a.equals(b);
+  }
 }
