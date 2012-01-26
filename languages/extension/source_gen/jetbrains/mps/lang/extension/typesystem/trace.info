@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="TypesystemDescriptor.java" startLine="8" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.lang.extension.typesystem.TypesystemDescriptor" />
+  <unitInfo fileName="TypesystemDescriptor.java" startLine="8" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.lang.extension.typesystem.TypesystemDescriptor" />
   <root nodeId="6626851894249712466">
     <nodeInfo nodeId="6626851894249791088" fileName="typeof_ExtensionPointExpression_InferenceRule.java" startLine="25" startPosition="116" endLine="26" endPosition="126" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6626851894249791047" fileName="typeof_ExtensionPointExpression_InferenceRule.java" startLine="27" startPosition="5" endLine="28" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -134,6 +134,46 @@
     </scopeInfo>
     <unitInfo nodeId="6626851894249712466" fileName="typeof_ExtensionPointExpression_InferenceRule.java" startLine="21" startPosition="0" endLine="108" endPosition="0" unitName="jetbrains.mps.lang.extension.typesystem.typeof_ExtensionPointExpression_InferenceRule" />
     <unitInfo nodeId="6626851894249791052" fileName="typeof_ExtensionPointExpression_InferenceRule.java" startLine="49" startPosition="0" endLine="107" endPosition="0" unitName="jetbrains.mps.lang.extension.typesystem.typeof_ExtensionPointExpression_InferenceRule$QuotationClass_x0hnp2_a0a1a0" />
+  </root>
+  <root nodeId="7036359038356115122">
+    <nodeInfo nodeId="7036359038356115138" fileName="typeof_ExtensionFieldReference_InferenceRule.java" startLine="19" startPosition="5" endLine="20" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7036359038356115138" fileName="typeof_ExtensionFieldReference_InferenceRule.java" startLine="20" startPosition="45" endLine="21" endPosition="205" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7036359038356115138" fileName="typeof_ExtensionFieldReference_InferenceRule.java" startLine="21" startPosition="205" endLine="22" endPosition="344" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7036359038356115122" fileName="typeof_ExtensionFieldReference_InferenceRule.java" startLine="26" startPosition="46" endLine="27" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7036359038356115122" fileName="typeof_ExtensionFieldReference_InferenceRule.java" startLine="31" startPosition="5" endLine="32" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7036359038356115122" fileName="typeof_ExtensionFieldReference_InferenceRule.java" startLine="32" startPosition="117" endLine="33" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7036359038356115122" fileName="typeof_ExtensionFieldReference_InferenceRule.java" startLine="37" startPosition="30" endLine="38" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7036359038356115122" fileName="typeof_ExtensionFieldReference_InferenceRule.java" startLine="14" startPosition="130" endLine="16" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="typeof_ExtensionFieldReference_InferenceRule#()V" />
+    <nodeInfo nodeId="7036359038356115122" fileName="typeof_ExtensionFieldReference_InferenceRule.java" startLine="25" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getApplicableConceptFQName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="7036359038356115122" fileName="typeof_ExtensionFieldReference_InferenceRule.java" startLine="30" startPosition="68" endLine="34" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="7036359038356115122" fileName="typeof_ExtensionFieldReference_InferenceRule.java" startLine="36" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="overrides#()Z" />
+    <nodeInfo nodeId="7036359038356115138" fileName="typeof_ExtensionFieldReference_InferenceRule.java" startLine="18" startPosition="116" endLine="23" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="7036359038356115122" fileName="typeof_ExtensionFieldReference_InferenceRule.java" startLine="29" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableAndPattern#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
+    <nodeInfo nodeId="7036359038356115122" fileName="typeof_ExtensionFieldReference_InferenceRule.java" startLine="17" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="applyRule#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
+    <scopeInfo nodeId="7036359038356115122" fileName="typeof_ExtensionFieldReference_InferenceRule.java" startLine="15" startPosition="57" endLine="15" endPosition="57" />
+    <scopeInfo nodeId="7036359038356115122" fileName="typeof_ExtensionFieldReference_InferenceRule.java" startLine="26" startPosition="46" endLine="27" endPosition="76" />
+    <scopeInfo nodeId="7036359038356115122" fileName="typeof_ExtensionFieldReference_InferenceRule.java" startLine="37" startPosition="30" endLine="38" endPosition="17" />
+    <scopeInfo nodeId="7036359038356115122" fileName="typeof_ExtensionFieldReference_InferenceRule.java" startLine="14" startPosition="130" endLine="16" endPosition="3" />
+    <scopeInfo nodeId="7036359038356115122" fileName="typeof_ExtensionFieldReference_InferenceRule.java" startLine="31" startPosition="5" endLine="33" endPosition="45">
+      <varInfo nodeId="7036359038356115122" varName="b" />
+    </scopeInfo>
+    <scopeInfo nodeId="7036359038356115138" fileName="typeof_ExtensionFieldReference_InferenceRule.java" startLine="19" startPosition="5" endLine="22" endPosition="344">
+      <varInfo nodeId="7036359038356115138" varName="_info_12389875345" />
+      <varInfo nodeId="7036359038356115138" varName="_nodeToCheck_1029348928467" />
+    </scopeInfo>
+    <scopeInfo nodeId="7036359038356115122" fileName="typeof_ExtensionFieldReference_InferenceRule.java" startLine="25" startPosition="0" endLine="29" endPosition="0" />
+    <scopeInfo nodeId="7036359038356115122" fileName="typeof_ExtensionFieldReference_InferenceRule.java" startLine="30" startPosition="68" endLine="34" endPosition="5" />
+    <scopeInfo nodeId="7036359038356115122" fileName="typeof_ExtensionFieldReference_InferenceRule.java" startLine="36" startPosition="0" endLine="40" endPosition="0" />
+    <scopeInfo nodeId="7036359038356115123" fileName="typeof_ExtensionFieldReference_InferenceRule.java" startLine="18" startPosition="116" endLine="23" endPosition="5" />
+    <scopeInfo nodeId="7036359038356115122" fileName="typeof_ExtensionFieldReference_InferenceRule.java" startLine="29" startPosition="0" endLine="36" endPosition="0">
+      <varInfo nodeId="7036359038356115122" varName="argument" />
+    </scopeInfo>
+    <scopeInfo nodeId="7036359038356115122" fileName="typeof_ExtensionFieldReference_InferenceRule.java" startLine="17" startPosition="0" endLine="25" endPosition="0">
+      <varInfo nodeId="7036359038356115122" varName="efr" />
+      <varInfo nodeId="7036359038356115122" varName="status" />
+      <varInfo nodeId="7036359038356115122" varName="typeCheckingContext" />
+    </scopeInfo>
+    <unitInfo nodeId="7036359038356115122" fileName="typeof_ExtensionFieldReference_InferenceRule.java" startLine="14" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.lang.extension.typesystem.typeof_ExtensionFieldReference_InferenceRule" />
   </root>
   <root nodeId="8029776554053057814">
     <nodeInfo nodeId="7261386713308408619" fileName="typeof_ExtensionObjectGetter_InferenceRule.java" startLine="21" startPosition="5" endLine="22" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

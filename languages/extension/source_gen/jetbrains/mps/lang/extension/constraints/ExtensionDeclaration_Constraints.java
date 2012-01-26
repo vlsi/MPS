@@ -34,7 +34,7 @@ public class ExtensionDeclaration_Constraints extends BaseConstraintsDescriptor 
           return ((extensionPoint != null ?
             SPropertyOperations.getString(extensionPoint, "extensionName") :
             "<unknown>"
-          )) + " Extension";
+          )) + "_extension";
         }
       }
     });

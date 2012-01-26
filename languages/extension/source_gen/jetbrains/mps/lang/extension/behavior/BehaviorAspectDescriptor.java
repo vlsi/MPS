@@ -7,7 +7,7 @@ import java.util.Arrays;
 import jetbrains.mps.smodel.runtime.interpreted.BehaviorAspectInterpreted;
 
 public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor {
-  private static String[] stringSwitchCases_846f5o_a0a0a = new String[]{"jetbrains.mps.lang.extension.structure.ExtensionDeclaration", "jetbrains.mps.lang.extension.structure.ExtensionObjectGetter", "jetbrains.mps.lang.extension.structure.ExtensionPointDeclaration", "jetbrains.mps.lang.extension.structure.ExtensionPointExpression"};
+  private static String[] stringSwitchCases_846f5o_a0a0a = new String[]{"jetbrains.mps.lang.extension.structure.ExtensionDeclaration", "jetbrains.mps.lang.extension.structure.ExtensionFieldDeclaration", "jetbrains.mps.lang.extension.structure.ExtensionFieldReference", "jetbrains.mps.lang.extension.structure.ExtensionFunction", "jetbrains.mps.lang.extension.structure.ExtensionObjectGetter", "jetbrains.mps.lang.extension.structure.ExtensionPointDeclaration", "jetbrains.mps.lang.extension.structure.ExtensionPointExpression"};
 
   public BehaviorAspectDescriptor() {
   }
@@ -16,12 +16,18 @@ public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.Be
     switch (Arrays.binarySearch(stringSwitchCases_846f5o_a0a0a, fqName)) {
       case 0:
         return new ExtensionDeclaration_BehaviorDescriptor();
-      case 2:
+      case 5:
         return new ExtensionPointDeclaration_BehaviorDescriptor();
-      case 1:
+      case 4:
         return new ExtensionObjectGetter_BehaviorDescriptor();
-      case 3:
+      case 6:
         return new ExtensionPointExpression_BehaviorDescriptor();
+      case 3:
+        return new ExtensionFunction_BehaviorDescriptor();
+      case 1:
+        return new ExtensionFieldDeclaration_BehaviorDescriptor();
+      case 2:
+        return new ExtensionFieldReference_BehaviorDescriptor();
       default:
         return BehaviorAspectInterpreted.getInstance().getDescriptor(fqName);
     }

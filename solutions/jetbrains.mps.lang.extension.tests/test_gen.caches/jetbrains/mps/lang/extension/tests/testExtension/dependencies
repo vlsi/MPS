@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dependenciesRoot>
+  <dependency className="jetbrains.mps.lang.extension.tests.testExtension.extension_Test" file="extension_Test.java">
+    <classNode dependClassName="com.intellij.openapi.application.ApplicationAdapter" />
+    <classNode dependClassName="com.intellij.openapi.application.ex.ApplicationManagerEx" />
+    <classNode dependClassName="java.lang.Exception" />
+    <classNode dependClassName="java.lang.Iterable" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.RuntimeException" />
+    <classNode dependClassName="java.util.Iterator" />
+    <classNode dependClassName="java.util.NoSuchElementException" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.util.plugin.run.MPSLaunch" />
+    <classNode dependClassName="jetbrains.mps.lang.extension.tests.plugin.TestObject" />
+    <classNode dependClassName="jetbrains.mps.smodel.structure.Extension" />
+    <classNode dependClassName="jetbrains.mps.smodel.structure.ExtensionPoint" />
+    <classNode dependClassName="junit.framework.Assert" />
+    <classNode extendsClassName="junit.framework.TestCase" />
+  </dependency>
+</dependenciesRoot>
+

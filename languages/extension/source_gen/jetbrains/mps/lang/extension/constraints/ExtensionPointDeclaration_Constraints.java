@@ -9,6 +9,7 @@ import java.util.HashMap;
 import jetbrains.mps.smodel.runtime.base.BasePropertyConstraintsDescriptor;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class ExtensionPointDeclaration_Constraints extends BaseConstraintsDescriptor {
   public ExtensionPointDeclaration_Constraints() {
@@ -27,7 +28,7 @@ public class ExtensionPointDeclaration_Constraints extends BaseConstraintsDescri
       @Override
       public Object getValue(SNode node, IScope scope) {
         String propertyName = "name";
-        return node.getName() + " ExtensionPoint";
+        return SPropertyOperations.getString(node, "extensionName");
       }
     });
     return properties;

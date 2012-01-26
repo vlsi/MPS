@@ -46,8 +46,11 @@ public interface Extension<T> {
     }
 
     @Override
-    public T get() {
-      return null;  //To change body of implemented methods use File | Settings | File Templates.
+    public void activate() {
+    }
+
+    @Override
+    public void deactivate() {
     }
   }
 

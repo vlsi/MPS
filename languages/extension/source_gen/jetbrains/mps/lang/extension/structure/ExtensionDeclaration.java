@@ -6,8 +6,8 @@ import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.lang.core.structure.INamedConcept;
 import jetbrains.mps.smodel.SNode;
 import java.util.Iterator;
-import jetbrains.mps.lang.core.structure.Attribute;
 import java.util.List;
+import jetbrains.mps.lang.core.structure.Attribute;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -20,6 +20,9 @@ public class ExtensionDeclaration extends BaseConcept implements INamedConcept {
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String EXTENSION_POINT = "extensionPoint";
   public static final String OBJECT_GETTER = "objectGetter";
+  public static final String ACTIVATOR = "activator";
+  public static final String DEACTIVATOR = "deactivator";
+  public static final String FIELD_DECLARATION = "fieldDeclaration";
   public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
 
   public ExtensionDeclaration(SNode node) {
@@ -72,6 +75,42 @@ public class ExtensionDeclaration extends BaseConcept implements INamedConcept {
 
   public void setObjectGetter(ExtensionObjectGetter node) {
     super.setChild(ExtensionDeclaration.OBJECT_GETTER, node);
+  }
+
+  public ExtensionFunction getActivator() {
+    return (ExtensionFunction) this.getChild(ExtensionFunction.class, ExtensionDeclaration.ACTIVATOR);
+  }
+
+  public void setActivator(ExtensionFunction node) {
+    super.setChild(ExtensionDeclaration.ACTIVATOR, node);
+  }
+
+  public ExtensionFunction getDeactivator() {
+    return (ExtensionFunction) this.getChild(ExtensionFunction.class, ExtensionDeclaration.DEACTIVATOR);
+  }
+
+  public void setDeactivator(ExtensionFunction node) {
+    super.setChild(ExtensionDeclaration.DEACTIVATOR, node);
+  }
+
+  public int getFieldDeclarationsCount() {
+    return this.getChildCount(ExtensionDeclaration.FIELD_DECLARATION);
+  }
+
+  public Iterator<ExtensionFieldDeclaration> fieldDeclarations() {
+    return this.children(ExtensionFieldDeclaration.class, ExtensionDeclaration.FIELD_DECLARATION);
+  }
+
+  public List<ExtensionFieldDeclaration> getFieldDeclarations() {
+    return this.getChildren(ExtensionFieldDeclaration.class, ExtensionDeclaration.FIELD_DECLARATION);
+  }
+
+  public void addFieldDeclaration(ExtensionFieldDeclaration node) {
+    this.addChild(ExtensionDeclaration.FIELD_DECLARATION, node);
+  }
+
+  public void insertFieldDeclaration(ExtensionFieldDeclaration prev, ExtensionFieldDeclaration node) {
+    this.insertChild(prev, ExtensionDeclaration.FIELD_DECLARATION, node);
   }
 
   public int getSmodelAttributesCount() {
