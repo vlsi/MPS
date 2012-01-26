@@ -193,6 +193,84 @@
           <link role="annotation" roleId="tpee.1188208074048" targetNodeId="89ww.8492459591399146889" resolveInfo="MPSLaunch" />
         </node>
       </node>
+      <node role="testMethod" roleId="tpe3.1171931858462" type="tpe3.TestMethod" typeId="tpe3.1171931690126" id="2622946712629256061">
+        <property name="methodName" nameId="tpe3.1171931690128" value="testLazyObject" />
+        <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="2622946712629256062" />
+        <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="2622946712629256063" />
+        <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="2622946712629256064">
+          <node role="statement" roleId="tpee.1068581517665" type="tpe3.AssertIsNull" typeId="tpe3.1172028177041" id="2622946712629257809">
+            <node role="expression" roleId="tpe3.1172028236559" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="2622946712629257811">
+              <link role="classifier" roleId="tpee.1144433057691" targetNodeId="d0sk.2622946712629256035" resolveInfo="LazyTestObject" />
+              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="d0sk.2622946712629256041" resolveInfo="INSTANCE" />
+            </node>
+          </node>
+          <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="2622946712629256066">
+            <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="2622946712629256067">
+              <property name="name" nameId="tpck.1169194664001" value="extensions" />
+              <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2622946712629256068">
+                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="e2lb.~Iterable" resolveInfo="Iterable" />
+                <node role="parameter" roleId="tpee.1109201940907" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2622946712629256069">
+                  <link role="classifier" roleId="tpee.1107535924139" targetNodeId="bltl.~Extension" resolveInfo="Extension" />
+                  <node role="parameter" roleId="tpee.1109201940907" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2622946712629257765">
+                    <link role="classifier" roleId="tpee.1107535924139" targetNodeId="d0sk.2622946712629256035" resolveInfo="LazyTestObject" />
+                  </node>
+                </node>
+              </node>
+              <node role="initializer" roleId="tpee.1068431790190" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2622946712629256071">
+                <node role="operand" roleId="tpee.1197027771414" type="v54s.ExtensionPointExpression" typeId="v54s.6626851894249711936" id="2622946712629256072">
+                  <link role="extensionPoint" roleId="v54s.6626851894249712469" targetNodeId="d0sk.2622946712629256033" resolveInfo="lazyTestExtensionPoint" />
+                </node>
+                <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2622946712629256073">
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="bltl.~ExtensionPoint%dgetExtensions()%cjava%dlang%dIterable" resolveInfo="getExtensions" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="2622946712629257797">
+            <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="2622946712629257798">
+              <property name="name" nameId="tpck.1169194664001" value="lzo" />
+              <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2622946712629257799">
+                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="d0sk.2622946712629256035" resolveInfo="LazyTestObject" />
+              </node>
+              <node role="initializer" roleId="tpee.1068431790190" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2622946712629257800">
+                <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2622946712629257801">
+                  <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2622946712629257802">
+                    <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="2622946712629257803">
+                      <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2622946712629256067" resolveInfo="extensions" />
+                    </node>
+                    <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2622946712629257804">
+                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="e2lb.~Iterable%diterator()%cjava%dutil%dIterator" resolveInfo="iterator" />
+                    </node>
+                  </node>
+                  <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2622946712629257805">
+                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="k7g3.~Iterator%dnext()%cjava%dlang%dObject" resolveInfo="next" />
+                  </node>
+                </node>
+                <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2622946712629257806">
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="bltl.~Extension%dget()%cjava%dlang%dObject" resolveInfo="get" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="statement" roleId="tpee.1068581517665" type="tpe3.AssertInNotNull" typeId="tpe3.7080278351417106679" id="2622946712629257821">
+            <node role="expression" roleId="tpe3.7080278351417106681" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="2622946712629257823">
+              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2622946712629257798" resolveInfo="lzo" />
+            </node>
+          </node>
+          <node role="statement" roleId="tpee.1068581517665" type="tpe3.AssertSame" typeId="tpe3.1171985735491" id="2622946712629257815">
+            <node role="actual" roleId="tpe3.8427750732757990725" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="2622946712629257819">
+              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2622946712629257798" resolveInfo="lzo" />
+            </node>
+            <node role="expected" roleId="tpe3.8427750732757990724" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="2622946712629257818">
+              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="d0sk.2622946712629256041" resolveInfo="INSTANCE" />
+              <link role="classifier" roleId="tpee.1144433057691" targetNodeId="d0sk.2622946712629256035" resolveInfo="LazyTestObject" />
+            </node>
+          </node>
+        </node>
+        <node role="annotation" roleId="tpee.1188208488637" type="tpee.AnnotationInstance" typeId="tpee.1188207840427" id="2622946712629256065">
+          <link role="annotation" roleId="tpee.1188208074048" targetNodeId="89ww.8492459591399146889" resolveInfo="MPSLaunch" />
+        </node>
+      </node>
     </node>
     <node role="afterTest" roleId="tpe3.8243879142738613220" type="tpe3.AfterTest" typeId="tpe3.8243879142738613213" id="2622946712629175388">
       <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="2622946712629175389">

@@ -4,17 +4,25 @@
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Arrays" />
+    <classNode dependClassName="jetbrains.mps.lang.extension.tests.plugin.Extension_lazyTestExtensionPoint" />
     <classNode dependClassName="jetbrains.mps.lang.extension.tests.plugin.Extension_testExtensionPoint" />
+    <classNode dependClassName="jetbrains.mps.lang.extension.tests.plugin.LazyTestObject" />
     <classNode dependClassName="jetbrains.mps.lang.extension.tests.plugin.TestObject" />
     <classNode dependClassName="jetbrains.mps.smodel.structure.Extension" />
     <classNode dependClassName="jetbrains.mps.smodel.structure.ExtensionPoint" />
     <classNode extendsClassName="jetbrains.mps.smodel.structure.DefaultExtensionDescriptor" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.extension.tests.plugin.Extension_lazyTestExtensionPoint" file="Extension_lazyTestExtensionPoint.java">
+    <classNode dependClassName="jetbrains.mps.lang.extension.tests.plugin.LazyTestObject" />
+    <classNode dependClassName="jetbrains.mps.smodel.structure.Extension" />
+    <classNode extendsClassName="jetbrains.mps.smodel.structure.Default" />
   </dependency>
   <dependency className="jetbrains.mps.lang.extension.tests.plugin.Extension_testExtensionPoint" file="Extension_testExtensionPoint.java">
     <classNode dependClassName="jetbrains.mps.lang.extension.tests.plugin.TestObject" />
     <classNode dependClassName="jetbrains.mps.smodel.structure.Extension" />
     <classNode extendsClassName="jetbrains.mps.smodel.structure.Default" />
   </dependency>
+  <dependency className="jetbrains.mps.lang.extension.tests.plugin.LazyTestObject" file="LazyTestObject.java" />
   <dependency className="jetbrains.mps.lang.extension.tests.plugin.TestObject" file="TestObject.java">
     <classNode dependClassName="java.lang.String" />
   </dependency>

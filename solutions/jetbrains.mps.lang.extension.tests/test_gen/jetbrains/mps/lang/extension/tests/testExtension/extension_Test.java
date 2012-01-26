@@ -10,6 +10,7 @@ import jetbrains.mps.smodel.structure.ExtensionPoint;
 import junit.framework.Assert;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
+import jetbrains.mps.lang.extension.tests.plugin.LazyTestObject;
 import com.intellij.openapi.application.ex.ApplicationManagerEx;
 import com.intellij.openapi.application.ApplicationAdapter;
 
@@ -33,6 +34,15 @@ public class extension_Test extends TestCase {
     TEST_OBJECT = to;
     Assert.assertEquals("foobar", to.getValue());
     Assert.assertFalse(to.getShutDown());
+  }
+
+  @MPSLaunch
+  public void test_testLazyObject() throws Exception {
+    Assert.assertNull(LazyTestObject.INSTANCE);
+    Iterable<Extension<LazyTestObject>> extensions = ExtensionPoint.<LazyTestObject>generify(new ExtensionPoint("jetbrains.mps.lang.extension.tests.lazyTestExtensionPoint", LazyTestObject.class)).getExtensions();
+    LazyTestObject lzo = extensions.iterator().next().get();
+    Assert.assertNotNull(lzo);
+    Assert.assertSame(LazyTestObject.INSTANCE, lzo);
   }
 
   public void tearDown() {

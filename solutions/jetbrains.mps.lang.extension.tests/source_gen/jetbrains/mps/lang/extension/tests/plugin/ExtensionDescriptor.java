@@ -8,8 +8,8 @@ import jetbrains.mps.smodel.structure.Extension;
 import java.util.Arrays;
 
 public class ExtensionDescriptor extends DefaultExtensionDescriptor {
-  private ExtensionPoint[] extensionPoints = new ExtensionPoint[]{new ExtensionPoint("jetbrains.mps.lang.extension.tests.testExtensionPoint", TestObject.class)};
-  private Extension[] extensions = new Extension[]{new Extension_testExtensionPoint()};
+  private ExtensionPoint[] extensionPoints = new ExtensionPoint[]{new ExtensionPoint("jetbrains.mps.lang.extension.tests.testExtensionPoint", TestObject.class), new ExtensionPoint("jetbrains.mps.lang.extension.tests.lazyTestExtensionPoint", LazyTestObject.class)};
+  private Extension[] extensions = new Extension[]{new Extension_testExtensionPoint(), new Extension_lazyTestExtensionPoint()};
 
   public ExtensionDescriptor() {
   }

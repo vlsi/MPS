@@ -16,6 +16,15 @@
     <node type="v54s.ExtensionDeclaration" typeId="v54s.3729007189729192404" id="7036359038356253986">
       <link role="extensionPoint" roleId="v54s.3729007189729192405" targetNodeId="7036359038356253954" />
     </node>
+    <node type="v54s.ExtensionPointDeclaration" typeId="v54s.3729007189729192406" id="2622946712629256033">
+      <property name="extensionName" nameId="v54s.5911785528834333590" value="lazyTestExtensionPoint" />
+    </node>
+    <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="2622946712629256035">
+      <property name="name" nameId="tpck.1169194664001" value="LazyTestObject" />
+    </node>
+    <node type="v54s.ExtensionDeclaration" typeId="v54s.3729007189729192404" id="2622946712629256054">
+      <link role="extensionPoint" roleId="v54s.3729007189729192405" targetNodeId="2622946712629256033" resolveInfo="lazyTestExtensionPoint" />
+    </node>
   </roots>
   <root id="7036359038356246776">
     <node role="property" roleId="tpee.1201374247313" type="tpee.Property" typeId="tpee.1201370618622" id="7036359038356271889">
@@ -121,6 +130,48 @@
             <node role="rValue" roleId="tpee.1068498886297" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="2622946712629175387" />
             <node role="lValue" roleId="tpee.1068498886295" type="v54s.ExtensionFieldReference" typeId="v54s.7036359038356115102" id="2622946712629175374">
               <link role="declaration" roleId="v54s.7036359038356115103" targetNodeId="7036359038356253991" resolveInfo="myTestObject" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </root>
+  <root id="2622946712629256033">
+    <node role="objectType" roleId="v54s.8029776554053057803" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2622946712629256053">
+      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="2622946712629256035" resolveInfo="LazyTestObject" />
+    </node>
+  </root>
+  <root id="2622946712629256035">
+    <node role="staticField" roleId="tpee.1128555889557" type="tpee.StaticFieldDeclaration" typeId="tpee.1070462154015" id="2622946712629256041">
+      <property name="name" nameId="tpck.1169194664001" value="INSTANCE" />
+      <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="2622946712629257812" />
+      <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2622946712629256044">
+        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="2622946712629256035" resolveInfo="LazyTestObject" />
+      </node>
+    </node>
+    <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="2622946712629256036" />
+    <node role="constructor" roleId="tpee.1068390468201" type="tpee.ConstructorDeclaration" typeId="tpee.1068580123140" id="2622946712629256037">
+      <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="2622946712629256038" />
+      <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="2622946712629256039" />
+      <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="2622946712629256040">
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="2622946712629256045">
+          <node role="expression" roleId="tpee.1068580123156" type="tpee.AssignmentExpression" typeId="tpee.1068498886294" id="2622946712629256049">
+            <node role="rValue" roleId="tpee.1068498886297" type="tpee.ThisExpression" typeId="tpee.1070475354124" id="2622946712629256052" />
+            <node role="lValue" roleId="tpee.1068498886295" type="tpee.LocalStaticFieldReference" typeId="tpee.1172008963197" id="2622946712629256046">
+              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2622946712629256041" resolveInfo="INSTANCE" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </root>
+  <root id="2622946712629256054">
+    <node role="objectGetter" roleId="v54s.8029776554053057811" type="v54s.ExtensionObjectGetter" typeId="v54s.8029776554053043557" id="2622946712629256055">
+      <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="2622946712629256056">
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="2622946712629256057">
+          <node role="expression" roleId="tpee.1068580123156" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="2622946712629256058">
+            <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="2622946712629256060">
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="2622946712629256037" resolveInfo="LazyTestObject" />
             </node>
           </node>
         </node>

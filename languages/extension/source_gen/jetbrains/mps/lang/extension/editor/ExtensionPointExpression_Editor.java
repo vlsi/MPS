@@ -59,6 +59,7 @@ public class ExtensionPointExpression_Editor extends DefaultNodeEditor {
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.PUNCTUATION_LEFT, true);
+      style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
     }
     editorCell.setDefaultText("");
     return editorCell;
@@ -90,11 +91,7 @@ public class ExtensionPointExpression_Editor extends DefaultNodeEditor {
     EditorCell editorCell;
     provider.setAuxiliaryCellProvider(new ExtensionPointExpression_Editor._Inline_hr8njl_a2a());
     editorCell = provider.createEditorCell(editorContext);
-    BaseLanguageStyle_StyleSheet.getStringLiteral(editorCell).apply(editorCell);
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.PUNCTUATION_LEFT, true);
-    }
+    BaseLanguageStyle_StyleSheet.getClassName(editorCell).apply(editorCell);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

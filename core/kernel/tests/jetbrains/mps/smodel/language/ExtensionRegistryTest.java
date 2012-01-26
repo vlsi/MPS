@@ -43,19 +43,26 @@ public class ExtensionRegistryTest {
   private static final String EP2 = "baz.qux";
 
   private Mockery context;
+  private ExtensionRegistry myExtensionRegistry;
 
   @Before
   public void createContext() {
     context = new Mockery();
-    assertNull(ExtensionRegistry.getInstance());
-    new ExtensionRegistry ().init();
+    if (ExtensionRegistry.getInstance() == null) {
+      myExtensionRegistry = new ExtensionRegistry();
+      myExtensionRegistry.init();
+    }
   }
   
   @After
   public void checkAndCleanup () {
     context.assertIsSatisfied();
-    ExtensionRegistry.getInstance().dispose();
-    assertNull(ExtensionRegistry.getInstance());
+    if (myExtensionRegistry != null) {
+      assert myExtensionRegistry == ExtensionRegistry.getInstance();
+      ExtensionRegistry.getInstance().dispose();
+      assertNull(ExtensionRegistry.getInstance());
+      this.myExtensionRegistry = null;
+    }
   }
 
   @Test

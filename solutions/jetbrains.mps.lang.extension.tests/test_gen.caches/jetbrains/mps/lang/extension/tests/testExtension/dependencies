@@ -10,6 +10,7 @@
     <classNode dependClassName="java.util.Iterator" />
     <classNode dependClassName="java.util.NoSuchElementException" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.util.plugin.run.MPSLaunch" />
+    <classNode dependClassName="jetbrains.mps.lang.extension.tests.plugin.LazyTestObject" />
     <classNode dependClassName="jetbrains.mps.lang.extension.tests.plugin.TestObject" />
     <classNode dependClassName="jetbrains.mps.smodel.structure.Extension" />
     <classNode dependClassName="jetbrains.mps.smodel.structure.ExtensionPoint" />

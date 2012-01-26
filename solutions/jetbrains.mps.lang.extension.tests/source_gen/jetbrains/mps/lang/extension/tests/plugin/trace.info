@@ -1,6 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="ExtensionDescriptor.java" startLine="10" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.lang.extension.tests.plugin.ExtensionDescriptor" />
+  <root nodeId="2622946712629256035">
+    <nodeInfo nodeId="2622946712629256041" fileName="LazyTestObject.java" startLine="6" startPosition="29" endLine="7" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="INSTANCE" />
+    <nodeInfo nodeId="2622946712629256045" fileName="LazyTestObject.java" startLine="9" startPosition="27" endLine="10" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2622946712629256037" fileName="LazyTestObject.java" startLine="8" startPosition="0" endLine="11" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="LazyTestObject#()V" />
+    <scopeInfo nodeId="2622946712629256040" fileName="LazyTestObject.java" startLine="9" startPosition="27" endLine="10" endPosition="20" />
+    <scopeInfo nodeId="2622946712629256037" fileName="LazyTestObject.java" startLine="8" startPosition="0" endLine="11" endPosition="3" />
+    <unitInfo nodeId="2622946712629256035" fileName="LazyTestObject.java" startLine="6" startPosition="0" endLine="13" endPosition="0" unitName="jetbrains.mps.lang.extension.tests.plugin.LazyTestObject" />
+  </root>
+  <root nodeId="2622946712629256054">
+    <nodeInfo nodeId="2622946712629256054" fileName="Extension_lazyTestExtensionPoint.java" startLine="8" startPosition="45" endLine="9" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="2622946712629256057" fileName="Extension_lazyTestExtensionPoint.java" startLine="12" startPosition="31" endLine="13" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2622946712629256054" fileName="Extension_lazyTestExtensionPoint.java" startLine="7" startPosition="89" endLine="10" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Extension_lazyTestExtensionPoint#()V" />
+    <nodeInfo nodeId="2622946712629256054" fileName="Extension_lazyTestExtensionPoint.java" startLine="11" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="get#()Ljetbrains/mps/lang/extension/tests/plugin/LazyTestObject;" />
+    <scopeInfo nodeId="2622946712629256054" fileName="Extension_lazyTestExtensionPoint.java" startLine="8" startPosition="45" endLine="9" endPosition="71" />
+    <scopeInfo nodeId="2622946712629256054" fileName="Extension_lazyTestExtensionPoint.java" startLine="12" startPosition="31" endLine="13" endPosition="32" />
+    <scopeInfo nodeId="2622946712629256054" fileName="Extension_lazyTestExtensionPoint.java" startLine="7" startPosition="89" endLine="10" endPosition="3" />
+    <scopeInfo nodeId="2622946712629256054" fileName="Extension_lazyTestExtensionPoint.java" startLine="11" startPosition="0" endLine="15" endPosition="0" />
+    <unitInfo nodeId="2622946712629256054" fileName="Extension_lazyTestExtensionPoint.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.extension.tests.plugin.Extension_lazyTestExtensionPoint" />
+  </root>
   <root nodeId="7036359038356246776">
     <nodeInfo nodeId="7036359038356271889" fileName="TestObject.java" startLine="6" startPosition="25" endLine="7" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myShutDown" />
     <nodeInfo nodeId="7036359038356271907" fileName="TestObject.java" startLine="7" startPosition="29" endLine="8" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myValue" />
