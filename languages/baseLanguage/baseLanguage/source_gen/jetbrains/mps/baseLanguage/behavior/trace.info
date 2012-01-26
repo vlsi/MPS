@@ -10950,18 +10950,18 @@
     <unitInfo nodeId="5412515780383209412" fileName="SingleLineComment_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.SingleLineComment_Behavior" />
   </root>
   <root nodeId="5862977038373290892">
-    <nodeInfo nodeId="5862977038373290908" fileName="LocalPropertyReference_Behavior.java" startLine="11" startPosition="72" endLine="12" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5862977038373290892" fileName="LocalPropertyReference_Behavior.java" startLine="7" startPosition="46" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
-    <nodeInfo nodeId="5862977038373290892" fileName="LocalPropertyReference_Behavior.java" startLine="10" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_isLValue_1213877519786#(Ljetbrains/mps/smodel/SNode;)Z" />
-    <scopeInfo nodeId="5862977038373290894" fileName="LocalPropertyReference_Behavior.java" startLine="8" startPosition="43" endLine="8" endPosition="43" />
-    <scopeInfo nodeId="5862977038373290897" fileName="LocalPropertyReference_Behavior.java" startLine="11" startPosition="72" endLine="12" endPosition="16" />
-    <scopeInfo nodeId="5862977038373290892" fileName="LocalPropertyReference_Behavior.java" startLine="7" startPosition="46" endLine="10" endPosition="0">
+    <nodeInfo nodeId="5862977038373290908" fileName="LocalPropertyReference_Behavior.java" startLine="12" startPosition="72" endLine="13" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5862977038373290892" fileName="LocalPropertyReference_Behavior.java" startLine="8" startPosition="46" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="5862977038373290892" fileName="LocalPropertyReference_Behavior.java" startLine="11" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_isLValue_1213877519786#(Ljetbrains/mps/smodel/SNode;)Z" />
+    <scopeInfo nodeId="5862977038373290894" fileName="LocalPropertyReference_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
+    <scopeInfo nodeId="5862977038373290897" fileName="LocalPropertyReference_Behavior.java" startLine="12" startPosition="72" endLine="13" endPosition="114" />
+    <scopeInfo nodeId="5862977038373290892" fileName="LocalPropertyReference_Behavior.java" startLine="8" startPosition="46" endLine="11" endPosition="0">
       <varInfo nodeId="5862977038373290892" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="5862977038373290892" fileName="LocalPropertyReference_Behavior.java" startLine="10" startPosition="0" endLine="14" endPosition="0">
+    <scopeInfo nodeId="5862977038373290892" fileName="LocalPropertyReference_Behavior.java" startLine="11" startPosition="0" endLine="15" endPosition="0">
       <varInfo nodeId="5862977038373290892" varName="thisNode" />
     </scopeInfo>
-    <unitInfo nodeId="5862977038373290892" fileName="LocalPropertyReference_Behavior.java" startLine="7" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.LocalPropertyReference_Behavior" />
+    <unitInfo nodeId="5862977038373290892" fileName="LocalPropertyReference_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.LocalPropertyReference_Behavior" />
   </root>
   <root nodeId="6307653274956830892">
     <nodeInfo nodeId="6307653274956830908" fileName="ParenthesizedExpression_Behavior.java" startLine="13" startPosition="83" endLine="14" endPosition="120" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
