@@ -42,12 +42,8 @@ public class QueriesGenerated {
     return ExtensionPointDeclaration_Behavior.call_getId_63012922130945363(SLinkOperations.getTarget(_context.getNode(), "extensionPoint", false));
   }
 
-  public static Object propertyMacro_GetPropertyValue_63012922130977712(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return ExtensionDeclaration_Behavior.call_getJavaName_5234729458457669523(_context.getNode());
-  }
-
   public static Object propertyMacro_GetPropertyValue_8820339482096486801(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return ExtensionDeclaration_Behavior.call_getJavaName_5234729458457669523(_context.getNode());
+    return _context.createUniqueName(ExtensionDeclaration_Behavior.call_getJavaName_5234729458457669523(_context.getNode()), null);
   }
 
   public static Object referenceMacro_GetReferent_4230423796260420235(final IOperationContext operationContext, final ReferenceMacroContext _context) {
@@ -59,7 +55,7 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_63012922130977670(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return ExtensionDeclaration_Behavior.call_getJavaName_5234729458457669523(_context.getNode());
+    return ListSequence.fromList(SLinkOperations.getTargets(_context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "extensionClass"), "constructor", true)).first();
   }
 
   public static Object referenceMacro_GetReferent_7036359038356141310(final IOperationContext operationContext, final ReferenceMacroContext _context) {
