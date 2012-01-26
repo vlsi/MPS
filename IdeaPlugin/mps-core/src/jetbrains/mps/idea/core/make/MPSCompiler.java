@@ -26,9 +26,6 @@ import com.intellij.openapi.fileTypes.FileType;
 import com.intellij.openapi.fileTypes.FileTypeManager;
 import com.intellij.openapi.module.Module;
 import com.intellij.openapi.project.Project;
-import com.intellij.openapi.roots.ContentEntry;
-import com.intellij.openapi.roots.ModuleRootManager;
-import com.intellij.openapi.roots.SourceFolder;
 import com.intellij.openapi.roots.ui.configuration.ModulesConfigurator;
 import com.intellij.openapi.ui.Messages;
 import com.intellij.openapi.vfs.VirtualFile;
@@ -43,16 +40,12 @@ import jetbrains.mps.messages.MessageKind;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelRepository;
-import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
-import jetbrains.mps.util.Computable;
-import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 
 import java.io.File;
-import java.io.IOException;
 import java.util.*;
 
 /**

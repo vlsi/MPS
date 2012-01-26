@@ -11,7 +11,7 @@ import javax.swing.JPanel;
 import java.awt.GridBagLayout;
 import javax.swing.JLabel;
 import jetbrains.mps.ide.common.LayoutUtil;
-import jetbrains.mps.execution.lib.ui.IJavaNodeChangeListener;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import com.intellij.openapi.options.ConfigurationException;
@@ -41,8 +41,8 @@ public class BuildLanguageProject_Configuration_Editor extends SettingsEditorEx<
     panel.add(new JLabel("Project:"), LayoutUtil.createLabelConstraints(0));
     panel.add(myChooser, LayoutUtil.createFieldConstraints(1));
     myTargetChooser = new TargetChoosePanel();
-    myChooser.addNodeChangeListener(new IJavaNodeChangeListener() {
-      public void nodeChanged(SNode project) {
+    myChooser.addNodeChangeListener(new _FunctionTypes._void_P1_E0<SNode>() {
+      public void invoke(SNode project) {
         myTargetChooser.nodeChanged(SNodeOperations.cast(project, "jetbrains.mps.buildlanguage.structure.Project"));
       }
     });

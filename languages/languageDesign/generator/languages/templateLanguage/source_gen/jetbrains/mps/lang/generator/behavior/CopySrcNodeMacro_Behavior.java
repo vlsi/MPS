@@ -24,6 +24,10 @@ public class CopySrcNodeMacro_Behavior {
     return null;
   }
 
+  public static boolean virtual_suppress_3393165121846091591(SNode thisNode, SNode child) {
+    return SLinkOperations.getTarget(thisNode, "sourceNodeQuery", true) != child;
+  }
+
   public static class Pattern_7c1mz_a0a0a0a1 extends GeneratedMatchingPattern implements IMatchingPattern {
     /*package*/ SNode patternVar_concept;
 

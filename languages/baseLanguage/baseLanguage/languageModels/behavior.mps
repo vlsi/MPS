@@ -25665,36 +25665,8 @@
       <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="5412515780383209311" />
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="5412515780383209312" />
     </node>
-    <node role="method" roleId="1i04.1225194240805" type="1i04.ConceptMethodDeclaration" typeId="1i04.1225194472830" id="1234682635114938387">
-      <property name="name" nameId="tpck.1169194664001" value="getMetaLevelChange" />
-      <link role="overriddenMethod" roleId="1i04.1225194472831" targetNodeId="tpcu.201537367881074474" resolveInfo="getMetaLevelChange" />
-      <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="1234682635114938390">
-        <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="1234682635114938395">
-          <node role="expression" roleId="tpee.1068581517676" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="1234682635114938396">
-            <link role="classifier" roleId="tpee.1144433057691" targetNodeId="e2lb.~Integer" resolveInfo="Integer" />
-            <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="e2lb.~Integer%dMAX_VALUE" resolveInfo="MAX_VALUE" />
-          </node>
-        </node>
-      </node>
-      <node role="returnType" roleId="tpee.1068580123133" type="tpee.IntegerType" typeId="tpee.1070534370425" id="1234682635114938393" />
-      <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1234682635114938394" />
-    </node>
   </root>
   <root id="4581730695772276352">
-    <node role="method" roleId="1i04.1225194240805" type="1i04.ConceptMethodDeclaration" typeId="1i04.1225194472830" id="201537367881181078">
-      <property name="name" nameId="tpck.1169194664001" value="getMetaLevelChange" />
-      <link role="overriddenMethod" roleId="1i04.1225194472831" targetNodeId="tpcu.201537367881074474" resolveInfo="getMetaLevelChange" />
-      <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="201537367881181081">
-        <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="201537367881181084">
-          <node role="expression" roleId="tpee.1068581517676" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="201537367881181086">
-            <link role="classifier" roleId="tpee.1144433057691" targetNodeId="e2lb.~Integer" resolveInfo="Integer" />
-            <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="e2lb.~Integer%dMAX_VALUE" resolveInfo="MAX_VALUE" />
-          </node>
-        </node>
-      </node>
-      <node role="returnType" roleId="tpee.1068580123133" type="tpee.IntegerType" typeId="tpee.1070534370425" id="201537367881181082" />
-      <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="201537367881181083" />
-    </node>
     <node role="method" roleId="1i04.1225194240805" type="1i04.ConceptMethodDeclaration" typeId="1i04.1225194472830" id="7236590470026152831">
       <property name="name" nameId="tpck.1169194664001" value="isToDo" />
       <property name="isVirtual" nameId="1i04.1225194472832" value="true" />
@@ -25808,11 +25780,11 @@
         <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="5017341185733869604">
           <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="5017341185733869605">
             <property name="name" nameId="tpck.1169194664001" value="defaultIcon" />
-            <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5017341185733869606">
-              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="dbrf.~Icon" resolveInfo="Icon" />
-            </node>
             <node role="initializer" roleId="tpee.1068431790190" type="tp4k.IconResourceReference" typeId="tp4k.2990235398086762260" id="8814893218132341185">
               <link role="declaration" roleId="tp4k.2990235398086762261" targetNodeId="z76a.8814893218132245030" resolveInfo="PACKAGE_LOCAL" />
+            </node>
+            <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5017341185733869606">
+              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="dbrf.~Icon" resolveInfo="Icon" />
             </node>
           </node>
         </node>

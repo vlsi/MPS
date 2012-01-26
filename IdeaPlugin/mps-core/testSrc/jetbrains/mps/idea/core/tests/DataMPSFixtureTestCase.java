@@ -17,18 +17,12 @@
 package jetbrains.mps.idea.core.tests;
 
 import com.intellij.openapi.application.ApplicationManager;
-import com.intellij.openapi.vfs.VirtualFile;
-import com.intellij.openapi.vfs.VirtualFileManager;
-import com.intellij.openapi.vfs.VirtualFileSystem;
 import com.intellij.testFramework.PlatformTestUtil;
 import jetbrains.mps.idea.core.facet.MPSFacetConfiguration;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.vfs.IFileUtils;
 
 import java.io.*;
-import java.lang.annotation.Retention;
-import java.lang.annotation.RetentionPolicy;
 
 /**
  * Created by IntelliJ IDEA.

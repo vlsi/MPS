@@ -21,10 +21,7 @@ import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.IdeMain.TestMode;
 import jetbrains.mps.ide.depanalyzer.DependencyPathTree;
 import jetbrains.mps.ide.depanalyzer.DependencyTreeNode;
-import jetbrains.mps.ide.ui.MPSTreeNode;
-import jetbrains.mps.ide.vfs.IdeaFileSystemProvider;
 import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
-import jetbrains.mps.library.ModulesMiner;
 import jetbrains.mps.library.ModulesMiner.ModuleHandle;
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.IModule;
@@ -36,13 +33,6 @@ import jetbrains.mps.project.structure.modules.SolutionDescriptor;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleOwner;
 import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.util.IterableUtil;
-import jetbrains.mps.util.misc.hash.HashSet;
-import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.vfs.ex.IFileEx;
-import jetbrains.mps.vfs.impl.IoFile;
-import jetbrains.mps.workbench.dialogs.project.newproject.SolutionStep;
 import org.junit.After;
 import org.junit.BeforeClass;
 import org.junit.Rule;
@@ -52,8 +42,6 @@ import java.util.Queue;
 import java.util.UUID;
 
 import static junit.framework.Assert.assertEquals;
-import static junit.framework.Assert.assertFalse;
-import static junit.framework.Assert.assertTrue;
 
 public class ModuleDependenciesTest {
   private static final MPSModuleOwner OWNER = new MPSModuleOwner() {
@@ -85,7 +73,7 @@ public class ModuleDependenciesTest {
     while (!queue.isEmpty()) {
       DependencyTreeNode current = queue.remove();
       for (int i = 0; i < current.getChildCount(); i++) {
-        queue.add((DependencyTreeNode)current.getChildAt(i));
+        queue.add((DependencyTreeNode) current.getChildAt(i));
       }
       if (current.getModule() == target) {
         num++;
@@ -95,7 +83,7 @@ public class ModuleDependenciesTest {
   }
 
   private void testDependency(DependencyPathTree testTree, IModule source, IModule target, int numPaths) {
-    assertEquals(numPaths, findPaths((DependencyTreeNode)testTree.testBuildTree(source, target, null), target));
+    assertEquals(numPaths, findPaths((DependencyTreeNode) testTree.testBuildTree(source, target, null), target));
     if (testTree.isShowRuntime()) {
       assertEquals(numPaths != 0, source.getDependenciesManager().getAllRequiredModules().contains(target));
     } else {
@@ -104,7 +92,7 @@ public class ModuleDependenciesTest {
   }
 
   private void testUsedLanguage(DependencyPathTree testTree, IModule source, Language target, int numPaths) {
-    assertEquals(numPaths, findPaths((DependencyTreeNode)testTree.testBuildTree(source, null, target), target));
+    assertEquals(numPaths, findPaths((DependencyTreeNode) testTree.testBuildTree(source, null, target), target));
     assertEquals(numPaths != 0, source.getDependenciesManager().getAllUsedLanguages().contains(target));
   }
 
@@ -225,7 +213,7 @@ public class ModuleDependenciesTest {
     String uuid = UUID.randomUUID().toString();
     d.setNamespace(uuid);
     d.setUUID(uuid);
-    return DevKit.newInstance(new ModuleHandle(null, d),OWNER);
+    return DevKit.newInstance(new ModuleHandle(null, d), OWNER);
   }
 
 }

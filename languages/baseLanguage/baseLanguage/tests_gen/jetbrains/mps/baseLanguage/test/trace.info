@@ -441,30 +441,35 @@
     <nodeInfo nodeId="5113180367541522955" fileName="TypesTest_BL_Test.java" startLine="53" startPosition="116" endLine="54" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5113180367541522955" fileName="TypesTest_BL_Test.java" startLine="58" startPosition="44" endLine="59" endPosition="116" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5113180367541522955" fileName="TypesTest_BL_Test.java" startLine="59" startPosition="116" endLine="60" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5113180367541522955" fileName="TypesTest_BL_Test.java" startLine="65" startPosition="49" endLine="66" endPosition="141" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5113180367541522955" fileName="TypesTest_BL_Test.java" startLine="66" startPosition="141" endLine="67" endPosition="258" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5113180367541522955" fileName="TypesTest_BL_Test.java" startLine="70" startPosition="50" endLine="71" endPosition="141" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5113180367541522955" fileName="TypesTest_BL_Test.java" startLine="71" startPosition="141" endLine="72" endPosition="258" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5113180367541522955" fileName="TypesTest_BL_Test.java" startLine="75" startPosition="61" endLine="76" endPosition="140" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5113180367541522955" fileName="TypesTest_BL_Test.java" startLine="76" startPosition="140" endLine="77" endPosition="257" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5113180367541522955" fileName="TypesTest_BL_Test.java" startLine="80" startPosition="54" endLine="81" endPosition="141" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5113180367541522955" fileName="TypesTest_BL_Test.java" startLine="81" startPosition="141" endLine="82" endPosition="258" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5113180367541522955" fileName="TypesTest_BL_Test.java" startLine="85" startPosition="63" endLine="86" endPosition="141" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5113180367541522955" fileName="TypesTest_BL_Test.java" startLine="86" startPosition="141" endLine="87" endPosition="258" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5113180367541522955" fileName="TypesTest_BL_Test.java" startLine="90" startPosition="55" endLine="91" endPosition="141" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5113180367541522955" fileName="TypesTest_BL_Test.java" startLine="91" startPosition="141" endLine="92" endPosition="258" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5113180367541522955" fileName="TypesTest_BL_Test.java" startLine="95" startPosition="47" endLine="96" endPosition="141" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5113180367541522955" fileName="TypesTest_BL_Test.java" startLine="96" startPosition="141" endLine="97" endPosition="258" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5113180367541522955" fileName="TypesTest_BL_Test.java" startLine="100" startPosition="46" endLine="101" endPosition="141" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5113180367541522955" fileName="TypesTest_BL_Test.java" startLine="101" startPosition="141" endLine="102" endPosition="258" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5113180367541522955" fileName="TypesTest_BL_Test.java" startLine="64" startPosition="53" endLine="69" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testBinaryOp#()V" />
-    <nodeInfo nodeId="5113180367541522955" fileName="TypesTest_BL_Test.java" startLine="69" startPosition="0" endLine="74" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testTernaryOp#()V" />
-    <nodeInfo nodeId="5113180367541522955" fileName="TypesTest_BL_Test.java" startLine="74" startPosition="0" endLine="79" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testLeastCommonSuperType#()V" />
-    <nodeInfo nodeId="5113180367541522955" fileName="TypesTest_BL_Test.java" startLine="79" startPosition="0" endLine="84" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testGenericFields#()V" />
-    <nodeInfo nodeId="5113180367541522955" fileName="TypesTest_BL_Test.java" startLine="84" startPosition="0" endLine="89" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testGenericInstanceMethods#()V" />
-    <nodeInfo nodeId="5113180367541522955" fileName="TypesTest_BL_Test.java" startLine="89" startPosition="0" endLine="94" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testGenericMethods#()V" />
-    <nodeInfo nodeId="5113180367541522955" fileName="TypesTest_BL_Test.java" startLine="94" startPosition="0" endLine="99" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testArrays#()V" />
-    <nodeInfo nodeId="5113180367541522955" fileName="TypesTest_BL_Test.java" startLine="99" startPosition="0" endLine="104" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testRules#()V" />
+    <nodeInfo nodeId="5113180367541522955" fileName="TypesTest_BL_Test.java" startLine="64" startPosition="47" endLine="65" endPosition="116" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5113180367541522955" fileName="TypesTest_BL_Test.java" startLine="65" startPosition="116" endLine="66" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5113180367541522955" fileName="TypesTest_BL_Test.java" startLine="71" startPosition="49" endLine="72" endPosition="141" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5113180367541522955" fileName="TypesTest_BL_Test.java" startLine="72" startPosition="141" endLine="73" endPosition="258" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5113180367541522955" fileName="TypesTest_BL_Test.java" startLine="76" startPosition="50" endLine="77" endPosition="141" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5113180367541522955" fileName="TypesTest_BL_Test.java" startLine="77" startPosition="141" endLine="78" endPosition="258" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5113180367541522955" fileName="TypesTest_BL_Test.java" startLine="81" startPosition="61" endLine="82" endPosition="140" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5113180367541522955" fileName="TypesTest_BL_Test.java" startLine="82" startPosition="140" endLine="83" endPosition="257" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5113180367541522955" fileName="TypesTest_BL_Test.java" startLine="86" startPosition="54" endLine="87" endPosition="141" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5113180367541522955" fileName="TypesTest_BL_Test.java" startLine="87" startPosition="141" endLine="88" endPosition="258" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5113180367541522955" fileName="TypesTest_BL_Test.java" startLine="91" startPosition="63" endLine="92" endPosition="141" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5113180367541522955" fileName="TypesTest_BL_Test.java" startLine="92" startPosition="141" endLine="93" endPosition="258" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5113180367541522955" fileName="TypesTest_BL_Test.java" startLine="96" startPosition="55" endLine="97" endPosition="141" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5113180367541522955" fileName="TypesTest_BL_Test.java" startLine="97" startPosition="141" endLine="98" endPosition="258" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5113180367541522955" fileName="TypesTest_BL_Test.java" startLine="101" startPosition="47" endLine="102" endPosition="141" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5113180367541522955" fileName="TypesTest_BL_Test.java" startLine="102" startPosition="141" endLine="103" endPosition="258" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5113180367541522955" fileName="TypesTest_BL_Test.java" startLine="106" startPosition="46" endLine="107" endPosition="141" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5113180367541522955" fileName="TypesTest_BL_Test.java" startLine="107" startPosition="141" endLine="108" endPosition="258" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5113180367541522955" fileName="TypesTest_BL_Test.java" startLine="111" startPosition="49" endLine="112" endPosition="141" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5113180367541522955" fileName="TypesTest_BL_Test.java" startLine="112" startPosition="141" endLine="113" endPosition="258" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5113180367541522955" fileName="TypesTest_BL_Test.java" startLine="70" startPosition="53" endLine="75" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testBinaryOp#()V" />
+    <nodeInfo nodeId="5113180367541522955" fileName="TypesTest_BL_Test.java" startLine="75" startPosition="0" endLine="80" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testTernaryOp#()V" />
+    <nodeInfo nodeId="5113180367541522955" fileName="TypesTest_BL_Test.java" startLine="80" startPosition="0" endLine="85" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testLeastCommonSuperType#()V" />
+    <nodeInfo nodeId="5113180367541522955" fileName="TypesTest_BL_Test.java" startLine="85" startPosition="0" endLine="90" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testGenericFields#()V" />
+    <nodeInfo nodeId="5113180367541522955" fileName="TypesTest_BL_Test.java" startLine="90" startPosition="0" endLine="95" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testGenericInstanceMethods#()V" />
+    <nodeInfo nodeId="5113180367541522955" fileName="TypesTest_BL_Test.java" startLine="95" startPosition="0" endLine="100" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testGenericMethods#()V" />
+    <nodeInfo nodeId="5113180367541522955" fileName="TypesTest_BL_Test.java" startLine="100" startPosition="0" endLine="105" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testArrays#()V" />
+    <nodeInfo nodeId="5113180367541522955" fileName="TypesTest_BL_Test.java" startLine="105" startPosition="0" endLine="110" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testRules#()V" />
+    <nodeInfo nodeId="5113180367541522955" fileName="TypesTest_BL_Test.java" startLine="110" startPosition="0" endLine="115" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testSuppress#()V" />
     <nodeInfo nodeId="5113180367541522955" fileName="TypesTest_BL_Test.java" startLine="14" startPosition="63" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testBinaryOp#()V" />
     <nodeInfo nodeId="5113180367541522955" fileName="TypesTest_BL_Test.java" startLine="20" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testTernaryOp#()V" />
     <nodeInfo nodeId="5113180367541522955" fileName="TypesTest_BL_Test.java" startLine="26" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testLeastCommonSuperType#()V" />
@@ -473,6 +478,7 @@
     <nodeInfo nodeId="5113180367541522955" fileName="TypesTest_BL_Test.java" startLine="44" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testGenericMethods#()V" />
     <nodeInfo nodeId="5113180367541522955" fileName="TypesTest_BL_Test.java" startLine="50" startPosition="0" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testArrays#()V" />
     <nodeInfo nodeId="5113180367541522955" fileName="TypesTest_BL_Test.java" startLine="56" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testRules#()V" />
+    <nodeInfo nodeId="5113180367541522955" fileName="TypesTest_BL_Test.java" startLine="62" startPosition="0" endLine="68" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testSuppress#()V" />
     <scopeInfo nodeId="5113180367541522955" fileName="TypesTest_BL_Test.java" startLine="16" startPosition="47" endLine="18" endPosition="101" />
     <scopeInfo nodeId="5113180367541522955" fileName="TypesTest_BL_Test.java" startLine="22" startPosition="48" endLine="24" endPosition="102" />
     <scopeInfo nodeId="5113180367541522955" fileName="TypesTest_BL_Test.java" startLine="28" startPosition="59" endLine="30" endPosition="113" />
@@ -481,38 +487,43 @@
     <scopeInfo nodeId="5113180367541522955" fileName="TypesTest_BL_Test.java" startLine="46" startPosition="53" endLine="48" endPosition="107" />
     <scopeInfo nodeId="5113180367541522955" fileName="TypesTest_BL_Test.java" startLine="52" startPosition="45" endLine="54" endPosition="99" />
     <scopeInfo nodeId="5113180367541522955" fileName="TypesTest_BL_Test.java" startLine="58" startPosition="44" endLine="60" endPosition="98" />
-    <scopeInfo nodeId="5113180367541522955" fileName="TypesTest_BL_Test.java" startLine="65" startPosition="49" endLine="67" endPosition="258">
+    <scopeInfo nodeId="5113180367541522955" fileName="TypesTest_BL_Test.java" startLine="64" startPosition="47" endLine="66" endPosition="101" />
+    <scopeInfo nodeId="5113180367541522955" fileName="TypesTest_BL_Test.java" startLine="71" startPosition="49" endLine="73" endPosition="258">
       <varInfo nodeId="5113180367541522955" varName="operation" />
     </scopeInfo>
-    <scopeInfo nodeId="5113180367541522955" fileName="TypesTest_BL_Test.java" startLine="70" startPosition="50" endLine="72" endPosition="258">
+    <scopeInfo nodeId="5113180367541522955" fileName="TypesTest_BL_Test.java" startLine="76" startPosition="50" endLine="78" endPosition="258">
       <varInfo nodeId="5113180367541522955" varName="operation" />
     </scopeInfo>
-    <scopeInfo nodeId="5113180367541522955" fileName="TypesTest_BL_Test.java" startLine="75" startPosition="61" endLine="77" endPosition="257">
+    <scopeInfo nodeId="5113180367541522955" fileName="TypesTest_BL_Test.java" startLine="81" startPosition="61" endLine="83" endPosition="257">
       <varInfo nodeId="5113180367541522955" varName="operation" />
     </scopeInfo>
-    <scopeInfo nodeId="5113180367541522955" fileName="TypesTest_BL_Test.java" startLine="80" startPosition="54" endLine="82" endPosition="258">
+    <scopeInfo nodeId="5113180367541522955" fileName="TypesTest_BL_Test.java" startLine="86" startPosition="54" endLine="88" endPosition="258">
       <varInfo nodeId="5113180367541522955" varName="operation" />
     </scopeInfo>
-    <scopeInfo nodeId="5113180367541522955" fileName="TypesTest_BL_Test.java" startLine="85" startPosition="63" endLine="87" endPosition="258">
+    <scopeInfo nodeId="5113180367541522955" fileName="TypesTest_BL_Test.java" startLine="91" startPosition="63" endLine="93" endPosition="258">
       <varInfo nodeId="5113180367541522955" varName="operation" />
     </scopeInfo>
-    <scopeInfo nodeId="5113180367541522955" fileName="TypesTest_BL_Test.java" startLine="90" startPosition="55" endLine="92" endPosition="258">
+    <scopeInfo nodeId="5113180367541522955" fileName="TypesTest_BL_Test.java" startLine="96" startPosition="55" endLine="98" endPosition="258">
       <varInfo nodeId="5113180367541522955" varName="operation" />
     </scopeInfo>
-    <scopeInfo nodeId="5113180367541522955" fileName="TypesTest_BL_Test.java" startLine="95" startPosition="47" endLine="97" endPosition="258">
+    <scopeInfo nodeId="5113180367541522955" fileName="TypesTest_BL_Test.java" startLine="101" startPosition="47" endLine="103" endPosition="258">
       <varInfo nodeId="5113180367541522955" varName="operation" />
     </scopeInfo>
-    <scopeInfo nodeId="5113180367541522955" fileName="TypesTest_BL_Test.java" startLine="100" startPosition="46" endLine="102" endPosition="258">
+    <scopeInfo nodeId="5113180367541522955" fileName="TypesTest_BL_Test.java" startLine="106" startPosition="46" endLine="108" endPosition="258">
       <varInfo nodeId="5113180367541522955" varName="operation" />
     </scopeInfo>
-    <scopeInfo nodeId="5113180367541522955" fileName="TypesTest_BL_Test.java" startLine="64" startPosition="53" endLine="69" endPosition="0" />
-    <scopeInfo nodeId="5113180367541522955" fileName="TypesTest_BL_Test.java" startLine="69" startPosition="0" endLine="74" endPosition="0" />
-    <scopeInfo nodeId="5113180367541522955" fileName="TypesTest_BL_Test.java" startLine="74" startPosition="0" endLine="79" endPosition="0" />
-    <scopeInfo nodeId="5113180367541522955" fileName="TypesTest_BL_Test.java" startLine="79" startPosition="0" endLine="84" endPosition="0" />
-    <scopeInfo nodeId="5113180367541522955" fileName="TypesTest_BL_Test.java" startLine="84" startPosition="0" endLine="89" endPosition="0" />
-    <scopeInfo nodeId="5113180367541522955" fileName="TypesTest_BL_Test.java" startLine="89" startPosition="0" endLine="94" endPosition="0" />
-    <scopeInfo nodeId="5113180367541522955" fileName="TypesTest_BL_Test.java" startLine="94" startPosition="0" endLine="99" endPosition="0" />
-    <scopeInfo nodeId="5113180367541522955" fileName="TypesTest_BL_Test.java" startLine="99" startPosition="0" endLine="104" endPosition="0" />
+    <scopeInfo nodeId="5113180367541522955" fileName="TypesTest_BL_Test.java" startLine="111" startPosition="49" endLine="113" endPosition="258">
+      <varInfo nodeId="5113180367541522955" varName="operation" />
+    </scopeInfo>
+    <scopeInfo nodeId="5113180367541522955" fileName="TypesTest_BL_Test.java" startLine="70" startPosition="53" endLine="75" endPosition="0" />
+    <scopeInfo nodeId="5113180367541522955" fileName="TypesTest_BL_Test.java" startLine="75" startPosition="0" endLine="80" endPosition="0" />
+    <scopeInfo nodeId="5113180367541522955" fileName="TypesTest_BL_Test.java" startLine="80" startPosition="0" endLine="85" endPosition="0" />
+    <scopeInfo nodeId="5113180367541522955" fileName="TypesTest_BL_Test.java" startLine="85" startPosition="0" endLine="90" endPosition="0" />
+    <scopeInfo nodeId="5113180367541522955" fileName="TypesTest_BL_Test.java" startLine="90" startPosition="0" endLine="95" endPosition="0" />
+    <scopeInfo nodeId="5113180367541522955" fileName="TypesTest_BL_Test.java" startLine="95" startPosition="0" endLine="100" endPosition="0" />
+    <scopeInfo nodeId="5113180367541522955" fileName="TypesTest_BL_Test.java" startLine="100" startPosition="0" endLine="105" endPosition="0" />
+    <scopeInfo nodeId="5113180367541522955" fileName="TypesTest_BL_Test.java" startLine="105" startPosition="0" endLine="110" endPosition="0" />
+    <scopeInfo nodeId="5113180367541522955" fileName="TypesTest_BL_Test.java" startLine="110" startPosition="0" endLine="115" endPosition="0" />
     <scopeInfo nodeId="5113180367541522955" fileName="TypesTest_BL_Test.java" startLine="14" startPosition="63" endLine="20" endPosition="0" />
     <scopeInfo nodeId="5113180367541522955" fileName="TypesTest_BL_Test.java" startLine="20" startPosition="0" endLine="26" endPosition="0" />
     <scopeInfo nodeId="5113180367541522955" fileName="TypesTest_BL_Test.java" startLine="26" startPosition="0" endLine="32" endPosition="0" />
@@ -521,8 +532,9 @@
     <scopeInfo nodeId="5113180367541522955" fileName="TypesTest_BL_Test.java" startLine="44" startPosition="0" endLine="50" endPosition="0" />
     <scopeInfo nodeId="5113180367541522955" fileName="TypesTest_BL_Test.java" startLine="50" startPosition="0" endLine="56" endPosition="0" />
     <scopeInfo nodeId="5113180367541522955" fileName="TypesTest_BL_Test.java" startLine="56" startPosition="0" endLine="62" endPosition="0" />
-    <unitInfo nodeId="5113180367541522955" fileName="TypesTest_BL_Test.java" startLine="13" startPosition="0" endLine="106" endPosition="0" unitName="jetbrains.mps.baseLanguage.test.TypesTest_BL_Test" />
-    <unitInfo nodeId="5113180367541522955" fileName="TypesTest_BL_Test.java" startLine="63" startPosition="0" endLine="105" endPosition="0" unitName="jetbrains.mps.baseLanguage.test.TypesTest_BL_Test$TestBody" />
+    <scopeInfo nodeId="5113180367541522955" fileName="TypesTest_BL_Test.java" startLine="62" startPosition="0" endLine="68" endPosition="0" />
+    <unitInfo nodeId="5113180367541522955" fileName="TypesTest_BL_Test.java" startLine="13" startPosition="0" endLine="117" endPosition="0" unitName="jetbrains.mps.baseLanguage.test.TypesTest_BL_Test" />
+    <unitInfo nodeId="5113180367541522955" fileName="TypesTest_BL_Test.java" startLine="69" startPosition="0" endLine="116" endPosition="0" unitName="jetbrains.mps.baseLanguage.test.TypesTest_BL_Test$TestBody" />
   </root>
   <root nodeId="5210914756411638023">
     <nodeInfo nodeId="5210914756411638023" fileName="RollBacksNewTypeSystem_Test.java" startLine="15" startPosition="54" endLine="16" endPosition="116" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />

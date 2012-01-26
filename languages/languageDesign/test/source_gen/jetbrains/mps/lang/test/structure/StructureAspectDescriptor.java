@@ -38,7 +38,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 10:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.test.structure.EditorOperation", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.baseLanguage.structure.IOperation"}, new String[]{}, new String[]{});
       case 11:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.test.structure.EditorTestCase", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.baseLanguage.unitTest.structure.ITestMethod", "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase"}, new String[]{"description"}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.lang.test.structure.EditorTestCase", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.baseLanguage.unitTest.structure.ITestMethod", "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase", "jetbrains.mps.lang.core.structure.ISuppressErrors"}, new String[]{"description"}, new String[]{});
       case 12:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.test.structure.ExpressionContainer", "jetbrains.mps.baseLanguage.structure.Statement", false, new String[]{"jetbrains.mps.baseLanguage.structure.Statement"}, new String[]{}, new String[]{});
       case 13:

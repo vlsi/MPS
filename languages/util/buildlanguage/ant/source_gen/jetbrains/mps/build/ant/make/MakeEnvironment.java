@@ -11,7 +11,18 @@ import jetbrains.mps.ide.IdeMain;
 import javax.swing.SwingUtilities;
 import jetbrains.mps.project.Project;
 import java.io.File;
-import java.lang.reflect.Method;
+import com.intellij.openapi.project.ex.ProjectManagerEx;
+import jetbrains.mps.ide.ThreadUtils;
+import java.io.IOException;
+import org.jdom.JDOMException;
+import com.intellij.openapi.util.InvalidDataException;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.make.ModuleMaker;
+import java.util.LinkedHashSet;
+import jetbrains.mps.project.IModule;
+import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.progress.EmptyProgressMonitor;
+import jetbrains.mps.project.MPSProject;
 import org.apache.commons.lang.StringUtils;
 import com.intellij.idea.IdeaTestApplication;
 
@@ -47,15 +58,37 @@ public class MakeEnvironment extends Environment {
   }
 
   public Project loadProject(File projectFile) {
-    Project project;
-    try {
-      Class<?> cls = Class.forName("jetbrains.mps.TestMain");
-      Method meth = cls.getMethod("loadProject", File.class);
-      project = (Project) meth.invoke(null, projectFile);
-    } catch (Exception ex) {
-      throw new RuntimeException(ex);
+    if (!(projectFile.exists())) {
+      throw new RuntimeException("Can't find project file " + projectFile.getAbsolutePath());
     }
-    return project;
+    final ProjectManagerEx projectManager = ProjectManagerEx.getInstanceEx();
+    final String filePath = projectFile.getAbsolutePath();
+    // this is a workaround for MPS-8840 
+    final com.intellij.openapi.project.Project[] project = new com.intellij.openapi.project.Project[1];
+    ThreadUtils.runInUIThreadAndWait(new Runnable() {
+      public void run() {
+        try {
+          project[0] = projectManager.loadAndOpenProject(filePath);
+        } catch (IOException e) {
+          throw new RuntimeException(e);
+        } catch (JDOMException e) {
+          throw new RuntimeException(e);
+        } catch (InvalidDataException e) {
+          throw new RuntimeException(e);
+        }
+      }
+    });
+    if (project[0] == null) {
+      //  this actually happens 
+      throw new RuntimeException("ProjectManager could not load project from " + projectFile.getAbsolutePath());
+    }
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        new ModuleMaker().make(new LinkedHashSet<IModule>(MPSModuleRepository.getInstance().getAllModules()), new EmptyProgressMonitor());
+      }
+    });
+    projectManager.openProject(project[0]);
+    return project[0].getComponent(MPSProject.class);
   }
 
   protected void configureMPS() {

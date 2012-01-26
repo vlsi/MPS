@@ -22,8 +22,7 @@ import jetbrains.mps.build.ant.MpsWorker.LogLogger;
 import jetbrains.mps.build.ant.WhatToDo;
 import jetbrains.mps.build.ant.make.MakeEnvironment;
 import jetbrains.mps.build.ant.make.MakeWorker;
-import jetbrains.mps.project.StandaloneMPSProject;
-import jetbrains.mps.project.structure.project.ProjectDescriptor;
+import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.testbench.util.FilesCollector;
 import jetbrains.mps.testbench.util.FilesCollector.FilePattern;
 import jetbrains.mps.testbench.util.FilesCollector.FilePattern.Type;
@@ -41,7 +40,7 @@ import java.util.concurrent.CyclicBarrier;
  */
 public class MpsMakeHelper {
 
-  private static Object [][] PATTERNS = new Object [][] {
+  private static Object[][] PATTERNS = new Object[][]{
     {Type.EXCLUDE, "**/classes/**"},
     {Type.EXCLUDE, "**/classes_gen/**"},
     {Type.EXCLUDE, "**/lib/**"},
@@ -53,9 +52,9 @@ public class MpsMakeHelper {
     {Type.INCLUDE, "**/**.mpl"},
     {Type.INCLUDE, "**/**.msd"},
     {Type.EXCLUDE, "**/resolve.msd"},
-  } ;
+  };
 
-  private static String [] JVM_ARGS = {
+  private static String[] JVM_ARGS = {
     "-Xss1024k",
     "-Xmx1000m",
     "-XX:MaxPermSize=92m",
@@ -65,25 +64,24 @@ public class MpsMakeHelper {
   private static final boolean DIRECT_MAKE = true;
   private final Environment myEnvironment;
 
-  public MpsMakeHelper () {
+  public MpsMakeHelper() {
     this.myEnvironment = new MakeEnvironment() {
       @Override
-      public StandaloneMPSProject createDummyProject() {
+      public MPSProject createDummyProject() {
         Project ideaProject = ProjectManager.getInstance().getDefaultProject();
         File projectFile = FileUtil.createTmpFile();
-        final StandaloneMPSProject project = new StandaloneMPSProject(ideaProject);
-        project.init(new ProjectDescriptor());
+        final MPSProject project = new MPSProject(ideaProject);
         projectFile.deleteOnExit();
         return project;
       }
     };
   }
 
-  public MpsMakeHelper (Environment environment) {
+  public MpsMakeHelper(Environment environment) {
     myEnvironment = environment;
   }
 
-  public void dispose () {
+  public void dispose() {
     myEnvironment.dispose();
   }
 
@@ -100,13 +98,13 @@ public class MpsMakeHelper {
     if (antHome == null || !new File(antHome).exists()) {
       return;
     }
-    
+
     String fileSeparator = System.getProperty("file.separator");
     ProcessBuilder pb = new ProcessBuilder(
       JavaEnvUtils.getJreExecutable("java"),
-      "-Dant.home="+System.getProperty("ant.home"),
+      "-Dant.home=" + System.getProperty("ant.home"),
       "-cp",
-      System.getProperty("ant.home")+fileSeparator+"lib"+fileSeparator+"ant-launcher.jar",
+      System.getProperty("ant.home") + fileSeparator + "lib" + fileSeparator + "ant-launcher.jar",
       "org.apache.tools.ant.launch.Launcher",
       "-buildfile",
       "AllTests/make_all_modules.xml"
@@ -130,19 +128,19 @@ public class MpsMakeHelper {
     }
     try {
       barrier.await();
+    } catch (InterruptedException e) {
+    } catch (BrokenBarrierException e) {
     }
-    catch (InterruptedException e) {}
-    catch (BrokenBarrierException e) {}
   }
 
-  public void directMake () {
+  public void directMake() {
     WhatToDo toDo = new WhatToDo();
     List<File> path = Collections.singletonList(new File(System.getProperty("user.dir")));
     List<FilePattern> filePtns = new ArrayList<FilePattern>();
     for (Object[] ptns : PATTERNS) {
-      filePtns.add (FilesCollector.FilePattern.fromTypeAndPattern(ptns));
+      filePtns.add(FilesCollector.FilePattern.fromTypeAndPattern(ptns));
     }
-    for (File f: FilesCollector.fastCollectFiles(filePtns, path)) {
+    for (File f : FilesCollector.fastCollectFiles(filePtns, path)) {
       toDo.addModuleFile(f);
     }
     toDo.updateLogLevel(2); // INFO
@@ -155,12 +153,12 @@ public class MpsMakeHelper {
 
   private void spawnWorkerAndWait(WhatToDo myWhatToDo) {
     String currentClassPathString = System.getProperty("java.class.path");
-    Set<File> classPaths = calculateClassPath(new File (System.getProperty("user.dir")));
+    Set<File> classPaths = calculateClassPath(new File(System.getProperty("user.dir")));
 
     List<String> commandLine = new ArrayList<String>();
     commandLine.add(JavaEnvUtils.getJreExecutable("java"));
     commandLine.addAll(Arrays.asList(JVM_ARGS));
-    StringBuilder sb = new StringBuilder ();
+    StringBuilder sb = new StringBuilder();
     String pathSeparator = System.getProperty("path.separator");
     for (File cp : classPaths) {
       sb.append(pathSeparator);
@@ -168,7 +166,7 @@ public class MpsMakeHelper {
     }
 
     // copy ant libs
-    for (String entry: currentClassPathString.split(pathSeparator)) {
+    for (String entry : currentClassPathString.split(pathSeparator)) {
       if (entry.indexOf("ant") >= 0) {
         sb.append(pathSeparator);
         sb.append(entry);
@@ -254,7 +252,7 @@ public class MpsMakeHelper {
 
     for (File f : children) {
       if (f.isDirectory()) {
-        if (f.getName().equals("classes") || f.getName().equals("classes_gen")|| f.getName().equals("testclasses")) {
+        if (f.getName().equals("classes") || f.getName().equals("classes_gen") || f.getName().equals("testclasses")) {
           result.add(f);
         } else {
           gatherAllClassesAndJarsUnder(f, result);
@@ -268,14 +266,16 @@ public class MpsMakeHelper {
       @Override
       public void run() {
         try {
-          for (int c; (c = from.read()) >= 0;) {
+          for (int c; (c = from.read()) >= 0; ) {
             to.write(c);
           }
-        } catch (IOException e) {}
+        } catch (IOException e) {
+        }
         try {
           barrier.await();
-        } catch (InterruptedException e) {}
-        catch (BrokenBarrierException e) {}
+        } catch (InterruptedException e) {
+        } catch (BrokenBarrierException e) {
+        }
       }
     }.start();
   }

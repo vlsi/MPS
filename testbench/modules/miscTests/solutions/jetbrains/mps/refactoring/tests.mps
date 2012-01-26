@@ -14,10 +14,10 @@
   <import index="vsqj" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.project(MPS.Core/jetbrains.mps.project@java_stub)" version="-1" />
   <import index="z0vn" modelUID="f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#jetbrains.mps.ide(MPS.Workbench/jetbrains.mps.ide@java_stub)" version="-1" />
   <import index="xxyd" modelUID="f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#jetbrains.mps.ide.refactoring(MPS.Workbench/jetbrains.mps.ide.refactoring@java_stub)" version="-1" />
-  <import index="ukt8" modelUID="f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#jetbrains.mps.refactoring.tests(MPS.Workbench/jetbrains.mps.refactoring.tests@java_stub)" version="-1" />
   <import index="to5d" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.logging(MPS.Core/jetbrains.mps.logging@java_stub)" version="-1" />
   <import index="x9fb" modelUID="r:de5b7214-45ee-4f6d-89bf-acde59cdb050(jetbrains.mps.lang.structure.refactorings)" version="-1" />
   <import index="gznm" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.loading(MPS.Core/jetbrains.mps.smodel.loading@java_stub)" version="-1" />
+  <import index="jgbw" modelUID="f:java_stub#920eaa0e-ecca-46bc-bee7-4e5c59213dd6#jetbrains.mps.refactoring.tests(Testbench/jetbrains.mps.refactoring.tests@java_stub)" version="-1" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" implicit="yes" />
   <import index="e2lb" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" version="-1" implicit="yes" />
@@ -54,7 +54,7 @@
   <root id="8306023725008093118">
     <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="8306023725008093119" />
     <node role="implementedInterface" roleId="tpee.1095933932569" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="8811964946637033865">
-      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="ukt8.~IRefactoringTester" resolveInfo="IRefactoringTester" />
+      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="jgbw.~IRefactoringTester" resolveInfo="IRefactoringTester" />
     </node>
     <node role="constructor" roleId="tpee.1068390468201" type="tpee.ConstructorDeclaration" typeId="tpee.1068580123140" id="8306023725008093121">
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="8306023725008093122" />
@@ -633,7 +633,7 @@
   <root id="8306023725008093978">
     <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="8306023725008093979" />
     <node role="implementedInterface" roleId="tpee.1095933932569" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="8811964946637035713">
-      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="ukt8.~IRefactoringTester" resolveInfo="IRefactoringTester" />
+      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="jgbw.~IRefactoringTester" resolveInfo="IRefactoringTester" />
     </node>
     <node role="constructor" roleId="tpee.1068390468201" type="tpee.ConstructorDeclaration" typeId="tpee.1068580123140" id="8306023725008093981">
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="8306023725008093982" />
@@ -1196,7 +1196,7 @@
   <root id="8306023725008094203">
     <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="8306023725008094204" />
     <node role="implementedInterface" roleId="tpee.1095933932569" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="8811964946637035712">
-      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="ukt8.~IRefactoringTester" resolveInfo="IRefactoringTester" />
+      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="jgbw.~IRefactoringTester" resolveInfo="IRefactoringTester" />
     </node>
     <node role="constructor" roleId="tpee.1068390468201" type="tpee.ConstructorDeclaration" typeId="tpee.1068580123140" id="8306023725008094206">
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="8306023725008094207" />
@@ -1775,7 +1775,7 @@
   <root id="8306023725008094437">
     <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="8306023725008094438" />
     <node role="implementedInterface" roleId="tpee.1095933932569" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="8811964946637033866">
-      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="ukt8.~IRefactoringTester" resolveInfo="IRefactoringTester" />
+      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="jgbw.~IRefactoringTester" resolveInfo="IRefactoringTester" />
     </node>
     <node role="staticField" roleId="tpee.1128555889557" type="tpee.StaticFieldDeclaration" typeId="tpee.1070462154015" id="8306023725008094440">
       <property name="isFinal" nameId="tpee.1176718929932" value="true" />
@@ -2350,10 +2350,10 @@
     </node>
   </root>
   <root id="8306023725008094655">
-    <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="8306023725008094656" />
     <node role="implementedInterface" roleId="tpee.1095933932569" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="8811964946637033864">
-      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="ukt8.~IRefactoringTester" resolveInfo="IRefactoringTester" />
+      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="jgbw.~IRefactoringTester" resolveInfo="IRefactoringTester" />
     </node>
+    <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="8306023725008094656" />
     <node role="constructor" roleId="tpee.1068390468201" type="tpee.ConstructorDeclaration" typeId="tpee.1068580123140" id="8306023725008094658">
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="8306023725008094659" />
       <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="8306023725008094660" />
@@ -3023,7 +3023,7 @@
   <root id="8306023725008095415">
     <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="8306023725008095416" />
     <node role="implementedInterface" roleId="tpee.1095933932569" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="8811964946637035711">
-      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="ukt8.~IRefactoringTester" resolveInfo="IRefactoringTester" />
+      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="jgbw.~IRefactoringTester" resolveInfo="IRefactoringTester" />
     </node>
     <node role="constructor" roleId="tpee.1068390468201" type="tpee.ConstructorDeclaration" typeId="tpee.1068580123140" id="8306023725008095418">
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="8306023725008095419" />

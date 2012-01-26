@@ -255,6 +255,7 @@
       <directory url="file://$PROJECT_DIR$/languages/util/ui/languages/meta/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/languages/util/ui/languages/swing/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/languages/util/ui/languages/testdata/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/languages/util/buildlanguage/languages/startup/source_gen" includeSubdirectories="true" />
     </excludeFromCompile>
     <resourceExtensions>
       <entry name=".+\.(properties|xml|html|dtd|tld)" />

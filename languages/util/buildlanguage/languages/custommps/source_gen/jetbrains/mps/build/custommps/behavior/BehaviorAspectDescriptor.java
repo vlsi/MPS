@@ -7,7 +7,7 @@ import java.util.Arrays;
 import jetbrains.mps.smodel.runtime.interpreted.BehaviorAspectInterpreted;
 
 public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor {
-  private static String[] stringSwitchCases_846f5o_a0a0a = new String[]{"jetbrains.mps.build.custommps.structure.LibraryFolder", "jetbrains.mps.build.custommps.structure.MPSBuild", "jetbrains.mps.build.custommps.structure.MPSDistribution", "jetbrains.mps.build.custommps.structure.UndeclaredVariableReference"};
+  private static String[] stringSwitchCases_846f5o_a0a0a = new String[]{"jetbrains.mps.build.custommps.structure.LibraryFolder", "jetbrains.mps.build.custommps.structure.MPSBuild"};
 
   public BehaviorAspectDescriptor() {
   }
@@ -18,10 +18,6 @@ public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.Be
         return new MPSBuild_BehaviorDescriptor();
       case 0:
         return new LibraryFolder_BehaviorDescriptor();
-      case 2:
-        return new MPSDistribution_BehaviorDescriptor();
-      case 3:
-        return new UndeclaredVariableReference_BehaviorDescriptor();
       default:
         return BehaviorAspectInterpreted.getInstance().getDescriptor(fqName);
     }

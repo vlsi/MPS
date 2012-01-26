@@ -33,6 +33,7 @@
   <import index="zs41" modelUID="f:java_stub#83f155ff-422c-4b5a-a2f2-b459302dd215#org.junit.runner.manipulation(jetbrains.mps.baseLanguage.unitTest.libs/org.junit.runner.manipulation@java_stub)" version="-1" />
   <import index="ik6s" modelUID="f:java_stub#83f155ff-422c-4b5a-a2f2-b459302dd215#org.junit.runners.model(jetbrains.mps.baseLanguage.unitTest.libs/org.junit.runners.model@java_stub)" version="-1" />
   <import index="lvsv" modelUID="f:java_stub#83f155ff-422c-4b5a-a2f2-b459302dd215#org.junit.internal.builders(jetbrains.mps.baseLanguage.unitTest.libs/org.junit.internal.builders@java_stub)" version="-1" />
+  <import index="hxfr" modelUID="f:java_stub#920eaa0e-ecca-46bc-bee7-4e5c59213dd6#jetbrains.mps(Testbench/jetbrains.mps@java_stub)" version="-1" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" implicit="yes" />
   <import index="m373" modelUID="r:4095af4f-a097-4799-aaa9-03df087ddfa6(jetbrains.mps.baseLanguage.javadoc.structure)" version="5" implicit="yes" />
@@ -3990,9 +3991,9 @@
           </node>
         </node>
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="263837413765452938">
-          <node role="expression" roleId="tpee.1068580123156" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="263837413765454553">
-            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ms53.~TestMain%dconfigureMPS()%cvoid" resolveInfo="configureMPS" />
-            <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="ms53.~TestMain" resolveInfo="TestMain" />
+          <node role="expression" roleId="tpee.1068580123156" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="7884566175275044879">
+            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="hxfr.~TestMain%dconfigureMPS()%cvoid" resolveInfo="configureMPS" />
+            <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="hxfr.~TestMain" resolveInfo="TestMain" />
           </node>
         </node>
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="4101410806532145677">
@@ -4011,7 +4012,7 @@
             <node role="statement" roleId="tpee.1068581517665" type="tpee.ThrowStatement" typeId="tpee.1164991038168" id="7906452883299947587">
               <node role="throwable" roleId="tpee.1164991057263" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="7906452883299947589">
                 <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="7906452883299947591">
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ik6s.~InitializationError%d&lt;init&gt;(java%dutil%dList)" resolveInfo="InitializationError" />
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ik6s.~InitializationError%d&lt;init&gt;(java%dlang%dString)" resolveInfo="InitializationError" />
                   <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.PlusExpression" typeId="tpee.1068581242875" id="7906452883299947616">
                     <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="7906452883299947619">
                       <property name="value" nameId="tpee.1070475926801" value=")" />
@@ -4057,8 +4058,8 @@
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7906452883299947570" resolveInfo="ourMPSProject" />
             </node>
             <node role="rValue" roleId="tpee.1068498886297" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="263837413765454607">
-              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="ms53.~TestMain" resolveInfo="TestMain" />
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ms53.~TestMain%dloadProject(java%dio%dFile)%cjetbrains%dmps%dproject%dProject" resolveInfo="loadProject" />
+              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="hxfr.~TestMain" resolveInfo="TestMain" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="hxfr.~TestMain%dloadProject(java%dio%dFile)%cjetbrains%dmps%dproject%dProject" resolveInfo="loadProject" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="263837413765454608">
                 <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="263837413765454609">
                   <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="fxg7.~File%d&lt;init&gt;(java%dlang%dString)" resolveInfo="File" />
@@ -4401,7 +4402,7 @@
             <node role="statement" roleId="tpee.1068581517665" type="tpee.ThrowStatement" typeId="tpee.1164991038168" id="1209415647739275452">
               <node role="throwable" roleId="tpee.1164991057263" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="1209415647739275454">
                 <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="1209415647739275456">
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ik6s.~InitializationError%d&lt;init&gt;(java%dutil%dList)" resolveInfo="InitializationError" />
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ik6s.~InitializationError%d&lt;init&gt;(java%dlang%dString)" resolveInfo="InitializationError" />
                   <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.PlusExpression" typeId="tpee.1068581242875" id="1209415647739275462">
                     <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="1209415647739275465">
                       <property name="value" nameId="tpee.1070475926801" value="\&quot; was not specified." />
@@ -4552,8 +4553,8 @@
               <node role="body" roleId="tpee.1164879758292" type="tpee.StatementList" typeId="tpee.1068580123136" id="6219666460876699326">
                 <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="6219666460876703080">
                   <node role="expression" roleId="tpee.1068580123156" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="7196439074179021780">
-                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ms53.~TestMain%ddisposeMPS()%cvoid" resolveInfo="disposeMPS" />
-                    <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="ms53.~TestMain" resolveInfo="TestMain" />
+                    <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="hxfr.~TestMain" resolveInfo="TestMain" />
+                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="hxfr.~TestMain%ddisposeMPS()%cvoid" resolveInfo="disposeMPS" />
                   </node>
                 </node>
               </node>
