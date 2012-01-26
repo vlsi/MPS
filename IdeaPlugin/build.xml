@@ -198,6 +198,35 @@
             </manifest>
         </jar>
 
+      <!-- editor api -->
+      <mkdir dir="${build_dir}/mpseditorapi_jar"/>
+      <javac destdir="${build_dir}/mpseditorapi_jar" fork="true"
+             memorymaximumsize="1024m"
+             includeantruntime="false"
+             debug="${javac.debug}" debuglevel="lines,vars,source">
+        <compilerarg value="-Xlint:none"/>
+        <src>
+          <!-- editor-api -->
+          <path path="${base_dir}/editor/editor-api/source"/>
+        </src>
+        <classpath>
+          <fileset dir="${dist.dir}/lib" includes="*.jar"/>
+          <fileset dir="${ideaPath}/lib" includes="*.jar"/>
+        </classpath>
+      </javac>
+      <copy includeemptydirs="false" todir="${build_dir}/mpseditor_jar">
+        <fileset dir="${base_dir}/editor/editor-api/source" includes="**/*.png"/>
+      </copy>
+      <jar destfile="${dist.dir}/lib/mps-editor-api.jar">
+        <fileset dir="${build_dir}/mpseditorapi_jar"/>
+        <manifest>
+          <attribute name="Built-By" value="${user.name}"/>
+          <attribute name="Implementation-Vendor" value="JetBrains s.r.o."/>
+          <attribute name="Implementation-Title" value="MPS Editor integration package"/>
+          <attribute name="Implementation-Version" value="1.0"/>
+        </manifest>
+      </jar>
+
         <!-- IDEA workbench -->
         <mkdir dir="${build_dir}/mpsworkbench_jar"/>
         <javac destdir="${build_dir}/mpsworkbench_jar" fork="true"
@@ -265,8 +294,6 @@
                debug="${javac.debug}" debuglevel="lines,vars,source">
             <compilerarg value="-Xlint:none"/>
             <src>
-                <!-- editor-api -->
-                <path path="${base_dir}/editor/editor-api/source"/>
                 <path path="${base_dir}/editor/editor-runtime/source"/>
                 <path path="${base_dir}/editor/editor-runtime/source_gen"/>
                 <path path="${base_dir}/editor/actions-runtime/source"/>
@@ -282,7 +309,6 @@
             </classpath>
         </javac>
         <copy includeemptydirs="false" todir="${build_dir}/mpseditor_jar">
-            <fileset dir="${base_dir}/editor/editor-api/source" includes="**/*.png"/>
             <fileset dir="${base_dir}/editor/editor-runtime/source" includes="**/*.png"/>
             <fileset dir="${base_dir}/editor/editor-runtime/source_gen" includes="**/*.png"/>
             <fileset dir="${base_dir}/editor/actions-runtime/source" includes="**/*.png"/>

@@ -37,6 +37,7 @@
     <mkdir dir="${deploy.dir}/MPS/lib/mps-core.jar.tmp" />
     <mkdir dir="${deploy.dir}/MPS/lib/mps-editor.jar.tmp/modules" />
     <mkdir dir="${deploy.dir}/MPS/lib/mps-editor.jar.tmp" />
+    <mkdir dir="${deploy.dir}/MPS/lib/mps-editor-api.jar.tmp" />
     <mkdir dir="${deploy.dir}/MPS/lib/mps-platform.jar.tmp/modules" />
     <mkdir dir="${deploy.dir}/MPS/lib/mps-platform.jar.tmp" />
     <mkdir dir="${deploy.dir}/MPS/lib/mps-workbench.jar.tmp/modules" />
@@ -237,15 +238,19 @@
     <copy todir="${deploy.dir}/MPS/lib/mps-editor.jar.tmp">
       <fileset dir="${mps_home}/editor/typesystemIntegration/classes" />
     </copy>
-    <copy todir="${deploy.dir}/MPS/lib/mps-editor.jar.tmp">
-      <fileset dir="${mps_home}/editor/editor-api/classes" />
-    </copy>
     <antcall target="MPS-languages.pack.jetbrains.mps.editor.runtime" />
     <mkdir dir="${deploy.dir}/MPS/lib/mps-editor.jar.tmp/modules" />
     <jar destfile="${deploy.dir}/MPS/lib/mps-editor.jar" duplicate="preserve" filesonly="true">
       <fileset dir="${deploy.dir}/MPS/lib/mps-editor.jar.tmp" />
     </jar>
     <delete dir="${deploy.dir}/MPS/lib/mps-editor.jar.tmp" />
+    <copy todir="${deploy.dir}/MPS/lib/mps-editor-api.jar.tmp">
+      <fileset dir="${mps_home}/editor/editor-api/classes" />
+    </copy>
+    <jar destfile="${deploy.dir}/MPS/lib/mps-editor-api.jar" duplicate="preserve" filesonly="true">
+      <fileset dir="${deploy.dir}/MPS/lib/mps-editor-api.jar.tmp" />
+    </jar>
+    <delete dir="${deploy.dir}/MPS/lib/mps-editor-api.jar.tmp" />
     <copy todir="${deploy.dir}/MPS/lib/mps-platform.jar.tmp">
       <fileset dir="${mps_home}/workbench/baseLanguageIndex/classes_gen" />
     </copy>
@@ -767,6 +772,7 @@
     <delete dir="${deploy.dir}/MPS/lib/idea-patch.jar.tmp" />
     <delete dir="${deploy.dir}/MPS/lib/mps-core.jar.tmp" />
     <delete dir="${deploy.dir}/MPS/lib/mps-editor.jar.tmp" />
+    <delete dir="${deploy.dir}/MPS/lib/mps-editor-api.jar.tmp" />
     <delete dir="${deploy.dir}/MPS/lib/mps-platform.jar.tmp" />
     <delete dir="${deploy.dir}/MPS/lib/mps-workbench.jar.tmp" />
     <delete dir="${deploy.dir}/MPS/lib/mps-boot.jar.tmp" />

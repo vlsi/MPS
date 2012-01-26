@@ -18,7 +18,7 @@ package jetbrains.mps.idea.core.navigation;
 
 import com.intellij.openapi.components.ApplicationComponent;
 import jetbrains.mps.ide.editor.MPSEditorOpener;
-import jetbrains.mps.ide.navigation.NavigationSupport;
+import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.IOperationContext;
