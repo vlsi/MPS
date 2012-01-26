@@ -141,7 +141,7 @@ public abstract class MpsElementsTable<T> {
                 myElementsTableModel.fireTableDataChanged();
             }
         });
-        return decorator.createPanel();
+        return postDecoratePanel(decorator.createPanel());
     }
 
     protected TableCellRenderer createDefaultRenderer() {
@@ -172,7 +172,14 @@ public abstract class MpsElementsTable<T> {
 
     protected abstract String getChooserMessage();
 
-    protected abstract String getColumnTitle();
+    protected JPanel postDecoratePanel(JPanel panel) {
+        panel.setBorder(null);
+        return panel;
+    }
+
+    protected String getColumnTitle() {
+        return null;
+    }
 
     public List<T> getElements() {
         return myElementsTableModel.getElements();
