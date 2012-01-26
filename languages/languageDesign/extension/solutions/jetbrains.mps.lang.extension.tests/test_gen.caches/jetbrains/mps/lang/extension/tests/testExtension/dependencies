@@ -3,13 +3,18 @@
   <dependency className="jetbrains.mps.lang.extension.tests.testExtension.Extension_Test" file="Extension_Test.java">
     <classNode dependClassName="com.intellij.openapi.application.ApplicationAdapter" />
     <classNode dependClassName="com.intellij.openapi.application.ex.ApplicationManagerEx" />
+    <classNode dependClassName="java.lang.Comparable" />
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.RuntimeException" />
+    <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Iterator" />
     <classNode dependClassName="java.util.NoSuchElementException" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.util.plugin.run.MPSLaunch" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IterableUtils" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="jetbrains.mps.lang.extension.tests.plugin.LazyTestObject" />
     <classNode dependClassName="jetbrains.mps.lang.extension.tests.plugin.TestObject" />
     <classNode dependClassName="jetbrains.mps.smodel.structure.Extension" />

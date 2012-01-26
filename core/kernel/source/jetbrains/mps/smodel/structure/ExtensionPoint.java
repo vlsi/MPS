@@ -51,7 +51,11 @@ public class ExtensionPoint<T> {
   public Iterable<Extension<T>> getExtensions () {
     return ExtensionRegistry.getInstance().getExtensions(this);
   }
-  
+
+  public Iterable<T> getObjects () {
+    return ExtensionRegistry.getInstance().getObjects(this);
+  }
+
   public String getNamespace () {
     int lastDot = myId.lastIndexOf(".");
     return lastDot >= 0 ? myId.substring(lastDot+1) : "";

@@ -12,6 +12,7 @@
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="-1" implicit="yes" />
   <import index="v54s" modelUID="r:2a0fe383-d602-4f5b-813c-e41afdbbb97e(jetbrains.mps.lang.extension.structure)" version="-1" implicit="yes" />
+  <import index="e2lb" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" version="-1" implicit="yes" />
   <roots>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="7036359038356246776">
       <property name="name" nameId="tpck.1169194664001" value="TestObject" />
@@ -30,6 +31,15 @@
     </node>
     <node type="v54s.ExtensionDeclaration" typeId="v54s.3729007189729192404" id="2622946712629256054">
       <link role="extensionPoint" roleId="v54s.3729007189729192405" targetNodeId="2622946712629256033" resolveInfo="lazyTestExtensionPoint" />
+    </node>
+    <node type="v54s.ExtensionPointDeclaration" typeId="v54s.3729007189729192406" id="4451661519483734255">
+      <property name="extensionName" nameId="v54s.5911785528834333590" value="multiExtensionPoint" />
+    </node>
+    <node type="v54s.ExtensionDeclaration" typeId="v54s.3729007189729192404" id="4451661519483734260">
+      <link role="extensionPoint" roleId="v54s.3729007189729192405" targetNodeId="4451661519483734255" resolveInfo="multiExtensionPoint" />
+    </node>
+    <node type="v54s.ExtensionDeclaration" typeId="v54s.3729007189729192404" id="4451661519483734265">
+      <link role="extensionPoint" roleId="v54s.3729007189729192405" targetNodeId="4451661519483734255" resolveInfo="multiExtensionPoint" />
     </node>
   </roots>
   <root id="7036359038356246776">
@@ -179,6 +189,33 @@
             <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="2622946712629256060">
               <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="2622946712629256037" resolveInfo="LazyTestObject" />
             </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </root>
+  <root id="4451661519483734255">
+    <node role="objectType" roleId="v54s.8029776554053057803" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="4451661519483734257">
+      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="e2lb.~String" resolveInfo="String" />
+    </node>
+  </root>
+  <root id="4451661519483734260">
+    <node role="objectGetter" roleId="v54s.8029776554053057811" type="v54s.ExtensionObjectGetter" typeId="v54s.8029776554053043557" id="4451661519483734261">
+      <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="4451661519483734262">
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="4451661519483734263">
+          <node role="expression" roleId="tpee.1068580123156" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="4451661519483734264">
+            <property name="value" nameId="tpee.1070475926801" value="salam" />
+          </node>
+        </node>
+      </node>
+    </node>
+  </root>
+  <root id="4451661519483734265">
+    <node role="objectGetter" roleId="v54s.8029776554053057811" type="v54s.ExtensionObjectGetter" typeId="v54s.8029776554053043557" id="4451661519483734266">
+      <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="4451661519483734267">
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="4451661519483734268">
+          <node role="expression" roleId="tpee.1068580123156" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="4451661519483734269">
+            <property name="value" nameId="tpee.1070475926801" value="dunya" />
           </node>
         </node>
       </node>

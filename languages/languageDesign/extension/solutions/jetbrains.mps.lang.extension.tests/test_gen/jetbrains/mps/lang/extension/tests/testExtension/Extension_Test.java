@@ -11,6 +11,9 @@ import junit.framework.Assert;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 import jetbrains.mps.lang.extension.tests.plugin.LazyTestObject;
+import jetbrains.mps.internal.collections.runtime.IterableUtils;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.ISelector;
 import com.intellij.openapi.application.ex.ApplicationManagerEx;
 import com.intellij.openapi.application.ApplicationAdapter;
 
@@ -19,7 +22,7 @@ public class Extension_Test extends TestCase {
 
   @MPSLaunch
   public void test_testObject() throws Exception {
-    Iterable<Extension<TestObject>> extensions = ExtensionPoint.<TestObject>generify(new ExtensionPoint("jetbrains.mps.lang.extension.tests.testExtensionPoint", TestObject.class)).getExtensions();
+    Iterable<Extension<TestObject>> extensions = ((ExtensionPoint<TestObject>) ExtensionPoint.<TestObject>generify(new ExtensionPoint("jetbrains.mps.lang.extension.tests.testExtensionPoint", TestObject.class))).getExtensions();
     Assert.assertNotNull(extensions);
     Iterator<Extension<TestObject>> it = extensions.iterator();
     Assert.assertTrue(it.hasNext());
@@ -39,10 +42,20 @@ public class Extension_Test extends TestCase {
   @MPSLaunch
   public void test_testLazyObject() throws Exception {
     Assert.assertNull(LazyTestObject.INSTANCE);
-    Iterable<Extension<LazyTestObject>> extensions = ExtensionPoint.<LazyTestObject>generify(new ExtensionPoint("jetbrains.mps.lang.extension.tests.lazyTestExtensionPoint", LazyTestObject.class)).getExtensions();
+    Iterable<Extension<LazyTestObject>> extensions = ((ExtensionPoint<LazyTestObject>) ExtensionPoint.<LazyTestObject>generify(new ExtensionPoint("jetbrains.mps.lang.extension.tests.lazyTestExtensionPoint", LazyTestObject.class))).getExtensions();
     LazyTestObject lzo = extensions.iterator().next().get();
     Assert.assertNotNull(lzo);
     Assert.assertSame(LazyTestObject.INSTANCE, lzo);
+  }
+
+  @MPSLaunch
+  public void test_extensionPointExpression() throws Exception {
+    String string = IterableUtils.join(Sequence.fromIterable(ExtensionPoint.<String>generify(new ExtensionPoint("jetbrains.mps.lang.extension.tests.multiExtensionPoint", String.class)).getObjects()).sort(new ISelector<String, Comparable<?>>() {
+      public Comparable<?> select(String it) {
+        return it;
+      }
+    }, false), ", ");
+    Assert.assertEquals("salam, dunya", string);
   }
 
   public void tearDown() {

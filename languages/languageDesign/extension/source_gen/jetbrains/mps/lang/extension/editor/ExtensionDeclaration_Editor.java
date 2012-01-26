@@ -7,20 +7,18 @@ import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
-import jetbrains.mps.nodeEditor.style.Style;
-import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
+import jetbrains.mps.nodeEditor.style.Style;
+import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Indent;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
-import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.nodeEditor.InlineCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
@@ -61,50 +59,16 @@ public class ExtensionDeclaration_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_i2dquw_e0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_i2dquw_e0");
-    if (renderingCondition_i2dquw_a0e0(node, editorContext, editorContext.getOperationContext().getScope())) {
-      editorCell.addEditorCell(this.createConstant_i2dquw_a4a(editorContext, node));
-    }
-    if (renderingCondition_i2dquw_a1e0(node, editorContext, editorContext.getOperationContext().getScope())) {
-      editorCell.addEditorCell(this.createCollection_i2dquw_b4a(editorContext, node));
-    }
-    return editorCell;
-  }
-
-  private EditorCell createCollection_i2dquw_b4a(EditorContext editorContext, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_i2dquw_b4a");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.INDENT_LAYOUT_ON_NEW_LINE, true);
-      style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
-    }
-    editorCell.addEditorCell(this.createConstant_i2dquw_a1e0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_i2dquw_b1e0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_i2dquw_a4a(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_i2dquw_b4a(editorContext, node));
     return editorCell;
   }
 
   private EditorCell createCollection_i2dquw_g0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_i2dquw_g0");
-    if (renderingCondition_i2dquw_a0g0(node, editorContext, editorContext.getOperationContext().getScope())) {
-      editorCell.addEditorCell(this.createConstant_i2dquw_a6a(editorContext, node));
-    }
-    if (renderingCondition_i2dquw_a1g0(node, editorContext, editorContext.getOperationContext().getScope())) {
-      editorCell.addEditorCell(this.createCollection_i2dquw_b6a(editorContext, node));
-    }
-    return editorCell;
-  }
-
-  private EditorCell createCollection_i2dquw_b6a(EditorContext editorContext, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_i2dquw_b6a");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.INDENT_LAYOUT_ON_NEW_LINE, true);
-      style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
-    }
-    editorCell.addEditorCell(this.createConstant_i2dquw_a1g0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_i2dquw_b1g0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_i2dquw_a6a(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_i2dquw_b6a(editorContext, node));
     return editorCell;
   }
 
@@ -125,51 +89,23 @@ public class ExtensionDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_i2dquw_a4a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<ctrl+Enter to create activator>");
-    editorCell.setCellId("Constant_i2dquw_a4a");
-    BaseLanguageStyle_StyleSheet.getComment(editorCell).apply(editorCell);
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.INDENT_LAYOUT_ON_NEW_LINE, true);
-      style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
-    }
-    editorCell.addKeyMap(new ExtensionDeclaration_createActivator());
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-  private EditorCell createConstant_i2dquw_a1e0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "on activate");
-    editorCell.setCellId("Constant_i2dquw_a1e0");
+    editorCell.setCellId("Constant_i2dquw_a4a");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_i2dquw_a6a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<ctrl+Enter to create deactivator>");
-    editorCell.setCellId("Constant_i2dquw_a6a");
-    BaseLanguageStyle_StyleSheet.getComment(editorCell).apply(editorCell);
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.INDENT_LAYOUT_ON_NEW_LINE, true);
-      style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
-    }
-    editorCell.addKeyMap(new ExtensionDeclaration_createDeactivator());
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-  private EditorCell createConstant_i2dquw_a1g0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "on deactivate");
-    editorCell.setCellId("Constant_i2dquw_a1g0");
+    editorCell.setCellId("Constant_i2dquw_a6a");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_i2dquw_a8a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "extension object getter");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "extension object");
     editorCell.setCellId("Constant_i2dquw_a8a");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -227,10 +163,10 @@ public class ExtensionDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_i2dquw_b1e0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_i2dquw_b4a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("activator");
-    provider.setNoTargetText("<no activator>");
+    provider.setNoTargetText("<do nothing>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
@@ -244,10 +180,10 @@ public class ExtensionDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_i2dquw_b1g0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_i2dquw_b6a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("deactivator");
-    provider.setNoTargetText("<no deactivator>");
+    provider.setNoTargetText("<do nothing>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
@@ -276,22 +212,6 @@ public class ExtensionDeclaration_Editor extends DefaultNodeEditor {
       return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
     } else
     return editorCell;
-  }
-
-  private static boolean renderingCondition_i2dquw_a0e0(SNode node, EditorContext editorContext, IScope scope) {
-    return (SLinkOperations.getTarget(node, "activator", true) == null);
-  }
-
-  private static boolean renderingCondition_i2dquw_a1e0(SNode node, EditorContext editorContext, IScope scope) {
-    return (SLinkOperations.getTarget(node, "activator", true) != null);
-  }
-
-  private static boolean renderingCondition_i2dquw_a0g0(SNode node, EditorContext editorContext, IScope scope) {
-    return (SLinkOperations.getTarget(node, "deactivator", true) == null);
-  }
-
-  private static boolean renderingCondition_i2dquw_a1g0(SNode node, EditorContext editorContext, IScope scope) {
-    return (SLinkOperations.getTarget(node, "deactivator", true) != null);
   }
 
   public static class _Inline_i2dquw_a1a0 extends InlineCellProvider {

@@ -20,10 +20,7 @@ import jetbrains.mps.smodel.structure.ExtensionDescriptor;
 import jetbrains.mps.smodel.structure.ExtensionPoint;
 import jetbrains.mps.util.misc.hash.HashMap;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.Map;
+import java.util.*;
 
 /**
  * Created by IntelliJ IDEA.
@@ -52,6 +49,16 @@ public class BaseExtensionRegistry {
 
   public <T> boolean hasExtensions (String id, ExtensionPoint<T> extensionPoint) {
     return !optExtensionsBucket(id, activeExtensions(extensionPoint)).isEmpty();
+  }
+
+  public <T> Iterable<T> getObjects (ExtensionPoint<T> extensionPoint) {
+    Collection<Extension<T>> extensions = optExtensionsBucket(extensionPoint.getId(), activeExtensions(extensionPoint));
+    if (extensions.isEmpty()) return  Collections.emptyList();
+    List<T> res = new ArrayList<T>(extensions.size());
+    for (Iterator<Extension<T>> it = extensions.iterator(); it.hasNext();) {
+      res.add(it.next().get());
+    }
+    return res;
   }
 
   protected void clear () {
