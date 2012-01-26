@@ -28,10 +28,7 @@ import jetbrains.mps.idea.core.ui.ImportedModelsTable;
 import jetbrains.mps.idea.core.ui.UsedLanguagesTable;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.structure.modules.ModuleReference;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelOperations;
-import jetbrains.mps.smodel.SModelReference;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import org.jetbrains.annotations.Nls;
 
@@ -54,6 +51,10 @@ public class ModelPropertiesConfigurable implements Configurable, Disposable {
     private Project myProject;
     private ImportedModelsTable myImportedModelsTable;
     private List<SModelReference> myImportedModels;
+    private JPanel myComponent;
+    private JComponent myTabbedPaneComponent;
+    private JTextField myPackageName;
+    private String myModelLongName;
 
     public ModelPropertiesConfigurable(EditableSModelDescriptor descriptor, Project project) {
         ModelAccess.assertLegalRead();
@@ -62,6 +63,14 @@ public class ModelPropertiesConfigurable implements Configurable, Disposable {
         SModel sModel = myDescriptor.getSModel();
         myUsedLanguages = sModel.importedLanguages();
         myImportedModels = SModelOperations.getImportedModelUIDs(sModel);
+        myModelLongName = myDescriptor.getLongName();
+    }
+
+    private void createUIComponents() {
+        TabbedPaneWrapper tabbedPane = new TabbedPaneWrapper(this);
+        tabbedPane.addTab("Imported Models", MPSIcons.MODELS_TAB_ICON, createImportedModelsTable(), "Models imported into this model");
+        tabbedPane.addTab("Used Languages", MPSIcons.LANGUAGES_TAB_ICON, createUsedLanguagesTable(), "Languages used in this model");
+        myTabbedPaneComponent = tabbedPane.getComponent();
     }
 
     @Nls
@@ -82,11 +91,8 @@ public class ModelPropertiesConfigurable implements Configurable, Disposable {
 
     @Override
     public JComponent createComponent() {
-        TabbedPaneWrapper tabbedPane = new TabbedPaneWrapper(this);
-        tabbedPane.addTab("Imported Models", MPSIcons.MODELS_TAB_ICON, createImportedModelsTable(), "Models imported into this model");
-        tabbedPane.addTab("Used Languages", MPSIcons.LANGUAGES_TAB_ICON, createUsedLanguagesTable(), "Languages used in this model");
         reset();
-        return tabbedPane.getComponent();
+        return myComponent;
     }
 
     private JComponent createUsedLanguagesTable() {
@@ -101,7 +107,9 @@ public class ModelPropertiesConfigurable implements Configurable, Disposable {
 
     @Override
     public boolean isModified() {
-        return myImportedModelsTable.isModified(myImportedModels) || myUsedLanguagesTable.isModified(myUsedLanguages);
+        return myImportedModelsTable.isModified(myImportedModels) ||
+                myUsedLanguagesTable.isModified(myUsedLanguages) ||
+                !myModelLongName.equals(myPackageName.getText());
     }
 
     @Override
@@ -114,12 +122,20 @@ public class ModelPropertiesConfigurable implements Configurable, Disposable {
 
                 saveImportedModels(sModel);
                 saveUsedLanguages(sModel, module);
+                setLongName();
 
                 myDescriptor.save();
                 myUsedLanguages = sModel.importedLanguages();
                 myImportedModels = SModelOperations.getImportedModelUIDs(sModel);
+                myModelLongName = myDescriptor.getLongName();
             }
         }, ProjectHelper.toMPSProject(myProject));
+    }
+
+    private void setLongName() {
+        SModelFqName oldFqName = myDescriptor.getSModelReference().getSModelFqName();
+        SModelFqName newFqName = new SModelFqName(myPackageName.getText(), oldFqName.getStereotype());
+        myDescriptor.rename(newFqName, true);
     }
 
     private void saveUsedLanguages(SModel sModel, IModule module) {
@@ -163,6 +179,7 @@ public class ModelPropertiesConfigurable implements Configurable, Disposable {
     public void reset() {
         myImportedModelsTable.setElements(myImportedModels);
         myUsedLanguagesTable.setElements(myUsedLanguages);
+        myPackageName.setText(myModelLongName);
     }
 
     @Override
