@@ -18,7 +18,7 @@
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <roots>
     <node type="tpe3.BTestCase" typeId="tpe3.1171931851043" id="7036359038356271438">
-      <property name="testCaseName" nameId="tpe3.1171931851045" value="extension" />
+      <property name="testCaseName" nameId="tpe3.1171931851045" value="Extension" />
     </node>
   </roots>
   <root id="7036359038356271438">
@@ -311,7 +311,7 @@
                           <node role="condition" roleId="tpee.1068580123160" type="tpee.NotExpression" typeId="tpee.1081516740877" id="2622946712629219507">
                             <node role="expression" roleId="tpee.1081516765348" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2622946712629219512">
                               <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="2622946712629219509">
-                                <link role="classifier" roleId="tpee.1144433057691" targetNodeId="7036359038356271438" resolveInfo="extension_Test" />
+                                <link role="classifier" roleId="tpee.1144433057691" targetNodeId="7036359038356271438" resolveInfo="Extension_Test" />
                                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2622946712629175398" resolveInfo="TEST_OBJECT" />
                               </node>
                               <node role="operation" roleId="tpee.1197027833540" type="tpee.PropertyReference" typeId="tpee.1201385106094" id="2622946712629219517">

@@ -14,7 +14,7 @@ import jetbrains.mps.lang.extension.tests.plugin.LazyTestObject;
 import com.intellij.openapi.application.ex.ApplicationManagerEx;
 import com.intellij.openapi.application.ApplicationAdapter;
 
-public class extension_Test extends TestCase {
+public class Extension_Test extends TestCase {
   private static TestObject TEST_OBJECT;
 
   @MPSLaunch
@@ -50,7 +50,7 @@ public class extension_Test extends TestCase {
     ApplicationManagerEx.getApplicationEx().addApplicationListener(new ApplicationAdapter() {
       @Override
       public void applicationExiting() {
-        if (!(extension_Test.TEST_OBJECT.getShutDown())) {
+        if (!(Extension_Test.TEST_OBJECT.getShutDown())) {
           throw new RuntimeException("!TestObject.shutDown");
         }
       }

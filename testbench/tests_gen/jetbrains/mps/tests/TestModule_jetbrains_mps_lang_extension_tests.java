@@ -5,7 +5,7 @@ package jetbrains.mps.tests;
 import jetbrains.mps.testbench.junit.runners.ModuleSymbolicSuite;
 import org.junit.runner.RunWith;
 
-@ModuleSymbolicSuite.ModuleClassSymbols(classes = {"jetbrains.mps.lang.extension.tests.testExtension.extension_Test"}, tests = {"test_testObject"})
+@ModuleSymbolicSuite.ModuleClassSymbols(classes = {"jetbrains.mps.lang.extension.tests.testExtension.Extension_Test"}, tests = {"test_testObject,test_testLazyObject"})
 @ModuleSymbolicSuite.ModuleReference("bdcad511-2c95-4b17-90fb-99b248f018cc(jetbrains.mps.lang.extension.tests)")
 @RunWith(ModuleSymbolicSuite.class)
 public class TestModule_jetbrains_mps_lang_extension_tests {
