@@ -21,5 +21,6 @@
     
   <extensions defaultExtensionNs="com.intellij">
     <mps.LanguageLibrary dir="/"></mps.LanguageLibrary>
+    <mps.PluginBundle/>
   </extensions>
 </idea-plugin>

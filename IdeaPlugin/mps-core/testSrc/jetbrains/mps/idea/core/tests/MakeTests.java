@@ -181,13 +181,13 @@ public class MakeTests extends DataMPSFixtureTestCase {
         });
 
         vfs.refresh(false);
-        assertFalse(module.findChild("source_gen") == null);
-        assertFalse(module.findFileByRelativePath("source_gen/main") == null);
+        assertNotNull("Not found after refresh: " + module.getPath() + "/source_gen", module.findChild("source_gen"));
+        assertNotNull(module.findFileByRelativePath("source_gen/main"));
         assertTrue(module.findFileByRelativePath("source_gen/main").getChildren().length == 5);
 
-        assertFalse(module.findChild("classes_gen") == null);
-        assertFalse(module.findFileByRelativePath("classes_gen/main") == null);
+        assertNotNull(module.findChild("classes_gen"));
+        assertNotNull(module.findFileByRelativePath("classes_gen/main"));
         assertTrue(module.findFileByRelativePath("classes_gen/main").getChildren().length == 1);
-        assertFalse(module.findFileByRelativePath("classes_gen/main/trace.info") == null);
+        assertNotNull(module.findFileByRelativePath("classes_gen/main/trace.info"));
     }
 }

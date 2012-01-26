@@ -80,7 +80,9 @@ public class LanguagesStep extends AbstractStep {
     CheckBoxNode allModulesNode = new CheckBoxNode(data, false);
     builder.fillNode(allModulesNode);
     this.fillChildren(allModulesNode);
-    return new CheckBoxTree(allModulesNode);
+    CheckBoxTree tree = new CheckBoxTree(allModulesNode);
+    tree.checkNodeRecursively(allModulesNode, true);
+    return tree;
   }
 
   public <N extends NodeData> void fillChildren(CheckBoxNode<N> node) {

@@ -17,9 +17,7 @@ package jetbrains.mps.testbench;
 
 import com.intellij.openapi.application.PathMacros;
 import com.intellij.util.PathUtil;
-import jetbrains.mps.library.BaseLibraryManager.MyState;
 import jetbrains.mps.library.LibraryInitializer;
-import jetbrains.mps.library.LibraryManager;
 import jetbrains.mps.logging.ILoggingHandler;
 import jetbrains.mps.logging.LogEntry;
 import jetbrains.mps.make.ModuleMaker;
@@ -73,21 +71,18 @@ public class Testbench {
   }
 
   public static void initLibs() {
-    MyState state = LibraryManager.getInstance().getState();
-    LibraryManager.getInstance().loadState(state);
     try {
-    SwingUtilities.invokeAndWait(new Runnable() {
-      @Override
-      public void run() {
-        ModelAccess.instance().runWriteAction(new Runnable() {
-          public void run() {
-            LibraryInitializer.getInstance().update();
-          }
-        });
-      }
-    });
-    }
-    catch (Exception e) {
+      SwingUtilities.invokeAndWait(new Runnable() {
+        @Override
+        public void run() {
+          ModelAccess.instance().runWriteAction(new Runnable() {
+            public void run() {
+              LibraryInitializer.getInstance().update();
+            }
+          });
+        }
+      });
+    } catch (Exception e) {
       throw new RuntimeException(e);
     }
   }
@@ -99,7 +94,7 @@ public class Testbench {
   private static class LoggingHandlerAdapter implements ILoggingHandler {
 
     public void info(LogEntry e) {
-     LOG.info(e.getMessage());
+      LOG.info(e.getMessage());
     }
 
     public void warning(LogEntry e) {
