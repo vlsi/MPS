@@ -81,6 +81,7 @@ public class NewRootAction extends AnAction {
                         SNode newNode = NodeFactoryManager.createNode(concept, null, null, model, myOperationContext.getScope());
                         newNode.setName(getNameField().getText());
                         model.addRoot(newNode);
+                        myModelDescriptor.save();
                     }
                 }, myOperationContext.getProject());
                 super.doOKAction();
