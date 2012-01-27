@@ -45,8 +45,8 @@ public class NavigationSupportImpl extends NavigationSupport implements Applicat
   }
 
   @Override
-  public void openNode(@NotNull IOperationContext context, @NotNull SNode node, boolean focus, boolean select) {
-    new MPSEditorOpener(ProjectHelper.toIdeaProject(context.getProject())).openNode(node, context, focus, select);
+  public Editor openNode(@NotNull IOperationContext context, @NotNull SNode node, boolean focus, boolean select) {
+    return new MPSEditorOpener(ProjectHelper.toIdeaProject(context.getProject())).openNode(node, context, focus, select);
   }
 
   @Override
