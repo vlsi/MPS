@@ -80,7 +80,6 @@ public class BreakpointsUiComponent implements ProjectComponent {
     myDebugInfoManager = debugInfoManager;
     myProvidersManager = providersManager;
     myFileEditorManager = fileEditorManager;
-    myBreakpointsManagerComponent.setBreakpointsIO(new MyBreakpointsIO());
   }
 
   @NotNull
@@ -91,6 +90,12 @@ public class BreakpointsUiComponent implements ProjectComponent {
 
   @Override
   public void initComponent() {
+    ApplicationManager.getApplication().executeOnPooledThread(new Runnable() {
+      @Override
+      public void run() {
+        myBreakpointsManagerComponent.setBreakpointsIO(new MyBreakpointsIO());
+      }
+    });
     DebugSessionManagerComponent component = myProject.getComponent(DebugSessionManagerComponent.class);
     component.addDebugSessionListener(myDebugSessionListener);
     myBreakpointsManagerComponent.addChangeListener(myBreakpointManagerListener);
