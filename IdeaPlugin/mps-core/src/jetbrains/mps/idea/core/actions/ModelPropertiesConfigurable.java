@@ -133,6 +133,9 @@ public class ModelPropertiesConfigurable implements Configurable, Disposable {
     }
 
     private void setLongName() {
+        if (myModelLongName.equals(myPackageName.getText())) {
+            return;
+        }
         SModelFqName oldFqName = myDescriptor.getSModelReference().getSModelFqName();
         SModelFqName newFqName = new SModelFqName(myPackageName.getText(), oldFqName.getStereotype());
         myDescriptor.rename(newFqName, true);
