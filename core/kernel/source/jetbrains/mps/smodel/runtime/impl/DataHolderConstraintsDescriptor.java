@@ -136,11 +136,11 @@ public class DataHolderConstraintsDescriptor extends BaseConstraintsDescriptor {
   }
 
   @Override
-  public boolean canBeChild(IOperationContext operationContext, SNode parentNode, SNode link, SNode concept, @Nullable CheckingNodeContext checkingNodeContext) {
+  public boolean canBeChild(IOperationContext operationContext, SNode parentNode, SNode link, SNode concept, SNode childNode, @Nullable CheckingNodeContext checkingNodeContext) {
     if (dataHolder.getCanBeAChildMethod() != null) {
-      return executeCanBeMethod(dataHolder.getCanBeAChildMethod(), operationContext, new CanBeAChildContext(parentNode, link, concept), checkingNodeContext);
+      return executeCanBeMethod(dataHolder.getCanBeAChildMethod(), operationContext, new CanBeAChildContext(parentNode, link, concept, childNode), checkingNodeContext);
     } else {
-      return super.canBeChild(operationContext, parentNode, link, concept, checkingNodeContext);
+      return super.canBeChild(operationContext, parentNode, link, concept, childNode, checkingNodeContext);
     }
   }
 
@@ -154,9 +154,9 @@ public class DataHolderConstraintsDescriptor extends BaseConstraintsDescriptor {
   }
 
   @Override
-  public boolean canBeParent(IOperationContext operationContext, SNode node, SNode childConcept, SNode link, @Nullable CheckingNodeContext checkingNodeContext) {
+  public boolean canBeParent(IOperationContext operationContext, SNode node, SNode childConcept, SNode link, @Nullable SNode childNode, @Nullable CheckingNodeContext checkingNodeContext) {
     if (dataHolder.getCanBeAParentMethod() != null) {
-      return executeCanBeMethod(dataHolder.getCanBeAParentMethod(), operationContext, new CanBeAParentContext(node, childConcept, link), checkingNodeContext);
+      return executeCanBeMethod(dataHolder.getCanBeAParentMethod(), operationContext, new CanBeAParentContext(node, childConcept, link, childNode), checkingNodeContext);
     } else {
       return super.canBeParent(operationContext, node, childConcept, link, checkingNodeContext);
     }

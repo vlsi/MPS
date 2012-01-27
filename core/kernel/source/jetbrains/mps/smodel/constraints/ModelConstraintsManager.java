@@ -330,21 +330,21 @@ public class ModelConstraintsManager implements CoreComponent {
 
   public static boolean canBeParent(SNode parentNode, SNode childConcept, SNode link, IOperationContext context) {
     jetbrains.mps.smodel.runtime.ConstraintsDescriptor descriptor = ConceptRegistry.getInstance().getConstraintsDescriptor(parentNode.getConceptFqName());
-    return canBeParent(descriptor, parentNode, childConcept, link, context, null);
+    return canBeParent(descriptor, parentNode, childConcept, link, context, null, null);
   }
 
-  public static boolean canBeParent(jetbrains.mps.smodel.runtime.ConstraintsDescriptor descriptor, SNode parentNode, SNode childConcept, SNode link, IOperationContext context, @Nullable jetbrains.mps.smodel.runtime.CheckingNodeContext checkingNodeContext) {
-    return descriptor.canBeParent(context, parentNode, childConcept, link, checkingNodeContext);
+  public static boolean canBeParent(jetbrains.mps.smodel.runtime.ConstraintsDescriptor descriptor, SNode parentNode, SNode childConcept, SNode link, IOperationContext context, @Nullable SNode childNode, @Nullable jetbrains.mps.smodel.runtime.CheckingNodeContext checkingNodeContext) {
+    return descriptor.canBeParent(context, parentNode, childConcept, link, childNode, checkingNodeContext);
   }
 
   public static boolean canBeChild(String fqName, IOperationContext context, SNode parentNode, SNode link) {
     jetbrains.mps.smodel.runtime.ConstraintsDescriptor descriptor = ConceptRegistry.getInstance().getConstraintsDescriptor(fqName);
-    return canBeChild(descriptor, fqName, context, parentNode, link, null);
+    return canBeChild(descriptor, fqName, context, parentNode, link, null, null);
   }
 
-  public static boolean canBeChild(jetbrains.mps.smodel.runtime.ConstraintsDescriptor descriptor, String fqName, IOperationContext context, SNode parentNode, SNode link, @Nullable jetbrains.mps.smodel.runtime.CheckingNodeContext checkingNodeContext) {
+  public static boolean canBeChild(jetbrains.mps.smodel.runtime.ConstraintsDescriptor descriptor, String fqName, IOperationContext context, SNode parentNode, SNode link, @Nullable SNode childNode, @Nullable jetbrains.mps.smodel.runtime.CheckingNodeContext checkingNodeContext) {
     SNode concept = SModelUtil.findConceptDeclaration(fqName, context.getScope());
-    return descriptor.canBeChild(context, parentNode, link, concept, checkingNodeContext);
+    return descriptor.canBeChild(context, parentNode, link, concept, childNode, checkingNodeContext);
   }
 
   private static boolean canBeRootByIsRootProperty(final String fqName, @Nullable final jetbrains.mps.smodel.runtime.CheckingNodeContext checkingNodeContext) {

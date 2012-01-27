@@ -24,11 +24,11 @@ import org.jetbrains.annotations.Nullable;
 public interface ConstraintsDescriptor {
   String getConceptFqName();
 
-  boolean canBeChild(IOperationContext operationContext, SNode parentNode, SNode link, SNode concept, @Nullable CheckingNodeContext checkingNodeContext);
+  boolean canBeChild(IOperationContext operationContext, SNode parentNode, SNode link, SNode concept, @Nullable SNode childNode, @Nullable CheckingNodeContext checkingNodeContext);
 
   boolean canBeRoot(IOperationContext operationContext, SModel model, @Nullable CheckingNodeContext checkingNodeContext);
 
-  boolean canBeParent(IOperationContext operationContext, SNode node, SNode childConcept, SNode link, @Nullable CheckingNodeContext checkingNodeContext);
+  boolean canBeParent(IOperationContext operationContext, SNode node, SNode childConcept, SNode link, @Nullable SNode childNode, @Nullable CheckingNodeContext checkingNodeContext);
 
   boolean canBeAncestor(IOperationContext operationContext, SNode node, SNode childConcept, @Nullable CheckingNodeContext checkingNodeContext);
 

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="Constraints_Language.java" startLine="9" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.constraints.structure.Constraints_Language" />
-  <unitInfo fileName="StructureAspectDescriptor.java" startLine="10" startPosition="0" endLine="105" endPosition="0" unitName="jetbrains.mps.lang.constraints.structure.StructureAspectDescriptor" />
+  <unitInfo fileName="StructureAspectDescriptor.java" startLine="10" startPosition="0" endLine="107" endPosition="0" unitName="jetbrains.mps.lang.constraints.structure.StructureAspectDescriptor" />
   <root nodeId="1147467115080">
     <nodeInfo nodeId="1147467115080" fileName="NodePropertyConstraint.java" startLine="12" startPosition="57" endLine="13" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="1147467115080" fileName="NodePropertyConstraint.java" startLine="13" startPosition="105" endLine="14" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="APPLICABLE_PROPERTY" />
@@ -1288,6 +1288,29 @@
       <varInfo nodeId="5676632058862809931" varName="sm" />
     </scopeInfo>
     <unitInfo nodeId="5676632058862809931" fileName="ConstraintFunction_ReferentSearchScope_Scope.java" startLine="13" startPosition="0" endLine="76" endPosition="0" unitName="jetbrains.mps.lang.constraints.structure.ConstraintFunction_ReferentSearchScope_Scope" />
+  </root>
+  <root nodeId="6738154313879680265">
+    <nodeInfo nodeId="6738154313879680265" fileName="ConstraintFunctionParameter_childNode.java" startLine="11" startPosition="85" endLine="12" endPosition="120" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
+    <nodeInfo nodeId="6738154313879680265" fileName="ConstraintFunctionParameter_childNode.java" startLine="14" startPosition="60" endLine="15" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="6738154313879680265" fileName="ConstraintFunctionParameter_childNode.java" startLine="18" startPosition="92" endLine="19" endPosition="228" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6738154313879680265" fileName="ConstraintFunctionParameter_childNode.java" startLine="22" startPosition="78" endLine="23" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6738154313879680265" fileName="ConstraintFunctionParameter_childNode.java" startLine="13" startPosition="0" endLine="16" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ConstraintFunctionParameter_childNode#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="6738154313879680265" fileName="ConstraintFunctionParameter_childNode.java" startLine="17" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="newInstance#(Ljetbrains/mps/smodel/SModel;Z)Ljetbrains/mps/lang/constraints/structure/ConstraintFunctionParameter_childNode;" />
+    <nodeInfo nodeId="6738154313879680265" fileName="ConstraintFunctionParameter_childNode.java" startLine="21" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="newInstance#(Ljetbrains/mps/smodel/SModel;)Ljetbrains/mps/lang/constraints/structure/ConstraintFunctionParameter_childNode;" />
+    <scopeInfo nodeId="6738154313879680265" fileName="ConstraintFunctionParameter_childNode.java" startLine="14" startPosition="60" endLine="15" endPosition="16" />
+    <scopeInfo nodeId="6738154313879680265" fileName="ConstraintFunctionParameter_childNode.java" startLine="18" startPosition="92" endLine="19" endPosition="228" />
+    <scopeInfo nodeId="6738154313879680265" fileName="ConstraintFunctionParameter_childNode.java" startLine="22" startPosition="78" endLine="23" endPosition="72" />
+    <scopeInfo nodeId="6738154313879680265" fileName="ConstraintFunctionParameter_childNode.java" startLine="13" startPosition="0" endLine="16" endPosition="3">
+      <varInfo nodeId="6738154313879680265" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="6738154313879680265" fileName="ConstraintFunctionParameter_childNode.java" startLine="17" startPosition="0" endLine="21" endPosition="0">
+      <varInfo nodeId="6738154313879680265" varName="init" />
+      <varInfo nodeId="6738154313879680265" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="6738154313879680265" fileName="ConstraintFunctionParameter_childNode.java" startLine="21" startPosition="0" endLine="25" endPosition="0">
+      <varInfo nodeId="6738154313879680265" varName="sm" />
+    </scopeInfo>
+    <unitInfo nodeId="6738154313879680265" fileName="ConstraintFunctionParameter_childNode.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_childNode" />
   </root>
   <root nodeId="6768994795311967732">
     <nodeInfo nodeId="6768994795311967732" fileName="ConstraintFunctionParameter_visible.java" startLine="11" startPosition="83" endLine="12" endPosition="118" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />

@@ -151,8 +151,20 @@ public class BaseConstraintsDescriptor implements ConstraintsDispatchable {
   }
 
   @Override
+  public boolean canBeChild(IOperationContext operationContext, SNode parentNode, SNode link, SNode concept, SNode childNode, @Nullable CheckingNodeContext checkingNodeContext) {
+    if (canBeChildDescriptor == null) {
+      return true;
+    }
+    if (canBeChildDescriptor == this) {
+      // in new version it's impossible! - canBeChild in this case overriden!
+      return canBeChild(operationContext, parentNode, link, concept, checkingNodeContext);
+    }
+    return canBeChildDescriptor.canBeChild(operationContext, parentNode, link, concept, childNode, checkingNodeContext);
+  }
+
   public boolean canBeChild(IOperationContext operationContext, SNode parentNode, SNode link, SNode concept, @Nullable CheckingNodeContext checkingNodeContext) {
-    return canBeChildDescriptor == null || canBeChildDescriptor.canBeChild(operationContext, parentNode, link, concept, checkingNodeContext);
+    // compatibility method, should be overriden
+    throw new UnsupportedOperationException();
   }
 
   @Override
@@ -161,8 +173,20 @@ public class BaseConstraintsDescriptor implements ConstraintsDispatchable {
   }
 
   @Override
+  public boolean canBeParent(IOperationContext operationContext, SNode node, SNode childConcept, SNode link, @Nullable SNode childNode, @Nullable CheckingNodeContext checkingNodeContext) {
+    if (canBeParentDescriptor == null) {
+      return true;
+    }
+    if (canBeParentDescriptor == this) {
+      // in new version it's impossible! - canBeParent in this case overriden!
+      return canBeParent(operationContext, node, childConcept, link, checkingNodeContext);
+    }
+    return canBeParentDescriptor.canBeParent(operationContext, node, childConcept, link, childNode, checkingNodeContext);
+  }
+
   public boolean canBeParent(IOperationContext operationContext, SNode node, SNode childConcept, SNode link, @Nullable CheckingNodeContext checkingNodeContext) {
-    return canBeParentDescriptor == null || canBeParentDescriptor.canBeParent(operationContext, node, childConcept, link, checkingNodeContext);
+    // compatibility method, should be overriden
+    throw new UnsupportedOperationException();
   }
 
   @Override

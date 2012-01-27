@@ -6,6 +6,7 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.runtime.CheckingNodeContext;
+import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.runtime.ConstraintsDescriptor;
@@ -30,14 +31,15 @@ public class ConstraintsChecker extends AbstractConstraintsChecker {
   }
 
   public SNode getBreakingNodeAndClearContext(CheckingNodeContext checkingNodeContext) {
-    if (checkingNodeContext.getBreakingNode() == null) {
+    SNodePointer breakingNodePointer = checkingNodeContext.getBreakingNode();
+    if (breakingNodePointer == null) {
       return null;
+    } else {
+      SNode node = breakingNodePointer.getNode();
+      checkingNodeContext.setBreakingNode(null);
+
+      return node;
     }
-
-    SNode node = checkingNodeContext.getBreakingNode().getNode();
-    checkingNodeContext.setBreakingNode(null);
-
-    return node;
   }
 
   public void checkNode(final SNode node, LanguageErrorsComponent component, final IOperationContext operationContext, IScope scope) {
@@ -56,7 +58,7 @@ public class ConstraintsChecker extends AbstractConstraintsChecker {
       }
       boolean canBeChild = component.runCheckingAction(new _FunctionTypes._return_P0_E0<Boolean>() {
         public Boolean invoke() {
-          return ModelConstraintsManager.canBeChild(newDescriptor, node.getConceptFqName(), operationContext, SNodeOperations.getParent(node), link, checkingNodeContext);
+          return ModelConstraintsManager.canBeChild(newDescriptor, node.getConceptFqName(), operationContext, SNodeOperations.getParent(node), link, node, checkingNodeContext);
         }
       });
       if (!(canBeChild)) {
@@ -77,7 +79,7 @@ public class ConstraintsChecker extends AbstractConstraintsChecker {
       }
     }
 
-    for (SNode child : SNodeOperations.getChildren(node)) {
+    for (final SNode child : SNodeOperations.getChildren(node)) {
       component.addDependency(child);
       final SNode childConcept = SNodeOperations.getConceptDeclaration(child);
       final SNode childLink = SNodeOperations.getContainingLinkDeclaration(child);
@@ -86,7 +88,7 @@ public class ConstraintsChecker extends AbstractConstraintsChecker {
       }
       boolean canBeParent = component.runCheckingAction(new _FunctionTypes._return_P0_E0<Boolean>() {
         public Boolean invoke() {
-          return ModelConstraintsManager.canBeParent(newDescriptor, node, childConcept, childLink, operationContext, checkingNodeContext);
+          return ModelConstraintsManager.canBeParent(newDescriptor, node, childConcept, childLink, operationContext, child, checkingNodeContext);
         }
       });
       if (!(canBeParent)) {
