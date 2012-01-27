@@ -36,6 +36,13 @@ public abstract class FileSystem {
   public abstract void refresh(IFile file);
   public abstract void scheduleUpdateForWrittenFiles(Iterable<IFile> writtenFiles);
 
+  /**
+   * Write files from appropriate thread and with appropriate locks
+   * @param r
+   * @return  false - error occurred
+   */
+  public abstract boolean runWriteTransaction(Runnable r);
+
   public static FileSystem getInstance() {
     return INSTANCE;
   }
