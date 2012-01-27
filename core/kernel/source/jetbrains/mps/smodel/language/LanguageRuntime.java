@@ -41,7 +41,6 @@ public abstract class LanguageRuntime {
   private DescriptorProvider<BehaviorDescriptor> _behaviorDescriptor;
   private DescriptorProvider<ConstraintsDescriptor> _constraintsDescriptor;
   private DescriptorProvider<FacetDescriptor> facetDescriptor;
-  private DescriptorProvider<ExtensionDescriptor> _extensionPointsDescriptor;
 
   private StructureAspectDescriptor structureDescriptor;
   private BehaviorAspectDescriptor behaviorDescriptor;
@@ -148,18 +147,4 @@ public abstract class LanguageRuntime {
     return constraintsDescriptor;
   }
 
-  @Nullable
-  public ExtensionDescriptor getExtensionDescriptor() {
-    if (myExtensionDescriptor == null) {
-      String className = getNamespace() + ".plugin.ExtensionDescriptor";
-      Object compiled = getObjectByClassNameForLanguageNamespace(className, getNamespace(), true);
-      if (compiled instanceof ExtensionDescriptor) {
-        myExtensionDescriptor = (ExtensionDescriptor) compiled;
-      }
-      else {
-        myExtensionDescriptor = new DefaultExtensionDescriptor();
-      }
-    }
-    return myExtensionDescriptor;
-  }
 }

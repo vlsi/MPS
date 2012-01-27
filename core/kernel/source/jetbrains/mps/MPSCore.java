@@ -82,8 +82,8 @@ public class MPSCore extends ComponentPlugin {
     final ClassLoaderManager classLoaderManager = init(new ClassLoaderManager(myModuleRepository));
     init(new QueryMethodGenerated(classLoaderManager));
     final ConceptRegistry conceptRegistry = init(new ConceptRegistry());
-    final ExtensionRegistry extensionRegistry = init(new ExtensionRegistry());
-    init(new LanguageRegistry(myModuleRepository, classLoaderManager, conceptRegistry, extensionRegistry));
+    init(new LanguageRegistry(myModuleRepository, classLoaderManager, conceptRegistry));
+    init(new ExtensionRegistry());
     init(new LanguageHierarchyCache(myModuleRepository));
     init(new StructureAspectInterpreted());
     init(new OldBehaviorManager(classLoaderManager));

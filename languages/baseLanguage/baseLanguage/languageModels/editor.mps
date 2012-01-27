@@ -929,6 +929,10 @@
       <property name="name" nameId="tpck.1169194664001" value="LowerBoundToWildcard" />
       <link role="applicableConcept" roleId="tpc2.1139535219968" targetNodeId="tpee.1171903862077" resolveInfo="LowerBoundType" />
     </node>
+    <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="5862977038373005083">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="property" />
+      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tpee.5862977038373003187" resolveInfo="LocalPropertyReference" />
+    </node>
   </roots>
   <root id="1073416106125">
     <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="1229447107349">
@@ -18205,6 +18209,18 @@
               </node>
             </node>
           </node>
+        </node>
+      </node>
+    </node>
+  </root>
+  <root id="5862977038373005083">
+    <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_RefCell" typeId="tpc2.1088013125922" id="5862977038373005085">
+      <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tpee.5862977038373003188" />
+      <node role="editorComponent" roleId="tpc2.1088186146602" type="tpc2.InlineEditorComponent" typeId="tpc2.1088185857835" id="5862977038373005086">
+        <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Property" typeId="tpc2.1073389658414" id="5862977038373005088">
+          <property name="readOnly" nameId="tpc2.1140017977771" value="true" />
+          <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tpee.1201371481316" resolveInfo="propertyName" />
+          <link role="styleClass" roleId="tpc2.1186406756722" targetNodeId="1198595398954" resolveInfo="Field" />
         </node>
       </node>
     </node>

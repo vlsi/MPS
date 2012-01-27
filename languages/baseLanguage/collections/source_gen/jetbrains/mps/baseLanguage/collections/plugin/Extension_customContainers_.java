@@ -14,8 +14,8 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 
-public class Extension_customContainers extends Extension.Default<_FunctionTypes._return_P0_E0<? extends List<SNode>>> {
-  public Extension_customContainers() {
+public class Extension_customContainers_ extends Extension.Default<_FunctionTypes._return_P0_E0<? extends List<SNode>>> {
+  public Extension_customContainers_() {
     super("jetbrains.mps.baseLanguage.collections.customContainers");
   }
 
@@ -32,11 +32,5 @@ public class Extension_customContainers extends Extension.Default<_FunctionTypes
         return res;
       }
     };
-  }
-
-  public void activate() {
-  }
-
-  public void deactivate() {
   }
 }

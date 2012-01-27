@@ -7,7 +7,6 @@ import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import jetbrains.mps.smodel.structure.Extension;
 import jetbrains.mps.smodel.structure.ExtensionPoint;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
@@ -27,8 +26,8 @@ public class CustomContainersRegistry {
   private List<_FunctionTypes._return_P0_E0<? extends List<SNode>>> providers = ListSequence.fromList(new ArrayList<_FunctionTypes._return_P0_E0<? extends List<SNode>>>());
 
   private CustomContainersRegistry() {
-    for (Extension<_FunctionTypes._return_P0_E0<? extends List<SNode>>> e : ExtensionPoint.<_FunctionTypes._return_P0_E0<? extends List<SNode>>>generify(new ExtensionPoint("jetbrains.mps.baseLanguage.collections.customContainers", _FunctionTypes._return_P0_E0.class)).getExtensions()) {
-      ListSequence.fromList(providers).addElement(e.get());
+    for (_FunctionTypes._return_P0_E0<? extends List<SNode>> provider : ExtensionPoint.<_FunctionTypes._return_P0_E0<? extends List<SNode>>>generify(new ExtensionPoint("jetbrains.mps.baseLanguage.collections.customContainers", _FunctionTypes._return_P0_E0.class)).getObjects()) {
+      ListSequence.fromList(providers).addElement(provider);
     }
   }
 

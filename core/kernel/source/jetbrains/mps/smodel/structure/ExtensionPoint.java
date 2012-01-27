@@ -51,7 +51,11 @@ public class ExtensionPoint<T> {
   public Iterable<Extension<T>> getExtensions () {
     return ExtensionRegistry.getInstance().getExtensions(this);
   }
-  
+
+  public Iterable<T> getObjects () {
+    return ExtensionRegistry.getInstance().getObjects(this);
+  }
+
   public String getNamespace () {
     int lastDot = myId.lastIndexOf(".");
     return lastDot >= 0 ? myId.substring(lastDot+1) : "";
@@ -61,4 +65,21 @@ public class ExtensionPoint<T> {
     return myId;
   }
 
+  @Override
+  public boolean equals(Object obj) {
+    if (obj == null || obj.getClass() != ExtensionPoint.class) return false;
+    return eq(((ExtensionPoint)obj).myId, myId) && eq(((ExtensionPoint)obj).myType, myType);
+  }
+
+  @Override
+  public int hashCode() {
+    int h = 37;
+    h += myId != null ? myId.hashCode()*17 : 53;
+    h += myType != null ? myType.hashCode()*23 : 67;
+    return h;
+  }
+  
+  private boolean eq (Object a, Object b) {
+    return a == null ? b == null : a.equals(b);
+  }
 }

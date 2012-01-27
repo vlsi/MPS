@@ -50,7 +50,7 @@ public class LanguageRegistry implements CoreComponent {
     return INSTANCE;
   }
 
-  public LanguageRegistry(MPSModuleRepository repository, ClassLoaderManager loaderManager, ConceptRegistry registry, ExtensionRegistry extensionRegistry) {
+  public LanguageRegistry(MPSModuleRepository repository, ClassLoaderManager loaderManager, ConceptRegistry registry) {
     myConceptRegistry = registry;
   }
 
@@ -59,7 +59,6 @@ public class LanguageRegistry implements CoreComponent {
     if (INSTANCE != null) {
       throw new IllegalStateException("double initialization");
     }
-
     INSTANCE = this;
   }
 
@@ -96,7 +95,6 @@ public class LanguageRegistry implements CoreComponent {
                 if (runtime != null) {
                   myLanguages.put(namespace, runtime);
                   myLanguageToNamespace.put(l, namespace);
-                  ExtensionRegistry.getInstance().registerExtensionDescriptor(runtime.getExtensionDescriptor());
                   notifyLoad(Collections.singleton(runtime));
                 }
               }
@@ -119,7 +117,6 @@ public class LanguageRegistry implements CoreComponent {
               if (namespace != null) {
                 LanguageRuntime runtime = myLanguages.remove(namespace);
                 if (runtime != null) {
-                  ExtensionRegistry.getInstance().unregisterExtensionDescriptor(runtime.getExtensionDescriptor());
                   myLanguageToNamespace.remove(l);
                   notifyUnload(Collections.singleton(runtime), false);
                 }
@@ -151,7 +148,6 @@ public class LanguageRegistry implements CoreComponent {
         myLanguageToNamespace.put(l, namespace);
         LanguageRuntime runtime = createRuntime(l, false);
         myLanguages.put(namespace, runtime);
-        ExtensionRegistry.getInstance().registerExtensionDescriptor(runtime.getExtensionDescriptor());
       } else {
         // duplicate language, ignore
       }
