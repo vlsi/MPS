@@ -23,8 +23,7 @@ import jetbrains.mps.make.delta.IDelta;
 import jetbrains.mps.internal.make.runtime.util.FilesDelta;
 import jetbrains.mps.generator.traceInfo.TraceInfoCache;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
-import jetbrains.mps.ide.ThreadUtils;
-import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFileUtils;
 import jetbrains.mps.make.script.IConfig;
 import java.util.Map;
@@ -102,20 +101,16 @@ public class CopyTraceInfo_Facet extends IFacet.Stub {
 
                 _output_zgz0lb_a0a = Sequence.fromIterable(_output_zgz0lb_a0a).concat(Sequence.fromIterable(Sequence.<IResource>singleton(resource)));
               }
-              ThreadUtils.runInUIThreadAndWait(new Runnable() {
+              FileSystem.getInstance().runWriteTransaction(new Runnable() {
                 public void run() {
-                  ModelAccess.instance().requireWrite(new Runnable() {
-                    public void run() {
-                      ListSequence.fromList(toCreate).visitAll(new IVisitor<IFile>() {
-                        public void visit(IFile it) {
-                          it.mkdirs();
-                        }
-                      });
-                      ListSequence.fromList(toCopy).visitAll(new IVisitor<Tuples._2<IFile, IFile>>() {
-                        public void visit(Tuples._2<IFile, IFile> ftc) {
-                          IFileUtils.copyFileContent(ftc._0(), ftc._1());
-                        }
-                      });
+                  ListSequence.fromList(toCreate).visitAll(new IVisitor<IFile>() {
+                    public void visit(IFile it) {
+                      it.mkdirs();
+                    }
+                  });
+                  ListSequence.fromList(toCopy).visitAll(new IVisitor<Tuples._2<IFile, IFile>>() {
+                    public void visit(Tuples._2<IFile, IFile> ftc) {
+                      IFileUtils.copyFileContent(ftc._0(), ftc._1());
                     }
                   });
                 }
