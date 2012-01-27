@@ -19,6 +19,7 @@ import com.intellij.openapi.components.ApplicationComponent;
 import jetbrains.mps.ide.editor.MPSEditorOpener;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.ide.projectPane.ProjectPane;
+import jetbrains.mps.openapi.editor.Editor;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.IOperationContext;
@@ -45,8 +46,8 @@ public class NavigationSupportImpl extends NavigationSupport implements Applicat
   }
 
   @Override
-  public void openNode(@NotNull IOperationContext context, @NotNull SNode node, boolean focus, boolean select) {
-    new MPSEditorOpener(ProjectHelper.toIdeaProject(context.getProject())).openNode(node, context, focus, select);
+  public Editor openNode(@NotNull IOperationContext context, @NotNull SNode node, boolean focus, boolean select) {
+    return new MPSEditorOpener(ProjectHelper.toIdeaProject(context.getProject())).openNode(node, context, focus, select);
   }
 
   @Override

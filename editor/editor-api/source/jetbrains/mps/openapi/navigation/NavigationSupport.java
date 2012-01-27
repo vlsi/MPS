@@ -16,6 +16,7 @@
 package jetbrains.mps.openapi.navigation;
 
 import jetbrains.mps.components.CoreComponent;
+import jetbrains.mps.openapi.editor.Editor;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModelDescriptor;
@@ -53,7 +54,7 @@ public abstract class NavigationSupport implements CoreComponent {
    * @param focus   move focus if needed - to editor or to inspector
    * @param select  select node (or its parent) in editor and inspector (if exist)
    */
-  public abstract void openNode(@NotNull IOperationContext context, @NotNull SNode node, boolean focus, boolean select);
+  public abstract Editor openNode(@NotNull IOperationContext context, @NotNull SNode node, boolean focus, boolean select);
 
   /**
    * Opens project tree tool and selects the node. Requires: model read, EDT.
