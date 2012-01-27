@@ -12,13 +12,11 @@
   <unitInfo fileName="DismissTopMappingRule_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.generator.behavior.DismissTopMappingRule_BehaviorDescriptor" />
   <unitInfo fileName="DropRootRule_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.generator.behavior.DropRootRule_BehaviorDescriptor" />
   <unitInfo fileName="DropRootRule_Condition_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.generator.behavior.DropRootRule_Condition_BehaviorDescriptor" />
-  <unitInfo fileName="GeneratorDescriptor_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.lang.generator.behavior.GeneratorDescriptor_Behavior" />
   <unitInfo fileName="GeneratorDescriptor_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.lang.generator.behavior.GeneratorDescriptor_BehaviorDescriptor" />
   <unitInfo fileName="GeneratorMessage_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.generator.behavior.GeneratorMessage_BehaviorDescriptor" />
   <unitInfo fileName="GeneratorParameterReference_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.generator.behavior.GeneratorParameterReference_BehaviorDescriptor" />
   <unitInfo fileName="IGeneratorParameter_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.lang.generator.behavior.IGeneratorParameter_BehaviorDescriptor" />
   <unitInfo fileName="ITemplateCall_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.lang.generator.behavior.ITemplateCall_BehaviorDescriptor" />
-  <unitInfo fileName="IfMacro_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.lang.generator.behavior.IfMacro_Behavior" />
   <unitInfo fileName="IfMacro_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.generator.behavior.IfMacro_BehaviorDescriptor" />
   <unitInfo fileName="IfMacro_Condition_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.generator.behavior.IfMacro_Condition_BehaviorDescriptor" />
   <unitInfo fileName="IncludeMacro_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.lang.generator.behavior.IncludeMacro_BehaviorDescriptor" />
@@ -26,10 +24,8 @@
   <unitInfo fileName="InlineSwitch_RuleConsequence_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.generator.behavior.InlineSwitch_RuleConsequence_BehaviorDescriptor" />
   <unitInfo fileName="InlineTemplateWithContext_RuleConsequence_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.generator.behavior.InlineTemplateWithContext_RuleConsequence_BehaviorDescriptor" />
   <unitInfo fileName="InlineTemplate_RuleConsequence_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.generator.behavior.InlineTemplate_RuleConsequence_BehaviorDescriptor" />
-  <unitInfo fileName="InsertMacro_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.lang.generator.behavior.InsertMacro_Behavior" />
   <unitInfo fileName="InsertMacro_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.generator.behavior.InsertMacro_BehaviorDescriptor" />
   <unitInfo fileName="InsertMacro_CreateNodeQuery_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.generator.behavior.InsertMacro_CreateNodeQuery_BehaviorDescriptor" />
-  <unitInfo fileName="LabelMacro_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.lang.generator.behavior.LabelMacro_Behavior" />
   <unitInfo fileName="LabelMacro_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.generator.behavior.LabelMacro_BehaviorDescriptor" />
   <unitInfo fileName="LoopMacro_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.lang.generator.behavior.LoopMacro_BehaviorDescriptor" />
   <unitInfo fileName="MapSrcListMacro_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.lang.generator.behavior.MapSrcListMacro_BehaviorDescriptor" />
@@ -65,7 +61,6 @@
   <unitInfo fileName="TemplateArgumentQueryExpression_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.generator.behavior.TemplateArgumentQueryExpression_BehaviorDescriptor" />
   <unitInfo fileName="TemplateArgumentQuery_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.lang.generator.behavior.TemplateArgumentQuery_BehaviorDescriptor" />
   <unitInfo fileName="TemplateCallMacro_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.lang.generator.behavior.TemplateCallMacro_BehaviorDescriptor" />
-  <unitInfo fileName="TemplateDeclarationReference_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.lang.generator.behavior.TemplateDeclarationReference_Behavior" />
   <unitInfo fileName="TemplateDeclarationReference_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.lang.generator.behavior.TemplateDeclarationReference_BehaviorDescriptor" />
   <unitInfo fileName="TemplateDeclaration_BehaviorDescriptor.java" startLine="13" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.lang.generator.behavior.TemplateDeclaration_BehaviorDescriptor" />
   <unitInfo fileName="TemplateFragment_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.generator.behavior.TemplateFragment_BehaviorDescriptor" />
@@ -83,7 +78,6 @@
   <unitInfo fileName="VarMacro_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.lang.generator.behavior.VarMacro_BehaviorDescriptor" />
   <unitInfo fileName="VarMacro_ValueQuery_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.lang.generator.behavior.VarMacro_ValueQuery_BehaviorDescriptor" />
   <unitInfo fileName="WeaveEach_RuleConsequence_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.generator.behavior.WeaveEach_RuleConsequence_BehaviorDescriptor" />
-  <unitInfo fileName="WeaveMacro_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.lang.generator.behavior.WeaveMacro_Behavior" />
   <unitInfo fileName="WeaveMacro_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.generator.behavior.WeaveMacro_BehaviorDescriptor" />
   <unitInfo fileName="Weaving_MappingRule_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.generator.behavior.Weaving_MappingRule_BehaviorDescriptor" />
   <unitInfo fileName="Weaving_MappingRule_ContextNodeQuery_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.generator.behavior.Weaving_MappingRule_ContextNodeQuery_BehaviorDescriptor" />

@@ -21,7 +21,6 @@
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
-    <classNode dependClassName="jetbrains.mps.smodel.structure.Extension" />
     <classNode dependClassName="jetbrains.mps.smodel.structure.ExtensionPoint" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.collections.plugin.ExtensionDescriptor" file="ExtensionDescriptor.java">
@@ -29,12 +28,12 @@
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Arrays" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.collections.plugin.Extension_customContainers" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.collections.plugin.Extension_customContainers_" />
     <classNode dependClassName="jetbrains.mps.smodel.structure.Extension" />
     <classNode dependClassName="jetbrains.mps.smodel.structure.ExtensionPoint" />
     <classNode extendsClassName="jetbrains.mps.smodel.structure.DefaultExtensionDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.collections.plugin.Extension_customContainers" file="Extension_customContainers.java">
+  <dependency className="jetbrains.mps.baseLanguage.collections.plugin.Extension_customContainers_" file="Extension_customContainers_.java">
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />

@@ -71,6 +71,7 @@
   <unitInfo fileName="ICollectionOperation_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="8" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.ICollectionOperation_BehaviorDescriptor" />
   <unitInfo fileName="IContainerOperation_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.IContainerOperation_BehaviorDescriptor" />
   <unitInfo fileName="IDequeOperation_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="8" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.IDequeOperation_BehaviorDescriptor" />
+  <unitInfo fileName="IListOperation_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.IListOperation_Behavior" />
   <unitInfo fileName="IListOperation_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="8" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.IListOperation_BehaviorDescriptor" />
   <unitInfo fileName="IQueueOperation_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="8" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.IQueueOperation_BehaviorDescriptor" />
   <unitInfo fileName="IStackOperation_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="8" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.IStackOperation_BehaviorDescriptor" />
@@ -94,6 +95,7 @@
   <unitInfo fileName="MapEntry_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.MapEntry_BehaviorDescriptor" />
   <unitInfo fileName="MapInitializer_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.MapInitializer_BehaviorDescriptor" />
   <unitInfo fileName="MapOperationExpression_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.MapOperationExpression_BehaviorDescriptor" />
+  <unitInfo fileName="MapOperation_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.MapOperation_Behavior" />
   <unitInfo fileName="MapOperation_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.MapOperation_BehaviorDescriptor" />
   <unitInfo fileName="MapRemoveOperation_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.MapRemoveOperation_BehaviorDescriptor" />
   <unitInfo fileName="MapType_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.MapType_BehaviorDescriptor" />
