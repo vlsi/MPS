@@ -86,7 +86,7 @@
   <property name="jetbrains.mps.lang.editor.pluginSolution.classes" value="${base_dir}/languages/languageDesign/editor/solutions/pluginSolution/classes_gen" />
   <property name="jetbrains.mps.lang.editor.table.classes" value="${base_dir}/languages/languageDesign/editor/languages/table/classes_gen" />
   <property name="jetbrains.mps.lang.editor.table.runtime.classes" value="${base_dir}/languages/languageDesign/editor/languages/table/runtime/classes_gen" />
-  <property name="jetbrains.mps.lang.extension.classes" value="${base_dir}/languages/extension/classes_gen" />
+  <property name="jetbrains.mps.lang.extension.classes" value="${base_dir}/languages/languageDesign/extension/classes_gen" />
   <property name="jetbrains.mps.lang.findUsages.classes" value="${base_dir}/languages/languageDesign/findUsages/classes_gen" />
   <property name="jetbrains.mps.lang.findUsages.pluginSolution.classes" value="${base_dir}/languages/languageDesign/findUsages/solutions/pluginSolution/classes_gen" />
   <property name="jetbrains.mps.lang.generator.classes" value="${base_dir}/languages/languageDesign/generator/languages/templateLanguage/classes_gen" />
@@ -555,8 +555,8 @@
     <path path="${base_dir}/languages/languageDesign/editor/languages/table/runtime/test_gen" />
   </path>
   <path id="cycle.jetbrains.mps.lang.extension_tjc.src">
-    <path path="${base_dir}/languages/extension/source_gen" />
-    <path path="${base_dir}/languages/extension/test_gen" />
+    <path path="${base_dir}/languages/languageDesign/extension/source_gen" />
+    <path path="${base_dir}/languages/languageDesign/extension/test_gen" />
   </path>
   <path id="cycle.jetbrains.mps.lang.pattern.testLang_tjc.src">
     <path path="${base_dir}/languages/languageDesign/pattern/languages/testLang/source_gen" />
@@ -8805,7 +8805,7 @@
     <path refid="common.classpath" />
   </path>
   <path id="cycle.jetbrains.mps.lang.extension_tjc.classpaths">
-    <path path="${base_dir}/languages/extension/classes_gen" />
+    <path path="${base_dir}/languages/languageDesign/extension/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
@@ -8852,7 +8852,6 @@
     <path path="${base_dir}/languages/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
     <path path="${base_dir}/languages/core/core/classes_gen" />
     <path path="${base_dir}/languages/core/core/solutions/pluginSolution/classes_gen" />
-    <path path="${base_dir}/languages/extension/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/actions/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/actions/solutions/pluginSolution/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/behavior/languages/behavior/classes_gen" />
@@ -8864,6 +8863,7 @@
     <path path="${base_dir}/languages/languageDesign/editor/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/editor/languages/table/runtime/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/editor/solutions/pluginSolution/classes_gen" />
+    <path path="${base_dir}/languages/languageDesign/extension/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/findUsages/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/findUsages/solutions/pluginSolution/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/generator/languages/generationContext/classes_gen" />
@@ -16189,21 +16189,21 @@
   <target name="compile.cycle.jetbrains.mps.lang.extension_tjc" depends="compile.cycle.jetbrains.mps.lang.editor.table_tjc">
     <property name="classes.dump" value="${jetbrains.mps.lang.extension.classes}.tmp" />
     <fail unless="base_dir" message="Property base_dir unspecified." />
-    <mkdir dir="${base_dir}/languages/extension/source_gen" />
-    <mkdir dir="${base_dir}/languages/extension/test_gen" />
+    <mkdir dir="${base_dir}/languages/languageDesign/extension/source_gen" />
+    <mkdir dir="${base_dir}/languages/languageDesign/extension/test_gen" />
     <mkdir dir="${classes.dump}" />
     <mkdir dir="${jetbrains.mps.lang.extension.classes}" />
     <javac classpathref="cycle.jetbrains.mps.lang.extension_tjc.classpaths" destdir="${classes.dump}" fork="true" includeantruntime="false" memorymaximumsize="1024m">
       <src refid="cycle.jetbrains.mps.lang.extension_tjc.src" />
     </javac>
     <copy todir="${jetbrains.mps.lang.extension.classes}">
-      <fileset includes="**/*.png" dir="${base_dir}/languages/extension/source_gen" />
-      <fileset includes="**/*.png" dir="${base_dir}/languages/extension/test_gen" />
+      <fileset includes="**/*.png" dir="${base_dir}/languages/languageDesign/extension/source_gen" />
+      <fileset includes="**/*.png" dir="${base_dir}/languages/languageDesign/extension/test_gen" />
     </copy>
     <javac classpathref="cycle.jetbrains.mps.lang.extension_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.lang.extension.classes}" fork="true" includeantruntime="false" memorymaximumsize="1024m" debug="true">
       <src>
-        <path path="${base_dir}/languages/extension/source_gen" />
-        <path path="${base_dir}/languages/extension/test_gen" />
+        <path path="${base_dir}/languages/languageDesign/extension/source_gen" />
+        <path path="${base_dir}/languages/languageDesign/extension/test_gen" />
       </src>
     </javac>
     <delete dir="${classes.dump}" />
