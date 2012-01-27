@@ -545,7 +545,6 @@
     <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.classifiers" />
     <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.closures" />
     <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.collections" />
-    <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.collections.pluginSolution" />
     <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.javadoc" />
     <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.logging" />
     <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.unitTest" />
@@ -598,6 +597,7 @@
     <antcall target="MPS-languages.pack.jetbrains.mps.lang.plugin" />
     <antcall target="MPS-languages.pack.jetbrains.mps.lang.sharedConcepts" />
     <antcall target="MPS-languages.pack.jetbrains.mps.lang.smodel" />
+    <antcall target="MPS-languages.pack.jetbrains.mps.lang.extension" />
     <antcall target="MPS-languages.pack.jetbrains.mps.lang.script" />
     <antcall target="MPS-languages.pack.jetbrains.mps.lang.structure" />
     <antcall target="MPS-languages.pack.jetbrains.mps.lang.core" />
@@ -691,7 +691,6 @@
     <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.regexp.examples" />
     <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.extensionMethods" />
     <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.collections.trove" />
-    <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.collections.trove.pluginSolution" />
     <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.contracts" />
     <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.overloadedOperators" />
     <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.constructors" />

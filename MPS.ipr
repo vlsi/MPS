@@ -136,6 +136,8 @@
       <modulePath path="${project}/languages/languageDesign/editor/solutions/pluginSolution/pluginSolution.msd" folder="core.editor" />
       <modulePath path="${project}/languages/languageDesign/editor/tests/jetbrains.mps.lang.editor.tests/jetbrains.mps.lang.editor.tests.msd" folder="core.editor" />
       <modulePath path="${project}/languages/languageDesign/editor/tests/table/jetbrains.mps.lang.editor.table.tests.msd" folder="core.editor" />
+      <modulePath path="${project}/languages/languageDesign/extension/extension.mpl" folder="core.language-design" />
+      <modulePath path="${project}/languages/languageDesign/extension/solutions/jetbrains.mps.lang.extension.tests/tests.msd" folder="core.language-design" />
       <modulePath path="${project}/languages/languageDesign/findUsages/findUsages.mpl" folder="core.language-design" />
       <modulePath path="${project}/languages/languageDesign/findUsages/solutions/pluginSolution/pluginSolution.msd" folder="core.language-design" />
       <modulePath path="${project}/languages/languageDesign/generator/languages/descriptor/descriptor.mpl" folder="core.language-design" />
