@@ -6,10 +6,11 @@
   <component name="Encoding" useUTFGuessing="true" native2AsciiForPropertiesFiles="false" />
   <component name="MPSProject">
     <projectModules>
-      <modulePath path="${mps_home}/languages/xml/xml/sandbox/sandbox.msd" folder="" />
-      <modulePath path="${mps_home}/languages/xml/xml/xml.mpl" folder="" />
+      <modulePath path="${mps_langs}/xml/xml/sandbox/sandbox.msd" />
+      <modulePath path="${mps_langs}/xml/xml/xml.mpl" />
       <modulePath path="${project}/buildScript/buildScript.mpl" />
       <modulePath path="${project}/buildScript/sandbox/sandbox.msd" />
+      <modulePath path="${project}/deploySolution/deploy.msd" />
       <modulePath path="${project}/workflow/workflow.mpl" folder="" />
     </projectModules>
     <genConfs />
@@ -19,7 +20,7 @@
     <option name="version" value="2.0" />
   </component>
   <component name="VcsDirectoryMappings">
-    <mapping directory="$APPLICATION_HOME_DIR$" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../.." vcs="Git" />
   </component>
 </project>
 
