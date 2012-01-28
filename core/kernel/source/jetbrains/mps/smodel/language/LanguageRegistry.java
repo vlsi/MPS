@@ -59,7 +59,6 @@ public class LanguageRegistry implements CoreComponent {
     if (INSTANCE != null) {
       throw new IllegalStateException("double initialization");
     }
-
     INSTANCE = this;
   }
 
@@ -147,7 +146,8 @@ public class LanguageRegistry implements CoreComponent {
       if (!myLanguages.containsKey(namespace)) {
         existing.remove(l);
         myLanguageToNamespace.put(l, namespace);
-        myLanguages.put(namespace, createRuntime(l, false));
+        LanguageRuntime runtime = createRuntime(l, false);
+        myLanguages.put(namespace, runtime);
       } else {
         // duplicate language, ignore
       }

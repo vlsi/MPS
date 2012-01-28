@@ -154,6 +154,7 @@
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.build.packaging.behavior.Block_Behavior" />
+    <classNode dependClassName="jetbrains.mps.build.packaging.behavior.IMacroHolder_Behavior" />
     <classNode dependClassName="jetbrains.mps.build.packaging.behavior.IMacroHolder_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.build.packaging.behavior.IVariableHolder_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor" />
@@ -556,7 +557,6 @@
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.build.packaging.behavior.ILayoutComponent_BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.build.packaging.behavior.IMacroHolder_Behavior" />
     <classNode dependClassName="jetbrains.mps.build.packaging.behavior.IMacroHolder_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.build.packaging.behavior.IVariableHolder_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.build.packaging.behavior.Layout_Behavior" />

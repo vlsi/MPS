@@ -36,25 +36,25 @@ import jetbrains.mps.internal.collections.runtime.IVisitor;
 
 public class JUnitConfigEditor extends JPanel {
   public JUnitConfigEditor myThis;
-  private JPanel myComponent_b0;
-  private JLabel myComponent_c1a;
-  private JbRadioButton myIsProject_d1a;
-  private JbRadioButton myIsModule_e1a;
-  private JbRadioButton myIsModel_f1a;
-  private JbRadioButton myIsClass_g1a;
-  private JbRadioButton myIsMethod_h1a;
-  private JPanel myMainPanel_c0;
-  private JPanel myProjectPanel_d2a;
-  private JLabel myComponent_c3c0;
-  private JTextField myProjectName_d3c0;
-  private JPanel myModulePanel_e2a;
-  private JLabel myComponent_c4c0;
-  private ModuleChooserComponent myModuleName_d4c0;
-  private JPanel myModelPanel_f2a;
-  private JLabel myComponent_c5c0;
-  private ModelChooserComponent myModelName_d5c0;
-  private ListPanel myTestCases_d0;
-  private ListPanel myTestMethods_e0;
+  private JPanel myComponent_iqjve6_b0;
+  private JLabel myComponent_iqjve6_c1a;
+  private JbRadioButton myIsProject_iqjve6_d1a;
+  private JbRadioButton myIsModule_iqjve6_e1a;
+  private JbRadioButton myIsModel_iqjve6_f1a;
+  private JbRadioButton myIsClass_iqjve6_g1a;
+  private JbRadioButton myIsMethod_iqjve6_h1a;
+  private JPanel myMainPanel_iqjve6_c0;
+  private JPanel myProjectPanel_iqjve6_d2a;
+  private JLabel myComponent_iqjve6_c3c0;
+  private JTextField myProjectName_iqjve6_d3c0;
+  private JPanel myModulePanel_iqjve6_e2a;
+  private JLabel myComponent_iqjve6_c4c0;
+  private ModuleChooserComponent myModuleName_iqjve6_d4c0;
+  private JPanel myModelPanel_iqjve6_f2a;
+  private JLabel myComponent_iqjve6_c5c0;
+  private ModelChooserComponent myModelName_iqjve6_d5c0;
+  private ListPanel myTestCases_iqjve6_d0;
+  private ListPanel myTestMethods_iqjve6_e0;
   private MPSProject myProject;
   private String myProjectName;
   private ButtonGroup myGroup;
@@ -83,14 +83,14 @@ public class JUnitConfigEditor extends JPanel {
         myThis.setProject(myThis.findProjectFromContext());
         if (myThis.getProject() != null && myThis.getProject().getProject() != null) {
           myThis.setProjectName(myThis.getProject().getProject().getName());
-          if (myThis.myProjectName_d3c0 != null) {
-            myThis.myProjectName_d3c0.setText(myThis.getProjectName());
+          if (myThis.myProjectName_iqjve6_d3c0 != null) {
+            myThis.myProjectName_iqjve6_d3c0.setText(myThis.getProjectName());
           }
-          if (myThis.myTestCases_d0 != null) {
-            myThis.myTestCases_d0.setProject(myThis.getProject().getProject());
+          if (myThis.myTestCases_iqjve6_d0 != null) {
+            myThis.myTestCases_iqjve6_d0.setProject(myThis.getProject().getProject());
           }
-          if (myThis.myTestMethods_e0 != null) {
-            myThis.myTestMethods_e0.setProject(myThis.getProject().getProject());
+          if (myThis.myTestMethods_iqjve6_e0 != null) {
+            myThis.myTestMethods_iqjve6_e0.setProject(myThis.getProject().getProject());
           }
         }
       }
@@ -102,17 +102,17 @@ public class JUnitConfigEditor extends JPanel {
     component.add(this.createComponent_iqjve6_e0(), LayoutUtil.createPanelConstraints(1));
     this.myEvents.initialize();
     if (myThis.getProject() != null) {
-      myThis.myTestCases_d0.setProject(myThis.getProject().getProject());
-      myThis.myTestMethods_e0.setProject(myThis.getProject().getProject());
+      myThis.myTestCases_iqjve6_d0.setProject(myThis.getProject().getProject());
+      myThis.myTestMethods_iqjve6_e0.setProject(myThis.getProject().getProject());
     }
-    myThis.myTestCases_d0.init(myThis.getNodes(), false);
-    myThis.myTestMethods_e0.init(myThis.getMethods(), true);
+    myThis.myTestCases_iqjve6_d0.init(myThis.getNodes(), false);
+    myThis.myTestMethods_iqjve6_e0.init(myThis.getMethods(), true);
     myThis.setButtons(new JRadioButton[JUnitRunTypes2.values().length]);
-    myThis.getButtons()[JUnitRunTypes2.METHOD.ordinal()] = myThis.myIsMethod_h1a;
-    myThis.getButtons()[JUnitRunTypes2.MODEL.ordinal()] = myThis.myIsModel_f1a;
-    myThis.getButtons()[JUnitRunTypes2.MODULE.ordinal()] = myThis.myIsModule_e1a;
-    myThis.getButtons()[JUnitRunTypes2.NODE.ordinal()] = myThis.myIsClass_g1a;
-    myThis.getButtons()[JUnitRunTypes2.PROJECT.ordinal()] = myThis.myIsProject_d1a;
+    myThis.getButtons()[JUnitRunTypes2.METHOD.ordinal()] = myThis.myIsMethod_iqjve6_h1a;
+    myThis.getButtons()[JUnitRunTypes2.MODEL.ordinal()] = myThis.myIsModel_iqjve6_f1a;
+    myThis.getButtons()[JUnitRunTypes2.MODULE.ordinal()] = myThis.myIsModule_iqjve6_e1a;
+    myThis.getButtons()[JUnitRunTypes2.NODE.ordinal()] = myThis.myIsClass_iqjve6_g1a;
+    myThis.getButtons()[JUnitRunTypes2.PROJECT.ordinal()] = myThis.myIsProject_iqjve6_d1a;
   }
 
   public Events getEvents() {
@@ -142,7 +142,7 @@ public class JUnitConfigEditor extends JPanel {
 
   private JPanel createComponent_iqjve6_b0() {
     JPanel component = new JPanel();
-    this.myComponent_b0 = component;
+    this.myComponent_iqjve6_b0 = component;
     component.setLayout(new FlowLayout(FlowLayout.LEFT));
     component.add(this.createComponent_iqjve6_c1a());
     component.add(this.createComponent_iqjve6_d1a());
@@ -155,14 +155,14 @@ public class JUnitConfigEditor extends JPanel {
 
   private JLabel createComponent_iqjve6_c1a() {
     JLabel component = new JLabel();
-    this.myComponent_c1a = component;
+    this.myComponent_iqjve6_c1a = component;
     component.setText("Test:");
     return component;
   }
 
   private JbRadioButton createComponent_iqjve6_d1a() {
     JbRadioButton component = new JbRadioButton();
-    this.myIsProject_d1a = component;
+    this.myIsProject_iqjve6_d1a = component;
     component.setText("All in Project");
     component.setGroup(myThis.getGroup());
     component.addActionListener(new ActionListener() {
@@ -175,7 +175,7 @@ public class JUnitConfigEditor extends JPanel {
 
   private JbRadioButton createComponent_iqjve6_e1a() {
     JbRadioButton component = new JbRadioButton();
-    this.myIsModule_e1a = component;
+    this.myIsModule_iqjve6_e1a = component;
     component.setText("All in Module");
     component.setGroup(myThis.getGroup());
     component.addActionListener(new ActionListener() {
@@ -188,7 +188,7 @@ public class JUnitConfigEditor extends JPanel {
 
   private JbRadioButton createComponent_iqjve6_f1a() {
     JbRadioButton component = new JbRadioButton();
-    this.myIsModel_f1a = component;
+    this.myIsModel_iqjve6_f1a = component;
     component.setText("All in Model");
     component.setGroup(myThis.getGroup());
     component.addActionListener(new ActionListener() {
@@ -201,7 +201,7 @@ public class JUnitConfigEditor extends JPanel {
 
   private JbRadioButton createComponent_iqjve6_g1a() {
     JbRadioButton component = new JbRadioButton();
-    this.myIsClass_g1a = component;
+    this.myIsClass_iqjve6_g1a = component;
     component.setText("Class");
     component.setGroup(myThis.getGroup());
     component.addActionListener(new ActionListener() {
@@ -214,7 +214,7 @@ public class JUnitConfigEditor extends JPanel {
 
   private JbRadioButton createComponent_iqjve6_h1a() {
     JbRadioButton component = new JbRadioButton();
-    this.myIsMethod_h1a = component;
+    this.myIsMethod_iqjve6_h1a = component;
     component.setText("Method");
     component.setGroup(myThis.getGroup());
     component.addActionListener(new ActionListener() {
@@ -227,7 +227,7 @@ public class JUnitConfigEditor extends JPanel {
 
   private JPanel createComponent_iqjve6_c0() {
     JPanel component = new JPanel();
-    this.myMainPanel_c0 = component;
+    this.myMainPanel_iqjve6_c0 = component;
     component.setBorder(new TitledBorder("Test"));
     component.setLayout(new GridBagLayout());
     component.add(this.createComponent_iqjve6_d2a(), LayoutUtil.createPanelConstraints(0));
@@ -238,7 +238,7 @@ public class JUnitConfigEditor extends JPanel {
 
   private JPanel createComponent_iqjve6_d2a() {
     JPanel component = new JPanel();
-    this.myProjectPanel_d2a = component;
+    this.myProjectPanel_iqjve6_d2a = component;
     component.setLayout(new GridBagLayout());
     component.add(this.createComponent_iqjve6_c3c0(), LayoutUtil.createLabelConstraints(0));
     component.add(this.createComponent_iqjve6_d3c0(), LayoutUtil.createPanelConstraints(1));
@@ -247,14 +247,14 @@ public class JUnitConfigEditor extends JPanel {
 
   private JLabel createComponent_iqjve6_c3c0() {
     JLabel component = new JLabel();
-    this.myComponent_c3c0 = component;
+    this.myComponent_iqjve6_c3c0 = component;
     component.setText("Project:");
     return component;
   }
 
   private JTextField createComponent_iqjve6_d3c0() {
     JTextField component = new JTextField();
-    this.myProjectName_d3c0 = component;
+    this.myProjectName_iqjve6_d3c0 = component;
     component.setText(myThis.getProjectName());
     component.setEditable(false);
     return component;
@@ -262,7 +262,7 @@ public class JUnitConfigEditor extends JPanel {
 
   private JPanel createComponent_iqjve6_e2a() {
     JPanel component = new JPanel();
-    this.myModulePanel_e2a = component;
+    this.myModulePanel_iqjve6_e2a = component;
     component.setLayout(new GridBagLayout());
     component.add(this.createComponent_iqjve6_c4c0(), LayoutUtil.createLabelConstraints(0));
     component.add(this.createComponent_iqjve6_d4c0(), LayoutUtil.createPanelConstraints(1));
@@ -271,14 +271,14 @@ public class JUnitConfigEditor extends JPanel {
 
   private JLabel createComponent_iqjve6_c4c0() {
     JLabel component = new JLabel();
-    this.myComponent_c4c0 = component;
+    this.myComponent_iqjve6_c4c0 = component;
     component.setText("Module:");
     return component;
   }
 
   private ModuleChooserComponent createComponent_iqjve6_d4c0() {
     ModuleChooserComponent component = new ModuleChooserComponent();
-    this.myModuleName_d4c0 = component;
+    this.myModuleName_iqjve6_d4c0 = component;
     component.addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent event) {
         myThis.onModuleChange();
@@ -289,7 +289,7 @@ public class JUnitConfigEditor extends JPanel {
 
   private JPanel createComponent_iqjve6_f2a() {
     JPanel component = new JPanel();
-    this.myModelPanel_f2a = component;
+    this.myModelPanel_iqjve6_f2a = component;
     component.setLayout(new GridBagLayout());
     component.add(this.createComponent_iqjve6_c5c0(), LayoutUtil.createLabelConstraints(0));
     component.add(this.createComponent_iqjve6_d5c0(), LayoutUtil.createPanelConstraints(1));
@@ -298,14 +298,14 @@ public class JUnitConfigEditor extends JPanel {
 
   private JLabel createComponent_iqjve6_c5c0() {
     JLabel component = new JLabel();
-    this.myComponent_c5c0 = component;
+    this.myComponent_iqjve6_c5c0 = component;
     component.setText("Model:");
     return component;
   }
 
   private ModelChooserComponent createComponent_iqjve6_d5c0() {
     ModelChooserComponent component = new ModelChooserComponent();
-    this.myModelName_d5c0 = component;
+    this.myModelName_iqjve6_d5c0 = component;
     component.addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent event) {
         myThis.onModelChange();
@@ -316,7 +316,7 @@ public class JUnitConfigEditor extends JPanel {
 
   private ListPanel createComponent_iqjve6_d0() {
     ListPanel component = new ListPanel();
-    this.myTestCases_d0 = component;
+    this.myTestCases_iqjve6_d0 = component;
     component.setLayout(new GridBagLayout());
     component.addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent event) {
@@ -328,7 +328,7 @@ public class JUnitConfigEditor extends JPanel {
 
   private ListPanel createComponent_iqjve6_e0() {
     ListPanel component = new ListPanel();
-    this.myTestMethods_e0 = component;
+    this.myTestMethods_iqjve6_e0 = component;
     component.setLayout(new GridBagLayout());
     component.addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent event) {
@@ -516,17 +516,17 @@ public class JUnitConfigEditor extends JPanel {
     if (configuration.getRunType() != null) {
       myThis.getButtons()[configuration.getRunType().ordinal()].setSelected(true);
     } else {
-      myThis.myIsProject_d1a.setSelected(true);
+      myThis.myIsProject_iqjve6_d1a.setSelected(true);
     }
 
     // nodes 
     myThis.setNodes(ListSequence.fromList(new ArrayList<ITestNodeWrapper>()));
-    myThis.myTestCases_d0.clear();
+    myThis.myTestCases_iqjve6_d0.clear();
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         Sequence.fromIterable(TestUtils.wrapPointerStrings(configuration.getTestCases())).visitAll(new IVisitor<ITestNodeWrapper>() {
           public void visit(ITestNodeWrapper it) {
-            myThis.myTestCases_d0.addItem(it);
+            myThis.myTestCases_iqjve6_d0.addItem(it);
             ListSequence.fromList(myThis.getNodes()).addElement(it);
           }
         });
@@ -535,12 +535,12 @@ public class JUnitConfigEditor extends JPanel {
 
     // methods 
     myThis.setMethods(ListSequence.fromList(new ArrayList<ITestNodeWrapper>()));
-    myThis.myTestMethods_e0.clear();
+    myThis.myTestMethods_iqjve6_e0.clear();
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         Sequence.fromIterable(TestUtils.wrapPointerStrings(configuration.getTestMethods())).visitAll(new IVisitor<ITestNodeWrapper>() {
           public void visit(ITestNodeWrapper it) {
-            myThis.myTestMethods_e0.addItem(it);
+            myThis.myTestMethods_iqjve6_e0.addItem(it);
             ListSequence.fromList(myThis.getMethods()).addElement(it);
           }
         });
@@ -571,7 +571,7 @@ public class JUnitConfigEditor extends JPanel {
     // modules 
     if (configuration.getModule() != null) {
       myThis.setModuleValue(configuration.getModule());
-      myThis.myModuleName_d4c0.setText(configuration.getModule());
+      myThis.myModuleName_iqjve6_d4c0.setText(configuration.getModule());
     }
 
     // on select?? 
@@ -583,55 +583,55 @@ public class JUnitConfigEditor extends JPanel {
     if (myThis.getModel() != null && myThis.getModel().getModelDescriptor() != null && myThis.getModel().getModelDescriptor().getModule() != null) {
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
-          myThis.myModelName_d5c0.setText(modelName);
+          myThis.myModelName_iqjve6_d5c0.setText(modelName);
           String moduleName = myThis.getModel().getModelDescriptor().getModule().getModuleFqName();
           myThis.setModuleValue(moduleName);
-          myThis.myModuleName_d4c0.setText(moduleName);
+          myThis.myModuleName_iqjve6_d4c0.setText(moduleName);
         }
       });
     }
   }
 
   public void dispose() {
-    myThis.myModelName_d5c0.dispose();
-    myThis.myModuleName_d4c0.dispose();
+    myThis.myModelName_iqjve6_d5c0.dispose();
+    myThis.myModuleName_iqjve6_d4c0.dispose();
   }
 
   public void onSelect() {
-    myThis.myProjectPanel_d2a.setVisible(false);
-    myThis.myModulePanel_e2a.setVisible(false);
-    myThis.myModelPanel_f2a.setVisible(false);
-    myThis.myTestCases_d0.setVisible(false);
-    myThis.myTestMethods_e0.setVisible(false);
-    myThis.myMainPanel_c0.setVisible(true);
-    if (myThis.myIsModule_e1a.isSelected()) {
-      myThis.myModulePanel_e2a.setVisible(true);
-    } else if (myThis.myIsModel_f1a.isSelected()) {
-      myThis.myModelPanel_f2a.setVisible(true);
-    } else if (myThis.myIsClass_g1a.isSelected()) {
-      myThis.myTestCases_d0.setVisible(true);
-      myThis.myMainPanel_c0.setVisible(false);
-    } else if (myThis.myIsMethod_h1a.isSelected()) {
-      myThis.myTestMethods_e0.setVisible(true);
-      myThis.myMainPanel_c0.setVisible(false);
-    } else if (myThis.myIsProject_d1a.isSelected()) {
-      myThis.myProjectPanel_d2a.setVisible(true);
+    myThis.myProjectPanel_iqjve6_d2a.setVisible(false);
+    myThis.myModulePanel_iqjve6_e2a.setVisible(false);
+    myThis.myModelPanel_iqjve6_f2a.setVisible(false);
+    myThis.myTestCases_iqjve6_d0.setVisible(false);
+    myThis.myTestMethods_iqjve6_e0.setVisible(false);
+    myThis.myMainPanel_iqjve6_c0.setVisible(true);
+    if (myThis.myIsModule_iqjve6_e1a.isSelected()) {
+      myThis.myModulePanel_iqjve6_e2a.setVisible(true);
+    } else if (myThis.myIsModel_iqjve6_f1a.isSelected()) {
+      myThis.myModelPanel_iqjve6_f2a.setVisible(true);
+    } else if (myThis.myIsClass_iqjve6_g1a.isSelected()) {
+      myThis.myTestCases_iqjve6_d0.setVisible(true);
+      myThis.myMainPanel_iqjve6_c0.setVisible(false);
+    } else if (myThis.myIsMethod_iqjve6_h1a.isSelected()) {
+      myThis.myTestMethods_iqjve6_e0.setVisible(true);
+      myThis.myMainPanel_iqjve6_c0.setVisible(false);
+    } else if (myThis.myIsProject_iqjve6_d1a.isSelected()) {
+      myThis.myProjectPanel_iqjve6_d2a.setVisible(true);
     }
   }
 
   public void onModelChange() {
-    myThis.setModelValue(myThis.myModelName_d5c0.getText());
+    myThis.setModelValue(myThis.myModelName_iqjve6_d5c0.getText());
   }
 
   public void onModuleChange() {
-    myThis.setModuleValue(myThis.myModuleName_d4c0.getText());
+    myThis.setModuleValue(myThis.myModuleName_iqjve6_d4c0.getText());
   }
 
   public void onNodeChange() {
-    myThis.setNodes((List<ITestNodeWrapper>) myThis.myTestCases_d0.getItems());
+    myThis.setNodes((List<ITestNodeWrapper>) myThis.myTestCases_iqjve6_d0.getItems());
   }
 
   public void onMethodChange() {
-    myThis.setMethods((List<ITestNodeWrapper>) myThis.myTestMethods_e0.getItems());
+    myThis.setMethods((List<ITestNodeWrapper>) myThis.myTestMethods_iqjve6_e0.getItems());
   }
 }

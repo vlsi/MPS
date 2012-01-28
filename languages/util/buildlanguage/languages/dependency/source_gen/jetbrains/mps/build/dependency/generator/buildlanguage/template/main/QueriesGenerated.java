@@ -17,10 +17,6 @@ import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 
 public class QueriesGenerated {
-  public static Object propertyMacro_GetPropertyValue_5198087850870257989(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return "${ant.file." + SPropertyOperations.getString(_context.getNode(), "name") + "}/../";
-  }
-
   public static Object propertyMacro_GetPropertyValue_4738159245302261856(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), "propertiesFile");
   }

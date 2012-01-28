@@ -27,6 +27,7 @@ import jetbrains.mps.smodel.runtime.interpreted.ConstraintsAspectInterpreted;
 import jetbrains.mps.smodel.runtime.interpreted.StructureAspectInterpreted;
 import jetbrains.mps.smodel.structure.*;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.Collection;
 
@@ -44,6 +45,7 @@ public abstract class LanguageRuntime {
   private StructureAspectDescriptor structureDescriptor;
   private BehaviorAspectDescriptor behaviorDescriptor;
   private ConstraintsAspectDescriptor constraintsDescriptor;
+  private ExtensionDescriptor myExtensionDescriptor;
 
   public abstract String getNamespace();
 
@@ -144,4 +146,5 @@ public abstract class LanguageRuntime {
 
     return constraintsDescriptor;
   }
+
 }

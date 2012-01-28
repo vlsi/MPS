@@ -139,6 +139,8 @@
       <modulePath path="${project}/languages/languageDesign/editor/solutions/pluginSolution/pluginSolution.msd" folder="core.editor" />
       <modulePath path="${project}/languages/languageDesign/editor/tests/jetbrains.mps.lang.editor.tests/jetbrains.mps.lang.editor.tests.msd" folder="core.editor" />
       <modulePath path="${project}/languages/languageDesign/editor/tests/table/jetbrains.mps.lang.editor.table.tests.msd" folder="core.editor" />
+      <modulePath path="${project}/languages/languageDesign/extension/extension.mpl" folder="core.language-design" />
+      <modulePath path="${project}/languages/languageDesign/extension/solutions/jetbrains.mps.lang.extension.tests/tests.msd" folder="core.language-design" />
       <modulePath path="${project}/languages/languageDesign/findUsages/findUsages.mpl" folder="core.language-design" />
       <modulePath path="${project}/languages/languageDesign/findUsages/solutions/pluginSolution/pluginSolution.msd" folder="core.language-design" />
       <modulePath path="${project}/languages/languageDesign/generator/languages/descriptor/descriptor.mpl" folder="core.language-design" />
@@ -204,7 +206,6 @@
       <modulePath path="${project}/languages/util/buildlanguage/languages/custommps/custommps.mpl" folder="languages.build" />
       <modulePath path="${project}/languages/util/buildlanguage/languages/custommps/solutions/pluginSolution/pluginSolution.msd" folder="languages.build" />
       <modulePath path="${project}/languages/util/buildlanguage/languages/dependency/dependency.mpl" folder="languages.build" />
-      <modulePath path="${project}/languages/util/buildlanguage/languages/distrib/distrib.mpl" folder="languages.build" />
       <modulePath path="${project}/languages/util/buildlanguage/languages/generictasks/generictasks.mpl" folder="languages.build" />
       <modulePath path="${project}/languages/util/buildlanguage/languages/generictasks/solutions/pluginSolution/pluginSolution.msd" folder="languages.build" />
       <modulePath path="${project}/languages/util/buildlanguage/languages/gentest/gentest.mpl" folder="languages.build" />
@@ -215,8 +216,10 @@
       <modulePath path="${project}/languages/util/buildlanguage/languages/packmps/solutions/pluginSolution/pluginSolution.msd" folder="languages.build" />
       <modulePath path="${project}/languages/util/buildlanguage/languages/property/property.mpl" folder="languages.build" />
       <modulePath path="${project}/languages/util/buildlanguage/languages/reduced/reduced.mpl" folder="languages.build" />
+      <modulePath path="${project}/languages/util/buildlanguage/languages/startup/startup.mpl" folder="languages.build" />
       <modulePath path="${project}/languages/util/buildlanguage/solutions/jetbrains.mps.build.antsupport/jetbrains.mps.build.antsupport.msd" folder="languages.build" />
       <modulePath path="${project}/languages/util/buildlanguage/solutions/jetbrains.mps.build.mpsautobuild.test/test.msd" folder="languages.build" />
+      <modulePath path="${project}/languages/util/buildlanguage/solutions/jetbrains.mps.build.mpsdist/mpsdist.msd" folder="languages.build" />
       <modulePath path="${project}/languages/util/buildlanguage/solutions/jetbrains.mps.buildlangauge.mpsautobuild/jetbrains.mps.buildlangauge.mpsautobuild.msd" folder="languages.build" />
       <modulePath path="${project}/languages/util/conf/languages/conf/conf.mpl" folder="languages" />
       <modulePath path="${project}/languages/util/conf/solutions/jetbrains.mps.platform.conf.sandbox/jetbrains.mps.platform.conf.sandbox.msd" folder="languages" />

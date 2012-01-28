@@ -10,8 +10,8 @@ import jetbrains.mps.smodel.runtime.base.BasePropertyConstraintsDescriptor;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import java.io.File;
 import jetbrains.mps.build.packaging.behavior.Path_Behavior;
+import java.io.File;
 import jetbrains.mps.build.packaging.behavior.IStringExpression_Behavior;
 
 public class File_Constraints extends BaseConstraintsDescriptor {
@@ -32,7 +32,11 @@ public class File_Constraints extends BaseConstraintsDescriptor {
       public Object getValue(SNode node, IScope scope) {
         String propertyName = "name";
         if ((SLinkOperations.getTarget(node, "sourcePath", true) != null) && ((SLinkOperations.getTarget(node, "title", true) == null))) {
-          return new File(Path_Behavior.call_getName_1221141245424(SLinkOperations.getTarget(node, "sourcePath", true))).getName();
+          String name = Path_Behavior.call_getName_1221141245424(SLinkOperations.getTarget(node, "sourcePath", true));
+          if (name == null) {
+            return "";
+          }
+          return new File(name).getName();
         }
         if ((SLinkOperations.getTarget(node, "title", true) == null)) {
           return "";

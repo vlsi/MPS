@@ -42,4 +42,12 @@
     </zip>
     <delete dir="${tmpdir}" />
   </target>
+  <target name="sign" if="windows">
+    <fail unless="deploy.dir" message="Property deploy.dir unspecified." />
+    <fail unless="build.number" message="Property build.number unspecified." />
+    <fail unless="scripts.dir" message="Property scripts.dir unspecified." />
+    <exec executable="${scripts.dir}/sign/signtool.exe" osfamily="windows" failonerror="false" dir="${deploy.dir}">
+      <arg line="sign /f ${scripts.dir}/sign/cs_cert2011.pfx /p 123 ${deploy.dir}/${build.number}-windows.exe" />
+    </exec>
+  </target>
 </project>

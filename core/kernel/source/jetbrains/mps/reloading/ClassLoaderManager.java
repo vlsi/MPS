@@ -25,6 +25,7 @@ import jetbrains.mps.runtime.RBundle;
 import jetbrains.mps.runtime.RuntimeEnvironment;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.smodel.language.ExtensionRegistry;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.stubs.LibrariesLoader;
 import org.jetbrains.annotations.NotNull;
@@ -142,6 +143,10 @@ public class ClassLoaderManager implements CoreComponent {
 
       monitor.step("Updating language registry...");
       LanguageRegistry.getInstance().reloadLanguages();
+      monitor.advance(1);
+
+      monitor.step("Updating extensions...");
+      ExtensionRegistry.getInstance().reloadExtensionDescriptors();
       monitor.advance(1);
 
       monitor.step("Reloading classes...");
