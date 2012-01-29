@@ -34,7 +34,11 @@ public class TestBrokenReferencesWorker extends MakeWorker {
   private long myUsedNonHeap;
 
   public TestBrokenReferencesWorker(WhatToDo whatToDo, MpsWorker.LogLogger systemOutLogger) {
-    super(whatToDo, systemOutLogger, new Environment());
+    this(whatToDo, systemOutLogger, new Environment());
+  }
+
+  public TestBrokenReferencesWorker(WhatToDo whatToDo, MpsWorker.LogLogger systemOutLogger, Environment env) {
+    super(whatToDo, systemOutLogger, env);
     MemoryMXBean mmbean = ManagementFactory.getMemoryMXBean();
     this.myUsedHeap = mmbean.getHeapMemoryUsage().getUsed();
     this.myUsedNonHeap = mmbean.getNonHeapMemoryUsage().getUsed();
