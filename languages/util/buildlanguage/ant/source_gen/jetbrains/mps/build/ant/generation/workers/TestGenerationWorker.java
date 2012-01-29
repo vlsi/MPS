@@ -29,10 +29,6 @@ import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.vfs.IFile;
 import java.util.Set;
 import jetbrains.mps.build.ant.generation.unittest.UnitTestListener;
-import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.mps.make.script.IResult;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.build.ant.util.ThreadUtils;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.make.MakeSession;
@@ -43,6 +39,7 @@ import java.util.concurrent.ExecutionException;
 import java.util.List;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.build.ant.FileMPSProject;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.make.ModuleMaker;
 import java.util.HashSet;
@@ -53,6 +50,7 @@ import java.util.LinkedHashSet;
 import java.util.Queue;
 import jetbrains.mps.internal.collections.runtime.QueueSequence;
 import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.project.structure.project.testconfigurations.BaseTestConfiguration;
@@ -121,7 +119,7 @@ public class TestGenerationWorker extends MpsWorker {
     }
   }
 
-  private void generate(final Project project, final MpsWorker.ObjectsToProcess go) {
+  private void generate(Project project, MpsWorker.ObjectsToProcess go) {
     StringBuffer s = new StringBuffer("Generating:");
     for (Project p : go.getProjects()) {
       s.append("\n    ");
@@ -149,7 +147,7 @@ public class TestGenerationWorker extends MpsWorker {
     };
     final int[] count = new int[]{1};
 
-    final IScriptController ctl = new IScriptController.Stub(new IConfigMonitor.Stub(), new IJobMonitor.Stub(new IProgress.Stub() {
+    IScriptController ctl = new IScriptController.Stub(new IConfigMonitor.Stub(), new IJobMonitor.Stub(new IProgress.Stub() {
       @Override
       public void beginWork(String name, int estimate, int ofTotal) {
         reportIfStartsWith("Generating ", name, startTestFormat);
@@ -226,32 +224,25 @@ public class TestGenerationWorker extends MpsWorker {
         myReporter.startRun("Module cluster " + String.valueOf(count[0]++));
       }
     };
-    final Wrappers._T<IResult> result = new Wrappers._T<IResult>();
-    ModelAccess.instance().flushEventQueue();
-    ThreadUtils.runInUIThreadAndWait(new Runnable() {
-      public void run() {
-        IOperationContext context = new ProjectOperationContext(project);
-        try {
-          BuildMakeService bms = new BuildMakeService();
-          MakeSession ms = new MakeSession(context, myMessageHandler, true) {
-            @Override
-            public IScript toScript(ScriptBuilder scriptBuilder) {
-              if (isInvokeTestsSet()) {
-                scriptBuilder.withFacetName(new IFacet.Name("jetbrains.mps.build.gentest.Test"));
-              }
-              if (isShowDiff()) {
-                scriptBuilder.withFacetName(new IFacet.Name("jetbrains.mps.build.gentest.Diff"));
-              }
-              return scriptBuilder.toScript();
-            }
-          };
-          result.value = bms.make(ms, collectResources(context, go.getProjects(), go.getModules(), go.getModels()), null, ctl).get();
-        } catch (InterruptedException ignore) {
-        } catch (ExecutionException ignore) {
+    IOperationContext context = new ProjectOperationContext(project);
+    try {
+      BuildMakeService bms = new BuildMakeService();
+      MakeSession ms = new MakeSession(context, myMessageHandler, true) {
+        @Override
+        public IScript toScript(ScriptBuilder scriptBuilder) {
+          if (isInvokeTestsSet()) {
+            scriptBuilder.withFacetName(new IFacet.Name("jetbrains.mps.build.gentest.Test"));
+          }
+          if (isShowDiff()) {
+            scriptBuilder.withFacetName(new IFacet.Name("jetbrains.mps.build.gentest.Diff"));
+          }
+          return scriptBuilder.toScript();
         }
-      }
-    });
-    ModelAccess.instance().flushEventQueue();
+      };
+      bms.make(ms, collectResources(context, go.getProjects(), go.getModules(), go.getModels()), null, ctl).get();
+    } catch (InterruptedException ignore) {
+    } catch (ExecutionException ignore) {
+    }
   }
 
   private void reportIfStartsWith(String prefix, String work, _FunctionTypes._void_P1_E0<? super String> format) {

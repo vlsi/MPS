@@ -9,12 +9,14 @@ import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.smodel.resources.IMResource;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import java.util.concurrent.Future;
 import jetbrains.mps.make.script.IResult;
 import java.util.List;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
 import java.util.Map;
-import jetbrains.mps.build.ant.util.ThreadUtils;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
+import java.util.HashMap;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.make.MakeSession;
 import jetbrains.mps.make.script.IScript;
@@ -25,10 +27,6 @@ import jetbrains.mps.make.script.IPropertiesPool;
 import jetbrains.mps.make.facet.ITarget;
 import jetbrains.mps.make.resources.IResource;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import java.util.ArrayList;
-import jetbrains.mps.internal.collections.runtime.MapSequence;
-import java.util.HashMap;
 import java.util.concurrent.ExecutionException;
 import java.io.File;
 
@@ -42,53 +40,47 @@ public class ReducedGenerationWorker extends GeneratorWorker {
   }
 
   @Override
-  protected void generate(final Project project, MpsWorker.ObjectsToProcess go) {
+  protected void generate(Project project, MpsWorker.ObjectsToProcess go) {
     ProjectOperationContext ctx = new ProjectOperationContext(project);
 
-    final Iterable<IMResource> resources = Sequence.fromIterable(collectResources(ctx, go)).toListSequence();
+    Iterable<IMResource> resources = Sequence.fromIterable(collectResources(ctx, go)).toListSequence();
     ModelAccess.instance().flushEventQueue();
-    final Wrappers._T<Future<IResult>> res = new Wrappers._T<Future<IResult>>();
-    final Wrappers._T<List<String>> writtenFiles = new Wrappers._T<List<String>>();
-    final Wrappers._T<Map<String, String>> fileHashes = new Wrappers._T<Map<String, String>>();
-    ThreadUtils.runInUIThreadAndWait(new Runnable() {
-      public void run() {
-        IOperationContext context = new ProjectOperationContext(project);
-        BuildMakeService bms = new BuildMakeService();
-        MakeSession ms = new MakeSession(context, getMyMessageHandler(), true) {
-          @Override
-          public IScript toScript(ScriptBuilder scriptBuilder) {
-            scriptBuilder.withFacetNames(new IFacet.Name("jetbrains.mps.build.reduced.ReportFiles"), new IFacet.Name("jetbrains.mps.build.reduced.CollectHashes"));
-            return scriptBuilder.toScript();
-          }
-        };
-        res.value = bms.make(ms, resources, null, new IScriptController.Stub() {
-          @Override
-          public void setup(IPropertiesPool pp, Iterable<ITarget> toExecute, Iterable<? extends IResource> input) {
-            super.setup(pp, toExecute, input);
-            Tuples._1<Boolean> skipReconcile = (Tuples._1<Boolean>) pp.properties(new ITarget.Name("jetbrains.mps.lang.core.Make.reconcile"), Object.class);
-            skipReconcile._0(true);
+    Future<IResult> res;
+    final List<String> writtenFiles = ListSequence.fromList(new ArrayList<String>());
+    final Map<String, String> fileHashes = MapSequence.fromMap(new HashMap<String, String>());
+    IOperationContext context = new ProjectOperationContext(project);
+    BuildMakeService bms = new BuildMakeService();
+    MakeSession ms = new MakeSession(context, getMyMessageHandler(), true) {
+      @Override
+      public IScript toScript(ScriptBuilder scriptBuilder) {
+        scriptBuilder.withFacetNames(new IFacet.Name("jetbrains.mps.build.reduced.ReportFiles"), new IFacet.Name("jetbrains.mps.build.reduced.CollectHashes"));
+        return scriptBuilder.toScript();
+      }
+    };
+    res = bms.make(ms, resources, null, new IScriptController.Stub() {
+      @Override
+      public void setup(IPropertiesPool pp, Iterable<ITarget> toExecute, Iterable<? extends IResource> input) {
+        super.setup(pp, toExecute, input);
+        Tuples._1<Boolean> skipReconcile = (Tuples._1<Boolean>) pp.properties(new ITarget.Name("jetbrains.mps.lang.core.Make.reconcile"), Object.class);
+        skipReconcile._0(true);
 
-            Tuples._2<Boolean, Boolean> compileProps = (Tuples._2<Boolean, Boolean>) pp.properties(new ITarget.Name("jetbrains.mps.baseLanguage.JavaCompile.compile"), Object.class);
-            compileProps._1(true);
+        Tuples._2<Boolean, Boolean> compileProps = (Tuples._2<Boolean, Boolean>) pp.properties(new ITarget.Name("jetbrains.mps.baseLanguage.JavaCompile.compile"), Object.class);
+        compileProps._1(true);
 
-            Tuples._1<List<String>> report = (Tuples._1<List<String>>) pp.properties(new ITarget.Name("jetbrains.mps.build.reduced.ReportFiles.report"), Object.class);
-            report._0(ListSequence.fromList(new ArrayList<String>()));
-            writtenFiles.value = report._0();
+        Tuples._1<List<String>> report = (Tuples._1<List<String>>) pp.properties(new ITarget.Name("jetbrains.mps.build.reduced.ReportFiles.report"), Object.class);
+        report._0(writtenFiles);
 
-            Tuples._1<Map<String, String>> hashes = (Tuples._1<Map<String, String>>) pp.properties(new ITarget.Name("jetbrains.mps.build.reduced.CollectHashes.collect"), Object.class);
-            hashes._0(MapSequence.fromMap(new HashMap<String, String>()));
-            fileHashes.value = hashes._0();
-          }
-        });
+        Tuples._1<Map<String, String>> hashes = (Tuples._1<Map<String, String>>) pp.properties(new ITarget.Name("jetbrains.mps.build.reduced.CollectHashes.collect"), Object.class);
+        hashes._0(fileHashes);
       }
     });
 
     try {
-      if (!(res.value.get().isSucessful())) {
+      if (!(res.get().isSucessful())) {
         myErrors.add("Make was not successful");
       }
-      if (writtenFiles.value != null) {
-        for (String f : writtenFiles.value) {
+      if (writtenFiles != null) {
+        for (String f : writtenFiles) {
           System.out.println("##WRITTEN##" + f);
         }
       }
@@ -97,7 +89,6 @@ public class ReducedGenerationWorker extends GeneratorWorker {
     } catch (ExecutionException e) {
       myErrors.add(e.toString());
     }
-    ModelAccess.instance().flushEventQueue();
   }
 
   public static void main(String[] args) {

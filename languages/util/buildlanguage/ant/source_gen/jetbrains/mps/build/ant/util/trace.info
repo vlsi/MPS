@@ -2204,69 +2204,6 @@
     </scopeInfo>
     <unitInfo nodeId="8638838189258283708" fileName="ContainerUtil.java" startLine="8" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.build.ant.util.ContainerUtil" />
   </root>
-  <root nodeId="8638838189258314103">
-    <nodeInfo nodeId="8638838189258314105" fileName="ThreadUtils.java" startLine="8" startPosition="26" endLine="9" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
-    <nodeInfo nodeId="8638838189258314154" fileName="ThreadUtils.java" startLine="16" startPosition="11" endLine="17" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8638838189258314144" fileName="ThreadUtils.java" startLine="18" startPosition="29" endLine="19" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8638838189258314149" fileName="ThreadUtils.java" startLine="19" startPosition="21" endLine="20" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8638838189258314137" fileName="ThreadUtils.java" startLine="23" startPosition="11" endLine="24" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8638838189258314127" fileName="ThreadUtils.java" startLine="25" startPosition="29" endLine="26" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8638838189258314132" fileName="ThreadUtils.java" startLine="26" startPosition="21" endLine="27" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8638838189258314158" fileName="ThreadUtils.java" startLine="29" startPosition="5" endLine="30" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8638838189258314185" fileName="ThreadUtils.java" startLine="34" startPosition="49" endLine="35" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8638838189258314181" fileName="ThreadUtils.java" startLine="37" startPosition="11" endLine="38" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8638838189258314173" fileName="ThreadUtils.java" startLine="39" startPosition="29" endLine="40" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8638838189258314193" fileName="ThreadUtils.java" startLine="50" startPosition="49" endLine="51" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8638838189258314209" fileName="ThreadUtils.java" startLine="55" startPosition="49" endLine="56" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8638838189258314110" fileName="ThreadUtils.java" startLine="10" startPosition="0" endLine="12" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ThreadUtils#()V" />
-    <nodeInfo nodeId="8638838189258314205" fileName="ThreadUtils.java" startLine="54" startPosition="34" endLine="57" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8638838189258314170" fileName="ThreadUtils.java" startLine="36" startPosition="12" endLine="41" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="8638838189258314141" fileName="ThreadUtils.java" startLine="15" startPosition="49" endLine="21" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="8638838189258314124" fileName="ThreadUtils.java" startLine="22" startPosition="12" endLine="28" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="8638838189258314168" fileName="ThreadUtils.java" startLine="36" startPosition="10" endLine="42" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8638838189258314201" fileName="ThreadUtils.java" startLine="53" startPosition="0" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="assertEDT#()V" />
-    <nodeInfo nodeId="8638838189258314122" fileName="ThreadUtils.java" startLine="22" startPosition="10" endLine="29" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8638838189258314166" fileName="ThreadUtils.java" startLine="33" startPosition="54" endLine="42" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8638838189258314189" fileName="ThreadUtils.java" startLine="44" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isEventDispatchThread#()Z" />
-    <nodeInfo nodeId="8638838189258314160" fileName="ThreadUtils.java" startLine="32" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="runInUIThreadNoWait#(Ljava/lang/Runnable;)V" />
-    <nodeInfo nodeId="8638838189258314120" fileName="ThreadUtils.java" startLine="14" startPosition="58" endLine="29" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8638838189258314114" fileName="ThreadUtils.java" startLine="13" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="runInUIThreadAndWait#(Ljava/lang/Runnable;)Z" />
-    <scopeInfo nodeId="8638838189258314113" fileName="ThreadUtils.java" startLine="11" startPosition="24" endLine="11" endPosition="24" />
-    <scopeInfo nodeId="8638838189258314153" fileName="ThreadUtils.java" startLine="16" startPosition="11" endLine="17" endPosition="16" />
-    <scopeInfo nodeId="8638838189258314136" fileName="ThreadUtils.java" startLine="23" startPosition="11" endLine="24" endPosition="40" />
-    <scopeInfo nodeId="8638838189258314184" fileName="ThreadUtils.java" startLine="34" startPosition="49" endLine="35" endPosition="14" />
-    <scopeInfo nodeId="8638838189258314180" fileName="ThreadUtils.java" startLine="37" startPosition="11" endLine="38" endPosition="38" />
-    <scopeInfo nodeId="8638838189258314171" fileName="ThreadUtils.java" startLine="39" startPosition="0" endLine="40" endPosition="21">
-      <varInfo nodeId="8638838189258314178" varName="e" />
-    </scopeInfo>
-    <scopeInfo nodeId="8638838189258314172" fileName="ThreadUtils.java" startLine="39" startPosition="29" endLine="40" endPosition="21" />
-    <scopeInfo nodeId="8638838189258314192" fileName="ThreadUtils.java" startLine="50" startPosition="49" endLine="51" endPosition="50" />
-    <scopeInfo nodeId="8638838189258314208" fileName="ThreadUtils.java" startLine="55" startPosition="49" endLine="56" endPosition="70" />
-    <scopeInfo nodeId="8638838189258314110" fileName="ThreadUtils.java" startLine="10" startPosition="0" endLine="12" endPosition="3" />
-    <scopeInfo nodeId="8638838189258314142" fileName="ThreadUtils.java" startLine="18" startPosition="0" endLine="20" endPosition="21">
-      <varInfo nodeId="8638838189258314151" varName="e" />
-    </scopeInfo>
-    <scopeInfo nodeId="8638838189258314143" fileName="ThreadUtils.java" startLine="18" startPosition="29" endLine="20" endPosition="21" />
-    <scopeInfo nodeId="8638838189258314125" fileName="ThreadUtils.java" startLine="25" startPosition="0" endLine="27" endPosition="21">
-      <varInfo nodeId="8638838189258314134" varName="e" />
-    </scopeInfo>
-    <scopeInfo nodeId="8638838189258314126" fileName="ThreadUtils.java" startLine="25" startPosition="29" endLine="27" endPosition="21" />
-    <scopeInfo nodeId="8638838189258314204" fileName="ThreadUtils.java" startLine="54" startPosition="34" endLine="57" endPosition="5" />
-    <scopeInfo nodeId="8638838189258314169" fileName="ThreadUtils.java" startLine="36" startPosition="12" endLine="41" endPosition="7" />
-    <scopeInfo nodeId="8638838189258314140" fileName="ThreadUtils.java" startLine="15" startPosition="49" endLine="21" endPosition="7" />
-    <scopeInfo nodeId="8638838189258314123" fileName="ThreadUtils.java" startLine="22" startPosition="12" endLine="28" endPosition="7" />
-    <scopeInfo nodeId="8638838189258314201" fileName="ThreadUtils.java" startLine="53" startPosition="0" endLine="59" endPosition="0" />
-    <scopeInfo nodeId="8638838189258314165" fileName="ThreadUtils.java" startLine="33" startPosition="54" endLine="42" endPosition="5" />
-    <scopeInfo nodeId="8638838189258314189" fileName="ThreadUtils.java" startLine="44" startPosition="0" endLine="53" endPosition="0" />
-    <scopeInfo nodeId="8638838189258314160" fileName="ThreadUtils.java" startLine="32" startPosition="0" endLine="44" endPosition="0">
-      <varInfo nodeId="8638838189258314163" varName="r" />
-    </scopeInfo>
-    <scopeInfo nodeId="8638838189258314119" fileName="ThreadUtils.java" startLine="14" startPosition="58" endLine="30" endPosition="16" />
-    <scopeInfo nodeId="8638838189258314114" fileName="ThreadUtils.java" startLine="13" startPosition="0" endLine="32" endPosition="0">
-      <varInfo nodeId="8638838189258314117" varName="r" />
-    </scopeInfo>
-    <unitInfo nodeId="8638838189258314103" fileName="ThreadUtils.java" startLine="8" startPosition="0" endLine="60" endPosition="0" unitName="jetbrains.mps.build.ant.util.ThreadUtils" />
-  </root>
   <root nodeId="8638838189258348895">
     <nodeInfo nodeId="8638838189258348919" fileName="PathUtil.java" startLine="15" startPosition="45" endLine="16" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8638838189258348921" fileName="PathUtil.java" startLine="17" startPosition="5" endLine="18" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />

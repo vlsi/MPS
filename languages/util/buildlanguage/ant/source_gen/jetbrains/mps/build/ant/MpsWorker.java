@@ -7,7 +7,6 @@ import java.util.List;
 import java.util.ArrayList;
 import org.apache.tools.ant.ProjectComponent;
 import jetbrains.mps.project.Project;
-import jetbrains.mps.build.ant.util.ThreadUtils;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.make.ModuleMaker;
@@ -115,13 +114,7 @@ public abstract class MpsWorker {
   }
 
   protected void disposeProject(final Project p) {
-    ThreadUtils.runInUIThreadAndWait(new Runnable() {
-      public void run() {
-        p.dispose();
-      }
-    });
-    ModelAccess.instance().flushEventQueue();
-    System.gc();
+    p.dispose();
   }
 
   protected void setupEnvironment() {

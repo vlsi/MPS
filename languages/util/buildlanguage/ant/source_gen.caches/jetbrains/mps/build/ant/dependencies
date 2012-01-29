@@ -201,7 +201,6 @@
     <classNode dependClassName="jetbrains.mps.build.ant.Environment" />
     <classNode dependClassName="jetbrains.mps.build.ant.WhatToDo" />
     <classNode dependClassName="jetbrains.mps.build.ant.util.PathManager" />
-    <classNode dependClassName="jetbrains.mps.build.ant.util.ThreadUtils" />
     <classNode dependClassName="jetbrains.mps.generator.GenerationFacade" />
     <classNode dependClassName="jetbrains.mps.library.ModulesMiner" />
     <classNode dependClassName="jetbrains.mps.logging.LogEntry" />
