@@ -16,8 +16,7 @@ import jetbrains.mps.make.script.IResult;
 import jetbrains.mps.make.script.IJobMonitor;
 import jetbrains.mps.make.resources.IPropertiesAccessor;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.ide.ThreadUtils;
-import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.internal.make.runtime.util.DeltaReconciler;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
@@ -25,7 +24,6 @@ import jetbrains.mps.make.delta.IDelta;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.make.delta.IInternalDelta;
 import jetbrains.mps.internal.make.runtime.util.FilesDelta;
-import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.make.script.IConfig;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
@@ -87,48 +85,44 @@ public class Make_Facet extends IFacet.Stub {
                 _output_pm9z_a0a = Sequence.fromIterable(_output_pm9z_a0a).concat(Sequence.fromIterable(input));
                 return new IResult.SUCCESS(_output_pm9z_a0a);
               }
-              ThreadUtils.runInUIThreadAndWait(new Runnable() {
+              FileSystem.getInstance().runWriteTransaction(new Runnable() {
                 public void run() {
-                  ModelAccess.instance().requireWrite(new Runnable() {
-                    public void run() {
-                      final List<IFile> writtenFiles = ListSequence.fromList(new ArrayList<IFile>());
-                      DeltaReconciler reconciler = new DeltaReconciler(Sequence.fromIterable(input).translate(new ITranslator2<IResource, IDelta>() {
-                        public Iterable<IDelta> translate(IResource res) {
-                          return ((IDeltaResource) res).delta();
-                        }
-                      }).where(new IWhereFilter<IDelta>() {
-                        public boolean accept(IDelta d) {
-                          return !(d instanceof IInternalDelta);
-                        }
-                      }));
-                      reconciler.reconcileAll();
-                      reconciler.visitAll(new FilesDelta.Visitor() {
-                        @Override
-                        public boolean acceptWritten(IFile file) {
-                          ListSequence.fromList(writtenFiles).addElement(file);
-                          return true;
-                        }
-                      });
-                      DeltaReconciler internalReconciler = new DeltaReconciler(Sequence.fromIterable(input).translate(new ITranslator2<IResource, IDelta>() {
-                        public Iterable<IDelta> translate(IResource res) {
-                          return ((IDeltaResource) res).delta();
-                        }
-                      }).where(new IWhereFilter<IDelta>() {
-                        public boolean accept(IDelta d) {
-                          return d instanceof IInternalDelta;
-                        }
-                      }));
-                      internalReconciler.reconcileAll();
-                      internalReconciler.visitAll(new FilesDelta.Visitor() {
-                        @Override
-                        public boolean acceptWritten(IFile file) {
-                          ListSequence.fromList(writtenFiles).addElement(file);
-                          return true;
-                        }
-                      });
-                      FileSystem.getInstance().scheduleUpdateForWrittenFiles(writtenFiles);
+                  final List<IFile> writtenFiles = ListSequence.fromList(new ArrayList<IFile>());
+                  DeltaReconciler reconciler = new DeltaReconciler(Sequence.fromIterable(input).translate(new ITranslator2<IResource, IDelta>() {
+                    public Iterable<IDelta> translate(IResource res) {
+                      return ((IDeltaResource) res).delta();
+                    }
+                  }).where(new IWhereFilter<IDelta>() {
+                    public boolean accept(IDelta d) {
+                      return !(d instanceof IInternalDelta);
+                    }
+                  }));
+                  reconciler.reconcileAll();
+                  reconciler.visitAll(new FilesDelta.Visitor() {
+                    @Override
+                    public boolean acceptWritten(IFile file) {
+                      ListSequence.fromList(writtenFiles).addElement(file);
+                      return true;
                     }
                   });
+                  DeltaReconciler internalReconciler = new DeltaReconciler(Sequence.fromIterable(input).translate(new ITranslator2<IResource, IDelta>() {
+                    public Iterable<IDelta> translate(IResource res) {
+                      return ((IDeltaResource) res).delta();
+                    }
+                  }).where(new IWhereFilter<IDelta>() {
+                    public boolean accept(IDelta d) {
+                      return d instanceof IInternalDelta;
+                    }
+                  }));
+                  internalReconciler.reconcileAll();
+                  internalReconciler.visitAll(new FilesDelta.Visitor() {
+                    @Override
+                    public boolean acceptWritten(IFile file) {
+                      ListSequence.fromList(writtenFiles).addElement(file);
+                      return true;
+                    }
+                  });
+                  FileSystem.getInstance().scheduleUpdateForWrittenFiles(writtenFiles);
                 }
               });
               _output_pm9z_a0a = Sequence.fromIterable(_output_pm9z_a0a).concat(Sequence.fromIterable(input));

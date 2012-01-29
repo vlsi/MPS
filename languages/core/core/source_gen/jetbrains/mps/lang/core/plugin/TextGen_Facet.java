@@ -32,7 +32,7 @@ import jetbrains.mps.generator.traceInfo.TraceInfoCache;
 import jetbrains.mps.generator.impl.dependencies.GenerationDependenciesCache;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.generator.TransientModelsModule;
-import jetbrains.mps.ide.ThreadUtils;
+import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.cleanup.CleanupManager;
 import jetbrains.mps.messages.IMessage;
 import jetbrains.mps.smodel.resources.TResource;
@@ -146,17 +146,13 @@ public class TextGen_Facet extends IFacet.Stub {
 
                 final SModelDescriptor outputMD = gres.status().getOutputModelDescriptor();
                 if (outputMD instanceof TransientModelsModule.TransientSModelDescriptor) {
-                  if (!(ThreadUtils.runInUIThreadAndWait(new Runnable() {
+                  if (!(FileSystem.getInstance().runWriteTransaction(new Runnable() {
                     public void run() {
-                      ModelAccess.instance().requireWrite(new Runnable() {
-                        public void run() {
-                          if (!(Boolean.TRUE.equals(pa.global().properties(new ITarget.Name("jetbrains.mps.lang.core.Generate.configure"), Generate_Facet.Target_configure.Variables.class).saveTransient()))) {
-                            TransientModelsModule.TransientSModelDescriptor tmd = (TransientModelsModule.TransientSModelDescriptor) outputMD;
-                            ((TransientModelsModule) tmd.getModule()).removeModel(tmd);
-                          }
-                          CleanupManager.getInstance().cleanup();
-                        }
-                      });
+                      if (!(Boolean.TRUE.equals(pa.global().properties(new ITarget.Name("jetbrains.mps.lang.core.Generate.configure"), Generate_Facet.Target_configure.Variables.class).saveTransient()))) {
+                        TransientModelsModule.TransientSModelDescriptor tmd = (TransientModelsModule.TransientSModelDescriptor) outputMD;
+                        ((TransientModelsModule) tmd.getModule()).removeModel(tmd);
+                      }
+                      CleanupManager.getInstance().cleanup();
                     }
                   }))) {
                     monitor.reportFeedback(new IFeedback.ERROR(String.valueOf("Failed to remove transient models")));
@@ -171,13 +167,9 @@ public class TextGen_Facet extends IFacet.Stub {
                   monitor.reportFeedback(new IFeedback.ERROR(String.valueOf("Failed to generate text")));
                   return new IResult.FAILURE(_output_21gswx_a0a);
                 }
-                if (!(ThreadUtils.runInUIThreadAndWait(new Runnable() {
+                if (!(FileSystem.getInstance().runWriteTransaction(new Runnable() {
                   public void run() {
-                    ModelAccess.instance().requireWrite(new Runnable() {
-                      public void run() {
-                        javaStreamHandler.flush();
-                      }
-                    });
+                    javaStreamHandler.flush();
                   }
                 }))) {
                   monitor.reportFeedback(new IFeedback.ERROR(String.valueOf("Failed to save files")));
