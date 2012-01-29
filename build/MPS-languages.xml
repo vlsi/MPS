@@ -19921,8 +19921,8 @@
           <module ref="feddcab7-7240-49eb-bd42-e15e0a95cb26(jetbrains.mps.lang.intentions.pluginSolution)" />
         </dependencies>
         <library jar="jetbrains.mps.build.antsupport.jar" />
-        <library jar="/lib/diffutils-1.2.1.jar" />
         <library jar="/lib/bootstrap.jar" />
+        <library jar="/lib/diffutils-1.2.1.jar" />
         <sources jar="jetbrains.mps.build.antsupport-src.jar" descriptor="jetbrains.mps.build.antsupport.msd" />
       </module>
     </echoxml>
