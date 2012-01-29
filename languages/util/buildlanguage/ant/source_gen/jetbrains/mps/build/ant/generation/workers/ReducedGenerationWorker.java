@@ -91,6 +91,11 @@ public class ReducedGenerationWorker extends GeneratorWorker {
     }
   }
 
+  @Override
+  protected void make() {
+    // we do not need make in ReducedGenerationWorker 
+  }
+
   public static void main(String[] args) {
     MpsWorker mpsWorker = new ReducedGenerationWorker(WhatToDo.fromDumpInFile(new File(args[0])), new MpsWorker.SystemOutLogger());
     mpsWorker.workFromMain();

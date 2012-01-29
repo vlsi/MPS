@@ -28,7 +28,6 @@
     <classNode dependClassName="java.util.HashSet" />
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="java.util.Set" />
-    <classNode dependClassName="javax.swing.SwingUtilities" />
     <classNode dependClassName="jetbrains.mps.MPSCore" />
     <classNode dependClassName="jetbrains.mps.build.ant.FileMPSProject" />
     <classNode dependClassName="jetbrains.mps.build.ant.MpsPlatform" />

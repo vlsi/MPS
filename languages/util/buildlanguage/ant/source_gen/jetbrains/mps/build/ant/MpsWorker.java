@@ -120,7 +120,6 @@ public abstract class MpsWorker {
   protected void setupEnvironment() {
     myEnvironment.setup();
     make();
-    reload();
   }
 
   protected void make() {
@@ -131,6 +130,7 @@ public abstract class MpsWorker {
         maker.make(new LinkedHashSet<IModule>(MPSModuleRepository.getInstance().getAllModules()), new EmptyProgressMonitor());
       }
     });
+    reload();
   }
 
   protected void reload() {
