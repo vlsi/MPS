@@ -31,17 +31,18 @@
     <nodeInfo nodeId="10342590403826643" fileName="ReducedGenerationWorker.java" startLine="83" startPosition="39" endLine="84" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="10342590403826660" fileName="ReducedGenerationWorker.java" startLine="87" startPosition="38" endLine="88" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="10342590403826671" fileName="ReducedGenerationWorker.java" startLine="89" startPosition="36" endLine="90" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="75420001866858275" fileName="ReducedGenerationWorker.java" startLine="95" startPosition="25" endLine="96" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="10342590403827713" fileName="ReducedGenerationWorker.java" startLine="99" startPosition="42" endLine="100" endPosition="131" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="10342590403827726" fileName="ReducedGenerationWorker.java" startLine="100" startPosition="131" endLine="101" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="75420001866858275" fileName="ReducedGenerationWorker.java" startLine="95" startPosition="25" endLine="96" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="539854882961766136" fileName="ReducedGenerationWorker.java" startLine="96" startPosition="59" endLine="97" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="10342590403827713" fileName="ReducedGenerationWorker.java" startLine="100" startPosition="42" endLine="101" endPosition="131" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="10342590403827726" fileName="ReducedGenerationWorker.java" startLine="101" startPosition="131" endLine="102" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="10342590403826363" fileName="ReducedGenerationWorker.java" startLine="33" startPosition="62" endLine="36" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ReducedGenerationWorker#(Ljetbrains/mps/build/ant/WhatToDo;)V" />
     <nodeInfo nodeId="10342590403828888" fileName="ReducedGenerationWorker.java" startLine="37" startPosition="0" endLine="40" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ReducedGenerationWorker#(Ljetbrains/mps/build/ant/WhatToDo;Ljetbrains/mps/build/ant/MpsWorker/AntLogger;)V" />
     <nodeInfo nodeId="10342590403826626" fileName="ReducedGenerationWorker.java" startLine="78" startPosition="9" endLine="81" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="10342590403826641" fileName="ReducedGenerationWorker.java" startLine="82" startPosition="33" endLine="85" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="10342590403826639" fileName="ReducedGenerationWorker.java" startLine="81" startPosition="7" endLine="86" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="75420001866858267" fileName="ReducedGenerationWorker.java" startLine="93" startPosition="0" endLine="98" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="make#()V" />
-    <nodeInfo nodeId="10342590403827706" fileName="ReducedGenerationWorker.java" startLine="98" startPosition="0" endLine="103" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="main#([Ljava/lang/String;)V" />
+    <nodeInfo nodeId="10342590403827706" fileName="ReducedGenerationWorker.java" startLine="99" startPosition="0" endLine="104" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="main#([Ljava/lang/String;)V" />
     <nodeInfo nodeId="10342590403826508" fileName="ReducedGenerationWorker.java" startLine="53" startPosition="76" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="toScript#(Ljetbrains/mps/make/script/ScriptBuilder;)Ljetbrains/mps/make/script/IScript;" />
+    <nodeInfo nodeId="75420001866858267" fileName="ReducedGenerationWorker.java" startLine="93" startPosition="0" endLine="99" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="make#()V" />
     <nodeInfo nodeId="10342590403826498" fileName="ReducedGenerationWorker.java" startLine="52" startPosition="50" endLine="59" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="10342590403826624" fileName="ReducedGenerationWorker.java" startLine="77" startPosition="0" endLine="91" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
     <nodeInfo nodeId="10342590403826540" fileName="ReducedGenerationWorker.java" startLine="60" startPosition="70" endLine="76" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setup#(Ljetbrains/mps/make/script/IPropertiesPool;Ljava/lang/Iterable;Ljava/lang/Iterable;)V" />
@@ -59,9 +60,9 @@
       <varInfo nodeId="10342590403826668" varName="e" />
     </scopeInfo>
     <scopeInfo nodeId="10342590403826670" fileName="ReducedGenerationWorker.java" startLine="89" startPosition="36" endLine="90" endPosition="33" />
-    <scopeInfo nodeId="75420001866858270" fileName="ReducedGenerationWorker.java" startLine="95" startPosition="25" endLine="96" endPosition="54" />
     <scopeInfo nodeId="10342590403826513" fileName="ReducedGenerationWorker.java" startLine="55" startPosition="60" endLine="57" endPosition="40" />
-    <scopeInfo nodeId="10342590403827712" fileName="ReducedGenerationWorker.java" startLine="99" startPosition="42" endLine="101" endPosition="29">
+    <scopeInfo nodeId="75420001866858270" fileName="ReducedGenerationWorker.java" startLine="95" startPosition="25" endLine="97" endPosition="17" />
+    <scopeInfo nodeId="10342590403827712" fileName="ReducedGenerationWorker.java" startLine="100" startPosition="42" endLine="102" endPosition="29">
       <varInfo nodeId="10342590403827714" varName="mpsWorker" />
     </scopeInfo>
     <scopeInfo nodeId="10342590403826363" fileName="ReducedGenerationWorker.java" startLine="33" startPosition="62" endLine="36" endPosition="3">
@@ -75,13 +76,13 @@
     <scopeInfo nodeId="10342590403826641" fileName="ReducedGenerationWorker.java" startLine="82" startPosition="33" endLine="85" endPosition="9">
       <varInfo nodeId="10342590403826650" varName="f" />
     </scopeInfo>
-    <scopeInfo nodeId="75420001866858267" fileName="ReducedGenerationWorker.java" startLine="93" startPosition="0" endLine="98" endPosition="0" />
-    <scopeInfo nodeId="10342590403827706" fileName="ReducedGenerationWorker.java" startLine="98" startPosition="0" endLine="103" endPosition="0">
+    <scopeInfo nodeId="10342590403827706" fileName="ReducedGenerationWorker.java" startLine="99" startPosition="0" endLine="104" endPosition="0">
       <varInfo nodeId="10342590403827709" varName="args" />
     </scopeInfo>
     <scopeInfo nodeId="10342590403826508" fileName="ReducedGenerationWorker.java" startLine="53" startPosition="76" endLine="59" endPosition="0">
       <varInfo nodeId="10342590403826511" varName="scriptBuilder" />
     </scopeInfo>
+    <scopeInfo nodeId="75420001866858267" fileName="ReducedGenerationWorker.java" startLine="93" startPosition="0" endLine="99" endPosition="0" />
     <scopeInfo nodeId="10342590403826625" fileName="ReducedGenerationWorker.java" startLine="78" startPosition="9" endLine="86" endPosition="7" />
     <scopeInfo nodeId="10342590403826552" fileName="ReducedGenerationWorker.java" startLine="62" startPosition="111" endLine="74" endPosition="30">
       <varInfo nodeId="6310677563808463032" varName="compileProps" />
@@ -108,7 +109,7 @@
       <varInfo nodeId="10342590403826380" varName="go" />
       <varInfo nodeId="10342590403826378" varName="project" />
     </scopeInfo>
-    <unitInfo nodeId="10342590403826361" fileName="ReducedGenerationWorker.java" startLine="33" startPosition="0" endLine="104" endPosition="0" unitName="jetbrains.mps.build.ant.generation.workers.ReducedGenerationWorker" />
+    <unitInfo nodeId="10342590403826361" fileName="ReducedGenerationWorker.java" startLine="33" startPosition="0" endLine="105" endPosition="0" unitName="jetbrains.mps.build.ant.generation.workers.ReducedGenerationWorker" />
     <unitInfo nodeId="10342590403826503" fileName="ReducedGenerationWorker.java" startLine="53" startPosition="25" endLine="59" endPosition="5" unitName="jetbrains.mps.build.ant.generation.workers.ReducedGenerationWorker$1" />
     <unitInfo nodeId="10342590403826538" fileName="ReducedGenerationWorker.java" startLine="60" startPosition="44" endLine="76" endPosition="5" unitName="jetbrains.mps.build.ant.generation.workers.ReducedGenerationWorker$2" />
   </root>

@@ -10467,7 +10467,12 @@
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="75420001866858270">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.SingleLineComment" typeId="tpee.6329021646629104954" id="75420001866858275">
           <node role="commentPart" roleId="tpee.6329021646629175155" type="tpee.TextCommentPart" typeId="tpee.6329021646629104957" id="75420001866858276">
-            <property name="text" nameId="tpee.6329021646629104958" value="we do not need make in ReducedGenerationWorker" />
+            <property name="text" nameId="tpee.6329021646629104958" value="TODO we do not need make in ReducedGenerationWorker" />
+          </node>
+        </node>
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="539854882961766136">
+          <node role="expression" roleId="tpee.1068580123156" type="tpee.SuperMethodCall" typeId="tpee.1073063089578" id="539854882961766137">
+            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="644x.4003657351907887434" resolveInfo="make" />
           </node>
         </node>
       </node>

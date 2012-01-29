@@ -93,7 +93,8 @@ public class ReducedGenerationWorker extends GeneratorWorker {
 
   @Override
   protected void make() {
-    // we do not need make in ReducedGenerationWorker 
+    // TODO we do not need make in ReducedGenerationWorker 
+    super.make();
   }
 
   public static void main(String[] args) {
