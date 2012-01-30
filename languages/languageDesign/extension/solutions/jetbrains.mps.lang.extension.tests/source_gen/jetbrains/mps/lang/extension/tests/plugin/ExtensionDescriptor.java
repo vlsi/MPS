@@ -9,7 +9,7 @@ import java.util.Arrays;
 
 public class ExtensionDescriptor extends DefaultExtensionDescriptor {
   private ExtensionPoint[] extensionPoints = new ExtensionPoint[]{new ExtensionPoint("jetbrains.mps.lang.extension.tests.testExtensionPoint", TestObject.class), new ExtensionPoint("jetbrains.mps.lang.extension.tests.lazyTestExtensionPoint", LazyTestObject.class), new ExtensionPoint("jetbrains.mps.lang.extension.tests.multiExtensionPoint", String.class)};
-  private Extension[] extensions = new Extension[]{new Extension_testExtensionPoint_(), new Extension_lazyTestExtensionPoint_(), new Extension_multiExtensionPoint__0(), new Extension_multiExtensionPoint_()};
+  private Extension[] extensions = new Extension[]{new Extension_testExtensionPoint_(), new Extension_lazyTestExtensionPoint_(), new Extension_multiExtensionPoint_(), new Extension_multiExtensionPoint__0()};
 
   public ExtensionDescriptor() {
   }
