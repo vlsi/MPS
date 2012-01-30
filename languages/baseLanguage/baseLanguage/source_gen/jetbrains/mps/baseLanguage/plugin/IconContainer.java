@@ -9,4 +9,8 @@ public class IconContainer {
   protected static Icon ICON_a0 = IconUtil.getIcon("finalMark.png");
   protected static Icon ICON_a1 = IconUtil.getIcon("staticMark.png");
   protected static Icon ICON_a2 = IconUtil.getIcon("runnableMark.png");
+  protected static Icon ICON_a0_0 = IconUtil.getIcon("packageLocal.png");
+  protected static Icon ICON_a1_0 = IconUtil.getIcon("public.png");
+  protected static Icon ICON_a2_0 = IconUtil.getIcon("private.png");
+  protected static Icon ICON_a3 = IconUtil.getIcon("protected.png");
 }

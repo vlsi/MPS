@@ -227,9 +227,6 @@
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="6573807532044005625">
       <property name="name" nameId="tpck.1169194664001" value="TodoViewer" />
     </node>
-    <node type="tp4k.IconResourceBundle" typeId="tp4k.7038317550322744766" id="8814893218132245029">
-      <property name="name" nameId="tpck.1169194664001" value="Visibility" />
-    </node>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="7158603332051454834">
       <property name="name" nameId="tpck.1169194664001" value="SelectFieldsDialog" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="generate" />
@@ -12358,36 +12355,6 @@
             </node>
           </node>
         </node>
-      </node>
-    </node>
-  </root>
-  <root id="8814893218132245029">
-    <node role="icons" roleId="tp4k.7038317550322744874" type="tp4k.IconResourceDeclaration" typeId="tp4k.7038317550322744875" id="8814893218132245030">
-      <property name="name" nameId="tpck.1169194664001" value="PACKAGE_LOCAL" />
-      <node role="iconExpression" roleId="tp4k.7038317550322744876" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="5017341185733869607">
-        <link role="classifier" roleId="tpee.1144433057691" targetNodeId="5mvf.~Icons" resolveInfo="Icons" />
-        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5mvf.~PlatformIcons%dPACKAGE_LOCAL_ICON" resolveInfo="PACKAGE_LOCAL_ICON" />
-      </node>
-    </node>
-    <node role="icons" roleId="tp4k.7038317550322744874" type="tp4k.IconResourceDeclaration" typeId="tp4k.7038317550322744875" id="8814893218132245042">
-      <property name="name" nameId="tpck.1169194664001" value="PUBLIC" />
-      <node role="iconExpression" roleId="tp4k.7038317550322744876" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="5017341185733869617">
-        <link role="classifier" roleId="tpee.1144433057691" targetNodeId="5mvf.~Icons" resolveInfo="Icons" />
-        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5mvf.~PlatformIcons%dPUBLIC_ICON" resolveInfo="PUBLIC_ICON" />
-      </node>
-    </node>
-    <node role="icons" roleId="tp4k.7038317550322744874" type="tp4k.IconResourceDeclaration" typeId="tp4k.7038317550322744875" id="8814893218132245044">
-      <property name="name" nameId="tpck.1169194664001" value="PRIVATE" />
-      <node role="iconExpression" roleId="tp4k.7038317550322744876" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="8814893218132245046">
-        <link role="classifier" roleId="tpee.1144433057691" targetNodeId="5mvf.~Icons" resolveInfo="Icons" />
-        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5mvf.~PlatformIcons%dPRIVATE_ICON" resolveInfo="PRIVATE_ICON" />
-      </node>
-    </node>
-    <node role="icons" roleId="tp4k.7038317550322744874" type="tp4k.IconResourceDeclaration" typeId="tp4k.7038317550322744875" id="8814893218132245047">
-      <property name="name" nameId="tpck.1169194664001" value="PROTECTED" />
-      <node role="iconExpression" roleId="tp4k.7038317550322744876" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="8814893218132245049">
-        <link role="classifier" roleId="tpee.1144433057691" targetNodeId="5mvf.~Icons" resolveInfo="Icons" />
-        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5mvf.~PlatformIcons%dPROTECTED_ICON" resolveInfo="PROTECTED_ICON" />
       </node>
     </node>
   </root>

@@ -32,6 +32,7 @@
   <import index="cu2c" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)" version="-1" />
   <import index="7juq" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.lang.pattern.util(MPS.Core/jetbrains.mps.lang.pattern.util@java_stub)" version="-1" />
   <import index="z76a" modelUID="r:dfc27cab-2d08-4c79-ac99-e95209e18392(jetbrains.mps.baseLanguage.pluginSolution.plugin)" version="-1" />
+  <import index="tpec" modelUID="r:00000000-0000-4000-0000-011c895902c8(jetbrains.mps.baseLanguage.plugin)" version="-1" />
   <import index="tp25" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" implicit="yes" />
   <import index="tp2q" modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" implicit="yes" />
   <import index="tp3t" modelUID="r:00000000-0000-4000-0000-011c89590345(jetbrains.mps.lang.pattern.structure)" version="0" implicit="yes" />
@@ -40,7 +41,6 @@
   <import index="1i04" modelUID="r:3270011d-8b2d-4938-8dff-d256a759e017(jetbrains.mps.lang.behavior.structure)" version="-1" implicit="yes" />
   <import index="tpdg" modelUID="r:00000000-0000-4000-0000-011c895902a8(jetbrains.mps.lang.actions.structure)" version="23" implicit="yes" />
   <import index="tp4k" modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" version="23" implicit="yes" />
-  <import index="tpec" modelUID="r:00000000-0000-4000-0000-011c895902c8(jetbrains.mps.baseLanguage.plugin)" version="-1" implicit="yes" />
   <roots>
     <node type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="1213877208326">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="type.primitive" />
@@ -25785,7 +25785,7 @@
           <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="5017341185733869605">
             <property name="name" nameId="tpck.1169194664001" value="defaultIcon" />
             <node role="initializer" roleId="tpee.1068431790190" type="tp4k.IconResourceReference" typeId="tp4k.2990235398086762260" id="8814893218132341185">
-              <link role="declaration" roleId="tp4k.2990235398086762261" targetNodeId="z76a.8814893218132245030" resolveInfo="PACKAGE_LOCAL" />
+              <link role="declaration" roleId="tp4k.2990235398086762261" targetNodeId="tpec.349375443596798662" resolveInfo="PACKAGE_LOCAL" />
             </node>
             <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5017341185733869606">
               <link role="classifier" roleId="tpee.1107535924139" targetNodeId="dbrf.~Icon" resolveInfo="Icon" />
@@ -25810,7 +25810,7 @@
           <node role="ifTrue" roleId="tpee.1068580123161" type="tpee.StatementList" typeId="tpee.1068580123136" id="5017341185733869615">
             <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="5017341185733869616">
               <node role="expression" roleId="tpee.1068581517676" type="tp4k.IconResourceReference" typeId="tp4k.2990235398086762260" id="8814893218132341187">
-                <link role="declaration" roleId="tp4k.2990235398086762261" targetNodeId="z76a.8814893218132245042" resolveInfo="PUBLIC" />
+                <link role="declaration" roleId="tp4k.2990235398086762261" targetNodeId="tpec.349375443596798665" resolveInfo="PUBLIC" />
               </node>
             </node>
           </node>
@@ -25829,7 +25829,7 @@
           <node role="ifTrue" roleId="tpee.1068580123161" type="tpee.StatementList" typeId="tpee.1068580123136" id="5017341185733869623">
             <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="5017341185733869624">
               <node role="expression" roleId="tpee.1068581517676" type="tp4k.IconResourceReference" typeId="tp4k.2990235398086762260" id="8814893218132341189">
-                <link role="declaration" roleId="tp4k.2990235398086762261" targetNodeId="z76a.8814893218132245044" resolveInfo="PRIVATE" />
+                <link role="declaration" roleId="tp4k.2990235398086762261" targetNodeId="tpec.349375443596798668" resolveInfo="PRIVATE" />
               </node>
             </node>
           </node>
@@ -25848,7 +25848,7 @@
           <node role="ifTrue" roleId="tpee.1068580123161" type="tpee.StatementList" typeId="tpee.1068580123136" id="5017341185733869631">
             <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="5017341185733869632">
               <node role="expression" roleId="tpee.1068581517676" type="tp4k.IconResourceReference" typeId="tp4k.2990235398086762260" id="8814893218132341191">
-                <link role="declaration" roleId="tp4k.2990235398086762261" targetNodeId="z76a.8814893218132245047" resolveInfo="PROTECTED" />
+                <link role="declaration" roleId="tp4k.2990235398086762261" targetNodeId="tpec.349375443596798671" resolveInfo="PROTECTED" />
               </node>
             </node>
           </node>

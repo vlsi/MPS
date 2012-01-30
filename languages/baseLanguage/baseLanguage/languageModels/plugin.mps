@@ -110,6 +110,9 @@
     <node type="tp4k.IconResourceBundle" typeId="tp4k.7038317550322744766" id="2990235398088186554">
       <property name="name" nameId="tpck.1169194664001" value="Behavior" />
     </node>
+    <node type="tp4k.IconResourceBundle" typeId="tp4k.7038317550322744766" id="349375443596798661">
+      <property name="name" nameId="tpck.1169194664001" value="Visibility" />
+    </node>
   </roots>
   <root id="6648795410103967073">
     <node role="optional" roleId="vvvw.6447445394688422657" type="vvvw.RelatedFacetReference" typeId="vvvw.8351679702044320297" id="8779210072675843710">
@@ -1767,6 +1770,40 @@
       <node role="iconExpression" roleId="tp4k.7038317550322744876" type="tp4k.IconResourceExpression" typeId="tp4k.6759767305207977805" id="2990235398088186568">
         <node role="icon" roleId="tp4k.6759767305207977806" type="tp4k.IconResource" typeId="tp4k.2330114057060456691" id="2990235398088186569">
           <property name="path" nameId="tp4k.7855019336153226684" value="${language_descriptor}/icons/runnableMark.png" />
+        </node>
+      </node>
+    </node>
+  </root>
+  <root id="349375443596798661">
+    <node role="icons" roleId="tp4k.7038317550322744874" type="tp4k.IconResourceDeclaration" typeId="tp4k.7038317550322744875" id="349375443596798662">
+      <property name="name" nameId="tpck.1169194664001" value="PACKAGE_LOCAL" />
+      <node role="iconExpression" roleId="tp4k.7038317550322744876" type="tp4k.IconResourceExpression" typeId="tp4k.6759767305207977805" id="349375443596798663">
+        <node role="icon" roleId="tp4k.6759767305207977806" type="tp4k.IconResource" typeId="tp4k.2330114057060456691" id="349375443596798664">
+          <property name="path" nameId="tp4k.7855019336153226684" value="${mps_home}/languages/baseLanguage/baseLanguage/icons/packageLocal.png" />
+        </node>
+      </node>
+    </node>
+    <node role="icons" roleId="tp4k.7038317550322744874" type="tp4k.IconResourceDeclaration" typeId="tp4k.7038317550322744875" id="349375443596798665">
+      <property name="name" nameId="tpck.1169194664001" value="PUBLIC" />
+      <node role="iconExpression" roleId="tp4k.7038317550322744876" type="tp4k.IconResourceExpression" typeId="tp4k.6759767305207977805" id="349375443596798666">
+        <node role="icon" roleId="tp4k.6759767305207977806" type="tp4k.IconResource" typeId="tp4k.2330114057060456691" id="349375443596798667">
+          <property name="path" nameId="tp4k.7855019336153226684" value="${mps_home}/languages/baseLanguage/baseLanguage/icons/public.png" />
+        </node>
+      </node>
+    </node>
+    <node role="icons" roleId="tp4k.7038317550322744874" type="tp4k.IconResourceDeclaration" typeId="tp4k.7038317550322744875" id="349375443596798668">
+      <property name="name" nameId="tpck.1169194664001" value="PRIVATE" />
+      <node role="iconExpression" roleId="tp4k.7038317550322744876" type="tp4k.IconResourceExpression" typeId="tp4k.6759767305207977805" id="349375443596798669">
+        <node role="icon" roleId="tp4k.6759767305207977806" type="tp4k.IconResource" typeId="tp4k.2330114057060456691" id="349375443596798670">
+          <property name="path" nameId="tp4k.7855019336153226684" value="${mps_home}/languages/baseLanguage/baseLanguage/icons/private.png" />
+        </node>
+      </node>
+    </node>
+    <node role="icons" roleId="tp4k.7038317550322744874" type="tp4k.IconResourceDeclaration" typeId="tp4k.7038317550322744875" id="349375443596798671">
+      <property name="name" nameId="tpck.1169194664001" value="PROTECTED" />
+      <node role="iconExpression" roleId="tp4k.7038317550322744876" type="tp4k.IconResourceExpression" typeId="tp4k.6759767305207977805" id="349375443596798672">
+        <node role="icon" roleId="tp4k.6759767305207977806" type="tp4k.IconResource" typeId="tp4k.2330114057060456691" id="349375443596798673">
+          <property name="path" nameId="tp4k.7855019336153226684" value="${mps_home}/languages/baseLanguage/baseLanguage/icons/protected.png" />
         </node>
       </node>
     </node>

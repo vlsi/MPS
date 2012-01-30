@@ -4,7 +4,7 @@ package jetbrains.mps.baseLanguage.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import javax.swing.Icon;
-import jetbrains.mps.baseLanguage.pluginSolution.plugin.IconResourceBundle_Visibility;
+import jetbrains.mps.baseLanguage.plugin.IconResourceBundle_Visibility;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
