@@ -361,6 +361,7 @@ public class CheckProjectStructureHelper {
             }
             for (IErrorReporter reporter : errorReporters) {
               if (reporter.getMessageStatus().equals(MessageStatus.ERROR)) {
+                if (reporter.reportError().startsWith("a class should have")) continue;
                 SNode node = reporter.getSNode();
                 if (!CheckersComponent.filterIssue(node)) continue;
                 myErrors++;
