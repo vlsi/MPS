@@ -7,23 +7,27 @@ import java.util.Arrays;
 import jetbrains.mps.smodel.runtime.interpreted.BehaviorAspectInterpreted;
 
 public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor {
-  private static String[] stringSwitchCases_846f5o_a0a0a = new String[]{"jetbrains.mps.build.workflow.structure.BwfProject", "jetbrains.mps.build.workflow.structure.BwfSubTask", "jetbrains.mps.build.workflow.structure.BwfSubTaskDependency", "jetbrains.mps.build.workflow.structure.BwfTask", "jetbrains.mps.build.workflow.structure.BwfTaskDependency"};
+  private static String[] stringSwitchCases_846f5o_a0a0a = new String[]{"jetbrains.mps.build.workflow.structure.BwfAntStatement", "jetbrains.mps.build.workflow.structure.BwfProject", "jetbrains.mps.build.workflow.structure.BwfStatement", "jetbrains.mps.build.workflow.structure.BwfSubTask", "jetbrains.mps.build.workflow.structure.BwfSubTaskDependency", "jetbrains.mps.build.workflow.structure.BwfTask", "jetbrains.mps.build.workflow.structure.BwfTaskDependency"};
 
   public BehaviorAspectDescriptor() {
   }
 
   public BehaviorDescriptor getDescriptor(String fqName) {
     switch (Arrays.binarySearch(stringSwitchCases_846f5o_a0a0a, fqName)) {
-      case 0:
-        return new BwfProject_BehaviorDescriptor();
-      case 3:
-        return new BwfTask_BehaviorDescriptor();
       case 1:
+        return new BwfProject_BehaviorDescriptor();
+      case 5:
+        return new BwfTask_BehaviorDescriptor();
+      case 3:
         return new BwfSubTask_BehaviorDescriptor();
-      case 4:
+      case 6:
         return new BwfTaskDependency_BehaviorDescriptor();
-      case 2:
+      case 4:
         return new BwfSubTaskDependency_BehaviorDescriptor();
+      case 2:
+        return new BwfStatement_BehaviorDescriptor();
+      case 0:
+        return new BwfAntStatement_BehaviorDescriptor();
       default:
         return BehaviorAspectInterpreted.getInstance().getDescriptor(fqName);
     }

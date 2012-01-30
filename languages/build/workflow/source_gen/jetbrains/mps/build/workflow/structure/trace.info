@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="StructureAspectDescriptor.java" startLine="10" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.build.workflow.structure.StructureAspectDescriptor" />
+  <unitInfo fileName="StructureAspectDescriptor.java" startLine="10" startPosition="0" endLine="39" endPosition="0" unitName="jetbrains.mps.build.workflow.structure.StructureAspectDescriptor" />
   <unitInfo fileName="Workflow_Language.java" startLine="9" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.build.workflow.structure.Workflow_Language" />
   <root nodeId="2769948622284546673">
     <nodeInfo nodeId="2769948622284546673" fileName="BwfProject.java" startLine="15" startPosition="70" endLine="16" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
@@ -550,6 +550,40 @@
       <varInfo nodeId="2769948622284605979" varName="sm" />
     </scopeInfo>
     <unitInfo nodeId="2769948622284605979" fileName="BwfStatement.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.build.workflow.structure.BwfStatement" />
+  </root>
+  <root nodeId="2769948622284768359">
+    <nodeInfo nodeId="2769948622284768359" fileName="BwfAntStatement.java" startLine="11" startPosition="51" endLine="12" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
+    <nodeInfo nodeId="2769948622284768359" fileName="BwfAntStatement.java" startLine="12" startPosition="96" endLine="13" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ELEMENT" />
+    <nodeInfo nodeId="2769948622284768359" fileName="BwfAntStatement.java" startLine="15" startPosition="38" endLine="16" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="2769948622284768359" fileName="BwfAntStatement.java" startLine="19" startPosition="38" endLine="20" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2769948622284768359" fileName="BwfAntStatement.java" startLine="23" startPosition="47" endLine="24" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2769948622284768359" fileName="BwfAntStatement.java" startLine="27" startPosition="70" endLine="28" endPosition="182" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2769948622284768359" fileName="BwfAntStatement.java" startLine="31" startPosition="56" endLine="32" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2769948622284768359" fileName="BwfAntStatement.java" startLine="14" startPosition="0" endLine="17" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="BwfAntStatement#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="2769948622284768359" fileName="BwfAntStatement.java" startLine="18" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getElement#()Ljetbrains/mps/smodel/INodeAdapter;" />
+    <nodeInfo nodeId="2769948622284768359" fileName="BwfAntStatement.java" startLine="22" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setElement#(Ljetbrains/mps/smodel/INodeAdapter;)V" />
+    <nodeInfo nodeId="2769948622284768359" fileName="BwfAntStatement.java" startLine="26" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="newInstance#(Ljetbrains/mps/smodel/SModel;Z)Ljetbrains/mps/build/workflow/structure/BwfAntStatement;" />
+    <nodeInfo nodeId="2769948622284768359" fileName="BwfAntStatement.java" startLine="30" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="newInstance#(Ljetbrains/mps/smodel/SModel;)Ljetbrains/mps/build/workflow/structure/BwfAntStatement;" />
+    <scopeInfo nodeId="2769948622284768359" fileName="BwfAntStatement.java" startLine="15" startPosition="38" endLine="16" endPosition="16" />
+    <scopeInfo nodeId="2769948622284768359" fileName="BwfAntStatement.java" startLine="19" startPosition="38" endLine="20" endPosition="89" />
+    <scopeInfo nodeId="2769948622284768359" fileName="BwfAntStatement.java" startLine="23" startPosition="47" endLine="24" endPosition="50" />
+    <scopeInfo nodeId="2769948622284768359" fileName="BwfAntStatement.java" startLine="27" startPosition="70" endLine="28" endPosition="182" />
+    <scopeInfo nodeId="2769948622284768359" fileName="BwfAntStatement.java" startLine="31" startPosition="56" endLine="32" endPosition="50" />
+    <scopeInfo nodeId="2769948622284768359" fileName="BwfAntStatement.java" startLine="14" startPosition="0" endLine="17" endPosition="3">
+      <varInfo nodeId="2769948622284768359" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="2769948622284768359" fileName="BwfAntStatement.java" startLine="18" startPosition="0" endLine="22" endPosition="0" />
+    <scopeInfo nodeId="2769948622284768359" fileName="BwfAntStatement.java" startLine="22" startPosition="0" endLine="26" endPosition="0">
+      <varInfo nodeId="2769948622284768359" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="2769948622284768359" fileName="BwfAntStatement.java" startLine="26" startPosition="0" endLine="30" endPosition="0">
+      <varInfo nodeId="2769948622284768359" varName="init" />
+      <varInfo nodeId="2769948622284768359" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="2769948622284768359" fileName="BwfAntStatement.java" startLine="30" startPosition="0" endLine="34" endPosition="0">
+      <varInfo nodeId="2769948622284768359" varName="sm" />
+    </scopeInfo>
+    <unitInfo nodeId="2769948622284768359" fileName="BwfAntStatement.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.build.workflow.structure.BwfAntStatement" />
   </root>
 </debugInfo>
 

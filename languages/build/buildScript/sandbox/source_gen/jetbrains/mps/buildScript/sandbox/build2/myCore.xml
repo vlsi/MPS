@@ -1,0 +1,19 @@
+<project name="myCore">
+  <target name="buildDependencies">
+    <copy asda="asda" />
+
+    <mkdir asd="aaaa" />
+
+    <javac asd="asd" ssdf="asd">
+      asdassda
+      asdasdasdas
+      asdasd
+      <aa>asdas</aa>
+    </javac>
+  </target>
+  <target name="build" depends="buildDependencies"></target>
+  <target name="test" depends="build">
+    <junit />
+
+  </target>
+</project>
