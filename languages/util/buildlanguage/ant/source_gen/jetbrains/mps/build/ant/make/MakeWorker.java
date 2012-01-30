@@ -21,7 +21,7 @@ import java.io.File;
 
 public class MakeWorker extends MpsWorker {
   public MakeWorker(WhatToDo whatToDo, MpsWorker.AntLogger logger) {
-    super(whatToDo, logger, new MakeEnvironment());
+    super(whatToDo, logger, new Environment());
   }
 
   public MakeWorker(WhatToDo whatToDo, MpsWorker.AntLogger logger, Environment environment) {

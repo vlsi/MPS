@@ -56,22 +56,22 @@ public class MPSMakeLauncher {
         myProject = project;
     }
 
-    public void validate () {
+    public void validate() {
         this.myValid = false;
         if (!new File(myProject.getBaseDir().getPath()).exists()) {
-            LOG.error("Work dir not found "+ myProject.getBaseDir().getPath());
+            LOG.error("Work dir not found " + myProject.getBaseDir().getPath());
             return;
         }
         try {
-            myCommandLine = buildCommandLine(collectClassPath());            
+            myCommandLine = buildCommandLine(collectClassPath());
         } catch (Exception e) {
             LOG.error(e);
             return;
         }
         this.myValid = true;
     }
-    
-    public void launch (final MPSMakeCallback callback) {
+
+    public void launch(final MPSMakeCallback callback) {
         if (!isValid()) {
             throw new IllegalStateException("Unable to launch without validation");
         }
@@ -81,13 +81,13 @@ public class MPSMakeLauncher {
         final TextEventProcessor tep = new TextEventProcessor(myProject, "Make") {
             @Override
             public void reportWrittenFile(String file) {
-                LOG.debug("written file: "+file);
+                LOG.debug("written file: " + file);
                 callback.fileWritten(file);
             }
 
             @Override
             public void error(String text) {
-                LOG.debug("error: "+text);
+                LOG.debug("error: " + text);
                 callback.error(text);
             }
         };
@@ -98,19 +98,18 @@ public class MPSMakeLauncher {
                 public void onTextAvailable(ProcessEvent event, Key outputType) {
                     if (outputType == ProcessOutputTypes.STDERR) {
                         tep.processStderr(event.getText());
-                    }
-                    else if (outputType == ProcessOutputTypes.STDOUT) {
+                    } else if (outputType == ProcessOutputTypes.STDOUT) {
                         tep.processStdout(event.getText());
                     }
                 }
-            });            
+            });
             processHandler.startNotify();
 
             processHandler.waitFor();
             if (processHandler.getProcess().exitValue() != 0) {
                 MessagesViewTool.log(myProject, MessageKind.ERROR, "External process returned non-zero");
             }
-            
+
         } catch (ExecutionException e) {
             LOG.debug(e);
             MessagesViewTool.log(myProject, MessageKind.ERROR, "Error running process: " + e.getMessage());
@@ -131,7 +130,7 @@ public class MPSMakeLauncher {
         commandLine.add("-classpath");
         commandLine.add(sb.toString());
 
-        if ("true".equalsIgnoreCase(System.getProperty("mps.make.debug"))){
+        if ("true".equalsIgnoreCase(System.getProperty("mps.make.debug"))) {
             commandLine.add("-Xdebug");
             commandLine.add("-Xrunjdwp:transport=dt_socket,server=y,suspend=y,address=5005");
         }
@@ -161,17 +160,16 @@ public class MPSMakeLauncher {
         File mpsPluginHome = null;
         String mpsCoreRes = getResource(MPSMakeLauncher.class);
         if (mpsCoreRes.endsWith(".jar")) {
-            mpsPluginHome = new File(mpsCoreRes).getParentFile().getParentFile(); // MPS_PLUGIN_HOME/lib/mps-core.jar
-        }
-        else if (mpsCoreRes.endsWith("classes")) {
+            mpsPluginHome = new File(mpsCoreRes).getParentFile().getParentFile(); // MPS_PLUGIN_HOME/lib/mps-plugin.jar
+        } else if (mpsCoreRes.endsWith("classes")) {
             mpsPluginHome = new File(mpsCoreRes).getParentFile(); // MPS_PLUGIN_HOME/classes
         }
-        
+
         if (mpsPluginHome == null || !mpsPluginHome.exists()) {
             LOG.error("MPS plugin home not found: " + mpsPluginHome);
             throw new Exception();
         }
-        
+
         String ideaJar = getResource(Project.class);
         File ideaHome = new File(ideaJar).getParentFile().getParentFile();
 
@@ -180,10 +178,10 @@ public class MPSMakeLauncher {
             throw new Exception();
         }
 
-        File [] pathsToLook = new File[]{
+        File[] pathsToLook = new File[]{
                 new File(mpsPluginHome, "lib"),
                 new File(ideaHome, "lib")
-                };
+        };
 
         Set<File> classPaths = new LinkedHashSet<File>();
         for (File path : pathsToLook) {
@@ -222,7 +220,7 @@ public class MPSMakeLauncher {
                     gatherAllClassesAndJarsUnder(f, result);
                 }
             }
-        }        
+        }
     }
 
     public boolean isValid() {
@@ -232,39 +230,39 @@ public class MPSMakeLauncher {
     public List<String> getCommandLine() {
         return myCommandLine;
     }
-    
+
     public abstract static class TextEventProcessor {
         public static final String WRITTEN = "##WRITTEN##";
         private Project myProject;
         private String myPrefix;
-        
-        public  TextEventProcessor (Project project, String prefix) {
+
+        public TextEventProcessor(Project project, String prefix) {
             this.myProject = project;
             this.myPrefix = prefix;
         }
-        
-        public void processStdout (String text) {
+
+        public void processStdout(String text) {
             Scanner s = new Scanner(text);
             while (s.hasNextLine()) {
                 String line = s.nextLine();
                 if (line.indexOf(WRITTEN) == 0) {
                     reportWrittenFile(line.substring(WRITTEN.length()));
-                }else {
+                } else {
                     logOutput(line);
                 }
             }
         }
-        
-        public void processStderr (String text) {
+
+        public void processStderr(String text) {
             Scanner s = new Scanner(text);
             while (s.hasNextLine()) {
                 logError(s.nextLine());
             }
         }
-        
-        public abstract void reportWrittenFile (String file);
-        
-        public abstract void error (String text);
+
+        public abstract void reportWrittenFile(String file);
+
+        public abstract void error(String text);
 
         protected void logOutput(String line) {
             MessagesViewTool.log(myProject, MessageKind.INFORMATION, myPrefix + " - " + line);

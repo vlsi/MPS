@@ -13,7 +13,6 @@ import jetbrains.mps.generator.GenerationSettingsProvider;
 import jetbrains.mps.generator.DefaultModifiableGenerationSettings;
 import jetbrains.mps.project.PathMacros;
 import jetbrains.mps.library.LibraryInitializer;
-import javax.swing.SwingUtilities;
 import jetbrains.mps.project.Project;
 import java.io.File;
 import jetbrains.mps.util.FileUtil;
@@ -65,16 +64,6 @@ public class Environment {
     if (myLibraryContibutor != null) {
       LibraryInitializer.getInstance().removeContributor(myLibraryContibutor);
       this.myLibraryContibutor = null;
-    }
-    for (int i = 0; i < 3; i++) {
-      try {
-        SwingUtilities.invokeAndWait(new Runnable() {
-          public void run() {
-          }
-        });
-      } catch (Exception e) {
-        e.printStackTrace();
-      }
     }
     MpsPlatform.dispose();
     jetbrains.mps.logging.Logger.removeLoggingHandler(myMessageHandler);
