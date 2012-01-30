@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model modelUID="r:9a3e94de-7e79-4ca4-bf26-5a5c61ffe1fa(jetbrains.mps.buildScript.deploy.build)">
+<model modelUID="r:9a3e94de-7e79-4ca4-bf26-5a5c61ffe1fa(jetbrains.mps.buildScript.deploy.build)" doNotGenerate="true">
   <persistence version="7" />
   <language namespace="4e6c5313-7662-4c44-9bc7-b488cec17508(jetbrains.mps.build.packaging)" />
   <language namespace="0b608d44-1308-418d-8715-22d040c3b3cc(jetbrains.mps.buildlanguage)" />
