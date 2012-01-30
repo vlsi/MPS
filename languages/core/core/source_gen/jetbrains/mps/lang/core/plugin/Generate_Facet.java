@@ -26,8 +26,9 @@ import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.generator.IModifiableGenerationSettings;
 import jetbrains.mps.generator.GenerationSettingsProvider;
 import jetbrains.mps.generator.GenerationOptions;
+import jetbrains.mps.generator.GenerationCacheContainer;
+import jetbrains.mps.smodel.structure.ExtensionPoint;
 import jetbrains.mps.make.facet.pluginSolution.plugin.MakeGenerationStrategy;
-import jetbrains.mps.ide.generator.GeneratorCacheComponent;
 import jetbrains.mps.generator.IGenerationTracer;
 import jetbrains.mps.generator.NullGenerationTracer;
 import jetbrains.mps.generator.DefaultGenerationParametersProvider;
@@ -252,8 +253,13 @@ public class Generate_Facet extends IFacet.Stub {
                 pa.global().properties(Target_configure.this.getName(), Generate_Facet.Target_configure.Variables.class).generationOptions() :
                 GenerationOptions.fromSettings(settings)
               ));
+              Iterable<GenerationCacheContainer> caches = ExtensionPoint.<GenerationCacheContainer>generify(new ExtensionPoint("jetbrains.mps.lang.core.GeneratorCache", GenerationCacheContainer.class)).getObjects();
+              GenerationCacheContainer cacheContainer = (Sequence.fromIterable(caches).isEmpty() ?
+                null :
+                Sequence.fromIterable(caches).first()
+              );
               pa.global().properties(Target_configure.this.getName(), Generate_Facet.Target_configure.Variables.class).generationOptions().incremental(new MakeGenerationStrategy((settings.isIncremental() && settings.isIncrementalUseCache() ?
-                GeneratorCacheComponent.getInstance().getCache() :
+                cacheContainer :
                 null
               ), settings.isIncremental()));
               IGenerationTracer tracer = (pa.global().properties(Target_configure.this.getName(), Generate_Facet.Target_configure.Variables.class).saveTransient() ?

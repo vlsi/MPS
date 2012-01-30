@@ -4,6 +4,14 @@
     <classNode dependClassName="com.intellij.openapi.extensions.PluginId" />
     <classNode extendsClassName="jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin" />
   </dependency>
+  <dependency className="jetbrains.mps.lang.core.plugin.ExtensionDescriptor" file="ExtensionDescriptor.java">
+    <classNode dependClassName="java.lang.Iterable" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.util.Arrays" />
+    <classNode dependClassName="jetbrains.mps.generator.GenerationCacheContainer" />
+    <classNode dependClassName="jetbrains.mps.smodel.structure.ExtensionPoint" />
+    <classNode extendsClassName="jetbrains.mps.smodel.structure.DefaultExtensionDescriptor" />
+  </dependency>
   <dependency className="jetbrains.mps.lang.core.plugin.FacetAspectDescriptor" file="FacetAspectDescriptor.java">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.core.plugin.FacetManifest" />
@@ -43,6 +51,7 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.Tuples" />
     <classNode dependClassName="jetbrains.mps.generator.DefaultGenerationParametersProvider" />
+    <classNode dependClassName="jetbrains.mps.generator.GenerationCacheContainer" />
     <classNode dependClassName="jetbrains.mps.generator.GenerationFacade" />
     <classNode dependClassName="jetbrains.mps.generator.GenerationOptions" />
     <classNode dependClassName="jetbrains.mps.generator.GenerationSettingsProvider" />
@@ -51,7 +60,6 @@
     <classNode dependClassName="jetbrains.mps.generator.NullGenerationTracer" />
     <classNode dependClassName="jetbrains.mps.generator.TransientModelsProvider" />
     <classNode dependClassName="jetbrains.mps.generator.generationTypes.IGenerationHandler" />
-    <classNode dependClassName="jetbrains.mps.ide.generator.GeneratorCacheComponent" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ILeftCombinator" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ITranslator2" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IVisitor" />
@@ -89,6 +97,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.resources.GResource" />
     <classNode dependClassName="jetbrains.mps.smodel.resources.IMResource" />
     <classNode dependClassName="jetbrains.mps.smodel.resources.MResource" />
+    <classNode dependClassName="jetbrains.mps.smodel.structure.ExtensionPoint" />
     <classNode extendsClassName="jetbrains.mps.baseLanguage.tuples.runtime._3" />
     <classNode extendsClassName="jetbrains.mps.baseLanguage.tuples.runtime._4" />
     <classNode extendsClassName="jetbrains.mps.make.facet.ITargetEx" />
