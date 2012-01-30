@@ -24,16 +24,15 @@ import jetbrains.mps.lang.typesystem.dependencies.InferenceMethod;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import java.util.ArrayList;
-import java.util.Map;
+import jetbrains.mps.typesystem.inference.SubtypingManager;
 import java.util.Set;
-import jetbrains.mps.internal.collections.runtime.MapSequence;
-import java.util.HashMap;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
-import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior;
-import java.util.Iterator;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.smodel.SReference;
+import jetbrains.mps.smodel.SModelReference;
+import jetbrains.mps.smodel.SNodeId;
 
 public class RulesUtil {
   @CheckingMethod
@@ -280,110 +279,16 @@ public class RulesUtil {
   }
 
   public static SNode leastCommonSuperconcept(List<SNode> concepts) {
-    Map<SNode, Set<SNode>> subTypesToSuperTypes = MapSequence.fromMap(new HashMap<SNode, Set<SNode>>());
-    Set<SNode> keyset = SetSequence.fromSet(new HashSet<SNode>());
-    Set<SNode> allTypes = SetSequence.fromSet(new HashSet<SNode>());
-    Set<SNode> frontier = SetSequence.fromSetWithValues(new HashSet<SNode>(), concepts);
-    Set<SNode> newFrontier = SetSequence.fromSet(new HashSet<SNode>());
-    while (!(SetSequence.fromSet(frontier).isEmpty())) {
-      for (SNode concept : frontier) {
-        if (SetSequence.fromSet(keyset).contains(concept)) {
-          continue;
-        }
-        List<SNode> supertypes = AbstractConceptDeclaration_Behavior.call_getImmediateSuperconcepts_1222430305282(concept);
-        Set<SNode> set = MapSequence.fromMap(subTypesToSuperTypes).get(concept);
-        if (set == null) {
-          set = SetSequence.fromSet(new HashSet<SNode>());
-          MapSequence.fromMap(subTypesToSuperTypes).put(concept, set);
-        }
-        SetSequence.fromSet(set).addSequence(ListSequence.fromList(supertypes));
-        SetSequence.fromSet(keyset).addElement(concept);
-        SetSequence.fromSet(newFrontier).addSequence(ListSequence.fromList(supertypes));
-        SetSequence.fromSet(allTypes).addSequence(ListSequence.fromList(supertypes));
-        ListSequence.fromList(supertypes).addElement(concept);
-      }
-      frontier = newFrontier;
-      newFrontier = SetSequence.fromSet(new HashSet<SNode>());
+    SubtypingManager subtypingManager = TypeChecker.getInstance().getSubtypingManager();
+    Set<SNode> set = SetSequence.fromSet(new HashSet<SNode>());
+    for (SNode concept : concepts) {
+      SetSequence.fromSet(set).addElement(new RulesUtil.QuotationClass_yxkngc_a0a0a0c0k().createNode(concept));
     }
-    // transitive closure 
-    for (SNode node2 : allTypes) {
-      for (SNode node1 : allTypes) {
-        for (SNode node3 : allTypes) {
-          Set<SNode> supertypes1 = MapSequence.fromMap(subTypesToSuperTypes).get(node1);
-          if (supertypes1 == null) {
-            continue;
-          }
-          Set<SNode> supertypes2 = MapSequence.fromMap(subTypesToSuperTypes).get(node2);
-          if (supertypes2 == null) {
-            continue;
-          }
-          if (SetSequence.fromSet(supertypes1).contains(node2) && SetSequence.fromSet(supertypes2).contains(node3)) {
-            SetSequence.fromSet(supertypes1).addElement(node3);
-          }
-        }
-      }
+    Set<SNode> leastCommonSupertypes = subtypingManager.leastCommonSupertypes(set, true);
+    if (leastCommonSupertypes.isEmpty()) {
+      return SLinkOperations.getTarget(new RulesUtil.QuotationClass_yxkngc_a0a0a4a01().createNode(), "concept", false);
     }
-    Set<SNode> result = SetSequence.fromSetWithValues(new HashSet<SNode>(), concepts);
-    while (SetSequence.fromSet(result).count() >= 2) {
-      Iterator<SNode> iterator = SetSequence.fromSet(result).iterator();
-      SNode a = iterator.next();
-      SNode b = iterator.next();
-      SetSequence.fromSet(result).removeElement(a);
-      SetSequence.fromSet(result).removeElement(b);
-      SetSequence.fromSet(result).addElement(leastCommonSuperconcept(a, b, subTypesToSuperTypes));
-    }
-    if (SetSequence.fromSet(result).isEmpty()) {
-      return SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.core.structure.BaseConcept");
-    }
-    return SetSequence.fromSet(result).first();
-  }
-
-  private static SNode leastCommonSuperconcept(SNode a, SNode b, Map<SNode, Set<SNode>> subTypesToSuperTypes) {
-    if (a == b) {
-      return a;
-    }
-    Set<SNode> superTypesA = MapSequence.fromMap(subTypesToSuperTypes).get(a);
-    superTypesA = (superTypesA == null ?
-      SetSequence.fromSet(new HashSet<SNode>()) :
-      SetSequence.fromSetWithValues(new HashSet<SNode>(), superTypesA)
-    );
-    Set<SNode> superTypesB = MapSequence.fromMap(subTypesToSuperTypes).get(b);
-    superTypesB = (superTypesB == null ?
-      SetSequence.fromSet(new HashSet<SNode>()) :
-      SetSequence.fromSetWithValues(new HashSet<SNode>(), superTypesB)
-    );
-    SetSequence.fromSet(superTypesA).addElement(a);
-    SetSequence.fromSet(superTypesB).addElement(b);
-    for (SNode superTypeA : SetSequence.fromSetWithValues(new HashSet<SNode>(), superTypesA)) {
-      boolean matches = false;
-      for (SNode superTypeB : superTypesB) {
-        if (superTypeA == superTypeB) {
-          matches = true;
-          break;
-        }
-      }
-      if (!(matches)) {
-        SetSequence.fromSet(superTypesA).removeElement(superTypeA);
-      }
-    }
-    Set<SNode> commonSupertypes = superTypesA;
-    for (SNode commonSupertype : SetSequence.fromSetWithValues(new HashSet<SNode>(), commonSupertypes)) {
-      if (!(SetSequence.fromSet(commonSupertypes).contains(commonSupertype))) {
-        continue;
-      }
-      Set<SNode> superTypes = MapSequence.fromMap(subTypesToSuperTypes).get(commonSupertype);
-      if (superTypes != null) {
-        for (SNode superType : superTypes) {
-          if (superType != commonSupertype) {
-            SetSequence.fromSet(commonSupertypes).removeElement(superType);
-          }
-        }
-      }
-    }
-    if (SetSequence.fromSet(commonSupertypes).count() != 1) {
-      return SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.core.structure.BaseConcept");
-    }
-    return SetSequence.fromSet(commonSupertypes).first();
+    return SLinkOperations.getTarget(SNodeOperations.cast(leastCommonSupertypes.iterator().next(), "jetbrains.mps.lang.smodel.structure.SNodeType"), "concept", false);
   }
 
   public static class QuotationClass_yxkngc_a1a0a0e0a {
@@ -615,6 +520,42 @@ public class RulesUtil {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SConceptType", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
         quotedNode1_2.setReferent("conceptDeclaraton", (SNode) parameter_3);
+        result = quotedNode1_2;
+      }
+      return result;
+    }
+  }
+
+  public static class QuotationClass_yxkngc_a0a0a0c0k {
+    public QuotationClass_yxkngc_a0a0a0c0k() {
+    }
+
+    public SNode createNode(Object parameter_3) {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_1 = null;
+      {
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", null, GlobalScope.getInstance(), false);
+        SNode quotedNode1_2 = quotedNode_1;
+        quotedNode1_2.setReferent("concept", (SNode) parameter_3);
+        result = quotedNode1_2;
+      }
+      return result;
+    }
+  }
+
+  public static class QuotationClass_yxkngc_a0a0a4a01 {
+    public QuotationClass_yxkngc_a0a0a4a01() {
+    }
+
+    public SNode createNode() {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_1 = null;
+      {
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", null, GlobalScope.getInstance(), false);
+        SNode quotedNode1_2 = quotedNode_1;
+        quotedNode1_2.addReference(SReference.create("concept", quotedNode1_2, SModelReference.fromString("r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)"), SNodeId.fromString("1133920641626")));
         result = quotedNode1_2;
       }
       return result;
