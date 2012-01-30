@@ -6,7 +6,6 @@
   <unitInfo fileName="AppendOperation_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.textGen.behavior.AppendOperation_BehaviorDescriptor" />
   <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.lang.textGen.behavior.BehaviorAspectDescriptor" />
   <unitInfo fileName="BufferParameter_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.textGen.behavior.BufferParameter_BehaviorDescriptor" />
-  <unitInfo fileName="CollectionAppendPart_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.lang.textGen.behavior.CollectionAppendPart_Behavior" />
   <unitInfo fileName="CollectionAppendPart_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.textGen.behavior.CollectionAppendPart_BehaviorDescriptor" />
   <unitInfo fileName="ConceptTextGenDeclaration_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.lang.textGen.behavior.ConceptTextGenDeclaration_BehaviorDescriptor" />
   <unitInfo fileName="ConstantStringAppendPart_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.lang.textGen.behavior.ConstantStringAppendPart_BehaviorDescriptor" />

@@ -52,7 +52,6 @@
   <unitInfo fileName="RowLayoutConstraint_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.ui.modeling.behavior.RowLayoutConstraint_BehaviorDescriptor" />
   <unitInfo fileName="ThisEventParam_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.ui.modeling.behavior.ThisEventParam_BehaviorDescriptor" />
   <unitInfo fileName="ThisUIObjectParam_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.ui.modeling.behavior.ThisUIObjectParam_BehaviorDescriptor" />
-  <unitInfo fileName="UIActionCode_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.ui.modeling.behavior.UIActionCode_Behavior" />
   <unitInfo fileName="UIActionCode_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.ui.modeling.behavior.UIActionCode_BehaviorDescriptor" />
   <unitInfo fileName="UIAction_BehaviorDescriptor.java" startLine="12" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.ui.modeling.behavior.UIAction_BehaviorDescriptor" />
   <unitInfo fileName="UIObjectFactory_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.ui.modeling.behavior.UIObjectFactory_BehaviorDescriptor" />

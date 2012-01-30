@@ -450,7 +450,6 @@
     </scopeInfo>
     <scopeInfo nodeId="8296861627646404084" fileName="TemporaryModelOwner.java" startLine="67" startPosition="0" endLine="88" endPosition="0" />
     <unitInfo nodeId="507022825981353211" fileName="TemporaryModelOwner.java" startLine="28" startPosition="82" endLine="23" endPosition="0" />
-    <unitInfo nodeId="507022825981353176" fileName="TemporaryModelOwner.java" startLine="23" startPosition="0" endLine="103" endPosition="0" unitName="jetbrains.mps.kernel.model.TemporaryModelOwner" />
     <unitInfo nodeId="507022825981353182" fileName="TemporaryModelOwner.java" startLine="34" startPosition="46" endLine="38" endPosition="5" unitName="jetbrains.mps.kernel.model.TemporaryModelOwner$1" />
     <unitInfo nodeId="507022825981353202" fileName="TemporaryModelOwner.java" startLine="26" startPosition="46" endLine="30" endPosition="5" unitName="jetbrains.mps.kernel.model.TemporaryModelOwner$2" />
   </root>

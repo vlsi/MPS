@@ -10,6 +10,6 @@ public class Extension_multiExtensionPoint__0 extends Extension.Default<String> 
   }
 
   public String get() {
-    return "dunya";
+    return "salam";
   }
 }

@@ -8,6 +8,7 @@
     </scopeInfo>
     <scopeInfo nodeId="1196985119947853644" fileName="SomeClass.java" startLine="7" startPosition="24" endLine="10" endPosition="3" />
     <unitInfo nodeId="1196985119947853655" fileName="SomeClass.java" startLine="9" startPosition="29" endLine="7" endPosition="0" />
+    <unitInfo nodeId="1196985119947853642" fileName="SomeClass.java" startLine="7" startPosition="0" endLine="12" endPosition="0" unitName="jetbrains.mps.testModels.anonymousClass1.SomeClass" />
   </root>
 </debugInfo>
 

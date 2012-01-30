@@ -1105,7 +1105,6 @@
       <varInfo nodeId="7782234301060592931" varName="duplicate" />
     </scopeInfo>
     <unitInfo nodeId="7782234301060592925" fileName="MethodDuplicatesProcessor.java" startLine="16" startPosition="43" endLine="15" endPosition="0" />
-    <unitInfo nodeId="7782234301060366093" fileName="MethodDuplicatesProcessor.java" startLine="15" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.baseLanguage.util.plugin.refactorings.MethodDuplicatesProcessor" />
   </root>
   <root nodeId="7782234301060403220">
     <nodeInfo nodeId="7782234301060403238" fileName="VariableDuplicatesProcessor.java" startLine="15" startPosition="86" endLine="16" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myOwner" />

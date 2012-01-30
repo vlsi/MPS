@@ -7,18 +7,15 @@
   <unitInfo fileName="InsertAfterPosition_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.pattern.behavior.InsertAfterPosition_BehaviorDescriptor" />
   <unitInfo fileName="InsertBeforePosition_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.pattern.behavior.InsertBeforePosition_BehaviorDescriptor" />
   <unitInfo fileName="InsertPosition_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.pattern.behavior.InsertPosition_BehaviorDescriptor" />
-  <unitInfo fileName="LinkPatternVariableDeclaration_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.lang.pattern.behavior.LinkPatternVariableDeclaration_Behavior" />
   <unitInfo fileName="LinkPatternVariableDeclaration_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.lang.pattern.behavior.LinkPatternVariableDeclaration_BehaviorDescriptor" />
   <unitInfo fileName="ListPattern_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.pattern.behavior.ListPattern_BehaviorDescriptor" />
   <unitInfo fileName="OrPatternClause_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.pattern.behavior.OrPatternClause_BehaviorDescriptor" />
   <unitInfo fileName="OrPatternVariableReference_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.pattern.behavior.OrPatternVariableReference_BehaviorDescriptor" />
   <unitInfo fileName="OrPattern_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.pattern.behavior.OrPattern_BehaviorDescriptor" />
   <unitInfo fileName="PatternExpression_BehaviorDescriptor.java" startLine="11" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.lang.pattern.behavior.PatternExpression_BehaviorDescriptor" />
-  <unitInfo fileName="PatternVariableDeclaration_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.lang.pattern.behavior.PatternVariableDeclaration_Behavior" />
   <unitInfo fileName="PatternVariableDeclaration_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.lang.pattern.behavior.PatternVariableDeclaration_BehaviorDescriptor" />
   <unitInfo fileName="PatternVariableReference_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.pattern.behavior.PatternVariableReference_BehaviorDescriptor" />
   <unitInfo fileName="Pattern_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.pattern.behavior.Pattern_BehaviorDescriptor" />
-  <unitInfo fileName="PropertyPatternVariableDeclaration_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.lang.pattern.behavior.PropertyPatternVariableDeclaration_Behavior" />
   <unitInfo fileName="PropertyPatternVariableDeclaration_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.lang.pattern.behavior.PropertyPatternVariableDeclaration_BehaviorDescriptor" />
   <unitInfo fileName="WildcardPattern_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.pattern.behavior.WildcardPattern_BehaviorDescriptor" />
   <root nodeId="111677556049506422">
