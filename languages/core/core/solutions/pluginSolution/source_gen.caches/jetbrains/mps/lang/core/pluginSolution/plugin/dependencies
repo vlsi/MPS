@@ -44,6 +44,20 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
+  <dependency className="jetbrains.mps.lang.core.pluginSolution.plugin.ExtensionDescriptor" file="ExtensionDescriptor.java">
+    <classNode dependClassName="java.lang.Iterable" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.util.Arrays" />
+    <classNode dependClassName="jetbrains.mps.lang.core.pluginSolution.plugin.Extension_GeneratorCache_" />
+    <classNode dependClassName="jetbrains.mps.smodel.structure.Extension" />
+    <classNode extendsClassName="jetbrains.mps.smodel.structure.DefaultExtensionDescriptor" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.core.pluginSolution.plugin.Extension_GeneratorCache_" file="Extension_GeneratorCache_.java">
+    <classNode dependClassName="jetbrains.mps.generator.GenerationCacheContainer" />
+    <classNode dependClassName="jetbrains.mps.ide.generator.GeneratorCacheComponent" />
+    <classNode dependClassName="jetbrains.mps.smodel.structure.Extension" />
+    <classNode extendsClassName="jetbrains.mps.smodel.structure.Default" />
+  </dependency>
   <dependency className="jetbrains.mps.lang.core.pluginSolution.plugin.FindLanguageConceptsUsages_Action" file="FindLanguageConceptsUsages_Action.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="java.lang.Object" />
