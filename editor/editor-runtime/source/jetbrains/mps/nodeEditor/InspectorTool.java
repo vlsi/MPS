@@ -26,6 +26,7 @@ import com.intellij.ui.LightColors;
 import com.intellij.ui.HyperlinkLabel;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.ide.icons.IdeIcons;
+import jetbrains.mps.openapi.editor.EditorInspector;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.nodeEditor.inspector.InspectorEditorComponent;
@@ -43,7 +44,7 @@ import javax.swing.event.HyperlinkListener;
 import javax.swing.event.HyperlinkEvent;
 import java.awt.BorderLayout;
 
-public class InspectorTool extends BaseProjectTool {
+public class InspectorTool extends BaseProjectTool implements EditorInspector {
   public static final String ID = "Inspector";
 
   private JPanel myComponent;
@@ -80,6 +81,11 @@ public class InspectorTool extends BaseProjectTool {
 
   protected boolean isInitiallyAvailable() {
     return true;
+  }
+
+  @Override
+  public void activate() {
+    openTool(true);
   }
 
   public EditorComponent getInspector() {
