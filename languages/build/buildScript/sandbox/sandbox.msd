@@ -6,6 +6,7 @@
   <sourcePath />
   <usedLanguages>
     <usedLanguage>798100da-4f0a-421a-b991-71f8c50ce5d2(jetbrains.mps.buildScript)</usedLanguage>
+    <usedLanguage>698a8d22-a104-47a0-ba8d-10e3ec237f13(jetbrains.mps.build.workflow)</usedLanguage>
   </usedLanguages>
 </solution>
 
