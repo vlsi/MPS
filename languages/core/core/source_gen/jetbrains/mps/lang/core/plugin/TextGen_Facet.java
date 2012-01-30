@@ -149,8 +149,12 @@ public class TextGen_Facet extends IFacet.Stub {
                   if (!(FileSystem.getInstance().runWriteTransaction(new Runnable() {
                     public void run() {
                       if (!(Boolean.TRUE.equals(pa.global().properties(new ITarget.Name("jetbrains.mps.lang.core.Generate.configure"), Generate_Facet.Target_configure.Variables.class).saveTransient()))) {
-                        TransientModelsModule.TransientSModelDescriptor tmd = (TransientModelsModule.TransientSModelDescriptor) outputMD;
-                        ((TransientModelsModule) tmd.getModule()).removeModel(tmd);
+                        final TransientModelsModule.TransientSModelDescriptor tmd = (TransientModelsModule.TransientSModelDescriptor) outputMD;
+                        ModelAccess.instance().requireWrite(new Runnable() {
+                          public void run() {
+                            ((TransientModelsModule) tmd.getModule()).removeModel(tmd);
+                          }
+                        });
                       }
                       CleanupManager.getInstance().cleanup();
                     }
