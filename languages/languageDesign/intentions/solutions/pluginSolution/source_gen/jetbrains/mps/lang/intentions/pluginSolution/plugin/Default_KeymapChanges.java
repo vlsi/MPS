@@ -10,6 +10,7 @@ import javax.swing.KeyStroke;
 public class Default_KeymapChanges extends BaseKeymapChanges {
   public Default_KeymapChanges() {
     // simple 
+    addSimpleShortcut("jetbrains.mps.lang.intentions.pluginSolution.plugin.ShowGenerationActions_Action", getShortcut("alt INSERT"));
     addSimpleShortcut("jetbrains.mps.lang.intentions.pluginSolution.plugin.ShowSurroundWithIntentions_Action", getShortcut("ctrl alt T"));
     // simple parameterized 
     // complex 
