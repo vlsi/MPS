@@ -43,7 +43,6 @@ import jetbrains.mps.smodel.loading.ModelLoadingState;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import java.util.Map;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.lang.core.pluginSolution.plugin.RetainedUtil;
 import jetbrains.mps.generator.generationTypes.IGenerationHandler;
 import jetbrains.mps.make.facet.pluginSolution.plugin.MakeGenerationHandler;
 import jetbrains.mps.smodel.resources.GResource;
