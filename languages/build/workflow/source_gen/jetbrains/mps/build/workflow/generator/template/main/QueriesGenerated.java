@@ -7,6 +7,7 @@ import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.build.workflow.behavior.BwfJavaModule_Behavior;
 import jetbrains.mps.generator.template.IfMacroContext;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
@@ -40,7 +41,18 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_7385586609667649380(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return "java.compile." + SPropertyOperations.getString(_context.getNode(), "name");
+    return BwfJavaModule_Behavior.call_getAntTargetName_7385586609667776611(_context.getNode());
+  }
+
+  public static Object propertyMacro_GetPropertyValue_7385586609667776493(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    StringBuilder sb = new StringBuilder();
+    for (SNode ref : SLinkOperations.getTargets(_context.getNode(), "dependencies", true)) {
+      if (sb.length() > 0) {
+        sb.append(", ");
+      }
+      sb.append(BwfJavaModule_Behavior.call_getAntTargetName_7385586609667776611(SLinkOperations.getTarget(ref, "target", false)));
+    }
+    return sb.toString();
   }
 
   public static Object propertyMacro_GetPropertyValue_7385586609667649445(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -60,6 +72,10 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_2769948622284790971(final IOperationContext operationContext, final IfMacroContext _context) {
+    return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "dependencies", true)).isNotEmpty();
+  }
+
+  public static boolean ifMacro_Condition_7385586609667776469(final IOperationContext operationContext, final IfMacroContext _context) {
     return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "dependencies", true)).isNotEmpty();
   }
 

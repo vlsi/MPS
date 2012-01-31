@@ -9,6 +9,7 @@
   <roots>
     <node type="8xvf.BwfProject" typeId="8xvf.2769948622284546673" id="2769948622284624385">
       <property name="name" nameId="tpck.1169194664001" value="myCore" />
+      <property name="temporaryFolder" nameId="8xvf.7385586609667765566" value="build/temp/temp" />
     </node>
   </roots>
   <root id="2769948622284624385">
@@ -150,6 +151,35 @@
       </node>
       <node role="dependencies" roleId="8xvf.4755209551904389320" type="8xvf.BwfJavaModuleReference" typeId="8xvf.4755209551904389316" id="4755209551904406801">
         <link role="target" roleId="8xvf.4755209551904389317" targetNodeId="4755209551904406791" resolveInfo="module2" />
+      </node>
+      <node role="dependencies" roleId="8xvf.4755209551904389320" type="8xvf.BwfJavaModuleReference" typeId="8xvf.4755209551904389316" id="7385586609667763183">
+        <link role="target" roleId="8xvf.4755209551904389317" targetNodeId="7385586609667763177" resolveInfo="module4" />
+      </node>
+    </node>
+    <node role="parts" roleId="8xvf.2769948622284574304" type="8xvf.BwfJavaModule" typeId="8xvf.4755209551904389307" id="7385586609667763177">
+      <property name="name" nameId="tpck.1169194664001" value="module4" />
+      <property name="outputFolder" nameId="8xvf.7385586609667649463" value="build/temp/module4" />
+      <node role="classpath" roleId="8xvf.4755209551904389314" type="8xvf.BwfPath" typeId="8xvf.4755209551904389308" id="7385586609667763179">
+        <property name="path" nameId="8xvf.4755209551904389309" value="mo4.deps" />
+      </node>
+      <node role="classpath" roleId="8xvf.4755209551904389314" type="8xvf.BwfPath" typeId="8xvf.4755209551904389308" id="7385586609667763180">
+        <property name="path" nameId="8xvf.4755209551904389309" value="log4j" />
+      </node>
+      <node role="sources" roleId="8xvf.4755209551904389313" type="8xvf.BwfPath" typeId="8xvf.4755209551904389308" id="7385586609667763178">
+        <property name="path" nameId="8xvf.4755209551904389309" value="module4/source" />
+      </node>
+      <node role="dependencies" roleId="8xvf.4755209551904389320" type="8xvf.BwfJavaModuleReference" typeId="8xvf.4755209551904389316" id="7385586609667763181">
+        <link role="target" roleId="8xvf.4755209551904389317" targetNodeId="4755209551904406797" resolveInfo="module3" />
+      </node>
+    </node>
+    <node role="parts" roleId="8xvf.2769948622284574304" type="8xvf.BwfJavaModule" typeId="8xvf.4755209551904389307" id="7385586609667763185">
+      <property name="name" nameId="tpck.1169194664001" value="module5" />
+      <property name="outputFolder" nameId="8xvf.7385586609667649463" value="build/temp/module5" />
+      <node role="dependencies" roleId="8xvf.4755209551904389320" type="8xvf.BwfJavaModuleReference" typeId="8xvf.4755209551904389316" id="7385586609667763186">
+        <link role="target" roleId="8xvf.4755209551904389317" targetNodeId="7385586609667763177" resolveInfo="module4" />
+      </node>
+      <node role="sources" roleId="8xvf.4755209551904389313" type="8xvf.BwfPath" typeId="8xvf.4755209551904389308" id="7385586609667763187">
+        <property name="path" nameId="8xvf.4755209551904389309" value="module5/source" />
       </node>
     </node>
   </root>

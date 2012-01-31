@@ -37,10 +37,13 @@ public class BwfProject_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_4tk4ky_c0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_4tk4ky_d0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_4tk4ky_e0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNodeList_4tk4ky_f0(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_4tk4ky_f0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_4tk4ky_g0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_4tk4ky_h0(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_4tk4ky_i0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_4tk4ky_j0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_4tk4ky_k0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNodeList_4tk4ky_l0(editorContext, node));
     return editorCell;
   }
 
@@ -77,7 +80,7 @@ public class BwfProject_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_4tk4ky_e0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "project structure:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "temporary folder:");
     editorCell.setCellId("Constant_4tk4ky_e0");
     workflowStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     {
@@ -100,7 +103,7 @@ public class BwfProject_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_4tk4ky_h0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "tasks:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "project structure:");
     editorCell.setCellId("Constant_4tk4ky_h0");
     workflowStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     {
@@ -111,8 +114,31 @@ public class BwfProject_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNodeList_4tk4ky_f0(EditorContext editorContext, SNode node) {
-    AbstractCellListHandler handler = new BwfProject_Editor.partsListHandler_4tk4ky_f0(node, "parts", editorContext);
+  private EditorCell createConstant_4tk4ky_j0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
+    editorCell.setCellId("Constant_4tk4ky_j0");
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+    }
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createConstant_4tk4ky_k0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "tasks:");
+    editorCell.setCellId("Constant_4tk4ky_k0");
+    workflowStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+    }
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createRefNodeList_4tk4ky_i0(EditorContext editorContext, SNode node) {
+    AbstractCellListHandler handler = new BwfProject_Editor.partsListHandler_4tk4ky_i0(node, "parts", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_parts");
     {
@@ -125,8 +151,8 @@ public class BwfProject_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNodeList_4tk4ky_i0(EditorContext editorContext, SNode node) {
-    AbstractCellListHandler handler = new BwfProject_Editor.tasksListHandler_4tk4ky_i0(node, "tasks", editorContext);
+  private EditorCell createRefNodeList_4tk4ky_l0(EditorContext editorContext, SNode node) {
+    AbstractCellListHandler handler = new BwfProject_Editor.tasksListHandler_4tk4ky_l0(node, "tasks", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_tasks");
     {
@@ -157,8 +183,31 @@ public class BwfProject_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static class partsListHandler_4tk4ky_f0 extends RefNodeListHandler {
-    public partsListHandler_4tk4ky_f0(SNode ownerNode, String childRole, EditorContext context) {
+  private EditorCell createProperty_4tk4ky_f0(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
+    provider.setRole("temporaryFolder");
+    provider.setNoTargetText("<no temporaryFolder>");
+    EditorCell editorCell;
+    editorCell = provider.createEditorCell(editorContext);
+    editorCell.setCellId("property_temporaryFolder");
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+      style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
+    }
+    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    SNode attributeConcept = provider.getRoleAttribute();
+    Class attributeKind = provider.getRoleAttributeClass();
+    if (attributeConcept != null) {
+      IOperationContext opContext = editorContext.getOperationContext();
+      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+      return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
+    } else
+    return editorCell;
+  }
+
+  private static class partsListHandler_4tk4ky_i0 extends RefNodeListHandler {
+    public partsListHandler_4tk4ky_i0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
@@ -193,8 +242,8 @@ public class BwfProject_Editor extends DefaultNodeEditor {
     }
   }
 
-  private static class tasksListHandler_4tk4ky_i0 extends RefNodeListHandler {
-    public tasksListHandler_4tk4ky_i0(SNode ownerNode, String childRole, EditorContext context) {
+  private static class tasksListHandler_4tk4ky_l0 extends RefNodeListHandler {
+    public tasksListHandler_4tk4ky_l0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 

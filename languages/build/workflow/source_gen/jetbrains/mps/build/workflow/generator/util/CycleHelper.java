@@ -18,11 +18,12 @@ import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.make.dependencies.graph.Graphs;
 import java.util.Collections;
+import java.util.Set;
+import java.util.HashSet;
 import java.util.Comparator;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
-import java.util.Set;
-import java.util.HashSet;
+import java.util.LinkedHashSet;
 import jetbrains.mps.make.dependencies.graph.IVertex;
 
 public class CycleHelper {
@@ -62,9 +63,13 @@ public class CycleHelper {
     List<List<CycleHelper.Module>> cycles = Graphs.findStronglyConnectedComponents(graph);
     Collections.reverse(cycles);
     int cycleCounter = 0;
-    for (final List<CycleHelper.Module> cycle : cycles) {
+    for (List<CycleHelper.Module> cycle : cycles) {
       if (cycle.size() < 2) {
         continue;
+      }
+      final Set<SNode> cycleModules = new HashSet<SNode>();
+      for (CycleHelper.Module m : cycle) {
+        cycleModules.add(m.getModule());
       }
 
       Collections.sort(cycle, new Comparator<CycleHelper.Module>() {
@@ -76,17 +81,28 @@ public class CycleHelper {
       SModel model = SNodeOperations.getModel(first);
       SNode cycleX = SModelOperations.createNewNode(model, "jetbrains.mps.build.workflow.structure.BwfJavaModule", null);
       SPropertyOperations.set(cycleX, "name", "java.modules.cycle." + ++cycleCounter);
-      SPropertyOperations.set(cycleX, "outputFolder", SPropertyOperations.getString(first, "outputFolder") + ".cycle");
+      SPropertyOperations.set(cycleX, "outputFolder", SPropertyOperations.getString(project, "temporaryFolder") + "/" + SPropertyOperations.getString(cycleX, "name"));
       SNodeOperations.insertPrevSiblingChild(first, cycleX);
-      Set<String> sources = new HashSet<String>();
-      Set<String> classpath = new HashSet<String>();
+      Set<String> sources = new LinkedHashSet<String>();
+      Set<String> classpath = new LinkedHashSet<String>();
+      Set<SNode> deps = new LinkedHashSet<SNode>();
+
       for (CycleHelper.Module m : cycle) {
         SNode module = m.getModule();
         ListSequence.fromList(SLinkOperations.getTargets(module, "dependencies", true)).removeWhere(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
-            return cycle.contains(SLinkOperations.getTarget(it, "target", false));
+            return cycleModules.contains(SLinkOperations.getTarget(it, "target", false));
           }
         });
+        deps.addAll(ListSequence.fromList(SLinkOperations.getTargets(module, "dependencies", true)).where(new IWhereFilter<SNode>() {
+          public boolean accept(SNode it) {
+            return (SLinkOperations.getTarget(it, "target", false) != null);
+          }
+        }).select(new ISelector<SNode, SNode>() {
+          public SNode select(SNode it) {
+            return SLinkOperations.getTarget(it, "target", false);
+          }
+        }).toListSequence());
         SNode mref = SModelOperations.createNewNode(model, "jetbrains.mps.build.workflow.structure.BwfJavaModuleReference", null);
         SLinkOperations.setTarget(mref, "target", cycleX, false);
         ListSequence.fromList(SLinkOperations.getTargets(module, "dependencies", true)).addElement(mref);
@@ -111,7 +127,11 @@ public class CycleHelper {
         SPropertyOperations.set(path, "path", cpath);
         ListSequence.fromList(SLinkOperations.getTargets(cycleX, "classpath", true)).addElement(path);
       }
-      // TODO collect dependencies!! 
+      for (SNode dep : deps) {
+        SNode ref = SModelOperations.createNewNode(model, "jetbrains.mps.build.workflow.structure.BwfJavaModuleReference", null);
+        SLinkOperations.setTarget(ref, "target", dep, false);
+        ListSequence.fromList(SLinkOperations.getTargets(cycleX, "dependencies", true)).addElement(ref);
+      }
     }
   }
 

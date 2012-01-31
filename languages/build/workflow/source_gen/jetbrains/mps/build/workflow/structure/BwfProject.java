@@ -14,6 +14,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class BwfProject extends BaseConcept implements INamedConcept {
   public static final String concept = "jetbrains.mps.build.workflow.structure.BwfProject";
+  public static final String TEMPORARY_FOLDER = "temporaryFolder";
   public static final String NAME = "name";
   public static final String SHORT_DESCRIPTION = "shortDescription";
   public static final String ALIAS = "alias";
@@ -24,6 +25,14 @@ public class BwfProject extends BaseConcept implements INamedConcept {
 
   public BwfProject(SNode node) {
     super(node);
+  }
+
+  public String getTemporaryFolder() {
+    return this.getProperty(BwfProject.TEMPORARY_FOLDER);
+  }
+
+  public void setTemporaryFolder(String value) {
+    this.setProperty(BwfProject.TEMPORARY_FOLDER, value);
   }
 
   public String getName() {

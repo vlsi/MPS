@@ -31,5 +31,19 @@
     </scopeInfo>
     <unitInfo nodeId="2769948622284605897" fileName="BwfTask_Behavior.java" startLine="11" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.build.workflow.behavior.BwfTask_Behavior" />
   </root>
+  <root nodeId="7385586609667776608">
+    <nodeInfo nodeId="7385586609667776622" fileName="BwfJavaModule_Behavior.java" startLine="12" startPosition="82" endLine="13" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7385586609667776608" fileName="BwfJavaModule_Behavior.java" startLine="8" startPosition="37" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="7385586609667776608" fileName="BwfJavaModule_Behavior.java" startLine="11" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getAntTargetName_7385586609667776611#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;" />
+    <scopeInfo nodeId="7385586609667776610" fileName="BwfJavaModule_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
+    <scopeInfo nodeId="7385586609667776614" fileName="BwfJavaModule_Behavior.java" startLine="12" startPosition="82" endLine="13" endPosition="77" />
+    <scopeInfo nodeId="7385586609667776608" fileName="BwfJavaModule_Behavior.java" startLine="8" startPosition="37" endLine="11" endPosition="0">
+      <varInfo nodeId="7385586609667776608" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="7385586609667776608" fileName="BwfJavaModule_Behavior.java" startLine="11" startPosition="0" endLine="15" endPosition="0">
+      <varInfo nodeId="7385586609667776608" varName="thisNode" />
+    </scopeInfo>
+    <unitInfo nodeId="7385586609667776608" fileName="BwfJavaModule_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.build.workflow.behavior.BwfJavaModule_Behavior" />
+  </root>
 </debugInfo>
 

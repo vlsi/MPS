@@ -1,19 +1,19 @@
 <project name="myCore">
   <target name="java.compile.java.modules.cycle.1">
-    <javac destdir="build/temp/module1.cycle">
+    <javac destdir="build/temp/temp/java.modules.cycle.1">
       <src path="module1/source" />
 
       <src path="module2/source" />
 
       <classpath path="mo1.deps" />
 
-      <classpath path="mo2.deps" />
-
       <classpath path="junit" />
+
+      <classpath path="mo2.deps" />
 
     </javac>
   </target>
-  <target name="java.compile.module1">
+  <target name="java.compile.module1" depends="java.compile.java.modules.cycle.1">
     <javac destdir="build/temp/module1">
       <src path="module1/source" />
 
@@ -21,13 +21,11 @@
 
       <classpath path="junit" />
 
-      <classpath path="build/temp/module2" />
-
-      <classpath path="build/temp/module1.cycle" />
+      <classpath path="build/temp/temp/java.modules.cycle.1" />
 
     </javac>
   </target>
-  <target name="java.compile.module2">
+  <target name="java.compile.module2" depends="java.compile.java.modules.cycle.1">
     <javac destdir="build/temp/module2">
       <src path="module2/source" />
 
@@ -35,13 +33,31 @@
 
       <classpath path="junit" />
 
-      <classpath path="build/temp/module1" />
-
-      <classpath path="build/temp/module1.cycle" />
+      <classpath path="build/temp/temp/java.modules.cycle.1" />
 
     </javac>
   </target>
-  <target name="java.compile.module3">
+  <target name="java.compile.java.modules.cycle.2" depends="java.compile.module1, java.compile.module2">
+    <javac destdir="build/temp/temp/java.modules.cycle.2">
+      <src path="module3/source" />
+
+      <src path="module4/source" />
+
+      <classpath path="mo3.deps" />
+
+      <classpath path="junit" />
+
+      <classpath path="mo4.deps" />
+
+      <classpath path="log4j" />
+
+      <classpath path="build/temp/module1" />
+
+      <classpath path="build/temp/module2" />
+
+    </javac>
+  </target>
+  <target name="java.compile.module3" depends="java.compile.module1, java.compile.module2, java.compile.java.modules.cycle.2">
     <javac destdir="build/temp/module3">
       <src path="module3/source" />
 
@@ -52,6 +68,28 @@
       <classpath path="build/temp/module1" />
 
       <classpath path="build/temp/module2" />
+
+      <classpath path="build/temp/temp/java.modules.cycle.2" />
+
+    </javac>
+  </target>
+  <target name="java.compile.module4" depends="java.compile.java.modules.cycle.2">
+    <javac destdir="build/temp/module4">
+      <src path="module4/source" />
+
+      <classpath path="mo4.deps" />
+
+      <classpath path="log4j" />
+
+      <classpath path="build/temp/temp/java.modules.cycle.2" />
+
+    </javac>
+  </target>
+  <target name="java.compile.module5" depends="java.compile.module4">
+    <javac destdir="build/temp/module5">
+      <src path="module5/source" />
+
+      <classpath path="build/temp/module4" />
 
     </javac>
   </target>
