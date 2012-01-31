@@ -8,6 +8,7 @@ import jetbrains.mps.lang.typesystem.runtime.IHelginsDescriptor;
 import jetbrains.mps.ide.findusages.BaseFindUsagesDescriptor;
 import java.util.Collection;
 import jetbrains.mps.generator.runtime.TemplateModule;
+import jetbrains.mps.generator.runtime.TemplateUtil;
 
 public class Language extends LanguageRuntime {
   public static ModuleReference MODULE_REFERENCE = ModuleReference.fromString("798100da-4f0a-421a-b991-71f8c50ce5d2(jetbrains.mps.buildScript)");
@@ -31,6 +32,6 @@ public class Language extends LanguageRuntime {
   }
 
   public Collection<TemplateModule> getGenerators() {
-    return null;
+    return TemplateUtil.<TemplateModule>asCollection(TemplateUtil.createInterpretedGenerator(this, "14663b86-7294-4d82-bdbf-e858bd3af9b1(jetbrains.mps.buildScript#3595702787188034882)"));
   }
 }

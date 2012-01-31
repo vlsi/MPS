@@ -5,7 +5,18 @@
     <modelRoot path="${language_descriptor}/utilModels" />
   </models>
   <accessoryModels />
-  <generators />
+  <generators>
+    <generator name="main" generatorUID="jetbrains.mps.buildScript#3595702787188034882" uuid="14663b86-7294-4d82-bdbf-e858bd3af9b1">
+      <models>
+        <modelRoot path="${language_descriptor}/generator/template" />
+      </models>
+      <external-templates />
+      <usedDevKits>
+        <usedDevKit>fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)</usedDevKit>
+      </usedDevKits>
+      <mapping-priorities />
+    </generator>
+  </generators>
   <sourcePath />
   <dependencies>
     <dependency reexport="false">1ed103c3-3aa6-49b7-9c21-6765ee11f224(MPS.Editor)</dependency>
@@ -18,6 +29,8 @@
   <usedDevKits>
     <usedDevKit>2677cb18-f558-4e33-bc38-a5139cee06dc(jetbrains.mps.devkit.language-design)</usedDevKit>
   </usedDevKits>
-  <extendedLanguages />
+  <extendedLanguages>
+    <extendedLanguage>698a8d22-a104-47a0-ba8d-10e3ec237f13(jetbrains.mps.build.workflow)</extendedLanguage>
+  </extendedLanguages>
 </language>
 
