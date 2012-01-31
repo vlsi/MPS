@@ -47,7 +47,7 @@
     <classNode dependClassName="jetbrains.mps.lang.intentions.pluginSolution.plugin.Intentions_Order" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior" />
-    <classNode dependClassName="jetbrains.mps.lang.structure.pluginSolution.plugin.ConceptEditorHelper" />
+    <classNode dependClassName="jetbrains.mps.lang.structure.plugin.ConceptEditorHelper" />
     <classNode dependClassName="jetbrains.mps.lang.structure.pluginSolution.plugin.ConceptEditorOpenHelper" />
     <classNode dependClassName="jetbrains.mps.smodel.LanguageAspect" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />

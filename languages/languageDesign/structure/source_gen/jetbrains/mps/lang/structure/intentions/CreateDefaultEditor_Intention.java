@@ -18,7 +18,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.structure.pluginSolution.plugin.ConceptEditorHelper;
+import jetbrains.mps.lang.structure.plugin.ConceptEditorHelper;
 import jetbrains.mps.lang.editor.intentions.DefaultEditorBuilder;
 
 public class CreateDefaultEditor_Intention extends BaseIntention implements Intention {
