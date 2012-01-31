@@ -608,9 +608,9 @@
     <scopeInfo nodeId="6620706402222880344" fileName="QueriesGenerated.java" startLine="772" startPosition="151" endLine="773" endPosition="147" />
   </root>
   <root nodeId="1215266411913">
-    <nodeInfo nodeId="5023285075122028228" fileName="QueriesGenerated.java" startLine="71" startPosition="144" endLine="72" endPosition="262" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5023285075122028228" fileName="QueriesGenerated.java" startLine="71" startPosition="144" endLine="72" endPosition="1026" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5023285075122038876" fileName="QueriesGenerated.java" startLine="75" startPosition="149" endLine="76" endPosition="1188" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <scopeInfo nodeId="1216225645805" fileName="QueriesGenerated.java" startLine="71" startPosition="144" endLine="72" endPosition="262" />
+    <scopeInfo nodeId="1216225645805" fileName="QueriesGenerated.java" startLine="71" startPosition="144" endLine="72" endPosition="1026" />
     <scopeInfo nodeId="880980402160600934" fileName="QueriesGenerated.java" startLine="75" startPosition="149" endLine="76" endPosition="1188" />
   </root>
   <root nodeId="1215266495083">

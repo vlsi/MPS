@@ -1,9 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.lang.core.plugin.Core_ApplicationPlugin" file="Core_ApplicationPlugin.java">
-    <classNode dependClassName="com.intellij.openapi.extensions.PluginId" />
-    <classNode extendsClassName="jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin" />
-  </dependency>
   <dependency className="jetbrains.mps.lang.core.plugin.ExtensionDescriptor" file="ExtensionDescriptor.java">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
