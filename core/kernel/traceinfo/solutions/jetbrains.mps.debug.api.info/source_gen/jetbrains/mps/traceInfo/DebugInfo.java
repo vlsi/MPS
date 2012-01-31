@@ -16,8 +16,8 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
-import jetbrains.mps.internal.collections.runtime.SetSequence;
 import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.ArrayList;
 import org.jdom.Element;
 import java.util.Arrays;
@@ -197,7 +197,12 @@ public class DebugInfo {
 
   @Nullable
   public UnitPositionInfo getUnitForNode(String nodeId) {
-    for (UnitPositionInfo element : Sequence.fromIterable(MapSequence.fromMap(myRoots).values()).translate(new ITranslator2<DebugInfoRoot, UnitPositionInfo>() {
+    return ListSequence.fromList(getUnitsForNode(nodeId)).first();
+  }
+
+  @NotNull
+  public List<UnitPositionInfo> getUnitsForNode(final String nodeId) {
+    return Sequence.fromIterable(MapSequence.fromMap(myRoots).values()).translate(new ITranslator2<DebugInfoRoot, UnitPositionInfo>() {
       public Iterable<UnitPositionInfo> translate(DebugInfoRoot it) {
         return SetSequence.fromSet(it.getUnitPositions()).sort(new ISelector<UnitPositionInfo, Comparable<?>>() {
           public Comparable<?> select(UnitPositionInfo position) {
@@ -205,12 +210,11 @@ public class DebugInfo {
           }
         }, true);
       }
-    })) {
-      if (eq_exfyrk_a0a0a0k(element.getNodeId(), nodeId)) {
-        return element;
+    }).where(new IWhereFilter<UnitPositionInfo>() {
+      public boolean accept(UnitPositionInfo it) {
+        return eq_exfyrk_a0a0a0a0a0a0a11(it.getNodeId(), nodeId);
       }
-    }
-    return null;
+    }).toListSequence();
   }
 
   @Nullable
@@ -360,7 +364,7 @@ public class DebugInfo {
     );
   }
 
-  private static boolean eq_exfyrk_a0a0a0k(Object a, Object b) {
+  private static boolean eq_exfyrk_a0a0a0a0a0a0a11(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b
