@@ -14,6 +14,7 @@ import jetbrains.mps.ide.project.ProjectHelper;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.baseLanguage.util.plugin.refactorings.MethodRefactoringUtils;
+import jetbrains.mps.progress.ProgressMonitorAdapter;
 import jetbrains.mps.ide.findusages.model.SearchResult;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.baseLanguage.util.plugin.refactorings.InlineMethodRefactoring;
@@ -52,10 +53,10 @@ public class InlineMethodDialogModel {
   private void findUssages() {
     if (this.myForAll) {
       ProgressManager.getInstance().run(new Task.Modal(ProjectHelper.toIdeaProject(InlineMethodDialogModel.this.myOperationContext.getProject()), "Searching for ussages", true) {
-        public void run(@NotNull final ProgressIndicator indiactor) {
+        public void run(@NotNull final ProgressIndicator indicator) {
           ModelAccess.instance().runReadAction(new Runnable() {
             public void run() {
-              InlineMethodDialogModel.this.myResults = MethodRefactoringUtils.findMethodUsages(InlineMethodDialogModel.this.myMethod, indiactor);
+              InlineMethodDialogModel.this.myResults = MethodRefactoringUtils.findMethodUsages(InlineMethodDialogModel.this.myMethod, new ProgressMonitorAdapter(indicator));
             }
           });
         }

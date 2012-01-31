@@ -5,9 +5,17 @@ package jetbrains.mps.baseLanguage.pluginSolution.plugin;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.ide.findusages.model.SearchResults;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import java.util.List;
-import jetbrains.mps.baseLanguage.util.plugin.refactorings.MethodRefactoringUtils;
+import java.util.ArrayList;
+import com.intellij.openapi.progress.ProgressManager;
+import com.intellij.openapi.progress.Task;
+import jetbrains.mps.ide.project.ProjectHelper;
+import org.jetbrains.annotations.NotNull;
+import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.baseLanguage.util.plugin.refactorings.MethodRefactoringUtils;
+import jetbrains.mps.progress.ProgressMonitorAdapter;
 import jetbrains.mps.ide.findusages.model.SearchResult;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -34,11 +42,20 @@ public class InlineMethodRefactoringAnalyzer {
   }
 
   public String findProblems(final boolean forAll, final SearchResults<SNode> ussages) {
-    final List<SNode> myOverriding = MethodRefactoringUtils.findOverridingMethods(this.myMethod, this.myOperationContext);
+    final Wrappers._T<List<SNode>> myOverriding = new Wrappers._T<List<SNode>>(new ArrayList<SNode>());
+    ProgressManager.getInstance().run(new Task.Modal(ProjectHelper.toIdeaProject(InlineMethodRefactoringAnalyzer.this.myOperationContext.getProject()), "Search for overriding methods", true) {
+      public void run(@NotNull final ProgressIndicator indicator) {
+        ModelAccess.instance().runReadAction(new Runnable() {
+          public void run() {
+            myOverriding.value = MethodRefactoringUtils.findOverridingMethods(InlineMethodRefactoringAnalyzer.this.myMethod, InlineMethodRefactoringAnalyzer.this.myOperationContext, new ProgressMonitorAdapter(indicator));
+          }
+        });
+      }
+    });
     final StringBuffer errors = new StringBuffer();
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        errors.append(InlineMethodRefactoringAnalyzer.this.getOverridingErrors(myOverriding));
+        errors.append(InlineMethodRefactoringAnalyzer.this.getOverridingErrors(myOverriding.value));
         if (forAll) {
           for (SearchResult<SNode> res : ListSequence.fromList(ussages.getSearchResults())) {
             InlineMethodRefactoringAnalyzer.this.appendRefactoringProblems(res.getObject(), errors);

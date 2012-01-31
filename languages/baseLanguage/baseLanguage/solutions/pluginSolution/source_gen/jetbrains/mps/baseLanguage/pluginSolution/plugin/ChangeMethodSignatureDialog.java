@@ -29,10 +29,15 @@ import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.SModelOperations;
 import javax.swing.border.TitledBorder;
-import jetbrains.mps.baseLanguage.util.plugin.refactorings.MethodRefactoringUtils;
-import java.util.ArrayList;
-import jetbrains.mps.ide.dialogs.DialogDimensionsSettings;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
+import java.util.ArrayList;
+import com.intellij.openapi.progress.ProgressManager;
+import com.intellij.openapi.progress.Task;
+import org.jetbrains.annotations.NotNull;
+import com.intellij.openapi.progress.ProgressIndicator;
+import jetbrains.mps.baseLanguage.util.plugin.refactorings.MethodRefactoringUtils;
+import jetbrains.mps.progress.ProgressMonitorAdapter;
+import jetbrains.mps.ide.dialogs.DialogDimensionsSettings;
 import jetbrains.mps.baseLanguage.behavior.BaseMethodDeclaration_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -105,10 +110,19 @@ public class ChangeMethodSignatureDialog extends BaseDialog {
 
   @BaseDialog.Button(position = 0, name = "Refactor", mnemonic = 'R', defaultButton = true)
   public void onOk() {
-    final List<SNode> methodsToRefactor = MethodRefactoringUtils.findOverridingMethods(this.myDeclaration, this.myOperationContext);
-    ListSequence.fromList(methodsToRefactor).addElement(myDeclaration);
+    final Wrappers._T<List<SNode>> methodsToRefactor = new Wrappers._T<List<SNode>>(new ArrayList<SNode>());
+    ProgressManager.getInstance().run(new Task.Modal(ProjectHelper.toIdeaProject(this.myOperationContext.getProject()), "Search for overriding methods", true) {
+      public void run(@NotNull final ProgressIndicator indicator) {
+        ModelAccess.instance().runReadAction(new Runnable() {
+          public void run() {
+            methodsToRefactor.value = MethodRefactoringUtils.findOverridingMethods(ChangeMethodSignatureDialog.this.myDeclaration, ChangeMethodSignatureDialog.this.myOperationContext, new ProgressMonitorAdapter(indicator));
+          }
+        });
+      }
+    });
+    ListSequence.fromList(methodsToRefactor.value).addElement(myDeclaration);
     myRefactorings = ListSequence.fromList(new ArrayList<ChangeMethodSignatureRefactoring>());
-    for (SNode method : ListSequence.fromList(methodsToRefactor)) {
+    for (SNode method : ListSequence.fromList(methodsToRefactor.value)) {
       ListSequence.fromList(myRefactorings).addElement(new ChangeMethodSignatureRefactoring(this.myParameters, method));
     }
     this.dispose();

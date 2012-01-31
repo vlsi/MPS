@@ -5,16 +5,8 @@ package jetbrains.mps.baseLanguage.util.plugin.refactorings;
 import java.util.List;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import java.util.ArrayList;
-import com.intellij.openapi.progress.ProgressManager;
-import com.intellij.openapi.progress.Task;
-import jetbrains.mps.ide.project.ProjectHelper;
-import org.jetbrains.annotations.NotNull;
-import com.intellij.openapi.progress.ProgressIndicator;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.progress.ProgressMonitorAdapter;
 import jetbrains.mps.progress.ProgressMonitor;
+import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -28,18 +20,9 @@ public class MethodRefactoringUtils {
   public MethodRefactoringUtils() {
   }
 
-  public static List<SNode> findOverridingMethods(final SNode method, IOperationContext operationContext) {
-    final Wrappers._T<List<SNode>> results = new Wrappers._T<List<SNode>>(new ArrayList<SNode>());
-    ProgressManager.getInstance().run(new Task.Modal(ProjectHelper.toIdeaProject(operationContext.getProject()), "Search for overriding methods", true) {
-      public void run(@NotNull final ProgressIndicator indicator) {
-        ModelAccess.instance().runReadAction(new Runnable() {
-          public void run() {
-            results.value = MethodRefactoringUtils.findOverridingMethods(method, new ProgressMonitorAdapter(indicator));
-          }
-        });
-      }
-    });
-    return results.value;
+  public static List<SNode> findOverridingMethods(final SNode method, IOperationContext operationContext, ProgressMonitor monitor) {
+    List<SNode> results = MethodRefactoringUtils.findOverridingMethods(method, monitor);
+    return results;
   }
 
   public static List<SNode> findOverridingMethods(SNode method, ProgressMonitor progressMonitor) {
@@ -68,7 +51,7 @@ public class MethodRefactoringUtils {
     return results;
   }
 
-  public static SearchResults findMethodUsages(SNode method, ProgressIndicator progressIndicator) {
-    return FindUtils.getSearchResults(new ProgressMonitorAdapter(progressIndicator), method, GlobalScope.getInstance(), "jetbrains.mps.baseLanguage.findUsages.ExactMethodUsages_Finder");
+  public static SearchResults findMethodUsages(SNode method, ProgressMonitor progressMonitor) {
+    return FindUtils.getSearchResults(progressMonitor, method, GlobalScope.getInstance(), "jetbrains.mps.baseLanguage.findUsages.ExactMethodUsages_Finder");
   }
 }
