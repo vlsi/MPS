@@ -34,7 +34,6 @@ public class XmlElement_TextGen extends SNodeTextGen {
     this.decreaseDepth();
     if (ListSequence.fromList(SLinkOperations.getTargets(node, "content", true)).isEmpty() && SPropertyOperations.getBoolean(node, "shortEmptyNotation")) {
       this.append(" />");
-      this.appendNewLine();
       return;
     }
     this.append(">");
