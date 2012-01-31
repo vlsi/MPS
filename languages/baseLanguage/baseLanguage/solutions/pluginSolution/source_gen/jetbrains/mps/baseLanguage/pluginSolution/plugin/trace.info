@@ -1699,9 +1699,7 @@
     <scopeInfo nodeId="6573807532044001589" fileName="CommentStatements_Action.java" startLine="59" startPosition="57" endLine="63" endPosition="11" />
     <scopeInfo nodeId="6573807532044001589" fileName="CommentStatements_Action.java" startLine="74" startPosition="5" endLine="78" endPosition="5" />
     <scopeInfo nodeId="6573807532044001589" fileName="CommentStatements_Action.java" startLine="26" startPosition="0" endLine="31" endPosition="3" />
-    <scopeInfo nodeId="6573807532044001589" fileName="CommentStatements_Action.java" startLine="58" startPosition="26" endLine="64" endPosition="9">
-      <varInfo nodeId="6573807532044001589" varName="node" />
-    </scopeInfo>
+    <scopeInfo nodeId="6573807532044001589" fileName="CommentStatements_Action.java" startLine="58" startPosition="26" endLine="64" endPosition="9" />
     <scopeInfo nodeId="6573807532044001589" fileName="CommentStatements_Action.java" startLine="82" startPosition="96" endLine="90" endPosition="5" />
     <scopeInfo nodeId="6573807532044001589" fileName="CommentStatements_Action.java" startLine="37" startPosition="89" endLine="48" endPosition="5" />
     <scopeInfo nodeId="6573807532044001589" fileName="CommentStatements_Action.java" startLine="81" startPosition="0" endLine="92" endPosition="0">
@@ -13150,7 +13148,6 @@
       <varInfo nodeId="8794595397332155309" varName="duplicate" />
     </scopeInfo>
     <unitInfo nodeId="8794595397332155300" fileName="MethodDuplicatesProcessor.java" startLine="17" startPosition="43" endLine="16" endPosition="0" />
-    <unitInfo nodeId="8794595397332155286" fileName="MethodDuplicatesProcessor.java" startLine="16" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.baseLanguage.pluginSolution.plugin.MethodDuplicatesProcessor" />
   </root>
   <root nodeId="8794595397332155338">
     <nodeInfo nodeId="8794595397332155347" fileName="VariableDuplicatesProcessor.java" startLine="15" startPosition="86" endLine="16" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myOwner" />
@@ -13167,7 +13164,6 @@
       <varInfo nodeId="8794595397332155361" varName="duplicate" />
     </scopeInfo>
     <unitInfo nodeId="8794595397332155352" fileName="VariableDuplicatesProcessor.java" startLine="16" startPosition="43" endLine="15" endPosition="0" />
-    <unitInfo nodeId="8794595397332155338" fileName="VariableDuplicatesProcessor.java" startLine="15" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.baseLanguage.pluginSolution.plugin.VariableDuplicatesProcessor" />
   </root>
   <root nodeId="8794595397332155375">
     <nodeInfo nodeId="8794595397332155386" fileName="AskDialog.java" startLine="12" startPosition="43" endLine="13" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myPanel" />
