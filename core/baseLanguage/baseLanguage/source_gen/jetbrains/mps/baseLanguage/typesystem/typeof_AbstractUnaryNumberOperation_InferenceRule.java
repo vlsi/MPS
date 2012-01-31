@@ -36,7 +36,7 @@ public class typeof_AbstractUnaryNumberOperation_InferenceRule extends AbstractI
         public void run() {
           {
             IMatchingPattern pattern_lpfp9b_a0b0 = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.PrimitiveType");
-            SNode coercedNode_lpfp9b_a0b0 = TypeChecker.getInstance().getRuntimeSupport().coerce_(typeCheckingContext.getRepresentative(exprType), pattern_lpfp9b_a0b0);
+            SNode coercedNode_lpfp9b_a0b0 = TypeChecker.getInstance().getRuntimeSupport().coerce_(typeCheckingContext.getExpandedType(exprType), pattern_lpfp9b_a0b0);
             if (coercedNode_lpfp9b_a0b0 != null) {
               {
                 SNode _nodeToCheck_1029348928467 = operation;
@@ -47,7 +47,7 @@ public class typeof_AbstractUnaryNumberOperation_InferenceRule extends AbstractI
               {
                 SNode _nodeToCheck_1029348928467 = operation;
                 EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1239715051376", 0, null);
-                typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1239715051378", true), (SNode) typeCheckingContext.getRepresentative(exprType), _info_12389875345);
+                typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1239715051378", true), (SNode) typeCheckingContext.getExpandedType(exprType), _info_12389875345);
               }
             }
           }

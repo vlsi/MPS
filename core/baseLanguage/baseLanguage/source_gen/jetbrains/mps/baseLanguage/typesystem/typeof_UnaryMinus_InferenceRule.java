@@ -35,7 +35,7 @@ public class typeof_UnaryMinus_InferenceRule extends AbstractInferenceRule_Runti
       final SNode exType = typeCheckingContext.getRepresentative(expressionType_typevar_7602524515424797598);
       typeCheckingContext.whenConcrete(exType, new Runnable() {
         public void run() {
-          SNode type = typeCheckingContext.getOverloadedOperationType(minus, typeCheckingContext.getRepresentative(exType), new typeof_UnaryMinus_InferenceRule.QuotationClass_2vfzm_a2a0a0a2a0().createNode(typeCheckingContext));
+          SNode type = typeCheckingContext.getOverloadedOperationType(minus, typeCheckingContext.getExpandedType(exType), new typeof_UnaryMinus_InferenceRule.QuotationClass_2vfzm_a2a0a0a2a0().createNode(typeCheckingContext));
           if (type != null) {
             {
               SNode _nodeToCheck_1029348928467 = minus;

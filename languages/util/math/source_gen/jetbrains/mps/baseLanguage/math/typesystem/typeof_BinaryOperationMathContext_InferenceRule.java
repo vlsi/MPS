@@ -96,7 +96,7 @@ public class typeof_BinaryOperationMathContext_InferenceRule extends AbstractInf
                     }
                   }
                 }
-                SNode opType = typeCheckingContext.getOverloadedOperationType(op, typeCheckingContext.getRepresentative(leftType), typeCheckingContext.getRepresentative(rightType));
+                SNode opType = typeCheckingContext.getOverloadedOperationType(op, typeCheckingContext.getExpandedType(leftType), typeCheckingContext.getExpandedType(rightType));
                 if (!(SNodeOperations.isInstanceOf(opType, "jetbrains.mps.baseLanguage.math.structure.BigComplexType") || SNodeOperations.isInstanceOf(opType, "jetbrains.mps.baseLanguage.math.structure.BigDecimalType") || (SNodeOperations.isInstanceOf(opType, "jetbrains.mps.baseLanguage.math.structure.MatrixOrVectorType") && (SNodeOperations.isInstanceOf(MathUtil.getUnboxedElementType(opType), "jetbrains.mps.baseLanguage.math.structure.BigComplexType") || SNodeOperations.isInstanceOf(MathUtil.getUnboxedElementType(opType), "jetbrains.mps.baseLanguage.math.structure.BigDecimalType"))))) {
                   {
                     MessageTarget errorTarget = new NodeMessageTarget();
