@@ -25502,7 +25502,7 @@
                                               <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="dbrf.~AbstractButton%dsetIcon(javax%dswing%dIcon)%cvoid" resolveInfo="setIcon" />
                                               <node role="actualArgument" roleId="tpee.1068499141038" type="tp4k.IconResourceExpression" typeId="tp4k.6759767305207977805" id="8794595397331725176">
                                                 <node role="icon" roleId="tp4k.6759767305207977806" type="tp4k.IconResource" typeId="tp4k.2330114057060456691" id="8794595397331725177">
-                                                  <property name="path" nameId="tp4k.7855019336153226684" value="${language_descriptor}/icons/classType.png" />
+                                                  <property name="path" nameId="tp4k.7855019336153226684" value="${solution_descriptor}/icons/classType.png" />
                                                 </node>
                                               </node>
                                             </node>
