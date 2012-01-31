@@ -20,7 +20,6 @@ public class BwfProject extends BaseConcept implements INamedConcept {
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String PARTS = "parts";
-  public static final String TASKS = "tasks";
   public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
 
   public BwfProject(SNode node) {
@@ -85,26 +84,6 @@ public class BwfProject extends BaseConcept implements INamedConcept {
 
   public void insertParts(BwfProjectPart prev, BwfProjectPart node) {
     this.insertChild(prev, BwfProject.PARTS, node);
-  }
-
-  public int getTasksesCount() {
-    return this.getChildCount(BwfProject.TASKS);
-  }
-
-  public Iterator<BwfTask> taskses() {
-    return this.children(BwfTask.class, BwfProject.TASKS);
-  }
-
-  public List<BwfTask> getTaskses() {
-    return this.getChildren(BwfTask.class, BwfProject.TASKS);
-  }
-
-  public void addTasks(BwfTask node) {
-    this.addChild(BwfProject.TASKS, node);
-  }
-
-  public void insertTasks(BwfTask prev, BwfTask node) {
-    this.insertChild(prev, BwfProject.TASKS, node);
   }
 
   public int getSmodelAttributesCount() {

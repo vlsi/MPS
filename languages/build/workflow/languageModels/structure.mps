@@ -17,7 +17,7 @@
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="2769948622284546675">
       <property name="name" nameId="tpck.1169194664001" value="BwfTask" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Tasks" />
-      <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
+      <link role="extends" roleId="tpce.1071489389519" targetNodeId="2769948622284546695" resolveInfo="BwfProjectPart" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="2769948622284546677">
       <property name="name" nameId="tpck.1169194664001" value="BwfSubTask" />
@@ -74,12 +74,6 @@
       <property name="role" nameId="tpce.1071599776563" value="parts" />
       <property name="sourceCardinality" nameId="tpce.1071599893252" value="0..n" />
       <link role="target" roleId="tpce.1071599976176" targetNodeId="2769948622284546695" resolveInfo="BwfProjectPart" />
-    </node>
-    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="2769948622284546680">
-      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
-      <property name="role" nameId="tpce.1071599776563" value="tasks" />
-      <property name="sourceCardinality" nameId="tpce.1071599893252" value="0..n" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="2769948622284546675" resolveInfo="BwfTask" />
     </node>
     <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="2769948622284546674">
       <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tpck.1169194658468" resolveInfo="INamedConcept" />

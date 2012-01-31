@@ -47,7 +47,6 @@
     <classNode dependClassName="java.util.Iterator" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.build.workflow.structure.BwfProjectPart" />
-    <classNode dependClassName="jetbrains.mps.build.workflow.structure.BwfTask" />
     <classNode dependClassName="jetbrains.mps.lang.core.structure.Attribute" />
     <classNode dependClassName="jetbrains.mps.lang.core.structure.INamedConcept" />
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
@@ -99,6 +98,7 @@
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Iterator" />
     <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.build.workflow.structure.BwfProjectPart" />
     <classNode dependClassName="jetbrains.mps.build.workflow.structure.BwfSubTask" />
     <classNode dependClassName="jetbrains.mps.build.workflow.structure.BwfTaskDependency" />
     <classNode dependClassName="jetbrains.mps.lang.core.structure.Attribute" />

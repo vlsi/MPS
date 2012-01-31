@@ -11,7 +11,7 @@
   <unitInfo fileName="BwfSubTaskDependency_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.build.workflow.behavior.BwfSubTaskDependency_BehaviorDescriptor" />
   <unitInfo fileName="BwfSubTask_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.build.workflow.behavior.BwfSubTask_BehaviorDescriptor" />
   <unitInfo fileName="BwfTaskDependency_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.build.workflow.behavior.BwfTaskDependency_BehaviorDescriptor" />
-  <unitInfo fileName="BwfTask_BehaviorDescriptor.java" startLine="13" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.build.workflow.behavior.BwfTask_BehaviorDescriptor" />
+  <unitInfo fileName="BwfTask_BehaviorDescriptor.java" startLine="12" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.build.workflow.behavior.BwfTask_BehaviorDescriptor" />
   <root nodeId="2769948622284605897">
     <nodeInfo nodeId="2769948622284605916" fileName="BwfTask_Behavior.java" startLine="16" startPosition="113" endLine="17" endPosition="155" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2769948622284605939" fileName="BwfTask_Behavior.java" startLine="18" startPosition="5" endLine="19" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

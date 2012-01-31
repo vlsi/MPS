@@ -34,7 +34,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 8:
         return new CompiledConceptDescriptor("jetbrains.mps.build.workflow.structure.BwfSubTaskDependency", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{"target"});
       case 9:
-        return new CompiledConceptDescriptor("jetbrains.mps.build.workflow.structure.BwfTask", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.lang.core.structure.ScopeProvider"}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.build.workflow.structure.BwfTask", "jetbrains.mps.build.workflow.structure.BwfProjectPart", false, new String[]{"jetbrains.mps.build.workflow.structure.BwfProjectPart", "jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.lang.core.structure.ScopeProvider"}, new String[]{}, new String[]{});
       case 10:
         return new CompiledConceptDescriptor("jetbrains.mps.build.workflow.structure.BwfTaskDependency", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{"target"});
       default:
