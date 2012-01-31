@@ -12,12 +12,15 @@
   <import index="h228" modelUID="r:edc2e1a3-c4ab-4f36-a908-e29e4c77f1bb(jetbrains.mps.core.xml.constraints)" version="-1" implicit="yes" />
   <roots>
     <node type="tp1t.ConceptConstraints" typeId="tp1t.1213093968558" id="2769948622284605888">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Tasks" />
       <link role="concept" roleId="tp1t.1213093996982" targetNodeId="8xvf.2769948622284605880" resolveInfo="BwfSubTaskDependency" />
     </node>
     <node type="tp1t.ConceptConstraints" typeId="tp1t.1213093968558" id="2769948622284761820">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Tasks" />
       <link role="concept" roleId="tp1t.1213093996982" targetNodeId="8xvf.2769948622284546675" resolveInfo="BwfTask" />
     </node>
     <node type="tp1t.ConceptConstraints" typeId="tp1t.1213093968558" id="2769948622284761849">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Tasks" />
       <link role="concept" roleId="tp1t.1213093996982" targetNodeId="8xvf.2769948622284546677" resolveInfo="BwfSubTask" />
     </node>
   </roots>

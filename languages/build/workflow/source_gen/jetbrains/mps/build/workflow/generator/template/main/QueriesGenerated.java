@@ -11,6 +11,9 @@ import jetbrains.mps.generator.template.IfMacroContext;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
+import jetbrains.mps.generator.template.MappingScriptContext;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.build.workflow.generator.util.CycleHelper;
 
 public class QueriesGenerated {
   public static Object propertyMacro_GetPropertyValue_2769948622284790870(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -36,6 +39,26 @@ public class QueriesGenerated {
     return SPropertyOperations.getString(_context.getNode(), "name");
   }
 
+  public static Object propertyMacro_GetPropertyValue_7385586609667649380(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return "java.compile." + SPropertyOperations.getString(_context.getNode(), "name");
+  }
+
+  public static Object propertyMacro_GetPropertyValue_7385586609667649445(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(_context.getNode(), "path");
+  }
+
+  public static Object propertyMacro_GetPropertyValue_7385586609667703191(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(_context.getNode(), "path");
+  }
+
+  public static Object propertyMacro_GetPropertyValue_7385586609667703228(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "target", false), "outputFolder");
+  }
+
+  public static Object propertyMacro_GetPropertyValue_7385586609667649414(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(_context.getNode(), "outputFolder");
+  }
+
   public static boolean ifMacro_Condition_2769948622284790971(final IOperationContext operationContext, final IfMacroContext _context) {
     return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "dependencies", true)).isNotEmpty();
   }
@@ -48,6 +71,10 @@ public class QueriesGenerated {
     return SLinkOperations.getTargets(_context.getNode(), "statements", true);
   }
 
+  public static Iterable sourceNodesQuery_7385586609667649350(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+    return SLinkOperations.getTargets(_context.getNode(), "parts", true);
+  }
+
   public static Iterable sourceNodesQuery_2769948622284790956(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     // TODO toposort 
     return SLinkOperations.getTargets(_context.getNode(), "subTasks", true);
@@ -55,5 +82,23 @@ public class QueriesGenerated {
 
   public static Iterable sourceNodesQuery_2769948622284790903(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "tasks", true);
+  }
+
+  public static Iterable sourceNodesQuery_7385586609667649427(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+    return SLinkOperations.getTargets(_context.getNode(), "sources", true);
+  }
+
+  public static Iterable sourceNodesQuery_7385586609667703195(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+    return SLinkOperations.getTargets(_context.getNode(), "classpath", true);
+  }
+
+  public static Iterable sourceNodesQuery_7385586609667703235(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+    return SLinkOperations.getTargets(_context.getNode(), "dependencies", true);
+  }
+
+  public static void mappingScript_CodeBlock_4755209551904406821(final IOperationContext operationContext, final MappingScriptContext _context) {
+    for (SNode project : SModelOperations.getRoots(_context.getModel(), "jetbrains.mps.build.workflow.structure.BwfProject")) {
+      new CycleHelper(project, _context).processCycles();
+    }
   }
 }

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="StructureAspectDescriptor.java" startLine="10" startPosition="0" endLine="39" endPosition="0" unitName="jetbrains.mps.build.workflow.structure.StructureAspectDescriptor" />
+  <unitInfo fileName="StructureAspectDescriptor.java" startLine="10" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.build.workflow.structure.StructureAspectDescriptor" />
   <unitInfo fileName="Workflow_Language.java" startLine="9" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.build.workflow.structure.Workflow_Language" />
   <root nodeId="2769948622284546673">
     <nodeInfo nodeId="2769948622284546673" fileName="BwfProject.java" startLine="15" startPosition="70" endLine="16" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
@@ -584,6 +584,256 @@
       <varInfo nodeId="2769948622284768359" varName="sm" />
     </scopeInfo>
     <unitInfo nodeId="2769948622284768359" fileName="BwfAntStatement.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.build.workflow.structure.BwfAntStatement" />
+  </root>
+  <root nodeId="4755209551904389307">
+    <nodeInfo nodeId="4755209551904389307" fileName="BwfJavaModule.java" startLine="14" startPosition="76" endLine="15" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
+    <nodeInfo nodeId="4755209551904389307" fileName="BwfJavaModule.java" startLine="15" startPosition="94" endLine="16" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="OUTPUT_FOLDER" />
+    <nodeInfo nodeId="4755209551904389307" fileName="BwfJavaModule.java" startLine="16" startPosition="60" endLine="17" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="NAME" />
+    <nodeInfo nodeId="4755209551904389307" fileName="BwfJavaModule.java" startLine="17" startPosition="43" endLine="18" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SHORT_DESCRIPTION" />
+    <nodeInfo nodeId="4755209551904389307" fileName="BwfJavaModule.java" startLine="18" startPosition="68" endLine="19" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ALIAS" />
+    <nodeInfo nodeId="4755209551904389307" fileName="BwfJavaModule.java" startLine="19" startPosition="45" endLine="20" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="VIRTUAL_PACKAGE" />
+    <nodeInfo nodeId="4755209551904389307" fileName="BwfJavaModule.java" startLine="20" startPosition="64" endLine="21" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="CLASSPATH" />
+    <nodeInfo nodeId="4755209551904389307" fileName="BwfJavaModule.java" startLine="21" startPosition="53" endLine="22" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SOURCES" />
+    <nodeInfo nodeId="4755209551904389307" fileName="BwfJavaModule.java" startLine="22" startPosition="49" endLine="23" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="DEPENDENCIES" />
+    <nodeInfo nodeId="4755209551904389307" fileName="BwfJavaModule.java" startLine="23" startPosition="59" endLine="24" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SMODEL_ATTRIBUTE" />
+    <nodeInfo nodeId="4755209551904389307" fileName="BwfJavaModule.java" startLine="26" startPosition="36" endLine="27" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="4755209551904389307" fileName="BwfJavaModule.java" startLine="30" startPosition="35" endLine="31" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4755209551904389307" fileName="BwfJavaModule.java" startLine="34" startPosition="45" endLine="35" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4755209551904389307" fileName="BwfJavaModule.java" startLine="38" startPosition="27" endLine="39" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4755209551904389307" fileName="BwfJavaModule.java" startLine="42" startPosition="37" endLine="43" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4755209551904389307" fileName="BwfJavaModule.java" startLine="46" startPosition="39" endLine="47" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4755209551904389307" fileName="BwfJavaModule.java" startLine="50" startPosition="49" endLine="51" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4755209551904389307" fileName="BwfJavaModule.java" startLine="54" startPosition="28" endLine="55" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4755209551904389307" fileName="BwfJavaModule.java" startLine="58" startPosition="38" endLine="59" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4755209551904389307" fileName="BwfJavaModule.java" startLine="62" startPosition="37" endLine="63" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4755209551904389307" fileName="BwfJavaModule.java" startLine="66" startPosition="47" endLine="67" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4755209551904389307" fileName="BwfJavaModule.java" startLine="70" startPosition="35" endLine="71" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4755209551904389307" fileName="BwfJavaModule.java" startLine="74" startPosition="41" endLine="75" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4755209551904389307" fileName="BwfJavaModule.java" startLine="78" startPosition="40" endLine="79" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4755209551904389307" fileName="BwfJavaModule.java" startLine="82" startPosition="42" endLine="83" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4755209551904389307" fileName="BwfJavaModule.java" startLine="86" startPosition="59" endLine="87" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4755209551904389307" fileName="BwfJavaModule.java" startLine="90" startPosition="34" endLine="91" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4755209551904389307" fileName="BwfJavaModule.java" startLine="94" startPosition="40" endLine="95" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4755209551904389307" fileName="BwfJavaModule.java" startLine="98" startPosition="39" endLine="99" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4755209551904389307" fileName="BwfJavaModule.java" startLine="102" startPosition="40" endLine="103" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4755209551904389307" fileName="BwfJavaModule.java" startLine="106" startPosition="57" endLine="107" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4755209551904389307" fileName="BwfJavaModule.java" startLine="110" startPosition="39" endLine="111" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4755209551904389307" fileName="BwfJavaModule.java" startLine="114" startPosition="60" endLine="115" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4755209551904389307" fileName="BwfJavaModule.java" startLine="118" startPosition="59" endLine="119" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4755209551904389307" fileName="BwfJavaModule.java" startLine="122" startPosition="60" endLine="123" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4755209551904389307" fileName="BwfJavaModule.java" startLine="126" startPosition="92" endLine="127" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4755209551904389307" fileName="BwfJavaModule.java" startLine="130" startPosition="41" endLine="131" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4755209551904389307" fileName="BwfJavaModule.java" startLine="134" startPosition="49" endLine="135" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4755209551904389307" fileName="BwfJavaModule.java" startLine="138" startPosition="48" endLine="139" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4755209551904389307" fileName="BwfJavaModule.java" startLine="142" startPosition="50" endLine="143" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4755209551904389307" fileName="BwfJavaModule.java" startLine="146" startPosition="69" endLine="147" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4755209551904389307" fileName="BwfJavaModule.java" startLine="150" startPosition="68" endLine="151" endPosition="178" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4755209551904389307" fileName="BwfJavaModule.java" startLine="154" startPosition="54" endLine="155" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4755209551904389307" fileName="BwfJavaModule.java" startLine="25" startPosition="0" endLine="28" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="BwfJavaModule#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="4755209551904389307" fileName="BwfJavaModule.java" startLine="29" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getOutputFolder#()Ljava/lang/String;" />
+    <nodeInfo nodeId="4755209551904389307" fileName="BwfJavaModule.java" startLine="33" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setOutputFolder#(Ljava/lang/String;)V" />
+    <nodeInfo nodeId="4755209551904389307" fileName="BwfJavaModule.java" startLine="37" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="4755209551904389307" fileName="BwfJavaModule.java" startLine="41" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setName#(Ljava/lang/String;)V" />
+    <nodeInfo nodeId="4755209551904389307" fileName="BwfJavaModule.java" startLine="45" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getShortDescription#()Ljava/lang/String;" />
+    <nodeInfo nodeId="4755209551904389307" fileName="BwfJavaModule.java" startLine="49" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setShortDescription#(Ljava/lang/String;)V" />
+    <nodeInfo nodeId="4755209551904389307" fileName="BwfJavaModule.java" startLine="53" startPosition="0" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getAlias#()Ljava/lang/String;" />
+    <nodeInfo nodeId="4755209551904389307" fileName="BwfJavaModule.java" startLine="57" startPosition="0" endLine="61" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setAlias#(Ljava/lang/String;)V" />
+    <nodeInfo nodeId="4755209551904389307" fileName="BwfJavaModule.java" startLine="61" startPosition="0" endLine="65" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getVirtualPackage#()Ljava/lang/String;" />
+    <nodeInfo nodeId="4755209551904389307" fileName="BwfJavaModule.java" startLine="65" startPosition="0" endLine="69" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setVirtualPackage#(Ljava/lang/String;)V" />
+    <nodeInfo nodeId="4755209551904389307" fileName="BwfJavaModule.java" startLine="69" startPosition="0" endLine="73" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getClasspathsCount#()I" />
+    <nodeInfo nodeId="4755209551904389307" fileName="BwfJavaModule.java" startLine="73" startPosition="0" endLine="77" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="classpaths#()Ljava/util/Iterator;" />
+    <nodeInfo nodeId="4755209551904389307" fileName="BwfJavaModule.java" startLine="77" startPosition="0" endLine="81" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getClasspaths#()Ljava/util/List;" />
+    <nodeInfo nodeId="4755209551904389307" fileName="BwfJavaModule.java" startLine="81" startPosition="0" endLine="85" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addClasspath#(Ljetbrains/mps/smodel/INodeAdapter;)V" />
+    <nodeInfo nodeId="4755209551904389307" fileName="BwfJavaModule.java" startLine="85" startPosition="0" endLine="89" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="insertClasspath#(Ljetbrains/mps/smodel/INodeAdapter;Ljetbrains/mps/smodel/INodeAdapter;)V" />
+    <nodeInfo nodeId="4755209551904389307" fileName="BwfJavaModule.java" startLine="89" startPosition="0" endLine="93" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSourcesesCount#()I" />
+    <nodeInfo nodeId="4755209551904389307" fileName="BwfJavaModule.java" startLine="93" startPosition="0" endLine="97" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="sourceses#()Ljava/util/Iterator;" />
+    <nodeInfo nodeId="4755209551904389307" fileName="BwfJavaModule.java" startLine="97" startPosition="0" endLine="101" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSourceses#()Ljava/util/List;" />
+    <nodeInfo nodeId="4755209551904389307" fileName="BwfJavaModule.java" startLine="101" startPosition="0" endLine="105" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addSources#(Ljetbrains/mps/smodel/INodeAdapter;)V" />
+    <nodeInfo nodeId="4755209551904389307" fileName="BwfJavaModule.java" startLine="105" startPosition="0" endLine="109" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="insertSources#(Ljetbrains/mps/smodel/INodeAdapter;Ljetbrains/mps/smodel/INodeAdapter;)V" />
+    <nodeInfo nodeId="4755209551904389307" fileName="BwfJavaModule.java" startLine="109" startPosition="0" endLine="113" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDependenciesesCount#()I" />
+    <nodeInfo nodeId="4755209551904389307" fileName="BwfJavaModule.java" startLine="113" startPosition="0" endLine="117" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="dependencieses#()Ljava/util/Iterator;" />
+    <nodeInfo nodeId="4755209551904389307" fileName="BwfJavaModule.java" startLine="117" startPosition="0" endLine="121" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDependencieses#()Ljava/util/List;" />
+    <nodeInfo nodeId="4755209551904389307" fileName="BwfJavaModule.java" startLine="121" startPosition="0" endLine="125" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addDependencies#(Ljetbrains/mps/smodel/INodeAdapter;)V" />
+    <nodeInfo nodeId="4755209551904389307" fileName="BwfJavaModule.java" startLine="125" startPosition="0" endLine="129" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="insertDependencies#(Ljetbrains/mps/smodel/INodeAdapter;Ljetbrains/mps/smodel/INodeAdapter;)V" />
+    <nodeInfo nodeId="4755209551904389307" fileName="BwfJavaModule.java" startLine="129" startPosition="0" endLine="133" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSmodelAttributesCount#()I" />
+    <nodeInfo nodeId="4755209551904389307" fileName="BwfJavaModule.java" startLine="133" startPosition="0" endLine="137" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="smodelAttributes#()Ljava/util/Iterator;" />
+    <nodeInfo nodeId="4755209551904389307" fileName="BwfJavaModule.java" startLine="137" startPosition="0" endLine="141" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSmodelAttributes#()Ljava/util/List;" />
+    <nodeInfo nodeId="4755209551904389307" fileName="BwfJavaModule.java" startLine="141" startPosition="0" endLine="145" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addSmodelAttribute#(Ljetbrains/mps/smodel/INodeAdapter;)V" />
+    <nodeInfo nodeId="4755209551904389307" fileName="BwfJavaModule.java" startLine="145" startPosition="0" endLine="149" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="insertSmodelAttribute#(Ljetbrains/mps/smodel/INodeAdapter;Ljetbrains/mps/smodel/INodeAdapter;)V" />
+    <nodeInfo nodeId="4755209551904389307" fileName="BwfJavaModule.java" startLine="149" startPosition="0" endLine="153" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="newInstance#(Ljetbrains/mps/smodel/SModel;Z)Ljetbrains/mps/build/workflow/structure/BwfJavaModule;" />
+    <nodeInfo nodeId="4755209551904389307" fileName="BwfJavaModule.java" startLine="153" startPosition="0" endLine="157" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="newInstance#(Ljetbrains/mps/smodel/SModel;)Ljetbrains/mps/build/workflow/structure/BwfJavaModule;" />
+    <scopeInfo nodeId="4755209551904389307" fileName="BwfJavaModule.java" startLine="26" startPosition="36" endLine="27" endPosition="16" />
+    <scopeInfo nodeId="4755209551904389307" fileName="BwfJavaModule.java" startLine="30" startPosition="35" endLine="31" endPosition="57" />
+    <scopeInfo nodeId="4755209551904389307" fileName="BwfJavaModule.java" startLine="34" startPosition="45" endLine="35" endPosition="57" />
+    <scopeInfo nodeId="4755209551904389307" fileName="BwfJavaModule.java" startLine="38" startPosition="27" endLine="39" endPosition="48" />
+    <scopeInfo nodeId="4755209551904389307" fileName="BwfJavaModule.java" startLine="42" startPosition="37" endLine="43" endPosition="48" />
+    <scopeInfo nodeId="4755209551904389307" fileName="BwfJavaModule.java" startLine="46" startPosition="39" endLine="47" endPosition="61" />
+    <scopeInfo nodeId="4755209551904389307" fileName="BwfJavaModule.java" startLine="50" startPosition="49" endLine="51" endPosition="61" />
+    <scopeInfo nodeId="4755209551904389307" fileName="BwfJavaModule.java" startLine="54" startPosition="28" endLine="55" endPosition="49" />
+    <scopeInfo nodeId="4755209551904389307" fileName="BwfJavaModule.java" startLine="58" startPosition="38" endLine="59" endPosition="49" />
+    <scopeInfo nodeId="4755209551904389307" fileName="BwfJavaModule.java" startLine="62" startPosition="37" endLine="63" endPosition="59" />
+    <scopeInfo nodeId="4755209551904389307" fileName="BwfJavaModule.java" startLine="66" startPosition="47" endLine="67" endPosition="59" />
+    <scopeInfo nodeId="4755209551904389307" fileName="BwfJavaModule.java" startLine="70" startPosition="35" endLine="71" endPosition="55" />
+    <scopeInfo nodeId="4755209551904389307" fileName="BwfJavaModule.java" startLine="74" startPosition="41" endLine="75" endPosition="65" />
+    <scopeInfo nodeId="4755209551904389307" fileName="BwfJavaModule.java" startLine="78" startPosition="40" endLine="79" endPosition="68" />
+    <scopeInfo nodeId="4755209551904389307" fileName="BwfJavaModule.java" startLine="82" startPosition="42" endLine="83" endPosition="49" />
+    <scopeInfo nodeId="4755209551904389307" fileName="BwfJavaModule.java" startLine="86" startPosition="59" endLine="87" endPosition="58" />
+    <scopeInfo nodeId="4755209551904389307" fileName="BwfJavaModule.java" startLine="90" startPosition="34" endLine="91" endPosition="53" />
+    <scopeInfo nodeId="4755209551904389307" fileName="BwfJavaModule.java" startLine="94" startPosition="40" endLine="95" endPosition="63" />
+    <scopeInfo nodeId="4755209551904389307" fileName="BwfJavaModule.java" startLine="98" startPosition="39" endLine="99" endPosition="66" />
+    <scopeInfo nodeId="4755209551904389307" fileName="BwfJavaModule.java" startLine="102" startPosition="40" endLine="103" endPosition="47" />
+    <scopeInfo nodeId="4755209551904389307" fileName="BwfJavaModule.java" startLine="106" startPosition="57" endLine="107" endPosition="56" />
+    <scopeInfo nodeId="4755209551904389307" fileName="BwfJavaModule.java" startLine="110" startPosition="39" endLine="111" endPosition="58" />
+    <scopeInfo nodeId="4755209551904389307" fileName="BwfJavaModule.java" startLine="114" startPosition="60" endLine="115" endPosition="83" />
+    <scopeInfo nodeId="4755209551904389307" fileName="BwfJavaModule.java" startLine="118" startPosition="59" endLine="119" endPosition="86" />
+    <scopeInfo nodeId="4755209551904389307" fileName="BwfJavaModule.java" startLine="122" startPosition="60" endLine="123" endPosition="52" />
+    <scopeInfo nodeId="4755209551904389307" fileName="BwfJavaModule.java" startLine="126" startPosition="92" endLine="127" endPosition="61" />
+    <scopeInfo nodeId="4755209551904389307" fileName="BwfJavaModule.java" startLine="130" startPosition="41" endLine="131" endPosition="62" />
+    <scopeInfo nodeId="4755209551904389307" fileName="BwfJavaModule.java" startLine="134" startPosition="49" endLine="135" endPosition="74" />
+    <scopeInfo nodeId="4755209551904389307" fileName="BwfJavaModule.java" startLine="138" startPosition="48" endLine="139" endPosition="77" />
+    <scopeInfo nodeId="4755209551904389307" fileName="BwfJavaModule.java" startLine="142" startPosition="50" endLine="143" endPosition="56" />
+    <scopeInfo nodeId="4755209551904389307" fileName="BwfJavaModule.java" startLine="146" startPosition="69" endLine="147" endPosition="65" />
+    <scopeInfo nodeId="4755209551904389307" fileName="BwfJavaModule.java" startLine="150" startPosition="68" endLine="151" endPosition="178" />
+    <scopeInfo nodeId="4755209551904389307" fileName="BwfJavaModule.java" startLine="154" startPosition="54" endLine="155" endPosition="48" />
+    <scopeInfo nodeId="4755209551904389307" fileName="BwfJavaModule.java" startLine="25" startPosition="0" endLine="28" endPosition="3">
+      <varInfo nodeId="4755209551904389307" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="4755209551904389307" fileName="BwfJavaModule.java" startLine="29" startPosition="0" endLine="33" endPosition="0" />
+    <scopeInfo nodeId="4755209551904389307" fileName="BwfJavaModule.java" startLine="33" startPosition="0" endLine="37" endPosition="0">
+      <varInfo nodeId="4755209551904389307" varName="value" />
+    </scopeInfo>
+    <scopeInfo nodeId="4755209551904389307" fileName="BwfJavaModule.java" startLine="37" startPosition="0" endLine="41" endPosition="0" />
+    <scopeInfo nodeId="4755209551904389307" fileName="BwfJavaModule.java" startLine="41" startPosition="0" endLine="45" endPosition="0">
+      <varInfo nodeId="4755209551904389307" varName="value" />
+    </scopeInfo>
+    <scopeInfo nodeId="4755209551904389307" fileName="BwfJavaModule.java" startLine="45" startPosition="0" endLine="49" endPosition="0" />
+    <scopeInfo nodeId="4755209551904389307" fileName="BwfJavaModule.java" startLine="49" startPosition="0" endLine="53" endPosition="0">
+      <varInfo nodeId="4755209551904389307" varName="value" />
+    </scopeInfo>
+    <scopeInfo nodeId="4755209551904389307" fileName="BwfJavaModule.java" startLine="53" startPosition="0" endLine="57" endPosition="0" />
+    <scopeInfo nodeId="4755209551904389307" fileName="BwfJavaModule.java" startLine="57" startPosition="0" endLine="61" endPosition="0">
+      <varInfo nodeId="4755209551904389307" varName="value" />
+    </scopeInfo>
+    <scopeInfo nodeId="4755209551904389307" fileName="BwfJavaModule.java" startLine="61" startPosition="0" endLine="65" endPosition="0" />
+    <scopeInfo nodeId="4755209551904389307" fileName="BwfJavaModule.java" startLine="65" startPosition="0" endLine="69" endPosition="0">
+      <varInfo nodeId="4755209551904389307" varName="value" />
+    </scopeInfo>
+    <scopeInfo nodeId="4755209551904389307" fileName="BwfJavaModule.java" startLine="69" startPosition="0" endLine="73" endPosition="0" />
+    <scopeInfo nodeId="4755209551904389307" fileName="BwfJavaModule.java" startLine="73" startPosition="0" endLine="77" endPosition="0" />
+    <scopeInfo nodeId="4755209551904389307" fileName="BwfJavaModule.java" startLine="77" startPosition="0" endLine="81" endPosition="0" />
+    <scopeInfo nodeId="4755209551904389307" fileName="BwfJavaModule.java" startLine="81" startPosition="0" endLine="85" endPosition="0">
+      <varInfo nodeId="4755209551904389307" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="4755209551904389307" fileName="BwfJavaModule.java" startLine="85" startPosition="0" endLine="89" endPosition="0">
+      <varInfo nodeId="4755209551904389307" varName="node" />
+      <varInfo nodeId="4755209551904389307" varName="prev" />
+    </scopeInfo>
+    <scopeInfo nodeId="4755209551904389307" fileName="BwfJavaModule.java" startLine="89" startPosition="0" endLine="93" endPosition="0" />
+    <scopeInfo nodeId="4755209551904389307" fileName="BwfJavaModule.java" startLine="93" startPosition="0" endLine="97" endPosition="0" />
+    <scopeInfo nodeId="4755209551904389307" fileName="BwfJavaModule.java" startLine="97" startPosition="0" endLine="101" endPosition="0" />
+    <scopeInfo nodeId="4755209551904389307" fileName="BwfJavaModule.java" startLine="101" startPosition="0" endLine="105" endPosition="0">
+      <varInfo nodeId="4755209551904389307" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="4755209551904389307" fileName="BwfJavaModule.java" startLine="105" startPosition="0" endLine="109" endPosition="0">
+      <varInfo nodeId="4755209551904389307" varName="node" />
+      <varInfo nodeId="4755209551904389307" varName="prev" />
+    </scopeInfo>
+    <scopeInfo nodeId="4755209551904389307" fileName="BwfJavaModule.java" startLine="109" startPosition="0" endLine="113" endPosition="0" />
+    <scopeInfo nodeId="4755209551904389307" fileName="BwfJavaModule.java" startLine="113" startPosition="0" endLine="117" endPosition="0" />
+    <scopeInfo nodeId="4755209551904389307" fileName="BwfJavaModule.java" startLine="117" startPosition="0" endLine="121" endPosition="0" />
+    <scopeInfo nodeId="4755209551904389307" fileName="BwfJavaModule.java" startLine="121" startPosition="0" endLine="125" endPosition="0">
+      <varInfo nodeId="4755209551904389307" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="4755209551904389307" fileName="BwfJavaModule.java" startLine="125" startPosition="0" endLine="129" endPosition="0">
+      <varInfo nodeId="4755209551904389307" varName="node" />
+      <varInfo nodeId="4755209551904389307" varName="prev" />
+    </scopeInfo>
+    <scopeInfo nodeId="4755209551904389307" fileName="BwfJavaModule.java" startLine="129" startPosition="0" endLine="133" endPosition="0" />
+    <scopeInfo nodeId="4755209551904389307" fileName="BwfJavaModule.java" startLine="133" startPosition="0" endLine="137" endPosition="0" />
+    <scopeInfo nodeId="4755209551904389307" fileName="BwfJavaModule.java" startLine="137" startPosition="0" endLine="141" endPosition="0" />
+    <scopeInfo nodeId="4755209551904389307" fileName="BwfJavaModule.java" startLine="141" startPosition="0" endLine="145" endPosition="0">
+      <varInfo nodeId="4755209551904389307" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="4755209551904389307" fileName="BwfJavaModule.java" startLine="145" startPosition="0" endLine="149" endPosition="0">
+      <varInfo nodeId="4755209551904389307" varName="node" />
+      <varInfo nodeId="4755209551904389307" varName="prev" />
+    </scopeInfo>
+    <scopeInfo nodeId="4755209551904389307" fileName="BwfJavaModule.java" startLine="149" startPosition="0" endLine="153" endPosition="0">
+      <varInfo nodeId="4755209551904389307" varName="init" />
+      <varInfo nodeId="4755209551904389307" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="4755209551904389307" fileName="BwfJavaModule.java" startLine="153" startPosition="0" endLine="157" endPosition="0">
+      <varInfo nodeId="4755209551904389307" varName="sm" />
+    </scopeInfo>
+    <unitInfo nodeId="4755209551904389307" fileName="BwfJavaModule.java" startLine="14" startPosition="0" endLine="158" endPosition="0" unitName="jetbrains.mps.build.workflow.structure.BwfJavaModule" />
+  </root>
+  <root nodeId="4755209551904389308">
+    <nodeInfo nodeId="4755209551904389308" fileName="BwfPath.java" startLine="11" startPosition="42" endLine="12" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
+    <nodeInfo nodeId="4755209551904389308" fileName="BwfPath.java" startLine="12" startPosition="88" endLine="13" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="PATH" />
+    <nodeInfo nodeId="4755209551904389308" fileName="BwfPath.java" startLine="15" startPosition="30" endLine="16" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="4755209551904389308" fileName="BwfPath.java" startLine="19" startPosition="27" endLine="20" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4755209551904389308" fileName="BwfPath.java" startLine="23" startPosition="37" endLine="24" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4755209551904389308" fileName="BwfPath.java" startLine="27" startPosition="62" endLine="28" endPosition="166" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4755209551904389308" fileName="BwfPath.java" startLine="31" startPosition="48" endLine="32" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4755209551904389308" fileName="BwfPath.java" startLine="14" startPosition="0" endLine="17" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="BwfPath#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="4755209551904389308" fileName="BwfPath.java" startLine="18" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPath#()Ljava/lang/String;" />
+    <nodeInfo nodeId="4755209551904389308" fileName="BwfPath.java" startLine="22" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setPath#(Ljava/lang/String;)V" />
+    <nodeInfo nodeId="4755209551904389308" fileName="BwfPath.java" startLine="26" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="newInstance#(Ljetbrains/mps/smodel/SModel;Z)Ljetbrains/mps/build/workflow/structure/BwfPath;" />
+    <nodeInfo nodeId="4755209551904389308" fileName="BwfPath.java" startLine="30" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="newInstance#(Ljetbrains/mps/smodel/SModel;)Ljetbrains/mps/build/workflow/structure/BwfPath;" />
+    <scopeInfo nodeId="4755209551904389308" fileName="BwfPath.java" startLine="15" startPosition="30" endLine="16" endPosition="16" />
+    <scopeInfo nodeId="4755209551904389308" fileName="BwfPath.java" startLine="19" startPosition="27" endLine="20" endPosition="42" />
+    <scopeInfo nodeId="4755209551904389308" fileName="BwfPath.java" startLine="23" startPosition="37" endLine="24" endPosition="42" />
+    <scopeInfo nodeId="4755209551904389308" fileName="BwfPath.java" startLine="27" startPosition="62" endLine="28" endPosition="166" />
+    <scopeInfo nodeId="4755209551904389308" fileName="BwfPath.java" startLine="31" startPosition="48" endLine="32" endPosition="42" />
+    <scopeInfo nodeId="4755209551904389308" fileName="BwfPath.java" startLine="14" startPosition="0" endLine="17" endPosition="3">
+      <varInfo nodeId="4755209551904389308" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="4755209551904389308" fileName="BwfPath.java" startLine="18" startPosition="0" endLine="22" endPosition="0" />
+    <scopeInfo nodeId="4755209551904389308" fileName="BwfPath.java" startLine="22" startPosition="0" endLine="26" endPosition="0">
+      <varInfo nodeId="4755209551904389308" varName="value" />
+    </scopeInfo>
+    <scopeInfo nodeId="4755209551904389308" fileName="BwfPath.java" startLine="26" startPosition="0" endLine="30" endPosition="0">
+      <varInfo nodeId="4755209551904389308" varName="init" />
+      <varInfo nodeId="4755209551904389308" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="4755209551904389308" fileName="BwfPath.java" startLine="30" startPosition="0" endLine="34" endPosition="0">
+      <varInfo nodeId="4755209551904389308" varName="sm" />
+    </scopeInfo>
+    <unitInfo nodeId="4755209551904389308" fileName="BwfPath.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.build.workflow.structure.BwfPath" />
+  </root>
+  <root nodeId="4755209551904389316">
+    <nodeInfo nodeId="4755209551904389316" fileName="BwfJavaModuleReference.java" startLine="11" startPosition="57" endLine="12" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
+    <nodeInfo nodeId="4755209551904389316" fileName="BwfJavaModuleReference.java" startLine="12" startPosition="103" endLine="13" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="TARGET" />
+    <nodeInfo nodeId="4755209551904389316" fileName="BwfJavaModuleReference.java" startLine="15" startPosition="45" endLine="16" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="4755209551904389316" fileName="BwfJavaModuleReference.java" startLine="19" startPosition="36" endLine="20" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4755209551904389316" fileName="BwfJavaModuleReference.java" startLine="23" startPosition="45" endLine="24" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4755209551904389316" fileName="BwfJavaModuleReference.java" startLine="27" startPosition="77" endLine="28" endPosition="196" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4755209551904389316" fileName="BwfJavaModuleReference.java" startLine="31" startPosition="63" endLine="32" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4755209551904389316" fileName="BwfJavaModuleReference.java" startLine="14" startPosition="0" endLine="17" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="BwfJavaModuleReference#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="4755209551904389316" fileName="BwfJavaModuleReference.java" startLine="18" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getTarget#()Ljetbrains/mps/smodel/INodeAdapter;" />
+    <nodeInfo nodeId="4755209551904389316" fileName="BwfJavaModuleReference.java" startLine="22" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setTarget#(Ljetbrains/mps/smodel/INodeAdapter;)V" />
+    <nodeInfo nodeId="4755209551904389316" fileName="BwfJavaModuleReference.java" startLine="26" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="newInstance#(Ljetbrains/mps/smodel/SModel;Z)Ljetbrains/mps/build/workflow/structure/BwfJavaModuleReference;" />
+    <nodeInfo nodeId="4755209551904389316" fileName="BwfJavaModuleReference.java" startLine="30" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="newInstance#(Ljetbrains/mps/smodel/SModel;)Ljetbrains/mps/build/workflow/structure/BwfJavaModuleReference;" />
+    <scopeInfo nodeId="4755209551904389316" fileName="BwfJavaModuleReference.java" startLine="15" startPosition="45" endLine="16" endPosition="16" />
+    <scopeInfo nodeId="4755209551904389316" fileName="BwfJavaModuleReference.java" startLine="19" startPosition="36" endLine="20" endPosition="96" />
+    <scopeInfo nodeId="4755209551904389316" fileName="BwfJavaModuleReference.java" startLine="23" startPosition="45" endLine="24" endPosition="59" />
+    <scopeInfo nodeId="4755209551904389316" fileName="BwfJavaModuleReference.java" startLine="27" startPosition="77" endLine="28" endPosition="196" />
+    <scopeInfo nodeId="4755209551904389316" fileName="BwfJavaModuleReference.java" startLine="31" startPosition="63" endLine="32" endPosition="57" />
+    <scopeInfo nodeId="4755209551904389316" fileName="BwfJavaModuleReference.java" startLine="14" startPosition="0" endLine="17" endPosition="3">
+      <varInfo nodeId="4755209551904389316" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="4755209551904389316" fileName="BwfJavaModuleReference.java" startLine="18" startPosition="0" endLine="22" endPosition="0" />
+    <scopeInfo nodeId="4755209551904389316" fileName="BwfJavaModuleReference.java" startLine="22" startPosition="0" endLine="26" endPosition="0">
+      <varInfo nodeId="4755209551904389316" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="4755209551904389316" fileName="BwfJavaModuleReference.java" startLine="26" startPosition="0" endLine="30" endPosition="0">
+      <varInfo nodeId="4755209551904389316" varName="init" />
+      <varInfo nodeId="4755209551904389316" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="4755209551904389316" fileName="BwfJavaModuleReference.java" startLine="30" startPosition="0" endLine="34" endPosition="0">
+      <varInfo nodeId="4755209551904389316" varName="sm" />
+    </scopeInfo>
+    <unitInfo nodeId="4755209551904389316" fileName="BwfJavaModuleReference.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.build.workflow.structure.BwfJavaModuleReference" />
   </root>
 </debugInfo>
 

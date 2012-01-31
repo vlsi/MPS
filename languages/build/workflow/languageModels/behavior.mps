@@ -13,6 +13,7 @@
   <import index="1i04" modelUID="r:3270011d-8b2d-4938-8dff-d256a759e017(jetbrains.mps.lang.behavior.structure)" version="-1" implicit="yes" />
   <roots>
     <node type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="2769948622284605897">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Tasks" />
       <link role="concept" roleId="1i04.1225194240799" targetNodeId="8xvf.2769948622284546675" resolveInfo="BwfTask" />
     </node>
   </roots>
