@@ -46,7 +46,7 @@
     <classNode dependClassName="jetbrains.mps.lang.plugin.behavior.PreferencePage_Behavior" />
     <classNode dependClassName="jetbrains.mps.lang.plugin.behavior.PreferencesComponentDeclaration_Behavior" />
     <classNode dependClassName="jetbrains.mps.lang.plugin.behavior.ProjectPluginDeclaration_Behavior" />
-    <classNode dependClassName="jetbrains.mps.lang.plugin.generator.baseLanguage.template.util.PluginNameUtils" />
+    <classNode dependClassName="jetbrains.mps.lang.plugin.generator.util.PluginNameUtils" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations" />

@@ -23,7 +23,6 @@
   <import index="tp25" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" />
   <import index="tp48" modelUID="r:00000000-0000-4000-0000-011c89590374(jetbrains.mps.baseLanguage.classifiers.generator.baseLanguage.template.main@generator)" version="-1" />
   <import index="tp4s" modelUID="r:00000000-0000-4000-0000-011c89590360(jetbrains.mps.lang.plugin.behavior)" version="1" />
-  <import index="tp4m" modelUID="r:00000000-0000-4000-0000-011c8959036a(jetbrains.mps.lang.plugin.generator.baseLanguage.template.util)" version="-1" />
   <import index="tp4h" modelUID="r:00000000-0000-4000-0000-011c8959036d(jetbrains.mps.baseLanguage.classifiers.behavior)" version="-1" />
   <import index="tpek" modelUID="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" version="-1" />
   <import index="dbrf" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#javax.swing(javax.swing@java_stub)" version="-1" />
@@ -67,6 +66,7 @@
   <import index="1bi5" modelUID="f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#com.intellij.openapi.components(MPS.Workbench/com.intellij.openapi.components@java_stub)" version="-1" />
   <import index="xkfd" modelUID="f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#com.intellij.openapi.util(MPS.Workbench/com.intellij.openapi.util@java_stub)" version="-1" />
   <import index="5t3h" modelUID="r:5a1c73a7-6ef8-45c4-96b7-fef49633c51a(jetbrains.mps.resourceBundles)" version="-1" />
+  <import index="wzm8" modelUID="r:c38b095a-620d-449b-83bf-eebdb57fa62c(jetbrains.mps.lang.plugin.generator.util)" version="-1" />
   <import index="tpf8" modelUID="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" version="2" implicit="yes" />
   <import index="tp2q" modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" implicit="yes" />
   <import index="tp2c" modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="3" implicit="yes" />
@@ -3801,11 +3801,11 @@
         <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="1212583749805">
           <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="1213879280983">
             <node role="expression" roleId="tpee.1068581517676" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1213879400471">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tp4m.1213879030228" resolveInfo="getPluginName" />
-              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="tp4m.1213878920295" resolveInfo="PluginNameUtils" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="wzm8.5755638771828834286" resolveInfo="getPluginName" />
+              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="wzm8.5755638771828834259" resolveInfo="PluginNameUtils" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="3005430634737938176">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tp4m.3005430634737895592" resolveInfo="getOriginalModule" />
-                <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="tp4m.1213878920295" resolveInfo="PluginNameUtils" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="wzm8.5755638771828834319" resolveInfo="getOriginalModule" />
+                <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="wzm8.5755638771828834259" resolveInfo="PluginNameUtils" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpf3.TemplateFunctionParameter_generationContext" typeId="tpf3.1216860049635" id="3005430634737938177" />
               </node>
             </node>
@@ -8757,11 +8757,11 @@
         <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="1215266495354">
           <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="1215266495365">
             <node role="expression" roleId="tpee.1068581517676" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1215266495366">
-              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="tp4m.1213878920295" resolveInfo="PluginNameUtils" />
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tp4m.1215266534764" resolveInfo="getApplicationPluginName" />
+              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="wzm8.5755638771828834259" resolveInfo="PluginNameUtils" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="wzm8.5755638771828834297" resolveInfo="getApplicationPluginName" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="3005430634737938188">
-                <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="tp4m.1213878920295" resolveInfo="PluginNameUtils" />
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tp4m.3005430634737895592" resolveInfo="getOriginalModule" />
+                <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="wzm8.5755638771828834259" resolveInfo="PluginNameUtils" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="wzm8.5755638771828834319" resolveInfo="getOriginalModule" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpf3.TemplateFunctionParameter_generationContext" typeId="tpf3.1216860049635" id="3005430634737938189" />
               </node>
             </node>
@@ -13944,11 +13944,11 @@
                                   <property name="name" nameId="tpck.1169194664001" value="shortName" />
                                   <node role="type" roleId="tpee.5680397130376446158" type="tpee.StringType" typeId="tpee.1225271177708" id="3005430634737954848" />
                                   <node role="initializer" roleId="tpee.1068431790190" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="3005430634737954849">
-                                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tp4m.880980402160504514" resolveInfo="getPluginInitializerName" />
-                                    <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="tp4m.1213878920295" resolveInfo="PluginNameUtils" />
+                                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="wzm8.5755638771828834308" resolveInfo="getPluginInitializerName" />
+                                    <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="wzm8.5755638771828834259" resolveInfo="PluginNameUtils" />
                                     <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="3005430634737954850">
-                                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tp4m.3005430634737895592" resolveInfo="getOriginalModule" />
-                                      <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="tp4m.1213878920295" resolveInfo="PluginNameUtils" />
+                                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="wzm8.5755638771828834319" resolveInfo="getOriginalModule" />
+                                      <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="wzm8.5755638771828834259" resolveInfo="PluginNameUtils" />
                                       <node role="actualArgument" roleId="tpee.1068499141038" type="tpf3.TemplateFunctionParameter_generationContext" typeId="tpf3.1216860049635" id="3005430634737954851" />
                                     </node>
                                   </node>
@@ -14498,11 +14498,11 @@
         <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="3005430634737893006">
           <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="3005430634737938191">
             <node role="expression" roleId="tpee.1068580123156" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="3005430634737893041">
-              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="tp4m.1213878920295" resolveInfo="PluginNameUtils" />
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tp4m.880980402160504514" resolveInfo="getPluginInitializerName" />
+              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="wzm8.5755638771828834259" resolveInfo="PluginNameUtils" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="wzm8.5755638771828834308" resolveInfo="getPluginInitializerName" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="3005430634737938193">
-                <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="tp4m.1213878920295" resolveInfo="PluginNameUtils" />
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tp4m.3005430634737895592" resolveInfo="getOriginalModule" />
+                <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="wzm8.5755638771828834259" resolveInfo="PluginNameUtils" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="wzm8.5755638771828834319" resolveInfo="getOriginalModule" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpf3.TemplateFunctionParameter_generationContext" typeId="tpf3.1216860049635" id="3005430634737938194" />
               </node>
             </node>

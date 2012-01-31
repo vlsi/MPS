@@ -15,10 +15,8 @@
  */
 package jetbrains.mps.plugins;
 
-import jetbrains.mps.MPSCore;
 import jetbrains.mps.ide.actions.Ide_ApplicationPlugin;
 import jetbrains.mps.ide.actions.Ide_ProjectPlugin;
-import jetbrains.mps.lang.plugin.generator.baseLanguage.template.util.PluginNameUtils;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin;
 import jetbrains.mps.plugins.projectplugins.BaseProjectPlugin;
@@ -28,6 +26,7 @@ import jetbrains.mps.project.structure.modules.SolutionKind;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.util.ModuleNameUtil;
 import jetbrains.mps.util.NameUtil;
 import org.jetbrains.annotations.Nullable;
 
@@ -117,7 +116,7 @@ public class PluginUtil {
 
   public static final class ProjectPluginCreator extends PluginCreator<BaseProjectPlugin> {
     public String getPlugin(Language l) {
-      return LanguageAspect.PLUGIN.get(l).getLongName() + "." + PluginNameUtils.getPluginName(l);
+      return LanguageAspect.PLUGIN.get(l).getLongName() + "." + ModuleNameUtil.getModuleShortName(l)+ "_ProjectPlugin";
     }
 
     public String getPlugin(Solution s) {
@@ -128,7 +127,7 @@ public class PluginUtil {
 
   public static final class ApplicationPluginCreator extends PluginCreator<BaseApplicationPlugin> {
     public String getPlugin(Language l) {
-      return LanguageAspect.PLUGIN.get(l).getLongName() + "." + PluginNameUtils.getApplicationPluginName(l);
+      return LanguageAspect.PLUGIN.get(l).getLongName() + "." + ModuleNameUtil.getModuleShortName(l)+ "_ApplicationPlugin";
     }
 
     public String getPlugin(Solution s) {

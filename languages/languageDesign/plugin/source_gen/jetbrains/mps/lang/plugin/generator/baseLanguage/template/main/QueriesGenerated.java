@@ -17,7 +17,7 @@ import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.lang.plugin.behavior.IconResource_Behavior;
 import jetbrains.mps.lang.plugin.behavior.ActionDeclaration_Behavior;
 import jetbrains.mps.lang.plugin.behavior.ActionGroupDeclaration_Behavior;
-import jetbrains.mps.lang.plugin.generator.baseLanguage.template.util.PluginNameUtils;
+import jetbrains.mps.lang.plugin.generator.util.PluginNameUtils;
 import jetbrains.mps.lang.plugin.behavior.ProjectPluginDeclaration_Behavior;
 import jetbrains.mps.lang.plugin.behavior.GenerationListenerDeclaration_Behavior;
 import jetbrains.mps.lang.plugin.behavior.PreferencesComponentDeclaration_Behavior;

@@ -47,17 +47,5 @@
     </scopeInfo>
     <unitInfo nodeId="1213878920295" fileName="PluginNameUtils.java" startLine="10" startPosition="0" endLine="39" endPosition="0" unitName="jetbrains.mps.lang.plugin.generator.baseLanguage.template.util.PluginNameUtils" />
   </root>
-  <root nodeId="5527296032509892699">
-    <nodeInfo nodeId="5527296032509892712" fileName="VariableNameUtil.java" startLine="10" startPosition="65" endLine="11" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5527296032509892701" fileName="VariableNameUtil.java" startLine="6" startPosition="31" endLine="8" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="VariableNameUtil#()V" />
-    <nodeInfo nodeId="5527296032509892705" fileName="VariableNameUtil.java" startLine="9" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="createComplicatedNameSuffix#(Ljava/lang/String;)Ljava/lang/String;" />
-    <scopeInfo nodeId="5527296032509892704" fileName="VariableNameUtil.java" startLine="7" startPosition="29" endLine="7" endPosition="29" />
-    <scopeInfo nodeId="5527296032509892708" fileName="VariableNameUtil.java" startLine="10" startPosition="65" endLine="11" endPosition="30" />
-    <scopeInfo nodeId="5527296032509892701" fileName="VariableNameUtil.java" startLine="6" startPosition="31" endLine="8" endPosition="3" />
-    <scopeInfo nodeId="5527296032509892705" fileName="VariableNameUtil.java" startLine="9" startPosition="0" endLine="13" endPosition="0">
-      <varInfo nodeId="5527296032509892710" varName="name" />
-    </scopeInfo>
-    <unitInfo nodeId="5527296032509892699" fileName="VariableNameUtil.java" startLine="6" startPosition="0" endLine="14" endPosition="0" unitName="jetbrains.mps.lang.plugin.generator.baseLanguage.template.util.VariableNameUtil" />
-  </root>
 </debugInfo>
 
