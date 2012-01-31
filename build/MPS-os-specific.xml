@@ -48,6 +48,7 @@
   </target>
   <target name="mac">
     <property name="Info.plist" value="Info.plist" />
+    <property name="dist.folder.name.mac" value="${dist.folder.name}.app" />
     <fail unless="input.dir" message="Property input.dir unspecified." />
     <fail unless="version" message="Property version unspecified." />
     <fail unless="build.number" message="Property build.number unspecified." />
@@ -58,15 +59,15 @@
     <fixcrlf file="${input.dir}/${mps.sh}" eol="unix" eof="remove" />
     <fixcrlf file="${input.dir}/${mps.vmoptions}" eol="unix" eof="remove" />
     <zip destfile="${output.dir}/${build.number}-macos.zip" duplicate="preserve">
-      <zipfileset dir="${input.dir}/${MPS}" prefix="${dist.folder.name}" excludes="**/*.dll, **/*.exe, **/bin/linux/, **/bin/mac/, **/bin/nix/, **/bin/win/" />
-      <zipfileset dir="${input.dir}/bin/mac" prefix="${dist.folder.name}/bin" excludes="**/fsnotifier" />
+      <zipfileset dir="${input.dir}/${MPS}" prefix="${dist.folder.name.mac}" excludes="**/*.dll, **/*.exe, **/bin/linux/, **/bin/mac/, **/bin/nix/, **/bin/win/" />
+      <zipfileset dir="${input.dir}/bin/mac" prefix="${dist.folder.name.mac}/bin" excludes="**/fsnotifier" />
       <zipfileset file="${input.dir}/bin/mac/fsnotifier" prefix="${dist.folder.name}/bin" filemode="755" />
-      <zipfileset file="${input.dir}/${Info.plist}" prefix="${dist.folder.name}/Contents" />
-      <zipfileset file="${input.dir}/mps.icns" prefix="${dist.folder.name}/Contents/Resources" />
-      <zipfileset file="${input.dir}/mps" prefix="${dist.folder.name}/Contents/MacOS" filemode="755" />
-      <zipfileset file="${input.dir}/${mps.sh}" prefix="${dist.folder.name}" filemode="755" />
-      <zipfileset file="${input.dir}/${mps.vmoptions}" prefix="${dist.folder.name}/bin" />
-      <zipfileset file="${input.dir}/${mpshelp.jar}" fullpath="${dist.folder.name}/${mpshelp.jar}" />
+      <zipfileset file="${input.dir}/${Info.plist}" prefix="${dist.folder.name.mac}/Contents" />
+      <zipfileset file="${input.dir}/mps.icns" prefix="${dist.folder.name.mac}/Contents/Resources" />
+      <zipfileset file="${input.dir}/mps" prefix="${dist.folder.name.mac}/Contents/MacOS" filemode="755" />
+      <zipfileset file="${input.dir}/${mps.sh}" prefix="${dist.folder.name.mac}" filemode="755" />
+      <zipfileset file="${input.dir}/${mps.vmoptions}" prefix="${dist.folder.name.mac}/bin" />
+      <zipfileset file="${input.dir}/${mpshelp.jar}" fullpath="${dist.folder.name.mac}/${mpshelp.jar}" />
     </zip>
   </target>
   <target name="exe" if="windows">
