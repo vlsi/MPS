@@ -6,14 +6,13 @@ import jetbrains.mps.build.ant.make.MakeWorker;
 import jetbrains.mps.build.ant.IBuildServerMessageFormat;
 import jetbrains.mps.build.ant.WhatToDo;
 import jetbrains.mps.build.ant.MpsWorker;
-import jetbrains.mps.build.ant.make.MakeEnvironment;
+import jetbrains.mps.build.ant.Environment;
 import java.lang.management.MemoryMXBean;
 import java.lang.management.ManagementFactory;
-import com.intellij.openapi.project.Project;
-import com.intellij.openapi.project.ProjectManager;
 import java.io.File;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.build.ant.FileMPSProject;
+import jetbrains.mps.project.Project;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelDescriptor;
@@ -35,7 +34,11 @@ public class TestBrokenReferencesWorker extends MakeWorker {
   private long myUsedNonHeap;
 
   public TestBrokenReferencesWorker(WhatToDo whatToDo, MpsWorker.LogLogger systemOutLogger) {
-    super(whatToDo, systemOutLogger, new MakeEnvironment());
+    this(whatToDo, systemOutLogger, new Environment());
+  }
+
+  public TestBrokenReferencesWorker(WhatToDo whatToDo, MpsWorker.LogLogger systemOutLogger, Environment env) {
+    super(whatToDo, systemOutLogger, env);
     MemoryMXBean mmbean = ManagementFactory.getMemoryMXBean();
     this.myUsedHeap = mmbean.getHeapMemoryUsage().getUsed();
     this.myUsedNonHeap = mmbean.getNonHeapMemoryUsage().getUsed();
@@ -43,7 +46,6 @@ public class TestBrokenReferencesWorker extends MakeWorker {
 
   public void work() {
     setupEnvironment();
-    Project ideaProject = ProjectManager.getInstance().getDefaultProject();
 
     File projectFile = FileUtil.createTmpFile();
     FileMPSProject project = new FileMPSProject(projectFile);
@@ -58,8 +60,8 @@ public class TestBrokenReferencesWorker extends MakeWorker {
   }
 
   @Override
-  protected void executeTask(jetbrains.mps.project.Project project, final MpsWorker.ObjectsToProcess go) {
-    for (jetbrains.mps.project.Project p : go.getProjects()) {
+  protected void executeTask(Project project, final MpsWorker.ObjectsToProcess go) {
+    for (Project p : go.getProjects()) {
       extractModels(go.getModels(), p);
     }
     for (IModule m : go.getModules()) {

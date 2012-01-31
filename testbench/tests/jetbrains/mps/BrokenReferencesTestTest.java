@@ -13,14 +13,17 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.build.ant;
+package jetbrains.mps;
 
 import com.intellij.openapi.util.io.FileUtil;
 import com.intellij.util.io.ZipUtil;
 import jetbrains.mps.build.ant.MpsWorker.LogLogger;
+import jetbrains.mps.build.ant.TeamCityMessageFormat;
+import jetbrains.mps.build.ant.WhatToDo;
 import jetbrains.mps.build.ant.brokenRefs.TestBrokenReferencesWorker;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.testbench.IdeaTestEnvironment;
 import junit.framework.TestCase;
 
 import java.io.File;
@@ -44,7 +47,7 @@ public class BrokenReferencesTestTest extends TestCase {
     whatToDo.addLibrary(solutionName, destdir, false);
     whatToDo.updateLogLevel(org.apache.tools.ant.Project.MSG_WARN);
     final boolean[] brokenReferenceFound = new boolean[]{false};
-    TestBrokenReferencesWorker worker = new TestBrokenReferencesWorker(whatToDo, new LogLogger()) {
+    TestBrokenReferencesWorker worker = new TestBrokenReferencesWorker(whatToDo, new LogLogger(), new IdeaTestEnvironment()) {
       @Override
       protected void output(CharSequence text) {
         TeamCityMessageFormat teamCityMessageFormat = new TeamCityMessageFormat();
