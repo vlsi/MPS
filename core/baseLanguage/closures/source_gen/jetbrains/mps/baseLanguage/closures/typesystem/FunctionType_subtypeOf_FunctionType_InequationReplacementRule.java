@@ -59,12 +59,12 @@ public class FunctionType_subtypeOf_FunctionType_InequationReplacementRule exten
         final SNode superTerminate = SLinkOperations.getTarget(SNodeOperations.cast(supertype, "jetbrains.mps.baseLanguage.closures.structure.UnrestrictedFunctionType"), "terminateType", true);
         typeCheckingContext.whenConcrete(superTerminate, new Runnable() {
           public void run() {
-            if (!(SNodeOperations.isInstanceOf(typeCheckingContext.getRepresentative(superTerminate), "jetbrains.mps.baseLanguage.structure.VoidType"))) {
+            if (!(SNodeOperations.isInstanceOf(typeCheckingContext.getExpandedType(superTerminate), "jetbrains.mps.baseLanguage.structure.VoidType"))) {
               {
                 SNode _nodeToCheck_1029348928467 = equationInfo.getNodeWithError();
                 EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "1858552893540404499", 0, null);
                 _info_12389875345.getOuterRulesIdFromInfo(equationInfo);
-                typeCheckingContext.createGreaterThanInequality((SNode) typeCheckingContext.getRepresentative(superTerminate), (SNode) SLinkOperations.getTarget(SNodeOperations.cast(subtype, "jetbrains.mps.baseLanguage.closures.structure.UnrestrictedFunctionType"), "terminateType", true), false, true, _info_12389875345);
+                typeCheckingContext.createGreaterThanInequality((SNode) typeCheckingContext.getExpandedType(superTerminate), (SNode) SLinkOperations.getTarget(SNodeOperations.cast(subtype, "jetbrains.mps.baseLanguage.closures.structure.UnrestrictedFunctionType"), "terminateType", true), false, true, _info_12389875345);
               }
             }
           }

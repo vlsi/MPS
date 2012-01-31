@@ -40,6 +40,8 @@ public abstract class TypeCheckingContext {
 
   public abstract SNode getRepresentative(SNode node);
 
+  public abstract SNode getExpandedType(SNode node);
+
   public abstract boolean isIncrementalMode();
 
   public abstract boolean isInEditorQueries();

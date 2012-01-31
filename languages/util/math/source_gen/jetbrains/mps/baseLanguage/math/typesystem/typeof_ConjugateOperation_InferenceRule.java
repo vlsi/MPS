@@ -30,18 +30,18 @@ public class typeof_ConjugateOperation_InferenceRule extends AbstractInferenceRu
       final SNode t = typeCheckingContext.typeOf(SLinkOperations.getTarget(operation, "expr", true), "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "7388416617632229357", true);
       typeCheckingContext.whenConcrete(t, new Runnable() {
         public void run() {
-          if (SNodeOperations.isInstanceOf(typeCheckingContext.getRepresentative(t), "jetbrains.mps.baseLanguage.math.structure.MatrixType")) {
-            SNode result = new typeof_ConjugateOperation_InferenceRule.QuotationClass_2f5qmh_a0a0a0a0a0().createNode(MathTypeUtil.getElementType(typeCheckingContext.getRepresentative(t)), typeCheckingContext);
-            SPropertyOperations.set(result, "columns", "" + SPropertyOperations.getInteger(SNodeOperations.cast(typeCheckingContext.getRepresentative(t), "jetbrains.mps.baseLanguage.math.structure.MatrixType"), "rows"));
-            SPropertyOperations.set(result, "rows", "" + SPropertyOperations.getInteger(SNodeOperations.cast(typeCheckingContext.getRepresentative(t), "jetbrains.mps.baseLanguage.math.structure.MatrixType"), "columns"));
+          if (SNodeOperations.isInstanceOf(typeCheckingContext.getExpandedType(t), "jetbrains.mps.baseLanguage.math.structure.MatrixType")) {
+            SNode result = new typeof_ConjugateOperation_InferenceRule.QuotationClass_2f5qmh_a0a0a0a0a0().createNode(MathTypeUtil.getElementType(typeCheckingContext.getExpandedType(t)), typeCheckingContext);
+            SPropertyOperations.set(result, "columns", "" + SPropertyOperations.getInteger(SNodeOperations.cast(typeCheckingContext.getExpandedType(t), "jetbrains.mps.baseLanguage.math.structure.MatrixType"), "rows"));
+            SPropertyOperations.set(result, "rows", "" + SPropertyOperations.getInteger(SNodeOperations.cast(typeCheckingContext.getExpandedType(t), "jetbrains.mps.baseLanguage.math.structure.MatrixType"), "columns"));
             {
               SNode _nodeToCheck_1029348928467 = operation;
               EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "7388416617632229309", 0, null);
               typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "7388416617632229314", true), (SNode) result, false, true, _info_12389875345);
             }
-          } else if (SNodeOperations.isInstanceOf(typeCheckingContext.getRepresentative(t), "jetbrains.mps.baseLanguage.math.structure.VectorType")) {
-            SNode result = new typeof_ConjugateOperation_InferenceRule.QuotationClass_2f5qmh_a0a0a0a0a0a().createNode(MathTypeUtil.getElementType(typeCheckingContext.getRepresentative(t)), typeCheckingContext);
-            SPropertyOperations.set(result, "columns", "" + SPropertyOperations.getInteger(SNodeOperations.cast(typeCheckingContext.getRepresentative(t), "jetbrains.mps.baseLanguage.math.structure.VectorType"), "height"));
+          } else if (SNodeOperations.isInstanceOf(typeCheckingContext.getExpandedType(t), "jetbrains.mps.baseLanguage.math.structure.VectorType")) {
+            SNode result = new typeof_ConjugateOperation_InferenceRule.QuotationClass_2f5qmh_a0a0a0a0a0a().createNode(MathTypeUtil.getElementType(typeCheckingContext.getExpandedType(t)), typeCheckingContext);
+            SPropertyOperations.set(result, "columns", "" + SPropertyOperations.getInteger(SNodeOperations.cast(typeCheckingContext.getExpandedType(t), "jetbrains.mps.baseLanguage.math.structure.VectorType"), "height"));
             SPropertyOperations.set(result, "rows", "" + 1);
             {
               SNode _nodeToCheck_1029348928467 = operation;
@@ -54,7 +54,7 @@ public class typeof_ConjugateOperation_InferenceRule extends AbstractInferenceRu
               IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(operation, "Operation defined for matrices/vectors only", "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "7388416617632229354", null, errorTarget);
             }
           }
-          if (!(TypeChecker.getInstance().getSubtypingManager().isSubtype(MathTypeUtil.qComplex, typeCheckingContext.getRepresentative(t)))) {
+          if (!(TypeChecker.getInstance().getSubtypingManager().isSubtype(MathTypeUtil.qComplex, typeCheckingContext.getExpandedType(t)))) {
             {
               MessageTarget errorTarget = new NodeMessageTarget();
               IErrorReporter _reporter_2309309498 = typeCheckingContext.reportWarning(operation, "Usage of conjugation instead of transposition only makes sense for complex matrices", "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "7388416617632229387", null, errorTarget);

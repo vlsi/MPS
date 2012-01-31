@@ -34,7 +34,7 @@ public class typeof_EnumMember_ValueOperation_InferenceRule extends AbstractInfe
           {
             SNode _nodeToCheck_1029348928467 = operation;
             EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1240577344535", 0, null);
-            typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1240577344539", true), (SNode) DataTypeDeclaration_Behavior.call_toBaseLanguageType_1213877229718(SLinkOperations.getTarget(SNodeOperations.cast(typeCheckingContext.getRepresentative(enumDecl), "jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration"), "memberDataType", false)), _info_12389875345);
+            typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1240577344539", true), (SNode) DataTypeDeclaration_Behavior.call_toBaseLanguageType_1213877229718(SLinkOperations.getTarget(SNodeOperations.cast(typeCheckingContext.getExpandedType(enumDecl), "jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration"), "memberDataType", false)), _info_12389875345);
           }
         }
       }, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1240577305543", false, false);

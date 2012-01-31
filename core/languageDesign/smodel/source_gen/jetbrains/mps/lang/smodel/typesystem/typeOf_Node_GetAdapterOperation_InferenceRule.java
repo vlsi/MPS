@@ -29,7 +29,7 @@ public class typeOf_Node_GetAdapterOperation_InferenceRule extends AbstractInfer
       final SNode C = typeCheckingContext.getRepresentative(Concept_typevar_1205967245422);
       typeCheckingContext.whenConcrete(C, new Runnable() {
         public void run() {
-          SNode inputNodeConcept = SNodeOperations.cast(typeCheckingContext.getRepresentative(C), "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration");
+          SNode inputNodeConcept = SNodeOperations.cast(typeCheckingContext.getExpandedType(C), "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration");
           {
             SNode _nodeToCheck_1029348928467 = node;
             EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1203710468986", 0, null);

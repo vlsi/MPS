@@ -25,18 +25,18 @@ public class typeof_MatrixInverseOperation_InferenceRule extends AbstractInferen
       final SNode t = typeCheckingContext.typeOf(SLinkOperations.getTarget(op, "expr", true), "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "7388416617632229396", true);
       typeCheckingContext.whenConcrete(t, new Runnable() {
         public void run() {
-          if (SNodeOperations.isInstanceOf(typeCheckingContext.getRepresentative(t), "jetbrains.mps.baseLanguage.math.structure.MatrixType")) {
+          if (SNodeOperations.isInstanceOf(typeCheckingContext.getExpandedType(t), "jetbrains.mps.baseLanguage.math.structure.MatrixType")) {
             {
               SNode _nodeToCheck_1029348928467 = op;
               EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "9195559275659749153", 0, null);
-              typeCheckingContext.createLessThanInequality((SNode) MathTypeUtil.qFloat, (SNode) MathTypeUtil.getElementType(typeCheckingContext.getRepresentative(t)), false, true, _info_12389875345);
+              typeCheckingContext.createLessThanInequality((SNode) MathTypeUtil.qFloat, (SNode) MathTypeUtil.getElementType(typeCheckingContext.getExpandedType(t)), false, true, _info_12389875345);
             }
             {
               SNode _nodeToCheck_1029348928467 = op;
               EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "9195559275659749160", 0, null);
               typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "9195559275659749167", true), (SNode) typeCheckingContext.typeOf(SLinkOperations.getTarget(op, "expr", true), "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "9195559275659749162", true), _info_12389875345);
             }
-            SNode mt = SNodeOperations.cast(typeCheckingContext.getRepresentative(t), "jetbrains.mps.baseLanguage.math.structure.MatrixType");
+            SNode mt = SNodeOperations.cast(typeCheckingContext.getExpandedType(t), "jetbrains.mps.baseLanguage.math.structure.MatrixType");
             if (SPropertyOperations.getInteger(mt, "rows") != 0 && SPropertyOperations.getInteger(mt, "columns") != 0 && SPropertyOperations.getInteger(mt, "rows") != SPropertyOperations.getInteger(mt, "columns")) {
               {
                 MessageTarget errorTarget = new NodeMessageTarget();

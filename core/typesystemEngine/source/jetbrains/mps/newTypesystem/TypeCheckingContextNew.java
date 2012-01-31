@@ -167,6 +167,11 @@ public class TypeCheckingContextNew extends TypeCheckingContext {
   }
 
   @Override
+  public SNode getExpandedType(SNode node) {
+    return myState.expand(node);
+  }
+
+  @Override
   public List<IErrorReporter> getTypeMessagesDontCheck(SNode node) {
     return getBaseNodeTypesComponent().getErrors(node);
   }

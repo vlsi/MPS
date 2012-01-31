@@ -200,7 +200,7 @@ public class DimensionUtil {
           public void run() {
             List<SNode> types2 = new ArrayList<SNode>();
             ListSequence.fromList(types2).addSequence(ListSequence.fromList(types));
-            ListSequence.fromList(types2).addElement(typeCheckingContext.getRepresentative(t1));
+            ListSequence.fromList(types2).addElement(typeCheckingContext.getExpandedType(t1));
             checkDim(typeCheckingContext, components, n + 1, types2, row, node);
           }
         }, "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "757772128651891776", false, false);
