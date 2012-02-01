@@ -10,6 +10,15 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
+import jetbrains.mps.nodeEditor.MPSFonts;
+import jetbrains.mps.nodeEditor.MPSColors;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
+import jetbrains.mps.nodeEditor.cells.ModelAccessor;
+import jetbrains.mps.core.properties.constraints.PropEscapeUtil;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.util.EqualUtil;
+import jetbrains.mps.nodeEditor.CellActionType;
+import jetbrains.mps.nodeEditor.cellActions.CellAction_Empty;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
@@ -20,12 +29,26 @@ public class PropertiesDeclaration_Editor extends DefaultNodeEditor {
     return this.createCollection_cuzp02_a(editorContext, node);
   }
 
+  public EditorCell createInspectedCell(EditorContext editorContext, SNode node) {
+    return this.createCollection_cuzp02_a_0(editorContext, node);
+  }
+
   private EditorCell createCollection_cuzp02_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_cuzp02_a");
     editorCell.addEditorCell(this.createProperty_cuzp02_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_cuzp02_b0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_cuzp02_c0(editorContext, node));
+    return editorCell;
+  }
+
+  private EditorCell createCollection_cuzp02_a_0(EditorContext editorContext, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
+    editorCell.setCellId("Collection_cuzp02_a_0");
+    editorCell.addEditorCell(this.createConstant_cuzp02_a0(editorContext, node));
+    editorCell.addEditorCell(this.createReadOnlyModelAccessor_cuzp02_b0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_cuzp02_c0(editorContext, node));
+    editorCell.addEditorCell(this.createReadOnlyModelAccessor_cuzp02_d0(editorContext, node));
     return editorCell;
   }
 
@@ -39,6 +62,70 @@ public class PropertiesDeclaration_Editor extends DefaultNodeEditor {
       style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
     }
     editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createConstant_cuzp02_a0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "key:");
+    editorCell.setCellId("Constant_cuzp02_a0");
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
+      style.set(StyleAttributes.TEXT_COLOR, MPSColors.darkGray);
+    }
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createConstant_cuzp02_c0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "value:");
+    editorCell.setCellId("Constant_cuzp02_c0");
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
+      style.set(StyleAttributes.TEXT_COLOR, MPSColors.darkGray);
+    }
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createReadOnlyModelAccessor_cuzp02_b0(final EditorContext editorContext, final SNode node) {
+    EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
+      public String getText() {
+        return PropEscapeUtil.escapeKey(SPropertyOperations.getString(node, "name"));
+      }
+
+      public void setText(String s) {
+      }
+
+      public boolean isValidText(String s) {
+        return EqualUtil.equals(s, this.getText());
+      }
+    }, node);
+    editorCell.setAction(CellActionType.DELETE, new CellAction_Empty());
+    editorCell.setCellId("ReadOnlyModelAccessor_cuzp02_b0");
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+    }
+    return editorCell;
+  }
+
+  private EditorCell createReadOnlyModelAccessor_cuzp02_d0(final EditorContext editorContext, final SNode node) {
+    EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
+      public String getText() {
+        return PropEscapeUtil.escapeValue(SPropertyOperations.getString(node, "value"));
+      }
+
+      public void setText(String s) {
+      }
+
+      public boolean isValidText(String s) {
+        return EqualUtil.equals(s, this.getText());
+      }
+    }, node);
+    editorCell.setAction(CellActionType.DELETE, new CellAction_Empty());
+    editorCell.setCellId("ReadOnlyModelAccessor_cuzp02_d0");
     return editorCell;
   }
 

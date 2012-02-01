@@ -56,8 +56,30 @@
       <property name="name" nameId="tpck.1169194664001" value="\tinkey" />
       <property name="value" nameId="911s.3961775458390522596" value="Well" />
     </node>
+    <node role="lines" roleId="911s.3961775458390522563" type="911s.PropertiesLine" typeId="911s.3961775458390522562" id="6896005762093567711" />
+    <node role="lines" roleId="911s.3961775458390522563" type="911s.PropertiesComment" typeId="911s.3961775458390522585" id="6896005762093567713">
+      <property name="text" nameId="911s.3961775458390522586" value="greek: Έκτακτη" />
+    </node>
+    <node role="lines" roleId="911s.3961775458390522563" type="911s.PropertiesDeclaration" typeId="911s.3961775458390522561" id="6896005762093567715">
+      <property name="name" nameId="tpck.1169194664001" value="greekValue" />
+      <property name="value" nameId="911s.3961775458390522596" value="Έκτακτη" />
+    </node>
     <node role="lines" roleId="911s.3961775458390522563" type="911s.PropertiesLine" typeId="911s.3961775458390522562" id="6896005762093550226" />
-    <node role="lines" roleId="911s.3961775458390522563" type="911s.PropertiesLine" typeId="911s.3961775458390522562" id="6896005762093550221" />
+    <node role="lines" roleId="911s.3961775458390522563" type="911s.PropertiesComment" typeId="911s.3961775458390522585" id="6896005762093567716">
+      <property name="text" nameId="911s.3961775458390522586" value="russian: Привет" />
+    </node>
+    <node role="lines" roleId="911s.3961775458390522563" type="911s.PropertiesDeclaration" typeId="911s.3961775458390522561" id="6896005762093567718">
+      <property name="name" nameId="tpck.1169194664001" value="ruValue" />
+      <property name="value" nameId="911s.3961775458390522596" value="Привет" />
+    </node>
+    <node role="lines" roleId="911s.3961775458390522563" type="911s.PropertiesLine" typeId="911s.3961775458390522562" id="6896005762093567719" />
+    <node role="lines" roleId="911s.3961775458390522563" type="911s.PropertiesComment" typeId="911s.3961775458390522585" id="6896005762093567722">
+      <property name="text" nameId="911s.3961775458390522586" value="regexp [\w+=?]" />
+    </node>
+    <node role="lines" roleId="911s.3961775458390522563" type="911s.PropertiesDeclaration" typeId="911s.3961775458390522561" id="6896005762093567725">
+      <property name="name" nameId="tpck.1169194664001" value="regexp" />
+      <property name="value" nameId="911s.3961775458390522596" value="[\w+=?]" />
+    </node>
   </root>
 </model>
 

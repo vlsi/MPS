@@ -4,12 +4,13 @@ package jetbrains.mps.core.properties.textGen;
 
 import jetbrains.mps.textGen.SNodeTextGen;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.core.properties.constraints.PropEscapeUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class PropertiesComment_TextGen extends SNodeTextGen {
   public void doGenerateText(SNode node) {
     this.append("# ");
-    this.append(SPropertyOperations.getString(node, "text"));
+    this.append(PropEscapeUtil.escapeComment(SPropertyOperations.getString(node, "text")));
     this.appendNewLine();
   }
 }
