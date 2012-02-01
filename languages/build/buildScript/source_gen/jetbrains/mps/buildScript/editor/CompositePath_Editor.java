@@ -111,7 +111,7 @@ public class CompositePath_Editor extends DefaultNodeEditor {
     }
 
     public List<String> getPropertyValues(SNode node, IScope scope, IOperationContext operationContext) {
-      return CompositePath_Behavior.call_getHeadSuggestions_4959435991187212109(node, BuildRelativePath_Behavior.call_getBasePath_4959435991187140515(SNodeOperations.getAncestor(node, "jetbrains.mps.buildScript.structure.BuildRelativePath", false, false), Context.defaultContext(node)));
+      return CompositePath_Behavior.call_getHeadSuggestions_4959435991187212109(node, BuildRelativePath_Behavior.call_getBasePath_4959435991187140515(SNodeOperations.getAncestor(node, "jetbrains.mps.buildScript.structure.BuildRelativePath", false, false), Context.defaultContext()));
     }
   }
 }

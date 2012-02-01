@@ -55,7 +55,7 @@ public class QueriesGenerated {
       if (SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
         Computable computable = new Computable() {
           public Object compute() {
-            return CompositePath_Behavior.call_getHeadSuggestions_4959435991187212109(_context.getCurrentTargetNode(), BuildRelativePath_Behavior.call_getBasePath_4959435991187140515(SNodeOperations.getAncestor(_context.getCurrentTargetNode(), "jetbrains.mps.buildScript.structure.BuildRelativePath", false, false), Context.defaultContext(_context.getCurrentTargetNode())));
+            return CompositePath_Behavior.call_getHeadSuggestions_4959435991187212109(_context.getCurrentTargetNode(), BuildRelativePath_Behavior.call_getBasePath_4959435991187140515(SNodeOperations.getAncestor(_context.getCurrentTargetNode(), "jetbrains.mps.buildScript.structure.BuildRelativePath", false, false), Context.defaultContext()));
           }
         };
         Iterable<String> queryResult = (Iterable) computable.compute();

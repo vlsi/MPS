@@ -40,9 +40,6 @@
       <property name="virtualPackage" nameId="tpck.1193676396447" value="SourcePath" />
       <link role="concept" roleId="1i04.1225194240799" targetNodeId="3ior.8618885170173601777" resolveInfo="CompositePath" />
     </node>
-    <node type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="4959435991187108492">
-      <link role="concept" roleId="1i04.1225194240799" targetNodeId="3ior.4959435991187108491" resolveInfo="Environment" />
-    </node>
     <node type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="4959435991187140512">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="SourcePath" />
       <link role="concept" roleId="1i04.1225194240799" targetNodeId="3ior.7321017245476976379" resolveInfo="BuildRelativePath" />
@@ -284,7 +281,6 @@
       <property name="isAbstract" nameId="1i04.1225194472834" value="false" />
       <property name="isVirtual" nameId="1i04.1225194472832" value="false" />
       <property name="name" nameId="tpck.1169194664001" value="getBasePath" />
-      <link role="overriddenMethod" roleId="1i04.1225194472831" targetNodeId="4959435991187108495" resolveInfo="getBasePath" />
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="4959435991187146925" />
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="4959435991187146926">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="5481553824944773330">
@@ -403,6 +399,7 @@
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="4045247515868406000">
               <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="o3n2.4045247515868404764" resolveInfo="getBasePath_Local" />
+              <node role="actualArgument" roleId="tpee.1068499141038" type="1i04.ThisNodeExpression" typeId="1i04.1225194691553" id="5584673629410318779" />
             </node>
           </node>
         </node>
@@ -733,19 +730,6 @@
           </node>
         </node>
       </node>
-    </node>
-  </root>
-  <root id="4959435991187108492">
-    <node role="method" roleId="1i04.1225194240805" type="1i04.ConceptMethodDeclaration" typeId="1i04.1225194472830" id="4959435991187108495">
-      <property name="isAbstract" nameId="1i04.1225194472834" value="true" />
-      <property name="isVirtual" nameId="1i04.1225194472832" value="true" />
-      <property name="name" nameId="tpck.1169194664001" value="getBasePath" />
-      <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="4959435991187108496" />
-      <node role="returnType" roleId="tpee.1068580123133" type="tpee.StringType" typeId="tpee.1225271177708" id="4959435991187108499" />
-      <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="4959435991187108498" />
-    </node>
-    <node role="constructor" roleId="1i04.1225194240801" type="1i04.ConceptConstructorDeclaration" typeId="1i04.1225194413805" id="4959435991187108493">
-      <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="4959435991187108494" />
     </node>
   </root>
   <root id="4959435991187140512">

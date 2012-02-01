@@ -43,7 +43,7 @@ public class BuildProject_Behavior {
     return null;
   }
 
-  public static String virtual_getBasePath_4959435991187108495(SNode thisNode) {
+  public static String call_getBasePath_4959435991187146924(SNode thisNode) {
     return thisNode.getModel().getModelDescriptor().getModule().getDescriptorFile().getParent().getPath();
   }
 }

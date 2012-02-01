@@ -147,7 +147,6 @@
     <classNode dependClassName="jetbrains.mps.buildScript.structure.BuildLayout" />
     <classNode dependClassName="jetbrains.mps.buildScript.structure.BuildMacro" />
     <classNode dependClassName="jetbrains.mps.buildScript.structure.BuildProjectPart" />
-    <classNode dependClassName="jetbrains.mps.buildScript.structure.Environment" />
     <classNode dependClassName="jetbrains.mps.lang.core.structure.Attribute" />
     <classNode dependClassName="jetbrains.mps.lang.core.structure.INamedConcept" />
     <classNode dependClassName="jetbrains.mps.lang.core.structure.ScopeProvider" />
@@ -319,10 +318,6 @@
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
-  </dependency>
-  <dependency className="jetbrains.mps.buildScript.structure.Environment" file="Environment.java">
-    <classNode dependClassName="java.lang.String" />
-    <classNode extendsClassName="jetbrains.mps.smodel.INodeAdapter" />
   </dependency>
   <dependency className="jetbrains.mps.buildScript.structure.FileName_PropertySupport" file="FileName_PropertySupport.java">
     <classNode dependClassName="java.lang.String" />
