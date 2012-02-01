@@ -7,9 +7,8 @@ import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
 import junit.framework.Assert;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.buildScript.behavior.BuildLayout_NamedContainer_Behavior;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 @MPSLaunch
 public class TestTemporalPaths_Test extends BaseTransformationTest {
@@ -23,6 +22,12 @@ public class TestTemporalPaths_Test extends BaseTransformationTest {
   public void test_topLevelFolder() throws Throwable {
     this.initTest("${mps_langs}/build/build.ipr", "r:361d93bd-9223-4768-9e37-bcd7b8db1f40(jetbrains.mps.buildScript.tests@tests)");
     this.runTest("jetbrains.mps.buildScript.tests.TestTemporalPaths_Test$TestBody", "test_topLevelFolder", true);
+  }
+
+  @Test
+  public void test_topInternalFolder() throws Throwable {
+    this.initTest("${mps_langs}/build/build.ipr", "r:361d93bd-9223-4768-9e37-bcd7b8db1f40(jetbrains.mps.buildScript.tests@tests)");
+    this.runTest("jetbrains.mps.buildScript.tests.TestTemporalPaths_Test$TestBody", "test_topInternalFolder", true);
   }
 
   @Test
@@ -42,26 +47,37 @@ public class TestTemporalPaths_Test extends BaseTransformationTest {
     public void test_topLevelJar() throws Exception {
       this.addNodeById("4045247515868358884");
       this.addNodeById("280273048052535283");
-      Assert.assertEquals("${deploy.dir}/" + SPropertyOperations.getString(SNodeOperations.cast(this.getNodeById("280273048052535266"), "jetbrains.mps.buildScript.structure.BuildLayout_Jar"), "name"), BuildLayout_NamedContainer_Behavior.call_getOutputPath_WithMacro_280273048052535414(SNodeOperations.cast(this.getNodeById("280273048052535266"), "jetbrains.mps.buildScript.structure.BuildLayout_Jar")));
+      this.addNodeById("7422876504327290541");
+      Assert.assertEquals(TestContext.DEPLOY + "/test.jar", BuildLayout_NamedContainer_Behavior.call_getOutputPath_WithMacro_280273048052535414(SNodeOperations.cast(this.getNodeById("280273048052535266"), "jetbrains.mps.buildScript.structure.BuildLayout_Jar"), new TestContext()));
     }
 
     public void test_topLevelFolder() throws Exception {
       this.addNodeById("4045247515868358884");
       this.addNodeById("280273048052535283");
-      Assert.assertEquals("${deploy.dir}/" + SPropertyOperations.getString(SNodeOperations.cast(this.getNodeById("280273048052535287"), "jetbrains.mps.buildScript.structure.BuildLayout_Folder"), "name"), BuildLayout_NamedContainer_Behavior.call_getOutputPath_WithMacro_280273048052535414(SNodeOperations.cast(this.getNodeById("280273048052535287"), "jetbrains.mps.buildScript.structure.BuildLayout_Folder")));
+      this.addNodeById("7422876504327290541");
+      Assert.assertEquals(TestContext.DEPLOY + "/folder", BuildLayout_NamedContainer_Behavior.call_getOutputPath_WithMacro_280273048052535414(SNodeOperations.cast(this.getNodeById("280273048052535287"), "jetbrains.mps.buildScript.structure.BuildLayout_Folder"), new TestContext()));
+    }
+
+    public void test_topInternalFolder() throws Exception {
+      this.addNodeById("4045247515868358884");
+      this.addNodeById("280273048052535283");
+      this.addNodeById("7422876504327290541");
+      Assert.assertEquals(TestContext.DEPLOY + "/folder/internal", BuildLayout_NamedContainer_Behavior.call_getOutputPath_WithMacro_280273048052535414(SNodeOperations.cast(this.getNodeById("7422876504327290551"), "jetbrains.mps.buildScript.structure.BuildLayout_Folder"), new TestContext()));
     }
 
     public void test_jarInFolder() throws Exception {
       this.addNodeById("4045247515868358884");
       this.addNodeById("280273048052535283");
-      Assert.assertEquals("${deploy.dir}/" + SPropertyOperations.getString(SNodeOperations.cast(this.getNodeById("280273048052535287"), "jetbrains.mps.buildScript.structure.BuildLayout_Folder"), "name") + "/" + SPropertyOperations.getString(SNodeOperations.cast(this.getNodeById("280273048052535289"), "jetbrains.mps.buildScript.structure.BuildLayout_Jar"), "name"), BuildLayout_NamedContainer_Behavior.call_getOutputPath_WithMacro_280273048052535414(SNodeOperations.cast(this.getNodeById("280273048052535289"), "jetbrains.mps.buildScript.structure.BuildLayout_Jar")));
+      this.addNodeById("7422876504327290541");
+      Assert.assertEquals(TestContext.DEPLOY + "/folder/test.jar", BuildLayout_NamedContainer_Behavior.call_getOutputPath_WithMacro_280273048052535414(SNodeOperations.cast(this.getNodeById("280273048052535289"), "jetbrains.mps.buildScript.structure.BuildLayout_Jar"), new TestContext()));
     }
 
     public void test_folderInJar() throws Exception {
       this.addNodeById("4045247515868358884");
       this.addNodeById("280273048052535283");
-      Assert.assertEquals("${tmp}/" + SNodeOperations.getParent(SNodeOperations.cast(this.getNodeById("8104754176559709900"), "jetbrains.mps.buildScript.structure.BuildLayout_Folder")).getId() + "/" + SPropertyOperations.getString(SNodeOperations.cast(this.getNodeById("8104754176559709900"), "jetbrains.mps.buildScript.structure.BuildLayout_Folder"), "name"), BuildLayout_NamedContainer_Behavior.call_getOutputPath_WithMacro_280273048052535414(SNodeOperations.cast(this.getNodeById("8104754176559709900"), "jetbrains.mps.buildScript.structure.BuildLayout_Folder")));
-      Assert.assertEquals("${tmp}/" + SNodeOperations.getParent(SNodeOperations.cast(this.getNodeById("8104754176559709900"), "jetbrains.mps.buildScript.structure.BuildLayout_Folder")).getId() + "/" + SPropertyOperations.getString(SNodeOperations.cast(this.getNodeById("8104754176559709900"), "jetbrains.mps.buildScript.structure.BuildLayout_Folder"), "name") + "/" + SNodeOperations.cast(this.getNodeById("8104754176559709938"), "jetbrains.mps.buildScript.structure.BuildLayout_Folder"), BuildLayout_NamedContainer_Behavior.call_getOutputPath_WithMacro_280273048052535414(SNodeOperations.cast(this.getNodeById("8104754176559709938"), "jetbrains.mps.buildScript.structure.BuildLayout_Folder")));
+      this.addNodeById("7422876504327290541");
+      Assert.assertEquals(TestContext.TEMP + "/" + SNodeOperations.getParent(SNodeOperations.cast(this.getNodeById("8104754176559709900"), "jetbrains.mps.buildScript.structure.BuildLayout_Folder")).getId() + "/internalFolder", BuildLayout_NamedContainer_Behavior.call_getOutputPath_WithMacro_280273048052535414(SNodeOperations.cast(this.getNodeById("8104754176559709900"), "jetbrains.mps.buildScript.structure.BuildLayout_Folder"), new TestContext()));
+      Assert.assertEquals(TestContext.TEMP + "/" + SNodeOperations.getParent(SNodeOperations.cast(this.getNodeById("8104754176559709900"), "jetbrains.mps.buildScript.structure.BuildLayout_Folder")).getId() + "/internalFolder/internalFolder2", BuildLayout_NamedContainer_Behavior.call_getOutputPath_WithMacro_280273048052535414(SNodeOperations.cast(this.getNodeById("8104754176559709938"), "jetbrains.mps.buildScript.structure.BuildLayout_Folder"), new TestContext()));
     }
   }
 }

@@ -9,6 +9,7 @@ import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.buildScript.behavior.BuildProject_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class Context {
   private Map<String, Object> myProperties = MapSequence.fromMap(new HashMap<String, Object>());
@@ -30,6 +31,14 @@ public class Context {
 
   public String getBasePath_Local(SNode node) {
     return BuildProject_Behavior.call_getBasePath_4959435991187146924(SNodeOperations.getAncestor(node, "jetbrains.mps.buildScript.structure.BuildProject", true, false));
+  }
+
+  public String getTmpPath_WithMacro(SNode node) {
+    return "${" + SPropertyOperations.getString(SNodeOperations.getAncestor(node, "jetbrains.mps.buildScript.structure.BuildProject", true, false), "name") + ".tmp}";
+  }
+
+  public String getDeployPath_WithMacro(SNode node) {
+    return "${" + SPropertyOperations.getString(SNodeOperations.getAncestor(node, "jetbrains.mps.buildScript.structure.BuildProject", true, false), "name") + ".deploy.dir}";
   }
 
   @Nullable
