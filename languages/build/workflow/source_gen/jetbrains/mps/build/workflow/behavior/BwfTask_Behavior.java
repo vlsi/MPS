@@ -7,6 +7,8 @@ import jetbrains.mps.scope.Scope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.scope.SimpleRoleScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.scope.CompositeScope;
 
 public class BwfTask_Behavior {
   public static void init(SNode thisNode) {
@@ -14,7 +16,13 @@ public class BwfTask_Behavior {
 
   public static Scope virtual_getScope_3734116213129936182(SNode thisNode, SNode kind, SNode child) {
     if (kind == SConceptOperations.findConceptDeclaration("jetbrains.mps.build.workflow.structure.BwfSubTask")) {
-      return SimpleRoleScope.forNamedElements(thisNode, SLinkOperations.findLinkDeclaration("jetbrains.mps.build.workflow.structure.BwfTask", "subTasks"));
+      Scope result = SimpleRoleScope.forNamedElements(thisNode, SLinkOperations.findLinkDeclaration("jetbrains.mps.build.workflow.structure.BwfTask", "subTasks"));
+      for (SNode n : SNodeOperations.getAllSiblings(thisNode, false)) {
+        if (SNodeOperations.isInstanceOf(n, "jetbrains.mps.build.workflow.structure.BwfTaskPart") && SLinkOperations.getTarget(SNodeOperations.cast(n, "jetbrains.mps.build.workflow.structure.BwfTaskPart"), "task", false) == thisNode) {
+          result = CompositeScope.createComposite(result, SimpleRoleScope.forNamedElements(n, SLinkOperations.findLinkDeclaration("jetbrains.mps.build.workflow.structure.BwfTaskPart", "subTasks")));
+        }
+      }
+      return result;
     }
     return null;
   }
