@@ -131,6 +131,9 @@
     <node type="v54s.ExtensionDeclaration" typeId="v54s.3729007189729192404" id="6905339732004138486">
       <link role="extensionPoint" roleId="v54s.3729007189729192405" targetNodeId="tpcq.6905339732004134989" resolveInfo="GeneratorCache" />
     </node>
+    <node type="tp4k.ActionGroupDeclaration" typeId="tp4k.1203087890642" id="8498671594322411744">
+      <property name="name" nameId="tpck.1169194664001" value="ActionsAsIntentions" />
+    </node>
   </roots>
   <root id="6573807532044017672">
     <node role="field" roleId="tpee.1068390468199" type="tpee.FieldDeclaration" typeId="tpee.1068390468200" id="6573807532044017673">
@@ -2338,6 +2341,9 @@
         </node>
       </node>
     </node>
+  </root>
+  <root id="8498671594322411744">
+    <node role="contents" roleId="tp4k.1207145245948" type="tp4k.ElementListContents" typeId="tp4k.1207145163717" id="8498671594322411746" />
   </root>
 </model>
 
