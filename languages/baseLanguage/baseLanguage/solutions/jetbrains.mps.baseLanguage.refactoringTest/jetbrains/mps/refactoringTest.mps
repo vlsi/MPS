@@ -11719,11 +11719,11 @@
           <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="1230053266392">
             <property name="name" nameId="tpck.1169194664001" value="ref" />
             <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1230053266393">
-              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="89o2.8492459591399173071" resolveInfo="InlineVariableRefactoring" />
+              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="z76a.6933688002660655599" resolveInfo="InlineVariableRefactoring" />
             </node>
             <node role="initializer" roleId="tpee.1068431790190" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="1230053266394">
               <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="1230053266395">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="89o2.8492459591399170178" resolveInfo="InlineVariableAssignmentRefactoring" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="z76a.6933688002660655514" resolveInfo="InlineVariableAssignmentRefactoring" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tp5g.TestNodeReference" typeId="tp5g.1210674524691" id="1230053266396">
                   <link role="declaration" roleId="tp5g.1210674534086" targetNodeId="1230053266373" resolveInfo="definition" />
                 </node>
@@ -11737,7 +11737,7 @@
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1230053266392" resolveInfo="ref" />
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1230053266400">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="89o2.8492459591399173077" resolveInfo="doRefactoring" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="z76a.6933688002660655610" resolveInfo="doRefactoring" />
             </node>
           </node>
         </node>
@@ -11759,11 +11759,11 @@
           <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="1230053266408">
             <property name="name" nameId="tpck.1169194664001" value="ref" />
             <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1230053266409">
-              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="89o2.8492459591399173071" resolveInfo="InlineVariableRefactoring" />
+              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="z76a.6933688002660655599" resolveInfo="InlineVariableRefactoring" />
             </node>
             <node role="initializer" roleId="tpee.1068431790190" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="1230053266410">
               <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="1230053266411">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="89o2.8492459591399173607" resolveInfo="InlineVariableReferenceRefactoring" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="z76a.6933688002660654989" resolveInfo="InlineVariableReferenceRefactoring" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tp5g.TestNodeReference" typeId="tp5g.1210674524691" id="1230053266412">
                   <link role="declaration" roleId="tp5g.1210674534086" targetNodeId="1230053266378" resolveInfo="reference" />
                 </node>
@@ -11777,7 +11777,7 @@
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1230053266408" resolveInfo="ref" />
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1230053266416">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="89o2.8492459591399173077" resolveInfo="doRefactoring" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="z76a.6933688002660655610" resolveInfo="doRefactoring" />
             </node>
           </node>
         </node>
@@ -11801,11 +11801,11 @@
           <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="1230053266425">
             <property name="name" nameId="tpck.1169194664001" value="ref" />
             <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1230053266426">
-              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="89o2.8492459591399173071" resolveInfo="InlineVariableRefactoring" />
+              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="z76a.6933688002660655599" resolveInfo="InlineVariableRefactoring" />
             </node>
             <node role="initializer" roleId="tpee.1068431790190" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1230053266427">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="89o2.8492459591399173275" resolveInfo="createRefactoring" />
-              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="89o2.8492459591399173071" resolveInfo="InlineVariableRefactoring" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="z76a.6933688002660655801" resolveInfo="createRefactoring" />
+              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="z76a.6933688002660655599" resolveInfo="InlineVariableRefactoring" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tp5g.TestNodeReference" typeId="tp5g.1210674524691" id="1230053266428">
                 <link role="declaration" roleId="tp5g.1210674534086" targetNodeId="1230053266451" resolveInfo="ref" />
               </node>
@@ -11818,7 +11818,7 @@
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1230053266425" resolveInfo="ref" />
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1230053266432">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="89o2.8492459591399173077" resolveInfo="doRefactoring" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="z76a.6933688002660655610" resolveInfo="doRefactoring" />
             </node>
           </node>
         </node>
@@ -11999,11 +11999,11 @@
           <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="1230053266515">
             <property name="name" nameId="tpck.1169194664001" value="ref" />
             <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1230053266516">
-              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="89o2.8492459591399173071" resolveInfo="InlineVariableRefactoring" />
+              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="z76a.6933688002660655599" resolveInfo="InlineVariableRefactoring" />
             </node>
             <node role="initializer" roleId="tpee.1068431790190" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1230053266517">
-              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="89o2.8492459591399173071" resolveInfo="InlineVariableRefactoring" />
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="89o2.8492459591399173275" resolveInfo="createRefactoring" />
+              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="z76a.6933688002660655599" resolveInfo="InlineVariableRefactoring" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="z76a.6933688002660655801" resolveInfo="createRefactoring" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tp5g.TestNodeReference" typeId="tp5g.1210674524691" id="1230053266518">
                 <link role="declaration" roleId="tp5g.1210674534086" targetNodeId="1230053266494" resolveInfo="ref" />
               </node>
@@ -12016,7 +12016,7 @@
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1230053266515" resolveInfo="ref" />
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1230053266522">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="89o2.8492459591399173077" resolveInfo="doRefactoring" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="z76a.6933688002660655610" resolveInfo="doRefactoring" />
             </node>
           </node>
         </node>
@@ -12040,11 +12040,11 @@
           <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="1230053266531">
             <property name="name" nameId="tpck.1169194664001" value="ref" />
             <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1230053266532">
-              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="89o2.8492459591399173071" resolveInfo="InlineVariableRefactoring" />
+              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="z76a.6933688002660655599" resolveInfo="InlineVariableRefactoring" />
             </node>
             <node role="initializer" roleId="tpee.1068431790190" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1230053266533">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="89o2.8492459591399173275" resolveInfo="createRefactoring" />
-              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="89o2.8492459591399173071" resolveInfo="InlineVariableRefactoring" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="z76a.6933688002660655801" resolveInfo="createRefactoring" />
+              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="z76a.6933688002660655599" resolveInfo="InlineVariableRefactoring" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tp5g.TestNodeReference" typeId="tp5g.1210674524691" id="1230053266534">
                 <link role="declaration" roleId="tp5g.1210674534086" targetNodeId="1230053266561" resolveInfo="ref" />
               </node>
@@ -12057,7 +12057,7 @@
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1230053266531" resolveInfo="ref" />
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1230053266538">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="89o2.8492459591399173077" resolveInfo="doRefactoring" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="z76a.6933688002660655610" resolveInfo="doRefactoring" />
             </node>
           </node>
         </node>
@@ -12254,11 +12254,11 @@
           <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="1230053266627">
             <property name="name" nameId="tpck.1169194664001" value="ref" />
             <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1230053266628">
-              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="89o2.8492459591399173071" resolveInfo="InlineVariableRefactoring" />
+              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="z76a.6933688002660655599" resolveInfo="InlineVariableRefactoring" />
             </node>
             <node role="initializer" roleId="tpee.1068431790190" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1230053266629">
-              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="89o2.8492459591399173071" resolveInfo="InlineVariableRefactoring" />
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="89o2.8492459591399173275" resolveInfo="createRefactoring" />
+              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="z76a.6933688002660655599" resolveInfo="InlineVariableRefactoring" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="z76a.6933688002660655801" resolveInfo="createRefactoring" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tp5g.TestNodeReference" typeId="tp5g.1210674524691" id="1230053266630">
                 <link role="declaration" roleId="tp5g.1210674534086" targetNodeId="1230053266594" resolveInfo="def" />
               </node>
@@ -12271,7 +12271,7 @@
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1230053266627" resolveInfo="ref" />
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1230053266634">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="89o2.8492459591399173077" resolveInfo="doRefactoring" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="z76a.6933688002660655610" resolveInfo="doRefactoring" />
             </node>
           </node>
         </node>
@@ -12295,11 +12295,11 @@
           <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="1230053266643">
             <property name="name" nameId="tpck.1169194664001" value="ref" />
             <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1230053266644">
-              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="89o2.8492459591399173071" resolveInfo="InlineVariableRefactoring" />
+              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="z76a.6933688002660655599" resolveInfo="InlineVariableRefactoring" />
             </node>
             <node role="initializer" roleId="tpee.1068431790190" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1230053266645">
-              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="89o2.8492459591399173071" resolveInfo="InlineVariableRefactoring" />
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="89o2.8492459591399173275" resolveInfo="createRefactoring" />
+              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="z76a.6933688002660655599" resolveInfo="InlineVariableRefactoring" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="z76a.6933688002660655801" resolveInfo="createRefactoring" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tp5g.TestNodeReference" typeId="tp5g.1210674524691" id="1230053266646">
                 <link role="declaration" roleId="tp5g.1210674534086" targetNodeId="1230053266665" resolveInfo="def" />
               </node>
@@ -12312,7 +12312,7 @@
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1230053266643" resolveInfo="ref" />
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1230053266650">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="89o2.8492459591399173077" resolveInfo="doRefactoring" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="z76a.6933688002660655610" resolveInfo="doRefactoring" />
             </node>
           </node>
         </node>
@@ -20975,11 +20975,11 @@
           <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="7093131866560585737">
             <property name="name" nameId="tpck.1169194664001" value="ref" />
             <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="7093131866560585738">
-              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="89o2.8492459591399173071" resolveInfo="InlineVariableRefactoring" />
+              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="z76a.6933688002660655599" resolveInfo="InlineVariableRefactoring" />
             </node>
             <node role="initializer" roleId="tpee.1068431790190" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="7093131866560585739">
               <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="7093131866560585740">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="89o2.8492459591399173607" resolveInfo="InlineVariableReferenceRefactoring" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="z76a.6933688002660654989" resolveInfo="InlineVariableReferenceRefactoring" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tp5g.TestNodeReference" typeId="tp5g.1210674524691" id="7093131866560585769">
                   <link role="declaration" roleId="tp5g.1210674534086" targetNodeId="7093131866560585698" resolveInfo="inline" />
                 </node>
@@ -20993,7 +20993,7 @@
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7093131866560585737" resolveInfo="ref" />
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="7093131866560585745">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="89o2.8492459591399173077" resolveInfo="doRefactoring" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="z76a.6933688002660655610" resolveInfo="doRefactoring" />
             </node>
           </node>
         </node>
@@ -21169,11 +21169,11 @@
           <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="7093131866560585855">
             <property name="name" nameId="tpck.1169194664001" value="ref" />
             <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="7093131866560585856">
-              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="89o2.8492459591399173071" resolveInfo="InlineVariableRefactoring" />
+              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="z76a.6933688002660655599" resolveInfo="InlineVariableRefactoring" />
             </node>
             <node role="initializer" roleId="tpee.1068431790190" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="7093131866560585857">
               <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="7093131866560585858">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="89o2.8492459591399173607" resolveInfo="InlineVariableReferenceRefactoring" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="z76a.6933688002660654989" resolveInfo="InlineVariableReferenceRefactoring" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tp5g.TestNodeReference" typeId="tp5g.1210674524691" id="7093131866560585859">
                   <link role="declaration" roleId="tp5g.1210674534086" targetNodeId="7093131866560585815" resolveInfo="inline" />
                 </node>
@@ -21187,7 +21187,7 @@
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7093131866560585855" resolveInfo="ref" />
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="7093131866560585863">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="89o2.8492459591399173077" resolveInfo="doRefactoring" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="z76a.6933688002660655610" resolveInfo="doRefactoring" />
             </node>
           </node>
         </node>
@@ -21363,11 +21363,11 @@
           <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="9118878263582085169">
             <property name="name" nameId="tpck.1169194664001" value="ref" />
             <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="9118878263582085170">
-              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="89o2.8492459591399173071" resolveInfo="InlineVariableRefactoring" />
+              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="z76a.6933688002660655599" resolveInfo="InlineVariableRefactoring" />
             </node>
             <node role="initializer" roleId="tpee.1068431790190" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="9118878263582085171">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="89o2.8492459591399173275" resolveInfo="createRefactoring" />
-              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="89o2.8492459591399173071" resolveInfo="InlineVariableRefactoring" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="z76a.6933688002660655801" resolveInfo="createRefactoring" />
+              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="z76a.6933688002660655599" resolveInfo="InlineVariableRefactoring" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tp5g.TestNodeReference" typeId="tp5g.1210674524691" id="9118878263582089494">
                 <link role="declaration" roleId="tp5g.1210674534086" targetNodeId="9118878263582085118" resolveInfo="inline" />
               </node>
@@ -21380,7 +21380,7 @@
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="9118878263582085169" resolveInfo="ref" />
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="9118878263582085176">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="89o2.8492459591399173077" resolveInfo="doRefactoring" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="z76a.6933688002660655610" resolveInfo="doRefactoring" />
             </node>
           </node>
         </node>
@@ -21589,11 +21589,11 @@
           <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="6351584993764365833">
             <property name="name" nameId="tpck.1169194664001" value="ref" />
             <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="6351584993764365834">
-              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="89o2.8492459591399173071" resolveInfo="InlineVariableRefactoring" />
+              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="z76a.6933688002660655599" resolveInfo="InlineVariableRefactoring" />
             </node>
             <node role="initializer" roleId="tpee.1068431790190" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="6351584993764365835">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="89o2.8492459591399173275" resolveInfo="createRefactoring" />
-              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="89o2.8492459591399173071" resolveInfo="InlineVariableRefactoring" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="z76a.6933688002660655801" resolveInfo="createRefactoring" />
+              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="z76a.6933688002660655599" resolveInfo="InlineVariableRefactoring" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tp5g.TestNodeReference" typeId="tp5g.1210674524691" id="6351584993764365836">
                 <link role="declaration" roleId="tp5g.1210674534086" targetNodeId="6351584993764365824" resolveInfo="inline" />
               </node>
@@ -21606,7 +21606,7 @@
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="6351584993764365833" resolveInfo="ref" />
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="6351584993764365840">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="89o2.8492459591399173077" resolveInfo="doRefactoring" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="z76a.6933688002660655610" resolveInfo="doRefactoring" />
             </node>
           </node>
         </node>
