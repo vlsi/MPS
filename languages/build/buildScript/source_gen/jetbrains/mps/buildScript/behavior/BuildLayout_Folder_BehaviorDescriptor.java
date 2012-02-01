@@ -4,12 +4,12 @@ package jetbrains.mps.buildScript.behavior;
 
 import jetbrains.mps.smodel.SNode;
 
-public class BuildLayout_Folder_BehaviorDescriptor extends BuildLayout_NamedContainer_BehaviorDescriptor implements BuildLayout_InputDirContainer_BehaviorDescriptor {
+public class BuildLayout_Folder_BehaviorDescriptor extends BuildLayout_NamedContainer_BehaviorDescriptor {
   public BuildLayout_Folder_BehaviorDescriptor() {
   }
 
-  public String virtual_getInputDir_WithMacro_280273048052514298(SNode thisNode) {
-    return BuildLayout_Folder_Behavior.virtual_getInputDir_WithMacro_280273048052514298(thisNode);
+  public String virtual_getChildrenOutputDir_WithMacro_7389400916848004880(SNode thisNode) {
+    return BuildLayout_Folder_Behavior.virtual_getChildrenOutputDir_WithMacro_7389400916848004880(thisNode);
   }
 
   @Override

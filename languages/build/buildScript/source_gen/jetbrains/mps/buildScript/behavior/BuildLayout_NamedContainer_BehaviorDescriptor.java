@@ -10,6 +10,10 @@ public abstract class BuildLayout_NamedContainer_BehaviorDescriptor extends Buil
   public BuildLayout_NamedContainer_BehaviorDescriptor() {
   }
 
+  public String virtual_getChildrenOutputDir_WithMacro_7389400916848004880(SNode thisNode) {
+    return BuildLayout_NamedContainer_Behavior.virtual_getChildrenOutputDir_WithMacro_7389400916848004880(thisNode);
+  }
+
   public String virtual_getFqName_1213877404258(SNode thisNode) {
     return INamedConcept_Behavior.virtual_getFqName_1213877404258(thisNode);
   }

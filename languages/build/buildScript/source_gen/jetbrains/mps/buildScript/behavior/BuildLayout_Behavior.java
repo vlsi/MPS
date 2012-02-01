@@ -4,11 +4,11 @@ package jetbrains.mps.buildScript.behavior;
 
 import jetbrains.mps.smodel.SNode;
 
-public class BuildLayout_Folder_Behavior {
+public class BuildLayout_Behavior {
   public static void init(SNode thisNode) {
   }
 
   public static String virtual_getChildrenOutputDir_WithMacro_7389400916848004880(SNode thisNode) {
-    return BuildLayout_NamedContainer_Behavior.call_getOutputPath_WithMacro_280273048052535414(thisNode);
+    return "${deploy.dir}";
   }
 }

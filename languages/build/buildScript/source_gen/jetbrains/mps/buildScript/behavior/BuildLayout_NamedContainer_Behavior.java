@@ -11,13 +11,14 @@ public class BuildLayout_NamedContainer_Behavior {
   }
 
   public static String call_getOutputDir_WithMacro_4045247515868395486(SNode thisNode) {
-    if (!(SNodeOperations.isInstanceOf(SNodeOperations.getParent(thisNode), "jetbrains.mps.buildScript.structure.BuildLayout_NamedContainer"))) {
-      return "${deploy.dir}";
-    } else if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(thisNode), "jetbrains.mps.buildScript.structure.BuildLayout_InputDirContainer")) {
-      return BuildLayout_InputDirContainer_Behavior.call_getInputDir_WithMacro_280273048052514298(SNodeOperations.cast(SNodeOperations.getParent(thisNode), "jetbrains.mps.buildScript.structure.BuildLayout_InputDirContainer"));
-    } else {
-      return "${tmp}" + "/" + thisNode.getId();
+    if ((SNodeOperations.getParent(thisNode) != null) && SNodeOperations.isInstanceOf(SNodeOperations.getParent(thisNode), "jetbrains.mps.buildScript.structure.BuildLayout_AbstractContainer")) {
+      return BuildLayout_AbstractContainer_Behavior.call_getChildrenOutputDir_WithMacro_7389400916848004880(SNodeOperations.cast(SNodeOperations.getParent(thisNode), "jetbrains.mps.buildScript.structure.BuildLayout_AbstractContainer"));
     }
+    return null;
+  }
+
+  public static String virtual_getChildrenOutputDir_WithMacro_7389400916848004880(SNode thisNode) {
+    return "${tmp}" + "/" + thisNode.getId();
   }
 
   public static String call_getOutputPath_WithMacro_280273048052535414(SNode thisNode) {
