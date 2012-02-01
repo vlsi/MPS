@@ -15,6 +15,6 @@ public class BuildSourceProjectRelativePath_Behavior {
   }
 
   public static String virtual_getBasePath_4959435991187140515(SNode thisNode, Context context) {
-    return Environment_Behavior.call_getBasePath_4959435991187108495(context.getEnvironment());
+    return context.getBasePath_Local();
   }
 }

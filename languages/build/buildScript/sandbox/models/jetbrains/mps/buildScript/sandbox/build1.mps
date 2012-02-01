@@ -2,6 +2,7 @@
 <model modelUID="r:bcfe2964-5744-4773-9086-0090dbda0712(jetbrains.mps.buildScript.sandbox.build1)">
   <persistence version="7" />
   <language namespace="798100da-4f0a-421a-b991-71f8c50ce5d2(jetbrains.mps.buildScript)" />
+  <language namespace="4e6c5313-7662-4c44-9bc7-b488cec17508(jetbrains.mps.build.packaging)" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <import index="3ior" modelUID="r:e9081cad-d8c3-45f2-b4ad-1dabd5ff82af(jetbrains.mps.buildScript.structure)" version="-1" implicit="yes" />
   <roots>
@@ -79,6 +80,9 @@
         <property name="name" nameId="tpck.1169194664001" value="xx" />
         <node role="children" roleId="3ior.7389400916848037006" type="3ior.BuildLayout_Jar" typeId="3ior.7389400916848050074" id="3542413272732928480">
           <property name="name" nameId="tpck.1169194664001" value="xx" />
+          <node role="children" roleId="3ior.7389400916848037006" type="3ior.BuildLayout_JavaOutput" typeId="3ior.5966744135495979931" id="4045247515868346494">
+            <link role="module" roleId="3ior.5966744135495979932" targetNodeId="3542413272732920808" resolveInfo="asd" />
+          </node>
         </node>
       </node>
     </node>

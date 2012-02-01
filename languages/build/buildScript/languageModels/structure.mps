@@ -170,6 +170,10 @@
     <node type="tpce.InterfaceConceptDeclaration" typeId="tpce.1169125989551" id="4959435991187108491">
       <property name="name" nameId="tpck.1169194664001" value="Environment" />
     </node>
+    <node type="tpce.InterfaceConceptDeclaration" typeId="tpce.1169125989551" id="280273048052514293">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Layout" />
+      <property name="name" nameId="tpck.1169194664001" value="BuildLayout_InputDirContainer" />
+    </node>
   </roots>
   <root id="5617550519002745363">
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="5617550519002745381">
@@ -246,6 +250,9 @@
       <property name="value" nameId="tpce.1105725733873" value="folder" />
       <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473891462" resolveInfo="alias" />
     </node>
+    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="280273048052514294">
+      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="280273048052514293" resolveInfo="BuildLayout_InputDirContainer" />
+    </node>
   </root>
   <root id="7389400916848036997">
     <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.BooleanConceptProperty" typeId="tpce.1105725574259" id="7389400916848043140">
@@ -253,6 +260,10 @@
     </node>
   </root>
   <root id="7389400916848050060">
+    <node role="conceptPropertyDeclaration" roleId="tpce.1137467167200" type="tpce.BooleanConceptPropertyDeclaration" typeId="tpce.1105725240314" id="280273048052514250">
+      <property name="name" nameId="tpck.1169194664001" value="hasInputDir" />
+      <property name="inheritable" nameId="tpce.1218571350029" value="true" />
+    </node>
     <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="7389400916848050061">
       <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tpck.1169194658468" resolveInfo="INamedConcept" />
     </node>
@@ -495,5 +506,6 @@
     </node>
   </root>
   <root id="4959435991187108491" />
+  <root id="280273048052514293" />
 </model>
 
