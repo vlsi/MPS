@@ -500,9 +500,6 @@
       <property name="abstractClass" nameId="tpee.1075300953594" value="true" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="inlineVariable" />
     </node>
-    <node type="tp4k.ActionGroupDeclaration" typeId="tp4k.1203087890642" id="8498671594322463659">
-      <property name="name" nameId="tpck.1169194664001" value="ActionsAsIntentions" />
-    </node>
   </roots>
   <root id="6573807532044006299">
     <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="6573807532044006300" />
@@ -40071,19 +40068,6 @@
       </node>
     </node>
     <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="6933688002660655841" />
-  </root>
-  <root id="8498671594322463659">
-    <node role="modifier" roleId="tp4k.1204991552650" type="tp4k.ModificationStatement" typeId="tp4k.1203092361741" id="8498671594322463661">
-      <link role="modifiedGroup" roleId="tp4k.1203092736097" targetNodeId="crsq.8498671594322411744" resolveInfo="ActionsAsIntentions" />
-    </node>
-    <node role="contents" roleId="tp4k.1207145245948" type="tp4k.ElementListContents" typeId="tp4k.1207145163717" id="8498671594322463662">
-      <node role="reference" roleId="tp4k.1207145201301" type="tp4k.ActionInstance" typeId="tp4k.1203088046679" id="8498671594322463663">
-        <link role="action" roleId="tp4k.1203088061055" targetNodeId="6573807532044005517" resolveInfo="OverrideMethod" />
-      </node>
-      <node role="reference" roleId="tp4k.1207145201301" type="tp4k.ActionInstance" typeId="tp4k.1203088046679" id="8498671594322463665">
-        <link role="action" roleId="tp4k.1203088061055" targetNodeId="6573807532044005562" resolveInfo="ImplementMethod" />
-      </node>
-    </node>
   </root>
 </model>
 
