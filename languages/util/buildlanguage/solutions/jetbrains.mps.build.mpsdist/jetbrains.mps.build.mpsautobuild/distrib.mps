@@ -1169,8 +1169,8 @@
               <node role="right" roleId="tpsk.1197107881958" type="tpsk.StringLiteral" typeId="tpsk.1196861005114" id="4053804147820304252">
                 <property name="value" nameId="tpsk.1196861024475" value="/bin" />
               </node>
-              <node role="left" roleId="tpsk.1197107855106" type="tpsk.PropertyReference" typeId="tpsk.1196853662806" id="5165676431252349069">
-                <link role="propertyDeclaration" roleId="tpsk.1196853671400" targetNodeId="3765863190879881346" resolveInfo="dist.folder.name" />
+              <node role="left" roleId="tpsk.1197107855106" type="tpsk.PropertyReference" typeId="tpsk.1196853662806" id="2074469845996045473">
+                <link role="propertyDeclaration" roleId="tpsk.1196853671400" targetNodeId="47292148907787113" resolveInfo="dist.folder.name.mac" />
               </node>
             </node>
           </node>
