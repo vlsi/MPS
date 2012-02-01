@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="4itp4qtsxx3dqpbvjqvoi5fdeilg1hn">
-  <dep model="r:d8d06a40-eb90-4ad9-a679-19e3fc235859(jetbrains.mps.build.workflow.generator.template.main@generator)" hash="16obwkkkckjp5g5zuih0obpruur8mqr" />
+<dependencies version="2" modelHash="-d5g4eyv914l0s31x3zc3n8533750uru">
+  <dep model="r:d8d06a40-eb90-4ad9-a679-19e3fc235859(jetbrains.mps.build.workflow.generator.template.main@generator)" hash="bw6crop443exxoa0r54gvxp2aqaq7n4" />
   <dep model="r:fdebfc98-bbd7-4c50-8a8d-eda16da9406e(jetbrains.mps.buildScript.generator.template.main@generator)" hash="-eu61vnar8ng46pw8wx4en4z09hzbd6" />
-  <common hash="-c0ttuc3lutpjbaz7f20pi2mo7nthkgm" />
+  <common hash="-9531sshxre31wlbl9n6x9my9oqhp9mf" />
   <source id="4993211115183387839" name="buildCore" hash="-d5bi8hg97npoc7xc4tku780ukg4vhm1">
     <dep model="r:d8d06a40-eb90-4ad9-a679-19e3fc235859(jetbrains.mps.build.workflow.generator.template.main@generator)" />
     <dep model="r:fdebfc98-bbd7-4c50-8a8d-eda16da9406e(jetbrains.mps.buildScript.generator.template.main@generator)" />
     <file name="buildCore.xml" />
   </source>
-  <source id="4993211115183416028" name="buildPlugin" hash="-2h2ciesia7sk7fpq47gke4wq809laol">
+  <source id="4993211115183416028" name="buildPlugin" hash="-6kwvpxd1mlzijg4witn7r1vft7a76ou">
     <dep model="r:d8d06a40-eb90-4ad9-a679-19e3fc235859(jetbrains.mps.build.workflow.generator.template.main@generator)" />
     <dep model="r:fdebfc98-bbd7-4c50-8a8d-eda16da9406e(jetbrains.mps.buildScript.generator.template.main@generator)" />
     <file name="buildPlugin.xml" />
