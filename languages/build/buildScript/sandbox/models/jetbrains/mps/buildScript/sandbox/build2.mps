@@ -4,7 +4,7 @@
   <language namespace="698a8d22-a104-47a0-ba8d-10e3ec237f13(jetbrains.mps.build.workflow)" />
   <language namespace="479c7a8c-02f9-43b5-9139-d910cb22f298(jetbrains.mps.core.xml)" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
-  <import index="8xvf" modelUID="r:ed179f4d-7cf2-479d-8348-50c1fc63b96a(jetbrains.mps.build.workflow.structure)" version="-1" implicit="yes" />
+  <import index="8xvf" modelUID="r:ed179f4d-7cf2-479d-8348-50c1fc63b96a(jetbrains.mps.build.workflow.structure)" version="0" implicit="yes" />
   <import index="iuxj" modelUID="r:64db3a92-5968-4a73-b456-34504a2d97a6(jetbrains.mps.core.xml.structure)" version="-1" implicit="yes" />
   <roots>
     <node type="8xvf.BwfProject" typeId="8xvf.2769948622284546673" id="2769948622284624385">
@@ -109,7 +109,7 @@
             </node>
           </node>
         </node>
-        <node role="dependencies" roleId="8xvf.2769948622284605953" type="8xvf.BwfSubTaskDependency" typeId="8xvf.2769948622284605880" id="2769948622284768357">
+        <node role="after" roleId="8xvf.2769948622284605953" type="8xvf.BwfSubTaskDependency" typeId="8xvf.2769948622284605880" id="2769948622284768357">
           <link role="target" roleId="8xvf.2769948622284605881" targetNodeId="2769948622284761814" resolveInfo="compileJava" />
         </node>
       </node>
@@ -161,25 +161,31 @@
         </node>
       </node>
     </node>
-    <node role="parts" roleId="8xvf.2769948622284574304" type="8xvf.BwfTask" typeId="8xvf.2769948622284546675" id="2769948622284624394">
+    <node role="parts" roleId="8xvf.2769948622284574304" type="8xvf.BwfTask" typeId="8xvf.2769948622284546675" id="3961775458390335276">
       <property name="name" nameId="tpck.1169194664001" value="build" />
-      <node role="dependencies" roleId="8xvf.2769948622284574302" type="8xvf.BwfTaskDependency" typeId="8xvf.2769948622284574294" id="2769948622284783092">
+      <node role="dependencies" roleId="8xvf.2769948622284574302" type="8xvf.BwfTaskDependency" typeId="8xvf.2769948622284574294" id="3961775458390335278">
         <link role="target" roleId="8xvf.2769948622284574295" targetNodeId="2769948622284624395" resolveInfo="buildDependencies" />
       </node>
+      <node role="subTasks" roleId="8xvf.2769948622284546679" type="8xvf.BwfSubTask" typeId="8xvf.2769948622284546677" id="3961775458390335286">
+        <property name="name" nameId="tpck.1169194664001" value="second" />
+        <node role="after" roleId="8xvf.2769948622284605953" type="8xvf.BwfSubTaskDependency" typeId="8xvf.2769948622284605880" id="3961775458390336251">
+          <link role="target" roleId="8xvf.2769948622284605881" targetNodeId="3961775458390335279" resolveInfo="first" />
+        </node>
+      </node>
+      <node role="subTasks" roleId="8xvf.2769948622284546679" type="8xvf.BwfSubTask" typeId="8xvf.2769948622284546677" id="3961775458390335279">
+        <property name="name" nameId="tpck.1169194664001" value="first" />
+      </node>
     </node>
-    <node role="parts" roleId="8xvf.2769948622284574304" type="8xvf.BwfTask" typeId="8xvf.2769948622284546675" id="2769948622284624391">
-      <property name="name" nameId="tpck.1169194664001" value="test" />
-      <node role="subTasks" roleId="8xvf.2769948622284546679" type="8xvf.BwfSubTask" typeId="8xvf.2769948622284546677" id="2769948622284786800">
-        <property name="name" nameId="tpck.1169194664001" value="default" />
-        <node role="statements" roleId="8xvf.2769948622284606050" type="8xvf.BwfAntStatement" typeId="8xvf.2769948622284768359" id="2769948622284786802">
-          <node role="element" roleId="8xvf.2769948622284768360" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="2769948622284786804">
-            <property name="tagName" nameId="iuxj.6666499814681415862" value="junit" />
+    <node role="parts" roleId="8xvf.2769948622284574304" type="8xvf.BwfTaskPart" typeId="8xvf.3961775458390032824" id="3961775458390370956">
+      <link role="task" roleId="8xvf.3961775458390032825" targetNodeId="3961775458390335276" resolveInfo="build" />
+      <node role="subTasks" roleId="8xvf.3961775458390032826" type="8xvf.BwfSubTask" typeId="8xvf.2769948622284546677" id="3961775458390374962">
+        <property name="name" nameId="tpck.1169194664001" value="xx1" />
+        <node role="statements" roleId="8xvf.2769948622284606050" type="8xvf.BwfAntStatement" typeId="8xvf.2769948622284768359" id="3961775458390375393">
+          <node role="element" roleId="8xvf.2769948622284768360" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="3961775458390375395">
+            <property name="tagName" nameId="iuxj.6666499814681415862" value="aaa1" />
             <property name="shortEmptyNotation" nameId="iuxj.6999033275467544021" value="true" />
           </node>
         </node>
-      </node>
-      <node role="dependencies" roleId="8xvf.2769948622284574302" type="8xvf.BwfTaskDependency" typeId="8xvf.2769948622284574294" id="2769948622284786798">
-        <link role="target" roleId="8xvf.2769948622284574295" targetNodeId="2769948622284624394" resolveInfo="build" />
       </node>
     </node>
   </root>

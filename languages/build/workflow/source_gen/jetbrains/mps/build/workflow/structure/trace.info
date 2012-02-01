@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="StructureAspectDescriptor.java" startLine="10" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.build.workflow.structure.StructureAspectDescriptor" />
+  <unitInfo fileName="StructureAspectDescriptor.java" startLine="10" startPosition="0" endLine="47" endPosition="0" unitName="jetbrains.mps.build.workflow.structure.StructureAspectDescriptor" />
   <unitInfo fileName="Workflow_Language.java" startLine="9" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.build.workflow.structure.Workflow_Language" />
   <root nodeId="2769948622284546673">
     <nodeInfo nodeId="2769948622284546673" fileName="BwfProject.java" startLine="15" startPosition="70" endLine="16" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
@@ -283,144 +283,170 @@
     <nodeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="17" startPosition="43" endLine="18" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SHORT_DESCRIPTION" />
     <nodeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="18" startPosition="68" endLine="19" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ALIAS" />
     <nodeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="19" startPosition="45" endLine="20" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="VIRTUAL_PACKAGE" />
-    <nodeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="20" startPosition="64" endLine="21" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="DEPENDENCIES" />
-    <nodeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="21" startPosition="59" endLine="22" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="STATEMENTS" />
-    <nodeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="22" startPosition="55" endLine="23" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SMODEL_ATTRIBUTE" />
-    <nodeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="25" startPosition="33" endLine="26" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="29" startPosition="27" endLine="30" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="33" startPosition="37" endLine="34" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="37" startPosition="39" endLine="38" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="41" startPosition="49" endLine="42" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="45" startPosition="28" endLine="46" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="49" startPosition="38" endLine="50" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="53" startPosition="37" endLine="54" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="57" startPosition="47" endLine="58" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="61" startPosition="39" endLine="62" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="65" startPosition="58" endLine="66" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="69" startPosition="57" endLine="70" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="73" startPosition="58" endLine="74" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="77" startPosition="88" endLine="78" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="81" startPosition="37" endLine="82" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="85" startPosition="48" endLine="86" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="89" startPosition="47" endLine="90" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="93" startPosition="48" endLine="94" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="97" startPosition="70" endLine="98" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="101" startPosition="41" endLine="102" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="105" startPosition="49" endLine="106" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="109" startPosition="48" endLine="110" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="113" startPosition="50" endLine="114" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="117" startPosition="69" endLine="118" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="121" startPosition="65" endLine="122" endPosition="172" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="125" startPosition="51" endLine="126" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="24" startPosition="0" endLine="27" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="BwfSubTask#(Ljetbrains/mps/smodel/SNode;)V" />
-    <nodeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="28" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getName#()Ljava/lang/String;" />
-    <nodeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="32" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setName#(Ljava/lang/String;)V" />
-    <nodeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="36" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getShortDescription#()Ljava/lang/String;" />
-    <nodeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="40" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setShortDescription#(Ljava/lang/String;)V" />
-    <nodeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="44" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getAlias#()Ljava/lang/String;" />
-    <nodeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="48" startPosition="0" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setAlias#(Ljava/lang/String;)V" />
-    <nodeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="52" startPosition="0" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getVirtualPackage#()Ljava/lang/String;" />
-    <nodeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="56" startPosition="0" endLine="60" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setVirtualPackage#(Ljava/lang/String;)V" />
-    <nodeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="60" startPosition="0" endLine="64" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDependenciesesCount#()I" />
-    <nodeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="64" startPosition="0" endLine="68" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="dependencieses#()Ljava/util/Iterator;" />
-    <nodeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="68" startPosition="0" endLine="72" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDependencieses#()Ljava/util/List;" />
-    <nodeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="72" startPosition="0" endLine="76" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addDependencies#(Ljetbrains/mps/smodel/INodeAdapter;)V" />
-    <nodeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="76" startPosition="0" endLine="80" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="insertDependencies#(Ljetbrains/mps/smodel/INodeAdapter;Ljetbrains/mps/smodel/INodeAdapter;)V" />
-    <nodeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="80" startPosition="0" endLine="84" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getStatementsesCount#()I" />
-    <nodeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="84" startPosition="0" endLine="88" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="statementses#()Ljava/util/Iterator;" />
-    <nodeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="88" startPosition="0" endLine="92" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getStatementses#()Ljava/util/List;" />
-    <nodeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="92" startPosition="0" endLine="96" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addStatements#(Ljetbrains/mps/smodel/INodeAdapter;)V" />
-    <nodeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="96" startPosition="0" endLine="100" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="insertStatements#(Ljetbrains/mps/smodel/INodeAdapter;Ljetbrains/mps/smodel/INodeAdapter;)V" />
-    <nodeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="100" startPosition="0" endLine="104" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSmodelAttributesCount#()I" />
-    <nodeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="104" startPosition="0" endLine="108" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="smodelAttributes#()Ljava/util/Iterator;" />
-    <nodeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="108" startPosition="0" endLine="112" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSmodelAttributes#()Ljava/util/List;" />
-    <nodeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="112" startPosition="0" endLine="116" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addSmodelAttribute#(Ljetbrains/mps/smodel/INodeAdapter;)V" />
-    <nodeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="116" startPosition="0" endLine="120" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="insertSmodelAttribute#(Ljetbrains/mps/smodel/INodeAdapter;Ljetbrains/mps/smodel/INodeAdapter;)V" />
-    <nodeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="120" startPosition="0" endLine="124" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="newInstance#(Ljetbrains/mps/smodel/SModel;Z)Ljetbrains/mps/build/workflow/structure/BwfSubTask;" />
-    <nodeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="124" startPosition="0" endLine="128" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="newInstance#(Ljetbrains/mps/smodel/SModel;)Ljetbrains/mps/build/workflow/structure/BwfSubTask;" />
-    <scopeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="25" startPosition="33" endLine="26" endPosition="16" />
-    <scopeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="29" startPosition="27" endLine="30" endPosition="45" />
-    <scopeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="33" startPosition="37" endLine="34" endPosition="45" />
-    <scopeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="37" startPosition="39" endLine="38" endPosition="58" />
-    <scopeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="41" startPosition="49" endLine="42" endPosition="58" />
-    <scopeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="45" startPosition="28" endLine="46" endPosition="46" />
-    <scopeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="49" startPosition="38" endLine="50" endPosition="46" />
-    <scopeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="53" startPosition="37" endLine="54" endPosition="56" />
-    <scopeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="57" startPosition="47" endLine="58" endPosition="56" />
-    <scopeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="61" startPosition="39" endLine="62" endPosition="55" />
-    <scopeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="65" startPosition="58" endLine="66" endPosition="78" />
-    <scopeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="69" startPosition="57" endLine="70" endPosition="81" />
-    <scopeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="73" startPosition="58" endLine="74" endPosition="49" />
-    <scopeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="77" startPosition="88" endLine="78" endPosition="58" />
-    <scopeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="81" startPosition="37" endLine="82" endPosition="53" />
-    <scopeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="85" startPosition="48" endLine="86" endPosition="68" />
-    <scopeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="89" startPosition="47" endLine="90" endPosition="71" />
-    <scopeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="93" startPosition="48" endLine="94" endPosition="47" />
-    <scopeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="97" startPosition="70" endLine="98" endPosition="56" />
-    <scopeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="101" startPosition="41" endLine="102" endPosition="59" />
-    <scopeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="105" startPosition="49" endLine="106" endPosition="71" />
-    <scopeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="109" startPosition="48" endLine="110" endPosition="74" />
-    <scopeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="113" startPosition="50" endLine="114" endPosition="53" />
-    <scopeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="117" startPosition="69" endLine="118" endPosition="62" />
-    <scopeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="121" startPosition="65" endLine="122" endPosition="172" />
-    <scopeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="125" startPosition="51" endLine="126" endPosition="45" />
-    <scopeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="24" startPosition="0" endLine="27" endPosition="3">
+    <nodeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="20" startPosition="64" endLine="21" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="AFTER" />
+    <nodeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="21" startPosition="45" endLine="22" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="BEFORE" />
+    <nodeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="22" startPosition="47" endLine="23" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="STATEMENTS" />
+    <nodeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="23" startPosition="55" endLine="24" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SMODEL_ATTRIBUTE" />
+    <nodeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="26" startPosition="33" endLine="27" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="30" startPosition="27" endLine="31" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="34" startPosition="37" endLine="35" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="38" startPosition="39" endLine="39" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="42" startPosition="49" endLine="43" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="46" startPosition="28" endLine="47" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="50" startPosition="38" endLine="51" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="54" startPosition="37" endLine="55" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="58" startPosition="47" endLine="59" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="62" startPosition="31" endLine="63" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="66" startPosition="50" endLine="67" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="70" startPosition="49" endLine="71" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="74" startPosition="51" endLine="75" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="78" startPosition="81" endLine="79" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="82" startPosition="32" endLine="83" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="86" startPosition="51" endLine="87" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="90" startPosition="50" endLine="91" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="94" startPosition="52" endLine="95" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="98" startPosition="82" endLine="99" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="102" startPosition="37" endLine="103" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="106" startPosition="48" endLine="107" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="110" startPosition="47" endLine="111" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="114" startPosition="48" endLine="115" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="118" startPosition="70" endLine="119" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="122" startPosition="41" endLine="123" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="126" startPosition="49" endLine="127" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="130" startPosition="48" endLine="131" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="134" startPosition="50" endLine="135" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="138" startPosition="69" endLine="139" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="142" startPosition="65" endLine="143" endPosition="172" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="146" startPosition="51" endLine="147" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="25" startPosition="0" endLine="28" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="BwfSubTask#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="29" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="33" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setName#(Ljava/lang/String;)V" />
+    <nodeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="37" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getShortDescription#()Ljava/lang/String;" />
+    <nodeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="41" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setShortDescription#(Ljava/lang/String;)V" />
+    <nodeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="45" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getAlias#()Ljava/lang/String;" />
+    <nodeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="49" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setAlias#(Ljava/lang/String;)V" />
+    <nodeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="53" startPosition="0" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getVirtualPackage#()Ljava/lang/String;" />
+    <nodeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="57" startPosition="0" endLine="61" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setVirtualPackage#(Ljava/lang/String;)V" />
+    <nodeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="61" startPosition="0" endLine="65" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getAftersCount#()I" />
+    <nodeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="65" startPosition="0" endLine="69" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="afters#()Ljava/util/Iterator;" />
+    <nodeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="69" startPosition="0" endLine="73" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getAfters#()Ljava/util/List;" />
+    <nodeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="73" startPosition="0" endLine="77" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addAfter#(Ljetbrains/mps/smodel/INodeAdapter;)V" />
+    <nodeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="77" startPosition="0" endLine="81" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="insertAfter#(Ljetbrains/mps/smodel/INodeAdapter;Ljetbrains/mps/smodel/INodeAdapter;)V" />
+    <nodeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="81" startPosition="0" endLine="85" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getBeforesCount#()I" />
+    <nodeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="85" startPosition="0" endLine="89" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="befores#()Ljava/util/Iterator;" />
+    <nodeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="89" startPosition="0" endLine="93" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getBefores#()Ljava/util/List;" />
+    <nodeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="93" startPosition="0" endLine="97" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addBefore#(Ljetbrains/mps/smodel/INodeAdapter;)V" />
+    <nodeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="97" startPosition="0" endLine="101" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="insertBefore#(Ljetbrains/mps/smodel/INodeAdapter;Ljetbrains/mps/smodel/INodeAdapter;)V" />
+    <nodeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="101" startPosition="0" endLine="105" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getStatementsesCount#()I" />
+    <nodeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="105" startPosition="0" endLine="109" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="statementses#()Ljava/util/Iterator;" />
+    <nodeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="109" startPosition="0" endLine="113" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getStatementses#()Ljava/util/List;" />
+    <nodeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="113" startPosition="0" endLine="117" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addStatements#(Ljetbrains/mps/smodel/INodeAdapter;)V" />
+    <nodeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="117" startPosition="0" endLine="121" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="insertStatements#(Ljetbrains/mps/smodel/INodeAdapter;Ljetbrains/mps/smodel/INodeAdapter;)V" />
+    <nodeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="121" startPosition="0" endLine="125" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSmodelAttributesCount#()I" />
+    <nodeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="125" startPosition="0" endLine="129" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="smodelAttributes#()Ljava/util/Iterator;" />
+    <nodeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="129" startPosition="0" endLine="133" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSmodelAttributes#()Ljava/util/List;" />
+    <nodeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="133" startPosition="0" endLine="137" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addSmodelAttribute#(Ljetbrains/mps/smodel/INodeAdapter;)V" />
+    <nodeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="137" startPosition="0" endLine="141" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="insertSmodelAttribute#(Ljetbrains/mps/smodel/INodeAdapter;Ljetbrains/mps/smodel/INodeAdapter;)V" />
+    <nodeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="141" startPosition="0" endLine="145" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="newInstance#(Ljetbrains/mps/smodel/SModel;Z)Ljetbrains/mps/build/workflow/structure/BwfSubTask;" />
+    <nodeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="145" startPosition="0" endLine="149" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="newInstance#(Ljetbrains/mps/smodel/SModel;)Ljetbrains/mps/build/workflow/structure/BwfSubTask;" />
+    <scopeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="26" startPosition="33" endLine="27" endPosition="16" />
+    <scopeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="30" startPosition="27" endLine="31" endPosition="45" />
+    <scopeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="34" startPosition="37" endLine="35" endPosition="45" />
+    <scopeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="38" startPosition="39" endLine="39" endPosition="58" />
+    <scopeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="42" startPosition="49" endLine="43" endPosition="58" />
+    <scopeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="46" startPosition="28" endLine="47" endPosition="46" />
+    <scopeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="50" startPosition="38" endLine="51" endPosition="46" />
+    <scopeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="54" startPosition="37" endLine="55" endPosition="56" />
+    <scopeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="58" startPosition="47" endLine="59" endPosition="56" />
+    <scopeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="62" startPosition="31" endLine="63" endPosition="48" />
+    <scopeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="66" startPosition="50" endLine="67" endPosition="71" />
+    <scopeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="70" startPosition="49" endLine="71" endPosition="74" />
+    <scopeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="74" startPosition="51" endLine="75" endPosition="42" />
+    <scopeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="78" startPosition="81" endLine="79" endPosition="51" />
+    <scopeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="82" startPosition="32" endLine="83" endPosition="49" />
+    <scopeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="86" startPosition="51" endLine="87" endPosition="72" />
+    <scopeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="90" startPosition="50" endLine="91" endPosition="75" />
+    <scopeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="94" startPosition="52" endLine="95" endPosition="43" />
+    <scopeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="98" startPosition="82" endLine="99" endPosition="52" />
+    <scopeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="102" startPosition="37" endLine="103" endPosition="53" />
+    <scopeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="106" startPosition="48" endLine="107" endPosition="68" />
+    <scopeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="110" startPosition="47" endLine="111" endPosition="71" />
+    <scopeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="114" startPosition="48" endLine="115" endPosition="47" />
+    <scopeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="118" startPosition="70" endLine="119" endPosition="56" />
+    <scopeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="122" startPosition="41" endLine="123" endPosition="59" />
+    <scopeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="126" startPosition="49" endLine="127" endPosition="71" />
+    <scopeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="130" startPosition="48" endLine="131" endPosition="74" />
+    <scopeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="134" startPosition="50" endLine="135" endPosition="53" />
+    <scopeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="138" startPosition="69" endLine="139" endPosition="62" />
+    <scopeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="142" startPosition="65" endLine="143" endPosition="172" />
+    <scopeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="146" startPosition="51" endLine="147" endPosition="45" />
+    <scopeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="25" startPosition="0" endLine="28" endPosition="3">
       <varInfo nodeId="2769948622284546677" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="28" startPosition="0" endLine="32" endPosition="0" />
-    <scopeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="32" startPosition="0" endLine="36" endPosition="0">
+    <scopeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="29" startPosition="0" endLine="33" endPosition="0" />
+    <scopeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="33" startPosition="0" endLine="37" endPosition="0">
       <varInfo nodeId="2769948622284546677" varName="value" />
     </scopeInfo>
-    <scopeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="36" startPosition="0" endLine="40" endPosition="0" />
-    <scopeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="40" startPosition="0" endLine="44" endPosition="0">
+    <scopeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="37" startPosition="0" endLine="41" endPosition="0" />
+    <scopeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="41" startPosition="0" endLine="45" endPosition="0">
       <varInfo nodeId="2769948622284546677" varName="value" />
     </scopeInfo>
-    <scopeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="44" startPosition="0" endLine="48" endPosition="0" />
-    <scopeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="48" startPosition="0" endLine="52" endPosition="0">
+    <scopeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="45" startPosition="0" endLine="49" endPosition="0" />
+    <scopeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="49" startPosition="0" endLine="53" endPosition="0">
       <varInfo nodeId="2769948622284546677" varName="value" />
     </scopeInfo>
-    <scopeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="52" startPosition="0" endLine="56" endPosition="0" />
-    <scopeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="56" startPosition="0" endLine="60" endPosition="0">
+    <scopeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="53" startPosition="0" endLine="57" endPosition="0" />
+    <scopeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="57" startPosition="0" endLine="61" endPosition="0">
       <varInfo nodeId="2769948622284546677" varName="value" />
     </scopeInfo>
-    <scopeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="60" startPosition="0" endLine="64" endPosition="0" />
-    <scopeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="64" startPosition="0" endLine="68" endPosition="0" />
-    <scopeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="68" startPosition="0" endLine="72" endPosition="0" />
-    <scopeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="72" startPosition="0" endLine="76" endPosition="0">
+    <scopeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="61" startPosition="0" endLine="65" endPosition="0" />
+    <scopeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="65" startPosition="0" endLine="69" endPosition="0" />
+    <scopeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="69" startPosition="0" endLine="73" endPosition="0" />
+    <scopeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="73" startPosition="0" endLine="77" endPosition="0">
       <varInfo nodeId="2769948622284546677" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="76" startPosition="0" endLine="80" endPosition="0">
+    <scopeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="77" startPosition="0" endLine="81" endPosition="0">
       <varInfo nodeId="2769948622284546677" varName="node" />
       <varInfo nodeId="2769948622284546677" varName="prev" />
     </scopeInfo>
-    <scopeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="80" startPosition="0" endLine="84" endPosition="0" />
-    <scopeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="84" startPosition="0" endLine="88" endPosition="0" />
-    <scopeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="88" startPosition="0" endLine="92" endPosition="0" />
-    <scopeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="92" startPosition="0" endLine="96" endPosition="0">
+    <scopeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="81" startPosition="0" endLine="85" endPosition="0" />
+    <scopeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="85" startPosition="0" endLine="89" endPosition="0" />
+    <scopeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="89" startPosition="0" endLine="93" endPosition="0" />
+    <scopeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="93" startPosition="0" endLine="97" endPosition="0">
       <varInfo nodeId="2769948622284546677" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="96" startPosition="0" endLine="100" endPosition="0">
-      <varInfo nodeId="2769948622284546677" varName="node" />
-      <varInfo nodeId="2769948622284546677" varName="prev" />
-    </scopeInfo>
-    <scopeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="100" startPosition="0" endLine="104" endPosition="0" />
-    <scopeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="104" startPosition="0" endLine="108" endPosition="0" />
-    <scopeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="108" startPosition="0" endLine="112" endPosition="0" />
-    <scopeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="112" startPosition="0" endLine="116" endPosition="0">
-      <varInfo nodeId="2769948622284546677" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="116" startPosition="0" endLine="120" endPosition="0">
+    <scopeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="97" startPosition="0" endLine="101" endPosition="0">
       <varInfo nodeId="2769948622284546677" varName="node" />
       <varInfo nodeId="2769948622284546677" varName="prev" />
     </scopeInfo>
-    <scopeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="120" startPosition="0" endLine="124" endPosition="0">
+    <scopeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="101" startPosition="0" endLine="105" endPosition="0" />
+    <scopeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="105" startPosition="0" endLine="109" endPosition="0" />
+    <scopeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="109" startPosition="0" endLine="113" endPosition="0" />
+    <scopeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="113" startPosition="0" endLine="117" endPosition="0">
+      <varInfo nodeId="2769948622284546677" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="117" startPosition="0" endLine="121" endPosition="0">
+      <varInfo nodeId="2769948622284546677" varName="node" />
+      <varInfo nodeId="2769948622284546677" varName="prev" />
+    </scopeInfo>
+    <scopeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="121" startPosition="0" endLine="125" endPosition="0" />
+    <scopeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="125" startPosition="0" endLine="129" endPosition="0" />
+    <scopeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="129" startPosition="0" endLine="133" endPosition="0" />
+    <scopeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="133" startPosition="0" endLine="137" endPosition="0">
+      <varInfo nodeId="2769948622284546677" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="137" startPosition="0" endLine="141" endPosition="0">
+      <varInfo nodeId="2769948622284546677" varName="node" />
+      <varInfo nodeId="2769948622284546677" varName="prev" />
+    </scopeInfo>
+    <scopeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="141" startPosition="0" endLine="145" endPosition="0">
       <varInfo nodeId="2769948622284546677" varName="init" />
       <varInfo nodeId="2769948622284546677" varName="sm" />
     </scopeInfo>
-    <scopeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="124" startPosition="0" endLine="128" endPosition="0">
+    <scopeInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="145" startPosition="0" endLine="149" endPosition="0">
       <varInfo nodeId="2769948622284546677" varName="sm" />
     </scopeInfo>
-    <unitInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="15" startPosition="0" endLine="129" endPosition="0" unitName="jetbrains.mps.build.workflow.structure.BwfSubTask" />
+    <unitInfo nodeId="2769948622284546677" fileName="BwfSubTask.java" startLine="15" startPosition="0" endLine="150" endPosition="0" unitName="jetbrains.mps.build.workflow.structure.BwfSubTask" />
   </root>
   <root nodeId="2769948622284546695">
     <nodeInfo nodeId="2769948622284546695" fileName="BwfProjectPart.java" startLine="11" startPosition="49" endLine="12" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
@@ -569,6 +595,151 @@
       <varInfo nodeId="2769948622284768359" varName="sm" />
     </scopeInfo>
     <unitInfo nodeId="2769948622284768359" fileName="BwfAntStatement.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.build.workflow.structure.BwfAntStatement" />
+  </root>
+  <root nodeId="3961775458390032824">
+    <nodeInfo nodeId="3961775458390032824" fileName="BwfTaskPart.java" startLine="14" startPosition="74" endLine="15" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
+    <nodeInfo nodeId="3961775458390032824" fileName="BwfTaskPart.java" startLine="15" startPosition="92" endLine="16" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SHORT_DESCRIPTION" />
+    <nodeInfo nodeId="3961775458390032824" fileName="BwfTaskPart.java" startLine="16" startPosition="68" endLine="17" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ALIAS" />
+    <nodeInfo nodeId="3961775458390032824" fileName="BwfTaskPart.java" startLine="17" startPosition="45" endLine="18" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="VIRTUAL_PACKAGE" />
+    <nodeInfo nodeId="3961775458390032824" fileName="BwfTaskPart.java" startLine="18" startPosition="64" endLine="19" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="TASK" />
+    <nodeInfo nodeId="3961775458390032824" fileName="BwfTaskPart.java" startLine="19" startPosition="43" endLine="20" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SUB_TASKS" />
+    <nodeInfo nodeId="3961775458390032824" fileName="BwfTaskPart.java" startLine="20" startPosition="52" endLine="21" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ADDITIONAL_DEPENDENCIES" />
+    <nodeInfo nodeId="3961775458390032824" fileName="BwfTaskPart.java" startLine="21" startPosition="80" endLine="22" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SMODEL_ATTRIBUTE" />
+    <nodeInfo nodeId="3961775458390032824" fileName="BwfTaskPart.java" startLine="24" startPosition="34" endLine="25" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="3961775458390032824" fileName="BwfTaskPart.java" startLine="28" startPosition="39" endLine="29" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3961775458390032824" fileName="BwfTaskPart.java" startLine="32" startPosition="49" endLine="33" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3961775458390032824" fileName="BwfTaskPart.java" startLine="36" startPosition="28" endLine="37" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3961775458390032824" fileName="BwfTaskPart.java" startLine="40" startPosition="38" endLine="41" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3961775458390032824" fileName="BwfTaskPart.java" startLine="44" startPosition="37" endLine="45" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3961775458390032824" fileName="BwfTaskPart.java" startLine="48" startPosition="47" endLine="49" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3961775458390032824" fileName="BwfTaskPart.java" startLine="52" startPosition="28" endLine="53" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3961775458390032824" fileName="BwfTaskPart.java" startLine="56" startPosition="37" endLine="57" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3961775458390032824" fileName="BwfTaskPart.java" startLine="60" startPosition="35" endLine="61" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3961775458390032824" fileName="BwfTaskPart.java" startLine="64" startPosition="44" endLine="65" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3961775458390032824" fileName="BwfTaskPart.java" startLine="68" startPosition="43" endLine="69" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3961775458390032824" fileName="BwfTaskPart.java" startLine="72" startPosition="44" endLine="73" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3961775458390032824" fileName="BwfTaskPart.java" startLine="76" startPosition="64" endLine="77" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3961775458390032824" fileName="BwfTaskPart.java" startLine="80" startPosition="49" endLine="81" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3961775458390032824" fileName="BwfTaskPart.java" startLine="84" startPosition="65" endLine="85" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3961775458390032824" fileName="BwfTaskPart.java" startLine="88" startPosition="64" endLine="89" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3961775458390032824" fileName="BwfTaskPart.java" startLine="92" startPosition="65" endLine="93" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3961775458390032824" fileName="BwfTaskPart.java" startLine="96" startPosition="92" endLine="97" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3961775458390032824" fileName="BwfTaskPart.java" startLine="100" startPosition="41" endLine="101" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3961775458390032824" fileName="BwfTaskPart.java" startLine="104" startPosition="49" endLine="105" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3961775458390032824" fileName="BwfTaskPart.java" startLine="108" startPosition="48" endLine="109" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3961775458390032824" fileName="BwfTaskPart.java" startLine="112" startPosition="50" endLine="113" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3961775458390032824" fileName="BwfTaskPart.java" startLine="116" startPosition="69" endLine="117" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3961775458390032824" fileName="BwfTaskPart.java" startLine="120" startPosition="66" endLine="121" endPosition="174" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3961775458390032824" fileName="BwfTaskPart.java" startLine="124" startPosition="52" endLine="125" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3961775458390032824" fileName="BwfTaskPart.java" startLine="23" startPosition="0" endLine="26" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="BwfTaskPart#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="3961775458390032824" fileName="BwfTaskPart.java" startLine="27" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getShortDescription#()Ljava/lang/String;" />
+    <nodeInfo nodeId="3961775458390032824" fileName="BwfTaskPart.java" startLine="31" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setShortDescription#(Ljava/lang/String;)V" />
+    <nodeInfo nodeId="3961775458390032824" fileName="BwfTaskPart.java" startLine="35" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getAlias#()Ljava/lang/String;" />
+    <nodeInfo nodeId="3961775458390032824" fileName="BwfTaskPart.java" startLine="39" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setAlias#(Ljava/lang/String;)V" />
+    <nodeInfo nodeId="3961775458390032824" fileName="BwfTaskPart.java" startLine="43" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getVirtualPackage#()Ljava/lang/String;" />
+    <nodeInfo nodeId="3961775458390032824" fileName="BwfTaskPart.java" startLine="47" startPosition="0" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setVirtualPackage#(Ljava/lang/String;)V" />
+    <nodeInfo nodeId="3961775458390032824" fileName="BwfTaskPart.java" startLine="51" startPosition="0" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getTask#()Ljetbrains/mps/smodel/INodeAdapter;" />
+    <nodeInfo nodeId="3961775458390032824" fileName="BwfTaskPart.java" startLine="55" startPosition="0" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setTask#(Ljetbrains/mps/smodel/INodeAdapter;)V" />
+    <nodeInfo nodeId="3961775458390032824" fileName="BwfTaskPart.java" startLine="59" startPosition="0" endLine="63" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSubTasksesCount#()I" />
+    <nodeInfo nodeId="3961775458390032824" fileName="BwfTaskPart.java" startLine="63" startPosition="0" endLine="67" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="subTaskses#()Ljava/util/Iterator;" />
+    <nodeInfo nodeId="3961775458390032824" fileName="BwfTaskPart.java" startLine="67" startPosition="0" endLine="71" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSubTaskses#()Ljava/util/List;" />
+    <nodeInfo nodeId="3961775458390032824" fileName="BwfTaskPart.java" startLine="71" startPosition="0" endLine="75" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addSubTasks#(Ljetbrains/mps/smodel/INodeAdapter;)V" />
+    <nodeInfo nodeId="3961775458390032824" fileName="BwfTaskPart.java" startLine="75" startPosition="0" endLine="79" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="insertSubTasks#(Ljetbrains/mps/smodel/INodeAdapter;Ljetbrains/mps/smodel/INodeAdapter;)V" />
+    <nodeInfo nodeId="3961775458390032824" fileName="BwfTaskPart.java" startLine="79" startPosition="0" endLine="83" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getAdditionalDependenciesesCount#()I" />
+    <nodeInfo nodeId="3961775458390032824" fileName="BwfTaskPart.java" startLine="83" startPosition="0" endLine="87" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="additionalDependencieses#()Ljava/util/Iterator;" />
+    <nodeInfo nodeId="3961775458390032824" fileName="BwfTaskPart.java" startLine="87" startPosition="0" endLine="91" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getAdditionalDependencieses#()Ljava/util/List;" />
+    <nodeInfo nodeId="3961775458390032824" fileName="BwfTaskPart.java" startLine="91" startPosition="0" endLine="95" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addAdditionalDependencies#(Ljetbrains/mps/smodel/INodeAdapter;)V" />
+    <nodeInfo nodeId="3961775458390032824" fileName="BwfTaskPart.java" startLine="95" startPosition="0" endLine="99" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="insertAdditionalDependencies#(Ljetbrains/mps/smodel/INodeAdapter;Ljetbrains/mps/smodel/INodeAdapter;)V" />
+    <nodeInfo nodeId="3961775458390032824" fileName="BwfTaskPart.java" startLine="99" startPosition="0" endLine="103" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSmodelAttributesCount#()I" />
+    <nodeInfo nodeId="3961775458390032824" fileName="BwfTaskPart.java" startLine="103" startPosition="0" endLine="107" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="smodelAttributes#()Ljava/util/Iterator;" />
+    <nodeInfo nodeId="3961775458390032824" fileName="BwfTaskPart.java" startLine="107" startPosition="0" endLine="111" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSmodelAttributes#()Ljava/util/List;" />
+    <nodeInfo nodeId="3961775458390032824" fileName="BwfTaskPart.java" startLine="111" startPosition="0" endLine="115" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addSmodelAttribute#(Ljetbrains/mps/smodel/INodeAdapter;)V" />
+    <nodeInfo nodeId="3961775458390032824" fileName="BwfTaskPart.java" startLine="115" startPosition="0" endLine="119" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="insertSmodelAttribute#(Ljetbrains/mps/smodel/INodeAdapter;Ljetbrains/mps/smodel/INodeAdapter;)V" />
+    <nodeInfo nodeId="3961775458390032824" fileName="BwfTaskPart.java" startLine="119" startPosition="0" endLine="123" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="newInstance#(Ljetbrains/mps/smodel/SModel;Z)Ljetbrains/mps/build/workflow/structure/BwfTaskPart;" />
+    <nodeInfo nodeId="3961775458390032824" fileName="BwfTaskPart.java" startLine="123" startPosition="0" endLine="127" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="newInstance#(Ljetbrains/mps/smodel/SModel;)Ljetbrains/mps/build/workflow/structure/BwfTaskPart;" />
+    <scopeInfo nodeId="3961775458390032824" fileName="BwfTaskPart.java" startLine="24" startPosition="34" endLine="25" endPosition="16" />
+    <scopeInfo nodeId="3961775458390032824" fileName="BwfTaskPart.java" startLine="28" startPosition="39" endLine="29" endPosition="59" />
+    <scopeInfo nodeId="3961775458390032824" fileName="BwfTaskPart.java" startLine="32" startPosition="49" endLine="33" endPosition="59" />
+    <scopeInfo nodeId="3961775458390032824" fileName="BwfTaskPart.java" startLine="36" startPosition="28" endLine="37" endPosition="47" />
+    <scopeInfo nodeId="3961775458390032824" fileName="BwfTaskPart.java" startLine="40" startPosition="38" endLine="41" endPosition="47" />
+    <scopeInfo nodeId="3961775458390032824" fileName="BwfTaskPart.java" startLine="44" startPosition="37" endLine="45" endPosition="57" />
+    <scopeInfo nodeId="3961775458390032824" fileName="BwfTaskPart.java" startLine="48" startPosition="47" endLine="49" endPosition="57" />
+    <scopeInfo nodeId="3961775458390032824" fileName="BwfTaskPart.java" startLine="52" startPosition="28" endLine="53" endPosition="71" />
+    <scopeInfo nodeId="3961775458390032824" fileName="BwfTaskPart.java" startLine="56" startPosition="37" endLine="57" endPosition="46" />
+    <scopeInfo nodeId="3961775458390032824" fileName="BwfTaskPart.java" startLine="60" startPosition="35" endLine="61" endPosition="53" />
+    <scopeInfo nodeId="3961775458390032824" fileName="BwfTaskPart.java" startLine="64" startPosition="44" endLine="65" endPosition="66" />
+    <scopeInfo nodeId="3961775458390032824" fileName="BwfTaskPart.java" startLine="68" startPosition="43" endLine="69" endPosition="69" />
+    <scopeInfo nodeId="3961775458390032824" fileName="BwfTaskPart.java" startLine="72" startPosition="44" endLine="73" endPosition="47" />
+    <scopeInfo nodeId="3961775458390032824" fileName="BwfTaskPart.java" startLine="76" startPosition="64" endLine="77" endPosition="56" />
+    <scopeInfo nodeId="3961775458390032824" fileName="BwfTaskPart.java" startLine="80" startPosition="49" endLine="81" endPosition="67" />
+    <scopeInfo nodeId="3961775458390032824" fileName="BwfTaskPart.java" startLine="84" startPosition="65" endLine="85" endPosition="87" />
+    <scopeInfo nodeId="3961775458390032824" fileName="BwfTaskPart.java" startLine="88" startPosition="64" endLine="89" endPosition="90" />
+    <scopeInfo nodeId="3961775458390032824" fileName="BwfTaskPart.java" startLine="92" startPosition="65" endLine="93" endPosition="61" />
+    <scopeInfo nodeId="3961775458390032824" fileName="BwfTaskPart.java" startLine="96" startPosition="92" endLine="97" endPosition="70" />
+    <scopeInfo nodeId="3961775458390032824" fileName="BwfTaskPart.java" startLine="100" startPosition="41" endLine="101" endPosition="60" />
+    <scopeInfo nodeId="3961775458390032824" fileName="BwfTaskPart.java" startLine="104" startPosition="49" endLine="105" endPosition="72" />
+    <scopeInfo nodeId="3961775458390032824" fileName="BwfTaskPart.java" startLine="108" startPosition="48" endLine="109" endPosition="75" />
+    <scopeInfo nodeId="3961775458390032824" fileName="BwfTaskPart.java" startLine="112" startPosition="50" endLine="113" endPosition="54" />
+    <scopeInfo nodeId="3961775458390032824" fileName="BwfTaskPart.java" startLine="116" startPosition="69" endLine="117" endPosition="63" />
+    <scopeInfo nodeId="3961775458390032824" fileName="BwfTaskPart.java" startLine="120" startPosition="66" endLine="121" endPosition="174" />
+    <scopeInfo nodeId="3961775458390032824" fileName="BwfTaskPart.java" startLine="124" startPosition="52" endLine="125" endPosition="46" />
+    <scopeInfo nodeId="3961775458390032824" fileName="BwfTaskPart.java" startLine="23" startPosition="0" endLine="26" endPosition="3">
+      <varInfo nodeId="3961775458390032824" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="3961775458390032824" fileName="BwfTaskPart.java" startLine="27" startPosition="0" endLine="31" endPosition="0" />
+    <scopeInfo nodeId="3961775458390032824" fileName="BwfTaskPart.java" startLine="31" startPosition="0" endLine="35" endPosition="0">
+      <varInfo nodeId="3961775458390032824" varName="value" />
+    </scopeInfo>
+    <scopeInfo nodeId="3961775458390032824" fileName="BwfTaskPart.java" startLine="35" startPosition="0" endLine="39" endPosition="0" />
+    <scopeInfo nodeId="3961775458390032824" fileName="BwfTaskPart.java" startLine="39" startPosition="0" endLine="43" endPosition="0">
+      <varInfo nodeId="3961775458390032824" varName="value" />
+    </scopeInfo>
+    <scopeInfo nodeId="3961775458390032824" fileName="BwfTaskPart.java" startLine="43" startPosition="0" endLine="47" endPosition="0" />
+    <scopeInfo nodeId="3961775458390032824" fileName="BwfTaskPart.java" startLine="47" startPosition="0" endLine="51" endPosition="0">
+      <varInfo nodeId="3961775458390032824" varName="value" />
+    </scopeInfo>
+    <scopeInfo nodeId="3961775458390032824" fileName="BwfTaskPart.java" startLine="51" startPosition="0" endLine="55" endPosition="0" />
+    <scopeInfo nodeId="3961775458390032824" fileName="BwfTaskPart.java" startLine="55" startPosition="0" endLine="59" endPosition="0">
+      <varInfo nodeId="3961775458390032824" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="3961775458390032824" fileName="BwfTaskPart.java" startLine="59" startPosition="0" endLine="63" endPosition="0" />
+    <scopeInfo nodeId="3961775458390032824" fileName="BwfTaskPart.java" startLine="63" startPosition="0" endLine="67" endPosition="0" />
+    <scopeInfo nodeId="3961775458390032824" fileName="BwfTaskPart.java" startLine="67" startPosition="0" endLine="71" endPosition="0" />
+    <scopeInfo nodeId="3961775458390032824" fileName="BwfTaskPart.java" startLine="71" startPosition="0" endLine="75" endPosition="0">
+      <varInfo nodeId="3961775458390032824" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="3961775458390032824" fileName="BwfTaskPart.java" startLine="75" startPosition="0" endLine="79" endPosition="0">
+      <varInfo nodeId="3961775458390032824" varName="node" />
+      <varInfo nodeId="3961775458390032824" varName="prev" />
+    </scopeInfo>
+    <scopeInfo nodeId="3961775458390032824" fileName="BwfTaskPart.java" startLine="79" startPosition="0" endLine="83" endPosition="0" />
+    <scopeInfo nodeId="3961775458390032824" fileName="BwfTaskPart.java" startLine="83" startPosition="0" endLine="87" endPosition="0" />
+    <scopeInfo nodeId="3961775458390032824" fileName="BwfTaskPart.java" startLine="87" startPosition="0" endLine="91" endPosition="0" />
+    <scopeInfo nodeId="3961775458390032824" fileName="BwfTaskPart.java" startLine="91" startPosition="0" endLine="95" endPosition="0">
+      <varInfo nodeId="3961775458390032824" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="3961775458390032824" fileName="BwfTaskPart.java" startLine="95" startPosition="0" endLine="99" endPosition="0">
+      <varInfo nodeId="3961775458390032824" varName="node" />
+      <varInfo nodeId="3961775458390032824" varName="prev" />
+    </scopeInfo>
+    <scopeInfo nodeId="3961775458390032824" fileName="BwfTaskPart.java" startLine="99" startPosition="0" endLine="103" endPosition="0" />
+    <scopeInfo nodeId="3961775458390032824" fileName="BwfTaskPart.java" startLine="103" startPosition="0" endLine="107" endPosition="0" />
+    <scopeInfo nodeId="3961775458390032824" fileName="BwfTaskPart.java" startLine="107" startPosition="0" endLine="111" endPosition="0" />
+    <scopeInfo nodeId="3961775458390032824" fileName="BwfTaskPart.java" startLine="111" startPosition="0" endLine="115" endPosition="0">
+      <varInfo nodeId="3961775458390032824" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="3961775458390032824" fileName="BwfTaskPart.java" startLine="115" startPosition="0" endLine="119" endPosition="0">
+      <varInfo nodeId="3961775458390032824" varName="node" />
+      <varInfo nodeId="3961775458390032824" varName="prev" />
+    </scopeInfo>
+    <scopeInfo nodeId="3961775458390032824" fileName="BwfTaskPart.java" startLine="119" startPosition="0" endLine="123" endPosition="0">
+      <varInfo nodeId="3961775458390032824" varName="init" />
+      <varInfo nodeId="3961775458390032824" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="3961775458390032824" fileName="BwfTaskPart.java" startLine="123" startPosition="0" endLine="127" endPosition="0">
+      <varInfo nodeId="3961775458390032824" varName="sm" />
+    </scopeInfo>
+    <unitInfo nodeId="3961775458390032824" fileName="BwfTaskPart.java" startLine="14" startPosition="0" endLine="128" endPosition="0" unitName="jetbrains.mps.build.workflow.structure.BwfTaskPart" />
   </root>
   <root nodeId="4755209551904389307">
     <nodeInfo nodeId="4755209551904389307" fileName="BwfJavaModule.java" startLine="14" startPosition="76" endLine="15" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />

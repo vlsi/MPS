@@ -5,17 +5,25 @@ package jetbrains.mps.build.workflow.generator.template.main;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.build.workflow.behavior.BwfJavaModule_Behavior;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.generator.template.IfMacroContext;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
+import org.apache.commons.lang.StringUtils;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
+import java.util.List;
+import java.util.ArrayList;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.generator.template.MappingScriptContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.build.workflow.generator.util.CycleHelper;
+import jetbrains.mps.generator.template.TemplateQueryContext;
+import java.util.Set;
+import java.util.HashSet;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class QueriesGenerated {
   public static Object propertyMacro_GetPropertyValue_7385586609667799735(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -23,14 +31,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_7385586609667799764(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    StringBuilder res = new StringBuilder();
-    for (SNode dep : SLinkOperations.getTargets(_context.getNode(), "dependencies", true)) {
-      if (res.length() > 0) {
-        res.append(", ");
-      }
-      res.append(SPropertyOperations.getString(SLinkOperations.getTarget(dep, "target", false), "name"));
-    }
-    return res.toString();
+    return ((String) _context.getVariable("var:deps"));
   }
 
   public static Object propertyMacro_GetPropertyValue_2769948622284790870(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -66,7 +67,7 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_7385586609667799754(final IOperationContext operationContext, final IfMacroContext _context) {
-    return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "dependencies", true)).isNotEmpty();
+    return StringUtils.isNotEmpty(((String) _context.getVariable("var:deps")));
   }
 
   public static SNode sourceNodeQuery_5369202620937104487(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -74,7 +75,13 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_7385586609667799717(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return SLinkOperations.getTargets(_context.getNode(), "subTasks", true);
+    List<SNode> subTasks = new ArrayList<SNode>();
+    ListSequence.fromList(subTasks).addSequence(ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "subTasks", true)));
+    for (SNode part : ((List<SNode>) _context.getVariable("var:taskParts"))) {
+      ListSequence.fromList(subTasks).addSequence(ListSequence.fromList(SLinkOperations.getTargets(part, "subTasks", true)));
+    }
+    // TODO reorder 
+    return subTasks;
   }
 
   public static Iterable sourceNodesQuery_2769948622284791216(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
@@ -105,5 +112,34 @@ public class QueriesGenerated {
     for (SNode project : SModelOperations.getRoots(_context.getModel(), "jetbrains.mps.build.workflow.structure.BwfProject")) {
       new CycleHelper(project, _context).processCycles();
     }
+  }
+
+  public static Object insertMacro_varValue_3961775458390375615(final IOperationContext operationContext, final TemplateQueryContext _context) {
+    StringBuilder res = new StringBuilder();
+    Set<String> used = new HashSet<String>();
+    Iterable<SNode> dependencies = SLinkOperations.getTargets(_context.getNode(), "dependencies", true);
+    for (SNode part : ((List<SNode>) _context.getVariable("var:taskParts"))) {
+      dependencies = Sequence.fromIterable(dependencies).concat(ListSequence.fromList(SLinkOperations.getTargets(part, "additionalDependencies", true)));
+    }
+    for (SNode dep : dependencies) {
+      String d = SPropertyOperations.getString(SLinkOperations.getTarget(dep, "target", false), "name");
+      if (used.add(d)) {
+        if (res.length() > 0) {
+          res.append(", ");
+        }
+        res.append(d);
+      }
+    }
+    return res.toString();
+  }
+
+  public static Object insertMacro_varValue_3961775458390373890(final IOperationContext operationContext, final TemplateQueryContext _context) {
+    List<SNode> parts = new ArrayList<SNode>();
+    for (SNode sibl : SNodeOperations.getAllSiblings(_context.getNode(), false)) {
+      if (SNodeOperations.isInstanceOf(sibl, "jetbrains.mps.build.workflow.structure.BwfTaskPart") && _context.getNode() == SLinkOperations.getTarget(SNodeOperations.cast(sibl, "jetbrains.mps.build.workflow.structure.BwfTaskPart"), "task", false)) {
+        ListSequence.fromList(parts).addElement(SNodeOperations.cast(sibl, "jetbrains.mps.build.workflow.structure.BwfTaskPart"));
+      }
+    }
+    return parts;
   }
 }

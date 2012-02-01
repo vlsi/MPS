@@ -70,8 +70,7 @@
       <aa>asdas</aa>
     </javac>
   </target>
-  <target name="build" depends="buildDependencies"></target>
-  <target name="test" depends="build">
-    <junit />
+  <target name="build" depends="buildDependencies">
+    <aaa1 />
   </target>
 </project>

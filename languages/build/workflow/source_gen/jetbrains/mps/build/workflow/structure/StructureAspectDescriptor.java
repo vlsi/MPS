@@ -8,7 +8,7 @@ import jetbrains.mps.smodel.runtime.impl.CompiledConceptDescriptor;
 import jetbrains.mps.smodel.runtime.interpreted.StructureAspectInterpreted;
 
 public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.StructureAspectDescriptor {
-  private static String[] stringSwitchCases_1htk8d_a0a0a = new String[]{"jetbrains.mps.build.workflow.structure.BwfAntStatement", "jetbrains.mps.build.workflow.structure.BwfJavaModule", "jetbrains.mps.build.workflow.structure.BwfJavaModuleReference", "jetbrains.mps.build.workflow.structure.BwfPath", "jetbrains.mps.build.workflow.structure.BwfProject", "jetbrains.mps.build.workflow.structure.BwfProjectPart", "jetbrains.mps.build.workflow.structure.BwfStatement", "jetbrains.mps.build.workflow.structure.BwfSubTask", "jetbrains.mps.build.workflow.structure.BwfSubTaskDependency", "jetbrains.mps.build.workflow.structure.BwfTask", "jetbrains.mps.build.workflow.structure.BwfTaskDependency"};
+  private static String[] stringSwitchCases_1htk8d_a0a0a = new String[]{"jetbrains.mps.build.workflow.structure.BwfAntStatement", "jetbrains.mps.build.workflow.structure.BwfJavaModule", "jetbrains.mps.build.workflow.structure.BwfJavaModuleReference", "jetbrains.mps.build.workflow.structure.BwfPath", "jetbrains.mps.build.workflow.structure.BwfProject", "jetbrains.mps.build.workflow.structure.BwfProjectPart", "jetbrains.mps.build.workflow.structure.BwfStatement", "jetbrains.mps.build.workflow.structure.BwfSubTask", "jetbrains.mps.build.workflow.structure.BwfSubTaskDependency", "jetbrains.mps.build.workflow.structure.BwfTask", "jetbrains.mps.build.workflow.structure.BwfTaskDependency", "jetbrains.mps.build.workflow.structure.BwfTaskPart"};
 
   public StructureAspectDescriptor() {
   }
@@ -37,6 +37,8 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
         return new CompiledConceptDescriptor("jetbrains.mps.build.workflow.structure.BwfTask", "jetbrains.mps.build.workflow.structure.BwfProjectPart", false, new String[]{"jetbrains.mps.build.workflow.structure.BwfProjectPart", "jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.lang.core.structure.ScopeProvider"}, new String[]{}, new String[]{});
       case 10:
         return new CompiledConceptDescriptor("jetbrains.mps.build.workflow.structure.BwfTaskDependency", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{"target"});
+      case 11:
+        return new CompiledConceptDescriptor("jetbrains.mps.build.workflow.structure.BwfTaskPart", "jetbrains.mps.build.workflow.structure.BwfProjectPart", false, new String[]{"jetbrains.mps.build.workflow.structure.BwfProjectPart", "jetbrains.mps.lang.core.structure.ScopeProvider"}, new String[]{}, new String[]{"task"});
       default:
         return StructureAspectInterpreted.getInstance().getDescriptor(conceptFqName);
     }

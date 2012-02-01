@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.build.workflow.behavior.BehaviorAspectDescriptor" />
+  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.build.workflow.behavior.BehaviorAspectDescriptor" />
   <unitInfo fileName="BwfAntStatement_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.build.workflow.behavior.BwfAntStatement_BehaviorDescriptor" />
   <unitInfo fileName="BwfJavaModuleReference_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.build.workflow.behavior.BwfJavaModuleReference_BehaviorDescriptor" />
   <unitInfo fileName="BwfJavaModule_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.build.workflow.behavior.BwfJavaModule_BehaviorDescriptor" />
@@ -11,6 +11,7 @@
   <unitInfo fileName="BwfSubTaskDependency_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.build.workflow.behavior.BwfSubTaskDependency_BehaviorDescriptor" />
   <unitInfo fileName="BwfSubTask_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.build.workflow.behavior.BwfSubTask_BehaviorDescriptor" />
   <unitInfo fileName="BwfTaskDependency_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.build.workflow.behavior.BwfTaskDependency_BehaviorDescriptor" />
+  <unitInfo fileName="BwfTaskPart_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.build.workflow.behavior.BwfTaskPart_BehaviorDescriptor" />
   <unitInfo fileName="BwfTask_BehaviorDescriptor.java" startLine="12" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.build.workflow.behavior.BwfTask_BehaviorDescriptor" />
   <root nodeId="2769948622284605897">
     <nodeInfo nodeId="2769948622284605916" fileName="BwfTask_Behavior.java" startLine="16" startPosition="113" endLine="17" endPosition="155" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -30,6 +31,25 @@
       <varInfo nodeId="2769948622284605897" varName="thisNode" />
     </scopeInfo>
     <unitInfo nodeId="2769948622284605897" fileName="BwfTask_Behavior.java" startLine="11" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.build.workflow.behavior.BwfTask_Behavior" />
+  </root>
+  <root nodeId="3961775458390352366">
+    <nodeInfo nodeId="3961775458390352387" fileName="BwfTaskPart_Behavior.java" startLine="16" startPosition="113" endLine="17" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3961775458390352394" fileName="BwfTaskPart_Behavior.java" startLine="18" startPosition="5" endLine="19" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3961775458390352366" fileName="BwfTaskPart_Behavior.java" startLine="11" startPosition="35" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="3961775458390352385" fileName="BwfTaskPart_Behavior.java" startLine="15" startPosition="101" endLine="18" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3961775458390352366" fileName="BwfTaskPart_Behavior.java" startLine="14" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getScope_3734116213129936182#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/scope/Scope;" />
+    <scopeInfo nodeId="3961775458390352368" fileName="BwfTaskPart_Behavior.java" startLine="12" startPosition="43" endLine="12" endPosition="43" />
+    <scopeInfo nodeId="3961775458390352386" fileName="BwfTaskPart_Behavior.java" startLine="16" startPosition="113" endLine="17" endPosition="159" />
+    <scopeInfo nodeId="3961775458390352366" fileName="BwfTaskPart_Behavior.java" startLine="11" startPosition="35" endLine="14" endPosition="0">
+      <varInfo nodeId="3961775458390352366" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="3961775458390352371" fileName="BwfTaskPart_Behavior.java" startLine="15" startPosition="101" endLine="19" endPosition="16" />
+    <scopeInfo nodeId="3961775458390352366" fileName="BwfTaskPart_Behavior.java" startLine="14" startPosition="0" endLine="21" endPosition="0">
+      <varInfo nodeId="3961775458390352374" varName="child" />
+      <varInfo nodeId="3961775458390352372" varName="kind" />
+      <varInfo nodeId="3961775458390352366" varName="thisNode" />
+    </scopeInfo>
+    <unitInfo nodeId="3961775458390352366" fileName="BwfTaskPart_Behavior.java" startLine="11" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.build.workflow.behavior.BwfTaskPart_Behavior" />
   </root>
   <root nodeId="7385586609667776608">
     <nodeInfo nodeId="7385586609667776622" fileName="BwfJavaModule_Behavior.java" startLine="12" startPosition="82" endLine="13" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

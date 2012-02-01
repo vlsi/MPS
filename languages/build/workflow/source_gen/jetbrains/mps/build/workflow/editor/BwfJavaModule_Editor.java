@@ -44,6 +44,7 @@ public class BwfJavaModule_Editor extends DefaultNodeEditor {
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
+      style.set(StyleAttributes.SELECTABLE, false);
     }
     editorCell.addEditorCell(this.createConstant_y27sly_a2a(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_y27sly_b2a(editorContext, node));

@@ -7,7 +7,7 @@ import java.util.Arrays;
 import jetbrains.mps.smodel.runtime.interpreted.BehaviorAspectInterpreted;
 
 public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor {
-  private static String[] stringSwitchCases_846f5o_a0a0a = new String[]{"jetbrains.mps.build.workflow.structure.BwfAntStatement", "jetbrains.mps.build.workflow.structure.BwfJavaModule", "jetbrains.mps.build.workflow.structure.BwfJavaModuleReference", "jetbrains.mps.build.workflow.structure.BwfPath", "jetbrains.mps.build.workflow.structure.BwfProject", "jetbrains.mps.build.workflow.structure.BwfStatement", "jetbrains.mps.build.workflow.structure.BwfSubTask", "jetbrains.mps.build.workflow.structure.BwfSubTaskDependency", "jetbrains.mps.build.workflow.structure.BwfTask", "jetbrains.mps.build.workflow.structure.BwfTaskDependency"};
+  private static String[] stringSwitchCases_846f5o_a0a0a = new String[]{"jetbrains.mps.build.workflow.structure.BwfAntStatement", "jetbrains.mps.build.workflow.structure.BwfJavaModule", "jetbrains.mps.build.workflow.structure.BwfJavaModuleReference", "jetbrains.mps.build.workflow.structure.BwfPath", "jetbrains.mps.build.workflow.structure.BwfProject", "jetbrains.mps.build.workflow.structure.BwfStatement", "jetbrains.mps.build.workflow.structure.BwfSubTask", "jetbrains.mps.build.workflow.structure.BwfSubTaskDependency", "jetbrains.mps.build.workflow.structure.BwfTask", "jetbrains.mps.build.workflow.structure.BwfTaskDependency", "jetbrains.mps.build.workflow.structure.BwfTaskPart"};
 
   public BehaviorAspectDescriptor() {
   }
@@ -34,6 +34,8 @@ public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.Be
         return new BwfPath_BehaviorDescriptor();
       case 2:
         return new BwfJavaModuleReference_BehaviorDescriptor();
+      case 10:
+        return new BwfTaskPart_BehaviorDescriptor();
       default:
         return BehaviorAspectInterpreted.getInstance().getDescriptor(fqName);
     }

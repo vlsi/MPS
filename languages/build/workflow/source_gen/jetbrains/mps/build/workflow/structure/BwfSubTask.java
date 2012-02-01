@@ -18,7 +18,8 @@ public class BwfSubTask extends BaseConcept implements INamedConcept {
   public static final String SHORT_DESCRIPTION = "shortDescription";
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
-  public static final String DEPENDENCIES = "dependencies";
+  public static final String AFTER = "after";
+  public static final String BEFORE = "before";
   public static final String STATEMENTS = "statements";
   public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
 
@@ -58,24 +59,44 @@ public class BwfSubTask extends BaseConcept implements INamedConcept {
     this.setProperty(BwfSubTask.VIRTUAL_PACKAGE, value);
   }
 
-  public int getDependenciesesCount() {
-    return this.getChildCount(BwfSubTask.DEPENDENCIES);
+  public int getAftersCount() {
+    return this.getChildCount(BwfSubTask.AFTER);
   }
 
-  public Iterator<BwfSubTaskDependency> dependencieses() {
-    return this.children(BwfSubTaskDependency.class, BwfSubTask.DEPENDENCIES);
+  public Iterator<BwfSubTaskDependency> afters() {
+    return this.children(BwfSubTaskDependency.class, BwfSubTask.AFTER);
   }
 
-  public List<BwfSubTaskDependency> getDependencieses() {
-    return this.getChildren(BwfSubTaskDependency.class, BwfSubTask.DEPENDENCIES);
+  public List<BwfSubTaskDependency> getAfters() {
+    return this.getChildren(BwfSubTaskDependency.class, BwfSubTask.AFTER);
   }
 
-  public void addDependencies(BwfSubTaskDependency node) {
-    this.addChild(BwfSubTask.DEPENDENCIES, node);
+  public void addAfter(BwfSubTaskDependency node) {
+    this.addChild(BwfSubTask.AFTER, node);
   }
 
-  public void insertDependencies(BwfSubTaskDependency prev, BwfSubTaskDependency node) {
-    this.insertChild(prev, BwfSubTask.DEPENDENCIES, node);
+  public void insertAfter(BwfSubTaskDependency prev, BwfSubTaskDependency node) {
+    this.insertChild(prev, BwfSubTask.AFTER, node);
+  }
+
+  public int getBeforesCount() {
+    return this.getChildCount(BwfSubTask.BEFORE);
+  }
+
+  public Iterator<BwfSubTaskDependency> befores() {
+    return this.children(BwfSubTaskDependency.class, BwfSubTask.BEFORE);
+  }
+
+  public List<BwfSubTaskDependency> getBefores() {
+    return this.getChildren(BwfSubTaskDependency.class, BwfSubTask.BEFORE);
+  }
+
+  public void addBefore(BwfSubTaskDependency node) {
+    this.addChild(BwfSubTask.BEFORE, node);
+  }
+
+  public void insertBefore(BwfSubTaskDependency prev, BwfSubTaskDependency node) {
+    this.insertChild(prev, BwfSubTask.BEFORE, node);
   }
 
   public int getStatementsesCount() {
