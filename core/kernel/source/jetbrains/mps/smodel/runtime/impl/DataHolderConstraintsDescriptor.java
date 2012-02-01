@@ -136,11 +136,12 @@ public class DataHolderConstraintsDescriptor extends BaseConstraintsDescriptor {
   }
 
   @Override
-  public boolean canBeChild(IOperationContext operationContext, SNode parentNode, SNode link, SNode concept, SNode childNode, @Nullable CheckingNodeContext checkingNodeContext) {
+  public boolean canBeChild(IOperationContext operationContext, SNode parentNode, SNode link, SNode concept, @Nullable CheckingNodeContext checkingNodeContext) {
     if (dataHolder.getCanBeAChildMethod() != null) {
-      return executeCanBeMethod(dataHolder.getCanBeAChildMethod(), operationContext, new CanBeAChildContext(parentNode, link, concept, childNode), checkingNodeContext);
+      return executeCanBeMethod(dataHolder.getCanBeAChildMethod(), operationContext, new CanBeAChildContext(parentNode, link, concept), checkingNodeContext);
     } else {
-      return super.canBeChild(operationContext, parentNode, link, concept, childNode, checkingNodeContext);
+      // it's should be impossible!
+      throw new IllegalStateException();
     }
   }
 
@@ -149,16 +150,18 @@ public class DataHolderConstraintsDescriptor extends BaseConstraintsDescriptor {
     if (dataHolder.getCanBeARootMethod() != null) {
       return executeCanBeMethod(dataHolder.getCanBeARootMethod(), operationContext, new CanBeARootContext(model), checkingNodeContext);
     } else {
-      return super.canBeRoot(operationContext, model, checkingNodeContext);
+      // it's should be impossible
+      throw new IllegalStateException();
     }
   }
 
   @Override
-  public boolean canBeParent(IOperationContext operationContext, SNode node, SNode childConcept, SNode link, @Nullable SNode childNode, @Nullable CheckingNodeContext checkingNodeContext) {
+  public boolean canBeParent(IOperationContext operationContext, SNode node, SNode childConcept, SNode link, @Nullable CheckingNodeContext checkingNodeContext) {
     if (dataHolder.getCanBeAParentMethod() != null) {
-      return executeCanBeMethod(dataHolder.getCanBeAParentMethod(), operationContext, new CanBeAParentContext(node, childConcept, link, childNode), checkingNodeContext);
+      return executeCanBeMethod(dataHolder.getCanBeAParentMethod(), operationContext, new CanBeAParentContext(node, childConcept, link), checkingNodeContext);
     } else {
-      return super.canBeParent(operationContext, node, childConcept, link, checkingNodeContext);
+      // it's should be impossible
+      throw new IllegalStateException();
     }
   }
 
@@ -167,7 +170,8 @@ public class DataHolderConstraintsDescriptor extends BaseConstraintsDescriptor {
     if (dataHolder.getCanBeAnAncestorMethod() != null) {
       return executeCanBeMethod(dataHolder.getCanBeAnAncestorMethod(), operationContext, new CanBeAnAncestorContext(node, childConcept), checkingNodeContext);
     } else {
-      return super.canBeAncestor(operationContext, node, childConcept, checkingNodeContext);
+      // it's should be impossible
+      throw new IllegalStateException();
     }
   }
 

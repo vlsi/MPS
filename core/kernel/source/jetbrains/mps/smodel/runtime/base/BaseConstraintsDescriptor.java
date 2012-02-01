@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.smodel.runtime.base;
 
+import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
@@ -151,15 +152,15 @@ public class BaseConstraintsDescriptor implements ConstraintsDispatchable {
   }
 
   @Override
-  public boolean canBeChild(IOperationContext operationContext, SNode parentNode, SNode link, SNode concept, SNode childNode, @Nullable CheckingNodeContext checkingNodeContext) {
+  public boolean canBeChild(@Nullable SNode node, SNode parentNode, SNode link, SNode childConcept, IOperationContext operationContext, @Nullable CheckingNodeContext checkingNodeContext) {
     if (canBeChildDescriptor == null) {
       return true;
     }
     if (canBeChildDescriptor == this) {
       // in new version it's impossible! - canBeChild in this case overriden!
-      return canBeChild(operationContext, parentNode, link, concept, checkingNodeContext);
+      return canBeChild(operationContext, parentNode, link, childConcept, checkingNodeContext);
     }
-    return canBeChildDescriptor.canBeChild(operationContext, parentNode, link, concept, childNode, checkingNodeContext);
+    return canBeChildDescriptor.canBeChild(node, parentNode, link, childConcept, operationContext, checkingNodeContext);
   }
 
   public boolean canBeChild(IOperationContext operationContext, SNode parentNode, SNode link, SNode concept, @Nullable CheckingNodeContext checkingNodeContext) {
@@ -168,12 +169,24 @@ public class BaseConstraintsDescriptor implements ConstraintsDispatchable {
   }
 
   @Override
+  public boolean canBeRoot(SModel model, IOperationContext operationContext, @Nullable CheckingNodeContext checkingNodeContext) {
+    if (canBeRootDescriptor == null) {
+      return true;
+    }
+    if (canBeRootDescriptor == this) {
+      // in new version it's impossible! - canBeChild in this case overriden!
+      return canBeRoot(operationContext, model, checkingNodeContext);
+    }
+    return canBeRootDescriptor.canBeRoot(model, operationContext, checkingNodeContext);
+  }
+
   public boolean canBeRoot(IOperationContext operationContext, SModel model, @Nullable CheckingNodeContext checkingNodeContext) {
-    return canBeRootDescriptor == null || canBeRootDescriptor.canBeRoot(operationContext, model, checkingNodeContext);
+    // compatibility method, should be overriden
+    throw new UnsupportedOperationException();
   }
 
   @Override
-  public boolean canBeParent(IOperationContext operationContext, SNode node, SNode childConcept, SNode link, @Nullable SNode childNode, @Nullable CheckingNodeContext checkingNodeContext) {
+  public boolean canBeParent(SNode node, @Nullable SNode childNode, SNode childConcept, SNode link, IOperationContext operationContext, @Nullable CheckingNodeContext checkingNodeContext) {
     if (canBeParentDescriptor == null) {
       return true;
     }
@@ -181,7 +194,7 @@ public class BaseConstraintsDescriptor implements ConstraintsDispatchable {
       // in new version it's impossible! - canBeParent in this case overriden!
       return canBeParent(operationContext, node, childConcept, link, checkingNodeContext);
     }
-    return canBeParentDescriptor.canBeParent(operationContext, node, childConcept, link, childNode, checkingNodeContext);
+    return canBeParentDescriptor.canBeParent(node, childNode, childConcept, link, operationContext, checkingNodeContext);
   }
 
   public boolean canBeParent(IOperationContext operationContext, SNode node, SNode childConcept, SNode link, @Nullable CheckingNodeContext checkingNodeContext) {
@@ -190,8 +203,20 @@ public class BaseConstraintsDescriptor implements ConstraintsDispatchable {
   }
 
   @Override
+  public boolean canBeAncestor(SNode node, SNode childConcept, IOperationContext operationContext, @Nullable CheckingNodeContext checkingNodeContext) {
+    if (canBeAncestorDescriptor == null) {
+      return true;
+    }
+    if (canBeAncestorDescriptor == this) {
+      // in new version it's impossible! - canBeParent in this case overriden!
+      return canBeAncestor(operationContext, node, childConcept, checkingNodeContext);
+    }
+    return canBeAncestorDescriptor.canBeAncestor(node, childConcept, operationContext, checkingNodeContext);
+  }
+
   public boolean canBeAncestor(IOperationContext operationContext, SNode node, SNode childConcept, @Nullable CheckingNodeContext checkingNodeContext) {
-    return canBeAncestorDescriptor == null || canBeAncestorDescriptor.canBeAncestor(operationContext, node, childConcept, checkingNodeContext);
+    // compatibility method, should be overriden
+    throw new UnsupportedOperationException();
   }
 
   @NotNull
