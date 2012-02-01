@@ -7,9 +7,15 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.buildScript.behavior.BuildProject_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.buildScript.behavior.BuildProject_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import java.util.List;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.Set;
+import java.util.HashSet;
+import jetbrains.mps.smodel.SModelUtil_new;
+import jetbrains.mps.project.GlobalScope;
 
 public class Context {
   private Map<String, Object> myProperties = MapSequence.fromMap(new HashMap<String, Object>());
@@ -29,20 +35,85 @@ public class Context {
     return ((T) MapSequence.fromMap(myProperties).get(key));
   }
 
+  private SNode getBuildProject(SNode node) {
+    return SNodeOperations.getAncestor(node, "jetbrains.mps.buildScript.structure.BuildProject", true, false);
+  }
+
   public String getBasePath_Local(SNode node) {
-    return BuildProject_Behavior.call_getBasePath_4959435991187146924(SNodeOperations.getAncestor(node, "jetbrains.mps.buildScript.structure.BuildProject", true, false));
+    return BuildProject_Behavior.call_getBasePath_4959435991187146924(this.getBuildProject(node));
+  }
+
+  public String getTmpDirMacroName(SNode node) {
+    return SPropertyOperations.getString(this.getBuildProject(node), "name") + ".tmp";
   }
 
   public String getTmpPath_WithMacro(SNode node) {
-    return "${" + SPropertyOperations.getString(SNodeOperations.getAncestor(node, "jetbrains.mps.buildScript.structure.BuildProject", true, false), "name") + ".tmp}";
+    return "${" + this.getTmpDirMacroName(node) + "}";
+  }
+
+  public String getTmpPath_Local(SNode node) {
+    return getBasePath_Local(node) + "/build/tmp/" + SPropertyOperations.getString(getBuildProject(node), "name") + ".tmp";
+  }
+
+  public String getDeployDirMacroName(SNode node) {
+    return SPropertyOperations.getString(this.getBuildProject(node), "name") + ".deploy.dir";
   }
 
   public String getDeployPath_WithMacro(SNode node) {
-    return "${" + SPropertyOperations.getString(SNodeOperations.getAncestor(node, "jetbrains.mps.buildScript.structure.BuildProject", true, false), "name") + ".deploy.dir}";
+    return "${" + this.getDeployDirMacroName(node) + "}";
+  }
+
+  public String getDeployPath_Local(SNode node) {
+    return getBasePath_Local(node) + "/build/artifacts/" + SPropertyOperations.getString(getBuildProject(node), "name") + ".artifacts";
+  }
+
+  public List<SNode> getExportedMacro(SNode node) {
+    List<SNode> exportedMacro = BuildProject_Behavior.call_getExportedMacro_193602448594215545(getBuildProject(node), this);
+    ListSequence.fromList(exportedMacro).addElement(new Context.QuotationClass_lmsybr_a0a0b0k().createNode(getTmpPath_Local(node), getTmpDirMacroName(node)));
+    ListSequence.fromList(exportedMacro).addElement(new Context.QuotationClass_lmsybr_a0a0c0k().createNode(getDeployPath_Local(node), getDeployDirMacroName(node)));
+    return exportedMacro;
   }
 
   @Nullable
   public static Context defaultContext() {
     return new Context();
+  }
+
+  public static class QuotationClass_lmsybr_a0a0b0k {
+    public QuotationClass_lmsybr_a0a0b0k() {
+    }
+
+    public SNode createNode(Object parameter_3, Object parameter_4) {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_1 = null;
+      {
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.buildScript.structure.ExportedMacroInternal", null, GlobalScope.getInstance(), false);
+        SNode quotedNode1_2 = quotedNode_1;
+        quotedNode1_2.setProperty("defaultPath", (String) parameter_3);
+        quotedNode1_2.setProperty("name", (String) parameter_4);
+        result = quotedNode1_2;
+      }
+      return result;
+    }
+  }
+
+  public static class QuotationClass_lmsybr_a0a0c0k {
+    public QuotationClass_lmsybr_a0a0c0k() {
+    }
+
+    public SNode createNode(Object parameter_3, Object parameter_4) {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_1 = null;
+      {
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.buildScript.structure.ExportedMacroInternal", null, GlobalScope.getInstance(), false);
+        SNode quotedNode1_2 = quotedNode_1;
+        quotedNode1_2.setProperty("defaultPath", (String) parameter_3);
+        quotedNode1_2.setProperty("name", (String) parameter_4);
+        result = quotedNode1_2;
+      }
+      return result;
+    }
   }
 }

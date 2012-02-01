@@ -1,6 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="ConstraintsAspectDescriptor.java" startLine="9" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.buildScript.constraints.ConstraintsAspectDescriptor" />
+  <unitInfo fileName="ConstraintsAspectDescriptor.java" startLine="9" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.buildScript.constraints.ConstraintsAspectDescriptor" />
+  <root nodeId="193602448594327350">
+    <nodeInfo nodeId="193602448594327350" fileName="ExportedMacroInternal_Constraints.java" startLine="15" startPosition="82" endLine="16" endPosition="176" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="canBeChildBreakingPoint" />
+    <nodeInfo nodeId="193602448594327350" fileName="ExportedMacroInternal_Constraints.java" startLine="18" startPosition="46" endLine="19" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="193602448594327350" fileName="ExportedMacroInternal_Constraints.java" startLine="23" startPosition="43" endLine="24" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="193602448594327350" fileName="ExportedMacroInternal_Constraints.java" startLine="28" startPosition="166" endLine="29" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="193602448594327350" fileName="ExportedMacroInternal_Constraints.java" startLine="29" startPosition="102" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="193602448594327350" fileName="ExportedMacroInternal_Constraints.java" startLine="31" startPosition="51" endLine="32" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="193602448594327350" fileName="ExportedMacroInternal_Constraints.java" startLine="33" startPosition="5" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="193602448594327350" fileName="ExportedMacroInternal_Constraints.java" startLine="34" startPosition="0" endLine="35" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="193602448594329572" fileName="ExportedMacroInternal_Constraints.java" startLine="38" startPosition="121" endLine="39" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="193602448594327353" fileName="ExportedMacroInternal_Constraints.java" startLine="39" startPosition="24" endLine="40" endPosition="118" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="193602448594327350" fileName="ExportedMacroInternal_Constraints.java" startLine="17" startPosition="0" endLine="20" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ExportedMacroInternal_Constraints#()V" />
+    <nodeInfo nodeId="193602448594327350" fileName="ExportedMacroInternal_Constraints.java" startLine="30" startPosition="0" endLine="33" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="193602448594327350" fileName="ExportedMacroInternal_Constraints.java" startLine="21" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hasOwnCanBeChildMethod#()Z" />
+    <nodeInfo nodeId="193602448594327350" fileName="ExportedMacroInternal_Constraints.java" startLine="37" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="static_canBeAChild#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/constraints/CanBeAChildContext;)Z" />
+    <nodeInfo nodeId="193602448594327350" fileName="ExportedMacroInternal_Constraints.java" startLine="26" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canBeChild#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/runtime/CheckingNodeContext;)Z" />
+    <scopeInfo nodeId="193602448594327350" fileName="ExportedMacroInternal_Constraints.java" startLine="18" startPosition="46" endLine="19" endPosition="71" />
+    <scopeInfo nodeId="193602448594327350" fileName="ExportedMacroInternal_Constraints.java" startLine="23" startPosition="43" endLine="24" endPosition="16" />
+    <scopeInfo nodeId="193602448594327350" fileName="ExportedMacroInternal_Constraints.java" startLine="31" startPosition="51" endLine="32" endPosition="67" />
+    <scopeInfo nodeId="193602448594327352" fileName="ExportedMacroInternal_Constraints.java" startLine="38" startPosition="121" endLine="40" endPosition="118" />
+    <scopeInfo nodeId="193602448594327350" fileName="ExportedMacroInternal_Constraints.java" startLine="17" startPosition="0" endLine="20" endPosition="3" />
+    <scopeInfo nodeId="193602448594327350" fileName="ExportedMacroInternal_Constraints.java" startLine="21" startPosition="0" endLine="26" endPosition="0" />
+    <scopeInfo nodeId="193602448594327350" fileName="ExportedMacroInternal_Constraints.java" startLine="37" startPosition="0" endLine="42" endPosition="0">
+      <varInfo nodeId="193602448594327350" varName="_context" />
+      <varInfo nodeId="193602448594327350" varName="operationContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="193602448594327350" fileName="ExportedMacroInternal_Constraints.java" startLine="28" startPosition="166" endLine="35" endPosition="18">
+      <varInfo nodeId="193602448594327350" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="193602448594327350" fileName="ExportedMacroInternal_Constraints.java" startLine="26" startPosition="0" endLine="37" endPosition="0">
+      <varInfo nodeId="193602448594327350" varName="checkingNodeContext" />
+      <varInfo nodeId="193602448594327350" varName="node" />
+      <varInfo nodeId="193602448594327350" varName="node1" />
+      <varInfo nodeId="193602448594327350" varName="node2" />
+      <varInfo nodeId="193602448594327350" varName="operationContext" />
+    </scopeInfo>
+    <unitInfo nodeId="193602448594327350" fileName="ExportedMacroInternal_Constraints.java" startLine="15" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.buildScript.constraints.ExportedMacroInternal_Constraints" />
+  </root>
   <root nodeId="3542413272732788550">
     <nodeInfo nodeId="3542413272732788550" fileName="BuildAspect_Constraints.java" startLine="14" startPosition="72" endLine="15" endPosition="177" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="canBeChildBreakingPoint" />
     <nodeInfo nodeId="3542413272732788550" fileName="BuildAspect_Constraints.java" startLine="17" startPosition="36" endLine="18" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />

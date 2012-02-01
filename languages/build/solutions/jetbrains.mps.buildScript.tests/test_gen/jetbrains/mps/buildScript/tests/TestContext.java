@@ -7,8 +7,10 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.reloading.CommonPaths;
 
 public class TestContext extends Context {
-  public static final String TEMP = "${buildName.tmp.dir}";
-  public static final String DEPLOY = "${buildName.deploy.dir}";
+  public static final String TEMP_MACRO = "buildName.tmp.dir";
+  public static final String TEMP = "${" + TEMP_MACRO + "}";
+  public static final String DEPLOY_MACRO = "buildName.deploy.dir";
+  public static final String DEPLOY = "${" + DEPLOY_MACRO + "}";
 
   public TestContext() {
   }
@@ -19,12 +21,12 @@ public class TestContext extends Context {
   }
 
   @Override
-  public String getTmpPath_WithMacro(SNode node) {
-    return TEMP;
+  public String getTmpDirMacroName(SNode node) {
+    return TEMP_MACRO;
   }
 
   @Override
-  public String getDeployPath_WithMacro(SNode node) {
-    return DEPLOY;
+  public String getDeployDirMacroName(SNode node) {
+    return DEPLOY_MACRO;
   }
 }

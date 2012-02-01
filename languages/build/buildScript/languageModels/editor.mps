@@ -133,6 +133,10 @@
       <property name="name" nameId="tpck.1169194664001" value="CompositePart" />
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="3ior.7321017245476976379" resolveInfo="BuildRelativePath" />
     </node>
+    <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="193602448594247642">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Macro" />
+      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="3ior.193602448594247602" resolveInfo="ExportedMacroInternal" />
+    </node>
   </roots>
   <root id="5617550519002745365">
     <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="7389400916847962446">
@@ -1885,6 +1889,20 @@
           </node>
         </node>
       </node>
+    </node>
+  </root>
+  <root id="193602448594247642">
+    <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="193602448594247644">
+      <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Property" typeId="tpc2.1073389658414" id="193602448594247647">
+        <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tpck.1169194664001" resolveInfo="name" />
+      </node>
+      <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="193602448594247649">
+        <property name="text" nameId="tpc2.1073389577007" value="=" />
+      </node>
+      <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Property" typeId="tpc2.1073389658414" id="193602448594247651">
+        <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="3ior.193602448594247603" resolveInfo="defaultPath" />
+      </node>
+      <node role="cellLayout" roleId="tpc2.1106270802874" type="tpc2.CellLayout_Indent" typeId="tpc2.1237303669825" id="193602448594247646" />
     </node>
   </root>
 </model>

@@ -14,6 +14,12 @@ import java.util.List;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.buildScript.util.Context;
+import java.util.ArrayList;
+import java.util.Set;
+import java.util.HashSet;
+import jetbrains.mps.smodel.SModelUtil_new;
+import jetbrains.mps.project.GlobalScope;
 
 public class BuildProject_Behavior {
   public static void init(SNode thisNode) {
@@ -45,5 +51,34 @@ public class BuildProject_Behavior {
 
   public static String call_getBasePath_4959435991187146924(SNode thisNode) {
     return thisNode.getModel().getModelDescriptor().getModule().getDescriptorFile().getParent().getPath();
+  }
+
+  public static List<SNode> call_getExportedMacro_193602448594215545(SNode thisNode, Context context) {
+    List<SNode> exportedMacro = new ArrayList<SNode>();
+    for (SNode macro : ListSequence.fromList(SLinkOperations.getTargets(thisNode, "macros", true))) {
+      if (SNodeOperations.isInstanceOf(macro, "jetbrains.mps.buildScript.structure.BuildFolderMacro")) {
+        ListSequence.fromList(exportedMacro).addElement(new BuildProject_Behavior.QuotationClass_save77_a0a0a0a0b0d().createNode(SPropertyOperations.getString(macro, "name"), BuildFolderMacro_Behavior.call_evaluate_4959435991187146982(SNodeOperations.cast(macro, "jetbrains.mps.buildScript.structure.BuildFolderMacro"), context)));
+      }
+    }
+    return exportedMacro;
+  }
+
+  public static class QuotationClass_save77_a0a0a0a0b0d {
+    public QuotationClass_save77_a0a0a0a0b0d() {
+    }
+
+    public SNode createNode(Object parameter_3, Object parameter_4) {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_1 = null;
+      {
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.buildScript.structure.ExportedMacroInternal", null, GlobalScope.getInstance(), false);
+        SNode quotedNode1_2 = quotedNode_1;
+        quotedNode1_2.setProperty("defaultPath", (String) parameter_4);
+        quotedNode1_2.setProperty("name", (String) parameter_3);
+        result = quotedNode1_2;
+      }
+      return result;
+    }
   }
 }
