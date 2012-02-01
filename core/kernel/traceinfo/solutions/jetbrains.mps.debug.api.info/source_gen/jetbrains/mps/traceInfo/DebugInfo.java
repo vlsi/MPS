@@ -210,7 +210,7 @@ public class DebugInfo {
           public Comparable<?> select(UnitPositionInfo position) {
             return position.getStartLine();
           }
-        }, true);
+        }, false);
       }
     }).where(new IWhereFilter<UnitPositionInfo>() {
       public boolean accept(UnitPositionInfo it) {
@@ -232,9 +232,9 @@ public class DebugInfo {
     }
     Iterable<UnitPositionInfo> sorted = ListSequence.fromList(resultList).sort(new ISelector<UnitPositionInfo, Comparable<?>>() {
       public Comparable<?> select(UnitPositionInfo it) {
-        return it;
+        return it.getStartLine();
       }
-    }, true);
+    }, false);
     UnitPositionInfo firstPositionInfo = Sequence.fromIterable(sorted).first();
     return firstPositionInfo.getUnitName();
   }
@@ -252,7 +252,7 @@ public class DebugInfo {
     }
     Iterable<UnitPositionInfo> sorted = ListSequence.fromList(resultList).sort(new ISelector<UnitPositionInfo, Comparable<?>>() {
       public Comparable<?> select(UnitPositionInfo it) {
-        return it;
+        return it.getStartLine();
       }
     }, false);
     UnitPositionInfo firstPositionInfo = Sequence.fromIterable(sorted).first();
