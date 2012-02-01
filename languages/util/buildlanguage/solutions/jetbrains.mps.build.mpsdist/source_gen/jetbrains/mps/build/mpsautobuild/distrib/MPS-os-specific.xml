@@ -64,7 +64,7 @@
       <zipfileset file="${input.dir}/bin/mac/fsnotifier" prefix="${dist.folder.name.mac}/bin" filemode="755" />
       <zipfileset file="${input.dir}/${Info.plist}" prefix="${dist.folder.name.mac}/Contents" />
       <zipfileset file="${input.dir}/mps.icns" prefix="${dist.folder.name.mac}/Contents/Resources" />
-      <zipfileset file="${input.dir}/mps" prefix="${dist.folder.name.mac}/Contents/MacOS" filemode="755" />
+      <zipfileset file="${input.dir}/mps.executable" fullpath="${dist.folder.name.mac}/Contents/MacOS/mps" filemode="755" />
       <zipfileset file="${input.dir}/${mps.sh}" prefix="${dist.folder.name.mac}" filemode="755" />
       <zipfileset file="${input.dir}/${mps.vmoptions}" prefix="${dist.folder.name.mac}/bin" />
       <zipfileset file="${input.dir}/${mpshelp.jar}" fullpath="${dist.folder.name.mac}/${mpshelp.jar}" />
