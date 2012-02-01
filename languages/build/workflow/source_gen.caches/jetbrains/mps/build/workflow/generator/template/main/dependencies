@@ -11,6 +11,7 @@
     <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="jetbrains.mps.build.workflow.behavior.BwfJavaModule_Behavior" />
     <classNode dependClassName="jetbrains.mps.build.workflow.generator.util.CycleHelper" />
+    <classNode dependClassName="jetbrains.mps.build.workflow.generator.util.SubTaskOrderHelper" />
     <classNode dependClassName="jetbrains.mps.generator.template.IfMacroContext" />
     <classNode dependClassName="jetbrains.mps.generator.template.MappingScriptContext" />
     <classNode dependClassName="jetbrains.mps.generator.template.PropertyMacroContext" />

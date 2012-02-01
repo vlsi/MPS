@@ -171,9 +171,19 @@
         <node role="after" roleId="8xvf.2769948622284605953" type="8xvf.BwfSubTaskDependency" typeId="8xvf.2769948622284605880" id="3961775458390336251">
           <link role="target" roleId="8xvf.2769948622284605881" targetNodeId="3961775458390335279" resolveInfo="first" />
         </node>
+        <node role="statements" roleId="8xvf.2769948622284606050" type="8xvf.BwfAntStatement" typeId="8xvf.2769948622284768359" id="3961775458390515458">
+          <node role="element" roleId="8xvf.2769948622284768360" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="3961775458390515460">
+            <property name="tagName" nameId="iuxj.6666499814681415862" value="second" />
+          </node>
+        </node>
       </node>
       <node role="subTasks" roleId="8xvf.2769948622284546679" type="8xvf.BwfSubTask" typeId="8xvf.2769948622284546677" id="3961775458390335279">
         <property name="name" nameId="tpck.1169194664001" value="first" />
+        <node role="statements" roleId="8xvf.2769948622284606050" type="8xvf.BwfAntStatement" typeId="8xvf.2769948622284768359" id="3961775458390515455">
+          <node role="element" roleId="8xvf.2769948622284768360" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="3961775458390515457">
+            <property name="tagName" nameId="iuxj.6666499814681415862" value="first" />
+          </node>
+        </node>
       </node>
     </node>
     <node role="parts" roleId="8xvf.2769948622284574304" type="8xvf.BwfTaskPart" typeId="8xvf.3961775458390032824" id="3961775458390370956">
@@ -182,9 +192,12 @@
         <property name="name" nameId="tpck.1169194664001" value="xx1" />
         <node role="statements" roleId="8xvf.2769948622284606050" type="8xvf.BwfAntStatement" typeId="8xvf.2769948622284768359" id="3961775458390375393">
           <node role="element" roleId="8xvf.2769948622284768360" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="3961775458390375395">
-            <property name="tagName" nameId="iuxj.6666499814681415862" value="aaa1" />
+            <property name="tagName" nameId="iuxj.6666499814681415862" value="aaa12" />
             <property name="shortEmptyNotation" nameId="iuxj.6999033275467544021" value="true" />
           </node>
+        </node>
+        <node role="before" roleId="8xvf.3961775458390293275" type="8xvf.BwfSubTaskDependency" typeId="8xvf.2769948622284605880" id="3961775458390514808">
+          <link role="target" roleId="8xvf.2769948622284605881" targetNodeId="3961775458390335279" resolveInfo="first" />
         </node>
       </node>
     </node>

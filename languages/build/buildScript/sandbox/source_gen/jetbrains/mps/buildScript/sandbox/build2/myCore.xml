@@ -61,7 +61,6 @@
     </javac>
   </target>
   <target name="buildDependencies">
-    <copy asda="asda" />
     <mkdir asd="aaaa" />
     <javac asd="asd" ssdf="asd">
       asdassda
@@ -69,8 +68,11 @@
       asdasd
       <aa>asdas</aa>
     </javac>
+    <copy asda="asda" />
   </target>
   <target name="build" depends="buildDependencies">
-    <aaa1 />
+    <aaa12 />
+    <first></first>
+    <second></second>
   </target>
 </project>

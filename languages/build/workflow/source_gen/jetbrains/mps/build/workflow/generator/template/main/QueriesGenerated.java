@@ -16,6 +16,7 @@ import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.build.workflow.generator.util.SubTaskOrderHelper;
 import jetbrains.mps.generator.template.MappingScriptContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.build.workflow.generator.util.CycleHelper;
@@ -80,7 +81,7 @@ public class QueriesGenerated {
     for (SNode part : ((List<SNode>) _context.getVariable("var:taskParts"))) {
       ListSequence.fromList(subTasks).addSequence(ListSequence.fromList(SLinkOperations.getTargets(part, "subTasks", true)));
     }
-    // TODO reorder 
+    new SubTaskOrderHelper(subTasks, _context).sort();
     return subTasks;
   }
 
