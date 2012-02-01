@@ -13,6 +13,26 @@
     </node>
   </roots>
   <root id="2769948622284624385">
+    <node role="parts" roleId="8xvf.2769948622284574304" type="8xvf.BwfMacro" typeId="8xvf.6896005762093571400" id="6896005762093599489">
+      <property name="name" nameId="tpck.1169194664001" value="version" />
+      <property name="defaultValue" nameId="8xvf.6896005762093571402" value="1.0" />
+      <property name="exportToProperiesFile" nameId="8xvf.6896005762093571406" value="true" />
+    </node>
+    <node role="parts" roleId="8xvf.2769948622284574304" type="8xvf.BwfMacro" typeId="8xvf.6896005762093571400" id="6896005762093588206">
+      <property name="name" nameId="tpck.1169194664001" value="aaa" />
+      <property name="defaultValue" nameId="8xvf.6896005762093571402" value="./aaaa" />
+      <property name="exportToProperiesFile" nameId="8xvf.6896005762093571406" value="true" />
+      <property name="isLocation" nameId="8xvf.6896005762093571407" value="true" />
+    </node>
+    <node role="parts" roleId="8xvf.2769948622284574304" type="8xvf.BwfMacro" typeId="8xvf.6896005762093571400" id="6896005762093599485">
+      <property name="name" nameId="tpck.1169194664001" value="bbb" />
+      <property name="defaultValue" nameId="8xvf.6896005762093571402" value="./bbbb" />
+    </node>
+    <node role="parts" roleId="8xvf.2769948622284574304" type="8xvf.BwfMacro" typeId="8xvf.6896005762093571400" id="6896005762093599487">
+      <property name="name" nameId="tpck.1169194664001" value="ccc" />
+      <property name="defaultValue" nameId="8xvf.6896005762093571402" value="./cccc" />
+      <property name="isLocation" nameId="8xvf.6896005762093571407" value="true" />
+    </node>
     <node role="parts" roleId="8xvf.2769948622284574304" type="8xvf.BwfJavaModule" typeId="8xvf.4755209551904389307" id="4755209551904397940">
       <property name="name" nameId="tpck.1169194664001" value="module1" />
       <property name="outputFolder" nameId="8xvf.7385586609667649463" value="build/temp/module1" />

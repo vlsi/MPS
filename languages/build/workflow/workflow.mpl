@@ -40,6 +40,7 @@
     <usedDevKit>2677cb18-f558-4e33-bc38-a5139cee06dc(jetbrains.mps.devkit.language-design)</usedDevKit>
   </usedDevKits>
   <extendedLanguages>
+    <extendedLanguage>58f98fef-90ad-4b72-a390-fad66ec7005a(jetbrains.mps.core.properties)</extendedLanguage>
     <extendedLanguage>479c7a8c-02f9-43b5-9139-d910cb22f298(jetbrains.mps.core.xml)</extendedLanguage>
   </extendedLanguages>
 </language>

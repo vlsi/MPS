@@ -68,6 +68,11 @@
       <property name="name" nameId="tpck.1169194664001" value="BwfTaskPart" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="2769948622284546695" resolveInfo="BwfProjectPart" />
     </node>
+    <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="6896005762093571400">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Structure" />
+      <property name="name" nameId="tpck.1169194664001" value="BwfMacro" />
+      <link role="extends" roleId="tpce.1071489389519" targetNodeId="2769948622284546695" resolveInfo="BwfProjectPart" />
+    </node>
   </roots>
   <root id="2769948622284546673">
     <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="7385586609667765566">
@@ -251,6 +256,27 @@
     </node>
     <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="3961775458390352365">
       <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tpck.3734116213129792499" resolveInfo="ScopeProvider" />
+    </node>
+  </root>
+  <root id="6896005762093571400">
+    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="6896005762093571402">
+      <property name="name" nameId="tpck.1169194664001" value="defaultValue" />
+      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983041843" resolveInfo="string" />
+    </node>
+    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="6896005762093571406">
+      <property name="name" nameId="tpck.1169194664001" value="exportToProperiesFile" />
+      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983657063" resolveInfo="boolean" />
+    </node>
+    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="6896005762093571407">
+      <property name="name" nameId="tpck.1169194664001" value="isLocation" />
+      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983657063" resolveInfo="boolean" />
+    </node>
+    <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="6896005762093571401">
+      <property name="value" nameId="tpce.1105725733873" value="macro" />
+      <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="6896005762093571403">
+      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tpck.1169194658468" resolveInfo="INamedConcept" />
     </node>
   </root>
 </model>

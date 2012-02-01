@@ -1,4 +1,8 @@
 <project name="myCore">
+  <property file="myCore.properties" />
+  <property name="aaa" location="${aaa.relative}" />
+  <property name="bbb" value="./bbbb" />
+  <property name="ccc" location="./cccc" />
   <target name="java.compile.java.modules.cycle.1">
     <javac destdir="build/temp/temp/java.modules.cycle.1">
       <src path="module1/source" />
