@@ -30,7 +30,7 @@ public interface ConstraintsDescriptor {
 
   boolean canBeParent(SNode node, @Nullable SNode childNode, SNode childConcept, SNode link, IOperationContext operationContext, @Nullable CheckingNodeContext checkingNodeContext);
 
-  boolean canBeAncestor(SNode node, SNode childConcept, IOperationContext operationContext, @Nullable CheckingNodeContext checkingNodeContext);
+  boolean canBeAncestor(SNode node, @Nullable SNode childNode, SNode childConcept, IOperationContext operationContext, @Nullable CheckingNodeContext checkingNodeContext);
 
   @NotNull
   PropertyConstraintsDescriptor getProperty(String name);

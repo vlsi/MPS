@@ -306,15 +306,15 @@ public class ModelConstraintsManager implements CoreComponent {
   }
 
   // canBeASomething section
-  public static boolean canBeAncestor(SNode parentNode, SNode childConcept, IOperationContext context, @Nullable jetbrains.mps.smodel.runtime.CheckingNodeContext checkingNodeContext) {
-    SNode currentNode = parentNode;
+  public static boolean canBeAncestor(SNode node, @Nullable SNode childNode, SNode childConcept, IOperationContext context, @Nullable jetbrains.mps.smodel.runtime.CheckingNodeContext checkingNodeContext) {
+    SNode currentNode = node;
 
     ConceptRegistry registry = ConceptRegistry.getInstance();
 
     while (currentNode != null) {
       jetbrains.mps.smodel.runtime.ConstraintsDescriptor descriptor = registry.getConstraintsDescriptor(currentNode.getConceptFqName());
 
-      if (!descriptor.canBeAncestor(currentNode, childConcept, context, checkingNodeContext)) {
+      if (!descriptor.canBeAncestor(currentNode, childNode, childConcept, context, checkingNodeContext)) {
         return false;
       }
 
@@ -324,8 +324,8 @@ public class ModelConstraintsManager implements CoreComponent {
     return true;
   }
 
-  public static boolean canBeAncestor(SNode parentNode, SNode childConcept, IOperationContext context) {
-    return canBeAncestor(parentNode, childConcept, context, null);
+  public static boolean canBeAncestor(SNode node, SNode childConcept, IOperationContext context) {
+    return canBeAncestor(node, null, childConcept, context, null);
   }
 
   public static boolean canBeParent(SNode parentNode, SNode childConcept, SNode link, IOperationContext context) {

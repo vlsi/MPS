@@ -203,7 +203,7 @@ public class BaseConstraintsDescriptor implements ConstraintsDispatchable {
   }
 
   @Override
-  public boolean canBeAncestor(SNode node, SNode childConcept, IOperationContext operationContext, @Nullable CheckingNodeContext checkingNodeContext) {
+  public boolean canBeAncestor(SNode node, @Nullable SNode childNode, SNode childConcept, IOperationContext operationContext, @Nullable CheckingNodeContext checkingNodeContext) {
     if (canBeAncestorDescriptor == null) {
       return true;
     }
@@ -211,7 +211,7 @@ public class BaseConstraintsDescriptor implements ConstraintsDispatchable {
       // in new version it's impossible! - canBeParent in this case overriden!
       return canBeAncestor(operationContext, node, childConcept, checkingNodeContext);
     }
-    return canBeAncestorDescriptor.canBeAncestor(node, childConcept, operationContext, checkingNodeContext);
+    return canBeAncestorDescriptor.canBeAncestor(node, childNode, childConcept, operationContext, checkingNodeContext);
   }
 
   public boolean canBeAncestor(IOperationContext operationContext, SNode node, SNode childConcept, @Nullable CheckingNodeContext checkingNodeContext) {

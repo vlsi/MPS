@@ -97,7 +97,7 @@ public class ConstraintsChecker extends AbstractConstraintsChecker {
       }
 
       // todo: do it right, with runCheckingAction! 
-      if (!(ModelConstraintsManager.canBeAncestor(node, childConcept, operationContext, checkingNodeContext))) {
+      if (!(ModelConstraintsManager.canBeAncestor(node, child, childConcept, operationContext, checkingNodeContext))) {
         SNode rule = SNodeOperations.cast(getBreakingNodeAndClearContext(checkingNodeContext), "jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeAnAncestor");
         component.addError(child, "Concept " + SLinkOperations.getTarget(SNodeOperations.as(SNodeOperations.getParent(rule), "jetbrains.mps.lang.constraints.structure.ConceptConstraints"), "concept", false) + " cannot be ancestor of node " + child, rule);
       }
