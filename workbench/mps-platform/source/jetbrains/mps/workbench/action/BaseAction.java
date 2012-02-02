@@ -63,6 +63,20 @@ public abstract class BaseAction extends AnAction implements DumbAware {
     myDisableOnNoProject = disableOnNoProject;
   }
 
+  public boolean isApplicable(final AnActionEvent event, final Map<String, Object> _params) {
+    return false;
+  }
+
+  public boolean isApplicable(final AnActionEvent e) {
+    final THashMap<String, Object> params = new THashMap<String, Object>();
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        collectActionData(e, params);
+      }
+    });
+    return isApplicable(e, params);
+  }
+
   public void setMnemonic(char mnemonic) {
     String text = getTemplatePresentation().getText();
     int pos = text.indexOf(Character.toUpperCase(mnemonic));

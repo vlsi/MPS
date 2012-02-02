@@ -43,6 +43,7 @@ public class PluginSolution_ApplicationPlugin extends BaseApplicationPlugin {
     addAction(new GoToInheritedClassifier_Action());
     addAction(new GoToOverridenMethod_Action());
     addAction(new ImplementMethod_Action());
+    addAction(new ImplementMethodsAsIntention_Action());
     addAction(new InlineLocalVariable_Action());
     addAction(new InlineMethod_Action());
     addAction(new IntroduceConstant_Action());
@@ -53,6 +54,7 @@ public class PluginSolution_ApplicationPlugin extends BaseApplicationPlugin {
     addAction(new MoveStaticField_Action());
     addAction(new MoveStaticMethod_Action());
     addAction(new OverrideMethod_Action());
+    addAction(new OverrideMethodsAsIntention_Action());
     addAction(new RenameMethod_Action());
     addAction(new RenameVariable_Action());
     addAction(new ShowMembers_Action());
@@ -70,6 +72,7 @@ public class PluginSolution_ApplicationPlugin extends BaseApplicationPlugin {
     addGroup(new GenerateActions_ActionGroup());
     addGroup(new RefactoringAddition_ActionGroup());
     addGroup(new RefactoringAdditions_ActionGroup());
+    addGroup(new ShowAsIntentions_ActionGroup());
   }
 
   public void adjustRegularGroups() {
@@ -83,6 +86,7 @@ public class PluginSolution_ApplicationPlugin extends BaseApplicationPlugin {
     insertGroupIntoAnother(BaseLangugeCodeOverrideImplementMenuGroup_ActionGroup.ID, Code_ActionGroup.ID, Code_ActionGroup.LABEL_ID_overrideImplement);
     insertGroupIntoAnother(BaseLangaugeCodeCommentsMenuGroup_ActionGroup.ID, Code_ActionGroup.ID, Code_ActionGroup.LABEL_ID_comments);
     insertGroupIntoAnother(RefactoringAdditions_ActionGroup.ID, NodeRefactoring_ActionGroup.ID, null);
+    insertGroupIntoAnother(ShowAsIntentions_ActionGroup.ID, "ActionsAsIntentions", null);
   }
 
   public List<BaseKeymapChanges> initKeymaps() {
