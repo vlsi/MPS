@@ -8,8 +8,8 @@
   <target name="processResources"></target>
   <target name="classes" depends="compileJava, processResources"></target>
   <target name="assemble" depends="classes">
-    <jar destfile="xx"><!--TODO--></jar>
-    <mkdir dir="xx" />
+    <mkdir dir="${buildPlugin.deploy.dir}/xx" />
+    <jar destfile="${buildPlugin.deploy.dir}/xx/xx"></jar>
   </target>
   <target name="test" depends="classes"></target>
   <target name="check" depends="test"></target>

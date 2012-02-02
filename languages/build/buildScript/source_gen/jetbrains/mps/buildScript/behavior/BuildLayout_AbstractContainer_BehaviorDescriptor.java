@@ -9,6 +9,14 @@ public abstract class BuildLayout_AbstractContainer_BehaviorDescriptor extends B
   public BuildLayout_AbstractContainer_BehaviorDescriptor() {
   }
 
+  public String virtual_getPrepareSubTaskId_1117643560963359337(SNode thisNode) {
+    return BuildLayout_AbstractContainer_Behavior.virtual_getPrepareSubTaskId_1117643560963359337(thisNode);
+  }
+
+  public String virtual_getAssembleSubTaskId_1117643560963359375(SNode thisNode) {
+    return BuildLayout_AbstractContainer_Behavior.virtual_getAssembleSubTaskId_1117643560963359375(thisNode);
+  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.buildScript.structure.BuildLayout_AbstractContainer";

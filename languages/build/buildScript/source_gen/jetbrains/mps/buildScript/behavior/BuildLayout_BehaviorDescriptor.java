@@ -13,6 +13,14 @@ public class BuildLayout_BehaviorDescriptor extends BuildLayout_AbstractContaine
     return BuildLayout_Behavior.virtual_getChildrenOutputDir_WithMacro_7389400916848004880(thisNode, context);
   }
 
+  public String virtual_getPrepareSubTaskId_1117643560963359337(SNode thisNode) {
+    return BuildLayout_Behavior.virtual_getPrepareSubTaskId_1117643560963359337(thisNode);
+  }
+
+  public String virtual_getAssembleSubTaskId_1117643560963359375(SNode thisNode) {
+    return BuildLayout_Behavior.virtual_getAssembleSubTaskId_1117643560963359375(thisNode);
+  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.buildScript.structure.BuildLayout";

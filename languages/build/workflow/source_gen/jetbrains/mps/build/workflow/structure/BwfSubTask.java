@@ -4,6 +4,7 @@ package jetbrains.mps.build.workflow.structure;
 
 import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.lang.core.structure.INamedConcept;
+import jetbrains.mps.lang.core.structure.IResolveInfo;
 import jetbrains.mps.lang.core.structure.ScopeProvider;
 import jetbrains.mps.smodel.SNode;
 import java.util.Iterator;
@@ -13,12 +14,13 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class BwfSubTask extends BaseConcept implements INamedConcept, ScopeProvider {
+public class BwfSubTask extends BaseConcept implements INamedConcept, IResolveInfo, ScopeProvider {
   public static final String concept = "jetbrains.mps.build.workflow.structure.BwfSubTask";
   public static final String NAME = "name";
   public static final String SHORT_DESCRIPTION = "shortDescription";
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
+  public static final String RESOLVE_INFO = "resolveInfo";
   public static final String AFTER = "after";
   public static final String BEFORE = "before";
   public static final String STATEMENTS = "statements";
@@ -58,6 +60,14 @@ public class BwfSubTask extends BaseConcept implements INamedConcept, ScopeProvi
 
   public void setVirtualPackage(String value) {
     this.setProperty(BwfSubTask.VIRTUAL_PACKAGE, value);
+  }
+
+  public String getResolveInfo() {
+    return this.getProperty(BwfSubTask.RESOLVE_INFO);
+  }
+
+  public void setResolveInfo(String value) {
+    this.setProperty(BwfSubTask.RESOLVE_INFO, value);
   }
 
   public int getAftersCount() {

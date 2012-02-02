@@ -15,10 +15,25 @@
   <target name="processResources"></target>
   <target name="classes" depends="compileJava, processResources"></target>
   <target name="assemble" depends="classes">
-    <mkdir dir="default" />
-    <jar destfile="mps-core-${ver}.jar">
+    <mkdir dir="${buildCore.deploy.dir}/default" />
+    <mkdir dir="${buildCore.tmp}/1117643560963371560" />
+    <mkdir dir="${buildCore.tmp}/1117643560963371560/aaa" />
+    <mkdir dir="${buildCore.tmp}/1117643560963371560/aaa/bbb" />
+    <mkdir dir="${buildCore.tmp}/1117643560963371565" />
+    <mkdir dir="${buildCore.tmp}/1117643560963371565/bbb" />
+    <zip destfile="${buildCore.tmp}/1117643560963371560/inrelease.zip">
+      <fileset dir="${buildCore.tmp}/1117643560963371565" />
+    </zip>
+    <zip destfile="${buildCore.deploy.dir}/default/release.zip">
+      <fileset dir="${buildCore.tmp}/1117643560963371560" />
+    </zip>
+    <mkdir dir="${buildCore.tmp}/6627265764879718146" />
+    <mkdir dir="${buildCore.tmp}/6627265764879718146/abc" />
+    <mkdir dir="${buildCore.tmp}/6627265764879718146/abc/edf" />
+    <zip destfile="${buildCore.tmp}/6627265764879718146/abc/edf/aaa"></zip>
+    <jar destfile="${buildCore.deploy.dir}/default/mps-core-${ver}.jar">
       <fileset dir="${build.dir}/tmp/java.out.mps-core" />
-      <!--TODO-->
+      <fileset dir="${buildCore.tmp}/6627265764879718146" />
     </jar>
   </target>
   <target name="test" depends="classes"></target>
