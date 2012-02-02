@@ -4,11 +4,10 @@ package jetbrains.mps.build.packaging.constraints;
 
 import jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor;
 import jetbrains.mps.smodel.SNodePointer;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.SNode;
 import org.jetbrains.annotations.Nullable;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.runtime.CheckingNodeContext;
-import jetbrains.mps.smodel.constraints.CanBeAChildContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class Delete_Constraints extends BaseConstraintsDescriptor {
@@ -24,8 +23,8 @@ public class Delete_Constraints extends BaseConstraintsDescriptor {
   }
 
   @Override
-  public boolean canBeChild(final IOperationContext operationContext, SNode node, SNode node1, SNode node2, @Nullable final CheckingNodeContext checkingNodeContext) {
-    boolean result = static_canBeAChild(operationContext, new CanBeAChildContext(node, node1, node2));
+  public boolean canBeChild(@Nullable SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext, @Nullable final CheckingNodeContext checkingNodeContext) {
+    boolean result = static_canBeAChild(node, parentNode, link, childConcept, operationContext);
 
     if (!(result) && checkingNodeContext != null) {
       checkingNodeContext.setBreakingNode(canBeChildBreakingPoint);
@@ -34,8 +33,8 @@ public class Delete_Constraints extends BaseConstraintsDescriptor {
     return result;
   }
 
-  public static boolean static_canBeAChild(final IOperationContext operationContext, final CanBeAChildContext _context) {
-    return eq_ycrh01_a0a0a(SPropertyOperations.getString(_context.getLink(), "role"), "delete");
+  public static boolean static_canBeAChild(SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext) {
+    return eq_ycrh01_a0a0a(SPropertyOperations.getString(link, "role"), "delete");
   }
 
   private static boolean eq_ycrh01_a0a0a(Object a, Object b) {

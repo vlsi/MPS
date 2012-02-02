@@ -4,11 +4,10 @@ package jetbrains.mps.platform.conf.constraints;
 
 import jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor;
 import jetbrains.mps.smodel.SNodePointer;
-import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNode;
 import org.jetbrains.annotations.Nullable;
+import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.runtime.CheckingNodeContext;
-import jetbrains.mps.smodel.constraints.CanBeAParentContext;
 import java.util.Map;
 import jetbrains.mps.smodel.runtime.PropertyConstraintsDescriptor;
 import java.util.HashMap;
@@ -29,8 +28,8 @@ public class Plugin_Constraints extends BaseConstraintsDescriptor {
   }
 
   @Override
-  public boolean canBeParent(IOperationContext operationContext, SNode node, SNode node1, SNode node2, @Nullable CheckingNodeContext checkingNodeContext) {
-    boolean result = static_canBeAParent(operationContext, new CanBeAParentContext(node, node1, node2));
+  public boolean canBeParent(SNode node, @Nullable SNode childNode, SNode childConcept, SNode link, IOperationContext operationContext, @Nullable CheckingNodeContext checkingNodeContext) {
+    boolean result = static_canBeAParent(node, childNode, childConcept, link, operationContext);
 
     if (!(result) && checkingNodeContext != null) {
       checkingNodeContext.setBreakingNode(canBeParentBreakingPoint);
@@ -78,7 +77,7 @@ public class Plugin_Constraints extends BaseConstraintsDescriptor {
     return properties;
   }
 
-  public static boolean static_canBeAParent(final IOperationContext operationContext, final CanBeAParentContext _context) {
-    return ConfigurationXmlRootNode_constraintsUtil.canBeParent(_context.getLink(), _context.getChildConcept());
+  public static boolean static_canBeAParent(SNode node, SNode childNode, SNode childConcept, SNode link, final IOperationContext operationContext) {
+    return ConfigurationXmlRootNode_constraintsUtil.canBeParent(link, childConcept);
   }
 }
