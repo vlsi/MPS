@@ -6,6 +6,7 @@
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <import index="8xvf" modelUID="r:ed179f4d-7cf2-479d-8348-50c1fc63b96a(jetbrains.mps.build.workflow.structure)" version="0" implicit="yes" />
   <import index="iuxj" modelUID="r:64db3a92-5968-4a73-b456-34504a2d97a6(jetbrains.mps.core.xml.structure)" version="-1" implicit="yes" />
+  <import index="tnlc" modelUID="r:14f06230-41df-42af-9a25-81de46539bf1(jetbrains.mps.build.workflow.accessories)" version="-1" implicit="yes" />
   <roots>
     <node type="8xvf.BwfProject" typeId="8xvf.2769948622284546673" id="2769948622284624385">
       <property name="name" nameId="tpck.1169194664001" value="myCore" />
@@ -33,6 +34,7 @@
       <property name="defaultValue" nameId="8xvf.6896005762093571402" value="./cccc" />
       <property name="isLocation" nameId="8xvf.6896005762093571407" value="true" />
     </node>
+    <node role="parts" roleId="8xvf.2769948622284574304" type="8xvf.BwfJavaDescriptor" typeId="8xvf.7306485738221315929" id="7306485738221506254" />
     <node role="parts" roleId="8xvf.2769948622284574304" type="8xvf.BwfJavaModule" typeId="8xvf.4755209551904389307" id="4755209551904397940">
       <property name="name" nameId="tpck.1169194664001" value="module1" />
       <property name="outputFolder" nameId="8xvf.7385586609667649463" value="build/temp/module1" />
@@ -220,6 +222,12 @@
           <link role="target" roleId="8xvf.2769948622284605881" targetNodeId="3961775458390335279" resolveInfo="first" />
         </node>
       </node>
+    </node>
+    <node role="imports" roleId="8xvf.7306485738221455031" type="8xvf.BwfTaskLibraryDependency" typeId="8xvf.7306485738221471031" id="1117643560963098836">
+      <link role="target" roleId="8xvf.7306485738221471032" targetNodeId="tnlc.7306485738221408314" resolveInfo="java" />
+    </node>
+    <node role="imports" roleId="8xvf.7306485738221455031" type="8xvf.BwfTaskLibraryDependency" typeId="8xvf.7306485738221471031" id="1117643560963098838">
+      <link role="target" roleId="8xvf.7306485738221471032" targetNodeId="tnlc.7306485738221408315" resolveInfo="common" />
     </node>
   </root>
 </model>

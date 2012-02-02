@@ -24,6 +24,7 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.generator.template.MappingScriptContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.build.workflow.generator.util.CycleHelper;
+import jetbrains.mps.build.workflow.generator.util.TaskLibrariesHelper;
 import jetbrains.mps.generator.template.TemplateQueryContext;
 import java.util.Set;
 import java.util.HashSet;
@@ -124,6 +125,10 @@ public class QueriesGenerated {
     return _context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(_context.getNode(), "target", false), "java2task");
   }
 
+  public static Object referenceMacro_GetReferent_7306485738221506394(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+    return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "java2task");
+  }
+
   public static boolean ifMacro_Condition_7385586609667799754(final IOperationContext operationContext, final IfMacroContext _context) {
     return StringUtils.isNotEmpty(((String) _context.getVariable("var:deps")));
   }
@@ -198,9 +203,27 @@ public class QueriesGenerated {
     });
   }
 
+  public static Iterable sourceNodesQuery_7306485738221506266(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+    return ListSequence.fromList(SNodeOperations.getAllSiblings(_context.getNode(), false)).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.workflow.structure.BwfJavaModule");
+      }
+    }).select(new ISelector<SNode, SNode>() {
+      public SNode select(SNode it) {
+        return SNodeOperations.cast(it, "jetbrains.mps.build.workflow.structure.BwfJavaModule");
+      }
+    });
+  }
+
   public static void mappingScript_CodeBlock_4755209551904406821(final IOperationContext operationContext, final MappingScriptContext _context) {
     for (SNode project : SModelOperations.getRoots(_context.getModel(), "jetbrains.mps.build.workflow.structure.BwfProject")) {
       new CycleHelper(project, _context).processCycles();
+    }
+  }
+
+  public static void mappingScript_CodeBlock_1117643560963147796(final IOperationContext operationContext, final MappingScriptContext _context) {
+    for (SNode n : SModelOperations.getRoots(_context.getModel(), "jetbrains.mps.build.workflow.structure.BwfProject")) {
+      new TaskLibrariesHelper(n, _context).importLibs();
     }
   }
 

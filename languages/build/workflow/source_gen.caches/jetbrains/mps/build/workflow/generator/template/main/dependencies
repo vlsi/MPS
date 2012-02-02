@@ -12,6 +12,7 @@
     <classNode dependClassName="jetbrains.mps.build.workflow.behavior.BwfJavaModule_Behavior" />
     <classNode dependClassName="jetbrains.mps.build.workflow.generator.util.CycleHelper" />
     <classNode dependClassName="jetbrains.mps.build.workflow.generator.util.SubTaskOrderHelper" />
+    <classNode dependClassName="jetbrains.mps.build.workflow.generator.util.TaskLibrariesHelper" />
     <classNode dependClassName="jetbrains.mps.generator.template.BaseMappingRuleContext" />
     <classNode dependClassName="jetbrains.mps.generator.template.IfMacroContext" />
     <classNode dependClassName="jetbrains.mps.generator.template.MappingScriptContext" />

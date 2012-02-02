@@ -79,4 +79,12 @@
     <first></first>
     <second></second>
   </target>
+  <target name="compileJava" depends="java.compile.java.modules.cycle.1, java.compile.module1, java.compile.module2, java.compile.java.modules.cycle.2, java.compile.module3, java.compile.module4, java.compile.module5"></target>
+  <target name="processResources"></target>
+  <target name="classes" depends="compileJava, processResources"></target>
+  <target name="assemble" depends="classes"></target>
+  <target name="test" depends="classes"></target>
+  <target name="check" depends="test"></target>
+  <target name="build" depends="check, assemble"></target>
+  <target name="clean"></target>
 </project>

@@ -4,6 +4,7 @@ package jetbrains.mps.build.workflow.structure;
 
 import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.lang.core.structure.INamedConcept;
+import jetbrains.mps.lang.core.structure.ScopeProvider;
 import jetbrains.mps.smodel.SNode;
 import java.util.Iterator;
 import java.util.List;
@@ -12,7 +13,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class BwfProject extends BaseConcept implements INamedConcept {
+public class BwfProject extends BaseConcept implements INamedConcept, ScopeProvider {
   public static final String concept = "jetbrains.mps.build.workflow.structure.BwfProject";
   public static final String TEMPORARY_FOLDER = "temporaryFolder";
   public static final String NAME = "name";
@@ -20,6 +21,7 @@ public class BwfProject extends BaseConcept implements INamedConcept {
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String PARTS = "parts";
+  public static final String IMPORTS = "imports";
   public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
 
   public BwfProject(SNode node) {
@@ -84,6 +86,26 @@ public class BwfProject extends BaseConcept implements INamedConcept {
 
   public void insertParts(BwfProjectPart prev, BwfProjectPart node) {
     this.insertChild(prev, BwfProject.PARTS, node);
+  }
+
+  public int getImportsesCount() {
+    return this.getChildCount(BwfProject.IMPORTS);
+  }
+
+  public Iterator<BwfTaskLibraryDependency> importses() {
+    return this.children(BwfTaskLibraryDependency.class, BwfProject.IMPORTS);
+  }
+
+  public List<BwfTaskLibraryDependency> getImportses() {
+    return this.getChildren(BwfTaskLibraryDependency.class, BwfProject.IMPORTS);
+  }
+
+  public void addImports(BwfTaskLibraryDependency node) {
+    this.addChild(BwfProject.IMPORTS, node);
+  }
+
+  public void insertImports(BwfTaskLibraryDependency prev, BwfTaskLibraryDependency node) {
+    this.insertChild(prev, BwfProject.IMPORTS, node);
   }
 
   public int getSmodelAttributesCount() {

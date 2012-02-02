@@ -58,7 +58,7 @@ public class BwfJavaModule_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_y27sly_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "java workflow module");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "compile java module");
     editorCell.setCellId("Constant_y27sly_a0");
     workflowStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
