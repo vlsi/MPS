@@ -1,16 +1,19 @@
 <project name="buildPlugin">
   <property name="build.dir" location="build" />
-  <target name="java.compile.module1">
+  <target name="java.compile.asd">
     <javac destdir="${build.dir}/temp/java/module1"></javac>
   </target>
   <target name="build" depends="check, assemble"></target>
   <target name="clean">
     <delete dir="${build.dir}" />
   </target>
-  <target name="compileJava" depends="java.compile.module1"></target>
+  <target name="compileJava" depends="java.compile.asd"></target>
   <target name="processResources"></target>
   <target name="classes" depends="compileJava, processResources"></target>
-  <target name="assemble" depends="classes"></target>
+  <target name="assemble" depends="classes">
+    <jar destfile="xx" />
+    <mkdir dir="xx" />
+  </target>
   <target name="test" depends="classes"></target>
   <target name="check" depends="test"></target>
 </project>

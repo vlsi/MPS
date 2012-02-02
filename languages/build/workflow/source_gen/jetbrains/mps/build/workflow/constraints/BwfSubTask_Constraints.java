@@ -10,7 +10,6 @@ import jetbrains.mps.smodel.runtime.base.BasePropertyConstraintsDescriptor;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.core.xml.constraints.XmlNameUtil;
 
 public class BwfSubTask_Constraints extends BaseConstraintsDescriptor {
   public BwfSubTask_Constraints() {
@@ -29,7 +28,7 @@ public class BwfSubTask_Constraints extends BaseConstraintsDescriptor {
       @Override
       public boolean validateValue(SNode node, String propertyValue, IScope scope) {
         String propertyName = "name";
-        return !((SPropertyOperations.getString(propertyValue)).contains(" ")) && XmlNameUtil.isName((SPropertyOperations.getString(propertyValue)));
+        return !((SPropertyOperations.getString(propertyValue)).contains(" "));
       }
     });
     return properties;

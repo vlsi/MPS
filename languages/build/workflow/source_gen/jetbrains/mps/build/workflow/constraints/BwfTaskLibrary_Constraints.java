@@ -8,33 +8,33 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNode;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.runtime.CheckingNodeContext;
-import jetbrains.mps.smodel.constraints.CanBeAnAncestorContext;
+import jetbrains.mps.smodel.constraints.CanBeAParentContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 
 public class BwfTaskLibrary_Constraints extends BaseConstraintsDescriptor {
-  private static SNodePointer canBeAncesctorBreakingPoint = new SNodePointer("r:8c3c79a2-2377-4680-a62f-78d39fdded56(jetbrains.mps.build.workflow.constraints)", "7306485738221506342");
+  private static SNodePointer canBeParentBreakingPoint = new SNodePointer("r:8c3c79a2-2377-4680-a62f-78d39fdded56(jetbrains.mps.build.workflow.constraints)", "1117643560963285902");
 
   public BwfTaskLibrary_Constraints() {
     super("jetbrains.mps.build.workflow.structure.BwfTaskLibrary");
   }
 
   @Override
-  public boolean hasOwnCanBeAncestorMethod() {
+  public boolean hasOwnCanBeParentMethod() {
     return true;
   }
 
   @Override
-  public boolean canBeAncestor(IOperationContext context, SNode node, SNode node1, @Nullable CheckingNodeContext checkingNodeContext) {
-    boolean result = static_canBeAnAncestor(context, new CanBeAnAncestorContext(node, node1));
+  public boolean canBeParent(IOperationContext operationContext, SNode node, SNode node1, SNode node2, @Nullable CheckingNodeContext checkingNodeContext) {
+    boolean result = static_canBeAParent(operationContext, new CanBeAParentContext(node, node1, node2));
 
     if (!(result) && checkingNodeContext != null) {
-      checkingNodeContext.setBreakingNode(canBeAncesctorBreakingPoint);
+      checkingNodeContext.setBreakingNode(canBeParentBreakingPoint);
     }
 
     return result;
   }
 
-  public static boolean static_canBeAnAncestor(final IOperationContext operationContext, final CanBeAnAncestorContext _context) {
-    return _context.getChildConcept() == SConceptOperations.findConceptDeclaration("jetbrains.mps.build.workflow.structure.BwfTask") || _context.getChildConcept() == SConceptOperations.findConceptDeclaration("jetbrains.mps.build.workflow.structure.BwfTaskLibraryDependency") || _context.getChildConcept() == SConceptOperations.findConceptDeclaration("jetbrains.mps.build.workflow.structure.BwfTaskDependency") || _context.getChildConcept() == SConceptOperations.findConceptDeclaration("jetbrains.mps.build.workflow.structure.BwfSubTask") || _context.getChildConcept() == SConceptOperations.findConceptDeclaration("jetbrains.mps.build.workflow.structure.BwfSubTaskDependency") || _context.getChildConcept() == SConceptOperations.findConceptDeclaration("jetbrains.mps.build.workflow.structure.BwfTaskPart");
+  public static boolean static_canBeAParent(final IOperationContext operationContext, final CanBeAParentContext _context) {
+    return SConceptOperations.isExactly(_context.getChildConcept(), "jetbrains.mps.build.workflow.structure.BwfTask") || SConceptOperations.isExactly(_context.getChildConcept(), "jetbrains.mps.build.workflow.structure.BwfTaskPart") || SConceptOperations.isExactly(_context.getChildConcept(), "jetbrains.mps.build.workflow.structure.BwfMacro") || SConceptOperations.isExactly(_context.getChildConcept(), "jetbrains.mps.build.workflow.structure.BwfTaskLibraryDependency");
   }
 }
