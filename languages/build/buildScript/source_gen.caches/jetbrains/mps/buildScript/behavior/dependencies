@@ -121,6 +121,9 @@
     <classNode dependClassName="jetbrains.mps.buildScript.behavior.BuildLayout_NamedContainer_BehaviorDescriptor" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
+  <dependency className="jetbrains.mps.buildScript.behavior.BuildLayout_JavaOutput_Behavior" file="BuildLayout_JavaOutput_Behavior.java">
+    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+  </dependency>
   <dependency className="jetbrains.mps.buildScript.behavior.BuildLayout_JavaOutput_BehaviorDescriptor" file="BuildLayout_JavaOutput_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -266,6 +269,7 @@
     <classNode dependClassName="jetbrains.mps.buildScript.behavior.BuildFolderMacro_Behavior" />
     <classNode dependClassName="jetbrains.mps.buildScript.util.Context" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.buildScript.behavior.BuildSourceMacroRelativePath_BehaviorDescriptor" file="BuildSourceMacroRelativePath_BehaviorDescriptor.java">
@@ -365,6 +369,11 @@
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode extendsClassName="java.lang.Cloneable" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
+  </dependency>
+  <dependency className="jetbrains.mps.buildScript.behavior.BuildSource_JavaModule_Behavior" file="BuildSource_JavaModule_Behavior.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.buildScript.behavior.BuildSource_JavaModule_BehaviorDescriptor" file="BuildSource_JavaModule_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />

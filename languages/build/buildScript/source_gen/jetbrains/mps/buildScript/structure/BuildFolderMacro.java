@@ -9,19 +9,10 @@ import jetbrains.mps.project.GlobalScope;
 
 public class BuildFolderMacro extends BuildMacro {
   public static final String concept = "jetbrains.mps.buildScript.structure.BuildFolderMacro";
-  public static final String DEFAULT_VALUE = "defaultValue";
   public static final String DEFAULT_PATH = "defaultPath";
 
   public BuildFolderMacro(SNode node) {
     super(node);
-  }
-
-  public String getDefaultValue() {
-    return this.getProperty(BuildFolderMacro.DEFAULT_VALUE);
-  }
-
-  public void setDefaultValue(String value) {
-    this.setProperty(BuildFolderMacro.DEFAULT_VALUE, value);
   }
 
   public BuildSourcePath getDefaultPath() {

@@ -1532,48 +1532,37 @@
   </root>
   <root nodeId="7389400916848136194">
     <nodeInfo nodeId="7389400916848136194" fileName="BuildFolderMacro.java" startLine="10" startPosition="50" endLine="11" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
-    <nodeInfo nodeId="7389400916848136194" fileName="BuildFolderMacro.java" startLine="11" startPosition="94" endLine="12" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="DEFAULT_VALUE" />
-    <nodeInfo nodeId="7389400916848136194" fileName="BuildFolderMacro.java" startLine="12" startPosition="60" endLine="13" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="DEFAULT_PATH" />
-    <nodeInfo nodeId="7389400916848136194" fileName="BuildFolderMacro.java" startLine="15" startPosition="39" endLine="16" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="7389400916848136194" fileName="BuildFolderMacro.java" startLine="19" startPosition="35" endLine="20" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7389400916848136194" fileName="BuildFolderMacro.java" startLine="23" startPosition="45" endLine="24" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7389400916848136194" fileName="BuildFolderMacro.java" startLine="27" startPosition="43" endLine="28" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7389400916848136194" fileName="BuildFolderMacro.java" startLine="31" startPosition="52" endLine="32" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7389400916848136194" fileName="BuildFolderMacro.java" startLine="35" startPosition="71" endLine="36" endPosition="181" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7389400916848136194" fileName="BuildFolderMacro.java" startLine="39" startPosition="57" endLine="40" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7389400916848136194" fileName="BuildFolderMacro.java" startLine="14" startPosition="0" endLine="17" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="BuildFolderMacro#(Ljetbrains/mps/smodel/SNode;)V" />
-    <nodeInfo nodeId="7389400916848136194" fileName="BuildFolderMacro.java" startLine="18" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDefaultValue#()Ljava/lang/String;" />
-    <nodeInfo nodeId="7389400916848136194" fileName="BuildFolderMacro.java" startLine="22" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setDefaultValue#(Ljava/lang/String;)V" />
-    <nodeInfo nodeId="7389400916848136194" fileName="BuildFolderMacro.java" startLine="26" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDefaultPath#()Ljetbrains/mps/smodel/INodeAdapter;" />
-    <nodeInfo nodeId="7389400916848136194" fileName="BuildFolderMacro.java" startLine="30" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setDefaultPath#(Ljetbrains/mps/smodel/INodeAdapter;)V" />
-    <nodeInfo nodeId="7389400916848136194" fileName="BuildFolderMacro.java" startLine="34" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="newInstance#(Ljetbrains/mps/smodel/SModel;Z)Ljetbrains/mps/buildScript/structure/BuildFolderMacro;" />
-    <nodeInfo nodeId="7389400916848136194" fileName="BuildFolderMacro.java" startLine="38" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="newInstance#(Ljetbrains/mps/smodel/SModel;)Ljetbrains/mps/buildScript/structure/BuildFolderMacro;" />
-    <scopeInfo nodeId="7389400916848136194" fileName="BuildFolderMacro.java" startLine="15" startPosition="39" endLine="16" endPosition="16" />
-    <scopeInfo nodeId="7389400916848136194" fileName="BuildFolderMacro.java" startLine="19" startPosition="35" endLine="20" endPosition="60" />
-    <scopeInfo nodeId="7389400916848136194" fileName="BuildFolderMacro.java" startLine="23" startPosition="45" endLine="24" endPosition="60" />
-    <scopeInfo nodeId="7389400916848136194" fileName="BuildFolderMacro.java" startLine="27" startPosition="43" endLine="28" endPosition="97" />
-    <scopeInfo nodeId="7389400916848136194" fileName="BuildFolderMacro.java" startLine="31" startPosition="52" endLine="32" endPosition="56" />
-    <scopeInfo nodeId="7389400916848136194" fileName="BuildFolderMacro.java" startLine="35" startPosition="71" endLine="36" endPosition="181" />
-    <scopeInfo nodeId="7389400916848136194" fileName="BuildFolderMacro.java" startLine="39" startPosition="57" endLine="40" endPosition="51" />
-    <scopeInfo nodeId="7389400916848136194" fileName="BuildFolderMacro.java" startLine="14" startPosition="0" endLine="17" endPosition="3">
+    <nodeInfo nodeId="7389400916848136194" fileName="BuildFolderMacro.java" startLine="11" startPosition="94" endLine="12" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="DEFAULT_PATH" />
+    <nodeInfo nodeId="7389400916848136194" fileName="BuildFolderMacro.java" startLine="14" startPosition="39" endLine="15" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="7389400916848136194" fileName="BuildFolderMacro.java" startLine="18" startPosition="43" endLine="19" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7389400916848136194" fileName="BuildFolderMacro.java" startLine="22" startPosition="52" endLine="23" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7389400916848136194" fileName="BuildFolderMacro.java" startLine="26" startPosition="71" endLine="27" endPosition="181" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7389400916848136194" fileName="BuildFolderMacro.java" startLine="30" startPosition="57" endLine="31" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7389400916848136194" fileName="BuildFolderMacro.java" startLine="13" startPosition="0" endLine="16" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="BuildFolderMacro#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="7389400916848136194" fileName="BuildFolderMacro.java" startLine="17" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDefaultPath#()Ljetbrains/mps/smodel/INodeAdapter;" />
+    <nodeInfo nodeId="7389400916848136194" fileName="BuildFolderMacro.java" startLine="21" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setDefaultPath#(Ljetbrains/mps/smodel/INodeAdapter;)V" />
+    <nodeInfo nodeId="7389400916848136194" fileName="BuildFolderMacro.java" startLine="25" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="newInstance#(Ljetbrains/mps/smodel/SModel;Z)Ljetbrains/mps/buildScript/structure/BuildFolderMacro;" />
+    <nodeInfo nodeId="7389400916848136194" fileName="BuildFolderMacro.java" startLine="29" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="newInstance#(Ljetbrains/mps/smodel/SModel;)Ljetbrains/mps/buildScript/structure/BuildFolderMacro;" />
+    <scopeInfo nodeId="7389400916848136194" fileName="BuildFolderMacro.java" startLine="14" startPosition="39" endLine="15" endPosition="16" />
+    <scopeInfo nodeId="7389400916848136194" fileName="BuildFolderMacro.java" startLine="18" startPosition="43" endLine="19" endPosition="97" />
+    <scopeInfo nodeId="7389400916848136194" fileName="BuildFolderMacro.java" startLine="22" startPosition="52" endLine="23" endPosition="56" />
+    <scopeInfo nodeId="7389400916848136194" fileName="BuildFolderMacro.java" startLine="26" startPosition="71" endLine="27" endPosition="181" />
+    <scopeInfo nodeId="7389400916848136194" fileName="BuildFolderMacro.java" startLine="30" startPosition="57" endLine="31" endPosition="51" />
+    <scopeInfo nodeId="7389400916848136194" fileName="BuildFolderMacro.java" startLine="13" startPosition="0" endLine="16" endPosition="3">
       <varInfo nodeId="7389400916848136194" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="7389400916848136194" fileName="BuildFolderMacro.java" startLine="18" startPosition="0" endLine="22" endPosition="0" />
-    <scopeInfo nodeId="7389400916848136194" fileName="BuildFolderMacro.java" startLine="22" startPosition="0" endLine="26" endPosition="0">
-      <varInfo nodeId="7389400916848136194" varName="value" />
-    </scopeInfo>
-    <scopeInfo nodeId="7389400916848136194" fileName="BuildFolderMacro.java" startLine="26" startPosition="0" endLine="30" endPosition="0" />
-    <scopeInfo nodeId="7389400916848136194" fileName="BuildFolderMacro.java" startLine="30" startPosition="0" endLine="34" endPosition="0">
+    <scopeInfo nodeId="7389400916848136194" fileName="BuildFolderMacro.java" startLine="17" startPosition="0" endLine="21" endPosition="0" />
+    <scopeInfo nodeId="7389400916848136194" fileName="BuildFolderMacro.java" startLine="21" startPosition="0" endLine="25" endPosition="0">
       <varInfo nodeId="7389400916848136194" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="7389400916848136194" fileName="BuildFolderMacro.java" startLine="34" startPosition="0" endLine="38" endPosition="0">
+    <scopeInfo nodeId="7389400916848136194" fileName="BuildFolderMacro.java" startLine="25" startPosition="0" endLine="29" endPosition="0">
       <varInfo nodeId="7389400916848136194" varName="init" />
       <varInfo nodeId="7389400916848136194" varName="sm" />
     </scopeInfo>
-    <scopeInfo nodeId="7389400916848136194" fileName="BuildFolderMacro.java" startLine="38" startPosition="0" endLine="42" endPosition="0">
+    <scopeInfo nodeId="7389400916848136194" fileName="BuildFolderMacro.java" startLine="29" startPosition="0" endLine="33" endPosition="0">
       <varInfo nodeId="7389400916848136194" varName="sm" />
     </scopeInfo>
-    <unitInfo nodeId="7389400916848136194" fileName="BuildFolderMacro.java" startLine="10" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.buildScript.structure.BuildFolderMacro" />
+    <unitInfo nodeId="7389400916848136194" fileName="BuildFolderMacro.java" startLine="10" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.buildScript.structure.BuildFolderMacro" />
   </root>
   <root nodeId="7389400916848153117">
     <nodeInfo nodeId="7389400916848153117" fileName="BuildSourceMacroRelativePath.java" startLine="10" startPosition="69" endLine="11" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />

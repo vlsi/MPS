@@ -1,8 +1,10 @@
 <project name="buildCore">
+  <property name="mps_home" location="./../../../.." />
+  <property name="build_langs" location="${mps_home}/languages/build" />
   <property name="build.dir" location="build" />
   <target name="java.compile.mps-core">
-    <javac destdir="${build.dir}/temp/java/module1">
-      <src path="null/source" />
+    <javac destdir="${build.dir}/tmp/java.out.mps-core">
+      <src path="${mps_home}/core/source" />
     </javac>
   </target>
   <target name="build" depends="check, assemble"></target>
@@ -13,8 +15,11 @@
   <target name="processResources"></target>
   <target name="classes" depends="compileJava, processResources"></target>
   <target name="assemble" depends="classes">
-    <jar destfile="mps-core-${ver}.jar" />
     <mkdir dir="default" />
+    <jar destfile="mps-core-${ver}.jar">
+      <fileset dir="${build.dir}/tmp/java.out.mps-core" />
+      <!--TODO-->
+    </jar>
   </target>
   <target name="test" depends="classes"></target>
   <target name="check" depends="test"></target>
