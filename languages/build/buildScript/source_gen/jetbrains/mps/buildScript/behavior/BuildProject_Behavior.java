@@ -14,8 +14,11 @@ import java.util.List;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.buildScript.util.Context;
 import java.util.ArrayList;
+import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.lang.core.behavior.ScopeProvider_Behavior;
+import jetbrains.mps.scope.CompositeScope;
+import jetbrains.mps.buildScript.util.Context;
 import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -25,15 +28,15 @@ public class BuildProject_Behavior {
   public static void init(SNode thisNode) {
   }
 
-  public static Scope virtual_getScope_3734116213129936182(SNode thisNode, SNode kind, final SNode child) {
+  public static Scope virtual_getScope_3734116213129936182(SNode thisNode, final SNode kind, final SNode child) {
     if (kind == SConceptOperations.findConceptDeclaration("jetbrains.mps.buildScript.structure.BuildMacro")) {
-      SimpleRoleScope scope = new SimpleRoleScope(thisNode, SLinkOperations.findLinkDeclaration("jetbrains.mps.buildScript.structure.BuildProject", "macros")) {
+      Scope rootScope = new SimpleRoleScope(thisNode, SLinkOperations.findLinkDeclaration("jetbrains.mps.buildScript.structure.BuildProject", "macros")) {
         public String getName(SNode child) {
           return SPropertyOperations.getString(SNodeOperations.cast(child, "jetbrains.mps.buildScript.structure.BuildMacro"), "name");
         }
       };
       if (child != null && "macros".equals(SNodeOperations.getContainingLinkRole(child))) {
-        return new DelegatingScope(scope) {
+        rootScope = new DelegatingScope(rootScope) {
           public List<SNode> getAvailableElements(@Nullable String prefix) {
             return ListSequence.fromList(wrapped.getAvailableElements(prefix)).where(new IWhereFilter<SNode>() {
               public boolean accept(SNode it) {
@@ -44,7 +47,19 @@ public class BuildProject_Behavior {
         };
       }
 
-      return scope;
+      List<Scope> scopes = ListSequence.fromList(new ArrayList<Scope>());
+      ListSequence.fromList(scopes).addElement(rootScope);
+      ListSequence.fromList(scopes).addSequence(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "dependencies", true)).toListSequence().where(new IWhereFilter<SNode>() {
+        public boolean accept(SNode it) {
+          return SNodeOperations.isInstanceOf(it, "jetbrains.mps.lang.core.structure.ScopeProvider");
+        }
+      }).select(new ISelector<SNode, Scope>() {
+        public Scope select(SNode it) {
+          return ScopeProvider_Behavior.call_getScope_3734116213129936182(SNodeOperations.cast(it, "jetbrains.mps.lang.core.structure.ScopeProvider"), kind, child);
+        }
+      }));
+
+      return new CompositeScope(ListSequence.fromList(scopes).toGenericArray(Scope.class));
     }
     return null;
   }

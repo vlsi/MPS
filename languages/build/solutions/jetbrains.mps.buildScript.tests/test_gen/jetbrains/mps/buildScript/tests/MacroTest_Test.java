@@ -15,6 +15,10 @@ import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import junit.framework.Assert;
 import jetbrains.mps.lang.test.matcher.NodesMatcher;
+import jetbrains.mps.lang.core.behavior.ScopeProvider_Behavior;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.util.Computable;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -23,15 +27,22 @@ import jetbrains.mps.project.GlobalScope;
 @MPSLaunch
 public class MacroTest_Test extends BaseTransformationTest {
   @Test
-  public void test_simpleTest() throws Throwable {
+  public void test_exportedMacro() throws Throwable {
     this.initTest("${mps_langs}/build/build.ipr", "r:361d93bd-9223-4768-9e37-bcd7b8db1f40(jetbrains.mps.buildScript.tests@tests)");
-    this.runTest("jetbrains.mps.buildScript.tests.MacroTest_Test$TestBody", "test_simpleTest", true);
+    this.runTest("jetbrains.mps.buildScript.tests.MacroTest_Test$TestBody", "test_exportedMacro", true);
+  }
+
+  @Test
+  public void test_macroScopes() throws Throwable {
+    this.initTest("${mps_langs}/build/build.ipr", "r:361d93bd-9223-4768-9e37-bcd7b8db1f40(jetbrains.mps.buildScript.tests@tests)");
+    this.runTest("jetbrains.mps.buildScript.tests.MacroTest_Test$TestBody", "test_macroScopes", true);
   }
 
   @MPSLaunch
   public static class TestBody extends BaseTestBody {
-    public void test_simpleTest() throws Exception {
+    public void test_exportedMacro() throws Exception {
       this.addNodeById("193602448594327347");
+      this.addNodeById("763409143595572699");
       Context context = new Context() {
         @Override
         public String getBasePath_Local(SNode node) {
@@ -41,33 +52,29 @@ public class MacroTest_Test extends BaseTransformationTest {
       List<SNode> exportedMacro = context.getExportedMacro(SNodeOperations.cast(this.getNodeById("193602448594327348"), "jetbrains.mps.buildScript.structure.BuildProject"));
 
       List<SNode> expected = new ArrayList<SNode>();
-      ListSequence.fromList(expected).addElement(new MacroTest_Test.TestBody.QuotationClass_oxxkhl_a0a0f0a0().createNode(PathManager.getHomePath() + "/build"));
-      ListSequence.fromList(expected).addElement(new MacroTest_Test.TestBody.QuotationClass_oxxkhl_a0a0g0a0().createNode(PathManager.getHomePath() + "/build/resources"));
-      ListSequence.fromList(expected).addElement(new MacroTest_Test.TestBody.QuotationClass_oxxkhl_a0a0h0a0().createNode(PathManager.getHomePath() + "/build/tmp/project.tmp"));
-      ListSequence.fromList(expected).addElement(new MacroTest_Test.TestBody.QuotationClass_oxxkhl_a0a0i0a0().createNode(PathManager.getHomePath() + "/build/artifacts/project.artifacts"));
+      ListSequence.fromList(expected).addElement(new MacroTest_Test.TestBody.QuotationClass_oxxkhl_a0a0g0a0().createNode(PathManager.getHomePath() + "/build"));
+      ListSequence.fromList(expected).addElement(new MacroTest_Test.TestBody.QuotationClass_oxxkhl_a0a0h0a0().createNode(PathManager.getHomePath() + "/build/resources"));
+      ListSequence.fromList(expected).addElement(new MacroTest_Test.TestBody.QuotationClass_oxxkhl_a0a0i0a0().createNode(PathManager.getHomePath() + "/build/tmp/project.tmp"));
+      ListSequence.fromList(expected).addElement(new MacroTest_Test.TestBody.QuotationClass_oxxkhl_a0a0j0a0().createNode(PathManager.getHomePath() + "/build/artifacts/project.artifacts"));
 
       for (int i = 0; i < ListSequence.fromList(expected).count(); i++) {
         Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.fromListAndArray(new ArrayList<SNode>(), expected.get(i)), ListSequence.fromListAndArray(new ArrayList<SNode>(), exportedMacro.get(i))));
       }
     }
 
-    public static class QuotationClass_oxxkhl_a0a0f0a0 {
-      public QuotationClass_oxxkhl_a0a0f0a0() {
-      }
-
-      public SNode createNode(Object parameter_3) {
-        SNode result = null;
-        Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-        SNode quotedNode_1 = null;
-        {
-          quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.buildScript.structure.ExportedMacroInternal", null, GlobalScope.getInstance(), false);
-          SNode quotedNode1_2 = quotedNode_1;
-          quotedNode1_2.setProperty("name", "build");
-          quotedNode1_2.setProperty("defaultPath", (String) parameter_3);
-          result = quotedNode1_2;
+    public void test_macroScopes() throws Exception {
+      this.addNodeById("193602448594327347");
+      this.addNodeById("763409143595572699");
+      Assert.assertTrue(ListSequence.fromList(ScopeProvider_Behavior.call_getScope_3734116213129936182(SNodeOperations.cast(this.getNodeById("763409143595572700"), "jetbrains.mps.buildScript.structure.BuildProject"), ModelAccess.instance().runReadAction(new Computable<SNode>() {
+        public SNode compute() {
+          return SConceptOperations.findConceptDeclaration("jetbrains.mps.buildScript.structure.BuildMacro");
         }
-        return result;
-      }
+      }), SNodeOperations.cast(this.getNodeById("763409143595572705"), "jetbrains.mps.buildScript.structure.BuildFolderMacro")).getAvailableElements("")).contains(SNodeOperations.cast(this.getNodeById("193602448594330632"), "jetbrains.mps.buildScript.structure.BuildFolderMacro")));
+      Assert.assertTrue(ListSequence.fromList(ScopeProvider_Behavior.call_getScope_3734116213129936182(SNodeOperations.cast(this.getNodeById("763409143595572700"), "jetbrains.mps.buildScript.structure.BuildProject"), ModelAccess.instance().runReadAction(new Computable<SNode>() {
+        public SNode compute() {
+          return SConceptOperations.findConceptDeclaration("jetbrains.mps.buildScript.structure.BuildMacro");
+        }
+      }), SNodeOperations.cast(this.getNodeById("763409143595572705"), "jetbrains.mps.buildScript.structure.BuildFolderMacro")).getAvailableElements("")).contains(SNodeOperations.cast(this.getNodeById("193602448594330636"), "jetbrains.mps.buildScript.structure.BuildFolderMacro")));
     }
 
     public static class QuotationClass_oxxkhl_a0a0g0a0 {
@@ -81,7 +88,7 @@ public class MacroTest_Test extends BaseTransformationTest {
         {
           quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.buildScript.structure.ExportedMacroInternal", null, GlobalScope.getInstance(), false);
           SNode quotedNode1_2 = quotedNode_1;
-          quotedNode1_2.setProperty("name", "resources");
+          quotedNode1_2.setProperty("name", "build");
           quotedNode1_2.setProperty("defaultPath", (String) parameter_3);
           result = quotedNode1_2;
         }
@@ -100,7 +107,7 @@ public class MacroTest_Test extends BaseTransformationTest {
         {
           quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.buildScript.structure.ExportedMacroInternal", null, GlobalScope.getInstance(), false);
           SNode quotedNode1_2 = quotedNode_1;
-          quotedNode1_2.setProperty("name", "project.tmp");
+          quotedNode1_2.setProperty("name", "resources");
           quotedNode1_2.setProperty("defaultPath", (String) parameter_3);
           result = quotedNode1_2;
         }
@@ -110,6 +117,25 @@ public class MacroTest_Test extends BaseTransformationTest {
 
     public static class QuotationClass_oxxkhl_a0a0i0a0 {
       public QuotationClass_oxxkhl_a0a0i0a0() {
+      }
+
+      public SNode createNode(Object parameter_3) {
+        SNode result = null;
+        Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+        SNode quotedNode_1 = null;
+        {
+          quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.buildScript.structure.ExportedMacroInternal", null, GlobalScope.getInstance(), false);
+          SNode quotedNode1_2 = quotedNode_1;
+          quotedNode1_2.setProperty("name", "project.tmp");
+          quotedNode1_2.setProperty("defaultPath", (String) parameter_3);
+          result = quotedNode1_2;
+        }
+        return result;
+      }
+    }
+
+    public static class QuotationClass_oxxkhl_a0a0j0a0 {
+      public QuotationClass_oxxkhl_a0a0j0a0() {
       }
 
       public SNode createNode(Object parameter_3) {
