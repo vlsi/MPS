@@ -40,7 +40,7 @@ public class BuildProject_Behavior {
           public List<SNode> getAvailableElements(@Nullable String prefix) {
             return ListSequence.fromList(wrapped.getAvailableElements(prefix)).where(new IWhereFilter<SNode>() {
               public boolean accept(SNode it) {
-                return !(ListSequence.fromList(SNodeOperations.getNextSiblings(child, false)).contains(it));
+                return !(ListSequence.fromList(SNodeOperations.getNextSiblings(child, false)).contains(it)) && !(eq_save77_a0a0a0a0a0a0a0a0a0a0a0b0a0b(child, it));
               }
             }).toListSequence();
           }
@@ -76,6 +76,13 @@ public class BuildProject_Behavior {
       }
     }
     return exportedMacro;
+  }
+
+  private static boolean eq_save77_a0a0a0a0a0a0a0a0a0a0a0b0a0b(Object a, Object b) {
+    return (a != null ?
+      a.equals(b) :
+      a == b
+    );
   }
 
   public static class QuotationClass_save77_a0a0a0a0b0d {

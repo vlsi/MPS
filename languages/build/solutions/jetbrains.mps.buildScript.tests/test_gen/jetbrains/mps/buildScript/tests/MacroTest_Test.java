@@ -75,6 +75,11 @@ public class MacroTest_Test extends BaseTransformationTest {
           return SConceptOperations.findConceptDeclaration("jetbrains.mps.buildScript.structure.BuildMacro");
         }
       }), SNodeOperations.cast(this.getNodeById("763409143595572705"), "jetbrains.mps.buildScript.structure.BuildFolderMacro")).getAvailableElements("")).contains(SNodeOperations.cast(this.getNodeById("193602448594330636"), "jetbrains.mps.buildScript.structure.BuildFolderMacro")));
+      Assert.assertFalse(ListSequence.fromList(ScopeProvider_Behavior.call_getScope_3734116213129936182(SNodeOperations.cast(this.getNodeById("763409143595572700"), "jetbrains.mps.buildScript.structure.BuildProject"), ModelAccess.instance().runReadAction(new Computable<SNode>() {
+        public SNode compute() {
+          return SConceptOperations.findConceptDeclaration("jetbrains.mps.buildScript.structure.BuildMacro");
+        }
+      }), SNodeOperations.cast(this.getNodeById("763409143595572705"), "jetbrains.mps.buildScript.structure.BuildFolderMacro")).getAvailableElements("")).contains(SNodeOperations.cast(this.getNodeById("763409143595572705"), "jetbrains.mps.buildScript.structure.BuildFolderMacro")));
     }
 
     public static class QuotationClass_oxxkhl_a0a0g0a0 {
