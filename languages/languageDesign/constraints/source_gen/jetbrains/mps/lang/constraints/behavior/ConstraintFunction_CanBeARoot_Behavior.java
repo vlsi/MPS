@@ -9,6 +9,6 @@ public class ConstraintFunction_CanBeARoot_Behavior {
   }
 
   public static boolean virtual_usesParameterObjectFor_1213877374432(SNode thisNode, SNode parameter) {
-    return true;
+    return false;
   }
 }
