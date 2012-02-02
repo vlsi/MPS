@@ -39,6 +39,9 @@ public class PluginSolution_ApplicationPlugin extends BaseApplicationPlugin {
     addGroup(new RefactoringAdditions_ActionGroup());
   }
 
+  public void adjustInterfaceGroups() {
+  }
+
   public void adjustRegularGroups() {
     insertGroupIntoAnother(FindModelUsages_ActionGroup.ID, ModelActions_ActionGroup.ID, ModelActions_ActionGroup.LABEL_ID_modelUsages);
     insertGroupIntoAnother(FindLanguageUsages_ActionGroup.ID, LanguageActions_ActionGroup.ID, LanguageActions_ActionGroup.LABEL_ID_find_usages);
