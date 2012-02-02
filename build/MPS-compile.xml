@@ -167,7 +167,6 @@
     <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
-    <path path="${base_dir}/core/plugin-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
     <path path="${base_dir}/core/runtime/classes" />
     <path path="${base_dir}/core/typesystemEngine/classes" />
