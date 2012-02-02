@@ -53,6 +53,7 @@
     <classNode extendsClassName="jetbrains.mps.smodel.structure.DefaultExtensionDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.lang.core.pluginSolution.plugin.Extension_GeneratorCache_" file="Extension_GeneratorCache_.java">
+    <classNode dependClassName="com.intellij.openapi.application.ApplicationManager" />
     <classNode dependClassName="jetbrains.mps.generator.GenerationCacheContainer" />
     <classNode dependClassName="jetbrains.mps.ide.generator.GeneratorCacheComponent" />
     <classNode dependClassName="jetbrains.mps.smodel.structure.Extension" />
