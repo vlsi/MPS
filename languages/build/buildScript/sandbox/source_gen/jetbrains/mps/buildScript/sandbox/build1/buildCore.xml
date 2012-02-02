@@ -17,13 +17,13 @@
   <target name="assemble" depends="classes">
     <mkdir dir="${buildCore.deploy.dir}/default" />
     <mkdir dir="${buildCore.tmp}/1117643560963371560" />
-    <mkdir dir="${buildCore.tmp}/1117643560963371560/aaa" />
-    <mkdir dir="${buildCore.tmp}/1117643560963371560/aaa/bbb" />
     <mkdir dir="${buildCore.tmp}/1117643560963371565" />
     <mkdir dir="${buildCore.tmp}/1117643560963371565/bbb" />
     <zip destfile="${buildCore.tmp}/1117643560963371560/inrelease.zip">
       <fileset dir="${buildCore.tmp}/1117643560963371565" />
     </zip>
+    <mkdir dir="${buildCore.tmp}/1117643560963371560/aaa" />
+    <mkdir dir="${buildCore.tmp}/1117643560963371560/aaa/bbb" />
     <zip destfile="${buildCore.deploy.dir}/default/release.zip">
       <fileset dir="${buildCore.tmp}/1117643560963371560" />
     </zip>

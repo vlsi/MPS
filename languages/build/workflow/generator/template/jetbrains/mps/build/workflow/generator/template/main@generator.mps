@@ -30,33 +30,41 @@
   <roots>
     <node type="tpf8.MappingConfiguration" typeId="tpf8.1095416546421" id="2769948622284786809">
       <property name="name" nameId="tpck.1169194664001" value="step2_Tasks" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Tasks" />
     </node>
     <node type="iuxj.XmlFile" typeId="iuxj.6666499814681515200" id="2769948622284790861">
       <property name="name" nameId="tpck.1169194664001" value="antBuild.xml" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Tasks" />
     </node>
     <node type="tpf8.MappingScript" typeId="tpf8.1195499912406" id="4755209551904406820">
       <property name="name" nameId="tpck.1169194664001" value="process_cycles" />
       <property name="scriptKind" nameId="tpf8.1195595592106" value="pre_processing" />
       <property name="modifiesModel" nameId="tpf8.1195595611951" value="true" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Structure" />
     </node>
     <node type="tpf8.MappingConfiguration" typeId="tpf8.1095416546421" id="7385586609667789438">
       <property name="name" nameId="tpck.1169194664001" value="step1_Structure" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Structure" />
     </node>
     <node type="tpf8.TemplateDeclaration" typeId="tpf8.1092059087312" id="7385586609667799816">
       <property name="name" nameId="tpck.1169194664001" value="reduce_JavaModule" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Structure" />
       <link role="applicableConcept" roleId="tpf8.1168285871518" targetNodeId="8xvf.4755209551904389307" resolveInfo="BwfJavaModule" />
     </node>
     <node type="911s.PropertiesFile" typeId="911s.3961775458390517588" id="6896005762093592212">
       <property name="name" nameId="tpck.1169194664001" value="build.properties" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Tasks" />
     </node>
     <node type="tpf8.TemplateDeclaration" typeId="tpf8.1092059087312" id="7306485738221390857">
       <property name="name" nameId="tpck.1169194664001" value="reduce_BwfJavaDescriptor" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Structure" />
       <link role="applicableConcept" roleId="tpf8.1168285871518" targetNodeId="8xvf.7306485738221315929" resolveInfo="BwfJavaDescriptor" />
     </node>
     <node type="tpf8.MappingScript" typeId="tpf8.1195499912406" id="1117643560963147795">
       <property name="scriptKind" nameId="tpf8.1195595592106" value="pre_processing" />
       <property name="modifiesModel" nameId="tpf8.1195595611951" value="true" />
       <property name="name" nameId="tpck.1169194664001" value="import_libraries" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Tasks" />
     </node>
   </roots>
   <root id="2769948622284786809">

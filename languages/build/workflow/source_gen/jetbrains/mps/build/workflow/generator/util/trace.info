@@ -1,119 +1,148 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <root nodeId="3961775458390509937">
-    <nodeInfo nodeId="3961775458390509953" fileName="SubTaskOrderHelper.java" startLine="20" startPosition="33" endLine="21" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="list" />
-    <nodeInfo nodeId="3961775458390512293" fileName="SubTaskOrderHelper.java" startLine="21" startPosition="33" endLine="22" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="map" />
-    <nodeInfo nodeId="3961775458390512518" fileName="SubTaskOrderHelper.java" startLine="22" startPosition="110" endLine="23" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="genContext" />
-    <nodeInfo nodeId="3961775458390509956" fileName="SubTaskOrderHelper.java" startLine="25" startPosition="80" endLine="26" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3961775458390512521" fileName="SubTaskOrderHelper.java" startLine="26" startPosition="21" endLine="27" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3961775458390510557" fileName="SubTaskOrderHelper.java" startLine="30" startPosition="22" endLine="31" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3961775458390510592" fileName="SubTaskOrderHelper.java" startLine="32" startPosition="27" endLine="33" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3961775458390510598" fileName="SubTaskOrderHelper.java" startLine="33" startPosition="77" endLine="34" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3961775458390509953" fileName="SubTaskOrderHelper.java" startLine="18" startPosition="33" endLine="19" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="list" />
+    <nodeInfo nodeId="3961775458390512293" fileName="SubTaskOrderHelper.java" startLine="19" startPosition="33" endLine="20" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="map" />
+    <nodeInfo nodeId="3961775458390512518" fileName="SubTaskOrderHelper.java" startLine="20" startPosition="110" endLine="21" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="genContext" />
+    <nodeInfo nodeId="3961775458390509956" fileName="SubTaskOrderHelper.java" startLine="23" startPosition="80" endLine="24" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3961775458390512521" fileName="SubTaskOrderHelper.java" startLine="24" startPosition="21" endLine="25" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1318790912298314571" fileName="SubTaskOrderHelper.java" startLine="28" startPosition="22" endLine="29" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1318790912298549665" fileName="SubTaskOrderHelper.java" startLine="29" startPosition="18" endLine="30" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3961775458390510592" fileName="SubTaskOrderHelper.java" startLine="31" startPosition="27" endLine="32" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3961775458390510598" fileName="SubTaskOrderHelper.java" startLine="32" startPosition="85" endLine="33" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1318790912298554215" fileName="SubTaskOrderHelper.java" startLine="33" startPosition="27" endLine="34" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3961775458390512404" fileName="SubTaskOrderHelper.java" startLine="37" startPosition="81" endLine="38" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3961775458390512544" fileName="SubTaskOrderHelper.java" startLine="39" startPosition="32" endLine="40" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3961775458390512550" fileName="SubTaskOrderHelper.java" startLine="40" startPosition="81" endLine="41" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
-    <nodeInfo nodeId="3961775458390512436" fileName="SubTaskOrderHelper.java" startLine="42" startPosition="9" endLine="43" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3961775458390512436" fileName="SubTaskOrderHelper.java" startLine="42" startPosition="9" endLine="43" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3961775458390512480" fileName="SubTaskOrderHelper.java" startLine="45" startPosition="82" endLine="46" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3961775458390512528" fileName="SubTaskOrderHelper.java" startLine="47" startPosition="33" endLine="48" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3961775458390512543" fileName="SubTaskOrderHelper.java" startLine="48" startPosition="81" endLine="49" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
-    <nodeInfo nodeId="3961775458390512496" fileName="SubTaskOrderHelper.java" startLine="50" startPosition="9" endLine="51" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3961775458390512326" fileName="SubTaskOrderHelper.java" startLine="53" startPosition="5" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="3961775458390510643" fileName="SubTaskOrderHelper.java" startLine="55" startPosition="56" endLine="56" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3961775458390512309" fileName="SubTaskOrderHelper.java" startLine="57" startPosition="5" endLine="58" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3961775458390512316" fileName="SubTaskOrderHelper.java" startLine="58" startPosition="98" endLine="59" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3961775458390512308" fileName="SubTaskOrderHelper.java" startLine="59" startPosition="32" endLine="60" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="3961775458390512904" fileName="SubTaskOrderHelper.java" startLine="60" startPosition="0" endLine="61" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3961775458390512660" fileName="SubTaskOrderHelper.java" startLine="63" startPosition="29" endLine="64" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3961775458390512668" fileName="SubTaskOrderHelper.java" startLine="64" startPosition="47" endLine="65" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3961775458390512769" fileName="SubTaskOrderHelper.java" startLine="67" startPosition="22" endLine="68" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3961775458390512786" fileName="SubTaskOrderHelper.java" startLine="69" startPosition="11" endLine="70" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3961775458390512882" fileName="SubTaskOrderHelper.java" startLine="72" startPosition="31" endLine="73" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3961775458390512642" fileName="SubTaskOrderHelper.java" startLine="74" startPosition="9" endLine="75" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3961775458390512901" fileName="SubTaskOrderHelper.java" startLine="75" startPosition="75" endLine="76" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
-    <nodeInfo nodeId="3961775458390512919" fileName="SubTaskOrderHelper.java" startLine="77" startPosition="7" endLine="78" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3961775458390510512" fileName="SubTaskOrderHelper.java" startLine="82" startPosition="44" endLine="83" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="task" />
-    <nodeInfo nodeId="3961775458390510521" fileName="SubTaskOrderHelper.java" startLine="83" startPosition="29" endLine="84" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="targets" />
-    <nodeInfo nodeId="3961775458390510515" fileName="SubTaskOrderHelper.java" startLine="86" startPosition="32" endLine="87" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3961775458390510538" fileName="SubTaskOrderHelper.java" startLine="90" startPosition="46" endLine="91" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3961775458390510548" fileName="SubTaskOrderHelper.java" startLine="94" startPosition="28" endLine="95" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3961775458390510641" fileName="SubTaskOrderHelper.java" startLine="54" startPosition="0" endLine="57" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="3961775458390512758" fileName="SubTaskOrderHelper.java" startLine="66" startPosition="57" endLine="69" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3961775458390512858" fileName="SubTaskOrderHelper.java" startLine="71" startPosition="9" endLine="74" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3961775458390510492" fileName="SubTaskOrderHelper.java" startLine="85" startPosition="0" endLine="88" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="SubTask#(Ljetbrains/mps/smodel/SNode;)V" />
-    <nodeInfo nodeId="3961775458390509939" fileName="SubTaskOrderHelper.java" startLine="24" startPosition="0" endLine="28" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="SubTaskOrderHelper#(Ljava/util/List;Ljetbrains/mps/generator/template/TemplateQueryContext;)V" />
-    <nodeInfo nodeId="3961775458390510590" fileName="SubTaskOrderHelper.java" startLine="31" startPosition="58" endLine="35" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="3961775458390512496" fileName="SubTaskOrderHelper.java" startLine="50" startPosition="9" endLine="51" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1318790912298314805" fileName="SubTaskOrderHelper.java" startLine="53" startPosition="5" endLine="54" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1318790912298554253" fileName="SubTaskOrderHelper.java" startLine="55" startPosition="52" endLine="56" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1318790912298554317" fileName="SubTaskOrderHelper.java" startLine="57" startPosition="5" endLine="58" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1318790912298554333" fileName="SubTaskOrderHelper.java" startLine="58" startPosition="49" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="1318790912298554359" fileName="SubTaskOrderHelper.java" startLine="59" startPosition="0" endLine="60" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3961775458390512660" fileName="SubTaskOrderHelper.java" startLine="62" startPosition="29" endLine="63" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3961775458390512668" fileName="SubTaskOrderHelper.java" startLine="63" startPosition="47" endLine="64" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3961775458390512769" fileName="SubTaskOrderHelper.java" startLine="66" startPosition="22" endLine="67" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3961775458390512786" fileName="SubTaskOrderHelper.java" startLine="68" startPosition="11" endLine="69" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3961775458390512882" fileName="SubTaskOrderHelper.java" startLine="71" startPosition="31" endLine="72" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3961775458390512642" fileName="SubTaskOrderHelper.java" startLine="73" startPosition="9" endLine="74" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3961775458390512901" fileName="SubTaskOrderHelper.java" startLine="74" startPosition="81" endLine="75" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
+    <nodeInfo nodeId="3961775458390512919" fileName="SubTaskOrderHelper.java" startLine="76" startPosition="7" endLine="77" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1318790912298314628" fileName="SubTaskOrderHelper.java" startLine="81" startPosition="25" endLine="82" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="index" />
+    <nodeInfo nodeId="3961775458390510512" fileName="SubTaskOrderHelper.java" startLine="82" startPosition="28" endLine="83" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="task" />
+    <nodeInfo nodeId="3961775458390510521" fileName="SubTaskOrderHelper.java" startLine="83" startPosition="29" endLine="84" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="targets" />
+    <nodeInfo nodeId="3961775458390510515" fileName="SubTaskOrderHelper.java" startLine="86" startPosition="43" endLine="87" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1318790912298314631" fileName="SubTaskOrderHelper.java" startLine="87" startPosition="23" endLine="88" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1318790912298554300" fileName="SubTaskOrderHelper.java" startLine="91" startPosition="31" endLine="92" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1318790912298314663" fileName="SubTaskOrderHelper.java" startLine="92" startPosition="28" endLine="93" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1318790912298558163" fileName="SubTaskOrderHelper.java" startLine="94" startPosition="30" endLine="95" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1318790912298314716" fileName="SubTaskOrderHelper.java" startLine="96" startPosition="7" endLine="97" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1318790912298314722" fileName="SubTaskOrderHelper.java" startLine="98" startPosition="35" endLine="99" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1318790912298314741" fileName="SubTaskOrderHelper.java" startLine="100" startPosition="7" endLine="101" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
+    <nodeInfo nodeId="1318790912298314516" fileName="SubTaskOrderHelper.java" startLine="102" startPosition="27" endLine="103" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1318790912298314772" fileName="SubTaskOrderHelper.java" startLine="104" startPosition="7" endLine="105" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3961775458390510548" fileName="SubTaskOrderHelper.java" startLine="108" startPosition="28" endLine="109" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1318790912298314642" fileName="SubTaskOrderHelper.java" startLine="112" startPosition="27" endLine="113" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3961775458390510641" fileName="SubTaskOrderHelper.java" startLine="54" startPosition="37" endLine="57" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="3961775458390512758" fileName="SubTaskOrderHelper.java" startLine="65" startPosition="57" endLine="68" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3961775458390512858" fileName="SubTaskOrderHelper.java" startLine="70" startPosition="9" endLine="73" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1318790912298558149" fileName="SubTaskOrderHelper.java" startLine="93" startPosition="42" endLine="96" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1318790912298314698" fileName="SubTaskOrderHelper.java" startLine="97" startPosition="16" endLine="100" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="1318790912298558167" fileName="SubTaskOrderHelper.java" startLine="101" startPosition="33" endLine="104" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3961775458390509939" fileName="SubTaskOrderHelper.java" startLine="22" startPosition="0" endLine="26" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="SubTaskOrderHelper#(Ljava/util/List;Ljetbrains/mps/generator/template/TemplateQueryContext;)V" />
     <nodeInfo nodeId="3961775458390512421" fileName="SubTaskOrderHelper.java" startLine="38" startPosition="104" endLine="42" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="3961775458390512489" fileName="SubTaskOrderHelper.java" startLine="46" startPosition="105" endLine="50" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3961775458390510529" fileName="SubTaskOrderHelper.java" startLine="89" startPosition="0" endLine="93" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNexts#()Ljava/util/Set;" />
-    <nodeInfo nodeId="3961775458390510544" fileName="SubTaskOrderHelper.java" startLine="93" startPosition="0" endLine="97" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getTask#()Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="3961775458390512717" fileName="SubTaskOrderHelper.java" startLine="65" startPosition="47" endLine="71" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
-    <nodeInfo nodeId="3961775458390512339" fileName="SubTaskOrderHelper.java" startLine="36" startPosition="56" endLine="44" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="3961775458390510492" fileName="SubTaskOrderHelper.java" startLine="85" startPosition="0" endLine="89" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="SubTask#(Ljetbrains/mps/smodel/SNode;I)V" />
+    <nodeInfo nodeId="3961775458390510544" fileName="SubTaskOrderHelper.java" startLine="107" startPosition="0" endLine="111" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getTask#()Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="1318790912298314638" fileName="SubTaskOrderHelper.java" startLine="111" startPosition="0" endLine="115" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getIndex#()I" />
+    <nodeInfo nodeId="3961775458390510590" fileName="SubTaskOrderHelper.java" startLine="30" startPosition="112" endLine="35" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="3961775458390512717" fileName="SubTaskOrderHelper.java" startLine="64" startPosition="47" endLine="70" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
+    <nodeInfo nodeId="3961775458390512339" fileName="SubTaskOrderHelper.java" startLine="36" startPosition="52" endLine="44" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="3961775458390512471" fileName="SubTaskOrderHelper.java" startLine="44" startPosition="7" endLine="52" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="3961775458390512621" fileName="SubTaskOrderHelper.java" startLine="62" startPosition="59" endLine="77" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3961775458390512621" fileName="SubTaskOrderHelper.java" startLine="61" startPosition="36" endLine="76" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1318790912298314366" fileName="SubTaskOrderHelper.java" startLine="90" startPosition="0" endLine="107" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getTargets#()[I" />
     <nodeInfo nodeId="3961775458390512327" fileName="SubTaskOrderHelper.java" startLine="35" startPosition="5" endLine="53" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="3961775458390512612" fileName="SubTaskOrderHelper.java" startLine="61" startPosition="40" endLine="79" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="3961775458390509949" fileName="SubTaskOrderHelper.java" startLine="29" startPosition="0" endLine="81" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="sort#()V" />
-    <scopeInfo nodeId="3961775458390510642" fileName="SubTaskOrderHelper.java" startLine="55" startPosition="56" endLine="56" endPosition="20" />
-    <scopeInfo nodeId="3961775458390512759" fileName="SubTaskOrderHelper.java" startLine="67" startPosition="22" endLine="68" endPosition="28" />
-    <scopeInfo nodeId="3961775458390512859" fileName="SubTaskOrderHelper.java" startLine="72" startPosition="31" endLine="73" endPosition="28" />
-    <scopeInfo nodeId="3961775458390510495" fileName="SubTaskOrderHelper.java" startLine="86" startPosition="32" endLine="87" endPosition="23" />
-    <scopeInfo nodeId="3961775458390510534" fileName="SubTaskOrderHelper.java" startLine="90" startPosition="46" endLine="91" endPosition="21" />
-    <scopeInfo nodeId="3961775458390510547" fileName="SubTaskOrderHelper.java" startLine="94" startPosition="28" endLine="95" endPosition="18" />
-    <scopeInfo nodeId="3961775458390509942" fileName="SubTaskOrderHelper.java" startLine="25" startPosition="80" endLine="27" endPosition="33" />
-    <scopeInfo nodeId="3961775458390510591" fileName="SubTaskOrderHelper.java" startLine="32" startPosition="27" endLine="34" endPosition="26">
-      <varInfo nodeId="3961775458390510593" varName="module" />
-    </scopeInfo>
+    <nodeInfo nodeId="3961775458390512612" fileName="SubTaskOrderHelper.java" startLine="60" startPosition="40" endLine="78" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="3961775458390509949" fileName="SubTaskOrderHelper.java" startLine="27" startPosition="0" endLine="80" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="sort#()V" />
+    <scopeInfo nodeId="3961775458390510642" fileName="SubTaskOrderHelper.java" startLine="55" startPosition="52" endLine="56" endPosition="45" />
+    <scopeInfo nodeId="3961775458390512759" fileName="SubTaskOrderHelper.java" startLine="66" startPosition="22" endLine="67" endPosition="28" />
+    <scopeInfo nodeId="3961775458390512859" fileName="SubTaskOrderHelper.java" startLine="71" startPosition="31" endLine="72" endPosition="28" />
+    <scopeInfo nodeId="1318790912298558150" fileName="SubTaskOrderHelper.java" startLine="94" startPosition="30" endLine="95" endPosition="19" />
+    <scopeInfo nodeId="1318790912298314699" fileName="SubTaskOrderHelper.java" startLine="98" startPosition="35" endLine="99" endPosition="23" />
+    <scopeInfo nodeId="1318790912298558168" fileName="SubTaskOrderHelper.java" startLine="102" startPosition="27" endLine="103" endPosition="25" />
+    <scopeInfo nodeId="3961775458390510547" fileName="SubTaskOrderHelper.java" startLine="108" startPosition="28" endLine="109" endPosition="18" />
+    <scopeInfo nodeId="1318790912298314641" fileName="SubTaskOrderHelper.java" startLine="112" startPosition="27" endLine="113" endPosition="19" />
+    <scopeInfo nodeId="3961775458390509942" fileName="SubTaskOrderHelper.java" startLine="23" startPosition="80" endLine="25" endPosition="33" />
     <scopeInfo nodeId="3961775458390512422" fileName="SubTaskOrderHelper.java" startLine="39" startPosition="32" endLine="41" endPosition="19" />
     <scopeInfo nodeId="3961775458390512490" fileName="SubTaskOrderHelper.java" startLine="47" startPosition="33" endLine="49" endPosition="19" />
-    <scopeInfo nodeId="3961775458390510641" fileName="SubTaskOrderHelper.java" startLine="54" startPosition="0" endLine="57" endPosition="5">
+    <scopeInfo nodeId="3961775458390510495" fileName="SubTaskOrderHelper.java" startLine="86" startPosition="43" endLine="88" endPosition="25" />
+    <scopeInfo nodeId="3961775458390510591" fileName="SubTaskOrderHelper.java" startLine="31" startPosition="27" endLine="34" endPosition="34">
+      <varInfo nodeId="3961775458390510593" varName="wrapper" />
+    </scopeInfo>
+    <scopeInfo nodeId="3961775458390510641" fileName="SubTaskOrderHelper.java" startLine="54" startPosition="37" endLine="57" endPosition="5">
       <varInfo nodeId="3961775458390510648" varName="st" />
     </scopeInfo>
-    <scopeInfo nodeId="3961775458390510492" fileName="SubTaskOrderHelper.java" startLine="85" startPosition="0" endLine="88" endPosition="5">
-      <varInfo nodeId="3961775458390510500" varName="task" />
+    <scopeInfo nodeId="1318790912298314698" fileName="SubTaskOrderHelper.java" startLine="97" startPosition="16" endLine="100" endPosition="7">
+      <varInfo nodeId="1318790912298314701" varName="val" />
     </scopeInfo>
-    <scopeInfo nodeId="3961775458390509939" fileName="SubTaskOrderHelper.java" startLine="24" startPosition="0" endLine="28" endPosition="3">
+    <scopeInfo nodeId="3961775458390509939" fileName="SubTaskOrderHelper.java" startLine="22" startPosition="0" endLine="26" endPosition="3">
       <varInfo nodeId="3961775458390512515" varName="genContext" />
       <varInfo nodeId="3961775458390509947" varName="list" />
     </scopeInfo>
-    <scopeInfo nodeId="3961775458390510590" fileName="SubTaskOrderHelper.java" startLine="31" startPosition="58" endLine="35" endPosition="5">
+    <scopeInfo nodeId="3961775458390512718" fileName="SubTaskOrderHelper.java" startLine="65" startPosition="57" endLine="69" endPosition="89" />
+    <scopeInfo nodeId="3961775458390510492" fileName="SubTaskOrderHelper.java" startLine="85" startPosition="0" endLine="89" endPosition="5">
+      <varInfo nodeId="1318790912298314623" varName="index" />
+      <varInfo nodeId="3961775458390510500" varName="task" />
+    </scopeInfo>
+    <scopeInfo nodeId="3961775458390510544" fileName="SubTaskOrderHelper.java" startLine="107" startPosition="0" endLine="111" endPosition="0" />
+    <scopeInfo nodeId="1318790912298314638" fileName="SubTaskOrderHelper.java" startLine="111" startPosition="0" endLine="115" endPosition="0" />
+    <scopeInfo nodeId="3961775458390510590" fileName="SubTaskOrderHelper.java" startLine="30" startPosition="112" endLine="35" endPosition="5">
       <varInfo nodeId="3961775458390510638" varName="st" />
     </scopeInfo>
-    <scopeInfo nodeId="3961775458390512718" fileName="SubTaskOrderHelper.java" startLine="66" startPosition="57" endLine="70" endPosition="83" />
-    <scopeInfo nodeId="3961775458390510529" fileName="SubTaskOrderHelper.java" startLine="89" startPosition="0" endLine="93" endPosition="0" />
-    <scopeInfo nodeId="3961775458390510544" fileName="SubTaskOrderHelper.java" startLine="93" startPosition="0" endLine="97" endPosition="0" />
-    <scopeInfo nodeId="3961775458390512342" fileName="SubTaskOrderHelper.java" startLine="37" startPosition="81" endLine="43" endPosition="34">
+    <scopeInfo nodeId="3961775458390512342" fileName="SubTaskOrderHelper.java" startLine="37" startPosition="81" endLine="43" endPosition="45">
       <varInfo nodeId="3961775458390512405" varName="afterTask" />
     </scopeInfo>
-    <scopeInfo nodeId="3961775458390512479" fileName="SubTaskOrderHelper.java" startLine="45" startPosition="82" endLine="51" endPosition="35">
+    <scopeInfo nodeId="3961775458390512479" fileName="SubTaskOrderHelper.java" startLine="45" startPosition="82" endLine="51" endPosition="46">
       <varInfo nodeId="3961775458390512481" varName="beforeTask" />
     </scopeInfo>
-    <scopeInfo nodeId="3961775458390512717" fileName="SubTaskOrderHelper.java" startLine="65" startPosition="47" endLine="71" endPosition="9">
+    <scopeInfo nodeId="3961775458390512717" fileName="SubTaskOrderHelper.java" startLine="64" startPosition="47" endLine="70" endPosition="9">
       <varInfo nodeId="3961775458390512720" varName="i" />
     </scopeInfo>
-    <scopeInfo nodeId="3961775458390512339" fileName="SubTaskOrderHelper.java" startLine="36" startPosition="56" endLine="44" endPosition="7">
+    <scopeInfo nodeId="3961775458390512339" fileName="SubTaskOrderHelper.java" startLine="36" startPosition="52" endLine="44" endPosition="7">
       <varInfo nodeId="3961775458390512340" varName="dep" />
     </scopeInfo>
     <scopeInfo nodeId="3961775458390512471" fileName="SubTaskOrderHelper.java" startLine="44" startPosition="7" endLine="52" endPosition="7">
       <varInfo nodeId="3961775458390512472" varName="dep" />
     </scopeInfo>
-    <scopeInfo nodeId="3961775458390512622" fileName="SubTaskOrderHelper.java" startLine="63" startPosition="29" endLine="76" endPosition="17">
+    <scopeInfo nodeId="3961775458390512622" fileName="SubTaskOrderHelper.java" startLine="62" startPosition="29" endLine="75" endPosition="17">
       <varInfo nodeId="3961775458390512661" varName="sb" />
     </scopeInfo>
-    <scopeInfo nodeId="3961775458390512328" fileName="SubTaskOrderHelper.java" startLine="36" startPosition="56" endLine="52" endPosition="7" />
-    <scopeInfo nodeId="3961775458390512613" fileName="SubTaskOrderHelper.java" startLine="62" startPosition="59" endLine="78" endPosition="69" />
+    <scopeInfo nodeId="1318790912298314369" fileName="SubTaskOrderHelper.java" startLine="91" startPosition="31" endLine="105" endPosition="17">
+      <varInfo nodeId="1318790912298314664" varName="arr" />
+      <varInfo nodeId="1318790912298314717" varName="i" />
+    </scopeInfo>
+    <scopeInfo nodeId="3961775458390512328" fileName="SubTaskOrderHelper.java" startLine="36" startPosition="52" endLine="52" endPosition="7" />
+    <scopeInfo nodeId="3961775458390512613" fileName="SubTaskOrderHelper.java" startLine="61" startPosition="36" endLine="77" endPosition="75" />
+    <scopeInfo nodeId="1318790912298314366" fileName="SubTaskOrderHelper.java" startLine="90" startPosition="0" endLine="107" endPosition="0" />
     <scopeInfo nodeId="3961775458390512327" fileName="SubTaskOrderHelper.java" startLine="35" startPosition="5" endLine="53" endPosition="5">
       <varInfo nodeId="3961775458390512334" varName="st" />
     </scopeInfo>
-    <scopeInfo nodeId="3961775458390512612" fileName="SubTaskOrderHelper.java" startLine="61" startPosition="40" endLine="79" endPosition="5">
+    <scopeInfo nodeId="3961775458390512612" fileName="SubTaskOrderHelper.java" startLine="60" startPosition="40" endLine="78" endPosition="5">
       <varInfo nodeId="3961775458390512615" varName="cycle" />
     </scopeInfo>
-    <scopeInfo nodeId="3961775458390509952" fileName="SubTaskOrderHelper.java" startLine="30" startPosition="22" endLine="79" endPosition="5">
-      <varInfo nodeId="3961775458390512310" varName="cycles" />
-      <varInfo nodeId="3961775458390510558" varName="graph" />
+    <scopeInfo nodeId="3961775458390509952" fileName="SubTaskOrderHelper.java" startLine="28" startPosition="22" endLine="78" endPosition="5">
+      <varInfo nodeId="1318790912298314572" varName="count" />
+      <varInfo nodeId="1318790912298314806" varName="graph" />
+      <varInfo nodeId="1318790912298554318" varName="partitions" />
+      <varInfo nodeId="1318790912298549666" varName="subtasks" />
     </scopeInfo>
-    <scopeInfo nodeId="3961775458390509949" fileName="SubTaskOrderHelper.java" startLine="29" startPosition="0" endLine="81" endPosition="0" />
-    <unitInfo nodeId="3961775458390509937" fileName="SubTaskOrderHelper.java" startLine="20" startPosition="0" endLine="99" endPosition="0" unitName="jetbrains.mps.build.workflow.generator.util.SubTaskOrderHelper" />
-    <unitInfo nodeId="3961775458390510490" fileName="SubTaskOrderHelper.java" startLine="82" startPosition="0" endLine="98" endPosition="0" unitName="jetbrains.mps.build.workflow.generator.util.SubTaskOrderHelper$SubTask" />
+    <scopeInfo nodeId="3961775458390509949" fileName="SubTaskOrderHelper.java" startLine="27" startPosition="0" endLine="80" endPosition="0" />
+    <unitInfo nodeId="3961775458390509937" fileName="SubTaskOrderHelper.java" startLine="18" startPosition="0" endLine="117" endPosition="0" unitName="jetbrains.mps.build.workflow.generator.util.SubTaskOrderHelper" />
+    <unitInfo nodeId="3961775458390510490" fileName="SubTaskOrderHelper.java" startLine="81" startPosition="0" endLine="116" endPosition="0" unitName="jetbrains.mps.build.workflow.generator.util.SubTaskOrderHelper$SubTask" />
   </root>
   <root nodeId="4755209551904406840">
     <nodeInfo nodeId="4755209551904406846" fileName="CycleHelper.java" startLine="29" startPosition="26" endLine="30" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="project" />

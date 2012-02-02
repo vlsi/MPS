@@ -7,15 +7,13 @@ import jetbrains.mps.smodel.SNode;
 import java.util.Map;
 import java.util.HashMap;
 import jetbrains.mps.generator.template.TemplateQueryContext;
-import jetbrains.mps.make.dependencies.graph.Graph;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.make.dependencies.graph.Graphs;
-import java.util.Collections;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.util.GraphUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.make.dependencies.graph.IVertex;
 import java.util.Set;
-import java.util.LinkedHashSet;
+import java.util.HashSet;
+import java.util.Arrays;
 
 public class SubTaskOrderHelper {
   private final List<SNode> list;
@@ -28,19 +26,21 @@ public class SubTaskOrderHelper {
   }
 
   public void sort() {
-    Graph<SubTaskOrderHelper.SubTask> graph = new Graph();
+    int count = 0;
+    SubTaskOrderHelper.SubTask[] subtasks = new SubTaskOrderHelper.SubTask[ListSequence.fromList(list).count()];
     for (SNode st : list) {
-      SubTaskOrderHelper.SubTask module = new SubTaskOrderHelper.SubTask(st);
-      map.put(st, module);
+      SubTaskOrderHelper.SubTask wrapper = new SubTaskOrderHelper.SubTask(st, count);
+      map.put(st, wrapper);
+      subtasks[count++] = wrapper;
     }
-    for (SubTaskOrderHelper.SubTask st : map.values()) {
+    for (SubTaskOrderHelper.SubTask st : subtasks) {
       for (SNode dep : SLinkOperations.getTargets(st.getTask(), "after", true)) {
         SubTaskOrderHelper.SubTask afterTask = map.get(SLinkOperations.getTarget(dep, "target", false));
         if (afterTask == null) {
           genContext.showErrorMessage(dep, "dependency on non-existing subtask");
           continue;
         }
-        st.targets.add(afterTask);
+        st.targets.add(afterTask.getIndex());
       }
       for (SNode dep : SLinkOperations.getTargets(st.getTask(), "before", true)) {
         SubTaskOrderHelper.SubTask beforeTask = map.get(SLinkOperations.getTarget(dep, "target", false));
@@ -48,51 +48,69 @@ public class SubTaskOrderHelper {
           genContext.showErrorMessage(dep, "dependency on non-existing subtask");
           continue;
         }
-        beforeTask.targets.add(st);
+        beforeTask.targets.add(st.getIndex());
       }
     }
-
-    for (SubTaskOrderHelper.SubTask st : map.values()) {
-      graph.add(st);
+    int[][] graph = new int[count][];
+    for (SubTaskOrderHelper.SubTask st : subtasks) {
+      graph[st.getIndex()] = st.getTargets();
     }
-    List<List<SubTaskOrderHelper.SubTask>> cycles = Graphs.findStronglyConnectedComponents(graph);
-    Collections.reverse(cycles);
+    int[][] partitions = GraphUtil.tarjan(graph);
 
     ListSequence.fromList(list).clear();
-    for (List<SubTaskOrderHelper.SubTask> cycle : cycles) {
-      if (cycle.size() > 1) {
+    for (int[] cycle : partitions) {
+      if (cycle.length > 1) {
         StringBuilder sb = new StringBuilder();
         sb.append("subtasks cycle detected: ");
-        for (int i = 0; i < 5 && i < cycle.size(); i++) {
+        for (int i = 0; i < 5 && i < cycle.length; i++) {
           if (i > 0) {
             sb.append(", ");
           }
-          sb.append(SPropertyOperations.getString(cycle.get(i).getTask(), "name"));
+          sb.append(SPropertyOperations.getString(subtasks[cycle[i]].getTask(), "name"));
         }
-        if (cycle.size() > 5) {
+        if (cycle.length > 5) {
           sb.append(" ...");
         }
-        genContext.showErrorMessage(cycle.get(0).getTask(), sb.toString());
+        genContext.showErrorMessage(subtasks[cycle[0]].getTask(), sb.toString());
         continue;
       }
-      ListSequence.fromList(list).addElement(cycle.get(0).getTask());
+      ListSequence.fromList(list).addElement(subtasks[cycle[0]].getTask());
     }
   }
 
-  private class SubTask implements IVertex {
+  private class SubTask {
+    private final int index;
     private final SNode task;
-    public Set<SubTaskOrderHelper.SubTask> targets = new LinkedHashSet<SubTaskOrderHelper.SubTask>();
+    public final Set<Integer> targets = new HashSet<Integer>();
 
-    public SubTask(SNode task) {
+    public SubTask(SNode task, int index) {
       this.task = task;
+      this.index = index;
     }
 
-    public Set<? extends IVertex> getNexts() {
-      return targets;
+    public int[] getTargets() {
+      targets.remove(index);
+      int[] arr = new int[targets.size()];
+      if (targets.isEmpty()) {
+        return arr;
+      }
+      int i = 0;
+      for (Integer val : targets) {
+        arr[i++] = val;
+      }
+      assert i == targets.size();
+      if (arr.length > 1) {
+        Arrays.sort(arr);
+      }
+      return arr;
     }
 
     public SNode getTask() {
       return task;
+    }
+
+    public int getIndex() {
+      return index;
     }
   }
 }
