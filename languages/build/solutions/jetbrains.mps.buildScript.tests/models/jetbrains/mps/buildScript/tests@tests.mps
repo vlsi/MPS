@@ -678,51 +678,20 @@
       <property name="name" nameId="tpck.1169194664001" value="macroScopes" />
       <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="763409143595611371" />
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="763409143595611372">
-        <node role="statement" roleId="tpee.1068581517665" type="tpe3.AssertTrue" typeId="tpe3.1171981022339" id="763409143595611373">
-          <node role="condition" roleId="tpe3.1171981057159" type="tpee.DotExpression" typeId="tpee.1197027756228" id="763409143595611412">
-            <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="763409143595611401">
-              <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="763409143595611378">
-                <node role="operand" roleId="tpee.1197027771414" type="tp5g.TestNodeReference" typeId="tp5g.1210674524691" id="763409143595611375">
-                  <link role="declaration" roleId="tp5g.1210674534086" targetNodeId="763409143595611364" resolveInfo="build2" />
-                </node>
-                <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="763409143595611384">
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tpcu.3734116213129936182" resolveInfo="getScope" />
-                  <node role="actualArgument" roleId="tpee.1068499141038" type="tp25.ReadConceptReferenceExpression" typeId="tp25.448792706993295611" id="763409143595611385">
-                    <link role="conceptDeclaration" roleId="tp25.448792706993295615" targetNodeId="3ior.5617550519002745375" resolveInfo="BuildMacro" />
-                  </node>
-                  <node role="actualArgument" roleId="tpee.1068499141038" type="tp5g.TestNodeReference" typeId="tp5g.1210674524691" id="763409143595611388">
-                    <link role="declaration" roleId="tp5g.1210674534086" targetNodeId="763409143595611387" resolveInfo="resources2" />
-                  </node>
-                </node>
-              </node>
-              <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="763409143595611407">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="o8zo.3734116213129862471" resolveInfo="getAvailableElements" />
-                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="763409143595611409">
-                  <property name="value" nameId="tpee.1070475926801" value="" />
-                </node>
-              </node>
-            </node>
-            <node role="operation" roleId="tpee.1197027833540" type="tp2q.ContainsOperation" typeId="tp2q.1172254888721" id="763409143595611421">
-              <node role="argument" roleId="tp2q.1172256416782" type="tp5g.TestNodeReference" typeId="tp5g.1210674524691" id="763409143595611780">
-                <link role="declaration" roleId="tp5g.1210674534086" targetNodeId="763409143595611365" resolveInfo="buildMacro" />
-              </node>
-            </node>
-          </node>
-        </node>
         <node role="statement" roleId="tpee.1068581517665" type="tpe3.AssertTrue" typeId="tpe3.1171981022339" id="763409143595611766">
           <node role="condition" roleId="tpe3.1171981057159" type="tpee.DotExpression" typeId="tpee.1197027756228" id="763409143595611767">
             <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="763409143595611768">
               <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="763409143595611769">
-                <node role="operand" roleId="tpee.1197027771414" type="tp5g.TestNodeReference" typeId="tp5g.1210674524691" id="763409143595611770">
-                  <link role="declaration" roleId="tp5g.1210674534086" targetNodeId="763409143595611364" resolveInfo="build2" />
+                <node role="operand" roleId="tpee.1197027771414" type="tp5g.TestNodeReference" typeId="tp5g.1210674524691" id="4209004860870523732">
+                  <link role="declaration" roleId="tp5g.1210674534086" targetNodeId="193602448594330748" resolveInfo="build" />
                 </node>
                 <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="763409143595611771">
                   <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tpcu.3734116213129936182" resolveInfo="getScope" />
                   <node role="actualArgument" roleId="tpee.1068499141038" type="tp25.ReadConceptReferenceExpression" typeId="tp25.448792706993295611" id="763409143595611772">
                     <link role="conceptDeclaration" roleId="tp25.448792706993295615" targetNodeId="3ior.5617550519002745375" resolveInfo="BuildMacro" />
                   </node>
-                  <node role="actualArgument" roleId="tpee.1068499141038" type="tp5g.TestNodeReference" typeId="tp5g.1210674524691" id="763409143595611773">
-                    <link role="declaration" roleId="tp5g.1210674534086" targetNodeId="763409143595611387" resolveInfo="resources2" />
+                  <node role="actualArgument" roleId="tpee.1068499141038" type="tp5g.TestNodeReference" typeId="tp5g.1210674524691" id="4209004860870523733">
+                    <link role="declaration" roleId="tp5g.1210674534086" targetNodeId="763409143595611366" resolveInfo="resourcesMacro" />
                   </node>
                 </node>
               </node>
@@ -734,8 +703,8 @@
               </node>
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tp2q.ContainsOperation" typeId="tp2q.1172254888721" id="763409143595611776">
-              <node role="argument" roleId="tp2q.1172256416782" type="tp5g.TestNodeReference" typeId="tp5g.1210674524691" id="763409143595611779">
-                <link role="declaration" roleId="tp5g.1210674534086" targetNodeId="763409143595611366" resolveInfo="resourcesMacro" />
+              <node role="argument" roleId="tp2q.1172256416782" type="tp5g.TestNodeReference" typeId="tp5g.1210674524691" id="4209004860870523735">
+                <link role="declaration" roleId="tp5g.1210674534086" targetNodeId="763409143595611365" resolveInfo="buildMacro" />
               </node>
             </node>
           </node>
@@ -810,7 +779,7 @@
         <property name="name" nameId="tpck.1169194664001" value="project2" />
         <node role="layout" roleId="3ior.5617550519002745372" type="3ior.BuildLayout" typeId="3ior.5617550519002745364" id="763409143595572701" />
         <node role="macros" roleId="3ior.5617550519002745378" type="3ior.BuildFolderMacro" typeId="3ior.7389400916848136194" id="763409143595572705">
-          <property name="name" nameId="tpck.1169194664001" value="resources" />
+          <property name="name" nameId="tpck.1169194664001" value="resources2" />
           <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="763409143595611387">
             <property name="name" nameId="tpck.1169194664001" value="resources2" />
           </node>
