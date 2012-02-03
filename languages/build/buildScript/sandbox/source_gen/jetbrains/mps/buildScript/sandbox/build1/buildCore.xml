@@ -24,24 +24,24 @@
   
   <target name="assemble" depends="classes">
     <mkdir dir="${buildCore.deploy.dir}/default" />
-    <mkdir dir="${buildCore.tmp}/1117643560963371560" />
-    <mkdir dir="${buildCore.tmp}/1117643560963371565" />
-    <mkdir dir="${buildCore.tmp}/1117643560963371565/bbb" />
-    <zip destfile="${buildCore.tmp}/1117643560963371560/inrelease.zip">
-      <fileset dir="${buildCore.tmp}/1117643560963371565" />
+    <mkdir dir="${buildCore.tmp}/release.zip" />
+    <mkdir dir="${buildCore.tmp}/inrelease.zip" />
+    <mkdir dir="${buildCore.tmp}/inrelease.zip/bbb" />
+    <zip destfile="${buildCore.tmp}/release.zip/inrelease.zip">
+      <fileset dir="${buildCore.tmp}/inrelease.zip" />
     </zip>
-    <mkdir dir="${buildCore.tmp}/1117643560963371560/aaa" />
-    <mkdir dir="${buildCore.tmp}/1117643560963371560/aaa/bbb" />
+    <mkdir dir="${buildCore.tmp}/release.zip/aaa" />
+    <mkdir dir="${buildCore.tmp}/release.zip/aaa/bbb" />
     <zip destfile="${buildCore.deploy.dir}/default/release.zip">
-      <fileset dir="${buildCore.tmp}/1117643560963371560" />
+      <fileset dir="${buildCore.tmp}/release.zip" />
     </zip>
-    <mkdir dir="${buildCore.tmp}/6627265764879718146" />
-    <mkdir dir="${buildCore.tmp}/6627265764879718146/abc" />
-    <mkdir dir="${buildCore.tmp}/6627265764879718146/abc/edf" />
-    <zip destfile="${buildCore.tmp}/6627265764879718146/abc/edf/aaa"></zip>
+    <mkdir dir="${buildCore.tmp}/mps-core-${ver}.jar" />
+    <mkdir dir="${buildCore.tmp}/mps-core-${ver}.jar/abc" />
+    <mkdir dir="${buildCore.tmp}/mps-core-${ver}.jar/abc/edf" />
+    <zip destfile="${buildCore.tmp}/mps-core-${ver}.jar/abc/edf/aaa"></zip>
     <jar destfile="${buildCore.deploy.dir}/default/mps-core-${ver}.jar">
       <fileset dir="${build.dir}/tmp/java.out.mps-core" />
-      <fileset dir="${buildCore.tmp}/6627265764879718146" />
+      <fileset dir="${buildCore.tmp}/mps-core-${ver}.jar" />
     </jar>
   </target>
   

@@ -22,7 +22,7 @@ import jetbrains.mps.internal.collections.runtime.ITranslator2;
 
 public class QueriesGenerated {
   public static Object propertyMacro_GetPropertyValue_1117643560963267883(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return BuildLayout_AbstractContainer_Behavior.call_getChildrenOutputDir_WithMacro_7389400916848004880(_context.getNode(), new Context());
+    return BuildLayout_AbstractContainer_Behavior.call_getChildrenOutputDir_WithMacro_7389400916848004880(_context.getNode(), Context.defaulContext(_context));
   }
 
   public static Object propertyMacro_GetPropertyValue_1117643560963268263(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -34,7 +34,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1117643560963358439(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return BuildLayout_AbstractContainer_Behavior.call_getChildrenOutputDir_WithMacro_7389400916848004880(_context.getNode(), new Context());
+    return BuildLayout_AbstractContainer_Behavior.call_getChildrenOutputDir_WithMacro_7389400916848004880(_context.getNode(), Context.defaulContext(_context));
   }
 
   public static Object propertyMacro_GetPropertyValue_1117643560963358405(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -42,11 +42,11 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1117643560963268231(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return BuildLayout_NamedContainer_Behavior.call_getOutputPath_WithMacro_280273048052535414(_context.getNode(), new Context());
+    return BuildLayout_NamedContainer_Behavior.call_getOutputPath_WithMacro_280273048052535414(_context.getNode(), Context.defaulContext(_context));
   }
 
   public static Object propertyMacro_GetPropertyValue_1117643560963351294(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return BuildLayout_AbstractContainer_Behavior.call_getChildrenOutputDir_WithMacro_7389400916848004880(_context.getNode(), new Context());
+    return BuildLayout_AbstractContainer_Behavior.call_getChildrenOutputDir_WithMacro_7389400916848004880(_context.getNode(), Context.defaulContext(_context));
   }
 
   public static Object propertyMacro_GetPropertyValue_1117643560963268242(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -54,7 +54,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1117643560963358510(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return BuildLayout_AbstractContainer_Behavior.call_getChildrenOutputDir_WithMacro_7389400916848004880(_context.getNode(), new Context());
+    return BuildLayout_AbstractContainer_Behavior.call_getChildrenOutputDir_WithMacro_7389400916848004880(_context.getNode(), Context.defaulContext(_context));
   }
 
   public static Object propertyMacro_GetPropertyValue_1117643560963358520(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -62,11 +62,11 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1117643560963358535(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return BuildLayout_NamedContainer_Behavior.call_getOutputPath_WithMacro_280273048052535414(_context.getNode(), new Context());
+    return BuildLayout_NamedContainer_Behavior.call_getOutputPath_WithMacro_280273048052535414(_context.getNode(), Context.defaulContext(_context));
   }
 
   public static Object propertyMacro_GetPropertyValue_1117643560963358569(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return BuildLayout_AbstractContainer_Behavior.call_getChildrenOutputDir_WithMacro_7389400916848004880(_context.getNode(), new Context());
+    return BuildLayout_AbstractContainer_Behavior.call_getChildrenOutputDir_WithMacro_7389400916848004880(_context.getNode(), Context.defaulContext(_context));
   }
 
   public static Object propertyMacro_GetPropertyValue_1117643560963358598(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -201,16 +201,16 @@ public class QueriesGenerated {
     });
   }
 
+  public static Iterable sourceNodesQuery_6647099934207033969(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+    return SLinkOperations.getTargets(_context.getNode(), "dependencies", true);
+  }
+
   public static Iterable sourceNodesQuery_1117643560963346354(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "contentRoots", true)).translate(new ITranslator2<SNode, SNode>() {
       public Iterable<SNode> translate(SNode it) {
         return SLinkOperations.getTargets(it, "folders", true);
       }
     });
-  }
-
-  public static Iterable sourceNodesQuery_6647099934207033969(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return SLinkOperations.getTargets(_context.getNode(), "dependencies", true);
   }
 
   public static Iterable sourceNodesQuery_1117643560963307378(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {

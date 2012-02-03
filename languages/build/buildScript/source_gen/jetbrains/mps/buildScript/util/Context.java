@@ -13,6 +13,7 @@ import jetbrains.mps.buildScript.behavior.BuildProject_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.generator.template.TemplateQueryContext;
 import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -96,6 +97,15 @@ public class Context {
   @Nullable
   public static Context defaultContext() {
     return new Context();
+  }
+
+  public static Context defaulContext(TemplateQueryContext gencontext) {
+    Context context = ((Context) gencontext.getSessionObject(Context.class));
+    if (context == null) {
+      context = defaultContext();
+      gencontext.putSessionObject(Context.class, context);
+    }
+    return context;
   }
 
   public static class QuotationClass_lmsybr_a0a0b0k {
