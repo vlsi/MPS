@@ -18,6 +18,8 @@ package jetbrains.mps.library;
 import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.*;
+import jetbrains.mps.project.io.DescriptorIOException;
+import jetbrains.mps.project.io.DescriptorIOFacade;
 import jetbrains.mps.project.persistence.DeploymentDescriptorPersistence;
 import jetbrains.mps.project.persistence.DevkitDescriptorPersistence;
 import jetbrains.mps.project.persistence.LanguageDescriptorPersistence;
@@ -47,20 +49,7 @@ public class ModulesMiner {
     return INSTANCE;
   }
 
-  private Map<String, Class<? extends IModule>> myExtensionsToModuleTypes = new LinkedHashMap<String, Class<? extends IModule>>();
-
   private ModulesMiner() {
-    initializeExtensionsToModuleTypesMap();
-  }
-
-  private void initializeExtensionsToModuleTypesMap() {
-    myExtensionsToModuleTypes.put(MPSExtentions.LANGUAGE, Language.class);
-    myExtensionsToModuleTypes.put(MPSExtentions.SOLUTION, Solution.class);
-    myExtensionsToModuleTypes.put(MPSExtentions.DEVKIT, DevKit.class);
-  }
-
-  public Set<String> getModuleExtensions() {
-    return new HashSet<String>(myExtensionsToModuleTypes.keySet());
   }
 
   public void readModuleDescriptors(Iterator<? extends RootReference> roots, MPSModuleOwner owner) {
@@ -177,16 +166,7 @@ public class ModulesMiner {
         }
         return result;
       } else {
-
-        String extension = getModuleExtension(file.getName());
-        Class<? extends IModule> cls = myExtensionsToModuleTypes.get(extension);
-        if (cls == Language.class) {
-          return LanguageDescriptorPersistence.loadLanguageDescriptor(file);
-        } else if (cls == Solution.class) {
-          return SolutionDescriptorPersistence.loadSolutionDescriptor(file);
-        } else {
-          return DevkitDescriptorPersistence.loadDevKitDescriptor(file);
-        }
+        return DescriptorIOFacade.getInstance().fromFileType(file).readFromFile(file);
       }
     } catch (Exception t) {
       LOG.error("Fail to load module from descriptor " + file.getPath(), t);

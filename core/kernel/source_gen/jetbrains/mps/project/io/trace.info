@@ -24,31 +24,46 @@
     <unitInfo nodeId="3323419009397486857" fileName="IdeaDescriptorIOProvider.java" startLine="11" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.project.io.IdeaDescriptorIOProvider" />
   </root>
   <root nodeId="557142600900286111">
-    <nodeInfo nodeId="557142600900532770" fileName="DescriptorIOFacade.java" startLine="7" startPosition="33" endLine="8" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="INSTANCE" />
-    <nodeInfo nodeId="557142600900541528" fileName="DescriptorIOFacade.java" startLine="8" startPosition="72" endLine="9" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="STANDARD_FACTORY" />
-    <nodeInfo nodeId="9081946191808734224" fileName="DescriptorIOFacade.java" startLine="9" startPosition="106" endLine="10" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="IDEA" />
-    <nodeInfo nodeId="557142600900539608" fileName="DescriptorIOFacade.java" startLine="15" startPosition="56" endLine="16" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="9081946191808734200" fileName="DescriptorIOFacade.java" startLine="19" startPosition="42" endLine="20" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="9081946191808734214" fileName="DescriptorIOFacade.java" startLine="23" startPosition="38" endLine="24" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="557142600900560817" fileName="DescriptorIOFacade.java" startLine="27" startPosition="50" endLine="28" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="557142600900286113" fileName="DescriptorIOFacade.java" startLine="11" startPosition="0" endLine="13" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="DescriptorIOFacade#()V" />
-    <nodeInfo nodeId="557142600900532761" fileName="DescriptorIOFacade.java" startLine="14" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="fromFileType#(Ljetbrains/mps/vfs/IFile;)Ljetbrains/mps/project/io/DescriptorIOProvider;" />
-    <nodeInfo nodeId="9081946191808734194" fileName="DescriptorIOFacade.java" startLine="18" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="standard#()Ljetbrains/mps/project/io/DescriptorIOProvider;" />
-    <nodeInfo nodeId="9081946191808734202" fileName="DescriptorIOFacade.java" startLine="22" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="idea#()Ljetbrains/mps/project/io/DescriptorIOProvider;" />
-    <nodeInfo nodeId="557142600900560812" fileName="DescriptorIOFacade.java" startLine="26" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getInstance#()Ljetbrains/mps/project/io/DescriptorIOFacade;" />
-    <scopeInfo nodeId="557142600900286116" fileName="DescriptorIOFacade.java" startLine="12" startPosition="32" endLine="12" endPosition="32" />
-    <scopeInfo nodeId="557142600900532764" fileName="DescriptorIOFacade.java" startLine="15" startPosition="56" endLine="16" endPosition="28" />
-    <scopeInfo nodeId="9081946191808734199" fileName="DescriptorIOFacade.java" startLine="19" startPosition="42" endLine="20" endPosition="28" />
-    <scopeInfo nodeId="9081946191808734207" fileName="DescriptorIOFacade.java" startLine="23" startPosition="38" endLine="24" endPosition="16" />
-    <scopeInfo nodeId="557142600900560815" fileName="DescriptorIOFacade.java" startLine="27" startPosition="50" endLine="28" endPosition="20" />
-    <scopeInfo nodeId="557142600900286113" fileName="DescriptorIOFacade.java" startLine="11" startPosition="0" endLine="13" endPosition="3" />
-    <scopeInfo nodeId="557142600900532761" fileName="DescriptorIOFacade.java" startLine="14" startPosition="0" endLine="18" endPosition="0">
-      <varInfo nodeId="557142600900532767" varName="file" />
+    <nodeInfo nodeId="557142600900532770" fileName="DescriptorIOFacade.java" startLine="9" startPosition="33" endLine="10" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="INSTANCE" />
+    <nodeInfo nodeId="557142600900541528" fileName="DescriptorIOFacade.java" startLine="10" startPosition="72" endLine="11" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="STANDARD_FACTORY" />
+    <nodeInfo nodeId="9081946191808734224" fileName="DescriptorIOFacade.java" startLine="11" startPosition="106" endLine="12" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="IDEA" />
+    <nodeInfo nodeId="5177508097213614246" fileName="DescriptorIOFacade.java" startLine="17" startPosition="76" endLine="18" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="9081946191808734200" fileName="DescriptorIOFacade.java" startLine="21" startPosition="50" endLine="22" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="9081946191808734214" fileName="DescriptorIOFacade.java" startLine="25" startPosition="46" endLine="26" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5177508097213614199" fileName="DescriptorIOFacade.java" startLine="30" startPosition="52" endLine="31" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5177508097213614205" fileName="DescriptorIOFacade.java" startLine="32" startPosition="59" endLine="33" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5177508097213614211" fileName="DescriptorIOFacade.java" startLine="34" startPosition="57" endLine="35" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5177508097213614235" fileName="DescriptorIOFacade.java" startLine="36" startPosition="39" endLine="37" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5177508097213614218" fileName="DescriptorIOFacade.java" startLine="38" startPosition="5" endLine="39" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="557142600900560817" fileName="DescriptorIOFacade.java" startLine="42" startPosition="50" endLine="43" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="557142600900286113" fileName="DescriptorIOFacade.java" startLine="13" startPosition="0" endLine="15" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="DescriptorIOFacade#()V" />
+    <nodeInfo nodeId="5177508097213611918" fileName="DescriptorIOFacade.java" startLine="16" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="fromFileType#(Ljetbrains/mps/vfs/IFile;)Ljetbrains/mps/project/io/DescriptorIO;" />
+    <nodeInfo nodeId="9081946191808734194" fileName="DescriptorIOFacade.java" startLine="20" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="standardProvider#()Ljetbrains/mps/project/io/DescriptorIOProvider;" />
+    <nodeInfo nodeId="9081946191808734202" fileName="DescriptorIOFacade.java" startLine="24" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="ideaProvider#()Ljetbrains/mps/project/io/DescriptorIOProvider;" />
+    <nodeInfo nodeId="557142600900560812" fileName="DescriptorIOFacade.java" startLine="41" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getInstance#()Ljetbrains/mps/project/io/DescriptorIOFacade;" />
+    <nodeInfo nodeId="5177508097213611961" fileName="DescriptorIOFacade.java" startLine="29" startPosition="79" endLine="38" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5177508097213611953" fileName="DescriptorIOFacade.java" startLine="28" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="fromExtension#(Ljava/lang/String;)Ljetbrains/mps/project/io/DescriptorIO;" />
+    <scopeInfo nodeId="557142600900286116" fileName="DescriptorIOFacade.java" startLine="14" startPosition="32" endLine="14" endPosition="32" />
+    <scopeInfo nodeId="5177508097213611921" fileName="DescriptorIOFacade.java" startLine="17" startPosition="76" endLine="18" endPosition="41" />
+    <scopeInfo nodeId="9081946191808734199" fileName="DescriptorIOFacade.java" startLine="21" startPosition="50" endLine="22" endPosition="28" />
+    <scopeInfo nodeId="9081946191808734207" fileName="DescriptorIOFacade.java" startLine="25" startPosition="46" endLine="26" endPosition="16" />
+    <scopeInfo nodeId="5177508097213611963" fileName="DescriptorIOFacade.java" startLine="30" startPosition="52" endLine="31" endPosition="55" />
+    <scopeInfo nodeId="5177508097213611986" fileName="DescriptorIOFacade.java" startLine="32" startPosition="59" endLine="33" endPosition="55" />
+    <scopeInfo nodeId="5177508097213611993" fileName="DescriptorIOFacade.java" startLine="34" startPosition="57" endLine="35" endPosition="53" />
+    <scopeInfo nodeId="5177508097213614222" fileName="DescriptorIOFacade.java" startLine="36" startPosition="39" endLine="37" endPosition="51" />
+    <scopeInfo nodeId="557142600900560815" fileName="DescriptorIOFacade.java" startLine="42" startPosition="50" endLine="43" endPosition="20" />
+    <scopeInfo nodeId="557142600900286113" fileName="DescriptorIOFacade.java" startLine="13" startPosition="0" endLine="15" endPosition="3" />
+    <scopeInfo nodeId="5177508097213611918" fileName="DescriptorIOFacade.java" startLine="16" startPosition="0" endLine="20" endPosition="0">
+      <varInfo nodeId="5177508097213611928" varName="file" />
     </scopeInfo>
-    <scopeInfo nodeId="9081946191808734194" fileName="DescriptorIOFacade.java" startLine="18" startPosition="0" endLine="22" endPosition="0" />
-    <scopeInfo nodeId="9081946191808734202" fileName="DescriptorIOFacade.java" startLine="22" startPosition="0" endLine="26" endPosition="0" />
-    <scopeInfo nodeId="557142600900560812" fileName="DescriptorIOFacade.java" startLine="26" startPosition="0" endLine="30" endPosition="0" />
-    <unitInfo nodeId="557142600900286111" fileName="DescriptorIOFacade.java" startLine="7" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.project.io.DescriptorIOFacade" />
+    <scopeInfo nodeId="9081946191808734194" fileName="DescriptorIOFacade.java" startLine="20" startPosition="0" endLine="24" endPosition="0" />
+    <scopeInfo nodeId="9081946191808734202" fileName="DescriptorIOFacade.java" startLine="24" startPosition="0" endLine="28" endPosition="0" />
+    <scopeInfo nodeId="557142600900560812" fileName="DescriptorIOFacade.java" startLine="41" startPosition="0" endLine="45" endPosition="0" />
+    <scopeInfo nodeId="5177508097213611956" fileName="DescriptorIOFacade.java" startLine="29" startPosition="79" endLine="39" endPosition="16" />
+    <scopeInfo nodeId="5177508097213611953" fileName="DescriptorIOFacade.java" startLine="28" startPosition="0" endLine="41" endPosition="0">
+      <varInfo nodeId="5177508097213611958" varName="path" />
+    </scopeInfo>
+    <unitInfo nodeId="557142600900286111" fileName="DescriptorIOFacade.java" startLine="9" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.project.io.DescriptorIOFacade" />
   </root>
   <root nodeId="557142600900286148">
     <nodeInfo nodeId="557142600900560301" fileName="DescriptorIO.java" startLine="8" startPosition="34" endLine="9" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="readFromFile#(Ljetbrains/mps/vfs/IFile;)null" />

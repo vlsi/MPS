@@ -22,9 +22,10 @@ public class DescriptorsIO_Test extends TestCase {
   @MPSLaunch
   public void test_solutionRead() throws Exception {
     IFile solFile = TestUtils.dataFile("solution.msd");
-    DescriptorIOProvider diof = DescriptorIOFacade.getInstance().fromFileType(solFile);
+    DescriptorIOProvider diof = DescriptorIOFacade.getInstance().standardProvider();
     Assert.assertNotNull(diof);
     DescriptorIO<SolutionDescriptor> sdio = diof.solutionDescriptorIO();
+    Assert.assertSame(sdio, DescriptorIOFacade.getInstance().fromFileType(solFile));
     SolutionDescriptor sd = sdio.readFromFile(solFile);
     Assert.assertEquals("cd64bfb0-4c10-11e1-b5a0-6cf049e62fe5", sd.getUUID());
     Assert.assertTrue(sd.getCompileInMPS());
@@ -37,13 +38,14 @@ public class DescriptorsIO_Test extends TestCase {
     final SolutionDescriptor sd = new SolutionDescriptor();
     sd.setUUID("ee551e28-4c19-11e1-b795-6cf049e62fe5");
     final IFile solFile = TestUtils.tmpFile("solution.msd");
-    final DescriptorIOProvider diof = DescriptorIOFacade.getInstance().fromFileType(solFile);
+    DescriptorIOProvider diof = DescriptorIOFacade.getInstance().standardProvider();
+    final DescriptorIO<SolutionDescriptor> sdio = diof.solutionDescriptorIO();
     ThreadUtils.runInUIThreadAndWait(new Runnable() {
       public void run() {
         ModelAccess.instance().runWriteAction(new Runnable() {
           public void run() {
             try {
-              diof.solutionDescriptorIO().writeToFile(sd, solFile);
+              sdio.writeToFile(sd, solFile);
             } catch (DescriptorIOException e) {
               throw new RuntimeException(e);
             }
@@ -57,9 +59,10 @@ public class DescriptorsIO_Test extends TestCase {
   @MPSLaunch
   public void test_languageRead() throws Exception {
     IFile langFile = TestUtils.dataFile("language.mpl");
-    DescriptorIOProvider diof = DescriptorIOFacade.getInstance().fromFileType(langFile);
+    DescriptorIOProvider diof = DescriptorIOFacade.getInstance().standardProvider();
     Assert.assertNotNull(diof);
     DescriptorIO<LanguageDescriptor> ldio = diof.languageDescriptorIO();
+    Assert.assertSame(ldio, DescriptorIOFacade.getInstance().fromFileType(langFile));
     LanguageDescriptor ld = ldio.readFromFile(langFile);
     Assert.assertEquals("8def2cb8-4c14-11e1-a9af-6cf049e62fe5", ld.getUUID());
     Assert.assertTrue(ld.getCompileInMPS());
@@ -75,7 +78,7 @@ public class DescriptorsIO_Test extends TestCase {
     ld.setUUID("defe1a08-4c21-11e1-b31b-6cf049e62fe5");
     ld.setNamespace("jetbrains.mps.project.iotests.testLanguage");
     final IFile langFile = TestUtils.tmpFile("language.mpl");
-    final DescriptorIOProvider diof = DescriptorIOFacade.getInstance().fromFileType(langFile);
+    final DescriptorIOProvider diof = DescriptorIOFacade.getInstance().standardProvider();
     ThreadUtils.runInUIThreadAndWait(new Runnable() {
       public void run() {
         ModelAccess.instance().runWriteAction(new Runnable() {
@@ -95,9 +98,10 @@ public class DescriptorsIO_Test extends TestCase {
   @MPSLaunch
   public void test_devkitRead() throws Exception {
     IFile dkFile = TestUtils.dataFile("devkit.devkit");
-    DescriptorIOProvider diof = DescriptorIOFacade.getInstance().fromFileType(dkFile);
+    DescriptorIOProvider diof = DescriptorIOFacade.getInstance().standardProvider();
     Assert.assertNotNull(diof);
     DescriptorIO<DevkitDescriptor> dkdio = diof.devkitDescriptorIO();
+    Assert.assertSame(dkdio, DescriptorIOFacade.getInstance().fromFileType(dkFile));
     DevkitDescriptor dkd = dkdio.readFromFile(dkFile);
     Assert.assertEquals("68036bba-4c17-11e1-9e4a-6cf049e62fe5", dkd.getUUID());
     Assert.assertSame(1, dkd.getExtendedDevkits().size());
@@ -110,7 +114,7 @@ public class DescriptorsIO_Test extends TestCase {
     dkd.setUUID("2adf1480-4c23-11e1-ab94-6cf049e62fe5");
     dkd.setNamespace("jetbrains.mps.project.iotests.testDevkit");
     final IFile dkFile = TestUtils.tmpFile("devkit.devkit");
-    final DescriptorIOProvider diof = DescriptorIOFacade.getInstance().fromFileType(dkFile);
+    final DescriptorIOProvider diof = DescriptorIOFacade.getInstance().standardProvider();
     ThreadUtils.runInUIThreadAndWait(new Runnable() {
       public void run() {
         ModelAccess.instance().runWriteAction(new Runnable() {

@@ -14,10 +14,10 @@ import jetbrains.mps.project.foreign.IdeaModuleConfiguration;
 import jetbrains.mps.project.io.DescriptorIO;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
 import jetbrains.mps.project.io.DescriptorIOFacade;
+import junit.framework.Assert;
 import java.io.IOException;
 import org.jdom.JDOMException;
 import jetbrains.mps.util.JDOMUtil;
-import junit.framework.Assert;
 import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 
@@ -51,7 +51,8 @@ public class FacetDescriptorsIO_Test extends TestCase {
   @MPSLaunch
   public void test_solutionDescriptorIO() throws Exception {
     IFile moduleFile = TestUtils.dataFile("module.iml");
-    DescriptorIO<SolutionDescriptor> io = DescriptorIOFacade.getInstance().idea().solutionDescriptorIO();
+    DescriptorIO<SolutionDescriptor> io = DescriptorIOFacade.getInstance().ideaProvider().solutionDescriptorIO();
+    Assert.assertSame(io, DescriptorIOFacade.getInstance().fromFileType(moduleFile));
     SolutionDescriptor sd = io.readFromFile(moduleFile);
     assertSolutionDescriptor(moduleFile, sd);
   }

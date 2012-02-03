@@ -83,11 +83,8 @@
                   <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="keqv.557142600900560812" resolveInfo="getInstance" />
                   <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="keqv.557142600900286111" resolveInfo="DescriptorIOFacade" />
                 </node>
-                <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="557142600900561078">
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="keqv.557142600900532761" resolveInfo="fromFileType" />
-                  <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="557142600900561079">
-                    <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="557142600900561064" resolveInfo="solFile" />
-                  </node>
+                <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="5177508097213613678">
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="keqv.9081946191808734194" resolveInfo="standardProvider" />
                 </node>
               </node>
             </node>
@@ -112,6 +109,23 @@
                 </node>
                 <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="557142600900561102">
                   <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="keqv.557142600900532754" resolveInfo="solutionDescriptorIO" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="statement" roleId="tpee.1068581517665" type="tpe3.AssertSame" typeId="tpe3.1171985735491" id="5177508097213614339">
+            <node role="expected" roleId="tpe3.8427750732757990724" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="5177508097213614342">
+              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="557142600900561097" resolveInfo="sdio" />
+            </node>
+            <node role="actual" roleId="tpe3.8427750732757990725" type="tpee.DotExpression" typeId="tpee.1197027756228" id="5177508097213614343">
+              <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="5177508097213614344">
+                <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="keqv.557142600900286111" resolveInfo="DescriptorIOFacade" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="keqv.557142600900560812" resolveInfo="getInstance" />
+              </node>
+              <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="5177508097213614345">
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="keqv.5177508097213611918" resolveInfo="fromFileType" />
+                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="5177508097213614346">
+                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="557142600900561064" resolveInfo="solFile" />
                 </node>
               </node>
             </node>
@@ -273,11 +287,27 @@
                   <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="keqv.557142600900286111" resolveInfo="DescriptorIOFacade" />
                   <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="keqv.557142600900560812" resolveInfo="getInstance" />
                 </node>
-                <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="557142600900659253">
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="keqv.557142600900532761" resolveInfo="fromFileType" />
-                  <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="557142600900659254">
-                    <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="557142600900659242" resolveInfo="solFile" />
-                  </node>
+                <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="5177508097213613681">
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="keqv.9081946191808734194" resolveInfo="standardProvider" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="5177508097213614356">
+            <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="5177508097213614357">
+              <property name="name" nameId="tpck.1169194664001" value="sdio" />
+              <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5177508097213614358">
+                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="keqv.557142600900286148" resolveInfo="DescriptorIO" />
+                <node role="parameter" roleId="tpee.1109201940907" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5177508097213614359">
+                  <link role="classifier" roleId="tpee.1107535924139" targetNodeId="kqhl.~SolutionDescriptor" resolveInfo="SolutionDescriptor" />
+                </node>
+              </node>
+              <node role="initializer" roleId="tpee.1068431790190" type="tpee.DotExpression" typeId="tpee.1197027756228" id="5177508097213614360">
+                <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="5177508097213614361">
+                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="557142600900659249" resolveInfo="diof" />
+                </node>
+                <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="5177508097213614362">
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="keqv.557142600900532754" resolveInfo="solutionDescriptorIO" />
                 </node>
               </node>
             </node>
@@ -295,13 +325,8 @@
                           <node role="body" roleId="tpee.1164879758292" type="tpee.StatementList" typeId="tpee.1068580123136" id="5177508097213592253">
                             <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="557142600900659255">
                               <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="557142600900659268">
-                                <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="557142600900659259">
-                                  <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="557142600900659256">
-                                    <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="557142600900659249" resolveInfo="diof" />
-                                  </node>
-                                  <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="557142600900659265">
-                                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="keqv.557142600900532754" resolveInfo="solutionDescriptorIO" />
-                                  </node>
+                                <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="5177508097213614363">
+                                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5177508097213614357" resolveInfo="sdio" />
                                 </node>
                                 <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="557142600900659297">
                                   <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="keqv.557142600900560307" resolveInfo="writeToFile" />
@@ -409,11 +434,8 @@
                   <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="keqv.557142600900560812" resolveInfo="getInstance" />
                   <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="keqv.557142600900286111" resolveInfo="DescriptorIOFacade" />
                 </node>
-                <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="557142600900634888">
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="keqv.557142600900532761" resolveInfo="fromFileType" />
-                  <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="557142600900634889">
-                    <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="557142600900634880" resolveInfo="langFile" />
-                  </node>
+                <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="5177508097213613685">
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="keqv.9081946191808734194" resolveInfo="standardProvider" />
                 </node>
               </node>
             </node>
@@ -438,6 +460,23 @@
                 </node>
                 <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="557142600900634898">
                   <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="keqv.557142600900559972" resolveInfo="languageDescriptorIO" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="statement" roleId="tpee.1068581517665" type="tpe3.AssertSame" typeId="tpe3.1171985735491" id="5177508097213614369">
+            <node role="expected" roleId="tpe3.8427750732757990724" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="5177508097213614375">
+              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="557142600900634893" resolveInfo="ldio" />
+            </node>
+            <node role="actual" roleId="tpe3.8427750732757990725" type="tpee.DotExpression" typeId="tpee.1197027756228" id="5177508097213614371">
+              <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="5177508097213614372">
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="keqv.557142600900560812" resolveInfo="getInstance" />
+                <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="keqv.557142600900286111" resolveInfo="DescriptorIOFacade" />
+              </node>
+              <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="5177508097213614373">
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="keqv.5177508097213611918" resolveInfo="fromFileType" />
+                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="5177508097213614377">
+                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="557142600900634880" resolveInfo="langFile" />
                 </node>
               </node>
             </node>
@@ -660,11 +699,8 @@
                   <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="keqv.557142600900560812" resolveInfo="getInstance" />
                   <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="keqv.557142600900286111" resolveInfo="DescriptorIOFacade" />
                 </node>
-                <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="557142600900698163">
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="keqv.557142600900532761" resolveInfo="fromFileType" />
-                  <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="557142600900698164">
-                    <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="557142600900698154" resolveInfo="langFile" />
-                  </node>
+                <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="5177508097213613688">
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="keqv.9081946191808734194" resolveInfo="standardProvider" />
                 </node>
               </node>
             </node>
@@ -813,11 +849,8 @@
                   <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="keqv.557142600900560812" resolveInfo="getInstance" />
                   <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="keqv.557142600900286111" resolveInfo="DescriptorIOFacade" />
                 </node>
-                <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="557142600900656349">
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="keqv.557142600900532761" resolveInfo="fromFileType" />
-                  <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="557142600900656350">
-                    <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="557142600900656340" resolveInfo="dkFile" />
-                  </node>
+                <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="5177508097213613692">
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="keqv.9081946191808734194" resolveInfo="standardProvider" />
                 </node>
               </node>
             </node>
@@ -842,6 +875,23 @@
                 </node>
                 <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="557142600900656359">
                   <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="keqv.557142600900559978" resolveInfo="devkitDescriptorIO" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="statement" roleId="tpee.1068581517665" type="tpe3.AssertSame" typeId="tpe3.1171985735491" id="5177508097213614379">
+            <node role="expected" roleId="tpe3.8427750732757990724" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="5177508097213614385">
+              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="557142600900656354" resolveInfo="dkdio" />
+            </node>
+            <node role="actual" roleId="tpe3.8427750732757990725" type="tpee.DotExpression" typeId="tpee.1197027756228" id="5177508097213614381">
+              <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="5177508097213614382">
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="keqv.557142600900560812" resolveInfo="getInstance" />
+                <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="keqv.557142600900286111" resolveInfo="DescriptorIOFacade" />
+              </node>
+              <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="5177508097213614383">
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="keqv.5177508097213611918" resolveInfo="fromFileType" />
+                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="5177508097213614388">
+                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="557142600900656340" resolveInfo="dkFile" />
                 </node>
               </node>
             </node>
@@ -1001,11 +1051,8 @@
                   <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="keqv.557142600900286111" resolveInfo="DescriptorIOFacade" />
                   <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="keqv.557142600900560812" resolveInfo="getInstance" />
                 </node>
-                <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="557142600900702374">
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="keqv.557142600900532761" resolveInfo="fromFileType" />
-                  <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="557142600900702375">
-                    <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="557142600900702365" resolveInfo="dkFile" />
-                  </node>
+                <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="5177508097213613695">
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="keqv.9081946191808734194" resolveInfo="standardProvider" />
                 </node>
               </node>
             </node>
@@ -1384,11 +1431,28 @@
                     <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="keqv.557142600900286111" resolveInfo="DescriptorIOFacade" />
                   </node>
                   <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="9081946191808734279">
-                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="keqv.9081946191808734202" resolveInfo="idea" />
+                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="keqv.9081946191808734202" resolveInfo="ideaProvider" />
                   </node>
                 </node>
                 <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="9081946191808734280">
                   <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="keqv.557142600900532754" resolveInfo="solutionDescriptorIO" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="statement" roleId="tpee.1068581517665" type="tpe3.AssertSame" typeId="tpe3.1171985735491" id="5177508097213614637">
+            <node role="expected" roleId="tpe3.8427750732757990724" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="5177508097213614643">
+              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="9081946191808734273" resolveInfo="io" />
+            </node>
+            <node role="actual" roleId="tpe3.8427750732757990725" type="tpee.DotExpression" typeId="tpee.1197027756228" id="5177508097213614639">
+              <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="5177508097213614640">
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="keqv.557142600900560812" resolveInfo="getInstance" />
+                <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="keqv.557142600900286111" resolveInfo="DescriptorIOFacade" />
+              </node>
+              <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="5177508097213614641">
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="keqv.5177508097213611918" resolveInfo="fromFileType" />
+                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="5177508097213614645">
+                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="9081946191808734266" resolveInfo="moduleFile" />
                 </node>
               </node>
             </node>
