@@ -21,6 +21,7 @@ import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.build.workflow.generator.util.SubTaskOrderHelper;
 import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.generator.template.MapSrcMacroPostProcContext;
 import jetbrains.mps.generator.template.MappingScriptContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.build.workflow.generator.util.CycleHelper;
@@ -209,6 +210,12 @@ public class QueriesGenerated {
         return SNodeOperations.cast(it, "jetbrains.mps.build.workflow.structure.BwfJavaModule");
       }
     });
+  }
+
+  public static void mapSrcMacro_post_mapper_6647099934207045025(final IOperationContext operationContext, final MapSrcMacroPostProcContext _context) {
+    if (ListSequence.fromList(SLinkOperations.getTargets(_context.getOutputNode(), "content", true)).isEmpty()) {
+      SPropertyOperations.set(_context.getOutputNode(), "shortEmptyNotation", "" + true);
+    }
   }
 
   public static void mappingScript_CodeBlock_4755209551904406821(final IOperationContext operationContext, final MappingScriptContext _context) {

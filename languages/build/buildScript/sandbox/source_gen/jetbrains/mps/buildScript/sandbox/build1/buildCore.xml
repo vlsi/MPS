@@ -2,19 +2,26 @@
   <property name="mps_home" location="./../../../.." />
   <property name="build_langs" location="${mps_home}/languages/build" />
   <property name="build.dir" location="build" />
+  
   <target name="java.compile.mps-core">
     <javac destdir="${build.dir}/tmp/java.out.mps-core">
       <src path="${mps_home}/core/source" />
       <classpath path="!TODO! java library classpath" />
     </javac>
   </target>
-  <target name="build" depends="check, assemble"></target>
+  
+  <target name="build" depends="check, assemble" />
+  
   <target name="clean">
     <delete dir="${build.dir}" />
   </target>
-  <target name="compileJava" depends="java.compile.mps-core"></target>
-  <target name="processResources"></target>
-  <target name="classes" depends="compileJava, processResources"></target>
+  
+  <target name="compileJava" depends="java.compile.mps-core" />
+  
+  <target name="processResources" />
+  
+  <target name="classes" depends="compileJava, processResources" />
+  
   <target name="assemble" depends="classes">
     <mkdir dir="${buildCore.deploy.dir}/default" />
     <mkdir dir="${buildCore.tmp}/1117643560963371560" />
@@ -37,6 +44,8 @@
       <fileset dir="${buildCore.tmp}/6627265764879718146" />
     </jar>
   </target>
-  <target name="test" depends="classes"></target>
-  <target name="check" depends="test"></target>
+  
+  <target name="test" depends="classes" />
+  
+  <target name="check" depends="test" />
 </project>
