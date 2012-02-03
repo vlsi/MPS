@@ -13,6 +13,7 @@
       <modulePath path="${project}/buildScript/buildScript.mpl" />
       <modulePath path="${project}/buildScript/sandbox/sandbox.msd" />
       <modulePath path="${project}/deploySolution/deploy.msd" />
+      <modulePath path="${project}/solutions/jetbrains.mps.buildScript.pluginSolution/pluginSolution.msd" />
       <modulePath path="${project}/solutions/jetbrains.mps.buildScript.tests/tests.msd" folder="" />
       <modulePath path="${project}/workflow/workflow.mpl" folder="" />
     </projectModules>
