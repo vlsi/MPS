@@ -93,6 +93,14 @@ public class QueriesGenerated {
     return BuildSource_JavaModule_Behavior.call_getOutputFolder_1117643560963346267(_context.getNode());
   }
 
+  public static Object propertyMacro_GetPropertyValue_6647099934207255538(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return "java.library." + SPropertyOperations.getString(_context.getNode(), "name");
+  }
+
+  public static Object propertyMacro_GetPropertyValue_6647099934207253950(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return BuildSourcePath_Behavior.call_getRelativePath_5481553824944787371(SLinkOperations.getTarget(_context.getNode(), "path", true));
+  }
+
   public static Object propertyMacro_GetPropertyValue_3595702787188242919(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), "name");
   }
@@ -211,6 +219,10 @@ public class QueriesGenerated {
         return SLinkOperations.getTargets(it, "folders", true);
       }
     });
+  }
+
+  public static Iterable sourceNodesQuery_6647099934207253927(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+    return SLinkOperations.getTargets(_context.getNode(), "elements", true);
   }
 
   public static Iterable sourceNodesQuery_1117643560963307378(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {

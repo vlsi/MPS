@@ -3,6 +3,10 @@
   <property name="build_langs" location="${mps_home}/languages/build" />
   <property name="build.dir" location="build" />
   
+  <path id="path.java.library.apache-collections">
+    <pathelement location="${mps_home}/lib/commons-collections.jar" />
+  </path>
+  
   <target name="java.compile.mps-core">
     <javac destdir="${build.dir}/tmp/java.out.mps-core">
       <src path="${mps_home}/core/source" />
