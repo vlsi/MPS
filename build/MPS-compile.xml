@@ -721,7 +721,6 @@
     <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
-    <path path="${base_dir}/core/plugin-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
     <path path="${base_dir}/core/runtime/classes" />
     <path path="${base_dir}/core/typesystemEngine/classes" />
@@ -947,7 +946,6 @@
     <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
-    <path path="${base_dir}/core/plugin-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
     <path path="${base_dir}/core/runtime/classes" />
     <path path="${base_dir}/core/typesystemEngine/classes" />
@@ -1112,7 +1110,6 @@
     <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
-    <path path="${base_dir}/core/plugin-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
     <path path="${base_dir}/core/runtime/classes" />
     <path path="${base_dir}/core/typesystemEngine/classes" />
@@ -1278,7 +1275,6 @@
     <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
-    <path path="${base_dir}/core/plugin-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
     <path path="${base_dir}/core/runtime/classes" />
     <path path="${base_dir}/core/typesystemEngine/classes" />
@@ -1444,7 +1440,6 @@
     <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
-    <path path="${base_dir}/core/plugin-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
     <path path="${base_dir}/core/runtime/classes" />
     <path path="${base_dir}/core/typesystemEngine/classes" />
@@ -1610,7 +1605,6 @@
     <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
-    <path path="${base_dir}/core/plugin-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
     <path path="${base_dir}/core/runtime/classes" />
     <path path="${base_dir}/core/typesystemEngine/classes" />
@@ -1776,7 +1770,6 @@
     <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
-    <path path="${base_dir}/core/plugin-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
     <path path="${base_dir}/core/runtime/classes" />
     <path path="${base_dir}/core/typesystemEngine/classes" />
@@ -1943,7 +1936,6 @@
     <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
-    <path path="${base_dir}/core/plugin-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
     <path path="${base_dir}/core/runtime/classes" />
     <path path="${base_dir}/core/typesystemEngine/classes" />
@@ -2122,7 +2114,6 @@
     <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
-    <path path="${base_dir}/core/plugin-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
     <path path="${base_dir}/core/runtime/classes" />
     <path path="${base_dir}/core/typesystemEngine/classes" />
@@ -2288,7 +2279,6 @@
     <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
-    <path path="${base_dir}/core/plugin-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
     <path path="${base_dir}/core/runtime/classes" />
     <path path="${base_dir}/core/typesystemEngine/classes" />
@@ -2335,7 +2325,6 @@
     <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
-    <path path="${base_dir}/core/plugin-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
     <path path="${base_dir}/core/runtime/classes" />
     <path path="${base_dir}/core/typesystemEngine/classes" />
@@ -2500,7 +2489,6 @@
     <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
-    <path path="${base_dir}/core/plugin-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
     <path path="${base_dir}/core/runtime/classes" />
     <path path="${base_dir}/core/typesystemEngine/classes" />
@@ -2666,7 +2654,6 @@
     <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
-    <path path="${base_dir}/core/plugin-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
     <path path="${base_dir}/core/runtime/classes" />
     <path path="${base_dir}/core/typesystemEngine/classes" />
@@ -2831,7 +2818,6 @@
     <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
-    <path path="${base_dir}/core/plugin-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
     <path path="${base_dir}/core/runtime/classes" />
     <path path="${base_dir}/core/typesystemEngine/classes" />
@@ -3050,7 +3036,6 @@
     <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
-    <path path="${base_dir}/core/plugin-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
     <path path="${base_dir}/core/runtime/classes" />
     <path path="${base_dir}/core/typesystemEngine/classes" />
@@ -3223,7 +3208,6 @@
     <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
-    <path path="${base_dir}/core/plugin-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
     <path path="${base_dir}/core/runtime/classes" />
     <path path="${base_dir}/core/typesystemEngine/classes" />
@@ -3389,7 +3373,6 @@
     <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
-    <path path="${base_dir}/core/plugin-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
     <path path="${base_dir}/core/runtime/classes" />
     <path path="${base_dir}/core/typesystemEngine/classes" />
@@ -3584,7 +3567,6 @@
     <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
-    <path path="${base_dir}/core/plugin-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
     <path path="${base_dir}/core/runtime/classes" />
     <path path="${base_dir}/core/typesystemEngine/classes" />
@@ -3755,7 +3737,6 @@
     <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
-    <path path="${base_dir}/core/plugin-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
     <path path="${base_dir}/core/runtime/classes" />
     <path path="${base_dir}/core/typesystemEngine/classes" />
@@ -3921,7 +3902,6 @@
     <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
-    <path path="${base_dir}/core/plugin-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
     <path path="${base_dir}/core/runtime/classes" />
     <path path="${base_dir}/core/typesystemEngine/classes" />
@@ -4089,7 +4069,6 @@
     <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
-    <path path="${base_dir}/core/plugin-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
     <path path="${base_dir}/core/runtime/classes" />
     <path path="${base_dir}/core/typesystemEngine/classes" />
@@ -4259,7 +4238,6 @@
     <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
-    <path path="${base_dir}/core/plugin-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
     <path path="${base_dir}/core/runtime/classes" />
     <path path="${base_dir}/core/typesystemEngine/classes" />
@@ -4425,7 +4403,6 @@
     <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
-    <path path="${base_dir}/core/plugin-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
     <path path="${base_dir}/core/runtime/classes" />
     <path path="${base_dir}/core/typesystemEngine/classes" />
@@ -4590,7 +4567,6 @@
     <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
-    <path path="${base_dir}/core/plugin-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
     <path path="${base_dir}/core/runtime/classes" />
     <path path="${base_dir}/core/typesystemEngine/classes" />
@@ -4755,7 +4731,6 @@
     <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
-    <path path="${base_dir}/core/plugin-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
     <path path="${base_dir}/core/runtime/classes" />
     <path path="${base_dir}/core/typesystemEngine/classes" />
@@ -4921,7 +4896,6 @@
     <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
-    <path path="${base_dir}/core/plugin-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
     <path path="${base_dir}/core/runtime/classes" />
     <path path="${base_dir}/core/typesystemEngine/classes" />
@@ -5087,7 +5061,6 @@
     <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
-    <path path="${base_dir}/core/plugin-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
     <path path="${base_dir}/core/runtime/classes" />
     <path path="${base_dir}/core/typesystemEngine/classes" />
@@ -5254,7 +5227,6 @@
     <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
-    <path path="${base_dir}/core/plugin-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
     <path path="${base_dir}/core/runtime/classes" />
     <path path="${base_dir}/core/typesystemEngine/classes" />
@@ -5419,7 +5391,6 @@
     <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
-    <path path="${base_dir}/core/plugin-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
     <path path="${base_dir}/core/runtime/classes" />
     <path path="${base_dir}/core/typesystemEngine/classes" />
@@ -5585,7 +5556,6 @@
     <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
-    <path path="${base_dir}/core/plugin-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
     <path path="${base_dir}/core/runtime/classes" />
     <path path="${base_dir}/core/typesystemEngine/classes" />
@@ -5751,7 +5721,6 @@
     <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
-    <path path="${base_dir}/core/plugin-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
     <path path="${base_dir}/core/runtime/classes" />
     <path path="${base_dir}/core/typesystemEngine/classes" />
@@ -5917,7 +5886,6 @@
     <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
-    <path path="${base_dir}/core/plugin-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
     <path path="${base_dir}/core/runtime/classes" />
     <path path="${base_dir}/core/typesystemEngine/classes" />
@@ -6082,7 +6050,6 @@
     <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
-    <path path="${base_dir}/core/plugin-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
     <path path="${base_dir}/core/runtime/classes" />
     <path path="${base_dir}/core/typesystemEngine/classes" />
@@ -6247,7 +6214,6 @@
     <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
-    <path path="${base_dir}/core/plugin-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
     <path path="${base_dir}/core/runtime/classes" />
     <path path="${base_dir}/core/typesystemEngine/classes" />
@@ -6416,7 +6382,6 @@
     <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
-    <path path="${base_dir}/core/plugin-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
     <path path="${base_dir}/core/runtime/classes" />
     <path path="${base_dir}/core/typesystemEngine/classes" />
@@ -6583,7 +6548,6 @@
     <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
-    <path path="${base_dir}/core/plugin-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
     <path path="${base_dir}/core/runtime/classes" />
     <path path="${base_dir}/core/typesystemEngine/classes" />
@@ -6754,7 +6718,6 @@
     <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
-    <path path="${base_dir}/core/plugin-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
     <path path="${base_dir}/core/runtime/classes" />
     <path path="${base_dir}/core/typesystemEngine/classes" />
@@ -6920,7 +6883,6 @@
     <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
-    <path path="${base_dir}/core/plugin-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
     <path path="${base_dir}/core/runtime/classes" />
     <path path="${base_dir}/core/typesystemEngine/classes" />
@@ -7085,7 +7047,6 @@
     <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
-    <path path="${base_dir}/core/plugin-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
     <path path="${base_dir}/core/runtime/classes" />
     <path path="${base_dir}/core/typesystemEngine/classes" />
@@ -7257,7 +7218,6 @@
     <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
-    <path path="${base_dir}/core/plugin-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
     <path path="${base_dir}/core/runtime/classes" />
     <path path="${base_dir}/core/typesystemEngine/classes" />
@@ -7422,7 +7382,6 @@
     <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
-    <path path="${base_dir}/core/plugin-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
     <path path="${base_dir}/core/runtime/classes" />
     <path path="${base_dir}/core/typesystemEngine/classes" />
@@ -7588,7 +7547,6 @@
     <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
-    <path path="${base_dir}/core/plugin-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
     <path path="${base_dir}/core/runtime/classes" />
     <path path="${base_dir}/core/typesystemEngine/classes" />
@@ -7756,7 +7714,6 @@
     <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
-    <path path="${base_dir}/core/plugin-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
     <path path="${base_dir}/core/runtime/classes" />
     <path path="${base_dir}/core/typesystemEngine/classes" />
@@ -7938,7 +7895,6 @@
     <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
-    <path path="${base_dir}/core/plugin-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
     <path path="${base_dir}/core/runtime/classes" />
     <path path="${base_dir}/core/typesystemEngine/classes" />
@@ -8103,7 +8059,6 @@
     <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
-    <path path="${base_dir}/core/plugin-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
     <path path="${base_dir}/core/runtime/classes" />
     <path path="${base_dir}/core/typesystemEngine/classes" />
@@ -8269,7 +8224,6 @@
     <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
-    <path path="${base_dir}/core/plugin-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
     <path path="${base_dir}/core/runtime/classes" />
     <path path="${base_dir}/core/typesystemEngine/classes" />
@@ -8435,7 +8389,6 @@
     <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
-    <path path="${base_dir}/core/plugin-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
     <path path="${base_dir}/core/runtime/classes" />
     <path path="${base_dir}/core/typesystemEngine/classes" />
@@ -8601,7 +8554,6 @@
     <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
-    <path path="${base_dir}/core/plugin-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
     <path path="${base_dir}/core/runtime/classes" />
     <path path="${base_dir}/core/typesystemEngine/classes" />
@@ -8767,7 +8719,6 @@
     <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
-    <path path="${base_dir}/core/plugin-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
     <path path="${base_dir}/core/runtime/classes" />
     <path path="${base_dir}/core/typesystemEngine/classes" />
@@ -8932,7 +8883,6 @@
     <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
-    <path path="${base_dir}/core/plugin-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
     <path path="${base_dir}/core/runtime/classes" />
     <path path="${base_dir}/core/typesystemEngine/classes" />
@@ -9098,7 +9048,6 @@
     <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
-    <path path="${base_dir}/core/plugin-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
     <path path="${base_dir}/core/runtime/classes" />
     <path path="${base_dir}/core/typesystemEngine/classes" />
@@ -9264,7 +9213,6 @@
     <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
-    <path path="${base_dir}/core/plugin-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
     <path path="${base_dir}/core/runtime/classes" />
     <path path="${base_dir}/core/typesystemEngine/classes" />
@@ -9429,7 +9377,6 @@
     <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
-    <path path="${base_dir}/core/plugin-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
     <path path="${base_dir}/core/runtime/classes" />
     <path path="${base_dir}/core/typesystemEngine/classes" />
@@ -9595,7 +9542,6 @@
     <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
-    <path path="${base_dir}/core/plugin-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
     <path path="${base_dir}/core/runtime/classes" />
     <path path="${base_dir}/core/typesystemEngine/classes" />
@@ -9766,7 +9712,6 @@
     <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
-    <path path="${base_dir}/core/plugin-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
     <path path="${base_dir}/core/runtime/classes" />
     <path path="${base_dir}/core/typesystemEngine/classes" />
@@ -9931,7 +9876,6 @@
     <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
-    <path path="${base_dir}/core/plugin-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
     <path path="${base_dir}/core/runtime/classes" />
     <path path="${base_dir}/core/typesystemEngine/classes" />
@@ -10097,7 +10041,6 @@
     <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
-    <path path="${base_dir}/core/plugin-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
     <path path="${base_dir}/core/runtime/classes" />
     <path path="${base_dir}/core/typesystemEngine/classes" />
@@ -10262,7 +10205,6 @@
     <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
-    <path path="${base_dir}/core/plugin-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
     <path path="${base_dir}/core/runtime/classes" />
     <path path="${base_dir}/core/typesystemEngine/classes" />
@@ -10309,7 +10251,6 @@
     <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
-    <path path="${base_dir}/core/plugin-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
     <path path="${base_dir}/core/runtime/classes" />
     <path path="${base_dir}/core/typesystemEngine/classes" />
@@ -10475,7 +10416,6 @@
     <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
-    <path path="${base_dir}/core/plugin-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
     <path path="${base_dir}/core/runtime/classes" />
     <path path="${base_dir}/core/typesystemEngine/classes" />
@@ -10642,7 +10582,6 @@
     <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
-    <path path="${base_dir}/core/plugin-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
     <path path="${base_dir}/core/runtime/classes" />
     <path path="${base_dir}/core/typesystemEngine/classes" />
@@ -10810,7 +10749,6 @@
     <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
-    <path path="${base_dir}/core/plugin-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
     <path path="${base_dir}/core/runtime/classes" />
     <path path="${base_dir}/core/typesystemEngine/classes" />
@@ -10980,7 +10918,6 @@
     <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
-    <path path="${base_dir}/core/plugin-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
     <path path="${base_dir}/core/runtime/classes" />
     <path path="${base_dir}/core/typesystemEngine/classes" />
@@ -11150,7 +11087,6 @@
     <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
-    <path path="${base_dir}/core/plugin-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
     <path path="${base_dir}/core/runtime/classes" />
     <path path="${base_dir}/core/typesystemEngine/classes" />
@@ -11319,7 +11255,6 @@
     <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
-    <path path="${base_dir}/core/plugin-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
     <path path="${base_dir}/core/runtime/classes" />
     <path path="${base_dir}/core/typesystemEngine/classes" />
@@ -11485,7 +11420,6 @@
     <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
-    <path path="${base_dir}/core/plugin-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
     <path path="${base_dir}/core/runtime/classes" />
     <path path="${base_dir}/core/typesystemEngine/classes" />
@@ -11652,7 +11586,6 @@
     <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
-    <path path="${base_dir}/core/plugin-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
     <path path="${base_dir}/core/runtime/classes" />
     <path path="${base_dir}/core/typesystemEngine/classes" />
@@ -11818,7 +11751,6 @@
     <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
-    <path path="${base_dir}/core/plugin-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
     <path path="${base_dir}/core/runtime/classes" />
     <path path="${base_dir}/core/typesystemEngine/classes" />
@@ -11989,7 +11921,6 @@
     <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
-    <path path="${base_dir}/core/plugin-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
     <path path="${base_dir}/core/runtime/classes" />
     <path path="${base_dir}/core/typesystemEngine/classes" />
@@ -12168,7 +12099,6 @@
     <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
-    <path path="${base_dir}/core/plugin-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
     <path path="${base_dir}/core/runtime/classes" />
     <path path="${base_dir}/core/typesystemEngine/classes" />
@@ -12342,7 +12272,6 @@
     <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
-    <path path="${base_dir}/core/plugin-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
     <path path="${base_dir}/core/runtime/classes" />
     <path path="${base_dir}/core/typesystemEngine/classes" />
@@ -12521,7 +12450,6 @@
     <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
-    <path path="${base_dir}/core/plugin-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
     <path path="${base_dir}/core/runtime/classes" />
     <path path="${base_dir}/core/typesystemEngine/classes" />
@@ -12686,7 +12614,6 @@
     <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
-    <path path="${base_dir}/core/plugin-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
     <path path="${base_dir}/core/runtime/classes" />
     <path path="${base_dir}/core/typesystemEngine/classes" />
@@ -12853,7 +12780,6 @@
     <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
-    <path path="${base_dir}/core/plugin-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
     <path path="${base_dir}/core/runtime/classes" />
     <path path="${base_dir}/core/typesystemEngine/classes" />
@@ -13027,7 +12953,6 @@
     <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
-    <path path="${base_dir}/core/plugin-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
     <path path="${base_dir}/core/runtime/classes" />
     <path path="${base_dir}/core/typesystemEngine/classes" />
@@ -13197,7 +13122,6 @@
     <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
-    <path path="${base_dir}/core/plugin-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
     <path path="${base_dir}/core/runtime/classes" />
     <path path="${base_dir}/core/typesystemEngine/classes" />
@@ -13363,7 +13287,6 @@
     <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
-    <path path="${base_dir}/core/plugin-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
     <path path="${base_dir}/core/runtime/classes" />
     <path path="${base_dir}/core/typesystemEngine/classes" />
@@ -13530,7 +13453,6 @@
     <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
-    <path path="${base_dir}/core/plugin-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
     <path path="${base_dir}/core/runtime/classes" />
     <path path="${base_dir}/core/typesystemEngine/classes" />
@@ -13716,7 +13638,6 @@
     <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
-    <path path="${base_dir}/core/plugin-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
     <path path="${base_dir}/core/runtime/classes" />
     <path path="${base_dir}/core/typesystemEngine/classes" />
@@ -13889,7 +13810,6 @@
     <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
-    <path path="${base_dir}/core/plugin-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
     <path path="${base_dir}/core/runtime/classes" />
     <path path="${base_dir}/core/typesystemEngine/classes" />
@@ -14055,7 +13975,6 @@
     <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
-    <path path="${base_dir}/core/plugin-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
     <path path="${base_dir}/core/runtime/classes" />
     <path path="${base_dir}/core/typesystemEngine/classes" />
@@ -14236,7 +14155,7 @@
     </javac>
     <delete dir="${classes.dump}" />
   </target>
-  <target name="compile.cycle.jetbrains.mps.baseLanguage_tjc" depends="compile.cycle.jetbrains.mps.lang.traceable.pluginSolution_tjc">
+  <target name="compile.cycle.jetbrains.mps.baseLanguage_tjc" depends="compile.cycle.jetbrains.mps.make.facet.pluginSolution_tjc">
     <property name="classes.dump" value="${jetbrains.mps.baseLanguage.classes}.tmp" />
     <fail unless="base_dir" message="Property base_dir unspecified." />
     <mkdir dir="${base_dir}/languages/baseLanguage/baseLanguage/source_gen" />
@@ -16327,7 +16246,7 @@
     </javac>
     <delete dir="${classes.dump}" />
   </target>
-  <target name="compile.cycle.jetbrains.mps.lang.smodel.pluginSolution_tjc" depends="compile.cycle.jetbrains.mps.make.facet.pluginSolution_tjc">
+  <target name="compile.cycle.jetbrains.mps.lang.smodel.pluginSolution_tjc" depends="compile.cycle.jetbrains.mps.baseLanguage.regexp.runtime_tjc">
     <property name="classes.dump" value="${jetbrains.mps.lang.smodel.pluginSolution.classes}.tmp" />
     <fail unless="base_dir" message="Property base_dir unspecified." />
     <mkdir dir="${base_dir}/languages/languageDesign/smodel/solutions/pluginSolution/source_gen" />
@@ -16415,7 +16334,7 @@
     </javac>
     <delete dir="${classes.dump}" />
   </target>
-  <target name="compile.cycle.jetbrains.mps.make.facet.pluginSolution_tjc" depends="compile.cycle.jetbrains.mps.baseLanguage.regexp.runtime_tjc">
+  <target name="compile.cycle.jetbrains.mps.make.facet.pluginSolution_tjc" depends="compile.cycle.jetbrains.mps.lang.traceable.pluginSolution_tjc">
     <property name="classes.dump" value="${jetbrains.mps.make.facet.pluginSolution.classes}.tmp" />
     <fail unless="base_dir" message="Property base_dir unspecified." />
     <mkdir dir="${base_dir}/languages/languageDesign/make/languages/facet/solutions/pluginSolution/source_gen" />

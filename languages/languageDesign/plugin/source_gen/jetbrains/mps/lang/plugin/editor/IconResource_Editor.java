@@ -25,7 +25,7 @@ import jetbrains.mps.smodel.IScope;
 import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.lang.plugin.behavior.IconResource_Behavior;
 import javax.swing.JComponent;
-import jetbrains.mps.ide.EditorUtil;
+import jetbrains.mps.ide.editor.util.EditorUtil;
 
 public class IconResource_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
