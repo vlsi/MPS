@@ -16,6 +16,13 @@ public class XmlSS_StyleSheet {
     return style;
   }
 
+  public static Style getXmlExtensionName(final EditorCell cell) {
+    Style style = new Style(cell);
+    style.set(StyleAttributes.TEXT_COLOR, new Color(16448));
+    style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
+    return style;
+  }
+
   public static Style getXmlTagPunctuation(final EditorCell cell) {
     Style style = new Style(cell);
     style.set(StyleAttributes.TEXT_COLOR, new Color(3158064));

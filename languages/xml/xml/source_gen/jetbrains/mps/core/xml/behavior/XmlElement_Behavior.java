@@ -27,20 +27,4 @@ public class XmlElement_Behavior {
     }
     return multiline;
   }
-
-  public static boolean virtual_isLastPositionAllowed_6999033275467334895(SNode thisNode) {
-    return true;
-  }
-
-  public static boolean virtual_isFirstPositionAllowed_6999033275467334890(SNode thisNode) {
-    return true;
-  }
-
-  public static boolean virtual_hasNewLineAfter_6999033275467469870(SNode thisNode) {
-    return true;
-  }
-
-  public static boolean virtual_onNewLine_6999033275467469862(SNode thisNode) {
-    return true;
-  }
 }

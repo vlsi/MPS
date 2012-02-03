@@ -11,6 +11,7 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.generator.template.PropertyMacroContext;
+import jetbrains.mps.build.workflow.behavior.BwfPathDeclaration_Behavior;
 import jetbrains.mps.build.workflow.behavior.BwfJavaModule_Behavior;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.generator.template.IfMacroContext;
@@ -73,6 +74,14 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_6896005762093594580(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), "defaultValue");
+  }
+
+  public static Object propertyMacro_GetPropertyValue_6647099934207210759(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return BwfPathDeclaration_Behavior.call_getPathId_6647099934207210775(_context.getNode());
+  }
+
+  public static Object propertyMacro_GetPropertyValue_6647099934207210826(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return BwfPathDeclaration_Behavior.call_getPathId_6647099934207210775(SLinkOperations.getTarget(_context.getNode(), "target", false));
   }
 
   public static Object propertyMacro_GetPropertyValue_6896005762093597646(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -160,10 +169,22 @@ public class QueriesGenerated {
     return SLinkOperations.getTargets(_context.getNode(), "statements", true);
   }
 
+  public static Iterable sourceNodesQuery_6647099934207210805(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+    return SLinkOperations.getTargets(_context.getNode(), "content", true);
+  }
+
   public static Iterable sourceNodesQuery_7385586609667649350(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "parts", true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return !(SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.workflow.structure.BwfTask"));
+        return !(SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.workflow.structure.BwfTask")) && !(SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.workflow.structure.BwfPathDeclaration"));
+      }
+    });
+  }
+
+  public static Iterable sourceNodesQuery_6647099934207216814(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+    return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "parts", true)).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.workflow.structure.BwfPathDeclaration");
       }
     });
   }

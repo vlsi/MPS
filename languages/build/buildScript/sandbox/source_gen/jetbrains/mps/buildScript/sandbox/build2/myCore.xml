@@ -5,6 +5,19 @@
   <property name="ccc" location="./cccc" />
   <property name="build.dir" location="build" />
   
+  <path id="path.path1">
+    <!--start path1-->
+    <fileset file="source/file.txt" />
+    <path refid="path.path2" />
+    <!--end-->
+  </path>
+  
+  <path id="path.path2">
+    <fileset dir="source_gen">
+      <include name="**/*.java" />
+    </fileset>
+  </path>
+  
   <target name="java.compile.java.modules.cycle.1">
     <javac destdir="build/temp/temp/java.modules.cycle.1">
       <src path="module1/source" />
@@ -73,23 +86,6 @@
     </javac>
   </target>
   
-  <target name="buildDependencies">
-    <mkdir asd="aaaa" />
-    <javac asd="asd" ssdf="asd">
-      asdassda
-      asdasdasdas
-      asdasd
-      <aa>asdas</aa>
-    </javac>
-    <copy asda="asda" />
-  </target>
-  
-  <target name="build" depends="buildDependencies">
-    <aaa12 />
-    <first></first>
-    <second></second>
-  </target>
-  
   <target name="compileJava" depends="java.compile.java.modules.cycle.1, java.compile.module1, java.compile.module2, java.compile.java.modules.cycle.2, java.compile.module3, java.compile.module4, java.compile.module5" />
   
   <target name="processResources" />
@@ -102,7 +98,16 @@
   
   <target name="check" depends="test" />
   
-  <target name="build" depends="check, assemble" />
+  <target name="build" depends="check, assemble">
+    <mkdir asd="aaaa" />
+    <javac asd="asd" ssdf="asd">
+      asdassda
+      asdasdasdas
+      asdasd
+      <aa>asdas</aa>
+    </javac>
+    <copy asda="asda" />
+  </target>
   
   <target name="clean">
     <delete dir="${build.dir}" />

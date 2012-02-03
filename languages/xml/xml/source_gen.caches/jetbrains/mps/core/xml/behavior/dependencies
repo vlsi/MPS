@@ -133,8 +133,6 @@
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.core.xml.behavior.XmlBaseElement_BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.core.xml.behavior.XmlElement_Behavior" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.core.xml.behavior.XmlEntityRefValue_BehaviorDescriptor" file="XmlEntityRefValue_BehaviorDescriptor.java">

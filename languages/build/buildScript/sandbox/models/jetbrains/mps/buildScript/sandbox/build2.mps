@@ -34,6 +34,54 @@
       <property name="defaultValue" nameId="8xvf.6896005762093571402" value="./cccc" />
       <property name="isLocation" nameId="8xvf.6896005762093571407" value="true" />
     </node>
+    <node role="parts" roleId="8xvf.2769948622284574304" type="8xvf.BwfPathDeclaration" typeId="8xvf.6647099934207069200" id="6647099934207110502">
+      <property name="name" nameId="tpck.1169194664001" value="path1" />
+      <node role="content" roleId="8xvf.6647099934207071047" type="iuxj.XmlComment" typeId="iuxj.6666499814681299064" id="6647099934207147209">
+        <node role="lines" roleId="iuxj.1622293396949036151" type="iuxj.XmlCommentLine" typeId="iuxj.1622293396949036126" id="6647099934207214550">
+          <property name="text" nameId="iuxj.1622293396949036127" value="start path1" />
+        </node>
+      </node>
+      <node role="content" roleId="8xvf.6647099934207071047" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="6647099934207147214">
+        <property name="tagName" nameId="iuxj.6666499814681415862" value="fileset" />
+        <property name="shortEmptyNotation" nameId="iuxj.6999033275467544021" value="true" />
+        <node role="attributes" roleId="iuxj.6666499814681415861" type="iuxj.XmlAttribute" typeId="iuxj.6666499814681447923" id="6647099934207214547">
+          <property name="attrName" nameId="iuxj.6666499814681447926" value="file" />
+          <node role="value" roleId="iuxj.6666499814681541918" type="iuxj.XmlTextValue" typeId="iuxj.6666499814681541919" id="6647099934207214549">
+            <property name="text" nameId="iuxj.6666499814681541920" value="source/file.txt" />
+          </node>
+        </node>
+      </node>
+      <node role="content" roleId="8xvf.6647099934207071047" type="8xvf.BwfPathReference" typeId="8xvf.6647099934207069215" id="6647099934207210418">
+        <link role="target" roleId="8xvf.6647099934207069216" targetNodeId="6647099934207210420" resolveInfo="path2" />
+      </node>
+      <node role="content" roleId="8xvf.6647099934207071047" type="iuxj.XmlComment" typeId="iuxj.6666499814681299064" id="6647099934207210422">
+        <node role="lines" roleId="iuxj.1622293396949036151" type="iuxj.XmlCommentLine" typeId="iuxj.1622293396949036126" id="6647099934207210423">
+          <property name="text" nameId="iuxj.1622293396949036127" value="end" />
+        </node>
+      </node>
+    </node>
+    <node role="parts" roleId="8xvf.2769948622284574304" type="8xvf.BwfPathDeclaration" typeId="8xvf.6647099934207069200" id="6647099934207210420">
+      <property name="name" nameId="tpck.1169194664001" value="path2" />
+      <node role="content" roleId="8xvf.6647099934207071047" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="6647099934207214551">
+        <property name="tagName" nameId="iuxj.6666499814681415862" value="fileset" />
+        <node role="attributes" roleId="iuxj.6666499814681415861" type="iuxj.XmlAttribute" typeId="iuxj.6666499814681447923" id="6647099934207214552">
+          <property name="attrName" nameId="iuxj.6666499814681447926" value="dir" />
+          <node role="value" roleId="iuxj.6666499814681541918" type="iuxj.XmlTextValue" typeId="iuxj.6666499814681541919" id="6647099934207214553">
+            <property name="text" nameId="iuxj.6666499814681541920" value="source_gen" />
+          </node>
+        </node>
+        <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="6647099934207214554">
+          <property name="tagName" nameId="iuxj.6666499814681415862" value="include" />
+          <property name="shortEmptyNotation" nameId="iuxj.6999033275467544021" value="true" />
+          <node role="attributes" roleId="iuxj.6666499814681415861" type="iuxj.XmlAttribute" typeId="iuxj.6666499814681447923" id="6647099934207214555">
+            <property name="attrName" nameId="iuxj.6666499814681447926" value="name" />
+            <node role="value" roleId="iuxj.6666499814681541918" type="iuxj.XmlTextValue" typeId="iuxj.6666499814681541919" id="6647099934207214556">
+              <property name="text" nameId="iuxj.6666499814681541920" value="**/*.java" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
     <node role="parts" roleId="8xvf.2769948622284574304" type="8xvf.BwfJavaDescriptor" typeId="8xvf.7306485738221315929" id="7306485738221506254" />
     <node role="parts" roleId="8xvf.2769948622284574304" type="8xvf.BwfJavaModule" typeId="8xvf.4755209551904389307" id="4755209551904397940">
       <property name="name" nameId="tpck.1169194664001" value="module1" />
@@ -115,9 +163,9 @@
         <property name="path" nameId="8xvf.4755209551904389309" value="module5/source" />
       </node>
     </node>
-    <node role="parts" roleId="8xvf.2769948622284574304" type="8xvf.BwfTask" typeId="8xvf.2769948622284546675" id="2769948622284624395">
-      <property name="name" nameId="tpck.1169194664001" value="buildDependencies" />
-      <node role="subTasks" roleId="8xvf.2769948622284546679" type="8xvf.BwfSubTask" typeId="8xvf.2769948622284546677" id="2769948622284761816">
+    <node role="parts" roleId="8xvf.2769948622284574304" type="8xvf.BwfTaskPart" typeId="8xvf.3961775458390032824" id="6647099934207237823">
+      <link role="task" roleId="8xvf.3961775458390032825" targetNodeId="tnlc.7306485738221408317" resolveInfo="build" />
+      <node role="subTasks" roleId="8xvf.3961775458390032826" type="8xvf.BwfSubTask" typeId="8xvf.2769948622284546677" id="2769948622284761816">
         <property name="name" nameId="tpck.1169194664001" value="copyFiles" />
         <node role="statements" roleId="8xvf.2769948622284606050" type="8xvf.BwfAntStatement" typeId="8xvf.2769948622284768359" id="2769948622284783086">
           <node role="element" roleId="8xvf.2769948622284768360" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="2769948622284783088">
@@ -135,7 +183,7 @@
           <link role="target" roleId="8xvf.2769948622284605881" targetNodeId="2769948622284761814" resolveInfo="compileJava" />
         </node>
       </node>
-      <node role="subTasks" roleId="8xvf.2769948622284546679" type="8xvf.BwfSubTask" typeId="8xvf.2769948622284546677" id="2769948622284761814">
+      <node role="subTasks" roleId="8xvf.3961775458390032826" type="8xvf.BwfSubTask" typeId="8xvf.2769948622284546677" id="2769948622284761814">
         <property name="name" nameId="tpck.1169194664001" value="compileJava" />
         <node role="statements" roleId="8xvf.2769948622284606050" type="8xvf.BwfAntStatement" typeId="8xvf.2769948622284768359" id="2769948622284774581">
           <node role="element" roleId="8xvf.2769948622284768360" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="2769948622284774583">
@@ -180,46 +228,6 @@
               </node>
             </node>
           </node>
-        </node>
-      </node>
-    </node>
-    <node role="parts" roleId="8xvf.2769948622284574304" type="8xvf.BwfTask" typeId="8xvf.2769948622284546675" id="3961775458390335276">
-      <property name="name" nameId="tpck.1169194664001" value="build" />
-      <node role="dependencies" roleId="8xvf.2769948622284574302" type="8xvf.BwfTaskDependency" typeId="8xvf.2769948622284574294" id="3961775458390335278">
-        <link role="target" roleId="8xvf.2769948622284574295" targetNodeId="2769948622284624395" resolveInfo="buildDependencies" />
-      </node>
-      <node role="subTasks" roleId="8xvf.2769948622284546679" type="8xvf.BwfSubTask" typeId="8xvf.2769948622284546677" id="3961775458390335286">
-        <property name="name" nameId="tpck.1169194664001" value="second" />
-        <node role="after" roleId="8xvf.2769948622284605953" type="8xvf.BwfSubTaskDependency" typeId="8xvf.2769948622284605880" id="3961775458390336251">
-          <link role="target" roleId="8xvf.2769948622284605881" targetNodeId="3961775458390335279" resolveInfo="first" />
-        </node>
-        <node role="statements" roleId="8xvf.2769948622284606050" type="8xvf.BwfAntStatement" typeId="8xvf.2769948622284768359" id="3961775458390515458">
-          <node role="element" roleId="8xvf.2769948622284768360" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="3961775458390515460">
-            <property name="tagName" nameId="iuxj.6666499814681415862" value="second" />
-          </node>
-        </node>
-      </node>
-      <node role="subTasks" roleId="8xvf.2769948622284546679" type="8xvf.BwfSubTask" typeId="8xvf.2769948622284546677" id="3961775458390335279">
-        <property name="name" nameId="tpck.1169194664001" value="first" />
-        <node role="statements" roleId="8xvf.2769948622284606050" type="8xvf.BwfAntStatement" typeId="8xvf.2769948622284768359" id="3961775458390515455">
-          <node role="element" roleId="8xvf.2769948622284768360" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="3961775458390515457">
-            <property name="tagName" nameId="iuxj.6666499814681415862" value="first" />
-          </node>
-        </node>
-      </node>
-    </node>
-    <node role="parts" roleId="8xvf.2769948622284574304" type="8xvf.BwfTaskPart" typeId="8xvf.3961775458390032824" id="3961775458390370956">
-      <link role="task" roleId="8xvf.3961775458390032825" targetNodeId="3961775458390335276" resolveInfo="build" />
-      <node role="subTasks" roleId="8xvf.3961775458390032826" type="8xvf.BwfSubTask" typeId="8xvf.2769948622284546677" id="3961775458390374962">
-        <property name="name" nameId="tpck.1169194664001" value="xx1" />
-        <node role="statements" roleId="8xvf.2769948622284606050" type="8xvf.BwfAntStatement" typeId="8xvf.2769948622284768359" id="3961775458390375393">
-          <node role="element" roleId="8xvf.2769948622284768360" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="3961775458390375395">
-            <property name="tagName" nameId="iuxj.6666499814681415862" value="aaa12" />
-            <property name="shortEmptyNotation" nameId="iuxj.6999033275467544021" value="true" />
-          </node>
-        </node>
-        <node role="before" roleId="8xvf.3961775458390293275" type="8xvf.BwfSubTaskDependency" typeId="8xvf.2769948622284605880" id="3961775458390514808">
-          <link role="target" roleId="8xvf.2769948622284605881" targetNodeId="3961775458390335279" resolveInfo="first" />
         </node>
       </node>
     </node>

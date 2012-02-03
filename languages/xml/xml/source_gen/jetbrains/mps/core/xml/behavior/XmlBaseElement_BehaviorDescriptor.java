@@ -12,8 +12,16 @@ public abstract class XmlBaseElement_BehaviorDescriptor extends XmlContent_Behav
     return XmlBaseElement_Behavior.virtual_isLastPositionAllowed_6999033275467334895(thisNode);
   }
 
+  public boolean virtual_hasNewLineAfter_6999033275467469870(SNode thisNode) {
+    return XmlBaseElement_Behavior.virtual_hasNewLineAfter_6999033275467469870(thisNode);
+  }
+
   public boolean virtual_isFirstPositionAllowed_6999033275467334890(SNode thisNode) {
     return XmlBaseElement_Behavior.virtual_isFirstPositionAllowed_6999033275467334890(thisNode);
+  }
+
+  public boolean virtual_onNewLine_6999033275467469862(SNode thisNode) {
+    return XmlBaseElement_Behavior.virtual_onNewLine_6999033275467469862(thisNode);
   }
 
   @Override
