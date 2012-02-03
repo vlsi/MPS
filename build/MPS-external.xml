@@ -497,6 +497,7 @@
     <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.execution.util" />
     <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.execution.startup" />
     <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.unitTest.execution" />
+    <antcall target="MPS-languages.pack.jetbrains.mps.ant.execution" />
     <mkdir dir="${deploy.dir}/MPS/plugins/jetbrains.mps.execution.configurations.implementation.plugin/lib" />
     <antcall target="MPS-languages.pack.jetbrains.mps.execution.migration" />
     <mkdir dir="${deploy.dir}/MPS/plugins/jetbrains.mps.execution.configurations.implementation.plugin/migration" />
