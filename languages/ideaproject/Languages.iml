@@ -36,7 +36,6 @@
       <sourceFolder url="file://$MODULE_DIR$/../languageDesign/constraints/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../languageDesign/generator/languages/templateLanguage/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../languageDesign/make/languages/facet/source_gen" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../languageDesign/constraints/solutions/constraintLanguageSandbox/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../languageDesign/make/languages/script/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../languageDesign/editor/languages/table/runtime/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../languageDesign/editor/languages/table/source_gen" isTestSource="false" />
@@ -62,6 +61,9 @@
     <orderEntry type="library" name="commons-lang-2.4" level="project" />
     <orderEntry type="library" name="annotations" level="project" />
     <orderEntry type="library" name="ecj" level="project" />
+    <orderEntry type="library" name="jdom" level="project" />
+    <orderEntry type="library" name="platform" level="project" />
+    <orderEntry type="library" name="platform-api" level="project" />
   </component>
 </module>
 

@@ -2,27 +2,6 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <option name="DEFAULT_COMPILER" value="Javac" />
-    <excludeFromCompile>
-      <file url="file://$PROJECT_DIR$/../languageDesign/behavior/languages/behavior/source_gen/jetbrains/mps/lang/behavior/plugin/Default_KeymapChanges.java" />
-      <file url="file://$PROJECT_DIR$/../languageDesign/generator/languages/templateLanguage/source_gen/jetbrains/mps/lang/generator/intentions/AttachMappingLabelDialog.java" />
-      <file url="file://$PROJECT_DIR$/../../core/baseLanguage/baseLanguage/source_gen/jetbrains/mps/baseLanguage/actions/SmartActions_Generated.java" />
-      <file url="file://$PROJECT_DIR$/../../core/baseLanguage/baseLanguage/source_gen/jetbrains/mps/baseLanguage/intentions/ImplementMethods_Intention.java" />
-      <file url="file://$PROJECT_DIR$/../languageDesign/generator/languages/templateLanguage/source_gen/jetbrains/mps/lang/generator/editor/MacrosSwitch_KeyMap.java" />
-      <file url="file://$PROJECT_DIR$/../languageDesign/behavior/languages/behavior/source_gen/jetbrains/mps/lang/behavior/intentions/ImplementMethods_Intention.java" />
-      <file url="file://$PROJECT_DIR$/../languageDesign/plugin/source_gen/jetbrains/mps/lang/plugin/refactorings/SortKeymapMembers.java" />
-      <file url="file://$PROJECT_DIR$/../languageDesign/plugin/source_gen/jetbrains/mps/lang/plugin/refactorings/SortKeymapMembers_Target.java" />
-      <file url="file://$PROJECT_DIR$/../../core/baseLanguage/baseLanguage/source_gen/jetbrains/mps/baseLanguage/intentions/OverrideMethods_Intention.java" />
-      <file url="file://$PROJECT_DIR$/../../core/baseLanguage/baseLanguage/source_gen/jetbrains/mps/baseLanguage/refactorings/ChangeMethodSignature.java" />
-      <file url="file://$PROJECT_DIR$/../../core/baseLanguage/baseLanguage/source_gen/jetbrains/mps/baseLanguage/refactorings/ChangeMethodSignature_Target.java" />
-      <file url="file://$PROJECT_DIR$/../../core/baseLanguage/baseLanguage/source_gen/jetbrains/mps/baseLanguage/refactorings/ConvertAnonymousClass.java" />
-      <file url="file://$PROJECT_DIR$/../../core/baseLanguage/baseLanguage/source_gen/jetbrains/mps/baseLanguage/refactorings/MakeFieldFinal.java" />
-      <file url="file://$PROJECT_DIR$/../../core/baseLanguage/baseLanguage/source_gen/jetbrains/mps/baseLanguage/refactorings/MakeFieldStatic.java" />
-      <file url="file://$PROJECT_DIR$/../../core/baseLanguage/baseLanguage/source_gen/jetbrains/mps/baseLanguage/refactorings/MoveStaticField_destination_Settings.java" />
-      <file url="file://$PROJECT_DIR$/../../core/baseLanguage/baseLanguage/source_gen/jetbrains/mps/baseLanguage/refactorings/MoveStaticMethod.java" />
-      <file url="file://$PROJECT_DIR$/../../core/baseLanguage/baseLanguage/source_gen/jetbrains/mps/baseLanguage/intentions/SelectFieldsDialog.java" />
-      <file url="file://$PROJECT_DIR$/../../core/baseLanguage/baseLanguage/source_gen/jetbrains/mps/baseLanguage/refactorings/RenameMethod.java" />
-      <file url="file://$PROJECT_DIR$/../../core/baseLanguage/baseLanguage/source_gen/jetbrains/mps/baseLanguage/intentions/SelectConstructorsDialog.java" />
-    </excludeFromCompile>
     <resourceExtensions />
     <wildcardResourcePatterns>
       <entry name="?*.properties" />
