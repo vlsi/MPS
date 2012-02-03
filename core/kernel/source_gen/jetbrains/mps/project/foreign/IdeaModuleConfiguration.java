@@ -33,7 +33,6 @@ public class IdeaModuleConfiguration {
   }
 
   public static IdeaModuleConfiguration readFile(IFile moduleFile) throws JDOMException, IOException, FacetConfigurationFormatException {
-    IdeaModuleConfiguration imc = new IdeaModuleConfiguration(moduleFile);
     Element module = (Element) JDOMUtil.loadDocument(moduleFile).getRootElement();
     Element cfg = ListSequence.fromList(AttributeUtils.elementChildren(ListSequence.fromList(AttributeUtils.elementChildren(ListSequence.fromList(AttributeUtils.elementChildren(module, "component")).findFirst(new IWhereFilter<Element>() {
       public boolean accept(Element ch) {
@@ -44,6 +43,7 @@ public class IdeaModuleConfiguration {
         return "MPS".equals(fct.getAttributeValue("name"));
       }
     }), "configuration")).first();
+    IdeaModuleConfiguration imc = new IdeaModuleConfiguration(moduleFile);
     if (cfg != null) {
       MPSFacetConfiguration mpsFacet = new MPSFacetConfiguration();
       mpsFacet.readFromXml(cfg);

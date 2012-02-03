@@ -19,25 +19,28 @@ public class IdeaModuleSolutionDescriptorIO implements DescriptorIO<SolutionDesc
 
   public SolutionDescriptor readFromFile(IFile file) throws DescriptorIOException {
     final MPSFacetConfiguration mpsConf = this.readMPSFacetConf(file);
+    if (mpsConf == null) {
+      return null;
+    }
     final MacroExpander mex = new ModuleMacroExpander(null, file);
     SolutionDescriptor sd;
     sd = new _FunctionTypes._return_P0_E0<SolutionDescriptor>() {
       public SolutionDescriptor invoke() {
-        final SolutionDescriptor result_56japk_a0a0d0a = new SolutionDescriptor();
+        final SolutionDescriptor result_56japk_a0a0e0a = new SolutionDescriptor();
         // TODO: namespace 
-        final String result_56japk_a1a0a0d0a = null;
-        result_56japk_a0a0d0a.setNamespace(result_56japk_a1a0a0d0a);
+        final String result_56japk_a1a0a0e0a = null;
+        result_56japk_a0a0e0a.setNamespace(result_56japk_a1a0a0e0a);
 
-        final String result_56japk_a3a0a0d0a = mpsConf.getUUID();
-        result_56japk_a0a0d0a.setUUID(result_56japk_a3a0a0d0a);
+        final String result_56japk_a3a0a0e0a = mpsConf.getUUID();
+        result_56japk_a0a0e0a.setUUID(result_56japk_a3a0a0e0a);
 
         // TODO: pluginKind 
 
-        final boolean result_56japk_a7a0a0d0a = true;
-        result_56japk_a0a0d0a.setCompileInMPS(result_56japk_a7a0a0d0a);
+        final boolean result_56japk_a7a0a0e0a = true;
+        result_56japk_a0a0e0a.setCompileInMPS(result_56japk_a7a0a0e0a);
 
-        final String result_56japk_a9a0a0d0a = mex.expandMacros(mpsConf.getGeneratorOutputPath());
-        result_56japk_a0a0d0a.setOutputPath(result_56japk_a9a0a0d0a);
+        final String result_56japk_a9a0a0e0a = mex.expandMacros(mpsConf.getGeneratorOutputPath());
+        result_56japk_a0a0e0a.setOutputPath(result_56japk_a9a0a0e0a);
 
         for (String mrp : mpsConf.getModelRootPaths()) {
           ModelRoot mr = new ModelRoot();
@@ -45,7 +48,7 @@ public class IdeaModuleSolutionDescriptorIO implements DescriptorIO<SolutionDesc
 
           // TODO: model root manager 
 
-          result_56japk_a0a0d0a.getModelRoots().add(mr);
+          result_56japk_a0a0e0a.getModelRoots().add(mr);
         }
 
         // TODO: stub model entries 
@@ -53,7 +56,7 @@ public class IdeaModuleSolutionDescriptorIO implements DescriptorIO<SolutionDesc
         // TODO: dependencies 
 
         for (String usedLang : mpsConf.getUsedLanguages()) {
-          result_56japk_a0a0d0a.getUsedLanguages().add(ModuleReference.fromString(usedLang));
+          result_56japk_a0a0e0a.getUsedLanguages().add(ModuleReference.fromString(usedLang));
         }
 
         // TODO: devkits 
@@ -61,7 +64,7 @@ public class IdeaModuleSolutionDescriptorIO implements DescriptorIO<SolutionDesc
         // TODO : class paths 
 
         // TODO: source paths 
-        return result_56japk_a0a0d0a;
+        return result_56japk_a0a0e0a;
       }
     }.invoke();
     sd.setTimestamp(Long.toString(file.lastModified()));

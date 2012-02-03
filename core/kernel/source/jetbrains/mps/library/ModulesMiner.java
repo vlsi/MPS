@@ -18,12 +18,8 @@ package jetbrains.mps.library;
 import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.*;
-import jetbrains.mps.project.io.DescriptorIOException;
 import jetbrains.mps.project.io.DescriptorIOFacade;
 import jetbrains.mps.project.persistence.DeploymentDescriptorPersistence;
-import jetbrains.mps.project.persistence.DevkitDescriptorPersistence;
-import jetbrains.mps.project.persistence.LanguageDescriptorPersistence;
-import jetbrains.mps.project.persistence.SolutionDescriptorPersistence;
 import jetbrains.mps.project.structure.model.ModelRoot;
 import jetbrains.mps.project.structure.model.RootReference;
 import jetbrains.mps.project.structure.modules.DeploymentDescriptor;
@@ -112,7 +108,7 @@ public class ModulesMiner {
     }
 
     for (IFile file : files) {
-      if (hasModuleExtension(file.getName())) {
+      if (isModuleFile(file)) {
         ModuleDescriptor moduleDescriptor = loadDescriptorOnly_internal(file, excludes);
         if (moduleDescriptor != null) {
           T descriptor = reader.read(new ModuleHandle(file, moduleDescriptor));
@@ -125,7 +121,7 @@ public class ModulesMiner {
 
     for (IFile childDir : files) {
       if (FileSystem.getInstance().isFileIgnored(childDir.getName())) continue;
-      if (hasModuleExtension(childDir.getName())) continue;
+      if (isModuleFile(childDir)) continue;
       if (excludes.contains(childDir)) continue;
 
       if (childDir.getName().endsWith(".jar")) {
@@ -234,15 +230,8 @@ public class ModulesMiner {
     }
   }
 
-  private boolean hasModuleExtension(String name) {
-    return getModuleExtension(name) != null;
-  }
-
-  private String getModuleExtension(String name) {
-    if (name.endsWith(MPSExtentions.DOT_LANGUAGE)) return MPSExtentions.LANGUAGE;
-    if (name.endsWith(MPSExtentions.DOT_SOLUTION)) return MPSExtentions.SOLUTION;
-    if (name.endsWith(MPSExtentions.DOT_DEVKIT)) return MPSExtentions.DEVKIT;
-    return null;
+  private boolean isModuleFile(IFile file) {
+    return !file.isDirectory() && DescriptorIOFacade.getInstance().fromFileType(file) != null;
   }
 
   private void assertCanWrite() {

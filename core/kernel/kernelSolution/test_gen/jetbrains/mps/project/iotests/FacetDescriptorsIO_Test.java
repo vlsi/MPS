@@ -57,6 +57,15 @@ public class FacetDescriptorsIO_Test extends TestCase {
     assertSolutionDescriptor(moduleFile, sd);
   }
 
+  @MPSLaunch
+  public void test_nofacetDescriptorIO() throws Exception {
+    IFile moduleFile = TestUtils.dataFile("nofacet.iml");
+    DescriptorIO<SolutionDescriptor> io = DescriptorIOFacade.getInstance().ideaProvider().solutionDescriptorIO();
+    Assert.assertSame(io, DescriptorIOFacade.getInstance().fromFileType(moduleFile));
+    SolutionDescriptor sd = io.readFromFile(moduleFile);
+    Assert.assertNull(sd);
+  }
+
   private Element readRoot(IFile moduleFile) throws IOException, JDOMException {
     return (Element) JDOMUtil.loadDocument(moduleFile).getRootElement();
   }
