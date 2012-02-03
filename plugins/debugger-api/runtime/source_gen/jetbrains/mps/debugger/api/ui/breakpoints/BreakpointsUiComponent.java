@@ -14,13 +14,13 @@ import jetbrains.mps.debug.api.SessionChangeListener;
 import jetbrains.mps.debug.api.DebugSessionManagerComponent;
 import com.intellij.util.messages.MessageBusConnection;
 import org.jetbrains.annotations.NotNull;
+import com.intellij.openapi.application.ApplicationManager;
 import jetbrains.mps.nodeEditor.highlighter.EditorComponentCreateListener;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.ide.editor.EditorUtil;
 import jetbrains.mps.debug.api.breakpoints.ILocationBreakpoint;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.ide.project.ProjectHelper;
-import com.intellij.openapi.application.ApplicationManager;
 import java.util.Set;
 import jetbrains.mps.smodel.SNode;
 import java.util.Collections;
@@ -69,7 +69,6 @@ public class BreakpointsUiComponent implements ProjectComponent {
     myDebugInfoManager = debugInfoManager;
     myProvidersManager = providersManager;
     myFileEditorManager = fileEditorManager;
-    myBreakpointsManagerComponent.setBreakpointsIO(new BreakpointsUiComponent.MyBreakpointsIO());
   }
 
   @NotNull
@@ -80,6 +79,12 @@ public class BreakpointsUiComponent implements ProjectComponent {
 
   @Override
   public void initComponent() {
+    ApplicationManager.getApplication().executeOnPooledThread(new Runnable() {
+      @Override
+      public void run() {
+        myBreakpointsManagerComponent.setBreakpointsIO(new BreakpointsUiComponent.MyBreakpointsIO());
+      }
+    });
     DebugSessionManagerComponent component = myProject.getComponent(DebugSessionManagerComponent.class);
     component.addDebugSessionListener(myDebugSessionListener);
     myBreakpointsManagerComponent.addChangeListener(myBreakpointManagerListener);

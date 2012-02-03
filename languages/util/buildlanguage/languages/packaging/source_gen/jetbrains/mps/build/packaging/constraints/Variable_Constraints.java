@@ -15,7 +15,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.SModel;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.runtime.CheckingNodeContext;
-import jetbrains.mps.smodel.constraints.CanBeARootContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 
 public class Variable_Constraints extends BaseConstraintsDescriptor {
@@ -53,7 +52,7 @@ public class Variable_Constraints extends BaseConstraintsDescriptor {
 
   @Override
   public boolean canBeRoot(IOperationContext context, SModel model, @Nullable CheckingNodeContext checkingNodeContext) {
-    boolean result = static_canBeARoot(context, new CanBeARootContext(model));
+    boolean result = static_canBeARoot(model, context);
 
     if (!(result) && checkingNodeContext != null) {
       checkingNodeContext.setBreakingNode(canBeRootBreakingPoint);
@@ -62,7 +61,7 @@ public class Variable_Constraints extends BaseConstraintsDescriptor {
     return result;
   }
 
-  public static boolean static_canBeARoot(final IOperationContext operationContext, final CanBeARootContext _context) {
-    return SModelOperations.getModelName(_context.getModel()).startsWith(Variable_Behavior.getPackagingLanguage_5558646027962551669().getModuleFqName());
+  public static boolean static_canBeARoot(SModel model, final IOperationContext operationContext) {
+    return SModelOperations.getModelName(model).startsWith(Variable_Behavior.getPackagingLanguage_5558646027962551669().getModuleFqName());
   }
 }
