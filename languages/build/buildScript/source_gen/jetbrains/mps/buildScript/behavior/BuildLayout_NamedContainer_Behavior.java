@@ -4,25 +4,22 @@ package jetbrains.mps.buildScript.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.buildScript.util.Context;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class BuildLayout_NamedContainer_Behavior {
   public static void init(SNode thisNode) {
   }
 
-  public static String call_getOutputDir_WithMacro_4045247515868395486(SNode thisNode, Context context) {
-    if ((SNodeOperations.getParent(thisNode) != null) && SNodeOperations.isInstanceOf(SNodeOperations.getParent(thisNode), "jetbrains.mps.buildScript.structure.BuildLayout_AbstractContainer")) {
-      return BuildLayout_AbstractContainer_Behavior.call_getChildrenOutputDir_WithMacro_7389400916848004880(SNodeOperations.cast(SNodeOperations.getParent(thisNode), "jetbrains.mps.buildScript.structure.BuildLayout_AbstractContainer"), context);
-    }
-    return null;
-  }
-
   public static String virtual_getChildrenOutputDir_WithMacro_7389400916848004880(SNode thisNode, Context context) {
-    return context.getTmpPath_WithMacro(thisNode) + "/" + thisNode.getId();
+    return context.getTmpPath_WithMacro(thisNode) + "/" + context.getUniqueName(thisNode, SPropertyOperations.getString(thisNode, "name"));
   }
 
   public static String call_getOutputPath_WithMacro_280273048052535414(SNode thisNode, Context context) {
-    return BuildLayout_NamedContainer_Behavior.call_getOutputDir_WithMacro_4045247515868395486(thisNode, context) + "/" + SPropertyOperations.getString(thisNode, "name");
+    if ((SNodeOperations.getParent(thisNode) != null) && SNodeOperations.isInstanceOf(SNodeOperations.getParent(thisNode), "jetbrains.mps.buildScript.structure.BuildLayout_AbstractContainer")) {
+      String parentChildrenTargetDir = BuildLayout_AbstractContainer_Behavior.call_getChildrenOutputDir_WithMacro_7389400916848004880(SNodeOperations.cast(SNodeOperations.getParent(thisNode), "jetbrains.mps.buildScript.structure.BuildLayout_AbstractContainer"), context);
+      return parentChildrenTargetDir + "/" + SPropertyOperations.getString(thisNode, "name");
+    }
+    return null;
   }
 }

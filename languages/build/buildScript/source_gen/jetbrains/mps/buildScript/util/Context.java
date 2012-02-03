@@ -5,6 +5,7 @@ package jetbrains.mps.buildScript.util;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
+import jetbrains.mps.smodel.SNodeId;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -19,6 +20,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class Context {
   private Map<String, Object> myProperties = MapSequence.fromMap(new HashMap<String, Object>());
+  private Map<String, Map<SNodeId, Integer>> myNamesIndex = MapSequence.fromMap(new HashMap<String, Map<SNodeId, Integer>>());
 
   public Context() {
   }
@@ -72,6 +74,23 @@ public class Context {
     ListSequence.fromList(exportedMacro).addElement(new Context.QuotationClass_lmsybr_a0a0b0k().createNode(getTmpPath_Local(node), getTmpDirMacroName(node)));
     ListSequence.fromList(exportedMacro).addElement(new Context.QuotationClass_lmsybr_a0a0c0k().createNode(getDeployPath_Local(node), getDeployDirMacroName(node)));
     return exportedMacro;
+  }
+
+  public String getUniqueName(SNode node, String name) {
+    Map<SNodeId, Integer> map = MapSequence.fromMap(myNamesIndex).get(name);
+    if (map == null) {
+      map = MapSequence.fromMap(new HashMap<SNodeId, Integer>());
+      MapSequence.fromMap(myNamesIndex).put(name, map);
+    }
+    Integer integer = MapSequence.fromMap(map).get(node.getSNodeId());
+    if (integer == null) {
+      integer = MapSequence.fromMap(map).count();
+      MapSequence.fromMap(map).put(node.getSNodeId(), integer);
+    }
+    return name + (((integer == 0) ?
+      "" :
+      "_" + integer
+    ));
   }
 
   @Nullable
