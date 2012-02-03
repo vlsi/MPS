@@ -20,6 +20,7 @@ public class BuildProject extends BaseConcept implements ScopeProvider, INamedCo
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String NAME = "name";
   public static final String LAYOUT = "layout";
+  public static final String PLUGINS = "plugins";
   public static final String DEPENDENCIES = "dependencies";
   public static final String MACROS = "macros";
   public static final String PARTS = "parts";
@@ -68,6 +69,26 @@ public class BuildProject extends BaseConcept implements ScopeProvider, INamedCo
 
   public void setLayout(BuildLayout node) {
     super.setChild(BuildProject.LAYOUT, node);
+  }
+
+  public int getPluginsesCount() {
+    return this.getChildCount(BuildProject.PLUGINS);
+  }
+
+  public Iterator<BuildPlugin> pluginses() {
+    return this.children(BuildPlugin.class, BuildProject.PLUGINS);
+  }
+
+  public List<BuildPlugin> getPluginses() {
+    return this.getChildren(BuildPlugin.class, BuildProject.PLUGINS);
+  }
+
+  public void addPlugins(BuildPlugin node) {
+    this.addChild(BuildProject.PLUGINS, node);
+  }
+
+  public void insertPlugins(BuildPlugin prev, BuildPlugin node) {
+    this.insertChild(prev, BuildProject.PLUGINS, node);
   }
 
   public int getDependenciesesCount() {

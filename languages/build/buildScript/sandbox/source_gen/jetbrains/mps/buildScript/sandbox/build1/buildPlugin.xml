@@ -1,16 +1,7 @@
 <project name="buildPlugin">
   <property name="build.dir" location="build" />
-  <target name="build" depends="check, assemble"></target>
+  <target name="build"></target>
   <target name="clean">
     <delete dir="${build.dir}" />
   </target>
-  <target name="compileJava"></target>
-  <target name="processResources"></target>
-  <target name="classes" depends="compileJava, processResources"></target>
-  <target name="assemble" depends="classes">
-    <mkdir dir="${buildPlugin.deploy.dir}/xx" />
-    <jar destfile="${buildPlugin.deploy.dir}/xx/xx"></jar>
-  </target>
-  <target name="test" depends="classes"></target>
-  <target name="check" depends="test"></target>
 </project>

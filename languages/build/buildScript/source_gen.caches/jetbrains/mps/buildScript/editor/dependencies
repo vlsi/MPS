@@ -66,6 +66,15 @@
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
+  <dependency className="jetbrains.mps.buildScript.editor.BuildJavaPlugin_Editor" file="BuildJavaPlugin_Editor.java">
+    <classNode dependClassName="jetbrains.mps.buildScript.editor.buildStyles_StyleSheet" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.EditorContext" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell_Collection" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell_Constant" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
+  </dependency>
   <dependency className="jetbrains.mps.buildScript.editor.BuildLayout_Editor" file="BuildLayout_Editor.java">
     <classNode dependClassName="jetbrains.mps.buildScript.editor.BuildLayout_containerElements" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.AbstractCellProvider" />
@@ -150,6 +159,13 @@
     <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell_Error" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.style.Padding" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.style.StyleAttributes" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
+  </dependency>
+  <dependency className="jetbrains.mps.buildScript.editor.BuildPlugin_Editor" file="BuildPlugin_Editor.java">
+    <classNode dependClassName="jetbrains.mps.nodeEditor.EditorContext" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell_Error" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>

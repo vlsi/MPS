@@ -181,14 +181,6 @@ public class QueriesGenerated {
     return SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.buildScript.structure.BuildLayout_AbstractContainer") && BuildLayout_AbstractContainer_Behavior.call_getAssembleSubTaskId_1117643560963359375(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.buildScript.structure.BuildLayout_AbstractContainer")) != null;
   }
 
-  public static boolean ifMacro_Condition_1117643560963307312(final IOperationContext operationContext, final IfMacroContext _context) {
-    return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "parts", true)).any(new IWhereFilter<SNode>() {
-      public boolean accept(SNode it) {
-        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.buildScript.structure.BuildSource_JavaModule");
-      }
-    });
-  }
-
   public static Iterable sourceNodesQuery_1117643560963351248(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "children", true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
@@ -217,11 +209,19 @@ public class QueriesGenerated {
     return SLinkOperations.getTargets(_context.getNode(), "macros", true);
   }
 
+  public static Iterable sourceNodesQuery_6647099934206970618(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+    return SLinkOperations.getTargets(_context.getNode(), "plugins", true);
+  }
+
   public static Iterable sourceNodesQuery_1117643560963346309(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "parts", true);
   }
 
   public static Iterable sourceNodesQuery_1117643560963267906(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return SNodeOperations.getDescendants(SLinkOperations.getTarget(_context.getNode(), "layout", true), "jetbrains.mps.buildScript.structure.BuildLayout_Node", false, new String[]{});
+  }
+
+  public static Iterable sourceNodesQuery_6647099934206970591(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+    return SLinkOperations.getTargets(_context.getNode(), "plugins", true);
   }
 }

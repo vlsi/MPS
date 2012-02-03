@@ -37,17 +37,17 @@ public class buildStyles_StyleSheet {
     return style;
   }
 
-  public static Style getKeyword_3(final EditorCell cell) {
+  public static Style getPlugin(final EditorCell cell) {
     Style style = new Style(cell);
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
-    style.set(StyleAttributes.TEXT_COLOR, new Color(6684672));
+    style.set(StyleAttributes.TEXT_COLOR, new Color(26214));
     return style;
   }
 
   public static Style getKeyword_4(final EditorCell cell) {
     Style style = new Style(cell);
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
-    style.set(StyleAttributes.TEXT_COLOR, new Color(26214));
+    style.set(StyleAttributes.TEXT_COLOR, new Color(6684672));
     return style;
   }
 
