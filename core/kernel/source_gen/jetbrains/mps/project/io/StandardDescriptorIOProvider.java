@@ -44,11 +44,11 @@ public class StandardDescriptorIOProvider implements DescriptorIOProvider {
     public SolutionDescriptorIO() {
     }
 
-    public SolutionDescriptor readFromFile(IFile file) throws DescriptionReadException {
+    public SolutionDescriptor readFromFile(IFile file) throws DescriptorIOException {
       try {
         return SolutionDescriptorPersistence.loadSolutionDescriptor(file);
       } catch (ModuleReadException runtime) {
-        throw new DescriptionReadException(runtime);
+        throw new DescriptorIOException(runtime);
       }
     }
 
@@ -69,11 +69,11 @@ public class StandardDescriptorIOProvider implements DescriptorIOProvider {
     public LanguageDescriptorIO() {
     }
 
-    public LanguageDescriptor readFromFile(IFile file) throws DescriptionReadException {
+    public LanguageDescriptor readFromFile(IFile file) throws DescriptorIOException {
       try {
         return LanguageDescriptorPersistence.loadLanguageDescriptor(file);
       } catch (ModuleReadException runtime) {
-        throw new DescriptionReadException(runtime);
+        throw new DescriptorIOException(runtime);
       }
     }
 
@@ -115,11 +115,11 @@ public class StandardDescriptorIOProvider implements DescriptorIOProvider {
     public DevkitDescriptorIO() {
     }
 
-    public DevkitDescriptor readFromFile(IFile file) throws DescriptionReadException {
+    public DevkitDescriptor readFromFile(IFile file) throws DescriptorIOException {
       try {
         return DevkitDescriptorPersistence.loadDevKitDescriptor(file);
       } catch (ModuleReadException runtime) {
-        throw new DescriptionReadException(runtime);
+        throw new DescriptorIOException(runtime);
       }
     }
 

@@ -29,7 +29,7 @@
       <property name="name" nameId="tpck.1169194664001" value="IdeaDescriptorIOProvider" />
     </node>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="9081946191808704816">
-      <property name="name" nameId="tpck.1169194664001" value="DescriptionReadException" />
+      <property name="name" nameId="tpck.1169194664001" value="DescriptorIOException" />
     </node>
   </roots>
   <root id="557142600900286111">
@@ -156,7 +156,7 @@
         <link role="typeVariableDeclaration" roleId="tpee.1109283546497" targetNodeId="557142600900286150" resolveInfo="T" />
       </node>
       <node role="throwsItem" roleId="tpee.1164879685961" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="9081946191808722968">
-        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="9081946191808704816" resolveInfo="DescriptionReadException" />
+        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="9081946191808704816" resolveInfo="DescriptorIOException" />
       </node>
     </node>
     <node role="method" roleId="tpee.1107880067339" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="557142600900560307">
@@ -177,6 +177,9 @@
           <link role="classifier" roleId="tpee.1107535924139" targetNodeId="59et.~IFile" resolveInfo="IFile" />
         </node>
       </node>
+      <node role="throwsItem" roleId="tpee.1164879685961" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5177508097213497518">
+        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="9081946191808704816" resolveInfo="DescriptorIOException" />
+      </node>
     </node>
     <node role="method" roleId="tpee.1107880067339" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="557142600900286151">
       <property name="isAbstract" nameId="tpee.1178608670077" value="true" />
@@ -195,6 +198,9 @@
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="557142600900286154" />
       <node role="returnType" roleId="tpee.1068580123133" type="tpee.TypeVariableReference" typeId="tpee.1109283449304" id="557142600900286155">
         <link role="typeVariableDeclaration" roleId="tpee.1109283546497" targetNodeId="557142600900286150" resolveInfo="T" />
+      </node>
+      <node role="throwsItem" roleId="tpee.1164879685961" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5177508097213497520">
+        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="9081946191808704816" resolveInfo="DescriptorIOException" />
       </node>
     </node>
     <node role="method" roleId="tpee.1107880067339" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="557142600900286159">
@@ -218,6 +224,9 @@
         <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="557142600900286164">
           <link role="classifier" roleId="tpee.1107535924139" targetNodeId="59et.~IFile" resolveInfo="IFile" />
         </node>
+      </node>
+      <node role="throwsItem" roleId="tpee.1164879685961" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5177508097213497522">
+        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="9081946191808704816" resolveInfo="DescriptorIOException" />
       </node>
     </node>
     <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="557142600900286149" />
@@ -329,7 +338,7 @@
                 <node role="statement" roleId="tpee.1068581517665" type="tpee.ThrowStatement" typeId="tpee.1164991038168" id="9081946191808723821">
                   <node role="throwable" roleId="tpee.1164991057263" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="9081946191808723823">
                     <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="9081946191808723825">
-                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="9081946191808704818" resolveInfo="DescriptionReadException" />
+                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="9081946191808704818" resolveInfo="DescriptorIOException" />
                       <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="9081946191808723826">
                         <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="9081946191808723817" resolveInfo="runtime" />
                       </node>
@@ -341,7 +350,7 @@
           </node>
         </node>
         <node role="throwsItem" roleId="tpee.1164879685961" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="9081946191808723831">
-          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="9081946191808704816" resolveInfo="DescriptionReadException" />
+          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="9081946191808704816" resolveInfo="DescriptorIOException" />
         </node>
       </node>
       <node role="method" roleId="tpee.1107880067339" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="557142600900539590">
@@ -487,7 +496,7 @@
                 <node role="statement" roleId="tpee.1068581517665" type="tpee.ThrowStatement" typeId="tpee.1164991038168" id="9081946191808723846">
                   <node role="throwable" roleId="tpee.1164991057263" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="9081946191808723847">
                     <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="9081946191808723848">
-                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="9081946191808704818" resolveInfo="DescriptionReadException" />
+                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="9081946191808704818" resolveInfo="DescriptorIOException" />
                       <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="9081946191808723849">
                         <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="9081946191808723843" resolveInfo="runtime" />
                       </node>
@@ -499,7 +508,7 @@
           </node>
         </node>
         <node role="throwsItem" roleId="tpee.1164879685961" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="9081946191808723854">
-          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="9081946191808704816" resolveInfo="DescriptionReadException" />
+          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="9081946191808704816" resolveInfo="DescriptorIOException" />
         </node>
       </node>
       <node role="method" roleId="tpee.1107880067339" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="557142600900560032">
@@ -796,7 +805,7 @@
                 <node role="statement" roleId="tpee.1068581517665" type="tpee.ThrowStatement" typeId="tpee.1164991038168" id="9081946191808723864">
                   <node role="throwable" roleId="tpee.1164991057263" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="9081946191808723865">
                     <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="9081946191808723866">
-                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="9081946191808704818" resolveInfo="DescriptionReadException" />
+                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="9081946191808704818" resolveInfo="DescriptorIOException" />
                       <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="9081946191808723867">
                         <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="9081946191808723861" resolveInfo="runtime" />
                       </node>
@@ -808,7 +817,7 @@
           </node>
         </node>
         <node role="throwsItem" roleId="tpee.1164879685961" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="9081946191808723872">
-          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="9081946191808704816" resolveInfo="DescriptionReadException" />
+          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="9081946191808704816" resolveInfo="DescriptorIOException" />
         </node>
       </node>
       <node role="method" roleId="tpee.1107880067339" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="557142600900560591">

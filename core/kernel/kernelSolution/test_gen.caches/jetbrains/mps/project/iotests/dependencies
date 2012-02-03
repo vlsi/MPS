@@ -3,10 +3,12 @@
   <dependency className="jetbrains.mps.project.iotests.DescriptorsIO_Test" file="DescriptorsIO_Test.java">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Runnable" />
+    <classNode dependClassName="java.lang.RuntimeException" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.util.plugin.run.MPSLaunch" />
     <classNode dependClassName="jetbrains.mps.ide.ThreadUtils" />
     <classNode dependClassName="jetbrains.mps.project.ModuleId" />
     <classNode dependClassName="jetbrains.mps.project.io.DescriptorIO" />
+    <classNode dependClassName="jetbrains.mps.project.io.DescriptorIOException" />
     <classNode dependClassName="jetbrains.mps.project.io.DescriptorIOFacade" />
     <classNode dependClassName="jetbrains.mps.project.io.DescriptorIOProvider" />
     <classNode dependClassName="jetbrains.mps.project.iotests.TestUtils" />

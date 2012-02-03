@@ -13,6 +13,7 @@ import jetbrains.mps.project.structure.modules.SolutionDescriptor;
 import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.project.io.DescriptorIOException;
 import org.custommonkey.xmlunit.XMLAssert;
 import jetbrains.mps.project.structure.modules.LanguageDescriptor;
 import jetbrains.mps.project.structure.modules.DevkitDescriptor;
@@ -41,7 +42,11 @@ public class DescriptorsIO_Test extends TestCase {
       public void run() {
         ModelAccess.instance().runWriteAction(new Runnable() {
           public void run() {
-            diof.solutionDescriptorIO().writeToFile(sd, solFile);
+            try {
+              diof.solutionDescriptorIO().writeToFile(sd, solFile);
+            } catch (DescriptorIOException e) {
+              throw new RuntimeException(e);
+            }
           }
         });
       }
@@ -75,7 +80,11 @@ public class DescriptorsIO_Test extends TestCase {
       public void run() {
         ModelAccess.instance().runWriteAction(new Runnable() {
           public void run() {
-            diof.languageDescriptorIO().writeToFile(ld, langFile);
+            try {
+              diof.languageDescriptorIO().writeToFile(ld, langFile);
+            } catch (DescriptorIOException e) {
+              throw new RuntimeException(e);
+            }
           }
         });
       }
@@ -106,7 +115,11 @@ public class DescriptorsIO_Test extends TestCase {
       public void run() {
         ModelAccess.instance().runWriteAction(new Runnable() {
           public void run() {
-            diof.devkitDescriptorIO().writeToFile(dkd, dkFile);
+            try {
+              diof.devkitDescriptorIO().writeToFile(dkd, dkFile);
+            } catch (DescriptorIOException e) {
+              throw new RuntimeException(e);
+            }
           }
         });
       }

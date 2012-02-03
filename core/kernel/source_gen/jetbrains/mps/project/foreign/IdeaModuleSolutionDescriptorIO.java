@@ -5,7 +5,7 @@ package jetbrains.mps.project.foreign;
 import jetbrains.mps.project.io.DescriptorIO;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
 import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.project.io.DescriptionReadException;
+import jetbrains.mps.project.io.DescriptorIOException;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.project.structure.model.ModelRoot;
 import jetbrains.mps.project.structure.modules.ModuleReference;
@@ -17,7 +17,7 @@ public class IdeaModuleSolutionDescriptorIO implements DescriptorIO<SolutionDesc
   public IdeaModuleSolutionDescriptorIO() {
   }
 
-  public SolutionDescriptor readFromFile(IFile file) throws DescriptionReadException {
+  public SolutionDescriptor readFromFile(IFile file) throws DescriptorIOException {
     final MPSFacetConfiguration mpsConf = this.readMPSFacetConf(file);
     final MacroExpander mex = new ModuleMacroExpander(null, file);
     SolutionDescriptor sd;
@@ -68,16 +68,16 @@ public class IdeaModuleSolutionDescriptorIO implements DescriptorIO<SolutionDesc
     return sd;
   }
 
-  private MPSFacetConfiguration readMPSFacetConf(IFile file) throws DescriptionReadException {
+  private MPSFacetConfiguration readMPSFacetConf(IFile file) throws DescriptorIOException {
     try {
       IdeaModuleConfiguration imc = IdeaModuleConfiguration.readFile(file);
       return imc.getMPSFacetConfiguration();
     } catch (FacetConfigurationFormatException e) {
-      throw new DescriptionReadException(e);
+      throw new DescriptorIOException(e);
     } catch (IOException e) {
-      throw new DescriptionReadException(e);
+      throw new DescriptorIOException(e);
     } catch (JDOMException e) {
-      throw new DescriptionReadException(e);
+      throw new DescriptorIOException(e);
     }
   }
 

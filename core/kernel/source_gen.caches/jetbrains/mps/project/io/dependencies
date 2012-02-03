@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.project.io.DescriptionReadException" file="DescriptionReadException.java">
+  <dependency className="jetbrains.mps.project.io.DescriptorIO" file="DescriptorIO.java">
+    <classNode dependClassName="jetbrains.mps.project.io.DescriptorIOException" />
+    <classNode dependClassName="jetbrains.mps.vfs.IFile" />
+    <classNode dependClassName="org.jdom.Element" />
+  </dependency>
+  <dependency className="jetbrains.mps.project.io.DescriptorIOException" file="DescriptorIOException.java">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode extendsClassName="java.lang.Exception" />
-  </dependency>
-  <dependency className="jetbrains.mps.project.io.DescriptorIO" file="DescriptorIO.java">
-    <classNode dependClassName="jetbrains.mps.project.io.DescriptionReadException" />
-    <classNode dependClassName="jetbrains.mps.vfs.IFile" />
-    <classNode dependClassName="org.jdom.Element" />
   </dependency>
   <dependency className="jetbrains.mps.project.io.DescriptorIOFacade" file="DescriptorIOFacade.java">
     <classNode dependClassName="jetbrains.mps.project.io.DescriptorIOProvider" />
@@ -34,7 +34,7 @@
   </dependency>
   <dependency className="jetbrains.mps.project.io.StandardDescriptorIOProvider" file="StandardDescriptorIOProvider.java">
     <classNode dependClassName="java.lang.UnsupportedOperationException" />
-    <classNode dependClassName="jetbrains.mps.project.io.DescriptionReadException" />
+    <classNode dependClassName="jetbrains.mps.project.io.DescriptorIOException" />
     <classNode dependClassName="jetbrains.mps.project.persistence.DevkitDescriptorPersistence" />
     <classNode dependClassName="jetbrains.mps.project.persistence.GeneratorDescriptorPersistence" />
     <classNode dependClassName="jetbrains.mps.project.persistence.LanguageDescriptorPersistence" />
