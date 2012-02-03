@@ -145,6 +145,10 @@
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Plugins" />
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="3ior.6647099934206700647" resolveInfo="BuildJavaPlugin" />
     </node>
+    <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="3767587139141067103">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Macro" />
+      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="3ior.3767587139141066978" resolveInfo="BuildVariableMacro" />
+    </node>
   </roots>
   <root id="5617550519002745365">
     <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="7389400916847962446">
@@ -1951,6 +1955,19 @@
         <link role="styleClass" roleId="tpc2.1186406756722" targetNodeId="7389400916848136214" resolveInfo="plugin" />
       </node>
       <node role="cellLayout" roleId="tpc2.1106270802874" type="tpc2.CellLayout_Indent" typeId="tpc2.1237303669825" id="6647099934206700654" />
+    </node>
+  </root>
+  <root id="3767587139141067103">
+    <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="3767587139141067105">
+      <node role="cellLayout" roleId="tpc2.1106270802874" type="tpc2.CellLayout_Indent" typeId="tpc2.1237303669825" id="3767587139141067107" />
+      <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="3767587139141067108">
+        <property name="text" nameId="tpc2.1073389577007" value="variable" />
+        <link role="styleClass" roleId="tpc2.1186406756722" targetNodeId="1203598923024" resolveInfo="keyword" />
+      </node>
+      <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Property" typeId="tpc2.1073389658414" id="3767587139141067110">
+        <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tpck.1169194664001" resolveInfo="name" />
+        <link role="styleClass" roleId="tpc2.1186406756722" targetNodeId="7389400916848136207" resolveInfo="macro" />
+      </node>
     </node>
   </root>
 </model>

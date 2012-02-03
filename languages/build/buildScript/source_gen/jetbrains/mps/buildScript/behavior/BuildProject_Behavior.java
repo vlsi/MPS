@@ -5,17 +5,18 @@ package jetbrains.mps.buildScript.behavior;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.scope.Scope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.scope.SimpleRoleScope;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.scope.DelegatingScope;
 import java.util.List;
-import org.jetbrains.annotations.Nullable;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.buildScript.util.Context;
 import java.util.ArrayList;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.buildScript.util.ScopeUtil;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.scope.CompositeScope;
 import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -27,23 +28,7 @@ public class BuildProject_Behavior {
 
   public static Scope virtual_getScope_3734116213129936182(SNode thisNode, SNode kind, final SNode child) {
     if (kind == SConceptOperations.findConceptDeclaration("jetbrains.mps.buildScript.structure.BuildMacro")) {
-      Scope rootScope = new SimpleRoleScope(thisNode, SLinkOperations.findLinkDeclaration("jetbrains.mps.buildScript.structure.BuildProject", "macros")) {
-        public String getName(SNode child) {
-          return SPropertyOperations.getString(SNodeOperations.cast(child, "jetbrains.mps.buildScript.structure.BuildMacro"), "name");
-        }
-      };
-      if (child != null && "macros".equals(SNodeOperations.getContainingLinkRole(child))) {
-        rootScope = new DelegatingScope(rootScope) {
-          public List<SNode> getAvailableElements(@Nullable String prefix) {
-            return ListSequence.fromList(wrapped.getAvailableElements(prefix)).where(new IWhereFilter<SNode>() {
-              public boolean accept(SNode it) {
-                return !(ListSequence.fromList(SNodeOperations.getNextSiblings(child, false)).contains(it)) && !(eq_save77_a0a0a0a0a0a0a0a0a0a0a0b0a0b(child, it));
-              }
-            }).toListSequence();
-          }
-        };
-      }
-      return rootScope;
+      return BuildProject_Behavior.call_getBuildMacroScope_3767587139141108514(thisNode, child);
     }
     return null;
   }
@@ -62,7 +47,40 @@ public class BuildProject_Behavior {
     return exportedMacro;
   }
 
-  private static boolean eq_save77_a0a0a0a0a0a0a0a0a0a0a0b0a0b(Object a, Object b) {
+  public static Scope call_getBuildMacroScope_3767587139141108514(SNode thisNode, final SNode child) {
+    Scope rootScope = ScopeUtil.simpleRoleScope(thisNode, SLinkOperations.findLinkDeclaration("jetbrains.mps.buildScript.structure.BuildProject", "macros"));
+    if (neq_save77_a0b0e(SNodeOperations.getAncestor(child, "jetbrains.mps.buildScript.structure.BuildProject", false, false), thisNode)) {
+      // we are imported => give away only public macro 
+      rootScope = ScopeUtil.where(rootScope, new _FunctionTypes._return_P1_E0<Boolean, SNode>() {
+        public Boolean invoke(SNode node) {
+          return SConceptPropertyOperations.getBoolean(SNodeOperations.cast(node, "jetbrains.mps.buildScript.structure.BuildMacro"), "public");
+        }
+      });
+    }
+    if ("macros".equals(SNodeOperations.getContainingLinkRole(child))) {
+      // we can only see what was strictly before us 
+      rootScope = ScopeUtil.where(rootScope, new _FunctionTypes._return_P1_E0<Boolean, SNode>() {
+        public Boolean invoke(SNode it) {
+          return !(ListSequence.fromList(SNodeOperations.getNextSiblings(child, false)).contains(it)) && !(eq_save77_a0a0a0a0a1a0b0c0e(child, it));
+        }
+      });
+    }
+
+    List<Scope> scopes = ListSequence.fromList(new ArrayList<Scope>());
+    ListSequence.fromList(scopes).addElement(rootScope);
+    ListSequence.fromList(scopes).addSequence(Sequence.fromIterable(ScopeUtil.imported(SLinkOperations.getTargets(thisNode, "dependencies", true), SConceptOperations.findConceptDeclaration("jetbrains.mps.buildScript.structure.BuildMacro"), child)));
+
+    return new CompositeScope(ListSequence.fromList(scopes).toGenericArray(Scope.class));
+  }
+
+  private static boolean neq_save77_a0b0e(Object a, Object b) {
+    return !((a != null ?
+      a.equals(b) :
+      a == b
+    ));
+  }
+
+  private static boolean eq_save77_a0a0a0a0a1a0b0c0e(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b

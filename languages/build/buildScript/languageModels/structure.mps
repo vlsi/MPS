@@ -187,6 +187,11 @@
       <property name="name" nameId="tpck.1169194664001" value="BuildJavaPlugin" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="6647099934206689694" resolveInfo="BuildPlugin" />
     </node>
+    <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="3767587139141066978">
+      <property name="name" nameId="tpck.1169194664001" value="BuildVariableMacro" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Macro" />
+      <link role="extends" roleId="tpce.1071489389519" targetNodeId="5617550519002745375" resolveInfo="BuildMacro" />
+    </node>
   </roots>
   <root id="5617550519002745363">
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="6647099934206700656">
@@ -243,6 +248,10 @@
     </node>
     <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.BooleanConceptProperty" typeId="tpce.1105725574259" id="7389400916848153103">
       <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473854053" resolveInfo="abstract" />
+    </node>
+    <node role="conceptPropertyDeclaration" roleId="tpce.1137467167200" type="tpce.BooleanConceptPropertyDeclaration" typeId="tpce.1105725240314" id="3767587139141108898">
+      <property name="name" nameId="tpck.1169194664001" value="public" />
+      <property name="inheritable" nameId="tpce.1218571350029" value="true" />
     </node>
   </root>
   <root id="5617550519002745379">
@@ -540,6 +549,19 @@
     <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="6647099934206949389">
       <property name="value" nameId="tpce.1105725733873" value="adds Java capabilities (compile, test &amp; bundling) to the project" />
       <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473914776" resolveInfo="shortDescription" />
+    </node>
+  </root>
+  <root id="3767587139141066978">
+    <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="3767587139141067100">
+      <property name="value" nameId="tpce.1105725733873" value="variable" />
+      <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="3767587139141067102">
+      <property name="value" nameId="tpce.1105725733873" value="defines variable macro" />
+      <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473914776" resolveInfo="shortDescription" />
+    </node>
+    <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.BooleanConceptProperty" typeId="tpce.1105725574259" id="3767587139141108900">
+      <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="3767587139141108898" resolveInfo="public" />
     </node>
   </root>
 </model>
