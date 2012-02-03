@@ -4,11 +4,10 @@ package jetbrains.mps.bash.constraints;
 
 import jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor;
 import jetbrains.mps.smodel.SNodePointer;
-import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNode;
 import org.jetbrains.annotations.Nullable;
+import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.runtime.CheckingNodeContext;
-import jetbrains.mps.smodel.constraints.CanBeAParentContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.bash.behavior.ExternalCommandCall_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -26,8 +25,8 @@ public class ExternalCommandCall_Constraints extends BaseConstraintsDescriptor {
   }
 
   @Override
-  public boolean canBeParent(IOperationContext operationContext, SNode node, SNode node1, SNode node2, @Nullable CheckingNodeContext checkingNodeContext) {
-    boolean result = static_canBeAParent(operationContext, new CanBeAParentContext(node, node1, node2));
+  public boolean canBeParent(SNode node, @Nullable SNode childNode, SNode childConcept, SNode link, IOperationContext operationContext, @Nullable CheckingNodeContext checkingNodeContext) {
+    boolean result = static_canBeAParent(node, childNode, childConcept, link, operationContext);
 
     if (!(result) && checkingNodeContext != null) {
       checkingNodeContext.setBreakingNode(canBeParentBreakingPoint);
@@ -36,12 +35,12 @@ public class ExternalCommandCall_Constraints extends BaseConstraintsDescriptor {
     return result;
   }
 
-  public static boolean static_canBeAParent(final IOperationContext operationContext, final CanBeAParentContext _context) {
-    if (SConceptOperations.isExactly(_context.getChildConcept(), "jetbrains.mps.bash.structure.OptionSetReference")) {
-      return !(ExternalCommandCall_Behavior.call_isAllOptionsUsed_7803330421063829865(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.bash.structure.ExternalCommandCall")));
+  public static boolean static_canBeAParent(SNode node, SNode childNode, SNode childConcept, SNode link, final IOperationContext operationContext) {
+    if (SConceptOperations.isExactly(childConcept, "jetbrains.mps.bash.structure.OptionSetReference")) {
+      return !(ExternalCommandCall_Behavior.call_isAllOptionsUsed_7803330421063829865(SNodeOperations.cast(node, "jetbrains.mps.bash.structure.ExternalCommandCall")));
     }
-    if (SConceptOperations.isExactly(_context.getChildConcept(), "jetbrains.mps.bash.structure.ArgumentListReference")) {
-      return ExternalCommandCall_Behavior.call_isArgsListDefined_3147078024755335958(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.bash.structure.ExternalCommandCall"));
+    if (SConceptOperations.isExactly(childConcept, "jetbrains.mps.bash.structure.ArgumentListReference")) {
+      return ExternalCommandCall_Behavior.call_isArgsListDefined_3147078024755335958(SNodeOperations.cast(node, "jetbrains.mps.bash.structure.ExternalCommandCall"));
     }
     return true;
   }

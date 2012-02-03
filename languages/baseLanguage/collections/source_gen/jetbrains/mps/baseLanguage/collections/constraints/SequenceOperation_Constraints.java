@@ -4,11 +4,10 @@ package jetbrains.mps.baseLanguage.collections.constraints;
 
 import jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor;
 import jetbrains.mps.smodel.SNodePointer;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.SNode;
 import org.jetbrains.annotations.Nullable;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.runtime.CheckingNodeContext;
-import jetbrains.mps.smodel.constraints.CanBeAChildContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -32,8 +31,8 @@ public class SequenceOperation_Constraints extends BaseConstraintsDescriptor {
   }
 
   @Override
-  public boolean canBeChild(final IOperationContext operationContext, SNode node, SNode node1, SNode node2, @Nullable final CheckingNodeContext checkingNodeContext) {
-    boolean result = static_canBeAChild(operationContext, new CanBeAChildContext(node, node1, node2));
+  public boolean canBeChild(@Nullable SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext, @Nullable final CheckingNodeContext checkingNodeContext) {
+    boolean result = static_canBeAChild(node, parentNode, link, childConcept, operationContext);
 
     if (!(result) && checkingNodeContext != null) {
       checkingNodeContext.setBreakingNode(canBeChildBreakingPoint);
@@ -42,9 +41,9 @@ public class SequenceOperation_Constraints extends BaseConstraintsDescriptor {
     return result;
   }
 
-  public static boolean static_canBeAChild(final IOperationContext operationContext, final CanBeAChildContext _context) {
-    if (SConceptOperations.isSubConceptOf(_context.getChildConcept(), "jetbrains.mps.baseLanguage.collections.structure.IContainerOperation")) {
-      SNode opnd = SLinkOperations.getTarget(SNodeOperations.as(_context.getParentNode(), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operand", true);
+  public static boolean static_canBeAChild(SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext) {
+    if (SConceptOperations.isSubConceptOf(childConcept, "jetbrains.mps.baseLanguage.collections.structure.IContainerOperation")) {
+      SNode opnd = SLinkOperations.getTarget(SNodeOperations.as(parentNode, "jetbrains.mps.baseLanguage.structure.DotExpression"), "operand", true);
       if ((opnd != null)) {
         SNode opndtype = TypeChecker.getInstance().getTypeOf(opnd);
         for (final SNode cld : ListSequence.fromList(SLinkOperations.getTargets(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.IContainerOperation"), "conceptLinkDeclaration", true)).where(new IWhereFilter<SNode>() {
@@ -52,7 +51,7 @@ public class SequenceOperation_Constraints extends BaseConstraintsDescriptor {
             return "expectedOperandType".equals(SPropertyOperations.getString(it, "name"));
           }
         })) {
-          for (SNode exptype : ListSequence.fromList(SLinkOperations.getTargets(_context.getChildConcept(), "conceptLink", true)).where(new IWhereFilter<SNode>() {
+          for (SNode exptype : ListSequence.fromList(SLinkOperations.getTargets(childConcept, "conceptLink", true)).where(new IWhereFilter<SNode>() {
             public boolean accept(SNode it) {
               return cld == SLinkOperations.getTarget(it, "conceptLinkDeclaration", false);
             }
@@ -69,7 +68,7 @@ public class SequenceOperation_Constraints extends BaseConstraintsDescriptor {
       }
       return false;
     } else {
-      return SNodeOperations.isInstanceOf(_context.getParentNode(), "jetbrains.mps.baseLanguage.structure.DotExpression") && (TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(SNodeOperations.cast(_context.getParentNode(), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operand", true)), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.collections.structure.SequenceType"), false) != null);
+      return SNodeOperations.isInstanceOf(parentNode, "jetbrains.mps.baseLanguage.structure.DotExpression") && (TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(SNodeOperations.cast(parentNode, "jetbrains.mps.baseLanguage.structure.DotExpression"), "operand", true)), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.collections.structure.SequenceType"), false) != null);
     }
   }
 }

@@ -4,11 +4,10 @@ package jetbrains.mps.gwt.client.constraints;
 
 import jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor;
 import jetbrains.mps.smodel.SNodePointer;
-import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNode;
 import org.jetbrains.annotations.Nullable;
+import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.runtime.CheckingNodeContext;
-import jetbrains.mps.smodel.constraints.CanBeAParentContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -27,8 +26,8 @@ public class PatternFilter_Constraints extends BaseConstraintsDescriptor {
   }
 
   @Override
-  public boolean canBeParent(IOperationContext operationContext, SNode node, SNode node1, SNode node2, @Nullable CheckingNodeContext checkingNodeContext) {
-    boolean result = static_canBeAParent(operationContext, new CanBeAParentContext(node, node1, node2));
+  public boolean canBeParent(SNode node, @Nullable SNode childNode, SNode childConcept, SNode link, IOperationContext operationContext, @Nullable CheckingNodeContext checkingNodeContext) {
+    boolean result = static_canBeAParent(node, childNode, childConcept, link, operationContext);
 
     if (!(result) && checkingNodeContext != null) {
       checkingNodeContext.setBreakingNode(canBeParentBreakingPoint);
@@ -37,15 +36,15 @@ public class PatternFilter_Constraints extends BaseConstraintsDescriptor {
     return result;
   }
 
-  public static boolean static_canBeAParent(final IOperationContext operationContext, final CanBeAParentContext _context) {
-    if (SLinkOperations.findLinkDeclaration("jetbrains.mps.gwt.client.structure.PatternFilter", "pattern") == _context.getLink()) {
-      return SConceptOperations.isSubConceptOf(_context.getChildConcept(), "jetbrains.mps.gwt.client.structure.PatternHolder");
+  public static boolean static_canBeAParent(SNode node, SNode childNode, SNode childConcept, SNode link, final IOperationContext operationContext) {
+    if (SLinkOperations.findLinkDeclaration("jetbrains.mps.gwt.client.structure.PatternFilter", "pattern") == link) {
+      return SConceptOperations.isSubConceptOf(childConcept, "jetbrains.mps.gwt.client.structure.PatternHolder");
     }
-    if (SLinkOperations.findLinkDeclaration("jetbrains.mps.gwt.client.structure.PatternFilter", "attr") == _context.getLink()) {
-      return ListSequence.fromList(ListSequence.fromListAndArray(new ArrayList<SNode>(), SConceptOperations.findConceptDeclaration("jetbrains.mps.gwt.client.structure.CaseSensitive"), SConceptOperations.findConceptDeclaration("jetbrains.mps.gwt.client.structure.DefaultExcludes"), SConceptOperations.findConceptDeclaration("jetbrains.mps.gwt.client.structure.Includes"), SConceptOperations.findConceptDeclaration("jetbrains.mps.gwt.client.structure.Excludes"))).contains(_context.getChildConcept());
+    if (SLinkOperations.findLinkDeclaration("jetbrains.mps.gwt.client.structure.PatternFilter", "attr") == link) {
+      return ListSequence.fromList(ListSequence.fromListAndArray(new ArrayList<SNode>(), SConceptOperations.findConceptDeclaration("jetbrains.mps.gwt.client.structure.CaseSensitive"), SConceptOperations.findConceptDeclaration("jetbrains.mps.gwt.client.structure.DefaultExcludes"), SConceptOperations.findConceptDeclaration("jetbrains.mps.gwt.client.structure.Includes"), SConceptOperations.findConceptDeclaration("jetbrains.mps.gwt.client.structure.Excludes"))).contains(childConcept);
     }
-    if (SLinkOperations.findLinkDeclaration("jetbrains.mps.gwt.client.structure.PatternFilter", "path") == _context.getLink()) {
-      return SConceptOperations.findConceptDeclaration("jetbrains.mps.gwt.client.structure.Path") == _context.getChildConcept();
+    if (SLinkOperations.findLinkDeclaration("jetbrains.mps.gwt.client.structure.PatternFilter", "path") == link) {
+      return SConceptOperations.findConceptDeclaration("jetbrains.mps.gwt.client.structure.Path") == childConcept;
     }
     return false;
   }

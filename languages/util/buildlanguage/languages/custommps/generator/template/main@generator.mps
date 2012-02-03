@@ -1810,6 +1810,9 @@
             <property name="name" nameId="tps4.1220976068141" value="scripts.dir" />
           </node>
         </node>
+        <node role="title" roleId="tps4.1205340441197" type="tps4.SimpleString" typeId="tps4.1205339044029" id="2074469845996165746">
+          <property name="name" nameId="tps4.1223641503366" value="mps.executable" />
+        </node>
       </node>
     </node>
     <node role="component" roleId="tps4.1203599325709" type="tps4.Antcall" typeId="tps4.1210777529562" id="4514696390934965379">

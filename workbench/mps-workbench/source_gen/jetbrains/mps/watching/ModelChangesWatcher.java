@@ -16,6 +16,7 @@ import com.intellij.openapi.vfs.newvfs.BulkFileListener;
 import jetbrains.mps.make.IMakeNotificationListener;
 import jetbrains.mps.make.MakeNotification;
 import jetbrains.mps.make.IMakeService;
+import jetbrains.mps.library.LibraryManager;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vcs.ProjectLevelVcsManager;
 import com.intellij.openapi.application.ApplicationManager;
@@ -28,7 +29,6 @@ import jetbrains.mps.library.ProjectLibraryManager;
 import jetbrains.mps.library.Library;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import java.util.Arrays;
-import jetbrains.mps.library.LibraryManager;
 import java.io.File;
 import com.intellij.openapi.util.io.FileUtil;
 import jetbrains.mps.util.Computable;
@@ -72,7 +72,7 @@ public class ModelChangesWatcher implements ApplicationComponent {
   };
   private IMakeService myMakeService;
 
-  public ModelChangesWatcher(MessageBus bus, ProjectManager projectManager, VirtualFileManager virtualFileManager) {
+  public ModelChangesWatcher(LibraryManager libraryManager, MessageBus bus, ProjectManager projectManager, VirtualFileManager virtualFileManager) {
     myBus = bus;
     myVirtualFileManager = virtualFileManager;
     myProjectManager = projectManager;
