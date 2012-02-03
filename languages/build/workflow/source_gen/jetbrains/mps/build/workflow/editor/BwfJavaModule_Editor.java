@@ -51,9 +51,7 @@ public class BwfJavaModule_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_y27sly_c2a(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_y27sly_d2a(editorContext, node));
     editorCell.addEditorCell(this.createConstant_y27sly_e2a(editorContext, node));
-    editorCell.addEditorCell(this.createRefNodeList_y27sly_f2a(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_y27sly_g2a(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_y27sly_h2a(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_y27sly_f2a(editorContext, node));
     return editorCell;
   }
 
@@ -78,7 +76,7 @@ public class BwfJavaModule_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_y27sly_c2a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "classpath");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "dependencies");
     editorCell.setCellId("Constant_y27sly_c2a");
     workflowStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     {
@@ -90,20 +88,8 @@ public class BwfJavaModule_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_y27sly_e2a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "dependencies");
-    editorCell.setCellId("Constant_y27sly_e2a");
-    workflowStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
-    }
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-  private EditorCell createConstant_y27sly_g2a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "output");
-    editorCell.setCellId("Constant_y27sly_g2a");
+    editorCell.setCellId("Constant_y27sly_e2a");
     workflowStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     {
       Style style = editorCell.getStyle();
@@ -135,21 +121,7 @@ public class BwfJavaModule_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createRefNodeList_y27sly_d2a(EditorContext editorContext, SNode node) {
-    AbstractCellListHandler handler = new BwfJavaModule_Editor.classpathListHandler_y27sly_d2a(node, "classpath", editorContext);
-    EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
-    editorCell.setCellId("refNodeList_classpath");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE, true);
-      style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
-      style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
-    }
-    editorCell.setRole(handler.getElementRole());
-    return editorCell;
-  }
-
-  private EditorCell createRefNodeList_y27sly_f2a(EditorContext editorContext, SNode node) {
-    AbstractCellListHandler handler = new BwfJavaModule_Editor.dependenciesListHandler_y27sly_f2a(node, "dependencies", editorContext);
+    AbstractCellListHandler handler = new BwfJavaModule_Editor.dependenciesListHandler_y27sly_d2a(node, "dependencies", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_dependencies");
     {
@@ -183,7 +155,7 @@ public class BwfJavaModule_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createProperty_y27sly_h2a(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_y27sly_f2a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("outputFolder");
     provider.setNoTargetText("<no outputFolder>");
@@ -242,44 +214,8 @@ public class BwfJavaModule_Editor extends DefaultNodeEditor {
     }
   }
 
-  private static class classpathListHandler_y27sly_d2a extends RefNodeListHandler {
-    public classpathListHandler_y27sly_d2a(SNode ownerNode, String childRole, EditorContext context) {
-      super(ownerNode, childRole, context, false);
-    }
-
-    public SNode createNodeToInsert(EditorContext editorContext) {
-      SNode listOwner = super.getOwner();
-      return NodeFactoryManager.createNode(listOwner, editorContext, super.getElementRole());
-    }
-
-    public EditorCell createNodeCell(EditorContext editorContext, SNode elementNode) {
-      EditorCell elementCell = super.createNodeCell(editorContext, elementNode);
-      this.installElementCellActions(this.getOwner(), elementNode, elementCell, editorContext);
-      return elementCell;
-    }
-
-    public EditorCell createEmptyCell(EditorContext editorContext) {
-      EditorCell emptyCell = null;
-      emptyCell = super.createEmptyCell(editorContext);
-      this.installElementCellActions(super.getOwner(), null, emptyCell, editorContext);
-      return emptyCell;
-    }
-
-    public void installElementCellActions(SNode listOwner, SNode elementNode, EditorCell elementCell, EditorContext editorContext) {
-      if (elementCell.getUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET) == null) {
-        elementCell.putUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET, AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET);
-        if (elementNode != null) {
-          elementCell.setAction(CellActionType.DELETE, new CellAction_DeleteNode(elementNode));
-        }
-        if (elementCell.getSubstituteInfo() == null || elementCell.getSubstituteInfo() instanceof DefaultReferenceSubstituteInfo) {
-          elementCell.setSubstituteInfo(new DefaultChildSubstituteInfo(listOwner, elementNode, super.getLinkDeclaration(), editorContext));
-        }
-      }
-    }
-  }
-
-  private static class dependenciesListHandler_y27sly_f2a extends RefNodeListHandler {
-    public dependenciesListHandler_y27sly_f2a(SNode ownerNode, String childRole, EditorContext context) {
+  private static class dependenciesListHandler_y27sly_d2a extends RefNodeListHandler {
+    public dependenciesListHandler_y27sly_d2a(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 

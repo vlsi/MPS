@@ -14,6 +14,7 @@
     </node>
   </roots>
   <root id="4993211115183387839">
+    <node role="plugins" roleId="3ior.6647099934206700656" type="3ior.BuildJavaPlugin" typeId="3ior.6647099934206700647" id="6647099934206949390" />
     <node role="parts" roleId="3ior.7389400916848080626" type="3ior.BuildSource_JavaLibrary" typeId="3ior.6057319140845467763" id="3695638809903322719">
       <property name="name" nameId="tpck.1169194664001" value="apache-collections" />
       <node role="elements" roleId="3ior.6057319140845478673" type="3ior.BuildSource_JavaLibraryJar" typeId="3ior.6057319140845478671" id="5481553824944831595">
@@ -109,7 +110,6 @@
         </node>
       </node>
     </node>
-    <node role="plugins" roleId="3ior.6647099934206700656" type="3ior.BuildJavaPlugin" typeId="3ior.6647099934206700647" id="6647099934206949390" />
   </root>
   <root id="4993211115183416028">
     <node role="layout" roleId="3ior.5617550519002745372" type="3ior.BuildLayout" typeId="3ior.5617550519002745364" id="4993211115183416029">

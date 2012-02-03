@@ -5,6 +5,7 @@
   <target name="java.compile.mps-core">
     <javac destdir="${build.dir}/tmp/java.out.mps-core">
       <src path="${mps_home}/core/source" />
+      <classpath path="!TODO! java library classpath" />
     </javac>
   </target>
   <target name="build" depends="check, assemble"></target>

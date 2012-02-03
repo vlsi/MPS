@@ -18,7 +18,6 @@ public class BwfJavaModule extends BwfProjectPart implements INamedConcept {
   public static final String SHORT_DESCRIPTION = "shortDescription";
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
-  public static final String CLASSPATH = "classpath";
   public static final String SOURCES = "sources";
   public static final String DEPENDENCIES = "dependencies";
   public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
@@ -67,26 +66,6 @@ public class BwfJavaModule extends BwfProjectPart implements INamedConcept {
     this.setProperty(BwfJavaModule.VIRTUAL_PACKAGE, value);
   }
 
-  public int getClasspathsCount() {
-    return this.getChildCount(BwfJavaModule.CLASSPATH);
-  }
-
-  public Iterator<BwfPath> classpaths() {
-    return this.children(BwfPath.class, BwfJavaModule.CLASSPATH);
-  }
-
-  public List<BwfPath> getClasspaths() {
-    return this.getChildren(BwfPath.class, BwfJavaModule.CLASSPATH);
-  }
-
-  public void addClasspath(BwfPath node) {
-    this.addChild(BwfJavaModule.CLASSPATH, node);
-  }
-
-  public void insertClasspath(BwfPath prev, BwfPath node) {
-    this.insertChild(prev, BwfJavaModule.CLASSPATH, node);
-  }
-
   public int getSourcesesCount() {
     return this.getChildCount(BwfJavaModule.SOURCES);
   }
@@ -111,19 +90,19 @@ public class BwfJavaModule extends BwfProjectPart implements INamedConcept {
     return this.getChildCount(BwfJavaModule.DEPENDENCIES);
   }
 
-  public Iterator<BwfJavaModuleReference> dependencieses() {
-    return this.children(BwfJavaModuleReference.class, BwfJavaModule.DEPENDENCIES);
+  public Iterator<BwfJavaDependency> dependencieses() {
+    return this.children(BwfJavaDependency.class, BwfJavaModule.DEPENDENCIES);
   }
 
-  public List<BwfJavaModuleReference> getDependencieses() {
-    return this.getChildren(BwfJavaModuleReference.class, BwfJavaModule.DEPENDENCIES);
+  public List<BwfJavaDependency> getDependencieses() {
+    return this.getChildren(BwfJavaDependency.class, BwfJavaModule.DEPENDENCIES);
   }
 
-  public void addDependencies(BwfJavaModuleReference node) {
+  public void addDependencies(BwfJavaDependency node) {
     this.addChild(BwfJavaModule.DEPENDENCIES, node);
   }
 
-  public void insertDependencies(BwfJavaModuleReference prev, BwfJavaModuleReference node) {
+  public void insertDependencies(BwfJavaDependency prev, BwfJavaDependency node) {
     this.insertChild(prev, BwfJavaModule.DEPENDENCIES, node);
   }
 

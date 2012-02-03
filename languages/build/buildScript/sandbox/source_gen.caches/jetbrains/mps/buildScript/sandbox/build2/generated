@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="4ne2b6h5l2u4rs3lxhag6r96sh7y78t">
+<dependencies version="2" modelHash="-4eo113ey5vzbm5wn5rta7lv06nx184k">
   <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" />
   <dep model="r:64db3a92-5968-4a73-b456-34504a2d97a6(jetbrains.mps.core.xml.structure)" hash="ewge8lqrwy2b6zft9axm5u7fm9eu7rc" />
-  <dep model="r:d8d06a40-eb90-4ad9-a679-19e3fc235859(jetbrains.mps.build.workflow.generator.template.main@generator)" hash="-eq9ao6piukzdqt8evkbostlug2n5s0b" />
-  <dep model="r:ed179f4d-7cf2-479d-8348-50c1fc63b96a(jetbrains.mps.build.workflow.structure)" hash="8evh1rg8z009xh987uj0jcr5axh1bq5" />
+  <dep model="r:d8d06a40-eb90-4ad9-a679-19e3fc235859(jetbrains.mps.build.workflow.generator.template.main@generator)" hash="3jpni11svuf202n1kgtphddib5040yp" />
+  <dep model="r:ed179f4d-7cf2-479d-8348-50c1fc63b96a(jetbrains.mps.build.workflow.structure)" hash="-9e630zu0eboxynuuwanweruj9v684j8" />
   <common hash="bfulmtx6i7jwedl0kecqt8cqremw0i6" />
-  <source id="2769948622284624385" name="myCore" hash="61f173x95o6omfwmruh4ngwotlw7g9k">
+  <source id="2769948622284624385" name="myCore" hash="asthaf0wyzu01nnn5m988owc8tbchvu">
     <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" />
     <dep model="r:64db3a92-5968-4a73-b456-34504a2d97a6(jetbrains.mps.core.xml.structure)" />
     <dep model="r:d8d06a40-eb90-4ad9-a679-19e3fc235859(jetbrains.mps.build.workflow.generator.template.main@generator)" />

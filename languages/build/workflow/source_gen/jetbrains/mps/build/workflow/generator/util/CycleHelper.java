@@ -24,6 +24,7 @@ import java.util.Comparator;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import java.util.LinkedHashSet;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.make.dependencies.graph.IVertex;
 
 public class CycleHelper {
@@ -84,34 +85,30 @@ public class CycleHelper {
       SPropertyOperations.set(cycleX, "outputFolder", SPropertyOperations.getString(project, "temporaryFolder") + "/" + SPropertyOperations.getString(cycleX, "name"));
       SNodeOperations.insertPrevSiblingChild(first, cycleX);
       Set<String> sources = new LinkedHashSet<String>();
-      Set<String> classpath = new LinkedHashSet<String>();
-      Set<SNode> deps = new LinkedHashSet<SNode>();
+      Set<String> cpDeps = new LinkedHashSet<String>();
+      Set<SNode> moduleDeps = new LinkedHashSet<SNode>();
 
       for (CycleHelper.Module m : cycle) {
         SNode module = m.getModule();
         ListSequence.fromList(SLinkOperations.getTargets(module, "dependencies", true)).removeWhere(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
-            return cycleModules.contains(SLinkOperations.getTarget(it, "target", false));
+            return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.workflow.structure.BwfJavaModuleReference") && cycleModules.contains(SLinkOperations.getTarget(SNodeOperations.cast(it, "jetbrains.mps.build.workflow.structure.BwfJavaModuleReference"), "target", false));
           }
         });
-        deps.addAll(ListSequence.fromList(SLinkOperations.getTargets(module, "dependencies", true)).where(new IWhereFilter<SNode>() {
-          public boolean accept(SNode it) {
-            return (SLinkOperations.getTarget(it, "target", false) != null);
+        for (SNode dep : SLinkOperations.getTargets(module, "dependencies", true)) {
+          if (SNodeOperations.isInstanceOf(dep, "jetbrains.mps.build.workflow.structure.BwfJavaModuleReference")) {
+            moduleDeps.add(SLinkOperations.getTarget(SNodeOperations.cast(dep, "jetbrains.mps.build.workflow.structure.BwfJavaModuleReference"), "target", false));
+          } else if (SNodeOperations.isInstanceOf(dep, "jetbrains.mps.build.workflow.structure.BwfJavaClassPath")) {
+            cpDeps.add(SPropertyOperations.getString(SNodeOperations.cast(dep, "jetbrains.mps.build.workflow.structure.BwfJavaClassPath"), "path"));
+          } else {
+            genContext.showErrorMessage(dep, "unexpected dependency type");
           }
-        }).select(new ISelector<SNode, SNode>() {
-          public SNode select(SNode it) {
-            return SLinkOperations.getTarget(it, "target", false);
-          }
-        }).toListSequence());
+        }
+
         SNode mref = SModelOperations.createNewNode(model, "jetbrains.mps.build.workflow.structure.BwfJavaModuleReference", null);
         SLinkOperations.setTarget(mref, "target", cycleX, false);
         ListSequence.fromList(SLinkOperations.getTargets(module, "dependencies", true)).addElement(mref);
         sources.addAll(ListSequence.fromList(SLinkOperations.getTargets(module, "sources", true)).select(new ISelector<SNode, String>() {
-          public String select(SNode it) {
-            return SPropertyOperations.getString(it, "path");
-          }
-        }).toListSequence());
-        classpath.addAll(ListSequence.fromList(SLinkOperations.getTargets(module, "classpath", true)).select(new ISelector<SNode, String>() {
           public String select(SNode it) {
             return SPropertyOperations.getString(it, "path");
           }
@@ -122,15 +119,15 @@ public class CycleHelper {
         SPropertyOperations.set(path, "path", src);
         ListSequence.fromList(SLinkOperations.getTargets(cycleX, "sources", true)).addElement(path);
       }
-      for (String cpath : classpath) {
-        SNode path = SModelOperations.createNewNode(model, "jetbrains.mps.build.workflow.structure.BwfPath", null);
-        SPropertyOperations.set(path, "path", cpath);
-        ListSequence.fromList(SLinkOperations.getTargets(cycleX, "classpath", true)).addElement(path);
+      for (String cp : cpDeps) {
+        SNode newcp = SModelOperations.createNewNode(model, "jetbrains.mps.build.workflow.structure.BwfJavaClassPath", null);
+        SPropertyOperations.set(newcp, "path", cp);
+        ListSequence.fromList(SLinkOperations.getTargets(cycleX, "dependencies", true)).addElement(newcp);
       }
-      for (SNode dep : deps) {
-        SNode ref = SModelOperations.createNewNode(model, "jetbrains.mps.build.workflow.structure.BwfJavaModuleReference", null);
-        SLinkOperations.setTarget(ref, "target", dep, false);
-        ListSequence.fromList(SLinkOperations.getTargets(cycleX, "dependencies", true)).addElement(ref);
+      for (SNode jm : moduleDeps) {
+        SNode nref = SConceptOperations.createNewNode("jetbrains.mps.build.workflow.structure.BwfJavaModuleReference", null);
+        SLinkOperations.setTarget(nref, "target", jm, false);
+        ListSequence.fromList(SLinkOperations.getTargets(cycleX, "dependencies", true)).addElement(nref);
       }
     }
   }
@@ -149,8 +146,12 @@ public class CycleHelper {
           targets = Collections.emptySet();
         } else {
           targets = new HashSet<CycleHelper.Module>();
-          for (SNode ref : SLinkOperations.getTargets(module, "dependencies", true)) {
-            CycleHelper.Module tm = map.get(SLinkOperations.getTarget(ref, "target", false));
+          for (SNode ref : ListSequence.fromList(SLinkOperations.getTargets(module, "dependencies", true)).where(new IWhereFilter<SNode>() {
+            public boolean accept(SNode it) {
+              return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.workflow.structure.BwfJavaModuleReference");
+            }
+          })) {
+            CycleHelper.Module tm = map.get(SLinkOperations.getTarget(SNodeOperations.cast(ref, "jetbrains.mps.build.workflow.structure.BwfJavaModuleReference"), "target", false));
             if (tm == null) {
               genContext.showErrorMessage(ref, "internal problem: unsatisfied local dependency");
             } else {
