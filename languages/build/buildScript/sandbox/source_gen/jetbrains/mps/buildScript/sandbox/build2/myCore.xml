@@ -52,10 +52,10 @@
       <src path="module4/source" />
       <classpath path="mo3.deps" />
       <classpath path="junit" />
-      <classpath path="mo4.deps" />
-      <classpath path="log4j" />
       <classpath path="build/temp/module1" />
       <classpath path="build/temp/module2" />
+      <classpath path="mo4.deps" />
+      <classpath path="log4j" />
     </javac>
   </target>
   
