@@ -169,7 +169,13 @@ public class Junit_Command {
       }
     }).toListSequence();
     if (ListSequence.fromList(_tests.value).isEmpty()) {
-      return MultiTuple.<List<ITestNodeWrapper>,Tuples._3<String, List<String>, List<String>>>from(ListSequence.fromList(new ArrayList<ITestNodeWrapper>()), AbstractTestWrapper.getDefaultRunParameters());
+      final Wrappers._T<Tuples._3<String, List<String>, List<String>>> defaultRunParameters = new Wrappers._T<Tuples._3<String, List<String>, List<String>>>();
+      ModelAccess.instance().runReadAction(new Runnable() {
+        public void run() {
+          defaultRunParameters.value = AbstractTestWrapper.getDefaultRunParameters();
+        }
+      });
+      return MultiTuple.<List<ITestNodeWrapper>,Tuples._3<String, List<String>, List<String>>>from(ListSequence.fromList(new ArrayList<ITestNodeWrapper>()), defaultRunParameters.value);
     }
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
