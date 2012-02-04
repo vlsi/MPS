@@ -4,11 +4,10 @@ package jetbrains.mps.build.workflow.constraints;
 
 import jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor;
 import jetbrains.mps.smodel.SNodePointer;
-import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNode;
 import org.jetbrains.annotations.Nullable;
+import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.runtime.CheckingNodeContext;
-import jetbrains.mps.smodel.constraints.CanBeAParentContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 
 public class BwfTaskLibrary_Constraints extends BaseConstraintsDescriptor {
@@ -24,8 +23,8 @@ public class BwfTaskLibrary_Constraints extends BaseConstraintsDescriptor {
   }
 
   @Override
-  public boolean canBeParent(IOperationContext operationContext, SNode node, SNode node1, SNode node2, @Nullable CheckingNodeContext checkingNodeContext) {
-    boolean result = static_canBeAParent(operationContext, new CanBeAParentContext(node, node1, node2));
+  public boolean canBeParent(SNode node, @Nullable SNode childNode, SNode childConcept, SNode link, IOperationContext operationContext, @Nullable CheckingNodeContext checkingNodeContext) {
+    boolean result = static_canBeAParent(node, childNode, childConcept, link, operationContext);
 
     if (!(result) && checkingNodeContext != null) {
       checkingNodeContext.setBreakingNode(canBeParentBreakingPoint);
@@ -34,7 +33,7 @@ public class BwfTaskLibrary_Constraints extends BaseConstraintsDescriptor {
     return result;
   }
 
-  public static boolean static_canBeAParent(final IOperationContext operationContext, final CanBeAParentContext _context) {
-    return SConceptOperations.isExactly(_context.getChildConcept(), "jetbrains.mps.build.workflow.structure.BwfTask") || SConceptOperations.isExactly(_context.getChildConcept(), "jetbrains.mps.build.workflow.structure.BwfTaskPart") || SConceptOperations.isExactly(_context.getChildConcept(), "jetbrains.mps.build.workflow.structure.BwfMacro") || SConceptOperations.isExactly(_context.getChildConcept(), "jetbrains.mps.build.workflow.structure.BwfTaskLibraryDependency");
+  public static boolean static_canBeAParent(SNode node, SNode childNode, SNode childConcept, SNode link, final IOperationContext operationContext) {
+    return SConceptOperations.isExactly(childConcept, "jetbrains.mps.build.workflow.structure.BwfTask") || SConceptOperations.isExactly(childConcept, "jetbrains.mps.build.workflow.structure.BwfTaskPart") || SConceptOperations.isExactly(childConcept, "jetbrains.mps.build.workflow.structure.BwfMacro") || SConceptOperations.isExactly(childConcept, "jetbrains.mps.build.workflow.structure.BwfTaskLibraryDependency");
   }
 }
