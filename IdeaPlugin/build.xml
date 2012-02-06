@@ -397,7 +397,7 @@
                 <include name="models/test.mps"/>
             </fileset>
             <fileset dir="${base_dir}/IdeaPlugin/tests/blProject">
-                <include name="blProject.msd"/>
+                <include name="blProject.iml"/>
                 <include name="models/main.mps"/>
             </fileset>
         </copy>

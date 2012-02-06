@@ -144,13 +144,8 @@ public class MPSCompiler implements TranslatingCompiler {
                 MPSMakeConfiguration makeConfiguration = new MPSMakeConfiguration();
                 makeConfiguration.addConfiguredModels(modelsToMake);
 
-                // TODO avoid passing the project base dir as library, use the appropriate source root(s) instead
-                makeConfiguration.addConfiguredLibrary(myProject.getName(), new File(myProject.getBaseDir().getPath()), false);
-//            for (VirtualFile sf: ModuleRootManager.getInstance(facet.getModule()).getSourceRoots()) {
-//                makeConfiguration.addConfiguredLibrary(
-//                    facet.getModule().getName()+"_"+sf.getPresentableName(),
-//                    new File(sf.getPath()), false);
-//            }
+                File moduleFile = new File(facet.getModule().getModuleFile().getPath());
+                makeConfiguration.addConfiguredModules(Collections.singletonList(moduleFile));
 
                 final List<File> files = new ArrayList<File>();
                 MPSMakeLauncher gl = new MPSMakeLauncher(makeConfiguration, myProject);
