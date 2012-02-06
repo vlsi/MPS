@@ -28,9 +28,9 @@ import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import com.intellij.openapi.vcs.ProjectLevelVcsManager;
 import com.intellij.openapi.vcs.FileStatusManager;
+import jetbrains.mps.vcs.ConflictingModelsWarnings;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.vcs.ConflictingModelsWarnings;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.smodel.persistence.def.ModelReadException;
 import jetbrains.mps.smodel.ModelAccess;
@@ -155,6 +155,9 @@ public class ChangesTracking {
       return;
     }
     FileStatus status = FileStatusManager.getInstance(myProject).getStatus(modelVFile);
+    if (ConflictingModelsWarnings.isModelOrModuleConflicting(myModelDescriptor, myProject)) {
+      status = FileStatus.MERGED_WITH_CONFLICTS;
+    }
 
     if (myDifference.getChangeSet() != null && myDifference.getChangeSet().getNewModel() != myModelDescriptor.getSModel()) {
       force = true;
