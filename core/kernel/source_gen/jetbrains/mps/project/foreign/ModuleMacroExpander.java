@@ -21,9 +21,11 @@ public class ModuleMacroExpander implements MacroExpander {
       path = myProjectMacroExpander.expandMacros(path);
     }
     if (myModuleFile != null) {
-      // first replace module dir + trailing slash, then just module dir 
-      path = path.replaceAll("\\$MODULE_DIR\\$/", myModuleFile.getParent().getPath());
-      path = path.replaceAll("\\$MODULE_DIR\\$", myModuleFile.getParent().getPath());
+      String replaceWith = myModuleFile.getParent().getPath();
+      if (replaceWith.endsWith("/")) {
+        replaceWith = replaceWith.substring(0, replaceWith.length() - 1);
+      }
+      path = path.replaceAll("\\$MODULE_DIR\\$", replaceWith);
     }
     return path;
   }
