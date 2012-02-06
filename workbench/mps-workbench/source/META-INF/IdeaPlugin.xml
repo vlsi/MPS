@@ -16,6 +16,7 @@
     <extensionPoint name="mps.GenerationHandler"
                     interface="jetbrains.mps.ide.generator.GeneratorUIFacade$GenerationHandlerProvider"/>
     <extensionPoint name="mps.TabColorProvider" area="IDEA_PROJECT" interface="jetbrains.mps.ide.editorTabs.TabColorProvider"/>
+    <extensionPoint name="mps.editorWarningsProvider" interface="jetbrains.mps.ide.editor.warningPanel.EditorWarningsProvider"/>
     <extensionPoint name="mps.treeCreationHandler" area="IDEA_PROJECT" interface="jetbrains.mps.ide.ui.MPSTreeCreationHandler"/>
     <extensionPoint name="mps.projectPrefsPanel" interface="jetbrains.mps.workbench.dialogs.project.properties.project.ProjectPrefsExtraPanel" area="IDEA_PROJECT"/>
     <extensionPoint qualifiedName="com.intellij.mps.PluginBundle" beanClass="jetbrains.mps.ideaPlugins.IdeaPluginBundleExtension"/>
@@ -29,8 +30,13 @@
 
     <directoryIndexExcludePolicy implementation="jetbrains.mps.ide.vfs.ClassesGenPolicy"/>
 
+    <fileTypeFactory implementation="com.intellij.openapi.fileTypes.impl.InternalFileTypeFactory"/>
+
     <applicationService serviceInterface="com.intellij.codeStyle.CodeStyleFacade"
                         serviceImplementation="com.intellij.codeStyle.DefaultCodeStyleFacade"/>
+
+    <applicationService serviceInterface="com.intellij.lang.DefaultASTFactory"
+                        serviceImplementation="com.intellij.lang.DefaultASTFactoryImpl"/>
 
     <applicationService serviceInterface="com.intellij.openapi.project.ProjectLocator"
                         serviceImplementation="com.intellij.openapi.project.impl.DefaultProjectLocator"/>
@@ -65,6 +71,9 @@
                     serviceImplementation="com.intellij.psi.search.ProjectScopeBuilderImpl"/>
     <projectService serviceInterface="com.intellij.openapi.roots.FileIndexFacade"
                     serviceImplementation="com.intellij.openapi.vcs.impl.DefaultFileIndexFacade"/>
+    <projectService serviceInterface="com.intellij.psi.search.PsiSearchHelper"
+                        serviceImplementation="com.intellij.psi.impl.search.PsiSearchHelperImpl"/>
+    <indexPatternProvider implementation="com.intellij.ide.todo.TodoIndexPatternProvider" />
 
     <applicationService serviceInterface="com.intellij.openapi.wm.impl.FrameTitleBuilder"
                         serviceImplementation="com.intellij.openapi.wm.impl.PlatformFrameTitleBuilder"/>
@@ -131,6 +140,9 @@
     <stepsBeforeRunProvider implementation="jetbrains.mps.execution.impl.configurations.runners.LegacyBeforeTaskProvider"/>
     <projectService serviceInterface="com.intellij.execution.ui.RunnerLayoutUi$Factory"
                     serviceImplementation="com.intellij.execution.ui.layout.impl.RunnerLayoutUiFactoryImpl"/>
+
+    <mps.editorWarningsProvider implementation="jetbrains.mps.ide.editor.warningPanel.TransientModelWarningsProvider"/>
+    <mps.editorWarningsProvider implementation="jetbrains.mps.ide.editor.warningPanel.PackagedModelWarningsProvider"/>
   </extensions>
 
 </idea-plugin>

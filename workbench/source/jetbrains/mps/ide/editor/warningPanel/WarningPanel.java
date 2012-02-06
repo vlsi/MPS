@@ -17,6 +17,10 @@ package jetbrains.mps.ide.editor.warningPanel;
 
 import com.intellij.ui.HyperlinkLabel;
 import com.intellij.ui.LightColors;
+import com.intellij.xml.util.HtmlUtil;
+import com.intellij.xml.util.XmlStringUtil;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 import javax.swing.BorderFactory;
 import javax.swing.JLabel;
@@ -25,18 +29,23 @@ import javax.swing.event.HyperlinkEvent;
 import javax.swing.event.HyperlinkListener;
 import java.awt.BorderLayout;
 
-class WarningPanel extends JPanel {
-  WarningPanel(String text) {
-    this(text, null, null);
+public class WarningPanel extends JPanel {
+  private String myText;
+  private EditorWarningsProvider myProvider;
+  
+  WarningPanel(@NotNull EditorWarningsProvider provider, @NotNull String text) {
+    this(provider, text, null, null);
   }
 
-  public WarningPanel(String text, String linkText, final Runnable handler) {
+  public WarningPanel(@NotNull EditorWarningsProvider provider, @NotNull String text, @Nullable String linkText, @Nullable final Runnable handler) {
+    myProvider = provider;
+    myText = text;
     setLayout(new BorderLayout());
 
     setBackground(LightColors.YELLOW);
-    setBorder(BorderFactory.createEmptyBorder(0, 4, 0, 4));
+    setBorder(BorderFactory.createEmptyBorder(4, 4, 4, 4));
 
-    add(new JLabel(text), BorderLayout.CENTER);
+    add(new JLabel("<html>" + XmlStringUtil.escapeString(text) + "</html>"), BorderLayout.CENTER);
 
     if (linkText != null && handler != null) {
       HyperlinkLabel hyperlinkLabel = new HyperlinkLabel(linkText);
@@ -48,5 +57,20 @@ class WarningPanel extends JPanel {
       });
       add(hyperlinkLabel, BorderLayout.EAST);
     }
+  }
+
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) return true;
+    if (o == null || getClass() != o.getClass()) return false;
+    WarningPanel that = (WarningPanel) o;
+    return (this.myProvider.getClass() == that.myProvider.getClass()) && (this.myText.equals(that.myText));
+  }
+
+  @Override
+  public int hashCode() {
+    int result = myText.hashCode();
+    result = 31 * result + myProvider.getClass().hashCode();
+    return result;
   }
 }

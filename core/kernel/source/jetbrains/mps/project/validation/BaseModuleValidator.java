@@ -39,6 +39,12 @@ public class BaseModuleValidator<T extends IModule> implements ModuleValidator {
 
   public List<String> getErrors() {
     List<String> errors = new ArrayList<String>();
+    Throwable loadException = myModule.getModuleDescriptor().getLoadException();
+    if (loadException != null) {
+      errors.add("Couldn't load module: " + loadException.getMessage());
+      return errors;
+    }
+    
     for (Dependency dep : myModule.getDependencies()) {
       ModuleReference moduleRef = dep.getModuleRef();
       if (MPSModuleRepository.getInstance().getModule(moduleRef) == null) {
