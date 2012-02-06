@@ -44,6 +44,7 @@ public abstract class BaseNodeDialog extends BaseDialog {
   private IOperationContext myOperationContext;
   private UIEditorComponent myEditorComponent;
   private JSplitPane mySplitter;
+  private boolean myDisposed = false;
 
   protected BaseNodeDialog(String text, IOperationContext operationContext) throws HeadlessException {
     super(operationContext.getMainFrame(), text);
@@ -154,6 +155,10 @@ public abstract class BaseNodeDialog extends BaseDialog {
 
   @Override
   public void dispose() {
+    if (myDisposed) {
+      return;
+    }
+    myDisposed = true;
     super.dispose();
     myEditorComponent.dispose();
   }
