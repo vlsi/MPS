@@ -112,9 +112,8 @@ public class MPSCompiler implements TranslatingCompiler {
         final Map<String, Collection<OutputItem>> outputs = new HashMap<String, Collection<OutputItem>>();
         final List<File> filesToRefresh = new ArrayList<File>();
 
-        // TODO start make process
         // facet test start
-        fakeGenerator(vfile, moduleWithModels, outputs, filesToRefresh);
+        executeMPSMake(vfile, moduleWithModels, outputs, filesToRefresh);
         // facet test end
 
         CompilerUtil.refreshIOFiles(filesToRefresh);
@@ -123,8 +122,7 @@ public class MPSCompiler implements TranslatingCompiler {
         }
     }
 
-    // TODO replace with external make process
-    private void fakeGenerator(Map<String, VirtualFile> vfile, Map<MPSFacet, List<File>> moduleWithModels, Map<String, Collection<OutputItem>> outputs, List<File> filesToRefresh) {
+    private void executeMPSMake(Map<String, VirtualFile> vfile, Map<MPSFacet, List<File>> moduleWithModels, Map<String, Collection<OutputItem>> outputs, List<File> filesToRefresh) {
         for (Map.Entry<MPSFacet, List<File>> chunk : moduleWithModels.entrySet()) {
             MPSFacet facet = chunk.getKey();
             String outputFolder = facet.getSolution().getGeneratorOutputPath();
