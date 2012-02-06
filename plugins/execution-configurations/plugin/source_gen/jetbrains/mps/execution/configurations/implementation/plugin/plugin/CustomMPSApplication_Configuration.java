@@ -16,6 +16,7 @@ import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.ant.execution.AntSettings_Configuration;
 import com.intellij.openapi.project.Project;
 import com.intellij.execution.configurations.RuntimeConfigurationException;
 import org.apache.commons.lang.StringUtils;
