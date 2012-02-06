@@ -14,10 +14,8 @@ import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.smodel.resources.IMResource;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import java.util.concurrent.Future;
 import jetbrains.mps.make.script.IResult;
-import jetbrains.mps.build.ant.util.ThreadUtils;
 import java.util.concurrent.ExecutionException;
 import java.util.Map;
 import java.io.File;
@@ -35,6 +33,7 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.smodel.resources.ModelsToResources;
 import jetbrains.mps.generator.GenerationFacade;
@@ -113,19 +112,14 @@ public class GeneratorWorker extends MpsWorker {
       s.append(m);
     }
     info(s.toString());
-    final ProjectOperationContext ctx = new ProjectOperationContext(project);
+    ProjectOperationContext ctx = new ProjectOperationContext(project);
 
-    final Iterable<IMResource> resources = Sequence.fromIterable(collectResources(ctx, go)).toListSequence();
+    Iterable<IMResource> resources = Sequence.fromIterable(collectResources(ctx, go)).toListSequence();
     ModelAccess.instance().flushEventQueue();
-    final Wrappers._T<Future<IResult>> res = new Wrappers._T<Future<IResult>>();
-    ThreadUtils.runInUIThreadAndWait(new Runnable() {
-      public void run() {
-        res.value = new BuildMakeService(ctx, myMessageHandler).make(resources);
-      }
-    });
+    Future<IResult> res = new BuildMakeService(ctx, myMessageHandler).make(resources);
 
     try {
-      if (!(res.value.get().isSucessful())) {
+      if (!(res.get().isSucessful())) {
         myErrors.add("Make was not successful");
       }
     } catch (InterruptedException e) {

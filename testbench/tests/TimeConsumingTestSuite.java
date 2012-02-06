@@ -23,7 +23,7 @@ import org.junit.runner.RunWith;
 
 
 @SuiteClassSymbols({
-  "jetbrains.mps.build.ant.BrokenReferencesTestTest",
+  "jetbrains.mps.BrokenReferencesTestTest",
   "jetbrains.mps.build.ant.TeamCityMesageFormatTest",
   "jetbrains.mps.build.ant.WhatToDoSerializationConsistencyTest",
   "jetbrains.mps.generator.test.IncrementalGenerationTest",

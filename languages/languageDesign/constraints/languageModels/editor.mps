@@ -31,7 +31,7 @@
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tp1t.1148934493876" resolveInfo="ConstraintFunction_ReferentSearchScope_AbstractBase" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="8401916545537438644">
-      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tp1t.8401916545537438642" resolveInfo="NestedNodeScopeFactory" />
+      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tp1t.8401916545537438642" resolveInfo="InheritedNodeScopeFactory" />
     </node>
   </roots>
   <root id="1147468872959">

@@ -46,13 +46,21 @@
   <import index="tplo" modelUID="r:00000000-0000-4000-0000-011c895905c0(ypath.traversalTests)" version="-1" />
   <import index="tpk3" modelUID="r:00000000-0000-4000-0000-011c895905bf(ypath_test1)" version="-1" />
   <import index="vz87" modelUID="r:7aeccf7b-2a92-4693-88a5-f2859521757a(jetbrains.mps.makeTest.test)" version="-1" />
-  <import index="q7wr" modelUID="r:00c1e1d0-e3c4-4d43-82f5-4c4f80539a57(jetbrains.mps.execution.impl.configurations.tests@tests)" version="-1" />
   <import index="mbhy" modelUID="r:e9dec192-5733-4300-8d93-4c61effb6e45(jetbrains.mps.baseLanguage.unitTest.sandbox)" version="-1" />
   <import index="mql5" modelUID="r:aca77a3d-d50b-42af-89a7-f304bf06ae8f(jetbrains.mps.traceInfo.testWeaving.test@tests)" version="-1" />
   <import index="96t8" modelUID="r:ba79f114-e14c-442e-a24a-6ed5711c2453(jetbrains.mps.execution.impl.configurations.tests.configurations@tests)" version="-1" />
   <import index="7fn4" modelUID="r:e2bad6d6-3029-4bc3-b44d-49863f32d863(jetbrains.mps.execution.impl.configurations.tests.commands@tests)" version="-1" />
   <import index="nq5u" modelUID="r:53c4b5ce-bc17-4454-a907-f9ec447f3644(jetbrains.mps.build.mpsautobuild.test@tests)" version="-1" />
   <import index="saz5" modelUID="r:2ab484bd-6d9e-44f0-999f-0e78b0351ba4(jetbrains.mps.transformation.test.inputModels.test_refScopeEditorTests)" version="-1" />
+  <import index="3zun" modelUID="r:eb1b318e-412f-4a0e-a1ff-62ff2ab9ff40(jetbrains.mps.lang.extension.tests.testExtension@tests)" version="-1" />
+  <import index="u9u1" modelUID="r:c2c670fc-188b-4168-9559-68c718816e1a(jetbrains.mps.execution.impl.configurations.tests.commands.sandbox@tests)" version="-1" />
+  <import index="qw8u" modelUID="r:cebb2076-d3b2-4d62-a59a-225f2f665af5(jetbrains.mps.vcs@tests)" version="-1" />
+  <import index="6ihy" modelUID="r:234b331b-e592-4abc-a46f-b0dfd2e2ce5e(jetbrains.mps.vcs.diff.merge@tests)" version="-1" />
+  <import index="w6y5" modelUID="r:e7e02271-4574-4bd7-8641-cf8bca0b1900(jetbrains.mps.vcs.changesmanager@tests)" version="-1" />
+  <import index="zn6b" modelUID="r:a822b011-296a-478b-9b72-dc6e0c3c30e7(test.ypath.util)" version="-1" />
+  <import index="tpok" modelUID="r:00000000-0000-4000-0000-011c89590458(jetbrains.mps.samples.matrixLanguage.runtime.test)" version="-1" />
+  <import index="fw8r" modelUID="r:3160b573-ccb2-45e9-9d2a-2b5104766730(mf)" version="-1" />
+  <import index="g7jn" modelUID="r:43e3e907-f65e-4358-a377-baa3670feacf(jetbrains.mps.samples.secretCompartmentLanguage.runtime.test)" version="-1" />
   <import index="pop3" modelUID="r:c8b27be8-26f9-4593-9ae5-f70dd005d131(jetbrains.mps.testbench.suite.structure)" version="-1" implicit="yes" />
   <roots>
     <node type="pop3.ModuleSuite" typeId="pop3.4504141816188599477" id="2712670354707830840" />
@@ -84,6 +92,7 @@
     <node type="pop3.ModuleSuite" typeId="pop3.4504141816188599477" id="1538369951873468539" />
     <node type="pop3.ModuleSuite" typeId="pop3.4504141816188599477" id="1047721517261600280" />
     <node type="pop3.ModuleSuite" typeId="pop3.4504141816188599477" id="5934496548013521234" />
+    <node type="pop3.ModuleSuite" typeId="pop3.4504141816188599477" id="2622946712629076727" />
   </roots>
   <root id="2712670354707830840">
     <node role="moduleRef" roleId="pop3.1280144168199507080" type="pop3.SolutionRef" typeId="pop3.1280144168199506908" id="2712670354707830841">
@@ -1829,6 +1838,15 @@
     </node>
     <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="5934496548013527348">
       <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="saz5.5934496548013480005" resolveInfo="refScopesInInputLang" />
+    </node>
+  </root>
+  <root id="2622946712629076727">
+    <node role="moduleRef" roleId="pop3.1280144168199507080" type="pop3.SolutionRef" typeId="pop3.1280144168199506908" id="2622946712629076728">
+      <property name="moduleFQName" nameId="pop3.1280144168199506909" value="jetbrains.mps.lang.extension.tests" />
+      <property name="moduleID" nameId="pop3.1280144168199506910" value="bdcad511-2c95-4b17-90fb-99b248f018cc" />
+    </node>
+    <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="2622946712629076729">
+      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="3zun.7036359038356271438" resolveInfo="Extension_Test" />
     </node>
   </root>
 </model>

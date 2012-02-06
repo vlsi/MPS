@@ -50,7 +50,7 @@ public class QuickFixAdapter extends BaseIntention  {
   }
 
   public String getDescription(SNode node, EditorContext editorContext) {
-    return myQuickFix.getDescription();
+    return myQuickFix.getDescription(node);
   }
 
   public boolean isApplicable(SNode node, EditorContext editorContext) {

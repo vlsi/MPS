@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="BaseLanguage_Language.java" startLine="9" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.BaseLanguage_Language" />
-  <unitInfo fileName="StructureAspectDescriptor.java" startLine="10" startPosition="0" endLine="517" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.StructureAspectDescriptor" />
+  <unitInfo fileName="StructureAspectDescriptor.java" startLine="10" startPosition="0" endLine="519" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.StructureAspectDescriptor" />
   <root nodeId="1023687332192347378">
     <nodeInfo nodeId="1023687332192347378" fileName="IVariableReference.java" startLine="7" startPosition="58" endLine="8" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <unitInfo nodeId="1023687332192347378" fileName="IVariableReference.java" startLine="7" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.IVariableReference" />
@@ -11431,6 +11431,40 @@
   <root nodeId="5620135147607645642">
     <nodeInfo nodeId="5620135147607645642" fileName="IFinalWrapper.java" startLine="7" startPosition="53" endLine="8" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <unitInfo nodeId="5620135147607645642" fileName="IFinalWrapper.java" startLine="7" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.IFinalWrapper" />
+  </root>
+  <root nodeId="5862977038373003187">
+    <nodeInfo nodeId="5862977038373003187" fileName="LocalPropertyReference.java" startLine="10" startPosition="56" endLine="11" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
+    <nodeInfo nodeId="5862977038373003187" fileName="LocalPropertyReference.java" startLine="11" startPosition="101" endLine="12" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="PROPERTY" />
+    <nodeInfo nodeId="5862977038373003187" fileName="LocalPropertyReference.java" startLine="14" startPosition="45" endLine="15" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="5862977038373003187" fileName="LocalPropertyReference.java" startLine="18" startPosition="33" endLine="19" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5862977038373003187" fileName="LocalPropertyReference.java" startLine="22" startPosition="42" endLine="23" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5862977038373003187" fileName="LocalPropertyReference.java" startLine="26" startPosition="77" endLine="27" endPosition="194" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5862977038373003187" fileName="LocalPropertyReference.java" startLine="30" startPosition="63" endLine="31" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5862977038373003187" fileName="LocalPropertyReference.java" startLine="13" startPosition="0" endLine="16" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="LocalPropertyReference#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="5862977038373003187" fileName="LocalPropertyReference.java" startLine="17" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getProperty#()Ljetbrains/mps/smodel/INodeAdapter;" />
+    <nodeInfo nodeId="5862977038373003187" fileName="LocalPropertyReference.java" startLine="21" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setProperty#(Ljetbrains/mps/smodel/INodeAdapter;)V" />
+    <nodeInfo nodeId="5862977038373003187" fileName="LocalPropertyReference.java" startLine="25" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="newInstance#(Ljetbrains/mps/smodel/SModel;Z)Ljetbrains/mps/baseLanguage/structure/LocalPropertyReference;" />
+    <nodeInfo nodeId="5862977038373003187" fileName="LocalPropertyReference.java" startLine="29" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="newInstance#(Ljetbrains/mps/smodel/SModel;)Ljetbrains/mps/baseLanguage/structure/LocalPropertyReference;" />
+    <scopeInfo nodeId="5862977038373003187" fileName="LocalPropertyReference.java" startLine="14" startPosition="45" endLine="15" endPosition="16" />
+    <scopeInfo nodeId="5862977038373003187" fileName="LocalPropertyReference.java" startLine="18" startPosition="33" endLine="19" endPosition="88" />
+    <scopeInfo nodeId="5862977038373003187" fileName="LocalPropertyReference.java" startLine="22" startPosition="42" endLine="23" endPosition="61" />
+    <scopeInfo nodeId="5862977038373003187" fileName="LocalPropertyReference.java" startLine="26" startPosition="77" endLine="27" endPosition="194" />
+    <scopeInfo nodeId="5862977038373003187" fileName="LocalPropertyReference.java" startLine="30" startPosition="63" endLine="31" endPosition="57" />
+    <scopeInfo nodeId="5862977038373003187" fileName="LocalPropertyReference.java" startLine="13" startPosition="0" endLine="16" endPosition="3">
+      <varInfo nodeId="5862977038373003187" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="5862977038373003187" fileName="LocalPropertyReference.java" startLine="17" startPosition="0" endLine="21" endPosition="0" />
+    <scopeInfo nodeId="5862977038373003187" fileName="LocalPropertyReference.java" startLine="21" startPosition="0" endLine="25" endPosition="0">
+      <varInfo nodeId="5862977038373003187" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="5862977038373003187" fileName="LocalPropertyReference.java" startLine="25" startPosition="0" endLine="29" endPosition="0">
+      <varInfo nodeId="5862977038373003187" varName="init" />
+      <varInfo nodeId="5862977038373003187" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="5862977038373003187" fileName="LocalPropertyReference.java" startLine="29" startPosition="0" endLine="33" endPosition="0">
+      <varInfo nodeId="5862977038373003187" varName="sm" />
+    </scopeInfo>
+    <unitInfo nodeId="5862977038373003187" fileName="LocalPropertyReference.java" startLine="10" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.LocalPropertyReference" />
   </root>
   <root nodeId="6329021646629104954">
     <nodeInfo nodeId="6329021646629104954" fileName="SingleLineComment.java" startLine="12" startPosition="50" endLine="13" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />

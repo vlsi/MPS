@@ -4,11 +4,10 @@ package jetbrains.mps.execution.settings.constraints;
 
 import jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor;
 import jetbrains.mps.smodel.SNodePointer;
-import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNode;
 import org.jetbrains.annotations.Nullable;
+import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.runtime.CheckingNodeContext;
-import jetbrains.mps.smodel.constraints.CanBeAnAncestorContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 
 public class SettingsEditor_Constraints extends BaseConstraintsDescriptor {
@@ -24,8 +23,8 @@ public class SettingsEditor_Constraints extends BaseConstraintsDescriptor {
   }
 
   @Override
-  public boolean canBeAncestor(IOperationContext context, SNode node, SNode node1, @Nullable CheckingNodeContext checkingNodeContext) {
-    boolean result = static_canBeAnAncestor(context, new CanBeAnAncestorContext(node, node1));
+  public boolean canBeAncestor(SNode node, @Nullable SNode childNode, SNode childConcept, IOperationContext context, @Nullable CheckingNodeContext checkingNodeContext) {
+    boolean result = static_canBeAnAncestor(node, childNode, childConcept, context);
 
     if (!(result) && checkingNodeContext != null) {
       checkingNodeContext.setBreakingNode(canBeAncesctorBreakingPoint);
@@ -34,7 +33,7 @@ public class SettingsEditor_Constraints extends BaseConstraintsDescriptor {
     return result;
   }
 
-  public static boolean static_canBeAnAncestor(final IOperationContext operationContext, final CanBeAnAncestorContext _context) {
-    return _context.getChildConcept() != SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression");
+  public static boolean static_canBeAnAncestor(SNode node, SNode childNode, SNode childConcept, final IOperationContext operationContext) {
+    return childConcept != SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression");
   }
 }

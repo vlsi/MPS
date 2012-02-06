@@ -4,11 +4,10 @@ package jetbrains.mps.lang.editor.constraints;
 
 import jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor;
 import jetbrains.mps.smodel.SNodePointer;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.SNode;
 import org.jetbrains.annotations.Nullable;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.runtime.CheckingNodeContext;
-import jetbrains.mps.smodel.constraints.CanBeAChildContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.util.NameUtil;
@@ -27,8 +26,8 @@ public class StyleClassItem_Constraints extends BaseConstraintsDescriptor {
   }
 
   @Override
-  public boolean canBeChild(final IOperationContext operationContext, SNode node, SNode node1, SNode node2, @Nullable final CheckingNodeContext checkingNodeContext) {
-    boolean result = static_canBeAChild(operationContext, new CanBeAChildContext(node, node1, node2));
+  public boolean canBeChild(@Nullable SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext, @Nullable final CheckingNodeContext checkingNodeContext) {
+    boolean result = static_canBeAChild(node, parentNode, link, childConcept, operationContext);
 
     if (!(result) && checkingNodeContext != null) {
       checkingNodeContext.setBreakingNode(canBeChildBreakingPoint);
@@ -37,10 +36,10 @@ public class StyleClassItem_Constraints extends BaseConstraintsDescriptor {
     return result;
   }
 
-  public static boolean static_canBeAChild(final IOperationContext operationContext, final CanBeAChildContext _context) {
-    if (SNodeOperations.isInstanceOf(_context.getParentNode(), "jetbrains.mps.lang.editor.structure.EditorCellModel")) {
-      SNode testInstance = SNodeOperations.cast(SConceptOperations.createNewNode(NameUtil.nodeFQName(_context.getChildConcept()), null), "jetbrains.mps.lang.editor.structure.StyleClassItem");
-      return StyleClassItem_Behavior.call_isApplicableTo_1214304723440(testInstance, SNodeOperations.cast(_context.getParentNode(), "jetbrains.mps.lang.editor.structure.EditorCellModel"));
+  public static boolean static_canBeAChild(SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext) {
+    if (SNodeOperations.isInstanceOf(parentNode, "jetbrains.mps.lang.editor.structure.EditorCellModel")) {
+      SNode testInstance = SNodeOperations.cast(SConceptOperations.createNewNode(NameUtil.nodeFQName(childConcept), null), "jetbrains.mps.lang.editor.structure.StyleClassItem");
+      return StyleClassItem_Behavior.call_isApplicableTo_1214304723440(testInstance, SNodeOperations.cast(parentNode, "jetbrains.mps.lang.editor.structure.EditorCellModel"));
     }
     return true;
   }

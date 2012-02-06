@@ -5508,6 +5508,7 @@
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3310779261129403068" resolveInfo="node" />
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="3310779261129403149">
+              <property name="directCall" nameId="tp25.2853323645193760541" value="true" />
               <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tpe5.3310779261129403089" resolveInfo="isMpsStartRequired" />
             </node>
           </node>
@@ -7840,6 +7841,37 @@
         </node>
         <node role="statement" roleId="tpee.1068581517665" type="tpee.IfStatement" typeId="tpee.1068580123159" id="6062668769034833145">
           <node role="ifTrue" roleId="tpee.1068580123161" type="tpee.StatementList" typeId="tpee.1068580123136" id="6062668769034833146">
+            <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="5603351415227423467">
+              <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="5603351415227423468">
+                <property name="name" nameId="tpck.1169194664001" value="defaultRunParameters" />
+                <node role="type" roleId="tpee.5680397130376446158" type="cx9y.IndexedTupleType" typeId="cx9y.1238852151516" id="5603351415227423469">
+                  <node role="componentType" roleId="cx9y.1238852204892" type="tpee.StringType" typeId="tpee.1225271177708" id="5603351415227423470" />
+                  <node role="componentType" roleId="cx9y.1238852204892" type="tp2q.ListType" typeId="tp2q.1151688443754" id="5603351415227423471">
+                    <node role="elementType" roleId="tp2q.1151688676805" type="tpee.StringType" typeId="tpee.1225271177708" id="5603351415227423472" />
+                  </node>
+                  <node role="componentType" roleId="cx9y.1238852204892" type="tp2q.ListType" typeId="tp2q.1151688443754" id="5603351415227423473">
+                    <node role="elementType" roleId="tp2q.1151688676805" type="tpee.StringType" typeId="tpee.1225271177708" id="5603351415227423474" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node role="statement" roleId="tpee.1068581517665" type="tp4k.ExecuteLightweightCommandStatement" typeId="tp4k.1225441341971" id="5603351415227423481">
+              <node role="commandClosureLiteral" roleId="tp4k.1225441160167" type="tp4k.CommandClosureLiteral" typeId="tp4k.1225441216717" id="5603351415227423482">
+                <node role="body" roleId="tp2c.1199569916463" type="tpee.StatementList" typeId="tpee.1068580123136" id="5603351415227423483">
+                  <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="5603351415227423477">
+                    <node role="expression" roleId="tpee.1068580123156" type="tpee.AssignmentExpression" typeId="tpee.1068498886294" id="5603351415227423478">
+                      <node role="rValue" roleId="tpee.1068498886297" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="5603351415227423475">
+                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="3310779261129582146" resolveInfo="getDefaultRunParameters" />
+                        <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="5881102044690179017" resolveInfo="AbstractTestWrapper" />
+                      </node>
+                      <node role="lValue" roleId="tpee.1068498886295" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="5603351415227423479">
+                        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5603351415227423468" resolveInfo="defaultRunParameters" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
             <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="6062668769034833147">
               <node role="expression" roleId="tpee.1068581517676" type="cx9y.IndexedTupleLiteral" typeId="cx9y.1238853782547" id="6062668769034833148">
                 <node role="component" roleId="cx9y.1238853845806" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="6062668769034833149">
@@ -7849,9 +7881,8 @@
                     </node>
                   </node>
                 </node>
-                <node role="component" roleId="cx9y.1238853845806" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="6062668769034833152">
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="3310779261129582146" resolveInfo="getDefaultRunParameters" />
-                  <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="5881102044690179017" resolveInfo="AbstractTestWrapper" />
+                <node role="component" roleId="cx9y.1238853845806" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="5603351415227423476">
+                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5603351415227423468" resolveInfo="defaultRunParameters" />
                 </node>
               </node>
             </node>

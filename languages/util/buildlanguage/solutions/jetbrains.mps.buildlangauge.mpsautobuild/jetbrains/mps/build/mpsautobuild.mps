@@ -1836,10 +1836,6 @@
       <node role="entry" roleId="tps4.1203617897549" type="tps4.Module" typeId="tps4.1203599702327" id="8431776905956472875">
         <property name="id" nameId="tps4.1222447189012" value="83888646-71ce-4f1c-9c53-c54016f6ad4f" />
       </node>
-      <node role="entry" roleId="tps4.1203617897549" type="tps4.Module" typeId="tps4.1203599702327" id="5084772791166137663">
-        <property name="id" nameId="tps4.1222447189012" value="c329746e-5a5f-4a26-a5e6-2a00ec3cfc22" />
-        <property name="name" nameId="tpck.1169194664001" value="jetbrains.mps.baseLanguage.collections.pluginSolution" />
-      </node>
       <node role="entry" roleId="tps4.1203617897549" type="tps4.Module" typeId="tps4.1203599702327" id="8431776905956472882">
         <property name="id" nameId="tps4.1222447189012" value="f2801650-65d5-424e-bb1b-463a8781b786" />
       </node>
@@ -1943,6 +1939,10 @@
       </node>
       <node role="entry" roleId="tps4.1203617897549" type="tps4.Module" typeId="tps4.1203599702327" id="8431776905956472927">
         <property name="id" nameId="tps4.1222447189012" value="7866978e-a0f0-4cc7-81bc-4d213d9375e1" />
+      </node>
+      <node role="entry" roleId="tps4.1203617897549" type="tps4.Module" typeId="tps4.1203599702327" id="5911785528833788675">
+        <property name="id" nameId="tps4.1222447189012" value="c0080a47-7e37-4558-bee9-9ae18e690549" />
+        <property name="name" nameId="tpck.1169194664001" value="jetbrains.mps.lang.extension" />
       </node>
       <node role="entry" roleId="tps4.1203617897549" type="tps4.Module" typeId="tps4.1203599702327" id="8431776905956472929">
         <property name="id" nameId="tps4.1222447189012" value="0eddeefa-c2d6-4437-bc2c-de50fd4ce470" />
@@ -2230,10 +2230,6 @@
     </node>
     <node role="entry" roleId="tps4.701559220729212646" type="tps4.Module" typeId="tps4.1203599702327" id="8431776905956472968">
       <property name="id" nameId="tps4.1222447189012" value="73736c50-f124-433b-b789-2828a15a0adc" />
-    </node>
-    <node role="entry" roleId="tps4.701559220729212646" type="tps4.Module" typeId="tps4.1203599702327" id="5466770178245631393">
-      <property name="id" nameId="tps4.1222447189012" value="77d2ec80-baa3-4907-b0c3-f8afc2e2fadf" />
-      <property name="name" nameId="tpck.1169194664001" value="jetbrains.mps.baseLanguage.collections.trove.pluginSolution" />
     </node>
     <node role="entry" roleId="tps4.701559220729212646" type="tps4.Module" typeId="tps4.1203599702327" id="8431776905956472969">
       <property name="id" nameId="tps4.1222447189012" value="c1b26490-e316-44a3-bb8e-c9120732af93" />
@@ -3196,6 +3192,10 @@
           <property name="id" nameId="tps4.1222447189012" value="f618e99a-2641-465c-bb54-31fe76f9e285" />
           <property name="name" nameId="tpck.1169194664001" value="jetbrains.mps.baseLanguage.unitTest.execution" />
         </node>
+        <node role="entry" roleId="tps4.1203617897549" type="tps4.Module" typeId="tps4.1203599702327" id="352677614185415540">
+          <property name="id" nameId="tps4.1222447189012" value="268ae620-360b-4da4-bb01-fad761632e6c" />
+          <property name="name" nameId="tpck.1169194664001" value="jetbrains.mps.ant.execution" />
+        </node>
       </node>
       <node role="entry" roleId="tps4.1203617897549" type="tps4.Folder" typeId="tps4.1203598512427" id="3033860308392477158">
         <node role="title" roleId="tps4.1205340441197" type="tps4.SimpleString" typeId="tps4.1205339044029" id="3033860308392477161">
@@ -3920,6 +3920,9 @@
               <property name="path" nameId="tps4.1220974398640" value="mps" />
             </node>
           </node>
+        </node>
+        <node role="title" roleId="tps4.1205340441197" type="tps4.SimpleString" typeId="tps4.1205339044029" id="2074469845996054234">
+          <property name="name" nameId="tps4.1223641503366" value="mps.executable" />
         </node>
       </node>
     </node>

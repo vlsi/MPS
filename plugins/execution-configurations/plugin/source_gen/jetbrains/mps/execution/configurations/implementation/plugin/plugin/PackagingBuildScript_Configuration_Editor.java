@@ -5,6 +5,7 @@ package jetbrains.mps.execution.configurations.implementation.plugin.plugin;
 import jetbrains.mps.execution.api.settings.SettingsEditorEx;
 import jetbrains.mps.execution.lib.ui.MainNodeChooser;
 import jetbrains.mps.execution.lib.Node_Configuration_Editor;
+import jetbrains.mps.ant.execution.AntSettings_Configuration_Editor;
 import com.intellij.openapi.util.Disposer;
 import org.jetbrains.annotations.NotNull;
 import javax.swing.JPanel;

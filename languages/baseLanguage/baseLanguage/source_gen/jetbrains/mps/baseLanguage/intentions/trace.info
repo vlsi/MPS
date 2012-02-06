@@ -1899,61 +1899,62 @@
     <unitInfo nodeId="1202861044458" fileName="CreateSetAccessor_Intention.java" startLine="13" startPosition="0" endLine="56" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.CreateSetAccessor_Intention" />
   </root>
   <root nodeId="1203413213560">
-    <nodeInfo nodeId="1203413213560" fileName="MakeGeneric_Intention.java" startLine="17" startPosition="30" endLine="18" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1203413213560" fileName="MakeGeneric_Intention.java" startLine="21" startPosition="36" endLine="22" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1203413213560" fileName="MakeGeneric_Intention.java" startLine="25" startPosition="37" endLine="26" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1203413213560" fileName="MakeGeneric_Intention.java" startLine="29" startPosition="44" endLine="30" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1203413245112" fileName="MakeGeneric_Intention.java" startLine="33" startPosition="85" endLine="34" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1203413213560" fileName="MakeGeneric_Intention.java" startLine="38" startPosition="58" endLine="39" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1203413213560" fileName="MakeGeneric_Intention.java" startLine="40" startPosition="5" endLine="41" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1203413265342" fileName="MakeGeneric_Intention.java" startLine="44" startPosition="90" endLine="45" endPosition="119" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1203413291659" fileName="MakeGeneric_Intention.java" startLine="48" startPosition="76" endLine="49" endPosition="136" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1203413213560" fileName="MakeGeneric_Intention.java" startLine="52" startPosition="37" endLine="53" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1203413213560" fileName="MakeGeneric_Intention.java" startLine="13" startPosition="79" endLine="15" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MakeGeneric_Intention#()V" />
-    <nodeInfo nodeId="1203413213560" fileName="MakeGeneric_Intention.java" startLine="37" startPosition="84" endLine="40" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1203413213560" fileName="MakeGeneric_Intention.java" startLine="16" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getConcept#()Ljava/lang/String;" />
-    <nodeInfo nodeId="1203413213560" fileName="MakeGeneric_Intention.java" startLine="20" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isParameterized#()Z" />
-    <nodeInfo nodeId="1203413213560" fileName="MakeGeneric_Intention.java" startLine="24" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isErrorIntention#()Z" />
-    <nodeInfo nodeId="1203413213560" fileName="MakeGeneric_Intention.java" startLine="28" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isAvailableInChildNodes#()Z" />
-    <nodeInfo nodeId="1203413213560" fileName="MakeGeneric_Intention.java" startLine="32" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescription#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/nodeEditor/EditorContext;)Ljava/lang/String;" />
-    <nodeInfo nodeId="1203413213560" fileName="MakeGeneric_Intention.java" startLine="43" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableToNode#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/nodeEditor/EditorContext;)Z" />
-    <nodeInfo nodeId="1203413213560" fileName="MakeGeneric_Intention.java" startLine="47" startPosition="0" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/nodeEditor/EditorContext;)V" />
-    <nodeInfo nodeId="1203413213560" fileName="MakeGeneric_Intention.java" startLine="51" startPosition="0" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getLocationString#()Ljava/lang/String;" />
-    <nodeInfo nodeId="1203413213560" fileName="MakeGeneric_Intention.java" startLine="36" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicable#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/nodeEditor/EditorContext;)Z" />
-    <scopeInfo nodeId="1203413213560" fileName="MakeGeneric_Intention.java" startLine="14" startPosition="34" endLine="14" endPosition="34" />
-    <scopeInfo nodeId="1203413213560" fileName="MakeGeneric_Intention.java" startLine="17" startPosition="30" endLine="18" endPosition="72" />
-    <scopeInfo nodeId="1203413213560" fileName="MakeGeneric_Intention.java" startLine="21" startPosition="36" endLine="22" endPosition="17" />
-    <scopeInfo nodeId="1203413213560" fileName="MakeGeneric_Intention.java" startLine="25" startPosition="37" endLine="26" endPosition="17" />
-    <scopeInfo nodeId="1203413213560" fileName="MakeGeneric_Intention.java" startLine="29" startPosition="44" endLine="30" endPosition="17" />
-    <scopeInfo nodeId="1203413213562" fileName="MakeGeneric_Intention.java" startLine="33" startPosition="85" endLine="34" endPosition="31" />
-    <scopeInfo nodeId="1203413213560" fileName="MakeGeneric_Intention.java" startLine="38" startPosition="58" endLine="39" endPosition="19" />
-    <scopeInfo nodeId="1203413213564" fileName="MakeGeneric_Intention.java" startLine="44" startPosition="90" endLine="45" endPosition="119" />
-    <scopeInfo nodeId="1203413213566" fileName="MakeGeneric_Intention.java" startLine="48" startPosition="76" endLine="49" endPosition="136" />
-    <scopeInfo nodeId="1203413213560" fileName="MakeGeneric_Intention.java" startLine="52" startPosition="37" endLine="53" endPosition="51" />
-    <scopeInfo nodeId="1203413213560" fileName="MakeGeneric_Intention.java" startLine="13" startPosition="79" endLine="15" endPosition="3" />
-    <scopeInfo nodeId="1203413213560" fileName="MakeGeneric_Intention.java" startLine="16" startPosition="0" endLine="20" endPosition="0" />
-    <scopeInfo nodeId="1203413213560" fileName="MakeGeneric_Intention.java" startLine="20" startPosition="0" endLine="24" endPosition="0" />
-    <scopeInfo nodeId="1203413213560" fileName="MakeGeneric_Intention.java" startLine="24" startPosition="0" endLine="28" endPosition="0" />
-    <scopeInfo nodeId="1203413213560" fileName="MakeGeneric_Intention.java" startLine="28" startPosition="0" endLine="32" endPosition="0" />
-    <scopeInfo nodeId="1203413213560" fileName="MakeGeneric_Intention.java" startLine="32" startPosition="0" endLine="36" endPosition="0">
+    <nodeInfo nodeId="1203413213560" fileName="MakeGeneric_Intention.java" startLine="18" startPosition="30" endLine="19" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1203413213560" fileName="MakeGeneric_Intention.java" startLine="22" startPosition="36" endLine="23" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1203413213560" fileName="MakeGeneric_Intention.java" startLine="26" startPosition="37" endLine="27" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1203413213560" fileName="MakeGeneric_Intention.java" startLine="30" startPosition="44" endLine="31" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1203413245112" fileName="MakeGeneric_Intention.java" startLine="34" startPosition="85" endLine="35" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1203413213560" fileName="MakeGeneric_Intention.java" startLine="39" startPosition="58" endLine="40" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1203413213560" fileName="MakeGeneric_Intention.java" startLine="41" startPosition="5" endLine="42" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8959593660706074982" fileName="MakeGeneric_Intention.java" startLine="45" startPosition="90" endLine="46" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="1203413265342" fileName="MakeGeneric_Intention.java" startLine="46" startPosition="65" endLine="47" endPosition="339" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1203413291659" fileName="MakeGeneric_Intention.java" startLine="50" startPosition="76" endLine="51" endPosition="136" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1203413213560" fileName="MakeGeneric_Intention.java" startLine="54" startPosition="37" endLine="55" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1203413213560" fileName="MakeGeneric_Intention.java" startLine="14" startPosition="79" endLine="16" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MakeGeneric_Intention#()V" />
+    <nodeInfo nodeId="1203413213560" fileName="MakeGeneric_Intention.java" startLine="38" startPosition="84" endLine="41" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1203413213560" fileName="MakeGeneric_Intention.java" startLine="17" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getConcept#()Ljava/lang/String;" />
+    <nodeInfo nodeId="1203413213560" fileName="MakeGeneric_Intention.java" startLine="21" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isParameterized#()Z" />
+    <nodeInfo nodeId="1203413213560" fileName="MakeGeneric_Intention.java" startLine="25" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isErrorIntention#()Z" />
+    <nodeInfo nodeId="1203413213560" fileName="MakeGeneric_Intention.java" startLine="29" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isAvailableInChildNodes#()Z" />
+    <nodeInfo nodeId="1203413213560" fileName="MakeGeneric_Intention.java" startLine="33" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescription#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/nodeEditor/EditorContext;)Ljava/lang/String;" />
+    <nodeInfo nodeId="1203413213560" fileName="MakeGeneric_Intention.java" startLine="49" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/nodeEditor/EditorContext;)V" />
+    <nodeInfo nodeId="1203413213560" fileName="MakeGeneric_Intention.java" startLine="53" startPosition="0" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getLocationString#()Ljava/lang/String;" />
+    <nodeInfo nodeId="1203413213560" fileName="MakeGeneric_Intention.java" startLine="44" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableToNode#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/nodeEditor/EditorContext;)Z" />
+    <nodeInfo nodeId="1203413213560" fileName="MakeGeneric_Intention.java" startLine="37" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicable#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/nodeEditor/EditorContext;)Z" />
+    <scopeInfo nodeId="1203413213560" fileName="MakeGeneric_Intention.java" startLine="15" startPosition="34" endLine="15" endPosition="34" />
+    <scopeInfo nodeId="1203413213560" fileName="MakeGeneric_Intention.java" startLine="18" startPosition="30" endLine="19" endPosition="72" />
+    <scopeInfo nodeId="1203413213560" fileName="MakeGeneric_Intention.java" startLine="22" startPosition="36" endLine="23" endPosition="17" />
+    <scopeInfo nodeId="1203413213560" fileName="MakeGeneric_Intention.java" startLine="26" startPosition="37" endLine="27" endPosition="17" />
+    <scopeInfo nodeId="1203413213560" fileName="MakeGeneric_Intention.java" startLine="30" startPosition="44" endLine="31" endPosition="17" />
+    <scopeInfo nodeId="1203413213562" fileName="MakeGeneric_Intention.java" startLine="34" startPosition="85" endLine="35" endPosition="31" />
+    <scopeInfo nodeId="1203413213560" fileName="MakeGeneric_Intention.java" startLine="39" startPosition="58" endLine="40" endPosition="19" />
+    <scopeInfo nodeId="1203413213566" fileName="MakeGeneric_Intention.java" startLine="50" startPosition="76" endLine="51" endPosition="136" />
+    <scopeInfo nodeId="1203413213560" fileName="MakeGeneric_Intention.java" startLine="54" startPosition="37" endLine="55" endPosition="51" />
+    <scopeInfo nodeId="1203413213560" fileName="MakeGeneric_Intention.java" startLine="14" startPosition="79" endLine="16" endPosition="3" />
+    <scopeInfo nodeId="1203413213564" fileName="MakeGeneric_Intention.java" startLine="45" startPosition="90" endLine="47" endPosition="339" />
+    <scopeInfo nodeId="1203413213560" fileName="MakeGeneric_Intention.java" startLine="17" startPosition="0" endLine="21" endPosition="0" />
+    <scopeInfo nodeId="1203413213560" fileName="MakeGeneric_Intention.java" startLine="21" startPosition="0" endLine="25" endPosition="0" />
+    <scopeInfo nodeId="1203413213560" fileName="MakeGeneric_Intention.java" startLine="25" startPosition="0" endLine="29" endPosition="0" />
+    <scopeInfo nodeId="1203413213560" fileName="MakeGeneric_Intention.java" startLine="29" startPosition="0" endLine="33" endPosition="0" />
+    <scopeInfo nodeId="1203413213560" fileName="MakeGeneric_Intention.java" startLine="33" startPosition="0" endLine="37" endPosition="0">
       <varInfo nodeId="1203413213560" varName="editorContext" />
       <varInfo nodeId="1203413213560" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1203413213560" fileName="MakeGeneric_Intention.java" startLine="37" startPosition="84" endLine="41" endPosition="16" />
-    <scopeInfo nodeId="1203413213560" fileName="MakeGeneric_Intention.java" startLine="43" startPosition="0" endLine="47" endPosition="0">
+    <scopeInfo nodeId="1203413213560" fileName="MakeGeneric_Intention.java" startLine="38" startPosition="84" endLine="42" endPosition="16" />
+    <scopeInfo nodeId="1203413213560" fileName="MakeGeneric_Intention.java" startLine="49" startPosition="0" endLine="53" endPosition="0">
       <varInfo nodeId="1203413213560" varName="editorContext" />
       <varInfo nodeId="1203413213560" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1203413213560" fileName="MakeGeneric_Intention.java" startLine="47" startPosition="0" endLine="51" endPosition="0">
+    <scopeInfo nodeId="1203413213560" fileName="MakeGeneric_Intention.java" startLine="53" startPosition="0" endLine="57" endPosition="0" />
+    <scopeInfo nodeId="1203413213560" fileName="MakeGeneric_Intention.java" startLine="44" startPosition="0" endLine="49" endPosition="0">
       <varInfo nodeId="1203413213560" varName="editorContext" />
       <varInfo nodeId="1203413213560" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1203413213560" fileName="MakeGeneric_Intention.java" startLine="51" startPosition="0" endLine="55" endPosition="0" />
-    <scopeInfo nodeId="1203413213560" fileName="MakeGeneric_Intention.java" startLine="36" startPosition="0" endLine="43" endPosition="0">
+    <scopeInfo nodeId="1203413213560" fileName="MakeGeneric_Intention.java" startLine="37" startPosition="0" endLine="44" endPosition="0">
       <varInfo nodeId="1203413213560" varName="editorContext" />
       <varInfo nodeId="1203413213560" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="1203413213560" fileName="MakeGeneric_Intention.java" startLine="13" startPosition="0" endLine="56" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.MakeGeneric_Intention" />
+    <unitInfo nodeId="1203413213560" fileName="MakeGeneric_Intention.java" startLine="14" startPosition="0" endLine="58" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.MakeGeneric_Intention" />
   </root>
   <root nodeId="1203701450442">
     <nodeInfo nodeId="1203701450442" fileName="AddRemoveStaticMethodModifier_Intention.java" startLine="20" startPosition="30" endLine="21" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

@@ -12,6 +12,7 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.ant.execution.AntSettings_Configuration;
 import com.intellij.openapi.project.Project;
 import com.intellij.execution.configurations.RuntimeConfigurationException;
 import org.jdom.Element;

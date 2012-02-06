@@ -908,6 +908,18 @@
         </node>
         <node role="type" roleId="tpsk.1196870993204" type="tpsk.StringType" typeId="tpsk.1196870403099" id="5165676431252346760" />
       </node>
+      <node role="propertyList" roleId="tpsk.1200425580778" type="tpsk.PropertyDeclaration" typeId="tpsk.1196851107341" id="47292148907787113">
+        <property name="name" nameId="tpck.1169194664001" value="dist.folder.name.mac" />
+        <node role="propertyValue" roleId="tpsk.1196851904859" type="tpsk.PlusOperation" typeId="tpsk.1197108973325" id="47292148907787118">
+          <node role="right" roleId="tpsk.1197107881958" type="tpsk.StringLiteral" typeId="tpsk.1196861005114" id="47292148907787121">
+            <property name="value" nameId="tpsk.1196861024475" value=".app" />
+          </node>
+          <node role="left" roleId="tpsk.1197107855106" type="tpsk.PropertyReference" typeId="tpsk.1196853662806" id="47292148907787117">
+            <link role="propertyDeclaration" roleId="tpsk.1196853671400" targetNodeId="3765863190879881346" resolveInfo="dist.folder.name" />
+          </node>
+        </node>
+        <node role="type" roleId="tpsk.1196870993204" type="tpsk.StringType" typeId="tpsk.1196870403099" id="47292148907787116" />
+      </node>
       <node role="taskCall" roleId="tpsk.1196851542249" type="ddum.TaskCall" typeId="ddum.353793545802643477" id="1234518224589">
         <link role="declaration" roleId="ddum.353793545802643478" targetNodeId="adh8.353793545802814916" resolveInfo="replace" />
         <node role="atributes" roleId="ddum.353793545802643479" type="ddum.Attribute" typeId="ddum.353793545802643466" id="1234518262687">
@@ -1089,8 +1101,8 @@
           </node>
           <node role="atributes" roleId="ddum.353793545802643479" type="ddum.Attribute" typeId="ddum.353793545802643466" id="1234519438604">
             <link role="attributeDeclaration" roleId="ddum.353793545802643467" targetNodeId="adh8.353793545802811860" resolveInfo="prefix" />
-            <node role="value" roleId="ddum.353793545802643468" type="tpsk.PropertyReference" typeId="tpsk.1196853662806" id="5165676431252349002">
-              <link role="propertyDeclaration" roleId="tpsk.1196853671400" targetNodeId="3765863190879881346" resolveInfo="dist.folder.name" />
+            <node role="value" roleId="ddum.353793545802643468" type="tpsk.PropertyReference" typeId="tpsk.1196853662806" id="47292148907787122">
+              <link role="propertyDeclaration" roleId="tpsk.1196853671400" targetNodeId="47292148907787113" resolveInfo="dist.folder.name.mac" />
             </node>
           </node>
           <node role="atributes" roleId="ddum.353793545802643479" type="ddum.Attribute" typeId="ddum.353793545802643466" id="1241523290443">
@@ -1119,8 +1131,8 @@
               <node role="right" roleId="tpsk.1197107881958" type="tpsk.StringLiteral" typeId="tpsk.1196861005114" id="4053804147820304240">
                 <property name="value" nameId="tpsk.1196861024475" value="/bin" />
               </node>
-              <node role="left" roleId="tpsk.1197107855106" type="tpsk.PropertyReference" typeId="tpsk.1196853662806" id="5165676431252349063">
-                <link role="propertyDeclaration" roleId="tpsk.1196853671400" targetNodeId="3765863190879881346" resolveInfo="dist.folder.name" />
+              <node role="left" roleId="tpsk.1197107855106" type="tpsk.PropertyReference" typeId="tpsk.1196853662806" id="47292148907787123">
+                <link role="propertyDeclaration" roleId="tpsk.1196853671400" targetNodeId="47292148907787113" resolveInfo="dist.folder.name.mac" />
               </node>
             </node>
           </node>
@@ -1157,8 +1169,8 @@
               <node role="right" roleId="tpsk.1197107881958" type="tpsk.StringLiteral" typeId="tpsk.1196861005114" id="4053804147820304252">
                 <property name="value" nameId="tpsk.1196861024475" value="/bin" />
               </node>
-              <node role="left" roleId="tpsk.1197107855106" type="tpsk.PropertyReference" typeId="tpsk.1196853662806" id="5165676431252349069">
-                <link role="propertyDeclaration" roleId="tpsk.1196853671400" targetNodeId="3765863190879881346" resolveInfo="dist.folder.name" />
+              <node role="left" roleId="tpsk.1197107855106" type="tpsk.PropertyReference" typeId="tpsk.1196853662806" id="2074469845996045473">
+                <link role="propertyDeclaration" roleId="tpsk.1196853671400" targetNodeId="47292148907787113" resolveInfo="dist.folder.name.mac" />
               </node>
             </node>
           </node>
@@ -1193,8 +1205,8 @@
               <node role="right" roleId="tpsk.1197107881958" type="tpsk.StringLiteral" typeId="tpsk.1196861005114" id="1234519582650">
                 <property name="value" nameId="tpsk.1196861024475" value="/Contents" />
               </node>
-              <node role="left" roleId="tpsk.1197107855106" type="tpsk.PropertyReference" typeId="tpsk.1196853662806" id="5165676431252349004">
-                <link role="propertyDeclaration" roleId="tpsk.1196853671400" targetNodeId="3765863190879881346" resolveInfo="dist.folder.name" />
+              <node role="left" roleId="tpsk.1197107855106" type="tpsk.PropertyReference" typeId="tpsk.1196853662806" id="47292148907787124">
+                <link role="propertyDeclaration" roleId="tpsk.1196853671400" targetNodeId="47292148907787113" resolveInfo="dist.folder.name.mac" />
               </node>
             </node>
           </node>
@@ -1223,8 +1235,8 @@
               <node role="right" roleId="tpsk.1197107881958" type="tpsk.StringLiteral" typeId="tpsk.1196861005114" id="1234534642074">
                 <property name="value" nameId="tpsk.1196861024475" value="/Contents/Resources" />
               </node>
-              <node role="left" roleId="tpsk.1197107855106" type="tpsk.PropertyReference" typeId="tpsk.1196853662806" id="5165676431252349444">
-                <link role="propertyDeclaration" roleId="tpsk.1196853671400" targetNodeId="3765863190879881346" resolveInfo="dist.folder.name" />
+              <node role="left" roleId="tpsk.1197107855106" type="tpsk.PropertyReference" typeId="tpsk.1196853662806" id="47292148907787125">
+                <link role="propertyDeclaration" roleId="tpsk.1196853671400" targetNodeId="47292148907787113" resolveInfo="dist.folder.name.mac" />
               </node>
             </node>
           </node>
@@ -1236,7 +1248,7 @@
             <node role="value" roleId="ddum.353793545802643468" type="tpsk.PlusOperation" typeId="tpsk.1197108973325" id="5165676431252349472">
               <node role="right" roleId="tpsk.1197107881958" type="tpsk.PlusOperation" typeId="tpsk.1197108973325" id="5165676431252349476">
                 <node role="right" roleId="tpsk.1197107881958" type="tpsk.StringLiteral" typeId="tpsk.1196861005114" id="5165676431252349479">
-                  <property name="value" nameId="tpsk.1196861024475" value="mps" />
+                  <property name="value" nameId="tpsk.1196861024475" value="mps.executable" />
                 </node>
                 <node role="left" roleId="tpsk.1197107855106" type="tpsk.StringLiteral" typeId="tpsk.1196861005114" id="5165676431252349475">
                   <property name="value" nameId="tpsk.1196861024475" value="/" />
@@ -1247,14 +1259,14 @@
               </node>
             </node>
           </node>
-          <node role="atributes" roleId="ddum.353793545802643479" type="ddum.Attribute" typeId="ddum.353793545802643466" id="1234535971145">
-            <link role="attributeDeclaration" roleId="ddum.353793545802643467" targetNodeId="adh8.353793545802811860" resolveInfo="prefix" />
+          <node role="atributes" roleId="ddum.353793545802643479" type="ddum.Attribute" typeId="ddum.353793545802643466" id="2074469845996054232">
+            <link role="attributeDeclaration" roleId="ddum.353793545802643467" targetNodeId="adh8.353793545802811858" resolveInfo="fullpath" />
             <node role="value" roleId="ddum.353793545802643468" type="tpsk.PlusOperation" typeId="tpsk.1197108973325" id="1234535981106">
               <node role="right" roleId="tpsk.1197107881958" type="tpsk.StringLiteral" typeId="tpsk.1196861005114" id="1234535981107">
-                <property name="value" nameId="tpsk.1196861024475" value="/Contents/MacOS" />
+                <property name="value" nameId="tpsk.1196861024475" value="/Contents/MacOS/mps" />
               </node>
-              <node role="left" roleId="tpsk.1197107855106" type="tpsk.PropertyReference" typeId="tpsk.1196853662806" id="5165676431252349018">
-                <link role="propertyDeclaration" roleId="tpsk.1196853671400" targetNodeId="3765863190879881346" resolveInfo="dist.folder.name" />
+              <node role="left" roleId="tpsk.1197107855106" type="tpsk.PropertyReference" typeId="tpsk.1196853662806" id="47292148907787126">
+                <link role="propertyDeclaration" roleId="tpsk.1196853671400" targetNodeId="47292148907787113" resolveInfo="dist.folder.name.mac" />
               </node>
             </node>
           </node>
@@ -1285,8 +1297,8 @@
           </node>
           <node role="atributes" roleId="ddum.353793545802643479" type="ddum.Attribute" typeId="ddum.353793545802643466" id="1234542353109">
             <link role="attributeDeclaration" roleId="ddum.353793545802643467" targetNodeId="adh8.353793545802811860" resolveInfo="prefix" />
-            <node role="value" roleId="ddum.353793545802643468" type="tpsk.PropertyReference" typeId="tpsk.1196853662806" id="5165676431252349019">
-              <link role="propertyDeclaration" roleId="tpsk.1196853671400" targetNodeId="3765863190879881346" resolveInfo="dist.folder.name" />
+            <node role="value" roleId="ddum.353793545802643468" type="tpsk.PropertyReference" typeId="tpsk.1196853662806" id="47292148907787127">
+              <link role="propertyDeclaration" roleId="tpsk.1196853671400" targetNodeId="47292148907787113" resolveInfo="dist.folder.name.mac" />
             </node>
           </node>
           <node role="atributes" roleId="ddum.353793545802643479" type="ddum.Attribute" typeId="ddum.353793545802643466" id="1234542340022">
@@ -1322,8 +1334,8 @@
               <node role="right" roleId="tpsk.1197107881958" type="tpsk.StringLiteral" typeId="tpsk.1196861005114" id="5165676431252349027">
                 <property name="value" nameId="tpsk.1196861024475" value="/bin" />
               </node>
-              <node role="left" roleId="tpsk.1197107855106" type="tpsk.PropertyReference" typeId="tpsk.1196853662806" id="5165676431252349020">
-                <link role="propertyDeclaration" roleId="tpsk.1196853671400" targetNodeId="3765863190879881346" resolveInfo="dist.folder.name" />
+              <node role="left" roleId="tpsk.1197107855106" type="tpsk.PropertyReference" typeId="tpsk.1196853662806" id="47292148907787128">
+                <link role="propertyDeclaration" roleId="tpsk.1196853671400" targetNodeId="47292148907787113" resolveInfo="dist.folder.name.mac" />
               </node>
             </node>
           </node>
@@ -1349,8 +1361,8 @@
           <node role="atributes" roleId="ddum.353793545802643479" type="ddum.Attribute" typeId="ddum.353793545802643466" id="6261107747136115087">
             <link role="attributeDeclaration" roleId="ddum.353793545802643467" targetNodeId="adh8.353793545802811858" resolveInfo="fullpath" />
             <node role="value" roleId="ddum.353793545802643468" type="tpsk.PlusOperation" typeId="tpsk.1197108973325" id="6261107747136115089">
-              <node role="left" roleId="tpsk.1197107855106" type="tpsk.PropertyReference" typeId="tpsk.1196853662806" id="5165676431252349037">
-                <link role="propertyDeclaration" roleId="tpsk.1196853671400" targetNodeId="3765863190879881346" resolveInfo="dist.folder.name" />
+              <node role="left" roleId="tpsk.1197107855106" type="tpsk.PropertyReference" typeId="tpsk.1196853662806" id="47292148907787129">
+                <link role="propertyDeclaration" roleId="tpsk.1196853671400" targetNodeId="47292148907787113" resolveInfo="dist.folder.name.mac" />
               </node>
               <node role="right" roleId="tpsk.1197107881958" type="tpsk.PlusOperation" typeId="tpsk.1197108973325" id="5165676431252349050">
                 <node role="right" roleId="tpsk.1197107881958" type="tpsk.PropertyReference" typeId="tpsk.1196853662806" id="5165676431252349053">
