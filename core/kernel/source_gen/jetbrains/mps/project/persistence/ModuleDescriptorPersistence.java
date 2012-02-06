@@ -20,7 +20,7 @@ import jetbrains.mps.util.Macros;
 import jetbrains.mps.project.structure.model.ModelRootManager;
 import org.jdom.Document;
 import jetbrains.mps.util.JDOMUtil;
-import com.intellij.openapi.util.io.FileUtil;
+import jetbrains.mps.util.FileUtil;
 import java.util.UUID;
 import java.io.InputStreamReader;
 import java.util.regex.Pattern;
@@ -280,7 +280,7 @@ public class ModuleDescriptorPersistence {
 
     InputStreamReader r = null;
     try {
-      r = new InputStreamReader(file.openInputStream(), jetbrains.mps.util.FileUtil.DEFAULT_CHARSET);
+      r = new InputStreamReader(file.openInputStream(), FileUtil.DEFAULT_CHARSET);
       char[] buf = new char[1024];
       int readChars = r.read(buf);
       String s = new String(buf, 0, readChars);
@@ -297,7 +297,7 @@ public class ModuleDescriptorPersistence {
         log.error("", e);
       }
     } finally {
-      jetbrains.mps.util.FileUtil.closeFileSafe(r);
+      FileUtil.closeFileSafe(r);
     }
     setTimestamp(md, file);
     md.setLoadException((exception.getCause() == null ?

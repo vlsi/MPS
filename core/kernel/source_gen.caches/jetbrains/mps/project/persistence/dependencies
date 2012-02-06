@@ -89,7 +89,6 @@
     <classNode dependClassName="org.jdom.Element" />
   </dependency>
   <dependency className="jetbrains.mps.project.persistence.ModuleDescriptorPersistence" file="ModuleDescriptorPersistence.java">
-    <classNode dependClassName="com.intellij.openapi.util.io.FileUtil" />
     <classNode dependClassName="java.io.IOException" />
     <classNode dependClassName="java.io.InputStreamReader" />
     <classNode dependClassName="java.lang.Exception" />
@@ -110,6 +109,7 @@
     <classNode dependClassName="jetbrains.mps.project.structure.modules.LanguageDescriptor" />
     <classNode dependClassName="jetbrains.mps.project.structure.modules.ModuleDescriptor" />
     <classNode dependClassName="jetbrains.mps.project.structure.modules.ModuleReference" />
+    <classNode dependClassName="jetbrains.mps.util.FileUtil" />
     <classNode dependClassName="jetbrains.mps.util.JDOMUtil" />
     <classNode dependClassName="jetbrains.mps.util.Macros" />
     <classNode dependClassName="jetbrains.mps.vfs.IFile" />
