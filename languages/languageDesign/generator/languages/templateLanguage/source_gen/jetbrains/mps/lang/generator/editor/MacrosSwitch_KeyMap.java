@@ -13,7 +13,6 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.openapi.editor.EditorInspector;
-import jetbrains.mps.ide.generator.GeneratedQueriesOpener;
 
 public class MacrosSwitch_KeyMap extends EditorCellKeyMap {
   public MacrosSwitch_KeyMap() {
@@ -27,8 +26,6 @@ public class MacrosSwitch_KeyMap extends EditorCellKeyMap {
     this.putAction("ctrl+shift", "VK_M", action);
     action = new MacrosSwitch_KeyMap.MacrosSwitch_KeyMap_Action3();
     this.putAction("ctrl+shift", "VK_M", action);
-    action = new MacrosSwitch_KeyMap.MacrosSwitch_KeyMap_Action4();
-    this.putAction("ctrl+alt+shift", "VK_Q", action);
   }
 
   public static class MacrosSwitch_KeyMap_Action0 extends EditorCellKeyMapAction {
@@ -243,50 +240,6 @@ public class MacrosSwitch_KeyMap extends EditorCellKeyMap {
 
     public String getKeyStroke() {
       return "ctrl shift M";
-    }
-  }
-
-  public static class MacrosSwitch_KeyMap_Action4 extends EditorCellKeyMapAction {
-    public MacrosSwitch_KeyMap_Action4() {
-      this.setShownInPopupMenu(true);
-    }
-
-    public String getDescriptionText() {
-      return "Navigate to generated query method";
-    }
-
-    public boolean isMenuAlwaysShown() {
-      return false;
-    }
-
-    public boolean canExecute(final KeyEvent keyEvent, final EditorContext editorContext) {
-      EditorCell contextCell = editorContext.getContextCell();
-      if ((contextCell == null)) {
-        return false;
-      }
-      SNode contextNode = contextCell.getSNode();
-      if (contextNode == null) {
-        return false;
-      }
-      return this.canExecute_internal(keyEvent, editorContext, contextNode, this.getSelectedNodes(editorContext));
-    }
-
-    public void execute(final KeyEvent keyEvent, final EditorContext editorContext) {
-      EditorCell contextCell = editorContext.getContextCell();
-      this.execute_internal(keyEvent, editorContext, contextCell.getSNode(), this.getSelectedNodes(editorContext));
-    }
-
-    private boolean canExecute_internal(final KeyEvent keyEvent, final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
-      return SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.ConceptFunction", true, false) != null;
-    }
-
-    private void execute_internal(final KeyEvent keyEvent, final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
-      SNode fun = SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.ConceptFunction", true, false);
-      GeneratedQueriesOpener.openQueryMethod(editorContext.getOperationContext(), fun);
-    }
-
-    public String getKeyStroke() {
-      return "ctrl alt shift Q";
     }
   }
 }
