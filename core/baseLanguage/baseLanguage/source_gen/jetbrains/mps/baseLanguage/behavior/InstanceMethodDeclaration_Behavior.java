@@ -36,6 +36,10 @@ public class InstanceMethodDeclaration_Behavior {
     return IVisible_Behavior.call_getVisibilityIcon_5017341185733869581(thisNode);
   }
 
+  public static boolean virtual_isAbstract_1232982539764(SNode thisNode) {
+    return SPropertyOperations.getBoolean(thisNode, "isAbstract");
+  }
+
   public static List<SNode> virtual_getChildrenToDisplayIntention_4025276038182319200(SNode thisNode) {
     List<SNode> result = HasAnnotation_Behavior.callSuper_getChildrenToDisplayIntention_4025276038182319200(thisNode, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration");
     ListSequence.fromList(result).addElement(SLinkOperations.getTarget(thisNode, "visibility", true));
@@ -55,7 +59,7 @@ public class InstanceMethodDeclaration_Behavior {
     ClassifierAndSuperClassifiersScope scope = new ClassifierAndSuperClassifiersScope(parent, IClassifiersSearchScope.INSTANCE_METHOD);
     List<SNode> methodDeclarations = (List<SNode>) scope.getNodes(new IsInstanceCondition("jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"));
     for (SNode methodCandidate : methodDeclarations) {
-      if (methodCandidate != thisNode && eq_4b3xw6_a0a0a0e0f(SPropertyOperations.getString(methodCandidate, "name"), SPropertyOperations.getString(thisNode, "name")) && (int) ListSequence.fromList(SLinkOperations.getTargets(methodCandidate, "parameter", true)).count() == (int) ListSequence.fromList(SLinkOperations.getTargets(thisNode, "parameter", true)).count()) {
+      if (methodCandidate != thisNode && eq_4b3xw6_a0a0a0e0g(SPropertyOperations.getString(methodCandidate, "name"), SPropertyOperations.getString(thisNode, "name")) && (int) ListSequence.fromList(SLinkOperations.getTargets(methodCandidate, "parameter", true)).count() == (int) ListSequence.fromList(SLinkOperations.getTargets(thisNode, "parameter", true)).count()) {
         if (BaseMethodDeclaration_Behavior.call_hasSameSignature_1213877350435(methodCandidate, thisNode)) {
           return methodCandidate;
         }
@@ -91,7 +95,7 @@ public class InstanceMethodDeclaration_Behavior {
     return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"), callerConceptFqName, "virtual_getNearestOverriddenMethod_5358895268254685434", PARAMETERS_5014346297260520665);
   }
 
-  private static boolean eq_4b3xw6_a0a0a0e0f(Object a, Object b) {
+  private static boolean eq_4b3xw6_a0a0a0e0g(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b
