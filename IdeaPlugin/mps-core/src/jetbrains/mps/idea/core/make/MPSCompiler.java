@@ -142,7 +142,7 @@ public class MPSCompiler implements TranslatingCompiler {
                 MPSMakeConfiguration makeConfiguration = new MPSMakeConfiguration();
                 makeConfiguration.addConfiguredModels(modelsToMake);
 
-                File moduleFile = new File(facet.getModule().getModuleFile().getPath());
+                File moduleFile = new File(facet.getModule().getModuleFilePath());
                 makeConfiguration.addConfiguredModules(Collections.singletonList(moduleFile));
 
                 final List<File> files = new ArrayList<File>();

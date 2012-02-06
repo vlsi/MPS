@@ -57,8 +57,9 @@ public class MakeTests extends DataMPSFixtureTestCase {
 
     @Override
     protected void prepareTestData(final MPSFacetConfiguration configuration) throws  Exception {
-        copyResource(null, "blProject.iml", "/tests/blProject/blProject.iml");
-        final IFile model = copyResource("models", "main.mps", "/tests/blProject/models/main.mps");
+        String moduleFileName = configuration.getFacet().getModule().getModuleFilePath();
+        copyResource(moduleFileName, "blProject.iml", "/tests/blProject/blProject.iml");
+        final IFile model = copyResource("models", "main.mps", "main.mps", "/tests/blProject/models/main.mps");
         final IFile source = model.getParent();
         configuration.getState().setModelRootPaths(new String[]{model.getParent().getPath()});
 
