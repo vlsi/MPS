@@ -9,6 +9,7 @@
     <classNode dependClassName="jetbrains.mps.buildScript.behavior.BuildSourcePath_Behavior" />
     <classNode dependClassName="jetbrains.mps.buildScript.behavior.BuildSource_JavaModule_Behavior" />
     <classNode dependClassName="jetbrains.mps.buildScript.util.Context" />
+    <classNode dependClassName="jetbrains.mps.generator.template.BaseMappingRuleContext" />
     <classNode dependClassName="jetbrains.mps.generator.template.IfMacroContext" />
     <classNode dependClassName="jetbrains.mps.generator.template.PropertyMacroContext" />
     <classNode dependClassName="jetbrains.mps.generator.template.ReferenceMacroContext" />

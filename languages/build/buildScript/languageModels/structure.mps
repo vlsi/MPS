@@ -232,6 +232,10 @@
       <property name="name" nameId="tpck.1169194664001" value="BuildFileExcludeSelector" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="5248329904287794599" resolveInfo="BuildFileSelector" />
     </node>
+    <node type="tpce.InterfaceConceptDeclaration" typeId="tpce.1169125989551" id="5248329904288166441">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Layout" />
+      <property name="name" nameId="tpck.1169194664001" value="BuildLayout_ContainerAcceptingFileSet" />
+    </node>
   </roots>
   <root id="5617550519002745363">
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="6647099934206700656">
@@ -338,11 +342,17 @@
       <property name="value" nameId="tpce.1105725733873" value="zip" />
       <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473891462" resolveInfo="alias" />
     </node>
+    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="5248329904288166442">
+      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="5248329904288166441" resolveInfo="BuildLayout_ContainerAcceptingFileSet" />
+    </node>
   </root>
   <root id="7389400916848050074">
     <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="7389400916848050075">
       <property name="value" nameId="tpce.1105725733873" value="jar" />
       <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="5248329904288166445">
+      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="5248329904288166441" resolveInfo="BuildLayout_ContainerAcceptingFileSet" />
     </node>
   </root>
   <root id="7389400916848073736">
@@ -633,6 +643,9 @@
       <property name="value" nameId="tpce.1105725733873" value="file" />
       <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473891462" resolveInfo="alias" />
     </node>
+    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="5248329904288133822">
+      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="1117643560963351145" resolveInfo="BuildLayout_FileSet" />
+    </node>
   </root>
   <root id="5248329904287794596">
     <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="5248329904287794597">
@@ -651,6 +664,9 @@
       <property name="sourceCardinality" nameId="tpce.1071599893252" value="0..n" />
       <link role="target" roleId="tpce.1071599976176" targetNodeId="5248329904287794599" resolveInfo="BuildFileSelector" />
     </node>
+    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="5248329904288133821">
+      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="1117643560963351145" resolveInfo="BuildLayout_FileSet" />
+    </node>
   </root>
   <root id="5248329904287794599">
     <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.BooleanConceptProperty" typeId="tpce.1105725574259" id="5248329904287794600">
@@ -667,6 +683,9 @@
     <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="5248329904287857083">
       <property name="value" nameId="tpce.1105725733873" value="copy" />
       <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="5248329904288140518">
+      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="1117643560963351145" resolveInfo="BuildLayout_FileSet" />
     </node>
   </root>
   <root id="5248329904288051100">
@@ -689,5 +708,6 @@
       <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983041843" resolveInfo="string" />
     </node>
   </root>
+  <root id="5248329904288166441" />
 </model>
 

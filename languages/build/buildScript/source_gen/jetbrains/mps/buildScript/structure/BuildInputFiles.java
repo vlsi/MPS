@@ -5,17 +5,46 @@ package jetbrains.mps.buildScript.structure;
 import jetbrains.mps.smodel.SNode;
 import java.util.Iterator;
 import java.util.List;
+import jetbrains.mps.lang.core.structure.Attribute;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class BuildInputFiles extends BuildInputFileSet {
+public class BuildInputFiles extends BuildInputFileSet implements BuildLayout_FileSet {
   public static final String concept = "jetbrains.mps.buildScript.structure.BuildInputFiles";
+  public static final String SHORT_DESCRIPTION = "shortDescription";
+  public static final String ALIAS = "alias";
+  public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String DIR = "dir";
   public static final String SELECTORS = "selectors";
+  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
 
   public BuildInputFiles(SNode node) {
     super(node);
+  }
+
+  public String getShortDescription() {
+    return this.getProperty(BuildInputFiles.SHORT_DESCRIPTION);
+  }
+
+  public void setShortDescription(String value) {
+    this.setProperty(BuildInputFiles.SHORT_DESCRIPTION, value);
+  }
+
+  public String getAlias() {
+    return this.getProperty(BuildInputFiles.ALIAS);
+  }
+
+  public void setAlias(String value) {
+    this.setProperty(BuildInputFiles.ALIAS, value);
+  }
+
+  public String getVirtualPackage() {
+    return this.getProperty(BuildInputFiles.VIRTUAL_PACKAGE);
+  }
+
+  public void setVirtualPackage(String value) {
+    this.setProperty(BuildInputFiles.VIRTUAL_PACKAGE, value);
   }
 
   public BuildSourcePath getDir() {
@@ -44,6 +73,26 @@ public class BuildInputFiles extends BuildInputFileSet {
 
   public void insertSelectors(BuildFileSelector prev, BuildFileSelector node) {
     this.insertChild(prev, BuildInputFiles.SELECTORS, node);
+  }
+
+  public int getSmodelAttributesCount() {
+    return this.getChildCount(BuildInputFiles.SMODEL_ATTRIBUTE);
+  }
+
+  public Iterator<Attribute> smodelAttributes() {
+    return this.children(Attribute.class, BuildInputFiles.SMODEL_ATTRIBUTE);
+  }
+
+  public List<Attribute> getSmodelAttributes() {
+    return this.getChildren(Attribute.class, BuildInputFiles.SMODEL_ATTRIBUTE);
+  }
+
+  public void addSmodelAttribute(Attribute node) {
+    this.addChild(BuildInputFiles.SMODEL_ATTRIBUTE, node);
+  }
+
+  public void insertSmodelAttribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, BuildInputFiles.SMODEL_ATTRIBUTE, node);
   }
 
   public static BuildInputFiles newInstance(SModel sm, boolean init) {

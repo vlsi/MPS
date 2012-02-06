@@ -30,21 +30,17 @@
   <target name="assemble" depends="classes">
     <mkdir dir="${buildCore.deploy.dir}/default" />
     <mkdir dir="${buildCore.tmp}/release.zip" />
-    <mkdir dir="${buildCore.tmp}/inrelease.zip" />
-    <mkdir dir="${buildCore.tmp}/inrelease.zip/bbb" />
-    <copy todir="${buildCore.tmp}/inrelease.zip/bbb">
+    <zip destfile="${buildCore.tmp}/release.zip/inrelease.zip">
       <fileset file="${mps_home}/MPS.ipr" />
-    </copy>
-    <copy todir="${buildCore.tmp}/inrelease.zip/bbb">
       <fileset dir="./source_gen/">
         <include name="**/*.java" />
       </fileset>
-    </copy>
-    <zip destfile="${buildCore.tmp}/release.zip/inrelease.zip">
-      <fileset dir="${buildCore.tmp}/inrelease.zip" />
     </zip>
     <mkdir dir="${buildCore.tmp}/release.zip/aaa" />
     <mkdir dir="${buildCore.tmp}/release.zip/aaa/bbb" />
+    <copy todir="${buildCore.tmp}/release.zip/aaa/bbb">
+      <fileset file="${mps_home}/about.txt" />
+    </copy>
     <zip destfile="${buildCore.deploy.dir}/default/release.zip">
       <fileset dir="${buildCore.tmp}/release.zip" />
     </zip>

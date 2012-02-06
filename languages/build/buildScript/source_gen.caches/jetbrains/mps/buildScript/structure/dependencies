@@ -90,7 +90,9 @@
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.buildScript.structure.BuildFileSelector" />
     <classNode dependClassName="jetbrains.mps.buildScript.structure.BuildInputFileSet" />
+    <classNode dependClassName="jetbrains.mps.buildScript.structure.BuildLayout_FileSet" />
     <classNode dependClassName="jetbrains.mps.buildScript.structure.BuildSourcePath" />
+    <classNode dependClassName="jetbrains.mps.lang.core.structure.Attribute" />
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
@@ -107,8 +109,12 @@
   </dependency>
   <dependency className="jetbrains.mps.buildScript.structure.BuildInputSingleFile" file="BuildInputSingleFile.java">
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.Iterator" />
+    <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.buildScript.structure.BuildInputFileSet" />
+    <classNode dependClassName="jetbrains.mps.buildScript.structure.BuildLayout_FileSet" />
     <classNode dependClassName="jetbrains.mps.buildScript.structure.BuildSourcePath" />
+    <classNode dependClassName="jetbrains.mps.lang.core.structure.Attribute" />
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
@@ -144,10 +150,18 @@
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
   </dependency>
+  <dependency className="jetbrains.mps.buildScript.structure.BuildLayout_ContainerAcceptingFileSet" file="BuildLayout_ContainerAcceptingFileSet.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode extendsClassName="jetbrains.mps.smodel.INodeAdapter" />
+  </dependency>
   <dependency className="jetbrains.mps.buildScript.structure.BuildLayout_Copy" file="BuildLayout_Copy.java">
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.Iterator" />
+    <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.buildScript.structure.BuildInputFileSet" />
+    <classNode dependClassName="jetbrains.mps.buildScript.structure.BuildLayout_FileSet" />
     <classNode dependClassName="jetbrains.mps.buildScript.structure.BuildLayout_Node" />
+    <classNode dependClassName="jetbrains.mps.lang.core.structure.Attribute" />
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
@@ -169,7 +183,11 @@
   </dependency>
   <dependency className="jetbrains.mps.buildScript.structure.BuildLayout_Jar" file="BuildLayout_Jar.java">
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.Iterator" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.buildScript.structure.BuildLayout_ContainerAcceptingFileSet" />
     <classNode dependClassName="jetbrains.mps.buildScript.structure.BuildLayout_NamedContainer" />
+    <classNode dependClassName="jetbrains.mps.lang.core.structure.Attribute" />
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
@@ -213,7 +231,11 @@
   </dependency>
   <dependency className="jetbrains.mps.buildScript.structure.BuildLayout_Zip" file="BuildLayout_Zip.java">
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.Iterator" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.buildScript.structure.BuildLayout_ContainerAcceptingFileSet" />
     <classNode dependClassName="jetbrains.mps.buildScript.structure.BuildLayout_NamedContainer" />
+    <classNode dependClassName="jetbrains.mps.lang.core.structure.Attribute" />
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
