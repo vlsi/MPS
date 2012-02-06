@@ -32,6 +32,14 @@
     <mkdir dir="${buildCore.tmp}/release.zip" />
     <mkdir dir="${buildCore.tmp}/inrelease.zip" />
     <mkdir dir="${buildCore.tmp}/inrelease.zip/bbb" />
+    <copy todir="${buildCore.tmp}/inrelease.zip/bbb">
+      <fileset file="${mps_home}/MPS.ipr" />
+    </copy>
+    <copy todir="${buildCore.tmp}/inrelease.zip/bbb">
+      <fileset dir="./source_gen/">
+        <include name="**/*.java" />
+      </fileset>
+    </copy>
     <zip destfile="${buildCore.tmp}/release.zip/inrelease.zip">
       <fileset dir="${buildCore.tmp}/inrelease.zip" />
     </zip>
@@ -48,14 +56,6 @@
       <fileset dir="${build.dir}/tmp/java.out.mps-core" />
       <fileset dir="${buildCore.tmp}/mps-core-${ver}.jar" />
     </jar>
-    <copy todir="${buildCore.tmp}/inrelease.zip/bbb">
-      <fileset file="${mps_home}/MPS.ipr" />
-    </copy>
-    <copy todir="${buildCore.tmp}/inrelease.zip/bbb">
-      <fileset dir="./source_gen/">
-        <include name="**/*.java" />
-      </fileset>
-    </copy>
   </target>
   
   <target name="test" depends="classes" />
