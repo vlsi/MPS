@@ -403,18 +403,18 @@
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
   </dependency>
-  <dependency className="jetbrains.mps.buildScript.structure.BuildSource_JavaLibraryElement" file="BuildSource_JavaLibraryElement.java">
+  <dependency className="jetbrains.mps.buildScript.structure.BuildSource_JavaLibraryClasses" file="BuildSource_JavaLibraryClasses.java">
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.buildScript.structure.BuildInputResourceSet" />
+    <classNode dependClassName="jetbrains.mps.buildScript.structure.BuildSource_JavaLibraryElement" />
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
   </dependency>
-  <dependency className="jetbrains.mps.buildScript.structure.BuildSource_JavaLibraryJar" file="BuildSource_JavaLibraryJar.java">
+  <dependency className="jetbrains.mps.buildScript.structure.BuildSource_JavaLibraryElement" file="BuildSource_JavaLibraryElement.java">
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.buildScript.structure.BuildSourcePath" />
-    <classNode dependClassName="jetbrains.mps.buildScript.structure.BuildSource_JavaLibraryElement" />
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />

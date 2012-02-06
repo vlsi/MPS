@@ -5,6 +5,7 @@ package jetbrains.mps.buildScript.behavior;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.buildScript.util.Context;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class BuildSourceMacroRelativePath_Behavior {
@@ -16,6 +17,9 @@ public class BuildSourceMacroRelativePath_Behavior {
   }
 
   public static String virtual_getRelativePath_5481553824944787371(SNode thisNode) {
-    return "${" + SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "macro", false), "name") + "}/" + SPropertyOperations.getString(thisNode, "relativePath");
+    return (StringUtils.isEmpty(SPropertyOperations.getString(thisNode, "relativePath")) ?
+      "${" + SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "macro", false), "name") + "}" :
+      "${" + SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "macro", false), "name") + "}/" + SPropertyOperations.getString(thisNode, "relativePath")
+    );
   }
 }

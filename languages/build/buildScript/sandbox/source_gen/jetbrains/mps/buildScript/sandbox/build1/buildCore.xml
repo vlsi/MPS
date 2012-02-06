@@ -1,11 +1,14 @@
 <project name="buildCore">
-  <property name="mps_home" location="./../../../.." />
+  <property name="mps_home" location="${basedir}/../../../.." />
   <property name="build_langs" location="${mps_home}/languages/build" />
   <property name="build.dir" location="build" />
   
   <path id="path.java.library.apache-collections">
-    <pathelement location="${mps_home}/lib/commons-collections.jar" />
-    <pathelement location="${mps_home}/sd" />
+    <fileset file="${build_langs}/build.ipr" />
+    <fileset dir="${mps_home}">
+      <include name="**/*.jar" />
+    </fileset>
+    <fileset dir="${basedir}"></fileset>
   </path>
   
   <target name="java.compile.mps-core">
@@ -32,7 +35,7 @@
     <mkdir dir="${buildCore.tmp}/release.zip" />
     <zip destfile="${buildCore.tmp}/release.zip/inrelease.zip">
       <fileset file="${mps_home}/MPS.ipr" />
-      <fileset dir="./source_gen/">
+      <fileset dir="${basedir}/source_gen/">
         <include name="**/*.java" />
       </fileset>
     </zip>

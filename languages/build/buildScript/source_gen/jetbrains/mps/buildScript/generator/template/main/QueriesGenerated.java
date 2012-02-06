@@ -115,10 +115,6 @@ public class QueriesGenerated {
     return "java.library." + SPropertyOperations.getString(_context.getNode(), "name");
   }
 
-  public static Object propertyMacro_GetPropertyValue_6647099934207253950(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return BuildSourcePath_Behavior.call_getRelativePath_5481553824944787371(SLinkOperations.getTarget(_context.getNode(), "path", true));
-  }
-
   public static Object propertyMacro_GetPropertyValue_5248329904288079406(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return BuildSourcePath_Behavior.call_getRelativePath_5481553824944787371(SLinkOperations.getTarget(_context.getNode(), "dir", true));
   }
@@ -245,6 +241,10 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_5248329904288175557(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "fileset", true);
+  }
+
+  public static SNode sourceNodeQuery_5248329904288198651(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "resset", true);
   }
 
   public static SNode sourceNodeQuery_5248329904288140540(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {

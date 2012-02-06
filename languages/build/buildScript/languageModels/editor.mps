@@ -98,7 +98,7 @@
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="6057319140845589485">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Project.Java" />
-      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="3ior.6057319140845478671" resolveInfo="BuildSource_JavaLibraryJar" />
+      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="3ior.6057319140845478671" resolveInfo="BuildSource_JavaLibraryClasses" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="4993211115183250896">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Project.Java" />
@@ -1573,11 +1573,11 @@
   <root id="6057319140845589485">
     <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="6057319140845589487">
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="6057319140845589490">
-        <property name="text" nameId="tpc2.1073389577007" value="jar" />
+        <property name="text" nameId="tpc2.1073389577007" value="classes:" />
         <link role="styleClass" roleId="tpc2.1186406756722" targetNodeId="1203598923024" resolveInfo="keyword" />
       </node>
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_RefNode" typeId="tpc2.1073389882823" id="6057319140845589492">
-        <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="3ior.6057319140845478672" />
+        <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="3ior.5248329904288198648" />
       </node>
       <node role="cellLayout" roleId="tpc2.1106270802874" type="tpc2.CellLayout_Indent" typeId="tpc2.1237303669825" id="6057319140845589489" />
     </node>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="edrti43kompt80t1m2y16kqhghi9dwt">
+<dependencies version="2" modelHash="7n32mix0ukuwc01ia2se0kw8wu4wlg8">
   <dep model="f:java_stub#071dc6d3-9172-49bc-9ecd-8487bb9112a4#jetbrains.mps.lang.smodel.generator.smodelAdapter(jetbrains.mps.lang.refactoring#1189697379687/jetbrains.mps.lang.smodel.generator.smodelAdapter@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
@@ -27,7 +27,7 @@
   <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
   <dep model="r:d1558b8f-fc9e-4ca7-bb90-70ac789f336e(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.post@generator)" />
   <dep model="r:d64ba0fe-173d-44e2-ab7b-bde40d7e9b7e(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.pre@generator)" />
-  <dep model="r:e9081cad-d8c3-45f2-b4ad-1dabd5ff82af(jetbrains.mps.buildScript.structure)" hash="3dsqk3n9upg7plao3tkm06xz1yyvhtp" />
+  <dep model="r:e9081cad-d8c3-45f2-b4ad-1dabd5ff82af(jetbrains.mps.buildScript.structure)" hash="523bjjwbylwz8mkw3j2tzlvg8zkd1b8" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
   <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
   <common hash="-3qfr0cyc6x77v5z6s785us3i0c0pnpf" dependsOnNodes="true">
@@ -74,6 +74,7 @@
     <file name="BuildJavaPlugin_BehaviorDescriptor.java" />
     <file name="BuildLayout_AbstractContainer_BehaviorDescriptor.java" />
     <file name="BuildLayout_BehaviorDescriptor.java" />
+    <file name="BuildLayout_ContainerAcceptingFileSet_BehaviorDescriptor.java" />
     <file name="BuildLayout_Copy_BehaviorDescriptor.java" />
     <file name="BuildLayout_FileSet_BehaviorDescriptor.java" />
     <file name="BuildLayout_Folder_BehaviorDescriptor.java" />
@@ -96,8 +97,8 @@
     <file name="BuildSource_JavaDependencyLibrary_BehaviorDescriptor.java" />
     <file name="BuildSource_JavaDependencyModule_BehaviorDescriptor.java" />
     <file name="BuildSource_JavaDependency_BehaviorDescriptor.java" />
+    <file name="BuildSource_JavaLibraryClasses_BehaviorDescriptor.java" />
     <file name="BuildSource_JavaLibraryElement_BehaviorDescriptor.java" />
-    <file name="BuildSource_JavaLibraryJar_BehaviorDescriptor.java" />
     <file name="BuildSource_JavaLibrary_BehaviorDescriptor.java" />
     <file name="BuildSource_JavaModule_BehaviorDescriptor.java" />
     <file name="BuildVariableMacro_BehaviorDescriptor.java" />
@@ -164,7 +165,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="BuildSourcePath_Behavior.java" />
   </source>
-  <source id="5481553824944831598" name="BuildSourceProjectRelativePath_Behavior" hash="9f5uqlnayn3hfpim70udbsij4ovxl8s">
+  <source id="5481553824944831598" name="BuildSourceProjectRelativePath_Behavior" hash="1jyxilchtqhpnrei5abarjpzx6tx0x4">
     <dep model="f:java_stub#071dc6d3-9172-49bc-9ecd-8487bb9112a4#jetbrains.mps.lang.smodel.generator.smodelAdapter(jetbrains.mps.lang.refactoring#1189697379687/jetbrains.mps.lang.smodel.generator.smodelAdapter@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
@@ -223,7 +224,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="BuildRelativePath_Behavior.java" />
   </source>
-  <source id="4959435991187146226" name="BuildSourceMacroRelativePath_Behavior" hash="-cdzvjc5wqe4apgpr8bvmu6bzm1zbz83">
+  <source id="4959435991187146226" name="BuildSourceMacroRelativePath_Behavior" hash="6rixbkujz6sfucycn9epyy218djy392">
     <dep model="f:java_stub#071dc6d3-9172-49bc-9ecd-8487bb9112a4#jetbrains.mps.lang.smodel.generator.smodelAdapter(jetbrains.mps.lang.refactoring#1189697379687/jetbrains.mps.lang.smodel.generator.smodelAdapter@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
