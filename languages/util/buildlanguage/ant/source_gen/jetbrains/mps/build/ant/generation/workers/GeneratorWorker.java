@@ -161,7 +161,6 @@ public class GeneratorWorker extends MpsWorker {
 
       p.projectClosed();
       disposeProject(p);
-      dispose();
       doneSomething = true;
     }
 
