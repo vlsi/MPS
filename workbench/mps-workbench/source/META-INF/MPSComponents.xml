@@ -196,10 +196,6 @@
     </component>
 
     <component>
-      <implementation-class>com.intellij.ide.todo.TodoConfiguration</implementation-class>
-    </component>
-
-    <component>
       <implementation-class>jetbrains.mps.ideaPlugins.PluginBundleInstaller</implementation-class>
     </component>
   </application-components>
@@ -252,11 +248,6 @@
       <interface-class>com.intellij.psi.PsiDocumentManager</interface-class>
       <implementation-class>jetbrains.mps.workbench.psi.NullPsiDocumentManager</implementation-class>
       <loadForDefaultProject/>
-    </component>
-
-    <component>
-      <interface-class>com.intellij.psi.PsiFileFactory</interface-class>
-      <implementation-class>com.intellij.psi.impl.PsiFileFactoryImpl</implementation-class>
     </component>
 
     <component>

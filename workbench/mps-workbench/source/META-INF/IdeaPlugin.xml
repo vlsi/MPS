@@ -35,9 +35,6 @@
     <applicationService serviceInterface="com.intellij.codeStyle.CodeStyleFacade"
                         serviceImplementation="com.intellij.codeStyle.DefaultCodeStyleFacade"/>
 
-    <applicationService serviceInterface="com.intellij.lang.DefaultASTFactory"
-                        serviceImplementation="com.intellij.lang.DefaultASTFactoryImpl"/>
-
     <applicationService serviceInterface="com.intellij.openapi.project.ProjectLocator"
                         serviceImplementation="com.intellij.openapi.project.impl.DefaultProjectLocator"/>
 
@@ -71,9 +68,6 @@
                     serviceImplementation="com.intellij.psi.search.ProjectScopeBuilderImpl"/>
     <projectService serviceInterface="com.intellij.openapi.roots.FileIndexFacade"
                     serviceImplementation="com.intellij.openapi.vcs.impl.DefaultFileIndexFacade"/>
-    <projectService serviceInterface="com.intellij.psi.search.PsiSearchHelper"
-                        serviceImplementation="com.intellij.psi.impl.search.PsiSearchHelperImpl"/>
-    <indexPatternProvider implementation="com.intellij.ide.todo.TodoIndexPatternProvider" />
 
     <applicationService serviceInterface="com.intellij.openapi.wm.impl.FrameTitleBuilder"
                         serviceImplementation="com.intellij.openapi.wm.impl.PlatformFrameTitleBuilder"/>
