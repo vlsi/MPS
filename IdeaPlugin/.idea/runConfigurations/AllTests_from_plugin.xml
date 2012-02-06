@@ -7,7 +7,7 @@
     <option name="MAIN_CLASS_NAME" value="jetbrains.mps.idea.core.tests.AllTests" />
     <option name="METHOD_NAME" value="" />
     <option name="TEST_OBJECT" value="class" />
-    <option name="VM_PARAMETERS" value="-Didea.platform.prefix=Idea -Didea.config.path=$USER_HOME$/Library/Caches/IdeaIC11/plugins-sandbox/config -Didea.system.path=$USER_HOME$/Library/Caches/IdeaIC11/plugins-sandbox/system -Didea.plugins.path=$PROJECT_DIR$" />
+    <option name="VM_PARAMETERS" value="-ea -Didea.platform.prefix=Idea -Didea.config.path=$USER_HOME$/Library/Caches/IdeaIC11/plugins-sandbox/config -Didea.system.path=$USER_HOME$/Library/Caches/IdeaIC11/plugins-sandbox/system -Didea.plugins.path=$PROJECT_DIR$" />
     <option name="PARAMETERS" value="" />
     <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
     <option name="ENV_VARIABLES" />
