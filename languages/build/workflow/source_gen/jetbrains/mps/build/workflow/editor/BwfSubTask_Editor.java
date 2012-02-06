@@ -107,6 +107,7 @@ public class BwfSubTask_Editor extends DefaultNodeEditor {
     AbstractCellListHandler handler = new BwfSubTask_Editor.afterListHandler_6puhak_b2a(node, "after", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_after");
+    rt_SubTask_AfterOrBefore.setCellActions(editorCell, node, editorContext);
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
@@ -115,6 +116,7 @@ public class BwfSubTask_Editor extends DefaultNodeEditor {
     AbstractCellListHandler handler = new BwfSubTask_Editor.beforeListHandler_6puhak_b3a(node, "before", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_before");
+    rt_SubTask_AfterOrBefore.setCellActions(editorCell, node, editorContext);
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
