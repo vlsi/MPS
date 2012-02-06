@@ -272,9 +272,13 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_1117643560963346354(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "contentRoots", true)).translate(new ITranslator2<SNode, SNode>() {
+    return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "sources", true)).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.buildScript.structure.BuildSource_JavaContentRoot");
+      }
+    }).translate(new ITranslator2<SNode, SNode>() {
       public Iterable<SNode> translate(SNode it) {
-        return SLinkOperations.getTargets(it, "folders", true);
+        return SLinkOperations.getTargets(SNodeOperations.cast(it, "jetbrains.mps.buildScript.structure.BuildSource_JavaContentRoot"), "folders", true);
       }
     });
   }

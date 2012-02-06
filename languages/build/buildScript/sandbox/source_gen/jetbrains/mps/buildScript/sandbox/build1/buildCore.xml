@@ -13,7 +13,10 @@
   
   <target name="java.compile.mps-core">
     <javac destdir="${build.dir}/tmp/java.out.mps-core">
-      <src path="${mps_home}/core/source" />
+      <src>
+        <pathelement path="${mps_home}/core/source" />
+        <pathelement path="${mps_home}/core/tests" />
+      </src>
       <classpath path="!TODO! java library classpath" />
     </javac>
   </target>

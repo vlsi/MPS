@@ -44,6 +44,7 @@ public class BuildSource_JavaModule_Editor extends DefaultNodeEditor {
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
+      style.set(StyleAttributes.SELECTABLE, false);
     }
     editorCell.setCanBeFolded(true);
     editorCell.addEditorCell(this.createConstant_kr3er8_a2a(editorContext, node));
@@ -93,9 +94,9 @@ public class BuildSource_JavaModule_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createRefNodeList_kr3er8_b2a(EditorContext editorContext, SNode node) {
-    AbstractCellListHandler handler = new BuildSource_JavaModule_Editor.contentRootsListHandler_kr3er8_b2a(node, "contentRoots", editorContext);
+    AbstractCellListHandler handler = new BuildSource_JavaModule_Editor.sourcesListHandler_kr3er8_b2a(node, "sources", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
-    editorCell.setCellId("refNodeList_contentRoots");
+    editorCell.setCellId("refNodeList_sources");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
@@ -141,8 +142,8 @@ public class BuildSource_JavaModule_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static class contentRootsListHandler_kr3er8_b2a extends RefNodeListHandler {
-    public contentRootsListHandler_kr3er8_b2a(SNode ownerNode, String childRole, EditorContext context) {
+  private static class sourcesListHandler_kr3er8_b2a extends RefNodeListHandler {
+    public sourcesListHandler_kr3er8_b2a(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 

@@ -77,7 +77,7 @@
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="7389400916848073810">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Project.Java" />
       <property name="name" nameId="tpck.1169194664001" value="BuildSource_JavaContentRoot" />
-      <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
+      <link role="extends" roleId="tpce.1071489389519" targetNodeId="5248329904288265468" resolveInfo="BuildSource_JavaSources" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="7389400916848136194">
       <property name="name" nameId="tpck.1169194664001" value="BuildFolderMacro" />
@@ -236,6 +236,19 @@
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Layout" />
       <property name="name" nameId="tpck.1169194664001" value="BuildLayout_ContainerAcceptingFileSet" />
     </node>
+    <node type="tpce.EnumerationDataTypeDeclaration" typeId="tpce.1082978164219" id="5248329904288265463">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Project.Java" />
+      <property name="name" nameId="tpck.1169194664001" value="BuildSource_JavaContentFolderKind" />
+      <property name="memberIdentifierPolicy" nameId="tpce.1197591154882" value="derive_from_internal_value" />
+      <property name="hasNoDefaultMember" nameId="tpce.1212080844762" value="true" />
+      <property name="noValueText" nameId="tpce.1212087449254" value="&lt;no kind&gt;" />
+      <link role="memberDataType" roleId="tpce.1083171729157" targetNodeId="tpck.1082983041843" resolveInfo="string" />
+    </node>
+    <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="5248329904288265468">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Project.Java" />
+      <property name="name" nameId="tpck.1169194664001" value="BuildSource_JavaSources" />
+      <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
+    </node>
   </roots>
   <root id="5617550519002745363">
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="6647099934206700656">
@@ -363,9 +376,9 @@
   <root id="7389400916848073784">
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="7389400916848073826">
       <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
-      <property name="role" nameId="tpce.1071599776563" value="contentRoots" />
+      <property name="role" nameId="tpce.1071599776563" value="sources" />
       <property name="sourceCardinality" nameId="tpce.1071599893252" value="0..n" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="7389400916848073810" resolveInfo="BuildSource_JavaContentRoot" />
+      <link role="target" roleId="tpce.1071599976176" targetNodeId="5248329904288265468" resolveInfo="BuildSource_JavaSources" />
     </node>
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="2754769020641646251">
       <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
@@ -443,6 +456,10 @@
     </node>
   </root>
   <root id="2754769020641429190">
+    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="5248329904288265467">
+      <property name="name" nameId="tpck.1169194664001" value="kind" />
+      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="5248329904288265463" resolveInfo="BuildSource_JavaContentFolderKind" />
+    </node>
     <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="2754769020641429191">
       <property name="name" nameId="tpck.1169194664001" value="relativePath" />
       <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983041843" resolveInfo="string" />
@@ -713,5 +730,24 @@
     </node>
   </root>
   <root id="5248329904288166441" />
+  <root id="5248329904288265463">
+    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="5248329904288265464">
+      <property name="internalValue" nameId="tpce.1083923523171" value="source" />
+      <property name="externalValue" nameId="tpce.1083923523172" value="source" />
+    </node>
+    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="5248329904288265465">
+      <property name="internalValue" nameId="tpce.1083923523171" value="test" />
+      <property name="externalValue" nameId="tpce.1083923523172" value="test" />
+    </node>
+    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="5248329904288265466">
+      <property name="internalValue" nameId="tpce.1083923523171" value="excluded" />
+      <property name="externalValue" nameId="tpce.1083923523172" value="excluded" />
+    </node>
+  </root>
+  <root id="5248329904288265468">
+    <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.BooleanConceptProperty" typeId="tpce.1105725574259" id="5248329904288265469">
+      <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473854053" resolveInfo="abstract" />
+    </node>
+  </root>
 </model>
 

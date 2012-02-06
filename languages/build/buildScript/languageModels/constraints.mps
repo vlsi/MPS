@@ -44,6 +44,11 @@
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Project.Java" />
       <link role="concept" roleId="tp1t.1213093996982" targetNodeId="3ior.6057319140845467763" resolveInfo="BuildSource_JavaLibrary" />
     </node>
+    <node type="tp1t.ConceptConstraints" typeId="tp1t.1213093968558" id="5248329904288343261">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Project.Java" />
+      <link role="concept" roleId="tp1t.1213093996982" targetNodeId="3ior.5248329904288265468" resolveInfo="BuildSource_JavaSources" />
+      <link role="defaultConcreteConcept" roleId="tp1t.1213106917431" targetNodeId="3ior.7389400916848073810" resolveInfo="BuildSource_JavaContentRoot" />
+    </node>
   </roots>
   <root id="7389400916848182167">
     <node role="referent" roleId="tp1t.1213100494875" type="tp1t.NodeReferentConstraint" typeId="tp1t.1148687176410" id="7389400916848182168">
@@ -219,5 +224,6 @@
       </node>
     </node>
   </root>
+  <root id="5248329904288343261" />
 </model>
 

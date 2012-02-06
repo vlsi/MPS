@@ -7,7 +7,6 @@ import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
@@ -21,16 +20,27 @@ public class BuildSource_JavaContentFolder_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_mj8zou_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_mj8zou_a");
-    editorCell.addEditorCell(this.createConstant_mj8zou_a0(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_mj8zou_a0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_mj8zou_b0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_mj8zou_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "source");
-    editorCell.setCellId("Constant_mj8zou_a0");
+  private EditorCell createProperty_mj8zou_a0(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
+    provider.setRole("kind");
+    provider.setNoTargetText("<no kind>");
+    EditorCell editorCell;
+    editorCell = provider.createEditorCell(editorContext);
+    editorCell.setCellId("property_kind");
     buildStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
-    editorCell.setDefaultText("");
+    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    SNode attributeConcept = provider.getRoleAttribute();
+    Class attributeKind = provider.getRoleAttributeClass();
+    if (attributeConcept != null) {
+      IOperationContext opContext = editorContext.getOperationContext();
+      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+      return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
+    } else
     return editorCell;
   }
 

@@ -17,7 +17,7 @@ public class BuildSource_JavaModule extends BuildProjectPart implements INamedCo
   public static final String SHORT_DESCRIPTION = "shortDescription";
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
-  public static final String CONTENT_ROOTS = "contentRoots";
+  public static final String SOURCES = "sources";
   public static final String DEPENDENCIES = "dependencies";
   public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
 
@@ -57,24 +57,24 @@ public class BuildSource_JavaModule extends BuildProjectPart implements INamedCo
     this.setProperty(BuildSource_JavaModule.VIRTUAL_PACKAGE, value);
   }
 
-  public int getContentRootsesCount() {
-    return this.getChildCount(BuildSource_JavaModule.CONTENT_ROOTS);
+  public int getSourcesesCount() {
+    return this.getChildCount(BuildSource_JavaModule.SOURCES);
   }
 
-  public Iterator<BuildSource_JavaContentRoot> contentRootses() {
-    return this.children(BuildSource_JavaContentRoot.class, BuildSource_JavaModule.CONTENT_ROOTS);
+  public Iterator<BuildSource_JavaSources> sourceses() {
+    return this.children(BuildSource_JavaSources.class, BuildSource_JavaModule.SOURCES);
   }
 
-  public List<BuildSource_JavaContentRoot> getContentRootses() {
-    return this.getChildren(BuildSource_JavaContentRoot.class, BuildSource_JavaModule.CONTENT_ROOTS);
+  public List<BuildSource_JavaSources> getSourceses() {
+    return this.getChildren(BuildSource_JavaSources.class, BuildSource_JavaModule.SOURCES);
   }
 
-  public void addContentRoots(BuildSource_JavaContentRoot node) {
-    this.addChild(BuildSource_JavaModule.CONTENT_ROOTS, node);
+  public void addSources(BuildSource_JavaSources node) {
+    this.addChild(BuildSource_JavaModule.SOURCES, node);
   }
 
-  public void insertContentRoots(BuildSource_JavaContentRoot prev, BuildSource_JavaContentRoot node) {
-    this.insertChild(prev, BuildSource_JavaModule.CONTENT_ROOTS, node);
+  public void insertSources(BuildSource_JavaSources prev, BuildSource_JavaSources node) {
+    this.insertChild(prev, BuildSource_JavaModule.SOURCES, node);
   }
 
   public int getDependenciesesCount() {

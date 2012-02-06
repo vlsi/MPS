@@ -11,6 +11,7 @@ import jetbrains.mps.project.GlobalScope;
 public class BuildSource_JavaContentFolder extends BaseConcept {
   public static final String concept = "jetbrains.mps.buildScript.structure.BuildSource_JavaContentFolder";
   public static final String RELATIVE_PATH = "relativePath";
+  public static final String KIND = "kind";
 
   public BuildSource_JavaContentFolder(SNode node) {
     super(node);
@@ -22,6 +23,15 @@ public class BuildSource_JavaContentFolder extends BaseConcept {
 
   public void setRelativePath(String value) {
     this.setProperty(BuildSource_JavaContentFolder.RELATIVE_PATH, value);
+  }
+
+  public BuildSource_JavaContentFolderKind getKind() {
+    String value = super.getProperty(BuildSource_JavaContentFolder.KIND);
+    return BuildSource_JavaContentFolderKind.parseValue(value);
+  }
+
+  public void setKind(BuildSource_JavaContentFolderKind value) {
+    super.setProperty(BuildSource_JavaContentFolder.KIND, value.getValueAsString());
   }
 
   public static BuildSource_JavaContentFolder newInstance(SModel sm, boolean init) {
