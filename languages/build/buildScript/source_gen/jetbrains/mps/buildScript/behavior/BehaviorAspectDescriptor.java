@@ -7,59 +7,67 @@ import java.util.Arrays;
 import jetbrains.mps.smodel.runtime.interpreted.BehaviorAspectInterpreted;
 
 public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor {
-  private static String[] stringSwitchCases_846f5o_a0a0a = new String[]{"jetbrains.mps.buildScript.structure.BuildArtifact", "jetbrains.mps.buildScript.structure.BuildFolderMacro", "jetbrains.mps.buildScript.structure.BuildJavaPlugin", "jetbrains.mps.buildScript.structure.BuildLayout", "jetbrains.mps.buildScript.structure.BuildLayout_Folder", "jetbrains.mps.buildScript.structure.BuildLayout_Jar", "jetbrains.mps.buildScript.structure.BuildLayout_JavaOutput", "jetbrains.mps.buildScript.structure.BuildLayout_Zip", "jetbrains.mps.buildScript.structure.BuildPath", "jetbrains.mps.buildScript.structure.BuildProject", "jetbrains.mps.buildScript.structure.BuildProjectDependency", "jetbrains.mps.buildScript.structure.BuildSourceMacroRelativePath", "jetbrains.mps.buildScript.structure.BuildSourceProjectRelativePath", "jetbrains.mps.buildScript.structure.BuildSource_JavaContentFolder", "jetbrains.mps.buildScript.structure.BuildSource_JavaContentRoot", "jetbrains.mps.buildScript.structure.BuildSource_JavaDependencyLibrary", "jetbrains.mps.buildScript.structure.BuildSource_JavaDependencyModule", "jetbrains.mps.buildScript.structure.BuildSource_JavaLibrary", "jetbrains.mps.buildScript.structure.BuildSource_JavaLibraryJar", "jetbrains.mps.buildScript.structure.BuildSource_JavaModule", "jetbrains.mps.buildScript.structure.BuildVariableMacro", "jetbrains.mps.buildScript.structure.CompositePath", "jetbrains.mps.buildScript.structure.ExportedMacroInternal"};
+  private static String[] stringSwitchCases_846f5o_a0a0a = new String[]{"jetbrains.mps.buildScript.structure.BuildArtifact", "jetbrains.mps.buildScript.structure.BuildFileExcludeSelector", "jetbrains.mps.buildScript.structure.BuildFileIncludeSelector", "jetbrains.mps.buildScript.structure.BuildFolderMacro", "jetbrains.mps.buildScript.structure.BuildInputFiles", "jetbrains.mps.buildScript.structure.BuildInputSingleFile", "jetbrains.mps.buildScript.structure.BuildJavaPlugin", "jetbrains.mps.buildScript.structure.BuildLayout", "jetbrains.mps.buildScript.structure.BuildLayout_Copy", "jetbrains.mps.buildScript.structure.BuildLayout_Folder", "jetbrains.mps.buildScript.structure.BuildLayout_Jar", "jetbrains.mps.buildScript.structure.BuildLayout_JavaOutput", "jetbrains.mps.buildScript.structure.BuildLayout_Zip", "jetbrains.mps.buildScript.structure.BuildProject", "jetbrains.mps.buildScript.structure.BuildProjectDependency", "jetbrains.mps.buildScript.structure.BuildSourceMacroRelativePath", "jetbrains.mps.buildScript.structure.BuildSourceProjectRelativePath", "jetbrains.mps.buildScript.structure.BuildSource_JavaContentFolder", "jetbrains.mps.buildScript.structure.BuildSource_JavaContentRoot", "jetbrains.mps.buildScript.structure.BuildSource_JavaDependencyLibrary", "jetbrains.mps.buildScript.structure.BuildSource_JavaDependencyModule", "jetbrains.mps.buildScript.structure.BuildSource_JavaLibrary", "jetbrains.mps.buildScript.structure.BuildSource_JavaLibraryJar", "jetbrains.mps.buildScript.structure.BuildSource_JavaModule", "jetbrains.mps.buildScript.structure.BuildVariableMacro", "jetbrains.mps.buildScript.structure.CompositePath", "jetbrains.mps.buildScript.structure.ExportedMacroInternal"};
 
   public BehaviorAspectDescriptor() {
   }
 
   public BehaviorDescriptor getDescriptor(String fqName) {
     switch (Arrays.binarySearch(stringSwitchCases_846f5o_a0a0a, fqName)) {
-      case 9:
-        return new BuildProject_BehaviorDescriptor();
-      case 3:
-        return new BuildLayout_BehaviorDescriptor();
-      case 4:
-        return new BuildLayout_Folder_BehaviorDescriptor();
-      case 7:
-        return new BuildLayout_Zip_BehaviorDescriptor();
-      case 5:
-        return new BuildLayout_Jar_BehaviorDescriptor();
-      case 19:
-        return new BuildSource_JavaModule_BehaviorDescriptor();
-      case 14:
-        return new BuildSource_JavaContentRoot_BehaviorDescriptor();
-      case 1:
-        return new BuildFolderMacro_BehaviorDescriptor();
-      case 11:
-        return new BuildSourceMacroRelativePath_BehaviorDescriptor();
-      case 6:
-        return new BuildLayout_JavaOutput_BehaviorDescriptor();
       case 13:
-        return new BuildSource_JavaContentFolder_BehaviorDescriptor();
-      case 16:
-        return new BuildSource_JavaDependencyModule_BehaviorDescriptor();
-      case 17:
-        return new BuildSource_JavaLibrary_BehaviorDescriptor();
-      case 18:
-        return new BuildSource_JavaLibraryJar_BehaviorDescriptor();
-      case 15:
-        return new BuildSource_JavaDependencyLibrary_BehaviorDescriptor();
+        return new BuildProject_BehaviorDescriptor();
+      case 7:
+        return new BuildLayout_BehaviorDescriptor();
+      case 9:
+        return new BuildLayout_Folder_BehaviorDescriptor();
+      case 12:
+        return new BuildLayout_Zip_BehaviorDescriptor();
       case 10:
+        return new BuildLayout_Jar_BehaviorDescriptor();
+      case 23:
+        return new BuildSource_JavaModule_BehaviorDescriptor();
+      case 18:
+        return new BuildSource_JavaContentRoot_BehaviorDescriptor();
+      case 3:
+        return new BuildFolderMacro_BehaviorDescriptor();
+      case 15:
+        return new BuildSourceMacroRelativePath_BehaviorDescriptor();
+      case 11:
+        return new BuildLayout_JavaOutput_BehaviorDescriptor();
+      case 17:
+        return new BuildSource_JavaContentFolder_BehaviorDescriptor();
+      case 20:
+        return new BuildSource_JavaDependencyModule_BehaviorDescriptor();
+      case 21:
+        return new BuildSource_JavaLibrary_BehaviorDescriptor();
+      case 22:
+        return new BuildSource_JavaLibraryJar_BehaviorDescriptor();
+      case 19:
+        return new BuildSource_JavaDependencyLibrary_BehaviorDescriptor();
+      case 14:
         return new BuildProjectDependency_BehaviorDescriptor();
       case 0:
         return new BuildArtifact_BehaviorDescriptor();
-      case 12:
+      case 16:
         return new BuildSourceProjectRelativePath_BehaviorDescriptor();
-      case 8:
-        return new BuildPath_BehaviorDescriptor();
-      case 21:
+      case 25:
         return new CompositePath_BehaviorDescriptor();
-      case 22:
+      case 26:
         return new ExportedMacroInternal_BehaviorDescriptor();
-      case 2:
+      case 6:
         return new BuildJavaPlugin_BehaviorDescriptor();
-      case 20:
+      case 24:
         return new BuildVariableMacro_BehaviorDescriptor();
+      case 5:
+        return new BuildInputSingleFile_BehaviorDescriptor();
+      case 4:
+        return new BuildInputFiles_BehaviorDescriptor();
+      case 8:
+        return new BuildLayout_Copy_BehaviorDescriptor();
+      case 2:
+        return new BuildFileIncludeSelector_BehaviorDescriptor();
+      case 1:
+        return new BuildFileExcludeSelector_BehaviorDescriptor();
       default:
         return BehaviorAspectInterpreted.getInstance().getDescriptor(fqName);
     }

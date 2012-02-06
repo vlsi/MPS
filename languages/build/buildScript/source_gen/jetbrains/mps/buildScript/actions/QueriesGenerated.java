@@ -22,6 +22,10 @@ import jetbrains.mps.buildScript.util.Context;
 import jetbrains.mps.smodel.action.DefaultChildNodeSubstituteAction;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.action.IChildNodeSetter;
+import jetbrains.mps.smodel.action.AbstractChildNodeSetter;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.smodel.action.ModelActions;
 import jetbrains.mps.smodel.action.SideTransformActionsBuilderContext;
 import jetbrains.mps.smodel.action.AbstractSideTransformHintSubstituteAction;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
@@ -70,6 +74,36 @@ public class QueriesGenerated {
           }
         }
       }
+    }
+    return result;
+  }
+
+  public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_BuildLayout_Copy_5248329904287920296(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
+    List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
+    {
+      SNode wrappedConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.buildScript.structure.BuildInputFileSet");
+      IChildNodeSetter setter = new AbstractChildNodeSetter() {
+        public SNode wrapNode(SNode nodeToWrap, SModel model) {
+          SNode cp = SConceptOperations.createNewNode("jetbrains.mps.buildScript.structure.BuildLayout_Copy", null);
+          SLinkOperations.setTarget(cp, "fileset", nodeToWrap, true);
+          return cp;
+        }
+
+        public boolean returnSmallPart(SNode nodeToWrap) {
+          return false;
+        }
+
+        public SNode doExecute(SNode pn, SNode oc, SNode nc, IScope sc) {
+          SNode wrappedNode = this.wrapNode(nc, nc.getModel());
+          _context.getChildSetter().execute(_context.getParentNode(), _context.getCurrentTargetNode(), wrappedNode, operationContext.getScope());
+          if (this.returnSmallPart(nc)) {
+            return nc;
+          } else {
+            return wrappedNode;
+          }
+        }
+      };
+      ListSequence.fromList(result).addSequence(ListSequence.fromList(ModelActions.createChildSubstituteActions(_context.getParentNode(), _context.getCurrentTargetNode(), wrappedConcept, setter, operationContext)));
     }
     return result;
   }

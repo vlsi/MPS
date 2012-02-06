@@ -5,6 +5,7 @@
   
   <path id="path.java.library.apache-collections">
     <pathelement location="${mps_home}/lib/commons-collections.jar" />
+    <pathelement location="${mps_home}/sd" />
   </path>
   
   <target name="java.compile.mps-core">
@@ -47,6 +48,14 @@
       <fileset dir="${build.dir}/tmp/java.out.mps-core" />
       <fileset dir="${buildCore.tmp}/mps-core-${ver}.jar" />
     </jar>
+    <copy todir="${buildCore.tmp}/inrelease.zip/bbb">
+      <fileset file="${mps_home}/MPS.ipr" />
+    </copy>
+    <copy todir="${buildCore.tmp}/inrelease.zip/bbb">
+      <fileset dir="./source_gen/">
+        <include name="**/*.java" />
+      </fileset>
+    </copy>
   </target>
   
   <target name="test" depends="classes" />

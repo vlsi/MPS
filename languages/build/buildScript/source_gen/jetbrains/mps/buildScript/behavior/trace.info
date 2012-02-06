@@ -1,13 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="68" endPosition="0" unitName="jetbrains.mps.buildScript.behavior.BehaviorAspectDescriptor" />
+  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="76" endPosition="0" unitName="jetbrains.mps.buildScript.behavior.BehaviorAspectDescriptor" />
   <unitInfo fileName="BuildArtifact_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.buildScript.behavior.BuildArtifact_BehaviorDescriptor" />
   <unitInfo fileName="BuildAspect_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.buildScript.behavior.BuildAspect_BehaviorDescriptor" />
   <unitInfo fileName="BuildDependency_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.buildScript.behavior.BuildDependency_BehaviorDescriptor" />
+  <unitInfo fileName="BuildFileExcludeSelector_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.buildScript.behavior.BuildFileExcludeSelector_BehaviorDescriptor" />
+  <unitInfo fileName="BuildFileIncludeSelector_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.buildScript.behavior.BuildFileIncludeSelector_BehaviorDescriptor" />
+  <unitInfo fileName="BuildFileSelector_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.buildScript.behavior.BuildFileSelector_BehaviorDescriptor" />
   <unitInfo fileName="BuildFolderMacro_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.buildScript.behavior.BuildFolderMacro_BehaviorDescriptor" />
+  <unitInfo fileName="BuildInputDirSet_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.buildScript.behavior.BuildInputDirSet_BehaviorDescriptor" />
+  <unitInfo fileName="BuildInputFileSet_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.buildScript.behavior.BuildInputFileSet_BehaviorDescriptor" />
+  <unitInfo fileName="BuildInputFiles_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.buildScript.behavior.BuildInputFiles_BehaviorDescriptor" />
+  <unitInfo fileName="BuildInputResourceSet_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.buildScript.behavior.BuildInputResourceSet_BehaviorDescriptor" />
+  <unitInfo fileName="BuildInputSingleFile_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.buildScript.behavior.BuildInputSingleFile_BehaviorDescriptor" />
   <unitInfo fileName="BuildJavaPlugin_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.buildScript.behavior.BuildJavaPlugin_BehaviorDescriptor" />
   <unitInfo fileName="BuildLayout_AbstractContainer_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.buildScript.behavior.BuildLayout_AbstractContainer_BehaviorDescriptor" />
   <unitInfo fileName="BuildLayout_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.buildScript.behavior.BuildLayout_BehaviorDescriptor" />
+  <unitInfo fileName="BuildLayout_Copy_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.buildScript.behavior.BuildLayout_Copy_BehaviorDescriptor" />
   <unitInfo fileName="BuildLayout_FileSet_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="8" endPosition="0" unitName="jetbrains.mps.buildScript.behavior.BuildLayout_FileSet_BehaviorDescriptor" />
   <unitInfo fileName="BuildLayout_Folder_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.buildScript.behavior.BuildLayout_Folder_BehaviorDescriptor" />
   <unitInfo fileName="BuildLayout_Jar_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.buildScript.behavior.BuildLayout_Jar_BehaviorDescriptor" />
@@ -16,7 +25,6 @@
   <unitInfo fileName="BuildLayout_Node_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.buildScript.behavior.BuildLayout_Node_BehaviorDescriptor" />
   <unitInfo fileName="BuildLayout_Zip_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.buildScript.behavior.BuildLayout_Zip_BehaviorDescriptor" />
   <unitInfo fileName="BuildMacro_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.buildScript.behavior.BuildMacro_BehaviorDescriptor" />
-  <unitInfo fileName="BuildPath_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.buildScript.behavior.BuildPath_BehaviorDescriptor" />
   <unitInfo fileName="BuildPlugin_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.buildScript.behavior.BuildPlugin_BehaviorDescriptor" />
   <unitInfo fileName="BuildProjectDependency_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.buildScript.behavior.BuildProjectDependency_BehaviorDescriptor" />
   <unitInfo fileName="BuildProjectPart_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.buildScript.behavior.BuildProjectPart_BehaviorDescriptor" />
