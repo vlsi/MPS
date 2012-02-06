@@ -7483,7 +7483,7 @@
                   </node>
                 </node>
                 <node role="lValue" roleId="tpee.1068498886295" type="tpee.DotExpression" typeId="tpee.1197027756228" id="8492459591399166187">
-                  <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="8492459591399166188">
+                  <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="6270877630624861908">
                     <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8492459591399166177" resolveInfo="result" />
                   </node>
                   <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="8492459591399166189">
@@ -7564,6 +7564,7 @@
             </node>
           </node>
         </node>
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.Statement" typeId="tpee.1068580123157" id="6270877630624861938" />
       </node>
       <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="8492459591399166261">
         <property name="name" nameId="tpck.1169194664001" value="declaration" />
@@ -13278,9 +13279,6 @@
           <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="8492459591399170879">
             <property name="name" nameId="tpck.1169194664001" value="results" />
             <property name="isFinal" nameId="tpee.1176718929932" value="false" />
-            <node role="type" roleId="tpee.5680397130376446158" type="tp25.SNodeListType" typeId="tp25.1145383075378" id="8492459591399170880">
-              <link role="elementConcept" roleId="tp25.1145383142433" targetNodeId="tpee.1068580123132" resolveInfo="BaseMethodDeclaration" />
-            </node>
             <node role="initializer" roleId="tpee.1068431790190" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="8492459591399170905">
               <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="8492459591399170915" resolveInfo="findOverridingMethods" />
               <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="8492459591399170869" resolveInfo="MethodRefactoringUtils" />
@@ -13290,6 +13288,9 @@
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="4726754564656744586">
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4726754564656744580" resolveInfo="monitor" />
               </node>
+            </node>
+            <node role="type" roleId="tpee.5680397130376446158" type="tp25.SNodeListType" typeId="tp25.1145383075378" id="8492459591399170880">
+              <link role="elementConcept" roleId="tp25.1145383142433" targetNodeId="tpee.1068580123132" resolveInfo="BaseMethodDeclaration" />
             </node>
           </node>
         </node>
@@ -13390,14 +13391,14 @@
                       <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8492459591399170954" resolveInfo="searchResults" />
                     </node>
                     <node role="rValue" roleId="tpee.1068498886297" type="tp3b.ExecuteFindersGetSearchResults" typeId="tp3b.2005690715325995353" id="8142867644195488752">
+                      <node role="progress" roleId="tp3b.6366407517031970112" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="2541017587083647712">
+                        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8492459591399170918" resolveInfo="progressMonitor" />
+                      </node>
                       <node role="queryNode" roleId="tp3b.6366407517031970110" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="8142867644195488753">
                         <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8492459591399170916" resolveInfo="method" />
                       </node>
                       <node role="finder" roleId="tp3b.8150507060913099385" type="tp3b.FinderReference" typeId="tp3b.2005690715325995359" id="8142867644195488756">
                         <link role="finder" roleId="tp3b.7222148688691763792" targetNodeId="tpeg.1200425321273" resolveInfo="InterfaceMethodImplementations" />
-                      </node>
-                      <node role="progress" roleId="tp3b.6366407517031970112" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="2541017587083647712">
-                        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8492459591399170918" resolveInfo="progressMonitor" />
                       </node>
                     </node>
                   </node>
@@ -13497,14 +13498,14 @@
                   <node role="parameter" roleId="tpee.1109201940907" type="tp25.SNodeType" typeId="tp25.1138055754698" id="8492459591399171014" />
                 </node>
                 <node role="initializer" roleId="tpee.1068431790190" type="tp3b.ExecuteFindersGetSearchResults" typeId="tp3b.2005690715325995353" id="435612077282243207">
+                  <node role="progress" roleId="tp3b.6366407517031970112" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="2541017587083647716">
+                    <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8492459591399170918" resolveInfo="progressMonitor" />
+                  </node>
                   <node role="queryNode" roleId="tp3b.6366407517031970110" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="435612077282243208">
                     <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8492459591399170916" resolveInfo="method" />
                   </node>
                   <node role="finder" roleId="tp3b.8150507060913099385" type="tp3b.FinderReference" typeId="tp3b.2005690715325995359" id="435612077282243211">
                     <link role="finder" roleId="tp3b.7222148688691763792" targetNodeId="tya3.1227530810320" resolveInfo="OverridingMethods" />
-                  </node>
-                  <node role="progress" roleId="tp3b.6366407517031970112" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="2541017587083647716">
-                    <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8492459591399170918" resolveInfo="progressMonitor" />
                   </node>
                 </node>
               </node>
@@ -13572,14 +13573,14 @@
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="8492459591399171043">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="8492459591399171051">
           <node role="expression" roleId="tpee.1068581517676" type="tp3b.ExecuteFindersGetSearchResults" typeId="tp3b.2005690715325995353" id="435612077282243212">
+            <node role="progress" roleId="tp3b.6366407517031970112" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="4726754564656744532">
+              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8492459591399171059" resolveInfo="progressMonitor" />
+            </node>
             <node role="queryNode" roleId="tp3b.6366407517031970110" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="435612077282243213">
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8492459591399171057" resolveInfo="method" />
             </node>
             <node role="finder" roleId="tp3b.8150507060913099385" type="tp3b.FinderReference" typeId="tp3b.2005690715325995359" id="435612077282243216">
               <link role="finder" roleId="tp3b.7222148688691763792" targetNodeId="tpeg.1227527031007" resolveInfo="ExactMethodUsages" />
-            </node>
-            <node role="progress" roleId="tp3b.6366407517031970112" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="4726754564656744532">
-              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8492459591399171059" resolveInfo="progressMonitor" />
             </node>
           </node>
         </node>
