@@ -60,6 +60,7 @@
     <dependency reexport="false">45571709-5529-4a2c-94c9-5b0e2469ad35(jetbrains.mps.samples.agreement.framework)</dependency>
     <dependency reexport="false">086f6299-eca0-43c4-bbca-fab3f95963aa(jetbrains.mps.samples.secretCompartment.runtime)</dependency>
     <dependency reexport="false">bdcad511-2c95-4b17-90fb-99b248f018cc(jetbrains.mps.lang.extension.tests)</dependency>
+    <dependency reexport="false">39742b07-848c-43a7-be0a-845055dd3333(jetbrains.mps.buildScript.tests)</dependency>
   </dependencies>
   <usedLanguages>
     <usedLanguage>f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)</usedLanguage>

@@ -28,31 +28,31 @@ import jetbrains.mps.project.GlobalScope;
 public class MacroTest_Test extends BaseTransformationTest {
   @Test
   public void test_exportedMacro() throws Throwable {
-    this.initTest("${mps_langs}/build/build.ipr", "r:361d93bd-9223-4768-9e37-bcd7b8db1f40(jetbrains.mps.buildScript.tests@tests)");
+    this.initTest("${mps_home}/MPS.ipr", "r:361d93bd-9223-4768-9e37-bcd7b8db1f40(jetbrains.mps.buildScript.tests@tests)");
     this.runTest("jetbrains.mps.buildScript.tests.MacroTest_Test$TestBody", "test_exportedMacro", true);
   }
 
   @Test
   public void test_normalScope() throws Throwable {
-    this.initTest("${mps_langs}/build/build.ipr", "r:361d93bd-9223-4768-9e37-bcd7b8db1f40(jetbrains.mps.buildScript.tests@tests)");
+    this.initTest("${mps_home}/MPS.ipr", "r:361d93bd-9223-4768-9e37-bcd7b8db1f40(jetbrains.mps.buildScript.tests@tests)");
     this.runTest("jetbrains.mps.buildScript.tests.MacroTest_Test$TestBody", "test_normalScope", true);
   }
 
   @Test
   public void test_onlySeePreviouslyDeclaredMacro() throws Throwable {
-    this.initTest("${mps_langs}/build/build.ipr", "r:361d93bd-9223-4768-9e37-bcd7b8db1f40(jetbrains.mps.buildScript.tests@tests)");
+    this.initTest("${mps_home}/MPS.ipr", "r:361d93bd-9223-4768-9e37-bcd7b8db1f40(jetbrains.mps.buildScript.tests@tests)");
     this.runTest("jetbrains.mps.buildScript.tests.MacroTest_Test$TestBody", "test_onlySeePreviouslyDeclaredMacro", true);
   }
 
   @Test
   public void test_doNotSeeItsefl() throws Throwable {
-    this.initTest("${mps_langs}/build/build.ipr", "r:361d93bd-9223-4768-9e37-bcd7b8db1f40(jetbrains.mps.buildScript.tests@tests)");
+    this.initTest("${mps_home}/MPS.ipr", "r:361d93bd-9223-4768-9e37-bcd7b8db1f40(jetbrains.mps.buildScript.tests@tests)");
     this.runTest("jetbrains.mps.buildScript.tests.MacroTest_Test$TestBody", "test_doNotSeeItsefl", true);
   }
 
   @Test
   public void test_doNotSeeImported() throws Throwable {
-    this.initTest("${mps_langs}/build/build.ipr", "r:361d93bd-9223-4768-9e37-bcd7b8db1f40(jetbrains.mps.buildScript.tests@tests)");
+    this.initTest("${mps_home}/MPS.ipr", "r:361d93bd-9223-4768-9e37-bcd7b8db1f40(jetbrains.mps.buildScript.tests@tests)");
     this.runTest("jetbrains.mps.buildScript.tests.MacroTest_Test$TestBody", "test_doNotSeeImported", true);
   }
 
