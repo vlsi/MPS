@@ -20,7 +20,7 @@
         <pathelement path="${mps_home}/core/source" />
         <pathelement path="${mps_home}/core/source_gen" />
       </src>
-      <classpath></classpath>
+      <classpath refid="path.java.library.apache-collections" />
     </javac>
   </target>
   

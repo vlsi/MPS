@@ -186,6 +186,10 @@ public class QueriesGenerated {
     return BuildLayout_AbstractContainer_Behavior.call_getAssembleSubTaskId_1117643560963359375(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.buildScript.structure.BuildLayout_AbstractContainer"));
   }
 
+  public static Object referenceMacro_GetReferent_7926701909975926443(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+    return _context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(_context.getNode(), "library", false), "javalibrary");
+  }
+
   public static Object referenceMacro_GetReferent_6647099934207033995(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     return _context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(_context.getNode(), "module", false), "javamodule");
   }
