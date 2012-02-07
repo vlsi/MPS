@@ -23,6 +23,12 @@ public class buildStyles_StyleSheet {
     return style;
   }
 
+  public static Style getProjectPartKeyword(final EditorCell cell) {
+    Style style = new Style(cell);
+    style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_BLUE);
+    return style;
+  }
+
   public static Style getMacro(final EditorCell cell) {
     Style style = new Style(cell);
     style.set(StyleAttributes.TEXT_COLOR, new Color(6557304));

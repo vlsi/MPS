@@ -57,7 +57,7 @@ public class BuildSource_JavaModule_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_kr3er8_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "java module");
     editorCell.setCellId("Constant_kr3er8_a0");
-    buildStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
+    buildStyles_StyleSheet.getProjectPartKeyword(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
