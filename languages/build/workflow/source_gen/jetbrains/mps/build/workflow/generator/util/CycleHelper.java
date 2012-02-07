@@ -23,7 +23,7 @@ import java.util.HashSet;
 import java.util.Comparator;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
-import jetbrains.mps.build.workflow.behavior.BwfJavaDependency_Behavior;
+import java.util.LinkedHashSet;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.make.dependencies.graph.IVertex;
@@ -85,11 +85,13 @@ public class CycleHelper {
       SPropertyOperations.set(cycleX, "name", "java.modules.cycle." + ++cycleCounter);
       SPropertyOperations.set(cycleX, "outputFolder", SPropertyOperations.getString(project, "temporaryFolder") + "/" + SPropertyOperations.getString(cycleX, "name"));
       SNodeOperations.insertPrevSiblingChild(first, cycleX);
+
+      // build cycle sources & dependencies; trying to avoid duplication (which is not critical) 
       Set<String> seenSources = new HashSet<String>();
       List<SNode> sources = new ArrayList<SNode>();
-
+      Set<String> seenDependencies = new HashSet<String>();
       List<SNode> deps = new ArrayList<SNode>();
-      Set<String> usedDependencies = new HashSet<String>();
+      Set<SNode> seenModules = new LinkedHashSet<SNode>();
 
       for (CycleHelper.Module m : cycle) {
         SNode module = m.getModule();
@@ -99,10 +101,17 @@ public class CycleHelper {
           }
         });
         for (SNode dep : SLinkOperations.getTargets(module, "dependencies", true)) {
-          String signature = BwfJavaDependency_Behavior.call_getSignature_6647099934207246778(dep);
-          if (signature != null) {
-            if (usedDependencies.add(signature)) {
-              deps.add(dep);
+          if (SNodeOperations.isInstanceOf(dep, "jetbrains.mps.build.workflow.structure.BwfJavaModuleReference")) {
+            seenModules.add(SLinkOperations.getTarget(SNodeOperations.cast(dep, "jetbrains.mps.build.workflow.structure.BwfJavaModuleReference"), "target", false));
+          } else if (SNodeOperations.isInstanceOf(dep, "jetbrains.mps.build.workflow.structure.BwfJavaClassPath")) {
+            SNode cp = SLinkOperations.getTarget(SNodeOperations.cast(dep, "jetbrains.mps.build.workflow.structure.BwfJavaClassPath"), "classpath", true);
+            XmlSignature s = new XmlSignature().add(cp);
+            String id = (s.hasErrors() ?
+              "dep." + cp.getId() :
+              s.getResult()
+            );
+            if (seenDependencies.add(id)) {
+              deps.add(cp);
             }
           } else {
             genContext.showErrorMessage(dep, "unexpected dependency type");
@@ -130,13 +139,15 @@ public class CycleHelper {
           return CopyUtil.copy(it);
         }
       }));
-      for (SNode jm : deps) {
-        SNode nref = BwfJavaDependency_Behavior.call_clone_6647099934207248130(jm);
-        if (nref == null) {
-          genContext.showErrorMessage(jm, "cannot clone dependency to use in cycle");
-          continue;
-        }
-        ListSequence.fromList(SLinkOperations.getTargets(cycleX, "dependencies", true)).addElement(nref);
+      for (SNode dep : deps) {
+        SNode cp = SModelOperations.createNewNode(model, "jetbrains.mps.build.workflow.structure.BwfJavaClassPath", null);
+        SLinkOperations.setTarget(cp, "classpath", CopyUtil.copy(dep), true);
+        ListSequence.fromList(SLinkOperations.getTargets(cycleX, "dependencies", true)).addElement(cp);
+      }
+      for (SNode jm : seenModules) {
+        SNode mref = SModelOperations.createNewNode(model, "jetbrains.mps.build.workflow.structure.BwfJavaModuleReference", null);
+        SLinkOperations.setTarget(mref, "target", jm, false);
+        ListSequence.fromList(SLinkOperations.getTargets(cycleX, "dependencies", true)).addElement(mref);
       }
     }
   }

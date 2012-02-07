@@ -20,7 +20,7 @@
         <pathelement path="${mps_home}/core/source" />
         <pathelement path="${mps_home}/core/source_gen" />
       </src>
-      <classpath path="!TODO! java library classpath" />
+      <classpath></classpath>
     </javac>
   </target>
   

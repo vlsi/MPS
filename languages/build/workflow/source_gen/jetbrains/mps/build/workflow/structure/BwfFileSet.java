@@ -5,7 +5,7 @@ package jetbrains.mps.build.workflow.structure;
 import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.smodel.SNode;
 import java.util.Iterator;
-import jetbrains.mps.core.xml.structure.XmlElement;
+import jetbrains.mps.core.xml.structure.XmlBaseElement;
 import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -23,19 +23,19 @@ public class BwfFileSet extends BaseConcept {
     return this.getChildCount(BwfFileSet.ELEMENTS);
   }
 
-  public Iterator<XmlElement> elementses() {
-    return this.children(XmlElement.class, BwfFileSet.ELEMENTS);
+  public Iterator<XmlBaseElement> elementses() {
+    return this.children(XmlBaseElement.class, BwfFileSet.ELEMENTS);
   }
 
-  public List<XmlElement> getElementses() {
-    return this.getChildren(XmlElement.class, BwfFileSet.ELEMENTS);
+  public List<XmlBaseElement> getElementses() {
+    return this.getChildren(XmlBaseElement.class, BwfFileSet.ELEMENTS);
   }
 
-  public void addElements(XmlElement node) {
+  public void addElements(XmlBaseElement node) {
     this.addChild(BwfFileSet.ELEMENTS, node);
   }
 
-  public void insertElements(XmlElement prev, XmlElement node) {
+  public void insertElements(XmlBaseElement prev, XmlBaseElement node) {
     this.insertChild(prev, BwfFileSet.ELEMENTS, node);
   }
 

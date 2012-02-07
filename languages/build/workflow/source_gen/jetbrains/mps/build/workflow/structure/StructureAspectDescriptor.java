@@ -20,7 +20,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 1:
         return new CompiledConceptDescriptor("jetbrains.mps.build.workflow.structure.BwfFileSet", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{});
       case 2:
-        return new CompiledConceptDescriptor("jetbrains.mps.build.workflow.structure.BwfJavaClassPath", "jetbrains.mps.build.workflow.structure.BwfJavaDependency", false, new String[]{"jetbrains.mps.build.workflow.structure.BwfJavaDependency"}, new String[]{"path"}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.build.workflow.structure.BwfJavaClassPath", "jetbrains.mps.build.workflow.structure.BwfJavaDependency", false, new String[]{"jetbrains.mps.build.workflow.structure.BwfJavaDependency"}, new String[]{}, new String[]{});
       case 3:
         return new CompiledConceptDescriptor("jetbrains.mps.build.workflow.structure.BwfJavaDependency", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{});
       case 4:

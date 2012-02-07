@@ -891,12 +891,8 @@
   <root id="6647099934206976121">
     <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="6647099934206976126">
       <node role="cellLayout" roleId="tpc2.1106270802874" type="tpc2.CellLayout_Indent" typeId="tpc2.1237303669825" id="6647099934206976127" />
-      <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="6647099934206976123">
-        <property name="text" nameId="tpc2.1073389577007" value="cp" />
-        <link role="styleClass" roleId="tpc2.1186406756722" targetNodeId="1203598923024" resolveInfo="keyword" />
-      </node>
-      <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Property" typeId="tpc2.1073389658414" id="6647099934206976129">
-        <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="8xvf.6647099934206976120" resolveInfo="path" />
+      <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_RefNode" typeId="tpc2.1073389882823" id="7926701909975675371">
+        <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="8xvf.7926701909975791137" />
       </node>
     </node>
   </root>
