@@ -155,6 +155,12 @@ public class NodeMaps {
     return result;
   }
 
+  public void expandNode(SNode node) {
+    SNode var = myNodesToTypes.get(node);
+    SNode type = myState.getEquations().expandNode(var, true);
+    updateNodeToType(node, type, null);
+  }
+
   public void expandAll(Set<SNode> nodes, boolean finalExpansion) {
     Set<SNode> keySet = myNodesToTypes.keySet();
     for (SNode node : nodes) {
@@ -163,7 +169,7 @@ public class NodeMaps {
       SNode type = myState.getEquations().expandNode(var, finalExpansion);
       updateNodeToType(node, type, null);
       if (finalExpansion && (type == null || TypesUtil.isVariable(type))) {
-        myState.getTypeCheckingContext().reportWarning(node, "Type was not calculated", null, null, null, new NodeMessageTarget());
+        myState.getTypeCheckingContext().reportWarning(node, "Type "+ type+ " was not calculated", null, null, null, new NodeMessageTarget());
       }
     }
   }
