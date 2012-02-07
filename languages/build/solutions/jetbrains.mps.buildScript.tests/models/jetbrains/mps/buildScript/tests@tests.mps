@@ -45,6 +45,9 @@
           <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="280273048052535267">
             <property name="name" nameId="tpck.1169194664001" value="test.jar" />
           </node>
+          <node role="containerName" roleId="3ior.8237269006869436777" type="3ior.BuildSimpleName" typeId="3ior.4903714810883702019" id="9029200373494108661">
+            <property name="text" nameId="3ior.4903714810883755350" value="test.jar" />
+          </node>
         </node>
       </node>
     </node>
@@ -64,14 +67,26 @@
                 <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="8104754176559709939">
                   <property name="name" nameId="tpck.1169194664001" value="internalFolder2" />
                 </node>
+                <node role="containerName" roleId="3ior.8237269006869436777" type="3ior.BuildSimpleName" typeId="3ior.4903714810883702019" id="9029200373494108665">
+                  <property name="text" nameId="3ior.4903714810883755350" value="internalFolder2" />
+                </node>
               </node>
               <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="8104754176559709901">
                 <property name="name" nameId="tpck.1169194664001" value="internalFolder" />
               </node>
+              <node role="containerName" roleId="3ior.8237269006869436777" type="3ior.BuildSimpleName" typeId="3ior.4903714810883702019" id="9029200373494108664">
+                <property name="text" nameId="3ior.4903714810883755350" value="internalFolder" />
+              </node>
+            </node>
+            <node role="containerName" roleId="3ior.8237269006869436777" type="3ior.BuildSimpleName" typeId="3ior.4903714810883702019" id="9029200373494108663">
+              <property name="text" nameId="3ior.4903714810883755350" value="test.jar" />
             </node>
           </node>
           <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="280273048052535291">
             <property name="name" nameId="tpck.1169194664001" value="folder" />
+          </node>
+          <node role="containerName" roleId="3ior.8237269006869436777" type="3ior.BuildSimpleName" typeId="3ior.4903714810883702019" id="9029200373494108662">
+            <property name="text" nameId="3ior.4903714810883755350" value="folder" />
           </node>
         </node>
       </node>
@@ -85,6 +100,12 @@
             <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="7422876504327290552">
               <property name="name" nameId="tpck.1169194664001" value="internal" />
             </node>
+            <node role="containerName" roleId="3ior.8237269006869436777" type="3ior.BuildSimpleName" typeId="3ior.4903714810883702019" id="9029200373494108667">
+              <property name="text" nameId="3ior.4903714810883755350" value="internal" />
+            </node>
+          </node>
+          <node role="containerName" roleId="3ior.8237269006869436777" type="3ior.BuildSimpleName" typeId="3ior.4903714810883702019" id="9029200373494108666">
+            <property name="text" nameId="3ior.4903714810883755350" value="folder" />
           </node>
         </node>
       </node>
@@ -100,7 +121,16 @@
               <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="4209004860870558816">
                 <property name="name" nameId="tpck.1169194664001" value="someFolder" />
               </node>
+              <node role="containerName" roleId="3ior.8237269006869436777" type="3ior.BuildSimpleName" typeId="3ior.4903714810883702019" id="9029200373494108670">
+                <property name="text" nameId="3ior.4903714810883755350" value="someFolder" />
+              </node>
             </node>
+            <node role="containerName" roleId="3ior.8237269006869436777" type="3ior.BuildSimpleName" typeId="3ior.4903714810883702019" id="9029200373494108669">
+              <property name="text" nameId="3ior.4903714810883755350" value="some.jar" />
+            </node>
+          </node>
+          <node role="containerName" roleId="3ior.8237269006869436777" type="3ior.BuildSimpleName" typeId="3ior.4903714810883702019" id="9029200373494108668">
+            <property name="text" nameId="3ior.4903714810883755350" value="some.jar" />
           </node>
         </node>
         <node role="children" roleId="3ior.7389400916848037006" type="3ior.BuildLayout_Jar" typeId="3ior.7389400916848050074" id="4209004860870558813">
@@ -110,6 +140,12 @@
             <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="4209004860870558815">
               <property name="name" nameId="tpck.1169194664001" value="someFolder_1" />
             </node>
+            <node role="containerName" roleId="3ior.8237269006869436777" type="3ior.BuildSimpleName" typeId="3ior.4903714810883702019" id="9029200373494108672">
+              <property name="text" nameId="3ior.4903714810883755350" value="someFolder" />
+            </node>
+          </node>
+          <node role="containerName" roleId="3ior.8237269006869436777" type="3ior.BuildSimpleName" typeId="3ior.4903714810883702019" id="9029200373494108671">
+            <property name="text" nameId="3ior.4903714810883755350" value="some.jar" />
           </node>
         </node>
       </node>
