@@ -89,7 +89,7 @@ public class GoToNodeById_Action extends GeneratedAction {
         JOptionPane.showMessageDialog(((Frame) MapSequence.fromMap(_params).get("frame")), "Can't find node with id " + value);
         return;
       }
-      ((Project) MapSequence.fromMap(_params).get("project")).getComponent(MPSEditorOpener.class).editNode(node.value, ((IOperationContext) MapSequence.fromMap(_params).get("context")));
+      ((Project) MapSequence.fromMap(_params).get("project")).getComponent(MPSEditorOpener.class).openNode(node.value, ((IOperationContext) MapSequence.fromMap(_params).get("context")), true, true);
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "GoToNodeById", t);
