@@ -27,6 +27,7 @@ import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.typesystem.inference.RulesManager;
 import jetbrains.mps.typesystem.inference.TypeChecker;
+import jetbrains.mps.typesystem.inference.TypeContextManager;
 import jetbrains.mps.util.Pair;
 import org.jetbrains.annotations.NotNull;
 
@@ -253,7 +254,7 @@ class TypeSystemComponent extends CheckingComponent {
       if (prevNode != null) {
         additionalNodes.add(prevNode);
       }
-      computeTypesSpecial(node, false, additionalNodes, false, initialNode);
+      computeTypesSpecial(node, true, additionalNodes, false, initialNode);
       type = typeCalculated(initialNode);
       if (type == null) {
         if (node.isRoot()) {
