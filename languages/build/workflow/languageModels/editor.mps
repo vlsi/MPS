@@ -49,9 +49,6 @@
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Tasks" />
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="8xvf.2769948622284768359" resolveInfo="BwfAntStatement" />
     </node>
-    <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="4755209551904389310">
-      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="8xvf.4755209551904389308" resolveInfo="BwfPath" />
-    </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="4755209551904389321">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Structure" />
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="8xvf.4755209551904389307" resolveInfo="BwfJavaModule" />
@@ -100,6 +97,10 @@
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Tasks" />
       <property name="name" nameId="tpck.1169194664001" value="rt_SubTask_AfterOrBefore" />
       <link role="applicableConcept" roleId="tpc2.1139535219968" targetNodeId="8xvf.2769948622284546677" resolveInfo="BwfSubTask" />
+    </node>
+    <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="7926701909975416093">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Structure" />
+      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="8xvf.7926701909975416091" resolveInfo="BwfFileSet" />
     </node>
   </roots>
   <root id="2769948622284546682">
@@ -550,11 +551,6 @@
       <node role="cellLayout" roleId="tpc2.1106270802874" type="tpc2.CellLayout_Indent" typeId="tpc2.1237303669825" id="2769948622284768365" />
     </node>
   </root>
-  <root id="4755209551904389310">
-    <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Property" typeId="tpc2.1073389658414" id="4755209551904389312">
-      <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="8xvf.4755209551904389309" resolveInfo="path" />
-    </node>
-  </root>
   <root id="4755209551904389321">
     <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="4755209551904389323">
       <node role="cellLayout" roleId="tpc2.1106270802874" type="tpc2.CellLayout_Indent" typeId="tpc2.1237303669825" id="4755209551904389324" />
@@ -577,16 +573,12 @@
             <property name="flag" nameId="tpc2.1186414551515" value="true" />
           </node>
         </node>
-        <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_RefNodeList" typeId="tpc2.1073390211982" id="4755209551904389336">
-          <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="8xvf.4755209551904389313" />
-          <node role="cellLayout" roleId="tpc2.1140524464360" type="tpc2.CellLayout_Indent" typeId="tpc2.1237303669825" id="4755209551904389337" />
-          <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.IndentLayoutNewLineChildrenStyleClassItem" typeId="tpc2.1237375020029" id="4755209551904389338">
+        <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_RefNode" typeId="tpc2.1073389882823" id="7926701909975416106">
+          <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="8xvf.7926701909975416101" />
+          <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.IndentLayoutIndentStyleClassItem" typeId="tpc2.1237307900041" id="7926701909975416107">
             <property name="flag" nameId="tpc2.1186414551515" value="true" />
           </node>
-          <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.IndentLayoutIndentStyleClassItem" typeId="tpc2.1237307900041" id="4755209551904389339">
-            <property name="flag" nameId="tpc2.1186414551515" value="true" />
-          </node>
-          <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.IndentLayoutNewLineStyleClassItem" typeId="tpc2.1237308012275" id="4755209551904389340">
+          <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.IndentLayoutNewLineStyleClassItem" typeId="tpc2.1237308012275" id="7926701909975416108">
             <property name="flag" nameId="tpc2.1186414551515" value="true" />
           </node>
         </node>
@@ -1034,6 +1026,19 @@
               </node>
             </node>
           </node>
+        </node>
+      </node>
+    </node>
+  </root>
+  <root id="7926701909975416093">
+    <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="7926701909975416097">
+      <node role="cellLayout" roleId="tpc2.1106270802874" type="tpc2.CellLayout_Indent" typeId="tpc2.1237303669825" id="7926701909975416098" />
+      <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_RefNodeList" typeId="tpc2.1073390211982" id="7926701909975416099">
+        <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="8xvf.7926701909975416092" />
+        <node role="cellLayout" roleId="tpc2.1140524464360" type="tpc2.CellLayout_Indent" typeId="tpc2.1237303669825" id="7926701909975416100" />
+        <node role="emptyCellModel" roleId="tpc2.1140524464359" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="7926701909975462919">
+          <property name="text" nameId="tpc2.1073389577007" value="" />
+          <property name="nullText" nameId="tpc2.1082639509531" value="&lt;no fileset&gt;" />
         </node>
       </node>
     </node>

@@ -92,11 +92,20 @@
       <node role="dependencies" roleId="8xvf.4755209551904389320" type="8xvf.BwfJavaClassPath" typeId="8xvf.6647099934206976119" id="6647099934206996946">
         <property name="path" nameId="8xvf.6647099934206976120" value="junit" />
       </node>
-      <node role="sources" roleId="8xvf.4755209551904389313" type="8xvf.BwfPath" typeId="8xvf.4755209551904389308" id="4755209551904406788">
-        <property name="path" nameId="8xvf.4755209551904389309" value="module1/source" />
-      </node>
       <node role="dependencies" roleId="8xvf.4755209551904389320" type="8xvf.BwfJavaModuleReference" typeId="8xvf.4755209551904389316" id="4755209551904406795">
         <link role="target" roleId="8xvf.4755209551904389317" targetNodeId="4755209551904406791" resolveInfo="module2" />
+      </node>
+      <node role="sources" roleId="8xvf.7926701909975416101" type="8xvf.BwfFileSet" typeId="8xvf.7926701909975416091" id="7926701909975525057">
+        <node role="elements" roleId="8xvf.7926701909975416092" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="7926701909975525058">
+          <property name="tagName" nameId="iuxj.6666499814681415862" value="pathelement" />
+          <property name="shortEmptyNotation" nameId="iuxj.6999033275467544021" value="true" />
+          <node role="attributes" roleId="iuxj.6666499814681415861" type="iuxj.XmlAttribute" typeId="iuxj.6666499814681447923" id="7926701909975525059">
+            <property name="attrName" nameId="iuxj.6666499814681447926" value="path" />
+            <node role="value" roleId="iuxj.6666499814681541918" type="iuxj.XmlTextValue" typeId="iuxj.6666499814681541919" id="7926701909975525060">
+              <property name="text" nameId="iuxj.6666499814681541920" value="module1/source" />
+            </node>
+          </node>
+        </node>
       </node>
     </node>
     <node role="parts" roleId="8xvf.2769948622284574304" type="8xvf.BwfJavaModule" typeId="8xvf.4755209551904389307" id="4755209551904406791">
@@ -111,8 +120,17 @@
       <node role="dependencies" roleId="8xvf.4755209551904389320" type="8xvf.BwfJavaModuleReference" typeId="8xvf.4755209551904389316" id="4755209551904406794">
         <link role="target" roleId="8xvf.4755209551904389317" targetNodeId="4755209551904397940" resolveInfo="module1" />
       </node>
-      <node role="sources" roleId="8xvf.4755209551904389313" type="8xvf.BwfPath" typeId="8xvf.4755209551904389308" id="4755209551904406792">
-        <property name="path" nameId="8xvf.4755209551904389309" value="module2/source" />
+      <node role="sources" roleId="8xvf.7926701909975416101" type="8xvf.BwfFileSet" typeId="8xvf.7926701909975416091" id="7926701909975525061">
+        <node role="elements" roleId="8xvf.7926701909975416092" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="7926701909975525062">
+          <property name="tagName" nameId="iuxj.6666499814681415862" value="pathelement" />
+          <property name="shortEmptyNotation" nameId="iuxj.6999033275467544021" value="true" />
+          <node role="attributes" roleId="iuxj.6666499814681415861" type="iuxj.XmlAttribute" typeId="iuxj.6666499814681447923" id="7926701909975525063">
+            <property name="attrName" nameId="iuxj.6666499814681447926" value="path" />
+            <node role="value" roleId="iuxj.6666499814681541918" type="iuxj.XmlTextValue" typeId="iuxj.6666499814681541919" id="7926701909975525064">
+              <property name="text" nameId="iuxj.6666499814681541920" value="module2/source" />
+            </node>
+          </node>
+        </node>
       </node>
     </node>
     <node role="parts" roleId="8xvf.2769948622284574304" type="8xvf.BwfJavaModule" typeId="8xvf.4755209551904389307" id="4755209551904406797">
@@ -124,9 +142,6 @@
       <node role="dependencies" roleId="8xvf.4755209551904389320" type="8xvf.BwfJavaClassPath" typeId="8xvf.6647099934206976119" id="6647099934206996956">
         <property name="path" nameId="8xvf.6647099934206976120" value="junit" />
       </node>
-      <node role="sources" roleId="8xvf.4755209551904389313" type="8xvf.BwfPath" typeId="8xvf.4755209551904389308" id="4755209551904406798">
-        <property name="path" nameId="8xvf.4755209551904389309" value="module3/source" />
-      </node>
       <node role="dependencies" roleId="8xvf.4755209551904389320" type="8xvf.BwfJavaModuleReference" typeId="8xvf.4755209551904389316" id="4755209551904406799">
         <link role="target" roleId="8xvf.4755209551904389317" targetNodeId="4755209551904397940" resolveInfo="module1" />
       </node>
@@ -135,6 +150,18 @@
       </node>
       <node role="dependencies" roleId="8xvf.4755209551904389320" type="8xvf.BwfJavaModuleReference" typeId="8xvf.4755209551904389316" id="7385586609667763183">
         <link role="target" roleId="8xvf.4755209551904389317" targetNodeId="7385586609667763177" resolveInfo="module4" />
+      </node>
+      <node role="sources" roleId="8xvf.7926701909975416101" type="8xvf.BwfFileSet" typeId="8xvf.7926701909975416091" id="7926701909975525065">
+        <node role="elements" roleId="8xvf.7926701909975416092" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="7926701909975525066">
+          <property name="tagName" nameId="iuxj.6666499814681415862" value="pathelement" />
+          <property name="shortEmptyNotation" nameId="iuxj.6999033275467544021" value="true" />
+          <node role="attributes" roleId="iuxj.6666499814681415861" type="iuxj.XmlAttribute" typeId="iuxj.6666499814681447923" id="7926701909975525067">
+            <property name="attrName" nameId="iuxj.6666499814681447926" value="path" />
+            <node role="value" roleId="iuxj.6666499814681541918" type="iuxj.XmlTextValue" typeId="iuxj.6666499814681541919" id="7926701909975525068">
+              <property name="text" nameId="iuxj.6666499814681541920" value="module3/source" />
+            </node>
+          </node>
+        </node>
       </node>
     </node>
     <node role="parts" roleId="8xvf.2769948622284574304" type="8xvf.BwfJavaModule" typeId="8xvf.4755209551904389307" id="7385586609667763177">
@@ -146,11 +173,20 @@
       <node role="dependencies" roleId="8xvf.4755209551904389320" type="8xvf.BwfJavaClassPath" typeId="8xvf.6647099934206976119" id="6647099934206996962">
         <property name="path" nameId="8xvf.6647099934206976120" value="log4j" />
       </node>
-      <node role="sources" roleId="8xvf.4755209551904389313" type="8xvf.BwfPath" typeId="8xvf.4755209551904389308" id="7385586609667763178">
-        <property name="path" nameId="8xvf.4755209551904389309" value="module4/source" />
-      </node>
       <node role="dependencies" roleId="8xvf.4755209551904389320" type="8xvf.BwfJavaModuleReference" typeId="8xvf.4755209551904389316" id="7385586609667763181">
         <link role="target" roleId="8xvf.4755209551904389317" targetNodeId="4755209551904406797" resolveInfo="module3" />
+      </node>
+      <node role="sources" roleId="8xvf.7926701909975416101" type="8xvf.BwfFileSet" typeId="8xvf.7926701909975416091" id="7926701909975525069">
+        <node role="elements" roleId="8xvf.7926701909975416092" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="7926701909975525070">
+          <property name="tagName" nameId="iuxj.6666499814681415862" value="pathelement" />
+          <property name="shortEmptyNotation" nameId="iuxj.6999033275467544021" value="true" />
+          <node role="attributes" roleId="iuxj.6666499814681415861" type="iuxj.XmlAttribute" typeId="iuxj.6666499814681447923" id="7926701909975525071">
+            <property name="attrName" nameId="iuxj.6666499814681447926" value="path" />
+            <node role="value" roleId="iuxj.6666499814681541918" type="iuxj.XmlTextValue" typeId="iuxj.6666499814681541919" id="7926701909975525072">
+              <property name="text" nameId="iuxj.6666499814681541920" value="module4/source" />
+            </node>
+          </node>
+        </node>
       </node>
     </node>
     <node role="parts" roleId="8xvf.2769948622284574304" type="8xvf.BwfJavaModule" typeId="8xvf.4755209551904389307" id="7385586609667763185">
@@ -159,8 +195,17 @@
       <node role="dependencies" roleId="8xvf.4755209551904389320" type="8xvf.BwfJavaModuleReference" typeId="8xvf.4755209551904389316" id="7385586609667763186">
         <link role="target" roleId="8xvf.4755209551904389317" targetNodeId="7385586609667763177" resolveInfo="module4" />
       </node>
-      <node role="sources" roleId="8xvf.4755209551904389313" type="8xvf.BwfPath" typeId="8xvf.4755209551904389308" id="7385586609667763187">
-        <property name="path" nameId="8xvf.4755209551904389309" value="module5/source" />
+      <node role="sources" roleId="8xvf.7926701909975416101" type="8xvf.BwfFileSet" typeId="8xvf.7926701909975416091" id="7926701909975525073">
+        <node role="elements" roleId="8xvf.7926701909975416092" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="7926701909975525074">
+          <property name="tagName" nameId="iuxj.6666499814681415862" value="pathelement" />
+          <property name="shortEmptyNotation" nameId="iuxj.6999033275467544021" value="true" />
+          <node role="attributes" roleId="iuxj.6666499814681415861" type="iuxj.XmlAttribute" typeId="iuxj.6666499814681447923" id="7926701909975525075">
+            <property name="attrName" nameId="iuxj.6666499814681447926" value="path" />
+            <node role="value" roleId="iuxj.6666499814681541918" type="iuxj.XmlTextValue" typeId="iuxj.6666499814681541919" id="7926701909975525076">
+              <property name="text" nameId="iuxj.6666499814681541920" value="module5/source" />
+            </node>
+          </node>
+        </node>
       </node>
     </node>
     <node role="parts" roleId="8xvf.2769948622284574304" type="8xvf.BwfTaskPart" typeId="8xvf.3961775458390032824" id="6647099934207237823">

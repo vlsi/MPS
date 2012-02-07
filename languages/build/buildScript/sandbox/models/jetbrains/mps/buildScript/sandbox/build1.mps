@@ -67,6 +67,10 @@
           <property name="relativePath" nameId="3ior.2754769020641429191" value="source" />
           <property name="kind" nameId="3ior.5248329904288265467" value="source" />
         </node>
+        <node role="folders" roleId="3ior.2754769020641429197" type="3ior.BuildSource_JavaContentFolder" typeId="3ior.2754769020641429190" id="7926701909975673910">
+          <property name="kind" nameId="3ior.5248329904288265467" value="source" />
+          <property name="relativePath" nameId="3ior.2754769020641429191" value="source_gen" />
+        </node>
         <node role="folders" roleId="3ior.2754769020641429197" type="3ior.BuildSource_JavaContentFolder" typeId="3ior.2754769020641429190" id="5248329904288318859">
           <property name="kind" nameId="3ior.5248329904288265467" value="test" />
           <property name="relativePath" nameId="3ior.2754769020641429191" value="tests" />

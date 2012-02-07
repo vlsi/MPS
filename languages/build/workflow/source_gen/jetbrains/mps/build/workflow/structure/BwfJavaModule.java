@@ -66,24 +66,12 @@ public class BwfJavaModule extends BwfProjectPart implements INamedConcept {
     this.setProperty(BwfJavaModule.VIRTUAL_PACKAGE, value);
   }
 
-  public int getSourcesesCount() {
-    return this.getChildCount(BwfJavaModule.SOURCES);
+  public BwfFileSet getSources() {
+    return (BwfFileSet) this.getChild(BwfFileSet.class, BwfJavaModule.SOURCES);
   }
 
-  public Iterator<BwfPath> sourceses() {
-    return this.children(BwfPath.class, BwfJavaModule.SOURCES);
-  }
-
-  public List<BwfPath> getSourceses() {
-    return this.getChildren(BwfPath.class, BwfJavaModule.SOURCES);
-  }
-
-  public void addSources(BwfPath node) {
-    this.addChild(BwfJavaModule.SOURCES, node);
-  }
-
-  public void insertSources(BwfPath prev, BwfPath node) {
-    this.insertChild(prev, BwfJavaModule.SOURCES, node);
+  public void setSources(BwfFileSet node) {
+    super.setChild(BwfJavaModule.SOURCES, node);
   }
 
   public int getDependenciesesCount() {

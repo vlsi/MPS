@@ -1,6 +1,6 @@
 <project name="buildCore">
   <property name="mps_home" location="${basedir}/../../../.." />
-  <property name="build_langs" location="${mps_home}/languages/build" /><!TextGen not found for 'jetbrains.mps.buildScript.structure.BuildVariableMacro'!><!TextGen not found for 'jetbrains.mps.buildScript.structure.BuildVariableMacro'!>
+  <property name="build_langs" location="${mps_home}/languages/build" />
   <property name="build.dir" location="build" />
   
   <path id="path.java.library.apache-collections">
@@ -15,7 +15,7 @@
     <javac destdir="${build.dir}/tmp/java.out.mps-core">
       <src>
         <pathelement path="${mps_home}/core/source" />
-        <pathelement path="${mps_home}/core/tests" />
+        <pathelement path="${mps_home}/core/source_gen" />
       </src>
       <classpath path="!TODO! java library classpath" />
     </javac>

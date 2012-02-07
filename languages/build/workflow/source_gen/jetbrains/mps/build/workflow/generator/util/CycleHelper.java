@@ -23,8 +23,9 @@ import java.util.HashSet;
 import java.util.Comparator;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
-import java.util.LinkedHashSet;
 import jetbrains.mps.build.workflow.behavior.BwfJavaDependency_Behavior;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.make.dependencies.graph.IVertex;
 
 public class CycleHelper {
@@ -84,7 +85,9 @@ public class CycleHelper {
       SPropertyOperations.set(cycleX, "name", "java.modules.cycle." + ++cycleCounter);
       SPropertyOperations.set(cycleX, "outputFolder", SPropertyOperations.getString(project, "temporaryFolder") + "/" + SPropertyOperations.getString(cycleX, "name"));
       SNodeOperations.insertPrevSiblingChild(first, cycleX);
-      Set<String> sources = new LinkedHashSet<String>();
+      Set<String> seenSources = new HashSet<String>();
+      List<SNode> sources = new ArrayList<SNode>();
+
       List<SNode> deps = new ArrayList<SNode>();
       Set<String> usedDependencies = new HashSet<String>();
 
@@ -109,17 +112,24 @@ public class CycleHelper {
         SNode mref = SModelOperations.createNewNode(model, "jetbrains.mps.build.workflow.structure.BwfJavaModuleReference", null);
         SLinkOperations.setTarget(mref, "target", cycleX, false);
         ListSequence.fromList(SLinkOperations.getTargets(module, "dependencies", true)).addElement(mref);
-        sources.addAll(ListSequence.fromList(SLinkOperations.getTargets(module, "sources", true)).select(new ISelector<SNode, String>() {
-          public String select(SNode it) {
-            return SPropertyOperations.getString(it, "path");
+
+        for (SNode n : ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(module, "sources", true), "elements", true))) {
+          XmlSignature s = new XmlSignature().add(n);
+          String id = (s.hasErrors() ?
+            "path." + n.getId() :
+            s.getResult()
+          );
+          if (seenSources.add(id)) {
+            sources.add(n);
           }
-        }).toListSequence());
+        }
       }
-      for (String src : sources) {
-        SNode path = SModelOperations.createNewNode(model, "jetbrains.mps.build.workflow.structure.BwfPath", null);
-        SPropertyOperations.set(path, "path", src);
-        ListSequence.fromList(SLinkOperations.getTargets(cycleX, "sources", true)).addElement(path);
-      }
+      SLinkOperations.setNewChild(cycleX, "sources", "jetbrains.mps.build.workflow.structure.BwfFileSet");
+      ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(cycleX, "sources", true), "elements", true)).addSequence(Sequence.fromIterable(((Iterable<SNode>) sources)).select(new ISelector<SNode, SNode>() {
+        public SNode select(SNode it) {
+          return CopyUtil.copy(it);
+        }
+      }));
       for (SNode jm : deps) {
         SNode nref = BwfJavaDependency_Behavior.call_clone_6647099934207248130(jm);
         if (nref == null) {
