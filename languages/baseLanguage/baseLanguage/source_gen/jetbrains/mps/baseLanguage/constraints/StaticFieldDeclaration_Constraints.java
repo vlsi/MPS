@@ -4,10 +4,11 @@ package jetbrains.mps.baseLanguage.constraints;
 
 import jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor;
 import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNode;
 import org.jetbrains.annotations.Nullable;
-import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.runtime.CheckingNodeContext;
+import jetbrains.mps.smodel.constraints.CanBeAParentContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
@@ -25,8 +26,8 @@ public class StaticFieldDeclaration_Constraints extends BaseConstraintsDescripto
   }
 
   @Override
-  public boolean canBeParent(SNode node, @Nullable SNode childNode, SNode childConcept, SNode link, IOperationContext operationContext, @Nullable CheckingNodeContext checkingNodeContext) {
-    boolean result = static_canBeAParent(node, childNode, childConcept, link, operationContext);
+  public boolean canBeParent(IOperationContext operationContext, SNode node, SNode node1, SNode node2, @Nullable CheckingNodeContext checkingNodeContext) {
+    boolean result = static_canBeAParent(operationContext, new CanBeAParentContext(node, node1, node2));
 
     if (!(result) && checkingNodeContext != null) {
       checkingNodeContext.setBreakingNode(canBeParentBreakingPoint);
@@ -35,10 +36,10 @@ public class StaticFieldDeclaration_Constraints extends BaseConstraintsDescripto
     return result;
   }
 
-  public static boolean static_canBeAParent(SNode node, SNode childNode, SNode childConcept, SNode link, final IOperationContext operationContext) {
-    if (link == SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration", "visibility")) {
-      if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.Interface")) {
-        return childConcept == SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.PublicVisibility");
+  public static boolean static_canBeAParent(final IOperationContext operationContext, final CanBeAParentContext _context) {
+    if (_context.getLink() == SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration", "visibility")) {
+      if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.baseLanguage.structure.Interface")) {
+        return _context.getChildConcept() == SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.PublicVisibility");
       }
     }
     return true;
