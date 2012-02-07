@@ -5,8 +5,8 @@ package jetbrains.mps.buildScript.structure;
 import jetbrains.mps.lang.core.structure.INamedConcept;
 import jetbrains.mps.smodel.SNode;
 import java.util.Iterator;
-import jetbrains.mps.lang.core.structure.Attribute;
 import java.util.List;
+import jetbrains.mps.lang.core.structure.Attribute;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -18,6 +18,7 @@ public class BuildLayout_NamedContainer extends BuildLayout_AbstractContainer im
   public static final String SHORT_DESCRIPTION = "shortDescription";
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
+  public static final String CONTAINER_NAME = "containerName";
   public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
 
   public BuildLayout_NamedContainer(SNode node) {
@@ -54,6 +55,26 @@ public class BuildLayout_NamedContainer extends BuildLayout_AbstractContainer im
 
   public void setVirtualPackage(String value) {
     this.setProperty(BuildLayout_NamedContainer.VIRTUAL_PACKAGE, value);
+  }
+
+  public int getContainerNamesCount() {
+    return this.getChildCount(BuildLayout_NamedContainer.CONTAINER_NAME);
+  }
+
+  public Iterator<BuildNamePart> containerNames() {
+    return this.children(BuildNamePart.class, BuildLayout_NamedContainer.CONTAINER_NAME);
+  }
+
+  public List<BuildNamePart> getContainerNames() {
+    return this.getChildren(BuildNamePart.class, BuildLayout_NamedContainer.CONTAINER_NAME);
+  }
+
+  public void addContainerName(BuildNamePart node) {
+    this.addChild(BuildLayout_NamedContainer.CONTAINER_NAME, node);
+  }
+
+  public void insertContainerName(BuildNamePart prev, BuildNamePart node) {
+    this.insertChild(prev, BuildLayout_NamedContainer.CONTAINER_NAME, node);
   }
 
   public int getSmodelAttributesCount() {

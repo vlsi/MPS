@@ -1,6 +1,6 @@
 <project name="buildCore">
   <property name="mps_home" location="${basedir}/../../../.." />
-  <property name="build_langs" location="${mps_home}/languages/build" /><!TextGen not found for 'jetbrains.mps.buildScript.structure.BuildVariableMacro'!>
+  <property name="build_langs" location="${mps_home}/languages/build" /><!TextGen not found for 'jetbrains.mps.buildScript.structure.BuildVariableMacro'!><!TextGen not found for 'jetbrains.mps.buildScript.structure.BuildVariableMacro'!>
   <property name="build.dir" location="build" />
   
   <path id="path.java.library.apache-collections">
@@ -50,13 +50,13 @@
     <zip destfile="${buildCore.deploy.dir}/default/release.zip">
       <fileset dir="${buildCore.tmp}/release.zip" />
     </zip>
-    <mkdir dir="${buildCore.tmp}/mps-core-${ver}.jar" />
-    <mkdir dir="${buildCore.tmp}/mps-core-${ver}.jar/abc" />
-    <mkdir dir="${buildCore.tmp}/mps-core-${ver}.jar/abc/edf" />
-    <zip destfile="${buildCore.tmp}/mps-core-${ver}.jar/abc/edf/aaa"></zip>
-    <jar destfile="${buildCore.deploy.dir}/default/mps-core-${ver}.jar">
+    <mkdir dir="${buildCore.tmp}/mps-core${ver}.jar" />
+    <mkdir dir="${buildCore.tmp}/mps-core${ver}.jar/abc" />
+    <mkdir dir="${buildCore.tmp}/mps-core${ver}.jar/abc/edf" />
+    <zip destfile="${buildCore.tmp}/mps-core${ver}.jar/abc/edf/aaa"></zip>
+    <jar destfile="${buildCore.deploy.dir}/default/mps-core${ver}.jar">
       <fileset dir="${build.dir}/tmp/java.out.mps-core" />
-      <fileset dir="${buildCore.tmp}/mps-core-${ver}.jar" />
+      <fileset dir="${buildCore.tmp}/mps-core${ver}.jar" />
     </jar>
   </target>
   

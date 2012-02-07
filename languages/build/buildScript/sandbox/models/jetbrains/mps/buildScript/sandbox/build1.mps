@@ -108,6 +108,9 @@
                 </node>
               </node>
             </node>
+            <node role="containerName" roleId="3ior.8237269006869436777" type="3ior.BuildSimpleName" typeId="3ior.4903714810883702019" id="8237269006869507387">
+              <property name="text" nameId="3ior.4903714810883755350" value="inrelease.zip" />
+            </node>
           </node>
           <node role="children" roleId="3ior.7389400916848037006" type="3ior.BuildLayout_Folder" typeId="3ior.7389400916848036984" id="1117643560963371562">
             <property name="name" nameId="tpck.1169194664001" value="aaa" />
@@ -123,7 +126,16 @@
                   </node>
                 </node>
               </node>
+              <node role="containerName" roleId="3ior.8237269006869436777" type="3ior.BuildSimpleName" typeId="3ior.4903714810883702019" id="8237269006869507389">
+                <property name="text" nameId="3ior.4903714810883755350" value="bbb" />
+              </node>
             </node>
+            <node role="containerName" roleId="3ior.8237269006869436777" type="3ior.BuildSimpleName" typeId="3ior.4903714810883702019" id="8237269006869507388">
+              <property name="text" nameId="3ior.4903714810883755350" value="aaa" />
+            </node>
+          </node>
+          <node role="containerName" roleId="3ior.8237269006869436777" type="3ior.BuildSimpleName" typeId="3ior.4903714810883702019" id="8237269006869507386">
+            <property name="text" nameId="3ior.4903714810883755350" value="release.zip" />
           </node>
         </node>
         <node role="children" roleId="3ior.7389400916848037006" type="3ior.BuildLayout_Jar" typeId="3ior.7389400916848050074" id="6627265764879718146">
@@ -137,9 +149,30 @@
               <property name="name" nameId="tpck.1169194664001" value="edf" />
               <node role="children" roleId="3ior.7389400916848037006" type="3ior.BuildLayout_Zip" typeId="3ior.7389400916848050071" id="1117643560963371557">
                 <property name="name" nameId="tpck.1169194664001" value="aaa" />
+                <node role="containerName" roleId="3ior.8237269006869436777" type="3ior.BuildSimpleName" typeId="3ior.4903714810883702019" id="8237269006869507399">
+                  <property name="text" nameId="3ior.4903714810883755350" value="aaa" />
+                </node>
+              </node>
+              <node role="containerName" roleId="3ior.8237269006869436777" type="3ior.BuildSimpleName" typeId="3ior.4903714810883702019" id="8237269006869507398">
+                <property name="text" nameId="3ior.4903714810883755350" value="edf" />
               </node>
             </node>
+            <node role="containerName" roleId="3ior.8237269006869436777" type="3ior.BuildSimpleName" typeId="3ior.4903714810883702019" id="8237269006869507397">
+              <property name="text" nameId="3ior.4903714810883755350" value="abc" />
+            </node>
           </node>
+          <node role="containerName" roleId="3ior.8237269006869436777" type="3ior.BuildSimpleName" typeId="3ior.4903714810883702019" id="8237269006869507390">
+            <property name="text" nameId="3ior.4903714810883755350" value="mps-core" />
+          </node>
+          <node role="containerName" roleId="3ior.8237269006869436777" type="3ior.BuildVariableReference" typeId="3ior.4903714810883702017" id="8237269006869507392">
+            <link role="macro" roleId="3ior.4903714810883702018" targetNodeId="8237269006869507396" resolveInfo="ver" />
+          </node>
+          <node role="containerName" roleId="3ior.8237269006869436777" type="3ior.BuildSimpleName" typeId="3ior.4903714810883702019" id="8237269006869507394">
+            <property name="text" nameId="3ior.4903714810883755350" value=".jar" />
+          </node>
+        </node>
+        <node role="containerName" roleId="3ior.8237269006869436777" type="3ior.BuildSimpleName" typeId="3ior.4903714810883702019" id="8237269006869507385">
+          <property name="text" nameId="3ior.4903714810883755350" value="default" />
         </node>
       </node>
     </node>
@@ -175,6 +208,9 @@
     <node role="macros" roleId="3ior.5617550519002745378" type="3ior.BuildVariableMacro" typeId="3ior.3767587139141066978" id="4903714810883946575">
       <property name="name" nameId="tpck.1169194664001" value="build.number" />
     </node>
+    <node role="macros" roleId="3ior.5617550519002745378" type="3ior.BuildVariableMacro" typeId="3ior.3767587139141066978" id="8237269006869507396">
+      <property name="name" nameId="tpck.1169194664001" value="ver" />
+    </node>
   </root>
   <root id="4993211115183416028">
     <node role="layout" roleId="3ior.5617550519002745372" type="3ior.BuildLayout" typeId="3ior.5617550519002745364" id="4993211115183416029">
@@ -182,6 +218,12 @@
         <property name="name" nameId="tpck.1169194664001" value="xx" />
         <node role="children" roleId="3ior.7389400916848037006" type="3ior.BuildLayout_Jar" typeId="3ior.7389400916848050074" id="3542413272732928480">
           <property name="name" nameId="tpck.1169194664001" value="xx" />
+          <node role="containerName" roleId="3ior.8237269006869436777" type="3ior.BuildSimpleName" typeId="3ior.4903714810883702019" id="8237269006869507404">
+            <property name="text" nameId="3ior.4903714810883755350" value="xx" />
+          </node>
+        </node>
+        <node role="containerName" roleId="3ior.8237269006869436777" type="3ior.BuildSimpleName" typeId="3ior.4903714810883702019" id="8237269006869507403">
+          <property name="text" nameId="3ior.4903714810883755350" value="xx" />
         </node>
       </node>
     </node>
