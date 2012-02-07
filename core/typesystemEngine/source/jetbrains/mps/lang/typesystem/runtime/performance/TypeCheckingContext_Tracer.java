@@ -33,4 +33,14 @@ public class TypeCheckingContext_Tracer extends TypeCheckingContextNew {
       }
     }, "type computing");
   }
+
+  @Override
+  protected SNode getTypeOf_generationMode(final SNode node) {
+    return getTypeChecker().computeWithTrace(new Computable<SNode>(){
+      @Override
+      public SNode compute() {
+        return TypeCheckingContext_Tracer.super.getTypeOf_generationMode(node);
+      }
+    }, "type computing");
+  }
 }
