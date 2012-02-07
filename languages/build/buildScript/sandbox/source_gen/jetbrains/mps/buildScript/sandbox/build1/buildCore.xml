@@ -1,6 +1,6 @@
 <project name="buildCore">
   <property name="mps_home" location="${basedir}/../../../.." />
-  <property name="build_langs" location="${mps_home}/languages/build" />
+  <property name="build_langs" location="${mps_home}/languages/build" /><!TextGen not found for 'jetbrains.mps.buildScript.structure.BuildVariableMacro'!>
   <property name="build.dir" location="build" />
   
   <path id="path.java.library.apache-collections">

@@ -14,6 +14,17 @@
     </node>
   </roots>
   <root id="4993211115183387839">
+    <node role="aspects" roleId="3ior.3542413272732620719" type="3ior.BuildArtifact" typeId="3ior.3542413272732529456" id="4903714810883806505">
+      <node role="artifactName" roleId="3ior.4903714810883783243" type="3ior.BuildSimpleName" typeId="3ior.4903714810883702019" id="4903714810883946572">
+        <property name="text" nameId="3ior.4903714810883755350" value="sources" />
+      </node>
+      <node role="artifactName" roleId="3ior.4903714810883783243" type="3ior.BuildVariableReference" typeId="3ior.4903714810883702017" id="4903714810883946577">
+        <link role="macro" roleId="3ior.4903714810883702018" targetNodeId="4903714810883946575" resolveInfo="build.number" />
+      </node>
+      <node role="artifactName" roleId="3ior.4903714810883783243" type="3ior.BuildSimpleName" typeId="3ior.4903714810883702019" id="4903714810883946579">
+        <property name="text" nameId="3ior.4903714810883755350" value=".zip" />
+      </node>
+    </node>
     <node role="plugins" roleId="3ior.6647099934206700656" type="3ior.BuildJavaPlugin" typeId="3ior.6647099934206700647" id="6647099934206949390" />
     <node role="parts" roleId="3ior.7389400916848080626" type="3ior.BuildSource_JavaLibrary" typeId="3ior.6057319140845467763" id="3695638809903322719">
       <property name="name" nameId="tpck.1169194664001" value="apache-collections" />
@@ -45,9 +56,6 @@
     </node>
     <node role="parts" roleId="3ior.7389400916848080626" type="3ior.BuildSource_JavaModule" typeId="3ior.7389400916848073784" id="3695638809903322726">
       <property name="name" nameId="tpck.1169194664001" value="mps-core" />
-      <node role="dependencies" roleId="3ior.2754769020641646251" type="3ior.BuildSource_JavaDependencyLibrary" typeId="3ior.4993211115183250894" id="6627265764879718148">
-        <link role="library" roleId="3ior.4993211115183250895" targetNodeId="3695638809903322719" resolveInfo="apache-collections" />
-      </node>
       <node role="sources" roleId="3ior.7389400916848073826" type="3ior.BuildSource_JavaContentRoot" typeId="3ior.7389400916848073810" id="5248329904288305849">
         <node role="basePath" roleId="3ior.7389400916848073811" type="3ior.BuildSourceMacroRelativePath" typeId="3ior.7389400916848153117" id="5248329904288305851">
           <link role="macro" roleId="3ior.7389400916848153130" targetNodeId="4993211115183392374" resolveInfo="mps_home" />
@@ -63,6 +71,9 @@
           <property name="kind" nameId="3ior.5248329904288265467" value="test" />
           <property name="relativePath" nameId="3ior.2754769020641429191" value="tests" />
         </node>
+      </node>
+      <node role="dependencies" roleId="3ior.2754769020641646251" type="3ior.BuildSource_JavaDependencyLibrary" typeId="3ior.4993211115183250894" id="6627265764879718148">
+        <link role="library" roleId="3ior.4993211115183250895" targetNodeId="3695638809903322719" resolveInfo="apache-collections" />
       </node>
     </node>
     <node role="layout" roleId="3ior.5617550519002745372" type="3ior.BuildLayout" typeId="3ior.5617550519002745364" id="4993211115183387840">
@@ -160,6 +171,9 @@
           </node>
         </node>
       </node>
+    </node>
+    <node role="macros" roleId="3ior.5617550519002745378" type="3ior.BuildVariableMacro" typeId="3ior.3767587139141066978" id="4903714810883946575">
+      <property name="name" nameId="tpck.1169194664001" value="build.number" />
     </node>
   </root>
   <root id="4993211115183416028">
