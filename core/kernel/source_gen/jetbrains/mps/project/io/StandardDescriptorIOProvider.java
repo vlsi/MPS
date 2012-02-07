@@ -9,6 +9,7 @@ import jetbrains.mps.project.structure.modules.DevkitDescriptor;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.project.persistence.SolutionDescriptorPersistence;
 import jetbrains.mps.project.persistence.ModuleReadException;
+import jetbrains.mps.project.persistence.ModuleDescriptorPersistence;
 import org.jdom.Element;
 import jetbrains.mps.project.persistence.LanguageDescriptorPersistence;
 import jetbrains.mps.project.persistence.GeneratorDescriptorPersistence;
@@ -47,8 +48,10 @@ public class StandardDescriptorIOProvider implements DescriptorIOProvider {
     public SolutionDescriptor readFromFile(IFile file) throws DescriptorIOException {
       try {
         return SolutionDescriptorPersistence.loadSolutionDescriptor(file);
-      } catch (ModuleReadException runtime) {
-        throw new DescriptorIOException(runtime);
+      } catch (ModuleReadException ex) {
+        SolutionDescriptor sd = new SolutionDescriptor();
+        ModuleDescriptorPersistence.loadBrokenModule(sd, file, ex);
+        return sd;
       }
     }
 
@@ -72,8 +75,10 @@ public class StandardDescriptorIOProvider implements DescriptorIOProvider {
     public LanguageDescriptor readFromFile(IFile file) throws DescriptorIOException {
       try {
         return LanguageDescriptorPersistence.loadLanguageDescriptor(file);
-      } catch (ModuleReadException runtime) {
-        throw new DescriptorIOException(runtime);
+      } catch (ModuleReadException ex) {
+        LanguageDescriptor ld = new LanguageDescriptor();
+        ModuleDescriptorPersistence.loadBrokenModule(ld, file, ex);
+        return ld;
       }
     }
 
@@ -118,8 +123,10 @@ public class StandardDescriptorIOProvider implements DescriptorIOProvider {
     public DevkitDescriptor readFromFile(IFile file) throws DescriptorIOException {
       try {
         return DevkitDescriptorPersistence.loadDevKitDescriptor(file);
-      } catch (ModuleReadException runtime) {
-        throw new DescriptorIOException(runtime);
+      } catch (ModuleReadException ex) {
+        DevkitDescriptor dd = new DevkitDescriptor();
+        ModuleDescriptorPersistence.loadBrokenModule(dd, file, ex);
+        return dd;
       }
     }
 
