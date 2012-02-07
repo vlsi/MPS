@@ -1,6 +1,9 @@
 <project name="buildCore">
+  <property file="buildCore.properties" />
   <property name="mps_home" location="${basedir}/../../../.." />
   <property name="build_langs" location="${mps_home}/languages/build" />
+  <property name="buildCore.tmp" location="${basedir}/build/tmp/buildCore.tmp" />
+  <property name="buildCore.deploy.dir" location="${basedir}/build/artifacts/buildCore.artifacts" />
   <property name="build.dir" location="build" />
   
   <path id="path.java.library.apache-collections">

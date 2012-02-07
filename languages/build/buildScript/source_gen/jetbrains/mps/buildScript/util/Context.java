@@ -12,6 +12,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.buildScript.behavior.BuildProject_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.util.List;
+import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.generator.template.TemplateQueryContext;
 import java.util.Set;
@@ -51,11 +52,7 @@ public class Context {
   }
 
   public String getTmpPath_WithMacro(SNode node) {
-    return "${" + this.getTmpDirMacroName(node) + "}";
-  }
-
-  public String getTmpPath_Local(SNode node) {
-    return getBasePath_Local(node) + "/build/tmp/" + SPropertyOperations.getString(getBuildProject(node), "name") + ".tmp";
+    return "${basedir}/build/tmp/" + SPropertyOperations.getString(getBuildProject(node), "name") + ".tmp";
   }
 
   public String getDeployDirMacroName(SNode node) {
@@ -63,17 +60,13 @@ public class Context {
   }
 
   public String getDeployPath_WithMacro(SNode node) {
-    return "${" + this.getDeployDirMacroName(node) + "}";
-  }
-
-  public String getDeployPath_Local(SNode node) {
-    return getBasePath_Local(node) + "/build/artifacts/" + SPropertyOperations.getString(getBuildProject(node), "name") + ".artifacts";
+    return "${basedir}/build/artifacts/" + SPropertyOperations.getString(getBuildProject(node), "name") + ".artifacts";
   }
 
   public List<SNode> getExportedMacro(SNode node) {
-    List<SNode> exportedMacro = BuildProject_Behavior.call_getExportedMacro_193602448594215545(getBuildProject(node), this);
-    ListSequence.fromList(exportedMacro).addElement(new Context.QuotationClass_lmsybr_a0a0b0k().createNode(getTmpPath_Local(node), getTmpDirMacroName(node)));
-    ListSequence.fromList(exportedMacro).addElement(new Context.QuotationClass_lmsybr_a0a0c0k().createNode(getDeployPath_Local(node), getDeployDirMacroName(node)));
+    List<SNode> exportedMacro = new ArrayList<SNode>();
+    ListSequence.fromList(exportedMacro).addElement(new Context.QuotationClass_lmsybr_a0a0b0i().createNode(getTmpPath_WithMacro(node), getTmpDirMacroName(node)));
+    ListSequence.fromList(exportedMacro).addElement(new Context.QuotationClass_lmsybr_a0a0c0i().createNode(getDeployPath_WithMacro(node), getDeployDirMacroName(node)));
     return exportedMacro;
   }
 
@@ -108,8 +101,8 @@ public class Context {
     return context;
   }
 
-  public static class QuotationClass_lmsybr_a0a0b0k {
-    public QuotationClass_lmsybr_a0a0b0k() {
+  public static class QuotationClass_lmsybr_a0a0b0i {
+    public QuotationClass_lmsybr_a0a0b0i() {
     }
 
     public SNode createNode(Object parameter_3, Object parameter_4) {
@@ -127,8 +120,8 @@ public class Context {
     }
   }
 
-  public static class QuotationClass_lmsybr_a0a0c0k {
-    public QuotationClass_lmsybr_a0a0c0k() {
+  public static class QuotationClass_lmsybr_a0a0c0i {
+    public QuotationClass_lmsybr_a0a0c0i() {
     }
 
     public SNode createNode(Object parameter_3, Object parameter_4) {

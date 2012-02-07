@@ -5,22 +5,16 @@ package jetbrains.mps.buildScript.behavior;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.scope.Scope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import java.util.List;
-import jetbrains.mps.buildScript.util.Context;
-import java.util.ArrayList;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.buildScript.util.ScopeUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.buildScript.util.ScopeUtil;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.List;
+import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.scope.CompositeScope;
-import java.util.Set;
-import java.util.HashSet;
-import jetbrains.mps.smodel.SModelUtil_new;
-import jetbrains.mps.project.GlobalScope;
 
 public class BuildProject_Behavior {
   public static void init(SNode thisNode) {
@@ -37,19 +31,9 @@ public class BuildProject_Behavior {
     return thisNode.getModel().getModelDescriptor().getModule().getDescriptorFile().getParent().getPath();
   }
 
-  public static List<SNode> call_getExportedMacro_193602448594215545(SNode thisNode, Context context) {
-    List<SNode> exportedMacro = new ArrayList<SNode>();
-    for (SNode macro : ListSequence.fromList(SLinkOperations.getTargets(thisNode, "macros", true))) {
-      if (SNodeOperations.isInstanceOf(macro, "jetbrains.mps.buildScript.structure.BuildFolderMacro")) {
-        ListSequence.fromList(exportedMacro).addElement(new BuildProject_Behavior.QuotationClass_save77_a0a0a0a0b0d().createNode(SPropertyOperations.getString(macro, "name"), BuildFolderMacro_Behavior.call_evaluate_4959435991187146982(SNodeOperations.cast(macro, "jetbrains.mps.buildScript.structure.BuildFolderMacro"), context)));
-      }
-    }
-    return exportedMacro;
-  }
-
   public static Scope call_getBuildMacroScope_3767587139141108514(SNode thisNode, final SNode child) {
     Scope rootScope = ScopeUtil.simpleRoleScope(thisNode, SLinkOperations.findLinkDeclaration("jetbrains.mps.buildScript.structure.BuildProject", "macros"));
-    if (neq_save77_a0b0e(SNodeOperations.getAncestor(child, "jetbrains.mps.buildScript.structure.BuildProject", false, false), thisNode)) {
+    if (neq_save77_a0b0d(SNodeOperations.getAncestor(child, "jetbrains.mps.buildScript.structure.BuildProject", false, false), thisNode)) {
       // we are imported => give away only public macro 
       rootScope = ScopeUtil.where(rootScope, new _FunctionTypes._return_P1_E0<Boolean, SNode>() {
         public Boolean invoke(SNode node) {
@@ -61,7 +45,7 @@ public class BuildProject_Behavior {
       // we can only see what was strictly before us 
       rootScope = ScopeUtil.where(rootScope, new _FunctionTypes._return_P1_E0<Boolean, SNode>() {
         public Boolean invoke(SNode it) {
-          return !(ListSequence.fromList(SNodeOperations.getNextSiblings(child, false)).contains(it)) && !(eq_save77_a0a0a0a0a1a0b0c0e(child, it));
+          return !(ListSequence.fromList(SNodeOperations.getNextSiblings(child, false)).contains(it)) && !(eq_save77_a0a0a0a0a1a0b0c0d(child, it));
         }
       });
     }
@@ -73,36 +57,17 @@ public class BuildProject_Behavior {
     return new CompositeScope(ListSequence.fromList(scopes).toGenericArray(Scope.class));
   }
 
-  private static boolean neq_save77_a0b0e(Object a, Object b) {
+  private static boolean neq_save77_a0b0d(Object a, Object b) {
     return !((a != null ?
       a.equals(b) :
       a == b
     ));
   }
 
-  private static boolean eq_save77_a0a0a0a0a1a0b0c0e(Object a, Object b) {
+  private static boolean eq_save77_a0a0a0a0a1a0b0c0d(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b
     );
-  }
-
-  public static class QuotationClass_save77_a0a0a0a0b0d {
-    public QuotationClass_save77_a0a0a0a0b0d() {
-    }
-
-    public SNode createNode(Object parameter_3, Object parameter_4) {
-      SNode result = null;
-      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_1 = null;
-      {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.buildScript.structure.ExportedMacroInternal", null, GlobalScope.getInstance(), false);
-        SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.setProperty("defaultPath", (String) parameter_4);
-        quotedNode1_2.setProperty("name", (String) parameter_3);
-        result = quotedNode1_2;
-      }
-      return result;
-    }
   }
 }

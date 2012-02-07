@@ -12,7 +12,7 @@ public class BuildLayout_NamedContainer_Behavior {
   }
 
   public static String virtual_getChildrenOutputDir_WithMacro_7389400916848004880(SNode thisNode, Context context) {
-    return context.getTmpPath_WithMacro(thisNode) + "/" + context.getUniqueName(thisNode, SPropertyOperations.getString(thisNode, "name"));
+    return "${" + context.getTmpDirMacroName(thisNode) + "}/" + context.getUniqueName(thisNode, SPropertyOperations.getString(thisNode, "name"));
   }
 
   public static String call_getOutputPath_WithMacro_280273048052535414(SNode thisNode, Context context) {

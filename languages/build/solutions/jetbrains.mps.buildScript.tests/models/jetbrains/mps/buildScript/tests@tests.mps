@@ -42,11 +42,11 @@
       <node role="nodeToCheck" roleId="tp5g.1216989461394" type="3ior.BuildLayout" typeId="3ior.5617550519002745364" id="280273048052535265">
         <node role="children" roleId="3ior.7389400916848037006" type="3ior.BuildLayout_Jar" typeId="3ior.7389400916848050074" id="280273048052535266">
           <property name="name" nameId="tpck.1169194664001" value="test.jar" />
-          <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="280273048052535267">
-            <property name="name" nameId="tpck.1169194664001" value="test.jar" />
-          </node>
           <node role="containerName" roleId="3ior.8237269006869436777" type="3ior.BuildSimpleName" typeId="3ior.4903714810883702019" id="9029200373494108661">
             <property name="text" nameId="3ior.4903714810883755350" value="test.jar" />
+          </node>
+          <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="280273048052535267">
+            <property name="name" nameId="tpck.1169194664001" value="test.jar" />
           </node>
         </node>
       </node>
@@ -55,38 +55,38 @@
       <node role="nodeToCheck" roleId="tp5g.1216989461394" type="3ior.BuildLayout" typeId="3ior.5617550519002745364" id="280273048052535284">
         <node role="children" roleId="3ior.7389400916848037006" type="3ior.BuildLayout_Folder" typeId="3ior.7389400916848036984" id="280273048052535287">
           <property name="name" nameId="tpck.1169194664001" value="folder" />
+          <node role="containerName" roleId="3ior.8237269006869436777" type="3ior.BuildSimpleName" typeId="3ior.4903714810883702019" id="9029200373494108662">
+            <property name="text" nameId="3ior.4903714810883755350" value="folder" />
+          </node>
           <node role="children" roleId="3ior.7389400916848037006" type="3ior.BuildLayout_Jar" typeId="3ior.7389400916848050074" id="280273048052535289">
             <property name="name" nameId="tpck.1169194664001" value="test.jar" />
+            <node role="containerName" roleId="3ior.8237269006869436777" type="3ior.BuildSimpleName" typeId="3ior.4903714810883702019" id="9029200373494108663">
+              <property name="text" nameId="3ior.4903714810883755350" value="test.jar" />
+            </node>
             <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="280273048052535290">
               <property name="name" nameId="tpck.1169194664001" value="test.jar" />
             </node>
             <node role="children" roleId="3ior.7389400916848037006" type="3ior.BuildLayout_Folder" typeId="3ior.7389400916848036984" id="8104754176559709900">
               <property name="name" nameId="tpck.1169194664001" value="internalFolder" />
+              <node role="containerName" roleId="3ior.8237269006869436777" type="3ior.BuildSimpleName" typeId="3ior.4903714810883702019" id="9029200373494108664">
+                <property name="text" nameId="3ior.4903714810883755350" value="internalFolder" />
+              </node>
               <node role="children" roleId="3ior.7389400916848037006" type="3ior.BuildLayout_Folder" typeId="3ior.7389400916848036984" id="8104754176559709938">
                 <property name="name" nameId="tpck.1169194664001" value="internalFolder2" />
-                <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="8104754176559709939">
-                  <property name="name" nameId="tpck.1169194664001" value="internalFolder2" />
-                </node>
                 <node role="containerName" roleId="3ior.8237269006869436777" type="3ior.BuildSimpleName" typeId="3ior.4903714810883702019" id="9029200373494108665">
                   <property name="text" nameId="3ior.4903714810883755350" value="internalFolder2" />
+                </node>
+                <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="8104754176559709939">
+                  <property name="name" nameId="tpck.1169194664001" value="internalFolder2" />
                 </node>
               </node>
               <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="8104754176559709901">
                 <property name="name" nameId="tpck.1169194664001" value="internalFolder" />
               </node>
-              <node role="containerName" roleId="3ior.8237269006869436777" type="3ior.BuildSimpleName" typeId="3ior.4903714810883702019" id="9029200373494108664">
-                <property name="text" nameId="3ior.4903714810883755350" value="internalFolder" />
-              </node>
-            </node>
-            <node role="containerName" roleId="3ior.8237269006869436777" type="3ior.BuildSimpleName" typeId="3ior.4903714810883702019" id="9029200373494108663">
-              <property name="text" nameId="3ior.4903714810883755350" value="test.jar" />
             </node>
           </node>
           <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="280273048052535291">
             <property name="name" nameId="tpck.1169194664001" value="folder" />
-          </node>
-          <node role="containerName" roleId="3ior.8237269006869436777" type="3ior.BuildSimpleName" typeId="3ior.4903714810883702019" id="9029200373494108662">
-            <property name="text" nameId="3ior.4903714810883755350" value="folder" />
           </node>
         </node>
       </node>
@@ -95,17 +95,17 @@
       <node role="nodeToCheck" roleId="tp5g.1216989461394" type="3ior.BuildLayout" typeId="3ior.5617550519002745364" id="7422876504327290542">
         <node role="children" roleId="3ior.7389400916848037006" type="3ior.BuildLayout_Folder" typeId="3ior.7389400916848036984" id="7422876504327290543">
           <property name="name" nameId="tpck.1169194664001" value="folder" />
+          <node role="containerName" roleId="3ior.8237269006869436777" type="3ior.BuildSimpleName" typeId="3ior.4903714810883702019" id="9029200373494108666">
+            <property name="text" nameId="3ior.4903714810883755350" value="folder" />
+          </node>
           <node role="children" roleId="3ior.7389400916848037006" type="3ior.BuildLayout_Folder" typeId="3ior.7389400916848036984" id="7422876504327290551">
             <property name="name" nameId="tpck.1169194664001" value="internal" />
-            <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="7422876504327290552">
-              <property name="name" nameId="tpck.1169194664001" value="internal" />
-            </node>
             <node role="containerName" roleId="3ior.8237269006869436777" type="3ior.BuildSimpleName" typeId="3ior.4903714810883702019" id="9029200373494108667">
               <property name="text" nameId="3ior.4903714810883755350" value="internal" />
             </node>
-          </node>
-          <node role="containerName" roleId="3ior.8237269006869436777" type="3ior.BuildSimpleName" typeId="3ior.4903714810883702019" id="9029200373494108666">
-            <property name="text" nameId="3ior.4903714810883755350" value="folder" />
+            <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="7422876504327290552">
+              <property name="name" nameId="tpck.1169194664001" value="internal" />
+            </node>
           </node>
         </node>
       </node>
@@ -113,39 +113,39 @@
     <node role="nodesToCheck" roleId="tp5g.1217501822150" type="tp5g.TestNode" typeId="tp5g.1216989428737" id="4209004860870558807">
       <node role="nodeToCheck" roleId="tp5g.1216989461394" type="3ior.BuildLayout" typeId="3ior.5617550519002745364" id="4209004860870558808">
         <node role="children" roleId="3ior.7389400916848037006" type="3ior.BuildLayout_Jar" typeId="3ior.7389400916848050074" id="4209004860870558809">
-          <property name="name" nameId="tpck.1169194664001" value="outer.jar" />
+          <property name="name" nameId="tpck.1169194664001" value="some.jar" />
+          <node role="containerName" roleId="3ior.8237269006869436777" type="3ior.BuildSimpleName" typeId="3ior.4903714810883702019" id="9029200373494108668">
+            <property name="text" nameId="3ior.4903714810883755350" value="some.jar" />
+          </node>
           <node role="children" roleId="3ior.7389400916848037006" type="3ior.BuildLayout_Jar" typeId="3ior.7389400916848050074" id="4209004860870558810">
             <property name="name" nameId="tpck.1169194664001" value="some.jar" />
-            <node role="children" roleId="3ior.7389400916848037006" type="3ior.BuildLayout_Folder" typeId="3ior.7389400916848036984" id="4209004860870558811">
-              <property name="name" nameId="tpck.1169194664001" value="someFolder" />
-              <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="4209004860870558816">
-                <property name="name" nameId="tpck.1169194664001" value="someFolder" />
-              </node>
-              <node role="containerName" roleId="3ior.8237269006869436777" type="3ior.BuildSimpleName" typeId="3ior.4903714810883702019" id="9029200373494108670">
-                <property name="text" nameId="3ior.4903714810883755350" value="someFolder" />
-              </node>
-            </node>
             <node role="containerName" roleId="3ior.8237269006869436777" type="3ior.BuildSimpleName" typeId="3ior.4903714810883702019" id="9029200373494108669">
               <property name="text" nameId="3ior.4903714810883755350" value="some.jar" />
             </node>
-          </node>
-          <node role="containerName" roleId="3ior.8237269006869436777" type="3ior.BuildSimpleName" typeId="3ior.4903714810883702019" id="9029200373494108668">
-            <property name="text" nameId="3ior.4903714810883755350" value="some.jar" />
+            <node role="children" roleId="3ior.7389400916848037006" type="3ior.BuildLayout_Folder" typeId="3ior.7389400916848036984" id="4209004860870558811">
+              <property name="name" nameId="tpck.1169194664001" value="someFolder" />
+              <node role="containerName" roleId="3ior.8237269006869436777" type="3ior.BuildSimpleName" typeId="3ior.4903714810883702019" id="9029200373494108670">
+                <property name="text" nameId="3ior.4903714810883755350" value="someFolder" />
+              </node>
+              <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="4209004860870558816">
+                <property name="name" nameId="tpck.1169194664001" value="someFolder" />
+              </node>
+            </node>
           </node>
         </node>
         <node role="children" roleId="3ior.7389400916848037006" type="3ior.BuildLayout_Jar" typeId="3ior.7389400916848050074" id="4209004860870558813">
           <property name="name" nameId="tpck.1169194664001" value="some.jar" />
+          <node role="containerName" roleId="3ior.8237269006869436777" type="3ior.BuildSimpleName" typeId="3ior.4903714810883702019" id="9029200373494108671">
+            <property name="text" nameId="3ior.4903714810883755350" value="some.jar" />
+          </node>
           <node role="children" roleId="3ior.7389400916848037006" type="3ior.BuildLayout_Folder" typeId="3ior.7389400916848036984" id="4209004860870558814">
             <property name="name" nameId="tpck.1169194664001" value="someFolder" />
-            <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="4209004860870558815">
-              <property name="name" nameId="tpck.1169194664001" value="someFolder_1" />
-            </node>
             <node role="containerName" roleId="3ior.8237269006869436777" type="3ior.BuildSimpleName" typeId="3ior.4903714810883702019" id="9029200373494108672">
               <property name="text" nameId="3ior.4903714810883755350" value="someFolder" />
             </node>
-          </node>
-          <node role="containerName" roleId="3ior.8237269006869436777" type="3ior.BuildSimpleName" typeId="3ior.4903714810883702019" id="9029200373494108671">
-            <property name="text" nameId="3ior.4903714810883755350" value="some.jar" />
+            <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="4209004860870558815">
+              <property name="name" nameId="tpck.1169194664001" value="someFolder_1" />
+            </node>
           </node>
         </node>
       </node>
@@ -604,60 +604,6 @@
             </node>
           </node>
         </node>
-        <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="193602448594330798">
-          <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="193602448594330802">
-            <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="193602448594330799">
-              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="193602448594330791" resolveInfo="expected" />
-            </node>
-            <node role="operation" roleId="tpee.1197027833540" type="tp2q.AddElementOperation" typeId="tp2q.1160612413312" id="193602448594330808">
-              <node role="argument" roleId="tp2q.1160612519549" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="193602448594330813">
-                <node role="quotedNode" roleId="tp3r.1196350785114" type="3ior.ExportedMacroInternal" typeId="3ior.193602448594247602" id="193602448594330815">
-                  <property name="name" nameId="tpck.1169194664001" value="build" />
-                  <property name="defaultPath" nameId="3ior.193602448594247603" value="path" />
-                  <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp3r.PropertyAntiquotation" typeId="tp3r.1196866233735" id="193602448594330818">
-                    <property name="propertyName" nameId="tpck.1757699476691236117" value="defaultPath" />
-                    <node role="expression" roleId="tp3r.1196350785111" type="tpee.PlusExpression" typeId="tpee.1068581242875" id="193602448594330917">
-                      <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="193602448594330920">
-                        <property name="value" nameId="tpee.1070475926801" value="/build" />
-                      </node>
-                      <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="193602448594444083">
-                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="msyo.~PathManager%dgetHomePath()%cjava%dlang%dString" resolveInfo="getHomePath" />
-                        <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="msyo.~PathManager" resolveInfo="PathManager" />
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="193602448594330921">
-          <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="193602448594330922">
-            <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="193602448594330923">
-              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="193602448594330791" resolveInfo="expected" />
-            </node>
-            <node role="operation" roleId="tpee.1197027833540" type="tp2q.AddElementOperation" typeId="tp2q.1160612413312" id="193602448594330924">
-              <node role="argument" roleId="tp2q.1160612519549" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="193602448594330925">
-                <node role="quotedNode" roleId="tp3r.1196350785114" type="3ior.ExportedMacroInternal" typeId="3ior.193602448594247602" id="193602448594330926">
-                  <property name="name" nameId="tpck.1169194664001" value="resources" />
-                  <property name="defaultPath" nameId="3ior.193602448594247603" value="path" />
-                  <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp3r.PropertyAntiquotation" typeId="tp3r.1196866233735" id="193602448594330927">
-                    <property name="propertyName" nameId="tpck.1757699476691236117" value="defaultPath" />
-                    <node role="expression" roleId="tp3r.1196350785111" type="tpee.PlusExpression" typeId="tpee.1068581242875" id="193602448594330928">
-                      <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="193602448594330929">
-                        <property name="value" nameId="tpee.1070475926801" value="/build/resources" />
-                      </node>
-                      <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="193602448594444084">
-                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="msyo.~PathManager%dgetHomePath()%cjava%dlang%dString" resolveInfo="getHomePath" />
-                        <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="msyo.~PathManager" resolveInfo="PathManager" />
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="193602448594330931">
           <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="193602448594330932">
             <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="193602448594330933">
@@ -670,14 +616,8 @@
                   <property name="defaultPath" nameId="3ior.193602448594247603" value="/tmp" />
                   <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp3r.PropertyAntiquotation" typeId="tp3r.1196866233735" id="193602448594332813">
                     <property name="propertyName" nameId="tpck.1757699476691236117" value="defaultPath" />
-                    <node role="expression" roleId="tp3r.1196350785111" type="tpee.PlusExpression" typeId="tpee.1068581242875" id="193602448594332815">
-                      <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="193602448594332816">
-                        <property name="value" nameId="tpee.1070475926801" value="/build/tmp/project.tmp" />
-                      </node>
-                      <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="193602448594444085">
-                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="msyo.~PathManager%dgetHomePath()%cjava%dlang%dString" resolveInfo="getHomePath" />
-                        <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="msyo.~PathManager" resolveInfo="PathManager" />
-                      </node>
+                    <node role="expression" roleId="tp3r.1196350785111" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="193602448594332816">
+                      <property name="value" nameId="tpee.1070475926801" value="${basedir}/build/tmp/project.tmp" />
                     </node>
                   </node>
                 </node>
@@ -697,14 +637,8 @@
                   <property name="defaultPath" nameId="3ior.193602448594247603" value="/deploy" />
                   <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp3r.PropertyAntiquotation" typeId="tp3r.1196866233735" id="193602448594332834">
                     <property name="propertyName" nameId="tpck.1757699476691236117" value="defaultPath" />
-                    <node role="expression" roleId="tp3r.1196350785111" type="tpee.PlusExpression" typeId="tpee.1068581242875" id="193602448594332836">
-                      <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="193602448594332837">
-                        <property name="value" nameId="tpee.1070475926801" value="/build/artifacts/project.artifacts" />
-                      </node>
-                      <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="193602448594444086">
-                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="msyo.~PathManager%dgetHomePath()%cjava%dlang%dString" resolveInfo="getHomePath" />
-                        <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="msyo.~PathManager" resolveInfo="PathManager" />
-                      </node>
+                    <node role="expression" roleId="tp3r.1196350785111" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="193602448594332837">
+                      <property name="value" nameId="tpee.1070475926801" value="${basedir}/build/artifacts/project.artifacts" />
                     </node>
                   </node>
                 </node>
