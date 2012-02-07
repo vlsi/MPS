@@ -70,8 +70,8 @@ public class MacroTest_Test extends BaseTransformationTest {
       List<SNode> exportedMacro = context.getExportedMacro(SNodeOperations.cast(this.getNodeById("193602448594327348"), "jetbrains.mps.buildScript.structure.BuildProject"));
 
       List<SNode> expected = new ArrayList<SNode>();
-      ListSequence.fromList(expected).addElement(new MacroTest_Test.TestBody.QuotationClass_oxxkhl_a0a0g0a0().createNode("${basedir}/build/tmp/project.tmp"));
-      ListSequence.fromList(expected).addElement(new MacroTest_Test.TestBody.QuotationClass_oxxkhl_a0a0h0a0().createNode("${basedir}/build/artifacts/project.artifacts"));
+      ListSequence.fromList(expected).addElement(new MacroTest_Test.TestBody.QuotationClass_oxxkhl_a0a0g0a0().createNode("${build.dir}/tmp/project.tmp"));
+      ListSequence.fromList(expected).addElement(new MacroTest_Test.TestBody.QuotationClass_oxxkhl_a0a0h0a0().createNode("${build.dir}/artifacts/project.artifacts"));
 
       for (int i = 0; i < ListSequence.fromList(expected).count(); i++) {
         Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.fromListAndArray(new ArrayList<SNode>(), expected.get(i)), ListSequence.fromListAndArray(new ArrayList<SNode>(), exportedMacro.get(i))));

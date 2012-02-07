@@ -617,7 +617,7 @@
                   <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp3r.PropertyAntiquotation" typeId="tp3r.1196866233735" id="193602448594332813">
                     <property name="propertyName" nameId="tpck.1757699476691236117" value="defaultPath" />
                     <node role="expression" roleId="tp3r.1196350785111" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="193602448594332816">
-                      <property name="value" nameId="tpee.1070475926801" value="${basedir}/build/tmp/project.tmp" />
+                      <property name="value" nameId="tpee.1070475926801" value="${build.dir}/tmp/project.tmp" />
                     </node>
                   </node>
                 </node>
@@ -638,7 +638,7 @@
                   <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp3r.PropertyAntiquotation" typeId="tp3r.1196866233735" id="193602448594332834">
                     <property name="propertyName" nameId="tpck.1757699476691236117" value="defaultPath" />
                     <node role="expression" roleId="tp3r.1196350785111" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="193602448594332837">
-                      <property name="value" nameId="tpee.1070475926801" value="${basedir}/build/artifacts/project.artifacts" />
+                      <property name="value" nameId="tpee.1070475926801" value="${build.dir}/artifacts/project.artifacts" />
                     </node>
                   </node>
                 </node>

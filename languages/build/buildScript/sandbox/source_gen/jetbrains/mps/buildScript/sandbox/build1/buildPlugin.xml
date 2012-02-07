@@ -1,6 +1,6 @@
 <project name="buildPlugin">
-  <property name="buildPlugin.tmp" location="${basedir}/build/tmp/buildPlugin.tmp" />
-  <property name="buildPlugin.deploy.dir" location="${basedir}/build/artifacts/buildPlugin.artifacts" />
+  <property name="buildPlugin.tmp" location="${build.dir}/tmp/buildPlugin.tmp" />
+  <property name="buildPlugin.deploy.dir" location="${build.dir}/artifacts/buildPlugin.artifacts" />
   <property name="build.dir" location="build" />
   
   <target name="build" />
