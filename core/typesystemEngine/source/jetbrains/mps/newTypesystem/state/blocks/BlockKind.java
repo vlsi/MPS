@@ -19,5 +19,6 @@ public enum BlockKind {
   INEQUALITY(),
   COMPARABLE(),
   WHEN_CONCRETE(),
-  CHECK_EQUATION()
+  CHECK_EQUATION(),
+  TARGET()
 }

@@ -54,6 +54,8 @@ public class State {
   private final Inequalities myInequalities;
   private final NodeMaps myNodeMaps;
   private SNode myHole;
+  private SNode myTargetNode;
+  private boolean myTargetTypeCalculated = false;
 
   private final VariableIdentifier myVariableIdentifier;
 
@@ -127,13 +129,6 @@ public class State {
       }
     }
     boolean removed = myBlocks.remove(dataFlowBlock);
-    assert removed;
-  }
-
-  @StateMethod
-  public void removeInequalityBlock(InequalityBlock block) {
-    assertIsInStateChangeAction();
-    boolean removed = myBlocks.remove(block);
     assert removed;
   }
 
@@ -307,7 +302,7 @@ public class State {
   }
 
   public void executeOperation(AbstractOperation operation) {
-    if (operation == null) {
+    if (operation == null || myTargetTypeCalculated) {
       return;
     }
     if (myTypeCheckingContext.isInTraceMode() || operation.hasEffect()) {
@@ -353,6 +348,8 @@ public class State {
     myNodeMaps.clear();
     myVariableIdentifier.clear();
     myBlocks.clear();
+    myTargetNode = null;
+    myTargetTypeCalculated = false;
     for (ManyToManyMap map : myBlocksAndInputs.values()) {
       map.clear();
     }
@@ -424,6 +421,24 @@ public class State {
 
   public AbstractOperation getOperation() {
     return myOperation;
+  }
+
+  public void setTargetNode(SNode node) {
+    addBlock(new TargetBlock(this, typeOf(node, null)));
+    myTargetNode = node;
+  }
+
+  public void setTargetTypeCalculated() {
+    myTargetTypeCalculated = true;
+    myNodeMaps.expandNode(myTargetNode);
+  }
+
+  public boolean isTargetTypeCalculated() {
+    return myTargetTypeCalculated;
+  }
+
+  public void expandTargetNode() {
+    myNodeMaps.expandNode(myTargetNode);
   }
 
   public void expandAll(final Set<SNode> nodes, final boolean finalExpansion) {

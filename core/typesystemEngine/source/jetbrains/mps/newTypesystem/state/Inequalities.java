@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.newTypesystem.state;
 
+import com.intellij.openapi.util.Pair;
 import gnu.trove.THashMap;
 import gnu.trove.THashSet;
 import jetbrains.mps.newTypesystem.TypesUtil;
@@ -26,7 +27,6 @@ import jetbrains.mps.newTypesystem.state.blocks.*;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystemEngine.util.LatticeUtil;
 import jetbrains.mps.util.ManyToManyMap;
-import jetbrains.mps.util.Pair;
 
 import javax.management.relation.Relation;
 import java.util.*;
@@ -77,7 +77,7 @@ public class Inequalities {
   private SNode getNodeWithNoInput(Set<SNode> unsorted, Set<SNode> used) {
     for (SNode node : unsorted) {
       if (used.containsAll(myInputsToOutputsInc.getBySecond(node))) {
-  //    if (inputsToOutputs.getBySecond(node).isEmpty()) {
+        //    if (inputsToOutputs.getBySecond(node).isEmpty()) {
         return node;
       }
     }
@@ -87,7 +87,7 @@ public class Inequalities {
   public List<RelationBlock> getRelationsToSolve() {
     List<RelationBlock> result = new LinkedList<RelationBlock>();
     for (Block block : myState.getBlocks()) {
-      if (block.getBlockKind() != BlockKind.WHEN_CONCRETE) {
+      if (block.getBlockKind() != BlockKind.WHEN_CONCRETE && block.getBlockKind() != BlockKind.TARGET) {
         RelationBlock relationBlock = (RelationBlock) block;
         if (!relationBlock.isCheckOnly()) {
           result.add(relationBlock);
@@ -101,18 +101,18 @@ public class Inequalities {
     solvingInProcess = true;
     List<RelationBlock> inequalities = getRelationsToSolve();
     initializeMapsInc(inequalities);
-    while (iteration(inequalities)) {
+    while (iteration(inequalities) && !myState.isTargetTypeCalculated()) {
       inequalities = getRelationsToSolve();
     }
     solvingInProcess = false;
   }
 
   private void addVariablesLinkInc(SNode input, SNode output) {
-     if (!TypesUtil.isVariable(input)) return;
-     if (!TypesUtil.isVariable(output)) return;
-     if (input == output) return;
-     myInputsToOutputsInc.addLink(input, output);
-   }
+    if (!TypesUtil.isVariable(input)) return;
+    if (!TypesUtil.isVariable(output)) return;
+    if (input == output) return;
+    myInputsToOutputsInc.addLink(input, output);
+  }
 
   private void initializeMapsInc(List<RelationBlock> inequalities) {
     myInputsToOutputsInc.clear();
