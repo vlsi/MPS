@@ -32,6 +32,7 @@ public class BuildSimpleName_Editor extends DefaultNodeEditor {
       style.set(StyleAttributes.PADDING_LEFT, new Padding(0, Measure.SPACES));
       style.set(StyleAttributes.PADDING_RIGHT, new Padding(0, Measure.SPACES));
     }
+    editorCell.addKeyMap(new BuildSimpleName_text());
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

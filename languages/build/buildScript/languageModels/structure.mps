@@ -156,7 +156,7 @@
     <node type="tpce.ConstrainedDataTypeDeclaration" typeId="tpce.1082978499127" id="8618885170173708134">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="SourcePath" />
       <property name="name" nameId="tpck.1169194664001" value="FileName" />
-      <property name="constraint" nameId="tpce.1083066089218" value="[^\\/]*" />
+      <property name="constraint" nameId="tpce.1083066089218" value="[^\\/$]*" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="7321017245476976379">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="SourcePath" />
@@ -704,7 +704,7 @@
   <root id="4903714810883702019">
     <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="4903714810883755350">
       <property name="name" nameId="tpck.1169194664001" value="text" />
-      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983041843" resolveInfo="string" />
+      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="8618885170173708134" resolveInfo="FileName" />
     </node>
   </root>
   <root id="4903714810883702015">
