@@ -1,10 +1,10 @@
 <project name="build">
+  <property name="build.dir" location="build" />
   <property name="idea_home" location="" />
   <property name="mps_libs" location="${basedir}/../../lib" />
   <property name="mps_langs" location="${basedir}/../../languages" />
   <property name="build.tmp" location="${build.dir}/tmp/build.tmp" />
   <property name="build.deploy.dir" location="${build.dir}/artifacts/build.artifacts" />
-  <property name="build.dir" location="build" />
   
   <path id="path.java.library.core-libraries">
     <fileset dir="${idea_home}/lib">
@@ -21,33 +21,6 @@
     <fileset file="${mps_libs}/asm.jar" />
     <fileset file="${mps_libs}/diffutils-1.2.1.jar" />
   </path>
-  
-  <target name="java.compile.mps-tuples">
-    <mkdir dir="${build.dir}/tmp/java.out.mps-tuples" />
-    <javac destdir="${build.dir}/tmp/java.out.mps-tuples">
-      <compilerarg value="-Xlint:none" />
-      <src path="${mps_langs}/baseLanguage/tuples/runtime/source_gen" />
-      <classpath></classpath>
-    </javac>
-  </target>
-  
-  <target name="java.compile.mps-closures">
-    <mkdir dir="${build.dir}/tmp/java.out.mps-closures" />
-    <javac destdir="${build.dir}/tmp/java.out.mps-closures">
-      <compilerarg value="-Xlint:none" />
-      <src path="${mps_langs}/baseLanguage/closures/runtime/source_gen" />
-      <classpath></classpath>
-    </javac>
-  </target>
-  
-  <target name="java.compile.mps-collections" depends="java.compile.mps-closures">
-    <mkdir dir="${build.dir}/tmp/java.out.mps-collections" />
-    <javac destdir="${build.dir}/tmp/java.out.mps-collections">
-      <compilerarg value="-Xlint:none" />
-      <src path="${mps_langs}/baseLanguage/collections/runtime/source_gen" />
-      <classpath path="${build.dir}/tmp/java.out.mps-closures" />
-    </javac>
-  </target>
   
   <target name="build" depends="check, assemble" />
   
@@ -78,4 +51,31 @@
   <target name="test" depends="classes" />
   
   <target name="check" depends="test" />
+  
+  <target name="java.compile.mps-tuples">
+    <mkdir dir="${build.dir}/tmp/java.out.mps-tuples" />
+    <javac destdir="${build.dir}/tmp/java.out.mps-tuples">
+      <compilerarg value="-Xlint:none" />
+      <src path="${mps_langs}/baseLanguage/tuples/runtime/source_gen" />
+      <classpath></classpath>
+    </javac>
+  </target>
+  
+  <target name="java.compile.mps-closures">
+    <mkdir dir="${build.dir}/tmp/java.out.mps-closures" />
+    <javac destdir="${build.dir}/tmp/java.out.mps-closures">
+      <compilerarg value="-Xlint:none" />
+      <src path="${mps_langs}/baseLanguage/closures/runtime/source_gen" />
+      <classpath></classpath>
+    </javac>
+  </target>
+  
+  <target name="java.compile.mps-collections" depends="java.compile.mps-closures">
+    <mkdir dir="${build.dir}/tmp/java.out.mps-collections" />
+    <javac destdir="${build.dir}/tmp/java.out.mps-collections">
+      <compilerarg value="-Xlint:none" />
+      <src path="${mps_langs}/baseLanguage/collections/runtime/source_gen" />
+      <classpath path="${build.dir}/tmp/java.out.mps-closures" />
+    </javac>
+  </target>
 </project>

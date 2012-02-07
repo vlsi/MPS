@@ -1,11 +1,11 @@
 <project name="buildCore">
   <property file="buildCore.properties" />
+  <property name="build.dir" location="build" />
   <property name="mps_home" location="${basedir}/../../../.." />
   <property name="build_langs" location="${mps_home}/languages/build" />
   <property name="MPS" value="MPS-${build.number}" />
   <property name="buildCore.tmp" location="${build.dir}/tmp/buildCore.tmp" />
   <property name="buildCore.deploy.dir" location="${build.dir}/artifacts/buildCore.artifacts" />
-  <property name="build.dir" location="build" />
   
   <path id="path.java.library.apache-collections">
     <fileset file="${build_langs}/build.ipr" />
@@ -14,18 +14,6 @@
     </fileset>
     <fileset dir="${basedir}"></fileset>
   </path>
-  
-  <target name="java.compile.mps-core">
-    <mkdir dir="${build.dir}/tmp/java.out.mps-core" />
-    <javac destdir="${build.dir}/tmp/java.out.mps-core">
-      <compilerarg value="-Xlint:none" />
-      <src>
-        <pathelement path="${mps_home}/core/source" />
-        <pathelement path="${mps_home}/core/source_gen" />
-      </src>
-      <classpath refid="path.java.library.apache-collections" />
-    </javac>
-  </target>
   
   <target name="build" depends="check, assemble" />
   
@@ -69,4 +57,16 @@
   <target name="test" depends="classes" />
   
   <target name="check" depends="test" />
+  
+  <target name="java.compile.mps-core">
+    <mkdir dir="${build.dir}/tmp/java.out.mps-core" />
+    <javac destdir="${build.dir}/tmp/java.out.mps-core">
+      <compilerarg value="-Xlint:none" />
+      <src>
+        <pathelement path="${mps_home}/core/source" />
+        <pathelement path="${mps_home}/core/source_gen" />
+      </src>
+      <classpath refid="path.java.library.apache-collections" />
+    </javac>
+  </target>
 </project>

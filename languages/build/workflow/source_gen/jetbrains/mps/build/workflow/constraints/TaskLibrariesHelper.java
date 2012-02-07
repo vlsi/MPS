@@ -65,7 +65,10 @@ public class TaskLibrariesHelper {
         }
       }
     }
-    ListSequence.fromList(SLinkOperations.getTargets(project, "parts", true)).addSequence(ListSequence.fromList(parts));
+    // we add everything in the beginning 
+    for (int i = parts.size() - 1; i >= 0; i--) {
+      ListSequence.fromList(SLinkOperations.getTargets(project, "parts", true)).insertElement(0, parts.get(i));
+    }
   }
 
   public static void closure(Set<SNode> libs) {

@@ -19,37 +19,43 @@
     <nodeInfo nodeId="1117643560963219068" fileName="TaskLibrariesHelper.java" startLine="58" startPosition="66" endLine="59" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1117643560963219084" fileName="TaskLibrariesHelper.java" startLine="61" startPosition="48" endLine="62" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1117643560963219092" fileName="TaskLibrariesHelper.java" startLine="63" startPosition="42" endLine="64" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1117643560963219116" fileName="TaskLibrariesHelper.java" startLine="67" startPosition="5" endLine="68" endPosition="120" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1117643560963218878" fileName="TaskLibrariesHelper.java" startLine="71" startPosition="47" endLine="72" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1117643560963218885" fileName="TaskLibrariesHelper.java" startLine="72" startPosition="74" endLine="73" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1117643560963218892" fileName="TaskLibrariesHelper.java" startLine="74" startPosition="57" endLine="75" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1117643560963218902" fileName="TaskLibrariesHelper.java" startLine="77" startPosition="80" endLine="78" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1117643560963218909" fileName="TaskLibrariesHelper.java" startLine="78" startPosition="68" endLine="79" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5096397858823412428" fileName="TaskLibrariesHelper.java" startLine="67" startPosition="5" endLine="68" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="5096397858823412388" fileName="TaskLibrariesHelper.java" startLine="69" startPosition="49" endLine="70" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1117643560963218878" fileName="TaskLibrariesHelper.java" startLine="74" startPosition="47" endLine="75" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1117643560963218885" fileName="TaskLibrariesHelper.java" startLine="75" startPosition="74" endLine="76" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1117643560963218892" fileName="TaskLibrariesHelper.java" startLine="77" startPosition="57" endLine="78" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1117643560963218902" fileName="TaskLibrariesHelper.java" startLine="80" startPosition="80" endLine="81" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1117643560963218909" fileName="TaskLibrariesHelper.java" startLine="81" startPosition="68" endLine="82" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1117643560963218946" fileName="TaskLibrariesHelper.java" startLine="34" startPosition="52" endLine="37" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="1117643560963219090" fileName="TaskLibrariesHelper.java" startLine="62" startPosition="55" endLine="65" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5096397858823412354" fileName="TaskLibrariesHelper.java" startLine="68" startPosition="42" endLine="71" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
     <nodeInfo nodeId="1117643560963219124" fileName="TaskLibrariesHelper.java" startLine="27" startPosition="0" endLine="31" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TaskLibrariesHelper#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/generator/template/TemplateQueryContext;)V" />
     <nodeInfo nodeId="1117643560963219045" fileName="TaskLibrariesHelper.java" startLine="52" startPosition="96" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="translate#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="1117643560963218900" fileName="TaskLibrariesHelper.java" startLine="76" startPosition="74" endLine="80" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1117643560963218900" fileName="TaskLibrariesHelper.java" startLine="79" startPosition="74" endLine="83" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1117643560963218997" fileName="TaskLibrariesHelper.java" startLine="43" startPosition="57" endLine="48" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1117643560963219038" fileName="TaskLibrariesHelper.java" startLine="51" startPosition="5" endLine="56" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1117643560963219076" fileName="TaskLibrariesHelper.java" startLine="60" startPosition="64" endLine="66" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="1117643560963218898" fileName="TaskLibrariesHelper.java" startLine="75" startPosition="70" endLine="81" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="1117643560963218898" fileName="TaskLibrariesHelper.java" startLine="78" startPosition="70" endLine="84" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="1117643560963218983" fileName="TaskLibrariesHelper.java" startLine="41" startPosition="62" endLine="49" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="1117643560963219074" fileName="TaskLibrariesHelper.java" startLine="59" startPosition="88" endLine="67" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="1117643560963218890" fileName="TaskLibrariesHelper.java" startLine="73" startPosition="74" endLine="82" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
+    <nodeInfo nodeId="1117643560963218890" fileName="TaskLibrariesHelper.java" startLine="76" startPosition="74" endLine="85" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
     <nodeInfo nodeId="1117643560963218973" fileName="TaskLibrariesHelper.java" startLine="40" startPosition="28" endLine="50" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="1117643560963218971" fileName="TaskLibrariesHelper.java" startLine="39" startPosition="53" endLine="51" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="1117643560963218874" fileName="TaskLibrariesHelper.java" startLine="70" startPosition="0" endLine="84" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="closure#(Ljava/util/Set;)V" />
-    <nodeInfo nodeId="1117643560963218935" fileName="TaskLibrariesHelper.java" startLine="32" startPosition="0" endLine="70" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="importLibs#()V" />
+    <nodeInfo nodeId="1117643560963218874" fileName="TaskLibrariesHelper.java" startLine="73" startPosition="0" endLine="87" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="closure#(Ljava/util/Set;)V" />
+    <nodeInfo nodeId="1117643560963218935" fileName="TaskLibrariesHelper.java" startLine="32" startPosition="0" endLine="73" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="importLibs#()V" />
     <scopeInfo nodeId="1117643560963218947" fileName="TaskLibrariesHelper.java" startLine="35" startPosition="78" endLine="36" endPosition="69" />
     <scopeInfo nodeId="1117643560963218998" fileName="TaskLibrariesHelper.java" startLine="44" startPosition="35" endLine="45" endPosition="143" />
     <scopeInfo nodeId="1117643560963219015" fileName="TaskLibrariesHelper.java" startLine="46" startPosition="76" endLine="47" endPosition="163" />
     <scopeInfo nodeId="1117643560963219045" fileName="TaskLibrariesHelper.java" startLine="53" startPosition="50" endLine="54" endPosition="61" />
     <scopeInfo nodeId="1117643560963219091" fileName="TaskLibrariesHelper.java" startLine="63" startPosition="42" endLine="64" endPosition="60" />
+    <scopeInfo nodeId="5096397858823412355" fileName="TaskLibrariesHelper.java" startLine="69" startPosition="49" endLine="70" endPosition="111" />
     <scopeInfo nodeId="1117643560963219127" fileName="TaskLibrariesHelper.java" startLine="28" startPosition="78" endLine="30" endPosition="33" />
-    <scopeInfo nodeId="1117643560963218901" fileName="TaskLibrariesHelper.java" startLine="77" startPosition="80" endLine="79" endPosition="105" />
+    <scopeInfo nodeId="1117643560963218901" fileName="TaskLibrariesHelper.java" startLine="80" startPosition="80" endLine="82" endPosition="105" />
     <scopeInfo nodeId="1117643560963218946" fileName="TaskLibrariesHelper.java" startLine="34" startPosition="52" endLine="37" endPosition="5">
       <varInfo nodeId="1117643560963218955" varName="tldep" />
+    </scopeInfo>
+    <scopeInfo nodeId="5096397858823412354" fileName="TaskLibrariesHelper.java" startLine="68" startPosition="42" endLine="71" endPosition="5">
+      <varInfo nodeId="5096397858823412357" varName="i" />
     </scopeInfo>
     <scopeInfo nodeId="1117643560963219124" fileName="TaskLibrariesHelper.java" startLine="27" startPosition="0" endLine="31" endPosition="3">
       <varInfo nodeId="1117643560963219142" varName="genContext" />
@@ -61,7 +67,7 @@
     <scopeInfo nodeId="1117643560963219083" fileName="TaskLibrariesHelper.java" startLine="61" startPosition="48" endLine="65" endPosition="9">
       <varInfo nodeId="1117643560963219085" varName="targetNode" />
     </scopeInfo>
-    <scopeInfo nodeId="1117643560963218899" fileName="TaskLibrariesHelper.java" startLine="76" startPosition="74" endLine="80" endPosition="9" />
+    <scopeInfo nodeId="1117643560963218899" fileName="TaskLibrariesHelper.java" startLine="79" startPosition="74" endLine="83" endPosition="9" />
     <scopeInfo nodeId="1117643560963218990" fileName="TaskLibrariesHelper.java" startLine="42" startPosition="58" endLine="48" endPosition="11">
       <varInfo nodeId="1117643560963218992" varName="targetNode" />
     </scopeInfo>
@@ -69,10 +75,10 @@
     <scopeInfo nodeId="1117643560963219076" fileName="TaskLibrariesHelper.java" startLine="60" startPosition="64" endLine="66" endPosition="7">
       <varInfo nodeId="1117643560963219077" varName="ref" />
     </scopeInfo>
-    <scopeInfo nodeId="1117643560963218898" fileName="TaskLibrariesHelper.java" startLine="75" startPosition="70" endLine="81" endPosition="7">
+    <scopeInfo nodeId="1117643560963218898" fileName="TaskLibrariesHelper.java" startLine="78" startPosition="70" endLine="84" endPosition="7">
       <varInfo nodeId="1117643560963218923" varName="dep" />
     </scopeInfo>
-    <scopeInfo nodeId="1117643560963218891" fileName="TaskLibrariesHelper.java" startLine="74" startPosition="57" endLine="81" endPosition="7">
+    <scopeInfo nodeId="1117643560963218891" fileName="TaskLibrariesHelper.java" startLine="77" startPosition="57" endLine="84" endPosition="7">
       <varInfo nodeId="1117643560963218893" varName="lib" />
     </scopeInfo>
     <scopeInfo nodeId="1117643560963218982" fileName="TaskLibrariesHelper.java" startLine="41" startPosition="62" endLine="49" endPosition="9" />
@@ -86,23 +92,23 @@
     <scopeInfo nodeId="1117643560963218973" fileName="TaskLibrariesHelper.java" startLine="40" startPosition="28" endLine="50" endPosition="7">
       <varInfo nodeId="1117643560963218974" varName="n" />
     </scopeInfo>
-    <scopeInfo nodeId="1117643560963218877" fileName="TaskLibrariesHelper.java" startLine="71" startPosition="47" endLine="82" endPosition="5">
+    <scopeInfo nodeId="1117643560963218877" fileName="TaskLibrariesHelper.java" startLine="74" startPosition="47" endLine="85" endPosition="5">
       <varInfo nodeId="1117643560963218879" varName="queue" />
     </scopeInfo>
     <scopeInfo nodeId="1117643560963218971" fileName="TaskLibrariesHelper.java" startLine="39" startPosition="53" endLine="51" endPosition="5">
       <varInfo nodeId="1117643560963219035" varName="lib" />
     </scopeInfo>
-    <scopeInfo nodeId="1117643560963218874" fileName="TaskLibrariesHelper.java" startLine="70" startPosition="0" endLine="84" endPosition="0">
+    <scopeInfo nodeId="1117643560963218874" fileName="TaskLibrariesHelper.java" startLine="73" startPosition="0" endLine="87" endPosition="0">
       <varInfo nodeId="1117643560963218932" varName="libs" />
     </scopeInfo>
-    <scopeInfo nodeId="1117643560963218938" fileName="TaskLibrariesHelper.java" startLine="33" startPosition="28" endLine="68" endPosition="120">
+    <scopeInfo nodeId="1117643560963218938" fileName="TaskLibrariesHelper.java" startLine="33" startPosition="28" endLine="71" endPosition="5">
       <varInfo nodeId="1117643560963218964" varName="libs" />
       <varInfo nodeId="1117643560963218940" varName="libsSet" />
       <varInfo nodeId="1117643560963219048" varName="map" />
       <varInfo nodeId="1117643560963219039" varName="parts" />
     </scopeInfo>
-    <scopeInfo nodeId="1117643560963218935" fileName="TaskLibrariesHelper.java" startLine="32" startPosition="0" endLine="70" endPosition="0" />
-    <unitInfo nodeId="1117643560963218873" fileName="TaskLibrariesHelper.java" startLine="24" startPosition="0" endLine="85" endPosition="0" unitName="jetbrains.mps.build.workflow.constraints.TaskLibrariesHelper" />
+    <scopeInfo nodeId="1117643560963218935" fileName="TaskLibrariesHelper.java" startLine="32" startPosition="0" endLine="73" endPosition="0" />
+    <unitInfo nodeId="1117643560963218873" fileName="TaskLibrariesHelper.java" startLine="24" startPosition="0" endLine="88" endPosition="0" unitName="jetbrains.mps.build.workflow.constraints.TaskLibrariesHelper" />
     <unitInfo nodeId="1117643560963219045" fileName="TaskLibrariesHelper.java" startLine="52" startPosition="66" endLine="56" endPosition="5" unitName="jetbrains.mps.build.workflow.constraints.TaskLibrariesHelper$1" />
   </root>
   <root nodeId="1117643560963285901">
