@@ -110,6 +110,11 @@
           </node>
         </node>
       </node>
+      <node role="dependencies" roleId="8xvf.4755209551904389320" type="8xvf.BwfJavaClassPath" typeId="8xvf.6647099934206976119" id="7926701909975921237">
+        <node role="classpath" roleId="8xvf.7926701909975791137" type="8xvf.BwfPathReference" typeId="8xvf.6647099934207069215" id="7926701909975921238">
+          <link role="target" roleId="8xvf.6647099934207069216" targetNodeId="6647099934207210420" resolveInfo="path2" />
+        </node>
+      </node>
       <node role="dependencies" roleId="8xvf.4755209551904389320" type="8xvf.BwfJavaModuleReference" typeId="8xvf.4755209551904389316" id="4755209551904406795">
         <link role="target" roleId="8xvf.4755209551904389317" targetNodeId="4755209551904406791" resolveInfo="module2" />
       </node>

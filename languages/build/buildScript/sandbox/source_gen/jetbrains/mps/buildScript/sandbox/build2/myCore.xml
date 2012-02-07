@@ -27,6 +27,7 @@
       <classpath>
         <pathelement path="mo1.deps" />
         <pathelement path="junit" />
+        <path refid="path.path2" />
         <pathelement path="mo2.deps" />
       </classpath>
     </javac>
@@ -38,6 +39,7 @@
       <classpath>
         <pathelement path="mo1.deps" />
         <pathelement path="junit" />
+        <path refid="path.path2" />
         <pathelement path="build/temp/temp/java.modules.cycle.1" />
       </classpath>
     </javac>
