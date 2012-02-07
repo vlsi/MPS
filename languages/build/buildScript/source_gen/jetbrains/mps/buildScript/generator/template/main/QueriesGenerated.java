@@ -162,6 +162,10 @@ public class QueriesGenerated {
     return SPropertyOperations.getString(_context.getNode(), "name");
   }
 
+  public static Object propertyMacro_GetPropertyValue_5096397858823409284(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return Context.defaulContext(_context).getTmpPath_WithMacro(_context.getNode());
+  }
+
   public static Object propertyMacro_GetPropertyValue_1117643560963351184(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return BuildSource_JavaModule_Behavior.call_getOutputFolder_1117643560963346267(SLinkOperations.getTarget(_context.getNode(), "module", false));
   }

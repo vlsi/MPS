@@ -2,7 +2,7 @@
 <dependencies version="2" modelHash="d077c4tvn2drnr4qxb8szwb4jkvy22y">
   <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="-d6gktujerh7kvr1llych0hnevxuxpuy" />
   <dep model="r:64db3a92-5968-4a73-b456-34504a2d97a6(jetbrains.mps.core.xml.structure)" hash="ewge8lqrwy2b6zft9axm5u7fm9eu7rc" />
-  <dep model="r:d8d06a40-eb90-4ad9-a679-19e3fc235859(jetbrains.mps.build.workflow.generator.template.main@generator)" hash="-bb28aj466zqb0rmokxutu5t5prg8040" />
+  <dep model="r:d8d06a40-eb90-4ad9-a679-19e3fc235859(jetbrains.mps.build.workflow.generator.template.main@generator)" hash="aifa56t09gesadut6zv59ejc27jmqog" />
   <dep model="r:ed179f4d-7cf2-479d-8348-50c1fc63b96a(jetbrains.mps.build.workflow.structure)" hash="f8341r329ohjenkhfbt6kq8mkpseay" />
   <common hash="bfulmtx6i7jwedl0kecqt8cqremw0i6" />
   <source id="2769948622284624385" name="myCore" hash="-5jxj86f5pxgwbusquh90nmvadbwgeqw">
