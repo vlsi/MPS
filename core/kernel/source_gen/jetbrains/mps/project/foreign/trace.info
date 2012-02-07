@@ -363,38 +363,38 @@
     <unitInfo nodeId="9081946191808740478" fileName="ProjectMacroExpander.java" startLine="6" startPosition="0" endLine="14" endPosition="0" unitName="jetbrains.mps.project.foreign.ProjectMacroExpander" />
   </root>
   <root nodeId="9081946191808740493">
-    <nodeInfo nodeId="9081946191808740502" fileName="ModuleMacroExpander.java" startLine="7" startPosition="59" endLine="8" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myProjectMacroExpander" />
-    <nodeInfo nodeId="9081946191808740568" fileName="ModuleMacroExpander.java" startLine="8" startPosition="54" endLine="9" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myModuleFile" />
-    <nodeInfo nodeId="9081946191808740505" fileName="ModuleMacroExpander.java" startLine="11" startPosition="74" endLine="12" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="9081946191808740571" fileName="ModuleMacroExpander.java" startLine="12" startPosition="38" endLine="13" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="9081946191808740527" fileName="ModuleMacroExpander.java" startLine="17" startPosition="23" endLine="18" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="9081946191808740543" fileName="ModuleMacroExpander.java" startLine="20" startPosition="41" endLine="21" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="9041697153672942519" fileName="ModuleMacroExpander.java" startLine="23" startPosition="31" endLine="24" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="9041697153672942550" fileName="ModuleMacroExpander.java" startLine="25" startPosition="38" endLine="26" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="9081946191808741263" fileName="ModuleMacroExpander.java" startLine="27" startPosition="7" endLine="28" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="9081946191808740663" fileName="ModuleMacroExpander.java" startLine="29" startPosition="5" endLine="30" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="9081946191808740517" fileName="ModuleMacroExpander.java" startLine="16" startPosition="43" endLine="19" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="9081946191808740532" fileName="ModuleMacroExpander.java" startLine="19" startPosition="5" endLine="22" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="9041697153672942529" fileName="ModuleMacroExpander.java" startLine="24" startPosition="62" endLine="27" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="9081946191808740495" fileName="ModuleMacroExpander.java" startLine="10" startPosition="0" endLine="14" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ModuleMacroExpander#(Ljetbrains/mps/project/foreign/ProjectMacroExpander;Ljetbrains/mps/vfs/IFile;)V" />
-    <nodeInfo nodeId="9081946191808740577" fileName="ModuleMacroExpander.java" startLine="22" startPosition="5" endLine="29" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="9081946191808740511" fileName="ModuleMacroExpander.java" startLine="15" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="expandMacros#(Ljava/lang/String;)Ljava/lang/String;" />
-    <scopeInfo nodeId="9081946191808740519" fileName="ModuleMacroExpander.java" startLine="17" startPosition="23" endLine="18" endPosition="18" />
-    <scopeInfo nodeId="9081946191808740533" fileName="ModuleMacroExpander.java" startLine="20" startPosition="41" endLine="21" endPosition="55" />
-    <scopeInfo nodeId="9041697153672942530" fileName="ModuleMacroExpander.java" startLine="25" startPosition="38" endLine="26" endPosition="73" />
-    <scopeInfo nodeId="9081946191808740498" fileName="ModuleMacroExpander.java" startLine="11" startPosition="74" endLine="13" endPosition="35" />
-    <scopeInfo nodeId="9081946191808740495" fileName="ModuleMacroExpander.java" startLine="10" startPosition="0" endLine="14" endPosition="3">
+    <nodeInfo nodeId="9081946191808740502" fileName="ModuleMacroExpander.java" startLine="8" startPosition="59" endLine="9" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myProjectMacroExpander" />
+    <nodeInfo nodeId="9081946191808740568" fileName="ModuleMacroExpander.java" startLine="9" startPosition="54" endLine="10" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myModuleFile" />
+    <nodeInfo nodeId="9081946191808740505" fileName="ModuleMacroExpander.java" startLine="12" startPosition="74" endLine="13" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="9081946191808740571" fileName="ModuleMacroExpander.java" startLine="13" startPosition="38" endLine="14" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="9081946191808740527" fileName="ModuleMacroExpander.java" startLine="18" startPosition="23" endLine="19" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="9081946191808740543" fileName="ModuleMacroExpander.java" startLine="21" startPosition="41" endLine="22" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="9041697153672942519" fileName="ModuleMacroExpander.java" startLine="24" startPosition="31" endLine="25" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="9041697153672942550" fileName="ModuleMacroExpander.java" startLine="26" startPosition="38" endLine="27" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="9081946191808741263" fileName="ModuleMacroExpander.java" startLine="28" startPosition="7" endLine="29" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="9081946191808740663" fileName="ModuleMacroExpander.java" startLine="30" startPosition="5" endLine="31" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="9081946191808740517" fileName="ModuleMacroExpander.java" startLine="17" startPosition="43" endLine="20" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="9081946191808740532" fileName="ModuleMacroExpander.java" startLine="20" startPosition="5" endLine="23" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="9041697153672942529" fileName="ModuleMacroExpander.java" startLine="25" startPosition="62" endLine="28" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="9081946191808740495" fileName="ModuleMacroExpander.java" startLine="11" startPosition="0" endLine="15" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ModuleMacroExpander#(Ljetbrains/mps/project/foreign/ProjectMacroExpander;Ljetbrains/mps/vfs/IFile;)V" />
+    <nodeInfo nodeId="9081946191808740577" fileName="ModuleMacroExpander.java" startLine="23" startPosition="5" endLine="30" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="9081946191808740511" fileName="ModuleMacroExpander.java" startLine="16" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="expandMacros#(Ljava/lang/String;)Ljava/lang/String;" />
+    <scopeInfo nodeId="9081946191808740519" fileName="ModuleMacroExpander.java" startLine="18" startPosition="23" endLine="19" endPosition="18" />
+    <scopeInfo nodeId="9081946191808740533" fileName="ModuleMacroExpander.java" startLine="21" startPosition="41" endLine="22" endPosition="55" />
+    <scopeInfo nodeId="9041697153672942530" fileName="ModuleMacroExpander.java" startLine="26" startPosition="38" endLine="27" endPosition="73" />
+    <scopeInfo nodeId="9081946191808740498" fileName="ModuleMacroExpander.java" startLine="12" startPosition="74" endLine="14" endPosition="35" />
+    <scopeInfo nodeId="9081946191808740495" fileName="ModuleMacroExpander.java" startLine="11" startPosition="0" endLine="15" endPosition="3">
       <varInfo nodeId="9081946191808740565" varName="moduleFile" />
       <varInfo nodeId="9081946191808740500" varName="pme" />
     </scopeInfo>
-    <scopeInfo nodeId="9081946191808740578" fileName="ModuleMacroExpander.java" startLine="23" startPosition="31" endLine="28" endPosition="62">
+    <scopeInfo nodeId="9081946191808740578" fileName="ModuleMacroExpander.java" startLine="24" startPosition="31" endLine="29" endPosition="88">
       <varInfo nodeId="9041697153672942520" varName="replaceWith" />
     </scopeInfo>
-    <scopeInfo nodeId="9081946191808740516" fileName="ModuleMacroExpander.java" startLine="16" startPosition="43" endLine="30" endPosition="16" />
-    <scopeInfo nodeId="9081946191808740511" fileName="ModuleMacroExpander.java" startLine="15" startPosition="0" endLine="32" endPosition="0">
+    <scopeInfo nodeId="9081946191808740516" fileName="ModuleMacroExpander.java" startLine="17" startPosition="43" endLine="31" endPosition="16" />
+    <scopeInfo nodeId="9081946191808740511" fileName="ModuleMacroExpander.java" startLine="16" startPosition="0" endLine="33" endPosition="0">
       <varInfo nodeId="9081946191808740512" varName="path" />
     </scopeInfo>
-    <unitInfo nodeId="9081946191808740493" fileName="ModuleMacroExpander.java" startLine="7" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.project.foreign.ModuleMacroExpander" />
+    <unitInfo nodeId="9081946191808740493" fileName="ModuleMacroExpander.java" startLine="8" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.project.foreign.ModuleMacroExpander" />
   </root>
 </debugInfo>
 
