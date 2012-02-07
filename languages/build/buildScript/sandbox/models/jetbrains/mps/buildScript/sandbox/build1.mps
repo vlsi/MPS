@@ -215,6 +215,15 @@
     <node role="macros" roleId="3ior.5617550519002745378" type="3ior.BuildVariableMacro" typeId="3ior.3767587139141066978" id="8237269006869507396">
       <property name="name" nameId="tpck.1169194664001" value="ver" />
     </node>
+    <node role="macros" roleId="3ior.5617550519002745378" type="3ior.BuildVariableMacro" typeId="3ior.3767587139141066978" id="6420586245471679165">
+      <property name="name" nameId="tpck.1169194664001" value="MPS" />
+      <node role="value" roleId="3ior.6420586245471595686" type="3ior.BuildSimpleName" typeId="3ior.4903714810883702019" id="6420586245471680668">
+        <property name="text" nameId="3ior.4903714810883755350" value="MPS-" />
+      </node>
+      <node role="value" roleId="3ior.6420586245471595686" type="3ior.BuildVariableReference" typeId="3ior.4903714810883702017" id="6420586245471681013">
+        <link role="macro" roleId="3ior.4903714810883702018" targetNodeId="4903714810883946575" resolveInfo="build.number" />
+      </node>
+    </node>
   </root>
   <root id="4993211115183416028">
     <node role="layout" roleId="3ior.5617550519002745372" type="3ior.BuildLayout" typeId="3ior.5617550519002745364" id="4993211115183416029">

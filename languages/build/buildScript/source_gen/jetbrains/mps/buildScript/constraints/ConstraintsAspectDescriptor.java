@@ -7,7 +7,7 @@ import java.util.Arrays;
 import jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor;
 
 public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime.ConstraintsAspectDescriptor {
-  private static String[] stringSwitchCases_2qnle6_a0a0a = new String[]{"jetbrains.mps.buildScript.structure.BuildArtifact", "jetbrains.mps.buildScript.structure.BuildAspect", "jetbrains.mps.buildScript.structure.BuildLayout", "jetbrains.mps.buildScript.structure.BuildLayout_JavaOutput", "jetbrains.mps.buildScript.structure.BuildLayout_NamedContainer", "jetbrains.mps.buildScript.structure.BuildRelativePath", "jetbrains.mps.buildScript.structure.BuildSimpleName", "jetbrains.mps.buildScript.structure.BuildSourceMacroRelativePath", "jetbrains.mps.buildScript.structure.BuildSource_JavaLibrary", "jetbrains.mps.buildScript.structure.BuildSource_JavaModule", "jetbrains.mps.buildScript.structure.BuildSource_JavaSources", "jetbrains.mps.buildScript.structure.BuildVariableReference", "jetbrains.mps.buildScript.structure.ExportedMacroInternal"};
+  private static String[] stringSwitchCases_2qnle6_a0a0a = new String[]{"jetbrains.mps.buildScript.structure.BuildArtifact", "jetbrains.mps.buildScript.structure.BuildAspect", "jetbrains.mps.buildScript.structure.BuildLayout", "jetbrains.mps.buildScript.structure.BuildLayout_JavaOutput", "jetbrains.mps.buildScript.structure.BuildLayout_NamedContainer", "jetbrains.mps.buildScript.structure.BuildRelativePath", "jetbrains.mps.buildScript.structure.BuildSimpleName", "jetbrains.mps.buildScript.structure.BuildSourceMacroRelativePath", "jetbrains.mps.buildScript.structure.BuildSource_JavaLibrary", "jetbrains.mps.buildScript.structure.BuildSource_JavaModule", "jetbrains.mps.buildScript.structure.BuildSource_JavaSources", "jetbrains.mps.buildScript.structure.BuildVariableMacro", "jetbrains.mps.buildScript.structure.BuildVariableReference", "jetbrains.mps.buildScript.structure.ExportedMacroInternal"};
 
   public ConstraintsAspectDescriptor() {
   }
@@ -22,7 +22,7 @@ public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime
         return new BuildAspect_Constraints();
       case 5:
         return new BuildRelativePath_Constraints();
-      case 12:
+      case 13:
         return new ExportedMacroInternal_Constraints();
       case 3:
         return new BuildLayout_JavaOutput_Constraints();
@@ -36,10 +36,12 @@ public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime
         return new BuildSource_JavaSources_Constraints();
       case 0:
         return new BuildArtifact_Constraints();
-      case 11:
+      case 12:
         return new BuildVariableReference_Constraints();
       case 4:
         return new BuildLayout_NamedContainer_Constraints();
+      case 11:
+        return new BuildVariableMacro_Constraints();
       default:
         // todo: illegal in some cases? 
         return new BaseConstraintsDescriptor(fqName);

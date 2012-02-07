@@ -12,12 +12,13 @@ import jetbrains.mps.buildScript.behavior.BuildLayout_NamedContainer_Behavior;
 import jetbrains.mps.buildScript.behavior.BuildSourcePath_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.internal.collections.runtime.ILeftCombinator;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.buildScript.behavior.BuildSource_JavaModule_Behavior;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.generator.template.IfMacroContext;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 
@@ -99,11 +100,22 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_8237269006869516510(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    if (ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "value", true)).isNotEmpty()) {
+      return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "value", true)).foldLeft("", new ILeftCombinator<SNode, String>() {
+        public String combine(String s, SNode it) {
+          return s + check_x583g4_a0a0a0a0a0a81(it);
+        }
+      });
+    }
     return SPropertyOperations.getString(_context.getNode(), "name").toUpperCase();
   }
 
   public static Object propertyMacro_GetPropertyValue_8237269006869516519(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), "name");
+  }
+
+  public static Object propertyMacro_GetPropertyValue_6420586245471622081(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "value", true)).isEmpty();
   }
 
   public static Object propertyMacro_GetPropertyValue_8237269006869525279(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -332,5 +344,12 @@ public class QueriesGenerated {
 
   public static Iterable sourceNodesQuery_6647099934206970591(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "plugins", true);
+  }
+
+  private static String check_x583g4_a0a0a0a0a0a81(SNode checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return SPropertyOperations.getString(checkedDotOperand, "name");
+    }
+    return null;
   }
 }
