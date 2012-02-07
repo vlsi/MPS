@@ -11,6 +11,10 @@ public abstract class BuildNamePart_BehaviorDescriptor extends BaseConcept_Behav
   public BuildNamePart_BehaviorDescriptor() {
   }
 
+  public boolean virtual_punctuationLeft_5096397858823356723(SNode thisNode) {
+    return BuildNamePart_Behavior.virtual_punctuationLeft_5096397858823356723(thisNode);
+  }
+
   public String virtual_getFqName_1213877404258(SNode thisNode) {
     return INamedConcept_Behavior.virtual_getFqName_1213877404258(thisNode);
   }

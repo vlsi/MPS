@@ -10,17 +10,29 @@ import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.style.Padding;
-import jetbrains.mps.nodeEditor.style.Measure;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.buildScript.behavior.BuildNamePart_Behavior;
 
 public class BuildSimpleName_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createProperty_jnrlds_a(editorContext, node);
+    return this.createAlternation_jnrlds_a(editorContext, node);
   }
 
-  private EditorCell createProperty_jnrlds_a(EditorContext editorContext, SNode node) {
+  private EditorCell createAlternation_jnrlds_a(EditorContext editorContext, SNode node) {
+    boolean alternationCondition = true;
+    alternationCondition = BuildSimpleName_Editor.renderingCondition_jnrlds_a0(node, editorContext, editorContext.getOperationContext().getScope());
+    EditorCell editorCell = null;
+    if (alternationCondition) {
+      editorCell = this.createProperty_jnrlds_a0(editorContext, node);
+    } else {
+      editorCell = this.createProperty_jnrlds_a0_0(editorContext, node);
+    }
+    return editorCell;
+  }
+
+  private EditorCell createProperty_jnrlds_a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("text");
     provider.setNoTargetText("<no text>");
@@ -29,8 +41,7 @@ public class BuildSimpleName_Editor extends DefaultNodeEditor {
     editorCell.setCellId("property_text");
     {
       Style style = editorCell.getStyle();
-      style.set(StyleAttributes.PADDING_LEFT, new Padding(0, Measure.SPACES));
-      style.set(StyleAttributes.PADDING_RIGHT, new Padding(0, Measure.SPACES));
+      style.set(StyleAttributes.PUNCTUATION_LEFT, true);
     }
     editorCell.addKeyMap(new BuildSimpleName_text());
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
@@ -42,5 +53,28 @@ public class BuildSimpleName_Editor extends DefaultNodeEditor {
       return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
     } else
     return editorCell;
+  }
+
+  private EditorCell createProperty_jnrlds_a0_0(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
+    provider.setRole("text");
+    provider.setNoTargetText("<no text>");
+    EditorCell editorCell;
+    editorCell = provider.createEditorCell(editorContext);
+    editorCell.setCellId("property_text_1");
+    editorCell.addKeyMap(new BuildSimpleName_text());
+    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    SNode attributeConcept = provider.getRoleAttribute();
+    Class attributeKind = provider.getRoleAttributeClass();
+    if (attributeConcept != null) {
+      IOperationContext opContext = editorContext.getOperationContext();
+      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+      return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
+    } else
+    return editorCell;
+  }
+
+  private static boolean renderingCondition_jnrlds_a0(SNode node, EditorContext editorContext, IScope scope) {
+    return BuildNamePart_Behavior.call_punctuationLeft_5096397858823356723(node);
   }
 }
