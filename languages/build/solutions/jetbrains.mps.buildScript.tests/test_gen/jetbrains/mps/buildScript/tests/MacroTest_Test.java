@@ -56,11 +56,30 @@ public class MacroTest_Test extends BaseTransformationTest {
     this.runTest("jetbrains.mps.buildScript.tests.MacroTest_Test$TestBody", "test_doNotSeeImported", true);
   }
 
+  @Test
+  public void test_seeImportedVariableInScope() throws Throwable {
+    this.initTest("${mps_home}/MPS.ipr", "r:361d93bd-9223-4768-9e37-bcd7b8db1f40(jetbrains.mps.buildScript.tests@tests)");
+    this.runTest("jetbrains.mps.buildScript.tests.MacroTest_Test$TestBody", "test_seeImportedVariableInScope", true);
+  }
+
+  @Test
+  public void test_seeForwardVariableInScope() throws Throwable {
+    this.initTest("${mps_home}/MPS.ipr", "r:361d93bd-9223-4768-9e37-bcd7b8db1f40(jetbrains.mps.buildScript.tests@tests)");
+    this.runTest("jetbrains.mps.buildScript.tests.MacroTest_Test$TestBody", "test_seeForwardVariableInScope", true);
+  }
+
+  @Test
+  public void test_doNotSeeBackwardVariableInScope() throws Throwable {
+    this.initTest("${mps_home}/MPS.ipr", "r:361d93bd-9223-4768-9e37-bcd7b8db1f40(jetbrains.mps.buildScript.tests@tests)");
+    this.runTest("jetbrains.mps.buildScript.tests.MacroTest_Test$TestBody", "test_doNotSeeBackwardVariableInScope", true);
+  }
+
   @MPSLaunch
   public static class TestBody extends BaseTestBody {
     public void test_exportedMacro() throws Exception {
       this.addNodeById("193602448594327347");
       this.addNodeById("763409143595572699");
+      this.addNodeById("384280137912153748");
       Context context = new Context() {
         @Override
         public String getBasePath_Local(SNode node) {
@@ -70,8 +89,8 @@ public class MacroTest_Test extends BaseTransformationTest {
       List<SNode> exportedMacro = context.getExportedMacro(SNodeOperations.cast(this.getNodeById("193602448594327348"), "jetbrains.mps.buildScript.structure.BuildProject"));
 
       List<SNode> expected = new ArrayList<SNode>();
-      ListSequence.fromList(expected).addElement(new MacroTest_Test.TestBody.QuotationClass_oxxkhl_a0a0g0a0().createNode("${build.dir}/tmp/project.tmp"));
-      ListSequence.fromList(expected).addElement(new MacroTest_Test.TestBody.QuotationClass_oxxkhl_a0a0h0a0().createNode("${build.dir}/artifacts/project.artifacts"));
+      ListSequence.fromList(expected).addElement(new MacroTest_Test.TestBody.QuotationClass_oxxkhl_a0a0h0a0().createNode("${build.dir}/tmp/project.tmp"));
+      ListSequence.fromList(expected).addElement(new MacroTest_Test.TestBody.QuotationClass_oxxkhl_a0a0i0a0().createNode("${build.dir}/artifacts/project.artifacts"));
 
       for (int i = 0; i < ListSequence.fromList(expected).count(); i++) {
         Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.fromListAndArray(new ArrayList<SNode>(), expected.get(i)), ListSequence.fromListAndArray(new ArrayList<SNode>(), exportedMacro.get(i))));
@@ -81,6 +100,7 @@ public class MacroTest_Test extends BaseTransformationTest {
     public void test_normalScope() throws Exception {
       this.addNodeById("193602448594327347");
       this.addNodeById("763409143595572699");
+      this.addNodeById("384280137912153748");
       Assert.assertTrue(ListSequence.fromList(ScopeProvider_Behavior.call_getScope_3734116213129936182(SNodeOperations.cast(this.getNodeById("193602448594327348"), "jetbrains.mps.buildScript.structure.BuildProject"), ModelAccess.instance().runReadAction(new Computable<SNode>() {
         public SNode compute() {
           return SConceptOperations.findConceptDeclaration("jetbrains.mps.buildScript.structure.BuildMacro");
@@ -91,6 +111,7 @@ public class MacroTest_Test extends BaseTransformationTest {
     public void test_onlySeePreviouslyDeclaredMacro() throws Exception {
       this.addNodeById("193602448594327347");
       this.addNodeById("763409143595572699");
+      this.addNodeById("384280137912153748");
       Assert.assertFalse(ListSequence.fromList(ScopeProvider_Behavior.call_getScope_3734116213129936182(SNodeOperations.cast(this.getNodeById("193602448594327348"), "jetbrains.mps.buildScript.structure.BuildProject"), ModelAccess.instance().runReadAction(new Computable<SNode>() {
         public SNode compute() {
           return SConceptOperations.findConceptDeclaration("jetbrains.mps.buildScript.structure.BuildMacro");
@@ -101,6 +122,7 @@ public class MacroTest_Test extends BaseTransformationTest {
     public void test_doNotSeeItsefl() throws Exception {
       this.addNodeById("193602448594327347");
       this.addNodeById("763409143595572699");
+      this.addNodeById("384280137912153748");
       Assert.assertFalse(ListSequence.fromList(ScopeProvider_Behavior.call_getScope_3734116213129936182(SNodeOperations.cast(this.getNodeById("763409143595572700"), "jetbrains.mps.buildScript.structure.BuildProject"), ModelAccess.instance().runReadAction(new Computable<SNode>() {
         public SNode compute() {
           return SConceptOperations.findConceptDeclaration("jetbrains.mps.buildScript.structure.BuildMacro");
@@ -111,6 +133,7 @@ public class MacroTest_Test extends BaseTransformationTest {
     public void test_doNotSeeImported() throws Exception {
       this.addNodeById("193602448594327347");
       this.addNodeById("763409143595572699");
+      this.addNodeById("384280137912153748");
       Assert.assertFalse(ListSequence.fromList(ScopeProvider_Behavior.call_getScope_3734116213129936182(SNodeOperations.cast(this.getNodeById("763409143595572700"), "jetbrains.mps.buildScript.structure.BuildProject"), ModelAccess.instance().runReadAction(new Computable<SNode>() {
         public SNode compute() {
           return SConceptOperations.findConceptDeclaration("jetbrains.mps.buildScript.structure.BuildMacro");
@@ -123,8 +146,41 @@ public class MacroTest_Test extends BaseTransformationTest {
       }), SNodeOperations.cast(this.getNodeById("763409143595572705"), "jetbrains.mps.buildScript.structure.BuildFolderMacro")).getAvailableElements("")).contains(SNodeOperations.cast(this.getNodeById("193602448594330636"), "jetbrains.mps.buildScript.structure.BuildFolderMacro")));
     }
 
-    public static class QuotationClass_oxxkhl_a0a0g0a0 {
-      public QuotationClass_oxxkhl_a0a0g0a0() {
+    public void test_seeImportedVariableInScope() throws Exception {
+      this.addNodeById("193602448594327347");
+      this.addNodeById("763409143595572699");
+      this.addNodeById("384280137912153748");
+      Assert.assertTrue(ListSequence.fromList(ScopeProvider_Behavior.call_getScope_3734116213129936182(SNodeOperations.cast(this.getNodeById("763409143595572700"), "jetbrains.mps.buildScript.structure.BuildProject"), ModelAccess.instance().runReadAction(new Computable<SNode>() {
+        public SNode compute() {
+          return SConceptOperations.findConceptDeclaration("jetbrains.mps.buildScript.structure.BuildMacro");
+        }
+      }), SNodeOperations.cast(this.getNodeById("384280137912153739"), "jetbrains.mps.buildScript.structure.BuildVariableReference")).getAvailableElements("")).contains(SNodeOperations.cast(this.getNodeById("384280137912153734"), "jetbrains.mps.buildScript.structure.BuildVariableMacro")));
+    }
+
+    public void test_seeForwardVariableInScope() throws Exception {
+      this.addNodeById("193602448594327347");
+      this.addNodeById("763409143595572699");
+      this.addNodeById("384280137912153748");
+      Assert.assertTrue(ListSequence.fromList(ScopeProvider_Behavior.call_getScope_3734116213129936182(SNodeOperations.cast(this.getNodeById("384280137912153749"), "jetbrains.mps.buildScript.structure.BuildProject"), ModelAccess.instance().runReadAction(new Computable<SNode>() {
+        public SNode compute() {
+          return SConceptOperations.findConceptDeclaration("jetbrains.mps.buildScript.structure.BuildMacro");
+        }
+      }), SNodeOperations.cast(this.getNodeById("384280137912153758"), "jetbrains.mps.buildScript.structure.BuildVariableReference")).getAvailableElements("")).contains(SNodeOperations.cast(this.getNodeById("384280137912153753"), "jetbrains.mps.buildScript.structure.BuildVariableMacro")));
+    }
+
+    public void test_doNotSeeBackwardVariableInScope() throws Exception {
+      this.addNodeById("193602448594327347");
+      this.addNodeById("763409143595572699");
+      this.addNodeById("384280137912153748");
+      Assert.assertFalse(ListSequence.fromList(ScopeProvider_Behavior.call_getScope_3734116213129936182(SNodeOperations.cast(this.getNodeById("384280137912153749"), "jetbrains.mps.buildScript.structure.BuildProject"), ModelAccess.instance().runReadAction(new Computable<SNode>() {
+        public SNode compute() {
+          return SConceptOperations.findConceptDeclaration("jetbrains.mps.buildScript.structure.BuildMacro");
+        }
+      }), SNodeOperations.cast(this.getNodeById("384280137912153762"), "jetbrains.mps.buildScript.structure.BuildVariableReference")).getAvailableElements("")).contains(SNodeOperations.cast(this.getNodeById("384280137912153753"), "jetbrains.mps.buildScript.structure.BuildVariableMacro")));
+    }
+
+    public static class QuotationClass_oxxkhl_a0a0h0a0 {
+      public QuotationClass_oxxkhl_a0a0h0a0() {
       }
 
       public SNode createNode(Object parameter_3) {
@@ -142,8 +198,8 @@ public class MacroTest_Test extends BaseTransformationTest {
       }
     }
 
-    public static class QuotationClass_oxxkhl_a0a0h0a0 {
-      public QuotationClass_oxxkhl_a0a0h0a0() {
+    public static class QuotationClass_oxxkhl_a0a0i0a0 {
+      public QuotationClass_oxxkhl_a0a0i0a0() {
       }
 
       public SNode createNode(Object parameter_3) {

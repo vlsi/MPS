@@ -879,6 +879,117 @@
         </node>
       </node>
     </node>
+    <node role="testMethods" roleId="tp5g.1217501895093" type="tp5g.SimpleNodeTest" typeId="tp5g.1225978065297" id="384280137912212777">
+      <property name="name" nameId="tpck.1169194664001" value="seeImportedVariableInScope" />
+      <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="384280137912212778" />
+      <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="384280137912212779">
+        <node role="statement" roleId="tpee.1068581517665" type="tpe3.AssertTrue" typeId="tpe3.1171981022339" id="384280137912212780">
+          <node role="condition" roleId="tpe3.1171981057159" type="tpee.DotExpression" typeId="tpee.1197027756228" id="384280137912212808">
+            <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="384280137912212797">
+              <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="384280137912212785">
+                <node role="operand" roleId="tpee.1197027771414" type="tp5g.TestNodeReference" typeId="tp5g.1210674524691" id="384280137912212782">
+                  <link role="declaration" roleId="tp5g.1210674534086" targetNodeId="763409143595611364" resolveInfo="build2" />
+                </node>
+                <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="384280137912212791">
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tpcu.3734116213129936182" resolveInfo="getScope" />
+                  <node role="actualArgument" roleId="tpee.1068499141038" type="tp25.ReadConceptReferenceExpression" typeId="tp25.448792706993295611" id="384280137912212792">
+                    <link role="conceptDeclaration" roleId="tp25.448792706993295615" targetNodeId="3ior.5617550519002745375" resolveInfo="BuildMacro" />
+                  </node>
+                  <node role="actualArgument" roleId="tpee.1068499141038" type="tp5g.TestNodeReference" typeId="tp5g.1210674524691" id="384280137912212794">
+                    <link role="declaration" roleId="tp5g.1210674534086" targetNodeId="384280137912153740" resolveInfo="referenceVariable" />
+                  </node>
+                </node>
+              </node>
+              <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="384280137912212803">
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="o8zo.3734116213129862471" resolveInfo="getAvailableElements" />
+                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="384280137912212805">
+                  <property name="value" nameId="tpee.1070475926801" value="" />
+                </node>
+              </node>
+            </node>
+            <node role="operation" roleId="tpee.1197027833540" type="tp2q.ContainsOperation" typeId="tp2q.1172254888721" id="384280137912212817">
+              <node role="argument" roleId="tp2q.1172256416782" type="tp5g.TestNodeReference" typeId="tp5g.1210674524691" id="384280137912212819">
+                <link role="declaration" roleId="tp5g.1210674534086" targetNodeId="384280137912153741" resolveInfo="variable" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="testMethods" roleId="tp5g.1217501895093" type="tp5g.SimpleNodeTest" typeId="tp5g.1225978065297" id="384280137912153769">
+      <property name="name" nameId="tpck.1169194664001" value="seeForwardVariableInScope" />
+      <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="384280137912153770" />
+      <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="384280137912153771">
+        <node role="statement" roleId="tpee.1068581517665" type="tpe3.AssertTrue" typeId="tpe3.1171981022339" id="384280137912153814">
+          <node role="condition" roleId="tpe3.1171981057159" type="tpee.DotExpression" typeId="tpee.1197027756228" id="384280137912153816">
+            <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="384280137912153817">
+              <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="384280137912153818">
+                <node role="operand" roleId="tpee.1197027771414" type="tp5g.TestNodeReference" typeId="tp5g.1210674524691" id="384280137912153819">
+                  <link role="declaration" roleId="tp5g.1210674534086" targetNodeId="384280137912153774" resolveInfo="testVarReferences" />
+                </node>
+                <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="384280137912153820">
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tpcu.3734116213129936182" resolveInfo="getScope" />
+                  <node role="actualArgument" roleId="tpee.1068499141038" type="tp25.ReadConceptReferenceExpression" typeId="tp25.448792706993295611" id="384280137912153821">
+                    <link role="conceptDeclaration" roleId="tp25.448792706993295615" targetNodeId="3ior.5617550519002745375" resolveInfo="BuildMacro" />
+                  </node>
+                  <node role="actualArgument" roleId="tpee.1068499141038" type="tp5g.TestNodeReference" typeId="tp5g.1210674524691" id="384280137912153828">
+                    <link role="declaration" roleId="tp5g.1210674534086" targetNodeId="384280137912153759" resolveInfo="forwardReference" />
+                  </node>
+                </node>
+              </node>
+              <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="384280137912153823">
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="o8zo.3734116213129862471" resolveInfo="getAvailableElements" />
+                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="384280137912153824">
+                  <property name="value" nameId="tpee.1070475926801" value="" />
+                </node>
+              </node>
+            </node>
+            <node role="operation" roleId="tpee.1197027833540" type="tp2q.ContainsOperation" typeId="tp2q.1172254888721" id="384280137912153825">
+              <node role="argument" roleId="tp2q.1172256416782" type="tp5g.TestNodeReference" typeId="tp5g.1210674524691" id="384280137912153826">
+                <link role="declaration" roleId="tp5g.1210674534086" targetNodeId="384280137912153811" resolveInfo="middle" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="testMethods" roleId="tp5g.1217501895093" type="tp5g.SimpleNodeTest" typeId="tp5g.1225978065297" id="384280137912158402">
+      <property name="name" nameId="tpck.1169194664001" value="doNotSeeBackwardVariableInScope" />
+      <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="384280137912158403" />
+      <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="384280137912158404">
+        <node role="statement" roleId="tpee.1068581517665" type="tpe3.AssertFalse" typeId="tpe3.1171983834376" id="384280137912153772">
+          <node role="condition" roleId="tpe3.1171983854940" type="tpee.DotExpression" typeId="tpee.1197027756228" id="384280137912153800">
+            <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="384280137912153790">
+              <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="384280137912153778">
+                <node role="operand" roleId="tpee.1197027771414" type="tp5g.TestNodeReference" typeId="tp5g.1210674524691" id="384280137912153775">
+                  <link role="declaration" roleId="tp5g.1210674534086" targetNodeId="384280137912153774" resolveInfo="testVarReferences" />
+                </node>
+                <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="384280137912153784">
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tpcu.3734116213129936182" resolveInfo="getScope" />
+                  <node role="actualArgument" roleId="tpee.1068499141038" type="tp25.ReadConceptReferenceExpression" typeId="tp25.448792706993295611" id="384280137912153785">
+                    <link role="conceptDeclaration" roleId="tp25.448792706993295615" targetNodeId="3ior.5617550519002745375" resolveInfo="BuildMacro" />
+                  </node>
+                  <node role="actualArgument" roleId="tpee.1068499141038" type="tp5g.TestNodeReference" typeId="tp5g.1210674524691" id="384280137912153787">
+                    <link role="declaration" roleId="tp5g.1210674534086" targetNodeId="384280137912153763" resolveInfo="backwardReference" />
+                  </node>
+                </node>
+              </node>
+              <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="384280137912153795">
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="o8zo.3734116213129862471" resolveInfo="getAvailableElements" />
+                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="384280137912153797">
+                  <property name="value" nameId="tpee.1070475926801" value="" />
+                </node>
+              </node>
+            </node>
+            <node role="operation" roleId="tpee.1197027833540" type="tp2q.ContainsOperation" typeId="tp2q.1172254888721" id="384280137912153809">
+              <node role="argument" roleId="tp2q.1172256416782" type="tp5g.TestNodeReference" typeId="tp5g.1210674524691" id="384280137912153812">
+                <link role="declaration" roleId="tp5g.1210674534086" targetNodeId="384280137912153811" resolveInfo="middle" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
     <node role="nodesToCheck" roleId="tp5g.1217501822150" type="tp5g.TestNode" typeId="tp5g.1216989428737" id="193602448594327347">
       <node role="nodeToCheck" roleId="tp5g.1216989461394" type="3ior.BuildProject" typeId="3ior.5617550519002745363" id="193602448594327348">
         <property name="name" nameId="tpck.1169194664001" value="project" />
@@ -906,6 +1017,12 @@
             <property name="name" nameId="tpck.1169194664001" value="resourcesMacro" />
           </node>
         </node>
+        <node role="macros" roleId="3ior.5617550519002745378" type="3ior.BuildVariableMacro" typeId="3ior.3767587139141066978" id="384280137912153734">
+          <property name="name" nameId="tpck.1169194664001" value="build.number" />
+          <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="384280137912153741">
+            <property name="name" nameId="tpck.1169194664001" value="variable" />
+          </node>
+        </node>
         <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="193602448594330748">
           <property name="name" nameId="tpck.1169194664001" value="build" />
         </node>
@@ -921,11 +1038,60 @@
             <property name="name" nameId="tpck.1169194664001" value="resources2" />
           </node>
         </node>
+        <node role="macros" roleId="3ior.5617550519002745378" type="3ior.BuildVariableMacro" typeId="3ior.3767587139141066978" id="384280137912153736">
+          <property name="name" nameId="tpck.1169194664001" value="MPS" />
+          <node role="value" roleId="3ior.6420586245471595686" type="3ior.BuildSimpleName" typeId="3ior.4903714810883702019" id="384280137912153738">
+            <property name="text" nameId="3ior.4903714810883755350" value="MPS-" />
+          </node>
+          <node role="value" roleId="3ior.6420586245471595686" type="3ior.BuildVariableReference" typeId="3ior.4903714810883702017" id="384280137912153739">
+            <link role="macro" roleId="3ior.4903714810883702018" targetNodeId="384280137912153734" resolveInfo="build.number" />
+            <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="384280137912153740">
+              <property name="name" nameId="tpck.1169194664001" value="referenceVariable" />
+            </node>
+          </node>
+        </node>
         <node role="dependencies" roleId="3ior.5617550519002745381" type="3ior.BuildProjectDependency" typeId="3ior.4993211115183325728" id="763409143595572709">
           <link role="script" roleId="3ior.5617550519002745380" targetNodeId="193602448594327348" resolveInfo="project" />
         </node>
         <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="763409143595611364">
           <property name="name" nameId="tpck.1169194664001" value="build2" />
+        </node>
+      </node>
+    </node>
+    <node role="nodesToCheck" roleId="tp5g.1217501822150" type="tp5g.TestNode" typeId="tp5g.1216989428737" id="384280137912153748">
+      <node role="nodeToCheck" roleId="tp5g.1216989461394" type="3ior.BuildProject" typeId="3ior.5617550519002745363" id="384280137912153749">
+        <property name="name" nameId="tpck.1169194664001" value="testVarReferences" />
+        <node role="layout" roleId="3ior.5617550519002745372" type="3ior.BuildLayout" typeId="3ior.5617550519002745364" id="384280137912153750" />
+        <node role="macros" roleId="3ior.5617550519002745378" type="3ior.BuildVariableMacro" typeId="3ior.3767587139141066978" id="384280137912153751">
+          <property name="name" nameId="tpck.1169194664001" value="forward" />
+          <node role="value" roleId="3ior.6420586245471595686" type="3ior.BuildSimpleName" typeId="3ior.4903714810883702019" id="384280137912153757">
+            <property name="text" nameId="3ior.4903714810883755350" value="blabla" />
+          </node>
+          <node role="value" roleId="3ior.6420586245471595686" type="3ior.BuildVariableReference" typeId="3ior.4903714810883702017" id="384280137912153758">
+            <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="384280137912153759">
+              <property name="name" nameId="tpck.1169194664001" value="forwardReference" />
+            </node>
+          </node>
+        </node>
+        <node role="macros" roleId="3ior.5617550519002745378" type="3ior.BuildVariableMacro" typeId="3ior.3767587139141066978" id="384280137912153753">
+          <property name="name" nameId="tpck.1169194664001" value="middle" />
+          <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="384280137912153811">
+            <property name="name" nameId="tpck.1169194664001" value="middle" />
+          </node>
+        </node>
+        <node role="macros" roleId="3ior.5617550519002745378" type="3ior.BuildVariableMacro" typeId="3ior.3767587139141066978" id="384280137912153755">
+          <property name="name" nameId="tpck.1169194664001" value="backward" />
+          <node role="value" roleId="3ior.6420586245471595686" type="3ior.BuildSimpleName" typeId="3ior.4903714810883702019" id="384280137912153761">
+            <property name="text" nameId="3ior.4903714810883755350" value="blabla" />
+          </node>
+          <node role="value" roleId="3ior.6420586245471595686" type="3ior.BuildVariableReference" typeId="3ior.4903714810883702017" id="384280137912153762">
+            <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="384280137912153763">
+              <property name="name" nameId="tpck.1169194664001" value="backwardReference" />
+            </node>
+          </node>
+        </node>
+        <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="384280137912153774">
+          <property name="name" nameId="tpck.1169194664001" value="testVarReferences" />
         </node>
       </node>
     </node>
