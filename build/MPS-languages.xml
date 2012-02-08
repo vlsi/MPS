@@ -3772,7 +3772,6 @@
         </dependencies>
         <runtime jar="/lib/commons-lang-2.4.jar" />
         <library jar="jetbrains.mps.baseLanguage.jar" />
-        <library jar="/lib/asm.jar" />
         <sources jar="jetbrains.mps.baseLanguage-src.jar" descriptor="baseLanguage.mpl" />
       </module>
     </echoxml>
