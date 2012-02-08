@@ -2960,6 +2960,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     public void modelReplaced(final SModelDescriptor sm) {
       assert SwingUtilities.isEventDispatchThread() : "Model reloaded notification expected in EventDispatchThread";
       if (myNode != null) {
+        assertModelNotDisposed();
         if (myNode.getModel().getSModelReference().equals(sm.getSModelReference())) {
           clearModelDisposedTrace();
           SNodeId oldId = myNode.getSNodeId();
