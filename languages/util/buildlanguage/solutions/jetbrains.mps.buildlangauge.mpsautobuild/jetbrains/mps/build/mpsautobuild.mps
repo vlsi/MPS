@@ -3155,6 +3155,10 @@
           <property name="id" nameId="tps4.1222447189012" value="f618e99a-2641-465c-bb54-31fe76f9e285" />
           <property name="name" nameId="tpck.1169194664001" value="jetbrains.mps.baseLanguage.unitTest.execution" />
         </node>
+        <node role="entry" roleId="tps4.1203617897549" type="tps4.Module" typeId="tps4.1203599702327" id="352677614185415540">
+          <property name="id" nameId="tps4.1222447189012" value="268ae620-360b-4da4-bb01-fad761632e6c" />
+          <property name="name" nameId="tpck.1169194664001" value="jetbrains.mps.ant.execution" />
+        </node>
       </node>
       <node role="entry" roleId="tps4.1203617897549" type="tps4.Folder" typeId="tps4.1203598512427" id="3033860308392477158">
         <node role="title" roleId="tps4.1205340441197" type="tps4.SimpleString" typeId="tps4.1205339044029" id="3033860308392477161">
@@ -3864,6 +3868,9 @@
         </node>
       </node>
       <node role="entry" roleId="tps4.1203617897549" type="tps4.File" typeId="tps4.1203598322527" id="4514696390933853701">
+        <node role="title" roleId="tps4.1205340441197" type="tps4.SimpleString" typeId="tps4.1205339044029" id="2074469845996054234">
+          <property name="name" nameId="tps4.1223641503366" value="mps.executable" />
+        </node>
         <node role="sourcePath" roleId="tps4.1220981955937" type="tps4.Path" typeId="tps4.1220973916698" id="4514696390933853702">
           <node role="macro" roleId="tps4.1220976095387" type="tps4.MacroReference" typeId="tps4.1220976052975" id="4514696390933853703">
             <property name="name" nameId="tps4.1220976068141" value="base_dir" />

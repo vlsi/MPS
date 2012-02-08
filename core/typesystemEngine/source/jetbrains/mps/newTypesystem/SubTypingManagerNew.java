@@ -321,14 +321,14 @@ public class SubTypingManagerNew extends SubtypingManager {
       isSubtype(right, left, isWeak);
   }
 
-  private SNode leastCommonSuperType(List<SNode> types, TypeCheckingContextNew context) {
+  private List<SNode> leastCommonSuperTypes(List<SNode> types, TypeCheckingContextNew context) {
     if (types.size() == 0) {
       return null;
     }
     int newNodesSize = 1;
     while (types.size() > newNodesSize) {
       if (types.size() == 1) {
-        return types.remove(0);
+        return types;
       }
       if (types.size() == 0) {
         return null;
@@ -339,8 +339,7 @@ public class SubTypingManagerNew extends SubtypingManager {
       newNodesSize = newNodes.size();
       types.addAll(newNodes);
     }
-    types = eliminateSuperTypes(types);
-    return LatticeUtil.meetNodes(new THashSet<SNode>(types));
+    return eliminateSuperTypes(types);
   }
 
   //sub isSubType
@@ -363,8 +362,8 @@ public class SubTypingManagerNew extends SubtypingManager {
         }
       });
       types = eliminateSubTypes(types);
-    }
-    return leastCommonSuperType(types, context);
+    }     
+    return LatticeUtil.meetNodes(new THashSet<SNode>(leastCommonSuperTypes(types, context)));
   }
 
   public boolean isComparableByRules(SNode left, SNode right, boolean isWeak) {
@@ -475,8 +474,10 @@ public class SubTypingManagerNew extends SubtypingManager {
   }
 
   public Set<SNode> leastCommonSupertypes(Set<SNode> types, boolean isWeak) {
-    HashSet<SNode> nodes = new HashSet<SNode>();
-    nodes.add(createLCS(new ArrayList<SNode>(types), null));
-    return nodes;
+    if (types.size() <= 1) {
+      return types;
+    }
+    List<SNode> typesList = eliminateSubTypes(types);
+    return new HashSet<SNode>(leastCommonSuperTypes(typesList, null));
   }
 }

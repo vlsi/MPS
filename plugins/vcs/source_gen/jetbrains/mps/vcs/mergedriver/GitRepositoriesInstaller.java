@@ -21,7 +21,7 @@ import java.io.IOException;
 
 /*package*/ class GitRepositoriesInstaller extends AbstractInstaller {
   private static final String ATTRIBUTES_FILE = ".gitattributes";
-  private static final List<String> PATTERNS = ListSequence.fromListAndArray(new ArrayList<String>(), "*.mps", FileType.TRACE_CACHE.getSuffix(), FileType.JAVA_DEPENDENCIES.getSuffix(), FileType.GENERATOR_DEPENDENCIES.getSuffix());
+  private static final List<String> PATTERNS = ListSequence.fromListAndArray(new ArrayList<String>(), "*" + FileType.MODEL.getSuffix(), "*" + FileType.LANGUAGE.getSuffix(), "*" + FileType.SOLUTION.getSuffix(), "*" + FileType.DEVKIT.getSuffix(), "*" + FileType.PROJECT.getSuffix(), FileType.TRACE_CACHE.getSuffix(), FileType.JAVA_DEPENDENCIES.getSuffix(), FileType.GENERATOR_DEPENDENCIES.getSuffix());
 
   public GitRepositoriesInstaller(Project project) {
     super(project);

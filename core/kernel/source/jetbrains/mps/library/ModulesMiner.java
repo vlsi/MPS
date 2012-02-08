@@ -18,14 +18,10 @@ package jetbrains.mps.library;
 import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.*;
-import jetbrains.mps.project.persistence.DeploymentDescriptorPersistence;
-import jetbrains.mps.project.persistence.DevkitDescriptorPersistence;
-import jetbrains.mps.project.persistence.LanguageDescriptorPersistence;
-import jetbrains.mps.project.persistence.SolutionDescriptorPersistence;
+import jetbrains.mps.project.persistence.*;
 import jetbrains.mps.project.structure.model.ModelRoot;
 import jetbrains.mps.project.structure.model.RootReference;
-import jetbrains.mps.project.structure.modules.DeploymentDescriptor;
-import jetbrains.mps.project.structure.modules.ModuleDescriptor;
+import jetbrains.mps.project.structure.modules.*;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
@@ -180,12 +176,25 @@ public class ModulesMiner {
 
         String extension = getModuleExtension(file.getName());
         Class<? extends IModule> cls = myExtensionsToModuleTypes.get(extension);
-        if (cls == Language.class) {
-          return LanguageDescriptorPersistence.loadLanguageDescriptor(file);
-        } else if (cls == Solution.class) {
-          return SolutionDescriptorPersistence.loadSolutionDescriptor(file);
-        } else {
-          return DevkitDescriptorPersistence.loadDevKitDescriptor(file);
+        try {
+          if (cls == Language.class) {
+            return LanguageDescriptorPersistence.loadLanguageDescriptor(file);
+          } else if (cls == Solution.class) {
+            return SolutionDescriptorPersistence.loadSolutionDescriptor(file);
+          } else {
+            return DevkitDescriptorPersistence.loadDevKitDescriptor(file);
+          }
+        } catch (ModuleReadException e) {
+          ModuleDescriptor md;
+          if (cls == Language.class) {
+            md = new LanguageDescriptor();
+          } else if (cls == Solution.class) {
+            md = new SolutionDescriptor();
+          } else {
+            md = new DevkitDescriptor();
+          }
+          ModuleDescriptorPersistence.loadBrokenModule(md, file, e);
+          return md;
         }
       }
     } catch (Exception t) {

@@ -4,11 +4,10 @@ package jetbrains.mps.baseLanguage.constraints;
 
 import jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor;
 import jetbrains.mps.smodel.SNodePointer;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.SNode;
 import org.jetbrains.annotations.Nullable;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.runtime.CheckingNodeContext;
-import jetbrains.mps.smodel.constraints.CanBeAChildContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -26,8 +25,8 @@ public class AnnotationInstance_Constraints extends BaseConstraintsDescriptor {
   }
 
   @Override
-  public boolean canBeChild(final IOperationContext operationContext, SNode node, SNode node1, SNode node2, @Nullable final CheckingNodeContext checkingNodeContext) {
-    boolean result = static_canBeAChild(operationContext, new CanBeAChildContext(node, node1, node2));
+  public boolean canBeChild(@Nullable SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext, @Nullable final CheckingNodeContext checkingNodeContext) {
+    boolean result = static_canBeAChild(node, parentNode, link, childConcept, operationContext);
 
     if (!(result) && checkingNodeContext != null) {
       checkingNodeContext.setBreakingNode(canBeChildBreakingPoint);
@@ -36,10 +35,10 @@ public class AnnotationInstance_Constraints extends BaseConstraintsDescriptor {
     return result;
   }
 
-  public static boolean static_canBeAChild(final IOperationContext operationContext, final CanBeAChildContext _context) {
-    if (SLinkOperations.getTarget(_context.getLink(), "target", false) == SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.AnnotationInstance")) {
+  public static boolean static_canBeAChild(SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext) {
+    if (SLinkOperations.getTarget(link, "target", false) == SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.AnnotationInstance")) {
       return true;
     }
-    return (SNodeOperations.getAncestor(_context.getParentNode(), "jetbrains.mps.baseLanguage.structure.AnnotationInstance", true, false) != null);
+    return (SNodeOperations.getAncestor(parentNode, "jetbrains.mps.baseLanguage.structure.AnnotationInstance", true, false) != null);
   }
 }

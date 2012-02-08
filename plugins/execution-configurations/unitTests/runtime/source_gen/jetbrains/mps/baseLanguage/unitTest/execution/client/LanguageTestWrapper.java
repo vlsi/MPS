@@ -13,7 +13,6 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
-import jetbrains.mps.baseLanguage.unitTest.behavior.ITestable_Behavior;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import java.util.ArrayList;
 import com.intellij.openapi.application.PathMacros;
@@ -80,7 +79,7 @@ public class LanguageTestWrapper extends AbstractTestWrapper<SNode> {
     if (node == null) {
       return super.getTestRunParameters();
     }
-    if (ITestable_Behavior.call_isMpsStartRequired_3310779261129403089(node)) {
+    if (((Boolean) BehaviorManager.getInstance().invoke(Boolean.class, SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.unitTest.structure.ITestable"), "virtual_isMpsStartRequired_3310779261129403089", new Class[]{SNode.class}))) {
       return MultiTuple.<String,List<String>,List<String>>from("jetbrains.mps.baseLanguage.unitTest.execution.server.TransformationTestRunner", ListSequence.fromList(ListSequence.fromListAndArray(new ArrayList<String>(), "-Xmx1024m")).union(Sequence.fromIterable(ListSequence.fromCollection(PathMacros.getInstance().getUserMacroNames()).select(new _FunctionTypes._return_P1_E0<String, String>() {
         public String invoke(String key) {
           return "-D" + "path.macro." + key + "=" + PathMacros.getInstance().getValue(key);

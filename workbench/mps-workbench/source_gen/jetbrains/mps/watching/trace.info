@@ -786,7 +786,7 @@
     <nodeInfo nodeId="2467186091877008078" fileName="ModelChangesWatcher.java" startLine="65" startPosition="62" endLine="66" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2467186091877008080" fileName="ModelChangesWatcher.java" startLine="69" startPosition="62" endLine="70" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2467186091877008082" fileName="ModelChangesWatcher.java" startLine="72" startPosition="4" endLine="73" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myMakeService" />
-    <nodeInfo nodeId="2467186091877008115" fileName="ModelChangesWatcher.java" startLine="75" startPosition="116" endLine="76" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2467186091877008115" fileName="ModelChangesWatcher.java" startLine="75" startPosition="147" endLine="76" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4707157387247362833" fileName="ModelChangesWatcher.java" startLine="76" startPosition="16" endLine="77" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4707157387247362837" fileName="ModelChangesWatcher.java" startLine="77" startPosition="46" endLine="78" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4707157387247363470" fileName="ModelChangesWatcher.java" startLine="82" startPosition="40" endLine="83" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -947,7 +947,7 @@
     <nodeInfo nodeId="4707157387247362760" fileName="ModelChangesWatcher.java" startLine="93" startPosition="44" endLine="107" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.SynchronizedStatement" />
     <nodeInfo nodeId="4707157387247362955" fileName="ModelChangesWatcher.java" startLine="179" startPosition="56" endLine="195" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="4707157387247363314" fileName="ModelChangesWatcher.java" startLine="301" startPosition="9" endLine="317" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="4707157387247362819" fileName="ModelChangesWatcher.java" startLine="74" startPosition="0" endLine="91" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ModelChangesWatcher#(Lcom/intellij/util/messages/MessageBus;Lcom/intellij/openapi/project/ProjectManager;Lcom/intellij/openapi/vfs/VirtualFileManager;)V" />
+    <nodeInfo nodeId="4707157387247362819" fileName="ModelChangesWatcher.java" startLine="74" startPosition="0" endLine="91" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ModelChangesWatcher#(Ljetbrains/mps/library/LibraryManager;Lcom/intellij/util/messages/MessageBus;Lcom/intellij/openapi/project/ProjectManager;Lcom/intellij/openapi/vfs/VirtualFileManager;)V" />
     <nodeInfo nodeId="4707157387247363175" fileName="ModelChangesWatcher.java" startLine="257" startPosition="60" endLine="277" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="4707157387247362756" fileName="ModelChangesWatcher.java" startLine="92" startPosition="0" endLine="114" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="tryToResumeTasksProcessing#()V" />
     <nodeInfo nodeId="4707157387247363300" fileName="ModelChangesWatcher.java" startLine="297" startPosition="29" endLine="321" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.SynchronizedStatement" />
@@ -1112,7 +1112,7 @@
       <varInfo nodeId="4707157387247363333" varName="file" />
       <varInfo nodeId="4707157387247363320" varName="path" />
     </scopeInfo>
-    <scopeInfo nodeId="4707157387247362828" fileName="ModelChangesWatcher.java" startLine="75" startPosition="116" endLine="90" endPosition="22" />
+    <scopeInfo nodeId="4707157387247362828" fileName="ModelChangesWatcher.java" startLine="75" startPosition="147" endLine="90" endPosition="22" />
     <scopeInfo nodeId="4707157387247362955" fileName="ModelChangesWatcher.java" startLine="179" startPosition="56" endLine="195" endPosition="5">
       <varInfo nodeId="4707157387247362959" varName="p" />
     </scopeInfo>
@@ -1121,6 +1121,7 @@
     </scopeInfo>
     <scopeInfo nodeId="4707157387247362819" fileName="ModelChangesWatcher.java" startLine="74" startPosition="0" endLine="91" endPosition="3">
       <varInfo nodeId="4707157387247362822" varName="bus" />
+      <varInfo nodeId="3936601531185112034" varName="libraryManager" />
       <varInfo nodeId="4707157387247362824" varName="projectManager" />
       <varInfo nodeId="4707157387247362826" varName="virtualFileManager" />
     </scopeInfo>
