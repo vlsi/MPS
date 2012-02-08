@@ -19,10 +19,11 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.ide.editorTabs.EditorTabDescriptor;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.plugins.projectplugins.ProjectPluginManager;
-import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
+import jetbrains.mps.util.Computable;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
+import jetbrains.mps.vcs.ConflictingModelsWarnings;
 import jetbrains.mps.vcs.changesmanager.CurrentDifference;
 import java.util.List;
 import jetbrains.mps.vcs.diff.changes.ModelChange;
@@ -33,6 +34,7 @@ import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import jetbrains.mps.vcs.changesmanager.BaseVersionUtil;
 import org.jetbrains.annotations.Nullable;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.vcs.diff.ChangeSet;
 import jetbrains.mps.vcs.changesmanager.CurrentDifferenceAdapter;
@@ -91,14 +93,16 @@ public class NodeFileStatusMapping extends AbstractProjectComponent {
   }
 
   private boolean calcStatus(@NotNull final SNodePointer root) {
-    final Wrappers._T<FileStatus> status = new Wrappers._T<FileStatus>(null);
-    ModelAccess.instance().runReadAction(new Runnable() {
-      public void run() {
+    FileStatus status = ModelAccess.instance().runReadAction(new Computable<FileStatus>() {
+      public FileStatus compute() {
         SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(root.getModelReference());
         if (modelDescriptor instanceof EditableSModelDescriptor) {
           EditableSModelDescriptor emd = (EditableSModelDescriptor) modelDescriptor;
+          if (ConflictingModelsWarnings.isModelOrModuleConflicting(emd, myProject)) {
+            return FileStatus.MERGED_WITH_CONFLICTS;
+          }
           CurrentDifference diff = myRegistry.getCurrentDifference(emd);
-          List<ModelChange> modelChanges = check_onkh7z_a0c0b0a1a4(diff.getChangeSet());
+          List<ModelChange> modelChanges = check_onkh7z_a0d0b0a0a0a0e(diff.getChangeSet());
           final SNodeId rootId = root.getNodeId();
           List<ModelChange> rootChanges = ListSequence.fromList(modelChanges).where(new IWhereFilter<ModelChange>() {
             public boolean accept(ModelChange ch) {
@@ -107,26 +111,24 @@ public class NodeFileStatusMapping extends AbstractProjectComponent {
           }).toListSequence();
           if (ListSequence.fromList(rootChanges).count() != 0) {
             if (ListSequence.fromList(rootChanges).first() instanceof AddRootChange) {
-              status.value = FileStatus.ADDED;
               VirtualFile vf = VirtualFileUtils.getVirtualFile(emd.getModelFile());
               if (vf != null) {
                 FileStatus modelStatus = FileStatusManager.getInstance(myProject).getStatus(vf);
                 if (BaseVersionUtil.isAddedFileStatus(modelStatus)) {
-                  status.value = modelStatus;
+                  return modelStatus;
                 }
               }
-            } else {
-              status.value = FileStatus.MODIFIED;
+              return FileStatus.ADDED;
             }
-          } else {
-            status.value = FileStatus.NOT_CHANGED;
+            return FileStatus.MODIFIED;
           }
         }
+        return FileStatus.NOT_CHANGED;
       }
     });
     synchronized (myFileStatusMap) {
-      if (MapSequence.fromMap(myFileStatusMap).get(root) != status.value) {
-        MapSequence.fromMap(myFileStatusMap).put(root, status.value);
+      if (MapSequence.fromMap(myFileStatusMap).get(root) != status) {
+        MapSequence.fromMap(myFileStatusMap).put(root, status);
         return true;
       } else {
         return false;
@@ -169,7 +171,7 @@ public class NodeFileStatusMapping extends AbstractProjectComponent {
     }
   }
 
-  private static List<ModelChange> check_onkh7z_a0c0b0a1a4(ChangeSet checkedDotOperand) {
+  private static List<ModelChange> check_onkh7z_a0d0b0a0a0a0e(ChangeSet checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModelChanges();
     }

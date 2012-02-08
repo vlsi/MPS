@@ -507,4 +507,13 @@ public class FileUtil {
     urlString = urlString.replace('/', File.separatorChar);
     return URLUtil.unescapePercentSequences(urlString);
   }
+
+  @NotNull
+  public static String getNameWithoutExtension(@NotNull String name) {
+    int i = name.lastIndexOf('.');
+    if (i != -1) {
+      name = name.substring(0, i);
+    }
+    return name;
+  }
 }

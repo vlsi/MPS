@@ -21,6 +21,7 @@ import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.vcs.diff.ChangeSet;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.ide.ThreadUtils;
@@ -28,7 +29,6 @@ import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.vcs.diff.changes.AddRootChange;
 import jetbrains.mps.vcs.diff.ui.common.ChangeEditorMessageFactory;
 import java.util.ArrayList;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.nodeEditor.NodeHighlightManager;
@@ -55,7 +55,7 @@ public class EditorHighlighter implements EditorMessageOwner {
               if (myDisposed) {
                 return;
               }
-              SNode editedNode = editorComponent.getEditedNode();
+              final SNode editedNode = editorComponent.getEditedNode();
               if (editedNode == null || editedNode.isDisposed() || !(editedNode.isRegistered())) {
                 return;
               }
@@ -73,7 +73,11 @@ public class EditorHighlighter implements EditorMessageOwner {
 
                 ChangeSet changeSet = myCurrentDifference.getChangeSet();
                 if (changeSet != null) {
-                  ListSequence.fromList(changeSet.getModelChanges()).visitAll(new IVisitor<ModelChange>() {
+                  ListSequence.fromList(changeSet.getModelChanges()).where(new IWhereFilter<ModelChange>() {
+                    public boolean accept(ModelChange c) {
+                      return editedNode.getSNodeId().equals(c.getRootId());
+                    }
+                  }).visitAll(new IVisitor<ModelChange>() {
                     public void visit(ModelChange c) {
                       createMessages(c);
                     }

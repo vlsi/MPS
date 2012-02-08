@@ -49,18 +49,18 @@ public class MergeDriverMain {
     configureLog4j();
     String systemPath = new File(System.getProperty(LOG_PROPERTY)).getParentFile().getParentFile().getAbsolutePath();
     System.setProperty("idea.system.path", systemPath);
-    AbstractFileMerger merger = selectMerger(baseFile, currentFile, otherFile);
+    AbstractContentMerger merger = selectMerger(baseFile, currentFile, otherFile);
     if (merger == null) {
       merger = (SVN_OPTION.equals(args[0]) ?
         new TextMerger() :
         new SimpleMerger()
       );
     }
-    System.exit(merger.mergeFiles(baseFile, currentFile, otherFile, overwrite, conflictStart, conflictEnd, conflictSeparator));
+    System.exit(FileMerger.mergeFiles(merger, baseFile, currentFile, otherFile, conflictStart, conflictEnd, conflictSeparator, overwrite));
   }
 
   @Nullable
-  private static AbstractFileMerger selectMerger(File... files) {
+  private static AbstractContentMerger selectMerger(File... files) {
     FileType fileType = Sequence.fromIterable(Sequence.fromArray(files)).select(new ISelector<File, FileType>() {
       public FileType select(File f) {
         return FileType.get(f);
@@ -75,7 +75,12 @@ public class MergeDriverMain {
     }
     switch (fileType) {
       case MODEL:
-        return new ModelMerger();
+        return new CompositeMerger(new ModelMerger(), new SimpleMerger());
+      case LANGUAGE:
+      case SOLUTION:
+      case DEVKIT:
+      case PROJECT:
+        return new CompositeMerger(new TextMerger(), new SimpleMerger());
       case TRACE_CACHE:
       case GENERATOR_DEPENDENCIES:
         return new EmptyMerger();

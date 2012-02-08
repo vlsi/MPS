@@ -28,6 +28,7 @@ import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import com.intellij.openapi.vcs.ProjectLevelVcsManager;
 import com.intellij.openapi.vcs.FileStatusManager;
+import jetbrains.mps.vcs.ConflictingModelsWarnings;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
@@ -154,6 +155,9 @@ public class ChangesTracking {
       return;
     }
     FileStatus status = FileStatusManager.getInstance(myProject).getStatus(modelVFile);
+    if (ConflictingModelsWarnings.isModelOrModuleConflicting(myModelDescriptor, myProject)) {
+      status = FileStatus.MERGED_WITH_CONFLICTS;
+    }
 
     if (myDifference.getChangeSet() != null && myDifference.getChangeSet().getNewModel() != myModelDescriptor.getSModel()) {
       force = true;
@@ -168,11 +172,11 @@ public class ChangesTracking {
       return;
     }
     final Wrappers._T<SModel> baseVersionModel = new Wrappers._T<SModel>(null);
-    if (BaseVersionUtil.isAddedFileStatus(status)) {
+    if (BaseVersionUtil.isAddedFileStatus(status) || ConflictingModelsWarnings.isModelOrModuleConflicting(myModelDescriptor, myProject)) {
       baseVersionModel.value = new SModel(myModelDescriptor.getSModelReference());
     } else {
       String content = BaseVersionUtil.getBaseVersionContent(modelVFile, myProject);
-      if (content == null && status != FileStatus.NOT_CHANGED && !(BaseVersionUtil.isAddedFileStatus(status))) {
+      if (content == null && status != FileStatus.NOT_CHANGED) {
         if (log.isErrorEnabled()) {
           log.error("Base version content is null while file status is " + status);
         }

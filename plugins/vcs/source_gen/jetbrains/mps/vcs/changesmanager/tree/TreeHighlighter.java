@@ -30,9 +30,10 @@ import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.vcs.diff.changes.AddRootChange;
-import jetbrains.mps.vcs.changesmanager.BaseVersionUtil;
-import org.jetbrains.annotations.Nullable;
 import com.intellij.openapi.project.Project;
+import jetbrains.mps.vcs.changesmanager.BaseVersionUtil;
+import jetbrains.mps.vcs.ConflictingModelsWarnings;
+import org.jetbrains.annotations.Nullable;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import jetbrains.mps.ide.ui.MPSTreeNodeListener;
@@ -219,9 +220,12 @@ public class TreeHighlighter implements TreeMessageOwner {
     switch (modelChange.getType()) {
       case ADD:
         if (modelChange instanceof AddRootChange) {
-          FileStatus modelStatus = getModelFileStatus(modelDescriptor, myRegistry.getProject());
+          Project project = myRegistry.getProject();
+          FileStatus modelStatus = getModelFileStatus(modelDescriptor, project);
           if (BaseVersionUtil.isAddedFileStatus(modelStatus)) {
             return getMessage(modelStatus);
+          } else if (ConflictingModelsWarnings.isModelOrModuleConflicting(modelDescriptor, project)) {
+            return getMessage(FileStatus.MERGED_WITH_CONFLICTS);
           }
         }
         return getMessage(FileStatus.ADDED);

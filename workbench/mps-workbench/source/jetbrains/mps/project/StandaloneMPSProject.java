@@ -59,7 +59,8 @@ import java.util.Set;
       id = "other",
       file = "$PROJECT_FILE$"
     )
-  }
+  },
+  reloadable = false
 )
 public class StandaloneMPSProject extends MPSProject implements PersistentStateComponent<Element> {
 
