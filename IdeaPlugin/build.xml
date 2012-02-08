@@ -37,29 +37,6 @@
     </path>
     <taskdef name="javac2" classname="com.intellij.ant.Javac2" classpathref="javac2.classpath"/>
 
-    <path id="mps.core.libraries">
-        <fileset dir="${ideaPath}/lib">
-            <include name="org.eclipse.jdt.core_3.5.2.v_981_R35x.jar"/>
-            <include name="guava-r09.jar"/>
-            <include name="jdom.jar"/>
-            <include name="log4j.jar"/>
-            <include name="trove4j.jar"/>
-            <include name="xstream.jar"/>
-            <include name="annotations.jar"/>
-            <include name="commons-lang-2.4.jar"/>
-            <include name="commons-logging-1.1.1.jar"/>
-        </fileset>
-        <fileset dir="${base_dir}/lib">
-            <include name="asm.jar"/>
-            <include name="diffutils-1.2.1.jar"/>
-        </fileset>
-        <fileset dir="${dist.dir}/lib">
-            <include name="mps-closures.jar"/>
-            <include name="mps-collections.jar"/>
-            <include name="mps-tuples.jar"/>
-        </fileset>
-    </path>
-
     <path id="ant.libraries">
         <fileset dir="${ideaPath}/lib/ant/lib">
             <include name="*.jar"/>
