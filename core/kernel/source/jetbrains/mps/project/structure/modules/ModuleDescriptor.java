@@ -35,6 +35,8 @@ public class ModuleDescriptor {
   private List<ModelRoot> myStubModels;
   private List<String> mySourcePaths;
   private DeploymentDescriptor myDeploymentDescriptor;
+  
+  private Throwable myLoadException;
 
   public ModuleDescriptor() {
     myModelRoots = new ArrayList<jetbrains.mps.project.structure.model.ModelRoot>();
@@ -131,5 +133,14 @@ public class ModuleDescriptor {
       RefUpdateUtil.updateModuleRefs(myUsedDevkits),
       RefUpdateUtil.updateDependencies(myDependencies)
     );
+  }
+
+  public Throwable getLoadException() {
+    return myLoadException;
+  }
+
+  public void setLoadException(Throwable loadException) {
+    myLoadException = loadException;
+
   }
 }
