@@ -36,224 +36,225 @@ import java.util.List;
 import java.util.Set;
 
 class ButtonEditorTab {
-  private ButtonTabsComponent myTabComponent;
-  private NodeChangeCallback myCallback;
-  private int myIndex;
-  private EditorTabDescriptor myDescriptor;
-  private SNodePointer myBaseNode;
-  private TabColorProvider myTabColorProvider;
-  private SelectTabAction mySelectTabAction;
+    private ButtonTabsComponent myTabComponent;
+    private NodeChangeCallback myCallback;
+    private int myIndex;
+    private EditorTabDescriptor myDescriptor;
+    private SNodePointer myBaseNode;
+    private TabColorProvider myTabColorProvider;
+    private SelectTabAction mySelectTabAction;
 
-  public ButtonEditorTab(ButtonTabsComponent tabComponent, NodeChangeCallback callback, int index, EditorTabDescriptor descriptor, SNodePointer baseNode, TabColorProvider tabColorProvider, JComponent editor) {
-    myTabComponent = tabComponent;
-    myCallback = callback;
-    myIndex = index;
-    myDescriptor = descriptor;
-    myBaseNode = baseNode;
-    myTabColorProvider = tabColorProvider;
-    mySelectTabAction = createAction(editor);
-  }
-
-  public EditorTabDescriptor getDescriptor() {
-    return myDescriptor;
-  }
-
-  private SelectTabAction createAction(JComponent shortcutComponent) {
-    SelectTabAction action = new SelectTabAction();
-
-    if (myDescriptor.getShortcutChar() != null) {
-      KeyStroke keystroke = KeyStroke.getKeyStroke("alt shift " + myDescriptor.getShortcutChar());
-      KeyboardShortcut shortcut = new KeyboardShortcut(keystroke, null);
-      action.registerCustomShortcutSet(new CustomShortcutSet(shortcut), shortcutComponent);
+    public ButtonEditorTab(ButtonTabsComponent tabComponent, NodeChangeCallback callback, int index, EditorTabDescriptor descriptor, SNodePointer baseNode, TabColorProvider tabColorProvider, JComponent editor) {
+        myTabComponent = tabComponent;
+        myCallback = callback;
+        myIndex = index;
+        myDescriptor = descriptor;
+        myBaseNode = baseNode;
+        myTabColorProvider = tabColorProvider;
+        mySelectTabAction = createAction(editor);
     }
 
-    return action;
-  }
-
-  public ToggleAction getSelectTabAction() {
-    return mySelectTabAction;
-  }
-
-  private DefaultActionGroup getGotoGroup() {
-    List<SNode> nodes = myDescriptor.getNodes(myBaseNode.getNode());
-    if (nodes.isEmpty()) return null;
-
-    DefaultActionGroup result = new DefaultActionGroup();
-    Set<SNode> added = new HashSet<SNode>();
-    for (final SNode node : nodes) {
-      SNode root = node.getContainingRoot();
-      if (added.contains(root)) continue;
-      added.add(root);
-      result.add(new NavigateNodeAction(node, getActionName(node)));
-    }
-    return result;
-  }
-
-  private String getActionName(SNode node) {
-    String rootName = node.getContainingRoot().getName();
-    if (rootName != null) {
-      rootName = rootName.replaceFirst("_", "__");
-    }
-    return rootName != null ? rootName : "<no name>";
-  }
-
-  private class NavigateNodeAction extends AnAction {
-    private final SNode myNode;
-
-    public NavigateNodeAction(SNode node, String name) {
-      super(name, "", IconManager.getIconFor(node.getContainingRoot()));
-      myNode = node;
+    public EditorTabDescriptor getDescriptor() {
+        return myDescriptor;
     }
 
-    public void actionPerformed(AnActionEvent e) {
-      ModelAccess.instance().runReadAction(new Runnable() {
-        public void run() {
-          myCallback.changeNode(myNode);
+    private SelectTabAction createAction(JComponent shortcutComponent) {
+        SelectTabAction action = new SelectTabAction();
+
+        if (myDescriptor.getShortcutChar() != null) {
+            KeyStroke keystroke = KeyStroke.getKeyStroke("alt shift " + myDescriptor.getShortcutChar());
+            KeyboardShortcut shortcut = new KeyboardShortcut(keystroke, null);
+            action.registerCustomShortcutSet(new CustomShortcutSet(shortcut), shortcutComponent);
         }
-      });
-    }
-  }
 
-  @Nullable
-  private Color getButtonForegroundColor() {
-    if (myTabColorProvider != null) {
-      List<SNodePointer> nodePointers = ModelAccess.instance().runReadAction(new Computable<List<SNodePointer>>() {
-        @Override
-        public List<SNodePointer> compute() {
-          List<SNode> nodes = myDescriptor.getNodes(myBaseNode.getNode());
-          List<SNodePointer> nodePointers = new ArrayList<SNodePointer>();
-          for (SNode n : nodes) {
-            nodePointers.add(new SNodePointer(n));
-          }
-          return nodePointers;
+        return action;
+    }
+
+    public ToggleAction getSelectTabAction() {
+        return mySelectTabAction;
+    }
+
+    private DefaultActionGroup getGotoGroup() {
+        List<SNode> nodes = myDescriptor.getNodes(myBaseNode.getNode());
+        if (nodes.isEmpty()) return null;
+
+        DefaultActionGroup result = new DefaultActionGroup();
+        Set<SNode> added = new HashSet<SNode>();
+        for (final SNode node : nodes) {
+            SNode root = node.getContainingRoot();
+            if (added.contains(root)) continue;
+            added.add(root);
+            result.add(new NavigateNodeAction(node, getActionName(node)));
         }
-      });
-
-      Color aspectColor = myTabColorProvider.getAspectColor(nodePointers);
-      if (aspectColor != null) {
-        return aspectColor;
-      }
-    }
-    return UIUtil.getLabelForeground();
-  }
-
-  private Icon createCompositeTabIcon() {
-    Font font = UIUtil.getLabelFont();
-    FontMetrics fontMetrics = myTabComponent.getComponent().getFontMetrics(font);
-    Icon icon = myDescriptor.getIcon();
-
-    Dimension size = new Dimension(ActionToolbar.DEFAULT_MINIMUM_BUTTON_SIZE);
-    size.width -= 4;
-    size.height -= 4;
-    if (icon != null && (icon.getIconWidth() > size.width && icon.getIconHeight() > size.height)) {
-      size.width = icon.getIconWidth();
-      size.height = icon.getIconHeight();
+        return result;
     }
 
-    String text = myDescriptor.getTitle();
-    int textWidth = fontMetrics.stringWidth(text);
-    int textHeight = fontMetrics.getMaxAscent() + fontMetrics.getMaxDescent();
-
-    size.width += 2 + textWidth;
-    BufferedImage image = new BufferedImage(size.width, size.height, BufferedImage.TYPE_INT_ARGB);
-    Graphics g = image.getGraphics();
-
-    int textX = 0;
-    int textY = (size.height - textHeight) / 2 + fontMetrics.getMaxAscent();
-
-    if (icon != null) {
-      int x = (size.width - icon.getIconWidth() - textWidth) / 2;
-      int y = (size.height - icon.getIconHeight()) / 2;
-      icon.paintIcon(null, g, x, y);
-      textX = x + icon.getIconWidth() + 2;
-    }
-
-    UIUtil.applyRenderingHints(g);
-    Color color = getButtonForegroundColor();
-    if (color != null) {
-      g.setColor(color);
-    }
-    g.setFont(font);
-    g.drawString(text, textX, textY);
-
-    Character shortcutChar = myDescriptor.getShortcutChar();
-    if (shortcutChar != null) {
-      final int mnemonicIndex = text.indexOf(shortcutChar);
-      if (mnemonicIndex >= 0) {
-        final char[] chars = text.toCharArray();
-        final int startX = textX + fontMetrics.charsWidth(chars, 0, mnemonicIndex);
-        final int startY = textY + fontMetrics.getMaxDescent();
-        final int endX = startX + fontMetrics.charWidth(text.charAt(mnemonicIndex));
-        UIUtil.drawLine(g, startX, startY, endX, startY);
-      }
-    }
-
-    return new ImageIcon(image);
-  }
-
-  public void updateIcon() {
-    mySelectTabAction.myIcon = createCompositeTabIcon();
-  }
-
-  private class SelectTabAction extends ToggleAction {
-    private Icon myIcon;
-    
-    public SelectTabAction() {
-      super("", "", createCompositeTabIcon());
-      myIcon = createCompositeTabIcon();
-    }
-
-    public boolean displayTextInToolbar() {
-      return true;
-    }
-
-    public boolean isSelected(AnActionEvent e) {
-      return ModelAccess.instance().runReadAction(new Computable<Boolean>() {
-        public Boolean compute() {
-          return myTabComponent.isCurrent(ButtonEditorTab.this);
+    private String getActionName(SNode node) {
+        String rootName = node.getContainingRoot().getName();
+        if (rootName != null) {
+            rootName = rootName.replaceFirst("_", "__");
         }
-      });
+        return rootName != null ? rootName : "<no name>";
     }
 
-    @Override
-    public void update(AnActionEvent e) {
-      super.update(e);
-      e.getPresentation().setIcon(myIcon);
+    private class NavigateNodeAction extends AnAction {
+        private final SNode myNode;
+
+        public NavigateNodeAction(SNode node, String name) {
+            super(name, "", IconManager.getIconFor(node.getContainingRoot()));
+            myNode = node;
+        }
+
+        public void actionPerformed(AnActionEvent e) {
+            ModelAccess.instance().runReadAction(new Runnable() {
+                public void run() {
+                    myCallback.changeNode(myNode);
+                }
+            });
+        }
     }
 
-    public void setSelected(AnActionEvent e, boolean state) {
-      ModelAccess.instance().runReadAction(new Runnable() {
-        public void run() {
-          List<SNode> nodes = myDescriptor.getNodes(myBaseNode.getNode());
-          if (nodes.size() == 1) {
-            myCallback.changeNode(nodes.get(0).getContainingRoot());
-            return;
-          }
+    @Nullable
+    private Color getButtonForegroundColor() {
+        if (myTabColorProvider != null) {
+            List<SNodePointer> nodePointers = ModelAccess.instance().runReadAction(new Computable<List<SNodePointer>>() {
+                @Override
+                public List<SNodePointer> compute() {
+                    List<SNode> nodes = myDescriptor.getNodes(myBaseNode.getNode());
+                    List<SNodePointer> nodePointers = new ArrayList<SNodePointer>();
+                    for (SNode n : nodes) {
+                        nodePointers.add(new SNodePointer(n));
+                    }
+                    return nodePointers;
+                }
+            });
 
-          Component component = myTabComponent.getComponentForTabIndex(myIndex);
-
-          DefaultActionGroup group = getGotoGroup();
-          if (group == null){
-            //this is normal since now we can't guarantee button deletion (e.g. remove reduction rule from mapping configuration when it's the last usage of a concept in generator)
-            group  = new DefaultActionGroup();
-          }
-          ActionPopupMenu popup = ActionManager.getInstance().createActionPopupMenu(ActionPlaces.UNKNOWN, group);
-          JPopupMenu popupMenu = popup.getComponent();
-          popupMenu.show(component, 0, 0);
-
-          if (myTabColorProvider != null && popupMenu.getComponents().length == nodes.size()) {
-            for (int i = 0; i < nodes.size(); i++) {
-              SNode node = nodes.get(i);
-              Component menuItem = popupMenu.getComponents()[i];
-              Color color = myTabColorProvider.getNodeColor(node);
-
-              if (color != null) {
-                menuItem.setForeground(color);
-              }
+            Color aspectColor = myTabColorProvider.getAspectColor(nodePointers);
+            if (aspectColor != null) {
+                return aspectColor;
             }
-          }
         }
-      });
+        return UIUtil.getLabelForeground();
     }
-  }
+
+    private Icon createCompositeTabIcon() {
+        Font font = UIUtil.getLabelFont();
+        FontMetrics fontMetrics = myTabComponent.getComponent().getFontMetrics(font);
+        Icon icon = myDescriptor.getIcon();
+
+        Dimension size = new Dimension(ActionToolbar.DEFAULT_MINIMUM_BUTTON_SIZE);
+        size.width -= 4;
+        size.height -= 4;
+        if (icon != null && (icon.getIconWidth() > size.width && icon.getIconHeight() > size.height)) {
+            size.width = icon.getIconWidth();
+            size.height = icon.getIconHeight();
+        }
+
+        String text = myDescriptor.getTitle();
+        int textWidth = fontMetrics.stringWidth(text);
+        int textHeight = fontMetrics.getMaxAscent() + fontMetrics.getMaxDescent();
+
+        size.width += 2 + textWidth;
+        BufferedImage image = new BufferedImage(size.width, size.height, BufferedImage.TYPE_INT_ARGB);
+        Graphics g = image.getGraphics();
+
+        int textX = 0;
+        int textY = (size.height - textHeight) / 2 + fontMetrics.getMaxAscent();
+
+        if (icon != null) {
+            int x = (size.width - icon.getIconWidth() - textWidth) / 2;
+            int y = (size.height - icon.getIconHeight()) / 2;
+            icon.paintIcon(null, g, x, y);
+            textX = x + icon.getIconWidth() + 2;
+        }
+
+        UIUtil.applyRenderingHints(g);
+        Color color = getButtonForegroundColor();
+        if (color != null) {
+            g.setColor(color);
+        }
+        g.setFont(font);
+        g.drawString(text, textX, textY);
+
+        Character shortcutChar = myDescriptor.getShortcutChar();
+        if (shortcutChar != null) {
+            final int mnemonicIndex = text.indexOf(shortcutChar);
+            if (mnemonicIndex >= 0) {
+                final char[] chars = text.toCharArray();
+                final int startX = textX + fontMetrics.charsWidth(chars, 0, mnemonicIndex);
+                final int startY = textY + fontMetrics.getMaxDescent();
+                final int endX = startX + fontMetrics.charWidth(text.charAt(mnemonicIndex));
+                UIUtil.drawLine(g, startX, startY, endX, startY);
+            }
+        }
+
+        return new ImageIcon(image);
+    }
+
+    public void updateIcon() {
+        mySelectTabAction.myIcon = createCompositeTabIcon();
+    }
+
+    private class SelectTabAction extends ToggleAction {
+        private Icon myIcon;
+
+        public SelectTabAction() {
+            super("", "", createCompositeTabIcon());
+            myIcon = createCompositeTabIcon();
+        }
+
+        public boolean displayTextInToolbar() {
+            return true;
+        }
+
+        public boolean isSelected(AnActionEvent e) {
+            return ModelAccess.instance().runReadAction(new Computable<Boolean>() {
+                public Boolean compute() {
+                    return myTabComponent.isCurrent(ButtonEditorTab.this);
+                }
+            });
+        }
+
+        @Override
+        public void update(AnActionEvent e) {
+            super.update(e);
+            e.getPresentation().setIcon(myIcon);
+        }
+
+        public void setSelected(AnActionEvent e, boolean state) {
+            ModelAccess.instance().runReadAction(new Runnable() {
+                public void run() {
+                    List<SNode> nodes = myDescriptor.getNodes(myBaseNode.getNode());
+                    if (nodes.size() == 1) {
+                        myCallback.changeNode(nodes.get(0).getContainingRoot());
+                        return;
+                    }
+
+                    Component component = myTabComponent.getComponentForTabIndex(myIndex);
+
+                    DefaultActionGroup group = getGotoGroup();
+                    if (group == null) {
+                        //this is normal since now we can't guarantee button deletion (e.g. remove reduction rule from mapping configuration when it's the last usage of a concept in generator)
+                        group = new DefaultActionGroup();
+                    }
+                    ActionPopupMenu popup = ActionManager.getInstance().createActionPopupMenu(ActionPlaces.UNKNOWN, group);
+                    JPopupMenu popupMenu = popup.getComponent();
+                    popupMenu.show(component, 0, 0);
+
+                    if (myTabColorProvider != null && popupMenu.getComponents().length == nodes.size()) {
+                        for (int i = 0; i < nodes.size(); i++) {
+                            SNode node = nodes.get(i);
+                            Component menuItem = popupMenu.getComponents()[i];
+                            if (node != null) {
+                                Color color = myTabColorProvider.getNodeColor(node);
+                                if (color != null) {
+                                    menuItem.setForeground(color);
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+        }
+    }
 }
