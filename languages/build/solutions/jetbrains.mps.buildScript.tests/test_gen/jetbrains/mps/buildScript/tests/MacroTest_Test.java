@@ -7,9 +7,8 @@ import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
 import jetbrains.mps.buildScript.util.Context;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.util.PathManager;
 import java.util.List;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -63,15 +62,15 @@ public class MacroTest_Test extends BaseTransformationTest {
   }
 
   @Test
-  public void test_seeForwardVariableInScope() throws Throwable {
+  public void test_doNotSeeForwardVariabletInScope() throws Throwable {
     this.initTest("${mps_home}/MPS.ipr", "r:361d93bd-9223-4768-9e37-bcd7b8db1f40(jetbrains.mps.buildScript.tests@tests)");
-    this.runTest("jetbrains.mps.buildScript.tests.MacroTest_Test$TestBody", "test_seeForwardVariableInScope", true);
+    this.runTest("jetbrains.mps.buildScript.tests.MacroTest_Test$TestBody", "test_doNotSeeForwardVariabletInScope", true);
   }
 
   @Test
-  public void test_doNotSeeBackwardVariableInScope() throws Throwable {
+  public void test_seeBackwardVariableInScope() throws Throwable {
     this.initTest("${mps_home}/MPS.ipr", "r:361d93bd-9223-4768-9e37-bcd7b8db1f40(jetbrains.mps.buildScript.tests@tests)");
-    this.runTest("jetbrains.mps.buildScript.tests.MacroTest_Test$TestBody", "test_doNotSeeBackwardVariableInScope", true);
+    this.runTest("jetbrains.mps.buildScript.tests.MacroTest_Test$TestBody", "test_seeBackwardVariableInScope", true);
   }
 
   @MPSLaunch
@@ -80,12 +79,7 @@ public class MacroTest_Test extends BaseTransformationTest {
       this.addNodeById("193602448594327347");
       this.addNodeById("763409143595572699");
       this.addNodeById("384280137912153748");
-      Context context = new Context() {
-        @Override
-        public String getBasePath_Local(SNode node) {
-          return PathManager.getHomePath();
-        }
-      };
+      Context context = new Context();
       List<SNode> exportedMacro = context.getExportedMacro(SNodeOperations.cast(this.getNodeById("193602448594327348"), "jetbrains.mps.buildScript.structure.BuildProject"));
 
       List<SNode> expected = new ArrayList<SNode>();
@@ -157,22 +151,22 @@ public class MacroTest_Test extends BaseTransformationTest {
       }), SNodeOperations.cast(this.getNodeById("384280137912153739"), "jetbrains.mps.buildScript.structure.BuildVariableReference")).getAvailableElements("")).contains(SNodeOperations.cast(this.getNodeById("384280137912153734"), "jetbrains.mps.buildScript.structure.BuildVariableMacro")));
     }
 
-    public void test_seeForwardVariableInScope() throws Exception {
+    public void test_doNotSeeForwardVariabletInScope() throws Exception {
       this.addNodeById("193602448594327347");
       this.addNodeById("763409143595572699");
       this.addNodeById("384280137912153748");
-      Assert.assertTrue(ListSequence.fromList(ScopeProvider_Behavior.call_getScope_3734116213129936182(SNodeOperations.cast(this.getNodeById("384280137912153749"), "jetbrains.mps.buildScript.structure.BuildProject"), ModelAccess.instance().runReadAction(new Computable<SNode>() {
+      Assert.assertFalse(ListSequence.fromList(ScopeProvider_Behavior.call_getScope_3734116213129936182(SNodeOperations.cast(this.getNodeById("384280137912153749"), "jetbrains.mps.buildScript.structure.BuildProject"), ModelAccess.instance().runReadAction(new Computable<SNode>() {
         public SNode compute() {
           return SConceptOperations.findConceptDeclaration("jetbrains.mps.buildScript.structure.BuildMacro");
         }
       }), SNodeOperations.cast(this.getNodeById("384280137912153758"), "jetbrains.mps.buildScript.structure.BuildVariableReference")).getAvailableElements("")).contains(SNodeOperations.cast(this.getNodeById("384280137912153753"), "jetbrains.mps.buildScript.structure.BuildVariableMacro")));
     }
 
-    public void test_doNotSeeBackwardVariableInScope() throws Exception {
+    public void test_seeBackwardVariableInScope() throws Exception {
       this.addNodeById("193602448594327347");
       this.addNodeById("763409143595572699");
       this.addNodeById("384280137912153748");
-      Assert.assertFalse(ListSequence.fromList(ScopeProvider_Behavior.call_getScope_3734116213129936182(SNodeOperations.cast(this.getNodeById("384280137912153749"), "jetbrains.mps.buildScript.structure.BuildProject"), ModelAccess.instance().runReadAction(new Computable<SNode>() {
+      Assert.assertTrue(ListSequence.fromList(ScopeProvider_Behavior.call_getScope_3734116213129936182(SNodeOperations.cast(this.getNodeById("384280137912153749"), "jetbrains.mps.buildScript.structure.BuildProject"), ModelAccess.instance().runReadAction(new Computable<SNode>() {
         public SNode compute() {
           return SConceptOperations.findConceptDeclaration("jetbrains.mps.buildScript.structure.BuildMacro");
         }

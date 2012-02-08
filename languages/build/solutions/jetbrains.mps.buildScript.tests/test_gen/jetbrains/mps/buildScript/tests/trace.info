@@ -1,224 +1,217 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <root nodeId="193602448594327346">
-    <nodeInfo nodeId="193602448594327346" fileName="MacroTest_Test.java" startLine="30" startPosition="53" endLine="31" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="193602448594327346" fileName="MacroTest_Test.java" startLine="31" startPosition="122" endLine="32" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="193602448594327346" fileName="MacroTest_Test.java" startLine="36" startPosition="51" endLine="37" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="193602448594327346" fileName="MacroTest_Test.java" startLine="37" startPosition="122" endLine="38" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="193602448594327346" fileName="MacroTest_Test.java" startLine="42" startPosition="70" endLine="43" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="193602448594327346" fileName="MacroTest_Test.java" startLine="43" startPosition="122" endLine="44" endPosition="121" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="193602448594327346" fileName="MacroTest_Test.java" startLine="48" startPosition="54" endLine="49" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="193602448594327346" fileName="MacroTest_Test.java" startLine="49" startPosition="122" endLine="50" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="193602448594327346" fileName="MacroTest_Test.java" startLine="54" startPosition="56" endLine="55" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="193602448594327346" fileName="MacroTest_Test.java" startLine="55" startPosition="122" endLine="56" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="193602448594327346" fileName="MacroTest_Test.java" startLine="60" startPosition="66" endLine="61" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="193602448594327346" fileName="MacroTest_Test.java" startLine="61" startPosition="122" endLine="62" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="193602448594327346" fileName="MacroTest_Test.java" startLine="66" startPosition="65" endLine="67" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="193602448594327346" fileName="MacroTest_Test.java" startLine="67" startPosition="122" endLine="68" endPosition="116" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="193602448594327346" fileName="MacroTest_Test.java" startLine="72" startPosition="71" endLine="73" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="193602448594327346" fileName="MacroTest_Test.java" startLine="73" startPosition="122" endLine="74" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="193602448594330648" fileName="MacroTest_Test.java" startLine="79" startPosition="55" endLine="80" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="193602448594327346" fileName="MacroTest_Test.java" startLine="29" startPosition="53" endLine="30" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="193602448594327346" fileName="MacroTest_Test.java" startLine="30" startPosition="122" endLine="31" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="193602448594327346" fileName="MacroTest_Test.java" startLine="35" startPosition="51" endLine="36" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="193602448594327346" fileName="MacroTest_Test.java" startLine="36" startPosition="122" endLine="37" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="193602448594327346" fileName="MacroTest_Test.java" startLine="41" startPosition="70" endLine="42" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="193602448594327346" fileName="MacroTest_Test.java" startLine="42" startPosition="122" endLine="43" endPosition="121" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="193602448594327346" fileName="MacroTest_Test.java" startLine="47" startPosition="54" endLine="48" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="193602448594327346" fileName="MacroTest_Test.java" startLine="48" startPosition="122" endLine="49" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="193602448594327346" fileName="MacroTest_Test.java" startLine="53" startPosition="56" endLine="54" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="193602448594327346" fileName="MacroTest_Test.java" startLine="54" startPosition="122" endLine="55" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="193602448594327346" fileName="MacroTest_Test.java" startLine="59" startPosition="66" endLine="60" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="193602448594327346" fileName="MacroTest_Test.java" startLine="60" startPosition="122" endLine="61" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="193602448594327346" fileName="MacroTest_Test.java" startLine="65" startPosition="71" endLine="66" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="193602448594327346" fileName="MacroTest_Test.java" startLine="66" startPosition="122" endLine="67" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="193602448594327346" fileName="MacroTest_Test.java" startLine="71" startPosition="66" endLine="72" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="193602448594327346" fileName="MacroTest_Test.java" startLine="72" startPosition="122" endLine="73" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="193602448594330648" fileName="MacroTest_Test.java" startLine="78" startPosition="55" endLine="79" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="193602448594330648" fileName="MacroTest_Test.java" startLine="79" startPosition="45" endLine="80" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="193602448594330648" fileName="MacroTest_Test.java" startLine="80" startPosition="45" endLine="81" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="193602448594330648" fileName="MacroTest_Test.java" startLine="81" startPosition="45" endLine="82" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="193602448594444079" fileName="MacroTest_Test.java" startLine="85" startPosition="53" endLine="86" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="193602448594330762" fileName="MacroTest_Test.java" startLine="88" startPosition="8" endLine="89" endPosition="173" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="193602448594330770" fileName="MacroTest_Test.java" startLine="89" startPosition="173" endLine="90" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="193602448594330790" fileName="MacroTest_Test.java" startLine="90" startPosition="0" endLine="91" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="193602448594330931" fileName="MacroTest_Test.java" startLine="91" startPosition="52" endLine="92" endPosition="154" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="193602448594330968" fileName="MacroTest_Test.java" startLine="92" startPosition="154" endLine="93" endPosition="166" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="193602448594330981" fileName="MacroTest_Test.java" startLine="93" startPosition="166" endLine="94" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="193602448594444997" fileName="MacroTest_Test.java" startLine="95" startPosition="73" endLine="96" endPosition="208" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6593006940411759671" fileName="MacroTest_Test.java" startLine="100" startPosition="53" endLine="101" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6593006940411759671" fileName="MacroTest_Test.java" startLine="101" startPosition="45" endLine="102" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6593006940411759671" fileName="MacroTest_Test.java" startLine="102" startPosition="45" endLine="103" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="763409143595611772" fileName="MacroTest_Test.java" startLine="105" startPosition="32" endLine="106" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6593006940411759677" fileName="MacroTest_Test.java" startLine="111" startPosition="72" endLine="112" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6593006940411759677" fileName="MacroTest_Test.java" startLine="112" startPosition="45" endLine="113" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6593006940411759677" fileName="MacroTest_Test.java" startLine="113" startPosition="45" endLine="114" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6593006940411756957" fileName="MacroTest_Test.java" startLine="116" startPosition="32" endLine="117" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="763409143595611370" fileName="MacroTest_Test.java" startLine="122" startPosition="56" endLine="123" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="763409143595611370" fileName="MacroTest_Test.java" startLine="123" startPosition="45" endLine="124" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="763409143595611370" fileName="MacroTest_Test.java" startLine="124" startPosition="45" endLine="125" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="763409143595722568" fileName="MacroTest_Test.java" startLine="127" startPosition="32" endLine="128" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6593006940411759683" fileName="MacroTest_Test.java" startLine="133" startPosition="58" endLine="134" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6593006940411759683" fileName="MacroTest_Test.java" startLine="134" startPosition="45" endLine="135" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6593006940411759683" fileName="MacroTest_Test.java" startLine="135" startPosition="45" endLine="136" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6593006940411791688" fileName="MacroTest_Test.java" startLine="138" startPosition="32" endLine="139" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6593006940411791721" fileName="MacroTest_Test.java" startLine="143" startPosition="32" endLine="144" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="384280137912212777" fileName="MacroTest_Test.java" startLine="149" startPosition="68" endLine="150" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="384280137912212777" fileName="MacroTest_Test.java" startLine="150" startPosition="45" endLine="151" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="384280137912212777" fileName="MacroTest_Test.java" startLine="151" startPosition="45" endLine="152" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="384280137912212792" fileName="MacroTest_Test.java" startLine="154" startPosition="32" endLine="155" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="384280137912153769" fileName="MacroTest_Test.java" startLine="160" startPosition="67" endLine="161" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="384280137912153769" fileName="MacroTest_Test.java" startLine="161" startPosition="45" endLine="162" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="384280137912153769" fileName="MacroTest_Test.java" startLine="162" startPosition="45" endLine="163" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="384280137912153821" fileName="MacroTest_Test.java" startLine="165" startPosition="32" endLine="166" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="384280137912158402" fileName="MacroTest_Test.java" startLine="171" startPosition="73" endLine="172" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="384280137912158402" fileName="MacroTest_Test.java" startLine="172" startPosition="45" endLine="173" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="384280137912158402" fileName="MacroTest_Test.java" startLine="173" startPosition="45" endLine="174" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="384280137912153785" fileName="MacroTest_Test.java" startLine="176" startPosition="32" endLine="177" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="193602448594330935" fileName="MacroTest_Test.java" startLine="186" startPosition="51" endLine="187" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="193602448594330935" fileName="MacroTest_Test.java" startLine="187" startPosition="28" endLine="188" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="193602448594330935" fileName="MacroTest_Test.java" startLine="188" startPosition="69" endLine="189" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="193602448594330935" fileName="MacroTest_Test.java" startLine="190" startPosition="9" endLine="191" endPosition="171" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="193602448594330935" fileName="MacroTest_Test.java" startLine="191" startPosition="171" endLine="192" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="193602448594330935" fileName="MacroTest_Test.java" startLine="192" startPosition="45" endLine="193" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="193602448594330935" fileName="MacroTest_Test.java" startLine="193" startPosition="59" endLine="194" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="193602448594330935" fileName="MacroTest_Test.java" startLine="194" startPosition="73" endLine="195" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="193602448594330935" fileName="MacroTest_Test.java" startLine="196" startPosition="9" endLine="197" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="193602448594330972" fileName="MacroTest_Test.java" startLine="205" startPosition="51" endLine="206" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="193602448594330972" fileName="MacroTest_Test.java" startLine="206" startPosition="28" endLine="207" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="193602448594330972" fileName="MacroTest_Test.java" startLine="207" startPosition="69" endLine="208" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="193602448594330972" fileName="MacroTest_Test.java" startLine="209" startPosition="9" endLine="210" endPosition="171" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="193602448594330972" fileName="MacroTest_Test.java" startLine="210" startPosition="171" endLine="211" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="193602448594330972" fileName="MacroTest_Test.java" startLine="211" startPosition="45" endLine="212" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="193602448594330972" fileName="MacroTest_Test.java" startLine="212" startPosition="66" endLine="213" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="193602448594330972" fileName="MacroTest_Test.java" startLine="213" startPosition="73" endLine="214" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="193602448594330972" fileName="MacroTest_Test.java" startLine="215" startPosition="9" endLine="216" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="193602448594330935" fileName="MacroTest_Test.java" startLine="182" startPosition="56" endLine="184" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_oxxkhl_a0a0h0a0#()V" />
-    <nodeInfo nodeId="193602448594330972" fileName="MacroTest_Test.java" startLine="201" startPosition="56" endLine="203" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_oxxkhl_a0a0i0a0#()V" />
-    <nodeInfo nodeId="193602448594444968" fileName="MacroTest_Test.java" startLine="94" startPosition="0" endLine="97" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
-    <nodeInfo nodeId="763409143595611772" fileName="MacroTest_Test.java" startLine="104" startPosition="279" endLine="108" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="compute#()Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="6593006940411756957" fileName="MacroTest_Test.java" startLine="115" startPosition="280" endLine="119" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="compute#()Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="763409143595722568" fileName="MacroTest_Test.java" startLine="126" startPosition="280" endLine="130" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="compute#()Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="6593006940411791688" fileName="MacroTest_Test.java" startLine="137" startPosition="280" endLine="141" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="compute#()Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="6593006940411791721" fileName="MacroTest_Test.java" startLine="142" startPosition="280" endLine="146" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="compute#()Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="384280137912212792" fileName="MacroTest_Test.java" startLine="153" startPosition="279" endLine="157" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="compute#()Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="384280137912153821" fileName="MacroTest_Test.java" startLine="164" startPosition="279" endLine="168" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="compute#()Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="384280137912153785" fileName="MacroTest_Test.java" startLine="175" startPosition="280" endLine="179" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="compute#()Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="193602448594332794" fileName="MacroTest_Test.java" startLine="83" startPosition="39" endLine="88" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getBasePath_Local#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;" />
-    <nodeInfo nodeId="763409143595611766" fileName="MacroTest_Test.java" startLine="103" startPosition="45" endLine="108" endPosition="282" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6593006940411756965" fileName="MacroTest_Test.java" startLine="114" startPosition="45" endLine="119" endPosition="282" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="763409143595722576" fileName="MacroTest_Test.java" startLine="125" startPosition="45" endLine="130" endPosition="282" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6593006940411759686" fileName="MacroTest_Test.java" startLine="136" startPosition="45" endLine="141" endPosition="282" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6593006940411791715" fileName="MacroTest_Test.java" startLine="141" startPosition="282" endLine="146" endPosition="282" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="384280137912212780" fileName="MacroTest_Test.java" startLine="152" startPosition="45" endLine="157" endPosition="290" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="384280137912153814" fileName="MacroTest_Test.java" startLine="163" startPosition="45" endLine="168" endPosition="290" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="384280137912153772" fileName="MacroTest_Test.java" startLine="174" startPosition="45" endLine="179" endPosition="290" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="193602448594327346" fileName="MacroTest_Test.java" startLine="28" startPosition="60" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_exportedMacro#()V" />
-    <nodeInfo nodeId="193602448594327346" fileName="MacroTest_Test.java" startLine="34" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_normalScope#()V" />
-    <nodeInfo nodeId="193602448594327346" fileName="MacroTest_Test.java" startLine="40" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_onlySeePreviouslyDeclaredMacro#()V" />
-    <nodeInfo nodeId="193602448594327346" fileName="MacroTest_Test.java" startLine="46" startPosition="0" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_doNotSeeItsefl#()V" />
-    <nodeInfo nodeId="193602448594327346" fileName="MacroTest_Test.java" startLine="52" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_doNotSeeImported#()V" />
-    <nodeInfo nodeId="193602448594327346" fileName="MacroTest_Test.java" startLine="58" startPosition="0" endLine="64" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_seeImportedVariableInScope#()V" />
-    <nodeInfo nodeId="193602448594327346" fileName="MacroTest_Test.java" startLine="64" startPosition="0" endLine="70" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_seeForwardVariableInScope#()V" />
-    <nodeInfo nodeId="193602448594327346" fileName="MacroTest_Test.java" startLine="70" startPosition="0" endLine="76" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_doNotSeeBackwardVariableInScope#()V" />
-    <nodeInfo nodeId="193602448594330707" fileName="MacroTest_Test.java" startLine="82" startPosition="45" endLine="88" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="193602448594330935" fileName="MacroTest_Test.java" startLine="189" startPosition="34" endLine="196" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="193602448594330935" fileName="MacroTest_Test.java" startLine="189" startPosition="34" endLine="196" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="193602448594330972" fileName="MacroTest_Test.java" startLine="208" startPosition="34" endLine="215" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="193602448594330972" fileName="MacroTest_Test.java" startLine="208" startPosition="34" endLine="215" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="6593006940411759671" fileName="MacroTest_Test.java" startLine="99" startPosition="0" endLine="110" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_normalScope#()V" />
-    <nodeInfo nodeId="6593006940411759677" fileName="MacroTest_Test.java" startLine="110" startPosition="0" endLine="121" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_onlySeePreviouslyDeclaredMacro#()V" />
-    <nodeInfo nodeId="763409143595611370" fileName="MacroTest_Test.java" startLine="121" startPosition="0" endLine="132" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_doNotSeeItsefl#()V" />
-    <nodeInfo nodeId="384280137912212777" fileName="MacroTest_Test.java" startLine="148" startPosition="0" endLine="159" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_seeImportedVariableInScope#()V" />
-    <nodeInfo nodeId="384280137912153769" fileName="MacroTest_Test.java" startLine="159" startPosition="0" endLine="170" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_seeForwardVariableInScope#()V" />
-    <nodeInfo nodeId="384280137912158402" fileName="MacroTest_Test.java" startLine="170" startPosition="0" endLine="181" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_doNotSeeBackwardVariableInScope#()V" />
-    <nodeInfo nodeId="193602448594330935" fileName="MacroTest_Test.java" startLine="185" startPosition="0" endLine="199" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#(Ljava/lang/Object;)Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="193602448594330972" fileName="MacroTest_Test.java" startLine="204" startPosition="0" endLine="218" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#(Ljava/lang/Object;)Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="6593006940411759683" fileName="MacroTest_Test.java" startLine="132" startPosition="0" endLine="148" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_doNotSeeImported#()V" />
-    <nodeInfo nodeId="193602448594330648" fileName="MacroTest_Test.java" startLine="78" startPosition="53" endLine="99" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_exportedMacro#()V" />
-    <scopeInfo nodeId="193602448594330935" fileName="MacroTest_Test.java" startLine="183" startPosition="47" endLine="183" endPosition="47" />
-    <scopeInfo nodeId="193602448594330972" fileName="MacroTest_Test.java" startLine="202" startPosition="47" endLine="202" endPosition="47" />
-    <scopeInfo nodeId="193602448594332799" fileName="MacroTest_Test.java" startLine="85" startPosition="53" endLine="86" endPosition="43" />
-    <scopeInfo nodeId="193602448594444969" fileName="MacroTest_Test.java" startLine="95" startPosition="73" endLine="96" endPosition="208" />
-    <scopeInfo nodeId="763409143595611772" fileName="MacroTest_Test.java" startLine="105" startPosition="32" endLine="106" endPosition="109" />
-    <scopeInfo nodeId="6593006940411756957" fileName="MacroTest_Test.java" startLine="116" startPosition="32" endLine="117" endPosition="109" />
-    <scopeInfo nodeId="763409143595722568" fileName="MacroTest_Test.java" startLine="127" startPosition="32" endLine="128" endPosition="109" />
-    <scopeInfo nodeId="6593006940411791688" fileName="MacroTest_Test.java" startLine="138" startPosition="32" endLine="139" endPosition="109" />
-    <scopeInfo nodeId="6593006940411791721" fileName="MacroTest_Test.java" startLine="143" startPosition="32" endLine="144" endPosition="109" />
-    <scopeInfo nodeId="384280137912212792" fileName="MacroTest_Test.java" startLine="154" startPosition="32" endLine="155" endPosition="109" />
-    <scopeInfo nodeId="384280137912153821" fileName="MacroTest_Test.java" startLine="165" startPosition="32" endLine="166" endPosition="109" />
-    <scopeInfo nodeId="384280137912153785" fileName="MacroTest_Test.java" startLine="176" startPosition="32" endLine="177" endPosition="109" />
-    <scopeInfo nodeId="193602448594327346" fileName="MacroTest_Test.java" startLine="30" startPosition="53" endLine="32" endPosition="104" />
-    <scopeInfo nodeId="193602448594327346" fileName="MacroTest_Test.java" startLine="36" startPosition="51" endLine="38" endPosition="102" />
-    <scopeInfo nodeId="193602448594327346" fileName="MacroTest_Test.java" startLine="42" startPosition="70" endLine="44" endPosition="121" />
-    <scopeInfo nodeId="193602448594327346" fileName="MacroTest_Test.java" startLine="48" startPosition="54" endLine="50" endPosition="105" />
-    <scopeInfo nodeId="193602448594327346" fileName="MacroTest_Test.java" startLine="54" startPosition="56" endLine="56" endPosition="107" />
-    <scopeInfo nodeId="193602448594327346" fileName="MacroTest_Test.java" startLine="60" startPosition="66" endLine="62" endPosition="117" />
-    <scopeInfo nodeId="193602448594327346" fileName="MacroTest_Test.java" startLine="66" startPosition="65" endLine="68" endPosition="116" />
-    <scopeInfo nodeId="193602448594327346" fileName="MacroTest_Test.java" startLine="72" startPosition="71" endLine="74" endPosition="122" />
-    <scopeInfo nodeId="193602448594330935" fileName="MacroTest_Test.java" startLine="182" startPosition="56" endLine="184" endPosition="7" />
-    <scopeInfo nodeId="193602448594330972" fileName="MacroTest_Test.java" startLine="201" startPosition="56" endLine="203" endPosition="7" />
-    <scopeInfo nodeId="193602448594444968" fileName="MacroTest_Test.java" startLine="94" startPosition="0" endLine="97" endPosition="7">
+    <nodeInfo nodeId="193602448594330707" fileName="MacroTest_Test.java" startLine="81" startPosition="45" endLine="82" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="193602448594330762" fileName="MacroTest_Test.java" startLine="82" startPosition="38" endLine="83" endPosition="173" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="193602448594330770" fileName="MacroTest_Test.java" startLine="83" startPosition="173" endLine="84" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="193602448594330790" fileName="MacroTest_Test.java" startLine="84" startPosition="0" endLine="85" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="193602448594330931" fileName="MacroTest_Test.java" startLine="85" startPosition="52" endLine="86" endPosition="154" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="193602448594330968" fileName="MacroTest_Test.java" startLine="86" startPosition="154" endLine="87" endPosition="166" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="193602448594330981" fileName="MacroTest_Test.java" startLine="87" startPosition="166" endLine="88" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="193602448594444997" fileName="MacroTest_Test.java" startLine="89" startPosition="73" endLine="90" endPosition="208" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6593006940411759671" fileName="MacroTest_Test.java" startLine="94" startPosition="53" endLine="95" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6593006940411759671" fileName="MacroTest_Test.java" startLine="95" startPosition="45" endLine="96" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6593006940411759671" fileName="MacroTest_Test.java" startLine="96" startPosition="45" endLine="97" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="763409143595611772" fileName="MacroTest_Test.java" startLine="99" startPosition="32" endLine="100" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6593006940411759677" fileName="MacroTest_Test.java" startLine="105" startPosition="72" endLine="106" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6593006940411759677" fileName="MacroTest_Test.java" startLine="106" startPosition="45" endLine="107" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6593006940411759677" fileName="MacroTest_Test.java" startLine="107" startPosition="45" endLine="108" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6593006940411756957" fileName="MacroTest_Test.java" startLine="110" startPosition="32" endLine="111" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="763409143595611370" fileName="MacroTest_Test.java" startLine="116" startPosition="56" endLine="117" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="763409143595611370" fileName="MacroTest_Test.java" startLine="117" startPosition="45" endLine="118" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="763409143595611370" fileName="MacroTest_Test.java" startLine="118" startPosition="45" endLine="119" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="763409143595722568" fileName="MacroTest_Test.java" startLine="121" startPosition="32" endLine="122" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6593006940411759683" fileName="MacroTest_Test.java" startLine="127" startPosition="58" endLine="128" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6593006940411759683" fileName="MacroTest_Test.java" startLine="128" startPosition="45" endLine="129" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6593006940411759683" fileName="MacroTest_Test.java" startLine="129" startPosition="45" endLine="130" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6593006940411791688" fileName="MacroTest_Test.java" startLine="132" startPosition="32" endLine="133" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6593006940411791721" fileName="MacroTest_Test.java" startLine="137" startPosition="32" endLine="138" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="384280137912212777" fileName="MacroTest_Test.java" startLine="143" startPosition="68" endLine="144" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="384280137912212777" fileName="MacroTest_Test.java" startLine="144" startPosition="45" endLine="145" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="384280137912212777" fileName="MacroTest_Test.java" startLine="145" startPosition="45" endLine="146" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="384280137912212792" fileName="MacroTest_Test.java" startLine="148" startPosition="32" endLine="149" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="384280137912153769" fileName="MacroTest_Test.java" startLine="154" startPosition="73" endLine="155" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="384280137912153769" fileName="MacroTest_Test.java" startLine="155" startPosition="45" endLine="156" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="384280137912153769" fileName="MacroTest_Test.java" startLine="156" startPosition="45" endLine="157" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="384280137912153821" fileName="MacroTest_Test.java" startLine="159" startPosition="32" endLine="160" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="384280137912158402" fileName="MacroTest_Test.java" startLine="165" startPosition="68" endLine="166" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="384280137912158402" fileName="MacroTest_Test.java" startLine="166" startPosition="45" endLine="167" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="384280137912158402" fileName="MacroTest_Test.java" startLine="167" startPosition="45" endLine="168" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="384280137912153785" fileName="MacroTest_Test.java" startLine="170" startPosition="32" endLine="171" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="193602448594330935" fileName="MacroTest_Test.java" startLine="180" startPosition="51" endLine="181" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="193602448594330935" fileName="MacroTest_Test.java" startLine="181" startPosition="28" endLine="182" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="193602448594330935" fileName="MacroTest_Test.java" startLine="182" startPosition="69" endLine="183" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="193602448594330935" fileName="MacroTest_Test.java" startLine="184" startPosition="9" endLine="185" endPosition="171" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="193602448594330935" fileName="MacroTest_Test.java" startLine="185" startPosition="171" endLine="186" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="193602448594330935" fileName="MacroTest_Test.java" startLine="186" startPosition="45" endLine="187" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="193602448594330935" fileName="MacroTest_Test.java" startLine="187" startPosition="59" endLine="188" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="193602448594330935" fileName="MacroTest_Test.java" startLine="188" startPosition="73" endLine="189" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="193602448594330935" fileName="MacroTest_Test.java" startLine="190" startPosition="9" endLine="191" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="193602448594330972" fileName="MacroTest_Test.java" startLine="199" startPosition="51" endLine="200" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="193602448594330972" fileName="MacroTest_Test.java" startLine="200" startPosition="28" endLine="201" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="193602448594330972" fileName="MacroTest_Test.java" startLine="201" startPosition="69" endLine="202" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="193602448594330972" fileName="MacroTest_Test.java" startLine="203" startPosition="9" endLine="204" endPosition="171" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="193602448594330972" fileName="MacroTest_Test.java" startLine="204" startPosition="171" endLine="205" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="193602448594330972" fileName="MacroTest_Test.java" startLine="205" startPosition="45" endLine="206" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="193602448594330972" fileName="MacroTest_Test.java" startLine="206" startPosition="66" endLine="207" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="193602448594330972" fileName="MacroTest_Test.java" startLine="207" startPosition="73" endLine="208" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="193602448594330972" fileName="MacroTest_Test.java" startLine="209" startPosition="9" endLine="210" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="193602448594330935" fileName="MacroTest_Test.java" startLine="176" startPosition="56" endLine="178" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_oxxkhl_a0a0h0a0#()V" />
+    <nodeInfo nodeId="193602448594330972" fileName="MacroTest_Test.java" startLine="195" startPosition="56" endLine="197" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_oxxkhl_a0a0i0a0#()V" />
+    <nodeInfo nodeId="193602448594444968" fileName="MacroTest_Test.java" startLine="88" startPosition="0" endLine="91" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
+    <nodeInfo nodeId="763409143595611772" fileName="MacroTest_Test.java" startLine="98" startPosition="279" endLine="102" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="compute#()Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="6593006940411756957" fileName="MacroTest_Test.java" startLine="109" startPosition="280" endLine="113" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="compute#()Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="763409143595722568" fileName="MacroTest_Test.java" startLine="120" startPosition="280" endLine="124" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="compute#()Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="6593006940411791688" fileName="MacroTest_Test.java" startLine="131" startPosition="280" endLine="135" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="compute#()Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="6593006940411791721" fileName="MacroTest_Test.java" startLine="136" startPosition="280" endLine="140" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="compute#()Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="384280137912212792" fileName="MacroTest_Test.java" startLine="147" startPosition="279" endLine="151" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="compute#()Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="384280137912153821" fileName="MacroTest_Test.java" startLine="158" startPosition="280" endLine="162" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="compute#()Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="384280137912153785" fileName="MacroTest_Test.java" startLine="169" startPosition="279" endLine="173" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="compute#()Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="763409143595611766" fileName="MacroTest_Test.java" startLine="97" startPosition="45" endLine="102" endPosition="282" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6593006940411756965" fileName="MacroTest_Test.java" startLine="108" startPosition="45" endLine="113" endPosition="282" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="763409143595722576" fileName="MacroTest_Test.java" startLine="119" startPosition="45" endLine="124" endPosition="282" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6593006940411759686" fileName="MacroTest_Test.java" startLine="130" startPosition="45" endLine="135" endPosition="282" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6593006940411791715" fileName="MacroTest_Test.java" startLine="135" startPosition="282" endLine="140" endPosition="282" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="384280137912212780" fileName="MacroTest_Test.java" startLine="146" startPosition="45" endLine="151" endPosition="290" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="384280137912313345" fileName="MacroTest_Test.java" startLine="157" startPosition="45" endLine="162" endPosition="290" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="384280137912313343" fileName="MacroTest_Test.java" startLine="168" startPosition="45" endLine="173" endPosition="290" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="193602448594327346" fileName="MacroTest_Test.java" startLine="27" startPosition="60" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_exportedMacro#()V" />
+    <nodeInfo nodeId="193602448594327346" fileName="MacroTest_Test.java" startLine="33" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_normalScope#()V" />
+    <nodeInfo nodeId="193602448594327346" fileName="MacroTest_Test.java" startLine="39" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_onlySeePreviouslyDeclaredMacro#()V" />
+    <nodeInfo nodeId="193602448594327346" fileName="MacroTest_Test.java" startLine="45" startPosition="0" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_doNotSeeItsefl#()V" />
+    <nodeInfo nodeId="193602448594327346" fileName="MacroTest_Test.java" startLine="51" startPosition="0" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_doNotSeeImported#()V" />
+    <nodeInfo nodeId="193602448594327346" fileName="MacroTest_Test.java" startLine="57" startPosition="0" endLine="63" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_seeImportedVariableInScope#()V" />
+    <nodeInfo nodeId="193602448594327346" fileName="MacroTest_Test.java" startLine="63" startPosition="0" endLine="69" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_doNotSeeForwardVariabletInScope#()V" />
+    <nodeInfo nodeId="193602448594327346" fileName="MacroTest_Test.java" startLine="69" startPosition="0" endLine="75" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_seeBackwardVariableInScope#()V" />
+    <nodeInfo nodeId="193602448594330935" fileName="MacroTest_Test.java" startLine="183" startPosition="34" endLine="190" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="193602448594330935" fileName="MacroTest_Test.java" startLine="183" startPosition="34" endLine="190" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="193602448594330972" fileName="MacroTest_Test.java" startLine="202" startPosition="34" endLine="209" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="193602448594330972" fileName="MacroTest_Test.java" startLine="202" startPosition="34" endLine="209" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="6593006940411759671" fileName="MacroTest_Test.java" startLine="93" startPosition="0" endLine="104" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_normalScope#()V" />
+    <nodeInfo nodeId="6593006940411759677" fileName="MacroTest_Test.java" startLine="104" startPosition="0" endLine="115" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_onlySeePreviouslyDeclaredMacro#()V" />
+    <nodeInfo nodeId="763409143595611370" fileName="MacroTest_Test.java" startLine="115" startPosition="0" endLine="126" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_doNotSeeItsefl#()V" />
+    <nodeInfo nodeId="384280137912212777" fileName="MacroTest_Test.java" startLine="142" startPosition="0" endLine="153" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_seeImportedVariableInScope#()V" />
+    <nodeInfo nodeId="384280137912153769" fileName="MacroTest_Test.java" startLine="153" startPosition="0" endLine="164" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_doNotSeeForwardVariabletInScope#()V" />
+    <nodeInfo nodeId="384280137912158402" fileName="MacroTest_Test.java" startLine="164" startPosition="0" endLine="175" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_seeBackwardVariableInScope#()V" />
+    <nodeInfo nodeId="193602448594330935" fileName="MacroTest_Test.java" startLine="179" startPosition="0" endLine="193" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#(Ljava/lang/Object;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="193602448594330972" fileName="MacroTest_Test.java" startLine="198" startPosition="0" endLine="212" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#(Ljava/lang/Object;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="193602448594330648" fileName="MacroTest_Test.java" startLine="77" startPosition="53" endLine="93" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_exportedMacro#()V" />
+    <nodeInfo nodeId="6593006940411759683" fileName="MacroTest_Test.java" startLine="126" startPosition="0" endLine="142" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_doNotSeeImported#()V" />
+    <scopeInfo nodeId="193602448594330935" fileName="MacroTest_Test.java" startLine="177" startPosition="47" endLine="177" endPosition="47" />
+    <scopeInfo nodeId="193602448594330972" fileName="MacroTest_Test.java" startLine="196" startPosition="47" endLine="196" endPosition="47" />
+    <scopeInfo nodeId="193602448594444969" fileName="MacroTest_Test.java" startLine="89" startPosition="73" endLine="90" endPosition="208" />
+    <scopeInfo nodeId="763409143595611772" fileName="MacroTest_Test.java" startLine="99" startPosition="32" endLine="100" endPosition="109" />
+    <scopeInfo nodeId="6593006940411756957" fileName="MacroTest_Test.java" startLine="110" startPosition="32" endLine="111" endPosition="109" />
+    <scopeInfo nodeId="763409143595722568" fileName="MacroTest_Test.java" startLine="121" startPosition="32" endLine="122" endPosition="109" />
+    <scopeInfo nodeId="6593006940411791688" fileName="MacroTest_Test.java" startLine="132" startPosition="32" endLine="133" endPosition="109" />
+    <scopeInfo nodeId="6593006940411791721" fileName="MacroTest_Test.java" startLine="137" startPosition="32" endLine="138" endPosition="109" />
+    <scopeInfo nodeId="384280137912212792" fileName="MacroTest_Test.java" startLine="148" startPosition="32" endLine="149" endPosition="109" />
+    <scopeInfo nodeId="384280137912153821" fileName="MacroTest_Test.java" startLine="159" startPosition="32" endLine="160" endPosition="109" />
+    <scopeInfo nodeId="384280137912153785" fileName="MacroTest_Test.java" startLine="170" startPosition="32" endLine="171" endPosition="109" />
+    <scopeInfo nodeId="193602448594327346" fileName="MacroTest_Test.java" startLine="29" startPosition="53" endLine="31" endPosition="104" />
+    <scopeInfo nodeId="193602448594327346" fileName="MacroTest_Test.java" startLine="35" startPosition="51" endLine="37" endPosition="102" />
+    <scopeInfo nodeId="193602448594327346" fileName="MacroTest_Test.java" startLine="41" startPosition="70" endLine="43" endPosition="121" />
+    <scopeInfo nodeId="193602448594327346" fileName="MacroTest_Test.java" startLine="47" startPosition="54" endLine="49" endPosition="105" />
+    <scopeInfo nodeId="193602448594327346" fileName="MacroTest_Test.java" startLine="53" startPosition="56" endLine="55" endPosition="107" />
+    <scopeInfo nodeId="193602448594327346" fileName="MacroTest_Test.java" startLine="59" startPosition="66" endLine="61" endPosition="117" />
+    <scopeInfo nodeId="193602448594327346" fileName="MacroTest_Test.java" startLine="65" startPosition="71" endLine="67" endPosition="122" />
+    <scopeInfo nodeId="193602448594327346" fileName="MacroTest_Test.java" startLine="71" startPosition="66" endLine="73" endPosition="117" />
+    <scopeInfo nodeId="193602448594330935" fileName="MacroTest_Test.java" startLine="176" startPosition="56" endLine="178" endPosition="7" />
+    <scopeInfo nodeId="193602448594330972" fileName="MacroTest_Test.java" startLine="195" startPosition="56" endLine="197" endPosition="7" />
+    <scopeInfo nodeId="193602448594444968" fileName="MacroTest_Test.java" startLine="88" startPosition="0" endLine="91" endPosition="7">
       <varInfo nodeId="193602448594444971" varName="i" />
     </scopeInfo>
-    <scopeInfo nodeId="763409143595611772" fileName="MacroTest_Test.java" startLine="104" startPosition="279" endLine="108" endPosition="0" />
-    <scopeInfo nodeId="6593006940411756957" fileName="MacroTest_Test.java" startLine="115" startPosition="280" endLine="119" endPosition="0" />
-    <scopeInfo nodeId="763409143595722568" fileName="MacroTest_Test.java" startLine="126" startPosition="280" endLine="130" endPosition="0" />
-    <scopeInfo nodeId="6593006940411791688" fileName="MacroTest_Test.java" startLine="137" startPosition="280" endLine="141" endPosition="0" />
-    <scopeInfo nodeId="6593006940411791721" fileName="MacroTest_Test.java" startLine="142" startPosition="280" endLine="146" endPosition="0" />
-    <scopeInfo nodeId="384280137912212792" fileName="MacroTest_Test.java" startLine="153" startPosition="279" endLine="157" endPosition="0" />
-    <scopeInfo nodeId="384280137912153821" fileName="MacroTest_Test.java" startLine="164" startPosition="279" endLine="168" endPosition="0" />
-    <scopeInfo nodeId="384280137912153785" fileName="MacroTest_Test.java" startLine="175" startPosition="280" endLine="179" endPosition="0" />
-    <scopeInfo nodeId="193602448594332794" fileName="MacroTest_Test.java" startLine="83" startPosition="39" endLine="88" endPosition="0">
-      <varInfo nodeId="193602448594332795" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="193602448594330935" fileName="MacroTest_Test.java" startLine="190" startPosition="9" endLine="195" endPosition="33">
+    <scopeInfo nodeId="763409143595611772" fileName="MacroTest_Test.java" startLine="98" startPosition="279" endLine="102" endPosition="0" />
+    <scopeInfo nodeId="6593006940411756957" fileName="MacroTest_Test.java" startLine="109" startPosition="280" endLine="113" endPosition="0" />
+    <scopeInfo nodeId="763409143595722568" fileName="MacroTest_Test.java" startLine="120" startPosition="280" endLine="124" endPosition="0" />
+    <scopeInfo nodeId="6593006940411791688" fileName="MacroTest_Test.java" startLine="131" startPosition="280" endLine="135" endPosition="0" />
+    <scopeInfo nodeId="6593006940411791721" fileName="MacroTest_Test.java" startLine="136" startPosition="280" endLine="140" endPosition="0" />
+    <scopeInfo nodeId="384280137912212792" fileName="MacroTest_Test.java" startLine="147" startPosition="279" endLine="151" endPosition="0" />
+    <scopeInfo nodeId="384280137912153821" fileName="MacroTest_Test.java" startLine="158" startPosition="280" endLine="162" endPosition="0" />
+    <scopeInfo nodeId="384280137912153785" fileName="MacroTest_Test.java" startLine="169" startPosition="279" endLine="173" endPosition="0" />
+    <scopeInfo nodeId="193602448594330935" fileName="MacroTest_Test.java" startLine="184" startPosition="9" endLine="189" endPosition="33">
       <varInfo nodeId="193602448594330935" varName="quotedNode1_2" />
     </scopeInfo>
-    <scopeInfo nodeId="193602448594330972" fileName="MacroTest_Test.java" startLine="209" startPosition="9" endLine="214" endPosition="33">
+    <scopeInfo nodeId="193602448594330972" fileName="MacroTest_Test.java" startLine="203" startPosition="9" endLine="208" endPosition="33">
       <varInfo nodeId="193602448594330972" varName="quotedNode1_2" />
     </scopeInfo>
-    <scopeInfo nodeId="193602448594327346" fileName="MacroTest_Test.java" startLine="28" startPosition="60" endLine="34" endPosition="0" />
-    <scopeInfo nodeId="193602448594327346" fileName="MacroTest_Test.java" startLine="34" startPosition="0" endLine="40" endPosition="0" />
-    <scopeInfo nodeId="193602448594327346" fileName="MacroTest_Test.java" startLine="40" startPosition="0" endLine="46" endPosition="0" />
-    <scopeInfo nodeId="193602448594327346" fileName="MacroTest_Test.java" startLine="46" startPosition="0" endLine="52" endPosition="0" />
-    <scopeInfo nodeId="193602448594327346" fileName="MacroTest_Test.java" startLine="52" startPosition="0" endLine="58" endPosition="0" />
-    <scopeInfo nodeId="193602448594327346" fileName="MacroTest_Test.java" startLine="58" startPosition="0" endLine="64" endPosition="0" />
-    <scopeInfo nodeId="193602448594327346" fileName="MacroTest_Test.java" startLine="64" startPosition="0" endLine="70" endPosition="0" />
-    <scopeInfo nodeId="193602448594327346" fileName="MacroTest_Test.java" startLine="70" startPosition="0" endLine="76" endPosition="0" />
-    <scopeInfo nodeId="193602448594330935" fileName="MacroTest_Test.java" startLine="189" startPosition="34" endLine="196" endPosition="9" />
-    <scopeInfo nodeId="193602448594330972" fileName="MacroTest_Test.java" startLine="208" startPosition="34" endLine="215" endPosition="9" />
-    <scopeInfo nodeId="6593006940411759671" fileName="MacroTest_Test.java" startLine="100" startPosition="53" endLine="108" endPosition="282" />
-    <scopeInfo nodeId="6593006940411759677" fileName="MacroTest_Test.java" startLine="111" startPosition="72" endLine="119" endPosition="282" />
-    <scopeInfo nodeId="763409143595611370" fileName="MacroTest_Test.java" startLine="122" startPosition="56" endLine="130" endPosition="282" />
-    <scopeInfo nodeId="384280137912212777" fileName="MacroTest_Test.java" startLine="149" startPosition="68" endLine="157" endPosition="290" />
-    <scopeInfo nodeId="384280137912153769" fileName="MacroTest_Test.java" startLine="160" startPosition="67" endLine="168" endPosition="290" />
-    <scopeInfo nodeId="384280137912158402" fileName="MacroTest_Test.java" startLine="171" startPosition="73" endLine="179" endPosition="290" />
-    <scopeInfo nodeId="6593006940411759671" fileName="MacroTest_Test.java" startLine="99" startPosition="0" endLine="110" endPosition="0" />
-    <scopeInfo nodeId="6593006940411759677" fileName="MacroTest_Test.java" startLine="110" startPosition="0" endLine="121" endPosition="0" />
-    <scopeInfo nodeId="763409143595611370" fileName="MacroTest_Test.java" startLine="121" startPosition="0" endLine="132" endPosition="0" />
-    <scopeInfo nodeId="384280137912212777" fileName="MacroTest_Test.java" startLine="148" startPosition="0" endLine="159" endPosition="0" />
-    <scopeInfo nodeId="384280137912153769" fileName="MacroTest_Test.java" startLine="159" startPosition="0" endLine="170" endPosition="0" />
-    <scopeInfo nodeId="384280137912158402" fileName="MacroTest_Test.java" startLine="170" startPosition="0" endLine="181" endPosition="0" />
-    <scopeInfo nodeId="193602448594330935" fileName="MacroTest_Test.java" startLine="186" startPosition="51" endLine="197" endPosition="22">
+    <scopeInfo nodeId="193602448594327346" fileName="MacroTest_Test.java" startLine="27" startPosition="60" endLine="33" endPosition="0" />
+    <scopeInfo nodeId="193602448594327346" fileName="MacroTest_Test.java" startLine="33" startPosition="0" endLine="39" endPosition="0" />
+    <scopeInfo nodeId="193602448594327346" fileName="MacroTest_Test.java" startLine="39" startPosition="0" endLine="45" endPosition="0" />
+    <scopeInfo nodeId="193602448594327346" fileName="MacroTest_Test.java" startLine="45" startPosition="0" endLine="51" endPosition="0" />
+    <scopeInfo nodeId="193602448594327346" fileName="MacroTest_Test.java" startLine="51" startPosition="0" endLine="57" endPosition="0" />
+    <scopeInfo nodeId="193602448594327346" fileName="MacroTest_Test.java" startLine="57" startPosition="0" endLine="63" endPosition="0" />
+    <scopeInfo nodeId="193602448594327346" fileName="MacroTest_Test.java" startLine="63" startPosition="0" endLine="69" endPosition="0" />
+    <scopeInfo nodeId="193602448594327346" fileName="MacroTest_Test.java" startLine="69" startPosition="0" endLine="75" endPosition="0" />
+    <scopeInfo nodeId="193602448594330935" fileName="MacroTest_Test.java" startLine="183" startPosition="34" endLine="190" endPosition="9" />
+    <scopeInfo nodeId="193602448594330972" fileName="MacroTest_Test.java" startLine="202" startPosition="34" endLine="209" endPosition="9" />
+    <scopeInfo nodeId="6593006940411759671" fileName="MacroTest_Test.java" startLine="94" startPosition="53" endLine="102" endPosition="282" />
+    <scopeInfo nodeId="6593006940411759677" fileName="MacroTest_Test.java" startLine="105" startPosition="72" endLine="113" endPosition="282" />
+    <scopeInfo nodeId="763409143595611370" fileName="MacroTest_Test.java" startLine="116" startPosition="56" endLine="124" endPosition="282" />
+    <scopeInfo nodeId="384280137912212777" fileName="MacroTest_Test.java" startLine="143" startPosition="68" endLine="151" endPosition="290" />
+    <scopeInfo nodeId="384280137912153769" fileName="MacroTest_Test.java" startLine="154" startPosition="73" endLine="162" endPosition="290" />
+    <scopeInfo nodeId="384280137912158402" fileName="MacroTest_Test.java" startLine="165" startPosition="68" endLine="173" endPosition="290" />
+    <scopeInfo nodeId="6593006940411759671" fileName="MacroTest_Test.java" startLine="93" startPosition="0" endLine="104" endPosition="0" />
+    <scopeInfo nodeId="6593006940411759677" fileName="MacroTest_Test.java" startLine="104" startPosition="0" endLine="115" endPosition="0" />
+    <scopeInfo nodeId="763409143595611370" fileName="MacroTest_Test.java" startLine="115" startPosition="0" endLine="126" endPosition="0" />
+    <scopeInfo nodeId="384280137912212777" fileName="MacroTest_Test.java" startLine="142" startPosition="0" endLine="153" endPosition="0" />
+    <scopeInfo nodeId="384280137912153769" fileName="MacroTest_Test.java" startLine="153" startPosition="0" endLine="164" endPosition="0" />
+    <scopeInfo nodeId="384280137912158402" fileName="MacroTest_Test.java" startLine="164" startPosition="0" endLine="175" endPosition="0" />
+    <scopeInfo nodeId="193602448594330935" fileName="MacroTest_Test.java" startLine="180" startPosition="51" endLine="191" endPosition="22">
       <varInfo nodeId="193602448594330935" varName="_parameterValues_129834374" />
       <varInfo nodeId="193602448594330935" varName="quotedNode_1" />
       <varInfo nodeId="193602448594330935" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="193602448594330972" fileName="MacroTest_Test.java" startLine="205" startPosition="51" endLine="216" endPosition="22">
+    <scopeInfo nodeId="193602448594330972" fileName="MacroTest_Test.java" startLine="199" startPosition="51" endLine="210" endPosition="22">
       <varInfo nodeId="193602448594330972" varName="_parameterValues_129834374" />
       <varInfo nodeId="193602448594330972" varName="quotedNode_1" />
       <varInfo nodeId="193602448594330972" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="6593006940411759683" fileName="MacroTest_Test.java" startLine="133" startPosition="58" endLine="146" endPosition="282" />
-    <scopeInfo nodeId="193602448594330935" fileName="MacroTest_Test.java" startLine="185" startPosition="0" endLine="199" endPosition="0">
-      <varInfo nodeId="193602448594330935" varName="parameter_3" />
-    </scopeInfo>
-    <scopeInfo nodeId="193602448594330972" fileName="MacroTest_Test.java" startLine="204" startPosition="0" endLine="218" endPosition="0">
-      <varInfo nodeId="193602448594330972" varName="parameter_3" />
-    </scopeInfo>
-    <scopeInfo nodeId="6593006940411759683" fileName="MacroTest_Test.java" startLine="132" startPosition="0" endLine="148" endPosition="0" />
-    <scopeInfo nodeId="193602448594330648" fileName="MacroTest_Test.java" startLine="79" startPosition="55" endLine="97" endPosition="7">
+    <scopeInfo nodeId="193602448594330648" fileName="MacroTest_Test.java" startLine="78" startPosition="55" endLine="91" endPosition="7">
       <varInfo nodeId="193602448594330708" varName="context" />
       <varInfo nodeId="193602448594330791" varName="expected" />
       <varInfo nodeId="193602448594330763" varName="exportedMacro" />
     </scopeInfo>
-    <scopeInfo nodeId="193602448594330648" fileName="MacroTest_Test.java" startLine="78" startPosition="53" endLine="99" endPosition="0" />
-    <unitInfo nodeId="193602448594327346" fileName="MacroTest_Test.java" startLine="27" startPosition="0" endLine="221" endPosition="0" unitName="jetbrains.mps.buildScript.tests.MacroTest_Test" />
-    <unitInfo nodeId="193602448594330712" fileName="MacroTest_Test.java" startLine="83" startPosition="28" endLine="88" endPosition="7" unitName="jetbrains.mps.buildScript.tests.MacroTest_Test$1" />
-    <unitInfo nodeId="763409143595611772" fileName="MacroTest_Test.java" startLine="104" startPosition="258" endLine="108" endPosition="7" unitName="jetbrains.mps.buildScript.tests.MacroTest_Test$2" />
-    <unitInfo nodeId="6593006940411756957" fileName="MacroTest_Test.java" startLine="115" startPosition="259" endLine="119" endPosition="7" unitName="jetbrains.mps.buildScript.tests.MacroTest_Test$3" />
-    <unitInfo nodeId="763409143595722568" fileName="MacroTest_Test.java" startLine="126" startPosition="259" endLine="130" endPosition="7" unitName="jetbrains.mps.buildScript.tests.MacroTest_Test$4" />
-    <unitInfo nodeId="6593006940411791688" fileName="MacroTest_Test.java" startLine="137" startPosition="259" endLine="141" endPosition="7" unitName="jetbrains.mps.buildScript.tests.MacroTest_Test$5" />
-    <unitInfo nodeId="6593006940411791721" fileName="MacroTest_Test.java" startLine="142" startPosition="259" endLine="146" endPosition="7" unitName="jetbrains.mps.buildScript.tests.MacroTest_Test$6" />
-    <unitInfo nodeId="384280137912212792" fileName="MacroTest_Test.java" startLine="153" startPosition="258" endLine="157" endPosition="7" unitName="jetbrains.mps.buildScript.tests.MacroTest_Test$7" />
-    <unitInfo nodeId="384280137912153821" fileName="MacroTest_Test.java" startLine="164" startPosition="258" endLine="168" endPosition="7" unitName="jetbrains.mps.buildScript.tests.MacroTest_Test$8" />
-    <unitInfo nodeId="384280137912153785" fileName="MacroTest_Test.java" startLine="175" startPosition="259" endLine="179" endPosition="7" unitName="jetbrains.mps.buildScript.tests.MacroTest_Test$9" />
-    <unitInfo nodeId="193602448594327346" fileName="MacroTest_Test.java" startLine="77" startPosition="0" endLine="220" endPosition="0" unitName="jetbrains.mps.buildScript.tests.MacroTest_Test$TestBody" />
-    <unitInfo nodeId="193602448594330935" fileName="MacroTest_Test.java" startLine="182" startPosition="0" endLine="200" endPosition="0" unitName="jetbrains.mps.buildScript.tests.MacroTest_Test.TestBody$QuotationClass_oxxkhl_a0a0h0a0" />
-    <unitInfo nodeId="193602448594330972" fileName="MacroTest_Test.java" startLine="201" startPosition="0" endLine="219" endPosition="0" unitName="jetbrains.mps.buildScript.tests.MacroTest_Test.TestBody$QuotationClass_oxxkhl_a0a0i0a0" />
+    <scopeInfo nodeId="6593006940411759683" fileName="MacroTest_Test.java" startLine="127" startPosition="58" endLine="140" endPosition="282" />
+    <scopeInfo nodeId="193602448594330935" fileName="MacroTest_Test.java" startLine="179" startPosition="0" endLine="193" endPosition="0">
+      <varInfo nodeId="193602448594330935" varName="parameter_3" />
+    </scopeInfo>
+    <scopeInfo nodeId="193602448594330972" fileName="MacroTest_Test.java" startLine="198" startPosition="0" endLine="212" endPosition="0">
+      <varInfo nodeId="193602448594330972" varName="parameter_3" />
+    </scopeInfo>
+    <scopeInfo nodeId="193602448594330648" fileName="MacroTest_Test.java" startLine="77" startPosition="53" endLine="93" endPosition="0" />
+    <scopeInfo nodeId="6593006940411759683" fileName="MacroTest_Test.java" startLine="126" startPosition="0" endLine="142" endPosition="0" />
+    <unitInfo nodeId="193602448594327346" fileName="MacroTest_Test.java" startLine="26" startPosition="0" endLine="215" endPosition="0" unitName="jetbrains.mps.buildScript.tests.MacroTest_Test" />
+    <unitInfo nodeId="763409143595611772" fileName="MacroTest_Test.java" startLine="98" startPosition="258" endLine="102" endPosition="7" unitName="jetbrains.mps.buildScript.tests.MacroTest_Test$1" />
+    <unitInfo nodeId="6593006940411756957" fileName="MacroTest_Test.java" startLine="109" startPosition="259" endLine="113" endPosition="7" unitName="jetbrains.mps.buildScript.tests.MacroTest_Test$2" />
+    <unitInfo nodeId="763409143595722568" fileName="MacroTest_Test.java" startLine="120" startPosition="259" endLine="124" endPosition="7" unitName="jetbrains.mps.buildScript.tests.MacroTest_Test$3" />
+    <unitInfo nodeId="6593006940411791688" fileName="MacroTest_Test.java" startLine="131" startPosition="259" endLine="135" endPosition="7" unitName="jetbrains.mps.buildScript.tests.MacroTest_Test$4" />
+    <unitInfo nodeId="6593006940411791721" fileName="MacroTest_Test.java" startLine="136" startPosition="259" endLine="140" endPosition="7" unitName="jetbrains.mps.buildScript.tests.MacroTest_Test$5" />
+    <unitInfo nodeId="384280137912212792" fileName="MacroTest_Test.java" startLine="147" startPosition="258" endLine="151" endPosition="7" unitName="jetbrains.mps.buildScript.tests.MacroTest_Test$6" />
+    <unitInfo nodeId="384280137912153821" fileName="MacroTest_Test.java" startLine="158" startPosition="259" endLine="162" endPosition="7" unitName="jetbrains.mps.buildScript.tests.MacroTest_Test$7" />
+    <unitInfo nodeId="384280137912153785" fileName="MacroTest_Test.java" startLine="169" startPosition="258" endLine="173" endPosition="7" unitName="jetbrains.mps.buildScript.tests.MacroTest_Test$8" />
+    <unitInfo nodeId="193602448594327346" fileName="MacroTest_Test.java" startLine="76" startPosition="0" endLine="214" endPosition="0" unitName="jetbrains.mps.buildScript.tests.MacroTest_Test$TestBody" />
+    <unitInfo nodeId="193602448594330935" fileName="MacroTest_Test.java" startLine="176" startPosition="0" endLine="194" endPosition="0" unitName="jetbrains.mps.buildScript.tests.MacroTest_Test.TestBody$QuotationClass_oxxkhl_a0a0h0a0" />
+    <unitInfo nodeId="193602448594330972" fileName="MacroTest_Test.java" startLine="195" startPosition="0" endLine="213" endPosition="0" unitName="jetbrains.mps.buildScript.tests.MacroTest_Test.TestBody$QuotationClass_oxxkhl_a0a0i0a0" />
   </root>
   <root nodeId="4045247515868358877">
     <nodeInfo nodeId="4045247515868358877" fileName="TestTemporalPaths_Test.java" startLine="16" startPosition="51" endLine="17" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />

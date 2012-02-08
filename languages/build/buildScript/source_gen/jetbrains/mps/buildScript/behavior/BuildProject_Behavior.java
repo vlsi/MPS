@@ -10,7 +10,9 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.Sequence;
@@ -21,7 +23,7 @@ public class BuildProject_Behavior {
   }
 
   public static Scope virtual_getScope_3734116213129936182(SNode thisNode, SNode kind, final SNode child) {
-    if (kind == SConceptOperations.findConceptDeclaration("jetbrains.mps.buildScript.structure.BuildMacro")) {
+    if (SConceptOperations.isSubConceptOf(kind, "jetbrains.mps.buildScript.structure.BuildMacro")) {
       return BuildProject_Behavior.call_getBuildMacroScope_3767587139141108514(thisNode, child);
     }
     return null;
@@ -33,7 +35,8 @@ public class BuildProject_Behavior {
 
   public static Scope call_getBuildMacroScope_3767587139141108514(SNode thisNode, final SNode child) {
     Scope rootScope = ScopeUtil.simpleRoleScope(thisNode, SLinkOperations.findLinkDeclaration("jetbrains.mps.buildScript.structure.BuildProject", "macros"));
-    if (neq_save77_a0b0d(SNodeOperations.getAncestor(child, "jetbrains.mps.buildScript.structure.BuildProject", false, false), thisNode)) {
+    SNode containingProject = SNodeOperations.getAncestor(child, "jetbrains.mps.buildScript.structure.BuildProject", false, false);
+    if (neq_save77_a0c0d(containingProject, thisNode)) {
       // we are imported => give away only public macro 
       rootScope = ScopeUtil.where(rootScope, new _FunctionTypes._return_P1_E0<Boolean, SNode>() {
         public Boolean invoke(SNode node) {
@@ -41,13 +44,25 @@ public class BuildProject_Behavior {
         }
       });
     }
-    if ("macros".equals(SNodeOperations.getContainingLinkRole(child))) {
-      // we can only see what was strictly before us 
-      rootScope = ScopeUtil.where(rootScope, new _FunctionTypes._return_P1_E0<Boolean, SNode>() {
-        public Boolean invoke(SNode it) {
-          return !(ListSequence.fromList(SNodeOperations.getNextSiblings(child, false)).contains(it)) && !(eq_save77_a0a0a0a0a1a0b0c0d(child, it));
-        }
-      });
+    if ((containingProject != null)) {
+      final Wrappers._T<SNode> definedMacro = new Wrappers._T<SNode>();
+      if (ListSequence.fromList(SLinkOperations.getTargets(containingProject, "macros", true)).contains(child)) {
+        definedMacro.value = SNodeOperations.cast(child, "jetbrains.mps.buildScript.structure.BuildMacro");
+      } else {
+        definedMacro.value = ListSequence.fromList(SLinkOperations.getTargets(containingProject, "macros", true)).findFirst(new IWhereFilter<SNode>() {
+          public boolean accept(SNode it) {
+            return ListSequence.fromList(SNodeOperations.getDescendants(it, null, false, new String[]{})).contains(child);
+          }
+        });
+      }
+      if ((definedMacro.value != null)) {
+        // we can only see what was strictly before us 
+        rootScope = ScopeUtil.where(rootScope, new _FunctionTypes._return_P1_E0<Boolean, SNode>() {
+          public Boolean invoke(SNode visibleNode) {
+            return !(ListSequence.fromList(SNodeOperations.getNextSiblings(definedMacro.value, false)).contains(visibleNode)) && !(eq_save77_a0a0a0a0a1a0b0c0d0d(definedMacro.value, visibleNode));
+          }
+        });
+      }
     }
 
     List<Scope> scopes = ListSequence.fromList(new ArrayList<Scope>());
@@ -57,14 +72,14 @@ public class BuildProject_Behavior {
     return new CompositeScope(ListSequence.fromList(scopes).toGenericArray(Scope.class));
   }
 
-  private static boolean neq_save77_a0b0d(Object a, Object b) {
+  private static boolean neq_save77_a0c0d(Object a, Object b) {
     return !((a != null ?
       a.equals(b) :
       a == b
     ));
   }
 
-  private static boolean eq_save77_a0a0a0a0a1a0b0c0d(Object a, Object b) {
+  private static boolean eq_save77_a0a0a0a0a1a0b0c0d0d(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b
