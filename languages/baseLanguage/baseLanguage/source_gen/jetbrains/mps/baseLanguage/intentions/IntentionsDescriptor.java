@@ -43,14 +43,6 @@ public class IntentionsDescriptor extends BaseIntentionsDescriptor {
     add(new ExtractWhileConditionToInternalIfStatement_Intention(), "1199621296757");
     add(new FilpEqualsIntention_Intention(), "1199625900037");
     add(new FlipBinaryOperation_Intention(), "1195647334600");
-    add(new GenerateConstructor_Intention(), "3868795809789198353");
-    add(new GenerateEqualsAndHashcode_Intention(), "5973141109804726331");
-    add(new GenerateGetter_Intention(), "5973141109804726314");
-    add(new GenerateGettersAndSetters_Intention(), "4183818788368444771");
-    add(new GenerateMainMethod_Intention(), "1503864198456688932");
-    add(new GenerateSetter_Intention(), "5973141109804726322");
-    add(new GenerateToString_Intention(), "5973141109804726339");
-    add(new ImplementMethods_Intention(), "1221638394062");
     add(new InvertIfCondition_Intention(), "1195647359405");
     add(new IterateOverIterable_Intention(), "1238764345596");
     add(new MakeClassAbstract_Intention(), "1227519137253");
@@ -69,7 +61,6 @@ public class IntentionsDescriptor extends BaseIntentionsDescriptor {
     add(new MergeStringConcatenation_Intention(), "1202130221457");
     add(new MigrateString_Intention(), "3627222673199430317");
     add(new MoveInitializerToConstructor_Intention(), "1201102619707");
-    add(new OverrideMethods_Intention(), "1028039751735280089");
     add(new RemoveArrayType_Intention(), "1226918395187");
     add(new RemoveTVDInAnonymousClass_Intention(), "4138629533259838060");
     add(new ReplaceAssertWithIf_Intention(), "1199622460250");

@@ -35,6 +35,7 @@
     <mkdir dir="${deploy.dir}/MPS/lib/idea-patch.jar.tmp" />
     <mkdir dir="${deploy.dir}/MPS/lib/mps-core.jar.tmp/modules" />
     <mkdir dir="${deploy.dir}/MPS/lib/mps-core.jar.tmp" />
+    <mkdir dir="${deploy.dir}/MPS/lib/mps-editor-api.jar.tmp" />
     <mkdir dir="${deploy.dir}/MPS/lib/mps-editor.jar.tmp/modules" />
     <mkdir dir="${deploy.dir}/MPS/lib/mps-editor.jar.tmp" />
     <mkdir dir="${deploy.dir}/MPS/lib/mps-platform.jar.tmp/modules" />
@@ -225,6 +226,13 @@
       <fileset dir="${deploy.dir}/MPS/lib/mps-core.jar.tmp" />
     </jar>
     <delete dir="${deploy.dir}/MPS/lib/mps-core.jar.tmp" />
+    <copy todir="${deploy.dir}/MPS/lib/mps-editor-api.jar.tmp">
+      <fileset dir="${mps_home}/editor/editor-api/classes" />
+    </copy>
+    <jar destfile="${deploy.dir}/MPS/lib/mps-editor-api.jar" duplicate="preserve" filesonly="true">
+      <fileset dir="${deploy.dir}/MPS/lib/mps-editor-api.jar.tmp" />
+    </jar>
+    <delete dir="${deploy.dir}/MPS/lib/mps-editor-api.jar.tmp" />
     <copy todir="${deploy.dir}/MPS/lib/mps-editor.jar.tmp">
       <fileset dir="${mps_home}/editor/editor-runtime/classes" />
     </copy>
@@ -236,9 +244,6 @@
     </copy>
     <copy todir="${deploy.dir}/MPS/lib/mps-editor.jar.tmp">
       <fileset dir="${mps_home}/editor/typesystemIntegration/classes" />
-    </copy>
-    <copy todir="${deploy.dir}/MPS/lib/mps-editor.jar.tmp">
-      <fileset dir="${mps_home}/editor/editor-api/classes" />
     </copy>
     <antcall target="MPS-languages.pack.jetbrains.mps.editor.runtime" />
     <mkdir dir="${deploy.dir}/MPS/lib/mps-editor.jar.tmp/modules" />
@@ -259,9 +264,6 @@
       <fileset dir="${deploy.dir}/MPS/lib/mps-platform.jar.tmp" />
     </jar>
     <delete dir="${deploy.dir}/MPS/lib/mps-platform.jar.tmp" />
-    <copy todir="${deploy.dir}/MPS/lib/mps-workbench.jar.tmp">
-      <fileset dir="${mps_home}/core/plugin-runtime/classes" />
-    </copy>
     <copy todir="${deploy.dir}/MPS/lib/mps-workbench.jar.tmp">
       <fileset dir="${mps_home}/languages/languageDesign/test/classes_gen" />
     </copy>
@@ -286,7 +288,6 @@
     <copy todir="${deploy.dir}/MPS/lib/mps-workbench.jar.tmp">
       <fileset dir="${mps_home}/MPSPlugin/apiclasses" />
     </copy>
-    <antcall target="MPS-languages.pack.jetbrains.mps.plugin.runtime" />
     <antcall target="MPS-languages.pack.jetbrains.mps.ide" />
     <antcall target="MPS-languages.pack.jetbrains.mps.ide.editor" />
     <antcall target="MPS-languages.pack.jetbrains.mps.ide.mps" />
@@ -769,6 +770,7 @@
     <delete dir="${deploy.dir}/${build.number}-buildTools.zip.tmp" />
     <delete dir="${deploy.dir}/MPS/lib/idea-patch.jar.tmp" />
     <delete dir="${deploy.dir}/MPS/lib/mps-core.jar.tmp" />
+    <delete dir="${deploy.dir}/MPS/lib/mps-editor-api.jar.tmp" />
     <delete dir="${deploy.dir}/MPS/lib/mps-editor.jar.tmp" />
     <delete dir="${deploy.dir}/MPS/lib/mps-platform.jar.tmp" />
     <delete dir="${deploy.dir}/MPS/lib/mps-workbench.jar.tmp" />

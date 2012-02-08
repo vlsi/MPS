@@ -25,7 +25,7 @@ import jetbrains.mps.ide.findusages.view.optionseditor.components.ViewOptionsEdi
 import jetbrains.mps.ide.findusages.view.optionseditor.options.FindersOptions;
 import jetbrains.mps.ide.findusages.view.optionseditor.options.ScopeOptions;
 import jetbrains.mps.ide.findusages.view.optionseditor.options.ViewOptions;
-import jetbrains.mps.ide.navigation.NavigationSupport;
+import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.smodel.IOperationContext;

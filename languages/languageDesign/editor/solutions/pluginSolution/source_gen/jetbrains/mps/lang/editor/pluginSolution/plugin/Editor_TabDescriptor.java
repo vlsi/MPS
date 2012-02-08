@@ -14,7 +14,7 @@ import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior;
 import jetbrains.mps.smodel.LanguageAspect;
-import jetbrains.mps.lang.structure.pluginSolution.plugin.ConceptEditorHelper;
+import jetbrains.mps.lang.structure.plugin.ConceptEditorHelper;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 
 public class Editor_TabDescriptor extends EditorTabDescriptor {

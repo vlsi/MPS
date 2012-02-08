@@ -18,7 +18,7 @@ import jetbrains.mps.make.script.IJobMonitor;
 import jetbrains.mps.make.resources.IPropertiesAccessor;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.resources.TResource;
-import jetbrains.mps.ide.ThreadUtils;
+import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.progress.EmptyProgressMonitor;
@@ -81,7 +81,7 @@ public class ReloadClasses_Facet extends IFacet.Stub {
                 }
               })) {
                 monitor.currentProgress().beginWork("Reloading classes", 1, monitor.currentProgress().workLeft());
-                ThreadUtils.runInUIThreadAndWait(new Runnable() {
+                FileSystem.getInstance().runWriteTransaction(new Runnable() {
                   public void run() {
                     ModelAccess.instance().requireWrite(new Runnable() {
                       public void run() {

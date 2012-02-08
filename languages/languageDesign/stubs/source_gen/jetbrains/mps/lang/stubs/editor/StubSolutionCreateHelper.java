@@ -10,7 +10,6 @@ import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.IOperationContext;
 import javax.swing.JOptionPane;
-import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.SModelRepository;
@@ -34,7 +33,7 @@ public class StubSolutionCreateHelper {
   public static void createNewStubSolution(IOperationContext context, SNode node) {
     final Language language = StubSolutionCreateHelper.getCurrentLanguage(node);
 
-    String solutionName = JOptionPane.showInputDialog(ProjectHelper.toMainFrame(context.getProject()), "NewSolution");
+    String solutionName = JOptionPane.showInputDialog("NewSolution");
 
     final StubSolution stubSolution = new StubSolution();
     stubSolution.setId(ModuleId.generate());
@@ -50,9 +49,8 @@ public class StubSolutionCreateHelper {
         LanguageDescriptor descriptor = language.getModuleDescriptor();
         descriptor.getStubSolutions().add(stubSolution);
         language.setLanguageDescriptor(descriptor, true);
+        language.save();
       }
     });
-
-    ProjectHelper.toIdeaProject(context.getProject()).save();
   }
 }

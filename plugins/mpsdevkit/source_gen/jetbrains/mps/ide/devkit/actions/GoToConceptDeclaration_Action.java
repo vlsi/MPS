@@ -15,7 +15,7 @@ import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import com.intellij.featureStatistics.FeatureUsageTracker;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.ide.navigation.NavigationSupport;
+import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.smodel.IOperationContext;
 
 public class GoToConceptDeclaration_Action extends BaseAction {

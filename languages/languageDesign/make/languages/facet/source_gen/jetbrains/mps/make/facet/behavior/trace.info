@@ -3,12 +3,10 @@
   <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.make.facet.behavior.BehaviorAspectDescriptor" />
   <unitInfo fileName="ExtendsFacetReference_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.make.facet.behavior.ExtendsFacetReference_BehaviorDescriptor" />
   <unitInfo fileName="FacetDeclaration_BehaviorDescriptor.java" startLine="13" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.make.facet.behavior.FacetDeclaration_BehaviorDescriptor" />
-  <unitInfo fileName="FacetReferenceExpression_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.make.facet.behavior.FacetReferenceExpression_Behavior" />
   <unitInfo fileName="FacetReferenceExpression_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.make.facet.behavior.FacetReferenceExpression_BehaviorDescriptor" />
   <unitInfo fileName="FacetReference_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.make.facet.behavior.FacetReference_BehaviorDescriptor" />
   <unitInfo fileName="ForeignParametersComponentExpression_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.make.facet.behavior.ForeignParametersComponentExpression_BehaviorDescriptor" />
   <unitInfo fileName="ForeignParametersExpression_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.make.facet.behavior.ForeignParametersExpression_BehaviorDescriptor" />
-  <unitInfo fileName="IFacet_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.make.facet.behavior.IFacet_Behavior" />
   <unitInfo fileName="IFacet_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="8" endPosition="0" unitName="jetbrains.mps.make.facet.behavior.IFacet_BehaviorDescriptor" />
   <unitInfo fileName="IPropertyExpression_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="8" endPosition="0" unitName="jetbrains.mps.make.facet.behavior.IPropertyExpression_BehaviorDescriptor" />
   <unitInfo fileName="LocalParametersComponentExpression_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.make.facet.behavior.LocalParametersComponentExpression_BehaviorDescriptor" />

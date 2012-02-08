@@ -44,7 +44,6 @@
   <import index="tp3t" modelUID="r:00000000-0000-4000-0000-011c89590345(jetbrains.mps.lang.pattern.structure)" version="0" implicit="yes" />
   <import index="cx9y" modelUID="r:309aeee7-bee8-445c-b31d-35928d1da75f(jetbrains.mps.baseLanguage.tuples.structure)" version="2" implicit="yes" />
   <import index="tpfh" modelUID="r:00000000-0000-4000-0000-011c895902e1(jetbrains.mps.lang.generator.behavior)" version="-1" implicit="yes" />
-  <import index="98m" modelUID="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.generator.template(jetbrains.mps.generator.template@java_stub)" version="-1" implicit="yes" />
   <roots>
     <node type="tpf8.TemplateDeclaration" typeId="tpf8.1092059087312" id="1167163214015">
       <property name="name" nameId="tpck.1169194664001" value="insert_CreateRootRule_Condition" />
@@ -1238,7 +1237,7 @@
         <property name="name" nameId="tpck.1169194664001" value="_context" />
         <property name="isFinal" nameId="tpee.1176718929932" value="true" />
         <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5015072279636904698">
-          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="98m.~TemplateQueryContext" resolveInfo="TemplateQueryContext" />
+          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="q383.~TemplateQueryContext" resolveInfo="TemplateQueryContext" />
         </node>
       </node>
       <node role="returnType" roleId="tpee.1068580123133" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5015072279636904701">
@@ -36513,8 +36512,8 @@
             <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="5015072279636896924">
               <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="5015072279636896925">
                 <node role="expression" roleId="tpee.1068580123156" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="5015072279636898321">
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="98m.~TemplateFunctionMethodName%dvarValue_Query(jetbrains%dmps%dsmodel%dSNode)%cjava%dlang%dString" resolveInfo="varValue_Query" />
-                  <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="98m.~TemplateFunctionMethodName" resolveInfo="TemplateFunctionMethodName" />
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="q383.~TemplateFunctionMethodName%dvarValue_Query(jetbrains%dmps%dsmodel%dSNode)%cjava%dlang%dString" resolveInfo="varValue_Query" />
+                  <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="q383.~TemplateFunctionMethodName" resolveInfo="TemplateFunctionMethodName" />
                   <node role="actualArgument" roleId="tpee.1068499141038" type="tpf8.TemplateFunctionParameter_sourceNode" typeId="tpf8.1167169188348" id="5015072279636898322" />
                 </node>
               </node>
@@ -36532,7 +36531,7 @@
           <property name="name" nameId="tpck.1169194664001" value="_context" />
           <property name="isFinal" nameId="tpee.1176718929932" value="true" />
           <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5015072279636904674">
-            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="98m.~TemplateQueryContext" resolveInfo="TemplateQueryContext" />
+            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="q383.~TemplateQueryContext" resolveInfo="TemplateQueryContext" />
           </node>
         </node>
         <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="5015072279636896932" />
@@ -36699,7 +36698,7 @@
                       </node>
                       <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="6156996919798915810">
                         <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="6156996919798915811">
-                          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="98m.~TemplateVarContext%d&lt;init&gt;(jetbrains%dmps%dsmodel%dSNode,jetbrains%dmps%dsmodel%dSNodePointer,jetbrains%dmps%dgenerator%druntime%dTemplateContext,jetbrains%dmps%dgenerator%dtemplate%dITemplateGenerator)" resolveInfo="TemplateVarContext" />
+                          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="q383.~TemplateVarContext%d&lt;init&gt;(jetbrains%dmps%dsmodel%dSNode,jetbrains%dmps%dsmodel%dSNodePointer,jetbrains%dmps%dgenerator%druntime%dTemplateContext,jetbrains%dmps%dgenerator%dtemplate%dITemplateGenerator)" resolveInfo="TemplateVarContext" />
                           <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="6156996919798915812">
                             <node role="operand" roleId="tpee.1197027771414" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="6156996919798915813">
                               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5015072279636784106" resolveInfo="context" />
@@ -36742,8 +36741,8 @@
                           <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="6156996919798915826">
                             <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="6156996919798915827">
                               <node role="expression" roleId="tpee.1068581517676" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="6156996919798915832">
-                                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="98m.~TemplateFunctionMethodName%dvarValue_Query(jetbrains%dmps%dsmodel%dSNode)%cjava%dlang%dString" resolveInfo="varValue_Query" />
-                                <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="98m.~TemplateFunctionMethodName" resolveInfo="TemplateFunctionMethodName" />
+                                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="q383.~TemplateFunctionMethodName%dvarValue_Query(jetbrains%dmps%dsmodel%dSNode)%cjava%dlang%dString" resolveInfo="varValue_Query" />
+                                <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="q383.~TemplateFunctionMethodName" resolveInfo="TemplateFunctionMethodName" />
                                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="6156996919798915833">
                                   <node role="operand" roleId="tpee.1197027771414" type="tpf8.TemplateFunctionParameter_sourceNode" typeId="tpf8.1167169188348" id="6156996919798915834" />
                                   <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="6156996919798947999">

@@ -15,7 +15,7 @@ import java.util.ArrayList;
 import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.lang.structure.pluginSolution.plugin.ConceptEditorHelper;
+import jetbrains.mps.lang.structure.plugin.ConceptEditorHelper;
 
 public class Behavior_TabDescriptor extends EditorTabDescriptor {
   private static final Icon ICON = IconUtil.getIcon("behavior.png");

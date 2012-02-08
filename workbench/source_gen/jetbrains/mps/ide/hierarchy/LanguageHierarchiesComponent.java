@@ -61,7 +61,7 @@ import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.ide.project.ProjectHelper;
-import jetbrains.mps.ide.navigation.NavigationSupport;
+import jetbrains.mps.openapi.navigation.NavigationSupport;
 import java.awt.Graphics2D;
 import java.awt.Stroke;
 import java.awt.BasicStroke;

@@ -20,7 +20,7 @@ import com.intellij.openapi.project.Project;
 import com.intellij.ui.ScrollPaneFactory;
 import jetbrains.mps.openapi.editor.EditorComponent;
 import jetbrains.mps.openapi.editor.Editor;
-import jetbrains.mps.ide.navigation.NavigationSupport;
+import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.MPSTreeNode;

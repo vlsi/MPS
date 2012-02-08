@@ -23,7 +23,7 @@ import com.intellij.openapi.ui.popup.JBPopupFactory;
 import com.intellij.openapi.ui.popup.ListPopup;
 import com.intellij.openapi.util.Pair;
 import com.intellij.ui.awt.RelativePoint;
-import jetbrains.mps.ide.navigation.NavigationSupport;
+import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.intentions.*;
 import jetbrains.mps.intentions.IntentionsManager.QueryDescriptor;
@@ -312,6 +312,21 @@ public class IntentionsSupport {
     }
     return group;
   }
+  
+  private void addActionsAsIntentions(AnAction action, BaseGroup group, DataContext dataContext) {
+    if (action instanceof ActionGroup) {
+      for (AnAction child : ((ActionGroup)action).getChildren(null)) {
+        addActionsAsIntentions(child, group, dataContext);
+      }
+    }
+    if (action instanceof BaseAction) {
+      Presentation presentation = new Presentation();
+      presentation.setDescription(action.getTemplatePresentation().getDescription());
+      ((BaseAction) action).isApplicable(new AnActionEvent(null, dataContext, "", presentation,
+        ActionManager.getInstance(), 0));
+      group.add(action);
+    }
+  }
 
   private void showIntentionsMenu() {
     EditorContext editorContext = myEditor.getEditorContext();
@@ -324,7 +339,8 @@ public class IntentionsSupport {
     final DataContext dataContext = DataManager.getInstance().getDataContext(editorContext.getNodeEditorComponent(), x, y);
     ListPopup popup = ModelAccess.instance().runReadAction(new Computable<ListPopup>() {
       public ListPopup compute() {
-        ActionGroup group = getIntentionsGroup();
+        BaseGroup group = getIntentionsGroup();
+        addActionsAsIntentions(ActionManager.getInstance().getAction("ActionsAsIntentions"), group, dataContext);
         ListPopup popup = null;
         if (group != null) {
           popup = JBPopupFactory.getInstance()

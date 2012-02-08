@@ -17,7 +17,7 @@ package jetbrains.mps.workbench.choose.nodes;
 
 import com.intellij.navigation.NavigationItem;
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.ide.navigation.NavigationSupport;
+import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.smodel.ModelAccess;

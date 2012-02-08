@@ -215,6 +215,25 @@
     </scopeInfo>
     <unitInfo nodeId="5504093910384079631" fileName="StringsIO.java" startLine="19" startPosition="0" endLine="59" endPosition="0" unitName="jetbrains.mps.util.StringsIO" />
   </root>
+  <root nodeId="5755638771828906585">
+    <nodeInfo nodeId="5755638771828834267" fileName="ModuleNameUtil.java" startLine="11" startPosition="59" endLine="12" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5755638771828834273" fileName="ModuleNameUtil.java" startLine="12" startPosition="48" endLine="13" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5755638771828834278" fileName="ModuleNameUtil.java" startLine="13" startPosition="65" endLine="14" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5755638771828834283" fileName="ModuleNameUtil.java" startLine="14" startPosition="67" endLine="15" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5755638771828906587" fileName="ModuleNameUtil.java" startLine="7" startPosition="29" endLine="9" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ModuleNameUtil#()V" />
+    <nodeInfo nodeId="5755638771828834261" fileName="ModuleNameUtil.java" startLine="10" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getModuleShortName#(Ljetbrains/mps/project/IModule;)Ljava/lang/String;" />
+    <scopeInfo nodeId="5755638771828906590" fileName="ModuleNameUtil.java" startLine="8" startPosition="27" endLine="8" endPosition="27" />
+    <scopeInfo nodeId="5755638771828906587" fileName="ModuleNameUtil.java" startLine="7" startPosition="29" endLine="9" endPosition="3" />
+    <scopeInfo nodeId="5755638771828834266" fileName="ModuleNameUtil.java" startLine="11" startPosition="59" endLine="15" endPosition="48">
+      <varInfo nodeId="5755638771828834268" varName="moduleUID" />
+      <varInfo nodeId="5755638771828834279" varName="normalShortName" />
+      <varInfo nodeId="5755638771828834274" varName="shortName" />
+    </scopeInfo>
+    <scopeInfo nodeId="5755638771828834261" fileName="ModuleNameUtil.java" startLine="10" startPosition="0" endLine="17" endPosition="0">
+      <varInfo nodeId="5755638771828834262" varName="module" />
+    </scopeInfo>
+    <unitInfo nodeId="5755638771828906585" fileName="ModuleNameUtil.java" startLine="7" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.util.ModuleNameUtil" />
+  </root>
   <root nodeId="7295777740694844259">
     <nodeInfo nodeId="6442525078792060505" fileName="SNodeCompare.java" startLine="24" startPosition="65" endLine="25" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6442525078792060513" fileName="SNodeCompare.java" startLine="25" startPosition="71" endLine="26" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

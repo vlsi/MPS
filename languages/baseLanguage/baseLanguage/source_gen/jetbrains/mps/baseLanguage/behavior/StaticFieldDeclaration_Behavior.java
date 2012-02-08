@@ -8,6 +8,7 @@ import java.util.List;
 import javax.swing.Icon;
 import java.util.ArrayList;
 import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
+import jetbrains.mps.baseLanguage.plugin.IconResourceBundle_Behavior;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.baseLanguage.util.CodeStyleSettings;
@@ -33,7 +34,7 @@ public class StaticFieldDeclaration_Behavior {
 
   public static List<Icon> virtual_getMarkIcons_3923831204883340393(SNode thisNode) {
     List<Icon> markIcons = new ArrayList<Icon>(BaseConcept_Behavior.callSuper_getMarkIcons_3923831204883340393(thisNode, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration"));
-    markIcons.add(IconContainer.ICON_a0a1a0);
+    markIcons.add(IconResourceBundle_Behavior.getInstance().getResource("STATICMARK"));
     return markIcons;
   }
 

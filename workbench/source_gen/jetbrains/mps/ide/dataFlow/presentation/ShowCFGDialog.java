@@ -13,7 +13,7 @@ import java.awt.event.MouseEvent;
 import jetbrains.mps.lang.dataFlow.framework.instructions.Instruction;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.ide.navigation.NavigationSupport;
+import jetbrains.mps.openapi.navigation.NavigationSupport;
 import java.awt.Color;
 import javax.swing.JComponent;
 import javax.swing.Scrollable;

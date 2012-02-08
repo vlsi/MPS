@@ -21,10 +21,10 @@ public class PluginSolution_ApplicationPlugin extends BaseApplicationPlugin {
 
   public void createGroups() {
     // actions w/o parameters 
-    addAction(new ShowGenerationIntentions_Action());
+    addAction(new ShowGenerationActions_Action());
     addAction(new ShowSurroundWithIntentions_Action());
     // groups 
-    addGroup(new GenerationIntentions_ActionGroup());
+    addGroup(new GenerationActions_ActionGroup());
     addGroup(new SpecificIntentions_ActionGroup());
     addGroup(new SurroundWithIntentions_ActionGroup());
   }
