@@ -10,6 +10,8 @@ import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.baseLanguage.unitTest.behavior.ITestCase_Behavior;
 import jetbrains.mps.lang.test.behavior.NodesTestCase_Behavior;
+import java.io.File;
+import jetbrains.mps.project.Project;
 
 public class TestsUtil {
   public TestsUtil() {
@@ -20,7 +22,7 @@ public class TestsUtil {
     if (projectPath != null) {
       return projectPath;
     }
-    String url = operationContext.getProject().getName();
+    String url = check_6yh4up_a0c0a(check_6yh4up_a0a2a0(operationContext.getProject()));
     if (url != null) {
       return MacrosFactory.mpsHomeMacros().shrinkPath(url, (IFile) null);
     }
@@ -29,5 +31,19 @@ public class TestsUtil {
 
   public static String getTestBodyClassName(SNode testCase) {
     return ITestCase_Behavior.call_getClassName_1216136193905(testCase) + "$" + NodesTestCase_Behavior.getTestBodyName_1224602741295();
+  }
+
+  private static String check_6yh4up_a0c0a(File checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getAbsolutePath();
+    }
+    return null;
+  }
+
+  private static File check_6yh4up_a0a2a0(Project checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getProjectFile();
+    }
+    return null;
   }
 }
