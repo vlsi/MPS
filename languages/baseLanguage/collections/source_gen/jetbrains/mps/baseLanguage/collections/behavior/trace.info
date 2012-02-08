@@ -2289,6 +2289,14 @@
     </scopeInfo>
     <unitInfo nodeId="5686963296372576518" fileName="AbstractContainerType_Behavior.java" startLine="15" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.AbstractContainerType_Behavior" />
   </root>
+  <root nodeId="6640659353039755348">
+    <nodeInfo nodeId="6640659353039755348" fileName="MultiForEachStatement_Behavior.java" startLine="7" startPosition="45" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
+    <scopeInfo nodeId="6640659353039755350" fileName="MultiForEachStatement_Behavior.java" startLine="8" startPosition="43" endLine="8" endPosition="43" />
+    <scopeInfo nodeId="6640659353039755348" fileName="MultiForEachStatement_Behavior.java" startLine="7" startPosition="45" endLine="10" endPosition="0">
+      <varInfo nodeId="6640659353039755348" varName="thisNode" />
+    </scopeInfo>
+    <unitInfo nodeId="6640659353039755348" fileName="MultiForEachStatement_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.MultiForEachStatement_Behavior" />
+  </root>
   <root nodeId="7886927014685055056">
     <nodeInfo nodeId="7886927014685055056" fileName="CollectionType_Behavior.java" startLine="27" startPosition="38" endLine="28" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="PARAMETERS_7886927014685055166" />
     <nodeInfo nodeId="7886927014685055061" fileName="CollectionType_Behavior.java" startLine="33" startPosition="78" endLine="34" endPosition="195" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

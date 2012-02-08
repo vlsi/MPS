@@ -12,6 +12,10 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import java.util.ArrayList;
+import jetbrains.mps.scope.Scope;
+import jetbrains.mps.smodel.search.ISearchScope;
+import jetbrains.mps.smodel.search.SimpleSearchScope;
+import jetbrains.mps.scope.CompositeScope;
 import jetbrains.mps.smodel.structure.BehaviorDescriptor;
 import jetbrains.mps.smodel.structure.ConceptRegistry;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
@@ -101,6 +105,39 @@ public class StatementList_Behavior {
       }
     }
     return result;
+  }
+
+  public static List<SNode> call_getLocalVariableDeclarations_3986960521977638556(SNode thisNode, SNode child) {
+    List<SNode> result = new ArrayList<SNode>();
+
+    SNode childStatement = child;
+    while (childStatement != null && SNodeOperations.getParent(childStatement) != thisNode) {
+      childStatement = SNodeOperations.getParent(childStatement);
+    }
+
+    for (SNode statement : SLinkOperations.getTargets(thisNode, "statement", true)) {
+      if (childStatement == statement) {
+        break;
+      }
+      if (SNodeOperations.isInstanceOf(statement, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement")) {
+        ListSequence.fromList(result).addElement(SLinkOperations.getTarget(SNodeOperations.cast(statement, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement"), "localVariableDeclaration", true));
+      }
+    }
+
+    return result;
+  }
+
+  public static Scope virtual_getScope_3734116213129936182(SNode thisNode, SNode kind, SNode child) {
+    if (SConceptOperations.isSubConceptOf(kind, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration")) {
+      Scope currentScope = new ISearchScope.Adapter(new SimpleSearchScope(StatementList_Behavior.call_getLocalVariableDeclarations_3986960521977638556(thisNode, child)));
+      Scope nextScope = Scope.getScope(SNodeOperations.getParent(thisNode), child, kind);
+      return (nextScope == null ?
+        currentScope :
+        new CompositeScope(currentScope, nextScope)
+      );
+    }
+
+    return null;
   }
 
   public static List<SNode> call_getScopeVariables_2496361171403550911(SNode thisNode) {

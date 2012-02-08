@@ -14,6 +14,10 @@ public class ForStatement_BehaviorDescriptor extends AbstractForStatement_Behavi
     return ForStatement_Behavior.virtual_getScopeVariables_5067982036267369894(thisNode);
   }
 
+  public List<SNode> virtual_getOrderedParts_1955452033143960289(SNode thisNode) {
+    return ForStatement_Behavior.virtual_getOrderedParts_1955452033143960289(thisNode);
+  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.structure.ForStatement";

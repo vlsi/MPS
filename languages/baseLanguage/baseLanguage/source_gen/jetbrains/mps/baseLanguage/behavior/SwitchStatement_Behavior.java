@@ -6,6 +6,14 @@ import jetbrains.mps.smodel.SNode;
 import java.util.Set;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.scope.Scope;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import java.util.List;
+import java.util.ArrayList;
+import jetbrains.mps.smodel.search.ISearchScope;
+import jetbrains.mps.smodel.search.SimpleSearchScope;
+import jetbrains.mps.scope.CompositeScope;
 
 public class SwitchStatement_Behavior {
   public static void init(SNode thisNode) {
@@ -21,5 +29,34 @@ public class SwitchStatement_Behavior {
     if ((SLinkOperations.getTarget(thisNode, "defaultBlock", true) != null)) {
       StatementList_Behavior.call_collectUncaughtThrowables_5412515780383134474(SLinkOperations.getTarget(thisNode, "defaultBlock", true), throwables, ignoreMayBeThrowables);
     }
+  }
+
+  public static Scope virtual_getScope_3734116213129936182(SNode thisNode, SNode kind, SNode child) {
+    SNode childStatement = child;
+    while (SNodeOperations.getParent(childStatement) != thisNode) {
+      childStatement = SNodeOperations.getParent(childStatement);
+    }
+
+    if (SConceptOperations.isSubConceptOf(kind, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration")) {
+      Scope nextScope = Scope.getScope(SNodeOperations.getParent(thisNode), child, kind);
+      if (SLinkOperations.getTarget(thisNode, "expression", true) == childStatement) {
+        return nextScope;
+      }
+
+      List<SNode> variables = new ArrayList<SNode>();
+      for (SNode caseNode : SLinkOperations.getTargets(thisNode, "case", true)) {
+        if (caseNode == childStatement) {
+          break;
+        }
+        ListSequence.fromList(variables).addSequence(ListSequence.fromList(StatementList_Behavior.call_getLocalVariableDeclarations_3986960521977638556(SLinkOperations.getTarget(caseNode, "body", true), null)));
+      }
+      Scope currentScope = new ISearchScope.Adapter(new SimpleSearchScope(variables));
+      return (nextScope == null ?
+        currentScope :
+        new CompositeScope(currentScope, nextScope)
+      );
+    }
+
+    return null;
   }
 }

@@ -7,9 +7,14 @@ import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.scope.Scope;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.smodel.search.ISearchScope;
+import jetbrains.mps.smodel.search.SimpleSearchScope;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.scope.CompositeScope;
 import jetbrains.mps.smodel.structure.BehaviorDescriptor;
 import jetbrains.mps.smodel.structure.ConceptRegistry;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class CatchClause_Behavior {
@@ -20,6 +25,19 @@ public class CatchClause_Behavior {
 
   public static List<SNode> virtual_getScopeVariables_5067982036267369894(SNode thisNode) {
     return ListSequence.fromListAndArray(new ArrayList<SNode>(), SLinkOperations.getTarget(thisNode, "throwable", true));
+  }
+
+  public static Scope virtual_getScope_3734116213129936182(SNode thisNode, SNode kind, SNode child) {
+    if (SConceptOperations.isSubConceptOf(kind, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration")) {
+      Scope currentScope = new ISearchScope.Adapter(new SimpleSearchScope(ListSequence.fromListAndArray(new ArrayList<SNode>(), SLinkOperations.getTarget(thisNode, "throwable", true))));
+      Scope nextScope = Scope.getScope(SNodeOperations.getParent(thisNode), child, kind);
+      return (nextScope == null ?
+        currentScope :
+        new CompositeScope(currentScope, nextScope)
+      );
+    }
+
+    return null;
   }
 
   public static List<SNode> call_getScopeVariables_2496361171403550981(SNode thisNode) {

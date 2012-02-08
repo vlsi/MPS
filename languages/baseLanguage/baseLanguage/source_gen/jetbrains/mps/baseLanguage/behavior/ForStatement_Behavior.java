@@ -22,6 +22,16 @@ public class ForStatement_Behavior {
     return ListSequence.fromListAndArray(new ArrayList<SNode>(), SLinkOperations.getTarget(thisNode, "variable", true));
   }
 
+  public static List<SNode> virtual_getOrderedParts_1955452033143960289(SNode thisNode) {
+    List<SNode> variables = new ArrayList<SNode>();
+    ListSequence.fromList(variables).addElement(SLinkOperations.getTarget(thisNode, "variable", true));
+    ListSequence.fromList(variables).addElement(SLinkOperations.getTarget(thisNode, "condition", true));
+    ListSequence.fromList(variables).addSequence(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "iteration", true)));
+    ListSequence.fromList(variables).addSequence(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "additionalVar", true)));
+    ListSequence.fromList(variables).addElement(SLinkOperations.getTarget(thisNode, "body", true));
+    return variables;
+  }
+
   public static List<SNode> call_getScopeVariables_2496361171403550965(SNode thisNode) {
     BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
     return (List<SNode>) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.ForStatement"), "virtual_getScopeVariables_5067982036267369894", PARAMETERS_2496361171403550965);

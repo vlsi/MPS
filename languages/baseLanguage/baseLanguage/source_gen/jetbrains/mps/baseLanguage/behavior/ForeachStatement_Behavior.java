@@ -22,6 +22,10 @@ public class ForeachStatement_Behavior {
     return ListSequence.fromListAndArray(new ArrayList<SNode>(), SLinkOperations.getTarget(thisNode, "variable", true));
   }
 
+  public static List<SNode> virtual_getOrderedParts_1955452033143960289(SNode thisNode) {
+    return ListSequence.fromListAndArray(new ArrayList<SNode>(), SLinkOperations.getTarget(thisNode, "iterable", true), SLinkOperations.getTarget(thisNode, "variable", true), SLinkOperations.getTarget(thisNode, "body", true));
+  }
+
   public static List<SNode> call_getScopeVariables_2496361171403550949(SNode thisNode) {
     BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
     return (List<SNode>) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.ForeachStatement"), "virtual_getScopeVariables_5067982036267369894", PARAMETERS_2496361171403550949);
