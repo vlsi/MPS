@@ -1,6 +1,6 @@
 <project name="build">
   <property name="build.dir" location="build" />
-  <property name="idea_home" location="/Applications/IntelliJ IDEA 11 CE.app" />
+  <property name="idea_home" location="" />
   <property name="mps_home" location="${basedir}/../.." />
   <property name="mps_libs" location="${mps_home}/lib" />
   <property name="mps_langs" location="${mps_home}/languages" />
