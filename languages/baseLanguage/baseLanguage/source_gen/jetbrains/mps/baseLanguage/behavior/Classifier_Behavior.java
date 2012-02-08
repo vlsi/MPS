@@ -10,6 +10,7 @@ import javax.swing.Icon;
 import java.util.ArrayList;
 import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.baseLanguage.plugin.IconResourceBundle_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.smodel.search.ISearchScope;
 import jetbrains.mps.baseLanguage.search.ClassifierVisibleMembersScope;
@@ -48,7 +49,7 @@ public class Classifier_Behavior {
   public static List<Icon> virtual_getMarkIcons_3923831204883340393(SNode thisNode) {
     List<Icon> markIcons = new ArrayList<Icon>(BaseConcept_Behavior.callSuper_getMarkIcons_3923831204883340393(thisNode, "jetbrains.mps.baseLanguage.structure.Classifier"));
     if ((SNodeOperations.getParent(thisNode) != null) && Classifier_Behavior.call_isStatic_521412098689998668(thisNode)) {
-      markIcons.add(IconContainer.ICON_a0a0a1a0);
+      markIcons.add(IconResourceBundle_Behavior.getInstance().getResource("STATICMARK"));
     }
     return markIcons;
   }

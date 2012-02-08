@@ -46,7 +46,7 @@ import java.awt.event.MouseEvent;
 import com.intellij.ide.DataManager;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.debug.api.breakpoints.ILocationBreakpoint;
-import jetbrains.mps.ide.navigation.NavigationSupport;
+import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.ide.dialogs.DialogDimensionsSettings;
 import org.jetbrains.annotations.NonNls;
 

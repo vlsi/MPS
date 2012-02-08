@@ -14,7 +14,7 @@ public class SpecificIntentions_ActionGroup extends GeneratedActionGroup {
     this.setIsInternal(false);
     this.setPopup(false);
     try {
-      SpecificIntentions_ActionGroup.this.addAction("jetbrains.mps.lang.intentions.pluginSolution.plugin.ShowGenerationIntentions_Action");
+      SpecificIntentions_ActionGroup.this.addAction("jetbrains.mps.lang.intentions.pluginSolution.plugin.ShowGenerationActions_Action");
       SpecificIntentions_ActionGroup.this.addAction("jetbrains.mps.lang.intentions.pluginSolution.plugin.ShowSurroundWithIntentions_Action");
     } catch (Throwable t) {
       LOG.error("User group error", t);

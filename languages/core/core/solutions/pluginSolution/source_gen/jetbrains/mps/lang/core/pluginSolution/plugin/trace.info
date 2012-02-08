@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="PluginSolution_ApplicationPlugin.java" startLine="15" startPosition="0" endLine="55" endPosition="0" unitName="jetbrains.mps.lang.core.pluginSolution.plugin.PluginSolution_ApplicationPlugin" />
+  <unitInfo fileName="ExtensionDescriptor.java" startLine="9" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.lang.core.pluginSolution.plugin.ExtensionDescriptor" />
+  <unitInfo fileName="PluginSolution_ApplicationPlugin.java" startLine="15" startPosition="0" endLine="58" endPosition="0" unitName="jetbrains.mps.lang.core.pluginSolution.plugin.PluginSolution_ApplicationPlugin" />
   <unitInfo fileName="PluginSolution_ProjectPlugin.java" startLine="13" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.lang.core.pluginSolution.plugin.PluginSolution_ProjectPlugin" />
   <root nodeId="6573807532044016506">
     <nodeInfo nodeId="6573807532044016506" fileName="FindModelUsages_Action.java" startLine="26" startPosition="56" endLine="27" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
@@ -537,196 +538,6 @@
     <scopeInfo nodeId="6573807532044017002" fileName="Default_KeymapChanges.java" startLine="10" startPosition="62" endLine="22" endPosition="3" />
     <unitInfo nodeId="6573807532044017002" fileName="Default_KeymapChanges.java" startLine="10" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.lang.core.pluginSolution.plugin.Default_KeymapChanges" />
   </root>
-  <root nodeId="6573807532044017017">
-    <nodeInfo nodeId="6573807532044017184" fileName="RetainedUtil.java" startLine="30" startPosition="107" endLine="31" endPosition="140" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6573807532044017195" fileName="RetainedUtil.java" startLine="31" startPosition="140" endLine="32" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6573807532044017204" fileName="RetainedUtil.java" startLine="33" startPosition="32" endLine="34" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6573807532044017211" fileName="RetainedUtil.java" startLine="34" startPosition="40" endLine="35" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6573807532044017217" fileName="RetainedUtil.java" startLine="35" startPosition="37" endLine="36" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6573807532044017238" fileName="RetainedUtil.java" startLine="38" startPosition="53" endLine="39" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6573807532044017266" fileName="RetainedUtil.java" startLine="46" startPosition="59" endLine="47" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6573807532044017287" fileName="RetainedUtil.java" startLine="52" startPosition="58" endLine="53" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6573807532044017308" fileName="RetainedUtil.java" startLine="57" startPosition="47" endLine="58" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6573807532044017340" fileName="RetainedUtil.java" startLine="61" startPosition="57" endLine="62" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6573807532044017355" fileName="RetainedUtil.java" startLine="67" startPosition="30" endLine="68" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
-    <nodeInfo nodeId="6573807532044017377" fileName="RetainedUtil.java" startLine="72" startPosition="59" endLine="73" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6573807532044017398" fileName="RetainedUtil.java" startLine="78" startPosition="58" endLine="79" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6573807532044017418" fileName="RetainedUtil.java" startLine="84" startPosition="56" endLine="85" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6573807532044017423" fileName="RetainedUtil.java" startLine="88" startPosition="7" endLine="89" endPosition="164" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6573807532044017441" fileName="RetainedUtil.java" startLine="90" startPosition="5" endLine="91" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6573807532044017453" fileName="RetainedUtil.java" startLine="94" startPosition="169" endLine="95" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6573807532044017475" fileName="RetainedUtil.java" startLine="98" startPosition="170" endLine="99" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6573807532044017138" fileName="RetainedUtil.java" startLine="102" startPosition="47" endLine="103" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="module" />
-    <nodeInfo nodeId="6573807532044017141" fileName="RetainedUtil.java" startLine="103" startPosition="27" endLine="104" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="dir2delta" />
-    <nodeInfo nodeId="6573807532044017150" fileName="RetainedUtil.java" startLine="104" startPosition="105" endLine="105" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="getFile" />
-    <nodeInfo nodeId="6573807532044017126" fileName="RetainedUtil.java" startLine="107" startPosition="118" endLine="108" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6573807532044017132" fileName="RetainedUtil.java" startLine="108" startPosition="27" endLine="109" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6573807532044017027" fileName="RetainedUtil.java" startLine="113" startPosition="41" endLine="114" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6573807532044017036" fileName="RetainedUtil.java" startLine="115" startPosition="29" endLine="116" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6573807532044017053" fileName="RetainedUtil.java" startLine="118" startPosition="7" endLine="119" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6573807532044017065" fileName="RetainedUtil.java" startLine="122" startPosition="53" endLine="123" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6573807532044017082" fileName="RetainedUtil.java" startLine="128" startPosition="45" endLine="129" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6573807532044017096" fileName="RetainedUtil.java" startLine="135" startPosition="63" endLine="136" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6573807532044017112" fileName="RetainedUtil.java" startLine="137" startPosition="7" endLine="138" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6573807532044017160" fileName="RetainedUtil.java" startLine="143" startPosition="116" endLine="144" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="6573807532044017176" fileName="RetainedUtil.java" startLine="148" startPosition="53" endLine="149" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6573807532044017495" fileName="RetainedUtil.java" startLine="26" startPosition="27" endLine="28" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="RetainedUtil#()V" />
-    <nodeInfo nodeId="6573807532044017353" fileName="RetainedUtil.java" startLine="66" startPosition="59" endLine="69" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6573807532044017034" fileName="RetainedUtil.java" startLine="114" startPosition="49" endLine="117" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6573807532044017094" fileName="RetainedUtil.java" startLine="134" startPosition="50" endLine="137" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6573807532044017156" fileName="RetainedUtil.java" startLine="142" startPosition="88" endLine="145" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="RetainedCachesDelta#(Ljetbrains/mps/project/IModule;Ljetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_return_P1_E0;)V" />
-    <nodeInfo nodeId="6573807532044017236" fileName="RetainedUtil.java" startLine="37" startPosition="180" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SModelDescriptor;)Z" />
-    <nodeInfo nodeId="6573807532044017264" fileName="RetainedUtil.java" startLine="45" startPosition="184" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SModelDescriptor;)Z" />
-    <nodeInfo nodeId="6573807532044017285" fileName="RetainedUtil.java" startLine="51" startPosition="157" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="iterable#()Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="6573807532044017338" fileName="RetainedUtil.java" startLine="60" startPosition="251" endLine="64" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SModelDescriptor;)Z" />
-    <nodeInfo nodeId="6573807532044017375" fileName="RetainedUtil.java" startLine="71" startPosition="184" endLine="75" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SModelDescriptor;)Z" />
-    <nodeInfo nodeId="6573807532044017396" fileName="RetainedUtil.java" startLine="77" startPosition="157" endLine="81" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="iterable#()Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="6573807532044017416" fileName="RetainedUtil.java" startLine="83" startPosition="155" endLine="87" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="iterable#()Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="6573807532044017450" fileName="RetainedUtil.java" startLine="93" startPosition="0" endLine="97" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="retainedFilesDelta#(Ljava/lang/Iterable;Ljetbrains/mps/project/IModule;Ljetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_return_P1_E0;)Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="6573807532044017472" fileName="RetainedUtil.java" startLine="97" startPosition="0" endLine="101" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="retainedCachesDelta#(Ljava/lang/Iterable;Ljetbrains/mps/project/IModule;Ljetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_return_P1_E0;)Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="6573807532044017116" fileName="RetainedUtil.java" startLine="106" startPosition="0" endLine="110" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="RetainedFilesDelta#(Ljetbrains/mps/project/IModule;Ljetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_return_P1_E0;)V" />
-    <nodeInfo nodeId="6573807532044017059" fileName="RetainedUtil.java" startLine="121" startPosition="0" endLine="125" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getRootOutputDir#(Ljava/lang/String;)Ljetbrains/mps/vfs/IFile;" />
-    <nodeInfo nodeId="6573807532044017080" fileName="RetainedUtil.java" startLine="127" startPosition="120" endLine="131" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/internal/make/runtime/util/FilesDelta;)Ljetbrains/mps/make/delta/IDelta;" />
-    <nodeInfo nodeId="6573807532044017223" fileName="RetainedUtil.java" startLine="36" startPosition="61" endLine="41" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6573807532044017250" fileName="RetainedUtil.java" startLine="44" startPosition="72" endLine="49" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6573807532044017277" fileName="RetainedUtil.java" startLine="50" startPosition="11" endLine="55" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6573807532044017319" fileName="RetainedUtil.java" startLine="59" startPosition="72" endLine="64" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6573807532044017361" fileName="RetainedUtil.java" startLine="70" startPosition="72" endLine="75" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6573807532044017388" fileName="RetainedUtil.java" startLine="76" startPosition="11" endLine="81" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6573807532044017408" fileName="RetainedUtil.java" startLine="82" startPosition="9" endLine="87" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6573807532044017074" fileName="RetainedUtil.java" startLine="126" startPosition="48" endLine="131" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6573807532044017170" fileName="RetainedUtil.java" startLine="146" startPosition="0" endLine="151" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getRootOutputDir#(Ljava/lang/String;)Ljetbrains/mps/vfs/IFile;" />
-    <nodeInfo nodeId="6573807532044017025" fileName="RetainedUtil.java" startLine="112" startPosition="69" endLine="118" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="6573807532044017248" fileName="RetainedUtil.java" startLine="43" startPosition="73" endLine="50" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6573807532044017317" fileName="RetainedUtil.java" startLine="58" startPosition="72" endLine="65" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6573807532044017359" fileName="RetainedUtil.java" startLine="69" startPosition="11" endLine="76" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6573807532044017088" fileName="RetainedUtil.java" startLine="133" startPosition="0" endLine="140" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="deltaForDir#(Ljava/lang/String;)Ljetbrains/mps/internal/make/runtime/util/FilesDelta;" />
-    <nodeInfo nodeId="6573807532044017069" fileName="RetainedUtil.java" startLine="125" startPosition="0" endLine="133" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="collectedDeltas#()Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="6573807532044017019" fileName="RetainedUtil.java" startLine="111" startPosition="0" endLine="121" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="deltas#(Ljava/lang/Iterable;)Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="6573807532044017246" fileName="RetainedUtil.java" startLine="42" startPosition="39" endLine="56" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="6573807532044017351" fileName="RetainedUtil.java" startLine="65" startPosition="9" endLine="82" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="6573807532044017244" fileName="RetainedUtil.java" startLine="41" startPosition="9" endLine="88" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6573807532044017202" fileName="RetainedUtil.java" startLine="32" startPosition="96" endLine="90" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="6573807532044017182" fileName="RetainedUtil.java" startLine="29" startPosition="0" endLine="93" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="collectModelsToRetain#(Ljava/lang/Iterable;)Ljava/util/Map;" />
-    <scopeInfo nodeId="6573807532044017498" fileName="RetainedUtil.java" startLine="27" startPosition="25" endLine="27" endPosition="25" />
-    <scopeInfo nodeId="6573807532044017237" fileName="RetainedUtil.java" startLine="38" startPosition="53" endLine="39" endPosition="37" />
-    <scopeInfo nodeId="6573807532044017265" fileName="RetainedUtil.java" startLine="46" startPosition="59" endLine="47" endPosition="43" />
-    <scopeInfo nodeId="6573807532044017286" fileName="RetainedUtil.java" startLine="52" startPosition="58" endLine="53" endPosition="66" />
-    <scopeInfo nodeId="6573807532044017339" fileName="RetainedUtil.java" startLine="61" startPosition="57" endLine="62" endPosition="41" />
-    <scopeInfo nodeId="6573807532044017354" fileName="RetainedUtil.java" startLine="67" startPosition="30" endLine="68" endPosition="21" />
-    <scopeInfo nodeId="6573807532044017376" fileName="RetainedUtil.java" startLine="72" startPosition="59" endLine="73" endPosition="43" />
-    <scopeInfo nodeId="6573807532044017397" fileName="RetainedUtil.java" startLine="78" startPosition="58" endLine="79" endPosition="66" />
-    <scopeInfo nodeId="6573807532044017417" fileName="RetainedUtil.java" startLine="84" startPosition="56" endLine="85" endPosition="66" />
-    <scopeInfo nodeId="6573807532044017452" fileName="RetainedUtil.java" startLine="94" startPosition="169" endLine="95" endPosition="73" />
-    <scopeInfo nodeId="6573807532044017474" fileName="RetainedUtil.java" startLine="98" startPosition="170" endLine="99" endPosition="74" />
-    <scopeInfo nodeId="6573807532044017035" fileName="RetainedUtil.java" startLine="115" startPosition="29" endLine="116" endPosition="111" />
-    <scopeInfo nodeId="6573807532044017064" fileName="RetainedUtil.java" startLine="122" startPosition="53" endLine="123" endPosition="36" />
-    <scopeInfo nodeId="6573807532044017081" fileName="RetainedUtil.java" startLine="128" startPosition="45" endLine="129" endPosition="29" />
-    <scopeInfo nodeId="6573807532044017095" fileName="RetainedUtil.java" startLine="135" startPosition="63" endLine="136" endPosition="92" />
-    <scopeInfo nodeId="6573807532044017159" fileName="RetainedUtil.java" startLine="143" startPosition="116" endLine="144" endPosition="26" />
-    <scopeInfo nodeId="6573807532044017175" fileName="RetainedUtil.java" startLine="148" startPosition="53" endLine="149" endPosition="70" />
-    <scopeInfo nodeId="6573807532044017495" fileName="RetainedUtil.java" startLine="26" startPosition="27" endLine="28" endPosition="3" />
-    <scopeInfo nodeId="6573807532044017125" fileName="RetainedUtil.java" startLine="107" startPosition="118" endLine="109" endPosition="29" />
-    <scopeInfo nodeId="6573807532044017156" fileName="RetainedUtil.java" startLine="142" startPosition="88" endLine="145" endPosition="5">
-      <varInfo nodeId="6573807532044017165" varName="getFile" />
-      <varInfo nodeId="6573807532044017163" varName="mod" />
-    </scopeInfo>
-    <scopeInfo nodeId="6573807532044017236" fileName="RetainedUtil.java" startLine="37" startPosition="180" endLine="41" endPosition="0">
-      <varInfo nodeId="6573807532044017236" varName="it2" />
-    </scopeInfo>
-    <scopeInfo nodeId="6573807532044017264" fileName="RetainedUtil.java" startLine="45" startPosition="184" endLine="49" endPosition="0">
-      <varInfo nodeId="6573807532044017264" varName="it2" />
-    </scopeInfo>
-    <scopeInfo nodeId="6573807532044017285" fileName="RetainedUtil.java" startLine="51" startPosition="157" endLine="55" endPosition="0" />
-    <scopeInfo nodeId="6573807532044017338" fileName="RetainedUtil.java" startLine="60" startPosition="251" endLine="64" endPosition="0">
-      <varInfo nodeId="6573807532044017338" varName="it3" />
-    </scopeInfo>
-    <scopeInfo nodeId="6573807532044017375" fileName="RetainedUtil.java" startLine="71" startPosition="184" endLine="75" endPosition="0">
-      <varInfo nodeId="6573807532044017375" varName="it2" />
-    </scopeInfo>
-    <scopeInfo nodeId="6573807532044017396" fileName="RetainedUtil.java" startLine="77" startPosition="157" endLine="81" endPosition="0" />
-    <scopeInfo nodeId="6573807532044017416" fileName="RetainedUtil.java" startLine="83" startPosition="155" endLine="87" endPosition="0" />
-    <scopeInfo nodeId="6573807532044017450" fileName="RetainedUtil.java" startLine="93" startPosition="0" endLine="97" endPosition="0">
-      <varInfo nodeId="6573807532044017468" varName="getFile" />
-      <varInfo nodeId="6573807532044017466" varName="mod" />
-      <varInfo nodeId="6573807532044017463" varName="smd" />
-    </scopeInfo>
-    <scopeInfo nodeId="6573807532044017472" fileName="RetainedUtil.java" startLine="97" startPosition="0" endLine="101" endPosition="0">
-      <varInfo nodeId="6573807532044017490" varName="getFile" />
-      <varInfo nodeId="6573807532044017488" varName="mod" />
-      <varInfo nodeId="6573807532044017485" varName="smd" />
-    </scopeInfo>
-    <scopeInfo nodeId="6573807532044017116" fileName="RetainedUtil.java" startLine="106" startPosition="0" endLine="110" endPosition="5">
-      <varInfo nodeId="6573807532044017119" varName="getFile" />
-      <varInfo nodeId="6573807532044017117" varName="module" />
-    </scopeInfo>
-    <scopeInfo nodeId="6573807532044017026" fileName="RetainedUtil.java" startLine="113" startPosition="41" endLine="117" endPosition="9">
-      <varInfo nodeId="6573807532044017028" varName="output" />
-    </scopeInfo>
-    <scopeInfo nodeId="6573807532044017059" fileName="RetainedUtil.java" startLine="121" startPosition="0" endLine="125" endPosition="0">
-      <varInfo nodeId="6573807532044017062" varName="output" />
-    </scopeInfo>
-    <scopeInfo nodeId="6573807532044017080" fileName="RetainedUtil.java" startLine="127" startPosition="120" endLine="131" endPosition="0">
-      <varInfo nodeId="6573807532044017080" varName="it" />
-    </scopeInfo>
-    <scopeInfo nodeId="6573807532044017093" fileName="RetainedUtil.java" startLine="134" startPosition="50" endLine="138" endPosition="53" />
-    <scopeInfo nodeId="6573807532044017249" fileName="RetainedUtil.java" startLine="44" startPosition="72" endLine="49" endPosition="16" />
-    <scopeInfo nodeId="6573807532044017318" fileName="RetainedUtil.java" startLine="59" startPosition="72" endLine="64" endPosition="14" />
-    <scopeInfo nodeId="6573807532044017360" fileName="RetainedUtil.java" startLine="70" startPosition="72" endLine="75" endPosition="16" />
-    <scopeInfo nodeId="6573807532044017073" fileName="RetainedUtil.java" startLine="126" startPosition="48" endLine="131" endPosition="9" />
-    <scopeInfo nodeId="6573807532044017170" fileName="RetainedUtil.java" startLine="146" startPosition="0" endLine="151" endPosition="0">
-      <varInfo nodeId="6573807532044017173" varName="output" />
-    </scopeInfo>
-    <scopeInfo nodeId="6573807532044017025" fileName="RetainedUtil.java" startLine="112" startPosition="69" endLine="118" endPosition="7">
-      <varInfo nodeId="6573807532044017050" varName="smd" />
-    </scopeInfo>
-    <scopeInfo nodeId="6573807532044017024" fileName="RetainedUtil.java" startLine="112" startPosition="69" endLine="119" endPosition="36" />
-    <scopeInfo nodeId="6573807532044017088" fileName="RetainedUtil.java" startLine="133" startPosition="0" endLine="140" endPosition="0">
-      <varInfo nodeId="6573807532044017089" varName="dir" />
-    </scopeInfo>
-    <scopeInfo nodeId="6573807532044017069" fileName="RetainedUtil.java" startLine="125" startPosition="0" endLine="133" endPosition="0" />
-    <scopeInfo nodeId="6573807532044017019" fileName="RetainedUtil.java" startLine="111" startPosition="0" endLine="121" endPosition="0">
-      <varInfo nodeId="6573807532044017020" varName="smds" />
-    </scopeInfo>
-    <scopeInfo nodeId="6573807532044017247" fileName="RetainedUtil.java" startLine="43" startPosition="73" endLine="55" endPosition="15" />
-    <scopeInfo nodeId="6573807532044017245" fileName="RetainedUtil.java" startLine="42" startPosition="39" endLine="56" endPosition="9" />
-    <scopeInfo nodeId="6573807532044017246" fileName="RetainedUtil.java" startLine="42" startPosition="39" endLine="56" endPosition="9">
-      <varInfo nodeId="6573807532044017292" varName="gen" />
-    </scopeInfo>
-    <scopeInfo nodeId="6573807532044017352" fileName="RetainedUtil.java" startLine="66" startPosition="59" endLine="81" endPosition="15" />
-    <scopeInfo nodeId="6573807532044017351" fileName="RetainedUtil.java" startLine="65" startPosition="9" endLine="82" endPosition="9">
-      <varInfo nodeId="6573807532044017403" varName="gen" />
-    </scopeInfo>
-    <scopeInfo nodeId="6573807532044017307" fileName="RetainedUtil.java" startLine="57" startPosition="47" endLine="87" endPosition="13">
-      <varInfo nodeId="6573807532044017309" varName="slang" />
-    </scopeInfo>
-    <scopeInfo nodeId="6573807532044017203" fileName="RetainedUtil.java" startLine="33" startPosition="32" endLine="89" endPosition="164">
-      <varInfo nodeId="6573807532044017224" varName="modelsToRetain" />
-      <varInfo nodeId="6573807532044017212" varName="module" />
-      <varInfo nodeId="6573807532044017205" varName="mres" />
-    </scopeInfo>
-    <scopeInfo nodeId="6573807532044017202" fileName="RetainedUtil.java" startLine="32" startPosition="96" endLine="90" endPosition="5">
-      <varInfo nodeId="6573807532044017438" varName="it" />
-    </scopeInfo>
-    <scopeInfo nodeId="6573807532044017183" fileName="RetainedUtil.java" startLine="30" startPosition="107" endLine="91" endPosition="26">
-      <varInfo nodeId="6573807532044017196" varName="empty" />
-      <varInfo nodeId="6573807532044017185" varName="retainedModels" />
-    </scopeInfo>
-    <scopeInfo nodeId="6573807532044017182" fileName="RetainedUtil.java" startLine="29" startPosition="0" endLine="93" endPosition="0">
-      <varInfo nodeId="6573807532044017447" varName="input" />
-    </scopeInfo>
-    <unitInfo nodeId="6573807532044017017" fileName="RetainedUtil.java" startLine="26" startPosition="0" endLine="153" endPosition="0" unitName="jetbrains.mps.lang.core.pluginSolution.plugin.RetainedUtil" />
-    <unitInfo nodeId="6573807532044017236" fileName="RetainedUtil.java" startLine="37" startPosition="146" endLine="41" endPosition="7" unitName="jetbrains.mps.lang.core.pluginSolution.plugin.RetainedUtil$1" />
-    <unitInfo nodeId="6573807532044017080" fileName="RetainedUtil.java" startLine="127" startPosition="87" endLine="131" endPosition="7" unitName="jetbrains.mps.lang.core.pluginSolution.plugin.RetainedUtil$1" />
-    <unitInfo nodeId="6573807532044017264" fileName="RetainedUtil.java" startLine="45" startPosition="150" endLine="49" endPosition="13" unitName="jetbrains.mps.lang.core.pluginSolution.plugin.RetainedUtil$2" />
-    <unitInfo nodeId="6573807532044017285" fileName="RetainedUtil.java" startLine="51" startPosition="119" endLine="55" endPosition="11" unitName="jetbrains.mps.lang.core.pluginSolution.plugin.RetainedUtil$3" />
-    <unitInfo nodeId="6573807532044017338" fileName="RetainedUtil.java" startLine="60" startPosition="217" endLine="64" endPosition="11" unitName="jetbrains.mps.lang.core.pluginSolution.plugin.RetainedUtil$4" />
-    <unitInfo nodeId="6573807532044017375" fileName="RetainedUtil.java" startLine="71" startPosition="150" endLine="75" endPosition="13" unitName="jetbrains.mps.lang.core.pluginSolution.plugin.RetainedUtil$5" />
-    <unitInfo nodeId="6573807532044017396" fileName="RetainedUtil.java" startLine="77" startPosition="119" endLine="81" endPosition="11" unitName="jetbrains.mps.lang.core.pluginSolution.plugin.RetainedUtil$6" />
-    <unitInfo nodeId="6573807532044017416" fileName="RetainedUtil.java" startLine="83" startPosition="117" endLine="87" endPosition="9" unitName="jetbrains.mps.lang.core.pluginSolution.plugin.RetainedUtil$7" />
-    <unitInfo nodeId="6573807532044017155" fileName="RetainedUtil.java" startLine="142" startPosition="0" endLine="152" endPosition="0" unitName="jetbrains.mps.lang.core.pluginSolution.plugin.RetainedUtil$RetainedCachesDelta" />
-    <unitInfo nodeId="6573807532044017018" fileName="RetainedUtil.java" startLine="102" startPosition="0" endLine="141" endPosition="0" unitName="jetbrains.mps.lang.core.pluginSolution.plugin.RetainedUtil$RetainedFilesDelta" />
-  </root>
   <root nodeId="6573807532044017499">
     <nodeInfo nodeId="6573807532044017499" fileName="MoveNodes_Action.java" startLine="30" startPosition="50" endLine="31" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
     <nodeInfo nodeId="6573807532044017499" fileName="MoveNodes_Action.java" startLine="31" startPosition="40" endLine="32" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="log" />
@@ -1233,6 +1044,20 @@
       <varInfo nodeId="6573807532044017894" varName="event" />
     </scopeInfo>
     <unitInfo nodeId="6573807532044017894" fileName="DoNotSuppressErrors_Action.java" startLine="19" startPosition="0" endLine="58" endPosition="0" unitName="jetbrains.mps.lang.core.pluginSolution.plugin.DoNotSuppressErrors_Action" />
+  </root>
+  <root nodeId="6905339732004138486">
+    <nodeInfo nodeId="6905339732004138486" fileName="Extension_GeneratorCache_.java" startLine="11" startPosition="38" endLine="12" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="1162302692985202025" fileName="Extension_GeneratorCache_.java" startLine="16" startPosition="54" endLine="17" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6905339732004138985" fileName="Extension_GeneratorCache_.java" startLine="18" startPosition="5" endLine="19" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6905339732004138486" fileName="Extension_GeneratorCache_.java" startLine="10" startPosition="92" endLine="13" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Extension_GeneratorCache_#()V" />
+    <nodeInfo nodeId="1162302692985198019" fileName="Extension_GeneratorCache_.java" startLine="15" startPosition="41" endLine="18" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6905339732004138486" fileName="Extension_GeneratorCache_.java" startLine="14" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="get#()Ljetbrains/mps/generator/GenerationCacheContainer;" />
+    <scopeInfo nodeId="6905339732004138486" fileName="Extension_GeneratorCache_.java" startLine="11" startPosition="38" endLine="12" endPosition="52" />
+    <scopeInfo nodeId="1162302692985198020" fileName="Extension_GeneratorCache_.java" startLine="16" startPosition="54" endLine="17" endPosition="18" />
+    <scopeInfo nodeId="6905339732004138486" fileName="Extension_GeneratorCache_.java" startLine="10" startPosition="92" endLine="13" endPosition="3" />
+    <scopeInfo nodeId="6905339732004138486" fileName="Extension_GeneratorCache_.java" startLine="15" startPosition="41" endLine="19" endPosition="60" />
+    <scopeInfo nodeId="6905339732004138486" fileName="Extension_GeneratorCache_.java" startLine="14" startPosition="0" endLine="21" endPosition="0" />
+    <unitInfo nodeId="6905339732004138486" fileName="Extension_GeneratorCache_.java" startLine="10" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.lang.core.pluginSolution.plugin.Extension_GeneratorCache_" />
   </root>
 </debugInfo>
 

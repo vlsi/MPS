@@ -18,6 +18,7 @@ package jetbrains.mps.ide.projectPane.logicalview.nodes;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.project.*;
 import jetbrains.mps.project.structure.ProjectStructureModule;
+import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.Language;
 
@@ -33,8 +34,9 @@ public abstract class ProjectModuleTreeNode extends MPSTreeNode {
       return new ProjectSolutionTreeNode((AbstractModule) module, project, shortNameOnly);
     } else if (module instanceof DevKit) {
       return new ProjectDevKitTreeNode((DevKit) module, project, false);
+    } else if (module instanceof Generator) {
+      return new GeneratorTreeNode((Generator) module, project);
     }
-
     return null;
   }
 

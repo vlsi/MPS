@@ -31,6 +31,8 @@
   <import index="n13f" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.reloading(MPS.Core/jetbrains.mps.reloading@java_stub)" version="-1" />
   <import index="cu2c" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)" version="-1" />
   <import index="7juq" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.lang.pattern.util(MPS.Core/jetbrains.mps.lang.pattern.util@java_stub)" version="-1" />
+  <import index="z76a" modelUID="r:dfc27cab-2d08-4c79-ac99-e95209e18392(jetbrains.mps.baseLanguage.pluginSolution.plugin)" version="-1" />
+  <import index="tpec" modelUID="r:00000000-0000-4000-0000-011c895902c8(jetbrains.mps.baseLanguage.plugin)" version="-1" />
   <import index="tp25" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" implicit="yes" />
   <import index="tp2q" modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" implicit="yes" />
   <import index="tp3t" modelUID="r:00000000-0000-4000-0000-011c89590345(jetbrains.mps.lang.pattern.structure)" version="0" implicit="yes" />
@@ -3356,10 +3358,8 @@
                 </node>
                 <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="5039675756633081915">
                   <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="k7g3.~List%dadd(java%dlang%dObject)%cboolean" resolveInfo="add" />
-                  <node role="actualArgument" roleId="tpee.1068499141038" type="tp4k.IconResourceExpression" typeId="tp4k.6759767305207977805" id="5594270136891982798">
-                    <node role="icon" roleId="tp4k.6759767305207977806" type="tp4k.IconResource" typeId="tp4k.2330114057060456691" id="5594270136891982799">
-                      <property name="path" nameId="tp4k.7855019336153226684" value="${language_descriptor}/icons/staticMark.png" />
-                    </node>
+                  <node role="actualArgument" roleId="tpee.1068499141038" type="tp4k.IconResourceReference" typeId="tp4k.2990235398086762260" id="2990235398088186562">
+                    <link role="declaration" roleId="tp4k.2990235398086762261" targetNodeId="tpec.2990235398088186559" resolveInfo="STATICMARK" />
                   </node>
                 </node>
               </node>
@@ -9011,10 +9011,8 @@
                 </node>
                 <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="5039675756633081822">
                   <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="k7g3.~List%dadd(java%dlang%dObject)%cboolean" resolveInfo="add" />
-                  <node role="actualArgument" roleId="tpee.1068499141038" type="tp4k.IconResourceExpression" typeId="tp4k.6759767305207977805" id="5594270136891972946">
-                    <node role="icon" roleId="tp4k.6759767305207977806" type="tp4k.IconResource" typeId="tp4k.2330114057060456691" id="5594270136891972947">
-                      <property name="path" nameId="tp4k.7855019336153226684" value="${language_descriptor}/icons/finalMark.png" />
-                    </node>
+                  <node role="actualArgument" roleId="tpee.1068499141038" type="tp4k.IconResourceReference" typeId="tp4k.2990235398086762260" id="2990235398088186564">
+                    <link role="declaration" roleId="tp4k.2990235398086762261" targetNodeId="tpec.2990235398088186555" resolveInfo="FINALMARK" />
                   </node>
                 </node>
               </node>
@@ -10531,10 +10529,8 @@
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="5039675756633082298">
               <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="k7g3.~List%dadd(java%dlang%dObject)%cboolean" resolveInfo="add" />
-              <node role="actualArgument" roleId="tpee.1068499141038" type="tp4k.IconResourceExpression" typeId="tp4k.6759767305207977805" id="5594270136891982804">
-                <node role="icon" roleId="tp4k.6759767305207977806" type="tp4k.IconResource" typeId="tp4k.2330114057060456691" id="5594270136891982805">
-                  <property name="path" nameId="tp4k.7855019336153226684" value="${language_descriptor}/icons/staticMark.png" />
-                </node>
+              <node role="actualArgument" roleId="tpee.1068499141038" type="tp4k.IconResourceReference" typeId="tp4k.2990235398086762260" id="2990235398088186573">
+                <link role="declaration" roleId="tp4k.2990235398086762261" targetNodeId="tpec.2990235398088186559" resolveInfo="STATICMARK" />
               </node>
             </node>
           </node>
@@ -11424,15 +11420,8 @@
                       </node>
                     </node>
                     <node role="operation" roleId="tpee.1197027833540" type="tp2q.ContainsOperation" typeId="tp2q.1172254888721" id="8008512149545173444">
-                      <node role="argument" roleId="tp2q.1172256416782" type="tpee.ParenthesizedExpression" typeId="tpee.1079359253375" id="434283027168231283">
-                        <node role="expression" roleId="tpee.1079359253376" type="tpee.CastExpression" typeId="tpee.1070534934090" id="434283027168231284">
-                          <node role="expression" roleId="tpee.1070534934092" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="434283027168231285">
-                            <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8008512149545173412" resolveInfo="expr" />
-                          </node>
-                          <node role="type" roleId="tpee.1070534934091" type="tp25.SNodeType" typeId="tp25.1138055754698" id="434283027168231287">
-                            <link role="concept" roleId="tp25.1138405853777" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
-                          </node>
-                        </node>
+                      <node role="argument" roleId="tp2q.1172256416782" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="434283027168231285">
+                        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8008512149545173412" resolveInfo="expr" />
                       </node>
                     </node>
                   </node>
@@ -11619,10 +11608,8 @@
                 </node>
                 <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="5039675756632959828">
                   <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="k7g3.~List%dadd(java%dlang%dObject)%cboolean" resolveInfo="add" />
-                  <node role="actualArgument" roleId="tpee.1068499141038" type="tp4k.IconResourceExpression" typeId="tp4k.6759767305207977805" id="5594270136891982790">
-                    <node role="icon" roleId="tp4k.6759767305207977806" type="tp4k.IconResource" typeId="tp4k.2330114057060456691" id="5594270136891982791">
-                      <property name="path" nameId="tp4k.7855019336153226684" value="${language_descriptor}/icons/runnableMark.png" />
-                    </node>
+                  <node role="actualArgument" roleId="tpee.1068499141038" type="tp4k.IconResourceReference" typeId="tp4k.2990235398086762260" id="2990235398088186570">
+                    <link role="declaration" roleId="tp4k.2990235398086762261" targetNodeId="tpec.2990235398088186567" resolveInfo="RUNNABLEMARK" />
                   </node>
                 </node>
               </node>
@@ -11644,10 +11631,8 @@
                 </node>
                 <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="5039675756633080881">
                   <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="k7g3.~List%dadd(java%dlang%dObject)%cboolean" resolveInfo="add" />
-                  <node role="actualArgument" roleId="tpee.1068499141038" type="tp4k.IconResourceExpression" typeId="tp4k.6759767305207977805" id="5594270136891982792">
-                    <node role="icon" roleId="tp4k.6759767305207977806" type="tp4k.IconResource" typeId="tp4k.2330114057060456691" id="5594270136891982793">
-                      <property name="path" nameId="tp4k.7855019336153226684" value="${language_descriptor}/icons/finalMark.png" />
-                    </node>
+                  <node role="actualArgument" roleId="tpee.1068499141038" type="tp4k.IconResourceReference" typeId="tp4k.2990235398086762260" id="2990235398088186571">
+                    <link role="declaration" roleId="tp4k.2990235398086762261" targetNodeId="tpec.2990235398088186555" resolveInfo="FINALMARK" />
                   </node>
                 </node>
               </node>
@@ -18698,10 +18683,8 @@
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="5039675756633083419">
               <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="k7g3.~List%dadd(java%dlang%dObject)%cboolean" resolveInfo="add" />
-              <node role="actualArgument" roleId="tpee.1068499141038" type="tp4k.IconResourceExpression" typeId="tp4k.6759767305207977805" id="5594270136891982800">
-                <node role="icon" roleId="tp4k.6759767305207977806" type="tp4k.IconResource" typeId="tp4k.2330114057060456691" id="5594270136891982801">
-                  <property name="path" nameId="tp4k.7855019336153226684" value="${language_descriptor}/icons/staticMark.png" />
-                </node>
+              <node role="actualArgument" roleId="tpee.1068499141038" type="tp4k.IconResourceReference" typeId="tp4k.2990235398086762260" id="2990235398088186565">
+                <link role="declaration" roleId="tp4k.2990235398086762261" targetNodeId="tpec.2990235398088186559" resolveInfo="STATICMARK" />
               </node>
             </node>
           </node>
@@ -18713,10 +18696,8 @@
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="5039675756633083426">
               <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="k7g3.~List%dadd(java%dlang%dObject)%cboolean" resolveInfo="add" />
-              <node role="actualArgument" roleId="tpee.1068499141038" type="tp4k.IconResourceExpression" typeId="tp4k.6759767305207977805" id="5594270136891982802">
-                <node role="icon" roleId="tp4k.6759767305207977806" type="tp4k.IconResource" typeId="tp4k.2330114057060456691" id="5594270136891982803">
-                  <property name="path" nameId="tp4k.7855019336153226684" value="${language_descriptor}/icons/finalMark.png" />
-                </node>
+              <node role="actualArgument" roleId="tpee.1068499141038" type="tp4k.IconResourceReference" typeId="tp4k.2990235398086762260" id="2990235398088186566">
+                <link role="declaration" roleId="tp4k.2990235398086762261" targetNodeId="tpec.2990235398088186555" resolveInfo="FINALMARK" />
               </node>
             </node>
           </node>
@@ -19889,10 +19870,8 @@
                 </node>
                 <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="5039675756633082329">
                   <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="k7g3.~List%dadd(java%dlang%dObject)%cboolean" resolveInfo="add" />
-                  <node role="actualArgument" roleId="tpee.1068499141038" type="tp4k.IconResourceExpression" typeId="tp4k.6759767305207977805" id="5594270136891982811">
-                    <node role="icon" roleId="tp4k.6759767305207977806" type="tp4k.IconResource" typeId="tp4k.2330114057060456691" id="5594270136891982812">
-                      <property name="path" nameId="tp4k.7855019336153226684" value="${language_descriptor}/icons/finalMark.png" />
-                    </node>
+                  <node role="actualArgument" roleId="tpee.1068499141038" type="tp4k.IconResourceReference" typeId="tp4k.2990235398086762260" id="2990235398088186558">
+                    <link role="declaration" roleId="tp4k.2990235398086762261" targetNodeId="tpec.2990235398088186555" resolveInfo="FINALMARK" />
                   </node>
                 </node>
               </node>
@@ -22333,10 +22312,8 @@
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="5039675756633082260">
               <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="k7g3.~List%dadd(java%dlang%dObject)%cboolean" resolveInfo="add" />
-              <node role="actualArgument" roleId="tpee.1068499141038" type="tp4k.IconResourceExpression" typeId="tp4k.6759767305207977805" id="5594270136891982808">
-                <node role="icon" roleId="tp4k.6759767305207977806" type="tp4k.IconResource" typeId="tp4k.2330114057060456691" id="5594270136891982809">
-                  <property name="path" nameId="tp4k.7855019336153226684" value="${language_descriptor}/icons/staticMark.png" />
-                </node>
+              <node role="actualArgument" roleId="tpee.1068499141038" type="tp4k.IconResourceReference" typeId="tp4k.2990235398086762260" id="2990235398088186572">
+                <link role="declaration" roleId="tp4k.2990235398086762261" targetNodeId="tpec.2990235398088186559" resolveInfo="STATICMARK" />
               </node>
             </node>
           </node>
@@ -25807,12 +25784,11 @@
         <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="5017341185733869604">
           <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="5017341185733869605">
             <property name="name" nameId="tpck.1169194664001" value="defaultIcon" />
+            <node role="initializer" roleId="tpee.1068431790190" type="tp4k.IconResourceReference" typeId="tp4k.2990235398086762260" id="8814893218132341185">
+              <link role="declaration" roleId="tp4k.2990235398086762261" targetNodeId="tpec.349375443596798662" resolveInfo="PACKAGE_LOCAL" />
+            </node>
             <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5017341185733869606">
               <link role="classifier" roleId="tpee.1107535924139" targetNodeId="dbrf.~Icon" resolveInfo="Icon" />
-            </node>
-            <node role="initializer" roleId="tpee.1068431790190" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="5017341185733869607">
-              <link role="classifier" roleId="tpee.1144433057691" targetNodeId="5mvf.~Icons" resolveInfo="Icons" />
-              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5mvf.~PlatformIcons%dPACKAGE_LOCAL_ICON" resolveInfo="PACKAGE_LOCAL_ICON" />
             </node>
           </node>
         </node>
@@ -25833,9 +25809,8 @@
         <node role="statement" roleId="tpee.1068581517665" type="tpee.IfStatement" typeId="tpee.1068580123159" id="5017341185733869614">
           <node role="ifTrue" roleId="tpee.1068580123161" type="tpee.StatementList" typeId="tpee.1068580123136" id="5017341185733869615">
             <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="5017341185733869616">
-              <node role="expression" roleId="tpee.1068581517676" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="5017341185733869617">
-                <link role="classifier" roleId="tpee.1144433057691" targetNodeId="5mvf.~Icons" resolveInfo="Icons" />
-                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5mvf.~PlatformIcons%dPUBLIC_ICON" resolveInfo="PUBLIC_ICON" />
+              <node role="expression" roleId="tpee.1068581517676" type="tp4k.IconResourceReference" typeId="tp4k.2990235398086762260" id="8814893218132341187">
+                <link role="declaration" roleId="tp4k.2990235398086762261" targetNodeId="tpec.349375443596798665" resolveInfo="PUBLIC" />
               </node>
             </node>
           </node>
@@ -25853,9 +25828,8 @@
         <node role="statement" roleId="tpee.1068581517665" type="tpee.IfStatement" typeId="tpee.1068580123159" id="5017341185733869622">
           <node role="ifTrue" roleId="tpee.1068580123161" type="tpee.StatementList" typeId="tpee.1068580123136" id="5017341185733869623">
             <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="5017341185733869624">
-              <node role="expression" roleId="tpee.1068581517676" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="5017341185733869625">
-                <link role="classifier" roleId="tpee.1144433057691" targetNodeId="5mvf.~Icons" resolveInfo="Icons" />
-                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5mvf.~PlatformIcons%dPRIVATE_ICON" resolveInfo="PRIVATE_ICON" />
+              <node role="expression" roleId="tpee.1068581517676" type="tp4k.IconResourceReference" typeId="tp4k.2990235398086762260" id="8814893218132341189">
+                <link role="declaration" roleId="tp4k.2990235398086762261" targetNodeId="tpec.349375443596798668" resolveInfo="PRIVATE" />
               </node>
             </node>
           </node>
@@ -25873,9 +25847,8 @@
         <node role="statement" roleId="tpee.1068581517665" type="tpee.IfStatement" typeId="tpee.1068580123159" id="5017341185733869630">
           <node role="ifTrue" roleId="tpee.1068580123161" type="tpee.StatementList" typeId="tpee.1068580123136" id="5017341185733869631">
             <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="5017341185733869632">
-              <node role="expression" roleId="tpee.1068581517676" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="5017341185733869633">
-                <link role="classifier" roleId="tpee.1144433057691" targetNodeId="5mvf.~Icons" resolveInfo="Icons" />
-                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5mvf.~PlatformIcons%dPROTECTED_ICON" resolveInfo="PROTECTED_ICON" />
+              <node role="expression" roleId="tpee.1068581517676" type="tp4k.IconResourceReference" typeId="tp4k.2990235398086762260" id="8814893218132341191">
+                <link role="declaration" roleId="tp4k.2990235398086762261" targetNodeId="tpec.349375443596798671" resolveInfo="PROTECTED" />
               </node>
             </node>
           </node>
@@ -27253,10 +27226,8 @@
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="5039675756633082373">
               <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="k7g3.~List%dadd(java%dlang%dObject)%cboolean" resolveInfo="add" />
-              <node role="actualArgument" roleId="tpee.1068499141038" type="tp4k.IconResourceExpression" typeId="tp4k.6759767305207977805" id="5594270136891982806">
-                <node role="icon" roleId="tp4k.6759767305207977806" type="tp4k.IconResource" typeId="tp4k.2330114057060456691" id="5594270136891982807">
-                  <property name="path" nameId="tp4k.7855019336153226684" value="${language_descriptor}/icons/staticMark.png" />
-                </node>
+              <node role="actualArgument" roleId="tpee.1068499141038" type="tp4k.IconResourceReference" typeId="tp4k.2990235398086762260" id="2990235398088186563">
+                <link role="declaration" roleId="tp4k.2990235398086762261" targetNodeId="tpec.2990235398088186559" resolveInfo="STATICMARK" />
               </node>
             </node>
           </node>

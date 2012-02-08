@@ -20,6 +20,7 @@ import com.intellij.openapi.fileTypes.FileTypeManager;
 import com.intellij.openapi.util.io.StreamUtil;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.vfs.newvfs.NewVirtualFile;
+import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.FileUtil;
@@ -89,6 +90,15 @@ public class IdeaFileSystemProvider implements FileSystemProvider {
         for (IFile file : updatedFiles) {
           FileSystem.getInstance().refresh(file);
         }
+      }
+    });
+  }
+
+  @Override
+  public boolean runWriteTransaction(final Runnable r) {
+    return ThreadUtils.runInUIThreadAndWait(new Runnable() {
+      public void run() {
+        ModelAccess.instance().requireWrite(r);
       }
     });
   }

@@ -22,6 +22,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.nodeEditor.inspector.InspectorEditorComponent;
 import jetbrains.mps.nodeEditor.selection.SelectionManager;
+import jetbrains.mps.openapi.editor.EditorInspector;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.event.SModelEvent;
@@ -227,6 +228,11 @@ public class EditorContext implements jetbrains.mps.openapi.editor.EditorContext
 
   public void selectWRTFocusPolicy(final SNode node) {
     selectWRTFocusPolicy(node, true);
+  }
+
+  @Override
+  public EditorInspector getInspector() {
+    return getOperationContext().getComponent(InspectorTool.class);
   }
 
   public void selectWRTFocusPolicy(final SNode node, final boolean force) {

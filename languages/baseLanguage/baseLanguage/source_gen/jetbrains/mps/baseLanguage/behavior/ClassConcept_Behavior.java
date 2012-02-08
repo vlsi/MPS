@@ -10,6 +10,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import javax.swing.Icon;
 import java.util.ArrayList;
 import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
+import jetbrains.mps.baseLanguage.plugin.IconResourceBundle_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
@@ -59,10 +60,10 @@ public class ClassConcept_Behavior {
   public static List<Icon> virtual_getMarkIcons_3923831204883340393(SNode thisNode) {
     List<Icon> markIcons = new ArrayList<Icon>(BaseConcept_Behavior.callSuper_getMarkIcons_3923831204883340393(thisNode, "jetbrains.mps.baseLanguage.structure.ClassConcept"));
     if ((ClassConcept_Behavior.call_getMainMethod_1213877355884(thisNode) != null)) {
-      markIcons.add(IconContainer.ICON_a0a0a1a2);
+      markIcons.add(IconResourceBundle_Behavior.getInstance().getResource("RUNNABLEMARK"));
     }
     if (SPropertyOperations.getBoolean(thisNode, "isFinal")) {
-      markIcons.add(IconContainer.ICON_a0a0a2a2);
+      markIcons.add(IconResourceBundle_Behavior.getInstance().getResource("FINALMARK"));
     }
     return markIcons;
   }
@@ -265,7 +266,7 @@ public class ClassConcept_Behavior {
       ListSequence.fromList(args).addSequence(ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(parent, "jetbrains.mps.baseLanguage.structure.AnonymousClass"), "parameter", true)));
       ListSequence.fromList(args).addSequence(ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(parent, "jetbrains.mps.baseLanguage.structure.AnonymousClass"), "actualArgument", true)));
       for (SNode param : args) {
-        if (ListSequence.fromList(SNodeOperations.getDescendants(param, null, true, new String[]{})).contains(((SNode) expr))) {
+        if (ListSequence.fromList(SNodeOperations.getDescendants(param, null, true, new String[]{})).contains(expr)) {
           contextNode = parent;
           break;
         }

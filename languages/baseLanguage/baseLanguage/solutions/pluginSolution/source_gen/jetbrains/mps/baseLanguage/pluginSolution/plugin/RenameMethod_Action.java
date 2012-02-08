@@ -18,7 +18,7 @@ import java.util.List;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.baseLanguage.util.plugin.refactorings.MethodRefactoringUtils;
 import jetbrains.mps.baseLanguage.refactorings.RenameUtil;
-import com.intellij.openapi.progress.EmptyProgressIndicator;
+import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -86,7 +86,7 @@ public class RenameMethod_Action extends BaseAction {
       final Wrappers._T<List<SNode>> overridingList = new Wrappers._T<List<SNode>>();
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
-          overridingList.value = MethodRefactoringUtils.findOverridingMethods(RenameUtil.getMethodDeclaration(((SNode) MapSequence.fromMap(_params).get("target"))), new EmptyProgressIndicator());
+          overridingList.value = MethodRefactoringUtils.findOverridingMethods(RenameUtil.getMethodDeclaration(((SNode) MapSequence.fromMap(_params).get("target"))), new EmptyProgressMonitor());
         }
       });
 

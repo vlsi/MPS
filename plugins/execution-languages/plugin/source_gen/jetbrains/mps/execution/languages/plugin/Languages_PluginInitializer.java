@@ -5,7 +5,6 @@ package jetbrains.mps.execution.languages.plugin;
 import com.intellij.openapi.components.ApplicationComponent;
 import jetbrains.mps.plugins.PluginFactoriesRegistry;
 import jetbrains.mps.plugins.AbstractPluginFactory;
-import jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 
@@ -14,9 +13,6 @@ public class Languages_PluginInitializer implements ApplicationComponent {
     PluginFactoriesRegistry.registerPluginFactory(new AbstractPluginFactory() {
       @SuppressWarnings("unchecked")
       public <T> T create(Class<T> klass) {
-        if (BaseApplicationPlugin.class == klass) {
-          return (T) new Languages_ApplicationPlugin();
-        }
         return null;
       }
     });

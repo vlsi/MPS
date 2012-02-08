@@ -5,7 +5,7 @@ package jetbrains.mps.baseLanguage.pluginSolution.plugin;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IOperationContext;
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.ide.navigation.NavigationSupport;
+import jetbrains.mps.openapi.navigation.NavigationSupport;
 
 public class NodeNavigationItem {
   private SNode myNode;
