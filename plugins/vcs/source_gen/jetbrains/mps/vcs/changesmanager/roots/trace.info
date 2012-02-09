@@ -7,7 +7,7 @@
     <nodeInfo nodeId="5332932484372874207" fileName="NodeTabColorProvider.java" startLine="37" startPosition="43" endLine="38" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5332932484372874220" fileName="NodeTabColorProvider.java" startLine="40" startPosition="9" endLine="41" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5332932484372874242" fileName="NodeTabColorProvider.java" startLine="42" startPosition="12" endLine="43" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5332932484372873643" fileName="NodeTabColorProvider.java" startLine="48" startPosition="41" endLine="49" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5332932484372873643" fileName="NodeTabColorProvider.java" startLine="48" startPosition="50" endLine="49" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5332932484372874236" fileName="NodeTabColorProvider.java" startLine="53" startPosition="36" endLine="54" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5332932484372874236" fileName="NodeTabColorProvider.java" startLine="55" startPosition="5" endLine="56" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5332932484372873654" fileName="NodeTabColorProvider.java" startLine="60" startPosition="36" endLine="61" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -29,7 +29,7 @@
     <scopeInfo nodeId="5332932484372874204" fileName="NodeTabColorProvider.java" startLine="37" startPosition="43" endLine="38" endPosition="60" />
     <scopeInfo nodeId="5332932484372874194" fileName="NodeTabColorProvider.java" startLine="40" startPosition="9" endLine="41" endPosition="74" />
     <scopeInfo nodeId="5332932484372874241" fileName="NodeTabColorProvider.java" startLine="42" startPosition="12" endLine="43" endPosition="44" />
-    <scopeInfo nodeId="5332932484372871065" fileName="NodeTabColorProvider.java" startLine="48" startPosition="41" endLine="49" endPosition="66" />
+    <scopeInfo nodeId="5332932484372871065" fileName="NodeTabColorProvider.java" startLine="48" startPosition="50" endLine="49" endPosition="66" />
     <scopeInfo nodeId="5332932484372874236" fileName="NodeTabColorProvider.java" startLine="53" startPosition="36" endLine="54" endPosition="42" />
     <scopeInfo nodeId="5332932484372873654" fileName="NodeTabColorProvider.java" startLine="60" startPosition="36" endLine="61" endPosition="42" />
     <scopeInfo nodeId="5332932484372864218" fileName="NodeTabColorProvider.java" startLine="20" startPosition="0" endLine="23" endPosition="3">

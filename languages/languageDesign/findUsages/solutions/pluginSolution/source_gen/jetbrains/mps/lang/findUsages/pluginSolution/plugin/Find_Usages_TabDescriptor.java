@@ -12,7 +12,7 @@ import org.jetbrains.annotations.Nullable;
 import java.util.List;
 import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior;
 import jetbrains.mps.smodel.LanguageAspect;
-import jetbrains.mps.lang.structure.pluginSolution.plugin.ConceptEditorHelper;
+import jetbrains.mps.lang.structure.plugin.ConceptEditorHelper;
 
 public class Find_Usages_TabDescriptor extends EditorTabDescriptor {
   private static final Icon ICON = IconUtil.getIcon("usagesFinder.png");

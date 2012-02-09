@@ -49,6 +49,10 @@ public class QueriesGenerated {
     return ":" + ClasspathReader.ClassType.EDITOR.getTypeString();
   }
 
+  public static Object propertyMacro_GetPropertyValue_7411520341194429548(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return CompositePathComponent_Behavior.call_getPath_1220983419344(SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.as(_context.getNode(), "jetbrains.mps.build.packaging.structure.Copy"), "sourcePath", true), "compositePathComponent", true));
+  }
+
   public static Object propertyMacro_GetPropertyValue_5428983789737856663(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return CompositePathComponent_Behavior.call_getPath_1220983419344(SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.as(_context.getNode(), "jetbrains.mps.build.packaging.structure.Copy"), "sourcePath", true), "compositePathComponent", true));
   }
@@ -99,6 +103,14 @@ public class QueriesGenerated {
 
   public static Iterable sourceNodesQuery_87733685690765649(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.as(ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.getNode("r:972ae1d5-2beb-44b3-a739-a548d8eb423d(jetbrains.mps.build.mpsautobuild)", "87733685690765614"), "entry", true)).first(), "jetbrains.mps.build.packaging.structure.ICompositeComponent"), "entry", true)).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.packaging.structure.Copy");
+      }
+    });
+  }
+
+  public static Iterable sourceNodesQuery_7411520341194429560(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+    return ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.as(ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.getNode("r:972ae1d5-2beb-44b3-a739-a548d8eb423d(jetbrains.mps.build.mpsautobuild)", "3413212504041565455"), "entry", true)).first(), "jetbrains.mps.build.packaging.structure.ICompositeComponent"), "entry", true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.packaging.structure.Copy");
       }

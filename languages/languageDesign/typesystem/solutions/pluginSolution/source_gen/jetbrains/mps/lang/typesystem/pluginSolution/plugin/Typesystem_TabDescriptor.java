@@ -16,7 +16,7 @@ import java.util.Comparator;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.lang.structure.pluginSolution.plugin.ConceptEditorHelper;
+import jetbrains.mps.lang.structure.plugin.ConceptEditorHelper;
 import jetbrains.mps.smodel.LanguageAspect;
 
 public class Typesystem_TabDescriptor extends EditorTabDescriptor {

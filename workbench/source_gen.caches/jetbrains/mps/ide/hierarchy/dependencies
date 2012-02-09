@@ -58,10 +58,10 @@
     <classNode dependClassName="jetbrains.mps.ide.hierarchy.icons.Icons" />
     <classNode dependClassName="jetbrains.mps.ide.hierarchy.toggle.GroupedToggleAction" />
     <classNode dependClassName="jetbrains.mps.ide.hierarchy.toggle.ToggleActionGroup" />
-    <classNode dependClassName="jetbrains.mps.ide.navigation.NavigationSupport" />
     <classNode dependClassName="jetbrains.mps.ide.navigation.NodeNavigatable" />
     <classNode dependClassName="jetbrains.mps.ide.project.ProjectHelper" />
     <classNode dependClassName="jetbrains.mps.kernel.model.SModelUtil" />
+    <classNode dependClassName="jetbrains.mps.openapi.navigation.NavigationSupport" />
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
     <classNode dependClassName="jetbrains.mps.project.ProjectOperationContext" />
     <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
@@ -236,7 +236,6 @@
     <classNode dependClassName="javax.swing.border.LineBorder" />
     <classNode dependClassName="jetbrains.mps.ide.actions.MPSCommonDataKeys" />
     <classNode dependClassName="jetbrains.mps.ide.hierarchy.icons.Icons" />
-    <classNode dependClassName="jetbrains.mps.ide.navigation.NavigationSupport" />
     <classNode dependClassName="jetbrains.mps.ide.project.ProjectHelper" />
     <classNode dependClassName="jetbrains.mps.ide.projectPane.ProjectPane" />
     <classNode dependClassName="jetbrains.mps.ide.projectPane.ProjectPaneActionGroups" />
@@ -249,6 +248,7 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorSettings" />
+    <classNode dependClassName="jetbrains.mps.openapi.navigation.NavigationSupport" />
     <classNode dependClassName="jetbrains.mps.project.ModuleContext" />
     <classNode dependClassName="jetbrains.mps.project.Project" />
     <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />

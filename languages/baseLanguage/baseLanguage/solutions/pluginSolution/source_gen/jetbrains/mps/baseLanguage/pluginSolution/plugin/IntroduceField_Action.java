@@ -17,7 +17,6 @@ import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.baseLanguage.util.plugin.refactorings.IntroduceFieldDialog;
 import java.awt.Frame;
 import jetbrains.mps.nodeEditor.EditorContext;
 import javax.swing.JOptionPane;

@@ -9,14 +9,13 @@ import jetbrains.mps.refactoring.framework.RefactoringContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.baseLanguage.util.plugin.refactorings.MethodRefactoringUtils;
-import com.intellij.openapi.progress.EmptyProgressIndicator;
+import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.ide.findusages.view.FindUtils;
-import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.project.GlobalScope;
 
 public class RenameMethod extends BaseRefactoring {
@@ -44,7 +43,7 @@ public class RenameMethod extends BaseRefactoring {
   public void refactor(final RefactoringContext refactoringContext) {
     SNode method = RenameUtil.getMethodDeclaration(refactoringContext.getSelectedNode());
     if (((Boolean) refactoringContext.getParameter("refactorOverriding"))) {
-      for (SNode node : ListSequence.fromList(MethodRefactoringUtils.findOverridingMethods(method, new EmptyProgressIndicator()))) {
+      for (SNode node : ListSequence.fromList(MethodRefactoringUtils.findOverridingMethods(method, new EmptyProgressMonitor()))) {
         SPropertyOperations.set(node, "name", ((String) refactoringContext.getParameter("newName")));
       }
     }

@@ -9,6 +9,7 @@ import javax.swing.Icon;
 import java.util.ArrayList;
 import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.baseLanguage.plugin.IconResourceBundle_Behavior;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -30,7 +31,7 @@ public class VariableDeclaration_Behavior {
   public static List<Icon> virtual_getMarkIcons_3923831204883340393(SNode thisNode) {
     List<Icon> markIcons = new ArrayList<Icon>(BaseConcept_Behavior.callSuper_getMarkIcons_3923831204883340393(thisNode, "jetbrains.mps.baseLanguage.structure.VariableDeclaration"));
     if (SPropertyOperations.getBoolean(thisNode, "isFinal")) {
-      markIcons.add(IconContainer.ICON_a0a0a1a0_1);
+      markIcons.add(IconResourceBundle_Behavior.getInstance().getResource("FINALMARK"));
     }
     return markIcons;
   }

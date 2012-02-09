@@ -18,6 +18,10 @@ import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
 import jetbrains.mps.nodeEditor.cells.ModelAccessor;
 import jetbrains.mps.nodeEditor.cells.TransactionalPropertyAccessor;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.smodel.structure.ExtensionPoint;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.nodeEditor.CellActionType;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_Empty;
 import jetbrains.mps.smodel.IOperationContext;
@@ -33,7 +37,7 @@ import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.util.MacrosFactory;
 import jetbrains.mps.vfs.FileSystem;
 import javax.swing.JComponent;
-import jetbrains.mps.ide.EditorUtil;
+import jetbrains.mps.ide.editor.util.EditorUtil;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Generic_Item;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
@@ -470,7 +474,17 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
         }
 
         public void doCommitImpl(final String oldValue, final String newValue) {
-          CommitUtil.commitRename(editorContext, node, oldValue, newValue);
+          if (!(Sequence.fromIterable(ExtensionPoint.<_FunctionTypes._return_P4_E0<? extends Boolean, ? super EditorContext, ? super SNode, ? super String, ? super String>>generify(new ExtensionPoint("jetbrains.mps.lang.structure.NodeRenamer", _FunctionTypes._return_P4_E0.class)).getObjects()).any(new IWhereFilter<_FunctionTypes._return_P4_E0<? extends Boolean, ? super EditorContext, ? super SNode, ? super String, ? super String>>() {
+            public boolean accept(_FunctionTypes._return_P4_E0<? extends Boolean, ? super EditorContext, ? super SNode, ? super String, ? super String> it) {
+              return it.invoke(editorContext, node, oldValue, newValue);
+            }
+          }))) {
+            ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+              public void run() {
+                SPropertyOperations.set(node, "name", newValue);
+              }
+            });
+          }
         }
       };
       editorCell = EditorCell_Property.create(editorContext, modelAccessor, node);

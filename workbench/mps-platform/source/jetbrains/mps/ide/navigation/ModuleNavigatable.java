@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.ide.navigation;
 
+import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.project.Project;

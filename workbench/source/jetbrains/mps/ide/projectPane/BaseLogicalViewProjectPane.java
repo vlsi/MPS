@@ -29,7 +29,7 @@ import com.intellij.openapi.vfs.VirtualFileManagerListener;
 import jetbrains.mps.ide.actions.CopyNode_Action;
 import jetbrains.mps.ide.actions.CutNode_Action;
 import jetbrains.mps.ide.actions.PasteNode_Action;
-import jetbrains.mps.ide.navigation.NavigationSupport;
+import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.ide.projectPane.fileSystem.nodes.ProjectTreeNode;
 import jetbrains.mps.ide.projectPane.logicalview.nodes.ProjectModuleTreeNode;
 import jetbrains.mps.ide.projectPane.logicalview.nodes.TransientModelsTreeNode;

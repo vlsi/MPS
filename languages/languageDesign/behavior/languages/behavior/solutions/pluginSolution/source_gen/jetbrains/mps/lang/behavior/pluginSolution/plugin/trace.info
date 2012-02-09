@@ -1,7 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="PluginSolution_ApplicationPlugin.java" startLine="13" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.lang.behavior.pluginSolution.plugin.PluginSolution_ApplicationPlugin" />
+  <unitInfo fileName="PluginSolution_ApplicationPlugin.java" startLine="13" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.lang.behavior.pluginSolution.plugin.PluginSolution_ApplicationPlugin" />
   <unitInfo fileName="PluginSolution_ProjectPlugin.java" startLine="11" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.lang.behavior.pluginSolution.plugin.PluginSolution_ProjectPlugin" />
+  <root nodeId="428466863025443737">
+    <nodeInfo nodeId="428466863025443737" fileName="ShowAsIntentions_ActionGroup.java" startLine="8" startPosition="72" endLine="9" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
+    <nodeInfo nodeId="428466863025443737" fileName="ShowAsIntentions_ActionGroup.java" startLine="9" startPosition="83" endLine="10" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ID" />
+    <nodeInfo nodeId="428466863025443737" fileName="ShowAsIntentions_ActionGroup.java" startLine="12" startPosition="41" endLine="13" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="428466863025443737" fileName="ShowAsIntentions_ActionGroup.java" startLine="13" startPosition="34" endLine="14" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="428466863025443737" fileName="ShowAsIntentions_ActionGroup.java" startLine="14" startPosition="30" endLine="15" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="428466863025443741" fileName="ShowAsIntentions_ActionGroup.java" startLine="16" startPosition="9" endLine="17" endPosition="134" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="428466863025443737" fileName="ShowAsIntentions_ActionGroup.java" startLine="18" startPosition="27" endLine="19" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="428466863025443737" fileName="ShowAsIntentions_ActionGroup.java" startLine="15" startPosition="25" endLine="20" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="428466863025443737" fileName="ShowAsIntentions_ActionGroup.java" startLine="11" startPosition="0" endLine="21" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ShowAsIntentions_ActionGroup#()V" />
+    <scopeInfo nodeId="428466863025443737" fileName="ShowAsIntentions_ActionGroup.java" startLine="16" startPosition="9" endLine="17" endPosition="134" />
+    <scopeInfo nodeId="428466863025443737" fileName="ShowAsIntentions_ActionGroup.java" startLine="18" startPosition="0" endLine="19" endPosition="39">
+      <varInfo nodeId="428466863025443737" varName="t" />
+    </scopeInfo>
+    <scopeInfo nodeId="428466863025443737" fileName="ShowAsIntentions_ActionGroup.java" startLine="18" startPosition="27" endLine="19" endPosition="39" />
+    <scopeInfo nodeId="428466863025443737" fileName="ShowAsIntentions_ActionGroup.java" startLine="12" startPosition="41" endLine="20" endPosition="5" />
+    <scopeInfo nodeId="428466863025443737" fileName="ShowAsIntentions_ActionGroup.java" startLine="11" startPosition="0" endLine="21" endPosition="3" />
+    <unitInfo nodeId="428466863025443737" fileName="ShowAsIntentions_ActionGroup.java" startLine="8" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.lang.behavior.pluginSolution.plugin.ShowAsIntentions_ActionGroup" />
+  </root>
   <root nodeId="5487985028841895760">
     <nodeInfo nodeId="5487985028841895760" fileName="BehaviourPopup_ActionGroup.java" startLine="12" startPosition="70" endLine="13" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
     <nodeInfo nodeId="5487985028841895760" fileName="BehaviourPopup_ActionGroup.java" startLine="13" startPosition="81" endLine="14" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ID" />

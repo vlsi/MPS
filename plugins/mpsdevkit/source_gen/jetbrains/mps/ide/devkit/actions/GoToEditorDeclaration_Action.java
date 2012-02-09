@@ -25,9 +25,8 @@ import javax.swing.JOptionPane;
 import java.awt.Frame;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.ide.actions.nodes.GoToEditorDeclarationHelper;
 import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.ide.navigation.NavigationSupport;
+import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.smodel.IOperationContext;
 
 public class GoToEditorDeclaration_Action extends BaseAction {

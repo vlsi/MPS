@@ -14,11 +14,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.nodeEditor.selection.SelectionManager;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
-import jetbrains.mps.openapi.editor.Editor;
-import jetbrains.mps.nodeEditor.selection.Selection;
-import jetbrains.mps.nodeEditor.selection.SingularSelection;
-import junit.framework.Assert;
-import jetbrains.mps.nodeEditor.selection.NodeRangeSelection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class AnonymousCellAnnotation_Behavior {
@@ -58,39 +53,6 @@ public class AnonymousCellAnnotation_Behavior {
       return label.getText().length();
     } else {
       return SPropertyOperations.getInteger(thisNode, "caretPosition");
-    }
-  }
-
-  public static void call_assertEditor_6268941039745719581(SNode thisNode, Editor editor, SNode node, Map<SNode, SNode> map, Map<SNode, SNode> nodeToCopy) {
-    EditorComponent component = (EditorComponent) editor.getCurrentEditorComponent();
-    if (SPropertyOperations.getBoolean(thisNode, "isInInspector")) {
-      component = ((NodeEditorComponent) component).getInspector();
-    }
-    Selection selection = component.getSelectionManager().getSelection();
-    assert selection != null;
-    if (selection instanceof SingularSelection) {
-      EditorCell selectedCell = ((SingularSelection) selection).getEditorCell();
-      Assert.assertSame(node, MapSequence.fromMap(map).get(selectedCell.getSNode()));
-      Assert.assertEquals(selectedCell.getCellId(), SPropertyOperations.getString(thisNode, "cellId"));
-      if (selectedCell instanceof EditorCell_Label) {
-        EditorCell_Label label = (EditorCell_Label) selectedCell;
-        Assert.assertEquals(SPropertyOperations.getInteger(thisNode, "selectionStart"), label.getSelectionStart());
-        Assert.assertEquals(SPropertyOperations.getInteger(thisNode, "selectionEnd"), label.getSelectionEnd());
-      }
-      Assert.assertNull(SLinkOperations.getTarget(thisNode, "nodeRangeSelectionStart", false));
-      Assert.assertNull(SLinkOperations.getTarget(thisNode, "nodeRangeSelectionEnd", false));
-    } else if (selection instanceof NodeRangeSelection) {
-      NodeRangeSelection rangeSelection = (NodeRangeSelection) selection;
-      Assert.assertNotNull(SLinkOperations.getTarget(thisNode, "nodeRangeSelectionStart", false));
-      Assert.assertNotNull(SLinkOperations.getTarget(thisNode, "nodeRangeSelectionEnd", false));
-      Assert.assertEquals(MapSequence.fromMap(nodeToCopy).get(SLinkOperations.getTarget(thisNode, "nodeRangeSelectionStart", false)), MapSequence.fromMap(map).get(rangeSelection.getFirstNode()));
-      Assert.assertEquals(MapSequence.fromMap(nodeToCopy).get(SLinkOperations.getTarget(thisNode, "nodeRangeSelectionEnd", false)), MapSequence.fromMap(map).get(rangeSelection.getLastNode()));
-    } else {
-      if (selection != null) {
-        Assert.fail("Selection of unsupported type: " + selection.getClass());
-      } else {
-        Assert.fail("Selection was not set in resulting editor");
-      }
     }
   }
 

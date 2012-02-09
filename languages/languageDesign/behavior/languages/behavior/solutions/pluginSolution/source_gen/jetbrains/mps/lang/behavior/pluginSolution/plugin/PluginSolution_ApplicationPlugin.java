@@ -27,9 +27,11 @@ public class PluginSolution_ApplicationPlugin extends BaseApplicationPlugin {
     // groups 
     addGroup(new BehaviorCodeOverrideImplementMenuGroup_ActionGroup());
     addGroup(new BehaviourPopup_ActionGroup());
+    addGroup(new ShowAsIntentions_ActionGroup());
   }
 
   public void adjustRegularGroups() {
+    insertGroupIntoAnother(ShowAsIntentions_ActionGroup.ID, "ActionsAsIntentions", null);
     insertGroupIntoAnother(BehaviourPopup_ActionGroup.ID, "jetbrains.mps.ide.editor.actions.EditorPopup_ActionGroup", null);
     insertGroupIntoAnother(BehaviorCodeOverrideImplementMenuGroup_ActionGroup.ID, Code_ActionGroup.ID, Code_ActionGroup.LABEL_ID_overrideImplement);
   }

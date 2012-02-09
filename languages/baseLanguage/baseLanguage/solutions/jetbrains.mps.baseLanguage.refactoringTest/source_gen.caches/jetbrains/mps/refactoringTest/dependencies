@@ -208,8 +208,8 @@
   <dependency className="jetbrains.mps.refactoringTest.CheckInlineCanBePerformed_Test" file="CheckInlineCanBePerformed_Test.java">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Throwable" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.util.plugin.refactorings.InlineMethodDialogModel" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.util.plugin.refactorings.InlineMethodRefactoringAnalyzer" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.pluginSolution.plugin.InlineMethodDialogModel" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.pluginSolution.plugin.InlineMethodRefactoringAnalyzer" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.util.plugin.run.MPSLaunch" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="junit.framework.Assert" />
@@ -220,8 +220,8 @@
   <dependency className="jetbrains.mps.refactoringTest.CheckInlineWithThrow_Test" file="CheckInlineWithThrow_Test.java">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Throwable" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.util.plugin.refactorings.InlineMethodDialogModel" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.util.plugin.refactorings.InlineMethodRefactoringAnalyzer" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.pluginSolution.plugin.InlineMethodDialogModel" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.pluginSolution.plugin.InlineMethodRefactoringAnalyzer" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.util.plugin.run.MPSLaunch" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="junit.framework.Assert" />
@@ -831,7 +831,7 @@
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.util.ArrayList" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.util.plugin.refactorings.InlineVariableRefactoring" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.pluginSolution.plugin.InlineVariableRefactoring" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.util.plugin.run.MPSLaunch" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
@@ -846,7 +846,7 @@
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.util.ArrayList" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.util.plugin.refactorings.InlineVariableRefactoring" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.pluginSolution.plugin.InlineVariableRefactoring" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.util.plugin.run.MPSLaunch" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
@@ -906,9 +906,9 @@
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.util.ArrayList" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.util.plugin.refactorings.InlineVariableAssignmentRefactoring" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.util.plugin.refactorings.InlineVariableRefactoring" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.util.plugin.refactorings.InlineVariableReferenceRefactoring" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.pluginSolution.plugin.InlineVariableAssignmentRefactoring" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.pluginSolution.plugin.InlineVariableRefactoring" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.pluginSolution.plugin.InlineVariableReferenceRefactoring" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.util.plugin.run.MPSLaunch" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
@@ -953,8 +953,8 @@
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.util.ArrayList" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.util.plugin.refactorings.InlineVariableRefactoring" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.util.plugin.refactorings.InlineVariableReferenceRefactoring" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.pluginSolution.plugin.InlineVariableRefactoring" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.pluginSolution.plugin.InlineVariableReferenceRefactoring" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.util.plugin.run.MPSLaunch" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
@@ -969,8 +969,8 @@
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.util.ArrayList" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.util.plugin.refactorings.InlineVariableRefactoring" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.util.plugin.refactorings.InlineVariableReferenceRefactoring" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.pluginSolution.plugin.InlineVariableRefactoring" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.pluginSolution.plugin.InlineVariableReferenceRefactoring" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.util.plugin.run.MPSLaunch" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
@@ -985,7 +985,7 @@
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.util.ArrayList" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.util.plugin.refactorings.InlineVariableRefactoring" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.pluginSolution.plugin.InlineVariableRefactoring" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.util.plugin.run.MPSLaunch" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
@@ -1000,7 +1000,7 @@
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.util.ArrayList" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.util.plugin.refactorings.InlineVariableRefactoring" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.pluginSolution.plugin.InlineVariableRefactoring" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.util.plugin.run.MPSLaunch" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
@@ -1134,8 +1134,8 @@
   <dependency className="jetbrains.mps.refactoringTest.InlineRecursiveMethod_Test" file="InlineRecursiveMethod_Test.java">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Throwable" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.util.plugin.refactorings.InlineMethodDialogModel" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.util.plugin.refactorings.InlineMethodRefactoringAnalyzer" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.pluginSolution.plugin.InlineMethodDialogModel" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.pluginSolution.plugin.InlineMethodRefactoringAnalyzer" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.util.plugin.run.MPSLaunch" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="junit.framework.Assert" />
@@ -1147,7 +1147,7 @@
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.util.ArrayList" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.util.plugin.refactorings.InlineVariableRefactoring" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.pluginSolution.plugin.InlineVariableRefactoring" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.util.plugin.run.MPSLaunch" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
@@ -1176,8 +1176,8 @@
   <dependency className="jetbrains.mps.refactoringTest.InlineWithNoSourcesAttached_Test" file="InlineWithNoSourcesAttached_Test.java">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Throwable" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.util.plugin.refactorings.InlineMethodDialogModel" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.util.plugin.refactorings.InlineMethodRefactoringAnalyzer" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.pluginSolution.plugin.InlineMethodDialogModel" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.pluginSolution.plugin.InlineMethodRefactoringAnalyzer" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.util.plugin.run.MPSLaunch" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="junit.framework.Assert" />
@@ -1204,7 +1204,7 @@
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.util.ArrayList" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.util.plugin.refactorings.InlineVariableRefactoring" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.pluginSolution.plugin.InlineVariableRefactoring" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.util.plugin.run.MPSLaunch" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
@@ -1647,7 +1647,7 @@
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.util.ArrayList" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.util.plugin.refactorings.InlineVariableRefactoring" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.pluginSolution.plugin.InlineVariableRefactoring" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.util.plugin.run.MPSLaunch" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />

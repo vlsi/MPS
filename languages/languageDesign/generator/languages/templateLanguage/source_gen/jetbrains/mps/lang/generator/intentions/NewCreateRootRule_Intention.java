@@ -19,7 +19,7 @@ import jetbrains.mps.util.Comparing;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
-import jetbrains.mps.ide.navigation.NavigationSupport;
+import jetbrains.mps.openapi.navigation.NavigationSupport;
 
 public class NewCreateRootRule_Intention extends BaseIntention implements Intention {
   public NewCreateRootRule_Intention() {

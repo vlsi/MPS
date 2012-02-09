@@ -16,7 +16,6 @@ import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelRepository;
-import jetbrains.mps.baseLanguage.util.plugin.refactorings.ChangeMethodSignatureDialog;
 import jetbrains.mps.smodel.IOperationContext;
 import java.util.List;
 import jetbrains.mps.baseLanguage.util.plugin.refactorings.ChangeMethodSignatureRefactoring;

@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="AbstractCommand_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.bash.behavior.AbstractCommand_Behavior" />
   <unitInfo fileName="AbstractCommand_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.bash.behavior.AbstractCommand_BehaviorDescriptor" />
   <unitInfo fileName="AbstractFollowingCommandList_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.bash.behavior.AbstractFollowingCommandList_BehaviorDescriptor" />
   <unitInfo fileName="AbstractLoopCommand_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.bash.behavior.AbstractLoopCommand_BehaviorDescriptor" />
@@ -11,7 +10,6 @@
   <unitInfo fileName="AppendingOutputErrorRedirection_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.bash.behavior.AppendingOutputErrorRedirection_BehaviorDescriptor" />
   <unitInfo fileName="AppendingOutputRedirection_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.bash.behavior.AppendingOutputRedirection_BehaviorDescriptor" />
   <unitInfo fileName="ArgumentListReference_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.bash.behavior.ArgumentListReference_BehaviorDescriptor" />
-  <unitInfo fileName="ArgumentList_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.bash.behavior.ArgumentList_Behavior" />
   <unitInfo fileName="ArgumentList_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.bash.behavior.ArgumentList_BehaviorDescriptor" />
   <unitInfo fileName="ArgumentReference_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.bash.behavior.ArgumentReference_BehaviorDescriptor" />
   <unitInfo fileName="Argument_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.bash.behavior.Argument_BehaviorDescriptor" />
@@ -75,7 +73,6 @@
   <unitInfo fileName="ExpExpression_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.bash.behavior.ExpExpression_BehaviorDescriptor" />
   <unitInfo fileName="ExternalCommandCall_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.bash.behavior.ExternalCommandCall_BehaviorDescriptor" />
   <unitInfo fileName="ExternalCommandDeclaration_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.bash.behavior.ExternalCommandDeclaration_BehaviorDescriptor" />
-  <unitInfo fileName="ExternalOptionDeclaration_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.bash.behavior.ExternalOptionDeclaration_Behavior" />
   <unitInfo fileName="ExternalOptionDeclaration_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.bash.behavior.ExternalOptionDeclaration_BehaviorDescriptor" />
   <unitInfo fileName="ExternalOptionReference_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.bash.behavior.ExternalOptionReference_BehaviorDescriptor" />
   <unitInfo fileName="FollowingCommandList_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.bash.behavior.FollowingCommandList_BehaviorDescriptor" />
@@ -97,10 +94,8 @@
   <unitInfo fileName="HeadPipeline_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.bash.behavior.HeadPipeline_BehaviorDescriptor" />
   <unitInfo fileName="HereDocumentRedirection_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.bash.behavior.HereDocumentRedirection_BehaviorDescriptor" />
   <unitInfo fileName="HereStringRedirection_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.bash.behavior.HereStringRedirection_BehaviorDescriptor" />
-  <unitInfo fileName="HexIntegerLiteral_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.bash.behavior.HexIntegerLiteral_Behavior" />
   <unitInfo fileName="HexIntegerLiteral_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.bash.behavior.HexIntegerLiteral_BehaviorDescriptor" />
   <unitInfo fileName="IArithmeticHolder_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="8" endPosition="0" unitName="jetbrains.mps.bash.behavior.IArithmeticHolder_BehaviorDescriptor" />
-  <unitInfo fileName="ICommandParameter_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.bash.behavior.ICommandParameter_Behavior" />
   <unitInfo fileName="ICommandParameter_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="8" endPosition="0" unitName="jetbrains.mps.bash.behavior.ICommandParameter_BehaviorDescriptor" />
   <unitInfo fileName="IComment_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="8" endPosition="0" unitName="jetbrains.mps.bash.behavior.IComment_BehaviorDescriptor" />
   <unitInfo fileName="ICompoundCommand_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="8" endPosition="0" unitName="jetbrains.mps.bash.behavior.ICompoundCommand_BehaviorDescriptor" />
@@ -199,7 +194,6 @@
   <unitInfo fileName="VariableAddAssingment_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.bash.behavior.VariableAddAssingment_BehaviorDescriptor" />
   <unitInfo fileName="VariableAssingment_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.bash.behavior.VariableAssingment_BehaviorDescriptor" />
   <unitInfo fileName="VariableNameDeclaration_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.bash.behavior.VariableNameDeclaration_BehaviorDescriptor" />
-  <unitInfo fileName="VariableReference_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.bash.behavior.VariableReference_Behavior" />
   <unitInfo fileName="VariableReference_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.bash.behavior.VariableReference_BehaviorDescriptor" />
   <unitInfo fileName="WhileLoopCommand_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.bash.behavior.WhileLoopCommand_BehaviorDescriptor" />
   <unitInfo fileName="WordExpression_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.bash.behavior.WordExpression_BehaviorDescriptor" />

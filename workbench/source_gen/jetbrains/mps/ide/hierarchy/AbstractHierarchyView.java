@@ -27,7 +27,7 @@ import javax.swing.SwingUtilities;
 import javax.swing.JComponent;
 import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.actionSystem.ActionPlaces;
-import jetbrains.mps.ide.navigation.NavigationSupport;
+import jetbrains.mps.openapi.navigation.NavigationSupport;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import jetbrains.mps.ide.hierarchy.toggle.GroupedToggleAction;
 import jetbrains.mps.ide.hierarchy.icons.Icons;

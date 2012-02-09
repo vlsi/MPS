@@ -21,7 +21,7 @@ import com.intellij.navigation.ItemPresentation;
 import com.intellij.openapi.actionSystem.DataContext;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.AsyncResult.Handler;
-import jetbrains.mps.ide.navigation.NavigationSupport;
+import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.ModuleContext;

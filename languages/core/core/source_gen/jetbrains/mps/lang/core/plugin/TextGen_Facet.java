@@ -19,7 +19,6 @@ import jetbrains.mps.make.resources.IPropertiesAccessor;
 import jetbrains.mps.smodel.resources.GResource;
 import jetbrains.mps.make.script.IFeedback;
 import jetbrains.mps.make.delta.IDelta;
-import jetbrains.mps.lang.core.pluginSolution.plugin.RetainedUtil;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.generator.GenerationFacade;
@@ -32,7 +31,7 @@ import jetbrains.mps.generator.traceInfo.TraceInfoCache;
 import jetbrains.mps.generator.impl.dependencies.GenerationDependenciesCache;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.generator.TransientModelsModule;
-import jetbrains.mps.ide.ThreadUtils;
+import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.cleanup.CleanupManager;
 import jetbrains.mps.messages.IMessage;
 import jetbrains.mps.smodel.resources.TResource;
@@ -146,7 +145,7 @@ public class TextGen_Facet extends IFacet.Stub {
 
                 final SModelDescriptor outputMD = gres.status().getOutputModelDescriptor();
                 if (outputMD instanceof TransientModelsModule.TransientSModelDescriptor) {
-                  if (!(ThreadUtils.runInUIThreadAndWait(new Runnable() {
+                  if (!(FileSystem.getInstance().runWriteTransaction(new Runnable() {
                     public void run() {
                       ModelAccess.instance().requireWrite(new Runnable() {
                         public void run() {
@@ -171,13 +170,9 @@ public class TextGen_Facet extends IFacet.Stub {
                   monitor.reportFeedback(new IFeedback.ERROR(String.valueOf("Failed to generate text")));
                   return new IResult.FAILURE(_output_21gswx_a0a);
                 }
-                if (!(ThreadUtils.runInUIThreadAndWait(new Runnable() {
+                if (!(FileSystem.getInstance().runWriteTransaction(new Runnable() {
                   public void run() {
-                    ModelAccess.instance().requireWrite(new Runnable() {
-                      public void run() {
-                        javaStreamHandler.flush();
-                      }
-                    });
+                    javaStreamHandler.flush();
                   }
                 }))) {
                   monitor.reportFeedback(new IFeedback.ERROR(String.valueOf("Failed to save files")));

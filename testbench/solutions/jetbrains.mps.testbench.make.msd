@@ -14,6 +14,8 @@
   <sourcePath />
   <dependencies>
     <dependency reexport="false">6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)</dependency>
+    <dependency reexport="false">6ed54515-acc8-4d1e-a16c-9fd6cfe951ea(MPS.Core)</dependency>
+    <dependency reexport="false">86441d7a-e194-42da-81a5-2161ec62a379(MPS.Workbench)</dependency>
     <dependency reexport="false">920eaa0e-ecca-46bc-bee7-4e5c59213dd6(Testbench)</dependency>
     <dependency reexport="false">7a0c7a21-43a3-4bb4-b898-a819ebed44a5(closures.test)</dependency>
     <dependency reexport="false">fb186431-2788-490b-9e84-c2b84ef0ca77(collections_trove.test)</dependency>
@@ -27,13 +29,16 @@
     <dependency reexport="false">993e3b08-9f44-43cf-b983-e474ac66855b(jetbrains.mps.baseLanguage.tuples.test)</dependency>
     <dependency reexport="false">444220d9-055e-44dd-a551-ed91c97d5067(jetbrains.mps.baseLanguage.unitTest.sandbox)</dependency>
     <dependency reexport="false">e60b351d-8d80-4c13-8ad4-3e4759e2a3ea(jetbrains.mps.baseLanguage.unittest)</dependency>
+    <dependency reexport="false">e98c5fdd-c2ef-4d5b-9ffb-fa00f9dcb754(jetbrains.mps.build.mpsautobuild.test)</dependency>
     <dependency reexport="false">70b17f0c-ff72-43e8-9468-eda69efb2b71(jetbrains.mps.debugger.java.runtime.tests)</dependency>
     <dependency reexport="false">365fb593-3c1a-40a0-a7d7-c98144281283(jetbrains.mps.execution.impl)</dependency>
     <dependency reexport="false">7b15492d-a198-43e2-91e3-4a7e9116ce2b(jetbrains.mps.execution.impl.tests)</dependency>
+    <dependency reexport="false">6cbb1052-4510-427f-926c-3476bfd7e801(jetbrains.mps.execution.impl.tests.sandbox)</dependency>
     <dependency reexport="false">1cf9ab03-28e6-49cc-b765-555cd6dcfc28(jetbrains.mps.graphLayout.test)</dependency>
     <dependency reexport="false">ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)</dependency>
     <dependency reexport="false">69de002c-bbba-40be-be5b-f3a6e61ea828(jetbrains.mps.lang.editor.table.tests)</dependency>
     <dependency reexport="false">7597197a-bad8-4672-9806-215a3efe8740(jetbrains.mps.lang.editor.tests)</dependency>
+    <dependency reexport="false">bdcad511-2c95-4b17-90fb-99b248f018cc(jetbrains.mps.lang.extension.tests)</dependency>
     <dependency reexport="false">d4650c60-7bd2-4b0f-94fb-1b0e16cc8290(jetbrains.mps.lang.pattern.test)</dependency>
     <dependency reexport="false">28f9e497-3b42-4291-aeba-0a1039153ab1(jetbrains.mps.lang.plugin)</dependency>
     <dependency reexport="false">d51c8d2d-7b6e-4d93-9eee-b55b04c5886b(jetbrains.mps.lang.smodel.unittest)</dependency>
@@ -41,21 +46,19 @@
     <dependency reexport="false">a1250a4d-c090-42c3-ad7c-d298a3357dd4(jetbrains.mps.make.runtime)</dependency>
     <dependency reexport="false">ad44d830-d9b6-4c92-9e56-821fcc11b493(jetbrains.mps.make.tests)</dependency>
     <dependency reexport="false">8e87e036-7d3f-4e47-809f-c244e2a938e8(jetbrains.mps.makeTest)</dependency>
+    <dependency reexport="false">45571709-5529-4a2c-94c9-5b0e2469ad35(jetbrains.mps.samples.agreement.framework)</dependency>
+    <dependency reexport="false">086f6299-eca0-43c4-bbca-fab3f95963aa(jetbrains.mps.samples.secretCompartment.runtime)</dependency>
     <dependency reexport="false">df9d410f-2ebb-43f7-893a-483a4f085250(jetbrains.mps.smodel.resources)</dependency>
     <dependency reexport="false">d2213aeb-6827-43e6-8179-d5886cfd0bb6(jetbrains.mps.smodel.test)</dependency>
     <dependency reexport="false">79f9d103-4ff6-4def-9c1a-27070f9ba255(jetbrains.mps.testbench.make)</dependency>
     <dependency reexport="false">415bc577-86ca-46a6-b873-4670fd19e169(jetbrains.mps.traceInfo.test)</dependency>
-    <dependency reexport="false">8243a5aa-ceff-484d-8124-da694e9f8ef4(jetbrains.mps.ui.unittest)</dependency>
-    <dependency reexport="false">2f499867-d42a-4e31-a93d-33e16883e187(jetbrains.mps.xml.tests)</dependency>
-    <dependency reexport="false">26af8f6b-3531-46d0-8700-83a313e4566e(ypath.test)</dependency>
-    <dependency reexport="false">6ed54515-acc8-4d1e-a16c-9fd6cfe951ea(MPS.Core)</dependency>
-    <dependency reexport="false">86441d7a-e194-42da-81a5-2161ec62a379(MPS.Workbench)</dependency>
     <dependency reexport="false">dc080be0-da6e-4885-aed0-7d999c120619(jetbrains.mps.traceInfo.testWeaving)</dependency>
-    <dependency reexport="false">e98c5fdd-c2ef-4d5b-9ffb-fa00f9dcb754(jetbrains.mps.build.mpsautobuild.test)</dependency>
     <dependency reexport="false">cdd4e8a8-17c1-4f16-b054-27e94948bd47(jetbrains.mps.transformation.test.inputModels)</dependency>
-    <dependency reexport="false">6cbb1052-4510-427f-926c-3476bfd7e801(jetbrains.mps.execution.impl.tests.sandbox)</dependency>
+    <dependency reexport="false">8243a5aa-ceff-484d-8124-da694e9f8ef4(jetbrains.mps.ui.unittest)</dependency>
     <dependency reexport="false">b0d98700-54f0-4c39-a8e0-bb27733b8b38(jetbrains.mps.vcs)</dependency>
+    <dependency reexport="false">2f499867-d42a-4e31-a93d-33e16883e187(jetbrains.mps.xml.tests)</dependency>
     <dependency reexport="false">99834b1c-2b28-4543-a97c-953df7633f72(jetbrains.mps.ypath.runtime)</dependency>
+    <dependency reexport="false">26af8f6b-3531-46d0-8700-83a313e4566e(ypath.test)</dependency>
     <dependency reexport="false">29b98b6d-4c16-4c58-a0bb-9645a5db33a6(jetbrains.mps.matrixLanguage.runtime)</dependency>
     <dependency reexport="false">45571709-5529-4a2c-94c9-5b0e2469ad35(jetbrains.mps.samples.agreement.framework)</dependency>
     <dependency reexport="false">086f6299-eca0-43c4-bbca-fab3f95963aa(jetbrains.mps.samples.secretCompartment.runtime)</dependency>

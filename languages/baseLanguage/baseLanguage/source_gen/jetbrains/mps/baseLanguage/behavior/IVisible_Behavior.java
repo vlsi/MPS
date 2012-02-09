@@ -4,7 +4,7 @@ package jetbrains.mps.baseLanguage.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import javax.swing.Icon;
-import com.intellij.util.Icons;
+import jetbrains.mps.baseLanguage.plugin.IconResourceBundle_Visibility;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
@@ -13,16 +13,16 @@ public class IVisible_Behavior {
   }
 
   public static Icon call_getVisibilityIcon_5017341185733869581(SNode thisNode) {
-    Icon defaultIcon = Icons.PACKAGE_LOCAL_ICON;
+    Icon defaultIcon = IconResourceBundle_Visibility.getInstance().getResource("PACKAGE_LOCAL");
     SNode visibility = SLinkOperations.getTarget(thisNode, "visibility", true);
     if (SNodeOperations.isInstanceOf(visibility, "jetbrains.mps.baseLanguage.structure.PublicVisibility")) {
-      return Icons.PUBLIC_ICON;
+      return IconResourceBundle_Visibility.getInstance().getResource("PUBLIC");
     }
     if (SNodeOperations.isInstanceOf(visibility, "jetbrains.mps.baseLanguage.structure.PrivateVisibility")) {
-      return Icons.PRIVATE_ICON;
+      return IconResourceBundle_Visibility.getInstance().getResource("PRIVATE");
     }
     if (SNodeOperations.isInstanceOf(visibility, "jetbrains.mps.baseLanguage.structure.ProtectedVisibility")) {
-      return Icons.PROTECTED_ICON;
+      return IconResourceBundle_Visibility.getInstance().getResource("PROTECTED");
     }
     return defaultIcon;
   }

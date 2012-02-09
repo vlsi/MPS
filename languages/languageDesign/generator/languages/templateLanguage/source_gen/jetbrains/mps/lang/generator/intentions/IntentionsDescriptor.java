@@ -23,7 +23,6 @@ public class IntentionsDescriptor extends BaseIntentionsDescriptor {
     add(new AddPropertyMacroParam_property_Intention(), "1240595522621");
     add(new AddReferenceMacro_Intention(), "1207154220489");
     add(new AddReferenceMacroParam_link_Intention(), "1240573470307");
-    add(new AttachMappingLabel_Intention(), "1227291795686");
     add(new ConvertClassConceptToExtract_Intention(), "34229510189607557");
     add(new ConvertInlineTemplateToTemplateFragment_Intention(), "1203775431223");
     add(new ConvertLoopWithCopySrc_Intention(), "7834938100936599479");

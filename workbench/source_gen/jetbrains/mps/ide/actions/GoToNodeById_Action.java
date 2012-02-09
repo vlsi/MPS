@@ -18,7 +18,7 @@ import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.ide.navigation.NavigationSupport;
+import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.smodel.IOperationContext;
 
 public class GoToNodeById_Action extends BaseAction {

@@ -11,6 +11,15 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.openapi.editor.Editor;
 import jetbrains.mps.nodeEditor.NodeEditorComponent;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
+import jetbrains.mps.nodeEditor.EditorComponent;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.nodeEditor.selection.Selection;
+import jetbrains.mps.nodeEditor.selection.SingularSelection;
+import jetbrains.mps.nodeEditor.cells.EditorCell;
+import junit.framework.Assert;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
+import jetbrains.mps.nodeEditor.selection.NodeRangeSelection;
 
 public class CellReference {
   private SNode myNode;
@@ -42,7 +51,39 @@ public class CellReference {
     BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(this.myAnnotation, "jetbrains.mps.lang.test.structure.AnonymousCellAnnotation"), "call_setupSelection_6268941039745707957", new Class[]{SNode.class, NodeEditorComponent.class, SNode.class, Map.class}, editorComponent, this.myNode, this.myMap);
   }
 
-  public void assertEditor(Editor editorComponent, Map<SNode, SNode> map) {
-    BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(this.myAnnotation, "jetbrains.mps.lang.test.structure.AnonymousCellAnnotation"), "call_assertEditor_6268941039745719581", new Class[]{SNode.class, Editor.class, SNode.class, Map.class, Map.class}, editorComponent, this.getNode(), map, this.myMap);
+  public void assertEditor(Editor editor, Map<SNode, SNode> map) {
+    EditorComponent component = (EditorComponent) editor.getCurrentEditorComponent();
+    if (SPropertyOperations.getBoolean(this.myAnnotation, "isInInspector")) {
+      component = ((NodeEditorComponent) component).getInspector();
+    }
+    SLinkOperations.getTarget(myAnnotation, "nodeRangeSelectionEnd", false);
+
+    Selection selection = component.getSelectionManager().getSelection();
+    assert selection != null;
+    if (selection instanceof SingularSelection) {
+      EditorCell selectedCell = ((SingularSelection) selection).getEditorCell();
+      Assert.assertSame(this.getNode(), MapSequence.fromMap(map).get(selectedCell.getSNode()));
+      Assert.assertEquals(selectedCell.getCellId(), SPropertyOperations.getString(this.myAnnotation, "cellId"));
+      if (selectedCell instanceof EditorCell_Label) {
+        EditorCell_Label label = (EditorCell_Label) selectedCell;
+        Assert.assertEquals(SPropertyOperations.getInteger(myAnnotation, "selectionStart"), label.getSelectionStart());
+        Assert.assertEquals(SPropertyOperations.getInteger(myAnnotation, "selectionEnd"), label.getSelectionEnd());
+      }
+      Assert.assertNull(SLinkOperations.getTarget(myAnnotation, "nodeRangeSelectionStart", false));
+      Assert.assertNull(SLinkOperations.getTarget(myAnnotation, "nodeRangeSelectionEnd", false));
+    } else if (selection instanceof NodeRangeSelection) {
+      NodeRangeSelection rangeSelection = (NodeRangeSelection) selection;
+      Assert.assertNotNull(SLinkOperations.getTarget(myAnnotation, "nodeRangeSelectionStart", false));
+      Assert.assertNotNull(SLinkOperations.getTarget(myAnnotation, "nodeRangeSelectionEnd", false));
+      Assert.assertEquals(MapSequence.fromMap(myMap).get(SLinkOperations.getTarget(myAnnotation, "nodeRangeSelectionStart", false)), MapSequence.fromMap(map).get(rangeSelection.getFirstNode()));
+      Assert.assertEquals(MapSequence.fromMap(myMap).get(SLinkOperations.getTarget(myAnnotation, "nodeRangeSelectionEnd", false)), MapSequence.fromMap(map).get(rangeSelection.getLastNode()));
+    } else {
+      if (selection != null) {
+        Assert.fail("Selection of unsupported type: " + selection.getClass());
+      } else {
+        Assert.fail("Selection was not set in resulting editor");
+      }
+    }
+
   }
 }

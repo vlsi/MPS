@@ -22,7 +22,6 @@ import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.baseLanguage.util.plugin.refactorings.ExtractMethodRefactoringParameters;
 import jetbrains.mps.baseLanguage.util.plugin.refactorings.ExtractMethodRefactoring;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.baseLanguage.util.plugin.refactorings.ExtractMethodDialog;
 import java.awt.Frame;
 import jetbrains.mps.nodeEditor.EditorContext;
 

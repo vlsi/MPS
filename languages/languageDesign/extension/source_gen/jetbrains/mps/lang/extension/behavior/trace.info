@@ -5,13 +5,9 @@
   <unitInfo fileName="ExtensionFieldDeclaration_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.lang.extension.behavior.ExtensionFieldDeclaration_BehaviorDescriptor" />
   <unitInfo fileName="ExtensionFieldReference_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.extension.behavior.ExtensionFieldReference_BehaviorDescriptor" />
   <unitInfo fileName="ExtensionFunction_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.extension.behavior.ExtensionFunction_BehaviorDescriptor" />
-  <unitInfo fileName="ExtensionObjectGetter_Behavior.java" startLine="9" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.lang.extension.behavior.ExtensionObjectGetter_Behavior" />
   <unitInfo fileName="ExtensionObjectGetter_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.lang.extension.behavior.ExtensionObjectGetter_BehaviorDescriptor" />
-  <unitInfo fileName="ExtensionPointDeclaration_Behavior.java" startLine="13" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.lang.extension.behavior.ExtensionPointDeclaration_Behavior" />
   <unitInfo fileName="ExtensionPointDeclaration_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.lang.extension.behavior.ExtensionPointDeclaration_BehaviorDescriptor" />
-  <unitInfo fileName="ExtensionPointExpression_Behavior.java" startLine="10" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.lang.extension.behavior.ExtensionPointExpression_Behavior" />
   <unitInfo fileName="ExtensionPointExpression_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.lang.extension.behavior.ExtensionPointExpression_BehaviorDescriptor" />
-  <unitInfo fileName="ExtensionPointType_Behavior.java" startLine="10" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.lang.extension.behavior.ExtensionPointType_Behavior" />
   <unitInfo fileName="ExtensionPointType_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.lang.extension.behavior.ExtensionPointType_BehaviorDescriptor" />
   <unitInfo fileName="GetExtensionObjectsOperation_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.extension.behavior.GetExtensionObjectsOperation_BehaviorDescriptor" />
   <root nodeId="3175313036448544059">
