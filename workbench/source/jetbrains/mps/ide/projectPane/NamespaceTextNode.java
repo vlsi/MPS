@@ -30,7 +30,6 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.util.InternUtil;
 import jetbrains.mps.workbench.action.ActionUtils;
-import jetbrains.mps.workbench.action.BaseGroup;
 
 import java.util.ArrayList;
 import java.util.List;

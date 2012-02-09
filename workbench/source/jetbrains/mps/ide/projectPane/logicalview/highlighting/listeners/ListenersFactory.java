@@ -16,7 +16,6 @@
 package jetbrains.mps.ide.projectPane.logicalview.highlighting.listeners;
 
 import jetbrains.mps.ide.projectPane.logicalview.nodes.ProjectModuleTreeNode;
-import jetbrains.mps.ide.projectPane.logicalview.nodes.ProjectTreeNode;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
 

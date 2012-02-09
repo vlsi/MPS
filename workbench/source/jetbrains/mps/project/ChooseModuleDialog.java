@@ -25,7 +25,6 @@ import jetbrains.mps.ide.ui.TextTreeNode;
 
 import javax.swing.JComponent;
 import javax.swing.JOptionPane;
-import javax.swing.JScrollPane;
 import javax.swing.tree.TreePath;
 import java.awt.Frame;
 import java.awt.HeadlessException;
