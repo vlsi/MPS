@@ -22,11 +22,11 @@ public class PluginContributor extends AbstractPluginFactory {
   public PluginContributor() {
   }
 
-  public BaseProjectPlugin createProjectPlugin(){
+  public BaseProjectPlugin createProjectPlugin() {
     return null;
   }
 
-  public BaseApplicationPlugin createApplicationPlugin(){
+  public BaseApplicationPlugin createApplicationPlugin() {
     return null;
   }
 
@@ -35,14 +35,13 @@ public class PluginContributor extends AbstractPluginFactory {
   public <T> T create(Class<T> klass) {
     if (BaseProjectPlugin.class == klass) {
       return (T) createProjectPlugin();
-    }
-    else if (BaseApplicationPlugin.class == klass) {
+    } else if (BaseApplicationPlugin.class == klass) {
       return (T) createApplicationPlugin();
     }
-    throw new IllegalArgumentException("Can't create instance: "+klass);
+    throw new IllegalArgumentException("Can't create instance: " + klass);
   }
 
-  public static PluginContributor adapt (AbstractPluginFactory factory) {
+  public static PluginContributor adapt(AbstractPluginFactory factory) {
     if (factory instanceof PluginContributor) {
       return (PluginContributor) factory;
     }

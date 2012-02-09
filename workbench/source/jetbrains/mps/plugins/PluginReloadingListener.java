@@ -17,5 +17,6 @@ package jetbrains.mps.plugins;
 
 public interface PluginReloadingListener {
   void afterPluginsLoaded();
+
   void beforePluginsDisposed();
 }
