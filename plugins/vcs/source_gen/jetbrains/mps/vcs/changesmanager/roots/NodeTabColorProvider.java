@@ -45,7 +45,7 @@ public class NodeTabColorProvider implements TabColorProvider {
   }
 
   @Nullable
-  public Color getNodeColor(SNode node) {
+  public Color getNodeColor(@NotNull SNode node) {
     return check_6tqz68_a0a1(myFileStatusMapping.getStatus(node));
   }
 

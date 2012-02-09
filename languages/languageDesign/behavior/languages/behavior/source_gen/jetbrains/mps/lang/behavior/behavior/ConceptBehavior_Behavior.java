@@ -79,13 +79,10 @@ public class ConceptBehavior_Behavior {
     AbstractExtractMethodRefactoringProcessor result = new AbstractExtractMethodRefactoringProcessor(thisNode, nodesToExtract) {
       public SNode createMethodCall(SNode declaration, List<SNode> arguments) {
         if (SNodeOperations.isInstanceOf(declaration, "jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration")) {
-          SNode call = SConceptOperations.createNewNode("jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall", null);
+          SNode call = SConceptOperations.createNewNode("jetbrains.mps.lang.behavior.structure.LocalBehaviorMethodCall", null);
           SLinkOperations.setTarget(call, "baseMethodDeclaration", SNodeOperations.cast(declaration, "jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration"), false);
           ListSequence.fromList(SLinkOperations.getTargets(call, "actualArgument", true)).addSequence(ListSequence.fromList(arguments));
-          SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.DotExpression", null);
-          SLinkOperations.setTarget(result, "operand", SConceptOperations.createNewNode("jetbrains.mps.lang.behavior.structure.ThisNodeExpression", null), true);
-          SLinkOperations.setTarget(result, "operation", call, true);
-          return result;
+          return call;
         }
         if (SNodeOperations.isInstanceOf(declaration, "jetbrains.mps.lang.behavior.structure.StaticConceptMethodDeclaration")) {
           SNode call = SConceptOperations.createNewNode("jetbrains.mps.lang.smodel.structure.StaticConceptMethodCall", null);

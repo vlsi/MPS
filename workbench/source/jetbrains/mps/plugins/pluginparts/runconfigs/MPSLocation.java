@@ -1,13 +1,14 @@
 package jetbrains.mps.plugins.pluginparts.runconfigs;
 
 import com.intellij.execution.Location;
+import com.intellij.openapi.module.Module;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.Computable;
 import org.jetbrains.annotations.NotNull;
-import com.intellij.openapi.module.Module;
-import java.util.Iterator;
+
 import java.util.ArrayList;
+import java.util.Iterator;
 
 public class MPSLocation extends Location {
   private Project myProject;

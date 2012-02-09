@@ -18,7 +18,6 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.workbench.dialogs.DeleteDialog;
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.ide.actions.nodes.DeleteNodesHelper;
 import jetbrains.mps.smodel.IOperationContext;
 
 public class DeleteNode_Action extends BaseAction {

@@ -17031,15 +17031,17 @@
     <nodeInfo nodeId="1231693361386" fileName="PropertyMacroActions.java" startLine="30" startPosition="75" endLine="31" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1231694249737" fileName="PropertyMacroActions.java" startLine="31" startPosition="61" endLine="32" endPosition="158" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1231694378057" fileName="PropertyMacroActions.java" startLine="32" startPosition="158" endLine="33" endPosition="174" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1231694382085" fileName="PropertyMacroActions.java" startLine="33" startPosition="174" endLine="34" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1231694405061" fileName="PropertyMacroActions.java" startLine="34" startPosition="67" endLine="35" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1231694382085" fileName="PropertyMacroActions.java" startLine="34" startPosition="25" endLine="35" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1231694405061" fileName="PropertyMacroActions.java" startLine="36" startPosition="7" endLine="37" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1231693283891" fileName="PropertyMacroActions.java" startLine="21" startPosition="0" endLine="24" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="PropertyMacroActions_DELETE#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="5850139268204690384" fileName="PropertyMacroActions.java" startLine="33" startPosition="174" endLine="36" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1231693283891" fileName="PropertyMacroActions.java" startLine="14" startPosition="35" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="setCellActions#(Ljetbrains/mps/nodeEditor/cells/EditorCell;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/nodeEditor/EditorContext;)V" />
     <nodeInfo nodeId="1231693283891" fileName="PropertyMacroActions.java" startLine="25" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljetbrains/mps/nodeEditor/EditorContext;)V" />
-    <nodeInfo nodeId="1231693283891" fileName="PropertyMacroActions.java" startLine="29" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute_internal#(Ljetbrains/mps/nodeEditor/EditorContext;Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="1231693283891" fileName="PropertyMacroActions.java" startLine="29" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute_internal#(Ljetbrains/mps/nodeEditor/EditorContext;Ljetbrains/mps/smodel/SNode;)V" />
     <scopeInfo nodeId="1231693283891" fileName="PropertyMacroActions.java" startLine="15" startPosition="95" endLine="16" endPosition="108" />
     <scopeInfo nodeId="1231693283891" fileName="PropertyMacroActions.java" startLine="22" startPosition="52" endLine="23" endPosition="25" />
     <scopeInfo nodeId="1231693283891" fileName="PropertyMacroActions.java" startLine="26" startPosition="54" endLine="27" endPosition="56" />
+    <scopeInfo nodeId="5850139268204690385" fileName="PropertyMacroActions.java" startLine="34" startPosition="25" endLine="35" endPosition="69" />
     <scopeInfo nodeId="1231693283891" fileName="PropertyMacroActions.java" startLine="21" startPosition="0" endLine="24" endPosition="5">
       <varInfo nodeId="1231693283891" varName="node" />
     </scopeInfo>
@@ -17051,17 +17053,17 @@
     <scopeInfo nodeId="1231693283891" fileName="PropertyMacroActions.java" startLine="25" startPosition="0" endLine="29" endPosition="0">
       <varInfo nodeId="1231693283891" varName="editorContext" />
     </scopeInfo>
-    <scopeInfo nodeId="1231693298176" fileName="PropertyMacroActions.java" startLine="30" startPosition="75" endLine="35" endPosition="39">
+    <scopeInfo nodeId="1231693298176" fileName="PropertyMacroActions.java" startLine="30" startPosition="75" endLine="37" endPosition="39">
       <varInfo nodeId="1231693361387" varName="attributedNode" />
       <varInfo nodeId="1231694378058" varName="cell" />
       <varInfo nodeId="1231694249738" varName="propertyDeclaration" />
     </scopeInfo>
-    <scopeInfo nodeId="1231693283891" fileName="PropertyMacroActions.java" startLine="29" startPosition="0" endLine="37" endPosition="0">
+    <scopeInfo nodeId="1231693283891" fileName="PropertyMacroActions.java" startLine="29" startPosition="0" endLine="39" endPosition="0">
       <varInfo nodeId="1231693283891" varName="editorContext" />
       <varInfo nodeId="1231693283891" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="1231693283891" fileName="PropertyMacroActions.java" startLine="14" startPosition="0" endLine="39" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.PropertyMacroActions" />
-    <unitInfo nodeId="1231693283891" fileName="PropertyMacroActions.java" startLine="19" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.PropertyMacroActions$PropertyMacroActions_DELETE" />
+    <unitInfo nodeId="1231693283891" fileName="PropertyMacroActions.java" startLine="14" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.PropertyMacroActions" />
+    <unitInfo nodeId="1231693283891" fileName="PropertyMacroActions.java" startLine="19" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.PropertyMacroActions$PropertyMacroActions_DELETE" />
   </root>
   <root nodeId="1311078761699591092">
     <nodeInfo nodeId="1311078761699602343" fileName="InsertMacro_Editor.java" startLine="115" startPosition="69" endLine="115" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />

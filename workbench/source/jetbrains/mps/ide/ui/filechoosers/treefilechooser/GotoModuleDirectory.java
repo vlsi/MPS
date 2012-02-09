@@ -20,14 +20,11 @@ import com.intellij.openapi.actionSystem.Presentation;
 import com.intellij.openapi.diagnostic.Logger;
 import com.intellij.openapi.fileChooser.FileSystemTree;
 import com.intellij.openapi.fileChooser.actions.FileChooserAction;
-import com.intellij.openapi.vfs.LocalFileSystem;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.workbench.MPSDataKeys;
-
-import java.io.File;
 
 public final class GotoModuleDirectory extends FileChooserAction {
   private static final Logger LOG = Logger.getInstance("#com.intellij.openapi.fileChooser.actions.GotoModuleDirectory");
