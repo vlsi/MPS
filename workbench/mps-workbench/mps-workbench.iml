@@ -31,6 +31,7 @@
     <orderEntry type="module" module-name="findUsages-runtime" />
     <orderEntry type="module" module-name="actions-runtime" />
     <orderEntry type="module" module-name="make-runtime" />
+    <orderEntry type="module" module-name="refactoring-runtime" />
   </component>
 </module>
 
