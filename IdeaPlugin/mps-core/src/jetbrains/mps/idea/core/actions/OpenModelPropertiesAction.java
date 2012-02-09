@@ -21,18 +21,16 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import com.intellij.openapi.options.ex.SingleConfigurableEditor;
 import com.intellij.openapi.project.Project;
-import com.intellij.openapi.vfs.VirtualFile;
-import com.intellij.pom.Navigatable;
-import jetbrains.mps.fileTypes.MPSFileTypeFactory;
 import jetbrains.mps.idea.core.MPSBundle;
+import jetbrains.mps.idea.core.projectView.MPSDataKeys;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
-import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 
 import javax.swing.*;
+import java.util.Set;
 
 /**
  * Created by IntelliJ IDEA.
@@ -89,22 +87,10 @@ public class OpenModelPropertiesAction extends AnAction {
 
     private void setModelFile(AnActionEvent event) {
         myModelFile = null;
-        Navigatable[] navigatables = event.getData(PlatformDataKeys.NAVIGATABLE_ARRAY);
-        if (navigatables == null || navigatables.length != 1) {
-            // disabling action if there are more then one element in the selection
-            // handling the case then couple on model nodes + model itself is selected
-            // in project tree
-            return;
+        Set<IFile> modelFiles = event.getData(MPSDataKeys.MODEL_FILES);
+        if (modelFiles.size() == 1) {
+            myModelFile = modelFiles.iterator().next();
         }
-
-        VirtualFile[] virtualFiles = event.getData(PlatformDataKeys.VIRTUAL_FILE_ARRAY);
-        if (virtualFiles == null || virtualFiles.length != 1) {
-            return;
-        }
-        if (virtualFiles[0] == null || virtualFiles[0].getFileType() != MPSFileTypeFactory.MODEL_FILE_TYPE) {
-            return;
-        }
-        myModelFile = FileSystem.getInstance().getFileByPath(virtualFiles[0].getPath());
     }
 
     public boolean isEnabled() {
