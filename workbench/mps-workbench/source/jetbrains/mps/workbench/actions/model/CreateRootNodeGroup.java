@@ -24,12 +24,11 @@ import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vfs.VirtualFile;
-import jetbrains.mps.ide.actions.AddLanguageImport_Action;
 import jetbrains.mps.ide.icons.IconManager;
-import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.ide.ui.smodel.PackageNode;
 import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
+import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.project.structure.modules.ModuleReference;
@@ -46,7 +45,7 @@ import jetbrains.mps.workbench.action.BaseGroup;
 import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
 import org.jetbrains.annotations.NotNull;
 
-import javax.swing.Icon;
+import javax.swing.*;
 import javax.swing.tree.TreeNode;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -122,7 +121,7 @@ public class CreateRootNodeGroup extends BaseGroup {
 
     List<Language> modelLanguages = SModelOperations.getLanguages(modelDescriptor.getSModel(), scope);
     if (modelLanguages.size() == 0) {
-      add(ActionManager.getInstance().getAction(AddLanguageImport_Action.class.getName()));
+      add(ActionManager.getInstance().getAction("jetbrains.mps.ide.actions.AddLanguageImport_Action"/* FIXME AddLanguageImport_Action.class.getName()*/));
     }
 
     LanguageAspect aspect = Language.getModelAspect(modelDescriptor);
