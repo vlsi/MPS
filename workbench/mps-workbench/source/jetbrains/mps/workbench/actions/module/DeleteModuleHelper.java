@@ -19,7 +19,6 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.wm.WindowManager;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.*;
-import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.workbench.actions.model.DeleteModelHelper;
