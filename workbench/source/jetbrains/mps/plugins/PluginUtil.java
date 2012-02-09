@@ -86,7 +86,7 @@ public class PluginUtil {
 
   public static Collection<PluginContributor> getPluginContributors() {
     List<PluginContributor> pluginContributors = new ArrayList<PluginContributor>();
-    for (AbstractPluginFactory factory: PluginFactoriesRegistry.getPluginFactories()) {
+    for (AbstractPluginFactory factory : PluginFactoriesRegistry.getPluginFactories()) {
       pluginContributors.add(PluginContributor.adapt(factory));
     }
     return pluginContributors;
@@ -116,7 +116,7 @@ public class PluginUtil {
 
   public static final class ProjectPluginCreator extends PluginCreator<BaseProjectPlugin> {
     public String getPlugin(Language l) {
-      return LanguageAspect.PLUGIN.get(l).getLongName() + "." + ModuleNameUtil.getModuleShortName(l)+ "_ProjectPlugin";
+      return LanguageAspect.PLUGIN.get(l).getLongName() + "." + ModuleNameUtil.getModuleShortName(l) + "_ProjectPlugin";
     }
 
     public String getPlugin(Solution s) {
@@ -127,7 +127,7 @@ public class PluginUtil {
 
   public static final class ApplicationPluginCreator extends PluginCreator<BaseApplicationPlugin> {
     public String getPlugin(Language l) {
-      return LanguageAspect.PLUGIN.get(l).getLongName() + "." + ModuleNameUtil.getModuleShortName(l)+ "_ApplicationPlugin";
+      return LanguageAspect.PLUGIN.get(l).getLongName() + "." + ModuleNameUtil.getModuleShortName(l) + "_ApplicationPlugin";
     }
 
     public String getPlugin(Solution s) {

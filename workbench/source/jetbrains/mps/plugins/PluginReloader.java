@@ -18,8 +18,6 @@ package jetbrains.mps.plugins;
 import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.project.ProjectManager;
-import jetbrains.mps.execution.impl.configurations.RunConfigurationsStateManager;
-import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.MPSCoreComponents;
 import jetbrains.mps.make.IMakeNotificationListener;
 import jetbrains.mps.make.IMakeNotificationListener.Stub;
