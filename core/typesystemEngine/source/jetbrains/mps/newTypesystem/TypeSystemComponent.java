@@ -371,7 +371,7 @@ class TypeSystemComponent extends CheckingComponent {
   private SNode typeCalculated(SNode initialNode) {
     if (myState.getInequalitySystem() != null) {
       SNode expectedType = myState.getInequalitySystem().getExpectedType();
-      if (expectedType != null && !TypesUtil.hasVariablesInside(expectedType)) {
+      if (expectedType != null && !TypesUtil.hasVariablesInside(expectedType) && !HUtil.isRuntimeHoleType(expectedType)) {
         return expectedType;
       }
     } else {
