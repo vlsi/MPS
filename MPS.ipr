@@ -391,12 +391,10 @@
       <modulePath path="${project}/testbench/solution/jetbrains.mps.testbench.msd" folder="testbench" />
       <modulePath path="${project}/testbench/solutions/jetbrains.mps.testbench.make.msd" folder="testbench" />
       <modulePath path="${project}/workbench/baseLanguageIndex/jetbrains.mps.baseLanguage.index.msd" folder="baseLanguage" />
-      <modulePath path="${project}/workbench/ideSolution/jetbrains.mps.ide.msd" folder="workbench" />
       <modulePath path="${project}/workbench/make/jetbrains.mps.workbench.make.msd" folder="workbench" />
       <modulePath path="${project}/workbench/mps-editor/jetbrains.mps.ide.editor.msd" folder="workbench" />
       <modulePath path="${project}/workbench/mps-platform/base.msd" folder="workbench" />
       <modulePath path="${project}/workbench/mps-workbench/jetbrains.mps.ide.msd" folder="workbench" />
-      <modulePath path="${project}/workbench/mps-workbench/mps.msd" folder="workbench" />
     </projectModules>
     <genConfs />
   </component>
