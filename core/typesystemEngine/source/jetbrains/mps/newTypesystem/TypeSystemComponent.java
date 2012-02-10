@@ -254,7 +254,7 @@ class TypeSystemComponent extends CheckingComponent {
       if (prevNode != null) {
         additionalNodes.add(prevNode);
       }
-      computeTypesSpecial(node, true, additionalNodes, false, initialNode);
+      computeTypesSpecial(node, false, additionalNodes, false, initialNode);
       type = typeCalculated(initialNode);
       if (type == null) {
         if (node.isRoot()) {
