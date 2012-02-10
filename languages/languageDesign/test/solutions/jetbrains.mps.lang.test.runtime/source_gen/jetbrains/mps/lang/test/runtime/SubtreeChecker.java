@@ -51,6 +51,7 @@ public class SubtreeChecker {
             SNode type1 = typeCheckingContext.getTypeDontCheck(child);
             if (SNodeOperations.isInstanceOf(property, "jetbrains.mps.lang.test.structure.NodeExpectedTypeProperty")) {
               type1 = TypeChecker.getInstance().getInequalitiesForHole(child, false).getExpectedType();
+              Assert.assertNotNull(type1);
             }
             SNode type2 = SLinkOperations.getTarget(SNodeOperations.cast(property, "jetbrains.mps.lang.test.structure.NodeTypeProperty"), "type", true);
             Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.fromListAndArray(new ArrayList<SNode>(), type1), ListSequence.fromListAndArray(new ArrayList<SNode>(), type2)));
