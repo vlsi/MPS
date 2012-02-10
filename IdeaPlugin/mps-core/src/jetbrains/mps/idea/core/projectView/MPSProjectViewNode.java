@@ -20,6 +20,7 @@ import com.intellij.ide.projectView.PresentationData;
 import com.intellij.ide.projectView.ProjectViewNode;
 import com.intellij.ide.projectView.ViewSettings;
 import com.intellij.ide.util.treeView.AbstractTreeNode;
+import com.intellij.ide.util.treeView.ValidateableNode;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.ide.editor.MPSEditorOpener;
@@ -40,7 +41,7 @@ import java.util.Collections;
 /**
  * evgeny, 11/9/11
  */
-public class MPSProjectViewNode extends ProjectViewNode<SNodePointer> {
+public class MPSProjectViewNode extends ProjectViewNode<SNodePointer> implements ValidateableNode {
 
     private Icon icon;
 
@@ -110,5 +111,10 @@ public class MPSProjectViewNode extends ProjectViewNode<SNodePointer> {
                 return getValue().getNode() != null;
             }
         });
+    }
+
+    @Override
+    public boolean isValid() {
+        return getValue().getNode() != null;
     }
 }
