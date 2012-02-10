@@ -920,6 +920,9 @@
     <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="2712670354707832462">
       <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="tpej.5113180367541522955" resolveInfo="TypesTest_BL" />
     </node>
+    <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="1651218400254446645">
+      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="tpej.4395293866213195826" resolveInfo="TestExpectedType" />
+    </node>
   </root>
   <root id="2712670354707832463">
     <node role="moduleRef" roleId="pop3.1280144168199507080" type="pop3.SolutionRef" typeId="pop3.1280144168199506908" id="2712670354707832464">
