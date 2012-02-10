@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-4qhz8ftcvmbuwfrr29qdv2u5h583hj9">
+<dependencies version="2" modelHash="854xqky32dzaik850clc6oe8khvcy3g">
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-5p0rdl0tgxw43gzmkd4qcpqszqapgi2" />
   <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="-8ktth4475n697mwcanym2t2m5643mvc" />
   <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="cllol0k6uon23imzi3i8ftyndeqrkqk" />
@@ -90,7 +90,7 @@
   <source id="1215075719096" name="CheckNodeForErrors" hash="8f4rk7jiudtqrd0aavv3qn6yxr9mjxh">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1215507532627" name="NodePropertiesContainer" hash="-2m80eu1084xk06ctxp2lpr6bcinu8vh">
+  <source id="1215507532627" name="NodePropertiesContainer" hash="-9ut664fohkp4sjxjxrsih5fqhnpa8r">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="1215507599032" name="NodeProperty" hash="4nvm4mg0349u4ahnk6mgircv7vhnyoz">
