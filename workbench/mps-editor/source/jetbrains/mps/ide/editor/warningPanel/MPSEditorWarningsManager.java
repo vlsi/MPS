@@ -28,29 +28,29 @@ import com.intellij.openapi.vcs.FileStatusListener;
 import com.intellij.openapi.vcs.FileStatusManager;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.util.containers.MultiMap;
-import jetbrains.mps.ide.vfs.VirtualFileUtils;
-import jetbrains.mps.openapi.editor.Editor;
-import jetbrains.mps.ide.editor.MPSFileNodeEditor;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.IdeMain.TestMode;
 import jetbrains.mps.ide.MPSCoreComponents;
+import jetbrains.mps.ide.editor.MPSFileNodeEditor;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.openapi.editor.Editor;
 import jetbrains.mps.openapi.editor.EditorComponent;
-import jetbrains.mps.project.IModule;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.reloading.ReloadListener;
-import jetbrains.mps.smodel.*;
-import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.Computable;
-import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.List;
 
 public class MPSEditorWarningsManager implements ProjectComponent {
   public static final Logger LOG = Logger.getLogger(MPSEditorWarningsManager.class);
@@ -120,7 +120,7 @@ public class MPSEditorWarningsManager implements ProjectComponent {
 
   private void doUpdateWarnings(final MPSFileNodeEditor editor, Project project) {
     List<WarningPanel> newWarnings = new ArrayList<WarningPanel>();
-    
+
     Editor nodeEditor = editor.getNodeEditor();
     if (nodeEditor == null) return;
 
