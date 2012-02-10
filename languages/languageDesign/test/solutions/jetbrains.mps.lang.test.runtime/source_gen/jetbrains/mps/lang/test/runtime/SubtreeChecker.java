@@ -11,6 +11,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.test.matcher.NodesMatcher;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
@@ -48,6 +49,10 @@ public class SubtreeChecker {
         for (SNode property : SLinkOperations.getTargets(container, "properties", true)) {
           if (SNodeOperations.isInstanceOf(property, "jetbrains.mps.lang.test.structure.NodeTypeProperty")) {
             SNode type1 = typeCheckingContext.getTypeDontCheck(child);
+            if (SNodeOperations.isInstanceOf(property, "jetbrains.mps.lang.test.structure.NodeExpectedTypeProperty")) {
+              type1 = TypeChecker.getInstance().getInequalitiesForHole(child, false).getExpectedType();
+              Assert.assertNotNull(type1);
+            }
             SNode type2 = SLinkOperations.getTarget(SNodeOperations.cast(property, "jetbrains.mps.lang.test.structure.NodeTypeProperty"), "type", true);
             Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.fromListAndArray(new ArrayList<SNode>(), type1), ListSequence.fromListAndArray(new ArrayList<SNode>(), type2)));
           }
