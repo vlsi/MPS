@@ -67,15 +67,24 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
+  <dependency className="jetbrains.mps.lang.typesystem.pluginSolution.plugin.InternalTypeSystemActions_ActionGroup" file="InternalTypeSystemActions_ActionGroup.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.lang.Throwable" />
+    <classNode dependClassName="jetbrains.mps.logging.Logger" />
+    <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup" />
+  </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.pluginSolution.plugin.PluginSolution_ApplicationPlugin" file="PluginSolution_ApplicationPlugin.java">
     <classNode dependClassName="com.intellij.openapi.extensions.PluginId" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.ide.actions.DebugActions_ActionGroup" />
+    <classNode dependClassName="jetbrains.mps.ide.actions.EditorInternal_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.pluginSolution.plugin.Default_KeymapChanges" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.pluginSolution.plugin.GoToTypeErrorGroup_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.pluginSolution.plugin.GoToTypeErrorRule_Action" />
+    <classNode dependClassName="jetbrains.mps.lang.typesystem.pluginSolution.plugin.InternalTypeSystemActions_ActionGroup" />
+    <classNode dependClassName="jetbrains.mps.lang.typesystem.pluginSolution.plugin.ShowExpectedType_Action" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.pluginSolution.plugin.ShowInferredNodeType_Action" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.pluginSolution.plugin.ShowNodeType_Action" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.pluginSolution.plugin.ShowRulesWhichAffectNodeType_Action" />
@@ -90,6 +99,29 @@
     <classNode dependClassName="jetbrains.mps.ide.editorTabs.EditorTabDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.pluginSolution.plugin.Typesystem_TabDescriptor" />
     <classNode extendsClassName="jetbrains.mps.plugins.projectplugins.BaseProjectPlugin" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.typesystem.pluginSolution.plugin.ShowExpectedType_Action" file="ShowExpectedType_Action.java">
+    <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
+    <classNode dependClassName="java.awt.Frame" />
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.Runnable" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.lang.Throwable" />
+    <classNode dependClassName="java.util.Map" />
+    <classNode dependClassName="javax.swing.Icon" />
+    <classNode dependClassName="javax.swing.JOptionPane" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" />
+    <classNode dependClassName="jetbrains.mps.ide.actions.MPSCommonDataKeys" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
+    <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
+    <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode dependClassName="jetbrains.mps.typesystem.inference.TypeChecker" />
+    <classNode dependClassName="jetbrains.mps.typesystem.uiActions.MyBaseNodeDialog" />
+    <classNode dependClassName="org.apache.commons.logging.Log" />
+    <classNode dependClassName="org.apache.commons.logging.LogFactory" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.pluginSolution.plugin.ShowInferredNodeType_Action" file="ShowInferredNodeType_Action.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
