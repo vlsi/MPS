@@ -51,6 +51,7 @@
         <frameworkSupport implementation="jetbrains.mps.idea.core.facet.MPSFrameworkSupportProvider"/>
         <mps.LanguageLibrary dir="/languages"/>
         <treeStructureProvider implementation="jetbrains.mps.idea.core.projectView.MPSTreeStructureProvider"/>
+        <lang.fileViewProviderFactory language="MPS" implementationClass="jetbrains.mps.MPSFileViewProviderFactory"/>
     </extensions>
 
     <actions>

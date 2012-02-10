@@ -16,6 +16,7 @@
 
 package jetbrains.mps.idea.core.projectView;
 
+import com.intellij.ide.projectView.SelectableTreeStructureProvider;
 import com.intellij.ide.projectView.TreeStructureProvider;
 import com.intellij.ide.projectView.ViewSettings;
 import com.intellij.ide.projectView.impl.nodes.PsiFileNode;
@@ -23,6 +24,7 @@ import com.intellij.ide.util.treeView.AbstractTreeNode;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import com.intellij.openapi.project.DumbAware;
 import com.intellij.openapi.vfs.VirtualFile;
+import com.intellij.psi.PsiElement;
 import jetbrains.mps.fileTypes.MPSFileTypeFactory;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.smodel.*;
@@ -39,7 +41,7 @@ import java.util.Set;
 /**
  * evgeny, 11/9/11
  */
-public class MPSTreeStructureProvider implements TreeStructureProvider, DumbAware {
+public class MPSTreeStructureProvider implements SelectableTreeStructureProvider, DumbAware {
     @Override
     public Collection<AbstractTreeNode> modify(final AbstractTreeNode parent, final Collection<AbstractTreeNode> children, final ViewSettings settings) {
         final IFile modelFile = getModelFile(parent);
@@ -121,4 +123,9 @@ public class MPSTreeStructureProvider implements TreeStructureProvider, DumbAwar
         }
         return null;
     }
+
+  @Override
+  public PsiElement getTopLevelElement(PsiElement element) {
+    return element;
+  }
 }
