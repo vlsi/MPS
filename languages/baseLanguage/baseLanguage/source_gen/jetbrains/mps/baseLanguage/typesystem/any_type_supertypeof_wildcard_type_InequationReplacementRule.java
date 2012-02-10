@@ -24,7 +24,7 @@ public class any_type_supertypeof_wildcard_type_InequationReplacementRule extend
   }
 
   public boolean isApplicableCustom(SNode subtype, SNode supertype, IsApplicable2Status status) {
-    return !(SNodeOperations.isInstanceOf(supertype, "jetbrains.mps.baseLanguage.structure.PrimitiveType") || TypeChecker.getInstance().getSubtypingManager().isSubtype(supertype, SLinkOperations.getTarget(new any_type_supertypeof_wildcard_type_InequationReplacementRule.QuotationClass_fu2yto_a0b0a0a0a0().createNode(), "descriptor", false)));
+    return !(SNodeOperations.isInstanceOf(supertype, "jetbrains.mps.baseLanguage.structure.PrimitiveType") || TypeChecker.getInstance().getSubtypingManager().isSubtype(supertype, SLinkOperations.getTarget(new any_type_supertypeof_wildcard_type_InequationReplacementRule.QuotationClass_fu2yto_a0b0a0a0a0().createNode(), "descriptor", false), false));
   }
 
   public void processInequation(final SNode subtype, final SNode supertype, final EquationInfo equationInfo, final TypeCheckingContext typeCheckingContext, IsApplicable2Status status, final boolean inequalityIsWeak, final boolean inequalityIsLessThan) {
