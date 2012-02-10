@@ -10,11 +10,12 @@ import jetbrains.mps.debugger.java.runtime.evaluation.model.AbstractEvaluationMo
 import java.util.ArrayList;
 import jetbrains.mps.debug.api.DebugSessionManagerComponent;
 import jetbrains.mps.debug.api.AbstractDebugSession;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
+import com.intellij.openapi.application.ApplicationManager;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.SNodePointer;
-import com.intellij.openapi.application.ApplicationManager;
 import jetbrains.mps.debug.runtime.JavaUiState;
 import jetbrains.mps.debugger.java.runtime.ui.evaluation.EvaluationDialog;
 import jetbrains.mps.debugger.java.runtime.ui.evaluation.EditWatchDialog;
@@ -25,8 +26,8 @@ import jetbrains.mps.debugger.java.runtime.ui.evaluation.WatchesPanel;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
-import jetbrains.mps.debugger.java.runtime.evaluation.model.LowLevelEvaluationModel;
 import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.debugger.java.runtime.evaluation.model.LowLevelEvaluationModel;
 
 public class EvaluationProvider implements IEvaluationProvider {
   private final DebugSession myDebugSession;
@@ -51,16 +52,26 @@ public class EvaluationProvider implements IEvaluationProvider {
   }
 
   private void init() {
+    final Wrappers._T<EvaluationAuxModule> module = new Wrappers._T<EvaluationAuxModule>();
     ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
-        myAuxModule = new EvaluationAuxModule(myDebugSession.getProject());
+        module.value = new EvaluationAuxModule(myDebugSession.getProject());
       }
     });
+
+    synchronized (this) {
+      myAuxModule = module.value;
+    }
   }
 
-  private void dispose() {
-    myAuxModule.dispose();
+  private synchronized void dispose() {
+    final EvaluationAuxModule module = myAuxModule;
     myAuxModule = null;
+    ApplicationManager.getApplication().invokeLater(new Runnable() {
+      public void run() {
+        module.dispose();
+      }
+    });
   }
 
   @Override
@@ -155,7 +166,11 @@ public class EvaluationProvider implements IEvaluationProvider {
     return myDebugSession;
   }
 
-  public EvaluationAuxModule getAuxModule() {
+  @NotNull
+  public synchronized EvaluationAuxModule getAuxModule() {
+    if (myAuxModule == null) {
+      throw new IllegalStateException("Cant evaluate since auxModule is null.");
+    }
     return myAuxModule;
   }
 

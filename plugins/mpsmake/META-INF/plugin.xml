@@ -36,7 +36,7 @@
   </application-components>
 
   <project-components>
-
+    <component><implementation-class>jetbrains.mps.ide.make.actions.TransientModelsNotification</implementation-class></component>
   </project-components>
 
   <extensions defaultExtensionNs="com.intellij">
