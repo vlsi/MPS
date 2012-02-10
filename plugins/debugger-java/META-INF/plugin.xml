@@ -33,7 +33,7 @@
 
   <extensions defaultExtensionNs="com.intellij">
     <!--runtime-->
-    <errorHandler implementation="jetbrains.mps.workbench.diagnostics.CharismaReporter"/>
+    <errorHandler implementation="jetbrains.mps.ide.blame.CharismaReporter"/>
     <mps.LanguageLibrary dir=""/>
     <mps.PluginBundle/>
   </extensions>

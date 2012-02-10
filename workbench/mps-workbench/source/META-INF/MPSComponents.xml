@@ -70,9 +70,6 @@
       <implementation-class>com.intellij.codeInsight.highlighting.HighlightManagerImpl</implementation-class>
       <skipForDummyProject/>
     </component>
-    <component>
-      <implementation-class>jetbrains.mps.ide.codeStyle.CodeStyleSettingsConfigurable</implementation-class>
-    </component>
   </project-components>
 
   <xi:include href="/componentSets/Platform.xml" xpointer="xpointer(/components/*)"/>

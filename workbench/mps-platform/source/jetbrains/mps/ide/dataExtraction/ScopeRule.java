@@ -13,26 +13,26 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.workbench.dataExtraction;
+package jetbrains.mps.ide.dataExtraction;
 
 import com.intellij.ide.impl.dataRules.GetDataRule;
 import com.intellij.openapi.actionSystem.DataProvider;
+import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.workbench.MPSDataKeys;
 import org.jetbrains.annotations.Nullable;
 
 public class ScopeRule implements GetDataRule {
   @Nullable
   public Object getData(DataProvider dataProvider) {
-    IOperationContext context = (IOperationContext) dataProvider.getData(MPSDataKeys.OPERATION_CONTEXT.getName());
+    IOperationContext context = (IOperationContext) dataProvider.getData(MPSCommonDataKeys.OPERATION_CONTEXT.getName());
     if (context == null) return null;
     IScope scope = context.getScope();
     if (scope != null) return scope;
 
-    MPSProject project = (MPSProject) dataProvider.getData(MPSDataKeys.MPS_PROJECT.getName());
+    MPSProject project = (MPSProject) dataProvider.getData(MPSCommonDataKeys.MPS_PROJECT.getName());
     if (project != null) return project.getScope();
     return GlobalScope.getInstance();
   }

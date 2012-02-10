@@ -13,21 +13,20 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.workbench.dataExtraction;
+package jetbrains.mps.ide.dataExtraction;
 
 import com.intellij.ide.impl.dataRules.GetDataRule;
 import com.intellij.openapi.actionSystem.DataProvider;
 import com.intellij.openapi.project.Project;
+import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.project.ProjectOperationContext;
-import jetbrains.mps.workbench.MPSDataKeys;
 import org.jetbrains.annotations.Nullable;
 
-public class ContextRule implements GetDataRule {
+public class MPSProjectRule implements GetDataRule {
   @Nullable
   public Object getData(DataProvider dataProvider) {
-    Project project = (Project) dataProvider.getData(MPSDataKeys.PROJECT.getName());
+    Project project = (Project) dataProvider.getData(MPSCommonDataKeys.PROJECT.getName());
     if (project == null) return null;
-    return new ProjectOperationContext(project.getComponent(MPSProject.class));
+    return project.getComponent(MPSProject.class);
   }
 }

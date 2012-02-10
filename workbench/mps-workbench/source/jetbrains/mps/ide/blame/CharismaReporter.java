@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.workbench.diagnostics;
+package jetbrains.mps.ide.blame;
 
 import com.intellij.ide.DataManager;
 import com.intellij.openapi.diagnostic.ErrorReportSubmitter;
@@ -23,12 +23,12 @@ import com.intellij.openapi.diagnostic.SubmittedReportInfo.SubmissionStatus;
 import com.intellij.openapi.project.Project;
 import com.intellij.util.Consumer;
 import jetbrains.mps.ide.ThreadUtils;
+import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.ide.blame.dialog.BlameDialog;
 import jetbrains.mps.ide.blame.dialog.BlameDialogComponent;
 import jetbrains.mps.ide.blame.perform.Response;
-import jetbrains.mps.workbench.MPSDataKeys;
 
-import java.awt.Component;
+import java.awt.*;
 
 public class CharismaReporter extends ErrorReportSubmitter {
   public String getReportActionText() {
@@ -44,7 +44,7 @@ public class CharismaReporter extends ErrorReportSubmitter {
       return;
     }
 
-    Project project = MPSDataKeys.PROJECT.getData(DataManager.getInstance().getDataContext());
+    Project project = MPSCommonDataKeys.PROJECT.getData(DataManager.getInstance().getDataContext());
     BlameDialog blameDialog = BlameDialogComponent.getInstance().createDialog(project, parentComponent);
     blameDialog.addEx(events[0].getThrowable());
     blameDialog.setIssueTitle(events[0].getMessage());

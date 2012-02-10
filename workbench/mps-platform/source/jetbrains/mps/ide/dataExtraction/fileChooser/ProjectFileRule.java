@@ -13,19 +13,19 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.workbench.dataExtraction.fileChooser;
+package jetbrains.mps.ide.dataExtraction.fileChooser;
 
 import com.intellij.ide.impl.dataRules.GetDataRule;
 import com.intellij.openapi.actionSystem.DataProvider;
 import com.intellij.openapi.vfs.LocalFileSystem;
+import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.workbench.MPSDataKeys;
 import org.jetbrains.annotations.Nullable;
 
 public class ProjectFileRule implements GetDataRule {
   @Nullable
   public Object getData(DataProvider dataProvider) {
-    MPSProject project = (MPSProject) dataProvider.getData(MPSDataKeys.MPS_PROJECT.getName());
+    MPSProject project = (MPSProject) dataProvider.getData(MPSCommonDataKeys.MPS_PROJECT.getName());
     if (project == null) return null;
     return LocalFileSystem.getInstance().findFileByIoFile(project.getProjectFile().getParentFile());
   }
