@@ -43,6 +43,8 @@ import jetbrains.mps.util.Computable;
 
 import javax.lang.model.SourceVersion;
 import javax.swing.*;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by IntelliJ IDEA.
@@ -190,12 +192,17 @@ public class NewModelAction extends AnAction {
 
         private final String myPresentation;
         private final Icon myIcon;
-        private String[] myLanguagesToImport;
+        private List<ModuleReference> myLanguagesToImport = new ArrayList<ModuleReference>();
 
         private ModelTemplates(String presentation, Icon icon, String... languagesToImport) {
             myPresentation = presentation;
             myIcon = icon;
-            myLanguagesToImport = languagesToImport;
+
+            for (String languageNamespace : languagesToImport) {
+                Language language = MPSModuleRepository.getInstance().getLanguage(languageNamespace);
+                assert language != null : "Language required by model template is not in repository";
+                myLanguagesToImport.add(language.getModuleReference());
+            }
         }
 
         public String getPresentation() {
@@ -207,8 +214,7 @@ public class NewModelAction extends AnAction {
         }
 
         public void preConfigure(SModel smodel, IModule module) {
-            for (String languageNamespace : myLanguagesToImport) {
-                ModuleReference languageReference = new ModuleReference(languageNamespace);
+            for (ModuleReference languageReference : myLanguagesToImport) {
                 if (module.getScope().getLanguage(languageReference) == null) {
                     module.addUsedLanguage(languageReference);
                 }
