@@ -216,11 +216,11 @@
     <fail unless="base_dir" message="Property base_dir unspecified." />
     <mkdir dir="${deploy.dir}/MPS/lib/mps-workbench.jar.tmp/modules/jetbrains.mps.ide" />
     <copy todir="${deploy.dir}/MPS/lib/mps-workbench.jar.tmp/modules/jetbrains.mps.ide">
-      <fileset file="${base_dir}/workbench/ideSolution/jetbrains.mps.ide.msd" />
-      <fileset dir="${base_dir}/workbench/ideSolution" includes="icons/**, resources/**" />
+      <fileset file="${base_dir}/workbench/mps-workbench/jetbrains.mps.ide.msd" />
+      <fileset dir="${base_dir}/workbench/mps-workbench" includes="icons/**, resources/**" />
     </copy>
-    <copy todir="${deploy.dir}/MPS/lib/mps-workbench.jar.tmp/modules/jetbrains.mps.ide">
-      <fileset dir="${base_dir}/workbench/ideSolution" includes="**/*.mps, **/*.metadata, **/*.history" />
+    <copy todir="${deploy.dir}/MPS/lib/mps-workbench.jar.tmp/modules/jetbrains.mps.ide/models">
+      <fileset dir="${base_dir}/workbench/mps-workbench/models" includes="**/*.mps, **/*.metadata, **/*.history" />
     </copy>
   </target>
   <target name="pack.jetbrains.mps.ide.editor">
@@ -232,17 +232,6 @@
     </copy>
     <copy todir="${deploy.dir}/MPS/lib/mps-workbench.jar.tmp/modules/jetbrains.mps.ide.editor/solution">
       <fileset dir="${base_dir}/workbench/mps-editor/solution" includes="**/*.mps, **/*.metadata, **/*.history" />
-    </copy>
-  </target>
-  <target name="pack.jetbrains.mps.ide.mps">
-    <fail unless="base_dir" message="Property base_dir unspecified." />
-    <mkdir dir="${deploy.dir}/MPS/lib/mps-workbench.jar.tmp/modules/jetbrains.mps.ide.mps" />
-    <copy todir="${deploy.dir}/MPS/lib/mps-workbench.jar.tmp/modules/jetbrains.mps.ide.mps">
-      <fileset file="${base_dir}/workbench/mps-workbench/mps.msd" />
-      <fileset dir="${base_dir}/workbench/mps-workbench" includes="icons/**, resources/**" />
-    </copy>
-    <copy todir="${deploy.dir}/MPS/lib/mps-workbench.jar.tmp/modules/jetbrains.mps.ide.mps/models">
-      <fileset dir="${base_dir}/workbench/mps-workbench/models" includes="**/*.mps, **/*.metadata, **/*.history" />
     </copy>
   </target>
   <target name="pack.jetbrains.mps.ide.uiLanguage.runtime">
@@ -446,7 +435,6 @@
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
-          <module ref="fe380742-bca4-4fda-beac-356eded9cf45(jetbrains.mps.ide.mps)" />
           <module ref="feddcab7-7240-49eb-bd42-e15e0a95cb26(jetbrains.mps.lang.intentions.pluginSolution)" />
         </dependencies>
         <library jar="jetbrains.mps.ide.mpsdevkit.jar" />
@@ -611,7 +599,6 @@
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
-          <module ref="fe380742-bca4-4fda-beac-356eded9cf45(jetbrains.mps.ide.mps)" />
           <module ref="feddcab7-7240-49eb-bd42-e15e0a95cb26(jetbrains.mps.lang.intentions.pluginSolution)" />
         </dependencies>
         <library jar="jetbrains.mps.debugger.api.runtime.jar" />
@@ -774,7 +761,6 @@
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
-          <module ref="fe380742-bca4-4fda-beac-356eded9cf45(jetbrains.mps.ide.mps)" />
           <module ref="feddcab7-7240-49eb-bd42-e15e0a95cb26(jetbrains.mps.lang.intentions.pluginSolution)" />
         </dependencies>
         <library jar="jetbrains.mps.debugger.api.api.jar" />
@@ -937,7 +923,6 @@
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
-          <module ref="fe380742-bca4-4fda-beac-356eded9cf45(jetbrains.mps.ide.mps)" />
           <module ref="feddcab7-7240-49eb-bd42-e15e0a95cb26(jetbrains.mps.lang.intentions.pluginSolution)" />
         </dependencies>
         <sources jar="jetbrains.mps.traceInfo.cache-src.jar" descriptor="cache.msd" />
@@ -1099,7 +1084,6 @@
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
-          <module ref="fe380742-bca4-4fda-beac-356eded9cf45(jetbrains.mps.ide.mps)" />
           <module ref="feddcab7-7240-49eb-bd42-e15e0a95cb26(jetbrains.mps.lang.intentions.pluginSolution)" />
         </dependencies>
         <library jar="jetbrains.mps.debugger.java.api.jar" />
@@ -1264,7 +1248,6 @@
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
-          <module ref="fe380742-bca4-4fda-beac-356eded9cf45(jetbrains.mps.ide.mps)" />
           <module ref="feddcab7-7240-49eb-bd42-e15e0a95cb26(jetbrains.mps.lang.intentions.pluginSolution)" />
         </dependencies>
         <sources jar="jetbrains.mps.debugger.java.runtime-src.jar" descriptor="jetbrains.mps.debugger.java.runtime.msd" />
@@ -1428,7 +1411,6 @@
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
-          <module ref="fe380742-bca4-4fda-beac-356eded9cf45(jetbrains.mps.ide.mps)" />
           <module ref="feddcab7-7240-49eb-bd42-e15e0a95cb26(jetbrains.mps.lang.intentions.pluginSolution)" />
         </dependencies>
         <sources jar="jetbrains.mps.debugger.java.customViewers-src.jar" descriptor="customViewers.mpl" />
@@ -1593,7 +1575,6 @@
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
-          <module ref="fe380742-bca4-4fda-beac-356eded9cf45(jetbrains.mps.ide.mps)" />
           <module ref="feddcab7-7240-49eb-bd42-e15e0a95cb26(jetbrains.mps.lang.intentions.pluginSolution)" />
         </dependencies>
         <sources jar="jetbrains.mps.debugger.java.evaluation-src.jar" descriptor="evaluation.mpl" />
@@ -1758,7 +1739,6 @@
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
-          <module ref="fe380742-bca4-4fda-beac-356eded9cf45(jetbrains.mps.ide.mps)" />
           <module ref="feddcab7-7240-49eb-bd42-e15e0a95cb26(jetbrains.mps.lang.intentions.pluginSolution)" />
         </dependencies>
         <sources jar="jetbrains.mps.debugger.java.privateMembers-src.jar" descriptor="privateMembers.mpl" />
@@ -1923,7 +1903,6 @@
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
-          <module ref="fe380742-bca4-4fda-beac-356eded9cf45(jetbrains.mps.ide.mps)" />
           <module ref="feddcab7-7240-49eb-bd42-e15e0a95cb26(jetbrains.mps.lang.intentions.pluginSolution)" />
         </dependencies>
         <sources jar="jetbrains.mps.debugger.api.lang-src.jar" descriptor="api.mpl" />
@@ -2088,7 +2067,6 @@
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
-          <module ref="fe380742-bca4-4fda-beac-356eded9cf45(jetbrains.mps.ide.mps)" />
           <module ref="feddcab7-7240-49eb-bd42-e15e0a95cb26(jetbrains.mps.lang.intentions.pluginSolution)" />
         </dependencies>
         <sources jar="jetbrains.mps.baseLanguage.execution.util-src.jar" descriptor="api.msd" />
@@ -2284,7 +2262,6 @@
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
-          <module ref="fe380742-bca4-4fda-beac-356eded9cf45(jetbrains.mps.ide.mps)" />
           <module ref="feddcab7-7240-49eb-bd42-e15e0a95cb26(jetbrains.mps.lang.intentions.pluginSolution)" />
         </dependencies>
         <sources jar="jetbrains.mps.baseLanguage.unitTest.execution-src.jar" descriptor="jetbrains.mps.baseLanguage.unitTest.runtime.msd" />
@@ -2449,7 +2426,6 @@
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
-          <module ref="fe380742-bca4-4fda-beac-356eded9cf45(jetbrains.mps.ide.mps)" />
           <module ref="feddcab7-7240-49eb-bd42-e15e0a95cb26(jetbrains.mps.lang.intentions.pluginSolution)" />
         </dependencies>
         <sources jar="jetbrains.mps.ant.execution-src.jar" descriptor="execution.msd" />
@@ -2614,7 +2590,6 @@
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
-          <module ref="fe380742-bca4-4fda-beac-356eded9cf45(jetbrains.mps.ide.mps)" />
           <module ref="feddcab7-7240-49eb-bd42-e15e0a95cb26(jetbrains.mps.lang.intentions.pluginSolution)" />
         </dependencies>
         <sources jar="jetbrains.mps.execution.migration-src.jar" descriptor="migration.mpl" />
@@ -2778,7 +2753,6 @@
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
-          <module ref="fe380742-bca4-4fda-beac-356eded9cf45(jetbrains.mps.ide.mps)" />
           <module ref="feddcab7-7240-49eb-bd42-e15e0a95cb26(jetbrains.mps.lang.intentions.pluginSolution)" />
         </dependencies>
         <sources jar="jetbrains.mps.execution.lib-src.jar" descriptor="jetbrains.mps.execution.lib.msd" />
@@ -2947,7 +2921,6 @@
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
-          <module ref="fe380742-bca4-4fda-beac-356eded9cf45(jetbrains.mps.ide.mps)" />
           <module ref="feddcab7-7240-49eb-bd42-e15e0a95cb26(jetbrains.mps.lang.intentions.pluginSolution)" />
         </dependencies>
         <sources jar="jetbrains.mps.execution.commands-src.jar" descriptor="commands.mpl" />
@@ -3119,7 +3092,6 @@
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
-          <module ref="fe380742-bca4-4fda-beac-356eded9cf45(jetbrains.mps.ide.mps)" />
           <module ref="feddcab7-7240-49eb-bd42-e15e0a95cb26(jetbrains.mps.lang.intentions.pluginSolution)" />
         </dependencies>
         <sources jar="jetbrains.mps.execution.configurations-src.jar" descriptor="configurations.mpl" />
@@ -3292,7 +3264,6 @@
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
-          <module ref="fe380742-bca4-4fda-beac-356eded9cf45(jetbrains.mps.ide.mps)" />
           <module ref="feddcab7-7240-49eb-bd42-e15e0a95cb26(jetbrains.mps.lang.intentions.pluginSolution)" />
         </dependencies>
         <sources jar="jetbrains.mps.execution.configurations.pluginSolution-src.jar" descriptor="pluginSolution.msd" />
@@ -3458,7 +3429,6 @@
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
-          <module ref="fe380742-bca4-4fda-beac-356eded9cf45(jetbrains.mps.ide.mps)" />
           <module ref="feddcab7-7240-49eb-bd42-e15e0a95cb26(jetbrains.mps.lang.intentions.pluginSolution)" />
         </dependencies>
         <sources jar="jetbrains.mps.execution.configurations.deprecated-src.jar" descriptor="runConfigurations.mpl" />
@@ -3623,7 +3593,6 @@
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
-          <module ref="fe380742-bca4-4fda-beac-356eded9cf45(jetbrains.mps.ide.mps)" />
           <module ref="feddcab7-7240-49eb-bd42-e15e0a95cb26(jetbrains.mps.lang.intentions.pluginSolution)" />
         </dependencies>
         <sources jar="jetbrains.mps.execution.configurations.deprecated.runtime-src.jar" descriptor="runtime.msd" />
@@ -3788,7 +3757,6 @@
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
-          <module ref="fe380742-bca4-4fda-beac-356eded9cf45(jetbrains.mps.ide.mps)" />
           <module ref="feddcab7-7240-49eb-bd42-e15e0a95cb26(jetbrains.mps.lang.intentions.pluginSolution)" />
         </dependencies>
         <runtime jar="/lib/commons-lang-2.4.jar" />
@@ -3956,7 +3924,6 @@
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
-          <module ref="fe380742-bca4-4fda-beac-356eded9cf45(jetbrains.mps.ide.mps)" />
           <module ref="feddcab7-7240-49eb-bd42-e15e0a95cb26(jetbrains.mps.lang.intentions.pluginSolution)" />
         </dependencies>
         <sources jar="jetbrains.mps.baseLanguage.pluginSolution-src.jar" descriptor="pluginSolution.msd" />
@@ -4121,7 +4088,6 @@
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
-          <module ref="fe380742-bca4-4fda-beac-356eded9cf45(jetbrains.mps.ide.mps)" />
           <module ref="feddcab7-7240-49eb-bd42-e15e0a95cb26(jetbrains.mps.lang.intentions.pluginSolution)" />
         </dependencies>
         <sources jar="jetbrains.mps.baseLanguageInternal-src.jar" descriptor="baseLanguageInternal.mpl" />
@@ -4286,7 +4252,6 @@
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
-          <module ref="fe380742-bca4-4fda-beac-356eded9cf45(jetbrains.mps.ide.mps)" />
           <module ref="feddcab7-7240-49eb-bd42-e15e0a95cb26(jetbrains.mps.lang.intentions.pluginSolution)" />
         </dependencies>
         <sources jar="jetbrains.mps.baseLanguage.blTypes-src.jar" descriptor="blTypes.mpl" />
@@ -4451,7 +4416,6 @@
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
-          <module ref="fe380742-bca4-4fda-beac-356eded9cf45(jetbrains.mps.ide.mps)" />
           <module ref="feddcab7-7240-49eb-bd42-e15e0a95cb26(jetbrains.mps.lang.intentions.pluginSolution)" />
         </dependencies>
         <sources jar="jetbrains.mps.baseLanguage.checkedDots-src.jar" descriptor="checkedDots.mpl" />
@@ -4617,7 +4581,6 @@
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
-          <module ref="fe380742-bca4-4fda-beac-356eded9cf45(jetbrains.mps.ide.mps)" />
           <module ref="feddcab7-7240-49eb-bd42-e15e0a95cb26(jetbrains.mps.lang.intentions.pluginSolution)" />
         </dependencies>
         <sources jar="jetbrains.mps.baseLanguage.jdk7-src.jar" descriptor="jdk7.mpl" />
@@ -4782,7 +4745,6 @@
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
-          <module ref="fe380742-bca4-4fda-beac-356eded9cf45(jetbrains.mps.ide.mps)" />
           <module ref="feddcab7-7240-49eb-bd42-e15e0a95cb26(jetbrains.mps.lang.intentions.pluginSolution)" />
         </dependencies>
         <library jar="jetbrains.mps.baseLanguage.classifiers.jar" />
@@ -4948,7 +4910,6 @@
           <module ref="fba399db-f591-45dc-a279-e2a2a986e262(jetbrains.mps.build.generictasks)" />
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
-          <module ref="fe380742-bca4-4fda-beac-356eded9cf45(jetbrains.mps.ide.mps)" />
           <module ref="feddcab7-7240-49eb-bd42-e15e0a95cb26(jetbrains.mps.lang.intentions.pluginSolution)" />
         </dependencies>
         <sources jar="jetbrains.mps.baseLanguage.closures-src.jar" descriptor="closures.mpl" />
@@ -5113,7 +5074,6 @@
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
-          <module ref="fe380742-bca4-4fda-beac-356eded9cf45(jetbrains.mps.ide.mps)" />
           <module ref="feddcab7-7240-49eb-bd42-e15e0a95cb26(jetbrains.mps.lang.intentions.pluginSolution)" />
         </dependencies>
         <sources jar="jetbrains.mps.baseLanguage.collections-src.jar" descriptor="collections.mpl" />
@@ -5279,7 +5239,6 @@
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
-          <module ref="fe380742-bca4-4fda-beac-356eded9cf45(jetbrains.mps.ide.mps)" />
           <module ref="feddcab7-7240-49eb-bd42-e15e0a95cb26(jetbrains.mps.lang.intentions.pluginSolution)" />
         </dependencies>
         <sources jar="jetbrains.mps.baseLanguage.javadoc-src.jar" descriptor="javadoc.mpl" />
@@ -5443,7 +5402,6 @@
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
-          <module ref="fe380742-bca4-4fda-beac-356eded9cf45(jetbrains.mps.ide.mps)" />
           <module ref="feddcab7-7240-49eb-bd42-e15e0a95cb26(jetbrains.mps.lang.intentions.pluginSolution)" />
         </dependencies>
         <runtime jar="/lib/commons-logging-1.1.1.jar" />
@@ -5610,7 +5568,6 @@
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
-          <module ref="fe380742-bca4-4fda-beac-356eded9cf45(jetbrains.mps.ide.mps)" />
           <module ref="feddcab7-7240-49eb-bd42-e15e0a95cb26(jetbrains.mps.lang.intentions.pluginSolution)" />
         </dependencies>
         <sources jar="jetbrains.mps.baseLanguage.unitTest-src.jar" descriptor="unitTest.mpl" />
@@ -5848,7 +5805,6 @@
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
-          <module ref="fe380742-bca4-4fda-beac-356eded9cf45(jetbrains.mps.ide.mps)" />
           <module ref="feddcab7-7240-49eb-bd42-e15e0a95cb26(jetbrains.mps.lang.intentions.pluginSolution)" />
         </dependencies>
         <sources jar="jetbrains.mps.baseLanguage.tuples-src.jar" descriptor="tuples.mpl" />
@@ -6024,7 +5980,6 @@
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
-          <module ref="fe380742-bca4-4fda-beac-356eded9cf45(jetbrains.mps.ide.mps)" />
           <module ref="feddcab7-7240-49eb-bd42-e15e0a95cb26(jetbrains.mps.lang.intentions.pluginSolution)" />
         </dependencies>
         <library jar="jetbrains.mps.lang.actions.jar" />
@@ -6190,7 +6145,6 @@
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
-          <module ref="fe380742-bca4-4fda-beac-356eded9cf45(jetbrains.mps.ide.mps)" />
           <module ref="feddcab7-7240-49eb-bd42-e15e0a95cb26(jetbrains.mps.lang.intentions.pluginSolution)" />
         </dependencies>
         <sources jar="jetbrains.mps.lang.behavior-src.jar" descriptor="behavior.mpl" />
@@ -6355,7 +6309,6 @@
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
-          <module ref="fe380742-bca4-4fda-beac-356eded9cf45(jetbrains.mps.ide.mps)" />
           <module ref="feddcab7-7240-49eb-bd42-e15e0a95cb26(jetbrains.mps.lang.intentions.pluginSolution)" />
         </dependencies>
         <sources jar="jetbrains.mps.lang.constraints-src.jar" descriptor="constraints.mpl" />
@@ -6521,7 +6474,6 @@
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
-          <module ref="fe380742-bca4-4fda-beac-356eded9cf45(jetbrains.mps.ide.mps)" />
           <module ref="feddcab7-7240-49eb-bd42-e15e0a95cb26(jetbrains.mps.lang.intentions.pluginSolution)" />
         </dependencies>
         <sources jar="jetbrains.mps.lang.editor.editorTest-src.jar" descriptor="editorTest.mpl" />
@@ -6685,7 +6637,6 @@
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
-          <module ref="fe380742-bca4-4fda-beac-356eded9cf45(jetbrains.mps.ide.mps)" />
           <module ref="feddcab7-7240-49eb-bd42-e15e0a95cb26(jetbrains.mps.lang.intentions.pluginSolution)" />
         </dependencies>
         <sources jar="jetbrains.mps.lang.editor-src.jar" descriptor="editor.mpl" />
@@ -6850,7 +6801,6 @@
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
-          <module ref="fe380742-bca4-4fda-beac-356eded9cf45(jetbrains.mps.ide.mps)" />
           <module ref="feddcab7-7240-49eb-bd42-e15e0a95cb26(jetbrains.mps.lang.intentions.pluginSolution)" />
         </dependencies>
         <sources jar="jetbrains.mps.lang.findUsages-src.jar" descriptor="findUsages.mpl" />
@@ -7015,7 +6965,6 @@
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
-          <module ref="fe380742-bca4-4fda-beac-356eded9cf45(jetbrains.mps.ide.mps)" />
           <module ref="feddcab7-7240-49eb-bd42-e15e0a95cb26(jetbrains.mps.lang.intentions.pluginSolution)" />
         </dependencies>
         <sources jar="jetbrains.mps.lang.typesystem-src.jar" descriptor="typesystem.mpl" />
@@ -7180,7 +7129,6 @@
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
-          <module ref="fe380742-bca4-4fda-beac-356eded9cf45(jetbrains.mps.ide.mps)" />
           <module ref="feddcab7-7240-49eb-bd42-e15e0a95cb26(jetbrains.mps.lang.intentions.pluginSolution)" />
         </dependencies>
         <sources jar="jetbrains.mps.lang.intentions-src.jar" descriptor="intentions.mpl" />
@@ -7345,7 +7293,6 @@
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
-          <module ref="fe380742-bca4-4fda-beac-356eded9cf45(jetbrains.mps.ide.mps)" />
           <module ref="feddcab7-7240-49eb-bd42-e15e0a95cb26(jetbrains.mps.lang.intentions.pluginSolution)" />
         </dependencies>
         <sources jar="jetbrains.mps.lang.dataFlow-src.jar" descriptor="dataFlow.mpl" />
@@ -7510,7 +7457,6 @@
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
-          <module ref="fe380742-bca4-4fda-beac-356eded9cf45(jetbrains.mps.ide.mps)" />
           <module ref="feddcab7-7240-49eb-bd42-e15e0a95cb26(jetbrains.mps.lang.intentions.pluginSolution)" />
         </dependencies>
         <sources jar="jetbrains.mps.lang.pattern-src.jar" descriptor="pattern.mpl" />
@@ -7676,7 +7622,6 @@
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
-          <module ref="fe380742-bca4-4fda-beac-356eded9cf45(jetbrains.mps.ide.mps)" />
           <module ref="feddcab7-7240-49eb-bd42-e15e0a95cb26(jetbrains.mps.lang.intentions.pluginSolution)" />
         </dependencies>
         <sources jar="jetbrains.mps.lang.pattern.testLang-src.jar" descriptor="testLang.mpl" />
@@ -7841,7 +7786,6 @@
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
-          <module ref="fe380742-bca4-4fda-beac-356eded9cf45(jetbrains.mps.ide.mps)" />
           <module ref="feddcab7-7240-49eb-bd42-e15e0a95cb26(jetbrains.mps.lang.intentions.pluginSolution)" />
         </dependencies>
         <sources jar="jetbrains.mps.lang.quotation-src.jar" descriptor="quotation.mpl" />
@@ -8006,7 +7950,6 @@
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
-          <module ref="fe380742-bca4-4fda-beac-356eded9cf45(jetbrains.mps.ide.mps)" />
           <module ref="feddcab7-7240-49eb-bd42-e15e0a95cb26(jetbrains.mps.lang.intentions.pluginSolution)" />
         </dependencies>
         <sources jar="jetbrains.mps.lang.plugin-src.jar" descriptor="plugin.mpl" />
@@ -8171,7 +8114,6 @@
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
-          <module ref="fe380742-bca4-4fda-beac-356eded9cf45(jetbrains.mps.ide.mps)" />
           <module ref="feddcab7-7240-49eb-bd42-e15e0a95cb26(jetbrains.mps.lang.intentions.pluginSolution)" />
         </dependencies>
         <runtime jar="jetbrains.mps.lang.sharedConcepts-runtime.jar" />
@@ -8341,7 +8283,6 @@
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
-          <module ref="fe380742-bca4-4fda-beac-356eded9cf45(jetbrains.mps.ide.mps)" />
           <module ref="feddcab7-7240-49eb-bd42-e15e0a95cb26(jetbrains.mps.lang.intentions.pluginSolution)" />
         </dependencies>
         <runtime jar="jetbrains.mps.lang.smodel-runtime.jar" />
@@ -8513,7 +8454,6 @@
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
-          <module ref="fe380742-bca4-4fda-beac-356eded9cf45(jetbrains.mps.ide.mps)" />
           <module ref="feddcab7-7240-49eb-bd42-e15e0a95cb26(jetbrains.mps.lang.intentions.pluginSolution)" />
         </dependencies>
         <sources jar="jetbrains.mps.lang.extension-src.jar" descriptor="extension.mpl" />
@@ -8678,7 +8618,6 @@
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
-          <module ref="fe380742-bca4-4fda-beac-356eded9cf45(jetbrains.mps.ide.mps)" />
           <module ref="feddcab7-7240-49eb-bd42-e15e0a95cb26(jetbrains.mps.lang.intentions.pluginSolution)" />
         </dependencies>
         <sources jar="jetbrains.mps.lang.script-src.jar" descriptor="script.mpl" />
@@ -8843,7 +8782,6 @@
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
-          <module ref="fe380742-bca4-4fda-beac-356eded9cf45(jetbrains.mps.ide.mps)" />
           <module ref="feddcab7-7240-49eb-bd42-e15e0a95cb26(jetbrains.mps.lang.intentions.pluginSolution)" />
         </dependencies>
         <runtime jar="/lib/guava-r09.jar" />
@@ -9014,7 +8952,6 @@
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
-          <module ref="fe380742-bca4-4fda-beac-356eded9cf45(jetbrains.mps.ide.mps)" />
           <module ref="feddcab7-7240-49eb-bd42-e15e0a95cb26(jetbrains.mps.lang.intentions.pluginSolution)" />
         </dependencies>
         <runtime jar="jetbrains.mps.lang.core-runtime.jar" />
@@ -9183,7 +9120,6 @@
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
-          <module ref="fe380742-bca4-4fda-beac-356eded9cf45(jetbrains.mps.ide.mps)" />
           <module ref="feddcab7-7240-49eb-bd42-e15e0a95cb26(jetbrains.mps.lang.intentions.pluginSolution)" />
         </dependencies>
         <sources jar="jetbrains.mps.lang.refactoring-src.jar" descriptor="refactoring.mpl" />
@@ -9348,7 +9284,6 @@
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
-          <module ref="fe380742-bca4-4fda-beac-356eded9cf45(jetbrains.mps.ide.mps)" />
           <module ref="feddcab7-7240-49eb-bd42-e15e0a95cb26(jetbrains.mps.lang.intentions.pluginSolution)" />
         </dependencies>
         <sources jar="jetbrains.mps.lang.generator-src.jar" descriptor="templateLanguage.mpl" />
@@ -9513,7 +9448,6 @@
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
-          <module ref="fe380742-bca4-4fda-beac-356eded9cf45(jetbrains.mps.ide.mps)" />
           <module ref="feddcab7-7240-49eb-bd42-e15e0a95cb26(jetbrains.mps.lang.intentions.pluginSolution)" />
         </dependencies>
         <sources jar="jetbrains.mps.lang.generator.generationContext-src.jar" descriptor="generationContext.mpl" />
@@ -9678,7 +9612,6 @@
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
-          <module ref="fe380742-bca4-4fda-beac-356eded9cf45(jetbrains.mps.ide.mps)" />
           <module ref="feddcab7-7240-49eb-bd42-e15e0a95cb26(jetbrains.mps.lang.intentions.pluginSolution)" />
         </dependencies>
         <sources jar="jetbrains.mps.lang.generator.generationParameters-src.jar" descriptor="generationParameters.mpl" />
@@ -9843,7 +9776,6 @@
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
-          <module ref="fe380742-bca4-4fda-beac-356eded9cf45(jetbrains.mps.ide.mps)" />
           <module ref="feddcab7-7240-49eb-bd42-e15e0a95cb26(jetbrains.mps.lang.intentions.pluginSolution)" />
         </dependencies>
         <sources jar="jetbrains.mps.lang.test-src.jar" descriptor="test.mpl" />
@@ -10008,7 +9940,6 @@
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
-          <module ref="fe380742-bca4-4fda-beac-356eded9cf45(jetbrains.mps.ide.mps)" />
           <module ref="feddcab7-7240-49eb-bd42-e15e0a95cb26(jetbrains.mps.lang.intentions.pluginSolution)" />
         </dependencies>
         <sources jar="jetbrains.mps.lang.test.runtime-src.jar" descriptor="jetbrains.mps.lang.test.runtime.msd" />
@@ -10172,7 +10103,6 @@
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
-          <module ref="fe380742-bca4-4fda-beac-356eded9cf45(jetbrains.mps.ide.mps)" />
           <module ref="feddcab7-7240-49eb-bd42-e15e0a95cb26(jetbrains.mps.lang.intentions.pluginSolution)" />
         </dependencies>
         <sources jar="jetbrains.mps.lang.textGen-src.jar" descriptor="textGen.mpl" />
@@ -10338,7 +10268,6 @@
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
-          <module ref="fe380742-bca4-4fda-beac-356eded9cf45(jetbrains.mps.ide.mps)" />
           <module ref="feddcab7-7240-49eb-bd42-e15e0a95cb26(jetbrains.mps.lang.intentions.pluginSolution)" />
         </dependencies>
         <sources jar="jetbrains.mps.lang.traceable-src.jar" descriptor="traceable.mpl" />
@@ -10502,7 +10431,6 @@
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
-          <module ref="fe380742-bca4-4fda-beac-356eded9cf45(jetbrains.mps.ide.mps)" />
           <module ref="feddcab7-7240-49eb-bd42-e15e0a95cb26(jetbrains.mps.lang.intentions.pluginSolution)" />
         </dependencies>
         <sources jar="jetbrains.mps.lang.stubs-src.jar" descriptor="stubs.mpl" />
@@ -10668,7 +10596,6 @@
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
-          <module ref="fe380742-bca4-4fda-beac-356eded9cf45(jetbrains.mps.ide.mps)" />
           <module ref="feddcab7-7240-49eb-bd42-e15e0a95cb26(jetbrains.mps.lang.intentions.pluginSolution)" />
         </dependencies>
         <sources jar="jetbrains.mps.lang.smodelTests-src.jar" descriptor="smodelTests.mpl" />
@@ -10832,7 +10759,6 @@
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
-          <module ref="fe380742-bca4-4fda-beac-356eded9cf45(jetbrains.mps.ide.mps)" />
           <module ref="feddcab7-7240-49eb-bd42-e15e0a95cb26(jetbrains.mps.lang.intentions.pluginSolution)" />
         </dependencies>
         <sources jar="jetbrains.mps.lang.project-src.jar" descriptor="project.mpl" />
@@ -10997,7 +10923,6 @@
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
-          <module ref="fe380742-bca4-4fda-beac-356eded9cf45(jetbrains.mps.ide.mps)" />
           <module ref="feddcab7-7240-49eb-bd42-e15e0a95cb26(jetbrains.mps.lang.intentions.pluginSolution)" />
         </dependencies>
         <sources jar="jetbrains.mps.lang.descriptor-src.jar" descriptor="descriptor.mpl" />
@@ -11162,7 +11087,6 @@
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
-          <module ref="fe380742-bca4-4fda-beac-356eded9cf45(jetbrains.mps.ide.mps)" />
           <module ref="feddcab7-7240-49eb-bd42-e15e0a95cb26(jetbrains.mps.lang.intentions.pluginSolution)" />
         </dependencies>
         <sources jar="jetbrains.mps.lang.core.pluginSolution-src.jar" descriptor="pluginSolution.msd" />
@@ -11327,7 +11251,6 @@
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
-          <module ref="fe380742-bca4-4fda-beac-356eded9cf45(jetbrains.mps.ide.mps)" />
           <module ref="feddcab7-7240-49eb-bd42-e15e0a95cb26(jetbrains.mps.lang.intentions.pluginSolution)" />
         </dependencies>
         <sources jar="jetbrains.mps.lang.structure.pluginSolution-src.jar" descriptor="pluginSolution.msd" />
@@ -11492,7 +11415,6 @@
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
-          <module ref="fe380742-bca4-4fda-beac-356eded9cf45(jetbrains.mps.ide.mps)" />
           <module ref="feddcab7-7240-49eb-bd42-e15e0a95cb26(jetbrains.mps.lang.intentions.pluginSolution)" />
         </dependencies>
         <sources jar="jetbrains.mps.lang.actions.pluginSolution-src.jar" descriptor="pluginSolution.msd" />
@@ -11657,7 +11579,6 @@
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
-          <module ref="fe380742-bca4-4fda-beac-356eded9cf45(jetbrains.mps.ide.mps)" />
           <module ref="feddcab7-7240-49eb-bd42-e15e0a95cb26(jetbrains.mps.lang.intentions.pluginSolution)" />
         </dependencies>
         <sources jar="jetbrains.mps.lang.behavior.pluginSolution-src.jar" descriptor="pluginSolution.msd" />
@@ -11822,7 +11743,6 @@
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
-          <module ref="fe380742-bca4-4fda-beac-356eded9cf45(jetbrains.mps.ide.mps)" />
           <module ref="feddcab7-7240-49eb-bd42-e15e0a95cb26(jetbrains.mps.lang.intentions.pluginSolution)" />
         </dependencies>
         <sources jar="jetbrains.mps.lang.constraints.pluginSolution-src.jar" descriptor="pluginSolution.msd" />
@@ -11987,7 +11907,6 @@
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
-          <module ref="fe380742-bca4-4fda-beac-356eded9cf45(jetbrains.mps.ide.mps)" />
           <module ref="feddcab7-7240-49eb-bd42-e15e0a95cb26(jetbrains.mps.lang.intentions.pluginSolution)" />
         </dependencies>
         <sources jar="jetbrains.mps.lang.editor.pluginSolution-src.jar" descriptor="pluginSolution.msd" />
@@ -12152,7 +12071,6 @@
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
-          <module ref="fe380742-bca4-4fda-beac-356eded9cf45(jetbrains.mps.ide.mps)" />
           <module ref="feddcab7-7240-49eb-bd42-e15e0a95cb26(jetbrains.mps.lang.intentions.pluginSolution)" />
         </dependencies>
         <sources jar="jetbrains.mps.lang.findUsages.pluginSolution-src.jar" descriptor="pluginSolution.msd" />
@@ -12317,7 +12235,6 @@
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
-          <module ref="fe380742-bca4-4fda-beac-356eded9cf45(jetbrains.mps.ide.mps)" />
           <module ref="feddcab7-7240-49eb-bd42-e15e0a95cb26(jetbrains.mps.lang.intentions.pluginSolution)" />
         </dependencies>
         <sources jar="jetbrains.mps.lang.generator.pluginSolution-src.jar" descriptor="pluginSolution.msd" />
@@ -12483,7 +12400,6 @@
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
-          <module ref="fe380742-bca4-4fda-beac-356eded9cf45(jetbrains.mps.ide.mps)" />
         </dependencies>
         <sources jar="jetbrains.mps.lang.intentions.pluginSolution-src.jar" descriptor="pluginSolution.msd" />
       </module>
@@ -12647,7 +12563,6 @@
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
-          <module ref="fe380742-bca4-4fda-beac-356eded9cf45(jetbrains.mps.ide.mps)" />
           <module ref="feddcab7-7240-49eb-bd42-e15e0a95cb26(jetbrains.mps.lang.intentions.pluginSolution)" />
         </dependencies>
         <sources jar="jetbrains.mps.lang.plugin.pluginSolution-src.jar" descriptor="pluginSolution.msd" />
@@ -12812,7 +12727,6 @@
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
-          <module ref="fe380742-bca4-4fda-beac-356eded9cf45(jetbrains.mps.ide.mps)" />
           <module ref="feddcab7-7240-49eb-bd42-e15e0a95cb26(jetbrains.mps.lang.intentions.pluginSolution)" />
         </dependencies>
         <sources jar="jetbrains.mps.lang.quotation.pluginSolution-src.jar" descriptor="pluginSolution.msd" />
@@ -12977,7 +12891,6 @@
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
-          <module ref="fe380742-bca4-4fda-beac-356eded9cf45(jetbrains.mps.ide.mps)" />
           <module ref="feddcab7-7240-49eb-bd42-e15e0a95cb26(jetbrains.mps.lang.intentions.pluginSolution)" />
         </dependencies>
         <sources jar="jetbrains.mps.lang.refactoring.pluginSolution-src.jar" descriptor="pluginSolution.msd" />
@@ -13142,7 +13055,6 @@
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
-          <module ref="fe380742-bca4-4fda-beac-356eded9cf45(jetbrains.mps.ide.mps)" />
           <module ref="feddcab7-7240-49eb-bd42-e15e0a95cb26(jetbrains.mps.lang.intentions.pluginSolution)" />
         </dependencies>
         <sources jar="jetbrains.mps.lang.script.pluginSolution-src.jar" descriptor="pluginSolution.msd" />
@@ -13307,7 +13219,6 @@
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
-          <module ref="fe380742-bca4-4fda-beac-356eded9cf45(jetbrains.mps.ide.mps)" />
           <module ref="feddcab7-7240-49eb-bd42-e15e0a95cb26(jetbrains.mps.lang.intentions.pluginSolution)" />
         </dependencies>
         <sources jar="jetbrains.mps.lang.smodel.pluginSolution-src.jar" descriptor="pluginSolution.msd" />
@@ -13472,7 +13383,6 @@
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
-          <module ref="fe380742-bca4-4fda-beac-356eded9cf45(jetbrains.mps.ide.mps)" />
           <module ref="feddcab7-7240-49eb-bd42-e15e0a95cb26(jetbrains.mps.lang.intentions.pluginSolution)" />
         </dependencies>
         <sources jar="jetbrains.mps.lang.test.pluginSolution-src.jar" descriptor="pluginSolution.msd" />
@@ -13637,7 +13547,6 @@
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
-          <module ref="fe380742-bca4-4fda-beac-356eded9cf45(jetbrains.mps.ide.mps)" />
           <module ref="feddcab7-7240-49eb-bd42-e15e0a95cb26(jetbrains.mps.lang.intentions.pluginSolution)" />
         </dependencies>
         <sources jar="jetbrains.mps.lang.textGen.pluginSolution-src.jar" descriptor="pluginSolution.msd" />
@@ -13828,7 +13737,6 @@
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
-          <module ref="fe380742-bca4-4fda-beac-356eded9cf45(jetbrains.mps.ide.mps)" />
           <module ref="feddcab7-7240-49eb-bd42-e15e0a95cb26(jetbrains.mps.lang.intentions.pluginSolution)" />
         </dependencies>
         <sources jar="jetbrains.mps.lang.typesystem.pluginSolution-src.jar" descriptor="pluginSolution.msd" />
@@ -13993,7 +13901,6 @@
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
-          <module ref="fe380742-bca4-4fda-beac-356eded9cf45(jetbrains.mps.ide.mps)" />
           <module ref="feddcab7-7240-49eb-bd42-e15e0a95cb26(jetbrains.mps.lang.intentions.pluginSolution)" />
         </dependencies>
         <sources jar="jetbrains.mps.lang.dataFlow.pluginSolution-src.jar" descriptor="pluginSolution.msd" />
@@ -14158,7 +14065,6 @@
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
-          <module ref="fe380742-bca4-4fda-beac-356eded9cf45(jetbrains.mps.ide.mps)" />
           <module ref="feddcab7-7240-49eb-bd42-e15e0a95cb26(jetbrains.mps.lang.intentions.pluginSolution)" />
         </dependencies>
         <sources jar="jetbrains.mps.make.facet-src.jar" descriptor="facet.mpl" />
@@ -14323,7 +14229,6 @@
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
-          <module ref="fe380742-bca4-4fda-beac-356eded9cf45(jetbrains.mps.ide.mps)" />
           <module ref="feddcab7-7240-49eb-bd42-e15e0a95cb26(jetbrains.mps.lang.intentions.pluginSolution)" />
         </dependencies>
         <sources jar="jetbrains.mps.make.facet.pluginSolution-src.jar" descriptor="pluginSolution.msd" />
@@ -14488,7 +14393,6 @@
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
-          <module ref="fe380742-bca4-4fda-beac-356eded9cf45(jetbrains.mps.ide.mps)" />
           <module ref="feddcab7-7240-49eb-bd42-e15e0a95cb26(jetbrains.mps.lang.intentions.pluginSolution)" />
         </dependencies>
         <sources jar="jetbrains.mps.make.script-src.jar" descriptor="script.mpl" />
@@ -14653,7 +14557,6 @@
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
-          <module ref="fe380742-bca4-4fda-beac-356eded9cf45(jetbrains.mps.ide.mps)" />
           <module ref="feddcab7-7240-49eb-bd42-e15e0a95cb26(jetbrains.mps.lang.intentions.pluginSolution)" />
         </dependencies>
         <sources jar="typesystemIntegration-src.jar" descriptor="typesystemIntegration.msd" />
@@ -14882,7 +14785,6 @@
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
-          <module ref="fe380742-bca4-4fda-beac-356eded9cf45(jetbrains.mps.ide.mps)" />
           <module ref="feddcab7-7240-49eb-bd42-e15e0a95cb26(jetbrains.mps.lang.intentions.pluginSolution)" />
         </dependencies>
         <sources jar="jetbrains.mps.execution.api-src.jar" descriptor="jetbrains.mps.execution.api.msd" />
@@ -15048,7 +14950,6 @@
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
-          <module ref="fe380742-bca4-4fda-beac-356eded9cf45(jetbrains.mps.ide.mps)" />
           <module ref="feddcab7-7240-49eb-bd42-e15e0a95cb26(jetbrains.mps.lang.intentions.pluginSolution)" />
         </dependencies>
         <sources jar="jetbrains.mps.execution.common-src.jar" descriptor="common.mpl" />
@@ -15216,7 +15117,6 @@
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
-          <module ref="fe380742-bca4-4fda-beac-356eded9cf45(jetbrains.mps.ide.mps)" />
           <module ref="feddcab7-7240-49eb-bd42-e15e0a95cb26(jetbrains.mps.lang.intentions.pluginSolution)" />
         </dependencies>
         <sources jar="jetbrains.mps.execution.settings-src.jar" descriptor="settings.mpl" />
@@ -15382,7 +15282,6 @@
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
-          <module ref="fe380742-bca4-4fda-beac-356eded9cf45(jetbrains.mps.ide.mps)" />
           <module ref="feddcab7-7240-49eb-bd42-e15e0a95cb26(jetbrains.mps.lang.intentions.pluginSolution)" />
         </dependencies>
         <sources jar="jetbrains.mps.execution.util-src.jar" descriptor="util.mpl" />
@@ -15546,7 +15445,6 @@
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
-          <module ref="fe380742-bca4-4fda-beac-356eded9cf45(jetbrains.mps.ide.mps)" />
           <module ref="feddcab7-7240-49eb-bd42-e15e0a95cb26(jetbrains.mps.lang.intentions.pluginSolution)" />
         </dependencies>
         <sources jar="jetbrains.mps.build.reduced-src.jar" descriptor="reduced.mpl" />
@@ -15710,7 +15608,6 @@
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
-          <module ref="fe380742-bca4-4fda-beac-356eded9cf45(jetbrains.mps.ide.mps)" />
           <module ref="feddcab7-7240-49eb-bd42-e15e0a95cb26(jetbrains.mps.lang.intentions.pluginSolution)" />
         </dependencies>
         <sources jar="jetbrains.mps.xml.deprecated-src.jar" descriptor="languageDescriptor.mpl" />
@@ -15901,7 +15798,6 @@
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
-          <module ref="fe380742-bca4-4fda-beac-356eded9cf45(jetbrains.mps.ide.mps)" />
           <module ref="feddcab7-7240-49eb-bd42-e15e0a95cb26(jetbrains.mps.lang.intentions.pluginSolution)" />
         </dependencies>
         <runtime jar="/lib/beansbinding-1.2.1.jar" />
@@ -16073,7 +15969,6 @@
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
-          <module ref="fe380742-bca4-4fda-beac-356eded9cf45(jetbrains.mps.ide.mps)" />
           <module ref="feddcab7-7240-49eb-bd42-e15e0a95cb26(jetbrains.mps.lang.intentions.pluginSolution)" />
         </dependencies>
         <sources jar="jetbrains.mps.uiLanguage.pluginSolution-src.jar" descriptor="pluginSolution.msd" />
@@ -16239,7 +16134,6 @@
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
-          <module ref="fe380742-bca4-4fda-beac-356eded9cf45(jetbrains.mps.ide.mps)" />
           <module ref="feddcab7-7240-49eb-bd42-e15e0a95cb26(jetbrains.mps.lang.intentions.pluginSolution)" />
         </dependencies>
         <sources jar="jetbrains.mps.ide.uiLanguage-src.jar" descriptor="uiLanguage.mpl" />
@@ -16407,7 +16301,6 @@
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
-          <module ref="fe380742-bca4-4fda-beac-356eded9cf45(jetbrains.mps.ide.mps)" />
           <module ref="feddcab7-7240-49eb-bd42-e15e0a95cb26(jetbrains.mps.lang.intentions.pluginSolution)" />
         </dependencies>
         <sources jar="jetbrains.mps.ui-src.jar" descriptor="ui.mpl" />
@@ -16574,7 +16467,6 @@
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
-          <module ref="fe380742-bca4-4fda-beac-356eded9cf45(jetbrains.mps.ide.mps)" />
           <module ref="feddcab7-7240-49eb-bd42-e15e0a95cb26(jetbrains.mps.lang.intentions.pluginSolution)" />
         </dependencies>
         <sources jar="jetbrains.mps.ui.pluginSolution-src.jar" descriptor="pluginSolution.msd" />
@@ -16740,7 +16632,6 @@
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
-          <module ref="fe380742-bca4-4fda-beac-356eded9cf45(jetbrains.mps.ide.mps)" />
           <module ref="feddcab7-7240-49eb-bd42-e15e0a95cb26(jetbrains.mps.lang.intentions.pluginSolution)" />
         </dependencies>
         <sources jar="jetbrains.mps.ui.modeling-src.jar" descriptor="meta.mpl" />
@@ -16907,7 +16798,6 @@
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
-          <module ref="fe380742-bca4-4fda-beac-356eded9cf45(jetbrains.mps.ide.mps)" />
           <module ref="feddcab7-7240-49eb-bd42-e15e0a95cb26(jetbrains.mps.lang.intentions.pluginSolution)" />
         </dependencies>
         <sources jar="jetbrains.mps.ui.modeling.pluginSolution-src.jar" descriptor="pluginSolution.msd" />
@@ -17076,7 +16966,6 @@
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
-          <module ref="fe380742-bca4-4fda-beac-356eded9cf45(jetbrains.mps.ide.mps)" />
           <module ref="feddcab7-7240-49eb-bd42-e15e0a95cb26(jetbrains.mps.lang.intentions.pluginSolution)" />
         </dependencies>
         <sources jar="jetbrains.mps.ui.internal-src.jar" descriptor="internal.mpl" />
@@ -17248,7 +17137,6 @@
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
-          <module ref="fe380742-bca4-4fda-beac-356eded9cf45(jetbrains.mps.ide.mps)" />
           <module ref="feddcab7-7240-49eb-bd42-e15e0a95cb26(jetbrains.mps.lang.intentions.pluginSolution)" />
         </dependencies>
         <runtime jar="gwt-user.jar" />
@@ -17422,7 +17310,6 @@
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
-          <module ref="fe380742-bca4-4fda-beac-356eded9cf45(jetbrains.mps.ide.mps)" />
           <module ref="feddcab7-7240-49eb-bd42-e15e0a95cb26(jetbrains.mps.lang.intentions.pluginSolution)" />
         </dependencies>
         <sources jar="jetbrains.mps.ui.gwt.pluginSolution-src.jar" descriptor="pluginSolution.msd" />
@@ -17595,7 +17482,6 @@
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
-          <module ref="fe380742-bca4-4fda-beac-356eded9cf45(jetbrains.mps.ide.mps)" />
           <module ref="feb13c42-6479-4631-bedd-7524f34b91c0(jetbrains.mps.ui.swing#5725024602606914374)" />
           <module ref="feddcab7-7240-49eb-bd42-e15e0a95cb26(jetbrains.mps.lang.intentions.pluginSolution)" />
         </dependencies>
@@ -17767,7 +17653,6 @@
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
-          <module ref="fe380742-bca4-4fda-beac-356eded9cf45(jetbrains.mps.ide.mps)" />
           <module ref="feddcab7-7240-49eb-bd42-e15e0a95cb26(jetbrains.mps.lang.intentions.pluginSolution)" />
         </dependencies>
         <sources jar="jetbrains.mps.ui.swing.pluginSolution-src.jar" descriptor="pluginSolution.msd" />
@@ -17973,7 +17858,6 @@
           <module ref="fc9ba4c3-4355-4a86-b84b-1c46c728f9ea(jetbrains.mps.ui.swt#1250358102411218055)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
-          <module ref="fe380742-bca4-4fda-beac-356eded9cf45(jetbrains.mps.ide.mps)" />
           <module ref="feb13c42-6479-4631-bedd-7524f34b91c0(jetbrains.mps.ui.swing#5725024602606914374)" />
           <module ref="feddcab7-7240-49eb-bd42-e15e0a95cb26(jetbrains.mps.lang.intentions.pluginSolution)" />
         </dependencies>
@@ -18145,7 +18029,6 @@
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
-          <module ref="fe380742-bca4-4fda-beac-356eded9cf45(jetbrains.mps.ide.mps)" />
           <module ref="feddcab7-7240-49eb-bd42-e15e0a95cb26(jetbrains.mps.lang.intentions.pluginSolution)" />
         </dependencies>
         <sources jar="jetbrains.mps.ui.swt.pluginSolution-src.jar" descriptor="pluginSolution.msd" />
@@ -18340,7 +18223,6 @@
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
-          <module ref="fe380742-bca4-4fda-beac-356eded9cf45(jetbrains.mps.ide.mps)" />
           <module ref="feddcab7-7240-49eb-bd42-e15e0a95cb26(jetbrains.mps.lang.intentions.pluginSolution)" />
         </dependencies>
         <sources jar="jetbrains.mps.buildlanguage-src.jar" descriptor="buildlanguage.mpl" />
@@ -18508,7 +18390,6 @@
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
-          <module ref="fe380742-bca4-4fda-beac-356eded9cf45(jetbrains.mps.ide.mps)" />
           <module ref="feddcab7-7240-49eb-bd42-e15e0a95cb26(jetbrains.mps.lang.intentions.pluginSolution)" />
         </dependencies>
         <sources jar="jetbrains.mps.build.custommps-src.jar" descriptor="custommps.mpl" />
@@ -18679,7 +18560,6 @@
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
-          <module ref="fe380742-bca4-4fda-beac-356eded9cf45(jetbrains.mps.ide.mps)" />
           <module ref="feddcab7-7240-49eb-bd42-e15e0a95cb26(jetbrains.mps.lang.intentions.pluginSolution)" />
         </dependencies>
         <sources jar="jetbrains.mps.build.custommps.pluginSolution-src.jar" descriptor="pluginSolution.msd" />
@@ -18844,7 +18724,6 @@
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
-          <module ref="fe380742-bca4-4fda-beac-356eded9cf45(jetbrains.mps.ide.mps)" />
           <module ref="feddcab7-7240-49eb-bd42-e15e0a95cb26(jetbrains.mps.lang.intentions.pluginSolution)" />
         </dependencies>
         <library jar="/lib/ant/lib/ant-launcher.jar" />
@@ -19012,7 +18891,6 @@
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
-          <module ref="fe380742-bca4-4fda-beac-356eded9cf45(jetbrains.mps.ide.mps)" />
           <module ref="feddcab7-7240-49eb-bd42-e15e0a95cb26(jetbrains.mps.lang.intentions.pluginSolution)" />
         </dependencies>
         <sources jar="jetbrains.mps.build.generictasks.pluginSolution-src.jar" descriptor="pluginSolution.msd" />
@@ -19178,7 +19056,6 @@
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
-          <module ref="fe380742-bca4-4fda-beac-356eded9cf45(jetbrains.mps.ide.mps)" />
           <module ref="feddcab7-7240-49eb-bd42-e15e0a95cb26(jetbrains.mps.lang.intentions.pluginSolution)" />
         </dependencies>
         <sources jar="jetbrains.mps.build.packaging-src.jar" descriptor="packaging.mpl" />
@@ -19346,7 +19223,6 @@
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
-          <module ref="fe380742-bca4-4fda-beac-356eded9cf45(jetbrains.mps.ide.mps)" />
           <module ref="feddcab7-7240-49eb-bd42-e15e0a95cb26(jetbrains.mps.lang.intentions.pluginSolution)" />
         </dependencies>
         <sources jar="jetbrains.mps.build.packaging.pluginSolution-src.jar" descriptor="pluginSolution.msd" />
@@ -19512,7 +19388,6 @@
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
-          <module ref="fe380742-bca4-4fda-beac-356eded9cf45(jetbrains.mps.ide.mps)" />
           <module ref="feddcab7-7240-49eb-bd42-e15e0a95cb26(jetbrains.mps.lang.intentions.pluginSolution)" />
         </dependencies>
         <sources jar="jetbrains.mps.build.dependency-src.jar" descriptor="dependency.mpl" />
@@ -19677,7 +19552,6 @@
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
-          <module ref="fe380742-bca4-4fda-beac-356eded9cf45(jetbrains.mps.ide.mps)" />
           <module ref="feddcab7-7240-49eb-bd42-e15e0a95cb26(jetbrains.mps.lang.intentions.pluginSolution)" />
         </dependencies>
         <sources jar="jetbrains.mps.build.property-src.jar" descriptor="property.mpl" />
@@ -19841,7 +19715,6 @@
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
-          <module ref="fe380742-bca4-4fda-beac-356eded9cf45(jetbrains.mps.ide.mps)" />
           <module ref="feddcab7-7240-49eb-bd42-e15e0a95cb26(jetbrains.mps.lang.intentions.pluginSolution)" />
         </dependencies>
         <library jar="jetbrains.mps.build.antsupport.jar" />
@@ -20007,7 +19880,6 @@
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
-          <module ref="fe380742-bca4-4fda-beac-356eded9cf45(jetbrains.mps.ide.mps)" />
           <module ref="feddcab7-7240-49eb-bd42-e15e0a95cb26(jetbrains.mps.lang.intentions.pluginSolution)" />
         </dependencies>
         <sources jar="jetbrains.mps.build.gentest-src.jar" descriptor="gentest.mpl" />
@@ -20171,7 +20043,6 @@
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
-          <module ref="fe380742-bca4-4fda-beac-356eded9cf45(jetbrains.mps.ide.mps)" />
           <module ref="feddcab7-7240-49eb-bd42-e15e0a95cb26(jetbrains.mps.lang.intentions.pluginSolution)" />
         </dependencies>
         <sources jar="jetbrains.mps.build.gentest.pluginSolution-src.jar" descriptor="pluginSolution.msd" />
@@ -20337,7 +20208,6 @@
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
-          <module ref="fe380742-bca4-4fda-beac-356eded9cf45(jetbrains.mps.ide.mps)" />
           <module ref="feddcab7-7240-49eb-bd42-e15e0a95cb26(jetbrains.mps.lang.intentions.pluginSolution)" />
         </dependencies>
         <sources jar="jetbrains.mps.build.startup-src.jar" descriptor="startup.mpl" />
@@ -20503,7 +20373,6 @@
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
-          <module ref="fe380742-bca4-4fda-beac-356eded9cf45(jetbrains.mps.ide.mps)" />
           <module ref="feddcab7-7240-49eb-bd42-e15e0a95cb26(jetbrains.mps.lang.intentions.pluginSolution)" />
         </dependencies>
         <sources jar="jetbrains.mps.build.mpsdist-src.jar" descriptor="mpsdist.msd" />
@@ -20670,7 +20539,6 @@
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
-          <module ref="fe380742-bca4-4fda-beac-356eded9cf45(jetbrains.mps.ide.mps)" />
           <module ref="feddcab7-7240-49eb-bd42-e15e0a95cb26(jetbrains.mps.lang.intentions.pluginSolution)" />
         </dependencies>
         <sources jar="jetbrains.mps.xml-src.jar" descriptor="xml.mpl" />
@@ -20840,7 +20708,6 @@
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
-          <module ref="fe380742-bca4-4fda-beac-356eded9cf45(jetbrains.mps.ide.mps)" />
           <module ref="feddcab7-7240-49eb-bd42-e15e0a95cb26(jetbrains.mps.lang.intentions.pluginSolution)" />
         </dependencies>
         <sources jar="jetbrains.mps.xmlQuery-src.jar" descriptor="xmlQuery.mpl" />
@@ -21008,7 +20875,6 @@
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
-          <module ref="fe380742-bca4-4fda-beac-356eded9cf45(jetbrains.mps.ide.mps)" />
           <module ref="feddcab7-7240-49eb-bd42-e15e0a95cb26(jetbrains.mps.lang.intentions.pluginSolution)" />
         </dependencies>
         <sources jar="jetbrains.mps.xmlInternal-src.jar" descriptor="xmlInternal.mpl" />
@@ -21174,7 +21040,6 @@
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
-          <module ref="fe380742-bca4-4fda-beac-356eded9cf45(jetbrains.mps.ide.mps)" />
           <module ref="feddcab7-7240-49eb-bd42-e15e0a95cb26(jetbrains.mps.lang.intentions.pluginSolution)" />
         </dependencies>
         <sources jar="jetbrains.mps.xmlSchema-src.jar" descriptor="xmlSchema.mpl" />
@@ -21339,7 +21204,6 @@
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
-          <module ref="fe380742-bca4-4fda-beac-356eded9cf45(jetbrains.mps.ide.mps)" />
           <module ref="feddcab7-7240-49eb-bd42-e15e0a95cb26(jetbrains.mps.lang.intentions.pluginSolution)" />
         </dependencies>
         <runtime jar="xmlunit-1.3.jar" />
@@ -21509,7 +21373,6 @@
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
-          <module ref="fe380742-bca4-4fda-beac-356eded9cf45(jetbrains.mps.ide.mps)" />
           <module ref="feddcab7-7240-49eb-bd42-e15e0a95cb26(jetbrains.mps.lang.intentions.pluginSolution)" />
         </dependencies>
         <sources jar="jetbrains.mps.baseLanguage.regexp-src.jar" descriptor="regexp.mpl" />
@@ -21735,7 +21598,6 @@
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
-          <module ref="fe380742-bca4-4fda-beac-356eded9cf45(jetbrains.mps.ide.mps)" />
           <module ref="feddcab7-7240-49eb-bd42-e15e0a95cb26(jetbrains.mps.lang.intentions.pluginSolution)" />
         </dependencies>
         <sources jar="jetbrains.mps.baseLanguage.extensionMethods-src.jar" descriptor="methodExtension.mpl" />
@@ -21901,7 +21763,6 @@
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
-          <module ref="fe380742-bca4-4fda-beac-356eded9cf45(jetbrains.mps.ide.mps)" />
           <module ref="feddcab7-7240-49eb-bd42-e15e0a95cb26(jetbrains.mps.lang.intentions.pluginSolution)" />
         </dependencies>
         <sources jar="jetbrains.mps.baseLanguage.collections.trove-src.jar" descriptor="trove.mpl" />
@@ -22068,7 +21929,6 @@
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
-          <module ref="fe380742-bca4-4fda-beac-356eded9cf45(jetbrains.mps.ide.mps)" />
           <module ref="feddcab7-7240-49eb-bd42-e15e0a95cb26(jetbrains.mps.lang.intentions.pluginSolution)" />
         </dependencies>
         <sources jar="jetbrains.mps.baseLanguage.contracts-src.jar" descriptor="contracts.mpl" />
@@ -22234,7 +22094,6 @@
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
-          <module ref="fe380742-bca4-4fda-beac-356eded9cf45(jetbrains.mps.ide.mps)" />
           <module ref="feddcab7-7240-49eb-bd42-e15e0a95cb26(jetbrains.mps.lang.intentions.pluginSolution)" />
         </dependencies>
         <sources jar="jetbrains.mps.baseLanguage.overloadedOperators-src.jar" descriptor="overloadedOperators.mpl" />
@@ -22400,7 +22259,6 @@
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
-          <module ref="fe380742-bca4-4fda-beac-356eded9cf45(jetbrains.mps.ide.mps)" />
           <module ref="feddcab7-7240-49eb-bd42-e15e0a95cb26(jetbrains.mps.lang.intentions.pluginSolution)" />
         </dependencies>
         <sources jar="jetbrains.mps.baseLanguage.constructors-src.jar" descriptor="constructors.mpl" />
@@ -22566,7 +22424,6 @@
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
-          <module ref="fe380742-bca4-4fda-beac-356eded9cf45(jetbrains.mps.ide.mps)" />
           <module ref="feddcab7-7240-49eb-bd42-e15e0a95cb26(jetbrains.mps.lang.intentions.pluginSolution)" />
         </dependencies>
         <sources jar="jetbrains.mps.baseLanguage.builders-src.jar" descriptor="builders.mpl" />
@@ -22732,7 +22589,6 @@
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
-          <module ref="fe380742-bca4-4fda-beac-356eded9cf45(jetbrains.mps.ide.mps)" />
           <module ref="feddcab7-7240-49eb-bd42-e15e0a95cb26(jetbrains.mps.lang.intentions.pluginSolution)" />
         </dependencies>
         <sources jar="jetbrains.mps.lang.editor.table-src.jar" descriptor="table.mpl" />
@@ -22897,7 +22753,6 @@
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
-          <module ref="fe380742-bca4-4fda-beac-356eded9cf45(jetbrains.mps.ide.mps)" />
           <module ref="feddcab7-7240-49eb-bd42-e15e0a95cb26(jetbrains.mps.lang.intentions.pluginSolution)" />
         </dependencies>
         <sources jar="jetbrains.mps.lang.editor.table.runtime-src.jar" descriptor="jetbrains.mps.table.runtime.msd" />
@@ -23062,7 +22917,6 @@
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
-          <module ref="fe380742-bca4-4fda-beac-356eded9cf45(jetbrains.mps.ide.mps)" />
           <module ref="feddcab7-7240-49eb-bd42-e15e0a95cb26(jetbrains.mps.lang.intentions.pluginSolution)" />
         </dependencies>
         <sources jar="ypath.main-src.jar" descriptor="main.msd" />
@@ -23228,7 +23082,6 @@
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
-          <module ref="fe380742-bca4-4fda-beac-356eded9cf45(jetbrains.mps.ide.mps)" />
           <module ref="feddcab7-7240-49eb-bd42-e15e0a95cb26(jetbrains.mps.lang.intentions.pluginSolution)" />
         </dependencies>
         <sources jar="ypath.test-src.jar" descriptor="test.msd" />
@@ -23392,7 +23245,6 @@
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
-          <module ref="fe380742-bca4-4fda-beac-356eded9cf45(jetbrains.mps.ide.mps)" />
           <module ref="feddcab7-7240-49eb-bd42-e15e0a95cb26(jetbrains.mps.lang.intentions.pluginSolution)" />
         </dependencies>
         <sources jar="jetbrains.mps.ypath-src.jar" descriptor="ypath.mpl" />
@@ -23558,7 +23410,6 @@
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
-          <module ref="fe380742-bca4-4fda-beac-356eded9cf45(jetbrains.mps.ide.mps)" />
           <module ref="feddcab7-7240-49eb-bd42-e15e0a95cb26(jetbrains.mps.lang.intentions.pluginSolution)" />
         </dependencies>
         <sources jar="jetbrains.mps.ypath.pluginSolution-src.jar" descriptor="pluginSolution.msd" />
@@ -23756,7 +23607,6 @@
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
-          <module ref="fe380742-bca4-4fda-beac-356eded9cf45(jetbrains.mps.ide.mps)" />
           <module ref="feddcab7-7240-49eb-bd42-e15e0a95cb26(jetbrains.mps.lang.intentions.pluginSolution)" />
         </dependencies>
         <sources jar="jetbrains.mps.bash-src.jar" descriptor="bash.mpl" />
@@ -23923,7 +23773,6 @@
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
-          <module ref="fe380742-bca4-4fda-beac-356eded9cf45(jetbrains.mps.ide.mps)" />
           <module ref="feddcab7-7240-49eb-bd42-e15e0a95cb26(jetbrains.mps.lang.intentions.pluginSolution)" />
         </dependencies>
         <sources jar="jetbrains.mps.quickQueryLanguage-src.jar" descriptor="quickQueryLanguage.mpl" />
@@ -24091,7 +23940,6 @@
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
-          <module ref="fe380742-bca4-4fda-beac-356eded9cf45(jetbrains.mps.ide.mps)" />
           <module ref="feddcab7-7240-49eb-bd42-e15e0a95cb26(jetbrains.mps.lang.intentions.pluginSolution)" />
         </dependencies>
         <sources jar="jetbrains.mps.quickQueryLanguage.pluginSolution-src.jar" descriptor="pluginSolution.msd" />
@@ -24286,7 +24134,6 @@
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
-          <module ref="fe380742-bca4-4fda-beac-356eded9cf45(jetbrains.mps.ide.mps)" />
           <module ref="feddcab7-7240-49eb-bd42-e15e0a95cb26(jetbrains.mps.lang.intentions.pluginSolution)" />
         </dependencies>
         <library jar="gwt-dev.jar" />
@@ -24458,7 +24305,6 @@
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
-          <module ref="fe380742-bca4-4fda-beac-356eded9cf45(jetbrains.mps.ide.mps)" />
           <module ref="feddcab7-7240-49eb-bd42-e15e0a95cb26(jetbrains.mps.lang.intentions.pluginSolution)" />
         </dependencies>
         <sources jar="jetbrains.mps.gtext-src.jar" descriptor="gtext.mpl" />
@@ -24678,7 +24524,6 @@
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
-          <module ref="fe380742-bca4-4fda-beac-356eded9cf45(jetbrains.mps.ide.mps)" />
           <module ref="feddcab7-7240-49eb-bd42-e15e0a95cb26(jetbrains.mps.lang.intentions.pluginSolution)" />
         </dependencies>
         <sources jar="jetbrains.mps.analyzers-src.jar" descriptor="analyzers.mpl" />
@@ -24845,7 +24690,6 @@
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
-          <module ref="fe380742-bca4-4fda-beac-356eded9cf45(jetbrains.mps.ide.mps)" />
           <module ref="feddcab7-7240-49eb-bd42-e15e0a95cb26(jetbrains.mps.lang.intentions.pluginSolution)" />
         </dependencies>
         <sources jar="jetbrains.mps.baseLanguage.dates-src.jar" descriptor="dates.mpl" />
@@ -25014,7 +24858,6 @@
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
-          <module ref="fe380742-bca4-4fda-beac-356eded9cf45(jetbrains.mps.ide.mps)" />
           <module ref="feddcab7-7240-49eb-bd42-e15e0a95cb26(jetbrains.mps.lang.intentions.pluginSolution)" />
         </dependencies>
         <sources jar="jetbrains.mps.baseLanguage.dates.pluginSolution-src.jar" descriptor="pluginSolution.msd" />
@@ -25180,7 +25023,6 @@
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
-          <module ref="fe380742-bca4-4fda-beac-356eded9cf45(jetbrains.mps.ide.mps)" />
           <module ref="feddcab7-7240-49eb-bd42-e15e0a95cb26(jetbrains.mps.lang.intentions.pluginSolution)" />
         </dependencies>
         <sources jar="jetbrains.mps.baseLanguage.datesInternal-src.jar" descriptor="internal.mpl" />
@@ -25378,7 +25220,6 @@
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
-          <module ref="fe380742-bca4-4fda-beac-356eded9cf45(jetbrains.mps.ide.mps)" />
           <module ref="feddcab7-7240-49eb-bd42-e15e0a95cb26(jetbrains.mps.lang.intentions.pluginSolution)" />
         </dependencies>
         <sources jar="jetbrains.mps.baseLanguage.math-src.jar" descriptor="math.mpl" />
@@ -25610,7 +25451,6 @@
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
-          <module ref="fe380742-bca4-4fda-beac-356eded9cf45(jetbrains.mps.ide.mps)" />
           <module ref="feddcab7-7240-49eb-bd42-e15e0a95cb26(jetbrains.mps.lang.intentions.pluginSolution)" />
         </dependencies>
         <sources jar="jetbrains.mps.baseLanguage.money-src.jar" descriptor="money.mpl" />
@@ -25802,7 +25642,6 @@
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
-          <module ref="fe380742-bca4-4fda-beac-356eded9cf45(jetbrains.mps.ide.mps)" />
           <module ref="feddcab7-7240-49eb-bd42-e15e0a95cb26(jetbrains.mps.lang.intentions.pluginSolution)" />
         </dependencies>
         <sources jar="jetbrains.mps.platform.conf-src.jar" descriptor="conf.mpl" />
@@ -25969,7 +25808,6 @@
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
-          <module ref="fe380742-bca4-4fda-beac-356eded9cf45(jetbrains.mps.ide.mps)" />
           <module ref="feddcab7-7240-49eb-bd42-e15e0a95cb26(jetbrains.mps.lang.intentions.pluginSolution)" />
         </dependencies>
         <sources jar="jetbrains.mpslite-src.jar" descriptor="mpslite.mpl" />
@@ -26162,7 +26000,6 @@
           <module ref="fc4584d6-365c-4ceb-b660-b2c91933024d(jetbrains.mps.lang.test#1210261198005)" />
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
-          <module ref="fe380742-bca4-4fda-beac-356eded9cf45(jetbrains.mps.ide.mps)" />
           <module ref="feddcab7-7240-49eb-bd42-e15e0a95cb26(jetbrains.mps.lang.intentions.pluginSolution)" />
         </dependencies>
         <sources jar="jetbrains.mps.nanoj-src.jar" descriptor="nanoj.mpl" />

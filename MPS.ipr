@@ -395,6 +395,7 @@
       <modulePath path="${project}/workbench/make/jetbrains.mps.workbench.make.msd" folder="workbench" />
       <modulePath path="${project}/workbench/mps-editor/jetbrains.mps.ide.editor.msd" folder="workbench" />
       <modulePath path="${project}/workbench/mps-platform/base.msd" folder="workbench" />
+      <modulePath path="${project}/workbench/mps-workbench/jetbrains.mps.ide.msd" folder="workbench" />
       <modulePath path="${project}/workbench/mps-workbench/mps.msd" folder="workbench" />
     </projectModules>
     <genConfs />
