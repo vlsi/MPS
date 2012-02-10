@@ -21,7 +21,6 @@ import com.intellij.openapi.vcs.changes.patch.PatchBaseDirectoryDetector;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.psi.search.FilenameIndex;
 import com.intellij.psi.search.GlobalSearchScope;
-import jetbrains.mps.util.annotation.Patch;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.Collection;
