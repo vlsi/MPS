@@ -41,6 +41,7 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     addAction(new CopyNodeName_Action());
     addAction(new CopyNodeReference_Action());
     addAction(new CopyNode_Action());
+    addAction(new CreateAspect_Action());
     addAction(new CutNode_Action());
     addAction(new DeleteFavoritesList_Action());
     addAction(new DeleteModels_Action());
@@ -58,6 +59,7 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     addAction(new FindSpecificNodeUsages_Action());
     addAction(new Find_Action());
     addAction(new FoldSelection_Action());
+    addAction(new GoByCurrentReferenceToIDEA_Action());
     addAction(new GoToNodeById_Action());
     addAction(new GoToNode_Action());
     addAction(new GoToRule_Action());
@@ -124,6 +126,8 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     addGroup(new Edit_ActionGroup());
     addGroup(new EditorInternal_ActionGroup());
     addGroup(new EditorLeftPanelMenu_ActionGroup());
+    addGroup(new EditorPopupEx_ActionGroup());
+    addGroup(new EditorPopupEx_Goto_ActionGroup());
     addGroup(new EditorPopup_Show_ActionGroup());
     addGroup(new EditorTabActions_ActionGroup());
     addGroup(new FavoritesPopupWrapper_ActionGroup());
@@ -224,6 +228,8 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     insertGroupIntoAnother(FindUsages_ActionGroup.ID, NodeActions_ActionGroup.ID, NodeActions_ActionGroup.LABEL_ID_find);
     insertGroupIntoAnother(FindUsages_ActionGroup.ID, "EditorPopup_ActionGroupfind", null);
     insertGroupIntoAnother(EditorPopup_Show_ActionGroup.ID, "EditorPopup_ActionGroupshowIn", null);
+    insertGroupIntoAnother(EditorPopupEx_ActionGroup.ID, "EditorPopup_ActionGroupnew", null);
+    insertGroupIntoAnother(EditorPopupEx_Goto_ActionGroup.ID, "GoToEditorPopupAddition_ActionGroupother", null);
     insertGroupIntoAnother(AddToFavoritesGroup_ActionGroup.ID, FavoritesPopup_ActionGroup.ID, FavoritesPopup_ActionGroup.LABEL_ID_addToFavorites);
     insertGroupIntoAnother(Analyze_ActionGroup.ID, "AnalyzeMenu", null);
     insertGroupIntoAnother(CommonModuleActions_ActionGroup.ID, GeneratorActions_ActionGroup.ID, GeneratorActions_ActionGroup.LABEL_ID_commonModule);
