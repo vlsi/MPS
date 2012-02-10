@@ -5,12 +5,15 @@ package jetbrains.mps.baseLanguage.behavior;
 import jetbrains.mps.lang.core.behavior.IContainer_BehaviorDescriptor;
 import jetbrains.mps.lang.traceable.behavior.TraceableConcept_BehaviorDescriptor;
 import jetbrains.mps.lang.traceable.behavior.ScopeConcept_BehaviorDescriptor;
+import jetbrains.mps.lang.core.behavior.ScopeProvider_BehaviorDescriptor;
 import jetbrains.mps.smodel.SNode;
 import java.util.List;
 import javax.swing.Icon;
+import jetbrains.mps.scope.Scope;
 import org.jetbrains.annotations.Nullable;
+import jetbrains.mps.lang.core.behavior.ScopeProvider_Behavior;
 
-public abstract class BaseMethodDeclaration_BehaviorDescriptor extends GenericDeclaration_BehaviorDescriptor implements IValidIdentifier_BehaviorDescriptor, HasAnnotation_BehaviorDescriptor, IBLDeprecatable_BehaviorDescriptor, IStatementListContainer_BehaviorDescriptor, IContainer_BehaviorDescriptor, IMethodLike_BehaviorDescriptor, TypeAnnotable_BehaviorDescriptor, TraceableConcept_BehaviorDescriptor, ScopeConcept_BehaviorDescriptor {
+public abstract class BaseMethodDeclaration_BehaviorDescriptor extends GenericDeclaration_BehaviorDescriptor implements IValidIdentifier_BehaviorDescriptor, HasAnnotation_BehaviorDescriptor, IBLDeprecatable_BehaviorDescriptor, IStatementListContainer_BehaviorDescriptor, IContainer_BehaviorDescriptor, IMethodLike_BehaviorDescriptor, TypeAnnotable_BehaviorDescriptor, TraceableConcept_BehaviorDescriptor, ScopeConcept_BehaviorDescriptor, ScopeProvider_BehaviorDescriptor {
   public BaseMethodDeclaration_BehaviorDescriptor() {
   }
 
@@ -58,6 +61,10 @@ public abstract class BaseMethodDeclaration_BehaviorDescriptor extends GenericDe
     return BaseMethodDeclaration_Behavior.virtual_jniSignature_8847328628797656446(thisNode);
   }
 
+  public Scope virtual_getScope_3734116213129936182(SNode thisNode, SNode kind, SNode child) {
+    return BaseMethodDeclaration_Behavior.virtual_getScope_3734116213129936182(thisNode, kind, child);
+  }
+
   public boolean virtual_isExecuteSynchronous_1230212745736(SNode thisNode) {
     return IStatementListContainer_Behavior.virtual_isExecuteSynchronous_1230212745736(thisNode);
   }
@@ -89,6 +96,10 @@ public abstract class BaseMethodDeclaration_BehaviorDescriptor extends GenericDe
   @Nullable
   public String virtual_getTraceableProperty_5067982036267369901(SNode thisNode) {
     return BaseMethodDeclaration_Behavior.virtual_getTraceableProperty_5067982036267369901(thisNode);
+  }
+
+  public Scope virtual_getScope_7722139651431880752(SNode thisNode, SNode kind, String role, int index) {
+    return ScopeProvider_Behavior.virtual_getScope_7722139651431880752(thisNode, kind, role, index);
   }
 
   public SNode virtual_getNearestOverriddenMethod_5358895268254685434(SNode thisNode) {

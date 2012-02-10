@@ -342,6 +342,7 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.structure.TypeAnnotable" />
     <classNode dependClassName="jetbrains.mps.lang.core.structure.Attribute" />
     <classNode dependClassName="jetbrains.mps.lang.core.structure.IContainer" />
+    <classNode dependClassName="jetbrains.mps.lang.core.structure.ScopeProvider" />
     <classNode dependClassName="jetbrains.mps.lang.traceable.structure.ScopeConcept" />
     <classNode dependClassName="jetbrains.mps.lang.traceable.structure.TraceableConcept" />
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />

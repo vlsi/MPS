@@ -18,6 +18,10 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.reloading.ReflectionUtil;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import org.jetbrains.annotations.Nullable;
+import jetbrains.mps.scope.Scope;
+import jetbrains.mps.smodel.search.ISearchScope;
+import jetbrains.mps.smodel.search.SimpleSearchScope;
+import jetbrains.mps.scope.CompositeScope;
 import jetbrains.mps.smodel.structure.BehaviorDescriptor;
 import jetbrains.mps.smodel.structure.ConceptRegistry;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
@@ -228,6 +232,18 @@ public class BaseMethodDeclaration_Behavior {
 
   public static List<SNode> virtual_getScopeVariables_5067982036267369894(SNode thisNode) {
     return SLinkOperations.getTargets(thisNode, "parameter", true);
+  }
+
+  public static Scope virtual_getScope_3734116213129936182(SNode thisNode, SNode kind, SNode child) {
+    if (SConceptOperations.isSubConceptOf(kind, "jetbrains.mps.baseLanguage.structure.ParameterDeclaration")) {
+      Scope currentScope = new ISearchScope.Adapter(new SimpleSearchScope(SLinkOperations.getTargets(thisNode, "parameter", true)));
+      Scope nextScope = Scope.getScope(SNodeOperations.getParent(thisNode), thisNode, kind);
+      return (nextScope == null ?
+        currentScope :
+        new CompositeScope(currentScope, nextScope)
+      );
+    }
+    return null;
   }
 
   public static List<Icon> call_getMarkIcons_5039675756633081786(SNode thisNode) {
