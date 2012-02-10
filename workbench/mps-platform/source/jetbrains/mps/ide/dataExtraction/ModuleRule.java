@@ -13,25 +13,19 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.workbench.dataExtraction;
+package jetbrains.mps.ide.dataExtraction;
 
-import com.intellij.ide.DataManager;
 import com.intellij.ide.impl.dataRules.GetDataRule;
 import com.intellij.openapi.actionSystem.DataProvider;
-import com.intellij.openapi.project.Project;
-import com.intellij.openapi.wm.IdeFrame;
-import com.intellij.openapi.wm.WindowManager;
-import jetbrains.mps.workbench.MPSDataKeys;
+import jetbrains.mps.ide.actions.MPSCommonDataKeys;
+import jetbrains.mps.smodel.IOperationContext;
 import org.jetbrains.annotations.Nullable;
 
-public class FrameRule implements GetDataRule {
+public class ModuleRule implements GetDataRule {
   @Nullable
   public Object getData(DataProvider dataProvider) {
-    Project project = (Project) MPSDataKeys.PROJECT.getData(DataManager.getInstance().getDataContext());
-    if (project == null) {
-      IdeFrame[] frames = WindowManager.getInstance().getAllFrames();
-      return frames.length == 0 ? null : frames[0];
-    }
-    return WindowManager.getInstance().getFrame(project);
+    IOperationContext context = (IOperationContext) dataProvider.getData(MPSCommonDataKeys.OPERATION_CONTEXT.getName());
+    if (context == null) return null;
+    return context.getModule();
   }
 }
