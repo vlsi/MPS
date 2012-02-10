@@ -25,7 +25,7 @@
     <xi:include href="/META-INF/MPSPlatformExtensions.xml" xpointer="xpointer(/extensions/*)"/>
     <xi:include href="/META-INF/VcsExtensions.xml" xpointer="xpointer(/extensions/*)"/>
 
-    <errorHandler implementation="jetbrains.mps.workbench.diagnostics.CharismaReporter"/>
+    <errorHandler implementation="jetbrains.mps.ide.blame.CharismaReporter"/>
 
     <directoryIndexExcludePolicy implementation="jetbrains.mps.ide.vfs.ClassesGenPolicy"/>
 
