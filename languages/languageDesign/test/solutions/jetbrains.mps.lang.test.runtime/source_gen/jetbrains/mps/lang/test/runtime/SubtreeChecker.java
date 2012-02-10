@@ -60,16 +60,16 @@ public class SubtreeChecker {
                 break;
               }
             }
-            Assert.assertTrue(hasType);
+            Assert.assertTrue("node type <" + type1 + "> is not in <" + SLinkOperations.getTargets(SNodeOperations.cast(property, "jetbrains.mps.lang.test.structure.NodeTypeSetProperty"), "type", true) + ">", hasType);
           }
           if (SNodeOperations.isInstanceOf(property, "jetbrains.mps.lang.test.structure.NodeErrorPropety")) {
-            Assert.assertTrue(typeCheckingContext.getTypeMessageDontCheck(child) != null);
-            Assert.assertFalse(typeCheckingContext.getTypeMessageDontCheck(child).getMessageStatus() == MessageStatus.WARNING);
+            Assert.assertTrue("node <" + child + "> does not have expected error message", typeCheckingContext.getTypeMessageDontCheck(child) != null);
+            Assert.assertFalse("node <" + child + "> has warning", typeCheckingContext.getTypeMessageDontCheck(child).getMessageStatus() == MessageStatus.WARNING);
             isError = true;
           }
           if (SNodeOperations.isInstanceOf(property, "jetbrains.mps.lang.test.structure.NodeWarningProperty")) {
-            Assert.assertTrue(typeCheckingContext.getTypeMessageDontCheck(child) != null);
-            Assert.assertTrue(typeCheckingContext.getTypeMessageDontCheck(child).getMessageStatus() == MessageStatus.WARNING);
+            Assert.assertTrue("node <" + child + "> does not have expected warning", typeCheckingContext.getTypeMessageDontCheck(child) != null);
+            Assert.assertTrue("node <" + child + "> does not have expected warning", typeCheckingContext.getTypeMessageDontCheck(child).getMessageStatus() == MessageStatus.WARNING);
             isError = true;
           }
         }
@@ -78,10 +78,10 @@ public class SubtreeChecker {
         IErrorReporter reporter = typeCheckingContext.getTypeMessageDontCheck(child);
         if (reporter != null) {
           if (!(allowErrors)) {
-            Assert.assertTrue(reporter.getMessageStatus() != MessageStatus.ERROR);
+            Assert.assertTrue(reporter.reportError(), reporter.getMessageStatus() != MessageStatus.ERROR);
           }
           if (!(allowWarnings)) {
-            Assert.assertTrue(reporter.getMessageStatus() != MessageStatus.WARNING);
+            Assert.assertTrue(reporter.reportError(), reporter.getMessageStatus() != MessageStatus.WARNING);
           }
         }
       }
@@ -106,23 +106,20 @@ public class SubtreeChecker {
             continue;
           }
           if (SNodeOperations.isInstanceOf(property, "jetbrains.mps.lang.test.structure.NodeReachable")) {
-            Assert.assertFalse(SetSequence.fromSet(unreachable).contains(instruction));
+            Assert.assertFalse("instruction <" + instruction + "> is unreachable", SetSequence.fromSet(unreachable).contains(instruction));
           }
           if (SNodeOperations.isInstanceOf(property, "jetbrains.mps.lang.test.structure.NodeUnreachable")) {
-            Assert.assertTrue(SetSequence.fromSet(unreachable).contains(instruction));
-          }
-          if (SNodeOperations.isInstanceOf(property, "jetbrains.mps.lang.test.structure.NodeUnreachable")) {
-            Assert.assertTrue(SetSequence.fromSet(unreachable).contains(instruction));
+            Assert.assertTrue("instruction <" + instruction + "> is reachable", SetSequence.fromSet(unreachable).contains(instruction));
           }
           if (SNodeOperations.isInstanceOf(property, "jetbrains.mps.lang.test.structure.VariableInialized")) {
             Set<Object> vars = (Set<Object>) initialized.get(instruction);
             SNode var = SLinkOperations.getTarget(SNodeOperations.cast(property, "jetbrains.mps.lang.test.structure.VariableInialized"), "var", true);
-            Assert.assertTrue(SetSequence.fromSet(vars).contains(SLinkOperations.getTarget(var, "variableDeclaration", false)));
+            Assert.assertTrue("variable <" + var + "> is not initialized", SetSequence.fromSet(vars).contains(SLinkOperations.getTarget(var, "variableDeclaration", false)));
           }
           if (SNodeOperations.isInstanceOf(property, "jetbrains.mps.lang.test.structure.VariableLive")) {
             Set<Object> vars = (Set<Object>) live.get(instruction);
             SNode var = SLinkOperations.getTarget(SNodeOperations.cast(property, "jetbrains.mps.lang.test.structure.VariableInialized"), "var", true);
-            Assert.assertTrue(SetSequence.fromSet(vars).contains(SLinkOperations.getTarget(var, "variableDeclaration", false)));
+            Assert.assertTrue("variable <" + var + "> is not live", SetSequence.fromSet(vars).contains(SLinkOperations.getTarget(var, "variableDeclaration", false)));
           }
         }
       }
