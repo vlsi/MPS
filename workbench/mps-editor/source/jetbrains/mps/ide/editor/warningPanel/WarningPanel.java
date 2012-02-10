@@ -17,7 +17,6 @@ package jetbrains.mps.ide.editor.warningPanel;
 
 import com.intellij.ui.HyperlinkLabel;
 import com.intellij.ui.LightColors;
-import com.intellij.xml.util.HtmlUtil;
 import com.intellij.xml.util.XmlStringUtil;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;

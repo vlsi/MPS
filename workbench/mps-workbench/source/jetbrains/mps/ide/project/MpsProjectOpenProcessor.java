@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.project;
+package jetbrains.mps.ide.project;
 
 import com.intellij.ide.impl.ProjectUtil;
 import com.intellij.openapi.project.Project;

@@ -17,7 +17,6 @@ package jetbrains.mps.workbench.recent;
 
 import com.intellij.ide.RecentProjectsManagerBase;
 import com.intellij.ide.impl.ProjectUtil;
-import com.intellij.openapi.components.State;
 import com.intellij.openapi.components.Storage;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.project.ProjectManager;

@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.ide;
+package jetbrains.mps.refactoring.framework;
 
 import com.intellij.ui.ScrollPaneFactory;
 import com.intellij.ui.components.JBList;
@@ -35,7 +35,8 @@ import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public abstract class ChooseItemComponent<Item> extends JPanel {
+@Deprecated
+abstract class ChooseItemComponent<Item> extends JPanel {
   private JTextField myTextField;
   private Map<String, Set<Item>> myItemsMap = new HashMap<String, Set<Item>>();
   private List<String> myNames = new ArrayList<String>();

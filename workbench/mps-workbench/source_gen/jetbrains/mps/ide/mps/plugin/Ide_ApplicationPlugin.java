@@ -9,10 +9,10 @@ import jetbrains.mps.workbench.action.BaseKeymapChanges;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 
-public class Mps_ApplicationPlugin extends BaseApplicationPlugin {
-  private PluginId myId = PluginId.getId("jetbrains.mps.ide.mps");
+public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
+  private PluginId myId = PluginId.getId("jetbrains.mps.ide");
 
-  public Mps_ApplicationPlugin() {
+  public Ide_ApplicationPlugin() {
   }
 
   public PluginId getId() {

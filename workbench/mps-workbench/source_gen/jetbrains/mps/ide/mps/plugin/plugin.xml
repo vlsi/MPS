@@ -14,7 +14,7 @@
     
   <application-components>
     <component>
-      <implementation-class>jetbrains.mps.ide.mps.plugin.Mps_PluginInitializer</implementation-class>
+      <implementation-class>jetbrains.mps.ide.mps.plugin.Ide_PluginInitializer</implementation-class>
     </component>
   </application-components>
     
