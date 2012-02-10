@@ -127,10 +127,35 @@ public class StatementList_Behavior {
     return result;
   }
 
+  public static List<SNode> call_getLocalVariableDeclarations_9165170089438554320(SNode thisNode, String role, int index) {
+    List<SNode> result = new ArrayList<SNode>();
+
+    for (int num = 0; num < index; num++) {
+      if (SNodeOperations.isInstanceOf(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "statement", true)).getElement(num), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement")) {
+        ListSequence.fromList(result).addElement(SLinkOperations.getTarget(SNodeOperations.cast(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "statement", true)).getElement(num), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement"), "localVariableDeclaration", true));
+      }
+    }
+
+    return result;
+  }
+
   public static Scope virtual_getScope_3734116213129936182(SNode thisNode, SNode kind, SNode child) {
     if (SConceptOperations.isSubConceptOf(kind, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration")) {
       Scope currentScope = new ISearchScope.Adapter(new SimpleSearchScope(StatementList_Behavior.call_getLocalVariableDeclarations_3986960521977638556(thisNode, child)));
       Scope nextScope = Scope.getScope(SNodeOperations.getParent(thisNode), child, kind);
+      return (nextScope == null ?
+        currentScope :
+        new CompositeScope(currentScope, nextScope)
+      );
+    }
+
+    return null;
+  }
+
+  public static Scope virtual_getScope_7722139651431880752(SNode thisNode, SNode kind, String role, int index) {
+    if (SConceptOperations.isSubConceptOf(kind, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration")) {
+      Scope currentScope = new ISearchScope.Adapter(new SimpleSearchScope(StatementList_Behavior.call_getLocalVariableDeclarations_9165170089438554320(thisNode, role, index)));
+      Scope nextScope = Scope.getScope(SNodeOperations.getParent(thisNode), thisNode, kind);
       return (nextScope == null ?
         currentScope :
         new CompositeScope(currentScope, nextScope)
