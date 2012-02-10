@@ -31,7 +31,9 @@ public class PropertyMacroActions {
       SNode attributedNode = SNodeOperations.getParent(node);
       SNode propertyDeclaration = AttributeOperations.getPropertyDeclaration(SNodeOperations.as(node, "jetbrains.mps.lang.core.structure.PropertyAttribute"));
       EditorCell cell = editorContext.getNodeEditorComponent().findCellWithId(attributedNode, PropertyDeclaration_Behavior.call_getCellId_1216822951265(propertyDeclaration));
-      editorContext.getNodeEditorComponent().changeSelection(cell);
+      if (cell != null) {
+        editorContext.getNodeEditorComponent().changeSelection(cell);
+      }
       SNodeOperations.deleteNode(node);
     }
   }
