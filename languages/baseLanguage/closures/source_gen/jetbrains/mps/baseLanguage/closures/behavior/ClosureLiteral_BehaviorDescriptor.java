@@ -8,13 +8,16 @@ import jetbrains.mps.baseLanguage.behavior.IContainsStatementList_BehaviorDescri
 import jetbrains.mps.baseLanguage.behavior.IMethodLike_BehaviorDescriptor;
 import jetbrains.mps.baseLanguage.behavior.IFinalWrapper_BehaviorDescriptor;
 import jetbrains.mps.baseLanguage.behavior.IControlFlowInterrupter_BehaviorDescriptor;
+import jetbrains.mps.lang.core.behavior.ScopeProvider_BehaviorDescriptor;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.baseLanguage.behavior.IStatementListContainer_Behavior;
 import jetbrains.mps.baseLanguage.behavior.IContainsStatementList_Behavior;
 import jetbrains.mps.baseLanguage.behavior.IMethodLike_Behavior;
 import java.util.List;
+import jetbrains.mps.scope.Scope;
+import jetbrains.mps.lang.core.behavior.ScopeProvider_Behavior;
 
-public class ClosureLiteral_BehaviorDescriptor extends Expression_BehaviorDescriptor implements IStatementListContainer_BehaviorDescriptor, IContainsStatementList_BehaviorDescriptor, IMethodLike_BehaviorDescriptor, IFinalWrapper_BehaviorDescriptor, IControlFlowInterrupter_BehaviorDescriptor {
+public class ClosureLiteral_BehaviorDescriptor extends Expression_BehaviorDescriptor implements IStatementListContainer_BehaviorDescriptor, IContainsStatementList_BehaviorDescriptor, IMethodLike_BehaviorDescriptor, IFinalWrapper_BehaviorDescriptor, IControlFlowInterrupter_BehaviorDescriptor, ScopeProvider_BehaviorDescriptor {
   public ClosureLiteral_BehaviorDescriptor() {
   }
 
@@ -54,12 +57,20 @@ public class ClosureLiteral_BehaviorDescriptor extends Expression_BehaviorDescri
     return ClosureLiteral_Behavior.virtual_getThrowableTypes_6204026822016975623(thisNode);
   }
 
+  public Scope virtual_getScope_7722139651431880752(SNode thisNode, SNode kind, String role, int index) {
+    return ScopeProvider_Behavior.virtual_getScope_7722139651431880752(thisNode, kind, role, index);
+  }
+
   public SNode virtual_getType_1229718192182(SNode thisNode, List<SNode> paramTypes, SNode resultType, SNode returnType, SNode termType, List<SNode> throwsTypes) {
     return ClosureLiteral_Behavior.virtual_getType_1229718192182(thisNode, paramTypes, resultType, returnType, termType, throwsTypes);
   }
 
   public SNode virtual_getBody_1239354440022(SNode thisNode) {
     return ClosureLiteral_Behavior.virtual_getBody_1239354440022(thisNode);
+  }
+
+  public Scope virtual_getScope_3734116213129936182(SNode thisNode, SNode kind, SNode child) {
+    return ClosureLiteral_Behavior.virtual_getScope_3734116213129936182(thisNode, kind, child);
   }
 
   @Override
