@@ -18,15 +18,17 @@ package jetbrains.mps.idea.core.ui;
 
 import jetbrains.mps.fileTypes.FileIcons;
 import jetbrains.mps.idea.core.MPSBundle;
-import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelReference;
+import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
+import jetbrains.mps.util.misc.hash.HashSet;
 
 import javax.swing.*;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
+import java.util.Set;
 
 /**
  * Created by IntelliJ IDEA.
@@ -37,6 +39,12 @@ import java.util.List;
  */
 public class ImportedModelsTable extends MpsElementsTable<SModelReference> {
     public static Comparator<SModelReference> MODEL_REFERENCE_COMPARATOR = new ModelReferenceComparator();
+
+    private EditableSModelDescriptor myModelDescriptor;
+
+    public void setDescriptor(EditableSModelDescriptor descriptor) {
+        myModelDescriptor = descriptor;
+    }
 
     @Override
     protected String getText(SModelReference modelReference) {
@@ -50,16 +58,20 @@ public class ImportedModelsTable extends MpsElementsTable<SModelReference> {
 
     @Override
     protected List<SModelReference> getAllVisibleElements() {
-        final List<SModelReference> result = new ArrayList<SModelReference>();
-        ModelAccess.instance().runReadAction(new Runnable() {
-            @Override
-            public void run() {
-                List<SModelDescriptor> modelDescriptors = GlobalScope.getInstance().getModelDescriptors();
-                for (SModelDescriptor modelDescriptor : modelDescriptors) {
-                    result.add(modelDescriptor.getSModelReference());
-                }
+        Set<SModelReference> modelsToHide = new HashSet<SModelReference>();
+        modelsToHide.add(myModelDescriptor.getSModelReference());
+        for (SModelReference importedModelRef : getElements()) {
+            modelsToHide.add(importedModelRef);
+        }
+
+        List<SModelReference> result = new ArrayList<SModelReference>();
+        IModule module = myModelDescriptor.getModule();
+        for (SModelDescriptor modelDescriptor : module.getScope().getModelDescriptors()) {
+            if (modelsToHide.contains(modelDescriptor.getSModelReference())) {
+                continue;
             }
-        });
+            result.add(modelDescriptor.getSModelReference());
+        }
         return result;
     }
 

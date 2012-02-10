@@ -165,6 +165,7 @@ public abstract class MpsElementsTable<T> {
 
     protected abstract Icon getIcon(T element);
 
+    // should be executed only inside MPS model read
     protected abstract List<T> getAllVisibleElements();
 
     protected abstract Comparator<T> getComparator();

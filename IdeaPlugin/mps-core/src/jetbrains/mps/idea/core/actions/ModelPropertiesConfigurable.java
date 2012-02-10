@@ -62,6 +62,7 @@ public class ModelPropertiesConfigurable implements Configurable, Disposable {
     public ModelPropertiesConfigurable(EditableSModelDescriptor descriptor, Project project) {
         ModelAccess.instance().checkReadAccess();
         myDescriptor = descriptor;
+        myImportedModelsTable.setDescriptor(myDescriptor);
         myProject = project;
         initState(myDescriptor.getSModel());
     }
