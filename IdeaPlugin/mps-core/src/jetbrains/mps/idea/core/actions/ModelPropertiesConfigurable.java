@@ -21,6 +21,7 @@ import com.intellij.openapi.options.Configurable;
 import com.intellij.openapi.options.ConfigurationException;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.Disposer;
+import com.intellij.ui.SimpleTextAttributes;
 import com.intellij.ui.TabbedPaneWrapper;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.idea.core.icons.MPSIcons;
@@ -55,15 +56,24 @@ public class ModelPropertiesConfigurable implements Configurable, Disposable {
     private JComponent myTabbedPaneComponent;
     private JTextField myPackageName;
     private String myModelLongName;
+    private Set<ModuleReference> myVisibleLanguages;
 
     public ModelPropertiesConfigurable(EditableSModelDescriptor descriptor, Project project) {
-        ModelAccess.assertLegalRead();
+        ModelAccess.instance().checkReadAccess();
         myDescriptor = descriptor;
         myProject = project;
-        SModel sModel = myDescriptor.getSModel();
+        initState(myDescriptor.getSModel());
+    }
+
+    private void initState(SModel sModel) {
         myUsedLanguages = sModel.importedLanguages();
         myImportedModels = SModelOperations.getImportedModelUIDs(sModel);
         myModelLongName = myDescriptor.getLongName();
+        IModule module = myDescriptor.getModule();
+        myVisibleLanguages = new HashSet<ModuleReference>();
+        for (Language visibleLanguage : module.getScope().getVisibleLanguages()) {
+            myVisibleLanguages.add(visibleLanguage.getModuleReference());
+        }
     }
 
     private void createUIComponents() {
@@ -96,7 +106,20 @@ public class ModelPropertiesConfigurable implements Configurable, Disposable {
     }
 
     private JComponent createUsedLanguagesTable() {
-        myUsedLanguagesTable = new UsedLanguagesTable();
+        myUsedLanguagesTable = new UsedLanguagesTable() {
+            @Override
+            protected SimpleTextAttributes getTextAttributes(ModuleReference moduleReference) {
+                if (myVisibleLanguages.contains(moduleReference)) {
+                    return super.getTextAttributes(moduleReference);
+                }
+                return SimpleTextAttributes.GRAY_ATTRIBUTES;
+            }
+
+            @Override
+            public boolean isModified(List<ModuleReference> elements) {
+                return super.isModified(elements) || !myVisibleLanguages.containsAll(getElements());
+            }
+        };
         return myUsedLanguagesTable.createComponent();
     }
 
@@ -125,9 +148,9 @@ public class ModelPropertiesConfigurable implements Configurable, Disposable {
                 setLongName();
 
                 myDescriptor.save();
-                myUsedLanguages = sModel.importedLanguages();
-                myImportedModels = SModelOperations.getImportedModelUIDs(sModel);
-                myModelLongName = myDescriptor.getLongName();
+                initState(sModel);
+
+                myComponent.repaint();
             }
         }, ProjectHelper.toMPSProject(myProject));
     }
@@ -154,10 +177,13 @@ public class ModelPropertiesConfigurable implements Configurable, Disposable {
         Set<ModuleReference> languagesToAdd = new HashSet<ModuleReference>(usedLanguages);
         languagesToAdd.removeAll(currentlyUsedLanguages);
         for (ModuleReference language : languagesToAdd) {
+            sModel.addLanguage(language);
+        }
+
+        for (ModuleReference language : usedLanguages) {
             if (module.getScope().getLanguage(language) == null) {
                 module.addUsedLanguage(language);
             }
-            sModel.addLanguage(language);
         }
     }
 
