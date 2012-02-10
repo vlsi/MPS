@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.ide;
+package jetbrains.mps.refactoring.framework;
 
 import jetbrains.mps.smodel.ModelAccess;
 
@@ -22,7 +22,8 @@ import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Component;
 
-public class ChooseItemWindowCellRenderer<Item> extends JPanel implements ListCellRenderer {
+@Deprecated
+class ChooseItemWindowCellRenderer<Item> extends JPanel implements ListCellRenderer {
   private JLabel myTextLabel;
   private JLabel myDescriptionLabel;
   private ChooseItemComponent<Item> myChooseItemComponent;

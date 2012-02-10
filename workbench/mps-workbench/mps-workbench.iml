@@ -32,6 +32,7 @@
     <orderEntry type="module" module-name="actions-runtime" />
     <orderEntry type="module" module-name="make-runtime" />
     <orderEntry type="module" module-name="refactoring-runtime" />
+    <orderEntry type="module" module-name="baseLanguage-util" />
   </component>
 </module>
 
