@@ -809,12 +809,12 @@
     <echo file="${idea.application.info}">${idea.application.info.contents}</echo>
     <jar destfile="${deploy.dir}/MPS/lib/branding.jar" duplicate="preserve" compress="true">
       <zipfileset file="${idea.application.info}" prefix="idea" />
-      <zipfileset file="${mps_home}/workbench/source/MPS_16.png" />
-      <zipfileset file="${mps_home}/workbench/source/MPS_32.png" />
-      <zipfileset file="${mps_home}/workbench/source/jetbrains/mps/workbench/icons/splash.png" />
-      <zipfileset file="${mps_home}/workbench/source/jetbrains/mps/workbench/icons/mpsAbout.png" />
-      <zipfileset file="${mps_home}/workbench/source/jetbrains/mps/workbench/icons/mpsWelcomeCaption.png" />
-      <zipfileset file="${mps_home}/workbench/source/jetbrains/mps/workbench/icons/mpsSlogan.png" />
+      <zipfileset file="${mps_home}/workbench/mps-workbench/source/MPS_16.png" />
+      <zipfileset file="${mps_home}/workbench/mps-workbench/source/MPS_32.png" />
+      <zipfileset file="${mps_home}/workbench/mps-workbench/source/jetbrains/mps/workbench/icons/splash.png" />
+      <zipfileset file="${mps_home}/workbench/mps-workbench/source/jetbrains/mps/workbench/icons/mpsAbout.png" />
+      <zipfileset file="${mps_home}/workbench/mps-workbench/source/jetbrains/mps/workbench/icons/mpsWelcomeCaption.png" />
+      <zipfileset file="${mps_home}/workbench/mps-workbench/source/jetbrains/mps/workbench/icons/mpsSlogan.png" />
     </jar>
     <delete dir="${tmpdir}" />
   </target>
