@@ -15,8 +15,6 @@
  */
 package jetbrains.mps.plugins;
 
-import jetbrains.mps.ide.actions.Ide_ApplicationPlugin;
-import jetbrains.mps.ide.actions.Ide_ProjectPlugin;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin;
 import jetbrains.mps.plugins.projectplugins.BaseProjectPlugin;
@@ -36,6 +34,8 @@ public class PluginUtil {
   private static final Logger LOG = Logger.getLogger(PluginUtil.class);
 
   public static final String IDE_MODULE_ID = "jetbrains.mps.ide";
+  public static final String IDE_MODULE_PROJECTPLUGIN = "jetbrains.mps.ide.actions.Ide_ProjectPlugin"; // FIXME Ide_ProjectPlugin.class.getName();
+  public static final String IDE_MODULE_APPPLUGIN = "jetbrains.mps.ide.actions.Ide_ApplicationPlugin";// FIXME  Ide_ApplicationPlugin.class.getName();
 
   public static Set<IModule> collectPluginModules() {
     Set<IModule> modules = new HashSet<IModule>();
@@ -120,7 +120,7 @@ public class PluginUtil {
     }
 
     public String getPlugin(Solution s) {
-      if (s.getModuleFqName().equals(IDE_MODULE_ID)) return Ide_ProjectPlugin.class.getName();
+      if (s.getModuleFqName().equals(IDE_MODULE_ID)) return IDE_MODULE_PROJECTPLUGIN;
       return s.getModuleFqName() + ".plugin." + NameUtil.capitalize(NameUtil.shortNameFromLongName(s.getModuleFqName())) + "_ProjectPlugin";
     }
   }
@@ -131,7 +131,7 @@ public class PluginUtil {
     }
 
     public String getPlugin(Solution s) {
-      if (s.getModuleFqName().equals(IDE_MODULE_ID)) return Ide_ApplicationPlugin.class.getName();
+      if (s.getModuleFqName().equals(IDE_MODULE_ID)) return IDE_MODULE_APPPLUGIN;
       return s.getModuleFqName() + ".plugin." + NameUtil.capitalize(NameUtil.shortNameFromLongName(s.getModuleFqName())) + "_ApplicationPlugin";
     }
   }

@@ -11,7 +11,6 @@
     <dependency reexport="false">1ed103c3-3aa6-49b7-9c21-6765ee11f224(MPS.Editor)</dependency>
     <dependency reexport="false">86441d7a-e194-42da-81a5-2161ec62a379(MPS.Workbench)</dependency>
     <dependency reexport="false">019b622b-0aef-4dd3-86d0-4eef01f3f6bb(jetbrains.mps.ide)</dependency>
-    <dependency reexport="false">fe380742-bca4-4fda-beac-356eded9cf45(jetbrains.mps.ide.mps)</dependency>
     <dependency reexport="false">b7dc5ee0-84c8-4c48-97ca-089b1f73fda3(jetbrains.mps.lang.actions.pluginSolution)</dependency>
     <dependency reexport="false">af65afd8-f0dd-4942-87d9-63a55f2a9db1(jetbrains.mps.lang.behavior)</dependency>
     <dependency reexport="false">cc7e55a9-3229-432e-9f7c-c36c9aed4fbc(jetbrains.mps.lang.behavior.pluginSolution)</dependency>

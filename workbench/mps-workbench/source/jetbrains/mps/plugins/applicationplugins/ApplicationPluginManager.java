@@ -16,7 +16,6 @@
 package jetbrains.mps.plugins.applicationplugins;
 
 import com.intellij.openapi.components.ApplicationComponent;
-import jetbrains.mps.ide.actions.Ide_ApplicationPlugin;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.plugins.PluginUtil;
 import jetbrains.mps.plugins.PluginUtil.ApplicationPluginCreator;
@@ -34,7 +33,7 @@ public class ApplicationPluginManager extends BaseApplicationPluginManager imple
 
     BaseApplicationPlugin idePlugin = null;
     for (BaseApplicationPlugin p : mySortedPlugins) {
-      if (p.getClass().getName().equals(Ide_ApplicationPlugin.class.getName())) {
+      if (p.getClass().getName().equals(PluginUtil.IDE_MODULE_APPPLUGIN)) {
         idePlugin = p;
         break;
       }
