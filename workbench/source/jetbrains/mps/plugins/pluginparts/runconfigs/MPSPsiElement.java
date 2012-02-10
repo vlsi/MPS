@@ -1,23 +1,17 @@
 package jetbrains.mps.plugins.pluginparts.runconfigs;
 
+import com.intellij.psi.PsiElement;
 import com.intellij.psi.impl.FakePsiElement;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.SNodePointer;
-import java.util.List;
-import jetbrains.mps.util.Mapper;
-import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.smodel.SModelReference;
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.project.structure.modules.ModuleReference;
-import jetbrains.mps.smodel.MPSModuleRepository;
-import com.intellij.psi.PsiElement;
-import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Computable;
+import jetbrains.mps.util.Mapper;
+
 import java.util.ArrayList;
+import java.util.List;
 
 public class MPSPsiElement<T> extends FakePsiElement {
   private static final Logger LOG = Logger.getLogger(MPSPsiElement.class);
@@ -60,26 +54,22 @@ public class MPSPsiElement<T> extends FakePsiElement {
   public Object getMPSItem() {
     if (myItem instanceof SNodePointer) {
       return ((SNodePointer) myItem).getNode();
-    } else
-    if (myItem instanceof List) {
+    } else if (myItem instanceof List) {
       return map((List<SNodePointer>) myItem, new Mapper<SNodePointer, SNode>() {
         public SNode value(SNodePointer key) {
           return key.getNode();
         }
       });
-    } else
-    if (myItem instanceof SModelReference) {
+    } else if (myItem instanceof SModelReference) {
       SModelReference ref = (SModelReference) myItem;
       SModelDescriptor descriptor = SModelRepository.getInstance().getModelDescriptor(ref);
       if (descriptor == null) {
         return null;
       }
       return descriptor.getSModel();
-    } else
-    if (myItem instanceof ModuleReference) {
+    } else if (myItem instanceof ModuleReference) {
       return MPSModuleRepository.getInstance().getModule(((ModuleReference) myItem));
-    } else
-    if (myItem instanceof MPSProject) {
+    } else if (myItem instanceof MPSProject) {
       return myItem;
     }
     throw new IllegalStateException((myItem == null ?

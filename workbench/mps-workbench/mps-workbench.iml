@@ -28,6 +28,10 @@
     <orderEntry type="module" module-name="testbench" scope="TEST" />
     <orderEntry type="library" name="Beansbinding" level="project" />
     <orderEntry type="module" module-name="uiLanguage-runtime" />
+    <orderEntry type="module" module-name="findUsages-runtime" />
+    <orderEntry type="module" module-name="actions-runtime" />
+    <orderEntry type="module" module-name="make-runtime" />
+    <orderEntry type="module" module-name="refactoring-runtime" />
   </component>
 </module>
 

@@ -18,7 +18,6 @@ package jetbrains.mps.project;
 import com.intellij.openapi.components.*;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.project.MPSProjectVersion.MyState;
-import org.jetbrains.annotations.NotNull;
 
 @State(
   name = "ProjectVersion",
