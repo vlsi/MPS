@@ -24,6 +24,7 @@ import com.intellij.openapi.util.Disposer;
 import com.intellij.ui.SimpleTextAttributes;
 import com.intellij.ui.TabbedPaneWrapper;
 import jetbrains.mps.ide.project.ProjectHelper;
+import jetbrains.mps.idea.core.MPSBundle;
 import jetbrains.mps.idea.core.icons.MPSIcons;
 import jetbrains.mps.idea.core.ui.ImportedModelsTable;
 import jetbrains.mps.idea.core.ui.UsedLanguagesTable;
@@ -78,15 +79,15 @@ public class ModelPropertiesConfigurable implements Configurable, Disposable {
 
     private void createUIComponents() {
         TabbedPaneWrapper tabbedPane = new TabbedPaneWrapper(this);
-        tabbedPane.addTab("Imported Models", MPSIcons.MODELS_TAB_ICON, createImportedModelsTable(), "Models imported into this model");
-        tabbedPane.addTab("Used Languages", MPSIcons.LANGUAGES_TAB_ICON, createUsedLanguagesTable(), "Languages used in this model");
+        tabbedPane.addTab(MPSBundle.message("model.properties.configurable.imported.models.tab.title"), MPSIcons.MODELS_TAB_ICON, createImportedModelsTable(), MPSBundle.message("model.properties.configurable.imported.models.tab.tooltip"));
+        tabbedPane.addTab(MPSBundle.message("model.properties.configurable.used.languages.tab.title"), MPSIcons.LANGUAGES_TAB_ICON, createUsedLanguagesTable(), MPSBundle.message("model.properties.configurable.used.languages.tab.tooltip"));
         myTabbedPaneComponent = tabbedPane.getComponent();
     }
 
     @Nls
     @Override
     public String getDisplayName() {
-        return "Model Properties for: " + myDescriptor.getLongName();
+        return MPSBundle.message("model.properties.configurable.display.name", myDescriptor.getLongName());
     }
 
     @Override
@@ -108,9 +109,9 @@ public class ModelPropertiesConfigurable implements Configurable, Disposable {
     private JComponent createUsedLanguagesTable() {
         myUsedLanguagesTable = new UsedLanguagesTable() {
             @Override
-            protected SimpleTextAttributes getTextAttributes(ModuleReference moduleReference) {
-                if (myVisibleLanguages.contains(moduleReference)) {
-                    return super.getTextAttributes(moduleReference);
+            protected SimpleTextAttributes getTextAttributes(ModuleReference element) {
+                if (myVisibleLanguages.contains(element)) {
+                    return super.getTextAttributes(element);
                 }
                 return SimpleTextAttributes.GRAY_ATTRIBUTES;
             }
@@ -118,6 +119,14 @@ public class ModelPropertiesConfigurable implements Configurable, Disposable {
             @Override
             public boolean isModified(List<ModuleReference> elements) {
                 return super.isModified(elements) || !myVisibleLanguages.containsAll(getElements());
+            }
+
+            @Override
+            protected String getToolTipText(ModuleReference element) {
+                if (myVisibleLanguages.contains(element)) {
+                    return super.getToolTipText(element);
+                }
+                return MPSBundle.message("model.properties.configurable.used.language.not.imported.into.module.tooltip");
             }
         };
         return myUsedLanguagesTable.createComponent();

@@ -155,6 +155,7 @@ public abstract class MpsElementsTable<T> {
                     T tableItem = (T) value;
                     setIcon(MpsElementsTable.this.getIcon(tableItem));
                     append(getText(tableItem), getTextAttributes(tableItem));
+                    setToolTipText(MpsElementsTable.this.getToolTipText(tableItem));
                 }
             }
         };
@@ -199,7 +200,11 @@ public abstract class MpsElementsTable<T> {
         return !getElements().equals(sortedLanguagesList);
     }
 
-    protected SimpleTextAttributes getTextAttributes(T moduleReference) {
+    protected SimpleTextAttributes getTextAttributes(T element) {
         return SimpleTextAttributes.REGULAR_ATTRIBUTES;
+    }
+
+    protected String getToolTipText(T element) {
+        return null;
     }
 }

@@ -88,7 +88,7 @@ public class OpenModelPropertiesAction extends AnAction {
     private void setModelFile(AnActionEvent event) {
         myModelFile = null;
         Set<IFile> modelFiles = event.getData(MPSDataKeys.MODEL_FILES);
-        if (modelFiles.size() == 1) {
+        if (modelFiles != null && modelFiles.size() == 1) {
             myModelFile = modelFiles.iterator().next();
         }
     }
