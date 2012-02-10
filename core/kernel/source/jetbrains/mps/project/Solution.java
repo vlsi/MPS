@@ -170,6 +170,7 @@ public class Solution extends AbstractModule {
     }
 
     invalidateDependencies();
+    invalidateCaches();
   }
 
   public void dispose() {
