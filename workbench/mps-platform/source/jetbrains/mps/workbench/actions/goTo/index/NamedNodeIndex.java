@@ -24,7 +24,6 @@ import jetbrains.mps.util.ConditionalIterable;
 import jetbrains.mps.workbench.actions.goTo.index.descriptor.BaseSNodeDescriptor;
 import org.jetbrains.annotations.NonNls;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class NamedNodeIndex extends BaseSNodeDescriptorIndex {

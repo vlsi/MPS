@@ -16,6 +16,7 @@
 package jetbrains.mps.workbench;
 
 import com.intellij.openapi.actionSystem.DataKey;
+import jetbrains.mps.ide.actions.MPSCommonDataKeys.Description;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.SNode;
