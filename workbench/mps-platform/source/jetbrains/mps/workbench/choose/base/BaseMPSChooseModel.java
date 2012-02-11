@@ -109,17 +109,17 @@ public abstract class BaseMPSChooseModel<T> implements ChooseByNameModel {
     });
   }
 
-  public Object[] getElementsByName(final String name, final boolean checkBoxState, final String pattern) {
-    return ModelAccess.instance().runReadAction(new Computable<Object[]>() {
-      public Object[] compute() {
+  public NavigationItem[] getElementsByName(final String name, final boolean checkBoxState, final String pattern) {
+    return ModelAccess.instance().runReadAction(new Computable<NavigationItem[]>() {
+      public NavigationItem[] compute() {
         Map<String, List<NavigationItem>> namesMap = checkBoxState ? getGlobalNamesCache() : getProjectNamesCache();
         List<NavigationItem> navigationItems = namesMap.get(name);
 
         //this normally should not happen, this code is here because of MPS-10408
-        if (navigationItems != null) return navigationItems.toArray();
+        if (navigationItems != null) return navigationItems.toArray(new NavigationItem[0]);
 
         LOG.error("No navigation items for element with name: " + name);
-        return new Object[0];
+        return new NavigationItem[0];
       }
     });
   }

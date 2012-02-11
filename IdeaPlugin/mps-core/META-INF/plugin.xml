@@ -55,7 +55,8 @@
         <mps.LanguageLibrary dir="/languages"/>
         <treeStructureProvider implementation="jetbrains.mps.idea.core.projectView.MPSTreeStructureProvider"/>
         <lang.fileViewProviderFactory language="MPS" implementationClass="jetbrains.mps.MPSFileViewProviderFactory"/>
-      <fileBasedIndex implementation="jetbrains.mps.workbench.actions.goTo.index.RootNodeNameIndex"/>
+        <fileBasedIndex implementation="jetbrains.mps.workbench.actions.goTo.index.RootNodeNameIndex"/>
+        <gotoClassContributor implementation="jetbrains.mps.workbench.actions.goTo.GoToClassMPSContributor"/>
     </extensions>
 
   <actions>
@@ -78,12 +79,6 @@
       <add-to-group group-id="ProjectViewPopupMenuSettingsGroup" relative-to-action="MarkRootGroup"
                     anchor="after"/>
       <keyboard-shortcut first-keystroke="alt ENTER" keymap="$default"/>
-    </action>
-    <action id="jetbrains.mps.actions.GoToRootNodeAction"
-            class="jetbrains.mps.actions.GoToRootNodeAction">
-      <add-to-group group-id="GoToMenu"
-                    anchor="last"/>
-      <keyboard-shortcut first-keystroke="control N" keymap="$default"/>
     </action>
 
     <group id="jetbrains.mps.NewGroup">
