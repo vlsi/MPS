@@ -51,27 +51,9 @@ public class MPSNodePsiFile extends PsiFileImpl {
 
   @Override
   public PsiElement getOriginalElement() {
-    return PsiManager.getInstance(getProject()).findFile(parent());
+    return PsiManager.getInstance(getProject()).findFile(getVirtualFile().getParent());
   }
 
-  @Nullable
-  public VirtualFile parent() {
-    String path = ModelAccess.instance().runReadAction(new Computable<String>() {
-      public String compute() {
-        SModel model = ((MPSNodeVirtualFile) getVirtualFile()).getNode().getModel();
-        if (model == null || model.isDisposed()) return null;
-        SModelDescriptor desc = model.getModelDescriptor();
-        if (!(desc instanceof DefaultSModelDescriptor)) return null;
-        return ((DefaultSModelDescriptor) desc).getModelFile().getPath();
-      }
-    });
-
-    if (path == null) return null;
-    return LocalFileSystem.getInstance().findFileByPath(path);
-  }
-
-
-  
   @Override
   public void accept(@NotNull PsiElementVisitor visitor) {
 

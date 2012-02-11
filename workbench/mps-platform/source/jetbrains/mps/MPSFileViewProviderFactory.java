@@ -30,7 +30,8 @@ public class MPSFileViewProviderFactory implements FileViewProviderFactory {
     if (file instanceof MPSNodeVirtualFile) {
       MPSNodeVirtualFile mpsFile = (MPSNodeVirtualFile) file;
       if (!mpsFile.getNode().isRoot()) return null;
-      return new MPSNodeFileViewProvider(manager, file, language);
+      return new MPSModelFileViewProvider(manager, mpsFile.getParent(), language);
+      //return new MPSNodeFileViewProvider(manager, file, language);
     } else if (file.getFileType().equals(MPSFileTypeFactory.MODEL_FILE_TYPE)){
       return new MPSModelFileViewProvider(manager, file, language);
     }

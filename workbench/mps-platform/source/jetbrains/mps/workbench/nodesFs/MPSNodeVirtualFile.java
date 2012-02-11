@@ -119,7 +119,7 @@ public class MPSNodeVirtualFile extends VirtualFile {
         if (model == null || model.isDisposed()) return null;
         SModelDescriptor desc = model.getModelDescriptor();
         if (!(desc instanceof DefaultSModelDescriptor)) return null;
-        return ((DefaultSModelDescriptor) desc).getModelFile().getParent().getPath();
+        return ((DefaultSModelDescriptor) desc).getModelFile().getPath();
       }
     });
 
