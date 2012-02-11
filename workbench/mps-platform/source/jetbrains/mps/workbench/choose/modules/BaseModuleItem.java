@@ -18,7 +18,6 @@ package jetbrains.mps.workbench.choose.modules;
 import com.intellij.navigation.ItemPresentation;
 import com.intellij.navigation.NavigationItem;
 import com.intellij.openapi.vcs.FileStatus;
-import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import org.jetbrains.annotations.Nullable;
 
