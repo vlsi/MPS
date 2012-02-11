@@ -23,6 +23,8 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.util.Computable;
+import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.workbench.ModelUtil;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -113,18 +115,11 @@ public class MPSNodeVirtualFile extends VirtualFile {
 
   @Nullable
   public VirtualFile getParent() {
-    String path = ModelAccess.instance().runReadAction(new Computable<String>() {
-      public String compute() {
-        SModel model = getNode().getModel();
-        if (model == null || model.isDisposed()) return null;
-        SModelDescriptor desc = model.getModelDescriptor();
-        if (!(desc instanceof DefaultSModelDescriptor)) return null;
-        return ((DefaultSModelDescriptor) desc).getModelFile().getPath();
+    return ModelAccess.instance().runReadAction(new Computable<VirtualFile>() {
+      public VirtualFile compute() {
+        return ModelUtil.getFileByModel(getNode().getModel());
       }
     });
-
-    if (path == null) return null;
-    return LocalFileSystem.getInstance().findFileByPath(path);
   }
 
   public VirtualFile[] getChildren() {

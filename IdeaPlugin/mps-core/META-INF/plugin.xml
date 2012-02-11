@@ -80,6 +80,12 @@
                     anchor="after"/>
       <keyboard-shortcut first-keystroke="alt ENTER" keymap="$default"/>
     </action>
+    <action id="jetbrains.mps.workbench.actions.goTo.GoToModelPlatformAction"
+            class="jetbrains.mps.workbench.actions.goTo.GoToModelPlatformAction">
+      <add-to-group group-id="GoToMenu"
+                    anchor="last"/>
+      <keyboard-shortcut first-keystroke="ctrl alt shift M" keymap="$default"/>
+    </action>
 
     <group id="jetbrains.mps.NewGroup">
       <add-to-group group-id="NewGroup" anchor="first"/>
