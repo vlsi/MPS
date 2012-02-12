@@ -48,7 +48,7 @@
 
     <extensions defaultExtensionNs="com.intellij">
         <facetType implementation="jetbrains.mps.idea.core.facet.MPSFacetType"/>
-        <frameworkSupport implementation="jetbrains.mps.idea.core.facet.MPSFacetTypeFrameworkSupportProvider"/>
+        <frameworkSupport implementation="jetbrains.mps.idea.core.facet.MPSFrameworkSupportProvider"/>
         <mps.LanguageLibrary dir="/languages"/>
         <treeStructureProvider implementation="jetbrains.mps.idea.core.projectView.MPSTreeStructureProvider"/>
     </extensions>
