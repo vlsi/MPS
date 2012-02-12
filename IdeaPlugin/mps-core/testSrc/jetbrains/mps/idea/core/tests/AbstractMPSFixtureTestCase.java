@@ -85,7 +85,7 @@ public abstract class AbstractMPSFixtureTestCase extends UsefulTestCase {
     }
 
     @Override
-    protected void setUp() throws Exception {;
+    protected void setUp() throws Exception {
         super.setUp();
 
         // was copied from JavaCodeInsightFixtureTestCase
