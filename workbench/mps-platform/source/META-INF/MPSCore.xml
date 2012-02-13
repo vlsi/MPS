@@ -43,6 +43,10 @@
     <component>
       <implementation-class>jetbrains.mps.ide.tooltips.MPSToolTipManager</implementation-class>
     </component>
+
+    <component>
+      <implementation-class>jetbrains.mps.workbench.actions.goTo.index.StubsNodeDescriptorsCache</implementation-class>
+    </component>
   </application-components>
 
   <project-components>
@@ -72,5 +76,8 @@
                  implementationClass="jetbrains.mps.ide.dataExtraction.ContextRule"/>
     <getDataRule key="MPS_IScope" implementationClass="jetbrains.mps.ide.dataExtraction.ScopeRule"/>
     <getDataRule key="MPS_IModule" implementationClass="jetbrains.mps.ide.dataExtraction.ModuleRule"/>
+
+    <fileBasedIndex implementation="jetbrains.mps.workbench.actions.goTo.index.RootNodeNameIndex"/>
+
   </extensions>
 </components>
