@@ -18,8 +18,8 @@ import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
 import jetbrains.mps.vfs.FileSystem;
+import jetbrains.mps.buildScript.behavior.BuildProject_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -61,7 +61,7 @@ public class BuildScript_Configuration_RunProfileState implements RunProfileStat
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         SNode node = SNodeOperations.cast(myRunConfiguration.getNode().getNode(), "jetbrains.mps.buildScript.structure.BuildProject");
-        file.value = FileGenerationUtil.getDefaultOutputDir(SNodeOperations.getModel(node), FileSystem.getInstance().getFileByPath(SNodeOperations.getModel(node).getModelDescriptor().getModule().getGeneratorOutputPath()));
+        file.value = FileSystem.getInstance().getFileByPath(BuildProject_Behavior.call_getScriptsPath_4796668409958419284(node));
         // todo 
         file.value = file.value.getDescendant(SPropertyOperations.getString(node, "name") + ".xml");
         // todo select task 
