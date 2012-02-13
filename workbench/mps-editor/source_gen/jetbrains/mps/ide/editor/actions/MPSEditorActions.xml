@@ -139,6 +139,7 @@
     <group id="EditorPopup_ActionGrouppreview"/>
     <group id="EditorPopup_ActionGroupdebug"/>
     <group id="EditorPopup_ActionGroupfind"/>
+    <group id="EditorPopup_ActionGrouprefactoring"/>
     <group id="EditorPopup_ActionGroupvcs"/>
     <group id="GoToEditorPopupAddition_ActionGroupother"/>
     <group id="GoToEditorPopupAddition_ActionGrouprefs"/>
@@ -200,6 +201,7 @@
       <reference ref="EditorPopup_ActionGroupdebug"/>
       <separator/>
       <reference ref="EditorPopup_ActionGroupfind"/>
+      <reference ref="EditorPopup_ActionGrouprefactoring"/>
       <separator/>
       <reference ref="EditorPopup_ActionGroupvcs"/>
       <separator/>

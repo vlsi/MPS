@@ -21028,6 +21028,9 @@
       <node role="reference" roleId="tp4k.1207145201301" type="tp4k.GroupAnchor" typeId="tp4k.1203680534665" id="1237990522669">
         <property name="name" nameId="tpck.1169194664001" value="find" />
       </node>
+      <node role="reference" roleId="tp4k.1207145201301" type="tp4k.GroupAnchor" typeId="tp4k.1203680534665" id="8741284284837781541">
+        <property name="name" nameId="tpck.1169194664001" value="refactoring" />
+      </node>
       <node role="reference" roleId="tp4k.1207145201301" type="tp4k.Separator" typeId="tp4k.1204908117386" id="1207744603855" />
       <node role="reference" roleId="tp4k.1207145201301" type="tp4k.ActionInstance" typeId="tp4k.1203088046679" id="1216120312761">
         <link role="action" roleId="tp4k.1203088061055" targetNodeId="1216120033386" resolveInfo="ShowConceptInHierarchy" />
@@ -21067,9 +21070,6 @@
       </node>
       <node role="reference" roleId="tp4k.1207145201301" type="tp4k.GroupAnchor" typeId="tp4k.1203680534665" id="1587195459761469121">
         <property name="name" nameId="tpck.1169194664001" value="find_instances" />
-      </node>
-      <node role="reference" roleId="tp4k.1207145201301" type="tp4k.GroupAnchor" typeId="tp4k.1203680534665" id="1587195459761469122">
-        <property name="name" nameId="tpck.1169194664001" value="refactoring" />
       </node>
     </node>
   </root>
@@ -27933,9 +27933,13 @@
     </node>
   </root>
   <root id="2704531651333004425">
-    <node role="modifier" roleId="tp4k.1204991552650" type="tp4k.ModificationStatement" typeId="tp4k.1203092361741" id="2704531651333004427">
-      <link role="modifiedGroup" roleId="tp4k.1203092736097" targetNodeId="1587195459761469116" resolveInfo="FindUsages" />
-      <link role="point" roleId="tp4k.1204992316090" targetNodeId="1587195459761469122" resolveInfo="refactoring" />
+    <node role="modifier" roleId="tp4k.1204991552650" type="tp4k.ModificationStatement" typeId="tp4k.1203092361741" id="8741284284837781542">
+      <link role="modifiedGroup" roleId="tp4k.1203092736097" targetNodeId="1204991215587" resolveInfo="NodeActions" />
+      <link role="point" roleId="tp4k.1204992316090" targetNodeId="8741284284837781541" resolveInfo="refactoring" />
+    </node>
+    <node role="modifier" roleId="tp4k.1204991552650" type="tp4k.ModificationStatement" typeId="tp4k.1203092361741" id="8741284284837781543">
+      <link role="modifiedGroup" roleId="tp4k.1203092736097" targetNodeId="ekwn.1755502566255660782" resolveInfo="EditorPopup" />
+      <link role="point" roleId="tp4k.1204992316090" targetNodeId="ekwn.5062223007361835671" resolveInfo="refactoring" />
     </node>
     <node role="contents" roleId="tp4k.1207145245948" type="tp4k.ElementListContents" typeId="tp4k.1207145163717" id="2704531651333004437" />
   </root>
