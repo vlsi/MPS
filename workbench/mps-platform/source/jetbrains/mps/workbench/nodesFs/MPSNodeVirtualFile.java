@@ -118,6 +118,7 @@ public class MPSNodeVirtualFile extends VirtualFile {
   public VirtualFile getParent() {
     return ModelAccess.instance().runReadAction(new Computable<VirtualFile>() {
       public VirtualFile compute() {
+        if (myNode == null) return null;
         SNode node = getNode();
         if (node == null) return null;
         return ModelUtil.getFileByModel(node.getModel());
