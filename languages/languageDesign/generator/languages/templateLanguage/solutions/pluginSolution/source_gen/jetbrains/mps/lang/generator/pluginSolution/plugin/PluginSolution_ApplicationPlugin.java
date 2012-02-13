@@ -14,4 +14,15 @@ public class PluginSolution_ApplicationPlugin extends BaseApplicationPlugin {
   public PluginId getId() {
     return myId;
   }
+
+  public void createGroups() {
+    // actions w/o parameters 
+    addAction(new AttachMappingLabel_Action());
+    // groups 
+    addGroup(new ShowAsIntentions_ActionGroup());
+  }
+
+  public void adjustRegularGroups() {
+    insertGroupIntoAnother(ShowAsIntentions_ActionGroup.ID, "ActionsAsIntentions", null);
+  }
 }

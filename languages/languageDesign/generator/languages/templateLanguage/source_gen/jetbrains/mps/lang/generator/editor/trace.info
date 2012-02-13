@@ -9240,411 +9240,341 @@
     <unitInfo nodeId="1200912293386" fileName="MapSrcListMacro_Editor.java" startLine="389" startPosition="0" endLine="422" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.MapSrcListMacro_Editor$_Inline_pr8n4z_a2b2a" />
   </root>
   <root nodeId="1149868357716">
-    <nodeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="19" startPosition="32" endLine="20" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="20" startPosition="41" endLine="21" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="21" startPosition="34" endLine="22" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="22" startPosition="67" endLine="23" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="23" startPosition="49" endLine="24" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="24" startPosition="67" endLine="25" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="25" startPosition="49" endLine="26" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="26" startPosition="67" endLine="27" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="27" startPosition="49" endLine="28" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="28" startPosition="67" endLine="29" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="29" startPosition="49" endLine="30" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="30" startPosition="67" endLine="31" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="35" startPosition="42" endLine="36" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="39" startPosition="40" endLine="40" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="43" startPosition="40" endLine="44" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="47" startPosition="91" endLine="48" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="49" startPosition="34" endLine="50" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="51" startPosition="7" endLine="52" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="53" startPosition="32" endLine="54" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="55" startPosition="7" endLine="56" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="59" startPosition="85" endLine="60" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="60" startPosition="62" endLine="61" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1205866458045" fileName="MacrosSwitch_KeyMap.java" startLine="65" startPosition="62" endLine="66" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1205859892538" fileName="MacrosSwitch_KeyMap.java" startLine="68" startPosition="246" endLine="69" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1227876803819" fileName="MacrosSwitch_KeyMap.java" startLine="72" startPosition="41" endLine="73" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1205863624309" fileName="MacrosSwitch_KeyMap.java" startLine="75" startPosition="24" endLine="76" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1205863524967" fileName="MacrosSwitch_KeyMap.java" startLine="78" startPosition="55" endLine="79" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1149868396508" fileName="MacrosSwitch_KeyMap.java" startLine="80" startPosition="7" endLine="81" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7376433222636453727" fileName="MacrosSwitch_KeyMap.java" startLine="84" startPosition="146" endLine="85" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="1227876799094" fileName="MacrosSwitch_KeyMap.java" startLine="87" startPosition="41" endLine="88" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1205869236934" fileName="MacrosSwitch_KeyMap.java" startLine="90" startPosition="17" endLine="91" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="94" startPosition="34" endLine="95" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="100" startPosition="42" endLine="101" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="104" startPosition="40" endLine="105" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="108" startPosition="40" endLine="109" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="112" startPosition="91" endLine="113" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="114" startPosition="34" endLine="115" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="116" startPosition="7" endLine="117" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="118" startPosition="32" endLine="119" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="120" startPosition="7" endLine="121" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="124" startPosition="85" endLine="125" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="125" startPosition="62" endLine="126" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1205866787813" fileName="MacrosSwitch_KeyMap.java" startLine="130" startPosition="62" endLine="131" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1205866802631" fileName="MacrosSwitch_KeyMap.java" startLine="132" startPosition="7" endLine="133" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1216154334719" fileName="MacrosSwitch_KeyMap.java" startLine="136" startPosition="146" endLine="137" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7376433222636453205" fileName="MacrosSwitch_KeyMap.java" startLine="137" startPosition="55" endLine="138" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="1193051096328" fileName="MacrosSwitch_KeyMap.java" startLine="138" startPosition="19" endLine="139" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="142" startPosition="34" endLine="143" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="148" startPosition="42" endLine="149" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="152" startPosition="40" endLine="153" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="156" startPosition="40" endLine="157" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="160" startPosition="91" endLine="161" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="162" startPosition="34" endLine="163" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="164" startPosition="7" endLine="165" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="166" startPosition="32" endLine="167" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="168" startPosition="7" endLine="169" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="172" startPosition="85" endLine="173" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="173" startPosition="62" endLine="174" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1205874717706" fileName="MacrosSwitch_KeyMap.java" startLine="178" startPosition="62" endLine="179" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1216153973140" fileName="MacrosSwitch_KeyMap.java" startLine="180" startPosition="7" endLine="181" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1216154483611" fileName="MacrosSwitch_KeyMap.java" startLine="184" startPosition="146" endLine="185" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7376433222636453383" fileName="MacrosSwitch_KeyMap.java" startLine="185" startPosition="96" endLine="186" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="1193052614472" fileName="MacrosSwitch_KeyMap.java" startLine="186" startPosition="19" endLine="187" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1228227110586" fileName="MacrosSwitch_KeyMap.java" startLine="187" startPosition="56" endLine="188" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1228227135349" fileName="MacrosSwitch_KeyMap.java" startLine="188" startPosition="102" endLine="189" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
-    <nodeInfo nodeId="1228227144232" fileName="MacrosSwitch_KeyMap.java" startLine="189" startPosition="31" endLine="190" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="193" startPosition="34" endLine="194" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="199" startPosition="42" endLine="200" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="203" startPosition="40" endLine="204" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="207" startPosition="40" endLine="208" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="211" startPosition="91" endLine="212" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="213" startPosition="34" endLine="214" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="215" startPosition="7" endLine="216" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="217" startPosition="32" endLine="218" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="219" startPosition="7" endLine="220" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="223" startPosition="85" endLine="224" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="224" startPosition="62" endLine="225" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1205878695985" fileName="MacrosSwitch_KeyMap.java" startLine="229" startPosition="62" endLine="230" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1216154100518" fileName="MacrosSwitch_KeyMap.java" startLine="231" startPosition="7" endLine="232" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1216154629827" fileName="MacrosSwitch_KeyMap.java" startLine="235" startPosition="146" endLine="236" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7376433222636453499" fileName="MacrosSwitch_KeyMap.java" startLine="236" startPosition="98" endLine="237" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="1193052865273" fileName="MacrosSwitch_KeyMap.java" startLine="237" startPosition="19" endLine="238" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1228227222771" fileName="MacrosSwitch_KeyMap.java" startLine="238" startPosition="57" endLine="239" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1228227222780" fileName="MacrosSwitch_KeyMap.java" startLine="239" startPosition="102" endLine="240" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
-    <nodeInfo nodeId="1228227222784" fileName="MacrosSwitch_KeyMap.java" startLine="240" startPosition="31" endLine="241" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="244" startPosition="34" endLine="245" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="250" startPosition="42" endLine="251" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="254" startPosition="40" endLine="255" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="258" startPosition="40" endLine="259" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="262" startPosition="91" endLine="263" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="264" startPosition="34" endLine="265" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="266" startPosition="7" endLine="267" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="268" startPosition="32" endLine="269" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="270" startPosition="7" endLine="271" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="274" startPosition="85" endLine="275" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="275" startPosition="62" endLine="276" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1176305126549" fileName="MacrosSwitch_KeyMap.java" startLine="279" startPosition="152" endLine="280" endPosition="124" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1176304630480" fileName="MacrosSwitch_KeyMap.java" startLine="283" startPosition="146" endLine="284" endPosition="121" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1176304745877" fileName="MacrosSwitch_KeyMap.java" startLine="284" startPosition="121" endLine="285" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="288" startPosition="34" endLine="289" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="21" startPosition="34" endLine="23" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="23" startPosition="49" endLine="25" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="25" startPosition="49" endLine="27" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="27" startPosition="49" endLine="29" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="29" startPosition="49" endLine="31" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="34" startPosition="82" endLine="37" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MacrosSwitch_KeyMap_Action0#()V" />
-    <nodeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="48" startPosition="62" endLine="51" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="52" startPosition="49" endLine="55" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1205866458043" fileName="MacrosSwitch_KeyMap.java" startLine="64" startPosition="152" endLine="67" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1205859818006" fileName="MacrosSwitch_KeyMap.java" startLine="67" startPosition="7" endLine="70" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1205863514519" fileName="MacrosSwitch_KeyMap.java" startLine="77" startPosition="7" endLine="80" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="99" startPosition="82" endLine="102" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MacrosSwitch_KeyMap_Action1#()V" />
-    <nodeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="113" startPosition="62" endLine="116" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="117" startPosition="49" endLine="120" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1205866787811" fileName="MacrosSwitch_KeyMap.java" startLine="129" startPosition="152" endLine="132" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="147" startPosition="82" endLine="150" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MacrosSwitch_KeyMap_Action2#()V" />
-    <nodeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="161" startPosition="62" endLine="164" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="165" startPosition="49" endLine="168" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1205874717704" fileName="MacrosSwitch_KeyMap.java" startLine="177" startPosition="152" endLine="180" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="198" startPosition="82" endLine="201" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MacrosSwitch_KeyMap_Action3#()V" />
-    <nodeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="212" startPosition="62" endLine="215" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="216" startPosition="49" endLine="219" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1205878695983" fileName="MacrosSwitch_KeyMap.java" startLine="228" startPosition="152" endLine="231" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="249" startPosition="82" endLine="252" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MacrosSwitch_KeyMap_Action4#()V" />
-    <nodeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="263" startPosition="62" endLine="266" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="267" startPosition="49" endLine="270" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="38" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescriptionText#()Ljava/lang/String;" />
-    <nodeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="42" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isMenuAlwaysShown#()Z" />
-    <nodeInfo nodeId="1227876803815" fileName="MacrosSwitch_KeyMap.java" startLine="71" startPosition="114" endLine="75" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" />
-    <nodeInfo nodeId="1227876799090" fileName="MacrosSwitch_KeyMap.java" startLine="86" startPosition="129" endLine="90" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" />
-    <nodeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="93" startPosition="0" endLine="97" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getKeyStroke#()Ljava/lang/String;" />
-    <nodeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="103" startPosition="0" endLine="107" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescriptionText#()Ljava/lang/String;" />
-    <nodeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="107" startPosition="0" endLine="111" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isMenuAlwaysShown#()Z" />
-    <nodeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="141" startPosition="0" endLine="145" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getKeyStroke#()Ljava/lang/String;" />
-    <nodeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="151" startPosition="0" endLine="155" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescriptionText#()Ljava/lang/String;" />
-    <nodeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="155" startPosition="0" endLine="159" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isMenuAlwaysShown#()Z" />
-    <nodeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="192" startPosition="0" endLine="196" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getKeyStroke#()Ljava/lang/String;" />
-    <nodeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="202" startPosition="0" endLine="206" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescriptionText#()Ljava/lang/String;" />
-    <nodeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="206" startPosition="0" endLine="210" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isMenuAlwaysShown#()Z" />
-    <nodeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="243" startPosition="0" endLine="247" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getKeyStroke#()Ljava/lang/String;" />
-    <nodeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="253" startPosition="0" endLine="257" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescriptionText#()Ljava/lang/String;" />
-    <nodeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="257" startPosition="0" endLine="261" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isMenuAlwaysShown#()Z" />
-    <nodeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="278" startPosition="0" endLine="282" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canExecute_internal#(Ljava/awt/event/KeyEvent;Ljetbrains/mps/nodeEditor/EditorContext;Ljetbrains/mps/smodel/SNode;Ljava/util/List;)Z" />
-    <nodeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="287" startPosition="0" endLine="291" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getKeyStroke#()Ljava/lang/String;" />
-    <nodeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="58" startPosition="0" endLine="63" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljava/awt/event/KeyEvent;Ljetbrains/mps/nodeEditor/EditorContext;)V" />
-    <nodeInfo nodeId="1205863761395" fileName="MacrosSwitch_KeyMap.java" startLine="85" startPosition="46" endLine="90" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="123" startPosition="0" endLine="128" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljava/awt/event/KeyEvent;Ljetbrains/mps/nodeEditor/EditorContext;)V" />
-    <nodeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="171" startPosition="0" endLine="176" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljava/awt/event/KeyEvent;Ljetbrains/mps/nodeEditor/EditorContext;)V" />
-    <nodeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="222" startPosition="0" endLine="227" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljava/awt/event/KeyEvent;Ljetbrains/mps/nodeEditor/EditorContext;)V" />
-    <nodeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="273" startPosition="0" endLine="278" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljava/awt/event/KeyEvent;Ljetbrains/mps/nodeEditor/EditorContext;)V" />
-    <nodeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="282" startPosition="0" endLine="287" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute_internal#(Ljava/awt/event/KeyEvent;Ljetbrains/mps/nodeEditor/EditorContext;Ljetbrains/mps/smodel/SNode;Ljava/util/List;)V" />
-    <nodeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="135" startPosition="0" endLine="141" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute_internal#(Ljava/awt/event/KeyEvent;Ljetbrains/mps/nodeEditor/EditorContext;Ljetbrains/mps/smodel/SNode;Ljava/util/List;)V" />
-    <nodeInfo nodeId="1205863559568" fileName="MacrosSwitch_KeyMap.java" startLine="70" startPosition="7" endLine="77" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="128" startPosition="0" endLine="135" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canExecute_internal#(Ljava/awt/event/KeyEvent;Ljetbrains/mps/nodeEditor/EditorContext;Ljetbrains/mps/smodel/SNode;Ljava/util/List;)Z" />
-    <nodeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="176" startPosition="0" endLine="183" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canExecute_internal#(Ljava/awt/event/KeyEvent;Ljetbrains/mps/nodeEditor/EditorContext;Ljetbrains/mps/smodel/SNode;Ljava/util/List;)Z" />
-    <nodeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="227" startPosition="0" endLine="234" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canExecute_internal#(Ljava/awt/event/KeyEvent;Ljetbrains/mps/nodeEditor/EditorContext;Ljetbrains/mps/smodel/SNode;Ljava/util/List;)Z" />
-    <nodeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="183" startPosition="0" endLine="192" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute_internal#(Ljava/awt/event/KeyEvent;Ljetbrains/mps/nodeEditor/EditorContext;Ljetbrains/mps/smodel/SNode;Ljava/util/List;)V" />
-    <nodeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="234" startPosition="0" endLine="243" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute_internal#(Ljava/awt/event/KeyEvent;Ljetbrains/mps/nodeEditor/EditorContext;Ljetbrains/mps/smodel/SNode;Ljava/util/List;)V" />
-    <nodeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="83" startPosition="0" endLine="93" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute_internal#(Ljava/awt/event/KeyEvent;Ljetbrains/mps/nodeEditor/EditorContext;Ljetbrains/mps/smodel/SNode;Ljava/util/List;)V" />
-    <nodeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="46" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canExecute#(Ljava/awt/event/KeyEvent;Ljetbrains/mps/nodeEditor/EditorContext;)Z" />
-    <nodeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="111" startPosition="0" endLine="123" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canExecute#(Ljava/awt/event/KeyEvent;Ljetbrains/mps/nodeEditor/EditorContext;)Z" />
-    <nodeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="159" startPosition="0" endLine="171" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canExecute#(Ljava/awt/event/KeyEvent;Ljetbrains/mps/nodeEditor/EditorContext;)Z" />
-    <nodeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="210" startPosition="0" endLine="222" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canExecute#(Ljava/awt/event/KeyEvent;Ljetbrains/mps/nodeEditor/EditorContext;)Z" />
-    <nodeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="261" startPosition="0" endLine="273" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canExecute#(Ljava/awt/event/KeyEvent;Ljetbrains/mps/nodeEditor/EditorContext;)Z" />
-    <nodeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="18" startPosition="59" endLine="32" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MacrosSwitch_KeyMap#()V" />
-    <nodeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="63" startPosition="0" endLine="83" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canExecute_internal#(Ljava/awt/event/KeyEvent;Ljetbrains/mps/nodeEditor/EditorContext;Ljetbrains/mps/smodel/SNode;Ljava/util/List;)Z" />
-    <scopeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="35" startPosition="42" endLine="36" endPosition="37" />
-    <scopeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="39" startPosition="40" endLine="40" endPosition="39" />
-    <scopeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="43" startPosition="40" endLine="44" endPosition="19" />
-    <scopeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="49" startPosition="34" endLine="50" endPosition="21" />
-    <scopeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="53" startPosition="32" endLine="54" endPosition="21" />
-    <scopeInfo nodeId="1205866458044" fileName="MacrosSwitch_KeyMap.java" startLine="65" startPosition="62" endLine="66" endPosition="21" />
-    <scopeInfo nodeId="1205859818007" fileName="MacrosSwitch_KeyMap.java" startLine="68" startPosition="246" endLine="69" endPosition="21" />
-    <scopeInfo nodeId="1227876803818" fileName="MacrosSwitch_KeyMap.java" startLine="72" startPosition="41" endLine="73" endPosition="49" />
-    <scopeInfo nodeId="1205863559569" fileName="MacrosSwitch_KeyMap.java" startLine="75" startPosition="24" endLine="76" endPosition="21" />
-    <scopeInfo nodeId="1205863514520" fileName="MacrosSwitch_KeyMap.java" startLine="78" startPosition="55" endLine="79" endPosition="21" />
-    <scopeInfo nodeId="1227876799093" fileName="MacrosSwitch_KeyMap.java" startLine="87" startPosition="41" endLine="88" endPosition="52" />
-    <scopeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="94" startPosition="34" endLine="95" endPosition="28" />
-    <scopeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="100" startPosition="42" endLine="101" endPosition="37" />
-    <scopeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="104" startPosition="40" endLine="105" endPosition="30" />
-    <scopeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="108" startPosition="40" endLine="109" endPosition="19" />
-    <scopeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="114" startPosition="34" endLine="115" endPosition="21" />
-    <scopeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="118" startPosition="32" endLine="119" endPosition="21" />
-    <scopeInfo nodeId="1205866787812" fileName="MacrosSwitch_KeyMap.java" startLine="130" startPosition="62" endLine="131" endPosition="21" />
-    <scopeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="142" startPosition="34" endLine="143" endPosition="28" />
-    <scopeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="148" startPosition="42" endLine="149" endPosition="37" />
-    <scopeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="152" startPosition="40" endLine="153" endPosition="34" />
-    <scopeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="156" startPosition="40" endLine="157" endPosition="19" />
-    <scopeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="162" startPosition="34" endLine="163" endPosition="21" />
-    <scopeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="166" startPosition="32" endLine="167" endPosition="21" />
-    <scopeInfo nodeId="1205874717705" fileName="MacrosSwitch_KeyMap.java" startLine="178" startPosition="62" endLine="179" endPosition="21" />
-    <scopeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="193" startPosition="34" endLine="194" endPosition="28" />
-    <scopeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="199" startPosition="42" endLine="200" endPosition="37" />
-    <scopeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="203" startPosition="40" endLine="204" endPosition="35" />
-    <scopeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="207" startPosition="40" endLine="208" endPosition="19" />
-    <scopeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="213" startPosition="34" endLine="214" endPosition="21" />
-    <scopeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="217" startPosition="32" endLine="218" endPosition="21" />
-    <scopeInfo nodeId="1205878695984" fileName="MacrosSwitch_KeyMap.java" startLine="229" startPosition="62" endLine="230" endPosition="21" />
-    <scopeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="244" startPosition="34" endLine="245" endPosition="28" />
-    <scopeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="250" startPosition="42" endLine="251" endPosition="37" />
-    <scopeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="254" startPosition="40" endLine="255" endPosition="50" />
-    <scopeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="258" startPosition="40" endLine="259" endPosition="19" />
-    <scopeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="264" startPosition="34" endLine="265" endPosition="21" />
-    <scopeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="268" startPosition="32" endLine="269" endPosition="21" />
-    <scopeInfo nodeId="1176305101356" fileName="MacrosSwitch_KeyMap.java" startLine="279" startPosition="152" endLine="280" endPosition="124" />
-    <scopeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="288" startPosition="34" endLine="289" endPosition="32" />
-    <scopeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="21" startPosition="34" endLine="23" endPosition="49" />
-    <scopeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="23" startPosition="49" endLine="25" endPosition="49" />
-    <scopeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="25" startPosition="49" endLine="27" endPosition="49" />
-    <scopeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="27" startPosition="49" endLine="29" endPosition="49" />
-    <scopeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="29" startPosition="49" endLine="31" endPosition="53" />
-    <scopeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="59" startPosition="85" endLine="61" endPosition="115">
+    <nodeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="18" startPosition="32" endLine="19" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="19" startPosition="41" endLine="20" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="20" startPosition="34" endLine="21" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="21" startPosition="67" endLine="22" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="22" startPosition="49" endLine="23" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="23" startPosition="67" endLine="24" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="24" startPosition="49" endLine="25" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="25" startPosition="67" endLine="26" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="26" startPosition="49" endLine="27" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="27" startPosition="67" endLine="28" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="32" startPosition="42" endLine="33" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="36" startPosition="40" endLine="37" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="40" startPosition="40" endLine="41" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="44" startPosition="91" endLine="45" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="46" startPosition="34" endLine="47" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="48" startPosition="7" endLine="49" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="50" startPosition="32" endLine="51" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="52" startPosition="7" endLine="53" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="56" startPosition="85" endLine="57" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="57" startPosition="62" endLine="58" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1205866458045" fileName="MacrosSwitch_KeyMap.java" startLine="62" startPosition="62" endLine="63" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1205859892538" fileName="MacrosSwitch_KeyMap.java" startLine="65" startPosition="246" endLine="66" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1227876803819" fileName="MacrosSwitch_KeyMap.java" startLine="69" startPosition="41" endLine="70" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1205863624309" fileName="MacrosSwitch_KeyMap.java" startLine="72" startPosition="24" endLine="73" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1205863524967" fileName="MacrosSwitch_KeyMap.java" startLine="75" startPosition="55" endLine="76" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1149868396508" fileName="MacrosSwitch_KeyMap.java" startLine="77" startPosition="7" endLine="78" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7376433222636453727" fileName="MacrosSwitch_KeyMap.java" startLine="81" startPosition="146" endLine="82" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="1227876799094" fileName="MacrosSwitch_KeyMap.java" startLine="84" startPosition="41" endLine="85" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1205869236934" fileName="MacrosSwitch_KeyMap.java" startLine="87" startPosition="17" endLine="88" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="91" startPosition="34" endLine="92" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="97" startPosition="42" endLine="98" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="101" startPosition="40" endLine="102" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="105" startPosition="40" endLine="106" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="109" startPosition="91" endLine="110" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="111" startPosition="34" endLine="112" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="113" startPosition="7" endLine="114" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="115" startPosition="32" endLine="116" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="117" startPosition="7" endLine="118" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="121" startPosition="85" endLine="122" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="122" startPosition="62" endLine="123" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1205866787813" fileName="MacrosSwitch_KeyMap.java" startLine="127" startPosition="62" endLine="128" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1205866802631" fileName="MacrosSwitch_KeyMap.java" startLine="129" startPosition="7" endLine="130" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1216154334719" fileName="MacrosSwitch_KeyMap.java" startLine="133" startPosition="146" endLine="134" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7376433222636453205" fileName="MacrosSwitch_KeyMap.java" startLine="134" startPosition="55" endLine="135" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="1193051096328" fileName="MacrosSwitch_KeyMap.java" startLine="135" startPosition="19" endLine="136" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="139" startPosition="34" endLine="140" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="145" startPosition="42" endLine="146" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="149" startPosition="40" endLine="150" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="153" startPosition="40" endLine="154" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="157" startPosition="91" endLine="158" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="159" startPosition="34" endLine="160" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="161" startPosition="7" endLine="162" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="163" startPosition="32" endLine="164" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="165" startPosition="7" endLine="166" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="169" startPosition="85" endLine="170" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="170" startPosition="62" endLine="171" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1205874717706" fileName="MacrosSwitch_KeyMap.java" startLine="175" startPosition="62" endLine="176" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1216153973140" fileName="MacrosSwitch_KeyMap.java" startLine="177" startPosition="7" endLine="178" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1216154483611" fileName="MacrosSwitch_KeyMap.java" startLine="181" startPosition="146" endLine="182" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7376433222636453383" fileName="MacrosSwitch_KeyMap.java" startLine="182" startPosition="96" endLine="183" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="1193052614472" fileName="MacrosSwitch_KeyMap.java" startLine="183" startPosition="19" endLine="184" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8639917440978893900" fileName="MacrosSwitch_KeyMap.java" startLine="184" startPosition="56" endLine="185" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1228227135349" fileName="MacrosSwitch_KeyMap.java" startLine="185" startPosition="63" endLine="186" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
+    <nodeInfo nodeId="8639917440978893860" fileName="MacrosSwitch_KeyMap.java" startLine="186" startPosition="31" endLine="187" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="190" startPosition="34" endLine="191" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="196" startPosition="42" endLine="197" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="200" startPosition="40" endLine="201" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="204" startPosition="40" endLine="205" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="208" startPosition="91" endLine="209" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="210" startPosition="34" endLine="211" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="212" startPosition="7" endLine="213" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="214" startPosition="32" endLine="215" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="216" startPosition="7" endLine="217" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="220" startPosition="85" endLine="221" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="221" startPosition="62" endLine="222" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1205878695985" fileName="MacrosSwitch_KeyMap.java" startLine="226" startPosition="62" endLine="227" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1216154100518" fileName="MacrosSwitch_KeyMap.java" startLine="228" startPosition="7" endLine="229" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1216154629827" fileName="MacrosSwitch_KeyMap.java" startLine="232" startPosition="146" endLine="233" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7376433222636453499" fileName="MacrosSwitch_KeyMap.java" startLine="233" startPosition="98" endLine="234" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="1193052865273" fileName="MacrosSwitch_KeyMap.java" startLine="234" startPosition="19" endLine="235" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8639917440978893884" fileName="MacrosSwitch_KeyMap.java" startLine="235" startPosition="57" endLine="236" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1228227222780" fileName="MacrosSwitch_KeyMap.java" startLine="236" startPosition="63" endLine="237" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
+    <nodeInfo nodeId="8639917440978893871" fileName="MacrosSwitch_KeyMap.java" startLine="237" startPosition="31" endLine="238" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="241" startPosition="34" endLine="242" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="20" startPosition="34" endLine="22" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="22" startPosition="49" endLine="24" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="24" startPosition="49" endLine="26" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="26" startPosition="49" endLine="28" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="31" startPosition="82" endLine="34" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MacrosSwitch_KeyMap_Action0#()V" />
+    <nodeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="45" startPosition="62" endLine="48" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="49" startPosition="49" endLine="52" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1205866458043" fileName="MacrosSwitch_KeyMap.java" startLine="61" startPosition="152" endLine="64" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1205859818006" fileName="MacrosSwitch_KeyMap.java" startLine="64" startPosition="7" endLine="67" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1205863514519" fileName="MacrosSwitch_KeyMap.java" startLine="74" startPosition="7" endLine="77" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="96" startPosition="82" endLine="99" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MacrosSwitch_KeyMap_Action1#()V" />
+    <nodeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="110" startPosition="62" endLine="113" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="114" startPosition="49" endLine="117" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1205866787811" fileName="MacrosSwitch_KeyMap.java" startLine="126" startPosition="152" endLine="129" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="144" startPosition="82" endLine="147" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MacrosSwitch_KeyMap_Action2#()V" />
+    <nodeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="158" startPosition="62" endLine="161" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="162" startPosition="49" endLine="165" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1205874717704" fileName="MacrosSwitch_KeyMap.java" startLine="174" startPosition="152" endLine="177" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="195" startPosition="82" endLine="198" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MacrosSwitch_KeyMap_Action3#()V" />
+    <nodeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="209" startPosition="62" endLine="212" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="213" startPosition="49" endLine="216" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1205878695983" fileName="MacrosSwitch_KeyMap.java" startLine="225" startPosition="152" endLine="228" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="35" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescriptionText#()Ljava/lang/String;" />
+    <nodeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="39" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isMenuAlwaysShown#()Z" />
+    <nodeInfo nodeId="1227876803815" fileName="MacrosSwitch_KeyMap.java" startLine="68" startPosition="114" endLine="72" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" />
+    <nodeInfo nodeId="1227876799090" fileName="MacrosSwitch_KeyMap.java" startLine="83" startPosition="129" endLine="87" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" />
+    <nodeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="90" startPosition="0" endLine="94" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getKeyStroke#()Ljava/lang/String;" />
+    <nodeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="100" startPosition="0" endLine="104" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescriptionText#()Ljava/lang/String;" />
+    <nodeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="104" startPosition="0" endLine="108" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isMenuAlwaysShown#()Z" />
+    <nodeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="138" startPosition="0" endLine="142" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getKeyStroke#()Ljava/lang/String;" />
+    <nodeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="148" startPosition="0" endLine="152" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescriptionText#()Ljava/lang/String;" />
+    <nodeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="152" startPosition="0" endLine="156" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isMenuAlwaysShown#()Z" />
+    <nodeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="189" startPosition="0" endLine="193" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getKeyStroke#()Ljava/lang/String;" />
+    <nodeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="199" startPosition="0" endLine="203" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescriptionText#()Ljava/lang/String;" />
+    <nodeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="203" startPosition="0" endLine="207" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isMenuAlwaysShown#()Z" />
+    <nodeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="240" startPosition="0" endLine="244" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getKeyStroke#()Ljava/lang/String;" />
+    <nodeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="55" startPosition="0" endLine="60" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljava/awt/event/KeyEvent;Ljetbrains/mps/nodeEditor/EditorContext;)V" />
+    <nodeInfo nodeId="1205863761395" fileName="MacrosSwitch_KeyMap.java" startLine="82" startPosition="46" endLine="87" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="120" startPosition="0" endLine="125" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljava/awt/event/KeyEvent;Ljetbrains/mps/nodeEditor/EditorContext;)V" />
+    <nodeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="168" startPosition="0" endLine="173" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljava/awt/event/KeyEvent;Ljetbrains/mps/nodeEditor/EditorContext;)V" />
+    <nodeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="219" startPosition="0" endLine="224" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljava/awt/event/KeyEvent;Ljetbrains/mps/nodeEditor/EditorContext;)V" />
+    <nodeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="132" startPosition="0" endLine="138" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute_internal#(Ljava/awt/event/KeyEvent;Ljetbrains/mps/nodeEditor/EditorContext;Ljetbrains/mps/smodel/SNode;Ljava/util/List;)V" />
+    <nodeInfo nodeId="1205863559568" fileName="MacrosSwitch_KeyMap.java" startLine="67" startPosition="7" endLine="74" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="125" startPosition="0" endLine="132" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canExecute_internal#(Ljava/awt/event/KeyEvent;Ljetbrains/mps/nodeEditor/EditorContext;Ljetbrains/mps/smodel/SNode;Ljava/util/List;)Z" />
+    <nodeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="173" startPosition="0" endLine="180" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canExecute_internal#(Ljava/awt/event/KeyEvent;Ljetbrains/mps/nodeEditor/EditorContext;Ljetbrains/mps/smodel/SNode;Ljava/util/List;)Z" />
+    <nodeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="224" startPosition="0" endLine="231" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canExecute_internal#(Ljava/awt/event/KeyEvent;Ljetbrains/mps/nodeEditor/EditorContext;Ljetbrains/mps/smodel/SNode;Ljava/util/List;)Z" />
+    <nodeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="180" startPosition="0" endLine="189" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute_internal#(Ljava/awt/event/KeyEvent;Ljetbrains/mps/nodeEditor/EditorContext;Ljetbrains/mps/smodel/SNode;Ljava/util/List;)V" />
+    <nodeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="231" startPosition="0" endLine="240" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute_internal#(Ljava/awt/event/KeyEvent;Ljetbrains/mps/nodeEditor/EditorContext;Ljetbrains/mps/smodel/SNode;Ljava/util/List;)V" />
+    <nodeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="80" startPosition="0" endLine="90" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute_internal#(Ljava/awt/event/KeyEvent;Ljetbrains/mps/nodeEditor/EditorContext;Ljetbrains/mps/smodel/SNode;Ljava/util/List;)V" />
+    <nodeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="17" startPosition="59" endLine="29" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MacrosSwitch_KeyMap#()V" />
+    <nodeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="43" startPosition="0" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canExecute#(Ljava/awt/event/KeyEvent;Ljetbrains/mps/nodeEditor/EditorContext;)Z" />
+    <nodeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="108" startPosition="0" endLine="120" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canExecute#(Ljava/awt/event/KeyEvent;Ljetbrains/mps/nodeEditor/EditorContext;)Z" />
+    <nodeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="156" startPosition="0" endLine="168" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canExecute#(Ljava/awt/event/KeyEvent;Ljetbrains/mps/nodeEditor/EditorContext;)Z" />
+    <nodeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="207" startPosition="0" endLine="219" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canExecute#(Ljava/awt/event/KeyEvent;Ljetbrains/mps/nodeEditor/EditorContext;)Z" />
+    <nodeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="60" startPosition="0" endLine="80" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canExecute_internal#(Ljava/awt/event/KeyEvent;Ljetbrains/mps/nodeEditor/EditorContext;Ljetbrains/mps/smodel/SNode;Ljava/util/List;)Z" />
+    <scopeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="32" startPosition="42" endLine="33" endPosition="37" />
+    <scopeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="36" startPosition="40" endLine="37" endPosition="39" />
+    <scopeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="40" startPosition="40" endLine="41" endPosition="19" />
+    <scopeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="46" startPosition="34" endLine="47" endPosition="21" />
+    <scopeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="50" startPosition="32" endLine="51" endPosition="21" />
+    <scopeInfo nodeId="1205866458044" fileName="MacrosSwitch_KeyMap.java" startLine="62" startPosition="62" endLine="63" endPosition="21" />
+    <scopeInfo nodeId="1205859818007" fileName="MacrosSwitch_KeyMap.java" startLine="65" startPosition="246" endLine="66" endPosition="21" />
+    <scopeInfo nodeId="1227876803818" fileName="MacrosSwitch_KeyMap.java" startLine="69" startPosition="41" endLine="70" endPosition="49" />
+    <scopeInfo nodeId="1205863559569" fileName="MacrosSwitch_KeyMap.java" startLine="72" startPosition="24" endLine="73" endPosition="21" />
+    <scopeInfo nodeId="1205863514520" fileName="MacrosSwitch_KeyMap.java" startLine="75" startPosition="55" endLine="76" endPosition="21" />
+    <scopeInfo nodeId="1227876799093" fileName="MacrosSwitch_KeyMap.java" startLine="84" startPosition="41" endLine="85" endPosition="52" />
+    <scopeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="91" startPosition="34" endLine="92" endPosition="28" />
+    <scopeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="97" startPosition="42" endLine="98" endPosition="37" />
+    <scopeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="101" startPosition="40" endLine="102" endPosition="30" />
+    <scopeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="105" startPosition="40" endLine="106" endPosition="19" />
+    <scopeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="111" startPosition="34" endLine="112" endPosition="21" />
+    <scopeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="115" startPosition="32" endLine="116" endPosition="21" />
+    <scopeInfo nodeId="1205866787812" fileName="MacrosSwitch_KeyMap.java" startLine="127" startPosition="62" endLine="128" endPosition="21" />
+    <scopeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="139" startPosition="34" endLine="140" endPosition="28" />
+    <scopeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="145" startPosition="42" endLine="146" endPosition="37" />
+    <scopeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="149" startPosition="40" endLine="150" endPosition="34" />
+    <scopeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="153" startPosition="40" endLine="154" endPosition="19" />
+    <scopeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="159" startPosition="34" endLine="160" endPosition="21" />
+    <scopeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="163" startPosition="32" endLine="164" endPosition="21" />
+    <scopeInfo nodeId="1205874717705" fileName="MacrosSwitch_KeyMap.java" startLine="175" startPosition="62" endLine="176" endPosition="21" />
+    <scopeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="190" startPosition="34" endLine="191" endPosition="28" />
+    <scopeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="196" startPosition="42" endLine="197" endPosition="37" />
+    <scopeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="200" startPosition="40" endLine="201" endPosition="35" />
+    <scopeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="204" startPosition="40" endLine="205" endPosition="19" />
+    <scopeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="210" startPosition="34" endLine="211" endPosition="21" />
+    <scopeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="214" startPosition="32" endLine="215" endPosition="21" />
+    <scopeInfo nodeId="1205878695984" fileName="MacrosSwitch_KeyMap.java" startLine="226" startPosition="62" endLine="227" endPosition="21" />
+    <scopeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="241" startPosition="34" endLine="242" endPosition="28" />
+    <scopeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="20" startPosition="34" endLine="22" endPosition="49" />
+    <scopeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="22" startPosition="49" endLine="24" endPosition="49" />
+    <scopeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="24" startPosition="49" endLine="26" endPosition="49" />
+    <scopeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="26" startPosition="49" endLine="28" endPosition="49" />
+    <scopeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="56" startPosition="85" endLine="58" endPosition="115">
       <varInfo nodeId="1149868357716" varName="contextCell" />
     </scopeInfo>
-    <scopeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="124" startPosition="85" endLine="126" endPosition="115">
+    <scopeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="121" startPosition="85" endLine="123" endPosition="115">
       <varInfo nodeId="1149868357716" varName="contextCell" />
     </scopeInfo>
-    <scopeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="172" startPosition="85" endLine="174" endPosition="115">
+    <scopeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="169" startPosition="85" endLine="171" endPosition="115">
       <varInfo nodeId="1149868357716" varName="contextCell" />
     </scopeInfo>
-    <scopeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="223" startPosition="85" endLine="225" endPosition="115">
+    <scopeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="220" startPosition="85" endLine="222" endPosition="115">
       <varInfo nodeId="1149868357716" varName="contextCell" />
     </scopeInfo>
-    <scopeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="274" startPosition="85" endLine="276" endPosition="115">
-      <varInfo nodeId="1149868357716" varName="contextCell" />
-    </scopeInfo>
-    <scopeInfo nodeId="1176304571073" fileName="MacrosSwitch_KeyMap.java" startLine="283" startPosition="146" endLine="285" endPosition="87">
-      <varInfo nodeId="1176304630481" varName="fun" />
-    </scopeInfo>
-    <scopeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="34" startPosition="82" endLine="37" endPosition="5" />
-    <scopeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="99" startPosition="82" endLine="102" endPosition="5" />
-    <scopeInfo nodeId="1149868396524" fileName="MacrosSwitch_KeyMap.java" startLine="136" startPosition="146" endLine="139" endPosition="52">
+    <scopeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="31" startPosition="82" endLine="34" endPosition="5" />
+    <scopeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="96" startPosition="82" endLine="99" endPosition="5" />
+    <scopeInfo nodeId="1149868396524" fileName="MacrosSwitch_KeyMap.java" startLine="133" startPosition="146" endLine="136" endPosition="52">
       <varInfo nodeId="1216154334720" varName="nodeMacro" />
     </scopeInfo>
-    <scopeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="147" startPosition="82" endLine="150" endPosition="5" />
-    <scopeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="198" startPosition="82" endLine="201" endPosition="5" />
-    <scopeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="249" startPosition="82" endLine="252" endPosition="5" />
-    <scopeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="38" startPosition="0" endLine="42" endPosition="0" />
-    <scopeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="42" startPosition="0" endLine="46" endPosition="0" />
-    <scopeInfo nodeId="1227876803815" fileName="MacrosSwitch_KeyMap.java" startLine="71" startPosition="114" endLine="75" endPosition="0">
+    <scopeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="144" startPosition="82" endLine="147" endPosition="5" />
+    <scopeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="195" startPosition="82" endLine="198" endPosition="5" />
+    <scopeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="35" startPosition="0" endLine="39" endPosition="0" />
+    <scopeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="39" startPosition="0" endLine="43" endPosition="0" />
+    <scopeInfo nodeId="1227876803815" fileName="MacrosSwitch_KeyMap.java" startLine="68" startPosition="114" endLine="72" endPosition="0">
       <varInfo nodeId="1227876803815" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="1227876799090" fileName="MacrosSwitch_KeyMap.java" startLine="86" startPosition="129" endLine="90" endPosition="0">
+    <scopeInfo nodeId="1227876799090" fileName="MacrosSwitch_KeyMap.java" startLine="83" startPosition="129" endLine="87" endPosition="0">
       <varInfo nodeId="1227876799090" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="93" startPosition="0" endLine="97" endPosition="0" />
-    <scopeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="103" startPosition="0" endLine="107" endPosition="0" />
-    <scopeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="107" startPosition="0" endLine="111" endPosition="0" />
-    <scopeInfo nodeId="1205866754255" fileName="MacrosSwitch_KeyMap.java" startLine="129" startPosition="152" endLine="133" endPosition="53" />
-    <scopeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="141" startPosition="0" endLine="145" endPosition="0" />
-    <scopeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="151" startPosition="0" endLine="155" endPosition="0" />
-    <scopeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="155" startPosition="0" endLine="159" endPosition="0" />
-    <scopeInfo nodeId="1149868414146" fileName="MacrosSwitch_KeyMap.java" startLine="177" startPosition="152" endLine="181" endPosition="90" />
-    <scopeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="192" startPosition="0" endLine="196" endPosition="0" />
-    <scopeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="202" startPosition="0" endLine="206" endPosition="0" />
-    <scopeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="206" startPosition="0" endLine="210" endPosition="0" />
-    <scopeInfo nodeId="1149868455484" fileName="MacrosSwitch_KeyMap.java" startLine="228" startPosition="152" endLine="232" endPosition="91" />
-    <scopeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="243" startPosition="0" endLine="247" endPosition="0" />
-    <scopeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="253" startPosition="0" endLine="257" endPosition="0" />
-    <scopeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="257" startPosition="0" endLine="261" endPosition="0" />
-    <scopeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="278" startPosition="0" endLine="282" endPosition="0">
+    <scopeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="90" startPosition="0" endLine="94" endPosition="0" />
+    <scopeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="100" startPosition="0" endLine="104" endPosition="0" />
+    <scopeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="104" startPosition="0" endLine="108" endPosition="0" />
+    <scopeInfo nodeId="1205866754255" fileName="MacrosSwitch_KeyMap.java" startLine="126" startPosition="152" endLine="130" endPosition="53" />
+    <scopeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="138" startPosition="0" endLine="142" endPosition="0" />
+    <scopeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="148" startPosition="0" endLine="152" endPosition="0" />
+    <scopeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="152" startPosition="0" endLine="156" endPosition="0" />
+    <scopeInfo nodeId="1149868414146" fileName="MacrosSwitch_KeyMap.java" startLine="174" startPosition="152" endLine="178" endPosition="90" />
+    <scopeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="189" startPosition="0" endLine="193" endPosition="0" />
+    <scopeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="199" startPosition="0" endLine="203" endPosition="0" />
+    <scopeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="203" startPosition="0" endLine="207" endPosition="0" />
+    <scopeInfo nodeId="1149868455484" fileName="MacrosSwitch_KeyMap.java" startLine="225" startPosition="152" endLine="229" endPosition="91" />
+    <scopeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="240" startPosition="0" endLine="244" endPosition="0" />
+    <scopeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="55" startPosition="0" endLine="60" endPosition="0">
+      <varInfo nodeId="1149868357716" varName="editorContext" />
+      <varInfo nodeId="1149868357716" varName="keyEvent" />
+    </scopeInfo>
+    <scopeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="120" startPosition="0" endLine="125" endPosition="0">
+      <varInfo nodeId="1149868357716" varName="editorContext" />
+      <varInfo nodeId="1149868357716" varName="keyEvent" />
+    </scopeInfo>
+    <scopeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="168" startPosition="0" endLine="173" endPosition="0">
+      <varInfo nodeId="1149868357716" varName="editorContext" />
+      <varInfo nodeId="1149868357716" varName="keyEvent" />
+    </scopeInfo>
+    <scopeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="219" startPosition="0" endLine="224" endPosition="0">
+      <varInfo nodeId="1149868357716" varName="editorContext" />
+      <varInfo nodeId="1149868357716" varName="keyEvent" />
+    </scopeInfo>
+    <scopeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="132" startPosition="0" endLine="138" endPosition="0">
       <varInfo nodeId="1149868357716" varName="editorContext" />
       <varInfo nodeId="1149868357716" varName="keyEvent" />
       <varInfo nodeId="1149868357716" varName="node" />
       <varInfo nodeId="1149868357716" varName="selectedNodes" />
     </scopeInfo>
-    <scopeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="287" startPosition="0" endLine="291" endPosition="0" />
-    <scopeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="58" startPosition="0" endLine="63" endPosition="0">
-      <varInfo nodeId="1149868357716" varName="editorContext" />
-      <varInfo nodeId="1149868357716" varName="keyEvent" />
-    </scopeInfo>
-    <scopeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="123" startPosition="0" endLine="128" endPosition="0">
-      <varInfo nodeId="1149868357716" varName="editorContext" />
-      <varInfo nodeId="1149868357716" varName="keyEvent" />
-    </scopeInfo>
-    <scopeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="171" startPosition="0" endLine="176" endPosition="0">
-      <varInfo nodeId="1149868357716" varName="editorContext" />
-      <varInfo nodeId="1149868357716" varName="keyEvent" />
-    </scopeInfo>
-    <scopeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="222" startPosition="0" endLine="227" endPosition="0">
-      <varInfo nodeId="1149868357716" varName="editorContext" />
-      <varInfo nodeId="1149868357716" varName="keyEvent" />
-    </scopeInfo>
-    <scopeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="273" startPosition="0" endLine="278" endPosition="0">
-      <varInfo nodeId="1149868357716" varName="editorContext" />
-      <varInfo nodeId="1149868357716" varName="keyEvent" />
-    </scopeInfo>
-    <scopeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="282" startPosition="0" endLine="287" endPosition="0">
-      <varInfo nodeId="1149868357716" varName="editorContext" />
-      <varInfo nodeId="1149868357716" varName="keyEvent" />
-      <varInfo nodeId="1149868357716" varName="node" />
-      <varInfo nodeId="1149868357716" varName="selectedNodes" />
-    </scopeInfo>
-    <scopeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="135" startPosition="0" endLine="141" endPosition="0">
-      <varInfo nodeId="1149868357716" varName="editorContext" />
-      <varInfo nodeId="1149868357716" varName="keyEvent" />
-      <varInfo nodeId="1149868357716" varName="node" />
-      <varInfo nodeId="1149868357716" varName="selectedNodes" />
-    </scopeInfo>
-    <scopeInfo nodeId="1149868414164" fileName="MacrosSwitch_KeyMap.java" startLine="184" startPosition="146" endLine="190" endPosition="31">
-      <varInfo nodeId="1228227110587" varName="inspector" />
+    <scopeInfo nodeId="1149868414164" fileName="MacrosSwitch_KeyMap.java" startLine="181" startPosition="146" endLine="187" endPosition="27">
+      <varInfo nodeId="8639917440978893901" varName="inspector" />
       <varInfo nodeId="1216154483612" varName="propertyMacro" />
     </scopeInfo>
-    <scopeInfo nodeId="1149868455502" fileName="MacrosSwitch_KeyMap.java" startLine="235" startPosition="146" endLine="241" endPosition="31">
-      <varInfo nodeId="1228227222772" varName="inspector" />
+    <scopeInfo nodeId="1149868455502" fileName="MacrosSwitch_KeyMap.java" startLine="232" startPosition="146" endLine="238" endPosition="27">
+      <varInfo nodeId="8639917440978893885" varName="inspector" />
       <varInfo nodeId="1216154629828" varName="referenceMacro" />
     </scopeInfo>
-    <scopeInfo nodeId="1149868396513" fileName="MacrosSwitch_KeyMap.java" startLine="84" startPosition="146" endLine="91" endPosition="54">
+    <scopeInfo nodeId="1149868396513" fileName="MacrosSwitch_KeyMap.java" startLine="81" startPosition="146" endLine="88" endPosition="54">
       <varInfo nodeId="1205863761396" varName="applyToNode" />
     </scopeInfo>
-    <scopeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="128" startPosition="0" endLine="135" endPosition="0">
+    <scopeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="125" startPosition="0" endLine="132" endPosition="0">
       <varInfo nodeId="1149868357716" varName="editorContext" />
       <varInfo nodeId="1149868357716" varName="keyEvent" />
       <varInfo nodeId="1149868357716" varName="node" />
       <varInfo nodeId="1149868357716" varName="selectedNodes" />
     </scopeInfo>
-    <scopeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="176" startPosition="0" endLine="183" endPosition="0">
+    <scopeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="173" startPosition="0" endLine="180" endPosition="0">
       <varInfo nodeId="1149868357716" varName="editorContext" />
       <varInfo nodeId="1149868357716" varName="keyEvent" />
       <varInfo nodeId="1149868357716" varName="node" />
       <varInfo nodeId="1149868357716" varName="selectedNodes" />
     </scopeInfo>
-    <scopeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="227" startPosition="0" endLine="234" endPosition="0">
+    <scopeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="224" startPosition="0" endLine="231" endPosition="0">
       <varInfo nodeId="1149868357716" varName="editorContext" />
       <varInfo nodeId="1149868357716" varName="keyEvent" />
       <varInfo nodeId="1149868357716" varName="node" />
       <varInfo nodeId="1149868357716" varName="selectedNodes" />
     </scopeInfo>
-    <scopeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="47" startPosition="91" endLine="56" endPosition="114">
+    <scopeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="44" startPosition="91" endLine="53" endPosition="114">
       <varInfo nodeId="1149868357716" varName="contextCell" />
       <varInfo nodeId="1149868357716" varName="contextNode" />
     </scopeInfo>
-    <scopeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="112" startPosition="91" endLine="121" endPosition="114">
+    <scopeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="109" startPosition="91" endLine="118" endPosition="114">
       <varInfo nodeId="1149868357716" varName="contextCell" />
       <varInfo nodeId="1149868357716" varName="contextNode" />
     </scopeInfo>
-    <scopeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="160" startPosition="91" endLine="169" endPosition="114">
+    <scopeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="157" startPosition="91" endLine="166" endPosition="114">
       <varInfo nodeId="1149868357716" varName="contextCell" />
       <varInfo nodeId="1149868357716" varName="contextNode" />
     </scopeInfo>
-    <scopeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="183" startPosition="0" endLine="192" endPosition="0">
+    <scopeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="180" startPosition="0" endLine="189" endPosition="0">
       <varInfo nodeId="1149868357716" varName="editorContext" />
       <varInfo nodeId="1149868357716" varName="keyEvent" />
       <varInfo nodeId="1149868357716" varName="node" />
       <varInfo nodeId="1149868357716" varName="selectedNodes" />
     </scopeInfo>
-    <scopeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="211" startPosition="91" endLine="220" endPosition="114">
+    <scopeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="208" startPosition="91" endLine="217" endPosition="114">
       <varInfo nodeId="1149868357716" varName="contextCell" />
       <varInfo nodeId="1149868357716" varName="contextNode" />
     </scopeInfo>
-    <scopeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="234" startPosition="0" endLine="243" endPosition="0">
+    <scopeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="231" startPosition="0" endLine="240" endPosition="0">
       <varInfo nodeId="1149868357716" varName="editorContext" />
       <varInfo nodeId="1149868357716" varName="keyEvent" />
       <varInfo nodeId="1149868357716" varName="node" />
       <varInfo nodeId="1149868357716" varName="selectedNodes" />
     </scopeInfo>
-    <scopeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="262" startPosition="91" endLine="271" endPosition="114">
-      <varInfo nodeId="1149868357716" varName="contextCell" />
-      <varInfo nodeId="1149868357716" varName="contextNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="83" startPosition="0" endLine="93" endPosition="0">
-      <varInfo nodeId="1149868357716" varName="editorContext" />
-      <varInfo nodeId="1149868357716" varName="keyEvent" />
-      <varInfo nodeId="1149868357716" varName="node" />
-      <varInfo nodeId="1149868357716" varName="selectedNodes" />
-    </scopeInfo>
-    <scopeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="19" startPosition="32" endLine="31" endPosition="53">
+    <scopeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="18" startPosition="32" endLine="28" endPosition="49">
       <varInfo nodeId="1149868357716" varName="action" />
     </scopeInfo>
-    <scopeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="46" startPosition="0" endLine="58" endPosition="0">
-      <varInfo nodeId="1149868357716" varName="editorContext" />
-      <varInfo nodeId="1149868357716" varName="keyEvent" />
-    </scopeInfo>
-    <scopeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="111" startPosition="0" endLine="123" endPosition="0">
-      <varInfo nodeId="1149868357716" varName="editorContext" />
-      <varInfo nodeId="1149868357716" varName="keyEvent" />
-    </scopeInfo>
-    <scopeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="159" startPosition="0" endLine="171" endPosition="0">
-      <varInfo nodeId="1149868357716" varName="editorContext" />
-      <varInfo nodeId="1149868357716" varName="keyEvent" />
-    </scopeInfo>
-    <scopeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="210" startPosition="0" endLine="222" endPosition="0">
-      <varInfo nodeId="1149868357716" varName="editorContext" />
-      <varInfo nodeId="1149868357716" varName="keyEvent" />
-    </scopeInfo>
-    <scopeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="261" startPosition="0" endLine="273" endPosition="0">
-      <varInfo nodeId="1149868357716" varName="editorContext" />
-      <varInfo nodeId="1149868357716" varName="keyEvent" />
-    </scopeInfo>
-    <scopeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="18" startPosition="59" endLine="32" endPosition="3" />
-    <scopeInfo nodeId="1149868396497" fileName="MacrosSwitch_KeyMap.java" startLine="64" startPosition="152" endLine="81" endPosition="18" />
-    <scopeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="63" startPosition="0" endLine="83" endPosition="0">
+    <scopeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="80" startPosition="0" endLine="90" endPosition="0">
       <varInfo nodeId="1149868357716" varName="editorContext" />
       <varInfo nodeId="1149868357716" varName="keyEvent" />
       <varInfo nodeId="1149868357716" varName="node" />
       <varInfo nodeId="1149868357716" varName="selectedNodes" />
     </scopeInfo>
-    <unitInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="18" startPosition="0" endLine="293" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.MacrosSwitch_KeyMap" />
-    <unitInfo nodeId="1227876803815" fileName="MacrosSwitch_KeyMap.java" startLine="71" startPosition="91" endLine="75" endPosition="7" unitName="jetbrains.mps.lang.generator.editor.MacrosSwitch_KeyMap$1" />
-    <unitInfo nodeId="1227876799090" fileName="MacrosSwitch_KeyMap.java" startLine="86" startPosition="106" endLine="90" endPosition="7" unitName="jetbrains.mps.lang.generator.editor.MacrosSwitch_KeyMap$2" />
-    <unitInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="34" startPosition="0" endLine="98" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.MacrosSwitch_KeyMap$MacrosSwitch_KeyMap_Action0" />
-    <unitInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="99" startPosition="0" endLine="146" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.MacrosSwitch_KeyMap$MacrosSwitch_KeyMap_Action1" />
-    <unitInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="147" startPosition="0" endLine="197" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.MacrosSwitch_KeyMap$MacrosSwitch_KeyMap_Action2" />
-    <unitInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="198" startPosition="0" endLine="248" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.MacrosSwitch_KeyMap$MacrosSwitch_KeyMap_Action3" />
-    <unitInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="249" startPosition="0" endLine="292" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.MacrosSwitch_KeyMap$MacrosSwitch_KeyMap_Action4" />
+    <scopeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="17" startPosition="59" endLine="29" endPosition="3" />
+    <scopeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="43" startPosition="0" endLine="55" endPosition="0">
+      <varInfo nodeId="1149868357716" varName="editorContext" />
+      <varInfo nodeId="1149868357716" varName="keyEvent" />
+    </scopeInfo>
+    <scopeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="108" startPosition="0" endLine="120" endPosition="0">
+      <varInfo nodeId="1149868357716" varName="editorContext" />
+      <varInfo nodeId="1149868357716" varName="keyEvent" />
+    </scopeInfo>
+    <scopeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="156" startPosition="0" endLine="168" endPosition="0">
+      <varInfo nodeId="1149868357716" varName="editorContext" />
+      <varInfo nodeId="1149868357716" varName="keyEvent" />
+    </scopeInfo>
+    <scopeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="207" startPosition="0" endLine="219" endPosition="0">
+      <varInfo nodeId="1149868357716" varName="editorContext" />
+      <varInfo nodeId="1149868357716" varName="keyEvent" />
+    </scopeInfo>
+    <scopeInfo nodeId="1149868396497" fileName="MacrosSwitch_KeyMap.java" startLine="61" startPosition="152" endLine="78" endPosition="18" />
+    <scopeInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="60" startPosition="0" endLine="80" endPosition="0">
+      <varInfo nodeId="1149868357716" varName="editorContext" />
+      <varInfo nodeId="1149868357716" varName="keyEvent" />
+      <varInfo nodeId="1149868357716" varName="node" />
+      <varInfo nodeId="1149868357716" varName="selectedNodes" />
+    </scopeInfo>
+    <unitInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="17" startPosition="0" endLine="246" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.MacrosSwitch_KeyMap" />
+    <unitInfo nodeId="1227876803815" fileName="MacrosSwitch_KeyMap.java" startLine="68" startPosition="91" endLine="72" endPosition="7" unitName="jetbrains.mps.lang.generator.editor.MacrosSwitch_KeyMap$1" />
+    <unitInfo nodeId="1227876799090" fileName="MacrosSwitch_KeyMap.java" startLine="83" startPosition="106" endLine="87" endPosition="7" unitName="jetbrains.mps.lang.generator.editor.MacrosSwitch_KeyMap$2" />
+    <unitInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="31" startPosition="0" endLine="95" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.MacrosSwitch_KeyMap$MacrosSwitch_KeyMap_Action0" />
+    <unitInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="96" startPosition="0" endLine="143" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.MacrosSwitch_KeyMap$MacrosSwitch_KeyMap_Action1" />
+    <unitInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="144" startPosition="0" endLine="194" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.MacrosSwitch_KeyMap$MacrosSwitch_KeyMap_Action2" />
+    <unitInfo nodeId="1149868357716" fileName="MacrosSwitch_KeyMap.java" startLine="195" startPosition="0" endLine="245" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.MacrosSwitch_KeyMap$MacrosSwitch_KeyMap_Action3" />
   </root>
   <root nodeId="1167088003562">
     <nodeInfo nodeId="1200923573454" fileName="CreateRootRule_Editor.java" startLine="176" startPosition="58" endLine="176" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -17101,15 +17031,17 @@
     <nodeInfo nodeId="1231693361386" fileName="PropertyMacroActions.java" startLine="30" startPosition="75" endLine="31" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1231694249737" fileName="PropertyMacroActions.java" startLine="31" startPosition="61" endLine="32" endPosition="158" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1231694378057" fileName="PropertyMacroActions.java" startLine="32" startPosition="158" endLine="33" endPosition="174" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1231694382085" fileName="PropertyMacroActions.java" startLine="33" startPosition="174" endLine="34" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1231694405061" fileName="PropertyMacroActions.java" startLine="34" startPosition="67" endLine="35" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1231694382085" fileName="PropertyMacroActions.java" startLine="34" startPosition="25" endLine="35" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1231694405061" fileName="PropertyMacroActions.java" startLine="36" startPosition="7" endLine="37" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1231693283891" fileName="PropertyMacroActions.java" startLine="21" startPosition="0" endLine="24" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="PropertyMacroActions_DELETE#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="5850139268204690384" fileName="PropertyMacroActions.java" startLine="33" startPosition="174" endLine="36" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1231693283891" fileName="PropertyMacroActions.java" startLine="14" startPosition="35" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="setCellActions#(Ljetbrains/mps/nodeEditor/cells/EditorCell;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/nodeEditor/EditorContext;)V" />
     <nodeInfo nodeId="1231693283891" fileName="PropertyMacroActions.java" startLine="25" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljetbrains/mps/nodeEditor/EditorContext;)V" />
-    <nodeInfo nodeId="1231693283891" fileName="PropertyMacroActions.java" startLine="29" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute_internal#(Ljetbrains/mps/nodeEditor/EditorContext;Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="1231693283891" fileName="PropertyMacroActions.java" startLine="29" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute_internal#(Ljetbrains/mps/nodeEditor/EditorContext;Ljetbrains/mps/smodel/SNode;)V" />
     <scopeInfo nodeId="1231693283891" fileName="PropertyMacroActions.java" startLine="15" startPosition="95" endLine="16" endPosition="108" />
     <scopeInfo nodeId="1231693283891" fileName="PropertyMacroActions.java" startLine="22" startPosition="52" endLine="23" endPosition="25" />
     <scopeInfo nodeId="1231693283891" fileName="PropertyMacroActions.java" startLine="26" startPosition="54" endLine="27" endPosition="56" />
+    <scopeInfo nodeId="5850139268204690385" fileName="PropertyMacroActions.java" startLine="34" startPosition="25" endLine="35" endPosition="69" />
     <scopeInfo nodeId="1231693283891" fileName="PropertyMacroActions.java" startLine="21" startPosition="0" endLine="24" endPosition="5">
       <varInfo nodeId="1231693283891" varName="node" />
     </scopeInfo>
@@ -17121,17 +17053,17 @@
     <scopeInfo nodeId="1231693283891" fileName="PropertyMacroActions.java" startLine="25" startPosition="0" endLine="29" endPosition="0">
       <varInfo nodeId="1231693283891" varName="editorContext" />
     </scopeInfo>
-    <scopeInfo nodeId="1231693298176" fileName="PropertyMacroActions.java" startLine="30" startPosition="75" endLine="35" endPosition="39">
+    <scopeInfo nodeId="1231693298176" fileName="PropertyMacroActions.java" startLine="30" startPosition="75" endLine="37" endPosition="39">
       <varInfo nodeId="1231693361387" varName="attributedNode" />
       <varInfo nodeId="1231694378058" varName="cell" />
       <varInfo nodeId="1231694249738" varName="propertyDeclaration" />
     </scopeInfo>
-    <scopeInfo nodeId="1231693283891" fileName="PropertyMacroActions.java" startLine="29" startPosition="0" endLine="37" endPosition="0">
+    <scopeInfo nodeId="1231693283891" fileName="PropertyMacroActions.java" startLine="29" startPosition="0" endLine="39" endPosition="0">
       <varInfo nodeId="1231693283891" varName="editorContext" />
       <varInfo nodeId="1231693283891" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="1231693283891" fileName="PropertyMacroActions.java" startLine="14" startPosition="0" endLine="39" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.PropertyMacroActions" />
-    <unitInfo nodeId="1231693283891" fileName="PropertyMacroActions.java" startLine="19" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.PropertyMacroActions$PropertyMacroActions_DELETE" />
+    <unitInfo nodeId="1231693283891" fileName="PropertyMacroActions.java" startLine="14" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.PropertyMacroActions" />
+    <unitInfo nodeId="1231693283891" fileName="PropertyMacroActions.java" startLine="19" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.PropertyMacroActions$PropertyMacroActions_DELETE" />
   </root>
   <root nodeId="1311078761699591092">
     <nodeInfo nodeId="1311078761699602343" fileName="InsertMacro_Editor.java" startLine="115" startPosition="69" endLine="115" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />

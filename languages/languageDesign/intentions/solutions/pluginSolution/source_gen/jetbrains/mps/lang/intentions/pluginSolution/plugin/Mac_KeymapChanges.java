@@ -10,7 +10,7 @@ import javax.swing.KeyStroke;
 public class Mac_KeymapChanges extends BaseKeymapChanges {
   public Mac_KeymapChanges() {
     // simple 
-    addSimpleShortcut("jetbrains.mps.lang.intentions.pluginSolution.plugin.ShowGenerationIntentions_Action", getShortcut("ctrl N"));
+    addSimpleShortcut("jetbrains.mps.lang.intentions.pluginSolution.plugin.ShowGenerationActions_Action", getShortcut("ctrl N"));
     // simple parameterized 
     // complex 
   }

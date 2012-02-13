@@ -19,6 +19,9 @@ import jetbrains.mps.util.InternUtil;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
+import java.io.PrintWriter;
+import java.io.StringWriter;
+
 /**
  * Igor Alshannikov
  * Sep 28, 2007
@@ -72,15 +75,45 @@ abstract class SReferenceBase extends SReference {
     myTargetModelReference = modelReference;
   }
 
-  protected synchronized final boolean mature() {
+  protected final boolean mature() {
+    return mature(false);
+  }
+
+  protected synchronized final boolean mature(boolean force) {
     if (myImmatureTargetNode != null) {
       if (getSourceNode().isRegistered() && myImmatureTargetNode.isRegistered() &&
         !(getSourceNode().isDisposed() || myImmatureTargetNode.isDisposed())) {
         // convert 'young' reference to 'mature'
         makeMature();
       }
+      if (force && myImmatureTargetNode != null) {
+        if (getSourceNode().isRegistered() && !getSourceNode().isDisposed()) {
+          error("Impossible to resolve immature reference",
+            new ProblemDescription(new SNodePointer(myImmatureTargetNode),
+              "ImmatureTargetNode(modelID: " +
+                (myImmatureTargetNode.getModel() == null ? "null" : myImmatureTargetNode.getModel().toString()) +
+                ", nodeID: " + myImmatureTargetNode.getId() +
+                "): isRegistered = " + myImmatureTargetNode.isRegistered() +
+                ", isDisposed = " + myImmatureTargetNode.isDisposed() + dumpUnregisteredTrace()));
+          myImmatureTargetNode = null;
+        }
+      }
     }
     return myImmatureTargetNode == null;
+  }
+
+  private String dumpUnregisteredTrace() {
+    Throwable trace = Trace.getInstance().getUnregisteredFromModelTrace(myImmatureTargetNode);
+    if (trace == null) {
+      return "";
+    }
+    StringWriter traceWriter = new StringWriter();
+    PrintWriter printTraceWriter = new PrintWriter(traceWriter);
+    printTraceWriter.println();
+    printTraceWriter.println("Unregistered in:");
+    trace.printStackTrace(printTraceWriter);
+    printTraceWriter.close();
+    return traceWriter.toString();
   }
 
   protected synchronized void makeMature() {

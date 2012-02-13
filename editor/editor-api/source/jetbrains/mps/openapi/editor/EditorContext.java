@@ -23,4 +23,5 @@ import jetbrains.mps.smodel.SNode;
 public interface EditorContext {
 
   void selectWRTFocusPolicy(SNode node);
+  EditorInspector getInspector();
 }

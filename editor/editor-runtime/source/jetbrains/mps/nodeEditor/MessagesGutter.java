@@ -333,7 +333,9 @@ public class MessagesGutter extends ButtonlessScrollBarUI implements TooltipComp
         while (cell instanceof EditorCell_Collection) {
           cell = cell.getLastChild();
         }
-        height -= cell.getHeight();
+        if(cell != null) {
+          height -= cell.getHeight();
+        }
       }
     }
     return (int) (height * (((double) getMessagesAreaHeight()) / ((double) myEditorComponent.getHeight()))) + 3;

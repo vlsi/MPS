@@ -58,7 +58,6 @@
   <import index="6ihy" modelUID="r:234b331b-e592-4abc-a46f-b0dfd2e2ce5e(jetbrains.mps.vcs.diff.merge@tests)" version="-1" />
   <import index="w6y5" modelUID="r:e7e02271-4574-4bd7-8641-cf8bca0b1900(jetbrains.mps.vcs.changesmanager@tests)" version="-1" />
   <import index="zn6b" modelUID="r:a822b011-296a-478b-9b72-dc6e0c3c30e7(test.ypath.util)" version="-1" />
-  <import index="tpok" modelUID="r:00000000-0000-4000-0000-011c89590458(jetbrains.mps.samples.matrixLanguage.runtime.test)" version="-1" />
   <import index="fw8r" modelUID="r:3160b573-ccb2-45e9-9d2a-2b5104766730(mf)" version="-1" />
   <import index="g7jn" modelUID="r:43e3e907-f65e-4358-a377-baa3670feacf(jetbrains.mps.samples.secretCompartmentLanguage.runtime.test)" version="-1" />
   <import index="zac2" modelUID="r:e0863919-8493-440c-b44a-4137ee814e30(jetbrains.mps.project.iotests@tests)" version="-1" />
@@ -922,6 +921,9 @@
     </node>
     <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="2712670354707832462">
       <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="tpej.5113180367541522955" resolveInfo="TypesTest_BL" />
+    </node>
+    <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="1651218400254446645">
+      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="tpej.4395293866213195826" resolveInfo="TestExpectedType" />
     </node>
   </root>
   <root id="2712670354707832463">

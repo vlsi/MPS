@@ -116,9 +116,9 @@ public class FacetTests extends AbstractMPSFixtureTestCase {
 
         ModuleReference solutionReference = myFacet.getSolution().getModuleReference();
 
-        String[] modelRootPaths = new String[]{modelRootDir.getPath()};
+        String modelRootPath = modelRootDir.getPath();
         MPSConfigurationBean configurationBean = myFacet.getConfiguration().getState();
-        configurationBean.setModelRootPaths(modelRootPaths);
+        configurationBean.setModelRootPaths(modelRootPath);
         myFacet.setConfiguration(configurationBean);
         flushEDT();
 
@@ -130,7 +130,7 @@ public class FacetTests extends AbstractMPSFixtureTestCase {
         assertEquals(modelRootDir.getPath(), theModelRoot.getPath());
 
         configurationBean = myFacet.getConfiguration().getState();
-        configurationBean.setModelRootPaths(new String[0]);
+        configurationBean.setModelRootPaths();
         myFacet.setConfiguration(configurationBean);
         flushEDT();
 

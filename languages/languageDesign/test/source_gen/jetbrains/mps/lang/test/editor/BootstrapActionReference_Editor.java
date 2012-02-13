@@ -22,7 +22,7 @@ import java.util.List;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import com.intellij.openapi.actionSystem.ActionManager;
+import jetbrains.mps.smodel.structure.ExtensionPoint;
 
 public class BootstrapActionReference_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -76,8 +76,10 @@ public class BootstrapActionReference_Editor extends DefaultNodeEditor {
     }
 
     public List<String> getPropertyValues(SNode node, IScope scope, IOperationContext operationContext) {
-      // <node> 
-      List<String> result = ListSequence.fromListAndArray(new ArrayList<String>(), ActionManager.getInstance().getActionIds(""));
+      List<String> result = ListSequence.fromList(new ArrayList<String>());
+      for (List<String> ext : ExtensionPoint.<List<String>>generify(new ExtensionPoint("jetbrains.mps.lang.test.ActionIDs", List.class)).getObjects()) {
+        ListSequence.fromList(result).addSequence(ListSequence.fromList(ext));
+      }
       return result;
     }
   }

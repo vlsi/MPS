@@ -17,7 +17,6 @@
     <orderEntry type="module" module-name="editor-runtime" />
     <orderEntry type="module" module-name="uiLanguage-runtime" />
     <orderEntry type="module" module-name="collections-runtime" />
-    <orderEntry type="module" module-name="plugin-runtime" />
     <orderEntry type="module" module-name="generator-engine" />
     <orderEntry type="module" module-name="Closures-runtime" />
     <orderEntry type="module" module-name="Tuples-runtime" />

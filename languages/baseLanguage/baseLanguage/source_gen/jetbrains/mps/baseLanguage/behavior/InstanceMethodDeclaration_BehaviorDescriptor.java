@@ -15,6 +15,10 @@ public class InstanceMethodDeclaration_BehaviorDescriptor extends BaseMethodDecl
     return ClassifierMember_Behavior.virtual_isStatic_8986964027630462944(thisNode);
   }
 
+  public boolean virtual_isAbstract_1232982539764(SNode thisNode) {
+    return InstanceMethodDeclaration_Behavior.virtual_isAbstract_1232982539764(thisNode);
+  }
+
   public boolean virtual_isDataFlowChecked_1227714048980(SNode thisNode) {
     return InstanceMethodDeclaration_Behavior.virtual_isDataFlowChecked_1227714048980(thisNode);
   }

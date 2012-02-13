@@ -36,10 +36,10 @@
   </application-components>
 
   <project-components>
-
+    <component><implementation-class>jetbrains.mps.ide.make.actions.TransientModelsNotification</implementation-class></component>
   </project-components>
 
   <extensions defaultExtensionNs="com.intellij">
-    <errorHandler implementation="jetbrains.mps.workbench.diagnostics.CharismaReporter"/>
+    <errorHandler implementation="jetbrains.mps.ide.blame.CharismaReporter"/>
   </extensions>
 </idea-plugin>

@@ -60,7 +60,7 @@ public class IncrementalGenerationTest extends GenerationTestBase {
 
   @Test
   public void testIdeActions() throws IOException {
-    final Project p = TestMain.loadProject(new File(System.getProperty("user.dir") + "/workbench/workbench.ipr"));
+    final Project p = TestMain.loadProject(new File(System.getProperty("user.dir") + "/MPS.ipr"));
     SModelDescriptor descr = findModel(p, "jetbrains.mps.ide.actions");
 
     doTestIncrementalGeneration(p, descr,

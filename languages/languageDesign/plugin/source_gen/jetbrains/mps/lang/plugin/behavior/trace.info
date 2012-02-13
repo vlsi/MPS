@@ -36,7 +36,7 @@
   <unitInfo fileName="BaseProjectOperation_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.lang.plugin.behavior.BaseProjectOperation_BehaviorDescriptor" />
   <unitInfo fileName="BaseToolDeclaration_BehaviorDescriptor.java" startLine="14" startPosition="0" endLine="67" endPosition="0" unitName="jetbrains.mps.lang.plugin.behavior.BaseToolDeclaration_BehaviorDescriptor" />
   <unitInfo fileName="BeforeGenerationBlock_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.plugin.behavior.BeforeGenerationBlock_BehaviorDescriptor" />
-  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="340" endPosition="0" unitName="jetbrains.mps.lang.plugin.behavior.BehaviorAspectDescriptor" />
+  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="346" endPosition="0" unitName="jetbrains.mps.lang.plugin.behavior.BehaviorAspectDescriptor" />
   <unitInfo fileName="BuildGroupBlock_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.plugin.behavior.BuildGroupBlock_BehaviorDescriptor" />
   <unitInfo fileName="ButtonCreator_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.plugin.behavior.ButtonCreator_BehaviorDescriptor" />
   <unitInfo fileName="CloseTabOperation_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.plugin.behavior.CloseTabOperation_BehaviorDescriptor" />
@@ -105,7 +105,10 @@
   <unitInfo fileName="GroupType_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.lang.plugin.behavior.GroupType_BehaviorDescriptor" />
   <unitInfo fileName="ICheckedNamePolicy_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.plugin.behavior.ICheckedNamePolicy_BehaviorDescriptor" />
   <unitInfo fileName="IExecuteCommandStatementSync_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="8" endPosition="0" unitName="jetbrains.mps.lang.plugin.behavior.IExecuteCommandStatementSync_BehaviorDescriptor" />
+  <unitInfo fileName="IconResourceBundle_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.lang.plugin.behavior.IconResourceBundle_BehaviorDescriptor" />
+  <unitInfo fileName="IconResourceDeclaration_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.lang.plugin.behavior.IconResourceDeclaration_BehaviorDescriptor" />
   <unitInfo fileName="IconResourceExpression_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.plugin.behavior.IconResourceExpression_BehaviorDescriptor" />
+  <unitInfo fileName="IconResourceReference_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.lang.plugin.behavior.IconResourceReference_BehaviorDescriptor" />
   <unitInfo fileName="IconResource_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.lang.plugin.behavior.IconResource_BehaviorDescriptor" />
   <unitInfo fileName="IdeaActionsDescriptor_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.plugin.behavior.IdeaActionsDescriptor_BehaviorDescriptor" />
   <unitInfo fileName="IdeaConfigurationXml_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.lang.plugin.behavior.IdeaConfigurationXml_BehaviorDescriptor" />
@@ -1491,6 +1494,20 @@
     </scopeInfo>
     <unitInfo nodeId="203415309825603287" fileName="MPSPluginDependency_Behavior.java" startLine="9" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.lang.plugin.behavior.MPSPluginDependency_Behavior" />
   </root>
+  <root nodeId="2990235398086953096">
+    <nodeInfo nodeId="7038317550322744942" fileName="IconResourceBundle_Behavior.java" startLine="13" startPosition="77" endLine="14" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2990235398086953096" fileName="IconResourceBundle_Behavior.java" startLine="9" startPosition="42" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="2990235398086953096" fileName="IconResourceBundle_Behavior.java" startLine="12" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getJavaName_2990235398086953099#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;" />
+    <scopeInfo nodeId="2990235398086953098" fileName="IconResourceBundle_Behavior.java" startLine="10" startPosition="43" endLine="10" endPosition="43" />
+    <scopeInfo nodeId="2990235398086953102" fileName="IconResourceBundle_Behavior.java" startLine="13" startPosition="77" endLine="14" endPosition="111" />
+    <scopeInfo nodeId="2990235398086953096" fileName="IconResourceBundle_Behavior.java" startLine="9" startPosition="42" endLine="12" endPosition="0">
+      <varInfo nodeId="2990235398086953096" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="2990235398086953096" fileName="IconResourceBundle_Behavior.java" startLine="12" startPosition="0" endLine="16" endPosition="0">
+      <varInfo nodeId="2990235398086953096" varName="thisNode" />
+    </scopeInfo>
+    <unitInfo nodeId="2990235398086953096" fileName="IconResourceBundle_Behavior.java" startLine="9" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.lang.plugin.behavior.IconResourceBundle_Behavior" />
+  </root>
   <root nodeId="3743831881070611775">
     <nodeInfo nodeId="3743831881070611779" fileName="EditorTab_Behavior.java" startLine="18" startPosition="82" endLine="19" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3743831881070611790" fileName="EditorTab_Behavior.java" startLine="22" startPosition="89" endLine="23" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -1784,6 +1801,20 @@
       <varInfo nodeId="8405639817129381663" varName="thisNode" />
     </scopeInfo>
     <unitInfo nodeId="8405639817129381663" fileName="MultitabbedEditorTabType_Behavior.java" startLine="12" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.lang.plugin.behavior.MultitabbedEditorTabType_Behavior" />
+  </root>
+  <root nodeId="8814893218132381085">
+    <nodeInfo nodeId="8814893218132381103" fileName="IconResourceReference_Behavior.java" startLine="14" startPosition="78" endLine="15" endPosition="178" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8814893218132381085" fileName="IconResourceReference_Behavior.java" startLine="10" startPosition="45" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="8814893218132381085" fileName="IconResourceReference_Behavior.java" startLine="13" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getPresentation_1213877396640#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;" />
+    <scopeInfo nodeId="8814893218132381087" fileName="IconResourceReference_Behavior.java" startLine="11" startPosition="43" endLine="11" endPosition="43" />
+    <scopeInfo nodeId="8814893218132381094" fileName="IconResourceReference_Behavior.java" startLine="14" startPosition="78" endLine="15" endPosition="178" />
+    <scopeInfo nodeId="8814893218132381085" fileName="IconResourceReference_Behavior.java" startLine="10" startPosition="45" endLine="13" endPosition="0">
+      <varInfo nodeId="8814893218132381085" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="8814893218132381085" fileName="IconResourceReference_Behavior.java" startLine="13" startPosition="0" endLine="17" endPosition="0">
+      <varInfo nodeId="8814893218132381085" varName="thisNode" />
+    </scopeInfo>
+    <unitInfo nodeId="8814893218132381085" fileName="IconResourceReference_Behavior.java" startLine="10" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.lang.plugin.behavior.IconResourceReference_Behavior" />
   </root>
   <root nodeId="8976425910813622806">
     <nodeInfo nodeId="8976425910813622806" fileName="IconResource_Behavior.java" startLine="21" startPosition="36" endLine="22" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="PARAMETERS_8976425910813640826" />

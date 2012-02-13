@@ -19,7 +19,6 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
-import jetbrains.mps.baseLanguage.util.plugin.refactorings.InlineMethodDialog;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.smodel.IOperationContext;
 

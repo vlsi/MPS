@@ -16,8 +16,10 @@
 
 package jetbrains.mps.idea.core.navigation;
 
+import com.intellij.openapi.components.ApplicationComponent;
 import jetbrains.mps.ide.editor.MPSEditorOpener;
-import jetbrains.mps.ide.navigation.NavigationSupport;
+import jetbrains.mps.openapi.navigation.NavigationSupport;
+import jetbrains.mps.openapi.editor.Editor;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.IOperationContext;
@@ -28,11 +30,24 @@ import org.jetbrains.annotations.NotNull;
 /**
  * evgeny, 11/21/11
  */
-public class NavigationSupportImpl extends NavigationSupport {
+public class NavigationSupportImpl extends NavigationSupport implements ApplicationComponent{
+
+  @NotNull
+  public String getComponentName() {
+    return "Navigation Support";
+  }
+
+  public void initComponent() {
+    init();
+  }
+
+  public void disposeComponent() {
+    dispose();
+  }
 
   @Override
-  public void openNode(@NotNull IOperationContext context, @NotNull SNode node, boolean focus, boolean select) {
-    new MPSEditorOpener(ProjectHelper.toIdeaProject(context.getProject())).openNode(node, context, focus, select);
+  public Editor openNode(@NotNull IOperationContext context, @NotNull SNode node, boolean focus, boolean select) {
+    return new MPSEditorOpener(ProjectHelper.toIdeaProject(context.getProject())).openNode(node, context, focus, select);
   }
 
   @Override

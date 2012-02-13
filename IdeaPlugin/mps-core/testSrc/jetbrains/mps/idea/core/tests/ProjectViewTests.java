@@ -63,7 +63,7 @@ public class ProjectViewTests extends BaseProjectViewTestCase {
         Assert.assertNotNull("MPS facet type is not found", facetType);
         MPSFacet facet = facetManager.createFacet(facetType, "MPS", null);
         final MPSFacetConfiguration configuration = facet.getConfiguration();
-        configuration.getState().setModelRootPaths(new String[]{VirtualFileManager.extractPath(getContentRoot().findChild("src").getUrl())});
+        configuration.getState().setModelRootPaths(VirtualFileManager.extractPath(getContentRoot().findChild("src").getUrl()));
 
         final ModifiableFacetModel facetModel = facetManager.createModifiableModel();
         facetModel.addFacet(facet);

@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.vfs.impl;
 
+import jetbrains.mps.logging.Logger;
 import jetbrains.mps.vfs.FileSystemProvider;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
@@ -25,6 +26,8 @@ import java.io.File;
  * @author Evgeny Gerashchenko
  */
 public class IoFileSystemProvider implements FileSystemProvider {
+  static final Logger LOG = Logger.getLogger(IoFileSystemProvider.class);
+
   @Override
   public IFile getFile(@NotNull String path) {
     if (path.contains("!")) {
@@ -55,5 +58,16 @@ public class IoFileSystemProvider implements FileSystemProvider {
   @Override
   public void scheduleUpdateForWrittenFiles(Iterable<IFile> writtenFiles) {
     // do nothing
+  }
+
+  @Override
+  public boolean runWriteTransaction(Runnable r) {
+    try {
+      r.run();
+    } catch (Exception e) {
+      LOG.error(e);
+      return false;
+    }
+    return true;
   }
 }

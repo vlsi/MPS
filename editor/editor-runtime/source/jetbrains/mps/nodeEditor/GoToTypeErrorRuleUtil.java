@@ -16,7 +16,7 @@
 package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.errors.IErrorReporter;
-import jetbrains.mps.ide.navigation.NavigationSupport;
+import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Computable;

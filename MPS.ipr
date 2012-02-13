@@ -63,7 +63,6 @@
       <modulePath path="${project}/core/kernel/traceinfo/solutions/jetbrains.mps.traceInfo.testWeaving/testWeaving.msd" folder="traceInfo" />
       <modulePath path="${project}/core/make-runtime/solutions/jetbrains.mps.make.runtime/jetbrains.mps.make.runtime.msd" folder="core.make" />
       <modulePath path="${project}/core/make-runtime/solutions/jetbrains.mps.make/jetbrains.mps.make.msd" folder="core.make" />
-      <modulePath path="${project}/core/plugin-runtime/jetbrains.mps.plugin.runtime.msd" folder="core.language-design" />
       <modulePath path="${project}/core/refactoring-runtime/jetbrains.mps.refactoring.runtime.msd" folder="core" />
       <modulePath path="${project}/core/typesystemEngine/solutions/jetbrains.mps.typesystemEngine/jetbrains.mps.typesystemEngine.msd" folder="core" />
       <modulePath path="${project}/editor/actions-runtime/jetbrains.mps.actions.runtime.msd" folder="core.editor" />
@@ -89,7 +88,6 @@
       <modulePath path="${project}/languages/baseLanguage/closures/solutions/jetbrains.mps.baseLanguage.closures.unittest/jetbrains.mps.baseLanguage.closures.unittest.msd" folder="baseLanguage.closures" />
       <modulePath path="${project}/languages/baseLanguage/collections/collections.mpl" folder="baseLanguage.collections" />
       <modulePath path="${project}/languages/baseLanguage/collections/languages/trove/runtime/collections_trove.runtime.msd" folder="baseLanguage.collections" />
-      <modulePath path="${project}/languages/baseLanguage/collections/languages/trove/solutions/pluginSolution/pluginSolution.msd" folder="baseLanguage.collections" />
       <modulePath path="${project}/languages/baseLanguage/collections/languages/trove/trove.mpl" folder="baseLanguage.collections" />
       <modulePath path="${project}/languages/baseLanguage/collections/runtime/collections.runtime.msd" folder="baseLanguage.collections" />
       <modulePath path="${project}/languages/baseLanguage/collections/runtime/gwt/collections.runtime.gwt.msd" folder="baseLanguage.collections" />
@@ -99,7 +97,6 @@
       <modulePath path="${project}/languages/baseLanguage/collections/solutions/collections_trove.test/collections_trove.test.msd" folder="baseLanguage.collections" />
       <modulePath path="${project}/languages/baseLanguage/collections/solutions/internalCollections.sandbox/internalCollections.sandbox.msd" folder="baseLanguage.collections" />
       <modulePath path="${project}/languages/baseLanguage/collections/solutions/internalCollections.test/internalCollections.test.msd" folder="baseLanguage.collections" />
-      <modulePath path="${project}/languages/baseLanguage/collections/solutions/pluginSolution/pluginSolution.msd" folder="baseLanguage.collections" />
       <modulePath path="${project}/languages/baseLanguage/constructors/constructors.mpl" folder="baseLanguage.constructors" />
       <modulePath path="${project}/languages/baseLanguage/constructors/solutions/jetbrains.mps.baseLanguage.constructors.sandbox/jetbrains.mps.baseLanguage.constructors.sandbox.msd" folder="baseLanguage.constructors" />
       <modulePath path="${project}/languages/baseLanguage/javadoc/javadoc.mpl" folder="baseLanguage.javadoc" />
@@ -186,6 +183,7 @@
       <modulePath path="${project}/languages/languageDesign/stubs/stubs.mpl" folder="core.language-design" />
       <modulePath path="${project}/languages/languageDesign/test/solutions/jetbrains.mps.lang.test.runtime/jetbrains.mps.lang.test.runtime.msd" folder="core.language-design" />
       <modulePath path="${project}/languages/languageDesign/test/solutions/pluginSolution/pluginSolution.msd" folder="core.language-design" />
+      <modulePath path="${project}/languages/languageDesign/test/solutions/sandbox/sandbox.msd" folder="core.language-design" />
       <modulePath path="${project}/languages/languageDesign/test/test.mpl" folder="core.language-design" />
       <modulePath path="${project}/languages/languageDesign/textGen/solutions/pluginSolution/pluginSolution.msd" folder="core.language-design" />
       <modulePath path="${project}/languages/languageDesign/textGen/textGen.mpl" folder="core.language-design" />
@@ -304,9 +302,6 @@
       <modulePath path="${project}/languages/util/ypath/solutions/sandbox/sandbox.msd" folder="languages.ypath" />
       <modulePath path="${project}/languages/util/ypath/solutions/test/test.msd" folder="languages.ypath" />
       <modulePath path="${project}/languages/util/ypath/ypath.mpl" folder="languages.ypath" />
-      <modulePath path="${project}/obsolete/matrixLanguage/languages/matrixLanguage/matrixLanguage.mpl" folder="samples" />
-      <modulePath path="${project}/obsolete/matrixLanguage/solutions/jetbrains.mps.matrixLanguage.runtime/jetbrains.mps.matrixLanguage.runtime.msd" folder="samples" />
-      <modulePath path="${project}/obsolete/matrixLanguage/solutions/jetbrains.mps.matrixLanguage.sandbox/jetbrains.mps.matrixLanguage.sandbox.msd" folder="samples" />
       <modulePath path="${project}/plugins/debugger-api-languages/jetbrains.mps.debugger.api.lang/api.mpl" folder="debugger.api" />
       <modulePath path="${project}/plugins/debugger-api-languages/jetbrains.mps.debugger.api.languages.plugin/plugin.msd" folder="debugger.api" />
       <modulePath path="${project}/plugins/debugger-api/api/api.msd" folder="debugger.api" />
@@ -397,11 +392,10 @@
       <modulePath path="${project}/testbench/solution/jetbrains.mps.testbench.msd" folder="testbench" />
       <modulePath path="${project}/testbench/solutions/jetbrains.mps.testbench.make.msd" folder="testbench" />
       <modulePath path="${project}/workbench/baseLanguageIndex/jetbrains.mps.baseLanguage.index.msd" folder="baseLanguage" />
-      <modulePath path="${project}/workbench/ideSolution/jetbrains.mps.ide.msd" folder="workbench" />
       <modulePath path="${project}/workbench/make/jetbrains.mps.workbench.make.msd" folder="workbench" />
       <modulePath path="${project}/workbench/mps-editor/jetbrains.mps.ide.editor.msd" folder="workbench" />
       <modulePath path="${project}/workbench/mps-platform/base.msd" folder="workbench" />
-      <modulePath path="${project}/workbench/mps-workbench/mps.msd" folder="workbench" />
+      <modulePath path="${project}/workbench/mps-workbench/jetbrains.mps.ide.msd" folder="workbench" />
     </projectModules>
     <genConfs />
   </component>

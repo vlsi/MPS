@@ -70,9 +70,6 @@
       <implementation-class>com.intellij.codeInsight.highlighting.HighlightManagerImpl</implementation-class>
       <skipForDummyProject/>
     </component>
-    <component>
-      <implementation-class>jetbrains.mps.ide.codeStyle.CodeStyleSettingsConfigurable</implementation-class>
-    </component>
   </project-components>
 
   <xi:include href="/componentSets/Platform.xml" xpointer="xpointer(/components/*)"/>
@@ -124,7 +121,6 @@
     </component>
 
     <component>
-      <interface-class>jetbrains.mps.ide.navigation.NavigationSupport</interface-class>
       <implementation-class>jetbrains.mps.ide.navigation.NavigationSupportImpl</implementation-class>
     </component>
 
@@ -333,10 +329,6 @@
     <component>
       <implementation-class>jetbrains.mps.execution.impl.configurations.RunConfigurationsStateManager
       </implementation-class>
-    </component>
-
-    <component>
-      <implementation-class>jetbrains.mps.ide.editor.warningPanel.MPSEditorWarningsManager</implementation-class>
     </component>
 
     <component>

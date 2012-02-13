@@ -62,10 +62,6 @@ public abstract class ExtractMethodRefactoring {
 
   public abstract void replaceMatch(MethodMatch match, SNode methodDeclaration);
 
-  public DuplicatesProcessor<MethodMatch> getDuplicatesProcessor() {
-    return null;
-  }
-
   protected MethodMatch createMatch(List<SNode> nodes, Map<SNode, SNode> inputMapping, List<SNode> parametersOrder) {
     MethodMatch match = new MethodMatch(parametersOrder);
     for (SNode node : ListSequence.fromList(nodes)) {
@@ -101,7 +97,7 @@ public abstract class ExtractMethodRefactoring {
     }
     ListSequence.fromList(SLinkOperations.getTargets(method, "throwsItem", true)).addSequence(ListSequence.fromList(throwables).select(new ISelector<SNode, SNode>() {
       public SNode select(SNode it) {
-        return new ExtractMethodRefactoring.QuotationClass_jq3ovj_a0a0a0a0a2a6().createNode(it);
+        return new ExtractMethodRefactoring.QuotationClass_jq3ovj_a0a0a0a0a2a5().createNode(it);
       }
     }));
   }
@@ -118,10 +114,10 @@ public abstract class ExtractMethodRefactoring {
       }
     }
     for (SNode declaration : SetSequence.fromSet(MapSequence.fromMap(mapping).keySet())) {
-      SNode newDeclaration = new ExtractMethodRefactoring.QuotationClass_jq3ovj_a0a0a2a7().createNode(SNodeOperations.copyNode(SLinkOperations.getTarget(declaration, "type", true)), SPropertyOperations.getString(declaration, "name"));
-      SNodeOperations.insertPrevSiblingChild(ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(method, "body", true), "statement", true)).first(), new ExtractMethodRefactoring.QuotationClass_jq3ovj_a0a0b0c0h().createNode(newDeclaration));
+      SNode newDeclaration = new ExtractMethodRefactoring.QuotationClass_jq3ovj_a0a0a2a6().createNode(SNodeOperations.copyNode(SLinkOperations.getTarget(declaration, "type", true)), SPropertyOperations.getString(declaration, "name"));
+      SNodeOperations.insertPrevSiblingChild(ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(method, "body", true), "statement", true)).first(), new ExtractMethodRefactoring.QuotationClass_jq3ovj_a0a0b0c0g().createNode(newDeclaration));
       for (SNode reference : ListSequence.fromList(MapSequence.fromMap(mapping).get(declaration))) {
-        SNodeOperations.replaceWithAnother(reference, new ExtractMethodRefactoring.QuotationClass_jq3ovj_a0a0a0c0c0h().createNode(newDeclaration));
+        SNodeOperations.replaceWithAnother(reference, new ExtractMethodRefactoring.QuotationClass_jq3ovj_a0a0a0c0c0g().createNode(newDeclaration));
       }
     }
   }
@@ -168,7 +164,7 @@ public abstract class ExtractMethodRefactoring {
   public void replaceInputVariablesByParameters(List<SNode> nodes, Map<SNode, SNode> mapping) {
     Map<SNode, SNode> anotherMap = this.createInputVaryablesMapping(mapping, nodes);
     for (SNode node : SetSequence.fromSet(MapSequence.fromMap(anotherMap).keySet())) {
-      SNodeOperations.replaceWithAnother(node, new ExtractMethodRefactoring.QuotationClass_jq3ovj_a0a0a0b0l().createNode(MapSequence.fromMap(anotherMap).get(node)));
+      SNodeOperations.replaceWithAnother(node, new ExtractMethodRefactoring.QuotationClass_jq3ovj_a0a0a0b0k().createNode(MapSequence.fromMap(anotherMap).get(node)));
     }
   }
 
@@ -262,8 +258,8 @@ public abstract class ExtractMethodRefactoring {
     return this.myAnalyzer.shouldBeStatic();
   }
 
-  public static class QuotationClass_jq3ovj_a0a0a0a0a2a6 {
-    public QuotationClass_jq3ovj_a0a0a0a0a2a6() {
+  public static class QuotationClass_jq3ovj_a0a0a0a0a2a5 {
+    public QuotationClass_jq3ovj_a0a0a0a0a2a5() {
     }
 
     public SNode createNode(Object parameter_3) {
@@ -280,8 +276,8 @@ public abstract class ExtractMethodRefactoring {
     }
   }
 
-  public static class QuotationClass_jq3ovj_a0a0a2a7 {
-    public QuotationClass_jq3ovj_a0a0a2a7() {
+  public static class QuotationClass_jq3ovj_a0a0a2a6 {
+    public QuotationClass_jq3ovj_a0a0a2a6() {
     }
 
     public SNode createNode(Object parameter_5, Object parameter_6) {
@@ -312,8 +308,8 @@ public abstract class ExtractMethodRefactoring {
     }
   }
 
-  public static class QuotationClass_jq3ovj_a0a0b0c0h {
-    public QuotationClass_jq3ovj_a0a0b0c0h() {
+  public static class QuotationClass_jq3ovj_a0a0b0c0g {
+    public QuotationClass_jq3ovj_a0a0b0c0g() {
     }
 
     public SNode createNode(Object parameter_6) {
@@ -344,8 +340,8 @@ public abstract class ExtractMethodRefactoring {
     }
   }
 
-  public static class QuotationClass_jq3ovj_a0a0a0c0c0h {
-    public QuotationClass_jq3ovj_a0a0a0c0c0h() {
+  public static class QuotationClass_jq3ovj_a0a0a0c0c0g {
+    public QuotationClass_jq3ovj_a0a0a0c0c0g() {
     }
 
     public SNode createNode(Object parameter_3) {
@@ -362,8 +358,8 @@ public abstract class ExtractMethodRefactoring {
     }
   }
 
-  public static class QuotationClass_jq3ovj_a0a0a0b0l {
-    public QuotationClass_jq3ovj_a0a0a0b0l() {
+  public static class QuotationClass_jq3ovj_a0a0a0b0k {
+    public QuotationClass_jq3ovj_a0a0a0b0k() {
     }
 
     public SNode createNode(Object parameter_3) {
