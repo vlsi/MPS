@@ -169,7 +169,7 @@
     </zip>
     <delete dir="${deploy.dir}/MPS/lib/MPS-src.zip.tmp" />
     <copy todir="${deploy.dir}/MPS/lib/idea-patch.jar.tmp">
-      <fileset dir="${mps_home}/core/idea-patch/classes" />
+      <fileset dir="${mps_home}/workbench/idea-patch/classes" />
     </copy>
     <jar destfile="${deploy.dir}/MPS/lib/idea-patch.jar" duplicate="preserve" filesonly="true">
       <fileset dir="${deploy.dir}/MPS/lib/idea-patch.jar.tmp" />

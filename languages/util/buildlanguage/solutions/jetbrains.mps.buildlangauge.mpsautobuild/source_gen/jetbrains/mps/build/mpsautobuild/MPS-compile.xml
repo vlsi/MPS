@@ -165,7 +165,6 @@
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
-    <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
@@ -202,6 +201,7 @@
     <path path="${base_dir}/lib/util.jar" />
     <path path="${base_dir}/lib/xstream.jar" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
+    <path path="${base_dir}/workbench/idea-patch/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
@@ -728,7 +728,6 @@
     <path path="${base_dir}/core/analyzers/languages/analyzers/classes_gen" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
-    <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
@@ -881,6 +880,7 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
+    <path path="${base_dir}/workbench/idea-patch/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
@@ -893,7 +893,6 @@
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
-    <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
@@ -1047,6 +1046,7 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
+    <path path="${base_dir}/workbench/idea-patch/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
@@ -1120,7 +1120,6 @@
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
-    <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
@@ -1273,6 +1272,7 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
+    <path path="${base_dir}/workbench/idea-patch/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
@@ -1285,7 +1285,6 @@
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
-    <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
@@ -1439,6 +1438,7 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
+    <path path="${base_dir}/workbench/idea-patch/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
@@ -1451,7 +1451,6 @@
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
-    <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
@@ -1605,6 +1604,7 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
+    <path path="${base_dir}/workbench/idea-patch/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
@@ -1617,7 +1617,6 @@
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
-    <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
@@ -1771,6 +1770,7 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
+    <path path="${base_dir}/workbench/idea-patch/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
@@ -1783,7 +1783,6 @@
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
-    <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
@@ -1937,6 +1936,7 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
+    <path path="${base_dir}/workbench/idea-patch/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
@@ -1949,7 +1949,6 @@
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
-    <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
@@ -2104,6 +2103,7 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
+    <path path="${base_dir}/workbench/idea-patch/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
@@ -2116,7 +2116,6 @@
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
-    <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
@@ -2272,6 +2271,7 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
+    <path path="${base_dir}/workbench/idea-patch/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
@@ -2295,7 +2295,6 @@
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
-    <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
@@ -2449,6 +2448,7 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
+    <path path="${base_dir}/workbench/idea-patch/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
@@ -2461,7 +2461,6 @@
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
-    <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
@@ -2500,6 +2499,7 @@
     <path path="${base_dir}/lib/xstream.jar" />
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.startup/classes_gen" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
+    <path path="${base_dir}/workbench/idea-patch/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
@@ -2512,7 +2512,6 @@
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
-    <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
@@ -2665,6 +2664,7 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
+    <path path="${base_dir}/workbench/idea-patch/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
@@ -2677,7 +2677,6 @@
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
-    <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
@@ -2831,6 +2830,7 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
+    <path path="${base_dir}/workbench/idea-patch/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
@@ -2843,7 +2843,6 @@
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
-    <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
@@ -2996,6 +2995,7 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
+    <path path="${base_dir}/workbench/idea-patch/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
@@ -3008,7 +3008,6 @@
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
-    <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
@@ -3163,6 +3162,7 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
+    <path path="${base_dir}/workbench/idea-patch/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
@@ -3174,7 +3174,6 @@
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
-    <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
@@ -3233,7 +3232,6 @@
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
-    <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
@@ -3387,6 +3385,7 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
+    <path path="${base_dir}/workbench/idea-patch/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
@@ -3406,7 +3405,6 @@
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
-    <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
@@ -3560,6 +3558,7 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
+    <path path="${base_dir}/workbench/idea-patch/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
@@ -3572,7 +3571,6 @@
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
-    <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
@@ -3726,6 +3724,7 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
+    <path path="${base_dir}/workbench/idea-patch/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
@@ -3767,7 +3766,6 @@
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
-    <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
@@ -3920,6 +3918,7 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
+    <path path="${base_dir}/workbench/idea-patch/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
@@ -3938,7 +3937,6 @@
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
-    <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
@@ -4092,6 +4090,7 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
+    <path path="${base_dir}/workbench/idea-patch/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
@@ -4104,7 +4103,6 @@
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
-    <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
@@ -4260,6 +4258,7 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
+    <path path="${base_dir}/workbench/idea-patch/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
@@ -4272,7 +4271,6 @@
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
-    <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
@@ -4430,6 +4428,7 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
+    <path path="${base_dir}/workbench/idea-patch/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
@@ -4442,7 +4441,6 @@
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
-    <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
@@ -4596,6 +4594,7 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
+    <path path="${base_dir}/workbench/idea-patch/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
@@ -4608,7 +4607,6 @@
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
-    <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
@@ -4761,6 +4759,7 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
+    <path path="${base_dir}/workbench/idea-patch/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
@@ -4773,7 +4772,6 @@
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
-    <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
@@ -4926,6 +4924,7 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
+    <path path="${base_dir}/workbench/idea-patch/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
@@ -4938,7 +4937,6 @@
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
-    <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
@@ -5092,6 +5090,7 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
+    <path path="${base_dir}/workbench/idea-patch/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
@@ -5104,7 +5103,6 @@
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
-    <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
@@ -5258,6 +5256,7 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
+    <path path="${base_dir}/workbench/idea-patch/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
@@ -5270,7 +5269,6 @@
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
-    <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
@@ -5425,6 +5423,7 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
+    <path path="${base_dir}/workbench/idea-patch/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
@@ -5437,7 +5436,6 @@
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
-    <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
@@ -5590,6 +5588,7 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
+    <path path="${base_dir}/workbench/idea-patch/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
@@ -5602,7 +5601,6 @@
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
-    <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
@@ -5756,6 +5754,7 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
+    <path path="${base_dir}/workbench/idea-patch/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
@@ -5768,7 +5767,6 @@
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
-    <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
@@ -5922,6 +5920,7 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
+    <path path="${base_dir}/workbench/idea-patch/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
@@ -5934,7 +5933,6 @@
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
-    <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
@@ -6088,6 +6086,7 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
+    <path path="${base_dir}/workbench/idea-patch/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
@@ -6100,7 +6099,6 @@
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
-    <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
@@ -6253,6 +6251,7 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
+    <path path="${base_dir}/workbench/idea-patch/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
@@ -6265,7 +6264,6 @@
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
-    <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
@@ -6418,6 +6416,7 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
+    <path path="${base_dir}/workbench/idea-patch/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
@@ -6430,7 +6429,6 @@
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
-    <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
@@ -6587,6 +6585,7 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
+    <path path="${base_dir}/workbench/idea-patch/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
@@ -6599,7 +6598,6 @@
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
-    <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
@@ -6754,6 +6752,7 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
+    <path path="${base_dir}/workbench/idea-patch/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
@@ -6766,7 +6765,6 @@
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
-    <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
@@ -6925,6 +6923,7 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
+    <path path="${base_dir}/workbench/idea-patch/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
@@ -6937,7 +6936,6 @@
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
-    <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
@@ -7091,6 +7089,7 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
+    <path path="${base_dir}/workbench/idea-patch/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
@@ -7103,7 +7102,6 @@
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
-    <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
@@ -7256,6 +7254,7 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
+    <path path="${base_dir}/workbench/idea-patch/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
@@ -7268,7 +7267,6 @@
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
-    <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
@@ -7428,6 +7426,7 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
+    <path path="${base_dir}/workbench/idea-patch/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
@@ -7440,7 +7439,6 @@
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
-    <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
@@ -7593,6 +7591,7 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
+    <path path="${base_dir}/workbench/idea-patch/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
@@ -7605,7 +7604,6 @@
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
-    <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
@@ -7759,6 +7757,7 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
+    <path path="${base_dir}/workbench/idea-patch/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
@@ -7771,7 +7770,6 @@
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
-    <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
@@ -7927,6 +7925,7 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
+    <path path="${base_dir}/workbench/idea-patch/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
@@ -7939,7 +7938,6 @@
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
-    <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
@@ -8093,6 +8091,7 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
+    <path path="${base_dir}/workbench/idea-patch/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
@@ -8121,7 +8120,6 @@
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
-    <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
@@ -8274,6 +8272,7 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
+    <path path="${base_dir}/workbench/idea-patch/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
@@ -8286,7 +8285,6 @@
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
-    <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
@@ -8440,6 +8438,7 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
+    <path path="${base_dir}/workbench/idea-patch/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
@@ -8452,7 +8451,6 @@
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
-    <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
@@ -8606,6 +8604,7 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
+    <path path="${base_dir}/workbench/idea-patch/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
@@ -8618,7 +8617,6 @@
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
-    <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
@@ -8772,6 +8770,7 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
+    <path path="${base_dir}/workbench/idea-patch/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
@@ -8784,7 +8783,6 @@
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
-    <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
@@ -8938,6 +8936,7 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
+    <path path="${base_dir}/workbench/idea-patch/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
@@ -8950,7 +8949,6 @@
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
-    <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
@@ -9103,6 +9101,7 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
+    <path path="${base_dir}/workbench/idea-patch/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
@@ -9115,7 +9114,6 @@
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
-    <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
@@ -9269,6 +9267,7 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
+    <path path="${base_dir}/workbench/idea-patch/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
@@ -9281,7 +9280,6 @@
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
-    <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
@@ -9435,6 +9433,7 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
+    <path path="${base_dir}/workbench/idea-patch/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
@@ -9447,7 +9446,6 @@
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
-    <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
@@ -9600,6 +9598,7 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
+    <path path="${base_dir}/workbench/idea-patch/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
@@ -9612,7 +9611,6 @@
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
-    <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
@@ -9766,6 +9764,7 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
+    <path path="${base_dir}/workbench/idea-patch/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
@@ -9778,7 +9777,6 @@
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
-    <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
@@ -9931,6 +9929,7 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
+    <path path="${base_dir}/workbench/idea-patch/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
@@ -9949,7 +9948,6 @@
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
-    <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
@@ -10102,6 +10100,7 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
+    <path path="${base_dir}/workbench/idea-patch/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
@@ -10114,7 +10113,6 @@
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
-    <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
@@ -10268,6 +10266,7 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
+    <path path="${base_dir}/workbench/idea-patch/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
@@ -10280,7 +10279,6 @@
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
-    <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
@@ -10433,6 +10431,7 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
+    <path path="${base_dir}/workbench/idea-patch/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
@@ -10445,7 +10444,6 @@
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
-    <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
@@ -10484,6 +10482,7 @@
     <path path="${base_dir}/lib/util.jar" />
     <path path="${base_dir}/lib/xstream.jar" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
+    <path path="${base_dir}/workbench/idea-patch/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
@@ -10496,7 +10495,6 @@
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
-    <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
@@ -10650,6 +10648,7 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
+    <path path="${base_dir}/workbench/idea-patch/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
@@ -10662,7 +10661,6 @@
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
-    <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
@@ -10817,6 +10815,7 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
+    <path path="${base_dir}/workbench/idea-patch/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
@@ -10829,7 +10828,6 @@
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
-    <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
@@ -10985,6 +10983,7 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
+    <path path="${base_dir}/workbench/idea-patch/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
@@ -10997,7 +10996,6 @@
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
-    <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
@@ -11155,6 +11153,7 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
+    <path path="${base_dir}/workbench/idea-patch/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
@@ -11167,7 +11166,6 @@
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
-    <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
@@ -11325,6 +11323,7 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
+    <path path="${base_dir}/workbench/idea-patch/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
@@ -11337,7 +11336,6 @@
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
-    <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
@@ -11494,6 +11492,7 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
+    <path path="${base_dir}/workbench/idea-patch/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
@@ -11506,7 +11505,6 @@
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
-    <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
@@ -11660,6 +11658,7 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
+    <path path="${base_dir}/workbench/idea-patch/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
@@ -11672,7 +11671,6 @@
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
-    <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
@@ -11827,6 +11825,7 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
+    <path path="${base_dir}/workbench/idea-patch/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
@@ -11839,7 +11838,6 @@
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
-    <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
@@ -11993,6 +11991,7 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
+    <path path="${base_dir}/workbench/idea-patch/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
@@ -12005,7 +12004,6 @@
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
-    <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
@@ -12164,6 +12162,7 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
+    <path path="${base_dir}/workbench/idea-patch/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
@@ -12176,7 +12175,6 @@
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
-    <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
@@ -12334,6 +12332,7 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
+    <path path="${base_dir}/workbench/idea-patch/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
@@ -12355,7 +12354,6 @@
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
-    <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
@@ -12517,6 +12515,7 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
+    <path path="${base_dir}/workbench/idea-patch/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
@@ -12529,7 +12528,6 @@
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
-    <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
@@ -12687,6 +12685,7 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
+    <path path="${base_dir}/workbench/idea-patch/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
@@ -12708,7 +12707,6 @@
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
-    <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
@@ -12861,6 +12859,7 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
+    <path path="${base_dir}/workbench/idea-patch/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
@@ -12873,7 +12872,6 @@
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
-    <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
@@ -13027,6 +13025,7 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
+    <path path="${base_dir}/workbench/idea-patch/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
@@ -13040,7 +13039,6 @@
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
-    <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
@@ -13196,6 +13194,7 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
+    <path path="${base_dir}/workbench/idea-patch/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
@@ -13214,7 +13213,6 @@
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
-    <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
@@ -13372,6 +13370,7 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
+    <path path="${base_dir}/workbench/idea-patch/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
@@ -13384,7 +13383,6 @@
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
-    <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
@@ -13538,6 +13536,7 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
+    <path path="${base_dir}/workbench/idea-patch/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
@@ -13550,7 +13549,6 @@
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
-    <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
@@ -13704,6 +13702,7 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
+    <path path="${base_dir}/workbench/idea-patch/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
@@ -13717,7 +13716,6 @@
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
-    <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
@@ -13870,6 +13868,7 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
+    <path path="${base_dir}/workbench/idea-patch/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
@@ -13903,7 +13902,6 @@
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
-    <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
@@ -14058,6 +14056,7 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
+    <path path="${base_dir}/workbench/idea-patch/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
@@ -14076,7 +14075,6 @@
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
-    <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
@@ -14230,6 +14228,7 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
+    <path path="${base_dir}/workbench/idea-patch/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
@@ -14242,7 +14241,6 @@
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
-    <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
@@ -14397,6 +14395,7 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
+    <path path="${base_dir}/workbench/idea-patch/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
