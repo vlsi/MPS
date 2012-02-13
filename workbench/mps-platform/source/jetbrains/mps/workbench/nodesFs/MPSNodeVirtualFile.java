@@ -15,15 +15,16 @@
  */
 package jetbrains.mps.workbench.nodesFs;
 
-import com.intellij.openapi.vfs.LocalFileSystem;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.vfs.VirtualFileSystem;
 import com.intellij.util.LocalTimeCounter;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.util.Computable;
-import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.workbench.ModelUtil;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
@@ -117,7 +118,9 @@ public class MPSNodeVirtualFile extends VirtualFile {
   public VirtualFile getParent() {
     return ModelAccess.instance().runReadAction(new Computable<VirtualFile>() {
       public VirtualFile compute() {
-        return ModelUtil.getFileByModel(getNode().getModel());
+        SNode node = getNode();
+        if (node == null) return null;
+        return ModelUtil.getFileByModel(node.getModel());
       }
     });
   }
