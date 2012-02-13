@@ -51,8 +51,6 @@
         <frameworkSupport implementation="jetbrains.mps.idea.core.facet.MPSFrameworkSupportProvider"/>
         <mps.LanguageLibrary dir="/languages"/>
         <treeStructureProvider implementation="jetbrains.mps.idea.core.projectView.MPSTreeStructureProvider"/>
-        <lang.fileViewProviderFactory language="MPS" implementationClass="jetbrains.mps.MPSFileViewProviderFactory"/>
-        <gotoClassContributor implementation="jetbrains.mps.workbench.actions.goTo.GoToClassMPSContributor"/>
     </extensions>
 
   <actions>
@@ -76,6 +74,8 @@
                     anchor="after"/>
       <keyboard-shortcut first-keystroke="alt ENTER" keymap="$default"/>
     </action>
+
+    <!--This action should be moved to MPSCore.xml as soon as we use Idea Project Tree in IDE-->
     <action id="jetbrains.mps.workbench.actions.goTo.GoToModelPlatformAction"
             class="jetbrains.mps.workbench.actions.goTo.GoToModelPlatformAction">
       <add-to-group group-id="GoToMenu"

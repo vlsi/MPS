@@ -78,6 +78,7 @@
     <getDataRule key="MPS_IModule" implementationClass="jetbrains.mps.ide.dataExtraction.ModuleRule"/>
 
     <fileBasedIndex implementation="jetbrains.mps.workbench.actions.goTo.index.RootNodeNameIndex"/>
-
+    <gotoClassContributor implementation="jetbrains.mps.workbench.actions.goTo.GoToClassMPSContributor"/>
+    <lang.fileViewProviderFactory language="MPS" implementationClass="jetbrains.mps.MPSFileViewProviderFactory"/>
   </extensions>
 </components>
