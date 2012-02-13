@@ -15,6 +15,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class BuildProject extends BaseConcept implements ScopeProvider, INamedConcept {
   public static final String concept = "jetbrains.mps.buildScript.structure.BuildProject";
+  public static final String INTERNAL_BASE_DIRECTORY = "internalBaseDirectory";
   public static final String SHORT_DESCRIPTION = "shortDescription";
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
@@ -29,6 +30,14 @@ public class BuildProject extends BaseConcept implements ScopeProvider, INamedCo
 
   public BuildProject(SNode node) {
     super(node);
+  }
+
+  public String getInternalBaseDirectory() {
+    return this.getProperty(BuildProject.INTERNAL_BASE_DIRECTORY);
+  }
+
+  public void setInternalBaseDirectory(String value) {
+    this.setProperty(BuildProject.INTERNAL_BASE_DIRECTORY, value);
   }
 
   public String getShortDescription() {
