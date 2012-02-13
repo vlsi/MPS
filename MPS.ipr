@@ -238,7 +238,7 @@
       <modulePath path="${project}/languages/util/gwtsupport/languages/client/client.mpl" folder="languages.gwt" />
       <modulePath path="${project}/languages/util/gwtsupport/solutions/gwtsupport.buildtest/gwtsupport.buildtest.msd" folder="languages.gwt" />
       <modulePath path="${project}/languages/util/gwtsupport/solutions/gwtsupport.sandbox/gwtsupport.sandbox.msd" folder="languages.gwt" />
-      <modulePath path="${project}/languages/util/ideUiLanguage/uiLanguage.mpl" folder="workbench" />
+      <modulePath path="${project}/languages/util/ideUiLanguage/uiLanguage.mpl" folder="languages.uiLanguage" />
       <modulePath path="${project}/languages/util/math/math.mpl" folder="baseLanguage.math" />
       <modulePath path="${project}/languages/util/math/runtimeSolution/jetbrains.mps.baseLanguage.math.runtime.msd" folder="baseLanguage.math" />
       <modulePath path="${project}/languages/util/math/solutions/jetbrains.mps.baseLanguage.math.sandbox/jetbrains.mps.baseLanguage.math.sandbox.msd" folder="baseLanguage.math" />
@@ -281,7 +281,7 @@
       <modulePath path="${project}/languages/util/ui/languages/ui/ui.mpl" folder="languages.ui" />
       <modulePath path="${project}/languages/util/ui/solutions/jetbrains.mps.ui.unittest/jetbrains.mps.ui.unittest.msd" folder="languages.ui" />
       <modulePath path="${project}/languages/util/ui/solutions/ui.sandbox/ui.sandbox.msd" folder="languages.ui" />
-      <modulePath path="${project}/languages/util/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/jetbrains.mps.ide.uiLanguage.runtime.msd" folder="workbench" />
+      <modulePath path="${project}/languages/util/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/jetbrains.mps.ide.uiLanguage.runtime.msd" folder="languages.uiLanguage" />
       <modulePath path="${project}/languages/util/uiLanguage/solutions/jetbrains.mps.uiLanguage.samples/jetbrains.mps.uiLanguage.saamples.msd" folder="languages.uiLanguage" />
       <modulePath path="${project}/languages/util/uiLanguage/solutions/pluginSolution/pluginSolution.msd" folder="languages.uiLanguage" />
       <modulePath path="${project}/languages/util/uiLanguage/uiLanguage.mpl" folder="languages.uiLanguage" />
@@ -331,7 +331,7 @@
       <modulePath path="${project}/plugins/execution-languages/plugin/languages.msd" folder="languages.execution.languages-plugin" />
       <modulePath path="${project}/plugins/execution-languages/tests.data/data.msd" folder="languages.execution.languages-plugin" />
       <modulePath path="${project}/plugins/execution-languages/tests/tests.msd" folder="languages.execution.languages-plugin" />
-      <modulePath path="${project}/plugins/ideaIntegration/jetbrains.mps.ideaIntegration.msd" folder="workbench" />
+      <modulePath path="${project}/plugins/ideaIntegration/jetbrains.mps.ideaIntegration.msd" folder="plugins" />
       <modulePath path="${project}/plugins/migration/solution/jetbrains.mps.ide.migration.msd" folder="plugins" />
       <modulePath path="${project}/plugins/migration21/solution/migration21.msd" folder="plugins" />
       <modulePath path="${project}/plugins/modelchecker/solution/jetbrains.mps.ide.modelchecker.msd" folder="plugins" />
@@ -392,8 +392,8 @@
       <modulePath path="${project}/testbench/solution/jetbrains.mps.testbench.msd" folder="testbench" />
       <modulePath path="${project}/testbench/solutions/jetbrains.mps.testbench.make.msd" folder="testbench" />
       <modulePath path="${project}/workbench/baseLanguageIndex/jetbrains.mps.baseLanguage.index.msd" folder="baseLanguage" />
-      <modulePath path="${project}/workbench/mps-editor/jetbrains.mps.ide.editor.msd" folder="workbench" />
-      <modulePath path="${project}/workbench/mps-platform/base.msd" folder="workbench" />
+      <modulePath path="${project}/workbench/mps-editor/jetbrains.mps.ide.editor.msd" folder="workbench.editor" />
+      <modulePath path="${project}/workbench/mps-platform/base.msd" folder="workbench.platform" />
       <modulePath path="${project}/workbench/mps-workbench/jetbrains.mps.ide.msd" folder="workbench" />
     </projectModules>
     <genConfs />
