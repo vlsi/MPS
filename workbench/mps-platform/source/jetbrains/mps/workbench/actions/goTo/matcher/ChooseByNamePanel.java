@@ -20,7 +20,7 @@ import com.intellij.ide.util.gotoByName.ChooseByNameItemProvider;
 import com.intellij.ide.util.gotoByName.ChooseByNameModel;
 import com.intellij.ide.util.gotoByName.ChooseByNamePopup;
 import com.intellij.openapi.application.ModalityState;
-import jetbrains.mps.workbench.MPSDataKeys;
+import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 
 import javax.swing.JComponent;
 import javax.swing.JPanel;
@@ -34,7 +34,7 @@ public class ChooseByNamePanel extends ChooseByNamePopup {
   private boolean myCheckboxVisible = false;
 
   ChooseByNamePanel(ChooseByNameModel model, boolean checkboxVisible, ChooseByNameItemProvider provider) {
-    super(MPSDataKeys.PROJECT.getData(DataManager.getInstance().getDataContext()), model, provider, null, "", false, 0);
+    super(MPSCommonDataKeys.PROJECT.getData(DataManager.getInstance().getDataContext()), model, provider, null, "", false, 0);
     myCheckboxVisible = checkboxVisible;
   }
 
