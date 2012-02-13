@@ -29,7 +29,6 @@
     <orderEntry type="module" module-name="make-runtime" />
     <orderEntry type="module" module-name="findUsages-runtime" />
     <orderEntry type="module" module-name="testbench" scope="TEST" />
-    <orderEntry type="module" module-name="workbench" scope="TEST" />
     <orderEntry type="library" scope="TEST" name="JUnit4" level="project" />
     <orderEntry type="library" name="Eclipse-compiler" level="project" />
     <orderEntry type="library" name="Guava" level="project" />
