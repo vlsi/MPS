@@ -24,6 +24,7 @@
     <orderEntry type="library" name="Commons-logging" level="project" />
     <orderEntry type="module" module-name="mps-platform" />
     <orderEntry type="module" module-name="mps-workbench" />
+    <orderEntry type="library" name="Log4j" level="project" />
   </component>
 </module>
 
