@@ -286,6 +286,7 @@
     <classNode dependClassName="jetbrains.mps.buildScript.structure.BuildMacro" />
     <classNode dependClassName="jetbrains.mps.buildScript.structure.BuildPlugin" />
     <classNode dependClassName="jetbrains.mps.buildScript.structure.BuildProjectPart" />
+    <classNode dependClassName="jetbrains.mps.buildScript.structure.BuildRelativePath" />
     <classNode dependClassName="jetbrains.mps.lang.core.structure.Attribute" />
     <classNode dependClassName="jetbrains.mps.lang.core.structure.INamedConcept" />
     <classNode dependClassName="jetbrains.mps.lang.core.structure.ScopeProvider" />

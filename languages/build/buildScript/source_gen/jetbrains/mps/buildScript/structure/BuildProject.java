@@ -21,6 +21,7 @@ public class BuildProject extends BaseConcept implements ScopeProvider, INamedCo
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String NAME = "name";
   public static final String LAYOUT = "layout";
+  public static final String SCRIPTS_DIR = "scriptsDir";
   public static final String PLUGINS = "plugins";
   public static final String DEPENDENCIES = "dependencies";
   public static final String MACROS = "macros";
@@ -78,6 +79,14 @@ public class BuildProject extends BaseConcept implements ScopeProvider, INamedCo
 
   public void setLayout(BuildLayout node) {
     super.setChild(BuildProject.LAYOUT, node);
+  }
+
+  public BuildRelativePath getScriptsDir() {
+    return (BuildRelativePath) this.getChild(BuildRelativePath.class, BuildProject.SCRIPTS_DIR);
+  }
+
+  public void setScriptsDir(BuildRelativePath node) {
+    super.setChild(BuildProject.SCRIPTS_DIR, node);
   }
 
   public int getPluginsesCount() {

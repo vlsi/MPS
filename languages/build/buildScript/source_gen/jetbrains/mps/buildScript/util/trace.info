@@ -239,5 +239,12 @@
     <unitInfo nodeId="193602448594305229" fileName="Context.java" startLine="104" startPosition="0" endLine="122" endPosition="0" unitName="jetbrains.mps.buildScript.util.Context$QuotationClass_lmsybr_a0a0b0i" />
     <unitInfo nodeId="193602448594305236" fileName="Context.java" startLine="123" startPosition="0" endLine="141" endPosition="0" unitName="jetbrains.mps.buildScript.util.Context$QuotationClass_lmsybr_a0a0c0i" />
   </root>
+  <root nodeId="809559803149870629">
+    <nodeInfo nodeId="809559803149870635" fileName="GenerationUtil.java" startLine="6" startPosition="29" endLine="7" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SCRIPTS_DIR_PROPERTY" />
+    <nodeInfo nodeId="809559803149870631" fileName="GenerationUtil.java" startLine="8" startPosition="0" endLine="10" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="GenerationUtil#()V" />
+    <scopeInfo nodeId="809559803149870634" fileName="GenerationUtil.java" startLine="9" startPosition="27" endLine="9" endPosition="27" />
+    <scopeInfo nodeId="809559803149870631" fileName="GenerationUtil.java" startLine="8" startPosition="0" endLine="10" endPosition="3" />
+    <unitInfo nodeId="809559803149870629" fileName="GenerationUtil.java" startLine="6" startPosition="0" endLine="12" endPosition="0" unitName="jetbrains.mps.buildScript.util.GenerationUtil" />
+  </root>
 </debugInfo>
 

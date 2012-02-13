@@ -9,8 +9,11 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.util.MacrosFactory;
 import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.buildScript.util.ScopeUtil;
+import jetbrains.mps.project.IModule;
+import jetbrains.mps.generator.TransientModelsModule;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.buildScript.util.Context;
+import jetbrains.mps.buildScript.util.ScopeUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
@@ -39,13 +42,35 @@ public class BuildProject_Behavior {
     if (StringUtils.isNotEmpty(SPropertyOperations.getString(thisNode, "internalBaseDirectory"))) {
       return MacrosFactory.projectDescriptor().expandPath(SPropertyOperations.getString(thisNode, "internalBaseDirectory"), (IFile) null);
     }
-    return thisNode.getModel().getModelDescriptor().getModule().getDescriptorFile().getParent().getPath();
+
+    IModule module = thisNode.getModel().getModelDescriptor().getModule();
+    if (module instanceof TransientModelsModule) {
+      // todo 
+      // added to "fix" generation in buildScript.sandbox 
+      // todo 
+      return null;
+    } else {
+      return module.getDescriptorFile().getParent().getPath();
+    }
+  }
+
+  public static String call_getScriptsPath_4796668409958419284(SNode thisNode) {
+    if ((SLinkOperations.getTarget(thisNode, "scriptsDir", true) != null)) {
+      return BuildSourcePath_Behavior.call_getLocalPath_5481553824944787364(SLinkOperations.getTarget(thisNode, "scriptsDir", true), Context.defaultContext());
+    }
+    // todo 
+    String basePath = BuildProject_Behavior.call_getBasePath_4959435991187146924(thisNode);
+    if (StringUtils.isEmpty(basePath)) {
+      return null;
+    }
+    // todo 
+    return basePath + "/build";
   }
 
   public static Scope call_getBuildMacroScope_3767587139141108514(SNode thisNode, final SNode child) {
     Scope rootScope = ScopeUtil.simpleRoleScope(thisNode, SLinkOperations.findLinkDeclaration("jetbrains.mps.buildScript.structure.BuildProject", "macros"));
     SNode containingProject = SNodeOperations.getAncestor(child, "jetbrains.mps.buildScript.structure.BuildProject", false, false);
-    if (neq_save77_a0c0d(containingProject, thisNode)) {
+    if (neq_save77_a0c0e(containingProject, thisNode)) {
       // we are imported => give away only public macro 
       rootScope = ScopeUtil.where(rootScope, new _FunctionTypes._return_P1_E0<Boolean, SNode>() {
         public Boolean invoke(SNode node) {
@@ -68,7 +93,7 @@ public class BuildProject_Behavior {
         // we can only see what was strictly before us 
         rootScope = ScopeUtil.where(rootScope, new _FunctionTypes._return_P1_E0<Boolean, SNode>() {
           public Boolean invoke(SNode visibleNode) {
-            return !(ListSequence.fromList(SNodeOperations.getNextSiblings(definedMacro.value, false)).contains(visibleNode)) && !(eq_save77_a0a0a0a0a1a0b0c0d0d(definedMacro.value, visibleNode));
+            return !(ListSequence.fromList(SNodeOperations.getNextSiblings(definedMacro.value, false)).contains(visibleNode)) && !(eq_save77_a0a0a0a0a1a0b0c0d0e(definedMacro.value, visibleNode));
           }
         });
       }
@@ -90,14 +115,14 @@ public class BuildProject_Behavior {
     }) != null;
   }
 
-  private static boolean neq_save77_a0c0d(Object a, Object b) {
+  private static boolean neq_save77_a0c0e(Object a, Object b) {
     return !((a != null ?
       a.equals(b) :
       a == b
     ));
   }
 
-  private static boolean eq_save77_a0a0a0a0a1a0b0c0d0d(Object a, Object b) {
+  private static boolean eq_save77_a0a0a0a0a1a0b0c0d0e(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b
