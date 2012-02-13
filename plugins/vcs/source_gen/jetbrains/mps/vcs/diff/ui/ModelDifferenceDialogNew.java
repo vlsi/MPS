@@ -29,8 +29,11 @@ import com.intellij.openapi.actionSystem.ActionToolbar;
 import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.actionSystem.ActionPlaces;
 import com.intellij.ui.ScrollPaneFactory;
+import java.awt.Dimension;
+import com.intellij.openapi.util.DimensionService;
 import org.jetbrains.annotations.Nullable;
 import javax.swing.JComponent;
+import javax.swing.Action;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.internal.collections.runtime.Sequence;
@@ -83,12 +86,25 @@ public class ModelDifferenceDialogNew extends DialogWrapper {
     toolbar.updateActionsImmediately();
     myPanel.add(toolbar.getComponent(), BorderLayout.NORTH);
     myPanel.add(ScrollPaneFactory.createScrollPane(myTree), BorderLayout.CENTER);
+    final Dimension size = DimensionService.getInstance().getSize(getDimensionServiceKey(), myProject);
+    if (size == null) {
+      DimensionService.getInstance().setSize(getDimensionServiceKey(), new Dimension(500, 700));
+    }
+
     init();
   }
 
   @Nullable
   protected JComponent createCenterPanel() {
     return myPanel;
+  }
+
+  protected Action[] createActions() {
+    return new Action[0];
+  }
+
+  public String getDimensionServiceKey() {
+    return "#jetbrains.mps.vcs.diff.ui.ModelDifferenceDialogNew";
   }
 
   private void fillRootToChange() {
@@ -201,7 +217,7 @@ public class ModelDifferenceDialogNew extends DialogWrapper {
   /*package*/ void rootDialogClosed() {
     myRootsDialogInvoked = false;
     if (!(myGoingToNeighbour) && !(isVisible())) {
-      dispose();
+      close(DialogWrapper.NEXT_USER_EXIT_CODE);
     }
   }
 

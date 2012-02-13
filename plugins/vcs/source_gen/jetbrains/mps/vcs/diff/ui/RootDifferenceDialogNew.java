@@ -14,22 +14,25 @@ import jetbrains.mps.vcs.diff.ui.common.DiffEditorsGroup;
 import javax.swing.JPanel;
 import java.awt.GridBagLayout;
 import java.awt.BorderLayout;
+import com.intellij.openapi.actionSystem.ActionToolbar;
 import com.intellij.openapi.diff.ex.DiffStatusBar;
 import com.intellij.openapi.diff.impl.util.TextDiffType;
+import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.vcs.diff.ui.common.Bounds;
 import java.awt.Frame;
 import javax.swing.JComponent;
 import javax.swing.JSplitPane;
 import jetbrains.mps.vcs.diff.ui.common.NextPreviousTraverser;
-import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import jetbrains.mps.workbench.action.ActionUtils;
 import com.intellij.openapi.actionSystem.Separator;
-import com.intellij.openapi.actionSystem.ActionToolbar;
 import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.actionSystem.ActionPlaces;
 import javax.swing.SwingUtilities;
+import java.awt.Dimension;
+import com.intellij.openapi.util.DimensionService;
 import jetbrains.mps.ide.dialogs.DialogDimensionsSettings;
+import javax.swing.Action;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.vcs.diff.ui.common.DiffTemporaryModule;
 import java.awt.GridBagConstraints;
@@ -40,9 +43,6 @@ import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.vcs.diff.ui.common.DiffChangeGroupLayout;
 import jetbrains.mps.vcs.diff.ui.common.ChangeGroupMessages;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
-import org.jetbrains.annotations.NonNls;
-import jetbrains.mps.vcs.diff.ui.common.DiffModelTree;
-import com.intellij.openapi.util.Ref;
 import jetbrains.mps.vcs.diff.ui.common.GoToNeighbourRootActions;
 import org.jetbrains.annotations.NotNull;
 
@@ -57,8 +57,10 @@ public class RootDifferenceDialogNew extends DialogWrapper {
   private JPanel myTopPanel = new JPanel(new GridBagLayout());
   private JPanel myBottomPanel = new JPanel(new GridBagLayout());
   private JPanel myContainer = new JPanel(new BorderLayout());
+  private ActionToolbar myActionToolbar;
   private DiffStatusBar myStatusBar = new DiffStatusBar(TextDiffType.DIFF_TYPES);
   private boolean myClosed;
+  private DefaultActionGroup myActionGroup;
 
   public RootDifferenceDialogNew(ModelDifferenceDialogNew modelDialog, SNodeId rootId, String rootName, @Nullable Bounds firstChange) {
     super(modelDialog.getOwner(), true);
@@ -93,7 +95,7 @@ public class RootDifferenceDialogNew extends DialogWrapper {
 
     RootDifferenceDialogNew.MyGoToNeighbourRootActions neighbourActions = new RootDifferenceDialogNew.MyGoToNeighbourRootActions();
     final NextPreviousTraverser neighbourTraverser = new NextPreviousTraverser(myChangeGroupLayouts, myNewEditor.getMainEditor());
-    DefaultActionGroup actionGroup = ActionUtils.groupFromActions(neighbourActions.previous(), neighbourActions.next(), Separator.getInstance(), neighbourTraverser.previousAction(), neighbourTraverser.nextAction(), Separator.getInstance(), new RevertRootsActionNew(myModelDialog) {
+    myActionGroup = ActionUtils.groupFromActions(neighbourActions.previous(), neighbourActions.next(), Separator.getInstance(), neighbourTraverser.previousAction(), neighbourTraverser.nextAction(), Separator.getInstance(), new RevertRootsActionNew(myModelDialog) {
       protected SNodeId[] getRoots() {
         return new SNodeId[]{myRootId};
       }
@@ -102,10 +104,10 @@ public class RootDifferenceDialogNew extends DialogWrapper {
         rehighlight();
       }
     });
-    ActionToolbar toolbar = ActionManager.getInstance().createActionToolbar(ActionPlaces.UNKNOWN, actionGroup, true);
-    neighbourTraverser.setActionToolbar(toolbar);
+    myActionToolbar = ActionManager.getInstance().createActionToolbar(ActionPlaces.UNKNOWN, myActionGroup, true);
+    neighbourTraverser.setActionToolbar(myActionToolbar);
 
-    myContainer.add(toolbar.getComponent(), BorderLayout.NORTH);
+    myContainer.add(myActionToolbar.getComponent(), BorderLayout.NORTH);
     myContainer.add(splitPane, BorderLayout.CENTER);
     myContainer.add(myStatusBar, BorderLayout.SOUTH);
 
@@ -120,11 +122,20 @@ public class RootDifferenceDialogNew extends DialogWrapper {
     } else {
       neighbourTraverser.goToFirstChangeLater();
     }
+    final Dimension size = DimensionService.getInstance().getSize(getDimensionServiceKey());
+    if (size == null) {
+      DimensionService.getInstance().setSize(getDimensionServiceKey(), DialogDimensionsSettings.generateDialogDimensions(-100, -100).getDimensions());
+    }
+
     init();
   }
 
-  public DialogDimensionsSettings.DialogDimensions getDefaultDimensionSettings() {
-    return DialogDimensionsSettings.generateDialogDimensions(-100, -100);
+  public String getDimensionServiceKey() {
+    return "#jetbrains.mps.vcs.diff.ui.RootDifferenceDialogNew";
+  }
+
+  protected Action[] createActions() {
+    return new Action[0];
   }
 
   private DiffEditor addEditor(int index, SModel model) {
@@ -220,14 +231,11 @@ public class RootDifferenceDialogNew extends DialogWrapper {
     return myContainer;
   }
 
-  protected int getDisposeOnEscapeCondition() {
-    return JComponent.WHEN_IN_FOCUSED_WINDOW;
-  }
-
   @Override
   public void dispose() {
     if (!(myClosed)) {
       myClosed = true;
+      myActionGroup.removeAll();
       myModelDialog.rootDialogClosed();
       myOldEditor.dispose();
       myOldEditor = null;
@@ -244,21 +252,13 @@ public class RootDifferenceDialogNew extends DialogWrapper {
     super.dispose();
   }
 
-  @Nullable
-  public Object getData(@NonNls String dataId) {
-    if (DiffModelTree.NODE_ID_DATAKEY.is(dataId)) {
-      return new Ref<SNodeId>(myRootId);
-    }
-    return null;
-  }
-
   public class MyGoToNeighbourRootActions extends GoToNeighbourRootActions {
     public MyGoToNeighbourRootActions() {
     }
 
     protected void goTo(@NotNull SNodeId rootId) {
       myModelDialog.startGoingToNeighbour();
-      dispose();
+      close(DialogWrapper.NEXT_USER_EXIT_CODE);
       myModelDialog.invokeRootDifference(rootId);
     }
 

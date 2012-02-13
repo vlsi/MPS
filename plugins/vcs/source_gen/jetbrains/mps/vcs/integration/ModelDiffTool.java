@@ -10,7 +10,7 @@ import com.intellij.openapi.diff.DiffContent;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.persistence.def.ModelReadException;
 import com.intellij.openapi.diff.DiffManager;
-import jetbrains.mps.vcs.diff.ui.ModelDifferenceDialog;
+import jetbrains.mps.vcs.diff.ui.ModelDifferenceDialogNew;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.fileTypes.FileType;
 import jetbrains.mps.fileTypes.MPSFileTypeFactory;
@@ -45,7 +45,7 @@ public class ModelDiffTool implements DiffTool {
       DiffManager.getInstance().getIdeaDiffTool().show(request);
       return;
     }
-    new ModelDifferenceDialog(oldModel, newModel, request).showDialog();
+    new ModelDifferenceDialogNew(oldModel, newModel, request).show();
   }
 
   public boolean canShow(DiffRequest request) {

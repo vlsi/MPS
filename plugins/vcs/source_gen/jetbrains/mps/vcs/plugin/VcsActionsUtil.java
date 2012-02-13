@@ -18,7 +18,7 @@ import com.intellij.openapi.vcs.changes.ContentRevision;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.mps.vcs.diff.ui.ModelDifferenceDialog;
+import jetbrains.mps.vcs.diff.ui.ModelDifferenceDialogNew;
 import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.vcs.diff.ui.common.SimpleDiffRequest;
@@ -61,11 +61,11 @@ public class VcsActionsUtil {
       final VcsRevisionNumber revisionNumber = vcs.getDiffProvider().getCurrentRevision(file);
       ContentRevision content = vcs.getDiffProvider().createFileContent(revisionNumber, file);
       final SModel oldModel = ModelPersistence.readModel(content.getContent(), false);
-      final Wrappers._T<ModelDifferenceDialog> modelDialog = new Wrappers._T<ModelDifferenceDialog>();
+      final Wrappers._T<ModelDifferenceDialogNew> modelDialog = new Wrappers._T<ModelDifferenceDialogNew>();
       final Wrappers._T<SNodeId> id = new Wrappers._T<SNodeId>();
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
-          modelDialog.value = new ModelDifferenceDialog(oldModel, node.getModel(), new SimpleDiffRequest(project, revisionNumber.asString() + " (Read-Only)", "Your Version"));
+          modelDialog.value = new ModelDifferenceDialogNew(oldModel, node.getModel(), new SimpleDiffRequest(project, revisionNumber.asString() + " (Read-Only)", "Your Version"));
           id.value = node.getSNodeId();
         }
       });
