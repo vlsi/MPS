@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.workbench.make.GeneratedTextPreviewEditor" file="GeneratedTextPreviewEditor.java">
+  <dependency className="jetbrains.mps.ide.make.GeneratedTextPreviewEditor" file="GeneratedTextPreviewEditor.java">
     <classNode dependClassName="com.intellij.codeHighlighting.BackgroundEditorHighlighter" />
     <classNode dependClassName="com.intellij.ide.structureView.StructureViewBuilder" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.IdeActions" />
@@ -41,7 +41,7 @@
     <classNode dependClassName="javax.swing.border.LineBorder" />
     <classNode dependClassName="javax.swing.event.ChangeEvent" />
     <classNode dependClassName="javax.swing.event.ChangeListener" />
-    <classNode dependClassName="jetbrains.mps.workbench.make.TextPreviewFile" />
+    <classNode dependClassName="jetbrains.mps.ide.make.TextPreviewFile" />
     <classNode dependClassName="org.jetbrains.annotations.NonNls" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
@@ -51,7 +51,7 @@
     <classNode extendsClassName="com.intellij.openapi.util.UserDataHolderBase" />
     <classNode extendsClassName="javax.swing.JPanel" />
   </dependency>
-  <dependency className="jetbrains.mps.workbench.make.GeneratedTextPreviewEditorProvider" file="GeneratedTextPreviewEditorProvider.java">
+  <dependency className="jetbrains.mps.ide.make.GeneratedTextPreviewEditorProvider" file="GeneratedTextPreviewEditorProvider.java">
     <classNode dependClassName="com.intellij.openapi.fileEditor.FileEditor" />
     <classNode dependClassName="com.intellij.openapi.fileEditor.FileEditorPolicy" />
     <classNode dependClassName="com.intellij.openapi.fileEditor.FileEditorState" />
@@ -60,18 +60,18 @@
     <classNode dependClassName="com.intellij.openapi.util.Disposer" />
     <classNode dependClassName="com.intellij.openapi.vfs.VirtualFile" />
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.workbench.make.GeneratedTextPreviewEditor" />
-    <classNode dependClassName="jetbrains.mps.workbench.make.TextPreviewFile" />
+    <classNode dependClassName="jetbrains.mps.ide.make.GeneratedTextPreviewEditor" />
+    <classNode dependClassName="jetbrains.mps.ide.make.TextPreviewFile" />
     <classNode dependClassName="org.jdom.Element" />
     <classNode dependClassName="org.jetbrains.annotations.NonNls" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="com.intellij.openapi.fileEditor.FileEditorProvider" />
   </dependency>
-  <dependency className="jetbrains.mps.workbench.make.Icons" file="Icons.java">
+  <dependency className="jetbrains.mps.ide.make.Icons" file="Icons.java">
     <classNode dependClassName="javax.swing.Icon" />
     <classNode dependClassName="javax.swing.ImageIcon" />
   </dependency>
-  <dependency className="jetbrains.mps.workbench.make.MakeTask" file="MakeTask.java">
+  <dependency className="jetbrains.mps.ide.make.MakeTask" file="MakeTask.java">
     <classNode dependClassName="com.intellij.openapi.progress.PerformInBackgroundOption" />
     <classNode dependClassName="com.intellij.openapi.progress.ProgressIndicator" />
     <classNode dependClassName="com.intellij.openapi.progress.Task" />
@@ -111,7 +111,7 @@
     <classNode extendsClassName="jetbrains.mps.logging.ILoggingHandler" />
     <classNode extendsClassName="jetbrains.mps.make.service.CoreMakeTask" />
   </dependency>
-  <dependency className="jetbrains.mps.workbench.make.TextPreviewFile" file="TextPreviewFile.java">
+  <dependency className="jetbrains.mps.ide.make.TextPreviewFile" file="TextPreviewFile.java">
     <classNode dependClassName="com.intellij.openapi.vfs.VirtualFile" />
     <classNode dependClassName="com.intellij.openapi.vfs.VirtualFileSystem" />
     <classNode dependClassName="java.io.IOException" />
@@ -131,7 +131,7 @@
     <classNode extendsClassName="com.intellij.openapi.vfs.newvfs.NewVirtualFileSystem" />
     <classNode extendsClassName="com.intellij.openapi.vfs.newvfs.impl.StubVirtualFile" />
   </dependency>
-  <dependency className="jetbrains.mps.workbench.make.TextPreviewUtil" file="TextPreviewUtil.java">
+  <dependency className="jetbrains.mps.ide.make.TextPreviewUtil" file="TextPreviewUtil.java">
     <classNode dependClassName="com.intellij.openapi.application.ApplicationManager" />
     <classNode dependClassName="com.intellij.openapi.fileEditor.FileEditorManager" />
     <classNode dependClassName="com.intellij.openapi.fileEditor.OpenFileDescriptor" />
@@ -141,6 +141,7 @@
     <classNode dependClassName="java.util.concurrent.ExecutionException" />
     <classNode dependClassName="java.util.concurrent.Future" />
     <classNode dependClassName="javax.swing.SwingUtilities" />
+    <classNode dependClassName="jetbrains.mps.ide.make.TextPreviewFile" />
     <classNode dependClassName="jetbrains.mps.ide.project.ProjectHelper" />
     <classNode dependClassName="jetbrains.mps.ide.projectPane.ProjectPane" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
@@ -160,15 +161,14 @@
     <classNode dependClassName="jetbrains.mps.smodel.SModelDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.resources.FResource" />
     <classNode dependClassName="jetbrains.mps.smodel.resources.ModelsToResources" />
-    <classNode dependClassName="jetbrains.mps.workbench.make.TextPreviewFile" />
   </dependency>
-  <dependency className="jetbrains.mps.workbench.make.UIFeedbackStrategy" file="UIFeedbackStrategy.java">
+  <dependency className="jetbrains.mps.ide.make.UIFeedbackStrategy" file="UIFeedbackStrategy.java">
     <classNode dependClassName="jetbrains.mps.make.script.IFeedback" />
     <classNode dependClassName="jetbrains.mps.messages.IMessageHandler" />
     <classNode dependClassName="jetbrains.mps.messages.Message" />
     <classNode dependClassName="jetbrains.mps.messages.MessageKind" />
   </dependency>
-  <dependency className="jetbrains.mps.workbench.make.UIQueryRelayStrategy" file="UIQueryRelayStrategy.java">
+  <dependency className="jetbrains.mps.ide.make.UIQueryRelayStrategy" file="UIQueryRelayStrategy.java">
     <classNode dependClassName="com.intellij.openapi.ui.Messages" />
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.String" />
@@ -183,7 +183,7 @@
     <classNode dependClassName="jetbrains.mps.make.script.IQuery" />
     <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
   </dependency>
-  <dependency className="jetbrains.mps.workbench.make.WorkbenchMakeService" file="WorkbenchMakeService.java">
+  <dependency className="jetbrains.mps.ide.make.WorkbenchMakeService" file="WorkbenchMakeService.java">
     <classNode dependClassName="com.intellij.ide.IdeEventQueue" />
     <classNode dependClassName="com.intellij.openapi.application.impl.ApplicationImpl" />
     <classNode dependClassName="com.intellij.openapi.progress.PerformInBackgroundOption" />
@@ -213,6 +213,9 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.Tuples" />
     <classNode dependClassName="jetbrains.mps.generator.GenerationSettingsProvider" />
     <classNode dependClassName="jetbrains.mps.ide.generator.GenerationSettings" />
+    <classNode dependClassName="jetbrains.mps.ide.make.MakeTask" />
+    <classNode dependClassName="jetbrains.mps.ide.make.UIFeedbackStrategy" />
+    <classNode dependClassName="jetbrains.mps.ide.make.UIQueryRelayStrategy" />
     <classNode dependClassName="jetbrains.mps.ide.messages.MessagesViewTool" />
     <classNode dependClassName="jetbrains.mps.ide.project.ProjectHelper" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IVisitor" />
@@ -247,9 +250,6 @@
     <classNode dependClassName="jetbrains.mps.project.Project" />
     <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
     <classNode dependClassName="jetbrains.mps.watching.ModelChangesWatcher" />
-    <classNode dependClassName="jetbrains.mps.workbench.make.MakeTask" />
-    <classNode dependClassName="jetbrains.mps.workbench.make.UIFeedbackStrategy" />
-    <classNode dependClassName="jetbrains.mps.workbench.make.UIQueryRelayStrategy" />
     <classNode dependClassName="org.jetbrains.annotations.NonNls" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="com.intellij.openapi.components.ApplicationComponent" />

@@ -23,7 +23,6 @@ editor/typesystemIntegration/classes
 languages/languageDesign/test/classes_gen
 languages/util/runConfigurations/classes
 languages/util/uiLanguage/runtime/classes
-workbench/classes
 workbench/typesystemUi/classes
 workbench/mps-editor/classes
 workbench/mps-workbench/classes

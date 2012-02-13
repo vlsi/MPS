@@ -245,17 +245,6 @@
       <fileset dir="${base_dir}/languages/util/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime" includes="**/*.mps, **/*.metadata, **/*.history" />
     </copy>
   </target>
-  <target name="pack.jetbrains.mps.workbench.make">
-    <fail unless="base_dir" message="Property base_dir unspecified." />
-    <mkdir dir="${deploy.dir}/MPS/lib/mps-workbench.jar.tmp/modules/jetbrains.mps.workbench.make" />
-    <copy todir="${deploy.dir}/MPS/lib/mps-workbench.jar.tmp/modules/jetbrains.mps.workbench.make">
-      <fileset file="${base_dir}/workbench/make/jetbrains.mps.workbench.make.msd" />
-      <fileset dir="${base_dir}/workbench/make" includes="icons/**, resources/**" />
-    </copy>
-    <copy todir="${deploy.dir}/MPS/lib/mps-workbench.jar.tmp/modules/jetbrains.mps.workbench.make">
-      <fileset dir="${base_dir}/workbench/make" includes="**/*.mps, **/*.metadata, **/*.history" />
-    </copy>
-  </target>
   <target name="pack.collections.runtime">
     <fail unless="base_dir" message="Property base_dir unspecified." />
     <mkdir dir="${deploy.dir}/MPS/lib/mps-collections.jar.tmp/modules/collections.runtime" />

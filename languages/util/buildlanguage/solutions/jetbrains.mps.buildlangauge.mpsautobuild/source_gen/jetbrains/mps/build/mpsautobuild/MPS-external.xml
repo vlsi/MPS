@@ -274,9 +274,6 @@
       <fileset dir="${mps_home}/languages/util/uiLanguage/runtime/classes" />
     </copy>
     <copy todir="${deploy.dir}/MPS/lib/mps-workbench.jar.tmp">
-      <fileset dir="${mps_home}/workbench/classes" excludes="idea/IdeaApplicationInfo.xml, " />
-    </copy>
-    <copy todir="${deploy.dir}/MPS/lib/mps-workbench.jar.tmp">
       <fileset dir="${mps_home}/workbench/typesystemUi/classes" />
     </copy>
     <copy todir="${deploy.dir}/MPS/lib/mps-workbench.jar.tmp">
@@ -291,7 +288,6 @@
     <antcall target="MPS-languages.pack.jetbrains.mps.ide" />
     <antcall target="MPS-languages.pack.jetbrains.mps.ide.editor" />
     <antcall target="MPS-languages.pack.jetbrains.mps.ide.uiLanguage.runtime" />
-    <antcall target="MPS-languages.pack.jetbrains.mps.workbench.make" />
     <mkdir dir="${deploy.dir}/MPS/lib/mps-workbench.jar.tmp/modules" />
     <jar destfile="${deploy.dir}/MPS/lib/mps-workbench.jar" duplicate="preserve" filesonly="true">
       <fileset dir="${deploy.dir}/MPS/lib/mps-workbench.jar.tmp" />

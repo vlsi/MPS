@@ -180,7 +180,7 @@
     </component>
 
     <component>
-      <implementation-class>jetbrains.mps.workbench.make.GeneratedTextPreviewEditorProvider</implementation-class>
+      <implementation-class>jetbrains.mps.ide.make.GeneratedTextPreviewEditorProvider</implementation-class>
     </component>
 
     <component>
