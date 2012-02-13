@@ -19,6 +19,7 @@ import jetbrains.mps.baseLanguage.behavior.ILocalDeclaration_Behavior;
 import jetbrains.mps.baseLanguage.behavior.ILocalReference_Behavior;
 import jetbrains.mps.errors.BaseQuickFixProvider;
 import jetbrains.mps.baseLanguage.behavior.IVariableAssignment_Behavior;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 
@@ -171,18 +172,31 @@ public class DataFlowUtil {
         }
       } else if (SNodeOperations.isInstanceOf(write, "jetbrains.mps.baseLanguage.structure.IVariableAssignment")) {
         SNode variableAssignment = SNodeOperations.cast(write, "jetbrains.mps.baseLanguage.structure.IVariableAssignment");
-        if (SNodeOperations.isInstanceOf(write, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration")) {
-          if (ILocalDeclaration_Behavior.call_isReferencedInControlFlowInterrupter_1644061362849513751(SNodeOperations.cast(write, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration"))) {
-            continue;
-          }
-        }
         if (IVariableAssignment_Behavior.call_isCanBeUnused_1223985713603(variableAssignment)) {
-          {
-            MessageTarget errorTarget = new NodeMessageTarget();
-            IErrorReporter _reporter_2309309498 = typeCheckingContext.reportWarning(write, "Unused assignment", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1225278681706", null, errorTarget);
+          if (SNodeOperations.isInstanceOf(write, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration")) {
+            SNode decl = SNodeOperations.cast(write, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration");
+            if (ILocalDeclaration_Behavior.call_isReferencedInControlFlowInterrupter_1644061362849513751(decl)) {
+              continue;
+            }
+            if (SLinkOperations.getTarget(decl, "initializer", true) == null) {
+              continue;
+            }
             {
-              BaseQuickFixProvider intentionProvider = new BaseQuickFixProvider("jetbrains.mps.baseLanguage.typesystem.RemoveUnusedAssignment_QuickFix", false);
-              _reporter_2309309498.addIntentionProvider(intentionProvider);
+              MessageTarget errorTarget = new NodeMessageTarget();
+              IErrorReporter _reporter_2309309498 = typeCheckingContext.reportWarning(SLinkOperations.getTarget(decl, "initializer", true), "Variable '" + SPropertyOperations.getString(decl, "name") + "' initializer is redundant", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "963887337804010668", null, errorTarget);
+              {
+                BaseQuickFixProvider intentionProvider = new BaseQuickFixProvider("jetbrains.mps.baseLanguage.typesystem.RemoveUnusedAssignment_QuickFix", false);
+                _reporter_2309309498.addIntentionProvider(intentionProvider);
+              }
+            }
+          } else {
+            {
+              MessageTarget errorTarget = new NodeMessageTarget();
+              IErrorReporter _reporter_2309309498 = typeCheckingContext.reportWarning(write, "Unused assignment", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1225278681706", null, errorTarget);
+              {
+                BaseQuickFixProvider intentionProvider = new BaseQuickFixProvider("jetbrains.mps.baseLanguage.typesystem.RemoveUnusedAssignment_QuickFix", false);
+                _reporter_2309309498.addIntentionProvider(intentionProvider);
+              }
             }
           }
         }
