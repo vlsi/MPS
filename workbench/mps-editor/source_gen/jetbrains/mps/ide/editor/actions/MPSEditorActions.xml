@@ -3,6 +3,14 @@
     <action id="jetbrains.mps.ide.editor.actions.Backspace_Action" class="jetbrains.mps.ide.editor.actions.Backspace_Action">
       <keyboard-shortcut first-keystroke=" BACK_SPACE" keymap="$default"/>
     </action>
+    <action id="jetbrains.mps.ide.editor.actions.CollapseAll_Action" class="jetbrains.mps.ide.editor.actions.CollapseAll_Action">
+      <keyboard-shortcut first-keystroke="ctrl shift SUBTRACT" keymap="$default"/>
+      <keyboard-shortcut first-keystroke="ctrl shift MINUS" keymap="$default"/>
+    </action>
+    <action id="jetbrains.mps.ide.editor.actions.Collapse_Action" class="jetbrains.mps.ide.editor.actions.Collapse_Action">
+      <keyboard-shortcut first-keystroke="ctrl SUBTRACT" keymap="$default"/>
+      <keyboard-shortcut first-keystroke="ctrl MINUS" keymap="$default"/>
+    </action>
     <action id="jetbrains.mps.ide.editor.actions.CopyThisDown_Action" class="jetbrains.mps.ide.editor.actions.CopyThisDown_Action">
       <keyboard-shortcut first-keystroke="ctrl D" keymap="$default"/>
     </action>
@@ -24,8 +32,19 @@
     <action id="jetbrains.mps.ide.editor.actions.Escape_Action" class="jetbrains.mps.ide.editor.actions.Escape_Action">
       <keyboard-shortcut first-keystroke=" ESCAPE" keymap="$default"/>
     </action>
+    <action id="jetbrains.mps.ide.editor.actions.ExpandAll_Action" class="jetbrains.mps.ide.editor.actions.ExpandAll_Action">
+      <keyboard-shortcut first-keystroke="ctrl shift ADD" keymap="$default"/>
+      <keyboard-shortcut first-keystroke="ctrl shift EQUALS" keymap="$default"/>
+    </action>
+    <action id="jetbrains.mps.ide.editor.actions.Expand_Action" class="jetbrains.mps.ide.editor.actions.Expand_Action">
+      <keyboard-shortcut first-keystroke="ctrl ADD" keymap="$default"/>
+      <keyboard-shortcut first-keystroke="ctrl EQUALS" keymap="$default"/>
+    </action>
     <action id="jetbrains.mps.ide.editor.actions.ExtractComponent_Action" class="jetbrains.mps.ide.editor.actions.ExtractComponent_Action">
       <keyboard-shortcut first-keystroke="ctrl alt C" keymap="$default"/>
+    </action>
+    <action id="jetbrains.mps.ide.editor.actions.FoldSelection_Action" class="jetbrains.mps.ide.editor.actions.FoldSelection_Action">
+      <keyboard-shortcut first-keystroke="ctrl PERIOD" keymap="$default"/>
     </action>
     <action id="jetbrains.mps.ide.editor.actions.GoByCurrentReference_Action" class="jetbrains.mps.ide.editor.actions.GoByCurrentReference_Action">
       <keyboard-shortcut first-keystroke="ctrl B" keymap="$default"/>
@@ -184,6 +203,16 @@
       <separator/>
       <reference ref="EditorPopup_ActionGroupvcs"/>
       <separator/>
+    </group>
+    <group id="jetbrains.mps.ide.editor.actions.Folding_ActionGroup" text="Folding" popup="true">
+      <reference ref="jetbrains.mps.ide.editor.actions.Expand_Action"/>
+      <reference ref="jetbrains.mps.ide.editor.actions.Collapse_Action"/>
+      <separator/>
+      <reference ref="jetbrains.mps.ide.editor.actions.ExpandAll_Action"/>
+      <reference ref="jetbrains.mps.ide.editor.actions.CollapseAll_Action"/>
+      <separator/>
+      <reference ref="jetbrains.mps.ide.editor.actions.FoldSelection_Action"/>
+      <add-to-group group-id="EditorPopup_ActionGroupfolding" anchor="last"/>
     </group>
     <group id="jetbrains.mps.ide.editor.actions.GoToEditorPopupAddition_ActionGroup" text="Go To" popup="true">
       <reference ref="jetbrains.mps.ide.editor.actions.GoByCurrentReference_Action"/>
