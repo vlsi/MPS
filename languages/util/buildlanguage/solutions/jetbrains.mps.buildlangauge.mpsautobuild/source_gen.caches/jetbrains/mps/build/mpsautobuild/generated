@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-9wxxeur5ftb8wgxtbmd6fguphvkp1bv">
+<dependencies version="2" modelHash="-3jc13bi88bj58bjxkqty5wgfs5uya97">
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-5p0rdl0tgxw43gzmkd4qcpqszqapgi2" />
   <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="-d6gktujerh7kvr1llych0hnevxuxpuy" />
   <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" hash="-emft066258aq93gaz2a92o9hgdjvvc4" />
@@ -69,7 +69,7 @@
     <file name="help-build.xml" />
   </source>
   <source id="8431776905956472400" name="MPS-src.zip" hash="-dajz850rstfd4d81gslbziqod3a1kac" />
-  <source id="8431776905956472682" name="mps-backend.jar" hash="-8qzc2la2vlh50m2z7dv2xv132muacm8" />
+  <source id="8431776905956472682" name="mps-backend.jar" hash="7csh21b2zbprux5jz09mlomrqu5mnj7" />
   <source id="8431776905956472694" name="idea-patch.jar" hash="8h0m5bxfun5eqmowwsvpjzu7xqqywxb" />
   <source id="8431776905956472723" name="mps-core.jar" hash="151sa7kbax663d717kdojxo11px4u3t" />
   <source id="8431776905956472858" name="core" hash="cm60spf9vn15z5k1bg0njnsp9hczujh">
@@ -84,7 +84,7 @@
     <dep model="r:00000000-0000-4000-0000-011c895904d9(jetbrains.mps.build.packaging.generator.buildlanguage.template.main@generator)" />
   </source>
   <source id="8431776905956472964" name="platform.baseLanguage" hash="-bclf1fxb5epvtvvx431kgbla5v938pe" />
-  <source id="8431776905956472972" name="platform.build" hash="45jagu6dt5k99kewshg6s1fdjooqii0" />
+  <source id="8431776905956472972" name="platform.build" hash="-e0xbjorc9as617w3lh5aabcxslimat6" />
   <source id="8431776905956472981" name="platform.deprecated" hash="-hu1pw7wp1r6b2q87w5d4q0sbwv56yf" />
   <source id="8431776905956472985" name="platform.ui" hash="75opetl3r2usfj6mquovgkaypa5jt68" />
   <source id="8431776905956472996" name="platform.xml" hash="-cz5wam5za49qzuvzx3lovhppywvk5y9" />

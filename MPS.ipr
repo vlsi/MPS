@@ -46,6 +46,7 @@
       <modulePath path="${project}/core/analyzers/languages/analyzers/analyzers.mpl" folder="core.analyzers" />
       <modulePath path="${project}/core/analyzers/solutions/jetbrains.mps.analyzers.runtime/jetbrains.mps.analyzers.runtime.msd" folder="core.analyzers" />
       <modulePath path="${project}/core/analyzers/solutions/sandbox/sandbox.msd" folder="core.analyzers" />
+      <modulePath path="${project}/core/ant/jetbrains.mps.build.antsupport.msd" folder="core" />
       <modulePath path="${project}/core/dependencies/dependencies.msd" folder="core" />
       <modulePath path="${project}/core/findUsages-runtime/runtime.msd" folder="core" />
       <modulePath path="${project}/core/generator/solutions/jetbrains.mps.generator.msd" folder="core" />
@@ -212,7 +213,6 @@
       <modulePath path="${project}/languages/util/buildlanguage/languages/property/property.mpl" folder="languages.build" />
       <modulePath path="${project}/languages/util/buildlanguage/languages/reduced/reduced.mpl" folder="languages.build" />
       <modulePath path="${project}/languages/util/buildlanguage/languages/startup/startup.mpl" folder="languages.build" />
-      <modulePath path="${project}/languages/util/buildlanguage/solutions/jetbrains.mps.build.antsupport/jetbrains.mps.build.antsupport.msd" folder="languages.build" />
       <modulePath path="${project}/languages/util/buildlanguage/solutions/jetbrains.mps.build.mpsautobuild.test/test.msd" folder="languages.build" />
       <modulePath path="${project}/languages/util/buildlanguage/solutions/jetbrains.mps.build.mpsdist/mpsdist.msd" folder="languages.build" />
       <modulePath path="${project}/languages/util/buildlanguage/solutions/jetbrains.mps.buildlangauge.mpsautobuild/jetbrains.mps.buildlangauge.mpsautobuild.msd" folder="languages.build" />

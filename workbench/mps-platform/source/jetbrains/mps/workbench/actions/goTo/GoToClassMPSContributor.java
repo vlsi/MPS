@@ -16,7 +16,7 @@
 
 package jetbrains.mps.workbench.actions.goTo;
 
-import com.intellij.navigation.ChooseByNameContributor;
+import com.intellij.navigation.GotoClassContributor;
 import com.intellij.navigation.NavigationItem;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.smodel.IScope;
@@ -31,7 +31,7 @@ import jetbrains.mps.workbench.choose.nodes.BaseNodeModel;
 import java.util.ArrayList;
 import java.util.List;
 
-public class GoToClassMPSContributor implements ChooseByNameContributor {
+public class GoToClassMPSContributor implements GotoClassContributor {
   public String[] getNames(Project project, boolean includeNonProjectItems) {
     return createModel(project).getNames(includeNonProjectItems);
   }
@@ -41,7 +41,7 @@ public class GoToClassMPSContributor implements ChooseByNameContributor {
   }
 
   private BaseNodeModel createModel(final Project project) {
-    return new BaseNodeModel(project, "symbol") {
+    return new BaseNodeModel(project, "root") {
       public SNode[] find(IScope scope) {
         final List<SNode> nodes = new ArrayList<SNode>();
         Iterable<SModelDescriptor> modelDescriptors = scope.getModelDescriptors();
@@ -56,7 +56,7 @@ public class GoToClassMPSContributor implements ChooseByNameContributor {
         for (SModelDescriptor modelDescriptor : modelDescriptors) {
           if (!SModelStereotype.isUserModel(modelDescriptor)) continue;
 
-          Iterable<SNode> iter = new ConditionalIterable<SNode>(modelDescriptor.getSModel().nodes(), cond);
+          Iterable<SNode> iter = new ConditionalIterable<SNode>(modelDescriptor.getSModel().roots(), cond);
           nodes.addAll(IterableUtil.asCollection(iter));
         }
         return nodes.toArray(new SNode[nodes.size()]);
@@ -66,5 +66,15 @@ public class GoToClassMPSContributor implements ChooseByNameContributor {
         return true;
       }
     };
+  }
+
+  @Override
+  public String getQualifiedName(NavigationItem item) {
+    return createModel(null).doGetFullName(item);
+  }
+
+  @Override
+  public String getQualifiedNameSeparator() {
+    return BaseNodeModel.SEPARATOR;
   }
 }

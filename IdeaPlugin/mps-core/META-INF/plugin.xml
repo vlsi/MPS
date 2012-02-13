@@ -77,9 +77,10 @@
 
     <!--This action should be moved to MPSCore.xml as soon as we use Idea Project Tree in IDE-->
     <action id="jetbrains.mps.workbench.actions.goTo.GoToModelPlatformAction"
-            class="jetbrains.mps.workbench.actions.goTo.GoToModelPlatformAction">
+            class="jetbrains.mps.workbench.actions.goTo.GoToModelPlatformAction"
+            text="MPS Model...">
       <add-to-group group-id="GoToMenu"
-                    anchor="last"/>
+                    anchor="first"/>
       <keyboard-shortcut first-keystroke="ctrl alt shift M" keymap="$default"/>
     </action>
 

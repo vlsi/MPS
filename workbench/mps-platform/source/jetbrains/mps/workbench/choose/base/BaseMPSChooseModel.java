@@ -38,7 +38,7 @@ import java.util.Map;
 
 public abstract class BaseMPSChooseModel<T> implements ChooseByNameModel {
   protected static final Logger LOG = Logger.getLogger(BaseMPSChooseModel.class);
-  protected static final char ESCAPE = '\u001B';
+  public static final String SEPARATOR = ".";
 
   private Project myProject;
 
@@ -181,7 +181,7 @@ public abstract class BaseMPSChooseModel<T> implements ChooseByNameModel {
 
   @NotNull
   public String[] getSeparators() {
-    return new String[]{"."};
+    return new String[]{SEPARATOR};
   }
 
   //this is deprecated and not used
