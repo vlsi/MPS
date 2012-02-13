@@ -47,7 +47,8 @@ public class MPSCompilerComponent implements ProjectComponent {
 		}
 		HashSet<FileType> inputSet = new HashSet<FileType>(Arrays.asList(MPSFileTypeFactory.MODEL_FILE_TYPE));
 		HashSet<FileType> outputSet = new HashSet<FileType>(Arrays.asList(StdFileTypes.JAVA));
-		compilerManager.addTranslatingCompiler(new MPSCompiler(project), inputSet, outputSet);
+        if (false) compilerManager.addTranslatingCompiler(new MPSCompiler(project), inputSet, outputSet);
+        compilerManager.addCompiler(new MPSCompiler2(project));
 	}
 
 	public void projectClosed() {
