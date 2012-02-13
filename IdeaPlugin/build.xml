@@ -242,11 +242,11 @@
                debug="${javac.debug}" debuglevel="lines,vars,source">
             <compilerarg value="-Xlint:none"/>
             <src>
-                <path path="${base_dir}/languages/util/buildlanguage/ant/source_gen"/>
+                <path path="${base_dir}/core/ant/source_gen"/>
             </src>
         </javac>
         <copy includeemptydirs="false" todir="${build_dir}/mpsbackend_jar">
-            <fileset dir="${base_dir}/languages/util/buildlanguage/ant/source_gen" includes="**/*.png"/>
+            <fileset dir="${base_dir}/core/ant/source_gen" includes="**/*.png"/>
         </copy>
         <jar destfile="${dist.dir}/lib/mps-backend.jar">
             <fileset dir="${build_dir}/mpsbackend_jar"/>
