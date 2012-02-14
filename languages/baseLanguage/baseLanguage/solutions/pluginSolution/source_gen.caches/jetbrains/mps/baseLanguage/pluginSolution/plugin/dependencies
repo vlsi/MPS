@@ -1536,7 +1536,6 @@
     <classNode dependClassName="jetbrains.mps.ide.actions.Code_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.ide.actions.ModelActionsInternal_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.ide.actions.NodeActionsInternal_ActionGroup" />
-    <classNode dependClassName="jetbrains.mps.ide.actions.NodeRefactoring_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.ide.actions.Tools_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.lang.dataFlow.pluginSolution.plugin.DFAActions_ActionGroup" />

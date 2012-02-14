@@ -1,0 +1,5 @@
+<components>
+  <actions>
+    <group id="jetbrains.mps.ide.platform.actions.NodeRefactoring_ActionGroup" text="Refactoring" popup="true"/>
+  </actions>
+</components>

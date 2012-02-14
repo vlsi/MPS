@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debugInfo>
+  <root nodeId="6714826334259354837">
+    <nodeInfo nodeId="6714826334259354837" fileName="MPSPlatform.xml" startLine="1" startPosition="0" endLine="1" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GIndent" />
+    <nodeInfo nodeId="6714826334259354837" fileName="MPSPlatform.xml" startLine="1" startPosition="0" endLine="1" endPosition="1" conceptFqName="jetbrains.mps.gtext.structure.GText" />
+    <nodeInfo nodeId="6714826334259354837" fileName="MPSPlatform.xml" startLine="1" startPosition="1" endLine="1" endPosition="11" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
+    <nodeInfo nodeId="6714826334259354837" fileName="MPSPlatform.xml" startLine="1" startPosition="1" endLine="1" endPosition="11" conceptFqName="jetbrains.mps.gtext.structure.GText" />
+    <nodeInfo nodeId="6714826334259354837" fileName="MPSPlatform.xml" startLine="1" startPosition="11" endLine="1" endPosition="12" conceptFqName="jetbrains.mps.gtext.structure.GText" />
+    <nodeInfo nodeId="6714826334259354837" fileName="MPSPlatform.xml" startLine="2" startPosition="0" endLine="2" endPosition="2" conceptFqName="jetbrains.mps.gtext.structure.GIndent" />
+    <nodeInfo nodeId="6714826334259354837" fileName="MPSPlatform.xml" startLine="2" startPosition="2" endLine="2" endPosition="3" conceptFqName="jetbrains.mps.gtext.structure.GText" />
+    <nodeInfo nodeId="6714826334259354837" fileName="MPSPlatform.xml" startLine="2" startPosition="3" endLine="2" endPosition="10" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
+    <nodeInfo nodeId="6714826334259354837" fileName="MPSPlatform.xml" startLine="2" startPosition="3" endLine="2" endPosition="10" conceptFqName="jetbrains.mps.gtext.structure.GText" />
+    <nodeInfo nodeId="6714826334259354837" fileName="MPSPlatform.xml" startLine="2" startPosition="10" endLine="2" endPosition="11" conceptFqName="jetbrains.mps.gtext.structure.GText" />
+    <nodeInfo nodeId="6714826334259354837" fileName="MPSPlatform.xml" startLine="3" startPosition="0" endLine="3" endPosition="4" conceptFqName="jetbrains.mps.gtext.structure.GIndent" />
+    <nodeInfo nodeId="6714826334259354837" fileName="MPSPlatform.xml" startLine="3" startPosition="4" endLine="3" endPosition="5" conceptFqName="jetbrains.mps.gtext.structure.GText" />
+    <nodeInfo nodeId="6714826334259354837" fileName="MPSPlatform.xml" startLine="3" startPosition="5" endLine="3" endPosition="10" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
+    <nodeInfo nodeId="6714826334259354837" fileName="MPSPlatform.xml" startLine="3" startPosition="5" endLine="3" endPosition="10" conceptFqName="jetbrains.mps.gtext.structure.GText" />
+    <nodeInfo nodeId="6714826334259354837" fileName="MPSPlatform.xml" startLine="3" startPosition="10" endLine="3" endPosition="78" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
+    <nodeInfo nodeId="6714826334259354837" fileName="MPSPlatform.xml" startLine="3" startPosition="10" endLine="3" endPosition="15" conceptFqName="jetbrains.mps.gtext.structure.GText" />
+    <nodeInfo nodeId="6714826334259354837" fileName="MPSPlatform.xml" startLine="3" startPosition="15" endLine="3" endPosition="77" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
+    <nodeInfo nodeId="6714826334259354837" fileName="MPSPlatform.xml" startLine="3" startPosition="15" endLine="3" endPosition="77" conceptFqName="jetbrains.mps.gtext.structure.GText" />
+    <nodeInfo nodeId="6714826334259354837" fileName="MPSPlatform.xml" startLine="3" startPosition="77" endLine="3" endPosition="78" conceptFqName="jetbrains.mps.gtext.structure.GText" />
+    <nodeInfo nodeId="6714826334259354837" fileName="MPSPlatform.xml" startLine="3" startPosition="78" endLine="3" endPosition="97" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
+    <nodeInfo nodeId="6714826334259354837" fileName="MPSPlatform.xml" startLine="3" startPosition="78" endLine="3" endPosition="85" conceptFqName="jetbrains.mps.gtext.structure.GText" />
+    <nodeInfo nodeId="6714826334259354837" fileName="MPSPlatform.xml" startLine="3" startPosition="85" endLine="3" endPosition="96" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
+    <nodeInfo nodeId="6714826334259354837" fileName="MPSPlatform.xml" startLine="3" startPosition="85" endLine="3" endPosition="96" conceptFqName="jetbrains.mps.gtext.structure.GText" />
+    <nodeInfo nodeId="6714826334259354837" fileName="MPSPlatform.xml" startLine="3" startPosition="96" endLine="3" endPosition="97" conceptFqName="jetbrains.mps.gtext.structure.GText" />
+    <nodeInfo nodeId="6714826334259354837" fileName="MPSPlatform.xml" startLine="3" startPosition="97" endLine="3" endPosition="110" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
+    <nodeInfo nodeId="6714826334259354837" fileName="MPSPlatform.xml" startLine="3" startPosition="97" endLine="3" endPosition="105" conceptFqName="jetbrains.mps.gtext.structure.GText" />
+    <nodeInfo nodeId="6714826334259354837" fileName="MPSPlatform.xml" startLine="3" startPosition="105" endLine="3" endPosition="109" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
+    <nodeInfo nodeId="6714826334259354837" fileName="MPSPlatform.xml" startLine="3" startPosition="105" endLine="3" endPosition="109" conceptFqName="jetbrains.mps.gtext.structure.GText" />
+    <nodeInfo nodeId="6714826334259354837" fileName="MPSPlatform.xml" startLine="3" startPosition="109" endLine="3" endPosition="110" conceptFqName="jetbrains.mps.gtext.structure.GText" />
+    <nodeInfo nodeId="6714826334259354837" fileName="MPSPlatform.xml" startLine="3" startPosition="110" endLine="3" endPosition="112" conceptFqName="jetbrains.mps.gtext.structure.GText" />
+    <nodeInfo nodeId="6714826334259354837" fileName="MPSPlatform.xml" startLine="4" startPosition="0" endLine="4" endPosition="2" conceptFqName="jetbrains.mps.gtext.structure.GIndent" />
+    <nodeInfo nodeId="6714826334259354837" fileName="MPSPlatform.xml" startLine="4" startPosition="2" endLine="4" endPosition="4" conceptFqName="jetbrains.mps.gtext.structure.GText" />
+    <nodeInfo nodeId="6714826334259354837" fileName="MPSPlatform.xml" startLine="4" startPosition="4" endLine="4" endPosition="11" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
+    <nodeInfo nodeId="6714826334259354837" fileName="MPSPlatform.xml" startLine="4" startPosition="4" endLine="4" endPosition="11" conceptFqName="jetbrains.mps.gtext.structure.GText" />
+    <nodeInfo nodeId="6714826334259354837" fileName="MPSPlatform.xml" startLine="4" startPosition="11" endLine="4" endPosition="12" conceptFqName="jetbrains.mps.gtext.structure.GText" />
+    <nodeInfo nodeId="6714826334259354837" fileName="MPSPlatform.xml" startLine="5" startPosition="0" endLine="5" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GIndent" />
+    <nodeInfo nodeId="6714826334259354837" fileName="MPSPlatform.xml" startLine="5" startPosition="0" endLine="5" endPosition="2" conceptFqName="jetbrains.mps.gtext.structure.GText" />
+    <nodeInfo nodeId="6714826334259354837" fileName="MPSPlatform.xml" startLine="5" startPosition="2" endLine="5" endPosition="12" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
+    <nodeInfo nodeId="6714826334259354837" fileName="MPSPlatform.xml" startLine="5" startPosition="2" endLine="5" endPosition="12" conceptFqName="jetbrains.mps.gtext.structure.GText" />
+    <nodeInfo nodeId="6714826334259354837" fileName="MPSPlatform.xml" startLine="5" startPosition="12" endLine="5" endPosition="13" conceptFqName="jetbrains.mps.gtext.structure.GText" />
+    <nodeInfo nodeId="6714826334259354837" fileName="MPSPlatform.xml" startLine="1" startPosition="12" endLine="2" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />
+    <nodeInfo nodeId="6714826334259354837" fileName="MPSPlatform.xml" startLine="2" startPosition="11" endLine="3" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />
+    <nodeInfo nodeId="6714826334259354837" fileName="MPSPlatform.xml" startLine="3" startPosition="0" endLine="4" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GIndentBlock" />
+    <nodeInfo nodeId="6714826334259354837" fileName="MPSPlatform.xml" startLine="3" startPosition="0" endLine="4" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
+    <nodeInfo nodeId="6714826334259354837" fileName="MPSPlatform.xml" startLine="3" startPosition="0" endLine="4" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
+    <nodeInfo nodeId="6714826334259354837" fileName="MPSPlatform.xml" startLine="3" startPosition="0" endLine="4" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
+    <nodeInfo nodeId="6714826334259354837" fileName="MPSPlatform.xml" startLine="3" startPosition="112" endLine="4" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />
+    <nodeInfo nodeId="6714826334259354837" fileName="MPSPlatform.xml" startLine="4" startPosition="12" endLine="5" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />
+    <nodeInfo nodeId="6714826334259354837" fileName="MPSPlatform.xml" startLine="5" startPosition="13" endLine="6" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />
+    <nodeInfo nodeId="6714826334259354837" fileName="MPSPlatform.xml" startLine="2" startPosition="0" endLine="5" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GIndentBlock" />
+    <nodeInfo nodeId="6714826334259354837" fileName="MPSPlatform.xml" startLine="2" startPosition="0" endLine="5" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
+    <nodeInfo nodeId="6714826334259354837" fileName="MPSPlatform.xml" startLine="2" startPosition="0" endLine="5" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
+    <nodeInfo nodeId="6714826334259354837" fileName="MPSPlatform.xml" startLine="2" startPosition="0" endLine="5" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
+    <nodeInfo nodeId="6714826334259354837" fileName="MPSPlatform.xml" startLine="1" startPosition="0" endLine="6" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
+    <nodeInfo nodeId="6714826334259354837" fileName="MPSPlatform.xml" startLine="1" startPosition="0" endLine="6" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
+    <unitInfo nodeId="6714826334259354837" fileName="MPSPlatform.xml" startLine="1" startPosition="0" endLine="6" endPosition="0" unitName="MPSPlatform.xml" />
+  </root>
+</debugInfo>
+

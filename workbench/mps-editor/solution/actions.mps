@@ -297,6 +297,11 @@
       <property name="outsideCommandExecution" nameId="tp4k.1211298967294" value="true" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Menu.EditorPopup.Actions.Folding" />
     </node>
+    <node type="tp4k.InterfaceGroup" typeId="tp4k.1204383956737" id="6714826334259374451">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Menu.EditorPopup" />
+      <property name="name" nameId="tpck.1169194664001" value="RefactoringActions" />
+      <property name="isPluginXmlGroup" nameId="tp4k.6368583333374291912" value="true" />
+    </node>
   </roots>
   <root id="4362199797783336764">
     <node role="modifier" roleId="tp4k.1204991552650" type="tp4k.ModificationStatement" typeId="tp4k.1203092361741" id="4362199797783336767">
@@ -5195,6 +5200,9 @@
       <node role="actionGroups" roleId="tp4k.331224023792854818" type="tp4k.ActionGroupRef" typeId="tp4k.331224023792854815" id="1755502566255785380">
         <link role="group" roleId="tp4k.331224023792854816" targetNodeId="1755502566255660782" resolveInfo="EditorPopup" />
       </node>
+      <node role="actionGroups" roleId="tp4k.331224023792854818" type="tp4k.ActionGroupRef" typeId="tp4k.331224023792854815" id="6714826334259506459">
+        <link role="group" roleId="tp4k.331224023792854816" targetNodeId="6714826334259374451" resolveInfo="RefactoringActions" />
+      </node>
       <node role="actionGroups" roleId="tp4k.331224023792854818" type="tp4k.ActionGroupRef" typeId="tp4k.331224023792854815" id="5062223007361786574">
         <link role="group" roleId="tp4k.331224023792854816" targetNodeId="5062223007361660572" resolveInfo="Folding" />
       </node>
@@ -5825,6 +5833,16 @@
           </node>
         </node>
       </node>
+    </node>
+  </root>
+  <root id="6714826334259374451">
+    <node role="modifier" roleId="tp4k.1204991552650" type="tp4k.ModificationStatement" typeId="tp4k.1203092361741" id="6714826334259400785">
+      <link role="modifiedGroup" roleId="tp4k.1203092736097" targetNodeId="1755502566255660782" resolveInfo="EditorPopup" />
+      <link role="point" roleId="tp4k.1204992316090" targetNodeId="5062223007361835671" resolveInfo="refactoring" />
+    </node>
+    <node role="contents" roleId="tp4k.1207148993063" type="tp4k.ElementListContents" typeId="tp4k.1207145163717" id="6714826334259374453" />
+    <node role="groupID" roleId="tp4k.1206193920040" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="6714826334259400784">
+      <property name="value" nameId="tpee.1070475926801" value="jetbrains.mps.ide.platform.actions.NodeRefactoring_ActionGroup" />
     </node>
   </root>
 </model>

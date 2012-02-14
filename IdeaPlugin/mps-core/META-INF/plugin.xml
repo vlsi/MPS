@@ -34,6 +34,8 @@
 
   <xi:include href="../classes/META-INF/MPSCore.xml" xpointer="xpointer(/components/*)"/>
   <xi:include href="../classes/META-INF/MPSEditor.xml" xpointer="xpointer(/components/*)"/>
+  <xi:include href="../classes/jetbrains/mps/ide/platform/actions/MPSPlatform.xml"
+              xpointer="xpointer(/components/*)"/>
   <xi:include href="../classes/jetbrains/mps/ide/editor/actions/MPSEditorActions.xml"
               xpointer="xpointer(/components/*)"/>
 
@@ -46,12 +48,12 @@
     </component>
   </project-components>
 
-    <extensions defaultExtensionNs="com.intellij">
-        <facetType implementation="jetbrains.mps.idea.core.facet.MPSFacetType"/>
-        <frameworkSupport implementation="jetbrains.mps.idea.core.facet.MPSFrameworkSupportProvider"/>
-        <mps.LanguageLibrary dir="/languages"/>
-        <treeStructureProvider implementation="jetbrains.mps.idea.core.projectView.MPSTreeStructureProvider"/>
-    </extensions>
+  <extensions defaultExtensionNs="com.intellij">
+    <facetType implementation="jetbrains.mps.idea.core.facet.MPSFacetType"/>
+    <frameworkSupport implementation="jetbrains.mps.idea.core.facet.MPSFrameworkSupportProvider"/>
+    <mps.LanguageLibrary dir="/languages"/>
+    <treeStructureProvider implementation="jetbrains.mps.idea.core.projectView.MPSTreeStructureProvider"/>
+  </extensions>
 
   <actions>
     <action

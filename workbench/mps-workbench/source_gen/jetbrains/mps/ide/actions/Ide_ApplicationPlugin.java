@@ -153,7 +153,6 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     addGroup(new NamespaceNewActions_ActionGroup());
     addGroup(new NodeActionsInternal_ActionGroup());
     addGroup(new NodeActions_ActionGroup());
-    addGroup(new NodeRefactoring_ActionGroup());
     addGroup(new PackageActions_ActionGroup());
     addGroup(new PackageNewActions_ActionGroup());
     addGroup(new PrintNodePosition_Addition_ActionGroup());
@@ -186,6 +185,7 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     insertInterfaceGroupIntoAnother("RunContextGroup", NodeActions_ActionGroup.ID, null);
     insertInterfaceGroupIntoAnother("RunContextGroup", ProjectActions_ActionGroup.ID, ProjectActions_ActionGroup.LABEL_ID_runConfig);
     insertInterfaceGroupIntoAnother("RunContextGroup", "jetbrains.mps.ide.editor.actions.EditorPopup_ActionGroup", null);
+    insertInterfaceGroupIntoAnother("jetbrains.mps.ide.platform.actions.NodeRefactoring_ActionGroup", NodeActions_ActionGroup.ID, NodeActions_ActionGroup.LABEL_ID_refactoring);
   }
 
   public void adjustRegularGroups() {
@@ -210,8 +210,6 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     insertGroupIntoAnother(PackageNewActions_ActionGroup.ID, PackageActions_ActionGroup.ID, PackageActions_ActionGroup.LABEL_ID_newActions);
     insertGroupIntoAnother(ModelRefactoring_ActionGroup.ID, ModelActions_ActionGroup.ID, ModelActions_ActionGroup.LABEL_ID_refactoring);
     insertGroupIntoAnother(SolutionRefactoring_ActionGroup.ID, CommonModuleActions_ActionGroup.ID, CommonModuleActions_ActionGroup.LABEL_ID_refactoring);
-    insertGroupIntoAnother(NodeRefactoring_ActionGroup.ID, NodeActions_ActionGroup.ID, NodeActions_ActionGroup.LABEL_ID_refactoring);
-    insertGroupIntoAnother(NodeRefactoring_ActionGroup.ID, "EditorPopup_ActionGrouprefactoring", null);
     insertGroupIntoAnother(CreateRootNode_ActionGroup.ID, ModelNewActions_ActionGroup.ID, ModelNewActions_ActionGroup.LABEL_ID_newRoot);
     insertGroupIntoAnother(CreateRootNode_ActionGroup.ID, PackageNewActions_ActionGroup.ID, null);
     insertGroupIntoAnother(Tools_ActionGroup.ID, "ToolsMenu", null);

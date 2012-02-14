@@ -1175,13 +1175,6 @@
       <property name="virtualPackage" nameId="tpck.1193676396447" value="BaseLanguage.Actions" />
       <property name="name" nameId="tpck.1169194664001" value="OverrideImplementMethodsHelper" />
     </node>
-    <node type="tp4k.ActionGroupDeclaration" typeId="tp4k.1203087890642" id="2704531651333004425">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="Menu.ProjectPane.Node" />
-      <property name="name" nameId="tpck.1169194664001" value="NodeRefactoring" />
-      <property name="isPopup" nameId="tp4k.1213283637680" value="true" />
-      <property name="caption" nameId="tp4k.1204991940915" value="Refactoring" />
-      <property name="mnemonic" nameId="tp4k.1205160812895" value="r" />
-    </node>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="1818770337282866379">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Behavior.Actions" />
       <property name="name" nameId="tpck.1169194664001" value="OverrideConceptMethodsAction" />
@@ -1220,6 +1213,10 @@
     <node type="tp4k.ActionGroupDeclaration" typeId="tp4k.1203087890642" id="2003512433031648172">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Menu.EditorPopup" />
       <property name="name" nameId="tpck.1169194664001" value="EditorPopupEx_Goto" />
+    </node>
+    <node type="tp4k.InterfaceGroup" typeId="tp4k.1204383956737" id="6714826334259420987">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Menu.ProjectPane.Node" />
+      <property name="name" nameId="tpck.1169194664001" value="RefactoringActions" />
     </node>
   </roots>
   <root id="1204991218714">
@@ -27932,17 +27929,6 @@
       <node role="type" roleId="tpee.5680397130376446158" type="tpee.BooleanType" typeId="tpee.1070534644030" id="1420447232772685745" />
     </node>
   </root>
-  <root id="2704531651333004425">
-    <node role="modifier" roleId="tp4k.1204991552650" type="tp4k.ModificationStatement" typeId="tp4k.1203092361741" id="8741284284837781542">
-      <link role="modifiedGroup" roleId="tp4k.1203092736097" targetNodeId="1204991215587" resolveInfo="NodeActions" />
-      <link role="point" roleId="tp4k.1204992316090" targetNodeId="8741284284837781541" resolveInfo="refactoring" />
-    </node>
-    <node role="modifier" roleId="tp4k.1204991552650" type="tp4k.ModificationStatement" typeId="tp4k.1203092361741" id="8741284284837781543">
-      <link role="modifiedGroup" roleId="tp4k.1203092736097" targetNodeId="ekwn.1755502566255660782" resolveInfo="EditorPopup" />
-      <link role="point" roleId="tp4k.1204992316090" targetNodeId="ekwn.5062223007361835671" resolveInfo="refactoring" />
-    </node>
-    <node role="contents" roleId="tp4k.1207145245948" type="tp4k.ElementListContents" typeId="tp4k.1207145163717" id="2704531651333004437" />
-  </root>
   <root id="1818770337282866379">
     <node role="method" roleId="tpee.1107880067339" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="1818770337282874389">
       <property name="name" nameId="tpck.1169194664001" value="run" />
@@ -32281,6 +32267,16 @@
       <link role="modifiedGroup" roleId="tp4k.1203092736097" targetNodeId="ekwn.3228268613620327882" resolveInfo="GoToEditorPopupAddition" />
       <link role="point" roleId="tp4k.1204992316090" targetNodeId="ekwn.3228268613620327886" resolveInfo="other" />
     </node>
+  </root>
+  <root id="6714826334259420987">
+    <node role="modifier" roleId="tp4k.1204991552650" type="tp4k.ModificationStatement" typeId="tp4k.1203092361741" id="6714826334259436925">
+      <link role="modifiedGroup" roleId="tp4k.1203092736097" targetNodeId="1204991215587" resolveInfo="NodeActions" />
+      <link role="point" roleId="tp4k.1204992316090" targetNodeId="8741284284837781541" resolveInfo="refactoring" />
+    </node>
+    <node role="groupID" roleId="tp4k.1206193920040" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="6714826334259420990">
+      <property name="value" nameId="tpee.1070475926801" value="jetbrains.mps.ide.platform.actions.NodeRefactoring_ActionGroup" />
+    </node>
+    <node role="contents" roleId="tp4k.1207148993063" type="tp4k.ElementListContents" typeId="tp4k.1207145163717" id="6714826334259420989" />
   </root>
 </model>
 

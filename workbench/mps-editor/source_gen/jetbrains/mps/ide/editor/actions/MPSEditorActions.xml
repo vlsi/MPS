@@ -228,5 +228,9 @@
       <reference ref="IDE_Edit_ActionGroupcustom"/>
       <add-to-group group-id="EditMenu" anchor="last"/>
     </group>
+    <group id="jetbrains.mps.ide.editor.actions.RefactoringActions_ActionGroup">
+      <reference ref="jetbrains.mps.ide.platform.actions.NodeRefactoring_ActionGroup"></reference>
+      <add-to-group group-id="EditorPopup_ActionGrouprefactoring" anchor="last"/>
+    </group>
   </actions>
 </components>

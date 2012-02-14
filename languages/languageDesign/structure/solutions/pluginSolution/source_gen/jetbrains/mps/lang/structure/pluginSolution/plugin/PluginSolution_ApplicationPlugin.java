@@ -6,7 +6,6 @@ import jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin;
 import com.intellij.openapi.extensions.PluginId;
 import jetbrains.mps.ide.actions.NodeActions_ActionGroup;
 import jetbrains.mps.ide.actions.ModelActions_ActionGroup;
-import jetbrains.mps.ide.actions.NodeRefactoring_ActionGroup;
 import java.util.List;
 import jetbrains.mps.workbench.action.BaseKeymapChanges;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -47,7 +46,7 @@ public class PluginSolution_ApplicationPlugin extends BaseApplicationPlugin {
     insertGroupIntoAnother(Structure_ActionGroup.ID, "EditorPopup_ActionGroupstructure", null);
     insertGroupIntoAnother(ShowHelp_ActionGroup.ID, ModelActions_ActionGroup.ID, ModelActions_ActionGroup.LABEL_ID_showHelp);
     insertGroupIntoAnother(ShowHelp_ActionGroup.ID, Structure_ActionGroup.ID, Structure_ActionGroup.LABEL_ID_showHelp);
-    insertGroupIntoAnother(RefactoringAdditions_ActionGroup.ID, NodeRefactoring_ActionGroup.ID, null);
+    insertGroupIntoAnother(RefactoringAdditions_ActionGroup.ID, "jetbrains.mps.ide.platform.actions.NodeRefactoring_ActionGroup", null);
   }
 
   public List<BaseKeymapChanges> initKeymaps() {
