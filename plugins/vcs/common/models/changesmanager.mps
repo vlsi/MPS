@@ -11,7 +11,6 @@
   <language namespace="774bf8a0-62e5-41e1-af63-f4812e60e48b(jetbrains.mps.baseLanguage.checkedDots)" />
   <import index="k7g3" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(java.util@java_stub)" version="-1" />
   <import index="e2lb" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(java.lang@java_stub)" version="-1" />
-  <import index="rtk5" modelUID="r:cd7c9d90-25b3-4a54-a510-a0bcc7072c1d(jetbrains.mps.vcs)" version="-1" />
   <import index="bfxj" modelUID="r:5744ed46-c83f-47cd-94ce-f24d1f92d6a1(jetbrains.mps.vcs.diff)" version="-1" />
   <import index="cu2c" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)" version="-1" />
   <import index="68ai" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#org.jetbrains.annotations(MPS.Core/org.jetbrains.annotations@java_stub)" version="-1" />
@@ -31,6 +30,7 @@
   <import index="btf5" modelUID="r:9b4a89e1-ec38-42c4-b1bd-96ab47ffcb3f(jetbrains.mps.vcs.diff.changes)" version="-1" />
   <import index="gznm" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.loading(MPS.Core/jetbrains.mps.smodel.loading@java_stub)" version="-1" />
   <import index="kqhl" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.project.structure.modules(MPS.Core/jetbrains.mps.project.structure.modules@java_stub)" version="-1" />
+  <import index="ur19" modelUID="r:d58d9938-2526-431c-a5fe-6bbbfeb64ac2(jetbrains.mps.vcs.util)" version="-1" />
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" implicit="yes" />
   <import index="tp2q" modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" implicit="yes" />
   <import index="tp2c" modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="3" implicit="yes" />
@@ -3440,8 +3440,8 @@
             </node>
           </node>
           <node role="condition" roleId="tpee.1068580123160" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="9029966639392653652">
-            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="rtk5.9029966639392653630" resolveInfo="isModelOrModuleConflicting" />
-            <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="rtk5.9029966639392653616" resolveInfo="ConflictsUtil" />
+            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ur19.9029966639392731802" resolveInfo="isModelOrModuleConflicting" />
+            <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="ur19.9029966639392731796" resolveInfo="ConflictsUtil" />
             <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalInstanceFieldReference" typeId="tpee.7785501532031639928" id="1704934837581625114">
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3161776655522682178" resolveInfo="myModelDescriptor" />
             </node>
@@ -3575,8 +3575,8 @@
         <node role="statement" roleId="tpee.1068581517665" type="tpee.IfStatement" typeId="tpee.1068580123159" id="3161776655522687131">
           <node role="condition" roleId="tpee.1068580123160" type="tpee.OrExpression" typeId="tpee.1080223426719" id="4036854704706402735">
             <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="9029966639392653653">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="rtk5.9029966639392653630" resolveInfo="isModelOrModuleConflicting" />
-              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="rtk5.9029966639392653616" resolveInfo="ConflictsUtil" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ur19.9029966639392731802" resolveInfo="isModelOrModuleConflicting" />
+              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="ur19.9029966639392731796" resolveInfo="ConflictsUtil" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalInstanceFieldReference" typeId="tpee.7785501532031639928" id="4036854704706402740">
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3161776655522682178" resolveInfo="myModelDescriptor" />
               </node>

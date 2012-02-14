@@ -34,6 +34,8 @@
   <import index="uq8x" modelUID="f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#jetbrains.mps.ide.findusages.view.treeholder.tree(MPS.Workbench/jetbrains.mps.ide.findusages.view.treeholder.tree@java_stub)" version="-1" />
   <import index="pif4" modelUID="f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes(MPS.Workbench/jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes@java_stub)" version="-1" />
   <import index="rl1i" modelUID="r:8a82b7a4-1180-4262-8f18-8c96a5d3ac16(jetbrains.mps.ide.hierarchy)" version="-1" />
+  <import index="zfwc" modelUID="f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#com.intellij.openapi.vfs(MPS.Workbench/com.intellij.openapi.vfs@java_stub)" version="-1" />
+  <import index="ur19" modelUID="r:d58d9938-2526-431c-a5fe-6bbbfeb64ac2(jetbrains.mps.vcs.util)" version="-1" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="-1" implicit="yes" />
   <import index="m373" modelUID="r:4095af4f-a097-4799-aaa9-03df087ddfa6(jetbrains.mps.baseLanguage.javadoc.structure)" version="5" implicit="yes" />
@@ -42,9 +44,7 @@
   <import index="tp25" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="-1" implicit="yes" />
   <import index="tp4k" modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" version="5" implicit="yes" />
   <import index="tpib" modelUID="r:00000000-0000-4000-0000-011c8959057f(jetbrains.mps.baseLanguage.logging.structure)" version="0" implicit="yes" />
-  <import index="zfwc" modelUID="f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#com.intellij.openapi.vfs(MPS.Workbench/com.intellij.openapi.vfs@java_stub)" version="-1" implicit="yes" />
   <import index="pxpg" modelUID="r:5a550369-d6d9-4c89-a89b-1bb748dc20b3(jetbrains.mps.baseLanguage.checkedDots.structure)" version="-1" implicit="yes" />
-  <import index="rtk5" modelUID="r:cd7c9d90-25b3-4a54-a510-a0bcc7072c1d(jetbrains.mps.vcs)" version="-1" implicit="yes" />
   <roots>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="3751911615136891847">
       <property name="name" nameId="tpck.1169194664001" value="FeatureForestMap" />
@@ -3668,8 +3668,8 @@
                         </node>
                       </node>
                       <node role="condition" roleId="tpee.1206060619838" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="9029966639392653655">
-                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="rtk5.9029966639392653630" resolveInfo="isModelOrModuleConflicting" />
-                        <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="rtk5.9029966639392653616" resolveInfo="ConflictsUtil" />
+                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ur19.9029966639392731802" resolveInfo="isModelOrModuleConflicting" />
+                        <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="ur19.9029966639392731796" resolveInfo="ConflictsUtil" />
                         <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="4036854704706502010">
                           <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1162831315436744254" resolveInfo="modelDescriptor" />
                         </node>

@@ -28,7 +28,6 @@
     <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
     <classNode dependClassName="jetbrains.mps.smodel.descriptor.EditableSModelDescriptor" />
     <classNode dependClassName="jetbrains.mps.util.Computable" />
-    <classNode dependClassName="jetbrains.mps.vcs.ConflictsUtil" />
     <classNode dependClassName="jetbrains.mps.vcs.changesmanager.BaseVersionUtil" />
     <classNode dependClassName="jetbrains.mps.vcs.changesmanager.CurrentDifference" />
     <classNode dependClassName="jetbrains.mps.vcs.changesmanager.CurrentDifferenceListener" />
@@ -36,6 +35,7 @@
     <classNode dependClassName="jetbrains.mps.vcs.diff.ChangeSet" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.changes.AddRootChange" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.changes.ModelChange" />
+    <classNode dependClassName="jetbrains.mps.vcs.util.ConflictsUtil" />
     <classNode dependClassName="jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />

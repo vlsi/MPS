@@ -32,7 +32,7 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.vcs.diff.changes.AddRootChange;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.vcs.changesmanager.BaseVersionUtil;
-import jetbrains.mps.vcs.ConflictsUtil;
+import jetbrains.mps.vcs.util.ConflictsUtil;
 import org.jetbrains.annotations.Nullable;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;

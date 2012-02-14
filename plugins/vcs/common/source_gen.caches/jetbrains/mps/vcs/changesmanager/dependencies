@@ -69,7 +69,6 @@
     <classNode dependClassName="jetbrains.mps.smodel.event.SModelRootEvent" />
     <classNode dependClassName="jetbrains.mps.smodel.persistence.def.ModelPersistence" />
     <classNode dependClassName="jetbrains.mps.smodel.persistence.def.ModelReadException" />
-    <classNode dependClassName="jetbrains.mps.vcs.ConflictsUtil" />
     <classNode dependClassName="jetbrains.mps.vcs.changesmanager.BaseVersionUtil" />
     <classNode dependClassName="jetbrains.mps.vcs.changesmanager.CurrentDifference" />
     <classNode dependClassName="jetbrains.mps.vcs.changesmanager.CurrentDifferenceRegistry" />
@@ -88,6 +87,7 @@
     <classNode dependClassName="jetbrains.mps.vcs.diff.changes.NodeGroupChange" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.changes.SetPropertyChange" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.changes.SetReferenceChange" />
+    <classNode dependClassName="jetbrains.mps.vcs.util.ConflictsUtil" />
     <classNode dependClassName="jetbrains.mps.vfs.IFile" />
     <classNode dependClassName="org.apache.commons.logging.Log" />
     <classNode dependClassName="org.apache.commons.logging.LogFactory" />
