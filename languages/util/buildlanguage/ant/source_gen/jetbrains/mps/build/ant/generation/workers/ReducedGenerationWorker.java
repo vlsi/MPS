@@ -6,23 +6,25 @@ import jetbrains.mps.build.ant.WhatToDo;
 import jetbrains.mps.build.ant.MpsWorker;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.project.ProjectOperationContext;
-import jetbrains.mps.smodel.resources.IMResource;
-import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.smodel.ModelAccess;
 import java.util.concurrent.Future;
 import jetbrains.mps.make.script.IResult;
+import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.make.MakeSession;
+import jetbrains.mps.make.script.IScript;
+import jetbrains.mps.make.script.ScriptBuilder;
+import jetbrains.mps.make.facet.IFacet;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.make.MakeSession;
-import jetbrains.mps.make.script.IScript;
-import jetbrains.mps.make.script.ScriptBuilder;
-import jetbrains.mps.make.facet.IFacet;
+import jetbrains.mps.smodel.resources.IMResource;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.make.script.IScriptController;
+import java.util.concurrent.ExecutionException;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.make.script.IPropertiesPool;
 import jetbrains.mps.make.facet.ITarget;
 import jetbrains.mps.make.resources.IResource;
@@ -32,7 +34,6 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.FileSystem;
-import java.util.concurrent.ExecutionException;
 import java.io.File;
 import jetbrains.mps.internal.make.runtime.util.DirUtil;
 import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
@@ -50,11 +51,8 @@ public class ReducedGenerationWorker extends GeneratorWorker {
   protected void generate(Project project, MpsWorker.ObjectsToProcess go) {
     ProjectOperationContext ctx = new ProjectOperationContext(project);
 
-    final Iterable<IMResource> resources = Sequence.fromIterable(collectResources(ctx, go)).toListSequence();
     ModelAccess.instance().flushEventQueue();
     Future<IResult> res;
-    final List<String> writtenFiles = ListSequence.fromList(new ArrayList<String>());
-    final Map<String, String> fileHashes = MapSequence.fromMap(new HashMap<String, String>());
     IOperationContext context = new ProjectOperationContext(project);
 
 
@@ -67,9 +65,39 @@ public class ReducedGenerationWorker extends GeneratorWorker {
       }
     };
 
+    final List<String> writtenFiles = ListSequence.fromList(new ArrayList<String>());
+    final Map<String, String> fileHashes = MapSequence.fromMap(new HashMap<String, String>());
+    final Iterable<IMResource> resources = Sequence.fromIterable(collectResources(ctx, go)).toListSequence();
+
+    IScriptController scriptCtl = configureFacets(resources, fileHashes, writtenFiles);
+
+    try {
+      res = bms.make(ms, resources, null, scriptCtl);
+      if (!(res.get().isSucessful())) {
+        myErrors.add("Make was not successful");
+      }
+      if (writtenFiles != null) {
+        for (String f : writtenFiles) {
+          System.out.println("##WRITTEN##" + f);
+        }
+      }
+    } catch (InterruptedException e) {
+      myErrors.add(e.toString());
+    } catch (ExecutionException e) {
+      myErrors.add(e.toString());
+    }
+  }
+
+  private IScriptController configureFacets(final Iterable<IMResource> resources, final Map<String, String> fileHashes, final List<String> writtenFiles) {
     final String outputRoot = myWhatToDo.getProperty("OUTPUT_ROOT_DIR");
     final String cachesOutputRoot = myWhatToDo.getProperty("CACHES_OUTPUT_ROOT_DIR");
-    IScriptController.Stub scriptCtl = new IScriptController.Stub() {
+    final boolean useTransientOutput = Sequence.fromIterable(resources).any(new IWhereFilter<IMResource>() {
+      public boolean accept(IMResource r) {
+        return r.module().getModuleDescriptor().isUseTransientOutput();
+      }
+    });
+
+    return new IScriptController.Stub() {
       @Override
       public void setup(IPropertiesPool pp, Iterable<ITarget> toExecute, Iterable<? extends IResource> input) {
         super.setup(pp, toExecute, input);
@@ -85,7 +113,7 @@ public class ReducedGenerationWorker extends GeneratorWorker {
         Tuples._1<Map<String, String>> hashes = (Tuples._1<Map<String, String>>) pp.properties(new ITarget.Name("jetbrains.mps.build.reduced.CollectHashes.collect"), Object.class);
         hashes._0(fileHashes);
 
-        if (outputRoot != null) {
+        if (useTransientOutput) {
           // override solution's output path 
           final ReducedGenerationWorker.ModuleOutputPaths paths = new ReducedGenerationWorker.ModuleOutputPaths(Sequence.fromIterable(resources).select(new ISelector<IMResource, IModule>() {
             public IModule select(IMResource r) {
@@ -112,22 +140,6 @@ public class ReducedGenerationWorker extends GeneratorWorker {
         }
       }
     };
-
-    try {
-      res = bms.make(ms, resources, null, scriptCtl);
-      if (!(res.get().isSucessful())) {
-        myErrors.add("Make was not successful");
-      }
-      if (writtenFiles != null) {
-        for (String f : writtenFiles) {
-          System.out.println("##WRITTEN##" + f);
-        }
-      }
-    } catch (InterruptedException e) {
-      myErrors.add(e.toString());
-    } catch (ExecutionException e) {
-      myErrors.add(e.toString());
-    }
   }
 
   @Override
