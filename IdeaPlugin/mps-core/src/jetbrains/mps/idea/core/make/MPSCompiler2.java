@@ -16,6 +16,7 @@
 
 package jetbrains.mps.idea.core.make;
 
+import com.intellij.compiler.impl.CompilerUtil;
 import com.intellij.facet.FacetManager;
 import com.intellij.openapi.compiler.*;
 import com.intellij.openapi.compiler.Compiler;
@@ -165,6 +166,9 @@ public class MPSCompiler2 implements SourceGeneratingCompiler{
         executeMPSMake(context, facetToModels, new File(outputRootDirectory.getPath()), new File (cachesOutputRoot),generatedModelFiles, filesToRefresh);
         // facet test end
 
+        // TODO: this is only needed in case we're generating into one of the source folders
+        CompilerUtil.refreshIOFiles(filesToRefresh);
+
         // TODO: return actually generated items
         return items;
     }
@@ -289,6 +293,7 @@ public class MPSCompiler2 implements SourceGeneratingCompiler{
 
         @Override
         public boolean isTestSource() {
+            // TODO: support test solutions
             return false;  //To change body of implemented methods use File | Settings | File Templates.
         }
     }

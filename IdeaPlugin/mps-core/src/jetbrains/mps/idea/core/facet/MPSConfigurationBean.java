@@ -64,7 +64,6 @@ public class MPSConfigurationBean {
         return myUseModuleSourceFolder;
     }
 
-
     public boolean isUseTransientOutputFolder() {
         return myUseTransientOutputFolder;
     }
