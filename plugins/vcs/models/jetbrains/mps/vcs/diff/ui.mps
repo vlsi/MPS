@@ -906,7 +906,7 @@
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="8376450845472322324">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="8376450845472322362">
           <node role="expression" roleId="tpee.1068581517676" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="8376450845472322376">
-            <property name="value" nameId="tpee.1070475926801" value="#jetbrains.mps.vcs.diff.ui.ModelDifferenceDialogNew" />
+            <property name="value" nameId="tpee.1070475926801" value="#jetbrains.mps.vcs.diff.ui.ModelDifferenceDialog" />
           </node>
         </node>
       </node>
@@ -3127,7 +3127,7 @@
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="8395855018879636496">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="8395855018879636573">
           <node role="expression" roleId="tpee.1068581517676" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="8395855018879636600">
-            <property name="value" nameId="tpee.1070475926801" value="#jetbrains.mps.vcs.diff.ui.RootDifferenceDialogNew" />
+            <property name="value" nameId="tpee.1070475926801" value="#jetbrains.mps.vcs.diff.ui.RootDifferenceDialog" />
           </node>
         </node>
       </node>

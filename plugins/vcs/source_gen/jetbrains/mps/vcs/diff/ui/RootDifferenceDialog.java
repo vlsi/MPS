@@ -131,7 +131,7 @@ public class RootDifferenceDialog extends DialogWrapper {
   }
 
   public String getDimensionServiceKey() {
-    return "#jetbrains.mps.vcs.diff.ui.RootDifferenceDialogNew";
+    return "#jetbrains.mps.vcs.diff.ui.RootDifferenceDialog";
   }
 
   protected Action[] createActions() {

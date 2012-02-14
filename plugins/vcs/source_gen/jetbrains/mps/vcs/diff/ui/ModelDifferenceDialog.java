@@ -104,7 +104,7 @@ public class ModelDifferenceDialog extends DialogWrapper {
   }
 
   public String getDimensionServiceKey() {
-    return "#jetbrains.mps.vcs.diff.ui.ModelDifferenceDialogNew";
+    return "#jetbrains.mps.vcs.diff.ui.ModelDifferenceDialog";
   }
 
   private void fillRootToChange() {
