@@ -259,106 +259,113 @@
     <unitInfo nodeId="1376744028423385497" fileName="AbstractInstaller.java" startLine="36" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.vcs.mergedriver.AbstractInstaller$State" />
   </root>
   <root nodeId="1400826623542708478">
-    <nodeInfo nodeId="1400826623542830374" fileName="MergeDriverOptionsDialog.java" startLine="18" startPosition="58" endLine="19" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myPanel" />
-    <nodeInfo nodeId="1121451734487833108" fileName="MergeDriverOptionsDialog.java" startLine="19" startPosition="60" endLine="20" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myMainPanel" />
-    <nodeInfo nodeId="4355241322422962513" fileName="MergeDriverOptionsDialog.java" startLine="20" startPosition="75" endLine="21" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myProject" />
-    <nodeInfo nodeId="8098913440253432253" fileName="MergeDriverOptionsDialog.java" startLine="21" startPosition="28" endLine="22" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myGitFixes" />
-    <nodeInfo nodeId="1400826623542830455" fileName="MergeDriverOptionsDialog.java" startLine="22" startPosition="95" endLine="23" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myGitGlobal" />
-    <nodeInfo nodeId="1400826623542830469" fileName="MergeDriverOptionsDialog.java" startLine="23" startPosition="85" endLine="24" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myGitRepos" />
-    <nodeInfo nodeId="1400826623542830483" fileName="MergeDriverOptionsDialog.java" startLine="24" startPosition="90" endLine="25" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCommonSvn" />
-    <nodeInfo nodeId="5130910134095794399" fileName="MergeDriverOptionsDialog.java" startLine="25" startPosition="79" endLine="26" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myIdeSvn" />
-    <nodeInfo nodeId="1400826623542765646" fileName="MergeDriverOptionsDialog.java" startLine="28" startPosition="52" endLine="29" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="4495307634210952827" fileName="MergeDriverOptionsDialog.java" startLine="29" startPosition="76" endLine="30" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="4355241322422962518" fileName="MergeDriverOptionsDialog.java" startLine="30" startPosition="40" endLine="31" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8098913440253432258" fileName="MergeDriverOptionsDialog.java" startLine="31" startPosition="24" endLine="32" endPosition="141" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1400826623542830458" fileName="MergeDriverOptionsDialog.java" startLine="32" startPosition="141" endLine="33" endPosition="120" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1400826623542830472" fileName="MergeDriverOptionsDialog.java" startLine="33" startPosition="120" endLine="34" endPosition="131" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1400826623542830486" fileName="MergeDriverOptionsDialog.java" startLine="34" startPosition="131" endLine="35" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5130910134095794390" fileName="MergeDriverOptionsDialog.java" startLine="35" startPosition="115" endLine="36" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1516937449991056345" fileName="MergeDriverOptionsDialog.java" startLine="37" startPosition="63" endLine="38" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1400826623542832217" fileName="MergeDriverOptionsDialog.java" startLine="39" startPosition="5" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="8098913440253432269" fileName="MergeDriverOptionsDialog.java" startLine="40" startPosition="0" endLine="41" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1400826623542889917" fileName="MergeDriverOptionsDialog.java" startLine="43" startPosition="49" endLine="44" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1400826623542889959" fileName="MergeDriverOptionsDialog.java" startLine="46" startPosition="7" endLine="47" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1400826623542889966" fileName="MergeDriverOptionsDialog.java" startLine="47" startPosition="29" endLine="48" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1400826623542889970" fileName="MergeDriverOptionsDialog.java" startLine="48" startPosition="28" endLine="49" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1516937449991056367" fileName="MergeDriverOptionsDialog.java" startLine="50" startPosition="27" endLine="51" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1121451734487833121" fileName="MergeDriverOptionsDialog.java" startLine="52" startPosition="5" endLine="53" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6929329102227886688" fileName="MergeDriverOptionsDialog.java" startLine="56" startPosition="43" endLine="57" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1310849843981881481" fileName="MergeDriverOptionsDialog.java" startLine="61" startPosition="82" endLine="62" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8098913440253432274" fileName="MergeDriverOptionsDialog.java" startLine="68" startPosition="25" endLine="69" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1400826623542890048" fileName="MergeDriverOptionsDialog.java" startLine="69" startPosition="37" endLine="70" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1400826623542890052" fileName="MergeDriverOptionsDialog.java" startLine="71" startPosition="93" endLine="72" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1400826623542890056" fileName="MergeDriverOptionsDialog.java" startLine="73" startPosition="9" endLine="74" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5130910134095806740" fileName="MergeDriverOptionsDialog.java" startLine="75" startPosition="31" endLine="76" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5309616109278302548" fileName="MergeDriverOptionsDialog.java" startLine="77" startPosition="9" endLine="78" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1400826623542890027" fileName="MergeDriverOptionsDialog.java" startLine="84" startPosition="24" endLine="85" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1400826623542830404" fileName="MergeDriverOptionsDialog.java" startLine="88" startPosition="82" endLine="89" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myInstaller" />
-    <nodeInfo nodeId="1400826623542830410" fileName="MergeDriverOptionsDialog.java" startLine="95" startPosition="10" endLine="96" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5130910134095706005" fileName="MergeDriverOptionsDialog.java" startLine="99" startPosition="31" endLine="100" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1400826623542889936" fileName="MergeDriverOptionsDialog.java" startLine="101" startPosition="62" endLine="102" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8098913440253432239" fileName="MergeDriverOptionsDialog.java" startLine="106" startPosition="12" endLine="107" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1400826623542889955" fileName="MergeDriverOptionsDialog.java" startLine="107" startPosition="55" endLine="108" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1400826623542890041" fileName="MergeDriverOptionsDialog.java" startLine="113" startPosition="40" endLine="114" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4355241322422962503" fileName="MergeDriverOptionsDialog.java" startLine="114" startPosition="30" endLine="115" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1516937449991056333" fileName="MergeDriverOptionsDialog.java" startLine="36" startPosition="111" endLine="39" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1516937449991056358" fileName="MergeDriverOptionsDialog.java" startLine="49" startPosition="29" endLine="52" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1400826623542890164" fileName="MergeDriverOptionsDialog.java" startLine="70" startPosition="38" endLine="73" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5130910134095794404" fileName="MergeDriverOptionsDialog.java" startLine="74" startPosition="38" endLine="77" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1400826623542889906" fileName="MergeDriverOptionsDialog.java" startLine="42" startPosition="52" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="itemStateChanged#(Ljava/awt/event/ItemEvent;)V" />
-    <nodeInfo nodeId="1400826623542763994" fileName="MergeDriverOptionsDialog.java" startLine="55" startPosition="0" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getMainComponent#()Ljavax/swing/JComponent;" />
-    <nodeInfo nodeId="1400826623542887573" fileName="MergeDriverOptionsDialog.java" startLine="91" startPosition="43" endLine="95" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="5130910134095705988" fileName="MergeDriverOptionsDialog.java" startLine="102" startPosition="26" endLine="106" endPosition="12" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1400826623542890033" fileName="MergeDriverOptionsDialog.java" startLine="112" startPosition="36" endLine="116" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1400826623542889895" fileName="MergeDriverOptionsDialog.java" startLine="41" startPosition="28" endLine="46" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1400826623542896602" fileName="MergeDriverOptionsDialog.java" startLine="59" startPosition="0" endLine="64" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDefaultDimensionSettings#()Ljetbrains/mps/ide/dialogs/DialogDimensionsSettings/DialogDimensions;" />
-    <nodeInfo nodeId="1400826623542890014" fileName="MergeDriverOptionsDialog.java" startLine="82" startPosition="0" endLine="87" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="cancel#()V" />
-    <nodeInfo nodeId="1400826623542830398" fileName="MergeDriverOptionsDialog.java" startLine="90" startPosition="0" endLine="97" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="InstallerCheckBox#(null)V" />
-    <nodeInfo nodeId="1400826623542890029" fileName="MergeDriverOptionsDialog.java" startLine="111" startPosition="0" endLine="118" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="installIfNeeded#()V" />
-    <nodeInfo nodeId="1400826623542889934" fileName="MergeDriverOptionsDialog.java" startLine="100" startPosition="75" endLine="109" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7530383734830045192" fileName="MergeDriverOptionsDialog.java" startLine="67" startPosition="57" endLine="80" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="1400826623542889930" fileName="MergeDriverOptionsDialog.java" startLine="98" startPosition="0" endLine="111" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="adIfNeeded#()V" />
-    <nodeInfo nodeId="7530383734830045184" fileName="MergeDriverOptionsDialog.java" startLine="66" startPosition="20" endLine="80" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1400826623542889980" fileName="MergeDriverOptionsDialog.java" startLine="64" startPosition="0" endLine="82" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="ok#()V" />
-    <nodeInfo nodeId="1400826623542708480" fileName="MergeDriverOptionsDialog.java" startLine="27" startPosition="0" endLine="54" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MergeDriverOptionsDialog#(Lcom/intellij/openapi/project/Project;)V" />
-    <scopeInfo nodeId="1516937449991056334" fileName="MergeDriverOptionsDialog.java" startLine="37" startPosition="63" endLine="38" endPosition="22" />
-    <scopeInfo nodeId="1400826623542889907" fileName="MergeDriverOptionsDialog.java" startLine="43" startPosition="49" endLine="44" endPosition="56" />
-    <scopeInfo nodeId="1516937449991056359" fileName="MergeDriverOptionsDialog.java" startLine="50" startPosition="27" endLine="51" endPosition="28" />
-    <scopeInfo nodeId="1400826623542763997" fileName="MergeDriverOptionsDialog.java" startLine="56" startPosition="43" endLine="57" endPosition="23" />
-    <scopeInfo nodeId="1400826623542896605" fileName="MergeDriverOptionsDialog.java" startLine="61" startPosition="82" endLine="62" endPosition="71" />
-    <scopeInfo nodeId="1400826623542890165" fileName="MergeDriverOptionsDialog.java" startLine="71" startPosition="93" endLine="72" endPosition="39" />
-    <scopeInfo nodeId="5130910134095794405" fileName="MergeDriverOptionsDialog.java" startLine="75" startPosition="31" endLine="76" endPosition="37" />
-    <scopeInfo nodeId="1400826623542890017" fileName="MergeDriverOptionsDialog.java" startLine="84" startPosition="24" endLine="85" endPosition="14" />
-    <scopeInfo nodeId="1400826623542890035" fileName="MergeDriverOptionsDialog.java" startLine="113" startPosition="40" endLine="115" endPosition="89" />
-    <scopeInfo nodeId="1400826623542889906" fileName="MergeDriverOptionsDialog.java" startLine="42" startPosition="52" endLine="46" endPosition="0">
+    <nodeInfo nodeId="1400826623542830374" fileName="MergeDriverOptionsDialog.java" startLine="19" startPosition="58" endLine="20" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myPanel" />
+    <nodeInfo nodeId="1121451734487833108" fileName="MergeDriverOptionsDialog.java" startLine="20" startPosition="60" endLine="21" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myMainPanel" />
+    <nodeInfo nodeId="4355241322422962513" fileName="MergeDriverOptionsDialog.java" startLine="21" startPosition="75" endLine="22" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myProject" />
+    <nodeInfo nodeId="8098913440253432253" fileName="MergeDriverOptionsDialog.java" startLine="22" startPosition="28" endLine="23" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myGitFixes" />
+    <nodeInfo nodeId="1400826623542830455" fileName="MergeDriverOptionsDialog.java" startLine="23" startPosition="95" endLine="24" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myGitGlobal" />
+    <nodeInfo nodeId="1400826623542830469" fileName="MergeDriverOptionsDialog.java" startLine="24" startPosition="85" endLine="25" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myGitRepos" />
+    <nodeInfo nodeId="1400826623542830483" fileName="MergeDriverOptionsDialog.java" startLine="25" startPosition="90" endLine="26" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCommonSvn" />
+    <nodeInfo nodeId="5130910134095794399" fileName="MergeDriverOptionsDialog.java" startLine="26" startPosition="79" endLine="27" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myIdeSvn" />
+    <nodeInfo nodeId="1400826623542765646" fileName="MergeDriverOptionsDialog.java" startLine="29" startPosition="52" endLine="30" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="4495307634210952827" fileName="MergeDriverOptionsDialog.java" startLine="30" startPosition="76" endLine="31" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="4355241322422962518" fileName="MergeDriverOptionsDialog.java" startLine="31" startPosition="40" endLine="32" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8098913440253432258" fileName="MergeDriverOptionsDialog.java" startLine="32" startPosition="24" endLine="33" endPosition="141" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1400826623542830458" fileName="MergeDriverOptionsDialog.java" startLine="33" startPosition="141" endLine="34" endPosition="120" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1400826623542830472" fileName="MergeDriverOptionsDialog.java" startLine="34" startPosition="120" endLine="35" endPosition="131" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1400826623542830486" fileName="MergeDriverOptionsDialog.java" startLine="35" startPosition="131" endLine="36" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5130910134095794390" fileName="MergeDriverOptionsDialog.java" startLine="36" startPosition="115" endLine="37" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1516937449991056345" fileName="MergeDriverOptionsDialog.java" startLine="38" startPosition="63" endLine="39" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1400826623542832217" fileName="MergeDriverOptionsDialog.java" startLine="40" startPosition="5" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="8098913440253432269" fileName="MergeDriverOptionsDialog.java" startLine="41" startPosition="0" endLine="42" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1400826623542889917" fileName="MergeDriverOptionsDialog.java" startLine="44" startPosition="49" endLine="45" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1400826623542889959" fileName="MergeDriverOptionsDialog.java" startLine="47" startPosition="7" endLine="48" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1400826623542889966" fileName="MergeDriverOptionsDialog.java" startLine="48" startPosition="29" endLine="49" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1400826623542889970" fileName="MergeDriverOptionsDialog.java" startLine="49" startPosition="28" endLine="50" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1516937449991056367" fileName="MergeDriverOptionsDialog.java" startLine="51" startPosition="27" endLine="52" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1121451734487833121" fileName="MergeDriverOptionsDialog.java" startLine="53" startPosition="5" endLine="54" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4375293574971927302" fileName="MergeDriverOptionsDialog.java" startLine="54" startPosition="29" endLine="55" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4375293574971932299" fileName="MergeDriverOptionsDialog.java" startLine="56" startPosition="23" endLine="57" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6124943338884006087" fileName="MergeDriverOptionsDialog.java" startLine="58" startPosition="5" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="6929329102227886688" fileName="MergeDriverOptionsDialog.java" startLine="62" startPosition="43" endLine="63" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8376450845472322362" fileName="MergeDriverOptionsDialog.java" startLine="66" startPosition="42" endLine="67" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8098913440253432274" fileName="MergeDriverOptionsDialog.java" startLine="73" startPosition="25" endLine="74" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1400826623542890048" fileName="MergeDriverOptionsDialog.java" startLine="74" startPosition="37" endLine="75" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1400826623542890052" fileName="MergeDriverOptionsDialog.java" startLine="76" startPosition="93" endLine="77" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1400826623542890056" fileName="MergeDriverOptionsDialog.java" startLine="78" startPosition="9" endLine="79" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5130910134095806740" fileName="MergeDriverOptionsDialog.java" startLine="80" startPosition="31" endLine="81" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5309616109278302548" fileName="MergeDriverOptionsDialog.java" startLine="82" startPosition="9" endLine="83" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1400826623542890027" fileName="MergeDriverOptionsDialog.java" startLine="89" startPosition="24" endLine="90" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1400826623542830404" fileName="MergeDriverOptionsDialog.java" startLine="93" startPosition="82" endLine="94" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myInstaller" />
+    <nodeInfo nodeId="1400826623542830410" fileName="MergeDriverOptionsDialog.java" startLine="100" startPosition="10" endLine="101" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5130910134095706005" fileName="MergeDriverOptionsDialog.java" startLine="104" startPosition="31" endLine="105" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1400826623542889936" fileName="MergeDriverOptionsDialog.java" startLine="106" startPosition="62" endLine="107" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8098913440253432239" fileName="MergeDriverOptionsDialog.java" startLine="111" startPosition="12" endLine="112" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1400826623542889955" fileName="MergeDriverOptionsDialog.java" startLine="112" startPosition="55" endLine="113" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1400826623542890041" fileName="MergeDriverOptionsDialog.java" startLine="118" startPosition="40" endLine="119" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4355241322422962503" fileName="MergeDriverOptionsDialog.java" startLine="119" startPosition="30" endLine="120" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1516937449991056333" fileName="MergeDriverOptionsDialog.java" startLine="37" startPosition="111" endLine="40" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1516937449991056358" fileName="MergeDriverOptionsDialog.java" startLine="50" startPosition="29" endLine="53" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4375293574971932294" fileName="MergeDriverOptionsDialog.java" startLine="55" startPosition="92" endLine="58" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1400826623542890164" fileName="MergeDriverOptionsDialog.java" startLine="75" startPosition="38" endLine="78" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5130910134095794404" fileName="MergeDriverOptionsDialog.java" startLine="79" startPosition="38" endLine="82" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1400826623542889906" fileName="MergeDriverOptionsDialog.java" startLine="43" startPosition="52" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="itemStateChanged#(Ljava/awt/event/ItemEvent;)V" />
+    <nodeInfo nodeId="1400826623542763994" fileName="MergeDriverOptionsDialog.java" startLine="61" startPosition="0" endLine="65" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getMainComponent#()Ljavax/swing/JComponent;" />
+    <nodeInfo nodeId="8376450845472322321" fileName="MergeDriverOptionsDialog.java" startLine="65" startPosition="0" endLine="69" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDimensionServiceKey#()Ljava/lang/String;" />
+    <nodeInfo nodeId="1400826623542887573" fileName="MergeDriverOptionsDialog.java" startLine="96" startPosition="43" endLine="100" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="5130910134095705988" fileName="MergeDriverOptionsDialog.java" startLine="107" startPosition="26" endLine="111" endPosition="12" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1400826623542890033" fileName="MergeDriverOptionsDialog.java" startLine="117" startPosition="36" endLine="121" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1400826623542889895" fileName="MergeDriverOptionsDialog.java" startLine="42" startPosition="28" endLine="47" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1400826623542890014" fileName="MergeDriverOptionsDialog.java" startLine="87" startPosition="0" endLine="92" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="cancel#()V" />
+    <nodeInfo nodeId="1400826623542830398" fileName="MergeDriverOptionsDialog.java" startLine="95" startPosition="0" endLine="102" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="InstallerCheckBox#(null)V" />
+    <nodeInfo nodeId="1400826623542890029" fileName="MergeDriverOptionsDialog.java" startLine="116" startPosition="0" endLine="123" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="installIfNeeded#()V" />
+    <nodeInfo nodeId="1400826623542889934" fileName="MergeDriverOptionsDialog.java" startLine="105" startPosition="75" endLine="114" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7530383734830045192" fileName="MergeDriverOptionsDialog.java" startLine="72" startPosition="57" endLine="85" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="1400826623542889930" fileName="MergeDriverOptionsDialog.java" startLine="103" startPosition="0" endLine="116" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="adIfNeeded#()V" />
+    <nodeInfo nodeId="7530383734830045184" fileName="MergeDriverOptionsDialog.java" startLine="71" startPosition="20" endLine="85" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1400826623542889980" fileName="MergeDriverOptionsDialog.java" startLine="69" startPosition="0" endLine="87" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="ok#()V" />
+    <nodeInfo nodeId="1400826623542708480" fileName="MergeDriverOptionsDialog.java" startLine="28" startPosition="0" endLine="60" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MergeDriverOptionsDialog#(Lcom/intellij/openapi/project/Project;)V" />
+    <scopeInfo nodeId="1516937449991056334" fileName="MergeDriverOptionsDialog.java" startLine="38" startPosition="63" endLine="39" endPosition="22" />
+    <scopeInfo nodeId="1400826623542889907" fileName="MergeDriverOptionsDialog.java" startLine="44" startPosition="49" endLine="45" endPosition="56" />
+    <scopeInfo nodeId="1516937449991056359" fileName="MergeDriverOptionsDialog.java" startLine="51" startPosition="27" endLine="52" endPosition="28" />
+    <scopeInfo nodeId="4375293574971932298" fileName="MergeDriverOptionsDialog.java" startLine="56" startPosition="23" endLine="57" endPosition="96" />
+    <scopeInfo nodeId="1400826623542763997" fileName="MergeDriverOptionsDialog.java" startLine="62" startPosition="43" endLine="63" endPosition="23" />
+    <scopeInfo nodeId="8376450845472322324" fileName="MergeDriverOptionsDialog.java" startLine="66" startPosition="42" endLine="67" endPosition="61" />
+    <scopeInfo nodeId="1400826623542890165" fileName="MergeDriverOptionsDialog.java" startLine="76" startPosition="93" endLine="77" endPosition="39" />
+    <scopeInfo nodeId="5130910134095794405" fileName="MergeDriverOptionsDialog.java" startLine="80" startPosition="31" endLine="81" endPosition="37" />
+    <scopeInfo nodeId="1400826623542890017" fileName="MergeDriverOptionsDialog.java" startLine="89" startPosition="24" endLine="90" endPosition="14" />
+    <scopeInfo nodeId="1400826623542890035" fileName="MergeDriverOptionsDialog.java" startLine="118" startPosition="40" endLine="120" endPosition="89" />
+    <scopeInfo nodeId="1400826623542889906" fileName="MergeDriverOptionsDialog.java" startLine="43" startPosition="52" endLine="47" endPosition="0">
       <varInfo nodeId="1400826623542889906" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="1400826623542763994" fileName="MergeDriverOptionsDialog.java" startLine="55" startPosition="0" endLine="59" endPosition="0" />
-    <scopeInfo nodeId="1400826623542890032" fileName="MergeDriverOptionsDialog.java" startLine="112" startPosition="36" endLine="116" endPosition="7" />
-    <scopeInfo nodeId="1400826623542896602" fileName="MergeDriverOptionsDialog.java" startLine="59" startPosition="0" endLine="64" endPosition="0" />
-    <scopeInfo nodeId="1400826623542890014" fileName="MergeDriverOptionsDialog.java" startLine="82" startPosition="0" endLine="87" endPosition="0" />
-    <scopeInfo nodeId="1400826623542830401" fileName="MergeDriverOptionsDialog.java" startLine="91" startPosition="43" endLine="96" endPosition="30" />
-    <scopeInfo nodeId="1400826623542830398" fileName="MergeDriverOptionsDialog.java" startLine="90" startPosition="0" endLine="97" endPosition="5">
+    <scopeInfo nodeId="1400826623542763994" fileName="MergeDriverOptionsDialog.java" startLine="61" startPosition="0" endLine="65" endPosition="0" />
+    <scopeInfo nodeId="8376450845472322321" fileName="MergeDriverOptionsDialog.java" startLine="65" startPosition="0" endLine="69" endPosition="0" />
+    <scopeInfo nodeId="1400826623542890032" fileName="MergeDriverOptionsDialog.java" startLine="117" startPosition="36" endLine="121" endPosition="7" />
+    <scopeInfo nodeId="1400826623542890014" fileName="MergeDriverOptionsDialog.java" startLine="87" startPosition="0" endLine="92" endPosition="0" />
+    <scopeInfo nodeId="1400826623542830401" fileName="MergeDriverOptionsDialog.java" startLine="96" startPosition="43" endLine="101" endPosition="30" />
+    <scopeInfo nodeId="1400826623542830398" fileName="MergeDriverOptionsDialog.java" startLine="95" startPosition="0" endLine="102" endPosition="5">
       <varInfo nodeId="1400826623542830408" varName="installer" />
     </scopeInfo>
-    <scopeInfo nodeId="1400826623542889935" fileName="MergeDriverOptionsDialog.java" startLine="101" startPosition="62" endLine="108" endPosition="26" />
-    <scopeInfo nodeId="1400826623542890029" fileName="MergeDriverOptionsDialog.java" startLine="111" startPosition="0" endLine="118" endPosition="0" />
-    <scopeInfo nodeId="7530383734830045193" fileName="MergeDriverOptionsDialog.java" startLine="68" startPosition="25" endLine="78" endPosition="18" />
-    <scopeInfo nodeId="1400826623542889933" fileName="MergeDriverOptionsDialog.java" startLine="99" startPosition="31" endLine="109" endPosition="7">
+    <scopeInfo nodeId="1400826623542889935" fileName="MergeDriverOptionsDialog.java" startLine="106" startPosition="62" endLine="113" endPosition="26" />
+    <scopeInfo nodeId="1400826623542890029" fileName="MergeDriverOptionsDialog.java" startLine="116" startPosition="0" endLine="123" endPosition="0" />
+    <scopeInfo nodeId="7530383734830045193" fileName="MergeDriverOptionsDialog.java" startLine="73" startPosition="25" endLine="83" endPosition="18" />
+    <scopeInfo nodeId="1400826623542889933" fileName="MergeDriverOptionsDialog.java" startLine="104" startPosition="31" endLine="114" endPosition="7">
       <varInfo nodeId="5130910134095706006" varName="currentState" />
     </scopeInfo>
-    <scopeInfo nodeId="7530383734830045192" fileName="MergeDriverOptionsDialog.java" startLine="67" startPosition="57" endLine="80" endPosition="0" />
-    <scopeInfo nodeId="1400826623542889930" fileName="MergeDriverOptionsDialog.java" startLine="98" startPosition="0" endLine="111" endPosition="0" />
-    <scopeInfo nodeId="1400826623542889983" fileName="MergeDriverOptionsDialog.java" startLine="66" startPosition="20" endLine="80" endPosition="7" />
-    <scopeInfo nodeId="1400826623542889980" fileName="MergeDriverOptionsDialog.java" startLine="64" startPosition="0" endLine="82" endPosition="0" />
-    <scopeInfo nodeId="1400826623542708483" fileName="MergeDriverOptionsDialog.java" startLine="28" startPosition="52" endLine="53" endPosition="29" />
-    <scopeInfo nodeId="1400826623542708480" fileName="MergeDriverOptionsDialog.java" startLine="27" startPosition="0" endLine="54" endPosition="3">
+    <scopeInfo nodeId="7530383734830045192" fileName="MergeDriverOptionsDialog.java" startLine="72" startPosition="57" endLine="85" endPosition="0" />
+    <scopeInfo nodeId="1400826623542889930" fileName="MergeDriverOptionsDialog.java" startLine="103" startPosition="0" endLine="116" endPosition="0" />
+    <scopeInfo nodeId="1400826623542889983" fileName="MergeDriverOptionsDialog.java" startLine="71" startPosition="20" endLine="85" endPosition="7" />
+    <scopeInfo nodeId="1400826623542889980" fileName="MergeDriverOptionsDialog.java" startLine="69" startPosition="0" endLine="87" endPosition="0" />
+    <scopeInfo nodeId="1400826623542708483" fileName="MergeDriverOptionsDialog.java" startLine="29" startPosition="52" endLine="59" endPosition="0">
+      <varInfo nodeId="4375293574971927303" varName="size" />
+    </scopeInfo>
+    <scopeInfo nodeId="1400826623542708480" fileName="MergeDriverOptionsDialog.java" startLine="28" startPosition="0" endLine="60" endPosition="3">
       <varInfo nodeId="1400826623542764000" varName="project" />
     </scopeInfo>
-    <unitInfo nodeId="1400826623542708478" fileName="MergeDriverOptionsDialog.java" startLine="18" startPosition="0" endLine="120" endPosition="0" unitName="jetbrains.mps.vcs.mergedriver.MergeDriverOptionsDialog" />
-    <unitInfo nodeId="1400826623542889906" fileName="MergeDriverOptionsDialog.java" startLine="42" startPosition="36" endLine="46" endPosition="5" unitName="jetbrains.mps.vcs.mergedriver.MergeDriverOptionsDialog$1" />
-    <unitInfo nodeId="7530383734830045192" fileName="MergeDriverOptionsDialog.java" startLine="67" startPosition="45" endLine="80" endPosition="5" unitName="jetbrains.mps.vcs.mergedriver.MergeDriverOptionsDialog$2" />
-    <unitInfo nodeId="1400826623542830396" fileName="MergeDriverOptionsDialog.java" startLine="88" startPosition="0" endLine="119" endPosition="0" unitName="jetbrains.mps.vcs.mergedriver.MergeDriverOptionsDialog$InstallerCheckBox" />
+    <unitInfo nodeId="1400826623542708478" fileName="MergeDriverOptionsDialog.java" startLine="19" startPosition="0" endLine="125" endPosition="0" unitName="jetbrains.mps.vcs.mergedriver.MergeDriverOptionsDialog" />
+    <unitInfo nodeId="1400826623542889906" fileName="MergeDriverOptionsDialog.java" startLine="43" startPosition="36" endLine="47" endPosition="5" unitName="jetbrains.mps.vcs.mergedriver.MergeDriverOptionsDialog$1" />
+    <unitInfo nodeId="7530383734830045192" fileName="MergeDriverOptionsDialog.java" startLine="72" startPosition="45" endLine="85" endPosition="5" unitName="jetbrains.mps.vcs.mergedriver.MergeDriverOptionsDialog$2" />
+    <unitInfo nodeId="1400826623542830396" fileName="MergeDriverOptionsDialog.java" startLine="93" startPosition="0" endLine="124" endPosition="0" unitName="jetbrains.mps.vcs.mergedriver.MergeDriverOptionsDialog$InstallerCheckBox" />
   </root>
   <root nodeId="3042807695808129902">
     <nodeInfo nodeId="3042807695808129917" fileName="InternalRuntimePacker.java" startLine="13" startPosition="36" endLine="14" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="MERGER_RT" />
@@ -1391,6 +1398,111 @@
     </scopeInfo>
     <unitInfo nodeId="5985671663020762000" fileName="JavaDependenciesMerger.java" startLine="21" startPosition="0" endLine="90" endPosition="0" unitName="jetbrains.mps.vcs.mergedriver.JavaDependenciesMerger" />
     <unitInfo nodeId="5985671663020930287" fileName="JavaDependenciesMerger.java" startLine="84" startPosition="0" endLine="89" endPosition="0" unitName="jetbrains.mps.vcs.mergedriver.JavaDependenciesMerger$MergeException" />
+  </root>
+  <root nodeId="6124943338883990550">
+    <nodeInfo nodeId="6124943338883990643" fileName="MergeDriverOptionsDialogNew.java" startLine="21" startPosition="64" endLine="22" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myPanel" />
+    <nodeInfo nodeId="6124943338883990652" fileName="MergeDriverOptionsDialogNew.java" startLine="22" startPosition="60" endLine="23" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myMainPanel" />
+    <nodeInfo nodeId="6124943338883990660" fileName="MergeDriverOptionsDialogNew.java" startLine="23" startPosition="75" endLine="24" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myProject" />
+    <nodeInfo nodeId="6124943338883990873" fileName="MergeDriverOptionsDialogNew.java" startLine="24" startPosition="28" endLine="25" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myGitFixes" />
+    <nodeInfo nodeId="6124943338883990877" fileName="MergeDriverOptionsDialogNew.java" startLine="25" startPosition="98" endLine="26" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myGitGlobal" />
+    <nodeInfo nodeId="6124943338883990881" fileName="MergeDriverOptionsDialogNew.java" startLine="26" startPosition="88" endLine="27" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myGitRepos" />
+    <nodeInfo nodeId="6124943338883990885" fileName="MergeDriverOptionsDialogNew.java" startLine="27" startPosition="93" endLine="28" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCommonSvn" />
+    <nodeInfo nodeId="6124943338883990889" fileName="MergeDriverOptionsDialogNew.java" startLine="28" startPosition="82" endLine="29" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myIdeSvn" />
+    <nodeInfo nodeId="6124943338883990668" fileName="MergeDriverOptionsDialogNew.java" startLine="31" startPosition="55" endLine="32" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="6124943338883998564" fileName="MergeDriverOptionsDialogNew.java" startLine="32" startPosition="19" endLine="33" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6124943338883990674" fileName="MergeDriverOptionsDialogNew.java" startLine="33" startPosition="32" endLine="34" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="6124943338883990676" fileName="MergeDriverOptionsDialogNew.java" startLine="34" startPosition="40" endLine="35" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6124943338883990680" fileName="MergeDriverOptionsDialogNew.java" startLine="35" startPosition="24" endLine="36" endPosition="144" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6124943338883990689" fileName="MergeDriverOptionsDialogNew.java" startLine="36" startPosition="144" endLine="37" endPosition="123" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6124943338883990698" fileName="MergeDriverOptionsDialogNew.java" startLine="37" startPosition="123" endLine="38" endPosition="134" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6124943338883990707" fileName="MergeDriverOptionsDialogNew.java" startLine="38" startPosition="134" endLine="39" endPosition="118" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6124943338883990717" fileName="MergeDriverOptionsDialogNew.java" startLine="39" startPosition="118" endLine="40" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6124943338883990729" fileName="MergeDriverOptionsDialogNew.java" startLine="41" startPosition="63" endLine="42" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6124943338883990741" fileName="MergeDriverOptionsDialogNew.java" startLine="43" startPosition="5" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="6124943338883990742" fileName="MergeDriverOptionsDialogNew.java" startLine="44" startPosition="0" endLine="45" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6124943338883990754" fileName="MergeDriverOptionsDialogNew.java" startLine="47" startPosition="49" endLine="48" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6124943338883990761" fileName="MergeDriverOptionsDialogNew.java" startLine="50" startPosition="7" endLine="51" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6124943338883990765" fileName="MergeDriverOptionsDialogNew.java" startLine="51" startPosition="29" endLine="52" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6124943338883990769" fileName="MergeDriverOptionsDialogNew.java" startLine="52" startPosition="28" endLine="53" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6124943338883990775" fileName="MergeDriverOptionsDialogNew.java" startLine="54" startPosition="27" endLine="55" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6124943338883990782" fileName="MergeDriverOptionsDialogNew.java" startLine="56" startPosition="5" endLine="57" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6124943338883998573" fileName="MergeDriverOptionsDialogNew.java" startLine="57" startPosition="29" endLine="58" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6124943338884031630" fileName="MergeDriverOptionsDialogNew.java" startLine="62" startPosition="44" endLine="63" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6124943338884031655" fileName="MergeDriverOptionsDialogNew.java" startLine="68" startPosition="25" endLine="69" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6124943338884031659" fileName="MergeDriverOptionsDialogNew.java" startLine="69" startPosition="37" endLine="70" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6124943338884031665" fileName="MergeDriverOptionsDialogNew.java" startLine="71" startPosition="93" endLine="72" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6124943338884031676" fileName="MergeDriverOptionsDialogNew.java" startLine="73" startPosition="9" endLine="74" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6124943338884031682" fileName="MergeDriverOptionsDialogNew.java" startLine="75" startPosition="31" endLine="76" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6124943338884031697" fileName="MergeDriverOptionsDialogNew.java" startLine="77" startPosition="9" endLine="78" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="708166622413837349" fileName="MergeDriverOptionsDialogNew.java" startLine="83" startPosition="38" endLine="84" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="708166622413837356" fileName="MergeDriverOptionsDialogNew.java" startLine="84" startPosition="74" endLine="85" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="708166622413837361" fileName="MergeDriverOptionsDialogNew.java" startLine="85" startPosition="61" endLine="86" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="708166622413837366" fileName="MergeDriverOptionsDialogNew.java" startLine="86" startPosition="65" endLine="87" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6124943338883990612" fileName="MergeDriverOptionsDialogNew.java" startLine="90" startPosition="82" endLine="91" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myInstaller" />
+    <nodeInfo nodeId="6124943338883990634" fileName="MergeDriverOptionsDialogNew.java" startLine="97" startPosition="10" endLine="98" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6124943338883990556" fileName="MergeDriverOptionsDialogNew.java" startLine="101" startPosition="31" endLine="102" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6124943338883990564" fileName="MergeDriverOptionsDialogNew.java" startLine="103" startPosition="62" endLine="104" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6124943338883990582" fileName="MergeDriverOptionsDialogNew.java" startLine="108" startPosition="12" endLine="109" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6124943338883990587" fileName="MergeDriverOptionsDialogNew.java" startLine="109" startPosition="55" endLine="110" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6124943338883990602" fileName="MergeDriverOptionsDialogNew.java" startLine="115" startPosition="40" endLine="116" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6124943338883990606" fileName="MergeDriverOptionsDialogNew.java" startLine="116" startPosition="30" endLine="117" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6124943338883990727" fileName="MergeDriverOptionsDialogNew.java" startLine="40" startPosition="114" endLine="43" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6124943338883990773" fileName="MergeDriverOptionsDialogNew.java" startLine="53" startPosition="29" endLine="56" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6124943338884031663" fileName="MergeDriverOptionsDialogNew.java" startLine="70" startPosition="38" endLine="73" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6124943338884031680" fileName="MergeDriverOptionsDialogNew.java" startLine="74" startPosition="38" endLine="77" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6124943338883990750" fileName="MergeDriverOptionsDialogNew.java" startLine="46" startPosition="52" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="itemStateChanged#(Ljava/awt/event/ItemEvent;)V" />
+    <nodeInfo nodeId="6124943338883990620" fileName="MergeDriverOptionsDialogNew.java" startLine="93" startPosition="43" endLine="97" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="6124943338883990569" fileName="MergeDriverOptionsDialogNew.java" startLine="104" startPosition="26" endLine="108" endPosition="12" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6124943338883990597" fileName="MergeDriverOptionsDialogNew.java" startLine="114" startPosition="36" endLine="118" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6124943338883990746" fileName="MergeDriverOptionsDialogNew.java" startLine="45" startPosition="28" endLine="50" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6124943338884031611" fileName="MergeDriverOptionsDialogNew.java" startLine="60" startPosition="0" endLine="65" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCenterPanel#()Ljavax/swing/JComponent;" />
+    <nodeInfo nodeId="708166622413837346" fileName="MergeDriverOptionsDialogNew.java" startLine="82" startPosition="0" endLine="89" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createActions#()[Ljavax/swing/Action;" />
+    <nodeInfo nodeId="6124943338883990616" fileName="MergeDriverOptionsDialogNew.java" startLine="92" startPosition="0" endLine="99" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="InstallerCheckBox#(null)V" />
+    <nodeInfo nodeId="6124943338883990593" fileName="MergeDriverOptionsDialogNew.java" startLine="113" startPosition="0" endLine="120" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="installIfNeeded#()V" />
+    <nodeInfo nodeId="6124943338883990562" fileName="MergeDriverOptionsDialogNew.java" startLine="102" startPosition="75" endLine="111" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6124943338884031653" fileName="MergeDriverOptionsDialogNew.java" startLine="67" startPosition="57" endLine="80" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="6124943338883990552" fileName="MergeDriverOptionsDialogNew.java" startLine="100" startPosition="0" endLine="113" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="adIfNeeded#()V" />
+    <nodeInfo nodeId="6124943338884031649" fileName="MergeDriverOptionsDialogNew.java" startLine="66" startPosition="31" endLine="80" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6124943338884031636" fileName="MergeDriverOptionsDialogNew.java" startLine="65" startPosition="0" endLine="82" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doOKAction#()V" />
+    <nodeInfo nodeId="6124943338883990664" fileName="MergeDriverOptionsDialogNew.java" startLine="30" startPosition="0" endLine="59" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MergeDriverOptionsDialogNew#(Lcom/intellij/openapi/project/Project;)V" />
+    <scopeInfo nodeId="6124943338883990728" fileName="MergeDriverOptionsDialogNew.java" startLine="41" startPosition="63" endLine="42" endPosition="22" />
+    <scopeInfo nodeId="6124943338883990753" fileName="MergeDriverOptionsDialogNew.java" startLine="47" startPosition="49" endLine="48" endPosition="56" />
+    <scopeInfo nodeId="6124943338883990774" fileName="MergeDriverOptionsDialogNew.java" startLine="54" startPosition="27" endLine="55" endPosition="28" />
+    <scopeInfo nodeId="6124943338884031615" fileName="MergeDriverOptionsDialogNew.java" startLine="62" startPosition="44" endLine="63" endPosition="23" />
+    <scopeInfo nodeId="6124943338884031664" fileName="MergeDriverOptionsDialogNew.java" startLine="71" startPosition="93" endLine="72" endPosition="39" />
+    <scopeInfo nodeId="6124943338884031681" fileName="MergeDriverOptionsDialogNew.java" startLine="75" startPosition="31" endLine="76" endPosition="37" />
+    <scopeInfo nodeId="6124943338883990601" fileName="MergeDriverOptionsDialogNew.java" startLine="115" startPosition="40" endLine="117" endPosition="89" />
+    <scopeInfo nodeId="6124943338883990750" fileName="MergeDriverOptionsDialogNew.java" startLine="46" startPosition="52" endLine="50" endPosition="0">
+      <varInfo nodeId="6124943338883990750" varName="e" />
+    </scopeInfo>
+    <scopeInfo nodeId="708166622413837348" fileName="MergeDriverOptionsDialogNew.java" startLine="83" startPosition="38" endLine="87" endPosition="71">
+      <varInfo nodeId="708166622413837350" varName="actions" />
+    </scopeInfo>
+    <scopeInfo nodeId="6124943338883990596" fileName="MergeDriverOptionsDialogNew.java" startLine="114" startPosition="36" endLine="118" endPosition="7" />
+    <scopeInfo nodeId="6124943338884031611" fileName="MergeDriverOptionsDialogNew.java" startLine="60" startPosition="0" endLine="65" endPosition="0" />
+    <scopeInfo nodeId="6124943338883990619" fileName="MergeDriverOptionsDialogNew.java" startLine="93" startPosition="43" endLine="98" endPosition="30" />
+    <scopeInfo nodeId="708166622413837346" fileName="MergeDriverOptionsDialogNew.java" startLine="82" startPosition="0" endLine="89" endPosition="0" />
+    <scopeInfo nodeId="6124943338883990616" fileName="MergeDriverOptionsDialogNew.java" startLine="92" startPosition="0" endLine="99" endPosition="5">
+      <varInfo nodeId="6124943338883990638" varName="installer" />
+    </scopeInfo>
+    <scopeInfo nodeId="6124943338883990563" fileName="MergeDriverOptionsDialogNew.java" startLine="103" startPosition="62" endLine="110" endPosition="26" />
+    <scopeInfo nodeId="6124943338883990593" fileName="MergeDriverOptionsDialogNew.java" startLine="113" startPosition="0" endLine="120" endPosition="0" />
+    <scopeInfo nodeId="6124943338884031654" fileName="MergeDriverOptionsDialogNew.java" startLine="68" startPosition="25" endLine="78" endPosition="46" />
+    <scopeInfo nodeId="6124943338883990555" fileName="MergeDriverOptionsDialogNew.java" startLine="101" startPosition="31" endLine="111" endPosition="7">
+      <varInfo nodeId="6124943338883990557" varName="currentState" />
+    </scopeInfo>
+    <scopeInfo nodeId="6124943338884031653" fileName="MergeDriverOptionsDialogNew.java" startLine="67" startPosition="57" endLine="80" endPosition="0" />
+    <scopeInfo nodeId="6124943338883990552" fileName="MergeDriverOptionsDialogNew.java" startLine="100" startPosition="0" endLine="113" endPosition="0" />
+    <scopeInfo nodeId="6124943338884031639" fileName="MergeDriverOptionsDialogNew.java" startLine="66" startPosition="31" endLine="80" endPosition="7" />
+    <scopeInfo nodeId="6124943338884031636" fileName="MergeDriverOptionsDialogNew.java" startLine="65" startPosition="0" endLine="82" endPosition="0" />
+    <scopeInfo nodeId="6124943338883990667" fileName="MergeDriverOptionsDialogNew.java" startLine="31" startPosition="55" endLine="58" endPosition="11" />
+    <scopeInfo nodeId="6124943338883990664" fileName="MergeDriverOptionsDialogNew.java" startLine="30" startPosition="0" endLine="59" endPosition="3">
+      <varInfo nodeId="6124943338883990787" varName="project" />
+    </scopeInfo>
+    <unitInfo nodeId="6124943338883990550" fileName="MergeDriverOptionsDialogNew.java" startLine="21" startPosition="0" endLine="122" endPosition="0" unitName="jetbrains.mps.vcs.mergedriver.MergeDriverOptionsDialogNew" />
+    <unitInfo nodeId="6124943338883990750" fileName="MergeDriverOptionsDialogNew.java" startLine="46" startPosition="36" endLine="50" endPosition="5" unitName="jetbrains.mps.vcs.mergedriver.MergeDriverOptionsDialogNew$1" />
+    <unitInfo nodeId="6124943338884031653" fileName="MergeDriverOptionsDialogNew.java" startLine="67" startPosition="45" endLine="80" endPosition="5" unitName="jetbrains.mps.vcs.mergedriver.MergeDriverOptionsDialogNew$2" />
+    <unitInfo nodeId="6124943338883990551" fileName="MergeDriverOptionsDialogNew.java" startLine="90" startPosition="0" endLine="121" endPosition="0" unitName="jetbrains.mps.vcs.mergedriver.MergeDriverOptionsDialogNew$InstallerCheckBox" />
   </root>
   <root nodeId="6564671247051075189">
     <nodeInfo nodeId="6564671247051075191" fileName="AbstractContentMerger.java" startLine="8" startPosition="50" endLine="9" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="MERGED" />
