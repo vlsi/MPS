@@ -35,7 +35,8 @@ public class MPSConfigurationBean {
 
     @Transient
     private final SolutionDescriptor myDescriptor;
-    private boolean myUseModuleSourceFolder = true;
+    private boolean myUseModuleSourceFolder = false;
+    private boolean myUseTransientOutputFolder = true; // the default
 
     public MPSConfigurationBean() {
         myDescriptor = new SolutionDescriptor();
@@ -61,6 +62,15 @@ public class MPSConfigurationBean {
 
     public boolean isUseModuleSourceFolder() {
         return myUseModuleSourceFolder;
+    }
+
+
+    public boolean isUseTransientOutputFolder() {
+        return myUseTransientOutputFolder;
+    }
+
+    public void setUseTransientOutputFolder(boolean useTransientOutputFolder) {
+        this.myUseTransientOutputFolder = useTransientOutputFolder;
     }
 
     public String getGeneratorOutputPath() {

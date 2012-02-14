@@ -11,6 +11,8 @@
     <children>
       <grid id="34717" binding="myGeneratorOutputPathPanel" custom-create="true" layout-manager="FormLayout">
         <rowspec value="center:max(d;4px):noGrow"/>
+        <rowspec value="top:4dlu:noGrow"/>
+        <rowspec value="center:max(d;4px):noGrow"/>
         <rowspec value="top:3dlu:noGrow"/>
         <rowspec value="center:d:noGrow"/>
         <rowspec value="top:3dlu:noGrow"/>
@@ -32,16 +34,16 @@
         <children>
           <component id="a591a" class="javax.swing.JRadioButton" binding="myUseCustomFolderRadioButton">
             <constraints>
-              <grid row="4" column="0" row-span="1" col-span="7" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+              <grid row="6" column="0" row-span="1" col-span="7" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
               <forms/>
             </constraints>
             <properties>
               <text resource-bundle="jetbrains/mps/idea/core/MPSBundle" key="facet.paths.tab.generator.output.use.custom.folder"/>
             </properties>
           </component>
-          <component id="e664c" class="javax.swing.JComboBox" binding="myModuleReferenceCompo">
+          <component id="e664c" class="javax.swing.JComboBox" binding="myModuleReferenceCombo">
             <constraints>
-              <grid row="2" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+              <grid row="4" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
               <forms defaultalign-horz="false"/>
             </constraints>
             <properties>
@@ -50,7 +52,7 @@
           </component>
           <component id="d41b4" class="javax.swing.JLabel" binding="myOutputFolderLabel">
             <constraints>
-              <grid row="6" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="4" anchor="4" fill="0" indent="0" use-parent-layout="false"/>
+              <grid row="8" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="4" anchor="4" fill="0" indent="0" use-parent-layout="false"/>
               <forms defaultalign-horz="false"/>
             </constraints>
             <properties>
@@ -59,19 +61,19 @@
           </component>
           <component id="5a93f" class="javax.swing.JRadioButton" binding="myUseModuleSourceFolderRadioButton">
             <constraints>
-              <grid row="0" column="0" row-span="1" col-span="7" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+              <grid row="2" column="0" row-span="1" col-span="7" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
               <forms/>
             </constraints>
             <properties>
               <horizontalAlignment value="10"/>
               <horizontalTextPosition value="11"/>
-              <selected value="true"/>
+              <selected value="false"/>
               <text resource-bundle="jetbrains/mps/idea/core/MPSBundle" key="facet.paths.tab.generator.output.use.module.source"/>
             </properties>
           </component>
           <component id="3812a" class="javax.swing.JLabel" binding="mySourceFolderLabel">
             <constraints>
-              <grid row="2" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+              <grid row="4" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
               <forms/>
             </constraints>
             <properties>
@@ -80,10 +82,20 @@
           </component>
           <component id="5e51f" class="jetbrains.mps.idea.core.facet.ui.MPSFacetPathsTab$CommitableFieldPanel" binding="myFieldPanel" custom-create="true">
             <constraints>
-              <grid row="6" column="4" row-span="1" col-span="2" vsize-policy="3" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+              <grid row="8" column="4" row-span="1" col-span="2" vsize-policy="3" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
               <forms/>
             </constraints>
             <properties/>
+          </component>
+          <component id="25075" class="javax.swing.JRadioButton" binding="myUseTransientOutputFolder">
+            <constraints>
+              <grid row="0" column="0" row-span="1" col-span="7" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+              <forms/>
+            </constraints>
+            <properties>
+              <selected value="true"/>
+              <text value="Don't save generated files"/>
+            </properties>
           </component>
         </children>
       </grid>
@@ -96,6 +108,7 @@
       <member id="f9e2b"/>
       <member id="a591a"/>
       <member id="5a93f"/>
+      <member id="25075"/>
     </group>
   </buttonGroups>
 </form>
