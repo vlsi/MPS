@@ -18,6 +18,7 @@ package jetbrains.mps.idea.core.make;
 
 import com.intellij.facet.FacetManager;
 import com.intellij.openapi.compiler.*;
+import com.intellij.openapi.compiler.Compiler;
 import com.intellij.openapi.module.Module;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vfs.VirtualFile;
@@ -35,6 +36,7 @@ import jetbrains.mps.util.JavaNameUtil;
 import jetbrains.mps.util.misc.hash.HashMap;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
+import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 
 import java.io.DataInput;
@@ -108,13 +110,20 @@ public class MPSCompiler2 implements SourceGeneratingCompiler{
     @Override
     public GenerationItem[] generate(CompileContext context, GenerationItem[] items, VirtualFile outputRootDirectory) {
         final Map<Module, List<VirtualFile>> moduleToFiles = new HashMap<Module, List<VirtualFile>> ();
+        BitSet isTest = new BitSet(10);
+        int i = 0;
         for (GenerationItem gi: items) {
             List<VirtualFile> files = moduleToFiles.get(gi.getModule());
             if (files == null) moduleToFiles.put(gi.getModule(), files = new ArrayList<VirtualFile>());
             if (gi instanceof MyGenerationItem) {
                 files.add(((MyGenerationItem) gi).getModelFile());
             }
+            isTest.set(i++, gi.isTestSource());
         }
+        
+        // assert the calling context
+        assert moduleToFiles.size() == 1; // only one module
+        assert isTest.cardinality() == isTest.length(); // either all 1's, or all 0's
 
         context.getProgressIndicator().setText(MPSBundle.message("generating.models"));
 
@@ -150,8 +159,10 @@ public class MPSCompiler2 implements SourceGeneratingCompiler{
         final List<File> generatedModelFiles = new ArrayList<File>();
         final List<File> filesToRefresh = new ArrayList<File>();
 
+        String cachesOutputRoot = getCachesOutputPath(this, moduleToFiles.keySet().iterator().next(), isTest.cardinality() > 0);
+
         // facet test start
-        executeMPSMake(context, facetToModels, new File(outputRootDirectory.getPath()), generatedModelFiles, filesToRefresh);
+        executeMPSMake(context, facetToModels, new File(outputRootDirectory.getPath()), new File (cachesOutputRoot),generatedModelFiles, filesToRefresh);
         // facet test end
 
         // TODO: return actually generated items
@@ -159,9 +170,10 @@ public class MPSCompiler2 implements SourceGeneratingCompiler{
     }
 
 
-    private void executeMPSMake(CompileContext context, Map<MPSFacet, List<SModelDescriptor>> facetToModels, File outputRootDir, /*out*/List<File> generatedModelFiles, /*out*/List<File> filesToRefresh) {
+    private void executeMPSMake(CompileContext context, Map<MPSFacet, List<SModelDescriptor>> facetToModels, File outputRootDir, File cachesOutputRootDir, /*out*/List<File> generatedModelFiles, /*out*/List<File> filesToRefresh) {
         MPSMakeConfiguration makeConfiguration = new MPSMakeConfiguration();
         makeConfiguration.addProperty("OUTPUT_ROOT_DIR", outputRootDir.getAbsolutePath());
+        makeConfiguration.addProperty("CACHES_OUTPUT_ROOT_DIR", cachesOutputRootDir.getAbsolutePath());
 
         for (Map.Entry<MPSFacet, List<SModelDescriptor>> chunk : facetToModels.entrySet()) {
             MPSFacet facet = chunk.getKey();
@@ -214,6 +226,27 @@ public class MPSCompiler2 implements SourceGeneratingCompiler{
     public ValidityState createValidityState(DataInput in) throws IOException {
         return TimestampValidityState.load(in);
     }
+
+    // Shamelessly copied over from the IDEA sources
+
+    public static File getGeneratedDataDirectory(Project project) {
+        //noinspection HardCodedStringLiteral
+        return new File(CompilerPaths.getCompilerSystemDirectory(project), ".caches");
+    }
+
+    public static File getGeneratedDataDirectory(Project project, Compiler compiler) {
+        //noinspection HardCodedStringLiteral
+        return new File(getGeneratedDataDirectory(project), compiler.getDescription().replaceAll("\\s+", "_"));
+    }
+
+    @NonNls
+    public static String getCachesOutputPath(IntermediateOutputCompiler compiler, Module module, final boolean forTestSources) {
+        final String generatedCompilerDirectoryPath = getGeneratedDataDirectory(module.getProject(), compiler).getPath();
+        //noinspection HardCodedStringLiteral
+        final String moduleDir = module.getName().replaceAll("\\s+", "_") + "." + Integer.toHexString(module.getModuleFilePath().hashCode());
+        return generatedCompilerDirectoryPath.replace(File.separatorChar, '/') + "/" + moduleDir + "/" + (forTestSources? "test" : "production");
+    }
+
 
     private static class MyGenerationItem implements GeneratingCompiler.GenerationItem {
 

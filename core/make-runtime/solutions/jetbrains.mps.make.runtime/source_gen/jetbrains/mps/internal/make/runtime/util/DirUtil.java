@@ -41,6 +41,10 @@ public class DirUtil {
     }, true).toGenericArray(String.class);
   }
 
+  public static String normalize(String dirPath) {
+    return asDir(straighten(urlToPath(dirPath)));
+  }
+
   public static String asDir(String path) {
     return (path.endsWith(SLASH) ?
       path :
@@ -64,6 +68,20 @@ public class DirUtil {
     return path.startsWith(prefix) && (path.length() == prefix.length() || prefix.endsWith(SLASH) || path.charAt(prefix.length()) == SLASH_CHAR);
   }
 
+  public static String withoutPrefix(String path, String prefix) {
+    if (!(startsWith(path, prefix))) {
+      throw new IllegalArgumentException("invalid prefix");
+    }
+    if (path.length() == prefix.length()) {
+      return "";
+    }
+    int prefixLength = prefix.length();
+    if (path.charAt(prefix.length()) == SLASH_CHAR) {
+      prefixLength++;
+    }
+    return path.substring(prefixLength);
+  }
+
   public static boolean same(String path1, String path2) {
     if (path1.equals(path2)) {
       return true;
@@ -73,9 +91,9 @@ public class DirUtil {
     }
     if (path1.length() > path2.length()) {
       {
-        Tuples._2<String, String> _tmp_rkp2iv_a0c0g = MultiTuple.<String,String>from(path2, path1);
-        path1 = _tmp_rkp2iv_a0c0g._0();
-        path2 = _tmp_rkp2iv_a0c0g._1();
+        Tuples._2<String, String> _tmp_rkp2iv_a0c0i = MultiTuple.<String,String>from(path2, path1);
+        path1 = _tmp_rkp2iv_a0c0i._0();
+        path2 = _tmp_rkp2iv_a0c0i._1();
       }
     }
     return path2.startsWith(path1) && path2.charAt(path1.length()) == SLASH_CHAR && (path2.length() - path1.length() == 1);

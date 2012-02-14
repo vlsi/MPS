@@ -27,8 +27,15 @@ import jetbrains.mps.make.script.IPropertiesPool;
 import jetbrains.mps.make.facet.ITarget;
 import jetbrains.mps.make.resources.IResource;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
+import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.project.IModule;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
+import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.vfs.FileSystem;
 import java.util.concurrent.ExecutionException;
 import java.io.File;
+import jetbrains.mps.internal.make.runtime.util.DirUtil;
+import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
 
 public class ReducedGenerationWorker extends GeneratorWorker {
   public ReducedGenerationWorker(WhatToDo whatToDo) {
@@ -43,12 +50,14 @@ public class ReducedGenerationWorker extends GeneratorWorker {
   protected void generate(Project project, MpsWorker.ObjectsToProcess go) {
     ProjectOperationContext ctx = new ProjectOperationContext(project);
 
-    Iterable<IMResource> resources = Sequence.fromIterable(collectResources(ctx, go)).toListSequence();
+    final Iterable<IMResource> resources = Sequence.fromIterable(collectResources(ctx, go)).toListSequence();
     ModelAccess.instance().flushEventQueue();
     Future<IResult> res;
     final List<String> writtenFiles = ListSequence.fromList(new ArrayList<String>());
     final Map<String, String> fileHashes = MapSequence.fromMap(new HashMap<String, String>());
     IOperationContext context = new ProjectOperationContext(project);
+
+
     BuildMakeService bms = new BuildMakeService();
     MakeSession ms = new MakeSession(context, getMyMessageHandler(), true) {
       @Override
@@ -57,7 +66,10 @@ public class ReducedGenerationWorker extends GeneratorWorker {
         return scriptBuilder.toScript();
       }
     };
-    res = bms.make(ms, resources, null, new IScriptController.Stub() {
+
+    final String outputRoot = myWhatToDo.getProperty("OUTPUT_ROOT_DIR");
+    final String cachesOutputRoot = myWhatToDo.getProperty("CACHES_OUTPUT_ROOT_DIR");
+    IScriptController.Stub scriptCtl = new IScriptController.Stub() {
       @Override
       public void setup(IPropertiesPool pp, Iterable<ITarget> toExecute, Iterable<? extends IResource> input) {
         super.setup(pp, toExecute, input);
@@ -72,10 +84,42 @@ public class ReducedGenerationWorker extends GeneratorWorker {
 
         Tuples._1<Map<String, String>> hashes = (Tuples._1<Map<String, String>>) pp.properties(new ITarget.Name("jetbrains.mps.build.reduced.CollectHashes.collect"), Object.class);
         hashes._0(fileHashes);
+
+        if (outputRoot != null) {
+          // override solution's output path 
+          Sequence.fromIterable(resources).select(new ISelector<IMResource, IModule>() {
+            public IModule select(IMResource r) {
+              return r.module();
+            }
+          });
+          final ReducedGenerationWorker.ModuleOutputPaths paths = new ReducedGenerationWorker.ModuleOutputPaths(Sequence.fromIterable(resources).select(new ISelector<IMResource, IModule>() {
+            public IModule select(IMResource r) {
+              return r.module();
+            }
+          }));
+          Tuples._1<_FunctionTypes._return_P1_E0<? extends IFile, ? super String>> pathToFile = (Tuples._1<_FunctionTypes._return_P1_E0<? extends IFile, ? super String>>) pp.properties(new ITarget.Name("jetbrains.mps.lang.core.Make.make"), Object.class);
+          pathToFile._0(new _FunctionTypes._return_P1_E0<IFile, String>() {
+            public IFile invoke(String path) {
+              String localOutPath = paths.toLocalPath(path);
+              if (localOutPath != null) {
+                return FileSystem.getInstance().getFileByPath(outputRoot).getDescendant(localOutPath);
+              }
+
+              String localOutCachePath = paths.toLocalCachePath(path);
+              if (localOutCachePath != null) {
+                return FileSystem.getInstance().getFileByPath(cachesOutputRoot).getDescendant(localOutCachePath);
+              }
+
+              // can't convert, return the literal path 
+              return FileSystem.getInstance().getFileByPath(path);
+            }
+          });
+        }
       }
-    });
+    };
 
     try {
+      res = bms.make(ms, resources, null, scriptCtl);
       if (!(res.get().isSucessful())) {
         myErrors.add("Make was not successful");
       }
@@ -100,5 +144,68 @@ public class ReducedGenerationWorker extends GeneratorWorker {
   public static void main(String[] args) {
     MpsWorker mpsWorker = new ReducedGenerationWorker(WhatToDo.fromDumpInFile(new File(args[0])), new MpsWorker.SystemOutLogger());
     mpsWorker.workFromMain();
+  }
+
+  public static class ModuleOutputPaths {
+    private String[] sortedOutDirs;
+    private String[] sortedTestOutDirs;
+    private String[] sortedOutCacheDirs;
+    private String[] sortedTestOutCacheDirs;
+
+    public ModuleOutputPaths(Iterable<IModule> modules) {
+      this.sortedOutDirs = DirUtil.sortDirs(Sequence.fromIterable(modules).select(new ISelector<IModule, String>() {
+        public String select(IModule mod) {
+          return mod.getGeneratorOutputPath();
+        }
+      }));
+      this.sortedOutCacheDirs = DirUtil.sortDirs(Sequence.fromIterable(modules).select(new ISelector<IModule, String>() {
+        public String select(IModule mod) {
+          return FileGenerationUtil.getCachesPath(mod.getGeneratorOutputPath());
+        }
+      }));
+
+      this.sortedTestOutDirs = DirUtil.sortDirs(Sequence.fromIterable(modules).select(new ISelector<IModule, String>() {
+        public String select(IModule mod) {
+          return mod.getTestsGeneratorOutputPath();
+        }
+      }));
+      this.sortedTestOutCacheDirs = DirUtil.sortDirs(Sequence.fromIterable(modules).select(new ISelector<IModule, String>() {
+        public String select(IModule mod) {
+          return FileGenerationUtil.getCachesPath(mod.getTestsGeneratorOutputPath());
+        }
+      }));
+    }
+
+    public String toLocalPath(String path) {
+      String normPath = DirUtil.normalize(path);
+      int idx = DirUtil.findPrefix(normPath, sortedOutDirs);
+      if (idx >= 0) {
+        return DirUtil.withoutPrefix(normPath, sortedOutDirs[idx]);
+      }
+
+      int tidx = DirUtil.findPrefix(normPath, sortedTestOutDirs);
+      if (tidx >= 0) {
+        return DirUtil.withoutPrefix(normPath, sortedTestOutDirs[tidx]);
+      }
+
+      // not found 
+      return null;
+    }
+
+    public String toLocalCachePath(String path) {
+      String normPath = DirUtil.normalize(path);
+      int idx = DirUtil.findPrefix(normPath, sortedOutCacheDirs);
+      if (idx >= 0) {
+        return DirUtil.withoutPrefix(normPath, sortedOutCacheDirs[idx]);
+      }
+
+      int tidx = DirUtil.findPrefix(normPath, sortedTestOutCacheDirs);
+      if (tidx >= 0) {
+        return DirUtil.withoutPrefix(normPath, sortedTestOutCacheDirs[tidx]);
+      }
+
+      // not found 
+      return null;
+    }
   }
 }

@@ -16,6 +16,7 @@
 
 package jetbrains.mps.idea.core.tests;
 
+import com.intellij.compiler.CompilerManagerImpl;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.application.ex.ApplicationManagerEx;
 import com.intellij.openapi.compiler.CompileContext;
@@ -161,6 +162,8 @@ public class MakeTests extends DataMPSFixtureTestCase {
     
     
     public void testMainModel () {
+        CompilerManagerImpl.testSetup();
+
         ModuleRootManager mrm = ModuleRootManager.getInstance(myFacet.getModule());
         VirtualFile[] srs = mrm.getSourceRoots();
         assertTrue(srs.length == 2);
