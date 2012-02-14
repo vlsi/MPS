@@ -189,7 +189,7 @@ public class TextGenerator {
     }
   }
 
-  private SNode getOriginalInputNodeForNearestParent(SNode output) {
+  public static SNode getOriginalInputNodeForNearestParent(SNode output) {
     while (output != null) {
       SNode node = getOriginalInputNode(output);
       if (node != null) {
@@ -200,7 +200,7 @@ public class TextGenerator {
     return null;
   }
 
-  private SNode getOriginalInputNode(SNode input) {
+  private static SNode getOriginalInputNode(SNode input) {
     while (input != null && !(input.isDisposed())
       && (input.getModel() instanceof TransientSModel)) {
       input = (SNode) input.getUserObject(TemplateQueryContext.ORIGINAL_INPUT_NODE);

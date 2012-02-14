@@ -42,7 +42,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 12:
         return new CompiledConceptDescriptor("jetbrains.mps.core.xml.structure.XmlEntityRefValue", "jetbrains.mps.core.xml.structure.XmlValuePart", false, new String[]{"jetbrains.mps.core.xml.structure.XmlValuePart"}, new String[]{"entityName"}, new String[]{});
       case 13:
-        return new CompiledConceptDescriptor("jetbrains.mps.core.xml.structure.XmlFile", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.core.xml.structure.XmlFile", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.lang.traceable.structure.UnitConcept"}, new String[]{}, new String[]{});
       case 14:
         return new CompiledConceptDescriptor("jetbrains.mps.core.xml.structure.XmlNoSpaceValue", "jetbrains.mps.core.xml.structure.XmlValuePart", false, new String[]{"jetbrains.mps.core.xml.structure.XmlValuePart"}, new String[]{}, new String[]{});
       case 15:

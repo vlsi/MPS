@@ -73,8 +73,11 @@
   <dependency className="jetbrains.mps.core.xml.textGen.XmlFile_TextGen" file="XmlFile_TextGen.java">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.traceable.behavior.UnitConcept_Behavior" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.textGen.TextGenManager" />
+    <classNode dependClassName="jetbrains.mps.textGen.TraceInfoGenerationUtil" />
     <classNode extendsClassName="jetbrains.mps.textGen.SNodeTextGen" />
   </dependency>
   <dependency className="jetbrains.mps.core.xml.textGen.XmlNoSpaceValue_TextGen" file="XmlNoSpaceValue_TextGen.java">

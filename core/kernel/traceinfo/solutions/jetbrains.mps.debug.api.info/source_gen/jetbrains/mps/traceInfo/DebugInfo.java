@@ -309,6 +309,18 @@ public class DebugInfo {
     });
   }
 
+  public String getNodeIdForFileName(final String file) {
+    return check_exfyrk_a0a81(Sequence.fromIterable(MapSequence.fromMap(myRoots).values()).translate(new ITranslator2<DebugInfoRoot, UnitPositionInfo>() {
+      public Iterable<UnitPositionInfo> translate(DebugInfoRoot it) {
+        return it.getUnitPositions();
+      }
+    }).findFirst(new IWhereFilter<UnitPositionInfo>() {
+      public boolean accept(UnitPositionInfo it) {
+        return eq_exfyrk_a0a0a0a0a0a0a81(it.getFileName(), file);
+      }
+    }));
+  }
+
   public List<String> getRoots() {
     return SetSequence.fromSet(MapSequence.fromMap(myRoots).keySet()).toListSequence();
   }
@@ -359,6 +371,13 @@ public class DebugInfo {
     return info;
   }
 
+  private static String check_exfyrk_a0a81(UnitPositionInfo checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getNodeId();
+    }
+    return null;
+  }
+
   private static boolean eq_exfyrk_a0a1a0a5a8(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
@@ -374,6 +393,13 @@ public class DebugInfo {
   }
 
   private static boolean eq_exfyrk_a0a0a0a0a0a0a11(Object a, Object b) {
+    return (a != null ?
+      a.equals(b) :
+      a == b
+    );
+  }
+
+  private static boolean eq_exfyrk_a0a0a0a0a0a0a81(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b
