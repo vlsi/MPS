@@ -880,6 +880,98 @@
     </scopeInfo>
     <unitInfo nodeId="5105453120349025843" fileName="SmartWrapper.java" startLine="10" startPosition="0" endLine="68" endPosition="0" unitName="jetbrains.mps.internal.make.runtime.util.SmartWrapper" />
   </root>
+  <root nodeId="6106640680373200863">
+    <nodeInfo nodeId="6106640680373201055" fileName="DirUtil.java" startLine="14" startPosition="22" endLine="15" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="URL" />
+    <nodeInfo nodeId="6106640680373200952" fileName="DirUtil.java" startLine="15" startPosition="66" endLine="16" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SLASH_CHAR" />
+    <nodeInfo nodeId="6106640680373200956" fileName="DirUtil.java" startLine="16" startPosition="45" endLine="17" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SLASH" />
+    <nodeInfo nodeId="6106640680373201122" fileName="DirUtil.java" startLine="19" startPosition="66" endLine="20" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6106640680373201135" fileName="DirUtil.java" startLine="20" startPosition="52" endLine="21" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6106640680373201216" fileName="DirUtil.java" startLine="26" startPosition="70" endLine="27" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6106640680373201220" fileName="DirUtil.java" startLine="28" startPosition="5" endLine="29" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6106640680373201324" fileName="DirUtil.java" startLine="34" startPosition="38" endLine="35" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6106640680373201334" fileName="DirUtil.java" startLine="38" startPosition="45" endLine="39" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6106640680373201039" fileName="DirUtil.java" startLine="51" startPosition="51" endLine="52" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6106640680373201017" fileName="DirUtil.java" startLine="59" startPosition="51" endLine="60" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6106640680373200975" fileName="DirUtil.java" startLine="63" startPosition="64" endLine="64" endPosition="145" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6106640680373200894" fileName="DirUtil.java" startLine="68" startPosition="30" endLine="69" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6106640680373200902" fileName="DirUtil.java" startLine="71" startPosition="43" endLine="72" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6106640680373200913" fileName="DirUtil.java" startLine="75" startPosition="7" endLine="76" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6106640680373200913" fileName="DirUtil.java" startLine="76" startPosition="99" endLine="77" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6106640680373200913" fileName="DirUtil.java" startLine="77" startPosition="39" endLine="78" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6106640680373200928" fileName="DirUtil.java" startLine="80" startPosition="5" endLine="81" endPosition="123" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6106640680373201177" fileName="DirUtil.java" startLine="25" startPosition="6" endLine="28" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6106640680373200892" fileName="DirUtil.java" startLine="67" startPosition="58" endLine="70" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6106640680373200900" fileName="DirUtil.java" startLine="70" startPosition="5" endLine="73" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6106640680373201097" fileName="DirUtil.java" startLine="21" startPosition="51" endLine="25" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6106640680373201322" fileName="DirUtil.java" startLine="33" startPosition="83" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljava/lang/String;)Ljava/lang/String;" />
+    <nodeInfo nodeId="6106640680373201332" fileName="DirUtil.java" startLine="37" startPosition="52" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljava/lang/String;)Ljava/lang/Comparable;" />
+    <nodeInfo nodeId="6106640680373201072" fileName="DirUtil.java" startLine="44" startPosition="43" endLine="48" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6106640680373201045" fileName="DirUtil.java" startLine="52" startPosition="38" endLine="56" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6106640680373201008" fileName="DirUtil.java" startLine="58" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="straighten#(Ljava/lang/String;)Ljava/lang/String;" />
+    <nodeInfo nodeId="6106640680373200962" fileName="DirUtil.java" startLine="62" startPosition="0" endLine="66" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="startsWith#(Ljava/lang/String;Ljava/lang/String;)Z" />
+    <nodeInfo nodeId="6106640680373200913" fileName="DirUtil.java" startLine="74" startPosition="42" endLine="79" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="6106640680373201062" fileName="DirUtil.java" startLine="43" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="asDir#(Ljava/lang/String;)Ljava/lang/String;" />
+    <nodeInfo nodeId="6106640680373200911" fileName="DirUtil.java" startLine="73" startPosition="5" endLine="80" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6106640680373201028" fileName="DirUtil.java" startLine="50" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="urlToPath#(Ljava/lang/String;)Ljava/lang/String;" />
+    <nodeInfo nodeId="6106640680373201316" fileName="DirUtil.java" startLine="32" startPosition="62" endLine="41" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6106640680373201223" fileName="DirUtil.java" startLine="31" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="sortDirs#(Ljava/lang/Iterable;)[Ljava/lang/String;" />
+    <nodeInfo nodeId="6106640680373201082" fileName="DirUtil.java" startLine="18" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="findPrefix#(Ljava/lang/String;[Ljava/lang/String;)I" />
+    <nodeInfo nodeId="6106640680373200880" fileName="DirUtil.java" startLine="66" startPosition="0" endLine="83" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="same#(Ljava/lang/String;Ljava/lang/String;)Z" />
+    <scopeInfo nodeId="6106640680373201178" fileName="DirUtil.java" startLine="26" startPosition="70" endLine="27" endPosition="17" />
+    <scopeInfo nodeId="6106640680373201323" fileName="DirUtil.java" startLine="34" startPosition="38" endLine="35" endPosition="47" />
+    <scopeInfo nodeId="6106640680373201333" fileName="DirUtil.java" startLine="38" startPosition="45" endLine="39" endPosition="17" />
+    <scopeInfo nodeId="6106640680373201011" fileName="DirUtil.java" startLine="59" startPosition="51" endLine="60" endPosition="59" />
+    <scopeInfo nodeId="6106640680373200965" fileName="DirUtil.java" startLine="63" startPosition="64" endLine="64" endPosition="145" />
+    <scopeInfo nodeId="6106640680373200893" fileName="DirUtil.java" startLine="68" startPosition="30" endLine="69" endPosition="18" />
+    <scopeInfo nodeId="6106640680373200901" fileName="DirUtil.java" startLine="71" startPosition="43" endLine="72" endPosition="19" />
+    <scopeInfo nodeId="6106640680373200913" fileName="DirUtil.java" startLine="75" startPosition="7" endLine="78" endPosition="39">
+      <varInfo nodeId="6106640680373200913" varName="_tmp_rkp2iv_a0c0g" />
+    </scopeInfo>
+    <scopeInfo nodeId="6106640680373201322" fileName="DirUtil.java" startLine="33" startPosition="83" endLine="37" endPosition="0">
+      <varInfo nodeId="6106640680373201322" varName="p" />
+    </scopeInfo>
+    <scopeInfo nodeId="6106640680373201332" fileName="DirUtil.java" startLine="37" startPosition="52" endLine="41" endPosition="0">
+      <varInfo nodeId="6106640680373201332" varName="p" />
+    </scopeInfo>
+    <scopeInfo nodeId="6106640680373201065" fileName="DirUtil.java" startLine="44" startPosition="43" endLine="48" endPosition="6" />
+    <scopeInfo nodeId="6106640680373201008" fileName="DirUtil.java" startLine="58" startPosition="0" endLine="62" endPosition="0">
+      <varInfo nodeId="6106640680373201013" varName="syspath" />
+    </scopeInfo>
+    <scopeInfo nodeId="6106640680373200962" fileName="DirUtil.java" startLine="62" startPosition="0" endLine="66" endPosition="0">
+      <varInfo nodeId="6106640680373200967" varName="path" />
+      <varInfo nodeId="6106640680373200970" varName="prefix" />
+    </scopeInfo>
+    <scopeInfo nodeId="6106640680373201031" fileName="DirUtil.java" startLine="51" startPosition="51" endLine="56" endPosition="6">
+      <varInfo nodeId="6106640680373201040" varName="m" />
+    </scopeInfo>
+    <scopeInfo nodeId="6106640680373200912" fileName="DirUtil.java" startLine="74" startPosition="42" endLine="79" endPosition="7" />
+    <scopeInfo nodeId="6106640680373201062" fileName="DirUtil.java" startLine="43" startPosition="0" endLine="50" endPosition="0">
+      <varInfo nodeId="6106640680373201067" varName="path" />
+    </scopeInfo>
+    <scopeInfo nodeId="6106640680373201028" fileName="DirUtil.java" startLine="50" startPosition="0" endLine="58" endPosition="0">
+      <varInfo nodeId="6106640680373201035" varName="maybeUrl" />
+    </scopeInfo>
+    <scopeInfo nodeId="6106640680373201226" fileName="DirUtil.java" startLine="32" startPosition="62" endLine="41" endPosition="42" />
+    <scopeInfo nodeId="6106640680373201085" fileName="DirUtil.java" startLine="19" startPosition="66" endLine="29" endPosition="14">
+      <varInfo nodeId="6106640680373201123" varName="dir" />
+      <varInfo nodeId="6106640680373201136" varName="idx" />
+    </scopeInfo>
+    <scopeInfo nodeId="6106640680373201223" fileName="DirUtil.java" startLine="31" startPosition="0" endLine="43" endPosition="0">
+      <varInfo nodeId="6106640680373201230" varName="dirPaths" />
+    </scopeInfo>
+    <scopeInfo nodeId="6106640680373201082" fileName="DirUtil.java" startLine="18" startPosition="0" endLine="31" endPosition="0">
+      <varInfo nodeId="6106640680373201089" varName="path" />
+      <varInfo nodeId="6106640680373201092" varName="sortedDirs" />
+    </scopeInfo>
+    <scopeInfo nodeId="6106640680373200883" fileName="DirUtil.java" startLine="67" startPosition="58" endLine="81" endPosition="123" />
+    <scopeInfo nodeId="6106640680373200880" fileName="DirUtil.java" startLine="66" startPosition="0" endLine="83" endPosition="0">
+      <varInfo nodeId="6106640680373200885" varName="path1" />
+      <varInfo nodeId="6106640680373200888" varName="path2" />
+    </scopeInfo>
+    <unitInfo nodeId="6106640680373200863" fileName="DirUtil.java" startLine="14" startPosition="0" endLine="84" endPosition="0" unitName="jetbrains.mps.internal.make.runtime.util.DirUtil" />
+    <unitInfo nodeId="6106640680373201322" fileName="DirUtil.java" startLine="33" startPosition="54" endLine="37" endPosition="5" unitName="jetbrains.mps.internal.make.runtime.util.DirUtil$1" />
+    <unitInfo nodeId="6106640680373201332" fileName="DirUtil.java" startLine="37" startPosition="16" endLine="41" endPosition="5" unitName="jetbrains.mps.internal.make.runtime.util.DirUtil$2" />
+  </root>
   <root nodeId="9121742173815455696">
     <nodeInfo nodeId="9121742173815457660" fileName="FutureValue.java" startLine="10" startPosition="50" endLine="11" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="value" />
     <nodeInfo nodeId="9121742173815457663" fileName="FutureValue.java" startLine="13" startPosition="31" endLine="14" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
