@@ -18,24 +18,6 @@
     <classNode extendsClassName="jetbrains.mps.vcs.diff.ui.common.ButtonsPainter" />
     <classNode extendsClassName="jetbrains.mps.vcs.diff.ui.common.FoldingAreaButton" />
   </dependency>
-  <dependency className="jetbrains.mps.vcs.diff.ui.DiffButtonsPainterNew" file="DiffButtonsPainterNew.java">
-    <classNode dependClassName="java.lang.Iterable" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.util.Arrays" />
-    <classNode dependClassName="javax.swing.Icon" />
-    <classNode dependClassName="jetbrains.mps.ide.projectPane.Icons" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
-    <classNode dependClassName="jetbrains.mps.nodeEditor.EditorComponent" />
-    <classNode dependClassName="jetbrains.mps.vcs.diff.changes.ChangeType" />
-    <classNode dependClassName="jetbrains.mps.vcs.diff.changes.ModelChange" />
-    <classNode dependClassName="jetbrains.mps.vcs.diff.ui.RootDifferenceDialogNew" />
-    <classNode dependClassName="jetbrains.mps.vcs.diff.ui.common.ChangeGroup" />
-    <classNode dependClassName="jetbrains.mps.vcs.diff.ui.common.ChangeGroupLayout" />
-    <classNode dependClassName="jetbrains.mps.vcs.diff.ui.common.DiffEditor" />
-    <classNode extendsClassName="jetbrains.mps.vcs.diff.ui.common.ButtonsPainter" />
-    <classNode extendsClassName="jetbrains.mps.vcs.diff.ui.common.FoldingAreaButton" />
-  </dependency>
   <dependency className="jetbrains.mps.vcs.diff.ui.InvokeRootDifferenceAction" file="InvokeRootDifferenceAction.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.ActionManager" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnAction" />
@@ -47,78 +29,7 @@
     <classNode dependClassName="jetbrains.mps.vcs.diff.ui.ModelDifferenceDialog" />
     <classNode extendsClassName="jetbrains.mps.vcs.diff.ui.common.BaseDiffModelTreeAction" />
   </dependency>
-  <dependency className="jetbrains.mps.vcs.diff.ui.InvokeRootDifferenceActionNew" file="InvokeRootDifferenceActionNew.java">
-    <classNode dependClassName="com.intellij.openapi.actionSystem.ActionManager" />
-    <classNode dependClassName="com.intellij.openapi.actionSystem.AnAction" />
-    <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
-    <classNode dependClassName="java.lang.Object" />
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.util.Map" />
-    <classNode dependClassName="jetbrains.mps.vcs.diff.ui.ModelDifferenceDialogNew" />
-    <classNode extendsClassName="jetbrains.mps.vcs.diff.ui.common.BaseDiffModelTreeAction" />
-  </dependency>
   <dependency className="jetbrains.mps.vcs.diff.ui.ModelDifferenceDialog" file="ModelDifferenceDialog.java">
-    <classNode dependClassName="com.intellij.openapi.actionSystem.ActionManager" />
-    <classNode dependClassName="com.intellij.openapi.actionSystem.ActionPlaces" />
-    <classNode dependClassName="com.intellij.openapi.actionSystem.ActionToolbar" />
-    <classNode dependClassName="com.intellij.openapi.actionSystem.DefaultActionGroup" />
-    <classNode dependClassName="com.intellij.openapi.diff.DiffManager" />
-    <classNode dependClassName="com.intellij.openapi.diff.DiffRequest" />
-    <classNode dependClassName="com.intellij.openapi.project.Project" />
-    <classNode dependClassName="com.intellij.openapi.ui.Messages" />
-    <classNode dependClassName="com.intellij.openapi.wm.WindowManager" />
-    <classNode dependClassName="com.intellij.ui.ScrollPaneFactory" />
-    <classNode dependClassName="java.awt.BorderLayout" />
-    <classNode dependClassName="java.lang.Iterable" />
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.Runnable" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.lang.StringBuilder" />
-    <classNode dependClassName="java.util.ArrayList" />
-    <classNode dependClassName="java.util.Arrays" />
-    <classNode dependClassName="java.util.HashMap" />
-    <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="java.util.Map" />
-    <classNode dependClassName="javax.swing.JComponent" />
-    <classNode dependClassName="javax.swing.JPanel" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
-    <classNode dependClassName="jetbrains.mps.ide.dialogs.DialogDimensionsSettings" />
-    <classNode dependClassName="jetbrains.mps.ide.project.ProjectHelper" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IVisitor" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations" />
-    <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModel" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNodeId" />
-    <classNode dependClassName="jetbrains.mps.vcs.diff.ChangeSet" />
-    <classNode dependClassName="jetbrains.mps.vcs.diff.ChangeSetBuilder" />
-    <classNode dependClassName="jetbrains.mps.vcs.diff.changes.AddRootChange" />
-    <classNode dependClassName="jetbrains.mps.vcs.diff.changes.ChangeType" />
-    <classNode dependClassName="jetbrains.mps.vcs.diff.changes.DeleteRootChange" />
-    <classNode dependClassName="jetbrains.mps.vcs.diff.changes.ModelChange" />
-    <classNode dependClassName="jetbrains.mps.vcs.diff.changes.NodeCopier" />
-    <classNode dependClassName="jetbrains.mps.vcs.diff.changes.NodeGroupChange" />
-    <classNode dependClassName="jetbrains.mps.vcs.diff.ui.InvokeRootDifferenceAction" />
-    <classNode dependClassName="jetbrains.mps.vcs.diff.ui.RevertRootsAction" />
-    <classNode dependClassName="jetbrains.mps.vcs.diff.ui.RootDifferenceDialog" />
-    <classNode dependClassName="jetbrains.mps.vcs.diff.ui.common.Bounds" />
-    <classNode dependClassName="jetbrains.mps.vcs.diff.ui.common.ChangeColors" />
-    <classNode dependClassName="jetbrains.mps.vcs.diff.ui.common.DiffTemporaryModule" />
-    <classNode dependClassName="jetbrains.mps.vcs.diff.ui.common.InvokeTextDiffAction" />
-    <classNode dependClassName="jetbrains.mps.workbench.action.ActionUtils" />
-    <classNode dependClassName="jetbrains.mps.workbench.action.BaseAction" />
-    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
-    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
-    <classNode extendsClassName="jetbrains.mps.ide.dialogs.BaseDialog" />
-    <classNode extendsClassName="jetbrains.mps.vcs.diff.ui.common.DiffModelTree" />
-  </dependency>
-  <dependency className="jetbrains.mps.vcs.diff.ui.ModelDifferenceDialogNew" file="ModelDifferenceDialogNew.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.ActionManager" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.ActionPlaces" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.ActionToolbar" />
@@ -164,9 +75,9 @@
     <classNode dependClassName="jetbrains.mps.vcs.diff.changes.ModelChange" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.changes.NodeCopier" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.changes.NodeGroupChange" />
-    <classNode dependClassName="jetbrains.mps.vcs.diff.ui.InvokeRootDifferenceActionNew" />
-    <classNode dependClassName="jetbrains.mps.vcs.diff.ui.RevertRootsActionNew" />
-    <classNode dependClassName="jetbrains.mps.vcs.diff.ui.RootDifferenceDialogNew" />
+    <classNode dependClassName="jetbrains.mps.vcs.diff.ui.InvokeRootDifferenceAction" />
+    <classNode dependClassName="jetbrains.mps.vcs.diff.ui.RevertRootsAction" />
+    <classNode dependClassName="jetbrains.mps.vcs.diff.ui.RootDifferenceDialog" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.ui.common.Bounds" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.ui.common.ChangeColors" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.ui.common.DiffTemporaryModule" />
@@ -198,81 +109,7 @@
     <classNode dependClassName="jetbrains.mps.vcs.diff.ui.ModelDifferenceDialog" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
-  <dependency className="jetbrains.mps.vcs.diff.ui.RevertRootsActionNew" file="RevertRootsActionNew.java">
-    <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
-    <classNode dependClassName="com.intellij.openapi.util.IconLoader" />
-    <classNode dependClassName="java.lang.Iterable" />
-    <classNode dependClassName="java.lang.Object" />
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.util.Map" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
-    <classNode dependClassName="jetbrains.mps.ide.projectPane.Icons" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ITranslator2" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModel" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNodeId" />
-    <classNode dependClassName="jetbrains.mps.smodel.descriptor.EditableSModelDescriptor" />
-    <classNode dependClassName="jetbrains.mps.vcs.diff.changes.ModelChange" />
-    <classNode dependClassName="jetbrains.mps.vcs.diff.ui.ModelDifferenceDialogNew" />
-    <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
-  </dependency>
   <dependency className="jetbrains.mps.vcs.diff.ui.RootDifferenceDialog" file="RootDifferenceDialog.java">
-    <classNode dependClassName="com.intellij.openapi.actionSystem.ActionManager" />
-    <classNode dependClassName="com.intellij.openapi.actionSystem.ActionPlaces" />
-    <classNode dependClassName="com.intellij.openapi.actionSystem.ActionToolbar" />
-    <classNode dependClassName="com.intellij.openapi.actionSystem.DefaultActionGroup" />
-    <classNode dependClassName="com.intellij.openapi.actionSystem.Separator" />
-    <classNode dependClassName="com.intellij.openapi.diff.ex.DiffStatusBar" />
-    <classNode dependClassName="com.intellij.openapi.diff.impl.util.TextDiffType" />
-    <classNode dependClassName="com.intellij.openapi.util.Ref" />
-    <classNode dependClassName="java.awt.BorderLayout" />
-    <classNode dependClassName="java.awt.Frame" />
-    <classNode dependClassName="java.awt.GridBagConstraints" />
-    <classNode dependClassName="java.awt.GridBagLayout" />
-    <classNode dependClassName="java.awt.Insets" />
-    <classNode dependClassName="java.lang.Iterable" />
-    <classNode dependClassName="java.lang.Object" />
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.Runnable" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.util.ArrayList" />
-    <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="javax.swing.JComponent" />
-    <classNode dependClassName="javax.swing.JPanel" />
-    <classNode dependClassName="javax.swing.JSplitPane" />
-    <classNode dependClassName="javax.swing.SwingUtilities" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
-    <classNode dependClassName="jetbrains.mps.ide.dialogs.DialogDimensionsSettings" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IVisitor" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModel" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNodeId" />
-    <classNode dependClassName="jetbrains.mps.util.NameUtil" />
-    <classNode dependClassName="jetbrains.mps.vcs.diff.changes.ModelChange" />
-    <classNode dependClassName="jetbrains.mps.vcs.diff.ui.DiffButtonsPainter" />
-    <classNode dependClassName="jetbrains.mps.vcs.diff.ui.ModelDifferenceDialog" />
-    <classNode dependClassName="jetbrains.mps.vcs.diff.ui.RevertRootsAction" />
-    <classNode dependClassName="jetbrains.mps.vcs.diff.ui.common.Bounds" />
-    <classNode dependClassName="jetbrains.mps.vcs.diff.ui.common.ChangeGroupLayout" />
-    <classNode dependClassName="jetbrains.mps.vcs.diff.ui.common.ChangeGroupMessages" />
-    <classNode dependClassName="jetbrains.mps.vcs.diff.ui.common.DiffChangeGroupLayout" />
-    <classNode dependClassName="jetbrains.mps.vcs.diff.ui.common.DiffEditor" />
-    <classNode dependClassName="jetbrains.mps.vcs.diff.ui.common.DiffEditorSeparator" />
-    <classNode dependClassName="jetbrains.mps.vcs.diff.ui.common.DiffEditorsGroup" />
-    <classNode dependClassName="jetbrains.mps.vcs.diff.ui.common.DiffModelTree" />
-    <classNode dependClassName="jetbrains.mps.vcs.diff.ui.common.DiffTemporaryModule" />
-    <classNode dependClassName="jetbrains.mps.vcs.diff.ui.common.NextPreviousTraverser" />
-    <classNode dependClassName="jetbrains.mps.workbench.action.ActionUtils" />
-    <classNode dependClassName="org.jetbrains.annotations.NonNls" />
-    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
-    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
-    <classNode extendsClassName="com.intellij.openapi.actionSystem.DataProvider" />
-    <classNode extendsClassName="jetbrains.mps.ide.dialogs.BaseDialog" />
-    <classNode extendsClassName="jetbrains.mps.vcs.diff.ui.common.GoToNeighbourRootActions" />
-  </dependency>
-  <dependency className="jetbrains.mps.vcs.diff.ui.RootDifferenceDialogNew" file="RootDifferenceDialogNew.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.ActionManager" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.ActionPlaces" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.ActionToolbar" />
@@ -306,9 +143,9 @@
     <classNode dependClassName="jetbrains.mps.smodel.SNodeId" />
     <classNode dependClassName="jetbrains.mps.util.NameUtil" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.changes.ModelChange" />
-    <classNode dependClassName="jetbrains.mps.vcs.diff.ui.DiffButtonsPainterNew" />
-    <classNode dependClassName="jetbrains.mps.vcs.diff.ui.ModelDifferenceDialogNew" />
-    <classNode dependClassName="jetbrains.mps.vcs.diff.ui.RevertRootsActionNew" />
+    <classNode dependClassName="jetbrains.mps.vcs.diff.ui.DiffButtonsPainter" />
+    <classNode dependClassName="jetbrains.mps.vcs.diff.ui.ModelDifferenceDialog" />
+    <classNode dependClassName="jetbrains.mps.vcs.diff.ui.RevertRootsAction" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.ui.common.Bounds" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.ui.common.ChangeGroupLayout" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.ui.common.ChangeGroupMessages" />

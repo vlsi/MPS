@@ -119,7 +119,7 @@ public class DiskMemoryConflictResolverImpl extends DiskMemoryConflictResolver {
     }
     Project project = ProjectManager.getInstance().getOpenProjects()[0];
     final ModelDifferenceDialog dialog = new ModelDifferenceDialog(onDisk, inMemory, new SimpleDiffRequest(project, "Filesystem version (Read-Only)", "Memory Version"));
-    dialog.showDialog();
+    dialog.show();
     SwingUtilities.invokeLater(new Runnable() {
       public void run() {
         dialog.toFront();

@@ -772,7 +772,7 @@ __switch__:
                 if (node.value == null) {
                   ApplicationManager.getApplication().invokeLater(new Runnable() {
                     public void run() {
-                      new ModelDifferenceDialog(beforeModel.value, afterModel, new SimpleDiffRequest(project, beforeRevNumber, afterRevNumber)).showDialog();
+                      new ModelDifferenceDialog(beforeModel.value, afterModel, new SimpleDiffRequest(project, beforeRevNumber, afterRevNumber)).show();
                     }
                   });
                 } else {

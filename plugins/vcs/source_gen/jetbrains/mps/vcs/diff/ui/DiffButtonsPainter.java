@@ -33,7 +33,7 @@ public class DiffButtonsPainter extends ButtonsPainter {
     });
     if (isHighlightLeft()) {
       if (!(allInsert)) {
-        button = new DiffButtonsPainter.MyButton(changeGroup, getX(0), y, "Replace", MIRRORED_APPLY_ICON);
+        button = new DiffButtonsPainter.MyButton(changeGroup, getX(0), y, "Replace", DiffButtonsPainter.MIRRORED_APPLY_ICON);
       }
     } else {
       if (allInsert) {
