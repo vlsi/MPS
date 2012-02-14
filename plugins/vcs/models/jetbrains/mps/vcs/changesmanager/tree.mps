@@ -3667,9 +3667,9 @@
                           </node>
                         </node>
                       </node>
-                      <node role="condition" roleId="tpee.1206060619838" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="4036854704706402739">
-                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="rtk5.2835122602744574103" resolveInfo="isModelOrModuleConflicting" />
-                        <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="rtk5.7187779626552972735" resolveInfo="ConflictingModelsWarnings" />
+                      <node role="condition" roleId="tpee.1206060619838" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="9029966639392653655">
+                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="rtk5.9029966639392653630" resolveInfo="isModelOrModuleConflicting" />
+                        <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="rtk5.9029966639392653616" resolveInfo="ConflictsUtil" />
                         <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="4036854704706502010">
                           <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1162831315436744254" resolveInfo="modelDescriptor" />
                         </node>

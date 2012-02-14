@@ -69,7 +69,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.event.SModelRootEvent" />
     <classNode dependClassName="jetbrains.mps.smodel.persistence.def.ModelPersistence" />
     <classNode dependClassName="jetbrains.mps.smodel.persistence.def.ModelReadException" />
-    <classNode dependClassName="jetbrains.mps.vcs.ConflictingModelsWarnings" />
+    <classNode dependClassName="jetbrains.mps.vcs.ConflictsUtil" />
     <classNode dependClassName="jetbrains.mps.vcs.changesmanager.BaseVersionUtil" />
     <classNode dependClassName="jetbrains.mps.vcs.changesmanager.CurrentDifference" />
     <classNode dependClassName="jetbrains.mps.vcs.changesmanager.CurrentDifferenceRegistry" />
