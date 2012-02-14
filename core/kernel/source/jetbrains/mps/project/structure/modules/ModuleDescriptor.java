@@ -28,6 +28,8 @@ public class ModuleDescriptor {
 
   private boolean myEnableJavaStubs;
 
+  private boolean myUseTransientOutput = false;
+
   private List<jetbrains.mps.project.structure.model.ModelRoot> myModelRoots;
   private List<Dependency> myDependencies;
   private List<ModuleReference> myUsedLanguages;
@@ -142,5 +144,13 @@ public class ModuleDescriptor {
   public void setLoadException(Throwable loadException) {
     myLoadException = loadException;
 
+  }
+
+  public boolean isUseTransientOutput() {
+    return myUseTransientOutput;
+  }
+
+  public void setUseTransientOutput(boolean useTransientOutput) {
+    myUseTransientOutput = useTransientOutput;
   }
 }

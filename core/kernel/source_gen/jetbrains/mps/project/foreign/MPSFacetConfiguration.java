@@ -20,6 +20,7 @@ public class MPSFacetConfiguration {
   private String myGeneratorOutputPath;
   private String[] myModelRootPaths;
   private boolean myUseModuleSourceFolder;
+  private boolean myUseTransientOutputFolder;
   private String[] myUsedLanguages;
 
   public MPSFacetConfiguration() {
@@ -99,6 +100,14 @@ public class MPSFacetConfiguration {
 
   public void setUseModuleSourceFolder(boolean value) {
     this.myUseModuleSourceFolder = value;
+  }
+
+  public boolean getUseTransientOutputFolder() {
+    return this.myUseTransientOutputFolder;
+  }
+
+  public void setUseTransientOutputFolder(boolean value) {
+    this.myUseTransientOutputFolder = value;
   }
 
   public String[] getUsedLanguages() {

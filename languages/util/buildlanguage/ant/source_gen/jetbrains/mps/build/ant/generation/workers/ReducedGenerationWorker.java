@@ -87,11 +87,6 @@ public class ReducedGenerationWorker extends GeneratorWorker {
 
         if (outputRoot != null) {
           // override solution's output path 
-          Sequence.fromIterable(resources).select(new ISelector<IMResource, IModule>() {
-            public IModule select(IMResource r) {
-              return r.module();
-            }
-          });
           final ReducedGenerationWorker.ModuleOutputPaths paths = new ReducedGenerationWorker.ModuleOutputPaths(Sequence.fromIterable(resources).select(new ISelector<IMResource, IModule>() {
             public IModule select(IMResource r) {
               return r.module();

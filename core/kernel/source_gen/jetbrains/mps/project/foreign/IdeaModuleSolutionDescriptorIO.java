@@ -39,8 +39,11 @@ public class IdeaModuleSolutionDescriptorIO implements DescriptorIO<SolutionDesc
         final boolean result_56japk_a7a0a0e0a = true;
         result_56japk_a0a0e0a.setCompileInMPS(result_56japk_a7a0a0e0a);
 
-        final String result_56japk_a9a0a0e0a = mex.expandMacros(mpsConf.getGeneratorOutputPath());
-        result_56japk_a0a0e0a.setOutputPath(result_56japk_a9a0a0e0a);
+        final boolean result_56japk_a9a0a0e0a = mpsConf.getUseTransientOutputFolder();
+        result_56japk_a0a0e0a.setUseTransientOutput(result_56japk_a9a0a0e0a);
+
+        final String result_56japk_a11a0a0e0a = mex.expandMacros(mpsConf.getGeneratorOutputPath());
+        result_56japk_a0a0e0a.setOutputPath(result_56japk_a11a0a0e0a);
 
         for (String mrp : mpsConf.getModelRootPaths()) {
           ModelRoot mr = new ModelRoot();
