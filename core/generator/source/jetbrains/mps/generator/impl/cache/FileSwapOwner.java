@@ -23,10 +23,7 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.*;
 import org.jetbrains.annotations.NotNull;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.IOException;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -193,6 +190,8 @@ public abstract class FileSwapOwner implements TransientSwapOwner {
     @Override
     protected void writeChildren(SNode node, ModelOutputStream os) throws IOException {
       // write user objects here
+      
+      // original input node
       Object userObject = node.getUserObject(TemplateQueryContext.ORIGINAL_INPUT_NODE);
       if (userObject instanceof SNode) {
         os.writeInt(1);
@@ -202,6 +201,25 @@ public abstract class FileSwapOwner implements TransientSwapOwner {
       else {
         os.writeInt(0);
       }
+      
+      // string user objects
+      Map<Object, Object> userObjects = node.getUserObjects();
+      ArrayList<String> stringUserObjects = new ArrayList<String>();
+      for (Object key : userObjects.keySet()) {
+        if (key instanceof String) {
+          Object value = userObjects.get(key);
+          if (value instanceof String) {
+            stringUserObjects.add((String) key);
+            stringUserObjects.add((String) value);
+          }
+        }
+      }
+      
+      os.writeInt(stringUserObjects.size());
+      for (String stringUserObject : stringUserObjects) {
+        os.writeString(stringUserObject);        
+      }
+      
       super.writeChildren(node, os);
     }
   }
@@ -237,7 +255,29 @@ public abstract class FileSwapOwner implements TransientSwapOwner {
           throw new IOException("couldn't load user object");
         }
       }
+      
+      int stringObjectCount = is.readInt();
+      for (int i = 0; i < stringObjectCount; i+= 2) {
+        String key = is.readString();
+        String value = is.readString();
+        node.putUserObject(key, value);
+      }
+
       super.readChildren(model, is, node);
     }
+  }
+
+  // method created for testing
+  public static SNode writeAndReadNode(SNode node) throws IOException {
+    FileSwapOwner.NodesAndUserObjectsWriter writer = new FileSwapOwner.NodesAndUserObjectsWriter(node.getModel().getSModelReference());
+    ByteArrayOutputStream os = new ByteArrayOutputStream();
+    ModelOutputStream mos = new ModelOutputStream(os);
+    writer.writeNode(node, mos);
+    mos.close();
+
+    FileSwapOwner.NodesAndUserObjectsReader reader = new FileSwapOwner.NodesAndUserObjectsReader(node.getModel().getSModelReference());
+    ByteArrayInputStream is = new ByteArrayInputStream(os.toByteArray());
+
+    return reader.readNode(node.getModel(), new ModelInputStream(is));
   }
 }

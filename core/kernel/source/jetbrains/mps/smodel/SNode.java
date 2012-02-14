@@ -1741,6 +1741,17 @@ public final class SNode {
     myUserObjects = null;
   }
 
+  public Map<Object, Object> getUserObjects() {
+    Map<Object, Object> userObjects = new LinkedHashMap<Object, Object>();
+    if (myUserObjects == null) {
+      return userObjects;
+    }
+    for (int i = 0; i < myUserObjects.length; i += 2) {
+      userObjects.put(myUserObjects[i], myUserObjects[i + 1]);
+    }
+    return userObjects;
+  }
+
   //------------concept properties-------------
 
   public boolean hasConceptProperty(String propertyName) {
