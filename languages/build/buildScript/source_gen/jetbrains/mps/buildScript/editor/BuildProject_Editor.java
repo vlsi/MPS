@@ -14,6 +14,7 @@ import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
 import jetbrains.mps.nodeEditor.cells.ModelAccessor;
 import jetbrains.mps.buildScript.behavior.BuildProject_Behavior;
+import jetbrains.mps.buildScript.util.Context;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.nodeEditor.CellActionType;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_Empty;
@@ -252,7 +253,7 @@ public class BuildProject_Editor extends DefaultNodeEditor {
   private EditorCell createReadOnlyModelAccessor_vny568_b0a(final EditorContext editorContext, final SNode node) {
     EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
       public String getText() {
-        return BuildProject_Behavior.call_getBasePath_4959435991187146924(node);
+        return BuildProject_Behavior.call_getBasePath_4959435991187146924(node, Context.defaultContext());
       }
 
       public void setText(String s) {

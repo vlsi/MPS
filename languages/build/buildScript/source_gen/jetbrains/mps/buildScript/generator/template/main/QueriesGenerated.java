@@ -356,7 +356,7 @@ public class QueriesGenerated {
 
   public static void mappingScript_CodeBlock_809559803149973643(final IOperationContext operationContext, final MappingScriptContext _context) {
     for (SNode buildProject : ListSequence.fromList(SModelOperations.getRoots(_context.getModel(), "jetbrains.mps.buildScript.structure.BuildProject"))) {
-      buildProject.putUserObject(GenerationUtil.SCRIPTS_DIR_PROPERTY, BuildProject_Behavior.call_getScriptsPath_4796668409958419284(buildProject));
+      buildProject.putUserObject(GenerationUtil.SCRIPTS_DIR_PROPERTY, BuildProject_Behavior.call_getScriptsPath_4796668409958419284(buildProject, Context.defaulContext(_context)));
     }
   }
 

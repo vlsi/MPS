@@ -9,6 +9,8 @@ import jetbrains.mps.smodel.SNodeId;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.project.IModule;
 import jetbrains.mps.buildScript.behavior.BuildProject_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.util.List;
@@ -43,8 +45,13 @@ public class Context {
     return SNodeOperations.getAncestor(node, "jetbrains.mps.buildScript.structure.BuildProject", true, false);
   }
 
+  @NotNull
+  public IModule getModule(SNode node) {
+    return node.getModel().getModelDescriptor().getModule();
+  }
+
   public String getBasePath_Local(SNode node) {
-    return BuildProject_Behavior.call_getBasePath_4959435991187146924(this.getBuildProject(node));
+    return BuildProject_Behavior.call_getBasePath_4959435991187146924(this.getBuildProject(node), this);
   }
 
   public String getTmpDirMacroName(SNode node) {
@@ -65,8 +72,8 @@ public class Context {
 
   public List<SNode> getExportedMacro(SNode node) {
     List<SNode> exportedMacro = new ArrayList<SNode>();
-    ListSequence.fromList(exportedMacro).addElement(new Context.QuotationClass_lmsybr_a0a0b0i().createNode(getTmpPath_WithMacro(node), getTmpDirMacroName(node)));
-    ListSequence.fromList(exportedMacro).addElement(new Context.QuotationClass_lmsybr_a0a0c0i().createNode(getDeployPath_WithMacro(node), getDeployDirMacroName(node)));
+    ListSequence.fromList(exportedMacro).addElement(new Context.QuotationClass_lmsybr_a0a0b0j().createNode(getTmpPath_WithMacro(node), getTmpDirMacroName(node)));
+    ListSequence.fromList(exportedMacro).addElement(new Context.QuotationClass_lmsybr_a0a0c0j().createNode(getDeployPath_WithMacro(node), getDeployDirMacroName(node)));
     return exportedMacro;
   }
 
@@ -92,17 +99,22 @@ public class Context {
     return new Context();
   }
 
-  public static Context defaulContext(TemplateQueryContext gencontext) {
+  public static Context defaulContext(final TemplateQueryContext gencontext) {
     Context context = ((Context) gencontext.getSessionObject(Context.class));
     if (context == null) {
-      context = defaultContext();
+      context = new Context() {
+        @Override
+        public IModule getModule(SNode node) {
+          return gencontext.getOriginalInputModel().getModelDescriptor().getModule();
+        }
+      };
       gencontext.putSessionObject(Context.class, context);
     }
     return context;
   }
 
-  public static class QuotationClass_lmsybr_a0a0b0i {
-    public QuotationClass_lmsybr_a0a0b0i() {
+  public static class QuotationClass_lmsybr_a0a0b0j {
+    public QuotationClass_lmsybr_a0a0b0j() {
     }
 
     public SNode createNode(Object parameter_3, Object parameter_4) {
@@ -120,8 +132,8 @@ public class Context {
     }
   }
 
-  public static class QuotationClass_lmsybr_a0a0c0i {
-    public QuotationClass_lmsybr_a0a0c0i() {
+  public static class QuotationClass_lmsybr_a0a0c0j {
+    public QuotationClass_lmsybr_a0a0c0j() {
     }
 
     public SNode createNode(Object parameter_3, Object parameter_4) {
