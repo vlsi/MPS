@@ -19,6 +19,8 @@ import com.intellij.ide.FileIconProvider;
 import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vfs.VirtualFile;
+import com.intellij.ui.DefaultIconDeferrer;
+import com.intellij.ui.IconDeferrer;
 import jetbrains.mps.ide.editor.MPSEditorUtil;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.smodel.ModelAccess;
@@ -53,11 +55,13 @@ public class NodeFileIconProvider implements FileIconProvider, ApplicationCompon
       final MPSNodeVirtualFile nodeFile = (MPSNodeVirtualFile) file;
       return ModelAccess.instance().runReadAction(new Computable<Icon>() {
         public Icon compute() {
-          SNode node = MPSEditorUtil.getCurrentEditedNode(project, nodeFile);
-          if (node != null) {
-            return IconManager.getIconWithoutAdditionalPart(node);
+          if (IconDeferrer.getInstance() instanceof DefaultIconDeferrer) {
+            SNode node = MPSEditorUtil.getCurrentEditedNode(project, nodeFile);
+            if (node != null) {
+              return IconManager.getIconWithoutAdditionalPart(node);
+            }
           }
-          node = nodeFile.getNode();
+          SNode node = nodeFile.getNode();
           if (node != null) {
             return IconManager.getIconWithoutAdditionalPart(node);
           }

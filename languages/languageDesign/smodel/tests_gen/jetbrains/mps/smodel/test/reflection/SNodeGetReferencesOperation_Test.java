@@ -197,6 +197,14 @@ public class SNodeGetReferencesOperation_Test extends BaseTransformationTest {
       this.addNodeById("2906110183022219843");
       this.addNodeById("2906110183022354865");
       this.addNodeById("2906110183022432276");
+      SLinkOperations.getTarget(SNodeOperations.cast(this.getNodeById("2906110183022219844"), "jetbrains.mps.lang.smodelTests.structure.ReferenceContainer"), "root", false);
+      SLinkOperations.getTarget(SNodeOperations.cast(this.getNodeById("2906110183022219844"), "jetbrains.mps.lang.smodelTests.structure.ReferenceContainer"), "leftChild", false);
+      SLinkOperations.getTarget(SNodeOperations.cast(this.getNodeById("2906110183022219844"), "jetbrains.mps.lang.smodelTests.structure.ReferenceContainer"), "rightChild", false);
+
+      SLinkOperations.getTarget(SNodeOperations.cast(this.getNodeById("2906110183022354866"), "jetbrains.mps.lang.smodelTests.structure.ReferenceContainerSubConcept"), "root", false);
+      SLinkOperations.getTarget(SNodeOperations.cast(this.getNodeById("2906110183022354866"), "jetbrains.mps.lang.smodelTests.structure.ReferenceContainerSubConcept"), "leftChild", false);
+      SLinkOperations.getTarget(SNodeOperations.cast(this.getNodeById("2906110183022354866"), "jetbrains.mps.lang.smodelTests.structure.ReferenceContainerSubConcept"), "rightChild", false);
+
       int initialSize = Sequence.fromIterable(SNodeOperations.getReferences(SNodeOperations.cast(this.getNodeById("2906110183022432277"), "jetbrains.mps.lang.smodelTests.structure.ReferenceContainer"))).count();
       Assert.assertTrue(Sequence.fromIterable(SNodeOperations.getReferences(SNodeOperations.cast(this.getNodeById("2906110183022432277"), "jetbrains.mps.lang.smodelTests.structure.ReferenceContainer"))).where(new IWhereFilter<SReference>() {
         public boolean accept(SReference it) {

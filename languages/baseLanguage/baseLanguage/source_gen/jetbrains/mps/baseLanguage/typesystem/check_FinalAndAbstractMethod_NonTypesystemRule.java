@@ -22,7 +22,7 @@ public class check_FinalAndAbstractMethod_NonTypesystemRule extends AbstractNonT
     if (SPropertyOperations.getBoolean(instanceMethodDeclaration, "isAbstract") && SPropertyOperations.getBoolean(instanceMethodDeclaration, "isFinal")) {
       {
         MessageTarget errorTarget = new NodeMessageTarget();
-        errorTarget = new PropertyMessageTarget("isFinal");
+        errorTarget = new PropertyMessageTarget("name");
         IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(instanceMethodDeclaration, "Illegal combination of modifiers 'abstract' and 'final'", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "7868761255934417558", null, errorTarget);
       }
     }

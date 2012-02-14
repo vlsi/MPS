@@ -60,7 +60,7 @@ public class MakeTests extends DataMPSFixtureTestCase {
         copyResource(null, "blProject.msd", "/tests/blProject/blProject.msd");
         final IFile model = copyResource("models", "main.mps", "/tests/blProject/models/main.mps");
         final IFile source = model.getParent();
-        configuration.getState().setModelRootPaths(new String[]{model.getParent().getPath()});
+        configuration.getState().setModelRootPaths(model.getParent().getPath());
 
         final ModuleRootManager mrm = ModuleRootManager.getInstance(configuration.getFacet().getModule());
         ApplicationManager.getApplication().runWriteAction(new Runnable() {

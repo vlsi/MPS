@@ -54,6 +54,12 @@ import java.util.HashSet;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import com.sun.jdi.InvalidStackFrameException;
 import java.util.ArrayList;
+import com.intellij.openapi.extensions.PluginId;
+import com.intellij.ide.plugins.PluginManager;
+import jetbrains.mps.debug.api.Debuggers;
+import jetbrains.mps.debugger.java.JavaDebugger;
+import java.io.File;
+import com.intellij.ide.plugins.IdeaPluginDescriptorImpl;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
@@ -75,7 +81,7 @@ public class LowLevelEvaluationModel extends AbstractEvaluationModel {
 
     ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
-        ListSequence.fromList(myEvaluationContext.getClassPath()).union(ListSequence.fromList(((List<String>) CommonPaths.getJDKPath()))).visitAll(new IVisitor<String>() {
+        ListSequence.fromList(myEvaluationContext.getClassPath()).union(ListSequence.fromList(((List<String>) CommonPaths.getJDKPath()))).union(ListSequence.fromList(getDebuggerStubPath())).visitAll(new IVisitor<String>() {
           public void visit(String it) {
             myAuxModule.addStubPath(it);
           }
@@ -357,6 +363,21 @@ public class LowLevelEvaluationModel extends AbstractEvaluationModel {
     };
 
     return evaluationModel;
+  }
+
+  public static List<String> getDebuggerStubPath() {
+    PluginId apiPlugin = PluginManager.getPluginByClassName(Debuggers.class.getName());
+    PluginId javaPlugin = PluginManager.getPluginByClassName(JavaDebugger.class.getName());
+
+    List<File> paths = ListSequence.fromList(new ArrayList<File>());
+    ListSequence.fromList(paths).addSequence(ListSequence.fromList(((IdeaPluginDescriptorImpl) PluginManager.getPlugin(apiPlugin)).getClassPath()));
+    ListSequence.fromList(paths).addSequence(ListSequence.fromList(((IdeaPluginDescriptorImpl) PluginManager.getPlugin(javaPlugin)).getClassPath()));
+
+    return ListSequence.fromList(paths).select(new ISelector<File, String>() {
+      public String select(File it) {
+        return it.getAbsolutePath();
+      }
+    }).toListSequence();
   }
 
   private static boolean neq_qkk2f2_a0b0a0h(Object a, Object b) {

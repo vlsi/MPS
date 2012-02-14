@@ -24,6 +24,8 @@ import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
+import jetbrains.mps.util.Computable;
+import jetbrains.mps.workbench.ModelUtil;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -114,7 +116,14 @@ public class MPSNodeVirtualFile extends VirtualFile {
 
   @Nullable
   public VirtualFile getParent() {
-    return null;
+    return ModelAccess.instance().runReadAction(new Computable<VirtualFile>() {
+      public VirtualFile compute() {
+        if (myNode == null) return null;
+        SNode node = getNode();
+        if (node == null) return null;
+        return ModelUtil.getFileByModel(node.getModel());
+      }
+    });
   }
 
   public VirtualFile[] getChildren() {

@@ -348,8 +348,8 @@
     <nodeInfo nodeId="1156564534683228178" fileName="MakeFromChangesView_ActionGroup.java" startLine="14" startPosition="37" endLine="15" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1156564534683228178" fileName="MakeFromChangesView_ActionGroup.java" startLine="15" startPosition="30" endLine="16" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5964066876626835162" fileName="MakeFromChangesView_ActionGroup.java" startLine="17" startPosition="9" endLine="18" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1156564534683228183" fileName="MakeFromChangesView_ActionGroup.java" startLine="18" startPosition="58" endLine="19" endPosition="163" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3903119074522679156" fileName="MakeFromChangesView_ActionGroup.java" startLine="19" startPosition="163" endLine="20" endPosition="161" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1156564534683228183" fileName="MakeFromChangesView_ActionGroup.java" startLine="18" startPosition="58" endLine="19" endPosition="167" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3903119074522679156" fileName="MakeFromChangesView_ActionGroup.java" startLine="19" startPosition="167" endLine="20" endPosition="165" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1156564534683228178" fileName="MakeFromChangesView_ActionGroup.java" startLine="21" startPosition="27" endLine="22" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1156564534683228178" fileName="MakeFromChangesView_ActionGroup.java" startLine="16" startPosition="25" endLine="23" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
     <nodeInfo nodeId="1156564534683228178" fileName="MakeFromChangesView_ActionGroup.java" startLine="12" startPosition="0" endLine="24" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MakeFromChangesView_ActionGroup#()V" />
@@ -357,7 +357,7 @@
       <varInfo nodeId="1156564534683228178" varName="t" />
     </scopeInfo>
     <scopeInfo nodeId="1156564534683228178" fileName="MakeFromChangesView_ActionGroup.java" startLine="21" startPosition="27" endLine="22" endPosition="39" />
-    <scopeInfo nodeId="1156564534683228178" fileName="MakeFromChangesView_ActionGroup.java" startLine="17" startPosition="9" endLine="20" endPosition="161" />
+    <scopeInfo nodeId="1156564534683228178" fileName="MakeFromChangesView_ActionGroup.java" startLine="17" startPosition="9" endLine="20" endPosition="165" />
     <scopeInfo nodeId="1156564534683228178" fileName="MakeFromChangesView_ActionGroup.java" startLine="13" startPosition="44" endLine="23" endPosition="5" />
     <scopeInfo nodeId="1156564534683228178" fileName="MakeFromChangesView_ActionGroup.java" startLine="12" startPosition="0" endLine="24" endPosition="3" />
     <unitInfo nodeId="1156564534683228178" fileName="MakeFromChangesView_ActionGroup.java" startLine="9" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.vcs.plugin.MakeFromChangesView_ActionGroup" />
@@ -467,8 +467,8 @@
     <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="12" startPosition="34" endLine="12" endPosition="35" conceptFqName="jetbrains.mps.gtext.structure.GText" />
     <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="12" startPosition="35" endLine="12" endPosition="35" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="12" startPosition="35" endLine="12" endPosition="35" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="12" startPosition="35" endLine="12" endPosition="37" conceptFqName="jetbrains.mps.gtext.structure.GText" />
     <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="12" startPosition="35" endLine="12" endPosition="35" conceptFqName="jetbrains.mps.gtext.structure.GText" />
+    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="12" startPosition="35" endLine="12" endPosition="37" conceptFqName="jetbrains.mps.gtext.structure.GText" />
     <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="12" startPosition="37" endLine="12" endPosition="49" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="12" startPosition="37" endLine="12" endPosition="49" conceptFqName="jetbrains.mps.gtext.structure.GText" />
     <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="12" startPosition="49" endLine="12" endPosition="50" conceptFqName="jetbrains.mps.gtext.structure.GText" />

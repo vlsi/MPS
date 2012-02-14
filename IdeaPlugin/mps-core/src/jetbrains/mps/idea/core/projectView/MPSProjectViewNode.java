@@ -20,6 +20,7 @@ import com.intellij.ide.projectView.PresentationData;
 import com.intellij.ide.projectView.ProjectViewNode;
 import com.intellij.ide.projectView.ViewSettings;
 import com.intellij.ide.util.treeView.AbstractTreeNode;
+import com.intellij.ide.util.treeView.ValidateableNode;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.ide.editor.MPSEditorOpener;
@@ -40,38 +41,37 @@ import java.util.Collections;
 /**
  * evgeny, 11/9/11
  */
-public class MPSProjectViewNode extends ProjectViewNode<String> {
+public class MPSProjectViewNode extends ProjectViewNode<SNodePointer> implements ValidateableNode {
 
     private Icon icon;
-    private SNodePointer nodePointer;
 
     /**
      * Creates an instance of the project view node.
      *
      * @param project      the project containing the node.
-     * @param value        the object represented by the project view node
+     * @param name         the object represented by the project view node
      * @param icon         ? part of value
      * @param nodePointer  ? part of value
      * @param viewSettings the settings of the project view.
      */
-    public MPSProjectViewNode(Project project, String value, Icon icon, SNodePointer nodePointer, ViewSettings viewSettings) {
-        super(project, value, viewSettings);
+    public MPSProjectViewNode(Project project, String name, Icon icon, SNodePointer nodePointer, ViewSettings viewSettings) {
+        super(project, nodePointer, viewSettings);
+        myName = name;
         this.icon = icon;                       // in update() ?
-        this.nodePointer = nodePointer;         // store node pointer as value?
     }
 
     @Override
     public boolean contains(@NotNull VirtualFile file) {
         if (file instanceof MPSNodeVirtualFile) {
             SNodePointer ptr = ((MPSNodeVirtualFile) file).getSNodePointer();
-            return ptr.equals(nodePointer);
+            return ptr.equals(getValue());
         }
         return false;
     }
 
     @Override
     public VirtualFile getVirtualFile() {
-        return MPSNodesVirtualFileSystem.getInstance().getFileFor(nodePointer);
+        return MPSNodesVirtualFileSystem.getInstance().getFileFor(getValue());
     }
 
     @NotNull
@@ -82,8 +82,7 @@ public class MPSProjectViewNode extends ProjectViewNode<String> {
 
     @Override
     protected void update(PresentationData presentation) {
-        String value = getValue();
-        presentation.setPresentableText(value);
+        presentation.setPresentableText(myName);
         presentation.setIcons(icon);
     }
 
@@ -92,7 +91,7 @@ public class MPSProjectViewNode extends ProjectViewNode<String> {
         ModelAccess.instance().runReadInEDT(new Runnable() {
             @Override
             public void run() {
-                SNode root = nodePointer.getNode();
+                SNode root = getValue().getNode();
                 if (root == null) return;
 
                 ProjectOperationContext context = new ProjectOperationContext(ProjectHelper.toMPSProject(getProject()));
@@ -109,8 +108,13 @@ public class MPSProjectViewNode extends ProjectViewNode<String> {
         return ModelAccess.instance().runReadAction(new Computable<Boolean>() {
             @Override
             public Boolean compute() {
-                return nodePointer.getNode() != null;
+                return getValue().getNode() != null;
             }
         });
+    }
+
+    @Override
+    public boolean isValid() {
+        return getValue().getNode() != null;
     }
 }

@@ -145,6 +145,7 @@ public abstract class AbstractModule implements IModule {
     if (descriptor.getUsedLanguages().contains(langRef)) return;
 
     descriptor.getUsedLanguages().add(langRef);
+    invalidateCaches();
 //    setModuleDescriptor(descriptor, true);// removed as it follows to models disposing even after addChild()
     //save();
   }
@@ -154,6 +155,7 @@ public abstract class AbstractModule implements IModule {
     if (descriptor.getUsedDevkits().contains(devkitRef)) return;
 
     descriptor.getUsedDevkits().add(devkitRef);
+    invalidateCaches();
 //    setModuleDescriptor(descriptor, true);
     save();
   }

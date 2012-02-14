@@ -44,10 +44,10 @@
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.generator.generationTypes.IGenerationHandler" />
     <classNode dependClassName="jetbrains.mps.ide.generator.OutputViewGenerationHandler" />
+    <classNode dependClassName="jetbrains.mps.ide.make.TextPreviewUtil" />
     <classNode dependClassName="jetbrains.mps.make.MakeSession" />
     <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelDescriptor" />
-    <classNode dependClassName="jetbrains.mps.workbench.make.TextPreviewUtil" />
     <classNode extendsClassName="jetbrains.mps.vcs.actions.GenerateFromChangeListAction" />
   </dependency>
   <dependency className="jetbrains.mps.vcs.actions.ShowInFileView" file="ShowInFileView.java">

@@ -79,7 +79,7 @@ public class MPSConfigurationBean {
         return result.toArray(new String[result.size()]);
     }
 
-    public void setModelRootPaths(String[] paths) {
+    public void setModelRootPaths(String... paths) {
         myDescriptor.getModelRoots().clear();
         for (String path : paths) {
             ModelRoot modelRoot = new ModelRoot();

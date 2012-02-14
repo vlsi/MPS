@@ -16,15 +16,13 @@
 package jetbrains.mps.ide.editorTabs.tabfactory.tabs;
 
 import com.intellij.openapi.actionSystem.*;
-import jetbrains.mps.ide.mps.plugin.CreateAspect_Action;
+import jetbrains.mps.ide.actions.CreateAspect_Action;
 import jetbrains.mps.ide.editorTabs.EditorTabDescriptor;
 import jetbrains.mps.ide.editorTabs.tabfactory.NodeChangeCallback;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNodePointer;
 
-import javax.swing.Icon;
-import javax.swing.ImageIcon;
-import javax.swing.JPopupMenu;
+import javax.swing.*;
 import java.util.Iterator;
 import java.util.Set;
 
@@ -66,7 +64,7 @@ public abstract class AddAspectAction extends AnAction {
     while (it.hasNext()) {
       DefaultActionGroup g = it.next();
       result.add(g);
-      if (it.hasNext() && !g.isPopup()){
+      if (it.hasNext() && !g.isPopup()) {
         result.add(new Separator());
       }
     }

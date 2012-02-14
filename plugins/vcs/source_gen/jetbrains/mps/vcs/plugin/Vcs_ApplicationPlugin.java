@@ -12,7 +12,7 @@ import jetbrains.mps.ide.actions.CommonModuleActions_ActionGroup;
 import jetbrains.mps.ide.actions.EditorLeftPanelMenu_ActionGroup;
 
 public class Vcs_ApplicationPlugin extends BaseApplicationPlugin {
-  private PluginId myId = PluginId.getId("jetbrains.mps.vcs");
+  private PluginId myId = PluginId.getId("jetbrains.mps.ide.vcs");
 
   public Vcs_ApplicationPlugin() {
   }

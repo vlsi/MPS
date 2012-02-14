@@ -16,15 +16,19 @@
 
 package jetbrains.mps.idea.core.projectView;
 
+import com.intellij.ide.projectView.SelectableTreeStructureProvider;
 import com.intellij.ide.projectView.TreeStructureProvider;
 import com.intellij.ide.projectView.ViewSettings;
 import com.intellij.ide.projectView.impl.nodes.PsiFileNode;
 import com.intellij.ide.util.treeView.AbstractTreeNode;
+import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import com.intellij.openapi.project.DumbAware;
 import com.intellij.openapi.vfs.VirtualFile;
+import com.intellij.psi.PsiElement;
 import jetbrains.mps.fileTypes.MPSFileTypeFactory;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.util.misc.hash.HashSet;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 
@@ -32,19 +36,16 @@ import javax.swing.*;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
+import java.util.Set;
 
 /**
  * evgeny, 11/9/11
  */
-public class MPSTreeStructureProvider implements TreeStructureProvider, DumbAware {
+public class MPSTreeStructureProvider implements SelectableTreeStructureProvider, DumbAware {
     @Override
     public Collection<AbstractTreeNode> modify(final AbstractTreeNode parent, final Collection<AbstractTreeNode> children, final ViewSettings settings) {
-        if (parent instanceof PsiFileNode) {
-            PsiFileNode fileNode = (PsiFileNode) parent;
-            VirtualFile virtualFile = fileNode.getVirtualFile();
-            if (virtualFile == null || virtualFile.getFileType() != MPSFileTypeFactory.MODEL_FILE_TYPE) return children;
-
-            final IFile modelFile = FileSystem.getInstance().getFileByPath(virtualFile.getPath());
+        final IFile modelFile = getModelFile(parent);
+        if (modelFile != null && parent instanceof PsiFileNode) {
             final List<AbstractTreeNode> newChildren = new ArrayList<AbstractTreeNode>(children);
             ModelAccess.instance().runReadAction(new Runnable() {
                 @Override
@@ -61,6 +62,9 @@ public class MPSTreeStructureProvider implements TreeStructureProvider, DumbAwar
                             } catch (Exception ex) {
                                 name = "exc: " + ex.getMessage();
                             }
+                            if (name == null) {
+                                name = "unnamed";
+                            }
                             Icon rootIcon = IconManager.getIconFor(root);
                             newChildren.add(new MPSProjectViewNode(parent.getProject(), name, rootIcon, new SNodePointer(root), settings));
                         }
@@ -74,6 +78,54 @@ public class MPSTreeStructureProvider implements TreeStructureProvider, DumbAwar
 
     @Override
     public Object getData(Collection<AbstractTreeNode> selected, String dataName) {
+        if (selected == null) {
+            return null;
+        }
+        if (MPSDataKeys.MODEL_FILES.is(dataName)) {
+            return getModelFiles(selected);
+        }
+        if (PlatformDataKeys.DELETE_ELEMENT_PROVIDER.is(dataName)) {
+            List<MPSProjectViewNode> projectViewNodes = new ArrayList<MPSProjectViewNode>();
+            for (AbstractTreeNode treeNode : selected) {
+                if (treeNode instanceof MPSProjectViewNode) {
+                    projectViewNodes.add((MPSProjectViewNode) treeNode);
+                }
+            }
+            if (!projectViewNodes.isEmpty()) {
+                return new MPSProjectViewNodeDeleteProvider(projectViewNodes);
+            }
+        }
         return null;
     }
+
+    private Set<IFile> getModelFiles(Collection<AbstractTreeNode> selected) {
+        Set<IFile> modelFiles = new HashSet<IFile>();
+        for (AbstractTreeNode nextTreeNode : selected) {
+            IFile nextModelFile = getModelFile(nextTreeNode);
+            if (nextModelFile != null) {
+                modelFiles.add(nextModelFile);
+            }
+        }
+        return modelFiles;
+    }
+
+    private IFile getModelFile(AbstractTreeNode treeNode) {
+        if (treeNode instanceof MPSProjectViewNode) {
+            return getModelFile(treeNode.getParent());
+        }
+        if (treeNode instanceof PsiFileNode) {
+            PsiFileNode fileNode = (PsiFileNode) treeNode;
+            VirtualFile virtualFile = fileNode.getVirtualFile();
+            if (virtualFile == null || virtualFile.getFileType() != MPSFileTypeFactory.MODEL_FILE_TYPE) {
+                return null;
+            }
+            return FileSystem.getInstance().getFileByPath(virtualFile.getPath());
+        }
+        return null;
+    }
+
+  @Override
+  public PsiElement getTopLevelElement(PsiElement element) {
+    return element;
+  }
 }
