@@ -19,7 +19,7 @@ import jetbrains.mps.BaseMPSTest;
 import jetbrains.mps.TestMain;
 import jetbrains.mps.TestMain.ProjectRunnable;
 import jetbrains.mps.ide.findusages.model.SearchResults;
-import jetbrains.mps.ide.migration.persistence.TestOutputFilter;
+import jetbrains.mps.testbench.TestOutputFilter;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.project.Project;

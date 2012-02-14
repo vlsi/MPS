@@ -26,6 +26,7 @@ import jetbrains.mps.smodel.loading.ModelLoadResult;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.smodel.persistence.def.ModelReadException;
+import jetbrains.mps.testbench.TestOutputFilter;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.PathManager;
 import jetbrains.mps.vfs.FileSystem;
