@@ -19,6 +19,7 @@
   <name>MPS BaseLanguage support</name>
   <category>Custom Languages</category>
   <version>1.0.0</version>
+  <depends>jetbrains.mps.core</depends>
 
   <application-components>
   </application-components>
