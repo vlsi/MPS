@@ -31,6 +31,7 @@ import com.intellij.openapi.actionSystem.ActionToolbar;
 import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.actionSystem.ActionPlaces;
 import com.intellij.ui.ScrollPaneFactory;
+import jetbrains.mps.vcs.diff.ui.common.SimpleDiffRequest;
 import javax.swing.JComponent;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.NotNull;
@@ -85,6 +86,10 @@ public class ModelDifferenceDialog extends BaseDialog {
     toolbar.updateActionsImmediately();
     myPanel.add(toolbar.getComponent(), BorderLayout.NORTH);
     myPanel.add(ScrollPaneFactory.createScrollPane(myTree), BorderLayout.CENTER);
+  }
+
+  public ModelDifferenceDialog(SModel oldModel, SModel newModel, Project project, String oldTitle, String newTitle) {
+    this(oldModel, newModel, new SimpleDiffRequest(project, new SModel[]{oldModel, newModel}, new String[]{oldTitle, newTitle}));
   }
 
   private void fillRootToChange() {

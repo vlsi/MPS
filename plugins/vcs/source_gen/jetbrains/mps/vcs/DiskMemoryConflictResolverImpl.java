@@ -21,7 +21,6 @@ import jetbrains.mps.smodel.persistence.def.ModelReadException;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.project.ProjectManager;
 import jetbrains.mps.vcs.diff.ui.ModelDifferenceDialog;
-import jetbrains.mps.vcs.diff.ui.common.SimpleDiffRequest;
 import javax.swing.SwingUtilities;
 
 public class DiskMemoryConflictResolverImpl extends DiskMemoryConflictResolver {
@@ -118,7 +117,7 @@ public class DiskMemoryConflictResolverImpl extends DiskMemoryConflictResolver {
       }
     }
     Project project = ProjectManager.getInstance().getOpenProjects()[0];
-    final ModelDifferenceDialog dialog = new ModelDifferenceDialog(onDisk, inMemory, new SimpleDiffRequest(project, "Filesystem version (Read-Only)", "Memory Version"));
+    final ModelDifferenceDialog dialog = new ModelDifferenceDialog(onDisk, inMemory, project, "Filesystem version (Read-Only)", "Memory Version");
     dialog.showDialog();
     SwingUtilities.invokeLater(new Runnable() {
       public void run() {

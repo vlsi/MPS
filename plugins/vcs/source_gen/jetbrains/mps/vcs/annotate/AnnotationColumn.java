@@ -99,7 +99,6 @@ import java.io.File;
 import com.intellij.openapi.vcs.changes.ContentRevision;
 import com.intellij.openapi.application.ApplicationManager;
 import jetbrains.mps.vcs.diff.ui.ModelDifferenceDialog;
-import jetbrains.mps.vcs.diff.ui.common.SimpleDiffRequest;
 import com.intellij.openapi.vcs.VcsException;
 
 public class AnnotationColumn extends AbstractLeftColumn {
@@ -772,7 +771,7 @@ __switch__:
                 if (node.value == null) {
                   ApplicationManager.getApplication().invokeLater(new Runnable() {
                     public void run() {
-                      new ModelDifferenceDialog(beforeModel.value, afterModel, new SimpleDiffRequest(project, beforeRevNumber, afterRevNumber)).showDialog();
+                      new ModelDifferenceDialog(beforeModel.value, afterModel, project, beforeRevNumber, afterRevNumber).showDialog();
                     }
                   });
                 } else {
@@ -780,7 +779,7 @@ __switch__:
                     public void run() {
                       ModelDifferenceDialog modelDialog;
                       SNodeId id;
-                      modelDialog = new ModelDifferenceDialog(beforeModel.value, afterModel, new SimpleDiffRequest(project, beforeRevNumber, afterRevNumber));
+                      modelDialog = new ModelDifferenceDialog(beforeModel.value, afterModel, project, beforeRevNumber, afterRevNumber);
                       id = node.value.getSNodeId();
                       modelDialog.invokeRootDifference(id);
                     }
