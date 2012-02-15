@@ -224,6 +224,11 @@
         <link role="macro" roleId="3ior.4903714810883702018" targetNodeId="4903714810883946575" resolveInfo="build.number" />
       </node>
     </node>
+    <node role="scriptsDir" roleId="3ior.4796668409958418110" type="3ior.BuildSourceProjectRelativePath" typeId="3ior.5481553824944787378" id="5178006408628547352">
+      <node role="compositePart" roleId="3ior.7321017245477039051" type="3ior.CompositePath" typeId="3ior.8618885170173601777" id="5178006408628547353">
+        <property name="head" nameId="3ior.8618885170173601779" value="buildCore" />
+      </node>
+    </node>
   </root>
   <root id="4993211115183416028">
     <node role="layout" roleId="3ior.5617550519002745372" type="3ior.BuildLayout" typeId="3ior.5617550519002745364" id="4993211115183416029">
@@ -242,6 +247,11 @@
     </node>
     <node role="dependencies" roleId="3ior.5617550519002745381" type="3ior.BuildProjectDependency" typeId="3ior.4993211115183325728" id="4993211115183420535">
       <link role="script" roleId="3ior.5617550519002745380" targetNodeId="4993211115183387839" resolveInfo="buildCore" />
+    </node>
+    <node role="scriptsDir" roleId="3ior.4796668409958418110" type="3ior.BuildSourceProjectRelativePath" typeId="3ior.5481553824944787378" id="5178006408628547354">
+      <node role="compositePart" roleId="3ior.7321017245477039051" type="3ior.CompositePath" typeId="3ior.8618885170173601777" id="5178006408628547355">
+        <property name="head" nameId="3ior.8618885170173601779" value="buildPlugin" />
+      </node>
     </node>
   </root>
 </model>

@@ -5,13 +5,13 @@ package jetbrains.mps.buildScript.behavior;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.buildScript.util.Context;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.scope.Scope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import org.jetbrains.annotations.NotNull;
 import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.util.MacrosFactory;
 import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.buildScript.util.ScopeUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
@@ -24,10 +24,15 @@ import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.scope.CompositeScope;
 import jetbrains.mps.smodel.structure.ExtensionPoint;
+import java.util.Set;
+import java.util.HashSet;
+import jetbrains.mps.smodel.SModelUtil_new;
+import jetbrains.mps.project.GlobalScope;
 
 public class BuildProject_Behavior {
   public static void init(SNode thisNode) {
     SPropertyOperations.set(thisNode, "internalBaseDirectory", BuildProject_Behavior.call_getBasePath_4959435991187146924(thisNode, Context.defaultContext()));
+    SLinkOperations.setTarget(thisNode, "scriptsDir", new BuildProject_Behavior.QuotationClass_save77_a2a1a0().createNode(), true);
   }
 
   public static Scope virtual_getScope_3734116213129936182(SNode thisNode, SNode kind, final SNode child) {
@@ -116,5 +121,29 @@ public class BuildProject_Behavior {
       a.equals(b) :
       a == b
     );
+  }
+
+  public static class QuotationClass_save77_a2a1a0 {
+    public QuotationClass_save77_a2a1a0() {
+    }
+
+    public SNode createNode() {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_1 = null;
+      SNode quotedNode_2 = null;
+      {
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.buildScript.structure.BuildSourceProjectRelativePath", null, GlobalScope.getInstance(), false);
+        SNode quotedNode1_3 = quotedNode_1;
+        {
+          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.buildScript.structure.CompositePath", null, GlobalScope.getInstance(), false);
+          SNode quotedNode1_4 = quotedNode_2;
+          quotedNode1_4.setProperty("head", "build");
+          quotedNode_1.addChild("compositePart", quotedNode1_4);
+        }
+        result = quotedNode1_3;
+      }
+      return result;
+    }
   }
 }

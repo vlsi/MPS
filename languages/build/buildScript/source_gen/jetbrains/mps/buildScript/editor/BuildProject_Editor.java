@@ -89,6 +89,8 @@ public class BuildProject_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Collection_vny568_a0");
     editorCell.addEditorCell(this.createConstant_vny568_a0a(editorContext, node));
     editorCell.addEditorCell(this.createProperty_vny568_b0a(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_vny568_c0a(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_vny568_d0a(editorContext, node));
     return editorCell;
   }
 
@@ -97,6 +99,8 @@ public class BuildProject_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Collection_vny568_a0_0");
     editorCell.addEditorCell(this.createConstant_vny568_a0a_0(editorContext, node));
     editorCell.addEditorCell(this.createReadOnlyModelAccessor_vny568_b0a(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_vny568_c0a_0(editorContext, node));
+    editorCell.addEditorCell(this.createReadOnlyModelAccessor_vny568_d0a(editorContext, node));
     return editorCell;
   }
 
@@ -237,8 +241,15 @@ public class BuildProject_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_vny568_a0a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "internal base directory:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "base directory:");
     editorCell.setCellId("Constant_vny568_a0a");
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createConstant_vny568_c0a(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "scripts directory:");
+    editorCell.setCellId("Constant_vny568_c0a");
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -246,6 +257,13 @@ public class BuildProject_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_vny568_a0a_0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "base directory:");
     editorCell.setCellId("Constant_vny568_a0a_0");
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createConstant_vny568_c0a_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "scripts directory:");
+    editorCell.setCellId("Constant_vny568_c0a_0");
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -265,6 +283,32 @@ public class BuildProject_Editor extends DefaultNodeEditor {
     }, node);
     editorCell.setAction(CellActionType.DELETE, new CellAction_Empty());
     editorCell.setCellId("ReadOnlyModelAccessor_vny568_b0a");
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+    }
+    return editorCell;
+  }
+
+  private EditorCell createReadOnlyModelAccessor_vny568_d0a(final EditorContext editorContext, final SNode node) {
+    EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
+      public String getText() {
+        return BuildProject_Behavior.call_getScriptsPath_4796668409958419284(node, Context.defaultContext());
+      }
+
+      public void setText(String s) {
+      }
+
+      public boolean isValidText(String s) {
+        return EqualUtil.equals(s, this.getText());
+      }
+    }, node);
+    editorCell.setAction(CellActionType.DELETE, new CellAction_Empty());
+    editorCell.setCellId("ReadOnlyModelAccessor_vny568_d0a");
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+    }
     return editorCell;
   }
 
@@ -359,6 +403,23 @@ public class BuildProject_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
+  private EditorCell createRefNode_vny568_d0a(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
+    provider.setRole("scriptsDir");
+    provider.setNoTargetText("${baseDirectory}/build");
+    EditorCell editorCell;
+    editorCell = provider.createEditorCell(editorContext);
+    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    SNode attributeConcept = provider.getRoleAttribute();
+    Class attributeKind = provider.getRoleAttributeClass();
+    if (attributeConcept != null) {
+      IOperationContext opContext = editorContext.getOperationContext();
+      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+      return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
+    } else
+    return editorCell;
+  }
+
   private EditorCell createProperty_vny568_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("name");
@@ -380,10 +441,15 @@ public class BuildProject_Editor extends DefaultNodeEditor {
   private EditorCell createProperty_vny568_b0a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("internalBaseDirectory");
-    provider.setNoTargetText("<no internalBaseDirectory>");
+    provider.setNoTargetText("module base directory");
+    provider.setAllowsEmptyTarget(true);
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_internalBaseDirectory");
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

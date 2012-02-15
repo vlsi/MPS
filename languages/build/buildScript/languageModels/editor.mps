@@ -405,11 +405,23 @@
       <property name="vertical" nameId="tpc2.1088613081987" value="true" />
       <node role="ifTrueCellModel" roleId="tpc2.1088612958265" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="1357788371930568390">
         <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="1357788371930568393">
-          <property name="text" nameId="tpc2.1073389577007" value="internal base directory:" />
+          <property name="text" nameId="tpc2.1073389577007" value="base directory:" />
         </node>
         <node role="cellLayout" roleId="tpc2.1106270802874" type="tpc2.CellLayout_Indent" typeId="tpc2.1237303669825" id="1357788371930568391" />
         <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Property" typeId="tpc2.1073389658414" id="8419583202466289468">
+          <property name="allowEmptyText" nameId="tpc2.1140114345053" value="true" />
+          <property name="noTargetText" nameId="tpc2.1139852716018" value="module base directory" />
           <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="3ior.5204048710541015587" resolveInfo="internalBaseDirectory" />
+          <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.IndentLayoutNewLineStyleClassItem" typeId="tpc2.1237308012275" id="5178006408628450920">
+            <property name="flag" nameId="tpc2.1186414551515" value="true" />
+          </node>
+        </node>
+        <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="5178006408628450924">
+          <property name="text" nameId="tpc2.1073389577007" value="scripts directory:" />
+        </node>
+        <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_RefNode" typeId="tpc2.1073389882823" id="5178006408628450926">
+          <property name="noTargetText" nameId="tpc2.1139852716018" value="${baseDirectory}/build" />
+          <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="3ior.4796668409958418110" />
         </node>
       </node>
       <node role="alternationCondition" roleId="tpc2.1145918517974" type="tpc2.QueryFunction_NodeCondition" typeId="tpc2.1142886221719" id="8419583202466289465">
@@ -445,6 +457,35 @@
                 </node>
               </node>
             </node>
+          </node>
+          <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.IndentLayoutNewLineStyleClassItem" typeId="tpc2.1237308012275" id="5178006408628482950">
+            <property name="flag" nameId="tpc2.1186414551515" value="true" />
+          </node>
+        </node>
+        <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="5178006408628482953">
+          <property name="text" nameId="tpc2.1073389577007" value="scripts directory:" />
+        </node>
+        <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_ReadOnlyModelAccessor" typeId="tpc2.1225900081164" id="5178006408628482955">
+          <node role="modelAccessor" roleId="tpc2.1225900141900" type="tpc2.ReadOnlyModelAccessor" typeId="tpc2.1225898583838" id="5178006408628482956">
+            <node role="getter" roleId="tpc2.1225898971709" type="tpc2.QueryFunction_ModelAccess_Getter" typeId="tpc2.1176717841777" id="5178006408628482957">
+              <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="5178006408628482958">
+                <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="5178006408628482959">
+                  <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="5178006408628482960">
+                    <node role="operand" roleId="tpee.1197027771414" type="tpc2.ConceptFunctionParameter_node" typeId="tpc2.1142886811589" id="5178006408628482961" />
+                    <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="5178006408628482962">
+                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="vbkb.4796668409958419284" resolveInfo="getScriptsPath" />
+                      <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="5178006408628482963">
+                        <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="o3n2.4959435991187147167" resolveInfo="Context" />
+                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="o3n2.4959435991187166413" resolveInfo="defaultContext" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.IndentLayoutNewLineStyleClassItem" typeId="tpc2.1237308012275" id="5178006408628482964">
+            <property name="flag" nameId="tpc2.1186414551515" value="true" />
           </node>
         </node>
       </node>
