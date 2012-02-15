@@ -36,7 +36,7 @@ public class MPSConfigurationBean {
     @Transient
     private final SolutionDescriptor myDescriptor;
     private boolean myUseModuleSourceFolder = false;
-    private boolean myUseTransientOutputFolder = true; // the default
+    private boolean myUseTransientOutputFolder = false;
 
     public MPSConfigurationBean() {
         myDescriptor = new SolutionDescriptor();

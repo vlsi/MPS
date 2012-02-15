@@ -24,8 +24,6 @@ public class MPSFacetConfiguration {
   private String[] myUsedLanguages;
 
   public MPSFacetConfiguration() {
-    // set the default value 
-    this.setUseTransientOutputFolder(true);
   }
 
   public void readFromXml(Element config) throws FacetConfigurationFormatException {
