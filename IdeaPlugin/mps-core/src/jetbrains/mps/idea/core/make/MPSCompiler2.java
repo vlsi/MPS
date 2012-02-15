@@ -160,7 +160,7 @@ public class MPSCompiler2 implements SourceGeneratingCompiler{
         final List<File> generatedModelFiles = new ArrayList<File>();
         final List<File> filesToRefresh = new ArrayList<File>();
 
-        String cachesOutputRoot = getCachesOutputPath(this, moduleToFiles.keySet().iterator().next(), isTest.cardinality() > 0);
+        String cachesOutputRoot = MPSCompilerPaths.getCachesOutputPath(this, moduleToFiles.keySet().iterator().next(), isTest.cardinality() > 0);
 
         // facet test start
         executeMPSMake(context, facetToModels, new File(outputRootDirectory.getPath()), new File (cachesOutputRoot),generatedModelFiles, filesToRefresh);
@@ -246,25 +246,6 @@ public class MPSCompiler2 implements SourceGeneratingCompiler{
         return TimestampValidityState.load(in);
     }
 
-    // Shamelessly copied over from the IDEA sources
-
-    public static File getGeneratedDataDirectory(Project project) {
-        //noinspection HardCodedStringLiteral
-        return new File(CompilerPaths.getCompilerSystemDirectory(project), ".caches");
-    }
-
-    public static File getGeneratedDataDirectory(Project project, Compiler compiler) {
-        //noinspection HardCodedStringLiteral
-        return new File(getGeneratedDataDirectory(project), compiler.getDescription().replaceAll("\\s+", "_"));
-    }
-
-    @NonNls
-    public static String getCachesOutputPath(IntermediateOutputCompiler compiler, Module module, final boolean forTestSources) {
-        final String generatedCompilerDirectoryPath = getGeneratedDataDirectory(module.getProject(), compiler).getPath();
-        //noinspection HardCodedStringLiteral
-        final String moduleDir = module.getName().replaceAll("\\s+", "_") + "." + Integer.toHexString(module.getModuleFilePath().hashCode());
-        return generatedCompilerDirectoryPath.replace(File.separatorChar, '/') + "/" + moduleDir + "/" + (forTestSources? "test" : "production");
-    }
 
 
     private static class MyGenerationItem implements GeneratingCompiler.GenerationItem {
