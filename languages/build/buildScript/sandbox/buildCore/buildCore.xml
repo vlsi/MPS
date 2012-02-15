@@ -1,4 +1,4 @@
-<project name="buildCore">
+<project name="buildCore" basedir="../">
   <property file="buildCore.properties" />
   <property name="build.dir" location="build" />
   <property name="mps_home" location="${basedir}/../../../.." />

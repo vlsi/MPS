@@ -1,4 +1,4 @@
-<project name="buildPlugin">
+<project name="buildPlugin" basedir="../">
   <property name="build.dir" location="build" />
   <property name="buildPlugin.tmp" location="${build.dir}/tmp/buildPlugin.tmp" />
   <property name="buildPlugin.deploy.dir" location="${build.dir}/artifacts/buildPlugin.artifacts" />

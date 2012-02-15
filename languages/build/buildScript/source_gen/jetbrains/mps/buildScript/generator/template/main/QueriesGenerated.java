@@ -16,6 +16,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.ILeftCombinator;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.buildScript.behavior.BuildSource_JavaModule_Behavior;
+import jetbrains.mps.buildScript.behavior.BuildProject_Behavior;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.generator.template.IfMacroContext;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
@@ -24,7 +25,6 @@ import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import jetbrains.mps.generator.template.MappingScriptContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.buildScript.util.GenerationUtil;
-import jetbrains.mps.buildScript.behavior.BuildProject_Behavior;
 
 public class QueriesGenerated {
   public static boolean baseMappingRule_Condition_5248329904288166450(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
@@ -168,6 +168,10 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_5096397858823409284(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return Context.defaulContext(_context).getTmpPath_WithMacro(_context.getNode());
+  }
+
+  public static Object propertyMacro_GetPropertyValue_5178006408628664059(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return BuildProject_Behavior.call_getBasePathRelativeToScriptsPath_5178006408628632053(_context.getNode(), Context.defaulContext(_context));
   }
 
   public static Object propertyMacro_GetPropertyValue_1117643560963351184(final IOperationContext operationContext, final PropertyMacroContext _context) {

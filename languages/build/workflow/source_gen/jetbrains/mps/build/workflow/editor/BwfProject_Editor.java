@@ -40,10 +40,13 @@ public class BwfProject_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createRefNodeList_4tk4ky_f0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_4tk4ky_g0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_4tk4ky_h0(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_4tk4ky_i0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_4tk4ky_j0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_4tk4ky_i0(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_4tk4ky_j0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_4tk4ky_k0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNodeList_4tk4ky_l0(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_4tk4ky_l0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_4tk4ky_m0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_4tk4ky_n0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNodeList_4tk4ky_o0(editorContext, node));
     return editorCell;
   }
 
@@ -103,7 +106,7 @@ public class BwfProject_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_4tk4ky_h0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "temporary folder:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "folders:");
     editorCell.setCellId("Constant_4tk4ky_h0");
     workflowStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     {
@@ -114,9 +117,34 @@ public class BwfProject_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_4tk4ky_j0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_4tk4ky_i0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "base directory:");
+    editorCell.setCellId("Constant_4tk4ky_i0");
+    workflowStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
+    }
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createConstant_4tk4ky_k0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "temporary directory:");
+    editorCell.setCellId("Constant_4tk4ky_k0");
+    workflowStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
+      style.set(StyleAttributes.INDENT_LAYOUT_ON_NEW_LINE, true);
+    }
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createConstant_4tk4ky_m0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
-    editorCell.setCellId("Constant_4tk4ky_j0");
+    editorCell.setCellId("Constant_4tk4ky_m0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
@@ -125,9 +153,9 @@ public class BwfProject_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_4tk4ky_k0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_4tk4ky_n0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "workflow:");
-    editorCell.setCellId("Constant_4tk4ky_k0");
+    editorCell.setCellId("Constant_4tk4ky_n0");
     workflowStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     {
       Style style = editorCell.getStyle();
@@ -151,8 +179,8 @@ public class BwfProject_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNodeList_4tk4ky_l0(EditorContext editorContext, SNode node) {
-    AbstractCellListHandler handler = new BwfProject_Editor.partsListHandler_4tk4ky_l0(node, "parts", editorContext);
+  private EditorCell createRefNodeList_4tk4ky_o0(EditorContext editorContext, SNode node) {
+    AbstractCellListHandler handler = new BwfProject_Editor.partsListHandler_4tk4ky_o0(node, "parts", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_parts");
     {
@@ -183,7 +211,25 @@ public class BwfProject_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createProperty_4tk4ky_i0(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_4tk4ky_j0(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
+    provider.setRole("baseDirectory");
+    provider.setNoTargetText("<no baseDirectory>");
+    EditorCell editorCell;
+    editorCell = provider.createEditorCell(editorContext);
+    editorCell.setCellId("property_baseDirectory");
+    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    SNode attributeConcept = provider.getRoleAttribute();
+    Class attributeKind = provider.getRoleAttributeClass();
+    if (attributeConcept != null) {
+      IOperationContext opContext = editorContext.getOperationContext();
+      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+      return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
+    } else
+    return editorCell;
+  }
+
+  private EditorCell createProperty_4tk4ky_l0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("temporaryFolder");
     provider.setNoTargetText("<no temporaryFolder>");
@@ -242,8 +288,8 @@ public class BwfProject_Editor extends DefaultNodeEditor {
     }
   }
 
-  private static class partsListHandler_4tk4ky_l0 extends RefNodeListHandler {
-    public partsListHandler_4tk4ky_l0(SNode ownerNode, String childRole, EditorContext context) {
+  private static class partsListHandler_4tk4ky_o0 extends RefNodeListHandler {
+    public partsListHandler_4tk4ky_o0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 

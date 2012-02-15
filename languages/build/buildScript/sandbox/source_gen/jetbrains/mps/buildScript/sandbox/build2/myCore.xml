@@ -1,4 +1,4 @@
-<project name="myCore">
+<project name="myCore" basedir=".">
   <property file="myCore.properties" />
   <property name="build.dir" location="build" />
   <property name="aaa" location="${aaa.relative}" />

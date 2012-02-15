@@ -469,7 +469,9 @@ public class FileUtil {
         relative.append("..").append(pathSeparator);
       }
     }
-    relative.append(targetPath.substring(common.length()));
+    if (targetPath.length() > common.length()) {
+      relative.append(targetPath.substring(common.length()));
+    }
     return relative.toString();
   }
 

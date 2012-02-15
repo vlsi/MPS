@@ -11,6 +11,7 @@
     <node type="8xvf.BwfProject" typeId="8xvf.2769948622284546673" id="2769948622284624385">
       <property name="name" nameId="tpck.1169194664001" value="myCore" />
       <property name="temporaryFolder" nameId="8xvf.7385586609667765566" value="build/temp/temp" />
+      <property name="baseDirectory" nameId="8xvf.5178006408628608654" value="." />
     </node>
   </roots>
   <root id="2769948622284624385">
