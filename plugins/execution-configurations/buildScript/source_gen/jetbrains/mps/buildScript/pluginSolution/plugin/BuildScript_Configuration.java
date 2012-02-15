@@ -13,6 +13,7 @@ import jetbrains.mps.util.Computable;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
+import jetbrains.mps.ant.execution.AntSettings_Configuration;
 import com.intellij.openapi.project.Project;
 import com.intellij.execution.configurations.RuntimeConfigurationException;
 import org.jdom.Element;
@@ -47,6 +48,7 @@ public class BuildScript_Configuration extends BaseMpsRunConfiguration implement
       return true;
     }
   });
+  private AntSettings_Configuration mySettings = new AntSettings_Configuration();
 
   public BuildScript_Configuration(Project project, BuildScript_Configuration_Factory factory, String name) {
     super(project, factory, name);
@@ -61,6 +63,11 @@ public class BuildScript_Configuration extends BaseMpsRunConfiguration implement
     {
       Element fieldElement = new Element("myNode");
       myNode.writeExternal(fieldElement);
+      element.addContent(fieldElement);
+    }
+    {
+      Element fieldElement = new Element("mySettings");
+      mySettings.writeExternal(fieldElement);
       element.addContent(fieldElement);
     }
   }
@@ -81,10 +88,24 @@ public class BuildScript_Configuration extends BaseMpsRunConfiguration implement
         }
       }
     }
+    {
+      Element fieldElement = element.getChild("mySettings");
+      if (fieldElement != null) {
+        mySettings.readExternal(fieldElement);
+      } else {
+        if (log.isDebugEnabled()) {
+          log.debug("Element " + "mySettings" + " in " + this.getClass().getName() + " was null.");
+        }
+      }
+    }
   }
 
   public Node_Configuration getNode() {
     return myNode;
+  }
+
+  public AntSettings_Configuration getSettings() {
+    return mySettings;
   }
 
   @Override
@@ -94,6 +115,7 @@ public class BuildScript_Configuration extends BaseMpsRunConfiguration implement
       clone = createCloneTemplate();
       clone.myState = (BuildScript_Configuration.MyState) myState.clone();
       clone.myNode = (Node_Configuration) myNode.clone();
+      clone.mySettings = (AntSettings_Configuration) mySettings.clone();
       return clone;
     } catch (CloneNotSupportedException ex) {
       if (log.isErrorEnabled()) {
@@ -126,7 +148,7 @@ public class BuildScript_Configuration extends BaseMpsRunConfiguration implement
   }
 
   public SettingsEditorEx<? extends IPersistentConfiguration> getEditor() {
-    return new BuildScript_Configuration_Editor(myNode.getEditor());
+    return new BuildScript_Configuration_Editor(myNode.getEditor(), mySettings.getEditor());
   }
 
   @Override

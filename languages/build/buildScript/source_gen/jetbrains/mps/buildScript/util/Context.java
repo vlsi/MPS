@@ -16,6 +16,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.buildScript.behavior.BuildSourcePath_Behavior;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
@@ -46,7 +47,7 @@ public class Context {
     return ((T) MapSequence.fromMap(myProperties).get(key));
   }
 
-  private SNode getBuildProject(SNode node) {
+  protected SNode getBuildProject(SNode node) {
     return SNodeOperations.getAncestor(node, "jetbrains.mps.buildScript.structure.BuildProject", true, false);
   }
 
@@ -99,8 +100,13 @@ public class Context {
     ));
   }
 
-  public SNode getDefaultScriptsPath() {
-    return new Context.QuotationClass_lmsybr_a0a0l().createNode();
+  public String getDefaultScriptsPath(final SNode project) {
+    return BuildSourcePath_Behavior.call_getLocalPath_5481553824944787364(new Context.QuotationClass_lmsybr_a0a0a11().createNode(), new Context() {
+      @Override
+      protected SNode getBuildProject(SNode node) {
+        return project;
+      }
+    });
   }
 
   public String getDefaultBasePath(SNode node) {
@@ -195,8 +201,8 @@ public class Context {
     }
   }
 
-  public static class QuotationClass_lmsybr_a0a0l {
-    public QuotationClass_lmsybr_a0a0l() {
+  public static class QuotationClass_lmsybr_a0a0a11 {
+    public QuotationClass_lmsybr_a0a0a11() {
     }
 
     public SNode createNode() {

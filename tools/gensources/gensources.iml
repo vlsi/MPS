@@ -203,6 +203,7 @@
       <sourceFolder url="file://$MODULE_DIR$/../../plugins/execution-languages/deprecated.runtime/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../plugins/execution-languages/deprecated/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../plugins/execution-languages/library/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../plugins/execution-configurations/buildScript/source_gen" isTestSource="false" />
     </content>
     <content url="file://$MODULE_DIR$/../../samples">
       <sourceFolder url="file://$MODULE_DIR$/../../samples/agreement/agreementLanguage/source_gen" isTestSource="false" />
