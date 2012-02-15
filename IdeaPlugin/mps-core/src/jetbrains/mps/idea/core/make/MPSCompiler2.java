@@ -181,9 +181,6 @@ public class MPSCompiler2 implements SourceGeneratingCompiler{
 
         for (Map.Entry<MPSFacet, List<SModelDescriptor>> chunk : facetToModels.entrySet()) {
             MPSFacet facet = chunk.getKey();
-            String outputFolder = facet.getSolution().getGeneratorOutputPath();
-            context.addMessage(CompilerMessageCategory.INFORMATION, "Generating into " + outputFolder, null, 0, 0);
-
             final Set<File> modelsToMake = new HashSet<File>();
             for (final SModelDescriptor model : chunk.getValue()) {
                 modelsToMake.add(new File(((EditableSModelDescriptor)model) .getModelFile().getPath()));
@@ -222,7 +219,7 @@ public class MPSCompiler2 implements SourceGeneratingCompiler{
                 }
             });
         } else {
-            context.addMessage(CompilerMessageCategory.ERROR, "Invalid MPS make configuration, unable to make models", null, 0, 0);
+            context.addMessage(CompilerMessageCategory.ERROR, MPSBundle.getString("invalid.mps.make.configuration"), null, 0, 0);
         }
 
         for (File file: writtenFiles) {

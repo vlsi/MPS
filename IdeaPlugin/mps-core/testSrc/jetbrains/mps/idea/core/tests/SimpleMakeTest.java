@@ -27,6 +27,7 @@ import com.intellij.openapi.vfs.VirtualFileManager;
 import com.intellij.openapi.vfs.VirtualFileSystem;
 import jetbrains.mps.idea.core.facet.MPSFacetConfiguration;
 import jetbrains.mps.idea.core.make.MPSCompiler2;
+import jetbrains.mps.idea.core.make.MPSCompilerPaths;
 import jetbrains.mps.vfs.IFile;
 
 /**
@@ -82,13 +83,6 @@ public class SimpleMakeTest extends AbstractMakeTest{
         assertSame(0, res.errors);
         assertSame(0, res.warnings);
 
-        vfs.refresh(false);
-        assertNull("Shouldn't be there: " + moduleDir.getPath() + "/source_gen", moduleDir.findChild("source_gen"));
-
-        assertNotNull(moduleDir.findChild("classes_gen"));
-        assertNotNull(moduleDir.findFileByRelativePath("classes_gen/simple"));
-        assertTrue(moduleDir.findFileByRelativePath("classes_gen/simple").getChildren().length == 1);
-        assertNotNull(moduleDir.findFileByRelativePath("classes_gen/simple/trace.info"));
 
         MPSCompiler2[] mpscs = cm.getCompilers(MPSCompiler2.class);
         assertSame(1, mpscs.length);
@@ -100,7 +94,17 @@ public class SimpleMakeTest extends AbstractMakeTest{
         assertNotNull(outputDir.findFileByRelativePath("simple/trace.info"));
         assertTrue(outputDir.findFileByRelativePath("simple").getChildren().length == 2);
 
+        vfs.refresh(false);
+        assertNull("Shouldn't be there: " + moduleDir.getPath() + "/source_gen", moduleDir.findChild("source_gen"));
 
+        assertNotNull(moduleDir.findChild("classes_gen"));
+        assertNotNull(moduleDir.findFileByRelativePath("classes_gen/simple"));
+        assertTrue(moduleDir.findFileByRelativePath("classes_gen/simple").getChildren().length == 1);
+        assertNotNull(moduleDir.findFileByRelativePath("classes_gen/simple/trace.info"));
+
+        VirtualFile cachesOutputDir = vfs.findFileByPath(MPSCompilerPaths.getCachesOutputPath(mpscs[0],  myFacet.getModule(), false));
+        assertNotNull("Not found output dir", cachesOutputDir);
+        assertNotNull(cachesOutputDir.findFileByRelativePath("simple"));
 
     }
 }
