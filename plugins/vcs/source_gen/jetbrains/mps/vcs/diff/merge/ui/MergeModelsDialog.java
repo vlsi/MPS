@@ -148,29 +148,28 @@ public class MergeModelsDialog extends BaseDialog {
     boolean allResolved = false;
     boolean conflictsOnly = false;
     final Wrappers._T<Iterable<ModelChange>> interestingChanges = new Wrappers._T<Iterable<ModelChange>>();
-    if (ListSequence.fromList(allChanges).any(new IWhereFilter<ModelChange>() {
+
+    Iterable<ModelChange> unresolvedChanges = ListSequence.fromList(allChanges).where(new IWhereFilter<ModelChange>() {
       public boolean accept(ModelChange ch) {
-        return myMergeContext.isChangeResolved(ch);
+        return !(myMergeContext.isChangeResolved(ch));
       }
-    })) {
+    });
+    if (Sequence.fromIterable(unresolvedChanges).count() != ListSequence.fromList(allChanges).count()) {
       // some or all changes are resolved 
 
-      if (ListSequence.fromList(allChanges).all(new IWhereFilter<ModelChange>() {
-        public boolean accept(ModelChange ch) {
-          return myMergeContext.isChangeResolved(ch);
-        }
-      })) {
+      if (Sequence.fromIterable(unresolvedChanges).isEmpty()) {
         // all are resolved 
         interestingChanges.value = myAppliedMetadataChanges;
         allResolved = true;
       } else {
         // some are resolved, assert that only conflicting left 
-        assert ListSequence.fromList(allChanges).all(new IWhereFilter<ModelChange>() {
+        interestingChanges.value = unresolvedChanges;
+        assert Sequence.fromIterable(interestingChanges.value).all(new IWhereFilter<ModelChange>() {
           public boolean accept(ModelChange ch) {
             return Sequence.fromIterable(myMergeContext.getConflictedWith(ch)).isNotEmpty();
           }
         });
-        interestingChanges.value = allChanges;
+
         conflictsOnly = true;
       }
     } else {
@@ -219,7 +218,7 @@ public class MergeModelsDialog extends BaseDialog {
     }
 
     if (conflictsOnly) {
-      Messages.showInfoMessage(this, "You have unresolved model property conflicts. Please resolve them manually using \"Accept Theirs\" or \"Accept Yours\"", "Model Properites Changes");
+      Messages.showInfoMessage(this, "You have unresolved model property conflicts. Please resolve them manually using \"Accept Theirs\" or \"Accept Yours\":" + sb.toString(), "Model Properites Changes");
     } else if (allResolved) {
       if (sb.length() == 0) {
         Messages.showInfoMessage(this, "You have excluded all model property changes.", "Model Properites Changes");
