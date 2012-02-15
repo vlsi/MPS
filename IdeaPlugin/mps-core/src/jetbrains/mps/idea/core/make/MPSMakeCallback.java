@@ -31,4 +31,8 @@ public class MPSMakeCallback {
     
     public void error(String text) {}
 
+    public void warning(String text) {}
+
+    public void info(String text) {}
+
 }

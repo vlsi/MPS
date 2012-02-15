@@ -174,7 +174,7 @@ public class MPSCompiler2 implements SourceGeneratingCompiler{
     }
 
 
-    private void executeMPSMake(CompileContext context, Map<MPSFacet, List<SModelDescriptor>> facetToModels, File outputRootDir, File cachesOutputRootDir, /*out*/List<File> generatedModelFiles, /*out*/List<File> filesToRefresh) {
+    private void executeMPSMake(final CompileContext context, Map<MPSFacet, List<SModelDescriptor>> facetToModels, File outputRootDir, File cachesOutputRootDir, /*out*/List<File> generatedModelFiles, /*out*/List<File> filesToRefresh) {
         MPSMakeConfiguration makeConfiguration = new MPSMakeConfiguration();
         makeConfiguration.addProperty("OUTPUT_ROOT_DIR", outputRootDir.getAbsolutePath());
         makeConfiguration.addProperty("CACHES_OUTPUT_ROOT_DIR", cachesOutputRootDir.getAbsolutePath());
@@ -204,6 +204,21 @@ public class MPSCompiler2 implements SourceGeneratingCompiler{
                 @Override
                 public void fileWritten(String path) {
                     writtenFiles.add(new File(path));
+                }
+
+                @Override
+                public void error(String text) {
+                    context.addMessage(CompilerMessageCategory.ERROR, text, null, 0, 0);
+                }
+
+                @Override
+                public void warning(String text) {
+                    context.addMessage(CompilerMessageCategory.WARNING, text, null, 0, 0);
+                }
+
+                @Override
+                public void info(String text) {
+                    context.addMessage(CompilerMessageCategory.INFORMATION, text, null, 0, 0);
                 }
             });
         } else {

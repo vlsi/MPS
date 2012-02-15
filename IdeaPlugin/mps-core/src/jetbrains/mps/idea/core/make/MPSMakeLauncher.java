@@ -90,6 +90,12 @@ public class MPSMakeLauncher {
                 LOG.debug("error: " + text);
                 callback.error(text);
             }
+
+            @Override
+            public void info(String text) {
+                LOG.info("info: " + text);
+                callback.info(text);
+            }
         };
         try {
             OSProcessHandler processHandler = new OSProcessHandler(gcl.createProcess(), myCommandLine.get(0));
@@ -107,12 +113,12 @@ public class MPSMakeLauncher {
 
             processHandler.waitFor();
             if (processHandler.getProcess().exitValue() != 0) {
-                MessagesViewTool.log(myProject, MessageKind.ERROR, "External process returned non-zero");
+                callback.error("External process returned non-zero");
             }
 
         } catch (ExecutionException e) {
             LOG.debug(e);
-            MessagesViewTool.log(myProject, MessageKind.ERROR, "Error running process: " + e.getMessage());
+            callback.error("Error running process: " + e.getMessage());
         }
     }
 
@@ -248,7 +254,7 @@ public class MPSMakeLauncher {
                 if (line.indexOf(WRITTEN) == 0) {
                     reportWrittenFile(line.substring(WRITTEN.length()));
                 } else {
-                    logOutput(line);
+                    info(myPrefix + " - " + line);
                 }
             }
         }
@@ -256,7 +262,7 @@ public class MPSMakeLauncher {
         public void processStderr(String text) {
             Scanner s = new Scanner(text);
             while (s.hasNextLine()) {
-                logError(s.nextLine());
+                error(myPrefix + " - " + s.nextLine());
             }
         }
 
@@ -264,14 +270,6 @@ public class MPSMakeLauncher {
 
         public abstract void error(String text);
 
-        protected void logOutput(String line) {
-            MessagesViewTool.log(myProject, MessageKind.INFORMATION, myPrefix + " - " + line);
-        }
-
-        protected void logError(String line) {
-            error(line);
-            MessagesViewTool.log(myProject, MessageKind.ERROR, myPrefix + " - " + line);
-        }
-
+        public abstract void info(String text);
     }
 }
