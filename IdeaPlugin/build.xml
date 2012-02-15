@@ -380,6 +380,7 @@
             <fileset dir="${base_dir}/workbench/mps-platform/source" includes="META-INF/*"/>
             <fileset dir="${base_dir}/workbench/mps-editor/source" includes="META-INF/*"/>
             <fileset dir="${base_dir}/workbench/mps-editor/source_gen" includes="**/*.png, **/*.xml"/>
+            <fileset dir="${base_dir}/workbench/mps-platform/source_gen" includes="**/*.png, **/*.xml"/>
         </copy>
         <copy file="${base_dir}/IdeaPlugin/mps-core/META-INF/plugin.xml"
               tofile="${build_dir}/mpsplugin_jar/META-INF/plugin.xml">
