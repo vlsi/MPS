@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.project;
+package jetbrains.mps.testbench;
 
 import jetbrains.mps.smodel.ModelAccess;
 import org.junit.rules.MethodRule;
