@@ -7,7 +7,7 @@
   <roots>
     <node type="3ior.BuildProject" typeId="3ior.5617550519002745363" id="7926701909975931624">
       <property name="name" nameId="tpck.1169194664001" value="build" />
-      <property name="internalBaseDirectory" nameId="3ior.5204048710541015587" value="${mps_home}/IdeaPlugin/buildScript" />
+      <property name="internalBaseDirectory" nameId="3ior.5204048710541015587" value="${solution_descriptor}/" />
     </node>
   </roots>
   <root id="7926701909975931624">

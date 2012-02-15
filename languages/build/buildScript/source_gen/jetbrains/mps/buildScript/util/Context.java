@@ -17,6 +17,10 @@ import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.util.MacrosFactory;
 import jetbrains.mps.generator.template.TemplateQueryContext;
 import java.util.Set;
 import java.util.HashSet;
@@ -103,6 +107,34 @@ public class Context {
     IFile descriptorFile = this.getModule(node).getDescriptorFile();
     assert descriptorFile != null : "Context " + this + " returned module " + this.getModule(node) + " for node " + node + " with null descriptor.";
     return descriptorFile.getParent().getPath();
+  }
+
+  public _FunctionTypes._return_P1_E0<? extends String, ? super String> shrinkPath(final SNode node) {
+    return new _FunctionTypes._return_P1_E0<String, String>() {
+      public String invoke(String fullPath) {
+        final Wrappers._T<IModule> module = new Wrappers._T<IModule>();
+        ModelAccess.instance().runReadAction(new Runnable() {
+          public void run() {
+            module.value = getModule(node);
+          }
+        });
+        return MacrosFactory.moduleDescriptor(module.value).shrinkPath(fullPath, module.value.getDescriptorFile());
+      }
+    };
+  }
+
+  public _FunctionTypes._return_P1_E0<? extends String, ? super String> expandPath(final SNode node) {
+    return new _FunctionTypes._return_P1_E0<String, String>() {
+      public String invoke(String shortPath) {
+        final Wrappers._T<IModule> module = new Wrappers._T<IModule>();
+        ModelAccess.instance().runReadAction(new Runnable() {
+          public void run() {
+            module.value = getModule(node);
+          }
+        });
+        return MacrosFactory.moduleDescriptor(module.value).expandPath(shortPath, module.value.getDescriptorFile());
+      }
+    };
   }
 
   @NotNull

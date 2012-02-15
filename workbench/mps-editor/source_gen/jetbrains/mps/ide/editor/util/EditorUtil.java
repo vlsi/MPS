@@ -34,18 +34,18 @@ public class EditorUtil {
     final IModule module = sourceNode.getModel().getModelDescriptor().getModule();
     final Macros macros = MacrosFactory.moduleDescriptor(module);
 
-    return createSelectButton(sourceNode, propertyName, context, new _FunctionTypes._return_P1_E0<String, String>() {
+    return createSelectButton(sourceNode, propertyName, context, true, new _FunctionTypes._return_P1_E0<String, String>() {
       public String invoke(String fullPath) {
-        return check_3m4h3r_a0a3a3a1(macros, fullPath, module);
+        return check_3m4h3r_a0a4a3a1(macros, fullPath, module);
       }
     }, new _FunctionTypes._return_P1_E0<String, String>() {
       public String invoke(String shortPath) {
-        return check_3m4h3r_a0a4a3a1(macros, shortPath, module);
+        return check_3m4h3r_a0a5a3a1(macros, shortPath, module);
       }
     });
   }
 
-  public static JComponent createSelectButton(final SNode sourceNode, final String propertyName, final EditorContext context, @NotNull final _FunctionTypes._return_P1_E0<? extends String, ? super String> shrinkPath, @NotNull _FunctionTypes._return_P1_E0<? extends String, ? super String> expandPath) {
+  public static JComponent createSelectButton(final SNode sourceNode, final String propertyName, final EditorContext context, final boolean files, @NotNull final _FunctionTypes._return_P1_E0<? extends String, ? super String> shrinkPath, @NotNull _FunctionTypes._return_P1_E0<? extends String, ? super String> expandPath) {
     String filename = expandPath.invoke(sourceNode.getProperty(propertyName));
     final File baseFile = (filename == null ?
       null :
@@ -60,6 +60,10 @@ public class EditorUtil {
           null
         );
         TreeFileChooser chooser = new TreeFileChooser();
+        chooser.setMode((files ?
+          TreeFileChooser.MODE_FILES :
+          TreeFileChooser.MODE_DIRECTORIES
+        ));
         chooser.setContext(context.getOperationContext());
         if (baseFile != null && baseFile.exists()) {
           chooser.setInitialFile(FileSystem.getInstance().getFileByPath(baseFile.getAbsolutePath()));
@@ -79,14 +83,14 @@ public class EditorUtil {
     return button;
   }
 
-  private static String check_3m4h3r_a0a3a3a1(Macros checkedDotOperand, String fullPath, IModule module) {
+  private static String check_3m4h3r_a0a4a3a1(Macros checkedDotOperand, String fullPath, IModule module) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.shrinkPath(fullPath, module.getDescriptorFile());
     }
     return null;
   }
 
-  private static String check_3m4h3r_a0a4a3a1(Macros checkedDotOperand, String shortPath, IModule module) {
+  private static String check_3m4h3r_a0a5a3a1(Macros checkedDotOperand, String shortPath, IModule module) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.expandPath(shortPath, module.getDescriptorFile());
     }

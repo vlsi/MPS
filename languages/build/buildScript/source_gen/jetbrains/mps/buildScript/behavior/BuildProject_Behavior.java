@@ -8,8 +8,6 @@ import jetbrains.mps.buildScript.util.Context;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import org.jetbrains.annotations.NotNull;
 import org.apache.commons.lang.StringUtils;
-import jetbrains.mps.util.MacrosFactory;
-import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.scope.Scope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
@@ -28,14 +26,14 @@ import jetbrains.mps.smodel.structure.ExtensionPoint;
 
 public class BuildProject_Behavior {
   public static void init(SNode thisNode) {
-    SPropertyOperations.set(thisNode, "internalBaseDirectory", Context.defaultContext().getDefaultBasePath(thisNode));
+    SPropertyOperations.set(thisNode, "internalBaseDirectory", Context.defaultContext().shrinkPath(thisNode).invoke(Context.defaultContext().getDefaultBasePath(thisNode)));
     SLinkOperations.setTarget(thisNode, "scriptsDir", Context.defaultContext().getDefaultScriptsPath(), true);
   }
 
   @NotNull
   public static String call_getBasePath_4959435991187146924(SNode thisNode, Context context) {
     if (StringUtils.isNotEmpty(SPropertyOperations.getString(thisNode, "internalBaseDirectory"))) {
-      return MacrosFactory.projectDescriptor().expandPath(SPropertyOperations.getString(thisNode, "internalBaseDirectory"), (IFile) null);
+      return context.expandPath(thisNode).invoke(SPropertyOperations.getString(thisNode, "internalBaseDirectory"));
     }
 
     return context.getDefaultBasePath(thisNode);
