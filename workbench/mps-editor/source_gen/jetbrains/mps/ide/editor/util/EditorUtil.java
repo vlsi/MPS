@@ -8,6 +8,8 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.util.Macros;
 import jetbrains.mps.util.MacrosFactory;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
+import org.jetbrains.annotations.NotNull;
 import java.io.File;
 import javax.swing.JButton;
 import javax.swing.AbstractAction;
@@ -29,14 +31,22 @@ public class EditorUtil {
   }
 
   public static JComponent createSelectIconButton(final SNode sourceNode, final String propertyName, final EditorContext context) {
-    IModule module = sourceNode.getModel().getModelDescriptor().getModule();
+    final IModule module = sourceNode.getModel().getModelDescriptor().getModule();
     final Macros macros = MacrosFactory.moduleDescriptor(module);
-    String path = sourceNode.getProperty(propertyName);
-    final IModule finalModule = module;
-    String filename = (finalModule == null ?
-      null :
-      macros.expandPath(path, finalModule.getDescriptorFile())
-    );
+
+    return createSelectButton(sourceNode, propertyName, context, new _FunctionTypes._return_P1_E0<String, String>() {
+      public String invoke(String fullPath) {
+        return check_3m4h3r_a0a3a3a1(macros, fullPath, module);
+      }
+    }, new _FunctionTypes._return_P1_E0<String, String>() {
+      public String invoke(String shortPath) {
+        return check_3m4h3r_a0a4a3a1(macros, shortPath, module);
+      }
+    });
+  }
+
+  public static JComponent createSelectButton(final SNode sourceNode, final String propertyName, final EditorContext context, @NotNull final _FunctionTypes._return_P1_E0<? extends String, ? super String> shrinkPath, @NotNull _FunctionTypes._return_P1_E0<? extends String, ? super String> expandPath) {
+    String filename = expandPath.invoke(sourceNode.getProperty(propertyName));
     final File baseFile = (filename == null ?
       null :
       new File(filename)
@@ -58,13 +68,7 @@ public class EditorUtil {
         if (result == null) {
           return;
         }
-        String selectedPath = result.getPath();
-        final String pathToShow;
-        if (finalModule != null) {
-          pathToShow = macros.shrinkPath(selectedPath, finalModule.getDescriptorFile());
-        } else {
-          pathToShow = selectedPath;
-        }
+        final String pathToShow = shrinkPath.invoke(result.getPath());
         ModelAccess.instance().runWriteActionInCommand(new Runnable() {
           public void run() {
             sourceNode.setProperty(propertyName, pathToShow);
@@ -73,5 +77,19 @@ public class EditorUtil {
       }
     });
     return button;
+  }
+
+  private static String check_3m4h3r_a0a3a3a1(Macros checkedDotOperand, String fullPath, IModule module) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.shrinkPath(fullPath, module.getDescriptorFile());
+    }
+    return null;
+  }
+
+  private static String check_3m4h3r_a0a4a3a1(Macros checkedDotOperand, String shortPath, IModule module) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.expandPath(shortPath, module.getDescriptorFile());
+    }
+    return null;
   }
 }
