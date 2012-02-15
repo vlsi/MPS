@@ -49,7 +49,7 @@ public class CopyGeneratedScripts_Facet extends IFacet.Stub {
 
   public CopyGeneratedScripts_Facet() {
     ListSequence.fromList(targets).addElement(new CopyGeneratedScripts_Facet.Target_copyFiles());
-    ListSequence.fromList(targets).addElement(new CopyGeneratedScripts_Facet.Target_collectDirs());
+    ListSequence.fromList(targets).addElement(new CopyGeneratedScripts_Facet.Target_collectScriptDirectories());
   }
 
   public Iterable<ITarget> targets() {
@@ -100,7 +100,7 @@ public class CopyGeneratedScripts_Facet extends IFacet.Stub {
                   @Override
                   public boolean acceptWritten(IFile file) {
                     if (!(Sequence.fromIterable(Sequence.fromArray(new String[]{"dependencies", "generated", "trace.info"})).contains(file.getName()))) {
-                      String destPath = MapSequence.fromMap(MapSequence.fromMap(pa.global().properties(new ITarget.Name("jetbrains.mps.buildScript.CopyGeneratedScripts.collectDirs"), CopyGeneratedScripts_Facet.Target_collectDirs.Parameters.class).fileNameToDestination()).get(tres.modelDescriptor().getSModelReference())).get(file.getName());
+                      String destPath = MapSequence.fromMap(MapSequence.fromMap(pa.global().properties(new ITarget.Name("jetbrains.mps.buildScript.CopyGeneratedScripts.collectScriptDirectories"), CopyGeneratedScripts_Facet.Target_collectScriptDirectories.Parameters.class).fileNameToDestination()).get(tres.modelDescriptor().getSModelReference())).get(file.getName());
                       if (StringUtils.isNotEmpty(destPath)) {
                         IFile destDir = FileSystem.getInstance().getFileByPath(destPath);
                         IFile copy = destDir.getDescendant(file.getName());
@@ -143,7 +143,7 @@ public class CopyGeneratedScripts_Facet extends IFacet.Stub {
     }
 
     public Iterable<ITarget.Name> after() {
-      return Sequence.fromArray(new ITarget.Name[]{new ITarget.Name("jetbrains.mps.lang.core.TextGen.textGen"), new ITarget.Name("jetbrains.mps.buildScript.CopyGeneratedScripts.collectDirs")});
+      return Sequence.fromArray(new ITarget.Name[]{new ITarget.Name("jetbrains.mps.lang.core.TextGen.textGen"), new ITarget.Name("jetbrains.mps.buildScript.CopyGeneratedScripts.collectScriptDirectories")});
     }
 
     public Iterable<ITarget.Name> notBefore() {
@@ -188,13 +188,13 @@ public class CopyGeneratedScripts_Facet extends IFacet.Stub {
     }
   }
 
-  public static class Target_collectDirs implements ITargetEx {
+  public static class Target_collectScriptDirectories implements ITargetEx {
     private static Class<? extends IResource>[] EXPECTED_INPUT = (Class<? extends IResource>[]) new Class[]{IGResource.class};
     private static Class<? extends IResource>[] EXPECTED_OUTPUT = (Class<? extends IResource>[]) new Class[]{};
 
-    private ITarget.Name name = new ITarget.Name("jetbrains.mps.buildScript.CopyGeneratedScripts.collectDirs");
+    private ITarget.Name name = new ITarget.Name("jetbrains.mps.buildScript.CopyGeneratedScripts.collectScriptDirectories");
 
-    public Target_collectDirs() {
+    public Target_collectScriptDirectories() {
     }
 
     public IJob createJob() {
@@ -203,12 +203,12 @@ public class CopyGeneratedScripts_Facet extends IFacet.Stub {
           Iterable<IResource> _output_ixa0pj_a0b = null;
           switch (0) {
             case 0:
-              pa.global().properties(Target_collectDirs.this.getName(), CopyGeneratedScripts_Facet.Target_collectDirs.Parameters.class).fileNameToDestination(MapSequence.fromMap(new HashMap<SModelReference, Map<String, String>>()));
+              pa.global().properties(Target_collectScriptDirectories.this.getName(), CopyGeneratedScripts_Facet.Target_collectScriptDirectories.Parameters.class).fileNameToDestination(MapSequence.fromMap(new HashMap<SModelReference, Map<String, String>>()));
               for (IResource resource : Sequence.fromIterable(input)) {
                 final GResource gres = (GResource) resource;
                 ModelAccess.instance().runReadAction(new Runnable() {
                   public void run() {
-                    MapSequence.fromMap(pa.global().properties(Target_collectDirs.this.getName(), CopyGeneratedScripts_Facet.Target_collectDirs.Parameters.class).fileNameToDestination()).put(gres.model().getSModelReference(), MapSequence.fromMap(new HashMap<String, String>()));
+                    MapSequence.fromMap(pa.global().properties(Target_collectScriptDirectories.this.getName(), CopyGeneratedScripts_Facet.Target_collectScriptDirectories.Parameters.class).fileNameToDestination()).put(gres.model().getSModelReference(), MapSequence.fromMap(new HashMap<String, String>()));
 
                     // all descendants with scripts_dir_property 
                     Iterable<SNode> buildScriptDescendants = ListSequence.fromList(SModelOperations.getRoots(gres.status().getOutputModel(), null)).where(new IWhereFilter<SNode>() {
@@ -218,10 +218,10 @@ public class CopyGeneratedScripts_Facet extends IFacet.Stub {
                       }
                     });
 
-                    // find input and map it to scripts dir 
+                    // calculate output file name and map it to scripts dir 
                     for (SNode descendant : Sequence.fromIterable(buildScriptDescendants)) {
                       String fileName = TextGenerator.getFileName(descendant);
-                      MapSequence.fromMap(MapSequence.fromMap(pa.global().properties(Target_collectDirs.this.getName(), CopyGeneratedScripts_Facet.Target_collectDirs.Parameters.class).fileNameToDestination()).get(gres.model().getSModelReference())).put(fileName, ((String) descendant.getUserObject(GenerationUtil.SCRIPTS_DIR_PROPERTY)));
+                      MapSequence.fromMap(MapSequence.fromMap(pa.global().properties(Target_collectScriptDirectories.this.getName(), CopyGeneratedScripts_Facet.Target_collectScriptDirectories.Parameters.class).fileNameToDestination()).get(gres.model().getSModelReference())).put(fileName, ((String) descendant.getUserObject(GenerationUtil.SCRIPTS_DIR_PROPERTY)));
                     }
                   }
                 });
@@ -317,8 +317,8 @@ public class CopyGeneratedScripts_Facet extends IFacet.Stub {
       }
 
       @SuppressWarnings(value = "unchecked")
-      public CopyGeneratedScripts_Facet.Target_collectDirs.Parameters assignFrom(Tuples._1<Map<SModelReference, Map<String, String>>> from) {
-        return (CopyGeneratedScripts_Facet.Target_collectDirs.Parameters) super.assign(from);
+      public CopyGeneratedScripts_Facet.Target_collectScriptDirectories.Parameters assignFrom(Tuples._1<Map<SModelReference, Map<String, String>>> from) {
+        return (CopyGeneratedScripts_Facet.Target_collectScriptDirectories.Parameters) super.assign(from);
       }
     }
   }
@@ -329,10 +329,10 @@ public class CopyGeneratedScripts_Facet extends IFacet.Stub {
 
     public void storeValues(Map<String, String> store, IPropertiesPool properties) {
       {
-        ITarget.Name name = new ITarget.Name("jetbrains.mps.buildScript.CopyGeneratedScripts.collectDirs");
+        ITarget.Name name = new ITarget.Name("jetbrains.mps.buildScript.CopyGeneratedScripts.collectScriptDirectories");
         if (properties.hasProperties(name)) {
-          CopyGeneratedScripts_Facet.Target_collectDirs.Parameters props = properties.properties(name, CopyGeneratedScripts_Facet.Target_collectDirs.Parameters.class);
-          MapSequence.fromMap(store).put("jetbrains.mps.buildScript.CopyGeneratedScripts.collectDirs.fileNameToDestination", null);
+          CopyGeneratedScripts_Facet.Target_collectScriptDirectories.Parameters props = properties.properties(name, CopyGeneratedScripts_Facet.Target_collectScriptDirectories.Parameters.class);
+          MapSequence.fromMap(store).put("jetbrains.mps.buildScript.CopyGeneratedScripts.collectScriptDirectories.fileNameToDestination", null);
         }
       }
     }
@@ -340,9 +340,9 @@ public class CopyGeneratedScripts_Facet extends IFacet.Stub {
     public void loadValues(Map<String, String> store, IPropertiesPool properties) {
       try {
         {
-          ITarget.Name name = new ITarget.Name("jetbrains.mps.buildScript.CopyGeneratedScripts.collectDirs");
-          CopyGeneratedScripts_Facet.Target_collectDirs.Parameters props = properties.properties(name, CopyGeneratedScripts_Facet.Target_collectDirs.Parameters.class);
-          if (MapSequence.fromMap(store).containsKey("jetbrains.mps.buildScript.CopyGeneratedScripts.collectDirs.fileNameToDestination")) {
+          ITarget.Name name = new ITarget.Name("jetbrains.mps.buildScript.CopyGeneratedScripts.collectScriptDirectories");
+          CopyGeneratedScripts_Facet.Target_collectScriptDirectories.Parameters props = properties.properties(name, CopyGeneratedScripts_Facet.Target_collectScriptDirectories.Parameters.class);
+          if (MapSequence.fromMap(store).containsKey("jetbrains.mps.buildScript.CopyGeneratedScripts.collectScriptDirectories.fileNameToDestination")) {
             props.fileNameToDestination(null);
           }
         }
