@@ -16,6 +16,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.generator.template.TemplateQueryContext;
 import java.util.Set;
 import java.util.HashSet;
@@ -94,11 +95,22 @@ public class Context {
     ));
   }
 
-  @Nullable
+  public SNode getDefaultScriptsPath() {
+    return new Context.QuotationClass_lmsybr_a0a0l().createNode();
+  }
+
+  public String getDefaultBasePath(SNode node) {
+    IFile descriptorFile = this.getModule(node).getDescriptorFile();
+    assert descriptorFile != null : "Context " + this + " returned module " + this.getModule(node) + " for node " + node + " with null descriptor.";
+    return descriptorFile.getParent().getPath();
+  }
+
+  @NotNull
   public static Context defaultContext() {
     return new Context();
   }
 
+  @NotNull
   public static Context defaulContext(final TemplateQueryContext gencontext) {
     Context context = ((Context) gencontext.getSessionObject(Context.class));
     if (context == null) {
@@ -146,6 +158,30 @@ public class Context {
         quotedNode1_2.setProperty("defaultPath", (String) parameter_3);
         quotedNode1_2.setProperty("name", (String) parameter_4);
         result = quotedNode1_2;
+      }
+      return result;
+    }
+  }
+
+  public static class QuotationClass_lmsybr_a0a0l {
+    public QuotationClass_lmsybr_a0a0l() {
+    }
+
+    public SNode createNode() {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_1 = null;
+      SNode quotedNode_2 = null;
+      {
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.buildScript.structure.BuildSourceProjectRelativePath", null, GlobalScope.getInstance(), false);
+        SNode quotedNode1_3 = quotedNode_1;
+        {
+          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.buildScript.structure.CompositePath", null, GlobalScope.getInstance(), false);
+          SNode quotedNode1_4 = quotedNode_2;
+          quotedNode1_4.setProperty("head", "build");
+          quotedNode_1.addChild("compositePart", quotedNode1_4);
+        }
+        result = quotedNode1_3;
       }
       return result;
     }

@@ -25,15 +25,11 @@ import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.scope.CompositeScope;
 import jetbrains.mps.smodel.structure.ExtensionPoint;
-import java.util.Set;
-import java.util.HashSet;
-import jetbrains.mps.smodel.SModelUtil_new;
-import jetbrains.mps.project.GlobalScope;
 
 public class BuildProject_Behavior {
   public static void init(SNode thisNode) {
-    SPropertyOperations.set(thisNode, "internalBaseDirectory", BuildProject_Behavior.call_getBasePath_4959435991187146924(thisNode, Context.defaultContext()));
-    SLinkOperations.setTarget(thisNode, "scriptsDir", new BuildProject_Behavior.QuotationClass_save77_a2a1a0().createNode(), true);
+    SPropertyOperations.set(thisNode, "internalBaseDirectory", Context.defaultContext().getDefaultBasePath(thisNode));
+    SLinkOperations.setTarget(thisNode, "scriptsDir", Context.defaultContext().getDefaultScriptsPath(), true);
   }
 
   @NotNull
@@ -42,9 +38,7 @@ public class BuildProject_Behavior {
       return MacrosFactory.projectDescriptor().expandPath(SPropertyOperations.getString(thisNode, "internalBaseDirectory"), (IFile) null);
     }
 
-    IFile descriptorFile = context.getModule(thisNode).getDescriptorFile();
-    assert descriptorFile != null : "Context " + context + " returned module " + context.getModule(thisNode) + " with null descriptor.";
-    return descriptorFile.getParent().getPath();
+    return context.getDefaultBasePath(thisNode);
   }
 
   @NotNull
@@ -52,7 +46,7 @@ public class BuildProject_Behavior {
     if ((SLinkOperations.getTarget(thisNode, "scriptsDir", true) != null)) {
       return BuildSourcePath_Behavior.call_getLocalPath_5481553824944787364(SLinkOperations.getTarget(thisNode, "scriptsDir", true), context);
     }
-    return BuildProject_Behavior.call_getBasePath_4959435991187146924(thisNode, context) + "/build";
+    return BuildSourcePath_Behavior.call_getLocalPath_5481553824944787364(context.getDefaultScriptsPath(), context);
   }
 
   public static String call_getBasePathRelativeToScriptsPath_5178006408628632053(SNode thisNode, Context context) {
@@ -128,29 +122,5 @@ public class BuildProject_Behavior {
       a.equals(b) :
       a == b
     );
-  }
-
-  public static class QuotationClass_save77_a2a1a0 {
-    public QuotationClass_save77_a2a1a0() {
-    }
-
-    public SNode createNode() {
-      SNode result = null;
-      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_1 = null;
-      SNode quotedNode_2 = null;
-      {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.buildScript.structure.BuildSourceProjectRelativePath", null, GlobalScope.getInstance(), false);
-        SNode quotedNode1_3 = quotedNode_1;
-        {
-          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.buildScript.structure.CompositePath", null, GlobalScope.getInstance(), false);
-          SNode quotedNode1_4 = quotedNode_2;
-          quotedNode1_4.setProperty("head", "build");
-          quotedNode_1.addChild("compositePart", quotedNode1_4);
-        }
-        result = quotedNode1_3;
-      }
-      return result;
-    }
   }
 }
