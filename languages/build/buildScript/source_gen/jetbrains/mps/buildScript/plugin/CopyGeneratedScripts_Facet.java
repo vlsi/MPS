@@ -38,7 +38,6 @@ import java.util.HashMap;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.generator.GenerationStatus;
 import jetbrains.mps.smodel.resources.GResource;
-import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
@@ -216,19 +215,17 @@ public class CopyGeneratedScripts_Facet extends IFacet.Stub {
           Iterable<IResource> _output_ixa0pj_a0b = null;
           switch (0) {
             case 0:
-              pa.global().properties(Target_collectDirs.this.getName(), CopyGeneratedScripts_Facet.Target_collectDirs.Parameters.class).destdir(MapSequence.fromMap(new HashMap<SModelReference, String>()));
               pa.global().properties(Target_collectDirs.this.getName(), CopyGeneratedScripts_Facet.Target_collectDirs.Parameters.class).originalNodesToDestination(MapSequence.fromMap(new HashMap<SNodePointer, String>()));
               pa.global().properties(Target_collectDirs.this.getName(), CopyGeneratedScripts_Facet.Target_collectDirs.Parameters.class).status(MapSequence.fromMap(new HashMap<SModelReference, GenerationStatus>()));
               for (IResource resource : Sequence.fromIterable(input)) {
                 final GResource gres = (GResource) resource;
                 ModelAccess.instance().runReadAction(new Runnable() {
                   public void run() {
+                    // we will need debug info from status 
                     MapSequence.fromMap(pa.global().properties(Target_collectDirs.this.getName(), CopyGeneratedScripts_Facet.Target_collectDirs.Parameters.class).status()).put(gres.model().getSModelReference(), gres.status());
 
-                    SModel model = gres.status().getOutputModel();
-
                     // all descendants with scripts_dir_property 
-                    Iterable<SNode> buildScriptDescendants = ListSequence.fromList(SModelOperations.getRoots(model, null)).where(new IWhereFilter<SNode>() {
+                    Iterable<SNode> buildScriptDescendants = ListSequence.fromList(SModelOperations.getRoots(gres.status().getOutputModel(), null)).where(new IWhereFilter<SNode>() {
                       public boolean accept(SNode it) {
                         Object userObject = it.getUserObject(GenerationUtil.SCRIPTS_DIR_PROPERTY);
                         return userObject != null && userObject instanceof String;
@@ -244,13 +241,6 @@ public class CopyGeneratedScripts_Facet extends IFacet.Stub {
                 });
 
                 // todo 
-                // node buildScript was generated on some step from some highLevelBuildScript node 
-                // (we do not even know that for sure, we only know that SCRIPTS_DIR_PROPERTY exists) 
-                // ideally we have to 
-                // 1. find highLevelBuildScript (TemplateQueryContext.ORIGINAL_INPUT_NODE) 
-                // 2. get all roots generated from it 
-                // 3. copy all this stuff 
-                // also think about 
                 // some other roots that exist in the model 
                 // do we need to copy them? 
                 // what if some of them are build scripts (or generate build scripts %) )? 
@@ -318,46 +308,38 @@ public class CopyGeneratedScripts_Facet extends IFacet.Stub {
     public <T> T createParameters(Class<T> cls, T copyFrom) {
       T t = createParameters(cls);
       if (t != null) {
-        ((Tuples._3) t).assign((Tuples._3) copyFrom);
+        ((Tuples._2) t).assign((Tuples._2) copyFrom);
       }
       return t;
     }
 
-    public static class Parameters extends MultiTuple._3<Map<SModelReference, String>, Map<SNodePointer, String>, Map<SModelReference, GenerationStatus>> {
+    public static class Parameters extends MultiTuple._2<Map<SNodePointer, String>, Map<SModelReference, GenerationStatus>> {
       public Parameters() {
         super();
       }
 
-      public Parameters(Map<SModelReference, String> destdir, Map<SNodePointer, String> originalNodesToDestination, Map<SModelReference, GenerationStatus> status) {
-        super(destdir, originalNodesToDestination, status);
-      }
-
-      public Map<SModelReference, String> destdir(Map<SModelReference, String> value) {
-        return super._0(value);
+      public Parameters(Map<SNodePointer, String> originalNodesToDestination, Map<SModelReference, GenerationStatus> status) {
+        super(originalNodesToDestination, status);
       }
 
       public Map<SNodePointer, String> originalNodesToDestination(Map<SNodePointer, String> value) {
-        return super._1(value);
+        return super._0(value);
       }
 
       public Map<SModelReference, GenerationStatus> status(Map<SModelReference, GenerationStatus> value) {
-        return super._2(value);
-      }
-
-      public Map<SModelReference, String> destdir() {
-        return super._0();
+        return super._1(value);
       }
 
       public Map<SNodePointer, String> originalNodesToDestination() {
-        return super._1();
+        return super._0();
       }
 
       public Map<SModelReference, GenerationStatus> status() {
-        return super._2();
+        return super._1();
       }
 
       @SuppressWarnings(value = "unchecked")
-      public CopyGeneratedScripts_Facet.Target_collectDirs.Parameters assignFrom(Tuples._3<Map<SModelReference, String>, Map<SNodePointer, String>, Map<SModelReference, GenerationStatus>> from) {
+      public CopyGeneratedScripts_Facet.Target_collectDirs.Parameters assignFrom(Tuples._2<Map<SNodePointer, String>, Map<SModelReference, GenerationStatus>> from) {
         return (CopyGeneratedScripts_Facet.Target_collectDirs.Parameters) super.assign(from);
       }
     }
@@ -372,7 +354,6 @@ public class CopyGeneratedScripts_Facet extends IFacet.Stub {
         ITarget.Name name = new ITarget.Name("jetbrains.mps.buildScript.CopyGeneratedScripts.collectDirs");
         if (properties.hasProperties(name)) {
           CopyGeneratedScripts_Facet.Target_collectDirs.Parameters props = properties.properties(name, CopyGeneratedScripts_Facet.Target_collectDirs.Parameters.class);
-          MapSequence.fromMap(store).put("jetbrains.mps.buildScript.CopyGeneratedScripts.collectDirs.destdir", null);
           MapSequence.fromMap(store).put("jetbrains.mps.buildScript.CopyGeneratedScripts.collectDirs.originalNodesToDestination", null);
           MapSequence.fromMap(store).put("jetbrains.mps.buildScript.CopyGeneratedScripts.collectDirs.status", null);
         }
@@ -384,9 +365,6 @@ public class CopyGeneratedScripts_Facet extends IFacet.Stub {
         {
           ITarget.Name name = new ITarget.Name("jetbrains.mps.buildScript.CopyGeneratedScripts.collectDirs");
           CopyGeneratedScripts_Facet.Target_collectDirs.Parameters props = properties.properties(name, CopyGeneratedScripts_Facet.Target_collectDirs.Parameters.class);
-          if (MapSequence.fromMap(store).containsKey("jetbrains.mps.buildScript.CopyGeneratedScripts.collectDirs.destdir")) {
-            props.destdir(null);
-          }
           if (MapSequence.fromMap(store).containsKey("jetbrains.mps.buildScript.CopyGeneratedScripts.collectDirs.originalNodesToDestination")) {
             props.originalNodesToDestination(null);
           }
