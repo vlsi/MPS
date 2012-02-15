@@ -38,37 +38,6 @@
     <classNode extendsClassName="jetbrains.mps.ide.ui.MPSTreeNode" />
     <classNode extendsClassName="jetbrains.mps.ide.ui.NodeData" />
   </dependency>
-  <dependency className="jetbrains.mps.debugger.api.ui.breakpoints.AbstractCurrentLinePositionComponent" file="AbstractCurrentLinePositionComponent.java">
-    <classNode dependClassName="com.intellij.openapi.application.ApplicationManager" />
-    <classNode dependClassName="com.intellij.openapi.fileEditor.FileEditorManager" />
-    <classNode dependClassName="com.intellij.openapi.project.Project" />
-    <classNode dependClassName="com.intellij.util.messages.MessageBusConnection" />
-    <classNode dependClassName="java.lang.Integer" />
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.Runnable" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.util.ArrayList" />
-    <classNode dependClassName="java.util.HashMap" />
-    <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="java.util.Map" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.Tuples" />
-    <classNode dependClassName="jetbrains.mps.debugger.api.ui.breakpoints.CurrentLinePainter" />
-    <classNode dependClassName="jetbrains.mps.generator.traceInfo.TraceInfoUtil" />
-    <classNode dependClassName="jetbrains.mps.ide.editor.EditorUtil" />
-    <classNode dependClassName="jetbrains.mps.ide.editor.MPSEditorOpener" />
-    <classNode dependClassName="jetbrains.mps.ide.project.ProjectHelper" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
-    <classNode dependClassName="jetbrains.mps.nodeEditor.EditorComponent" />
-    <classNode dependClassName="jetbrains.mps.project.ProjectOperationContext" />
-    <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
-    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
-    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
-    <classNode extendsClassName="jetbrains.mps.nodeEditor.highlighter.EditorComponentCreateListener" />
-  </dependency>
   <dependency className="jetbrains.mps.debugger.api.ui.breakpoints.BreakpointIconRenderer" file="BreakpointIconRenderer.java">
     <classNode dependClassName="com.intellij.ide.DataManager" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnAction" />
@@ -104,8 +73,11 @@
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.debug.api.breakpoints.IBreakpoint" />
     <classNode dependClassName="jetbrains.mps.debug.api.breakpoints.ILocationBreakpoint" />
+    <classNode dependClassName="jetbrains.mps.debugger.api.ui.breakpoints.CurrentLinePositionComponent" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.AdditionalPainter" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.EditorComponent" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
-    <classNode extendsClassName="jetbrains.mps.debugger.api.ui.breakpoints.EditorCellPainter" />
+    <classNode extendsClassName="jetbrains.mps.debugger.core.EditorCellPainter" />
   </dependency>
   <dependency className="jetbrains.mps.debugger.api.ui.breakpoints.BreakpointViewSettingsComponent" file="BreakpointViewSettingsComponent.java">
     <classNode dependClassName="com.intellij.openapi.components.State" />
@@ -223,7 +195,7 @@
     <classNode dependClassName="jetbrains.mps.debugger.api.ui.breakpoints.BreakpointPainter" />
     <classNode dependClassName="jetbrains.mps.debugger.api.ui.breakpoints.BreakpointsBrowserDialog" />
     <classNode dependClassName="jetbrains.mps.generator.traceInfo.TraceInfoCache" />
-    <classNode dependClassName="jetbrains.mps.ide.editor.EditorUtil" />
+    <classNode dependClassName="jetbrains.mps.ide.editor.util.EditorComponentUtil" />
     <classNode dependClassName="jetbrains.mps.ide.project.ProjectHelper" />
     <classNode dependClassName="jetbrains.mps.logging.Logger" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorComponent" />
@@ -264,19 +236,6 @@
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode extendsClassName="com.intellij.openapi.actionSystem.DataProvider" />
   </dependency>
-  <dependency className="jetbrains.mps.debugger.api.ui.breakpoints.CurrentLinePainter" file="CurrentLinePainter.java">
-    <classNode dependClassName="java.awt.Color" />
-    <classNode dependClassName="java.awt.Graphics" />
-    <classNode dependClassName="java.awt.Rectangle" />
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="jetbrains.mps.debugger.api.ui.breakpoints.BreakpointPainter" />
-    <classNode dependClassName="jetbrains.mps.nodeEditor.AdditionalPainter" />
-    <classNode dependClassName="jetbrains.mps.nodeEditor.EditorComponent" />
-    <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell_Label" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
-    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
-    <classNode extendsClassName="jetbrains.mps.debugger.api.ui.breakpoints.EditorCellPainter" />
-  </dependency>
   <dependency className="jetbrains.mps.debugger.api.ui.breakpoints.CurrentLinePositionComponent" file="CurrentLinePositionComponent.java">
     <classNode dependClassName="com.intellij.openapi.fileEditor.FileEditorManager" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
@@ -291,26 +250,13 @@
     <classNode dependClassName="jetbrains.mps.debug.api.programState.ILocation" />
     <classNode dependClassName="jetbrains.mps.debug.api.programState.IStackFrame" />
     <classNode dependClassName="jetbrains.mps.debug.api.programState.NullLocation" />
+    <classNode dependClassName="jetbrains.mps.generator.traceInfo.TraceInfoUtil" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="com.intellij.openapi.components.ProjectComponent" />
     <classNode extendsClassName="jetbrains.mps.debug.api.DebugSessionListener" />
     <classNode extendsClassName="jetbrains.mps.debug.api.SessionChangeAdapter" />
-    <classNode extendsClassName="jetbrains.mps.debugger.api.ui.breakpoints.AbstractCurrentLinePositionComponent" />
-  </dependency>
-  <dependency className="jetbrains.mps.debugger.api.ui.breakpoints.EditorCellPainter" file="EditorCellPainter.java">
-    <classNode dependClassName="java.awt.Color" />
-    <classNode dependClassName="java.awt.Graphics" />
-    <classNode dependClassName="java.awt.Rectangle" />
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="jetbrains.mps.nodeEditor.EditorComponent" />
-    <classNode dependClassName="jetbrains.mps.nodeEditor.cells.CellFinders" />
-    <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell" />
-    <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell_Collection" />
-    <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell_Label" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
-    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
-    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
-    <classNode extendsClassName="jetbrains.mps.nodeEditor.AbstractAdditionalPainter" />
+    <classNode extendsClassName="jetbrains.mps.debugger.core.AbstractCurrentLinePositionComponent" />
   </dependency>
   <dependency className="jetbrains.mps.debugger.api.ui.breakpoints.GroupedTree" file="GroupedTree.java">
     <classNode dependClassName="java.awt.Color" />

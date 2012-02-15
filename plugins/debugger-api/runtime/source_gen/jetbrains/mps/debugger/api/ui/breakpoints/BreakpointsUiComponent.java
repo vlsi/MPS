@@ -17,7 +17,7 @@ import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.application.ApplicationManager;
 import jetbrains.mps.nodeEditor.highlighter.EditorComponentCreateListener;
 import jetbrains.mps.nodeEditor.EditorComponent;
-import jetbrains.mps.ide.editor.EditorUtil;
+import jetbrains.mps.ide.editor.util.EditorComponentUtil;
 import jetbrains.mps.debug.api.breakpoints.ILocationBreakpoint;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.ide.project.ProjectHelper;
@@ -90,7 +90,7 @@ public class BreakpointsUiComponent implements ProjectComponent {
     myBreakpointsManagerComponent.addChangeListener(myBreakpointManagerListener);
     myMessageBusConnection = myProject.getMessageBus().connect();
     myMessageBusConnection.subscribe(EditorComponentCreateListener.EDITOR_COMPONENT_CREATION, myEditorComponentCreationHandler);
-    for (EditorComponent editor : EditorUtil.getAllEditorComponents(myFileEditorManager, true)) {
+    for (EditorComponent editor : EditorComponentUtil.getAllEditorComponents(myFileEditorManager, true)) {
       editorComponentCreated(editor);
     }
   }
@@ -153,7 +153,7 @@ public class BreakpointsUiComponent implements ProjectComponent {
       public void run() {
         for (ILocationBreakpoint locationBreakpoint : breakpointsForRoot) {
           SNode node = locationBreakpoint.getLocation().getSNode();
-          if (node != null && EditorUtil.isNodeShownInTheComponent(editorComponent, node)) {
+          if (node != null && EditorComponentUtil.isNodeShownInTheComponent(editorComponent, node)) {
             result.add(locationBreakpoint);
           }
         }
@@ -312,7 +312,7 @@ public class BreakpointsUiComponent implements ProjectComponent {
   private List<EditorComponent> findComponentForLocationBreakpoint(@NotNull ILocationBreakpoint breakpoint) {
     SNode node = breakpoint.getLocation().getSNode();
     if (node != null) {
-      return EditorUtil.findComponentForNode(node, myFileEditorManager);
+      return EditorComponentUtil.findComponentForNode(node, myFileEditorManager);
     }
     return Collections.emptyList();
   }
@@ -497,7 +497,7 @@ public class BreakpointsUiComponent implements ProjectComponent {
       ApplicationManager.getApplication().invokeLater((new Runnable() {
         @Override
         public void run() {
-          for (EditorComponent editorComponent : EditorUtil.getAllEditorComponents(myFileEditorManager, true)) {
+          for (EditorComponent editorComponent : EditorComponentUtil.getAllEditorComponents(myFileEditorManager, true)) {
             editorComponent.repaint();
           }
         }
