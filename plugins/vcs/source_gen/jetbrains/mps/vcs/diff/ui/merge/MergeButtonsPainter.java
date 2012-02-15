@@ -34,7 +34,7 @@ public class MergeButtonsPainter extends ButtonsPainter {
       getX(0)
     );
     FoldingAreaButton apply = new MergeButtonsPainter.MyButton(changeGroup, applyX, y, "Apply", (isHighlightLeft() ?
-      MIRRORED_APPLY_ICON :
+      MergeButtonsPainter.MIRRORED_APPLY_ICON :
       Icons.APPLY
     ), new _FunctionTypes._void_P2_E0<MergeSession, Iterable<ModelChange>>() {
       public void invoke(MergeSession session, Iterable<ModelChange> changes) {

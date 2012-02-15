@@ -255,7 +255,6 @@
   <dependency className="jetbrains.mps.vcs.mergedriver.MergeDriverOptionsDialog" file="MergeDriverOptionsDialog.java">
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="com.intellij.openapi.util.DimensionService" />
-    <classNode dependClassName="com.intellij.openapi.wm.WindowManager" />
     <classNode dependClassName="java.awt.Dimension" />
     <classNode dependClassName="java.awt.FlowLayout" />
     <classNode dependClassName="java.awt.GridLayout" />
@@ -263,25 +262,6 @@
     <classNode dependClassName="java.awt.event.ItemListener" />
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="javax.swing.JComponent" />
-    <classNode dependClassName="javax.swing.JPanel" />
-    <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
-    <classNode dependClassName="jetbrains.mps.vcs.mergedriver.AbstractInstaller" />
-    <classNode dependClassName="jetbrains.mps.vcs.mergedriver.GitGlobalConfigFixesInstaller" />
-    <classNode dependClassName="jetbrains.mps.vcs.mergedriver.GitGlobalInstaller" />
-    <classNode dependClassName="jetbrains.mps.vcs.mergedriver.GitRepositoriesInstaller" />
-    <classNode dependClassName="jetbrains.mps.vcs.mergedriver.MergeDriverNotification" />
-    <classNode dependClassName="jetbrains.mps.vcs.mergedriver.SvnInstaller" />
-    <classNode extendsClassName="javax.swing.JCheckBox" />
-    <classNode extendsClassName="jetbrains.mps.ide.dialogs.BaseDialog" />
-  </dependency>
-  <dependency className="jetbrains.mps.vcs.mergedriver.MergeDriverOptionsDialogNew" file="MergeDriverOptionsDialogNew.java">
-    <classNode dependClassName="com.intellij.openapi.project.Project" />
-    <classNode dependClassName="java.awt.FlowLayout" />
-    <classNode dependClassName="java.awt.GridLayout" />
-    <classNode dependClassName="java.awt.event.ItemEvent" />
-    <classNode dependClassName="java.awt.event.ItemListener" />
-    <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="javax.swing.Action" />

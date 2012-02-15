@@ -29,9 +29,13 @@ import com.intellij.openapi.actionSystem.Separator;
 import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.actionSystem.ActionPlaces;
 import javax.swing.SwingUtilities;
+import java.awt.DisplayMode;
+import java.awt.GraphicsEnvironment;
 import java.awt.Dimension;
 import com.intellij.openapi.util.DimensionService;
-import jetbrains.mps.ide.dialogs.DialogDimensionsSettings;
+import org.jetbrains.annotations.NonNls;
+import jetbrains.mps.vcs.diff.ui.common.DiffModelTree;
+import com.intellij.openapi.util.Ref;
 import javax.swing.Action;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.vcs.diff.ui.common.DiffTemporaryModule;
@@ -43,6 +47,8 @@ import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.vcs.diff.ui.common.DiffChangeGroupLayout;
 import jetbrains.mps.vcs.diff.ui.common.ChangeGroupMessages;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
+import java.awt.GraphicsDevice;
+import java.awt.HeadlessException;
 import jetbrains.mps.vcs.diff.ui.common.GoToNeighbourRootActions;
 import org.jetbrains.annotations.NotNull;
 
@@ -122,16 +128,32 @@ public class RootDifferenceDialog extends DialogWrapper {
     } else {
       neighbourTraverser.goToFirstChangeLater();
     }
+    DisplayMode displayMode = check_vu2gar_a0ab0b(check_vu2gar_a0a62a1(GraphicsEnvironment.getLocalGraphicsEnvironment()));
+    int width = (displayMode == null ?
+      800 :
+      displayMode.getWidth()
+    );
+    int height = (displayMode == null ?
+      600 :
+      displayMode.getHeight()
+    );
     final Dimension size = DimensionService.getInstance().getSize(getDimensionServiceKey());
     if (size == null) {
-      DimensionService.getInstance().setSize(getDimensionServiceKey(), DialogDimensionsSettings.generateDialogDimensions(-100, -100).getDimensions());
+      DimensionService.getInstance().setSize(getDimensionServiceKey(), new Dimension(width - 100, height - 100));
     }
-
     init();
   }
 
   public String getDimensionServiceKey() {
     return "#jetbrains.mps.vcs.diff.ui.RootDifferenceDialog";
+  }
+
+  @Nullable
+  public Object getData(@NonNls String dataId) {
+    if (DiffModelTree.NODE_ID_DATAKEY.is(dataId)) {
+      return new Ref<SNodeId>(myRootId);
+    }
+    return null;
   }
 
   protected Action[] createActions() {
@@ -250,6 +272,20 @@ public class RootDifferenceDialog extends DialogWrapper {
     }
     myClosed = true;
     super.dispose();
+  }
+
+  private static DisplayMode check_vu2gar_a0ab0b(GraphicsDevice checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getDisplayMode();
+    }
+    return null;
+  }
+
+  private static GraphicsDevice check_vu2gar_a0a62a1(GraphicsEnvironment checkedDotOperand) throws HeadlessException {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getDefaultScreenDevice();
+    }
+    return null;
   }
 
   public class MyGoToNeighbourRootActions extends GoToNeighbourRootActions {

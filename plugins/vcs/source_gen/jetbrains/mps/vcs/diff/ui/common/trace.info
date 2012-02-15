@@ -2423,37 +2423,6 @@
     <unitInfo nodeId="4652592318748340352" fileName="GoToNeighbourRootActions.java" startLine="15" startPosition="0" endLine="65" endPosition="0" unitName="jetbrains.mps.vcs.diff.ui.common.GoToNeighbourRootActions" />
     <unitInfo nodeId="4652592318748340353" fileName="GoToNeighbourRootActions.java" startLine="35" startPosition="0" endLine="64" endPosition="0" unitName="jetbrains.mps.vcs.diff.ui.common.GoToNeighbourRootActions$TheAction" />
   </root>
-  <root nodeId="4652592318748340488">
-    <nodeInfo nodeId="4652592318748340489" fileName="InvokeTextDiffAction.java" startLine="13" startPosition="54" endLine="14" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myDiffRequest" />
-    <nodeInfo nodeId="4652592318748340492" fileName="InvokeTextDiffAction.java" startLine="14" startPosition="36" endLine="15" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myDialog" />
-    <nodeInfo nodeId="4652592318748340495" fileName="InvokeTextDiffAction.java" startLine="15" startPosition="30" endLine="16" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myDiffTool" />
-    <nodeInfo nodeId="4652592318748340504" fileName="InvokeTextDiffAction.java" startLine="18" startPosition="128" endLine="19" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="4652592318748340508" fileName="InvokeTextDiffAction.java" startLine="19" startPosition="47" endLine="20" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4652592318748340512" fileName="InvokeTextDiffAction.java" startLine="20" startPosition="22" endLine="21" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4652592318748340516" fileName="InvokeTextDiffAction.java" startLine="21" startPosition="32" endLine="22" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4652592318748340520" fileName="InvokeTextDiffAction.java" startLine="22" startPosition="26" endLine="23" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4652592318748340523" fileName="InvokeTextDiffAction.java" startLine="23" startPosition="33" endLine="24" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8733553229778920717" fileName="InvokeTextDiffAction.java" startLine="28" startPosition="44" endLine="29" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4652592318748340552" fileName="InvokeTextDiffAction.java" startLine="29" startPosition="25" endLine="30" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4652592318748340546" fileName="InvokeTextDiffAction.java" startLine="27" startPosition="74" endLine="31" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4652592318748340536" fileName="InvokeTextDiffAction.java" startLine="26" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doExecute#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
-    <nodeInfo nodeId="4652592318748340500" fileName="InvokeTextDiffAction.java" startLine="17" startPosition="0" endLine="25" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="InvokeTextDiffAction#(Ljava/lang/String;Ljava/lang/String;Ljetbrains/mps/ide/dialogs/BaseDialog;Lcom/intellij/openapi/diff/DiffRequest;Lcom/intellij/openapi/diff/DiffTool;)V" />
-    <scopeInfo nodeId="4652592318748340547" fileName="InvokeTextDiffAction.java" startLine="28" startPosition="44" endLine="30" endPosition="37" />
-    <scopeInfo nodeId="4652592318748340545" fileName="InvokeTextDiffAction.java" startLine="27" startPosition="74" endLine="31" endPosition="5" />
-    <scopeInfo nodeId="4652592318748340503" fileName="InvokeTextDiffAction.java" startLine="18" startPosition="128" endLine="24" endPosition="35" />
-    <scopeInfo nodeId="4652592318748340536" fileName="InvokeTextDiffAction.java" startLine="26" startPosition="0" endLine="33" endPosition="0">
-      <varInfo nodeId="4652592318748340539" varName="event" />
-      <varInfo nodeId="4652592318748340541" varName="map" />
-    </scopeInfo>
-    <scopeInfo nodeId="4652592318748340500" fileName="InvokeTextDiffAction.java" startLine="17" startPosition="0" endLine="25" endPosition="3">
-      <varInfo nodeId="4652592318748340528" varName="description" />
-      <varInfo nodeId="4652592318748340530" varName="dialog" />
-      <varInfo nodeId="4652592318748340532" varName="diffRequest" />
-      <varInfo nodeId="4652592318748340534" varName="diffTool" />
-      <varInfo nodeId="4652592318748340526" varName="title" />
-    </scopeInfo>
-    <unitInfo nodeId="4652592318748340488" fileName="InvokeTextDiffAction.java" startLine="13" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.vcs.diff.ui.common.InvokeTextDiffAction" />
-  </root>
   <root nodeId="4652592318748340561">
     <nodeInfo nodeId="4652592318748340562" fileName="NextPreviousTraverser.java" startLine="36" startPosition="36" endLine="37" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="PREVIOUS_ICON" />
     <nodeInfo nodeId="4652592318748340568" fileName="NextPreviousTraverser.java" startLine="37" startPosition="110" endLine="38" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="NEXT_ICON" />
@@ -2938,40 +2907,42 @@
     <scopeInfo nodeId="739457190729177668" fileName="ChangeGroupMessages.java" startLine="45" startPosition="0" endLine="54" endPosition="0" />
     <scopeInfo nodeId="739457190729189660" fileName="ChangeGroupMessages.java" startLine="29" startPosition="0" endLine="41" endPosition="0" />
     <unitInfo nodeId="3477558405266190215" fileName="ChangeGroupMessages.java" startLine="15" startPosition="56" endLine="14" endPosition="0" />
+    <unitInfo nodeId="739457190729175664" fileName="ChangeGroupMessages.java" startLine="14" startPosition="0" endLine="88" endPosition="0" unitName="jetbrains.mps.vcs.diff.ui.common.ChangeGroupMessages" />
+    <unitInfo nodeId="739457190729183679" fileName="ChangeGroupMessages.java" startLine="31" startPosition="39" endLine="39" endPosition="5" unitName="jetbrains.mps.vcs.diff.ui.common.ChangeGroupMessages$2" />
     <unitInfo nodeId="9208869176467556553" fileName="ChangeGroupMessages.java" startLine="33" startPosition="60" endLine="37" endPosition="9" unitName="jetbrains.mps.vcs.diff.ui.common.ChangeGroupMessages$3" />
     <unitInfo nodeId="739457190729183618" fileName="ChangeGroupMessages.java" startLine="48" startPosition="67" endLine="52" endPosition="5" unitName="jetbrains.mps.vcs.diff.ui.common.ChangeGroupMessages$3" />
     <unitInfo nodeId="739457190729183512" fileName="ChangeGroupMessages.java" startLine="60" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.vcs.diff.ui.common.ChangeGroupMessages$MyChangeGroupMessage" />
   </root>
   <root nodeId="8733553229778921962">
-    <nodeInfo nodeId="8733553229778921963" fileName="InvokeTextDiffActionNew.java" startLine="13" startPosition="57" endLine="14" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myDiffRequest" />
-    <nodeInfo nodeId="8733553229778921966" fileName="InvokeTextDiffActionNew.java" startLine="14" startPosition="36" endLine="15" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myDialog" />
-    <nodeInfo nodeId="8733553229778921969" fileName="InvokeTextDiffActionNew.java" startLine="15" startPosition="33" endLine="16" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myDiffTool" />
-    <nodeInfo nodeId="8733553229778921978" fileName="InvokeTextDiffActionNew.java" startLine="18" startPosition="134" endLine="19" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="8733553229778921982" fileName="InvokeTextDiffActionNew.java" startLine="19" startPosition="47" endLine="20" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8733553229778921986" fileName="InvokeTextDiffActionNew.java" startLine="20" startPosition="22" endLine="21" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8733553229778921990" fileName="InvokeTextDiffActionNew.java" startLine="21" startPosition="32" endLine="22" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8733553229778921994" fileName="InvokeTextDiffActionNew.java" startLine="22" startPosition="26" endLine="23" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8733553229778921997" fileName="InvokeTextDiffActionNew.java" startLine="23" startPosition="33" endLine="24" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8733553229778922022" fileName="InvokeTextDiffActionNew.java" startLine="28" startPosition="44" endLine="29" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8733553229778922026" fileName="InvokeTextDiffActionNew.java" startLine="29" startPosition="56" endLine="30" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8733553229778922020" fileName="InvokeTextDiffActionNew.java" startLine="27" startPosition="74" endLine="31" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8733553229778922010" fileName="InvokeTextDiffActionNew.java" startLine="26" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doExecute#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
-    <nodeInfo nodeId="8733553229778921974" fileName="InvokeTextDiffActionNew.java" startLine="17" startPosition="0" endLine="25" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="InvokeTextDiffActionNew#(Ljava/lang/String;Ljava/lang/String;Lcom/intellij/openapi/ui/DialogWrapper;Lcom/intellij/openapi/diff/DiffRequest;Lcom/intellij/openapi/diff/DiffTool;)V" />
-    <scopeInfo nodeId="8733553229778922021" fileName="InvokeTextDiffActionNew.java" startLine="28" startPosition="44" endLine="30" endPosition="37" />
-    <scopeInfo nodeId="8733553229778922019" fileName="InvokeTextDiffActionNew.java" startLine="27" startPosition="74" endLine="31" endPosition="5" />
-    <scopeInfo nodeId="8733553229778921977" fileName="InvokeTextDiffActionNew.java" startLine="18" startPosition="134" endLine="24" endPosition="35" />
-    <scopeInfo nodeId="8733553229778922010" fileName="InvokeTextDiffActionNew.java" startLine="26" startPosition="0" endLine="33" endPosition="0">
+    <nodeInfo nodeId="8733553229778921963" fileName="InvokeTextDiffAction.java" startLine="13" startPosition="54" endLine="14" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myDiffRequest" />
+    <nodeInfo nodeId="8733553229778921966" fileName="InvokeTextDiffAction.java" startLine="14" startPosition="36" endLine="15" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myDialog" />
+    <nodeInfo nodeId="8733553229778921969" fileName="InvokeTextDiffAction.java" startLine="15" startPosition="33" endLine="16" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myDiffTool" />
+    <nodeInfo nodeId="8733553229778921978" fileName="InvokeTextDiffAction.java" startLine="18" startPosition="131" endLine="19" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="8733553229778921982" fileName="InvokeTextDiffAction.java" startLine="19" startPosition="47" endLine="20" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8733553229778921986" fileName="InvokeTextDiffAction.java" startLine="20" startPosition="22" endLine="21" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8733553229778921990" fileName="InvokeTextDiffAction.java" startLine="21" startPosition="32" endLine="22" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8733553229778921994" fileName="InvokeTextDiffAction.java" startLine="22" startPosition="26" endLine="23" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8733553229778921997" fileName="InvokeTextDiffAction.java" startLine="23" startPosition="33" endLine="24" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8733553229778922022" fileName="InvokeTextDiffAction.java" startLine="28" startPosition="44" endLine="29" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8733553229778922026" fileName="InvokeTextDiffAction.java" startLine="29" startPosition="56" endLine="30" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8733553229778922020" fileName="InvokeTextDiffAction.java" startLine="27" startPosition="74" endLine="31" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8733553229778922010" fileName="InvokeTextDiffAction.java" startLine="26" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doExecute#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
+    <nodeInfo nodeId="8733553229778921974" fileName="InvokeTextDiffAction.java" startLine="17" startPosition="0" endLine="25" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="InvokeTextDiffAction#(Ljava/lang/String;Ljava/lang/String;Lcom/intellij/openapi/ui/DialogWrapper;Lcom/intellij/openapi/diff/DiffRequest;Lcom/intellij/openapi/diff/DiffTool;)V" />
+    <scopeInfo nodeId="8733553229778922021" fileName="InvokeTextDiffAction.java" startLine="28" startPosition="44" endLine="30" endPosition="37" />
+    <scopeInfo nodeId="8733553229778922019" fileName="InvokeTextDiffAction.java" startLine="27" startPosition="74" endLine="31" endPosition="5" />
+    <scopeInfo nodeId="8733553229778921977" fileName="InvokeTextDiffAction.java" startLine="18" startPosition="131" endLine="24" endPosition="35" />
+    <scopeInfo nodeId="8733553229778922010" fileName="InvokeTextDiffAction.java" startLine="26" startPosition="0" endLine="33" endPosition="0">
       <varInfo nodeId="8733553229778922013" varName="event" />
       <varInfo nodeId="8733553229778922015" varName="map" />
     </scopeInfo>
-    <scopeInfo nodeId="8733553229778921974" fileName="InvokeTextDiffActionNew.java" startLine="17" startPosition="0" endLine="25" endPosition="3">
+    <scopeInfo nodeId="8733553229778921974" fileName="InvokeTextDiffAction.java" startLine="17" startPosition="0" endLine="25" endPosition="3">
       <varInfo nodeId="8733553229778922002" varName="description" />
       <varInfo nodeId="8733553229778922004" varName="dialog" />
       <varInfo nodeId="8733553229778922006" varName="diffRequest" />
       <varInfo nodeId="8733553229778922008" varName="diffTool" />
       <varInfo nodeId="8733553229778922000" varName="title" />
     </scopeInfo>
-    <unitInfo nodeId="8733553229778921962" fileName="InvokeTextDiffActionNew.java" startLine="13" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.vcs.diff.ui.common.InvokeTextDiffActionNew" />
+    <unitInfo nodeId="8733553229778921962" fileName="InvokeTextDiffAction.java" startLine="13" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.vcs.diff.ui.common.InvokeTextDiffAction" />
   </root>
   <root nodeId="9170101780449072521">
     <nodeInfo nodeId="9170101780449072542" fileName="ChangeEditorMessageFactory.java" startLine="30" startPosition="198" endLine="31" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
