@@ -19,12 +19,10 @@ import jetbrains.mps.make.resources.IPropertiesAccessor;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.smodel.resources.TResource;
-import jetbrains.mps.internal.collections.runtime.MapSequence;
-import jetbrains.mps.traceInfo.DebugInfo;
 import jetbrains.mps.internal.make.runtime.util.DeltaReconciler;
 import jetbrains.mps.internal.make.runtime.util.FilesDelta;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
 import org.apache.commons.lang.StringUtils;
-import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.make.script.IFeedback;
@@ -36,14 +34,13 @@ import jetbrains.mps.make.script.IConfig;
 import jetbrains.mps.smodel.resources.IGResource;
 import java.util.HashMap;
 import jetbrains.mps.smodel.SModelReference;
-import jetbrains.mps.generator.GenerationStatus;
+import java.util.Map;
 import jetbrains.mps.smodel.resources.GResource;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.buildScript.util.GenerationUtil;
 import jetbrains.mps.generator.generationTypes.TextGenerator;
-import java.util.Map;
 import jetbrains.mps.make.script.IPropertiesPool;
 
 public class CopyGeneratedScripts_Facet extends IFacet.Stub {
@@ -98,32 +95,23 @@ public class CopyGeneratedScripts_Facet extends IFacet.Stub {
                 final List<Tuples._2<IFile, IFile>> toCopy = ListSequence.fromList(new ArrayList<Tuples._2<IFile, IFile>>());
 
                 final TResource tres = (TResource) resource;
-                if (MapSequence.fromMap(pa.global().properties(new ITarget.Name("jetbrains.mps.buildScript.CopyGeneratedScripts.collectDirs"), CopyGeneratedScripts_Facet.Target_collectDirs.Parameters.class).status()).get(tres.modelDescriptor().getSModelReference()) != null) {
 
-                  final DebugInfo debugInfo = MapSequence.fromMap(pa.global().properties(new ITarget.Name("jetbrains.mps.buildScript.CopyGeneratedScripts.collectDirs"), CopyGeneratedScripts_Facet.Target_collectDirs.Parameters.class).status()).get(tres.modelDescriptor().getSModelReference()).getDebugInfo();
-
-                  new DeltaReconciler(tres.delta()).visitAll(new FilesDelta.Visitor() {
-                    @Override
-                    public boolean acceptWritten(IFile file) {
-                      if (!(Sequence.fromIterable(Sequence.fromArray(new String[]{"dependencies", "generated", "trace.info"})).contains(file.getName()))) {
-
-                        String nodeId = debugInfo.getNodeIdForFileName(file.getName());
-                        if (StringUtils.isNotEmpty(nodeId)) {
-                          String destPath = MapSequence.fromMap(pa.global().properties(new ITarget.Name("jetbrains.mps.buildScript.CopyGeneratedScripts.collectDirs"), CopyGeneratedScripts_Facet.Target_collectDirs.Parameters.class).originalNodesToDestination()).get(new SNodePointer(tres.modelDescriptor().getSModelReference().toString(), nodeId));
-                          if (StringUtils.isNotEmpty(destPath)) {
-                            IFile destDir = FileSystem.getInstance().getFileByPath(destPath);
-                            IFile copy = destDir.getDescendant(file.getName());
-                            ListSequence.fromList(toCopy).addElement(MultiTuple.<IFile,IFile>from(file, copy));
-                            monitor.reportFeedback(new IFeedback.INFORMATION(String.valueOf("Copying " + ListSequence.fromList(toCopy).last())));
-                          }
-                        }
-
+                new DeltaReconciler(tres.delta()).visitAll(new FilesDelta.Visitor() {
+                  @Override
+                  public boolean acceptWritten(IFile file) {
+                    if (!(Sequence.fromIterable(Sequence.fromArray(new String[]{"dependencies", "generated", "trace.info"})).contains(file.getName()))) {
+                      String destPath = MapSequence.fromMap(MapSequence.fromMap(pa.global().properties(new ITarget.Name("jetbrains.mps.buildScript.CopyGeneratedScripts.collectDirs"), CopyGeneratedScripts_Facet.Target_collectDirs.Parameters.class).fileNameToDestination()).get(tres.modelDescriptor().getSModelReference())).get(file.getName());
+                      if (StringUtils.isNotEmpty(destPath)) {
+                        IFile destDir = FileSystem.getInstance().getFileByPath(destPath);
+                        IFile copy = destDir.getDescendant(file.getName());
+                        ListSequence.fromList(toCopy).addElement(MultiTuple.<IFile,IFile>from(file, copy));
+                        monitor.reportFeedback(new IFeedback.INFORMATION(String.valueOf("Copying " + ListSequence.fromList(toCopy).last())));
                       }
-                      return true;
                     }
-                  });
 
-                }
+                    return true;
+                  }
+                });
                 ThreadUtils.runInUIThreadAndWait(new Runnable() {
                   public void run() {
                     ModelAccess.instance().requireWrite(new Runnable() {
@@ -215,14 +203,12 @@ public class CopyGeneratedScripts_Facet extends IFacet.Stub {
           Iterable<IResource> _output_ixa0pj_a0b = null;
           switch (0) {
             case 0:
-              pa.global().properties(Target_collectDirs.this.getName(), CopyGeneratedScripts_Facet.Target_collectDirs.Parameters.class).originalNodesToDestination(MapSequence.fromMap(new HashMap<SNodePointer, String>()));
-              pa.global().properties(Target_collectDirs.this.getName(), CopyGeneratedScripts_Facet.Target_collectDirs.Parameters.class).status(MapSequence.fromMap(new HashMap<SModelReference, GenerationStatus>()));
+              pa.global().properties(Target_collectDirs.this.getName(), CopyGeneratedScripts_Facet.Target_collectDirs.Parameters.class).fileNameToDestination(MapSequence.fromMap(new HashMap<SModelReference, Map<String, String>>()));
               for (IResource resource : Sequence.fromIterable(input)) {
                 final GResource gres = (GResource) resource;
                 ModelAccess.instance().runReadAction(new Runnable() {
                   public void run() {
-                    // we will need debug info from status 
-                    MapSequence.fromMap(pa.global().properties(Target_collectDirs.this.getName(), CopyGeneratedScripts_Facet.Target_collectDirs.Parameters.class).status()).put(gres.model().getSModelReference(), gres.status());
+                    MapSequence.fromMap(pa.global().properties(Target_collectDirs.this.getName(), CopyGeneratedScripts_Facet.Target_collectDirs.Parameters.class).fileNameToDestination()).put(gres.model().getSModelReference(), MapSequence.fromMap(new HashMap<String, String>()));
 
                     // all descendants with scripts_dir_property 
                     Iterable<SNode> buildScriptDescendants = ListSequence.fromList(SModelOperations.getRoots(gres.status().getOutputModel(), null)).where(new IWhereFilter<SNode>() {
@@ -234,8 +220,8 @@ public class CopyGeneratedScripts_Facet extends IFacet.Stub {
 
                     // find input and map it to scripts dir 
                     for (SNode descendant : Sequence.fromIterable(buildScriptDescendants)) {
-                      SNode originalNode = TextGenerator.getOriginalInputNodeForNearestParent(descendant);
-                      MapSequence.fromMap(pa.global().properties(Target_collectDirs.this.getName(), CopyGeneratedScripts_Facet.Target_collectDirs.Parameters.class).originalNodesToDestination()).put(new SNodePointer(originalNode), ((String) descendant.getUserObject(GenerationUtil.SCRIPTS_DIR_PROPERTY)));
+                      String fileName = TextGenerator.getFileName(descendant);
+                      MapSequence.fromMap(MapSequence.fromMap(pa.global().properties(Target_collectDirs.this.getName(), CopyGeneratedScripts_Facet.Target_collectDirs.Parameters.class).fileNameToDestination()).get(gres.model().getSModelReference())).put(fileName, ((String) descendant.getUserObject(GenerationUtil.SCRIPTS_DIR_PROPERTY)));
                     }
                   }
                 });
@@ -308,38 +294,30 @@ public class CopyGeneratedScripts_Facet extends IFacet.Stub {
     public <T> T createParameters(Class<T> cls, T copyFrom) {
       T t = createParameters(cls);
       if (t != null) {
-        ((Tuples._2) t).assign((Tuples._2) copyFrom);
+        ((Tuples._1) t).assign((Tuples._1) copyFrom);
       }
       return t;
     }
 
-    public static class Parameters extends MultiTuple._2<Map<SNodePointer, String>, Map<SModelReference, GenerationStatus>> {
+    public static class Parameters extends MultiTuple._1<Map<SModelReference, Map<String, String>>> {
       public Parameters() {
         super();
       }
 
-      public Parameters(Map<SNodePointer, String> originalNodesToDestination, Map<SModelReference, GenerationStatus> status) {
-        super(originalNodesToDestination, status);
+      public Parameters(Map<SModelReference, Map<String, String>> fileNameToDestination) {
+        super(fileNameToDestination);
       }
 
-      public Map<SNodePointer, String> originalNodesToDestination(Map<SNodePointer, String> value) {
+      public Map<SModelReference, Map<String, String>> fileNameToDestination(Map<SModelReference, Map<String, String>> value) {
         return super._0(value);
       }
 
-      public Map<SModelReference, GenerationStatus> status(Map<SModelReference, GenerationStatus> value) {
-        return super._1(value);
-      }
-
-      public Map<SNodePointer, String> originalNodesToDestination() {
+      public Map<SModelReference, Map<String, String>> fileNameToDestination() {
         return super._0();
       }
 
-      public Map<SModelReference, GenerationStatus> status() {
-        return super._1();
-      }
-
       @SuppressWarnings(value = "unchecked")
-      public CopyGeneratedScripts_Facet.Target_collectDirs.Parameters assignFrom(Tuples._2<Map<SNodePointer, String>, Map<SModelReference, GenerationStatus>> from) {
+      public CopyGeneratedScripts_Facet.Target_collectDirs.Parameters assignFrom(Tuples._1<Map<SModelReference, Map<String, String>>> from) {
         return (CopyGeneratedScripts_Facet.Target_collectDirs.Parameters) super.assign(from);
       }
     }
@@ -354,8 +332,7 @@ public class CopyGeneratedScripts_Facet extends IFacet.Stub {
         ITarget.Name name = new ITarget.Name("jetbrains.mps.buildScript.CopyGeneratedScripts.collectDirs");
         if (properties.hasProperties(name)) {
           CopyGeneratedScripts_Facet.Target_collectDirs.Parameters props = properties.properties(name, CopyGeneratedScripts_Facet.Target_collectDirs.Parameters.class);
-          MapSequence.fromMap(store).put("jetbrains.mps.buildScript.CopyGeneratedScripts.collectDirs.originalNodesToDestination", null);
-          MapSequence.fromMap(store).put("jetbrains.mps.buildScript.CopyGeneratedScripts.collectDirs.status", null);
+          MapSequence.fromMap(store).put("jetbrains.mps.buildScript.CopyGeneratedScripts.collectDirs.fileNameToDestination", null);
         }
       }
     }
@@ -365,11 +342,8 @@ public class CopyGeneratedScripts_Facet extends IFacet.Stub {
         {
           ITarget.Name name = new ITarget.Name("jetbrains.mps.buildScript.CopyGeneratedScripts.collectDirs");
           CopyGeneratedScripts_Facet.Target_collectDirs.Parameters props = properties.properties(name, CopyGeneratedScripts_Facet.Target_collectDirs.Parameters.class);
-          if (MapSequence.fromMap(store).containsKey("jetbrains.mps.buildScript.CopyGeneratedScripts.collectDirs.originalNodesToDestination")) {
-            props.originalNodesToDestination(null);
-          }
-          if (MapSequence.fromMap(store).containsKey("jetbrains.mps.buildScript.CopyGeneratedScripts.collectDirs.status")) {
-            props.status(null);
+          if (MapSequence.fromMap(store).containsKey("jetbrains.mps.buildScript.CopyGeneratedScripts.collectDirs.fileNameToDestination")) {
+            props.fileNameToDestination(null);
           }
         }
       } catch (RuntimeException re) {

@@ -16,7 +16,6 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.Tuples" />
     <classNode dependClassName="jetbrains.mps.buildScript.util.GenerationUtil" />
-    <classNode dependClassName="jetbrains.mps.generator.GenerationStatus" />
     <classNode dependClassName="jetbrains.mps.generator.generationTypes.TextGenerator" />
     <classNode dependClassName="jetbrains.mps.ide.ThreadUtils" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IVisitor" />
@@ -40,17 +39,15 @@
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelReference" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
     <classNode dependClassName="jetbrains.mps.smodel.resources.GResource" />
     <classNode dependClassName="jetbrains.mps.smodel.resources.IGResource" />
     <classNode dependClassName="jetbrains.mps.smodel.resources.ITResource" />
     <classNode dependClassName="jetbrains.mps.smodel.resources.TResource" />
-    <classNode dependClassName="jetbrains.mps.traceInfo.DebugInfo" />
     <classNode dependClassName="jetbrains.mps.vfs.FileSystem" />
     <classNode dependClassName="jetbrains.mps.vfs.IFile" />
     <classNode dependClassName="jetbrains.mps.vfs.IFileUtils" />
     <classNode dependClassName="org.apache.commons.lang.StringUtils" />
-    <classNode extendsClassName="jetbrains.mps.baseLanguage.tuples.runtime._2" />
+    <classNode extendsClassName="jetbrains.mps.baseLanguage.tuples.runtime._1" />
     <classNode extendsClassName="jetbrains.mps.make.facet.ITargetEx" />
     <classNode extendsClassName="jetbrains.mps.make.facet.Stub" />
     <classNode extendsClassName="jetbrains.mps.make.resources.IPropertiesPersistence" />

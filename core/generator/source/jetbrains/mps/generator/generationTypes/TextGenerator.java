@@ -110,7 +110,7 @@ public class TextGenerator {
         } else {
           Object contents = result.getResult();
           if (TextGenerationUtil.NO_TEXTGEN != contents) {
-            String fileName = outputNode.getName() + "." + TextGenManager.instance().getExtension(outputNode);
+            String fileName = getFileName(outputNode);
             if (info != null) {
               fillDebugInfo(info, fileName, result);
             }
@@ -215,7 +215,7 @@ public class TextGenerator {
     }
   }
 
-  private String getFileName(SNode outputRootNode) {
+  public static String getFileName(SNode outputRootNode) {
     String extension = TextGenManager.instance().getExtension(outputRootNode);
     return (extension == null) ? outputRootNode.getName() : outputRootNode.getName() + "." + extension;
   }
