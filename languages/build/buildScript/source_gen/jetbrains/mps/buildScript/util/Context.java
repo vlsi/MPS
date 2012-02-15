@@ -124,7 +124,7 @@ public class Context {
             module.value = getModule(node);
           }
         });
-        return MacrosFactory.moduleDescriptor(module.value).shrinkPath(fullPath, module.value.getDescriptorFile());
+        return MacrosFactory.moduleDescriptor(module.value).shrinkPath(fullPath, module.value.getDescriptorFile()).replace("\\", "/");
       }
     };
   }
@@ -138,7 +138,7 @@ public class Context {
             module.value = getModule(node);
           }
         });
-        return MacrosFactory.moduleDescriptor(module.value).expandPath(shortPath, module.value.getDescriptorFile());
+        return MacrosFactory.moduleDescriptor(module.value).expandPath(shortPath, module.value.getDescriptorFile()).replace("\\", "/");
       }
     };
   }
