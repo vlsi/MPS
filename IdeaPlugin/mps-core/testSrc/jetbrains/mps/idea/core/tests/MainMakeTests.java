@@ -30,6 +30,7 @@ import com.intellij.openapi.roots.ContentEntry;
 import com.intellij.openapi.roots.ModifiableRootModel;
 import com.intellij.openapi.roots.ModuleRootManager;
 import com.intellij.openapi.util.Disposer;
+import com.intellij.openapi.util.Key;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.vfs.VirtualFileManager;
 import com.intellij.openapi.vfs.VirtualFileSystem;
@@ -54,7 +55,7 @@ import java.util.Set;
  * Time: 4:44 PM
  * To change this template use File | Settings | File Templates.
  */
-public class MakeTests extends DataMPSFixtureTestCase {
+public class MainMakeTests extends AbstractMakeTest {
 
     @Override
     protected void prepareTestData(final MPSFacetConfiguration configuration) throws  Exception {
@@ -63,65 +64,9 @@ public class MakeTests extends DataMPSFixtureTestCase {
         final IFile model = copyResource("models", "main.mps", "main.mps", "/tests/blProject/models/main.mps");
         final IFile source = model.getParent();
         configuration.getState().setModelRootPaths(model.getParent().getPath());
-
-        final ModuleRootManager mrm = ModuleRootManager.getInstance(configuration.getFacet().getModule());
-        ApplicationManager.getApplication().runWriteAction(new Runnable() {
-            @Override
-            public void run() {
-                ModifiableRootModel mm = mrm.getModifiableModel();
-                mm.setSdk(JavaSdkImpl.getMockJdk17());
-
-                VirtualFileSystem vfs = VirtualFileManager.getInstance().getFileSystem("file");
-                VirtualFile project = vfs.findFileByPath(source.getParent().getPath());
-                try {
-                    ContentEntry ce = mm.addContentEntry(project);
-                    VirtualFile contentRoot = project.findChild(source.getName());
-                    if (contentRoot == null) contentRoot = project.createChildDirectory(MakeTests.this, source.getName());
-                    ce.addSourceFolder(contentRoot, false);
-                } catch (IOException e) { }
-                mm.commit();
-
-                CompilerModuleExtension cme = CompilerModuleExtension.getInstance(myModule);
-                CompilerModuleExtension cmemm = (CompilerModuleExtension) cme.getModifiableModel(true);
-                cmemm.setCompilerOutputPath(project.getUrl()+"/classes");
-                cmemm.setCompilerOutputPathForTests(project.getUrl()+"/classes");
-                cmemm.inheritCompilerOutputPath(false);
-                cmemm.commit();
-                Disposer.dispose(cmemm);
-
-                vfs.refresh(false);
-            }
-        });
+        prepareTestData(configuration, source);
     }
 
-
-    @Override
-    protected void setUp() throws Exception {
-        // TODO restore test logger factory
-//        Logger.setFactory(LoggerFactory.getInstance());
-
-
-        super.setUp();
-
-        // this is to prevent exceptions in the project components that get "projectClosed" notifications
-        ApplicationManagerEx.getApplicationEx().doNotSave();
-
-        MPSCompilerComponent mpscc = myModule.getProject().getComponent(MPSCompilerComponent.class);
-        mpscc.projectOpened();
-
-
-    }
-
-    @Override
-    protected void tearDown() throws Exception {
-        super.tearDown();
-        Project prj = myModule.getProject();
-        if (prj instanceof ComponentManagerImpl) {
-            ((ComponentManagerImpl)prj).setTemporarilyDisposed(true);
-        }
-    }
-
-    
     public void testMPSMakeLauncher () {
         ModuleRootManager mrm = ModuleRootManager.getInstance(myFacet.getModule());
         VirtualFile[] srs = mrm.getSourceRoots();
@@ -159,8 +104,7 @@ public class MakeTests extends DataMPSFixtureTestCase {
         assertTrue(errors.toString(),errors.isEmpty());
         assertTrue(files.size() > 4);
     }
-    
-    
+
     public void testMainModel () {
         CompilerManagerImpl.testSetup();
 
@@ -178,11 +122,21 @@ public class MakeTests extends DataMPSFixtureTestCase {
         final VirtualFile module = srs[0].getParent();
         assertTrue(module.findChild("source_gen") == null);
 
+        class Result { boolean aborted; int errors; int warnings; }
+        final Result res = new Result();
         CompilerManager cm = CompilerManager.getInstance(myFacet.getModule().getProject());
         cm.compile(myFacet.getModule(), new CompileStatusNotification() {
             @Override
-            public void finished(boolean aborted, int errors, int warnings, CompileContext compileContext) { }
+            public void finished(boolean aborted, int errors, int warnings, CompileContext compileContext) {
+                res.aborted = aborted;
+                res.errors = errors;
+                res.warnings = warnings;
+            }
         });
+
+        assertFalse(res.aborted);
+        assertSame(0, res.errors);
+        assertSame(0, res.warnings);
 
         vfs.refresh(false);
         assertNotNull("Not found after refresh: " + module.getPath() + "/source_gen", module.findChild("source_gen"));

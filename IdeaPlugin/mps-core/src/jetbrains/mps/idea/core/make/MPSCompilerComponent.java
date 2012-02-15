@@ -42,12 +42,9 @@ public class MPSCompilerComponent implements ProjectComponent {
 		CompilerManager compilerManager = CompilerManager.getInstance(project);
 		compilerManager.addCompilableFileType(MPSFileTypeFactory.MODEL_FILE_TYPE);
 
-		for (MPSCompiler compiler : compilerManager.getCompilers(MPSCompiler.class)) {
+		for (MPSCompiler2 compiler : compilerManager.getCompilers(MPSCompiler2.class)) {
 		  compilerManager.removeCompiler(compiler);
 		}
-		HashSet<FileType> inputSet = new HashSet<FileType>(Arrays.asList(MPSFileTypeFactory.MODEL_FILE_TYPE));
-		HashSet<FileType> outputSet = new HashSet<FileType>(Arrays.asList(StdFileTypes.JAVA));
-        if (false) compilerManager.addTranslatingCompiler(new MPSCompiler(project), inputSet, outputSet);
         compilerManager.addCompiler(new MPSCompiler2(project));
 	}
 
