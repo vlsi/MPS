@@ -10547,6 +10547,10 @@
         <property name="name" nameId="tpck.1169194664001" value="myTextStyle" />
         <node role="visibility" roleId="tpee.1178549979242" type="tpee.PrivateVisibility" typeId="tpee.1146644623116" id="6400107809288383895" />
         <node role="type" roleId="tpee.5680397130376446158" type="tpee.IntegerType" typeId="tpee.1070534370425" id="6400107809288383897" />
+        <node role="initializer" roleId="tpee.1068431790190" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="8426789437620625499">
+          <link role="classifier" roleId="tpee.1144433057691" targetNodeId="y6zh.~SimpleTextAttributes" resolveInfo="SimpleTextAttributes" />
+          <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="y6zh.~SimpleTextAttributes%dSTYLE_PLAIN" resolveInfo="STYLE_PLAIN" />
+        </node>
       </node>
       <node role="field" roleId="tpee.1068390468199" type="tpee.FieldDeclaration" typeId="tpee.1068390468200" id="8694267608197375880">
         <property name="name" nameId="tpck.1169194664001" value="myAdditionalText" />
@@ -10616,9 +10620,8 @@
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="8694267608197379810">
                   <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="8694267608197379814">
                     <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="y6zh.~SimpleTextAttributes%d&lt;init&gt;(int,java%dawt%dColor)" resolveInfo="SimpleTextAttributes" />
-                    <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="8694267608197379124">
-                      <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="y6zh.~SimpleTextAttributes%dSTYLE_PLAIN" resolveInfo="STYLE_PLAIN" />
-                      <link role="classifier" roleId="tpee.1144433057691" targetNodeId="y6zh.~SimpleTextAttributes" resolveInfo="SimpleTextAttributes" />
+                    <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalInstanceFieldReference" typeId="tpee.7785501532031639928" id="8426789437620625495">
+                      <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="6400107809288383894" resolveInfo="myTextStyle" />
                     </node>
                     <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalInstanceMethodCall" typeId="tpee.3066917033203108594" id="8694267608197379817">
                       <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="8694267608197375960" resolveInfo="getColor" />

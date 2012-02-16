@@ -40,8 +40,8 @@ import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.actionSystem.ActionGroup;
 import jetbrains.mps.ide.projectPane.Icons;
 import javax.swing.tree.DefaultMutableTreeNode;
-import java.awt.Color;
 import com.intellij.ui.SimpleTextAttributes;
+import java.awt.Color;
 
 public abstract class DiffModelTree extends SimpleTree implements DataProvider {
   public static DataKey<Ref<SNodeId>> NODE_ID_DATAKEY = DataKey.create("MPS_SNodeId");
@@ -269,7 +269,7 @@ public abstract class DiffModelTree extends SimpleTree implements DataProvider {
 
   public class TreeNode extends DefaultMutableTreeNode {
     private String myText;
-    private int myTextStyle;
+    private int myTextStyle = SimpleTextAttributes.STYLE_PLAIN;
     private String myAdditionalText;
     private String myTooltipText;
     private Icon myIcon;
@@ -284,7 +284,7 @@ public abstract class DiffModelTree extends SimpleTree implements DataProvider {
           doUpdatePresentation();
         }
       });
-      coloredRenderer.append(getText(), new SimpleTextAttributes(SimpleTextAttributes.STYLE_PLAIN, getColor()));
+      coloredRenderer.append(getText(), new SimpleTextAttributes(myTextStyle, getColor()));
       if (StringUtils.isNotEmpty(myAdditionalText)) {
         coloredRenderer.append(" (" + myAdditionalText + ")", new SimpleTextAttributes(SimpleTextAttributes.STYLE_PLAIN, Color.GRAY));
       }
