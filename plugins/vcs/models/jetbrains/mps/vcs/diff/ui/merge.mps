@@ -1400,7 +1400,7 @@
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="708166622413807834" resolveInfo="rootTreeNode" />
               </node>
               <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="708166622413807922">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="v38v.~MPSTreeNode%dsetTooltipText(java%dlang%dString)%cvoid" resolveInfo="setTooltipText" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="hdhb.8694267608197375934" resolveInfo="setTooltipText" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalStaticMethodCall" typeId="tpee.1172058436953" id="708166622413807923">
                   <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="708166622413807477" resolveInfo="generateUnresolvedChangesText" />
                   <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="708166622413807924">
@@ -1435,7 +1435,7 @@
                     <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="708166622413807834" resolveInfo="rootTreeNode" />
                   </node>
                   <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="708166622413807937">
-                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="v38v.~MPSTreeNode%dsetAdditionalText(java%dlang%dString)%cvoid" resolveInfo="setAdditionalText" />
+                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="hdhb.8694267608197375918" resolveInfo="setAdditionalText" />
                     <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="708166622413807938">
                       <property name="value" nameId="tpee.1070475926801" value="with conflicts" />
                     </node>
@@ -1471,7 +1471,7 @@
                               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="708166622413807834" resolveInfo="rootTreeNode" />
                             </node>
                             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="708166622413807954">
-                              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="v38v.~MPSTreeNode%dsetText(java%dlang%dString)%cvoid" resolveInfo="setText" />
+                              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="hdhb.8694267608197375902" resolveInfo="setText" />
                               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="708166622413807955">
                                 <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="e2lb.~String%dformat(java%dlang%dString,java%dlang%dObject%d%d%d)%cjava%dlang%dString" resolveInfo="format" />
                                 <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="e2lb.~String" resolveInfo="String" />
@@ -1483,7 +1483,7 @@
                                     <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="708166622413807834" resolveInfo="rootTreeNode" />
                                   </node>
                                   <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="708166622413807959">
-                                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="v38v.~MPSTreeNode%dgetText()%cjava%dlang%dString" resolveInfo="getText" />
+                                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="hdhb.8694267608197375896" resolveInfo="getText" />
                                   </node>
                                 </node>
                               </node>
@@ -1648,7 +1648,7 @@
                                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="708166622413807834" resolveInfo="rootTreeNode" />
                               </node>
                               <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="708166622413808031">
-                                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="v38v.~MPSTreeNode%dsetAdditionalText(java%dlang%dString)%cvoid" resolveInfo="setAdditionalText" />
+                                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="hdhb.8694267608197375918" resolveInfo="setAdditionalText" />
                                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="708166622413808032">
                                   <property name="value" nameId="tpee.1070475926801" value="local" />
                                 </node>
@@ -1672,7 +1672,7 @@
                                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="708166622413807834" resolveInfo="rootTreeNode" />
                                 </node>
                                 <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="708166622413808041">
-                                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="v38v.~MPSTreeNode%dsetAdditionalText(java%dlang%dString)%cvoid" resolveInfo="setAdditionalText" />
+                                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="hdhb.8694267608197375918" resolveInfo="setAdditionalText" />
                                   <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="708166622413808042">
                                     <property name="value" nameId="tpee.1070475926801" value="remote" />
                                   </node>
@@ -1697,7 +1697,7 @@
                                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="708166622413807834" resolveInfo="rootTreeNode" />
                                 </node>
                                 <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="708166622413808051">
-                                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="v38v.~MPSTreeNode%dsetAdditionalText(java%dlang%dString)%cvoid" resolveInfo="setAdditionalText" />
+                                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="hdhb.8694267608197375918" resolveInfo="setAdditionalText" />
                                   <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="708166622413808052">
                                     <property name="value" nameId="tpee.1070475926801" value="both modified" />
                                   </node>
@@ -1722,7 +1722,7 @@
                     <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="708166622413807834" resolveInfo="rootTreeNode" />
                   </node>
                   <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="708166622413808059">
-                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="v38v.~MPSTreeNode%dsetColor(java%dawt%dColor)%cvoid" resolveInfo="setColor" />
+                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="hdhb.8694267608197375966" resolveInfo="setColor" />
                     <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="708166622413808060">
                       <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="hdhb.4652592318748335567" resolveInfo="getForTree" />
                       <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="hdhb.4652592318748335554" resolveInfo="ChangeColors" />
@@ -1842,7 +1842,7 @@
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="708166622413807548" resolveInfo="myMergeTree" />
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="708166622413808107">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="v38v.~MPSTree%drebuildLater()%cvoid" resolveInfo="rebuildLater" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="hdhb.7353747044921776307" resolveInfo="rebuildLater" />
             </node>
           </node>
         </node>
