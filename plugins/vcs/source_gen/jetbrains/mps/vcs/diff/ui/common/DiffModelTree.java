@@ -284,6 +284,9 @@ public abstract class DiffModelTree extends SimpleTree implements DataProvider {
         }
       });
       coloredRenderer.append(getText(), new SimpleTextAttributes(SimpleTextAttributes.STYLE_PLAIN, getColor()));
+      if (StringUtils.isNotEmpty(myAdditionalText)) {
+        coloredRenderer.append(" (" + myAdditionalText + ")", new SimpleTextAttributes(SimpleTextAttributes.STYLE_PLAIN, Color.GRAY));
+      }
       coloredRenderer.setIcon(getIcon());
     }
 
