@@ -40,66 +40,67 @@ public class MPSFacet extends Facet<MPSFacetConfiguration> {
     private static final Logger LOG = Logger.getInstance(MPSFacet.class);
     private Solution mySolution;
 
-    public MPSFacet(@NotNull FacetType facetType, @NotNull Module module, @NotNull String name, @NotNull MPSFacetConfiguration configuration, Facet underlyingFacet) {
-        super(facetType, module, name, configuration, underlyingFacet);
-        configuration.setFacet(this);
-    }
+  public MPSFacet(@NotNull FacetType facetType, @NotNull Module module, @NotNull String name, @NotNull MPSFacetConfiguration configuration, Facet underlyingFacet) {
+    super(facetType, module, name, configuration, underlyingFacet);
+    configuration.setFacet(this);
+  }
 
-    @Override
-    public void initFacet() {
-        StartupManager.getInstance(getModule().getProject()).runWhenProjectIsInitialized(new Runnable() {
-            @Override
-            public void run() {
-                ModelAccess.instance().runWriteAction(new Runnable() {
-                    @Override
-                    public void run() {
-                        SolutionDescriptor solutionDescriptor = getConfiguration().getState().getSolutionDescriptor();
-                        Solution solution = new SolutionIdea(getModule(), solutionDescriptor);
-                        com.intellij.openapi.project.Project project = getModule().getProject();
-                        Project mpsProject = ProjectHelper.toMPSProject(project);
-
-                        MPSModuleRepository repository = MPSModuleRepository.getInstance();
-                        if (repository.existsModule(solutionDescriptor.getModuleReference())) {
-                            MessagesViewTool.log(project, MessageKind.ERROR, MPSBundle.message("facet.cannot.load.second.module", solutionDescriptor.getNamespace()));
-                            return;
-                        }
-
-                        repository.addModule(mySolution = solution, mpsProject);
-                        LOG.info(MPSBundle.message("facet.module.loaded", MPSFacet.this.mySolution.getModuleFqName()));
-                    }
-                });
-            }
-        });
-    }
-
-    @Override
-    public void disposeFacet() {
+  @Override
+  public void initFacet() {
+    StartupManager.getInstance(getModule().getProject()).runWhenProjectIsInitialized(new Runnable() {
+      @Override
+      public void run() {
         ModelAccess.instance().runWriteAction(new Runnable() {
-            @Override
-            public void run() {
-                LOG.info(MPSBundle.message("facet.module.unloaded", mySolution.getModuleFqName()));
-                MPSModuleRepository.getInstance().removeModule(mySolution);
-                mySolution = null;
+          @Override
+          public void run() {
+            SolutionDescriptor solutionDescriptor = getConfiguration().getState().getSolutionDescriptor();
+            Solution solution = new SolutionIdea(getModule(), solutionDescriptor);
+            com.intellij.openapi.project.Project project = getModule().getProject();
+            Project mpsProject = ProjectHelper.toMPSProject(project);
+
+            MPSModuleRepository repository = MPSModuleRepository.getInstance();
+            if (repository.existsModule(solutionDescriptor.getModuleReference())) {
+              MessagesViewTool.log(project, MessageKind.ERROR, MPSBundle.message("facet.cannot.load.second.module", solutionDescriptor.getNamespace()));
+              return;
             }
+
+            repository.addModule(mySolution = solution, mpsProject);
+            mpsProject.addModule(mySolution.getModuleReference());
+            LOG.info(MPSBundle.message("facet.module.loaded", MPSFacet.this.mySolution.getModuleFqName()));
+          }
         });
-    }
+      }
+    });
+  }
 
-    public boolean wasInitialized() {
-        return mySolution != null;
-    }
+  @Override
+  public void disposeFacet() {
+    ModelAccess.instance().runWriteAction(new Runnable() {
+      @Override
+      public void run() {
+        LOG.info(MPSBundle.message("facet.module.unloaded", mySolution.getModuleFqName()));
+        MPSModuleRepository.getInstance().removeModule(mySolution);
+        mySolution = null;
+      }
+    });
+  }
 
-    public void setConfiguration(final MPSConfigurationBean configurationBean) {
-        if (wasInitialized()) {
-            ModelAccess.instance().runWriteInEDT(new Runnable() {
-                @Override
-                public void run() {
-                    mySolution.setSolutionDescriptor(configurationBean.getSolutionDescriptor(), false);
-                }
-            });
+  public boolean wasInitialized() {
+    return mySolution != null;
+  }
+
+  public void setConfiguration(final MPSConfigurationBean configurationBean) {
+    if (wasInitialized()) {
+      ModelAccess.instance().runWriteInEDT(new Runnable() {
+        @Override
+        public void run() {
+          mySolution.setSolutionDescriptor(configurationBean.getSolutionDescriptor(), false);
         }
+      });
     }
+  }
 
-    public Solution getSolution() {
-        return mySolution;
-    }
+  public Solution getSolution() {
+    return mySolution;
+  }
 }

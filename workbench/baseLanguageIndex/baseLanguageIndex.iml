@@ -15,10 +15,10 @@
     <orderEntry type="module" module-name="collections-runtime" />
     <orderEntry type="module" module-name="typesystemEngine" />
     <orderEntry type="module" module-name="generator-engine" />
-    <orderEntry type="module" module-name="workbench" />
     <orderEntry type="library" name="Beansbinding" level="project" />
     <orderEntry type="library" name="ASM" level="project" />
     <orderEntry type="library" name="Commons-logging" level="project" />
+    <orderEntry type="module" module-name="mps-platform" />
   </component>
 </module>
 

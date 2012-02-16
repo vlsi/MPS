@@ -30,7 +30,7 @@
 
     <component>
       <interface-class>jetbrains.mps.make.IMakeService</interface-class>
-      <implementation-class>jetbrains.mps.workbench.make.WorkbenchMakeService</implementation-class>
+      <implementation-class>jetbrains.mps.ide.make.WorkbenchMakeService</implementation-class>
     </component>
 
   </application-components>
