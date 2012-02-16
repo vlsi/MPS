@@ -78,7 +78,7 @@ public class MPSMakeLauncher {
 
         GeneralCommandLine gcl = new GeneralCommandLine(myCommandLine);
         gcl.setWorkDirectory(myProject.getBaseDir().getPath());
-        final TextEventProcessor tep = new TextEventProcessor(myProject, "Make") {
+        final TextEventProcessor tep = new TextEventProcessor(myProject, "MPS") {
             @Override
             public void reportWrittenFile(String file) {
                 LOG.debug("written file: " + file);

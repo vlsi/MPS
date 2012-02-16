@@ -16,9 +16,9 @@
 
 package jetbrains.mps.idea.core.make;
 
+import com.intellij.compiler.impl.CompilerCacheManager;
 import com.intellij.openapi.compiler.*;
 import com.intellij.openapi.module.Module;
-import com.intellij.openapi.project.Project;
 import org.jetbrains.annotations.NonNls;
 
 import java.io.File;
@@ -33,22 +33,14 @@ import java.io.File;
 public class MPSCompilerPaths {
     // Shamelessly copied over from the IDEA sources
 
-    public static File getGeneratedDataDirectory(Project project) {
-        //noinspection HardCodedStringLiteral
-        return new File(CompilerPaths.getCompilerSystemDirectory(project), ".caches");
-    }
-
-    public static File getGeneratedDataDirectory(Project project, com.intellij.openapi.compiler.Compiler compiler) {
-        //noinspection HardCodedStringLiteral
-        return new File(getGeneratedDataDirectory(project), compiler.getDescription().replaceAll("\\s+", "_"));
-    }
-
     @NonNls
-    public static String getCachesOutputPath(IntermediateOutputCompiler compiler, Module module, final boolean forTestSources) {
-        final String generatedCompilerDirectoryPath = getGeneratedDataDirectory(module.getProject(), compiler).getPath();
+    public static String getCachesOutputPath(IntermediateOutputCompiler compiler, Module module, final boolean forTestSources) {        //noinspection HardCodedStringLiteral
+        // use the standard IDEA path for the compiler caches and let's hope there's no name collision
+        final String cachesPath = new File(
+                CompilerPaths.getCacheStoreDirectory(module.getProject()), CompilerCacheManager.getCompilerIdString(compiler)).getPath();
         //noinspection HardCodedStringLiteral
         final String moduleDir = module.getName().replaceAll("\\s+", "_") + "." + Integer.toHexString(module.getModuleFilePath().hashCode());
-        return generatedCompilerDirectoryPath.replace(File.separatorChar, '/') + "/" + moduleDir + "/" + (forTestSources? "test" : "production");
+        return cachesPath.replace(File.separatorChar, '/') + "/" + moduleDir + "/" + (forTestSources? "test" : "production");
     }
 
 }
