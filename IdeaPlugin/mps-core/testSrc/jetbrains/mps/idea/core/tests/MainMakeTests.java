@@ -35,10 +35,7 @@ import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.vfs.VirtualFileManager;
 import com.intellij.openapi.vfs.VirtualFileSystem;
 import jetbrains.mps.idea.core.facet.MPSFacetConfiguration;
-import jetbrains.mps.idea.core.make.MPSCompilerComponent;
-import jetbrains.mps.idea.core.make.MPSMakeCallback;
-import jetbrains.mps.idea.core.make.MPSMakeConfiguration;
-import jetbrains.mps.idea.core.make.MPSMakeLauncher;
+import jetbrains.mps.idea.core.make.*;
 import jetbrains.mps.util.misc.hash.HashSet;
 import jetbrains.mps.vfs.IFile;
 
@@ -143,5 +140,11 @@ public class MainMakeTests extends AbstractMakeTest {
         assertNotNull(module.findFileByRelativePath("source_gen/main"));
         assertTrue(module.findFileByRelativePath("source_gen/main").getChildren().length == 5);
 
+        MPSCompiler2[] mpscs = cm.getCompilers(MPSCompiler2.class);
+        assertSame(1, mpscs.length);
+
+        VirtualFile cachesOutputDir = vfs.findFileByPath(MPSCompilerPaths.getCachesOutputPath(mpscs[0], myFacet.getModule(), false));
+        assertNotNull("Not found output dir", cachesOutputDir);
+        assertNotNull(cachesOutputDir.findFileByRelativePath("main"));
     }
 }

@@ -116,31 +116,34 @@ public class ReducedGenerationWorker extends GeneratorWorker {
         Tuples._1<Map<String, String>> hashes = (Tuples._1<Map<String, String>>) pp.properties(new ITarget.Name("jetbrains.mps.build.reduced.CollectHashes.collect"), Object.class);
         hashes._0(fileHashes);
 
-        if (useTransientOutput) {
-          // override solution's output path 
-          final ReducedGenerationWorker.ModuleOutputPaths paths = new ReducedGenerationWorker.ModuleOutputPaths(Sequence.fromIterable(resources).select(new ISelector<IMResource, IModule>() {
-            public IModule select(IMResource r) {
-              return r.module();
-            }
-          }));
-          Tuples._1<_FunctionTypes._return_P1_E0<? extends IFile, ? super String>> pathToFile = (Tuples._1<_FunctionTypes._return_P1_E0<? extends IFile, ? super String>>) pp.properties(new ITarget.Name("jetbrains.mps.lang.core.Make.make"), Object.class);
-          pathToFile._0(new _FunctionTypes._return_P1_E0<IFile, String>() {
-            public IFile invoke(String path) {
+        // override solution's output path 
+        final ReducedGenerationWorker.ModuleOutputPaths paths = new ReducedGenerationWorker.ModuleOutputPaths(Sequence.fromIterable(resources).select(new ISelector<IMResource, IModule>() {
+          public IModule select(IMResource r) {
+            return r.module();
+          }
+        }));
+        Tuples._1<_FunctionTypes._return_P1_E0<? extends IFile, ? super String>> pathToFile = (Tuples._1<_FunctionTypes._return_P1_E0<? extends IFile, ? super String>>) pp.properties(new ITarget.Name("jetbrains.mps.lang.core.Make.make"), Object.class);
+        pathToFile._0(new _FunctionTypes._return_P1_E0<IFile, String>() {
+          public IFile invoke(String path) {
+            if (useTransientOutput && outputRoot != null) {
               String localOutPath = paths.toLocalPath(path);
               if (localOutPath != null) {
                 return FileSystem.getInstance().getFileByPath(outputRoot).getDescendant(localOutPath);
               }
+            }
 
+            // use transient folder for caches always 
+            if (cachesOutputRoot != null) {
               String localOutCachePath = paths.toLocalCachePath(path);
               if (localOutCachePath != null) {
                 return FileSystem.getInstance().getFileByPath(cachesOutputRoot).getDescendant(localOutCachePath);
               }
-
-              // can't convert, return the literal path 
-              return FileSystem.getInstance().getFileByPath(path);
             }
-          });
-        }
+
+            // can't convert, return the literal path 
+            return FileSystem.getInstance().getFileByPath(path);
+          }
+        });
       }
     };
   }
