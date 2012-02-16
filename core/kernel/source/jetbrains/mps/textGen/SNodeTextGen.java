@@ -106,7 +106,7 @@ public abstract class SNodeTextGen<BA extends INodeAdapter> {
       "textgen error: '" + info + "' in " + getSNode().getDebugText() :
       "textgen error in " + getSNode().getDebugText();
     LOG.error(message, new Throwable(), getSNode());
-    getBuffer().foundError(message);
+    getBuffer().foundError(message, getSNode(), new Throwable());
   }
 
 
