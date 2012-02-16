@@ -286,6 +286,7 @@ public abstract class DiffModelTree extends SimpleTree implements DataProvider {
       if (StringUtils.isNotEmpty(myAdditionalText)) {
         coloredRenderer.append(" (" + myAdditionalText + ")", new SimpleTextAttributes(SimpleTextAttributes.STYLE_PLAIN, Color.GRAY));
       }
+      coloredRenderer.setToolTipText(myTooltipText);
       coloredRenderer.setIcon(getIcon());
     }
 
