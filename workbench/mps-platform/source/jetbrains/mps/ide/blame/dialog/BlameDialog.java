@@ -18,7 +18,9 @@ package jetbrains.mps.ide.blame.dialog;
 import com.intellij.ide.BrowserUtil;
 import com.intellij.openapi.application.ApplicationInfo;
 import com.intellij.openapi.project.Project;
+import com.intellij.openapi.ui.DialogWrapper;
 import com.intellij.openapi.ui.Messages;
+import com.intellij.openapi.util.DimensionService;
 import com.intellij.uiDesigner.core.GridConstraints;
 import com.intellij.uiDesigner.core.GridLayoutManager;
 import com.intellij.uiDesigner.core.Spacer;
@@ -26,9 +28,6 @@ import jetbrains.mps.ide.blame.command.Command;
 import jetbrains.mps.ide.blame.command.Poster;
 import jetbrains.mps.ide.blame.perform.Query;
 import jetbrains.mps.ide.blame.perform.Response;
-import jetbrains.mps.ide.dialogs.BaseDialog;
-import jetbrains.mps.ide.dialogs.DialogDimensionsSettings.DialogDimensions;
-import jetbrains.mps.ide.vcs.SourceRevision;
 import jetbrains.mps.logging.Logger;
 import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
@@ -37,10 +36,8 @@ import javax.swing.*;
 import javax.swing.border.TitledBorder;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
-import java.awt.Dialog;
-import java.awt.Dimension;
-import java.awt.Frame;
-import java.awt.Insets;
+import javax.swing.plaf.basic.BasicSliderUI.ActionScroller;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.io.File;
 import java.io.PrintWriter;
@@ -48,7 +45,7 @@ import java.io.StringWriter;
 import java.util.ArrayList;
 import java.util.List;
 
-public class BlameDialog extends BaseDialog {
+public class BlameDialog extends DialogWrapper {
   private static final Logger LOG = Logger.getLogger(BlameDialog.class);
   private static final String CAPTION = "Submit System Exception to Developers";
 
@@ -72,17 +69,20 @@ public class BlameDialog extends BaseDialog {
   private List<Throwable> myEx = new ArrayList<Throwable>();
   private List<File> myFilesToAttach = new ArrayList<File>();
   private String mySubsystem = null;
+  private String mySourceRevision;
 
   public BlameDialog(Project project, Dialog dialog) {
-    super(dialog, CAPTION);
+    super(dialog, true);
+    setTitle(CAPTION);
     myProject = project;
-    init();
+    initDialog();
   }
 
   public BlameDialog(Project project, Frame mainFrame) {
-    super(mainFrame, CAPTION);
+    super(mainFrame, true);
+    setTitle(CAPTION);
     myProject = project;
-    init();
+    initDialog();
   }
 
   public void addEx(Throwable ex) {
@@ -118,7 +118,16 @@ public class BlameDialog extends BaseDialog {
     mySubsystem = subsystem;
   }
 
-  private void init() {
+  public void setSourceRevision(String sourceRevision) {
+    mySourceRevision = sourceRevision;
+  }
+
+  @Override
+  protected JComponent createCenterPanel() {
+    return myPanel;
+  }
+
+  private void initDialog() {
     setModal(true);
     myExceptionContainer.setVisible(false);
 
@@ -145,6 +154,24 @@ public class BlameDialog extends BaseDialog {
         }
       }
     });
+    Dimension size = DimensionService.getInstance().getSize(getDimensionServiceKey(), myProject);
+    if (size == null) {
+      DimensionService.getInstance().setSize(getDimensionServiceKey(), new Dimension(750, 550));
+    }
+
+
+    Point location = DimensionService.getInstance().getLocation(getDimensionServiceKey(), myProject);
+    if (location == null) {
+      DimensionService.getInstance().setLocation(getDimensionServiceKey(), new Point(200, 200));
+    }
+    setOKButtonText("Send");
+    setOKButtonMnemonic('C');
+    init();
+  }
+
+
+  protected String getDimensionServiceKey() {
+    return "#jetbrains.mps.ide.blame.dialog.blameDialog";
   }
 
   private Query createQuery() {
@@ -178,13 +205,9 @@ public class BlameDialog extends BaseDialog {
   }
 
   private String getRevisionNumber() {
-    String r = SourceRevision.getSourceRevision();
-    return r == null ? "" : "revision: " + r;
+    return mySourceRevision == null ? "" : "revision: " + mySourceRevision;
   }
 
-  public DialogDimensions getDefaultDimensionSettings() {
-    return new DialogDimensions(200, 200, 600, 500);
-  }
 
   protected JComponent getMainComponent() {
     return myPanel;
@@ -199,8 +222,8 @@ public class BlameDialog extends BaseDialog {
     return myResult;
   }
 
-  @Button(position = 0, name = "Send", mnemonic = 'S')
-  public void onSend() {
+
+  protected void doOKAction() {
     String title = getBuildString() + myTitleField.getText();
 
     StringBuilder description = new StringBuilder(1000);
@@ -241,7 +264,7 @@ public class BlameDialog extends BaseDialog {
           message += ". " + response;
         }
       }
-      Messages.showErrorDialog(BlameDialog.this, message, "Error");
+      Messages.showErrorDialog(BlameDialog.this.getOwner(), message, "Error");
       return;
     }
 
@@ -249,8 +272,9 @@ public class BlameDialog extends BaseDialog {
 
     myIsCancelled = false;
     BlameDialogComponent.getInstance().loadState(getState());
-    dispose();
+    close(DialogWrapper.OK_EXIT_CODE);
   }
+
 
   private void openIssueInBrowser() {
     String id = myResult.getIssueId();
@@ -259,11 +283,11 @@ public class BlameDialog extends BaseDialog {
     }
   }
 
-  @Button(position = 1, name = "Cancel", mnemonic = 'C')
-  public void onCancel() {
+
+  public void doCancelAction() {
     myResult = null;
     myIsCancelled = true;
-    dispose();
+    close(DialogWrapper.CANCEL_EXIT_CODE);
   }
 
   public MyState getState() {
@@ -306,7 +330,7 @@ public class BlameDialog extends BaseDialog {
     final Spacer spacer1 = new Spacer();
     panel1.add(spacer1, new GridConstraints(1, 1, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_WANT_GROW, 1, null, null, null, 0, false));
     myLoginPanel = new JPanel();
-    myLoginPanel.setLayout(new GridLayoutManager(3, 3, new Insets(0, 5, 0, 0), -1, -1));
+    myLoginPanel.setLayout(new GridLayoutManager(3, 2, new Insets(0, 5, 0, 0), -1, -1));
     panel1.add(myLoginPanel, new GridConstraints(2, 0, 1, 2, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_BOTH, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, null, null, null, 0, false));
     final JLabel label1 = new JLabel();
     label1.setText("Username:");
@@ -323,7 +347,7 @@ public class BlameDialog extends BaseDialog {
     myTestLoginButton = new JButton();
     myTestLoginButton.setEnabled(false);
     myTestLoginButton.setText("Test Login");
-    myLoginPanel.add(myTestLoginButton, new GridConstraints(2, 2, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+    myLoginPanel.add(myTestLoginButton, new GridConstraints(2, 1, 1, 1, GridConstraints.ANCHOR_EAST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
     myRegisteredRadio = new JRadioButton();
     myRegisteredRadio.setText("Registered user");
     panel1.add(myRegisteredRadio, new GridConstraints(1, 0, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
@@ -387,6 +411,7 @@ public class BlameDialog extends BaseDialog {
   public JComponent $$$getRootComponent$$$() {
     return myPanel;
   }
+
 
   public static class MyState {
     private boolean myAnonymous;

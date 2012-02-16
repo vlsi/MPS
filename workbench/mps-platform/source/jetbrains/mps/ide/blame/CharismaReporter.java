@@ -50,7 +50,7 @@ public class CharismaReporter extends ErrorReportSubmitter {
     blameDialog.setIssueTitle(events[0].getMessage());
     blameDialog.setDescription(additionalInfo);
 
-    blameDialog.showDialog();
+    blameDialog.show();
 
     if (blameDialog.isCancelled()) {
       consumer.consume(new SubmittedReportInfo(null, "Cancelled issue submit", SubmissionStatus.FAILED));

@@ -98,32 +98,40 @@ public class ReportModelMergeProblem_Action extends BaseAction {
 
       // Select merge-backup to attach 
       File backupDir = new File(MergeBackupUtil.getMergeBackupDirPath());
-      List<File> zipFiles = Arrays.asList(backupDir.listFiles(new FilenameFilter() {
+      File[] listFiles = backupDir.listFiles(new FilenameFilter() {
         public boolean accept(File dir, String name) {
           return name.endsWith(".zip");
         }
-      }));
-      String[] zipNames = ListSequence.fromList(zipFiles).sort(new ISelector<File, Comparable<?>>() {
-        public Comparable<?> select(File f) {
-          return f.lastModified();
-        }
-      }, false).select(new ISelector<File, String>() {
-        public String select(File f) {
-          return f.getName();
-        }
-      }).toGenericArray(String.class);
-      if (zipNames.length == 0) {
-        Messages.showInfoMessage(((Project) MapSequence.fromMap(_params).get("project")), "No merge backups available, that is MPS merge was not invoked.", "Model Merge Problem");
+      });
+      if (listFiles == null) {
+        ReportModelMergeProblem_Action.this.showNoBackupsAvailable(_params);
       } else {
-        int selectedIndex = Messages.showChooseDialog(((Project) MapSequence.fromMap(_params).get("project")), "Choose merge backup file to attach", "Model Merge Problem", Messages.getQuestionIcon(), zipNames, zipNames[0]);
-        blameDialog.addFile(new File(backupDir, zipNames[selectedIndex]));
+        List<File> zipFiles = Arrays.asList(listFiles);
+        String[] zipNames = ListSequence.fromList(zipFiles).sort(new ISelector<File, Comparable<?>>() {
+          public Comparable<?> select(File f) {
+            return f.lastModified();
+          }
+        }, false).select(new ISelector<File, String>() {
+          public String select(File f) {
+            return f.getName();
+          }
+        }).toGenericArray(String.class);
+        if (zipNames.length == 0) {
+          ReportModelMergeProblem_Action.this.showNoBackupsAvailable(_params);
+        } else {
+          int selectedIndex = Messages.showChooseDialog(((Project) MapSequence.fromMap(_params).get("project")), "Choose merge backup file to attach", "Model Merge Problem", Messages.getQuestionIcon(), zipNames, zipNames[0]);
+          blameDialog.addFile(new File(backupDir, zipNames[selectedIndex]));
+          blameDialog.show();
+        }
       }
-
-      blameDialog.showDialog();
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "ReportModelMergeProblem", t);
       }
     }
+  }
+
+  private void showNoBackupsAvailable(final Map<String, Object> _params) {
+    Messages.showInfoMessage(((Project) MapSequence.fromMap(_params).get("project")), "No merge backups available, that is MPS merge was not invoked.", "Model Merge Problem");
   }
 }
