@@ -2971,8 +2971,8 @@
                                 <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalInstanceFieldReference" typeId="tpee.7785501532031639928" id="708166622413808582">
                                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="708166622413807570" resolveInfo="myAppliedMetadataChanges" />
                                 </node>
-                                <node role="operation" roleId="tpee.1197027833540" type="tp2q.AddSetElementOperation" typeId="tp2q.1226566855640" id="708166622413808583">
-                                  <node role="argument" roleId="tp2q.1226567214363" type="tp2q.ForEachVariableReference" typeId="tp2q.1153944233411" id="708166622413808584">
+                                <node role="operation" roleId="tpee.1197027833540" type="tp2q.AddElementOperation" typeId="tp2q.1160612413312" id="376188760551941864">
+                                  <node role="argument" roleId="tp2q.1160612519549" type="tp2q.ForEachVariableReference" typeId="tp2q.1153944233411" id="376188760551941865">
                                     <link role="variable" roleId="tp2q.1153944258490" targetNodeId="708166622413808556" resolveInfo="change" />
                                   </node>
                                 </node>

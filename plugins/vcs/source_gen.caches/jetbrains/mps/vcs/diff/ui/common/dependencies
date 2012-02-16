@@ -291,7 +291,6 @@
   </dependency>
   <dependency className="jetbrains.mps.vcs.diff.ui.common.DiffModelTree" file="DiffModelTree.java">
     <classNode dependClassName="com.intellij.ide.DataManager" />
-    <classNode dependClassName="com.intellij.openapi.actionSystem.ActionGroup" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.ActionManager" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.ActionPlaces" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
@@ -302,6 +301,7 @@
     <classNode dependClassName="com.intellij.ui.SimpleTextAttributes" />
     <classNode dependClassName="com.intellij.util.ui.tree.TreeUtil" />
     <classNode dependClassName="java.awt.Color" />
+    <classNode dependClassName="java.awt.event.MouseEvent" />
     <classNode dependClassName="java.lang.Comparable" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Object" />
@@ -335,6 +335,7 @@
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode extendsClassName="com.intellij.openapi.actionSystem.DataProvider" />
     <classNode extendsClassName="com.intellij.ui.treeStructure.SimpleTree" />
+    <classNode extendsClassName="java.awt.event.MouseAdapter" />
     <classNode extendsClassName="javax.swing.tree.DefaultMutableTreeNode" />
     <classNode extendsClassName="jetbrains.mps.vcs.diff.ui.common.RootTreeNode" />
     <classNode extendsClassName="jetbrains.mps.vcs.diff.ui.common.TreeNode" />
