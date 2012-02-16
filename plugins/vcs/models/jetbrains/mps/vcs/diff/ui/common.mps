@@ -11059,13 +11059,15 @@
                             <link role="classifier" roleId="tpee.1107535924139" targetNodeId="8694267608197375767" resolveInfo="DiffModelTree.TreeNode" />
                           </node>
                         </node>
-                        <node role="initializer" roleId="tpee.1068431790190" type="tpee.CastExpression" typeId="tpee.1070534934090" id="4652592318748339431">
-                          <node role="expression" roleId="tpee.1070534934092" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="4652592318748339432">
-                            <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4652592318748339411" resolveInfo="parentNode" />
-                          </node>
-                          <node role="type" roleId="tpee.1070534934091" type="tp2q.SequenceType" typeId="tp2q.1151689724996" id="4652592318748339433">
-                            <node role="elementType" roleId="tp2q.1151689745422" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="8694267608197378074">
-                              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="8694267608197375767" resolveInfo="DiffModelTree.TreeNode" />
+                        <node role="initializer" roleId="tpee.1068431790190" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1136001052103348364">
+                          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="k7g3.~Collections%dlist(java%dutil%dEnumeration)%cjava%dutil%dArrayList" resolveInfo="list" />
+                          <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="k7g3.~Collections" resolveInfo="Collections" />
+                          <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1136001052103348305">
+                            <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="4652592318748339432">
+                              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4652592318748339411" resolveInfo="parentNode" />
+                            </node>
+                            <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1136001052103348310">
+                              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="osf5.~DefaultMutableTreeNode%dchildren()%cjava%dutil%dEnumeration" resolveInfo="children" />
                             </node>
                           </node>
                         </node>
