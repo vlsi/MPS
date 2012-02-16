@@ -51,6 +51,7 @@ import jetbrains.mps.workbench.action.BaseAction;
 import java.util.Arrays;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.vcs.diff.changes.ChangeType;
+import com.intellij.ui.SimpleTextAttributes;
 import jetbrains.mps.vcs.diff.changes.AddRootChange;
 import jetbrains.mps.vcs.diff.changes.DeleteRootChange;
 import jetbrains.mps.vcs.diff.ui.common.ChangeColors;
@@ -384,7 +385,7 @@ public class MergeModelsDialog extends DialogWrapper {
       } else {
         if (nonConflictedCount == 0) {
           if (rootTreeNode.getRootId() != null && myMergeSession.getResultModel().getNodeById(rootTreeNode.getRootId()) == null) {
-            rootTreeNode.setText(String.format("<html><s>%s</s></html>", rootTreeNode.getText()));
+            rootTreeNode.setTextStyle(SimpleTextAttributes.STYLE_STRIKEOUT);
           }
         } else {
           compositeChangeType = ChangeType.CHANGE;

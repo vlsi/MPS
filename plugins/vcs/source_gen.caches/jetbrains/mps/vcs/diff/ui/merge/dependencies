@@ -80,6 +80,7 @@
     <classNode dependClassName="com.intellij.openapi.util.DimensionService" />
     <classNode dependClassName="com.intellij.openapi.util.IconLoader" />
     <classNode dependClassName="com.intellij.ui.ScrollPaneFactory" />
+    <classNode dependClassName="com.intellij.ui.SimpleTextAttributes" />
     <classNode dependClassName="java.awt.BorderLayout" />
     <classNode dependClassName="java.awt.Dimension" />
     <classNode dependClassName="java.lang.Iterable" />

@@ -39,459 +39,459 @@
     <unitInfo nodeId="708166622413807368" fileName="AcceptYoursTheirs.java" startLine="10" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.vcs.diff.ui.merge.AcceptYoursTheirs" />
   </root>
   <root nodeId="708166622413807476">
-    <nodeInfo nodeId="708166622413807527" fileName="MergeModelsDialog.java" startLine="58" startPosition="54" endLine="59" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="APPLY_NON_CONFLICTS" />
-    <nodeInfo nodeId="708166622413807533" fileName="MergeModelsDialog.java" startLine="59" startPosition="112" endLine="60" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="RESET" />
-    <nodeInfo nodeId="708166622413807539" fileName="MergeModelsDialog.java" startLine="61" startPosition="0" endLine="62" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myProject" />
-    <nodeInfo nodeId="708166622413807542" fileName="MergeModelsDialog.java" startLine="62" startPosition="28" endLine="63" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myMergeSession" />
-    <nodeInfo nodeId="708166622413807545" fileName="MergeModelsDialog.java" startLine="63" startPosition="38" endLine="64" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myInitialState" />
-    <nodeInfo nodeId="708166622413807548" fileName="MergeModelsDialog.java" startLine="64" startPosition="43" endLine="65" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myMergeTree" />
-    <nodeInfo nodeId="708166622413807551" fileName="MergeModelsDialog.java" startLine="65" startPosition="56" endLine="66" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myPanel" />
-    <nodeInfo nodeId="708166622413807558" fileName="MergeModelsDialog.java" startLine="66" startPosition="58" endLine="67" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myApplyChanges" />
-    <nodeInfo nodeId="708166622413807562" fileName="MergeModelsDialog.java" startLine="67" startPosition="41" endLine="68" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myRootsDialogInvoked" />
-    <nodeInfo nodeId="708166622413807566" fileName="MergeModelsDialog.java" startLine="68" startPosition="47" endLine="69" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myContentTitles" />
-    <nodeInfo nodeId="708166622413807570" fileName="MergeModelsDialog.java" startLine="69" startPosition="35" endLine="70" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myAppliedMetadataChanges" />
-    <nodeInfo nodeId="708166622413808661" fileName="MergeModelsDialog.java" startLine="70" startPosition="102" endLine="71" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myToolbar" />
-    <nodeInfo nodeId="708166622413808734" fileName="MergeModelsDialog.java" startLine="73" startPosition="109" endLine="74" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="708166622413811097" fileName="MergeModelsDialog.java" startLine="74" startPosition="38" endLine="75" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="708166622413807594" fileName="MergeModelsDialog.java" startLine="75" startPosition="68" endLine="76" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="708166622413807600" fileName="MergeModelsDialog.java" startLine="76" startPosition="37" endLine="77" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="708166622413807606" fileName="MergeModelsDialog.java" startLine="77" startPosition="49" endLine="78" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
-    <nodeInfo nodeId="708166622413807612" fileName="MergeModelsDialog.java" startLine="78" startPosition="39" endLine="79" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="708166622413807623" fileName="MergeModelsDialog.java" startLine="81" startPosition="25" endLine="82" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="708166622413807629" fileName="MergeModelsDialog.java" startLine="84" startPosition="7" endLine="85" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="708166622413807634" fileName="MergeModelsDialog.java" startLine="85" startPosition="76" endLine="86" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="708166622413807642" fileName="MergeModelsDialog.java" startLine="86" startPosition="97" endLine="87" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="708166622413807646" fileName="MergeModelsDialog.java" startLine="87" startPosition="48" endLine="88" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="708166622413807651" fileName="MergeModelsDialog.java" startLine="88" startPosition="67" endLine="89" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="708166622413807656" fileName="MergeModelsDialog.java" startLine="89" startPosition="79" endLine="90" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="708166622413807657" fileName="MergeModelsDialog.java" startLine="90" startPosition="0" endLine="91" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="708166622413807662" fileName="MergeModelsDialog.java" startLine="91" startPosition="58" endLine="92" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="708166622413807663" fileName="MergeModelsDialog.java" startLine="92" startPosition="0" endLine="93" endPosition="395" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="708166622413807687" fileName="MergeModelsDialog.java" startLine="93" startPosition="395" endLine="94" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="708166622413807696" fileName="MergeModelsDialog.java" startLine="94" startPosition="105" endLine="95" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="708166622413807700" fileName="MergeModelsDialog.java" startLine="95" startPosition="41" endLine="96" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="708166622413807708" fileName="MergeModelsDialog.java" startLine="96" startPosition="62" endLine="97" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="708166622413812457" fileName="MergeModelsDialog.java" startLine="97" startPosition="86" endLine="98" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="708166622413812469" fileName="MergeModelsDialog.java" startLine="99" startPosition="23" endLine="100" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="708166622413812412" fileName="MergeModelsDialog.java" startLine="101" startPosition="5" endLine="102" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="708166622413812548" fileName="MergeModelsDialog.java" startLine="105" startPosition="42" endLine="106" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="708166622413837187" fileName="MergeModelsDialog.java" startLine="111" startPosition="28" endLine="112" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="708166622413837196" fileName="MergeModelsDialog.java" startLine="115" startPosition="28" endLine="116" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="708166622413837254" fileName="MergeModelsDialog.java" startLine="116" startPosition="30" endLine="117" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="708166622413837349" fileName="MergeModelsDialog.java" startLine="122" startPosition="38" endLine="123" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="708166622413837356" fileName="MergeModelsDialog.java" startLine="123" startPosition="74" endLine="124" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="708166622413837361" fileName="MergeModelsDialog.java" startLine="124" startPosition="61" endLine="125" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="708166622413837366" fileName="MergeModelsDialog.java" startLine="125" startPosition="65" endLine="126" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="708166622413808100" fileName="MergeModelsDialog.java" startLine="136" startPosition="35" endLine="137" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="708166622413808104" fileName="MergeModelsDialog.java" startLine="137" startPosition="41" endLine="138" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="708166622413808111" fileName="MergeModelsDialog.java" startLine="141" startPosition="36" endLine="142" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="708166622413808122" fileName="MergeModelsDialog.java" startLine="146" startPosition="74" endLine="147" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="708166622413808132" fileName="MergeModelsDialog.java" startLine="150" startPosition="38" endLine="151" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="708166622413808139" fileName="MergeModelsDialog.java" startLine="151" startPosition="71" endLine="152" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
-    <nodeInfo nodeId="708166622413808143" fileName="MergeModelsDialog.java" startLine="152" startPosition="58" endLine="153" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="708166622413808147" fileName="MergeModelsDialog.java" startLine="153" startPosition="32" endLine="154" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="708166622413808151" fileName="MergeModelsDialog.java" startLine="154" startPosition="34" endLine="155" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="708166622413808216" fileName="MergeModelsDialog.java" startLine="157" startPosition="45" endLine="158" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="708166622413808157" fileName="MergeModelsDialog.java" startLine="160" startPosition="9" endLine="161" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="708166622413808159" fileName="MergeModelsDialog.java" startLine="161" startPosition="42" endLine="162" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="708166622413808166" fileName="MergeModelsDialog.java" startLine="164" startPosition="47" endLine="165" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="708166622413808174" fileName="MergeModelsDialog.java" startLine="167" startPosition="11" endLine="168" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="708166622413808176" fileName="MergeModelsDialog.java" startLine="168" startPosition="28" endLine="169" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="708166622413808180" fileName="MergeModelsDialog.java" startLine="169" startPosition="60" endLine="170" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="708166622413808186" fileName="MergeModelsDialog.java" startLine="171" startPosition="14" endLine="172" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="708166622413808193" fileName="MergeModelsDialog.java" startLine="174" startPosition="49" endLine="175" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="708166622413808203" fileName="MergeModelsDialog.java" startLine="177" startPosition="11" endLine="178" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="708166622413808207" fileName="MergeModelsDialog.java" startLine="178" startPosition="46" endLine="179" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="708166622413808225" fileName="MergeModelsDialog.java" startLine="181" startPosition="12" endLine="182" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="708166622413808227" fileName="MergeModelsDialog.java" startLine="182" startPosition="36" endLine="183" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="708166622413808245" fileName="MergeModelsDialog.java" startLine="185" startPosition="47" endLine="186" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="708166622413808230" fileName="MergeModelsDialog.java" startLine="188" startPosition="11" endLine="189" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="708166622413808232" fileName="MergeModelsDialog.java" startLine="189" startPosition="39" endLine="190" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="708166622413808236" fileName="MergeModelsDialog.java" startLine="190" startPosition="46" endLine="191" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="708166622413808256" fileName="MergeModelsDialog.java" startLine="192" startPosition="14" endLine="193" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="708166622413808266" fileName="MergeModelsDialog.java" startLine="195" startPosition="49" endLine="196" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="708166622413808284" fileName="MergeModelsDialog.java" startLine="202" startPosition="45" endLine="203" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="708166622413808300" fileName="MergeModelsDialog.java" startLine="207" startPosition="45" endLine="208" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="708166622413808308" fileName="MergeModelsDialog.java" startLine="210" startPosition="7" endLine="211" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="708166622413808309" fileName="MergeModelsDialog.java" startLine="211" startPosition="0" endLine="212" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="708166622413808316" fileName="MergeModelsDialog.java" startLine="213" startPosition="51" endLine="214" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="708166622413808330" fileName="MergeModelsDialog.java" startLine="215" startPosition="58" endLine="216" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="708166622413808345" fileName="MergeModelsDialog.java" startLine="219" startPosition="57" endLine="220" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="708166622413808359" fileName="MergeModelsDialog.java" startLine="221" startPosition="64" endLine="222" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="708166622413808372" fileName="MergeModelsDialog.java" startLine="224" startPosition="5" endLine="225" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="708166622413808375" fileName="MergeModelsDialog.java" startLine="226" startPosition="24" endLine="227" endPosition="199" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="708166622413808386" fileName="MergeModelsDialog.java" startLine="229" startPosition="29" endLine="230" endPosition="128" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="708166622413808398" fileName="MergeModelsDialog.java" startLine="231" startPosition="14" endLine="232" endPosition="138" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="708166622413808409" fileName="MergeModelsDialog.java" startLine="234" startPosition="12" endLine="235" endPosition="221" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="708166622413808428" fileName="MergeModelsDialog.java" startLine="238" startPosition="29" endLine="239" endPosition="119" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="708166622413808433" fileName="MergeModelsDialog.java" startLine="239" startPosition="119" endLine="240" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="708166622413808438" fileName="MergeModelsDialog.java" startLine="240" startPosition="66" endLine="241" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="708166622413808445" fileName="MergeModelsDialog.java" startLine="244" startPosition="38" endLine="245" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="708166622413808450" fileName="MergeModelsDialog.java" startLine="245" startPosition="64" endLine="246" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="708166622413808464" fileName="MergeModelsDialog.java" startLine="252" startPosition="25" endLine="253" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="708166622413808466" fileName="MergeModelsDialog.java" startLine="253" startPosition="28" endLine="254" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="708166622413808472" fileName="MergeModelsDialog.java" startLine="256" startPosition="31" endLine="257" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="708166622413808474" fileName="MergeModelsDialog.java" startLine="258" startPosition="5" endLine="259" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="708166622413808478" fileName="MergeModelsDialog.java" startLine="259" startPosition="32" endLine="260" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="708166622413808484" fileName="MergeModelsDialog.java" startLine="262" startPosition="25" endLine="263" endPosition="138" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="708166622413808496" fileName="MergeModelsDialog.java" startLine="265" startPosition="7" endLine="266" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="708166622413808500" fileName="MergeModelsDialog.java" startLine="266" startPosition="34" endLine="267" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="708166622413808510" fileName="MergeModelsDialog.java" startLine="270" startPosition="59" endLine="271" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="708166622413808517" fileName="MergeModelsDialog.java" startLine="271" startPosition="97" endLine="272" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="708166622413808534" fileName="MergeModelsDialog.java" startLine="273" startPosition="156" endLine="274" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="708166622413808573" fileName="MergeModelsDialog.java" startLine="281" startPosition="58" endLine="282" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="708166622413808580" fileName="MergeModelsDialog.java" startLine="283" startPosition="31" endLine="284" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="708166622413808590" fileName="MergeModelsDialog.java" startLine="286" startPosition="18" endLine="287" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="708166622413808599" fileName="MergeModelsDialog.java" startLine="293" startPosition="25" endLine="294" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="708166622413808604" fileName="MergeModelsDialog.java" startLine="294" startPosition="52" endLine="295" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="708166622413808609" fileName="MergeModelsDialog.java" startLine="295" startPosition="56" endLine="296" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="708166622413808616" fileName="MergeModelsDialog.java" startLine="301" startPosition="80" endLine="302" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="708166622413808627" fileName="MergeModelsDialog.java" startLine="305" startPosition="40" endLine="306" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="708166622413808635" fileName="MergeModelsDialog.java" startLine="309" startPosition="43" endLine="310" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="708166622413808640" fileName="MergeModelsDialog.java" startLine="313" startPosition="46" endLine="314" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="708166622413808645" fileName="MergeModelsDialog.java" startLine="317" startPosition="58" endLine="318" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="708166622413808656" fileName="MergeModelsDialog.java" startLine="321" startPosition="28" endLine="322" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="708166622413808659" fileName="MergeModelsDialog.java" startLine="322" startPosition="33" endLine="323" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="708166622413813211" fileName="MergeModelsDialog.java" startLine="327" startPosition="44" endLine="328" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="708166622413807486" fileName="MergeModelsDialog.java" startLine="332" startPosition="34" endLine="333" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="708166622413807494" fileName="MergeModelsDialog.java" startLine="334" startPosition="47" endLine="335" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="708166622413807501" fileName="MergeModelsDialog.java" startLine="336" startPosition="14" endLine="337" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="708166622413807519" fileName="MergeModelsDialog.java" startLine="340" startPosition="30" endLine="341" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="708166622413807523" fileName="MergeModelsDialog.java" startLine="342" startPosition="14" endLine="343" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="708166622413807807" fileName="MergeModelsDialog.java" startLine="349" startPosition="31" endLine="350" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="708166622413807818" fileName="MergeModelsDialog.java" startLine="353" startPosition="53" endLine="354" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="708166622413807822" fileName="MergeModelsDialog.java" startLine="354" startPosition="52" endLine="355" endPosition="134" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="708166622413807851" fileName="MergeModelsDialog.java" startLine="361" startPosition="53" endLine="362" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="708166622413807877" fileName="MergeModelsDialog.java" startLine="368" startPosition="47" endLine="369" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="708166622413807887" fileName="MergeModelsDialog.java" startLine="371" startPosition="26" endLine="372" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="708166622413807897" fileName="MergeModelsDialog.java" startLine="374" startPosition="47" endLine="375" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="708166622413807907" fileName="MergeModelsDialog.java" startLine="377" startPosition="17" endLine="378" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="708166622413807915" fileName="MergeModelsDialog.java" startLine="378" startPosition="88" endLine="379" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="708166622413807919" fileName="MergeModelsDialog.java" startLine="379" startPosition="44" endLine="380" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="708166622413807930" fileName="MergeModelsDialog.java" startLine="381" startPosition="33" endLine="382" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="708166622413807934" fileName="MergeModelsDialog.java" startLine="382" startPosition="52" endLine="383" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="708166622413807951" fileName="MergeModelsDialog.java" startLine="386" startPosition="130" endLine="387" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="708166622413807979" fileName="MergeModelsDialog.java" startLine="389" startPosition="16" endLine="390" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="708166622413807998" fileName="MergeModelsDialog.java" startLine="392" startPosition="51" endLine="393" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="708166622413807985" fileName="MergeModelsDialog.java" startLine="395" startPosition="15" endLine="396" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="708166622413808008" fileName="MergeModelsDialog.java" startLine="397" startPosition="11" endLine="398" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="708166622413808018" fileName="MergeModelsDialog.java" startLine="400" startPosition="51" endLine="401" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="708166622413808028" fileName="MergeModelsDialog.java" startLine="404" startPosition="53" endLine="405" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="708166622413808038" fileName="MergeModelsDialog.java" startLine="406" startPosition="43" endLine="407" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="708166622413808048" fileName="MergeModelsDialog.java" startLine="408" startPosition="18" endLine="409" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="708166622413808053" fileName="MergeModelsDialog.java" startLine="412" startPosition="7" endLine="413" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="708166622413808056" fileName="MergeModelsDialog.java" startLine="414" startPosition="40" endLine="415" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="708166622413808070" fileName="MergeModelsDialog.java" startLine="419" startPosition="44" endLine="420" endPosition="124" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="708166622413808086" fileName="MergeModelsDialog.java" startLine="423" startPosition="52" endLine="424" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="708166622413808094" fileName="MergeModelsDialog.java" startLine="428" startPosition="45" endLine="429" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="708166622413808396" fileName="MergeModelsDialog.java" startLine="231" startPosition="12" endLine="233" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="708166622413808588" fileName="MergeModelsDialog.java" startLine="286" startPosition="16" endLine="288" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="708166622413807499" fileName="MergeModelsDialog.java" startLine="336" startPosition="12" endLine="338" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="708166622413807521" fileName="MergeModelsDialog.java" startLine="342" startPosition="12" endLine="344" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="708166622413808046" fileName="MergeModelsDialog.java" startLine="408" startPosition="16" endLine="410" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="708166622413812464" fileName="MergeModelsDialog.java" startLine="98" startPosition="92" endLine="101" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="708166622413808326" fileName="MergeModelsDialog.java" startLine="214" startPosition="55" endLine="217" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="708166622413808355" fileName="MergeModelsDialog.java" startLine="220" startPosition="55" endLine="223" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="708166622413808470" fileName="MergeModelsDialog.java" startLine="255" startPosition="5" endLine="258" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="708166622413808578" fileName="MergeModelsDialog.java" startLine="282" startPosition="69" endLine="285" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="708166622413807803" fileName="MergeModelsDialog.java" startLine="348" startPosition="55" endLine="351" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MergeModelsTree#()V" />
-    <nodeInfo nodeId="708166622413807949" fileName="MergeModelsDialog.java" startLine="385" startPosition="38" endLine="388" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="708166622413808054" fileName="MergeModelsDialog.java" startLine="413" startPosition="0" endLine="416" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="708166622413807621" fileName="MergeModelsDialog.java" startLine="80" startPosition="57" endLine="84" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="708166622413812545" fileName="MergeModelsDialog.java" startLine="104" startPosition="0" endLine="108" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDimensionServiceKey#()Ljava/lang/String;" />
-    <nodeInfo nodeId="708166622413837185" fileName="MergeModelsDialog.java" startLine="110" startPosition="145" endLine="114" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#()V" />
-    <nodeInfo nodeId="708166622413807793" fileName="MergeModelsDialog.java" startLine="129" startPosition="34" endLine="133" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="708166622413808108" fileName="MergeModelsDialog.java" startLine="140" startPosition="0" endLine="144" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getProject#()Lcom/intellij/openapi/project/Project;" />
-    <nodeInfo nodeId="708166622413808214" fileName="MergeModelsDialog.java" startLine="156" startPosition="79" endLine="160" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/vcs/diff/changes/ModelChange;)Z" />
-    <nodeInfo nodeId="708166622413808164" fileName="MergeModelsDialog.java" startLine="163" startPosition="81" endLine="167" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/vcs/diff/changes/ModelChange;)Z" />
-    <nodeInfo nodeId="708166622413808191" fileName="MergeModelsDialog.java" startLine="173" startPosition="86" endLine="177" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/vcs/diff/changes/ModelChange;)Z" />
-    <nodeInfo nodeId="708166622413808243" fileName="MergeModelsDialog.java" startLine="184" startPosition="81" endLine="188" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/vcs/diff/changes/ModelChange;)Z" />
-    <nodeInfo nodeId="708166622413808264" fileName="MergeModelsDialog.java" startLine="194" startPosition="108" endLine="198" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/vcs/diff/changes/ModelChange;)Z" />
-    <nodeInfo nodeId="708166622413808282" fileName="MergeModelsDialog.java" startLine="201" startPosition="120" endLine="205" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/vcs/diff/changes/ModelChange;)Z" />
-    <nodeInfo nodeId="708166622413808298" fileName="MergeModelsDialog.java" startLine="206" startPosition="126" endLine="210" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/vcs/diff/changes/ModelChange;)Z" />
-    <nodeInfo nodeId="708166622413808462" fileName="MergeModelsDialog.java" startLine="251" startPosition="54" endLine="255" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="708166622413808482" fileName="MergeModelsDialog.java" startLine="261" startPosition="57" endLine="265" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="708166622413808540" fileName="MergeModelsDialog.java" startLine="274" startPosition="37" endLine="278" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="708166622413808613" fileName="MergeModelsDialog.java" startLine="300" startPosition="0" endLine="304" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="markMetadataChangesAsApplied#(Ljava/lang/Iterable;)V" />
-    <nodeInfo nodeId="708166622413808624" fileName="MergeModelsDialog.java" startLine="304" startPosition="0" endLine="308" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="rootsDialogClosed#()V" />
-    <nodeInfo nodeId="708166622413808631" fileName="MergeModelsDialog.java" startLine="308" startPosition="0" endLine="312" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getContentTitles#()[Ljava/lang/String;" />
-    <nodeInfo nodeId="708166622413808637" fileName="MergeModelsDialog.java" startLine="312" startPosition="0" endLine="316" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getMergeSession#()Ljetbrains/mps/vcs/diff/merge/MergeSession;" />
-    <nodeInfo nodeId="708166622413808642" fileName="MergeModelsDialog.java" startLine="316" startPosition="0" endLine="320" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="restoreState#(Ljetbrains/mps/vcs/diff/merge/MergeSessionState;)V" />
-    <nodeInfo nodeId="708166622413807849" fileName="MergeModelsDialog.java" startLine="360" startPosition="117" endLine="364" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/vcs/diff/changes/ModelChange;)Ljetbrains/mps/vcs/diff/changes/ModelChange;" />
-    <nodeInfo nodeId="708166622413807875" fileName="MergeModelsDialog.java" startLine="367" startPosition="86" endLine="371" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/vcs/diff/changes/ModelChange;)Z" />
-    <nodeInfo nodeId="708166622413807895" fileName="MergeModelsDialog.java" startLine="373" startPosition="98" endLine="377" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/vcs/diff/changes/ModelChange;)Z" />
-    <nodeInfo nodeId="708166622413807996" fileName="MergeModelsDialog.java" startLine="391" startPosition="82" endLine="395" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/vcs/diff/changes/ModelChange;)Z" />
-    <nodeInfo nodeId="708166622413808016" fileName="MergeModelsDialog.java" startLine="399" startPosition="101" endLine="403" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/vcs/diff/changes/ModelChange;)Z" />
-    <nodeInfo nodeId="708166622413808065" fileName="MergeModelsDialog.java" startLine="418" startPosition="0" endLine="422" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getModels#()Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="708166622413808081" fileName="MergeModelsDialog.java" startLine="422" startPosition="0" endLine="426" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getAffectedRoots#()Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="708166622413807620" fileName="MergeModelsDialog.java" startLine="79" startPosition="77" endLine="84" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="708166622413837194" fileName="MergeModelsDialog.java" startLine="114" startPosition="41" endLine="119" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#()V" />
-    <nodeInfo nodeId="708166622413808097" fileName="MergeModelsDialog.java" startLine="135" startPosition="0" endLine="140" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="rebuildLater#()V" />
-    <nodeInfo nodeId="708166622413808113" fileName="MergeModelsDialog.java" startLine="144" startPosition="0" endLine="149" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNeighbourRoot#(Ljetbrains/mps/smodel/SNodeId;Z)Ljetbrains/mps/smodel/SNodeId;" />
-    <nodeInfo nodeId="708166622413808188" fileName="MergeModelsDialog.java" startLine="172" startPosition="64" endLine="177" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
-    <nodeInfo nodeId="708166622413808258" fileName="MergeModelsDialog.java" startLine="193" startPosition="40" endLine="198" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="708166622413808275" fileName="MergeModelsDialog.java" startLine="200" startPosition="5" endLine="205" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="708166622413808291" fileName="MergeModelsDialog.java" startLine="205" startPosition="7" endLine="210" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="708166622413808384" fileName="MergeModelsDialog.java" startLine="228" startPosition="29" endLine="233" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="708166622413808481" fileName="MergeModelsDialog.java" startLine="260" startPosition="95" endLine="265" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="708166622413808652" fileName="MergeModelsDialog.java" startLine="320" startPosition="0" endLine="325" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="resetState#()V" />
-    <nodeInfo nodeId="708166622413813179" fileName="MergeModelsDialog.java" startLine="325" startPosition="0" endLine="330" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCenterPanel#()Ljavax/swing/JComponent;" />
-    <nodeInfo nodeId="708166622413807492" fileName="MergeModelsDialog.java" startLine="333" startPosition="92" endLine="338" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="708166622413807514" fileName="MergeModelsDialog.java" startLine="339" startPosition="12" endLine="344" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="708166622413807813" fileName="MergeModelsDialog.java" startLine="352" startPosition="0" endLine="357" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getRootActions#()Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="708166622413807869" fileName="MergeModelsDialog.java" startLine="366" startPosition="8" endLine="371" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="708166622413807888" fileName="MergeModelsDialog.java" startLine="372" startPosition="0" endLine="377" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="708166622413808009" fileName="MergeModelsDialog.java" startLine="398" startPosition="0" endLine="403" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="708166622413808090" fileName="MergeModelsDialog.java" startLine="426" startPosition="0" endLine="431" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isMultipleRootNames#()Z" />
-    <nodeInfo nodeId="708166622413808314" fileName="MergeModelsDialog.java" startLine="212" startPosition="43" endLine="218" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="708166622413808343" fileName="MergeModelsDialog.java" startLine="218" startPosition="5" endLine="224" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="708166622413808426" fileName="MergeModelsDialog.java" startLine="237" startPosition="71" endLine="243" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="708166622413808597" fileName="MergeModelsDialog.java" startLine="292" startPosition="67" endLine="298" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="708166622413807512" fileName="MergeModelsDialog.java" startLine="339" startPosition="10" endLine="345" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="708166622413837346" fileName="MergeModelsDialog.java" startLine="121" startPosition="0" endLine="128" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createActions#()[Ljavax/swing/Action;" />
-    <nodeInfo nodeId="708166622413807789" fileName="MergeModelsDialog.java" startLine="128" startPosition="0" endLine="135" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getResultModel#()Ljetbrains/mps/smodel/SModel;" />
-    <nodeInfo nodeId="708166622413808254" fileName="MergeModelsDialog.java" startLine="192" startPosition="12" endLine="199" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="708166622413808425" fileName="MergeModelsDialog.java" startLine="236" startPosition="32" endLine="243" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="708166622413808596" fileName="MergeModelsDialog.java" startLine="291" startPosition="5" endLine="298" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="708166622413807983" fileName="MergeModelsDialog.java" startLine="390" startPosition="50" endLine="397" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="708166622413808026" fileName="MergeModelsDialog.java" startLine="403" startPosition="21" endLine="410" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="708166622413808565" fileName="MergeModelsDialog.java" startLine="280" startPosition="57" endLine="288" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="708166622413807838" fileName="MergeModelsDialog.java" startLine="358" startPosition="99" endLine="366" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="708166622413808184" fileName="MergeModelsDialog.java" startLine="171" startPosition="12" endLine="180" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="708166622413837178" fileName="MergeModelsDialog.java" startLine="109" startPosition="31" endLine="119" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="708166622413808558" fileName="MergeModelsDialog.java" startLine="279" startPosition="65" endLine="289" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="708166622413808423" fileName="MergeModelsDialog.java" startLine="235" startPosition="221" endLine="247" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="708166622413808555" fileName="MergeModelsDialog.java" startLine="278" startPosition="8" endLine="290" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="708166622413837038" fileName="MergeModelsDialog.java" startLine="108" startPosition="0" endLine="121" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doOKAction#()V" />
-    <nodeInfo nodeId="708166622413808407" fileName="MergeModelsDialog.java" startLine="234" startPosition="10" endLine="248" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="708166622413807484" fileName="MergeModelsDialog.java" startLine="331" startPosition="101" endLine="345" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="708166622413808228" fileName="MergeModelsDialog.java" startLine="183" startPosition="0" endLine="199" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="708166622413807477" fileName="MergeModelsDialog.java" startLine="330" startPosition="0" endLine="347" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="generateUnresolvedChangesText#(II)Ljava/lang/String;" />
-    <nodeInfo nodeId="708166622413808160" fileName="MergeModelsDialog.java" startLine="162" startPosition="0" endLine="180" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="708166622413808223" fileName="MergeModelsDialog.java" startLine="181" startPosition="10" endLine="200" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="708166622413808456" fileName="MergeModelsDialog.java" startLine="250" startPosition="0" endLine="269" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invokeMergeRoots#(Ljetbrains/mps/smodel/SNodeId;)V" />
-    <nodeInfo nodeId="708166622413808524" fileName="MergeModelsDialog.java" startLine="272" startPosition="99" endLine="291" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="708166622413807977" fileName="MergeModelsDialog.java" startLine="389" startPosition="14" endLine="411" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="708166622413808373" fileName="MergeModelsDialog.java" startLine="225" startPosition="0" endLine="248" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="708166622413807944" fileName="MergeModelsDialog.java" startLine="384" startPosition="14" endLine="411" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="708166622413807942" fileName="MergeModelsDialog.java" startLine="384" startPosition="12" endLine="412" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="708166622413807578" fileName="MergeModelsDialog.java" startLine="72" startPosition="0" endLine="103" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MergeModelsDialog#(Ljetbrains/mps/smodel/SModel;Ljetbrains/mps/smodel/SModel;Ljetbrains/mps/smodel/SModel;Lcom/intellij/openapi/diff/DiffRequest;)V" />
-    <nodeInfo nodeId="708166622413808504" fileName="MergeModelsDialog.java" startLine="269" startPosition="0" endLine="300" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="acceptVersionForSelectedRoots#(Z)V" />
-    <nodeInfo nodeId="708166622413807928" fileName="MergeModelsDialog.java" startLine="380" startPosition="122" endLine="412" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="708166622413808155" fileName="MergeModelsDialog.java" startLine="155" startPosition="107" endLine="200" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="708166622413807831" fileName="MergeModelsDialog.java" startLine="357" startPosition="0" endLine="418" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="updateRootCustomPresentation#(Ljetbrains/mps/vcs/diff/ui/common/DiffModelTree/RootTreeNode;)V" />
-    <nodeInfo nodeId="708166622413808129" fileName="MergeModelsDialog.java" startLine="149" startPosition="0" endLine="250" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invokeMergeMetadata#()V" />
-    <scopeInfo nodeId="708166622413807622" fileName="MergeModelsDialog.java" startLine="81" startPosition="25" endLine="82" endPosition="58" />
-    <scopeInfo nodeId="708166622413812468" fileName="MergeModelsDialog.java" startLine="99" startPosition="23" endLine="100" endPosition="96" />
-    <scopeInfo nodeId="708166622413812547" fileName="MergeModelsDialog.java" startLine="105" startPosition="42" endLine="106" endPosition="64" />
-    <scopeInfo nodeId="708166622413837186" fileName="MergeModelsDialog.java" startLine="111" startPosition="28" endLine="112" endPosition="96" />
-    <scopeInfo nodeId="708166622413808110" fileName="MergeModelsDialog.java" startLine="141" startPosition="36" endLine="142" endPosition="21" />
-    <scopeInfo nodeId="708166622413808121" fileName="MergeModelsDialog.java" startLine="146" startPosition="74" endLine="147" endPosition="54" />
-    <scopeInfo nodeId="708166622413808215" fileName="MergeModelsDialog.java" startLine="157" startPosition="45" endLine="158" endPosition="51" />
-    <scopeInfo nodeId="708166622413808165" fileName="MergeModelsDialog.java" startLine="164" startPosition="47" endLine="165" endPosition="53" />
-    <scopeInfo nodeId="708166622413808192" fileName="MergeModelsDialog.java" startLine="174" startPosition="49" endLine="175" endPosition="92" />
-    <scopeInfo nodeId="708166622413808244" fileName="MergeModelsDialog.java" startLine="185" startPosition="47" endLine="186" endPosition="90" />
-    <scopeInfo nodeId="708166622413808265" fileName="MergeModelsDialog.java" startLine="195" startPosition="49" endLine="196" endPosition="89" />
-    <scopeInfo nodeId="708166622413808283" fileName="MergeModelsDialog.java" startLine="202" startPosition="45" endLine="203" endPosition="45" />
-    <scopeInfo nodeId="708166622413808299" fileName="MergeModelsDialog.java" startLine="207" startPosition="45" endLine="208" endPosition="48" />
-    <scopeInfo nodeId="708166622413808329" fileName="MergeModelsDialog.java" startLine="215" startPosition="58" endLine="216" endPosition="46" />
-    <scopeInfo nodeId="708166622413808358" fileName="MergeModelsDialog.java" startLine="221" startPosition="64" endLine="222" endPosition="46" />
-    <scopeInfo nodeId="708166622413808374" fileName="MergeModelsDialog.java" startLine="226" startPosition="24" endLine="227" endPosition="199" />
-    <scopeInfo nodeId="708166622413808385" fileName="MergeModelsDialog.java" startLine="229" startPosition="29" endLine="230" endPosition="128" />
-    <scopeInfo nodeId="708166622413808397" fileName="MergeModelsDialog.java" startLine="231" startPosition="14" endLine="232" endPosition="138" />
-    <scopeInfo nodeId="708166622413808471" fileName="MergeModelsDialog.java" startLine="256" startPosition="31" endLine="257" endPosition="13" />
-    <scopeInfo nodeId="708166622413808483" fileName="MergeModelsDialog.java" startLine="262" startPosition="25" endLine="263" endPosition="138" />
-    <scopeInfo nodeId="708166622413808579" fileName="MergeModelsDialog.java" startLine="283" startPosition="31" endLine="284" endPosition="79" />
-    <scopeInfo nodeId="708166622413808589" fileName="MergeModelsDialog.java" startLine="286" startPosition="18" endLine="287" endPosition="71" />
-    <scopeInfo nodeId="708166622413808615" fileName="MergeModelsDialog.java" startLine="301" startPosition="80" endLine="302" endPosition="94" />
-    <scopeInfo nodeId="708166622413808626" fileName="MergeModelsDialog.java" startLine="305" startPosition="40" endLine="306" endPosition="33" />
-    <scopeInfo nodeId="708166622413808634" fileName="MergeModelsDialog.java" startLine="309" startPosition="43" endLine="310" endPosition="27" />
-    <scopeInfo nodeId="708166622413808639" fileName="MergeModelsDialog.java" startLine="313" startPosition="46" endLine="314" endPosition="26" />
-    <scopeInfo nodeId="708166622413808644" fileName="MergeModelsDialog.java" startLine="317" startPosition="58" endLine="318" endPosition="39" />
-    <scopeInfo nodeId="708166622413813183" fileName="MergeModelsDialog.java" startLine="327" startPosition="44" endLine="328" endPosition="19" />
-    <scopeInfo nodeId="708166622413807493" fileName="MergeModelsDialog.java" startLine="334" startPosition="47" endLine="335" endPosition="20" />
-    <scopeInfo nodeId="708166622413807500" fileName="MergeModelsDialog.java" startLine="336" startPosition="14" endLine="337" endPosition="55" />
-    <scopeInfo nodeId="708166622413807518" fileName="MergeModelsDialog.java" startLine="340" startPosition="30" endLine="341" endPosition="38" />
-    <scopeInfo nodeId="708166622413807522" fileName="MergeModelsDialog.java" startLine="342" startPosition="14" endLine="343" endPosition="71" />
-    <scopeInfo nodeId="708166622413807806" fileName="MergeModelsDialog.java" startLine="349" startPosition="31" endLine="350" endPosition="97" />
-    <scopeInfo nodeId="708166622413807850" fileName="MergeModelsDialog.java" startLine="361" startPosition="53" endLine="362" endPosition="36" />
-    <scopeInfo nodeId="708166622413807876" fileName="MergeModelsDialog.java" startLine="368" startPosition="47" endLine="369" endPosition="56" />
-    <scopeInfo nodeId="708166622413807896" fileName="MergeModelsDialog.java" startLine="374" startPosition="47" endLine="375" endPosition="90" />
-    <scopeInfo nodeId="708166622413807950" fileName="MergeModelsDialog.java" startLine="386" startPosition="130" endLine="387" endPosition="98" />
-    <scopeInfo nodeId="708166622413807997" fileName="MergeModelsDialog.java" startLine="392" startPosition="51" endLine="393" endPosition="83" />
-    <scopeInfo nodeId="708166622413807984" fileName="MergeModelsDialog.java" startLine="395" startPosition="15" endLine="396" endPosition="83" />
-    <scopeInfo nodeId="708166622413808017" fileName="MergeModelsDialog.java" startLine="400" startPosition="51" endLine="401" endPosition="51" />
-    <scopeInfo nodeId="708166622413808027" fileName="MergeModelsDialog.java" startLine="404" startPosition="53" endLine="405" endPosition="52" />
-    <scopeInfo nodeId="708166622413808037" fileName="MergeModelsDialog.java" startLine="406" startPosition="43" endLine="407" endPosition="53" />
-    <scopeInfo nodeId="708166622413808047" fileName="MergeModelsDialog.java" startLine="408" startPosition="18" endLine="409" endPosition="60" />
-    <scopeInfo nodeId="708166622413808055" fileName="MergeModelsDialog.java" startLine="414" startPosition="40" endLine="415" endPosition="76" />
-    <scopeInfo nodeId="708166622413808069" fileName="MergeModelsDialog.java" startLine="419" startPosition="44" endLine="420" endPosition="124" />
-    <scopeInfo nodeId="708166622413808085" fileName="MergeModelsDialog.java" startLine="423" startPosition="52" endLine="424" endPosition="47" />
-    <scopeInfo nodeId="708166622413808093" fileName="MergeModelsDialog.java" startLine="428" startPosition="45" endLine="429" endPosition="18" />
-    <scopeInfo nodeId="708166622413837195" fileName="MergeModelsDialog.java" startLine="115" startPosition="28" endLine="117" endPosition="28" />
-    <scopeInfo nodeId="708166622413808099" fileName="MergeModelsDialog.java" startLine="136" startPosition="35" endLine="138" endPosition="31" />
-    <scopeInfo nodeId="708166622413808444" fileName="MergeModelsDialog.java" startLine="244" startPosition="38" endLine="246" endPosition="23" />
-    <scopeInfo nodeId="708166622413808463" fileName="MergeModelsDialog.java" startLine="252" startPosition="25" endLine="254" endPosition="13" />
-    <scopeInfo nodeId="708166622413808655" fileName="MergeModelsDialog.java" startLine="321" startPosition="28" endLine="323" endPosition="19" />
-    <scopeInfo nodeId="708166622413807817" fileName="MergeModelsDialog.java" startLine="353" startPosition="53" endLine="355" endPosition="134">
+    <nodeInfo nodeId="708166622413807527" fileName="MergeModelsDialog.java" startLine="59" startPosition="54" endLine="60" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="APPLY_NON_CONFLICTS" />
+    <nodeInfo nodeId="708166622413807533" fileName="MergeModelsDialog.java" startLine="60" startPosition="112" endLine="61" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="RESET" />
+    <nodeInfo nodeId="708166622413807539" fileName="MergeModelsDialog.java" startLine="62" startPosition="0" endLine="63" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myProject" />
+    <nodeInfo nodeId="708166622413807542" fileName="MergeModelsDialog.java" startLine="63" startPosition="28" endLine="64" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myMergeSession" />
+    <nodeInfo nodeId="708166622413807545" fileName="MergeModelsDialog.java" startLine="64" startPosition="38" endLine="65" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myInitialState" />
+    <nodeInfo nodeId="708166622413807548" fileName="MergeModelsDialog.java" startLine="65" startPosition="43" endLine="66" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myMergeTree" />
+    <nodeInfo nodeId="708166622413807551" fileName="MergeModelsDialog.java" startLine="66" startPosition="56" endLine="67" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myPanel" />
+    <nodeInfo nodeId="708166622413807558" fileName="MergeModelsDialog.java" startLine="67" startPosition="58" endLine="68" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myApplyChanges" />
+    <nodeInfo nodeId="708166622413807562" fileName="MergeModelsDialog.java" startLine="68" startPosition="41" endLine="69" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myRootsDialogInvoked" />
+    <nodeInfo nodeId="708166622413807566" fileName="MergeModelsDialog.java" startLine="69" startPosition="47" endLine="70" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myContentTitles" />
+    <nodeInfo nodeId="708166622413807570" fileName="MergeModelsDialog.java" startLine="70" startPosition="35" endLine="71" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myAppliedMetadataChanges" />
+    <nodeInfo nodeId="708166622413808661" fileName="MergeModelsDialog.java" startLine="71" startPosition="102" endLine="72" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myToolbar" />
+    <nodeInfo nodeId="708166622413808734" fileName="MergeModelsDialog.java" startLine="74" startPosition="109" endLine="75" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="708166622413811097" fileName="MergeModelsDialog.java" startLine="75" startPosition="38" endLine="76" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="708166622413807594" fileName="MergeModelsDialog.java" startLine="76" startPosition="68" endLine="77" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="708166622413807600" fileName="MergeModelsDialog.java" startLine="77" startPosition="37" endLine="78" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="708166622413807606" fileName="MergeModelsDialog.java" startLine="78" startPosition="49" endLine="79" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
+    <nodeInfo nodeId="708166622413807612" fileName="MergeModelsDialog.java" startLine="79" startPosition="39" endLine="80" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="708166622413807623" fileName="MergeModelsDialog.java" startLine="82" startPosition="25" endLine="83" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="708166622413807629" fileName="MergeModelsDialog.java" startLine="85" startPosition="7" endLine="86" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="708166622413807634" fileName="MergeModelsDialog.java" startLine="86" startPosition="76" endLine="87" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="708166622413807642" fileName="MergeModelsDialog.java" startLine="87" startPosition="97" endLine="88" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="708166622413807646" fileName="MergeModelsDialog.java" startLine="88" startPosition="48" endLine="89" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="708166622413807651" fileName="MergeModelsDialog.java" startLine="89" startPosition="67" endLine="90" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="708166622413807656" fileName="MergeModelsDialog.java" startLine="90" startPosition="79" endLine="91" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="708166622413807657" fileName="MergeModelsDialog.java" startLine="91" startPosition="0" endLine="92" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="708166622413807662" fileName="MergeModelsDialog.java" startLine="92" startPosition="58" endLine="93" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="708166622413807663" fileName="MergeModelsDialog.java" startLine="93" startPosition="0" endLine="94" endPosition="395" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="708166622413807687" fileName="MergeModelsDialog.java" startLine="94" startPosition="395" endLine="95" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="708166622413807696" fileName="MergeModelsDialog.java" startLine="95" startPosition="105" endLine="96" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="708166622413807700" fileName="MergeModelsDialog.java" startLine="96" startPosition="41" endLine="97" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="708166622413807708" fileName="MergeModelsDialog.java" startLine="97" startPosition="62" endLine="98" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="708166622413812457" fileName="MergeModelsDialog.java" startLine="98" startPosition="86" endLine="99" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="708166622413812469" fileName="MergeModelsDialog.java" startLine="100" startPosition="23" endLine="101" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="708166622413812412" fileName="MergeModelsDialog.java" startLine="102" startPosition="5" endLine="103" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="708166622413812548" fileName="MergeModelsDialog.java" startLine="106" startPosition="42" endLine="107" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="708166622413837187" fileName="MergeModelsDialog.java" startLine="112" startPosition="28" endLine="113" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="708166622413837196" fileName="MergeModelsDialog.java" startLine="116" startPosition="28" endLine="117" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="708166622413837254" fileName="MergeModelsDialog.java" startLine="117" startPosition="30" endLine="118" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="708166622413837349" fileName="MergeModelsDialog.java" startLine="123" startPosition="38" endLine="124" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="708166622413837356" fileName="MergeModelsDialog.java" startLine="124" startPosition="74" endLine="125" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="708166622413837361" fileName="MergeModelsDialog.java" startLine="125" startPosition="61" endLine="126" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="708166622413837366" fileName="MergeModelsDialog.java" startLine="126" startPosition="65" endLine="127" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="708166622413808100" fileName="MergeModelsDialog.java" startLine="137" startPosition="35" endLine="138" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="708166622413808104" fileName="MergeModelsDialog.java" startLine="138" startPosition="41" endLine="139" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="708166622413808111" fileName="MergeModelsDialog.java" startLine="142" startPosition="36" endLine="143" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="708166622413808122" fileName="MergeModelsDialog.java" startLine="147" startPosition="74" endLine="148" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="708166622413808132" fileName="MergeModelsDialog.java" startLine="151" startPosition="38" endLine="152" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="708166622413808139" fileName="MergeModelsDialog.java" startLine="152" startPosition="71" endLine="153" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
+    <nodeInfo nodeId="708166622413808143" fileName="MergeModelsDialog.java" startLine="153" startPosition="58" endLine="154" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="708166622413808147" fileName="MergeModelsDialog.java" startLine="154" startPosition="32" endLine="155" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="708166622413808151" fileName="MergeModelsDialog.java" startLine="155" startPosition="34" endLine="156" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="708166622413808216" fileName="MergeModelsDialog.java" startLine="158" startPosition="45" endLine="159" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="708166622413808157" fileName="MergeModelsDialog.java" startLine="161" startPosition="9" endLine="162" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="708166622413808159" fileName="MergeModelsDialog.java" startLine="162" startPosition="42" endLine="163" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="708166622413808166" fileName="MergeModelsDialog.java" startLine="165" startPosition="47" endLine="166" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="708166622413808174" fileName="MergeModelsDialog.java" startLine="168" startPosition="11" endLine="169" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="708166622413808176" fileName="MergeModelsDialog.java" startLine="169" startPosition="28" endLine="170" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="708166622413808180" fileName="MergeModelsDialog.java" startLine="170" startPosition="60" endLine="171" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="708166622413808186" fileName="MergeModelsDialog.java" startLine="172" startPosition="14" endLine="173" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="708166622413808193" fileName="MergeModelsDialog.java" startLine="175" startPosition="49" endLine="176" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="708166622413808203" fileName="MergeModelsDialog.java" startLine="178" startPosition="11" endLine="179" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="708166622413808207" fileName="MergeModelsDialog.java" startLine="179" startPosition="46" endLine="180" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="708166622413808225" fileName="MergeModelsDialog.java" startLine="182" startPosition="12" endLine="183" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="708166622413808227" fileName="MergeModelsDialog.java" startLine="183" startPosition="36" endLine="184" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="708166622413808245" fileName="MergeModelsDialog.java" startLine="186" startPosition="47" endLine="187" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="708166622413808230" fileName="MergeModelsDialog.java" startLine="189" startPosition="11" endLine="190" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="708166622413808232" fileName="MergeModelsDialog.java" startLine="190" startPosition="39" endLine="191" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="708166622413808236" fileName="MergeModelsDialog.java" startLine="191" startPosition="46" endLine="192" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="708166622413808256" fileName="MergeModelsDialog.java" startLine="193" startPosition="14" endLine="194" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="708166622413808266" fileName="MergeModelsDialog.java" startLine="196" startPosition="49" endLine="197" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="708166622413808284" fileName="MergeModelsDialog.java" startLine="203" startPosition="45" endLine="204" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="708166622413808300" fileName="MergeModelsDialog.java" startLine="208" startPosition="45" endLine="209" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="708166622413808308" fileName="MergeModelsDialog.java" startLine="211" startPosition="7" endLine="212" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="708166622413808309" fileName="MergeModelsDialog.java" startLine="212" startPosition="0" endLine="213" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="708166622413808316" fileName="MergeModelsDialog.java" startLine="214" startPosition="51" endLine="215" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="708166622413808330" fileName="MergeModelsDialog.java" startLine="216" startPosition="58" endLine="217" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="708166622413808345" fileName="MergeModelsDialog.java" startLine="220" startPosition="57" endLine="221" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="708166622413808359" fileName="MergeModelsDialog.java" startLine="222" startPosition="64" endLine="223" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="708166622413808372" fileName="MergeModelsDialog.java" startLine="225" startPosition="5" endLine="226" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="708166622413808375" fileName="MergeModelsDialog.java" startLine="227" startPosition="24" endLine="228" endPosition="199" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="708166622413808386" fileName="MergeModelsDialog.java" startLine="230" startPosition="29" endLine="231" endPosition="128" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="708166622413808398" fileName="MergeModelsDialog.java" startLine="232" startPosition="14" endLine="233" endPosition="138" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="708166622413808409" fileName="MergeModelsDialog.java" startLine="235" startPosition="12" endLine="236" endPosition="221" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="708166622413808428" fileName="MergeModelsDialog.java" startLine="239" startPosition="29" endLine="240" endPosition="119" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="708166622413808433" fileName="MergeModelsDialog.java" startLine="240" startPosition="119" endLine="241" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="708166622413808438" fileName="MergeModelsDialog.java" startLine="241" startPosition="66" endLine="242" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="708166622413808445" fileName="MergeModelsDialog.java" startLine="245" startPosition="38" endLine="246" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="708166622413808450" fileName="MergeModelsDialog.java" startLine="246" startPosition="64" endLine="247" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="708166622413808464" fileName="MergeModelsDialog.java" startLine="253" startPosition="25" endLine="254" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="708166622413808466" fileName="MergeModelsDialog.java" startLine="254" startPosition="28" endLine="255" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="708166622413808472" fileName="MergeModelsDialog.java" startLine="257" startPosition="31" endLine="258" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="708166622413808474" fileName="MergeModelsDialog.java" startLine="259" startPosition="5" endLine="260" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="708166622413808478" fileName="MergeModelsDialog.java" startLine="260" startPosition="32" endLine="261" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="708166622413808484" fileName="MergeModelsDialog.java" startLine="263" startPosition="25" endLine="264" endPosition="138" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="708166622413808496" fileName="MergeModelsDialog.java" startLine="266" startPosition="7" endLine="267" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="708166622413808500" fileName="MergeModelsDialog.java" startLine="267" startPosition="34" endLine="268" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="708166622413808510" fileName="MergeModelsDialog.java" startLine="271" startPosition="59" endLine="272" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="708166622413808517" fileName="MergeModelsDialog.java" startLine="272" startPosition="97" endLine="273" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="708166622413808534" fileName="MergeModelsDialog.java" startLine="274" startPosition="156" endLine="275" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="708166622413808573" fileName="MergeModelsDialog.java" startLine="282" startPosition="58" endLine="283" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="708166622413808580" fileName="MergeModelsDialog.java" startLine="284" startPosition="31" endLine="285" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="708166622413808590" fileName="MergeModelsDialog.java" startLine="287" startPosition="18" endLine="288" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="708166622413808599" fileName="MergeModelsDialog.java" startLine="294" startPosition="25" endLine="295" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="708166622413808604" fileName="MergeModelsDialog.java" startLine="295" startPosition="52" endLine="296" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="708166622413808609" fileName="MergeModelsDialog.java" startLine="296" startPosition="56" endLine="297" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="708166622413808616" fileName="MergeModelsDialog.java" startLine="302" startPosition="80" endLine="303" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="708166622413808627" fileName="MergeModelsDialog.java" startLine="306" startPosition="40" endLine="307" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="708166622413808635" fileName="MergeModelsDialog.java" startLine="310" startPosition="43" endLine="311" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="708166622413808640" fileName="MergeModelsDialog.java" startLine="314" startPosition="46" endLine="315" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="708166622413808645" fileName="MergeModelsDialog.java" startLine="318" startPosition="58" endLine="319" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="708166622413808656" fileName="MergeModelsDialog.java" startLine="322" startPosition="28" endLine="323" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="708166622413808659" fileName="MergeModelsDialog.java" startLine="323" startPosition="33" endLine="324" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="708166622413813211" fileName="MergeModelsDialog.java" startLine="328" startPosition="44" endLine="329" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="708166622413807486" fileName="MergeModelsDialog.java" startLine="333" startPosition="34" endLine="334" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="708166622413807494" fileName="MergeModelsDialog.java" startLine="335" startPosition="47" endLine="336" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="708166622413807501" fileName="MergeModelsDialog.java" startLine="337" startPosition="14" endLine="338" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="708166622413807519" fileName="MergeModelsDialog.java" startLine="341" startPosition="30" endLine="342" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="708166622413807523" fileName="MergeModelsDialog.java" startLine="343" startPosition="14" endLine="344" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="708166622413807807" fileName="MergeModelsDialog.java" startLine="350" startPosition="31" endLine="351" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="708166622413807818" fileName="MergeModelsDialog.java" startLine="354" startPosition="53" endLine="355" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="708166622413807822" fileName="MergeModelsDialog.java" startLine="355" startPosition="52" endLine="356" endPosition="134" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="708166622413807851" fileName="MergeModelsDialog.java" startLine="362" startPosition="53" endLine="363" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="708166622413807877" fileName="MergeModelsDialog.java" startLine="369" startPosition="47" endLine="370" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="708166622413807887" fileName="MergeModelsDialog.java" startLine="372" startPosition="26" endLine="373" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="708166622413807897" fileName="MergeModelsDialog.java" startLine="375" startPosition="47" endLine="376" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="708166622413807907" fileName="MergeModelsDialog.java" startLine="378" startPosition="17" endLine="379" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="708166622413807915" fileName="MergeModelsDialog.java" startLine="379" startPosition="88" endLine="380" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="708166622413807919" fileName="MergeModelsDialog.java" startLine="380" startPosition="44" endLine="381" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="708166622413807930" fileName="MergeModelsDialog.java" startLine="382" startPosition="33" endLine="383" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="708166622413807934" fileName="MergeModelsDialog.java" startLine="383" startPosition="52" endLine="384" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6400107809288383946" fileName="MergeModelsDialog.java" startLine="387" startPosition="130" endLine="388" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="708166622413807979" fileName="MergeModelsDialog.java" startLine="390" startPosition="16" endLine="391" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="708166622413807998" fileName="MergeModelsDialog.java" startLine="393" startPosition="51" endLine="394" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="708166622413807985" fileName="MergeModelsDialog.java" startLine="396" startPosition="15" endLine="397" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="708166622413808008" fileName="MergeModelsDialog.java" startLine="398" startPosition="11" endLine="399" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="708166622413808018" fileName="MergeModelsDialog.java" startLine="401" startPosition="51" endLine="402" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="708166622413808028" fileName="MergeModelsDialog.java" startLine="405" startPosition="53" endLine="406" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="708166622413808038" fileName="MergeModelsDialog.java" startLine="407" startPosition="43" endLine="408" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="708166622413808048" fileName="MergeModelsDialog.java" startLine="409" startPosition="18" endLine="410" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="708166622413808053" fileName="MergeModelsDialog.java" startLine="413" startPosition="7" endLine="414" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="708166622413808056" fileName="MergeModelsDialog.java" startLine="415" startPosition="40" endLine="416" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="708166622413808070" fileName="MergeModelsDialog.java" startLine="420" startPosition="44" endLine="421" endPosition="124" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="708166622413808086" fileName="MergeModelsDialog.java" startLine="424" startPosition="52" endLine="425" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="708166622413808094" fileName="MergeModelsDialog.java" startLine="429" startPosition="45" endLine="430" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="708166622413808396" fileName="MergeModelsDialog.java" startLine="232" startPosition="12" endLine="234" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="708166622413808588" fileName="MergeModelsDialog.java" startLine="287" startPosition="16" endLine="289" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="708166622413807499" fileName="MergeModelsDialog.java" startLine="337" startPosition="12" endLine="339" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="708166622413807521" fileName="MergeModelsDialog.java" startLine="343" startPosition="12" endLine="345" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="708166622413808046" fileName="MergeModelsDialog.java" startLine="409" startPosition="16" endLine="411" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="708166622413812464" fileName="MergeModelsDialog.java" startLine="99" startPosition="92" endLine="102" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="708166622413808326" fileName="MergeModelsDialog.java" startLine="215" startPosition="55" endLine="218" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="708166622413808355" fileName="MergeModelsDialog.java" startLine="221" startPosition="55" endLine="224" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="708166622413808470" fileName="MergeModelsDialog.java" startLine="256" startPosition="5" endLine="259" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="708166622413808578" fileName="MergeModelsDialog.java" startLine="283" startPosition="69" endLine="286" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="708166622413807803" fileName="MergeModelsDialog.java" startLine="349" startPosition="55" endLine="352" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MergeModelsTree#()V" />
+    <nodeInfo nodeId="708166622413807949" fileName="MergeModelsDialog.java" startLine="386" startPosition="38" endLine="389" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="708166622413808054" fileName="MergeModelsDialog.java" startLine="414" startPosition="0" endLine="417" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="708166622413807621" fileName="MergeModelsDialog.java" startLine="81" startPosition="57" endLine="85" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="708166622413812545" fileName="MergeModelsDialog.java" startLine="105" startPosition="0" endLine="109" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDimensionServiceKey#()Ljava/lang/String;" />
+    <nodeInfo nodeId="708166622413837185" fileName="MergeModelsDialog.java" startLine="111" startPosition="145" endLine="115" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#()V" />
+    <nodeInfo nodeId="708166622413807793" fileName="MergeModelsDialog.java" startLine="130" startPosition="34" endLine="134" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="708166622413808108" fileName="MergeModelsDialog.java" startLine="141" startPosition="0" endLine="145" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getProject#()Lcom/intellij/openapi/project/Project;" />
+    <nodeInfo nodeId="708166622413808214" fileName="MergeModelsDialog.java" startLine="157" startPosition="79" endLine="161" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/vcs/diff/changes/ModelChange;)Z" />
+    <nodeInfo nodeId="708166622413808164" fileName="MergeModelsDialog.java" startLine="164" startPosition="81" endLine="168" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/vcs/diff/changes/ModelChange;)Z" />
+    <nodeInfo nodeId="708166622413808191" fileName="MergeModelsDialog.java" startLine="174" startPosition="86" endLine="178" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/vcs/diff/changes/ModelChange;)Z" />
+    <nodeInfo nodeId="708166622413808243" fileName="MergeModelsDialog.java" startLine="185" startPosition="81" endLine="189" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/vcs/diff/changes/ModelChange;)Z" />
+    <nodeInfo nodeId="708166622413808264" fileName="MergeModelsDialog.java" startLine="195" startPosition="108" endLine="199" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/vcs/diff/changes/ModelChange;)Z" />
+    <nodeInfo nodeId="708166622413808282" fileName="MergeModelsDialog.java" startLine="202" startPosition="120" endLine="206" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/vcs/diff/changes/ModelChange;)Z" />
+    <nodeInfo nodeId="708166622413808298" fileName="MergeModelsDialog.java" startLine="207" startPosition="126" endLine="211" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/vcs/diff/changes/ModelChange;)Z" />
+    <nodeInfo nodeId="708166622413808462" fileName="MergeModelsDialog.java" startLine="252" startPosition="54" endLine="256" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="708166622413808482" fileName="MergeModelsDialog.java" startLine="262" startPosition="57" endLine="266" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="708166622413808540" fileName="MergeModelsDialog.java" startLine="275" startPosition="37" endLine="279" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="708166622413808613" fileName="MergeModelsDialog.java" startLine="301" startPosition="0" endLine="305" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="markMetadataChangesAsApplied#(Ljava/lang/Iterable;)V" />
+    <nodeInfo nodeId="708166622413808624" fileName="MergeModelsDialog.java" startLine="305" startPosition="0" endLine="309" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="rootsDialogClosed#()V" />
+    <nodeInfo nodeId="708166622413808631" fileName="MergeModelsDialog.java" startLine="309" startPosition="0" endLine="313" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getContentTitles#()[Ljava/lang/String;" />
+    <nodeInfo nodeId="708166622413808637" fileName="MergeModelsDialog.java" startLine="313" startPosition="0" endLine="317" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getMergeSession#()Ljetbrains/mps/vcs/diff/merge/MergeSession;" />
+    <nodeInfo nodeId="708166622413808642" fileName="MergeModelsDialog.java" startLine="317" startPosition="0" endLine="321" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="restoreState#(Ljetbrains/mps/vcs/diff/merge/MergeSessionState;)V" />
+    <nodeInfo nodeId="708166622413807849" fileName="MergeModelsDialog.java" startLine="361" startPosition="117" endLine="365" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/vcs/diff/changes/ModelChange;)Ljetbrains/mps/vcs/diff/changes/ModelChange;" />
+    <nodeInfo nodeId="708166622413807875" fileName="MergeModelsDialog.java" startLine="368" startPosition="86" endLine="372" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/vcs/diff/changes/ModelChange;)Z" />
+    <nodeInfo nodeId="708166622413807895" fileName="MergeModelsDialog.java" startLine="374" startPosition="98" endLine="378" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/vcs/diff/changes/ModelChange;)Z" />
+    <nodeInfo nodeId="708166622413807996" fileName="MergeModelsDialog.java" startLine="392" startPosition="82" endLine="396" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/vcs/diff/changes/ModelChange;)Z" />
+    <nodeInfo nodeId="708166622413808016" fileName="MergeModelsDialog.java" startLine="400" startPosition="101" endLine="404" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/vcs/diff/changes/ModelChange;)Z" />
+    <nodeInfo nodeId="708166622413808065" fileName="MergeModelsDialog.java" startLine="419" startPosition="0" endLine="423" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getModels#()Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="708166622413808081" fileName="MergeModelsDialog.java" startLine="423" startPosition="0" endLine="427" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getAffectedRoots#()Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="708166622413807620" fileName="MergeModelsDialog.java" startLine="80" startPosition="77" endLine="85" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="708166622413837194" fileName="MergeModelsDialog.java" startLine="115" startPosition="41" endLine="120" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#()V" />
+    <nodeInfo nodeId="708166622413808097" fileName="MergeModelsDialog.java" startLine="136" startPosition="0" endLine="141" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="rebuildLater#()V" />
+    <nodeInfo nodeId="708166622413808113" fileName="MergeModelsDialog.java" startLine="145" startPosition="0" endLine="150" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNeighbourRoot#(Ljetbrains/mps/smodel/SNodeId;Z)Ljetbrains/mps/smodel/SNodeId;" />
+    <nodeInfo nodeId="708166622413808188" fileName="MergeModelsDialog.java" startLine="173" startPosition="64" endLine="178" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
+    <nodeInfo nodeId="708166622413808258" fileName="MergeModelsDialog.java" startLine="194" startPosition="40" endLine="199" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="708166622413808275" fileName="MergeModelsDialog.java" startLine="201" startPosition="5" endLine="206" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="708166622413808291" fileName="MergeModelsDialog.java" startLine="206" startPosition="7" endLine="211" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="708166622413808384" fileName="MergeModelsDialog.java" startLine="229" startPosition="29" endLine="234" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="708166622413808481" fileName="MergeModelsDialog.java" startLine="261" startPosition="95" endLine="266" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="708166622413808652" fileName="MergeModelsDialog.java" startLine="321" startPosition="0" endLine="326" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="resetState#()V" />
+    <nodeInfo nodeId="708166622413813179" fileName="MergeModelsDialog.java" startLine="326" startPosition="0" endLine="331" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCenterPanel#()Ljavax/swing/JComponent;" />
+    <nodeInfo nodeId="708166622413807492" fileName="MergeModelsDialog.java" startLine="334" startPosition="92" endLine="339" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="708166622413807514" fileName="MergeModelsDialog.java" startLine="340" startPosition="12" endLine="345" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="708166622413807813" fileName="MergeModelsDialog.java" startLine="353" startPosition="0" endLine="358" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getRootActions#()Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="708166622413807869" fileName="MergeModelsDialog.java" startLine="367" startPosition="8" endLine="372" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="708166622413807888" fileName="MergeModelsDialog.java" startLine="373" startPosition="0" endLine="378" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="708166622413808009" fileName="MergeModelsDialog.java" startLine="399" startPosition="0" endLine="404" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="708166622413808090" fileName="MergeModelsDialog.java" startLine="427" startPosition="0" endLine="432" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isMultipleRootNames#()Z" />
+    <nodeInfo nodeId="708166622413808314" fileName="MergeModelsDialog.java" startLine="213" startPosition="43" endLine="219" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="708166622413808343" fileName="MergeModelsDialog.java" startLine="219" startPosition="5" endLine="225" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="708166622413808426" fileName="MergeModelsDialog.java" startLine="238" startPosition="71" endLine="244" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="708166622413808597" fileName="MergeModelsDialog.java" startLine="293" startPosition="67" endLine="299" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="708166622413807512" fileName="MergeModelsDialog.java" startLine="340" startPosition="10" endLine="346" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="708166622413837346" fileName="MergeModelsDialog.java" startLine="122" startPosition="0" endLine="129" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createActions#()[Ljavax/swing/Action;" />
+    <nodeInfo nodeId="708166622413807789" fileName="MergeModelsDialog.java" startLine="129" startPosition="0" endLine="136" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getResultModel#()Ljetbrains/mps/smodel/SModel;" />
+    <nodeInfo nodeId="708166622413808254" fileName="MergeModelsDialog.java" startLine="193" startPosition="12" endLine="200" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="708166622413808425" fileName="MergeModelsDialog.java" startLine="237" startPosition="32" endLine="244" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="708166622413808596" fileName="MergeModelsDialog.java" startLine="292" startPosition="5" endLine="299" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="708166622413807983" fileName="MergeModelsDialog.java" startLine="391" startPosition="50" endLine="398" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="708166622413808026" fileName="MergeModelsDialog.java" startLine="404" startPosition="21" endLine="411" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="708166622413808565" fileName="MergeModelsDialog.java" startLine="281" startPosition="57" endLine="289" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="708166622413807838" fileName="MergeModelsDialog.java" startLine="359" startPosition="99" endLine="367" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="708166622413808184" fileName="MergeModelsDialog.java" startLine="172" startPosition="12" endLine="181" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="708166622413837178" fileName="MergeModelsDialog.java" startLine="110" startPosition="31" endLine="120" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="708166622413808558" fileName="MergeModelsDialog.java" startLine="280" startPosition="65" endLine="290" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="708166622413808423" fileName="MergeModelsDialog.java" startLine="236" startPosition="221" endLine="248" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="708166622413808555" fileName="MergeModelsDialog.java" startLine="279" startPosition="8" endLine="291" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="708166622413837038" fileName="MergeModelsDialog.java" startLine="109" startPosition="0" endLine="122" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doOKAction#()V" />
+    <nodeInfo nodeId="708166622413808407" fileName="MergeModelsDialog.java" startLine="235" startPosition="10" endLine="249" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="708166622413807484" fileName="MergeModelsDialog.java" startLine="332" startPosition="101" endLine="346" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="708166622413808228" fileName="MergeModelsDialog.java" startLine="184" startPosition="0" endLine="200" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="708166622413807477" fileName="MergeModelsDialog.java" startLine="331" startPosition="0" endLine="348" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="generateUnresolvedChangesText#(II)Ljava/lang/String;" />
+    <nodeInfo nodeId="708166622413808160" fileName="MergeModelsDialog.java" startLine="163" startPosition="0" endLine="181" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="708166622413808223" fileName="MergeModelsDialog.java" startLine="182" startPosition="10" endLine="201" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="708166622413808456" fileName="MergeModelsDialog.java" startLine="251" startPosition="0" endLine="270" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invokeMergeRoots#(Ljetbrains/mps/smodel/SNodeId;)V" />
+    <nodeInfo nodeId="708166622413808524" fileName="MergeModelsDialog.java" startLine="273" startPosition="99" endLine="292" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="708166622413807977" fileName="MergeModelsDialog.java" startLine="390" startPosition="14" endLine="412" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="708166622413808373" fileName="MergeModelsDialog.java" startLine="226" startPosition="0" endLine="249" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="708166622413807944" fileName="MergeModelsDialog.java" startLine="385" startPosition="14" endLine="412" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="708166622413807942" fileName="MergeModelsDialog.java" startLine="385" startPosition="12" endLine="413" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="708166622413807578" fileName="MergeModelsDialog.java" startLine="73" startPosition="0" endLine="104" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MergeModelsDialog#(Ljetbrains/mps/smodel/SModel;Ljetbrains/mps/smodel/SModel;Ljetbrains/mps/smodel/SModel;Lcom/intellij/openapi/diff/DiffRequest;)V" />
+    <nodeInfo nodeId="708166622413808504" fileName="MergeModelsDialog.java" startLine="270" startPosition="0" endLine="301" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="acceptVersionForSelectedRoots#(Z)V" />
+    <nodeInfo nodeId="708166622413807928" fileName="MergeModelsDialog.java" startLine="381" startPosition="122" endLine="413" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="708166622413808155" fileName="MergeModelsDialog.java" startLine="156" startPosition="107" endLine="201" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="708166622413807831" fileName="MergeModelsDialog.java" startLine="358" startPosition="0" endLine="419" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="updateRootCustomPresentation#(Ljetbrains/mps/vcs/diff/ui/common/DiffModelTree/RootTreeNode;)V" />
+    <nodeInfo nodeId="708166622413808129" fileName="MergeModelsDialog.java" startLine="150" startPosition="0" endLine="251" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invokeMergeMetadata#()V" />
+    <scopeInfo nodeId="708166622413807622" fileName="MergeModelsDialog.java" startLine="82" startPosition="25" endLine="83" endPosition="58" />
+    <scopeInfo nodeId="708166622413812468" fileName="MergeModelsDialog.java" startLine="100" startPosition="23" endLine="101" endPosition="96" />
+    <scopeInfo nodeId="708166622413812547" fileName="MergeModelsDialog.java" startLine="106" startPosition="42" endLine="107" endPosition="64" />
+    <scopeInfo nodeId="708166622413837186" fileName="MergeModelsDialog.java" startLine="112" startPosition="28" endLine="113" endPosition="96" />
+    <scopeInfo nodeId="708166622413808110" fileName="MergeModelsDialog.java" startLine="142" startPosition="36" endLine="143" endPosition="21" />
+    <scopeInfo nodeId="708166622413808121" fileName="MergeModelsDialog.java" startLine="147" startPosition="74" endLine="148" endPosition="54" />
+    <scopeInfo nodeId="708166622413808215" fileName="MergeModelsDialog.java" startLine="158" startPosition="45" endLine="159" endPosition="51" />
+    <scopeInfo nodeId="708166622413808165" fileName="MergeModelsDialog.java" startLine="165" startPosition="47" endLine="166" endPosition="53" />
+    <scopeInfo nodeId="708166622413808192" fileName="MergeModelsDialog.java" startLine="175" startPosition="49" endLine="176" endPosition="92" />
+    <scopeInfo nodeId="708166622413808244" fileName="MergeModelsDialog.java" startLine="186" startPosition="47" endLine="187" endPosition="90" />
+    <scopeInfo nodeId="708166622413808265" fileName="MergeModelsDialog.java" startLine="196" startPosition="49" endLine="197" endPosition="89" />
+    <scopeInfo nodeId="708166622413808283" fileName="MergeModelsDialog.java" startLine="203" startPosition="45" endLine="204" endPosition="45" />
+    <scopeInfo nodeId="708166622413808299" fileName="MergeModelsDialog.java" startLine="208" startPosition="45" endLine="209" endPosition="48" />
+    <scopeInfo nodeId="708166622413808329" fileName="MergeModelsDialog.java" startLine="216" startPosition="58" endLine="217" endPosition="46" />
+    <scopeInfo nodeId="708166622413808358" fileName="MergeModelsDialog.java" startLine="222" startPosition="64" endLine="223" endPosition="46" />
+    <scopeInfo nodeId="708166622413808374" fileName="MergeModelsDialog.java" startLine="227" startPosition="24" endLine="228" endPosition="199" />
+    <scopeInfo nodeId="708166622413808385" fileName="MergeModelsDialog.java" startLine="230" startPosition="29" endLine="231" endPosition="128" />
+    <scopeInfo nodeId="708166622413808397" fileName="MergeModelsDialog.java" startLine="232" startPosition="14" endLine="233" endPosition="138" />
+    <scopeInfo nodeId="708166622413808471" fileName="MergeModelsDialog.java" startLine="257" startPosition="31" endLine="258" endPosition="13" />
+    <scopeInfo nodeId="708166622413808483" fileName="MergeModelsDialog.java" startLine="263" startPosition="25" endLine="264" endPosition="138" />
+    <scopeInfo nodeId="708166622413808579" fileName="MergeModelsDialog.java" startLine="284" startPosition="31" endLine="285" endPosition="79" />
+    <scopeInfo nodeId="708166622413808589" fileName="MergeModelsDialog.java" startLine="287" startPosition="18" endLine="288" endPosition="71" />
+    <scopeInfo nodeId="708166622413808615" fileName="MergeModelsDialog.java" startLine="302" startPosition="80" endLine="303" endPosition="94" />
+    <scopeInfo nodeId="708166622413808626" fileName="MergeModelsDialog.java" startLine="306" startPosition="40" endLine="307" endPosition="33" />
+    <scopeInfo nodeId="708166622413808634" fileName="MergeModelsDialog.java" startLine="310" startPosition="43" endLine="311" endPosition="27" />
+    <scopeInfo nodeId="708166622413808639" fileName="MergeModelsDialog.java" startLine="314" startPosition="46" endLine="315" endPosition="26" />
+    <scopeInfo nodeId="708166622413808644" fileName="MergeModelsDialog.java" startLine="318" startPosition="58" endLine="319" endPosition="39" />
+    <scopeInfo nodeId="708166622413813183" fileName="MergeModelsDialog.java" startLine="328" startPosition="44" endLine="329" endPosition="19" />
+    <scopeInfo nodeId="708166622413807493" fileName="MergeModelsDialog.java" startLine="335" startPosition="47" endLine="336" endPosition="20" />
+    <scopeInfo nodeId="708166622413807500" fileName="MergeModelsDialog.java" startLine="337" startPosition="14" endLine="338" endPosition="55" />
+    <scopeInfo nodeId="708166622413807518" fileName="MergeModelsDialog.java" startLine="341" startPosition="30" endLine="342" endPosition="38" />
+    <scopeInfo nodeId="708166622413807522" fileName="MergeModelsDialog.java" startLine="343" startPosition="14" endLine="344" endPosition="71" />
+    <scopeInfo nodeId="708166622413807806" fileName="MergeModelsDialog.java" startLine="350" startPosition="31" endLine="351" endPosition="97" />
+    <scopeInfo nodeId="708166622413807850" fileName="MergeModelsDialog.java" startLine="362" startPosition="53" endLine="363" endPosition="36" />
+    <scopeInfo nodeId="708166622413807876" fileName="MergeModelsDialog.java" startLine="369" startPosition="47" endLine="370" endPosition="56" />
+    <scopeInfo nodeId="708166622413807896" fileName="MergeModelsDialog.java" startLine="375" startPosition="47" endLine="376" endPosition="90" />
+    <scopeInfo nodeId="708166622413807950" fileName="MergeModelsDialog.java" startLine="387" startPosition="130" endLine="388" endPosition="76" />
+    <scopeInfo nodeId="708166622413807997" fileName="MergeModelsDialog.java" startLine="393" startPosition="51" endLine="394" endPosition="83" />
+    <scopeInfo nodeId="708166622413807984" fileName="MergeModelsDialog.java" startLine="396" startPosition="15" endLine="397" endPosition="83" />
+    <scopeInfo nodeId="708166622413808017" fileName="MergeModelsDialog.java" startLine="401" startPosition="51" endLine="402" endPosition="51" />
+    <scopeInfo nodeId="708166622413808027" fileName="MergeModelsDialog.java" startLine="405" startPosition="53" endLine="406" endPosition="52" />
+    <scopeInfo nodeId="708166622413808037" fileName="MergeModelsDialog.java" startLine="407" startPosition="43" endLine="408" endPosition="53" />
+    <scopeInfo nodeId="708166622413808047" fileName="MergeModelsDialog.java" startLine="409" startPosition="18" endLine="410" endPosition="60" />
+    <scopeInfo nodeId="708166622413808055" fileName="MergeModelsDialog.java" startLine="415" startPosition="40" endLine="416" endPosition="76" />
+    <scopeInfo nodeId="708166622413808069" fileName="MergeModelsDialog.java" startLine="420" startPosition="44" endLine="421" endPosition="124" />
+    <scopeInfo nodeId="708166622413808085" fileName="MergeModelsDialog.java" startLine="424" startPosition="52" endLine="425" endPosition="47" />
+    <scopeInfo nodeId="708166622413808093" fileName="MergeModelsDialog.java" startLine="429" startPosition="45" endLine="430" endPosition="18" />
+    <scopeInfo nodeId="708166622413837195" fileName="MergeModelsDialog.java" startLine="116" startPosition="28" endLine="118" endPosition="28" />
+    <scopeInfo nodeId="708166622413808099" fileName="MergeModelsDialog.java" startLine="137" startPosition="35" endLine="139" endPosition="31" />
+    <scopeInfo nodeId="708166622413808444" fileName="MergeModelsDialog.java" startLine="245" startPosition="38" endLine="247" endPosition="23" />
+    <scopeInfo nodeId="708166622413808463" fileName="MergeModelsDialog.java" startLine="253" startPosition="25" endLine="255" endPosition="13" />
+    <scopeInfo nodeId="708166622413808655" fileName="MergeModelsDialog.java" startLine="322" startPosition="28" endLine="324" endPosition="19" />
+    <scopeInfo nodeId="708166622413807817" fileName="MergeModelsDialog.java" startLine="354" startPosition="53" endLine="356" endPosition="134">
       <varInfo nodeId="708166622413807819" varName="md" />
     </scopeInfo>
-    <scopeInfo nodeId="708166622413807929" fileName="MergeModelsDialog.java" startLine="381" startPosition="33" endLine="383" endPosition="57" />
-    <scopeInfo nodeId="708166622413808173" fileName="MergeModelsDialog.java" startLine="167" startPosition="11" endLine="170" endPosition="27" />
-    <scopeInfo nodeId="708166622413808229" fileName="MergeModelsDialog.java" startLine="188" startPosition="11" endLine="191" endPosition="29" />
-    <scopeInfo nodeId="708166622413808326" fileName="MergeModelsDialog.java" startLine="214" startPosition="55" endLine="217" endPosition="7">
+    <scopeInfo nodeId="708166622413807929" fileName="MergeModelsDialog.java" startLine="382" startPosition="33" endLine="384" endPosition="57" />
+    <scopeInfo nodeId="708166622413808173" fileName="MergeModelsDialog.java" startLine="168" startPosition="11" endLine="171" endPosition="27" />
+    <scopeInfo nodeId="708166622413808229" fileName="MergeModelsDialog.java" startLine="189" startPosition="11" endLine="192" endPosition="29" />
+    <scopeInfo nodeId="708166622413808326" fileName="MergeModelsDialog.java" startLine="215" startPosition="55" endLine="218" endPosition="7">
       <varInfo nodeId="708166622413808326" varName="ch" />
     </scopeInfo>
-    <scopeInfo nodeId="708166622413808355" fileName="MergeModelsDialog.java" startLine="220" startPosition="55" endLine="223" endPosition="7">
+    <scopeInfo nodeId="708166622413808355" fileName="MergeModelsDialog.java" startLine="221" startPosition="55" endLine="224" endPosition="7">
       <varInfo nodeId="708166622413808355" varName="ch" />
     </scopeInfo>
-    <scopeInfo nodeId="708166622413808427" fileName="MergeModelsDialog.java" startLine="238" startPosition="29" endLine="241" endPosition="27" />
-    <scopeInfo nodeId="708166622413808598" fileName="MergeModelsDialog.java" startLine="293" startPosition="25" endLine="296" endPosition="33" />
-    <scopeInfo nodeId="708166622413807803" fileName="MergeModelsDialog.java" startLine="348" startPosition="55" endLine="351" endPosition="5" />
-    <scopeInfo nodeId="708166622413807948" fileName="MergeModelsDialog.java" startLine="385" startPosition="38" endLine="388" endPosition="11" />
-    <scopeInfo nodeId="708166622413807621" fileName="MergeModelsDialog.java" startLine="80" startPosition="57" endLine="84" endPosition="0" />
-    <scopeInfo nodeId="708166622413812545" fileName="MergeModelsDialog.java" startLine="104" startPosition="0" endLine="108" endPosition="0" />
-    <scopeInfo nodeId="708166622413837185" fileName="MergeModelsDialog.java" startLine="110" startPosition="145" endLine="114" endPosition="0" />
-    <scopeInfo nodeId="708166622413837348" fileName="MergeModelsDialog.java" startLine="122" startPosition="38" endLine="126" endPosition="71">
+    <scopeInfo nodeId="708166622413808427" fileName="MergeModelsDialog.java" startLine="239" startPosition="29" endLine="242" endPosition="27" />
+    <scopeInfo nodeId="708166622413808598" fileName="MergeModelsDialog.java" startLine="294" startPosition="25" endLine="297" endPosition="33" />
+    <scopeInfo nodeId="708166622413807803" fileName="MergeModelsDialog.java" startLine="349" startPosition="55" endLine="352" endPosition="5" />
+    <scopeInfo nodeId="708166622413807948" fileName="MergeModelsDialog.java" startLine="386" startPosition="38" endLine="389" endPosition="11" />
+    <scopeInfo nodeId="708166622413807621" fileName="MergeModelsDialog.java" startLine="81" startPosition="57" endLine="85" endPosition="0" />
+    <scopeInfo nodeId="708166622413812545" fileName="MergeModelsDialog.java" startLine="105" startPosition="0" endLine="109" endPosition="0" />
+    <scopeInfo nodeId="708166622413837185" fileName="MergeModelsDialog.java" startLine="111" startPosition="145" endLine="115" endPosition="0" />
+    <scopeInfo nodeId="708166622413837348" fileName="MergeModelsDialog.java" startLine="123" startPosition="38" endLine="127" endPosition="71">
       <varInfo nodeId="708166622413837350" varName="actions" />
     </scopeInfo>
-    <scopeInfo nodeId="708166622413807792" fileName="MergeModelsDialog.java" startLine="129" startPosition="34" endLine="133" endPosition="6" />
-    <scopeInfo nodeId="708166622413808108" fileName="MergeModelsDialog.java" startLine="140" startPosition="0" endLine="144" endPosition="0" />
-    <scopeInfo nodeId="708166622413808214" fileName="MergeModelsDialog.java" startLine="156" startPosition="79" endLine="160" endPosition="0">
+    <scopeInfo nodeId="708166622413807792" fileName="MergeModelsDialog.java" startLine="130" startPosition="34" endLine="134" endPosition="6" />
+    <scopeInfo nodeId="708166622413808108" fileName="MergeModelsDialog.java" startLine="141" startPosition="0" endLine="145" endPosition="0" />
+    <scopeInfo nodeId="708166622413808214" fileName="MergeModelsDialog.java" startLine="157" startPosition="79" endLine="161" endPosition="0">
       <varInfo nodeId="708166622413808214" varName="ch" />
     </scopeInfo>
-    <scopeInfo nodeId="708166622413808164" fileName="MergeModelsDialog.java" startLine="163" startPosition="81" endLine="167" endPosition="0">
+    <scopeInfo nodeId="708166622413808164" fileName="MergeModelsDialog.java" startLine="164" startPosition="81" endLine="168" endPosition="0">
       <varInfo nodeId="708166622413808164" varName="ch" />
     </scopeInfo>
-    <scopeInfo nodeId="708166622413808191" fileName="MergeModelsDialog.java" startLine="173" startPosition="86" endLine="177" endPosition="0">
+    <scopeInfo nodeId="708166622413808191" fileName="MergeModelsDialog.java" startLine="174" startPosition="86" endLine="178" endPosition="0">
       <varInfo nodeId="708166622413808191" varName="ch" />
     </scopeInfo>
-    <scopeInfo nodeId="708166622413808243" fileName="MergeModelsDialog.java" startLine="184" startPosition="81" endLine="188" endPosition="0">
+    <scopeInfo nodeId="708166622413808243" fileName="MergeModelsDialog.java" startLine="185" startPosition="81" endLine="189" endPosition="0">
       <varInfo nodeId="708166622413808243" varName="ch" />
     </scopeInfo>
-    <scopeInfo nodeId="708166622413808264" fileName="MergeModelsDialog.java" startLine="194" startPosition="108" endLine="198" endPosition="0">
+    <scopeInfo nodeId="708166622413808264" fileName="MergeModelsDialog.java" startLine="195" startPosition="108" endLine="199" endPosition="0">
       <varInfo nodeId="708166622413808264" varName="ch" />
     </scopeInfo>
-    <scopeInfo nodeId="708166622413808282" fileName="MergeModelsDialog.java" startLine="201" startPosition="120" endLine="205" endPosition="0">
+    <scopeInfo nodeId="708166622413808282" fileName="MergeModelsDialog.java" startLine="202" startPosition="120" endLine="206" endPosition="0">
       <varInfo nodeId="708166622413808282" varName="ch" />
     </scopeInfo>
-    <scopeInfo nodeId="708166622413808298" fileName="MergeModelsDialog.java" startLine="206" startPosition="126" endLine="210" endPosition="0">
+    <scopeInfo nodeId="708166622413808298" fileName="MergeModelsDialog.java" startLine="207" startPosition="126" endLine="211" endPosition="0">
       <varInfo nodeId="708166622413808298" varName="ch" />
     </scopeInfo>
-    <scopeInfo nodeId="708166622413808315" fileName="MergeModelsDialog.java" startLine="213" startPosition="51" endLine="217" endPosition="7" />
-    <scopeInfo nodeId="708166622413808344" fileName="MergeModelsDialog.java" startLine="219" startPosition="57" endLine="223" endPosition="7" />
-    <scopeInfo nodeId="708166622413808482" fileName="MergeModelsDialog.java" startLine="261" startPosition="57" endLine="265" endPosition="0" />
-    <scopeInfo nodeId="708166622413808572" fileName="MergeModelsDialog.java" startLine="281" startPosition="58" endLine="285" endPosition="13" />
-    <scopeInfo nodeId="708166622413808613" fileName="MergeModelsDialog.java" startLine="300" startPosition="0" endLine="304" endPosition="0">
+    <scopeInfo nodeId="708166622413808315" fileName="MergeModelsDialog.java" startLine="214" startPosition="51" endLine="218" endPosition="7" />
+    <scopeInfo nodeId="708166622413808344" fileName="MergeModelsDialog.java" startLine="220" startPosition="57" endLine="224" endPosition="7" />
+    <scopeInfo nodeId="708166622413808482" fileName="MergeModelsDialog.java" startLine="262" startPosition="57" endLine="266" endPosition="0" />
+    <scopeInfo nodeId="708166622413808572" fileName="MergeModelsDialog.java" startLine="282" startPosition="58" endLine="286" endPosition="13" />
+    <scopeInfo nodeId="708166622413808613" fileName="MergeModelsDialog.java" startLine="301" startPosition="0" endLine="305" endPosition="0">
       <varInfo nodeId="708166622413808621" varName="changes" />
     </scopeInfo>
-    <scopeInfo nodeId="708166622413808624" fileName="MergeModelsDialog.java" startLine="304" startPosition="0" endLine="308" endPosition="0" />
-    <scopeInfo nodeId="708166622413808631" fileName="MergeModelsDialog.java" startLine="308" startPosition="0" endLine="312" endPosition="0" />
-    <scopeInfo nodeId="708166622413808637" fileName="MergeModelsDialog.java" startLine="312" startPosition="0" endLine="316" endPosition="0" />
-    <scopeInfo nodeId="708166622413808642" fileName="MergeModelsDialog.java" startLine="316" startPosition="0" endLine="320" endPosition="0">
+    <scopeInfo nodeId="708166622413808624" fileName="MergeModelsDialog.java" startLine="305" startPosition="0" endLine="309" endPosition="0" />
+    <scopeInfo nodeId="708166622413808631" fileName="MergeModelsDialog.java" startLine="309" startPosition="0" endLine="313" endPosition="0" />
+    <scopeInfo nodeId="708166622413808637" fileName="MergeModelsDialog.java" startLine="313" startPosition="0" endLine="317" endPosition="0" />
+    <scopeInfo nodeId="708166622413808642" fileName="MergeModelsDialog.java" startLine="317" startPosition="0" endLine="321" endPosition="0">
       <varInfo nodeId="708166622413808650" varName="state" />
     </scopeInfo>
-    <scopeInfo nodeId="708166622413807849" fileName="MergeModelsDialog.java" startLine="360" startPosition="117" endLine="364" endPosition="0">
+    <scopeInfo nodeId="708166622413807849" fileName="MergeModelsDialog.java" startLine="361" startPosition="117" endLine="365" endPosition="0">
       <varInfo nodeId="708166622413807849" varName="ch" />
     </scopeInfo>
-    <scopeInfo nodeId="708166622413807875" fileName="MergeModelsDialog.java" startLine="367" startPosition="86" endLine="371" endPosition="0">
+    <scopeInfo nodeId="708166622413807875" fileName="MergeModelsDialog.java" startLine="368" startPosition="86" endLine="372" endPosition="0">
       <varInfo nodeId="708166622413807875" varName="ch" />
     </scopeInfo>
-    <scopeInfo nodeId="708166622413807895" fileName="MergeModelsDialog.java" startLine="373" startPosition="98" endLine="377" endPosition="0">
+    <scopeInfo nodeId="708166622413807895" fileName="MergeModelsDialog.java" startLine="374" startPosition="98" endLine="378" endPosition="0">
       <varInfo nodeId="708166622413807895" varName="ch" />
     </scopeInfo>
-    <scopeInfo nodeId="708166622413807996" fileName="MergeModelsDialog.java" startLine="391" startPosition="82" endLine="395" endPosition="0">
+    <scopeInfo nodeId="708166622413807996" fileName="MergeModelsDialog.java" startLine="392" startPosition="82" endLine="396" endPosition="0">
       <varInfo nodeId="708166622413807996" varName="ch" />
     </scopeInfo>
-    <scopeInfo nodeId="708166622413808016" fileName="MergeModelsDialog.java" startLine="399" startPosition="101" endLine="403" endPosition="0">
+    <scopeInfo nodeId="708166622413808016" fileName="MergeModelsDialog.java" startLine="400" startPosition="101" endLine="404" endPosition="0">
       <varInfo nodeId="708166622413808016" varName="ch" />
     </scopeInfo>
-    <scopeInfo nodeId="708166622413808065" fileName="MergeModelsDialog.java" startLine="418" startPosition="0" endLine="422" endPosition="0" />
-    <scopeInfo nodeId="708166622413808081" fileName="MergeModelsDialog.java" startLine="422" startPosition="0" endLine="426" endPosition="0" />
-    <scopeInfo nodeId="708166622413837194" fileName="MergeModelsDialog.java" startLine="114" startPosition="41" endLine="119" endPosition="0" />
-    <scopeInfo nodeId="708166622413808097" fileName="MergeModelsDialog.java" startLine="135" startPosition="0" endLine="140" endPosition="0" />
-    <scopeInfo nodeId="708166622413808113" fileName="MergeModelsDialog.java" startLine="144" startPosition="0" endLine="149" endPosition="0">
+    <scopeInfo nodeId="708166622413808065" fileName="MergeModelsDialog.java" startLine="419" startPosition="0" endLine="423" endPosition="0" />
+    <scopeInfo nodeId="708166622413808081" fileName="MergeModelsDialog.java" startLine="423" startPosition="0" endLine="427" endPosition="0" />
+    <scopeInfo nodeId="708166622413837194" fileName="MergeModelsDialog.java" startLine="115" startPosition="41" endLine="120" endPosition="0" />
+    <scopeInfo nodeId="708166622413808097" fileName="MergeModelsDialog.java" startLine="136" startPosition="0" endLine="141" endPosition="0" />
+    <scopeInfo nodeId="708166622413808113" fileName="MergeModelsDialog.java" startLine="145" startPosition="0" endLine="150" endPosition="0">
       <varInfo nodeId="708166622413808117" varName="next" />
       <varInfo nodeId="708166622413808114" varName="rootId" />
     </scopeInfo>
-    <scopeInfo nodeId="708166622413808383" fileName="MergeModelsDialog.java" startLine="228" startPosition="29" endLine="233" endPosition="7" />
-    <scopeInfo nodeId="708166622413808652" fileName="MergeModelsDialog.java" startLine="320" startPosition="0" endLine="325" endPosition="0" />
-    <scopeInfo nodeId="708166622413813179" fileName="MergeModelsDialog.java" startLine="325" startPosition="0" endLine="330" endPosition="0" />
-    <scopeInfo nodeId="708166622413807513" fileName="MergeModelsDialog.java" startLine="339" startPosition="12" endLine="344" endPosition="7" />
-    <scopeInfo nodeId="708166622413807813" fileName="MergeModelsDialog.java" startLine="352" startPosition="0" endLine="357" endPosition="0" />
-    <scopeInfo nodeId="708166622413808090" fileName="MergeModelsDialog.java" startLine="426" startPosition="0" endLine="431" endPosition="0" />
-    <scopeInfo nodeId="708166622413808255" fileName="MergeModelsDialog.java" startLine="192" startPosition="14" endLine="198" endPosition="11" />
-    <scopeInfo nodeId="708166622413808426" fileName="MergeModelsDialog.java" startLine="237" startPosition="71" endLine="243" endPosition="0" />
-    <scopeInfo nodeId="708166622413808597" fileName="MergeModelsDialog.java" startLine="292" startPosition="67" endLine="298" endPosition="0" />
-    <scopeInfo nodeId="708166622413807485" fileName="MergeModelsDialog.java" startLine="332" startPosition="34" endLine="338" endPosition="7">
+    <scopeInfo nodeId="708166622413808383" fileName="MergeModelsDialog.java" startLine="229" startPosition="29" endLine="234" endPosition="7" />
+    <scopeInfo nodeId="708166622413808652" fileName="MergeModelsDialog.java" startLine="321" startPosition="0" endLine="326" endPosition="0" />
+    <scopeInfo nodeId="708166622413813179" fileName="MergeModelsDialog.java" startLine="326" startPosition="0" endLine="331" endPosition="0" />
+    <scopeInfo nodeId="708166622413807513" fileName="MergeModelsDialog.java" startLine="340" startPosition="12" endLine="345" endPosition="7" />
+    <scopeInfo nodeId="708166622413807813" fileName="MergeModelsDialog.java" startLine="353" startPosition="0" endLine="358" endPosition="0" />
+    <scopeInfo nodeId="708166622413808090" fileName="MergeModelsDialog.java" startLine="427" startPosition="0" endLine="432" endPosition="0" />
+    <scopeInfo nodeId="708166622413808255" fileName="MergeModelsDialog.java" startLine="193" startPosition="14" endLine="199" endPosition="11" />
+    <scopeInfo nodeId="708166622413808426" fileName="MergeModelsDialog.java" startLine="238" startPosition="71" endLine="244" endPosition="0" />
+    <scopeInfo nodeId="708166622413808597" fileName="MergeModelsDialog.java" startLine="293" startPosition="67" endLine="299" endPosition="0" />
+    <scopeInfo nodeId="708166622413807485" fileName="MergeModelsDialog.java" startLine="333" startPosition="34" endLine="339" endPosition="7">
       <varInfo nodeId="708166622413807487" varName="text" />
     </scopeInfo>
-    <scopeInfo nodeId="708166622413837346" fileName="MergeModelsDialog.java" startLine="121" startPosition="0" endLine="128" endPosition="0" />
-    <scopeInfo nodeId="708166622413807789" fileName="MergeModelsDialog.java" startLine="128" startPosition="0" endLine="135" endPosition="0" />
-    <scopeInfo nodeId="708166622413808424" fileName="MergeModelsDialog.java" startLine="236" startPosition="32" endLine="243" endPosition="11" />
-    <scopeInfo nodeId="708166622413808185" fileName="MergeModelsDialog.java" startLine="171" startPosition="14" endLine="179" endPosition="29" />
-    <scopeInfo nodeId="708166622413808564" fileName="MergeModelsDialog.java" startLine="280" startPosition="57" endLine="288" endPosition="11" />
-    <scopeInfo nodeId="708166622413837041" fileName="MergeModelsDialog.java" startLine="109" startPosition="31" endLine="119" endPosition="7" />
-    <scopeInfo nodeId="708166622413808557" fileName="MergeModelsDialog.java" startLine="279" startPosition="65" endLine="289" endPosition="9" />
-    <scopeInfo nodeId="708166622413808555" fileName="MergeModelsDialog.java" startLine="278" startPosition="8" endLine="290" endPosition="7">
+    <scopeInfo nodeId="708166622413837346" fileName="MergeModelsDialog.java" startLine="122" startPosition="0" endLine="129" endPosition="0" />
+    <scopeInfo nodeId="708166622413807789" fileName="MergeModelsDialog.java" startLine="129" startPosition="0" endLine="136" endPosition="0" />
+    <scopeInfo nodeId="708166622413808424" fileName="MergeModelsDialog.java" startLine="237" startPosition="32" endLine="244" endPosition="11" />
+    <scopeInfo nodeId="708166622413808185" fileName="MergeModelsDialog.java" startLine="172" startPosition="14" endLine="180" endPosition="29" />
+    <scopeInfo nodeId="708166622413808564" fileName="MergeModelsDialog.java" startLine="281" startPosition="57" endLine="289" endPosition="11" />
+    <scopeInfo nodeId="708166622413837041" fileName="MergeModelsDialog.java" startLine="110" startPosition="31" endLine="120" endPosition="7" />
+    <scopeInfo nodeId="708166622413808557" fileName="MergeModelsDialog.java" startLine="280" startPosition="65" endLine="290" endPosition="9" />
+    <scopeInfo nodeId="708166622413808555" fileName="MergeModelsDialog.java" startLine="279" startPosition="8" endLine="291" endPosition="7">
       <varInfo nodeId="708166622413808555" varName="change" />
     </scopeInfo>
-    <scopeInfo nodeId="708166622413837038" fileName="MergeModelsDialog.java" startLine="108" startPosition="0" endLine="121" endPosition="0" />
-    <scopeInfo nodeId="708166622413808408" fileName="MergeModelsDialog.java" startLine="234" startPosition="12" endLine="247" endPosition="7">
+    <scopeInfo nodeId="708166622413837038" fileName="MergeModelsDialog.java" startLine="109" startPosition="0" endLine="122" endPosition="0" />
+    <scopeInfo nodeId="708166622413808408" fileName="MergeModelsDialog.java" startLine="235" startPosition="12" endLine="248" endPosition="7">
       <varInfo nodeId="708166622413808410" varName="ans" />
     </scopeInfo>
-    <scopeInfo nodeId="708166622413807483" fileName="MergeModelsDialog.java" startLine="331" startPosition="101" endLine="345" endPosition="5" />
-    <scopeInfo nodeId="708166622413808461" fileName="MergeModelsDialog.java" startLine="251" startPosition="54" endLine="267" endPosition="37">
+    <scopeInfo nodeId="708166622413807483" fileName="MergeModelsDialog.java" startLine="332" startPosition="101" endLine="346" endPosition="5" />
+    <scopeInfo nodeId="708166622413808461" fileName="MergeModelsDialog.java" startLine="252" startPosition="54" endLine="268" endPosition="37">
       <varInfo nodeId="708166622413808479" varName="mergeRootsDialog" />
     </scopeInfo>
-    <scopeInfo nodeId="708166622413808533" fileName="MergeModelsDialog.java" startLine="273" startPosition="156" endLine="290" endPosition="7">
+    <scopeInfo nodeId="708166622413808533" fileName="MergeModelsDialog.java" startLine="274" startPosition="156" endLine="291" endPosition="7">
       <varInfo nodeId="708166622413808541" varName="changes" />
       <varInfo nodeId="708166622413808535" varName="root" />
     </scopeInfo>
-    <scopeInfo nodeId="708166622413807477" fileName="MergeModelsDialog.java" startLine="330" startPosition="0" endLine="347" endPosition="0">
+    <scopeInfo nodeId="708166622413807477" fileName="MergeModelsDialog.java" startLine="331" startPosition="0" endLine="348" endPosition="0">
       <varInfo nodeId="708166622413807480" varName="conflictingChanges" />
       <varInfo nodeId="708166622413807478" varName="totalChanges" />
     </scopeInfo>
-    <scopeInfo nodeId="708166622413808224" fileName="MergeModelsDialog.java" startLine="181" startPosition="12" endLine="199" endPosition="7" />
-    <scopeInfo nodeId="708166622413808456" fileName="MergeModelsDialog.java" startLine="250" startPosition="0" endLine="269" endPosition="0">
+    <scopeInfo nodeId="708166622413808224" fileName="MergeModelsDialog.java" startLine="182" startPosition="12" endLine="200" endPosition="7" />
+    <scopeInfo nodeId="708166622413808456" fileName="MergeModelsDialog.java" startLine="251" startPosition="0" endLine="270" endPosition="0">
       <varInfo nodeId="708166622413808457" varName="rootId" />
     </scopeInfo>
-    <scopeInfo nodeId="708166622413808524" fileName="MergeModelsDialog.java" startLine="272" startPosition="99" endLine="291" endPosition="5">
+    <scopeInfo nodeId="708166622413808524" fileName="MergeModelsDialog.java" startLine="273" startPosition="99" endLine="292" endPosition="5">
       <varInfo nodeId="708166622413808524" varName="rtn" />
     </scopeInfo>
-    <scopeInfo nodeId="708166622413808156" fileName="MergeModelsDialog.java" startLine="160" startPosition="9" endLine="180" endPosition="7" />
-    <scopeInfo nodeId="708166622413807978" fileName="MergeModelsDialog.java" startLine="389" startPosition="16" endLine="410" endPosition="11">
+    <scopeInfo nodeId="708166622413808156" fileName="MergeModelsDialog.java" startLine="161" startPosition="9" endLine="181" endPosition="7" />
+    <scopeInfo nodeId="708166622413807978" fileName="MergeModelsDialog.java" startLine="390" startPosition="16" endLine="411" endPosition="11">
       <varInfo nodeId="708166622413808010" varName="myChangesCount" />
     </scopeInfo>
-    <scopeInfo nodeId="708166622413807943" fileName="MergeModelsDialog.java" startLine="384" startPosition="14" endLine="411" endPosition="9" />
-    <scopeInfo nodeId="708166622413808509" fileName="MergeModelsDialog.java" startLine="270" startPosition="59" endLine="298" endPosition="7">
+    <scopeInfo nodeId="708166622413807943" fileName="MergeModelsDialog.java" startLine="385" startPosition="14" endLine="412" endPosition="9" />
+    <scopeInfo nodeId="708166622413808509" fileName="MergeModelsDialog.java" startLine="271" startPosition="59" endLine="299" endPosition="7">
       <varInfo nodeId="708166622413808511" varName="changesToApply" />
       <varInfo nodeId="708166622413808518" varName="changesToExclude" />
     </scopeInfo>
-    <scopeInfo nodeId="708166622413807581" fileName="MergeModelsDialog.java" startLine="73" startPosition="109" endLine="102" endPosition="11">
+    <scopeInfo nodeId="708166622413807581" fileName="MergeModelsDialog.java" startLine="74" startPosition="109" endLine="103" endPosition="11">
       <varInfo nodeId="708166622413807664" varName="actionGroup" />
       <varInfo nodeId="708166622413807630" varName="p" />
       <varInfo nodeId="708166622413812458" varName="size" />
     </scopeInfo>
-    <scopeInfo nodeId="708166622413807578" fileName="MergeModelsDialog.java" startLine="72" startPosition="0" endLine="103" endPosition="3">
+    <scopeInfo nodeId="708166622413807578" fileName="MergeModelsDialog.java" startLine="73" startPosition="0" endLine="104" endPosition="3">
       <varInfo nodeId="708166622413807715" varName="baseModel" />
       <varInfo nodeId="708166622413807717" varName="mineModel" />
       <varInfo nodeId="708166622413807719" varName="repositoryModel" />
       <varInfo nodeId="708166622413807721" varName="request" />
     </scopeInfo>
-    <scopeInfo nodeId="708166622413808504" fileName="MergeModelsDialog.java" startLine="269" startPosition="0" endLine="300" endPosition="0">
+    <scopeInfo nodeId="708166622413808504" fileName="MergeModelsDialog.java" startLine="270" startPosition="0" endLine="301" endPosition="0">
       <varInfo nodeId="708166622413808505" varName="mine" />
     </scopeInfo>
-    <scopeInfo nodeId="708166622413807837" fileName="MergeModelsDialog.java" startLine="358" startPosition="99" endLine="416" endPosition="7">
+    <scopeInfo nodeId="708166622413807837" fileName="MergeModelsDialog.java" startLine="359" startPosition="99" endLine="417" endPosition="7">
       <varInfo nodeId="708166622413807839" varName="changes" />
       <varInfo nodeId="708166622413807916" varName="compositeChangeType" />
       <varInfo nodeId="708166622413807889" varName="conflictedCount" />
       <varInfo nodeId="708166622413807908" varName="nonConflictedCount" />
     </scopeInfo>
-    <scopeInfo nodeId="708166622413807831" fileName="MergeModelsDialog.java" startLine="357" startPosition="0" endLine="418" endPosition="0">
+    <scopeInfo nodeId="708166622413807831" fileName="MergeModelsDialog.java" startLine="358" startPosition="0" endLine="419" endPosition="0">
       <varInfo nodeId="708166622413807834" varName="rootTreeNode" />
     </scopeInfo>
-    <scopeInfo nodeId="708166622413808131" fileName="MergeModelsDialog.java" startLine="150" startPosition="38" endLine="248" endPosition="5">
+    <scopeInfo nodeId="708166622413808131" fileName="MergeModelsDialog.java" startLine="151" startPosition="38" endLine="249" endPosition="5">
       <varInfo nodeId="708166622413808133" varName="allChanges" />
       <varInfo nodeId="708166622413808144" varName="allResolved" />
       <varInfo nodeId="708166622413808148" varName="conflictsOnly" />
@@ -500,27 +500,27 @@
       <varInfo nodeId="708166622413808292" varName="repository" />
       <varInfo nodeId="708166622413808310" varName="sb" />
     </scopeInfo>
-    <scopeInfo nodeId="708166622413808129" fileName="MergeModelsDialog.java" startLine="149" startPosition="0" endLine="250" endPosition="0" />
-    <unitInfo nodeId="708166622413807476" fileName="MergeModelsDialog.java" startLine="58" startPosition="0" endLine="433" endPosition="0" unitName="jetbrains.mps.vcs.diff.ui.merge.MergeModelsDialog" />
-    <unitInfo nodeId="708166622413807621" fileName="MergeModelsDialog.java" startLine="80" startPosition="45" endLine="84" endPosition="5" unitName="jetbrains.mps.vcs.diff.ui.merge.MergeModelsDialog$1" />
-    <unitInfo nodeId="708166622413807849" fileName="MergeModelsDialog.java" startLine="360" startPosition="78" endLine="364" endPosition="9" unitName="jetbrains.mps.vcs.diff.ui.merge.MergeModelsDialog$1" />
-    <unitInfo nodeId="708166622413808298" fileName="MergeModelsDialog.java" startLine="206" startPosition="97" endLine="210" endPosition="5" unitName="jetbrains.mps.vcs.diff.ui.merge.MergeModelsDialog$10" />
-    <unitInfo nodeId="708166622413808426" fileName="MergeModelsDialog.java" startLine="237" startPosition="59" endLine="243" endPosition="9" unitName="jetbrains.mps.vcs.diff.ui.merge.MergeModelsDialog$11" />
-    <unitInfo nodeId="708166622413808482" fileName="MergeModelsDialog.java" startLine="261" startPosition="45" endLine="265" endPosition="5" unitName="jetbrains.mps.vcs.diff.ui.merge.MergeModelsDialog$12" />
-    <unitInfo nodeId="708166622413808597" fileName="MergeModelsDialog.java" startLine="292" startPosition="55" endLine="298" endPosition="5" unitName="jetbrains.mps.vcs.diff.ui.merge.MergeModelsDialog$13" />
-    <unitInfo nodeId="708166622413837185" fileName="MergeModelsDialog.java" startLine="110" startPosition="115" endLine="114" endPosition="5" unitName="jetbrains.mps.vcs.diff.ui.merge.MergeModelsDialog$2" />
-    <unitInfo nodeId="708166622413807875" fileName="MergeModelsDialog.java" startLine="367" startPosition="57" endLine="371" endPosition="7" unitName="jetbrains.mps.vcs.diff.ui.merge.MergeModelsDialog$2" />
-    <unitInfo nodeId="708166622413807895" fileName="MergeModelsDialog.java" startLine="373" startPosition="69" endLine="377" endPosition="7" unitName="jetbrains.mps.vcs.diff.ui.merge.MergeModelsDialog$3" />
-    <unitInfo nodeId="708166622413837194" fileName="MergeModelsDialog.java" startLine="114" startPosition="11" endLine="119" endPosition="5" unitName="jetbrains.mps.vcs.diff.ui.merge.MergeModelsDialog$3" />
-    <unitInfo nodeId="708166622413808164" fileName="MergeModelsDialog.java" startLine="163" startPosition="52" endLine="167" endPosition="7" unitName="jetbrains.mps.vcs.diff.ui.merge.MergeModelsDialog$4" />
-    <unitInfo nodeId="708166622413807996" fileName="MergeModelsDialog.java" startLine="391" startPosition="53" endLine="395" endPosition="11" unitName="jetbrains.mps.vcs.diff.ui.merge.MergeModelsDialog$4" />
-    <unitInfo nodeId="708166622413808191" fileName="MergeModelsDialog.java" startLine="173" startPosition="57" endLine="177" endPosition="9" unitName="jetbrains.mps.vcs.diff.ui.merge.MergeModelsDialog$5" />
-    <unitInfo nodeId="708166622413808016" fileName="MergeModelsDialog.java" startLine="399" startPosition="72" endLine="403" endPosition="11" unitName="jetbrains.mps.vcs.diff.ui.merge.MergeModelsDialog$5" />
-    <unitInfo nodeId="708166622413808214" fileName="MergeModelsDialog.java" startLine="156" startPosition="50" endLine="160" endPosition="5" unitName="jetbrains.mps.vcs.diff.ui.merge.MergeModelsDialog$6" />
-    <unitInfo nodeId="708166622413808243" fileName="MergeModelsDialog.java" startLine="184" startPosition="52" endLine="188" endPosition="7" unitName="jetbrains.mps.vcs.diff.ui.merge.MergeModelsDialog$7" />
-    <unitInfo nodeId="708166622413808264" fileName="MergeModelsDialog.java" startLine="194" startPosition="79" endLine="198" endPosition="9" unitName="jetbrains.mps.vcs.diff.ui.merge.MergeModelsDialog$8" />
-    <unitInfo nodeId="708166622413808282" fileName="MergeModelsDialog.java" startLine="201" startPosition="91" endLine="205" endPosition="5" unitName="jetbrains.mps.vcs.diff.ui.merge.MergeModelsDialog$9" />
-    <unitInfo nodeId="708166622413807800" fileName="MergeModelsDialog.java" startLine="348" startPosition="0" endLine="432" endPosition="0" unitName="jetbrains.mps.vcs.diff.ui.merge.MergeModelsDialog$MergeModelsTree" />
+    <scopeInfo nodeId="708166622413808129" fileName="MergeModelsDialog.java" startLine="150" startPosition="0" endLine="251" endPosition="0" />
+    <unitInfo nodeId="708166622413807476" fileName="MergeModelsDialog.java" startLine="59" startPosition="0" endLine="434" endPosition="0" unitName="jetbrains.mps.vcs.diff.ui.merge.MergeModelsDialog" />
+    <unitInfo nodeId="708166622413807621" fileName="MergeModelsDialog.java" startLine="81" startPosition="45" endLine="85" endPosition="5" unitName="jetbrains.mps.vcs.diff.ui.merge.MergeModelsDialog$1" />
+    <unitInfo nodeId="708166622413807849" fileName="MergeModelsDialog.java" startLine="361" startPosition="78" endLine="365" endPosition="9" unitName="jetbrains.mps.vcs.diff.ui.merge.MergeModelsDialog$1" />
+    <unitInfo nodeId="708166622413808298" fileName="MergeModelsDialog.java" startLine="207" startPosition="97" endLine="211" endPosition="5" unitName="jetbrains.mps.vcs.diff.ui.merge.MergeModelsDialog$10" />
+    <unitInfo nodeId="708166622413808426" fileName="MergeModelsDialog.java" startLine="238" startPosition="59" endLine="244" endPosition="9" unitName="jetbrains.mps.vcs.diff.ui.merge.MergeModelsDialog$11" />
+    <unitInfo nodeId="708166622413808482" fileName="MergeModelsDialog.java" startLine="262" startPosition="45" endLine="266" endPosition="5" unitName="jetbrains.mps.vcs.diff.ui.merge.MergeModelsDialog$12" />
+    <unitInfo nodeId="708166622413808597" fileName="MergeModelsDialog.java" startLine="293" startPosition="55" endLine="299" endPosition="5" unitName="jetbrains.mps.vcs.diff.ui.merge.MergeModelsDialog$13" />
+    <unitInfo nodeId="708166622413837185" fileName="MergeModelsDialog.java" startLine="111" startPosition="115" endLine="115" endPosition="5" unitName="jetbrains.mps.vcs.diff.ui.merge.MergeModelsDialog$2" />
+    <unitInfo nodeId="708166622413807875" fileName="MergeModelsDialog.java" startLine="368" startPosition="57" endLine="372" endPosition="7" unitName="jetbrains.mps.vcs.diff.ui.merge.MergeModelsDialog$2" />
+    <unitInfo nodeId="708166622413807895" fileName="MergeModelsDialog.java" startLine="374" startPosition="69" endLine="378" endPosition="7" unitName="jetbrains.mps.vcs.diff.ui.merge.MergeModelsDialog$3" />
+    <unitInfo nodeId="708166622413837194" fileName="MergeModelsDialog.java" startLine="115" startPosition="11" endLine="120" endPosition="5" unitName="jetbrains.mps.vcs.diff.ui.merge.MergeModelsDialog$3" />
+    <unitInfo nodeId="708166622413808164" fileName="MergeModelsDialog.java" startLine="164" startPosition="52" endLine="168" endPosition="7" unitName="jetbrains.mps.vcs.diff.ui.merge.MergeModelsDialog$4" />
+    <unitInfo nodeId="708166622413807996" fileName="MergeModelsDialog.java" startLine="392" startPosition="53" endLine="396" endPosition="11" unitName="jetbrains.mps.vcs.diff.ui.merge.MergeModelsDialog$4" />
+    <unitInfo nodeId="708166622413808191" fileName="MergeModelsDialog.java" startLine="174" startPosition="57" endLine="178" endPosition="9" unitName="jetbrains.mps.vcs.diff.ui.merge.MergeModelsDialog$5" />
+    <unitInfo nodeId="708166622413808016" fileName="MergeModelsDialog.java" startLine="400" startPosition="72" endLine="404" endPosition="11" unitName="jetbrains.mps.vcs.diff.ui.merge.MergeModelsDialog$5" />
+    <unitInfo nodeId="708166622413808214" fileName="MergeModelsDialog.java" startLine="157" startPosition="50" endLine="161" endPosition="5" unitName="jetbrains.mps.vcs.diff.ui.merge.MergeModelsDialog$6" />
+    <unitInfo nodeId="708166622413808243" fileName="MergeModelsDialog.java" startLine="185" startPosition="52" endLine="189" endPosition="7" unitName="jetbrains.mps.vcs.diff.ui.merge.MergeModelsDialog$7" />
+    <unitInfo nodeId="708166622413808264" fileName="MergeModelsDialog.java" startLine="195" startPosition="79" endLine="199" endPosition="9" unitName="jetbrains.mps.vcs.diff.ui.merge.MergeModelsDialog$8" />
+    <unitInfo nodeId="708166622413808282" fileName="MergeModelsDialog.java" startLine="202" startPosition="91" endLine="206" endPosition="5" unitName="jetbrains.mps.vcs.diff.ui.merge.MergeModelsDialog$9" />
+    <unitInfo nodeId="708166622413807800" fileName="MergeModelsDialog.java" startLine="349" startPosition="0" endLine="433" endPosition="0" unitName="jetbrains.mps.vcs.diff.ui.merge.MergeModelsDialog$MergeModelsTree" />
   </root>
   <root nodeId="708166622413808756">
     <nodeInfo nodeId="708166622413808757" fileName="ApplyNonConflictsForRoot.java" startLine="11" startPosition="58" endLine="12" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myDialog" />

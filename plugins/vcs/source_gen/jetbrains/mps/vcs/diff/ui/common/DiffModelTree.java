@@ -269,6 +269,7 @@ public abstract class DiffModelTree extends SimpleTree implements DataProvider {
 
   public class TreeNode extends DefaultMutableTreeNode {
     private String myText;
+    private int myTextStyle;
     private String myAdditionalText;
     private String myTooltipText;
     private Icon myIcon;
@@ -331,6 +332,10 @@ public abstract class DiffModelTree extends SimpleTree implements DataProvider {
 
     public void setColor(Color color) {
       myColor = color;
+    }
+
+    public void setTextStyle(int textStyle) {
+      myTextStyle = textStyle;
     }
   }
 }
