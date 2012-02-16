@@ -97,11 +97,6 @@ public class SimpleMakeTest extends AbstractMakeTest{
         vfs.refresh(false);
         assertNull("Shouldn't be there: " + moduleDir.getPath() + "/source_gen", moduleDir.findChild("source_gen"));
 
-        assertNotNull(moduleDir.findChild("classes_gen"));
-        assertNotNull(moduleDir.findFileByRelativePath("classes_gen/simple"));
-        assertTrue(moduleDir.findFileByRelativePath("classes_gen/simple").getChildren().length == 1);
-        assertNotNull(moduleDir.findFileByRelativePath("classes_gen/simple/trace.info"));
-
         VirtualFile cachesOutputDir = vfs.findFileByPath(MPSCompilerPaths.getCachesOutputPath(mpscs[0],  myFacet.getModule(), false));
         assertNotNull("Not found output dir", cachesOutputDir);
         assertNotNull(cachesOutputDir.findFileByRelativePath("simple"));

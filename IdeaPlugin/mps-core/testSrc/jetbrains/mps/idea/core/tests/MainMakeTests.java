@@ -143,9 +143,5 @@ public class MainMakeTests extends AbstractMakeTest {
         assertNotNull(module.findFileByRelativePath("source_gen/main"));
         assertTrue(module.findFileByRelativePath("source_gen/main").getChildren().length == 5);
 
-        assertNotNull(module.findChild("classes_gen"));
-        assertNotNull(module.findFileByRelativePath("classes_gen/main"));
-        assertTrue(module.findFileByRelativePath("classes_gen/main").getChildren().length == 1);
-        assertNotNull(module.findFileByRelativePath("classes_gen/main/trace.info"));
     }
 }
