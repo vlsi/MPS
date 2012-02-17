@@ -5,15 +5,16 @@ package jetbrains.mps.baseLanguage.unitTest.dataFlow;
 import jetbrains.mps.lang.dataFlow.DataFlowBuilder;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.lang.dataFlow.DataFlowBuilderContext;
-import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.SNode;
 
-public class AssertTrue_DataFlow extends DataFlowBuilder {
-  public AssertTrue_DataFlow() {
+public class Message_DataFlow extends DataFlowBuilder {
+  public Message_DataFlow() {
   }
 
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
-    _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), "condition", true));
-    _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), "message", true));
+    if (SLinkOperations.getTarget(_context.getNode(), "message", true) != null) {
+      _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), "message", true));
+    }
   }
 }
