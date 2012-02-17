@@ -21,7 +21,10 @@ public class BuildRelativePath_Behavior {
     if (basePath == null) {
       return null;
     }
-    return basePath + "/" + SPropertyOperations.getString(thisNode, "relativePath");
+    if (!(basePath.endsWith("/"))) {
+      basePath = basePath + "/";
+    }
+    return basePath + SPropertyOperations.getString(thisNode, "relativePath");
   }
 
   public static String call_getBasePath_4959435991187140515(SNode thisNode, Context context) {

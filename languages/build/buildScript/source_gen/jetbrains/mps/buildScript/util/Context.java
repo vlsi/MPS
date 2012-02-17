@@ -6,6 +6,7 @@ import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 import jetbrains.mps.smodel.SNodeId;
+import jetbrains.mps.generator.template.TemplateQueryContext;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -22,7 +23,6 @@ import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.MacrosFactory;
-import jetbrains.mps.generator.template.TemplateQueryContext;
 import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -31,8 +31,13 @@ import jetbrains.mps.project.GlobalScope;
 public class Context {
   private Map<String, Object> myProperties = MapSequence.fromMap(new HashMap<String, Object>());
   private Map<String, Map<SNodeId, Integer>> myNamesIndex = MapSequence.fromMap(new HashMap<String, Map<SNodeId, Integer>>());
+  private TemplateQueryContext myGenerationContext;
 
   public Context() {
+  }
+
+  public Context(TemplateQueryContext generationContext) {
+    myGenerationContext = generationContext;
   }
 
   @Nullable
@@ -53,6 +58,9 @@ public class Context {
 
   @NotNull
   public IModule getModule(SNode node) {
+    if (myGenerationContext != null) {
+      return myGenerationContext.getOriginalInputModel().getModelDescriptor().getModule();
+    }
     return node.getModel().getModelDescriptor().getModule();
   }
 
@@ -101,7 +109,7 @@ public class Context {
   }
 
   public String getDefaultScriptsPath(final SNode project) {
-    return BuildSourcePath_Behavior.call_getLocalPath_5481553824944787364(new Context.QuotationClass_lmsybr_a0a0a11().createNode(), new Context() {
+    return BuildSourcePath_Behavior.call_getLocalPath_5481553824944787364(new Context.QuotationClass_lmsybr_a0a0a11().createNode(), new Context(this.myGenerationContext) {
       @Override
       protected SNode getBuildProject(SNode node) {
         return project;
@@ -152,12 +160,7 @@ public class Context {
   public static Context defaulContext(final TemplateQueryContext gencontext) {
     Context context = ((Context) gencontext.getSessionObject(Context.class));
     if (context == null) {
-      context = new Context() {
-        @Override
-        public IModule getModule(SNode node) {
-          return gencontext.getOriginalInputModel().getModelDescriptor().getModule();
-        }
-      };
+      context = new Context(gencontext);
       gencontext.putSessionObject(Context.class, context);
     }
     return context;
