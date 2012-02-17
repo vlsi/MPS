@@ -14,6 +14,8 @@ import jetbrains.mps.smodel.search.ISearchScope;
 import jetbrains.mps.smodel.search.SimpleSearchScope;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.scope.CompositeScope;
+import jetbrains.mps.baseLanguage.scopes.ScopeProvider;
+import jetbrains.mps.baseLanguage.scopes.HierarchyScopeProvider;
 import jetbrains.mps.smodel.structure.BehaviorDescriptor;
 import jetbrains.mps.smodel.structure.ConceptRegistry;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
@@ -55,7 +57,16 @@ public class AbstractLoopStatement_Behavior {
       );
     }
 
-    return null;
+    return AbstractLoopStatement_Behavior.call_getInnerScopeProvider_8967654016644296299(thisNode).getScope(thisNode, kind, child);
+    // <node> 
+  }
+
+  public static ScopeProvider call_getInnerScopeProvider_8967654016644296299(SNode thisNode) {
+    List<SNode> parameter = new ArrayList<SNode>();
+    if ((SLinkOperations.getTarget(thisNode, "loopLabel", true) != null)) {
+      ListSequence.fromList(parameter).addElement(SLinkOperations.getTarget(thisNode, "loopLabel", true));
+    }
+    return new HierarchyScopeProvider(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.LoopLabel"), parameter, SLinkOperations.getTarget(thisNode, "body", true));
   }
 
   public static List<SNode> call_getOrderedParts_1955452033143960289(SNode thisNode) {

@@ -14,6 +14,8 @@ import java.util.ArrayList;
 import jetbrains.mps.smodel.search.ISearchScope;
 import jetbrains.mps.smodel.search.SimpleSearchScope;
 import jetbrains.mps.scope.CompositeScope;
+import jetbrains.mps.baseLanguage.scopes.ScopeProvider;
+import jetbrains.mps.baseLanguage.scopes.HierarchyScopeProvider;
 
 public class SwitchStatement_Behavior {
   public static void init(SNode thisNode) {
@@ -57,6 +59,20 @@ public class SwitchStatement_Behavior {
       );
     }
 
-    return null;
+    return SwitchStatement_Behavior.call_getInnerScopeProvider_8967654016644457798(thisNode).getScope(thisNode, kind, child);
+    // <node> 
+  }
+
+  public static ScopeProvider call_getInnerScopeProvider_8967654016644457798(SNode thisNode) {
+    List<SNode> parameter = new ArrayList<SNode>();
+    if ((SLinkOperations.getTarget(thisNode, "switchLabel", true) != null)) {
+      ListSequence.fromList(parameter).addElement(SLinkOperations.getTarget(thisNode, "switchLabel", true));
+    }
+    SNode[] nodesInScope = new SNode[ListSequence.fromList(SLinkOperations.getTargets(thisNode, "case", true)).count() + 1];
+    for (int i = 0; i < ListSequence.fromList(SLinkOperations.getTargets(thisNode, "case", true)).count(); i++) {
+      nodesInScope[i] = ListSequence.fromList(SLinkOperations.getTargets(thisNode, "case", true)).getElement(i);
+    }
+    nodesInScope[nodesInScope.length - 1] = SLinkOperations.getTarget(thisNode, "defaultBlock", true);
+    return new HierarchyScopeProvider(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.LoopLabel"), parameter, nodesInScope);
   }
 }
