@@ -30,6 +30,9 @@
     <component>
       <implementation-class>jetbrains.mps.idea.core.navigation.NavigationSupportImpl</implementation-class>
     </component>
+    <component>
+      <implementation-class>jetbrains.mps.idea.core.refactoring.RefactoringFacadeImpl</implementation-class>
+    </component>
   </application-components>
 
   <xi:include href="../classes/META-INF/MPSCore.xml" xpointer="xpointer(/components/*)"/>
