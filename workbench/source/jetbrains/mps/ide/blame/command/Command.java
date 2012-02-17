@@ -17,7 +17,6 @@ package jetbrains.mps.ide.blame.command;
 
 import jetbrains.mps.ide.blame.perform.Query;
 import jetbrains.mps.ide.blame.perform.Response;
-import jetbrains.mps.util.JDOMUtil;
 import org.apache.commons.httpclient.HttpClient;
 import org.apache.commons.httpclient.NameValuePair;
 import org.apache.commons.httpclient.methods.PostMethod;
@@ -25,20 +24,15 @@ import org.apache.commons.httpclient.methods.multipart.FilePart;
 import org.apache.commons.httpclient.methods.multipart.MultipartRequestEntity;
 import org.apache.commons.httpclient.methods.multipart.Part;
 import org.apache.commons.httpclient.methods.multipart.StringPart;
-import org.jdom.Document;
-import org.jdom.JDOMException;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
-import org.xml.sax.InputSource;
 
 import java.io.File;
 import java.io.IOException;
-import java.io.StringReader;
 import java.util.ArrayList;
 import java.util.List;
 
 public class Command {
-  public static final String YOUTRACK_BASE_URL = "http://youtrack.jetbrains.net";
+  public static final String YOUTRACK_BASE_URL = "http://youtrack.jetbrains.com";
   public static final String LOGIN = "/rest/user/login";
   public static final String POST_ISSUE = "/rest/issue/";
   public static final String ISSUE_COMMAND_FORMAT = "/rest/issue/%s/execute";
@@ -74,7 +68,7 @@ public class Command {
   }
 
   @NotNull
-  public static Response postIssue(HttpClient c, String summary, String description, boolean hidden,  File... files) throws IOException {
+  public static Response postIssue(HttpClient c, String summary, String description, boolean hidden, File... files) throws IOException {
     PostMethod p = new PostMethod(YOUTRACK_BASE_URL + POST_ISSUE);
     p.addParameter(PROJECT_PARAM_NAME, PROJECT);
     p.addParameter(SUMMARY_PARAM_NAME, summary);
