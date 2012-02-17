@@ -594,6 +594,7 @@
     <classNode dependClassName="jetbrains.mps.lang.core.structure.Attribute" />
     <classNode dependClassName="jetbrains.mps.lang.core.structure.IContainer" />
     <classNode dependClassName="jetbrains.mps.lang.core.structure.IResolveInfo" />
+    <classNode dependClassName="jetbrains.mps.lang.core.structure.ScopeProvider" />
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
@@ -1074,6 +1075,7 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.structure.TypeVariableDeclaration" />
     <classNode dependClassName="jetbrains.mps.lang.core.structure.Attribute" />
     <classNode dependClassName="jetbrains.mps.lang.core.structure.INamedConcept" />
+    <classNode dependClassName="jetbrains.mps.lang.core.structure.ScopeProvider" />
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />

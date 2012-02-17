@@ -118,7 +118,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 50:
         return new CompiledConceptDescriptor("jetbrains.mps.baseLanguage.structure.ClassCreator", "jetbrains.mps.baseLanguage.structure.AbstractCreator", false, new String[]{"jetbrains.mps.baseLanguage.structure.AbstractCreator", "jetbrains.mps.baseLanguage.structure.IMethodCall"}, new String[]{}, new String[]{"constructorDeclaration"});
       case 51:
-        return new CompiledConceptDescriptor("jetbrains.mps.baseLanguage.structure.Classifier", "jetbrains.mps.baseLanguage.structure.GenericDeclaration", false, new String[]{"jetbrains.mps.baseLanguage.structure.GenericDeclaration", "jetbrains.mps.baseLanguage.structure.HasAnnotation", "jetbrains.mps.baseLanguage.structure.IMemberContainer", "jetbrains.mps.lang.core.structure.IResolveInfo", "jetbrains.mps.baseLanguage.structure.IValidIdentifier", "jetbrains.mps.baseLanguage.structure.IVisible", "jetbrains.mps.lang.core.structure.IContainer"}, new String[]{"nestedName", "isDeprecated", "nonStatic"}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.baseLanguage.structure.Classifier", "jetbrains.mps.baseLanguage.structure.GenericDeclaration", false, new String[]{"jetbrains.mps.baseLanguage.structure.GenericDeclaration", "jetbrains.mps.baseLanguage.structure.HasAnnotation", "jetbrains.mps.baseLanguage.structure.IMemberContainer", "jetbrains.mps.lang.core.structure.IResolveInfo", "jetbrains.mps.baseLanguage.structure.IValidIdentifier", "jetbrains.mps.baseLanguage.structure.IVisible", "jetbrains.mps.lang.core.structure.IContainer", "jetbrains.mps.lang.core.structure.ScopeProvider"}, new String[]{"nestedName", "isDeprecated", "nonStatic"}, new String[]{});
       case 52:
         return new CompiledConceptDescriptor("jetbrains.mps.baseLanguage.structure.ClassifierClassExpression", "jetbrains.mps.baseLanguage.structure.Expression", false, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{"classifier"});
       case 53:
@@ -204,7 +204,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 93:
         return new CompiledConceptDescriptor("jetbrains.mps.baseLanguage.structure.ForeachStatement", "jetbrains.mps.baseLanguage.structure.AbstractForStatement", false, new String[]{"jetbrains.mps.baseLanguage.structure.AbstractForStatement", "jetbrains.mps.lang.traceable.structure.ScopeConcept"}, new String[]{}, new String[]{});
       case 94:
-        return new CompiledConceptDescriptor("jetbrains.mps.baseLanguage.structure.GenericDeclaration", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.baseLanguage.structure.GenericDeclaration", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.lang.core.structure.ScopeProvider"}, new String[]{}, new String[]{});
       case 95:
         return new CompiledConceptDescriptor("jetbrains.mps.baseLanguage.structure.GenericNewExpression", "jetbrains.mps.baseLanguage.structure.Expression", false, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{});
       case 96:

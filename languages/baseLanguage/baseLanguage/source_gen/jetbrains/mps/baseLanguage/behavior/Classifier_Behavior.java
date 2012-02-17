@@ -23,6 +23,9 @@ import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.LanguageID;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
+import jetbrains.mps.scope.Scope;
+import jetbrains.mps.smodel.search.SimpleSearchScope;
+import jetbrains.mps.scope.CompositeScope;
 import jetbrains.mps.smodel.structure.BehaviorDescriptor;
 import jetbrains.mps.smodel.structure.ConceptRegistry;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
@@ -238,6 +241,24 @@ public class Classifier_Behavior {
       SNode varRef = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.TypeVariableReference", null);
       SLinkOperations.setTarget(varRef, "typeVariableDeclaration", ListSequence.fromList(SLinkOperations.getTargets(method, "typeVariableDeclaration", true)).getElement(i), false);
       return varRef;
+    }
+    return null;
+  }
+
+  public static Scope virtual_getScope_3734116213129936182(SNode thisNode, SNode kind, SNode child) {
+    if (SConceptOperations.isSubConceptOf(kind, "jetbrains.mps.baseLanguage.structure.TypeVariableDeclaration")) {
+      while (SNodeOperations.getParent(child) != thisNode) {
+        child = SNodeOperations.getParent(child);
+      }
+      if (SNodeOperations.isInstanceOf(child, "jetbrains.mps.baseLanguage.structure.ClassifierMember") && ClassifierMember_Behavior.call_isStatic_8986964027630462944(SNodeOperations.cast(child, "jetbrains.mps.baseLanguage.structure.ClassifierMember"))) {
+        return null;
+      }
+      Scope currentScope = new ISearchScope.Adapter(new SimpleSearchScope(SLinkOperations.getTargets(thisNode, "typeVariableDeclaration", true)));
+      Scope nextScope = Scope.getScope(Scope.parent(thisNode), thisNode, kind);
+      return (nextScope == null ?
+        currentScope :
+        new CompositeScope(currentScope, nextScope)
+      );
     }
     return null;
   }

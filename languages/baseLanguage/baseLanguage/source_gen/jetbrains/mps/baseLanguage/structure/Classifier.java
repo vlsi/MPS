@@ -4,6 +4,7 @@ package jetbrains.mps.baseLanguage.structure;
 
 import jetbrains.mps.lang.core.structure.IResolveInfo;
 import jetbrains.mps.lang.core.structure.IContainer;
+import jetbrains.mps.lang.core.structure.ScopeProvider;
 import jetbrains.mps.smodel.SNode;
 import java.util.Iterator;
 import java.util.List;
@@ -12,7 +13,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class Classifier extends GenericDeclaration implements HasAnnotation, IMemberContainer, IResolveInfo, IValidIdentifier, IVisible, IContainer {
+public class Classifier extends GenericDeclaration implements HasAnnotation, IMemberContainer, IResolveInfo, IValidIdentifier, IVisible, IContainer, ScopeProvider {
   public static final String concept = "jetbrains.mps.baseLanguage.structure.Classifier";
   public static final String NESTED_NAME = "nestedName";
   public static final String SHORT_DESCRIPTION = "shortDescription";
