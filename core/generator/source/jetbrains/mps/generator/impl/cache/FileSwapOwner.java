@@ -182,6 +182,12 @@ public abstract class FileSwapOwner implements TransientSwapOwner {
   }
 
   private static class NodesAndUserObjectsWriter extends NodesWriter {
+    public static final int NODE_POINTER = 0;
+    public static final int NODE_ID = 1;
+    public static final int MODEL_ID = 2;
+    public static final int MODEL_REFERENCE = 3;
+    public static final int NODE = 4;
+    public static final int SERIALIZABLE = 5;
 
     public NodesAndUserObjectsWriter(@NotNull SModelReference modelReference) {
       super(modelReference);
@@ -190,37 +196,54 @@ public abstract class FileSwapOwner implements TransientSwapOwner {
     @Override
     protected void writeChildren(SNode node, ModelOutputStream os) throws IOException {
       // write user objects here
-      
-      // original input node
-      Object userObject = node.getUserObject(TemplateQueryContext.ORIGINAL_INPUT_NODE);
-      if (userObject instanceof SNode) {
-        os.writeInt(1);
-        os.writeModelReference(((SNode) userObject).getModel().getSModelReference());
-        os.writeNodeId(((SNode) userObject).getSNodeId());
-      }
-      else {
-        os.writeInt(0);
-      }
-      
-      // string user objects
       Map<Object, Object> userObjects = node.getUserObjects();
-      ArrayList<String> stringUserObjects = new ArrayList<String>();
+      ArrayList<Object> knownUserObject = new ArrayList<Object>();
       for (Object key : userObjects.keySet()) {
-        if (key instanceof String) {
-          Object value = userObjects.get(key);
-          if (value instanceof String) {
-            stringUserObjects.add((String) key);
-            stringUserObjects.add((String) value);
-          }
+        Object value = userObjects.get(key);
+        if (isKnownUserObject(key) && isKnownUserObject(value)) {
+          knownUserObject.add(key);
+          knownUserObject.add(value);
+        } else {
+          LOG.debug("Going to loose user object " + key + " = " + value + " for node " + node + " since key or value is not Serializable or not known to MPS.");
         }
       }
-      
-      os.writeInt(stringUserObjects.size());
-      for (String stringUserObject : stringUserObjects) {
-        os.writeString(stringUserObject);        
+
+      os.writeInt(knownUserObject.size());
+      for (int i = 0; i < knownUserObject.size(); i += 2) {
+        writeUserObject(os, knownUserObject.get(i));
+        writeUserObject(os, knownUserObject.get(i + 1));
       }
-      
+
       super.writeChildren(node, os);
+    }
+
+    private void writeUserObject(ModelOutputStream os, Object object) throws IOException {
+      if (object instanceof SNodePointer) {
+        os.writeInt(NODE_POINTER);
+        os.writeNodePointer((SNodePointer) object);
+      } else if (object instanceof SNodeId) {
+        os.writeInt(NODE_ID);
+        os.writeNodeId((SNodeId) object);
+      } else if (object instanceof SModelId) {
+        os.writeInt(MODEL_ID);
+        os.writeModelID((SModelId) object);
+      } else if (object instanceof SModelReference) {
+        os.writeInt(MODEL_REFERENCE);
+        os.writeModelReference((SModelReference) object);
+      } else if (object instanceof SNode) {
+        os.writeInt(NODE);
+        os.writeModelReference(((SNode) object).getModel().getSModelReference());
+        os.writeNodeId(((SNode) object).getSNodeId());
+      } else if (object instanceof Serializable) {
+        os.writeInt(SERIALIZABLE);
+        ObjectOutputStream objectOutput = new ObjectOutputStream(os);
+        objectOutput.writeObject(object);
+        objectOutput.close();
+      }
+    }
+
+    private static boolean isKnownUserObject(Object object) {
+      return object != null && (object instanceof Serializable || object instanceof SNode || object instanceof SNodePointer || object instanceof SNodeId || object instanceof SModelId || object instanceof SModelReference);
     }
   }
 
@@ -233,37 +256,53 @@ public abstract class FileSwapOwner implements TransientSwapOwner {
     @Override
     protected void readChildren(SModel model, ModelInputStream is, SNode node) throws IOException {
       // first read user objects
-      int uoc = is.readInt();
-      if (uoc == 1) {
-        SModel tmodel = null;
-        SModelReference modelRef = is.readModelReference();
-        SNodeId nodeId = is.readNodeId();
-        if (LOCAL.equals(modelRef)) {
-          tmodel = model;
-        }
-        else {
-          SModelDescriptor mdesc = SModelRepository.getInstance().getModelDescriptor(modelRef);
-          if (mdesc != null) {
-            tmodel = mdesc.getSModel();
-          }
-        }
-        if (tmodel != null) {
-          SNode userObject = tmodel.getNodeById(nodeId);
-          node.putUserObject(TemplateQueryContext.ORIGINAL_INPUT_NODE, userObject);
-        }
-        else {
-          throw new IOException("couldn't load user object");
-        }
-      }
-      
-      int stringObjectCount = is.readInt();
-      for (int i = 0; i < stringObjectCount; i+= 2) {
-        String key = is.readString();
-        String value = is.readString();
+      int userObjectCount = is.readInt();
+      for (int i = 0; i < userObjectCount; i+= 2) {
+        Object key = readUserObject(is, model);
+        Object value = readUserObject(is, model);
         node.putUserObject(key, value);
       }
 
       super.readChildren(model, is, node);
+    }
+
+    private Object readUserObject(ModelInputStream is, SModel model) throws IOException {
+      int id = is.readInt();
+      switch (id) {
+        case NodesAndUserObjectsWriter.NODE_POINTER:
+          return is.readNodePointer();
+        case NodesAndUserObjectsWriter.NODE_ID:
+          return is.readNodeId();
+        case NodesAndUserObjectsWriter.MODEL_ID:
+          return is.readModelID();
+        case NodesAndUserObjectsWriter.MODEL_REFERENCE:
+          return is.readModelReference();
+        case NodesAndUserObjectsWriter.NODE:
+          SModel tmodel = null;
+          SModelReference modelRef = is.readModelReference();
+          SNodeId nodeId = is.readNodeId();
+          if (LOCAL.equals(modelRef)) {
+            tmodel = model;
+          } else {
+            SModelDescriptor mdesc = SModelRepository.getInstance().getModelDescriptor(modelRef);
+            if (mdesc != null) {
+              tmodel = mdesc.getSModel();
+            }
+          }
+          if (tmodel != null) {
+            return tmodel.getNodeById(nodeId);
+          } else {
+            throw new IOException("couldn't load user object");
+          }
+        case NodesAndUserObjectsWriter.SERIALIZABLE:
+          ObjectInputStream stream = new ObjectInputStream(is);
+          try {
+            return stream.readObject();
+          } catch (ClassNotFoundException e) {
+            throw new IOException(e);
+          }
+      }
+      throw new IOException("Could not read user object");
     }
   }
 
