@@ -60,6 +60,7 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     addAction(new Find_Action());
     addAction(new FoldSelection_Action());
     addAction(new GoByCurrentReferenceToIDEA_Action());
+    addAction(new GoToNodeById_Action());
     addAction(new GoToNode_Action());
     addAction(new GoToRule_Action());
     addAction(new HighlightInstances_Action());
