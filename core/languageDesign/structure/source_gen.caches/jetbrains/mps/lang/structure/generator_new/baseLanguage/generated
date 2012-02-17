@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="1l4kis02qw0l5g2g1mffe0k4xd9g3i">
+<dependencies version="2" modelHash="-bwmh28fpytw0y1ec76xt0dfzd6s2w4n">
   <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.generator.template(MPS.Classpath/jetbrains.mps.generator.template@java_stub)" />
   <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.lang.smodel.generator.smodelAdapter(MPS.Classpath/jetbrains.mps.lang.smodel.generator.smodelAdapter@java_stub)" />
   <dep model="f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.project(MPS.Classpath/jetbrains.mps.project@java_stub)" />
@@ -142,13 +142,13 @@
   <source id="1095952760656" name="weave_EnumerationDataTypeDeclaration_Boolean" hash="-7p5twltrvd58f6y8vrozx7i5zlyxs8k">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="1096017864527" name="insert_PropertyDeclaration_Enum_class" hash="6awpwum6wt9izb1mdtqmvpm3y96tqne">
+  <source id="1096017864527" name="insert_PropertyDeclaration_Enum_class" hash="dfji6p7qoku36xv3ol0vu47xkzb7wkt">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="1096027342453" name="insert_LinkDeclaration_ref_card_1_class_nospec" hash="c5ohw5ymx0ve39ckbtor3n5xm0x1i62">
+  <source id="1096027342453" name="insert_LinkDeclaration_ref_card_1_class_nospec" hash="a1w8x8ne14mkow2szpeajhef0blm8fj">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="1096044357786" name="insert_LinkDeclaration_child_card_1_class_nospec" hash="-4fajjwpwtgszpnicf0e22j3tllfbmvk">
+  <source id="1096044357786" name="insert_LinkDeclaration_child_card_1_class_nospec" hash="18hv6eyojwp3b9ed6umnlw25i3gwgrb">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
   <source id="1096045101843" name="insert_LinkDeclaration_child_card_n_class_nospec" hash="7vthshmielxa6rhhoy3pgem0c1kgqy6">
