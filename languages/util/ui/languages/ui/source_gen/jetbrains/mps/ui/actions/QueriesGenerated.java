@@ -298,12 +298,12 @@ public class QueriesGenerated {
             return SNodeOperations.replaceWithAnother(_context.getSourceNode(), new QueriesGenerated.QuotationClass_x583g4_a1a0a0a0a0a0a4a0a1a8().createNode(_context.getSourceNode(), (item)));
           }
 
-          public String getMatchingText(String text) {
+          public String getMatchingText(String pattern) {
             return "/" + SPropertyOperations.getString((item), "name");
           }
 
-          public String getVisibleMatchingText(String text) {
-            return this.getMatchingText(text);
+          public String getVisibleMatchingText(String pattern) {
+            return this.getMatchingText(pattern);
           }
         });
       }

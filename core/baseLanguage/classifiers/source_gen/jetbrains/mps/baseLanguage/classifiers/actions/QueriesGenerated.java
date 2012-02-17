@@ -110,12 +110,12 @@ public class QueriesGenerated {
             return expr;
           }
 
-          public String getMatchingText(String text) {
+          public String getMatchingText(String pattern) {
             return (item) + ".";
           }
 
-          public String getVisibleMatchingText(String text) {
-            return this.getMatchingText(text);
+          public String getVisibleMatchingText(String pattern) {
+            return this.getMatchingText(pattern);
           }
         });
       }
