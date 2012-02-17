@@ -17,7 +17,7 @@ package jetbrains.mps.refactoring.renameLanguage;
 
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
-import jetbrains.mps.ide.refactoring.RefactoringFacade;
+import jetbrains.mps.ide.platform.refactoring.RefactoringFacade;
 import jetbrains.mps.project.ReferenceUpdater;
 import jetbrains.mps.project.structure.modules.GeneratorDescriptor;
 import jetbrains.mps.project.structure.modules.LanguageDescriptor;
@@ -50,7 +50,7 @@ public class LanguageRenamer {
     renameLanguage(oldFqName);
     renameGenerators(oldFqName);
 
-    RefactoringFacade.writeIntoLog(myContext);
+    RefactoringFacade.getInstance().writeIntoLog(myContext);
     SModelRepository.getInstance().saveAll();
 
     if (deleteOldFiles) {
@@ -100,7 +100,7 @@ public class LanguageRenamer {
 
   public void update() {
     updateReferences();
-    RefactoringFacade.updateLoadedModels(myContext);
+    RefactoringFacade.getInstance().updateLoadedModels(myContext);
     SModelRepository.getInstance().saveAll();
   }
 

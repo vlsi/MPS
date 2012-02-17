@@ -60,8 +60,9 @@
   </dependency>
   <dependency className="jetbrains.mps.refactoring.tests.RefactoringTestFacade" file="RefactoringTestFacade.java">
     <classNode dependClassName="java.lang.Throwable" />
+    <classNode dependClassName="java.lang.UnsupportedOperationException" />
     <classNode dependClassName="jetbrains.mps.refactoring.framework.RefactoringContext" />
-    <classNode extendsClassName="jetbrains.mps.ide.refactoring.RefactoringFacade" />
+    <classNode extendsClassName="jetbrains.mps.ide.platform.refactoring.RefactoringFacade" />
   </dependency>
   <dependency className="jetbrains.mps.refactoring.tests.RenameConceptRefactoringTester" file="RenameConceptRefactoringTester.java">
     <classNode dependClassName="java.lang.Class" />
