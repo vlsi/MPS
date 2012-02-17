@@ -210,15 +210,15 @@ public class QueriesGenerated {
             return SNodeOperations.replaceWithAnother(_context.getSourceNode(), SNodeFactoryOperations.createNewNode(NameUtil.nodeFQName((item)), new QueriesGenerated.QuotationClass_x583g4_a1b0a0a0a0a0a0e0a0b0i().createNode(_context.getSourceNode())));
           }
 
-          public String getMatchingText(String text) {
+          public String getMatchingText(String pattern) {
             return "^" + SConceptPropertyOperations.getString((item), "operationSymbol");
           }
 
-          public String getVisibleMatchingText(String text) {
-            return this.getMatchingText(text);
+          public String getVisibleMatchingText(String pattern) {
+            return this.getMatchingText(pattern);
           }
 
-          public String getDescriptionText(String text) {
+          public String getDescriptionText(String pattern) {
             return SPropertyOperations.getString((item), "shortDescription");
           }
         });

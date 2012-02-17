@@ -683,7 +683,7 @@ public class QueriesGenerated {
             return redirectedCommand;
           }
 
-          public String getDescriptionText(String text) {
+          public String getDescriptionText(String pattern) {
             if ((item).equals(">")) {
               return "redirect output";
             } else if ((item).equals("&>")) {

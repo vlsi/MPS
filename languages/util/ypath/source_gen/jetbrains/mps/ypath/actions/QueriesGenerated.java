@@ -260,15 +260,15 @@ public class QueriesGenerated {
             return tpaExp;
           }
 
-          public String getMatchingText(String text) {
+          public String getMatchingText(String pattern) {
             return ":" + SPropertyOperations.getString((item), "name");
           }
 
-          public String getVisibleMatchingText(String text) {
-            return this.getMatchingText(text);
+          public String getVisibleMatchingText(String pattern) {
+            return this.getMatchingText(pattern);
           }
 
-          public String getDescriptionText(String text) {
+          public String getDescriptionText(String pattern) {
             return "[OBSOLETE] cast to treepath expression";
           }
         });
@@ -305,15 +305,15 @@ public class QueriesGenerated {
             return mpo;
           }
 
-          public String getMatchingText(String text) {
+          public String getMatchingText(String pattern) {
             return "." + SPropertyOperations.getString((item), "name");
           }
 
-          public String getVisibleMatchingText(String text) {
-            return this.getMatchingText(text);
+          public String getVisibleMatchingText(String pattern) {
+            return this.getMatchingText(pattern);
           }
 
-          public String getDescriptionText(String text) {
+          public String getDescriptionText(String pattern) {
             return "match property value";
           }
         });
@@ -356,7 +356,7 @@ public class QueriesGenerated {
             return _context.getSourceNode();
           }
 
-          public String getMatchingText(String text) {
+          public String getMatchingText(String pattern) {
             SNode fe = (SNode) (item).o1;
             Boolean mu = (Boolean) (item).o2;
             return (mu ?
@@ -365,11 +365,11 @@ public class QueriesGenerated {
             );
           }
 
-          public String getVisibleMatchingText(String text) {
-            return this.getMatchingText(text);
+          public String getVisibleMatchingText(String pattern) {
+            return this.getMatchingText(pattern);
           }
 
-          public String getDescriptionText(String text) {
+          public String getDescriptionText(String pattern) {
             SNode fe = (SNode) (item).o1;
             Boolean mu = (Boolean) (item).o2;
             return (mu ?
@@ -441,7 +441,7 @@ public class QueriesGenerated {
             return tpoExp;
           }
 
-          public String getMatchingText(String text) {
+          public String getMatchingText(String pattern) {
             TraversalAxis axis = (TraversalAxis) (item).first();
             SNode feat = (SNode) (item).second();
             SNode pw = (SNode) (item).third();
@@ -461,11 +461,11 @@ public class QueriesGenerated {
             return TraversalAxisUtil.getOperationSign(axis) + suffix;
           }
 
-          public String getVisibleMatchingText(String text) {
-            return this.getMatchingText(text);
+          public String getVisibleMatchingText(String pattern) {
+            return this.getMatchingText(pattern);
           }
 
-          public String getDescriptionText(String text) {
+          public String getDescriptionText(String pattern) {
             TraversalAxis axis = (TraversalAxis) (item).first();
             SNode feat = (SNode) (item).second();
             SNode pw = (SNode) (item).third();
@@ -534,15 +534,15 @@ public class QueriesGenerated {
             return tpoExp;
           }
 
-          public String getMatchingText(String text) {
+          public String getMatchingText(String pattern) {
             return "[ " + SPropertyOperations.getString((item), "name");
           }
 
-          public String getVisibleMatchingText(String text) {
-            return this.getMatchingText(text);
+          public String getVisibleMatchingText(String pattern) {
+            return this.getMatchingText(pattern);
           }
 
-          public String getDescriptionText(String text) {
+          public String getDescriptionText(String pattern) {
             return "match node type";
           }
         });
@@ -571,15 +571,15 @@ public class QueriesGenerated {
             return tpoExp;
           }
 
-          public String getMatchingText(String text) {
+          public String getMatchingText(String pattern) {
             return "[[ " + SPropertyOperations.getString(SNodeOperations.cast(SNodeOperations.getParent((item)), "jetbrains.mps.lang.core.structure.INamedConcept"), "name") + "." + SPropertyOperations.getString((item), "name");
           }
 
-          public String getVisibleMatchingText(String text) {
-            return this.getMatchingText(text);
+          public String getVisibleMatchingText(String pattern) {
+            return this.getMatchingText(pattern);
           }
 
-          public String getDescriptionText(String text) {
+          public String getDescriptionText(String pattern) {
             return "match default property";
           }
         });
@@ -688,7 +688,7 @@ public class QueriesGenerated {
             return tpoExp;
           }
 
-          public String getMatchingText(String text) {
+          public String getMatchingText(String pattern) {
             SNode aspect = (SNode) (item).first();
             TraversalAxis axis = (TraversalAxis) (item).second();
             SNode feat = (SNode) (item).third();
@@ -709,11 +709,11 @@ public class QueriesGenerated {
             return TraversalAxisUtil.getOperationSign(axis) + suffix;
           }
 
-          public String getVisibleMatchingText(String text) {
-            return this.getMatchingText(text);
+          public String getVisibleMatchingText(String pattern) {
+            return this.getMatchingText(pattern);
           }
 
-          public String getDescriptionText(String text) {
+          public String getDescriptionText(String pattern) {
             SNode aspect = (SNode) (item).first();
             TraversalAxis axis = (TraversalAxis) (item).second();
             SNode feat = (SNode) (item).third();
