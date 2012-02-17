@@ -351,7 +351,13 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_5891355986060549730(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByInputNodeAndMappingLabel(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.execution.configurations.structure.RunConfigurationKind"), "KindToClass");
+    if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.execution.configurations.structure.RunConfigurationKind")) {
+      return _context.getOutputNodeByInputNodeAndMappingLabel(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.execution.configurations.structure.RunConfigurationKind"), "KindToClass");
+    } else if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.execution.configurations.structure.RunConfiguration")) {
+      return _context.getOutputNodeByInputNodeAndMappingLabel(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.execution.configurations.structure.RunConfiguration"), "ConfigurationToFactoryClass");
+    }
+    _context.showErrorMessage(_context.getNode(), "unknown container for IconResource");
+    return null;
   }
 
   public static Object referenceMacro_GetReferent_4013739085301446323(final IOperationContext operationContext, final ReferenceMacroContext _context) {

@@ -36,7 +36,7 @@ import java.util.ArrayList;
 
 public class DemoApplication_Configuration extends BaseMpsRunConfiguration implements IPersistentConfiguration {
   private static final Logger LOG = Logger.getLogger(DemoApplication_Configuration.class);
-  private static final Icon ICON = new ImageIcon(Demo_Kind.class.getResource("run.png"));
+  private static final Icon ICON = new ImageIcon(DemoApplication_Configuration_Factory.class.getResource("run.png"));
 
   @NotNull
   private DemoApplication_Configuration.MyState myState = new DemoApplication_Configuration.MyState();
