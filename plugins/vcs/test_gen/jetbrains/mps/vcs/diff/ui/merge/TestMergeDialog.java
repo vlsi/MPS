@@ -25,6 +25,7 @@ import jetbrains.mps.vcs.MergeVersion;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.vfs.FileSystem;
 import javax.swing.SwingUtilities;
+import jetbrains.mps.vcs.diff.merge.ui.MergeModelsDialog;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.vcs.diff.ui.common.SimpleDiffRequest;
