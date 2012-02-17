@@ -207,13 +207,13 @@ public class ReducedGenerationWorker extends GeneratorWorker {
     }
 
     public String toLocalPath(String path) {
-      String normPath = DirUtil.normalize(path);
-      int idx = DirUtil.findPrefix(normPath, sortedOutDirs);
+      String normPath = DirUtil.normalizeAsDir(path);
+      int idx = DirUtil.findPrefixAsDir(normPath, sortedOutDirs);
       if (idx >= 0) {
         return DirUtil.withoutPrefix(normPath, sortedOutDirs[idx]);
       }
 
-      int tidx = DirUtil.findPrefix(normPath, sortedTestOutDirs);
+      int tidx = DirUtil.findPrefixAsDir(normPath, sortedTestOutDirs);
       if (tidx >= 0) {
         return DirUtil.withoutPrefix(normPath, sortedTestOutDirs[tidx]);
       }
@@ -223,13 +223,13 @@ public class ReducedGenerationWorker extends GeneratorWorker {
     }
 
     public String toLocalCachePath(String path) {
-      String normPath = DirUtil.normalize(path);
-      int idx = DirUtil.findPrefix(normPath, sortedOutCacheDirs);
+      String normPath = DirUtil.normalizeAsDir(path);
+      int idx = DirUtil.findPrefixAsDir(normPath, sortedOutCacheDirs);
       if (idx >= 0) {
         return DirUtil.withoutPrefix(normPath, sortedOutCacheDirs[idx]);
       }
 
-      int tidx = DirUtil.findPrefix(normPath, sortedTestOutCacheDirs);
+      int tidx = DirUtil.findPrefixAsDir(normPath, sortedTestOutCacheDirs);
       if (tidx >= 0) {
         return DirUtil.withoutPrefix(normPath, sortedTestOutCacheDirs[tidx]);
       }
