@@ -126,6 +126,7 @@
     <classNode dependClassName="jetbrains.mps.build.ant.WhatToDo" />
     <classNode dependClassName="jetbrains.mps.build.ant.generation.workers.BuildMakeService" />
     <classNode dependClassName="jetbrains.mps.generator.fileGenerator.FileGenerationUtil" />
+    <classNode dependClassName="jetbrains.mps.generator.impl.dependencies.GenerationDependenciesCache" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />

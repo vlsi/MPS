@@ -20,13 +20,17 @@ import jetbrains.mps.cleanup.CleanupManager;
 import jetbrains.mps.generator.GenerationStatus;
 import jetbrains.mps.generator.ModelGenerationStatusManager;
 import jetbrains.mps.generator.cache.XmlBasedModelCache;
+import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.vfs.IFile;
 import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
 
 /**
  * Evgeny Gryaznov, May 14, 2010
@@ -38,6 +42,8 @@ public class GenerationDependenciesCache extends XmlBasedModelCache<GenerationDe
   public static GenerationDependenciesCache getInstance() {
     return INSTANCE;
   }
+
+  private List<CachesDirLookup> myCachesDirLookups = Collections.synchronizedList(new ArrayList<CachesDirLookup>());
 
   public GenerationDependenciesCache(SModelRepository modelRepository) {
     super(modelRepository);
@@ -69,6 +75,14 @@ public class GenerationDependenciesCache extends XmlBasedModelCache<GenerationDe
     return "generated";
   }
 
+  public void registerCacheDirLookup (CachesDirLookup cdl) {
+    myCachesDirLookups.add(cdl);
+  }
+
+  public void unregisterCacheDirLookup (CachesDirLookup cdl) {
+    myCachesDirLookups.remove(cdl);
+  }
+
   protected Element toXml(GenerationDependencies dependencies) {
     return dependencies.toXml();
   }
@@ -88,5 +102,18 @@ public class GenerationDependenciesCache extends XmlBasedModelCache<GenerationDe
       ModelGenerationStatusManager.getInstance().invalidateData(Arrays.asList(md));
     }
     return md;
+  }
+
+  @Override
+  protected IFile getCachesDirInternal(IModule module, String outputPath) {
+    IFile cachesDir;
+    for (CachesDirLookup cdl: myCachesDirLookups) {
+      if ((cachesDir = cdl.lookupCachesDir(module, outputPath)) != null) return cachesDir;
+    }
+    return super.getCachesDirInternal(module, outputPath);
+  }
+
+  public static interface CachesDirLookup {
+    IFile lookupCachesDir(IModule module, String outputPath);
   }
 }

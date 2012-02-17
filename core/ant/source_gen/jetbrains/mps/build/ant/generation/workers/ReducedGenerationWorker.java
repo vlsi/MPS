@@ -22,6 +22,8 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 import jetbrains.mps.smodel.resources.IMResource;
 import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.project.IModule;
 import jetbrains.mps.make.script.IScriptController;
 import java.util.concurrent.ExecutionException;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
@@ -29,16 +31,17 @@ import jetbrains.mps.make.script.IPropertiesPool;
 import jetbrains.mps.make.facet.ITarget;
 import jetbrains.mps.make.resources.IResource;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
-import jetbrains.mps.internal.collections.runtime.ISelector;
-import jetbrains.mps.project.IModule;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.FileSystem;
+import jetbrains.mps.generator.impl.dependencies.GenerationDependenciesCache;
 import java.io.File;
 import jetbrains.mps.internal.make.runtime.util.DirUtil;
 import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
 
 public class ReducedGenerationWorker extends GeneratorWorker {
+  private ReducedGenerationWorker.ModuleOutputPaths myOutputPaths;
+
   public ReducedGenerationWorker(WhatToDo whatToDo) {
     super(whatToDo);
   }
@@ -68,6 +71,12 @@ public class ReducedGenerationWorker extends GeneratorWorker {
     final List<String> writtenFiles = ListSequence.fromList(new ArrayList<String>());
     final Map<String, String> fileHashes = MapSequence.fromMap(new HashMap<String, String>());
     final Iterable<IMResource> resources = Sequence.fromIterable(collectResources(ctx, go)).toListSequence();
+
+    this.myOutputPaths = new ReducedGenerationWorker.ModuleOutputPaths(Sequence.fromIterable(resources).select(new ISelector<IMResource, IModule>() {
+      public IModule select(IMResource r) {
+        return r.module();
+      }
+    }));
 
     IScriptController scriptCtl = configureFacets(resources, fileHashes, writtenFiles);
 
@@ -117,16 +126,11 @@ public class ReducedGenerationWorker extends GeneratorWorker {
         hashes._0(fileHashes);
 
         // override solution's output path 
-        final ReducedGenerationWorker.ModuleOutputPaths paths = new ReducedGenerationWorker.ModuleOutputPaths(Sequence.fromIterable(resources).select(new ISelector<IMResource, IModule>() {
-          public IModule select(IMResource r) {
-            return r.module();
-          }
-        }));
         Tuples._1<_FunctionTypes._return_P1_E0<? extends IFile, ? super String>> pathToFile = (Tuples._1<_FunctionTypes._return_P1_E0<? extends IFile, ? super String>>) pp.properties(new ITarget.Name("jetbrains.mps.lang.core.Make.make"), Object.class);
         pathToFile._0(new _FunctionTypes._return_P1_E0<IFile, String>() {
           public IFile invoke(String path) {
             if (useTransientOutput && outputRoot != null) {
-              String localOutPath = paths.toLocalPath(path);
+              String localOutPath = myOutputPaths.toLocalPath(path);
               if (localOutPath != null) {
                 return FileSystem.getInstance().getFileByPath(outputRoot).getDescendant(localOutPath);
               }
@@ -134,7 +138,7 @@ public class ReducedGenerationWorker extends GeneratorWorker {
 
             // use transient folder for caches always 
             if (cachesOutputRoot != null) {
-              String localOutCachePath = paths.toLocalCachePath(path);
+              String localOutCachePath = myOutputPaths.toLocalCachePath(path);
               if (localOutCachePath != null) {
                 return FileSystem.getInstance().getFileByPath(cachesOutputRoot).getDescendant(localOutCachePath);
               }
@@ -152,6 +156,19 @@ public class ReducedGenerationWorker extends GeneratorWorker {
   protected void make() {
     // TODO we do not need make in ReducedGenerationWorker 
     super.make();
+  }
+
+  @Override
+  protected void setupEnvironment() {
+    super.setupEnvironment();
+    GenerationDependenciesCache.getInstance().registerCacheDirLookup(new GenerationDependenciesCache.CachesDirLookup() {
+      public IFile lookupCachesDir(IModule module, String outputPath) {
+        return (myOutputPaths != null ?
+          FileSystem.getInstance().getFileByPath(myOutputPaths.toLocalCachePath(outputPath)) :
+          null
+        );
+      }
+    });
   }
 
   public static void main(String[] args) {
