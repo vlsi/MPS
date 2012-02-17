@@ -131,6 +131,14 @@ public final class SNode {
   SModel getModelInternal() {
     return myModel;
   }
+  
+  public StackTraceElement[] getModelDisposedTrace() {
+    if (myModel != null) {
+      return myModel.getDisposedStacktrace();
+    } else {
+      return null;
+    }
+  }
 
   public String getRoleOf(SNode node) {
     ModelAccess.assertLegalRead(this);

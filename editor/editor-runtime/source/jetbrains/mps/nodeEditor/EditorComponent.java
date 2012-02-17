@@ -1209,14 +1209,31 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
   public void assertModelNotDisposed() {
     assert myModelDisposedStackTrace == null : getModelDisposedMessage();
-    assert myNode == null || !myNode.isDisposed() : "editor is invalid";
+    assert myNode == null || !myNode.isDisposed() : getNodeDisposedMessage();
+  }
+
+  private String getNodeDisposedMessage() {
+    StringBuilder sb = new StringBuilder("editor is invalid");
+    if (myNode != null) {
+      sb.append(", myNode is disposed");
+      StackTraceElement[] modelDisposedTrace = myNode.getModelDisposedTrace();
+      if (modelDisposedTrace != null) {
+        for (StackTraceElement element : modelDisposedTrace) {
+          sb.append("\nat ");
+          sb.append(element);
+        }
+      }
+    } else {
+      sb.append(", myNode == null");
+    }
+    return sb.toString();
   }
 
   private String getModelDisposedMessage() {
     StringBuilder sb = new StringBuilder("Model was disposed through:");
-    for (int i = 0; i < myModelDisposedStackTrace.length; i++) {
+    for (StackTraceElement element : myModelDisposedStackTrace) {
       sb.append("\nat ");
-      sb.append(myModelDisposedStackTrace[i]);
+      sb.append(element);
     }
     sb.append("\n");
     sb.append("EditorComponent.myDisposed == ");
