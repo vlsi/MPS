@@ -120,9 +120,7 @@ public class ConceptFunction_Behavior {
     if (SConceptOperations.isSubConceptOf(kind, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration")) {
       return new EmptyScope();
     }
-    if (SConceptOperations.isSubConceptOf(kind, "jetbrains.mps.baseLanguage.structure.ParameterDeclaration")) {
-      return new EmptyScope();
-    }
+    // <node> 
     return null;
   }
 
