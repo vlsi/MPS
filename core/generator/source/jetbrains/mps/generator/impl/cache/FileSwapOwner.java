@@ -238,7 +238,6 @@ public abstract class FileSwapOwner implements TransientSwapOwner {
         os.writeInt(SERIALIZABLE);
         ObjectOutputStream objectOutput = new ObjectOutputStream(os);
         objectOutput.writeObject(object);
-        objectOutput.close();
       }
     }
 
