@@ -1182,11 +1182,11 @@
     <unitInfo nodeId="1214304712000" fileName="StyleClassItem_Behavior.java" startLine="13" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.StyleClassItem_Behavior" />
   </root>
   <root nodeId="1214405736963">
-    <nodeInfo nodeId="1214405746870" fileName="ForegroundColorStyleClassItem_Behavior.java" startLine="12" startPosition="95" endLine="13" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1214405746870" fileName="ForegroundColorStyleClassItem_Behavior.java" startLine="12" startPosition="95" endLine="13" endPosition="228" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1214405736963" fileName="ForegroundColorStyleClassItem_Behavior.java" startLine="8" startPosition="53" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
     <nodeInfo nodeId="1214405736963" fileName="ForegroundColorStyleClassItem_Behavior.java" startLine="11" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_isApplicableTo_1214304723440#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;)Z" />
     <scopeInfo nodeId="1214405736965" fileName="ForegroundColorStyleClassItem_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
-    <scopeInfo nodeId="1214405738764" fileName="ForegroundColorStyleClassItem_Behavior.java" startLine="12" startPosition="95" endLine="13" endPosition="114" />
+    <scopeInfo nodeId="1214405738764" fileName="ForegroundColorStyleClassItem_Behavior.java" startLine="12" startPosition="95" endLine="13" endPosition="228" />
     <scopeInfo nodeId="1214405736963" fileName="ForegroundColorStyleClassItem_Behavior.java" startLine="8" startPosition="53" endLine="11" endPosition="0" />
     <scopeInfo nodeId="1214405736963" fileName="ForegroundColorStyleClassItem_Behavior.java" startLine="11" startPosition="0" endLine="15" endPosition="0">
       <varInfo nodeId="1214405740906" varName="cellModel" />
@@ -1194,11 +1194,11 @@
     <unitInfo nodeId="1214405736963" fileName="ForegroundColorStyleClassItem_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.ForegroundColorStyleClassItem_Behavior" />
   </root>
   <root nodeId="1214405764144">
-    <nodeInfo nodeId="1214405770013" fileName="ForegroundNullColorStyleClassItem_Behavior.java" startLine="12" startPosition="95" endLine="13" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1214405770013" fileName="ForegroundNullColorStyleClassItem_Behavior.java" startLine="12" startPosition="95" endLine="13" endPosition="228" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1214405764144" fileName="ForegroundNullColorStyleClassItem_Behavior.java" startLine="8" startPosition="57" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
     <nodeInfo nodeId="1214405764144" fileName="ForegroundNullColorStyleClassItem_Behavior.java" startLine="11" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_isApplicableTo_1214304723440#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;)Z" />
     <scopeInfo nodeId="1214405764146" fileName="ForegroundNullColorStyleClassItem_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
-    <scopeInfo nodeId="1214405766462" fileName="ForegroundNullColorStyleClassItem_Behavior.java" startLine="12" startPosition="95" endLine="13" endPosition="114" />
+    <scopeInfo nodeId="1214405766462" fileName="ForegroundNullColorStyleClassItem_Behavior.java" startLine="12" startPosition="95" endLine="13" endPosition="228" />
     <scopeInfo nodeId="1214405764144" fileName="ForegroundNullColorStyleClassItem_Behavior.java" startLine="8" startPosition="57" endLine="11" endPosition="0" />
     <scopeInfo nodeId="1214405764144" fileName="ForegroundNullColorStyleClassItem_Behavior.java" startLine="11" startPosition="0" endLine="15" endPosition="0">
       <varInfo nodeId="1214405768885" varName="cellModel" />
@@ -1218,11 +1218,11 @@
     <unitInfo nodeId="1214405914995" fileName="EditableStyleClassItem_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.EditableStyleClassItem_Behavior" />
   </root>
   <root nodeId="1214406601868">
-    <nodeInfo nodeId="1214406613542" fileName="TextBackgroundColorSelectedStyleClassItem_Behavior.java" startLine="12" startPosition="95" endLine="13" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1214406613542" fileName="TextBackgroundColorSelectedStyleClassItem_Behavior.java" startLine="12" startPosition="95" endLine="13" endPosition="228" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1214406601868" fileName="TextBackgroundColorSelectedStyleClassItem_Behavior.java" startLine="8" startPosition="65" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
     <nodeInfo nodeId="1214406601868" fileName="TextBackgroundColorSelectedStyleClassItem_Behavior.java" startLine="11" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_isApplicableTo_1214304723440#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;)Z" />
     <scopeInfo nodeId="1214406601870" fileName="TextBackgroundColorSelectedStyleClassItem_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
-    <scopeInfo nodeId="1214406603373" fileName="TextBackgroundColorSelectedStyleClassItem_Behavior.java" startLine="12" startPosition="95" endLine="13" endPosition="114" />
+    <scopeInfo nodeId="1214406603373" fileName="TextBackgroundColorSelectedStyleClassItem_Behavior.java" startLine="12" startPosition="95" endLine="13" endPosition="228" />
     <scopeInfo nodeId="1214406601868" fileName="TextBackgroundColorSelectedStyleClassItem_Behavior.java" startLine="8" startPosition="65" endLine="11" endPosition="0" />
     <scopeInfo nodeId="1214406601868" fileName="TextBackgroundColorSelectedStyleClassItem_Behavior.java" startLine="11" startPosition="0" endLine="15" endPosition="0">
       <varInfo nodeId="1214406607624" varName="cellModel" />
@@ -1230,11 +1230,11 @@
     <unitInfo nodeId="1214406601868" fileName="TextBackgroundColorSelectedStyleClassItem_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.TextBackgroundColorSelectedStyleClassItem_Behavior" />
   </root>
   <root nodeId="1214406624347">
-    <nodeInfo nodeId="1214406627903" fileName="TextBackgroundColorStyleClassItem_Behavior.java" startLine="12" startPosition="95" endLine="13" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1214406627903" fileName="TextBackgroundColorStyleClassItem_Behavior.java" startLine="12" startPosition="95" endLine="13" endPosition="228" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1214406624347" fileName="TextBackgroundColorStyleClassItem_Behavior.java" startLine="8" startPosition="57" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
     <nodeInfo nodeId="1214406624347" fileName="TextBackgroundColorStyleClassItem_Behavior.java" startLine="11" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_isApplicableTo_1214304723440#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;)Z" />
     <scopeInfo nodeId="1214406624349" fileName="TextBackgroundColorStyleClassItem_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
-    <scopeInfo nodeId="1214406625649" fileName="TextBackgroundColorStyleClassItem_Behavior.java" startLine="12" startPosition="95" endLine="13" endPosition="114" />
+    <scopeInfo nodeId="1214406625649" fileName="TextBackgroundColorStyleClassItem_Behavior.java" startLine="12" startPosition="95" endLine="13" endPosition="228" />
     <scopeInfo nodeId="1214406624347" fileName="TextBackgroundColorStyleClassItem_Behavior.java" startLine="8" startPosition="57" endLine="11" endPosition="0" />
     <scopeInfo nodeId="1214406624347" fileName="TextBackgroundColorStyleClassItem_Behavior.java" startLine="11" startPosition="0" endLine="15" endPosition="0">
       <varInfo nodeId="1214406626822" varName="cellModel" />
