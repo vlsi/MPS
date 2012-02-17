@@ -1578,12 +1578,20 @@ public class QueriesGenerated {
     return ListSequence.fromList(SLinkOperations.getTargets(_context.getOutputNodeByInputNodeAndMappingLabel(((SNode) _context.getVariable("template")), "templDeclarationClass"), "constructor", true)).first();
   }
 
+  public static Object referenceMacro_GetReferent_5891355986060228614(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+    return "apply";
+  }
+
   public static Object referenceMacro_GetReferent_965589097447684341(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     return ListSequence.fromList(SLinkOperations.getTargets(_context.getOutputNodeByInputNodeAndMappingLabel(((SNode) _context.getVariable("template")), "templDeclarationClass"), "constructor", true)).first();
   }
 
   public static Object referenceMacro_GetReferent_812193811988926010(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     return ((String) _context.getVariable("outputContextVar"));
+  }
+
+  public static Object referenceMacro_GetReferent_5891355986060688649(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+    return "weave";
   }
 
   public static Object referenceMacro_GetReferent_812193811988926040(final IOperationContext operationContext, final ReferenceMacroContext _context) {
@@ -1742,11 +1750,11 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_4155486055398183990(final IOperationContext operationContext, final IfMacroContext _context) {
-    return eq_x583g4_a0a0so(_context.getNode().getProperty("kind"), "normal");
+    return eq_x583g4_a0a0uo(_context.getNode().getProperty("kind"), "normal");
   }
 
   public static boolean ifMacro_Condition_4155486055398184018(final IOperationContext operationContext, final IfMacroContext _context) {
-    return eq_x583g4_a0a0to(_context.getNode().getProperty("kind"), "parentIndex");
+    return eq_x583g4_a0a0vo(_context.getNode().getProperty("kind"), "parentIndex");
   }
 
   public static boolean ifMacro_Condition_1246578104714225920(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -3522,7 +3530,7 @@ public class QueriesGenerated {
         SNode current = _context.getNode();
         int counter = 0;
         while (current != null) {
-          if (eq_x583g4_a0a0c0d0b0bdb(current, targetNode)) {
+          if (eq_x583g4_a0a0c0d0b0ddb(current, targetNode)) {
             break;
           }
           current = SNodeOperations.getParent(current);
@@ -3966,21 +3974,21 @@ public class QueriesGenerated {
     }
   }
 
-  private static boolean eq_x583g4_a0a0so(Object a, Object b) {
+  private static boolean eq_x583g4_a0a0uo(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b
     );
   }
 
-  private static boolean eq_x583g4_a0a0to(Object a, Object b) {
+  private static boolean eq_x583g4_a0a0vo(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b
     );
   }
 
-  private static boolean eq_x583g4_a0a0c0d0b0bdb(Object a, Object b) {
+  private static boolean eq_x583g4_a0a0c0d0b0ddb(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b
