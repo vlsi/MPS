@@ -9,13 +9,12 @@ import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.util.ArrayList;
 import jetbrains.mps.scope.Scope;
+import jetbrains.mps.baseLanguage.scopes.ScopeProvider;
+import jetbrains.mps.baseLanguage.scopes.HierarchyScopeProvider;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.smodel.search.ISearchScope;
-import jetbrains.mps.smodel.search.SimpleSearchScope;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.scope.CompositeScope;
 import jetbrains.mps.smodel.structure.BehaviorDescriptor;
 import jetbrains.mps.smodel.structure.ConceptRegistry;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import java.util.Set;
 import java.util.HashSet;
@@ -78,15 +77,11 @@ public class ClosureLiteral_Behavior {
   }
 
   public static Scope virtual_getScope_3734116213129936182(SNode thisNode, SNode kind, SNode child) {
-    if (SConceptOperations.isSubConceptOf(kind, "jetbrains.mps.baseLanguage.structure.ParameterDeclaration")) {
-      Scope currentScope = new ISearchScope.Adapter(new SimpleSearchScope(SLinkOperations.getTargets(thisNode, "parameter", true)));
-      Scope nextScope = Scope.getScope(SNodeOperations.getParent(thisNode), thisNode, kind);
-      return (nextScope == null ?
-        currentScope :
-        new CompositeScope(currentScope, nextScope)
-      );
-    }
-    return null;
+    return ClosureLiteral_Behavior.call_getInnerScopeProvider_3261311029379768686(thisNode).getScope(thisNode, kind, child);
+  }
+
+  public static ScopeProvider call_getInnerScopeProvider_3261311029379768686(SNode thisNode) {
+    return new HierarchyScopeProvider(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ParameterDeclaration"), SLinkOperations.getTargets(thisNode, "parameter", true), SLinkOperations.getTarget(thisNode, "body", true));
   }
 
   public static SNode call_getType_1229718192182(SNode thisNode, List<SNode> paramTypes, SNode resultType, SNode returnType, SNode termType, List<SNode> throwsTypes) {
