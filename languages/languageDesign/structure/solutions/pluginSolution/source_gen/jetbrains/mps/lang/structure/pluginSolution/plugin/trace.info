@@ -743,7 +743,7 @@
     <nodeInfo nodeId="5487985028841904049" fileName="MoveProperyUp_Action.java" startLine="86" startPosition="7" endLine="87" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="5487985028841904050" fileName="MoveProperyUp_Action.java" startLine="87" startPosition="0" endLine="88" endPosition="191" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5487985028841904065" fileName="MoveProperyUp_Action.java" startLine="89" startPosition="34" endLine="90" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5487985028841904069" fileName="MoveProperyUp_Action.java" startLine="91" startPosition="7" endLine="92" endPosition="325" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5487985028841904069" fileName="MoveProperyUp_Action.java" startLine="91" startPosition="7" endLine="92" endPosition="333" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5487985028841904024" fileName="MoveProperyUp_Action.java" startLine="94" startPosition="33" endLine="95" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5487985028841904024" fileName="MoveProperyUp_Action.java" startLine="45" startPosition="27" endLine="48" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="5487985028841904024" fileName="MoveProperyUp_Action.java" startLine="45" startPosition="27" endLine="48" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -810,7 +810,7 @@
       <varInfo nodeId="5487985028841904024" varName="_params" />
       <varInfo nodeId="5487985028841904024" varName="event" />
     </scopeInfo>
-    <scopeInfo nodeId="5487985028841904024" fileName="MoveProperyUp_Action.java" startLine="77" startPosition="9" endLine="92" endPosition="325">
+    <scopeInfo nodeId="5487985028841904024" fileName="MoveProperyUp_Action.java" startLine="77" startPosition="9" endLine="92" endPosition="333">
       <varInfo nodeId="5487985028841904028" varName="concept" />
       <varInfo nodeId="5487985028841904051" varName="targetConcept" />
     </scopeInfo>
@@ -876,7 +876,7 @@
     <nodeInfo nodeId="2567939466957641771" fileName="RenameConcept_Action.java" startLine="81" startPosition="27" endLine="82" endPosition="118" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5487985028841904110" fileName="RenameConcept_Action.java" startLine="84" startPosition="9" endLine="85" endPosition="146" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5487985028841904127" fileName="RenameConcept_Action.java" startLine="86" startPosition="28" endLine="87" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5487985028841904131" fileName="RenameConcept_Action.java" startLine="88" startPosition="7" endLine="89" endPosition="312" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5487985028841904131" fileName="RenameConcept_Action.java" startLine="88" startPosition="7" endLine="89" endPosition="320" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5487985028841904101" fileName="RenameConcept_Action.java" startLine="91" startPosition="33" endLine="92" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5487985028841904101" fileName="RenameConcept_Action.java" startLine="46" startPosition="27" endLine="49" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="5487985028841904101" fileName="RenameConcept_Action.java" startLine="46" startPosition="27" endLine="49" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -936,7 +936,7 @@
       <varInfo nodeId="5487985028841904101" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="5487985028841904101" fileName="RenameConcept_Action.java" startLine="40" startPosition="89" endLine="51" endPosition="5" />
-    <scopeInfo nodeId="5487985028841904101" fileName="RenameConcept_Action.java" startLine="78" startPosition="9" endLine="89" endPosition="312">
+    <scopeInfo nodeId="5487985028841904101" fileName="RenameConcept_Action.java" startLine="78" startPosition="9" endLine="89" endPosition="320">
       <varInfo nodeId="5487985028841904111" varName="newName" />
       <varInfo nodeId="2567939466957641764" varName="oldName" />
     </scopeInfo>
@@ -977,7 +977,7 @@
     <nodeInfo nodeId="5487985028841904146" fileName="SafeDeleteConcept_Action.java" startLine="65" startPosition="5" endLine="66" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5487985028841904146" fileName="SafeDeleteConcept_Action.java" startLine="67" startPosition="65" endLine="68" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5487985028841904146" fileName="SafeDeleteConcept_Action.java" startLine="69" startPosition="5" endLine="70" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5487985028841904155" fileName="SafeDeleteConcept_Action.java" startLine="74" startPosition="9" endLine="75" endPosition="301" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5487985028841904155" fileName="SafeDeleteConcept_Action.java" startLine="74" startPosition="9" endLine="75" endPosition="309" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5487985028841904146" fileName="SafeDeleteConcept_Action.java" startLine="77" startPosition="33" endLine="78" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5487985028841904146" fileName="SafeDeleteConcept_Action.java" startLine="42" startPosition="27" endLine="45" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="5487985028841904146" fileName="SafeDeleteConcept_Action.java" startLine="42" startPosition="27" endLine="45" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -1005,7 +1005,7 @@
     <scopeInfo nodeId="5487985028841904146" fileName="SafeDeleteConcept_Action.java" startLine="57" startPosition="121" endLine="58" endPosition="22" />
     <scopeInfo nodeId="5487985028841904146" fileName="SafeDeleteConcept_Action.java" startLine="63" startPosition="59" endLine="64" endPosition="19" />
     <scopeInfo nodeId="5487985028841904146" fileName="SafeDeleteConcept_Action.java" startLine="67" startPosition="65" endLine="68" endPosition="19" />
-    <scopeInfo nodeId="5487985028841904146" fileName="SafeDeleteConcept_Action.java" startLine="74" startPosition="9" endLine="75" endPosition="301" />
+    <scopeInfo nodeId="5487985028841904146" fileName="SafeDeleteConcept_Action.java" startLine="74" startPosition="9" endLine="75" endPosition="309" />
     <scopeInfo nodeId="5487985028841904146" fileName="SafeDeleteConcept_Action.java" startLine="77" startPosition="33" endLine="78" endPosition="91" />
     <scopeInfo nodeId="5487985028841904146" fileName="SafeDeleteConcept_Action.java" startLine="38" startPosition="7" endLine="40" endPosition="63">
       <varInfo nodeId="5487985028841904146" varName="enabled" />
@@ -1071,7 +1071,7 @@
     <nodeInfo nodeId="5487985028841904178" fileName="RenameProperty_Action.java" startLine="78" startPosition="9" endLine="79" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3419550867355798196" fileName="RenameProperty_Action.java" startLine="81" startPosition="27" endLine="82" endPosition="228" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5487985028841904195" fileName="RenameProperty_Action.java" startLine="85" startPosition="34" endLine="86" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5487985028841904199" fileName="RenameProperty_Action.java" startLine="87" startPosition="7" endLine="88" endPosition="319" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5487985028841904199" fileName="RenameProperty_Action.java" startLine="87" startPosition="7" endLine="88" endPosition="327" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5487985028841904169" fileName="RenameProperty_Action.java" startLine="90" startPosition="33" endLine="91" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5487985028841904169" fileName="RenameProperty_Action.java" startLine="46" startPosition="27" endLine="49" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="5487985028841904169" fileName="RenameProperty_Action.java" startLine="46" startPosition="27" endLine="49" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -1130,7 +1130,7 @@
     <scopeInfo nodeId="5487985028841904169" fileName="RenameProperty_Action.java" startLine="58" startPosition="5" endLine="65" endPosition="55">
       <varInfo nodeId="5487985028841904169" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="5487985028841904169" fileName="RenameProperty_Action.java" startLine="78" startPosition="9" endLine="88" endPosition="319">
+    <scopeInfo nodeId="5487985028841904169" fileName="RenameProperty_Action.java" startLine="78" startPosition="9" endLine="88" endPosition="327">
       <varInfo nodeId="5487985028841904179" varName="newName" />
     </scopeInfo>
     <scopeInfo nodeId="5487985028841904169" fileName="RenameProperty_Action.java" startLine="40" startPosition="89" endLine="51" endPosition="5" />
@@ -1183,8 +1183,8 @@
     <nodeInfo nodeId="5487985028841904279" fileName="MoveLinkUp_Action.java" startLine="98" startPosition="17" endLine="99" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5487985028841904283" fileName="MoveLinkUp_Action.java" startLine="99" startPosition="31" endLine="100" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
     <nodeInfo nodeId="5487985028841904287" fileName="MoveLinkUp_Action.java" startLine="101" startPosition="17" endLine="102" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5487985028841904301" fileName="MoveLinkUp_Action.java" startLine="105" startPosition="7" endLine="106" endPosition="347" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5487985028841904310" fileName="MoveLinkUp_Action.java" startLine="106" startPosition="347" endLine="107" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="5487985028841904301" fileName="MoveLinkUp_Action.java" startLine="105" startPosition="7" endLine="106" endPosition="355" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5487985028841904310" fileName="MoveLinkUp_Action.java" startLine="106" startPosition="355" endLine="107" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="5487985028841904311" fileName="MoveLinkUp_Action.java" startLine="107" startPosition="0" endLine="108" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="5487985028841904214" fileName="MoveLinkUp_Action.java" startLine="110" startPosition="33" endLine="111" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5487985028841904214" fileName="MoveLinkUp_Action.java" startLine="47" startPosition="27" endLine="50" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -1300,7 +1300,7 @@
     <nodeInfo nodeId="7214882346841056643" fileName="RenameLink_Action.java" startLine="81" startPosition="27" endLine="82" endPosition="118" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5487985028841904328" fileName="RenameLink_Action.java" startLine="84" startPosition="9" endLine="85" endPosition="143" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5487985028841904345" fileName="RenameLink_Action.java" startLine="86" startPosition="28" endLine="87" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5487985028841904349" fileName="RenameLink_Action.java" startLine="88" startPosition="7" endLine="89" endPosition="309" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5487985028841904349" fileName="RenameLink_Action.java" startLine="88" startPosition="7" endLine="89" endPosition="317" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5487985028841904319" fileName="RenameLink_Action.java" startLine="91" startPosition="33" endLine="92" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5487985028841904319" fileName="RenameLink_Action.java" startLine="46" startPosition="27" endLine="49" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="5487985028841904319" fileName="RenameLink_Action.java" startLine="46" startPosition="27" endLine="49" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -1360,7 +1360,7 @@
       <varInfo nodeId="5487985028841904319" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="5487985028841904319" fileName="RenameLink_Action.java" startLine="40" startPosition="89" endLine="51" endPosition="5" />
-    <scopeInfo nodeId="5487985028841904319" fileName="RenameLink_Action.java" startLine="78" startPosition="9" endLine="89" endPosition="309">
+    <scopeInfo nodeId="5487985028841904319" fileName="RenameLink_Action.java" startLine="78" startPosition="9" endLine="89" endPosition="317">
       <varInfo nodeId="5487985028841904329" varName="newName" />
       <varInfo nodeId="7214882346841056637" varName="oldName" />
     </scopeInfo>
@@ -1401,7 +1401,7 @@
     <nodeInfo nodeId="5487985028841904364" fileName="SafeDeleteLink_Action.java" startLine="65" startPosition="5" endLine="66" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5487985028841904364" fileName="SafeDeleteLink_Action.java" startLine="67" startPosition="65" endLine="68" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5487985028841904364" fileName="SafeDeleteLink_Action.java" startLine="69" startPosition="5" endLine="70" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5487985028841904373" fileName="SafeDeleteLink_Action.java" startLine="74" startPosition="9" endLine="75" endPosition="298" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5487985028841904373" fileName="SafeDeleteLink_Action.java" startLine="74" startPosition="9" endLine="75" endPosition="306" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5487985028841904364" fileName="SafeDeleteLink_Action.java" startLine="77" startPosition="33" endLine="78" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5487985028841904364" fileName="SafeDeleteLink_Action.java" startLine="42" startPosition="27" endLine="45" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="5487985028841904364" fileName="SafeDeleteLink_Action.java" startLine="42" startPosition="27" endLine="45" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -1429,7 +1429,7 @@
     <scopeInfo nodeId="5487985028841904364" fileName="SafeDeleteLink_Action.java" startLine="57" startPosition="110" endLine="58" endPosition="22" />
     <scopeInfo nodeId="5487985028841904364" fileName="SafeDeleteLink_Action.java" startLine="63" startPosition="59" endLine="64" endPosition="19" />
     <scopeInfo nodeId="5487985028841904364" fileName="SafeDeleteLink_Action.java" startLine="67" startPosition="65" endLine="68" endPosition="19" />
-    <scopeInfo nodeId="5487985028841904364" fileName="SafeDeleteLink_Action.java" startLine="74" startPosition="9" endLine="75" endPosition="298" />
+    <scopeInfo nodeId="5487985028841904364" fileName="SafeDeleteLink_Action.java" startLine="74" startPosition="9" endLine="75" endPosition="306" />
     <scopeInfo nodeId="5487985028841904364" fileName="SafeDeleteLink_Action.java" startLine="77" startPosition="33" endLine="78" endPosition="88" />
     <scopeInfo nodeId="5487985028841904364" fileName="SafeDeleteLink_Action.java" startLine="38" startPosition="7" endLine="40" endPosition="63">
       <varInfo nodeId="5487985028841904364" varName="enabled" />
@@ -1504,8 +1504,8 @@
     <nodeInfo nodeId="5487985028841904518" fileName="MoveConcepts_Action.java" startLine="113" startPosition="51" endLine="114" endPosition="124" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5487985028841904529" fileName="MoveConcepts_Action.java" startLine="116" startPosition="26" endLine="117" endPosition="142" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5487985028841904541" fileName="MoveConcepts_Action.java" startLine="118" startPosition="32" endLine="119" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5487985028841904545" fileName="MoveConcepts_Action.java" startLine="120" startPosition="7" endLine="121" endPosition="325" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5487985028841904553" fileName="MoveConcepts_Action.java" startLine="121" startPosition="325" endLine="122" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="5487985028841904545" fileName="MoveConcepts_Action.java" startLine="120" startPosition="7" endLine="121" endPosition="333" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5487985028841904553" fileName="MoveConcepts_Action.java" startLine="121" startPosition="333" endLine="122" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="5487985028841904387" fileName="MoveConcepts_Action.java" startLine="124" startPosition="33" endLine="125" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5487985028841904391" fileName="MoveConcepts_Action.java" startLine="130" startPosition="59" endLine="131" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5487985028841904395" fileName="MoveConcepts_Action.java" startLine="131" startPosition="71" endLine="132" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -1607,9 +1607,7 @@
       <varInfo nodeId="5487985028841904437" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="5487985028841904387" fileName="MoveConcepts_Action.java" startLine="41" startPosition="0" endLine="46" endPosition="3" />
-    <scopeInfo nodeId="5487985028841904387" fileName="MoveConcepts_Action.java" startLine="73" startPosition="26" endLine="79" endPosition="9">
-      <varInfo nodeId="5487985028841904387" varName="node" />
-    </scopeInfo>
+    <scopeInfo nodeId="5487985028841904387" fileName="MoveConcepts_Action.java" startLine="73" startPosition="26" endLine="79" endPosition="9" />
     <scopeInfo nodeId="5487985028841904387" fileName="MoveConcepts_Action.java" startLine="52" startPosition="89" endLine="63" endPosition="5" />
     <scopeInfo nodeId="5487985028841904401" fileName="MoveConcepts_Action.java" startLine="134" startPosition="25" endLine="145" endPosition="11">
       <varInfo nodeId="5487985028841904403" varName="model" />
@@ -1675,71 +1673,79 @@
   </root>
   <root nodeId="7972144475523810178">
     <nodeInfo nodeId="7972144475523810186" fileName="CommitUtil.java" startLine="22" startPosition="25" endLine="23" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7972144475523810190" fileName="CommitUtil.java" startLine="25" startPosition="7" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="7972144475523810218" fileName="CommitUtil.java" startLine="37" startPosition="30" endLine="38" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7972144475523810222" fileName="CommitUtil.java" startLine="39" startPosition="5" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="7972144475523810223" fileName="CommitUtil.java" startLine="40" startPosition="0" endLine="41" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7972144475523810229" fileName="CommitUtil.java" startLine="41" startPosition="86" endLine="42" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7972144475523810234" fileName="CommitUtil.java" startLine="42" startPosition="59" endLine="43" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7972144475523810242" fileName="CommitUtil.java" startLine="45" startPosition="25" endLine="46" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7972144475523810252" fileName="CommitUtil.java" startLine="48" startPosition="7" endLine="49" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7972144475523810259" fileName="CommitUtil.java" startLine="49" startPosition="62" endLine="50" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7972144475523810266" fileName="CommitUtil.java" startLine="50" startPosition="64" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="7972144475523810267" fileName="CommitUtil.java" startLine="51" startPosition="0" endLine="52" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="7972144475523810269" fileName="CommitUtil.java" startLine="52" startPosition="69" endLine="53" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7972144475523810275" fileName="CommitUtil.java" startLine="53" startPosition="56" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="7972144475523810286" fileName="CommitUtil.java" startLine="56" startPosition="25" endLine="57" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7972144475523810291" fileName="CommitUtil.java" startLine="57" startPosition="55" endLine="58" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7972144475523810619" fileName="CommitUtil.java" startLine="64" startPosition="27" endLine="65" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7972144475523810316" fileName="CommitUtil.java" startLine="67" startPosition="36" endLine="68" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7972144475523810321" fileName="CommitUtil.java" startLine="69" startPosition="5" endLine="70" endPosition="262" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7972144475523810354" fileName="CommitUtil.java" startLine="71" startPosition="40" endLine="72" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7972144475523810409" fileName="CommitUtil.java" startLine="73" startPosition="5" endLine="74" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7972144475523810216" fileName="CommitUtil.java" startLine="36" startPosition="6" endLine="39" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7972144475523810608" fileName="CommitUtil.java" startLine="63" startPosition="113" endLine="66" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7972144475523810314" fileName="CommitUtil.java" startLine="66" startPosition="5" endLine="69" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7972144475523810568" fileName="CommitUtil.java" startLine="70" startPosition="262" endLine="73" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2630603470921110094" fileName="CommitUtil.java" startLine="25" startPosition="7" endLine="26" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7972144475523810218" fileName="CommitUtil.java" startLine="45" startPosition="36" endLine="46" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7972144475523810222" fileName="CommitUtil.java" startLine="47" startPosition="5" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="7972144475523810223" fileName="CommitUtil.java" startLine="48" startPosition="0" endLine="49" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7972144475523810229" fileName="CommitUtil.java" startLine="49" startPosition="92" endLine="50" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7972144475523810234" fileName="CommitUtil.java" startLine="50" startPosition="59" endLine="51" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7972144475523810242" fileName="CommitUtil.java" startLine="53" startPosition="25" endLine="54" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7972144475523810252" fileName="CommitUtil.java" startLine="56" startPosition="7" endLine="57" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7972144475523810259" fileName="CommitUtil.java" startLine="57" startPosition="62" endLine="58" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7972144475523810266" fileName="CommitUtil.java" startLine="58" startPosition="64" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="7972144475523810267" fileName="CommitUtil.java" startLine="59" startPosition="0" endLine="60" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="7972144475523810269" fileName="CommitUtil.java" startLine="60" startPosition="69" endLine="61" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7972144475523810275" fileName="CommitUtil.java" startLine="61" startPosition="56" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="7972144475523810286" fileName="CommitUtil.java" startLine="64" startPosition="25" endLine="65" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2630603470921057366" fileName="CommitUtil.java" startLine="65" startPosition="61" endLine="66" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7972144475523810619" fileName="CommitUtil.java" startLine="72" startPosition="27" endLine="73" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7972144475523810316" fileName="CommitUtil.java" startLine="75" startPosition="36" endLine="76" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7972144475523810321" fileName="CommitUtil.java" startLine="77" startPosition="5" endLine="78" endPosition="262" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7972144475523810354" fileName="CommitUtil.java" startLine="79" startPosition="40" endLine="80" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7972144475523810409" fileName="CommitUtil.java" startLine="81" startPosition="5" endLine="82" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7972144475523810216" fileName="CommitUtil.java" startLine="44" startPosition="7" endLine="47" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7972144475523810608" fileName="CommitUtil.java" startLine="71" startPosition="113" endLine="74" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7972144475523810314" fileName="CommitUtil.java" startLine="74" startPosition="5" endLine="77" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7972144475523810568" fileName="CommitUtil.java" startLine="78" startPosition="262" endLine="81" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="7972144475523810184" fileName="CommitUtil.java" startLine="21" startPosition="67" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="7972144475523810240" fileName="CommitUtil.java" startLine="44" startPosition="57" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="2630603470921132322" fileName="CommitUtil.java" startLine="38" startPosition="10" endLine="42" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7972144475523810240" fileName="CommitUtil.java" startLine="52" startPosition="57" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
     <nodeInfo nodeId="7972144475523810183" fileName="CommitUtil.java" startLine="20" startPosition="108" endLine="25" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7972144475523810239" fileName="CommitUtil.java" startLine="43" startPosition="45" endLine="48" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7972144475523810282" fileName="CommitUtil.java" startLine="55" startPosition="18" endLine="60" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="7972144475523810276" fileName="CommitUtil.java" startLine="54" startPosition="0" endLine="60" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7972144475523810191" fileName="CommitUtil.java" startLine="26" startPosition="0" endLine="36" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7972144475523810304" fileName="CommitUtil.java" startLine="62" startPosition="0" endLine="76" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="commitRename#(Ljetbrains/mps/nodeEditor/EditorContext;Ljetbrains/mps/smodel/SNode;Ljava/lang/String;Ljava/lang/String;)Z" />
-    <nodeInfo nodeId="7972144475523810179" fileName="CommitUtil.java" startLine="19" startPosition="25" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="refactorRenameNode#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/SNode;Ljava/lang/String;)V" />
+    <nodeInfo nodeId="7972144475523810239" fileName="CommitUtil.java" startLine="51" startPosition="45" endLine="56" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7972144475523810282" fileName="CommitUtil.java" startLine="63" startPosition="18" endLine="68" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="7972144475523810276" fileName="CommitUtil.java" startLine="62" startPosition="0" endLine="68" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2630603470921110152" fileName="CommitUtil.java" startLine="28" startPosition="25" endLine="38" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7972144475523810304" fileName="CommitUtil.java" startLine="70" startPosition="0" endLine="84" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="commitRename#(Ljetbrains/mps/nodeEditor/EditorContext;Ljetbrains/mps/smodel/SNode;Ljava/lang/String;Ljava/lang/String;)Z" />
+    <nodeInfo nodeId="2630603470921110168" fileName="CommitUtil.java" startLine="27" startPosition="57" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="2630603470921110167" fileName="CommitUtil.java" startLine="26" startPosition="82" endLine="44" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7972144475523810179" fileName="CommitUtil.java" startLine="19" startPosition="25" endLine="70" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="refactorRenameNode#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/SNode;Ljava/lang/String;)V" />
     <scopeInfo nodeId="7972144475523810185" fileName="CommitUtil.java" startLine="22" startPosition="25" endLine="23" endPosition="49" />
-    <scopeInfo nodeId="7972144475523810217" fileName="CommitUtil.java" startLine="37" startPosition="30" endLine="38" endPosition="13" />
-    <scopeInfo nodeId="7972144475523810241" fileName="CommitUtil.java" startLine="45" startPosition="25" endLine="46" endPosition="97" />
-    <scopeInfo nodeId="7972144475523810609" fileName="CommitUtil.java" startLine="64" startPosition="27" endLine="65" endPosition="19" />
-    <scopeInfo nodeId="7972144475523810315" fileName="CommitUtil.java" startLine="67" startPosition="36" endLine="68" endPosition="18" />
-    <scopeInfo nodeId="7972144475523810569" fileName="CommitUtil.java" startLine="71" startPosition="40" endLine="72" endPosition="78" />
-    <scopeInfo nodeId="7972144475523810285" fileName="CommitUtil.java" startLine="56" startPosition="25" endLine="58" endPosition="68" />
+    <scopeInfo nodeId="7972144475523810217" fileName="CommitUtil.java" startLine="45" startPosition="36" endLine="46" endPosition="13" />
+    <scopeInfo nodeId="7972144475523810241" fileName="CommitUtil.java" startLine="53" startPosition="25" endLine="54" endPosition="97" />
+    <scopeInfo nodeId="7972144475523810609" fileName="CommitUtil.java" startLine="72" startPosition="27" endLine="73" endPosition="19" />
+    <scopeInfo nodeId="7972144475523810315" fileName="CommitUtil.java" startLine="75" startPosition="36" endLine="76" endPosition="18" />
+    <scopeInfo nodeId="7972144475523810569" fileName="CommitUtil.java" startLine="79" startPosition="40" endLine="80" endPosition="78" />
+    <scopeInfo nodeId="7972144475523810285" fileName="CommitUtil.java" startLine="64" startPosition="25" endLine="66" endPosition="76" />
     <scopeInfo nodeId="7972144475523810184" fileName="CommitUtil.java" startLine="21" startPosition="67" endLine="25" endPosition="0" />
-    <scopeInfo nodeId="7972144475523810240" fileName="CommitUtil.java" startLine="44" startPosition="57" endLine="48" endPosition="0" />
-    <scopeInfo nodeId="7972144475523810282" fileName="CommitUtil.java" startLine="55" startPosition="18" endLine="60" endPosition="0" />
-    <scopeInfo nodeId="7972144475523810307" fileName="CommitUtil.java" startLine="63" startPosition="113" endLine="74" endPosition="40">
+    <scopeInfo nodeId="7972144475523810240" fileName="CommitUtil.java" startLine="52" startPosition="57" endLine="56" endPosition="0" />
+    <scopeInfo nodeId="7972144475523810282" fileName="CommitUtil.java" startLine="63" startPosition="18" endLine="68" endPosition="0" />
+    <scopeInfo nodeId="7972144475523810307" fileName="CommitUtil.java" startLine="71" startPosition="113" endLine="82" endPosition="40">
       <varInfo nodeId="7972144475523810322" varName="res" />
     </scopeInfo>
-    <scopeInfo nodeId="7972144475523810304" fileName="CommitUtil.java" startLine="62" startPosition="0" endLine="76" endPosition="0">
+    <scopeInfo nodeId="2630603470921110169" fileName="CommitUtil.java" startLine="28" startPosition="25" endLine="42" endPosition="10">
+      <varInfo nodeId="2630603470921110153" varName="refactoringNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="7972144475523810304" fileName="CommitUtil.java" startLine="70" startPosition="0" endLine="84" endPosition="0">
       <varInfo nodeId="7972144475523810391" varName="editorContext" />
       <varInfo nodeId="7972144475523810397" varName="newValue" />
       <varInfo nodeId="7972144475523810393" varName="node" />
       <varInfo nodeId="7972144475523810395" varName="oldValue" />
     </scopeInfo>
-    <scopeInfo nodeId="7972144475523810182" fileName="CommitUtil.java" startLine="20" startPosition="108" endLine="60" endPosition="14">
-      <varInfo nodeId="7972144475523810192" varName="refactoring" />
+    <scopeInfo nodeId="2630603470921110168" fileName="CommitUtil.java" startLine="27" startPosition="57" endLine="44" endPosition="0" />
+    <scopeInfo nodeId="7972144475523810182" fileName="CommitUtil.java" startLine="20" startPosition="108" endLine="68" endPosition="14">
+      <varInfo nodeId="2630603470921110095" varName="refactoring" />
       <varInfo nodeId="7972144475523810224" varName="refactoringContext" />
     </scopeInfo>
-    <scopeInfo nodeId="7972144475523810179" fileName="CommitUtil.java" startLine="19" startPosition="25" endLine="62" endPosition="0">
+    <scopeInfo nodeId="7972144475523810179" fileName="CommitUtil.java" startLine="19" startPosition="25" endLine="70" endPosition="0">
       <varInfo nodeId="7972144475523810298" varName="context" />
       <varInfo nodeId="7972144475523810302" varName="newName" />
       <varInfo nodeId="7972144475523810300" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="7972144475523810178" fileName="CommitUtil.java" startLine="19" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.lang.structure.pluginSolution.plugin.CommitUtil" />
+    <unitInfo nodeId="7972144475523810178" fileName="CommitUtil.java" startLine="19" startPosition="0" endLine="85" endPosition="0" unitName="jetbrains.mps.lang.structure.pluginSolution.plugin.CommitUtil" />
     <unitInfo nodeId="7972144475523810184" fileName="CommitUtil.java" startLine="21" startPosition="55" endLine="25" endPosition="5" unitName="jetbrains.mps.lang.structure.pluginSolution.plugin.CommitUtil$1" />
-    <unitInfo nodeId="7972144475523810240" fileName="CommitUtil.java" startLine="44" startPosition="45" endLine="48" endPosition="5" unitName="jetbrains.mps.lang.structure.pluginSolution.plugin.CommitUtil$2" />
-    <unitInfo nodeId="7972144475523810280" fileName="CommitUtil.java" startLine="55" startPosition="8" endLine="60" endPosition="5" unitName="jetbrains.mps.lang.structure.pluginSolution.plugin.CommitUtil$3" />
+    <unitInfo nodeId="2630603470921110168" fileName="CommitUtil.java" startLine="27" startPosition="45" endLine="44" endPosition="5" unitName="jetbrains.mps.lang.structure.pluginSolution.plugin.CommitUtil$2" />
+    <unitInfo nodeId="7972144475523810240" fileName="CommitUtil.java" startLine="52" startPosition="45" endLine="56" endPosition="5" unitName="jetbrains.mps.lang.structure.pluginSolution.plugin.CommitUtil$3" />
+    <unitInfo nodeId="7972144475523810280" fileName="CommitUtil.java" startLine="63" startPosition="8" endLine="68" endPosition="5" unitName="jetbrains.mps.lang.structure.pluginSolution.plugin.CommitUtil$4" />
   </root>
 </debugInfo>
 
