@@ -25,6 +25,7 @@ import jetbrains.mps.vcs.MergeVersion;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.vfs.FileSystem;
 import javax.swing.SwingUtilities;
+import jetbrains.mps.vcs.diff.merge.ui.MergeModelsDialog;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.vcs.diff.ui.common.SimpleDiffRequest;
@@ -102,7 +103,7 @@ public class TestMergeDialog {
       public void run() {
         MergeModelsDialog dialog = ModelAccess.instance().runReadAction(new Computable<MergeModelsDialog>() {
           public MergeModelsDialog compute() {
-            return new MergeModelsDialog(models[0], models[1], models[2], new SimpleDiffRequest(TestMergeDialog.ourProject, "Local Version", "Merge Result", "Remote Version"));
+            return new MergeModelsDialog(models[0], models[1], models[2], new SimpleDiffRequest(TestMergeDialog.ourProject, null, new String[]{"Local Version", "Merge Result", "Remote Version"}));
           }
         });
         try {

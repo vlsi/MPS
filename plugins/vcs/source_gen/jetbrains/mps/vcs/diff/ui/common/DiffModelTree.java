@@ -102,6 +102,9 @@ public abstract class DiffModelTree extends MPSTree implements DataProvider {
   @Override
   public void rebuildNow() {
     super.rebuildNow();
+    if (getSelectionCount() == 0) {
+      selectNode(getRootNode());
+    }
     expandAll();
   }
 
@@ -157,7 +160,7 @@ public abstract class DiffModelTree extends MPSTree implements DataProvider {
     return null;
   }
 
-  private class ModelTreeNode extends MPSTreeNode {
+  public class ModelTreeNode extends MPSTreeNode {
     public ModelTreeNode() {
       super(myOperationContext);
       setNodeIdentifier("model");

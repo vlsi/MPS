@@ -23,7 +23,7 @@ import com.intellij.openapi.project.Project;
 import com.intellij.util.messages.MessageBusConnection;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.bookmark.BookmarkManager.BookmarkListener;
-import jetbrains.mps.ide.editor.EditorUtil;
+import jetbrains.mps.ide.editor.util.EditorComponentUtil;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.EditorComponent.RebuildListener;
 import jetbrains.mps.nodeEditor.EditorMessageIconRenderer;
@@ -71,7 +71,7 @@ public class BookmarksUIComponent implements ProjectComponent {
     myBookmarkManager.addBookmarkListener(bookmarkListener);
     myMessageBusConnection = myProject.getMessageBus().connect();
     myMessageBusConnection.subscribe(EditorComponentCreateListener.EDITOR_COMPONENT_CREATION, editorListener);
-    for (jetbrains.mps.openapi.editor.EditorComponent editor : EditorUtil.getAllEditorComponents(myFileEditorManager, true)) {
+    for (jetbrains.mps.openapi.editor.EditorComponent editor : EditorComponentUtil.getAllEditorComponents(myFileEditorManager, true)) {
       if (editor instanceof EditorComponent) {
         editorComponentCreated((EditorComponent) editor);
       }
@@ -133,7 +133,7 @@ public class BookmarksUIComponent implements ProjectComponent {
   @NotNull
   private List<EditorComponent> findComponentsForNode(SNode node) {
     if (node != null) {
-      return EditorUtil.findComponentForNode(node, myFileEditorManager);
+      return EditorComponentUtil.findComponentForNode(node, myFileEditorManager);
     }
     return Collections.emptyList();
   }

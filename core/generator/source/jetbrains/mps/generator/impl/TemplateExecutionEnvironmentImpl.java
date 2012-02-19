@@ -241,7 +241,7 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
     }
   }
 
-  public void resolveInTemplateLater(SNode outputNode, String role, SNodePointer sourceNode, int parentIndex, String resolveInfo, TemplateContext context) {
+  public void resolveInTemplateLater(@NotNull SNode outputNode, String role, SNodePointer sourceNode, int parentIndex, String resolveInfo, TemplateContext context) {
     ReferenceInfo_TemplateParent refInfo = new ReferenceInfo_TemplateParent(
       outputNode,
       role,
@@ -256,7 +256,7 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
     outputNode.addReference(postponedReference);
   }
 
-  public void resolveInTemplateLater(SNode outputNode, String role, SNodePointer sourceNode, String templateNodeId, String resolveInfo, TemplateContext context) {
+  public void resolveInTemplateLater(@NotNull SNode outputNode, String role, SNodePointer sourceNode, String templateNodeId, String resolveInfo, TemplateContext context) {
     ReferenceInfo_Template refInfo = new ReferenceInfo_Template(
       outputNode,
       role,
