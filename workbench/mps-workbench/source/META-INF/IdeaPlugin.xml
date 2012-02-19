@@ -4,8 +4,8 @@
 
   <xi:include href="/META-INF/MPSComponents.xml" xpointer="xpointer(/components/*)"/>
   <xi:include href="/idea/MPSActionManager.xml" xpointer="xpointer(/component/*)"/>
-  <xi:include href="/jetbrains/mps/ide/editor/actions/MPSEditorActions.xml" xpointer="xpointer(/components/*)"/>
   <xi:include href="/jetbrains/mps/ide/platform/actions/PlatformActions.xml" xpointer="xpointer(/components/*)"/>
+  <xi:include href="/jetbrains/mps/ide/editor/actions/MPSEditorActions.xml" xpointer="xpointer(/components/*)"/>
 
   <extensionPoints>
     <xi:include href="/META-INF/PlatformExtensionPoints.xml" xpointer="xpointer(/extensionPoints/*)"/>

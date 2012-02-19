@@ -10,6 +10,7 @@
   <import index="dbrf" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#javax.swing(JDK/javax.swing@java_stub)" version="-1" />
   <import index="1qcs" modelUID="f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#com.intellij.openapi.actionSystem(MPS.Workbench/com.intellij.openapi.actionSystem@java_stub)" version="-1" />
   <import index="e2lb" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" version="-1" />
+  <import index="lfzw" modelUID="r:cc08a4fa-e4f1-443c-b8f2-4a41972141bb(jetbrains.mps.ide.platform.actions.core)" version="-1" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <import index="tp4k" modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" version="5" implicit="yes" />
   <import index="tprs" modelUID="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)" version="-1" implicit="yes" />
@@ -333,14 +334,20 @@
   </root>
   <root id="1784947186835625271">
     <node role="actions" roleId="tp4k.3205778618063718748" type="tp4k.IdeaActionsDescriptor" typeId="tp4k.331224023792854814" id="1784947186835625273">
-      <node role="actionGroups" roleId="tp4k.331224023792854818" type="tp4k.ActionGroupRef" typeId="tp4k.331224023792854815" id="1784947186835625274">
-        <link role="group" roleId="tp4k.331224023792854816" targetNodeId="1784947186835625266" resolveInfo="GoToPlatform" />
-      </node>
       <node role="actionGroups" roleId="tp4k.331224023792854818" type="tp4k.ActionGroupRef" typeId="tp4k.331224023792854815" id="4477015128426564102">
         <link role="group" roleId="tp4k.331224023792854816" targetNodeId="6714826334259354054" resolveInfo="NodeRefactoring" />
       </node>
+      <node role="actionGroups" roleId="tp4k.331224023792854818" type="tp4k.ActionGroupRef" typeId="tp4k.331224023792854815" id="1784947186835625274">
+        <link role="group" roleId="tp4k.331224023792854816" targetNodeId="1784947186835625266" resolveInfo="GoToPlatform" />
+      </node>
+      <node role="actionGroups" roleId="tp4k.331224023792854818" type="tp4k.ActionGroupRef" typeId="tp4k.331224023792854815" id="8784230320738947466">
+        <link role="group" roleId="tp4k.331224023792854816" targetNodeId="lfzw.8784230320738943351" resolveInfo="CoreRefactorings" />
+      </node>
       <node role="keymapsRef" roleId="tp4k.331224023792855168" type="tp4k.KeymapRef" typeId="tp4k.331224023792855166" id="5978963343236798403">
         <link role="keymap" roleId="tp4k.331224023792855167" targetNodeId="1784947186835625272" resolveInfo="Default" />
+      </node>
+      <node role="keymapsRef" roleId="tp4k.331224023792855168" type="tp4k.KeymapRef" typeId="tp4k.331224023792855166" id="8784230320738952902">
+        <link role="keymap" roleId="tp4k.331224023792855167" targetNodeId="lfzw.8784230320738943424" resolveInfo="DefaultCore" />
       </node>
     </node>
   </root>

@@ -22,7 +22,7 @@ import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.ide.refactoring.RenameMethodDialog;
+import jetbrains.mps.ide.platform.refactoring.RenameMethodDialog;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.ide.platform.refactoring.RefactoringFacade;

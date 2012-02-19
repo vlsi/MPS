@@ -3,10 +3,21 @@
     <action id="jetbrains.mps.ide.platform.actions.GoToNodeById_Action" class="jetbrains.mps.ide.platform.actions.GoToNodeById_Action">
       <keyboard-shortcut first-keystroke="ctrl G" keymap="$default"/>
     </action>
+    <action id="jetbrains.mps.ide.platform.actions.core.Rename_Action" class="jetbrains.mps.ide.platform.actions.core.Rename_Action">
+      <keyboard-shortcut first-keystroke="shift F6" keymap="$default"/>
+    </action>
+    <action id="jetbrains.mps.ide.platform.actions.core.SafeDelete_Action" class="jetbrains.mps.ide.platform.actions.core.SafeDelete_Action">
+      <keyboard-shortcut first-keystroke="alt DELETE" keymap="$default"/>
+    </action>
     <group id="jetbrains.mps.ide.platform.actions.GoToPlatform_ActionGroup">
       <reference ref="jetbrains.mps.ide.platform.actions.GoToNodeById_Action"/>
       <add-to-group group-id="GoToMenu" anchor="last"/>
     </group>
     <group id="jetbrains.mps.ide.platform.actions.NodeRefactoring_ActionGroup" text="Refactoring" popup="true"/>
+    <group id="jetbrains.mps.ide.platform.actions.core.NodeRefactoringsCore_ActionGroup">
+      <reference ref="jetbrains.mps.ide.platform.actions.core.Rename_Action"/>
+      <reference ref="jetbrains.mps.ide.platform.actions.core.SafeDelete_Action"/>
+      <add-to-group group-id="jetbrains.mps.ide.platform.actions.NodeRefactoring_ActionGroup" anchor="last"/>
+    </group>
   </actions>
 </components>

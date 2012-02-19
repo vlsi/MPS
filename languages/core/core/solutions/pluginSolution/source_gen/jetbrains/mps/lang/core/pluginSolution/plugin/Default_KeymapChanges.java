@@ -14,8 +14,6 @@ public class Default_KeymapChanges extends BaseKeymapChanges {
     addSimpleShortcut("jetbrains.mps.lang.core.pluginSolution.plugin.FindLanguageUsages_Action", getShortcut("alt F7"));
     addSimpleShortcut("jetbrains.mps.lang.core.pluginSolution.plugin.FindModelUsages_Action", getShortcut("alt F7"));
     addSimpleShortcut("jetbrains.mps.lang.core.pluginSolution.plugin.MoveNodes_Action", getShortcut(" F6"));
-    addSimpleShortcut("jetbrains.mps.lang.core.pluginSolution.plugin.Rename_Action", getShortcut("shift F6"));
-    addSimpleShortcut("jetbrains.mps.lang.core.pluginSolution.plugin.SafeDelete_Action", getShortcut("alt DELETE"));
     addSimpleShortcut("jetbrains.mps.lang.core.pluginSolution.plugin.ShowNodeMessages_Action", getShortcut("alt shift M"));
     // simple parameterized 
     // complex 
