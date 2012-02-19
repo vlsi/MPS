@@ -203,8 +203,6 @@ public abstract class FileSwapOwner implements TransientSwapOwner {
         if (isKnownUserObject(key) && isKnownUserObject(value)) {
           knownUserObject.add(key);
           knownUserObject.add(value);
-        } else {
-          LOG.debug("Going to loose user object " + key + " = " + value + " for node " + node + " since key or value is not Serializable or not known to MPS.");
         }
       }
 
@@ -256,7 +254,7 @@ public abstract class FileSwapOwner implements TransientSwapOwner {
     protected void readChildren(SModel model, ModelInputStream is, SNode node) throws IOException {
       // first read user objects
       int userObjectCount = is.readInt();
-      for (int i = 0; i < userObjectCount; i+= 2) {
+      for (int i = 0; i < userObjectCount; i += 2) {
         Object key = readUserObject(is, model);
         Object value = readUserObject(is, model);
         node.putUserObject(key, value);
@@ -317,5 +315,38 @@ public abstract class FileSwapOwner implements TransientSwapOwner {
     ByteArrayInputStream is = new ByteArrayInputStream(os.toByteArray());
 
     return reader.readNode(node.getModel(), new ModelInputStream(is));
+  }
+
+  // method created for testing
+  public static SModel writeAndReadModel(SModel model) throws IOException {
+    // write
+    ByteArrayOutputStream os = new ByteArrayOutputStream();
+    ModelOutputStream mos = new ModelOutputStream(os);
+
+    ArrayList<SNode> roots = new ArrayList<SNode>();
+    for (Iterator<SNode> it = model.rootsIterator(); it.hasNext(); ) {
+      roots.add(it.next());
+    }
+    mos.writeInt(42);
+    new NodesAndUserObjectsWriter(model.getSModelReference()).writeNodes(roots, mos);
+    mos.close();
+
+    SModel resultModel = new SModel(new SModelReference("smodel.long.name.for.testing", ""));
+    ByteArrayInputStream is = new ByteArrayInputStream(os.toByteArray());
+    ModelInputStream mis = new ModelInputStream(is);
+
+    // read
+    int version = mis.readInt();
+    if (version != 42) {
+      return null;
+    }
+    List<SNode> resultRoots = new NodesAndUserObjectsReader(resultModel.getSModelReference()).readNodes(resultModel, mis);
+    for (SNode root : resultRoots) {
+      resultModel.addRoot(root);
+    }
+
+    SModelOperations.validateLanguagesAndImports(resultModel, false, false);
+
+    return resultModel;
   }
 }
