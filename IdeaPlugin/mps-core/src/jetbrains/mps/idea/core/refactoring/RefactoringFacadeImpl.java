@@ -48,7 +48,7 @@ public class RefactoringFacadeImpl extends RefactoringFacade implements Applicat
 
   @Override
   public void execute(RefactoringContext context) {
-    throw new UnsupportedOperationException();
+    executeSimple(context);
   }
 
   @Override
