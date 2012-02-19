@@ -7,5 +7,6 @@
       <reference ref="jetbrains.mps.ide.platform.actions.GoToNodeById_Action"/>
       <add-to-group group-id="GoToMenu" anchor="last"/>
     </group>
+    <group id="jetbrains.mps.ide.platform.actions.NodeRefactoring_ActionGroup" text="Refactoring" popup="true"/>
   </actions>
 </components>

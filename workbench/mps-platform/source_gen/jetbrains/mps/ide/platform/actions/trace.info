@@ -86,16 +86,36 @@
     <nodeInfo nodeId="1784947186835625271" fileName="PlatformActions.xml" startLine="9" startPosition="6" endLine="9" endPosition="11" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="1784947186835625271" fileName="PlatformActions.xml" startLine="9" startPosition="6" endLine="9" endPosition="11" conceptFqName="jetbrains.mps.gtext.structure.GText" />
     <nodeInfo nodeId="1784947186835625271" fileName="PlatformActions.xml" startLine="9" startPosition="11" endLine="9" endPosition="12" conceptFqName="jetbrains.mps.gtext.structure.GText" />
-    <nodeInfo nodeId="1784947186835625271" fileName="PlatformActions.xml" startLine="10" startPosition="0" endLine="10" endPosition="2" conceptFqName="jetbrains.mps.gtext.structure.GIndent" />
-    <nodeInfo nodeId="1784947186835625271" fileName="PlatformActions.xml" startLine="10" startPosition="2" endLine="10" endPosition="4" conceptFqName="jetbrains.mps.gtext.structure.GText" />
-    <nodeInfo nodeId="1784947186835625271" fileName="PlatformActions.xml" startLine="10" startPosition="4" endLine="10" endPosition="11" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
-    <nodeInfo nodeId="1784947186835625271" fileName="PlatformActions.xml" startLine="10" startPosition="4" endLine="10" endPosition="11" conceptFqName="jetbrains.mps.gtext.structure.GText" />
-    <nodeInfo nodeId="1784947186835625271" fileName="PlatformActions.xml" startLine="10" startPosition="11" endLine="10" endPosition="12" conceptFqName="jetbrains.mps.gtext.structure.GText" />
-    <nodeInfo nodeId="1784947186835625271" fileName="PlatformActions.xml" startLine="11" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GIndent" />
-    <nodeInfo nodeId="1784947186835625271" fileName="PlatformActions.xml" startLine="11" startPosition="0" endLine="11" endPosition="2" conceptFqName="jetbrains.mps.gtext.structure.GText" />
-    <nodeInfo nodeId="1784947186835625271" fileName="PlatformActions.xml" startLine="11" startPosition="2" endLine="11" endPosition="12" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
-    <nodeInfo nodeId="1784947186835625271" fileName="PlatformActions.xml" startLine="11" startPosition="2" endLine="11" endPosition="12" conceptFqName="jetbrains.mps.gtext.structure.GText" />
-    <nodeInfo nodeId="1784947186835625271" fileName="PlatformActions.xml" startLine="11" startPosition="12" endLine="11" endPosition="13" conceptFqName="jetbrains.mps.gtext.structure.GText" />
+    <nodeInfo nodeId="1784947186835625271" fileName="PlatformActions.xml" startLine="10" startPosition="0" endLine="10" endPosition="4" conceptFqName="jetbrains.mps.gtext.structure.GIndent" />
+    <nodeInfo nodeId="1784947186835625271" fileName="PlatformActions.xml" startLine="10" startPosition="4" endLine="10" endPosition="5" conceptFqName="jetbrains.mps.gtext.structure.GText" />
+    <nodeInfo nodeId="1784947186835625271" fileName="PlatformActions.xml" startLine="10" startPosition="5" endLine="10" endPosition="10" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
+    <nodeInfo nodeId="1784947186835625271" fileName="PlatformActions.xml" startLine="10" startPosition="5" endLine="10" endPosition="10" conceptFqName="jetbrains.mps.gtext.structure.GText" />
+    <nodeInfo nodeId="1784947186835625271" fileName="PlatformActions.xml" startLine="10" startPosition="10" endLine="10" endPosition="78" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
+    <nodeInfo nodeId="1784947186835625271" fileName="PlatformActions.xml" startLine="10" startPosition="10" endLine="10" endPosition="15" conceptFqName="jetbrains.mps.gtext.structure.GText" />
+    <nodeInfo nodeId="1784947186835625271" fileName="PlatformActions.xml" startLine="10" startPosition="15" endLine="10" endPosition="77" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
+    <nodeInfo nodeId="1784947186835625271" fileName="PlatformActions.xml" startLine="10" startPosition="15" endLine="10" endPosition="77" conceptFqName="jetbrains.mps.gtext.structure.GText" />
+    <nodeInfo nodeId="1784947186835625271" fileName="PlatformActions.xml" startLine="10" startPosition="77" endLine="10" endPosition="78" conceptFqName="jetbrains.mps.gtext.structure.GText" />
+    <nodeInfo nodeId="1784947186835625271" fileName="PlatformActions.xml" startLine="10" startPosition="78" endLine="10" endPosition="97" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
+    <nodeInfo nodeId="1784947186835625271" fileName="PlatformActions.xml" startLine="10" startPosition="78" endLine="10" endPosition="85" conceptFqName="jetbrains.mps.gtext.structure.GText" />
+    <nodeInfo nodeId="1784947186835625271" fileName="PlatformActions.xml" startLine="10" startPosition="85" endLine="10" endPosition="96" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
+    <nodeInfo nodeId="1784947186835625271" fileName="PlatformActions.xml" startLine="10" startPosition="85" endLine="10" endPosition="96" conceptFqName="jetbrains.mps.gtext.structure.GText" />
+    <nodeInfo nodeId="1784947186835625271" fileName="PlatformActions.xml" startLine="10" startPosition="96" endLine="10" endPosition="97" conceptFqName="jetbrains.mps.gtext.structure.GText" />
+    <nodeInfo nodeId="1784947186835625271" fileName="PlatformActions.xml" startLine="10" startPosition="97" endLine="10" endPosition="110" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
+    <nodeInfo nodeId="1784947186835625271" fileName="PlatformActions.xml" startLine="10" startPosition="97" endLine="10" endPosition="105" conceptFqName="jetbrains.mps.gtext.structure.GText" />
+    <nodeInfo nodeId="1784947186835625271" fileName="PlatformActions.xml" startLine="10" startPosition="105" endLine="10" endPosition="109" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
+    <nodeInfo nodeId="1784947186835625271" fileName="PlatformActions.xml" startLine="10" startPosition="105" endLine="10" endPosition="109" conceptFqName="jetbrains.mps.gtext.structure.GText" />
+    <nodeInfo nodeId="1784947186835625271" fileName="PlatformActions.xml" startLine="10" startPosition="109" endLine="10" endPosition="110" conceptFqName="jetbrains.mps.gtext.structure.GText" />
+    <nodeInfo nodeId="1784947186835625271" fileName="PlatformActions.xml" startLine="10" startPosition="110" endLine="10" endPosition="112" conceptFqName="jetbrains.mps.gtext.structure.GText" />
+    <nodeInfo nodeId="1784947186835625271" fileName="PlatformActions.xml" startLine="11" startPosition="0" endLine="11" endPosition="2" conceptFqName="jetbrains.mps.gtext.structure.GIndent" />
+    <nodeInfo nodeId="1784947186835625271" fileName="PlatformActions.xml" startLine="11" startPosition="2" endLine="11" endPosition="4" conceptFqName="jetbrains.mps.gtext.structure.GText" />
+    <nodeInfo nodeId="1784947186835625271" fileName="PlatformActions.xml" startLine="11" startPosition="4" endLine="11" endPosition="11" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
+    <nodeInfo nodeId="1784947186835625271" fileName="PlatformActions.xml" startLine="11" startPosition="4" endLine="11" endPosition="11" conceptFqName="jetbrains.mps.gtext.structure.GText" />
+    <nodeInfo nodeId="1784947186835625271" fileName="PlatformActions.xml" startLine="11" startPosition="11" endLine="11" endPosition="12" conceptFqName="jetbrains.mps.gtext.structure.GText" />
+    <nodeInfo nodeId="1784947186835625271" fileName="PlatformActions.xml" startLine="12" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GIndent" />
+    <nodeInfo nodeId="1784947186835625271" fileName="PlatformActions.xml" startLine="12" startPosition="0" endLine="12" endPosition="2" conceptFqName="jetbrains.mps.gtext.structure.GText" />
+    <nodeInfo nodeId="1784947186835625271" fileName="PlatformActions.xml" startLine="12" startPosition="2" endLine="12" endPosition="12" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
+    <nodeInfo nodeId="1784947186835625271" fileName="PlatformActions.xml" startLine="12" startPosition="2" endLine="12" endPosition="12" conceptFqName="jetbrains.mps.gtext.structure.GText" />
+    <nodeInfo nodeId="1784947186835625271" fileName="PlatformActions.xml" startLine="12" startPosition="12" endLine="12" endPosition="13" conceptFqName="jetbrains.mps.gtext.structure.GText" />
     <nodeInfo nodeId="1784947186835625271" fileName="PlatformActions.xml" startLine="1" startPosition="12" endLine="2" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />
     <nodeInfo nodeId="1784947186835625271" fileName="PlatformActions.xml" startLine="2" startPosition="11" endLine="3" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />
     <nodeInfo nodeId="1784947186835625271" fileName="PlatformActions.xml" startLine="3" startPosition="135" endLine="4" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />
@@ -111,23 +131,25 @@
     <nodeInfo nodeId="1784947186835625271" fileName="PlatformActions.xml" startLine="8" startPosition="0" endLine="9" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="1784947186835625271" fileName="PlatformActions.xml" startLine="8" startPosition="55" endLine="9" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />
     <nodeInfo nodeId="1784947186835625271" fileName="PlatformActions.xml" startLine="9" startPosition="12" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />
-    <nodeInfo nodeId="1784947186835625271" fileName="PlatformActions.xml" startLine="10" startPosition="12" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />
-    <nodeInfo nodeId="1784947186835625271" fileName="PlatformActions.xml" startLine="11" startPosition="13" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />
+    <nodeInfo nodeId="1784947186835625271" fileName="PlatformActions.xml" startLine="10" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
+    <nodeInfo nodeId="1784947186835625271" fileName="PlatformActions.xml" startLine="10" startPosition="112" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />
+    <nodeInfo nodeId="1784947186835625271" fileName="PlatformActions.xml" startLine="11" startPosition="12" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />
+    <nodeInfo nodeId="1784947186835625271" fileName="PlatformActions.xml" startLine="12" startPosition="13" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />
     <nodeInfo nodeId="1784947186835625271" fileName="PlatformActions.xml" startLine="7" startPosition="0" endLine="9" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GIndentBlock" />
     <nodeInfo nodeId="1784947186835625271" fileName="PlatformActions.xml" startLine="7" startPosition="0" endLine="9" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="1784947186835625271" fileName="PlatformActions.xml" startLine="7" startPosition="0" endLine="9" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="1784947186835625271" fileName="PlatformActions.xml" startLine="3" startPosition="0" endLine="6" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="1784947186835625271" fileName="PlatformActions.xml" startLine="6" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
-    <nodeInfo nodeId="1784947186835625271" fileName="PlatformActions.xml" startLine="3" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GIndentBlock" />
-    <nodeInfo nodeId="1784947186835625271" fileName="PlatformActions.xml" startLine="3" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
-    <nodeInfo nodeId="1784947186835625271" fileName="PlatformActions.xml" startLine="3" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
-    <nodeInfo nodeId="1784947186835625271" fileName="PlatformActions.xml" startLine="2" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GIndentBlock" />
-    <nodeInfo nodeId="1784947186835625271" fileName="PlatformActions.xml" startLine="2" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
-    <nodeInfo nodeId="1784947186835625271" fileName="PlatformActions.xml" startLine="2" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
-    <nodeInfo nodeId="1784947186835625271" fileName="PlatformActions.xml" startLine="2" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
-    <nodeInfo nodeId="1784947186835625271" fileName="PlatformActions.xml" startLine="1" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
-    <nodeInfo nodeId="1784947186835625271" fileName="PlatformActions.xml" startLine="1" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
-    <unitInfo nodeId="1784947186835625271" fileName="PlatformActions.xml" startLine="1" startPosition="0" endLine="12" endPosition="0" unitName="PlatformActions.xml" />
+    <nodeInfo nodeId="1784947186835625271" fileName="PlatformActions.xml" startLine="3" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GIndentBlock" />
+    <nodeInfo nodeId="1784947186835625271" fileName="PlatformActions.xml" startLine="3" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
+    <nodeInfo nodeId="1784947186835625271" fileName="PlatformActions.xml" startLine="3" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
+    <nodeInfo nodeId="1784947186835625271" fileName="PlatformActions.xml" startLine="2" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GIndentBlock" />
+    <nodeInfo nodeId="1784947186835625271" fileName="PlatformActions.xml" startLine="2" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
+    <nodeInfo nodeId="1784947186835625271" fileName="PlatformActions.xml" startLine="2" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
+    <nodeInfo nodeId="1784947186835625271" fileName="PlatformActions.xml" startLine="2" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
+    <nodeInfo nodeId="1784947186835625271" fileName="PlatformActions.xml" startLine="1" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
+    <nodeInfo nodeId="1784947186835625271" fileName="PlatformActions.xml" startLine="1" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
+    <unitInfo nodeId="1784947186835625271" fileName="PlatformActions.xml" startLine="1" startPosition="0" endLine="13" endPosition="0" unitName="PlatformActions.xml" />
   </root>
   <root nodeId="227146524086541067">
     <nodeInfo nodeId="227146524086541067" fileName="GoToNodeById_Action.java" startLine="25" startPosition="53" endLine="26" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
