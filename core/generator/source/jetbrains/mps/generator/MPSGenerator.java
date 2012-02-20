@@ -19,6 +19,7 @@ import jetbrains.mps.MPSCore;
 import jetbrains.mps.components.ComponentPlugin;
 import jetbrains.mps.generator.impl.RootTemplateAnnotator;
 import jetbrains.mps.generator.impl.dependencies.GenerationDependenciesCache;
+import jetbrains.mps.generator.info.GeneratedFilesInfoComponent;
 import jetbrains.mps.generator.traceInfo.TraceInfoCache;
 import jetbrains.mps.smodel.GlobalSModelEventsManager;
 import jetbrains.mps.smodel.SModelRepository;
@@ -45,6 +46,7 @@ public class MPSGenerator extends ComponentPlugin {
 
     init(new TraceInfoCache(modelRepository));
     init(new GenerationDependenciesCache(modelRepository));
+    init(new GeneratedFilesInfoComponent());
     init(new ModelGenerationStatusManager(globalSModelEventsManager));
     init(new RootTemplateAnnotator(globalSModelEventsManager));
     init(new GenerationSettingsProvider());
