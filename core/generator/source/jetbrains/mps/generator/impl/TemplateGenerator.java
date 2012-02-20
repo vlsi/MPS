@@ -271,7 +271,8 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
       for (SNode outputNode : outputNodes) {
         registerRoot(outputNode, inputNode, rule.getRuleNode(), false);
         setChanged();
-        outputNode.putUserObject(TemplateQueryContext.ORIGINAL_INPUT_NODE, inputNode.getUserObject(TemplateQueryContext.ORIGINAL_INPUT_NODE));
+        // we copy user objects in reduction rules, root mapping rules are no different
+        outputNode.putUserObjects(inputNode);
       }
 
       if (inputNode.getModel() == getGeneratorSessionContext().getOriginalInputModel()) {
