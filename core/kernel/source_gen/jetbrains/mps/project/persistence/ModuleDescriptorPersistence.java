@@ -14,6 +14,7 @@ import jetbrains.mps.project.structure.modules.LanguageDescriptor;
 import jetbrains.mps.project.structure.modules.Dependency;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
+import java.util.Set;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.project.structure.model.ModelRoot;
 import jetbrains.mps.vfs.IFile;
@@ -111,8 +112,8 @@ public class ModuleDescriptorPersistence {
       Element result_dxyzb6_a1a2a2 = result;
       if (!(ld.getRuntimeModules().isEmpty())) {
         final Element result_dxyzb6_a0a0a1a2a2 = new Element("runtime");
-        List<ModuleReference> runtimeModules = ld.getRuntimeModules();
-        saveDependencyList(result_dxyzb6_a0a0a1a2a2, ListSequence.fromList(runtimeModules).select(new ISelector<ModuleReference, Dependency>() {
+        Set<ModuleReference> runtimeModules = ld.getRuntimeModules();
+        saveDependencyList(result_dxyzb6_a0a0a1a2a2, SetSequence.fromSet(runtimeModules).select(new ISelector<ModuleReference, Dependency>() {
           public Dependency select(ModuleReference it) {
             return new Dependency(it, false);
           }
@@ -139,9 +140,9 @@ public class ModuleDescriptorPersistence {
     }).toListSequence();
   }
 
-  private static void saveDependencyList(Element depElement, List<Dependency> dependencies) {
+  private static void saveDependencyList(Element depElement, Set<Dependency> dependencies) {
     Element result_dxyzb6_a0a4 = depElement;
-    for (Dependency md : ListSequence.fromList(dependencies)) {
+    for (Dependency md : SetSequence.fromSet(dependencies)) {
       final Element result_dxyzb6_a0a0a0a4 = new Element("dependency");
       final String result_dxyzb6_a0a0a0a0a4 = md.getModuleRef().toString();
       result_dxyzb6_a0a0a0a4.setText(result_dxyzb6_a0a0a0a0a4);
@@ -221,9 +222,9 @@ public class ModuleDescriptorPersistence {
     }.invoke();
   }
 
-  public static void saveModelRoots(Element modelsElement, List<ModelRoot> modelRoots, IFile file, Macros macros) {
+  public static void saveModelRoots(Element modelsElement, Set<ModelRoot> modelRoots, IFile file, Macros macros) {
     Element result_dxyzb6_a0a01 = modelsElement;
-    for (ModelRoot root : ListSequence.fromList(modelRoots)) {
+    for (ModelRoot root : SetSequence.fromSet(modelRoots)) {
       final Element result_dxyzb6_a0a0a0a01 = new Element("modelRoot");
       final String result_dxyzb6_a0a0a0a0a01 = macros.shrinkPath((root.getPath() == null ?
         "" :
