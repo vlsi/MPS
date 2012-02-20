@@ -4616,7 +4616,7 @@
                                   </node>
                                 </node>
                                 <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="1238774270606">
-                                  <property name="name" nameId="tpck.1169194664001" value="text" />
+                                  <property name="name" nameId="tpck.1169194664001" value="pattern" />
                                   <node role="type" roleId="tpee.5680397130376446158" type="tpee.StringType" typeId="tpee.1225271177708" id="1238774270607" />
                                 </node>
                                 <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.IfMacro" typeId="tpf8.1118773211870" id="1238774270608">
@@ -4652,7 +4652,7 @@
                                       <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1238774270625">
                                         <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="1238774270594" resolveInfo="getMatchingText" />
                                         <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="1238774270626">
-                                          <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1238774270628" resolveInfo="text" />
+                                          <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1238774270628" resolveInfo="pattern" />
                                         </node>
                                       </node>
                                       <node role="operand" roleId="tpee.1197027771414" type="tpee.ThisExpression" typeId="tpee.1070475354124" id="1238774270627" />
@@ -4660,7 +4660,7 @@
                                   </node>
                                 </node>
                                 <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="1238774270628">
-                                  <property name="name" nameId="tpck.1169194664001" value="text" />
+                                  <property name="name" nameId="tpck.1169194664001" value="pattern" />
                                   <node role="type" roleId="tpee.5680397130376446158" type="tpee.StringType" typeId="tpee.1225271177708" id="1238774270629" />
                                 </node>
                                 <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.IfMacro" typeId="tpf8.1118773211870" id="1238774270630">
@@ -4712,7 +4712,7 @@
                                   </node>
                                 </node>
                                 <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="1238774270654">
-                                  <property name="name" nameId="tpck.1169194664001" value="text" />
+                                  <property name="name" nameId="tpck.1169194664001" value="pattern" />
                                   <node role="type" roleId="tpee.5680397130376446158" type="tpee.StringType" typeId="tpee.1225271177708" id="1238774270655" />
                                 </node>
                                 <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.IfMacro" typeId="tpf8.1118773211870" id="1238774270656">
