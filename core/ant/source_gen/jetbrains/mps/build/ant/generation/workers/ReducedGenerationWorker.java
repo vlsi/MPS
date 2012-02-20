@@ -35,12 +35,15 @@ import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.generator.impl.dependencies.GenerationDependenciesCache;
+import jetbrains.mps.generator.info.GeneratorPathsComponent;
+import jetbrains.mps.generator.info.ForeignPathsProvider;
 import java.io.File;
 import jetbrains.mps.internal.make.runtime.util.DirUtil;
 import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
 
 public class ReducedGenerationWorker extends GeneratorWorker {
   private ReducedGenerationWorker.ModuleOutputPaths myOutputPaths;
+  private ReducedGenerationWorker.MyForeignRootPaths myForeignRootPaths;
 
   public ReducedGenerationWorker(WhatToDo whatToDo) {
     super(whatToDo);
@@ -105,6 +108,10 @@ public class ReducedGenerationWorker extends GeneratorWorker {
         return r.module().getModuleDescriptor().isUseTransientOutput();
       }
     });
+    this.myForeignRootPaths = (useTransientOutput ?
+      new ReducedGenerationWorker.MyForeignRootPaths(Sequence.<String>singleton(outputRoot)) :
+      null
+    );
 
     return new IScriptController.Stub() {
       @Override
@@ -169,6 +176,14 @@ public class ReducedGenerationWorker extends GeneratorWorker {
         );
       }
     });
+    GeneratorPathsComponent.getInstance().registerForeignPathsProvider(new ForeignPathsProvider() {
+      public boolean isForeign(IFile path) {
+        return (myForeignRootPaths != null ?
+          myForeignRootPaths.isForeign(path.getPath()) :
+          false
+        );
+      }
+    });
   }
 
   public static void main(String[] args) {
@@ -176,7 +191,7 @@ public class ReducedGenerationWorker extends GeneratorWorker {
     mpsWorker.workFromMain();
   }
 
-  public static class ModuleOutputPaths {
+  private static class ModuleOutputPaths {
     private String[] sortedOutDirs;
     private String[] sortedTestOutDirs;
     private String[] sortedOutCacheDirs;
@@ -236,6 +251,26 @@ public class ReducedGenerationWorker extends GeneratorWorker {
 
       // not found 
       return null;
+    }
+  }
+
+  private static class MyForeignRootPaths {
+    private String[] rootPaths;
+
+    public MyForeignRootPaths(Iterable<String> foreignRoots) {
+      this.rootPaths = Sequence.fromIterable(foreignRoots).select(new ISelector<String, String>() {
+        public String select(String dir) {
+          return DirUtil.normalizeAsDir(dir);
+        }
+      }).sort(new ISelector<String, Comparable<?>>() {
+        public Comparable<?> select(String dir) {
+          return dir;
+        }
+      }, true).toGenericArray(String.class);
+    }
+
+    public boolean isForeign(String path) {
+      return DirUtil.findPrefixAsDir(path, rootPaths) >= 0;
     }
   }
 }
