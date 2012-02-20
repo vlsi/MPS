@@ -18,7 +18,9 @@ package jetbrains.mps.project.structure.modules;
 import jetbrains.mps.project.structure.model.ModelRoot;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 public class ModuleDescriptor {
   private String myUUID;
@@ -26,23 +28,23 @@ public class ModuleDescriptor {
   private String myTimestamp;
   private boolean myCompileInMPS = true;
 
-  private List<jetbrains.mps.project.structure.model.ModelRoot> myModelRoots;
-  private List<Dependency> myDependencies;
-  private List<ModuleReference> myUsedLanguages;
-  private List<ModuleReference> myUsedDevkits;
-  private List<ModelRoot> myStubModels;
-  private List<String> mySourcePaths;
+  private Set<jetbrains.mps.project.structure.model.ModelRoot> myModelRoots;
+  private Set<Dependency> myDependencies;
+  private Set<ModuleReference> myUsedLanguages;
+  private Set<ModuleReference> myUsedDevkits;
+  private Set<ModelRoot> myStubModels;
+  private Set<String> mySourcePaths;
   private DeploymentDescriptor myDeploymentDescriptor;
   
   private Throwable myLoadException;
 
   public ModuleDescriptor() {
-    myModelRoots = new ArrayList<jetbrains.mps.project.structure.model.ModelRoot>();
-    myDependencies = new ArrayList<Dependency>();
-    myUsedLanguages = new ArrayList<ModuleReference>();
-    myUsedDevkits = new ArrayList<ModuleReference>();
-    myStubModels = new ArrayList<ModelRoot>();
-    mySourcePaths = new ArrayList<String>();
+    myModelRoots = new HashSet<ModelRoot>();
+    myDependencies = new HashSet<Dependency>();
+    myUsedLanguages = new HashSet<ModuleReference>();
+    myUsedDevkits = new HashSet<ModuleReference>();
+    myStubModels = new HashSet<ModelRoot>();
+    mySourcePaths = new HashSet<String>();
   }
 
   public String getUUID() {
@@ -81,27 +83,27 @@ public class ModuleDescriptor {
     myCompileInMPS = compileInMPS;
   }
 
-  public List<ModelRoot> getModelRoots() {
+  public Set<ModelRoot> getModelRoots() {
     return myModelRoots;
   }
 
-  public List<Dependency> getDependencies() {
+  public Set<Dependency> getDependencies() {
     return myDependencies;
   }
 
-  public List<ModuleReference> getUsedLanguages() {
+  public Set<ModuleReference> getUsedLanguages() {
     return myUsedLanguages;
   }
 
-  public List<ModuleReference> getUsedDevkits() {
+  public Set<ModuleReference> getUsedDevkits() {
     return myUsedDevkits;
   }
 
-  public List<ModelRoot> getStubModelEntries() {
+  public Set<ModelRoot> getStubModelEntries() {
     return myStubModels;
   }
   
-  public List<String> getSourcePaths() {
+  public Set<String> getSourcePaths() {
     return mySourcePaths;
   }
 
@@ -131,6 +133,5 @@ public class ModuleDescriptor {
 
   public void setLoadException(Throwable loadException) {
     myLoadException = loadException;
-
   }
 }

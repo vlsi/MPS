@@ -58,14 +58,14 @@ public interface IModule extends ModelOwner {
    *
    * @return
    */
-  List<ModuleReference> getUsedLanguagesReferences();
+  Set<ModuleReference> getUsedLanguagesReferences();
 
   /**
    * Explicitly used devkits
    *
    * @return
    */
-  List<ModuleReference> getUsedDevkitReferences();
+  Set<ModuleReference> getUsedDevkitReferences();
 
   void addDependency(ModuleReference moduleRef, boolean reexport);
 
@@ -81,7 +81,7 @@ public interface IModule extends ModelOwner {
 
   List<SModelDescriptor> getHiddenModelDescriptors();
 
-  List<SModelRoot> getSModelRoots();
+  Set<SModelRoot> getSModelRoots();
 
   String getOutputFor(SModelDescriptor model);
 

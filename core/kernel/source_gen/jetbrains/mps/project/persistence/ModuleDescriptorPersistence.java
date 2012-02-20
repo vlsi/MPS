@@ -13,6 +13,7 @@ import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.project.structure.modules.LanguageDescriptor;
 import jetbrains.mps.project.structure.modules.Dependency;
 import java.util.List;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.project.structure.model.ModelRoot;
 import jetbrains.mps.vfs.IFile;
@@ -85,7 +86,7 @@ public class ModuleDescriptorPersistence {
 
     if (!(descriptor.getUsedLanguages().isEmpty())) {
       final Element result_dxyzb6_a0a2a0a2 = new Element("usedLanguages");
-      for (ModuleReference langRef : ListSequence.fromList(descriptor.getUsedLanguages())) {
+      for (ModuleReference langRef : SetSequence.fromSet(descriptor.getUsedLanguages())) {
         final Element result_dxyzb6_a0a0a0a2a0a2 = new Element("usedLanguage");
         final String result_dxyzb6_a0a0a0a0a2a0a2 = langRef.toString();
         result_dxyzb6_a0a0a0a2a0a2.setText(result_dxyzb6_a0a0a0a0a2a0a2);
@@ -96,7 +97,7 @@ public class ModuleDescriptorPersistence {
 
     if (!(descriptor.getUsedDevkits().isEmpty())) {
       final Element result_dxyzb6_a0a4a0a2 = new Element("usedDevKits");
-      for (ModuleReference dkRef : ListSequence.fromList(descriptor.getUsedDevkits())) {
+      for (ModuleReference dkRef : SetSequence.fromSet(descriptor.getUsedDevkits())) {
         final Element result_dxyzb6_a0a0a0a4a0a2 = new Element("usedDevKit");
         final String result_dxyzb6_a0a0a0a0a4a0a2 = dkRef.toString();
         result_dxyzb6_a0a0a0a4a0a2.setText(result_dxyzb6_a0a0a0a0a4a0a2);

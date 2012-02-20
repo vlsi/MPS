@@ -20,7 +20,9 @@ import jetbrains.mps.project.structure.modules.RefUpdateUtil;
 import jetbrains.mps.smodel.SModelReference;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 public class MappingConfig_ExternalRef extends MappingConfig_AbstractRef {
   private ModuleReference myGenerator;
@@ -61,10 +63,10 @@ public class MappingConfig_ExternalRef extends MappingConfig_AbstractRef {
 
   @Override
   public boolean updateReferences() {
-    List<ModuleReference> list = new ArrayList<ModuleReference>();
-    list.add(myGenerator);
-    boolean result = RefUpdateUtil.updateModuleRefs(list);
-    myGenerator = list.get(0);
+    Set<ModuleReference> set = new HashSet<ModuleReference> ();
+    set.add(myGenerator);
+    boolean result = RefUpdateUtil.updateModuleRefs(set);
+    myGenerator = set.iterator().next();
     if (myMappingConfig != null) {
       result |= myMappingConfig.updateReferences();
     }

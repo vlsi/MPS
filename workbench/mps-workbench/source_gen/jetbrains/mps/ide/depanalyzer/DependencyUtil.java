@@ -193,14 +193,14 @@ public class DependencyUtil {
     ListSequence.fromList(path).removeLastElement();
   }
 
-  private static List<ModuleReference> check_he47wm_b0a0h3a0(LanguageDescriptor checkedDotOperand) {
+  private static Set<ModuleReference> check_he47wm_b0a0h3a0(LanguageDescriptor checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getExtendedLanguages();
     }
     return null;
   }
 
-  private static List<ModuleReference> check_he47wm_b0b0h3a0(LanguageDescriptor checkedDotOperand) {
+  private static Set<ModuleReference> check_he47wm_b0b0h3a0(LanguageDescriptor checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getRuntimeModules();
     }

@@ -22,10 +22,12 @@ import jetbrains.mps.project.MPSProject;
 import com.intellij.openapi.ui.Messages;
 import jetbrains.mps.plugins.projectplugins.ProjectPluginManager;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
-import java.util.List;
+import java.util.Set;
 import jetbrains.mps.project.structure.modules.Dependency;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.List;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.ModelAccess;
 
 public class SafeDeleteModuleDependency_Action extends BaseAction {
@@ -94,12 +96,13 @@ public class SafeDeleteModuleDependency_Action extends BaseAction {
 
   private void removeDependency(final IModule from, final IModule to, final Map<String, Object> _params) {
     final ModuleDescriptor descriptor = from.getModuleDescriptor();
-    List<Dependency> dependencies = descriptor.getDependencies();
-    ListSequence.fromList(dependencies).removeWhere(new IWhereFilter<Dependency>() {
+    Set<Dependency> dependencies = descriptor.getDependencies();
+    List<Dependency> badDeps = SetSequence.fromSet(dependencies).where(new IWhereFilter<Dependency>() {
       public boolean accept(Dependency it) {
         return it.getModuleRef().equals(to.getModuleReference());
       }
-    });
+    }).toListSequence();
+    SetSequence.fromSet(dependencies).removeSequence(ListSequence.fromList(badDeps));
     ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
         // <node> 

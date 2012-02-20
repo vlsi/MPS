@@ -49,7 +49,7 @@ public abstract class AbstractModule implements IModule {
 
   protected IFile myDescriptorFile;
   private ModuleReference myModuleReference;
-  private List<SModelRoot> mySModelRoots = new ArrayList<SModelRoot>();
+  private Set<SModelRoot> mySModelRoots = new HashSet<SModelRoot>();
   private ModuleScope myScope = createScope();
 
   private final Object LOCK = new Object();
@@ -181,25 +181,25 @@ public abstract class AbstractModule implements IModule {
 
   //----languages & devkits
 
-  public List<ModuleReference> getUsedLanguagesReferences() {
+  public Set<ModuleReference> getUsedLanguagesReferences() {
     ModuleDescriptor descriptor = getModuleDescriptor();
-    if (descriptor == null) return new ArrayList<ModuleReference>();
-    return new ArrayList<ModuleReference>(descriptor.getUsedLanguages());
+    if (descriptor == null) return Collections.emptySet();
+    return Collections.unmodifiableSet(descriptor.getUsedLanguages());
   }
 
-  public List<ModuleReference> getUsedDevkitReferences() {
+  public Set<ModuleReference> getUsedDevkitReferences() {
     ModuleDescriptor descriptor = getModuleDescriptor();
-    if (descriptor == null) return new ArrayList<ModuleReference>();
-    return new ArrayList<ModuleReference>(descriptor.getUsedDevkits());
+    if (descriptor == null) return Collections.emptySet();
+    return Collections.unmodifiableSet(descriptor.getUsedDevkits());
   }
 
   //----stubs
 
-  public List<StubPath> getAllStubPaths() {
+  public Set<StubPath> getAllStubPaths() {
     LinkedHashSet<StubPath> result = new LinkedHashSet<StubPath>();
     result.addAll(getStubPaths());
     result.addAll(getOwnStubPaths());
-    return new ArrayList<StubPath>(result);
+    return result;
   }
 
   public List<StubPath> getOwnStubPaths() {
@@ -216,32 +216,32 @@ public abstract class AbstractModule implements IModule {
     return Collections.singletonList(new StubPath(classFolder.getPath(), LanguageID.JAVA_MANAGER));
   }
 
-  public List<StubPath> getStubPaths() {
+  public Set<StubPath> getStubPaths() {
     ModuleDescriptor descriptor = getModuleDescriptor();
-    if (descriptor == null) return Collections.emptyList();
+    if (descriptor == null) return Collections.emptySet();
 
-    List<ModelRoot> stubModelEntries = descriptor.getStubModelEntries();
-    ArrayList<StubPath> result = new ArrayList<StubPath>(stubModelEntries.size());
+    Set<ModelRoot> stubModelEntries = descriptor.getStubModelEntries();
+    HashSet<StubPath> result = new HashSet<StubPath>(stubModelEntries.size());
     for (ModelRoot entry : stubModelEntries) {
       result.add(new StubPath(entry.getPath(), entry.getManager()));
     }
     return result;
   }
 
-  public static List<StubPath> getStubPaths(ModuleDescriptor descriptor) {
+  public static Set<StubPath> getStubPaths(ModuleDescriptor descriptor) {
     if (descriptor != null) {
-      List<ModelRoot> stubModelEntries = descriptor.getStubModelEntries();
-      ArrayList<StubPath> result = new ArrayList<StubPath>(stubModelEntries.size());
+      Set<ModelRoot> stubModelEntries = descriptor.getStubModelEntries();
+      Set<StubPath> result = new HashSet<StubPath>(stubModelEntries.size());
       for (ModelRoot entry : stubModelEntries) {
         result.add(new StubPath(entry.getPath(), entry.getManager()));
       }
       return result;
     }
 
-    return Collections.emptyList();
+    return Collections.emptySet();
   }
 
-  protected List<ModelRoot> getStubModelEntriesToIncludeOrExclude() {
+  protected Set<ModelRoot> getStubModelEntriesToIncludeOrExclude() {
     return getModuleDescriptor().getStubModelEntries();
   }
 
@@ -356,8 +356,8 @@ public abstract class AbstractModule implements IModule {
 
   //----
 
-  public List<SModelRoot> getSModelRoots() {
-    return Collections.unmodifiableList(mySModelRoots);
+  public Set<SModelRoot> getSModelRoots() {
+    return Collections.unmodifiableSet(mySModelRoots);
   }
 
   protected void reloadAfterDescriptorChange() {
@@ -452,7 +452,7 @@ public abstract class AbstractModule implements IModule {
     ModuleDescriptor descriptor = getModuleDescriptor();
     if (descriptor != null) {
       SModelRepository smRepo = SModelRepository.getInstance();
-      List<ModelRoot> roots = descriptor.getModelRoots();
+      Set<ModelRoot> roots = descriptor.getModelRoots();
       for (ModelRoot modelRoot : roots) {
         try {
           SModelRoot root = new SModelRoot(modelRoot);

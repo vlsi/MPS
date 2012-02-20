@@ -43,7 +43,7 @@ import jetbrains.mps.smodel.SModelFqName;
   public List<Language> getVisibleLanguages() {
     Set<Language> result = SetSequence.fromSet(new HashSet<Language>());
     SetSequence.fromSet(result).addSequence(ListSequence.fromList(super.getVisibleLanguages()));
-    for (ModuleReference ref : ListSequence.fromList(myModule.getUsedLanguagesReferences())) {
+    for (ModuleReference ref : SetSequence.fromSet(myModule.getUsedLanguagesReferences())) {
       Language language = MPSModuleRepository.getInstance().getLanguage(ref);
       if (!(SetSequence.fromSet(result).contains(language))) {
         SetSequence.fromSet(result).addElement(language);
