@@ -34,7 +34,7 @@ public class MPSCompilerPaths {
     // Shamelessly copied over from the IDEA sources
 
     @NonNls
-    public static String getCachesOutputPath(IntermediateOutputCompiler compiler, Module module, final boolean forTestSources) {        //noinspection HardCodedStringLiteral
+    public static String getCachesOutputPath(IntermediateOutputCompiler compiler, Module module, final boolean forTestSources) {
         // use the standard IDEA path for the compiler caches and let's hope there's no name collision
         final String cachesPath = new File(
                 CompilerPaths.getCacheStoreDirectory(module.getProject()), CompilerCacheManager.getCompilerIdString(compiler)).getPath();
