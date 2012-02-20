@@ -18,6 +18,7 @@
     <orderEntry type="library" name="ASM" level="project" />
     <orderEntry type="library" name="Beansbinding" level="project" />
     <orderEntry type="library" name="Commons-logging" level="project" />
+    <orderEntry type="library" name="Commons-lang" level="project" />
   </component>
 </module>
 
