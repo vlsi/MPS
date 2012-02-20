@@ -92,6 +92,23 @@ public abstract class BaseModelCache<T> implements CoreComponent {
     }
   }
 
+  @Nullable
+  public T lookup(@NotNull IFile cacheFile) {
+    synchronized (myCache) {
+      if (!cacheFile.exists()) {
+        return null;
+      }
+      SModelDescriptor modelDescriptor = myFilesToModels.get(cacheFile);
+      if (modelDescriptor == null) {
+        return null;
+      }      
+      if (myCache.containsKey(modelDescriptor)) {
+        return myCache.get(modelDescriptor);
+      }
+      return null;
+    }
+  }
+  
   public SModelDescriptor invalidateCacheForFile(IFile file) {
     SModelDescriptor md;
     synchronized (myCache) {

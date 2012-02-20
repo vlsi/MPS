@@ -23,6 +23,7 @@ import jetbrains.mps.generator.cache.XmlBasedModelCache;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
@@ -43,7 +44,7 @@ public class GenerationDependenciesCache extends XmlBasedModelCache<GenerationDe
     return INSTANCE;
   }
 
-  private List<CachesDirLookup> myCachesDirLookups = Collections.synchronizedList(new ArrayList<CachesDirLookup>());
+  private List<CachePathRedirect> myCachePathRedirects = Collections.synchronizedList(new ArrayList<CachePathRedirect>());
 
   public GenerationDependenciesCache(SModelRepository modelRepository) {
     super(modelRepository);
@@ -75,12 +76,12 @@ public class GenerationDependenciesCache extends XmlBasedModelCache<GenerationDe
     return "generated";
   }
 
-  public void registerCacheDirLookup (CachesDirLookup cdl) {
-    myCachesDirLookups.add(cdl);
+  public void registerCachePathRedirect(CachePathRedirect cdl) {
+    myCachePathRedirects.add(cdl);
   }
 
-  public void unregisterCacheDirLookup (CachesDirLookup cdl) {
-    myCachesDirLookups.remove(cdl);
+  public void unregisterCachePathRedirect(CachePathRedirect cdl) {
+    myCachePathRedirects.remove(cdl);
   }
 
   protected Element toXml(GenerationDependencies dependencies) {
@@ -104,16 +105,25 @@ public class GenerationDependenciesCache extends XmlBasedModelCache<GenerationDe
     return md;
   }
 
+  public String findCachesPathRedirect(String cachesPath) {
+    String redir;
+    for (CachePathRedirect cdl: myCachePathRedirects) {
+      if ((redir = cdl.redirectTo(cachesPath)) != null) {
+        return redir;
+      }
+    }
+    return null;
+  }
+  
   @Override
   protected IFile getCachesDirInternal(IModule module, String outputPath) {
-    IFile cachesDir;
-    for (CachesDirLookup cdl: myCachesDirLookups) {
-      if ((cachesDir = cdl.lookupCachesDir(module, outputPath)) != null) return cachesDir;
-    }
-    return super.getCachesDirInternal(module, outputPath);
+    IFile cachesPath = super.getCachesDirInternal(module, outputPath);
+    if (cachesPath == null) { return null; }
+    String redir = findCachesPathRedirect(cachesPath.getPath());
+    return redir != null ? FileSystem.getInstance().getFileByPath(redir) : cachesPath;
   }
 
-  public static interface CachesDirLookup {
-    IFile lookupCachesDir(IModule module, String outputPath);
+  public static interface CachePathRedirect {
+    String redirectTo(String outputPath);
   }
 }

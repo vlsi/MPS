@@ -161,10 +161,10 @@ public class ReducedGenerationWorker extends GeneratorWorker {
   @Override
   protected void setupEnvironment() {
     super.setupEnvironment();
-    GenerationDependenciesCache.getInstance().registerCacheDirLookup(new GenerationDependenciesCache.CachesDirLookup() {
-      public IFile lookupCachesDir(IModule module, String outputPath) {
+    GenerationDependenciesCache.getInstance().registerCachePathRedirect(new GenerationDependenciesCache.CachePathRedirect() {
+      public String redirectTo(String outputPath) {
         return (myOutputPaths != null ?
-          FileSystem.getInstance().getFileByPath(myOutputPaths.toLocalCachePath(outputPath)) :
+          myOutputPaths.toLocalCachePath(outputPath) :
           null
         );
       }
