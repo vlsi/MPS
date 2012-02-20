@@ -25,16 +25,14 @@ import jetbrains.mps.lang.typesystem.runtime.performance.SubtypingManager_Tracer
 import jetbrains.mps.newTypesystem.RuntimeSupportNew;
 import jetbrains.mps.newTypesystem.SubTypingManagerNew;
 import jetbrains.mps.project.AuxilaryRuntimeModel;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelFqName;
-import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.smodel.language.LanguageRegistryListener;
 import jetbrains.mps.smodel.language.LanguageRuntime;
 import jetbrains.mps.typesystem.inference.util.ConcurrentSubtypingCache;
 import jetbrains.mps.typesystem.inference.util.SubtypingCache;
 import jetbrains.mps.util.Pair;
+import jetbrains.mps.util.misc.hash.HashMap;
 import jetbrains.mps.util.performance.IPerformanceTracer;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
@@ -64,6 +62,8 @@ public class TypeChecker implements ApplicationComponent, LanguageRegistryListen
   private SubtypingCache mySubtypingCache = null;
   private SubtypingCache myGlobalSubtypingCache = null;
   private SubtypingCache myGenerationSubTypingCache = null;
+  
+  private Map<SNodePointer, SNode> myGenerationTypesCache;
 
   private Map<SNode, SNode> myComputedTypesForCompletion = null;
 
@@ -212,6 +212,7 @@ public class TypeChecker implements ApplicationComponent, LanguageRegistryListen
 
   public void generationStarted(IPerformanceTracer performanceTracer) {
     myGenerationSubTypingCache = createSubtypingCache();
+    myGenerationTypesCache = new HashMap<SNodePointer, SNode>();
     initTracing(performanceTracer);
     myIsGenerationThread.set(Boolean.TRUE);
     myMainGenerationThread = Thread.currentThread();
@@ -219,6 +220,7 @@ public class TypeChecker implements ApplicationComponent, LanguageRegistryListen
 
   public void generationFinished() {
     myGenerationSubTypingCache = null;
+    myGenerationTypesCache = null;
     disposeTracing();
     myIsGenerationThread.set(Boolean.FALSE);
     myMainGenerationThread = null;
@@ -280,8 +282,21 @@ public class TypeChecker implements ApplicationComponent, LanguageRegistryListen
   @Nullable
   public SNode getTypeOf(final SNode node) {
     if (node == null) return null;
+    if (isGenerationMode()) {
+      return getTypeOfGenerationMode(node);
+    }
     fireNodeTypeAccessed(node);
-    return TypeContextManager.getInstance().getTypeOf(node, isGenerationMode(), myPerformanceTracer);
+    return TypeContextManager.getInstance().getTypeOf(node, false, myPerformanceTracer);
+  }
+  
+  private SNode getTypeOfGenerationMode(final SNode node) {
+    SNodePointer pointer = new SNodePointer(node);
+    SNode type = myGenerationTypesCache.get(pointer);
+    if (type == null) {
+      type = TypeContextManager.getInstance().getTypeOf(node, true, myPerformanceTracer);
+      myGenerationTypesCache.put(pointer, type);
+    }
+    return type;
   }
 
 
