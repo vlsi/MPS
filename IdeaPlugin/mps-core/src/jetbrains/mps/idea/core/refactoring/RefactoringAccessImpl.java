@@ -62,11 +62,11 @@ public class RefactoringAccessImpl extends RefactoringAccess implements Applicat
 
   @Override
   public ModelElementTargetChooser createTargetChooser(Project project, SNode node) {
-    return null;  //To change body of implemented methods use File | Settings | File Templates.
+    throw new UnsupportedOperationException();
   }
 
   @Override
   public ModelElementTargetChooser createTargetChooser(Project project, SModelDescriptor model) {
-    return null;  //To change body of implemented methods use File | Settings | File Templates.
+    throw new UnsupportedOperationException();
   }
 }

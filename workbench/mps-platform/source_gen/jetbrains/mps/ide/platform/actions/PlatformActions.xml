@@ -3,6 +3,9 @@
     <action id="jetbrains.mps.ide.platform.actions.GoToNodeById_Action" class="jetbrains.mps.ide.platform.actions.GoToNodeById_Action">
       <keyboard-shortcut first-keystroke="ctrl G" keymap="$default"/>
     </action>
+    <action id="jetbrains.mps.ide.platform.actions.core.MoveNodes_Action" class="jetbrains.mps.ide.platform.actions.core.MoveNodes_Action">
+      <keyboard-shortcut first-keystroke=" F6" keymap="$default"/>
+    </action>
     <action id="jetbrains.mps.ide.platform.actions.core.Rename_Action" class="jetbrains.mps.ide.platform.actions.core.Rename_Action">
       <keyboard-shortcut first-keystroke="shift F6" keymap="$default"/>
     </action>
@@ -17,6 +20,7 @@
     <group id="jetbrains.mps.ide.platform.actions.core.NodeRefactoringsCore_ActionGroup">
       <reference ref="jetbrains.mps.ide.platform.actions.core.Rename_Action"/>
       <reference ref="jetbrains.mps.ide.platform.actions.core.SafeDelete_Action"/>
+      <reference ref="jetbrains.mps.ide.platform.actions.core.MoveNodes_Action"/>
       <add-to-group group-id="jetbrains.mps.ide.platform.actions.NodeRefactoring_ActionGroup" anchor="last"/>
     </group>
   </actions>

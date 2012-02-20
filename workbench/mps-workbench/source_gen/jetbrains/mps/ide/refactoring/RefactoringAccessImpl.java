@@ -34,11 +34,11 @@ public class RefactoringAccessImpl extends RefactoringAccess implements Applicat
   }
 
   public ModelElementTargetChooser createTargetChooser(Project project, SModelDescriptor model) {
-    return null;
+    return new ModelOrNodeChooser(project, model);
   }
 
   public ModelElementTargetChooser createTargetChooser(Project project, SNode node) {
-    return null;
+    return new ModelOrNodeChooser(project, node);
   }
 
   public RefactoringFacade getRefactoringFacade() {
