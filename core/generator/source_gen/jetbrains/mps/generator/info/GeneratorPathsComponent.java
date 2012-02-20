@@ -4,19 +4,25 @@ package jetbrains.mps.generator.info;
 
 import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.generator.impl.dependencies.GenerationDependenciesCache;
+import java.util.List;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
 import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.generator.impl.dependencies.GenerationDependenciesCache;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.generator.impl.dependencies.GenerationDependencies;
 import jetbrains.mps.generator.impl.dependencies.GenerationRootDependencies;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 
-public class GeneratedFilesInfoComponent implements CoreComponent {
-  private static Logger LOG = Logger.getLogger(GeneratedFilesInfoComponent.class);
-  private static GeneratedFilesInfoComponent INSTANCE;
+public class GeneratorPathsComponent implements CoreComponent {
+  private static Logger LOG = Logger.getLogger(GeneratorPathsComponent.class);
+  private static GeneratorPathsComponent INSTANCE;
 
-  public GeneratedFilesInfoComponent() {
+  private List<ForeignPathsProvider> myForeignPathsProviders = ListSequence.fromList((ListSequence.fromList(new ArrayList<ForeignPathsProvider>()))).asSynchronized();
+
+  public GeneratorPathsComponent() {
   }
 
   public void init() {
@@ -30,6 +36,14 @@ public class GeneratedFilesInfoComponent implements CoreComponent {
     INSTANCE = null;
   }
 
+  public boolean isForeign(final IFile path) {
+    return ListSequence.fromList(myForeignPathsProviders).any(new IWhereFilter<ForeignPathsProvider>() {
+      public boolean accept(ForeignPathsProvider fpp) {
+        return fpp.isForeign(path);
+      }
+    });
+  }
+
   public GeneratedFilesInfo lookupCacheInfo(String cachesOuputPath) {
     String redir = GenerationDependenciesCache.getInstance().findCachesPathRedirect(cachesOuputPath);
     IFile generatedCache = FileSystem.getInstance().getFileByPath((redir != null ?
@@ -38,12 +52,20 @@ public class GeneratedFilesInfoComponent implements CoreComponent {
     )).getDescendant("generated");
     GenerationDependencies gd = GenerationDependenciesCache.getInstance().lookup(generatedCache);
     return (gd != null ?
-      new GeneratedFilesInfoComponent.MyGeneratedCacheInfo(gd) :
+      new GeneratorPathsComponent.MyGeneratedCacheInfo(gd) :
       null
     );
   }
 
-  public static GeneratedFilesInfoComponent getInstance() {
+  public void registerForeignPathsProvider(ForeignPathsProvider provider) {
+    ListSequence.fromList(myForeignPathsProviders).addElement(provider);
+  }
+
+  public void unregisterForeignPathsProvider(ForeignPathsProvider provider) {
+    ListSequence.fromList(myForeignPathsProviders).removeElement(provider);
+  }
+
+  public static GeneratorPathsComponent getInstance() {
     return INSTANCE;
   }
 
