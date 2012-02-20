@@ -49,7 +49,7 @@ public abstract class AbstractModule implements IModule {
 
   protected IFile myDescriptorFile;
   private ModuleReference myModuleReference;
-  private Set<SModelRoot> mySModelRoots = new HashSet<SModelRoot>();
+  private Set<SModelRoot> mySModelRoots = new LinkedHashSet<SModelRoot>();
   private ModuleScope myScope = createScope();
 
   private final Object LOCK = new Object();
