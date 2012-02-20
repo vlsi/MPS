@@ -18,7 +18,6 @@ package jetbrains.mps.generator.impl.cache;
 import jetbrains.mps.generator.TransientModelsProvider.TransientSwapOwner;
 import jetbrains.mps.generator.TransientModelsProvider.TransientSwapSpace;
 import jetbrains.mps.generator.TransientSModel;
-import jetbrains.mps.generator.template.TemplateQueryContext;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.*;
 import org.jetbrains.annotations.NotNull;
@@ -39,7 +38,7 @@ public abstract class FileSwapOwner implements TransientSwapOwner {
 
   private Map<String, File> mySwapSpaces = new ConcurrentHashMap<String, File>();
 
-  abstract protected File getSwapDir ();
+  abstract protected File getSwapDir();
 
   @Override
   public TransientSwapSpace initSwapSpace(String spaceId) {
@@ -53,29 +52,39 @@ public abstract class FileSwapOwner implements TransientSwapOwner {
 
   private TransientSwapSpace primSwapSpace(String spaceId, boolean init) {
     File swapDir = getSwapDir();
-    if (swapDir == null) { LOG.error("No swap directory"); return null; }
+    if (swapDir == null) {
+      LOG.error("No swap directory");
+      return null;
+    }
 
-    File space = new File (swapDir, spaceId);
+    File space = new File(swapDir, spaceId);
     if (space.exists()) {
-      if (!space.isDirectory()) { LOG.error("Swap space is not a directory"); return null; }
+      if (!space.isDirectory()) {
+        LOG.error("Swap space is not a directory");
+        return null;
+      }
 
       if (init) {
         new FileSwapSpace(space).clear();
       }
-    }
-    else {
-      if (!init) { return null; }
+    } else {
+      if (!init) {
+        return null;
+      }
 
-      if (!space.mkdirs()) { LOG.error("Couldn't create swap space directory"); return null; }
+      if (!space.mkdirs()) {
+        LOG.error("Couldn't create swap space directory");
+        return null;
+      }
     }
 
-    return new FileSwapSpace (space);
+    return new FileSwapSpace(space);
   }
 
   public static class FileSwapSpace implements TransientSwapSpace {
     private File mySpaceDir;
 
-    public FileSwapSpace (File dir) {
+    public FileSwapSpace(File dir) {
       mySpaceDir = dir;
     }
 
@@ -84,14 +93,20 @@ public abstract class FileSwapOwner implements TransientSwapOwner {
       if (mySpaceDir == null || !mySpaceDir.exists()) throw new IllegalStateException("no swap dir");
 
       String modelId = model.getSModelReference().getSModelId().toString();
-      if(modelId == null || modelId.isEmpty()) { LOG.error("Bad model id <" + modelId + ">"); return false; }
+      if (modelId == null || modelId.isEmpty()) {
+        LOG.error("Bad model id <" + modelId + ">");
+        return false;
+      }
       modelId = modelId.replaceAll(":", "-");
 
-      File swapFile = new File (mySpaceDir, modelId);
-      if (swapFile.exists() && !swapFile.delete()) { LOG.error("Couldn't delete swap file"); return false; }
+      File swapFile = new File(mySpaceDir, modelId);
+      if (swapFile.exists() && !swapFile.delete()) {
+        LOG.error("Couldn't delete swap file");
+        return false;
+      }
 
       ArrayList<SNode> roots = new ArrayList<SNode>();
-      for (Iterator<SNode> it = model.rootsIterator(); it.hasNext();) {
+      for (Iterator<SNode> it = model.rootsIterator(); it.hasNext(); ) {
         roots.add(it.next());
       }
       ModelOutputStream mos = null;
@@ -100,13 +115,14 @@ public abstract class FileSwapOwner implements TransientSwapOwner {
         mos = new ModelOutputStream(new FileOutputStream(swapFile));
         saveModel(model.getSModelReference(), roots, mos);
       } catch (IOException e) {
-        ioex = e; LOG.error(e);
-      }
-      finally {
+        ioex = e;
+        LOG.error(e);
+      } finally {
         if (mos != null) {
           try {
             mos.close();
-          } catch (IOException ignore) {}
+          } catch (IOException ignore) {
+          }
         }
       }
 
@@ -118,11 +134,15 @@ public abstract class FileSwapOwner implements TransientSwapOwner {
       if (mySpaceDir == null || !mySpaceDir.exists()) throw new IllegalStateException("no swap dir");
 
       String modelId = mref.getSModelId().toString();
-      if(modelId == null || modelId.isEmpty()) { throw new IllegalStateException("bad modelId"); }
+      if (modelId == null || modelId.isEmpty()) {
+        throw new IllegalStateException("bad modelId");
+      }
       modelId = modelId.replaceAll(":", "-");
 
-      File swapFile = new File (mySpaceDir, modelId);
-      if (!swapFile.exists()) { throw new IllegalStateException("no swap file"); }
+      File swapFile = new File(mySpaceDir, modelId);
+      if (!swapFile.exists()) {
+        throw new IllegalStateException("no swap file");
+      }
 
       ModelInputStream mis = null;
       try {
@@ -131,16 +151,17 @@ public abstract class FileSwapOwner implements TransientSwapOwner {
       } catch (IOException e) {
         LOG.error(e);
         throw new RuntimeException(e);
-      }
-      finally {
+      } finally {
         if (mis != null) {
           try {
             mis.close();
-          } catch (IOException ignore) {}
+          } catch (IOException ignore) {
+          }
         }
         if (!swapFile.delete()) {
           LOG.error("Couldn't delete swap file");
-        };
+        }
+        ;
       }
     }
 
@@ -148,7 +169,7 @@ public abstract class FileSwapOwner implements TransientSwapOwner {
     public void clear() {
       if (mySpaceDir == null || !mySpaceDir.exists()) throw new IllegalStateException("no swap dir");
 
-      for (File f: mySpaceDir.listFiles()) {
+      for (File f : mySpaceDir.listFiles()) {
         f.delete();
       }
       mySpaceDir.delete();
@@ -164,7 +185,7 @@ public abstract class FileSwapOwner implements TransientSwapOwner {
       }
 
       List<SNode> roots = new NodesAndUserObjectsReader(modelReference).readNodes(model, is);
-      for (SNode r: roots) {
+      for (SNode r : roots) {
         model.addRoot(r);
       }
 
@@ -257,7 +278,9 @@ public abstract class FileSwapOwner implements TransientSwapOwner {
       for (int i = 0; i < userObjectCount; i += 2) {
         Object key = readUserObject(is, model);
         Object value = readUserObject(is, model);
-        node.putUserObject(key, value);
+        if (key != null && value != null) {
+          node.putUserObject(key, value);
+        }
       }
 
       super.readChildren(model, is, node);
@@ -295,8 +318,9 @@ public abstract class FileSwapOwner implements TransientSwapOwner {
           ObjectInputStream stream = new ObjectInputStream(is);
           try {
             return stream.readObject();
-          } catch (ClassNotFoundException e) {
-            throw new IOException(e);
+          } catch (ClassNotFoundException ignore) {
+            // class could be loaded by the other classloader
+            return null;
           }
       }
       throw new IOException("Could not read user object");
