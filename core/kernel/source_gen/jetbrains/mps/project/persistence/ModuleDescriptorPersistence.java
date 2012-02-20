@@ -16,6 +16,8 @@ import java.util.List;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.Set;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
+import java.util.Collection;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.project.structure.model.ModelRoot;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.util.Macros;
@@ -140,9 +142,9 @@ public class ModuleDescriptorPersistence {
     }).toListSequence();
   }
 
-  private static void saveDependencyList(Element depElement, Set<Dependency> dependencies) {
+  private static void saveDependencyList(Element depElement, Collection<Dependency> dependencies) {
     Element result_dxyzb6_a0a4 = depElement;
-    for (Dependency md : SetSequence.fromSet(dependencies)) {
+    for (Dependency md : Sequence.fromIterable(dependencies)) {
       final Element result_dxyzb6_a0a0a0a4 = new Element("dependency");
       final String result_dxyzb6_a0a0a0a0a4 = md.getModuleRef().toString();
       result_dxyzb6_a0a0a0a4.setText(result_dxyzb6_a0a0a0a0a4);
@@ -243,9 +245,9 @@ public class ModuleDescriptorPersistence {
     }
   }
 
-  public static void saveStubModelEntries(Element modelsElement, List<ModelRoot> modelRoots, IFile file, Macros macros) {
+  public static void saveStubModelEntries(Element modelsElement, Set<ModelRoot> modelRoots, IFile file, Macros macros) {
     Element result_dxyzb6_a0a11 = modelsElement;
-    for (ModelRoot root : ListSequence.fromList(modelRoots)) {
+    for (ModelRoot root : SetSequence.fromSet(modelRoots)) {
       final Element result_dxyzb6_a0a0a0a11 = new Element("stubModelEntry");
       final String result_dxyzb6_a0a0a0a0a11 = macros.shrinkPath((root.getPath() == null ?
         "" :

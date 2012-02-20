@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="dkp0t5f6zpb4iaxmkwq2cd8wzuctq6u">
+<dependencies version="2" modelHash="al84be3pbcte11iv33wq2rxtmrram6m">
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
@@ -150,7 +150,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="GeneratorDescriptorPersistence.java" />
   </source>
-  <source id="842994667883031167" name="LanguageDescriptorPersistence" hash="-52064owhdjtz0dzcek1pdyhzh41kpj9" dependsOnNodes="true">
+  <source id="842994667883031167" name="LanguageDescriptorPersistence" hash="despldscs02xgbfjr76c0mm1pphzacv" dependsOnNodes="true">
     <dep root="5932019537937719012" />
     <dep root="842994667883029789" />
     <dep root="842994667883029870" />
@@ -203,7 +203,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="LanguageDescriptorPersistence.java" />
   </source>
-  <source id="842994667883031742" name="ModuleDescriptorPersistence" hash="bgg2mxsdpvjagbwqanf1fqjn04s460x" dependsOnNodes="true">
+  <source id="842994667883031742" name="ModuleDescriptorPersistence" hash="-1mzz15j1ik4rev09dczioqgva8t7dvp" dependsOnNodes="true">
     <dep root="5932019537937719012" />
     <dep root="842994667883029789" />
     <dep root="842994667883029870" />
