@@ -105,8 +105,8 @@ public class GenerationDependenciesCache extends XmlBasedModelCache<GenerationDe
     return md;
   }
 
-  public String findCachesPathRedirect(String cachesPath) {
-    String redir;
+  public IFile findCachesPathRedirect(IFile cachesPath) {
+    IFile redir;
     for (CachePathRedirect cdl: myCachePathRedirects) {
       if ((redir = cdl.redirectTo(cachesPath)) != null) {
         return redir;
@@ -119,11 +119,11 @@ public class GenerationDependenciesCache extends XmlBasedModelCache<GenerationDe
   protected IFile getCachesDirInternal(IModule module, String outputPath) {
     IFile cachesPath = super.getCachesDirInternal(module, outputPath);
     if (cachesPath == null) { return null; }
-    String redir = findCachesPathRedirect(cachesPath.getPath());
-    return redir != null ? FileSystem.getInstance().getFileByPath(redir) : cachesPath;
+    IFile redir = findCachesPathRedirect(cachesPath);
+    return redir != null ? redir : cachesPath;
   }
 
   public static interface CachePathRedirect {
-    String redirectTo(String outputPath);
+    IFile redirectTo(IFile outputPath);
   }
 }

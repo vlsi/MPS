@@ -154,12 +154,8 @@ public class ReducedGenerationWorker extends GeneratorWorker {
   protected void setupEnvironment() {
     super.setupEnvironment();
     GenerationDependenciesCache.getInstance().registerCachePathRedirect(new GenerationDependenciesCache.CachePathRedirect() {
-      public String redirectTo(String outputPath) {
-        IFile cachesOutputRedirect = myOutputRedirects.getCachesOutputRedirect(outputPath);
-        return (cachesOutputRedirect != null ?
-          cachesOutputRedirect.getPath() :
-          null
-        );
+      public IFile redirectTo(IFile outputPath) {
+        return myOutputRedirects.getCachesOutputRedirect(outputPath.getPath());
       }
     });
     GeneratorPathsComponent.getInstance().registerForeignPathsProvider(new ForeignPathsProvider() {

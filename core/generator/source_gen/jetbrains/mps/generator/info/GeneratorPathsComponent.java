@@ -76,9 +76,9 @@ public class GeneratorPathsComponent implements CoreComponent {
   }
 
   private GeneratorPathsComponent.MyGeneratedCacheInfo lookupCacheInfo(IFile cachesOuputDir) {
-    String redir = GenerationDependenciesCache.getInstance().findCachesPathRedirect(cachesOuputDir.getPath());
+    IFile redir = GenerationDependenciesCache.getInstance().findCachesPathRedirect(cachesOuputDir);
     IFile generatedCache = (redir != null ?
-      FileSystem.getInstance().getFileByPath(redir).getDescendant("generated") :
+      redir.getDescendant("generated") :
       cachesOuputDir
     );
 
