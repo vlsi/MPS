@@ -12,7 +12,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.refactoring.framework.RefactoringUtil;
 import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
-import jetbrains.mps.ide.platform.refactoring.RefactoringFacade;
+import jetbrains.mps.ide.platform.refactoring.RefactoringAccess;
 import jetbrains.mps.nodeEditor.EditorContext;
 import javax.swing.JOptionPane;
 
@@ -63,7 +63,7 @@ public class CommitUtil {
     new Thread() {
       public void run() {
         refactoringContext.setRefactoring(refactoring.value);
-        RefactoringFacade.getInstance().executeInThread(refactoringContext);
+        RefactoringAccess.getInstance().getRefactoringFacade().executeInThread(refactoringContext);
       }
     }.start();
   }

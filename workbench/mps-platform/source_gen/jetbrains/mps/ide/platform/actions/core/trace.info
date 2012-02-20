@@ -28,7 +28,7 @@
     <nodeInfo nodeId="8784230320738943387" fileName="Rename_Action.java" startLine="92" startPosition="11" endLine="93" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="8784230320738943388" fileName="Rename_Action.java" startLine="93" startPosition="0" endLine="94" endPosition="224" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8784230320738943405" fileName="Rename_Action.java" startLine="97" startPosition="34" endLine="98" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8784230320738943409" fileName="Rename_Action.java" startLine="99" startPosition="7" endLine="100" endPosition="314" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8784230320738943409" fileName="Rename_Action.java" startLine="99" startPosition="7" endLine="100" endPosition="337" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8784230320738943353" fileName="Rename_Action.java" startLine="102" startPosition="33" endLine="103" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8784230320738943353" fileName="Rename_Action.java" startLine="48" startPosition="27" endLine="51" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="8784230320738943353" fileName="Rename_Action.java" startLine="48" startPosition="27" endLine="51" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -99,7 +99,7 @@
       <varInfo nodeId="8784230320738943353" varName="_params" />
       <varInfo nodeId="8784230320738943353" varName="event" />
     </scopeInfo>
-    <scopeInfo nodeId="8784230320738943353" fileName="Rename_Action.java" startLine="84" startPosition="9" endLine="100" endPosition="314">
+    <scopeInfo nodeId="8784230320738943353" fileName="Rename_Action.java" startLine="84" startPosition="9" endLine="100" endPosition="337">
       <varInfo nodeId="8784230320738943365" varName="newName" />
     </scopeInfo>
     <scopeInfo nodeId="8784230320738943353" fileName="Rename_Action.java" startLine="83" startPosition="96" endLine="105" endPosition="5" />
@@ -133,7 +133,7 @@
     <nodeInfo nodeId="8784230320738944314" fileName="SafeDelete_Action.java" startLine="61" startPosition="5" endLine="62" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8784230320738944314" fileName="SafeDelete_Action.java" startLine="63" startPosition="65" endLine="64" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8784230320738944314" fileName="SafeDelete_Action.java" startLine="65" startPosition="5" endLine="66" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8784230320738944323" fileName="SafeDelete_Action.java" startLine="70" startPosition="9" endLine="71" endPosition="297" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8784230320738944323" fileName="SafeDelete_Action.java" startLine="70" startPosition="9" endLine="71" endPosition="320" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8784230320738944314" fileName="SafeDelete_Action.java" startLine="73" startPosition="33" endLine="74" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8784230320738944314" fileName="SafeDelete_Action.java" startLine="54" startPosition="57" endLine="56" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="8784230320738944314" fileName="SafeDelete_Action.java" startLine="41" startPosition="27" endLine="44" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -160,7 +160,7 @@
     <scopeInfo nodeId="8784230320738944314" fileName="SafeDelete_Action.java" startLine="50" startPosition="53" endLine="51" endPosition="19" />
     <scopeInfo nodeId="8784230320738944314" fileName="SafeDelete_Action.java" startLine="59" startPosition="59" endLine="60" endPosition="19" />
     <scopeInfo nodeId="8784230320738944314" fileName="SafeDelete_Action.java" startLine="63" startPosition="65" endLine="64" endPosition="19" />
-    <scopeInfo nodeId="8784230320738944314" fileName="SafeDelete_Action.java" startLine="70" startPosition="9" endLine="71" endPosition="297" />
+    <scopeInfo nodeId="8784230320738944314" fileName="SafeDelete_Action.java" startLine="70" startPosition="9" endLine="71" endPosition="320" />
     <scopeInfo nodeId="8784230320738944314" fileName="SafeDelete_Action.java" startLine="73" startPosition="33" endLine="74" endPosition="84" />
     <scopeInfo nodeId="8784230320738944314" fileName="SafeDelete_Action.java" startLine="37" startPosition="7" endLine="39" endPosition="63">
       <varInfo nodeId="8784230320738944314" varName="enabled" />

@@ -16,35 +16,14 @@
 
 package jetbrains.mps.idea.core.refactoring;
 
-import com.intellij.openapi.components.ApplicationComponent;
-import jetbrains.mps.ide.MPSCoreComponents;
 import jetbrains.mps.ide.platform.refactoring.RefactoringFacade;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
-import org.jetbrains.annotations.NotNull;
 
 /**
  * User: shatalin
  * Date: 2/17/12
  */
-public class RefactoringFacadeImpl extends RefactoringFacade implements ApplicationComponent {
-  public RefactoringFacadeImpl(MPSCoreComponents coreComponents) {
-  }
-
-  @Override
-  public void initComponent() {
-    RefactoringFacade.setInstance(this);
-  }
-
-  @Override
-  public void disposeComponent() {
-    RefactoringFacade.setInstance(null);
-  }
-
-  @NotNull
-  @Override
-  public String getComponentName() {
-    return "IDEA Plugin-specific Refactoring Facade implementation";
-  }
+public class RefactoringFacadeImpl extends RefactoringFacade {
 
   @Override
   public void execute(RefactoringContext context) {

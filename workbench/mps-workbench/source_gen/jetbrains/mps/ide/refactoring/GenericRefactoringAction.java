@@ -16,7 +16,7 @@ import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.ide.project.ProjectHelper;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
-import jetbrains.mps.ide.platform.refactoring.RefactoringFacade;
+import jetbrains.mps.ide.platform.refactoring.RefactoringAccess;
 import org.jetbrains.annotations.NotNull;
 import java.util.List;
 import com.intellij.openapi.actionSystem.DataKey;
@@ -67,7 +67,7 @@ public class GenericRefactoringAction extends BaseAction {
     new Thread() {
       public void run() {
         context.setRefactoring(myRefactoring);
-        RefactoringFacade.getInstance().executeInThread(context);
+        RefactoringAccess.getInstance().getRefactoringFacade().executeInThread(context);
       }
     }.start();
   }

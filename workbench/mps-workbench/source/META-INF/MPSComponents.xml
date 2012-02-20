@@ -50,7 +50,7 @@
       <implementation-class>jetbrains.mps.watching.ModelCacheReloader</implementation-class>
     </component>
     <component>
-      <implementation-class>jetbrains.mps.ide.refactoring.RefactoringFacadeImpl</implementation-class>
+      <implementation-class>jetbrains.mps.ide.refactoring.RefactoringAccessImpl</implementation-class>
     </component>
   </application-components>
 

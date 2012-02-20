@@ -41,8 +41,6 @@ import jetbrains.mps.smodel.resources.ModelsToResources;
 import java.util.concurrent.ExecutionException;
 
 public abstract class RefactoringFacade {
-  private static RefactoringFacade ourInstance;
-
   protected Logger myLog = Logger.getLogger(this.getClass());
 
   public RefactoringFacade() {
@@ -217,13 +215,5 @@ public abstract class RefactoringFacade {
 
   private void onGenerationFinished() {
     SNode.setNodeMemberAccessModifier(null);
-  }
-
-  public static RefactoringFacade getInstance() {
-    return ourInstance;
-  }
-
-  protected static void setInstance(RefactoringFacade facade) {
-    ourInstance = facade;
   }
 }

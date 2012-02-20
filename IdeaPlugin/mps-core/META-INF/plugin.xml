@@ -31,7 +31,7 @@
       <implementation-class>jetbrains.mps.idea.core.navigation.NavigationSupportImpl</implementation-class>
     </component>
     <component>
-      <implementation-class>jetbrains.mps.idea.core.refactoring.RefactoringFacadeImpl</implementation-class>
+      <implementation-class>jetbrains.mps.idea.core.refactoring.RefactoringAccessImpl</implementation-class>
     </component>
   </application-components>
 

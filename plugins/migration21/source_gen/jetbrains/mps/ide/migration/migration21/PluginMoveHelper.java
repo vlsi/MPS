@@ -37,7 +37,7 @@ import jetbrains.mps.smodel.SModelFqName;
 import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
 import java.util.Arrays;
-import jetbrains.mps.ide.platform.refactoring.RefactoringFacade;
+import jetbrains.mps.ide.platform.refactoring.RefactoringAccess;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.project.ModuleId;
@@ -180,7 +180,7 @@ public class PluginMoveHelper {
     rc.setLocal(true);
     rc.setDoesGenerateModels(false);
 
-    RefactoringFacade.getInstance().executeSimple(context);
+    RefactoringAccess.getInstance().getRefactoringFacade().executeSimple(context);
 
     // <node> 
 

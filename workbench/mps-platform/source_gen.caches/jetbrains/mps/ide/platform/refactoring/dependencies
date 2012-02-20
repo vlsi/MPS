@@ -1,5 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
+  <dependency className="jetbrains.mps.ide.platform.refactoring.ModelElementTargetChooser" file="ModelElementTargetChooser.java">
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="javax.swing.JComponent" />
+  </dependency>
+  <dependency className="jetbrains.mps.ide.platform.refactoring.RefactoringAccess" file="RefactoringAccess.java">
+    <classNode dependClassName="com.intellij.openapi.project.Project" />
+    <classNode dependClassName="jetbrains.mps.ide.platform.refactoring.ModelElementTargetChooser" />
+    <classNode dependClassName="jetbrains.mps.ide.platform.refactoring.RefactoringFacade" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelDescriptor" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+  </dependency>
   <dependency className="jetbrains.mps.ide.platform.refactoring.RefactoringDialog" file="RefactoringDialog.java">
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="com.intellij.refactoring.RefactoringBundle" />
