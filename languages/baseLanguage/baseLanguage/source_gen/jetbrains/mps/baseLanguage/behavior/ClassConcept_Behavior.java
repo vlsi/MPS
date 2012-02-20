@@ -25,6 +25,9 @@ import java.util.HashSet;
 import java.util.Queue;
 import jetbrains.mps.internal.collections.runtime.QueueSequence;
 import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
+import jetbrains.mps.scope.Scope;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.baseLanguage.scopes.SimpleScope;
 import jetbrains.mps.smodel.structure.BehaviorDescriptor;
 import jetbrains.mps.smodel.structure.ConceptRegistry;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
@@ -220,6 +223,14 @@ public class ClassConcept_Behavior {
       ListSequence.fromList(result).addElement(SLinkOperations.getTarget(obj, "classifier", false));
     }
     return result;
+  }
+
+  public static Scope virtual_getScope_3734116213129936182(SNode thisNode, SNode kind, SNode child) {
+    if (SConceptOperations.isSubConceptOf(kind, "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration")) {
+      return new SimpleScope(SLinkOperations.getTargets(thisNode, "constructor", true));
+      // todo: continue? 
+    }
+    return null;
   }
 
   public static boolean call_isRunnable_7941158526576616766(SNode thisNode) {

@@ -114,7 +114,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 48:
         return new CompiledConceptDescriptor("jetbrains.mps.baseLanguage.structure.CharType", "jetbrains.mps.baseLanguage.structure.PrimitiveType", false, new String[]{"jetbrains.mps.baseLanguage.structure.PrimitiveType"}, new String[]{}, new String[]{});
       case 49:
-        return new CompiledConceptDescriptor("jetbrains.mps.baseLanguage.structure.ClassConcept", "jetbrains.mps.baseLanguage.structure.Classifier", false, new String[]{"jetbrains.mps.baseLanguage.structure.Classifier", "jetbrains.mps.baseLanguage.structure.IBLDeprecatable", "jetbrains.mps.lang.traceable.structure.UnitConcept"}, new String[]{"abstractClass", "isFinal", "isStatic"}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.baseLanguage.structure.ClassConcept", "jetbrains.mps.baseLanguage.structure.Classifier", false, new String[]{"jetbrains.mps.baseLanguage.structure.Classifier", "jetbrains.mps.baseLanguage.structure.IBLDeprecatable", "jetbrains.mps.lang.traceable.structure.UnitConcept", "jetbrains.mps.lang.core.structure.ScopeProvider"}, new String[]{"abstractClass", "isFinal", "isStatic"}, new String[]{});
       case 50:
         return new CompiledConceptDescriptor("jetbrains.mps.baseLanguage.structure.ClassCreator", "jetbrains.mps.baseLanguage.structure.AbstractCreator", false, new String[]{"jetbrains.mps.baseLanguage.structure.AbstractCreator", "jetbrains.mps.baseLanguage.structure.IMethodCall"}, new String[]{}, new String[]{"constructorDeclaration"});
       case 51:
