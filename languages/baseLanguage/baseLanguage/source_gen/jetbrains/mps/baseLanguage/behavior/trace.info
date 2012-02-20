@@ -11,7 +11,7 @@
   <unitInfo fileName="AndExpression_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.AndExpression_BehaviorDescriptor" />
   <unitInfo fileName="AnnotationInstanceExpression_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.AnnotationInstanceExpression_BehaviorDescriptor" />
   <unitInfo fileName="AnnotationInstanceValue_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.AnnotationInstanceValue_BehaviorDescriptor" />
-  <unitInfo fileName="AnnotationInstance_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.AnnotationInstance_BehaviorDescriptor" />
+  <unitInfo fileName="AnnotationInstance_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.AnnotationInstance_BehaviorDescriptor" />
   <unitInfo fileName="AnnotationMethodDeclaration_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.AnnotationMethodDeclaration_BehaviorDescriptor" />
   <unitInfo fileName="Annotation_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.Annotation_BehaviorDescriptor" />
   <unitInfo fileName="AnonymousClassCreator_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.AnonymousClassCreator_BehaviorDescriptor" />
@@ -5857,12 +5857,23 @@
     <unitInfo nodeId="1213877417754" fileName="ClosureParameterReference_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.ClosureParameterReference_Behavior" />
   </root>
   <root nodeId="1213877419060">
-    <nodeInfo nodeId="1213877419060" fileName="AnnotationInstance_Behavior.java" startLine="7" startPosition="42" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
-    <scopeInfo nodeId="1228124415662" fileName="AnnotationInstance_Behavior.java" startLine="8" startPosition="43" endLine="8" endPosition="43" />
-    <scopeInfo nodeId="1213877419060" fileName="AnnotationInstance_Behavior.java" startLine="7" startPosition="42" endLine="10" endPosition="0">
+    <nodeInfo nodeId="8461667031989955113" fileName="AnnotationInstance_Behavior.java" startLine="16" startPosition="118" endLine="17" endPosition="131" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8461667031989955152" fileName="AnnotationInstance_Behavior.java" startLine="18" startPosition="5" endLine="19" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1213877419060" fileName="AnnotationInstance_Behavior.java" startLine="11" startPosition="42" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="8461667031989954589" fileName="AnnotationInstance_Behavior.java" startLine="15" startPosition="101" endLine="18" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1213877419060" fileName="AnnotationInstance_Behavior.java" startLine="14" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getScope_3734116213129936182#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/scope/Scope;" />
+    <scopeInfo nodeId="1228124415662" fileName="AnnotationInstance_Behavior.java" startLine="12" startPosition="43" endLine="12" endPosition="43" />
+    <scopeInfo nodeId="8461667031989954590" fileName="AnnotationInstance_Behavior.java" startLine="16" startPosition="118" endLine="17" endPosition="131" />
+    <scopeInfo nodeId="1213877419060" fileName="AnnotationInstance_Behavior.java" startLine="11" startPosition="42" endLine="14" endPosition="0">
       <varInfo nodeId="1213877419060" varName="thisNode" />
     </scopeInfo>
-    <unitInfo nodeId="1213877419060" fileName="AnnotationInstance_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.AnnotationInstance_Behavior" />
+    <scopeInfo nodeId="8461667031989954574" fileName="AnnotationInstance_Behavior.java" startLine="15" startPosition="101" endLine="19" endPosition="16" />
+    <scopeInfo nodeId="1213877419060" fileName="AnnotationInstance_Behavior.java" startLine="14" startPosition="0" endLine="21" endPosition="0">
+      <varInfo nodeId="8461667031989954577" varName="child" />
+      <varInfo nodeId="8461667031989954575" varName="kind" />
+      <varInfo nodeId="1213877419060" varName="thisNode" />
+    </scopeInfo>
+    <unitInfo nodeId="1213877419060" fileName="AnnotationInstance_Behavior.java" startLine="11" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.AnnotationInstance_Behavior" />
   </root>
   <root nodeId="1213877420728">
     <nodeInfo nodeId="1213877420731" fileName="ByteType_Behavior.java" startLine="18" startPosition="76" endLine="19" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
