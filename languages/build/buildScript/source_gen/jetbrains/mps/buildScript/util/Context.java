@@ -153,6 +153,13 @@ public class Context {
             module.value = getModule(node);
           }
         });
+        if (!(shortPath.startsWith("${"))) {
+          // path is probably relative to solution 
+          if (shortPath.startsWith("/")) {
+            shortPath = shortPath.substring(1);
+          }
+          return module.value.getDescriptorFile().getParent().getDescendant(shortPath).getPath();
+        }
         return MacrosFactory.moduleDescriptor(module.value).expandPath(shortPath, module.value.getDescriptorFile()).replace("\\", "/");
       }
     };
