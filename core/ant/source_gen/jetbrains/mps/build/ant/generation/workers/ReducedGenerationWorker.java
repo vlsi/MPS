@@ -89,10 +89,7 @@ public class ReducedGenerationWorker extends GeneratorWorker {
       }
     });
     this.myOutputRedirects = new ReducedGenerationWorker.MyOutputRedirects(outputRoot, cachesOutputRoot, useTransientOutput);
-    this.myForeignRootPaths = (useTransientOutput ?
-      new ReducedGenerationWorker.MyForeignRootPaths(Sequence.<String>singleton(outputRoot)) :
-      null
-    );
+    this.myForeignRootPaths = new ReducedGenerationWorker.MyForeignRootPaths(myOutputPaths.getOutputPaths());
 
     IScriptController scriptCtl = configureFacets(fileHashes, writtenFiles);
 
@@ -233,6 +230,10 @@ public class ReducedGenerationWorker extends GeneratorWorker {
 
       // not found 
       return null;
+    }
+
+    public Iterable<String> getOutputPaths() {
+      return Sequence.fromIterable(Sequence.fromArray(sortedOutDirs)).concat(Sequence.fromIterable(Sequence.fromArray(sortedTestOutDirs)));
     }
   }
 
