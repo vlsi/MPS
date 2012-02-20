@@ -17,8 +17,8 @@ import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
+import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
@@ -131,7 +131,7 @@ public class DependencyUtil {
   }
 
   private static Iterable<ModuleReference> getReexportDeps(ModuleDescriptor descr) {
-    return ListSequence.fromList(((List<jetbrains.mps.project.structure.modules.Dependency>) descr.getDependencies())).where(new IWhereFilter<jetbrains.mps.project.structure.modules.Dependency>() {
+    return SetSequence.fromSet(((Set<jetbrains.mps.project.structure.modules.Dependency>) descr.getDependencies())).where(new IWhereFilter<jetbrains.mps.project.structure.modules.Dependency>() {
       public boolean accept(jetbrains.mps.project.structure.modules.Dependency dep) {
         return dep.isReexport();
       }
@@ -143,7 +143,7 @@ public class DependencyUtil {
   }
 
   private static Iterable<ModuleReference> getNonreexportDeps(ModuleDescriptor descr) {
-    return ListSequence.fromList(((List<jetbrains.mps.project.structure.modules.Dependency>) descr.getDependencies())).where(new IWhereFilter<jetbrains.mps.project.structure.modules.Dependency>() {
+    return SetSequence.fromSet(((Set<jetbrains.mps.project.structure.modules.Dependency>) descr.getDependencies())).where(new IWhereFilter<jetbrains.mps.project.structure.modules.Dependency>() {
       public boolean accept(jetbrains.mps.project.structure.modules.Dependency dep) {
         return !(dep.isReexport());
       }
