@@ -177,10 +177,10 @@ public class ReducedGenerationWorker extends GeneratorWorker {
       }
     });
     GeneratorPathsComponent.getInstance().registerForeignPathsProvider(new ForeignPathsProvider() {
-      public boolean isForeign(IFile path) {
+      public String belongsToForeignPath(IFile path) {
         return (myForeignRootPaths != null ?
-          myForeignRootPaths.isForeign(path.getPath()) :
-          false
+          myForeignRootPaths.findForeignPrefix(path.getPath()) :
+          null
         );
       }
     });
@@ -269,8 +269,12 @@ public class ReducedGenerationWorker extends GeneratorWorker {
       }, true).toGenericArray(String.class);
     }
 
-    public boolean isForeign(String path) {
-      return DirUtil.findPrefixAsDir(path, rootPaths) >= 0;
+    public String findForeignPrefix(String path) {
+      int idx = DirUtil.findPrefixAsDir(path, rootPaths);
+      return (idx >= 0 ?
+        rootPaths[idx] :
+        null
+      );
     }
   }
 }

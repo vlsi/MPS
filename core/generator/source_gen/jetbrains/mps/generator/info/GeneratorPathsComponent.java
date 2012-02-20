@@ -5,20 +5,25 @@ package jetbrains.mps.generator.info;
 import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.logging.Logger;
 import java.util.List;
+import jetbrains.mps.vfs.IFile;
+import java.util.Collections;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.generator.impl.dependencies.GenerationDependenciesCache;
+import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.internal.make.runtime.util.DirUtil;
+import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
 import jetbrains.mps.vfs.FileSystem;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.generator.impl.dependencies.GenerationDependenciesCache;
 import jetbrains.mps.generator.impl.dependencies.GenerationDependencies;
 import jetbrains.mps.generator.impl.dependencies.GenerationRootDependencies;
-import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 
 public class GeneratorPathsComponent implements CoreComponent {
   private static Logger LOG = Logger.getLogger(GeneratorPathsComponent.class);
   private static GeneratorPathsComponent INSTANCE;
+  private static final List<IFile> EMPTY_LIST = Collections.emptyList();
 
   private List<ForeignPathsProvider> myForeignPathsProviders = ListSequence.fromList((ListSequence.fromList(new ArrayList<ForeignPathsProvider>()))).asSynchronized();
 
@@ -39,17 +44,44 @@ public class GeneratorPathsComponent implements CoreComponent {
   public boolean isForeign(final IFile path) {
     return ListSequence.fromList(myForeignPathsProviders).any(new IWhereFilter<ForeignPathsProvider>() {
       public boolean accept(ForeignPathsProvider fpp) {
-        return fpp.isForeign(path);
+        return fpp.belongsToForeignPath(path) != null;
       }
     });
   }
 
-  public GeneratedFilesInfo lookupCacheInfo(String cachesOuputPath) {
-    String redir = GenerationDependenciesCache.getInstance().findCachesPathRedirect(cachesOuputPath);
-    IFile generatedCache = FileSystem.getInstance().getFileByPath((redir != null ?
-      redir :
-      cachesOuputPath
-    )).getDescendant("generated");
+  public List<IFile> getGeneratedChildren(final IFile path) {
+    String foreignPath = ListSequence.fromList(myForeignPathsProviders).select(new ISelector<ForeignPathsProvider, String>() {
+      public String select(ForeignPathsProvider fpp) {
+        return fpp.belongsToForeignPath(path);
+      }
+    }).findFirst(new IWhereFilter<String>() {
+      public boolean accept(String fp) {
+        return fp != null;
+      }
+    });
+    if (foreignPath == null) {
+      return EMPTY_LIST;
+    }
+    String tail = DirUtil.withoutPrefix(DirUtil.normalize(path.getPath()), foreignPath);
+    final IFile cachesDir = FileGenerationUtil.getCachesDir(FileSystem.getInstance().getFileByPath(foreignPath)).getDescendant(tail);
+    GeneratorPathsComponent.MyGeneratedCacheInfo gci = lookupCacheInfo(cachesDir);
+    return (gci != null ?
+      Sequence.fromIterable(gci.listGenerated()).select(new ISelector<String, IFile>() {
+        public IFile select(String it) {
+          return cachesDir.getDescendant(it);
+        }
+      }).toListSequence() :
+      EMPTY_LIST
+    );
+  }
+
+  private GeneratorPathsComponent.MyGeneratedCacheInfo lookupCacheInfo(IFile cachesOuputDir) {
+    String redir = GenerationDependenciesCache.getInstance().findCachesPathRedirect(cachesOuputDir.getPath());
+    IFile generatedCache = (redir != null ?
+      FileSystem.getInstance().getFileByPath(redir).getDescendant("generated") :
+      cachesOuputDir
+    );
+
     GenerationDependencies gd = GenerationDependenciesCache.getInstance().lookup(generatedCache);
     return (gd != null ?
       new GeneratorPathsComponent.MyGeneratedCacheInfo(gd) :
@@ -69,14 +101,14 @@ public class GeneratorPathsComponent implements CoreComponent {
     return INSTANCE;
   }
 
-  public class MyGeneratedCacheInfo implements GeneratedFilesInfo {
+  public class MyGeneratedCacheInfo {
     private GenerationDependencies myDependencies;
 
     public MyGeneratedCacheInfo(GenerationDependencies gd) {
       this.myDependencies = gd;
     }
 
-    public Iterable<String> listGenerated(IFile dir) {
+    public Iterable<String> listGenerated() {
       Iterable<GenerationRootDependencies> rootDependencies = myDependencies.getRootDependencies();
       return Sequence.fromIterable(rootDependencies).translate(new ITranslator2<GenerationRootDependencies, String>() {
         public Iterable<String> translate(GenerationRootDependencies it) {

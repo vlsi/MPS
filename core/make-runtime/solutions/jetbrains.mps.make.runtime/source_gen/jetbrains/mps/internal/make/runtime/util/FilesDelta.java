@@ -23,6 +23,7 @@ import java.util.Arrays;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
+import jetbrains.mps.generator.info.GeneratorPathsComponent;
 
 public class FilesDelta implements IDelta {
   private static Logger LOG = Logger.getLogger(FilesDelta.class);
@@ -134,7 +135,7 @@ public class FilesDelta implements IDelta {
       String dirpath = DirUtil.normalizeAsDir(dir.getPath());
       int diridx = Arrays.binarySearch(pathsToKeep, dirpath);
 
-      for (Tuples._2<IFile, String> fileAndPath : Sequence.fromIterable(children(dir)).select(new ISelector<IFile, Tuples._2<IFile, String>>() {
+      for (Tuples._2<IFile, String> fileAndPath : Sequence.fromIterable(getChildren(dir)).select(new ISelector<IFile, Tuples._2<IFile, String>>() {
         public Tuples._2<IFile, String> select(IFile f) {
           return MultiTuple.<IFile,String>from(f, DirUtil.normalize(f.getPath()));
         }
@@ -169,8 +170,13 @@ public class FilesDelta implements IDelta {
     return filesToDelete;
   }
 
-  private Iterable<IFile> children(IFile dir) {
-    return (Iterable<IFile>) dir.getChildren();
+  private Iterable<IFile> getChildren(IFile dir) {
+    Iterable<IFile> realChilren = (Iterable<IFile>) dir.getChildren();
+    if (GeneratorPathsComponent.getInstance().isForeign(dir)) {
+      List<IFile> genChildren = GeneratorPathsComponent.getInstance().getGeneratedChildren(dir);
+      return ListSequence.fromList(genChildren).intersect(Sequence.fromIterable(realChilren));
+    }
+    return realChilren;
   }
 
   private FilesDelta copy(FilesDelta that) {
