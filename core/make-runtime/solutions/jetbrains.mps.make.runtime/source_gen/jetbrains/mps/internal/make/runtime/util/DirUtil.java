@@ -32,10 +32,10 @@ public class DirUtil {
     String dir = asDir(straighten(urlToPath(dirPath)));
     int idx = Arrays.binarySearch(sortedPaths, dir);
     int absIdx = (idx < 0 ?
-      -1 - idx :
+      -2 - idx :
       idx
     );
-    if (absIdx < sortedPaths.length && startsWith(dir, sortedPaths[absIdx])) {
+    if (absIdx >= 0 && absIdx < sortedPaths.length && startsWith(dir, sortedPaths[absIdx])) {
       return absIdx;
     }
     return idx;
