@@ -24,8 +24,7 @@ import jetbrains.mps.smodel.LanguageID;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.scope.Scope;
-import jetbrains.mps.smodel.search.SimpleSearchScope;
-import jetbrains.mps.scope.CompositeScope;
+import jetbrains.mps.baseLanguage.scopes.CompositeWithParentScope;
 import jetbrains.mps.smodel.structure.BehaviorDescriptor;
 import jetbrains.mps.smodel.structure.ConceptRegistry;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
@@ -250,15 +249,9 @@ public class Classifier_Behavior {
       while (SNodeOperations.getParent(child) != thisNode) {
         child = SNodeOperations.getParent(child);
       }
-      if (SNodeOperations.isInstanceOf(child, "jetbrains.mps.baseLanguage.structure.ClassifierMember") && ClassifierMember_Behavior.call_isStatic_8986964027630462944(SNodeOperations.cast(child, "jetbrains.mps.baseLanguage.structure.ClassifierMember"))) {
-        return null;
+      if (!(SNodeOperations.isInstanceOf(child, "jetbrains.mps.baseLanguage.structure.ClassifierMember") && ClassifierMember_Behavior.call_isStatic_8986964027630462944(SNodeOperations.cast(child, "jetbrains.mps.baseLanguage.structure.ClassifierMember")))) {
+        return CompositeWithParentScope.from(SLinkOperations.getTargets(thisNode, "typeVariableDeclaration", true), thisNode, kind);
       }
-      Scope currentScope = new ISearchScope.Adapter(new SimpleSearchScope(SLinkOperations.getTargets(thisNode, "typeVariableDeclaration", true)));
-      Scope nextScope = Scope.getScope(Scope.parent(thisNode), thisNode, kind);
-      return (nextScope == null ?
-        currentScope :
-        new CompositeScope(currentScope, nextScope)
-      );
     }
     return null;
   }
