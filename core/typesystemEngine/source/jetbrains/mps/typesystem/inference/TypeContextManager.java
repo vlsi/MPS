@@ -183,6 +183,8 @@ public class TypeContextManager implements ApplicationComponent {
   }
 
   public void removeOwnerForRootNodeContext(final SNode node, final ITypeContextOwner owner) {
+    //if node is already disposed then typeCheckingContext is already removed by listener beforeModelDisposed()
+    if (node.isDisposed()) return;
     synchronized (myLock) {
       ModelAccess.instance().runReadAction(new Runnable() {
         @Override
