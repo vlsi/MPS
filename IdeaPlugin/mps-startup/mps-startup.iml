@@ -21,7 +21,13 @@
           <root url="jar://$APPLICATION_HOME_DIR$/lib/bootstrap.jar!/" />
         </CLASSES>
         <JAVADOC />
-        <SOURCES />
+        <SOURCES>
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/sources.zip!/community/java/debugger/impl/src" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/sources.zip!/community/java/debugger/openapi/src" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/sources.zip!/community/platform/lang-impl/testSrc" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/sources.zip!/community/platform/lang-impl/src" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/sources.zip!/community/platform/lang-api/src" />
+        </SOURCES>
       </library>
     </orderEntry>
   </component>
