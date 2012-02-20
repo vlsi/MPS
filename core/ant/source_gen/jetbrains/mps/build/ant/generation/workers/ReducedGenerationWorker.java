@@ -24,26 +24,27 @@ import jetbrains.mps.smodel.resources.IMResource;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.project.IModule;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.make.script.IScriptController;
 import java.util.concurrent.ExecutionException;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.make.script.IPropertiesPool;
 import jetbrains.mps.make.facet.ITarget;
 import jetbrains.mps.make.resources.IResource;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.generator.impl.dependencies.GenerationDependenciesCache;
 import jetbrains.mps.generator.info.GeneratorPathsComponent;
 import jetbrains.mps.generator.info.ForeignPathsProvider;
 import java.io.File;
 import jetbrains.mps.internal.make.runtime.util.DirUtil;
 import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
+import jetbrains.mps.vfs.FileSystem;
 
 public class ReducedGenerationWorker extends GeneratorWorker {
   private ReducedGenerationWorker.ModuleOutputPaths myOutputPaths;
   private ReducedGenerationWorker.MyForeignRootPaths myForeignRootPaths;
+  private ReducedGenerationWorker.MyOutputRedirects myOutputRedirects;
 
   public ReducedGenerationWorker(WhatToDo whatToDo) {
     super(whatToDo);
@@ -74,14 +75,26 @@ public class ReducedGenerationWorker extends GeneratorWorker {
     final List<String> writtenFiles = ListSequence.fromList(new ArrayList<String>());
     final Map<String, String> fileHashes = MapSequence.fromMap(new HashMap<String, String>());
     final Iterable<IMResource> resources = Sequence.fromIterable(collectResources(ctx, go)).toListSequence();
-
     this.myOutputPaths = new ReducedGenerationWorker.ModuleOutputPaths(Sequence.fromIterable(resources).select(new ISelector<IMResource, IModule>() {
       public IModule select(IMResource r) {
         return r.module();
       }
     }));
 
-    IScriptController scriptCtl = configureFacets(resources, fileHashes, writtenFiles);
+    final String outputRoot = myWhatToDo.getProperty("OUTPUT_ROOT_DIR");
+    final String cachesOutputRoot = myWhatToDo.getProperty("CACHES_OUTPUT_ROOT_DIR");
+    final boolean useTransientOutput = Sequence.fromIterable(resources).any(new IWhereFilter<IMResource>() {
+      public boolean accept(IMResource r) {
+        return r.module().getModuleDescriptor().isUseTransientOutput();
+      }
+    });
+    this.myOutputRedirects = new ReducedGenerationWorker.MyOutputRedirects(outputRoot, cachesOutputRoot, useTransientOutput);
+    this.myForeignRootPaths = (useTransientOutput ?
+      new ReducedGenerationWorker.MyForeignRootPaths(Sequence.<String>singleton(outputRoot)) :
+      null
+    );
+
+    IScriptController scriptCtl = configureFacets(fileHashes, writtenFiles);
 
     try {
       res = bms.make(ms, resources, null, scriptCtl);
@@ -100,19 +113,7 @@ public class ReducedGenerationWorker extends GeneratorWorker {
     }
   }
 
-  private IScriptController configureFacets(final Iterable<IMResource> resources, final Map<String, String> fileHashes, final List<String> writtenFiles) {
-    final String outputRoot = myWhatToDo.getProperty("OUTPUT_ROOT_DIR");
-    final String cachesOutputRoot = myWhatToDo.getProperty("CACHES_OUTPUT_ROOT_DIR");
-    final boolean useTransientOutput = Sequence.fromIterable(resources).any(new IWhereFilter<IMResource>() {
-      public boolean accept(IMResource r) {
-        return r.module().getModuleDescriptor().isUseTransientOutput();
-      }
-    });
-    this.myForeignRootPaths = (useTransientOutput ?
-      new ReducedGenerationWorker.MyForeignRootPaths(Sequence.<String>singleton(outputRoot)) :
-      null
-    );
-
+  private IScriptController configureFacets(final Map<String, String> fileHashes, final List<String> writtenFiles) {
     return new IScriptController.Stub() {
       @Override
       public void setup(IPropertiesPool pp, Iterable<ITarget> toExecute, Iterable<? extends IResource> input) {
@@ -136,23 +137,7 @@ public class ReducedGenerationWorker extends GeneratorWorker {
         Tuples._1<_FunctionTypes._return_P1_E0<? extends IFile, ? super String>> pathToFile = (Tuples._1<_FunctionTypes._return_P1_E0<? extends IFile, ? super String>>) pp.properties(new ITarget.Name("jetbrains.mps.lang.core.Make.make"), Object.class);
         pathToFile._0(new _FunctionTypes._return_P1_E0<IFile, String>() {
           public IFile invoke(String path) {
-            if (useTransientOutput && outputRoot != null) {
-              String localOutPath = myOutputPaths.toLocalPath(path);
-              if (localOutPath != null) {
-                return FileSystem.getInstance().getFileByPath(outputRoot).getDescendant(localOutPath);
-              }
-            }
-
-            // use transient folder for caches always 
-            if (cachesOutputRoot != null) {
-              String localOutCachePath = myOutputPaths.toLocalCachePath(path);
-              if (localOutCachePath != null) {
-                return FileSystem.getInstance().getFileByPath(cachesOutputRoot).getDescendant(localOutCachePath);
-              }
-            }
-
-            // can't convert, return the literal path 
-            return FileSystem.getInstance().getFileByPath(path);
+            return myOutputRedirects.getRedirect(path);
           }
         });
       }
@@ -170,8 +155,9 @@ public class ReducedGenerationWorker extends GeneratorWorker {
     super.setupEnvironment();
     GenerationDependenciesCache.getInstance().registerCachePathRedirect(new GenerationDependenciesCache.CachePathRedirect() {
       public String redirectTo(String outputPath) {
-        return (myOutputPaths != null ?
-          myOutputPaths.toLocalCachePath(outputPath) :
+        IFile cachesOutputRedirect = myOutputRedirects.getCachesOutputRedirect(outputPath);
+        return (cachesOutputRedirect != null ?
+          cachesOutputRedirect.getPath() :
           null
         );
       }
@@ -250,6 +236,55 @@ public class ReducedGenerationWorker extends GeneratorWorker {
       }
 
       // not found 
+      return null;
+    }
+  }
+
+  private class MyOutputRedirects {
+    private String outputRoot;
+    private String cachesOutputRoot;
+    private boolean useTransientOutput;
+
+    public MyOutputRedirects(String outputRoot, String cachesOutputRoot, boolean useTransientOutput) {
+      this.outputRoot = outputRoot;
+      this.cachesOutputRoot = cachesOutputRoot;
+      this.useTransientOutput = useTransientOutput;
+    }
+
+    public IFile getRedirect(String path) {
+      if (useTransientOutput) {
+        IFile outputRedirect = getOutputRedirect(path);
+        if (outputRedirect != null) {
+          return outputRedirect;
+        }
+      }
+      // use transient folder for caches always 
+      IFile cachesOutputRedirect = getCachesOutputRedirect(path);
+      if (cachesOutputRedirect != null) {
+        return cachesOutputRedirect;
+      }
+
+      // can't convert, return the literal path 
+      return FileSystem.getInstance().getFileByPath(path);
+    }
+
+    public IFile getOutputRedirect(String path) {
+      if (outputRoot != null) {
+        String localOutPath = myOutputPaths.toLocalPath(path);
+        if (localOutPath != null) {
+          return FileSystem.getInstance().getFileByPath(outputRoot).getDescendant(localOutPath);
+        }
+      }
+      return null;
+    }
+
+    public IFile getCachesOutputRedirect(String path) {
+      if (cachesOutputRoot != null) {
+        String localOutCachePath = myOutputPaths.toLocalCachePath(path);
+        if (localOutCachePath != null) {
+          return FileSystem.getInstance().getFileByPath(cachesOutputRoot).getDescendant(localOutCachePath);
+        }
+      }
       return null;
     }
   }
