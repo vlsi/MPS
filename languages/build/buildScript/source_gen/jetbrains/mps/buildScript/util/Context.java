@@ -20,6 +20,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.buildScript.behavior.BuildSourcePath_Behavior;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
+import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.MacrosFactory;
@@ -126,6 +127,9 @@ public class Context {
   public _FunctionTypes._return_P1_E0<? extends String, ? super String> shrinkPath(final SNode node) {
     return new _FunctionTypes._return_P1_E0<String, String>() {
       public String invoke(String fullPath) {
+        if (StringUtils.isEmpty(fullPath)) {
+          return "";
+        }
         final Wrappers._T<IModule> module = new Wrappers._T<IModule>();
         ModelAccess.instance().runReadAction(new Runnable() {
           public void run() {
@@ -140,6 +144,9 @@ public class Context {
   public _FunctionTypes._return_P1_E0<? extends String, ? super String> expandPath(final SNode node) {
     return new _FunctionTypes._return_P1_E0<String, String>() {
       public String invoke(String shortPath) {
+        if (shortPath == null) {
+          shortPath = "";
+        }
         final Wrappers._T<IModule> module = new Wrappers._T<IModule>();
         ModelAccess.instance().runReadAction(new Runnable() {
           public void run() {

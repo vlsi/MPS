@@ -29,6 +29,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.SNodeId" />
     <classNode dependClassName="jetbrains.mps.util.MacrosFactory" />
     <classNode dependClassName="jetbrains.mps.vfs.IFile" />
+    <classNode dependClassName="org.apache.commons.lang.StringUtils" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
   </dependency>
