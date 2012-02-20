@@ -80,7 +80,4 @@ public class MpsPositionManager implements PositionManager {
     public ClassPrepareRequest createPrepareRequest(ClassPrepareRequestor classPrepareRequestor, SourcePosition sourcePosition) throws NoDataException {
         throw new NoDataException();
     }
-
-    public void highlight(SNodePointer nodePointer) {
-    }
 }

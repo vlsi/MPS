@@ -99,7 +99,7 @@ public class MpsSourcePosition extends SourcePosition {
 
     @Override
     public int getLine() {
-        return 0;
+        return -1;
     }
 
     @Override
@@ -110,8 +110,6 @@ public class MpsSourcePosition extends SourcePosition {
     @Override
     public Editor openEditor(boolean requestFocus) {
         FileEditorManager.getInstance(myProject).openFile(getRootVirtualFile(), requestFocus);
-        // do we neccessary need to highlight when opening
-        myPositionManager.highlight(myNodePointer);
         return null;
     }
 
