@@ -148,16 +148,13 @@ public abstract class BaseLibraryManager implements BaseComponent, Configurable,
 
   private MyState myState = new MyState();
 
-  public void initComponent() {
+  public void load() {
     LibraryInitializer.getInstance().addContributor(this);
     ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
         LibraryInitializer.getInstance().update(true);
       }
     });
-  }
-
-  public void disposeComponent() {
   }
 
   @NonNls
