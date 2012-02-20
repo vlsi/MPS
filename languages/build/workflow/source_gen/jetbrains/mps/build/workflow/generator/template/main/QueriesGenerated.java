@@ -88,7 +88,8 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_6896005762093597646(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(_context.getNode(), "name") + ".properties";
+    String name = SPropertyOperations.getString(_context.getNode(), "name");
+    return "${ant.file." + name + "}/../" + name + ".properties";
   }
 
   public static Object propertyMacro_GetPropertyValue_2769948622284790870(final IOperationContext operationContext, final PropertyMacroContext _context) {
