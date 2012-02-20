@@ -83,7 +83,7 @@ public class Module_Behavior {
   }
 
   public static List<SNode> call_getModelRootPaths_2739262311775052381(SNode thisNode) {
-    List<SModelRoot> paths = ((AbstractModule) Module_Behavior.call_getModule_1213877515148(thisNode)).getSModelRoots();
+    List<SModelRoot> paths = ListSequence.fromListWithValues(new ArrayList<SModelRoot>(), ((AbstractModule) Module_Behavior.call_getModule_1213877515148(thisNode)).getSModelRoots());
     if (Module_Behavior.call_getModule_1213877515148(thisNode) instanceof Language) {
       paths = ListSequence.fromListWithValues(new ArrayList<SModelRoot>(), paths);
       ListSequence.fromList(paths).addSequence(Sequence.fromIterable(((Iterable<Generator>) ((Language) Module_Behavior.call_getModule_1213877515148(thisNode)).getGenerators())).translate(new ITranslator2<Generator, SModelRoot>() {
