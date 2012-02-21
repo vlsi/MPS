@@ -391,9 +391,6 @@
     <node type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="1233920947404">
       <link role="concept" roleId="1i04.1225194240799" targetNodeId="tpee.1233920926773" resolveInfo="TypeAnnotable" />
     </node>
-    <node type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="1236698153937">
-      <link role="concept" roleId="1i04.1225194240799" targetNodeId="tpee.1236694799694" resolveInfo="VarVariableReference" />
-    </node>
     <node type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="1237545930913">
       <link role="concept" roleId="1i04.1225194240799" targetNodeId="tpee.1237545921771" resolveInfo="IContainsStatementList" />
     </node>
@@ -25039,24 +25036,6 @@
     </node>
     <node role="constructor" roleId="1i04.1225194240801" type="1i04.ConceptConstructorDeclaration" typeId="1i04.1225194413805" id="1233920947405">
       <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="1233920947406" />
-    </node>
-  </root>
-  <root id="1236698153937">
-    <node role="method" roleId="1i04.1225194240805" type="1i04.ConceptMethodDeclaration" typeId="1i04.1225194472830" id="1236698158633">
-      <property name="name" nameId="tpck.1169194664001" value="isLValue" />
-      <link role="overriddenMethod" roleId="1i04.1225194472831" targetNodeId="1213877519786" resolveInfo="isLValue" />
-      <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="1236698158635">
-        <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="1236698217763">
-          <node role="expression" roleId="tpee.1068581517676" type="tpee.BooleanConstant" typeId="tpee.1068580123137" id="1236698219703">
-            <property name="value" nameId="tpee.1068580123138" value="true" />
-          </node>
-        </node>
-      </node>
-      <node role="returnType" roleId="tpee.1068580123133" type="tpee.BooleanType" typeId="tpee.1070534644030" id="1236698214706" />
-      <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1236698242784" />
-    </node>
-    <node role="constructor" roleId="1i04.1225194240801" type="1i04.ConceptConstructorDeclaration" typeId="1i04.1225194413805" id="1236698153938">
-      <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="1236698153939" />
     </node>
   </root>
   <root id="1237545930913">
