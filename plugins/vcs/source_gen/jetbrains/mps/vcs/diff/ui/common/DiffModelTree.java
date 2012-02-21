@@ -123,8 +123,6 @@ public abstract class DiffModelTree extends SimpleTree implements DataProvider {
       public void run() {
         setModel(new DefaultTreeModel(rebuild()));
         setRootVisible(true);
-        // TODO ? 
-        // <node> 
         TreeUtil.expandAll(DiffModelTree.this);
       }
     });
