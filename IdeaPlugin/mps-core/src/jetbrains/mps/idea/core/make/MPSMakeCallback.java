@@ -28,7 +28,9 @@ public class MPSMakeCallback {
     public void makeFinished () {}
 
     public void fileWritten (String path) {}
-    
+
+    public void fileDeleted (String path) {}
+
     public void error(String text) {}
 
     public void warning(String text) {}

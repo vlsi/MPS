@@ -86,6 +86,12 @@ public class MPSMakeLauncher {
             }
 
             @Override
+            public void reportDeletedFile(String file) {
+              LOG.debug("deleted file: " + file);
+              callback.fileDeleted(file);
+            }
+
+            @Override
             public void error(String text) {
                 LOG.debug("error: " + text);
                 callback.error(text);
@@ -239,6 +245,7 @@ public class MPSMakeLauncher {
 
     public abstract static class TextEventProcessor {
         public static final String WRITTEN = "##WRITTEN##";
+        public static final String DELETED = "##DELETED##";
         private Project myProject;
         private String myPrefix;
 
@@ -253,6 +260,8 @@ public class MPSMakeLauncher {
                 String line = s.nextLine();
                 if (line.indexOf(WRITTEN) == 0) {
                     reportWrittenFile(line.substring(WRITTEN.length()));
+                }else if (line.indexOf(DELETED) == 0) {
+                  reportDeletedFile(line.substring(DELETED.length()));
                 } else {
                     info(myPrefix + " - " + line);
                 }
@@ -267,6 +276,8 @@ public class MPSMakeLauncher {
         }
 
         public abstract void reportWrittenFile(String file);
+
+        public abstract void reportDeletedFile(String file);
 
         public abstract void error(String text);
 

@@ -93,6 +93,11 @@ public class MainMakeTests extends AbstractMakeTest {
             }
 
             @Override
+            public void fileDeleted(String path) {
+
+            }
+
+            @Override
             public void error(String text) {
                 errors.add(text);
             }

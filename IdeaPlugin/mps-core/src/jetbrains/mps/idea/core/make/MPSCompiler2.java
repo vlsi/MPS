@@ -194,6 +194,7 @@ public class MPSCompiler2 implements SourceGeneratingCompiler{
         }
 
         final List<File> writtenFiles = new ArrayList<File>();
+        final List<File> deletedFiles = new ArrayList<File>();
         MPSMakeLauncher gl = new MPSMakeLauncher(makeConfiguration, myProject);
         gl.validate();
         if (gl.isValid()) {
@@ -201,6 +202,11 @@ public class MPSCompiler2 implements SourceGeneratingCompiler{
                 @Override
                 public void fileWritten(String path) {
                     writtenFiles.add(new File(path));
+                }
+
+                @Override
+                public void fileDeleted(String path) {
+                    deletedFiles.add(new File(path));
                 }
 
                 @Override
@@ -223,6 +229,9 @@ public class MPSCompiler2 implements SourceGeneratingCompiler{
         }
 
         for (File file: writtenFiles) {
+            filesToRefresh.add(file);
+        }
+        for (File file: deletedFiles) {
             filesToRefresh.add(file);
         }
     }

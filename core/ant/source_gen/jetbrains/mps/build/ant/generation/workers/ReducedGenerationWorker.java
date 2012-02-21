@@ -14,17 +14,17 @@ import jetbrains.mps.make.MakeSession;
 import jetbrains.mps.make.script.IScript;
 import jetbrains.mps.make.script.ScriptBuilder;
 import jetbrains.mps.make.facet.IFacet;
+import jetbrains.mps.smodel.resources.IMResource;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.project.IModule;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
-import jetbrains.mps.smodel.resources.IMResource;
-import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.internal.collections.runtime.ISelector;
-import jetbrains.mps.project.IModule;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.make.script.IScriptController;
 import java.util.concurrent.ExecutionException;
 import jetbrains.mps.generator.IModifiableGenerationSettings;
@@ -76,8 +76,6 @@ public class ReducedGenerationWorker extends GeneratorWorker {
       }
     };
 
-    final List<String> writtenFiles = ListSequence.fromList(new ArrayList<String>());
-    final Map<String, String> fileHashes = MapSequence.fromMap(new HashMap<String, String>());
     final Iterable<IMResource> resources = Sequence.fromIterable(collectResources(ctx, go)).toListSequence();
     this.myOutputPaths = new ReducedGenerationWorker.ModuleOutputPaths(Sequence.fromIterable(resources).select(new ISelector<IMResource, IModule>() {
       public IModule select(IMResource r) {
@@ -95,17 +93,21 @@ public class ReducedGenerationWorker extends GeneratorWorker {
     this.myOutputRedirects = new ReducedGenerationWorker.MyOutputRedirects(outputRoot, cachesOutputRoot, useTransientOutput);
     this.myForeignRootPaths = new ReducedGenerationWorker.MyForeignRootPaths(myOutputPaths.getOutputPaths());
 
-    IScriptController scriptCtl = configureFacets(fileHashes, writtenFiles);
+    final List<String> writtenFiles = ListSequence.fromList(new ArrayList<String>());
+    final List<String> deletedFiles = ListSequence.fromList(new ArrayList<String>());
+    final Map<String, String> fileHashes = MapSequence.fromMap(new HashMap<String, String>());
+    IScriptController scriptCtl = configureFacets(fileHashes, writtenFiles, deletedFiles);
 
     try {
       res = bms.make(ms, resources, null, scriptCtl);
       if (!(res.get().isSucessful())) {
         myErrors.add("Make was not successful");
       }
-      if (writtenFiles != null) {
-        for (String f : writtenFiles) {
-          System.out.println("##WRITTEN##" + f);
-        }
+      for (String f : writtenFiles) {
+        System.out.println("##WRITTEN##" + f);
+      }
+      for (String f : deletedFiles) {
+        System.out.println("##DELETED##" + f);
       }
     } catch (InterruptedException e) {
       myErrors.add(e.toString());
@@ -114,7 +116,7 @@ public class ReducedGenerationWorker extends GeneratorWorker {
     }
   }
 
-  private IScriptController configureFacets(final Map<String, String> fileHashes, final List<String> writtenFiles) {
+  private IScriptController configureFacets(final Map<String, String> fileHashes, final List<String> writtenFiles, final List<String> deletedFiles) {
     IModifiableGenerationSettings settings = GenerationSettingsProvider.getInstance().getGenerationSettings();
     settings.setIncremental(true);
     settings.setIncrementalUseCache(false);
@@ -139,8 +141,9 @@ public class ReducedGenerationWorker extends GeneratorWorker {
         Tuples._2<Boolean, Boolean> compileProps = (Tuples._2<Boolean, Boolean>) pp.properties(new ITarget.Name("jetbrains.mps.baseLanguage.JavaCompile.compile"), Object.class);
         compileProps._1(true);
 
-        Tuples._1<List<String>> report = (Tuples._1<List<String>>) pp.properties(new ITarget.Name("jetbrains.mps.build.reduced.ReportFiles.report"), Object.class);
+        Tuples._2<List<String>, List<String>> report = (Tuples._2<List<String>, List<String>>) pp.properties(new ITarget.Name("jetbrains.mps.build.reduced.ReportFiles.report"), Object.class);
         report._0(writtenFiles);
+        report._1(deletedFiles);
 
         Tuples._1<Map<String, String>> hashes = (Tuples._1<Map<String, String>>) pp.properties(new ITarget.Name("jetbrains.mps.build.reduced.CollectHashes.collect"), Object.class);
         hashes._0(fileHashes);
