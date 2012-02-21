@@ -10436,8 +10436,8 @@
             <node role="expression" roleId="tpee.1068580123156" type="tpee.LocalInstanceMethodCall" typeId="tpee.3066917033203108594" id="4652592318748339347">
               <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="8694267608197375950" resolveInfo="setIcon" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="4652592318748339348">
-                <link role="classifier" roleId="tpee.1144433057691" targetNodeId="gcfa.~Icons" resolveInfo="Icons" />
-                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="gcfa.~Icons%dPROPERTIES_ICON" resolveInfo="PROPERTIES_ICON" />
+                <link role="classifier" roleId="tpee.1144433057691" targetNodeId="amqn.~IdeIcons" resolveInfo="IdeIcons" />
+                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="amqn.~IdeIcons%dPROPERTIES_ICON" resolveInfo="PROPERTIES_ICON" />
               </node>
             </node>
           </node>
@@ -13708,12 +13708,9 @@
       </node>
       <node role="initializer" roleId="tpee.1068431790190" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="4652592318748340444">
         <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="xkfd.~IconLoader" resolveInfo="IconLoader" />
-        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="xkfd.~IconLoader%dgetIcon(java%dlang%dString,java%dlang%dClass)%cjavax%dswing%dIcon" resolveInfo="getIcon" />
+        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="xkfd.~IconLoader%dgetIcon(java%dlang%dString)%cjavax%dswing%dIcon" resolveInfo="getIcon" />
         <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="4652592318748340445">
           <property name="value" nameId="tpee.1070475926801" value="/actions/prevfile.png" />
-        </node>
-        <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ClassifierClassExpression" typeId="tpee.1116615150612" id="4652592318748340446">
-          <link role="classifier" roleId="tpee.1116615189566" targetNodeId="gcfa.~Icons" resolveInfo="Icons" />
         </node>
       </node>
     </node>
@@ -13726,12 +13723,9 @@
       </node>
       <node role="initializer" roleId="tpee.1068431790190" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="4652592318748340450">
         <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="xkfd.~IconLoader" resolveInfo="IconLoader" />
-        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="xkfd.~IconLoader%dgetIcon(java%dlang%dString,java%dlang%dClass)%cjavax%dswing%dIcon" resolveInfo="getIcon" />
+        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="xkfd.~IconLoader%dgetIcon(java%dlang%dString)%cjavax%dswing%dIcon" resolveInfo="getIcon" />
         <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="4652592318748340451">
           <property name="value" nameId="tpee.1070475926801" value="/actions/nextfile.png" />
-        </node>
-        <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ClassifierClassExpression" typeId="tpee.1116615150612" id="4652592318748340452">
-          <link role="classifier" roleId="tpee.1116615189566" targetNodeId="gcfa.~Icons" resolveInfo="Icons" />
         </node>
       </node>
     </node>
@@ -13823,13 +13817,10 @@
         <link role="classifier" roleId="tpee.1107535924139" targetNodeId="dbrf.~Icon" resolveInfo="Icon" />
       </node>
       <node role="initializer" roleId="tpee.1068431790190" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="4652592318748340565">
-        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="xkfd.~IconLoader%dgetIcon(java%dlang%dString,java%dlang%dClass)%cjavax%dswing%dIcon" resolveInfo="getIcon" />
         <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="xkfd.~IconLoader" resolveInfo="IconLoader" />
+        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="xkfd.~IconLoader%dgetIcon(java%dlang%dString)%cjavax%dswing%dIcon" resolveInfo="getIcon" />
         <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="4652592318748340566">
           <property name="value" nameId="tpee.1070475926801" value="/actions/previousOccurence.png" />
-        </node>
-        <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ClassifierClassExpression" typeId="tpee.1116615150612" id="4652592318748340567">
-          <link role="classifier" roleId="tpee.1116615189566" targetNodeId="gcfa.~Icons" resolveInfo="Icons" />
         </node>
       </node>
     </node>
@@ -13841,13 +13832,10 @@
         <link role="classifier" roleId="tpee.1107535924139" targetNodeId="dbrf.~Icon" resolveInfo="Icon" />
       </node>
       <node role="initializer" roleId="tpee.1068431790190" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="4652592318748340571">
-        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="xkfd.~IconLoader%dgetIcon(java%dlang%dString,java%dlang%dClass)%cjavax%dswing%dIcon" resolveInfo="getIcon" />
         <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="xkfd.~IconLoader" resolveInfo="IconLoader" />
+        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="xkfd.~IconLoader%dgetIcon(java%dlang%dString)%cjavax%dswing%dIcon" resolveInfo="getIcon" />
         <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="4652592318748340572">
           <property name="value" nameId="tpee.1070475926801" value="/actions/nextOccurence.png" />
-        </node>
-        <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ClassifierClassExpression" typeId="tpee.1116615150612" id="4652592318748340573">
-          <link role="classifier" roleId="tpee.1116615189566" targetNodeId="gcfa.~Icons" resolveInfo="Icons" />
         </node>
       </node>
     </node>
@@ -17222,6 +17210,21 @@
     </node>
   </root>
   <root id="8733553229778921962">
+    <node role="staticField" roleId="tpee.1128555889557" type="tpee.StaticFieldDeclaration" typeId="tpee.1070462154015" id="4435250098740535444">
+      <property name="name" nameId="tpck.1169194664001" value="TEXT_ICON" />
+      <property name="isFinal" nameId="tpee.1176718929932" value="true" />
+      <node role="visibility" roleId="tpee.1178549979242" type="tpee.PrivateVisibility" typeId="tpee.1146644623116" id="4435250098740535445" />
+      <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="4435250098740535446">
+        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="dbrf.~Icon" resolveInfo="Icon" />
+      </node>
+      <node role="initializer" roleId="tpee.1068431790190" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="4435250098740535447">
+        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="xkfd.~IconLoader%dgetIcon(java%dlang%dString)%cjavax%dswing%dIcon" resolveInfo="getIcon" />
+        <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="xkfd.~IconLoader" resolveInfo="IconLoader" />
+        <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="4435250098740535448">
+          <property name="value" nameId="tpee.1070475926801" value="/fileTypes/text.png" />
+        </node>
+      </node>
+    </node>
     <node role="field" roleId="tpee.1068390468199" type="tpee.FieldDeclaration" typeId="tpee.1068390468200" id="8733553229778921963">
       <property name="name" nameId="tpck.1169194664001" value="myDiffRequest" />
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PrivateVisibility" typeId="tpee.1146644623116" id="8733553229778921964" />
@@ -17259,9 +17262,8 @@
           <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="8733553229778921980">
             <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8733553229778922002" resolveInfo="description" />
           </node>
-          <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="8733553229778921981">
-            <link role="classifier" roleId="tpee.1144433057691" targetNodeId="gcfa.~Icons" resolveInfo="Icons" />
-            <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="gcfa.~Icons%dTEXT_ICON" resolveInfo="TEXT_ICON" />
+          <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalStaticFieldReference" typeId="tpee.1172008963197" id="4435250098740535451">
+            <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4435250098740535444" resolveInfo="TEXT_ICON" />
           </node>
         </node>
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="8733553229778921982">

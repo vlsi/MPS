@@ -4,7 +4,6 @@ package jetbrains.mps.vcs.diff.ui;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import com.intellij.openapi.util.IconLoader;
-import jetbrains.mps.ide.projectPane.Icons;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.vcs.diff.changes.ModelChange;
@@ -20,7 +19,7 @@ public abstract class RevertRootsAction extends BaseAction {
   private ModelDifferenceDialog myModelDifferenceDialog;
 
   public RevertRootsAction(ModelDifferenceDialog modelDifferenceDialog) {
-    super("Revert Root", null, IconLoader.getIcon("/actions/rollback.png", Icons.class));
+    super("Revert Root", null, IconLoader.getIcon("/actions/rollback.png"));
     myModelDifferenceDialog = modelDifferenceDialog;
   }
 

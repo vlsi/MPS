@@ -4,7 +4,6 @@ package jetbrains.mps.vcs.diff.ui.common;
 
 import javax.swing.Icon;
 import com.intellij.openapi.util.IconLoader;
-import jetbrains.mps.ide.projectPane.Icons;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import java.util.List;
@@ -34,8 +33,8 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 
 public class NextPreviousTraverser {
-  private static final Icon PREVIOUS_ICON = IconLoader.getIcon("/actions/previousOccurence.png", Icons.class);
-  private static final Icon NEXT_ICON = IconLoader.getIcon("/actions/nextOccurence.png", Icons.class);
+  private static final Icon PREVIOUS_ICON = IconLoader.getIcon("/actions/previousOccurence.png");
+  private static final Icon NEXT_ICON = IconLoader.getIcon("/actions/nextOccurence.png");
   protected static Log log = LogFactory.getLog(NextPreviousTraverser.class);
 
   private List<ChangeGroupLayout> myChangeGroupLayouts;

@@ -38,8 +38,6 @@ public class Icons extends IdeIcons {
   public static final Icon MODULE_DEPENDENCIES_ICON = new ImageIcon(Icons.class.getResource("nodes/moduleDependencies.png"));
   public static final Icon TRANSIENT_MODELS_ICON = new ImageIcon(Icons.class.getResource("nodes/transientModels.png"));
 
-  public static final Icon PROPERTIES_ICON = new ImageIcon(Icons.class.getResource("nodes/properties.png"));
-
   public static final Icon SVN_PROPERTIES_ICON = new ImageIcon(Icons.class.getResource("nodes/svn.png"));
 
   public static final Icon DELETE_MODEL_ICON = new ImageIcon(Icons.class.getResource("nodes/deleteModel.png"));

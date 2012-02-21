@@ -4,7 +4,6 @@ package jetbrains.mps.vcs.diff.ui.common;
 
 import javax.swing.Icon;
 import com.intellij.openapi.util.IconLoader;
-import jetbrains.mps.ide.projectPane.Icons;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.SNodeId;
 import org.jetbrains.annotations.NotNull;
@@ -13,8 +12,8 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 
 public abstract class GoToNeighbourRootActions {
-  private static final Icon PREVIOUS_ROOT_ICON = IconLoader.getIcon("/actions/prevfile.png", Icons.class);
-  private static final Icon NEXT_ROOT_ICON = IconLoader.getIcon("/actions/nextfile.png", Icons.class);
+  private static final Icon PREVIOUS_ROOT_ICON = IconLoader.getIcon("/actions/prevfile.png");
+  private static final Icon NEXT_ROOT_ICON = IconLoader.getIcon("/actions/nextfile.png");
 
   public GoToNeighbourRootActions() {
   }

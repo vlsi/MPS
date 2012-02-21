@@ -5,7 +5,6 @@ package jetbrains.mps.vcs.diff.ui.merge;
 import com.intellij.openapi.ui.DialogWrapper;
 import javax.swing.Icon;
 import com.intellij.openapi.util.IconLoader;
-import jetbrains.mps.ide.projectPane.Icons;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.vcs.diff.merge.MergeSession;
 import jetbrains.mps.vcs.diff.merge.MergeSessionState;
@@ -61,8 +60,8 @@ import jetbrains.mps.vcs.diff.changes.DeleteRootChange;
 import jetbrains.mps.vcs.diff.ui.common.ChangeColors;
 
 public class MergeModelsDialog extends DialogWrapper {
-  public static final Icon APPLY_NON_CONFLICTS = IconLoader.getIcon("/diff/applyNotConflicts.png", Icons.class);
-  public static final Icon RESET = IconLoader.getIcon("/actions/reset.png", Icons.class);
+  public static final Icon APPLY_NON_CONFLICTS = IconLoader.getIcon("/diff/applyNotConflicts.png");
+  public static final Icon RESET = IconLoader.getIcon("/actions/reset.png");
 
   private Project myProject;
   private MergeSession myMergeSession;

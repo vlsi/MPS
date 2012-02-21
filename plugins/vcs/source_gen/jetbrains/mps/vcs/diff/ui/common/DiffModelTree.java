@@ -38,7 +38,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.ide.icons.IconManager;
-import jetbrains.mps.ide.projectPane.Icons;
 import javax.swing.tree.DefaultMutableTreeNode;
 import com.intellij.ui.SimpleTextAttributes;
 import java.awt.Color;
@@ -263,7 +262,7 @@ public abstract class DiffModelTree extends SimpleTree implements DataProvider {
     @Override
     protected void doUpdatePresentation() {
       setText("Model Properties");
-      setIcon(Icons.PROPERTIES_ICON);
+      setIcon(IdeIcons.PROPERTIES_ICON);
       updateRootCustomPresentation(this);
     }
   }
