@@ -10,14 +10,13 @@ import java.util.HashMap;
 import jetbrains.mps.smodel.runtime.base.BaseReferenceConstraintsDescriptor;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.runtime.ReferenceScopeProvider;
-import jetbrains.mps.smodel.runtime.base.BaseScopeProvider;
-import jetbrains.mps.scope.Scope;
+import jetbrains.mps.smodel.runtime.base.BaseReferenceScopeProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.baseLanguage.search.LocalVariablesScope;
 
 public class LocalVariableReference_Constraints extends BaseConstraintsDescriptor {
-  private static SNodePointer breakingNode_obnwhp_a0a0a0a0a1a0b0a1a0 = new SNodePointer("r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)", "9165170089438442977");
+  private static SNodePointer breakingNode_obnwhp_a0a1a0a0a1a0b0a1a0 = new SNodePointer("r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)", "1443109375331639215");
 
   public LocalVariableReference_Constraints() {
     super("jetbrains.mps.baseLanguage.structure.LocalVariableReference");
@@ -35,15 +34,15 @@ public class LocalVariableReference_Constraints extends BaseConstraintsDescripto
       @Nullable
       @Override
       public ReferenceScopeProvider getScopeProvider() {
-        return new BaseScopeProvider() {
+        return new BaseReferenceScopeProvider() {
           @Override
-          public SNodePointer getSearchScopeValidatorNode() {
-            return breakingNode_obnwhp_a0a0a0a0a1a0b0a1a0;
+          public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
+            return new LocalVariablesScope(_context.getEnclosingNode());
           }
 
           @Override
-          public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            return Scope.getScope(_context.getContextNode(), _context.getContextRole(), _context.getPosition(), SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration"));
+          public SNodePointer getSearchScopeValidatorNode() {
+            return breakingNode_obnwhp_a0a1a0a0a1a0b0a1a0;
           }
         };
       }
