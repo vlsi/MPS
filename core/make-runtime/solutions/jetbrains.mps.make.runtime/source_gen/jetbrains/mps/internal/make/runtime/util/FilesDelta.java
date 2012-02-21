@@ -8,11 +8,11 @@ import jetbrains.mps.vfs.IFile;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
+import java.util.List;
 import jetbrains.mps.make.delta.IDeltaVisitor;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.internal.collections.runtime.IMapping;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import java.util.List;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import java.util.ArrayList;
@@ -30,11 +30,13 @@ public class FilesDelta implements IDelta {
 
   private IFile rootDir;
   private Map<IFile, FilesDelta.Status> files = MapSequence.fromMap(new HashMap<IFile, FilesDelta.Status>());
+  private Map<IFile, List<IFile>> generatedChildren = MapSequence.fromMap(new HashMap<IFile, List<IFile>>());
   private String key;
 
   public FilesDelta(IFile dir) {
     this.rootDir = dir;
     this.key = "(IFile)" + DirUtil.asDir(DirUtil.straighten(DirUtil.urlToPath(dir.getAbsolutePath())));
+    cacheGenChildren(dir);
   }
 
   private FilesDelta(FilesDelta copyFrom) {
@@ -170,10 +172,19 @@ public class FilesDelta implements IDelta {
     return filesToDelete;
   }
 
+  private void cacheGenChildren(IFile dir) {
+    if (GeneratorPathsComponent.getInstance().isForeign(dir)) {
+      List<IFile> genChildren = GeneratorPathsComponent.getInstance().getGeneratedChildren(dir);
+      if (ListSequence.fromList(genChildren).isNotEmpty()) {
+        MapSequence.fromMap(generatedChildren).put(dir, ListSequence.fromListWithValues(new ArrayList<IFile>(), genChildren));
+      }
+    }
+  }
+
   private Iterable<IFile> getChildren(IFile dir) {
     Iterable<IFile> realChilren = (Iterable<IFile>) dir.getChildren();
     if (GeneratorPathsComponent.getInstance().isForeign(dir)) {
-      List<IFile> genChildren = GeneratorPathsComponent.getInstance().getGeneratedChildren(dir);
+      List<IFile> genChildren = MapSequence.fromMap(generatedChildren).get(dir);
       return ListSequence.fromList(genChildren).intersect(Sequence.fromIterable(realChilren));
     }
     return realChilren;
@@ -187,6 +198,7 @@ public class FilesDelta implements IDelta {
       throw new IllegalArgumentException();
     }
     MapSequence.fromMap(files).putAll(that.files);
+    MapSequence.fromMap(generatedChildren).putAll(that.generatedChildren);
     return this;
   }
 

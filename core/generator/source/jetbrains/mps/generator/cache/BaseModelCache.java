@@ -105,7 +105,9 @@ public abstract class BaseModelCache<T> implements CoreComponent {
       if (myCache.containsKey(modelDescriptor)) {
         return myCache.get(modelDescriptor);
       }
-      return null;
+      T cache = readCache(modelDescriptor);
+      myCache.put(modelDescriptor, cache);
+      return cache;
     }
   }
   

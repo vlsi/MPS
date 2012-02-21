@@ -27,11 +27,15 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.make.script.IScriptController;
 import java.util.concurrent.ExecutionException;
+import jetbrains.mps.generator.IModifiableGenerationSettings;
+import jetbrains.mps.generator.GenerationSettingsProvider;
+import jetbrains.mps.generator.GenerationOptions;
 import jetbrains.mps.make.script.IPropertiesPool;
 import jetbrains.mps.make.facet.ITarget;
 import jetbrains.mps.make.resources.IResource;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
+import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.generator.impl.dependencies.GenerationDependenciesCache;
 import jetbrains.mps.generator.info.GeneratorPathsComponent;
@@ -111,12 +115,23 @@ public class ReducedGenerationWorker extends GeneratorWorker {
   }
 
   private IScriptController configureFacets(final Map<String, String> fileHashes, final List<String> writtenFiles) {
+    IModifiableGenerationSettings settings = GenerationSettingsProvider.getInstance().getGenerationSettings();
+    settings.setIncremental(true);
+    settings.setIncrementalUseCache(false);
+    final GenerationOptions.OptionsBuilder optBuilder = GenerationOptions.fromSettings(settings);
+    optBuilder.rebuildAll(false);
+
     return new IScriptController.Stub() {
       @Override
       public void setup(IPropertiesPool pp, Iterable<ITarget> toExecute, Iterable<? extends IResource> input) {
         super.setup(pp, toExecute, input);
-        Tuples._1<Boolean> skipReconcile = (Tuples._1<Boolean>) pp.properties(new ITarget.Name("jetbrains.mps.lang.core.Make.reconcile"), Object.class);
-        skipReconcile._0(true);
+
+        Tuples._4<Project, IOperationContext, Boolean, _FunctionTypes._return_P0_E0<? extends ProgressMonitor>> vars = (Tuples._4<Project, IOperationContext, Boolean, _FunctionTypes._return_P0_E0<? extends ProgressMonitor>>) pp.properties(new ITarget.Name("jetbrains.mps.lang.core.Generate.checkParameters"), Object.class);
+        // don't do rebuild all 
+        vars._2(false);
+
+        Tuples._2<Boolean, GenerationOptions.OptionsBuilder> params = (Tuples._2<Boolean, GenerationOptions.OptionsBuilder>) pp.properties(new ITarget.Name("jetbrains.mps.lang.core.Generate.configure"), Object.class);
+        params._1(optBuilder);
 
         Tuples._1<Boolean> skipCopyTraceinfo = (Tuples._1<Boolean>) pp.properties(new ITarget.Name("jetbrains.mps.lang.traceable.CopyTraceInfo.copyTraceInfo"), Object.class);
         skipCopyTraceinfo._0(true);
@@ -129,6 +144,9 @@ public class ReducedGenerationWorker extends GeneratorWorker {
 
         Tuples._1<Map<String, String>> hashes = (Tuples._1<Map<String, String>>) pp.properties(new ITarget.Name("jetbrains.mps.build.reduced.CollectHashes.collect"), Object.class);
         hashes._0(fileHashes);
+
+        Tuples._1<Boolean> skipReconcile = (Tuples._1<Boolean>) pp.properties(new ITarget.Name("jetbrains.mps.lang.core.Make.reconcile"), Object.class);
+        skipReconcile._0(false);
 
         // override solution's output path 
         Tuples._1<_FunctionTypes._return_P1_E0<? extends IFile, ? super String>> pathToFile = (Tuples._1<_FunctionTypes._return_P1_E0<? extends IFile, ? super String>>) pp.properties(new ITarget.Name("jetbrains.mps.lang.core.Make.make"), Object.class);

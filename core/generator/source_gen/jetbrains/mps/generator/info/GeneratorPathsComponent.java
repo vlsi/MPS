@@ -63,12 +63,14 @@ public class GeneratorPathsComponent implements CoreComponent {
       return EMPTY_LIST;
     }
     String tail = DirUtil.withoutPrefix(DirUtil.normalize(path.getPath()), foreignPath);
-    final IFile cachesDir = FileGenerationUtil.getCachesDir(FileSystem.getInstance().getFileByPath(foreignPath)).getDescendant(tail);
+
+    IFile cachesDir = FileGenerationUtil.getCachesDir(FileSystem.getInstance().getFileByPath(foreignPath)).getDescendant(tail);
+
     GeneratorPathsComponent.MyGeneratedCacheInfo gci = lookupCacheInfo(cachesDir);
     return (gci != null ?
       Sequence.fromIterable(gci.listGenerated()).select(new ISelector<String, IFile>() {
         public IFile select(String it) {
-          return cachesDir.getDescendant(it);
+          return path.getDescendant(it);
         }
       }).toListSequence() :
       EMPTY_LIST
