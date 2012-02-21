@@ -58,8 +58,9 @@ public class ModelPropertiesConfigurable implements Configurable, Disposable {
     private JTextField myPackageName;
     private String myModelLongName;
     private Set<ModuleReference> myVisibleLanguages;
+  private ModelPathsTab myModelPathsTab;
 
-    public ModelPropertiesConfigurable(EditableSModelDescriptor descriptor, Project project) {
+  public ModelPropertiesConfigurable(EditableSModelDescriptor descriptor, Project project) {
         ModelAccess.instance().checkReadAccess();
         myDescriptor = descriptor;
         myImportedModelsTable.setDescriptor(myDescriptor);
@@ -76,12 +77,14 @@ public class ModelPropertiesConfigurable implements Configurable, Disposable {
         for (Language visibleLanguage : module.getScope().getVisibleLanguages()) {
             myVisibleLanguages.add(visibleLanguage.getModuleReference());
         }
+        myModelPathsTab.initState (sModel);
     }
 
     private void createUIComponents() {
         TabbedPaneWrapper tabbedPane = new TabbedPaneWrapper(this);
         tabbedPane.addTab(MPSBundle.message("model.properties.configurable.imported.models.tab.title"), MPSIcons.MODELS_TAB_ICON, createImportedModelsTable(), MPSBundle.message("model.properties.configurable.imported.models.tab.tooltip"));
         tabbedPane.addTab(MPSBundle.message("model.properties.configurable.used.languages.tab.title"), MPSIcons.LANGUAGES_TAB_ICON, createUsedLanguagesTable(), MPSBundle.message("model.properties.configurable.used.languages.tab.tooltip"));
+        tabbedPane.addTab(MPSBundle.message("model.properties.configurable.paths.tab.title"), MPSIcons.PATHS_TAB_ICON, createPathsComponent(), MPSBundle.message("model.properties.configurable.paths.tab.tooltip"));
         myTabbedPaneComponent = tabbedPane.getComponent();
     }
 
@@ -138,10 +141,16 @@ public class ModelPropertiesConfigurable implements Configurable, Disposable {
         return myImportedModelsTable.createComponent();
     }
 
+    private JComponent createPathsComponent() {
+      myModelPathsTab = new ModelPathsTab();
+      return myModelPathsTab.getRootPane();
+    }
+
     @Override
     public boolean isModified() {
         return myImportedModelsTable.isModified(myImportedModels) ||
                 myUsedLanguagesTable.isModified(myUsedLanguages) ||
+                myModelPathsTab.isModified(myDescriptor.getSModel()) ||
                 !myModelLongName.equals(myPackageName.getText());
     }
 
@@ -156,6 +165,8 @@ public class ModelPropertiesConfigurable implements Configurable, Disposable {
                 saveImportedModels(sModel);
                 saveUsedLanguages(sModel, module);
                 setLongName();
+
+                myModelPathsTab.saveState (sModel);
 
                 myDescriptor.save();
                 initState(sModel);
