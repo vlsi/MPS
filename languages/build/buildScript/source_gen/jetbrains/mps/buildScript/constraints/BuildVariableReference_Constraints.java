@@ -10,8 +10,9 @@ import java.util.HashMap;
 import jetbrains.mps.smodel.runtime.base.BasePropertyConstraintsDescriptor;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsDescriptor;
 import jetbrains.mps.smodel.runtime.base.BaseReferenceConstraintsDescriptor;
 import org.jetbrains.annotations.Nullable;
@@ -41,7 +42,13 @@ public class BuildVariableReference_Constraints extends BaseConstraintsDescripto
       @Override
       public Object getValue(SNode node, IScope scope) {
         String propertyName = "name";
-        return "${" + SPropertyOperations.getString(SLinkOperations.getTarget(node, "macro", false), "name") + "}";
+        {
+          String prefix = "";
+          if (SNodeOperations.getAncestor(SLinkOperations.getTarget(node, "macro", false), "jetbrains.mps.buildScript.structure.BuildProject", false, false) != SNodeOperations.getAncestor(node, "jetbrains.mps.buildScript.structure.BuildProject", false, false)) {
+            prefix = SPropertyOperations.getString(SNodeOperations.getAncestor(SLinkOperations.getTarget(node, "macro", false), "jetbrains.mps.buildScript.structure.BuildProject", false, false), "name") + ".";
+          }
+          return "${" + prefix + SPropertyOperations.getString(SLinkOperations.getTarget(node, "macro", false), "name") + "}";
+        }
       }
     });
     return properties;
