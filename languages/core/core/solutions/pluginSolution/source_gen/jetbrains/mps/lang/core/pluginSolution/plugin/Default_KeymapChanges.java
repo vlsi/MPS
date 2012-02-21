@@ -10,8 +10,6 @@ import javax.swing.KeyStroke;
 public class Default_KeymapChanges extends BaseKeymapChanges {
   public Default_KeymapChanges() {
     // simple 
-    addSimpleShortcut("jetbrains.mps.lang.core.pluginSolution.plugin.FindLanguageConceptsUsages_Action", getShortcut("alt F8"));
-    addSimpleShortcut("jetbrains.mps.lang.core.pluginSolution.plugin.FindLanguageUsages_Action", getShortcut("alt F7"));
     addSimpleShortcut("jetbrains.mps.lang.core.pluginSolution.plugin.FindModelUsages_Action", getShortcut("alt F7"));
     // simple parameterized 
     // complex 

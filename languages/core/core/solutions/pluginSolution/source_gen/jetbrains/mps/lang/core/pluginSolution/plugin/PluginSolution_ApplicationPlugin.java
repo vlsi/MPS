@@ -5,7 +5,6 @@ package jetbrains.mps.lang.core.pluginSolution.plugin;
 import jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin;
 import com.intellij.openapi.extensions.PluginId;
 import jetbrains.mps.ide.actions.ModelActions_ActionGroup;
-import jetbrains.mps.ide.actions.LanguageActions_ActionGroup;
 import java.util.List;
 import jetbrains.mps.workbench.action.BaseKeymapChanges;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -24,11 +23,8 @@ public class PluginSolution_ApplicationPlugin extends BaseApplicationPlugin {
   public void createGroups() {
     // actions w/o parameters 
     addAction(new DoNotSuppressErrors_Action());
-    addAction(new FindLanguageConceptsUsages_Action());
-    addAction(new FindLanguageUsages_Action());
     addAction(new FindModelUsages_Action());
     // groups 
-    addGroup(new FindLanguageUsages_ActionGroup());
     addGroup(new FindModelUsages_ActionGroup());
   }
 
@@ -37,7 +33,6 @@ public class PluginSolution_ApplicationPlugin extends BaseApplicationPlugin {
 
   public void adjustRegularGroups() {
     insertGroupIntoAnother(FindModelUsages_ActionGroup.ID, ModelActions_ActionGroup.ID, ModelActions_ActionGroup.LABEL_ID_modelUsages);
-    insertGroupIntoAnother(FindLanguageUsages_ActionGroup.ID, LanguageActions_ActionGroup.ID, LanguageActions_ActionGroup.LABEL_ID_find_usages);
   }
 
   public List<BaseKeymapChanges> initKeymaps() {
