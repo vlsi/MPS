@@ -165,6 +165,7 @@
     <classNode dependClassName="org.jetbrains.annotations.NonNls" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode extendsClassName="com.intellij.openapi.actionSystem.DataProvider" />
     <classNode extendsClassName="com.intellij.openapi.ui.DialogWrapper" />
     <classNode extendsClassName="jetbrains.mps.vcs.diff.ui.common.GoToNeighbourRootActions" />
   </dependency>
