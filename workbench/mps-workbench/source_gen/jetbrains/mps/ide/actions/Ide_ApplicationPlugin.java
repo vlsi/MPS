@@ -50,6 +50,7 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     addAction(new EditNode_Action());
     addAction(new ExpandNode_Action());
     addAction(new FastFindNodeUsages_Action());
+    addAction(new FindModelUsages_Action());
     addAction(new FindNext_Action());
     addAction(new FindPrevious_Action());
     addAction(new FindSpecificNodeUsages_Action());
@@ -129,6 +130,7 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     addGroup(new Favorites_ActionGroup());
     addGroup(new FileActions_ActionGroup());
     addGroup(new FileSystemNewActions_ActionGroup());
+    addGroup(new FindModelUsages_ActionGroup());
     addGroup(new FindUsages_ActionGroup());
     addGroup(new FolderActions_ActionGroup());
     addGroup(new GeneratorActions_ActionGroup());
@@ -221,6 +223,7 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     insertGroupIntoAnother(EditorPopup_Show_ActionGroup.ID, "EditorPopup_ActionGroupshowIn", null);
     insertGroupIntoAnother(EditorPopupEx_ActionGroup.ID, "EditorPopup_ActionGroupnew", null);
     insertGroupIntoAnother(EditorPopupEx_Goto_ActionGroup.ID, "GoToEditorPopupAddition_ActionGroupother", null);
+    insertGroupIntoAnother(FindModelUsages_ActionGroup.ID, ModelActions_ActionGroup.ID, ModelActions_ActionGroup.LABEL_ID_modelUsages);
     insertGroupIntoAnother(AddToFavoritesGroup_ActionGroup.ID, FavoritesPopup_ActionGroup.ID, FavoritesPopup_ActionGroup.LABEL_ID_addToFavorites);
     insertGroupIntoAnother(Analyze_ActionGroup.ID, "AnalyzeMenu", null);
     insertGroupIntoAnother(CommonModuleActions_ActionGroup.ID, GeneratorActions_ActionGroup.ID, GeneratorActions_ActionGroup.LABEL_ID_commonModule);

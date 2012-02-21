@@ -4,11 +4,6 @@ package jetbrains.mps.lang.core.pluginSolution.plugin;
 
 import jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin;
 import com.intellij.openapi.extensions.PluginId;
-import jetbrains.mps.ide.actions.ModelActions_ActionGroup;
-import java.util.List;
-import jetbrains.mps.workbench.action.BaseKeymapChanges;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import java.util.ArrayList;
 
 public class PluginSolution_ApplicationPlugin extends BaseApplicationPlugin {
   private PluginId myId = PluginId.getId("jetbrains.mps.lang.core.pluginSolution");
@@ -23,21 +18,9 @@ public class PluginSolution_ApplicationPlugin extends BaseApplicationPlugin {
   public void createGroups() {
     // actions w/o parameters 
     addAction(new DoNotSuppressErrors_Action());
-    addAction(new FindModelUsages_Action());
     // groups 
-    addGroup(new FindModelUsages_ActionGroup());
   }
 
   public void adjustInterfaceGroups() {
-  }
-
-  public void adjustRegularGroups() {
-    insertGroupIntoAnother(FindModelUsages_ActionGroup.ID, ModelActions_ActionGroup.ID, ModelActions_ActionGroup.LABEL_ID_modelUsages);
-  }
-
-  public List<BaseKeymapChanges> initKeymaps() {
-    List<BaseKeymapChanges> res = ListSequence.fromList(new ArrayList<BaseKeymapChanges>());
-    ListSequence.fromList(res).addElement(new Default_KeymapChanges());
-    return res;
   }
 }
