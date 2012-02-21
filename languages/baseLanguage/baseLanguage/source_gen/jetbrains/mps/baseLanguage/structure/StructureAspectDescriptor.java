@@ -274,7 +274,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 128:
         return new CompiledConceptDescriptor("jetbrains.mps.baseLanguage.structure.IfStatement", "jetbrains.mps.baseLanguage.structure.Statement", false, new String[]{"jetbrains.mps.baseLanguage.structure.Statement", "jetbrains.mps.baseLanguage.structure.IContainsStatementList"}, new String[]{"forceOneLine", "forceMultiLine"}, new String[]{});
       case 129:
-        return new CompiledConceptDescriptor("jetbrains.mps.baseLanguage.structure.ImplicitAnnotationInstanceValue", "jetbrains.mps.baseLanguage.structure.AnnotationInstanceValue", false, new String[]{"jetbrains.mps.baseLanguage.structure.AnnotationInstanceValue"}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.baseLanguage.structure.ImplicitAnnotationInstanceValue", "jetbrains.mps.baseLanguage.structure.AnnotationInstanceValue", false, new String[]{"jetbrains.mps.baseLanguage.structure.AnnotationInstanceValue", "jetbrains.mps.lang.core.structure.ScopeProvider"}, new String[]{}, new String[]{});
       case 130:
         return new CompiledConceptDescriptor("jetbrains.mps.baseLanguage.structure.InstanceInitializer", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.baseLanguage.structure.ClassifierMember", "jetbrains.mps.baseLanguage.structure.IStatementListContainer"}, new String[]{}, new String[]{});
       case 131:
