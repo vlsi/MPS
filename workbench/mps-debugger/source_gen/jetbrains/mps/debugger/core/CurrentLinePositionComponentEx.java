@@ -25,14 +25,14 @@ import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 
-public abstract class AbstractCurrentLinePositionComponent<S> {
+public abstract class CurrentLinePositionComponentEx<S> {
   private FileEditorManager myFileEditorManager;
   private final Map<S, CurrentLinePainter> mySessionToContextPainterMap = MapSequence.fromMap(new HashMap<S, CurrentLinePainter>());
   protected final Project myProject;
-  private final EditorComponentCreateListener myEditorComponentCreationHandler = new AbstractCurrentLinePositionComponent.MyEditorComponentCreateListener();
+  private final EditorComponentCreateListener myEditorComponentCreationHandler = new CurrentLinePositionComponentEx.MyEditorComponentCreateListener();
   private MessageBusConnection myMessageBusConnection;
 
-  public AbstractCurrentLinePositionComponent(Project project, FileEditorManager fileEditorManager) {
+  public CurrentLinePositionComponentEx(Project project, FileEditorManager fileEditorManager) {
     myProject = project;
     myFileEditorManager = fileEditorManager;
   }
