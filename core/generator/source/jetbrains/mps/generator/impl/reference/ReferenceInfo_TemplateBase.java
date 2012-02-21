@@ -31,7 +31,7 @@ public abstract class ReferenceInfo_TemplateBase extends ReferenceInfo {
   }
 
   protected void checkCrossRootTemplateReference(@NotNull SNode outputTarget, TemplateGenerator generator) {
-    if (!generator.isStrict() || !generator.isIncremental()) return;
+    if (!generator.isStrict()/* || !generator.isIncremental()*/) return;
 
     // Additional check - reference target should be generated from the same root (required for incremental generation)
     SNode outputTargetRoot = outputTarget.getContainingRoot();

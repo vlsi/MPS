@@ -229,7 +229,7 @@ public enum LanguageAspect {
     SModelDescriptor structureModel = l.getStructureModelDescriptor();
     SModelRoot modelRoot;
     if (structureModel == null) {
-      modelRoot = l.getSModelRoots().get(0);
+      modelRoot = l.getSModelRoots().iterator().next();
     } else {
       modelRoot = ModelRootUtil.getSModelRoot(structureModel);
     }

@@ -14,6 +14,8 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.project.StubPath;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import java.util.Set;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.smodel.LanguageID;
 import jetbrains.mps.project.SModelRoot;
 import jetbrains.mps.smodel.Language;
@@ -72,8 +74,8 @@ public class Module_Behavior {
 
   public static List<SNode> call_getClassPathDirectories_1213877515083(SNode thisNode, boolean includeHomeLib) {
     AbstractModule module = (AbstractModule) Module_Behavior.call_getModule_1213877515148(thisNode);
-    List<StubPath> paths = Module_Behavior.call_getClassPathExcludingIdea_2000252915626233691(thisNode, module);
-    return Module_Behavior.call_getPathHolders_4642981534832278885(thisNode, Sequence.fromIterable(Module_Behavior.call_convertSeparators_4777659345279794559(thisNode, ListSequence.fromList(paths).where(new IWhereFilter<StubPath>() {
+    Set<StubPath> paths = Module_Behavior.call_getClassPathExcludingIdea_2000252915626233691(thisNode, module);
+    return Module_Behavior.call_getPathHolders_4642981534832278885(thisNode, Sequence.fromIterable(Module_Behavior.call_convertSeparators_4777659345279794559(thisNode, SetSequence.fromSet(paths).where(new IWhereFilter<StubPath>() {
       public boolean accept(StubPath it) {
         return LanguageID.JAVA_MANAGER.equals(it.getManager()) || it.getPath().endsWith(".jar");
       }
@@ -81,7 +83,7 @@ public class Module_Behavior {
   }
 
   public static List<SNode> call_getModelRootPaths_2739262311775052381(SNode thisNode) {
-    List<SModelRoot> paths = ((AbstractModule) Module_Behavior.call_getModule_1213877515148(thisNode)).getSModelRoots();
+    List<SModelRoot> paths = ListSequence.fromListWithValues(new ArrayList<SModelRoot>(), ((AbstractModule) Module_Behavior.call_getModule_1213877515148(thisNode)).getSModelRoots());
     if (Module_Behavior.call_getModule_1213877515148(thisNode) instanceof Language) {
       paths = ListSequence.fromListWithValues(new ArrayList<SModelRoot>(), paths);
       ListSequence.fromList(paths).addSequence(Sequence.fromIterable(((Iterable<Generator>) ((Language) Module_Behavior.call_getModule_1213877515148(thisNode)).getGenerators())).translate(new ITranslator2<Generator, SModelRoot>() {
@@ -107,7 +109,7 @@ public class Module_Behavior {
     if (module instanceof Language) {
       List<SNode> result = ListSequence.fromList(Module_Behavior.call_getPathHolders_4642981534832278885(thisNode, Sequence.fromIterable(Module_Behavior.call_convertSeparators_4777659345279794559(thisNode, ((Language) module).getRuntimeStubPaths())).distinct().toListSequence(), true, includeHomeLib)).subtract(ListSequence.fromList(Module_Behavior.call_getClassPathDirectories_1213877515083(thisNode, true))).toListSequence();
       if (includeRuntimeSolutions) {
-        for (ModuleReference runtimeDependency : ListSequence.fromList(((Language) module).getRuntimeModulesReferences())) {
+        for (ModuleReference runtimeDependency : SetSequence.fromSet(((Language) module).getRuntimeModulesReferences())) {
           IModule runtimeDependencyModule = MPSModuleRepository.getInstance().getModule(runtimeDependency);
           if (runtimeDependencyModule instanceof Solution) {
             // TODO proper module in holder? 
@@ -216,15 +218,15 @@ public class Module_Behavior {
     return result;
   }
 
-  public static Iterable<String> call_convertSeparators_4777659345279794559(SNode thisNode, List<StubPath> paths) {
-    return ListSequence.fromList(paths).select(new ISelector<StubPath, String>() {
+  public static Iterable<String> call_convertSeparators_4777659345279794559(SNode thisNode, Iterable<StubPath> paths) {
+    return Sequence.fromIterable(paths).select(new ISelector<StubPath, String>() {
       public String select(StubPath it) {
         return it.getPath().replace(File.separator, Util.SEPARATOR);
       }
     });
   }
 
-  public static List<StubPath> call_getClassPathExcludingIdea_2000252915626233691(SNode thisNode, AbstractModule module) {
+  public static Set<StubPath> call_getClassPathExcludingIdea_2000252915626233691(SNode thisNode, AbstractModule module) {
     return (module.isCompileInMPS() ?
       module.getAllStubPaths() :
       module.getStubPaths()

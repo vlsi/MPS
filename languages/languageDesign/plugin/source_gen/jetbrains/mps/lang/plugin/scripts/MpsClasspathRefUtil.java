@@ -17,7 +17,9 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SModelRepository;
+import java.util.Set;
 import jetbrains.mps.project.structure.modules.Dependency;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
 
 /*package*/ class MpsClasspathRefUtil {
   private MpsClasspathRefUtil() {
@@ -53,15 +55,15 @@ import jetbrains.mps.project.structure.modules.Dependency;
         SModelRepository.getInstance().markChanged(model);
         // update module dependencies 
         if (module != null && module.getModuleDescriptor() != null) {
-          List<Dependency> dependencies = module.getModuleDescriptor().getDependencies();
-          Dependency dep = ListSequence.fromList(dependencies).findFirst(new IWhereFilter<Dependency>() {
+          Set<Dependency> dependencies = module.getModuleDescriptor().getDependencies();
+          Dependency dep = SetSequence.fromSet(dependencies).findFirst(new IWhereFilter<Dependency>() {
             public boolean accept(Dependency it) {
               return it.getModuleRef().equals(MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString("37a3367b-1fb2-44d8-aa6b-18075e74e003")).getModuleReference());
             }
           });
           // get re-export from MPS.Classpath, then should be checked manually 
           module.addDependency(newModule.getModuleReference(), dep != null && dep.isReexport());
-          ListSequence.fromList(dependencies).removeElement(dep);
+          SetSequence.fromSet(dependencies).removeElement(dep);
           // <node> 
         }
         break;

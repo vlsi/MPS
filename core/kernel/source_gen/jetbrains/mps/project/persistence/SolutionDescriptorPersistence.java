@@ -19,6 +19,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.List;
 import jetbrains.mps.project.structure.model.ModelRoot;
 import jetbrains.mps.smodel.LanguageID;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.io.OutputStream;
 
 public class SolutionDescriptorPersistence {
@@ -132,7 +133,7 @@ public class SolutionDescriptorPersistence {
 
 
         final Element result_8ckma3_a11a0a0d0b = new Element("sourcePath");
-        for (String p : ListSequence.fromList(descriptor.getSourcePaths())) {
+        for (String p : SetSequence.fromSet(descriptor.getSourcePaths())) {
           final Element result_8ckma3_a0a0a11a0a0d0b = new Element("source");
           final String result_8ckma3_a0a0a0a11a0a0d0b = macros.shrinkPath(p, file);
           result_8ckma3_a0a0a11a0a0d0b.setAttribute("path", "" + result_8ckma3_a0a0a0a11a0a0d0b);

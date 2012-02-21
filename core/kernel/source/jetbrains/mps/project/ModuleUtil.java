@@ -121,7 +121,7 @@ public class ModuleUtil {
 
 
   @Deprecated
-  public static List<Language> refsToLanguages(List<ModuleReference> refs) {
+  public static List<Language> refsToLanguages(Iterable<ModuleReference> refs) {
     List<Language> result = new ArrayList<Language>();
     for (ModuleReference ref : refs) {
       Language l = MPSModuleRepository.getInstance().getLanguage(ref);
@@ -133,7 +133,7 @@ public class ModuleUtil {
   }
 
   @Deprecated
-  public static List<DevKit> refsToDevkits(List<ModuleReference> refs) {
+  public static List<DevKit> refsToDevkits(Iterable<ModuleReference> refs) {
     List<DevKit> result = new ArrayList<DevKit>();
 
     for (ModuleReference ref : refs) {
@@ -146,7 +146,7 @@ public class ModuleUtil {
   }
 
   @Deprecated
-  public static List<IModule> depsToModules(List<Dependency> deps) {
+  public static List<IModule> depsToModules(Iterable<Dependency> deps) {
     List<IModule> result = new ArrayList<IModule>();
     for (Dependency dep : deps) {
       IModule m = MPSModuleRepository.getInstance().getModule(dep.getModuleRef());
