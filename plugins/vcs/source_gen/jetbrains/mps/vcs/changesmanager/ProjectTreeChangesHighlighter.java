@@ -491,13 +491,17 @@ public class ProjectTreeChangesHighlighter extends AbstractProjectComponent impl
               public void run() {
                 SModel model = modelDescriptor.getSModel();
                 if (model != null && !(model.isDisposed())) {
-                  for (final SNode node : Sequence.fromIterable(model.nodes())) {
+                  final List<SNodeTreeNode> treeNodes = ListSequence.fromList(new ArrayList<SNodeTreeNode>());
+                  for (SNode node : Sequence.fromIterable(model.nodes())) {
                     myChangeCountForNode.zeroizeKey(node);
                     myPropertyChangeCountForNode.zeroizeKey(node);
                     myReferenceChangeCountForNode.zeroizeKey(node);
+                    ListSequence.fromList(treeNodes).addSequence(ListSequence.fromList(MapSequence.fromMap(mySNodesToTreeNodes).get(node)));
+                  }
+                  if (ListSequence.fromList(treeNodes).isNotEmpty()) {
                     ThreadUtils.runInUIThreadNoWait(new Runnable() {
                       public void run() {
-                        ListSequence.fromList(MapSequence.fromMap(mySNodesToTreeNodes).get(node)).visitAll(new IVisitor<SNodeTreeNode>() {
+                        ListSequence.fromList(treeNodes).visitAll(new IVisitor<SNodeTreeNode>() {
                           public void visit(SNodeTreeNode tn) {
                             tn.removeTreeMessages(ProjectTreeChangesHighlighter.this, true);
                           }
