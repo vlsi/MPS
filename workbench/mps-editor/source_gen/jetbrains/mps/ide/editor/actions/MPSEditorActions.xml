@@ -128,6 +128,9 @@
       <keyboard-shortcut first-keystroke="ctrl UP" keymap="Mac OS X"/>
       <keyboard-shortcut first-keystroke="ctrl W" keymap="Mac OS X"/>
     </action>
+    <action id="jetbrains.mps.ide.editor.actions.core.ShowNodeMessages_Action" class="jetbrains.mps.ide.editor.actions.core.ShowNodeMessages_Action">
+      <keyboard-shortcut first-keystroke="alt shift M" keymap="$default"/>
+    </action>
     <group id="EditorPopup_ActionGroupnew"/>
     <group id="EditorPopup_ActionGroupshowIn"/>
     <group id="EditorPopup_ActionGroupstructure"/>
@@ -145,12 +148,6 @@
     <group id="GoToEditorPopupAddition_ActionGrouprefs"/>
     <group id="IDE_Edit_ActionGrouptoplevel"/>
     <group id="IDE_Edit_ActionGroupcustom"/>
-    <group id="jetbrains.mps.ide.editor.actions.EditMenuActions_ActionGroup">
-      <reference ref="jetbrains.mps.ide.editor.actions.CopyThisDown_Action"/>
-      <reference ref="jetbrains.mps.ide.editor.actions.DeleteLine_Action"/>
-      <reference ref="jetbrains.mps.ide.editor.actions.ExtractComponent_Action"/>
-      <add-to-group group-id="IDE_Edit_ActionGroupcustom" anchor="last"/>
-    </group>
     <group id="jetbrains.mps.ide.editor.actions.EditorActions_ActionGroup">
       <reference ref="jetbrains.mps.ide.editor.actions.Backspace_Action"/>
       <reference ref="jetbrains.mps.ide.editor.actions.CopyThisDown_Action"/>
@@ -182,6 +179,18 @@
       <reference ref="jetbrains.mps.ide.editor.actions.SelectRight_Action"/>
       <reference ref="jetbrains.mps.ide.editor.actions.SelectUp_Action"/>
       <add-to-group group-id="EditorActions" anchor="last"/>
+    </group>
+    <group id="jetbrains.mps.ide.editor.actions.EditMenuActions_ActionGroup">
+      <reference ref="jetbrains.mps.ide.editor.actions.CopyThisDown_Action"/>
+      <reference ref="jetbrains.mps.ide.editor.actions.DeleteLine_Action"/>
+      <reference ref="jetbrains.mps.ide.editor.actions.ExtractComponent_Action"/>
+      <add-to-group group-id="IDE_Edit_ActionGroupcustom" anchor="last"/>
+    </group>
+    <group id="jetbrains.mps.ide.editor.actions.IDE_Edit_ActionGroup">
+      <reference ref="IDE_Edit_ActionGrouptoplevel"/>
+      <separator/>
+      <reference ref="IDE_Edit_ActionGroupcustom"/>
+      <add-to-group group-id="EditMenu" anchor="last"/>
     </group>
     <group id="jetbrains.mps.ide.editor.actions.EditorPopup_ActionGroup">
       <reference ref="EditorPopup_ActionGroupnew"/>
@@ -222,11 +231,9 @@
       <reference ref="GoToEditorPopupAddition_ActionGrouprefs"/>
       <add-to-group group-id="EditorPopup_ActionGroupgoto" anchor="last"/>
     </group>
-    <group id="jetbrains.mps.ide.editor.actions.IDE_Edit_ActionGroup">
-      <reference ref="IDE_Edit_ActionGrouptoplevel"/>
-      <separator/>
-      <reference ref="IDE_Edit_ActionGroupcustom"/>
-      <add-to-group group-id="EditMenu" anchor="last"/>
+    <group id="jetbrains.mps.ide.editor.actions.core.CoreActions_ActionGroup">
+      <reference ref="jetbrains.mps.ide.editor.actions.core.ShowNodeMessages_Action"/>
+      <add-to-group group-id="jetbrains.mps.ide.editor.actions.EditorPopup_ActionGroup" anchor="last"/>
     </group>
     <group id="jetbrains.mps.ide.editor.actions.RefactoringActions_ActionGroup">
       <reference ref="jetbrains.mps.ide.platform.actions.NodeRefactoring_ActionGroup"></reference>

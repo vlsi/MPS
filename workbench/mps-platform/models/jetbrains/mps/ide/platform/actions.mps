@@ -341,7 +341,7 @@
         <link role="group" roleId="tp4k.331224023792854816" targetNodeId="1784947186835625266" resolveInfo="GoToPlatform" />
       </node>
       <node role="actionGroups" roleId="tp4k.331224023792854818" type="tp4k.ActionGroupRef" typeId="tp4k.331224023792854815" id="8784230320738947466">
-        <link role="group" roleId="tp4k.331224023792854816" targetNodeId="lfzw.8784230320738943351" resolveInfo="CoreRefactorings" />
+        <link role="group" roleId="tp4k.331224023792854816" targetNodeId="lfzw.8784230320738943351" resolveInfo="CoreNodeRefactorings" />
       </node>
       <node role="keymapsRef" roleId="tp4k.331224023792855168" type="tp4k.KeymapRef" typeId="tp4k.331224023792855166" id="5978963343236798403">
         <link role="keymap" roleId="tp4k.331224023792855167" targetNodeId="1784947186835625272" resolveInfo="Default" />

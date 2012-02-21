@@ -27,9 +27,7 @@ public class PluginSolution_ApplicationPlugin extends BaseApplicationPlugin {
     addAction(new FindLanguageConceptsUsages_Action());
     addAction(new FindLanguageUsages_Action());
     addAction(new FindModelUsages_Action());
-    addAction(new ShowNodeMessages_Action());
     // groups 
-    addGroup(new CoreActions_ActionGroup());
     addGroup(new FindLanguageUsages_ActionGroup());
     addGroup(new FindModelUsages_ActionGroup());
   }
@@ -40,7 +38,6 @@ public class PluginSolution_ApplicationPlugin extends BaseApplicationPlugin {
   public void adjustRegularGroups() {
     insertGroupIntoAnother(FindModelUsages_ActionGroup.ID, ModelActions_ActionGroup.ID, ModelActions_ActionGroup.LABEL_ID_modelUsages);
     insertGroupIntoAnother(FindLanguageUsages_ActionGroup.ID, LanguageActions_ActionGroup.ID, LanguageActions_ActionGroup.LABEL_ID_find_usages);
-    insertGroupIntoAnother(CoreActions_ActionGroup.ID, "jetbrains.mps.ide.editor.actions.EditorPopup_ActionGroup", null);
   }
 
   public List<BaseKeymapChanges> initKeymaps() {
