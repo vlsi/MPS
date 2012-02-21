@@ -27,30 +27,29 @@ import jetbrains.mps.ide.projectPane.logicalview.nodes.ProjectModuleTreeNode;
 import jetbrains.mps.ide.projectPane.logicalview.nodes.ProjectTreeNode;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
-import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.ProjectOperationContext;
+import jetbrains.mps.project.structure.LanguageDescriptorModelProvider.LanguageModelDescriptor;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import org.jetbrains.annotations.Nullable;
 
 import javax.swing.SwingUtilities;
 import javax.swing.tree.TreeNode;
-import java.util.List;
-import java.util.Set;
 
 public class ProjectPaneTreeGenStatusUpdater extends TreeNodeVisitor {
 
   private ProjectModuleTreeNode getContainingModuleNode(TreeNode node) {
     do {
       node = node.getParent();
-      if (node ==null) return null;
+      if (node == null) return null;
     } while (!(node instanceof ProjectModuleTreeNode));
     return (ProjectModuleTreeNode) node;
   }
 
   protected void visitModelNode(final SModelTreeNode modelNode) {
     if (!ProjectPane.isShowGenStatus()) return;
+
     Application application = ApplicationManager.getApplication();
     if (application.isDisposed() || application.isDisposeInProgress()) return;
 

@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.ide.projectPane.logicalview.highlighting.visitor;
 
+import com.intellij.openapi.project.DumbService;
 import jetbrains.mps.ide.projectPane.logicalview.nodes.ProjectModuleTreeNode;
 import jetbrains.mps.ide.projectPane.logicalview.nodes.ProjectTreeNode;
 import jetbrains.mps.ide.ui.MPSTreeNode;
@@ -35,6 +36,8 @@ public abstract class TreeNodeVisitor {
     myExecutor.execute(new Runnable() {
       public void run() {
         if (!checkDisposed(node)) return;
+
+        DumbService.getInstance(node.getOperationContext().getProject()).waitForSmartMode();
 
         if (node instanceof SModelTreeNode) {
           visitModelNode(((SModelTreeNode) node));
