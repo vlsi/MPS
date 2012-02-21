@@ -11,7 +11,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.vcs.diff.changes.ModelChange;
 import jetbrains.mps.vcs.diff.changes.ChangeType;
-import jetbrains.mps.ide.projectPane.Icons;
+import jetbrains.mps.ide.icons.IdeIcons;
 import java.util.Arrays;
 import jetbrains.mps.vcs.diff.ui.common.DiffEditor;
 import javax.swing.Icon;
@@ -37,7 +37,7 @@ public class DiffButtonsPainter extends ButtonsPainter {
       }
     } else {
       if (allInsert) {
-        button = new DiffButtonsPainter.MyButton(changeGroup, getX(0), y, "Remove", Icons.EXCLUDE);
+        button = new DiffButtonsPainter.MyButton(changeGroup, getX(0), y, "Remove", IdeIcons.EXCLUDE);
       }
     }
     if (button != null) {

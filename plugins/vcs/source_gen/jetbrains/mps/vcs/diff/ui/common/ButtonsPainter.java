@@ -16,7 +16,7 @@ import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.NotNull;
 import java.awt.Point;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.ide.projectPane.Icons;
+import jetbrains.mps.ide.icons.IdeIcons;
 import java.awt.image.BufferedImage;
 import java.awt.Graphics2D;
 import java.awt.geom.AffineTransform;
@@ -163,7 +163,7 @@ public abstract class ButtonsPainter extends AbstractFoldingAreaPainter {
   }
 
   static {
-    Icon icon = Icons.APPLY;
+    Icon icon = IdeIcons.APPLY;
     BufferedImage image = new BufferedImage(icon.getIconWidth(), icon.getIconHeight(), BufferedImage.TYPE_INT_RGB);
     Graphics2D g2d = ((Graphics2D) image.getGraphics());
     g2d.setTransform(AffineTransform.getScaleInstance(-1, 1));

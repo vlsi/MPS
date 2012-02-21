@@ -7,7 +7,7 @@ import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.vcs.diff.ui.common.ChangeGroupLayout;
 import jetbrains.mps.vcs.diff.ui.common.FoldingAreaButton;
 import jetbrains.mps.vcs.diff.ui.common.ChangeGroup;
-import jetbrains.mps.ide.projectPane.Icons;
+import jetbrains.mps.ide.icons.IdeIcons;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.vcs.diff.merge.MergeSession;
 import jetbrains.mps.vcs.diff.changes.ModelChange;
@@ -35,13 +35,13 @@ public class MergeButtonsPainter extends ButtonsPainter {
     );
     FoldingAreaButton apply = new MergeButtonsPainter.MyButton(changeGroup, applyX, y, "Apply", (isHighlightLeft() ?
       MergeButtonsPainter.MIRRORED_APPLY_ICON :
-      Icons.APPLY
+      IdeIcons.APPLY
     ), new _FunctionTypes._void_P2_E0<MergeSession, Iterable<ModelChange>>() {
       public void invoke(MergeSession session, Iterable<ModelChange> changes) {
         session.applyChanges(changes);
       }
     });
-    FoldingAreaButton exclude = new MergeButtonsPainter.MyButton(changeGroup, excludeX, y, "Exclude", Icons.EXCLUDE, new _FunctionTypes._void_P2_E0<MergeSession, Iterable<ModelChange>>() {
+    FoldingAreaButton exclude = new MergeButtonsPainter.MyButton(changeGroup, excludeX, y, "Exclude", IdeIcons.EXCLUDE, new _FunctionTypes._void_P2_E0<MergeSession, Iterable<ModelChange>>() {
       public void invoke(MergeSession session, Iterable<ModelChange> changes) {
         session.excludeChanges(changes);
       }

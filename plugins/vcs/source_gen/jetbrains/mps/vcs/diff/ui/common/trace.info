@@ -146,8 +146,8 @@
     <nodeInfo nodeId="4652592318748335333" fileName="ButtonsPainter.java" startLine="154" startPosition="5" endLine="155" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4652592318748335357" fileName="ButtonsPainter.java" startLine="159" startPosition="36" endLine="160" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4652592318748335357" fileName="ButtonsPainter.java" startLine="161" startPosition="5" endLine="162" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="4652592318748335505" fileName="ButtonsPainter.java" startLine="165" startPosition="10" endLine="166" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4652592318748335509" fileName="ButtonsPainter.java" startLine="166" startPosition="28" endLine="167" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4652592318748335505" fileName="ButtonsPainter.java" startLine="165" startPosition="10" endLine="166" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4652592318748335509" fileName="ButtonsPainter.java" startLine="166" startPosition="31" endLine="167" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4652592318748335521" fileName="ButtonsPainter.java" startLine="167" startPosition="115" endLine="168" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4652592318748335530" fileName="ButtonsPainter.java" startLine="168" startPosition="56" endLine="169" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4652592318748335537" fileName="ButtonsPainter.java" startLine="169" startPosition="62" endLine="170" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -3037,6 +3037,7 @@
     <scopeInfo nodeId="739457190729177668" fileName="ChangeGroupMessages.java" startLine="45" startPosition="0" endLine="54" endPosition="0" />
     <scopeInfo nodeId="739457190729189660" fileName="ChangeGroupMessages.java" startLine="29" startPosition="0" endLine="41" endPosition="0" />
     <unitInfo nodeId="3477558405266190215" fileName="ChangeGroupMessages.java" startLine="15" startPosition="56" endLine="14" endPosition="0" />
+    <unitInfo nodeId="739457190729175664" fileName="ChangeGroupMessages.java" startLine="14" startPosition="0" endLine="88" endPosition="0" unitName="jetbrains.mps.vcs.diff.ui.common.ChangeGroupMessages" />
     <unitInfo nodeId="739457190729183679" fileName="ChangeGroupMessages.java" startLine="31" startPosition="39" endLine="39" endPosition="5" unitName="jetbrains.mps.vcs.diff.ui.common.ChangeGroupMessages$2" />
     <unitInfo nodeId="9208869176467556553" fileName="ChangeGroupMessages.java" startLine="33" startPosition="60" endLine="37" endPosition="9" unitName="jetbrains.mps.vcs.diff.ui.common.ChangeGroupMessages$3" />
     <unitInfo nodeId="739457190729183618" fileName="ChangeGroupMessages.java" startLine="48" startPosition="67" endLine="52" endPosition="5" unitName="jetbrains.mps.vcs.diff.ui.common.ChangeGroupMessages$3" />
