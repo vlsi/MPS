@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debugInfo>
+  <unitInfo fileName="StructureAspectDescriptor.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.baseLanguage.varVariable.structure.StructureAspectDescriptor" />
+  <unitInfo fileName="VarVariable_Language.java" startLine="9" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.varVariable.structure.VarVariable_Language" />
+  <root nodeId="1236693300889">
+    <nodeInfo nodeId="1236693300889" fileName="VarVariableDeclaration.java" startLine="15" startPosition="95" endLine="16" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
+    <nodeInfo nodeId="1236693300889" fileName="VarVariableDeclaration.java" startLine="16" startPosition="113" endLine="17" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="NAME" />
+    <nodeInfo nodeId="1236693300889" fileName="VarVariableDeclaration.java" startLine="17" startPosition="43" endLine="18" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SHORT_DESCRIPTION" />
+    <nodeInfo nodeId="1236693300889" fileName="VarVariableDeclaration.java" startLine="18" startPosition="68" endLine="19" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ALIAS" />
+    <nodeInfo nodeId="1236693300889" fileName="VarVariableDeclaration.java" startLine="19" startPosition="45" endLine="20" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="VIRTUAL_PACKAGE" />
+    <nodeInfo nodeId="1236693300889" fileName="VarVariableDeclaration.java" startLine="20" startPosition="64" endLine="21" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SMODEL_ATTRIBUTE" />
+    <nodeInfo nodeId="1236693300889" fileName="VarVariableDeclaration.java" startLine="23" startPosition="45" endLine="24" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="1236693300889" fileName="VarVariableDeclaration.java" startLine="27" startPosition="27" endLine="28" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1236693300889" fileName="VarVariableDeclaration.java" startLine="31" startPosition="37" endLine="32" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1236693300889" fileName="VarVariableDeclaration.java" startLine="35" startPosition="39" endLine="36" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1236693300889" fileName="VarVariableDeclaration.java" startLine="39" startPosition="49" endLine="40" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1236693300889" fileName="VarVariableDeclaration.java" startLine="43" startPosition="28" endLine="44" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1236693300889" fileName="VarVariableDeclaration.java" startLine="47" startPosition="38" endLine="48" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1236693300889" fileName="VarVariableDeclaration.java" startLine="51" startPosition="37" endLine="52" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1236693300889" fileName="VarVariableDeclaration.java" startLine="55" startPosition="47" endLine="56" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1236693300889" fileName="VarVariableDeclaration.java" startLine="59" startPosition="41" endLine="60" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1236693300889" fileName="VarVariableDeclaration.java" startLine="63" startPosition="49" endLine="64" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1236693300889" fileName="VarVariableDeclaration.java" startLine="67" startPosition="48" endLine="68" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1236693300889" fileName="VarVariableDeclaration.java" startLine="71" startPosition="50" endLine="72" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1236693300889" fileName="VarVariableDeclaration.java" startLine="75" startPosition="69" endLine="76" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1236693300889" fileName="VarVariableDeclaration.java" startLine="79" startPosition="77" endLine="80" endPosition="206" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1236693300889" fileName="VarVariableDeclaration.java" startLine="83" startPosition="63" endLine="84" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1236693300889" fileName="VarVariableDeclaration.java" startLine="22" startPosition="0" endLine="25" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="VarVariableDeclaration#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="1236693300889" fileName="VarVariableDeclaration.java" startLine="26" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="1236693300889" fileName="VarVariableDeclaration.java" startLine="30" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setName#(Ljava/lang/String;)V" />
+    <nodeInfo nodeId="1236693300889" fileName="VarVariableDeclaration.java" startLine="34" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getShortDescription#()Ljava/lang/String;" />
+    <nodeInfo nodeId="1236693300889" fileName="VarVariableDeclaration.java" startLine="38" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setShortDescription#(Ljava/lang/String;)V" />
+    <nodeInfo nodeId="1236693300889" fileName="VarVariableDeclaration.java" startLine="42" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getAlias#()Ljava/lang/String;" />
+    <nodeInfo nodeId="1236693300889" fileName="VarVariableDeclaration.java" startLine="46" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setAlias#(Ljava/lang/String;)V" />
+    <nodeInfo nodeId="1236693300889" fileName="VarVariableDeclaration.java" startLine="50" startPosition="0" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getVirtualPackage#()Ljava/lang/String;" />
+    <nodeInfo nodeId="1236693300889" fileName="VarVariableDeclaration.java" startLine="54" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setVirtualPackage#(Ljava/lang/String;)V" />
+    <nodeInfo nodeId="1236693300889" fileName="VarVariableDeclaration.java" startLine="58" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSmodelAttributesCount#()I" />
+    <nodeInfo nodeId="1236693300889" fileName="VarVariableDeclaration.java" startLine="62" startPosition="0" endLine="66" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="smodelAttributes#()Ljava/util/Iterator;" />
+    <nodeInfo nodeId="1236693300889" fileName="VarVariableDeclaration.java" startLine="66" startPosition="0" endLine="70" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSmodelAttributes#()Ljava/util/List;" />
+    <nodeInfo nodeId="1236693300889" fileName="VarVariableDeclaration.java" startLine="70" startPosition="0" endLine="74" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addSmodelAttribute#(Ljetbrains/mps/smodel/INodeAdapter;)V" />
+    <nodeInfo nodeId="1236693300889" fileName="VarVariableDeclaration.java" startLine="74" startPosition="0" endLine="78" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="insertSmodelAttribute#(Ljetbrains/mps/smodel/INodeAdapter;Ljetbrains/mps/smodel/INodeAdapter;)V" />
+    <nodeInfo nodeId="1236693300889" fileName="VarVariableDeclaration.java" startLine="78" startPosition="0" endLine="82" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="newInstance#(Ljetbrains/mps/smodel/SModel;Z)Ljetbrains/mps/baseLanguage/varVariable/structure/VarVariableDeclaration;" />
+    <nodeInfo nodeId="1236693300889" fileName="VarVariableDeclaration.java" startLine="82" startPosition="0" endLine="86" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="newInstance#(Ljetbrains/mps/smodel/SModel;)Ljetbrains/mps/baseLanguage/varVariable/structure/VarVariableDeclaration;" />
+    <scopeInfo nodeId="1236693300889" fileName="VarVariableDeclaration.java" startLine="23" startPosition="45" endLine="24" endPosition="16" />
+    <scopeInfo nodeId="1236693300889" fileName="VarVariableDeclaration.java" startLine="27" startPosition="27" endLine="28" endPosition="57" />
+    <scopeInfo nodeId="1236693300889" fileName="VarVariableDeclaration.java" startLine="31" startPosition="37" endLine="32" endPosition="57" />
+    <scopeInfo nodeId="1236693300889" fileName="VarVariableDeclaration.java" startLine="35" startPosition="39" endLine="36" endPosition="70" />
+    <scopeInfo nodeId="1236693300889" fileName="VarVariableDeclaration.java" startLine="39" startPosition="49" endLine="40" endPosition="70" />
+    <scopeInfo nodeId="1236693300889" fileName="VarVariableDeclaration.java" startLine="43" startPosition="28" endLine="44" endPosition="58" />
+    <scopeInfo nodeId="1236693300889" fileName="VarVariableDeclaration.java" startLine="47" startPosition="38" endLine="48" endPosition="58" />
+    <scopeInfo nodeId="1236693300889" fileName="VarVariableDeclaration.java" startLine="51" startPosition="37" endLine="52" endPosition="68" />
+    <scopeInfo nodeId="1236693300889" fileName="VarVariableDeclaration.java" startLine="55" startPosition="47" endLine="56" endPosition="68" />
+    <scopeInfo nodeId="1236693300889" fileName="VarVariableDeclaration.java" startLine="59" startPosition="41" endLine="60" endPosition="71" />
+    <scopeInfo nodeId="1236693300889" fileName="VarVariableDeclaration.java" startLine="63" startPosition="49" endLine="64" endPosition="83" />
+    <scopeInfo nodeId="1236693300889" fileName="VarVariableDeclaration.java" startLine="67" startPosition="48" endLine="68" endPosition="86" />
+    <scopeInfo nodeId="1236693300889" fileName="VarVariableDeclaration.java" startLine="71" startPosition="50" endLine="72" endPosition="65" />
+    <scopeInfo nodeId="1236693300889" fileName="VarVariableDeclaration.java" startLine="75" startPosition="69" endLine="76" endPosition="74" />
+    <scopeInfo nodeId="1236693300889" fileName="VarVariableDeclaration.java" startLine="79" startPosition="77" endLine="80" endPosition="206" />
+    <scopeInfo nodeId="1236693300889" fileName="VarVariableDeclaration.java" startLine="83" startPosition="63" endLine="84" endPosition="57" />
+    <scopeInfo nodeId="1236693300889" fileName="VarVariableDeclaration.java" startLine="22" startPosition="0" endLine="25" endPosition="3">
+      <varInfo nodeId="1236693300889" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1236693300889" fileName="VarVariableDeclaration.java" startLine="26" startPosition="0" endLine="30" endPosition="0" />
+    <scopeInfo nodeId="1236693300889" fileName="VarVariableDeclaration.java" startLine="30" startPosition="0" endLine="34" endPosition="0">
+      <varInfo nodeId="1236693300889" varName="value" />
+    </scopeInfo>
+    <scopeInfo nodeId="1236693300889" fileName="VarVariableDeclaration.java" startLine="34" startPosition="0" endLine="38" endPosition="0" />
+    <scopeInfo nodeId="1236693300889" fileName="VarVariableDeclaration.java" startLine="38" startPosition="0" endLine="42" endPosition="0">
+      <varInfo nodeId="1236693300889" varName="value" />
+    </scopeInfo>
+    <scopeInfo nodeId="1236693300889" fileName="VarVariableDeclaration.java" startLine="42" startPosition="0" endLine="46" endPosition="0" />
+    <scopeInfo nodeId="1236693300889" fileName="VarVariableDeclaration.java" startLine="46" startPosition="0" endLine="50" endPosition="0">
+      <varInfo nodeId="1236693300889" varName="value" />
+    </scopeInfo>
+    <scopeInfo nodeId="1236693300889" fileName="VarVariableDeclaration.java" startLine="50" startPosition="0" endLine="54" endPosition="0" />
+    <scopeInfo nodeId="1236693300889" fileName="VarVariableDeclaration.java" startLine="54" startPosition="0" endLine="58" endPosition="0">
+      <varInfo nodeId="1236693300889" varName="value" />
+    </scopeInfo>
+    <scopeInfo nodeId="1236693300889" fileName="VarVariableDeclaration.java" startLine="58" startPosition="0" endLine="62" endPosition="0" />
+    <scopeInfo nodeId="1236693300889" fileName="VarVariableDeclaration.java" startLine="62" startPosition="0" endLine="66" endPosition="0" />
+    <scopeInfo nodeId="1236693300889" fileName="VarVariableDeclaration.java" startLine="66" startPosition="0" endLine="70" endPosition="0" />
+    <scopeInfo nodeId="1236693300889" fileName="VarVariableDeclaration.java" startLine="70" startPosition="0" endLine="74" endPosition="0">
+      <varInfo nodeId="1236693300889" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1236693300889" fileName="VarVariableDeclaration.java" startLine="74" startPosition="0" endLine="78" endPosition="0">
+      <varInfo nodeId="1236693300889" varName="node" />
+      <varInfo nodeId="1236693300889" varName="prev" />
+    </scopeInfo>
+    <scopeInfo nodeId="1236693300889" fileName="VarVariableDeclaration.java" startLine="78" startPosition="0" endLine="82" endPosition="0">
+      <varInfo nodeId="1236693300889" varName="init" />
+      <varInfo nodeId="1236693300889" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="1236693300889" fileName="VarVariableDeclaration.java" startLine="82" startPosition="0" endLine="86" endPosition="0">
+      <varInfo nodeId="1236693300889" varName="sm" />
+    </scopeInfo>
+    <unitInfo nodeId="1236693300889" fileName="VarVariableDeclaration.java" startLine="15" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.baseLanguage.varVariable.structure.VarVariableDeclaration" />
+  </root>
+</debugInfo>
+
