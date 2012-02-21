@@ -105,8 +105,8 @@ public abstract class SNodeTextGen<BA extends INodeAdapter> {
     String message = info != null ?
       "textgen error: '" + info + "' in " + getSNode().getDebugText() :
       "textgen error in " + getSNode().getDebugText();
-    LOG.error(message, getSNode());
-    getBuffer().foundError(message);
+    LOG.error(message, new Throwable(), getSNode());
+    getBuffer().foundError(message, getSNode(), new Throwable());
   }
 
 
@@ -117,7 +117,7 @@ public abstract class SNodeTextGen<BA extends INodeAdapter> {
   public String getReferentResolveInfoOrName(String role, SNode sourceNode) {
     SReference reference = sourceNode.getReference(role);
     if (reference == null) {
-      foundError();
+      foundError("no reference for role `" + role + "'");
       return "<err:no ref for role '" + role + "'>";
     }
 
@@ -126,7 +126,7 @@ public abstract class SNodeTextGen<BA extends INodeAdapter> {
     } else {
       SNode targetNode = reference.getTargetNode();
       if (targetNode == null) {
-        foundError();
+        foundError("cannot resolve reference in role `" + role + "'");
         return "???";
       }
       return targetNode.getResolveInfo();
@@ -139,7 +139,7 @@ public abstract class SNodeTextGen<BA extends INodeAdapter> {
 
   public String getReferentPresentation(SReference reference, boolean uniq) {
     if (reference == null) {
-      foundError();
+      foundError("null reference");
       return "<err:null reference>";
     }
 

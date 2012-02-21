@@ -2783,15 +2783,15 @@ __switch__:
             return labelReference;
           }
 
-          public String getMatchingText(String text) {
+          public String getMatchingText(String pattern) {
             return SPropertyOperations.getString((item), "name");
           }
 
-          public String getVisibleMatchingText(String text) {
-            return this.getMatchingText(text);
+          public String getVisibleMatchingText(String pattern) {
+            return this.getMatchingText(pattern);
           }
 
-          public String getDescriptionText(String text) {
+          public String getDescriptionText(String pattern) {
             return "declared label";
           }
         });
@@ -2861,15 +2861,15 @@ __switch__:
             return labelReference;
           }
 
-          public String getMatchingText(String text) {
+          public String getMatchingText(String pattern) {
             return SPropertyOperations.getString((item), "name");
           }
 
-          public String getVisibleMatchingText(String text) {
-            return this.getMatchingText(text);
+          public String getVisibleMatchingText(String pattern) {
+            return this.getMatchingText(pattern);
           }
 
-          public String getDescriptionText(String text) {
+          public String getDescriptionText(String pattern) {
             return "declared label";
           }
         });
@@ -3023,12 +3023,12 @@ __switch__:
             return elseIf;
           }
 
-          public String getMatchingText(String text) {
+          public String getMatchingText(String pattern) {
             return (item);
           }
 
-          public String getVisibleMatchingText(String text) {
-            return this.getMatchingText(text);
+          public String getVisibleMatchingText(String pattern) {
+            return this.getMatchingText(pattern);
           }
         });
       }
@@ -3054,12 +3054,12 @@ __switch__:
             return elseIf;
           }
 
-          public String getMatchingText(String text) {
+          public String getMatchingText(String pattern) {
             return (item);
           }
 
-          public String getVisibleMatchingText(String text) {
-            return this.getMatchingText(text);
+          public String getVisibleMatchingText(String pattern) {
+            return this.getMatchingText(pattern);
           }
         });
       }
@@ -3127,12 +3127,12 @@ __switch__:
             return expr;
           }
 
-          public String getMatchingText(String text) {
+          public String getMatchingText(String pattern) {
             return SPropertyOperations.getString((item), "name") + ".";
           }
 
-          public String getVisibleMatchingText(String text) {
-            return this.getMatchingText(text);
+          public String getVisibleMatchingText(String pattern) {
+            return this.getMatchingText(pattern);
           }
         });
       }

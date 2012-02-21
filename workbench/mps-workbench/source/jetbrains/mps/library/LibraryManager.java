@@ -58,10 +58,14 @@ public class LibraryManager extends BaseLibraryManager implements ApplicationCom
     myInitializing = true;
     try {
       myCustomBuiltInLibraries = BuiltInLibrariesIO.readBuiltInLibraries();
-      super.initComponent();
+      load();
     } finally {
       myInitializing = false;
     }
+  }
+
+  public void disposeComponent() {
+
   }
 
   public Set<Library> getUILibraries() {

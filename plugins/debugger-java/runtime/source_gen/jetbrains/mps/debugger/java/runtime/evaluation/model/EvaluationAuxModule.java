@@ -10,10 +10,10 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.project.IModule;
-import java.util.List;
+import java.util.Set;
 import jetbrains.mps.project.StubPath;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import java.util.ArrayList;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
+import java.util.HashSet;
 import jetbrains.mps.project.SModelRoot;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.IScope;
@@ -41,9 +41,9 @@ public class EvaluationAuxModule extends AbstractModule {
 
   private Project myProject;
   private IModule myInvocationContext;
-  private final List<StubPath> myStubPaths = ListSequence.fromList(new ArrayList<StubPath>());
-  private final List<SModelRoot> myModelRoots = ListSequence.fromList(new ArrayList<SModelRoot>());
-  private final List<ModuleReference> myUsedLanguages = ListSequence.fromList(new ArrayList<ModuleReference>());
+  private final Set<StubPath> myStubPaths = SetSequence.fromSet(new HashSet<StubPath>());
+  private final Set<SModelRoot> myModelRoots = SetSequence.fromSet(new HashSet<SModelRoot>());
+  private final Set<ModuleReference> myUsedLanguages = SetSequence.fromSet(new HashSet<ModuleReference>());
   private volatile IScope myScope;
 
   public EvaluationAuxModule(Project project) {
@@ -64,8 +64,8 @@ public class EvaluationAuxModule extends AbstractModule {
         EvaluationAuxModule.this.clearAll();
         MPSModuleRepository.getInstance().removeModule(EvaluationAuxModule.this);
         SModelRepository.getInstance().unRegisterModelDescriptors(EvaluationAuxModule.this);
-        ListSequence.fromList(myStubPaths).clear();
-        ListSequence.fromList(myModelRoots).clear();
+        SetSequence.fromSet(myStubPaths).clear();
+        SetSequence.fromSet(myModelRoots).clear();
         CleanupManager.getInstance().cleanup();
         // loaded stubs are removed from model repository 
       }
@@ -117,25 +117,25 @@ public class EvaluationAuxModule extends AbstractModule {
 
   @Override
   public void addUsedLanguage(ModuleReference reference) {
-    ListSequence.fromList(myUsedLanguages).addElement(reference);
+    SetSequence.fromSet(myUsedLanguages).addElement(reference);
   }
 
   @Override
-  public List<ModuleReference> getUsedLanguagesReferences() {
+  public Set<ModuleReference> getUsedLanguagesReferences() {
     return myUsedLanguages;
   }
 
   @Override
-  public List<StubPath> getStubPaths() {
+  public Set<StubPath> getStubPaths() {
     return myStubPaths;
   }
 
   public StubPath addStubPath(String stubPath) {
     StubPath path = new StubPath(stubPath, STUBS_MANAGER);
-    if (ListSequence.fromList(myStubPaths).contains(path)) {
+    if (SetSequence.fromSet(myStubPaths).contains(path)) {
       path = null;
     } else {
-      ListSequence.fromList(myStubPaths).addElement(path);
+      SetSequence.fromSet(myStubPaths).addElement(path);
     }
     invalidateClassPath();
     MPSModuleRepository.getInstance().fireModuleChanged(this);
@@ -143,15 +143,15 @@ public class EvaluationAuxModule extends AbstractModule {
   }
 
   @Override
-  public List<SModelRoot> getSModelRoots() {
+  public Set<SModelRoot> getSModelRoots() {
     return myModelRoots;
   }
 
   @Override
   public void loadNewModels() {
-    ListSequence.fromList(myModelRoots).clear();
+    SetSequence.fromSet(myModelRoots).clear();
 
-    for (StubPath stub : ListSequence.fromList(myStubPaths)) {
+    for (StubPath stub : SetSequence.fromSet(myStubPaths)) {
       ModelRoot root = new ModelRoot();
       root.setPath(stub.getPath());
       root.setManager(stub.getManager());
@@ -163,7 +163,7 @@ public class EvaluationAuxModule extends AbstractModule {
             SModelRepository.getInstance().registerModelDescriptor(descriptor, this);
           }
         }
-        ListSequence.fromList(myModelRoots).addElement(smodelRoot);
+        SetSequence.fromSet(myModelRoots).addElement(smodelRoot);
       } catch (Exception e) {
         if (log.isErrorEnabled()) {
           log.error("", e);

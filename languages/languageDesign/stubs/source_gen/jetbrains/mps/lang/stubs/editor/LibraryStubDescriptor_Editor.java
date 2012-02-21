@@ -25,6 +25,7 @@ import jetbrains.mps.nodeEditor.BlockCells;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Generic_Group;
 import java.util.List;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.project.structure.modules.StubSolution;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -367,7 +368,7 @@ public class LibraryStubDescriptor_Editor extends DefaultNodeEditor {
     }
 
     public List<?> createParameterObjects(SNode node, IScope scope, IOperationContext operationContext) {
-      return StubSolutionCreateHelper.getAvailableStubSolutions(node);
+      return SetSequence.fromSet(StubSolutionCreateHelper.getAvailableStubSolutions(node)).toListSequence();
     }
 
     protected void handleAction(Object parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {

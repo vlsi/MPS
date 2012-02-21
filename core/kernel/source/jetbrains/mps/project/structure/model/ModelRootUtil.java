@@ -22,7 +22,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public abstract class ModelRootUtil {
-  public static List<ModelRoot> filterJava(List<ModelRoot> list) {
+  public static List<ModelRoot> filterJava(Iterable<ModelRoot> list) {
     List<ModelRoot> result = new ArrayList<ModelRoot>();
     for (ModelRoot e : list) {
       if (LanguageID.JAVA_MANAGER.equals(e.getManager())) {

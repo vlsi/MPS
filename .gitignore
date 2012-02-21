@@ -19,3 +19,4 @@ testclasses
 *.iws
 teamcity-info.xml
 *.hprof
+$IDEA_PLUGINS_SANDBOX_FOLDER$

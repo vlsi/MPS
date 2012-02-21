@@ -21,18 +21,19 @@ import jetbrains.mps.generator.impl.TemplateGenerator;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * Evgeny Gryaznov, 11/19/10
  */
-public class ReferenceInfo_Template extends ReferenceInfo {
+public class ReferenceInfo_Template extends ReferenceInfo_TemplateBase {
   private SNodePointer myTemplateSourceNode;
   private String myTemplateTargetNode;
   private TemplateContext myContext;
   private String myResolveInfo;
 
 
-  public ReferenceInfo_Template(SNode outputSourceNode, String role, SNodePointer sourceNode, String targetNodeId, String resolveInfo, TemplateContext context) {
+  public ReferenceInfo_Template(@NotNull SNode outputSourceNode, String role, SNodePointer sourceNode, String targetNodeId, String resolveInfo, TemplateContext context) {
     super(outputSourceNode, role, context.getInput());
     myContext = context;
     myTemplateSourceNode = sourceNode;
@@ -48,12 +49,14 @@ public class ReferenceInfo_Template extends ReferenceInfo {
     // try to find for the same inputNode
     SNode outputTargetNode = generator.findOutputNodeByInputAndTemplateNode(getInputNode(), myTemplateTargetNode);
     if (outputTargetNode != null) {
+      checkCrossRootTemplateReference(outputTargetNode, generator);
       return outputTargetNode;
     }
 
     // if template has been applied exactly once, then we have unique output node for each template node
     outputTargetNode = generator.findOutputNodeByTemplateNodeUnique(myTemplateTargetNode);
     if (outputTargetNode != null) {
+      checkCrossRootTemplateReference(outputTargetNode, generator);
       return outputTargetNode;
     }
 
@@ -61,6 +64,7 @@ public class ReferenceInfo_Template extends ReferenceInfo {
     for (SNode historyInputNode : myContext.getInputHistory()) {
       outputTargetNode = generator.findOutputNodeByInputAndTemplateNode(historyInputNode, myTemplateTargetNode);
       if (outputTargetNode != null) {
+        checkCrossRootTemplateReference(outputTargetNode, generator);
         return outputTargetNode;
       }
     }
@@ -87,5 +91,11 @@ public class ReferenceInfo_Template extends ReferenceInfo {
       GeneratorUtil.describe(inputNode, "input node"),
       GeneratorUtil.describe(myTemplateSourceNode.getNode(), "original reference")
     };
+  }
+
+
+  @Override
+  protected SNode getTemplateNode() {
+    return myTemplateSourceNode != null ? myTemplateSourceNode.getNode() : null;
   }
 }

@@ -26,6 +26,11 @@ public class AcceptYoursTheirs extends BaseAction {
   }
 
   @Override
+  protected void doUpdate(AnActionEvent event, Map<String, Object> map) {
+    event.getPresentation().setEnabled(myMergeModelsDialog.isAcceptYoursTheirsEnabled());
+  }
+
+  @Override
   public boolean displayTextInToolbar() {
     return true;
   }

@@ -82,11 +82,12 @@ public class SubtreeChecker {
       if (!(isError)) {
         IErrorReporter reporter = typeCheckingContext.getTypeMessageDontCheck(child);
         if (reporter != null) {
+          String reportError = reporter.reportError();
           if (!(allowErrors)) {
-            Assert.assertTrue(reporter.reportError(), reporter.getMessageStatus() != MessageStatus.ERROR);
+            Assert.assertTrue(reportError, reporter.getMessageStatus() != MessageStatus.ERROR);
           }
           if (!(allowWarnings)) {
-            Assert.assertTrue(reporter.reportError(), reporter.getMessageStatus() != MessageStatus.WARNING);
+            Assert.assertTrue(reportError, reporter.getMessageStatus() != MessageStatus.WARNING);
           }
         }
       }

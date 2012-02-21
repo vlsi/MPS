@@ -9406,6 +9406,9 @@
         </node>
       </node>
     </node>
+    <node role="inspectedCellModel" roleId="tpc2.1078153129734" type="tpc2.CellModel_Component" typeId="tpc2.1078939183254" id="5891355986060101349">
+      <link role="editorComponent" roleId="tpc2.1078939183255" targetNodeId="1214476568032" resolveInfo="_CellModel_Common" />
+    </node>
   </root>
   <root id="7667276221847618816">
     <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="7667276221847632119">

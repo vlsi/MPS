@@ -21,18 +21,19 @@ import jetbrains.mps.generator.impl.TemplateGenerator;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SReference;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * Created by: Sergey Dmitriev
  * Date: Jan 25, 2007
  */
-public class ReferenceInfo_TemplateNode extends ReferenceInfo {
+public class ReferenceInfo_TemplateNode extends ReferenceInfo_TemplateBase {
   private SNode myTemplateSourceNode;
   private SNode myTemplateTargetNode;
   private TemplateContext myContext;
 
 
-  public ReferenceInfo_TemplateNode(SNode outputSourceNode, SReference templateReference, TemplateContext context) {
+  public ReferenceInfo_TemplateNode(@NotNull SNode outputSourceNode, SReference templateReference, TemplateContext context) {
     super(outputSourceNode, templateReference.getRole(), context.getInput());
     myContext = context;
     myTemplateSourceNode = templateReference.getSourceNode();
@@ -47,12 +48,14 @@ public class ReferenceInfo_TemplateNode extends ReferenceInfo {
     // try to find for the same inputNode
     SNode outputTargetNode = generator.findOutputNodeByInputAndTemplateNode(getInputNode(), myTemplateTargetNode);
     if (outputTargetNode != null) {
+      checkCrossRootTemplateReference(outputTargetNode, generator);
       return outputTargetNode;
     }
 
     // if template has been applied exactly once, then we have unique output node for each template node
     outputTargetNode = generator.findOutputNodeByTemplateNodeUnique(myTemplateTargetNode);
     if (outputTargetNode != null) {
+      checkCrossRootTemplateReference(outputTargetNode, generator);
       return outputTargetNode;
     }
 
@@ -72,6 +75,7 @@ public class ReferenceInfo_TemplateNode extends ReferenceInfo {
     for (SNode historyInputNode : myContext.getInputHistory()) {
       outputTargetNode = generator.findOutputNodeByInputAndTemplateNode(historyInputNode, myTemplateTargetNode);
       if (outputTargetNode != null) {
+        checkCrossRootTemplateReference(outputTargetNode, generator);
         return outputTargetNode;
       }
     }
@@ -98,5 +102,10 @@ public class ReferenceInfo_TemplateNode extends ReferenceInfo {
       GeneratorUtil.describe(inputNode, "input node"),
       GeneratorUtil.describe(myTemplateSourceNode, "original reference")
     };
+  }
+
+  @Override
+  protected SNode getTemplateNode() {
+    return myTemplateSourceNode;
   }
 }
