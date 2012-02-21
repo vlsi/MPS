@@ -120,7 +120,6 @@
     <classNode dependClassName="jetbrains.mps.vcs.diff.changes.SetPropertyChange" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.changes.SetReferenceChange" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.ui.ModelDifferenceDialog" />
-    <classNode dependClassName="jetbrains.mps.vcs.diff.ui.common.SimpleDiffRequest" />
     <classNode dependClassName="jetbrains.mps.workbench.action.ActionUtils" />
     <classNode dependClassName="jetbrains.mps.workbench.action.BaseAction" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />

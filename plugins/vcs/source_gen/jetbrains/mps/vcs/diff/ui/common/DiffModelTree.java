@@ -124,6 +124,8 @@ public abstract class DiffModelTree extends SimpleTree implements DataProvider {
       public void run() {
         setModel(new DefaultTreeModel(rebuild()));
         setRootVisible(true);
+        // TODO ? 
+        // <node> 
         TreeUtil.expandAll(DiffModelTree.this);
       }
     });
@@ -188,7 +190,7 @@ public abstract class DiffModelTree extends SimpleTree implements DataProvider {
     ActionUtils.updateAndPerformAction(Sequence.fromIterable(myActions).first(), new AnActionEvent(null, DataManager.getInstance().getDataContext(DiffModelTree.this), ActionPlaces.UNKNOWN, new Presentation(), ActionManager.getInstance(), 0));
   }
 
-  private class ModelTreeNode extends DiffModelTree.TreeNode {
+  public class ModelTreeNode extends DiffModelTree.TreeNode {
     public ModelTreeNode() {
       setText("model");
       setText(Sequence.fromIterable(getModels()).first().getLongName());

@@ -1,0 +1,11 @@
+<components>
+  <actions>
+    <action id="jetbrains.mps.ide.platform.actions.GoToNodeById_Action" class="jetbrains.mps.ide.platform.actions.GoToNodeById_Action">
+      <keyboard-shortcut first-keystroke="ctrl G" keymap="$default"/>
+    </action>
+    <group id="jetbrains.mps.ide.platform.actions.GoToPlatform_ActionGroup">
+      <reference ref="jetbrains.mps.ide.platform.actions.GoToNodeById_Action"/>
+      <add-to-group group-id="GoToMenu" anchor="last"/>
+    </group>
+  </actions>
+</components>

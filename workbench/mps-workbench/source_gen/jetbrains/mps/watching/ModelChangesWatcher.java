@@ -17,6 +17,7 @@ import jetbrains.mps.make.IMakeNotificationListener;
 import jetbrains.mps.make.MakeNotification;
 import jetbrains.mps.make.IMakeService;
 import jetbrains.mps.library.LibraryManager;
+import jetbrains.mps.library.LibraryInitializer;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vcs.ProjectLevelVcsManager;
 import com.intellij.openapi.application.ApplicationManager;
@@ -78,6 +79,9 @@ public class ModelChangesWatcher implements ApplicationComponent {
     myProjectManager = projectManager;
     myTimer = new Timer("Model Changes Watcher", 50) {
       protected void onTimer() throws InterruptedException {
+        if (LibraryInitializer.getInstance().isReloading()) {
+          return;
+        }
         synchronized (myLock) {
           if (myReloadSession != null) {
             doReload();

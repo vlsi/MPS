@@ -21,6 +21,7 @@ import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.LanguageID;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.smodel.structure.BehaviorDescriptor;
@@ -169,8 +170,12 @@ public class Classifier_Behavior {
     List<SNode> contextClassifiers = Classifier_Behavior.getNonStaticContextClassifiers_6775591514230482802(context);
     List<SNode> required = Classifier_Behavior.getNonStaticContextClassifiers_6775591514230482802(thisNode);
     ListSequence.fromList(required).removeElement(thisNode);
-    for (SNode req : required) {
-      if (!(ListSequence.fromList(contextClassifiers).contains(req))) {
+    for (final SNode req : required) {
+      if (!(ListSequence.fromList(contextClassifiers).any(new IWhereFilter<SNode>() {
+        public boolean accept(SNode cl) {
+          return Classifier_Behavior.call_isDescendant_7165541881557222913(cl, req);
+        }
+      }))) {
         return false;
       }
     }

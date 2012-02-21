@@ -1,253 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="2716458348594431555">
-    <nodeInfo nodeId="2716458348594436183" fileName="AbstractCurrentLinePositionComponent.java" startLine="30" startPosition="63" endLine="31" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myFileEditorManager" />
-    <nodeInfo nodeId="2716458348594436192" fileName="AbstractCurrentLinePositionComponent.java" startLine="31" startPosition="48" endLine="32" endPosition="132" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="mySessionToContextPainterMap" />
-    <nodeInfo nodeId="2716458348594436201" fileName="AbstractCurrentLinePositionComponent.java" startLine="32" startPosition="132" endLine="33" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myProject" />
-    <nodeInfo nodeId="2716458348594436204" fileName="AbstractCurrentLinePositionComponent.java" startLine="33" startPosition="36" endLine="34" endPosition="156" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myEditorComponentCreationHandler" />
-    <nodeInfo nodeId="2716458348594436209" fileName="AbstractCurrentLinePositionComponent.java" startLine="34" startPosition="156" endLine="35" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myMessageBusConnection" />
-    <nodeInfo nodeId="2716458348594436218" fileName="AbstractCurrentLinePositionComponent.java" startLine="37" startPosition="101" endLine="38" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2716458348594436225" fileName="AbstractCurrentLinePositionComponent.java" startLine="38" startPosition="24" endLine="39" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2716458348594438582" fileName="AbstractCurrentLinePositionComponent.java" startLine="42" startPosition="25" endLine="43" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2716458348594438590" fileName="AbstractCurrentLinePositionComponent.java" startLine="43" startPosition="65" endLine="44" endPosition="128" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2716458348594438602" fileName="AbstractCurrentLinePositionComponent.java" startLine="47" startPosition="28" endLine="48" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2716458348594437212" fileName="AbstractCurrentLinePositionComponent.java" startLine="52" startPosition="49" endLine="53" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2716458348594437247" fileName="AbstractCurrentLinePositionComponent.java" startLine="53" startPosition="101" endLine="54" endPosition="133" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2716458348594437226" fileName="AbstractCurrentLinePositionComponent.java" startLine="54" startPosition="133" endLine="55" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4474271214083121775" fileName="AbstractCurrentLinePositionComponent.java" startLine="59" startPosition="116" endLine="60" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4474271214083121957" fileName="AbstractCurrentLinePositionComponent.java" startLine="65" startPosition="77" endLine="66" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4474271214083121962" fileName="AbstractCurrentLinePositionComponent.java" startLine="67" startPosition="11" endLine="68" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4474271214083121630" fileName="AbstractCurrentLinePositionComponent.java" startLine="74" startPosition="116" endLine="75" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4474271214083121925" fileName="AbstractCurrentLinePositionComponent.java" startLine="79" startPosition="87" endLine="80" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4474271214083121930" fileName="AbstractCurrentLinePositionComponent.java" startLine="80" startPosition="59" endLine="81" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2716458348594714851" fileName="AbstractCurrentLinePositionComponent.java" startLine="88" startPosition="60" endLine="89" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2716458348594715022" fileName="AbstractCurrentLinePositionComponent.java" startLine="90" startPosition="27" endLine="91" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2716458348594715025" fileName="AbstractCurrentLinePositionComponent.java" startLine="92" startPosition="5" endLine="93" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="2716458348594714369" fileName="AbstractCurrentLinePositionComponent.java" startLine="93" startPosition="0" endLine="94" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2716458348594714375" fileName="AbstractCurrentLinePositionComponent.java" startLine="94" startPosition="36" endLine="95" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2716458348594714381" fileName="AbstractCurrentLinePositionComponent.java" startLine="95" startPosition="36" endLine="96" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2716458348594714387" fileName="AbstractCurrentLinePositionComponent.java" startLine="96" startPosition="41" endLine="97" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2716458348594714399" fileName="AbstractCurrentLinePositionComponent.java" startLine="98" startPosition="23" endLine="99" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2716458348594714405" fileName="AbstractCurrentLinePositionComponent.java" startLine="99" startPosition="73" endLine="100" endPosition="116" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="2716458348594714879" fileName="AbstractCurrentLinePositionComponent.java" startLine="101" startPosition="51" endLine="102" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2716458348594714424" fileName="AbstractCurrentLinePositionComponent.java" startLine="105" startPosition="29" endLine="106" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2716458348594714428" fileName="AbstractCurrentLinePositionComponent.java" startLine="110" startPosition="5" endLine="111" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4474271214083121730" fileName="AbstractCurrentLinePositionComponent.java" startLine="116" startPosition="25" endLine="117" endPosition="235" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4474271214083121747" fileName="AbstractCurrentLinePositionComponent.java" startLine="117" startPosition="235" endLine="118" endPosition="121" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4474271214083121761" fileName="AbstractCurrentLinePositionComponent.java" startLine="119" startPosition="45" endLine="120" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2716458348594711801" fileName="AbstractCurrentLinePositionComponent.java" startLine="129" startPosition="55" endLine="130" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2716458348594711807" fileName="AbstractCurrentLinePositionComponent.java" startLine="131" startPosition="49" endLine="132" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2716458348594711814" fileName="AbstractCurrentLinePositionComponent.java" startLine="132" startPosition="79" endLine="133" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2716458348594711832" fileName="AbstractCurrentLinePositionComponent.java" startLine="138" startPosition="27" endLine="139" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2716458348594711836" fileName="AbstractCurrentLinePositionComponent.java" startLine="142" startPosition="5" endLine="143" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4474271214083121616" fileName="AbstractCurrentLinePositionComponent.java" startLine="147" startPosition="97" endLine="148" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2716458348594711860" fileName="AbstractCurrentLinePositionComponent.java" startLine="152" startPosition="43" endLine="153" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2716458348594711876" fileName="AbstractCurrentLinePositionComponent.java" startLine="154" startPosition="40" endLine="155" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2716458348594711878" fileName="AbstractCurrentLinePositionComponent.java" startLine="156" startPosition="5" endLine="157" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5038589143591399761" fileName="AbstractCurrentLinePositionComponent.java" startLine="160" startPosition="45" endLine="161" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5038589143591399767" fileName="AbstractCurrentLinePositionComponent.java" startLine="161" startPosition="66" endLine="162" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5038589143591410080" fileName="AbstractCurrentLinePositionComponent.java" startLine="166" startPosition="38" endLine="167" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5038589143591410097" fileName="AbstractCurrentLinePositionComponent.java" startLine="169" startPosition="38" endLine="170" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2716458348594715086" fileName="AbstractCurrentLinePositionComponent.java" startLine="179" startPosition="105" endLine="180" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4474271214083121820" fileName="AbstractCurrentLinePositionComponent.java" startLine="181" startPosition="30" endLine="182" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4474271214083121860" fileName="AbstractCurrentLinePositionComponent.java" startLine="189" startPosition="110" endLine="190" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2716458348594437182" fileName="AbstractCurrentLinePositionComponent.java" startLine="202" startPosition="76" endLine="203" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2716458348594437199" fileName="AbstractCurrentLinePositionComponent.java" startLine="209" startPosition="76" endLine="210" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2716458348594714434" fileName="AbstractCurrentLinePositionComponent.java" startLine="125" startPosition="0" endLine="127" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPosition#(null)Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_3;" />
-    <nodeInfo nodeId="2716458348594437166" fileName="AbstractCurrentLinePositionComponent.java" startLine="196" startPosition="90" endLine="198" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MyEditorComponentCreateListener#()V" />
-    <nodeInfo nodeId="4474271214083121948" fileName="AbstractCurrentLinePositionComponent.java" startLine="64" startPosition="87" endLine="67" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2716458348594715013" fileName="AbstractCurrentLinePositionComponent.java" startLine="89" startPosition="76" endLine="92" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4474271214083121756" fileName="AbstractCurrentLinePositionComponent.java" startLine="118" startPosition="121" endLine="121" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4474271214083121609" fileName="AbstractCurrentLinePositionComponent.java" startLine="146" startPosition="67" endLine="149" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="2716458348594711867" fileName="AbstractCurrentLinePositionComponent.java" startLine="153" startPosition="68" endLine="156" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5038589143591410072" fileName="AbstractCurrentLinePositionComponent.java" startLine="165" startPosition="27" endLine="168" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5038589143591410088" fileName="AbstractCurrentLinePositionComponent.java" startLine="168" startPosition="11" endLine="171" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2716458348594715096" fileName="AbstractCurrentLinePositionComponent.java" startLine="180" startPosition="100" endLine="183" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4474271214083121853" fileName="AbstractCurrentLinePositionComponent.java" startLine="188" startPosition="25" endLine="191" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="2716458348594437256" fileName="AbstractCurrentLinePositionComponent.java" startLine="201" startPosition="82" endLine="204" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="2716458348594437267" fileName="AbstractCurrentLinePositionComponent.java" startLine="208" startPosition="83" endLine="211" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="2716458348594431557" fileName="AbstractCurrentLinePositionComponent.java" startLine="36" startPosition="0" endLine="40" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="AbstractCurrentLinePositionComponent#(Lcom/intellij/openapi/project/Project;Lcom/intellij/openapi/fileEditor/FileEditorManager;)V" />
-    <nodeInfo nodeId="2716458348594438596" fileName="AbstractCurrentLinePositionComponent.java" startLine="46" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="dispose#()V" />
-    <nodeInfo nodeId="4474271214083121918" fileName="AbstractCurrentLinePositionComponent.java" startLine="78" startPosition="25" endLine="82" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2716458348594711804" fileName="AbstractCurrentLinePositionComponent.java" startLine="130" startPosition="37" endLine="134" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.SynchronizedStatement" />
-    <nodeInfo nodeId="2716458348594438578" fileName="AbstractCurrentLinePositionComponent.java" startLine="41" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="init#()V" />
-    <nodeInfo nodeId="2716458348594437209" fileName="AbstractCurrentLinePositionComponent.java" startLine="51" startPosition="53" endLine="56" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.SynchronizedStatement" />
-    <nodeInfo nodeId="2716458348594714420" fileName="AbstractCurrentLinePositionComponent.java" startLine="103" startPosition="31" endLine="108" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="2716458348594711828" fileName="AbstractCurrentLinePositionComponent.java" startLine="136" startPosition="29" endLine="141" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="4474271214083121941" fileName="AbstractCurrentLinePositionComponent.java" startLine="63" startPosition="25" endLine="69" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2716458348594714416" fileName="AbstractCurrentLinePositionComponent.java" startLine="102" startPosition="88" endLine="108" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2716458348594711824" fileName="AbstractCurrentLinePositionComponent.java" startLine="135" startPosition="26" endLine="141" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4474271214083121602" fileName="AbstractCurrentLinePositionComponent.java" startLine="145" startPosition="0" endLine="151" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="detachPainter#(Ljetbrains/mps/debugger/api/ui/breakpoints/CurrentLinePainter;)V" />
-    <nodeInfo nodeId="2716458348594715074" fileName="AbstractCurrentLinePositionComponent.java" startLine="178" startPosition="49" endLine="184" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="4474271214083121838" fileName="AbstractCurrentLinePositionComponent.java" startLine="186" startPosition="68" endLine="193" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="2716458348594437170" fileName="AbstractCurrentLinePositionComponent.java" startLine="199" startPosition="0" endLine="206" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="editorComponentCreated#(Ljetbrains/mps/nodeEditor/EditorComponent;)V" />
-    <nodeInfo nodeId="2716458348594437187" fileName="AbstractCurrentLinePositionComponent.java" startLine="206" startPosition="0" endLine="213" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="editorComponentDisposed#(Ljetbrains/mps/nodeEditor/EditorComponent;)V" />
-    <nodeInfo nodeId="2716458348594437204" fileName="AbstractCurrentLinePositionComponent.java" startLine="50" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getAllPainters#()Ljava/util/List;" />
-    <nodeInfo nodeId="4474271214083121641" fileName="AbstractCurrentLinePositionComponent.java" startLine="76" startPosition="57" endLine="84" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="7474237671217995126" fileName="AbstractCurrentLinePositionComponent.java" startLine="115" startPosition="57" endLine="123" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="2716458348594711819" fileName="AbstractCurrentLinePositionComponent.java" startLine="134" startPosition="5" endLine="142" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2716458348594711789" fileName="AbstractCurrentLinePositionComponent.java" startLine="151" startPosition="0" endLine="159" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="detachPainter#(null)V" />
-    <nodeInfo nodeId="4474271214083121798" fileName="AbstractCurrentLinePositionComponent.java" startLine="177" startPosition="54" endLine="185" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.SynchronizedStatement" />
-    <nodeInfo nodeId="4474271214083121831" fileName="AbstractCurrentLinePositionComponent.java" startLine="185" startPosition="5" endLine="193" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4474271214083121634" fileName="AbstractCurrentLinePositionComponent.java" startLine="75" startPosition="65" endLine="84" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2716458348594714407" fileName="AbstractCurrentLinePositionComponent.java" startLine="100" startPosition="116" endLine="109" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.SynchronizedStatement" />
-    <nodeInfo nodeId="7474237671217995113" fileName="AbstractCurrentLinePositionComponent.java" startLine="114" startPosition="86" endLine="123" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5038589143591410068" fileName="AbstractCurrentLinePositionComponent.java" startLine="164" startPosition="70" endLine="173" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="4474271214083121786" fileName="AbstractCurrentLinePositionComponent.java" startLine="61" startPosition="57" endLine="71" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="5038589143591399791" fileName="AbstractCurrentLinePositionComponent.java" startLine="163" startPosition="57" endLine="173" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4474271214083121779" fileName="AbstractCurrentLinePositionComponent.java" startLine="60" startPosition="65" endLine="71" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4474271214083121723" fileName="AbstractCurrentLinePositionComponent.java" startLine="113" startPosition="0" endLine="125" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="attachPainterAndOpenEditor#(Ljetbrains/mps/debugger/api/ui/breakpoints/CurrentLinePainter;)V" />
-    <nodeInfo nodeId="5038589143591399774" fileName="AbstractCurrentLinePositionComponent.java" startLine="162" startPosition="66" endLine="174" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4474271214083121620" fileName="AbstractCurrentLinePositionComponent.java" startLine="73" startPosition="0" endLine="86" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="detach#(Ljetbrains/mps/debugger/api/ui/breakpoints/CurrentLinePainter;Ljetbrains/mps/nodeEditor/EditorComponent;)V" />
-    <nodeInfo nodeId="2716458348594714394" fileName="AbstractCurrentLinePositionComponent.java" startLine="97" startPosition="71" endLine="110" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4474271214083121765" fileName="AbstractCurrentLinePositionComponent.java" startLine="58" startPosition="0" endLine="73" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="attach#(Ljetbrains/mps/debugger/api/ui/breakpoints/CurrentLinePainter;Ljetbrains/mps/nodeEditor/EditorComponent;)V" />
-    <nodeInfo nodeId="5038589143591399747" fileName="AbstractCurrentLinePositionComponent.java" startLine="159" startPosition="0" endLine="176" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="reAttachPainter#(null)V" />
-    <nodeInfo nodeId="2716458348594711798" fileName="AbstractCurrentLinePositionComponent.java" startLine="127" startPosition="0" endLine="145" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="detachPainterRunnable#(null)Ljava/lang/Runnable;" />
-    <nodeInfo nodeId="2716458348594715049" fileName="AbstractCurrentLinePositionComponent.java" startLine="176" startPosition="0" endLine="195" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="currentSessionChanged#(null)V" />
-    <nodeInfo nodeId="2716458348594714334" fileName="AbstractCurrentLinePositionComponent.java" startLine="86" startPosition="0" endLine="113" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="attachPainterRunnable#(null)Ljava/lang/Runnable;" />
-    <scopeInfo nodeId="2716458348594437169" fileName="AbstractCurrentLinePositionComponent.java" startLine="197" startPosition="47" endLine="197" endPosition="47" />
-    <scopeInfo nodeId="2716458348594438599" fileName="AbstractCurrentLinePositionComponent.java" startLine="47" startPosition="28" endLine="48" endPosition="40" />
-    <scopeInfo nodeId="4474271214083121956" fileName="AbstractCurrentLinePositionComponent.java" startLine="65" startPosition="77" endLine="66" endPosition="58" />
-    <scopeInfo nodeId="2716458348594715014" fileName="AbstractCurrentLinePositionComponent.java" startLine="90" startPosition="27" endLine="91" endPosition="18" />
-    <scopeInfo nodeId="2716458348594714423" fileName="AbstractCurrentLinePositionComponent.java" startLine="105" startPosition="29" endLine="106" endPosition="51" />
-    <scopeInfo nodeId="4474271214083121760" fileName="AbstractCurrentLinePositionComponent.java" startLine="119" startPosition="45" endLine="120" endPosition="50" />
-    <scopeInfo nodeId="2716458348594711831" fileName="AbstractCurrentLinePositionComponent.java" startLine="138" startPosition="27" endLine="139" endPosition="33" />
-    <scopeInfo nodeId="4474271214083121615" fileName="AbstractCurrentLinePositionComponent.java" startLine="147" startPosition="97" endLine="148" endPosition="30" />
-    <scopeInfo nodeId="2716458348594711868" fileName="AbstractCurrentLinePositionComponent.java" startLine="154" startPosition="40" endLine="155" endPosition="13" />
-    <scopeInfo nodeId="5038589143591410074" fileName="AbstractCurrentLinePositionComponent.java" startLine="166" startPosition="38" endLine="167" endPosition="32" />
-    <scopeInfo nodeId="5038589143591410089" fileName="AbstractCurrentLinePositionComponent.java" startLine="169" startPosition="38" endLine="170" endPosition="32" />
-    <scopeInfo nodeId="2716458348594715097" fileName="AbstractCurrentLinePositionComponent.java" startLine="181" startPosition="30" endLine="182" endPosition="74" />
-    <scopeInfo nodeId="4474271214083121859" fileName="AbstractCurrentLinePositionComponent.java" startLine="189" startPosition="110" endLine="190" endPosition="36" />
-    <scopeInfo nodeId="2716458348594437259" fileName="AbstractCurrentLinePositionComponent.java" startLine="202" startPosition="76" endLine="203" endPosition="35" />
-    <scopeInfo nodeId="2716458348594437270" fileName="AbstractCurrentLinePositionComponent.java" startLine="209" startPosition="76" endLine="210" endPosition="35" />
-    <scopeInfo nodeId="2716458348594431560" fileName="AbstractCurrentLinePositionComponent.java" startLine="37" startPosition="101" endLine="39" endPosition="44" />
-    <scopeInfo nodeId="2716458348594438581" fileName="AbstractCurrentLinePositionComponent.java" startLine="42" startPosition="25" endLine="44" endPosition="128" />
-    <scopeInfo nodeId="4474271214083121924" fileName="AbstractCurrentLinePositionComponent.java" startLine="79" startPosition="87" endLine="81" endPosition="36" />
-    <scopeInfo nodeId="2716458348594714434" fileName="AbstractCurrentLinePositionComponent.java" startLine="125" startPosition="0" endLine="127" endPosition="0">
-      <varInfo nodeId="2716458348594714844" varName="session" />
-    </scopeInfo>
-    <scopeInfo nodeId="2716458348594711806" fileName="AbstractCurrentLinePositionComponent.java" startLine="131" startPosition="49" endLine="133" endPosition="75" />
-    <scopeInfo nodeId="2716458348594437166" fileName="AbstractCurrentLinePositionComponent.java" startLine="196" startPosition="90" endLine="198" endPosition="5" />
-    <scopeInfo nodeId="2716458348594437211" fileName="AbstractCurrentLinePositionComponent.java" startLine="52" startPosition="49" endLine="55" endPosition="22">
-      <varInfo nodeId="2716458348594437213" varName="painters" />
-    </scopeInfo>
-    <scopeInfo nodeId="4474271214083121608" fileName="AbstractCurrentLinePositionComponent.java" startLine="146" startPosition="67" endLine="149" endPosition="5" />
-    <scopeInfo nodeId="4474271214083121609" fileName="AbstractCurrentLinePositionComponent.java" startLine="146" startPosition="67" endLine="149" endPosition="5">
-      <varInfo nodeId="4474271214083121613" varName="editor" />
-    </scopeInfo>
-    <scopeInfo nodeId="4474271214083121852" fileName="AbstractCurrentLinePositionComponent.java" startLine="188" startPosition="25" endLine="191" endPosition="9" />
-    <scopeInfo nodeId="4474271214083121853" fileName="AbstractCurrentLinePositionComponent.java" startLine="188" startPosition="25" endLine="191" endPosition="9">
-      <varInfo nodeId="4474271214083121857" varName="editorComponent" />
-    </scopeInfo>
-    <scopeInfo nodeId="2716458348594437176" fileName="AbstractCurrentLinePositionComponent.java" startLine="201" startPosition="82" endLine="204" endPosition="7" />
-    <scopeInfo nodeId="2716458348594437256" fileName="AbstractCurrentLinePositionComponent.java" startLine="201" startPosition="82" endLine="204" endPosition="7">
-      <varInfo nodeId="2716458348594437256" varName="p" />
-    </scopeInfo>
-    <scopeInfo nodeId="2716458348594437193" fileName="AbstractCurrentLinePositionComponent.java" startLine="208" startPosition="83" endLine="211" endPosition="7" />
-    <scopeInfo nodeId="2716458348594437267" fileName="AbstractCurrentLinePositionComponent.java" startLine="208" startPosition="83" endLine="211" endPosition="7">
-      <varInfo nodeId="2716458348594437267" varName="p" />
-    </scopeInfo>
-    <scopeInfo nodeId="2716458348594431557" fileName="AbstractCurrentLinePositionComponent.java" startLine="36" startPosition="0" endLine="40" endPosition="3">
-      <varInfo nodeId="2716458348594436214" varName="fileEditorManager" />
-      <varInfo nodeId="2716458348594436212" varName="project" />
-    </scopeInfo>
-    <scopeInfo nodeId="2716458348594438596" fileName="AbstractCurrentLinePositionComponent.java" startLine="46" startPosition="0" endLine="50" endPosition="0" />
-    <scopeInfo nodeId="4474271214083121947" fileName="AbstractCurrentLinePositionComponent.java" startLine="64" startPosition="87" endLine="68" endPosition="36" />
-    <scopeInfo nodeId="4474271214083121917" fileName="AbstractCurrentLinePositionComponent.java" startLine="78" startPosition="25" endLine="82" endPosition="9" />
-    <scopeInfo nodeId="2716458348594715077" fileName="AbstractCurrentLinePositionComponent.java" startLine="179" startPosition="105" endLine="183" endPosition="9">
-      <varInfo nodeId="2716458348594715087" varName="painter" />
-    </scopeInfo>
-    <scopeInfo nodeId="2716458348594438578" fileName="AbstractCurrentLinePositionComponent.java" startLine="41" startPosition="0" endLine="46" endPosition="0" />
-    <scopeInfo nodeId="2716458348594437208" fileName="AbstractCurrentLinePositionComponent.java" startLine="51" startPosition="53" endLine="56" endPosition="5" />
-    <scopeInfo nodeId="2716458348594714420" fileName="AbstractCurrentLinePositionComponent.java" startLine="103" startPosition="31" endLine="108" endPosition="0" />
-    <scopeInfo nodeId="7474237671217995129" fileName="AbstractCurrentLinePositionComponent.java" startLine="116" startPosition="25" endLine="121" endPosition="9">
-      <varInfo nodeId="4474271214083121731" varName="currentEditorComponent" />
-    </scopeInfo>
-    <scopeInfo nodeId="2716458348594711828" fileName="AbstractCurrentLinePositionComponent.java" startLine="136" startPosition="29" endLine="141" endPosition="0" />
-    <scopeInfo nodeId="2716458348594711856" fileName="AbstractCurrentLinePositionComponent.java" startLine="152" startPosition="43" endLine="157" endPosition="75">
-      <varInfo nodeId="2716458348594711861" varName="detachPainterRunnable" />
-    </scopeInfo>
-    <scopeInfo nodeId="4474271214083121940" fileName="AbstractCurrentLinePositionComponent.java" startLine="63" startPosition="25" endLine="69" endPosition="9" />
-    <scopeInfo nodeId="2716458348594711823" fileName="AbstractCurrentLinePositionComponent.java" startLine="135" startPosition="26" endLine="141" endPosition="8" />
-    <scopeInfo nodeId="4474271214083121602" fileName="AbstractCurrentLinePositionComponent.java" startLine="145" startPosition="0" endLine="151" endPosition="0">
-      <varInfo nodeId="4474271214083121605" varName="painter" />
-    </scopeInfo>
-    <scopeInfo nodeId="5038589143591410071" fileName="AbstractCurrentLinePositionComponent.java" startLine="165" startPosition="27" endLine="171" endPosition="11" />
-    <scopeInfo nodeId="2716458348594715074" fileName="AbstractCurrentLinePositionComponent.java" startLine="178" startPosition="49" endLine="184" endPosition="7">
-      <varInfo nodeId="2716458348594715074" varName="session" />
-    </scopeInfo>
-    <scopeInfo nodeId="4474271214083121800" fileName="AbstractCurrentLinePositionComponent.java" startLine="178" startPosition="49" endLine="184" endPosition="7" />
-    <scopeInfo nodeId="2716458348594714409" fileName="AbstractCurrentLinePositionComponent.java" startLine="101" startPosition="51" endLine="108" endPosition="10" />
-    <scopeInfo nodeId="4474271214083121838" fileName="AbstractCurrentLinePositionComponent.java" startLine="186" startPosition="68" endLine="193" endPosition="0" />
-    <scopeInfo nodeId="2716458348594437170" fileName="AbstractCurrentLinePositionComponent.java" startLine="199" startPosition="0" endLine="206" endPosition="0">
-      <varInfo nodeId="2716458348594437173" varName="editorComponent" />
-    </scopeInfo>
-    <scopeInfo nodeId="2716458348594437187" fileName="AbstractCurrentLinePositionComponent.java" startLine="206" startPosition="0" endLine="213" endPosition="0">
-      <varInfo nodeId="2716458348594437190" varName="editorComponent" />
-    </scopeInfo>
-    <scopeInfo nodeId="2716458348594437204" fileName="AbstractCurrentLinePositionComponent.java" startLine="50" startPosition="0" endLine="58" endPosition="0" />
-    <scopeInfo nodeId="4474271214083121641" fileName="AbstractCurrentLinePositionComponent.java" startLine="76" startPosition="57" endLine="84" endPosition="0" />
-    <scopeInfo nodeId="7474237671217995126" fileName="AbstractCurrentLinePositionComponent.java" startLine="115" startPosition="57" endLine="123" endPosition="0" />
-    <scopeInfo nodeId="2716458348594711789" fileName="AbstractCurrentLinePositionComponent.java" startLine="151" startPosition="0" endLine="159" endPosition="0">
-      <varInfo nodeId="2716458348594711792" varName="session" />
-    </scopeInfo>
-    <scopeInfo nodeId="4474271214083121729" fileName="AbstractCurrentLinePositionComponent.java" startLine="114" startPosition="86" endLine="123" endPosition="7" />
-    <scopeInfo nodeId="5038589143591410068" fileName="AbstractCurrentLinePositionComponent.java" startLine="164" startPosition="70" endLine="173" endPosition="0" />
-    <scopeInfo nodeId="4474271214083121786" fileName="AbstractCurrentLinePositionComponent.java" startLine="61" startPosition="57" endLine="71" endPosition="0" />
-    <scopeInfo nodeId="4474271214083121629" fileName="AbstractCurrentLinePositionComponent.java" startLine="74" startPosition="116" endLine="84" endPosition="7" />
-    <scopeInfo nodeId="5038589143591399775" fileName="AbstractCurrentLinePositionComponent.java" startLine="163" startPosition="57" endLine="173" endPosition="9" />
-    <scopeInfo nodeId="2716458348594714398" fileName="AbstractCurrentLinePositionComponent.java" startLine="98" startPosition="23" endLine="109" endPosition="7">
-      <varInfo nodeId="2716458348594714400" varName="newPainter" />
-    </scopeInfo>
-    <scopeInfo nodeId="4474271214083121774" fileName="AbstractCurrentLinePositionComponent.java" startLine="59" startPosition="116" endLine="71" endPosition="7" />
-    <scopeInfo nodeId="4474271214083121723" fileName="AbstractCurrentLinePositionComponent.java" startLine="113" startPosition="0" endLine="125" endPosition="0">
-      <varInfo nodeId="4474271214083121726" varName="painter" />
-    </scopeInfo>
-    <scopeInfo nodeId="4474271214083121620" fileName="AbstractCurrentLinePositionComponent.java" startLine="73" startPosition="0" endLine="86" endPosition="0">
-      <varInfo nodeId="4474271214083121626" varName="editorComponent" />
-      <varInfo nodeId="4474271214083121623" varName="painter" />
-    </scopeInfo>
-    <scopeInfo nodeId="2716458348594711800" fileName="AbstractCurrentLinePositionComponent.java" startLine="129" startPosition="55" endLine="143" endPosition="16">
-      <varInfo nodeId="2716458348594711802" varName="painter" />
-    </scopeInfo>
-    <scopeInfo nodeId="5038589143591399750" fileName="AbstractCurrentLinePositionComponent.java" startLine="160" startPosition="45" endLine="174" endPosition="5">
-      <varInfo nodeId="5038589143591399768" varName="attachSession" />
-      <varInfo nodeId="5038589143591399762" varName="detachSession" />
-    </scopeInfo>
-    <scopeInfo nodeId="4474271214083121765" fileName="AbstractCurrentLinePositionComponent.java" startLine="58" startPosition="0" endLine="73" endPosition="0">
-      <varInfo nodeId="4474271214083121771" varName="editorComponent" />
-      <varInfo nodeId="4474271214083121768" varName="painter" />
-    </scopeInfo>
-    <scopeInfo nodeId="2716458348594715052" fileName="AbstractCurrentLinePositionComponent.java" startLine="177" startPosition="54" endLine="193" endPosition="7" />
-    <scopeInfo nodeId="5038589143591399747" fileName="AbstractCurrentLinePositionComponent.java" startLine="159" startPosition="0" endLine="176" endPosition="0">
-      <varInfo nodeId="5038589143591399752" varName="session" />
-    </scopeInfo>
-    <scopeInfo nodeId="2716458348594711798" fileName="AbstractCurrentLinePositionComponent.java" startLine="127" startPosition="0" endLine="145" endPosition="0">
-      <varInfo nodeId="2716458348594711839" varName="session" />
-    </scopeInfo>
-    <scopeInfo nodeId="2716458348594715049" fileName="AbstractCurrentLinePositionComponent.java" startLine="176" startPosition="0" endLine="195" endPosition="0">
-      <varInfo nodeId="2716458348594715105" varName="newSession" />
-    </scopeInfo>
-    <scopeInfo nodeId="2716458348594714338" fileName="AbstractCurrentLinePositionComponent.java" startLine="88" startPosition="60" endLine="111" endPosition="16">
-      <varInfo nodeId="2716458348594714376" varName="fileName" />
-      <varInfo nodeId="2716458348594714382" varName="lineNumber" />
-      <varInfo nodeId="2716458348594714388" varName="node" />
-      <varInfo nodeId="2716458348594714852" varName="position" />
-      <varInfo nodeId="2716458348594714370" varName="unitName" />
-    </scopeInfo>
-    <scopeInfo nodeId="2716458348594714334" fileName="AbstractCurrentLinePositionComponent.java" startLine="86" startPosition="0" endLine="113" endPosition="0">
-      <varInfo nodeId="2716458348594714336" varName="debugSession" />
-    </scopeInfo>
-    <unitInfo nodeId="2716458348594431555" fileName="AbstractCurrentLinePositionComponent.java" startLine="30" startPosition="0" endLine="215" endPosition="0" unitName="jetbrains.mps.debugger.api.ui.breakpoints.AbstractCurrentLinePositionComponent" />
-    <unitInfo nodeId="4474271214083121785" fileName="AbstractCurrentLinePositionComponent.java" startLine="61" startPosition="45" endLine="71" endPosition="5" unitName="jetbrains.mps.debugger.api.ui.breakpoints.AbstractCurrentLinePositionComponent$1" />
-    <unitInfo nodeId="4474271214083121640" fileName="AbstractCurrentLinePositionComponent.java" startLine="76" startPosition="45" endLine="84" endPosition="5" unitName="jetbrains.mps.debugger.api.ui.breakpoints.AbstractCurrentLinePositionComponent$2" />
-    <unitInfo nodeId="2716458348594714419" fileName="AbstractCurrentLinePositionComponent.java" startLine="103" startPosition="19" endLine="108" endPosition="9" unitName="jetbrains.mps.debugger.api.ui.breakpoints.AbstractCurrentLinePositionComponent$3" />
-    <unitInfo nodeId="7474237671217995124" fileName="AbstractCurrentLinePositionComponent.java" startLine="115" startPosition="45" endLine="123" endPosition="5" unitName="jetbrains.mps.debugger.api.ui.breakpoints.AbstractCurrentLinePositionComponent$4" />
-    <unitInfo nodeId="2716458348594711827" fileName="AbstractCurrentLinePositionComponent.java" startLine="136" startPosition="17" endLine="141" endPosition="7" unitName="jetbrains.mps.debugger.api.ui.breakpoints.AbstractCurrentLinePositionComponent$5" />
-    <unitInfo nodeId="5038589143591410066" fileName="AbstractCurrentLinePositionComponent.java" startLine="164" startPosition="58" endLine="173" endPosition="7" unitName="jetbrains.mps.debugger.api.ui.breakpoints.AbstractCurrentLinePositionComponent$6" />
-    <unitInfo nodeId="4474271214083121837" fileName="AbstractCurrentLinePositionComponent.java" startLine="186" startPosition="56" endLine="193" endPosition="5" unitName="jetbrains.mps.debugger.api.ui.breakpoints.AbstractCurrentLinePositionComponent$7" />
-    <unitInfo nodeId="2716458348594437163" fileName="AbstractCurrentLinePositionComponent.java" startLine="196" startPosition="0" endLine="214" endPosition="0" unitName="jetbrains.mps.debugger.api.ui.breakpoints.AbstractCurrentLinePositionComponent$MyEditorComponentCreateListener" />
-  </root>
   <root nodeId="4474271214083111858">
     <nodeInfo nodeId="4474271214083125309" fileName="GroupedTree.java" startLine="20" startPosition="97" endLine="21" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myContext" />
     <nodeInfo nodeId="4474271214083125318" fileName="GroupedTree.java" startLine="23" startPosition="49" endLine="24" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -499,129 +251,6 @@
     <unitInfo nodeId="4474271214083111857" fileName="GroupedTree.java" startLine="74" startPosition="0" endLine="119" endPosition="0" unitName="jetbrains.mps.debugger.api.ui.breakpoints.GroupedTree$GroupKind" />
     <unitInfo nodeId="4474271214083117743" fileName="GroupedTree.java" startLine="175" startPosition="0" endLine="214" endPosition="0" unitName="jetbrains.mps.debugger.api.ui.breakpoints.GroupedTree$GroupTreeNode" />
   </root>
-  <root nodeId="4474271214083113284">
-    <nodeInfo nodeId="4474271214083126144" fileName="EditorCellPainter.java" startLine="35" startPosition="81" endLine="36" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4474271214083126148" fileName="EditorCellPainter.java" startLine="36" startPosition="28" endLine="37" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4474271214083126157" fileName="EditorCellPainter.java" startLine="38" startPosition="23" endLine="39" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4474271214083126169" fileName="EditorCellPainter.java" startLine="40" startPosition="28" endLine="41" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4474271214083126196" fileName="EditorCellPainter.java" startLine="43" startPosition="48" endLine="44" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4474271214083126180" fileName="EditorCellPainter.java" startLine="46" startPosition="53" endLine="47" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4474271214083126186" fileName="EditorCellPainter.java" startLine="47" startPosition="75" endLine="48" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4474271214083126202" fileName="EditorCellPainter.java" startLine="50" startPosition="5" endLine="51" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4474271214083126209" fileName="EditorCellPainter.java" startLine="55" startPosition="32" endLine="56" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4474271214083126216" fileName="EditorCellPainter.java" startLine="60" startPosition="37" endLine="61" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4474271214083126227" fileName="EditorCellPainter.java" startLine="65" startPosition="76" endLine="66" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4474271214083126237" fileName="EditorCellPainter.java" startLine="67" startPosition="28" endLine="68" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4474271214083126242" fileName="EditorCellPainter.java" startLine="68" startPosition="49" endLine="69" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4474271214083126255" fileName="EditorCellPainter.java" startLine="74" startPosition="66" endLine="75" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4474271214083126265" fileName="EditorCellPainter.java" startLine="76" startPosition="28" endLine="77" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4474271214083126280" fileName="EditorCellPainter.java" startLine="81" startPosition="99" endLine="82" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4474271214083126296" fileName="EditorCellPainter.java" startLine="83" startPosition="62" endLine="84" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4474271214083126301" fileName="EditorCellPainter.java" startLine="84" startPosition="43" endLine="85" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4474271214083126327" fileName="EditorCellPainter.java" startLine="89" startPosition="94" endLine="90" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4474271214083126343" fileName="EditorCellPainter.java" startLine="91" startPosition="53" endLine="92" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4474271214083126348" fileName="EditorCellPainter.java" startLine="92" startPosition="34" endLine="93" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4474271214083126378" fileName="EditorCellPainter.java" startLine="98" startPosition="112" endLine="99" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4474271214083126382" fileName="EditorCellPainter.java" startLine="99" startPosition="23" endLine="100" endPosition="174" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4474271214083126419" fileName="EditorCellPainter.java" startLine="103" startPosition="130" endLine="104" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4474271214083126424" fileName="EditorCellPainter.java" startLine="104" startPosition="43" endLine="105" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4474271214083126430" fileName="EditorCellPainter.java" startLine="105" startPosition="61" endLine="106" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4474271214083126114" fileName="EditorCellPainter.java" startLine="18" startPosition="86" endLine="20" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="EditorCellPainter#()V" />
-    <nodeInfo nodeId="4474271214083126117" fileName="EditorCellPainter.java" startLine="21" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getCellBackgroundColor#()Ljava/awt/Color;" />
-    <nodeInfo nodeId="4474271214083126122" fileName="EditorCellPainter.java" startLine="24" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getStripeBackgroundColor#()Ljava/awt/Color;" />
-    <nodeInfo nodeId="4474271214083126127" fileName="EditorCellPainter.java" startLine="27" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getFrameColor#()Ljava/awt/Color;" />
-    <nodeInfo nodeId="4474271214083126132" fileName="EditorCellPainter.java" startLine="30" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSNode#()Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="4474271214083126164" fileName="EditorCellPainter.java" startLine="39" startPosition="72" endLine="42" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4474271214083126260" fileName="EditorCellPainter.java" startLine="75" startPosition="59" endLine="78" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4474271214083126175" fileName="EditorCellPainter.java" startLine="45" startPosition="12" endLine="49" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4474271214083126232" fileName="EditorCellPainter.java" startLine="66" startPosition="59" endLine="70" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4474271214083126287" fileName="EditorCellPainter.java" startLine="82" startPosition="76" endLine="86" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4474271214083126334" fileName="EditorCellPainter.java" startLine="90" startPosition="76" endLine="94" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4474271214083126205" fileName="EditorCellPainter.java" startLine="53" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="paintsAbove#()Z" />
-    <nodeInfo nodeId="4474271214083126212" fileName="EditorCellPainter.java" startLine="58" startPosition="0" endLine="63" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="paintsBackground#()Z" />
-    <nodeInfo nodeId="4474271214083126368" fileName="EditorCellPainter.java" startLine="96" startPosition="0" endLine="102" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getBounds#(Ljetbrains/mps/nodeEditor/EditorComponent;Ljetbrains/mps/nodeEditor/cells/EditorCell_Label;)Ljava/awt/Rectangle;" />
-    <nodeInfo nodeId="4474271214083126406" fileName="EditorCellPainter.java" startLine="102" startPosition="0" endLine="108" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="paintStripe#(Ljava/awt/Graphics;Ljetbrains/mps/nodeEditor/EditorComponent;Ljetbrains/mps/nodeEditor/cells/EditorCell_Label;)V" />
-    <nodeInfo nodeId="4474271214083126171" fileName="EditorCellPainter.java" startLine="42" startPosition="7" endLine="49" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4474271214083126247" fileName="EditorCellPainter.java" startLine="72" startPosition="0" endLine="80" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="paint#(Ljava/awt/Graphics;Ljetbrains/mps/nodeEditor/EditorComponent;)V" />
-    <nodeInfo nodeId="4474271214083126270" fileName="EditorCellPainter.java" startLine="80" startPosition="0" endLine="88" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="paintCellBackground#(Ljava/awt/Graphics;Ljetbrains/mps/nodeEditor/EditorComponent;)V" />
-    <nodeInfo nodeId="4474271214083126317" fileName="EditorCellPainter.java" startLine="88" startPosition="0" endLine="96" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="paintCellFrame#(Ljava/awt/Graphics;Ljetbrains/mps/nodeEditor/EditorComponent;)V" />
-    <nodeInfo nodeId="4474271214083126219" fileName="EditorCellPainter.java" startLine="63" startPosition="0" endLine="72" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="paintBackground#(Ljava/awt/Graphics;Ljetbrains/mps/nodeEditor/EditorComponent;)V" />
-    <nodeInfo nodeId="4474271214083126152" fileName="EditorCellPainter.java" startLine="37" startPosition="38" endLine="50" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4474271214083126137" fileName="EditorCellPainter.java" startLine="33" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="findCell#(Ljetbrains/mps/nodeEditor/EditorComponent;)Ljetbrains/mps/nodeEditor/cells/EditorCell_Label;" />
-    <scopeInfo nodeId="4474271214083126116" fileName="EditorCellPainter.java" startLine="19" startPosition="35" endLine="19" endPosition="35" />
-    <scopeInfo nodeId="4474271214083126168" fileName="EditorCellPainter.java" startLine="40" startPosition="28" endLine="41" endPosition="20" />
-    <scopeInfo nodeId="4474271214083126195" fileName="EditorCellPainter.java" startLine="43" startPosition="48" endLine="44" endPosition="47" />
-    <scopeInfo nodeId="4474271214083126208" fileName="EditorCellPainter.java" startLine="55" startPosition="32" endLine="56" endPosition="16" />
-    <scopeInfo nodeId="4474271214083126215" fileName="EditorCellPainter.java" startLine="60" startPosition="37" endLine="61" endPosition="16" />
-    <scopeInfo nodeId="4474271214083126264" fileName="EditorCellPainter.java" startLine="76" startPosition="28" endLine="77" endPosition="41" />
-    <scopeInfo nodeId="4474271214083126114" fileName="EditorCellPainter.java" startLine="18" startPosition="86" endLine="20" endPosition="3" />
-    <scopeInfo nodeId="4474271214083126179" fileName="EditorCellPainter.java" startLine="46" startPosition="53" endLine="48" endPosition="92">
-      <varInfo nodeId="4474271214083126181" varName="collection" />
-    </scopeInfo>
-    <scopeInfo nodeId="4474271214083126236" fileName="EditorCellPainter.java" startLine="67" startPosition="28" endLine="69" endPosition="46" />
-    <scopeInfo nodeId="4474271214083126295" fileName="EditorCellPainter.java" startLine="83" startPosition="62" endLine="85" endPosition="90" />
-    <scopeInfo nodeId="4474271214083126342" fileName="EditorCellPainter.java" startLine="91" startPosition="53" endLine="93" endPosition="98" />
-    <scopeInfo nodeId="4474271214083126377" fileName="EditorCellPainter.java" startLine="98" startPosition="112" endLine="100" endPosition="174">
-      <varInfo nodeId="4474271214083126379" varName="leftMargin" />
-    </scopeInfo>
-    <scopeInfo nodeId="4474271214083126117" fileName="EditorCellPainter.java" startLine="21" startPosition="0" endLine="24" endPosition="0" />
-    <scopeInfo nodeId="4474271214083126122" fileName="EditorCellPainter.java" startLine="24" startPosition="0" endLine="27" endPosition="0" />
-    <scopeInfo nodeId="4474271214083126127" fileName="EditorCellPainter.java" startLine="27" startPosition="0" endLine="30" endPosition="0" />
-    <scopeInfo nodeId="4474271214083126132" fileName="EditorCellPainter.java" startLine="30" startPosition="0" endLine="33" endPosition="0" />
-    <scopeInfo nodeId="4474271214083126418" fileName="EditorCellPainter.java" startLine="103" startPosition="130" endLine="106" endPosition="64">
-      <varInfo nodeId="4474271214083126425" varName="bounds" />
-    </scopeInfo>
-    <scopeInfo nodeId="4474271214083126254" fileName="EditorCellPainter.java" startLine="74" startPosition="66" endLine="78" endPosition="5">
-      <varInfo nodeId="4474271214083126256" varName="innerCell" />
-    </scopeInfo>
-    <scopeInfo nodeId="4474271214083126205" fileName="EditorCellPainter.java" startLine="53" startPosition="0" endLine="58" endPosition="0" />
-    <scopeInfo nodeId="4474271214083126212" fileName="EditorCellPainter.java" startLine="58" startPosition="0" endLine="63" endPosition="0" />
-    <scopeInfo nodeId="4474271214083126226" fileName="EditorCellPainter.java" startLine="65" startPosition="76" endLine="70" endPosition="5">
-      <varInfo nodeId="4474271214083126228" varName="innerCell" />
-    </scopeInfo>
-    <scopeInfo nodeId="4474271214083126279" fileName="EditorCellPainter.java" startLine="81" startPosition="99" endLine="86" endPosition="5">
-      <varInfo nodeId="4474271214083126281" varName="bigCell" />
-    </scopeInfo>
-    <scopeInfo nodeId="4474271214083126326" fileName="EditorCellPainter.java" startLine="89" startPosition="94" endLine="94" endPosition="5">
-      <varInfo nodeId="4474271214083126328" varName="bigCell" />
-    </scopeInfo>
-    <scopeInfo nodeId="4474271214083126368" fileName="EditorCellPainter.java" startLine="96" startPosition="0" endLine="102" endPosition="0">
-      <varInfo nodeId="4474271214083126371" varName="editorComponent" />
-      <varInfo nodeId="4474271214083126374" varName="innerCell" />
-    </scopeInfo>
-    <scopeInfo nodeId="4474271214083126406" fileName="EditorCellPainter.java" startLine="102" startPosition="0" endLine="108" endPosition="0">
-      <varInfo nodeId="4474271214083126412" varName="editorComponent" />
-      <varInfo nodeId="4474271214083126409" varName="g" />
-      <varInfo nodeId="4474271214083126415" varName="innerCell" />
-    </scopeInfo>
-    <scopeInfo nodeId="4474271214083126247" fileName="EditorCellPainter.java" startLine="72" startPosition="0" endLine="80" endPosition="0">
-      <varInfo nodeId="4474271214083126252" varName="editorComponent" />
-      <varInfo nodeId="4474271214083126250" varName="g" />
-    </scopeInfo>
-    <scopeInfo nodeId="4474271214083126270" fileName="EditorCellPainter.java" startLine="80" startPosition="0" endLine="88" endPosition="0">
-      <varInfo nodeId="4474271214083126276" varName="editorComponent" />
-      <varInfo nodeId="4474271214083126273" varName="g" />
-    </scopeInfo>
-    <scopeInfo nodeId="4474271214083126317" fileName="EditorCellPainter.java" startLine="88" startPosition="0" endLine="96" endPosition="0">
-      <varInfo nodeId="4474271214083126323" varName="editorComponent" />
-      <varInfo nodeId="4474271214083126320" varName="g" />
-    </scopeInfo>
-    <scopeInfo nodeId="4474271214083126219" fileName="EditorCellPainter.java" startLine="63" startPosition="0" endLine="72" endPosition="0">
-      <varInfo nodeId="4474271214083126224" varName="editorComponent" />
-      <varInfo nodeId="4474271214083126222" varName="g" />
-    </scopeInfo>
-    <scopeInfo nodeId="4474271214083126156" fileName="EditorCellPainter.java" startLine="38" startPosition="23" endLine="49" endPosition="7">
-      <varInfo nodeId="4474271214083126158" varName="bigCell" />
-    </scopeInfo>
-    <scopeInfo nodeId="4474271214083126143" fileName="EditorCellPainter.java" startLine="35" startPosition="81" endLine="51" endPosition="21">
-      <varInfo nodeId="4474271214083126149" varName="innerCell" />
-      <varInfo nodeId="4474271214083126145" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="4474271214083126137" fileName="EditorCellPainter.java" startLine="33" startPosition="0" endLine="53" endPosition="0">
-      <varInfo nodeId="4474271214083126140" varName="editorComponent" />
-    </scopeInfo>
-    <unitInfo nodeId="4474271214083113284" fileName="EditorCellPainter.java" startLine="18" startPosition="0" endLine="109" endPosition="0" unitName="jetbrains.mps.debugger.api.ui.breakpoints.EditorCellPainter" />
-  </root>
   <root nodeId="4474271214083117744">
     <nodeInfo nodeId="4474271214083117747" fileName="BreakpointIconRenderer.java" startLine="31" startPosition="79" endLine="32" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="TYPE" />
     <nodeInfo nodeId="4474271214083117753" fileName="BreakpointIconRenderer.java" startLine="33" startPosition="0" endLine="34" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myBreakpoint" />
@@ -771,7 +400,7 @@
     <nodeInfo nodeId="4474271214083123982" fileName="BreakpointsUiComponent.java" startLine="89" startPosition="62" endLine="90" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4474271214083123987" fileName="BreakpointsUiComponent.java" startLine="90" startPosition="81" endLine="91" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4474271214083123995" fileName="BreakpointsUiComponent.java" startLine="91" startPosition="65" endLine="92" endPosition="128" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4474271214083124008" fileName="BreakpointsUiComponent.java" startLine="93" startPosition="97" endLine="94" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4474271214083124008" fileName="BreakpointsUiComponent.java" startLine="93" startPosition="106" endLine="94" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4474271214083124016" fileName="BreakpointsUiComponent.java" startLine="99" startPosition="34" endLine="100" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4474271214083124020" fileName="BreakpointsUiComponent.java" startLine="100" startPosition="40" endLine="101" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4474271214083124025" fileName="BreakpointsUiComponent.java" startLine="101" startPosition="84" endLine="102" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -793,7 +422,7 @@
     <nodeInfo nodeId="4474271214083124159" fileName="BreakpointsUiComponent.java" startLine="147" startPosition="37" endLine="148" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4474271214083124161" fileName="BreakpointsUiComponent.java" startLine="149" startPosition="5" endLine="150" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4474271214083125122" fileName="BreakpointsUiComponent.java" startLine="154" startPosition="75" endLine="155" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4474271214083125139" fileName="BreakpointsUiComponent.java" startLine="156" startPosition="92" endLine="157" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4474271214083125139" fileName="BreakpointsUiComponent.java" startLine="156" startPosition="101" endLine="157" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4474271214083124178" fileName="BreakpointsUiComponent.java" startLine="161" startPosition="7" endLine="162" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4474271214083124193" fileName="BreakpointsUiComponent.java" startLine="166" startPosition="34" endLine="167" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4474271214083124203" fileName="BreakpointsUiComponent.java" startLine="169" startPosition="85" endLine="170" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -852,7 +481,7 @@
     <nodeInfo nodeId="4474271214083124636" fileName="BreakpointsUiComponent.java" startLine="303" startPosition="12" endLine="304" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4474271214083124649" fileName="BreakpointsUiComponent.java" startLine="305" startPosition="31" endLine="306" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4474271214083124678" fileName="BreakpointsUiComponent.java" startLine="312" startPosition="109" endLine="313" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4474271214083124691" fileName="BreakpointsUiComponent.java" startLine="314" startPosition="23" endLine="315" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4474271214083124691" fileName="BreakpointsUiComponent.java" startLine="314" startPosition="23" endLine="315" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4474271214083124695" fileName="BreakpointsUiComponent.java" startLine="316" startPosition="5" endLine="317" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4474271214083124704" fileName="BreakpointsUiComponent.java" startLine="320" startPosition="70" endLine="321" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4474271214083124715" fileName="BreakpointsUiComponent.java" startLine="322" startPosition="62" endLine="323" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -894,7 +523,7 @@
     <nodeInfo nodeId="4474271214083125043" fileName="BreakpointsUiComponent.java" startLine="467" startPosition="70" endLine="468" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4474271214083125050" fileName="BreakpointsUiComponent.java" startLine="481" startPosition="58" endLine="482" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4474271214083125057" fileName="BreakpointsUiComponent.java" startLine="486" startPosition="56" endLine="487" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4474271214083125085" fileName="BreakpointsUiComponent.java" startLine="500" startPosition="112" endLine="501" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4474271214083125085" fileName="BreakpointsUiComponent.java" startLine="500" startPosition="121" endLine="501" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4474271214083124587" fileName="BreakpointsUiComponent.java" startLine="293" startPosition="12" endLine="295" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="4474271214083123734" fileName="BreakpointsUiComponent.java" startLine="352" startPosition="90" endLine="354" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MyEditorComponentCreateListener#()V" />
     <nodeInfo nodeId="4474271214083123750" fileName="BreakpointsUiComponent.java" startLine="367" startPosition="78" endLine="369" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MyLeftMarginMouseListener#()V" />
@@ -1020,14 +649,14 @@
     <scopeInfo nodeId="4474271214083125063" fileName="BreakpointsUiComponent.java" startLine="492" startPosition="38" endLine="492" endPosition="38" />
     <scopeInfo nodeId="4474271214083123961" fileName="BreakpointsUiComponent.java" startLine="76" startPosition="36" endLine="77" endPosition="38" />
     <scopeInfo nodeId="2927956374319299049" fileName="BreakpointsUiComponent.java" startLine="84" startPosition="25" endLine="85" endPosition="101" />
-    <scopeInfo nodeId="4474271214083124007" fileName="BreakpointsUiComponent.java" startLine="93" startPosition="97" endLine="94" endPosition="37" />
+    <scopeInfo nodeId="4474271214083124007" fileName="BreakpointsUiComponent.java" startLine="93" startPosition="106" endLine="94" endPosition="37" />
     <scopeInfo nodeId="4474271214083125090" fileName="BreakpointsUiComponent.java" startLine="111" startPosition="25" endLine="112" endPosition="62" />
     <scopeInfo nodeId="4474271214083124085" fileName="BreakpointsUiComponent.java" startLine="120" startPosition="29" endLine="121" endPosition="36" />
     <scopeInfo nodeId="4474271214083124116" fileName="BreakpointsUiComponent.java" startLine="127" startPosition="56" endLine="128" endPosition="68" />
     <scopeInfo nodeId="4474271214083125108" fileName="BreakpointsUiComponent.java" startLine="137" startPosition="31" endLine="138" endPosition="22" />
     <scopeInfo nodeId="4474271214083124143" fileName="BreakpointsUiComponent.java" startLine="143" startPosition="30" endLine="144" endPosition="36" />
     <scopeInfo nodeId="4474271214083124158" fileName="BreakpointsUiComponent.java" startLine="147" startPosition="37" endLine="148" endPosition="36" />
-    <scopeInfo nodeId="4474271214083125138" fileName="BreakpointsUiComponent.java" startLine="156" startPosition="92" endLine="157" endPosition="43" />
+    <scopeInfo nodeId="4474271214083125138" fileName="BreakpointsUiComponent.java" startLine="156" startPosition="101" endLine="157" endPosition="43" />
     <scopeInfo nodeId="4474271214083124192" fileName="BreakpointsUiComponent.java" startLine="166" startPosition="34" endLine="167" endPosition="13" />
     <scopeInfo nodeId="4474271214083124202" fileName="BreakpointsUiComponent.java" startLine="169" startPosition="85" endLine="170" endPosition="66" />
     <scopeInfo nodeId="4474271214083124251" fileName="BreakpointsUiComponent.java" startLine="181" startPosition="34" endLine="182" endPosition="13" />
@@ -1048,7 +677,7 @@
     <scopeInfo nodeId="4474271214083124588" fileName="BreakpointsUiComponent.java" startLine="293" startPosition="14" endLine="294" endPosition="79" />
     <scopeInfo nodeId="4474271214083124654" fileName="BreakpointsUiComponent.java" startLine="301" startPosition="27" endLine="302" endPosition="159" />
     <scopeInfo nodeId="4474271214083124648" fileName="BreakpointsUiComponent.java" startLine="305" startPosition="31" endLine="306" endPosition="64" />
-    <scopeInfo nodeId="4474271214083124690" fileName="BreakpointsUiComponent.java" startLine="314" startPosition="23" endLine="315" endPosition="72" />
+    <scopeInfo nodeId="4474271214083124690" fileName="BreakpointsUiComponent.java" startLine="314" startPosition="23" endLine="315" endPosition="81" />
     <scopeInfo nodeId="4474271214083123912" fileName="BreakpointsUiComponent.java" startLine="348" startPosition="69" endLine="349" endPosition="62" />
     <scopeInfo nodeId="4474271214083124785" fileName="BreakpointsUiComponent.java" startLine="357" startPosition="82" endLine="358" endPosition="74" />
     <scopeInfo nodeId="4474271214083124793" fileName="BreakpointsUiComponent.java" startLine="362" startPosition="83" endLine="363" endPosition="75" />
@@ -1062,7 +691,7 @@
     <scopeInfo nodeId="4474271214083125042" fileName="BreakpointsUiComponent.java" startLine="467" startPosition="70" endLine="468" endPosition="40" />
     <scopeInfo nodeId="4474271214083125049" fileName="BreakpointsUiComponent.java" startLine="481" startPosition="58" endLine="482" endPosition="50" />
     <scopeInfo nodeId="4474271214083125056" fileName="BreakpointsUiComponent.java" startLine="486" startPosition="56" endLine="487" endPosition="53" />
-    <scopeInfo nodeId="4474271214083125084" fileName="BreakpointsUiComponent.java" startLine="500" startPosition="112" endLine="501" endPosition="38" />
+    <scopeInfo nodeId="4474271214083125084" fileName="BreakpointsUiComponent.java" startLine="500" startPosition="121" endLine="501" endPosition="38" />
     <scopeInfo nodeId="4474271214083124218" fileName="BreakpointsUiComponent.java" startLine="173" startPosition="63" endLine="175" endPosition="122" />
     <scopeInfo nodeId="4474271214083124558" fileName="BreakpointsUiComponent.java" startLine="276" startPosition="90" endLine="278" endPosition="16" />
     <scopeInfo nodeId="4474271214083123734" fileName="BreakpointsUiComponent.java" startLine="352" startPosition="90" endLine="354" endPosition="5" />
@@ -1980,149 +1609,179 @@
     <unitInfo nodeId="4474271214083119199" fileName="AbstractBreakpointsTree.java" startLine="230" startPosition="0" endLine="251" endPosition="0" unitName="jetbrains.mps.debugger.api.ui.breakpoints.AbstractBreakpointsTree$RootGroupKind" />
   </root>
   <root nodeId="4474271214083119913">
-    <nodeInfo nodeId="4474271214083119916" fileName="BreakpointPainter.java" startLine="10" startPosition="76" endLine="11" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="CELL_BACKGROUND_COLOR" />
-    <nodeInfo nodeId="4474271214083119925" fileName="BreakpointPainter.java" startLine="11" startPosition="82" endLine="12" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="STRIPE_BACKGROUND_COLOR" />
-    <nodeInfo nodeId="4474271214083119933" fileName="BreakpointPainter.java" startLine="12" startPosition="80" endLine="13" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="FRAME_COLOR" />
-    <nodeInfo nodeId="4474271214083119941" fileName="BreakpointPainter.java" startLine="14" startPosition="0" endLine="15" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myBreakpoint" />
-    <nodeInfo nodeId="4474271214083119950" fileName="BreakpointPainter.java" startLine="17" startPosition="55" endLine="18" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4474271214083119967" fileName="BreakpointPainter.java" startLine="23" startPosition="54" endLine="24" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4474271214083119964" fileName="BreakpointPainter.java" startLine="25" startPosition="12" endLine="26" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4474271214083119981" fileName="BreakpointPainter.java" startLine="31" startPosition="44" endLine="32" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4474271214083119988" fileName="BreakpointPainter.java" startLine="36" startPosition="46" endLine="37" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4474271214083119995" fileName="BreakpointPainter.java" startLine="41" startPosition="35" endLine="42" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4474271214083120002" fileName="BreakpointPainter.java" startLine="46" startPosition="32" endLine="47" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4474271214083119962" fileName="BreakpointPainter.java" startLine="25" startPosition="10" endLine="27" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="4474271214083119944" fileName="BreakpointPainter.java" startLine="16" startPosition="0" endLine="19" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="BreakpointPainter#(Ljetbrains/mps/debug/api/breakpoints/IBreakpoint;)V" />
-    <nodeInfo nodeId="4474271214083119958" fileName="BreakpointPainter.java" startLine="22" startPosition="30" endLine="27" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4474271214083119977" fileName="BreakpointPainter.java" startLine="29" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getCellBackgroundColor#()Ljava/awt/Color;" />
-    <nodeInfo nodeId="4474271214083119984" fileName="BreakpointPainter.java" startLine="34" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getStripeBackgroundColor#()Ljava/awt/Color;" />
-    <nodeInfo nodeId="4474271214083119991" fileName="BreakpointPainter.java" startLine="39" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getFrameColor#()Ljava/awt/Color;" />
-    <nodeInfo nodeId="4474271214083119998" fileName="BreakpointPainter.java" startLine="44" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getItem#()Ljetbrains/mps/debug/api/breakpoints/IBreakpoint;" />
-    <nodeInfo nodeId="4474271214083119954" fileName="BreakpointPainter.java" startLine="20" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSNode#()Ljetbrains/mps/smodel/SNode;" />
-    <scopeInfo nodeId="4474271214083119949" fileName="BreakpointPainter.java" startLine="17" startPosition="55" endLine="18" endPosition="33" />
-    <scopeInfo nodeId="4474271214083119966" fileName="BreakpointPainter.java" startLine="23" startPosition="54" endLine="24" endPosition="75" />
-    <scopeInfo nodeId="4474271214083119963" fileName="BreakpointPainter.java" startLine="25" startPosition="12" endLine="26" endPosition="18" />
-    <scopeInfo nodeId="4474271214083119980" fileName="BreakpointPainter.java" startLine="31" startPosition="44" endLine="32" endPosition="33" />
-    <scopeInfo nodeId="4474271214083119987" fileName="BreakpointPainter.java" startLine="36" startPosition="46" endLine="37" endPosition="35" />
-    <scopeInfo nodeId="4474271214083119994" fileName="BreakpointPainter.java" startLine="41" startPosition="35" endLine="42" endPosition="23" />
-    <scopeInfo nodeId="4474271214083120001" fileName="BreakpointPainter.java" startLine="46" startPosition="32" endLine="47" endPosition="24" />
-    <scopeInfo nodeId="4474271214083119944" fileName="BreakpointPainter.java" startLine="16" startPosition="0" endLine="19" endPosition="3">
+    <nodeInfo nodeId="4474271214083119916" fileName="BreakpointPainter.java" startLine="13" startPosition="76" endLine="14" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="CELL_BACKGROUND_COLOR" />
+    <nodeInfo nodeId="4474271214083119925" fileName="BreakpointPainter.java" startLine="14" startPosition="82" endLine="15" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="STRIPE_BACKGROUND_COLOR" />
+    <nodeInfo nodeId="4474271214083119933" fileName="BreakpointPainter.java" startLine="15" startPosition="80" endLine="16" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="FRAME_COLOR" />
+    <nodeInfo nodeId="4474271214083119941" fileName="BreakpointPainter.java" startLine="17" startPosition="0" endLine="18" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myBreakpoint" />
+    <nodeInfo nodeId="4474271214083119950" fileName="BreakpointPainter.java" startLine="20" startPosition="55" endLine="21" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4474271214083119967" fileName="BreakpointPainter.java" startLine="26" startPosition="54" endLine="27" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4474271214083119964" fileName="BreakpointPainter.java" startLine="28" startPosition="12" endLine="29" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4474271214083119981" fileName="BreakpointPainter.java" startLine="34" startPosition="44" endLine="35" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4474271214083119988" fileName="BreakpointPainter.java" startLine="39" startPosition="46" endLine="40" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4474271214083119995" fileName="BreakpointPainter.java" startLine="44" startPosition="35" endLine="45" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5658809246031062224" fileName="BreakpointPainter.java" startLine="50" startPosition="58" endLine="51" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5658809246031062114" fileName="BreakpointPainter.java" startLine="52" startPosition="5" endLine="53" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4474271214083120002" fileName="BreakpointPainter.java" startLine="57" startPosition="32" endLine="58" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4474271214083119962" fileName="BreakpointPainter.java" startLine="28" startPosition="10" endLine="30" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4474271214083119944" fileName="BreakpointPainter.java" startLine="19" startPosition="0" endLine="22" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="BreakpointPainter#(Ljetbrains/mps/debug/api/breakpoints/IBreakpoint;)V" />
+    <nodeInfo nodeId="5658809246031062120" fileName="BreakpointPainter.java" startLine="49" startPosition="80" endLine="52" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4474271214083119958" fileName="BreakpointPainter.java" startLine="25" startPosition="30" endLine="30" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4474271214083119977" fileName="BreakpointPainter.java" startLine="32" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getCellBackgroundColor#()Ljava/awt/Color;" />
+    <nodeInfo nodeId="4474271214083119984" fileName="BreakpointPainter.java" startLine="37" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getStripeBackgroundColor#()Ljava/awt/Color;" />
+    <nodeInfo nodeId="4474271214083119991" fileName="BreakpointPainter.java" startLine="42" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getFrameColor#()Ljava/awt/Color;" />
+    <nodeInfo nodeId="4474271214083119998" fileName="BreakpointPainter.java" startLine="55" startPosition="0" endLine="60" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getItem#()Ljetbrains/mps/debug/api/breakpoints/IBreakpoint;" />
+    <nodeInfo nodeId="5658809246031062105" fileName="BreakpointPainter.java" startLine="47" startPosition="0" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isAbove#(Ljetbrains/mps/nodeEditor/AdditionalPainter;Ljetbrains/mps/nodeEditor/EditorComponent;)Z" />
+    <nodeInfo nodeId="4474271214083119954" fileName="BreakpointPainter.java" startLine="23" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSNode#()Ljetbrains/mps/smodel/SNode;" />
+    <scopeInfo nodeId="4474271214083119949" fileName="BreakpointPainter.java" startLine="20" startPosition="55" endLine="21" endPosition="33" />
+    <scopeInfo nodeId="4474271214083119966" fileName="BreakpointPainter.java" startLine="26" startPosition="54" endLine="27" endPosition="75" />
+    <scopeInfo nodeId="4474271214083119963" fileName="BreakpointPainter.java" startLine="28" startPosition="12" endLine="29" endPosition="18" />
+    <scopeInfo nodeId="4474271214083119980" fileName="BreakpointPainter.java" startLine="34" startPosition="44" endLine="35" endPosition="33" />
+    <scopeInfo nodeId="4474271214083119987" fileName="BreakpointPainter.java" startLine="39" startPosition="46" endLine="40" endPosition="35" />
+    <scopeInfo nodeId="4474271214083119994" fileName="BreakpointPainter.java" startLine="44" startPosition="35" endLine="45" endPosition="23" />
+    <scopeInfo nodeId="5658809246031062121" fileName="BreakpointPainter.java" startLine="50" startPosition="58" endLine="51" endPosition="19" />
+    <scopeInfo nodeId="4474271214083120001" fileName="BreakpointPainter.java" startLine="57" startPosition="32" endLine="58" endPosition="24" />
+    <scopeInfo nodeId="4474271214083119944" fileName="BreakpointPainter.java" startLine="19" startPosition="0" endLine="22" endPosition="3">
       <varInfo nodeId="4474271214083119947" varName="mpsBreakpoint" />
     </scopeInfo>
-    <scopeInfo nodeId="4474271214083119957" fileName="BreakpointPainter.java" startLine="22" startPosition="30" endLine="27" endPosition="5" />
-    <scopeInfo nodeId="4474271214083119977" fileName="BreakpointPainter.java" startLine="29" startPosition="0" endLine="34" endPosition="0" />
-    <scopeInfo nodeId="4474271214083119984" fileName="BreakpointPainter.java" startLine="34" startPosition="0" endLine="39" endPosition="0" />
-    <scopeInfo nodeId="4474271214083119991" fileName="BreakpointPainter.java" startLine="39" startPosition="0" endLine="44" endPosition="0" />
-    <scopeInfo nodeId="4474271214083119998" fileName="BreakpointPainter.java" startLine="44" startPosition="0" endLine="49" endPosition="0" />
-    <scopeInfo nodeId="4474271214083119954" fileName="BreakpointPainter.java" startLine="20" startPosition="0" endLine="29" endPosition="0" />
-    <unitInfo nodeId="4474271214083119913" fileName="BreakpointPainter.java" startLine="10" startPosition="0" endLine="50" endPosition="0" unitName="jetbrains.mps.debugger.api.ui.breakpoints.BreakpointPainter" />
+    <scopeInfo nodeId="5658809246031062112" fileName="BreakpointPainter.java" startLine="49" startPosition="80" endLine="53" endPosition="45" />
+    <scopeInfo nodeId="4474271214083119957" fileName="BreakpointPainter.java" startLine="25" startPosition="30" endLine="30" endPosition="5" />
+    <scopeInfo nodeId="4474271214083119977" fileName="BreakpointPainter.java" startLine="32" startPosition="0" endLine="37" endPosition="0" />
+    <scopeInfo nodeId="4474271214083119984" fileName="BreakpointPainter.java" startLine="37" startPosition="0" endLine="42" endPosition="0" />
+    <scopeInfo nodeId="4474271214083119991" fileName="BreakpointPainter.java" startLine="42" startPosition="0" endLine="47" endPosition="0" />
+    <scopeInfo nodeId="4474271214083119998" fileName="BreakpointPainter.java" startLine="55" startPosition="0" endLine="60" endPosition="0" />
+    <scopeInfo nodeId="5658809246031062105" fileName="BreakpointPainter.java" startLine="47" startPosition="0" endLine="55" endPosition="0">
+      <varInfo nodeId="5658809246031062110" varName="component" />
+      <varInfo nodeId="5658809246031062108" varName="painter" />
+    </scopeInfo>
+    <scopeInfo nodeId="4474271214083119954" fileName="BreakpointPainter.java" startLine="23" startPosition="0" endLine="32" endPosition="0" />
+    <unitInfo nodeId="4474271214083119913" fileName="BreakpointPainter.java" startLine="13" startPosition="0" endLine="61" endPosition="0" unitName="jetbrains.mps.debugger.api.ui.breakpoints.BreakpointPainter" />
   </root>
   <root nodeId="4474271214083121336">
-    <nodeInfo nodeId="4474271214083121421" fileName="CurrentLinePositionComponent.java" startLine="19" startPosition="138" endLine="20" endPosition="116" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myChangeListener" />
-    <nodeInfo nodeId="4474271214083121430" fileName="CurrentLinePositionComponent.java" startLine="20" startPosition="116" endLine="21" endPosition="163" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCurrentDebugSessionListener" />
-    <nodeInfo nodeId="2716458348594438570" fileName="CurrentLinePositionComponent.java" startLine="23" startPosition="93" endLine="24" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="4474271214083121503" fileName="CurrentLinePositionComponent.java" startLine="37" startPosition="36" endLine="38" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2716458348594438607" fileName="CurrentLinePositionComponent.java" startLine="42" startPosition="31" endLine="43" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4474271214083121511" fileName="CurrentLinePositionComponent.java" startLine="43" startPosition="17" endLine="44" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4474271214083121518" fileName="CurrentLinePositionComponent.java" startLine="44" startPosition="104" endLine="45" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4474271214083121550" fileName="CurrentLinePositionComponent.java" startLine="49" startPosition="34" endLine="50" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4474271214083121557" fileName="CurrentLinePositionComponent.java" startLine="50" startPosition="104" endLine="51" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2716458348594438611" fileName="CurrentLinePositionComponent.java" startLine="51" startPosition="72" endLine="52" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4474271214083121650" fileName="CurrentLinePositionComponent.java" startLine="55" startPosition="90" endLine="56" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4474271214083121663" fileName="CurrentLinePositionComponent.java" startLine="57" startPosition="29" endLine="58" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2716458348594431462" fileName="CurrentLinePositionComponent.java" startLine="59" startPosition="70" endLine="60" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2716458348594431469" fileName="CurrentLinePositionComponent.java" startLine="60" startPosition="49" endLine="61" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2716458348594431476" fileName="CurrentLinePositionComponent.java" startLine="61" startPosition="49" endLine="62" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2716458348594714999" fileName="CurrentLinePositionComponent.java" startLine="62" startPosition="50" endLine="63" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2716458348594715009" fileName="CurrentLinePositionComponent.java" startLine="65" startPosition="5" endLine="66" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4474271214083121791" fileName="CurrentLinePositionComponent.java" startLine="74" startPosition="58" endLine="75" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5885822637699011145" fileName="CurrentLinePositionComponent.java" startLine="79" startPosition="77" endLine="80" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4474271214083121843" fileName="CurrentLinePositionComponent.java" startLine="84" startPosition="64" endLine="85" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4474271214083121846" fileName="CurrentLinePositionComponent.java" startLine="85" startPosition="37" endLine="86" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5038589143591410104" fileName="CurrentLinePositionComponent.java" startLine="95" startPosition="60" endLine="96" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5038589143591410107" fileName="CurrentLinePositionComponent.java" startLine="100" startPosition="59" endLine="101" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4474271214083121883" fileName="CurrentLinePositionComponent.java" startLine="105" startPosition="60" endLine="106" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4474271214083121343" fileName="CurrentLinePositionComponent.java" startLine="69" startPosition="108" endLine="71" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MyCurrentDebugSessionListener#()V" />
-    <nodeInfo nodeId="4474271214083121364" fileName="CurrentLinePositionComponent.java" startLine="90" startPosition="70" endLine="92" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MySessionChangeListener#()V" />
-    <nodeInfo nodeId="4474271214083121443" fileName="CurrentLinePositionComponent.java" startLine="22" startPosition="0" endLine="25" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="CurrentLinePositionComponent#(Lcom/intellij/openapi/project/Project;Lcom/intellij/openapi/fileEditor/FileEditorManager;)V" />
-    <nodeInfo nodeId="4474271214083121489" fileName="CurrentLinePositionComponent.java" startLine="26" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="projectOpened#()V" />
-    <nodeInfo nodeId="4474271214083121494" fileName="CurrentLinePositionComponent.java" startLine="30" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="projectClosed#()V" />
-    <nodeInfo nodeId="4474271214083121346" fileName="CurrentLinePositionComponent.java" startLine="72" startPosition="0" endLine="77" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="registered#(Ljetbrains/mps/debug/api/AbstractDebugSession;)V" />
-    <nodeInfo nodeId="4474271214083121351" fileName="CurrentLinePositionComponent.java" startLine="77" startPosition="0" endLine="82" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="currentSessionChanged#(Ljetbrains/mps/debug/api/AbstractDebugSession;)V" />
-    <nodeInfo nodeId="4474271214083121367" fileName="CurrentLinePositionComponent.java" startLine="93" startPosition="0" endLine="98" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="stateChanged#(Ljetbrains/mps/debug/api/AbstractDebugSession;)V" />
-    <nodeInfo nodeId="4474271214083121372" fileName="CurrentLinePositionComponent.java" startLine="98" startPosition="0" endLine="103" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="paused#(Ljetbrains/mps/debug/api/AbstractDebugSession;)V" />
-    <nodeInfo nodeId="4474271214083121377" fileName="CurrentLinePositionComponent.java" startLine="103" startPosition="0" endLine="108" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="resumed#(Ljetbrains/mps/debug/api/AbstractDebugSession;)V" />
-    <nodeInfo nodeId="4474271214083121499" fileName="CurrentLinePositionComponent.java" startLine="34" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getComponentName#()Ljava/lang/String;" />
-    <nodeInfo nodeId="4474271214083121669" fileName="CurrentLinePositionComponent.java" startLine="58" startPosition="52" endLine="64" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4474271214083121356" fileName="CurrentLinePositionComponent.java" startLine="82" startPosition="0" endLine="88" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="detached#(Ljetbrains/mps/debug/api/AbstractDebugSession;)V" />
-    <nodeInfo nodeId="4474271214083121507" fileName="CurrentLinePositionComponent.java" startLine="40" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="initComponent#()V" />
-    <nodeInfo nodeId="4474271214083121538" fileName="CurrentLinePositionComponent.java" startLine="47" startPosition="0" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="disposeComponent#()V" />
-    <nodeInfo nodeId="4474271214083121658" fileName="CurrentLinePositionComponent.java" startLine="56" startPosition="66" endLine="65" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2716458348594714890" fileName="CurrentLinePositionComponent.java" startLine="54" startPosition="0" endLine="68" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPosition#(Ljetbrains/mps/debug/api/AbstractDebugSession;)Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_3;" />
-    <scopeInfo nodeId="4474271214083121492" fileName="CurrentLinePositionComponent.java" startLine="28" startPosition="31" endLine="28" endPosition="31" />
-    <scopeInfo nodeId="4474271214083121497" fileName="CurrentLinePositionComponent.java" startLine="32" startPosition="31" endLine="32" endPosition="31" />
-    <scopeInfo nodeId="4474271214083121789" fileName="CurrentLinePositionComponent.java" startLine="70" startPosition="45" endLine="70" endPosition="45" />
-    <scopeInfo nodeId="4474271214083121865" fileName="CurrentLinePositionComponent.java" startLine="91" startPosition="39" endLine="91" endPosition="39" />
-    <scopeInfo nodeId="4474271214083121452" fileName="CurrentLinePositionComponent.java" startLine="23" startPosition="93" endLine="24" endPosition="38" />
-    <scopeInfo nodeId="4474271214083121502" fileName="CurrentLinePositionComponent.java" startLine="37" startPosition="36" endLine="38" endPosition="53" />
-    <scopeInfo nodeId="4474271214083121790" fileName="CurrentLinePositionComponent.java" startLine="74" startPosition="58" endLine="75" endPosition="50" />
-    <scopeInfo nodeId="4474271214083121797" fileName="CurrentLinePositionComponent.java" startLine="79" startPosition="77" endLine="80" endPosition="79" />
-    <scopeInfo nodeId="4474271214083121866" fileName="CurrentLinePositionComponent.java" startLine="95" startPosition="60" endLine="96" endPosition="31" />
-    <scopeInfo nodeId="4474271214083121874" fileName="CurrentLinePositionComponent.java" startLine="100" startPosition="59" endLine="101" endPosition="36" />
-    <scopeInfo nodeId="4474271214083121882" fileName="CurrentLinePositionComponent.java" startLine="105" startPosition="60" endLine="106" endPosition="34" />
-    <scopeInfo nodeId="4474271214083121343" fileName="CurrentLinePositionComponent.java" startLine="69" startPosition="108" endLine="71" endPosition="5" />
-    <scopeInfo nodeId="4474271214083121842" fileName="CurrentLinePositionComponent.java" startLine="84" startPosition="64" endLine="86" endPosition="61" />
-    <scopeInfo nodeId="4474271214083121364" fileName="CurrentLinePositionComponent.java" startLine="90" startPosition="70" endLine="92" endPosition="5" />
-    <scopeInfo nodeId="4474271214083121443" fileName="CurrentLinePositionComponent.java" startLine="22" startPosition="0" endLine="25" endPosition="3">
+    <nodeInfo nodeId="4474271214083121421" fileName="CurrentLinePositionComponent.java" startLine="22" startPosition="138" endLine="23" endPosition="116" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myChangeListener" />
+    <nodeInfo nodeId="4474271214083121430" fileName="CurrentLinePositionComponent.java" startLine="23" startPosition="116" endLine="24" endPosition="163" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCurrentDebugSessionListener" />
+    <nodeInfo nodeId="2716458348594438570" fileName="CurrentLinePositionComponent.java" startLine="26" startPosition="93" endLine="27" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="4474271214083121503" fileName="CurrentLinePositionComponent.java" startLine="40" startPosition="36" endLine="41" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2716458348594438607" fileName="CurrentLinePositionComponent.java" startLine="45" startPosition="31" endLine="46" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4474271214083121511" fileName="CurrentLinePositionComponent.java" startLine="46" startPosition="17" endLine="47" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4474271214083121518" fileName="CurrentLinePositionComponent.java" startLine="47" startPosition="104" endLine="48" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4474271214083121550" fileName="CurrentLinePositionComponent.java" startLine="52" startPosition="34" endLine="53" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4474271214083121557" fileName="CurrentLinePositionComponent.java" startLine="53" startPosition="104" endLine="54" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2716458348594438611" fileName="CurrentLinePositionComponent.java" startLine="54" startPosition="72" endLine="55" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4474271214083121650" fileName="CurrentLinePositionComponent.java" startLine="58" startPosition="90" endLine="59" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4474271214083121663" fileName="CurrentLinePositionComponent.java" startLine="60" startPosition="29" endLine="61" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2716458348594431462" fileName="CurrentLinePositionComponent.java" startLine="62" startPosition="70" endLine="63" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2716458348594431469" fileName="CurrentLinePositionComponent.java" startLine="63" startPosition="49" endLine="64" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2716458348594431476" fileName="CurrentLinePositionComponent.java" startLine="64" startPosition="49" endLine="65" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2716458348594714999" fileName="CurrentLinePositionComponent.java" startLine="65" startPosition="50" endLine="66" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2716458348594715009" fileName="CurrentLinePositionComponent.java" startLine="68" startPosition="5" endLine="69" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5658809246031045728" fileName="CurrentLinePositionComponent.java" startLine="72" startPosition="54" endLine="73" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5658809246031045738" fileName="CurrentLinePositionComponent.java" startLine="74" startPosition="27" endLine="75" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5658809246031045743" fileName="CurrentLinePositionComponent.java" startLine="76" startPosition="5" endLine="77" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="5658809246031045744" fileName="CurrentLinePositionComponent.java" startLine="77" startPosition="0" endLine="78" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5658809246031045750" fileName="CurrentLinePositionComponent.java" startLine="78" startPosition="36" endLine="79" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5658809246031045756" fileName="CurrentLinePositionComponent.java" startLine="79" startPosition="36" endLine="80" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="796115907523081911" fileName="CurrentLinePositionComponent.java" startLine="80" startPosition="41" endLine="81" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="796115907523081908" fileName="CurrentLinePositionComponent.java" startLine="81" startPosition="0" endLine="82" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4474271214083121791" fileName="CurrentLinePositionComponent.java" startLine="90" startPosition="58" endLine="91" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5885822637699011145" fileName="CurrentLinePositionComponent.java" startLine="95" startPosition="77" endLine="96" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4474271214083121843" fileName="CurrentLinePositionComponent.java" startLine="100" startPosition="64" endLine="101" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4474271214083121846" fileName="CurrentLinePositionComponent.java" startLine="101" startPosition="37" endLine="102" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5038589143591410104" fileName="CurrentLinePositionComponent.java" startLine="111" startPosition="60" endLine="112" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5038589143591410107" fileName="CurrentLinePositionComponent.java" startLine="116" startPosition="59" endLine="117" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4474271214083121883" fileName="CurrentLinePositionComponent.java" startLine="121" startPosition="60" endLine="122" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4474271214083121343" fileName="CurrentLinePositionComponent.java" startLine="85" startPosition="108" endLine="87" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MyCurrentDebugSessionListener#()V" />
+    <nodeInfo nodeId="4474271214083121364" fileName="CurrentLinePositionComponent.java" startLine="106" startPosition="70" endLine="108" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MySessionChangeListener#()V" />
+    <nodeInfo nodeId="4474271214083121443" fileName="CurrentLinePositionComponent.java" startLine="25" startPosition="0" endLine="28" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="CurrentLinePositionComponent#(Lcom/intellij/openapi/project/Project;Lcom/intellij/openapi/fileEditor/FileEditorManager;)V" />
+    <nodeInfo nodeId="5658809246031045736" fileName="CurrentLinePositionComponent.java" startLine="73" startPosition="71" endLine="76" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4474271214083121489" fileName="CurrentLinePositionComponent.java" startLine="29" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="projectOpened#()V" />
+    <nodeInfo nodeId="4474271214083121494" fileName="CurrentLinePositionComponent.java" startLine="33" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="projectClosed#()V" />
+    <nodeInfo nodeId="4474271214083121346" fileName="CurrentLinePositionComponent.java" startLine="88" startPosition="0" endLine="93" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="registered#(Ljetbrains/mps/debug/api/AbstractDebugSession;)V" />
+    <nodeInfo nodeId="4474271214083121351" fileName="CurrentLinePositionComponent.java" startLine="93" startPosition="0" endLine="98" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="currentSessionChanged#(Ljetbrains/mps/debug/api/AbstractDebugSession;)V" />
+    <nodeInfo nodeId="4474271214083121367" fileName="CurrentLinePositionComponent.java" startLine="109" startPosition="0" endLine="114" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="stateChanged#(Ljetbrains/mps/debug/api/AbstractDebugSession;)V" />
+    <nodeInfo nodeId="4474271214083121372" fileName="CurrentLinePositionComponent.java" startLine="114" startPosition="0" endLine="119" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="paused#(Ljetbrains/mps/debug/api/AbstractDebugSession;)V" />
+    <nodeInfo nodeId="4474271214083121377" fileName="CurrentLinePositionComponent.java" startLine="119" startPosition="0" endLine="124" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="resumed#(Ljetbrains/mps/debug/api/AbstractDebugSession;)V" />
+    <nodeInfo nodeId="4474271214083121499" fileName="CurrentLinePositionComponent.java" startLine="37" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getComponentName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="4474271214083121669" fileName="CurrentLinePositionComponent.java" startLine="61" startPosition="52" endLine="67" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4474271214083121356" fileName="CurrentLinePositionComponent.java" startLine="98" startPosition="0" endLine="104" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="detached#(Ljetbrains/mps/debug/api/AbstractDebugSession;)V" />
+    <nodeInfo nodeId="4474271214083121507" fileName="CurrentLinePositionComponent.java" startLine="43" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="initComponent#()V" />
+    <nodeInfo nodeId="4474271214083121538" fileName="CurrentLinePositionComponent.java" startLine="50" startPosition="0" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="disposeComponent#()V" />
+    <nodeInfo nodeId="4474271214083121658" fileName="CurrentLinePositionComponent.java" startLine="59" startPosition="66" endLine="68" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="796115907523081920" fileName="CurrentLinePositionComponent.java" startLine="71" startPosition="0" endLine="84" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNode#(Ljetbrains/mps/debug/api/AbstractDebugSession;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="2716458348594714890" fileName="CurrentLinePositionComponent.java" startLine="57" startPosition="0" endLine="71" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPosition#(Ljetbrains/mps/debug/api/AbstractDebugSession;)Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_3;" />
+    <scopeInfo nodeId="4474271214083121492" fileName="CurrentLinePositionComponent.java" startLine="31" startPosition="31" endLine="31" endPosition="31" />
+    <scopeInfo nodeId="4474271214083121497" fileName="CurrentLinePositionComponent.java" startLine="35" startPosition="31" endLine="35" endPosition="31" />
+    <scopeInfo nodeId="4474271214083121789" fileName="CurrentLinePositionComponent.java" startLine="86" startPosition="45" endLine="86" endPosition="45" />
+    <scopeInfo nodeId="4474271214083121865" fileName="CurrentLinePositionComponent.java" startLine="107" startPosition="39" endLine="107" endPosition="39" />
+    <scopeInfo nodeId="4474271214083121452" fileName="CurrentLinePositionComponent.java" startLine="26" startPosition="93" endLine="27" endPosition="38" />
+    <scopeInfo nodeId="4474271214083121502" fileName="CurrentLinePositionComponent.java" startLine="40" startPosition="36" endLine="41" endPosition="53" />
+    <scopeInfo nodeId="5658809246031045737" fileName="CurrentLinePositionComponent.java" startLine="74" startPosition="27" endLine="75" endPosition="18" />
+    <scopeInfo nodeId="4474271214083121790" fileName="CurrentLinePositionComponent.java" startLine="90" startPosition="58" endLine="91" endPosition="50" />
+    <scopeInfo nodeId="4474271214083121797" fileName="CurrentLinePositionComponent.java" startLine="95" startPosition="77" endLine="96" endPosition="79" />
+    <scopeInfo nodeId="4474271214083121866" fileName="CurrentLinePositionComponent.java" startLine="111" startPosition="60" endLine="112" endPosition="31" />
+    <scopeInfo nodeId="4474271214083121874" fileName="CurrentLinePositionComponent.java" startLine="116" startPosition="59" endLine="117" endPosition="36" />
+    <scopeInfo nodeId="4474271214083121882" fileName="CurrentLinePositionComponent.java" startLine="121" startPosition="60" endLine="122" endPosition="34" />
+    <scopeInfo nodeId="4474271214083121343" fileName="CurrentLinePositionComponent.java" startLine="85" startPosition="108" endLine="87" endPosition="5" />
+    <scopeInfo nodeId="4474271214083121842" fileName="CurrentLinePositionComponent.java" startLine="100" startPosition="64" endLine="102" endPosition="61" />
+    <scopeInfo nodeId="4474271214083121364" fileName="CurrentLinePositionComponent.java" startLine="106" startPosition="70" endLine="108" endPosition="5" />
+    <scopeInfo nodeId="4474271214083121443" fileName="CurrentLinePositionComponent.java" startLine="25" startPosition="0" endLine="28" endPosition="3">
       <varInfo nodeId="4474271214083121448" varName="fileEditorManager" />
       <varInfo nodeId="4474271214083121446" varName="project" />
     </scopeInfo>
-    <scopeInfo nodeId="4474271214083121510" fileName="CurrentLinePositionComponent.java" startLine="42" startPosition="31" endLine="45" endPosition="69">
+    <scopeInfo nodeId="4474271214083121510" fileName="CurrentLinePositionComponent.java" startLine="45" startPosition="31" endLine="48" endPosition="69">
       <varInfo nodeId="4474271214083121512" varName="component" />
     </scopeInfo>
-    <scopeInfo nodeId="4474271214083121541" fileName="CurrentLinePositionComponent.java" startLine="49" startPosition="34" endLine="52" endPosition="20">
+    <scopeInfo nodeId="4474271214083121541" fileName="CurrentLinePositionComponent.java" startLine="52" startPosition="34" endLine="55" endPosition="20">
       <varInfo nodeId="4474271214083121551" varName="component" />
     </scopeInfo>
-    <scopeInfo nodeId="4474271214083121489" fileName="CurrentLinePositionComponent.java" startLine="26" startPosition="0" endLine="30" endPosition="0" />
-    <scopeInfo nodeId="4474271214083121494" fileName="CurrentLinePositionComponent.java" startLine="30" startPosition="0" endLine="34" endPosition="0" />
-    <scopeInfo nodeId="4474271214083121679" fileName="CurrentLinePositionComponent.java" startLine="59" startPosition="70" endLine="63" endPosition="86">
+    <scopeInfo nodeId="4474271214083121489" fileName="CurrentLinePositionComponent.java" startLine="29" startPosition="0" endLine="33" endPosition="0" />
+    <scopeInfo nodeId="4474271214083121494" fileName="CurrentLinePositionComponent.java" startLine="33" startPosition="0" endLine="37" endPosition="0" />
+    <scopeInfo nodeId="4474271214083121679" fileName="CurrentLinePositionComponent.java" startLine="62" startPosition="70" endLine="66" endPosition="86">
       <varInfo nodeId="2716458348594431470" varName="fileName" />
       <varInfo nodeId="2716458348594431477" varName="lineNumber" />
       <varInfo nodeId="2716458348594431463" varName="unitName" />
     </scopeInfo>
-    <scopeInfo nodeId="4474271214083121346" fileName="CurrentLinePositionComponent.java" startLine="72" startPosition="0" endLine="77" endPosition="0">
+    <scopeInfo nodeId="4474271214083121346" fileName="CurrentLinePositionComponent.java" startLine="88" startPosition="0" endLine="93" endPosition="0">
       <varInfo nodeId="4474271214083121349" varName="session" />
     </scopeInfo>
-    <scopeInfo nodeId="4474271214083121351" fileName="CurrentLinePositionComponent.java" startLine="77" startPosition="0" endLine="82" endPosition="0">
+    <scopeInfo nodeId="4474271214083121351" fileName="CurrentLinePositionComponent.java" startLine="93" startPosition="0" endLine="98" endPosition="0">
       <varInfo nodeId="4474271214083121354" varName="newDebugSession" />
     </scopeInfo>
-    <scopeInfo nodeId="4474271214083121367" fileName="CurrentLinePositionComponent.java" startLine="93" startPosition="0" endLine="98" endPosition="0">
+    <scopeInfo nodeId="4474271214083121367" fileName="CurrentLinePositionComponent.java" startLine="109" startPosition="0" endLine="114" endPosition="0">
       <varInfo nodeId="4474271214083121370" varName="session" />
     </scopeInfo>
-    <scopeInfo nodeId="4474271214083121372" fileName="CurrentLinePositionComponent.java" startLine="98" startPosition="0" endLine="103" endPosition="0">
+    <scopeInfo nodeId="4474271214083121372" fileName="CurrentLinePositionComponent.java" startLine="114" startPosition="0" endLine="119" endPosition="0">
       <varInfo nodeId="4474271214083121375" varName="debugSession" />
     </scopeInfo>
-    <scopeInfo nodeId="4474271214083121377" fileName="CurrentLinePositionComponent.java" startLine="103" startPosition="0" endLine="108" endPosition="0">
+    <scopeInfo nodeId="4474271214083121377" fileName="CurrentLinePositionComponent.java" startLine="119" startPosition="0" endLine="124" endPosition="0">
       <varInfo nodeId="4474271214083121380" varName="debugSession" />
     </scopeInfo>
-    <scopeInfo nodeId="4474271214083121499" fileName="CurrentLinePositionComponent.java" startLine="34" startPosition="0" endLine="40" endPosition="0" />
-    <scopeInfo nodeId="4474271214083121356" fileName="CurrentLinePositionComponent.java" startLine="82" startPosition="0" endLine="88" endPosition="0">
+    <scopeInfo nodeId="4474271214083121499" fileName="CurrentLinePositionComponent.java" startLine="37" startPosition="0" endLine="43" endPosition="0" />
+    <scopeInfo nodeId="4474271214083121356" fileName="CurrentLinePositionComponent.java" startLine="98" startPosition="0" endLine="104" endPosition="0">
       <varInfo nodeId="4474271214083121359" varName="newDebugSession" />
     </scopeInfo>
-    <scopeInfo nodeId="4474271214083121507" fileName="CurrentLinePositionComponent.java" startLine="40" startPosition="0" endLine="47" endPosition="0" />
-    <scopeInfo nodeId="4474271214083121538" fileName="CurrentLinePositionComponent.java" startLine="47" startPosition="0" endLine="54" endPosition="0" />
-    <scopeInfo nodeId="4474271214083121662" fileName="CurrentLinePositionComponent.java" startLine="57" startPosition="29" endLine="64" endPosition="7">
+    <scopeInfo nodeId="4474271214083121507" fileName="CurrentLinePositionComponent.java" startLine="43" startPosition="0" endLine="50" endPosition="0" />
+    <scopeInfo nodeId="4474271214083121538" fileName="CurrentLinePositionComponent.java" startLine="50" startPosition="0" endLine="57" endPosition="0" />
+    <scopeInfo nodeId="4474271214083121662" fileName="CurrentLinePositionComponent.java" startLine="60" startPosition="29" endLine="67" endPosition="7">
       <varInfo nodeId="4474271214083121664" varName="location" />
     </scopeInfo>
-    <scopeInfo nodeId="2716458348594714898" fileName="CurrentLinePositionComponent.java" startLine="55" startPosition="90" endLine="66" endPosition="16">
+    <scopeInfo nodeId="796115907523081923" fileName="CurrentLinePositionComponent.java" startLine="72" startPosition="54" endLine="82" endPosition="65">
+      <varInfo nodeId="5658809246031045751" varName="fileName" />
+      <varInfo nodeId="5658809246031045757" varName="lineNumber" />
+      <varInfo nodeId="5658809246031045729" varName="position" />
+      <varInfo nodeId="5658809246031045745" varName="unitName" />
+    </scopeInfo>
+    <scopeInfo nodeId="2716458348594714898" fileName="CurrentLinePositionComponent.java" startLine="58" startPosition="90" endLine="69" endPosition="16">
       <varInfo nodeId="4474271214083121651" varName="stackFrame" />
     </scopeInfo>
-    <scopeInfo nodeId="2716458348594714890" fileName="CurrentLinePositionComponent.java" startLine="54" startPosition="0" endLine="68" endPosition="0">
+    <scopeInfo nodeId="796115907523081920" fileName="CurrentLinePositionComponent.java" startLine="71" startPosition="0" endLine="84" endPosition="0">
+      <varInfo nodeId="796115907523081929" varName="session" />
+    </scopeInfo>
+    <scopeInfo nodeId="2716458348594714890" fileName="CurrentLinePositionComponent.java" startLine="57" startPosition="0" endLine="71" endPosition="0">
       <varInfo nodeId="2716458348594714891" varName="session" />
     </scopeInfo>
-    <unitInfo nodeId="4474271214083121336" fileName="CurrentLinePositionComponent.java" startLine="19" startPosition="0" endLine="110" endPosition="0" unitName="jetbrains.mps.debugger.api.ui.breakpoints.CurrentLinePositionComponent" />
-    <unitInfo nodeId="4474271214083121340" fileName="CurrentLinePositionComponent.java" startLine="69" startPosition="0" endLine="89" endPosition="0" unitName="jetbrains.mps.debugger.api.ui.breakpoints.CurrentLinePositionComponent$MyCurrentDebugSessionListener" />
-    <unitInfo nodeId="4474271214083121361" fileName="CurrentLinePositionComponent.java" startLine="90" startPosition="0" endLine="109" endPosition="0" unitName="jetbrains.mps.debugger.api.ui.breakpoints.CurrentLinePositionComponent$MySessionChangeListener" />
+    <unitInfo nodeId="4474271214083121336" fileName="CurrentLinePositionComponent.java" startLine="22" startPosition="0" endLine="126" endPosition="0" unitName="jetbrains.mps.debugger.api.ui.breakpoints.CurrentLinePositionComponent" />
+    <unitInfo nodeId="4474271214083121340" fileName="CurrentLinePositionComponent.java" startLine="85" startPosition="0" endLine="105" endPosition="0" unitName="jetbrains.mps.debugger.api.ui.breakpoints.CurrentLinePositionComponent$MyCurrentDebugSessionListener" />
+    <unitInfo nodeId="4474271214083121361" fileName="CurrentLinePositionComponent.java" startLine="106" startPosition="0" endLine="125" endPosition="0" unitName="jetbrains.mps.debugger.api.ui.breakpoints.CurrentLinePositionComponent$MySessionChangeListener" />
   </root>
   <root nodeId="4474271214083122178">
     <nodeInfo nodeId="4474271214083122182" fileName="BreakpointsBrowserDialog.java" startLine="53" startPosition="82" endLine="54" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="COMMAND_SHOW_NODE" />
@@ -2701,106 +2360,6 @@
     </scopeInfo>
     <scopeInfo nodeId="4474271214083123577" fileName="JPanelWithCheckbox.java" startLine="19" startPosition="0" endLine="36" endPosition="3" />
     <unitInfo nodeId="4474271214083123569" fileName="JPanelWithCheckbox.java" startLine="16" startPosition="0" endLine="56" endPosition="0" unitName="jetbrains.mps.debugger.api.ui.breakpoints.JPanelWithCheckbox" />
-  </root>
-  <root nodeId="4474271214083126446">
-    <nodeInfo nodeId="4474271214083126449" fileName="CurrentLinePainter.java" startLine="14" startPosition="71" endLine="15" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="STRIPE_COLOR" />
-    <nodeInfo nodeId="4474271214083126461" fileName="CurrentLinePainter.java" startLine="18" startPosition="29" endLine="19" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myInvisible" />
-    <nodeInfo nodeId="4474271214083126465" fileName="CurrentLinePainter.java" startLine="19" startPosition="38" endLine="20" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCachedCoverageArea" />
-    <nodeInfo nodeId="4474271214083126475" fileName="CurrentLinePainter.java" startLine="22" startPosition="44" endLine="23" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4474271214083126483" fileName="CurrentLinePainter.java" startLine="28" startPosition="26" endLine="29" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4474271214083126491" fileName="CurrentLinePainter.java" startLine="33" startPosition="44" endLine="34" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4474271214083126498" fileName="CurrentLinePainter.java" startLine="38" startPosition="46" endLine="39" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4474271214083126505" fileName="CurrentLinePainter.java" startLine="43" startPosition="35" endLine="44" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4474271214083126512" fileName="CurrentLinePainter.java" startLine="48" startPosition="30" endLine="49" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4474271214083126524" fileName="CurrentLinePainter.java" startLine="54" startPosition="22" endLine="55" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4474271214083126531" fileName="CurrentLinePainter.java" startLine="57" startPosition="39" endLine="58" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4474271214083126533" fileName="CurrentLinePainter.java" startLine="59" startPosition="5" endLine="60" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4474271214083126543" fileName="CurrentLinePainter.java" startLine="61" startPosition="23" endLine="62" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4474271214083126545" fileName="CurrentLinePainter.java" startLine="63" startPosition="5" endLine="64" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4474271214083126551" fileName="CurrentLinePainter.java" startLine="64" startPosition="60" endLine="65" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4474271214083127120" fileName="CurrentLinePainter.java" startLine="65" startPosition="32" endLine="66" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="4474271214083126563" fileName="CurrentLinePainter.java" startLine="71" startPosition="22" endLine="72" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4474271214083126565" fileName="CurrentLinePainter.java" startLine="73" startPosition="5" endLine="74" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4474271214083126581" fileName="CurrentLinePainter.java" startLine="79" startPosition="57" endLine="80" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4474271214083126583" fileName="CurrentLinePainter.java" startLine="81" startPosition="5" endLine="82" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4474271214083126597" fileName="CurrentLinePainter.java" startLine="87" startPosition="22" endLine="88" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4474271214083126598" fileName="CurrentLinePainter.java" startLine="89" startPosition="5" endLine="90" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4474271214083126609" fileName="CurrentLinePainter.java" startLine="93" startPosition="43" endLine="94" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4474271214083126614" fileName="CurrentLinePainter.java" startLine="94" startPosition="29" endLine="95" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4474271214083126622" fileName="CurrentLinePainter.java" startLine="99" startPosition="37" endLine="100" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4474271214083126632" fileName="CurrentLinePainter.java" startLine="104" startPosition="62" endLine="105" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4474271214083126635" fileName="CurrentLinePainter.java" startLine="105" startPosition="41" endLine="106" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4474271214083126457" fileName="CurrentLinePainter.java" startLine="16" startPosition="0" endLine="18" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNode" />
-    <nodeInfo nodeId="4474271214083126469" fileName="CurrentLinePainter.java" startLine="21" startPosition="0" endLine="24" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="CurrentLinePainter#(Ljetbrains/mps/smodel/SNode;)V" />
-    <nodeInfo nodeId="4474271214083126521" fileName="CurrentLinePainter.java" startLine="53" startPosition="69" endLine="56" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4474271214083126526" fileName="CurrentLinePainter.java" startLine="56" startPosition="5" endLine="59" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4474271214083126538" fileName="CurrentLinePainter.java" startLine="60" startPosition="54" endLine="63" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4474271214083126560" fileName="CurrentLinePainter.java" startLine="70" startPosition="57" endLine="73" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4474271214083126576" fileName="CurrentLinePainter.java" startLine="78" startPosition="96" endLine="81" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4474271214083126594" fileName="CurrentLinePainter.java" startLine="86" startPosition="66" endLine="89" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4474271214083126487" fileName="CurrentLinePainter.java" startLine="31" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getCellBackgroundColor#()Ljava/awt/Color;" />
-    <nodeInfo nodeId="4474271214083126494" fileName="CurrentLinePainter.java" startLine="36" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getStripeBackgroundColor#()Ljava/awt/Color;" />
-    <nodeInfo nodeId="4474271214083126501" fileName="CurrentLinePainter.java" startLine="41" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getFrameColor#()Ljava/awt/Color;" />
-    <nodeInfo nodeId="4474271214083126508" fileName="CurrentLinePainter.java" startLine="46" startPosition="0" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSNode#()Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="4474271214083126603" fileName="CurrentLinePainter.java" startLine="92" startPosition="0" endLine="97" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setVisible#(Z)V" />
-    <nodeInfo nodeId="4474271214083126618" fileName="CurrentLinePainter.java" startLine="97" startPosition="0" endLine="102" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="paintsBackground#()Z" />
-    <nodeInfo nodeId="4474271214083126479" fileName="CurrentLinePainter.java" startLine="25" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getItem#()Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="4474271214083126626" fileName="CurrentLinePainter.java" startLine="102" startPosition="0" endLine="108" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="beforeRemoval#(Ljetbrains/mps/nodeEditor/EditorComponent;)V" />
-    <nodeInfo nodeId="4474271214083126554" fileName="CurrentLinePainter.java" startLine="68" startPosition="0" endLine="76" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getCellsFontColor#(Ljetbrains/mps/nodeEditor/cells/EditorCell_Label;)Ljava/awt/Color;" />
-    <nodeInfo nodeId="4474271214083126568" fileName="CurrentLinePainter.java" startLine="76" startPosition="0" endLine="84" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isAbove#(Ljetbrains/mps/nodeEditor/AdditionalPainter;Ljetbrains/mps/nodeEditor/EditorComponent;)Z" />
-    <nodeInfo nodeId="4474271214083126586" fileName="CurrentLinePainter.java" startLine="84" startPosition="0" endLine="92" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="paint#(Ljava/awt/Graphics;Ljetbrains/mps/nodeEditor/EditorComponent;)V" />
-    <nodeInfo nodeId="4474271214083126515" fileName="CurrentLinePainter.java" startLine="51" startPosition="0" endLine="68" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getCoverageArea#(Ljetbrains/mps/nodeEditor/EditorComponent;)Ljava/awt/Rectangle;" />
-    <scopeInfo nodeId="4474271214083126474" fileName="CurrentLinePainter.java" startLine="22" startPosition="44" endLine="23" endPosition="21" />
-    <scopeInfo nodeId="4474271214083126482" fileName="CurrentLinePainter.java" startLine="28" startPosition="26" endLine="29" endPosition="18" />
-    <scopeInfo nodeId="4474271214083126490" fileName="CurrentLinePainter.java" startLine="33" startPosition="44" endLine="34" endPosition="16" />
-    <scopeInfo nodeId="4474271214083126497" fileName="CurrentLinePainter.java" startLine="38" startPosition="46" endLine="39" endPosition="24" />
-    <scopeInfo nodeId="4474271214083126504" fileName="CurrentLinePainter.java" startLine="43" startPosition="35" endLine="44" endPosition="23" />
-    <scopeInfo nodeId="4474271214083126511" fileName="CurrentLinePainter.java" startLine="48" startPosition="30" endLine="49" endPosition="21" />
-    <scopeInfo nodeId="4474271214083126523" fileName="CurrentLinePainter.java" startLine="54" startPosition="22" endLine="55" endPosition="18" />
-    <scopeInfo nodeId="4474271214083126530" fileName="CurrentLinePainter.java" startLine="57" startPosition="39" endLine="58" endPosition="34" />
-    <scopeInfo nodeId="4474271214083126542" fileName="CurrentLinePainter.java" startLine="61" startPosition="23" endLine="62" endPosition="18" />
-    <scopeInfo nodeId="4474271214083126562" fileName="CurrentLinePainter.java" startLine="71" startPosition="22" endLine="72" endPosition="18" />
-    <scopeInfo nodeId="4474271214083126580" fileName="CurrentLinePainter.java" startLine="79" startPosition="57" endLine="80" endPosition="18" />
-    <scopeInfo nodeId="4474271214083126596" fileName="CurrentLinePainter.java" startLine="87" startPosition="22" endLine="88" endPosition="13" />
-    <scopeInfo nodeId="4474271214083126621" fileName="CurrentLinePainter.java" startLine="99" startPosition="37" endLine="100" endPosition="26" />
-    <scopeInfo nodeId="4474271214083126608" fileName="CurrentLinePainter.java" startLine="93" startPosition="43" endLine="95" endPosition="32" />
-    <scopeInfo nodeId="4474271214083126631" fileName="CurrentLinePainter.java" startLine="104" startPosition="62" endLine="106" endPosition="32" />
-    <scopeInfo nodeId="4474271214083126469" fileName="CurrentLinePainter.java" startLine="21" startPosition="0" endLine="24" endPosition="3">
-      <varInfo nodeId="4474271214083126472" varName="pointer" />
-    </scopeInfo>
-    <scopeInfo nodeId="4474271214083126559" fileName="CurrentLinePainter.java" startLine="70" startPosition="57" endLine="74" endPosition="23" />
-    <scopeInfo nodeId="4474271214083126575" fileName="CurrentLinePainter.java" startLine="78" startPosition="96" endLine="82" endPosition="17" />
-    <scopeInfo nodeId="4474271214083126593" fileName="CurrentLinePainter.java" startLine="86" startPosition="66" endLine="90" endPosition="36" />
-    <scopeInfo nodeId="4474271214083126487" fileName="CurrentLinePainter.java" startLine="31" startPosition="0" endLine="36" endPosition="0" />
-    <scopeInfo nodeId="4474271214083126494" fileName="CurrentLinePainter.java" startLine="36" startPosition="0" endLine="41" endPosition="0" />
-    <scopeInfo nodeId="4474271214083126501" fileName="CurrentLinePainter.java" startLine="41" startPosition="0" endLine="46" endPosition="0" />
-    <scopeInfo nodeId="4474271214083126508" fileName="CurrentLinePainter.java" startLine="46" startPosition="0" endLine="51" endPosition="0" />
-    <scopeInfo nodeId="4474271214083126603" fileName="CurrentLinePainter.java" startLine="92" startPosition="0" endLine="97" endPosition="0">
-      <varInfo nodeId="4474271214083126606" varName="visible" />
-    </scopeInfo>
-    <scopeInfo nodeId="4474271214083126618" fileName="CurrentLinePainter.java" startLine="97" startPosition="0" endLine="102" endPosition="0" />
-    <scopeInfo nodeId="4474271214083126479" fileName="CurrentLinePainter.java" startLine="25" startPosition="0" endLine="31" endPosition="0" />
-    <scopeInfo nodeId="4474271214083126626" fileName="CurrentLinePainter.java" startLine="102" startPosition="0" endLine="108" endPosition="0">
-      <varInfo nodeId="4474271214083126629" varName="editorComponent" />
-    </scopeInfo>
-    <scopeInfo nodeId="4474271214083126554" fileName="CurrentLinePainter.java" startLine="68" startPosition="0" endLine="76" endPosition="0">
-      <varInfo nodeId="4474271214083126557" varName="cell" />
-    </scopeInfo>
-    <scopeInfo nodeId="4474271214083126568" fileName="CurrentLinePainter.java" startLine="76" startPosition="0" endLine="84" endPosition="0">
-      <varInfo nodeId="4474271214083126571" varName="additionalPainter" />
-      <varInfo nodeId="4474271214083126573" varName="editorComponent" />
-    </scopeInfo>
-    <scopeInfo nodeId="4474271214083126586" fileName="CurrentLinePainter.java" startLine="84" startPosition="0" endLine="92" endPosition="0">
-      <varInfo nodeId="4474271214083126591" varName="editorComponent" />
-      <varInfo nodeId="4474271214083126589" varName="g" />
-    </scopeInfo>
-    <scopeInfo nodeId="4474271214083126520" fileName="CurrentLinePainter.java" startLine="53" startPosition="69" endLine="66" endPosition="87">
-      <varInfo nodeId="4474271214083126534" varName="cell" />
-    </scopeInfo>
-    <scopeInfo nodeId="4474271214083126515" fileName="CurrentLinePainter.java" startLine="51" startPosition="0" endLine="68" endPosition="0">
-      <varInfo nodeId="4474271214083126518" varName="editorComponent" />
-    </scopeInfo>
-    <unitInfo nodeId="4474271214083126446" fileName="CurrentLinePainter.java" startLine="14" startPosition="0" endLine="109" endPosition="0" unitName="jetbrains.mps.debugger.api.ui.breakpoints.CurrentLinePainter" />
   </root>
 </debugInfo>
 

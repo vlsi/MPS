@@ -63,9 +63,9 @@ public interface TemplateExecutionEnvironment {
 
   void registerLabel(SNode inputNode, Iterable<SNode> outputNodes, String mappingLabel);
 
-  void resolveInTemplateLater(SNode outputNode, String role, SNodePointer sourceNode, int parentIndex, String resolveInfo, TemplateContext context);
+  void resolveInTemplateLater(@NotNull SNode outputNode, String role, SNodePointer sourceNode, int parentIndex, String resolveInfo, TemplateContext context);
 
-  void resolveInTemplateLater(SNode outputNode, String role, SNodePointer sourceNode, String templateNodeId, String resolveInfo, TemplateContext context);
+  void resolveInTemplateLater(@NotNull SNode outputNode, String role, SNodePointer sourceNode, String templateNodeId, String resolveInfo, TemplateContext context);
 
   void resolve(ReferenceResolver resolver, SNode outputNode, String role, TemplateContext context);
 

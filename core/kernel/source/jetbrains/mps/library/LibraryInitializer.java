@@ -34,6 +34,7 @@ public class LibraryInitializer {
 
   private MPSModuleRepository myRepo = MPSModuleRepository.getInstance();
   private ClassLoaderManager myCLM = ClassLoaderManager.getInstance();
+  private volatile boolean myReloading = false;
 
   public void update() {
     update(false);
@@ -55,6 +56,8 @@ public class LibraryInitializer {
 
   private void reload(Set<String> loadedLibs, Set<String> newLibs, boolean refreshFiles) {
     ModelAccess.assertLegalWrite();
+
+    setLoadingState(true);
 
     //unload
     HashSet<String> toUnload = new HashSet<String>(loadedLibs);
@@ -80,6 +83,8 @@ public class LibraryInitializer {
     myCLM.initRuntimeEnvironment();
     LanguageRegistry.getInstance().loadLanguages();
     ExtensionRegistry.getInstance().loadExtensionDescriptors();
+
+    setLoadingState(false);
   }
 
   protected void fireOnLoad(final MPSModuleOwner owner) {
@@ -96,7 +101,7 @@ public class LibraryInitializer {
 
   public <M extends IModule> Set<M> getBootstrapModules(Class<M> cls) {
     List<M> result = new ArrayList<M>();
-    for (String path: PathManager.getBootstrapPaths()) {
+    for (String path : PathManager.getBootstrapPaths()) {
       result.addAll(myRepo.getModules(myLibsToOwners.get(path), cls));
     }
     result.addAll(myRepo.getModules(myLibsToOwners.get(PathManager.getLanguagesPath()), cls));
@@ -139,5 +144,15 @@ public class LibraryInitializer {
 
   public void removeContributor(LibraryContributor c) {
     myContributors.remove(c);
+  }
+
+  //---------reload events
+
+  private void setLoadingState(boolean started) {
+    myReloading = started;
+  }
+
+  public boolean isReloading() {
+    return myReloading;
   }
 }

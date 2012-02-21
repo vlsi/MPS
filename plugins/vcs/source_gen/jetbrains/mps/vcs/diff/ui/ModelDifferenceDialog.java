@@ -31,6 +31,7 @@ import com.intellij.openapi.actionSystem.ActionPlaces;
 import com.intellij.ui.ScrollPaneFactory;
 import java.awt.Dimension;
 import com.intellij.openapi.util.DimensionService;
+import jetbrains.mps.vcs.diff.ui.common.SimpleDiffRequest;
 import org.jetbrains.annotations.Nullable;
 import javax.swing.JComponent;
 import javax.swing.Action;
@@ -90,8 +91,11 @@ public class ModelDifferenceDialog extends DialogWrapper {
     if (size == null) {
       DimensionService.getInstance().setSize(getDimensionServiceKey(), new Dimension(500, 700));
     }
-
     init();
+  }
+
+  public ModelDifferenceDialog(SModel oldModel, SModel newModel, Project project, String oldTitle, String newTitle) {
+    this(oldModel, newModel, new SimpleDiffRequest(project, new SModel[]{oldModel, newModel}, new String[]{oldTitle, newTitle}));
   }
 
   @Nullable

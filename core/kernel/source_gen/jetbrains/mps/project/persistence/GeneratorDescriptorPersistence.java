@@ -15,6 +15,7 @@ import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingPriorityRule;
 import jetbrains.mps.project.structure.modules.mappingpriorities.RuleType;
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_AbstractRef;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_RefAllLocal;
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_RefAllGlobal;
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_SimpleRef;
@@ -119,7 +120,7 @@ public class GeneratorDescriptorPersistence {
 
     // "depends on" generators 
     final Element result_wk2vdq_a8a0a0a1 = new Element("external-templates");
-    for (ModuleReference generatorReference : ListSequence.fromList(descriptor.getDepGenerators())) {
+    for (ModuleReference generatorReference : SetSequence.fromSet(descriptor.getDepGenerators())) {
       final Element result_wk2vdq_a0a0a8a0a0a1 = new Element("generator");
       final String result_wk2vdq_a0a0a0a8a0a0a1 = generatorReference.toString();
       result_wk2vdq_a0a0a8a0a0a1.setAttribute("generatorUID", "" + result_wk2vdq_a0a0a0a8a0a0a1);

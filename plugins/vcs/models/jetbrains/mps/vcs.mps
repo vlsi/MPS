@@ -2664,7 +2664,7 @@
           <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="7909155923996788355">
             <property name="name" nameId="tpck.1169194664001" value="dialog" />
             <property name="isFinal" nameId="tpee.1176718929932" value="false" />
-            <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1471817007866823353">
+            <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="7909155923996788356">
               <link role="classifier" roleId="tpee.1107535924139" targetNodeId="p37l.8733553229778887411" resolveInfo="ModelDifferenceDialog" />
             </node>
             <node role="initializer" roleId="tpee.1068431790190" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="7909155923996788357">
@@ -2676,19 +2676,14 @@
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="7909155923996788360">
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3613324658897714912" resolveInfo="inMemory" />
                 </node>
-                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="7909155923996788361">
-                  <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="7909155923996788362">
-                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="hdhb.4652592318748341193" resolveInfo="SimpleDiffRequest" />
-                    <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="7909155923996788363">
-                      <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7909155923996788349" resolveInfo="project" />
-                    </node>
-                    <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="7909155923996788364">
-                      <property name="value" nameId="tpee.1070475926801" value="Filesystem version (Read-Only)" />
-                    </node>
-                    <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="7909155923996788365">
-                      <property name="value" nameId="tpee.1070475926801" value="Memory Version" />
-                    </node>
-                  </node>
+                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="7909155923996788363">
+                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7909155923996788349" resolveInfo="project" />
+                </node>
+                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="7909155923996788364">
+                  <property name="value" nameId="tpee.1070475926801" value="Filesystem version (Read-Only)" />
+                </node>
+                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="7909155923996788365">
+                  <property name="value" nameId="tpee.1070475926801" value="Memory Version" />
                 </node>
               </node>
             </node>
@@ -4924,9 +4919,6 @@
         <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="5412004210329572468">
           <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="5412004210329572469">
             <property name="name" nameId="tpck.1169194664001" value="modelFile" />
-            <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5412004210329572470">
-              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="zfwc.~VirtualFile" resolveInfo="VirtualFile" />
-            </node>
             <node role="initializer" roleId="tpee.1068431790190" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="9029966639392721425">
               <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ur19.9029966639392731829" resolveInfo="getModelFileIfConflicting" />
               <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="ur19.9029966639392731796" resolveInfo="ConflictsUtil" />
@@ -4937,14 +4929,14 @@
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7187779626553011434" resolveInfo="project" />
               </node>
             </node>
+            <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5412004210329572470">
+              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="zfwc.~VirtualFile" resolveInfo="VirtualFile" />
+            </node>
           </node>
         </node>
         <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="5412004210329573671">
           <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="5412004210329573672">
             <property name="name" nameId="tpck.1169194664001" value="moduleFile" />
-            <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5412004210329573673">
-              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="zfwc.~VirtualFile" resolveInfo="VirtualFile" />
-            </node>
             <node role="initializer" roleId="tpee.1068431790190" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="9029966639392721465">
               <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ur19.9029966639392731881" resolveInfo="getModuleFileIfConflicting" />
               <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="ur19.9029966639392731796" resolveInfo="ConflictsUtil" />
@@ -4959,6 +4951,9 @@
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="5412004210329573676">
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7187779626553011434" resolveInfo="project" />
               </node>
+            </node>
+            <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5412004210329573673">
+              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="zfwc.~VirtualFile" resolveInfo="VirtualFile" />
             </node>
           </node>
         </node>
