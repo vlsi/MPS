@@ -199,6 +199,8 @@ public class TypeContextManager implements CoreComponent {
 
   public void removeOwnerForRootNodeContext(final SNode node, final ITypeContextOwner owner) {
     ModelAccess.assertLegalRead();
+    if (node == null || node.isDisposed()) return;
+    //if node is disposed, then context was removed by beforeModelDisposed listener
     synchronized (myLock) {
       Pair<TypeCheckingContext, List<ITypeContextOwner>> contextWithOwners = myTypeCheckingContexts.get(new SNodePointer(node));
       if (contextWithOwners != null) {

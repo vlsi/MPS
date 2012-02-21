@@ -85,7 +85,7 @@ public class EditorTests extends DataMPSFixtureTestCase {
         // this is to prevent exceptions in the project components that get "projectClosed" notifications
         ApplicationManagerEx.getApplicationEx().doNotSave();
 
-        SModelRoot sModelRoot = myFacet.getSolution().getSModelRoots().get(0);
+        SModelRoot sModelRoot = myFacet.getSolution().getSModelRoots().iterator().next();
         final IFile modelFile = FileSystem.getInstance().getFileByPath(sModelRoot.getPath()+"/test.mps");
         final List<SNode> roots = new ArrayList<SNode>();
 
