@@ -47,6 +47,7 @@ public class ModelChangesWatcher implements ApplicationComponent {
   private final ProjectManager myProjectManager;
   private final VirtualFileManager myVirtualFileManager;
   private volatile ReloadSession myReloadSession;
+  private volatile boolean myCleanInterval = false;
   private final Object myLock = new Object();
   private final Set<ModelChangesWatcher.IReloadListener> myReloadListeners = new HashSet<ModelChangesWatcher.IReloadListener>();
   private final Timer myTimer;
@@ -77,12 +78,17 @@ public class ModelChangesWatcher implements ApplicationComponent {
     myBus = bus;
     myVirtualFileManager = virtualFileManager;
     myProjectManager = projectManager;
-    myTimer = new Timer("Model Changes Watcher", 50) {
+    myTimer = new Timer("Model Changes Watcher", 500) {
       protected void onTimer() throws InterruptedException {
         if (LibraryInitializer.getInstance().isReloading()) {
           return;
         }
         synchronized (myLock) {
+          if (!myCleanInterval) {
+            myTimer.restart();
+            myCleanInterval = true;
+            return;
+          }
           if (myReloadSession != null) {
             doReload();
           }
@@ -258,6 +264,7 @@ public class ModelChangesWatcher implements ApplicationComponent {
         if (myReloadSession == null) {
           myReloadSession = new ReloadSession(getReloadListeners());
         }
+        myCleanInterval = false;
         final ReloadSession reloadSession = myReloadSession;
         for (final VFileEvent event : events) {
           String filePath = event.getPath();
@@ -303,7 +310,8 @@ public class ModelChangesWatcher implements ApplicationComponent {
         if (myReloadSession == null) {
           myReloadSession = new ReloadSession(getReloadListeners());
         }
-        for (final VFileEvent event : events) {
+        myCleanInterval = false;
+      for (final VFileEvent event : events) {
           String path = event.getPath();
           ModelChangesWatcher.LOG.debug("Got event " + event);
           File file = new File(path);
