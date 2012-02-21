@@ -17,7 +17,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.smodel.persistence.def.ModelReadException;
-import jetbrains.mps.vcs.diff.merge.ui.MergeModelsDialog;
+import jetbrains.mps.vcs.diff.ui.merge.MergeModelsDialog;
 import javax.swing.SwingUtilities;
 import java.io.IOException;
 import jetbrains.mps.fileTypes.MPSFileTypeFactory;
