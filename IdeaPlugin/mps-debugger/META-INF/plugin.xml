@@ -25,6 +25,9 @@
 
   <project-components>
     <component><implementation-class>jetbrains.mps.idea.debugger.IdeaDebuggerPositionHighlighter</implementation-class></component>
+    <component>
+      <implementation-class>jetbrains.mps.idea.debugger.breakpoints.IdeaBreakpointsUiComponent</implementation-class>
+    </component>
   </project-components>
 
   <extensions defaultExtensionNs="com.intellij">

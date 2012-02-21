@@ -28,6 +28,7 @@ import com.intellij.psi.PsiFile;
 import com.intellij.psi.PsiManager;
 import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
 import jetbrains.mps.generator.traceInfo.TraceInfoCache;
+import jetbrains.mps.generator.traceInfo.TraceInfoUtil;
 import jetbrains.mps.ide.navigation.NodeNavigatable;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.smodel.*;
@@ -47,12 +48,10 @@ public class MpsSourcePosition extends SourcePosition {
     private final SNodePointer myNodePointer;
     private final Project myProject;
     private final NodeNavigatable myNavigatable;
-    private final MpsPositionManager myPositionManager;
 
-    public MpsSourcePosition(MpsPositionManager manager, SNodePointer node, Project project) {
+    public MpsSourcePosition(SNodePointer node, Project project) {
         myNodePointer = node;
         myProject = project;
-        myPositionManager = manager;
 
         myNavigatable = new NodeNavigatable(ProjectHelper.toMPSProject(myProject), myNodePointer);
     }
@@ -187,5 +186,19 @@ public class MpsSourcePosition extends SourcePosition {
                 return myNodePointer.getNode();
             }
         });
+    }
+
+    @Nullable
+    public static MpsSourcePosition createPosition(final Project project, String typeName, String fileName, int lineNumber) {
+        final SNode node = TraceInfoUtil.getNode(typeName, fileName, lineNumber);
+        if (node != null) {
+            return ModelAccess.instance().runReadAction(new Computable<MpsSourcePosition>() {
+                @Override
+                public MpsSourcePosition compute() {
+                    return new MpsSourcePosition(new SNodePointer(node), project);
+                }
+            });
+        }
+        return null;
     }
 }

@@ -48,14 +48,9 @@ public class MpsPositionManager implements PositionManager {
     @Override
     public SourcePosition getSourcePosition(@Nullable final Location location) throws NoDataException {
         try {
-            final SNode node = TraceInfoUtil.getNode(location.declaringType().name(), location.sourceName(), location.lineNumber());
-            if (node != null) {
-                return ModelAccess.instance().runReadAction(new Computable<MpsSourcePosition>() {
-                    @Override
-                    public MpsSourcePosition compute() {
-                        return new MpsSourcePosition(MpsPositionManager.this, new SNodePointer(node), myProject);
-                    }
-                });
+            MpsSourcePosition position = MpsSourcePosition.createPosition(myProject, location.declaringType().name(), location.sourceName(), location.lineNumber());
+            if (position != null) {
+                return position;
             }
         } catch (AbsentInformationException e) {
             // todo

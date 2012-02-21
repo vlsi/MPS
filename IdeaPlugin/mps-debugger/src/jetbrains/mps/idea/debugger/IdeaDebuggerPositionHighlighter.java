@@ -25,11 +25,11 @@ import com.intellij.debugger.impl.DebuggerSession;
 import com.intellij.openapi.components.ProjectComponent;
 import com.intellij.openapi.fileEditor.FileEditorManager;
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.debugger.core.AbstractCurrentLinePositionComponent;
+import jetbrains.mps.debugger.core.CurrentLinePositionComponentEx;
 import jetbrains.mps.smodel.SNode;
 import org.jetbrains.annotations.NotNull;
 
-public class IdeaDebuggerPositionHighlighter extends AbstractCurrentLinePositionComponent<DebuggerSession> implements ProjectComponent {
+public class IdeaDebuggerPositionHighlighter extends CurrentLinePositionComponentEx<DebuggerSession> implements ProjectComponent {
     private DebuggerManagerEx myDebuggerManager;
     private final DebuggerManagerListener myDebuggerManagerListener = new MyDebuggerManagerListener();
     private final DebuggerContextListener mySessionListener = new MyDebuggerContextListener();
