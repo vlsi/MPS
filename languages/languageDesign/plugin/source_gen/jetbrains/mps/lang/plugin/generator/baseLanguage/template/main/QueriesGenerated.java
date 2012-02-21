@@ -2088,11 +2088,7 @@ public class QueriesGenerated {
       public boolean accept(SNode it) {
         return !(SNodeOperations.isInstanceOf(it, "jetbrains.mps.lang.plugin.structure.InterfaceGroup"));
       }
-    }).sort(new ISelector<SNode, Comparable<?>>() {
-      public Comparable<?> select(SNode it) {
-        return ActionGroupDeclaration_Behavior.call_getGeneratedName_1213877494274(it);
-      }
-    }, true);
+    });
   }
 
   public static Iterable sourceNodesQuery_6544099502277380700(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
