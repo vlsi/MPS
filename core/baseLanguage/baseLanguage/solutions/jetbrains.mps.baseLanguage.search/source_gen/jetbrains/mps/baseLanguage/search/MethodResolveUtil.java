@@ -10,6 +10,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
+import jetbrains.mps.smodel.SModel;
 import java.util.Map;
 import java.util.HashMap;
 import jetbrains.mps.typesystem.inference.TypeContextManager;
@@ -20,7 +21,6 @@ import jetbrains.mps.typesystem.inference.util.StructuralNodeMap;
 import java.util.Set;
 import jetbrains.mps.typesystem.inference.SubtypingManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
-import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.project.AuxilaryRuntimeModel;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import java.util.HashSet;
@@ -90,7 +90,7 @@ public class MethodResolveUtil {
             badMethods.add(method);
           }
         } else if (SNodeOperations.isInstanceOf(visibility, "jetbrains.mps.baseLanguage.structure.ProtectedVisibility")) {
-          if (SNodeOperations.getModel(methodCall) == SNodeOperations.getModel(method)) {
+          if (hasEqualsFQName(SNodeOperations.getModel(methodCall), SNodeOperations.getModel(method))) {
             goodMethods.add(method);
           } else {
             SNode desc = SNodeOperations.getAncestor(methodCall, "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
@@ -102,7 +102,7 @@ public class MethodResolveUtil {
             }
           }
         } else {
-          if (SNodeOperations.getModel(methodCall) == SNodeOperations.getModel(method)) {
+          if (hasEqualsFQName(SNodeOperations.getModel(methodCall), SNodeOperations.getModel(method))) {
             goodMethods.add(method);
           } else {
             badMethods.add(method);
@@ -117,6 +117,10 @@ public class MethodResolveUtil {
     } else {
       return new Pair<List<SNode>, Boolean>(goodMethods, true);
     }
+  }
+
+  private static boolean hasEqualsFQName(SModel model1, SModel model2) {
+    return model1.getLongName().equals(model2.getLongName());
   }
 
   public static SNode chooseByParameterType(List<SNode> candidates, List<SNode> actualArgs, Map<SNode, SNode> typeByTypeVar) {
