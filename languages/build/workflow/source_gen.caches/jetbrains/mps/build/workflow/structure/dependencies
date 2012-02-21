@@ -10,6 +10,14 @@
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
   </dependency>
+  <dependency className="jetbrains.mps.build.workflow.structure.BwfDependency" file="BwfDependency.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModel" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
+  </dependency>
   <dependency className="jetbrains.mps.build.workflow.structure.BwfFileSet" file="BwfFileSet.java">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Iterator" />
@@ -114,6 +122,7 @@
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Iterator" />
     <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.build.workflow.structure.BwfDependency" />
     <classNode dependClassName="jetbrains.mps.build.workflow.structure.BwfProjectPart" />
     <classNode dependClassName="jetbrains.mps.build.workflow.structure.BwfTaskLibraryDependency" />
     <classNode dependClassName="jetbrains.mps.lang.core.structure.Attribute" />

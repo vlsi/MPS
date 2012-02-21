@@ -40,13 +40,16 @@ public class BwfProject_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createRefNodeList_4tk4ky_f0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_4tk4ky_g0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_4tk4ky_h0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_4tk4ky_i0(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_4tk4ky_j0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNodeList_4tk4ky_i0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_4tk4ky_j0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_4tk4ky_k0(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_4tk4ky_l0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_4tk4ky_m0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_4tk4ky_l0(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_4tk4ky_m0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_4tk4ky_n0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNodeList_4tk4ky_o0(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_4tk4ky_o0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_4tk4ky_p0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_4tk4ky_q0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNodeList_4tk4ky_r0(editorContext, node));
     return editorCell;
   }
 
@@ -106,7 +109,7 @@ public class BwfProject_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_4tk4ky_h0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "folders:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "dependencies:");
     editorCell.setCellId("Constant_4tk4ky_h0");
     workflowStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     {
@@ -117,9 +120,32 @@ public class BwfProject_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_4tk4ky_i0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_4tk4ky_j0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
+    editorCell.setCellId("Constant_4tk4ky_j0");
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+    }
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createConstant_4tk4ky_k0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "folders:");
+    editorCell.setCellId("Constant_4tk4ky_k0");
+    workflowStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+    }
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createConstant_4tk4ky_l0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "base directory:");
-    editorCell.setCellId("Constant_4tk4ky_i0");
+    editorCell.setCellId("Constant_4tk4ky_l0");
     workflowStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     {
       Style style = editorCell.getStyle();
@@ -129,9 +155,9 @@ public class BwfProject_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_4tk4ky_k0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_4tk4ky_n0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "temporary directory:");
-    editorCell.setCellId("Constant_4tk4ky_k0");
+    editorCell.setCellId("Constant_4tk4ky_n0");
     workflowStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     {
       Style style = editorCell.getStyle();
@@ -142,9 +168,9 @@ public class BwfProject_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_4tk4ky_m0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_4tk4ky_p0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
-    editorCell.setCellId("Constant_4tk4ky_m0");
+    editorCell.setCellId("Constant_4tk4ky_p0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
@@ -153,9 +179,9 @@ public class BwfProject_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_4tk4ky_n0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_4tk4ky_q0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "workflow:");
-    editorCell.setCellId("Constant_4tk4ky_n0");
+    editorCell.setCellId("Constant_4tk4ky_q0");
     workflowStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     {
       Style style = editorCell.getStyle();
@@ -179,8 +205,22 @@ public class BwfProject_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNodeList_4tk4ky_o0(EditorContext editorContext, SNode node) {
-    AbstractCellListHandler handler = new BwfProject_Editor.partsListHandler_4tk4ky_o0(node, "parts", editorContext);
+  private EditorCell createRefNodeList_4tk4ky_i0(EditorContext editorContext, SNode node) {
+    AbstractCellListHandler handler = new BwfProject_Editor.dependenciesListHandler_4tk4ky_i0(node, "dependencies", editorContext);
+    EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
+    editorCell.setCellId("refNodeList_dependencies");
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
+      style.set(StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE, true);
+      style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+    }
+    editorCell.setRole(handler.getElementRole());
+    return editorCell;
+  }
+
+  private EditorCell createRefNodeList_4tk4ky_r0(EditorContext editorContext, SNode node) {
+    AbstractCellListHandler handler = new BwfProject_Editor.partsListHandler_4tk4ky_r0(node, "parts", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_parts");
     {
@@ -211,7 +251,7 @@ public class BwfProject_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createProperty_4tk4ky_j0(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_4tk4ky_m0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("baseDirectory");
     provider.setNoTargetText("<no baseDirectory>");
@@ -229,7 +269,7 @@ public class BwfProject_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createProperty_4tk4ky_l0(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_4tk4ky_o0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("temporaryFolder");
     provider.setNoTargetText("<no temporaryFolder>");
@@ -288,8 +328,44 @@ public class BwfProject_Editor extends DefaultNodeEditor {
     }
   }
 
-  private static class partsListHandler_4tk4ky_o0 extends RefNodeListHandler {
-    public partsListHandler_4tk4ky_o0(SNode ownerNode, String childRole, EditorContext context) {
+  private static class dependenciesListHandler_4tk4ky_i0 extends RefNodeListHandler {
+    public dependenciesListHandler_4tk4ky_i0(SNode ownerNode, String childRole, EditorContext context) {
+      super(ownerNode, childRole, context, false);
+    }
+
+    public SNode createNodeToInsert(EditorContext editorContext) {
+      SNode listOwner = super.getOwner();
+      return NodeFactoryManager.createNode(listOwner, editorContext, super.getElementRole());
+    }
+
+    public EditorCell createNodeCell(EditorContext editorContext, SNode elementNode) {
+      EditorCell elementCell = super.createNodeCell(editorContext, elementNode);
+      this.installElementCellActions(this.getOwner(), elementNode, elementCell, editorContext);
+      return elementCell;
+    }
+
+    public EditorCell createEmptyCell(EditorContext editorContext) {
+      EditorCell emptyCell = null;
+      emptyCell = super.createEmptyCell(editorContext);
+      this.installElementCellActions(super.getOwner(), null, emptyCell, editorContext);
+      return emptyCell;
+    }
+
+    public void installElementCellActions(SNode listOwner, SNode elementNode, EditorCell elementCell, EditorContext editorContext) {
+      if (elementCell.getUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET) == null) {
+        elementCell.putUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET, AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET);
+        if (elementNode != null) {
+          elementCell.setAction(CellActionType.DELETE, new CellAction_DeleteNode(elementNode));
+        }
+        if (elementCell.getSubstituteInfo() == null || elementCell.getSubstituteInfo() instanceof DefaultReferenceSubstituteInfo) {
+          elementCell.setSubstituteInfo(new DefaultChildSubstituteInfo(listOwner, elementNode, super.getLinkDeclaration(), editorContext));
+        }
+      }
+    }
+  }
+
+  private static class partsListHandler_4tk4ky_r0 extends RefNodeListHandler {
+    public partsListHandler_4tk4ky_r0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 

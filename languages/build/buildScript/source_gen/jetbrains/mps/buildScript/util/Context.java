@@ -90,7 +90,7 @@ public class Context {
   }
 
   public String getVariablesDeployPath(SNode node) {
-    return "${build.dir}/artifacts/" + SPropertyOperations.getString(getBuildProject(node), "name") + ".variables";
+    return getDeployPath_WithMacro(node) + "/" + getBuildProjectName(node) + ".variables";
   }
 
   public List<SNode> getExportedMacro(SNode node) {

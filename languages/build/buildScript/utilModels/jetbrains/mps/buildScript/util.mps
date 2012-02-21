@@ -540,19 +540,22 @@
             <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="5662391463398094386">
               <property name="value" nameId="tpee.1070475926801" value=".variables" />
             </node>
-            <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.PlusExpression" typeId="tpee.1068581242875" id="5662391463398094387">
-              <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="5662391463398094388">
-                <property name="value" nameId="tpee.1070475926801" value="${build.dir}/artifacts/" />
+            <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.PlusExpression" typeId="tpee.1068581242875" id="8292198017263016042">
+              <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.LocalInstanceMethodCall" typeId="tpee.3066917033203108594" id="8292198017263016045">
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="8292198017262910446" resolveInfo="getBuildProjectName" />
+                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="8292198017263016046">
+                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5662391463398094380" resolveInfo="node" />
+                </node>
               </node>
-              <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.DotExpression" typeId="tpee.1197027756228" id="5662391463398094389">
-                <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalInstanceMethodCall" typeId="tpee.3066917033203108594" id="5662391463398094390">
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="193602448594305120" resolveInfo="getBuildProject" />
+              <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.PlusExpression" typeId="tpee.1068581242875" id="8292198017263016049">
+                <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="8292198017263016052">
+                  <property name="value" nameId="tpee.1070475926801" value="/" />
+                </node>
+                <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.LocalInstanceMethodCall" typeId="tpee.3066917033203108594" id="5662391463398094390">
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="5584673629410321077" resolveInfo="getDeployPath_WithMacro" />
                   <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="5662391463398094391">
                     <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5662391463398094380" resolveInfo="node" />
                   </node>
-                </node>
-                <node role="operation" roleId="tpee.1197027833540" type="tp25.SPropertyAccess" typeId="tp25.1138056022639" id="5662391463398094392">
-                  <link role="property" roleId="tp25.1138056395725" targetNodeId="tpck.1169194664001" resolveInfo="name" />
                 </node>
               </node>
             </node>
