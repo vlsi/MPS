@@ -97,11 +97,16 @@ public class Module_Behavior {
         return it.getModelRoot().getManager() == null;
       }
     }).toListSequence();
-    return Module_Behavior.call_getPathHolders_1213877515000(thisNode, ListSequence.fromList(paths).select(new ISelector<SModelRoot, String>() {
+    List<SNode> pathHolders = Module_Behavior.call_getPathHolders_1213877515000(thisNode, ListSequence.fromList(paths).select(new ISelector<SModelRoot, String>() {
       public String select(SModelRoot it) {
         return it.getPath().replace(File.separator, Util.SEPARATOR);
       }
     }).distinct().toListSequence(), true);
+    return ListSequence.fromList(pathHolders).sort(new ISelector<SNode, Comparable<?>>() {
+      public Comparable<?> select(SNode it) {
+        return SPropertyOperations.getString(it, "fullPath");
+      }
+    }, true).toListSequence();
   }
 
   public static List<SNode> call_getRuntimeClassPath_1213877515098(SNode thisNode, boolean includeRuntimeSolutions, boolean includeHomeLib) {
