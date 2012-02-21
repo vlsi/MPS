@@ -26,15 +26,22 @@ import com.intellij.openapi.vfs.LocalFileSystem;
 import com.intellij.psi.PsiElement;
 import com.intellij.psi.PsiFile;
 import com.intellij.psi.PsiManager;
+import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
+import jetbrains.mps.generator.traceInfo.TraceInfoCache;
 import jetbrains.mps.ide.navigation.NodeNavigatable;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.descriptor.source.ModelDataSource;
 import jetbrains.mps.smodel.descriptor.source.RegularModelDataSource;
+import jetbrains.mps.traceInfo.DebugInfo;
+import jetbrains.mps.traceInfo.TraceablePositionInfo;
 import jetbrains.mps.util.Computable;
+import jetbrains.mps.vfs.FileSystem;
+import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile;
 import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 public class MpsSourcePosition extends SourcePosition {
     private final SNodePointer myNodePointer;
@@ -67,6 +74,32 @@ public class MpsSourcePosition extends SourcePosition {
     @NotNull
     @Override
     public PsiFile getFile() {
+        TraceablePositionInfo positionInfo = getPositionInfo();
+        if (positionInfo == null) {
+            return getModelPsiFile();
+        }
+
+        final String fileName = positionInfo.getFileName();
+
+        final String fullPath = ModelAccess.instance().runReadAction(new Computable<String>() {
+            @Override
+            public String compute() {
+                SModelDescriptor modelDescriptor = myNodePointer.getNode().getModel().getModelDescriptor();
+                IFile defaultOutputDir = FileGenerationUtil.getDefaultOutputDir(modelDescriptor, FileSystem.getInstance().getFileByPath(modelDescriptor.getModule().getGeneratorOutputPath()));
+                return defaultOutputDir.getDescendant(fileName).getPath();
+            }
+        });
+
+        return ApplicationManager.getApplication().runReadAction(new com.intellij.openapi.util.Computable<PsiFile>() {
+            @Override
+            public PsiFile compute() {
+                return PsiManager.getInstance(myProject).findFile(LocalFileSystem.getInstance().findFileByPath(fullPath));
+            }
+        });
+    }
+
+    @NotNull
+    private PsiFile getModelPsiFile() {
         final String path = ModelAccess.instance().runReadAction(new Computable<String>() {
             @Override
             public String compute() {
@@ -97,9 +130,28 @@ public class MpsSourcePosition extends SourcePosition {
         return null;
     }
 
+    @Nullable
+    private TraceablePositionInfo getPositionInfo() {
+        return ModelAccess.instance().runReadAction(new Computable<TraceablePositionInfo>() {
+            @Override
+            public TraceablePositionInfo compute() {
+                SModelDescriptor model = myNodePointer.getModel();
+                DebugInfo debugInfo = TraceInfoCache.getInstance().get(model);
+                if (debugInfo == null) {
+                    return null;
+                }
+                return debugInfo.getPositionForNode(myNodePointer.getNodeId().toString());
+            }
+        });
+    }
+
     @Override
     public int getLine() {
-        return -1;
+        TraceablePositionInfo positionInfo = getPositionInfo();
+        if (positionInfo == null) {
+            return -1;
+        }
+        return positionInfo.getStartLine();
     }
 
     @Override
