@@ -56,6 +56,12 @@ public class CommandLineGenerator {
     return svnPlugin.getPath() + File.separator + "lib" + File.separator + "svnkit.jar";
   }
 
+  private static String getTextMergerJar() {
+    IdeaPluginDescriptor svnPlugin = PluginManager.getPlugin(PluginId.getId("Subversion"));
+    assert svnPlugin != null;
+    return svnPlugin.getPath() + File.separator + "lib" + File.separator + "sequence-library.jar";
+  }
+
   public static Set<String> getClasspath(boolean withSvnkit) {
     Set<String> classpathItems = SetSequence.fromSet(new LinkedHashSet<String>());
     final Iterable<String> OTHER_CLASSES = Arrays.asList("com.intellij.ide.projectView.impl.ProjectViewImpl", "jetbrains.mps.internal.collections.runtime.ListSequence", "jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes", "org.apache.commons.logging.Log", "org.apache.log4j.Logger", "com.intellij.util.containers.ConcurrentHashSet", "gnu.trove.THash", "org.jdom.JDOMException", "com.intellij.openapi.components.ApplicationComponent", "com.intellij.idea.IdeaTestApplication", "org.picocontainer.Disposable", "com.intellij.openapi.extensions.Extensions", "com.intellij.ide.ClassloaderUtil", "org.apache.xmlrpc.XmlRpcServer", "jetbrains.mps.typesystem.inference.TypeChecker", "jetbrains.mps.editor.runtime.impl.LanguagesKeymapManager", "jetbrains.mps.intentions.IntentionsManager", "jetbrains.mps.ide.findusages.FindersManager", "com.google.common.collect.ImmutableList", "jetbrains.mps.analyzers.runtime.framework.CustomAnalyzerRunner", "jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple");
@@ -83,6 +89,7 @@ public class CommandLineGenerator {
     if (withSvnkit) {
       SetSequence.fromSet(classpathItems).addElement(getSvnkitJar());
     }
+    SetSequence.fromSet(classpathItems).addElement(getTextMergerJar());
     return classpathItems;
   }
 
