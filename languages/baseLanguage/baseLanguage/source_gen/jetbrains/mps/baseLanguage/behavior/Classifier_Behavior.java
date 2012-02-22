@@ -299,6 +299,7 @@ public class Classifier_Behavior {
         return CompositeWithParentScope.from(SLinkOperations.getTargets(thisNode, "typeVariableDeclaration", true), thisNode, kind);
       }
     } else if (SConceptOperations.isSubConceptOf(kind, "jetbrains.mps.baseLanguage.structure.ClassifierMember")) {
+      // todo: go up? 
       return Classifier_Behavior.call_getVisibleMembers_8083692786967356611(thisNode, child, kind);
     }
     return null;
