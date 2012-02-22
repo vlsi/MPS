@@ -23,6 +23,7 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.project.ProjectManager;
 import jetbrains.mps.vcs.diff.ui.ModelDifferenceDialog;
 import javax.swing.SwingUtilities;
+import jetbrains.mps.vcs.util.ModelVersion;
 
 public class DiskMemoryConflictResolverImpl extends DiskMemoryConflictResolver {
   protected static Log log = LogFactory.getLog(DiskMemoryConflictResolverImpl.class);

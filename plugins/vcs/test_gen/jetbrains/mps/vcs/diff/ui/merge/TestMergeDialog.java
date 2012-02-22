@@ -21,7 +21,7 @@ import com.intellij.openapi.util.IconLoader;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.vcs.util.MergeBackupUtil;
 import java.io.File;
-import jetbrains.mps.vcs.MergeVersion;
+import jetbrains.mps.vcs.util.MergeVersion;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.vfs.FileSystem;
 import javax.swing.SwingUtilities;

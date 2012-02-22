@@ -19,9 +19,7 @@
   <import index="mhf0" modelUID="f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#com.intellij.openapi.diff(MPS.Workbench/com.intellij.openapi.diff@java_stub)" version="-1" />
   <import index="fxg7" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" version="-1" />
   <import index="msyo" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.util(MPS.Core/jetbrains.mps.util@java_stub)" version="-1" />
-  <import index="gela" modelUID="r:eec25685-8f1e-47c9-a9de-4a7ef6b504ec(jetbrains.mps.vcs.integration)" version="-1" />
   <import index="1mxg" modelUID="f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#com.intellij.openapi.editor(MPS.Workbench/com.intellij.openapi.editor@java_stub)" version="-1" />
-  <import index="rtk5" modelUID="r:cd7c9d90-25b3-4a54-a510-a0bcc7072c1d(jetbrains.mps.vcs)" version="-1" />
   <import index="j9pa" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.text(JDK/java.text@java_stub)" version="-1" />
   <import index="k7g3" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" version="-1" />
   <import index="59et" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.vfs(MPS.Core/jetbrains.mps.vfs@java_stub)" version="-1" />
@@ -47,6 +45,15 @@
       <property name="abstractClass" nameId="tpee.1075300953594" value="false" />
       <property name="isFinal" nameId="tpee.1221565133444" value="false" />
       <property name="name" nameId="tpck.1169194664001" value="MergeBackupUtil" />
+    </node>
+    <node type="tpee.EnumClass" typeId="tpee.1083245097125" id="3531370237490043789">
+      <property name="name" nameId="tpck.1169194664001" value="MergeVersion" />
+    </node>
+    <node type="tpee.Interface" typeId="tpee.1107796713796" id="3531370237490043817">
+      <property name="name" nameId="tpck.1169194664001" value="ModelVersion" />
+    </node>
+    <node type="tpee.Interface" typeId="tpee.1107796713796" id="3531370237490043869">
+      <property name="name" nameId="tpck.1169194664001" value="MergeConstants" />
     </node>
   </roots>
   <root id="9029966639392731796">
@@ -628,9 +635,9 @@
                   <node role="array" roleId="tpee.1173175590490" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="3531370237489972187">
                     <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3531370237489972172" resolveInfo="contents" />
                   </node>
-                  <node role="index" roleId="tpee.1173175577737" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="3531370237489972188">
-                    <link role="classifier" roleId="tpee.1144433057691" targetNodeId="gela.4124845871897258127" resolveInfo="ModelMergeTool" />
-                    <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="gela.5015601397718077951" resolveInfo="ORIGINAL" />
+                  <node role="index" roleId="tpee.1173175577737" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="3531370237490043960">
+                    <link role="classifier" roleId="tpee.1144433057691" targetNodeId="3531370237490043869" resolveInfo="MergeConstants" />
+                    <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3531370237490043956" resolveInfo="ORIGINAL" />
                   </node>
                 </node>
                 <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="3531370237489972189">
@@ -654,11 +661,11 @@
             </node>
             <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="3531370237489972195">
               <node role="operand" roleId="tpee.1197027771414" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="3531370237489972196">
-                <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="rtk5.4340499048742530943" resolveInfo="BASE" />
-                <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="rtk5.4340499048742530936" resolveInfo="MergeVersion" />
+                <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="3531370237490043796" resolveInfo="BASE" />
+                <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="3531370237490043789" resolveInfo="MergeVersion" />
               </node>
               <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="3531370237489972197">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="rtk5.4340499048742530958" resolveInfo="getSuffix" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="3531370237490043811" resolveInfo="getSuffix" />
               </node>
             </node>
           </node>
@@ -670,9 +677,9 @@
               <node role="array" roleId="tpee.1173175590490" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="3531370237489972201">
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3531370237489972172" resolveInfo="contents" />
               </node>
-              <node role="index" roleId="tpee.1173175577737" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="3531370237489972202">
-                <link role="classifier" roleId="tpee.1144433057691" targetNodeId="gela.4124845871897258127" resolveInfo="ModelMergeTool" />
-                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="gela.5015601397718077947" resolveInfo="CURRENT" />
+              <node role="index" roleId="tpee.1173175577737" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="3531370237490043886">
+                <link role="classifier" roleId="tpee.1144433057691" targetNodeId="3531370237490043869" resolveInfo="MergeConstants" />
+                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3531370237490043882" resolveInfo="CURRENT" />
               </node>
             </node>
             <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="3531370237489972203">
@@ -683,11 +690,11 @@
             </node>
             <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="3531370237489972205">
               <node role="operand" roleId="tpee.1197027771414" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="3531370237489972206">
-                <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="rtk5.4340499048742530939" resolveInfo="MINE" />
-                <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="rtk5.4340499048742530936" resolveInfo="MergeVersion" />
+                <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="3531370237490043792" resolveInfo="MINE" />
+                <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="3531370237490043789" resolveInfo="MergeVersion" />
               </node>
               <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="3531370237489972207">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="rtk5.4340499048742530958" resolveInfo="getSuffix" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="3531370237490043811" resolveInfo="getSuffix" />
               </node>
             </node>
           </node>
@@ -699,9 +706,9 @@
               <node role="array" roleId="tpee.1173175590490" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="3531370237489972211">
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3531370237489972172" resolveInfo="contents" />
               </node>
-              <node role="index" roleId="tpee.1173175577737" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="3531370237489972212">
-                <link role="classifier" roleId="tpee.1144433057691" targetNodeId="gela.4124845871897258127" resolveInfo="ModelMergeTool" />
-                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="gela.5015601397718077955" resolveInfo="LAST_REVISION" />
+              <node role="index" roleId="tpee.1173175577737" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="3531370237490043981">
+                <link role="classifier" roleId="tpee.1144433057691" targetNodeId="3531370237490043869" resolveInfo="MergeConstants" />
+                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3531370237490043977" resolveInfo="LAST_REVISION" />
               </node>
             </node>
             <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="3531370237489972213">
@@ -712,11 +719,11 @@
             </node>
             <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="3531370237489972215">
               <node role="operand" roleId="tpee.1197027771414" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="3531370237489972216">
-                <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="rtk5.4340499048742530941" resolveInfo="REPOSITORY" />
-                <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="rtk5.4340499048742530936" resolveInfo="MergeVersion" />
+                <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="3531370237490043794" resolveInfo="REPOSITORY" />
+                <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="3531370237490043789" resolveInfo="MergeVersion" />
               </node>
               <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="3531370237489972217">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="rtk5.4340499048742530958" resolveInfo="getSuffix" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="3531370237490043811" resolveInfo="getSuffix" />
               </node>
             </node>
           </node>
@@ -876,9 +883,9 @@
               <node role="array" roleId="tpee.1173175590490" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="3531370237489972275">
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3531370237489972243" resolveInfo="contents" />
               </node>
-              <node role="index" roleId="tpee.1173175577737" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="3531370237489972276">
-                <link role="classifier" roleId="tpee.1144433057691" targetNodeId="gela.4124845871897258127" resolveInfo="ModelMergeTool" />
-                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="gela.5015601397718077951" resolveInfo="ORIGINAL" />
+              <node role="index" roleId="tpee.1173175577737" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="3531370237490043961">
+                <link role="classifier" roleId="tpee.1144433057691" targetNodeId="3531370237490043869" resolveInfo="MergeConstants" />
+                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3531370237490043956" resolveInfo="ORIGINAL" />
               </node>
             </node>
             <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="3531370237489972277">
@@ -889,11 +896,11 @@
             </node>
             <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="3531370237489972279">
               <node role="operand" roleId="tpee.1197027771414" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="3531370237489972280">
-                <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="rtk5.4340499048742530943" resolveInfo="BASE" />
-                <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="rtk5.4340499048742530936" resolveInfo="MergeVersion" />
+                <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="3531370237490043796" resolveInfo="BASE" />
+                <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="3531370237490043789" resolveInfo="MergeVersion" />
               </node>
               <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="3531370237489972281">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="rtk5.4340499048742530958" resolveInfo="getSuffix" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="3531370237490043811" resolveInfo="getSuffix" />
               </node>
             </node>
           </node>
@@ -905,9 +912,9 @@
               <node role="array" roleId="tpee.1173175590490" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="3531370237489972285">
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3531370237489972243" resolveInfo="contents" />
               </node>
-              <node role="index" roleId="tpee.1173175577737" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="3531370237489972286">
-                <link role="classifier" roleId="tpee.1144433057691" targetNodeId="gela.4124845871897258127" resolveInfo="ModelMergeTool" />
-                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="gela.5015601397718077947" resolveInfo="CURRENT" />
+              <node role="index" roleId="tpee.1173175577737" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="3531370237490043887">
+                <link role="classifier" roleId="tpee.1144433057691" targetNodeId="3531370237490043869" resolveInfo="MergeConstants" />
+                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3531370237490043882" resolveInfo="CURRENT" />
               </node>
             </node>
             <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="3531370237489972287">
@@ -918,11 +925,11 @@
             </node>
             <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="3531370237489972289">
               <node role="operand" roleId="tpee.1197027771414" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="3531370237489972290">
-                <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="rtk5.4340499048742530939" resolveInfo="MINE" />
-                <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="rtk5.4340499048742530936" resolveInfo="MergeVersion" />
+                <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="3531370237490043792" resolveInfo="MINE" />
+                <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="3531370237490043789" resolveInfo="MergeVersion" />
               </node>
               <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="3531370237489972291">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="rtk5.4340499048742530958" resolveInfo="getSuffix" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="3531370237490043811" resolveInfo="getSuffix" />
               </node>
             </node>
           </node>
@@ -934,9 +941,9 @@
               <node role="array" roleId="tpee.1173175590490" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="3531370237489972295">
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3531370237489972243" resolveInfo="contents" />
               </node>
-              <node role="index" roleId="tpee.1173175577737" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="3531370237489972296">
-                <link role="classifier" roleId="tpee.1144433057691" targetNodeId="gela.4124845871897258127" resolveInfo="ModelMergeTool" />
-                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="gela.5015601397718077955" resolveInfo="LAST_REVISION" />
+              <node role="index" roleId="tpee.1173175577737" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="3531370237490043982">
+                <link role="classifier" roleId="tpee.1144433057691" targetNodeId="3531370237490043869" resolveInfo="MergeConstants" />
+                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3531370237490043977" resolveInfo="LAST_REVISION" />
               </node>
             </node>
             <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="3531370237489972297">
@@ -947,11 +954,11 @@
             </node>
             <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="3531370237489972299">
               <node role="operand" roleId="tpee.1197027771414" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="3531370237489972300">
-                <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="rtk5.4340499048742530941" resolveInfo="REPOSITORY" />
-                <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="rtk5.4340499048742530936" resolveInfo="MergeVersion" />
+                <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="3531370237490043794" resolveInfo="REPOSITORY" />
+                <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="3531370237490043789" resolveInfo="MergeVersion" />
               </node>
               <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="3531370237489972301">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="rtk5.4340499048742530958" resolveInfo="getSuffix" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="3531370237490043811" resolveInfo="getSuffix" />
               </node>
             </node>
           </node>
@@ -1714,7 +1721,7 @@
         <property name="name" nameId="tpck.1169194664001" value="versions" />
         <node role="type" roleId="tpee.5680397130376446158" type="tpee.ArrayType" typeId="tpee.1070534760951" id="3531370237489972590">
           <node role="componentType" roleId="tpee.1070534760952" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="3531370237489972591">
-            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="rtk5.4340499048742530930" resolveInfo="ModelVersion" />
+            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="3531370237490043817" resolveInfo="ModelVersion" />
           </node>
         </node>
       </node>
@@ -1781,7 +1788,7 @@
             <property name="name" nameId="tpck.1169194664001" value="v" />
             <property name="isFinal" nameId="tpee.1176718929932" value="true" />
             <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="3531370237489972619">
-              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="rtk5.4340499048742530930" resolveInfo="ModelVersion" />
+              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="3531370237490043817" resolveInfo="ModelVersion" />
             </node>
           </node>
           <node role="body" roleId="tpee.1154032183016" type="tpee.StatementList" typeId="tpee.1068580123136" id="3531370237489972620">
@@ -1841,7 +1848,7 @@
                                     <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3531370237489972618" resolveInfo="v" />
                                   </node>
                                   <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="3531370237489972647">
-                                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="rtk5.4340499048742530932" resolveInfo="getSuffix" />
+                                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="3531370237490043819" resolveInfo="getSuffix" />
                                   </node>
                                 </node>
                               </node>
@@ -1982,7 +1989,7 @@
         <property name="name" nameId="tpck.1169194664001" value="versions" />
         <node role="type" roleId="tpee.5680397130376446158" type="tpee.ArrayType" typeId="tpee.1070534760951" id="3531370237489972698">
           <node role="componentType" roleId="tpee.1070534760952" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="3531370237489972699">
-            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="rtk5.4340499048742530930" resolveInfo="ModelVersion" />
+            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="3531370237490043817" resolveInfo="ModelVersion" />
           </node>
         </node>
       </node>
@@ -2223,6 +2230,116 @@
             </node>
           </node>
         </node>
+      </node>
+    </node>
+  </root>
+  <root id="3531370237490043789">
+    <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="3531370237490043790" />
+    <node role="implementedInterface" roleId="tpee.1095933932569" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="3531370237490043791">
+      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="3531370237490043817" resolveInfo="ModelVersion" />
+    </node>
+    <node role="enumConstant" roleId="tpee.1083245396908" type="tpee.EnumConstantDeclaration" typeId="tpee.1083245299891" id="3531370237490043792">
+      <property name="name" nameId="tpck.1169194664001" value="MINE" />
+      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="3531370237490043801" resolveInfo="MergeVersion" />
+      <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="3531370237490043793">
+        <property name="value" nameId="tpee.1070475926801" value="mine" />
+      </node>
+    </node>
+    <node role="enumConstant" roleId="tpee.1083245396908" type="tpee.EnumConstantDeclaration" typeId="tpee.1083245299891" id="3531370237490043794">
+      <property name="name" nameId="tpck.1169194664001" value="REPOSITORY" />
+      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="3531370237490043801" resolveInfo="MergeVersion" />
+      <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="3531370237490043795">
+        <property name="value" nameId="tpee.1070475926801" value="repository" />
+      </node>
+    </node>
+    <node role="enumConstant" roleId="tpee.1083245396908" type="tpee.EnumConstantDeclaration" typeId="tpee.1083245299891" id="3531370237490043796">
+      <property name="name" nameId="tpck.1169194664001" value="BASE" />
+      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="3531370237490043801" resolveInfo="MergeVersion" />
+      <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="3531370237490043797">
+        <property name="value" nameId="tpee.1070475926801" value="base" />
+      </node>
+    </node>
+    <node role="field" roleId="tpee.1068390468199" type="tpee.FieldDeclaration" typeId="tpee.1068390468200" id="3531370237490043798">
+      <property name="isVolatile" nameId="tpee.1240249534625" value="false" />
+      <property name="isFinal" nameId="tpee.1176718929932" value="true" />
+      <property name="name" nameId="tpck.1169194664001" value="mySuffix" />
+      <node role="type" roleId="tpee.5680397130376446158" type="tpee.StringType" typeId="tpee.1225271177708" id="3531370237490043799" />
+      <node role="visibility" roleId="tpee.1178549979242" type="tpee.PrivateVisibility" typeId="tpee.1146644623116" id="3531370237490043800" />
+    </node>
+    <node role="constructor" roleId="tpee.1068390468201" type="tpee.ConstructorDeclaration" typeId="tpee.1068580123140" id="3531370237490043801">
+      <node role="visibility" roleId="tpee.1178549979242" type="tpee.PrivateVisibility" typeId="tpee.1146644623116" id="3531370237490043802" />
+      <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="3531370237490043803" />
+      <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="3531370237490043804">
+        <property name="name" nameId="tpck.1169194664001" value="suffix" />
+        <property name="isFinal" nameId="tpee.1176718929932" value="false" />
+        <node role="type" roleId="tpee.5680397130376446158" type="tpee.StringType" typeId="tpee.1225271177708" id="3531370237490043805" />
+      </node>
+      <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="3531370237490043806">
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="3531370237490043807">
+          <node role="expression" roleId="tpee.1068580123156" type="tpee.AssignmentExpression" typeId="tpee.1068498886294" id="3531370237490043808">
+            <node role="lValue" roleId="tpee.1068498886295" type="tpee.LocalInstanceFieldReference" typeId="tpee.7785501532031639928" id="3531370237490043809">
+              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3531370237490043798" resolveInfo="mySuffix" />
+            </node>
+            <node role="rValue" roleId="tpee.1068498886297" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="3531370237490043810">
+              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3531370237490043804" resolveInfo="suffix" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="method" roleId="tpee.1107880067339" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="3531370237490043811">
+      <property name="isAbstract" nameId="tpee.1178608670077" value="false" />
+      <property name="isFinal" nameId="tpee.1181808852946" value="false" />
+      <property name="name" nameId="tpck.1169194664001" value="getSuffix" />
+      <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="3531370237490043812" />
+      <node role="returnType" roleId="tpee.1068580123133" type="tpee.StringType" typeId="tpee.1225271177708" id="3531370237490043813" />
+      <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="3531370237490043814">
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="3531370237490043815">
+          <node role="expression" roleId="tpee.1068581517676" type="tpee.LocalInstanceFieldReference" typeId="tpee.7785501532031639928" id="3531370237490043816">
+            <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3531370237490043798" resolveInfo="mySuffix" />
+          </node>
+        </node>
+      </node>
+    </node>
+  </root>
+  <root id="3531370237490043817">
+    <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="3531370237490043818" />
+    <node role="method" roleId="tpee.1107880067339" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="3531370237490043819">
+      <property name="isAbstract" nameId="tpee.1178608670077" value="true" />
+      <property name="isFinal" nameId="tpee.1181808852946" value="false" />
+      <property name="name" nameId="tpck.1169194664001" value="getSuffix" />
+      <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="3531370237490043820" />
+      <node role="returnType" roleId="tpee.1068580123133" type="tpee.StringType" typeId="tpee.1225271177708" id="3531370237490043821" />
+      <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="3531370237490043822" />
+    </node>
+  </root>
+  <root id="3531370237490043869">
+    <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="3531370237490043870" />
+    <node role="staticField" roleId="tpee.1128555889557" type="tpee.StaticFieldDeclaration" typeId="tpee.1070462154015" id="3531370237490043882">
+      <property name="isFinal" nameId="tpee.1176718929932" value="true" />
+      <property name="name" nameId="tpck.1169194664001" value="CURRENT" />
+      <node role="type" roleId="tpee.5680397130376446158" type="tpee.IntegerType" typeId="tpee.1070534370425" id="3531370237490043883" />
+      <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="3531370237490043884" />
+      <node role="initializer" roleId="tpee.1068431790190" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="3531370237490043885">
+        <property name="value" nameId="tpee.1068580320021" value="0" />
+      </node>
+    </node>
+    <node role="staticField" roleId="tpee.1128555889557" type="tpee.StaticFieldDeclaration" typeId="tpee.1070462154015" id="3531370237490043956">
+      <property name="isFinal" nameId="tpee.1176718929932" value="true" />
+      <property name="name" nameId="tpck.1169194664001" value="ORIGINAL" />
+      <node role="type" roleId="tpee.5680397130376446158" type="tpee.IntegerType" typeId="tpee.1070534370425" id="3531370237490043957" />
+      <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="3531370237490043958" />
+      <node role="initializer" roleId="tpee.1068431790190" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="3531370237490043959">
+        <property name="value" nameId="tpee.1068580320021" value="1" />
+      </node>
+    </node>
+    <node role="staticField" roleId="tpee.1128555889557" type="tpee.StaticFieldDeclaration" typeId="tpee.1070462154015" id="3531370237490043977">
+      <property name="isFinal" nameId="tpee.1176718929932" value="true" />
+      <property name="name" nameId="tpck.1169194664001" value="LAST_REVISION" />
+      <node role="type" roleId="tpee.5680397130376446158" type="tpee.IntegerType" typeId="tpee.1070534370425" id="3531370237490043978" />
+      <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="3531370237490043979" />
+      <node role="initializer" roleId="tpee.1068431790190" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="3531370237490043980">
+        <property name="value" nameId="tpee.1068580320021" value="2" />
       </node>
     </node>
   </root>

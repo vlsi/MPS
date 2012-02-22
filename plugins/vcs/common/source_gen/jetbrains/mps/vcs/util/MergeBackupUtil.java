@@ -9,8 +9,6 @@ import com.intellij.openapi.vfs.VirtualFile;
 import java.io.File;
 import java.io.IOException;
 import jetbrains.mps.util.FileUtil;
-import jetbrains.mps.vcs.integration.ModelMergeTool;
-import jetbrains.mps.vcs.MergeVersion;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.SModelFqName;
@@ -24,7 +22,6 @@ import jetbrains.mps.smodel.SModelRepository;
 import com.intellij.util.io.ZipUtil;
 import com.intellij.openapi.application.PathManager;
 import java.io.FilenameFilter;
-import jetbrains.mps.vcs.ModelVersion;
 import jetbrains.mps.util.UnzipUtil;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.persistence.def.ModelReadException;
@@ -46,9 +43,9 @@ public class MergeBackupUtil {
 
   public static File zipModel(DiffContent[] contents, VirtualFile file) throws IOException {
     File tmpDir = FileUtil.createTmpDir();
-    writeContentsToFile(contents[ModelMergeTool.ORIGINAL].getDocument().getText(), file.getName(), tmpDir, MergeVersion.BASE.getSuffix());
-    writeContentsToFile(contents[ModelMergeTool.CURRENT], file, tmpDir, MergeVersion.MINE.getSuffix());
-    writeContentsToFile(contents[ModelMergeTool.LAST_REVISION], file, tmpDir, MergeVersion.REPOSITORY.getSuffix());
+    writeContentsToFile(contents[MergeConstants.ORIGINAL].getDocument().getText(), file.getName(), tmpDir, MergeVersion.BASE.getSuffix());
+    writeContentsToFile(contents[MergeConstants.CURRENT], file, tmpDir, MergeVersion.MINE.getSuffix());
+    writeContentsToFile(contents[MergeConstants.LAST_REVISION], file, tmpDir, MergeVersion.REPOSITORY.getSuffix());
     File zipfile = chooseZipFileForModelFile(VirtualFileUtils.toIFile(file));
     zipfile.getParentFile().mkdirs();
     FileUtil.zip(tmpDir, zipfile);
@@ -62,9 +59,9 @@ public class MergeBackupUtil {
       shortFileName = NameUtil.shortNameFromLongName(modelFqName.getLongName()) + MPSExtentions.DOT_MODEL;
     }
     File tmp = FileUtil.createTmpDir();
-    writeContentsToFile(contents[ModelMergeTool.ORIGINAL], shortFileName, tmp, MergeVersion.BASE.getSuffix());
-    writeContentsToFile(contents[ModelMergeTool.CURRENT], shortFileName, tmp, MergeVersion.MINE.getSuffix());
-    writeContentsToFile(contents[ModelMergeTool.LAST_REVISION], shortFileName, tmp, MergeVersion.REPOSITORY.getSuffix());
+    writeContentsToFile(contents[MergeConstants.ORIGINAL], shortFileName, tmp, MergeVersion.BASE.getSuffix());
+    writeContentsToFile(contents[MergeConstants.CURRENT], shortFileName, tmp, MergeVersion.MINE.getSuffix());
+    writeContentsToFile(contents[MergeConstants.LAST_REVISION], shortFileName, tmp, MergeVersion.REPOSITORY.getSuffix());
     File zipfile = chooseZipFileForModelLongName("unknown.mps", check_fhutfy_b0a6a2(modelFqName));
     zipfile.getParentFile().mkdirs();
     FileUtil.zip(tmp, zipfile);

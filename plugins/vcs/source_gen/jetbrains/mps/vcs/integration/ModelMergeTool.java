@@ -15,6 +15,7 @@ import jetbrains.mps.vcs.util.MergeBackupUtil;
 import com.intellij.openapi.diff.DiffContent;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
+import jetbrains.mps.vcs.util.MergeConstants;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.smodel.persistence.def.ModelReadException;
 import jetbrains.mps.vcs.diff.ui.merge.MergeModelsDialog;
@@ -28,9 +29,6 @@ import java.lang.reflect.Method;
 
 public class ModelMergeTool extends MergeTool {
   private static final Logger LOG = Logger.getLogger(ModelMergeTool.class);
-  public static final int CURRENT = 0;
-  public static final int ORIGINAL = 1;
-  public static final int LAST_REVISION = 2;
   protected static Log log = LogFactory.getLog(ModelMergeTool.class);
 
   public ModelMergeTool() {
@@ -52,9 +50,9 @@ public class ModelMergeTool extends MergeTool {
       final SModel mineModel;
       final SModel newModel;
       try {
-        baseModel = ModelPersistence.readModel(contents[ORIGINAL].getDocument().getText(), false);
-        mineModel = ModelPersistence.readModel(new String(contents[CURRENT].getBytes(), FileUtil.DEFAULT_CHARSET), false);
-        newModel = ModelPersistence.readModel(new String(contents[LAST_REVISION].getBytes(), FileUtil.DEFAULT_CHARSET), false);
+        baseModel = ModelPersistence.readModel(contents[MergeConstants.ORIGINAL].getDocument().getText(), false);
+        mineModel = ModelPersistence.readModel(new String(contents[MergeConstants.CURRENT].getBytes(), FileUtil.DEFAULT_CHARSET), false);
+        newModel = ModelPersistence.readModel(new String(contents[MergeConstants.LAST_REVISION].getBytes(), FileUtil.DEFAULT_CHARSET), false);
       } catch (ModelReadException e) {
         if (log.isWarnEnabled()) {
           log.warn("Couldn't read model, invoking text merge", e);
@@ -81,7 +79,7 @@ public class ModelMergeTool extends MergeTool {
   }
 
   public boolean canShow(DiffRequest request) {
-    return super.canShow(request) && request.getContents()[ORIGINAL].getContentType() == MPSFileTypeFactory.MODEL_FILE_TYPE;
+    return super.canShow(request) && request.getContents()[MergeConstants.ORIGINAL].getContentType() == MPSFileTypeFactory.MODEL_FILE_TYPE;
   }
 
   private static void resolved(MergeRequestImpl req, final String result) {
