@@ -4,7 +4,6 @@ package jetbrains.mps.vcs.mergedriver;
 
 import java.io.File;
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.workbench.WorkbenchPathManager;
 import jetbrains.mps.vcs.util.PluginUtil;
 import org.jetbrains.idea.svn.SvnConfiguration;
 import org.tmatesoft.svn.core.wc.SVNWCUtil;
@@ -28,7 +27,7 @@ import java.io.IOException;
 
   public SvnInstaller(Project project, boolean useIdeConfig) {
     super(project);
-    myConfigDir = new File(WorkbenchPathManager.getUserHome() + File.separator + ".subversion");
+    myConfigDir = new File(System.getProperty("user.home") + File.separator + ".subversion");
     myUseIdeConfig = useIdeConfig;
     if (PluginUtil.isSvnPluginEnabled()) {
       if (useIdeConfig) {

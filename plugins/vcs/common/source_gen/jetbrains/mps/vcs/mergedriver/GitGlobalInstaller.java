@@ -6,7 +6,6 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import java.io.File;
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.workbench.WorkbenchPathManager;
 import com.intellij.openapi.application.PathManager;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.vcs.util.PluginUtil;
@@ -29,7 +28,7 @@ import java.io.FileNotFoundException;
 
   public GitGlobalInstaller(Project project) {
     super(project);
-    myConfigFile = new File(WorkbenchPathManager.getUserHome() + File.separator + ".gitconfig");
+    myConfigFile = new File(System.getProperty("user.home") + File.separator + ".gitconfig");
     myScriptFile = new File(PathManager.getConfigPath() + File.separator + "mps-merger.sh");
   }
 
