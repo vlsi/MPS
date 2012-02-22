@@ -331,6 +331,7 @@
                 <path path="${base_dir}/editor/actions-runtime/source_gen"/>
                 <path path="${base_dir}/editor/intentions-runtime/source"/>
                 <path path="${base_dir}/editor/typesystemIntegration/source"/>
+                <path path="${base_dir}/editor/typesystemIntegration/source_gen"/>
                 <path path="${base_dir}/workbench/mps-editor/source"/>
                 <path path="${base_dir}/workbench/mps-editor/source_gen"/>
                 <path path="${base_dir}/workbench/mps-platform/source"/>
