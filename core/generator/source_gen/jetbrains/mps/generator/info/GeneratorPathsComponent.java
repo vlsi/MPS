@@ -62,7 +62,7 @@ public class GeneratorPathsComponent implements CoreComponent {
     if (foreignPath == null) {
       return EMPTY_LIST;
     }
-    String tail = DirUtil.withoutPrefix(DirUtil.normalize(path.getPath()), foreignPath);
+    String tail = DirUtil.withoutPrefix(DirUtil.normalizeAsDir(path.getPath()), foreignPath);
 
     IFile cachesDir = FileGenerationUtil.getCachesDir(FileSystem.getInstance().getFileByPath(foreignPath)).getDescendant(tail);
 
