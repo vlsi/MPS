@@ -21,7 +21,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import java.io.File;
-import jetbrains.mps.vcs.MergeBackupUtil;
+import jetbrains.mps.vcs.util.MergeBackupUtil;
 import java.io.IOException;
 
 /*package*/ class ModelMerger extends SimpleMerger {
