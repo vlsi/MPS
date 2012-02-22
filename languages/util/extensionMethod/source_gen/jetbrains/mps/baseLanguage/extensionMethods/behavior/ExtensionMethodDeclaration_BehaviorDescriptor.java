@@ -15,6 +15,10 @@ public class ExtensionMethodDeclaration_BehaviorDescriptor extends BaseMethodDec
     return ClassifierMember_Behavior.virtual_isStatic_8986964027630462944(thisNode);
   }
 
+  public boolean virtual_isVisible_8083692786967482069(SNode thisNode, int classAccessKind) {
+    return ClassifierMember_Behavior.virtual_isVisible_8083692786967482069(thisNode, classAccessKind);
+  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.extensionMethods.structure.ExtensionMethodDeclaration";

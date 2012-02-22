@@ -39,6 +39,10 @@ public class ConstructorDeclaration_BehaviorDescriptor extends BaseMethodDeclara
     return ConstructorDeclaration_Behavior.virtual_isDeprecated_1224609060727(thisNode);
   }
 
+  public boolean virtual_isVisible_8083692786967482069(SNode thisNode, int classAccessKind) {
+    return ClassifierMember_Behavior.virtual_isVisible_8083692786967482069(thisNode, classAccessKind);
+  }
+
   public String virtual_jniSignature_8847328628797656446(SNode thisNode) {
     return ConstructorDeclaration_Behavior.virtual_jniSignature_8847328628797656446(thisNode);
   }

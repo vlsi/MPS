@@ -27,6 +27,10 @@ public abstract class Classifier_BehaviorDescriptor extends GenericDeclaration_B
     return IMemberContainer_Behavior.virtual_getMethodsToOverride_5418393554803767537(thisNode);
   }
 
+  public int virtual_getAccessLevelFor_8083692786967356648(SNode thisNode, SNode contextNode, SNode kind) {
+    return Classifier_Behavior.virtual_getAccessLevelFor_8083692786967356648(thisNode, contextNode, kind);
+  }
+
   public String virtual_getPresentation_1213877396640(SNode thisNode) {
     return Classifier_Behavior.virtual_getPresentation_1213877396640(thisNode);
   }
@@ -57,6 +61,10 @@ public abstract class Classifier_BehaviorDescriptor extends GenericDeclaration_B
 
   public Scope virtual_getScope_3734116213129936182(SNode thisNode, SNode kind, SNode child) {
     return Classifier_Behavior.virtual_getScope_3734116213129936182(thisNode, kind, child);
+  }
+
+  public Scope virtual_getVisibleMembers_8083692786967356510(SNode thisNode, int accessKind, SNode kind) {
+    return Classifier_Behavior.virtual_getVisibleMembers_8083692786967356510(thisNode, accessKind, kind);
   }
 
   public Icon virtual_getAdditionalIcon_5017341185733863694(SNode thisNode) {

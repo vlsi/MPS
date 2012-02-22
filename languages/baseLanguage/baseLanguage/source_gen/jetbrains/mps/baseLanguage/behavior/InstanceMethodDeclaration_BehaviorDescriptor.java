@@ -27,6 +27,10 @@ public class InstanceMethodDeclaration_BehaviorDescriptor extends BaseMethodDecl
     return InstanceMethodDeclaration_Behavior.virtual_getNearestOverriddenMethod_5358895268254685434(thisNode);
   }
 
+  public boolean virtual_isVisible_8083692786967482069(SNode thisNode, int classAccessKind) {
+    return ClassifierMember_Behavior.virtual_isVisible_8083692786967482069(thisNode, classAccessKind);
+  }
+
   public List<SNode> virtual_getChildrenToDisplayIntention_4025276038182319200(SNode thisNode) {
     return InstanceMethodDeclaration_Behavior.virtual_getChildrenToDisplayIntention_4025276038182319200(thisNode);
   }

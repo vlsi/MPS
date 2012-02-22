@@ -51,6 +51,10 @@ public class FieldDeclaration_BehaviorDescriptor extends VariableDeclaration_Beh
     return FieldDeclaration_Behavior.virtual_getPrefix_3012473318495495520(thisNode, project);
   }
 
+  public boolean virtual_isVisible_8083692786967482069(SNode thisNode, int classAccessKind) {
+    return ClassifierMember_Behavior.virtual_isVisible_8083692786967482069(thisNode, classAccessKind);
+  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.structure.FieldDeclaration";

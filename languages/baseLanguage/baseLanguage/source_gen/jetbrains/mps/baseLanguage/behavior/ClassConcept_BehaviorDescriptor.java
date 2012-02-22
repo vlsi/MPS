@@ -4,14 +4,18 @@ package jetbrains.mps.baseLanguage.behavior;
 
 import jetbrains.mps.lang.traceable.behavior.UnitConcept_BehaviorDescriptor;
 import jetbrains.mps.lang.core.behavior.ScopeProvider_BehaviorDescriptor;
+import jetbrains.mps.scope.Scope;
+import jetbrains.mps.smodel.SNode;
 import java.util.List;
 import javax.swing.Icon;
-import jetbrains.mps.smodel.SNode;
 import java.util.Set;
-import jetbrains.mps.scope.Scope;
 
 public class ClassConcept_BehaviorDescriptor extends Classifier_BehaviorDescriptor implements IBLDeprecatable_BehaviorDescriptor, UnitConcept_BehaviorDescriptor, ScopeProvider_BehaviorDescriptor {
   public ClassConcept_BehaviorDescriptor() {
+  }
+
+  public Scope virtual_getVisibleMembers_8083692786967356510(SNode thisNode, int accessKind, SNode kind) {
+    return ClassConcept_Behavior.virtual_getVisibleMembers_8083692786967356510(thisNode, accessKind, kind);
   }
 
   public List<Icon> virtual_getMarkIcons_3923831204883340393(SNode thisNode) {
@@ -36,10 +40,6 @@ public class ClassConcept_BehaviorDescriptor extends Classifier_BehaviorDescript
 
   public boolean virtual_checkLoops_3980490811621705349(SNode thisNode, Set<SNode> visited) {
     return ClassConcept_Behavior.virtual_checkLoops_3980490811621705349(thisNode, visited);
-  }
-
-  public Scope virtual_getVisibleMembers_5977339894440019409(SNode thisNode, int accessKind, SNode kind) {
-    return ClassConcept_Behavior.virtual_getVisibleMembers_5977339894440019409(thisNode, accessKind, kind);
   }
 
   public boolean virtual_hasStaticMemebers_1214840444586(SNode thisNode) {

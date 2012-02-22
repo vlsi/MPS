@@ -17,12 +17,12 @@ public class EnumConstantDeclaration_BehaviorDescriptor extends BaseConcept_Beha
     return EnumConstantDeclaration_Behavior.virtual_getMarkIcons_3923831204883340393(thisNode);
   }
 
-  public Icon virtual_getAdditionalIcon_5017341185733863694(SNode thisNode) {
-    return EnumConstantDeclaration_Behavior.virtual_getAdditionalIcon_5017341185733863694(thisNode);
-  }
-
   public SNode virtual_getTypeAnnotation_1233920952262(SNode thisNode) {
     return IMethodCall_Behavior.virtual_getTypeAnnotation_1233920952262(thisNode);
+  }
+
+  public Icon virtual_getAdditionalIcon_5017341185733863694(SNode thisNode) {
+    return EnumConstantDeclaration_Behavior.virtual_getAdditionalIcon_5017341185733863694(thisNode);
   }
 
   public SNode virtual_deriveType_1213877435747(SNode thisNode, SNode expression) {
@@ -51,6 +51,10 @@ public class EnumConstantDeclaration_BehaviorDescriptor extends BaseConcept_Beha
 
   public boolean virtual_isStatic_8986964027630462944(SNode thisNode) {
     return EnumConstantDeclaration_Behavior.virtual_isStatic_8986964027630462944(thisNode);
+  }
+
+  public boolean virtual_isVisible_8083692786967482069(SNode thisNode, int classAccessKind) {
+    return ClassifierMember_Behavior.virtual_isVisible_8083692786967482069(thisNode, classAccessKind);
   }
 
   public SNode virtual_getInstanceType_8008512149545154471(SNode thisNode) {

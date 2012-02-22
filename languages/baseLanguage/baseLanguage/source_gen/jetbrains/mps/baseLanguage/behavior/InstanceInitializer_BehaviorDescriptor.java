@@ -26,6 +26,10 @@ public class InstanceInitializer_BehaviorDescriptor extends BaseConcept_Behavior
     return IStatementListContainer_Behavior.virtual_isClosure_3262277503800835439(thisNode);
   }
 
+  public boolean virtual_isVisible_8083692786967482069(SNode thisNode, int classAccessKind) {
+    return ClassifierMember_Behavior.virtual_isVisible_8083692786967482069(thisNode, classAccessKind);
+  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.structure.InstanceInitializer";

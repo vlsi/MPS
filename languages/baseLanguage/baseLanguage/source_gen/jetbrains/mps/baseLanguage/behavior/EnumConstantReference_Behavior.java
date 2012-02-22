@@ -23,7 +23,7 @@ public class EnumConstantReference_Behavior {
 
   public static Scope virtual_getScope_3734116213129936182(SNode thisNode, SNode kind, SNode child) {
     return ((SLinkOperations.getTarget(thisNode, "enumClass", false) != null) ?
-      ClassConcept_Behavior.call_getVisibleMembers_3860625225137060420(SLinkOperations.getTarget(thisNode, "enumClass", false), thisNode, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration")) :
+      Classifier_Behavior.call_getVisibleMembers_8083692786967356611(SLinkOperations.getTarget(thisNode, "enumClass", false), thisNode, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration")) :
       new EmptyScope()
     );
   }

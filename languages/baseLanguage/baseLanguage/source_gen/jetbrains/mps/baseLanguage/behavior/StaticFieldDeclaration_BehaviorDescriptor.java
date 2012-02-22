@@ -47,6 +47,10 @@ public class StaticFieldDeclaration_BehaviorDescriptor extends VariableDeclarati
     return StaticFieldDeclaration_Behavior.virtual_getPrefix_3012473318495495520(thisNode, project);
   }
 
+  public boolean virtual_isVisible_8083692786967482069(SNode thisNode, int classAccessKind) {
+    return ClassifierMember_Behavior.virtual_isVisible_8083692786967482069(thisNode, classAccessKind);
+  }
+
   public List<SNode> virtual_getChildrenToDisplayIntention_4025276038182319200(SNode thisNode) {
     return StaticFieldDeclaration_Behavior.virtual_getChildrenToDisplayIntention_4025276038182319200(thisNode);
   }
