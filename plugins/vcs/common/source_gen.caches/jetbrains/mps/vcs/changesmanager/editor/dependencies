@@ -158,6 +158,7 @@
     <classNode extendsClassName="jetbrains.mps.nodeEditor.highlighter.EditorComponentCreateListener" />
   </dependency>
   <dependency className="jetbrains.mps.vcs.changesmanager.editor.PopupPanel" file="PopupPanel.java">
+    <classNode dependClassName="com.intellij.openapi.actionSystem.ActionGroup" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.ActionManager" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.ActionPlaces" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.ActionToolbar" />
@@ -175,7 +176,6 @@
     <classNode dependClassName="jetbrains.mps.vcs.changesmanager.editor.ChangeStripsPainter" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.changes.ChangeType" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.ui.common.ChangeGroup" />
-    <classNode dependClassName="jetbrains.mps.workbench.action.BaseGroup" />
     <classNode extendsClassName="java.awt.event.FocusAdapter" />
     <classNode extendsClassName="java.awt.event.MouseAdapter" />
     <classNode extendsClassName="javax.swing.JPanel" />

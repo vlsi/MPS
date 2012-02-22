@@ -10,7 +10,7 @@ import com.intellij.openapi.actionSystem.ActionToolbar;
 import java.awt.BorderLayout;
 import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.actionSystem.ActionPlaces;
-import jetbrains.mps.workbench.action.BaseGroup;
+import com.intellij.openapi.actionSystem.ActionGroup;
 import com.intellij.ui.ColoredSideBorder;
 import java.awt.Color;
 import jetbrains.mps.vcs.diff.changes.ChangeType;
@@ -38,7 +38,7 @@ import java.awt.event.FocusEvent;
 
     JPanel toolbarPanel = new JPanel(new BorderLayout());
     toolbarPanel.setOpaque(false);
-    myToolbar = ActionManager.getInstance().createActionToolbar(ActionPlaces.UNKNOWN, ((BaseGroup) ActionManager.getInstance().getAction("jetbrains.mps.vcs.platform.actions.ChangesStrip_ActionGroup")), true);
+    myToolbar = ActionManager.getInstance().createActionToolbar(ActionPlaces.UNKNOWN, ((ActionGroup) ActionManager.getInstance().getAction("jetbrains.mps.vcs.platform.actions.ChangesStrip_ActionGroup")), true);
     myToolbar.setTargetComponent(myPainter.getEditorComponent());
     toolbarPanel.add(myToolbar.getComponent(), BorderLayout.WEST);
     add(toolbarPanel, BorderLayout.NORTH);

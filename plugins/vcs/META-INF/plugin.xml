@@ -14,7 +14,7 @@
   ~ limitations under the License.
   -->
 <!DOCTYPE idea-plugin PUBLIC "Plugin/DTD" "http://plugins.intellij.net/plugin.dtd">
-<idea-plugin>
+<idea-plugin version="2" xmlns:xi="http://www.w3.org/2001/XInclude">
   <id>jetbrains.mps.vcs</id>
   <name>VCS Integration for MPS</name>
   <description>VCS features in MPS</description>
@@ -25,6 +25,8 @@
   <depends optional="true">Subversion</depends>
   <depends optional="true">Git4Idea</depends>
   <depends optional="true">jetbrains.mps.ide.make</depends>
+
+  <xi:include href="../classes/jetbrains/mps/vcs/platform/actions/MPSVcs.xml" xpointer="xpointer(/components/*)"/>
 
   <application-components>
     <component>

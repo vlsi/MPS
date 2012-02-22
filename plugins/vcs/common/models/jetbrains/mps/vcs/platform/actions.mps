@@ -102,7 +102,7 @@
   </roots>
   <root id="8230098746512808941">
     <node role="icon" roleId="tp4k.8976425910813834639" type="tp4k.IconResource" typeId="tp4k.2330114057060456691" id="8230098746512808942">
-      <property name="path" nameId="tp4k.7855019336153226684" value="${solution_descriptor}/icons/reset.png" />
+      <property name="path" nameId="tp4k.7855019336153226684" value="${mps_home}/plugins/vcs/icons/reset.png" />
     </node>
     <node role="parameter" roleId="tp4k.1217413222820" type="tp4k.ActionDataParameterDeclaration" typeId="tp4k.1217252042208" id="8230098746512808943">
       <property name="name" nameId="tpck.1169194664001" value="editorContext" />
@@ -128,7 +128,7 @@
   </root>
   <root id="8230098746512808952">
     <node role="icon" roleId="tp4k.8976425910813834639" type="tp4k.IconResource" typeId="tp4k.2330114057060456691" id="8230098746512808953">
-      <property name="path" nameId="tp4k.7855019336153226684" value="${solution_descriptor}/icons/previousOccurence.png" />
+      <property name="path" nameId="tp4k.7855019336153226684" value="${mps_home}/plugins/vcs/icons/previousOccurence.png" />
     </node>
     <node role="parameter" roleId="tp4k.1217413222820" type="tp4k.ActionDataParameterDeclaration" typeId="tp4k.1217252042208" id="8230098746512808954">
       <property name="name" nameId="tpck.1169194664001" value="editorContext" />
@@ -191,7 +191,7 @@
   </root>
   <root id="8230098746512808978">
     <node role="icon" roleId="tp4k.8976425910813834639" type="tp4k.IconResource" typeId="tp4k.2330114057060456691" id="8230098746512808979">
-      <property name="path" nameId="tp4k.7855019336153226684" value="${solution_descriptor}/icons/nextOccurence.png" />
+      <property name="path" nameId="tp4k.7855019336153226684" value="${mps_home}/plugins/vcs/icons/nextOccurence.png" />
     </node>
     <node role="executeFunction" roleId="tp4k.1203083461638" type="tp4k.ExecuteBlock" typeId="tp4k.1203083511112" id="8230098746512808980">
       <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="8230098746512808981">
@@ -392,7 +392,7 @@
       </node>
     </node>
     <node role="icon" roleId="tp4k.8976425910813834639" type="tp4k.IconResource" typeId="tp4k.2330114057060456691" id="8230098746512809060">
-      <property name="path" nameId="tp4k.7855019336153226684" value="${solution_descriptor}/icons/diff.png" />
+      <property name="path" nameId="tp4k.7855019336153226684" value="${mps_home}/plugins/vcs/icons/diff.png" />
     </node>
   </root>
   <root id="8230098746512809061">
