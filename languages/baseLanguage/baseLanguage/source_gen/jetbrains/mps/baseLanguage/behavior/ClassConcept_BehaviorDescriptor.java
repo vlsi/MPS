@@ -38,6 +38,10 @@ public class ClassConcept_BehaviorDescriptor extends Classifier_BehaviorDescript
     return ClassConcept_Behavior.virtual_checkLoops_3980490811621705349(thisNode, visited);
   }
 
+  public Scope virtual_getVisibleMembers_5977339894440019409(SNode thisNode, int accessKind, SNode kind) {
+    return ClassConcept_Behavior.virtual_getVisibleMembers_5977339894440019409(thisNode, accessKind, kind);
+  }
+
   public boolean virtual_hasStaticMemebers_1214840444586(SNode thisNode) {
     return ClassConcept_Behavior.virtual_hasStaticMemebers_1214840444586(thisNode);
   }

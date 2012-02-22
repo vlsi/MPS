@@ -225,6 +225,14 @@
     </scopeInfo>
     <unitInfo nodeId="3700100223624426201" fileName="CompositeWithParentScope.java" startLine="10" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.baseLanguage.scopes.CompositeWithParentScope" />
   </root>
+  <root nodeId="5977339894440019487">
+    <nodeInfo nodeId="5977339894440024856" fileName="ClassAccessKind.java" startLine="6" startPosition="34" endLine="7" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ANYTHING" />
+    <nodeInfo nodeId="3860625225137054229" fileName="ClassAccessKind.java" startLine="7" startPosition="43" endLine="8" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="PUBLIC" />
+    <nodeInfo nodeId="3860625225137059606" fileName="ClassAccessKind.java" startLine="8" startPosition="37" endLine="9" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="CLASS" />
+    <nodeInfo nodeId="3860625225137059602" fileName="ClassAccessKind.java" startLine="9" startPosition="36" endLine="10" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SUBCLASS" />
+    <nodeInfo nodeId="3860625225137059614" fileName="ClassAccessKind.java" startLine="10" startPosition="39" endLine="11" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="PACKAGE" />
+    <unitInfo nodeId="5977339894440019487" fileName="ClassAccessKind.java" startLine="6" startPosition="0" endLine="13" endPosition="0" unitName="jetbrains.mps.baseLanguage.scopes.ClassAccessKind" />
+  </root>
   <root nodeId="9056065292435488188">
     <nodeInfo nodeId="9056065292435488207" fileName="HierarchyScopeProvider.java" startLine="15" startPosition="62" endLine="16" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="providedConcept" />
     <nodeInfo nodeId="9056065292435488211" fileName="HierarchyScopeProvider.java" startLine="16" startPosition="38" endLine="17" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="providedNodes" />

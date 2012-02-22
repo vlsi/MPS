@@ -29,6 +29,7 @@ import jetbrains.mps.scope.Scope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.baseLanguage.scopes.SimpleScope;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.baseLanguage.scopes.ClassAccessKind;
 import jetbrains.mps.smodel.structure.BehaviorDescriptor;
 import jetbrains.mps.smodel.structure.ConceptRegistry;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
@@ -43,6 +44,7 @@ public class ClassConcept_Behavior {
   private static Class[] PARAMETERS_5039675756632924553 = {SNode.class};
   private static Class[] PARAMETERS_1240936569950 = {SNode.class};
   private static Class[] PARAMETERS_2496361171403551057 = {SNode.class};
+  private static Class[] PARAMETERS_5977339894440019409 = {SNode.class, Integer.TYPE, SNode.class};
   private static Logger LOG = Logger.getLogger(ClassConcept_Behavior.class);
 
   public static void init(SNode thisNode) {
@@ -226,19 +228,30 @@ public class ClassConcept_Behavior {
     return result;
   }
 
-  public static Scope virtual_getScope_3734116213129936182(SNode thisNode, final SNode kind, SNode child) {
+  public static Scope virtual_getScope_3734116213129936182(SNode thisNode, SNode kind, SNode child) {
     if (SConceptOperations.isSubConceptOf(kind, "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration")) {
       return new SimpleScope(SLinkOperations.getTargets(thisNode, "constructor", true));
       // todo: continue? 
     }
     if (SConceptOperations.isSubConceptOf(kind, "jetbrains.mps.baseLanguage.structure.ClassifierMember")) {
-      return new SimpleScope(ListSequence.fromList(IMemberContainer_Behavior.call_getMembers_1213877531970(thisNode)).where(new IWhereFilter<SNode>() {
-        public boolean accept(SNode it) {
-          return SNodeOperations.isInstanceOf(it, NameUtil.nodeFQName(kind));
-        }
-      }));
+      return ClassConcept_Behavior.call_getVisibleMembers_3860625225137060420(thisNode, child, kind);
     }
     return null;
+  }
+
+  public static Scope virtual_getVisibleMembers_5977339894440019409(SNode thisNode, int accessKind, final SNode kind) {
+    return new SimpleScope(ListSequence.fromList(IMemberContainer_Behavior.call_getMembers_1213877531970(thisNode)).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return SNodeOperations.isInstanceOf(it, NameUtil.nodeFQName(kind));
+      }
+    }));
+  }
+
+  public static Scope call_getVisibleMembers_3860625225137060420(SNode thisNode, SNode contextNode, SNode kind) {
+    // calc visibility level 
+    // todo: think about extensionbility here 
+    // todo: implement! 
+    return ClassConcept_Behavior.call_getVisibleMembers_5977339894440019409(thisNode, ClassAccessKind.ANYTHING, kind);
   }
 
   public static boolean call_isRunnable_7941158526576616766(SNode thisNode) {
@@ -261,6 +274,11 @@ public class ClassConcept_Behavior {
     return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "virtual_getUnitName_5067982036267369911", PARAMETERS_2496361171403551057);
   }
 
+  public static Scope call_getVisibleMembers_5977339894440019409(SNode thisNode, int accessKind, SNode kind) {
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
+    return (Scope) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "virtual_getVisibleMembers_5977339894440019409", PARAMETERS_5977339894440019409, accessKind, kind);
+  }
+
   public static boolean callSuper_isRunnable_7941158526576616766(SNode thisNode, String callerConceptFqName) {
     return (Boolean) BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.ClassConcept"), callerConceptFqName, "virtual_isRunnable_7941158526576616752", PARAMETERS_7941158526576616766);
   }
@@ -275,6 +293,10 @@ public class ClassConcept_Behavior {
 
   public static String callSuper_getUnitName_2496361171403551057(SNode thisNode, String callerConceptFqName) {
     return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.ClassConcept"), callerConceptFqName, "virtual_getUnitName_5067982036267369911", PARAMETERS_2496361171403551057);
+  }
+
+  public static Scope callSuper_getVisibleMembers_5977339894440019409(SNode thisNode, String callerConceptFqName, int accessKind, SNode kind) {
+    return (Scope) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.ClassConcept"), callerConceptFqName, "virtual_getVisibleMembers_5977339894440019409", PARAMETERS_5977339894440019409, accessKind, kind);
   }
 
   public static SNode getContextClass_8008512149545173402(SNode expr) {

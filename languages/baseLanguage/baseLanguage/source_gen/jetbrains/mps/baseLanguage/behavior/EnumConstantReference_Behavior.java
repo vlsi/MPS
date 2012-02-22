@@ -8,7 +8,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.reloading.ReflectionUtil;
 import jetbrains.mps.scope.Scope;
-import jetbrains.mps.lang.core.behavior.ScopeProvider_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.scope.EmptyScope;
 
@@ -24,7 +23,7 @@ public class EnumConstantReference_Behavior {
 
   public static Scope virtual_getScope_3734116213129936182(SNode thisNode, SNode kind, SNode child) {
     return ((SLinkOperations.getTarget(thisNode, "enumClass", false) != null) ?
-      ScopeProvider_Behavior.call_getScope_3734116213129936182(SLinkOperations.getTarget(thisNode, "enumClass", false), SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration"), null) :
+      ClassConcept_Behavior.call_getVisibleMembers_3860625225137060420(SLinkOperations.getTarget(thisNode, "enumClass", false), thisNode, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration")) :
       new EmptyScope()
     );
   }
