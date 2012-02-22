@@ -335,8 +335,6 @@
         <path path="${base_dir}/editor/typesystemIntegration/source"/>
         <path path="${base_dir}/workbench/mps-editor/source"/>
         <path path="${base_dir}/workbench/mps-editor/source_gen"/>
-        <path path="${base_dir}/workbench/mps-platform/source"/>
-        <path path="${base_dir}/workbench/mps-platform/source_gen"/>
       </src>
       <classpath>
         <fileset dir="${dist.dir}/mps-core/lib" includes="*.jar"/>
