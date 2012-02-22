@@ -26,14 +26,11 @@ public class Vcs_ApplicationPlugin extends BaseApplicationPlugin {
     addAction(new Annotate_Action());
     addAction(new CompareTransientModels_Action());
     addAction(new IgnoreModuleInVcs_Action());
-    addAction(new InstalVcsAddons_Action());
     addAction(new ReRunMergeFromBackup_Action());
-    addAction(new ReportModelMergeProblem_Action());
     addAction(new ShowDifferencesWithModelOnDisk_Action());
     addAction(new ShowDiffererenceWithCurrentRevision_Action());
     // groups 
     addGroup(new AnnotateGroup_ActionGroup());
-    addGroup(new MPSGlobalVcsGroup_ActionGroup());
     addGroup(new MakeFromChangesView_ActionGroup());
     addGroup(new ModuleVcsActions_ActionGroup());
     addGroup(new ShowDiffWithCurrRev_ActionGroup());
@@ -50,6 +47,5 @@ public class Vcs_ApplicationPlugin extends BaseApplicationPlugin {
     insertGroupIntoAnother(ShowDiffWithCurrRev_ActionGroup.ID, NodeActions_ActionGroup.ID, NodeActions_ActionGroup.LABEL_ID_diff);
     insertGroupIntoAnother(ModuleVcsActions_ActionGroup.ID, CommonModuleActions_ActionGroup.ID, CommonModuleActions_ActionGroup.LABEL_ID_ideavcs);
     insertGroupIntoAnother(AnnotateGroup_ActionGroup.ID, EditorLeftPanelMenu_ActionGroup.ID, null);
-    insertGroupIntoAnother(MPSGlobalVcsGroup_ActionGroup.ID, "VcsGlobalGroup", null);
   }
 }
