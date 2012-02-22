@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debugInfo>
+  <root nodeId="5393320549766632074">
+    <nodeInfo nodeId="5393320549766632078" fileName="Manifest.xml" startLine="1" startPosition="0" endLine="1" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GIndent" />
+    <nodeInfo nodeId="5393320549766632078" fileName="Manifest.xml" startLine="1" startPosition="0" endLine="1" endPosition="1" conceptFqName="jetbrains.mps.gtext.structure.GText" />
+    <nodeInfo nodeId="5393320549766632086" fileName="Manifest.xml" startLine="1" startPosition="1" endLine="1" endPosition="9" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
+    <nodeInfo nodeId="5393320549766632086" fileName="Manifest.xml" startLine="1" startPosition="1" endLine="1" endPosition="9" conceptFqName="jetbrains.mps.gtext.structure.GText" />
+    <nodeInfo nodeId="5393320549766632088" fileName="Manifest.xml" startLine="1" startPosition="9" endLine="1" endPosition="21" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
+    <nodeInfo nodeId="5393320549766632088" fileName="Manifest.xml" startLine="1" startPosition="9" endLine="1" endPosition="16" conceptFqName="jetbrains.mps.gtext.structure.GText" />
+    <nodeInfo nodeId="5393320549766632089" fileName="Manifest.xml" startLine="1" startPosition="16" endLine="1" endPosition="20" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
+    <nodeInfo nodeId="5393320549766632089" fileName="Manifest.xml" startLine="1" startPosition="16" endLine="1" endPosition="20" conceptFqName="jetbrains.mps.gtext.structure.GText" />
+    <nodeInfo nodeId="5393320549766632088" fileName="Manifest.xml" startLine="1" startPosition="20" endLine="1" endPosition="21" conceptFqName="jetbrains.mps.gtext.structure.GText" />
+    <nodeInfo nodeId="5393320549766632078" fileName="Manifest.xml" startLine="1" startPosition="21" endLine="1" endPosition="22" conceptFqName="jetbrains.mps.gtext.structure.GText" />
+    <nodeInfo nodeId="5393320549766632091" fileName="Manifest.xml" startLine="2" startPosition="0" endLine="2" endPosition="2" conceptFqName="jetbrains.mps.gtext.structure.GIndent" />
+    <nodeInfo nodeId="5393320549766632091" fileName="Manifest.xml" startLine="2" startPosition="2" endLine="2" endPosition="3" conceptFqName="jetbrains.mps.gtext.structure.GText" />
+    <nodeInfo nodeId="5393320549766632095" fileName="Manifest.xml" startLine="2" startPosition="3" endLine="2" endPosition="11" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
+    <nodeInfo nodeId="5393320549766632095" fileName="Manifest.xml" startLine="2" startPosition="3" endLine="2" endPosition="11" conceptFqName="jetbrains.mps.gtext.structure.GText" />
+    <nodeInfo nodeId="5393320549766632091" fileName="Manifest.xml" startLine="2" startPosition="11" endLine="2" endPosition="13" conceptFqName="jetbrains.mps.gtext.structure.GText" />
+    <nodeInfo nodeId="5393320549766632078" fileName="Manifest.xml" startLine="3" startPosition="0" endLine="3" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GIndent" />
+    <nodeInfo nodeId="5393320549766632078" fileName="Manifest.xml" startLine="3" startPosition="0" endLine="3" endPosition="2" conceptFqName="jetbrains.mps.gtext.structure.GText" />
+    <nodeInfo nodeId="5393320549766632086" fileName="Manifest.xml" startLine="3" startPosition="2" endLine="3" endPosition="10" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
+    <nodeInfo nodeId="5393320549766632086" fileName="Manifest.xml" startLine="3" startPosition="2" endLine="3" endPosition="10" conceptFqName="jetbrains.mps.gtext.structure.GText" />
+    <nodeInfo nodeId="5393320549766632078" fileName="Manifest.xml" startLine="3" startPosition="10" endLine="3" endPosition="11" conceptFqName="jetbrains.mps.gtext.structure.GText" />
+    <nodeInfo nodeId="5393320549766632078" fileName="Manifest.xml" startLine="1" startPosition="22" endLine="2" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />
+    <nodeInfo nodeId="5393320549766632078" fileName="Manifest.xml" startLine="2" startPosition="0" endLine="3" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GIndentBlock" />
+    <nodeInfo nodeId="5393320549766632078" fileName="Manifest.xml" startLine="2" startPosition="0" endLine="3" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
+    <nodeInfo nodeId="5393320549766632080" fileName="Manifest.xml" startLine="2" startPosition="0" endLine="3" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
+    <nodeInfo nodeId="5393320549766632091" fileName="Manifest.xml" startLine="2" startPosition="0" endLine="3" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
+    <nodeInfo nodeId="5393320549766632091" fileName="Manifest.xml" startLine="2" startPosition="13" endLine="3" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />
+    <nodeInfo nodeId="5393320549766632078" fileName="Manifest.xml" startLine="3" startPosition="11" endLine="4" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />
+    <nodeInfo nodeId="5393320549766632075" fileName="Manifest.xml" startLine="1" startPosition="0" endLine="4" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
+    <nodeInfo nodeId="5393320549766632078" fileName="Manifest.xml" startLine="1" startPosition="0" endLine="4" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
+    <unitInfo nodeId="5393320549766632074" fileName="Manifest.xml" startLine="1" startPosition="0" endLine="4" endPosition="0" unitName="Manifest.xml" />
+  </root>
+</debugInfo>
+
