@@ -176,7 +176,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 79:
         return new CompiledConceptDescriptor("jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.baseLanguage.structure.IValidIdentifier", "jetbrains.mps.lang.core.structure.IResolveInfo", "jetbrains.mps.baseLanguage.structure.HasAnnotation", "jetbrains.mps.baseLanguage.structure.ClassifierMember", "jetbrains.mps.baseLanguage.structure.IMethodCall"}, new String[]{}, new String[]{"constructor"});
       case 80:
-        return new CompiledConceptDescriptor("jetbrains.mps.baseLanguage.structure.EnumConstantReference", "jetbrains.mps.baseLanguage.structure.Expression", false, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{"enumClass", "enumConstantDeclaration"});
+        return new CompiledConceptDescriptor("jetbrains.mps.baseLanguage.structure.EnumConstantReference", "jetbrains.mps.baseLanguage.structure.Expression", false, new String[]{"jetbrains.mps.baseLanguage.structure.Expression", "jetbrains.mps.lang.core.structure.ScopeProvider"}, new String[]{}, new String[]{"enumClass", "enumConstantDeclaration"});
       case 81:
         return new CompiledConceptDescriptor("jetbrains.mps.baseLanguage.structure.EnumValueOfExpression", "jetbrains.mps.baseLanguage.structure.Expression", false, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{"enumClass"});
       case 82:

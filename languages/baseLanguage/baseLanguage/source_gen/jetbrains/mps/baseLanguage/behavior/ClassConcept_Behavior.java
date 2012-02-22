@@ -28,6 +28,7 @@ import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
 import jetbrains.mps.scope.Scope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.baseLanguage.scopes.SimpleScope;
+import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.smodel.structure.BehaviorDescriptor;
 import jetbrains.mps.smodel.structure.ConceptRegistry;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
@@ -225,10 +226,17 @@ public class ClassConcept_Behavior {
     return result;
   }
 
-  public static Scope virtual_getScope_3734116213129936182(SNode thisNode, SNode kind, SNode child) {
+  public static Scope virtual_getScope_3734116213129936182(SNode thisNode, final SNode kind, SNode child) {
     if (SConceptOperations.isSubConceptOf(kind, "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration")) {
       return new SimpleScope(SLinkOperations.getTargets(thisNode, "constructor", true));
       // todo: continue? 
+    }
+    if (SConceptOperations.isSubConceptOf(kind, "jetbrains.mps.baseLanguage.structure.ClassifierMember")) {
+      return new SimpleScope(ListSequence.fromList(IMemberContainer_Behavior.call_getMembers_1213877531970(thisNode)).where(new IWhereFilter<SNode>() {
+        public boolean accept(SNode it) {
+          return SNodeOperations.isInstanceOf(it, NameUtil.nodeFQName(kind));
+        }
+      }));
     }
     return null;
   }
