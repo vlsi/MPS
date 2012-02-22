@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.smodel.persistence.def.v7;
 
-import com.sun.xml.internal.xsom.XmlString;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.SModel.ImportElement;
