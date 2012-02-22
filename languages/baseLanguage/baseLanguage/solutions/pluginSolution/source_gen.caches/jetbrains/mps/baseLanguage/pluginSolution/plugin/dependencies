@@ -10,7 +10,7 @@
     <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.util.Condition" />
-    <classNode extendsClassName="jetbrains.mps.lang.core.pluginSolution.plugin.AbstractLeftEditorHighlighterMessage" />
+    <classNode extendsClassName="jetbrains.mps.editor.runtime.AbstractLeftEditorHighlighterMessage" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.pluginSolution.plugin.AnalyzersActions_ActionGroup" file="AnalyzersActions_ActionGroup.java">
     <classNode dependClassName="java.lang.String" />
@@ -1766,7 +1766,7 @@
     <classNode dependClassName="jetbrains.mps.util.Condition" />
     <classNode dependClassName="jetbrains.mps.util.MacrosUtil" />
     <classNode dependClassName="jetbrains.mps.workbench.action.BaseAction" />
-    <classNode extendsClassName="jetbrains.mps.lang.core.pluginSolution.plugin.AbstractLeftEditorHighlighterMessage" />
+    <classNode extendsClassName="jetbrains.mps.editor.runtime.AbstractLeftEditorHighlighterMessage" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.pluginSolution.plugin.TableWithControlsPanel" file="TableWithControlsPanel.java">
     <classNode dependClassName="com.intellij.ui.table.JBTable" />
