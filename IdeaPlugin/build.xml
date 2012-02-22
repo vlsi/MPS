@@ -274,7 +274,7 @@
           <fileset dir="${ideaPath}/lib" includes="*.jar"/>
         </classpath>
       </javac>
-      <copy includeemptydirs="false" todir="${build_dir}/mpseditor_jar">
+      <copy includeemptydirs="false" todir="${build_dir}/mpseditorapi_jar">
         <fileset dir="${base_dir}/editor/editor-api/source" includes="**/*.png"/>
       </copy>
       <jar destfile="${dist.dir}/lib/mps-editor-api.jar">
