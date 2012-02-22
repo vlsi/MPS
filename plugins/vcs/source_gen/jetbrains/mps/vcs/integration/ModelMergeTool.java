@@ -69,7 +69,7 @@ public class ModelMergeTool extends MergeTool {
           dialog.toFront();
         }
       });
-      dialog.showDialog();
+      dialog.show();
       if (dialog.getResultModel() != null) {
         String asString = ModelPersistence.modelToString(dialog.getResultModel());
         resolved(mrequest, asString);

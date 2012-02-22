@@ -69,7 +69,7 @@ public class ShowDifferencesWithModelOnDisk_Action extends BaseAction {
       final SModel disk = ModelPersistence.readModel(((EditableSModelDescriptor) ((SModelDescriptor) MapSequence.fromMap(_params).get("modelDescriptor"))).getModelFile(), false);
       ApplicationManager.getApplication().invokeLater(new Runnable() {
         public void run() {
-          new ModelDifferenceDialog(disk, memory, ((Project) MapSequence.fromMap(_params).get("project")), "Disk", "Memory").showDialog();
+          new ModelDifferenceDialog(disk, memory, ((Project) MapSequence.fromMap(_params).get("project")), "Disk", "Memory").show();
         }
       });
     } catch (Throwable t) {

@@ -58,7 +58,7 @@ public class MergeDriverInstaller {
   public static void installWhereNeeded(final Project project) {
     SwingUtilities.invokeLater(new Runnable() {
       public void run() {
-        new MergeDriverOptionsDialog(project).showDialog();
+        new MergeDriverOptionsDialog(project).show();
       }
     });
   }

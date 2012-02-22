@@ -254,16 +254,20 @@
   </dependency>
   <dependency className="jetbrains.mps.vcs.mergedriver.MergeDriverOptionsDialog" file="MergeDriverOptionsDialog.java">
     <classNode dependClassName="com.intellij.openapi.project.Project" />
-    <classNode dependClassName="com.intellij.openapi.wm.WindowManager" />
+    <classNode dependClassName="com.intellij.openapi.util.DimensionService" />
+    <classNode dependClassName="java.awt.Dimension" />
     <classNode dependClassName="java.awt.FlowLayout" />
     <classNode dependClassName="java.awt.GridLayout" />
     <classNode dependClassName="java.awt.event.ItemEvent" />
     <classNode dependClassName="java.awt.event.ItemListener" />
-    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Runnable" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="javax.swing.Action" />
     <classNode dependClassName="javax.swing.JComponent" />
     <classNode dependClassName="javax.swing.JPanel" />
-    <classNode dependClassName="jetbrains.mps.ide.dialogs.DialogDimensionsSettings" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
     <classNode dependClassName="jetbrains.mps.vcs.mergedriver.AbstractInstaller" />
     <classNode dependClassName="jetbrains.mps.vcs.mergedriver.GitGlobalConfigFixesInstaller" />
@@ -271,8 +275,9 @@
     <classNode dependClassName="jetbrains.mps.vcs.mergedriver.GitRepositoriesInstaller" />
     <classNode dependClassName="jetbrains.mps.vcs.mergedriver.MergeDriverNotification" />
     <classNode dependClassName="jetbrains.mps.vcs.mergedriver.SvnInstaller" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode extendsClassName="com.intellij.openapi.ui.DialogWrapper" />
     <classNode extendsClassName="javax.swing.JCheckBox" />
-    <classNode extendsClassName="jetbrains.mps.ide.dialogs.BaseDialog" />
   </dependency>
   <dependency className="jetbrains.mps.vcs.mergedriver.MergerRoleIdsHandler" file="MergerRoleIdsHandler.java">
     <classNode dependClassName="java.lang.Integer" />
