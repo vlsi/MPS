@@ -63,4 +63,11 @@ public class buildStyles_StyleSheet {
     style.set(StyleAttributes.TEXT_COLOR, new Color(32768));
     return style;
   }
+
+  public static Style getHint(final EditorCell cell) {
+    Style style = new Style(cell);
+    style.set(StyleAttributes.TEXT_COLOR, MPSColors.darkGray);
+    style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
+    return style;
+  }
 }

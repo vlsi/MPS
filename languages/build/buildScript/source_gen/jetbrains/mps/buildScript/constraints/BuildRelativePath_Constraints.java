@@ -9,8 +9,8 @@ import java.util.HashMap;
 import jetbrains.mps.smodel.runtime.base.BasePropertyConstraintsDescriptor;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.buildScript.behavior.CompositePath_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.buildScript.behavior.CompositePath_Behavior;
 
 public class BuildRelativePath_Constraints extends BaseConstraintsDescriptor {
   public BuildRelativePath_Constraints() {
@@ -29,6 +29,9 @@ public class BuildRelativePath_Constraints extends BaseConstraintsDescriptor {
       @Override
       public Object getValue(SNode node, IScope scope) {
         String propertyName = "relativePath";
+        if ((SLinkOperations.getTarget(node, "compositePart", true) == null)) {
+          return "";
+        }
         return CompositePath_Behavior.call_getPath_8618885170173674800(SLinkOperations.getTarget(node, "compositePart", true));
       }
     });
