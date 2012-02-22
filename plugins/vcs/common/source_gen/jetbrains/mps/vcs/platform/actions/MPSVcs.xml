@@ -1,0 +1,21 @@
+<components>
+  <actions>
+    <action id="jetbrains.mps.vcs.platform.actions.CopyOldNodes_Action" class="jetbrains.mps.vcs.platform.actions.CopyOldNodes_Action"/>
+    <action id="jetbrains.mps.vcs.platform.actions.GoToNextChange_Action" class="jetbrains.mps.vcs.platform.actions.GoToNextChange_Action"/>
+    <action id="jetbrains.mps.vcs.platform.actions.GoToPreviousChange_Action" class="jetbrains.mps.vcs.platform.actions.GoToPreviousChange_Action"/>
+    <action id="jetbrains.mps.vcs.platform.actions.RollbackChanges_Action" class="jetbrains.mps.vcs.platform.actions.RollbackChanges_Action"/>
+    <action id="jetbrains.mps.vcs.platform.actions.ShowDiffFromChanges_Action" class="jetbrains.mps.vcs.platform.actions.ShowDiffFromChanges_Action"/>
+    <group id="jetbrains.mps.vcs.platform.actions.ChangesStrip_ActionGroup">
+      <reference ref="jetbrains.mps.vcs.platform.actions.GoToNextChange_Action"/>
+      <reference ref="jetbrains.mps.vcs.platform.actions.GoToPreviousChange_Action"/>
+      <reference ref="jetbrains.mps.vcs.platform.actions.RollbackChanges_Action"/>
+      <reference ref="jetbrains.mps.vcs.platform.actions.ShowDiffFromChanges_Action"/>
+      <reference ref="jetbrains.mps.vcs.platform.actions.CopyOldNodes_Action"/>
+    </group>
+    <group id="jetbrains.mps.vcs.platform.actions.GoToVCS_ActionGroup">
+      <reference ref="jetbrains.mps.vcs.platform.actions.GoToNextChange_Action"/>
+      <reference ref="jetbrains.mps.vcs.platform.actions.GoToPreviousChange_Action"/>
+      <add-to-group group-id="GoToMenu" anchor="last"/>
+    </group>
+  </actions>
+</components>

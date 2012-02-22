@@ -415,8 +415,8 @@
     <nodeInfo nodeId="5109148457513119997" fileName="PopupPanel.java" startLine="37" startPosition="21" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="5109148457513120001" fileName="PopupPanel.java" startLine="38" startPosition="0" endLine="39" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5109148457513120354" fileName="PopupPanel.java" startLine="39" startPosition="57" endLine="40" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="204834724131529738" fileName="PopupPanel.java" startLine="40" startPosition="34" endLine="41" endPosition="198" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6531409938423387864" fileName="PopupPanel.java" startLine="41" startPosition="198" endLine="42" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="204834724131529738" fileName="PopupPanel.java" startLine="40" startPosition="34" endLine="41" endPosition="208" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6531409938423387864" fileName="PopupPanel.java" startLine="41" startPosition="208" endLine="42" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5109148457513120020" fileName="PopupPanel.java" startLine="42" startPosition="65" endLine="43" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6208564103581775273" fileName="PopupPanel.java" startLine="43" startPosition="66" endLine="44" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4477049948824794540" fileName="PopupPanel.java" startLine="48" startPosition="24" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
