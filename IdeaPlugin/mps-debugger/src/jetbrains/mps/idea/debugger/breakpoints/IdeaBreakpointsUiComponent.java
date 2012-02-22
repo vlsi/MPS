@@ -36,7 +36,7 @@ import org.jetbrains.annotations.NotNull;
 import java.util.List;
 import java.util.Set;
 
-public class IdeaBreakpointsUiComponent extends BreakpointsUiComponentEx<Breakpoint> implements ProjectComponent {
+public class IdeaBreakpointsUiComponent extends BreakpointsUiComponentEx<Breakpoint, BreakpointWithHighlighter> implements ProjectComponent {
     private DebuggerManagerEx myDebuggerManager;
     private final BreakpointManagerListener myBreakpointListener = new MyBreakpointManagerListener();
 
@@ -94,13 +94,13 @@ public class IdeaBreakpointsUiComponent extends BreakpointsUiComponentEx<Breakpo
     }
 
     @Override
-    protected BreakpointPainter createPainter(Breakpoint breakpoint) {
-        return new BreakpointPainter((BreakpointWithHighlighter) breakpoint);
+    protected BreakpointPainter createPainter(BreakpointWithHighlighter breakpoint) {
+        return new BreakpointPainter(breakpoint);
     }
 
     @Override
-    protected BreakpointIconRenderrer createRenderrer(Breakpoint breakpoint, EditorComponent component) {
-        return new BreakpointIconRenderrer((BreakpointWithHighlighter) breakpoint, component);
+    protected BreakpointIconRenderrer createRenderrer(BreakpointWithHighlighter breakpoint, EditorComponent component) {
+        return new BreakpointIconRenderrer( breakpoint, component);
     }
 
     @Override
@@ -136,9 +136,10 @@ public class IdeaBreakpointsUiComponent extends BreakpointsUiComponentEx<Breakpo
                 public void run() {
                     for (Breakpoint breakpoint : breakpoints) {
                         if (breakpoint instanceof BreakpointWithHighlighter) {
-                            SNode node = BreakpointPainter.getNodeForBreakpoint((BreakpointWithHighlighter) breakpoint);
+                            BreakpointWithHighlighter breakpointWithHighlighter = (BreakpointWithHighlighter) breakpoint;
+                            SNode node = BreakpointPainter.getNodeForBreakpoint(breakpointWithHighlighter);
                             if (node != null) {
-                                addLocationBreakpoint(breakpoint, BreakpointPainter.getNodeForBreakpoint((BreakpointWithHighlighter) breakpoint));
+                                addLocationBreakpoint(breakpointWithHighlighter, BreakpointPainter.getNodeForBreakpoint(breakpointWithHighlighter));
                             }
                         }
                     }
