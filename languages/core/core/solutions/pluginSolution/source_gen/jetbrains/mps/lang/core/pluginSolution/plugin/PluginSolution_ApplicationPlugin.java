@@ -15,12 +15,6 @@ public class PluginSolution_ApplicationPlugin extends BaseApplicationPlugin {
     return myId;
   }
 
-  public void createGroups() {
-    // actions w/o parameters 
-    addAction(new DoNotSuppressErrors_Action());
-    // groups 
-  }
-
   public void adjustInterfaceGroups() {
   }
 }
