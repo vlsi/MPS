@@ -788,7 +788,7 @@
                 <link role="classConcept" roleId="tpee.1182955020723" targetNodeId="2706316667685001040" resolveInfo="BreakpointsUiComponentEx" />
               </node>
               <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="3023423084377493326">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4474271214083124181" resolveInfo="editorComponentCreated" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4474271214083124240" resolveInfo="editorComponentDisposed" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="3023423084377493327">
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4474271214083123745" resolveInfo="editorComponent" />
                 </node>
