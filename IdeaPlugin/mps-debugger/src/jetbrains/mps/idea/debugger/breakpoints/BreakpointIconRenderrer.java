@@ -29,6 +29,11 @@ import java.awt.*;
     }
 
     @Override
+    public String getTooltipText() {
+        return myBreakpoint.toString();
+    }
+
+    @Override
     public Icon getIcon() {
         return myBreakpoint.getIcon();
     }
