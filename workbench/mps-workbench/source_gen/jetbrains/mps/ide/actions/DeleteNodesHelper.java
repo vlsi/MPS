@@ -15,7 +15,7 @@ import jetbrains.mps.refactoring.framework.IRefactoring;
 import jetbrains.mps.refactoring.framework.RefactoringUtil;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.ide.refactoring.RefactoringFacade;
+import jetbrains.mps.ide.platform.refactoring.RefactoringAccess;
 
 public class DeleteNodesHelper {
   private List<SNode> myNodes;
@@ -106,7 +106,7 @@ public class DeleteNodesHelper {
     new Thread() {
       public void run() {
         refactoringContext.setRefactoring(refactoring);
-        new RefactoringFacade().execute(refactoringContext);
+        RefactoringAccess.getInstance().getRefactoringFacade().execute(refactoringContext);
       }
     }.start();
   }

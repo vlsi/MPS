@@ -406,8 +406,8 @@
     <nodeInfo nodeId="3800604662869701275" fileName="PluginMoveHelper.java" startLine="179" startPosition="57" endLine="180" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3800604662869701640" fileName="PluginMoveHelper.java" startLine="180" startPosition="22" endLine="181" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3800604662869701624" fileName="PluginMoveHelper.java" startLine="181" startPosition="36" endLine="182" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="3178711211098724988" fileName="PluginMoveHelper.java" startLine="182" startPosition="0" endLine="183" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4618316083866595591" fileName="PluginMoveHelper.java" startLine="183" startPosition="51" endLine="184" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="2183214647889492839" fileName="PluginMoveHelper.java" startLine="182" startPosition="0" endLine="183" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4618316083866595591" fileName="PluginMoveHelper.java" startLine="183" startPosition="82" endLine="184" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="3178711211098725042" fileName="PluginMoveHelper.java" startLine="184" startPosition="0" endLine="185" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="3573713441992778452" fileName="PluginMoveHelper.java" startLine="185" startPosition="14" endLine="186" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="3573713441992786697" fileName="PluginMoveHelper.java" startLine="186" startPosition="0" endLine="187" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />

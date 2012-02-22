@@ -30,13 +30,17 @@
     <component>
       <implementation-class>jetbrains.mps.idea.core.navigation.NavigationSupportImpl</implementation-class>
     </component>
+    <component>
+      <implementation-class>jetbrains.mps.idea.core.refactoring.RefactoringAccessImpl</implementation-class>
+    </component>
   </application-components>
 
   <xi:include href="../classes/META-INF/MPSCore.xml" xpointer="xpointer(/components/*)"/>
   <xi:include href="../classes/META-INF/MPSEditor.xml" xpointer="xpointer(/components/*)"/>
+  <xi:include href="../classes/jetbrains/mps/ide/platform/actions/PlatformActions.xml"
+              xpointer="xpointer(/components/*)"/>
   <xi:include href="../classes/jetbrains/mps/ide/editor/actions/MPSEditorActions.xml"
               xpointer="xpointer(/components/*)"/>
-  <xi:include href="../classes/jetbrains/mps/ide/platform/actions/PlatformActions.xml" xpointer="xpointer(/components/*)"/>
 
   <project-components>
     <component>
