@@ -5,7 +5,7 @@ package jetbrains.mps.vcs.mergedriver;
 import java.io.File;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.workbench.WorkbenchPathManager;
-import jetbrains.mps.vcs.concrete.PluginUtil;
+import jetbrains.mps.vcs.util.PluginUtil;
 import org.jetbrains.idea.svn.SvnConfiguration;
 import org.tmatesoft.svn.core.wc.SVNWCUtil;
 import com.intellij.openapi.util.SystemInfo;

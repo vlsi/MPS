@@ -1,5 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <root nodeId="8230098746512673082">
+    <nodeInfo nodeId="8230098746512673086" fileName="PluginUtil.java" startLine="14" startPosition="53" endLine="15" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8230098746512673092" fileName="PluginUtil.java" startLine="15" startPosition="73" endLine="16" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8230098746512673109" fileName="PluginUtil.java" startLine="19" startPosition="46" endLine="20" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8230098746512673116" fileName="PluginUtil.java" startLine="23" startPosition="46" endLine="24" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8230098746512673120" fileName="PluginUtil.java" startLine="10" startPosition="25" endLine="12" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="PluginUtil#()V" />
+    <nodeInfo nodeId="8230098746512673106" fileName="PluginUtil.java" startLine="18" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isSvnPluginEnabled#()Z" />
+    <nodeInfo nodeId="8230098746512673113" fileName="PluginUtil.java" startLine="22" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isGitPluginEnabled#()Z" />
+    <nodeInfo nodeId="8230098746512673083" fileName="PluginUtil.java" startLine="13" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isPluginEnabled#(Ljava/lang/String;)Z" />
+    <scopeInfo nodeId="8230098746512673123" fileName="PluginUtil.java" startLine="11" startPosition="24" endLine="11" endPosition="24" />
+    <scopeInfo nodeId="8230098746512673108" fileName="PluginUtil.java" startLine="19" startPosition="46" endLine="20" endPosition="41" />
+    <scopeInfo nodeId="8230098746512673115" fileName="PluginUtil.java" startLine="23" startPosition="46" endLine="24" endPosition="39" />
+    <scopeInfo nodeId="8230098746512673120" fileName="PluginUtil.java" startLine="10" startPosition="25" endLine="12" endPosition="3" />
+    <scopeInfo nodeId="8230098746512673085" fileName="PluginUtil.java" startLine="14" startPosition="53" endLine="16" endPosition="95">
+      <varInfo nodeId="8230098746512673087" varName="p" />
+    </scopeInfo>
+    <scopeInfo nodeId="8230098746512673106" fileName="PluginUtil.java" startLine="18" startPosition="0" endLine="22" endPosition="0" />
+    <scopeInfo nodeId="8230098746512673113" fileName="PluginUtil.java" startLine="22" startPosition="0" endLine="26" endPosition="0" />
+    <scopeInfo nodeId="8230098746512673083" fileName="PluginUtil.java" startLine="13" startPosition="0" endLine="18" endPosition="0">
+      <varInfo nodeId="8230098746512673104" varName="id" />
+    </scopeInfo>
+    <unitInfo nodeId="8230098746512673082" fileName="PluginUtil.java" startLine="10" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.vcs.util.PluginUtil" />
+  </root>
   <root nodeId="9029966639392731796">
     <nodeInfo nodeId="9029966639392731841" fileName="ConflictsUtil.java" startLine="31" startPosition="49" endLine="32" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="9029966639392731853" fileName="ConflictsUtil.java" startLine="33" startPosition="23" endLine="34" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

@@ -55,6 +55,7 @@
   <import index="hlc7" modelUID="f:java_stub#b0d98700-54f0-4c39-a8e0-bb27733b8b38#de.regnis.q.sequence.line(jetbrains.mps.vcs/de.regnis.q.sequence.line@java_stub)" version="-1" />
   <import index="lgvi" modelUID="r:35a4b074-cc8b-4e81-89c0-bb4cef49e017(jetbrains.mps.vcs.concrete)" version="-1" />
   <import index="63ba" modelUID="f:java_stub#b0d98700-54f0-4c39-a8e0-bb27733b8b38#org.tmatesoft.svn.core.internal.wc(jetbrains.mps.vcs/org.tmatesoft.svn.core.internal.wc@java_stub)" version="-1" />
+  <import index="ur19" modelUID="r:d58d9938-2526-431c-a5fe-6bbbfeb64ac2(jetbrains.mps.vcs.util)" version="-1" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" implicit="yes" />
   <import index="tp2q" modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" implicit="yes" />
@@ -2046,8 +2047,8 @@
           </node>
           <node role="condition" roleId="tpee.1068580123160" type="tpee.NotExpression" typeId="tpee.1081516740877" id="7486222757620534148">
             <node role="expression" roleId="tpee.1081516765348" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="7486222757620534149">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="lgvi.4346819404427441560" resolveInfo="isGitPluginEnabled" />
-              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="lgvi.4346819404427441529" resolveInfo="PluginUtil" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ur19.8230098746512673113" resolveInfo="isGitPluginEnabled" />
+              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="ur19.8230098746512673082" resolveInfo="PluginUtil" />
             </node>
           </node>
         </node>
@@ -2691,8 +2692,8 @@
           </node>
           <node role="condition" roleId="tpee.1068580123160" type="tpee.NotExpression" typeId="tpee.1081516740877" id="7486222757620534141">
             <node role="expression" roleId="tpee.1081516765348" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="7486222757620534142">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="lgvi.4346819404427441560" resolveInfo="isGitPluginEnabled" />
-              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="lgvi.4346819404427441529" resolveInfo="PluginUtil" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ur19.8230098746512673113" resolveInfo="isGitPluginEnabled" />
+              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="ur19.8230098746512673082" resolveInfo="PluginUtil" />
             </node>
           </node>
         </node>
@@ -4115,8 +4116,8 @@
             </node>
           </node>
           <node role="condition" roleId="tpee.1068580123160" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="7486222757620534123">
-            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="lgvi.4346819404427441553" resolveInfo="isSvnPluginEnabled" />
-            <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="lgvi.4346819404427441529" resolveInfo="PluginUtil" />
+            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ur19.8230098746512673106" resolveInfo="isSvnPluginEnabled" />
+            <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="ur19.8230098746512673082" resolveInfo="PluginUtil" />
           </node>
         </node>
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="4814010021063208791">
@@ -4210,8 +4211,8 @@
           </node>
           <node role="condition" roleId="tpee.1068580123160" type="tpee.NotExpression" typeId="tpee.1081516740877" id="7486222757620534121">
             <node role="expression" roleId="tpee.1081516765348" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="7486222757620534120">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="lgvi.4346819404427441553" resolveInfo="isSvnPluginEnabled" />
-              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="lgvi.4346819404427441529" resolveInfo="PluginUtil" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ur19.8230098746512673106" resolveInfo="isSvnPluginEnabled" />
+              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="ur19.8230098746512673082" resolveInfo="PluginUtil" />
             </node>
           </node>
         </node>
@@ -10738,8 +10739,8 @@
           </node>
           <node role="condition" roleId="tpee.1068580123160" type="tpee.NotExpression" typeId="tpee.1081516740877" id="7486222757620534128">
             <node role="expression" roleId="tpee.1081516765348" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="7486222757620534127">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="lgvi.4346819404427441560" resolveInfo="isGitPluginEnabled" />
-              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="lgvi.4346819404427441529" resolveInfo="PluginUtil" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ur19.8230098746512673113" resolveInfo="isGitPluginEnabled" />
+              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="ur19.8230098746512673082" resolveInfo="PluginUtil" />
             </node>
           </node>
         </node>

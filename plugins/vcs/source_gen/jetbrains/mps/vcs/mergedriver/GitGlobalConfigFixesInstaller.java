@@ -6,7 +6,7 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import com.intellij.openapi.project.Project;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.vcs.concrete.PluginUtil;
+import jetbrains.mps.vcs.util.PluginUtil;
 import git4idea.config.GitConfigUtil;
 import com.intellij.openapi.vcs.VcsException;
 import com.intellij.openapi.ui.Messages;
