@@ -20,7 +20,6 @@
     <classNode dependClassName="java.lang.reflect.Field" />
     <classNode dependClassName="java.util.Scanner" />
     <classNode dependClassName="javax.swing.SwingUtilities" />
-    <classNode dependClassName="javax.swing.WindowConstants" />
     <classNode dependClassName="jetbrains.mps.TestMain" />
     <classNode dependClassName="jetbrains.mps.ide.IdeMain" />
     <classNode dependClassName="jetbrains.mps.ide.bookmark.BookmarkManager" />

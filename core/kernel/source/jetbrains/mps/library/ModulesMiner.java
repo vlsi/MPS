@@ -119,7 +119,7 @@ public class ModulesMiner {
     }
 
     for (IFile file : files) {
-      if (hasModuleExtension(file.getName())) {
+      if (hasModuleExtension(file)) {
         ModuleDescriptor moduleDescriptor = loadDescriptorOnly_internal(file, excludes);
         if (moduleDescriptor != null) {
           T descriptor = reader.read(new ModuleHandle(file, moduleDescriptor));
@@ -132,7 +132,7 @@ public class ModulesMiner {
 
     for (IFile childDir : files) {
       if (FileSystem.getInstance().isFileIgnored(childDir.getName())) continue;
-      if (hasModuleExtension(childDir.getName())) continue;
+      if (hasModuleExtension(childDir)) continue;
       if (excludes.contains(childDir)) continue;
 
       if (childDir.getName().endsWith(".jar")) {
@@ -263,8 +263,8 @@ public class ModulesMiner {
     }
   }
 
-  private boolean hasModuleExtension(String name) {
-    return getModuleExtension(name) != null;
+  private boolean hasModuleExtension(IFile file) {
+    return getModuleExtension(file.getName()) != null && !file.isDirectory();
   }
 
   private String getModuleExtension(String name) {

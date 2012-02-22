@@ -21,7 +21,6 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModel;
 import com.intellij.openapi.application.ApplicationManager;
 import jetbrains.mps.vcs.diff.ui.ModelDifferenceDialog;
-import jetbrains.mps.vcs.diff.ui.common.SimpleDiffRequest;
 import com.intellij.openapi.project.Project;
 
 public class CompareTransientModels_Action extends BaseAction {
@@ -70,7 +69,7 @@ public class CompareTransientModels_Action extends BaseAction {
           final SModel second = sortedModels.get(1).getSModel();
           ApplicationManager.getApplication().invokeLater(new Runnable() {
             public void run() {
-              new ModelDifferenceDialog(first, second, new SimpleDiffRequest(((Project) MapSequence.fromMap(_params).get("project")), first.getSModelReference().getSModelFqName().toString(), second.getSModelReference().getSModelFqName().toString())).showDialog();
+              new ModelDifferenceDialog(first, second, ((Project) MapSequence.fromMap(_params).get("project")), first.getSModelReference().getSModelFqName().toString(), second.getSModelReference().getSModelFqName().toString()).show();
             }
           });
         }

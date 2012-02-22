@@ -6,6 +6,7 @@ import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.SModelReference;
+import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 
 public class StructureModificationLog {
@@ -26,6 +27,10 @@ public class StructureModificationLog {
     if ((int) ListSequence.fromList(myDataList).count() == 0) {
       return -1;
     }
-    return MapSequence.fromMap(ListSequence.fromList(myDataList).last().getDependencies()).get(modelRef) + 1;
+    Map<SModelReference, Integer> deps = ListSequence.fromList(myDataList).last().getDependencies();
+    return (MapSequence.fromMap(deps).containsKey(modelRef) ?
+      MapSequence.fromMap(deps).get(modelRef) + 1 :
+      -1
+    );
   }
 }

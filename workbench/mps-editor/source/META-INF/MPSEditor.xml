@@ -6,6 +6,8 @@
                     interface="jetbrains.mps.ide.editor.EditorOpenHandler"/>
     <extensionPoint qualifiedName="jetbrains.mps.nodeStructureViewProvider"
                     interface="jetbrains.mps.ide.editor.NodeStructureViewProvider"/>
+    <extensionPoint qualifiedName="com.intellij.mps.editorWarningsProvider"
+                    interface="jetbrains.mps.ide.editor.warningPanel.EditorWarningsProvider"/>
   </extensionPoints>
 
   <application-components>
@@ -62,9 +64,15 @@
     <component>
       <implementation-class>jetbrains.mps.ide.editor.MPSEditorOpener</implementation-class>
     </component>
+
+    <component>
+      <implementation-class>jetbrains.mps.ide.editor.warningPanel.MPSEditorWarningsManager</implementation-class>
+    </component>
   </project-components>
 
   <extensions defaultExtensionNs="com.intellij">
     <fileIconProvider implementation="jetbrains.mps.ide.editor.icons.NodeFileIconProvider"/>
+    <mps.editorWarningsProvider implementation="jetbrains.mps.ide.editor.warningPanel.TransientModelWarningsProvider"/>
+    <mps.editorWarningsProvider implementation="jetbrains.mps.ide.editor.warningPanel.PackagedModelWarningsProvider"/>
   </extensions>
 </components>

@@ -16,7 +16,6 @@
 package jetbrains.mps.refactoring.framework;
 
 import com.intellij.ui.ScrollPaneFactory;
-import jetbrains.mps.ide.ChooseItemComponent;
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.MPSTreeNode;

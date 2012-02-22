@@ -10,6 +10,7 @@ import jetbrains.mps.smodel.SNode;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.smodel.SModelDescriptor;
 import com.intellij.openapi.vfs.VirtualFile;
+import jetbrains.mps.vcs.util.ConflictsUtil;
 import jetbrains.mps.util.NameUtil;
 import com.intellij.openapi.vcs.AbstractVcsHelper;
 import java.util.Arrays;
@@ -17,11 +18,6 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.Generator;
-import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
-import jetbrains.mps.ide.vfs.VirtualFileUtils;
-import com.intellij.openapi.vcs.FileStatus;
-import com.intellij.openapi.vcs.FileStatusManager;
-import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.smodel.SModel;
 
 public class ConflictingModelsWarnings implements EditorWarningsProvider {
@@ -31,8 +27,8 @@ public class ConflictingModelsWarnings implements EditorWarningsProvider {
   @Nullable
   public WarningPanel getWarningPanel(@NotNull SNode node, @NotNull final Project project) {
     SModelDescriptor md = check_bmsafs_a0a0a(node.getModel());
-    final VirtualFile modelFile = getModelFileIfConflicting(md, project);
-    final VirtualFile moduleFile = getModuleFileIfConflicting(check_bmsafs_a0a2a0(md), project);
+    final VirtualFile modelFile = ConflictsUtil.getModelFileIfConflicting(md, project);
+    final VirtualFile moduleFile = ConflictsUtil.getModuleFileIfConflicting(check_bmsafs_a0a2a0(md), project);
     if (moduleFile != null) {
       String type = getModuleType(md.getModule());
       assert type != null;
@@ -77,53 +73,6 @@ public class ConflictingModelsWarnings implements EditorWarningsProvider {
       return "solution";
     } else if (module instanceof Generator) {
       return "generator";
-    }
-    return null;
-  }
-
-  public static boolean isModelOrModuleConflicting(EditableSModelDescriptor emd, Project project) {
-    return getModelFileIfConflicting(emd, project) != null || getModuleFileIfConflicting(check_bmsafs_a0a0a0b(emd), project) != null;
-  }
-
-  @Nullable
-  private static VirtualFile getModelFileIfConflicting(@Nullable SModelDescriptor md, @NotNull Project project) {
-    if (md instanceof EditableSModelDescriptor) {
-      VirtualFile vf = VirtualFileUtils.getVirtualFile(((EditableSModelDescriptor) md).getModelFile());
-      if (vf != null) {
-        FileStatus status = FileStatusManager.getInstance(project).getStatus(vf);
-        if (FileStatus.MERGED_WITH_CONFLICTS == status || FileStatus.MERGED_WITH_BOTH_CONFLICTS == status) {
-          return vf;
-        }
-      }
-    }
-    return null;
-  }
-
-  @Nullable
-  private static VirtualFile getModuleFileIfConflicting(@Nullable IModule module, @NotNull Project project) {
-    if (module instanceof Generator) {
-      module = ((Generator) module).getSourceLanguage();
-    }
-    VirtualFile vf = VirtualFileUtils.getVirtualFile(check_bmsafs_a0a1a3(module));
-    if (vf != null) {
-      FileStatus status = FileStatusManager.getInstance(project).getStatus(vf);
-      if (FileStatus.MERGED_WITH_CONFLICTS == status || FileStatus.MERGED_WITH_BOTH_CONFLICTS == status) {
-        return vf;
-      }
-    }
-    return null;
-  }
-
-  private static IModule check_bmsafs_a0a0a0b(EditableSModelDescriptor checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.getModule();
-    }
-    return null;
-  }
-
-  private static IFile check_bmsafs_a0a1a3(IModule checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.getDescriptorFile();
     }
     return null;
   }

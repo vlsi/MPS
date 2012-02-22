@@ -165,7 +165,6 @@
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
-    <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
@@ -202,7 +201,8 @@
     <path path="${base_dir}/lib/util.jar" />
     <path path="${base_dir}/lib/xstream.jar" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
-    <path path="${base_dir}/workbench/classes" />
+    <path path="${base_dir}/workbench/idea-patch/classes" />
+    <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
@@ -727,9 +727,9 @@
     <path path="${base_dir}/MPSPlugin/apiclasses" />
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/analyzers/languages/analyzers/classes_gen" />
+    <path path="${base_dir}/core/ant/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
-    <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
@@ -816,7 +816,6 @@
     <path path="${base_dir}/languages/languageDesign/traceable/solutions/pluginSolution/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/typesystem/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/typesystem/solutions/pluginSolution/classes_gen" />
-    <path path="${base_dir}/languages/util/buildlanguage/ant/classes" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/solutions/pluginSolution/classes_gen" />
@@ -853,7 +852,6 @@
     <path path="${base_dir}/lib/ant/lib/ant.jar" />
     <path path="${base_dir}/lib/asm.jar" />
     <path path="${base_dir}/lib/beansbinding-1.2.1.jar" />
-    <path path="${base_dir}/lib/bootstrap.jar" />
     <path path="${base_dir}/lib/commons-lang-2.4.jar" />
     <path path="${base_dir}/lib/commons-logging-1.1.1.jar" />
     <path path="${base_dir}/lib/diffutils-1.2.1.jar" />
@@ -882,7 +880,8 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
-    <path path="${base_dir}/workbench/classes" />
+    <path path="${base_dir}/workbench/idea-patch/classes" />
+    <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
@@ -893,9 +892,9 @@
     <path path="${base_dir}/plugins/execution-configurations/ant/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
     <path path="${base_dir}/core/analyzers/classes" />
+    <path path="${base_dir}/core/ant/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
-    <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
@@ -982,7 +981,6 @@
     <path path="${base_dir}/languages/languageDesign/traceable/solutions/pluginSolution/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/typesystem/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/typesystem/solutions/pluginSolution/classes_gen" />
-    <path path="${base_dir}/languages/util/buildlanguage/ant/classes" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/solutions/pluginSolution/classes_gen" />
@@ -1019,7 +1017,6 @@
     <path path="${base_dir}/lib/ant/lib/ant.jar" />
     <path path="${base_dir}/lib/asm.jar" />
     <path path="${base_dir}/lib/beansbinding-1.2.1.jar" />
-    <path path="${base_dir}/lib/bootstrap.jar" />
     <path path="${base_dir}/lib/commons-lang-2.4.jar" />
     <path path="${base_dir}/lib/commons-logging-1.1.1.jar" />
     <path path="${base_dir}/lib/diffutils-1.2.1.jar" />
@@ -1049,7 +1046,8 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
-    <path path="${base_dir}/workbench/classes" />
+    <path path="${base_dir}/workbench/idea-patch/classes" />
+    <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
@@ -1121,9 +1119,9 @@
     <path path="${base_dir}/languages/util/xmlDeprecated/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
     <path path="${base_dir}/core/analyzers/classes" />
+    <path path="${base_dir}/core/ant/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
-    <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
@@ -1210,7 +1208,6 @@
     <path path="${base_dir}/languages/languageDesign/traceable/solutions/pluginSolution/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/typesystem/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/typesystem/solutions/pluginSolution/classes_gen" />
-    <path path="${base_dir}/languages/util/buildlanguage/ant/classes" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/solutions/pluginSolution/classes_gen" />
@@ -1247,7 +1244,6 @@
     <path path="${base_dir}/lib/ant/lib/ant.jar" />
     <path path="${base_dir}/lib/asm.jar" />
     <path path="${base_dir}/lib/beansbinding-1.2.1.jar" />
-    <path path="${base_dir}/lib/bootstrap.jar" />
     <path path="${base_dir}/lib/commons-lang-2.4.jar" />
     <path path="${base_dir}/lib/commons-logging-1.1.1.jar" />
     <path path="${base_dir}/lib/diffutils-1.2.1.jar" />
@@ -1276,7 +1272,8 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
-    <path path="${base_dir}/workbench/classes" />
+    <path path="${base_dir}/workbench/idea-patch/classes" />
+    <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
@@ -1287,9 +1284,9 @@
     <path path="${base_dir}/languages/util/builders/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
     <path path="${base_dir}/core/analyzers/classes" />
+    <path path="${base_dir}/core/ant/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
-    <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
@@ -1377,7 +1374,6 @@
     <path path="${base_dir}/languages/languageDesign/typesystem/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/typesystem/solutions/pluginSolution/classes_gen" />
     <path path="${base_dir}/languages/util/builders/classes_gen" />
-    <path path="${base_dir}/languages/util/buildlanguage/ant/classes" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/solutions/pluginSolution/classes_gen" />
@@ -1414,7 +1410,6 @@
     <path path="${base_dir}/lib/ant/lib/ant.jar" />
     <path path="${base_dir}/lib/asm.jar" />
     <path path="${base_dir}/lib/beansbinding-1.2.1.jar" />
-    <path path="${base_dir}/lib/bootstrap.jar" />
     <path path="${base_dir}/lib/commons-lang-2.4.jar" />
     <path path="${base_dir}/lib/commons-logging-1.1.1.jar" />
     <path path="${base_dir}/lib/diffutils-1.2.1.jar" />
@@ -1443,7 +1438,8 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
-    <path path="${base_dir}/workbench/classes" />
+    <path path="${base_dir}/workbench/idea-patch/classes" />
+    <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
@@ -1454,9 +1450,9 @@
     <path path="${base_dir}/languages/baseLanguage/collections/languages/trove/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
     <path path="${base_dir}/core/analyzers/classes" />
+    <path path="${base_dir}/core/ant/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
-    <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
@@ -1544,7 +1540,6 @@
     <path path="${base_dir}/languages/languageDesign/traceable/solutions/pluginSolution/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/typesystem/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/typesystem/solutions/pluginSolution/classes_gen" />
-    <path path="${base_dir}/languages/util/buildlanguage/ant/classes" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/solutions/pluginSolution/classes_gen" />
@@ -1581,7 +1576,6 @@
     <path path="${base_dir}/lib/ant/lib/ant.jar" />
     <path path="${base_dir}/lib/asm.jar" />
     <path path="${base_dir}/lib/beansbinding-1.2.1.jar" />
-    <path path="${base_dir}/lib/bootstrap.jar" />
     <path path="${base_dir}/lib/commons-lang-2.4.jar" />
     <path path="${base_dir}/lib/commons-logging-1.1.1.jar" />
     <path path="${base_dir}/lib/diffutils-1.2.1.jar" />
@@ -1610,7 +1604,8 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
-    <path path="${base_dir}/workbench/classes" />
+    <path path="${base_dir}/workbench/idea-patch/classes" />
+    <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
@@ -1621,9 +1616,9 @@
     <path path="${base_dir}/languages/baseLanguage/constructors/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
     <path path="${base_dir}/core/analyzers/classes" />
+    <path path="${base_dir}/core/ant/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
-    <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
@@ -1711,7 +1706,6 @@
     <path path="${base_dir}/languages/languageDesign/traceable/solutions/pluginSolution/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/typesystem/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/typesystem/solutions/pluginSolution/classes_gen" />
-    <path path="${base_dir}/languages/util/buildlanguage/ant/classes" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/solutions/pluginSolution/classes_gen" />
@@ -1748,7 +1742,6 @@
     <path path="${base_dir}/lib/ant/lib/ant.jar" />
     <path path="${base_dir}/lib/asm.jar" />
     <path path="${base_dir}/lib/beansbinding-1.2.1.jar" />
-    <path path="${base_dir}/lib/bootstrap.jar" />
     <path path="${base_dir}/lib/commons-lang-2.4.jar" />
     <path path="${base_dir}/lib/commons-logging-1.1.1.jar" />
     <path path="${base_dir}/lib/diffutils-1.2.1.jar" />
@@ -1777,7 +1770,8 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
-    <path path="${base_dir}/workbench/classes" />
+    <path path="${base_dir}/workbench/idea-patch/classes" />
+    <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
@@ -1788,9 +1782,9 @@
     <path path="${base_dir}/languages/util/contracts/languages/contracts/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
     <path path="${base_dir}/core/analyzers/classes" />
+    <path path="${base_dir}/core/ant/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
-    <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
@@ -1877,7 +1871,6 @@
     <path path="${base_dir}/languages/languageDesign/traceable/solutions/pluginSolution/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/typesystem/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/typesystem/solutions/pluginSolution/classes_gen" />
-    <path path="${base_dir}/languages/util/buildlanguage/ant/classes" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/solutions/pluginSolution/classes_gen" />
@@ -1915,7 +1908,6 @@
     <path path="${base_dir}/lib/ant/lib/ant.jar" />
     <path path="${base_dir}/lib/asm.jar" />
     <path path="${base_dir}/lib/beansbinding-1.2.1.jar" />
-    <path path="${base_dir}/lib/bootstrap.jar" />
     <path path="${base_dir}/lib/commons-lang-2.4.jar" />
     <path path="${base_dir}/lib/commons-logging-1.1.1.jar" />
     <path path="${base_dir}/lib/diffutils-1.2.1.jar" />
@@ -1944,7 +1936,8 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
-    <path path="${base_dir}/workbench/classes" />
+    <path path="${base_dir}/workbench/idea-patch/classes" />
+    <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
@@ -1955,9 +1948,9 @@
     <path path="${base_dir}/languages/util/dates/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
     <path path="${base_dir}/core/analyzers/classes" />
+    <path path="${base_dir}/core/ant/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
-    <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
@@ -2044,7 +2037,6 @@
     <path path="${base_dir}/languages/languageDesign/traceable/solutions/pluginSolution/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/typesystem/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/typesystem/solutions/pluginSolution/classes_gen" />
-    <path path="${base_dir}/languages/util/buildlanguage/ant/classes" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/solutions/pluginSolution/classes_gen" />
@@ -2083,7 +2075,6 @@
     <path path="${base_dir}/lib/ant/lib/ant.jar" />
     <path path="${base_dir}/lib/asm.jar" />
     <path path="${base_dir}/lib/beansbinding-1.2.1.jar" />
-    <path path="${base_dir}/lib/bootstrap.jar" />
     <path path="${base_dir}/lib/commons-lang-2.4.jar" />
     <path path="${base_dir}/lib/commons-logging-1.1.1.jar" />
     <path path="${base_dir}/lib/diffutils-1.2.1.jar" />
@@ -2112,7 +2103,8 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
-    <path path="${base_dir}/workbench/classes" />
+    <path path="${base_dir}/workbench/idea-patch/classes" />
+    <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
@@ -2123,9 +2115,9 @@
     <path path="${base_dir}/languages/util/dates/solutions/pluginSolution/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
     <path path="${base_dir}/core/analyzers/classes" />
+    <path path="${base_dir}/core/ant/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
-    <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
@@ -2212,7 +2204,6 @@
     <path path="${base_dir}/languages/languageDesign/traceable/solutions/pluginSolution/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/typesystem/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/typesystem/solutions/pluginSolution/classes_gen" />
-    <path path="${base_dir}/languages/util/buildlanguage/ant/classes" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/solutions/pluginSolution/classes_gen" />
@@ -2252,7 +2243,6 @@
     <path path="${base_dir}/lib/ant/lib/ant.jar" />
     <path path="${base_dir}/lib/asm.jar" />
     <path path="${base_dir}/lib/beansbinding-1.2.1.jar" />
-    <path path="${base_dir}/lib/bootstrap.jar" />
     <path path="${base_dir}/lib/commons-lang-2.4.jar" />
     <path path="${base_dir}/lib/commons-logging-1.1.1.jar" />
     <path path="${base_dir}/lib/diffutils-1.2.1.jar" />
@@ -2281,7 +2271,8 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
-    <path path="${base_dir}/workbench/classes" />
+    <path path="${base_dir}/workbench/idea-patch/classes" />
+    <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
@@ -2303,9 +2294,9 @@
     <path path="${base_dir}/languages/util/dates/internal/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
     <path path="${base_dir}/core/analyzers/classes" />
+    <path path="${base_dir}/core/ant/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
-    <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
@@ -2392,7 +2383,6 @@
     <path path="${base_dir}/languages/languageDesign/traceable/solutions/pluginSolution/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/typesystem/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/typesystem/solutions/pluginSolution/classes_gen" />
-    <path path="${base_dir}/languages/util/buildlanguage/ant/classes" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/solutions/pluginSolution/classes_gen" />
@@ -2430,7 +2420,6 @@
     <path path="${base_dir}/lib/ant/lib/ant.jar" />
     <path path="${base_dir}/lib/asm.jar" />
     <path path="${base_dir}/lib/beansbinding-1.2.1.jar" />
-    <path path="${base_dir}/lib/bootstrap.jar" />
     <path path="${base_dir}/lib/commons-lang-2.4.jar" />
     <path path="${base_dir}/lib/commons-logging-1.1.1.jar" />
     <path path="${base_dir}/lib/diffutils-1.2.1.jar" />
@@ -2459,7 +2448,8 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
-    <path path="${base_dir}/workbench/classes" />
+    <path path="${base_dir}/workbench/idea-patch/classes" />
+    <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
@@ -2472,7 +2462,6 @@
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
-    <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
@@ -2511,7 +2500,8 @@
     <path path="${base_dir}/lib/xstream.jar" />
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.startup/classes_gen" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
-    <path path="${base_dir}/workbench/classes" />
+    <path path="${base_dir}/workbench/idea-patch/classes" />
+    <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
@@ -2522,9 +2512,9 @@
     <path path="${base_dir}/plugins/execution-configurations/baseLanguage/jetbrains.mps.baseLanguage.execution.api/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
     <path path="${base_dir}/core/analyzers/classes" />
+    <path path="${base_dir}/core/ant/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
-    <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
@@ -2611,7 +2601,6 @@
     <path path="${base_dir}/languages/languageDesign/traceable/solutions/pluginSolution/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/typesystem/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/typesystem/solutions/pluginSolution/classes_gen" />
-    <path path="${base_dir}/languages/util/buildlanguage/ant/classes" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/solutions/pluginSolution/classes_gen" />
@@ -2648,7 +2637,6 @@
     <path path="${base_dir}/lib/ant/lib/ant.jar" />
     <path path="${base_dir}/lib/asm.jar" />
     <path path="${base_dir}/lib/beansbinding-1.2.1.jar" />
-    <path path="${base_dir}/lib/bootstrap.jar" />
     <path path="${base_dir}/lib/commons-lang-2.4.jar" />
     <path path="${base_dir}/lib/commons-logging-1.1.1.jar" />
     <path path="${base_dir}/lib/diffutils-1.2.1.jar" />
@@ -2677,7 +2665,8 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
-    <path path="${base_dir}/workbench/classes" />
+    <path path="${base_dir}/workbench/idea-patch/classes" />
+    <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
@@ -2688,9 +2677,9 @@
     <path path="${base_dir}/languages/baseLanguage/jdk7/languages/jdk7/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
     <path path="${base_dir}/core/analyzers/classes" />
+    <path path="${base_dir}/core/ant/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
-    <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
@@ -2778,7 +2767,6 @@
     <path path="${base_dir}/languages/languageDesign/traceable/solutions/pluginSolution/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/typesystem/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/typesystem/solutions/pluginSolution/classes_gen" />
-    <path path="${base_dir}/languages/util/buildlanguage/ant/classes" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/solutions/pluginSolution/classes_gen" />
@@ -2815,7 +2803,6 @@
     <path path="${base_dir}/lib/ant/lib/ant.jar" />
     <path path="${base_dir}/lib/asm.jar" />
     <path path="${base_dir}/lib/beansbinding-1.2.1.jar" />
-    <path path="${base_dir}/lib/bootstrap.jar" />
     <path path="${base_dir}/lib/commons-lang-2.4.jar" />
     <path path="${base_dir}/lib/commons-logging-1.1.1.jar" />
     <path path="${base_dir}/lib/diffutils-1.2.1.jar" />
@@ -2844,7 +2831,8 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
-    <path path="${base_dir}/workbench/classes" />
+    <path path="${base_dir}/workbench/idea-patch/classes" />
+    <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
@@ -2855,9 +2843,9 @@
     <path path="${base_dir}/languages/baseLanguage/logging/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
     <path path="${base_dir}/core/analyzers/classes" />
+    <path path="${base_dir}/core/ant/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
-    <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
@@ -2944,7 +2932,6 @@
     <path path="${base_dir}/languages/languageDesign/traceable/solutions/pluginSolution/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/typesystem/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/typesystem/solutions/pluginSolution/classes_gen" />
-    <path path="${base_dir}/languages/util/buildlanguage/ant/classes" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/solutions/pluginSolution/classes_gen" />
@@ -2981,7 +2968,6 @@
     <path path="${base_dir}/lib/ant/lib/ant.jar" />
     <path path="${base_dir}/lib/asm.jar" />
     <path path="${base_dir}/lib/beansbinding-1.2.1.jar" />
-    <path path="${base_dir}/lib/bootstrap.jar" />
     <path path="${base_dir}/lib/commons-lang-2.4.jar" />
     <path path="${base_dir}/lib/commons-logging-1.1.1.jar" />
     <path path="${base_dir}/lib/diffutils-1.2.1.jar" />
@@ -3010,7 +2996,8 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
-    <path path="${base_dir}/workbench/classes" />
+    <path path="${base_dir}/workbench/idea-patch/classes" />
+    <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
@@ -3021,9 +3008,9 @@
     <path path="${base_dir}/languages/util/math/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
     <path path="${base_dir}/core/analyzers/classes" />
+    <path path="${base_dir}/core/ant/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
-    <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
@@ -3110,7 +3097,6 @@
     <path path="${base_dir}/languages/languageDesign/traceable/solutions/pluginSolution/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/typesystem/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/typesystem/solutions/pluginSolution/classes_gen" />
-    <path path="${base_dir}/languages/util/buildlanguage/ant/classes" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/solutions/pluginSolution/classes_gen" />
@@ -3149,7 +3135,6 @@
     <path path="${base_dir}/lib/ant/lib/ant.jar" />
     <path path="${base_dir}/lib/asm.jar" />
     <path path="${base_dir}/lib/beansbinding-1.2.1.jar" />
-    <path path="${base_dir}/lib/bootstrap.jar" />
     <path path="${base_dir}/lib/commons-lang-2.4.jar" />
     <path path="${base_dir}/lib/commons-logging-1.1.1.jar" />
     <path path="${base_dir}/lib/diffutils-1.2.1.jar" />
@@ -3178,7 +3163,8 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
-    <path path="${base_dir}/workbench/classes" />
+    <path path="${base_dir}/workbench/idea-patch/classes" />
+    <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
@@ -3190,7 +3176,6 @@
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
-    <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
@@ -3247,9 +3232,9 @@
     <path path="${base_dir}/languages/util/money/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
     <path path="${base_dir}/core/analyzers/classes" />
+    <path path="${base_dir}/core/ant/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
-    <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
@@ -3336,7 +3321,6 @@
     <path path="${base_dir}/languages/languageDesign/traceable/solutions/pluginSolution/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/typesystem/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/typesystem/solutions/pluginSolution/classes_gen" />
-    <path path="${base_dir}/languages/util/buildlanguage/ant/classes" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/solutions/pluginSolution/classes_gen" />
@@ -3374,7 +3358,6 @@
     <path path="${base_dir}/lib/ant/lib/ant.jar" />
     <path path="${base_dir}/lib/asm.jar" />
     <path path="${base_dir}/lib/beansbinding-1.2.1.jar" />
-    <path path="${base_dir}/lib/bootstrap.jar" />
     <path path="${base_dir}/lib/commons-lang-2.4.jar" />
     <path path="${base_dir}/lib/commons-logging-1.1.1.jar" />
     <path path="${base_dir}/lib/diffutils-1.2.1.jar" />
@@ -3403,7 +3386,8 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
-    <path path="${base_dir}/workbench/classes" />
+    <path path="${base_dir}/workbench/idea-patch/classes" />
+    <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
@@ -3421,9 +3405,9 @@
     <path path="${base_dir}/languages/baseLanguage/overloadedOperators/languages/overloadedOperators/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
     <path path="${base_dir}/core/analyzers/classes" />
+    <path path="${base_dir}/core/ant/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
-    <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
@@ -3511,7 +3495,6 @@
     <path path="${base_dir}/languages/languageDesign/traceable/solutions/pluginSolution/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/typesystem/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/typesystem/solutions/pluginSolution/classes_gen" />
-    <path path="${base_dir}/languages/util/buildlanguage/ant/classes" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/solutions/pluginSolution/classes_gen" />
@@ -3548,7 +3531,6 @@
     <path path="${base_dir}/lib/ant/lib/ant.jar" />
     <path path="${base_dir}/lib/asm.jar" />
     <path path="${base_dir}/lib/beansbinding-1.2.1.jar" />
-    <path path="${base_dir}/lib/bootstrap.jar" />
     <path path="${base_dir}/lib/commons-lang-2.4.jar" />
     <path path="${base_dir}/lib/commons-logging-1.1.1.jar" />
     <path path="${base_dir}/lib/diffutils-1.2.1.jar" />
@@ -3577,7 +3559,8 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
-    <path path="${base_dir}/workbench/classes" />
+    <path path="${base_dir}/workbench/idea-patch/classes" />
+    <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
@@ -3588,9 +3571,9 @@
     <path path="${base_dir}/languages/util/regexp/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
     <path path="${base_dir}/core/analyzers/classes" />
+    <path path="${base_dir}/core/ant/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
-    <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
@@ -3677,7 +3660,6 @@
     <path path="${base_dir}/languages/languageDesign/traceable/solutions/pluginSolution/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/typesystem/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/typesystem/solutions/pluginSolution/classes_gen" />
-    <path path="${base_dir}/languages/util/buildlanguage/ant/classes" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/solutions/pluginSolution/classes_gen" />
@@ -3715,7 +3697,6 @@
     <path path="${base_dir}/lib/ant/lib/ant.jar" />
     <path path="${base_dir}/lib/asm.jar" />
     <path path="${base_dir}/lib/beansbinding-1.2.1.jar" />
-    <path path="${base_dir}/lib/bootstrap.jar" />
     <path path="${base_dir}/lib/commons-lang-2.4.jar" />
     <path path="${base_dir}/lib/commons-logging-1.1.1.jar" />
     <path path="${base_dir}/lib/diffutils-1.2.1.jar" />
@@ -3744,7 +3725,8 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
-    <path path="${base_dir}/workbench/classes" />
+    <path path="${base_dir}/workbench/idea-patch/classes" />
+    <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
@@ -3784,9 +3766,9 @@
     <path path="${base_dir}/plugins/execution-configurations/unitTests/runtime/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
     <path path="${base_dir}/core/analyzers/classes" />
+    <path path="${base_dir}/core/ant/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
-    <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
@@ -3873,7 +3855,6 @@
     <path path="${base_dir}/languages/languageDesign/traceable/solutions/pluginSolution/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/typesystem/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/typesystem/solutions/pluginSolution/classes_gen" />
-    <path path="${base_dir}/languages/util/buildlanguage/ant/classes" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/solutions/pluginSolution/classes_gen" />
@@ -3910,7 +3891,6 @@
     <path path="${base_dir}/lib/ant/lib/ant.jar" />
     <path path="${base_dir}/lib/asm.jar" />
     <path path="${base_dir}/lib/beansbinding-1.2.1.jar" />
-    <path path="${base_dir}/lib/bootstrap.jar" />
     <path path="${base_dir}/lib/commons-lang-2.4.jar" />
     <path path="${base_dir}/lib/commons-logging-1.1.1.jar" />
     <path path="${base_dir}/lib/diffutils-1.2.1.jar" />
@@ -3939,7 +3919,8 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
-    <path path="${base_dir}/workbench/classes" />
+    <path path="${base_dir}/workbench/idea-patch/classes" />
+    <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
@@ -3956,9 +3937,9 @@
     <path path="${base_dir}/languages/util/bash/languages/bash/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
     <path path="${base_dir}/core/analyzers/classes" />
+    <path path="${base_dir}/core/ant/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
-    <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
@@ -4046,7 +4027,6 @@
     <path path="${base_dir}/languages/languageDesign/typesystem/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/typesystem/solutions/pluginSolution/classes_gen" />
     <path path="${base_dir}/languages/util/bash/languages/bash/classes_gen" />
-    <path path="${base_dir}/languages/util/buildlanguage/ant/classes" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/solutions/pluginSolution/classes_gen" />
@@ -4083,7 +4063,6 @@
     <path path="${base_dir}/lib/ant/lib/ant.jar" />
     <path path="${base_dir}/lib/asm.jar" />
     <path path="${base_dir}/lib/beansbinding-1.2.1.jar" />
-    <path path="${base_dir}/lib/bootstrap.jar" />
     <path path="${base_dir}/lib/commons-lang-2.4.jar" />
     <path path="${base_dir}/lib/commons-logging-1.1.1.jar" />
     <path path="${base_dir}/lib/diffutils-1.2.1.jar" />
@@ -4112,7 +4091,8 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
-    <path path="${base_dir}/workbench/classes" />
+    <path path="${base_dir}/workbench/idea-patch/classes" />
+    <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
@@ -4123,9 +4103,9 @@
     <path path="${base_dir}/languages/util/buildlanguage/languages/custommps/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
     <path path="${base_dir}/core/analyzers/classes" />
+    <path path="${base_dir}/core/ant/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
-    <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
@@ -4212,7 +4192,6 @@
     <path path="${base_dir}/languages/languageDesign/traceable/solutions/pluginSolution/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/typesystem/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/typesystem/solutions/pluginSolution/classes_gen" />
-    <path path="${base_dir}/languages/util/buildlanguage/ant/classes" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/custommps/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/classes_gen" />
@@ -4252,7 +4231,6 @@
     <path path="${base_dir}/lib/ant/lib/ant.jar" />
     <path path="${base_dir}/lib/asm.jar" />
     <path path="${base_dir}/lib/beansbinding-1.2.1.jar" />
-    <path path="${base_dir}/lib/bootstrap.jar" />
     <path path="${base_dir}/lib/commons-lang-2.4.jar" />
     <path path="${base_dir}/lib/commons-logging-1.1.1.jar" />
     <path path="${base_dir}/lib/diffutils-1.2.1.jar" />
@@ -4281,7 +4259,8 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
-    <path path="${base_dir}/workbench/classes" />
+    <path path="${base_dir}/workbench/idea-patch/classes" />
+    <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
@@ -4292,9 +4271,9 @@
     <path path="${base_dir}/languages/util/buildlanguage/languages/custommps/solutions/pluginSolution/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
     <path path="${base_dir}/core/analyzers/classes" />
+    <path path="${base_dir}/core/ant/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
-    <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
@@ -4381,7 +4360,6 @@
     <path path="${base_dir}/languages/languageDesign/traceable/solutions/pluginSolution/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/typesystem/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/typesystem/solutions/pluginSolution/classes_gen" />
-    <path path="${base_dir}/languages/util/buildlanguage/ant/classes" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/custommps/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/custommps/solutions/pluginSolution/classes_gen" />
@@ -4423,7 +4401,6 @@
     <path path="${base_dir}/lib/ant/lib/ant.jar" />
     <path path="${base_dir}/lib/asm.jar" />
     <path path="${base_dir}/lib/beansbinding-1.2.1.jar" />
-    <path path="${base_dir}/lib/bootstrap.jar" />
     <path path="${base_dir}/lib/commons-lang-2.4.jar" />
     <path path="${base_dir}/lib/commons-logging-1.1.1.jar" />
     <path path="${base_dir}/lib/diffutils-1.2.1.jar" />
@@ -4452,7 +4429,8 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
-    <path path="${base_dir}/workbench/classes" />
+    <path path="${base_dir}/workbench/idea-patch/classes" />
+    <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
@@ -4463,9 +4441,9 @@
     <path path="${base_dir}/languages/util/buildlanguage/languages/dependency/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
     <path path="${base_dir}/core/analyzers/classes" />
+    <path path="${base_dir}/core/ant/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
-    <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
@@ -4552,7 +4530,6 @@
     <path path="${base_dir}/languages/languageDesign/traceable/solutions/pluginSolution/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/typesystem/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/typesystem/solutions/pluginSolution/classes_gen" />
-    <path path="${base_dir}/languages/util/buildlanguage/ant/classes" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/dependency/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/classes_gen" />
@@ -4590,7 +4567,6 @@
     <path path="${base_dir}/lib/ant/lib/ant.jar" />
     <path path="${base_dir}/lib/asm.jar" />
     <path path="${base_dir}/lib/beansbinding-1.2.1.jar" />
-    <path path="${base_dir}/lib/bootstrap.jar" />
     <path path="${base_dir}/lib/commons-lang-2.4.jar" />
     <path path="${base_dir}/lib/commons-logging-1.1.1.jar" />
     <path path="${base_dir}/lib/diffutils-1.2.1.jar" />
@@ -4619,7 +4595,8 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
-    <path path="${base_dir}/workbench/classes" />
+    <path path="${base_dir}/workbench/idea-patch/classes" />
+    <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
@@ -4630,9 +4607,9 @@
     <path path="${base_dir}/languages/util/buildlanguage/languages/gentest/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
     <path path="${base_dir}/core/analyzers/classes" />
+    <path path="${base_dir}/core/ant/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
-    <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
@@ -4719,7 +4696,6 @@
     <path path="${base_dir}/languages/languageDesign/traceable/solutions/pluginSolution/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/typesystem/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/typesystem/solutions/pluginSolution/classes_gen" />
-    <path path="${base_dir}/languages/util/buildlanguage/ant/classes" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/solutions/pluginSolution/classes_gen" />
@@ -4756,7 +4732,6 @@
     <path path="${base_dir}/lib/ant/lib/ant.jar" />
     <path path="${base_dir}/lib/asm.jar" />
     <path path="${base_dir}/lib/beansbinding-1.2.1.jar" />
-    <path path="${base_dir}/lib/bootstrap.jar" />
     <path path="${base_dir}/lib/commons-lang-2.4.jar" />
     <path path="${base_dir}/lib/commons-logging-1.1.1.jar" />
     <path path="${base_dir}/lib/diffutils-1.2.1.jar" />
@@ -4785,7 +4760,8 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
-    <path path="${base_dir}/workbench/classes" />
+    <path path="${base_dir}/workbench/idea-patch/classes" />
+    <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
@@ -4796,9 +4772,9 @@
     <path path="${base_dir}/languages/util/buildlanguage/languages/gentest/solutions/pluginSolution/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
     <path path="${base_dir}/core/analyzers/classes" />
+    <path path="${base_dir}/core/ant/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
-    <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
@@ -4885,7 +4861,6 @@
     <path path="${base_dir}/languages/languageDesign/traceable/solutions/pluginSolution/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/typesystem/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/typesystem/solutions/pluginSolution/classes_gen" />
-    <path path="${base_dir}/languages/util/buildlanguage/ant/classes" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/solutions/pluginSolution/classes_gen" />
@@ -4922,7 +4897,6 @@
     <path path="${base_dir}/lib/ant/lib/ant.jar" />
     <path path="${base_dir}/lib/asm.jar" />
     <path path="${base_dir}/lib/beansbinding-1.2.1.jar" />
-    <path path="${base_dir}/lib/bootstrap.jar" />
     <path path="${base_dir}/lib/commons-lang-2.4.jar" />
     <path path="${base_dir}/lib/commons-logging-1.1.1.jar" />
     <path path="${base_dir}/lib/diffutils-1.2.1.jar" />
@@ -4951,7 +4925,8 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
-    <path path="${base_dir}/workbench/classes" />
+    <path path="${base_dir}/workbench/idea-patch/classes" />
+    <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
@@ -4962,9 +4937,9 @@
     <path path="${base_dir}/languages/util/buildlanguage/solutions/jetbrains.mps.build.mpsdist/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
     <path path="${base_dir}/core/analyzers/classes" />
+    <path path="${base_dir}/core/ant/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
-    <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
@@ -5051,7 +5026,6 @@
     <path path="${base_dir}/languages/languageDesign/traceable/solutions/pluginSolution/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/typesystem/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/typesystem/solutions/pluginSolution/classes_gen" />
-    <path path="${base_dir}/languages/util/buildlanguage/ant/classes" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/solutions/pluginSolution/classes_gen" />
@@ -5089,7 +5063,6 @@
     <path path="${base_dir}/lib/ant/lib/ant.jar" />
     <path path="${base_dir}/lib/asm.jar" />
     <path path="${base_dir}/lib/beansbinding-1.2.1.jar" />
-    <path path="${base_dir}/lib/bootstrap.jar" />
     <path path="${base_dir}/lib/commons-lang-2.4.jar" />
     <path path="${base_dir}/lib/commons-logging-1.1.1.jar" />
     <path path="${base_dir}/lib/diffutils-1.2.1.jar" />
@@ -5118,7 +5091,8 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
-    <path path="${base_dir}/workbench/classes" />
+    <path path="${base_dir}/workbench/idea-patch/classes" />
+    <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
@@ -5129,9 +5103,9 @@
     <path path="${base_dir}/languages/util/buildlanguage/languages/packaging/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
     <path path="${base_dir}/core/analyzers/classes" />
+    <path path="${base_dir}/core/ant/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
-    <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
@@ -5218,7 +5192,6 @@
     <path path="${base_dir}/languages/languageDesign/traceable/solutions/pluginSolution/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/typesystem/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/typesystem/solutions/pluginSolution/classes_gen" />
-    <path path="${base_dir}/languages/util/buildlanguage/ant/classes" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/solutions/pluginSolution/classes_gen" />
@@ -5256,7 +5229,6 @@
     <path path="${base_dir}/lib/ant/lib/ant.jar" />
     <path path="${base_dir}/lib/asm.jar" />
     <path path="${base_dir}/lib/beansbinding-1.2.1.jar" />
-    <path path="${base_dir}/lib/bootstrap.jar" />
     <path path="${base_dir}/lib/commons-lang-2.4.jar" />
     <path path="${base_dir}/lib/commons-logging-1.1.1.jar" />
     <path path="${base_dir}/lib/diffutils-1.2.1.jar" />
@@ -5285,7 +5257,8 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
-    <path path="${base_dir}/workbench/classes" />
+    <path path="${base_dir}/workbench/idea-patch/classes" />
+    <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
@@ -5296,9 +5269,9 @@
     <path path="${base_dir}/languages/util/buildlanguage/languages/packaging/solutions/pluginSolution/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
     <path path="${base_dir}/core/analyzers/classes" />
+    <path path="${base_dir}/core/ant/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
-    <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
@@ -5385,7 +5358,6 @@
     <path path="${base_dir}/languages/languageDesign/traceable/solutions/pluginSolution/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/typesystem/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/typesystem/solutions/pluginSolution/classes_gen" />
-    <path path="${base_dir}/languages/util/buildlanguage/ant/classes" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/solutions/pluginSolution/classes_gen" />
@@ -5424,7 +5396,6 @@
     <path path="${base_dir}/lib/ant/lib/ant.jar" />
     <path path="${base_dir}/lib/asm.jar" />
     <path path="${base_dir}/lib/beansbinding-1.2.1.jar" />
-    <path path="${base_dir}/lib/bootstrap.jar" />
     <path path="${base_dir}/lib/commons-lang-2.4.jar" />
     <path path="${base_dir}/lib/commons-logging-1.1.1.jar" />
     <path path="${base_dir}/lib/diffutils-1.2.1.jar" />
@@ -5453,7 +5424,8 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
-    <path path="${base_dir}/workbench/classes" />
+    <path path="${base_dir}/workbench/idea-patch/classes" />
+    <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
@@ -5464,9 +5436,9 @@
     <path path="${base_dir}/languages/util/buildlanguage/languages/reduced/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
     <path path="${base_dir}/core/analyzers/classes" />
+    <path path="${base_dir}/core/ant/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
-    <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
@@ -5553,7 +5525,6 @@
     <path path="${base_dir}/languages/languageDesign/traceable/solutions/pluginSolution/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/typesystem/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/typesystem/solutions/pluginSolution/classes_gen" />
-    <path path="${base_dir}/languages/util/buildlanguage/ant/classes" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/solutions/pluginSolution/classes_gen" />
@@ -5590,7 +5561,6 @@
     <path path="${base_dir}/lib/ant/lib/ant.jar" />
     <path path="${base_dir}/lib/asm.jar" />
     <path path="${base_dir}/lib/beansbinding-1.2.1.jar" />
-    <path path="${base_dir}/lib/bootstrap.jar" />
     <path path="${base_dir}/lib/commons-lang-2.4.jar" />
     <path path="${base_dir}/lib/commons-logging-1.1.1.jar" />
     <path path="${base_dir}/lib/diffutils-1.2.1.jar" />
@@ -5619,7 +5589,8 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
-    <path path="${base_dir}/workbench/classes" />
+    <path path="${base_dir}/workbench/idea-patch/classes" />
+    <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
@@ -5630,9 +5601,9 @@
     <path path="${base_dir}/languages/util/buildlanguage/languages/startup/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
     <path path="${base_dir}/core/analyzers/classes" />
+    <path path="${base_dir}/core/ant/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
-    <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
@@ -5719,7 +5690,6 @@
     <path path="${base_dir}/languages/languageDesign/traceable/solutions/pluginSolution/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/typesystem/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/typesystem/solutions/pluginSolution/classes_gen" />
-    <path path="${base_dir}/languages/util/buildlanguage/ant/classes" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/solutions/pluginSolution/classes_gen" />
@@ -5757,7 +5727,6 @@
     <path path="${base_dir}/lib/ant/lib/ant.jar" />
     <path path="${base_dir}/lib/asm.jar" />
     <path path="${base_dir}/lib/beansbinding-1.2.1.jar" />
-    <path path="${base_dir}/lib/bootstrap.jar" />
     <path path="${base_dir}/lib/commons-lang-2.4.jar" />
     <path path="${base_dir}/lib/commons-logging-1.1.1.jar" />
     <path path="${base_dir}/lib/diffutils-1.2.1.jar" />
@@ -5786,7 +5755,8 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
-    <path path="${base_dir}/workbench/classes" />
+    <path path="${base_dir}/workbench/idea-patch/classes" />
+    <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
@@ -5797,9 +5767,9 @@
     <path path="${base_dir}/plugins/debugger-api-languages/jetbrains.mps.debugger.api.lang/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
     <path path="${base_dir}/core/analyzers/classes" />
+    <path path="${base_dir}/core/ant/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
-    <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
@@ -5886,7 +5856,6 @@
     <path path="${base_dir}/languages/languageDesign/traceable/solutions/pluginSolution/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/typesystem/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/typesystem/solutions/pluginSolution/classes_gen" />
-    <path path="${base_dir}/languages/util/buildlanguage/ant/classes" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/solutions/pluginSolution/classes_gen" />
@@ -5923,7 +5892,6 @@
     <path path="${base_dir}/lib/ant/lib/ant.jar" />
     <path path="${base_dir}/lib/asm.jar" />
     <path path="${base_dir}/lib/beansbinding-1.2.1.jar" />
-    <path path="${base_dir}/lib/bootstrap.jar" />
     <path path="${base_dir}/lib/commons-lang-2.4.jar" />
     <path path="${base_dir}/lib/commons-logging-1.1.1.jar" />
     <path path="${base_dir}/lib/diffutils-1.2.1.jar" />
@@ -5953,7 +5921,8 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
-    <path path="${base_dir}/workbench/classes" />
+    <path path="${base_dir}/workbench/idea-patch/classes" />
+    <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
@@ -5964,9 +5933,9 @@
     <path path="${base_dir}/plugins/debugger-java/languages/customViewers/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
     <path path="${base_dir}/core/analyzers/classes" />
+    <path path="${base_dir}/core/ant/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
-    <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
@@ -6053,7 +6022,6 @@
     <path path="${base_dir}/languages/languageDesign/traceable/solutions/pluginSolution/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/typesystem/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/typesystem/solutions/pluginSolution/classes_gen" />
-    <path path="${base_dir}/languages/util/buildlanguage/ant/classes" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/solutions/pluginSolution/classes_gen" />
@@ -6090,7 +6058,6 @@
     <path path="${base_dir}/lib/ant/lib/ant.jar" />
     <path path="${base_dir}/lib/asm.jar" />
     <path path="${base_dir}/lib/beansbinding-1.2.1.jar" />
-    <path path="${base_dir}/lib/bootstrap.jar" />
     <path path="${base_dir}/lib/commons-lang-2.4.jar" />
     <path path="${base_dir}/lib/commons-logging-1.1.1.jar" />
     <path path="${base_dir}/lib/diffutils-1.2.1.jar" />
@@ -6120,7 +6087,8 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
-    <path path="${base_dir}/workbench/classes" />
+    <path path="${base_dir}/workbench/idea-patch/classes" />
+    <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
@@ -6131,9 +6099,9 @@
     <path path="${base_dir}/plugins/debugger-java/languages/evaluation/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
     <path path="${base_dir}/core/analyzers/classes" />
+    <path path="${base_dir}/core/ant/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
-    <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
@@ -6220,7 +6188,6 @@
     <path path="${base_dir}/languages/languageDesign/traceable/solutions/pluginSolution/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/typesystem/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/typesystem/solutions/pluginSolution/classes_gen" />
-    <path path="${base_dir}/languages/util/buildlanguage/ant/classes" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/solutions/pluginSolution/classes_gen" />
@@ -6257,7 +6224,6 @@
     <path path="${base_dir}/lib/ant/lib/ant.jar" />
     <path path="${base_dir}/lib/asm.jar" />
     <path path="${base_dir}/lib/beansbinding-1.2.1.jar" />
-    <path path="${base_dir}/lib/bootstrap.jar" />
     <path path="${base_dir}/lib/commons-lang-2.4.jar" />
     <path path="${base_dir}/lib/commons-logging-1.1.1.jar" />
     <path path="${base_dir}/lib/diffutils-1.2.1.jar" />
@@ -6286,7 +6252,8 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
-    <path path="${base_dir}/workbench/classes" />
+    <path path="${base_dir}/workbench/idea-patch/classes" />
+    <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
@@ -6297,9 +6264,9 @@
     <path path="${base_dir}/plugins/debugger-java/languages/privateMembers/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
     <path path="${base_dir}/core/analyzers/classes" />
+    <path path="${base_dir}/core/ant/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
-    <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
@@ -6386,7 +6353,6 @@
     <path path="${base_dir}/languages/languageDesign/traceable/solutions/pluginSolution/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/typesystem/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/typesystem/solutions/pluginSolution/classes_gen" />
-    <path path="${base_dir}/languages/util/buildlanguage/ant/classes" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/solutions/pluginSolution/classes_gen" />
@@ -6423,7 +6389,6 @@
     <path path="${base_dir}/lib/ant/lib/ant.jar" />
     <path path="${base_dir}/lib/asm.jar" />
     <path path="${base_dir}/lib/beansbinding-1.2.1.jar" />
-    <path path="${base_dir}/lib/bootstrap.jar" />
     <path path="${base_dir}/lib/commons-lang-2.4.jar" />
     <path path="${base_dir}/lib/commons-logging-1.1.1.jar" />
     <path path="${base_dir}/lib/diffutils-1.2.1.jar" />
@@ -6452,7 +6417,8 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
-    <path path="${base_dir}/workbench/classes" />
+    <path path="${base_dir}/workbench/idea-patch/classes" />
+    <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
@@ -6463,9 +6429,9 @@
     <path path="${base_dir}/plugins/execution-languages/commands/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
     <path path="${base_dir}/core/analyzers/classes" />
+    <path path="${base_dir}/core/ant/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
-    <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
@@ -6552,7 +6518,6 @@
     <path path="${base_dir}/languages/languageDesign/traceable/solutions/pluginSolution/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/typesystem/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/typesystem/solutions/pluginSolution/classes_gen" />
-    <path path="${base_dir}/languages/util/buildlanguage/ant/classes" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/solutions/pluginSolution/classes_gen" />
@@ -6591,7 +6556,6 @@
     <path path="${base_dir}/lib/ant/lib/ant.jar" />
     <path path="${base_dir}/lib/asm.jar" />
     <path path="${base_dir}/lib/beansbinding-1.2.1.jar" />
-    <path path="${base_dir}/lib/bootstrap.jar" />
     <path path="${base_dir}/lib/commons-lang-2.4.jar" />
     <path path="${base_dir}/lib/commons-logging-1.1.1.jar" />
     <path path="${base_dir}/lib/diffutils-1.2.1.jar" />
@@ -6622,7 +6586,8 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
-    <path path="${base_dir}/workbench/classes" />
+    <path path="${base_dir}/workbench/idea-patch/classes" />
+    <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
@@ -6633,9 +6598,9 @@
     <path path="${base_dir}/languages/util/runConfigurations/languages/common/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
     <path path="${base_dir}/core/analyzers/classes" />
+    <path path="${base_dir}/core/ant/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
-    <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
@@ -6722,7 +6687,6 @@
     <path path="${base_dir}/languages/languageDesign/traceable/solutions/pluginSolution/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/typesystem/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/typesystem/solutions/pluginSolution/classes_gen" />
-    <path path="${base_dir}/languages/util/buildlanguage/ant/classes" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/solutions/pluginSolution/classes_gen" />
@@ -6761,7 +6725,6 @@
     <path path="${base_dir}/lib/ant/lib/ant.jar" />
     <path path="${base_dir}/lib/asm.jar" />
     <path path="${base_dir}/lib/beansbinding-1.2.1.jar" />
-    <path path="${base_dir}/lib/bootstrap.jar" />
     <path path="${base_dir}/lib/commons-lang-2.4.jar" />
     <path path="${base_dir}/lib/commons-logging-1.1.1.jar" />
     <path path="${base_dir}/lib/diffutils-1.2.1.jar" />
@@ -6790,7 +6753,8 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
-    <path path="${base_dir}/workbench/classes" />
+    <path path="${base_dir}/workbench/idea-patch/classes" />
+    <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
@@ -6801,9 +6765,9 @@
     <path path="${base_dir}/plugins/execution-languages/configurations/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
     <path path="${base_dir}/core/analyzers/classes" />
+    <path path="${base_dir}/core/ant/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
-    <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
@@ -6890,7 +6854,6 @@
     <path path="${base_dir}/languages/languageDesign/traceable/solutions/pluginSolution/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/typesystem/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/typesystem/solutions/pluginSolution/classes_gen" />
-    <path path="${base_dir}/languages/util/buildlanguage/ant/classes" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/solutions/pluginSolution/classes_gen" />
@@ -6930,7 +6893,6 @@
     <path path="${base_dir}/lib/ant/lib/ant.jar" />
     <path path="${base_dir}/lib/asm.jar" />
     <path path="${base_dir}/lib/beansbinding-1.2.1.jar" />
-    <path path="${base_dir}/lib/bootstrap.jar" />
     <path path="${base_dir}/lib/commons-lang-2.4.jar" />
     <path path="${base_dir}/lib/commons-logging-1.1.1.jar" />
     <path path="${base_dir}/lib/diffutils-1.2.1.jar" />
@@ -6962,7 +6924,8 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
-    <path path="${base_dir}/workbench/classes" />
+    <path path="${base_dir}/workbench/idea-patch/classes" />
+    <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
@@ -6973,9 +6936,9 @@
     <path path="${base_dir}/plugins/execution-languages/deprecated/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
     <path path="${base_dir}/core/analyzers/classes" />
+    <path path="${base_dir}/core/ant/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
-    <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
@@ -7062,7 +7025,6 @@
     <path path="${base_dir}/languages/languageDesign/traceable/solutions/pluginSolution/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/typesystem/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/typesystem/solutions/pluginSolution/classes_gen" />
-    <path path="${base_dir}/languages/util/buildlanguage/ant/classes" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/solutions/pluginSolution/classes_gen" />
@@ -7099,7 +7061,6 @@
     <path path="${base_dir}/lib/ant/lib/ant.jar" />
     <path path="${base_dir}/lib/asm.jar" />
     <path path="${base_dir}/lib/beansbinding-1.2.1.jar" />
-    <path path="${base_dir}/lib/bootstrap.jar" />
     <path path="${base_dir}/lib/commons-lang-2.4.jar" />
     <path path="${base_dir}/lib/commons-logging-1.1.1.jar" />
     <path path="${base_dir}/lib/diffutils-1.2.1.jar" />
@@ -7129,7 +7090,8 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
-    <path path="${base_dir}/workbench/classes" />
+    <path path="${base_dir}/workbench/idea-patch/classes" />
+    <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
@@ -7140,9 +7102,9 @@
     <path path="${base_dir}/plugins/execution-languages/deprecated.runtime/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
     <path path="${base_dir}/core/analyzers/classes" />
+    <path path="${base_dir}/core/ant/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
-    <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
@@ -7229,7 +7191,6 @@
     <path path="${base_dir}/languages/languageDesign/traceable/solutions/pluginSolution/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/typesystem/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/typesystem/solutions/pluginSolution/classes_gen" />
-    <path path="${base_dir}/languages/util/buildlanguage/ant/classes" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/solutions/pluginSolution/classes_gen" />
@@ -7266,7 +7227,6 @@
     <path path="${base_dir}/lib/ant/lib/ant.jar" />
     <path path="${base_dir}/lib/asm.jar" />
     <path path="${base_dir}/lib/beansbinding-1.2.1.jar" />
-    <path path="${base_dir}/lib/bootstrap.jar" />
     <path path="${base_dir}/lib/commons-lang-2.4.jar" />
     <path path="${base_dir}/lib/commons-logging-1.1.1.jar" />
     <path path="${base_dir}/lib/diffutils-1.2.1.jar" />
@@ -7295,7 +7255,8 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
-    <path path="${base_dir}/workbench/classes" />
+    <path path="${base_dir}/workbench/idea-patch/classes" />
+    <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
@@ -7306,9 +7267,9 @@
     <path path="${base_dir}/plugins/execution-languages/configurations/solutions/pluginSolution/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
     <path path="${base_dir}/core/analyzers/classes" />
+    <path path="${base_dir}/core/ant/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
-    <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
@@ -7395,7 +7356,6 @@
     <path path="${base_dir}/languages/languageDesign/traceable/solutions/pluginSolution/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/typesystem/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/typesystem/solutions/pluginSolution/classes_gen" />
-    <path path="${base_dir}/languages/util/buildlanguage/ant/classes" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/solutions/pluginSolution/classes_gen" />
@@ -7435,7 +7395,6 @@
     <path path="${base_dir}/lib/ant/lib/ant.jar" />
     <path path="${base_dir}/lib/asm.jar" />
     <path path="${base_dir}/lib/beansbinding-1.2.1.jar" />
-    <path path="${base_dir}/lib/bootstrap.jar" />
     <path path="${base_dir}/lib/commons-lang-2.4.jar" />
     <path path="${base_dir}/lib/commons-logging-1.1.1.jar" />
     <path path="${base_dir}/lib/diffutils-1.2.1.jar" />
@@ -7468,7 +7427,8 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
-    <path path="${base_dir}/workbench/classes" />
+    <path path="${base_dir}/workbench/idea-patch/classes" />
+    <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
@@ -7479,9 +7439,9 @@
     <path path="${base_dir}/plugins/execution-languages/library/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
     <path path="${base_dir}/core/analyzers/classes" />
+    <path path="${base_dir}/core/ant/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
-    <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
@@ -7568,7 +7528,6 @@
     <path path="${base_dir}/languages/languageDesign/traceable/solutions/pluginSolution/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/typesystem/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/typesystem/solutions/pluginSolution/classes_gen" />
-    <path path="${base_dir}/languages/util/buildlanguage/ant/classes" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/solutions/pluginSolution/classes_gen" />
@@ -7605,7 +7564,6 @@
     <path path="${base_dir}/lib/ant/lib/ant.jar" />
     <path path="${base_dir}/lib/asm.jar" />
     <path path="${base_dir}/lib/beansbinding-1.2.1.jar" />
-    <path path="${base_dir}/lib/bootstrap.jar" />
     <path path="${base_dir}/lib/commons-lang-2.4.jar" />
     <path path="${base_dir}/lib/commons-logging-1.1.1.jar" />
     <path path="${base_dir}/lib/diffutils-1.2.1.jar" />
@@ -7634,7 +7592,8 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
-    <path path="${base_dir}/workbench/classes" />
+    <path path="${base_dir}/workbench/idea-patch/classes" />
+    <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
@@ -7645,9 +7604,9 @@
     <path path="${base_dir}/plugins/execution-configurations/migration/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
     <path path="${base_dir}/core/analyzers/classes" />
+    <path path="${base_dir}/core/ant/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
-    <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
@@ -7734,7 +7693,6 @@
     <path path="${base_dir}/languages/languageDesign/traceable/solutions/pluginSolution/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/typesystem/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/typesystem/solutions/pluginSolution/classes_gen" />
-    <path path="${base_dir}/languages/util/buildlanguage/ant/classes" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/solutions/pluginSolution/classes_gen" />
@@ -7771,7 +7729,6 @@
     <path path="${base_dir}/lib/ant/lib/ant.jar" />
     <path path="${base_dir}/lib/asm.jar" />
     <path path="${base_dir}/lib/beansbinding-1.2.1.jar" />
-    <path path="${base_dir}/lib/bootstrap.jar" />
     <path path="${base_dir}/lib/commons-lang-2.4.jar" />
     <path path="${base_dir}/lib/commons-logging-1.1.1.jar" />
     <path path="${base_dir}/lib/diffutils-1.2.1.jar" />
@@ -7801,7 +7758,8 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
-    <path path="${base_dir}/workbench/classes" />
+    <path path="${base_dir}/workbench/idea-patch/classes" />
+    <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
@@ -7812,9 +7770,9 @@
     <path path="${base_dir}/languages/util/runConfigurations/languages/settings/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
     <path path="${base_dir}/core/analyzers/classes" />
+    <path path="${base_dir}/core/ant/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
-    <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
@@ -7901,7 +7859,6 @@
     <path path="${base_dir}/languages/languageDesign/traceable/solutions/pluginSolution/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/typesystem/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/typesystem/solutions/pluginSolution/classes_gen" />
-    <path path="${base_dir}/languages/util/buildlanguage/ant/classes" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/solutions/pluginSolution/classes_gen" />
@@ -7941,7 +7898,6 @@
     <path path="${base_dir}/lib/ant/lib/ant.jar" />
     <path path="${base_dir}/lib/asm.jar" />
     <path path="${base_dir}/lib/beansbinding-1.2.1.jar" />
-    <path path="${base_dir}/lib/bootstrap.jar" />
     <path path="${base_dir}/lib/commons-lang-2.4.jar" />
     <path path="${base_dir}/lib/commons-logging-1.1.1.jar" />
     <path path="${base_dir}/lib/diffutils-1.2.1.jar" />
@@ -7970,7 +7926,8 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
-    <path path="${base_dir}/workbench/classes" />
+    <path path="${base_dir}/workbench/idea-patch/classes" />
+    <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
@@ -7981,9 +7938,9 @@
     <path path="${base_dir}/languages/util/runConfigurations/languages/util/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
     <path path="${base_dir}/core/analyzers/classes" />
+    <path path="${base_dir}/core/ant/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
-    <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
@@ -8070,7 +8027,6 @@
     <path path="${base_dir}/languages/languageDesign/traceable/solutions/pluginSolution/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/typesystem/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/typesystem/solutions/pluginSolution/classes_gen" />
-    <path path="${base_dir}/languages/util/buildlanguage/ant/classes" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/solutions/pluginSolution/classes_gen" />
@@ -8108,7 +8064,6 @@
     <path path="${base_dir}/lib/ant/lib/ant.jar" />
     <path path="${base_dir}/lib/asm.jar" />
     <path path="${base_dir}/lib/beansbinding-1.2.1.jar" />
-    <path path="${base_dir}/lib/bootstrap.jar" />
     <path path="${base_dir}/lib/commons-lang-2.4.jar" />
     <path path="${base_dir}/lib/commons-logging-1.1.1.jar" />
     <path path="${base_dir}/lib/diffutils-1.2.1.jar" />
@@ -8137,7 +8092,8 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
-    <path path="${base_dir}/workbench/classes" />
+    <path path="${base_dir}/workbench/idea-patch/classes" />
+    <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
@@ -8164,9 +8120,9 @@
     <path path="${base_dir}/languages/util/gwtsupport/languages/client/redist/gwt-user.jar" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
     <path path="${base_dir}/core/analyzers/classes" />
+    <path path="${base_dir}/core/ant/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
-    <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
@@ -8253,7 +8209,6 @@
     <path path="${base_dir}/languages/languageDesign/traceable/solutions/pluginSolution/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/typesystem/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/typesystem/solutions/pluginSolution/classes_gen" />
-    <path path="${base_dir}/languages/util/buildlanguage/ant/classes" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/solutions/pluginSolution/classes_gen" />
@@ -8290,7 +8245,6 @@
     <path path="${base_dir}/lib/ant/lib/ant.jar" />
     <path path="${base_dir}/lib/asm.jar" />
     <path path="${base_dir}/lib/beansbinding-1.2.1.jar" />
-    <path path="${base_dir}/lib/bootstrap.jar" />
     <path path="${base_dir}/lib/commons-lang-2.4.jar" />
     <path path="${base_dir}/lib/commons-logging-1.1.1.jar" />
     <path path="${base_dir}/lib/diffutils-1.2.1.jar" />
@@ -8319,7 +8273,8 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
-    <path path="${base_dir}/workbench/classes" />
+    <path path="${base_dir}/workbench/idea-patch/classes" />
+    <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
@@ -8330,9 +8285,9 @@
     <path path="${base_dir}/languages/util/ideUiLanguage/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
     <path path="${base_dir}/core/analyzers/classes" />
+    <path path="${base_dir}/core/ant/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
-    <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
@@ -8419,7 +8374,6 @@
     <path path="${base_dir}/languages/languageDesign/traceable/solutions/pluginSolution/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/typesystem/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/typesystem/solutions/pluginSolution/classes_gen" />
-    <path path="${base_dir}/languages/util/buildlanguage/ant/classes" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/solutions/pluginSolution/classes_gen" />
@@ -8457,7 +8411,6 @@
     <path path="${base_dir}/lib/ant/lib/ant.jar" />
     <path path="${base_dir}/lib/asm.jar" />
     <path path="${base_dir}/lib/beansbinding-1.2.1.jar" />
-    <path path="${base_dir}/lib/bootstrap.jar" />
     <path path="${base_dir}/lib/commons-lang-2.4.jar" />
     <path path="${base_dir}/lib/commons-logging-1.1.1.jar" />
     <path path="${base_dir}/lib/diffutils-1.2.1.jar" />
@@ -8486,7 +8439,8 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
-    <path path="${base_dir}/workbench/classes" />
+    <path path="${base_dir}/workbench/idea-patch/classes" />
+    <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
@@ -8497,9 +8451,9 @@
     <path path="${base_dir}/languages/languageDesign/generator/languages/descriptor/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
     <path path="${base_dir}/core/analyzers/classes" />
+    <path path="${base_dir}/core/ant/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
-    <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
@@ -8587,7 +8541,6 @@
     <path path="${base_dir}/languages/languageDesign/traceable/solutions/pluginSolution/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/typesystem/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/typesystem/solutions/pluginSolution/classes_gen" />
-    <path path="${base_dir}/languages/util/buildlanguage/ant/classes" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/solutions/pluginSolution/classes_gen" />
@@ -8624,7 +8577,6 @@
     <path path="${base_dir}/lib/ant/lib/ant.jar" />
     <path path="${base_dir}/lib/asm.jar" />
     <path path="${base_dir}/lib/beansbinding-1.2.1.jar" />
-    <path path="${base_dir}/lib/bootstrap.jar" />
     <path path="${base_dir}/lib/commons-lang-2.4.jar" />
     <path path="${base_dir}/lib/commons-logging-1.1.1.jar" />
     <path path="${base_dir}/lib/diffutils-1.2.1.jar" />
@@ -8653,7 +8605,8 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
-    <path path="${base_dir}/workbench/classes" />
+    <path path="${base_dir}/workbench/idea-patch/classes" />
+    <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
@@ -8664,9 +8617,9 @@
     <path path="${base_dir}/languages/languageDesign/editor/languages/editorTest/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
     <path path="${base_dir}/core/analyzers/classes" />
+    <path path="${base_dir}/core/ant/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
-    <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
@@ -8754,7 +8707,6 @@
     <path path="${base_dir}/languages/languageDesign/traceable/solutions/pluginSolution/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/typesystem/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/typesystem/solutions/pluginSolution/classes_gen" />
-    <path path="${base_dir}/languages/util/buildlanguage/ant/classes" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/solutions/pluginSolution/classes_gen" />
@@ -8791,7 +8743,6 @@
     <path path="${base_dir}/lib/ant/lib/ant.jar" />
     <path path="${base_dir}/lib/asm.jar" />
     <path path="${base_dir}/lib/beansbinding-1.2.1.jar" />
-    <path path="${base_dir}/lib/bootstrap.jar" />
     <path path="${base_dir}/lib/commons-lang-2.4.jar" />
     <path path="${base_dir}/lib/commons-logging-1.1.1.jar" />
     <path path="${base_dir}/lib/diffutils-1.2.1.jar" />
@@ -8820,7 +8771,8 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
-    <path path="${base_dir}/workbench/classes" />
+    <path path="${base_dir}/workbench/idea-patch/classes" />
+    <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
@@ -8831,9 +8783,9 @@
     <path path="${base_dir}/languages/languageDesign/editor/languages/table/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
     <path path="${base_dir}/core/analyzers/classes" />
+    <path path="${base_dir}/core/ant/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
-    <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
@@ -8921,7 +8873,6 @@
     <path path="${base_dir}/languages/languageDesign/traceable/solutions/pluginSolution/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/typesystem/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/typesystem/solutions/pluginSolution/classes_gen" />
-    <path path="${base_dir}/languages/util/buildlanguage/ant/classes" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/solutions/pluginSolution/classes_gen" />
@@ -8958,7 +8909,6 @@
     <path path="${base_dir}/lib/ant/lib/ant.jar" />
     <path path="${base_dir}/lib/asm.jar" />
     <path path="${base_dir}/lib/beansbinding-1.2.1.jar" />
-    <path path="${base_dir}/lib/bootstrap.jar" />
     <path path="${base_dir}/lib/commons-lang-2.4.jar" />
     <path path="${base_dir}/lib/commons-logging-1.1.1.jar" />
     <path path="${base_dir}/lib/diffutils-1.2.1.jar" />
@@ -8987,7 +8937,8 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
-    <path path="${base_dir}/workbench/classes" />
+    <path path="${base_dir}/workbench/idea-patch/classes" />
+    <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
@@ -8998,9 +8949,9 @@
     <path path="${base_dir}/languages/languageDesign/editor/languages/table/runtime/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
     <path path="${base_dir}/core/analyzers/classes" />
+    <path path="${base_dir}/core/ant/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
-    <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
@@ -9087,7 +9038,6 @@
     <path path="${base_dir}/languages/languageDesign/traceable/solutions/pluginSolution/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/typesystem/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/typesystem/solutions/pluginSolution/classes_gen" />
-    <path path="${base_dir}/languages/util/buildlanguage/ant/classes" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/solutions/pluginSolution/classes_gen" />
@@ -9124,7 +9074,6 @@
     <path path="${base_dir}/lib/ant/lib/ant.jar" />
     <path path="${base_dir}/lib/asm.jar" />
     <path path="${base_dir}/lib/beansbinding-1.2.1.jar" />
-    <path path="${base_dir}/lib/bootstrap.jar" />
     <path path="${base_dir}/lib/commons-lang-2.4.jar" />
     <path path="${base_dir}/lib/commons-logging-1.1.1.jar" />
     <path path="${base_dir}/lib/diffutils-1.2.1.jar" />
@@ -9153,7 +9102,8 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
-    <path path="${base_dir}/workbench/classes" />
+    <path path="${base_dir}/workbench/idea-patch/classes" />
+    <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
@@ -9164,9 +9114,9 @@
     <path path="${base_dir}/languages/languageDesign/extension/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
     <path path="${base_dir}/core/analyzers/classes" />
+    <path path="${base_dir}/core/ant/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
-    <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
@@ -9254,7 +9204,6 @@
     <path path="${base_dir}/languages/languageDesign/traceable/solutions/pluginSolution/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/typesystem/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/typesystem/solutions/pluginSolution/classes_gen" />
-    <path path="${base_dir}/languages/util/buildlanguage/ant/classes" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/solutions/pluginSolution/classes_gen" />
@@ -9291,7 +9240,6 @@
     <path path="${base_dir}/lib/ant/lib/ant.jar" />
     <path path="${base_dir}/lib/asm.jar" />
     <path path="${base_dir}/lib/beansbinding-1.2.1.jar" />
-    <path path="${base_dir}/lib/bootstrap.jar" />
     <path path="${base_dir}/lib/commons-lang-2.4.jar" />
     <path path="${base_dir}/lib/commons-logging-1.1.1.jar" />
     <path path="${base_dir}/lib/diffutils-1.2.1.jar" />
@@ -9320,7 +9268,8 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
-    <path path="${base_dir}/workbench/classes" />
+    <path path="${base_dir}/workbench/idea-patch/classes" />
+    <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
@@ -9331,9 +9280,9 @@
     <path path="${base_dir}/languages/languageDesign/pattern/languages/testLang/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
     <path path="${base_dir}/core/analyzers/classes" />
+    <path path="${base_dir}/core/ant/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
-    <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
@@ -9421,7 +9370,6 @@
     <path path="${base_dir}/languages/languageDesign/traceable/solutions/pluginSolution/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/typesystem/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/typesystem/solutions/pluginSolution/classes_gen" />
-    <path path="${base_dir}/languages/util/buildlanguage/ant/classes" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/solutions/pluginSolution/classes_gen" />
@@ -9458,7 +9406,6 @@
     <path path="${base_dir}/lib/ant/lib/ant.jar" />
     <path path="${base_dir}/lib/asm.jar" />
     <path path="${base_dir}/lib/beansbinding-1.2.1.jar" />
-    <path path="${base_dir}/lib/bootstrap.jar" />
     <path path="${base_dir}/lib/commons-lang-2.4.jar" />
     <path path="${base_dir}/lib/commons-logging-1.1.1.jar" />
     <path path="${base_dir}/lib/diffutils-1.2.1.jar" />
@@ -9487,7 +9434,8 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
-    <path path="${base_dir}/workbench/classes" />
+    <path path="${base_dir}/workbench/idea-patch/classes" />
+    <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
@@ -9498,9 +9446,9 @@
     <path path="${base_dir}/languages/languageDesign/smodel/solutions/pluginSolution/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
     <path path="${base_dir}/core/analyzers/classes" />
+    <path path="${base_dir}/core/ant/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
-    <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
@@ -9587,7 +9535,6 @@
     <path path="${base_dir}/languages/languageDesign/traceable/solutions/pluginSolution/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/typesystem/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/typesystem/solutions/pluginSolution/classes_gen" />
-    <path path="${base_dir}/languages/util/buildlanguage/ant/classes" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/solutions/pluginSolution/classes_gen" />
@@ -9624,7 +9571,6 @@
     <path path="${base_dir}/lib/ant/lib/ant.jar" />
     <path path="${base_dir}/lib/asm.jar" />
     <path path="${base_dir}/lib/beansbinding-1.2.1.jar" />
-    <path path="${base_dir}/lib/bootstrap.jar" />
     <path path="${base_dir}/lib/commons-lang-2.4.jar" />
     <path path="${base_dir}/lib/commons-logging-1.1.1.jar" />
     <path path="${base_dir}/lib/diffutils-1.2.1.jar" />
@@ -9653,7 +9599,8 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
-    <path path="${base_dir}/workbench/classes" />
+    <path path="${base_dir}/workbench/idea-patch/classes" />
+    <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
@@ -9664,9 +9611,9 @@
     <path path="${base_dir}/languages/languageDesign/smodel/languages/smodelTests/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
     <path path="${base_dir}/core/analyzers/classes" />
+    <path path="${base_dir}/core/ant/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
-    <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
@@ -9754,7 +9701,6 @@
     <path path="${base_dir}/languages/languageDesign/traceable/solutions/pluginSolution/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/typesystem/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/typesystem/solutions/pluginSolution/classes_gen" />
-    <path path="${base_dir}/languages/util/buildlanguage/ant/classes" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/solutions/pluginSolution/classes_gen" />
@@ -9791,7 +9737,6 @@
     <path path="${base_dir}/lib/ant/lib/ant.jar" />
     <path path="${base_dir}/lib/asm.jar" />
     <path path="${base_dir}/lib/beansbinding-1.2.1.jar" />
-    <path path="${base_dir}/lib/bootstrap.jar" />
     <path path="${base_dir}/lib/commons-lang-2.4.jar" />
     <path path="${base_dir}/lib/commons-logging-1.1.1.jar" />
     <path path="${base_dir}/lib/diffutils-1.2.1.jar" />
@@ -9820,7 +9765,8 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
-    <path path="${base_dir}/workbench/classes" />
+    <path path="${base_dir}/workbench/idea-patch/classes" />
+    <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
@@ -9831,9 +9777,9 @@
     <path path="${base_dir}/languages/languageDesign/stubs/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
     <path path="${base_dir}/core/analyzers/classes" />
+    <path path="${base_dir}/core/ant/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
-    <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
@@ -9920,7 +9866,6 @@
     <path path="${base_dir}/languages/languageDesign/traceable/solutions/pluginSolution/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/typesystem/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/typesystem/solutions/pluginSolution/classes_gen" />
-    <path path="${base_dir}/languages/util/buildlanguage/ant/classes" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/solutions/pluginSolution/classes_gen" />
@@ -9957,7 +9902,6 @@
     <path path="${base_dir}/lib/ant/lib/ant.jar" />
     <path path="${base_dir}/lib/asm.jar" />
     <path path="${base_dir}/lib/beansbinding-1.2.1.jar" />
-    <path path="${base_dir}/lib/bootstrap.jar" />
     <path path="${base_dir}/lib/commons-lang-2.4.jar" />
     <path path="${base_dir}/lib/commons-logging-1.1.1.jar" />
     <path path="${base_dir}/lib/diffutils-1.2.1.jar" />
@@ -9986,7 +9930,8 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
-    <path path="${base_dir}/workbench/classes" />
+    <path path="${base_dir}/workbench/idea-patch/classes" />
+    <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
@@ -10003,9 +9948,9 @@
     <path path="${base_dir}/languages/languageDesign/make/languages/facet/solutions/pluginSolution/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
     <path path="${base_dir}/core/analyzers/classes" />
+    <path path="${base_dir}/core/ant/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
-    <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
@@ -10092,7 +10037,6 @@
     <path path="${base_dir}/languages/languageDesign/traceable/solutions/pluginSolution/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/typesystem/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/typesystem/solutions/pluginSolution/classes_gen" />
-    <path path="${base_dir}/languages/util/buildlanguage/ant/classes" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/solutions/pluginSolution/classes_gen" />
@@ -10129,7 +10073,6 @@
     <path path="${base_dir}/lib/ant/lib/ant.jar" />
     <path path="${base_dir}/lib/asm.jar" />
     <path path="${base_dir}/lib/beansbinding-1.2.1.jar" />
-    <path path="${base_dir}/lib/bootstrap.jar" />
     <path path="${base_dir}/lib/commons-lang-2.4.jar" />
     <path path="${base_dir}/lib/commons-logging-1.1.1.jar" />
     <path path="${base_dir}/lib/diffutils-1.2.1.jar" />
@@ -10158,7 +10101,8 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
-    <path path="${base_dir}/workbench/classes" />
+    <path path="${base_dir}/workbench/idea-patch/classes" />
+    <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
@@ -10169,9 +10113,9 @@
     <path path="${base_dir}/languages/util/mps-lite/languages/nanoj/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
     <path path="${base_dir}/core/analyzers/classes" />
+    <path path="${base_dir}/core/ant/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
-    <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
@@ -10258,7 +10202,6 @@
     <path path="${base_dir}/languages/languageDesign/traceable/solutions/pluginSolution/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/typesystem/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/typesystem/solutions/pluginSolution/classes_gen" />
-    <path path="${base_dir}/languages/util/buildlanguage/ant/classes" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/solutions/pluginSolution/classes_gen" />
@@ -10296,7 +10239,6 @@
     <path path="${base_dir}/lib/ant/lib/ant.jar" />
     <path path="${base_dir}/lib/asm.jar" />
     <path path="${base_dir}/lib/beansbinding-1.2.1.jar" />
-    <path path="${base_dir}/lib/bootstrap.jar" />
     <path path="${base_dir}/lib/commons-lang-2.4.jar" />
     <path path="${base_dir}/lib/commons-logging-1.1.1.jar" />
     <path path="${base_dir}/lib/diffutils-1.2.1.jar" />
@@ -10325,7 +10267,8 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
-    <path path="${base_dir}/workbench/classes" />
+    <path path="${base_dir}/workbench/idea-patch/classes" />
+    <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
@@ -10336,9 +10279,9 @@
     <path path="${base_dir}/languages/util/conf/languages/conf/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
     <path path="${base_dir}/core/analyzers/classes" />
+    <path path="${base_dir}/core/ant/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
-    <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
@@ -10425,7 +10368,6 @@
     <path path="${base_dir}/languages/languageDesign/traceable/solutions/pluginSolution/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/typesystem/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/typesystem/solutions/pluginSolution/classes_gen" />
-    <path path="${base_dir}/languages/util/buildlanguage/ant/classes" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/solutions/pluginSolution/classes_gen" />
@@ -10462,7 +10404,6 @@
     <path path="${base_dir}/lib/ant/lib/ant.jar" />
     <path path="${base_dir}/lib/asm.jar" />
     <path path="${base_dir}/lib/beansbinding-1.2.1.jar" />
-    <path path="${base_dir}/lib/bootstrap.jar" />
     <path path="${base_dir}/lib/commons-lang-2.4.jar" />
     <path path="${base_dir}/lib/commons-logging-1.1.1.jar" />
     <path path="${base_dir}/lib/diffutils-1.2.1.jar" />
@@ -10491,7 +10432,8 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
-    <path path="${base_dir}/workbench/classes" />
+    <path path="${base_dir}/workbench/idea-patch/classes" />
+    <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
@@ -10504,7 +10446,6 @@
     <path path="${base_dir}/core/analyzers/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
-    <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
@@ -10543,7 +10484,8 @@
     <path path="${base_dir}/lib/util.jar" />
     <path path="${base_dir}/lib/xstream.jar" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
-    <path path="${base_dir}/workbench/classes" />
+    <path path="${base_dir}/workbench/idea-patch/classes" />
+    <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
@@ -10554,9 +10496,9 @@
     <path path="${base_dir}/languages/util/quickQueryLanguage/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
     <path path="${base_dir}/core/analyzers/classes" />
+    <path path="${base_dir}/core/ant/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
-    <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
@@ -10643,7 +10585,6 @@
     <path path="${base_dir}/languages/languageDesign/traceable/solutions/pluginSolution/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/typesystem/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/typesystem/solutions/pluginSolution/classes_gen" />
-    <path path="${base_dir}/languages/util/buildlanguage/ant/classes" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/solutions/pluginSolution/classes_gen" />
@@ -10681,7 +10622,6 @@
     <path path="${base_dir}/lib/ant/lib/ant.jar" />
     <path path="${base_dir}/lib/asm.jar" />
     <path path="${base_dir}/lib/beansbinding-1.2.1.jar" />
-    <path path="${base_dir}/lib/bootstrap.jar" />
     <path path="${base_dir}/lib/commons-lang-2.4.jar" />
     <path path="${base_dir}/lib/commons-logging-1.1.1.jar" />
     <path path="${base_dir}/lib/diffutils-1.2.1.jar" />
@@ -10710,7 +10650,8 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
-    <path path="${base_dir}/workbench/classes" />
+    <path path="${base_dir}/workbench/idea-patch/classes" />
+    <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
@@ -10721,9 +10662,9 @@
     <path path="${base_dir}/languages/util/quickQueryLanguage/solutions/pluginSolution/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
     <path path="${base_dir}/core/analyzers/classes" />
+    <path path="${base_dir}/core/ant/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
-    <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
@@ -10810,7 +10751,6 @@
     <path path="${base_dir}/languages/languageDesign/traceable/solutions/pluginSolution/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/typesystem/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/typesystem/solutions/pluginSolution/classes_gen" />
-    <path path="${base_dir}/languages/util/buildlanguage/ant/classes" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/solutions/pluginSolution/classes_gen" />
@@ -10849,7 +10789,6 @@
     <path path="${base_dir}/lib/ant/lib/ant.jar" />
     <path path="${base_dir}/lib/asm.jar" />
     <path path="${base_dir}/lib/beansbinding-1.2.1.jar" />
-    <path path="${base_dir}/lib/bootstrap.jar" />
     <path path="${base_dir}/lib/commons-lang-2.4.jar" />
     <path path="${base_dir}/lib/commons-logging-1.1.1.jar" />
     <path path="${base_dir}/lib/diffutils-1.2.1.jar" />
@@ -10878,7 +10817,8 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
-    <path path="${base_dir}/workbench/classes" />
+    <path path="${base_dir}/workbench/idea-patch/classes" />
+    <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
@@ -10889,9 +10829,9 @@
     <path path="${base_dir}/languages/util/ui/languages/ui/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
     <path path="${base_dir}/core/analyzers/classes" />
+    <path path="${base_dir}/core/ant/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
-    <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
@@ -10978,7 +10918,6 @@
     <path path="${base_dir}/languages/languageDesign/traceable/solutions/pluginSolution/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/typesystem/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/typesystem/solutions/pluginSolution/classes_gen" />
-    <path path="${base_dir}/languages/util/buildlanguage/ant/classes" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/solutions/pluginSolution/classes_gen" />
@@ -11018,7 +10957,6 @@
     <path path="${base_dir}/lib/ant/lib/ant.jar" />
     <path path="${base_dir}/lib/asm.jar" />
     <path path="${base_dir}/lib/beansbinding-1.2.1.jar" />
-    <path path="${base_dir}/lib/bootstrap.jar" />
     <path path="${base_dir}/lib/commons-lang-2.4.jar" />
     <path path="${base_dir}/lib/commons-logging-1.1.1.jar" />
     <path path="${base_dir}/lib/diffutils-1.2.1.jar" />
@@ -11047,7 +10985,8 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
-    <path path="${base_dir}/workbench/classes" />
+    <path path="${base_dir}/workbench/idea-patch/classes" />
+    <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
@@ -11058,9 +10997,9 @@
     <path path="${base_dir}/languages/util/ui/languages/gwt/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
     <path path="${base_dir}/core/analyzers/classes" />
+    <path path="${base_dir}/core/ant/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
-    <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
@@ -11147,7 +11086,6 @@
     <path path="${base_dir}/languages/languageDesign/traceable/solutions/pluginSolution/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/typesystem/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/typesystem/solutions/pluginSolution/classes_gen" />
-    <path path="${base_dir}/languages/util/buildlanguage/ant/classes" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/solutions/pluginSolution/classes_gen" />
@@ -11189,7 +11127,6 @@
     <path path="${base_dir}/lib/ant/lib/ant.jar" />
     <path path="${base_dir}/lib/asm.jar" />
     <path path="${base_dir}/lib/beansbinding-1.2.1.jar" />
-    <path path="${base_dir}/lib/bootstrap.jar" />
     <path path="${base_dir}/lib/commons-lang-2.4.jar" />
     <path path="${base_dir}/lib/commons-logging-1.1.1.jar" />
     <path path="${base_dir}/lib/diffutils-1.2.1.jar" />
@@ -11218,7 +11155,8 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
-    <path path="${base_dir}/workbench/classes" />
+    <path path="${base_dir}/workbench/idea-patch/classes" />
+    <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
@@ -11229,9 +11167,9 @@
     <path path="${base_dir}/languages/util/ui/languages/gwt/solutions/pluginSolution/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
     <path path="${base_dir}/core/analyzers/classes" />
+    <path path="${base_dir}/core/ant/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
-    <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
@@ -11318,7 +11256,6 @@
     <path path="${base_dir}/languages/languageDesign/traceable/solutions/pluginSolution/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/typesystem/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/typesystem/solutions/pluginSolution/classes_gen" />
-    <path path="${base_dir}/languages/util/buildlanguage/ant/classes" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/solutions/pluginSolution/classes_gen" />
@@ -11360,7 +11297,6 @@
     <path path="${base_dir}/lib/ant/lib/ant.jar" />
     <path path="${base_dir}/lib/asm.jar" />
     <path path="${base_dir}/lib/beansbinding-1.2.1.jar" />
-    <path path="${base_dir}/lib/bootstrap.jar" />
     <path path="${base_dir}/lib/commons-lang-2.4.jar" />
     <path path="${base_dir}/lib/commons-logging-1.1.1.jar" />
     <path path="${base_dir}/lib/diffutils-1.2.1.jar" />
@@ -11389,7 +11325,8 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
-    <path path="${base_dir}/workbench/classes" />
+    <path path="${base_dir}/workbench/idea-patch/classes" />
+    <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
@@ -11400,9 +11337,9 @@
     <path path="${base_dir}/languages/util/ui/languages/internal/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
     <path path="${base_dir}/core/analyzers/classes" />
+    <path path="${base_dir}/core/ant/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
-    <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
@@ -11489,7 +11426,6 @@
     <path path="${base_dir}/languages/languageDesign/traceable/solutions/pluginSolution/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/typesystem/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/typesystem/solutions/pluginSolution/classes_gen" />
-    <path path="${base_dir}/languages/util/buildlanguage/ant/classes" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/solutions/pluginSolution/classes_gen" />
@@ -11530,7 +11466,6 @@
     <path path="${base_dir}/lib/ant/lib/ant.jar" />
     <path path="${base_dir}/lib/asm.jar" />
     <path path="${base_dir}/lib/beansbinding-1.2.1.jar" />
-    <path path="${base_dir}/lib/bootstrap.jar" />
     <path path="${base_dir}/lib/commons-lang-2.4.jar" />
     <path path="${base_dir}/lib/commons-logging-1.1.1.jar" />
     <path path="${base_dir}/lib/diffutils-1.2.1.jar" />
@@ -11559,7 +11494,8 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
-    <path path="${base_dir}/workbench/classes" />
+    <path path="${base_dir}/workbench/idea-patch/classes" />
+    <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
@@ -11570,9 +11506,9 @@
     <path path="${base_dir}/languages/util/ui/languages/meta/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
     <path path="${base_dir}/core/analyzers/classes" />
+    <path path="${base_dir}/core/ant/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
-    <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
@@ -11659,7 +11595,6 @@
     <path path="${base_dir}/languages/languageDesign/traceable/solutions/pluginSolution/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/typesystem/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/typesystem/solutions/pluginSolution/classes_gen" />
-    <path path="${base_dir}/languages/util/buildlanguage/ant/classes" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/solutions/pluginSolution/classes_gen" />
@@ -11697,7 +11632,6 @@
     <path path="${base_dir}/lib/ant/lib/ant.jar" />
     <path path="${base_dir}/lib/asm.jar" />
     <path path="${base_dir}/lib/beansbinding-1.2.1.jar" />
-    <path path="${base_dir}/lib/bootstrap.jar" />
     <path path="${base_dir}/lib/commons-lang-2.4.jar" />
     <path path="${base_dir}/lib/commons-logging-1.1.1.jar" />
     <path path="${base_dir}/lib/diffutils-1.2.1.jar" />
@@ -11726,7 +11660,8 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
-    <path path="${base_dir}/workbench/classes" />
+    <path path="${base_dir}/workbench/idea-patch/classes" />
+    <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
@@ -11737,9 +11672,9 @@
     <path path="${base_dir}/languages/util/ui/languages/meta/solutions/pluginSolution/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
     <path path="${base_dir}/core/analyzers/classes" />
+    <path path="${base_dir}/core/ant/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
-    <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
@@ -11826,7 +11761,6 @@
     <path path="${base_dir}/languages/languageDesign/traceable/solutions/pluginSolution/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/typesystem/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/typesystem/solutions/pluginSolution/classes_gen" />
-    <path path="${base_dir}/languages/util/buildlanguage/ant/classes" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/solutions/pluginSolution/classes_gen" />
@@ -11865,7 +11799,6 @@
     <path path="${base_dir}/lib/ant/lib/ant.jar" />
     <path path="${base_dir}/lib/asm.jar" />
     <path path="${base_dir}/lib/beansbinding-1.2.1.jar" />
-    <path path="${base_dir}/lib/bootstrap.jar" />
     <path path="${base_dir}/lib/commons-lang-2.4.jar" />
     <path path="${base_dir}/lib/commons-logging-1.1.1.jar" />
     <path path="${base_dir}/lib/diffutils-1.2.1.jar" />
@@ -11894,7 +11827,8 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
-    <path path="${base_dir}/workbench/classes" />
+    <path path="${base_dir}/workbench/idea-patch/classes" />
+    <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
@@ -11905,9 +11839,9 @@
     <path path="${base_dir}/languages/util/ui/languages/ui/solutions/pluginSolution/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
     <path path="${base_dir}/core/analyzers/classes" />
+    <path path="${base_dir}/core/ant/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
-    <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
@@ -11994,7 +11928,6 @@
     <path path="${base_dir}/languages/languageDesign/traceable/solutions/pluginSolution/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/typesystem/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/typesystem/solutions/pluginSolution/classes_gen" />
-    <path path="${base_dir}/languages/util/buildlanguage/ant/classes" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/solutions/pluginSolution/classes_gen" />
@@ -12032,7 +11965,6 @@
     <path path="${base_dir}/lib/ant/lib/ant.jar" />
     <path path="${base_dir}/lib/asm.jar" />
     <path path="${base_dir}/lib/beansbinding-1.2.1.jar" />
-    <path path="${base_dir}/lib/bootstrap.jar" />
     <path path="${base_dir}/lib/commons-lang-2.4.jar" />
     <path path="${base_dir}/lib/commons-logging-1.1.1.jar" />
     <path path="${base_dir}/lib/diffutils-1.2.1.jar" />
@@ -12061,7 +11993,8 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
-    <path path="${base_dir}/workbench/classes" />
+    <path path="${base_dir}/workbench/idea-patch/classes" />
+    <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
@@ -12072,9 +12005,9 @@
     <path path="${base_dir}/languages/util/ui/languages/swing/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
     <path path="${base_dir}/core/analyzers/classes" />
+    <path path="${base_dir}/core/ant/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
-    <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
@@ -12161,7 +12094,6 @@
     <path path="${base_dir}/languages/languageDesign/traceable/solutions/pluginSolution/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/typesystem/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/typesystem/solutions/pluginSolution/classes_gen" />
-    <path path="${base_dir}/languages/util/buildlanguage/ant/classes" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/solutions/pluginSolution/classes_gen" />
@@ -12204,7 +12136,6 @@
     <path path="${base_dir}/lib/ant/lib/ant.jar" />
     <path path="${base_dir}/lib/asm.jar" />
     <path path="${base_dir}/lib/beansbinding-1.2.1.jar" />
-    <path path="${base_dir}/lib/bootstrap.jar" />
     <path path="${base_dir}/lib/commons-lang-2.4.jar" />
     <path path="${base_dir}/lib/commons-logging-1.1.1.jar" />
     <path path="${base_dir}/lib/diffutils-1.2.1.jar" />
@@ -12233,7 +12164,8 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
-    <path path="${base_dir}/workbench/classes" />
+    <path path="${base_dir}/workbench/idea-patch/classes" />
+    <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
@@ -12244,9 +12176,9 @@
     <path path="${base_dir}/languages/util/ui/languages/swing/solutions/pluginSolution/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
     <path path="${base_dir}/core/analyzers/classes" />
+    <path path="${base_dir}/core/ant/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
-    <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
@@ -12333,7 +12265,6 @@
     <path path="${base_dir}/languages/languageDesign/traceable/solutions/pluginSolution/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/typesystem/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/typesystem/solutions/pluginSolution/classes_gen" />
-    <path path="${base_dir}/languages/util/buildlanguage/ant/classes" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/solutions/pluginSolution/classes_gen" />
@@ -12375,7 +12306,6 @@
     <path path="${base_dir}/lib/ant/lib/ant.jar" />
     <path path="${base_dir}/lib/asm.jar" />
     <path path="${base_dir}/lib/beansbinding-1.2.1.jar" />
-    <path path="${base_dir}/lib/bootstrap.jar" />
     <path path="${base_dir}/lib/commons-lang-2.4.jar" />
     <path path="${base_dir}/lib/commons-logging-1.1.1.jar" />
     <path path="${base_dir}/lib/diffutils-1.2.1.jar" />
@@ -12404,7 +12334,8 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
-    <path path="${base_dir}/workbench/classes" />
+    <path path="${base_dir}/workbench/idea-patch/classes" />
+    <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
@@ -12424,9 +12355,9 @@
     <path path="${base_dir}/languages/util/ui/languages/swt/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
     <path path="${base_dir}/core/analyzers/classes" />
+    <path path="${base_dir}/core/ant/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
-    <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
@@ -12513,7 +12444,6 @@
     <path path="${base_dir}/languages/languageDesign/traceable/solutions/pluginSolution/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/typesystem/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/typesystem/solutions/pluginSolution/classes_gen" />
-    <path path="${base_dir}/languages/util/buildlanguage/ant/classes" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/solutions/pluginSolution/classes_gen" />
@@ -12559,7 +12489,6 @@
     <path path="${base_dir}/lib/ant/lib/ant.jar" />
     <path path="${base_dir}/lib/asm.jar" />
     <path path="${base_dir}/lib/beansbinding-1.2.1.jar" />
-    <path path="${base_dir}/lib/bootstrap.jar" />
     <path path="${base_dir}/lib/commons-lang-2.4.jar" />
     <path path="${base_dir}/lib/commons-logging-1.1.1.jar" />
     <path path="${base_dir}/lib/diffutils-1.2.1.jar" />
@@ -12588,7 +12517,8 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
-    <path path="${base_dir}/workbench/classes" />
+    <path path="${base_dir}/workbench/idea-patch/classes" />
+    <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
@@ -12599,9 +12529,9 @@
     <path path="${base_dir}/languages/util/ui/languages/swt/solutions/pluginSolution/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
     <path path="${base_dir}/core/analyzers/classes" />
+    <path path="${base_dir}/core/ant/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
-    <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
@@ -12688,7 +12618,6 @@
     <path path="${base_dir}/languages/languageDesign/traceable/solutions/pluginSolution/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/typesystem/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/typesystem/solutions/pluginSolution/classes_gen" />
-    <path path="${base_dir}/languages/util/buildlanguage/ant/classes" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/solutions/pluginSolution/classes_gen" />
@@ -12730,7 +12659,6 @@
     <path path="${base_dir}/lib/ant/lib/ant.jar" />
     <path path="${base_dir}/lib/asm.jar" />
     <path path="${base_dir}/lib/beansbinding-1.2.1.jar" />
-    <path path="${base_dir}/lib/bootstrap.jar" />
     <path path="${base_dir}/lib/commons-lang-2.4.jar" />
     <path path="${base_dir}/lib/commons-logging-1.1.1.jar" />
     <path path="${base_dir}/lib/diffutils-1.2.1.jar" />
@@ -12759,7 +12687,8 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
-    <path path="${base_dir}/workbench/classes" />
+    <path path="${base_dir}/workbench/idea-patch/classes" />
+    <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
@@ -12779,9 +12708,9 @@
     <path path="${base_dir}/languages/util/uiLanguage/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
     <path path="${base_dir}/core/analyzers/classes" />
+    <path path="${base_dir}/core/ant/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
-    <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
@@ -12868,7 +12797,6 @@
     <path path="${base_dir}/languages/languageDesign/traceable/solutions/pluginSolution/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/typesystem/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/typesystem/solutions/pluginSolution/classes_gen" />
-    <path path="${base_dir}/languages/util/buildlanguage/ant/classes" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/solutions/pluginSolution/classes_gen" />
@@ -12905,7 +12833,6 @@
     <path path="${base_dir}/lib/ant/lib/ant.jar" />
     <path path="${base_dir}/lib/asm.jar" />
     <path path="${base_dir}/lib/beansbinding-1.2.1.jar" />
-    <path path="${base_dir}/lib/bootstrap.jar" />
     <path path="${base_dir}/lib/commons-lang-2.4.jar" />
     <path path="${base_dir}/lib/commons-logging-1.1.1.jar" />
     <path path="${base_dir}/lib/diffutils-1.2.1.jar" />
@@ -12934,7 +12861,8 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
-    <path path="${base_dir}/workbench/classes" />
+    <path path="${base_dir}/workbench/idea-patch/classes" />
+    <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
@@ -12945,9 +12873,9 @@
     <path path="${base_dir}/languages/util/uiLanguage/solutions/pluginSolution/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
     <path path="${base_dir}/core/analyzers/classes" />
+    <path path="${base_dir}/core/ant/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
-    <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
@@ -13034,7 +12962,6 @@
     <path path="${base_dir}/languages/languageDesign/traceable/solutions/pluginSolution/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/typesystem/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/typesystem/solutions/pluginSolution/classes_gen" />
-    <path path="${base_dir}/languages/util/buildlanguage/ant/classes" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/solutions/pluginSolution/classes_gen" />
@@ -13072,7 +12999,6 @@
     <path path="${base_dir}/lib/ant/lib/ant.jar" />
     <path path="${base_dir}/lib/asm.jar" />
     <path path="${base_dir}/lib/beansbinding-1.2.1.jar" />
-    <path path="${base_dir}/lib/bootstrap.jar" />
     <path path="${base_dir}/lib/commons-lang-2.4.jar" />
     <path path="${base_dir}/lib/commons-logging-1.1.1.jar" />
     <path path="${base_dir}/lib/diffutils-1.2.1.jar" />
@@ -13101,7 +13027,8 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
-    <path path="${base_dir}/workbench/classes" />
+    <path path="${base_dir}/workbench/idea-patch/classes" />
+    <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
@@ -13113,9 +13040,9 @@
     <path path="${base_dir}/languages/util/xml/xmlInternal/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
     <path path="${base_dir}/core/analyzers/classes" />
+    <path path="${base_dir}/core/ant/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
-    <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
@@ -13202,7 +13129,6 @@
     <path path="${base_dir}/languages/languageDesign/traceable/solutions/pluginSolution/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/typesystem/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/typesystem/solutions/pluginSolution/classes_gen" />
-    <path path="${base_dir}/languages/util/buildlanguage/ant/classes" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/solutions/pluginSolution/classes_gen" />
@@ -13242,7 +13168,6 @@
     <path path="${base_dir}/lib/ant/lib/ant.jar" />
     <path path="${base_dir}/lib/asm.jar" />
     <path path="${base_dir}/lib/beansbinding-1.2.1.jar" />
-    <path path="${base_dir}/lib/bootstrap.jar" />
     <path path="${base_dir}/lib/commons-lang-2.4.jar" />
     <path path="${base_dir}/lib/commons-logging-1.1.1.jar" />
     <path path="${base_dir}/lib/diffutils-1.2.1.jar" />
@@ -13271,7 +13196,8 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
-    <path path="${base_dir}/workbench/classes" />
+    <path path="${base_dir}/workbench/idea-patch/classes" />
+    <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
@@ -13288,9 +13214,9 @@
     <path path="${base_dir}/languages/util/xml/xmlQuery/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
     <path path="${base_dir}/core/analyzers/classes" />
+    <path path="${base_dir}/core/ant/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
-    <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
@@ -13378,7 +13304,6 @@
     <path path="${base_dir}/languages/languageDesign/typesystem/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/typesystem/solutions/pluginSolution/classes_gen" />
     <path path="${base_dir}/languages/util/builders/classes_gen" />
-    <path path="${base_dir}/languages/util/buildlanguage/ant/classes" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/solutions/pluginSolution/classes_gen" />
@@ -13419,7 +13344,6 @@
     <path path="${base_dir}/lib/ant/lib/ant.jar" />
     <path path="${base_dir}/lib/asm.jar" />
     <path path="${base_dir}/lib/beansbinding-1.2.1.jar" />
-    <path path="${base_dir}/lib/bootstrap.jar" />
     <path path="${base_dir}/lib/commons-lang-2.4.jar" />
     <path path="${base_dir}/lib/commons-logging-1.1.1.jar" />
     <path path="${base_dir}/lib/diffutils-1.2.1.jar" />
@@ -13448,7 +13372,8 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
-    <path path="${base_dir}/workbench/classes" />
+    <path path="${base_dir}/workbench/idea-patch/classes" />
+    <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
@@ -13459,9 +13384,9 @@
     <path path="${base_dir}/languages/util/xml/xmlSchema/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
     <path path="${base_dir}/core/analyzers/classes" />
+    <path path="${base_dir}/core/ant/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
-    <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
@@ -13548,7 +13473,6 @@
     <path path="${base_dir}/languages/languageDesign/traceable/solutions/pluginSolution/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/typesystem/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/typesystem/solutions/pluginSolution/classes_gen" />
-    <path path="${base_dir}/languages/util/buildlanguage/ant/classes" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/solutions/pluginSolution/classes_gen" />
@@ -13586,7 +13510,6 @@
     <path path="${base_dir}/lib/ant/lib/ant.jar" />
     <path path="${base_dir}/lib/asm.jar" />
     <path path="${base_dir}/lib/beansbinding-1.2.1.jar" />
-    <path path="${base_dir}/lib/bootstrap.jar" />
     <path path="${base_dir}/lib/commons-lang-2.4.jar" />
     <path path="${base_dir}/lib/commons-logging-1.1.1.jar" />
     <path path="${base_dir}/lib/diffutils-1.2.1.jar" />
@@ -13615,7 +13538,8 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
-    <path path="${base_dir}/workbench/classes" />
+    <path path="${base_dir}/workbench/idea-patch/classes" />
+    <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
@@ -13626,9 +13550,9 @@
     <path path="${base_dir}/languages/util/xmlUnitTest/languages/xmlUnitTest/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
     <path path="${base_dir}/core/analyzers/classes" />
+    <path path="${base_dir}/core/ant/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
-    <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
@@ -13715,7 +13639,6 @@
     <path path="${base_dir}/languages/languageDesign/traceable/solutions/pluginSolution/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/typesystem/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/typesystem/solutions/pluginSolution/classes_gen" />
-    <path path="${base_dir}/languages/util/buildlanguage/ant/classes" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/solutions/pluginSolution/classes_gen" />
@@ -13753,7 +13676,6 @@
     <path path="${base_dir}/lib/ant/lib/ant.jar" />
     <path path="${base_dir}/lib/asm.jar" />
     <path path="${base_dir}/lib/beansbinding-1.2.1.jar" />
-    <path path="${base_dir}/lib/bootstrap.jar" />
     <path path="${base_dir}/lib/commons-lang-2.4.jar" />
     <path path="${base_dir}/lib/commons-logging-1.1.1.jar" />
     <path path="${base_dir}/lib/diffutils-1.2.1.jar" />
@@ -13782,7 +13704,8 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
-    <path path="${base_dir}/workbench/classes" />
+    <path path="${base_dir}/workbench/idea-patch/classes" />
+    <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
@@ -13794,9 +13717,9 @@
     <path path="${base_dir}/languages/util/ypath/solutions/pluginSolution/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
     <path path="${base_dir}/core/analyzers/classes" />
+    <path path="${base_dir}/core/ant/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
-    <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
@@ -13883,7 +13806,6 @@
     <path path="${base_dir}/languages/languageDesign/traceable/solutions/pluginSolution/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/typesystem/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/typesystem/solutions/pluginSolution/classes_gen" />
-    <path path="${base_dir}/languages/util/buildlanguage/ant/classes" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/solutions/pluginSolution/classes_gen" />
@@ -13920,7 +13842,6 @@
     <path path="${base_dir}/lib/ant/lib/ant.jar" />
     <path path="${base_dir}/lib/asm.jar" />
     <path path="${base_dir}/lib/beansbinding-1.2.1.jar" />
-    <path path="${base_dir}/lib/bootstrap.jar" />
     <path path="${base_dir}/lib/commons-lang-2.4.jar" />
     <path path="${base_dir}/lib/commons-logging-1.1.1.jar" />
     <path path="${base_dir}/lib/diffutils-1.2.1.jar" />
@@ -13949,7 +13870,8 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
-    <path path="${base_dir}/workbench/classes" />
+    <path path="${base_dir}/workbench/idea-patch/classes" />
+    <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
@@ -13981,9 +13903,9 @@
     <path path="${base_dir}/languages/util/mps-lite/languages/mpslite/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
     <path path="${base_dir}/core/analyzers/classes" />
+    <path path="${base_dir}/core/ant/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
-    <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
@@ -14070,7 +13992,6 @@
     <path path="${base_dir}/languages/languageDesign/traceable/solutions/pluginSolution/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/typesystem/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/typesystem/solutions/pluginSolution/classes_gen" />
-    <path path="${base_dir}/languages/util/buildlanguage/ant/classes" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/solutions/pluginSolution/classes_gen" />
@@ -14109,7 +14030,6 @@
     <path path="${base_dir}/lib/ant/lib/ant.jar" />
     <path path="${base_dir}/lib/asm.jar" />
     <path path="${base_dir}/lib/beansbinding-1.2.1.jar" />
-    <path path="${base_dir}/lib/bootstrap.jar" />
     <path path="${base_dir}/lib/commons-lang-2.4.jar" />
     <path path="${base_dir}/lib/commons-logging-1.1.1.jar" />
     <path path="${base_dir}/lib/diffutils-1.2.1.jar" />
@@ -14138,7 +14058,8 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
-    <path path="${base_dir}/workbench/classes" />
+    <path path="${base_dir}/workbench/idea-patch/classes" />
+    <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
@@ -14155,9 +14076,9 @@
     <path path="${base_dir}/languages/util/ypath/solutions/main/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
     <path path="${base_dir}/core/analyzers/classes" />
+    <path path="${base_dir}/core/ant/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
-    <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
@@ -14244,7 +14165,6 @@
     <path path="${base_dir}/languages/languageDesign/traceable/solutions/pluginSolution/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/typesystem/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/typesystem/solutions/pluginSolution/classes_gen" />
-    <path path="${base_dir}/languages/util/buildlanguage/ant/classes" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/solutions/pluginSolution/classes_gen" />
@@ -14282,7 +14202,6 @@
     <path path="${base_dir}/lib/ant/lib/ant.jar" />
     <path path="${base_dir}/lib/asm.jar" />
     <path path="${base_dir}/lib/beansbinding-1.2.1.jar" />
-    <path path="${base_dir}/lib/bootstrap.jar" />
     <path path="${base_dir}/lib/commons-lang-2.4.jar" />
     <path path="${base_dir}/lib/commons-logging-1.1.1.jar" />
     <path path="${base_dir}/lib/diffutils-1.2.1.jar" />
@@ -14311,7 +14230,8 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
-    <path path="${base_dir}/workbench/classes" />
+    <path path="${base_dir}/workbench/idea-patch/classes" />
+    <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
@@ -14322,9 +14242,9 @@
     <path path="${base_dir}/languages/util/ypath/solutions/test/classes_gen" />
     <path path="${base_dir}/MPSPlugin/apiclasses" />
     <path path="${base_dir}/core/analyzers/classes" />
+    <path path="${base_dir}/core/ant/classes" />
     <path path="${base_dir}/core/findUsages-runtime/classes" />
     <path path="${base_dir}/core/generator/classes" />
-    <path path="${base_dir}/core/idea-patch/classes" />
     <path path="${base_dir}/core/kernel/classes" />
     <path path="${base_dir}/core/make-runtime/classes" />
     <path path="${base_dir}/core/refactoring-runtime/classes" />
@@ -14411,7 +14331,6 @@
     <path path="${base_dir}/languages/languageDesign/traceable/solutions/pluginSolution/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/typesystem/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/typesystem/solutions/pluginSolution/classes_gen" />
-    <path path="${base_dir}/languages/util/buildlanguage/ant/classes" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/buildlanguage/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/classes_gen" />
     <path path="${base_dir}/languages/util/buildlanguage/languages/generictasks/solutions/pluginSolution/classes_gen" />
@@ -14450,7 +14369,6 @@
     <path path="${base_dir}/lib/ant/lib/ant.jar" />
     <path path="${base_dir}/lib/asm.jar" />
     <path path="${base_dir}/lib/beansbinding-1.2.1.jar" />
-    <path path="${base_dir}/lib/bootstrap.jar" />
     <path path="${base_dir}/lib/commons-lang-2.4.jar" />
     <path path="${base_dir}/lib/commons-logging-1.1.1.jar" />
     <path path="${base_dir}/lib/diffutils-1.2.1.jar" />
@@ -14479,7 +14397,8 @@
     <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/baseLanguageIndex/classes_gen" />
-    <path path="${base_dir}/workbench/classes" />
+    <path path="${base_dir}/workbench/idea-patch/classes" />
+    <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />

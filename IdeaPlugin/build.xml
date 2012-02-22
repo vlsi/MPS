@@ -242,11 +242,11 @@
                debug="${javac.debug}" debuglevel="lines,vars,source">
             <compilerarg value="-Xlint:none"/>
             <src>
-                <path path="${base_dir}/languages/util/buildlanguage/ant/source_gen"/>
+                <path path="${base_dir}/core/ant/source_gen"/>
             </src>
         </javac>
         <copy includeemptydirs="false" todir="${build_dir}/mpsbackend_jar">
-            <fileset dir="${base_dir}/languages/util/buildlanguage/ant/source_gen" includes="**/*.png"/>
+            <fileset dir="${base_dir}/core/ant/source_gen" includes="**/*.png"/>
         </copy>
         <jar destfile="${dist.dir}/lib/mps-backend.jar">
             <fileset dir="${build_dir}/mpsbackend_jar"/>
@@ -333,6 +333,8 @@
                 <path path="${base_dir}/editor/typesystemIntegration/source"/>
                 <path path="${base_dir}/workbench/mps-editor/source"/>
                 <path path="${base_dir}/workbench/mps-editor/source_gen"/>
+                <path path="${base_dir}/workbench/mps-platform/source"/>
+                <path path="${base_dir}/workbench/mps-platform/source_gen"/>
             </src>
             <classpath>
                 <fileset dir="${dist.dir}/lib" includes="*.jar"/>
@@ -380,6 +382,7 @@
             <fileset dir="${base_dir}/workbench/mps-platform/source" includes="META-INF/*"/>
             <fileset dir="${base_dir}/workbench/mps-editor/source" includes="META-INF/*"/>
             <fileset dir="${base_dir}/workbench/mps-editor/source_gen" includes="**/*.png, **/*.xml"/>
+            <fileset dir="${base_dir}/workbench/mps-platform/source_gen" includes="**/*.png, **/*.xml"/>
         </copy>
         <copy file="${base_dir}/IdeaPlugin/mps-core/META-INF/plugin.xml"
               tofile="${build_dir}/mpsplugin_jar/META-INF/plugin.xml">

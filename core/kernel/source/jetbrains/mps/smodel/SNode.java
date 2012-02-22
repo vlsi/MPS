@@ -804,15 +804,6 @@ public final class SNode {
   }
 
   void registerInModel(SModel model) {
-    registerInModel_internal(model);
-
-    // add language because typesystem needs it to invalidate/revalidate its caches
-    //todo this is a hack
-    if (!myModel.canFireEvent() || MPSCore.getInstance().isMergeDriverMode()) return;
-    SModelOperations.validateLanguages(model, this);
-  }
-
-  private void registerInModel_internal(SModel model) {
     if (myRegisteredInModelFlag) {
       if (model != myModel) {
         LOG.errorWithTrace("couldn't register node which is already registered in '" + myModel.getSModelReference() + "'");
@@ -835,7 +826,7 @@ public final class SNode {
       ModelChangedCaster.getInstance().fireModelChanged(this, wasModel);
     }
     for (SNode child = getFirstChild(); child != null; child = child.myNextSibling) {
-      child.registerInModel_internal(model);
+      child.registerInModel(model);
     }
   }
 

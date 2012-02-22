@@ -248,7 +248,7 @@ public abstract class MPSTreeNode extends DefaultMutableTreeNode implements Iter
 
   @Nullable
   public final MPSTreeNode findDescendantWith(Object userObject) {
-    if (getUserObject().equals(userObject)) return this;
+    if (getUserObject() == null ? userObject == null : getUserObject().equals(userObject)) return this;
     if (isInitialized()) {
       for (int i = 0; i < getChildCount(); i++) {
         MPSTreeNode result = ((MPSTreeNode) getChildAt(i)).findDescendantWith(userObject);
@@ -349,7 +349,7 @@ public abstract class MPSTreeNode extends DefaultMutableTreeNode implements Iter
     addTreeMessage(message, true);
   }
 
-  public void addTreeMessage(TreeMessage message, boolean updatePresentation) {
+  public void addTreeMessage(@NotNull TreeMessage message, boolean updatePresentation) {
     synchronized (myTreeMessagesLock) {
       if (myTreeMessages == null) {
         myTreeMessages = new ArrayList<TreeMessage>(1);
@@ -363,7 +363,7 @@ public abstract class MPSTreeNode extends DefaultMutableTreeNode implements Iter
     addTreeMessages(true, messages);
   }
 
-  public void addTreeMessages(boolean updatePresentation, TreeMessage... messages) {
+  public void addTreeMessages(boolean updatePresentation, @NotNull TreeMessage... messages) {
     if (messages.length == 0) return;
     synchronized (myTreeMessagesLock) {
       if (myTreeMessages == null) {
@@ -378,7 +378,7 @@ public abstract class MPSTreeNode extends DefaultMutableTreeNode implements Iter
     removeTreeMessage(message, true);
   }
 
-  public void removeTreeMessage(TreeMessage message, boolean updatePresentation) {
+  public void removeTreeMessage(@NotNull TreeMessage message, boolean updatePresentation) {
     final boolean[] b = new boolean[]{false};
     synchronized (myTreeMessagesLock) {
       if (myTreeMessages != null) {

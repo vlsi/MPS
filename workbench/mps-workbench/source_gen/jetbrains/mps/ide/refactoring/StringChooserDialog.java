@@ -30,12 +30,15 @@ public class StringChooserDialog extends RefactoringDialog {
     myTextField.setSelectionEnd(initialValue.length());
     myLabel.setText(labelText);
     setHorizontalStretch(2.0f);
-
   }
 
   @Nullable
   protected JComponent createCenterPanel() {
     return null;
+  }
+
+  public JComponent getPreferredFocusedComponent() {
+    return myTextField;
   }
 
   @Override

@@ -8,10 +8,10 @@
       <sourceFolder url="file://$MODULE_DIR$/source" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/test_gen" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/common/source_gen" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="module" module-name="workbench" />
     <orderEntry type="module" module-name="Tuples-runtime" />
     <orderEntry type="module" module-name="testbench" scope="TEST" />
     <orderEntry type="module" module-name="editor-runtime" />
@@ -31,6 +31,7 @@
     <orderEntry type="module" module-name="mps-platform" />
     <orderEntry type="module" module-name="mps-editor" />
     <orderEntry type="library" name="Log4j" level="project" />
+    <orderEntry type="module" module-name="mpsmake" />
   </component>
 </module>
 

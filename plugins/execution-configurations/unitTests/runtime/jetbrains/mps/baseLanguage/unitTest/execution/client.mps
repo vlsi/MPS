@@ -6057,7 +6057,7 @@
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="6577506630067933940" resolveInfo="testsLanguage" />
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="7149605750504389885">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cu2c.~Language%dgetRuntimeStubPaths()%cjava%dutil%dList" resolveInfo="getRuntimeStubPaths" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cu2c.~Language%dgetRuntimeStubPaths()%cjava%dutil%dSet" resolveInfo="getRuntimeStubPaths" />
             </node>
           </node>
         </node>
@@ -6070,7 +6070,7 @@
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="6577506630067933940" resolveInfo="testsLanguage" />
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="7292080432684961203">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cu2c.~Language%dgetRuntimeModulesReferences()%cjava%dutil%dList" resolveInfo="getRuntimeModulesReferences" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cu2c.~Language%dgetRuntimeModulesReferences()%cjava%dutil%dSet" resolveInfo="getRuntimeModulesReferences" />
             </node>
           </node>
           <node role="body" roleId="tpee.1154032183016" type="tpee.StatementList" typeId="tpee.1068580123136" id="7292080432684956722">
@@ -6127,7 +6127,7 @@
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7292080432684961353" resolveInfo="module" />
                 </node>
                 <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1937023808170650711">
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="vsqj.~AbstractModule%dgetStubPaths()%cjava%dutil%dList" resolveInfo="getStubPaths" />
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="vsqj.~AbstractModule%dgetStubPaths()%cjava%dutil%dSet" resolveInfo="getStubPaths" />
                 </node>
               </node>
             </node>

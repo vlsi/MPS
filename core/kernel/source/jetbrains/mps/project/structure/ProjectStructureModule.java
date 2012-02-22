@@ -208,8 +208,8 @@ public class ProjectStructureModule extends AbstractModule implements CoreCompon
   }
 
   @Override
-  public List<ModuleReference> getUsedLanguagesReferences() {
-    return Collections.singletonList(BootstrapLanguages.PROJECT);
+  public Set<ModuleReference> getUsedLanguagesReferences() {
+    return Collections.singleton(BootstrapLanguages.PROJECT);
   }
 
   private void removeModel(SModelDescriptor md) {

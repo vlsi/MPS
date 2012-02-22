@@ -15,10 +15,7 @@
  */
 package jetbrains.mps.nodeEditor;
 
-import com.intellij.ide.CopyProvider;
-import com.intellij.ide.CutProvider;
-import com.intellij.ide.DataManager;
-import com.intellij.ide.PasteProvider;
+import com.intellij.ide.*;
 import com.intellij.openapi.actionSystem.*;
 import com.intellij.openapi.keymap.KeymapManager;
 import com.intellij.openapi.project.Project;
@@ -2590,6 +2587,9 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     if (dataId.equals(PlatformDataKeys.VIRTUAL_FILE_ARRAY.getName())) {
       return getVirtualFile() != null ? new VirtualFile[]{getVirtualFile()} : new VirtualFile[0];
     }
+    if (dataId.equals(LangDataKeys.VIRTUAL_FILE.getName())) {
+      return getVirtualFile();
+    }
 
     //not found
     return null;
@@ -2960,6 +2960,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     public void modelReplaced(final SModelDescriptor sm) {
       assert SwingUtilities.isEventDispatchThread() : "Model reloaded notification expected in EventDispatchThread";
       if (myNode != null) {
+        assertModelNotDisposed();
         if (myNode.getModel().getSModelReference().equals(sm.getSModelReference())) {
           clearModelDisposedTrace();
           SNodeId oldId = myNode.getSNodeId();

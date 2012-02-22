@@ -322,10 +322,10 @@
     <nodeInfo nodeId="8507913872068564036" fileName="NewLanguageDialogContentPane.java" startLine="234" startPosition="70" endLine="235" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5154621356648268614" fileName="NewLanguageDialogContentPane.java" startLine="235" startPosition="67" endLine="236" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3365295161441051161" fileName="NewLanguageDialogContentPane.java" startLine="238" startPosition="58" endLine="239" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3365295161441051141" fileName="NewLanguageDialogContentPane.java" startLine="239" startPosition="60" endLine="240" endPosition="138" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3365295161441051141" fileName="NewLanguageDialogContentPane.java" startLine="239" startPosition="60" endLine="240" endPosition="149" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="495282313485074359" fileName="NewLanguageDialogContentPane.java" startLine="242" startPosition="58" endLine="243" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3365295161441049323" fileName="NewLanguageDialogContentPane.java" startLine="243" startPosition="60" endLine="244" endPosition="172" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2640300360250758507" fileName="NewLanguageDialogContentPane.java" startLine="244" startPosition="172" endLine="245" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3365295161441049323" fileName="NewLanguageDialogContentPane.java" startLine="243" startPosition="60" endLine="244" endPosition="183" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2640300360250758507" fileName="NewLanguageDialogContentPane.java" startLine="244" startPosition="183" endLine="245" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1052960076632931817" fileName="NewLanguageDialogContentPane.java" startLine="246" startPosition="87" endLine="247" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3365295161442892847" fileName="NewLanguageDialogContentPane.java" startLine="250" startPosition="72" endLine="251" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3734045384532741040" fileName="NewLanguageDialogContentPane.java" startLine="259" startPosition="31" endLine="260" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -378,7 +378,7 @@
     <scopeInfo nodeId="1203685860407" fileName="NewLanguageDialogContentPane.java" startLine="296" startPosition="38" endLine="297" endPosition="13" />
     <scopeInfo nodeId="1203685988419" fileName="NewLanguageDialogContentPane.java" startLine="301" startPosition="96" endLine="302" endPosition="101" />
     <scopeInfo nodeId="4543209876460446067" fileName="NewLanguageDialogContentPane.java" startLine="216" startPosition="26" endLine="218" endPosition="13" />
-    <scopeInfo nodeId="5154621356648615844" fileName="NewLanguageDialogContentPane.java" startLine="238" startPosition="58" endLine="240" endPosition="138">
+    <scopeInfo nodeId="5154621356648615844" fileName="NewLanguageDialogContentPane.java" startLine="238" startPosition="58" endLine="240" endPosition="149">
       <varInfo nodeId="3365295161441051162" varName="runtime" />
     </scopeInfo>
     <scopeInfo nodeId="4543209876460447533" fileName="NewLanguageDialogContentPane.java" startLine="273" startPosition="46" endLine="275" endPosition="42">

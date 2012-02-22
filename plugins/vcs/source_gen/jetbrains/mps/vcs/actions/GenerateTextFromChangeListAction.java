@@ -9,7 +9,7 @@ import java.util.List;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.make.MakeSession;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.workbench.make.TextPreviewUtil;
+import jetbrains.mps.ide.make.TextPreviewUtil;
 import com.intellij.openapi.actionSystem.Presentation;
 
 public class GenerateTextFromChangeListAction extends GenerateFromChangeListAction {

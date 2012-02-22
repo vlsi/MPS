@@ -7,9 +7,11 @@ import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.samples.secretCompartmentLanguage.behavior.StateMachineTest_Behavior;
+import jetbrains.mps.generator.template.ReferenceMacroContext;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 
 public class QueriesGenerated {
@@ -59,6 +61,10 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_1197256634488(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "event", false), "code");
+  }
+
+  public static Object referenceMacro_GetReferent_5891355986060738160(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+    return ListSequence.fromList(SLinkOperations.getTargets(_context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.samples.secretCompartmentLanguage.structure.StateMachineTest"), "stateMachine", false), "StateMachineFactory"), "constructor", true)).first();
   }
 
   public static SNode sourceNodeQuery_1197241620516(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {

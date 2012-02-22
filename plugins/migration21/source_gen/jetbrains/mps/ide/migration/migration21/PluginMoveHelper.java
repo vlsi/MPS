@@ -165,7 +165,7 @@ public class PluginMoveHelper {
       }
     }).first());
     if (pluginModel.value == null) {
-      pluginModel.value = s.createModel(new SModelFqName(modelName, ""), s.getSModelRoots().get(0), null);
+      pluginModel.value = s.createModel(new SModelFqName(modelName, ""), s.getSModelRoots().iterator().next(), null);
     }
 
     List<SNode> nodes = IterableUtil.asList(LanguageAspect.PLUGIN.get(l).getSModel().roots());

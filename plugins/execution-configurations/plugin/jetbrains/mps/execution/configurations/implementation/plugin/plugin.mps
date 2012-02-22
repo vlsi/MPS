@@ -5957,7 +5957,7 @@
   </root>
   <root id="6062668769034024112">
     <node role="icon" roleId="uhxm.7966814097310618131" type="tp4k.IconResource" typeId="tp4k.2330114057060456691" id="6062668769034024113">
-      <property name="path" nameId="tp4k.7855019336153226684" value="${mps_home}/workbench/source/MPS_16.png" />
+      <property name="path" nameId="tp4k.7855019336153226684" value="${mps_home}/workbench/mps-workbench/source/MPS_16.png" />
     </node>
   </root>
   <root id="6062668769034024114">

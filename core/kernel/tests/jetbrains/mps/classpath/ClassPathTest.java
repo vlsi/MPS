@@ -106,7 +106,7 @@ public class ClassPathTest extends BaseMPSTest {
 
         //collect class2module info
         for (IModule m : modulesToCheck) {
-          List<ModelRoot> stubs = ModelRootUtil.filterJava(m.getModuleDescriptor().getStubModelEntries());
+          List<ModelRoot> stubs = ModelRootUtil.filterJava(new ArrayList<ModelRoot>(m.getModuleDescriptor().getStubModelEntries()));
 
           for (ModelRoot entry : stubs) {
             String path = entry.getPath();

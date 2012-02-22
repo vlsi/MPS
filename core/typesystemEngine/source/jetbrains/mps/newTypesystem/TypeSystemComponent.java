@@ -27,6 +27,7 @@ import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.typesystem.inference.RulesManager;
 import jetbrains.mps.typesystem.inference.TypeChecker;
+import jetbrains.mps.typesystem.inference.TypeContextManager;
 import jetbrains.mps.util.Pair;
 import org.jetbrains.annotations.NotNull;
 
@@ -370,7 +371,7 @@ class TypeSystemComponent extends CheckingComponent {
   private SNode typeCalculated(SNode initialNode) {
     if (myState.getInequalitySystem() != null) {
       SNode expectedType = myState.getInequalitySystem().getExpectedType();
-      if (expectedType != null && !TypesUtil.hasVariablesInside(expectedType)) {
+      if (expectedType != null && !TypesUtil.hasVariablesInside(expectedType) && !HUtil.isRuntimeHoleType(expectedType)) {
         return expectedType;
       }
     } else {

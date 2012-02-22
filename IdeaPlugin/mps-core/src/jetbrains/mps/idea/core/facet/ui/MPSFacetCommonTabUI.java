@@ -24,6 +24,7 @@ import com.intellij.ui.TabbedPaneWrapper;
 import jetbrains.mps.idea.core.MPSBundle;
 import jetbrains.mps.idea.core.facet.MPSConfigurationBean;
 import jetbrains.mps.idea.core.icons.MPSIcons;
+import jetbrains.mps.idea.core.ui.UsedLanguagesTable;
 
 import javax.swing.*;
 
@@ -40,7 +41,7 @@ public class MPSFacetCommonTabUI {
     private MPSFacetSourcesTab mySourcesTab;
     private MPSFacetPathsTab myPathsTab;
     private FacetEditorContext myContext;
-    private UsedLanguagesTab myUsedLanguagesTab;
+    private UsedLanguagesTable myUsedLanguagesTab;
 
     public MPSFacetCommonTabUI(FacetEditorContext context, Disposable parentDisposable) {
         myParentDisposable = parentDisposable;
@@ -85,7 +86,7 @@ public class MPSFacetCommonTabUI {
         TabbedPaneWrapper tabbedPane = new TabbedPaneWrapper(myParentDisposable);
         tabbedPane.addTab(MPSBundle.message("facet.sources.tab.name"), MPSIcons.SOURCES_TAB_ICON, (mySourcesTab = new MPSFacetSourcesTab(myContext, myParentDisposable)).getRootPanel(), null);
         tabbedPane.addTab(MPSBundle.message("facet.paths.tab.name"), MPSIcons.PATHS_TAB_ICON, (myPathsTab = new MPSFacetPathsTab(myContext)).getRootPanel(), null);
-        tabbedPane.addTab(MPSBundle.message("facet.languages.tab.name"), MPSIcons.LANGUAGES_TAB_ICON, (myUsedLanguagesTab = new UsedLanguagesTab()).createComponent(), null);
+        tabbedPane.addTab(MPSBundle.message("facet.languages.tab.name"), MPSIcons.LANGUAGES_TAB_ICON, (myUsedLanguagesTab = new UsedLanguagesTable()).createComponent(), null);
         tabbedPane.addTab(MPSBundle.message("facet.devkits.tab.name"), MPSIcons.DEVKITS_TAB_ICON, new JPanel(), null);
         myCentralComponent = tabbedPane.getComponent();
     }

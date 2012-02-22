@@ -30,6 +30,7 @@ import java.awt.Component;
 import java.io.File;
 import java.lang.reflect.InvocationTargetException;
 import java.util.List;
+import java.util.Set;
 
 public class NewProjectUITest extends NoProjectUITestsBase {
   public void testInitialValues() throws InvocationTargetException, InterruptedException {
@@ -75,7 +76,7 @@ public class NewProjectUITest extends NoProjectUITestsBase {
 
     Solution solution = ps.get(0);
     Language language = pl.get(0);
-    List<ModuleReference> languages = solution.getModuleDescriptor().getUsedLanguages();
+    Set<ModuleReference> languages = solution.getModuleDescriptor().getUsedLanguages();
     boolean imported = false;
     for (ModuleReference langRef:languages){
       if (ObjectUtils.equals(langRef.getModuleFqName(),language.getModuleFqName())){

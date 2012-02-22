@@ -19,36 +19,46 @@ import jetbrains.mps.project.structure.modules.mappingpriorities.MappingPriority
 import jetbrains.mps.smodel.SModelReference;
 import org.jetbrains.annotations.NotNull;
 
-import java.util.List;
+import java.util.*;
 
 public class RefUpdateUtil {
-  public static boolean updateModelRefs(List<SModelReference> refs) {
-    boolean changed = false;
-    for (int i = 0; i < refs.size(); i++) {
-      SModelReference ref = refs.get(i);
+  public static boolean updateModelRefs(Set<SModelReference> refs) {
+    Set<SModelReference> remove = new HashSet<SModelReference>();
+    Set<SModelReference> add = new HashSet<SModelReference>();
+
+    for (SModelReference ref:refs){
       SModelReference newRef = ref.update();
       if (ref.differs(newRef)) {
-        changed = true;
-        refs.set(i, newRef);
+        remove.add(ref);
+        add.add(newRef);
       }
     }
-    return changed;
+
+    refs.removeAll(remove);
+    refs.addAll(add);
+
+    return !remove.isEmpty();
   }
 
-  public static boolean updateModuleRefs(List<ModuleReference> refs) {
-    boolean changed = false;
-    for (int i = 0; i < refs.size(); i++) {
-      ModuleReference ref = refs.get(i);
+  public static boolean updateModuleRefs(Set<ModuleReference> refs) {
+    Set<ModuleReference> remove = new HashSet<ModuleReference>();
+    Set<ModuleReference> add = new HashSet<ModuleReference>();
+
+    for (ModuleReference ref:refs){
       ModuleReference newRef = ref.update();
       if (ref.differs(newRef)) {
-        changed = true;
-        refs.set(i, newRef);
+        remove.add(ref);
+        add.add(newRef);
       }
     }
-    return changed;
+
+    refs.removeAll(remove);
+    refs.addAll(add);
+
+    return !remove.isEmpty();
   }
 
-  public static boolean updateDependencies(List<Dependency> deps) {
+  public static boolean updateDependencies(Set<Dependency> deps) {
     boolean changed = false;
     for (Dependency dep : deps) {
       ModuleReference ref = dep.getModuleRef();

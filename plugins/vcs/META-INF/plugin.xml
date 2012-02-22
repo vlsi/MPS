@@ -103,6 +103,6 @@
     <mps.projectPrefsPanel implementation="jetbrains.mps.vcs.VcsGeneratedFilesPanel"/>
     <mps.editorWarningsProvider implementation="jetbrains.mps.vcs.ConflictingModelsWarnings" />
 
-    <errorHandler implementation="jetbrains.mps.workbench.diagnostics.CharismaReporter"/>
+    <errorHandler implementation="jetbrains.mps.ide.blame.CharismaReporter"/>
   </extensions>
 </idea-plugin>

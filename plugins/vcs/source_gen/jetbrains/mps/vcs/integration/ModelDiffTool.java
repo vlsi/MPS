@@ -45,7 +45,7 @@ public class ModelDiffTool implements DiffTool {
       DiffManager.getInstance().getIdeaDiffTool().show(request);
       return;
     }
-    new ModelDifferenceDialog(oldModel, newModel, request).showDialog();
+    new ModelDifferenceDialog(oldModel, newModel, request).show();
   }
 
   public boolean canShow(DiffRequest request) {
