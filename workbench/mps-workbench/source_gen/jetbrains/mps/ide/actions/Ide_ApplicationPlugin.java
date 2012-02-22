@@ -120,7 +120,6 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     addGroup(new DevkitActions_ActionGroup());
     addGroup(new Edit_ActionGroup());
     addGroup(new EditorInternal_ActionGroup());
-    addGroup(new EditorLeftPanelMenu_ActionGroup());
     addGroup(new EditorPopupEx_ActionGroup());
     addGroup(new EditorPopupEx_Goto_ActionGroup());
     addGroup(new EditorPopup_Show_ActionGroup());

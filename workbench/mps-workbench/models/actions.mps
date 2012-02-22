@@ -930,10 +930,6 @@
       <property name="name" nameId="tpck.1169194664001" value="Code" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Menu.MainMenu" />
     </node>
-    <node type="tp4k.ActionGroupDeclaration" typeId="tp4k.1203087890642" id="8911222837206211872">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="Menu.EditorPopup" />
-      <property name="name" nameId="tpck.1169194664001" value="EditorLeftPanelMenu" />
-    </node>
     <node type="tp4k.IdeaInitializerDescriptor" typeId="tp4k.5023285075122009364" id="3531023421907756759">
       <property name="id" nameId="tp4k.5023285075122009366" value="jebrains.mps.ide" />
       <property name="name" nameId="tpck.1169194664001" value="IDE" />
@@ -19663,9 +19659,6 @@
     <node role="modifier" roleId="tp4k.1204991552650" type="tp4k.ModificationStatement" typeId="tp4k.1203092361741" id="796800879946376629">
       <link role="modifiedGroup" roleId="tp4k.1203092736097" targetNodeId="796800879946262664" resolveInfo="IDEACode" />
     </node>
-  </root>
-  <root id="8911222837206211872">
-    <node role="contents" roleId="tp4k.1207145245948" type="tp4k.ElementListContents" typeId="tp4k.1207145163717" id="8911222837206211874" />
   </root>
   <root id="3531023421907756759" />
   <root id="2010440180771532928">

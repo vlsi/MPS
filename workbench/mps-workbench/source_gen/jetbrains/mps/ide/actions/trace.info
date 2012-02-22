@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="Ide_ApplicationPlugin.java" startLine="12" startPosition="0" endLine="252" endPosition="0" unitName="jetbrains.mps.ide.actions.Ide_ApplicationPlugin" />
+  <unitInfo fileName="Ide_ApplicationPlugin.java" startLine="12" startPosition="0" endLine="251" endPosition="0" unitName="jetbrains.mps.ide.actions.Ide_ApplicationPlugin" />
   <unitInfo fileName="Ide_ProjectPlugin.java" startLine="13" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.ide.actions.Ide_ProjectPlugin" />
   <root nodeId="1204991215587">
     <nodeInfo nodeId="1204991215587" fileName="NodeActions_ActionGroup.java" startLine="11" startPosition="67" endLine="12" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
@@ -14747,24 +14747,6 @@
     <scopeInfo nodeId="885275291024029562" fileName="View_ActionGroup.java" startLine="12" startPosition="29" endLine="21" endPosition="5" />
     <scopeInfo nodeId="885275291024029562" fileName="View_ActionGroup.java" startLine="11" startPosition="0" endLine="22" endPosition="3" />
     <unitInfo nodeId="885275291024029562" fileName="View_ActionGroup.java" startLine="8" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.ide.actions.View_ActionGroup" />
-  </root>
-  <root nodeId="8911222837206211872">
-    <nodeInfo nodeId="8911222837206211872" fileName="EditorLeftPanelMenu_ActionGroup.java" startLine="8" startPosition="75" endLine="9" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
-    <nodeInfo nodeId="8911222837206211872" fileName="EditorLeftPanelMenu_ActionGroup.java" startLine="9" startPosition="86" endLine="10" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ID" />
-    <nodeInfo nodeId="8911222837206211872" fileName="EditorLeftPanelMenu_ActionGroup.java" startLine="12" startPosition="44" endLine="13" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="8911222837206211872" fileName="EditorLeftPanelMenu_ActionGroup.java" startLine="13" startPosition="37" endLine="14" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8911222837206211872" fileName="EditorLeftPanelMenu_ActionGroup.java" startLine="14" startPosition="30" endLine="15" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8911222837206211872" fileName="EditorLeftPanelMenu_ActionGroup.java" startLine="17" startPosition="27" endLine="18" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8911222837206211872" fileName="EditorLeftPanelMenu_ActionGroup.java" startLine="15" startPosition="25" endLine="19" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="8911222837206211872" fileName="EditorLeftPanelMenu_ActionGroup.java" startLine="11" startPosition="0" endLine="20" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="EditorLeftPanelMenu_ActionGroup#()V" />
-    <scopeInfo nodeId="8911222837206211872" fileName="EditorLeftPanelMenu_ActionGroup.java" startLine="16" startPosition="9" endLine="16" endPosition="9" />
-    <scopeInfo nodeId="8911222837206211872" fileName="EditorLeftPanelMenu_ActionGroup.java" startLine="17" startPosition="0" endLine="18" endPosition="39">
-      <varInfo nodeId="8911222837206211872" varName="t" />
-    </scopeInfo>
-    <scopeInfo nodeId="8911222837206211872" fileName="EditorLeftPanelMenu_ActionGroup.java" startLine="17" startPosition="27" endLine="18" endPosition="39" />
-    <scopeInfo nodeId="8911222837206211872" fileName="EditorLeftPanelMenu_ActionGroup.java" startLine="12" startPosition="44" endLine="19" endPosition="5" />
-    <scopeInfo nodeId="8911222837206211872" fileName="EditorLeftPanelMenu_ActionGroup.java" startLine="11" startPosition="0" endLine="20" endPosition="3" />
-    <unitInfo nodeId="8911222837206211872" fileName="EditorLeftPanelMenu_ActionGroup.java" startLine="8" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.ide.actions.EditorLeftPanelMenu_ActionGroup" />
   </root>
   <root nodeId="9164503229271455483">
     <nodeInfo nodeId="9164503229271455483" fileName="AddMissingImportsInProject_Action.java" startLine="23" startPosition="67" endLine="24" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />

@@ -215,6 +215,7 @@
       <reference ref="EditorPopup_ActionGroupvcs"/>
       <separator/>
     </group>
+    <group id="jetbrains.mps.ide.editor.actions.EditorLeftPanelMenu_ActionGroup"/>
     <group id="jetbrains.mps.ide.editor.actions.Folding_ActionGroup" text="Folding" popup="true">
       <reference ref="jetbrains.mps.ide.editor.actions.Expand_Action"/>
       <reference ref="jetbrains.mps.ide.editor.actions.Collapse_Action"/>
