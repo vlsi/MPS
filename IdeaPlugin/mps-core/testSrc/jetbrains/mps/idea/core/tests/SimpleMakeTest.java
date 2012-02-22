@@ -37,69 +37,51 @@ import jetbrains.mps.vfs.IFile;
  * Time: 10:36 AM
  * To change this template use File | Settings | File Templates.
  */
-public class SimpleMakeTest extends AbstractMakeTest{
+public class SimpleMakeTest extends AbstractMakeTest {
 
-    @Override
-    protected void prepareTestData(final MPSFacetConfiguration configuration) throws  Exception {
-        String moduleFileName = configuration.getFacet().getModule().getModuleFilePath();
-        copyResource(moduleFileName, "simple.iml", "/tests/simple/simple.iml");
-        final IFile model = copyResource("models", "simple.mps", "simple.mps", "/tests/simple/models/simple.mps");
-        final IFile source = model.getParent();
-        configuration.getState().setModelRootPaths(model.getParent().getPath());
-        prepareTestData(configuration, source);
-    }
-
-
-    public void testGeneratingIntoHiddenDir () {
-        CompilerManagerImpl.testSetup();
-
-        ModuleRootManager mrm = ModuleRootManager.getInstance(myFacet.getModule());
-        VirtualFile[] srs = mrm.getSourceRoots();
-        assertTrue(srs.length == 2);
-        assertEquals("models", srs[0].getName());
-
-        VirtualFile[] children = srs[0].getChildren();
-        assertTrue(children.length == 1);
-        assertEquals("simple.mps", children[0].getName());
-
-        VirtualFileSystem vfs = VirtualFileManager.getInstance().getFileSystem("file");
-        vfs.refresh(false);
-        final VirtualFile moduleDir = srs[0].getParent();
-        assertTrue(moduleDir.findChild("source_gen") == null);
-
-        class Result { boolean aborted; int errors; int warnings; }
-        final Result res = new Result();
-        CompilerManager cm = CompilerManager.getInstance(myFacet.getModule().getProject());
-        cm.compile(myFacet.getModule(), new CompileStatusNotification() {
-            @Override
-            public void finished(boolean aborted, int errors, int warnings, CompileContext compileContext) {
-                res.aborted = aborted;
-                res.errors = errors;
-                res.warnings = warnings;
-            }
-        });
-
-        assertFalse(res.aborted);
-        assertSame(0, res.errors);
-        assertSame(0, res.warnings);
+  @Override
+  protected void prepareTestData(final MPSFacetConfiguration configuration) throws Exception {
+    String moduleFileName = configuration.getFacet().getModule().getModuleFilePath();
+    copyResource(moduleFileName, "simple.iml", "/tests/simple/simple.iml");
+    final IFile model = copyResource("models", "simple.mps", "simple.mps", "/tests/simple/models/simple.mps");
+    final IFile source = model.getParent();
+    configuration.getState().setModelRootPaths(model.getParent().getPath());
+    prepareTestData(configuration, source);
+  }
 
 
-        MPSCompiler2[] mpscs = cm.getCompilers(MPSCompiler2.class);
-        assertSame(1, mpscs.length);
+  public void testGeneratingIntoHiddenDir() {
+    CompilerManagerImpl.testSetup();
 
-        VirtualFile outputDir = vfs.findFileByPath(CompilerPaths.getGenerationOutputPath(mpscs[0], myFacet.getModule(), false));
-        assertNotNull("Not found output dir", outputDir);
-        assertNotNull(outputDir.findFileByRelativePath("simple"));
-        assertNotNull(outputDir.findFileByRelativePath("simple/Launchme.java"));
-        assertNotNull(outputDir.findFileByRelativePath("simple/trace.info"));
-        assertTrue(outputDir.findFileByRelativePath("simple").getChildren().length == 2);
+    ModuleRootManager mrm = ModuleRootManager.getInstance(myFacet.getModule());
+    VirtualFile[] srs = mrm.getSourceRoots();
+    assertTrue(srs.length == 2);
+    assertEquals("models", srs[0].getName());
 
-        vfs.refresh(false);
-        assertNull("Shouldn't be there: " + moduleDir.getPath() + "/source_gen", moduleDir.findChild("source_gen"));
+    VirtualFile[] children = srs[0].getChildren();
+    assertTrue(children.length == 1);
+    assertEquals("simple.mps", children[0].getName());
 
-        VirtualFile cachesOutputDir = vfs.findFileByPath(MPSCompilerPaths.getCachesOutputPath(mpscs[0],  myFacet.getModule(), false));
-        assertNotNull("Not found output dir", cachesOutputDir);
-        assertNotNull(cachesOutputDir.findFileByRelativePath("simple"));
+    final VirtualFile moduleDir = srs[0].getParent();
+    assertTrue(moduleDir.findChild("source_gen") == null);
 
-    }
+    CompilerManager cm = CompilerManager.getInstance(myFacet.getModule().getProject());
+    assertCompiles(cm);
+
+    MPSCompiler2[] mpscs = cm.getCompilers(MPSCompiler2.class);
+    assertSame(1, mpscs.length);
+
+    VirtualFile outputDir = getVFS().findFileByPath(CompilerPaths.getGenerationOutputPath(mpscs[0], myFacet.getModule(), false));
+    assertNotNull("Not found output dir", outputDir);
+    assertExists(outputDir, "simple");
+    assertExists(outputDir, "simple/Launchme.java");
+    assertExists(outputDir, "simple/trace.info");
+    assertTrue(outputDir.findFileByRelativePath("simple").getChildren().length == 2);
+
+    getVFS().refresh(false);
+    assertNotExists(moduleDir, "source_gen");
+
+    VirtualFile cachesOutputDir = getVFS().findFileByPath(MPSCompilerPaths.getCachesOutputPath(mpscs[0], myFacet.getModule(), false));
+    assertExists(cachesOutputDir, "simple");
+  }
 }
