@@ -5956,9 +5956,6 @@
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="1256248142479741067">
                 <property name="value" nameId="tpee.1070475926801" value="com.intellij.ide.ClassloaderUtil" />
               </node>
-              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="1256248142479770905">
-                <property name="value" nameId="tpee.1070475926801" value="jetbrains.mps.ide.generator.TransientModelsComponent" />
-              </node>
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="1256248142479772451">
                 <property name="value" nameId="tpee.1070475926801" value="org.apache.xmlrpc.XmlRpcServer" />
               </node>
@@ -5974,20 +5971,11 @@
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="7566850531967204027">
                 <property name="value" nameId="tpee.1070475926801" value="jetbrains.mps.ide.findusages.FindersManager" />
               </node>
-              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="7566850531967204796">
-                <property name="value" nameId="tpee.1070475926801" value="jetbrains.mps.baseLanguage.index.ClassifierSuccessorsIndexer" />
-              </node>
-              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="8011573861498764451">
-                <property name="value" nameId="tpee.1070475926801" value="jetbrains.mps.execution.impl.configurations.runners.MPSProgramRunner" />
-              </node>
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="8011573861498791965">
                 <property name="value" nameId="tpee.1070475926801" value="com.google.common.collect.ImmutableList" />
               </node>
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="8011573861498792734">
                 <property name="value" nameId="tpee.1070475926801" value="jetbrains.mps.analyzers.runtime.framework.CustomAnalyzerRunner" />
-              </node>
-              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="8011573861498793503">
-                <property name="value" nameId="tpee.1070475926801" value="jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin" />
               </node>
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="8011573861498794272">
                 <property name="value" nameId="tpee.1070475926801" value="jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple" />
