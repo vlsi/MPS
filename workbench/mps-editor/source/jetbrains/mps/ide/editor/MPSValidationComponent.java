@@ -20,6 +20,7 @@ import com.intellij.openapi.components.ProjectComponent;
 import jetbrains.mps.nodeEditor.Highlighter;
 import jetbrains.mps.typesystem.checking.TypesEditorChecker;
 import org.jetbrains.annotations.NotNull;
+import typesystemIntegration.languageChecker.AutoResolver;
 
 /**
  * evgeny, 12/27/11
@@ -28,6 +29,7 @@ public class MPSValidationComponent implements ProjectComponent {
 
   private final Highlighter myHighlighter;
   private TypesEditorChecker myTypesChecker;
+  private AutoResolver myAutoResolver;
 
   public MPSValidationComponent(Highlighter myHighlighter) {
     this.myHighlighter = myHighlighter;
@@ -35,13 +37,14 @@ public class MPSValidationComponent implements ProjectComponent {
 
   @Override
   public void initComponent() {
-    myTypesChecker = new TypesEditorChecker();
-    myHighlighter.addChecker(myTypesChecker);
+    myHighlighter.addChecker(myTypesChecker = new TypesEditorChecker());
+    myHighlighter.addChecker(myAutoResolver = new AutoResolver());
   }
 
   @Override
   public void disposeComponent() {
     myHighlighter.removeChecker(myTypesChecker);
+    myHighlighter.removeChecker(myAutoResolver);
     myTypesChecker.dispose();
   }
 
