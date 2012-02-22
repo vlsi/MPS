@@ -1,4 +1,5 @@
 <project name="buildPlugin" basedir="../">
+  <property file="${ant.file.buildPlugin}/../../build/artifacts/buildCore.artifacts/buildCore.variables.properties" />
   <property name="build.dir" location="build" />
   <property name="buildPlugin.tmp" location="${build.dir}/tmp/buildPlugin.tmp" />
   <property name="buildPlugin.deploy.dir" location="${build.dir}/artifacts/buildPlugin.artifacts" />

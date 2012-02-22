@@ -1,5 +1,5 @@
 <project name="buildCore" basedir="../">
-  <property file="buildCore.properties" />
+  <property file="${ant.file.buildCore}/../buildCore.properties" />
   <property name="build.dir" location="build" />
   <property name="mps_home" location="${basedir}/../../../.." />
   <property name="build_langs" location="${mps_home}/languages/build" />
@@ -52,6 +52,10 @@
       <fileset dir="${build.dir}/tmp/java.out.mps-core" />
       <fileset dir="${buildCore.tmp}/mps-core${ver}.jar" />
     </jar>
+    <echo file="${build.dir}/artifacts/buildCore.artifacts/buildCore.variables">buildCore.build.number=${build.number}
+        buildCore.ver=${ver}
+        buildCore.MPS=${MPS}
+           </echo>
   </target>
   
   <target name="test" depends="classes" />

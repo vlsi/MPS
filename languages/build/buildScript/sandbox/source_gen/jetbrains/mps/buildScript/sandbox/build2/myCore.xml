@@ -1,5 +1,5 @@
 <project name="myCore" basedir=".">
-  <property file="myCore.properties" />
+  <property file="${ant.file.myCore}/../myCore.properties" />
   <property name="build.dir" location="build" />
   <property name="aaa" location="${aaa.relative}" />
   <property name="bbb" value="./bbbb" />
