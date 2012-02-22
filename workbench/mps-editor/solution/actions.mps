@@ -312,6 +312,11 @@
       <property name="name" nameId="tpck.1169194664001" value="SuppressErrorsGroup" />
       <property name="isPluginXmlGroup" nameId="tp4k.6368583333374291912" value="true" />
     </node>
+    <node type="tp4k.ActionGroupDeclaration" typeId="tp4k.1203087890642" id="6893431717880497466">
+      <property name="name" nameId="tpck.1169194664001" value="ActionsAsIntentions" />
+      <property name="isPluginXmlGroup" nameId="tp4k.6368583333374291912" value="true" />
+      <property name="isPopup" nameId="tp4k.1213283637680" value="true" />
+    </node>
   </roots>
   <root id="4362199797783336764">
     <node role="modifier" roleId="tp4k.1204991552650" type="tp4k.ModificationStatement" typeId="tp4k.1203092361741" id="4362199797783336767">
@@ -5228,6 +5233,9 @@
       <node role="actionGroups" roleId="tp4k.331224023792854818" type="tp4k.ActionGroupRef" typeId="tp4k.331224023792854815" id="6893431717880290409">
         <link role="group" roleId="tp4k.331224023792854816" targetNodeId="6893431717880290404" resolveInfo="SuppressErrorsGroup" />
       </node>
+      <node role="actionGroups" roleId="tp4k.331224023792854818" type="tp4k.ActionGroupRef" typeId="tp4k.331224023792854815" id="6893431717880497470">
+        <link role="group" roleId="tp4k.331224023792854816" targetNodeId="6893431717880497466" resolveInfo="ActionsAsIntentions" />
+      </node>
       <node role="keymapsRef" roleId="tp4k.331224023792855168" type="tp4k.KeymapRef" typeId="tp4k.331224023792855166" id="3205778618063801976">
         <link role="keymap" roleId="tp4k.331224023792855167" targetNodeId="4362199797783345371" resolveInfo="Default" />
       </node>
@@ -5911,6 +5919,9 @@
         <link role="action" roleId="tp4k.1203088061055" targetNodeId="6893431717880288043" resolveInfo="DoNotSuppressErrors" />
       </node>
     </node>
+  </root>
+  <root id="6893431717880497466">
+    <node role="contents" roleId="tp4k.1207145245948" type="tp4k.ElementListContents" typeId="tp4k.1207145163717" id="6893431717880497468" />
   </root>
 </model>
 

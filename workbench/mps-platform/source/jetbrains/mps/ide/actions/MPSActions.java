@@ -29,6 +29,8 @@ public class MPSActions {
   public static final String EDITOR_LEFTPANEL_GROUP = "jetbrains.mps.ide.editor.actions.EditorLeftPanelMenu_ActionGroup";
   public static final String EDITOR_POPUP_GROUP = "jetbrains.mps.ide.editor.actions.EditorPopup_ActionGroup";
 
+  public static final String ACTIONS_AS_INTENTIONS_GROUP = "jetbrains.mps.ide.editor.actions.ActionsAsIntentions_ActionGroup";
+
   public static final String EDITOR_GOTO_DECLARATION = "jetbrains.mps.ide.editor.actions.GoByCurrentReference_Action";
 
 }

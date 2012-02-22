@@ -20,7 +20,6 @@
     <dependency reexport="false">8d29d73f-ed99-4652-ae0a-083cdfe53c34(jetbrains.mps.ide.platform)</dependency>
     <dependency reexport="false">af65afd8-f0dd-4942-87d9-63a55f2a9db1(jetbrains.mps.lang.behavior)</dependency>
     <dependency reexport="false">ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)</dependency>
-    <dependency reexport="false">3699ecc3-1807-448d-a272-a5acff79f168(jetbrains.mps.lang.core.pluginSolution)</dependency>
     <dependency reexport="false">66e9008e-0fff-442a-b94e-09ea76bf741a(jetbrains.mps.lang.dataFlow.pluginSolution)</dependency>
     <dependency reexport="false">feddcab7-7240-49eb-bd42-e15e0a95cb26(jetbrains.mps.lang.intentions.pluginSolution)</dependency>
   </dependencies>

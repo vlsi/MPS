@@ -1,22 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <model modelUID="r:58b9acd8-db32-428c-ac80-a2787e2bcd96(jetbrains.mps.lang.core.pluginSolution.plugin)">
   <persistence version="7" />
-  <language namespace="28f9e497-3b42-4291-aeba-0a1039153ab1(jetbrains.mps.lang.plugin)" />
   <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
   <language namespace="c0080a47-7e37-4558-bee9-9ae18e690549(jetbrains.mps.lang.extension)" />
   <import index="tpcq" modelUID="r:00000000-0000-4000-0000-011c89590286(jetbrains.mps.lang.core.plugin)" version="-1" />
   <import index="xjo8" modelUID="f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#jetbrains.mps.ide.generator(MPS.Workbench/jetbrains.mps.ide.generator@java_stub)" version="-1" />
   <import index="a9qh" modelUID="f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#com.intellij.openapi.application(MPS.Workbench/com.intellij.openapi.application@java_stub)" version="-1" />
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="-1" implicit="yes" />
-  <import index="tp4k" modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" version="5" implicit="yes" />
   <import index="v54s" modelUID="r:2a0fe383-d602-4f5b-813c-e41afdbbb97e(jetbrains.mps.lang.extension.structure)" version="-1" implicit="yes" />
-  <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <roots>
     <node type="v54s.ExtensionDeclaration" typeId="v54s.3729007189729192404" id="6905339732004138486">
       <link role="extensionPoint" roleId="v54s.3729007189729192405" targetNodeId="tpcq.6905339732004134989" resolveInfo="GeneratorCache" />
-    </node>
-    <node type="tp4k.InterfaceGroup" typeId="tp4k.1204383956737" id="8755682900100354744">
-      <property name="name" nameId="tpck.1169194664001" value="ActionsAsIntentions" />
     </node>
   </roots>
   <root id="6905339732004138486">
@@ -49,12 +43,6 @@
         </node>
       </node>
     </node>
-  </root>
-  <root id="8755682900100354744">
-    <node role="groupID" roleId="tp4k.1206193920040" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="8755682900100354747">
-      <property name="value" nameId="tpee.1070475926801" value="ActionsAsIntentions" />
-    </node>
-    <node role="contents" roleId="tp4k.1207148993063" type="tp4k.ElementListContents" typeId="tp4k.1207145163717" id="8755682900100354746" />
   </root>
 </model>
 

@@ -10,7 +10,6 @@
   </dependencies>
   <usedLanguages>
     <usedLanguage>c0080a47-7e37-4558-bee9-9ae18e690549(jetbrains.mps.lang.extension)</usedLanguage>
-    <usedLanguage>28f9e497-3b42-4291-aeba-0a1039153ab1(jetbrains.mps.lang.plugin)</usedLanguage>
   </usedLanguages>
 </solution>
 
