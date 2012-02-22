@@ -21,11 +21,16 @@ import com.intellij.debugger.ui.breakpoints.Breakpoint;
 import com.intellij.debugger.ui.breakpoints.BreakpointManagerListener;
 import com.intellij.debugger.ui.breakpoints.BreakpointWithHighlighter;
 import com.intellij.openapi.components.ProjectComponent;
+import com.intellij.openapi.editor.Document;
 import com.intellij.openapi.fileEditor.FileEditorManager;
 import com.intellij.openapi.project.Project;
+import com.intellij.psi.PsiDocumentManager;
+import com.intellij.psi.PsiFile;
 import jetbrains.mps.debugger.core.breakpoints.BreakpointsUiComponentEx;
 import jetbrains.mps.generator.traceInfo.TraceInfoCache;
+import jetbrains.mps.generator.traceInfo.TraceInfoUtil;
 import jetbrains.mps.ide.editor.util.EditorComponentUtil;
+import jetbrains.mps.idea.debugger.MpsSourcePosition;
 import jetbrains.mps.nodeEditor.AdditionalPainter;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
@@ -111,21 +116,11 @@ public class IdeaBreakpointsUiComponent extends BreakpointsUiComponentEx<Breakpo
 
     @Override
     protected void toggleBreakpoint(final SNode node, boolean handleRemove) {
-        TraceablePositionInfo position = ModelAccess.instance().runReadAction(new Computable<TraceablePositionInfo>() {
-            @Override
-            public TraceablePositionInfo compute() {
-                SModelDescriptor model = node.getModel().getModelDescriptor();
-                DebugInfo debugInfo = TraceInfoCache.getInstance().get(model);
-                if (debugInfo == null) {
-                    return null;
-                }
-                return debugInfo.getPositionForNode(node.getSNodeId().toString());
-            }
-        });
         List<Breakpoint> breakpoints = myDebuggerManager.getBreakpointManager().getBreakpoints();
         for (Breakpoint breakpoint : breakpoints) {
             if (breakpoint instanceof BreakpointWithHighlighter) {
                 final BreakpointWithHighlighter locationBreakpoint = (BreakpointWithHighlighter) breakpoint;
+
                 boolean sameNode = ModelAccess.instance().runReadAction(new Computable<Boolean>() {
                     @Override
                     public Boolean compute() {
@@ -142,6 +137,28 @@ public class IdeaBreakpointsUiComponent extends BreakpointsUiComponentEx<Breakpo
             }
         }
 
+        TraceablePositionInfo position = ModelAccess.instance().runReadAction(new Computable<TraceablePositionInfo>() {
+            @Override
+            public TraceablePositionInfo compute() {
+                SModelDescriptor model = node.getModel().getModelDescriptor();
+                DebugInfo debugInfo = TraceInfoCache.getInstance().get(model);
+                if (debugInfo == null) {
+                    return null;
+                }
+                return debugInfo.getPositionForNode(node.getSNodeId().toString());
+            }
+        });
+        if (position == null) return;
+        int startLine = position.getStartLine();
+        PsiFile psiFile = MpsSourcePosition.createPosition(myProject, TraceInfoUtil.getUnitName(node.getContainingRoot()), position.getFileName(), startLine).getFile();
+        Document document = PsiDocumentManager.getInstance(myProject).getDocument(psiFile);
+        BreakpointWithHighlighter breakpoint = myDebuggerManager.getBreakpointManager().addFieldBreakpoint(document, startLine);
+        if (breakpoint == null) {
+            breakpoint = myDebuggerManager.getBreakpointManager().addMethodBreakpoint(document, startLine);
+        }
+        if (breakpoint == null) {
+            breakpoint = myDebuggerManager.getBreakpointManager().addLineBreakpoint(document, startLine);
+        }
     }
 
     @Override
