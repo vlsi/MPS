@@ -18,12 +18,14 @@ package jetbrains.mps.idea.debugger.breakpoints;
 
 import com.intellij.debugger.DebuggerManagerEx;
 import com.intellij.debugger.ui.breakpoints.Breakpoint;
+import com.intellij.debugger.ui.breakpoints.BreakpointManagerListener;
 import com.intellij.debugger.ui.breakpoints.BreakpointWithHighlighter;
 import com.intellij.openapi.components.ProjectComponent;
 import com.intellij.openapi.fileEditor.FileEditorManager;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.debugger.core.breakpoints.BreakpointsUiComponentEx;
 import jetbrains.mps.ide.editor.util.EditorComponentUtil;
+import jetbrains.mps.nodeEditor.AdditionalPainter;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.smodel.ModelAccess;
@@ -36,6 +38,7 @@ import java.util.Set;
 
 public class IdeaBreakpointsUiComponent extends BreakpointsUiComponentEx<Breakpoint> implements ProjectComponent {
     private DebuggerManagerEx myDebuggerManager;
+    private final BreakpointManagerListener myBreakpointListener = new MyBreakpointManagerListener();
 
     public IdeaBreakpointsUiComponent(Project project, FileEditorManager manager) {
         super(project, manager);
@@ -53,11 +56,13 @@ public class IdeaBreakpointsUiComponent extends BreakpointsUiComponentEx<Breakpo
     public void initComponent() {
         super.init();
         myDebuggerManager = DebuggerManagerEx.getInstanceEx(myProject);
+        myDebuggerManager.getBreakpointManager().addBreakpointManagerListener(myBreakpointListener);
     }
 
     @Override
     public void disposeComponent() {
         super.dispose();
+        myDebuggerManager.getBreakpointManager().removeBreakpointManagerListener(myBreakpointListener);
         myDebuggerManager = null;
     }
 
@@ -105,5 +110,40 @@ public class IdeaBreakpointsUiComponent extends BreakpointsUiComponentEx<Breakpo
     @Override
     protected EditorCell findDebuggableOrTraceableCell(EditorCell cell) {
         return findTraceableCell(cell);
+    }
+
+    private class MyBreakpointManagerListener implements BreakpointManagerListener {
+        @Override
+        public void breakpointsChanged() {
+            clearAllEditors();
+
+            final List<Breakpoint> breakpoints = myDebuggerManager.getBreakpointManager().getBreakpoints();
+            ModelAccess.instance().runReadAction(new Runnable() {
+                @Override
+                public void run() {
+                    for (Breakpoint breakpoint : breakpoints) {
+                        if (breakpoint instanceof BreakpointWithHighlighter) {
+                            SNode node = BreakpointPainter.getNodeForBreakpoint((BreakpointWithHighlighter) breakpoint);
+                            if (node != null) {
+                                addLocationBreakpoint(breakpoint, BreakpointPainter.getNodeForBreakpoint((BreakpointWithHighlighter) breakpoint));
+                            }
+                        }
+                    }
+                }
+            });
+        }
+    }
+
+    private void clearAllEditors() {
+        List<EditorComponent> allEditorComponents = EditorComponentUtil.getAllEditorComponents(myFileEditorManager, true);
+        for (EditorComponent component: allEditorComponents) {
+            component.getLeftEditorHighlighter().removeAllIconRenderers(BreakpointIconRenderrer.TYPE);
+            List<AdditionalPainter> additionalPainters = component.getAdditionalPainters();
+            for (AdditionalPainter painter: additionalPainters) {
+                if (painter instanceof BreakpointPainter) {
+                    component.removeAdditionalPainter(painter);
+                }
+            }
+        }
     }
 }
