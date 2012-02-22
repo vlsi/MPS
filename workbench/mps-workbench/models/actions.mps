@@ -137,10 +137,10 @@
   <import index="2yc6" modelUID="r:d9efd362-28b8-4f70-9bcd-fb582528d11c(jetbrains.mps.lang.core.refactorings)" version="-1" />
   <import index="x9fb" modelUID="r:de5b7214-45ee-4f6d-89bf-acde59cdb050(jetbrains.mps.lang.structure.refactorings)" version="-1" />
   <import index="t6w" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.lang.smodel.generator.smodelAdapter(MPS.Core/jetbrains.mps.lang.smodel.generator.smodelAdapter@java_stub)" version="-1" />
-  <import index="ge2m" modelUID="r:bd8551c6-e2e3-4499-a261-45b0c886d1d1(jetbrains.mps.refactoring.framework)" version="-1" />
-  <import index="u42p" modelUID="r:986938bb-bdb1-4307-b062-e4647a4db0f9(jetbrains.mps.ide.platform.refactoring)" version="-1" />
   <import index="g9ly" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.ide.findusages.view(MPS.Core/jetbrains.mps.ide.findusages.view@java_stub)" version="-1" />
+  <import index="ge2m" modelUID="r:bd8551c6-e2e3-4499-a261-45b0c886d1d1(jetbrains.mps.refactoring.framework)" version="-1" />
   <import index="cqb" modelUID="f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#jetbrains.mps.ide.findusages.findalgorithm.finders.specific(MPS.Workbench/jetbrains.mps.ide.findusages.findalgorithm.finders.specific@java_stub)" version="-1" />
+  <import index="u42p" modelUID="r:986938bb-bdb1-4307-b062-e4647a4db0f9(jetbrains.mps.ide.platform.refactoring)" version="-1" />
   <import index="tp4k" modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" version="23" implicit="yes" />
   <import index="tp25" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" implicit="yes" />
   <import index="tp2q" modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" implicit="yes" />
@@ -1201,18 +1201,18 @@
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Menu.EditorPopup" />
       <property name="name" nameId="tpck.1169194664001" value="EditorPopupEx_Goto" />
     </node>
-    <node type="tp4k.InterfaceGroup" typeId="tp4k.1204383956737" id="6714826334259420987">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="Menu.ProjectPane.Node" />
-      <property name="name" nameId="tpck.1169194664001" value="RefactoringActions" />
+    <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="2214103008221911165">
+      <property name="name" nameId="tpck.1169194664001" value="FindModelUsages" />
+      <property name="caption" nameId="tp4k.1205250923097" value="Find Usages" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Menu.ProjectPane.Model.Actions" />
     </node>
     <node type="tp4k.ActionGroupDeclaration" typeId="tp4k.1203087890642" id="2214103008221911161">
       <property name="name" nameId="tpck.1169194664001" value="FindModelUsages" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Menu.ProjectPane.Model" />
     </node>
-    <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="2214103008221911165">
-      <property name="name" nameId="tpck.1169194664001" value="FindModelUsages" />
-      <property name="caption" nameId="tp4k.1205250923097" value="Find Usages" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="Menu.ProjectPane.Model.Actions" />
+    <node type="tp4k.InterfaceGroup" typeId="tp4k.1204383956737" id="6714826334259420987">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Menu.ProjectPane.Node" />
+      <property name="name" nameId="tpck.1169194664001" value="RefactoringActions" />
     </node>
   </roots>
   <root id="1204991218714">
@@ -23411,7 +23411,7 @@
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5542140910050886609" resolveInfo="dialog" />
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="5542140910050887245">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="mzqo.~BaseDialog%dshowDialog()%cvoid" resolveInfo="showDialog" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="lq3.~DialogWrapper%dshow()%cvoid" resolveInfo="show" />
             </node>
           </node>
         </node>
@@ -32013,27 +32013,6 @@
       <link role="point" roleId="tp4k.1204992316090" targetNodeId="ekwn.3228268613620327886" resolveInfo="other" />
     </node>
   </root>
-  <root id="6714826334259420987">
-    <node role="modifier" roleId="tp4k.1204991552650" type="tp4k.ModificationStatement" typeId="tp4k.1203092361741" id="6714826334259436925">
-      <link role="modifiedGroup" roleId="tp4k.1203092736097" targetNodeId="1204991215587" resolveInfo="NodeActions" />
-      <link role="point" roleId="tp4k.1204992316090" targetNodeId="8741284284837781541" resolveInfo="refactoring" />
-    </node>
-    <node role="groupID" roleId="tp4k.1206193920040" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="6714826334259420990">
-      <property name="value" nameId="tpee.1070475926801" value="jetbrains.mps.ide.platform.actions.NodeRefactoring_ActionGroup" />
-    </node>
-    <node role="contents" roleId="tp4k.1207148993063" type="tp4k.ElementListContents" typeId="tp4k.1207145163717" id="6714826334259420989" />
-  </root>
-  <root id="2214103008221911161">
-    <node role="modifier" roleId="tp4k.1204991552650" type="tp4k.ModificationStatement" typeId="tp4k.1203092361741" id="2214103008221911162">
-      <link role="modifiedGroup" roleId="tp4k.1203092736097" targetNodeId="1204991218714" resolveInfo="ModelActions" />
-      <link role="point" roleId="tp4k.1204992316090" targetNodeId="1123160817407996484" resolveInfo="modelUsages" />
-    </node>
-    <node role="contents" roleId="tp4k.1207145245948" type="tp4k.ElementListContents" typeId="tp4k.1207145163717" id="2214103008221911163">
-      <node role="reference" roleId="tp4k.1207145201301" type="tp4k.ActionInstance" typeId="tp4k.1203088046679" id="2214103008221911164">
-        <link role="action" roleId="tp4k.1203088061055" targetNodeId="2214103008221911165" resolveInfo="FindModelUsages" />
-      </node>
-    </node>
-  </root>
   <root id="2214103008221911165">
     <node role="executeFunction" roleId="tp4k.1203083461638" type="tp4k.ExecuteBlock" typeId="tp4k.1203083511112" id="2214103008221911166">
       <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="2214103008221911167">
@@ -32233,6 +32212,27 @@
     <node role="icon" roleId="tp4k.8976425910813834639" type="tp4k.IconResource" typeId="tp4k.2330114057060456691" id="2214103008221911245">
       <property name="path" nameId="tp4k.7855019336153226684" value="${solution_descriptor}/icons/find.png" />
     </node>
+  </root>
+  <root id="2214103008221911161">
+    <node role="modifier" roleId="tp4k.1204991552650" type="tp4k.ModificationStatement" typeId="tp4k.1203092361741" id="2214103008221911162">
+      <link role="modifiedGroup" roleId="tp4k.1203092736097" targetNodeId="1204991218714" resolveInfo="ModelActions" />
+      <link role="point" roleId="tp4k.1204992316090" targetNodeId="1123160817407996484" resolveInfo="modelUsages" />
+    </node>
+    <node role="contents" roleId="tp4k.1207145245948" type="tp4k.ElementListContents" typeId="tp4k.1207145163717" id="2214103008221911163">
+      <node role="reference" roleId="tp4k.1207145201301" type="tp4k.ActionInstance" typeId="tp4k.1203088046679" id="2214103008221911164">
+        <link role="action" roleId="tp4k.1203088061055" targetNodeId="2214103008221911165" resolveInfo="FindModelUsages" />
+      </node>
+    </node>
+  </root>
+  <root id="6714826334259420987">
+    <node role="modifier" roleId="tp4k.1204991552650" type="tp4k.ModificationStatement" typeId="tp4k.1203092361741" id="6714826334259436925">
+      <link role="modifiedGroup" roleId="tp4k.1203092736097" targetNodeId="1204991215587" resolveInfo="NodeActions" />
+      <link role="point" roleId="tp4k.1204992316090" targetNodeId="8741284284837781541" resolveInfo="refactoring" />
+    </node>
+    <node role="groupID" roleId="tp4k.1206193920040" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="6714826334259420990">
+      <property name="value" nameId="tpee.1070475926801" value="jetbrains.mps.ide.platform.actions.NodeRefactoring_ActionGroup" />
+    </node>
+    <node role="contents" roleId="tp4k.1207148993063" type="tp4k.ElementListContents" typeId="tp4k.1207145163717" id="6714826334259420989" />
   </root>
 </model>
 

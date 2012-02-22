@@ -96,7 +96,7 @@ public class SubmitToTracker_Action extends BaseAction {
         dialog.addEx(message.getException());
       }
       dialog.setDescription(description.toString());
-      dialog.showDialog();
+      dialog.show();
 
 
       if (!(dialog.isCancelled())) {

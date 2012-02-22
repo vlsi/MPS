@@ -38,6 +38,10 @@ public class StringChooserDialog extends RefactoringDialog {
     return null;
   }
 
+  public JComponent getPreferredFocusedComponent() {
+    return myTextField;
+  }
+
   @Override
   protected JComponent createNorthPanel() {
     this.myPanel = new JPanel(new GridBagLayout());

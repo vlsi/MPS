@@ -51,7 +51,6 @@
     <file name="MethodDeclarationsFixer.java" />
   </source>
   <source id="3923839814269539114" name="AutoResolver" hash="-5xf06nk5eaovotvjqkcduktoysrplax">
-    <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />

@@ -16,8 +16,8 @@ public class MakeFromChangesView_ActionGroup extends GeneratedActionGroup {
     this.setPopup(false);
     try {
       MakeFromChangesView_ActionGroup.this.addSeparator();
-      MakeFromChangesView_ActionGroup.this.addParameterizedAction(new MakeOrRebuildModelsFromChangeList_Action(false), PluginId.getId("jetbrains.mps.vcs"), false);
-      MakeFromChangesView_ActionGroup.this.addParameterizedAction(new MakeOrRebuildModelsFromChangeList_Action(true), PluginId.getId("jetbrains.mps.vcs"), true);
+      MakeFromChangesView_ActionGroup.this.addParameterizedAction(new MakeOrRebuildModelsFromChangeList_Action(false), PluginId.getId("jetbrains.mps.ide.vcs"), false);
+      MakeFromChangesView_ActionGroup.this.addParameterizedAction(new MakeOrRebuildModelsFromChangeList_Action(true), PluginId.getId("jetbrains.mps.ide.vcs"), true);
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }
