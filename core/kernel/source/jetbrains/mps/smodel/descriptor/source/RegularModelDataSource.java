@@ -54,7 +54,6 @@ public class RegularModelDataSource extends FileBasedModelDataSource {
     myFile = file;
   }
 
-  @Deprecated  //todo remove
   public IFile getFile() {
     return myFile;
   }

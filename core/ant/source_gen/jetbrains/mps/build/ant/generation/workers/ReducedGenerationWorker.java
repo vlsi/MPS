@@ -43,7 +43,10 @@ import jetbrains.mps.generator.info.ForeignPathsProvider;
 import java.io.File;
 import jetbrains.mps.internal.make.runtime.util.DirUtil;
 import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
+import jetbrains.mps.internal.collections.runtime.ITranslator2;
+import jetbrains.mps.project.SModelRoot;
 import jetbrains.mps.vfs.FileSystem;
+import jetbrains.mps.vfs.impl.JarEntryFile;
 
 public class ReducedGenerationWorker extends GeneratorWorker {
   private ReducedGenerationWorker.ModuleOutputPaths myOutputPaths;
@@ -196,6 +199,7 @@ public class ReducedGenerationWorker extends GeneratorWorker {
     private String[] sortedTestOutDirs;
     private String[] sortedOutCacheDirs;
     private String[] sortedTestOutCacheDirs;
+    private String[] sortedModelDirs;
 
     public ModuleOutputPaths(Iterable<IModule> modules) {
       this.sortedOutDirs = DirUtil.sortDirs(Sequence.fromIterable(modules).select(new ISelector<IModule, String>() {
@@ -219,42 +223,58 @@ public class ReducedGenerationWorker extends GeneratorWorker {
           return FileGenerationUtil.getCachesPath(mod.getTestsGeneratorOutputPath());
         }
       }));
+
+      this.sortedModelDirs = DirUtil.sortDirs(Sequence.fromIterable(modules).translate(new ITranslator2<IModule, SModelRoot>() {
+        public Iterable<SModelRoot> translate(IModule mod) {
+          return mod.getSModelRoots();
+        }
+      }).select(new ISelector<SModelRoot, String>() {
+        public String select(SModelRoot smr) {
+          return smr.getModelRoot().getPath();
+        }
+      }).select(new ISelector<String, IFile>() {
+        public IFile select(String path) {
+          return FileSystem.getInstance().getFileByPath(path);
+        }
+      }).where(new IWhereFilter<IFile>() {
+        public boolean accept(IFile f) {
+          return f.isDirectory() && !(f instanceof JarEntryFile);
+        }
+      }).select(new ISelector<IFile, String>() {
+        public String select(IFile dir) {
+          return dir.getPath();
+        }
+      }));
     }
 
     public String toLocalPath(String path) {
-      String normPath = DirUtil.normalizeAsDir(path);
-      int idx = DirUtil.findPrefixAsDir(normPath, sortedOutDirs);
-      if (idx >= 0) {
-        return DirUtil.withoutPrefix(normPath, sortedOutDirs[idx]);
+      String localOut = toLocal(path, sortedOutDirs);
+      if (localOut != null) {
+        return localOut;
       }
-
-      int tidx = DirUtil.findPrefixAsDir(normPath, sortedTestOutDirs);
-      if (tidx >= 0) {
-        return DirUtil.withoutPrefix(normPath, sortedTestOutDirs[tidx]);
-      }
-
-      // not found 
-      return null;
+      return toLocal(path, sortedTestOutDirs);
     }
 
     public String toLocalCachePath(String path) {
+      String localCacheOut = toLocal(path, sortedOutCacheDirs);
+      if (localCacheOut != null) {
+        return localCacheOut;
+      }
+      return toLocal(path, sortedTestOutCacheDirs);
+    }
+
+    private String toLocal(String path, String[] sortedDirs) {
       String normPath = DirUtil.normalizeAsDir(path);
-      int idx = DirUtil.findPrefixAsDir(normPath, sortedOutCacheDirs);
+      int idx = DirUtil.findPrefixAsDir(normPath, sortedDirs);
       if (idx >= 0) {
-        return DirUtil.withoutPrefix(normPath, sortedOutCacheDirs[idx]);
+        return DirUtil.withoutPrefix(normPath, sortedDirs[idx]);
       }
-
-      int tidx = DirUtil.findPrefixAsDir(normPath, sortedTestOutCacheDirs);
-      if (tidx >= 0) {
-        return DirUtil.withoutPrefix(normPath, sortedTestOutCacheDirs[tidx]);
-      }
-
       // not found 
       return null;
     }
 
     public Iterable<String> getOutputPaths() {
-      return Sequence.fromIterable(Sequence.fromArray(sortedOutDirs)).concat(Sequence.fromIterable(Sequence.fromArray(sortedTestOutDirs)));
+      return Sequence.fromIterable(Sequence.fromArray(sortedOutDirs)).concat(Sequence.fromIterable(Sequence.fromArray(sortedTestOutDirs))).concat(Sequence.fromIterable(Sequence.fromArray(sortedModelDirs)));
     }
   }
 
