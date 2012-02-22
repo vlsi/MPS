@@ -24,12 +24,18 @@ import com.intellij.openapi.components.ProjectComponent;
 import com.intellij.openapi.fileEditor.FileEditorManager;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.debugger.core.breakpoints.BreakpointsUiComponentEx;
+import jetbrains.mps.generator.traceInfo.TraceInfoCache;
 import jetbrains.mps.ide.editor.util.EditorComponentUtil;
 import jetbrains.mps.nodeEditor.AdditionalPainter;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.traceInfo.DebugInfo;
+import jetbrains.mps.traceInfo.TraceablePositionInfo;
+import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.misc.hash.HashSet;
 import org.jetbrains.annotations.NotNull;
 
@@ -100,11 +106,42 @@ public class IdeaBreakpointsUiComponent extends BreakpointsUiComponentEx<Breakpo
 
     @Override
     protected BreakpointIconRenderrer createRenderrer(BreakpointWithHighlighter breakpoint, EditorComponent component) {
-        return new BreakpointIconRenderrer( breakpoint, component);
+        return new BreakpointIconRenderrer(breakpoint, component);
     }
 
     @Override
-    protected void toggleBreakpoint(SNode node, boolean handleRemove) {
+    protected void toggleBreakpoint(final SNode node, boolean handleRemove) {
+        TraceablePositionInfo position = ModelAccess.instance().runReadAction(new Computable<TraceablePositionInfo>() {
+            @Override
+            public TraceablePositionInfo compute() {
+                SModelDescriptor model = node.getModel().getModelDescriptor();
+                DebugInfo debugInfo = TraceInfoCache.getInstance().get(model);
+                if (debugInfo == null) {
+                    return null;
+                }
+                return debugInfo.getPositionForNode(node.getSNodeId().toString());
+            }
+        });
+        List<Breakpoint> breakpoints = myDebuggerManager.getBreakpointManager().getBreakpoints();
+        for (Breakpoint breakpoint : breakpoints) {
+            if (breakpoint instanceof BreakpointWithHighlighter) {
+                final BreakpointWithHighlighter locationBreakpoint = (BreakpointWithHighlighter) breakpoint;
+                boolean sameNode = ModelAccess.instance().runReadAction(new Computable<Boolean>() {
+                    @Override
+                    public Boolean compute() {
+                        return new SNodePointer(BreakpointPainter.getNodeForBreakpoint(locationBreakpoint)).equals(new SNodePointer(node));
+                    }
+
+                });
+                if (sameNode) {
+                    if (handleRemove) {
+                        myDebuggerManager.getBreakpointManager().removeBreakpoint(locationBreakpoint);
+                    }
+                    return;
+                }
+            }
+        }
+
     }
 
     @Override
@@ -114,10 +151,10 @@ public class IdeaBreakpointsUiComponent extends BreakpointsUiComponentEx<Breakpo
 
     private void clearAllEditors() {
         List<EditorComponent> allEditorComponents = EditorComponentUtil.getAllEditorComponents(myFileEditorManager, true);
-        for (EditorComponent component: allEditorComponents) {
+        for (EditorComponent component : allEditorComponents) {
             component.getLeftEditorHighlighter().removeAllIconRenderers(BreakpointIconRenderrer.TYPE);
             List<AdditionalPainter> additionalPainters = component.getAdditionalPainters();
-            for (AdditionalPainter painter: additionalPainters) {
+            for (AdditionalPainter painter : additionalPainters) {
                 if (painter instanceof BreakpointPainter) {
                     component.removeAdditionalPainter(painter);
                 }
