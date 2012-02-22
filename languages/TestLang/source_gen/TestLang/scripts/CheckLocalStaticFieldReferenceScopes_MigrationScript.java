@@ -13,9 +13,9 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 
-public class CheckStaticFieldReferenceScopes1_MigrationScript extends BaseMigrationScript {
-  public CheckStaticFieldReferenceScopes1_MigrationScript(IOperationContext operationContext) {
-    super("Check static field reference scopes (staticFieldDeclaration)");
+public class CheckLocalStaticFieldReferenceScopes_MigrationScript extends BaseMigrationScript {
+  public CheckLocalStaticFieldReferenceScopes_MigrationScript(IOperationContext operationContext) {
+    super("Check local static field reference scopes");
     this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
       public String getName() {
         return "Testing";
@@ -26,14 +26,14 @@ public class CheckStaticFieldReferenceScopes1_MigrationScript extends BaseMigrat
       }
 
       public String getFqNameOfConceptToSearchInstances() {
-        return "jetbrains.mps.baseLanguage.structure.StaticFieldReference";
+        return "jetbrains.mps.baseLanguage.structure.LocalStaticFieldReference";
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
         String excludingPrefix = "123collection";
         String startsFrom = "";
 
-        SReference ref = SNodeOperations.getReference(node, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.StaticFieldReference", "staticFieldDeclaration"));
+        SReference ref = SNodeOperations.getReference(node, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.LocalStaticFieldReference", "staticFieldDeclaration"));
 
         if (ref == null) {
           return false;
@@ -42,7 +42,7 @@ public class CheckStaticFieldReferenceScopes1_MigrationScript extends BaseMigrat
           return false;
         }
 
-        String name = SPropertyOperations.getString(SLinkOperations.getTarget(node, "classifier", false), "name");
+        String name = SPropertyOperations.getString(SLinkOperations.getTarget(node, "variableDeclaration", false), "name");
         if (StringUtils.isEmpty(name)) {
           return false;
         }
@@ -57,7 +57,7 @@ public class CheckStaticFieldReferenceScopes1_MigrationScript extends BaseMigrat
       }
 
       public void doUpdateInstanceNode(SNode node) {
-        SReference ref = SNodeOperations.getReference(node, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.StaticFieldReference", "staticFieldDeclaration"));
+        SReference ref = SNodeOperations.getReference(node, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.LocalStaticFieldReference", "staticFieldDeclaration"));
         Utils.checkScopes(node, Utils.getOldScopeFromRef(ref), Utils.getNewScopeFromRef(ref, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration")), true);
       }
 
