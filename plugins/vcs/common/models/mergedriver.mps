@@ -48,13 +48,13 @@
   <import index="59et" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.vfs(MPS.Core/jetbrains.mps.vfs@java_stub)" version="-1" />
   <import index="1bi5" modelUID="f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#com.intellij.openapi.components(MPS.Workbench/com.intellij.openapi.components@java_stub)" version="-1" />
   <import index="xkfd" modelUID="f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#com.intellij.openapi.util(MPS.Workbench/com.intellij.openapi.util@java_stub)" version="-1" />
-  <import index="ri0z" modelUID="f:java_stub#b0d98700-54f0-4c39-a8e0-bb27733b8b38#org.tmatesoft.svn.core.wc(jetbrains.mps.vcs/org.tmatesoft.svn.core.wc@java_stub)" version="-1" />
-  <import index="norb" modelUID="f:java_stub#b0d98700-54f0-4c39-a8e0-bb27733b8b38#git4idea.config(jetbrains.mps.vcs/git4idea.config@java_stub)" version="-1" />
-  <import index="y9lp" modelUID="f:java_stub#b0d98700-54f0-4c39-a8e0-bb27733b8b38#git4idea.commands(jetbrains.mps.vcs/git4idea.commands@java_stub)" version="-1" />
-  <import index="1me" modelUID="f:java_stub#b0d98700-54f0-4c39-a8e0-bb27733b8b38#org.jetbrains.idea.svn(jetbrains.mps.vcs/org.jetbrains.idea.svn@java_stub)" version="-1" />
-  <import index="hlc7" modelUID="f:java_stub#b0d98700-54f0-4c39-a8e0-bb27733b8b38#de.regnis.q.sequence.line(jetbrains.mps.vcs/de.regnis.q.sequence.line@java_stub)" version="-1" />
+  <import index="ri0z" modelUID="f:java_stub#6fd1293f-7f65-4ffd-99dc-4719eca7c171#org.tmatesoft.svn.core.wc(jetbrains.mps.vcs.platform/org.tmatesoft.svn.core.wc@java_stub)" version="-1" />
+  <import index="norb" modelUID="f:java_stub#6fd1293f-7f65-4ffd-99dc-4719eca7c171#git4idea.config(jetbrains.mps.vcs.platform/git4idea.config@java_stub)" version="-1" />
+  <import index="y9lp" modelUID="f:java_stub#6fd1293f-7f65-4ffd-99dc-4719eca7c171#git4idea.commands(jetbrains.mps.vcs.platform/git4idea.commands@java_stub)" version="-1" />
+  <import index="1me" modelUID="f:java_stub#6fd1293f-7f65-4ffd-99dc-4719eca7c171#org.jetbrains.idea.svn(jetbrains.mps.vcs.platform/org.jetbrains.idea.svn@java_stub)" version="-1" />
+  <import index="hlc7" modelUID="f:java_stub#6fd1293f-7f65-4ffd-99dc-4719eca7c171#de.regnis.q.sequence.line(jetbrains.mps.vcs.platform/de.regnis.q.sequence.line@java_stub)" version="-1" />
   <import index="lgvi" modelUID="r:35a4b074-cc8b-4e81-89c0-bb4cef49e017(jetbrains.mps.vcs.concrete)" version="-1" />
-  <import index="63ba" modelUID="f:java_stub#b0d98700-54f0-4c39-a8e0-bb27733b8b38#org.tmatesoft.svn.core.internal.wc(jetbrains.mps.vcs/org.tmatesoft.svn.core.internal.wc@java_stub)" version="-1" />
+  <import index="63ba" modelUID="f:java_stub#6fd1293f-7f65-4ffd-99dc-4719eca7c171#org.tmatesoft.svn.core.internal.wc(jetbrains.mps.vcs.platform/org.tmatesoft.svn.core.internal.wc@java_stub)" version="-1" />
   <import index="ur19" modelUID="r:d58d9938-2526-431c-a5fe-6bbbfeb64ac2(jetbrains.mps.vcs.util)" version="-1" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" implicit="yes" />
