@@ -112,6 +112,19 @@ public class IdeaBreakpointsUiComponent extends BreakpointsUiComponentEx<Breakpo
         return findTraceableCell(cell);
     }
 
+    private void clearAllEditors() {
+        List<EditorComponent> allEditorComponents = EditorComponentUtil.getAllEditorComponents(myFileEditorManager, true);
+        for (EditorComponent component: allEditorComponents) {
+            component.getLeftEditorHighlighter().removeAllIconRenderers(BreakpointIconRenderrer.TYPE);
+            List<AdditionalPainter> additionalPainters = component.getAdditionalPainters();
+            for (AdditionalPainter painter: additionalPainters) {
+                if (painter instanceof BreakpointPainter) {
+                    component.removeAdditionalPainter(painter);
+                }
+            }
+        }
+    }
+
     private class MyBreakpointManagerListener implements BreakpointManagerListener {
         @Override
         public void breakpointsChanged() {
@@ -134,16 +147,4 @@ public class IdeaBreakpointsUiComponent extends BreakpointsUiComponentEx<Breakpo
         }
     }
 
-    private void clearAllEditors() {
-        List<EditorComponent> allEditorComponents = EditorComponentUtil.getAllEditorComponents(myFileEditorManager, true);
-        for (EditorComponent component: allEditorComponents) {
-            component.getLeftEditorHighlighter().removeAllIconRenderers(BreakpointIconRenderrer.TYPE);
-            List<AdditionalPainter> additionalPainters = component.getAdditionalPainters();
-            for (AdditionalPainter painter: additionalPainters) {
-                if (painter instanceof BreakpointPainter) {
-                    component.removeAdditionalPainter(painter);
-                }
-            }
-        }
-    }
 }
