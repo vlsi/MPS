@@ -36,7 +36,6 @@ public class FilesDelta implements IDelta {
   public FilesDelta(IFile dir) {
     this.rootDir = dir;
     this.key = "(IFile)" + DirUtil.asDir(DirUtil.straighten(DirUtil.urlToPath(dir.getAbsolutePath())));
-    cacheGenChildren(dir);
   }
 
   public FilesDelta(IFile dir, IFile cachesDir) {
@@ -176,15 +175,6 @@ public class FilesDelta implements IDelta {
     }
 
     return filesToDelete;
-  }
-
-  private void cacheGenChildren(IFile dir) {
-    if (GeneratorPathsComponent.getInstance().isForeign(dir)) {
-      List<IFile> genChildren = GeneratorPathsComponent.getInstance().getGeneratedChildren(dir);
-      if (ListSequence.fromList(genChildren).isNotEmpty()) {
-        MapSequence.fromMap(generatedChildren).put(dir, ListSequence.fromListWithValues(new ArrayList<IFile>(), genChildren));
-      }
-    }
   }
 
   private void cacheGenChildren(IFile dir, IFile cachesDir) {

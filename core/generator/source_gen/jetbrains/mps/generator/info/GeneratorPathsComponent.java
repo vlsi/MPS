@@ -10,11 +10,8 @@ import java.util.Collections;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.internal.collections.runtime.ISelector;
-import jetbrains.mps.internal.make.runtime.util.DirUtil;
-import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
-import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.generator.impl.dependencies.GenerationDependenciesCache;
 import jetbrains.mps.generator.impl.dependencies.GenerationDependencies;
 import jetbrains.mps.generator.impl.dependencies.GenerationRootDependencies;
@@ -47,34 +44,6 @@ public class GeneratorPathsComponent implements CoreComponent {
         return fpp.belongsToForeignPath(path) != null;
       }
     });
-  }
-
-  public List<IFile> getGeneratedChildren(final IFile path) {
-    String foreignPath = ListSequence.fromList(myForeignPathsProviders).select(new ISelector<ForeignPathsProvider, String>() {
-      public String select(ForeignPathsProvider fpp) {
-        return fpp.belongsToForeignPath(path);
-      }
-    }).findFirst(new IWhereFilter<String>() {
-      public boolean accept(String fp) {
-        return fp != null;
-      }
-    });
-    if (foreignPath == null) {
-      return EMPTY_LIST;
-    }
-    String tail = DirUtil.withoutPrefix(DirUtil.normalizeAsDir(path.getPath()), foreignPath);
-
-    IFile cachesDir = FileGenerationUtil.getCachesDir(FileSystem.getInstance().getFileByPath(foreignPath)).getDescendant(tail);
-
-    GeneratorPathsComponent.MyGeneratedCacheInfo gci = lookupCacheInfo(cachesDir);
-    return (gci != null ?
-      Sequence.fromIterable(gci.listGenerated()).select(new ISelector<String, IFile>() {
-        public IFile select(String it) {
-          return path.getDescendant(it);
-        }
-      }).toListSequence() :
-      EMPTY_LIST
-    );
   }
 
   public List<IFile> getGeneratedChildren(final IFile path, IFile cachesDir) {
