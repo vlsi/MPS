@@ -32,39 +32,45 @@
     <nodeInfo nodeId="6144857275938501911" fileName="GeneratorPathsComponent.java" startLine="67" startPosition="127" endLine="68" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="2206718243407920816" fileName="GeneratorPathsComponent.java" startLine="68" startPosition="0" endLine="69" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2206718243407923324" fileName="GeneratorPathsComponent.java" startLine="72" startPosition="40" endLine="73" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3736427613779562301" fileName="GeneratorPathsComponent.java" startLine="80" startPosition="94" endLine="81" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2206718243407920794" fileName="GeneratorPathsComponent.java" startLine="85" startPosition="6" endLine="86" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="3736427613779562323" fileName="GeneratorPathsComponent.java" startLine="86" startPosition="0" endLine="87" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2206718243407875685" fileName="GeneratorPathsComponent.java" startLine="94" startPosition="75" endLine="95" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2206718243407875698" fileName="GeneratorPathsComponent.java" startLine="98" startPosition="77" endLine="99" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3736427613779562371" fileName="GeneratorPathsComponent.java" startLine="102" startPosition="55" endLine="103" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3736427613779562292" fileName="GeneratorPathsComponent.java" startLine="106" startPosition="37" endLine="107" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myDependencies" />
-    <nodeInfo nodeId="3736427613779562257" fileName="GeneratorPathsComponent.java" startLine="109" startPosition="60" endLine="110" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3736427613779562273" fileName="GeneratorPathsComponent.java" startLine="113" startPosition="45" endLine="114" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3736427613779562286" fileName="GeneratorPathsComponent.java" startLine="116" startPosition="74" endLine="117" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2243001920226359809" fileName="GeneratorPathsComponent.java" startLine="80" startPosition="78" endLine="81" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2243001920226359824" fileName="GeneratorPathsComponent.java" startLine="84" startPosition="40" endLine="85" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3736427613779562301" fileName="GeneratorPathsComponent.java" startLine="92" startPosition="95" endLine="93" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3736427613779562308" fileName="GeneratorPathsComponent.java" startLine="97" startPosition="6" endLine="98" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2206718243407920794" fileName="GeneratorPathsComponent.java" startLine="98" startPosition="64" endLine="99" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="3736427613779562323" fileName="GeneratorPathsComponent.java" startLine="99" startPosition="0" endLine="100" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2206718243407875685" fileName="GeneratorPathsComponent.java" startLine="107" startPosition="75" endLine="108" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2206718243407875698" fileName="GeneratorPathsComponent.java" startLine="111" startPosition="77" endLine="112" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3736427613779562371" fileName="GeneratorPathsComponent.java" startLine="115" startPosition="55" endLine="116" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3736427613779562292" fileName="GeneratorPathsComponent.java" startLine="119" startPosition="37" endLine="120" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myDependencies" />
+    <nodeInfo nodeId="3736427613779562257" fileName="GeneratorPathsComponent.java" startLine="122" startPosition="60" endLine="123" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3736427613779562273" fileName="GeneratorPathsComponent.java" startLine="126" startPosition="45" endLine="127" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3736427613779562286" fileName="GeneratorPathsComponent.java" startLine="129" startPosition="74" endLine="130" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3736427613779562340" fileName="GeneratorPathsComponent.java" startLine="29" startPosition="0" endLine="31" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="GeneratorPathsComponent#()V" />
     <nodeInfo nodeId="3736427613779562373" fileName="GeneratorPathsComponent.java" startLine="33" startPosition="22" endLine="36" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="2206718243407920701" fileName="GeneratorPathsComponent.java" startLine="61" startPosition="7" endLine="64" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3736427613779562253" fileName="GeneratorPathsComponent.java" startLine="108" startPosition="0" endLine="111" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MyGeneratedCacheInfo#(Ljetbrains/mps/generator/impl/dependencies/GenerationDependencies;)V" />
+    <nodeInfo nodeId="3736427613779562253" fileName="GeneratorPathsComponent.java" startLine="121" startPosition="0" endLine="124" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MyGeneratedCacheInfo#(Ljetbrains/mps/generator/impl/dependencies/GenerationDependencies;)V" />
     <nodeInfo nodeId="3736427613779562354" fileName="GeneratorPathsComponent.java" startLine="39" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="dispose#()V" />
     <nodeInfo nodeId="2206718243407920498" fileName="GeneratorPathsComponent.java" startLine="45" startPosition="104" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/generator/info/ForeignPathsProvider;)Z" />
     <nodeInfo nodeId="2206718243407920648" fileName="GeneratorPathsComponent.java" startLine="53" startPosition="126" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/generator/info/ForeignPathsProvider;)Ljava/lang/String;" />
     <nodeInfo nodeId="2206718243407920658" fileName="GeneratorPathsComponent.java" startLine="57" startPosition="45" endLine="61" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljava/lang/String;)Z" />
     <nodeInfo nodeId="2206718243407923320" fileName="GeneratorPathsComponent.java" startLine="71" startPosition="88" endLine="75" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljava/lang/String;)Ljetbrains/mps/vfs/IFile;" />
-    <nodeInfo nodeId="3736427613779562308" fileName="GeneratorPathsComponent.java" startLine="81" startPosition="99" endLine="85" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3736427613779562330" fileName="GeneratorPathsComponent.java" startLine="87" startPosition="97" endLine="91" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2206718243407875644" fileName="GeneratorPathsComponent.java" startLine="93" startPosition="0" endLine="97" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="registerForeignPathsProvider#(Ljetbrains/mps/generator/info/ForeignPathsProvider;)V" />
-    <nodeInfo nodeId="2206718243407875652" fileName="GeneratorPathsComponent.java" startLine="97" startPosition="0" endLine="101" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="unregisterForeignPathsProvider#(Ljetbrains/mps/generator/info/ForeignPathsProvider;)V" />
-    <nodeInfo nodeId="3736427613779562365" fileName="GeneratorPathsComponent.java" startLine="101" startPosition="0" endLine="105" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getInstance#()Ljetbrains/mps/generator/info/GeneratorPathsComponent;" />
-    <nodeInfo nodeId="3736427613779562284" fileName="GeneratorPathsComponent.java" startLine="115" startPosition="119" endLine="119" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="translate#(Ljetbrains/mps/generator/impl/dependencies/GenerationRootDependencies;)Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="2243001920226359822" fileName="GeneratorPathsComponent.java" startLine="83" startPosition="88" endLine="87" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljava/lang/String;)Ljetbrains/mps/vfs/IFile;" />
+    <nodeInfo nodeId="4483500501401996806" fileName="GeneratorPathsComponent.java" startLine="93" startPosition="100" endLine="97" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3736427613779562330" fileName="GeneratorPathsComponent.java" startLine="100" startPosition="97" endLine="104" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2206718243407875644" fileName="GeneratorPathsComponent.java" startLine="106" startPosition="0" endLine="110" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="registerForeignPathsProvider#(Ljetbrains/mps/generator/info/ForeignPathsProvider;)V" />
+    <nodeInfo nodeId="2206718243407875652" fileName="GeneratorPathsComponent.java" startLine="110" startPosition="0" endLine="114" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="unregisterForeignPathsProvider#(Ljetbrains/mps/generator/info/ForeignPathsProvider;)V" />
+    <nodeInfo nodeId="3736427613779562365" fileName="GeneratorPathsComponent.java" startLine="114" startPosition="0" endLine="118" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getInstance#()Ljetbrains/mps/generator/info/GeneratorPathsComponent;" />
+    <nodeInfo nodeId="3736427613779562284" fileName="GeneratorPathsComponent.java" startLine="128" startPosition="119" endLine="132" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="translate#(Ljetbrains/mps/generator/impl/dependencies/GenerationRootDependencies;)Ljava/lang/Iterable;" />
     <nodeInfo nodeId="2206718243407920488" fileName="GeneratorPathsComponent.java" startLine="44" startPosition="46" endLine="49" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3736427613779562280" fileName="GeneratorPathsComponent.java" startLine="114" startPosition="99" endLine="119" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3736427613779562280" fileName="GeneratorPathsComponent.java" startLine="127" startPosition="99" endLine="132" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3736427613779562350" fileName="GeneratorPathsComponent.java" startLine="32" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="init#()V" />
     <nodeInfo nodeId="2206718243407875552" fileName="GeneratorPathsComponent.java" startLine="43" startPosition="0" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isForeign#(Ljetbrains/mps/vfs/IFile;)Z" />
     <nodeInfo nodeId="2206718243407920813" fileName="GeneratorPathsComponent.java" startLine="69" startPosition="82" endLine="77" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2243001920226359814" fileName="GeneratorPathsComponent.java" startLine="81" startPosition="82" endLine="89" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2206718243407920641" fileName="GeneratorPathsComponent.java" startLine="52" startPosition="61" endLine="61" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3736427613779562266" fileName="GeneratorPathsComponent.java" startLine="112" startPosition="0" endLine="121" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="listGenerated#()Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="3736427613779562295" fileName="GeneratorPathsComponent.java" startLine="79" startPosition="0" endLine="93" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="lookupCacheInfo#(Ljetbrains/mps/vfs/IFile;)Ljetbrains/mps/generator/info/GeneratorPathsComponent/MyGeneratedCacheInfo;" />
+    <nodeInfo nodeId="3736427613779562266" fileName="GeneratorPathsComponent.java" startLine="125" startPosition="0" endLine="134" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="listGenerated#()Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="2243001920226359789" fileName="GeneratorPathsComponent.java" startLine="79" startPosition="0" endLine="91" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getGeneratedChildren#(Ljetbrains/mps/vfs/IFile;Ljetbrains/mps/vfs/IFile;)Ljava/util/List;" />
+    <nodeInfo nodeId="3736427613779562295" fileName="GeneratorPathsComponent.java" startLine="91" startPosition="0" endLine="106" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="lookupCacheInfo#(Ljetbrains/mps/vfs/IFile;)Ljetbrains/mps/generator/info/GeneratorPathsComponent/MyGeneratedCacheInfo;" />
     <nodeInfo nodeId="2206718243407918186" fileName="GeneratorPathsComponent.java" startLine="51" startPosition="0" endLine="79" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getGeneratedChildren#(Ljetbrains/mps/vfs/IFile;)Ljava/util/List;" />
     <scopeInfo nodeId="3736427613779562343" fileName="GeneratorPathsComponent.java" startLine="30" startPosition="36" endLine="30" endPosition="36" />
     <scopeInfo nodeId="3736427613779562375" fileName="GeneratorPathsComponent.java" startLine="34" startPosition="27" endLine="35" endPosition="63" />
@@ -74,13 +80,14 @@
     <scopeInfo nodeId="2206718243407920659" fileName="GeneratorPathsComponent.java" startLine="58" startPosition="40" endLine="59" endPosition="26" />
     <scopeInfo nodeId="2206718243407920702" fileName="GeneratorPathsComponent.java" startLine="62" startPosition="30" endLine="63" endPosition="24" />
     <scopeInfo nodeId="2206718243407923321" fileName="GeneratorPathsComponent.java" startLine="72" startPosition="40" endLine="73" endPosition="40" />
-    <scopeInfo nodeId="2206718243407875647" fileName="GeneratorPathsComponent.java" startLine="94" startPosition="75" endLine="95" endPosition="72" />
-    <scopeInfo nodeId="2206718243407875655" fileName="GeneratorPathsComponent.java" startLine="98" startPosition="77" endLine="99" endPosition="75" />
-    <scopeInfo nodeId="3736427613779562368" fileName="GeneratorPathsComponent.java" startLine="102" startPosition="55" endLine="103" endPosition="20" />
-    <scopeInfo nodeId="3736427613779562256" fileName="GeneratorPathsComponent.java" startLine="109" startPosition="60" endLine="110" endPosition="31" />
-    <scopeInfo nodeId="3736427613779562285" fileName="GeneratorPathsComponent.java" startLine="116" startPosition="74" endLine="117" endPosition="31" />
+    <scopeInfo nodeId="2243001920226359823" fileName="GeneratorPathsComponent.java" startLine="84" startPosition="40" endLine="85" endPosition="40" />
+    <scopeInfo nodeId="2206718243407875647" fileName="GeneratorPathsComponent.java" startLine="107" startPosition="75" endLine="108" endPosition="72" />
+    <scopeInfo nodeId="2206718243407875655" fileName="GeneratorPathsComponent.java" startLine="111" startPosition="77" endLine="112" endPosition="75" />
+    <scopeInfo nodeId="3736427613779562368" fileName="GeneratorPathsComponent.java" startLine="115" startPosition="55" endLine="116" endPosition="20" />
+    <scopeInfo nodeId="3736427613779562256" fileName="GeneratorPathsComponent.java" startLine="122" startPosition="60" endLine="123" endPosition="31" />
+    <scopeInfo nodeId="3736427613779562285" fileName="GeneratorPathsComponent.java" startLine="129" startPosition="74" endLine="130" endPosition="31" />
     <scopeInfo nodeId="3736427613779562340" fileName="GeneratorPathsComponent.java" startLine="29" startPosition="0" endLine="31" endPosition="3" />
-    <scopeInfo nodeId="3736427613779562253" fileName="GeneratorPathsComponent.java" startLine="108" startPosition="0" endLine="111" endPosition="5">
+    <scopeInfo nodeId="3736427613779562253" fileName="GeneratorPathsComponent.java" startLine="121" startPosition="0" endLine="124" endPosition="5">
       <varInfo nodeId="3736427613779562263" varName="gd" />
     </scopeInfo>
     <scopeInfo nodeId="3736427613779562353" fileName="GeneratorPathsComponent.java" startLine="33" startPosition="22" endLine="37" endPosition="20" />
@@ -97,32 +104,43 @@
     <scopeInfo nodeId="2206718243407923320" fileName="GeneratorPathsComponent.java" startLine="71" startPosition="88" endLine="75" endPosition="0">
       <varInfo nodeId="2206718243407923320" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="2206718243407875644" fileName="GeneratorPathsComponent.java" startLine="93" startPosition="0" endLine="97" endPosition="0">
+    <scopeInfo nodeId="2243001920226359822" fileName="GeneratorPathsComponent.java" startLine="83" startPosition="88" endLine="87" endPosition="0">
+      <varInfo nodeId="2243001920226359822" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="2206718243407875644" fileName="GeneratorPathsComponent.java" startLine="106" startPosition="0" endLine="110" endPosition="0">
       <varInfo nodeId="2206718243407875649" varName="provider" />
     </scopeInfo>
-    <scopeInfo nodeId="2206718243407875652" fileName="GeneratorPathsComponent.java" startLine="97" startPosition="0" endLine="101" endPosition="0">
+    <scopeInfo nodeId="2206718243407875652" fileName="GeneratorPathsComponent.java" startLine="110" startPosition="0" endLine="114" endPosition="0">
       <varInfo nodeId="2206718243407875657" varName="provider" />
     </scopeInfo>
-    <scopeInfo nodeId="3736427613779562365" fileName="GeneratorPathsComponent.java" startLine="101" startPosition="0" endLine="105" endPosition="0" />
-    <scopeInfo nodeId="3736427613779562284" fileName="GeneratorPathsComponent.java" startLine="115" startPosition="119" endLine="119" endPosition="0">
+    <scopeInfo nodeId="3736427613779562365" fileName="GeneratorPathsComponent.java" startLine="114" startPosition="0" endLine="118" endPosition="0" />
+    <scopeInfo nodeId="3736427613779562284" fileName="GeneratorPathsComponent.java" startLine="128" startPosition="119" endLine="132" endPosition="0">
       <varInfo nodeId="3736427613779562284" varName="it" />
     </scopeInfo>
     <scopeInfo nodeId="2206718243407875555" fileName="GeneratorPathsComponent.java" startLine="44" startPosition="46" endLine="49" endPosition="7" />
-    <scopeInfo nodeId="3736427613779562272" fileName="GeneratorPathsComponent.java" startLine="113" startPosition="45" endLine="119" endPosition="9">
+    <scopeInfo nodeId="3736427613779562272" fileName="GeneratorPathsComponent.java" startLine="126" startPosition="45" endLine="132" endPosition="9">
       <varInfo nodeId="3736427613779562274" varName="rootDependencies" />
     </scopeInfo>
     <scopeInfo nodeId="3736427613779562350" fileName="GeneratorPathsComponent.java" startLine="32" startPosition="0" endLine="39" endPosition="0" />
     <scopeInfo nodeId="2206718243407875552" fileName="GeneratorPathsComponent.java" startLine="43" startPosition="0" endLine="51" endPosition="0">
       <varInfo nodeId="2206718243407875557" varName="path" />
     </scopeInfo>
-    <scopeInfo nodeId="3736427613779562266" fileName="GeneratorPathsComponent.java" startLine="112" startPosition="0" endLine="121" endPosition="0" />
-    <scopeInfo nodeId="3736427613779562300" fileName="GeneratorPathsComponent.java" startLine="80" startPosition="94" endLine="91" endPosition="6">
+    <scopeInfo nodeId="2243001920226359792" fileName="GeneratorPathsComponent.java" startLine="80" startPosition="78" endLine="89" endPosition="6">
+      <varInfo nodeId="2243001920226359810" varName="gci" />
+    </scopeInfo>
+    <scopeInfo nodeId="3736427613779562266" fileName="GeneratorPathsComponent.java" startLine="125" startPosition="0" endLine="134" endPosition="0" />
+    <scopeInfo nodeId="2243001920226359789" fileName="GeneratorPathsComponent.java" startLine="79" startPosition="0" endLine="91" endPosition="0">
+      <varInfo nodeId="2243001920226359804" varName="cachesDir" />
+      <varInfo nodeId="2243001920226359799" varName="path" />
+    </scopeInfo>
+    <scopeInfo nodeId="3736427613779562300" fileName="GeneratorPathsComponent.java" startLine="92" startPosition="95" endLine="104" endPosition="6">
+      <varInfo nodeId="4483500501401996807" varName="cachesDir" />
       <varInfo nodeId="3736427613779562324" varName="gd" />
       <varInfo nodeId="3736427613779562309" varName="generatedCache" />
       <varInfo nodeId="3736427613779562302" varName="redir" />
     </scopeInfo>
-    <scopeInfo nodeId="3736427613779562295" fileName="GeneratorPathsComponent.java" startLine="79" startPosition="0" endLine="93" endPosition="0">
-      <varInfo nodeId="3736427613779562296" varName="cachesOuputDir" />
+    <scopeInfo nodeId="3736427613779562295" fileName="GeneratorPathsComponent.java" startLine="91" startPosition="0" endLine="106" endPosition="0">
+      <varInfo nodeId="3736427613779562296" varName="cachesOutputDir" />
     </scopeInfo>
     <scopeInfo nodeId="2206718243407918189" fileName="GeneratorPathsComponent.java" startLine="52" startPosition="61" endLine="77" endPosition="6">
       <varInfo nodeId="2206718243407920765" varName="cachesDir" />
@@ -133,13 +151,14 @@
     <scopeInfo nodeId="2206718243407918186" fileName="GeneratorPathsComponent.java" startLine="51" startPosition="0" endLine="79" endPosition="0">
       <varInfo nodeId="2206718243407918200" varName="path" />
     </scopeInfo>
-    <unitInfo nodeId="3736427613779562245" fileName="GeneratorPathsComponent.java" startLine="23" startPosition="0" endLine="123" endPosition="0" unitName="jetbrains.mps.generator.info.GeneratorPathsComponent" />
+    <unitInfo nodeId="3736427613779562245" fileName="GeneratorPathsComponent.java" startLine="23" startPosition="0" endLine="136" endPosition="0" unitName="jetbrains.mps.generator.info.GeneratorPathsComponent" />
     <unitInfo nodeId="2206718243407920498" fileName="GeneratorPathsComponent.java" startLine="45" startPosition="66" endLine="49" endPosition="5" unitName="jetbrains.mps.generator.info.GeneratorPathsComponent$1" />
-    <unitInfo nodeId="3736427613779562284" fileName="GeneratorPathsComponent.java" startLine="115" startPosition="67" endLine="119" endPosition="7" unitName="jetbrains.mps.generator.info.GeneratorPathsComponent$1" />
+    <unitInfo nodeId="3736427613779562284" fileName="GeneratorPathsComponent.java" startLine="128" startPosition="67" endLine="132" endPosition="7" unitName="jetbrains.mps.generator.info.GeneratorPathsComponent$1" />
     <unitInfo nodeId="2206718243407920648" fileName="GeneratorPathsComponent.java" startLine="53" startPosition="83" endLine="57" endPosition="5" unitName="jetbrains.mps.generator.info.GeneratorPathsComponent$2" />
     <unitInfo nodeId="2206718243407920658" fileName="GeneratorPathsComponent.java" startLine="57" startPosition="21" endLine="61" endPosition="5" unitName="jetbrains.mps.generator.info.GeneratorPathsComponent$3" />
     <unitInfo nodeId="2206718243407923320" fileName="GeneratorPathsComponent.java" startLine="71" startPosition="60" endLine="75" endPosition="7" unitName="jetbrains.mps.generator.info.GeneratorPathsComponent$4" />
-    <unitInfo nodeId="3736427613779562251" fileName="GeneratorPathsComponent.java" startLine="106" startPosition="0" endLine="122" endPosition="0" unitName="jetbrains.mps.generator.info.GeneratorPathsComponent$MyGeneratedCacheInfo" />
+    <unitInfo nodeId="2243001920226359822" fileName="GeneratorPathsComponent.java" startLine="83" startPosition="60" endLine="87" endPosition="7" unitName="jetbrains.mps.generator.info.GeneratorPathsComponent$5" />
+    <unitInfo nodeId="3736427613779562251" fileName="GeneratorPathsComponent.java" startLine="119" startPosition="0" endLine="135" endPosition="0" unitName="jetbrains.mps.generator.info.GeneratorPathsComponent$MyGeneratedCacheInfo" />
   </root>
 </debugInfo>
 

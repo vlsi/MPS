@@ -39,10 +39,10 @@ public class FilesDelta implements IDelta {
     cacheGenChildren(dir);
   }
 
-  public FilesDelta(IFile overriddenDir, IFile defaultDir) {
-    this.rootDir = overriddenDir;
-    this.key = "(IFile)" + DirUtil.asDir(DirUtil.straighten(DirUtil.urlToPath(overriddenDir.getAbsolutePath())));
-    cacheGenChildren(overriddenDir, defaultDir);
+  public FilesDelta(IFile dir, IFile cachesDir) {
+    this.rootDir = dir;
+    this.key = "(IFile)" + DirUtil.asDir(DirUtil.straighten(DirUtil.urlToPath(dir.getAbsolutePath())));
+    cacheGenChildren(dir, cachesDir);
   }
 
   private FilesDelta(FilesDelta copyFrom) {
@@ -179,15 +179,18 @@ public class FilesDelta implements IDelta {
   }
 
   private void cacheGenChildren(IFile dir) {
-    cacheGenChildren(dir, dir);
+    if (GeneratorPathsComponent.getInstance().isForeign(dir)) {
+      List<IFile> genChildren = GeneratorPathsComponent.getInstance().getGeneratedChildren(dir);
+      if (ListSequence.fromList(genChildren).isNotEmpty()) {
+        MapSequence.fromMap(generatedChildren).put(dir, ListSequence.fromListWithValues(new ArrayList<IFile>(), genChildren));
+      }
+    }
   }
 
-  private void cacheGenChildren(IFile overriddenDir, IFile defaultDir) {
-    if (GeneratorPathsComponent.getInstance().isForeign(overriddenDir)) {
-      List<IFile> genChildren = GeneratorPathsComponent.getInstance().getGeneratedChildren(defaultDir);
-      if (ListSequence.fromList(genChildren).isNotEmpty()) {
-        MapSequence.fromMap(generatedChildren).put(overriddenDir, ListSequence.fromListWithValues(new ArrayList<IFile>(), genChildren));
-      }
+  private void cacheGenChildren(IFile dir, IFile cachesDir) {
+    List<IFile> genChildren = GeneratorPathsComponent.getInstance().getGeneratedChildren(dir, cachesDir);
+    if (ListSequence.fromList(genChildren).isNotEmpty()) {
+      MapSequence.fromMap(generatedChildren).put(dir, ListSequence.fromListWithValues(new ArrayList<IFile>(), genChildren));
     }
   }
 

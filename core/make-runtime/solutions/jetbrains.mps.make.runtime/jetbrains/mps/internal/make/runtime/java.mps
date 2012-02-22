@@ -1501,37 +1501,21 @@
         </node>
         <node role="statement" roleId="tpee.1068581517665" type="tpee.Statement" typeId="tpee.1068580123157" id="3822547445468861512" />
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="505174985642790713">
-          <node role="expression" roleId="tpee.1068580123156" type="tpee.AssignmentExpression" typeId="tpee.1068498886294" id="8437684059768953321">
+          <node role="expression" roleId="tpee.1068580123156" type="tpee.AssignmentExpression" typeId="tpee.1068498886294" id="2243001920226362071">
             <node role="lValue" roleId="tpee.1068498886295" type="tpee.DotExpression" typeId="tpee.1197027756228" id="505174985642790715">
               <node role="operand" roleId="tpee.1197027771414" type="tpee.ThisExpression" typeId="tpee.1070475354124" id="505174985642790716" />
               <node role="operation" roleId="tpee.1197027833540" type="tpee.FieldReferenceOperation" typeId="tpee.1197029447546" id="505174985642790717">
                 <link role="fieldDeclaration" roleId="tpee.1197029500499" targetNodeId="505174985642790710" resolveInfo="myOutputFileDelta" />
               </node>
             </node>
-            <node role="rValue" roleId="tpee.1068498886297" type="tpee.TernaryOperatorExpression" typeId="tpee.1163668896201" id="2243001920226357139">
-              <node role="condition" roleId="tpee.1163668914799" type="tpee.NotEqualsExpression" typeId="tpee.1073239437375" id="2243001920226357133">
-                <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="2243001920226357136" />
-                <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="2243001920226357130">
-                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3822547445468862292" resolveInfo="overriddenOutputDir" />
+            <node role="rValue" roleId="tpee.1068498886297" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="2243001920226357144">
+              <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="2243001920226357145">
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="rk9m.2243001920226357052" resolveInfo="FilesDelta" />
+                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalInstanceFieldReference" typeId="tpee.7785501532031639928" id="2243001920226357154">
+                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3822547445468861471" resolveInfo="myModelOutputDir" />
                 </node>
-              </node>
-              <node role="ifFalse" roleId="tpee.1163668934364" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="8437684059768953324">
-                <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="8437684059768953325">
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="rk9m.505174985642693150" resolveInfo="FilesDelta" />
-                  <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalInstanceFieldReference" typeId="tpee.7785501532031639928" id="2243001920226357155">
-                    <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3822547445468861471" resolveInfo="myModelOutputDir" />
-                  </node>
-                </node>
-              </node>
-              <node role="ifTrue" roleId="tpee.1163668922816" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="2243001920226357144">
-                <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="2243001920226357145">
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="rk9m.2243001920226357052" resolveInfo="FilesDelta" />
-                  <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalInstanceFieldReference" typeId="tpee.7785501532031639928" id="2243001920226357154">
-                    <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3822547445468861471" resolveInfo="myModelOutputDir" />
-                  </node>
-                  <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="2243001920226357153">
-                    <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2243001920226356931" resolveInfo="defaultOutputDir" />
-                  </node>
+                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalInstanceFieldReference" typeId="tpee.7785501532031639928" id="2243001920226360115">
+                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3822547445468861513" resolveInfo="myModelCacheOutputDir" />
                 </node>
               </node>
             </node>

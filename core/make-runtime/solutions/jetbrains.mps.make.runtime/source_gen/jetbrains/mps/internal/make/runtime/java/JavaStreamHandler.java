@@ -33,10 +33,7 @@ public class JavaStreamHandler implements StreamHandler {
     );
     this.myModelCacheOutputDir = FileGenerationUtil.getDefaultOutputDir(myModelDescriptor, cachesOutputDir);
 
-    this.myOutputFileDelta = (overriddenOutputDir != null ?
-      new FilesDelta(myModelOutputDir, defaultOutputDir) :
-      new FilesDelta(myModelOutputDir)
-    );
+    this.myOutputFileDelta = new FilesDelta(myModelOutputDir, myModelCacheOutputDir);
     this.myCachesFileDelta = new FilesDelta(myModelCacheOutputDir);
   }
 
