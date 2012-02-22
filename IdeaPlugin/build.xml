@@ -513,6 +513,12 @@
                 <include name="simple.iml"/>
                 <include name="models/simple.mps"/>
             </fileset>
+          <fileset dir="${base_dir}/IdeaPlugin/tests/makeTests">
+            <include name="makeTests.iml"/>
+            <include name="caches.zip"/>
+            <include name="models/**/*"/>
+            <include name="src/**/*"/>
+          </fileset>
         </copy>
         <jar destfile="${dist.dir}/lib/mps-plugin-tests.jar">
             <fileset dir="${build_dir}/mpsplugintests_jar"/>

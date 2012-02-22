@@ -17,14 +17,10 @@
 package jetbrains.mps.idea.core.tests;
 
 import com.intellij.compiler.CompilerManagerImpl;
-import com.intellij.openapi.compiler.CompileContext;
-import com.intellij.openapi.compiler.CompileStatusNotification;
 import com.intellij.openapi.compiler.CompilerManager;
 import com.intellij.openapi.compiler.CompilerPaths;
 import com.intellij.openapi.roots.ModuleRootManager;
 import com.intellij.openapi.vfs.VirtualFile;
-import com.intellij.openapi.vfs.VirtualFileManager;
-import com.intellij.openapi.vfs.VirtualFileSystem;
 import jetbrains.mps.idea.core.facet.MPSFacetConfiguration;
 import jetbrains.mps.idea.core.make.MPSCompiler2;
 import jetbrains.mps.idea.core.make.MPSCompilerPaths;
@@ -33,36 +29,36 @@ import jetbrains.mps.vfs.IFile;
 /**
  * Created by IntelliJ IDEA.
  * User: fyodor
- * Date: 2/15/12
- * Time: 10:36 AM
+ * Date: 2/22/12
+ * Time: 4:47 PM
  * To change this template use File | Settings | File Templates.
  */
-public class SimpleMakeTest extends AbstractMakeTest {
+public class ComplicatedMakeTests extends AbstractMakeTest {
 
   @Override
-  protected void prepareTestData(final MPSFacetConfiguration configuration) throws Exception {
+  protected void prepareTestData(MPSFacetConfiguration configuration) throws Exception {
     String moduleFileName = configuration.getFacet().getModule().getModuleFilePath();
-    copyResource(moduleFileName, "simple.iml", "/tests/simple/simple.iml");
-    final IFile model = copyResource("models", "simple.mps", "simple.mps", "/tests/simple/models/simple.mps");
-    configuration.getState().setModelRootPaths(model.getParent().getPath());
-    prepareTestData(configuration, model.getParent());
+    copyResource(moduleFileName, "makeTests.iml", "/tests/makeTests/makeTests.iml");
+    final IFile codeModel = copyResource("models", "code.mps", "code.mps", "/tests/makeTests/models/code.mps");
+    final IFile dataModel = copyResource("models", "data.mps", "data.mps", "/tests/makeTests/models/data.mps");
+    configuration.getState().setModelRootPaths(codeModel.getParent().getPath());
+    prepareTestData(configuration, codeModel.getParent());
   }
 
-
-  public void testGeneratingIntoHiddenDir() {
+  public void testGeneratingMultiModels() {
     CompilerManagerImpl.testSetup();
 
     ModuleRootManager mrm = ModuleRootManager.getInstance(myFacet.getModule());
     VirtualFile[] srs = mrm.getSourceRoots();
     assertTrue(srs.length == 2);
-    assertEquals("models", srs[0].getName());
+    VirtualFile models = srs[0];
+    assertEquals("models", models.getName());
+    assertTrue(models.getChildren().length == 2);
+    assertExists(models, "code.mps");
+    assertExists(models, "data.mps");
 
-    VirtualFile[] children = srs[0].getChildren();
-    assertTrue(children.length == 1);
-    assertEquals("simple.mps", children[0].getName());
-
-    final VirtualFile moduleDir = srs[0].getParent();
-    assertTrue(moduleDir.findChild("source_gen") == null);
+    final VirtualFile moduleDir = models.getParent();
+    assertTrue(moduleDir.findChild("src") == null);
 
     CompilerManager cm = CompilerManager.getInstance(myFacet.getModule().getProject());
     assertCompiles(cm);
@@ -70,19 +66,27 @@ public class SimpleMakeTest extends AbstractMakeTest {
     MPSCompiler2[] mpscs = cm.getCompilers(MPSCompiler2.class);
     assertSame(1, mpscs.length);
 
-    VirtualFile outputDir = getVFS().findFileByPath(CompilerPaths.getGenerationOutputPath(mpscs[0], myFacet.getModule(), false));
+    VirtualFile outputDir = moduleDir.findChild("src");
     assertNotNull("Not found output dir", outputDir);
-    assertExists(outputDir, "simple");
-    assertExists(outputDir, "simple/Launchme.java");
-    assertExists(outputDir, "simple/trace.info");
-    assertTrue(outputDir.findFileByRelativePath("simple").getChildren().length == 2);
+    assertExists(outputDir, "code");
+    assertExists(outputDir, "code/Test.java");
+    assertExists(outputDir, "code/trace.info");
+    assertTrue(outputDir.findFileByRelativePath("code").getChildren().length == 2);
+
+    assertExists(models, "Manifest.xml");
+    assertExists(models, "trace.info");
+    assertTrue(models.getChildren().length == 4);
 
     getVFS().refresh(false);
     assertNotExists(moduleDir, "source_gen");
 
     VirtualFile cachesOutputDir = getVFS().findFileByPath(MPSCompilerPaths.getCachesOutputPath(mpscs[0], myFacet.getModule(), false));
-    assertExists(cachesOutputDir, "simple");
-    assertExists(cachesOutputDir, "simple/generated");
-    assertExists(cachesOutputDir, "simple/dependencies");
+    assertExists(cachesOutputDir, "code");
+    assertExists(cachesOutputDir, "code/dependencies");
+    assertExists(cachesOutputDir, "code/generated");
+    assertExists(cachesOutputDir, "data/dependencies");
+    assertExists(cachesOutputDir, "data/generated");
+
   }
+
 }
