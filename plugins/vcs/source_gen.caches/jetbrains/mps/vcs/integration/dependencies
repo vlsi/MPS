@@ -35,63 +35,6 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.ide.vfs.BaseDirectoryIndexExcludePolicy" />
   </dependency>
-  <dependency className="jetbrains.mps.vcs.integration.ModelDiffTool" file="ModelDiffTool.java">
-    <classNode dependClassName="com.intellij.openapi.diff.DiffContent" />
-    <classNode dependClassName="com.intellij.openapi.diff.DiffManager" />
-    <classNode dependClassName="com.intellij.openapi.diff.DiffRequest" />
-    <classNode dependClassName="com.intellij.openapi.diff.DocumentContent" />
-    <classNode dependClassName="com.intellij.openapi.diff.FileContent" />
-    <classNode dependClassName="com.intellij.openapi.fileTypes.FileType" />
-    <classNode dependClassName="java.io.IOException" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.fileTypes.MPSFileTypeFactory" />
-    <classNode dependClassName="jetbrains.mps.ide.vfs.VirtualFileUtils" />
-    <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModel" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModelDescriptor" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModelRepository" />
-    <classNode dependClassName="jetbrains.mps.smodel.persistence.def.ModelPersistence" />
-    <classNode dependClassName="jetbrains.mps.smodel.persistence.def.ModelReadException" />
-    <classNode dependClassName="jetbrains.mps.util.Computable" />
-    <classNode dependClassName="jetbrains.mps.util.FileUtil" />
-    <classNode dependClassName="jetbrains.mps.vcs.diff.ui.ModelDifferenceDialog" />
-    <classNode dependClassName="org.apache.commons.logging.Log" />
-    <classNode dependClassName="org.apache.commons.logging.LogFactory" />
-    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
-    <classNode extendsClassName="com.intellij.openapi.diff.DiffTool" />
-  </dependency>
-  <dependency className="jetbrains.mps.vcs.integration.ModelMergeTool" file="ModelMergeTool.java">
-    <classNode dependClassName="com.intellij.openapi.diff.DiffContent" />
-    <classNode dependClassName="com.intellij.openapi.diff.DiffRequest" />
-    <classNode dependClassName="com.intellij.openapi.diff.impl.mergeTool.MergeRequestImpl" />
-    <classNode dependClassName="com.intellij.openapi.ui.DialogWrapper" />
-    <classNode dependClassName="com.intellij.openapi.vfs.LocalFileSystem" />
-    <classNode dependClassName="com.intellij.openapi.vfs.VirtualFile" />
-    <classNode dependClassName="java.io.File" />
-    <classNode dependClassName="java.io.IOException" />
-    <classNode dependClassName="java.lang.Class" />
-    <classNode dependClassName="java.lang.Exception" />
-    <classNode dependClassName="java.lang.Object" />
-    <classNode dependClassName="java.lang.Runnable" />
-    <classNode dependClassName="java.lang.SecurityException" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.lang.reflect.Method" />
-    <classNode dependClassName="javax.swing.SwingUtilities" />
-    <classNode dependClassName="jetbrains.mps.fileTypes.MPSFileTypeFactory" />
-    <classNode dependClassName="jetbrains.mps.logging.Logger" />
-    <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModel" />
-    <classNode dependClassName="jetbrains.mps.smodel.persistence.def.ModelPersistence" />
-    <classNode dependClassName="jetbrains.mps.smodel.persistence.def.ModelReadException" />
-    <classNode dependClassName="jetbrains.mps.util.FileUtil" />
-    <classNode dependClassName="jetbrains.mps.vcs.diff.ui.merge.MergeModelsDialog" />
-    <classNode dependClassName="jetbrains.mps.vcs.util.MergeBackupUtil" />
-    <classNode dependClassName="jetbrains.mps.vcs.util.MergeConstants" />
-    <classNode dependClassName="org.apache.commons.logging.Log" />
-    <classNode dependClassName="org.apache.commons.logging.LogFactory" />
-    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
-    <classNode extendsClassName="com.intellij.openapi.diff.impl.mergeTool.MergeTool" />
-  </dependency>
   <dependency className="jetbrains.mps.vcs.integration.ModuleVcsPathPresenter" file="ModuleVcsPathPresenter.java">
     <classNode dependClassName="com.intellij.openapi.application.ApplicationManager" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
@@ -148,14 +91,6 @@
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.project.MPSExtentions" />
     <classNode extendsClassName="com.intellij.openapi.vcs.checkout.CheckoutListener" />
-  </dependency>
-  <dependency className="jetbrains.mps.vcs.integration.ToolsApplicationComponent" file="ToolsApplicationComponent.java">
-    <classNode dependClassName="com.intellij.openapi.diff.DiffManager" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.vcs.integration.ModelDiffTool" />
-    <classNode dependClassName="jetbrains.mps.vcs.integration.ModelMergeTool" />
-    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
-    <classNode extendsClassName="com.intellij.openapi.components.ApplicationComponent" />
   </dependency>
 </dependenciesRoot>
 

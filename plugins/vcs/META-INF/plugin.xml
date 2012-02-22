@@ -27,6 +27,7 @@
   <depends optional="true">jetbrains.mps.ide.make</depends>
 
   <xi:include href="../classes/jetbrains/mps/vcs/platform/actions/MPSVcs.xml" xpointer="xpointer(/components/*)"/>
+  <xi:include href="../classes/META-INF/VcsCommon.xml" xpointer="xpointer(/components/*)"/>
 
   <application-components>
     <component>
@@ -34,9 +35,6 @@
     </component>
     <component>
       <implementation-class>jetbrains.mps.vcs.suspicious.SuspiciousModelIndex</implementation-class>
-    </component>
-    <component>
-      <implementation-class>jetbrains.mps.vcs.integration.ToolsApplicationComponent</implementation-class>
     </component>
   </application-components>
 
@@ -51,14 +49,6 @@
     </component>
     <component>
       <implementation-class>jetbrains.mps.vcs.MPSVcsManager</implementation-class>
-    </component>
-    <component>
-      <implementation-class>jetbrains.mps.vcs.changesmanager.CurrentDifferenceRegistry</implementation-class>
-      <skipForDefaultProject/>
-    </component>
-    <component>
-      <implementation-class>jetbrains.mps.vcs.changesmanager.editor.EditorHighlighterFactory</implementation-class>
-      <skipForDefaultProject/>
     </component>
     <component>
       <implementation-class>jetbrains.mps.vcs.changesmanager.roots.NodeFileStatusMapping</implementation-class>

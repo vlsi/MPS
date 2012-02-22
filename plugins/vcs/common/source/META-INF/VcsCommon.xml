@@ -1,0 +1,18 @@
+<components>
+  <application-components>
+    <component>
+      <implementation-class>jetbrains.mps.vcs.platform.integration.ToolsApplicationComponent</implementation-class>
+    </component>
+  </application-components>
+
+  <project-components>
+    <component>
+      <implementation-class>jetbrains.mps.vcs.changesmanager.CurrentDifferenceRegistry</implementation-class>
+      <skipForDefaultProject/>
+    </component>
+    <component>
+      <implementation-class>jetbrains.mps.vcs.changesmanager.editor.EditorHighlighterFactory</implementation-class>
+      <skipForDefaultProject/>
+    </component>
+  </project-components>
+</components>

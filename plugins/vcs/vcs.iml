@@ -9,6 +9,7 @@
       <sourceFolder url="file://$MODULE_DIR$/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/test_gen" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/common/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/common/source" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
