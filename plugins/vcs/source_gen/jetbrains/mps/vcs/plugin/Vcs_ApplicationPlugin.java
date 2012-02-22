@@ -22,14 +22,12 @@ public class Vcs_ApplicationPlugin extends BaseApplicationPlugin {
   public void createGroups() {
     // actions w/o parameters 
     addAction(new AddModuleToVcs_Action());
-    addAction(new Annotate_Action());
     addAction(new CompareTransientModels_Action());
     addAction(new IgnoreModuleInVcs_Action());
     addAction(new ReRunMergeFromBackup_Action());
     addAction(new ShowDifferencesWithModelOnDisk_Action());
     addAction(new ShowDiffererenceWithCurrentRevision_Action());
     // groups 
-    addGroup(new AnnotateGroup_ActionGroup());
     addGroup(new MakeFromChangesView_ActionGroup());
     addGroup(new ModuleVcsActions_ActionGroup());
     addGroup(new ShowDiffWithCurrRev_ActionGroup());
@@ -45,6 +43,5 @@ public class Vcs_ApplicationPlugin extends BaseApplicationPlugin {
     insertGroupIntoAnother(ShowDiffWithCurrRev_ActionGroup.ID, EditorTabActions_ActionGroup.ID, EditorTabActions_ActionGroup.LABEL_ID_diff);
     insertGroupIntoAnother(ShowDiffWithCurrRev_ActionGroup.ID, NodeActions_ActionGroup.ID, NodeActions_ActionGroup.LABEL_ID_diff);
     insertGroupIntoAnother(ModuleVcsActions_ActionGroup.ID, CommonModuleActions_ActionGroup.ID, CommonModuleActions_ActionGroup.LABEL_ID_ideavcs);
-    insertGroupIntoAnother(AnnotateGroup_ActionGroup.ID, "jetbrains.mps.ide.editor.actions.EditorLeftPanelMenu_ActionGroup", null);
   }
 }

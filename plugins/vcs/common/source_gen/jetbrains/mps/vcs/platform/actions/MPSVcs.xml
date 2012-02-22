@@ -1,5 +1,6 @@
 <components>
   <actions>
+    <action id="jetbrains.mps.vcs.platform.actions.Annotate_Action" class="jetbrains.mps.vcs.platform.actions.Annotate_Action"/>
     <action id="jetbrains.mps.vcs.platform.actions.CopyOldNodes_Action" class="jetbrains.mps.vcs.platform.actions.CopyOldNodes_Action"/>
     <action id="jetbrains.mps.vcs.platform.actions.GoToNextChange_Action" class="jetbrains.mps.vcs.platform.actions.GoToNextChange_Action"/>
     <action id="jetbrains.mps.vcs.platform.actions.GoToPreviousChange_Action" class="jetbrains.mps.vcs.platform.actions.GoToPreviousChange_Action"/>
@@ -24,6 +25,10 @@
       <reference ref="jetbrains.mps.vcs.platform.actions.InstalVcsAddons_Action"/>
       <reference ref="jetbrains.mps.vcs.platform.actions.ReportModelMergeProblem_Action"/>
       <add-to-group group-id="VcsGlobalGroup" anchor="last"/>
+    </group>
+    <group id="jetbrains.mps.vcs.platform.actions.AnnotateGroup_ActionGroup">
+      <reference ref="jetbrains.mps.vcs.platform.actions.Annotate_Action"/>
+      <add-to-group group-id="jetbrains.mps.ide.editor.actions.EditorLeftPanelMenu_ActionGroup" anchor="last"/>
     </group>
   </actions>
 </components>
