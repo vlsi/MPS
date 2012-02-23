@@ -17,7 +17,6 @@ import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.baseLanguage.scopes.ClassAccessKind;
 import jetbrains.mps.baseLanguage.scopes.SimpleScope;
 import javax.swing.Icon;
 import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
@@ -60,7 +59,7 @@ public class ClassConcept_Behavior {
     return members;
   }
 
-  public static Scope virtual_getVisibleMembers_8083692786967356510(SNode thisNode, int accessKind, SNode kind) {
+  public static Scope virtual_getVisibleMembers_8083692786967356611(SNode thisNode, SNode contextNode, SNode kind) {
     // composite from inherited + super. scopes + other new fields // for now just getMembers 
     List<SNode> extendsClassifiers = new ArrayList<SNode>();
     ListSequence.fromList(extendsClassifiers).addElement(SLinkOperations.getTarget(SLinkOperations.getTarget(thisNode, "superclass", true), "classifier", false));
@@ -78,7 +77,7 @@ public class ClassConcept_Behavior {
     // todo: create new scope composer (overriding in case of equal concepts and names) 
     List<SNode> elements = new ArrayList<SNode>();
     Set<Pair<SNode, String>> conceptAndNames = SetSequence.fromSet(new HashSet());
-    for (SNode node : Classifier_Behavior.callSuper_getVisibleMembers_8083692786967356510(thisNode, "jetbrains.mps.baseLanguage.structure.ClassConcept", accessKind, kind).getAvailableElements(null)) {
+    for (SNode node : Classifier_Behavior.callSuper_getVisibleMembers_8083692786967356611(thisNode, "jetbrains.mps.baseLanguage.structure.ClassConcept", contextNode, kind).getAvailableElements(null)) {
       ListSequence.fromList(elements).addElement(node);
       if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.core.structure.INamedConcept")) {
         SetSequence.fromSet(conceptAndNames).addElement(new Pair(SNodeOperations.getConceptDeclaration(node), SPropertyOperations.getString(SNodeOperations.cast(node, "jetbrains.mps.lang.core.structure.INamedConcept"), "name")));
@@ -90,7 +89,7 @@ public class ClassConcept_Behavior {
         return (it != null);
       }
     })) {
-      for (SNode node : Classifier_Behavior.call_getVisibleMembers_8083692786967356510(classifier, ClassAccessKind.SUBCLASS, kind).getAvailableElements(null)) {
+      for (SNode node : Classifier_Behavior.call_getVisibleMembers_8083692786967356611(classifier, contextNode, kind).getAvailableElements(null)) {
         if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.core.structure.INamedConcept")) {
           Pair<SNode, String> tmp = new Pair(SNodeOperations.getConceptDeclaration(node), SPropertyOperations.getString(SNodeOperations.cast(node, "jetbrains.mps.lang.core.structure.INamedConcept"), "name"));
           if (!(SetSequence.fromSet(conceptAndNames).contains(tmp))) {

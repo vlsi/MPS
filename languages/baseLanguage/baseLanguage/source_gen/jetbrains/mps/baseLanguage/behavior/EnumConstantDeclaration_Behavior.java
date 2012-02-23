@@ -37,6 +37,11 @@ public class EnumConstantDeclaration_Behavior {
     return markIcons;
   }
 
+  public static boolean virtual_isVisible_8083692786967482069(SNode thisNode, int classAccessKind) {
+    // todo: ? 
+    return true;
+  }
+
   public static boolean virtual_isStatic_8986964027630462944(SNode thisNode) {
     return true;
   }

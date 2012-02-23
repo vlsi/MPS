@@ -11,8 +11,8 @@ public class Interface_BehaviorDescriptor extends Classifier_BehaviorDescriptor 
   public Interface_BehaviorDescriptor() {
   }
 
-  public Scope virtual_getVisibleMembers_8083692786967356510(SNode thisNode, int accessKind, SNode kind) {
-    return Interface_Behavior.virtual_getVisibleMembers_8083692786967356510(thisNode, accessKind, kind);
+  public Scope virtual_getVisibleMembers_8083692786967356611(SNode thisNode, SNode contextNode, SNode kind) {
+    return Interface_Behavior.virtual_getVisibleMembers_8083692786967356611(thisNode, contextNode, kind);
   }
 
   public boolean virtual_isDeprecated_1224609060727(SNode thisNode) {
