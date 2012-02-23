@@ -21,6 +21,7 @@ import com.intellij.debugger.engine.JVMNameUtil;
 import com.intellij.debugger.ui.breakpoints.BreakpointWithHighlighter;
 import jetbrains.mps.debugger.core.breakpoints.BreakpointPainterEx;
 import jetbrains.mps.generator.traceInfo.TraceInfoUtil;
+import jetbrains.mps.idea.debugger.GeneratedSourcePosition;
 import jetbrains.mps.smodel.SNode;
 import org.jetbrains.annotations.Nullable;
 
@@ -42,6 +43,6 @@ import org.jetbrains.annotations.Nullable;
             className = JVMNameUtil.getSourcePositionClassDisplayName(null, sourcePosition);
         }
         if (className == null) return null;
-        return TraceInfoUtil.getNode(className, sourcePosition.getFile().getName(), breakpoint.getLineIndex() + 1);
+        return new GeneratedSourcePosition(className, sourcePosition.getFile().getName(), breakpoint.getLineIndex() + 1).getNode();
     }
 }

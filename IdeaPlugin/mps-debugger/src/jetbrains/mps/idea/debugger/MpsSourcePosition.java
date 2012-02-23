@@ -74,23 +74,7 @@ public class MpsSourcePosition extends SourcePosition {
     @NotNull
     @Override
     public PsiFile getFile() {
-        final String fileName = mySourcePosition.getFileName();
-
-        final String fullPath = ModelAccess.instance().runReadAction(new Computable<String>() {
-            @Override
-            public String compute() {
-                SModelDescriptor modelDescriptor = myNodePointer.getNode().getModel().getModelDescriptor();
-                IFile defaultOutputDir = FileGenerationUtil.getDefaultOutputDir(modelDescriptor, FileSystem.getInstance().getFileByPath(modelDescriptor.getModule().getGeneratorOutputPath()));
-                return defaultOutputDir.getDescendant(fileName).getPath();
-            }
-        });
-
-        return ApplicationManager.getApplication().runReadAction(new com.intellij.openapi.util.Computable<PsiFile>() {
-            @Override
-            public PsiFile compute() {
-                return PsiManager.getInstance(myProject).findFile(LocalFileSystem.getInstance().findFileByPath(fullPath));
-            }
-        });
+        return mySourcePosition.getPsiFile(myProject);
     }
 
     @Override

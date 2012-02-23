@@ -27,20 +27,14 @@ import com.intellij.openapi.project.Project;
 import com.intellij.psi.PsiDocumentManager;
 import com.intellij.psi.PsiFile;
 import jetbrains.mps.debugger.core.breakpoints.BreakpointsUiComponentEx;
-import jetbrains.mps.generator.traceInfo.TraceInfoCache;
-import jetbrains.mps.generator.traceInfo.TraceInfoUtil;
 import jetbrains.mps.ide.editor.util.EditorComponentUtil;
-import jetbrains.mps.idea.debugger.MpsSourcePosition;
+import jetbrains.mps.idea.debugger.GeneratedSourcePosition;
 import jetbrains.mps.nodeEditor.AdditionalPainter;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
-import jetbrains.mps.traceInfo.DebugInfo;
-import jetbrains.mps.traceInfo.TraceablePositionInfo;
-import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.misc.hash.HashSet;
 import org.jetbrains.annotations.NotNull;
 
@@ -116,48 +110,41 @@ public class IdeaBreakpointsUiComponent extends BreakpointsUiComponentEx<Breakpo
 
     @Override
     protected void toggleBreakpoint(final SNode node, boolean handleRemove) {
+        BreakpointWithHighlighter locationBreakpoint = findBreakpoint(node);
+        if (locationBreakpoint != null) {
+            myDebuggerManager.getBreakpointManager().removeBreakpoint(locationBreakpoint);
+            return;
+        }
+
+        addBreakpoint(node);
+    }
+
+    private BreakpointWithHighlighter findBreakpoint(SNode node) {
         List<Breakpoint> breakpoints = myDebuggerManager.getBreakpointManager().getBreakpoints();
         for (Breakpoint breakpoint : breakpoints) {
             if (breakpoint instanceof BreakpointWithHighlighter) {
                 final BreakpointWithHighlighter locationBreakpoint = (BreakpointWithHighlighter) breakpoint;
-
-                boolean sameNode = ModelAccess.instance().runReadAction(new Computable<Boolean>() {
-                    @Override
-                    public Boolean compute() {
-                        return new SNodePointer(BreakpointPainter.getNodeForBreakpoint(locationBreakpoint)).equals(new SNodePointer(node));
-                    }
-
-                });
-                if (sameNode) {
-                    if (handleRemove) {
-                        myDebuggerManager.getBreakpointManager().removeBreakpoint(locationBreakpoint);
-                    }
-                    return;
+                if (new SNodePointer(BreakpointPainter.getNodeForBreakpoint(locationBreakpoint)).equals(new SNodePointer(node))) {
+                    return locationBreakpoint;
                 }
             }
         }
+        return null;
+    }
 
-        TraceablePositionInfo position = ModelAccess.instance().runReadAction(new Computable<TraceablePositionInfo>() {
-            @Override
-            public TraceablePositionInfo compute() {
-                SModelDescriptor model = node.getModel().getModelDescriptor();
-                DebugInfo debugInfo = TraceInfoCache.getInstance().get(model);
-                if (debugInfo == null) {
-                    return null;
-                }
-                return debugInfo.getPositionForNode(node.getSNodeId().toString());
-            }
-        });
-        if (position == null) return;
-        int startLine = position.getStartLine();
-        PsiFile psiFile = MpsSourcePosition.createPosition(myProject, TraceInfoUtil.getUnitName(node.getContainingRoot()), position.getFileName(), startLine).getFile();
+    private void addBreakpoint(SNode node) {
+        GeneratedSourcePosition sourcePosition = GeneratedSourcePosition.fromNode(node);
+        if (sourcePosition == null) return;
+        PsiFile psiFile = sourcePosition.getPsiFile(myProject);
+        if (psiFile == null) return;
         Document document = PsiDocumentManager.getInstance(myProject).getDocument(psiFile);
-        BreakpointWithHighlighter breakpoint = myDebuggerManager.getBreakpointManager().addFieldBreakpoint(document, startLine);
+
+        BreakpointWithHighlighter breakpoint = myDebuggerManager.getBreakpointManager().addFieldBreakpoint(document, sourcePosition.getLineNumber());
         if (breakpoint == null) {
-            breakpoint = myDebuggerManager.getBreakpointManager().addMethodBreakpoint(document, startLine);
+            breakpoint = myDebuggerManager.getBreakpointManager().addMethodBreakpoint(document, sourcePosition.getLineNumber());
         }
         if (breakpoint == null) {
-            breakpoint = myDebuggerManager.getBreakpointManager().addLineBreakpoint(document, startLine);
+            breakpoint = myDebuggerManager.getBreakpointManager().addLineBreakpoint(document, sourcePosition.getLineNumber());
         }
     }
 
