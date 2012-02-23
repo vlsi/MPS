@@ -38,6 +38,14 @@ public class ConceptEditorDeclaration_Behavior {
     return true;
   }
 
+  public static void call_createDefaultEditor_2970389781192937380(SNode thisNode, boolean multiline) {
+    if (multiline) {
+      new DefaultEditorBuilder(thisNode).buildStatementLike();
+    } else {
+      new DefaultEditorBuilder(thisNode).buildExpressionLike();
+    }
+  }
+
   public static SNode call_getBaseConcept_8952337903384629359(SNode thisNode) {
     BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
     return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration"), "virtual_getBaseConcept_2621449412040133768", PARAMETERS_8952337903384629359);

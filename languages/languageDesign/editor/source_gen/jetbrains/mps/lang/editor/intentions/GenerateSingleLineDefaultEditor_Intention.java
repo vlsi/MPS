@@ -6,6 +6,7 @@ import jetbrains.mps.intentions.BaseIntention;
 import jetbrains.mps.intentions.Intention;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.lang.editor.behavior.ConceptEditorDeclaration_Behavior;
 
 public class GenerateSingleLineDefaultEditor_Intention extends BaseIntention implements Intention {
   public GenerateSingleLineDefaultEditor_Intention() {
@@ -32,7 +33,7 @@ public class GenerateSingleLineDefaultEditor_Intention extends BaseIntention imp
   }
 
   public void execute(final SNode node, final EditorContext editorContext) {
-    new DefaultEditorBuilder(node).buildExpressionLike();
+    ConceptEditorDeclaration_Behavior.call_createDefaultEditor_2970389781192937380(node, false);
   }
 
   public String getLocationString() {

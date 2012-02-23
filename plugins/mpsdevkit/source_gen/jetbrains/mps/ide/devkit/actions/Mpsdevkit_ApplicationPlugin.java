@@ -35,6 +35,7 @@ public class Mpsdevkit_ApplicationPlugin extends BaseApplicationPlugin {
     // actions w/o parameters 
     addAction(new AddAccessoryModel_Action());
     addAction(new CellProperties_Action());
+    addAction(new CreateDefaultEditor_Action());
     addAction(new DeleteGenerator_Action());
     addAction(new FindLanguageConceptsUsages_Action());
     addAction(new FindLanguageUsages_Action());
@@ -72,6 +73,7 @@ public class Mpsdevkit_ApplicationPlugin extends BaseApplicationPlugin {
     addGroup(new GenerationTraceActions_ActionGroup());
     addGroup(new GeneratorActions_Delete_ActionGroup());
     addGroup(new GotoConceptAspect_ActionGroup());
+    addGroup(new IntentionsGroup_ActionGroup());
     addGroup(new LanguageActionsEx_ActionGroup());
     addGroup(new LanguageNewActionsEx_ActionGroup());
     addGroup(new LanguageNewCustomPartActions_ActionGroup());
@@ -97,6 +99,7 @@ public class Mpsdevkit_ApplicationPlugin extends BaseApplicationPlugin {
     insertGroupIntoAnother(GotoConceptAspect_ActionGroup.ID, Goto_ActionGroup.ID, Goto_ActionGroup.LABEL_ID_gotoConceptAspects);
     insertGroupIntoAnother(GotoConceptAspect_ActionGroup.ID, "GoToEditorPopupAddition_ActionGroupother", null);
     insertGroupIntoAnother(LanguageActionsEx_ActionGroup.ID, AnalyzeModule_ActionGroup.ID, null);
+    insertGroupIntoAnother(IntentionsGroup_ActionGroup.ID, "jetbrains.mps.ide.editor.actions.ActionsAsIntentions_ActionGroup", null);
     insertGroupIntoAnother(DevKitTools_ActionGroup.ID, Tools_ActionGroup.ID, Tools_ActionGroup.LABEL_ID_devkitTools);
     insertGroupIntoAnother(EditorInternalEx_ActionGroup.ID, DebugActions_ActionGroup.ID, DebugActions_ActionGroup.LABEL_ID_editor);
     insertGroupIntoAnother(LanguageNewCustomPartActions_ActionGroup.ID, LanguageNewActions_ActionGroup.ID, LanguageNewActions_ActionGroup.LABEL_ID_newAspect);
