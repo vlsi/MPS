@@ -18,10 +18,14 @@ package jetbrains.mps.idea.debugger;
 
 import com.intellij.debugger.DebuggerManagerEx;
 import com.intellij.debugger.SourcePosition;
+import com.intellij.debugger.engine.DebugProcess;
 import com.intellij.debugger.impl.DebuggerContextImpl;
 import com.intellij.debugger.impl.DebuggerContextListener;
 import com.intellij.debugger.impl.DebuggerManagerListener;
 import com.intellij.debugger.impl.DebuggerSession;
+import com.intellij.execution.ExecutionManager;
+import com.intellij.execution.ui.RunContentDescriptor;
+import com.intellij.execution.ui.RunContentListener;
 import com.intellij.openapi.components.ProjectComponent;
 import com.intellij.openapi.fileEditor.FileEditorManager;
 import com.intellij.openapi.project.Project;
@@ -33,9 +37,12 @@ public class IdeaDebuggerPositionHighlighter extends CurrentLinePositionComponen
     private DebuggerManagerEx myDebuggerManager;
     private final DebuggerManagerListener myDebuggerManagerListener = new MyDebuggerManagerListener();
     private final DebuggerContextListener mySessionListener = new MyDebuggerContextListener();
+    private final RunContentListener myRunContentListener = new MyRunContentListener();
+    private final ExecutionManager myExecutionManager;
 
-    public IdeaDebuggerPositionHighlighter(Project project, FileEditorManager fileEditorManager) {
+    public IdeaDebuggerPositionHighlighter(Project project, FileEditorManager fileEditorManager, ExecutionManager executionManager) {
         super(project, fileEditorManager);
+        myExecutionManager = executionManager;
     }
 
     @Override
@@ -51,10 +58,12 @@ public class IdeaDebuggerPositionHighlighter extends CurrentLinePositionComponen
     public void initComponent() {
         myDebuggerManager = DebuggerManagerEx.getInstanceEx(myProject);
         myDebuggerManager.addDebuggerManagerListener(myDebuggerManagerListener);
+        myExecutionManager.getContentManager().addRunContentListener(myRunContentListener);
     }
 
     @Override
     public void disposeComponent() {
+        myExecutionManager.getContentManager().removeRunContentListener(myRunContentListener);
         myDebuggerManager.removeDebuggerManagerListener(myDebuggerManagerListener);
     }
 
@@ -70,6 +79,13 @@ public class IdeaDebuggerPositionHighlighter extends CurrentLinePositionComponen
 
     @Override
     public void projectClosed() {
+    }
+
+    @Override
+    protected DebuggerSession getCurrentSession() {
+        RunContentDescriptor selectedContent = myExecutionManager.getContentManager().getSelectedContent();
+        if (selectedContent == null) return null;
+        return myDebuggerManager.getSession(myDebuggerManager.getDebugProcess(selectedContent.getProcessHandler()));
     }
 
     private class MyDebuggerManagerListener implements DebuggerManagerListener {
@@ -89,6 +105,26 @@ public class IdeaDebuggerPositionHighlighter extends CurrentLinePositionComponen
         @Override
         public void changeEvent(DebuggerContextImpl newContext, int event) {
             reAttachPainter(newContext.getDebuggerSession());
+        }
+    }
+
+    private class MyRunContentListener implements RunContentListener {
+        private MyRunContentListener() {
+        }
+
+        @Override
+        public void contentSelected(RunContentDescriptor descriptor) {
+            if (descriptor != null) {
+                DebugProcess debugProcess = myDebuggerManager.getDebugProcess(descriptor.getProcessHandler());
+                if (debugProcess != null) {
+                    DebuggerSession debuggerSession = myDebuggerManager.getSession(debugProcess);
+                    currentSessionChanged(debuggerSession);
+                }
+            }
+        }
+
+        @Override
+        public void contentRemoved(RunContentDescriptor descriptor) {
         }
     }
 }

@@ -55,6 +55,10 @@ public class CurrentLinePositionComponent extends CurrentLinePositionComponentEx
     super.dispose();
   }
 
+  protected AbstractDebugSession getCurrentSession() {
+    return myProject.getComponent(DebugSessionManagerComponent.class).getDebugSessionByCurrentTab();
+  }
+
   protected Tuples._3<String, String, Integer> getPosition(AbstractDebugSession session) {
     IStackFrame stackFrame = session.getUiState().getStackFrame();
     if (stackFrame != null) {
