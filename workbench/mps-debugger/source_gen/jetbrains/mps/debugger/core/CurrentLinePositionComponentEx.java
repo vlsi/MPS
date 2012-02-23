@@ -19,6 +19,7 @@ import com.intellij.openapi.application.ApplicationManager;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.ide.editor.util.EditorComponentUtil;
 import org.jetbrains.annotations.Nullable;
+import jetbrains.mps.util.Computable;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.ide.editor.MPSEditorOpener;
 import jetbrains.mps.project.ProjectOperationContext;
@@ -61,7 +62,7 @@ public abstract class CurrentLinePositionComponentEx<S> {
     ModelAccess.instance().runReadAction(new Runnable() {
       @Override
       public void run() {
-        if (EditorComponentUtil.isNodeShownInTheComponent(editorComponent, painter.getItem())) {
+        if (EditorComponentUtil.isNodeShownInTheComponent(editorComponent, painter.getSNode())) {
           if (!(editorComponent.getAdditionalPainters().contains(painter))) {
             editorComponent.addAdditionalPainter(painter);
           }
@@ -76,7 +77,7 @@ public abstract class CurrentLinePositionComponentEx<S> {
     ModelAccess.instance().runReadAction(new Runnable() {
       @Override
       public void run() {
-        if (EditorComponentUtil.isNodeShownInTheComponent(editorComponent, painter.getItem())) {
+        if (EditorComponentUtil.isNodeShownInTheComponent(editorComponent, painter.getSNode())) {
           editorComponent.removeAdditionalPainter(painter);
           editorComponent.repaint();
         }
@@ -85,10 +86,17 @@ public abstract class CurrentLinePositionComponentEx<S> {
   }
 
   @Nullable
-  protected Runnable attachPainterRunnable(S debugSession) {
-    SNode node = getNode(debugSession);
-    if (node != null) {
-      final CurrentLinePainter newPainter = new CurrentLinePainter(node);
+  protected Runnable attachPainterRunnable(final S debugSession) {
+    final CurrentLinePainter newPainter = ModelAccess.instance().runReadAction(new Computable<CurrentLinePainter>() {
+      public CurrentLinePainter compute() {
+        SNode node = getNode(debugSession);
+        if (node != null) {
+          return new CurrentLinePainter(node);
+        }
+        return null;
+      }
+    });
+    if (newPainter != null) {
       final boolean visible = getCurrentSession() == null || getCurrentSession() == debugSession;
       newPainter.setVisible(visible);
       //  we lock here, since we do not want to acquire read lock inside while having mySessionToContextPainterMap  
@@ -112,8 +120,8 @@ public abstract class CurrentLinePositionComponentEx<S> {
   private void attachPainterAndOpenEditor(@NotNull final CurrentLinePainter painter) {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        EditorComponent currentEditorComponent = (EditorComponent) new MPSEditorOpener(myProject).openNode(painter.getItem(), new ProjectOperationContext(ProjectHelper.toMPSProject(myProject)), true, false).getCurrentEditorComponent();
-        currentEditorComponent = EditorComponentUtil.scrollToNode(painter.getItem(), currentEditorComponent, myFileEditorManager);
+        EditorComponent currentEditorComponent = (EditorComponent) new MPSEditorOpener(myProject).openNode(painter.getSNode(), new ProjectOperationContext(ProjectHelper.toMPSProject(myProject)), true, false).getCurrentEditorComponent();
+        currentEditorComponent = EditorComponentUtil.scrollToNode(painter.getSNode(), currentEditorComponent, myFileEditorManager);
         if (currentEditorComponent != null) {
           attach(painter, currentEditorComponent);
         }
@@ -124,7 +132,7 @@ public abstract class CurrentLinePositionComponentEx<S> {
   private void attachPainter(@NotNull final CurrentLinePainter painter) {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        List<EditorComponent> components = EditorComponentUtil.findComponentForNode(painter.getItem(), myFileEditorManager);
+        List<EditorComponent> components = EditorComponentUtil.findComponentForNode(painter.getSNode(), myFileEditorManager);
         for (EditorComponent component : ListSequence.fromList(components)) {
           attach(painter, component);
         }
