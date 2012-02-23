@@ -28,7 +28,6 @@ import com.intellij.psi.PsiFile;
 import com.intellij.psi.PsiManager;
 import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
 import jetbrains.mps.generator.traceInfo.TraceInfoCache;
-import jetbrains.mps.generator.traceInfo.TraceInfoUtil;
 import jetbrains.mps.ide.navigation.NodeNavigatable;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.smodel.*;
@@ -48,9 +47,11 @@ public class MpsSourcePosition extends SourcePosition {
     private final SNodePointer myNodePointer;
     private final Project myProject;
     private final NodeNavigatable myNavigatable;
+    private final GeneratedSourcePosition mySourcePosition;
 
-    public MpsSourcePosition(SNodePointer node, Project project) {
-        myNodePointer = node;
+    public MpsSourcePosition(GeneratedSourcePosition position, Project project) {
+        mySourcePosition = position;
+        myNodePointer = position.getNodePointer();
         myProject = project;
 
         myNavigatable = new NodeNavigatable(ProjectHelper.toMPSProject(myProject), myNodePointer);
@@ -73,12 +74,7 @@ public class MpsSourcePosition extends SourcePosition {
     @NotNull
     @Override
     public PsiFile getFile() {
-        TraceablePositionInfo positionInfo = getPositionInfo();
-        if (positionInfo == null) {
-            return getModelPsiFile();
-        }
-
-        final String fileName = positionInfo.getFileName();
+        final String fileName = mySourcePosition.getFileName();
 
         final String fullPath = ModelAccess.instance().runReadAction(new Computable<String>() {
             @Override
@@ -97,60 +93,15 @@ public class MpsSourcePosition extends SourcePosition {
         });
     }
 
-    @NotNull
-    private PsiFile getModelPsiFile() {
-        final String path = ModelAccess.instance().runReadAction(new Computable<String>() {
-            @Override
-            public String compute() {
-                SModelDescriptor modelDescriptor = myNodePointer.getNode().getModel().getModelDescriptor();
-                if (modelDescriptor instanceof BaseSModelDescriptorWithSource) {
-                    ModelDataSource source = ((BaseSModelDescriptorWithSource) modelDescriptor).getSource();
-                    if (source instanceof RegularModelDataSource) {
-                        return ((RegularModelDataSource) source).getFilesToListen().iterator().next();
-                    }
-                }
-                return null;
-            }
-        });
-        return ApplicationManager.getApplication().runReadAction(new com.intellij.openapi.util.Computable<PsiFile>() {
-            @Override
-            public PsiFile compute() {
-                if (path == null) {
-                    // we should return something %|
-                    return PsiManager.getInstance(myProject).findFile(LocalFileSystem.getInstance().findFileByPath(PathManager.getBinPath()));
-                }
-                return PsiManager.getInstance(myProject).findFile(LocalFileSystem.getInstance().findFileByPath(path));
-            }
-        });
-    }
-
     @Override
     public PsiElement getElementAt() {
         return null;
     }
 
-    @Nullable
-    private TraceablePositionInfo getPositionInfo() {
-        return ModelAccess.instance().runReadAction(new Computable<TraceablePositionInfo>() {
-            @Override
-            public TraceablePositionInfo compute() {
-                SModelDescriptor model = myNodePointer.getModel();
-                DebugInfo debugInfo = TraceInfoCache.getInstance().get(model);
-                if (debugInfo == null) {
-                    return null;
-                }
-                return debugInfo.getPositionForNode(myNodePointer.getNodeId().toString());
-            }
-        });
-    }
-
     @Override
     public int getLine() {
-        TraceablePositionInfo positionInfo = getPositionInfo();
-        if (positionInfo == null) {
-            return -1;
-        }
-        return positionInfo.getStartLine();
+        // our lines start from 1, theirs from 0
+        return mySourcePosition.getLineNumber() - 1;
     }
 
     @Override
@@ -183,22 +134,22 @@ public class MpsSourcePosition extends SourcePosition {
         return ModelAccess.instance().runReadAction(new Computable<SNode>() {
             @Override
             public SNode compute() {
-                return myNodePointer.getNode();
+                return mySourcePosition.getNode();
             }
         });
     }
 
     @Nullable
-    public static MpsSourcePosition createPosition(final Project project, String typeName, String fileName, int lineNumber) {
-        final SNode node = TraceInfoUtil.getNode(typeName, fileName, lineNumber);
-        if (node != null) {
-            return ModelAccess.instance().runReadAction(new Computable<MpsSourcePosition>() {
-                @Override
-                public MpsSourcePosition compute() {
-                    return new MpsSourcePosition(new SNodePointer(node), project);
+    public static MpsSourcePosition createPosition(final Project project, final String typeName, final String fileName, final int lineNumber) {
+        return ModelAccess.instance().runReadAction(new Computable<MpsSourcePosition>() {
+            @Override
+            public MpsSourcePosition compute() {
+                GeneratedSourcePosition sourcePosition = new GeneratedSourcePosition(typeName, fileName, lineNumber);
+                if (sourcePosition.getNode() == null) {
+                    return null;
                 }
-            });
-        }
-        return null;
+                return new MpsSourcePosition(sourcePosition, project);
+            }
+        });
     }
 }
