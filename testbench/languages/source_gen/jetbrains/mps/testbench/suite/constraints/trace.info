@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="ConstraintsAspectDescriptor.java" startLine="9" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.testbench.suite.constraints.ConstraintsAspectDescriptor" />
+  <unitInfo fileName="JUnit4TestCaseRef_Constraints.java" startLine="37" startPosition="0" endLine="115" endPosition="0" unitName="jetbrains.mps.testbench.suite.constraints.JUnit4TestCaseRef_Constraints" />
+  <unitInfo fileName="JUnit4TestCaseRef_Constraints.java" startLine="47" startPosition="32" endLine="93" endPosition="5" unitName="jetbrains.mps.testbench.suite.constraints.JUnit4TestCaseRef_Constraints$1" />
+  <unitInfo fileName="JUnit4TestCaseRef_Constraints.java" startLine="56" startPosition="19" endLine="91" endPosition="9" unitName="jetbrains.mps.testbench.suite.constraints.JUnit4TestCaseRef_Constraints$2" />
+  <unitInfo fileName="JUnit4TestCaseRef_Constraints.java" startLine="60" startPosition="23" endLine="84" endPosition="13" unitName="jetbrains.mps.testbench.suite.constraints.JUnit4TestCaseRef_Constraints$3" />
+  <unitInfo fileName="JUnit4TestCaseRef_Constraints.java" startLine="70" startPosition="115" endLine="74" endPosition="19" unitName="jetbrains.mps.testbench.suite.constraints.JUnit4TestCaseRef_Constraints$4" />
+  <unitInfo fileName="JUnit4TestCaseRef_Constraints.java" startLine="74" startPosition="29" endLine="78" endPosition="19" unitName="jetbrains.mps.testbench.suite.constraints.JUnit4TestCaseRef_Constraints$4" />
+  <unitInfo fileName="JUnit4TestCaseRef_Constraints.java" startLine="97" startPosition="0" endLine="114" endPosition="0" unitName="jetbrains.mps.testbench.suite.constraints.JUnit4TestCaseRef_Constraints$QuotationClass_qd3c0x_a0a0a0a0a0b0a0a0a0b0a1a0b0a" />
+  <unitInfo fileName="ModuleSuite_Constraints.java" startLine="15" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.testbench.suite.constraints.ModuleSuite_Constraints" />
+  <unitInfo fileName="ModuleSuite_Constraints.java" startLine="23" startPosition="31" endLine="34" endPosition="5" unitName="jetbrains.mps.testbench.suite.constraints.ModuleSuite_Constraints$1" />
+  <unitInfo fileName="TestCaseRef_Constraints.java" startLine="21" startPosition="0" endLine="60" endPosition="0" unitName="jetbrains.mps.testbench.suite.constraints.TestCaseRef_Constraints" />
+  <unitInfo fileName="TestCaseRef_Constraints.java" startLine="31" startPosition="35" endLine="56" endPosition="5" unitName="jetbrains.mps.testbench.suite.constraints.TestCaseRef_Constraints$1" />
+  <unitInfo fileName="TestCaseRef_Constraints.java" startLine="40" startPosition="19" endLine="54" endPosition="9" unitName="jetbrains.mps.testbench.suite.constraints.TestCaseRef_Constraints$2" />
   <root nodeId="1280144168199457725">
     <nodeInfo nodeId="1280144168199457725" fileName="JUnit3TestCaseRef_Constraints.java" startLine="36" startPosition="78" endLine="37" endPosition="196" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="breakingNode_qx1fe9_a0a1a0a0a1a0b0a1a0" />
     <nodeInfo nodeId="1280144168199457725" fileName="JUnit3TestCaseRef_Constraints.java" startLine="39" startPosition="42" endLine="40" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />

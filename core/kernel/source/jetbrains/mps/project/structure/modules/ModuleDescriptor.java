@@ -40,6 +40,7 @@ public class ModuleDescriptor {
   private DeploymentDescriptor myDeploymentDescriptor;
 
   private Throwable myLoadException;
+  private boolean myUseTransientOutput;
 
   public ModuleDescriptor() {
     myModelRoots = new HashSet<ModelRoot>();

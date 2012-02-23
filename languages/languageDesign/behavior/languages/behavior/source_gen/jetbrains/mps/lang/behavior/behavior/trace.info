@@ -8,6 +8,7 @@
   <unitInfo fileName="InternalConceptDeclarationsHolder_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.lang.behavior.behavior.InternalConceptDeclarationsHolder_BehaviorDescriptor" />
   <unitInfo fileName="LocalBehaviorMethodCall_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.lang.behavior.behavior.LocalBehaviorMethodCall_BehaviorDescriptor" />
   <unitInfo fileName="StaticConceptMethodDeclaration_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.lang.behavior.behavior.StaticConceptMethodDeclaration_BehaviorDescriptor" />
+  <unitInfo fileName="SuperNodeExpression_Behavior.java" startLine="10" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.lang.behavior.behavior.SuperNodeExpression_Behavior" />
   <unitInfo fileName="SuperNodeExpression_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.behavior.behavior.SuperNodeExpression_BehaviorDescriptor" />
   <unitInfo fileName="ThisNodeExpression_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.lang.behavior.behavior.ThisNodeExpression_BehaviorDescriptor" />
   <root nodeId="1225194243289">

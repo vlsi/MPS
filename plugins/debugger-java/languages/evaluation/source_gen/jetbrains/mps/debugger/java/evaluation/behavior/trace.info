@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.debugger.java.evaluation.behavior.BehaviorAspectDescriptor" />
+  <unitInfo fileName="DebuggedType_Behavior.java" startLine="9" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.debugger.java.evaluation.behavior.DebuggedType_Behavior" />
   <unitInfo fileName="DebuggedType_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.debugger.java.evaluation.behavior.DebuggedType_BehaviorDescriptor" />
   <unitInfo fileName="DoNotTransformAnnotation_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.debugger.java.evaluation.behavior.DoNotTransformAnnotation_BehaviorDescriptor" />
   <unitInfo fileName="DownCastToLowLevel_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.debugger.java.evaluation.behavior.DownCastToLowLevel_BehaviorDescriptor" />
@@ -8,6 +9,7 @@
   <unitInfo fileName="EvaluatorsSuperMethodCall_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.debugger.java.evaluation.behavior.EvaluatorsSuperMethodCall_BehaviorDescriptor" />
   <unitInfo fileName="EvaluatorsThisExpression_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.debugger.java.evaluation.behavior.EvaluatorsThisExpression_BehaviorDescriptor" />
   <unitInfo fileName="GenerationHelperAnnotation_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.debugger.java.evaluation.behavior.GenerationHelperAnnotation_BehaviorDescriptor" />
+  <unitInfo fileName="IEvaluatorConcept_Behavior.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.debugger.java.evaluation.behavior.IEvaluatorConcept_Behavior" />
   <unitInfo fileName="IEvaluatorConcept_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.debugger.java.evaluation.behavior.IEvaluatorConcept_BehaviorDescriptor" />
   <unitInfo fileName="LowLevelVariableReference_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.debugger.java.evaluation.behavior.LowLevelVariableReference_BehaviorDescriptor" />
   <unitInfo fileName="LowLevelVariable_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.debugger.java.evaluation.behavior.LowLevelVariable_BehaviorDescriptor" />

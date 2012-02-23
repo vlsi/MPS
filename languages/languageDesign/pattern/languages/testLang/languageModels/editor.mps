@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <model modelUID="r:bf45fcee-273c-4767-a2ee-15f910547db0(jetbrains.mps.lang.pattern.testLang.editor)">
   <persistence version="7" />
-  <language namespace="5206c888-7c5d-4275-bc0a-7c4da12f46e8(jetbrains.mps.lang.pattern.testLang)" />
   <language namespace="18bc6592-03a6-4e29-a83a-7ff23bde13ba(jetbrains.mps.lang.editor)" />
   <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
   <language namespace="83888646-71ce-4f1c-9c53-c54016f6ad4f(jetbrains.mps.baseLanguage.collections)" />
@@ -16,16 +15,16 @@
   <import index="tp2q" modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" implicit="yes" />
   <roots>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="8707387027762047763">
-      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="pnao.8707387027762047758" resolveInfo="ValueReference" />
+      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="pnao.8707387027762047758" resolveInfo="VariableValue" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="8707387027762047771">
-      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="pnao.8707387027762047761" resolveInfo="PatternTestVariableReference" />
+      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="pnao.8707387027762047761" resolveInfo="TestVariableReference" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="8707387027762047777">
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="pnao.8707387027762047752" resolveInfo="PatternTest" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="1563914226484898745">
-      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="pnao.1563914226484898744" resolveInfo="PatternTestLinkVariableReference" />
+      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="pnao.1563914226484898744" resolveInfo="TestPropertyVariableReference" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="1563914226484921026">
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="pnao.1563914226484921014" resolveInfo="PropertyValue" />

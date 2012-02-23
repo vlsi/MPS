@@ -12,23 +12,31 @@
   <unitInfo fileName="AnalyzerRunnerAnalyzeOperation_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.analyzers.behavior.AnalyzerRunnerAnalyzeOperation_BehaviorDescriptor" />
   <unitInfo fileName="AnalyzerRunnerCreator_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.analyzers.behavior.AnalyzerRunnerCreator_BehaviorDescriptor" />
   <unitInfo fileName="AnalyzerRunnerType_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.analyzers.behavior.AnalyzerRunnerType_BehaviorDescriptor" />
+  <unitInfo fileName="Analyzer_Behavior.java" startLine="15" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.analyzers.behavior.Analyzer_Behavior" />
   <unitInfo fileName="Analyzer_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.analyzers.behavior.Analyzer_BehaviorDescriptor" />
+  <unitInfo fileName="ApplicableCondition_Behavior.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.analyzers.behavior.ApplicableCondition_Behavior" />
   <unitInfo fileName="ApplicableCondition_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.analyzers.behavior.ApplicableCondition_BehaviorDescriptor" />
   <unitInfo fileName="ApplicableNodeReference_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.analyzers.behavior.ApplicableNodeReference_BehaviorDescriptor" />
   <unitInfo fileName="BackwardDirection_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.analyzers.behavior.BackwardDirection_BehaviorDescriptor" />
   <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="76" endPosition="0" unitName="jetbrains.mps.analyzers.behavior.BehaviorAspectDescriptor" />
+  <unitInfo fileName="ConceptCondition_Behavior.java" startLine="12" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.analyzers.behavior.ConceptCondition_Behavior" />
   <unitInfo fileName="ConceptCondition_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.analyzers.behavior.ConceptCondition_BehaviorDescriptor" />
+  <unitInfo fileName="EmitInstruction_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.analyzers.behavior.EmitInstruction_Behavior" />
   <unitInfo fileName="EmitInstruction_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.analyzers.behavior.EmitInstruction_BehaviorDescriptor" />
   <unitInfo fileName="ForwardDirection_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.analyzers.behavior.ForwardDirection_BehaviorDescriptor" />
   <unitInfo fileName="InsertAfterPosition_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.analyzers.behavior.InsertAfterPosition_BehaviorDescriptor" />
   <unitInfo fileName="InsertBeforePosition_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.analyzers.behavior.InsertBeforePosition_BehaviorDescriptor" />
   <unitInfo fileName="InsertPosition_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.analyzers.behavior.InsertPosition_BehaviorDescriptor" />
   <unitInfo fileName="InstructionParameter_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.analyzers.behavior.InstructionParameter_BehaviorDescriptor" />
+  <unitInfo fileName="InstructionReference_Behavior.java" startLine="9" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.analyzers.behavior.InstructionReference_Behavior" />
   <unitInfo fileName="InstructionReference_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.analyzers.behavior.InstructionReference_BehaviorDescriptor" />
+  <unitInfo fileName="Instruction_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.analyzers.behavior.Instruction_Behavior" />
   <unitInfo fileName="Instruction_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.analyzers.behavior.Instruction_BehaviorDescriptor" />
   <unitInfo fileName="IsOperation_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.analyzers.behavior.IsOperation_BehaviorDescriptor" />
+  <unitInfo fileName="PatternCondition_Behavior.java" startLine="12" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.analyzers.behavior.PatternCondition_Behavior" />
   <unitInfo fileName="PatternCondition_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.analyzers.behavior.PatternCondition_BehaviorDescriptor" />
   <unitInfo fileName="RuleReference_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.analyzers.behavior.RuleReference_BehaviorDescriptor" />
+  <unitInfo fileName="Rule_Behavior.java" startLine="9" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.analyzers.behavior.Rule_Behavior" />
   <unitInfo fileName="Rule_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.analyzers.behavior.Rule_BehaviorDescriptor" />
   <root nodeId="178770917832626022">
     <nodeInfo nodeId="178770917832626030" fileName="Analyzer_Behavior.java" startLine="19" startPosition="86" endLine="20" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="ConstraintsAspectDescriptor.java" startLine="9" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.debugger.java.evaluation.constraints.ConstraintsAspectDescriptor" />
+  <unitInfo fileName="EvaluatorsThisExpression_Constraints.java" startLine="14" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.debugger.java.evaluation.constraints.EvaluatorsThisExpression_Constraints" />
+  <unitInfo fileName="LowLevelVariableReference_Constraints.java" startLine="25" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.debugger.java.evaluation.constraints.LowLevelVariableReference_Constraints" />
+  <unitInfo fileName="LowLevelVariableReference_Constraints.java" startLine="35" startPosition="50" endLine="73" endPosition="5" unitName="jetbrains.mps.debugger.java.evaluation.constraints.LowLevelVariableReference_Constraints$1" />
+  <unitInfo fileName="LowLevelVariableReference_Constraints.java" startLine="44" startPosition="19" endLine="71" endPosition="9" unitName="jetbrains.mps.debugger.java.evaluation.constraints.LowLevelVariableReference_Constraints$2" />
+  <unitInfo fileName="LowLevelVariableReference_Constraints.java" startLine="51" startPosition="109" endLine="55" endPosition="13" unitName="jetbrains.mps.debugger.java.evaluation.constraints.LowLevelVariableReference_Constraints$3" />
+  <unitInfo fileName="LowLevelVariableReference_Constraints.java" startLine="60" startPosition="23" endLine="64" endPosition="13" unitName="jetbrains.mps.debugger.java.evaluation.constraints.LowLevelVariableReference_Constraints$3" />
   <root nodeId="6036237525966315979">
     <nodeInfo nodeId="6036237525966315979" fileName="EvaluatorsThisExpression_Constraints.java" startLine="14" startPosition="85" endLine="15" endPosition="190" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="canBeChildBreakingPoint" />
     <nodeInfo nodeId="6036237525966315979" fileName="EvaluatorsThisExpression_Constraints.java" startLine="17" startPosition="49" endLine="18" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />

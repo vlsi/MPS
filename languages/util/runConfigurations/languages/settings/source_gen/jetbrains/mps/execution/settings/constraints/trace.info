@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="ConstraintsAspectDescriptor.java" startLine="9" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.execution.settings.constraints.ConstraintsAspectDescriptor" />
+  <unitInfo fileName="EditorOperationDeclaration_Constraints.java" startLine="7" startPosition="0" endLine="12" endPosition="0" unitName="jetbrains.mps.execution.settings.constraints.EditorOperationDeclaration_Constraints" />
   <root nodeId="203908296139530389">
     <nodeInfo nodeId="203908296139530389" fileName="EditorOperationDeclaration_Constraints.java" startLine="8" startPosition="51" endLine="9" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="203908296139530389" fileName="EditorOperationDeclaration_Constraints.java" startLine="7" startPosition="87" endLine="10" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="EditorOperationDeclaration_Constraints#()V" />

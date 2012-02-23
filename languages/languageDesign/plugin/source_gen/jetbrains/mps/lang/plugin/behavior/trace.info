@@ -112,6 +112,7 @@
   <unitInfo fileName="IconResource_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.lang.plugin.behavior.IconResource_BehaviorDescriptor" />
   <unitInfo fileName="IdeaActionsDescriptor_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.plugin.behavior.IdeaActionsDescriptor_BehaviorDescriptor" />
   <unitInfo fileName="IdeaConfigurationXml_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.lang.plugin.behavior.IdeaConfigurationXml_BehaviorDescriptor" />
+  <unitInfo fileName="IdeaInitializerDescriptor_Behavior.java" startLine="7" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.lang.plugin.behavior.IdeaInitializerDescriptor_Behavior" />
   <unitInfo fileName="IdeaInitializerDescriptor_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.lang.plugin.behavior.IdeaInitializerDescriptor_BehaviorDescriptor" />
   <unitInfo fileName="IdeaPluginDependency_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.lang.plugin.behavior.IdeaPluginDependency_BehaviorDescriptor" />
   <unitInfo fileName="InitBlock_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.plugin.behavior.InitBlock_BehaviorDescriptor" />
@@ -142,6 +143,7 @@
   <unitInfo fileName="OverridesDefaultBlock_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.plugin.behavior.OverridesDefaultBlock_BehaviorDescriptor" />
   <unitInfo fileName="ParameterCondition_ConceptFunctionParameter_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.plugin.behavior.ParameterCondition_ConceptFunctionParameter_BehaviorDescriptor" />
   <unitInfo fileName="ParameterizedShortcutChange_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.plugin.behavior.ParameterizedShortcutChange_BehaviorDescriptor" />
+  <unitInfo fileName="PersistentPropertyDeclaration_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.plugin.behavior.PersistentPropertyDeclaration_Behavior" />
   <unitInfo fileName="PersistentPropertyDeclaration_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="39" endPosition="0" unitName="jetbrains.mps.lang.plugin.behavior.PersistentPropertyDeclaration_BehaviorDescriptor" />
   <unitInfo fileName="PersistentPropertyReference_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.lang.plugin.behavior.PersistentPropertyReference_BehaviorDescriptor" />
   <unitInfo fileName="PluginDependency_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.lang.plugin.behavior.PluginDependency_BehaviorDescriptor" />
