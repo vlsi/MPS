@@ -76,10 +76,6 @@
               text="Show In Logical View"/>
       <action id="ShowInFileView" class="jetbrains.mps.vcs.actions.ShowInFileView"
               text="Show In File System View"/>
-      <separator/>
-      <action id="GenerateTextFromChangeListAction"
-              class="jetbrains.mps.vcs.actions.GenerateTextFromChangeListAction"
-              text="Generate Text"/>
       <add-to-group group-id="ChangesViewPopupMenu" anchor="last"/>
       <add-to-group anchor="before" relative-to-action="SearchMenu" group-id="EditorFix"/>
     </group>
