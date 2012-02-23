@@ -23,6 +23,10 @@ public class InterfaceGroup_Editor extends DefaultNodeEditor {
     return this.createCollection_ttb7ur_a(editorContext, node);
   }
 
+  public EditorCell createInspectedCell(EditorContext editorContext, SNode node) {
+    return this.createCollection_ttb7ur_a_0(editorContext, node);
+  }
+
   private EditorCell createCollection_ttb7ur_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_ttb7ur_a");
@@ -45,6 +49,21 @@ public class InterfaceGroup_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createProperty_ttb7ur_c0a(editorContext, node));
     editorCell.addEditorCell(this.createConstant_ttb7ur_d0a(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_ttb7ur_e0a(editorContext, node));
+    return editorCell;
+  }
+
+  private EditorCell createCollection_ttb7ur_a_0(EditorContext editorContext, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
+    editorCell.setCellId("Collection_ttb7ur_a_0");
+    editorCell.addEditorCell(this.createCollection_ttb7ur_a0_0(editorContext, node));
+    return editorCell;
+  }
+
+  private EditorCell createCollection_ttb7ur_a0_0(EditorContext editorContext, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
+    editorCell.setCellId("Collection_ttb7ur_a0_0");
+    editorCell.addEditorCell(this.createConstant_ttb7ur_a0a_0(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_ttb7ur_b0a(editorContext, node));
     return editorCell;
   }
 
@@ -90,6 +109,13 @@ public class InterfaceGroup_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
+  private EditorCell createConstant_ttb7ur_a0a_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "register via plugin.xml:");
+    editorCell.setCellId("Constant_ttb7ur_a0a_0");
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
   private EditorCell createRefNode_ttb7ur_e0a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("groupID");
@@ -131,6 +157,24 @@ public class InterfaceGroup_Editor extends DefaultNodeEditor {
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_name");
+    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    SNode attributeConcept = provider.getRoleAttribute();
+    Class attributeKind = provider.getRoleAttributeClass();
+    if (attributeConcept != null) {
+      IOperationContext opContext = editorContext.getOperationContext();
+      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+      return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
+    } else
+    return editorCell;
+  }
+
+  private EditorCell createProperty_ttb7ur_b0a(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
+    provider.setRole("isPluginXmlGroup");
+    provider.setNoTargetText("<no isPluginXmlGroup>");
+    EditorCell editorCell;
+    editorCell = provider.createEditorCell(editorContext);
+    editorCell.setCellId("property_isPluginXmlGroup");
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

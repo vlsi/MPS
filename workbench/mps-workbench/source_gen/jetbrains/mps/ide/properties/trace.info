@@ -1557,7 +1557,7 @@
     <nodeInfo nodeId="5923576889075042508" fileName="ModelPropertiesDialog.java" startLine="123" startPosition="78" endLine="124" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5923576889075042519" fileName="ModelPropertiesDialog.java" startLine="126" startPosition="7" endLine="127" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5923576889075042570" fileName="ModelPropertiesDialog.java" startLine="132" startPosition="50" endLine="133" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5923576889075042574" fileName="ModelPropertiesDialog.java" startLine="133" startPosition="45" endLine="134" endPosition="200" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5923576889075042574" fileName="ModelPropertiesDialog.java" startLine="133" startPosition="45" endLine="134" endPosition="180" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5923576889075042582" fileName="ModelPropertiesDialog.java" startLine="136" startPosition="7" endLine="137" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5923576889075042589" fileName="ModelPropertiesDialog.java" startLine="137" startPosition="52" endLine="138" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5923576889075042594" fileName="ModelPropertiesDialog.java" startLine="138" startPosition="52" endLine="139" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -1630,7 +1630,7 @@
       <varInfo nodeId="7123761944774896242" varName="m" />
     </scopeInfo>
     <scopeInfo nodeId="5923576889075042447" fileName="ModelPropertiesDialog.java" startLine="117" startPosition="42" endLine="119" endPosition="55" />
-    <scopeInfo nodeId="5923576889075042569" fileName="ModelPropertiesDialog.java" startLine="132" startPosition="50" endLine="134" endPosition="200" />
+    <scopeInfo nodeId="5923576889075042569" fileName="ModelPropertiesDialog.java" startLine="132" startPosition="50" endLine="134" endPosition="180" />
     <scopeInfo nodeId="5923576889075042654" fileName="ModelPropertiesDialog.java" startLine="149" startPosition="37" endLine="151" endPosition="16" />
     <scopeInfo nodeId="5923576889075042670" fileName="ModelPropertiesDialog.java" startLine="154" startPosition="72" endLine="156" endPosition="54">
       <varInfo nodeId="5923576889075042672" varName="event" />

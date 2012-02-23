@@ -21,6 +21,7 @@ import jetbrains.mps.generator.impl.FastRuleFinder.BlockedReductionsData;
 import jetbrains.mps.generator.impl.TemplateProcessor.TemplateProcessingFailureException;
 import jetbrains.mps.generator.impl.dependencies.DependenciesBuilder;
 import jetbrains.mps.generator.impl.dependencies.DependenciesReadListener;
+import jetbrains.mps.generator.impl.dependencies.IncrementalDependenciesBuilder;
 import jetbrains.mps.generator.impl.dependencies.RootDependenciesBuilder;
 import jetbrains.mps.generator.impl.reference.PostponedReference;
 import jetbrains.mps.generator.impl.reference.ReferenceInfo_CopiedInputNode;
@@ -270,7 +271,8 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
       for (SNode outputNode : outputNodes) {
         registerRoot(outputNode, inputNode, rule.getRuleNode(), false);
         setChanged();
-        outputNode.putUserObject(TemplateQueryContext.ORIGINAL_INPUT_NODE, inputNode.getUserObject(TemplateQueryContext.ORIGINAL_INPUT_NODE));
+        // we copy user objects in reduction rules, root mapping rules are no different
+        outputNode.putUserObjects(inputNode);
       }
 
       if (inputNode.getModel() == getGeneratorSessionContext().getOriginalInputModel()) {
@@ -701,7 +703,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     myOutputRoots.add(outputRoot);
   }
 
-  SNode getOriginalRootByGenerated(SNode root) {
+  public SNode getOriginalRootByGenerated(SNode root) {
     SNode node = myNewToOldRoot.get(root);
     if (node != null && !node.isRoot()) {
       SNode noderoot = node.getContainingRoot();
@@ -710,5 +712,9 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
       }
     }
     return node;
+  }
+
+  public boolean isIncremental() {
+    return myDependenciesBuilder instanceof IncrementalDependenciesBuilder;
   }
 }

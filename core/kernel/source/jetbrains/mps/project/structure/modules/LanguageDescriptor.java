@@ -19,27 +19,29 @@ import jetbrains.mps.project.structure.model.ModelRoot;
 import jetbrains.mps.smodel.SModelReference;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 public class LanguageDescriptor extends ModuleDescriptor {
   private String myGenPath;
 
-  private List<SModelReference> myAccessoryModels;
+  private Set<SModelReference> myAccessoryModels;
   private List<GeneratorDescriptor> myGenerators;
-  private List<ModuleReference> myExtendedLanguages;
-  private List<ModuleReference> myRuntimeModules;
-  private List<ModelRoot> myRuntimeStubModels;
-  private List<StubSolution> myStubSolutions;
+  private Set<ModuleReference> myExtendedLanguages;
+  private Set<ModuleReference> myRuntimeModules;
+  private Set<ModelRoot> myRuntimeStubModels;
+  private Set<StubSolution> myStubSolutions;
   private boolean myDoNotGenerateAdapters = false;
 
   public LanguageDescriptor() {
     super();
-    myAccessoryModels = new ArrayList<SModelReference>();
+    myAccessoryModels = new HashSet<SModelReference>();
     myGenerators = new ArrayList<GeneratorDescriptor>();
-    myExtendedLanguages = new ArrayList<ModuleReference>();
-    myRuntimeModules = new ArrayList<ModuleReference>();
-    myRuntimeStubModels = new ArrayList<ModelRoot>();
-    myStubSolutions = new ArrayList<StubSolution>();
+    myExtendedLanguages = new HashSet<ModuleReference>();
+    myRuntimeModules = new HashSet<ModuleReference>();
+    myRuntimeStubModels = new HashSet<ModelRoot>();
+    myStubSolutions = new HashSet<StubSolution>();
   }
 
   public String getGenPath() {
@@ -50,7 +52,7 @@ public class LanguageDescriptor extends ModuleDescriptor {
     myGenPath = genPath;
   }
 
-  public List<SModelReference> getAccessoryModels() {
+  public Set<SModelReference> getAccessoryModels() {
     return myAccessoryModels;
   }
 
@@ -58,19 +60,19 @@ public class LanguageDescriptor extends ModuleDescriptor {
     return myGenerators;
   }
 
-  public List<ModuleReference> getExtendedLanguages() {
+  public Set<ModuleReference> getExtendedLanguages() {
     return myExtendedLanguages;
   }
 
-  public List<ModuleReference> getRuntimeModules() {
+  public Set<ModuleReference> getRuntimeModules() {
     return myRuntimeModules;
   }
 
-  public List<ModelRoot> getRuntimeStubModels() {
+  public Set<ModelRoot> getRuntimeStubModels() {
     return myRuntimeStubModels;
   }
 
-  public List<StubSolution> getStubSolutions() {
+  public Set<StubSolution> getStubSolutions() {
     return myStubSolutions;
   }
 

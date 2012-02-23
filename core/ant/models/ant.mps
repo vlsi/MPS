@@ -14799,8 +14799,14 @@
                   <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="8911572761289377576">
                     <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8911572761289377569" resolveInfo="projFile" />
                   </node>
-                  <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="1357804172819646060">
-                    <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8638838189258376508" resolveInfo="projectElement" />
+                  <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.CastExpression" typeId="tpee.1070534934090" id="2032731141110176028">
+                    <node role="expression" roleId="tpee.1070534934092" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="1357804172819646060">
+                      <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8638838189258376508" resolveInfo="projectElement" />
+                    </node>
+                    <node role="type" roleId="tpee.1070534934091" type="mlj4.XMLElementType" typeId="mlj4.4815471077468621637" id="2032731141110176031">
+                      <link role="complexType" roleId="mlj4.4815471077468621640" targetNodeId="gn4j.842994667883029940" />
+                      <link role="schema" roleId="mlj4.4815471077468621639" targetNodeId="gn4j.842994667883029936" resolveInfo="MPS project schema" />
+                    </node>
                   </node>
                 </node>
               </node>
@@ -15954,6 +15960,9 @@
                               </node>
                             </node>
                             <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ThisExpression" typeId="tpee.1070475354124" id="8911572761289363223" />
+                            <node role="typeArgument" roleId="tpee.4972241301747169160" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2032731141110176019">
+                              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="vsqj.~IModule" resolveInfo="IModule" />
+                            </node>
                           </node>
                         </node>
                       </node>

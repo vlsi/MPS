@@ -13,6 +13,7 @@ import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.xmlQuery.runtime.AttributeUtils;
 import jetbrains.mps.project.structure.modules.ModuleReference;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.io.OutputStream;
 
 public class DevkitDescriptorPersistence {
@@ -71,7 +72,7 @@ public class DevkitDescriptorPersistence {
 
         ModuleDescriptorPersistence.saveDependencies(result_raojav_a0a0a0b, descriptor);
 
-        for (ModuleReference lang : ListSequence.fromList(descriptor.getExportedLanguages())) {
+        for (ModuleReference lang : SetSequence.fromSet(descriptor.getExportedLanguages())) {
           final Element result_raojav_a0a6a0a0a0b = new Element("exported-language");
           final String result_raojav_a0a0a6a0a0a0b = lang.toString();
           result_raojav_a0a6a0a0a0b.setAttribute("name", "" + result_raojav_a0a0a6a0a0a0b);
@@ -80,7 +81,7 @@ public class DevkitDescriptorPersistence {
 
         if (!(descriptor.getExtendedDevkits().isEmpty())) {
           final Element result_raojav_a0a8a0a0a0b = new Element("extendedDevKits");
-          for (ModuleReference ref : ListSequence.fromList(descriptor.getExtendedDevkits())) {
+          for (ModuleReference ref : SetSequence.fromSet(descriptor.getExtendedDevkits())) {
             final Element result_raojav_a0a0a0a8a0a0a0b = new Element("extendedDevKit");
             final String result_raojav_a0a0a0a0a8a0a0a0b = ref.toString();
             result_raojav_a0a0a0a8a0a0a0b.setText(result_raojav_a0a0a0a0a8a0a0a0b);
@@ -91,7 +92,7 @@ public class DevkitDescriptorPersistence {
 
         if (!(descriptor.getExportedSolutions().isEmpty())) {
           final Element result_raojav_a0a01a0a0a0b = new Element("exported-solutions");
-          for (ModuleReference ref : ListSequence.fromList(descriptor.getExportedSolutions())) {
+          for (ModuleReference ref : SetSequence.fromSet(descriptor.getExportedSolutions())) {
             final Element result_raojav_a0a0a0a01a0a0a0b = new Element("exported-solution");
             final String result_raojav_a0a0a0a0a01a0a0a0b = ref.toString();
             result_raojav_a0a0a0a01a0a0a0b.setText(result_raojav_a0a0a0a0a01a0a0a0b);

@@ -24,41 +24,42 @@ import org.jetbrains.annotations.NonNls;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 import java.util.UUID;
 
 /**
  * evgeny, 10/26/11
  */
 public class MPSConfigurationBean {
-    @NonNls
-    static final String SOLUTION_FILE_NAME = "solution";
+  @NonNls
+  static final String SOLUTION_FILE_NAME = "solution";
 
     @Transient
     private final SolutionDescriptor myDescriptor;
     private boolean myUseModuleSourceFolder = false;
     private boolean myUseTransientOutputFolder = false;
 
-    public MPSConfigurationBean() {
-        myDescriptor = new SolutionDescriptor();
-        myDescriptor.setUUID(UUID.randomUUID().toString());
-    }
+  public MPSConfigurationBean() {
+    myDescriptor = new SolutionDescriptor();
+    myDescriptor.setUUID(UUID.randomUUID().toString());
+  }
 
-    @Transient
-    SolutionDescriptor getSolutionDescriptor() {
-        return myDescriptor;
-    }
+  @Transient
+  SolutionDescriptor getSolutionDescriptor() {
+    return myDescriptor;
+  }
 
-    public String getUUID() {
-        return myDescriptor.getUUID();
-    }
+  public String getUUID() {
+    return myDescriptor.getUUID();
+  }
 
-    public void setUUID(String uuid) {
-        myDescriptor.setUUID(uuid);
-    }
+  public void setUUID(String uuid) {
+    myDescriptor.setUUID(uuid);
+  }
 
-    public void setUseModuleSourceFolder(boolean use) {
-        myUseModuleSourceFolder = use;
-    }
+  public void setUseModuleSourceFolder(boolean use) {
+    myUseModuleSourceFolder = use;
+  }
 
     public boolean isUseModuleSourceFolder() {
         return myUseModuleSourceFolder;
@@ -72,45 +73,46 @@ public class MPSConfigurationBean {
         this.myUseTransientOutputFolder = useTransientOutputFolder;
     }
 
-    public String getGeneratorOutputPath() {
-        return myDescriptor.getOutputPath();
-    }
+  public String getGeneratorOutputPath() {
+    return myDescriptor.getOutputPath();
+  }
 
-    public void setGeneratorOutputPath(String outputPath) {
-        myDescriptor.setOutputPath(outputPath);
-    }
+  public void setGeneratorOutputPath(String outputPath) {
+    myDescriptor.setOutputPath(outputPath);
+  }
 
-    public String[] getModelRootPaths() {
-        List<String> result = new ArrayList<String>();
-        for (ModelRoot modelRoot : myDescriptor.getModelRoots()) {
-            result.add(modelRoot.getPath());
-        }
-        return result.toArray(new String[result.size()]);
+  public String[] getModelRootPaths() {
+    List<String> result = new ArrayList<String>();
+    for (ModelRoot modelRoot : myDescriptor.getModelRoots()) {
+      result.add(modelRoot.getPath());
     }
+    return result.toArray(new String[result.size()]);
+  }
 
-    public void setModelRootPaths(String... paths) {
-        myDescriptor.getModelRoots().clear();
-        for (String path : paths) {
-            ModelRoot modelRoot = new ModelRoot();
-            modelRoot.setPath(path);
-            myDescriptor.getModelRoots().add(modelRoot);
-        }
+  public void setModelRootPaths(String... paths) {
+    myDescriptor.getModelRoots().clear();
+    for (String path : paths) {
+      ModelRoot modelRoot = new ModelRoot();
+      modelRoot.setPath(path);
+      myDescriptor.getModelRoots().add(modelRoot);
     }
+  }
 
-    public String[] getUsedLanguages() {
-        List<ModuleReference> usedLanguageReferences = myDescriptor.getUsedLanguages();
-        String[] usedLanguages = new String[usedLanguageReferences.size()];
-        for (int i = 0; i < usedLanguages.length; i++) {
-            usedLanguages[i] = usedLanguageReferences.get(i).toString();
-        }
-        return usedLanguages;
+  public String[] getUsedLanguages() {
+    String[] usedLanguages = new String[myDescriptor.getUsedLanguages().size()];
+    int i = 0;
+    for (ModuleReference ref : myDescriptor.getUsedLanguages()) {
+      usedLanguages[i] = ref.toString();
+      i++;
     }
+    return usedLanguages;
+  }
 
-    public void setUsedLanguages(String[] usedLanguages) {
-        List<ModuleReference> usedLanguageReferences = myDescriptor.getUsedLanguages();
-        usedLanguageReferences.clear();
-        for (String usedLanguage : usedLanguages) {
-            usedLanguageReferences.add(ModuleReference.fromString(usedLanguage));
-        }
+  public void setUsedLanguages(String[] usedLanguages) {
+    Set<ModuleReference> usedLanguageReferences = myDescriptor.getUsedLanguages();
+    usedLanguageReferences.clear();
+    for (String usedLanguage : usedLanguages) {
+      usedLanguageReferences.add(ModuleReference.fromString(usedLanguage));
     }
+  }
 }

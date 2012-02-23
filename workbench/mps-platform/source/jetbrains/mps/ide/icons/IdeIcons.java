@@ -56,6 +56,12 @@ public class IdeIcons {
   public static final Icon GENERATOR_ICON = new ImageIcon(IdeIcons.class.getResource("nodes/generator.png"));
   public static final Icon PROJECT_LANGUAGE_ICON = FileIcons.PROJECT_LANGUAGE_ICON;
 
+  public static final Icon PROPERTIES_ICON = new ImageIcon(IdeIcons.class.getResource("nodes/properties.png"));
   public static final Icon INSPECTOR_ICON = new ImageIcon(IdeIcons.class.getResource("nodes/inspector.png"));
   public static final Icon CLOSE_ICON = new ImageIcon(IdeIcons.class.getResource("nodes/close.png"));
+
+  public static final Icon REVERT = new ImageIcon(IdeIcons.class.getResource("vc/revert.png"));
+  public static final Icon ROLLBACK = new ImageIcon(IdeIcons.class.getResource("vc/rollback.png"));
+  public static final Icon APPLY = new ImageIcon(IdeIcons.class.getResource("vc/apply.png"));
+  public static final Icon EXCLUDE = new ImageIcon(IdeIcons.class.getResource("vc/exclude.png"));
 }

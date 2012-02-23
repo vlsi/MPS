@@ -30,10 +30,15 @@
     <component>
       <implementation-class>jetbrains.mps.idea.core.navigation.NavigationSupportImpl</implementation-class>
     </component>
+    <component>
+      <implementation-class>jetbrains.mps.idea.core.refactoring.RefactoringAccessImpl</implementation-class>
+    </component>
   </application-components>
 
   <xi:include href="../classes/META-INF/MPSCore.xml" xpointer="xpointer(/components/*)"/>
   <xi:include href="../classes/META-INF/MPSEditor.xml" xpointer="xpointer(/components/*)"/>
+  <xi:include href="../classes/jetbrains/mps/ide/platform/actions/PlatformActions.xml"
+              xpointer="xpointer(/components/*)"/>
   <xi:include href="../classes/jetbrains/mps/ide/editor/actions/MPSEditorActions.xml"
               xpointer="xpointer(/components/*)"/>
 
@@ -51,6 +56,7 @@
     <frameworkSupport implementation="jetbrains.mps.idea.core.facet.MPSFrameworkSupportProvider"/>
     <mps.LanguageLibrary dir="/languages"/>
     <treeStructureProvider implementation="jetbrains.mps.idea.core.projectView.MPSTreeStructureProvider"/>
+    <errorHandler implementation="jetbrains.mps.ide.blame.CharismaReporter"/>
   </extensions>
 
   <actions>

@@ -32,7 +32,7 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.vcs.diff.changes.AddRootChange;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.vcs.changesmanager.BaseVersionUtil;
-import jetbrains.mps.vcs.ConflictingModelsWarnings;
+import jetbrains.mps.vcs.util.ConflictsUtil;
 import org.jetbrains.annotations.Nullable;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
@@ -224,7 +224,7 @@ public class TreeHighlighter implements TreeMessageOwner {
           FileStatus modelStatus = getModelFileStatus(modelDescriptor, project);
           if (BaseVersionUtil.isAddedFileStatus(modelStatus)) {
             return getMessage(modelStatus);
-          } else if (ConflictingModelsWarnings.isModelOrModuleConflicting(modelDescriptor, project)) {
+          } else if (ConflictsUtil.isModelOrModuleConflicting(modelDescriptor, project)) {
             return getMessage(FileStatus.MERGED_WITH_CONFLICTS);
           }
         }

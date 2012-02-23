@@ -14,22 +14,20 @@
   ~ limitations under the License.
   -->
 
-<idea-plugin version="2">
+<idea-plugin version="2" xmlns:xi="http://www.w3.org/2001/XInclude">
   <id>jetbrains.mps.vcs</id>
   <name>MPS Version Control support</name>
   <category>Custom Languages</category>
   <version>1.0.0</version>
   <depends>jetbrains.mps.core</depends>
 
-  <application-components>
-  </application-components>
+  <depends optional="true">Subversion</depends>
+  <depends optional="true">Git4Idea</depends>
 
-  <project-components>
-  </project-components>
-
-  <actions>
-  </actions>
+  <xi:include href="../classes/jetbrains/mps/vcs/platform/actions/MPSVcs.xml" xpointer="xpointer(/components/*)"/>
+  <xi:include href="../classes/META-INF/VcsCommon.xml" xpointer="xpointer(/components/*)"/>
 
   <extensions defaultExtensionNs="com.intellij">
+    <errorHandler implementation="jetbrains.mps.ide.blame.CharismaReporter"/>
   </extensions>
 </idea-plugin>

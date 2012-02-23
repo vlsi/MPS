@@ -22,6 +22,7 @@ import com.intellij.openapi.vcs.impl.VcsFileStatusProvider;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
+import jetbrains.mps.vcs.platform.actions.VcsActionsUtil;
 
 public class ShowDiffererenceWithCurrentRevision_Action extends BaseAction {
   private static final Icon ICON = IconUtil.getIcon("diff.png");

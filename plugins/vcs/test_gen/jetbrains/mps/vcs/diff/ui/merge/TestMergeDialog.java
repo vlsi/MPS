@@ -19,9 +19,9 @@ import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.TestMain;
 import com.intellij.openapi.util.IconLoader;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.vcs.MergeBackupUtil;
+import jetbrains.mps.vcs.util.MergeBackupUtil;
 import java.io.File;
-import jetbrains.mps.vcs.MergeVersion;
+import jetbrains.mps.vcs.util.MergeVersion;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.vfs.FileSystem;
 import javax.swing.SwingUtilities;
@@ -31,7 +31,6 @@ import jetbrains.mps.vcs.diff.ui.common.SimpleDiffRequest;
 import java.lang.reflect.Field;
 import com.intellij.idea.IdeaTestApplication;
 import jetbrains.mps.vcs.diff.ui.common.DiffModelTree;
-import javax.swing.WindowConstants;
 import jetbrains.mps.vfs.IFile;
 
 public class TestMergeDialog {
@@ -112,11 +111,10 @@ public class TestMergeDialog {
         } catch (Exception e) {
           e.printStackTrace();
         }
-        dialog.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
-        dialog.showDialog();
+        dialog.show();
         final SModel result = dialog.getResultModel();
         if (result == null) {
-          dialog.dispose();
+          dialog.close(0);
           System.exit(0);
         }
         ModelAccess.instance().runWriteAction(new Runnable() {
@@ -128,7 +126,7 @@ public class TestMergeDialog {
             ModelPersistence.saveModel(result, iFile);
           }
         });
-        dialog.dispose();
+        dialog.close(0);
         Disposer.dispose(TestMergeDialog.myParentDisposable);
         System.exit(0);
       }

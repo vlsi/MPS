@@ -23,7 +23,7 @@ import jetbrains.mps.util.Computable;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
-import jetbrains.mps.vcs.ConflictingModelsWarnings;
+import jetbrains.mps.vcs.util.ConflictsUtil;
 import jetbrains.mps.vcs.changesmanager.CurrentDifference;
 import java.util.List;
 import jetbrains.mps.vcs.diff.changes.ModelChange;
@@ -98,7 +98,7 @@ public class NodeFileStatusMapping extends AbstractProjectComponent {
         SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(root.getModelReference());
         if (modelDescriptor instanceof EditableSModelDescriptor) {
           EditableSModelDescriptor emd = (EditableSModelDescriptor) modelDescriptor;
-          if (ConflictingModelsWarnings.isModelOrModuleConflicting(emd, myProject)) {
+          if (ConflictsUtil.isModelOrModuleConflicting(emd, myProject)) {
             return FileStatus.MERGED_WITH_CONFLICTS;
           }
           CurrentDifference diff = myRegistry.getCurrentDifference(emd);

@@ -6,13 +6,13 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.refactoring.framework.IRefactoring;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.structure.refactorings.RenameConcept;
-import jetbrains.mps.lang.structure.refactorings.RenameProperty;
-import jetbrains.mps.lang.structure.refactorings.RenameLink;
+import jetbrains.mps.refactoring.framework.RefactoringUtil;
+import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
-import jetbrains.mps.ide.refactoring.RefactoringFacade;
+import jetbrains.mps.ide.platform.refactoring.RefactoringAccess;
 import jetbrains.mps.nodeEditor.EditorContext;
 import javax.swing.JOptionPane;
 
@@ -23,22 +23,30 @@ public class CommitUtil {
         SModelRepository.getInstance().saveAll();
       }
     });
-
-    final IRefactoring refactoring = (SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration") ?
-      new RenameConcept() :
-      (SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.structure.structure.PropertyDeclaration") ?
-        new RenameProperty() :
-        (SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.structure.structure.LinkDeclaration") ?
-          new RenameLink() :
+    final Wrappers._T<IRefactoring> refactoring = new Wrappers._T<IRefactoring>();
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        SNode refactoringNode = (SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration") ?
+          SNodeOperations.getNode("r:de5b7214-45ee-4f6d-89bf-acde59cdb050(jetbrains.mps.lang.structure.refactorings)", "1347577327951781517") :
+          (SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.structure.structure.PropertyDeclaration") ?
+            SNodeOperations.getNode("r:de5b7214-45ee-4f6d-89bf-acde59cdb050(jetbrains.mps.lang.structure.refactorings)", "1347577327951781764") :
+            (SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.structure.structure.LinkDeclaration") ?
+              SNodeOperations.getNode("r:de5b7214-45ee-4f6d-89bf-acde59cdb050(jetbrains.mps.lang.structure.refactorings)", "1347577327951781638") :
+              null
+            )
+          )
+        );
+        refactoring.value = (refactoringNode != null ?
+          RefactoringUtil.getRefactoringByClassName(INamedConcept_Behavior.call_getFqName_1213877404258(refactoringNode)) :
           null
-        )
-      )
-    );
-    if (refactoring == null) {
+        );
+      }
+    });
+    if (refactoring.value == null) {
       return;
     }
 
-    final RefactoringContext refactoringContext = new RefactoringContext(refactoring);
+    final RefactoringContext refactoringContext = new RefactoringContext(refactoring.value);
     refactoringContext.setCurrentOperationContext(context);
     refactoringContext.setSelectedNode(node);
     ModelAccess.instance().runReadAction(new Runnable() {
@@ -54,8 +62,8 @@ public class CommitUtil {
 
     new Thread() {
       public void run() {
-        refactoringContext.setRefactoring(refactoring);
-        new RefactoringFacade().executeInThread(refactoringContext);
+        refactoringContext.setRefactoring(refactoring.value);
+        RefactoringAccess.getInstance().getRefactoringFacade().executeInThread(refactoringContext);
       }
     }.start();
   }

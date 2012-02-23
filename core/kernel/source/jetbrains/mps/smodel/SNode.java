@@ -131,6 +131,14 @@ public final class SNode {
   SModel getModelInternal() {
     return myModel;
   }
+  
+  public StackTraceElement[] getModelDisposedTrace() {
+    if (myModel != null) {
+      return myModel.getDisposedStacktrace();
+    } else {
+      return null;
+    }
+  }
 
   public String getRoleOf(SNode node) {
     ModelAccess.assertLegalRead(this);
@@ -791,7 +799,6 @@ public final class SNode {
     if (!myRegisteredInModelFlag) return;
     UnregisteredNodes.instance().put(this);
     myRegisteredInModelFlag = false;
-    Trace.getInstance().unregisteredFromModel(this);
 
     if (myAdapter != null) {
       UnregisteredNodesWithAdapters.getInstance().add(this);
@@ -805,15 +812,6 @@ public final class SNode {
   }
 
   void registerInModel(SModel model) {
-    registerInModel_internal(model);
-
-    // add language because typesystem needs it to invalidate/revalidate its caches
-    //todo this is a hack
-    if (!myModel.canFireEvent() || MPSCore.getInstance().isMergeDriverMode()) return;
-    SModelOperations.validateLanguages(model, this);
-  }
-
-  private void registerInModel_internal(SModel model) {
     if (myRegisteredInModelFlag) {
       if (model != myModel) {
         LOG.errorWithTrace("couldn't register node which is already registered in '" + myModel.getSModelReference() + "'");
@@ -825,7 +823,6 @@ public final class SNode {
     myModel = model;
     myModel.registerNode(this);
     myRegisteredInModelFlag = true;
-    Trace.getInstance().registeredInModel(this);
 
     UnregisteredNodes.instance().remove(this);
 
@@ -837,7 +834,7 @@ public final class SNode {
       ModelChangedCaster.getInstance().fireModelChanged(this, wasModel);
     }
     for (SNode child = getFirstChild(); child != null; child = child.myNextSibling) {
-      child.registerInModel_internal(model);
+      child.registerInModel(model);
     }
   }
 
@@ -1741,6 +1738,17 @@ public final class SNode {
 
   public void removeAllUserObjects() {
     myUserObjects = null;
+  }
+
+  public Map<Object, Object> getUserObjects() {
+    Map<Object, Object> userObjects = new LinkedHashMap<Object, Object>();
+    if (myUserObjects == null) {
+      return userObjects;
+    }
+    for (int i = 0; i < myUserObjects.length; i += 2) {
+      userObjects.put(myUserObjects[i], myUserObjects[i + 1]);
+    }
+    return userObjects;
   }
 
   //------------concept properties-------------

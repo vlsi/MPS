@@ -92,7 +92,7 @@ public class FileMPSProject extends Project {
       if (descriptorFile.exists()) {
         ModuleDescriptor descriptor = ModulesMiner.getInstance().loadModuleDescriptor(descriptorFile);
         if (descriptor != null) {
-          IModule module = MPSModuleRepository.getInstance().registerModule(new ModulesMiner.ModuleHandle(descriptorFile, descriptor), this);
+          IModule module = MPSModuleRepository.getInstance().<IModule>registerModule(new ModulesMiner.ModuleHandle(descriptorFile, descriptor), this);
           ModuleReference moduleReference = module.getModuleReference();
           if (!(existingModules.remove(moduleReference))) {
             super.addModule(moduleReference);
@@ -171,7 +171,7 @@ public class FileMPSProject extends Project {
         }
       }
       if (projectElement != null) {
-        load(projFile, projectElement);
+        load(projFile, (Element) projectElement);
       }
     }
 

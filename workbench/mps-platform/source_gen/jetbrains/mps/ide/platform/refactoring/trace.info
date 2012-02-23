@@ -1,0 +1,730 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debugInfo>
+  <root nodeId="1399798136780143890">
+    <nodeInfo nodeId="1399798136780143922" fileName="RefactoringAccess.java" startLine="9" startPosition="41" endLine="10" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ourInstance" />
+    <nodeInfo nodeId="1399798136780143969" fileName="RefactoringAccess.java" startLine="21" startPosition="49" endLine="22" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1399798136780143994" fileName="RefactoringAccess.java" startLine="25" startPosition="65" endLine="26" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1399798136780143892" fileName="RefactoringAccess.java" startLine="11" startPosition="0" endLine="13" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="RefactoringAccess#()V" />
+    <nodeInfo nodeId="5814231631271514652" fileName="RefactoringAccess.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getRefactoringFacade#()Ljetbrains/mps/ide/platform/refactoring/RefactoringFacade;" />
+    <nodeInfo nodeId="5814231631271710687" fileName="RefactoringAccess.java" startLine="16" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createTargetChooser#(Lcom/intellij/openapi/project/Project;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/ide/platform/refactoring/ModelElementTargetChooser;" />
+    <nodeInfo nodeId="5814231631271799078" fileName="RefactoringAccess.java" startLine="18" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createTargetChooser#(Lcom/intellij/openapi/project/Project;Ljetbrains/mps/smodel/SModelDescriptor;)Ljetbrains/mps/ide/platform/refactoring/ModelElementTargetChooser;" />
+    <nodeInfo nodeId="1399798136780143965" fileName="RefactoringAccess.java" startLine="20" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getInstance#()Ljetbrains/mps/ide/platform/refactoring/RefactoringAccess;" />
+    <nodeInfo nodeId="1399798136780143986" fileName="RefactoringAccess.java" startLine="24" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="setInstance#(Ljetbrains/mps/ide/platform/refactoring/RefactoringAccess;)V" />
+    <scopeInfo nodeId="1399798136780143895" fileName="RefactoringAccess.java" startLine="12" startPosition="30" endLine="12" endPosition="30" />
+    <scopeInfo nodeId="1399798136780143968" fileName="RefactoringAccess.java" startLine="21" startPosition="49" endLine="22" endPosition="23" />
+    <scopeInfo nodeId="1399798136780143989" fileName="RefactoringAccess.java" startLine="25" startPosition="65" endLine="26" endPosition="27" />
+    <scopeInfo nodeId="1399798136780143892" fileName="RefactoringAccess.java" startLine="11" startPosition="0" endLine="13" endPosition="3" />
+    <scopeInfo nodeId="5814231631271514652" fileName="RefactoringAccess.java" startLine="14" startPosition="0" endLine="16" endPosition="0" />
+    <scopeInfo nodeId="5814231631271710687" fileName="RefactoringAccess.java" startLine="16" startPosition="0" endLine="18" endPosition="0">
+      <varInfo nodeId="4366542054834739323" varName="node" />
+      <varInfo nodeId="4366542054834739321" varName="project" />
+    </scopeInfo>
+    <scopeInfo nodeId="5814231631271799078" fileName="RefactoringAccess.java" startLine="18" startPosition="0" endLine="20" endPosition="0">
+      <varInfo nodeId="4366542054834739347" varName="model" />
+      <varInfo nodeId="5814231631271799079" varName="project" />
+    </scopeInfo>
+    <scopeInfo nodeId="1399798136780143965" fileName="RefactoringAccess.java" startLine="20" startPosition="0" endLine="24" endPosition="0" />
+    <scopeInfo nodeId="1399798136780143986" fileName="RefactoringAccess.java" startLine="24" startPosition="0" endLine="28" endPosition="0">
+      <varInfo nodeId="1399798136780143991" varName="instance" />
+    </scopeInfo>
+    <unitInfo nodeId="1399798136780143890" fileName="RefactoringAccess.java" startLine="9" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.ide.platform.refactoring.RefactoringAccess" />
+  </root>
+  <root nodeId="1685972956014264534">
+    <nodeInfo nodeId="1685972956014264535" fileName="RefactoringDialog.java" startLine="16" startPosition="63" endLine="17" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myRefactorAction" />
+    <nodeInfo nodeId="1685972956014264538" fileName="RefactoringDialog.java" startLine="17" startPosition="36" endLine="18" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myProject" />
+    <nodeInfo nodeId="1685972956014264574" fileName="RefactoringDialog.java" startLine="20" startPosition="75" endLine="21" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="1685972956014264577" fileName="RefactoringDialog.java" startLine="21" startPosition="32" endLine="22" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1685972956014264584" fileName="RefactoringDialog.java" startLine="25" startPosition="44" endLine="26" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1685972956014264591" fileName="RefactoringDialog.java" startLine="30" startPosition="31" endLine="31" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1685972956014264597" fileName="RefactoringDialog.java" startLine="34" startPosition="38" endLine="35" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1685972956014264604" fileName="RefactoringDialog.java" startLine="35" startPosition="74" endLine="36" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1685972956014264609" fileName="RefactoringDialog.java" startLine="36" startPosition="67" endLine="37" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1685972956014264614" fileName="RefactoringDialog.java" startLine="37" startPosition="65" endLine="38" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1685972956014264624" fileName="RefactoringDialog.java" startLine="42" startPosition="41" endLine="43" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1685972956014264626" fileName="RefactoringDialog.java" startLine="43" startPosition="33" endLine="44" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1685972956014264547" fileName="RefactoringDialog.java" startLine="50" startPosition="29" endLine="51" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1685972956014264552" fileName="RefactoringDialog.java" startLine="51" startPosition="67" endLine="52" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1685972956014264563" fileName="RefactoringDialog.java" startLine="55" startPosition="52" endLine="56" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1685972956014264632" fileName="RefactoringDialog.java" startLine="46" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doRefactoringAction#()V" />
+    <nodeInfo nodeId="1685972956014264565" fileName="RefactoringDialog.java" startLine="19" startPosition="0" endLine="23" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="RefactoringDialog#(Lcom/intellij/openapi/project/Project;Z)V" />
+    <nodeInfo nodeId="1685972956014264581" fileName="RefactoringDialog.java" startLine="24" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getRefactorAction#()Ljavax/swing/Action;" />
+    <nodeInfo nodeId="1685972956014264543" fileName="RefactoringDialog.java" startLine="49" startPosition="55" endLine="53" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="RefactorAction#()V" />
+    <nodeInfo nodeId="1685972956014264557" fileName="RefactoringDialog.java" startLine="54" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="actionPerformed#(Ljava/awt/event/ActionEvent;)V" />
+    <nodeInfo nodeId="1685972956014264587" fileName="RefactoringDialog.java" startLine="28" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doOKAction#()V" />
+    <nodeInfo nodeId="1685972956014264620" fileName="RefactoringDialog.java" startLine="40" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createDefaultActions#()V" />
+    <nodeInfo nodeId="1685972956014264594" fileName="RefactoringDialog.java" startLine="33" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createActions#()[Ljavax/swing/Action;" />
+    <scopeInfo nodeId="1685972956014264583" fileName="RefactoringDialog.java" startLine="25" startPosition="44" endLine="26" endPosition="28" />
+    <scopeInfo nodeId="1685972956014264590" fileName="RefactoringDialog.java" startLine="30" startPosition="31" endLine="31" endPosition="26" />
+    <scopeInfo nodeId="1685972956014264562" fileName="RefactoringDialog.java" startLine="55" startPosition="52" endLine="56" endPosition="28" />
+    <scopeInfo nodeId="1685972956014264573" fileName="RefactoringDialog.java" startLine="20" startPosition="75" endLine="22" endPosition="24" />
+    <scopeInfo nodeId="1685972956014264623" fileName="RefactoringDialog.java" startLine="42" startPosition="41" endLine="44" endPosition="62" />
+    <scopeInfo nodeId="1685972956014264632" fileName="RefactoringDialog.java" startLine="46" startPosition="0" endLine="48" endPosition="0" />
+    <scopeInfo nodeId="1685972956014264546" fileName="RefactoringDialog.java" startLine="50" startPosition="29" endLine="52" endPosition="59" />
+    <scopeInfo nodeId="1685972956014264565" fileName="RefactoringDialog.java" startLine="19" startPosition="0" endLine="23" endPosition="3">
+      <varInfo nodeId="1685972956014264569" varName="canBeParent" />
+      <varInfo nodeId="1685972956014264566" varName="project" />
+    </scopeInfo>
+    <scopeInfo nodeId="1685972956014264581" fileName="RefactoringDialog.java" startLine="24" startPosition="0" endLine="28" endPosition="0" />
+    <scopeInfo nodeId="1685972956014264596" fileName="RefactoringDialog.java" startLine="34" startPosition="38" endLine="38" endPosition="71">
+      <varInfo nodeId="1685972956014264598" varName="actions" />
+    </scopeInfo>
+    <scopeInfo nodeId="1685972956014264543" fileName="RefactoringDialog.java" startLine="49" startPosition="55" endLine="53" endPosition="5" />
+    <scopeInfo nodeId="1685972956014264557" fileName="RefactoringDialog.java" startLine="54" startPosition="0" endLine="58" endPosition="0">
+      <varInfo nodeId="1685972956014264560" varName="event" />
+    </scopeInfo>
+    <scopeInfo nodeId="1685972956014264587" fileName="RefactoringDialog.java" startLine="28" startPosition="0" endLine="33" endPosition="0" />
+    <scopeInfo nodeId="1685972956014264620" fileName="RefactoringDialog.java" startLine="40" startPosition="0" endLine="46" endPosition="0" />
+    <scopeInfo nodeId="1685972956014264594" fileName="RefactoringDialog.java" startLine="33" startPosition="0" endLine="40" endPosition="0" />
+    <unitInfo nodeId="1685972956014264534" fileName="RefactoringDialog.java" startLine="16" startPosition="0" endLine="60" endPosition="0" unitName="jetbrains.mps.ide.platform.refactoring.RefactoringDialog" />
+    <unitInfo nodeId="1685972956014264541" fileName="RefactoringDialog.java" startLine="49" startPosition="0" endLine="59" endPosition="0" unitName="jetbrains.mps.ide.platform.refactoring.RefactoringDialog$RefactorAction" />
+  </root>
+  <root nodeId="1685972956014329975">
+    <nodeInfo nodeId="1685972956014330005" fileName="StringChooserDialog.java" startLine="18" startPosition="60" endLine="19" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myPanel" />
+    <nodeInfo nodeId="1685972956014330008" fileName="StringChooserDialog.java" startLine="19" startPosition="27" endLine="20" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myLabel" />
+    <nodeInfo nodeId="1685972956014330013" fileName="StringChooserDialog.java" startLine="20" startPosition="40" endLine="21" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myTextField" />
+    <nodeInfo nodeId="1685972956014330018" fileName="StringChooserDialog.java" startLine="21" startPosition="52" endLine="22" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myResultString" />
+    <nodeInfo nodeId="1685972956014330196" fileName="StringChooserDialog.java" startLine="24" startPosition="109" endLine="25" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="1685972956014330199" fileName="StringChooserDialog.java" startLine="25" startPosition="25" endLine="26" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1685972956014330202" fileName="StringChooserDialog.java" startLine="26" startPosition="20" endLine="27" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1685972956014330204" fileName="StringChooserDialog.java" startLine="27" startPosition="11" endLine="28" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1685972956014330209" fileName="StringChooserDialog.java" startLine="28" startPosition="38" endLine="29" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1685972956014330214" fileName="StringChooserDialog.java" startLine="29" startPosition="37" endLine="30" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1685972956014330221" fileName="StringChooserDialog.java" startLine="30" startPosition="55" endLine="31" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1685972956014330226" fileName="StringChooserDialog.java" startLine="31" startPosition="31" endLine="32" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1685972956014330229" fileName="StringChooserDialog.java" startLine="32" startPosition="31" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="1685972956014330026" fileName="StringChooserDialog.java" startLine="37" startPosition="44" endLine="38" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="9032941800334145759" fileName="StringChooserDialog.java" startLine="41" startPosition="52" endLine="42" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1685972956014330031" fileName="StringChooserDialog.java" startLine="46" startPosition="43" endLine="47" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1685972956014330040" fileName="StringChooserDialog.java" startLine="47" startPosition="51" endLine="48" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1685972956014330046" fileName="StringChooserDialog.java" startLine="48" startPosition="79" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="1685972956014330047" fileName="StringChooserDialog.java" startLine="49" startPosition="0" endLine="50" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1685972956014330052" fileName="StringChooserDialog.java" startLine="50" startPosition="52" endLine="51" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1685972956014330058" fileName="StringChooserDialog.java" startLine="51" startPosition="16" endLine="52" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1685972956014330064" fileName="StringChooserDialog.java" startLine="52" startPosition="16" endLine="53" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1685972956014330070" fileName="StringChooserDialog.java" startLine="53" startPosition="18" endLine="54" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1685972956014330076" fileName="StringChooserDialog.java" startLine="54" startPosition="51" endLine="55" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1685972956014330087" fileName="StringChooserDialog.java" startLine="55" startPosition="38" endLine="56" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1685972956014330093" fileName="StringChooserDialog.java" startLine="56" startPosition="28" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="1685972956014330094" fileName="StringChooserDialog.java" startLine="57" startPosition="0" endLine="58" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1685972956014330099" fileName="StringChooserDialog.java" startLine="58" startPosition="33" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="1685972956014330100" fileName="StringChooserDialog.java" startLine="59" startPosition="0" endLine="60" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1685972956014330106" fileName="StringChooserDialog.java" startLine="60" startPosition="43" endLine="61" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1685972956014330112" fileName="StringChooserDialog.java" startLine="61" startPosition="16" endLine="62" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1685972956014330118" fileName="StringChooserDialog.java" startLine="62" startPosition="16" endLine="63" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1685972956014330124" fileName="StringChooserDialog.java" startLine="63" startPosition="18" endLine="64" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1685972956014330130" fileName="StringChooserDialog.java" startLine="64" startPosition="18" endLine="65" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1685972956014330141" fileName="StringChooserDialog.java" startLine="65" startPosition="38" endLine="66" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="1685972956014330142" fileName="StringChooserDialog.java" startLine="66" startPosition="0" endLine="67" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1685972956014330148" fileName="StringChooserDialog.java" startLine="67" startPosition="51" endLine="68" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1685972956014330154" fileName="StringChooserDialog.java" startLine="68" startPosition="32" endLine="69" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="1685972956014330155" fileName="StringChooserDialog.java" startLine="69" startPosition="0" endLine="70" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1685972956014330157" fileName="StringChooserDialog.java" startLine="70" startPosition="19" endLine="71" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="1685972956014330163" fileName="StringChooserDialog.java" startLine="74" startPosition="35" endLine="75" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1685972956014330170" fileName="StringChooserDialog.java" startLine="78" startPosition="40" endLine="79" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1685972956014330178" fileName="StringChooserDialog.java" startLine="79" startPosition="48" endLine="80" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1685972956014329987" fileName="StringChooserDialog.java" startLine="83" startPosition="104" endLine="84" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1685972956014329996" fileName="StringChooserDialog.java" startLine="84" startPosition="98" endLine="85" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1685972956014330000" fileName="StringChooserDialog.java" startLine="85" startPosition="18" endLine="86" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="9032941800334145714" fileName="StringChooserDialog.java" startLine="40" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPreferredFocusedComponent#()Ljavax/swing/JComponent;" />
+    <nodeInfo nodeId="1685972956014330160" fileName="StringChooserDialog.java" startLine="73" startPosition="0" endLine="77" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getResultString#()Ljava/lang/String;" />
+    <nodeInfo nodeId="1685972956014330021" fileName="StringChooserDialog.java" startLine="35" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCenterPanel#()Ljavax/swing/JComponent;" />
+    <nodeInfo nodeId="1685972956014330166" fileName="StringChooserDialog.java" startLine="77" startPosition="0" endLine="82" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doRefactoringAction#()V" />
+    <nodeInfo nodeId="1685972956014329976" fileName="StringChooserDialog.java" startLine="82" startPosition="0" endLine="88" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getString#(Lcom/intellij/openapi/project/Project;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;" />
+    <nodeInfo nodeId="1685972956014330183" fileName="StringChooserDialog.java" startLine="23" startPosition="0" endLine="34" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="StringChooserDialog#(Lcom/intellij/openapi/project/Project;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V" />
+    <nodeInfo nodeId="1685972956014330028" fileName="StringChooserDialog.java" startLine="44" startPosition="0" endLine="73" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNorthPanel#()Ljavax/swing/JComponent;" />
+    <scopeInfo nodeId="1685972956014330025" fileName="StringChooserDialog.java" startLine="37" startPosition="44" endLine="38" endPosition="16" />
+    <scopeInfo nodeId="9032941800334145717" fileName="StringChooserDialog.java" startLine="41" startPosition="52" endLine="42" endPosition="23" />
+    <scopeInfo nodeId="1685972956014330162" fileName="StringChooserDialog.java" startLine="74" startPosition="35" endLine="75" endPosition="26" />
+    <scopeInfo nodeId="1685972956014330169" fileName="StringChooserDialog.java" startLine="78" startPosition="40" endLine="80" endPosition="19" />
+    <scopeInfo nodeId="1685972956014329986" fileName="StringChooserDialog.java" startLine="83" startPosition="104" endLine="86" endPosition="33">
+      <varInfo nodeId="1685972956014329988" varName="dialog" />
+    </scopeInfo>
+    <scopeInfo nodeId="9032941800334145714" fileName="StringChooserDialog.java" startLine="40" startPosition="0" endLine="44" endPosition="0" />
+    <scopeInfo nodeId="1685972956014330160" fileName="StringChooserDialog.java" startLine="73" startPosition="0" endLine="77" endPosition="0" />
+    <scopeInfo nodeId="1685972956014330021" fileName="StringChooserDialog.java" startLine="35" startPosition="0" endLine="40" endPosition="0" />
+    <scopeInfo nodeId="1685972956014330166" fileName="StringChooserDialog.java" startLine="77" startPosition="0" endLine="82" endPosition="0" />
+    <scopeInfo nodeId="1685972956014329976" fileName="StringChooserDialog.java" startLine="82" startPosition="0" endLine="88" endPosition="0">
+      <varInfo nodeId="1685972956014329983" varName="initialValue" />
+      <varInfo nodeId="1685972956014329981" varName="labelText" />
+      <varInfo nodeId="1685972956014329977" varName="project" />
+      <varInfo nodeId="1685972956014329979" varName="title" />
+    </scopeInfo>
+    <scopeInfo nodeId="1685972956014330195" fileName="StringChooserDialog.java" startLine="24" startPosition="109" endLine="33" endPosition="0" />
+    <scopeInfo nodeId="1685972956014330183" fileName="StringChooserDialog.java" startLine="23" startPosition="0" endLine="34" endPosition="3">
+      <varInfo nodeId="1685972956014330191" varName="initialValue" />
+      <varInfo nodeId="1685972956014330189" varName="labelText" />
+      <varInfo nodeId="1685972956014330184" varName="project" />
+      <varInfo nodeId="1685972956014330187" varName="title" />
+    </scopeInfo>
+    <scopeInfo nodeId="1685972956014330030" fileName="StringChooserDialog.java" startLine="46" startPosition="43" endLine="71" endPosition="0">
+      <varInfo nodeId="1685972956014330048" varName="c" />
+    </scopeInfo>
+    <scopeInfo nodeId="1685972956014330028" fileName="StringChooserDialog.java" startLine="44" startPosition="0" endLine="73" endPosition="0" />
+    <unitInfo nodeId="1685972956014329975" fileName="StringChooserDialog.java" startLine="18" startPosition="0" endLine="89" endPosition="0" unitName="jetbrains.mps.ide.platform.refactoring.StringChooserDialog" />
+  </root>
+  <root nodeId="1685972956014334002">
+    <nodeInfo nodeId="1685972956014334010" fileName="RenameDialog.java" startLine="9" startPosition="55" endLine="10" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="REFACTORING_NAME" />
+    <nodeInfo nodeId="1685972956014334053" fileName="RenameDialog.java" startLine="12" startPosition="82" endLine="13" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="1685972956014334006" fileName="RenameDialog.java" startLine="16" startPosition="27" endLine="17" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1685972956014334008" fileName="RenameDialog.java" startLine="17" startPosition="26" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="1685972956014334024" fileName="RenameDialog.java" startLine="21" startPosition="81" endLine="22" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1685972956014334032" fileName="RenameDialog.java" startLine="22" startPosition="67" endLine="23" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1685972956014334036" fileName="RenameDialog.java" startLine="23" startPosition="18" endLine="24" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1685972956014334042" fileName="RenameDialog.java" startLine="11" startPosition="0" endLine="14" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="RenameDialog#(Lcom/intellij/openapi/project/Project;Ljava/lang/String;Ljava/lang/String;)V" />
+    <nodeInfo nodeId="1685972956014334003" fileName="RenameDialog.java" startLine="15" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="1685972956014334015" fileName="RenameDialog.java" startLine="20" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getNewName#(Lcom/intellij/openapi/project/Project;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;" />
+    <scopeInfo nodeId="1685972956014334052" fileName="RenameDialog.java" startLine="12" startPosition="82" endLine="13" endPosition="68" />
+    <scopeInfo nodeId="1685972956014334005" fileName="RenameDialog.java" startLine="16" startPosition="27" endLine="18" endPosition="0" />
+    <scopeInfo nodeId="1685972956014334042" fileName="RenameDialog.java" startLine="11" startPosition="0" endLine="14" endPosition="3">
+      <varInfo nodeId="1685972956014334048" varName="nodeType" />
+      <varInfo nodeId="1685972956014334046" varName="oldName" />
+      <varInfo nodeId="1685972956014334043" varName="project" />
+    </scopeInfo>
+    <scopeInfo nodeId="1685972956014334023" fileName="RenameDialog.java" startLine="21" startPosition="81" endLine="24" endPosition="33">
+      <varInfo nodeId="1685972956014334025" varName="dialog" />
+    </scopeInfo>
+    <scopeInfo nodeId="1685972956014334003" fileName="RenameDialog.java" startLine="15" startPosition="0" endLine="20" endPosition="0" />
+    <scopeInfo nodeId="1685972956014334015" fileName="RenameDialog.java" startLine="20" startPosition="0" endLine="26" endPosition="0">
+      <varInfo nodeId="1685972956014334020" varName="node" />
+      <varInfo nodeId="1685972956014334018" varName="oldName" />
+      <varInfo nodeId="1685972956014334016" varName="project" />
+    </scopeInfo>
+    <unitInfo nodeId="1685972956014334002" fileName="RenameDialog.java" startLine="9" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.ide.platform.refactoring.RenameDialog" />
+  </root>
+  <root nodeId="1685972956014334070">
+    <nodeInfo nodeId="1685972956014334143" fileName="RenameMethodDialog.java" startLine="11" startPosition="54" endLine="12" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myOverridingCheckBox" />
+    <nodeInfo nodeId="1685972956014334146" fileName="RenameMethodDialog.java" startLine="12" startPosition="41" endLine="13" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myIsOverriding" />
+    <nodeInfo nodeId="1685972956014334160" fileName="RenameMethodDialog.java" startLine="15" startPosition="91" endLine="16" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="1685972956014334164" fileName="RenameMethodDialog.java" startLine="16" startPosition="38" endLine="17" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1685972956014334074" fileName="RenameMethodDialog.java" startLine="20" startPosition="34" endLine="21" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1685972956014334080" fileName="RenameMethodDialog.java" startLine="24" startPosition="43" endLine="25" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1685972956014334082" fileName="RenameMethodDialog.java" startLine="25" startPosition="29" endLine="26" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1685972956014334088" fileName="RenameMethodDialog.java" startLine="26" startPosition="63" endLine="27" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1685972956014334093" fileName="RenameMethodDialog.java" startLine="27" startPosition="52" endLine="28" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1685972956014334099" fileName="RenameMethodDialog.java" startLine="28" startPosition="16" endLine="29" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1685972956014334105" fileName="RenameMethodDialog.java" startLine="29" startPosition="16" endLine="30" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1685972956014334116" fileName="RenameMethodDialog.java" startLine="30" startPosition="38" endLine="31" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1685972956014334122" fileName="RenameMethodDialog.java" startLine="31" startPosition="51" endLine="32" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1685972956014334128" fileName="RenameMethodDialog.java" startLine="32" startPosition="41" endLine="33" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1685972956014334135" fileName="RenameMethodDialog.java" startLine="36" startPosition="40" endLine="37" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1685972956014334141" fileName="RenameMethodDialog.java" startLine="37" startPosition="55" endLine="38" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1685972956014334150" fileName="RenameMethodDialog.java" startLine="14" startPosition="0" endLine="18" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="RenameMethodDialog#(Lcom/intellij/openapi/project/Project;Ljava/lang/String;Z)V" />
+    <nodeInfo nodeId="1685972956014334071" fileName="RenameMethodDialog.java" startLine="19" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getOverriding#()Z" />
+    <nodeInfo nodeId="1685972956014334131" fileName="RenameMethodDialog.java" startLine="35" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doRefactoringAction#()V" />
+    <nodeInfo nodeId="1685972956014334077" fileName="RenameMethodDialog.java" startLine="23" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNorthPanel#()Ljavax/swing/JComponent;" />
+    <scopeInfo nodeId="1685972956014334073" fileName="RenameMethodDialog.java" startLine="20" startPosition="34" endLine="21" endPosition="26" />
+    <scopeInfo nodeId="1685972956014334159" fileName="RenameMethodDialog.java" startLine="15" startPosition="91" endLine="17" endPosition="57" />
+    <scopeInfo nodeId="1685972956014334134" fileName="RenameMethodDialog.java" startLine="36" startPosition="40" endLine="38" endPosition="32" />
+    <scopeInfo nodeId="1685972956014334150" fileName="RenameMethodDialog.java" startLine="14" startPosition="0" endLine="18" endPosition="3">
+      <varInfo nodeId="1685972956014334155" varName="myOverridingEnabled" />
+      <varInfo nodeId="1685972956014334153" varName="oldName" />
+      <varInfo nodeId="1685972956014334151" varName="project" />
+    </scopeInfo>
+    <scopeInfo nodeId="1685972956014334071" fileName="RenameMethodDialog.java" startLine="19" startPosition="0" endLine="23" endPosition="0" />
+    <scopeInfo nodeId="1685972956014334131" fileName="RenameMethodDialog.java" startLine="35" startPosition="0" endLine="40" endPosition="0" />
+    <scopeInfo nodeId="1685972956014334079" fileName="RenameMethodDialog.java" startLine="24" startPosition="43" endLine="33" endPosition="19">
+      <varInfo nodeId="1685972956014334089" varName="c" />
+    </scopeInfo>
+    <scopeInfo nodeId="1685972956014334077" fileName="RenameMethodDialog.java" startLine="23" startPosition="0" endLine="35" endPosition="0" />
+    <unitInfo nodeId="1685972956014334070" fileName="RenameMethodDialog.java" startLine="11" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.ide.platform.refactoring.RenameMethodDialog" />
+  </root>
+  <root nodeId="2183214647889839513">
+    <nodeInfo nodeId="2183214647889839523" fileName="RefactoringFacade.java" startLine="43" startPosition="41" endLine="44" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myLog" />
+    <nodeInfo nodeId="2183214647889839553" fileName="RefactoringFacade.java" startLine="53" startPosition="63" endLine="54" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2183214647889839555" fileName="RefactoringFacade.java" startLine="54" startPosition="28" endLine="55" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2183214647889839561" fileName="RefactoringFacade.java" startLine="55" startPosition="62" endLine="56" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2183214647889839589" fileName="RefactoringFacade.java" startLine="59" startPosition="13" endLine="60" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2183214647889839605" fileName="RefactoringFacade.java" startLine="62" startPosition="39" endLine="63" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2183214647889839608" fileName="RefactoringFacade.java" startLine="64" startPosition="13" endLine="65" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2183214647889839574" fileName="RefactoringFacade.java" startLine="67" startPosition="31" endLine="68" endPosition="162" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2183214647889839620" fileName="RefactoringFacade.java" startLine="72" startPosition="42" endLine="73" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2183214647889839617" fileName="RefactoringFacade.java" startLine="74" startPosition="12" endLine="75" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="2183214647889839640" fileName="RefactoringFacade.java" startLine="77" startPosition="9" endLine="78" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2183214647889839627" fileName="RefactoringFacade.java" startLine="79" startPosition="27" endLine="80" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2183214647889839651" fileName="RefactoringFacade.java" startLine="84" startPosition="56" endLine="85" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
+    <nodeInfo nodeId="2183214647889839656" fileName="RefactoringFacade.java" startLine="85" startPosition="32" endLine="86" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
+    <nodeInfo nodeId="2183214647889839662" fileName="RefactoringFacade.java" startLine="86" startPosition="68" endLine="87" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2183214647889839680" fileName="RefactoringFacade.java" startLine="92" startPosition="46" endLine="93" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2183214647889839695" fileName="RefactoringFacade.java" startLine="99" startPosition="112" endLine="100" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2183214647889839723" fileName="RefactoringFacade.java" startLine="103" startPosition="13" endLine="104" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2183214647889839708" fileName="RefactoringFacade.java" startLine="105" startPosition="31" endLine="106" endPosition="176" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2183214647889839730" fileName="RefactoringFacade.java" startLine="109" startPosition="7" endLine="110" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2183214647889839746" fileName="RefactoringFacade.java" startLine="115" startPosition="25" endLine="116" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2183214647889839755" fileName="RefactoringFacade.java" startLine="121" startPosition="59" endLine="122" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
+    <nodeInfo nodeId="2183214647889839791" fileName="RefactoringFacade.java" startLine="123" startPosition="31" endLine="124" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2183214647889839768" fileName="RefactoringFacade.java" startLine="125" startPosition="12" endLine="126" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2183214647889839786" fileName="RefactoringFacade.java" startLine="128" startPosition="64" endLine="129" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2183214647889839799" fileName="RefactoringFacade.java" startLine="135" startPosition="83" endLine="136" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2183214647889839803" fileName="RefactoringFacade.java" startLine="136" startPosition="76" endLine="137" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2183214647889839813" fileName="RefactoringFacade.java" startLine="137" startPosition="102" endLine="138" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2183214647889839820" fileName="RefactoringFacade.java" startLine="138" startPosition="88" endLine="139" endPosition="132" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="2183214647889839833" fileName="RefactoringFacade.java" startLine="141" startPosition="58" endLine="142" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2183214647889839840" fileName="RefactoringFacade.java" startLine="144" startPosition="8" endLine="145" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="2183214647889839859" fileName="RefactoringFacade.java" startLine="147" startPosition="110" endLine="148" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
+    <nodeInfo nodeId="2183214647889839860" fileName="RefactoringFacade.java" startLine="149" startPosition="7" endLine="150" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="2183214647889839873" fileName="RefactoringFacade.java" startLine="152" startPosition="86" endLine="153" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2183214647889839878" fileName="RefactoringFacade.java" startLine="153" startPosition="56" endLine="154" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+    <nodeInfo nodeId="2183214647889839883" fileName="RefactoringFacade.java" startLine="157" startPosition="5" endLine="158" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2183214647889839895" fileName="RefactoringFacade.java" startLine="161" startPosition="70" endLine="162" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2183214647889839925" fileName="RefactoringFacade.java" startLine="163" startPosition="9" endLine="164" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2183214647889839904" fileName="RefactoringFacade.java" startLine="165" startPosition="27" endLine="166" endPosition="189" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2183214647889839940" fileName="RefactoringFacade.java" startLine="168" startPosition="31" endLine="169" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2183214647889839957" fileName="RefactoringFacade.java" startLine="170" startPosition="62" endLine="171" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2183214647889839968" fileName="RefactoringFacade.java" startLine="173" startPosition="5" endLine="174" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2183214647889839989" fileName="RefactoringFacade.java" startLine="178" startPosition="33" endLine="179" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2183214647889839990" fileName="RefactoringFacade.java" startLine="180" startPosition="5" endLine="181" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2183214647889839995" fileName="RefactoringFacade.java" startLine="181" startPosition="101" endLine="182" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2183214647889840013" fileName="RefactoringFacade.java" startLine="184" startPosition="25" endLine="185" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2183214647889840017" fileName="RefactoringFacade.java" startLine="185" startPosition="49" endLine="186" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="2183214647889840019" fileName="RefactoringFacade.java" startLine="186" startPosition="43" endLine="187" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2183214647889840024" fileName="RefactoringFacade.java" startLine="187" startPosition="53" endLine="188" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2183214647889840029" fileName="RefactoringFacade.java" startLine="188" startPosition="49" endLine="189" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2183214647889840037" fileName="RefactoringFacade.java" startLine="190" startPosition="43" endLine="191" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2183214647889840044" fileName="RefactoringFacade.java" startLine="194" startPosition="7" endLine="195" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2183214647889840078" fileName="RefactoringFacade.java" startLine="198" startPosition="13" endLine="199" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2183214647889840090" fileName="RefactoringFacade.java" startLine="200" startPosition="65" endLine="201" endPosition="147" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2183214647889840105" fileName="RefactoringFacade.java" startLine="201" startPosition="147" endLine="202" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2183214647889840109" fileName="RefactoringFacade.java" startLine="202" startPosition="25" endLine="203" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="2183214647889840068" fileName="RefactoringFacade.java" startLine="206" startPosition="40" endLine="207" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2183214647889840075" fileName="RefactoringFacade.java" startLine="208" startPosition="19" endLine="209" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2183214647889840112" fileName="RefactoringFacade.java" startLine="212" startPosition="14" endLine="213" endPosition="166" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="2183214647889840118" fileName="RefactoringFacade.java" startLine="216" startPosition="39" endLine="217" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2183214647889839531" fileName="RefactoringFacade.java" startLine="45" startPosition="0" endLine="47" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="RefactoringFacade#()V" />
+    <nodeInfo nodeId="2183214647889839535" fileName="RefactoringFacade.java" startLine="48" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljetbrains/mps/refactoring/framework/RefactoringContext;)V" />
+    <nodeInfo nodeId="2183214647889839541" fileName="RefactoringFacade.java" startLine="50" startPosition="0" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="executeInThread#(Ljetbrains/mps/refactoring/framework/RefactoringContext;)V" />
+    <nodeInfo nodeId="2183214647889839615" fileName="RefactoringFacade.java" startLine="74" startPosition="10" endLine="76" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2183214647889839599" fileName="RefactoringFacade.java" startLine="61" startPosition="60" endLine="64" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2183214647889839779" fileName="RefactoringFacade.java" startLine="127" startPosition="27" endLine="130" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="2183214647889839848" fileName="RefactoringFacade.java" startLine="146" startPosition="74" endLine="149" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2183214647889839950" fileName="RefactoringFacade.java" startLine="169" startPosition="104" endLine="172" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="2183214647889839984" fileName="RefactoringFacade.java" startLine="177" startPosition="116" endLine="180" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2183214647889840032" fileName="RefactoringFacade.java" startLine="189" startPosition="52" endLine="192" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="2183214647889839678" fileName="RefactoringFacade.java" startLine="91" startPosition="99" endLine="95" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visit#(Ljetbrains/mps/smodel/SModelDescriptor;)V" />
+    <nodeInfo nodeId="2183214647889839744" fileName="RefactoringFacade.java" startLine="114" startPosition="52" endLine="118" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="2183214647889839831" fileName="RefactoringFacade.java" startLine="140" startPosition="167" endLine="144" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/smodel/SModelReference;)Ljetbrains/mps/smodel/SModelDescriptor;" />
+    <nodeInfo nodeId="2183214647889839865" fileName="RefactoringFacade.java" startLine="151" startPosition="121" endLine="155" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2183214647889840114" fileName="RefactoringFacade.java" startLine="215" startPosition="0" endLine="219" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="onGenerationFinished#()V" />
+    <nodeInfo nodeId="2183214647889839611" fileName="RefactoringFacade.java" startLine="71" startPosition="7" endLine="76" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2183214647889839624" fileName="RefactoringFacade.java" startLine="76" startPosition="5" endLine="81" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="2183214647889839673" fileName="RefactoringFacade.java" startLine="90" startPosition="68" endLine="95" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2183214647889839705" fileName="RefactoringFacade.java" startLine="102" startPosition="25" endLine="107" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="2183214647889839742" fileName="RefactoringFacade.java" startLine="113" startPosition="82" endLine="118" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2183214647889839774" fileName="RefactoringFacade.java" startLine="126" startPosition="46" endLine="131" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2183214647889839822" fileName="RefactoringFacade.java" startLine="139" startPosition="132" endLine="144" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2183214647889839901" fileName="RefactoringFacade.java" startLine="162" startPosition="56" endLine="167" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="2183214647889840084" fileName="RefactoringFacade.java" startLine="199" startPosition="63" endLine="204" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2183214647889839594" fileName="RefactoringFacade.java" startLine="60" startPosition="40" endLine="66" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2183214647889839645" fileName="RefactoringFacade.java" startLine="83" startPosition="0" endLine="89" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="writeIntoLog#(Ljetbrains/mps/refactoring/framework/RefactoringContext;)V" />
+    <nodeInfo nodeId="2183214647889839862" fileName="RefactoringFacade.java" startLine="150" startPosition="108" endLine="156" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="2183214647889839934" fileName="RefactoringFacade.java" startLine="167" startPosition="5" endLine="173" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2183214647889839766" fileName="RefactoringFacade.java" startLine="125" startPosition="10" endLine="132" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2183214647889839667" fileName="RefactoringFacade.java" startLine="89" startPosition="0" endLine="97" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="updateLoadedModels#(Ljetbrains/mps/refactoring/framework/RefactoringContext;)V" />
+    <nodeInfo nodeId="2183214647889839703" fileName="RefactoringFacade.java" startLine="101" startPosition="57" endLine="109" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="2183214647889839735" fileName="RefactoringFacade.java" startLine="112" startPosition="0" endLine="120" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doExecute#(Ljetbrains/mps/refactoring/framework/RefactoringContext;)V" />
+    <nodeInfo nodeId="2183214647889839702" fileName="RefactoringFacade.java" startLine="100" startPosition="100" endLine="109" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2183214647889839761" fileName="RefactoringFacade.java" startLine="122" startPosition="68" endLine="132" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2183214647889839571" fileName="RefactoringFacade.java" startLine="58" startPosition="25" endLine="69" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="2183214647889840009" fileName="RefactoringFacade.java" startLine="183" startPosition="58" endLine="194" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="2183214647889839841" fileName="RefactoringFacade.java" startLine="145" startPosition="0" endLine="157" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="2183214647889840002" fileName="RefactoringFacade.java" startLine="182" startPosition="81" endLine="194" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2183214647889840061" fileName="RefactoringFacade.java" startLine="197" startPosition="25" endLine="210" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
+    <nodeInfo nodeId="2183214647889839569" fileName="RefactoringFacade.java" startLine="57" startPosition="67" endLine="71" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="2183214647889839749" fileName="RefactoringFacade.java" startLine="120" startPosition="0" endLine="134" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="updateModels#(Ljetbrains/mps/refactoring/framework/RefactoringContext;)V" />
+    <nodeInfo nodeId="2183214647889839568" fileName="RefactoringFacade.java" startLine="56" startPosition="78" endLine="71" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2183214647889839688" fileName="RefactoringFacade.java" startLine="97" startPosition="0" endLine="112" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getModelsToGenerate#(Ljetbrains/mps/refactoring/framework/IRefactoring;Ljetbrains/mps/refactoring/framework/RefactoringContext;)Ljava/util/List;" />
+    <nodeInfo nodeId="2183214647889839887" fileName="RefactoringFacade.java" startLine="160" startPosition="0" endLine="176" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="updateModel#(Ljetbrains/mps/smodel/SModel;Ljetbrains/mps/refactoring/framework/RefactoringContext;)V" />
+    <nodeInfo nodeId="2183214647889840057" fileName="RefactoringFacade.java" startLine="196" startPosition="18" endLine="212" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="2183214647889840052" fileName="RefactoringFacade.java" startLine="195" startPosition="105" endLine="212" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2183214647889839794" fileName="RefactoringFacade.java" startLine="134" startPosition="0" endLine="160" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="loadedModelsForUpdate#(Ljetbrains/mps/refactoring/framework/RefactoringContext;)Ljava/util/Set;" />
+    <nodeInfo nodeId="2183214647889839547" fileName="RefactoringFacade.java" startLine="52" startPosition="0" endLine="83" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="executeSimple#(Ljetbrains/mps/refactoring/framework/RefactoringContext;)V" />
+    <nodeInfo nodeId="2183214647889839973" fileName="RefactoringFacade.java" startLine="176" startPosition="0" endLine="215" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="generateModels#(Ljava/util/List;Ljetbrains/mps/refactoring/framework/RefactoringContext;)V" />
+    <scopeInfo nodeId="2183214647889839534" fileName="RefactoringFacade.java" startLine="46" startPosition="30" endLine="46" endPosition="30" />
+    <scopeInfo nodeId="2183214647889840062" fileName="RefactoringFacade.java" startLine="205" startPosition="0" endLine="205" endPosition="42">
+      <varInfo nodeId="2183214647889840064" varName="e" />
+    </scopeInfo>
+    <scopeInfo nodeId="2183214647889840063" fileName="RefactoringFacade.java" startLine="205" startPosition="42" endLine="205" endPosition="42" />
+    <scopeInfo nodeId="2183214647889839604" fileName="RefactoringFacade.java" startLine="62" startPosition="39" endLine="63" endPosition="36" />
+    <scopeInfo nodeId="2183214647889839572" fileName="RefactoringFacade.java" startLine="67" startPosition="0" endLine="68" endPosition="162">
+      <varInfo nodeId="2183214647889839586" varName="t" />
+    </scopeInfo>
+    <scopeInfo nodeId="2183214647889839573" fileName="RefactoringFacade.java" startLine="67" startPosition="31" endLine="68" endPosition="162" />
+    <scopeInfo nodeId="2183214647889839619" fileName="RefactoringFacade.java" startLine="72" startPosition="42" endLine="73" endPosition="48" />
+    <scopeInfo nodeId="2183214647889839616" fileName="RefactoringFacade.java" startLine="74" startPosition="12" endLine="75" endPosition="37" />
+    <scopeInfo nodeId="2183214647889839639" fileName="RefactoringFacade.java" startLine="77" startPosition="9" endLine="78" endPosition="38" />
+    <scopeInfo nodeId="2183214647889839625" fileName="RefactoringFacade.java" startLine="79" startPosition="0" endLine="80" endPosition="109">
+      <varInfo nodeId="2183214647889839637" varName="t" />
+    </scopeInfo>
+    <scopeInfo nodeId="2183214647889839626" fileName="RefactoringFacade.java" startLine="79" startPosition="27" endLine="80" endPosition="109" />
+    <scopeInfo nodeId="2183214647889839679" fileName="RefactoringFacade.java" startLine="92" startPosition="46" endLine="93" endPosition="45" />
+    <scopeInfo nodeId="2183214647889839722" fileName="RefactoringFacade.java" startLine="103" startPosition="13" endLine="104" endPosition="66" />
+    <scopeInfo nodeId="2183214647889839706" fileName="RefactoringFacade.java" startLine="105" startPosition="0" endLine="106" endPosition="176">
+      <varInfo nodeId="2183214647889839720" varName="t" />
+    </scopeInfo>
+    <scopeInfo nodeId="2183214647889839707" fileName="RefactoringFacade.java" startLine="105" startPosition="31" endLine="106" endPosition="176" />
+    <scopeInfo nodeId="2183214647889839745" fileName="RefactoringFacade.java" startLine="115" startPosition="25" endLine="116" endPosition="42" />
+    <scopeInfo nodeId="2183214647889839790" fileName="RefactoringFacade.java" startLine="123" startPosition="31" endLine="124" endPosition="34" />
+    <scopeInfo nodeId="2183214647889839785" fileName="RefactoringFacade.java" startLine="128" startPosition="64" endLine="129" endPosition="45" />
+    <scopeInfo nodeId="2183214647889839832" fileName="RefactoringFacade.java" startLine="141" startPosition="58" endLine="142" endPosition="54" />
+    <scopeInfo nodeId="2183214647889839858" fileName="RefactoringFacade.java" startLine="147" startPosition="110" endLine="148" endPosition="17" />
+    <scopeInfo nodeId="2183214647889839924" fileName="RefactoringFacade.java" startLine="163" startPosition="9" endLine="164" endPosition="71" />
+    <scopeInfo nodeId="2183214647889839902" fileName="RefactoringFacade.java" startLine="165" startPosition="0" endLine="166" endPosition="189">
+      <varInfo nodeId="2183214647889839922" varName="t" />
+    </scopeInfo>
+    <scopeInfo nodeId="2183214647889839903" fileName="RefactoringFacade.java" startLine="165" startPosition="27" endLine="166" endPosition="189" />
+    <scopeInfo nodeId="2183214647889839956" fileName="RefactoringFacade.java" startLine="170" startPosition="62" endLine="171" endPosition="87" />
+    <scopeInfo nodeId="2183214647889839988" fileName="RefactoringFacade.java" startLine="178" startPosition="33" endLine="179" endPosition="13" />
+    <scopeInfo nodeId="2183214647889840036" fileName="RefactoringFacade.java" startLine="190" startPosition="43" endLine="191" endPosition="54" />
+    <scopeInfo nodeId="2183214647889840066" fileName="RefactoringFacade.java" startLine="206" startPosition="0" endLine="207" endPosition="30">
+      <varInfo nodeId="2183214647889840072" varName="e" />
+    </scopeInfo>
+    <scopeInfo nodeId="2183214647889840067" fileName="RefactoringFacade.java" startLine="206" startPosition="40" endLine="207" endPosition="30" />
+    <scopeInfo nodeId="2183214647889840074" fileName="RefactoringFacade.java" startLine="208" startPosition="19" endLine="209" endPosition="33" />
+    <scopeInfo nodeId="2183214647889840117" fileName="RefactoringFacade.java" startLine="216" startPosition="39" endLine="217" endPosition="44" />
+    <scopeInfo nodeId="2183214647889839531" fileName="RefactoringFacade.java" startLine="45" startPosition="0" endLine="47" endPosition="3" />
+    <scopeInfo nodeId="2183214647889839535" fileName="RefactoringFacade.java" startLine="48" startPosition="0" endLine="50" endPosition="0">
+      <varInfo nodeId="2183214647889839536" varName="context" />
+    </scopeInfo>
+    <scopeInfo nodeId="2183214647889839541" fileName="RefactoringFacade.java" startLine="50" startPosition="0" endLine="52" endPosition="0">
+      <varInfo nodeId="2183214647889839542" varName="context" />
+    </scopeInfo>
+    <scopeInfo nodeId="2183214647889839872" fileName="RefactoringFacade.java" startLine="152" startPosition="86" endLine="154" endPosition="16" />
+    <scopeInfo nodeId="2183214647889839650" fileName="RefactoringFacade.java" startLine="84" startPosition="56" endLine="87" endPosition="80" />
+    <scopeInfo nodeId="2183214647889839778" fileName="RefactoringFacade.java" startLine="127" startPosition="27" endLine="130" endPosition="9" />
+    <scopeInfo nodeId="2183214647889839779" fileName="RefactoringFacade.java" startLine="127" startPosition="27" endLine="130" endPosition="9">
+      <varInfo nodeId="2183214647889839783" varName="anotherModel" />
+    </scopeInfo>
+    <scopeInfo nodeId="2183214647889839950" fileName="RefactoringFacade.java" startLine="169" startPosition="104" endLine="172" endPosition="7">
+      <varInfo nodeId="2183214647889839954" varName="modelRef" />
+    </scopeInfo>
+    <scopeInfo nodeId="2183214647889840032" fileName="RefactoringFacade.java" startLine="189" startPosition="52" endLine="192" endPosition="9">
+      <varInfo nodeId="2183214647889840034" varName="model" />
+    </scopeInfo>
+    <scopeInfo nodeId="2183214647889840089" fileName="RefactoringFacade.java" startLine="200" startPosition="65" endLine="203" endPosition="70">
+      <varInfo nodeId="2183214647889840091" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="2183214647889839598" fileName="RefactoringFacade.java" startLine="61" startPosition="60" endLine="65" endPosition="34" />
+    <scopeInfo nodeId="2183214647889839678" fileName="RefactoringFacade.java" startLine="91" startPosition="99" endLine="95" endPosition="0">
+      <varInfo nodeId="2183214647889839678" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="2183214647889839744" fileName="RefactoringFacade.java" startLine="114" startPosition="52" endLine="118" endPosition="0" />
+    <scopeInfo nodeId="2183214647889839831" fileName="RefactoringFacade.java" startLine="140" startPosition="167" endLine="144" endPosition="0">
+      <varInfo nodeId="2183214647889839831" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="2183214647889839864" fileName="RefactoringFacade.java" startLine="151" startPosition="121" endLine="155" endPosition="9" />
+    <scopeInfo nodeId="2183214647889839939" fileName="RefactoringFacade.java" startLine="168" startPosition="31" endLine="172" endPosition="7">
+      <varInfo nodeId="2183214647889839941" varName="dependencies" />
+    </scopeInfo>
+    <scopeInfo nodeId="2183214647889840114" fileName="RefactoringFacade.java" startLine="215" startPosition="0" endLine="219" endPosition="0" />
+    <scopeInfo nodeId="2183214647889839672" fileName="RefactoringFacade.java" startLine="90" startPosition="68" endLine="95" endPosition="7" />
+    <scopeInfo nodeId="2183214647889839704" fileName="RefactoringFacade.java" startLine="102" startPosition="25" endLine="107" endPosition="9" />
+    <scopeInfo nodeId="2183214647889839741" fileName="RefactoringFacade.java" startLine="113" startPosition="82" endLine="118" endPosition="7" />
+    <scopeInfo nodeId="2183214647889839645" fileName="RefactoringFacade.java" startLine="83" startPosition="0" endLine="89" endPosition="0">
+      <varInfo nodeId="2183214647889839646" varName="context" />
+    </scopeInfo>
+    <scopeInfo nodeId="2183214647889839767" fileName="RefactoringFacade.java" startLine="125" startPosition="12" endLine="131" endPosition="7">
+      <varInfo nodeId="2183214647889839769" varName="usages" />
+    </scopeInfo>
+    <scopeInfo nodeId="2183214647889839862" fileName="RefactoringFacade.java" startLine="150" startPosition="108" endLine="156" endPosition="7">
+      <varInfo nodeId="2183214647889839862" varName="elem" />
+    </scopeInfo>
+    <scopeInfo nodeId="2183214647889840077" fileName="RefactoringFacade.java" startLine="198" startPosition="13" endLine="204" endPosition="11">
+      <varInfo nodeId="2183214647889840079" varName="sess" />
+    </scopeInfo>
+    <scopeInfo nodeId="2183214647889839588" fileName="RefactoringFacade.java" startLine="59" startPosition="13" endLine="66" endPosition="11" />
+    <scopeInfo nodeId="2183214647889839667" fileName="RefactoringFacade.java" startLine="89" startPosition="0" endLine="97" endPosition="0">
+      <varInfo nodeId="2183214647889839668" varName="context" />
+    </scopeInfo>
+    <scopeInfo nodeId="2183214647889839703" fileName="RefactoringFacade.java" startLine="101" startPosition="57" endLine="109" endPosition="0" />
+    <scopeInfo nodeId="2183214647889839735" fileName="RefactoringFacade.java" startLine="112" startPosition="0" endLine="120" endPosition="0">
+      <varInfo nodeId="2183214647889839736" varName="refactoringContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="2183214647889840012" fileName="RefactoringFacade.java" startLine="184" startPosition="25" endLine="192" endPosition="9" />
+    <scopeInfo nodeId="2183214647889839847" fileName="RefactoringFacade.java" startLine="146" startPosition="74" endLine="156" endPosition="7" />
+    <scopeInfo nodeId="2183214647889839570" fileName="RefactoringFacade.java" startLine="58" startPosition="25" endLine="69" endPosition="9" />
+    <scopeInfo nodeId="2183214647889839694" fileName="RefactoringFacade.java" startLine="99" startPosition="112" endLine="110" endPosition="24">
+      <varInfo nodeId="2183214647889839696" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="2183214647889839754" fileName="RefactoringFacade.java" startLine="121" startPosition="59" endLine="132" endPosition="5" />
+    <scopeInfo nodeId="2183214647889840009" fileName="RefactoringFacade.java" startLine="183" startPosition="58" endLine="194" endPosition="0" />
+    <scopeInfo nodeId="2183214647889839841" fileName="RefactoringFacade.java" startLine="145" startPosition="0" endLine="157" endPosition="5">
+      <varInfo nodeId="2183214647889839845" varName="descr" />
+    </scopeInfo>
+    <scopeInfo nodeId="2183214647889839894" fileName="RefactoringFacade.java" startLine="161" startPosition="70" endLine="174" endPosition="54">
+      <varInfo nodeId="2183214647889839896" varName="refactoring" />
+    </scopeInfo>
+    <scopeInfo nodeId="2183214647889840060" fileName="RefactoringFacade.java" startLine="197" startPosition="25" endLine="210" endPosition="9" />
+    <scopeInfo nodeId="2183214647889839569" fileName="RefactoringFacade.java" startLine="57" startPosition="67" endLine="71" endPosition="0" />
+    <scopeInfo nodeId="2183214647889839749" fileName="RefactoringFacade.java" startLine="120" startPosition="0" endLine="134" endPosition="0">
+      <varInfo nodeId="2183214647889839750" varName="context" />
+    </scopeInfo>
+    <scopeInfo nodeId="2183214647889839688" fileName="RefactoringFacade.java" startLine="97" startPosition="0" endLine="112" endPosition="0">
+      <varInfo nodeId="2183214647889839691" varName="context" />
+      <varInfo nodeId="2183214647889839689" varName="refactoring" />
+    </scopeInfo>
+    <scopeInfo nodeId="2183214647889839887" fileName="RefactoringFacade.java" startLine="160" startPosition="0" endLine="176" endPosition="0">
+      <varInfo nodeId="2183214647889839890" varName="context" />
+      <varInfo nodeId="2183214647889839888" varName="model" />
+    </scopeInfo>
+    <scopeInfo nodeId="2183214647889840057" fileName="RefactoringFacade.java" startLine="196" startPosition="18" endLine="212" endPosition="0" />
+    <scopeInfo nodeId="2183214647889839798" fileName="RefactoringFacade.java" startLine="135" startPosition="83" endLine="158" endPosition="18">
+      <varInfo nodeId="2183214647889839804" varName="dependencies" />
+      <varInfo nodeId="2183214647889839800" varName="modelRepository" />
+      <varInfo nodeId="2183214647889839814" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="2183214647889839794" fileName="RefactoringFacade.java" startLine="134" startPosition="0" endLine="160" endPosition="0">
+      <varInfo nodeId="2183214647889839795" varName="context" />
+    </scopeInfo>
+    <scopeInfo nodeId="2183214647889839552" fileName="RefactoringFacade.java" startLine="53" startPosition="63" endLine="81" endPosition="5">
+      <varInfo nodeId="2183214647889839562" varName="modelsToGenerate" />
+      <varInfo nodeId="2183214647889839556" varName="refactoring" />
+    </scopeInfo>
+    <scopeInfo nodeId="2183214647889839547" fileName="RefactoringFacade.java" startLine="52" startPosition="0" endLine="83" endPosition="0">
+      <varInfo nodeId="2183214647889839548" varName="context" />
+    </scopeInfo>
+    <scopeInfo nodeId="2183214647889839983" fileName="RefactoringFacade.java" startLine="177" startPosition="116" endLine="213" endPosition="166">
+      <varInfo nodeId="2183214647889839996" varName="descriptors" />
+      <varInfo nodeId="2183214647889839991" varName="modifier" />
+      <varInfo nodeId="2183214647889840045" varName="operationContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="2183214647889839973" fileName="RefactoringFacade.java" startLine="176" startPosition="0" endLine="215" endPosition="0">
+      <varInfo nodeId="2183214647889839978" varName="context" />
+      <varInfo nodeId="2183214647889839974" varName="sourceModels" />
+    </scopeInfo>
+    <unitInfo nodeId="2183214647889839513" fileName="RefactoringFacade.java" startLine="43" startPosition="0" endLine="220" endPosition="0" unitName="jetbrains.mps.ide.platform.refactoring.RefactoringFacade" />
+    <unitInfo nodeId="2183214647889839569" fileName="RefactoringFacade.java" startLine="57" startPosition="55" endLine="71" endPosition="5" unitName="jetbrains.mps.ide.platform.refactoring.RefactoringFacade$1" />
+    <unitInfo nodeId="2183214647889839678" fileName="RefactoringFacade.java" startLine="91" startPosition="69" endLine="95" endPosition="5" unitName="jetbrains.mps.ide.platform.refactoring.RefactoringFacade$2" />
+    <unitInfo nodeId="2183214647889839703" fileName="RefactoringFacade.java" startLine="101" startPosition="45" endLine="109" endPosition="5" unitName="jetbrains.mps.ide.platform.refactoring.RefactoringFacade$3" />
+    <unitInfo nodeId="2183214647889839744" fileName="RefactoringFacade.java" startLine="114" startPosition="40" endLine="118" endPosition="5" unitName="jetbrains.mps.ide.platform.refactoring.RefactoringFacade$4" />
+    <unitInfo nodeId="2183214647889839831" fileName="RefactoringFacade.java" startLine="140" startPosition="119" endLine="144" endPosition="5" unitName="jetbrains.mps.ide.platform.refactoring.RefactoringFacade$5" />
+    <unitInfo nodeId="2183214647889840008" fileName="RefactoringFacade.java" startLine="183" startPosition="46" endLine="194" endPosition="5" unitName="jetbrains.mps.ide.platform.refactoring.RefactoringFacade$6" />
+    <unitInfo nodeId="2183214647889840056" fileName="RefactoringFacade.java" startLine="196" startPosition="8" endLine="212" endPosition="5" unitName="jetbrains.mps.ide.platform.refactoring.RefactoringFacade$7" />
+  </root>
+  <root nodeId="5814231631271705710">
+    <nodeInfo nodeId="5814231631271710671" fileName="ModelElementTargetChooser.java" startLine="7" startPosition="44" endLine="8" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getComponent#()Ljavax/swing/JComponent;" />
+    <nodeInfo nodeId="5814231631271710678" fileName="ModelElementTargetChooser.java" startLine="8" startPosition="35" endLine="9" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSelectedObject#()Ljava/lang/Object;" />
+    <scopeInfo nodeId="5814231631271710671" fileName="ModelElementTargetChooser.java" startLine="7" startPosition="44" endLine="8" endPosition="35" />
+    <scopeInfo nodeId="5814231631271710678" fileName="ModelElementTargetChooser.java" startLine="8" startPosition="35" endLine="9" endPosition="36" />
+    <unitInfo nodeId="5814231631271705710" fileName="ModelElementTargetChooser.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.ide.platform.refactoring.ModelElementTargetChooser" />
+  </root>
+  <root nodeId="6400105291801668894">
+    <nodeInfo nodeId="6400105291801668895" fileName="ModelOrNodeChooserDialog.java" startLine="11" startPosition="74" endLine="12" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="REFACTORING_NAME" />
+    <nodeInfo nodeId="6400105291801668935" fileName="ModelOrNodeChooserDialog.java" startLine="13" startPosition="0" endLine="14" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myProject" />
+    <nodeInfo nodeId="6400105291801668938" fileName="ModelOrNodeChooserDialog.java" startLine="14" startPosition="30" endLine="15" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myChooser" />
+    <nodeInfo nodeId="6400105291801668948" fileName="ModelOrNodeChooserDialog.java" startLine="17" startPosition="61" endLine="18" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="6400105291801668951" fileName="ModelOrNodeChooserDialog.java" startLine="18" startPosition="25" endLine="19" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6400105291801668901" fileName="ModelOrNodeChooserDialog.java" startLine="22" startPosition="33" endLine="23" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="errorMessage" />
+    <nodeInfo nodeId="6400105291801668923" fileName="ModelOrNodeChooserDialog.java" startLine="25" startPosition="43" endLine="26" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6400105291801668908" fileName="ModelOrNodeChooserDialog.java" startLine="32" startPosition="66" endLine="33" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6400105291801668931" fileName="ModelOrNodeChooserDialog.java" startLine="28" startPosition="0" endLine="30" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Filter#()V" />
+    <nodeInfo nodeId="6400105291801668919" fileName="ModelOrNodeChooserDialog.java" startLine="24" startPosition="0" endLine="27" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Filter#(Ljava/lang/String;)V" />
+    <nodeInfo nodeId="6400105291801668941" fileName="ModelOrNodeChooserDialog.java" startLine="16" startPosition="0" endLine="20" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ModelOrNodeChooserDialog#(Lcom/intellij/openapi/project/Project;)V" />
+    <nodeInfo nodeId="6400105291801668904" fileName="ModelOrNodeChooserDialog.java" startLine="31" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="showError#(Ljava/lang/String;Ljavax/swing/JComponent;)V" />
+    <scopeInfo nodeId="6400105291801668934" fileName="ModelOrNodeChooserDialog.java" startLine="29" startPosition="24" endLine="29" endPosition="24" />
+    <scopeInfo nodeId="6400105291801668922" fileName="ModelOrNodeChooserDialog.java" startLine="25" startPosition="43" endLine="26" endPosition="39" />
+    <scopeInfo nodeId="6400105291801668907" fileName="ModelOrNodeChooserDialog.java" startLine="32" startPosition="66" endLine="33" endPosition="101" />
+    <scopeInfo nodeId="6400105291801668947" fileName="ModelOrNodeChooserDialog.java" startLine="17" startPosition="61" endLine="19" endPosition="29" />
+    <scopeInfo nodeId="6400105291801668931" fileName="ModelOrNodeChooserDialog.java" startLine="28" startPosition="0" endLine="30" endPosition="5" />
+    <scopeInfo nodeId="6400105291801668919" fileName="ModelOrNodeChooserDialog.java" startLine="24" startPosition="0" endLine="27" endPosition="5">
+      <varInfo nodeId="6400105291801668929" varName="errorMessage" />
+    </scopeInfo>
+    <scopeInfo nodeId="6400105291801668941" fileName="ModelOrNodeChooserDialog.java" startLine="16" startPosition="0" endLine="20" endPosition="3">
+      <varInfo nodeId="6400105291801668942" varName="project" />
+    </scopeInfo>
+    <scopeInfo nodeId="6400105291801668904" fileName="ModelOrNodeChooserDialog.java" startLine="31" startPosition="0" endLine="35" endPosition="0">
+      <varInfo nodeId="6400105291801668916" varName="component" />
+      <varInfo nodeId="6400105291801668914" varName="title" />
+    </scopeInfo>
+    <unitInfo nodeId="6400105291801668894" fileName="ModelOrNodeChooserDialog.java" startLine="11" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.ide.platform.refactoring.ModelOrNodeChooserDialog" />
+    <unitInfo nodeId="6400105291801668900" fileName="ModelOrNodeChooserDialog.java" startLine="22" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.ide.platform.refactoring.ModelOrNodeChooserDialog$Filter" />
+  </root>
+  <root nodeId="6400105291801680525">
+    <nodeInfo nodeId="6400105291801680628" fileName="MoveNodesDialog.java" startLine="11" startPosition="63" endLine="12" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myModel" />
+    <nodeInfo nodeId="6400105291801680631" fileName="MoveNodesDialog.java" startLine="12" startPosition="35" endLine="13" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myFilter" />
+    <nodeInfo nodeId="6400105291801680634" fileName="MoveNodesDialog.java" startLine="13" startPosition="47" endLine="14" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="mySelectedObject" />
+    <nodeInfo nodeId="6400105291801680647" fileName="MoveNodesDialog.java" startLine="16" startPosition="76" endLine="17" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="6400105291801680649" fileName="MoveNodesDialog.java" startLine="17" startPosition="19" endLine="18" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6400105291801680653" fileName="MoveNodesDialog.java" startLine="18" startPosition="20" endLine="19" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6400105291801680655" fileName="MoveNodesDialog.java" startLine="19" startPosition="11" endLine="20" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6400105291801680662" fileName="MoveNodesDialog.java" startLine="20" startPosition="47" endLine="21" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6400105291801680665" fileName="MoveNodesDialog.java" startLine="21" startPosition="31" endLine="22" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6400105291801680668" fileName="MoveNodesDialog.java" startLine="22" startPosition="29" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="6400105291801680674" fileName="MoveNodesDialog.java" startLine="26" startPosition="40" endLine="27" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6400105291801680682" fileName="MoveNodesDialog.java" startLine="28" startPosition="105" endLine="29" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6400105291801680686" fileName="MoveNodesDialog.java" startLine="29" startPosition="40" endLine="30" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6400105291801680700" fileName="MoveNodesDialog.java" startLine="31" startPosition="5" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="6400105291801680706" fileName="MoveNodesDialog.java" startLine="36" startPosition="44" endLine="37" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6400105291801680714" fileName="MoveNodesDialog.java" startLine="37" startPosition="88" endLine="38" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6400105291801680722" fileName="MoveNodesDialog.java" startLine="41" startPosition="61" endLine="42" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6400105291801680581" fileName="MoveNodesDialog.java" startLine="45" startPosition="92" endLine="46" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6400105291801680588" fileName="MoveNodesDialog.java" startLine="46" startPosition="65" endLine="47" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6400105291801680592" fileName="MoveNodesDialog.java" startLine="47" startPosition="18" endLine="48" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6400105291801680607" fileName="MoveNodesDialog.java" startLine="51" startPosition="128" endLine="52" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6400105291801680614" fileName="MoveNodesDialog.java" startLine="52" startPosition="65" endLine="53" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6400105291801680619" fileName="MoveNodesDialog.java" startLine="53" startPosition="29" endLine="54" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6400105291801680623" fileName="MoveNodesDialog.java" startLine="54" startPosition="18" endLine="55" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6400105291801680567" fileName="MoveNodesDialog.java" startLine="62" startPosition="45" endLine="63" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="6400105291801680544" fileName="MoveNodesDialog.java" startLine="69" startPosition="44" endLine="70" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6400105291801680548" fileName="MoveNodesDialog.java" startLine="70" startPosition="53" endLine="71" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6400105291801680550" fileName="MoveNodesDialog.java" startLine="72" startPosition="7" endLine="73" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6400105291801680559" fileName="MoveNodesDialog.java" startLine="58" startPosition="84" endLine="60" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ModelFilter#()V" />
+    <nodeInfo nodeId="6400105291801680527" fileName="MoveNodesDialog.java" startLine="65" startPosition="0" endLine="67" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="check#(Ljava/lang/Object;Ljetbrains/mps/smodel/SModelDescriptor;)Z" />
+    <nodeInfo nodeId="6400105291801680563" fileName="MoveNodesDialog.java" startLine="61" startPosition="0" endLine="64" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ModelFilter#(Ljava/lang/String;)V" />
+    <nodeInfo nodeId="6400105291801680680" fileName="MoveNodesDialog.java" startLine="27" startPosition="58" endLine="31" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6400105291801680718" fileName="MoveNodesDialog.java" startLine="40" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setFilter#(Ljetbrains/mps/ide/platform/refactoring/MoveNodesDialog/ModelFilter;)V" />
+    <nodeInfo nodeId="6400105291801680538" fileName="MoveNodesDialog.java" startLine="68" startPosition="105" endLine="72" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6400105291801680701" fileName="MoveNodesDialog.java" startLine="34" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCenterPanel#()Ljavax/swing/JComponent;" />
+    <nodeInfo nodeId="6400105291801680573" fileName="MoveNodesDialog.java" startLine="44" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getSelectedObject#(Lcom/intellij/openapi/project/Project;Ljetbrains/mps/smodel/SModelDescriptor;)Ljava/lang/Object;" />
+    <nodeInfo nodeId="6400105291801680597" fileName="MoveNodesDialog.java" startLine="50" startPosition="0" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getSelectedObject#(Lcom/intellij/openapi/project/Project;Ljetbrains/mps/smodel/SModelDescriptor;Ljetbrains/mps/ide/platform/refactoring/MoveNodesDialog/ModelFilter;)Ljava/lang/Object;" />
+    <nodeInfo nodeId="6400105291801680535" fileName="MoveNodesDialog.java" startLine="67" startPosition="0" endLine="75" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="checkForObject#(Ljava/lang/Object;Ljetbrains/mps/smodel/SModelDescriptor;Ljavax/swing/JComponent;)Z" />
+    <nodeInfo nodeId="6400105291801680638" fileName="MoveNodesDialog.java" startLine="15" startPosition="0" endLine="24" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MoveNodesDialog#(Lcom/intellij/openapi/project/Project;Ljetbrains/mps/smodel/SModelDescriptor;)V" />
+    <nodeInfo nodeId="6400105291801680670" fileName="MoveNodesDialog.java" startLine="25" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doRefactoringAction#()V" />
+    <scopeInfo nodeId="6400105291801680562" fileName="MoveNodesDialog.java" startLine="59" startPosition="26" endLine="59" endPosition="26" />
+    <scopeInfo nodeId="6400105291801680721" fileName="MoveNodesDialog.java" startLine="41" startPosition="61" endLine="42" endPosition="22" />
+    <scopeInfo nodeId="6400105291801680566" fileName="MoveNodesDialog.java" startLine="62" startPosition="45" endLine="63" endPosition="26" />
+    <scopeInfo nodeId="6400105291801680681" fileName="MoveNodesDialog.java" startLine="28" startPosition="105" endLine="30" endPosition="16" />
+    <scopeInfo nodeId="6400105291801680705" fileName="MoveNodesDialog.java" startLine="36" startPosition="44" endLine="38" endPosition="36" />
+    <scopeInfo nodeId="6400105291801680559" fileName="MoveNodesDialog.java" startLine="58" startPosition="84" endLine="60" endPosition="5" />
+    <scopeInfo nodeId="6400105291801680527" fileName="MoveNodesDialog.java" startLine="65" startPosition="0" endLine="67" endPosition="0">
+      <varInfo nodeId="6400105291801680532" varName="model" />
+      <varInfo nodeId="6400105291801680530" varName="selectedObject" />
+    </scopeInfo>
+    <scopeInfo nodeId="6400105291801680543" fileName="MoveNodesDialog.java" startLine="69" startPosition="44" endLine="71" endPosition="21" />
+    <scopeInfo nodeId="6400105291801680580" fileName="MoveNodesDialog.java" startLine="45" startPosition="92" endLine="48" endPosition="35">
+      <varInfo nodeId="6400105291801680582" varName="dialog" />
+    </scopeInfo>
+    <scopeInfo nodeId="6400105291801680563" fileName="MoveNodesDialog.java" startLine="61" startPosition="0" endLine="64" endPosition="5">
+      <varInfo nodeId="6400105291801680569" varName="errorMessage" />
+    </scopeInfo>
+    <scopeInfo nodeId="6400105291801680718" fileName="MoveNodesDialog.java" startLine="40" startPosition="0" endLine="44" endPosition="0">
+      <varInfo nodeId="6400105291801680726" varName="filter" />
+    </scopeInfo>
+    <scopeInfo nodeId="6400105291801680606" fileName="MoveNodesDialog.java" startLine="51" startPosition="128" endLine="55" endPosition="35">
+      <varInfo nodeId="6400105291801680608" varName="dialog" />
+    </scopeInfo>
+    <scopeInfo nodeId="6400105291801680537" fileName="MoveNodesDialog.java" startLine="68" startPosition="105" endLine="73" endPosition="18" />
+    <scopeInfo nodeId="6400105291801680673" fileName="MoveNodesDialog.java" startLine="26" startPosition="40" endLine="32" endPosition="0">
+      <varInfo nodeId="6400105291801680675" varName="selectedObject" />
+    </scopeInfo>
+    <scopeInfo nodeId="6400105291801680701" fileName="MoveNodesDialog.java" startLine="34" startPosition="0" endLine="40" endPosition="0" />
+    <scopeInfo nodeId="6400105291801680573" fileName="MoveNodesDialog.java" startLine="44" startPosition="0" endLine="50" endPosition="0">
+      <varInfo nodeId="6400105291801680577" varName="model" />
+      <varInfo nodeId="6400105291801680574" varName="project" />
+    </scopeInfo>
+    <scopeInfo nodeId="6400105291801680646" fileName="MoveNodesDialog.java" startLine="16" startPosition="76" endLine="23" endPosition="0" />
+    <scopeInfo nodeId="6400105291801680597" fileName="MoveNodesDialog.java" startLine="50" startPosition="0" endLine="57" endPosition="0">
+      <varInfo nodeId="6400105291801680603" varName="filter" />
+      <varInfo nodeId="6400105291801680601" varName="model" />
+      <varInfo nodeId="6400105291801680598" varName="project" />
+    </scopeInfo>
+    <scopeInfo nodeId="6400105291801680535" fileName="MoveNodesDialog.java" startLine="67" startPosition="0" endLine="75" endPosition="0">
+      <varInfo nodeId="6400105291801680556" varName="component" />
+      <varInfo nodeId="6400105291801680554" varName="model" />
+      <varInfo nodeId="6400105291801680552" varName="selectedObject" />
+    </scopeInfo>
+    <scopeInfo nodeId="6400105291801680638" fileName="MoveNodesDialog.java" startLine="15" startPosition="0" endLine="24" endPosition="3">
+      <varInfo nodeId="6400105291801680642" varName="model" />
+      <varInfo nodeId="6400105291801680639" varName="project" />
+    </scopeInfo>
+    <scopeInfo nodeId="6400105291801680670" fileName="MoveNodesDialog.java" startLine="25" startPosition="0" endLine="34" endPosition="0" />
+    <unitInfo nodeId="6400105291801680525" fileName="MoveNodesDialog.java" startLine="11" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.ide.platform.refactoring.MoveNodesDialog" />
+    <unitInfo nodeId="6400105291801680526" fileName="MoveNodesDialog.java" startLine="58" startPosition="0" endLine="76" endPosition="0" unitName="jetbrains.mps.ide.platform.refactoring.MoveNodesDialog$ModelFilter" />
+  </root>
+  <root nodeId="6400105291801680728">
+    <nodeInfo nodeId="6400105291801680836" fileName="MoveNodeDialog.java" startLine="13" startPosition="62" endLine="14" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNodeToMove" />
+    <nodeInfo nodeId="6400105291801680839" fileName="MoveNodeDialog.java" startLine="14" startPosition="29" endLine="15" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNodeFilter" />
+    <nodeInfo nodeId="6400105291801680842" fileName="MoveNodeDialog.java" startLine="15" startPosition="49" endLine="16" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="mySelectedObject" />
+    <nodeInfo nodeId="6400105291801680854" fileName="MoveNodeDialog.java" startLine="18" startPosition="63" endLine="19" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="6400105291801680856" fileName="MoveNodeDialog.java" startLine="19" startPosition="19" endLine="20" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6400105291801680860" fileName="MoveNodeDialog.java" startLine="20" startPosition="24" endLine="21" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6400105291801680862" fileName="MoveNodeDialog.java" startLine="21" startPosition="11" endLine="22" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6400105291801680869" fileName="MoveNodeDialog.java" startLine="22" startPosition="46" endLine="23" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6400105291801680872" fileName="MoveNodeDialog.java" startLine="23" startPosition="31" endLine="24" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6400105291801680881" fileName="MoveNodeDialog.java" startLine="27" startPosition="40" endLine="28" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6400105291801680889" fileName="MoveNodeDialog.java" startLine="29" startPosition="45" endLine="30" endPosition="133" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6400105291801680897" fileName="MoveNodeDialog.java" startLine="30" startPosition="133" endLine="31" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6400105291801680904" fileName="MoveNodeDialog.java" startLine="33" startPosition="174" endLine="34" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6400105291801680911" fileName="MoveNodeDialog.java" startLine="34" startPosition="50" endLine="35" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6400105291801680937" fileName="MoveNodeDialog.java" startLine="39" startPosition="59" endLine="40" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6400105291801680948" fileName="MoveNodeDialog.java" startLine="44" startPosition="44" endLine="45" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6400105291801680956" fileName="MoveNodeDialog.java" startLine="45" startPosition="93" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="6400105291801680957" fileName="MoveNodeDialog.java" startLine="46" startPosition="0" endLine="47" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6400105291801680737" fileName="MoveNodeDialog.java" startLine="50" startPosition="79" endLine="51" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6400105291801680744" fileName="MoveNodeDialog.java" startLine="51" startPosition="62" endLine="52" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6400105291801680748" fileName="MoveNodeDialog.java" startLine="52" startPosition="18" endLine="53" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6400105291801680763" fileName="MoveNodeDialog.java" startLine="56" startPosition="113" endLine="57" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6400105291801680770" fileName="MoveNodeDialog.java" startLine="57" startPosition="62" endLine="58" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6400105291801680775" fileName="MoveNodeDialog.java" startLine="58" startPosition="29" endLine="59" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6400105291801680779" fileName="MoveNodeDialog.java" startLine="59" startPosition="18" endLine="60" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6400105291801680831" fileName="MoveNodeDialog.java" startLine="67" startPosition="44" endLine="68" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="6400105291801680805" fileName="MoveNodeDialog.java" startLine="74" startPosition="70" endLine="75" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6400105291801680809" fileName="MoveNodeDialog.java" startLine="75" startPosition="53" endLine="76" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6400105291801680811" fileName="MoveNodeDialog.java" startLine="77" startPosition="7" endLine="78" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6400105291801680823" fileName="MoveNodeDialog.java" startLine="63" startPosition="83" endLine="65" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="NodeFilter#()V" />
+    <nodeInfo nodeId="6400105291801680785" fileName="MoveNodeDialog.java" startLine="70" startPosition="0" endLine="72" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="check#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SModelDescriptor;)Z" />
+    <nodeInfo nodeId="6400105291801680827" fileName="MoveNodeDialog.java" startLine="66" startPosition="0" endLine="69" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="NodeFilter#(Ljava/lang/String;)V" />
+    <nodeInfo nodeId="6400105291801680887" fileName="MoveNodeDialog.java" startLine="28" startPosition="58" endLine="32" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6400105291801680902" fileName="MoveNodeDialog.java" startLine="32" startPosition="5" endLine="36" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6400105291801680933" fileName="MoveNodeDialog.java" startLine="38" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setFilter#(Ljetbrains/mps/ide/platform/refactoring/MoveNodeDialog/NodeFilter;)V" />
+    <nodeInfo nodeId="6400105291801680798" fileName="MoveNodeDialog.java" startLine="73" startPosition="136" endLine="77" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6400105291801680729" fileName="MoveNodeDialog.java" startLine="49" startPosition="0" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getSelectedObject#(Lcom/intellij/openapi/project/Project;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="6400105291801680943" fileName="MoveNodeDialog.java" startLine="42" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCenterPanel#()Ljavax/swing/JComponent;" />
+    <nodeInfo nodeId="6400105291801680753" fileName="MoveNodeDialog.java" startLine="55" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getSelectedObject#(Lcom/intellij/openapi/project/Project;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/ide/platform/refactoring/MoveNodeDialog/NodeFilter;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="6400105291801680845" fileName="MoveNodeDialog.java" startLine="17" startPosition="0" endLine="25" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MoveNodeDialog#(Lcom/intellij/openapi/project/Project;Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="6400105291801680795" fileName="MoveNodeDialog.java" startLine="72" startPosition="0" endLine="80" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="checkForObject#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SModelDescriptor;Ljavax/swing/JComponent;)Z" />
+    <nodeInfo nodeId="6400105291801680877" fileName="MoveNodeDialog.java" startLine="26" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doRefactoringAction#()V" />
+    <scopeInfo nodeId="6400105291801680826" fileName="MoveNodeDialog.java" startLine="64" startPosition="25" endLine="64" endPosition="25" />
+    <scopeInfo nodeId="6400105291801680936" fileName="MoveNodeDialog.java" startLine="39" startPosition="59" endLine="40" endPosition="26" />
+    <scopeInfo nodeId="6400105291801680830" fileName="MoveNodeDialog.java" startLine="67" startPosition="44" endLine="68" endPosition="26" />
+    <scopeInfo nodeId="6400105291801680888" fileName="MoveNodeDialog.java" startLine="29" startPosition="45" endLine="31" endPosition="13" />
+    <scopeInfo nodeId="6400105291801680903" fileName="MoveNodeDialog.java" startLine="33" startPosition="174" endLine="35" endPosition="16" />
+    <scopeInfo nodeId="6400105291801680823" fileName="MoveNodeDialog.java" startLine="63" startPosition="83" endLine="65" endPosition="5" />
+    <scopeInfo nodeId="6400105291801680785" fileName="MoveNodeDialog.java" startLine="70" startPosition="0" endLine="72" endPosition="0">
+      <varInfo nodeId="6400105291801680792" varName="modelOfSelectedNode" />
+      <varInfo nodeId="6400105291801680790" varName="nodeToMove" />
+      <varInfo nodeId="6400105291801680788" varName="selectedObject" />
+    </scopeInfo>
+    <scopeInfo nodeId="6400105291801680804" fileName="MoveNodeDialog.java" startLine="74" startPosition="70" endLine="76" endPosition="21" />
+    <scopeInfo nodeId="6400105291801680947" fileName="MoveNodeDialog.java" startLine="44" startPosition="44" endLine="47" endPosition="36" />
+    <scopeInfo nodeId="6400105291801680736" fileName="MoveNodeDialog.java" startLine="50" startPosition="79" endLine="53" endPosition="35">
+      <varInfo nodeId="6400105291801680738" varName="dialog" />
+    </scopeInfo>
+    <scopeInfo nodeId="6400105291801680827" fileName="MoveNodeDialog.java" startLine="66" startPosition="0" endLine="69" endPosition="5">
+      <varInfo nodeId="6400105291801680833" varName="errorMessage" />
+    </scopeInfo>
+    <scopeInfo nodeId="6400105291801680933" fileName="MoveNodeDialog.java" startLine="38" startPosition="0" endLine="42" endPosition="0">
+      <varInfo nodeId="6400105291801680941" varName="filter" />
+    </scopeInfo>
+    <scopeInfo nodeId="6400105291801680762" fileName="MoveNodeDialog.java" startLine="56" startPosition="113" endLine="60" endPosition="35">
+      <varInfo nodeId="6400105291801680764" varName="dialog" />
+    </scopeInfo>
+    <scopeInfo nodeId="6400105291801680797" fileName="MoveNodeDialog.java" startLine="73" startPosition="136" endLine="78" endPosition="18" />
+    <scopeInfo nodeId="6400105291801680853" fileName="MoveNodeDialog.java" startLine="18" startPosition="63" endLine="24" endPosition="29" />
+    <scopeInfo nodeId="6400105291801680729" fileName="MoveNodeDialog.java" startLine="49" startPosition="0" endLine="55" endPosition="0">
+      <varInfo nodeId="6400105291801680733" varName="node" />
+      <varInfo nodeId="6400105291801680730" varName="project" />
+    </scopeInfo>
+    <scopeInfo nodeId="6400105291801680943" fileName="MoveNodeDialog.java" startLine="42" startPosition="0" endLine="49" endPosition="0" />
+    <scopeInfo nodeId="6400105291801680753" fileName="MoveNodeDialog.java" startLine="55" startPosition="0" endLine="62" endPosition="0">
+      <varInfo nodeId="6400105291801680759" varName="filter" />
+      <varInfo nodeId="6400105291801680757" varName="node" />
+      <varInfo nodeId="6400105291801680754" varName="project" />
+    </scopeInfo>
+    <scopeInfo nodeId="6400105291801680845" fileName="MoveNodeDialog.java" startLine="17" startPosition="0" endLine="25" endPosition="3">
+      <varInfo nodeId="6400105291801680849" varName="node" />
+      <varInfo nodeId="6400105291801680846" varName="project" />
+    </scopeInfo>
+    <scopeInfo nodeId="6400105291801680795" fileName="MoveNodeDialog.java" startLine="72" startPosition="0" endLine="80" endPosition="0">
+      <varInfo nodeId="6400105291801680819" varName="component" />
+      <varInfo nodeId="6400105291801680817" varName="modelOfSelectedNode" />
+      <varInfo nodeId="6400105291801680815" varName="nodeToMove" />
+      <varInfo nodeId="6400105291801680813" varName="selectedObject" />
+    </scopeInfo>
+    <scopeInfo nodeId="6400105291801680880" fileName="MoveNodeDialog.java" startLine="27" startPosition="40" endLine="36" endPosition="5">
+      <varInfo nodeId="6400105291801680882" varName="selectedObject" />
+    </scopeInfo>
+    <scopeInfo nodeId="6400105291801680877" fileName="MoveNodeDialog.java" startLine="26" startPosition="0" endLine="38" endPosition="0" />
+    <unitInfo nodeId="6400105291801680728" fileName="MoveNodeDialog.java" startLine="13" startPosition="0" endLine="82" endPosition="0" unitName="jetbrains.mps.ide.platform.refactoring.MoveNodeDialog" />
+    <unitInfo nodeId="6400105291801680784" fileName="MoveNodeDialog.java" startLine="63" startPosition="0" endLine="81" endPosition="0" unitName="jetbrains.mps.ide.platform.refactoring.MoveNodeDialog$NodeFilter" />
+  </root>
+</debugInfo>
+

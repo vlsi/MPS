@@ -588,12 +588,12 @@ public class QueriesGenerated {
             return newRegexp;
           }
 
-          public String getMatchingText(String text) {
+          public String getMatchingText(String pattern) {
             return SConceptPropertyOperations.getString((item), "alias");
           }
 
-          public String getVisibleMatchingText(String text) {
-            return this.getMatchingText(text);
+          public String getVisibleMatchingText(String pattern) {
+            return this.getMatchingText(pattern);
           }
         });
       }
@@ -707,15 +707,15 @@ public class QueriesGenerated {
             return ref;
           }
 
-          public String getMatchingText(String text) {
+          public String getMatchingText(String pattern) {
             return "\\(" + SPropertyOperations.getString((item), "name") + ")";
           }
 
-          public String getVisibleMatchingText(String text) {
-            return this.getMatchingText(text);
+          public String getVisibleMatchingText(String pattern) {
+            return this.getMatchingText(pattern);
           }
 
-          public String getDescriptionText(String text) {
+          public String getDescriptionText(String pattern) {
             return "";
           }
         });
@@ -742,15 +742,15 @@ public class QueriesGenerated {
             return ref;
           }
 
-          public String getMatchingText(String text) {
+          public String getMatchingText(String pattern) {
             return SPropertyOperations.getString((item), "name");
           }
 
-          public String getVisibleMatchingText(String text) {
-            return this.getMatchingText(text);
+          public String getVisibleMatchingText(String pattern) {
+            return this.getMatchingText(pattern);
           }
 
-          public String getDescriptionText(String text) {
+          public String getDescriptionText(String pattern) {
             return SPropertyOperations.getString((item), "description");
           }
         });
@@ -777,15 +777,15 @@ public class QueriesGenerated {
             return SLinkOperations.getTarget(seq, "right", true);
           }
 
-          public String getMatchingText(String text) {
+          public String getMatchingText(String pattern) {
             return SPropertyOperations.getString((item), "name");
           }
 
-          public String getVisibleMatchingText(String text) {
-            return this.getMatchingText(text);
+          public String getVisibleMatchingText(String pattern) {
+            return this.getMatchingText(pattern);
           }
 
-          public String getDescriptionText(String text) {
+          public String getDescriptionText(String pattern) {
             return SPropertyOperations.getString((item), "description");
           }
         });
