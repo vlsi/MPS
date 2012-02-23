@@ -89,7 +89,7 @@ public abstract class CurrentLinePositionComponentEx<S> {
     SNode node = getNode(debugSession);
     if (node != null) {
       final CurrentLinePainter newPainter = new CurrentLinePainter(node);
-      boolean visible = getCurrentSession() == null || getCurrentSession() == debugSession;
+      final boolean visible = getCurrentSession() == null || getCurrentSession() == debugSession;
       newPainter.setVisible(visible);
       //  we lock here, since we do not want to acquire read lock inside while having mySessionToContextPainterMap  
       synchronized (mySessionToContextPainterMap) {
@@ -97,7 +97,11 @@ public abstract class CurrentLinePositionComponentEx<S> {
         return new Runnable() {
           @Override
           public void run() {
-            attachPainterAndOpenEditor(newPainter);
+            if (visible) {
+              attachPainterAndOpenEditor(newPainter);
+            } else {
+              attachPainter(newPainter);
+            }
           }
         };
       }
@@ -112,6 +116,17 @@ public abstract class CurrentLinePositionComponentEx<S> {
         currentEditorComponent = EditorComponentUtil.scrollToNode(painter.getItem(), currentEditorComponent, myFileEditorManager);
         if (currentEditorComponent != null) {
           attach(painter, currentEditorComponent);
+        }
+      }
+    });
+  }
+
+  private void attachPainter(@NotNull final CurrentLinePainter painter) {
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        List<EditorComponent> components = EditorComponentUtil.findComponentForNode(painter.getItem(), myFileEditorManager);
+        for (EditorComponent component : ListSequence.fromList(components)) {
+          attach(painter, component);
         }
       }
     });
