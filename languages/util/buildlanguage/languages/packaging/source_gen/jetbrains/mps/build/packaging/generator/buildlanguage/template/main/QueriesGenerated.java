@@ -1205,10 +1205,13 @@ public class QueriesGenerated {
     return sourcePath;
   }
 
-  public static SNode sourceNodeQuery_6278136257391572913(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+  public static SNode sourceNodeQuery_5147583081002814639(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     SNode sourcePath = SNodeOperations.copyNode(SLinkOperations.getTarget(_context.getNode(), "sourcePath", true));
     SNode pathComponent = SConceptOperations.createNewNode("jetbrains.mps.build.packaging.structure.PathComponent", null);
     SPropertyOperations.set(pathComponent, "path", "META-INF");
+    ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(sourcePath, "compositePathComponent", true), "pathComponent", true)).addElement(pathComponent);
+    pathComponent = SConceptOperations.createNewNode("jetbrains.mps.build.packaging.structure.PathComponent", null);
+    SPropertyOperations.set(pathComponent, "path", "plugin.xml");
     ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(sourcePath, "compositePathComponent", true), "pathComponent", true)).addElement(pathComponent);
     return sourcePath;
   }
@@ -1221,10 +1224,13 @@ public class QueriesGenerated {
     return sourcePath;
   }
 
-  public static SNode sourceNodeQuery_6278136257391573854(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+  public static SNode sourceNodeQuery_5147583081002781267(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     SNode sourcePath = SNodeOperations.copyNode(SLinkOperations.getTarget(_context.getNode(), "sourcePath", true));
     SNode pathComponent = SConceptOperations.createNewNode("jetbrains.mps.build.packaging.structure.PathComponent", null);
     SPropertyOperations.set(pathComponent, "path", "META-INF");
+    ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(sourcePath, "compositePathComponent", true), "pathComponent", true)).addElement(pathComponent);
+    pathComponent = SConceptOperations.createNewNode("jetbrains.mps.build.packaging.structure.PathComponent", null);
+    SPropertyOperations.set(pathComponent, "path", "plugin.xml");
     ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(sourcePath, "compositePathComponent", true), "pathComponent", true)).addElement(pathComponent);
     return sourcePath;
   }

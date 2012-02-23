@@ -585,7 +585,7 @@ public class LeftEditorHighlighter extends JComponent implements TooltipComponen
           mousePressedInIconsArea(e);
         }
         if (!e.isConsumed() && e.getButton() == MouseEvent.BUTTON3 && e.getID() == MouseEvent.MOUSE_PRESSED) {
-          BaseGroup actionGroup = ActionUtils.getGroup(MPSActions.EDITOR_LEFTPANEL_GROUP);
+          DefaultActionGroup actionGroup = ActionUtils.getDefaultGroup(MPSActions.EDITOR_LEFTPANEL_GROUP);
           if (actionGroup != null) {
             ActionPopupMenu popupMenu = ActionManager.getInstance().createActionPopupMenu(ActionPlaces.EDITOR_POPUP, actionGroup);
             popupMenu.getComponent().show(e.getComponent(), e.getX(), e.getY());
