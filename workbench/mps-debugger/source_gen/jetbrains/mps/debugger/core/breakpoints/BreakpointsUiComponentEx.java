@@ -59,14 +59,14 @@ public abstract class BreakpointsUiComponentEx<B, L extends B> {
 
   protected abstract BreakpointIconRenderrerEx<L> createRenderrer(L breakpoint, EditorComponent component);
 
-  protected abstract void toggleBreakpoint(SNode node, boolean handleRemove);
+  protected abstract void toggleBreakpoint(SNode node);
 
   protected abstract EditorCell findDebuggableOrTraceableCell(EditorCell cell);
 
   public void toggleBreakpoint(EditorCell cell) {
     EditorCell debuggableCell = findDebuggableOrTraceableCell(cell);
     if (debuggableCell != null) {
-      toggleBreakpoint(debuggableCell.getSNode(), true);
+      toggleBreakpoint(debuggableCell.getSNode());
     }
   }
 
@@ -180,7 +180,7 @@ public abstract class BreakpointsUiComponentEx<B, L extends B> {
           public void run() {
             SNode node = findDebuggableNode(editorComponent, e.getX(), e.getY());
             if (node != null) {
-              toggleBreakpoint(node, true);
+              toggleBreakpoint(node);
             }
           }
         });

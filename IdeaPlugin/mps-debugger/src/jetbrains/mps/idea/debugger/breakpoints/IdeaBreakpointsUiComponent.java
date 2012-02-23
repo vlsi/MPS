@@ -109,7 +109,7 @@ public class IdeaBreakpointsUiComponent extends BreakpointsUiComponentEx<Breakpo
     }
 
     @Override
-    protected void toggleBreakpoint(final SNode node, boolean handleRemove) {
+    protected void toggleBreakpoint(final SNode node) {
         BreakpointWithHighlighter locationBreakpoint = findBreakpoint(node);
         if (locationBreakpoint != null) {
             myDebuggerManager.getBreakpointManager().removeBreakpoint(locationBreakpoint);

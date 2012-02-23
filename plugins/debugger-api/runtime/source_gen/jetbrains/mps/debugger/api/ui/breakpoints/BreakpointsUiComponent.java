@@ -170,7 +170,7 @@ public class BreakpointsUiComponent extends BreakpointsUiComponentEx<IBreakpoint
     return null;
   }
 
-  protected void toggleBreakpoint(@NotNull SNode node, boolean handleRemoveBreakpoint) {
+  protected void toggleBreakpoint(@NotNull SNode node) {
     SNode root = node.getContainingRoot();
     if (root == null) {
       return;
@@ -186,9 +186,7 @@ public class BreakpointsUiComponent extends BreakpointsUiComponentEx<IBreakpoint
       }
     }
     if (breakpoint != null) {
-      if (handleRemoveBreakpoint) {
-        myBreakpointsManagerComponent.removeBreakpoint(breakpoint);
-      }
+      myBreakpointsManagerComponent.removeBreakpoint(breakpoint);
     } else {
       ILocationBreakpoint newBreakpoint = myDebugInfoManager.createBreakpoint(node, myProject);
       if (newBreakpoint != null) {
