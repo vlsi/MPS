@@ -224,6 +224,8 @@ public class Solution extends AbstractModule {
     IFile modelsDir = descriptorFile.getParent().getDescendant(SOLUTION_MODELS);
     if (modelsDir.exists() && modelsDir.getChildren().size() != 0) {
       throw new IllegalStateException("Trying to create a solution in an existing solution's directory");
+    } else {
+      modelsDir.mkdirs();
     }
 
     // default descriptorModel roots

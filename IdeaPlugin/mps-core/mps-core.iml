@@ -43,6 +43,7 @@
       <sourceFolder url="file://$MODULE_DIR$/../../editor/editor-runtime/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../editor/intentions-runtime/source" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../editor/typesystemIntegration/source" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../editor/typesystemIntegration/source_gen" isTestSource="false" />
     </content>
     <content url="file://$MODULE_DIR$/../../languages/baseLanguage">
       <sourceFolder url="file://$MODULE_DIR$/../../languages/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.util/source_gen" isTestSource="false" />

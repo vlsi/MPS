@@ -24,6 +24,7 @@
     <action id="jetbrains.mps.ide.editor.actions.Delete_Action" class="jetbrains.mps.ide.editor.actions.Delete_Action">
       <keyboard-shortcut first-keystroke=" DELETE" keymap="$default"/>
     </action>
+    <action id="jetbrains.mps.ide.editor.actions.DoNotSuppressErrors_Action" class="jetbrains.mps.ide.editor.actions.DoNotSuppressErrors_Action"/>
     <action id="jetbrains.mps.ide.editor.actions.End_Action" class="jetbrains.mps.ide.editor.actions.End_Action">
       <keyboard-shortcut first-keystroke=" END" keymap="$default"/>
       <keyboard-shortcut first-keystroke=" END" keymap="Mac OS X"/>
@@ -236,6 +237,10 @@
       <reference ref="jetbrains.mps.ide.editor.actions.core.ShowNodeMessages_Action"/>
       <add-to-group group-id="jetbrains.mps.ide.editor.actions.EditorPopup_ActionGroup" anchor="last"/>
     </group>
+    <group id="jetbrains.mps.ide.editor.actions.SuppressErrorsGroup_ActionGroup">
+      <reference ref="jetbrains.mps.ide.editor.actions.DoNotSuppressErrors_Action"/>
+    </group>
+    <group id="jetbrains.mps.ide.editor.actions.ActionsAsIntentions_ActionGroup" popup="true"/>
     <group id="jetbrains.mps.ide.editor.actions.RefactoringActions_ActionGroup">
       <reference ref="jetbrains.mps.ide.platform.actions.NodeRefactoring_ActionGroup"></reference>
       <add-to-group group-id="EditorPopup_ActionGrouprefactoring" anchor="last"/>

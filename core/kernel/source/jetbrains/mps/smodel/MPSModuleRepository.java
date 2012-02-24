@@ -448,7 +448,7 @@ public class MPSModuleRepository implements CoreComponent {
     assertCanRead();
 
     for (IModule module : getAllModules()) {
-      Set<SModelRoot> smodelRoots = module.getSModelRoots();
+      Collection<SModelRoot> smodelRoots = module.getSModelRoots();
       for (SModelRoot root : smodelRoots) {
         String rootPath = root.getPath();
         if (path.startsWith(rootPath)) {

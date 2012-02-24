@@ -17,9 +17,15 @@
 package jetbrains.mps.ide.editor;
 
 import com.intellij.openapi.components.ProjectComponent;
+import jetbrains.mps.ide.editor.suppresserrors.SuppressErrorsChecker;
 import jetbrains.mps.nodeEditor.Highlighter;
+import jetbrains.mps.nodeEditor.checking.BaseEditorChecker;
 import jetbrains.mps.typesystem.checking.TypesEditorChecker;
 import org.jetbrains.annotations.NotNull;
+import typesystemIntegration.languageChecker.AutoResolver;
+import typesystemIntegration.languageChecker.LanguageEditorChecker;
+
+import java.util.Stack;
 
 /**
  * evgeny, 12/27/11
@@ -27,7 +33,7 @@ import org.jetbrains.annotations.NotNull;
 public class MPSValidationComponent implements ProjectComponent {
 
   private final Highlighter myHighlighter;
-  private TypesEditorChecker myTypesChecker;
+  private Stack<BaseEditorChecker> myCheckers = new Stack<BaseEditorChecker>();
 
   public MPSValidationComponent(Highlighter myHighlighter) {
     this.myHighlighter = myHighlighter;
@@ -35,14 +41,24 @@ public class MPSValidationComponent implements ProjectComponent {
 
   @Override
   public void initComponent() {
-    myTypesChecker = new TypesEditorChecker();
-    myHighlighter.addChecker(myTypesChecker);
+    // TODO: create editor-specific "core" component in editor-runtime module and register all common checkers from there
+    addChecker(new TypesEditorChecker());
+    addChecker(new AutoResolver());
+    addChecker(new LanguageEditorChecker());
+    addChecker(new SuppressErrorsChecker());
+  }
+
+  private void addChecker(BaseEditorChecker checker) {
+    myHighlighter.addChecker(myCheckers.push(checker));
   }
 
   @Override
   public void disposeComponent() {
-    myHighlighter.removeChecker(myTypesChecker);
-    myTypesChecker.dispose();
+    while (!myCheckers.isEmpty()) {
+      BaseEditorChecker checker = myCheckers.pop();
+      myHighlighter.removeChecker(checker);
+      checker.dispose();
+    }
   }
 
   @NotNull

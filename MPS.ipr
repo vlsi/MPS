@@ -119,11 +119,9 @@
       <modulePath path="${project}/languages/core/core/languageDescriptor.mpl" folder="core.language-design" />
       <modulePath path="${project}/languages/core/core/solutions/pluginSolution/pluginSolution.msd" folder="core.language-design" />
       <modulePath path="${project}/languages/languageDesign/actions/languageDescriptor.mpl" folder="core.language-design" />
-      <modulePath path="${project}/languages/languageDesign/actions/solutions/pluginSolution/pluginSolution.msd" folder="core.language-design" />
       <modulePath path="${project}/languages/languageDesign/behavior/languages/behavior/behavior.mpl" folder="core.language-design" />
       <modulePath path="${project}/languages/languageDesign/behavior/languages/behavior/solutions/pluginSolution/pluginSolution.msd" folder="core.language-design" />
       <modulePath path="${project}/languages/languageDesign/constraints/constraints.mpl" folder="core.language-design" />
-      <modulePath path="${project}/languages/languageDesign/constraints/solutions/pluginSolution/pluginSolution.msd" folder="core.language-design" />
       <modulePath path="${project}/languages/languageDesign/dataFlow/dataFlow.mpl" folder="core.language-design" />
       <modulePath path="${project}/languages/languageDesign/dataFlow/solutions/pluginSolution/pluginSolution.msd" folder="core.language-design" />
       <modulePath path="${project}/languages/languageDesign/editor/editor.mpl" folder="core.editor" />
@@ -131,13 +129,11 @@
       <modulePath path="${project}/languages/languageDesign/editor/languages/table/runtime/jetbrains.mps.table.runtime.msd" folder="core.editor" />
       <modulePath path="${project}/languages/languageDesign/editor/languages/table/table.mpl" folder="core.editor" />
       <modulePath path="${project}/languages/languageDesign/editor/languages/tableTests/tableTests.mpl" folder="core.editor" />
-      <modulePath path="${project}/languages/languageDesign/editor/solutions/pluginSolution/pluginSolution.msd" folder="core.editor" />
       <modulePath path="${project}/languages/languageDesign/editor/tests/jetbrains.mps.lang.editor.tests/jetbrains.mps.lang.editor.tests.msd" folder="core.editor" />
       <modulePath path="${project}/languages/languageDesign/editor/tests/table/jetbrains.mps.lang.editor.table.tests.msd" folder="core.editor" />
       <modulePath path="${project}/languages/languageDesign/extension/extension.mpl" folder="core.language-design" />
       <modulePath path="${project}/languages/languageDesign/extension/solutions/jetbrains.mps.lang.extension.tests/tests.msd" folder="core.language-design" />
       <modulePath path="${project}/languages/languageDesign/findUsages/findUsages.mpl" folder="core.language-design" />
-      <modulePath path="${project}/languages/languageDesign/findUsages/solutions/pluginSolution/pluginSolution.msd" folder="core.language-design" />
       <modulePath path="${project}/languages/languageDesign/generator/languages/descriptor/descriptor.mpl" folder="core.language-design" />
       <modulePath path="${project}/languages/languageDesign/generator/languages/errorReporting/errorReporting.mpl" folder="core.generator" />
       <modulePath path="${project}/languages/languageDesign/generator/languages/generationContext/generationContext.mpl" folder="core.generator" />
@@ -167,7 +163,6 @@
       <modulePath path="${project}/languages/languageDesign/quotation/quotation.mpl" folder="core.language-design" />
       <modulePath path="${project}/languages/languageDesign/quotation/solutions/pluginSolution/pluginSolution.msd" folder="core.language-design" />
       <modulePath path="${project}/languages/languageDesign/refactoring/refactoring.mpl" folder="core.language-design" />
-      <modulePath path="${project}/languages/languageDesign/refactoring/solutions/pluginSolution/pluginSolution.msd" folder="core.language-design" />
       <modulePath path="${project}/languages/languageDesign/script/script.mpl" folder="core.language-design" />
       <modulePath path="${project}/languages/languageDesign/script/solutions/pluginSolution/pluginSolution.msd" folder="core.language-design" />
       <modulePath path="${project}/languages/languageDesign/sharedConcepts/sharedConcepts.mpl" folder="core.language-design" />
@@ -186,7 +181,6 @@
       <modulePath path="${project}/languages/languageDesign/test/solutions/pluginSolution/pluginSolution.msd" folder="core.language-design" />
       <modulePath path="${project}/languages/languageDesign/test/solutions/sandbox/sandbox.msd" folder="core.language-design" />
       <modulePath path="${project}/languages/languageDesign/test/test.mpl" folder="core.language-design" />
-      <modulePath path="${project}/languages/languageDesign/textGen/solutions/pluginSolution/pluginSolution.msd" folder="core.language-design" />
       <modulePath path="${project}/languages/languageDesign/textGen/textGen.mpl" folder="core.language-design" />
       <modulePath path="${project}/languages/languageDesign/traceable/solutions/pluginSolution/pluginSolution.msd" folder="core.language-design" />
       <modulePath path="${project}/languages/languageDesign/traceable/traceable.mpl" folder="core.language-design" />
