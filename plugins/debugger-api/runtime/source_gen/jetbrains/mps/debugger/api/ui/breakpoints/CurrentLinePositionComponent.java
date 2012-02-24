@@ -16,7 +16,7 @@ import jetbrains.mps.debug.api.programState.ILocation;
 import jetbrains.mps.debug.api.programState.NullLocation;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.generator.traceInfo.TraceInfoUtil;
+import jetbrains.mps.generator.traceInfo.TraceInfoUtil2;
 import jetbrains.mps.debug.api.SessionChangeAdapter;
 
 public class CurrentLinePositionComponent extends CurrentLinePositionComponentEx<AbstractDebugSession> implements ProjectComponent {
@@ -83,7 +83,7 @@ public class CurrentLinePositionComponent extends CurrentLinePositionComponentEx
     String fileName = position._1();
     int lineNumber = (int) position._2();
 
-    return TraceInfoUtil.getNode(unitName, fileName, lineNumber);
+    return TraceInfoUtil2.getInstance().getNode(unitName, fileName, lineNumber);
   }
 
   private class MyCurrentDebugSessionListener implements DebugSessionManagerComponent.DebugSessionListener {

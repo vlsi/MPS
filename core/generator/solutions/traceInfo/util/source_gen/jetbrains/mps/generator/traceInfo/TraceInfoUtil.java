@@ -7,11 +7,7 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.util.Mapper2;
 import jetbrains.mps.traceInfo.DebugInfo;
 import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.SModelStereotype;
-import jetbrains.mps.smodel.SModelRepository;
-import jetbrains.mps.smodel.SModelFqName;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.util.Computable;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.traceInfo.PositionInfo;
@@ -20,8 +16,6 @@ import java.util.List;
 import jetbrains.mps.util.Mapper;
 import jetbrains.mps.traceInfo.DebugInfoRoot;
 import java.util.Set;
-import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
-import java.util.ArrayList;
 import jetbrains.mps.traceInfo.TraceablePositionInfo;
 import jetbrains.mps.traceInfo.ScopePositionInfo;
 
@@ -30,36 +24,12 @@ public class TraceInfoUtil {
   }
 
   @Nullable
-  public static <T> T findInDebugInfo(@NotNull String className, @NotNull final Mapper2<? super DebugInfo, ? super SModelDescriptor, ? extends T> nodeGetter) {
-    int lastDot = className.lastIndexOf(".");
-    String pkg = ((lastDot == -1 ?
-      "" :
-      className.substring(0, lastDot)
-    ));
-    for (String stereotype : SModelStereotype.values) {
-      final SModelDescriptor descriptor = SModelRepository.getInstance().getModelDescriptor(new SModelFqName(pkg, stereotype));
-      if (descriptor == null) {
-        continue;
+  public static <T> T findInDebugInfo(@NotNull String unitName, @NotNull final Mapper2<? super DebugInfo, ? super SModelDescriptor, ? extends T> nodeGetter) {
+    return TraceInfoUtil2.getInstance().findInTraceInfo(unitName, new _FunctionTypes._return_P2_E0<T, DebugInfo, SModelDescriptor>() {
+      public T invoke(DebugInfo info, SModelDescriptor descriptor) {
+        return (T) nodeGetter.value(info, descriptor);
       }
-      if (SModelStereotype.isStubModelStereotype(descriptor.getStereotype())) {
-        continue;
-      }
-      final DebugInfo info = TraceInfoCache.getInstance().get(descriptor);
-      if (info == null) {
-        continue;
-      }
-      //  todo tryRead does really fit here(?) 
-      T result = ModelAccess.instance().tryRead(new Computable<T>() {
-        @Override
-        public T compute() {
-          return nodeGetter.value(info, descriptor);
-        }
-      });
-      if (result != null) {
-        return result;
-      }
-    }
-    return null;
+    });
   }
 
   @Nullable
@@ -74,7 +44,7 @@ public class TraceInfoUtil {
   @Nullable
   public static SNode getUnitNode(@NotNull String className, final String file, final int position) {
     return TraceInfoUtil.findInDebugInfo(className, new Mapper2<DebugInfo, SModelDescriptor, SNode>() {
-      public SNode value(DebugInfo result, SModelDescriptor descriptor) {
+      public SNode value(final DebugInfo result, final SModelDescriptor descriptor) {
         return result.getUnitNodeForLine(file, position, descriptor.getSModel());
       }
     });
@@ -83,7 +53,7 @@ public class TraceInfoUtil {
   @Nullable
   public static SNode getNode(@NotNull String className, final String file, final int position) {
     return TraceInfoUtil.findInDebugInfo(className, new Mapper2<DebugInfo, SModelDescriptor, SNode>() {
-      public SNode value(DebugInfo result, SModelDescriptor descriptor) {
+      public SNode value(final DebugInfo result, final SModelDescriptor descriptor) {
         return result.getNodeForLine(file, position, descriptor.getSModel());
       }
     });
@@ -92,7 +62,7 @@ public class TraceInfoUtil {
   @Nullable
   public static SNode getVar(@NotNull String className, final String file, final int position, @NotNull final String varName) {
     return TraceInfoUtil.findInDebugInfo(className, new Mapper2<DebugInfo, SModelDescriptor, SNode>() {
-      public SNode value(DebugInfo result, SModelDescriptor descriptor) {
+      public SNode value(final DebugInfo result, final SModelDescriptor descriptor) {
         return result.getVarForLine(file, position, descriptor.getSModel(), varName);
       }
     });
@@ -145,21 +115,9 @@ public class TraceInfoUtil {
 
   @Nullable
   public static <T extends PositionInfo> List<SNode> getAllNodes(@NotNull String className, final String file, final int position, final Mapper<DebugInfoRoot, ? extends Set<T>> positionsGetter) {
-    return findInDebugInfo(className, new Mapper2<DebugInfo, SModelDescriptor, List<SNode>>() {
-      public List<SNode> value(DebugInfo result, SModelDescriptor descriptor) {
-        List<T> infoForPosition = result.getInfoForPosition(file, position, new _FunctionTypes._return_P1_E0<Set<T>, DebugInfoRoot>() {
-          public Set<T> invoke(DebugInfoRoot root) {
-            return positionsGetter.value(root);
-          }
-        });
-        List<SNode> nodes = new ArrayList<SNode>();
-        if (infoForPosition.isEmpty()) {
-          return null;
-        }
-        for (T info : infoForPosition) {
-          nodes.add(descriptor.getSModel().getNodeById(info.getNodeId()));
-        }
-        return nodes;
+    return TraceInfoUtil2.getInstance().getAllNodes(className, file, position, new _FunctionTypes._return_P1_E0<Set<T>, DebugInfoRoot>() {
+      public Set<T> invoke(DebugInfoRoot info) {
+        return positionsGetter.value(info);
       }
     });
   }

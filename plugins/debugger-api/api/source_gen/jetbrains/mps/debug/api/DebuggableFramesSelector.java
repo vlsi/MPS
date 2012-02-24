@@ -7,8 +7,8 @@ import java.util.List;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.debug.api.programState.ILocation;
 import jetbrains.mps.debug.api.programState.NullLocation;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.generator.traceInfo.TraceInfoUtil;
+import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.generator.traceInfo.TraceInfoUtil2;
 import org.apache.commons.lang.ObjectUtils;
 
 public class DebuggableFramesSelector implements IDebuggableFramesSelector {
@@ -49,13 +49,13 @@ public class DebuggableFramesSelector implements IDebuggableFramesSelector {
     if (location instanceof NullLocation) {
       return false;
     }
-    SNode node = TraceInfoUtil.getNode(location.getUnitName(), location.getFileName(), location.getLineNumber());
-    return node != null;
+    SNodePointer nodePointer = TraceInfoUtil2.getInstance().getNodePointer(location.getUnitName(), location.getFileName(), location.getLineNumber());
+    return nodePointer != null;
   }
 
   @Override
   public boolean isDebuggablePosition(String unitName, String fileName, int position) {
-    SNode node = TraceInfoUtil.getNode(unitName, fileName, position);
+    SNodePointer node = TraceInfoUtil2.getInstance().getNodePointer(unitName, fileName, position);
     return node != null;
   }
 
@@ -64,8 +64,15 @@ public class DebuggableFramesSelector implements IDebuggableFramesSelector {
     if (ObjectUtils.equals(lastUnitName, nextUnitName) && lastLineNumber == nextLineNumber && lastFrameCount == nextFrameCount) {
       return true;
     }
-    SNode lastNode = TraceInfoUtil.getNode(lastUnitName, lastFileName, lastLineNumber);
-    SNode nextNode = TraceInfoUtil.getNode(nextUnitName, nextFileName, nextLineNumber);
-    return lastNode == nextNode;
+    SNodePointer lastPointer = TraceInfoUtil2.getInstance().getNodePointer(lastUnitName, lastFileName, lastLineNumber);
+    SNodePointer nextPointer = TraceInfoUtil2.getInstance().getNodePointer(nextUnitName, nextFileName, nextLineNumber);
+    return eq_xhry8p_a0d0e(lastPointer, nextPointer);
+  }
+
+  private static boolean eq_xhry8p_a0d0e(Object a, Object b) {
+    return (a != null ?
+      a.equals(b) :
+      a == b
+    );
   }
 }
