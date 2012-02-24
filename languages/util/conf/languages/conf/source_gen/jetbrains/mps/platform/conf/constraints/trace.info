@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <unitInfo fileName="BeanExtensionPoint_Constraints.java" startLine="7" startPosition="0" endLine="12" endPosition="0" unitName="jetbrains.mps.platform.conf.constraints.BeanExtensionPoint_Constraints" />
+  <unitInfo fileName="ConfigurationXmlDocument_Constraints.java" startLine="7" startPosition="0" endLine="12" endPosition="0" unitName="jetbrains.mps.platform.conf.constraints.ConfigurationXmlDocument_Constraints" />
   <unitInfo fileName="ConstraintsAspectDescriptor.java" startLine="9" startPosition="0" endLine="61" endPosition="0" unitName="jetbrains.mps.platform.conf.constraints.ConstraintsAspectDescriptor" />
   <root nodeId="2195238324467320952">
     <nodeInfo nodeId="2195238324467320952" fileName="Plugin_Constraints.java" startLine="74" startPosition="44" endLine="74" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />

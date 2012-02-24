@@ -112,7 +112,6 @@
   <unitInfo fileName="IconResource_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.lang.plugin.behavior.IconResource_BehaviorDescriptor" />
   <unitInfo fileName="IdeaActionsDescriptor_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.plugin.behavior.IdeaActionsDescriptor_BehaviorDescriptor" />
   <unitInfo fileName="IdeaConfigurationXml_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.lang.plugin.behavior.IdeaConfigurationXml_BehaviorDescriptor" />
-  <unitInfo fileName="IdeaInitializerDescriptor_Behavior.java" startLine="7" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.lang.plugin.behavior.IdeaInitializerDescriptor_Behavior" />
   <unitInfo fileName="IdeaInitializerDescriptor_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.lang.plugin.behavior.IdeaInitializerDescriptor_BehaviorDescriptor" />
   <unitInfo fileName="IdeaPluginDependency_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.lang.plugin.behavior.IdeaPluginDependency_BehaviorDescriptor" />
   <unitInfo fileName="InitBlock_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.plugin.behavior.InitBlock_BehaviorDescriptor" />

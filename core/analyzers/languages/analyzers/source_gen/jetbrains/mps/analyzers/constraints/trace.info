@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <unitInfo fileName="ConceptCondition_Constraints.java" startLine="7" startPosition="0" endLine="12" endPosition="0" unitName="jetbrains.mps.analyzers.constraints.ConceptCondition_Constraints" />
   <unitInfo fileName="ConstraintsAspectDescriptor.java" startLine="9" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.analyzers.constraints.ConstraintsAspectDescriptor" />
+  <unitInfo fileName="EmitInstruction_Constraints.java" startLine="7" startPosition="0" endLine="12" endPosition="0" unitName="jetbrains.mps.analyzers.constraints.EmitInstruction_Constraints" />
   <root nodeId="178770917832460637">
     <nodeInfo nodeId="178770917832460637" fileName="AnalyzerRunnerCreator_Constraints.java" startLine="18" startPosition="82" endLine="19" endPosition="189" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="breakingNode_3xwrd2_a0a1a0a0a1a0b0a1a0" />
     <nodeInfo nodeId="178770917832460637" fileName="AnalyzerRunnerCreator_Constraints.java" startLine="21" startPosition="46" endLine="22" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />

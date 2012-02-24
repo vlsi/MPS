@@ -15,6 +15,7 @@ import jetbrains.mps.project.StubPath;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import java.util.Collection;
+import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import jetbrains.mps.smodel.LanguageID;
 import jetbrains.mps.project.SModelRoot;
 import jetbrains.mps.smodel.Language;
@@ -74,7 +75,7 @@ public class Module_Behavior {
   public static List<SNode> call_getClassPathDirectories_1213877515083(SNode thisNode, boolean includeHomeLib) {
     AbstractModule module = (AbstractModule) Module_Behavior.call_getModule_1213877515148(thisNode);
     Collection<StubPath> paths = Module_Behavior.call_getClassPathExcludingIdea_2000252915626233691(thisNode, module);
-    return Module_Behavior.call_getPathHolders_4642981534832278885(thisNode, Sequence.fromIterable(Module_Behavior.call_convertSeparators_4777659345279794559(thisNode, Sequence.fromIterable(((Collection<StubPath>) paths)).where(new IWhereFilter<StubPath>() {
+    return Module_Behavior.call_getPathHolders_4642981534832278885(thisNode, Sequence.fromIterable(Module_Behavior.call_convertSeparators_4777659345279794559(thisNode, CollectionSequence.fromCollection(((Collection<StubPath>) paths)).where(new IWhereFilter<StubPath>() {
       public boolean accept(StubPath it) {
         return LanguageID.JAVA_MANAGER.equals(it.getManager()) || it.getPath().endsWith(".jar");
       }
@@ -113,7 +114,7 @@ public class Module_Behavior {
     if (module instanceof Language) {
       List<SNode> result = ListSequence.fromList(Module_Behavior.call_getPathHolders_4642981534832278885(thisNode, Sequence.fromIterable(Module_Behavior.call_convertSeparators_4777659345279794559(thisNode, ((Language) module).getRuntimeStubPaths())).distinct().toListSequence(), true, includeHomeLib)).subtract(ListSequence.fromList(Module_Behavior.call_getClassPathDirectories_1213877515083(thisNode, true))).toListSequence();
       if (includeRuntimeSolutions) {
-        for (ModuleReference runtimeDependency : Sequence.fromIterable(((Language) module).getRuntimeModulesReferences())) {
+        for (ModuleReference runtimeDependency : CollectionSequence.fromCollection(((Language) module).getRuntimeModulesReferences())) {
           IModule runtimeDependencyModule = MPSModuleRepository.getInstance().getModule(runtimeDependency);
           if (runtimeDependencyModule instanceof Solution) {
             // TODO proper module in holder? 

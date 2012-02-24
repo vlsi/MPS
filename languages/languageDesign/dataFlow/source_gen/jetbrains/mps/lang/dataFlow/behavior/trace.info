@@ -7,8 +7,8 @@
   <unitInfo fileName="BeforePosition_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.behavior.BeforePosition_BehaviorDescriptor" />
   <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="70" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.behavior.BehaviorAspectDescriptor" />
   <unitInfo fileName="BooleanInstructionOperation_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.behavior.BooleanInstructionOperation_BehaviorDescriptor" />
+  <unitInfo fileName="BuilderBlock_Behavior.java" startLine="7" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.behavior.BuilderBlock_Behavior" />
   <unitInfo fileName="BuilderBlock_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.behavior.BuilderBlock_BehaviorDescriptor" />
-  <unitInfo fileName="DataFlowBuilderDeclaration_Behavior.java" startLine="12" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.behavior.DataFlowBuilderDeclaration_Behavior" />
   <unitInfo fileName="DataFlowBuilderDeclaration_BehaviorDescriptor.java" startLine="13" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.behavior.DataFlowBuilderDeclaration_BehaviorDescriptor" />
   <unitInfo fileName="EmitCodeForStatement_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.behavior.EmitCodeForStatement_BehaviorDescriptor" />
   <unitInfo fileName="EmitIfJumpStatement_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.behavior.EmitIfJumpStatement_BehaviorDescriptor" />
