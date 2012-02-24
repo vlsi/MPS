@@ -5083,27 +5083,27 @@
           <module ref="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" />
           <module ref="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
         </dependencies>
-        <library jar="jmock-junit4-2.5.1.jar" />
-        <library jar="objenesis-1.0.jar" />
-        <library jar="jmock-junit3-2.5.1.jar" />
-        <library jar="/lib/junit-4.10.jar" />
+        <library jar="bsh-core-2.0b4.jar" />
         <library jar="cglib-nodep-2.1_3.jar" />
+        <library jar="hamcrest-core-1.1.jar" />
         <library jar="hamcrest-library-1.1.jar" />
         <library jar="jmock-2.5.1.jar" />
-        <library jar="hamcrest-core-1.1.jar" />
-        <library jar="bsh-core-2.0b4.jar" />
+        <library jar="jmock-junit3-2.5.1.jar" />
+        <library jar="jmock-junit4-2.5.1.jar" />
+        <library jar="objenesis-1.0.jar" />
+        <library jar="/lib/junit-4.10.jar" />
         <sources jar="jetbrains.mps.baseLanguage.unitTest.libs-src.jar" descriptor="jetbrains.mps.baseLnaguage.unitTest.lib.msd" />
       </module>
     </echoxml>
     <mkdir dir="${deploy.dir}/MPS/languages/baseLanguage/jetbrains.mps.baseLanguage.unitTest.libs" />
-    <copy todir="${deploy.dir}/MPS/languages/baseLanguage/jetbrains.mps.baseLanguage.unitTest.libs" file="${base_dir}/languages/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit4-2.5.1.jar" />
-    <copy todir="${deploy.dir}/MPS/languages/baseLanguage/jetbrains.mps.baseLanguage.unitTest.libs" file="${base_dir}/languages/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
-    <copy todir="${deploy.dir}/MPS/languages/baseLanguage/jetbrains.mps.baseLanguage.unitTest.libs" file="${base_dir}/languages/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit3-2.5.1.jar" />
+    <copy todir="${deploy.dir}/MPS/languages/baseLanguage/jetbrains.mps.baseLanguage.unitTest.libs" file="${base_dir}/languages/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/bsh-core-2.0b4.jar" />
     <copy todir="${deploy.dir}/MPS/languages/baseLanguage/jetbrains.mps.baseLanguage.unitTest.libs" file="${base_dir}/languages/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/cglib-nodep-2.1_3.jar" />
+    <copy todir="${deploy.dir}/MPS/languages/baseLanguage/jetbrains.mps.baseLanguage.unitTest.libs" file="${base_dir}/languages/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/hamcrest-core-1.1.jar" />
     <copy todir="${deploy.dir}/MPS/languages/baseLanguage/jetbrains.mps.baseLanguage.unitTest.libs" file="${base_dir}/languages/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/hamcrest-library-1.1.jar" />
     <copy todir="${deploy.dir}/MPS/languages/baseLanguage/jetbrains.mps.baseLanguage.unitTest.libs" file="${base_dir}/languages/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-2.5.1.jar" />
-    <copy todir="${deploy.dir}/MPS/languages/baseLanguage/jetbrains.mps.baseLanguage.unitTest.libs" file="${base_dir}/languages/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/hamcrest-core-1.1.jar" />
-    <copy todir="${deploy.dir}/MPS/languages/baseLanguage/jetbrains.mps.baseLanguage.unitTest.libs" file="${base_dir}/languages/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/bsh-core-2.0b4.jar" />
+    <copy todir="${deploy.dir}/MPS/languages/baseLanguage/jetbrains.mps.baseLanguage.unitTest.libs" file="${base_dir}/languages/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit3-2.5.1.jar" />
+    <copy todir="${deploy.dir}/MPS/languages/baseLanguage/jetbrains.mps.baseLanguage.unitTest.libs" file="${base_dir}/languages/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit4-2.5.1.jar" />
+    <copy todir="${deploy.dir}/MPS/languages/baseLanguage/jetbrains.mps.baseLanguage.unitTest.libs" file="${base_dir}/languages/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
     <jar destfile="${deploy.dir}/MPS/languages/baseLanguage/jetbrains.mps.baseLanguage.unitTest.libs/jetbrains.mps.baseLanguage.unitTest.libs-src.jar" compress="true" duplicate="preserve" filesonly="true">
       <zipfileset dir="${base_dir}/languages/baseLanguage/unitTest/solutions/lib/source_gen" includes="**/*.java" erroronmissingdir="false" />
       <zipfileset dir="${base_dir}/languages/baseLanguage/unitTest/solutions/lib/test_gen" includes="**/*.java" erroronmissingdir="false" />
@@ -15979,8 +15979,8 @@
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
           <module ref="feddcab7-7240-49eb-bd42-e15e0a95cb26(jetbrains.mps.lang.intentions.pluginSolution)" />
         </dependencies>
-        <library jar="/lib/ant/lib/ant.jar" />
         <library jar="/lib/ant/lib/ant-launcher.jar" />
+        <library jar="/lib/ant/lib/ant.jar" />
         <sources jar="jetbrains.mps.build.generictasks-src.jar" descriptor="generictasks.mpl" />
       </module>
     </echoxml>
@@ -20698,16 +20698,16 @@
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
           <module ref="feddcab7-7240-49eb-bd42-e15e0a95cb26(jetbrains.mps.lang.intentions.pluginSolution)" />
         </dependencies>
-        <library jar="gwt-user.jar" />
-        <library jar="gwt-servlet.jar" />
         <library jar="gwt-dev.jar" />
+        <library jar="gwt-servlet.jar" />
+        <library jar="gwt-user.jar" />
         <sources jar="jetbrains.mps.gwt.client-src.jar" descriptor="client.mpl" />
       </module>
     </echoxml>
     <mkdir dir="${deploy.dir}/MPS/languages/util/jetbrains.mps.gwt.client" />
-    <copy todir="${deploy.dir}/MPS/languages/util/jetbrains.mps.gwt.client" file="${base_dir}/languages/util/gwtsupport/languages/client/redist/gwt-user.jar" />
-    <copy todir="${deploy.dir}/MPS/languages/util/jetbrains.mps.gwt.client" file="${base_dir}/languages/util/gwtsupport/languages/client/redist/gwt-servlet.jar" />
     <copy todir="${deploy.dir}/MPS/languages/util/jetbrains.mps.gwt.client" file="${base_dir}/languages/util/gwtsupport/languages/client/redist/gwt-dev.jar" />
+    <copy todir="${deploy.dir}/MPS/languages/util/jetbrains.mps.gwt.client" file="${base_dir}/languages/util/gwtsupport/languages/client/redist/gwt-servlet.jar" />
+    <copy todir="${deploy.dir}/MPS/languages/util/jetbrains.mps.gwt.client" file="${base_dir}/languages/util/gwtsupport/languages/client/redist/gwt-user.jar" />
     <jar destfile="${deploy.dir}/MPS/languages/util/jetbrains.mps.gwt.client/jetbrains.mps.gwt.client-src.jar" compress="true" duplicate="preserve" filesonly="true">
       <zipfileset dir="${base_dir}/languages/util/gwtsupport/languages/client/source_gen" includes="**/*.java" erroronmissingdir="false" />
       <zipfileset dir="${base_dir}/languages/util/gwtsupport/languages/client/test_gen" includes="**/*.java" erroronmissingdir="false" />
