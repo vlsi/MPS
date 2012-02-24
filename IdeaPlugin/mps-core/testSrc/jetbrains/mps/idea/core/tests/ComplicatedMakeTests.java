@@ -73,7 +73,7 @@ public class ComplicatedMakeTests extends AbstractMakeTest {
     assertExists(outputDir, "code/trace.info");
     assertTrue(outputDir.findFileByRelativePath("code").getChildren().length == 2);
 
-    assertExists(models, "Manifest.xml");
+    assertExists(models, "Manifest.java");
     assertExists(models, "trace.info");
     assertTrue(models.getChildren().length == 4);
 
