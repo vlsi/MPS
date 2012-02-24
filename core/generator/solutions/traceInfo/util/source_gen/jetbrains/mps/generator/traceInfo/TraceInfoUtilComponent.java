@@ -62,6 +62,18 @@ public class TraceInfoUtilComponent implements CoreComponent {
     INSTANCE = null;
   }
 
+  public _FunctionTypes._return_P1_E0<? extends String, ? super String> putMapper(String key, _FunctionTypes._return_P1_E0<? extends String, ? super String> mapper) {
+    _FunctionTypes._return_P1_E0<? extends String, ? super String> oldMapper = MapSequence.fromMap(myUnitNameToModelNameMapper).get(key);
+
+    MapSequence.fromMap(myUnitNameToModelNameMapper).put(key, mapper);
+
+    return oldMapper;
+  }
+
+  public _FunctionTypes._return_P1_E0<? extends String, ? super String> removeMapper(String key) {
+    return MapSequence.fromMap(myUnitNameToModelNameMapper).removeKey(key);
+  }
+
   public Iterable<SModelDescriptor> getCandidateModels(String unitName) {
     return getCandidateModels(unitName, Sequence.fromIterable(Sequence.<_FunctionTypes._return_P1_E0<? extends String, ? super String>>singleton(myDefaultUnitNameToModelNameMapper)).union(Sequence.fromIterable(MapSequence.fromMap(myUnitNameToModelNameMapper).values())));
   }
@@ -102,14 +114,6 @@ public class TraceInfoUtilComponent implements CoreComponent {
       return Sequence.fromIterable(Collections.<SModelDescriptor>emptyList());
     }
     return getCandidateModels(unitName, Sequence.<_FunctionTypes._return_P1_E0<? extends String, ? super String>>singleton(mapper));
-  }
-
-  public _FunctionTypes._return_P1_E0<? extends String, ? super String> putMapper(String key, _FunctionTypes._return_P1_E0<? extends String, ? super String> mapper) {
-    _FunctionTypes._return_P1_E0<? extends String, ? super String> oldMapper = MapSequence.fromMap(myUnitNameToModelNameMapper).get(key);
-
-    MapSequence.fromMap(myUnitNameToModelNameMapper).put(key, mapper);
-
-    return oldMapper;
   }
 
   @Nullable
@@ -175,10 +179,6 @@ public class TraceInfoUtilComponent implements CoreComponent {
         return null;
       }
     });
-  }
-
-  public _FunctionTypes._return_P1_E0<? extends String, ? super String> removeMapper(String key) {
-    return MapSequence.fromMap(myUnitNameToModelNameMapper).removeKey(key);
   }
 
   public static TraceInfoUtilComponent getInstance() {

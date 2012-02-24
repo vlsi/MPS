@@ -9,6 +9,10 @@ import jetbrains.mps.traceInfo.DebugInfo;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.smodel.SNode;
+import org.jetbrains.annotations.NonNls;
+import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.util.Computable;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.traceInfo.UnitPositionInfo;
 import jetbrains.mps.traceInfo.PositionInfo;
@@ -16,8 +20,6 @@ import java.util.List;
 import jetbrains.mps.util.Mapper;
 import jetbrains.mps.traceInfo.DebugInfoRoot;
 import java.util.Set;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.util.Computable;
 import jetbrains.mps.traceInfo.TraceablePositionInfo;
 import jetbrains.mps.traceInfo.ScopePositionInfo;
 
@@ -26,6 +28,7 @@ public class TraceInfoUtil {
   }
 
   @Nullable
+  @Deprecated
   public static <T> T findInDebugInfo(@NotNull String unitName, @NotNull final Mapper2<? super DebugInfo, ? super SModelDescriptor, ? extends T> nodeGetter) {
     return TraceInfoUtilComponent.getInstance().findInTraceInfo(unitName, new _FunctionTypes._return_P2_E0<T, DebugInfo, SModelDescriptor>() {
       public T invoke(DebugInfo info, SModelDescriptor descriptor) {
@@ -36,36 +39,49 @@ public class TraceInfoUtil {
 
   @Nullable
   public static String getUnitName(@NotNull String className, final String file, final int position) {
-    return TraceInfoUtil.findInDebugInfo(className, new Mapper2<DebugInfo, SModelDescriptor, String>() {
-      public String value(DebugInfo info, SModelDescriptor descriptor) {
+    return TraceInfoUtilComponent.getInstance().findInTraceInfo(className, new _FunctionTypes._return_P2_E0<String, DebugInfo, SModelDescriptor>() {
+      public String invoke(DebugInfo info, SModelDescriptor descriptor) {
         return info.getUnitNameForLine(file, position);
       }
     });
   }
 
   @Nullable
-  public static SNode getUnitNode(@NotNull String className, final String file, final int position) {
-    return TraceInfoUtil.findInDebugInfo(className, new Mapper2<DebugInfo, SModelDescriptor, SNode>() {
-      public SNode value(final DebugInfo result, final SModelDescriptor descriptor) {
-        return result.getUnitNodeForLine(file, position, descriptor.getSModel());
+  public static SNode getUnitNode(@NonNls String className, final String file, final int position) {
+    return TraceInfoUtilComponent.getInstance().findInTraceInfo(className, new _FunctionTypes._return_P2_E0<SNode, DebugInfo, SModelDescriptor>() {
+      public SNode invoke(DebugInfo info, SModelDescriptor descriptor) {
+        return info.getUnitNodeForLine(file, position, descriptor.getSModel());
       }
     });
   }
 
   @Nullable
-  public static SNode getNode(@NotNull String className, final String file, final int position) {
-    return TraceInfoUtil.findInDebugInfo(className, new Mapper2<DebugInfo, SModelDescriptor, SNode>() {
-      public SNode value(final DebugInfo result, final SModelDescriptor descriptor) {
-        return result.getNodeForLine(file, position, descriptor.getSModel());
+  public static SNode getNode(@NonNls String className, final String file, final int position) {
+    return TraceInfoUtilComponent.getInstance().findInTraceInfo(className, new _FunctionTypes._return_P2_E0<SNode, DebugInfo, SModelDescriptor>() {
+      public SNode invoke(DebugInfo info, SModelDescriptor descriptor) {
+        return info.getNodeForLine(file, position, descriptor.getSModel());
       }
     });
   }
 
   @Nullable
-  public static SNode getVar(@NotNull String className, final String file, final int position, @NotNull final String varName) {
-    return TraceInfoUtil.findInDebugInfo(className, new Mapper2<DebugInfo, SModelDescriptor, SNode>() {
-      public SNode value(final DebugInfo result, final SModelDescriptor descriptor) {
-        return result.getVarForLine(file, position, descriptor.getSModel(), varName);
+  public static SNodePointer getNodePointer(@NonNls final String className, final String file, final int position) {
+    return ModelAccess.instance().runReadAction(new Computable<SNodePointer>() {
+      public SNodePointer compute() {
+        SNode node = getNode(className, file, position);
+        if (node == null) {
+          return null;
+        }
+        return new SNodePointer(node);
+      }
+    });
+  }
+
+  @Nullable
+  public static SNode getVar(@NonNls String className, final String file, final int position, @NonNls final String varName) {
+    return TraceInfoUtilComponent.getInstance().findInTraceInfo(className, new _FunctionTypes._return_P2_E0<SNode, DebugInfo, SModelDescriptor>() {
+      public SNode invoke(DebugInfo info, SModelDescriptor descriptor) {
+        return info.getVarForLine(file, position, descriptor.getSModel(), varName);
       }
     });
   }
