@@ -192,7 +192,7 @@ public abstract class BreakpointsUiComponentEx<B> {
 
     @Override
     public void editorComponentDisposed(@NotNull EditorComponent editorComponent) {
-      BreakpointsUiComponentEx.this.editorComponentCreated(editorComponent);
+      BreakpointsUiComponentEx.this.editorComponentDisposed(editorComponent);
     }
   }
 }
