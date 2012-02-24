@@ -26,6 +26,7 @@ import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.language.LanguageRuntime;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import java.util.Collection;
+import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 
 public class ModulesClusterizer {
   private static Logger LOG = Logger.getLogger(ModulesCluster.class);
@@ -119,7 +120,7 @@ public class ModulesClusterizer {
                 continue;
               }
               if (!(SetSequence.fromSet(seen).contains(tm))) {
-                QueueSequence.fromQueue(nsq).addSequence(Sequence.fromIterable(tm.getUsedLanguages()));
+                QueueSequence.fromQueue(nsq).addSequence(CollectionSequence.fromCollection(tm.getUsedLanguages()));
                 SetSequence.fromSet(seen).addElement(tm);
               }
             }

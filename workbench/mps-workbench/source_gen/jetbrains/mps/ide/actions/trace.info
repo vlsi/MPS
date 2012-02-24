@@ -12037,7 +12037,7 @@
     <nodeInfo nodeId="4691887782450489295" fileName="SafeDeleteModuleDependency_Action.java" startLine="135" startPosition="83" endLine="138" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="629814680568915653" fileName="SafeDeleteModuleDependency_Action.java" startLine="48" startPosition="9" endLine="52" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="629814680568915653" fileName="SafeDeleteModuleDependency_Action.java" startLine="64" startPosition="5" endLine="68" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="5013162914354630624" fileName="SafeDeleteModuleDependency_Action.java" startLine="99" startPosition="132" endLine="103" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/project/structure/modules/Dependency;)Z" />
+    <nodeInfo nodeId="5013162914354630624" fileName="SafeDeleteModuleDependency_Action.java" startLine="99" startPosition="144" endLine="103" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/project/structure/modules/Dependency;)Z" />
     <nodeInfo nodeId="4592840740430526330" fileName="SafeDeleteModuleDependency_Action.java" startLine="142" startPosition="67" endLine="146" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4592840740430526400" fileName="SafeDeleteModuleDependency_Action.java" startLine="149" startPosition="69" endLine="153" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4691887782450489263" fileName="SafeDeleteModuleDependency_Action.java" startLine="156" startPosition="69" endLine="160" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -12094,7 +12094,7 @@
     </scopeInfo>
     <scopeInfo nodeId="629814680568915653" fileName="SafeDeleteModuleDependency_Action.java" startLine="53" startPosition="27" endLine="57" endPosition="44" />
     <scopeInfo nodeId="629814680568915653" fileName="SafeDeleteModuleDependency_Action.java" startLine="64" startPosition="5" endLine="68" endPosition="5" />
-    <scopeInfo nodeId="5013162914354630624" fileName="SafeDeleteModuleDependency_Action.java" startLine="99" startPosition="132" endLine="103" endPosition="0">
+    <scopeInfo nodeId="5013162914354630624" fileName="SafeDeleteModuleDependency_Action.java" startLine="99" startPosition="144" endLine="103" endPosition="0">
       <varInfo nodeId="5013162914354630624" varName="it" />
     </scopeInfo>
     <scopeInfo nodeId="4592840740430526329" fileName="SafeDeleteModuleDependency_Action.java" startLine="114" startPosition="85" endLine="118" endPosition="16" />
@@ -12173,7 +12173,7 @@
       <varInfo nodeId="629814680568915653" varName="event" />
     </scopeInfo>
     <unitInfo nodeId="629814680568915653" fileName="SafeDeleteModuleDependency_Action.java" startLine="32" startPosition="0" endLine="170" endPosition="0" unitName="jetbrains.mps.ide.actions.SafeDeleteModuleDependency_Action" />
-    <unitInfo nodeId="5013162914354630624" fileName="SafeDeleteModuleDependency_Action.java" startLine="99" startPosition="104" endLine="103" endPosition="5" unitName="jetbrains.mps.ide.actions.SafeDeleteModuleDependency_Action$1" />
+    <unitInfo nodeId="5013162914354630624" fileName="SafeDeleteModuleDependency_Action.java" startLine="99" startPosition="116" endLine="103" endPosition="5" unitName="jetbrains.mps.ide.actions.SafeDeleteModuleDependency_Action$1" />
     <unitInfo nodeId="6941537623471391526" fileName="SafeDeleteModuleDependency_Action.java" startLine="105" startPosition="46" endLine="110" endPosition="5" unitName="jetbrains.mps.ide.actions.SafeDeleteModuleDependency_Action$2" />
   </root>
   <root nodeId="6351584993764480814">

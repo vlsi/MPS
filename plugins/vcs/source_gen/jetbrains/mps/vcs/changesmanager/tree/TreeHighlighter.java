@@ -26,6 +26,7 @@ import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.vcs.changesmanager.tree.features.ModelFeature;
+import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
@@ -180,7 +181,7 @@ public class TreeHighlighter implements TreeMessageOwner {
   }
 
   private void rehighlightFeature(@NotNull Feature feature) {
-    for (MPSTreeNode node : Sequence.fromIterable(myFeatureToNodes.get(feature))) {
+    for (MPSTreeNode node : CollectionSequence.fromCollection(myFeatureToNodes.get(feature))) {
       rehighlightNode(node, feature);
     }
   }
@@ -327,7 +328,7 @@ public class TreeHighlighter implements TreeMessageOwner {
       synchronized (myFeatureToNodes) {
         for (Feature f : SetSequence.fromSet(myFeatureToNodes.keySet())) {
           if (!(f instanceof ModelFeature) && modelRef.equals(f.getModelReference())) {
-            ListSequence.fromList(obsoleteTreeNodes).addSequence(Sequence.fromIterable(myFeatureToNodes.get(f)));
+            ListSequence.fromList(obsoleteTreeNodes).addSequence(CollectionSequence.fromCollection(myFeatureToNodes.get(f)));
             myFeatureToNodes.remove(f);
           }
         }

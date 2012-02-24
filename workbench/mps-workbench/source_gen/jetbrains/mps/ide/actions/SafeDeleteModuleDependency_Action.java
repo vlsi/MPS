@@ -25,7 +25,7 @@ import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import java.util.Collection;
 import jetbrains.mps.project.structure.modules.Dependency;
 import java.util.List;
-import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.ModelAccess;
 
@@ -96,7 +96,7 @@ public class SafeDeleteModuleDependency_Action extends BaseAction {
   private void removeDependency(final IModule from, final IModule to, final Map<String, Object> _params) {
     final ModuleDescriptor descriptor = from.getModuleDescriptor();
     Collection<Dependency> dependencies = descriptor.getDependencies();
-    List<Dependency> badDeps = Sequence.fromIterable(((Collection<Dependency>) dependencies)).where(new IWhereFilter<Dependency>() {
+    List<Dependency> badDeps = CollectionSequence.fromCollection(((Collection<Dependency>) dependencies)).where(new IWhereFilter<Dependency>() {
       public boolean accept(Dependency it) {
         return it.getModuleRef().equals(to.getModuleReference());
       }
