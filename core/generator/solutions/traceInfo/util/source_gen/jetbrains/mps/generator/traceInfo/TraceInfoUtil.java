@@ -10,12 +10,14 @@ import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.traceInfo.PositionInfo;
 import jetbrains.mps.traceInfo.UnitPositionInfo;
+import jetbrains.mps.traceInfo.PositionInfo;
 import java.util.List;
 import jetbrains.mps.util.Mapper;
 import jetbrains.mps.traceInfo.DebugInfoRoot;
 import java.util.Set;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.util.Computable;
 import jetbrains.mps.traceInfo.TraceablePositionInfo;
 import jetbrains.mps.traceInfo.ScopePositionInfo;
 
@@ -68,38 +70,6 @@ public class TraceInfoUtil {
     });
   }
 
-  @Nullable
-  public static SNode getNodes(String stacktraceLine, String position) {
-    int lastDot = stacktraceLine.lastIndexOf(".");
-    String pkg = ((lastDot == -1 ?
-      "" :
-      stacktraceLine.substring(0, lastDot)
-    ));
-    String[] split = position.split(":");
-    if (split.length >= 2) {
-      return TraceInfoUtil.getNode(pkg, split[0], Integer.parseInt(split[1]));
-    }
-    return null;
-  }
-
-  @Nullable
-  public static String getGeneratedFileName(SNode node) {
-    SModel model = node.getModel();
-    DebugInfo debugInfo = TraceInfoCache.getInstance().get(model.getModelDescriptor());
-    if (debugInfo == null) {
-      return null;
-    }
-    PositionInfo positionInfo = debugInfo.getPositionForNode(node.getId());
-    if (positionInfo != null) {
-      return model.getLongName() + "." + positionInfo.getFileName();
-    }
-    UnitPositionInfo unitForNode = debugInfo.getUnitForNode(node.getId());
-    if (unitForNode != null) {
-      return model.getLongName() + "." + unitForNode.getFileName();
-    }
-    return null;
-  }
-
   public static String getUnitName(SNode node) {
     SModel model = node.getModel();
     DebugInfo debugInfo = TraceInfoCache.getInstance().get(model.getModelDescriptor());
@@ -114,10 +84,14 @@ public class TraceInfoUtil {
   }
 
   @Nullable
-  public static <T extends PositionInfo> List<SNode> getAllNodes(@NotNull String className, final String file, final int position, final Mapper<DebugInfoRoot, ? extends Set<T>> positionsGetter) {
-    return TraceInfoUtil2.getInstance().getAllNodes(className, file, position, new _FunctionTypes._return_P1_E0<Set<T>, DebugInfoRoot>() {
-      public Set<T> invoke(DebugInfoRoot info) {
-        return positionsGetter.value(info);
+  public static <T extends PositionInfo> List<SNode> getAllNodes(@NotNull final String className, final String file, final int position, final Mapper<DebugInfoRoot, ? extends Set<T>> positionsGetter) {
+    return ModelAccess.instance().runReadAction(new Computable<List<SNode>>() {
+      public List<SNode> compute() {
+        return TraceInfoUtil2.getInstance().getAllNodes(className, file, position, new _FunctionTypes._return_P1_E0<Set<T>, DebugInfoRoot>() {
+          public Set<T> invoke(DebugInfoRoot info) {
+            return positionsGetter.value(info);
+          }
+        });
       }
     });
   }
