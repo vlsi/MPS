@@ -19,7 +19,7 @@ public class MoveStaticMethodRefactoring extends BasicMoveRefactoring {
   private void replaceFields() {
     SNode classNode = SNodeOperations.getAncestor(this.myMoving, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
     for (SNode field : ListSequence.fromList(SNodeOperations.getDescendants(this.myMoving, "jetbrains.mps.baseLanguage.structure.LocalStaticFieldReference", false, new String[]{}))) {
-      SNodeOperations.replaceWithAnother(field, new MoveStaticMethodRefactoring.QuotationClass_f5lqsg_a0a0a0b0a().createNode(classNode, SLinkOperations.getTarget(field, "variableDeclaration", false)));
+      SNodeOperations.replaceWithAnother(field, new MoveStaticMethodRefactoring.QuotationClass_f5lqsg_a1a0a1a0().createNode(classNode, SLinkOperations.getTarget(field, "variableDeclaration", false)));
     }
   }
 
@@ -57,8 +57,8 @@ public class MoveStaticMethodRefactoring extends BasicMoveRefactoring {
     }
   }
 
-  public static class QuotationClass_f5lqsg_a0a0a0b0a {
-    public QuotationClass_f5lqsg_a0a0a0b0a() {
+  public static class QuotationClass_f5lqsg_a1a0a1a0 {
+    public QuotationClass_f5lqsg_a1a0a1a0() {
     }
 
     public SNode createNode(Object parameter_3, Object parameter_4) {

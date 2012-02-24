@@ -63,7 +63,7 @@ public class IntroduceFieldRefactoring extends IntroduceVariableRefactoring {
   }
 
   public void replaceNode(SNode node, SNode declaration) {
-    SNodeOperations.replaceWithAnother(node, new IntroduceFieldRefactoring.QuotationClass_baxqxe_a0a0a0c().createNode(declaration));
+    SNodeOperations.replaceWithAnother(node, new IntroduceFieldRefactoring.QuotationClass_baxqxe_a1a0a2().createNode(declaration));
   }
 
   public void setFieldInitializationPlace(FieldInitializationPlace place) {
@@ -246,8 +246,8 @@ public class IntroduceFieldRefactoring extends IntroduceVariableRefactoring {
     }
   }
 
-  public static class QuotationClass_baxqxe_a0a0a0c {
-    public QuotationClass_baxqxe_a0a0a0c() {
+  public static class QuotationClass_baxqxe_a1a0a2 {
+    public QuotationClass_baxqxe_a1a0a2() {
     }
 
     public SNode createNode(Object parameter_7) {

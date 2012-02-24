@@ -352,7 +352,9 @@
       <varInfo nodeId="1235571157487" varName="methodCall" />
       <varInfo nodeId="1234796104060" varName="textGen" />
     </scopeInfo>
-    <scopeInfo nodeId="163269897332208693" fileName="BaseLanguageTextGen.java" startLine="219" startPosition="109" endLine="225" endPosition="9" />
+    <scopeInfo nodeId="163269897332208693" fileName="BaseLanguageTextGen.java" startLine="219" startPosition="109" endLine="225" endPosition="9">
+      <varInfo nodeId="163269897332208693" varName="item" />
+    </scopeInfo>
     <scopeInfo nodeId="1234796104060" fileName="BaseLanguageTextGen.java" startLine="231" startPosition="88" endLine="237" endPosition="17">
       <varInfo nodeId="1234799552343" varName="names" />
     </scopeInfo>
@@ -1290,9 +1292,7 @@
     <nodeInfo nodeId="1234891338660" fileName="GenericDeclarationTextGen2.java" startLine="11" startPosition="78" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="typeDeclarations#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/textGen/SNodeTextGen;)V" />
     <scopeInfo nodeId="1237463992492" fileName="GenericDeclarationTextGen2.java" startLine="18" startPosition="123" endLine="19" endPosition="33" />
     <scopeInfo nodeId="1237463992492" fileName="GenericDeclarationTextGen2.java" startLine="16" startPosition="97" endLine="20" endPosition="11" />
-    <scopeInfo nodeId="1237463992492" fileName="GenericDeclarationTextGen2.java" startLine="15" startPosition="117" endLine="21" endPosition="9">
-      <varInfo nodeId="1237463992492" varName="item" />
-    </scopeInfo>
+    <scopeInfo nodeId="1237463992492" fileName="GenericDeclarationTextGen2.java" startLine="15" startPosition="117" endLine="21" endPosition="9" />
     <scopeInfo nodeId="1234891385998" fileName="GenericDeclarationTextGen2.java" startLine="13" startPosition="115" endLine="23" endPosition="26" />
     <scopeInfo nodeId="1237463992492" fileName="GenericDeclarationTextGen2.java" startLine="13" startPosition="115" endLine="23" endPosition="26" />
     <scopeInfo nodeId="1234891338660" fileName="GenericDeclarationTextGen2.java" startLine="12" startPosition="82" endLine="24" endPosition="5" />
@@ -1663,7 +1663,9 @@
     <scopeInfo nodeId="1237463992024" fileName="InstanceMethodDeclaration_TextGen.java" startLine="49" startPosition="78" endLine="53" endPosition="9" />
     <scopeInfo nodeId="1237463992911" fileName="InstanceMethodDeclaration_TextGen.java" startLine="60" startPosition="81" endLine="64" endPosition="11" />
     <scopeInfo nodeId="1235068440591" fileName="InstanceMethodDeclaration_TextGen.java" startLine="68" startPosition="176" endLine="72" endPosition="7" />
-    <scopeInfo nodeId="1237463992024" fileName="InstanceMethodDeclaration_TextGen.java" startLine="48" startPosition="98" endLine="54" endPosition="7" />
+    <scopeInfo nodeId="1237463992024" fileName="InstanceMethodDeclaration_TextGen.java" startLine="48" startPosition="98" endLine="54" endPosition="7">
+      <varInfo nodeId="1237463992024" varName="item" />
+    </scopeInfo>
     <scopeInfo nodeId="1237463992911" fileName="InstanceMethodDeclaration_TextGen.java" startLine="59" startPosition="101" endLine="65" endPosition="9">
       <varInfo nodeId="1237463992911" varName="item" />
     </scopeInfo>
@@ -1803,7 +1805,9 @@
     <scopeInfo nodeId="1237463992742" fileName="Interface_TextGen.java" startLine="50" startPosition="100" endLine="53" endPosition="7">
       <varInfo nodeId="1237463992742" varName="item" />
     </scopeInfo>
-    <scopeInfo nodeId="1237463992177" fileName="Interface_TextGen.java" startLine="57" startPosition="97" endLine="60" endPosition="9" />
+    <scopeInfo nodeId="1237463992177" fileName="Interface_TextGen.java" startLine="57" startPosition="97" endLine="60" endPosition="9">
+      <varInfo nodeId="1237463992177" varName="item" />
+    </scopeInfo>
     <scopeInfo nodeId="1237463993114" fileName="Interface_TextGen.java" startLine="40" startPosition="88" endLine="44" endPosition="11" />
     <scopeInfo nodeId="1235068684876" fileName="Interface_TextGen.java" startLine="79" startPosition="0" endLine="83" endPosition="0">
       <varInfo nodeId="1235068684876" varName="node" />
@@ -2434,7 +2438,9 @@
     <scopeInfo nodeId="1237465938909" fileName="StaticMethodDeclaration_TextGen.java" startLine="73" startPosition="25" endLine="76" endPosition="25" />
     <scopeInfo nodeId="1237463992533" fileName="StaticMethodDeclaration_TextGen.java" startLine="46" startPosition="78" endLine="50" endPosition="9" />
     <scopeInfo nodeId="1237463992362" fileName="StaticMethodDeclaration_TextGen.java" startLine="57" startPosition="81" endLine="61" endPosition="11" />
-    <scopeInfo nodeId="1237463992533" fileName="StaticMethodDeclaration_TextGen.java" startLine="45" startPosition="98" endLine="51" endPosition="7" />
+    <scopeInfo nodeId="1237463992533" fileName="StaticMethodDeclaration_TextGen.java" startLine="45" startPosition="98" endLine="51" endPosition="7">
+      <varInfo nodeId="1237463992533" varName="item" />
+    </scopeInfo>
     <scopeInfo nodeId="1237463992362" fileName="StaticMethodDeclaration_TextGen.java" startLine="56" startPosition="101" endLine="62" endPosition="9" />
     <scopeInfo nodeId="1236685189233" fileName="StaticMethodDeclaration_TextGen.java" startLine="65" startPosition="22" endLine="73" endPosition="25" />
     <scopeInfo nodeId="1235132723690" fileName="StaticMethodDeclaration_TextGen.java" startLine="54" startPosition="99" endLine="63" endPosition="7" />
@@ -3248,7 +3254,9 @@
     <scopeInfo nodeId="1237463991826" fileName="ConstructorDeclaration_TextGen.java" startLine="44" startPosition="78" endLine="48" endPosition="9" />
     <scopeInfo nodeId="1237463993107" fileName="ConstructorDeclaration_TextGen.java" startLine="55" startPosition="81" endLine="59" endPosition="11" />
     <scopeInfo nodeId="1236685024634" fileName="ConstructorDeclaration_TextGen.java" startLine="63" startPosition="22" endLine="68" endPosition="25" />
-    <scopeInfo nodeId="1237463991826" fileName="ConstructorDeclaration_TextGen.java" startLine="43" startPosition="98" endLine="49" endPosition="7" />
+    <scopeInfo nodeId="1237463991826" fileName="ConstructorDeclaration_TextGen.java" startLine="43" startPosition="98" endLine="49" endPosition="7">
+      <varInfo nodeId="1237463991826" varName="item" />
+    </scopeInfo>
     <scopeInfo nodeId="1237463993107" fileName="ConstructorDeclaration_TextGen.java" startLine="54" startPosition="101" endLine="60" endPosition="9">
       <varInfo nodeId="1237463993107" varName="item" />
     </scopeInfo>
@@ -3509,9 +3517,7 @@
       <varInfo nodeId="1235740524220" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="1237463992982" fileName="EnumClass_TextGen.java" startLine="42" startPosition="111" endLine="48" endPosition="9" />
-    <scopeInfo nodeId="1237463992692" fileName="EnumClass_TextGen.java" startLine="53" startPosition="101" endLine="59" endPosition="7">
-      <varInfo nodeId="1237463992692" varName="item" />
-    </scopeInfo>
+    <scopeInfo nodeId="1237463992692" fileName="EnumClass_TextGen.java" startLine="53" startPosition="101" endLine="59" endPosition="7" />
     <scopeInfo nodeId="1235740714405" fileName="EnumClass_TextGen.java" startLine="40" startPosition="109" endLine="49" endPosition="7" />
     <scopeInfo nodeId="1237463992982" fileName="EnumClass_TextGen.java" startLine="40" startPosition="109" endLine="49" endPosition="7" />
     <scopeInfo nodeId="1237463992692" fileName="EnumClass_TextGen.java" startLine="52" startPosition="25" endLine="63" endPosition="45" />
@@ -4139,16 +4145,10 @@
     <scopeInfo nodeId="3408882292339891992" fileName="BaseClassConceptTextGen.java" startLine="66" startPosition="81" endLine="68" endPosition="43" />
     <scopeInfo nodeId="3408882292339891998" fileName="BaseClassConceptTextGen.java" startLine="69" startPosition="30" endLine="71" endPosition="30" />
     <scopeInfo nodeId="3408882292339892006" fileName="BaseClassConceptTextGen.java" startLine="72" startPosition="30" endLine="74" endPosition="30" />
-    <scopeInfo nodeId="3408882292339891912" fileName="BaseClassConceptTextGen.java" startLine="35" startPosition="100" endLine="38" endPosition="9">
-      <varInfo nodeId="3408882292339891912" varName="item" />
-    </scopeInfo>
-    <scopeInfo nodeId="3408882292339891930" fileName="BaseClassConceptTextGen.java" startLine="43" startPosition="106" endLine="46" endPosition="9">
-      <varInfo nodeId="3408882292339891930" varName="item" />
-    </scopeInfo>
+    <scopeInfo nodeId="3408882292339891912" fileName="BaseClassConceptTextGen.java" startLine="35" startPosition="100" endLine="38" endPosition="9" />
+    <scopeInfo nodeId="3408882292339891930" fileName="BaseClassConceptTextGen.java" startLine="43" startPosition="106" endLine="46" endPosition="9" />
     <scopeInfo nodeId="3408882292339891947" fileName="BaseClassConceptTextGen.java" startLine="50" startPosition="114" endLine="53" endPosition="25" />
-    <scopeInfo nodeId="2365107255602301567" fileName="BaseClassConceptTextGen.java" startLine="88" startPosition="52" endLine="91" endPosition="7">
-      <varInfo nodeId="2365107255602301567" varName="item" />
-    </scopeInfo>
+    <scopeInfo nodeId="2365107255602301567" fileName="BaseClassConceptTextGen.java" startLine="88" startPosition="52" endLine="91" endPosition="7" />
     <scopeInfo nodeId="3077396384314014603" fileName="BaseClassConceptTextGen.java" startLine="27" startPosition="103" endLine="31" endPosition="7">
       <varInfo nodeId="3077396384314014607" varName="constructor" />
     </scopeInfo>

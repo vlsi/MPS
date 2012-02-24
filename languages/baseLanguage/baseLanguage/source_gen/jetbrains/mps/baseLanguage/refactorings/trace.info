@@ -488,255 +488,255 @@
     <nodeInfo nodeId="9118878263582108237" fileName="MakeFieldStatic_Target.java" startLine="13" startPosition="52" endLine="14" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="9118878263582108237" fileName="MakeFieldStatic_Target.java" startLine="17" startPosition="41" endLine="18" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="9118878263582108237" fileName="MakeFieldStatic_Target.java" startLine="21" startPosition="58" endLine="22" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="9118878263582100185" fileName="MakeFieldStatic.java" startLine="26" startPosition="28" endLine="27" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="9118878263582100185" fileName="MakeFieldStatic.java" startLine="25" startPosition="28" endLine="26" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="9118878263582100185" fileName="MakeFieldStatic.java" startLine="26" startPosition="46" endLine="27" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="9118878263582108237" fileName="MakeFieldStatic_Target.java" startLine="26" startPosition="51" endLine="27" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="9118878263582100185" fileName="MakeFieldStatic.java" startLine="27" startPosition="46" endLine="28" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="9118878263582100185" fileName="MakeFieldStatic.java" startLine="27" startPosition="52" endLine="28" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="9118878263582108237" fileName="MakeFieldStatic_Target.java" startLine="28" startPosition="5" endLine="29" endPosition="347" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="9118878263582108240" fileName="MakeFieldStatic_Target.java" startLine="28" startPosition="5" endLine="29" endPosition="347" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="9118878263582100185" fileName="MakeFieldStatic.java" startLine="28" startPosition="52" endLine="29" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="9118878263582100185" fileName="MakeFieldStatic.java" startLine="32" startPosition="39" endLine="33" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="9118878263582100185" fileName="MakeFieldStatic.java" startLine="36" startPosition="32" endLine="37" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="9118878263582100185" fileName="MakeFieldStatic.java" startLine="40" startPosition="52" endLine="41" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="9118878263582108275" fileName="MakeFieldStatic.java" startLine="44" startPosition="68" endLine="45" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="9118878263582108370" fileName="MakeFieldStatic.java" startLine="48" startPosition="106" endLine="49" endPosition="142" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="9118878263582108381" fileName="MakeFieldStatic.java" startLine="50" startPosition="16" endLine="51" endPosition="220" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="9118878263582108395" fileName="MakeFieldStatic.java" startLine="52" startPosition="9" endLine="53" endPosition="251" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="9118878263582111387" fileName="MakeFieldStatic.java" startLine="53" startPosition="251" endLine="54" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="9118878263582111512" fileName="MakeFieldStatic.java" startLine="56" startPosition="165" endLine="57" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="9118878263582108302" fileName="MakeFieldStatic.java" startLine="61" startPosition="7" endLine="62" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="9118878263582123087" fileName="MakeFieldStatic.java" startLine="65" startPosition="69" endLine="66" endPosition="442" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="9118878263582143904" fileName="MakeFieldStatic.java" startLine="66" startPosition="442" endLine="67" endPosition="185" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="9118878263582111531" fileName="MakeFieldStatic.java" startLine="67" startPosition="185" endLine="68" endPosition="125" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="9118878263582164023" fileName="MakeFieldStatic.java" startLine="69" startPosition="149" endLine="70" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="9118878263582143832" fileName="MakeFieldStatic.java" startLine="70" startPosition="39" endLine="71" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="9118878263582143838" fileName="MakeFieldStatic.java" startLine="72" startPosition="112" endLine="73" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="9118878263582143851" fileName="MakeFieldStatic.java" startLine="74" startPosition="14" endLine="75" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="9118878263582143858" fileName="MakeFieldStatic.java" startLine="76" startPosition="7" endLine="77" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="9118878263582143889" fileName="MakeFieldStatic.java" startLine="78" startPosition="137" endLine="79" endPosition="128" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="9118878263582143924" fileName="MakeFieldStatic.java" startLine="80" startPosition="14" endLine="81" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="9118878263582143957" fileName="MakeFieldStatic.java" startLine="82" startPosition="7" endLine="83" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="9118878263582153982" fileName="MakeFieldStatic.java" startLine="84" startPosition="5" endLine="85" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="9118878263582111524" fileName="MakeFieldStatic.java" startLine="89" startPosition="78" endLine="90" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="9118878263582111528" fileName="MakeFieldStatic.java" startLine="91" startPosition="5" endLine="92" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="9118878263582100185" fileName="MakeFieldStatic.java" startLine="95" startPosition="46" endLine="96" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="9118878263582123091" fileName="MakeFieldStatic.java" startLine="103" startPosition="89" endLine="104" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="9118878263582123091" fileName="MakeFieldStatic.java" startLine="104" startPosition="26" endLine="105" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="9118878263582123091" fileName="MakeFieldStatic.java" startLine="105" startPosition="67" endLine="106" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="9118878263582100185" fileName="MakeFieldStatic.java" startLine="31" startPosition="39" endLine="32" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="9118878263582100185" fileName="MakeFieldStatic.java" startLine="35" startPosition="32" endLine="36" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="9118878263582100185" fileName="MakeFieldStatic.java" startLine="39" startPosition="52" endLine="40" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="9118878263582108275" fileName="MakeFieldStatic.java" startLine="43" startPosition="68" endLine="44" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="9118878263582108370" fileName="MakeFieldStatic.java" startLine="47" startPosition="106" endLine="48" endPosition="142" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="9118878263582108381" fileName="MakeFieldStatic.java" startLine="49" startPosition="16" endLine="50" endPosition="220" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="9118878263582108395" fileName="MakeFieldStatic.java" startLine="51" startPosition="9" endLine="52" endPosition="251" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="9118878263582111387" fileName="MakeFieldStatic.java" startLine="52" startPosition="251" endLine="53" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="9118878263582111512" fileName="MakeFieldStatic.java" startLine="55" startPosition="165" endLine="56" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="9118878263582108302" fileName="MakeFieldStatic.java" startLine="60" startPosition="7" endLine="61" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="9118878263582123087" fileName="MakeFieldStatic.java" startLine="64" startPosition="69" endLine="65" endPosition="442" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="9118878263582143904" fileName="MakeFieldStatic.java" startLine="65" startPosition="442" endLine="66" endPosition="185" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="9118878263582111531" fileName="MakeFieldStatic.java" startLine="66" startPosition="185" endLine="67" endPosition="125" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="9118878263582164023" fileName="MakeFieldStatic.java" startLine="68" startPosition="149" endLine="69" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="9118878263582143832" fileName="MakeFieldStatic.java" startLine="69" startPosition="39" endLine="70" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="9118878263582143838" fileName="MakeFieldStatic.java" startLine="71" startPosition="112" endLine="72" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="9118878263582143851" fileName="MakeFieldStatic.java" startLine="73" startPosition="14" endLine="74" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="9118878263582143858" fileName="MakeFieldStatic.java" startLine="75" startPosition="7" endLine="76" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="9118878263582143889" fileName="MakeFieldStatic.java" startLine="77" startPosition="137" endLine="78" endPosition="128" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="9118878263582143924" fileName="MakeFieldStatic.java" startLine="79" startPosition="14" endLine="80" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="9118878263582143957" fileName="MakeFieldStatic.java" startLine="81" startPosition="7" endLine="82" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="9118878263582153982" fileName="MakeFieldStatic.java" startLine="83" startPosition="5" endLine="84" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="9118878263582111524" fileName="MakeFieldStatic.java" startLine="88" startPosition="78" endLine="89" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="9118878263582111528" fileName="MakeFieldStatic.java" startLine="90" startPosition="5" endLine="91" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="9118878263582100185" fileName="MakeFieldStatic.java" startLine="94" startPosition="46" endLine="95" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="9118878263582123091" fileName="MakeFieldStatic.java" startLine="102" startPosition="89" endLine="103" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="9118878263582123091" fileName="MakeFieldStatic.java" startLine="103" startPosition="26" endLine="104" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="9118878263582123091" fileName="MakeFieldStatic.java" startLine="104" startPosition="67" endLine="105" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="9118878263582123091" fileName="MakeFieldStatic.java" startLine="105" startPosition="32" endLine="106" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="9118878263582123091" fileName="MakeFieldStatic.java" startLine="106" startPosition="32" endLine="107" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="9118878263582123091" fileName="MakeFieldStatic.java" startLine="107" startPosition="32" endLine="108" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="9118878263582123091" fileName="MakeFieldStatic.java" startLine="109" startPosition="7" endLine="110" endPosition="171" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="9118878263582123091" fileName="MakeFieldStatic.java" startLine="110" startPosition="171" endLine="111" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="9118878263582123091" fileName="MakeFieldStatic.java" startLine="111" startPosition="43" endLine="112" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="9118878263582123091" fileName="MakeFieldStatic.java" startLine="113" startPosition="9" endLine="114" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="9118878263582123091" fileName="MakeFieldStatic.java" startLine="114" startPosition="45" endLine="115" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="9118878263582123091" fileName="MakeFieldStatic.java" startLine="116" startPosition="66" endLine="117" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="9118878263582123091" fileName="MakeFieldStatic.java" startLine="118" startPosition="18" endLine="119" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="9118878263582123091" fileName="MakeFieldStatic.java" startLine="119" startPosition="57" endLine="120" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="9118878263582123091" fileName="MakeFieldStatic.java" startLine="122" startPosition="38" endLine="123" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="9118878263582123091" fileName="MakeFieldStatic.java" startLine="126" startPosition="9" endLine="127" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="9118878263582123091" fileName="MakeFieldStatic.java" startLine="127" startPosition="45" endLine="128" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="9118878263582123091" fileName="MakeFieldStatic.java" startLine="129" startPosition="66" endLine="130" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="9118878263582123091" fileName="MakeFieldStatic.java" startLine="131" startPosition="18" endLine="132" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="9118878263582123091" fileName="MakeFieldStatic.java" startLine="132" startPosition="57" endLine="133" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="9118878263582123091" fileName="MakeFieldStatic.java" startLine="135" startPosition="38" endLine="136" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="9118878263582123091" fileName="MakeFieldStatic.java" startLine="138" startPosition="9" endLine="139" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="9118878263582123091" fileName="MakeFieldStatic.java" startLine="140" startPosition="7" endLine="141" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8794595397332155110" fileName="MakeFieldStatic.java" startLine="149" startPosition="69" endLine="150" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8794595397332155110" fileName="MakeFieldStatic.java" startLine="150" startPosition="26" endLine="151" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8794595397332155110" fileName="MakeFieldStatic.java" startLine="151" startPosition="67" endLine="152" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8794595397332155110" fileName="MakeFieldStatic.java" startLine="153" startPosition="7" endLine="154" endPosition="169" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8794595397332155110" fileName="MakeFieldStatic.java" startLine="154" startPosition="169" endLine="155" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8794595397332155110" fileName="MakeFieldStatic.java" startLine="155" startPosition="43" endLine="156" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8794595397332155110" fileName="MakeFieldStatic.java" startLine="156" startPosition="69" endLine="157" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8794595397332155110" fileName="MakeFieldStatic.java" startLine="157" startPosition="78" endLine="158" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8794595397332155110" fileName="MakeFieldStatic.java" startLine="159" startPosition="7" endLine="160" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="9118878263582143937" fileName="MakeFieldStatic.java" startLine="168" startPosition="49" endLine="169" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="9118878263582143937" fileName="MakeFieldStatic.java" startLine="169" startPosition="26" endLine="170" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="9118878263582143937" fileName="MakeFieldStatic.java" startLine="170" startPosition="67" endLine="171" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="9118878263582143937" fileName="MakeFieldStatic.java" startLine="172" startPosition="7" endLine="173" endPosition="174" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="9118878263582143937" fileName="MakeFieldStatic.java" startLine="173" startPosition="174" endLine="174" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="9118878263582143937" fileName="MakeFieldStatic.java" startLine="174" startPosition="43" endLine="175" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="9118878263582143937" fileName="MakeFieldStatic.java" startLine="175" startPosition="78" endLine="176" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="9118878263582143937" fileName="MakeFieldStatic.java" startLine="177" startPosition="7" endLine="178" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="9118878263582123091" fileName="MakeFieldStatic.java" startLine="108" startPosition="7" endLine="109" endPosition="171" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="9118878263582123091" fileName="MakeFieldStatic.java" startLine="109" startPosition="171" endLine="110" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="9118878263582123091" fileName="MakeFieldStatic.java" startLine="110" startPosition="43" endLine="111" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="9118878263582123091" fileName="MakeFieldStatic.java" startLine="112" startPosition="9" endLine="113" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="9118878263582123091" fileName="MakeFieldStatic.java" startLine="113" startPosition="45" endLine="114" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="9118878263582123091" fileName="MakeFieldStatic.java" startLine="115" startPosition="66" endLine="116" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="9118878263582123091" fileName="MakeFieldStatic.java" startLine="117" startPosition="18" endLine="118" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="9118878263582123091" fileName="MakeFieldStatic.java" startLine="118" startPosition="57" endLine="119" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="9118878263582123091" fileName="MakeFieldStatic.java" startLine="121" startPosition="38" endLine="122" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="9118878263582123091" fileName="MakeFieldStatic.java" startLine="125" startPosition="9" endLine="126" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="9118878263582123091" fileName="MakeFieldStatic.java" startLine="126" startPosition="45" endLine="127" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="9118878263582123091" fileName="MakeFieldStatic.java" startLine="128" startPosition="66" endLine="129" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="9118878263582123091" fileName="MakeFieldStatic.java" startLine="130" startPosition="18" endLine="131" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="9118878263582123091" fileName="MakeFieldStatic.java" startLine="131" startPosition="57" endLine="132" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="9118878263582123091" fileName="MakeFieldStatic.java" startLine="134" startPosition="38" endLine="135" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="9118878263582123091" fileName="MakeFieldStatic.java" startLine="137" startPosition="9" endLine="138" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="9118878263582123091" fileName="MakeFieldStatic.java" startLine="139" startPosition="7" endLine="140" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8794595397332155110" fileName="MakeFieldStatic.java" startLine="148" startPosition="69" endLine="149" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8794595397332155110" fileName="MakeFieldStatic.java" startLine="149" startPosition="26" endLine="150" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8794595397332155110" fileName="MakeFieldStatic.java" startLine="150" startPosition="67" endLine="151" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8794595397332155110" fileName="MakeFieldStatic.java" startLine="152" startPosition="7" endLine="153" endPosition="169" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8794595397332155110" fileName="MakeFieldStatic.java" startLine="153" startPosition="169" endLine="154" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8794595397332155110" fileName="MakeFieldStatic.java" startLine="154" startPosition="43" endLine="155" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8794595397332155110" fileName="MakeFieldStatic.java" startLine="155" startPosition="69" endLine="156" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8794595397332155110" fileName="MakeFieldStatic.java" startLine="156" startPosition="78" endLine="157" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8794595397332155110" fileName="MakeFieldStatic.java" startLine="158" startPosition="7" endLine="159" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="9118878263582143937" fileName="MakeFieldStatic.java" startLine="167" startPosition="49" endLine="168" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="9118878263582143937" fileName="MakeFieldStatic.java" startLine="168" startPosition="26" endLine="169" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="9118878263582143937" fileName="MakeFieldStatic.java" startLine="169" startPosition="67" endLine="170" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="9118878263582143937" fileName="MakeFieldStatic.java" startLine="171" startPosition="7" endLine="172" endPosition="174" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="9118878263582143937" fileName="MakeFieldStatic.java" startLine="172" startPosition="174" endLine="173" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="9118878263582143937" fileName="MakeFieldStatic.java" startLine="173" startPosition="43" endLine="174" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="9118878263582143937" fileName="MakeFieldStatic.java" startLine="174" startPosition="78" endLine="175" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="9118878263582143937" fileName="MakeFieldStatic.java" startLine="176" startPosition="7" endLine="177" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="9118878263582108237" fileName="MakeFieldStatic_Target.java" startLine="9" startPosition="67" endLine="11" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MakeFieldStatic_Target#()V" />
-    <nodeInfo nodeId="9118878263582108379" fileName="MakeFieldStatic.java" startLine="50" startPosition="14" endLine="52" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="9118878263582143849" fileName="MakeFieldStatic.java" startLine="74" startPosition="12" endLine="76" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="9118878263582143922" fileName="MakeFieldStatic.java" startLine="80" startPosition="12" endLine="82" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="9118878263582123091" fileName="MakeFieldStatic.java" startLine="99" startPosition="52" endLine="101" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_so6etp_a0a0a4#()V" />
-    <nodeInfo nodeId="8794595397332155110" fileName="MakeFieldStatic.java" startLine="145" startPosition="56" endLine="147" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_so6etp_a0a0a4a3a4#()V" />
-    <nodeInfo nodeId="9118878263582143937" fileName="MakeFieldStatic.java" startLine="164" startPosition="57" endLine="166" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_so6etp_a0a0a0e0d0e#()V" />
+    <nodeInfo nodeId="9118878263582108379" fileName="MakeFieldStatic.java" startLine="49" startPosition="14" endLine="51" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="9118878263582143849" fileName="MakeFieldStatic.java" startLine="73" startPosition="12" endLine="75" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="9118878263582143922" fileName="MakeFieldStatic.java" startLine="79" startPosition="12" endLine="81" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="9118878263582123091" fileName="MakeFieldStatic.java" startLine="98" startPosition="52" endLine="100" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_so6etp_a0a0a4#()V" />
+    <nodeInfo nodeId="8794595397332155110" fileName="MakeFieldStatic.java" startLine="144" startPosition="56" endLine="146" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_so6etp_a0a0a4a3a4#()V" />
+    <nodeInfo nodeId="9118878263582143937" fileName="MakeFieldStatic.java" startLine="163" startPosition="57" endLine="165" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_so6etp_a0a0a0e0d0e#()V" />
     <nodeInfo nodeId="9118878263582108237" fileName="MakeFieldStatic_Target.java" startLine="25" startPosition="52" endLine="28" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="9118878263582111464" fileName="MakeFieldStatic.java" startLine="55" startPosition="153" endLine="58" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="9118878263582111520" fileName="MakeFieldStatic.java" startLine="88" startPosition="86" endLine="91" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="9118878263582123091" fileName="MakeFieldStatic.java" startLine="118" startPosition="16" endLine="121" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="9118878263582123091" fileName="MakeFieldStatic.java" startLine="121" startPosition="11" endLine="124" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="9118878263582123091" fileName="MakeFieldStatic.java" startLine="131" startPosition="16" endLine="134" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="9118878263582123091" fileName="MakeFieldStatic.java" startLine="134" startPosition="11" endLine="137" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="9118878263582111464" fileName="MakeFieldStatic.java" startLine="54" startPosition="153" endLine="57" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="9118878263582111520" fileName="MakeFieldStatic.java" startLine="87" startPosition="86" endLine="90" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="9118878263582123091" fileName="MakeFieldStatic.java" startLine="117" startPosition="16" endLine="120" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="9118878263582123091" fileName="MakeFieldStatic.java" startLine="120" startPosition="11" endLine="123" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="9118878263582123091" fileName="MakeFieldStatic.java" startLine="130" startPosition="16" endLine="133" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="9118878263582123091" fileName="MakeFieldStatic.java" startLine="133" startPosition="11" endLine="136" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="9118878263582108237" fileName="MakeFieldStatic_Target.java" startLine="12" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getTarget#()Ljetbrains/mps/refactoring/framework/IRefactoringTarget/TargetType;" />
     <nodeInfo nodeId="9118878263582108237" fileName="MakeFieldStatic_Target.java" startLine="16" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="allowMultipleTargets#()Z" />
     <nodeInfo nodeId="9118878263582108237" fileName="MakeFieldStatic_Target.java" startLine="20" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableToEntityType#(Ljava/lang/Object;)Z" />
-    <nodeInfo nodeId="9118878263582100185" fileName="MakeFieldStatic.java" startLine="31" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getUserFriendlyName#()Ljava/lang/String;" />
-    <nodeInfo nodeId="9118878263582100185" fileName="MakeFieldStatic.java" startLine="35" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getKeyStroke#()Ljava/lang/String;" />
-    <nodeInfo nodeId="9118878263582100185" fileName="MakeFieldStatic.java" startLine="39" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getRefactoringTarget#()Ljetbrains/mps/refactoring/framework/IRefactoringTarget;" />
-    <nodeInfo nodeId="9118878263582100185" fileName="MakeFieldStatic.java" startLine="94" startPosition="0" endLine="98" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getKeyStroke_static#()Ljava/lang/String;" />
-    <nodeInfo nodeId="9118878263582100185" fileName="MakeFieldStatic.java" startLine="25" startPosition="54" endLine="30" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MakeFieldStatic#()V" />
-    <nodeInfo nodeId="9118878263582108368" fileName="MakeFieldStatic.java" startLine="47" startPosition="25" endLine="52" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="9118878263582111376" fileName="MakeFieldStatic.java" startLine="54" startPosition="68" endLine="59" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="9118878263582143821" fileName="MakeFieldStatic.java" startLine="71" startPosition="22" endLine="76" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="9118878263582143862" fileName="MakeFieldStatic.java" startLine="77" startPosition="25" endLine="82" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="9118878263582123091" fileName="MakeFieldStatic.java" startLine="115" startPosition="30" endLine="121" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="9118878263582123091" fileName="MakeFieldStatic.java" startLine="128" startPosition="30" endLine="134" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="9118878263582143937" fileName="MakeFieldStatic.java" startLine="171" startPosition="32" endLine="177" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="9118878263582143937" fileName="MakeFieldStatic.java" startLine="171" startPosition="32" endLine="177" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="9118878263582100185" fileName="MakeFieldStatic.java" startLine="30" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getUserFriendlyName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="9118878263582100185" fileName="MakeFieldStatic.java" startLine="34" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getKeyStroke#()Ljava/lang/String;" />
+    <nodeInfo nodeId="9118878263582100185" fileName="MakeFieldStatic.java" startLine="38" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getRefactoringTarget#()Ljetbrains/mps/refactoring/framework/IRefactoringTarget;" />
+    <nodeInfo nodeId="9118878263582100185" fileName="MakeFieldStatic.java" startLine="93" startPosition="0" endLine="97" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getKeyStroke_static#()Ljava/lang/String;" />
+    <nodeInfo nodeId="9118878263582100185" fileName="MakeFieldStatic.java" startLine="24" startPosition="54" endLine="29" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MakeFieldStatic#()V" />
+    <nodeInfo nodeId="9118878263582108368" fileName="MakeFieldStatic.java" startLine="46" startPosition="25" endLine="51" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="9118878263582111376" fileName="MakeFieldStatic.java" startLine="53" startPosition="68" endLine="58" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="9118878263582143821" fileName="MakeFieldStatic.java" startLine="70" startPosition="22" endLine="75" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="9118878263582143862" fileName="MakeFieldStatic.java" startLine="76" startPosition="25" endLine="81" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="9118878263582123091" fileName="MakeFieldStatic.java" startLine="114" startPosition="30" endLine="120" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="9118878263582123091" fileName="MakeFieldStatic.java" startLine="127" startPosition="30" endLine="133" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="9118878263582143937" fileName="MakeFieldStatic.java" startLine="170" startPosition="32" endLine="176" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="9118878263582143937" fileName="MakeFieldStatic.java" startLine="170" startPosition="32" endLine="176" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="9118878263582108237" fileName="MakeFieldStatic_Target.java" startLine="24" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicable#(Ljava/lang/Object;)Z" />
-    <nodeInfo nodeId="9118878263582100185" fileName="MakeFieldStatic.java" startLine="87" startPosition="0" endLine="94" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getAffectedNodes#(Ljetbrains/mps/refactoring/framework/RefactoringContext;)Ljetbrains/mps/ide/findusages/model/SearchResults;" />
-    <nodeInfo nodeId="8794595397332155110" fileName="MakeFieldStatic.java" startLine="152" startPosition="32" endLine="159" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8794595397332155110" fileName="MakeFieldStatic.java" startLine="152" startPosition="32" endLine="159" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="9118878263582123091" fileName="MakeFieldStatic.java" startLine="112" startPosition="64" endLine="125" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="9118878263582123091" fileName="MakeFieldStatic.java" startLine="112" startPosition="64" endLine="125" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="9118878263582123091" fileName="MakeFieldStatic.java" startLine="125" startPosition="9" endLine="138" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="9118878263582123091" fileName="MakeFieldStatic.java" startLine="125" startPosition="9" endLine="138" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="9118878263582143937" fileName="MakeFieldStatic.java" startLine="167" startPosition="0" endLine="180" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#(Ljava/lang/Object;)Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="8794595397332155110" fileName="MakeFieldStatic.java" startLine="148" startPosition="0" endLine="162" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#(Ljava/lang/Object;Ljava/lang/Object;)Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="9118878263582108366" fileName="MakeFieldStatic.java" startLine="46" startPosition="57" endLine="61" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="9118878263582108365" fileName="MakeFieldStatic.java" startLine="45" startPosition="60" endLine="61" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="9118878263582143804" fileName="MakeFieldStatic.java" startLine="68" startPosition="125" endLine="84" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="9118878263582100185" fileName="MakeFieldStatic.java" startLine="43" startPosition="0" endLine="64" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="init#(Ljetbrains/mps/refactoring/framework/RefactoringContext;)Z" />
-    <nodeInfo nodeId="9118878263582100185" fileName="MakeFieldStatic.java" startLine="64" startPosition="0" endLine="87" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="refactor#(Ljetbrains/mps/refactoring/framework/RefactoringContext;)V" />
-    <nodeInfo nodeId="9118878263582123091" fileName="MakeFieldStatic.java" startLine="108" startPosition="32" endLine="140" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="9118878263582123091" fileName="MakeFieldStatic.java" startLine="108" startPosition="32" endLine="140" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="9118878263582123091" fileName="MakeFieldStatic.java" startLine="102" startPosition="0" endLine="143" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="9118878263582100185" fileName="MakeFieldStatic.java" startLine="86" startPosition="0" endLine="93" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getAffectedNodes#(Ljetbrains/mps/refactoring/framework/RefactoringContext;)Ljetbrains/mps/ide/findusages/model/SearchResults;" />
+    <nodeInfo nodeId="8794595397332155110" fileName="MakeFieldStatic.java" startLine="151" startPosition="32" endLine="158" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8794595397332155110" fileName="MakeFieldStatic.java" startLine="151" startPosition="32" endLine="158" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="9118878263582123091" fileName="MakeFieldStatic.java" startLine="111" startPosition="64" endLine="124" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="9118878263582123091" fileName="MakeFieldStatic.java" startLine="111" startPosition="64" endLine="124" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="9118878263582123091" fileName="MakeFieldStatic.java" startLine="124" startPosition="9" endLine="137" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="9118878263582123091" fileName="MakeFieldStatic.java" startLine="124" startPosition="9" endLine="137" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="9118878263582143937" fileName="MakeFieldStatic.java" startLine="166" startPosition="0" endLine="179" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#(Ljava/lang/Object;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="8794595397332155110" fileName="MakeFieldStatic.java" startLine="147" startPosition="0" endLine="161" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#(Ljava/lang/Object;Ljava/lang/Object;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="9118878263582108366" fileName="MakeFieldStatic.java" startLine="45" startPosition="57" endLine="60" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="9118878263582108365" fileName="MakeFieldStatic.java" startLine="44" startPosition="60" endLine="60" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="9118878263582143804" fileName="MakeFieldStatic.java" startLine="67" startPosition="125" endLine="83" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="9118878263582100185" fileName="MakeFieldStatic.java" startLine="42" startPosition="0" endLine="63" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="init#(Ljetbrains/mps/refactoring/framework/RefactoringContext;)Z" />
+    <nodeInfo nodeId="9118878263582100185" fileName="MakeFieldStatic.java" startLine="63" startPosition="0" endLine="86" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="refactor#(Ljetbrains/mps/refactoring/framework/RefactoringContext;)V" />
+    <nodeInfo nodeId="9118878263582123091" fileName="MakeFieldStatic.java" startLine="107" startPosition="32" endLine="139" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="9118878263582123091" fileName="MakeFieldStatic.java" startLine="107" startPosition="32" endLine="139" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="9118878263582123091" fileName="MakeFieldStatic.java" startLine="101" startPosition="0" endLine="142" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljetbrains/mps/smodel/SNode;" />
     <scopeInfo nodeId="9118878263582108237" fileName="MakeFieldStatic_Target.java" startLine="10" startPosition="35" endLine="10" endPosition="35" />
-    <scopeInfo nodeId="9118878263582123091" fileName="MakeFieldStatic.java" startLine="100" startPosition="43" endLine="100" endPosition="43" />
-    <scopeInfo nodeId="8794595397332155110" fileName="MakeFieldStatic.java" startLine="146" startPosition="47" endLine="146" endPosition="47" />
-    <scopeInfo nodeId="9118878263582143937" fileName="MakeFieldStatic.java" startLine="165" startPosition="48" endLine="165" endPosition="48" />
+    <scopeInfo nodeId="9118878263582123091" fileName="MakeFieldStatic.java" startLine="99" startPosition="43" endLine="99" endPosition="43" />
+    <scopeInfo nodeId="8794595397332155110" fileName="MakeFieldStatic.java" startLine="145" startPosition="47" endLine="145" endPosition="47" />
+    <scopeInfo nodeId="9118878263582143937" fileName="MakeFieldStatic.java" startLine="164" startPosition="48" endLine="164" endPosition="48" />
     <scopeInfo nodeId="9118878263582108237" fileName="MakeFieldStatic_Target.java" startLine="13" startPosition="52" endLine="14" endPosition="46" />
     <scopeInfo nodeId="9118878263582108237" fileName="MakeFieldStatic_Target.java" startLine="17" startPosition="41" endLine="18" endPosition="17" />
     <scopeInfo nodeId="9118878263582108237" fileName="MakeFieldStatic_Target.java" startLine="21" startPosition="58" endLine="22" endPosition="16" />
     <scopeInfo nodeId="9118878263582108237" fileName="MakeFieldStatic_Target.java" startLine="26" startPosition="51" endLine="27" endPosition="19" />
     <scopeInfo nodeId="9118878263582108239" fileName="MakeFieldStatic_Target.java" startLine="28" startPosition="5" endLine="29" endPosition="347" />
-    <scopeInfo nodeId="9118878263582100185" fileName="MakeFieldStatic.java" startLine="32" startPosition="39" endLine="33" endPosition="31" />
-    <scopeInfo nodeId="9118878263582100185" fileName="MakeFieldStatic.java" startLine="36" startPosition="32" endLine="37" endPosition="33" />
-    <scopeInfo nodeId="9118878263582100185" fileName="MakeFieldStatic.java" startLine="40" startPosition="52" endLine="41" endPosition="40" />
-    <scopeInfo nodeId="9118878263582108369" fileName="MakeFieldStatic.java" startLine="48" startPosition="106" endLine="49" endPosition="142" />
-    <scopeInfo nodeId="9118878263582108380" fileName="MakeFieldStatic.java" startLine="50" startPosition="16" endLine="51" endPosition="220" />
-    <scopeInfo nodeId="9118878263582111465" fileName="MakeFieldStatic.java" startLine="56" startPosition="165" endLine="57" endPosition="71" />
-    <scopeInfo nodeId="9118878263582143823" fileName="MakeFieldStatic.java" startLine="72" startPosition="112" endLine="73" endPosition="53" />
-    <scopeInfo nodeId="9118878263582143850" fileName="MakeFieldStatic.java" startLine="74" startPosition="14" endLine="75" endPosition="26" />
-    <scopeInfo nodeId="9118878263582143863" fileName="MakeFieldStatic.java" startLine="78" startPosition="137" endLine="79" endPosition="128" />
-    <scopeInfo nodeId="9118878263582143923" fileName="MakeFieldStatic.java" startLine="80" startPosition="14" endLine="81" endPosition="106" />
-    <scopeInfo nodeId="9118878263582111522" fileName="MakeFieldStatic.java" startLine="89" startPosition="78" endLine="90" endPosition="18" />
-    <scopeInfo nodeId="9118878263582100185" fileName="MakeFieldStatic.java" startLine="95" startPosition="46" endLine="96" endPosition="14" />
-    <scopeInfo nodeId="9118878263582123091" fileName="MakeFieldStatic.java" startLine="116" startPosition="66" endLine="117" endPosition="64" />
-    <scopeInfo nodeId="9118878263582123091" fileName="MakeFieldStatic.java" startLine="122" startPosition="38" endLine="123" endPosition="86" />
-    <scopeInfo nodeId="9118878263582123091" fileName="MakeFieldStatic.java" startLine="129" startPosition="66" endLine="130" endPosition="64" />
-    <scopeInfo nodeId="9118878263582123091" fileName="MakeFieldStatic.java" startLine="135" startPosition="38" endLine="136" endPosition="80" />
+    <scopeInfo nodeId="9118878263582100185" fileName="MakeFieldStatic.java" startLine="31" startPosition="39" endLine="32" endPosition="31" />
+    <scopeInfo nodeId="9118878263582100185" fileName="MakeFieldStatic.java" startLine="35" startPosition="32" endLine="36" endPosition="33" />
+    <scopeInfo nodeId="9118878263582100185" fileName="MakeFieldStatic.java" startLine="39" startPosition="52" endLine="40" endPosition="40" />
+    <scopeInfo nodeId="9118878263582108369" fileName="MakeFieldStatic.java" startLine="47" startPosition="106" endLine="48" endPosition="142" />
+    <scopeInfo nodeId="9118878263582108380" fileName="MakeFieldStatic.java" startLine="49" startPosition="16" endLine="50" endPosition="220" />
+    <scopeInfo nodeId="9118878263582111465" fileName="MakeFieldStatic.java" startLine="55" startPosition="165" endLine="56" endPosition="71" />
+    <scopeInfo nodeId="9118878263582143823" fileName="MakeFieldStatic.java" startLine="71" startPosition="112" endLine="72" endPosition="53" />
+    <scopeInfo nodeId="9118878263582143850" fileName="MakeFieldStatic.java" startLine="73" startPosition="14" endLine="74" endPosition="26" />
+    <scopeInfo nodeId="9118878263582143863" fileName="MakeFieldStatic.java" startLine="77" startPosition="137" endLine="78" endPosition="128" />
+    <scopeInfo nodeId="9118878263582143923" fileName="MakeFieldStatic.java" startLine="79" startPosition="14" endLine="80" endPosition="106" />
+    <scopeInfo nodeId="9118878263582111522" fileName="MakeFieldStatic.java" startLine="88" startPosition="78" endLine="89" endPosition="18" />
+    <scopeInfo nodeId="9118878263582100185" fileName="MakeFieldStatic.java" startLine="94" startPosition="46" endLine="95" endPosition="14" />
+    <scopeInfo nodeId="9118878263582123091" fileName="MakeFieldStatic.java" startLine="115" startPosition="66" endLine="116" endPosition="64" />
+    <scopeInfo nodeId="9118878263582123091" fileName="MakeFieldStatic.java" startLine="121" startPosition="38" endLine="122" endPosition="86" />
+    <scopeInfo nodeId="9118878263582123091" fileName="MakeFieldStatic.java" startLine="128" startPosition="66" endLine="129" endPosition="64" />
+    <scopeInfo nodeId="9118878263582123091" fileName="MakeFieldStatic.java" startLine="134" startPosition="38" endLine="135" endPosition="80" />
     <scopeInfo nodeId="9118878263582108237" fileName="MakeFieldStatic_Target.java" startLine="9" startPosition="67" endLine="11" endPosition="3" />
-    <scopeInfo nodeId="9118878263582123091" fileName="MakeFieldStatic.java" startLine="99" startPosition="52" endLine="101" endPosition="5" />
-    <scopeInfo nodeId="9118878263582123091" fileName="MakeFieldStatic.java" startLine="118" startPosition="18" endLine="120" endPosition="41" />
-    <scopeInfo nodeId="9118878263582123091" fileName="MakeFieldStatic.java" startLine="131" startPosition="18" endLine="133" endPosition="41" />
-    <scopeInfo nodeId="8794595397332155110" fileName="MakeFieldStatic.java" startLine="145" startPosition="56" endLine="147" endPosition="5" />
-    <scopeInfo nodeId="9118878263582143937" fileName="MakeFieldStatic.java" startLine="164" startPosition="57" endLine="166" endPosition="5" />
-    <scopeInfo nodeId="9118878263582100185" fileName="MakeFieldStatic.java" startLine="26" startPosition="28" endLine="29" endPosition="41" />
-    <scopeInfo nodeId="9118878263582111379" fileName="MakeFieldStatic.java" startLine="55" startPosition="153" endLine="58" endPosition="11" />
+    <scopeInfo nodeId="9118878263582123091" fileName="MakeFieldStatic.java" startLine="98" startPosition="52" endLine="100" endPosition="5" />
+    <scopeInfo nodeId="9118878263582123091" fileName="MakeFieldStatic.java" startLine="117" startPosition="18" endLine="119" endPosition="41" />
+    <scopeInfo nodeId="9118878263582123091" fileName="MakeFieldStatic.java" startLine="130" startPosition="18" endLine="132" endPosition="41" />
+    <scopeInfo nodeId="8794595397332155110" fileName="MakeFieldStatic.java" startLine="144" startPosition="56" endLine="146" endPosition="5" />
+    <scopeInfo nodeId="9118878263582143937" fileName="MakeFieldStatic.java" startLine="163" startPosition="57" endLine="165" endPosition="5" />
+    <scopeInfo nodeId="9118878263582100185" fileName="MakeFieldStatic.java" startLine="25" startPosition="28" endLine="28" endPosition="41" />
+    <scopeInfo nodeId="9118878263582111379" fileName="MakeFieldStatic.java" startLine="54" startPosition="153" endLine="57" endPosition="11" />
     <scopeInfo nodeId="9118878263582108237" fileName="MakeFieldStatic_Target.java" startLine="12" startPosition="0" endLine="16" endPosition="0" />
     <scopeInfo nodeId="9118878263582108237" fileName="MakeFieldStatic_Target.java" startLine="16" startPosition="0" endLine="20" endPosition="0" />
     <scopeInfo nodeId="9118878263582108237" fileName="MakeFieldStatic_Target.java" startLine="20" startPosition="0" endLine="24" endPosition="0">
       <varInfo nodeId="9118878263582108237" varName="entity" />
     </scopeInfo>
     <scopeInfo nodeId="9118878263582108237" fileName="MakeFieldStatic_Target.java" startLine="25" startPosition="52" endLine="29" endPosition="347" />
-    <scopeInfo nodeId="9118878263582100185" fileName="MakeFieldStatic.java" startLine="31" startPosition="0" endLine="35" endPosition="0" />
-    <scopeInfo nodeId="9118878263582100185" fileName="MakeFieldStatic.java" startLine="35" startPosition="0" endLine="39" endPosition="0" />
-    <scopeInfo nodeId="9118878263582100185" fileName="MakeFieldStatic.java" startLine="39" startPosition="0" endLine="43" endPosition="0" />
-    <scopeInfo nodeId="9118878263582111519" fileName="MakeFieldStatic.java" startLine="88" startPosition="86" endLine="92" endPosition="78" />
-    <scopeInfo nodeId="9118878263582100185" fileName="MakeFieldStatic.java" startLine="94" startPosition="0" endLine="98" endPosition="0" />
-    <scopeInfo nodeId="9118878263582143937" fileName="MakeFieldStatic.java" startLine="172" startPosition="7" endLine="176" endPosition="31">
+    <scopeInfo nodeId="9118878263582100185" fileName="MakeFieldStatic.java" startLine="30" startPosition="0" endLine="34" endPosition="0" />
+    <scopeInfo nodeId="9118878263582100185" fileName="MakeFieldStatic.java" startLine="34" startPosition="0" endLine="38" endPosition="0" />
+    <scopeInfo nodeId="9118878263582100185" fileName="MakeFieldStatic.java" startLine="38" startPosition="0" endLine="42" endPosition="0" />
+    <scopeInfo nodeId="9118878263582111519" fileName="MakeFieldStatic.java" startLine="87" startPosition="86" endLine="91" endPosition="78" />
+    <scopeInfo nodeId="9118878263582100185" fileName="MakeFieldStatic.java" startLine="93" startPosition="0" endLine="97" endPosition="0" />
+    <scopeInfo nodeId="9118878263582143937" fileName="MakeFieldStatic.java" startLine="171" startPosition="7" endLine="175" endPosition="31">
       <varInfo nodeId="9118878263582143937" varName="quotedNode1_2" />
     </scopeInfo>
-    <scopeInfo nodeId="9118878263582100185" fileName="MakeFieldStatic.java" startLine="25" startPosition="54" endLine="30" endPosition="3" />
-    <scopeInfo nodeId="9118878263582111376" fileName="MakeFieldStatic.java" startLine="54" startPosition="68" endLine="59" endPosition="9">
+    <scopeInfo nodeId="9118878263582100185" fileName="MakeFieldStatic.java" startLine="24" startPosition="54" endLine="29" endPosition="3" />
+    <scopeInfo nodeId="9118878263582111376" fileName="MakeFieldStatic.java" startLine="53" startPosition="68" endLine="58" endPosition="9">
       <varInfo nodeId="9118878263582111376" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="8794595397332155110" fileName="MakeFieldStatic.java" startLine="153" startPosition="7" endLine="158" endPosition="31">
+    <scopeInfo nodeId="8794595397332155110" fileName="MakeFieldStatic.java" startLine="152" startPosition="7" endLine="157" endPosition="31">
       <varInfo nodeId="8794595397332155110" varName="quotedNode1_2" />
     </scopeInfo>
-    <scopeInfo nodeId="9118878263582143937" fileName="MakeFieldStatic.java" startLine="171" startPosition="32" endLine="177" endPosition="7" />
+    <scopeInfo nodeId="9118878263582143937" fileName="MakeFieldStatic.java" startLine="170" startPosition="32" endLine="176" endPosition="7" />
     <scopeInfo nodeId="9118878263582108237" fileName="MakeFieldStatic_Target.java" startLine="24" startPosition="0" endLine="31" endPosition="0">
       <varInfo nodeId="9118878263582108237" varName="entity" />
     </scopeInfo>
-    <scopeInfo nodeId="9118878263582100185" fileName="MakeFieldStatic.java" startLine="87" startPosition="0" endLine="94" endPosition="0">
+    <scopeInfo nodeId="9118878263582100185" fileName="MakeFieldStatic.java" startLine="86" startPosition="0" endLine="93" endPosition="0">
       <varInfo nodeId="9118878263582100185" varName="refactoringContext" />
     </scopeInfo>
-    <scopeInfo nodeId="8794595397332155110" fileName="MakeFieldStatic.java" startLine="152" startPosition="32" endLine="159" endPosition="7" />
-    <scopeInfo nodeId="9118878263582143937" fileName="MakeFieldStatic.java" startLine="168" startPosition="49" endLine="178" endPosition="20">
+    <scopeInfo nodeId="8794595397332155110" fileName="MakeFieldStatic.java" startLine="151" startPosition="32" endLine="158" endPosition="7" />
+    <scopeInfo nodeId="9118878263582143937" fileName="MakeFieldStatic.java" startLine="167" startPosition="49" endLine="177" endPosition="20">
       <varInfo nodeId="9118878263582143937" varName="_parameterValues_129834374" />
       <varInfo nodeId="9118878263582143937" varName="quotedNode_1" />
       <varInfo nodeId="9118878263582143937" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="9118878263582123091" fileName="MakeFieldStatic.java" startLine="113" startPosition="9" endLine="124" endPosition="11">
+    <scopeInfo nodeId="9118878263582123091" fileName="MakeFieldStatic.java" startLine="112" startPosition="9" endLine="123" endPosition="11">
       <varInfo nodeId="9118878263582123091" varName="quotedNode1_5" />
     </scopeInfo>
-    <scopeInfo nodeId="9118878263582123091" fileName="MakeFieldStatic.java" startLine="126" startPosition="9" endLine="137" endPosition="11">
+    <scopeInfo nodeId="9118878263582123091" fileName="MakeFieldStatic.java" startLine="125" startPosition="9" endLine="136" endPosition="11">
       <varInfo nodeId="9118878263582123091" varName="quotedNode1_6" />
     </scopeInfo>
-    <scopeInfo nodeId="8794595397332155110" fileName="MakeFieldStatic.java" startLine="149" startPosition="69" endLine="160" endPosition="20">
+    <scopeInfo nodeId="8794595397332155110" fileName="MakeFieldStatic.java" startLine="148" startPosition="69" endLine="159" endPosition="20">
       <varInfo nodeId="8794595397332155110" varName="_parameterValues_129834374" />
       <varInfo nodeId="8794595397332155110" varName="quotedNode_1" />
       <varInfo nodeId="8794595397332155110" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="9118878263582108367" fileName="MakeFieldStatic.java" startLine="47" startPosition="25" endLine="59" endPosition="9" />
-    <scopeInfo nodeId="9118878263582123091" fileName="MakeFieldStatic.java" startLine="112" startPosition="64" endLine="125" endPosition="9" />
-    <scopeInfo nodeId="9118878263582123091" fileName="MakeFieldStatic.java" startLine="125" startPosition="9" endLine="138" endPosition="9" />
-    <scopeInfo nodeId="9118878263582143937" fileName="MakeFieldStatic.java" startLine="167" startPosition="0" endLine="180" endPosition="0">
+    <scopeInfo nodeId="9118878263582108367" fileName="MakeFieldStatic.java" startLine="46" startPosition="25" endLine="58" endPosition="9" />
+    <scopeInfo nodeId="9118878263582123091" fileName="MakeFieldStatic.java" startLine="111" startPosition="64" endLine="124" endPosition="9" />
+    <scopeInfo nodeId="9118878263582123091" fileName="MakeFieldStatic.java" startLine="124" startPosition="9" endLine="137" endPosition="9" />
+    <scopeInfo nodeId="9118878263582143937" fileName="MakeFieldStatic.java" startLine="166" startPosition="0" endLine="179" endPosition="0">
       <varInfo nodeId="9118878263582143937" varName="parameter_3" />
     </scopeInfo>
-    <scopeInfo nodeId="9118878263582143807" fileName="MakeFieldStatic.java" startLine="69" startPosition="149" endLine="83" endPosition="66">
+    <scopeInfo nodeId="9118878263582143807" fileName="MakeFieldStatic.java" startLine="68" startPosition="149" endLine="82" endPosition="66">
       <varInfo nodeId="9118878263582143859" varName="newReference" />
       <varInfo nodeId="9118878263582143833" varName="replacing" />
       <varInfo nodeId="9118878263582164024" varName="usage" />
     </scopeInfo>
-    <scopeInfo nodeId="8794595397332155110" fileName="MakeFieldStatic.java" startLine="148" startPosition="0" endLine="162" endPosition="0">
+    <scopeInfo nodeId="8794595397332155110" fileName="MakeFieldStatic.java" startLine="147" startPosition="0" endLine="161" endPosition="0">
       <varInfo nodeId="8794595397332155110" varName="parameter_3" />
       <varInfo nodeId="8794595397332155110" varName="parameter_4" />
     </scopeInfo>
-    <scopeInfo nodeId="9118878263582108366" fileName="MakeFieldStatic.java" startLine="46" startPosition="57" endLine="61" endPosition="0" />
-    <scopeInfo nodeId="9118878263582143804" fileName="MakeFieldStatic.java" startLine="68" startPosition="125" endLine="84" endPosition="5">
+    <scopeInfo nodeId="9118878263582108366" fileName="MakeFieldStatic.java" startLine="45" startPosition="57" endLine="60" endPosition="0" />
+    <scopeInfo nodeId="9118878263582143804" fileName="MakeFieldStatic.java" startLine="67" startPosition="125" endLine="83" endPosition="5">
       <varInfo nodeId="9118878263582143804" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="9118878263582108235" fileName="MakeFieldStatic.java" startLine="44" startPosition="68" endLine="62" endPosition="16">
+    <scopeInfo nodeId="9118878263582108235" fileName="MakeFieldStatic.java" startLine="43" startPosition="68" endLine="61" endPosition="16">
       <varInfo nodeId="9118878263582108276" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="9118878263582100188" fileName="MakeFieldStatic.java" startLine="65" startPosition="69" endLine="85" endPosition="89">
+    <scopeInfo nodeId="9118878263582100188" fileName="MakeFieldStatic.java" startLine="64" startPosition="69" endLine="84" endPosition="89">
       <varInfo nodeId="9118878263582143905" varName="declarationClassifier" />
       <varInfo nodeId="9118878263582123088" varName="newDeclaration" />
     </scopeInfo>
-    <scopeInfo nodeId="9118878263582100185" fileName="MakeFieldStatic.java" startLine="43" startPosition="0" endLine="64" endPosition="0">
+    <scopeInfo nodeId="9118878263582100185" fileName="MakeFieldStatic.java" startLine="42" startPosition="0" endLine="63" endPosition="0">
       <varInfo nodeId="9118878263582100185" varName="refactoringContext" />
     </scopeInfo>
-    <scopeInfo nodeId="9118878263582100185" fileName="MakeFieldStatic.java" startLine="64" startPosition="0" endLine="87" endPosition="0">
+    <scopeInfo nodeId="9118878263582100185" fileName="MakeFieldStatic.java" startLine="63" startPosition="0" endLine="86" endPosition="0">
       <varInfo nodeId="9118878263582100185" varName="refactoringContext" />
     </scopeInfo>
-    <scopeInfo nodeId="9118878263582123091" fileName="MakeFieldStatic.java" startLine="109" startPosition="7" endLine="139" endPosition="31">
+    <scopeInfo nodeId="9118878263582123091" fileName="MakeFieldStatic.java" startLine="108" startPosition="7" endLine="138" endPosition="31">
       <varInfo nodeId="9118878263582123091" varName="quotedNode1_4" />
     </scopeInfo>
-    <scopeInfo nodeId="9118878263582123091" fileName="MakeFieldStatic.java" startLine="108" startPosition="32" endLine="140" endPosition="7" />
-    <scopeInfo nodeId="9118878263582123091" fileName="MakeFieldStatic.java" startLine="103" startPosition="89" endLine="141" endPosition="20">
+    <scopeInfo nodeId="9118878263582123091" fileName="MakeFieldStatic.java" startLine="107" startPosition="32" endLine="139" endPosition="7" />
+    <scopeInfo nodeId="9118878263582123091" fileName="MakeFieldStatic.java" startLine="102" startPosition="89" endLine="140" endPosition="20">
       <varInfo nodeId="9118878263582123091" varName="_parameterValues_129834374" />
       <varInfo nodeId="9118878263582123091" varName="quotedNode_1" />
       <varInfo nodeId="9118878263582123091" varName="quotedNode_2" />
       <varInfo nodeId="9118878263582123091" varName="quotedNode_3" />
       <varInfo nodeId="9118878263582123091" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="9118878263582123091" fileName="MakeFieldStatic.java" startLine="102" startPosition="0" endLine="143" endPosition="0">
+    <scopeInfo nodeId="9118878263582123091" fileName="MakeFieldStatic.java" startLine="101" startPosition="0" endLine="142" endPosition="0">
       <varInfo nodeId="9118878263582123091" varName="parameter_7" />
       <varInfo nodeId="9118878263582123091" varName="parameter_8" />
       <varInfo nodeId="9118878263582123091" varName="parameter_9" />
     </scopeInfo>
-    <unitInfo nodeId="9118878263582100185" fileName="MakeFieldStatic.java" startLine="25" startPosition="0" endLine="182" endPosition="0" unitName="jetbrains.mps.baseLanguage.refactorings.MakeFieldStatic" />
-    <unitInfo nodeId="9118878263582108366" fileName="MakeFieldStatic.java" startLine="46" startPosition="45" endLine="61" endPosition="5" unitName="jetbrains.mps.baseLanguage.refactorings.MakeFieldStatic$1" />
-    <unitInfo nodeId="9118878263582143937" fileName="MakeFieldStatic.java" startLine="164" startPosition="0" endLine="181" endPosition="0" unitName="jetbrains.mps.baseLanguage.refactorings.MakeFieldStatic$QuotationClass_so6etp_a0a0a0e0d0e" />
-    <unitInfo nodeId="9118878263582123091" fileName="MakeFieldStatic.java" startLine="99" startPosition="0" endLine="144" endPosition="0" unitName="jetbrains.mps.baseLanguage.refactorings.MakeFieldStatic$QuotationClass_so6etp_a0a0a4" />
-    <unitInfo nodeId="8794595397332155110" fileName="MakeFieldStatic.java" startLine="145" startPosition="0" endLine="163" endPosition="0" unitName="jetbrains.mps.baseLanguage.refactorings.MakeFieldStatic$QuotationClass_so6etp_a0a0a4a3a4" />
+    <unitInfo nodeId="9118878263582100185" fileName="MakeFieldStatic.java" startLine="24" startPosition="0" endLine="181" endPosition="0" unitName="jetbrains.mps.baseLanguage.refactorings.MakeFieldStatic" />
+    <unitInfo nodeId="9118878263582108366" fileName="MakeFieldStatic.java" startLine="45" startPosition="45" endLine="60" endPosition="5" unitName="jetbrains.mps.baseLanguage.refactorings.MakeFieldStatic$1" />
+    <unitInfo nodeId="9118878263582143937" fileName="MakeFieldStatic.java" startLine="163" startPosition="0" endLine="180" endPosition="0" unitName="jetbrains.mps.baseLanguage.refactorings.MakeFieldStatic$QuotationClass_so6etp_a0a0a0e0d0e" />
+    <unitInfo nodeId="9118878263582123091" fileName="MakeFieldStatic.java" startLine="98" startPosition="0" endLine="143" endPosition="0" unitName="jetbrains.mps.baseLanguage.refactorings.MakeFieldStatic$QuotationClass_so6etp_a0a0a4" />
+    <unitInfo nodeId="8794595397332155110" fileName="MakeFieldStatic.java" startLine="144" startPosition="0" endLine="162" endPosition="0" unitName="jetbrains.mps.baseLanguage.refactorings.MakeFieldStatic$QuotationClass_so6etp_a0a0a4a3a4" />
     <unitInfo nodeId="9118878263582108237" fileName="MakeFieldStatic_Target.java" startLine="9" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.baseLanguage.refactorings.MakeFieldStatic_Target" />
   </root>
 </debugInfo>

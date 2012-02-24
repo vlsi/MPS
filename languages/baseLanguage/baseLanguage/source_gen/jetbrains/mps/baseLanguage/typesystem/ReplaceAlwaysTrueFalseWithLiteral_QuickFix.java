@@ -19,11 +19,11 @@ public class ReplaceAlwaysTrueFalseWithLiteral_QuickFix extends QuickFix_Runtime
   }
 
   public void execute(SNode node) {
-    SNodeOperations.replaceWithAnother(node, new ReplaceAlwaysTrueFalseWithLiteral_QuickFix.QuotationClass_7hp7vs_a0a0a0a().createNode(((Boolean) ReplaceAlwaysTrueFalseWithLiteral_QuickFix.this.getField("value")[0]).toString()));
+    SNodeOperations.replaceWithAnother(node, new ReplaceAlwaysTrueFalseWithLiteral_QuickFix.QuotationClass_7hp7vs_a1a0a0().createNode(((Boolean) ReplaceAlwaysTrueFalseWithLiteral_QuickFix.this.getField("value")[0]).toString()));
   }
 
-  public static class QuotationClass_7hp7vs_a0a0a0a {
-    public QuotationClass_7hp7vs_a0a0a0a() {
+  public static class QuotationClass_7hp7vs_a1a0a0 {
+    public QuotationClass_7hp7vs_a1a0a0() {
     }
 
     public SNode createNode(Object parameter_3) {
