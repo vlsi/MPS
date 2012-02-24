@@ -1,5 +1,75 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <root nodeId="1271602959945063014">
+    <nodeInfo nodeId="1271602959945063014" fileName="CheckFieldReferenceScopes_MigrationScript.java" startLine="17" startPosition="88" endLine="18" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="1271602959945063014" fileName="CheckFieldReferenceScopes_MigrationScript.java" startLine="20" startPosition="31" endLine="21" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1271602959945063014" fileName="CheckFieldReferenceScopes_MigrationScript.java" startLine="24" startPosition="41" endLine="25" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1271602959945063014" fileName="CheckFieldReferenceScopes_MigrationScript.java" startLine="28" startPosition="59" endLine="29" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1271602959945063037" fileName="CheckFieldReferenceScopes_MigrationScript.java" startLine="32" startPosition="59" endLine="33" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1271602959945063041" fileName="CheckFieldReferenceScopes_MigrationScript.java" startLine="33" startPosition="49" endLine="34" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1271602959945063045" fileName="CheckFieldReferenceScopes_MigrationScript.java" startLine="34" startPosition="31" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="1271602959945063046" fileName="CheckFieldReferenceScopes_MigrationScript.java" startLine="35" startPosition="0" endLine="36" endPosition="181" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1271602959945063054" fileName="CheckFieldReferenceScopes_MigrationScript.java" startLine="36" startPosition="181" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="1271602959945063057" fileName="CheckFieldReferenceScopes_MigrationScript.java" startLine="38" startPosition="26" endLine="39" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1271602959945063064" fileName="CheckFieldReferenceScopes_MigrationScript.java" startLine="41" startPosition="38" endLine="42" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1271602959945063068" fileName="CheckFieldReferenceScopes_MigrationScript.java" startLine="43" startPosition="9" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="1271602959945063069" fileName="CheckFieldReferenceScopes_MigrationScript.java" startLine="44" startPosition="0" endLine="45" endPosition="120" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1271602959945063079" fileName="CheckFieldReferenceScopes_MigrationScript.java" startLine="46" startPosition="40" endLine="47" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1271602959945063086" fileName="CheckFieldReferenceScopes_MigrationScript.java" startLine="49" startPosition="47" endLine="50" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1271602959945063094" fileName="CheckFieldReferenceScopes_MigrationScript.java" startLine="52" startPosition="45" endLine="53" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1271602959945063101" fileName="CheckFieldReferenceScopes_MigrationScript.java" startLine="54" startPosition="9" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="1271602959945063102" fileName="CheckFieldReferenceScopes_MigrationScript.java" startLine="55" startPosition="0" endLine="56" endPosition="210" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1271602959945063018" fileName="CheckFieldReferenceScopes_MigrationScript.java" startLine="59" startPosition="52" endLine="60" endPosition="181" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1271602959945063026" fileName="CheckFieldReferenceScopes_MigrationScript.java" startLine="60" startPosition="181" endLine="61" endPosition="200" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1271602959945063014" fileName="CheckFieldReferenceScopes_MigrationScript.java" startLine="64" startPosition="42" endLine="65" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1271602959945063055" fileName="CheckFieldReferenceScopes_MigrationScript.java" startLine="37" startPosition="0" endLine="40" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1271602959945063062" fileName="CheckFieldReferenceScopes_MigrationScript.java" startLine="40" startPosition="9" endLine="43" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1271602959945063077" fileName="CheckFieldReferenceScopes_MigrationScript.java" startLine="45" startPosition="120" endLine="48" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1271602959945063084" fileName="CheckFieldReferenceScopes_MigrationScript.java" startLine="48" startPosition="9" endLine="51" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1271602959945063092" fileName="CheckFieldReferenceScopes_MigrationScript.java" startLine="51" startPosition="9" endLine="54" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1271602959945063014" fileName="CheckFieldReferenceScopes_MigrationScript.java" startLine="19" startPosition="76" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="1271602959945063014" fileName="CheckFieldReferenceScopes_MigrationScript.java" startLine="23" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getAdditionalInfo#()Ljava/lang/String;" />
+    <nodeInfo nodeId="1271602959945063014" fileName="CheckFieldReferenceScopes_MigrationScript.java" startLine="27" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getFqNameOfConceptToSearchInstances#()Ljava/lang/String;" />
+    <nodeInfo nodeId="1271602959945063014" fileName="CheckFieldReferenceScopes_MigrationScript.java" startLine="63" startPosition="0" endLine="67" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isShowAsIntention#()Z" />
+    <nodeInfo nodeId="1271602959945063014" fileName="CheckFieldReferenceScopes_MigrationScript.java" startLine="58" startPosition="0" endLine="63" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doUpdateInstanceNode#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="1271602959945063014" fileName="CheckFieldReferenceScopes_MigrationScript.java" startLine="31" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableInstanceNode#(Ljetbrains/mps/smodel/SNode;)Z" />
+    <nodeInfo nodeId="1271602959945063014" fileName="CheckFieldReferenceScopes_MigrationScript.java" startLine="18" startPosition="42" endLine="67" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1271602959945063014" fileName="CheckFieldReferenceScopes_MigrationScript.java" startLine="16" startPosition="84" endLine="68" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="CheckFieldReferenceScopes_MigrationScript#(Ljetbrains/mps/smodel/IOperationContext;)V" />
+    <scopeInfo nodeId="1271602959945063014" fileName="CheckFieldReferenceScopes_MigrationScript.java" startLine="20" startPosition="31" endLine="21" endPosition="25" />
+    <scopeInfo nodeId="1271602959945063014" fileName="CheckFieldReferenceScopes_MigrationScript.java" startLine="24" startPosition="41" endLine="25" endPosition="25" />
+    <scopeInfo nodeId="1271602959945063014" fileName="CheckFieldReferenceScopes_MigrationScript.java" startLine="28" startPosition="59" endLine="29" endPosition="78" />
+    <scopeInfo nodeId="1271602959945063056" fileName="CheckFieldReferenceScopes_MigrationScript.java" startLine="38" startPosition="26" endLine="39" endPosition="23" />
+    <scopeInfo nodeId="1271602959945063063" fileName="CheckFieldReferenceScopes_MigrationScript.java" startLine="41" startPosition="38" endLine="42" endPosition="23" />
+    <scopeInfo nodeId="1271602959945063078" fileName="CheckFieldReferenceScopes_MigrationScript.java" startLine="46" startPosition="40" endLine="47" endPosition="23" />
+    <scopeInfo nodeId="1271602959945063085" fileName="CheckFieldReferenceScopes_MigrationScript.java" startLine="49" startPosition="47" endLine="50" endPosition="23" />
+    <scopeInfo nodeId="1271602959945063093" fileName="CheckFieldReferenceScopes_MigrationScript.java" startLine="52" startPosition="45" endLine="53" endPosition="23" />
+    <scopeInfo nodeId="1271602959945063014" fileName="CheckFieldReferenceScopes_MigrationScript.java" startLine="64" startPosition="42" endLine="65" endPosition="21" />
+    <scopeInfo nodeId="1271602959945063017" fileName="CheckFieldReferenceScopes_MigrationScript.java" startLine="59" startPosition="52" endLine="61" endPosition="200">
+      <varInfo nodeId="1271602959945063019" varName="ref" />
+    </scopeInfo>
+    <scopeInfo nodeId="1271602959945063014" fileName="CheckFieldReferenceScopes_MigrationScript.java" startLine="19" startPosition="76" endLine="23" endPosition="0" />
+    <scopeInfo nodeId="1271602959945063014" fileName="CheckFieldReferenceScopes_MigrationScript.java" startLine="23" startPosition="0" endLine="27" endPosition="0" />
+    <scopeInfo nodeId="1271602959945063014" fileName="CheckFieldReferenceScopes_MigrationScript.java" startLine="27" startPosition="0" endLine="31" endPosition="0" />
+    <scopeInfo nodeId="1271602959945063014" fileName="CheckFieldReferenceScopes_MigrationScript.java" startLine="63" startPosition="0" endLine="67" endPosition="0" />
+    <scopeInfo nodeId="1271602959945063014" fileName="CheckFieldReferenceScopes_MigrationScript.java" startLine="58" startPosition="0" endLine="63" endPosition="0">
+      <varInfo nodeId="1271602959945063014" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1271602959945063036" fileName="CheckFieldReferenceScopes_MigrationScript.java" startLine="32" startPosition="59" endLine="56" endPosition="210">
+      <varInfo nodeId="1271602959945063038" varName="excludingPrefix" />
+      <varInfo nodeId="1271602959945063070" varName="name" />
+      <varInfo nodeId="1271602959945063047" varName="ref" />
+      <varInfo nodeId="1271602959945063042" varName="startsFrom" />
+    </scopeInfo>
+    <scopeInfo nodeId="1271602959945063014" fileName="CheckFieldReferenceScopes_MigrationScript.java" startLine="31" startPosition="0" endLine="58" endPosition="0">
+      <varInfo nodeId="1271602959945063014" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1271602959945063014" fileName="CheckFieldReferenceScopes_MigrationScript.java" startLine="17" startPosition="88" endLine="67" endPosition="7" />
+    <scopeInfo nodeId="1271602959945063014" fileName="CheckFieldReferenceScopes_MigrationScript.java" startLine="16" startPosition="84" endLine="68" endPosition="3">
+      <varInfo nodeId="1271602959945063014" varName="operationContext" />
+    </scopeInfo>
+    <unitInfo nodeId="1271602959945063014" fileName="CheckFieldReferenceScopes_MigrationScript.java" startLine="16" startPosition="0" endLine="70" endPosition="0" unitName="TestLang.scripts.CheckFieldReferenceScopes_MigrationScript" />
+    <unitInfo nodeId="1271602959945063014" fileName="CheckFieldReferenceScopes_MigrationScript.java" startLine="19" startPosition="28" endLine="67" endPosition="5" unitName="TestLang.scripts.CheckFieldReferenceScopes_MigrationScript$1" />
+  </root>
   <root nodeId="1470615591205112502">
     <nodeInfo nodeId="1470615591205112502" fileName="CheckLocalVariableScopes_MigrationScript.java" startLine="17" startPosition="87" endLine="18" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="1470615591205112502" fileName="CheckLocalVariableScopes_MigrationScript.java" startLine="20" startPosition="31" endLine="21" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
