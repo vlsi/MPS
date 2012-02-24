@@ -20,6 +20,7 @@ public class BwfMacro extends BwfProjectPart implements INamedConcept {
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String EXPORT_TO_PROPERIES_FILE = "exportToProperiesFile";
   public static final String IS_LOCATION = "isLocation";
+  public static final String BEFORE_FILES = "beforeFiles";
   public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
 
   public BwfMacro(SNode node) {
@@ -80,6 +81,14 @@ public class BwfMacro extends BwfProjectPart implements INamedConcept {
 
   public void setIsLocation(boolean value) {
     this.setBooleanProperty(BwfMacro.IS_LOCATION, value);
+  }
+
+  public boolean getBeforeFiles() {
+    return this.getBooleanProperty(BwfMacro.BEFORE_FILES);
+  }
+
+  public void setBeforeFiles(boolean value) {
+    this.setBooleanProperty(BwfMacro.BEFORE_FILES, value);
   }
 
   public int getSmodelAttributesCount() {

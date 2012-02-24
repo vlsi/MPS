@@ -90,7 +90,7 @@ public class Context {
   }
 
   public String getVariablesDeployPath(SNode node) {
-    return getDeployPath_WithMacro(node) + "/" + getBuildProjectName(node) + ".variables";
+    return getDeployPath_WithMacro(node) + "/" + getBuildProjectName(node) + ".variables.properties";
   }
 
   public List<SNode> getExportedMacro(SNode node) {
