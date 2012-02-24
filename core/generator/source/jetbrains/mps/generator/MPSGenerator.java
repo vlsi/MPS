@@ -20,7 +20,7 @@ import jetbrains.mps.components.ComponentPlugin;
 import jetbrains.mps.generator.impl.RootTemplateAnnotator;
 import jetbrains.mps.generator.impl.dependencies.GenerationDependenciesCache;
 import jetbrains.mps.generator.traceInfo.TraceInfoCache;
-import jetbrains.mps.generator.traceInfo.TraceInfoUtil2;
+import jetbrains.mps.generator.traceInfo.TraceInfoUtilComponent;
 import jetbrains.mps.smodel.GlobalSModelEventsManager;
 import jetbrains.mps.smodel.SModelRepository;
 
@@ -45,7 +45,7 @@ public class MPSGenerator extends ComponentPlugin {
     final GlobalSModelEventsManager globalSModelEventsManager = MPSCore.getInstance().getGlobalSModelEventsManager();
 
     init(new TraceInfoCache(modelRepository));
-    init(new TraceInfoUtil2());
+    init(new TraceInfoUtilComponent());
     init(new GenerationDependenciesCache(modelRepository));
     init(new ModelGenerationStatusManager(globalSModelEventsManager));
     init(new RootTemplateAnnotator(globalSModelEventsManager));

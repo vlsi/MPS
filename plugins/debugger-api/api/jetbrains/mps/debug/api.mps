@@ -968,12 +968,12 @@
               <link role="classifier" roleId="tpee.1107535924139" targetNodeId="cu2c.~SNodePointer" resolveInfo="SNodePointer" />
             </node>
             <node role="initializer" roleId="tpee.1068431790190" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1053276000964841926">
-              <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1053276000964841927">
-                <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="9m56.~TraceInfoUtil2" resolveInfo="TraceInfoUtil2" />
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="9m56.~TraceInfoUtil2%dgetInstance()%cjetbrains%dmps%dgenerator%dtraceInfo%dTraceInfoUtil2" resolveInfo="getInstance" />
+              <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="24227610116136905">
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="9m56.~TraceInfoUtilComponent%dgetInstance()%cjetbrains%dmps%dgenerator%dtraceInfo%dTraceInfoUtilComponent" resolveInfo="getInstance" />
+                <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="9m56.~TraceInfoUtilComponent" resolveInfo="TraceInfoUtilComponent" />
               </node>
               <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1053276000964841928">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="9m56.~TraceInfoUtil2%dgetNodePointer(java%dlang%dString,java%dlang%dString,int)%cjetbrains%dmps%dsmodel%dSNodePointer" resolveInfo="getNodePointer" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="9m56.~TraceInfoUtilComponent%dgetNodePointer(java%dlang%dString,java%dlang%dString,int)%cjetbrains%dmps%dsmodel%dSNodePointer" resolveInfo="getNodePointer" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1053276000964841929">
                   <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="1053276000964841930">
                     <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4474271214082913596" resolveInfo="location" />
@@ -1046,11 +1046,11 @@
             </node>
             <node role="initializer" roleId="tpee.1068431790190" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1053276000964841942">
               <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1053276000964841943">
-                <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="9m56.~TraceInfoUtil2" resolveInfo="TraceInfoUtil2" />
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="9m56.~TraceInfoUtil2%dgetInstance()%cjetbrains%dmps%dgenerator%dtraceInfo%dTraceInfoUtil2" resolveInfo="getInstance" />
+                <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="9m56.~TraceInfoUtilComponent" resolveInfo="TraceInfoUtilComponent" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="9m56.~TraceInfoUtilComponent%dgetInstance()%cjetbrains%dmps%dgenerator%dtraceInfo%dTraceInfoUtilComponent" resolveInfo="getInstance" />
               </node>
               <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1053276000964841944">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="9m56.~TraceInfoUtil2%dgetNodePointer(java%dlang%dString,java%dlang%dString,int)%cjetbrains%dmps%dsmodel%dSNodePointer" resolveInfo="getNodePointer" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="9m56.~TraceInfoUtilComponent%dgetNodePointer(java%dlang%dString,java%dlang%dString,int)%cjetbrains%dmps%dsmodel%dSNodePointer" resolveInfo="getNodePointer" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="1053276000964841957">
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4474271214082913629" resolveInfo="unitName" />
                 </node>
@@ -1171,11 +1171,11 @@
             </node>
             <node role="initializer" roleId="tpee.1068431790190" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1053276000964841974">
               <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1053276000964841975">
-                <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="9m56.~TraceInfoUtil2" resolveInfo="TraceInfoUtil2" />
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="9m56.~TraceInfoUtil2%dgetInstance()%cjetbrains%dmps%dgenerator%dtraceInfo%dTraceInfoUtil2" resolveInfo="getInstance" />
+                <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="9m56.~TraceInfoUtilComponent" resolveInfo="TraceInfoUtilComponent" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="9m56.~TraceInfoUtilComponent%dgetInstance()%cjetbrains%dmps%dgenerator%dtraceInfo%dTraceInfoUtilComponent" resolveInfo="getInstance" />
               </node>
               <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1053276000964841976">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="9m56.~TraceInfoUtil2%dgetNodePointer(java%dlang%dString,java%dlang%dString,int)%cjetbrains%dmps%dsmodel%dSNodePointer" resolveInfo="getNodePointer" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="9m56.~TraceInfoUtilComponent%dgetNodePointer(java%dlang%dString,java%dlang%dString,int)%cjetbrains%dmps%dsmodel%dSNodePointer" resolveInfo="getNodePointer" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="1053276000964841989">
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4474271214082913651" resolveInfo="lastUnitName" />
                 </node>
@@ -1197,11 +1197,11 @@
             </node>
             <node role="initializer" roleId="tpee.1068431790190" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1053276000964842000">
               <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1053276000964842001">
-                <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="9m56.~TraceInfoUtil2" resolveInfo="TraceInfoUtil2" />
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="9m56.~TraceInfoUtil2%dgetInstance()%cjetbrains%dmps%dgenerator%dtraceInfo%dTraceInfoUtil2" resolveInfo="getInstance" />
+                <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="9m56.~TraceInfoUtilComponent" resolveInfo="TraceInfoUtilComponent" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="9m56.~TraceInfoUtilComponent%dgetInstance()%cjetbrains%dmps%dgenerator%dtraceInfo%dTraceInfoUtilComponent" resolveInfo="getInstance" />
               </node>
               <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1053276000964842002">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="9m56.~TraceInfoUtil2%dgetNodePointer(java%dlang%dString,java%dlang%dString,int)%cjetbrains%dmps%dsmodel%dSNodePointer" resolveInfo="getNodePointer" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="9m56.~TraceInfoUtilComponent%dgetNodePointer(java%dlang%dString,java%dlang%dString,int)%cjetbrains%dmps%dsmodel%dSNodePointer" resolveInfo="getNodePointer" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="1053276000964842009">
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4474271214082913659" resolveInfo="nextUnitName" />
                 </node>

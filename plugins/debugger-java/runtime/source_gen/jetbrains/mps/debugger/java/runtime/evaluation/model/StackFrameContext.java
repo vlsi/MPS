@@ -13,7 +13,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.debug.runtime.java.programState.proxies.JavaStackFrame;
 import com.sun.jdi.StackFrame;
 import com.sun.jdi.Location;
-import jetbrains.mps.generator.traceInfo.TraceInfoUtil2;
+import jetbrains.mps.generator.traceInfo.TraceInfoUtilComponent;
 import org.jetbrains.annotations.NotNull;
 import java.util.List;
 import jetbrains.mps.reloading.ClasspathStringCollector;
@@ -88,7 +88,7 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
       if (stackFrame != null) {
         try {
           Location location = stackFrame.location();
-          locationNode = TraceInfoUtil2.getInstance().getNode(location.declaringType().name(), location.sourceName(), location.lineNumber());
+          locationNode = TraceInfoUtilComponent.getInstance().getNode(location.declaringType().name(), location.sourceName(), location.lineNumber());
         } catch (Throwable t) {
           if (log.isErrorEnabled()) {
             log.error("", t);

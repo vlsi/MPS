@@ -9,7 +9,7 @@ import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.generator.traceInfo.TraceInfoUtil2;
+import jetbrains.mps.generator.traceInfo.TraceInfoUtilComponent;
 import com.intellij.execution.filters.HyperlinkInfo;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.navigation.NodeNavigatable;
@@ -57,7 +57,7 @@ public class JavaStackTraceFilter implements Filter {
 
         SNode node = null;
         if (split.length >= 2) {
-          node = TraceInfoUtil2.getInstance().getNode(pkg, split[0], Integer.parseInt(split[1]));
+          node = TraceInfoUtilComponent.getInstance().getNode(pkg, split[0], Integer.parseInt(split[1]));
         }
         if (node == null) {
           return null;

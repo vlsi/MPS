@@ -32,10 +32,10 @@ import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.Computable;
 
-public class TraceInfoUtil2 implements CoreComponent {
-  private static TraceInfoUtil2 INSTANCE;
+public class TraceInfoUtilComponent implements CoreComponent {
+  private static TraceInfoUtilComponent INSTANCE;
   public static String DEFAULT_MAPPER = "jetbrains.mps.generator.traceInfo";
-  protected static Log log = LogFactory.getLog(TraceInfoUtil2.class);
+  protected static Log log = LogFactory.getLog(TraceInfoUtilComponent.class);
 
   private final _FunctionTypes._return_P1_E0<? extends String, ? super String> myDefaultUnitNameToModelNameMapper = new _FunctionTypes._return_P1_E0<String, String>() {
     public String invoke(String unitName) {
@@ -48,7 +48,7 @@ public class TraceInfoUtil2 implements CoreComponent {
   };
   private final Map<String, _FunctionTypes._return_P1_E0<? extends String, ? super String>> myUnitNameToModelNameMapper = MapSequence.fromMap(new HashMap<String, _FunctionTypes._return_P1_E0<? extends String, ? super String>>());
 
-  public TraceInfoUtil2() {
+  public TraceInfoUtilComponent() {
   }
 
   public void init() {
@@ -114,7 +114,7 @@ public class TraceInfoUtil2 implements CoreComponent {
 
   @Nullable
   public <T> T findInTraceInfo(@NonNls String unitName, _FunctionTypes._return_P2_E0<? extends T, ? super DebugInfo, ? super SModelDescriptor> getter, String mapperKey) {
-    for (SModelDescriptor descriptor : Sequence.fromIterable(TraceInfoUtil2.getInstance().getCandidateModels(unitName, mapperKey))) {
+    for (SModelDescriptor descriptor : Sequence.fromIterable(TraceInfoUtilComponent.getInstance().getCandidateModels(unitName, mapperKey))) {
       final DebugInfo info = TraceInfoCache.getInstance().get(descriptor);
       if (info == null) {
         continue;
@@ -181,7 +181,7 @@ public class TraceInfoUtil2 implements CoreComponent {
     return MapSequence.fromMap(myUnitNameToModelNameMapper).removeKey(key);
   }
 
-  public static TraceInfoUtil2 getInstance() {
+  public static TraceInfoUtilComponent getInstance() {
     return INSTANCE;
   }
 }

@@ -37,7 +37,7 @@
     <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
     <classNode dependClassName="jetbrains.mps.generator.traceInfo.TraceInfoCache" />
-    <classNode dependClassName="jetbrains.mps.generator.traceInfo.TraceInfoUtil2" />
+    <classNode dependClassName="jetbrains.mps.generator.traceInfo.TraceInfoUtilComponent" />
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelDescriptor" />
@@ -54,7 +54,7 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
   </dependency>
-  <dependency className="jetbrains.mps.generator.traceInfo.TraceInfoUtil2" file="TraceInfoUtil2.java">
+  <dependency className="jetbrains.mps.generator.traceInfo.TraceInfoUtilComponent" file="TraceInfoUtilComponent.java">
     <classNode dependClassName="java.lang.IllegalStateException" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.String" />

@@ -27,7 +27,7 @@ public class TraceInfoUtil {
 
   @Nullable
   public static <T> T findInDebugInfo(@NotNull String unitName, @NotNull final Mapper2<? super DebugInfo, ? super SModelDescriptor, ? extends T> nodeGetter) {
-    return TraceInfoUtil2.getInstance().findInTraceInfo(unitName, new _FunctionTypes._return_P2_E0<T, DebugInfo, SModelDescriptor>() {
+    return TraceInfoUtilComponent.getInstance().findInTraceInfo(unitName, new _FunctionTypes._return_P2_E0<T, DebugInfo, SModelDescriptor>() {
       public T invoke(DebugInfo info, SModelDescriptor descriptor) {
         return (T) nodeGetter.value(info, descriptor);
       }
@@ -87,7 +87,7 @@ public class TraceInfoUtil {
   public static <T extends PositionInfo> List<SNode> getAllNodes(@NotNull final String className, final String file, final int position, final Mapper<DebugInfoRoot, ? extends Set<T>> positionsGetter) {
     return ModelAccess.instance().runReadAction(new Computable<List<SNode>>() {
       public List<SNode> compute() {
-        return TraceInfoUtil2.getInstance().getAllNodes(className, file, position, new _FunctionTypes._return_P1_E0<Set<T>, DebugInfoRoot>() {
+        return TraceInfoUtilComponent.getInstance().getAllNodes(className, file, position, new _FunctionTypes._return_P1_E0<Set<T>, DebugInfoRoot>() {
           public Set<T> invoke(DebugInfoRoot info) {
             return positionsGetter.value(info);
           }

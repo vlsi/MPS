@@ -1215,7 +1215,7 @@
     <nodeInfo nodeId="7757449281563190762" fileName="StackFrameContext.java" startLine="84" startPosition="62" endLine="85" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7757449281563190768" fileName="StackFrameContext.java" startLine="86" startPosition="33" endLine="87" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7757449281563190790" fileName="StackFrameContext.java" startLine="89" startPosition="13" endLine="90" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7757449281563190796" fileName="StackFrameContext.java" startLine="90" startPosition="52" endLine="91" endPosition="141" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7757449281563190796" fileName="StackFrameContext.java" startLine="90" startPosition="52" endLine="91" endPosition="149" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8736635924683038528" fileName="StackFrameContext.java" startLine="93" startPosition="37" endLine="94" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7757449281563190814" fileName="StackFrameContext.java" startLine="98" startPosition="5" endLine="99" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7757449281563190820" fileName="StackFrameContext.java" startLine="103" startPosition="38" endLine="104" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -1569,7 +1569,7 @@
     <scopeInfo nodeId="4544608336420760890" fileName="StackFrameContext.java" startLine="356" startPosition="36" endLine="357" endPosition="44" />
     <scopeInfo nodeId="7757449281563191149" fileName="StackFrameContext.java" startLine="534" startPosition="66" endLine="535" endPosition="64" />
     <scopeInfo nodeId="7757449281563191149" fileName="StackFrameContext.java" startLine="540" startPosition="38" endLine="541" endPosition="89" />
-    <scopeInfo nodeId="7757449281563190789" fileName="StackFrameContext.java" startLine="89" startPosition="13" endLine="91" endPosition="141">
+    <scopeInfo nodeId="7757449281563190789" fileName="StackFrameContext.java" startLine="89" startPosition="13" endLine="91" endPosition="149">
       <varInfo nodeId="7757449281563190791" varName="location" />
     </scopeInfo>
     <scopeInfo nodeId="4544608336420739918" fileName="StackFrameContext.java" startLine="257" startPosition="11" endLine="259" endPosition="24">
