@@ -2460,6 +2460,9 @@
   </root>
   <root id="6108265972537541352">
     <node role="entry" roleId="tps4.701559220729212646" type="tps4.Branding" typeId="tps4.6108265972537166326" id="437343344535643867">
+      <property name="major" nameId="tps4.3497141547781541444" value="2" />
+      <property name="minor" nameId="tps4.3497141547781541445" value="1" />
+      <property name="eap" nameId="tps4.3497141547781541446" value="true" />
       <node role="buildNumber" roleId="tps4.6108265972537229337" type="tps4.VariableReference" typeId="tps4.1205339464939" id="437343344535644762">
         <link role="variable" roleId="tps4.1205339484191" targetNodeId="2235195415637077105" resolveInfo="build" />
       </node>
@@ -2657,7 +2660,7 @@
           <property name="name" nameId="tps4.1223641503366" value="http://www.jetbrains.com/mps/update.xml" />
         </node>
         <node role="updateChannel" roleId="tps4.8795525031433091059" type="tps4.SimpleString" typeId="tps4.1205339044029" id="8795525031433494621">
-          <property name="name" nameId="tps4.1223641503366" value="MPS20EAP" />
+          <property name="name" nameId="tps4.1223641503366" value="MPS21EAP" />
         </node>
       </node>
       <node role="help" roleId="tps4.437343344536486297" type="tps4.Help" typeId="tps4.437343344536486293" id="437343344536578822">
@@ -2673,6 +2676,9 @@
       </node>
       <node role="textColor" roleId="tps4.8795525031433238889" type="tps4.SimpleString" typeId="tps4.1205339044029" id="8795525031433494620">
         <property name="name" nameId="tps4.1223641503366" value="002387" />
+      </node>
+      <node role="codename" roleId="tps4.3497141547781549827" type="tps4.SimpleString" typeId="tps4.1205339044029" id="3497141547781692342">
+        <property name="name" nameId="tps4.1223641503366" value="MPS" />
       </node>
     </node>
   </root>
