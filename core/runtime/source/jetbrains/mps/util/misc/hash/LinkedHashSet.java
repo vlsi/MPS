@@ -19,6 +19,7 @@ import java.util.AbstractSet;
 import java.util.Iterator;
 import java.util.Set;
 
+@Deprecated
 public class LinkedHashSet<E> extends AbstractSet<E> implements Set<E> {
 
   private Entry<E>[] table;

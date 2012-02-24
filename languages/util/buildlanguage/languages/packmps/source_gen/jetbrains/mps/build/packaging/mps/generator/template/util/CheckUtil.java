@@ -86,7 +86,7 @@ public class CheckUtil {
 
       // if we are here, this means this solution is a part of MPS core 
       for (Language language : SetSequence.fromSet(solution.getDependenciesManager().getAllUsedLanguages())) {
-        for (ModuleReference mr : SetSequence.fromSet(language.getRuntimeModulesReferences())) {
+        for (ModuleReference mr : Sequence.fromIterable(language.getRuntimeModulesReferences())) {
           IModule module = MPSModuleRepository.getInstance().getModule(mr);
           if (module.getDescriptorFile() == null) {
             // for filtering out modules like MPS.Classpath 

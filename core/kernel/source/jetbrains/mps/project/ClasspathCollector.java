@@ -19,7 +19,6 @@ import jetbrains.mps.reloading.CommonPaths;
 import jetbrains.mps.reloading.CompositeClassPathItem;
 import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.MPSModuleRepository;
 
 import java.util.*;
 

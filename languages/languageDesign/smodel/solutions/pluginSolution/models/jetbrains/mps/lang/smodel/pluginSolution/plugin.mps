@@ -98,7 +98,7 @@
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5487985028841902729" resolveInfo="language" />
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="5487985028841902755">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cu2c.~Language%dgetAspectModelDescriptors()%cjava%dutil%dSet" resolveInfo="getAspectModelDescriptors" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cu2c.~Language%dgetAspectModelDescriptors()%cjava%dutil%dCollection" resolveInfo="getAspectModelDescriptors" />
             </node>
           </node>
           <node role="body" roleId="tpee.1154032183016" type="tpee.StatementList" typeId="tpee.1068580123136" id="5487985028841902756">
