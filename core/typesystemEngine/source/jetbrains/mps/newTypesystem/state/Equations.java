@@ -183,6 +183,9 @@ public class Equations {
     Map<SNode, SNode> childrenReplacement = new THashMap<SNode, SNode>();
     for (SNode child : node.getChildren()) {
       SNode newChild = expandNode(child, variablesMet, finalExpansion, copy);
+      if (finalExpansion && TypesUtil.isVariable(newChild)) {
+        newChild = convertReferentVariable(node, child.getRole_(), child);
+      }
       if (newChild != child) {
         childrenReplacement.put(child, newChild);
       }

@@ -65,11 +65,11 @@ public class ProjectLibraryManager extends BaseLibraryManager implements Project
       ApplicationManager.getApplication().invokeAndWait(new Runnable() {
         @Override
         public void run() {
-          ProjectLibraryManager.super.initComponent();
+          load();
         }
       }, ModalityState.defaultModalityState());
     } else {
-      ProjectLibraryManager.super.initComponent();
+      load();
     }
   }
 

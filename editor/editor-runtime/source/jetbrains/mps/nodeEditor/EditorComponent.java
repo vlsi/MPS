@@ -15,10 +15,7 @@
  */
 package jetbrains.mps.nodeEditor;
 
-import com.intellij.ide.CopyProvider;
-import com.intellij.ide.CutProvider;
-import com.intellij.ide.DataManager;
-import com.intellij.ide.PasteProvider;
+import com.intellij.ide.*;
 import com.intellij.openapi.actionSystem.*;
 import com.intellij.openapi.keymap.KeymapManager;
 import com.intellij.openapi.project.Project;
@@ -1212,14 +1209,31 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
   public void assertModelNotDisposed() {
     assert myModelDisposedStackTrace == null : getModelDisposedMessage();
-    assert myNode == null || !myNode.isDisposed() : "editor is invalid";
+    assert myNode == null || !myNode.isDisposed() : getNodeDisposedMessage();
+  }
+
+  private String getNodeDisposedMessage() {
+    StringBuilder sb = new StringBuilder("editor is invalid");
+    if (myNode != null) {
+      sb.append(", myNode is disposed");
+      StackTraceElement[] modelDisposedTrace = myNode.getModelDisposedTrace();
+      if (modelDisposedTrace != null) {
+        for (StackTraceElement element : modelDisposedTrace) {
+          sb.append("\nat ");
+          sb.append(element);
+        }
+      }
+    } else {
+      sb.append(", myNode == null");
+    }
+    return sb.toString();
   }
 
   private String getModelDisposedMessage() {
     StringBuilder sb = new StringBuilder("Model was disposed through:");
-    for (int i = 0; i < myModelDisposedStackTrace.length; i++) {
+    for (StackTraceElement element : myModelDisposedStackTrace) {
       sb.append("\nat ");
-      sb.append(myModelDisposedStackTrace[i]);
+      sb.append(element);
     }
     sb.append("\n");
     sb.append("EditorComponent.myDisposed == ");
@@ -2590,6 +2604,9 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     if (dataId.equals(PlatformDataKeys.VIRTUAL_FILE_ARRAY.getName())) {
       return getVirtualFile() != null ? new VirtualFile[]{getVirtualFile()} : new VirtualFile[0];
     }
+    if (dataId.equals(LangDataKeys.VIRTUAL_FILE.getName())) {
+      return getVirtualFile();
+    }
 
     //not found
     return null;
@@ -2960,6 +2977,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     public void modelReplaced(final SModelDescriptor sm) {
       assert SwingUtilities.isEventDispatchThread() : "Model reloaded notification expected in EventDispatchThread";
       if (myNode != null) {
+        assertModelNotDisposed();
         if (myNode.getModel().getSModelReference().equals(sm.getSModelReference())) {
           clearModelDisposedTrace();
           SNodeId oldId = myNode.getSNodeId();

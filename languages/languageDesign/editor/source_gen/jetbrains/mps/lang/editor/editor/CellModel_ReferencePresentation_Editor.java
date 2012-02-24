@@ -23,6 +23,10 @@ public class CellModel_ReferencePresentation_Editor extends DefaultNodeEditor {
     return this.createCollection_jf7bj_a(editorContext, node);
   }
 
+  public EditorCell createInspectedCell(EditorContext editorContext, SNode node) {
+    return this.createComponent_jf7bj_a(editorContext, node);
+  }
+
   private EditorCell createCollection_jf7bj_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_jf7bj_a");
@@ -44,6 +48,12 @@ public class CellModel_ReferencePresentation_Editor extends DefaultNodeEditor {
 
   private EditorCell createComponent_jf7bj_c0(EditorContext editorContext, SNode node) {
     AbstractCellProvider provider = new _CloseTag(node);
+    EditorCell editorCell = provider.createEditorCell(editorContext);
+    return editorCell;
+  }
+
+  private EditorCell createComponent_jf7bj_a(EditorContext editorContext, SNode node) {
+    AbstractCellProvider provider = new _CellModel_Common(node);
     EditorCell editorCell = provider.createEditorCell(editorContext);
     return editorCell;
   }

@@ -216,10 +216,10 @@ public class Language extends AbstractModule implements MPSModuleOwner {
     return result;
   }
 
-  public List<ModuleReference> getRuntimeModulesReferences() {
+  public Set<ModuleReference> getRuntimeModulesReferences() {
     LanguageDescriptor descriptor = getModuleDescriptor();
-    if (descriptor == null) return Collections.emptyList();
-    return Collections.unmodifiableList(descriptor.getRuntimeModules());
+    if (descriptor == null) return Collections.emptySet();
+    return Collections.unmodifiableSet(descriptor.getRuntimeModules());
   }
 
   protected ModuleDescriptor loadDescriptor() {
@@ -578,8 +578,8 @@ public class Language extends AbstractModule implements MPSModuleOwner {
 
   //-----------stubs--------------
 
-  public List<StubPath> getRuntimeStubPaths() {
-    List<StubPath> result = new ArrayList<StubPath>();
+  public Set<StubPath> getRuntimeStubPaths() {
+    Set<StubPath> result = new HashSet<StubPath>();
 
     for (ModelRoot me : getRuntimeModelsEntries()) {
       result.add(new StubPath(me.getPath(), me.getManager()));
@@ -688,7 +688,7 @@ public class Language extends AbstractModule implements MPSModuleOwner {
     return false;
   }
 
-  protected List<ModelRoot> getRuntimeModelsEntries() {
+  protected Set<ModelRoot> getRuntimeModelsEntries() {
     return myLanguageDescriptor.getRuntimeStubModels();
   }
 
@@ -696,7 +696,7 @@ public class Language extends AbstractModule implements MPSModuleOwner {
     return !myLanguageDescriptor.isDoNotGenerateAdapters();
   }
 
-  protected List<ModelRoot> getStubModelEntriesToIncludeOrExclude() {
+  protected Set<ModelRoot> getStubModelEntriesToIncludeOrExclude() {
     return CollectionUtil.union(super.getStubModelEntriesToIncludeOrExclude(), getRuntimeModelsEntries());
   }
 

@@ -17,34 +17,37 @@ package jetbrains.mps.project.structure.modules;
 
 import jetbrains.mps.project.structure.model.ModelRoot;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Comparator;
+import java.util.HashSet;
+import java.util.Set;
+import java.util.TreeSet;
 
 public class ModuleDescriptor {
+  private static final ModuleReferenceComparator MODULE_REFERENCE_COMPARATOR = new ModuleReferenceComparator();
+  private static final DependencyComparator DEPENDENCY_COMPARATOR = new DependencyComparator(MODULE_REFERENCE_COMPARATOR);
+
   private String myUUID;
   private String myNamespace;
   private String myTimestamp;
   private boolean myCompileInMPS = true;
 
-  private boolean myEnableJavaStubs;
-
-  private List<jetbrains.mps.project.structure.model.ModelRoot> myModelRoots;
-  private List<Dependency> myDependencies;
-  private List<ModuleReference> myUsedLanguages;
-  private List<ModuleReference> myUsedDevkits;
-  private List<ModelRoot> myStubModels;
-  private List<String> mySourcePaths;
+  private Set<jetbrains.mps.project.structure.model.ModelRoot> myModelRoots;
+  private Set<Dependency> myDependencies;
+  private Set<ModuleReference> myUsedLanguages;
+  private Set<ModuleReference> myUsedDevkits;
+  private Set<ModelRoot> myStubModels;
+  private Set<String> mySourcePaths;
   private DeploymentDescriptor myDeploymentDescriptor;
-  
+
   private Throwable myLoadException;
 
   public ModuleDescriptor() {
-    myModelRoots = new ArrayList<jetbrains.mps.project.structure.model.ModelRoot>();
-    myDependencies = new ArrayList<Dependency>();
-    myUsedLanguages = new ArrayList<ModuleReference>();
-    myUsedDevkits = new ArrayList<ModuleReference>();
-    myStubModels = new ArrayList<ModelRoot>();
-    mySourcePaths = new ArrayList<String>();
+    myModelRoots = new HashSet<ModelRoot>();
+    myDependencies = new TreeSet<Dependency>(DEPENDENCY_COMPARATOR);
+    myUsedLanguages = new TreeSet<ModuleReference>(MODULE_REFERENCE_COMPARATOR);
+    myUsedDevkits = new TreeSet<ModuleReference>(MODULE_REFERENCE_COMPARATOR);
+    myStubModels = new HashSet<ModelRoot>();
+    mySourcePaths = new HashSet<String>();
   }
 
   public String getUUID() {
@@ -83,35 +86,27 @@ public class ModuleDescriptor {
     myCompileInMPS = compileInMPS;
   }
 
-  public boolean getEnableJavaStubs() {
-    return myEnableJavaStubs;
-  }
-
-  public void setEnableJavaStubs(boolean enableJavaStubs) {
-    myEnableJavaStubs = enableJavaStubs;
-  }
-
-  public List<ModelRoot> getModelRoots() {
+  public Set<ModelRoot> getModelRoots() {
     return myModelRoots;
   }
 
-  public List<Dependency> getDependencies() {
+  public Set<Dependency> getDependencies() {
     return myDependencies;
   }
 
-  public List<ModuleReference> getUsedLanguages() {
+  public Set<ModuleReference> getUsedLanguages() {
     return myUsedLanguages;
   }
 
-  public List<ModuleReference> getUsedDevkits() {
+  public Set<ModuleReference> getUsedDevkits() {
     return myUsedDevkits;
   }
 
-  public List<ModelRoot> getStubModelEntries() {
+  public Set<ModelRoot> getStubModelEntries() {
     return myStubModels;
   }
-  
-  public List<String> getSourcePaths() {
+
+  public Set<String> getSourcePaths() {
     return mySourcePaths;
   }
 
@@ -141,6 +136,33 @@ public class ModuleDescriptor {
 
   public void setLoadException(Throwable loadException) {
     myLoadException = loadException;
+  }
 
+  private static class ModuleReferenceComparator implements Comparator<ModuleReference> {
+    @Override
+    public int compare(ModuleReference ref1, ModuleReference ref2) {
+      String moduleFqName1 = ref1.getModuleFqName();
+      String moduleFqName2 = ref2.getModuleFqName();
+      if (moduleFqName1 == null) {
+        return moduleFqName2 == null ? 0 : 1;
+      }
+      if (moduleFqName2 == null) {
+        return -1;
+      }
+      return moduleFqName1.compareTo(moduleFqName2);
+    }
+  }
+
+  private static class DependencyComparator implements Comparator<Dependency> {
+    private Comparator<ModuleReference> myModuleRefComparator;
+
+    DependencyComparator(Comparator<ModuleReference> moduleReferComparator) {
+      myModuleRefComparator = moduleReferComparator;
+    }
+
+    @Override
+    public int compare(Dependency dependency1, Dependency dependency2) {
+      return myModuleRefComparator.compare(dependency1.getModuleRef(), dependency2.getModuleRef());
+    }
   }
 }

@@ -25,6 +25,7 @@ import jetbrains.mps.project.structure.modules.StubSolution;
 import jetbrains.mps.project.ModuleId;
 import java.io.File;
 import jetbrains.mps.vfs.FileSystem;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.io.OutputStream;
 
 public class LanguageDescriptorPersistence {
@@ -182,7 +183,7 @@ public class LanguageDescriptorPersistence {
         result_v3r4p8_a0a0d0c.addContent(result_v3r4p8_a4a0a0d0c);
 
         final Element result_v3r4p8_a6a0a0d0c = new Element("accessoryModels");
-        for (SModelReference model : ListSequence.fromList(descriptor.getAccessoryModels())) {
+        for (SModelReference model : SetSequence.fromSet(descriptor.getAccessoryModels())) {
           final Element result_v3r4p8_a0a0a6a0a0d0c = new Element("model");
           final String result_v3r4p8_a0a0a0a6a0a0d0c = model.toString();
           result_v3r4p8_a0a0a6a0a0d0c.setAttribute("modelUID", "" + result_v3r4p8_a0a0a0a6a0a0d0c);
@@ -206,7 +207,7 @@ public class LanguageDescriptorPersistence {
 
         if (!(descriptor.getRuntimeStubModels().isEmpty())) {
           final Element result_v3r4p8_a0a41a0a0d0c = new Element("runtimeStubModels");
-          for (ModelRoot entry : ListSequence.fromList(descriptor.getRuntimeStubModels())) {
+          for (ModelRoot entry : SetSequence.fromSet(descriptor.getRuntimeStubModels())) {
             final Element result_v3r4p8_a0a0a0a41a0a0d0c = new Element("stubModelEntry");
             final String result_v3r4p8_a0a0a0a0a41a0a0d0c = macros.shrinkPath(entry.getPath(), file);
             result_v3r4p8_a0a0a0a41a0a0d0c.setAttribute("path", "" + result_v3r4p8_a0a0a0a0a41a0a0d0c);
@@ -223,7 +224,7 @@ public class LanguageDescriptorPersistence {
 
         if (!(descriptor.getStubSolutions().isEmpty())) {
           final Element result_v3r4p8_a0a61a0a0d0c = new Element("stubSolutions");
-          for (StubSolution entry : ListSequence.fromList(descriptor.getStubSolutions())) {
+          for (StubSolution entry : SetSequence.fromSet(descriptor.getStubSolutions())) {
             final Element result_v3r4p8_a0a0a0a61a0a0d0c = new Element("stubSolution");
             final String result_v3r4p8_a0a0a0a0a61a0a0d0c = entry.getName();
             result_v3r4p8_a0a0a0a61a0a0d0c.setAttribute("moduleName", "" + result_v3r4p8_a0a0a0a0a61a0a0d0c);
@@ -235,7 +236,7 @@ public class LanguageDescriptorPersistence {
         }
 
         final Element result_v3r4p8_a81a0a0d0c = new Element("sourcePath");
-        for (String p : ListSequence.fromList(descriptor.getSourcePaths())) {
+        for (String p : SetSequence.fromSet(descriptor.getSourcePaths())) {
           final Element result_v3r4p8_a0a0a81a0a0d0c = new Element("source");
           final String result_v3r4p8_a0a0a0a81a0a0d0c = macros.shrinkPath(p, file);
           result_v3r4p8_a0a0a81a0a0d0c.setAttribute("path", "" + result_v3r4p8_a0a0a0a81a0a0d0c);
@@ -251,7 +252,7 @@ public class LanguageDescriptorPersistence {
         ModuleDescriptorPersistence.saveDependencies(result_v3r4p8_a0a0d0c, descriptor);
 
         final Element result_v3r4p8_a52a0a0d0c = new Element("extendedLanguages");
-        for (ModuleReference ref : ListSequence.fromList(descriptor.getExtendedLanguages())) {
+        for (ModuleReference ref : SetSequence.fromSet(descriptor.getExtendedLanguages())) {
           final Element result_v3r4p8_a0a0a52a0a0d0c = new Element("extendedLanguage");
           final String result_v3r4p8_a0a0a0a52a0a0d0c = ref.toString();
           result_v3r4p8_a0a0a52a0a0d0c.setText(result_v3r4p8_a0a0a0a52a0a0d0c);

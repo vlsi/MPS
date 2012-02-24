@@ -14,10 +14,12 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.ide.refactoring.RenameDialog;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.ide.platform.refactoring.RenameDialog;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.ide.refactoring.RefactoringFacade;
+import jetbrains.mps.ide.platform.refactoring.RefactoringAccess;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
 import java.util.Arrays;
 
@@ -74,11 +76,16 @@ public class RenameProperty_Action extends BaseAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      String newName = RenameDialog.getNewName(((MPSProject) MapSequence.fromMap(_params).get("project")).getProject(), SPropertyOperations.getString(((SNode) MapSequence.fromMap(_params).get("target")), "name"), "property");
-      if (newName == null) {
+      final Wrappers._T<String> newName = new Wrappers._T<String>();
+      ModelAccess.instance().runReadAction(new Runnable() {
+        public void run() {
+          newName.value = RenameDialog.getNewName(((MPSProject) MapSequence.fromMap(_params).get("project")).getProject(), SPropertyOperations.getString(((SNode) MapSequence.fromMap(_params).get("target")), "name"), "property");
+        }
+      });
+      if (newName.value == null) {
         return;
       }
-      new RefactoringFacade().execute(RefactoringContext.createRefactoringContextByName("jetbrains.mps.lang.structure.refactorings.RenameProperty", Arrays.asList("newName"), Arrays.asList(newName), ((SNode) MapSequence.fromMap(_params).get("target")), ((MPSProject) MapSequence.fromMap(_params).get("project"))));
+      RefactoringAccess.getInstance().getRefactoringFacade().execute(RefactoringContext.createRefactoringContextByName("jetbrains.mps.lang.structure.refactorings.RenameProperty", Arrays.asList("newName"), Arrays.asList(newName.value), ((SNode) MapSequence.fromMap(_params).get("target")), ((MPSProject) MapSequence.fromMap(_params).get("project"))));
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "RenameProperty", t);

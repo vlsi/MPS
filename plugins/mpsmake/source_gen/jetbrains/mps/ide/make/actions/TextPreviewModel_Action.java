@@ -15,7 +15,7 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.make.MakeSession;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.workbench.make.TextPreviewUtil;
+import jetbrains.mps.ide.make.TextPreviewUtil;
 import java.util.List;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.DefaultSModelDescriptor;

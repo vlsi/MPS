@@ -64,7 +64,7 @@ public class EditorTests extends DataMPSFixtureTestCase {
     @Override
     protected void prepareTestData(MPSFacetConfiguration configuration) throws  Exception {
         IFile test = copyResource("models", "test.mps", "/tests/editorTests/models/test.mps");
-        configuration.getState().setModelRootPaths(new String[]{test.getParent().getPath()});
+        configuration.getState().setModelRootPaths(test.getParent().getPath());
     }
 
     @Override
@@ -85,7 +85,7 @@ public class EditorTests extends DataMPSFixtureTestCase {
         // this is to prevent exceptions in the project components that get "projectClosed" notifications
         ApplicationManagerEx.getApplicationEx().doNotSave();
 
-        SModelRoot sModelRoot = myFacet.getSolution().getSModelRoots().get(0);
+        SModelRoot sModelRoot = myFacet.getSolution().getSModelRoots().iterator().next();
         final IFile modelFile = FileSystem.getInstance().getFileByPath(sModelRoot.getPath()+"/test.mps");
         final List<SNode> roots = new ArrayList<SNode>();
 

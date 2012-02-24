@@ -24,11 +24,9 @@ import jetbrains.mps.newTypesystem.relations.ComparableRelation;
 import jetbrains.mps.newTypesystem.relations.SubTypingRelation;
 import jetbrains.mps.newTypesystem.state.blocks.*;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.typesystemEngine.util.LatticeUtil;
 import jetbrains.mps.util.ManyToManyMap;
 import jetbrains.mps.util.Pair;
 
-import javax.management.relation.Relation;
 import java.util.*;
 
 public class Inequalities {
@@ -77,7 +75,7 @@ public class Inequalities {
   private SNode getNodeWithNoInput(Set<SNode> unsorted, Set<SNode> used) {
     for (SNode node : unsorted) {
       if (used.containsAll(myInputsToOutputsInc.getBySecond(node))) {
-  //    if (inputsToOutputs.getBySecond(node).isEmpty()) {
+        //    if (inputsToOutputs.getBySecond(node).isEmpty()) {
         return node;
       }
     }
@@ -108,11 +106,11 @@ public class Inequalities {
   }
 
   private void addVariablesLinkInc(SNode input, SNode output) {
-     if (!TypesUtil.isVariable(input)) return;
-     if (!TypesUtil.isVariable(output)) return;
-     if (input == output) return;
-     myInputsToOutputsInc.addLink(input, output);
-   }
+    if (!TypesUtil.isVariable(input)) return;
+    if (!TypesUtil.isVariable(output)) return;
+    if (input == output) return;
+    myInputsToOutputsInc.addLink(input, output);
+  }
 
   private void initializeMapsInc(List<RelationBlock> inequalities) {
     myInputsToOutputsInc.clear();

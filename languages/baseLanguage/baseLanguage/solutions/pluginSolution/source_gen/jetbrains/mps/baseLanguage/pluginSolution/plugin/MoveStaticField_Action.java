@@ -14,11 +14,13 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.ide.refactoring.MoveNodeDialog;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.ide.platform.refactoring.MoveNodeDialog;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.ide.refactoring.RefactoringFacade;
+import jetbrains.mps.ide.platform.refactoring.RefactoringAccess;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
 import java.util.Arrays;
 
@@ -75,17 +77,21 @@ public class MoveStaticField_Action extends BaseAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      SNode whereToMove;
-      whereToMove = MoveNodeDialog.getSelectedObject(((MPSProject) MapSequence.fromMap(_params).get("project")).getProject(), ((SNode) MapSequence.fromMap(_params).get("target")), new MoveNodeDialog.NodeFilter("Select class to move: refactoring can't be applied to selected node") {
-        public boolean check(SNode selectedObject, SNode nodeToMove, SModelDescriptor modelOfSelectedObject) {
-          return SNodeOperations.isInstanceOf(selectedObject, "jetbrains.mps.baseLanguage.structure.Classifier") && !(ListSequence.fromList(SNodeOperations.getAncestors(nodeToMove, null, false)).contains(selectedObject));
+      final Wrappers._T<SNode> whereToMove = new Wrappers._T<SNode>();
+      ModelAccess.instance().runReadAction(new Runnable() {
+        public void run() {
+          whereToMove.value = MoveNodeDialog.getSelectedObject(((MPSProject) MapSequence.fromMap(_params).get("project")).getProject(), ((SNode) MapSequence.fromMap(_params).get("target")), new MoveNodeDialog.NodeFilter("Select class to move: refactoring can't be applied to selected node") {
+            public boolean check(SNode selectedObject, SNode nodeToMove, SModelDescriptor modelOfSelectedObject) {
+              return SNodeOperations.isInstanceOf(selectedObject, "jetbrains.mps.baseLanguage.structure.Classifier") && !(ListSequence.fromList(SNodeOperations.getAncestors(nodeToMove, null, false)).contains(selectedObject));
+            }
+          });
         }
       });
 
-      if (whereToMove == null) {
+      if (whereToMove.value == null) {
         return;
       }
-      new RefactoringFacade().execute(RefactoringContext.createRefactoringContextByName("jetbrains.mps.baseLanguage.refactorings.MoveStaticField", Arrays.asList("destination"), Arrays.asList(whereToMove), ((SNode) MapSequence.fromMap(_params).get("target")), ((MPSProject) MapSequence.fromMap(_params).get("project"))));
+      RefactoringAccess.getInstance().getRefactoringFacade().execute(RefactoringContext.createRefactoringContextByName("jetbrains.mps.baseLanguage.refactorings.MoveStaticField", Arrays.asList("destination"), Arrays.asList(whereToMove.value), ((SNode) MapSequence.fromMap(_params).get("target")), ((MPSProject) MapSequence.fromMap(_params).get("project"))));
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "MoveStaticField", t);

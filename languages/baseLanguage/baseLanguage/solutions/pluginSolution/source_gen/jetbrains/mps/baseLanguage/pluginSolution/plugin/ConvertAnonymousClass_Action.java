@@ -14,11 +14,13 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.ide.refactoring.StringChooserDialog;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.ide.platform.refactoring.StringChooserDialog;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.ide.refactoring.RefactoringFacade;
+import jetbrains.mps.ide.platform.refactoring.RefactoringAccess;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
 import java.util.Arrays;
 
@@ -75,11 +77,16 @@ public class ConvertAnonymousClass_Action extends BaseAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      String newName = StringChooserDialog.getString(((MPSProject) MapSequence.fromMap(_params).get("project")).getProject(), "Convert Anonymous Class", "Class Name", "My" + SPropertyOperations.getString(SLinkOperations.getTarget(((SNode) MapSequence.fromMap(_params).get("target")), "classifier", false), "name"));
-      if (newName == null) {
+      final Wrappers._T<String> newName = new Wrappers._T<String>();
+      ModelAccess.instance().runReadAction(new Runnable() {
+        public void run() {
+          newName.value = StringChooserDialog.getString(((MPSProject) MapSequence.fromMap(_params).get("project")).getProject(), "Convert Anonymous Class", "Class Name", "My" + SPropertyOperations.getString(SLinkOperations.getTarget(((SNode) MapSequence.fromMap(_params).get("target")), "classifier", false), "name"));
+        }
+      });
+      if (newName.value == null) {
         return;
       }
-      new RefactoringFacade().execute(RefactoringContext.createRefactoringContextByName("jetbrains.mps.baseLanguage.refactorings.ConvertAnonymousClass", Arrays.asList("name"), Arrays.asList(newName), ((SNode) MapSequence.fromMap(_params).get("target")), ((MPSProject) MapSequence.fromMap(_params).get("project"))));
+      RefactoringAccess.getInstance().getRefactoringFacade().execute(RefactoringContext.createRefactoringContextByName("jetbrains.mps.baseLanguage.refactorings.ConvertAnonymousClass", Arrays.asList("name"), Arrays.asList(newName.value), ((SNode) MapSequence.fromMap(_params).get("target")), ((MPSProject) MapSequence.fromMap(_params).get("project"))));
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "ConvertAnonymousClass", t);

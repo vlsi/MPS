@@ -20,6 +20,7 @@
     <orderEntry type="library" name="Commons-logging" level="project" />
     <orderEntry type="module" module-name="collections-runtime" />
     <orderEntry type="module" module-name="typesystemIntegration" />
+    <orderEntry type="module" module-name="generator-engine" />
   </component>
 </module>
 

@@ -10,7 +10,7 @@
     <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.util.Condition" />
-    <classNode extendsClassName="jetbrains.mps.lang.core.pluginSolution.plugin.AbstractLeftEditorHighlighterMessage" />
+    <classNode extendsClassName="jetbrains.mps.editor.runtime.AbstractLeftEditorHighlighterMessage" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.pluginSolution.plugin.AnalyzersActions_ActionGroup" file="AnalyzersActions_ActionGroup.java">
     <classNode dependClassName="java.lang.String" />
@@ -172,7 +172,7 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.pluginSolution.plugin.ChangeMethodSignatureDialog" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.util.plugin.refactorings.ChangeMethodSignatureRefactoring" />
     <classNode dependClassName="jetbrains.mps.ide.actions.MPSCommonDataKeys" />
-    <classNode dependClassName="jetbrains.mps.ide.refactoring.RefactoringFacade" />
+    <classNode dependClassName="jetbrains.mps.ide.platform.refactoring.RefactoringAccess" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
@@ -233,14 +233,16 @@
   <dependency className="jetbrains.mps.baseLanguage.pluginSolution.plugin.ConvertAnonymousClass_Action" file="ConvertAnonymousClass_Action.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.util.Arrays" />
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="javax.swing.Icon" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" />
     <classNode dependClassName="jetbrains.mps.ide.actions.MPSCommonDataKeys" />
-    <classNode dependClassName="jetbrains.mps.ide.refactoring.RefactoringFacade" />
-    <classNode dependClassName="jetbrains.mps.ide.refactoring.StringChooserDialog" />
+    <classNode dependClassName="jetbrains.mps.ide.platform.refactoring.RefactoringAccess" />
+    <classNode dependClassName="jetbrains.mps.ide.platform.refactoring.StringChooserDialog" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
@@ -248,6 +250,7 @@
     <classNode dependClassName="jetbrains.mps.project.MPSProject" />
     <classNode dependClassName="jetbrains.mps.refactoring.framework.RefactoringContext" />
     <classNode dependClassName="jetbrains.mps.refactoring.framework.RefactoringUtil" />
+    <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="org.apache.commons.logging.Log" />
     <classNode dependClassName="org.apache.commons.logging.LogFactory" />
@@ -1190,7 +1193,7 @@
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="javax.swing.Icon" />
     <classNode dependClassName="jetbrains.mps.ide.actions.MPSCommonDataKeys" />
-    <classNode dependClassName="jetbrains.mps.ide.refactoring.RefactoringFacade" />
+    <classNode dependClassName="jetbrains.mps.ide.platform.refactoring.RefactoringAccess" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.project.MPSProject" />
@@ -1211,7 +1214,7 @@
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="javax.swing.Icon" />
     <classNode dependClassName="jetbrains.mps.ide.actions.MPSCommonDataKeys" />
-    <classNode dependClassName="jetbrains.mps.ide.refactoring.RefactoringFacade" />
+    <classNode dependClassName="jetbrains.mps.ide.platform.refactoring.RefactoringAccess" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
     <classNode dependClassName="jetbrains.mps.project.MPSProject" />
     <classNode dependClassName="jetbrains.mps.refactoring.framework.RefactoringContext" />
@@ -1238,20 +1241,23 @@
   <dependency className="jetbrains.mps.baseLanguage.pluginSolution.plugin.MoveStaticField_Action" file="MoveStaticField_Action.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.util.Arrays" />
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="javax.swing.Icon" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" />
     <classNode dependClassName="jetbrains.mps.ide.actions.MPSCommonDataKeys" />
-    <classNode dependClassName="jetbrains.mps.ide.refactoring.MoveNodeDialog" />
-    <classNode dependClassName="jetbrains.mps.ide.refactoring.RefactoringFacade" />
+    <classNode dependClassName="jetbrains.mps.ide.platform.refactoring.MoveNodeDialog" />
+    <classNode dependClassName="jetbrains.mps.ide.platform.refactoring.RefactoringAccess" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.project.MPSProject" />
     <classNode dependClassName="jetbrains.mps.refactoring.framework.RefactoringContext" />
     <classNode dependClassName="jetbrains.mps.refactoring.framework.RefactoringUtil" />
+    <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="org.apache.commons.logging.Log" />
@@ -1262,20 +1268,23 @@
   <dependency className="jetbrains.mps.baseLanguage.pluginSolution.plugin.MoveStaticMethod_Action" file="MoveStaticMethod_Action.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.util.Arrays" />
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="javax.swing.Icon" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" />
     <classNode dependClassName="jetbrains.mps.ide.actions.MPSCommonDataKeys" />
-    <classNode dependClassName="jetbrains.mps.ide.refactoring.MoveNodeDialog" />
-    <classNode dependClassName="jetbrains.mps.ide.refactoring.RefactoringFacade" />
+    <classNode dependClassName="jetbrains.mps.ide.platform.refactoring.MoveNodeDialog" />
+    <classNode dependClassName="jetbrains.mps.ide.platform.refactoring.RefactoringAccess" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.project.MPSProject" />
     <classNode dependClassName="jetbrains.mps.refactoring.framework.RefactoringContext" />
     <classNode dependClassName="jetbrains.mps.refactoring.framework.RefactoringUtil" />
+    <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="org.apache.commons.logging.Log" />
@@ -1527,7 +1536,6 @@
     <classNode dependClassName="jetbrains.mps.ide.actions.Code_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.ide.actions.ModelActionsInternal_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.ide.actions.NodeActionsInternal_ActionGroup" />
-    <classNode dependClassName="jetbrains.mps.ide.actions.NodeRefactoring_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.ide.actions.Tools_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.lang.dataFlow.pluginSolution.plugin.DFAActions_ActionGroup" />
@@ -1588,8 +1596,8 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.refactorings.RenameUtil" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.util.plugin.refactorings.MethodRefactoringUtils" />
     <classNode dependClassName="jetbrains.mps.ide.actions.MPSCommonDataKeys" />
-    <classNode dependClassName="jetbrains.mps.ide.refactoring.RefactoringFacade" />
-    <classNode dependClassName="jetbrains.mps.ide.refactoring.RenameMethodDialog" />
+    <classNode dependClassName="jetbrains.mps.ide.platform.refactoring.RefactoringAccess" />
+    <classNode dependClassName="jetbrains.mps.ide.platform.refactoring.RenameMethodDialog" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
@@ -1758,7 +1766,7 @@
     <classNode dependClassName="jetbrains.mps.util.Condition" />
     <classNode dependClassName="jetbrains.mps.util.MacrosUtil" />
     <classNode dependClassName="jetbrains.mps.workbench.action.BaseAction" />
-    <classNode extendsClassName="jetbrains.mps.lang.core.pluginSolution.plugin.AbstractLeftEditorHighlighterMessage" />
+    <classNode extendsClassName="jetbrains.mps.editor.runtime.AbstractLeftEditorHighlighterMessage" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.pluginSolution.plugin.TableWithControlsPanel" file="TableWithControlsPanel.java">
     <classNode dependClassName="com.intellij.ui.table.JBTable" />

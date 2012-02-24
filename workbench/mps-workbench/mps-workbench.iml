@@ -26,6 +26,14 @@
     <orderEntry type="module" module-name="Closures-runtime" />
     <orderEntry type="library" scope="TEST" name="JUnit4" level="project" />
     <orderEntry type="module" module-name="testbench" scope="TEST" />
+    <orderEntry type="library" name="Beansbinding" level="project" />
+    <orderEntry type="module" module-name="uiLanguage-runtime" />
+    <orderEntry type="module" module-name="findUsages-runtime" />
+    <orderEntry type="module" module-name="actions-runtime" />
+    <orderEntry type="module" module-name="make-runtime" />
+    <orderEntry type="module" module-name="refactoring-runtime" />
+    <orderEntry type="module" module-name="baseLanguage-util" />
+    <orderEntry type="module" module-name="Tuples-runtime" />
   </component>
 </module>
 

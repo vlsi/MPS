@@ -38,7 +38,7 @@ public class StubConversionStage implements MigrationStage {
       Set<SModelReference> toRemove = new HashSet<SModelReference>();
       Set<SModelReference> toAdd = new HashSet<SModelReference>();
 
-      List<SModelReference> acc = l.getModuleDescriptor().getAccessoryModels();
+      Set<SModelReference> acc = l.getModuleDescriptor().getAccessoryModels();
       for (SModelReference ref : acc) {
         if (!(ref.getSModelId() instanceof SModelId.ForeignSModelId)) continue;
 

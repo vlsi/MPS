@@ -33,6 +33,7 @@
       <sourceFolder url="file://$MODULE_DIR$/../../core/kernel/stubUtils/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../core/kernel/traceinfo/solutions/jetbrains.mps.debug.api.info/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../core/refactoring-runtime/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../core/ant/source_gen" isTestSource="false" />
     </content>
     <content url="file://$MODULE_DIR$/../../editor">
       <sourceFolder url="file://$MODULE_DIR$/../../editor/actions-runtime/source" isTestSource="false" />
@@ -42,6 +43,7 @@
       <sourceFolder url="file://$MODULE_DIR$/../../editor/editor-runtime/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../editor/intentions-runtime/source" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../editor/typesystemIntegration/source" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../editor/typesystemIntegration/source_gen" isTestSource="false" />
     </content>
     <content url="file://$MODULE_DIR$/../../languages/baseLanguage">
       <sourceFolder url="file://$MODULE_DIR$/../../languages/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.util/source_gen" isTestSource="false" />
@@ -56,11 +58,6 @@
     </content>
     <content url="file://$MODULE_DIR$/../../languages/languageDesign/test">
       <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/test/solutions/jetbrains.mps.lang.test.runtime/source_gen" isTestSource="true" />
-    </content>
-    <content url="file://$MODULE_DIR$/../../languages/util/buildlanguage/ant">
-      <sourceFolder url="file://$MODULE_DIR$/../../languages/util/buildlanguage/ant/source_gen" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../languages/util/buildlanguage/ant/tests" isTestSource="true" />
-      <excludeFolder url="file://$MODULE_DIR$/../../languages/util/buildlanguage/ant/tests" />
     </content>
     <content url="file://$MODULE_DIR$/../../testbench">
       <sourceFolder url="file://$MODULE_DIR$/../../testbench/source" isTestSource="true" />

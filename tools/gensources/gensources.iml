@@ -81,7 +81,6 @@
       <sourceFolder url="file://$MODULE_DIR$/../../languages/util/buildlanguage/languages/buildlanguage/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../languages/util/buildlanguage/languages/custommps/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../languages/util/buildlanguage/languages/dependency/source_gen" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../languages/util/buildlanguage/languages/distrib/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../languages/util/buildlanguage/languages/generictasks/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../languages/util/buildlanguage/languages/gentest/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../languages/util/buildlanguage/languages/packaging/source_gen" isTestSource="false" />
@@ -142,23 +141,17 @@
       <sourceFolder url="file://$MODULE_DIR$/../../languages/baseLanguage/collections/solutions/pluginSolution/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../languages/baseLanguage/unitTest/solutions/pluginSolution/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../languages/core/core/solutions/pluginSolution/source_gen" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/actions/solutions/pluginSolution/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/behavior/languages/behavior/solutions/pluginSolution/source_gen" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/constraints/solutions/pluginSolution/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/dataFlow/solutions/pluginSolution/source_gen" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/editor/solutions/pluginSolution/source_gen" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/findUsages/solutions/pluginSolution/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/generator/languages/templateLanguage/solutions/pluginSolution/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/intentions/solutions/pluginSolution/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/make/languages/facet/solutions/pluginSolution/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/plugin/solutions/pluginSolution/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/quotation/solutions/pluginSolution/source_gen" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/refactoring/solutions/pluginSolution/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/script/solutions/pluginSolution/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/smodel/solutions/pluginSolution/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/structure/solutions/pluginSolution/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/test/solutions/pluginSolution/source_gen" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/textGen/solutions/pluginSolution/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/traceable/solutions/pluginSolution/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/typesystem/solutions/pluginSolution/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../languages/util/buildlanguage/languages/custommps/solutions/pluginSolution/source_gen" isTestSource="false" />
@@ -188,6 +181,21 @@
       <sourceFolder url="file://$MODULE_DIR$/../../languages/util/ui/languages/meta/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../languages/util/ui/languages/swing/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../languages/util/ui/languages/testdata/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/smodel/tests_gen" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../../languages/baseLanguage/collections/tests_gen" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../../languages/baseLanguage/collections/solutions/collections_trove.test/source_gen" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../../languages/baseLanguage/collections/solutions/internalCollections.test/source_gen" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../../languages/baseLanguage/closures/solutions/closures.test/source_gen" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../../languages/baseLanguage/closures/tests_gen" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../../languages/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.refactoringTest/source_gen" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../../languages/baseLanguage/baseLanguage/tests_gen" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/editor/tests/table/source_gen" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/editor/tests/jetbrains.mps.lang.editor.tests/source_gen" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/smodel/solutions/jetbrains.mps.lang.smodel.unittest/tests_gen" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../../languages/util/ui/solutions/jetbrains.mps.ui.unittest/source_gen" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../../languages/util/xml/xml/solutions/jetbrains.mps.xml.tests/source_gen" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../../languages/util/ypath/solutions/test/source_gen" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../../languages/util/ypath/solutions/main/source_gen" isTestSource="false" />
     </content>
     <content url="file://$MODULE_DIR$/../../obsolete/matrixLanguage/languages/matrixLanguage/source_gen">
       <sourceFolder url="file://$MODULE_DIR$/../../obsolete/matrixLanguage/languages/matrixLanguage/source_gen" isTestSource="false" />
@@ -202,6 +210,8 @@
       <sourceFolder url="file://$MODULE_DIR$/../../plugins/execution-languages/deprecated.runtime/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../plugins/execution-languages/deprecated/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../plugins/execution-languages/library/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../plugins/debugger-java/solutions/jetbrains.mps.debugger.java.runtime.tests/source_gen" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../../plugins/execution-languages/tests/test_gen" isTestSource="true" />
     </content>
     <content url="file://$MODULE_DIR$/../../samples">
       <sourceFolder url="file://$MODULE_DIR$/../../samples/agreement/agreementLanguage/source_gen" isTestSource="false" />
@@ -252,7 +262,6 @@
     <orderEntry type="module" module-name="mps-platform" />
     <orderEntry type="module" module-name="Closures-runtime" />
     <orderEntry type="module" module-name="refactoring-runtime" />
-    <orderEntry type="module" module-name="workbench" />
     <orderEntry type="module" module-name="baseLanguage-search" />
     <orderEntry type="module" module-name="runConfigurations" />
     <orderEntry type="module" module-name="mps-workbench" />
@@ -317,6 +326,7 @@
     <orderEntry type="library" name="Idea-plaform" level="project" />
     <orderEntry type="module" module-name="mps-editor" />
     <orderEntry type="module" module-name="debugger-api" />
+    <orderEntry type="module" module-name="trove.runtime" />
   </component>
 </module>
 

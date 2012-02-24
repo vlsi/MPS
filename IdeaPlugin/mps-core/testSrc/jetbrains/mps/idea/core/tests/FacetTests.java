@@ -116,21 +116,21 @@ public class FacetTests extends AbstractMPSFixtureTestCase {
 
         ModuleReference solutionReference = myFacet.getSolution().getModuleReference();
 
-        String[] modelRootPaths = new String[]{modelRootDir.getPath()};
+        String modelRootPath = modelRootDir.getPath();
         MPSConfigurationBean configurationBean = myFacet.getConfiguration().getState();
-        configurationBean.setModelRootPaths(modelRootPaths);
+        configurationBean.setModelRootPaths(modelRootPath);
         myFacet.setConfiguration(configurationBean);
         flushEDT();
 
         Solution repositorySolution = MPSModuleRepository.getInstance().getSolution(solutionReference);
         assertEquals(myFacet.getSolution(), repositorySolution);
-        List<SModelRoot> modelRoots = repositorySolution.getSModelRoots();
+        Set<SModelRoot> modelRoots = repositorySolution.getSModelRoots();
         assertEquals(1, modelRoots.size());
-        SModelRoot theModelRoot = modelRoots.get(0);
+        SModelRoot theModelRoot = modelRoots.iterator().next();
         assertEquals(modelRootDir.getPath(), theModelRoot.getPath());
 
         configurationBean = myFacet.getConfiguration().getState();
-        configurationBean.setModelRootPaths(new String[0]);
+        configurationBean.setModelRootPaths();
         myFacet.setConfiguration(configurationBean);
         flushEDT();
 
@@ -151,7 +151,7 @@ public class FacetTests extends AbstractMPSFixtureTestCase {
         myFacet.setConfiguration(configurationBean);
         flushEDT();
 
-        List<ModuleReference> solutionUsedLanguageRefs = myFacet.getSolution().getUsedLanguagesReferences();
+        Set<ModuleReference> solutionUsedLanguageRefs = myFacet.getSolution().getUsedLanguagesReferences();
         Set<Language> solutionUsedLanguages = new HashSet<Language>();
         for (ModuleReference solutionUsedLanguageRef : solutionUsedLanguageRefs) {
             solutionUsedLanguages.add(MPSModuleRepository.getInstance().getLanguage(solutionUsedLanguageRef));

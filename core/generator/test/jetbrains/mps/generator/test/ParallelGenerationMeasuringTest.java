@@ -39,7 +39,7 @@ public class ParallelGenerationMeasuringTest extends GenerationTestBase {
 
   @Test
   public void testParallelIdeActions() throws IOException {
-    final Project p = TestMain.loadProject(new File(System.getProperty("user.dir") + "/workbench/workbench.ipr"));
+    final Project p = TestMain.loadProject(new File(System.getProperty("user.dir") + "/MPS.ipr"));
     final SModelDescriptor descr = findModel(p, "jetbrains.mps.ide.actions");
 
     doMeasureParallelGeneration(p, descr, 4);

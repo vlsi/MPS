@@ -107,7 +107,7 @@ public class Generator extends AbstractModule {
     return getSourceLanguage().isPackaged();
   }
 
-  public List<StubPath> getStubPaths() {
+  public Set<StubPath> getStubPaths() {
     return getSourceLanguage().getRuntimeStubPaths();
   }
 
@@ -212,8 +212,8 @@ public class Generator extends AbstractModule {
     return null;
   }
 
-  public List<ModuleReference> getUsedLanguagesReferences() {
-    List<ModuleReference> result = super.getUsedLanguagesReferences();
+  public Set<ModuleReference> getUsedLanguagesReferences() {
+    Set<ModuleReference> result = new HashSet<ModuleReference>(super.getUsedLanguagesReferences());
     for (Language l : LibraryInitializer.getInstance().getBootstrapModules(Language.class)) {
       if (!result.contains(l.getModuleReference())) {
         result.add(l.getModuleReference());

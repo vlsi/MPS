@@ -95,7 +95,25 @@ public class CellAction_PasteNode extends EditorCellAction {
               addImportsRunnable.run();
             }
             SNode selectedNode = selectedNodePointer.getNode();
-            assert !selectedNode.isDisposed();
+            if (selectedNode.isDisposed()) {
+              StringBuilder errorText = new StringBuilder("Selected node is disposed: " + selectedNode.toString());
+              SModelReference modelReference = selectedNodePointer.getModelReference();
+              if (modelReference != null) {
+                SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(modelReference);
+                if (modelDescriptor != null) {
+                  SModel sModel = modelDescriptor.getSModel();
+                  errorText.append(", sModel.isDisposed(): " + sModel.isDisposed());
+                  SNode node = sModel.getNodeById(selectedNodePointer.getNodeId());
+                  if (node != null) {
+                    errorText.append(", node != null, node.isDisposed(): " + node.isDisposed());
+                  } else {
+                    errorText.append(", node == null");
+                  }
+                }
+              }
+              LOG.error(errorText.toString());
+              return;
+            }
             EditorCell selectedCell = pasteTargetCellInfo.findCell(editorComponent);
             assert selectedCell != null;
 

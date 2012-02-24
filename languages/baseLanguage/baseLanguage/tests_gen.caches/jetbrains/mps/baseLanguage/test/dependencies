@@ -216,6 +216,19 @@
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTestBody" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
+  <dependency className="jetbrains.mps.baseLanguage.test.TestExpectedType_Test" file="TestExpectedType_Test.java">
+    <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="java.lang.Exception" />
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.Throwable" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.util.plugin.run.MPSLaunch" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorManager" />
+    <classNode dependClassName="org.junit.Test" />
+    <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTestBody" />
+    <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
+  </dependency>
   <dependency className="jetbrains.mps.baseLanguage.test.TestGenerationMode_Test" file="TestGenerationMode_Test.java">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Throwable" />

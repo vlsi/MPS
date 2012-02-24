@@ -11,7 +11,7 @@ public class GenericNewExpression_TextGen extends SNodeTextGen {
   public void doGenerateText(SNode node) {
     this.append("new ");
     if ((SLinkOperations.getTarget(node, "creator", true) == null)) {
-      this.foundError();
+      this.foundError("incomplete new expression");
       this.append("???");
     } else {
       TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), SLinkOperations.getTarget(node, "creator", true), this.getSNode());

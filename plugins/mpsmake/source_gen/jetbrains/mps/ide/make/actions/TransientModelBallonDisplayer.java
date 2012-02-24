@@ -4,10 +4,8 @@ package jetbrains.mps.ide.make.actions;
 
 import com.intellij.openapi.Disposable;
 import jetbrains.mps.make.IMakeNotificationListener;
-import jetbrains.mps.project.MPSProject;
+import com.intellij.openapi.project.Project;
 import jetbrains.mps.make.IMakeService;
-import com.intellij.openapi.project.ProjectManager;
-import jetbrains.mps.ide.project.ProjectHelper;
 import com.intellij.notification.impl.NotificationsConfigurationImpl;
 import com.intellij.notification.NotificationsConfiguration;
 import com.intellij.notification.NotificationDisplayType;
@@ -19,6 +17,7 @@ import com.intellij.ui.LightColors;
 import com.intellij.openapi.ui.popup.Balloon;
 import com.intellij.openapi.util.Disposer;
 import java.awt.Component;
+import com.intellij.openapi.wm.WindowManager;
 import javax.swing.JRootPane;
 import javax.swing.SwingUtilities;
 import java.awt.Container;
@@ -33,31 +32,26 @@ import com.intellij.notification.impl.NotificationSettings;
 import javax.swing.JComponent;
 import com.intellij.openapi.wm.StatusBar;
 import jetbrains.mps.make.MakeNotification;
-import com.intellij.openapi.project.ProjectManagerAdapter;
-import com.intellij.openapi.project.Project;
 
 public class TransientModelBallonDisplayer implements Disposable {
   private static final String ID = "Saving Transient Models Is On";
 
   private final IMakeNotificationListener myMakeNotificationListener = new TransientModelBallonDisplayer.MyMakeNotificationListener();
-  private final MPSProject myProject;
-  private final TransientModelBallonDisplayer.MyProjectManagerAdapter myProjectManagerAdapter = new TransientModelBallonDisplayer.MyProjectManagerAdapter();
-  private final TransientModelsWidgetInstaller myInstaller;
+  private final Project myProject;
+  private final TransientModelsWidget myWidget;
 
-  public TransientModelBallonDisplayer(MPSProject project, TransientModelsWidgetInstaller installer) {
+  public TransientModelBallonDisplayer(Project project, TransientModelsWidget widget) {
     myProject = project;
-    myInstaller = installer;
+    myWidget = widget;
   }
 
   public void init() {
     IMakeService.INSTANCE.get().addListener(myMakeNotificationListener);
-    ProjectManager.getInstance().addProjectManagerListener(ProjectHelper.toIdeaProject(myProject), this.myProjectManagerAdapter);
     ensureRegistered();
   }
 
   public void dispose() {
     IMakeService.INSTANCE.get().removeListener(myMakeNotificationListener);
-    ProjectManager.getInstance().removeProjectManagerListener(ProjectHelper.toIdeaProject(myProject), myProjectManagerAdapter);
   }
 
   private void ensureRegistered() {
@@ -78,11 +72,11 @@ public class TransientModelBallonDisplayer implements Disposable {
 
     Disposer.register(this, balloon);
 
-    Component component = check_45eojt_a0j0d(check_45eojt_a0a9a3(myInstaller));
+    Component component = check_45eojt_a0j0d(myWidget);
     if (component != null && component.isShowing()) {
       showForComponent(component, balloon);
     } else {
-      component = check_45eojt_a0a0a01a3(StatusBarHelper.getStatusBar(myProject));
+      component = check_45eojt_a0a0a01a3(WindowManager.getInstance().getStatusBar(myProject));
       if (component != null && component.isShowing()) {
         showForComponent(component, balloon);
       } else {
@@ -138,13 +132,6 @@ public class TransientModelBallonDisplayer implements Disposable {
     return null;
   }
 
-  private static TransientModelsWidget check_45eojt_a0a9a3(TransientModelsWidgetInstaller checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.getWidget();
-    }
-    return null;
-  }
-
   private static JComponent check_45eojt_a0a0a01a3(StatusBar checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getComponent();
@@ -181,19 +168,6 @@ public class TransientModelBallonDisplayer implements Disposable {
     }
 
     public void sessionClosed(MakeNotification notification) {
-    }
-  }
-
-  private class MyProjectManagerAdapter extends ProjectManagerAdapter {
-    public MyProjectManagerAdapter() {
-    }
-
-    @Override
-    public void projectClosing(Project project) {
-      if (project == ProjectHelper.toIdeaProject(myProject)) {
-        // plugins dispose method is not invoked when project is closed and we really need to dispose 
-        Disposer.dispose(TransientModelBallonDisplayer.this);
-      }
     }
   }
 }
