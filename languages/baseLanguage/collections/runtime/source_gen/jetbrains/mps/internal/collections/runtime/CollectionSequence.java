@@ -9,6 +9,9 @@ import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import java.util.Iterator;
 import java.util.Collections;
 import jetbrains.mps.internal.collections.runtime.impl.NullCollectionSequence;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Arrays;
 
 public abstract class CollectionSequence<T> extends Sequence<T> implements ICollectionSequence<T>, Collection<T>, Serializable {
   private static final long serialVersionUID = -195412084368027561L;
@@ -206,6 +209,90 @@ public abstract class CollectionSequence<T> extends Sequence<T> implements IColl
     return new CollectionSequence<U>() {
       protected Collection<U> getCollection() {
         return coll;
+      }
+    };
+  }
+
+  public static <U> ICollectionSequence<U> fromCollectionWithValues(Collection<U> coll, Iterable<? extends U> it) {
+    Collection<U> tmp = coll;
+    if (USE_NULL_SEQUENCE) {
+      if (coll == null && it == null) {
+        return NullCollectionSequence.instance();
+      } else
+      if (coll == null) {
+        tmp = new ArrayList<U>();
+      } else
+      if (it == null) {
+        return CollectionSequence.fromCollection(coll);
+      }
+    }
+    if (IGNORE_NULL_VALUES) {
+      for (U u : it) {
+        if (u != null) {
+          tmp.add(u);
+        }
+      }
+    } else
+    if (it instanceof Collection<?>) {
+      tmp.addAll((Collection<? extends U>) it);
+    } else {
+      for (U u : it) {
+        tmp.add(u);
+      }
+    }
+    if (tmp instanceof ICollectionSequence<?>) {
+      return (ICollectionSequence<U>) tmp;
+    }
+    final Collection<U> myColl = tmp;
+    return new CollectionSequence<U>() {
+      protected Collection<U> getCollection() {
+        return myColl;
+      }
+    };
+  }
+
+  public static <U> ICollectionSequence<U> fromCollectionAndArray(Collection<U> coll, U... array) {
+    if (NULL_ARRAY_IS_SINGLETON) {
+      if (array == null) {
+        array = (U[]) Sequence.nullSingletonArray();
+      }
+    }
+    if (USE_NULL_SEQUENCE) {
+      if (coll == null && array == null) {
+        return NullCollectionSequence.instance();
+      } else
+      if (coll == null) {
+        coll = new ArrayList<U>();
+      } else
+      if (array == null) {
+        if (coll instanceof ICollectionSequence<?>) {
+          return (ICollectionSequence<U>) coll;
+        }
+        final Collection<U> myColl = coll;
+        return new CollectionSequence<U>() {
+          protected Collection<U> getCollection() {
+            return myColl;
+          }
+        };
+      }
+    }
+    List<U> input = Arrays.asList(array);
+    if (IGNORE_NULL_VALUES) {
+      for (U u : input) {
+        if (u != null) {
+          coll.add(u);
+        }
+      }
+    } else {
+      coll.addAll(input);
+    }
+    if (coll instanceof ICollectionSequence<?>) {
+      return (ICollectionSequence<U>) coll;
+    }
+    final Collection<U> myColl = coll;
+    return new CollectionSequence<U>() {
+      protected Collection<U> getCollection() {
+        return myColl;
       }
     };
   }
