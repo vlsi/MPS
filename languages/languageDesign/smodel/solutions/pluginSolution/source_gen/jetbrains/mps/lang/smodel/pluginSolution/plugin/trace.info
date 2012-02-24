@@ -50,7 +50,7 @@
     <nodeInfo nodeId="5487985028841902847" fileName="CheckLangForJavaStubModels_Action.java" startLine="100" startPosition="7" endLine="107" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5487985028841902764" fileName="CheckLangForJavaStubModels_Action.java" startLine="81" startPosition="116" endLine="90" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="5487985028841902721" fileName="CheckLangForJavaStubModels_Action.java" startLine="46" startPosition="89" endLine="57" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="5487985028841902757" fileName="CheckLangForJavaStubModels_Action.java" startLine="80" startPosition="103" endLine="91" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="5487985028841902757" fileName="CheckLangForJavaStubModels_Action.java" startLine="80" startPosition="115" endLine="91" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="5487985028841902751" fileName="CheckLangForJavaStubModels_Action.java" startLine="79" startPosition="79" endLine="92" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="5487985028841902721" fileName="CheckLangForJavaStubModels_Action.java" startLine="45" startPosition="0" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doUpdate#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
     <nodeInfo nodeId="5487985028841902721" fileName="CheckLangForJavaStubModels_Action.java" startLine="59" startPosition="0" endLine="74" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="collectActionData#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)Z" />
@@ -99,8 +99,8 @@
     </scopeInfo>
     <scopeInfo nodeId="5487985028841902763" fileName="CheckLangForJavaStubModels_Action.java" startLine="81" startPosition="116" endLine="90" endPosition="11" />
     <scopeInfo nodeId="5487985028841902721" fileName="CheckLangForJavaStubModels_Action.java" startLine="46" startPosition="89" endLine="57" endPosition="5" />
-    <scopeInfo nodeId="5487985028841902756" fileName="CheckLangForJavaStubModels_Action.java" startLine="80" startPosition="103" endLine="91" endPosition="9" />
-    <scopeInfo nodeId="5487985028841902757" fileName="CheckLangForJavaStubModels_Action.java" startLine="80" startPosition="103" endLine="91" endPosition="9">
+    <scopeInfo nodeId="5487985028841902756" fileName="CheckLangForJavaStubModels_Action.java" startLine="80" startPosition="115" endLine="91" endPosition="9" />
+    <scopeInfo nodeId="5487985028841902757" fileName="CheckLangForJavaStubModels_Action.java" startLine="80" startPosition="115" endLine="91" endPosition="9">
       <varInfo nodeId="5487985028841902757" varName="model" />
     </scopeInfo>
     <scopeInfo nodeId="5487985028841902721" fileName="CheckLangForJavaStubModels_Action.java" startLine="60" startPosition="95" endLine="72" endPosition="16" />

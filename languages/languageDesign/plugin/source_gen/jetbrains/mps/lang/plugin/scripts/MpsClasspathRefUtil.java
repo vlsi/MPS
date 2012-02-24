@@ -19,6 +19,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SModelRepository;
 import java.util.Collection;
 import jetbrains.mps.project.structure.modules.Dependency;
+import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 
 /*package*/ class MpsClasspathRefUtil {
   private MpsClasspathRefUtil() {
@@ -55,7 +56,7 @@ import jetbrains.mps.project.structure.modules.Dependency;
         // update module dependencies 
         if (module != null && module.getModuleDescriptor() != null) {
           Collection<Dependency> dependencies = module.getModuleDescriptor().getDependencies();
-          Dependency dep = Sequence.fromIterable(((Collection<Dependency>) dependencies)).findFirst(new IWhereFilter<Dependency>() {
+          Dependency dep = CollectionSequence.fromCollection(((Collection<Dependency>) dependencies)).findFirst(new IWhereFilter<Dependency>() {
             public boolean accept(Dependency it) {
               return it.getModuleRef().equals(MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString("37a3367b-1fb2-44d8-aa6b-18075e74e003")).getModuleReference());
             }

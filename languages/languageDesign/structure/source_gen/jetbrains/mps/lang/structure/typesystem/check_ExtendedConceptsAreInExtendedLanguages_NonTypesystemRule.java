@@ -12,7 +12,7 @@ import jetbrains.mps.kernel.model.SModelUtil;
 import java.util.List;
 import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior;
 import java.util.Collection;
-import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.messageTargets.PropertyMessageTarget;
@@ -37,7 +37,7 @@ public class check_ExtendedConceptsAreInExtendedLanguages_NonTypesystemRule exte
       if (conceptLanguage == null) {
         continue;
       }
-      if (conceptLanguage != language && !(Sequence.fromIterable(extendedLanguages).contains(conceptLanguage))) {
+      if (conceptLanguage != language && !(CollectionSequence.fromCollection(extendedLanguages).contains(conceptLanguage))) {
         {
           MessageTarget errorTarget = new NodeMessageTarget();
           errorTarget = new PropertyMessageTarget("name");

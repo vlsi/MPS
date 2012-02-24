@@ -26,7 +26,7 @@ import jetbrains.mps.project.ModuleId;
 import java.io.File;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
-import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import java.io.OutputStream;
 
 public class LanguageDescriptorPersistence {
@@ -237,7 +237,7 @@ public class LanguageDescriptorPersistence {
         }
 
         final Element result_v3r4p8_a81a0a0d0c = new Element("sourcePath");
-        for (String p : Sequence.fromIterable(descriptor.getSourcePaths())) {
+        for (String p : CollectionSequence.fromCollection(descriptor.getSourcePaths())) {
           final Element result_v3r4p8_a0a0a81a0a0d0c = new Element("source");
           final String result_v3r4p8_a0a0a0a81a0a0d0c = macros.shrinkPath(p, file);
           result_v3r4p8_a0a0a81a0a0d0c.setAttribute("path", "" + result_v3r4p8_a0a0a0a81a0a0d0c);
