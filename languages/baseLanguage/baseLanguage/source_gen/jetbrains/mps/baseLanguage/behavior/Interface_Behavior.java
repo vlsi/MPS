@@ -18,6 +18,7 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.baseLanguage.scopes.SimpleScope;
 import jetbrains.mps.smodel.structure.BehaviorDescriptor;
 import jetbrains.mps.smodel.structure.ConceptRegistry;
@@ -109,8 +110,9 @@ public class Interface_Behavior {
       for (SNode node : Classifier_Behavior.call_getVisibleMembers_8083692786967356611(classifier, contextNode, kind).getAvailableElements(null)) {
         if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.core.structure.INamedConcept")) {
           Pair<SNode, String> tmp = new Pair(SNodeOperations.getConceptDeclaration(node), SPropertyOperations.getString(SNodeOperations.cast(node, "jetbrains.mps.lang.core.structure.INamedConcept"), "name"));
-          if (!(SetSequence.fromSet(conceptAndNames).contains(tmp))) {
+          if ((!(SetSequence.fromSet(conceptAndNames).contains(tmp))) || SConceptOperations.isSubConceptOf(kind, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration")) {
             SetSequence.fromSet(conceptAndNames).addElement(tmp);
+
             ListSequence.fromList(elements).addElement(node);
           }
         } else {
