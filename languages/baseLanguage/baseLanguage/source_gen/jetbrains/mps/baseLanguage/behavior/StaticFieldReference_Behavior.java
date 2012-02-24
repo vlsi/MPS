@@ -40,9 +40,12 @@ public class StaticFieldReference_Behavior {
   }
 
   public static Scope virtual_getScope_3734116213129936182(SNode thisNode, SNode kind, SNode child) {
-    return ((SLinkOperations.getTarget(thisNode, "classifier", false) != null) ?
-      Classifier_Behavior.call_getVisibleMembers_8083692786967356611(SLinkOperations.getTarget(thisNode, "classifier", false), thisNode, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration")) :
-      new EmptyScope()
-    );
+    if (SConceptOperations.isSubConceptOf(kind, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration")) {
+      return ((SLinkOperations.getTarget(thisNode, "classifier", false) != null) ?
+        Classifier_Behavior.call_getVisibleMembers_8083692786967356611(SLinkOperations.getTarget(thisNode, "classifier", false), thisNode, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration")) :
+        new EmptyScope()
+      );
+    }
+    return null;
   }
 }

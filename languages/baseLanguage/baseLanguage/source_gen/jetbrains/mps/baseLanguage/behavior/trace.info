@@ -8444,14 +8444,16 @@
     <nodeInfo nodeId="1238861460603" fileName="StaticFieldReference_Behavior.java" startLine="26" startPosition="85" endLine="27" endPosition="120" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1238863363478" fileName="StaticFieldReference_Behavior.java" startLine="30" startPosition="106" endLine="31" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1238863363490" fileName="StaticFieldReference_Behavior.java" startLine="32" startPosition="148" endLine="33" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6668666054774735802" fileName="StaticFieldReference_Behavior.java" startLine="48" startPosition="5" endLine="49" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1213877524603" fileName="StaticFieldReference_Behavior.java" startLine="16" startPosition="44" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
     <nodeInfo nodeId="1213877524603" fileName="StaticFieldReference_Behavior.java" startLine="25" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_isCompileTimeConstant_1238860258777#(Ljetbrains/mps/smodel/SNode;)Z" />
     <nodeInfo nodeId="1238863363508" fileName="StaticFieldReference_Behavior.java" startLine="34" startPosition="12" endLine="38" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8083692786967356785" fileName="StaticFieldReference_Behavior.java" startLine="42" startPosition="101" endLine="46" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6668666054774735805" fileName="StaticFieldReference_Behavior.java" startLine="43" startPosition="113" endLine="47" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1238863363506" fileName="StaticFieldReference_Behavior.java" startLine="34" startPosition="10" endLine="39" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1213877524603" fileName="StaticFieldReference_Behavior.java" startLine="19" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_eval_1213877519769#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/project/IModule;)Ljava/lang/Object;" />
-    <nodeInfo nodeId="1213877524603" fileName="StaticFieldReference_Behavior.java" startLine="41" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getScope_3734116213129936182#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/scope/Scope;" />
+    <nodeInfo nodeId="6668666054774662033" fileName="StaticFieldReference_Behavior.java" startLine="42" startPosition="101" endLine="48" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1238863363488" fileName="StaticFieldReference_Behavior.java" startLine="31" startPosition="80" endLine="39" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1213877524603" fileName="StaticFieldReference_Behavior.java" startLine="41" startPosition="0" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getScope_3734116213129936182#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/scope/Scope;" />
     <nodeInfo nodeId="1213877524603" fileName="StaticFieldReference_Behavior.java" startLine="29" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getCompileTimeConstantValue_1238860310638#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/project/IModule;)Ljava/lang/Object;" />
     <scopeInfo nodeId="1213877524629" fileName="StaticFieldReference_Behavior.java" startLine="17" startPosition="43" endLine="17" endPosition="43" />
     <scopeInfo nodeId="1238861348248" fileName="StaticFieldReference_Behavior.java" startLine="26" startPosition="85" endLine="27" endPosition="120" />
@@ -8467,24 +8469,25 @@
       <varInfo nodeId="1213877524603" varName="thisNode" />
     </scopeInfo>
     <scopeInfo nodeId="1238863363507" fileName="StaticFieldReference_Behavior.java" startLine="34" startPosition="12" endLine="38" endPosition="8" />
-    <scopeInfo nodeId="8083692786967151917" fileName="StaticFieldReference_Behavior.java" startLine="42" startPosition="101" endLine="46" endPosition="6" />
+    <scopeInfo nodeId="6668666054774662034" fileName="StaticFieldReference_Behavior.java" startLine="43" startPosition="113" endLine="47" endPosition="8" />
     <scopeInfo nodeId="1213877524603" fileName="StaticFieldReference_Behavior.java" startLine="19" startPosition="0" endLine="25" endPosition="0">
       <varInfo nodeId="1213877524625" varName="module" />
       <varInfo nodeId="1213877524603" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="1213877524603" fileName="StaticFieldReference_Behavior.java" startLine="41" startPosition="0" endLine="48" endPosition="0">
+    <scopeInfo nodeId="8083692786967151917" fileName="StaticFieldReference_Behavior.java" startLine="42" startPosition="101" endLine="49" endPosition="16" />
+    <scopeInfo nodeId="1238861466946" fileName="StaticFieldReference_Behavior.java" startLine="30" startPosition="106" endLine="39" endPosition="5">
+      <varInfo nodeId="1238863363479" varName="classifier" />
+    </scopeInfo>
+    <scopeInfo nodeId="1213877524603" fileName="StaticFieldReference_Behavior.java" startLine="41" startPosition="0" endLine="51" endPosition="0">
       <varInfo nodeId="8083692786967151920" varName="child" />
       <varInfo nodeId="8083692786967151918" varName="kind" />
       <varInfo nodeId="1213877524603" varName="thisNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="1238861466946" fileName="StaticFieldReference_Behavior.java" startLine="30" startPosition="106" endLine="39" endPosition="5">
-      <varInfo nodeId="1238863363479" varName="classifier" />
     </scopeInfo>
     <scopeInfo nodeId="1213877524603" fileName="StaticFieldReference_Behavior.java" startLine="29" startPosition="0" endLine="41" endPosition="0">
       <varInfo nodeId="1238861722102" varName="module" />
       <varInfo nodeId="1213877524603" varName="thisNode" />
     </scopeInfo>
-    <unitInfo nodeId="1213877524603" fileName="StaticFieldReference_Behavior.java" startLine="16" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.StaticFieldReference_Behavior" />
+    <unitInfo nodeId="1213877524603" fileName="StaticFieldReference_Behavior.java" startLine="16" startPosition="0" endLine="52" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.StaticFieldReference_Behavior" />
   </root>
   <root nodeId="1213877525333">
     <nodeInfo nodeId="1213877525336" fileName="StaticMethodCall_Behavior.java" startLine="22" startPosition="92" endLine="23" endPosition="157" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
