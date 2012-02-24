@@ -17,6 +17,10 @@ public class EnumClass_BehaviorDescriptor extends ClassConcept_BehaviorDescripto
     return EnumClass_Behavior.virtual_getMembers_1213877531970(thisNode);
   }
 
+  public List<SNode> virtual_getMembers_2201875424515824604(SNode thisNode, SNode kind) {
+    return EnumClass_Behavior.virtual_getMembers_2201875424515824604(thisNode, kind);
+  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.structure.EnumClass";

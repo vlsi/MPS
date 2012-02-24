@@ -11,15 +11,10 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import java.util.HashSet;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.scope.Scope;
 import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.ISelector;
-import jetbrains.mps.util.Pair;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.baseLanguage.scopes.SimpleScope;
 import jetbrains.mps.smodel.structure.BehaviorDescriptor;
 import jetbrains.mps.smodel.structure.ConceptRegistry;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
@@ -76,10 +71,8 @@ public class Interface_Behavior {
     return fqName.substring(0, index) + "$" + fqName.substring(index + 1);
   }
 
-  public static Scope virtual_getVisibleMembers_8083692786967356611(SNode thisNode, SNode contextNode, SNode kind) {
-    // composite from inherited + super. scopes + other new fields // for now just getMembers 
-    List<SNode> extendsClassifiers = new ArrayList<SNode>();
-    ListSequence.fromList(extendsClassifiers).addSequence(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "extendedInterface", true)).where(new IWhereFilter<SNode>() {
+  public static List<SNode> virtual_getExtendedClassifiers_2201875424516179426(SNode thisNode) {
+    return ListSequence.fromListWithValues(new ArrayList<SNode>(), ListSequence.fromList(SLinkOperations.getTargets(thisNode, "extendedInterface", true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return (SLinkOperations.getTarget(it, "classifier", false) != null);
       }
@@ -87,41 +80,11 @@ public class Interface_Behavior {
       public SNode select(SNode it) {
         return SLinkOperations.getTarget(it, "classifier", false);
       }
-    }));
-
-    // todo: duplicating with ClassConcept! 
-
-    // create new with overriding by name 
-    // todo: create new scope composer (overriding in case of equal concepts and names) 
-    List<SNode> elements = new ArrayList<SNode>();
-    Set<Pair<SNode, String>> conceptAndNames = SetSequence.fromSet(new HashSet());
-    for (SNode node : Classifier_Behavior.callSuper_getVisibleMembers_8083692786967356611(thisNode, "jetbrains.mps.baseLanguage.structure.Interface", contextNode, kind).getAvailableElements(null)) {
-      ListSequence.fromList(elements).addElement(node);
-      if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.core.structure.INamedConcept")) {
-        SetSequence.fromSet(conceptAndNames).addElement(new Pair(SNodeOperations.getConceptDeclaration(node), SPropertyOperations.getString(SNodeOperations.cast(node, "jetbrains.mps.lang.core.structure.INamedConcept"), "name")));
-      }
-    }
-
-    for (SNode classifier : ListSequence.fromList(extendsClassifiers).where(new IWhereFilter<SNode>() {
+    }).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return (it != null);
       }
-    })) {
-      for (SNode node : Classifier_Behavior.call_getVisibleMembers_8083692786967356611(classifier, contextNode, kind).getAvailableElements(null)) {
-        if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.core.structure.INamedConcept")) {
-          Pair<SNode, String> tmp = new Pair(SNodeOperations.getConceptDeclaration(node), SPropertyOperations.getString(SNodeOperations.cast(node, "jetbrains.mps.lang.core.structure.INamedConcept"), "name"));
-          if ((!(SetSequence.fromSet(conceptAndNames).contains(tmp))) || SConceptOperations.isSubConceptOf(kind, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration")) {
-            SetSequence.fromSet(conceptAndNames).addElement(tmp);
-
-            ListSequence.fromList(elements).addElement(node);
-          }
-        } else {
-          ListSequence.fromList(elements).addElement(node);
-        }
-      }
-    }
-
-    return new SimpleScope(elements);
+    }));
   }
 
   public static String call_getUnitName_2496361171403551004(SNode thisNode) {

@@ -7,6 +7,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 
 public class EnumClass_Behavior {
   public static void init(SNode thisNode) {
@@ -30,5 +31,13 @@ public class EnumClass_Behavior {
   public static boolean virtual_hasStaticMemebers_1214840444586(SNode thisNode) {
     // enums always have static operations: valueOf and values 
     return true;
+  }
+
+  public static List<SNode> virtual_getMembers_2201875424515824604(SNode thisNode, SNode kind) {
+    if (SConceptOperations.isSubConceptOf(kind, "jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration")) {
+      return SLinkOperations.getTargets(thisNode, "enumConstant", true);
+    } else {
+      return Classifier_Behavior.callSuper_getMembers_2201875424515824604(thisNode, "jetbrains.mps.baseLanguage.structure.EnumClass", kind);
+    }
   }
 }

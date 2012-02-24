@@ -7,29 +7,28 @@ import jetbrains.mps.logging.Logger;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.scope.Scope;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.ISelector;
-import java.util.Set;
-import jetbrains.mps.util.Pair;
-import jetbrains.mps.internal.collections.runtime.SetSequence;
-import java.util.HashSet;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.baseLanguage.scopes.SimpleScope;
 import javax.swing.Icon;
 import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
 import jetbrains.mps.baseLanguage.plugin.IconResourceBundle_Behavior;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import java.util.Set;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 import jetbrains.mps.baseLanguage.search.ClassifierAndSuperClassifiersScope;
 import jetbrains.mps.baseLanguage.search.IClassifiersSearchScope;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
 import jetbrains.mps.smodel.search.IsInstanceCondition;
+import java.util.HashSet;
 import java.util.Queue;
 import jetbrains.mps.internal.collections.runtime.QueueSequence;
 import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
+import jetbrains.mps.scope.Scope;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.baseLanguage.scopes.SimpleScope;
 import jetbrains.mps.lang.core.behavior.ScopeProvider_Behavior;
 import jetbrains.mps.smodel.structure.BehaviorDescriptor;
 import jetbrains.mps.smodel.structure.ConceptRegistry;
@@ -59,8 +58,8 @@ public class ClassConcept_Behavior {
     return members;
   }
 
-  public static Scope virtual_getVisibleMembers_8083692786967356611(SNode thisNode, SNode contextNode, SNode kind) {
-    // composite from inherited + super. scopes + other new fields // for now just getMembers 
+  public static List<SNode> virtual_getExtendedClassifiers_2201875424516179426(SNode thisNode) {
+    Classifier_Behavior.callSuper_getExtendedClassifiers_2201875424516179426(thisNode, "jetbrains.mps.baseLanguage.structure.ClassConcept");
     List<SNode> extendsClassifiers = new ArrayList<SNode>();
     ListSequence.fromList(extendsClassifiers).addElement(SLinkOperations.getTarget(SLinkOperations.getTarget(thisNode, "superclass", true), "classifier", false));
     ListSequence.fromList(extendsClassifiers).addSequence(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "implementedInterface", true)).where(new IWhereFilter<SNode>() {
@@ -72,37 +71,12 @@ public class ClassConcept_Behavior {
         return SLinkOperations.getTarget(it, "classifier", false);
       }
     }));
-
-    // create new with overriding by name 
-    // todo: create new scope composer (overriding in case of equal concepts and names) 
-    List<SNode> elements = new ArrayList<SNode>();
-    Set<Pair<SNode, String>> conceptAndNames = SetSequence.fromSet(new HashSet());
-    for (SNode node : Classifier_Behavior.callSuper_getVisibleMembers_8083692786967356611(thisNode, "jetbrains.mps.baseLanguage.structure.ClassConcept", contextNode, kind).getAvailableElements(null)) {
-      ListSequence.fromList(elements).addElement(node);
-      if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.core.structure.INamedConcept")) {
-        SetSequence.fromSet(conceptAndNames).addElement(new Pair(SNodeOperations.getConceptDeclaration(node), SPropertyOperations.getString(SNodeOperations.cast(node, "jetbrains.mps.lang.core.structure.INamedConcept"), "name")));
-      }
-    }
-
-    for (SNode classifier : ListSequence.fromList(extendsClassifiers).where(new IWhereFilter<SNode>() {
+    // todo: optimize 
+    return ListSequence.fromListWithValues(new ArrayList<SNode>(), ListSequence.fromList(extendsClassifiers).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return (it != null);
       }
-    })) {
-      for (SNode node : Classifier_Behavior.call_getVisibleMembers_8083692786967356611(classifier, contextNode, kind).getAvailableElements(null)) {
-        if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.core.structure.INamedConcept")) {
-          Pair<SNode, String> tmp = new Pair(SNodeOperations.getConceptDeclaration(node), SPropertyOperations.getString(SNodeOperations.cast(node, "jetbrains.mps.lang.core.structure.INamedConcept"), "name"));
-          if ((!(SetSequence.fromSet(conceptAndNames).contains(tmp))) || SConceptOperations.isSubConceptOf(kind, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration")) {
-            SetSequence.fromSet(conceptAndNames).addElement(tmp);
-            ListSequence.fromList(elements).addElement(node);
-          }
-        } else {
-          ListSequence.fromList(elements).addElement(node);
-        }
-      }
-    }
-
-    return new SimpleScope(elements);
+    }));
   }
 
   public static boolean virtual_isRunnable_7941158526576616752(SNode thisNode) {
