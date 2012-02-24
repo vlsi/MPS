@@ -206,7 +206,7 @@
   <unitInfo fileName="StaticFieldDeclaration_BehaviorDescriptor.java" startLine="13" startPosition="0" endLine="67" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.StaticFieldDeclaration_BehaviorDescriptor" />
   <unitInfo fileName="StaticFieldReference_BehaviorDescriptor.java" startLine="11" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.StaticFieldReference_BehaviorDescriptor" />
   <unitInfo fileName="StaticInitializer_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.StaticInitializer_BehaviorDescriptor" />
-  <unitInfo fileName="StaticMethodCall_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.StaticMethodCall_BehaviorDescriptor" />
+  <unitInfo fileName="StaticMethodCall_BehaviorDescriptor.java" startLine="13" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.StaticMethodCall_BehaviorDescriptor" />
   <unitInfo fileName="StaticMethodDeclaration_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.StaticMethodDeclaration_BehaviorDescriptor" />
   <unitInfo fileName="StringBooleanOperation_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.StringBooleanOperation_BehaviorDescriptor" />
   <unitInfo fileName="StringLiteral_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.StringLiteral_BehaviorDescriptor" />
@@ -8503,60 +8503,71 @@
     <unitInfo nodeId="1213877524603" fileName="StaticFieldReference_Behavior.java" startLine="16" startPosition="0" endLine="52" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.StaticFieldReference_Behavior" />
   </root>
   <root nodeId="1213877525333">
-    <nodeInfo nodeId="1213877525336" fileName="StaticMethodCall_Behavior.java" startLine="22" startPosition="92" endLine="23" endPosition="157" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1213877525345" fileName="StaticMethodCall_Behavior.java" startLine="23" startPosition="157" endLine="24" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1213877525353" fileName="StaticMethodCall_Behavior.java" startLine="24" startPosition="111" endLine="25" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5776618742611361669" fileName="StaticMethodCall_Behavior.java" startLine="28" startPosition="123" endLine="29" endPosition="193" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5776618742611361721" fileName="StaticMethodCall_Behavior.java" startLine="29" startPosition="193" endLine="30" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3299924278393509428" fileName="StaticMethodCall_Behavior.java" startLine="33" startPosition="88" endLine="34" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3299924278393509434" fileName="StaticMethodCall_Behavior.java" startLine="34" startPosition="85" endLine="35" endPosition="131" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3299924278393509445" fileName="StaticMethodCall_Behavior.java" startLine="35" startPosition="131" endLine="36" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3299924278393509391" fileName="StaticMethodCall_Behavior.java" startLine="39" startPosition="78" endLine="40" endPosition="149" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3299924278393509397" fileName="StaticMethodCall_Behavior.java" startLine="40" startPosition="149" endLine="41" endPosition="154" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3299924278393509412" fileName="StaticMethodCall_Behavior.java" startLine="42" startPosition="118" endLine="43" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1213877525333" fileName="StaticMethodCall_Behavior.java" startLine="18" startPosition="40" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
-    <nodeInfo nodeId="3299924278393509406" fileName="StaticMethodCall_Behavior.java" startLine="41" startPosition="154" endLine="44" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="1213877525333" fileName="StaticMethodCall_Behavior.java" startLine="27" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getAvailableMethodDeclarations_5776618742611315379#(Ljetbrains/mps/smodel/SNode;Ljava/lang/String;)Ljava/util/List;" />
-    <nodeInfo nodeId="1213877525333" fileName="StaticMethodCall_Behavior.java" startLine="21" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_eval_1213877519769#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/project/IModule;)Ljava/lang/Object;" />
-    <nodeInfo nodeId="1213877525333" fileName="StaticMethodCall_Behavior.java" startLine="32" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_canBeConvertedToLocal_3299924278393499101#(Ljetbrains/mps/smodel/SNode;)Z" />
-    <nodeInfo nodeId="1213877525333" fileName="StaticMethodCall_Behavior.java" startLine="38" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_convertToLocal_3299924278393509387#(Ljetbrains/mps/smodel/SNode;)V" />
-    <scopeInfo nodeId="1213877525361" fileName="StaticMethodCall_Behavior.java" startLine="19" startPosition="43" endLine="19" endPosition="43" />
-    <scopeInfo nodeId="3299924278393509411" fileName="StaticMethodCall_Behavior.java" startLine="42" startPosition="118" endLine="43" endPosition="130" />
-    <scopeInfo nodeId="5776618742611361664" fileName="StaticMethodCall_Behavior.java" startLine="28" startPosition="123" endLine="30" endPosition="19">
+    <nodeInfo nodeId="1213877525336" fileName="StaticMethodCall_Behavior.java" startLine="25" startPosition="92" endLine="26" endPosition="157" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1213877525345" fileName="StaticMethodCall_Behavior.java" startLine="26" startPosition="157" endLine="27" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1213877525353" fileName="StaticMethodCall_Behavior.java" startLine="27" startPosition="111" endLine="28" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5776618742611361669" fileName="StaticMethodCall_Behavior.java" startLine="31" startPosition="123" endLine="32" endPosition="193" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5776618742611361721" fileName="StaticMethodCall_Behavior.java" startLine="32" startPosition="193" endLine="33" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3299924278393509428" fileName="StaticMethodCall_Behavior.java" startLine="36" startPosition="88" endLine="37" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3299924278393509434" fileName="StaticMethodCall_Behavior.java" startLine="37" startPosition="85" endLine="38" endPosition="131" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3299924278393509445" fileName="StaticMethodCall_Behavior.java" startLine="38" startPosition="131" endLine="39" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3299924278393509391" fileName="StaticMethodCall_Behavior.java" startLine="42" startPosition="78" endLine="43" endPosition="149" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3299924278393509397" fileName="StaticMethodCall_Behavior.java" startLine="43" startPosition="149" endLine="44" endPosition="154" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3299924278393509412" fileName="StaticMethodCall_Behavior.java" startLine="45" startPosition="118" endLine="46" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8122043227765155089" fileName="StaticMethodCall_Behavior.java" startLine="56" startPosition="5" endLine="57" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1213877525333" fileName="StaticMethodCall_Behavior.java" startLine="21" startPosition="40" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="3299924278393509406" fileName="StaticMethodCall_Behavior.java" startLine="44" startPosition="154" endLine="47" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="8122043227765155069" fileName="StaticMethodCall_Behavior.java" startLine="51" startPosition="114" endLine="55" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1213877525333" fileName="StaticMethodCall_Behavior.java" startLine="30" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getAvailableMethodDeclarations_5776618742611315379#(Ljetbrains/mps/smodel/SNode;Ljava/lang/String;)Ljava/util/List;" />
+    <nodeInfo nodeId="1213877525333" fileName="StaticMethodCall_Behavior.java" startLine="24" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_eval_1213877519769#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/project/IModule;)Ljava/lang/Object;" />
+    <nodeInfo nodeId="1213877525333" fileName="StaticMethodCall_Behavior.java" startLine="35" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_canBeConvertedToLocal_3299924278393499101#(Ljetbrains/mps/smodel/SNode;)Z" />
+    <nodeInfo nodeId="8122043227765155067" fileName="StaticMethodCall_Behavior.java" startLine="50" startPosition="101" endLine="56" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1213877525333" fileName="StaticMethodCall_Behavior.java" startLine="41" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_convertToLocal_3299924278393509387#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="1213877525333" fileName="StaticMethodCall_Behavior.java" startLine="49" startPosition="0" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getScope_3734116213129936182#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/scope/Scope;" />
+    <scopeInfo nodeId="1213877525361" fileName="StaticMethodCall_Behavior.java" startLine="22" startPosition="43" endLine="22" endPosition="43" />
+    <scopeInfo nodeId="3299924278393509411" fileName="StaticMethodCall_Behavior.java" startLine="45" startPosition="118" endLine="46" endPosition="130" />
+    <scopeInfo nodeId="5776618742611361664" fileName="StaticMethodCall_Behavior.java" startLine="31" startPosition="123" endLine="33" endPosition="19">
       <varInfo nodeId="5776618742611361670" varName="methods" />
     </scopeInfo>
-    <scopeInfo nodeId="1213877525333" fileName="StaticMethodCall_Behavior.java" startLine="18" startPosition="40" endLine="21" endPosition="0">
+    <scopeInfo nodeId="1213877525333" fileName="StaticMethodCall_Behavior.java" startLine="21" startPosition="40" endLine="24" endPosition="0">
       <varInfo nodeId="1213877525333" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="1213877525335" fileName="StaticMethodCall_Behavior.java" startLine="22" startPosition="92" endLine="25" endPosition="64">
+    <scopeInfo nodeId="1213877525335" fileName="StaticMethodCall_Behavior.java" startLine="25" startPosition="92" endLine="28" endPosition="64">
       <varInfo nodeId="1213877525346" varName="actualArguments" />
       <varInfo nodeId="1213877525337" varName="method" />
     </scopeInfo>
-    <scopeInfo nodeId="3299924278393499104" fileName="StaticMethodCall_Behavior.java" startLine="33" startPosition="88" endLine="36" endPosition="42">
+    <scopeInfo nodeId="3299924278393499104" fileName="StaticMethodCall_Behavior.java" startLine="36" startPosition="88" endLine="39" endPosition="42">
       <varInfo nodeId="3299924278393509429" varName="classConcept1" />
       <varInfo nodeId="3299924278393509435" varName="classConcept2" />
     </scopeInfo>
-    <scopeInfo nodeId="3299924278393509406" fileName="StaticMethodCall_Behavior.java" startLine="41" startPosition="154" endLine="44" endPosition="5">
+    <scopeInfo nodeId="3299924278393509406" fileName="StaticMethodCall_Behavior.java" startLine="44" startPosition="154" endLine="47" endPosition="5">
       <varInfo nodeId="3299924278393509406" varName="actualArgument" />
     </scopeInfo>
-    <scopeInfo nodeId="1213877525333" fileName="StaticMethodCall_Behavior.java" startLine="27" startPosition="0" endLine="32" endPosition="0">
+    <scopeInfo nodeId="8122043227765155068" fileName="StaticMethodCall_Behavior.java" startLine="51" startPosition="114" endLine="55" endPosition="8" />
+    <scopeInfo nodeId="1213877525333" fileName="StaticMethodCall_Behavior.java" startLine="30" startPosition="0" endLine="35" endPosition="0">
       <varInfo nodeId="5776618742611361665" varName="methodName" />
       <varInfo nodeId="1213877525333" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="3299924278393509390" fileName="StaticMethodCall_Behavior.java" startLine="39" startPosition="78" endLine="44" endPosition="5">
+    <scopeInfo nodeId="3299924278393509390" fileName="StaticMethodCall_Behavior.java" startLine="42" startPosition="78" endLine="47" endPosition="5">
       <varInfo nodeId="3299924278393509392" varName="localStaticMethodCall" />
     </scopeInfo>
-    <scopeInfo nodeId="1213877525333" fileName="StaticMethodCall_Behavior.java" startLine="21" startPosition="0" endLine="27" endPosition="0">
+    <scopeInfo nodeId="1213877525333" fileName="StaticMethodCall_Behavior.java" startLine="24" startPosition="0" endLine="30" endPosition="0">
       <varInfo nodeId="1213877525357" varName="module" />
       <varInfo nodeId="1213877525333" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="1213877525333" fileName="StaticMethodCall_Behavior.java" startLine="32" startPosition="0" endLine="38" endPosition="0">
+    <scopeInfo nodeId="1213877525333" fileName="StaticMethodCall_Behavior.java" startLine="35" startPosition="0" endLine="41" endPosition="0">
       <varInfo nodeId="1213877525333" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="1213877525333" fileName="StaticMethodCall_Behavior.java" startLine="38" startPosition="0" endLine="46" endPosition="0">
+    <scopeInfo nodeId="8122043227765155066" fileName="StaticMethodCall_Behavior.java" startLine="50" startPosition="101" endLine="57" endPosition="16" />
+    <scopeInfo nodeId="1213877525333" fileName="StaticMethodCall_Behavior.java" startLine="41" startPosition="0" endLine="49" endPosition="0">
       <varInfo nodeId="1213877525333" varName="thisNode" />
     </scopeInfo>
-    <unitInfo nodeId="1213877525333" fileName="StaticMethodCall_Behavior.java" startLine="18" startPosition="0" endLine="47" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.StaticMethodCall_Behavior" />
+    <scopeInfo nodeId="1213877525333" fileName="StaticMethodCall_Behavior.java" startLine="49" startPosition="0" endLine="59" endPosition="0">
+      <varInfo nodeId="8122043227765155053" varName="child" />
+      <varInfo nodeId="8122043227765155051" varName="kind" />
+      <varInfo nodeId="1213877525333" varName="thisNode" />
+    </scopeInfo>
+    <unitInfo nodeId="1213877525333" fileName="StaticMethodCall_Behavior.java" startLine="21" startPosition="0" endLine="60" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.StaticMethodCall_Behavior" />
   </root>
   <root nodeId="1213877529126">
     <nodeInfo nodeId="1213877529129" fileName="FloatType_Behavior.java" startLine="18" startPosition="76" endLine="19" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

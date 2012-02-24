@@ -1965,6 +1965,9 @@
       <link role="target" roleId="tpce.1071599976176" targetNodeId="1081236700938" resolveInfo="StaticMethodDeclaration" />
       <link role="specializedLink" roleId="tpce.1071599698500" targetNodeId="1068499141037" />
     </node>
+    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="8122043227765155047">
+      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tpck.3734116213129792499" resolveInfo="ScopeProvider" />
+    </node>
   </root>
   <root id="1081236700938">
     <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="1178289092936">
