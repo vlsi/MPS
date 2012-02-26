@@ -17,24 +17,13 @@ package jetbrains.mps.ide.generator.index;
 
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.util.indexing.FileBasedIndex.InputFilter;
-import com.intellij.util.indexing.FileContent;
 import com.intellij.util.indexing.ID;
-import com.intellij.util.indexing.SingleEntryFileBasedIndexExtension;
-import com.intellij.util.indexing.SingleEntryIndexer;
-import com.intellij.util.io.DataExternalizer;
-import com.intellij.util.io.EnumeratorStringDescriptor;
 import jetbrains.mps.fileTypes.MPSFileTypeFactory;
-import jetbrains.mps.generator.ModelDigestUtil;
-import org.jetbrains.annotations.NotNull;
 
-import java.io.DataInput;
-import java.io.DataOutput;
-import java.io.IOException;
-import java.util.HashMap;
 import java.util.Map;
 
-public class ModelDigestIndex extends BaseModelDigestIndex {
-  public static final ID<Integer, Map<String, String>> NAME = ID.create("ModelDigest");
+public class LanguageModelDigestIndex extends BaseModelDigestIndex {
+  public static final ID<Integer, Map<String, String>> NAME = ID.create("LanguageModelDigest");
 
   public ID<Integer, Map<String, String>> getName() {
     return NAME;
@@ -43,12 +32,12 @@ public class ModelDigestIndex extends BaseModelDigestIndex {
   public InputFilter getInputFilter() {
     return new InputFilter() {
       public boolean acceptInput(VirtualFile file) {
-        return file.getFileType().equals(MPSFileTypeFactory.MODEL_FILE_TYPE);
+        return file.getFileType().equals(MPSFileTypeFactory.LANGUAGE_FILE_TYPE);
       }
     };
   }
 
   public int getVersion() {
-    return 7;
+    return 1;
   }
 }
