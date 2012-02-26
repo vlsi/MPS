@@ -54,7 +54,9 @@
   <dependency className="jetbrains.mps.watching.ModelChangesWatcher" file="ModelChangesWatcher.java">
     <classNode dependClassName="com.intellij.openapi.application.Application" />
     <classNode dependClassName="com.intellij.openapi.application.ApplicationManager" />
-    <classNode dependClassName="com.intellij.openapi.application.ModalityState" />
+    <classNode dependClassName="com.intellij.openapi.progress.ProgressIndicator" />
+    <classNode dependClassName="com.intellij.openapi.progress.ProgressManager" />
+    <classNode dependClassName="com.intellij.openapi.progress.Task" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="com.intellij.openapi.project.ProjectManager" />
     <classNode dependClassName="com.intellij.openapi.util.Computable" />
@@ -68,12 +70,11 @@
     <classNode dependClassName="com.intellij.util.Processor" />
     <classNode dependClassName="com.intellij.util.messages.MessageBus" />
     <classNode dependClassName="com.intellij.util.messages.MessageBusConnection" />
-    <classNode dependClassName="com.intellij.util.ui.Timer" />
+    <classNode dependClassName="com.intellij.util.ui.update.MergingUpdateQueue" />
+    <classNode dependClassName="com.intellij.util.ui.update.Update" />
     <classNode dependClassName="java.io.File" />
     <classNode dependClassName="java.io.IOException" />
-    <classNode dependClassName="java.lang.InterruptedException" />
     <classNode dependClassName="java.lang.Object" />
-    <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Arrays" />
     <classNode dependClassName="java.util.HashSet" />
@@ -157,8 +158,6 @@
   <dependency className="jetbrains.mps.watching.ReloadSession" file="ReloadSession.java">
     <classNode dependClassName="com.intellij.openapi.progress.EmptyProgressIndicator" />
     <classNode dependClassName="com.intellij.openapi.progress.ProgressIndicator" />
-    <classNode dependClassName="com.intellij.openapi.progress.ProgressManager" />
-    <classNode dependClassName="com.intellij.openapi.progress.Task" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="com.intellij.openapi.project.ProjectManager" />
     <classNode dependClassName="com.intellij.openapi.vfs.VirtualFile" />
