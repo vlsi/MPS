@@ -154,6 +154,7 @@ public class ModelChangesWatcher implements ApplicationComponent {
         public void run() {
           for (Project project : myProjectManager.getOpenProjects()) {
             if (project.getComponent(ProjectLevelVcsManager.class).isBackgroundVcsOperationRunning()) {
+              queueReload();
               return;
             }
           }
