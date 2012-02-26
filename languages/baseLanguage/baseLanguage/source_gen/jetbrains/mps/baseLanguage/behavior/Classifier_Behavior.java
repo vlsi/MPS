@@ -159,7 +159,9 @@ public class Classifier_Behavior {
     if (SConceptOperations.isSubConceptOf(kind, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration")) {
       return Classifier_Behavior.call_overrideMembersBySigature_2201875424516179874(thisNode, kind, pretenders, new _FunctionTypes._return_P1_E0<String, SNode>() {
         public String invoke(SNode member) {
-          return SPropertyOperations.getString(SNodeOperations.cast(member, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"), "name");
+          // todo: ? 
+          SNode method = SNodeOperations.cast(member, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration");
+          return SPropertyOperations.getString(method, "name") + "(" + BaseMethodDeclaration_Behavior.call_getErasureSignature_2830572026628006618(method) + ")";
         }
       });
     }
