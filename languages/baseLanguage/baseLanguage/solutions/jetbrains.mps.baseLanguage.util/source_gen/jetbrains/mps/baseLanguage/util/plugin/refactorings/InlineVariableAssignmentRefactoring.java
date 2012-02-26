@@ -68,7 +68,7 @@ public class InlineVariableAssignmentRefactoring extends InlineVariableRefactori
     if (SNodeOperations.getAncestor(body, "jetbrains.mps.baseLanguage.structure.StatementList", false, false) == null) {
       return body;
     }
-    if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(body), "jetbrains.mps.baseLanguage.structure.IStatementListContainer") && !(((Boolean) BehaviorManager.getInstance().invoke(Boolean.class, SNodeOperations.cast(SNodeOperations.cast(SNodeOperations.getParent(body), "jetbrains.mps.baseLanguage.structure.IStatementListContainer"), "jetbrains.mps.baseLanguage.structure.IStatementListContainer"), "virtual_isExecuteSynchronous_1230212745736", new Class[]{SNode.class})))) {
+    if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(body), "jetbrains.mps.baseLanguage.structure.IStatementListContainer") && !(((Boolean) BehaviorManager.getInstance().invoke(Boolean.class, SNodeOperations.cast(SNodeOperations.getParent(body), "jetbrains.mps.baseLanguage.structure.IStatementListContainer"), "virtual_isExecuteSynchronous_1230212745736", new Class[]{SNode.class})))) {
       return body;
     }
     return findStatementList(body);

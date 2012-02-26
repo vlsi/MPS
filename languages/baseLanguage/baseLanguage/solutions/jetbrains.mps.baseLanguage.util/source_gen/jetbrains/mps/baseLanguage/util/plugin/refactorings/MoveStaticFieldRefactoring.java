@@ -17,9 +17,9 @@ public class MoveStaticFieldRefactoring extends BasicMoveRefactoring {
   public void replaceSingleUsage(SNode usage) {
     super.replaceSingleUsage(usage);
     if (SNodeOperations.getAncestor(usage, "jetbrains.mps.baseLanguage.structure.Classifier", false, false) == this.myDestination) {
-      SNodeOperations.replaceWithAnother(usage, new MoveStaticFieldRefactoring.QuotationClass_fls06q_a1a0a1a0().createNode(this.myReplacing));
+      SNodeOperations.replaceWithAnother(usage, new MoveStaticFieldRefactoring.QuotationClass_fls06q_a0a0a0b0a().createNode(this.myReplacing));
     } else {
-      SNodeOperations.replaceWithAnother(usage, new MoveStaticFieldRefactoring.QuotationClass_fls06q_a1a0a0b0a().createNode(this.myDestination, this.myReplacing));
+      SNodeOperations.replaceWithAnother(usage, new MoveStaticFieldRefactoring.QuotationClass_fls06q_a0a0a0a1a0().createNode(this.myDestination, this.myReplacing));
     }
   }
 
@@ -27,8 +27,8 @@ public class MoveStaticFieldRefactoring extends BasicMoveRefactoring {
     return SNodeOperations.isInstanceOf(this.myDestination, "jetbrains.mps.baseLanguage.structure.Classifier");
   }
 
-  public static class QuotationClass_fls06q_a1a0a1a0 {
-    public QuotationClass_fls06q_a1a0a1a0() {
+  public static class QuotationClass_fls06q_a0a0a0b0a {
+    public QuotationClass_fls06q_a0a0a0b0a() {
     }
 
     public SNode createNode(Object parameter_3) {
@@ -45,8 +45,8 @@ public class MoveStaticFieldRefactoring extends BasicMoveRefactoring {
     }
   }
 
-  public static class QuotationClass_fls06q_a1a0a0b0a {
-    public QuotationClass_fls06q_a1a0a0b0a() {
+  public static class QuotationClass_fls06q_a0a0a0a1a0 {
+    public QuotationClass_fls06q_a0a0a0a1a0() {
     }
 
     public SNode createNode(Object parameter_3, Object parameter_4) {

@@ -13,6 +13,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.smodel.SReference;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 
 public class MoveRefactoringUtils {
   public MoveRefactoringUtils() {
@@ -20,7 +21,7 @@ public class MoveRefactoringUtils {
 
   public static void addNodeAtLink(SNode container, SNode node) {
     SNode concept = SNodeOperations.getConceptDeclaration(node);
-    for (SNode link : ListSequence.fromList(((List<SNode>) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(SNodeOperations.getConceptDeclaration(container), "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"), "call_getLinkDeclarations_1213877394480", new Class[]{SNode.class})))) {
+    for (SNode link : ListSequence.fromList(((List<SNode>) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.getConceptDeclaration(container), "call_getLinkDeclarations_1213877394480", new Class[]{SNode.class})))) {
       if (SLinkOperations.getTarget(link, "target", false) == concept) {
         container.addChild(SPropertyOperations.getString(link, "role"), node);
       }
@@ -44,13 +45,13 @@ public class MoveRefactoringUtils {
 
   public static void fixImportsFromNode(SNode node) {
     for (SNode descendant : ListSequence.fromList(SNodeOperations.getDescendants(node, "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{}))) {
-      for (SReference reference : ListSequence.fromList(SNodeOperations.getReferences(descendant))) {
+      for (SReference reference : Sequence.fromIterable(SNodeOperations.getReferences(descendant))) {
         addNodeModelImportIfNeed(node, SLinkOperations.getTargetNode(reference));
       }
     }
   }
 
   public static boolean isReference(SNode node) {
-    return ListSequence.fromList(SNodeOperations.getChildren(node)).isEmpty() && (int) ListSequence.fromList(SNodeOperations.getReferences(node)).count() == 1;
+    return ListSequence.fromList(SNodeOperations.getChildren(node)).isEmpty() && (int) Sequence.fromIterable(SNodeOperations.getReferences(node)).count() == 1;
   }
 }

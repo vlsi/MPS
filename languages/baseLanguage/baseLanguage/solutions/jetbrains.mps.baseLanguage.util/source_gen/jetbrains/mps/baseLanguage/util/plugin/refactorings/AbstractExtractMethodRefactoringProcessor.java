@@ -55,7 +55,7 @@ public class AbstractExtractMethodRefactoringProcessor implements IExtractMethod
       return SNodeOperations.copyNode(SLinkOperations.getTarget(SNodeOperations.cast(containerMethod, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"), "returnType", true));
     }
     if (SNodeOperations.isInstanceOf(containerMethod, "jetbrains.mps.baseLanguage.structure.ConceptFunction")) {
-      return TypeChecker.getInstance().getRuntimeSupport().coerce_(((SNode) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(SNodeOperations.cast(containerMethod, "jetbrains.mps.baseLanguage.structure.ConceptFunction"), "jetbrains.mps.baseLanguage.structure.ConceptFunction"), "virtual_getExpectedReturnType_1213877374441", new Class[]{SNode.class})), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.Type"), true);
+      return TypeChecker.getInstance().getRuntimeSupport().coerce_(((SNode) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(containerMethod, "jetbrains.mps.baseLanguage.structure.ConceptFunction"), "virtual_getExpectedReturnType_1213877374441", new Class[]{SNode.class})), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.Type"), true);
     }
     return null;
   }
@@ -66,7 +66,7 @@ public class AbstractExtractMethodRefactoringProcessor implements IExtractMethod
 
   public static void universalAddMethod(SNode container, SNode method) {
     SNode concept = SNodeOperations.getConceptDeclaration(method);
-    for (SNode link : ListSequence.fromList(((List<SNode>) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(SNodeOperations.getConceptDeclaration(container), "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"), "call_getLinkDeclarations_1213877394480", new Class[]{SNode.class})))) {
+    for (SNode link : ListSequence.fromList(((List<SNode>) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.getConceptDeclaration(container), "call_getLinkDeclarations_1213877394480", new Class[]{SNode.class})))) {
       if (SLinkOperations.getTarget(link, "target", false) == concept) {
         container.addChild(SPropertyOperations.getString(link, "role"), method);
       }

@@ -88,7 +88,7 @@ public class InlineMethodRefactoring {
   public void addLastReturnStatement(SNode body) {
     SNode last = ListSequence.fromList(SLinkOperations.getTargets(body, "statement", true)).last();
     if (SNodeOperations.isInstanceOf(last, "jetbrains.mps.baseLanguage.structure.ExpressionStatement")) {
-      SNodeOperations.replaceWithAnother(last, new InlineMethodRefactoring.QuotationClass_49noxv_a1a0a1a1().createNode(SLinkOperations.getTarget(SNodeOperations.cast(last, "jetbrains.mps.baseLanguage.structure.ExpressionStatement"), "expression", true)));
+      SNodeOperations.replaceWithAnother(last, new InlineMethodRefactoring.QuotationClass_49noxv_a0a0a0b0b().createNode(SLinkOperations.getTarget(SNodeOperations.cast(last, "jetbrains.mps.baseLanguage.structure.ExpressionStatement"), "expression", true)));
     }
   }
 
@@ -298,8 +298,8 @@ public class InlineMethodRefactoring {
     return buff.toString();
   }
 
-  public static class QuotationClass_49noxv_a1a0a1a1 {
-    public QuotationClass_49noxv_a1a0a1a1() {
+  public static class QuotationClass_49noxv_a0a0a0b0b {
+    public QuotationClass_49noxv_a0a0a0b0b() {
     }
 
     public SNode createNode(Object parameter_5) {

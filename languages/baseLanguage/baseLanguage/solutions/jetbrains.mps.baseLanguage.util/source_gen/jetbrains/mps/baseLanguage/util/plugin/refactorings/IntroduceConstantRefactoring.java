@@ -40,9 +40,9 @@ public class IntroduceConstantRefactoring extends IntroduceVariableRefactoring {
 
   public void replaceNode(SNode node, SNode declaration) {
     if (this.myContainer == SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false)) {
-      SNodeOperations.replaceWithAnother(node, new IntroduceConstantRefactoring.QuotationClass_2jj2z2_a1a0a0a2().createNode(declaration));
+      SNodeOperations.replaceWithAnother(node, new IntroduceConstantRefactoring.QuotationClass_2jj2z2_a0a0a0a0c().createNode(declaration));
     } else {
-      SNodeOperations.replaceWithAnother(node, new IntroduceConstantRefactoring.QuotationClass_2jj2z2_a1a0a0a0c().createNode(this.myContainer, declaration));
+      SNodeOperations.replaceWithAnother(node, new IntroduceConstantRefactoring.QuotationClass_2jj2z2_a0a0a0a0a2().createNode(this.myContainer, declaration));
     }
   }
 
@@ -111,8 +111,8 @@ public class IntroduceConstantRefactoring extends IntroduceVariableRefactoring {
     }
   }
 
-  public static class QuotationClass_2jj2z2_a1a0a3a0 {
-    public QuotationClass_2jj2z2_a1a0a3a0() {
+  public static class QuotationClass_2jj2z2_a0a0a0d0a {
+    public QuotationClass_2jj2z2_a0a0a0d0a() {
     }
 
     public SNode createNode(Object parameter_3) {
@@ -129,8 +129,8 @@ public class IntroduceConstantRefactoring extends IntroduceVariableRefactoring {
     }
   }
 
-  public static class QuotationClass_2jj2z2_a1a0a0a2 {
-    public QuotationClass_2jj2z2_a1a0a0a2() {
+  public static class QuotationClass_2jj2z2_a0a0a0a0c {
+    public QuotationClass_2jj2z2_a0a0a0a0c() {
     }
 
     public SNode createNode(Object parameter_3) {
@@ -147,8 +147,8 @@ public class IntroduceConstantRefactoring extends IntroduceVariableRefactoring {
     }
   }
 
-  public static class QuotationClass_2jj2z2_a1a0a0a0c {
-    public QuotationClass_2jj2z2_a1a0a0a0c() {
+  public static class QuotationClass_2jj2z2_a0a0a0a0a2 {
+    public QuotationClass_2jj2z2_a0a0a0a0a2() {
     }
 
     public SNode createNode(Object parameter_3, Object parameter_4) {

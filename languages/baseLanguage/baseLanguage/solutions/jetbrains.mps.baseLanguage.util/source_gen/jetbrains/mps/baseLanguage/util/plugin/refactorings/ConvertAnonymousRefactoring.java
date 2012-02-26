@@ -157,7 +157,7 @@ public class ConvertAnonymousRefactoring {
   }
 
   private void copyChildren(SNode from, SNode to) {
-    Set<String> toConceptRoles = SetSequence.fromSetWithValues(new HashSet(), ListSequence.fromList(((List<SNode>) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(SNodeOperations.getConceptDeclaration(to), "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"), "call_getLinkDeclarations_1213877394480", new Class[]{SNode.class}))).select(new ISelector<SNode, String>() {
+    Set<String> toConceptRoles = SetSequence.fromSetWithValues(new HashSet(), ListSequence.fromList(((List<SNode>) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.getConceptDeclaration(to), "call_getLinkDeclarations_1213877394480", new Class[]{SNode.class}))).select(new ISelector<SNode, String>() {
       public String select(SNode it) {
         return SPropertyOperations.getString(it, "role");
       }
@@ -178,7 +178,7 @@ public class ConvertAnonymousRefactoring {
   private void addFieldsToInnerClass(SNode innerClass) {
     ListSequence.fromList(SLinkOperations.getTargets(innerClass, "field", true)).addSequence(Sequence.fromIterable(MapSequence.fromMap(this.myInnerFields).values()));
     for (SNode varReference : Sequence.fromIterable(this.getExternalReferences(innerClass))) {
-      SNodeOperations.replaceWithAnother(varReference, new ConvertAnonymousRefactoring.QuotationClass_qy1soj_a1a0a1a21().createNode(innerClass, MapSequence.fromMap(this.myInnerFields).get(SLinkOperations.getTarget(varReference, "variableDeclaration", false))));
+      SNodeOperations.replaceWithAnother(varReference, new ConvertAnonymousRefactoring.QuotationClass_qy1soj_a0a0a0b0m().createNode(innerClass, MapSequence.fromMap(this.myInnerFields).get(SLinkOperations.getTarget(varReference, "variableDeclaration", false))));
     }
   }
 
@@ -245,7 +245,7 @@ public class ConvertAnonymousRefactoring {
 
   private static boolean check_qy1soj_a0a71(SNode checkedDotOperand) {
     if (null != checkedDotOperand) {
-      return ((Boolean) BehaviorManager.getInstance().invoke(Boolean.class, SNodeOperations.cast(checkedDotOperand, "jetbrains.mps.baseLanguage.structure.ClassifierMember"), "virtual_isStatic_8986964027630462944", new Class[]{SNode.class}));
+      return ((Boolean) BehaviorManager.getInstance().invoke(Boolean.class, checkedDotOperand, "virtual_isStatic_8986964027630462944", new Class[]{SNode.class}));
     }
     return false;
   }
@@ -413,8 +413,8 @@ public class ConvertAnonymousRefactoring {
     }
   }
 
-  public static class QuotationClass_qy1soj_a1a0a1a21 {
-    public QuotationClass_qy1soj_a1a0a1a21() {
+  public static class QuotationClass_qy1soj_a0a0a0b0m {
+    public QuotationClass_qy1soj_a0a0a0b0m() {
     }
 
     public SNode createNode(Object parameter_7, Object parameter_8) {
