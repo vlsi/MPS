@@ -35,8 +35,8 @@ public class OverrideConceptMethodsAction {
     final SNodePointer[] methods = ModelAccess.instance().runReadAction(new Computable<SNodePointer[]>() {
       public SNodePointer[] compute() {
         List<SNode> methodsToOverride = (myIsOverride ?
-          ((List<SNode>) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(contextClass, "jetbrains.mps.baseLanguage.structure.IMemberContainer"), "virtual_getMethodsToOverride_5418393554803767537", new Class[]{SNode.class})) :
-          ((List<SNode>) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(contextClass, "jetbrains.mps.baseLanguage.structure.IMemberContainer"), "virtual_getMethodsToImplement_5418393554803775106", new Class[]{SNode.class}))
+          ((List<SNode>) BehaviorManager.getInstance().invoke(Object.class, contextClass, "virtual_getMethodsToOverride_5418393554803767537", new Class[]{SNode.class})) :
+          ((List<SNode>) BehaviorManager.getInstance().invoke(Object.class, contextClass, "virtual_getMethodsToImplement_5418393554803775106", new Class[]{SNode.class}))
         );
         return OverrideConceptMethodsDialog.toNodePointers(OverrideConceptMethodsDialog.sortMethods(contextClass, methodsToOverride));
       }

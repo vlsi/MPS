@@ -51,7 +51,7 @@ public class OverrideImplementMethodsHelper {
     List<SNode> result = new ArrayList<SNode>();
     for (SNode m : baseMethods) {
       SNode baseMethod = SNodeOperations.cast(m, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration");
-      SNode method = SNodeOperations.cast(((SNode) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(baseMethod, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"), "call_getMethodToImplement_69709522611978987", new Class[]{SNode.class, SNode.class}, myClassConcept)), "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration");
+      SNode method = SNodeOperations.cast(((SNode) BehaviorManager.getInstance().invoke(Object.class, baseMethod, "call_getMethodToImplement_69709522611978987", new Class[]{SNode.class, SNode.class}, myClassConcept)), "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration");
       SPropertyOperations.set(method, "isAbstract", "" + false);
       SLinkOperations.setTarget(method, "body", SNodeFactoryOperations.createNewNode(SNodeOperations.getModel(myClassConcept), "jetbrains.mps.baseLanguage.structure.StatementList", null), true);
       if (insertion) {
@@ -95,7 +95,7 @@ public class OverrideImplementMethodsHelper {
     });
     SNode defaultExpr;
     if (isInterfaceMethod) {
-      defaultExpr = ((SNode) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(SLinkOperations.getTarget(baseMethod, "returnType", true), "jetbrains.mps.baseLanguage.structure.Type"), "virtual_createDefaultTypeExpression_3359611512358152580", new Class[]{SNode.class}));
+      defaultExpr = ((SNode) BehaviorManager.getInstance().invoke(Object.class, SLinkOperations.getTarget(baseMethod, "returnType", true), "virtual_createDefaultTypeExpression_3359611512358152580", new Class[]{SNode.class}));
     } else {
       defaultExpr = new OverrideImplementMethodsHelper.QuotationClass_tfz3o4_a0a0a0h0b().createNode(baseMethod, Sequence.fromIterable(paramList).toListSequence());
     }
@@ -136,7 +136,7 @@ public class OverrideImplementMethodsHelper {
       SNode variable = SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.VariableDeclaration");
       SNode nodeType = SLinkOperations.getTarget(variable, "type", true);
       if (nodeType != null) {
-        String name = ListSequence.fromList(((List<String>) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(nodeType, "jetbrains.mps.baseLanguage.structure.Type"), "virtual_getVariableSuffixes_1213877337304", new Class[]{SNode.class}))).first();
+        String name = ListSequence.fromList(((List<String>) BehaviorManager.getInstance().invoke(Object.class, nodeType, "virtual_getVariableSuffixes_1213877337304", new Class[]{SNode.class}))).first();
         if (MapSequence.fromMap(usedNames).containsKey(name)) {
           int i = MapSequence.fromMap(usedNames).get(name);
           i = i + 1;
@@ -145,8 +145,8 @@ public class OverrideImplementMethodsHelper {
         } else {
           MapSequence.fromMap(usedNames).put(name, 0);
         }
-        String prefix = ((String) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(variable, "jetbrains.mps.baseLanguage.structure.VariableDeclaration"), "virtual_getPrefix_3012473318495495520", new Class[]{SNode.class, Project.class}, myProject));
-        String suffix = ((String) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(variable, "jetbrains.mps.baseLanguage.structure.VariableDeclaration"), "virtual_getSuffix_3012473318495499856", new Class[]{SNode.class, Project.class}, myProject));
+        String prefix = ((String) BehaviorManager.getInstance().invoke(Object.class, variable, "virtual_getPrefix_3012473318495495520", new Class[]{SNode.class, Project.class}, myProject));
+        String suffix = ((String) BehaviorManager.getInstance().invoke(Object.class, variable, "virtual_getSuffix_3012473318495499856", new Class[]{SNode.class, Project.class}, myProject));
         String mainName = (StringUtils.isEmpty(prefix) ?
           name :
           NameUtil.capitalize(name)
