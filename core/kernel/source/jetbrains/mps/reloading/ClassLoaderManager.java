@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.reloading;
 
-import jetbrains.mps.cleanup.CleanupManager;
 import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.progress.ProgressMonitor;
@@ -24,7 +23,6 @@ import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.runtime.RBundle;
 import jetbrains.mps.runtime.RuntimeEnvironment;
 import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.language.ExtensionRegistry;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.stubs.LibrariesLoader;
@@ -114,7 +112,7 @@ public class ClassLoaderManager implements CoreComponent {
       monitor.advance(1);
 
       monitor.step("Updating stub models...");
-      LibrariesLoader.getInstance().reload();
+      LibrariesLoader.getInstance().loadNewLibs();
       monitor.advance(1);
 
       monitor.step("Disposing old classes...");

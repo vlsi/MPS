@@ -64,7 +64,7 @@ public class LibrariesLoader implements CoreComponent {
     INSTANCE = null;
   }
 
-  public void reload() {
+  public void loadNewLibs() {
     loadNewLanguageLibs();
     for (IModule m : MPSModuleRepository.getInstance().getAllModules()) {
       if (!(m instanceof AbstractModule)) continue;
