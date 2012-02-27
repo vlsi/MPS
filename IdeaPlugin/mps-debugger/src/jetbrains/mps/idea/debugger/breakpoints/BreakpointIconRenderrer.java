@@ -16,7 +16,13 @@
 
 package jetbrains.mps.idea.debugger.breakpoints;
 
+import com.intellij.debugger.DebuggerBundle;
+import com.intellij.debugger.DebuggerManagerEx;
+import com.intellij.debugger.ui.breakpoints.Breakpoint;
+import com.intellij.debugger.ui.breakpoints.BreakpointManager;
 import com.intellij.debugger.ui.breakpoints.BreakpointWithHighlighter;
+import com.intellij.openapi.actionSystem.*;
+import com.intellij.xdebugger.impl.actions.ViewBreakpointsAction;
 import jetbrains.mps.debugger.core.breakpoints.BreakpointIconRenderrerEx;
 import jetbrains.mps.smodel.SNode;
 
@@ -45,6 +51,6 @@ import java.awt.*;
 
     @Override
     public JPopupMenu getPopupMenu() {
-        return null;
+        return ActionManager.getInstance().createActionPopupMenu(ActionPlaces.UNKNOWN, myBreakpoint.getHighlighter().getGutterIconRenderer().getPopupMenuActions()).getComponent();
     }
 }
