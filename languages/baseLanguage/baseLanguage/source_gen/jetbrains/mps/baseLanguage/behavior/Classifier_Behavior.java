@@ -77,11 +77,11 @@ public class Classifier_Behavior {
     return (List<SNode>) ss.getNodes();
   }
 
-  public static Scope virtual_getVisibleMembers_8083692786967356611(SNode thisNode, SNode contextNode, SNode kind) {
-    final int accessLevel = Classifier_Behavior.call_getAccessLevelFor_8083692786967356648(thisNode, contextNode, kind);
+  public static Scope virtual_getVisibleMembers_8083692786967356611(SNode thisNode, final SNode contextNode, final SNode kind) {
+    // <node> 
     return new SimpleScope(ListSequence.fromList(Classifier_Behavior.call_getMembers_2201875424515824604(thisNode, kind)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return ClassifierMember_Behavior.call_isVisible_8083692786967482069(it, accessLevel);
+        return ClassifierMember_Behavior.call_isVisible_8083692786967482069(it, Classifier_Behavior.call_getAccessLevelFor_8083692786967356648(SNodeOperations.getAncestor(it, "jetbrains.mps.baseLanguage.structure.Classifier", false, false), contextNode, kind));
       }
     }));
   }
@@ -91,7 +91,7 @@ public class Classifier_Behavior {
     int result = ClassAccessKind.PUBLIC;
 
     // todo: maybe just in case of existance classifier around contextNode? 
-    if (VisibilityUtil.packageName(contextNode) == VisibilityUtil.packageName(thisNode)) {
+    if (eq_qw8l7c_a0e0e(VisibilityUtil.packageName(contextNode), VisibilityUtil.packageName(thisNode))) {
       result = result | ClassAccessKind.PACKAGE;
     }
 
@@ -559,6 +559,13 @@ public class Classifier_Behavior {
       return concept;
     }
     return SNodeOperations.getAncestor(expr, "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
+  }
+
+  private static boolean eq_qw8l7c_a0e0e(Object a, Object b) {
+    return (a != null ?
+      a.equals(b) :
+      a == b
+    );
   }
 
   public static class Pattern_qw8l7c_a1a0a0a52 extends GeneratedMatchingPattern implements IMatchingPattern {
