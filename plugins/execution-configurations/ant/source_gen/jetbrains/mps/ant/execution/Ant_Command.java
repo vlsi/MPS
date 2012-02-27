@@ -166,7 +166,7 @@ public class Ant_Command {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         file.value = FileGenerationUtil.getDefaultOutputDir(SNodeOperations.getModel(project), FileSystem.getInstance().getFileByPath(SNodeOperations.getModel(project).getModelDescriptor().getModule().getGeneratorOutputPath()));
-        file.value = file.value.getDescendant(((String) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(project, "jetbrains.mps.buildlanguage.structure.Project"), "call_getFileName_1213877351819", new Class[]{SNode.class})));
+        file.value = file.value.getDescendant(((String) BehaviorManager.getInstance().invoke(Object.class, project, "call_getFileName_1213877351819", new Class[]{SNode.class})));
       }
     });
     return file.value.getPath();

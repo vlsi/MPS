@@ -23,7 +23,7 @@ public class ConceptEditorOpenHelper {
       return null;
     }
     if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.structure.structure.IConceptAspect")) {
-      baseNode = ((SNode) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(SNodeOperations.cast(node, "jetbrains.mps.lang.structure.structure.IConceptAspect"), "jetbrains.mps.lang.structure.structure.IConceptAspect"), "virtual_getBaseConcept_2621449412040133768", new Class[]{SNode.class}));
+      baseNode = ((SNode) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(node, "jetbrains.mps.lang.structure.structure.IConceptAspect"), "virtual_getBaseConcept_2621449412040133768", new Class[]{SNode.class}));
     }
     if (baseNode == null) {
       baseNode = getBaseNode2(node);

@@ -378,7 +378,7 @@
     <nodeInfo nodeId="428466863025157118" fileName="ImplementMethodsAsIntention_Action.java" startLine="29" startPosition="47" endLine="30" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="428466863025157118" fileName="ImplementMethodsAsIntention_Action.java" startLine="30" startPosition="41" endLine="31" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="428466863025157118" fileName="ImplementMethodsAsIntention_Action.java" startLine="31" startPosition="35" endLine="32" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="428466863025157152" fileName="ImplementMethodsAsIntention_Action.java" startLine="35" startPosition="87" endLine="36" endPosition="552" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="428466863025157152" fileName="ImplementMethodsAsIntention_Action.java" startLine="35" startPosition="87" endLine="36" endPosition="473" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="428466863025157118" fileName="ImplementMethodsAsIntention_Action.java" startLine="41" startPosition="7" endLine="42" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="428466863025157118" fileName="ImplementMethodsAsIntention_Action.java" startLine="42" startPosition="60" endLine="43" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="428466863025157118" fileName="ImplementMethodsAsIntention_Action.java" startLine="46" startPosition="33" endLine="47" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -417,7 +417,7 @@
     <nodeInfo nodeId="428466863025157118" fileName="ImplementMethodsAsIntention_Action.java" startLine="38" startPosition="0" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doUpdate#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
     <nodeInfo nodeId="428466863025157118" fileName="ImplementMethodsAsIntention_Action.java" startLine="52" startPosition="0" endLine="76" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="collectActionData#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)Z" />
     <scopeInfo nodeId="428466863025157118" fileName="ImplementMethodsAsIntention_Action.java" startLine="59" startPosition="25" endLine="59" endPosition="25" />
-    <scopeInfo nodeId="428466863025157151" fileName="ImplementMethodsAsIntention_Action.java" startLine="35" startPosition="87" endLine="36" endPosition="552" />
+    <scopeInfo nodeId="428466863025157151" fileName="ImplementMethodsAsIntention_Action.java" startLine="35" startPosition="87" endLine="36" endPosition="473" />
     <scopeInfo nodeId="428466863025157118" fileName="ImplementMethodsAsIntention_Action.java" startLine="46" startPosition="33" endLine="47" endPosition="102" />
     <scopeInfo nodeId="428466863025157118" fileName="ImplementMethodsAsIntention_Action.java" startLine="54" startPosition="53" endLine="55" endPosition="19" />
     <scopeInfo nodeId="428466863025157118" fileName="ImplementMethodsAsIntention_Action.java" startLine="63" startPosition="67" endLine="64" endPosition="19" />
@@ -1893,9 +1893,7 @@
     <scopeInfo nodeId="6573807532044001589" fileName="CommentStatements_Action.java" startLine="59" startPosition="57" endLine="63" endPosition="11" />
     <scopeInfo nodeId="6573807532044001589" fileName="CommentStatements_Action.java" startLine="74" startPosition="5" endLine="78" endPosition="5" />
     <scopeInfo nodeId="6573807532044001589" fileName="CommentStatements_Action.java" startLine="26" startPosition="0" endLine="31" endPosition="3" />
-    <scopeInfo nodeId="6573807532044001589" fileName="CommentStatements_Action.java" startLine="58" startPosition="26" endLine="64" endPosition="9">
-      <varInfo nodeId="6573807532044001589" varName="node" />
-    </scopeInfo>
+    <scopeInfo nodeId="6573807532044001589" fileName="CommentStatements_Action.java" startLine="58" startPosition="26" endLine="64" endPosition="9" />
     <scopeInfo nodeId="6573807532044001589" fileName="CommentStatements_Action.java" startLine="82" startPosition="96" endLine="90" endPosition="5" />
     <scopeInfo nodeId="6573807532044001589" fileName="CommentStatements_Action.java" startLine="37" startPosition="89" endLine="48" endPosition="5" />
     <scopeInfo nodeId="6573807532044001589" fileName="CommentStatements_Action.java" startLine="81" startPosition="0" endLine="92" endPosition="0">
@@ -11024,13 +11022,13 @@
   </root>
   <root nodeId="7158603332051454834">
     <nodeInfo nodeId="7158603332051454846" fileName="SelectFieldsDialog.java" startLine="14" startPosition="89" endLine="15" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="7158603332051454861" fileName="SelectFieldsDialog.java" startLine="20" startPosition="96" endLine="21" endPosition="288" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7158603332051454861" fileName="SelectFieldsDialog.java" startLine="20" startPosition="96" endLine="21" endPosition="215" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7158603332051454870" fileName="SelectFieldsDialog.java" startLine="22" startPosition="5" endLine="23" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7158603332051454835" fileName="SelectFieldsDialog.java" startLine="13" startPosition="61" endLine="16" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="SelectFieldsDialog#([Ljetbrains/mps/smodel/SNodePointer;ZLjetbrains/mps/project/Project;)V" />
     <nodeInfo nodeId="7158603332051454859" fileName="SelectFieldsDialog.java" startLine="19" startPosition="40" endLine="22" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="7158603332051454853" fileName="SelectFieldsDialog.java" startLine="17" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getText#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;" />
     <scopeInfo nodeId="7158603332051454845" fileName="SelectFieldsDialog.java" startLine="14" startPosition="89" endLine="15" endPosition="74" />
-    <scopeInfo nodeId="7158603332051454860" fileName="SelectFieldsDialog.java" startLine="20" startPosition="96" endLine="21" endPosition="288" />
+    <scopeInfo nodeId="7158603332051454860" fileName="SelectFieldsDialog.java" startLine="20" startPosition="96" endLine="21" endPosition="215" />
     <scopeInfo nodeId="7158603332051454835" fileName="SelectFieldsDialog.java" startLine="13" startPosition="61" endLine="16" endPosition="3">
       <varInfo nodeId="7158603332051454839" varName="allowEmpty" />
       <varInfo nodeId="7158603332051454836" varName="fields" />
@@ -11044,13 +11042,13 @@
   </root>
   <root nodeId="7158603332051454875">
     <nodeInfo nodeId="7158603332051454902" fileName="SelectConstructorsDialog.java" startLine="14" startPosition="74" endLine="15" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="7158603332051454884" fileName="SelectConstructorsDialog.java" startLine="20" startPosition="96" endLine="21" endPosition="288" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7158603332051454884" fileName="SelectConstructorsDialog.java" startLine="20" startPosition="96" endLine="21" endPosition="215" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7158603332051454893" fileName="SelectConstructorsDialog.java" startLine="22" startPosition="5" endLine="23" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7158603332051454898" fileName="SelectConstructorsDialog.java" startLine="13" startPosition="67" endLine="16" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="SelectConstructorsDialog#([Ljetbrains/mps/smodel/SNodePointer;Ljetbrains/mps/project/Project;)V" />
     <nodeInfo nodeId="7158603332051454882" fileName="SelectConstructorsDialog.java" startLine="19" startPosition="40" endLine="22" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="7158603332051454876" fileName="SelectConstructorsDialog.java" startLine="17" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getText#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;" />
     <scopeInfo nodeId="7158603332051454901" fileName="SelectConstructorsDialog.java" startLine="14" startPosition="74" endLine="15" endPosition="68" />
-    <scopeInfo nodeId="7158603332051454883" fileName="SelectConstructorsDialog.java" startLine="20" startPosition="96" endLine="21" endPosition="288" />
+    <scopeInfo nodeId="7158603332051454883" fileName="SelectConstructorsDialog.java" startLine="20" startPosition="96" endLine="21" endPosition="215" />
     <scopeInfo nodeId="7158603332051454898" fileName="SelectConstructorsDialog.java" startLine="13" startPosition="67" endLine="16" endPosition="3">
       <varInfo nodeId="7158603332051454908" varName="ctors" />
       <varInfo nodeId="7158603332051454911" varName="project" />

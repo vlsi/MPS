@@ -32,7 +32,7 @@ public class ReadAction_Test extends BaseTransformationTest {
 
     public void test_TypesCheck1216549241562() throws Exception {
       SNode operation = SNodeOperations.cast(this.getRealNodeById("1216549241562"), "jetbrains.mps.lang.test.structure.NodeOperation");
-      BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(operation, "jetbrains.mps.lang.test.structure.NodeOperation"), "virtual_perform_1215601182156", new Class[]{SNode.class, SNode.class}, this.getRealNodeById("1216549152296"));
+      BehaviorManager.getInstance().invoke(Object.class, operation, "virtual_perform_1215601182156", new Class[]{SNode.class, SNode.class}, this.getRealNodeById("1216549152296"));
     }
   }
 }

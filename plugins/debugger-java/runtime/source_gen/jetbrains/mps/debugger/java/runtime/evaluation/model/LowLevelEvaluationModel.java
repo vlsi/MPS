@@ -239,7 +239,7 @@ public class LowLevelEvaluationModel extends AbstractEvaluationModel {
           return false;
         }
 
-        String nodesUnitName = ((String) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(SNodeOperations.cast(node, "jetbrains.mps.lang.traceable.structure.UnitConcept"), "jetbrains.mps.lang.traceable.structure.UnitConcept"), "virtual_getUnitName_5067982036267369911", new Class[]{SNode.class}));
+        String nodesUnitName = ((String) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(node, "jetbrains.mps.lang.traceable.structure.UnitConcept"), "virtual_getUnitName_5067982036267369911", new Class[]{SNode.class}));
         if (StringUtils.isEmpty(nodesUnitName)) {
           return false;
         }

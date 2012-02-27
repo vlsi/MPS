@@ -6,7 +6,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.io.File;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModel;
@@ -14,6 +13,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.project.Project;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.ide.generator.GeneratorUIFacade;
 import jetbrains.mps.project.ProjectOperationContext;
@@ -36,7 +36,7 @@ public class GenerateBuildUtil {
     final Wrappers._T<String> folder = new Wrappers._T<String>();
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        folder.value = ((String) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(((SNode) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(configuration, "jetbrains.mps.build.packaging.structure.Configuration"), "call_getLayout_1213877261819", new Class[]{SNode.class})), "jetbrains.mps.build.packaging.structure.Layout"), "call_getFolderToGenerate_1229522949966", new Class[]{SNode.class}));
+        folder.value = ((String) BehaviorManager.getInstance().invoke(Object.class, ((SNode) BehaviorManager.getInstance().invoke(Object.class, configuration, "call_getLayout_1213877261819", new Class[]{SNode.class})), "call_getFolderToGenerate_1229522949966", new Class[]{SNode.class}));
       }
     });
     return folder.value;
@@ -46,7 +46,7 @@ public class GenerateBuildUtil {
     final Wrappers._T<String> fileName = new Wrappers._T<String>();
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        fileName.value = ((String) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(((SNode) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(configuration, "jetbrains.mps.build.packaging.structure.Configuration"), "call_getLayout_1213877261819", new Class[]{SNode.class})), "jetbrains.mps.build.packaging.structure.Layout"), "call_getFolderToGenerate_1229522949966", new Class[]{SNode.class})) + File.separator + ((String) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(configuration, "jetbrains.mps.build.packaging.structure.Configuration"), "call_getBuildFileName_1230217425313", new Class[]{SNode.class})) + ".xml";
+        fileName.value = ((String) BehaviorManager.getInstance().invoke(Object.class, ((SNode) BehaviorManager.getInstance().invoke(Object.class, configuration, "call_getLayout_1213877261819", new Class[]{SNode.class})), "call_getFolderToGenerate_1229522949966", new Class[]{SNode.class})) + File.separator + ((String) BehaviorManager.getInstance().invoke(Object.class, configuration, "call_getBuildFileName_1230217425313", new Class[]{SNode.class})) + ".xml";
       }
     });
     return fileName.value;
@@ -68,7 +68,7 @@ public class GenerateBuildUtil {
     final Wrappers._T<SModelDescriptor> descriptor = new Wrappers._T<SModelDescriptor>();
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        baseFolder.value = ((String) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(layout, "jetbrains.mps.build.packaging.structure.Layout"), "call_getFolderToGenerate_1229522949966", new Class[]{SNode.class}));
+        baseFolder.value = ((String) BehaviorManager.getInstance().invoke(Object.class, layout, "call_getFolderToGenerate_1229522949966", new Class[]{SNode.class}));
         descriptor.value = SNodeOperations.getModel(layout).getModelDescriptor();
       }
     });

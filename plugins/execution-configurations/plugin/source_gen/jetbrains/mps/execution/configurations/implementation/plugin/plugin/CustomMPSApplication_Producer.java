@@ -130,7 +130,7 @@ public class CustomMPSApplication_Producer {
           isApplicable.value = (layout.value != null);
           configuration.value = ListSequence.fromList(SLinkOperations.getTargets(layout.value, "configuration", true)).findFirst(new IWhereFilter<SNode>() {
             public boolean accept(SNode it) {
-              return ((Boolean) BehaviorManager.getInstance().invoke(Boolean.class, SNodeOperations.cast(source, "jetbrains.mps.build.packaging.structure.AbstractProjectComponent"), "call_included_1213877333807", new Class[]{SNode.class, SNode.class}, it));
+              return ((Boolean) BehaviorManager.getInstance().invoke(Boolean.class, source, "call_included_1213877333807", new Class[]{SNode.class, SNode.class}, it));
             }
           });
           configurationId.value = configuration.value.getId();

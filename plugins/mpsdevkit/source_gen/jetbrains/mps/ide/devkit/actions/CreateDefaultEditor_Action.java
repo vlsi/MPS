@@ -47,7 +47,7 @@ public class CreateDefaultEditor_Action extends BaseAction {
     QueueSequence.fromQueue(toCheck).addLastElement(conceptDeclaration);
     while (QueueSequence.fromQueue(toCheck).isNotEmpty()) {
       SNode acd = QueueSequence.fromQueue(toCheck).removeFirstElement();
-      List<SNode> aspects = ((List<SNode>) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(acd, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"), "call_findConceptAspectCollection_1567570417158062208", new Class[]{SNode.class, LanguageAspect.class}, LanguageAspect.EDITOR));
+      List<SNode> aspects = ((List<SNode>) BehaviorManager.getInstance().invoke(Object.class, acd, "call_findConceptAspectCollection_1567570417158062208", new Class[]{SNode.class, LanguageAspect.class}, LanguageAspect.EDITOR));
       if (!(SConceptOperations.isExactly(acd, "jetbrains.mps.lang.core.structure.BaseConcept")) && ListSequence.fromList(aspects).any(new IWhereFilter<SNode>() {
         public boolean accept(SNode a) {
           return SNodeOperations.isInstanceOf(a, "jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration");
@@ -55,7 +55,7 @@ public class CreateDefaultEditor_Action extends BaseAction {
       })) {
         return false;
       }
-      QueueSequence.fromQueue(toCheck).addSequence(ListSequence.fromList(((List<SNode>) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(acd, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"), "virtual_getImmediateSuperconcepts_1222430305282", new Class[]{SNode.class}))));
+      QueueSequence.fromQueue(toCheck).addSequence(ListSequence.fromList(((List<SNode>) BehaviorManager.getInstance().invoke(Object.class, acd, "virtual_getImmediateSuperconcepts_1222430305282", new Class[]{SNode.class}))));
     }
     return true;
   }
@@ -105,7 +105,7 @@ public class CreateDefaultEditor_Action extends BaseAction {
       if (SPropertyOperations.getString(conceptDeclaration, "virtualPackage") != null) {
         SPropertyOperations.set(editorDeclaration, "virtualPackage", SPropertyOperations.getString(conceptDeclaration, "virtualPackage"));
       }
-      BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(editorDeclaration, "jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration"), "call_createDefaultEditor_2970389781192937380", new Class[]{SNode.class, Boolean.TYPE}, false);
+      BehaviorManager.getInstance().invoke(Object.class, editorDeclaration, "call_createDefaultEditor_2970389781192937380", new Class[]{SNode.class, Boolean.TYPE}, false);
       ((EditorContext) MapSequence.fromMap(_params).get("editorContext")).getNodeEditorComponent().update();
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {

@@ -112,7 +112,7 @@ public abstract class GeneratedFinder implements IInterfacedFinder {
     SNode l1 = SNodeOperations.getContainingLinkDeclaration(n1);
     SNode l2 = SNodeOperations.getContainingLinkDeclaration(n2);
     for (SNode p = SNodeOperations.getParent(n1); (p != null); p = SNodeOperations.getParent(p)) {
-      SNode editor = ((SNode) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(SNodeOperations.getConceptDeclaration(p), "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"), "call_findConceptAspect_8360039740498068384", new Class[]{SNode.class, LanguageAspect.class}, LanguageAspect.EDITOR));
+      SNode editor = ((SNode) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.getConceptDeclaration(p), "call_findConceptAspect_8360039740498068384", new Class[]{SNode.class, LanguageAspect.class}, LanguageAspect.EDITOR));
       for (SNode cell : ListSequence.fromList(SNodeOperations.getDescendants(editor, "jetbrains.mps.lang.editor.structure.CellModel_WithRole", false, new String[]{}))) {
         if (SLinkOperations.getTarget(cell, "relationDeclaration", false) == l1) {
           return -1;

@@ -6,9 +6,9 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultReferenceSubstituteInfo;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.List;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
 import java.util.Collections;
@@ -34,14 +34,14 @@ public class DefaultReferenceSubstituteInfoActionsFactory {
   public DefaultReferenceSubstituteInfoActionsFactory(SNode sourceNode, SNode linkDeclaration, DefaultReferenceSubstituteInfo substituteInfo) {
     mySourceNode = sourceNode;
     myLinkDeclaration = linkDeclaration;
-    SNode genuineLinkDeclaration = ((SNode) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(myLinkDeclaration, "jetbrains.mps.lang.structure.structure.LinkDeclaration"), "call_getGenuineLink_1213877254523", new Class[]{SNode.class}));
+    SNode genuineLinkDeclaration = ((SNode) BehaviorManager.getInstance().invoke(Object.class, myLinkDeclaration, "call_getGenuineLink_1213877254523", new Class[]{SNode.class}));
     if (genuineLinkDeclaration == null) {
       return;
     }
     if (SPropertyOperations.hasValue(genuineLinkDeclaration, "metaClass", "aggregation", "reference")) {
       DefaultReferenceSubstituteInfoActionsFactory.LOG.error("only reference links are allowed here", myLinkDeclaration);
     }
-    if (!(((Boolean) BehaviorManager.getInstance().invoke(Boolean.class, SNodeOperations.cast(genuineLinkDeclaration, "jetbrains.mps.lang.structure.structure.LinkDeclaration"), "call_isSingular_1213877254557", new Class[]{SNode.class})))) {
+    if (!(((Boolean) BehaviorManager.getInstance().invoke(Boolean.class, genuineLinkDeclaration, "call_isSingular_1213877254557", new Class[]{SNode.class})))) {
       DefaultReferenceSubstituteInfoActionsFactory.LOG.error("cardinalities 1 or 0..1 are allowed here", myLinkDeclaration);
     }
     myCurrentReferent = SLinkOperations.getTargetNode(SNodeOperations.getReference(sourceNode, myLinkDeclaration));
@@ -53,7 +53,7 @@ public class DefaultReferenceSubstituteInfoActionsFactory {
       return Collections.emptyList();
     }
     EditorComponent editor = mySubstituteInfo.getEditorContext().getNodeEditorComponent();
-    EditorCell referenceCell = editor.findNodeCellWithRole(mySourceNode, ((String) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(myLinkDeclaration, "jetbrains.mps.lang.structure.structure.LinkDeclaration"), "call_getGenuineRole_1213877254542", new Class[]{SNode.class})));
+    EditorCell referenceCell = editor.findNodeCellWithRole(mySourceNode, ((String) BehaviorManager.getInstance().invoke(Object.class, myLinkDeclaration, "call_getGenuineRole_1213877254542", new Class[]{SNode.class})));
 
     if (referenceCell != null && referenceCell.getContainingBigCell().getFirstLeaf() == referenceCell && ReferenceConceptUtil.getCharacteristicReference(SNodeOperations.getConceptDeclaration(mySourceNode)) == myLinkDeclaration && SNodeOperations.getParent(mySourceNode) != null && ListSequence.fromList(SNodeOperations.getChildren(mySourceNode)).isEmpty()) {
       SNode parent = SNodeOperations.getParent(mySourceNode);
