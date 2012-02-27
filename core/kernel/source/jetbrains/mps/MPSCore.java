@@ -72,7 +72,7 @@ public class MPSCore extends ComponentPlugin {
     ClassLoaderManager classLoaderManager = init(new ClassLoaderManager());
     CleanupManager cleanupManager = init(new CleanupManager(classLoaderManager));
     myModelRepository = init(new SModelRepository(classLoaderManager));
-    myModuleRepository = init(new MPSModuleRepository(classLoaderManager,cleanupManager));
+    myModuleRepository = init(new MPSModuleRepository(classLoaderManager, cleanupManager));
     myGlobalSModelEventsManager = init(new GlobalSModelEventsManager(myModelRepository));
 
     init(new PathMacros());
@@ -86,7 +86,7 @@ public class MPSCore extends ComponentPlugin {
     init(new QueryMethodGenerated(classLoaderManager));
     ConceptRegistry conceptRegistry = init(new ConceptRegistry());
     init(new LanguageRegistry(myModuleRepository, classLoaderManager, conceptRegistry));
-    init(new ExtensionRegistry(myModuleRepository));
+    init(new ExtensionRegistry(classLoaderManager, myModuleRepository));
     init(new LanguageHierarchyCache(myModuleRepository));
     init(new StructureAspectInterpreted());
     init(new OldBehaviorManager(classLoaderManager));

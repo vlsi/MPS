@@ -21,6 +21,7 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
 import jetbrains.mps.reloading.ClassLoaderManager;
+import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
@@ -44,13 +45,21 @@ public class ExtensionRegistry extends BaseExtensionRegistry implements CoreComp
   private AtomicBoolean myInitialLoadHappened = new AtomicBoolean(false);
   private ModuleRepositoryAdapter myListener = new MyModuleRepositoryAdapter();
   @Nullable
+  private ClassLoaderManager myClm;
+  @Nullable
   private MPSModuleRepository myRepo;
+  private ReloadAdapter myHandler = new ReloadAdapter() {
+    public void unload() {
+      reloadExtensionDescriptors();
+    }
+  };
 
   public static ExtensionRegistry getInstance() {
     return INSTANCE;
   }
 
-  public ExtensionRegistry(@Nullable MPSModuleRepository repo) {
+  public ExtensionRegistry(@Nullable ClassLoaderManager clm,@Nullable MPSModuleRepository repo) {
+    myClm = clm;
     myRepo = repo;
   }
 
@@ -62,19 +71,18 @@ public class ExtensionRegistry extends BaseExtensionRegistry implements CoreComp
     if (myRepo != null) {
       myRepo.addModuleRepositoryListener(myListener);
     }
+    if (myClm != null) {
+      myClm.addReloadHandler(myHandler);
+    }
     INSTANCE = this;
   }
 
   @Override
   public void dispose() {
     INSTANCE = null;
-    ModelAccess.instance().runWriteAction(new Runnable() {
-      public void run() {
-        myModuleToNamespace.clear();
-        myExtensionDescriptors.clear();
-        ExtensionRegistry.this.clear();
-      }
-    });
+    if (myClm != null) {
+      myClm.removeReloadHandler(myHandler);
+    }
     if (myRepo != null) {
       myRepo.addModuleRepositoryListener(myListener);
     }

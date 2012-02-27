@@ -105,7 +105,7 @@ public class ClassLoaderManager implements CoreComponent {
   public void reloadAll(@NotNull ProgressMonitor monitor) {
     LOG.assertCanWrite();
 
-    monitor.start("Reloading classes...", 6);
+    monitor.start("Reloading classes...", 5);
     try {
       monitor.step("Updating classpath...");
       updateClassPath();
@@ -125,10 +125,6 @@ public class ClassLoaderManager implements CoreComponent {
 
       monitor.step("Updating language registry...");
       LanguageRegistry.getInstance().reloadLanguages();
-      monitor.advance(1);
-
-      monitor.step("Updating extensions...");
-      ExtensionRegistry.getInstance().reloadExtensionDescriptors();
       monitor.advance(1);
 
       monitor.step("Reloading classes...");
