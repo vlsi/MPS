@@ -81,7 +81,7 @@
     <jar destfile="${build.deploy.dir}/mps-core/lib/mps-plugin.jar">
       <fileset dir="${build.dir}/tmp/java.out.mps-plugin" />
     </jar>
-    <echo file="${build.dir}/artifacts/build.artifacts/build.variables">   </echo>
+    <echo file="${build.dir}/artifacts/build.artifacts/build.variables.properties">   </echo>
   </target>
   
   <target name="test" depends="classes" />

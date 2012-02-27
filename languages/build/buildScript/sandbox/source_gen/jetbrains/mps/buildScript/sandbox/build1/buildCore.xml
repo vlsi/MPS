@@ -52,7 +52,7 @@
       <fileset dir="${build.dir}/tmp/java.out.mps-core" />
       <fileset dir="${buildCore.tmp}/mps-core${ver}.jar" />
     </jar>
-    <echo file="${build.dir}/artifacts/buildCore.artifacts/buildCore.variables">buildCore.build.number=${build.number}
+    <echo file="${build.dir}/artifacts/buildCore.artifacts/buildCore.variables.properties">buildCore.build.number=${build.number}
         buildCore.ver=${ver}
         buildCore.MPS=${MPS}
            </echo>
