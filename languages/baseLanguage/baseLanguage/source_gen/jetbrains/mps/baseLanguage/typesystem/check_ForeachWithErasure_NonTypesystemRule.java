@@ -43,7 +43,7 @@ public class check_ForeachWithErasure_NonTypesystemRule extends AbstractNonTypes
       if (coercedNode_gn1qzs_c0 != null) {
       } else {
         // not an iterable or an erasure 
-        if (!(MatchingUtil.matchNodes(SLinkOperations.getTarget(SLinkOperations.getTarget(foreachStatement, "variable", true), "type", true), new check_ForeachWithErasure_NonTypesystemRule.QuotationClass_aftnu9_a1a0b0a2a2a0().createNode(typeCheckingContext)))) {
+        if (!(MatchingUtil.matchNodes(SLinkOperations.getTarget(SLinkOperations.getTarget(foreachStatement, "variable", true), "type", true), new check_ForeachWithErasure_NonTypesystemRule.QuotationClass_aftnu9_a0a0b0a2a2a0().createNode(typeCheckingContext)))) {
           {
             MessageTarget errorTarget = new NodeMessageTarget();
             IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(SLinkOperations.getTarget(SLinkOperations.getTarget(foreachStatement, "variable", true), "type", true), "java.lang.Object expected", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "4312449433287189198", null, errorTarget);
@@ -122,8 +122,8 @@ public class check_ForeachWithErasure_NonTypesystemRule extends AbstractNonTypes
     }
   }
 
-  public static class QuotationClass_aftnu9_a1a0b0a2a2a0 {
-    public QuotationClass_aftnu9_a1a0b0a2a2a0() {
+  public static class QuotationClass_aftnu9_a0a0b0a2a2a0 {
+    public QuotationClass_aftnu9_a0a0b0a2a2a0() {
     }
 
     public SNode createNode(final TypeCheckingContext typeCheckingContext) {

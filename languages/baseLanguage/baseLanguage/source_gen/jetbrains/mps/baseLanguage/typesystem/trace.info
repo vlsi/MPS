@@ -61,7 +61,7 @@
     <nodeInfo nodeId="4312449433287189207" fileName="check_ForeachWithErasure_NonTypesystemRule.java" startLine="151" startPosition="7" endLine="152" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1032178265900242657" fileName="check_ForeachWithErasure_NonTypesystemRule.java" startLine="31" startPosition="0" endLine="33" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="check_ForeachWithErasure_NonTypesystemRule#()V" />
     <nodeInfo nodeId="1032178265900313087" fileName="check_ForeachWithErasure_NonTypesystemRule.java" startLine="73" startPosition="0" endLine="75" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Pattern_aftnu9_a0a0a2a0#()V" />
-    <nodeInfo nodeId="4312449433287189207" fileName="check_ForeachWithErasure_NonTypesystemRule.java" startLine="125" startPosition="58" endLine="127" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_aftnu9_a1a0b0a2a2a0#()V" />
+    <nodeInfo nodeId="4312449433287189207" fileName="check_ForeachWithErasure_NonTypesystemRule.java" startLine="125" startPosition="58" endLine="127" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_aftnu9_a0a0b0a2a2a0#()V" />
     <nodeInfo nodeId="5620366456317465120" fileName="check_ForeachWithErasure_NonTypesystemRule.java" startLine="36" startPosition="124" endLine="39" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1032178265900313087" fileName="check_ForeachWithErasure_NonTypesystemRule.java" startLine="80" startPosition="72" endLine="83" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1032178265900313087" fileName="check_ForeachWithErasure_NonTypesystemRule.java" startLine="85" startPosition="78" endLine="88" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -199,7 +199,7 @@
     </scopeInfo>
     <unitInfo nodeId="1032178265900242657" fileName="check_ForeachWithErasure_NonTypesystemRule.java" startLine="29" startPosition="0" endLine="156" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.check_ForeachWithErasure_NonTypesystemRule" />
     <unitInfo nodeId="1032178265900313087" fileName="check_ForeachWithErasure_NonTypesystemRule.java" startLine="71" startPosition="0" endLine="124" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.check_ForeachWithErasure_NonTypesystemRule$Pattern_aftnu9_a0a0a2a0" />
-    <unitInfo nodeId="4312449433287189207" fileName="check_ForeachWithErasure_NonTypesystemRule.java" startLine="125" startPosition="0" endLine="155" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.check_ForeachWithErasure_NonTypesystemRule$QuotationClass_aftnu9_a1a0b0a2a2a0" />
+    <unitInfo nodeId="4312449433287189207" fileName="check_ForeachWithErasure_NonTypesystemRule.java" startLine="125" startPosition="0" endLine="155" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.check_ForeachWithErasure_NonTypesystemRule$QuotationClass_aftnu9_a0a0b0a2a2a0" />
   </root>
   <root nodeId="1175495245176">
     <nodeInfo nodeId="1175495383228" fileName="typeOf_andExpression_InferenceRule.java" startLine="21" startPosition="120" endLine="22" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -18741,7 +18741,7 @@
   </root>
   <root nodeId="4340499048742652656">
     <nodeInfo nodeId="4340499048742652929" fileName="ReplaceAlwaysTrueFalseWithLiteral_QuickFix.java" startLine="17" startPosition="44" endLine="18" endPosition="120" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4340499048742652925" fileName="ReplaceAlwaysTrueFalseWithLiteral_QuickFix.java" startLine="21" startPosition="35" endLine="22" endPosition="228" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4340499048742652925" fileName="ReplaceAlwaysTrueFalseWithLiteral_QuickFix.java" startLine="21" startPosition="35" endLine="22" endPosition="229" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4340499048742652943" fileName="ReplaceAlwaysTrueFalseWithLiteral_QuickFix.java" startLine="29" startPosition="49" endLine="30" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4340499048742652943" fileName="ReplaceAlwaysTrueFalseWithLiteral_QuickFix.java" startLine="30" startPosition="26" endLine="31" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4340499048742652943" fileName="ReplaceAlwaysTrueFalseWithLiteral_QuickFix.java" startLine="31" startPosition="67" endLine="32" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -18751,18 +18751,18 @@
     <nodeInfo nodeId="4340499048742652943" fileName="ReplaceAlwaysTrueFalseWithLiteral_QuickFix.java" startLine="36" startPosition="65" endLine="37" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4340499048742652943" fileName="ReplaceAlwaysTrueFalseWithLiteral_QuickFix.java" startLine="38" startPosition="7" endLine="39" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4340499048742652656" fileName="ReplaceAlwaysTrueFalseWithLiteral_QuickFix.java" startLine="13" startPosition="82" endLine="15" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ReplaceAlwaysTrueFalseWithLiteral_QuickFix#()V" />
-    <nodeInfo nodeId="4340499048742652943" fileName="ReplaceAlwaysTrueFalseWithLiteral_QuickFix.java" startLine="25" startPosition="52" endLine="27" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_7hp7vs_a1a0a0#()V" />
+    <nodeInfo nodeId="4340499048742652943" fileName="ReplaceAlwaysTrueFalseWithLiteral_QuickFix.java" startLine="25" startPosition="53" endLine="27" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_7hp7vs_a0a0a0a#()V" />
     <nodeInfo nodeId="4340499048742652656" fileName="ReplaceAlwaysTrueFalseWithLiteral_QuickFix.java" startLine="16" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescription#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;" />
     <nodeInfo nodeId="4340499048742652656" fileName="ReplaceAlwaysTrueFalseWithLiteral_QuickFix.java" startLine="20" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljetbrains/mps/smodel/SNode;)V" />
     <nodeInfo nodeId="4340499048742652943" fileName="ReplaceAlwaysTrueFalseWithLiteral_QuickFix.java" startLine="32" startPosition="32" endLine="38" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="4340499048742652943" fileName="ReplaceAlwaysTrueFalseWithLiteral_QuickFix.java" startLine="32" startPosition="32" endLine="38" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="4340499048742652943" fileName="ReplaceAlwaysTrueFalseWithLiteral_QuickFix.java" startLine="28" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#(Ljava/lang/Object;)Ljetbrains/mps/smodel/SNode;" />
     <scopeInfo nodeId="4340499048742652656" fileName="ReplaceAlwaysTrueFalseWithLiteral_QuickFix.java" startLine="14" startPosition="55" endLine="14" endPosition="55" />
-    <scopeInfo nodeId="4340499048742652943" fileName="ReplaceAlwaysTrueFalseWithLiteral_QuickFix.java" startLine="26" startPosition="43" endLine="26" endPosition="43" />
+    <scopeInfo nodeId="4340499048742652943" fileName="ReplaceAlwaysTrueFalseWithLiteral_QuickFix.java" startLine="26" startPosition="44" endLine="26" endPosition="44" />
     <scopeInfo nodeId="4340499048742652928" fileName="ReplaceAlwaysTrueFalseWithLiteral_QuickFix.java" startLine="17" startPosition="44" endLine="18" endPosition="120" />
-    <scopeInfo nodeId="4340499048742652658" fileName="ReplaceAlwaysTrueFalseWithLiteral_QuickFix.java" startLine="21" startPosition="35" endLine="22" endPosition="228" />
+    <scopeInfo nodeId="4340499048742652658" fileName="ReplaceAlwaysTrueFalseWithLiteral_QuickFix.java" startLine="21" startPosition="35" endLine="22" endPosition="229" />
     <scopeInfo nodeId="4340499048742652656" fileName="ReplaceAlwaysTrueFalseWithLiteral_QuickFix.java" startLine="13" startPosition="82" endLine="15" endPosition="3" />
-    <scopeInfo nodeId="4340499048742652943" fileName="ReplaceAlwaysTrueFalseWithLiteral_QuickFix.java" startLine="25" startPosition="52" endLine="27" endPosition="5" />
+    <scopeInfo nodeId="4340499048742652943" fileName="ReplaceAlwaysTrueFalseWithLiteral_QuickFix.java" startLine="25" startPosition="53" endLine="27" endPosition="5" />
     <scopeInfo nodeId="4340499048742652656" fileName="ReplaceAlwaysTrueFalseWithLiteral_QuickFix.java" startLine="16" startPosition="0" endLine="20" endPosition="0">
       <varInfo nodeId="4340499048742652656" varName="node" />
     </scopeInfo>
@@ -18782,7 +18782,7 @@
       <varInfo nodeId="4340499048742652943" varName="parameter_3" />
     </scopeInfo>
     <unitInfo nodeId="4340499048742652656" fileName="ReplaceAlwaysTrueFalseWithLiteral_QuickFix.java" startLine="13" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.ReplaceAlwaysTrueFalseWithLiteral_QuickFix" />
-    <unitInfo nodeId="4340499048742652943" fileName="ReplaceAlwaysTrueFalseWithLiteral_QuickFix.java" startLine="25" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.ReplaceAlwaysTrueFalseWithLiteral_QuickFix$QuotationClass_7hp7vs_a1a0a0" />
+    <unitInfo nodeId="4340499048742652943" fileName="ReplaceAlwaysTrueFalseWithLiteral_QuickFix.java" startLine="25" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.ReplaceAlwaysTrueFalseWithLiteral_QuickFix$QuotationClass_7hp7vs_a0a0a0a" />
   </root>
   <root nodeId="4539702814067106471">
     <nodeInfo nodeId="4697033193812037399" fileName="check_CorrectScope_NonTypesystemRule.java" startLine="24" startPosition="85" endLine="25" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
