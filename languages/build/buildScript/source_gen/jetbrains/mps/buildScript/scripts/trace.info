@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debugInfo>
+  <root nodeId="4380385936562228087">
+    <nodeInfo nodeId="4380385936562228087" fileName="buildScriptMigration_MigrationScript.java" startLine="18" startPosition="83" endLine="19" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="4380385936562228087" fileName="buildScriptMigration_MigrationScript.java" startLine="21" startPosition="31" endLine="22" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4380385936562228087" fileName="buildScriptMigration_MigrationScript.java" startLine="25" startPosition="41" endLine="26" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4380385936562228087" fileName="buildScriptMigration_MigrationScript.java" startLine="29" startPosition="59" endLine="30" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4380385936562228133" fileName="buildScriptMigration_MigrationScript.java" startLine="35" startPosition="43" endLine="36" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4380385936562228227" fileName="buildScriptMigration_MigrationScript.java" startLine="43" startPosition="43" endLine="44" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4380385936562228237" fileName="buildScriptMigration_MigrationScript.java" startLine="47" startPosition="41" endLine="48" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4380385936562229100" fileName="buildScriptMigration_MigrationScript.java" startLine="52" startPosition="39" endLine="53" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4380385936562228282" fileName="buildScriptMigration_MigrationScript.java" startLine="55" startPosition="11" endLine="56" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4380385936562228329" fileName="buildScriptMigration_MigrationScript.java" startLine="56" startPosition="110" endLine="57" endPosition="169" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4380385936562228087" fileName="buildScriptMigration_MigrationScript.java" startLine="60" startPosition="42" endLine="61" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4380385936562228087" fileName="buildScriptMigration_MigrationScript.java" startLine="20" startPosition="76" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="4380385936562228087" fileName="buildScriptMigration_MigrationScript.java" startLine="24" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getAdditionalInfo#()Ljava/lang/String;" />
+    <nodeInfo nodeId="4380385936562228087" fileName="buildScriptMigration_MigrationScript.java" startLine="28" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getFqNameOfConceptToSearchInstances#()Ljava/lang/String;" />
+    <nodeInfo nodeId="4380385936562228129" fileName="buildScriptMigration_MigrationScript.java" startLine="34" startPosition="103" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" />
+    <nodeInfo nodeId="4380385936562228225" fileName="buildScriptMigration_MigrationScript.java" startLine="42" startPosition="120" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" />
+    <nodeInfo nodeId="4380385936562228235" fileName="buildScriptMigration_MigrationScript.java" startLine="46" startPosition="49" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="4380385936562229096" fileName="buildScriptMigration_MigrationScript.java" startLine="51" startPosition="67" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visit#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="4380385936562228087" fileName="buildScriptMigration_MigrationScript.java" startLine="59" startPosition="0" endLine="63" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isShowAsIntention#()Z" />
+    <nodeInfo nodeId="4380385936562228093" fileName="buildScriptMigration_MigrationScript.java" startLine="33" startPosition="59" endLine="38" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4380385936562229083" fileName="buildScriptMigration_MigrationScript.java" startLine="50" startPosition="28" endLine="55" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4380385936562228087" fileName="buildScriptMigration_MigrationScript.java" startLine="32" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableInstanceNode#(Ljetbrains/mps/smodel/SNode;)Z" />
+    <nodeInfo nodeId="4380385936562228216" fileName="buildScriptMigration_MigrationScript.java" startLine="41" startPosition="58" endLine="50" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4380385936562228087" fileName="buildScriptMigration_MigrationScript.java" startLine="40" startPosition="0" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doUpdateInstanceNode#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="4380385936562228087" fileName="buildScriptMigration_MigrationScript.java" startLine="19" startPosition="35" endLine="63" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4380385936562228087" fileName="buildScriptMigration_MigrationScript.java" startLine="17" startPosition="79" endLine="64" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="buildScriptMigration_MigrationScript#(Ljetbrains/mps/smodel/IOperationContext;)V" />
+    <scopeInfo nodeId="4380385936562228087" fileName="buildScriptMigration_MigrationScript.java" startLine="21" startPosition="31" endLine="22" endPosition="21" />
+    <scopeInfo nodeId="4380385936562228087" fileName="buildScriptMigration_MigrationScript.java" startLine="25" startPosition="41" endLine="26" endPosition="21" />
+    <scopeInfo nodeId="4380385936562228087" fileName="buildScriptMigration_MigrationScript.java" startLine="29" startPosition="59" endLine="30" endPosition="80" />
+    <scopeInfo nodeId="4380385936562228130" fileName="buildScriptMigration_MigrationScript.java" startLine="35" startPosition="43" endLine="36" endPosition="107" />
+    <scopeInfo nodeId="4380385936562228226" fileName="buildScriptMigration_MigrationScript.java" startLine="43" startPosition="43" endLine="44" endPosition="107" />
+    <scopeInfo nodeId="4380385936562228236" fileName="buildScriptMigration_MigrationScript.java" startLine="47" startPosition="41" endLine="48" endPosition="99" />
+    <scopeInfo nodeId="4380385936562229097" fileName="buildScriptMigration_MigrationScript.java" startLine="52" startPosition="39" endLine="53" endPosition="33" />
+    <scopeInfo nodeId="4380385936562228087" fileName="buildScriptMigration_MigrationScript.java" startLine="60" startPosition="42" endLine="61" endPosition="21" />
+    <scopeInfo nodeId="4380385936562228087" fileName="buildScriptMigration_MigrationScript.java" startLine="20" startPosition="76" endLine="24" endPosition="0" />
+    <scopeInfo nodeId="4380385936562228087" fileName="buildScriptMigration_MigrationScript.java" startLine="24" startPosition="0" endLine="28" endPosition="0" />
+    <scopeInfo nodeId="4380385936562228087" fileName="buildScriptMigration_MigrationScript.java" startLine="28" startPosition="0" endLine="32" endPosition="0" />
+    <scopeInfo nodeId="4380385936562228129" fileName="buildScriptMigration_MigrationScript.java" startLine="34" startPosition="103" endLine="38" endPosition="0">
+      <varInfo nodeId="4380385936562228129" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="4380385936562228225" fileName="buildScriptMigration_MigrationScript.java" startLine="42" startPosition="120" endLine="46" endPosition="0">
+      <varInfo nodeId="4380385936562228225" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="4380385936562228235" fileName="buildScriptMigration_MigrationScript.java" startLine="46" startPosition="49" endLine="50" endPosition="0">
+      <varInfo nodeId="4380385936562228235" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="4380385936562229096" fileName="buildScriptMigration_MigrationScript.java" startLine="51" startPosition="67" endLine="55" endPosition="0">
+      <varInfo nodeId="4380385936562229096" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="4380385936562228087" fileName="buildScriptMigration_MigrationScript.java" startLine="59" startPosition="0" endLine="63" endPosition="0" />
+    <scopeInfo nodeId="4380385936562228092" fileName="buildScriptMigration_MigrationScript.java" startLine="33" startPosition="59" endLine="38" endPosition="11" />
+    <scopeInfo nodeId="4380385936562228087" fileName="buildScriptMigration_MigrationScript.java" startLine="32" startPosition="0" endLine="40" endPosition="0">
+      <varInfo nodeId="4380385936562228087" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="4380385936562228090" fileName="buildScriptMigration_MigrationScript.java" startLine="41" startPosition="58" endLine="57" endPosition="169">
+      <varInfo nodeId="4380385936562228217" varName="seq" />
+    </scopeInfo>
+    <scopeInfo nodeId="4380385936562228087" fileName="buildScriptMigration_MigrationScript.java" startLine="40" startPosition="0" endLine="59" endPosition="0">
+      <varInfo nodeId="4380385936562228087" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="4380385936562228087" fileName="buildScriptMigration_MigrationScript.java" startLine="18" startPosition="83" endLine="63" endPosition="7" />
+    <scopeInfo nodeId="4380385936562228087" fileName="buildScriptMigration_MigrationScript.java" startLine="17" startPosition="79" endLine="64" endPosition="3">
+      <varInfo nodeId="4380385936562228087" varName="operationContext" />
+    </scopeInfo>
+    <unitInfo nodeId="4380385936562228087" fileName="buildScriptMigration_MigrationScript.java" startLine="17" startPosition="0" endLine="66" endPosition="0" unitName="jetbrains.mps.buildScript.scripts.buildScriptMigration_MigrationScript" />
+    <unitInfo nodeId="4380385936562228087" fileName="buildScriptMigration_MigrationScript.java" startLine="20" startPosition="28" endLine="63" endPosition="5" unitName="jetbrains.mps.buildScript.scripts.buildScriptMigration_MigrationScript$1" />
+    <unitInfo nodeId="4380385936562228129" fileName="buildScriptMigration_MigrationScript.java" startLine="34" startPosition="80" endLine="38" endPosition="9" unitName="jetbrains.mps.buildScript.scripts.buildScriptMigration_MigrationScript$2" />
+    <unitInfo nodeId="4380385936562228225" fileName="buildScriptMigration_MigrationScript.java" startLine="42" startPosition="97" endLine="46" endPosition="9" unitName="jetbrains.mps.buildScript.scripts.buildScriptMigration_MigrationScript$2" />
+    <unitInfo nodeId="4380385936562228235" fileName="buildScriptMigration_MigrationScript.java" startLine="46" startPosition="22" endLine="50" endPosition="9" unitName="jetbrains.mps.buildScript.scripts.buildScriptMigration_MigrationScript$2" />
+    <unitInfo nodeId="4380385936562229096" fileName="buildScriptMigration_MigrationScript.java" startLine="51" startPosition="48" endLine="55" endPosition="9" unitName="jetbrains.mps.buildScript.scripts.buildScriptMigration_MigrationScript$2" />
+  </root>
+</debugInfo>
+

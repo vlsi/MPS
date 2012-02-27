@@ -26,6 +26,7 @@ import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import jetbrains.mps.generator.template.MappingScriptContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.buildScript.util.GenerationUtil;
+import jetbrains.mps.buildScript.behavior.BuildStringPart_Behavior;
 
 public class QueriesGenerated {
   public static boolean baseMappingRule_Condition_5248329904288166450(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
@@ -414,7 +415,7 @@ public class QueriesGenerated {
 
   private static String check_x583g4_a0a0a0a0a0a81(SNode checkedDotOperand) {
     if (null != checkedDotOperand) {
-      return SPropertyOperations.getString(checkedDotOperand, "name");
+      return BuildStringPart_Behavior.call_getText_4380385936562037054(checkedDotOperand);
     }
     return null;
   }

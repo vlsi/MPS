@@ -9,6 +9,7 @@
     <classNode dependClassName="jetbrains.mps.buildScript.behavior.BuildProject_Behavior" />
     <classNode dependClassName="jetbrains.mps.buildScript.behavior.BuildSourcePath_Behavior" />
     <classNode dependClassName="jetbrains.mps.buildScript.behavior.BuildSource_JavaModule_Behavior" />
+    <classNode dependClassName="jetbrains.mps.buildScript.behavior.BuildStringPart_Behavior" />
     <classNode dependClassName="jetbrains.mps.buildScript.util.Context" />
     <classNode dependClassName="jetbrains.mps.buildScript.util.GenerationUtil" />
     <classNode dependClassName="jetbrains.mps.generator.template.BaseMappingRuleContext" />

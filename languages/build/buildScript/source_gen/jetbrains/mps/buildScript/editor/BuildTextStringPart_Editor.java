@@ -13,26 +13,26 @@ import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.buildScript.behavior.BuildNamePart_Behavior;
+import jetbrains.mps.buildScript.behavior.BuildStringPart_Behavior;
 
-public class BuildSimpleName_Editor extends DefaultNodeEditor {
+public class BuildTextStringPart_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createAlternation_jnrlds_a(editorContext, node);
+    return this.createAlternation_zen9g6_a(editorContext, node);
   }
 
-  private EditorCell createAlternation_jnrlds_a(EditorContext editorContext, SNode node) {
+  private EditorCell createAlternation_zen9g6_a(EditorContext editorContext, SNode node) {
     boolean alternationCondition = true;
-    alternationCondition = BuildSimpleName_Editor.renderingCondition_jnrlds_a0(node, editorContext, editorContext.getOperationContext().getScope());
+    alternationCondition = BuildTextStringPart_Editor.renderingCondition_zen9g6_a0(node, editorContext, editorContext.getOperationContext().getScope());
     EditorCell editorCell = null;
     if (alternationCondition) {
-      editorCell = this.createProperty_jnrlds_a0(editorContext, node);
+      editorCell = this.createProperty_zen9g6_a0(editorContext, node);
     } else {
-      editorCell = this.createProperty_jnrlds_a0_0(editorContext, node);
+      editorCell = this.createProperty_zen9g6_a0_0(editorContext, node);
     }
     return editorCell;
   }
 
-  private EditorCell createProperty_jnrlds_a0(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_zen9g6_a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("text");
     provider.setNoTargetText("<no text>");
@@ -55,7 +55,7 @@ public class BuildSimpleName_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createProperty_jnrlds_a0_0(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_zen9g6_a0_0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("text");
     provider.setNoTargetText("<no text>");
@@ -74,7 +74,7 @@ public class BuildSimpleName_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_jnrlds_a0(SNode node, EditorContext editorContext, IScope scope) {
-    return BuildNamePart_Behavior.call_punctuationLeft_5096397858823356723(node);
+  private static boolean renderingCondition_zen9g6_a0(SNode node, EditorContext editorContext, IScope scope) {
+    return BuildStringPart_Behavior.call_punctuationLeft_5096397858823356723(node);
   }
 }

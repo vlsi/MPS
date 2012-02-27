@@ -18,7 +18,6 @@ public class BuildArtifact extends BuildAspect implements INamedConcept {
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String CHILDREN = "children";
-  public static final String ARTIFACT_NAME = "artifactName";
   public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
 
   public BuildArtifact(SNode node) {
@@ -75,26 +74,6 @@ public class BuildArtifact extends BuildAspect implements INamedConcept {
 
   public void insertChildren(BuildLayout_Node prev, BuildLayout_Node node) {
     this.insertChild(prev, BuildArtifact.CHILDREN, node);
-  }
-
-  public int getArtifactNamesCount() {
-    return this.getChildCount(BuildArtifact.ARTIFACT_NAME);
-  }
-
-  public Iterator<BuildNamePart> artifactNames() {
-    return this.children(BuildNamePart.class, BuildArtifact.ARTIFACT_NAME);
-  }
-
-  public List<BuildNamePart> getArtifactNames() {
-    return this.getChildren(BuildNamePart.class, BuildArtifact.ARTIFACT_NAME);
-  }
-
-  public void addArtifactName(BuildNamePart node) {
-    this.addChild(BuildArtifact.ARTIFACT_NAME, node);
-  }
-
-  public void insertArtifactName(BuildNamePart prev, BuildNamePart node) {
-    this.insertChild(prev, BuildArtifact.ARTIFACT_NAME, node);
   }
 
   public int getSmodelAttributesCount() {

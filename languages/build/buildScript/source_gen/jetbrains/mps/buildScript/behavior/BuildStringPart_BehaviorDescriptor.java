@@ -7,12 +7,16 @@ import jetbrains.mps.lang.core.behavior.INamedConcept_BehaviorDescriptor;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 
-public abstract class BuildNamePart_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements INamedConcept_BehaviorDescriptor {
-  public BuildNamePart_BehaviorDescriptor() {
+public abstract class BuildStringPart_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements INamedConcept_BehaviorDescriptor {
+  public BuildStringPart_BehaviorDescriptor() {
   }
 
   public boolean virtual_punctuationLeft_5096397858823356723(SNode thisNode) {
-    return BuildNamePart_Behavior.virtual_punctuationLeft_5096397858823356723(thisNode);
+    return BuildStringPart_Behavior.virtual_punctuationLeft_5096397858823356723(thisNode);
+  }
+
+  public String virtual_getText_4380385936562037054(SNode thisNode) {
+    return BuildStringPart_Behavior.virtual_getText_4380385936562037054(thisNode);
   }
 
   public String virtual_getFqName_1213877404258(SNode thisNode) {
@@ -21,6 +25,6 @@ public abstract class BuildNamePart_BehaviorDescriptor extends BaseConcept_Behav
 
   @Override
   public String getConceptFqName() {
-    return "jetbrains.mps.buildScript.structure.BuildNamePart";
+    return "jetbrains.mps.buildScript.structure.BuildStringPart";
   }
 }

@@ -17,7 +17,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.Computable;
-import jetbrains.mps.buildScript.behavior.CompositePath_Behavior;
+import jetbrains.mps.buildScript.behavior.BuildCompositePath_Behavior;
 import jetbrains.mps.buildScript.behavior.BuildRelativePath_Behavior;
 import jetbrains.mps.buildScript.util.Context;
 import jetbrains.mps.smodel.action.DefaultChildNodeSubstituteAction;
@@ -64,15 +64,15 @@ public class QueriesGenerated {
     }
   }
 
-  public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_CompositePath_4959435991187227346(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
+  public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_BuildCompositePath_4959435991187227346(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
     List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
     {
-      SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.buildScript.structure.CompositePath");
+      SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.buildScript.structure.BuildCompositePath");
       SNode childConcept = (SNode) _context.getChildConcept();
       if (SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
         Computable computable = new Computable() {
           public Object compute() {
-            return CompositePath_Behavior.call_getHeadSuggestions_4959435991187212109(_context.getCurrentTargetNode(), BuildRelativePath_Behavior.call_getBasePath_4959435991187140515(SNodeOperations.getAncestor(_context.getCurrentTargetNode(), "jetbrains.mps.buildScript.structure.BuildRelativePath", false, false), Context.defaultContext()));
+            return BuildCompositePath_Behavior.call_getHeadSuggestions_4959435991187212109(_context.getCurrentTargetNode(), BuildRelativePath_Behavior.call_getBasePath_4959435991187140515(SNodeOperations.getAncestor(_context.getCurrentTargetNode(), "jetbrains.mps.buildScript.structure.BuildRelativePath", false, false), Context.defaultContext()));
           }
         };
         Iterable<String> queryResult = (Iterable) computable.compute();
@@ -121,15 +121,15 @@ public class QueriesGenerated {
     return result;
   }
 
-  public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_BuildNamePart_4903714810883808412(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
+  public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_BuildStringPart_4903714810883808412(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
     List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
     {
-      SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.buildScript.structure.BuildVariableReference");
+      SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.buildScript.structure.BuildVarRefStringPart");
       SNode childConcept = (SNode) _context.getChildConcept();
       if (outputConcept == null || SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
         ListSequence.fromList(result).addElement(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
           public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-            return SNodeFactoryOperations.createNewNode(model, "jetbrains.mps.buildScript.structure.BuildVariableReference", null);
+            return SNodeFactoryOperations.createNewNode(model, "jetbrains.mps.buildScript.structure.BuildVarRefStringPart", null);
           }
 
           public boolean hasSubstitute() {
@@ -143,12 +143,12 @@ public class QueriesGenerated {
       }
     }
     {
-      SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.buildScript.structure.BuildSimpleName");
+      SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.buildScript.structure.BuildTextStringPart");
       SNode childConcept = (SNode) _context.getChildConcept();
       if (outputConcept == null || SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
         ListSequence.fromList(result).addElement(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
           public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-            SNode buildText = SNodeFactoryOperations.createNewNode(model, "jetbrains.mps.buildScript.structure.BuildSimpleName", null);
+            SNode buildText = SNodeFactoryOperations.createNewNode(model, "jetbrains.mps.buildScript.structure.BuildTextStringPart", null);
             SPropertyOperations.set(buildText, "text", pattern);
             return buildText;
           }
@@ -184,13 +184,13 @@ public class QueriesGenerated {
     return result;
   }
 
-  public static List<INodeSubstituteAction> sideTransform_ActionsFactory_CompositePath_8618885170173707589(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
+  public static List<INodeSubstituteAction> sideTransform_ActionsFactory_BuildCompositePath_8618885170173707589(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
     List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
     {
-      SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.buildScript.structure.CompositePath");
+      SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.buildScript.structure.BuildCompositePath");
       ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
         public SNode doSubstitute(String pattern) {
-          SNodeFactoryOperations.setNewChild(_context.getSourceNode(), "tail", "jetbrains.mps.buildScript.structure.CompositePath");
+          SNodeFactoryOperations.setNewChild(_context.getSourceNode(), "tail", "jetbrains.mps.buildScript.structure.BuildCompositePath");
           return _context.getSourceNode();
         }
 
@@ -212,7 +212,7 @@ public class QueriesGenerated {
       SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.buildScript.structure.BuildSourceMacroRelativePath");
       ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
         public SNode doSubstitute(String pattern) {
-          SNodeFactoryOperations.setNewChild(_context.getSourceNode(), "compositePart", "jetbrains.mps.buildScript.structure.CompositePath");
+          SNodeFactoryOperations.setNewChild(_context.getSourceNode(), "compositePart", "jetbrains.mps.buildScript.structure.BuildCompositePath");
           return _context.getSourceNode();
         }
 
@@ -234,7 +234,7 @@ public class QueriesGenerated {
       SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.buildScript.structure.BuildSourceProjectRelativePath");
       ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
         public SNode doSubstitute(String pattern) {
-          SNodeFactoryOperations.setNewChild(_context.getSourceNode(), "compositePart", "jetbrains.mps.buildScript.structure.CompositePath");
+          SNodeFactoryOperations.setNewChild(_context.getSourceNode(), "compositePart", "jetbrains.mps.buildScript.structure.BuildCompositePath");
           return _context.getSourceNode();
         }
 
@@ -250,10 +250,10 @@ public class QueriesGenerated {
     return result;
   }
 
-  public static List<INodeSubstituteAction> sideTransform_ActionsFactory_BuildNamePart_4903714810883831023(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
+  public static List<INodeSubstituteAction> sideTransform_ActionsFactory_BuildStringPart_4903714810883831023(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
     List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
     {
-      SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.buildScript.structure.BuildNamePart");
+      SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.buildScript.structure.BuildStringPart");
       Iterable<SNode> concepts;
       concepts = SConceptOperations.getAllSubConcepts(concept, _context.getModel(), operationContext.getScope());
       for (final SNode subconcept : concepts) {
@@ -280,7 +280,7 @@ public class QueriesGenerated {
       SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.buildScript.structure.BuildVariableMacro");
       ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
         public SNode doSubstitute(String pattern) {
-          SNode namePart = SNodeFactoryOperations.createNewNode(_context.getModel(), "jetbrains.mps.buildScript.structure.BuildNamePart", null);
+          SNode namePart = SNodeFactoryOperations.createNewNode(_context.getModel(), "jetbrains.mps.buildScript.structure.BuildStringPart", null);
           ListSequence.fromList(SLinkOperations.getTargets(_context.getSourceNode(), "value", true)).addElement(namePart);
           return _context.getSourceNode();
         }

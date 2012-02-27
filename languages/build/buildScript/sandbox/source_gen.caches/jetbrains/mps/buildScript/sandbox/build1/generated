@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="40t295zmdn8a2n578nc1mphi6axwl95">
+<dependencies version="2" modelHash="6ydw2tjr9vawkefgateeoflfudfcy0y">
   <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="-z9apu2jgvnwo2rksn2wr6ei9vh9scw" />
   <dep model="r:64db3a92-5968-4a73-b456-34504a2d97a6(jetbrains.mps.core.xml.structure)" hash="3jrzweygi31fgpnsmg51qgvcuxmibhc" />
   <dep model="r:d8d06a40-eb90-4ad9-a679-19e3fc235859(jetbrains.mps.build.workflow.generator.template.main@generator)" hash="4n4ojhwcmc96lals6nrsd2k3a1nj05d" />
   <dep model="r:ed179f4d-7cf2-479d-8348-50c1fc63b96a(jetbrains.mps.build.workflow.structure)" hash="617xtz1jmkck81h815jxd937tk8vnxt" />
-  <dep model="r:fdebfc98-bbd7-4c50-8a8d-eda16da9406e(jetbrains.mps.buildScript.generator.template.main@generator)" hash="-3hpxuzds2e7id6lpswshjmf7mwy8n4l" />
+  <dep model="r:fdebfc98-bbd7-4c50-8a8d-eda16da9406e(jetbrains.mps.buildScript.generator.template.main@generator)" hash="emgl2tik7u4j3373akj0ljyv1b0xz7z" />
   <common hash="-9531sshxre31wlbl9n6x9my9oqhp9mf" />
-  <source id="4993211115183387839" name="buildCore" hash="1qpi0ecwbf6j59huqro8cj8m3y05yqp">
+  <source id="4993211115183387839" name="buildCore" hash="-b4o1j8mtkyob36v18hfeiamy36n1m34">
     <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" />
     <dep model="r:64db3a92-5968-4a73-b456-34504a2d97a6(jetbrains.mps.core.xml.structure)" />
     <dep model="r:d8d06a40-eb90-4ad9-a679-19e3fc235859(jetbrains.mps.build.workflow.generator.template.main@generator)" />
@@ -15,7 +15,7 @@
     <file name="buildCore.properties" />
     <file name="buildCore.xml" />
   </source>
-  <source id="4993211115183416028" name="buildPlugin" hash="-9zxloyjbxo5mugglcq9seyc3cx1nlf5">
+  <source id="4993211115183416028" name="buildPlugin" hash="-e1r23dxkgollb9skbxxkphx947ddh0x">
     <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" />
     <dep model="r:64db3a92-5968-4a73-b456-34504a2d97a6(jetbrains.mps.core.xml.structure)" />
     <dep model="r:d8d06a40-eb90-4ad9-a679-19e3fc235859(jetbrains.mps.build.workflow.generator.template.main@generator)" />

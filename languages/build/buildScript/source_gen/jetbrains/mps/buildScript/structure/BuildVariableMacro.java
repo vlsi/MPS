@@ -21,19 +21,19 @@ public class BuildVariableMacro extends BuildMacro {
     return this.getChildCount(BuildVariableMacro.VALUE);
   }
 
-  public Iterator<BuildNamePart> values() {
-    return this.children(BuildNamePart.class, BuildVariableMacro.VALUE);
+  public Iterator<BuildStringPart> values() {
+    return this.children(BuildStringPart.class, BuildVariableMacro.VALUE);
   }
 
-  public List<BuildNamePart> getValues() {
-    return this.getChildren(BuildNamePart.class, BuildVariableMacro.VALUE);
+  public List<BuildStringPart> getValues() {
+    return this.getChildren(BuildStringPart.class, BuildVariableMacro.VALUE);
   }
 
-  public void addValue(BuildNamePart node) {
+  public void addValue(BuildStringPart node) {
     this.addChild(BuildVariableMacro.VALUE, node);
   }
 
-  public void insertValue(BuildNamePart prev, BuildNamePart node) {
+  public void insertValue(BuildStringPart prev, BuildStringPart node) {
     this.insertChild(prev, BuildVariableMacro.VALUE, node);
   }
 

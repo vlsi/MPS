@@ -13,21 +13,21 @@ import java.io.File;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 
-public class CompositePath_Behavior {
+public class BuildCompositePath_Behavior {
   public static void init(SNode thisNode) {
     SPropertyOperations.set(thisNode, "head", "");
   }
 
   public static String call_getPath_8618885170173674800(SNode thisNode) {
     if ((SLinkOperations.getTarget(thisNode, "tail", true) != null)) {
-      return SPropertyOperations.getString(thisNode, "head") + "/" + CompositePath_Behavior.call_getPath_8618885170173674800(SLinkOperations.getTarget(thisNode, "tail", true));
+      return SPropertyOperations.getString(thisNode, "head") + "/" + BuildCompositePath_Behavior.call_getPath_8618885170173674800(SLinkOperations.getTarget(thisNode, "tail", true));
     }
     return SPropertyOperations.getString(thisNode, "head");
   }
 
   public static String call_getPathToHead_3968971886499106107(SNode thisNode) {
-    if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(thisNode), "jetbrains.mps.buildScript.structure.CompositePath")) {
-      return CompositePath_Behavior.call_getPathToHead_3968971886499106107(SNodeOperations.cast(SNodeOperations.getParent(thisNode), "jetbrains.mps.buildScript.structure.CompositePath")) + "/" + SPropertyOperations.getString(thisNode, "head");
+    if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(thisNode), "jetbrains.mps.buildScript.structure.BuildCompositePath")) {
+      return BuildCompositePath_Behavior.call_getPathToHead_3968971886499106107(SNodeOperations.cast(SNodeOperations.getParent(thisNode), "jetbrains.mps.buildScript.structure.BuildCompositePath")) + "/" + SPropertyOperations.getString(thisNode, "head");
     }
     return SPropertyOperations.getString(thisNode, "head");
   }
@@ -38,8 +38,8 @@ public class CompositePath_Behavior {
       return ListSequence.fromList(new ArrayList<String>());
     }
 
-    if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(thisNode), "jetbrains.mps.buildScript.structure.CompositePath")) {
-      relativePath += "/" + CompositePath_Behavior.call_getPathToHead_3968971886499106107(SNodeOperations.cast(SNodeOperations.getParent(thisNode), "jetbrains.mps.buildScript.structure.CompositePath"));
+    if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(thisNode), "jetbrains.mps.buildScript.structure.BuildCompositePath")) {
+      relativePath += "/" + BuildCompositePath_Behavior.call_getPathToHead_3968971886499106107(SNodeOperations.cast(SNodeOperations.getParent(thisNode), "jetbrains.mps.buildScript.structure.BuildCompositePath"));
     }
 
     File file = new File(relativePath);

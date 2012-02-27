@@ -148,7 +148,7 @@ public class MacroTest_Test extends BaseTransformationTest {
         public SNode compute() {
           return SConceptOperations.findConceptDeclaration("jetbrains.mps.buildScript.structure.BuildMacro");
         }
-      }), SNodeOperations.cast(this.getNodeById("384280137912153739"), "jetbrains.mps.buildScript.structure.BuildVariableReference")).getAvailableElements("")).contains(SNodeOperations.cast(this.getNodeById("384280137912153734"), "jetbrains.mps.buildScript.structure.BuildVariableMacro")));
+      }), SNodeOperations.cast(this.getNodeById("384280137912153739"), "jetbrains.mps.buildScript.structure.BuildVarRefStringPart")).getAvailableElements("")).contains(SNodeOperations.cast(this.getNodeById("384280137912153734"), "jetbrains.mps.buildScript.structure.BuildVariableMacro")));
     }
 
     public void test_doNotSeeForwardVariabletInScope() throws Exception {
@@ -159,7 +159,7 @@ public class MacroTest_Test extends BaseTransformationTest {
         public SNode compute() {
           return SConceptOperations.findConceptDeclaration("jetbrains.mps.buildScript.structure.BuildMacro");
         }
-      }), SNodeOperations.cast(this.getNodeById("384280137912153758"), "jetbrains.mps.buildScript.structure.BuildVariableReference")).getAvailableElements("")).contains(SNodeOperations.cast(this.getNodeById("384280137912153753"), "jetbrains.mps.buildScript.structure.BuildVariableMacro")));
+      }), SNodeOperations.cast(this.getNodeById("384280137912153758"), "jetbrains.mps.buildScript.structure.BuildVarRefStringPart")).getAvailableElements("")).contains(SNodeOperations.cast(this.getNodeById("384280137912153753"), "jetbrains.mps.buildScript.structure.BuildVariableMacro")));
     }
 
     public void test_seeBackwardVariableInScope() throws Exception {
@@ -170,7 +170,7 @@ public class MacroTest_Test extends BaseTransformationTest {
         public SNode compute() {
           return SConceptOperations.findConceptDeclaration("jetbrains.mps.buildScript.structure.BuildMacro");
         }
-      }), SNodeOperations.cast(this.getNodeById("384280137912153762"), "jetbrains.mps.buildScript.structure.BuildVariableReference")).getAvailableElements("")).contains(SNodeOperations.cast(this.getNodeById("384280137912153753"), "jetbrains.mps.buildScript.structure.BuildVariableMacro")));
+      }), SNodeOperations.cast(this.getNodeById("384280137912153762"), "jetbrains.mps.buildScript.structure.BuildVarRefStringPart")).getAvailableElements("")).contains(SNodeOperations.cast(this.getNodeById("384280137912153753"), "jetbrains.mps.buildScript.structure.BuildVariableMacro")));
     }
 
     public static class QuotationClass_oxxkhl_a0a0h0a0 {

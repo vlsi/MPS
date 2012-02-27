@@ -12,75 +12,75 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class BuildNamePart extends BaseConcept implements INamedConcept {
-  public static final String concept = "jetbrains.mps.buildScript.structure.BuildNamePart";
+public class BuildStringPart extends BaseConcept implements INamedConcept {
+  public static final String concept = "jetbrains.mps.buildScript.structure.BuildStringPart";
   public static final String NAME = "name";
   public static final String SHORT_DESCRIPTION = "shortDescription";
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
 
-  public BuildNamePart(SNode node) {
+  public BuildStringPart(SNode node) {
     super(node);
   }
 
   public String getName() {
-    return this.getProperty(BuildNamePart.NAME);
+    return this.getProperty(BuildStringPart.NAME);
   }
 
   public void setName(String value) {
-    this.setProperty(BuildNamePart.NAME, value);
+    this.setProperty(BuildStringPart.NAME, value);
   }
 
   public String getShortDescription() {
-    return this.getProperty(BuildNamePart.SHORT_DESCRIPTION);
+    return this.getProperty(BuildStringPart.SHORT_DESCRIPTION);
   }
 
   public void setShortDescription(String value) {
-    this.setProperty(BuildNamePart.SHORT_DESCRIPTION, value);
+    this.setProperty(BuildStringPart.SHORT_DESCRIPTION, value);
   }
 
   public String getAlias() {
-    return this.getProperty(BuildNamePart.ALIAS);
+    return this.getProperty(BuildStringPart.ALIAS);
   }
 
   public void setAlias(String value) {
-    this.setProperty(BuildNamePart.ALIAS, value);
+    this.setProperty(BuildStringPart.ALIAS, value);
   }
 
   public String getVirtualPackage() {
-    return this.getProperty(BuildNamePart.VIRTUAL_PACKAGE);
+    return this.getProperty(BuildStringPart.VIRTUAL_PACKAGE);
   }
 
   public void setVirtualPackage(String value) {
-    this.setProperty(BuildNamePart.VIRTUAL_PACKAGE, value);
+    this.setProperty(BuildStringPart.VIRTUAL_PACKAGE, value);
   }
 
   public int getSmodelAttributesCount() {
-    return this.getChildCount(BuildNamePart.SMODEL_ATTRIBUTE);
+    return this.getChildCount(BuildStringPart.SMODEL_ATTRIBUTE);
   }
 
   public Iterator<Attribute> smodelAttributes() {
-    return this.children(Attribute.class, BuildNamePart.SMODEL_ATTRIBUTE);
+    return this.children(Attribute.class, BuildStringPart.SMODEL_ATTRIBUTE);
   }
 
   public List<Attribute> getSmodelAttributes() {
-    return this.getChildren(Attribute.class, BuildNamePart.SMODEL_ATTRIBUTE);
+    return this.getChildren(Attribute.class, BuildStringPart.SMODEL_ATTRIBUTE);
   }
 
   public void addSmodelAttribute(Attribute node) {
-    this.addChild(BuildNamePart.SMODEL_ATTRIBUTE, node);
+    this.addChild(BuildStringPart.SMODEL_ATTRIBUTE, node);
   }
 
   public void insertSmodelAttribute(Attribute prev, Attribute node) {
-    this.insertChild(prev, BuildNamePart.SMODEL_ATTRIBUTE, node);
+    this.insertChild(prev, BuildStringPart.SMODEL_ATTRIBUTE, node);
   }
 
-  public static BuildNamePart newInstance(SModel sm, boolean init) {
-    return (BuildNamePart) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.buildScript.structure.BuildNamePart", sm, GlobalScope.getInstance(), init).getAdapter();
+  public static BuildStringPart newInstance(SModel sm, boolean init) {
+    return (BuildStringPart) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.buildScript.structure.BuildStringPart", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
-  public static BuildNamePart newInstance(SModel sm) {
-    return BuildNamePart.newInstance(sm, false);
+  public static BuildStringPart newInstance(SModel sm) {
+    return BuildStringPart.newInstance(sm, false);
   }
 }

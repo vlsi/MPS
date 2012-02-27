@@ -9,14 +9,11 @@ import java.util.HashMap;
 import jetbrains.mps.smodel.runtime.base.BasePropertyConstraintsDescriptor;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.internal.collections.runtime.ILeftCombinator;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
-public class BuildArtifact_Constraints extends BaseConstraintsDescriptor {
-  public BuildArtifact_Constraints() {
-    super("jetbrains.mps.buildScript.structure.BuildArtifact");
+public class BuildTextStringPart_Constraints extends BaseConstraintsDescriptor {
+  public BuildTextStringPart_Constraints() {
+    super("jetbrains.mps.buildScript.structure.BuildTextStringPart");
   }
 
   @Override
@@ -31,20 +28,9 @@ public class BuildArtifact_Constraints extends BaseConstraintsDescriptor {
       @Override
       public Object getValue(SNode node, IScope scope) {
         String propertyName = "name";
-        return ListSequence.fromList(SLinkOperations.getTargets(node, "artifactName", true)).foldLeft("", new ILeftCombinator<SNode, String>() {
-          public String combine(String s, SNode it) {
-            return s + check_4hpw0b_a0a0a0a0a0a(it);
-          }
-        });
+        return SPropertyOperations.getString(node, "text");
       }
     });
     return properties;
-  }
-
-  private static String check_4hpw0b_a0a0a0a0a0a(SNode checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return SPropertyOperations.getString(checkedDotOperand, "name");
-    }
-    return null;
   }
 }

@@ -4,12 +4,12 @@ package jetbrains.mps.buildScript.behavior;
 
 import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 
-public class CompositePath_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor {
-  public CompositePath_BehaviorDescriptor() {
+public class BuildString_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor {
+  public BuildString_BehaviorDescriptor() {
   }
 
   @Override
   public String getConceptFqName() {
-    return "jetbrains.mps.buildScript.structure.CompositePath";
+    return "jetbrains.mps.buildScript.structure.BuildString";
   }
 }

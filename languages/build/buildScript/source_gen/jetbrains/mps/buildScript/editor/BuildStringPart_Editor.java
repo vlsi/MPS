@@ -12,12 +12,12 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Error;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.style.Padding;
 
-public class BuildNamePart_Editor extends DefaultNodeEditor {
+public class BuildStringPart_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCustom_bq3vtc_a(editorContext, node);
+    return this.createCustom_vrd04t_a(editorContext, node);
   }
 
-  private EditorCell createCustom_bq3vtc_a(final EditorContext editorContext, final SNode node) {
+  private EditorCell createCustom_vrd04t_a(final EditorContext editorContext, final SNode node) {
     AbstractCellProvider provider = new _FunctionTypes._return_P0_E0<AbstractCellProvider>() {
       public AbstractCellProvider invoke() {
         return new AbstractCellProvider() {
@@ -31,7 +31,7 @@ public class BuildNamePart_Editor extends DefaultNodeEditor {
       }
     }.invoke();
     EditorCell editorCell = provider.createEditorCell(editorContext);
-    editorCell.setCellId("Custom_bq3vtc_a");
+    editorCell.setCellId("Custom_vrd04t_a");
     return editorCell;
   }
 }

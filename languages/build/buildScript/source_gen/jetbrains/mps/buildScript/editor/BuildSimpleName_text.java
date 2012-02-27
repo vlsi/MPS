@@ -45,7 +45,7 @@ public class BuildSimpleName_text extends EditorCellKeyMap {
       if (contextNode == null) {
         return false;
       }
-      if (contextNode.isInstanceOfConcept("jetbrains.mps.buildScript.structure.BuildSimpleName")) {
+      if (contextNode.isInstanceOfConcept("jetbrains.mps.buildScript.structure.BuildTextStringPart")) {
         return this.canExecute_internal(keyEvent, editorContext, contextNode, this.getSelectedNodes(editorContext));
       }
       return false;
@@ -60,7 +60,7 @@ public class BuildSimpleName_text extends EditorCellKeyMap {
       if (!(editorContext.getSelectedCell() instanceof EditorCell_Label)) {
         return false;
       }
-      if (!(SNodeOperations.isInstanceOf(node, "jetbrains.mps.buildScript.structure.BuildNamePart"))) {
+      if (!(SNodeOperations.isInstanceOf(node, "jetbrains.mps.buildScript.structure.BuildStringPart"))) {
         return false;
       }
       return StringUtils.isNotEmpty(SPropertyOperations.getString(node, "text"));
@@ -71,12 +71,12 @@ public class BuildSimpleName_text extends EditorCellKeyMap {
 
       String currText = SPropertyOperations.getString(node, "text");
       if (index < currText.length() && index > 0) {
-        SNode newText = SModelOperations.createNewNode(SNodeOperations.getModel(node), "jetbrains.mps.buildScript.structure.BuildSimpleName", null);
+        SNode newText = SModelOperations.createNewNode(SNodeOperations.getModel(node), "jetbrains.mps.buildScript.structure.BuildTextStringPart", null);
         SPropertyOperations.set(newText, "text", currText.substring(index));
         SPropertyOperations.set(node, "text", currText.substring(0, index));
         SNodeOperations.insertNextSiblingChild(node, newText);
       }
-      SNode newRef = SModelOperations.createNewNode(SNodeOperations.getModel(node), "jetbrains.mps.buildScript.structure.BuildVariableReference", null);
+      SNode newRef = SModelOperations.createNewNode(SNodeOperations.getModel(node), "jetbrains.mps.buildScript.structure.BuildVarRefStringPart", null);
       if (index != 0) {
         SNodeOperations.insertNextSiblingChild(node, newRef);
       } else {

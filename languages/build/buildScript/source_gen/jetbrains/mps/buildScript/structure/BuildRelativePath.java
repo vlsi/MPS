@@ -24,11 +24,11 @@ public class BuildRelativePath extends BuildSourcePath {
     this.setProperty(BuildRelativePath.RELATIVE_PATH, value);
   }
 
-  public CompositePath getCompositePart() {
-    return (CompositePath) this.getChild(CompositePath.class, BuildRelativePath.COMPOSITE_PART);
+  public BuildCompositePath getCompositePart() {
+    return (BuildCompositePath) this.getChild(BuildCompositePath.class, BuildRelativePath.COMPOSITE_PART);
   }
 
-  public void setCompositePart(CompositePath node) {
+  public void setCompositePart(BuildCompositePath node) {
     super.setChild(BuildRelativePath.COMPOSITE_PART, node);
   }
 

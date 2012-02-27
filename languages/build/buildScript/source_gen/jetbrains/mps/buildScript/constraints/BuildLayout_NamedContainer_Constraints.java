@@ -9,10 +9,8 @@ import java.util.HashMap;
 import jetbrains.mps.smodel.runtime.base.BasePropertyConstraintsDescriptor;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.buildScript.behavior.BuildString_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.internal.collections.runtime.ILeftCombinator;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class BuildLayout_NamedContainer_Constraints extends BaseConstraintsDescriptor {
   public BuildLayout_NamedContainer_Constraints() {
@@ -31,20 +29,9 @@ public class BuildLayout_NamedContainer_Constraints extends BaseConstraintsDescr
       @Override
       public Object getValue(SNode node, IScope scope) {
         String propertyName = "name";
-        return ListSequence.fromList(SLinkOperations.getTargets(node, "containerName", true)).foldLeft("", new ILeftCombinator<SNode, String>() {
-          public String combine(String s, SNode it) {
-            return s + check_946mjn_a0a0a0a0a0a(it);
-          }
-        });
+        return BuildString_Behavior.call_getName_4380385936562005550(SLinkOperations.getTarget(node, "containerName", true));
       }
     });
     return properties;
-  }
-
-  private static String check_946mjn_a0a0a0a0a0a(SNode checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return SPropertyOperations.getString(checkedDotOperand, "name");
-    }
-    return null;
   }
 }

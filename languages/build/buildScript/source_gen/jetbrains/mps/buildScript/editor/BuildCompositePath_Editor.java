@@ -22,37 +22,37 @@ import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_PropertyValues;
 import java.util.List;
-import jetbrains.mps.buildScript.behavior.CompositePath_Behavior;
+import jetbrains.mps.buildScript.behavior.BuildCompositePath_Behavior;
 import jetbrains.mps.buildScript.behavior.BuildRelativePath_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.buildScript.util.Context;
 
-public class CompositePath_Editor extends DefaultNodeEditor {
+public class BuildCompositePath_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_ahdwxs_a(editorContext, node);
+    return this.createCollection_n78otj_a(editorContext, node);
   }
 
-  private EditorCell createCollection_ahdwxs_a(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_n78otj_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_ahdwxs_a");
-    editorCell.addEditorCell(this.createProperty_ahdwxs_a0(editorContext, node));
-    if (renderingCondition_ahdwxs_a1a(node, editorContext, editorContext.getOperationContext().getScope())) {
-      editorCell.addEditorCell(this.createCollection_ahdwxs_b0(editorContext, node));
+    editorCell.setCellId("Collection_n78otj_a");
+    editorCell.addEditorCell(this.createProperty_n78otj_a0(editorContext, node));
+    if (renderingCondition_n78otj_a1a(node, editorContext, editorContext.getOperationContext().getScope())) {
+      editorCell.addEditorCell(this.createCollection_n78otj_b0(editorContext, node));
     }
     return editorCell;
   }
 
-  private EditorCell createCollection_ahdwxs_b0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_n78otj_b0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_ahdwxs_b0");
-    editorCell.addEditorCell(this.createConstant_ahdwxs_a1a(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_ahdwxs_b1a(editorContext, node));
+    editorCell.setCellId("Collection_n78otj_b0");
+    editorCell.addEditorCell(this.createConstant_n78otj_a1a(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_n78otj_b1a(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_ahdwxs_a1a(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_n78otj_a1a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "/");
-    editorCell.setCellId("Constant_ahdwxs_a1a");
+    editorCell.setCellId("Constant_n78otj_a1a");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
@@ -63,7 +63,7 @@ public class CompositePath_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_ahdwxs_b1a(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_n78otj_b1a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("tail");
     provider.setNoTargetText("<no tail>");
@@ -83,7 +83,7 @@ public class CompositePath_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createProperty_ahdwxs_a0(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_n78otj_a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("head");
     provider.setNoTargetText("");
@@ -91,7 +91,7 @@ public class CompositePath_Editor extends DefaultNodeEditor {
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_head");
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPart[]{new CompositePath_Editor.CompositePath_head_cellMenu_a0a0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPart[]{new BuildCompositePath_Editor.BuildCompositePath_head_cellMenu_a0a0()}));
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -102,16 +102,16 @@ public class CompositePath_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_ahdwxs_a1a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_n78otj_a1a(SNode node, EditorContext editorContext, IScope scope) {
     return (SLinkOperations.getTarget(node, "tail", true) != null);
   }
 
-  public static class CompositePath_head_cellMenu_a0a0 extends AbstractCellMenuPart_PropertyValues {
-    public CompositePath_head_cellMenu_a0a0() {
+  public static class BuildCompositePath_head_cellMenu_a0a0 extends AbstractCellMenuPart_PropertyValues {
+    public BuildCompositePath_head_cellMenu_a0a0() {
     }
 
     public List<String> getPropertyValues(SNode node, IScope scope, IOperationContext operationContext) {
-      return CompositePath_Behavior.call_getHeadSuggestions_4959435991187212109(node, BuildRelativePath_Behavior.call_getBasePath_4959435991187140515(SNodeOperations.getAncestor(node, "jetbrains.mps.buildScript.structure.BuildRelativePath", false, false), Context.defaultContext()));
+      return BuildCompositePath_Behavior.call_getHeadSuggestions_4959435991187212109(node, BuildRelativePath_Behavior.call_getBasePath_4959435991187140515(SNodeOperations.getAncestor(node, "jetbrains.mps.buildScript.structure.BuildRelativePath", false, false), Context.defaultContext()));
     }
   }
 }
