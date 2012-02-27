@@ -20,6 +20,7 @@ import com.intellij.debugger.DebuggerManagerEx;
 import com.intellij.debugger.ui.breakpoints.Breakpoint;
 import com.intellij.debugger.ui.breakpoints.BreakpointManagerListener;
 import com.intellij.debugger.ui.breakpoints.BreakpointWithHighlighter;
+import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.ProjectComponent;
 import com.intellij.openapi.editor.Document;
 import com.intellij.openapi.fileEditor.FileEditorManager;
@@ -183,6 +184,16 @@ public class IdeaBreakpointsUiComponent extends BreakpointsUiComponentEx<Breakpo
                                 addLocationBreakpoint(breakpointWithHighlighter, BreakpointPainter.getNodeForBreakpoint(breakpointWithHighlighter));
                             }
                         }
+                    }
+                }
+            });
+
+            ApplicationManager.getApplication().invokeLater(new Runnable() {
+                @Override
+                public void run() {
+                    List<EditorComponent> allEditorComponents = EditorComponentUtil.getAllEditorComponents(myFileEditorManager, true);
+                    for (EditorComponent component : allEditorComponents) {
+                        component.repaint();
                     }
                 }
             });
