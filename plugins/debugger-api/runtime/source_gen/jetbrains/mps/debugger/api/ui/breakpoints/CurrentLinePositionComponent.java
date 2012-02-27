@@ -83,6 +83,7 @@ public class CurrentLinePositionComponent extends CurrentLinePositionComponentEx
     String fileName = position._1();
     int lineNumber = (int) position._2();
 
+    // todo broken here: need to use language specific method 
     return TraceInfoUtil.getNode(unitName, fileName, lineNumber);
   }
 

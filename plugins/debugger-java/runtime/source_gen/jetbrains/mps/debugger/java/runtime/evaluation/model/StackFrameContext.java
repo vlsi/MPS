@@ -87,7 +87,7 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
       if (stackFrame != null) {
         try {
           Location location = stackFrame.location();
-          locationNode = TraceInfoUtil.getNode(location.declaringType().name(), location.sourceName(), location.lineNumber());
+          locationNode = TraceInfoUtil.getJavaNode(location.declaringType().name(), location.sourceName(), location.lineNumber());
         } catch (Throwable t) {
           if (log.isErrorEnabled()) {
             log.error("", t);
