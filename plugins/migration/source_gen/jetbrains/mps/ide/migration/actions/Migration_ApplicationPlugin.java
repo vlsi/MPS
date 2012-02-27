@@ -20,11 +20,6 @@ public class Migration_ApplicationPlugin extends BaseApplicationPlugin {
   public void createGroups() {
     // actions w/o parameters 
     addAction(new AddMissingImportsInGlobalScope_Action());
-    addAction(new BuildAllBehaviors_Action());
-    addAction(new BuildAllConstraints_Action());
-    addAction(new BuildAllGenerators_Action());
-    addAction(new BuildAllLanguageDescriptors_Action());
-    addAction(new BuildAllStructures_Action());
     addAction(new FindDuplicatedStubs_Action());
     addAction(new FixModuleDependencies_Action());
     addAction(new LoadNonStubModels_Action());
@@ -32,7 +27,6 @@ public class Migration_ApplicationPlugin extends BaseApplicationPlugin {
     addAction(new Migration20_Action());
     addAction(new OptimizeImportsInGlobalScope_Action());
     addAction(new ReSaveAllModels_Action());
-    addAction(new RebuildRequiredModels_Action());
     addAction(new RemoveMPSClasspathDependencies_Action());
     addAction(new UpgradeModelPersistenceGlobally_Action());
     addAction(new UpgradeModelPersistenceInModel_Action());
@@ -41,7 +35,6 @@ public class Migration_ApplicationPlugin extends BaseApplicationPlugin {
     addAction(new UpgradePersistence_Action());
     // groups 
     addGroup(new InternalAddition_ActionGroup());
-    addGroup(new MakeAddition_ActionGroup());
     addGroup(new Migrations20_ActionGroup());
     addGroup(new PersistenceAddition_ActionGroup());
     addGroup(new ToolsAddition_ActionGroup());
@@ -49,7 +42,6 @@ public class Migration_ApplicationPlugin extends BaseApplicationPlugin {
 
   public void adjustRegularGroups() {
     insertGroupIntoAnother(InternalAddition_ActionGroup.ID, ToolsInternal_ActionGroup.ID, null);
-    insertGroupIntoAnother(MakeAddition_ActionGroup.ID, ToolsInternal_ActionGroup.ID, null);
     insertGroupIntoAnother(Migrations20_ActionGroup.ID, ToolsAddition_ActionGroup.ID, ToolsAddition_ActionGroup.LABEL_ID_migrationGroup);
     insertGroupIntoAnother(PersistenceAddition_ActionGroup.ID, Migrations20_ActionGroup.ID, null);
     insertGroupIntoAnother(ToolsAddition_ActionGroup.ID, Tools_ActionGroup.ID, Tools_ActionGroup.LABEL_ID_migration);

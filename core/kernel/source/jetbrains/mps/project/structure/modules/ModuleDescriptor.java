@@ -17,10 +17,7 @@ package jetbrains.mps.project.structure.modules;
 
 import jetbrains.mps.project.structure.model.ModelRoot;
 
-import java.util.Comparator;
-import java.util.HashSet;
-import java.util.Set;
-import java.util.TreeSet;
+import java.util.*;
 
 public class ModuleDescriptor {
   private static final ModuleReferenceComparator MODULE_REFERENCE_COMPARATOR = new ModuleReferenceComparator();
@@ -31,23 +28,23 @@ public class ModuleDescriptor {
   private String myTimestamp;
   private boolean myCompileInMPS = true;
 
-  private Set<jetbrains.mps.project.structure.model.ModelRoot> myModelRoots;
-  private Set<Dependency> myDependencies;
-  private Set<ModuleReference> myUsedLanguages;
-  private Set<ModuleReference> myUsedDevkits;
-  private Set<ModelRoot> myStubModels;
-  private Set<String> mySourcePaths;
+  private Collection<jetbrains.mps.project.structure.model.ModelRoot> myModelRoots;
+  private Collection<Dependency> myDependencies;
+  private Collection<ModuleReference> myUsedLanguages;
+  private Collection<ModuleReference> myUsedDevkits;
+  private Collection<ModelRoot> myStubModels;
+  private Collection<String> mySourcePaths;
   private DeploymentDescriptor myDeploymentDescriptor;
 
   private Throwable myLoadException;
 
   public ModuleDescriptor() {
-    myModelRoots = new HashSet<ModelRoot>();
+    myModelRoots = new LinkedHashSet<ModelRoot>();
     myDependencies = new TreeSet<Dependency>(DEPENDENCY_COMPARATOR);
     myUsedLanguages = new TreeSet<ModuleReference>(MODULE_REFERENCE_COMPARATOR);
     myUsedDevkits = new TreeSet<ModuleReference>(MODULE_REFERENCE_COMPARATOR);
-    myStubModels = new HashSet<ModelRoot>();
-    mySourcePaths = new HashSet<String>();
+    myStubModels = new LinkedHashSet<ModelRoot>();
+    mySourcePaths = new LinkedHashSet<String>();
   }
 
   public String getUUID() {
@@ -86,27 +83,27 @@ public class ModuleDescriptor {
     myCompileInMPS = compileInMPS;
   }
 
-  public Set<ModelRoot> getModelRoots() {
+  public Collection<ModelRoot> getModelRoots() {
     return myModelRoots;
   }
 
-  public Set<Dependency> getDependencies() {
+  public Collection<Dependency> getDependencies() {
     return myDependencies;
   }
 
-  public Set<ModuleReference> getUsedLanguages() {
+  public Collection<ModuleReference> getUsedLanguages() {
     return myUsedLanguages;
   }
 
-  public Set<ModuleReference> getUsedDevkits() {
+  public Collection<ModuleReference> getUsedDevkits() {
     return myUsedDevkits;
   }
 
-  public Set<ModelRoot> getStubModelEntries() {
+  public Collection<ModelRoot> getStubModelEntries() {
     return myStubModels;
   }
 
-  public Set<String> getSourcePaths() {
+  public Collection<String> getSourcePaths() {
     return mySourcePaths;
   }
 

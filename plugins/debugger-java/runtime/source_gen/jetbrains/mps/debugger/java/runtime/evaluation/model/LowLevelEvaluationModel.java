@@ -53,6 +53,7 @@ import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import com.sun.jdi.InvalidStackFrameException;
+import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import java.util.ArrayList;
 import com.intellij.openapi.extensions.PluginId;
 import com.intellij.ide.plugins.PluginManager;
@@ -343,7 +344,7 @@ public class LowLevelEvaluationModel extends AbstractEvaluationModel {
   @Override
   public List<Language> getRequiredLanguages() {
     SModelDescriptor descriptor = SNodeOperations.getModel(myEvaluationContext.getLocationNode()).getModelDescriptor();
-    return ListSequence.fromList(super.getRequiredLanguages()).union(SetSequence.fromSet(descriptor.getModule().getImplicitlyImportedLanguages(descriptor))).toListSequence();
+    return ListSequence.fromList(super.getRequiredLanguages()).union(CollectionSequence.fromCollection(descriptor.getModule().getImplicitlyImportedLanguages(descriptor))).toListSequence();
   }
 
   private boolean needUpdateVariables() {

@@ -7,8 +7,9 @@ import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.MPSModuleOwner;
+import java.util.Collection;
 import java.util.Set;
-import java.util.HashSet;
+import java.util.LinkedHashSet;
 import jetbrains.mps.smodel.SModelDescriptor;
 import java.util.List;
 import jetbrains.mps.project.structure.modules.Dependency;
@@ -51,16 +52,18 @@ public class TemporaryModelOwner extends AbstractModule {
     return null;
   }
 
-  public Set<ModuleReference> getUsedLanguagesReferences() {
-    Set<ModuleReference> result = new HashSet<ModuleReference>();
+  @Override
+  public Collection<ModuleReference> getUsedLanguagesReferences() {
+    Set<ModuleReference> result = new LinkedHashSet<ModuleReference>();
     for (SModelDescriptor md : getOwnModelDescriptors()) {
       result.addAll(md.getSModel().importedLanguages());
     }
     return result;
   }
 
-  public Set<ModuleReference> getUsedDevkitReferences() {
-    Set<ModuleReference> result = new HashSet<ModuleReference>();
+  @Override
+  public Collection<ModuleReference> getUsedDevkitReferences() {
+    Set<ModuleReference> result = new LinkedHashSet<ModuleReference>();
     for (SModelDescriptor md : getOwnModelDescriptors()) {
       result.addAll(md.getSModel().importedDevkits());
     }

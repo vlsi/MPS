@@ -21,7 +21,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.compiler.IClassesData;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import java.util.List;
+import java.util.Collection;
 import jetbrains.mps.smodel.BootstrapLanguages;
 import jetbrains.mps.ide.findusages.view.optionseditor.options.ScopeOptions;
 import javax.swing.JComponent;
@@ -71,7 +71,7 @@ public class FindInstancesDialog extends BaseDialog {
       }
     });
     if (module instanceof Language) {
-      final Wrappers._T<List<Language>> languageList = new Wrappers._T<List<Language>>();
+      final Wrappers._T<Collection<Language>> languageList = new Wrappers._T<Collection<Language>>();
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
           languageList.value = ((Language) module).getAllExtendedLanguages();

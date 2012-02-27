@@ -29,6 +29,7 @@ import gnu.trove.TByteObjectHashMap;
 import gnu.trove.decorator.TObjectIntHashMapDecorator;
 import gnu.trove.TObjectIntHashMap;
 import java.util.Collection;
+import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 
 public class Foo {
   public Foo() {
@@ -260,22 +261,22 @@ __switch__:
   }
 
   public static void collection() {
-    Collection<Integer> ci = ListSequence.fromList(new ArrayList<Integer>());
-    Sequence.fromIterable(ci).addElement(1);
-    Sequence.fromIterable(ci).removeElement(2);
-    Sequence.fromIterable(ci).removeSequence(null);
-    Sequence.fromIterable(ci).addSequence(Sequence.fromIterable(ci));
-    Sequence.fromIterable(ci).asUnmodifiable();
+    Collection<Integer> ci = CollectionSequence.fromCollection(new ArrayList<Integer>());
+    CollectionSequence.fromCollection(ci).addElement(1);
+    CollectionSequence.fromCollection(ci).removeElement(2);
+    CollectionSequence.fromCollection(ci).removeSequence(null);
+    CollectionSequence.fromCollection(ci).addSequence(CollectionSequence.fromCollection(ci));
+    CollectionSequence.fromCollection(ci).asUnmodifiable();
     Set<Integer> si = SetSequence.fromSet(new HashSet<Integer>());
     SetSequence.fromSet(si).addElement(1);
     SetSequence.fromSet(si).addElement(2);
     SetSequence.fromSet(si).removeElement(1);
-    SetSequence.fromSet(si).removeSequence(Sequence.fromIterable(ci));
-    SetSequence.fromSet(si).addSequence(Sequence.fromIterable(ci));
+    SetSequence.fromSet(si).removeSequence(CollectionSequence.fromCollection(ci));
+    SetSequence.fromSet(si).addSequence(CollectionSequence.fromCollection(ci));
     SetSequence.fromSet(si).asUnmodifiable();
     Set<Integer> is = SetSequence.fromSet(si).addSequence(SetSequence.fromSet(si));
     SetSequence.fromSet(si).addSequence(SetSequence.fromSet(si));
-    SetSequence.fromSet(si).removeSequence(Sequence.fromIterable(ci));
+    SetSequence.fromSet(si).removeSequence(CollectionSequence.fromCollection(ci));
     SetSequence.fromSet(si).removeSequence(SetSequence.fromSet(si));
     List<Integer> li = ListSequence.fromList(new ArrayList<Integer>());
     ListSequence.fromList(li).addElement(1);
@@ -285,7 +286,7 @@ __switch__:
     ci = si;
     Iterable<Integer> sqi = si;
     sqi = si;
-    Sequence.fromIterable(ci).addElement(2);
+    CollectionSequence.fromCollection(ci).addElement(2);
     Queue<Integer> qi = QueueSequence.fromQueue(new LinkedList<Integer>());
     QueueSequence.fromQueue(qi).removeElement(3);
     QueueSequence.fromQueue(qi).removeElement(1);

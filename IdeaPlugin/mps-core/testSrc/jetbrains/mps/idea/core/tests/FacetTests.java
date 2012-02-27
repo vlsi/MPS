@@ -124,7 +124,7 @@ public class FacetTests extends AbstractMPSFixtureTestCase {
 
         Solution repositorySolution = MPSModuleRepository.getInstance().getSolution(solutionReference);
         assertEquals(myFacet.getSolution(), repositorySolution);
-        Set<SModelRoot> modelRoots = repositorySolution.getSModelRoots();
+        Collection<SModelRoot> modelRoots = repositorySolution.getSModelRoots();
         assertEquals(1, modelRoots.size());
         SModelRoot theModelRoot = modelRoots.iterator().next();
         assertEquals(modelRootDir.getPath(), theModelRoot.getPath());
@@ -151,7 +151,7 @@ public class FacetTests extends AbstractMPSFixtureTestCase {
         myFacet.setConfiguration(configurationBean);
         flushEDT();
 
-        Set<ModuleReference> solutionUsedLanguageRefs = myFacet.getSolution().getUsedLanguagesReferences();
+        Collection<ModuleReference> solutionUsedLanguageRefs = myFacet.getSolution().getUsedLanguagesReferences();
         Set<Language> solutionUsedLanguages = new HashSet<Language>();
         for (ModuleReference solutionUsedLanguageRef : solutionUsedLanguageRefs) {
             solutionUsedLanguages.add(MPSModuleRepository.getInstance().getLanguage(solutionUsedLanguageRef));

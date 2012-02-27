@@ -666,6 +666,11 @@
       <property name="name" nameId="tpck.1169194664001" value="typeof_TestRemoveElementOperation" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="collection" />
     </node>
+    <node type="tpd4.SubtypingRule" typeId="tpd4.1175147670730" id="3070162689085490475">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="collection" />
+      <property name="name" nameId="tpck.1169194664001" value="supertypesOf_ClassifierType_Collection" />
+      <property name="isWeak" nameId="tpd4.1175607673137" value="true" />
+    </node>
   </roots>
   <root id="1178725704623">
     <node role="constructor" roleId="tpee.1068390468201" type="tpee.ConstructorDeclaration" typeId="tpee.1068580123140" id="7292875354317936745">
@@ -12324,6 +12329,36 @@
     <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="4073682006117732269">
       <property name="name" nameId="tpck.1169194664001" value="tro" />
       <link role="concept" roleId="tpd4.1174642800329" targetNodeId="tp2q.4073682006117732261" resolveInfo="TestRemoveElementOperation" />
+    </node>
+  </root>
+  <root id="3070162689085490475">
+    <node role="body" roleId="tpd4.1175147624276" type="tpee.StatementList" typeId="tpee.1068580123136" id="3070162689085490476">
+      <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="3070162689085490485">
+        <node role="expression" roleId="tpee.1068581517676" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="3070162689085490487">
+          <node role="quotedNode" roleId="tp3r.1196350785114" type="tp2q.CollectionType" typeId="tp2q.7125221305512719026" id="3070162689085490489">
+            <node role="elementType" roleId="tp2q.5686963296372573084" type="tpee.Type" typeId="tpee.1068431790189" id="3070162689085490493">
+              <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp3r.Antiquotation" typeId="tp3r.1196350785112" id="3070162689085490494">
+                <node role="expression" roleId="tp3r.1196350785111" type="tpd4.PatternVariableReference" typeId="tpd4.1174989242422" id="3070162689085490496">
+                  <link role="patternVarDecl" roleId="tpd4.1174989274720" targetNodeId="3070162689085490483" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.PatternCondition" typeId="tpd4.1174642900584" id="3070162689085490478">
+      <property name="name" nameId="tpck.1169194664001" value="ct" />
+      <node role="pattern" roleId="tpd4.1174642936809" type="tp3t.PatternExpression" typeId="tp3t.1136720037777" id="3070162689085490479">
+        <node role="patternNode" roleId="tp3t.1136720037778" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="3070162689085490481">
+          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="k7g3.~Collection" resolveInfo="Collection" />
+          <node role="parameter" roleId="tpee.1109201940907" type="tpee.Type" typeId="tpee.1068431790189" id="3070162689085490482">
+            <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp3t.PatternVariableDeclaration" typeId="tp3t.1136720037779" id="3070162689085490483">
+              <property name="varName" nameId="tp3t.1136720037780" value="ELEMENT" />
+            </node>
+          </node>
+        </node>
+      </node>
     </node>
   </root>
 </model>

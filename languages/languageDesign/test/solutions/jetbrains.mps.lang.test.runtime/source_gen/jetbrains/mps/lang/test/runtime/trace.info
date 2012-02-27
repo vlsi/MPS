@@ -420,7 +420,7 @@
     <nodeInfo nodeId="7633582661619656018" fileName="BaseEditorTestBody.java" startLine="106" startPosition="230" endLine="109" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="5180312817676884742" fileName="BaseEditorTestBody.java" startLine="116" startPosition="45" endLine="119" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="4840161274939429354" fileName="BaseEditorTestBody.java" startLine="134" startPosition="0" endLine="137" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testMethodImpl#()V" />
-    <nodeInfo nodeId="7633582661619344944" fileName="BaseEditorTestBody.java" startLine="148" startPosition="88" endLine="151" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7633582661619344944" fileName="BaseEditorTestBody.java" startLine="148" startPosition="100" endLine="151" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="7633582661619267287" fileName="BaseEditorTestBody.java" startLine="176" startPosition="25" endLine="179" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="5364632142688376165" fileName="BaseEditorTestBody.java" startLine="78" startPosition="133" endLine="82" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="7689133206188671184" fileName="BaseEditorTestBody.java" startLine="127" startPosition="51" endLine="131" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
@@ -492,7 +492,7 @@
       <varInfo nodeId="1225981838434" varName="editorManager" />
     </scopeInfo>
     <scopeInfo nodeId="4840161274939429354" fileName="BaseEditorTestBody.java" startLine="134" startPosition="0" endLine="137" endPosition="0" />
-    <scopeInfo nodeId="7633582661619344943" fileName="BaseEditorTestBody.java" startLine="148" startPosition="88" endLine="151" endPosition="15" />
+    <scopeInfo nodeId="7633582661619344943" fileName="BaseEditorTestBody.java" startLine="148" startPosition="100" endLine="151" endPosition="15" />
     <scopeInfo nodeId="1225983542397" fileName="BaseEditorTestBody.java" startLine="159" startPosition="88" endLine="162" endPosition="42">
       <varInfo nodeId="1225983619983" varName="context" />
       <varInfo nodeId="1225983619992" varName="opener" />

@@ -17,7 +17,7 @@ import java.util.List;
 import jetbrains.mps.project.structure.model.ModelRoot;
 import java.util.ArrayList;
 import java.util.Iterator;
-import jetbrains.mps.internal.collections.runtime.SetSequence;
+import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 
@@ -58,7 +58,7 @@ public class AddStubsToModelRoots_Action extends BaseAction {
         }
 
         List<ModelRoot> modelRoots = ListSequence.fromList(new ArrayList<ModelRoot>());
-        Iterator<ModelRoot> mr_it = SetSequence.fromSet(descriptor.getModelRoots()).iterator();
+        Iterator<ModelRoot> mr_it = CollectionSequence.fromCollection(descriptor.getModelRoots()).iterator();
         ModelRoot mr_var;
         while (mr_it.hasNext()) {
           mr_var = mr_it.next();
@@ -66,7 +66,7 @@ public class AddStubsToModelRoots_Action extends BaseAction {
             ListSequence.fromList(modelRoots).addElement(mr_var);
           }
         }
-        Iterator<ModelRoot> sm_it = SetSequence.fromSet(descriptor.getStubModelEntries()).iterator();
+        Iterator<ModelRoot> sm_it = CollectionSequence.fromCollection(descriptor.getStubModelEntries()).iterator();
         ModelRoot sm_var;
         while (sm_it.hasNext()) {
           sm_var = sm_it.next();

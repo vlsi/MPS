@@ -142,7 +142,7 @@ public class ConceptRegistry implements CoreComponent {
       try {
         LanguageRuntime languageRuntime = LanguageRegistry.getInstance().getLanguage(NameUtil.namespaceFromConceptFQName(fqName));
         if (languageRuntime == null) {
-          LOG.warning("No language for: " + fqName + ", while looking for behavior descriptor.");
+          LOG.warning("No language for: " + fqName + ", while looking for behavior descriptor.", new Throwable());
         } else {
           descriptor = languageRuntime.getBehaviorAspectDescriptor().getDescriptor(fqName);
         }
@@ -190,7 +190,7 @@ public class ConceptRegistry implements CoreComponent {
         ConstraintsAspectDescriptor constraintsAspectDescriptor;
         if (languageRuntime == null) {
           // Then language was just renamed and was not re-generated then it can happen that it has no
-          LOG.warning("No language for: " + fqName + ", while looking for constraints descriptor.");
+          LOG.warning("No language for: " + fqName + ", while looking for constraints descriptor.", new Throwable());
           constraintsAspectDescriptor = ConstraintsAspectInterpreted.getInstance();
         } else {
           constraintsAspectDescriptor = languageRuntime.getConstraintsAspectDescriptor();
