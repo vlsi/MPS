@@ -190,7 +190,12 @@ public class MPSCompiler2 implements SourceGeneratingCompiler{
             generatedModelFiles.addAll(modelsToMake);
 
             makeConfiguration.addConfiguredModels(modelsToMake);
-            makeConfiguration.addConfiguredModules(Collections.singletonList(new File(facet.getModule().getModuleFilePath())));
+          File moduleFile = new File(facet.getModule().getModuleFilePath());
+          if (!moduleFile.exists() || !moduleFile.isFile()) {
+            context.addMessage(CompilerMessageCategory.ERROR, "Module file not found. Save all files before compiling.", null, 0, 0);
+            return;
+          }
+          makeConfiguration.addConfiguredModules(Collections.singletonList(moduleFile));
         }
 
         final List<File> writtenFiles = new ArrayList<File>();
