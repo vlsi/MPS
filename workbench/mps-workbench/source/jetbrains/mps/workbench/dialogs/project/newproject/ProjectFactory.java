@@ -166,17 +166,7 @@ public class ProjectFactory {
     String descriptorPath = myOptions.getSolutionPath() + File.separator + descriptorFileName;
     IFile descriptorFile = FileSystem.getInstance().getFileByPath(descriptorPath);
 
-    Solution solution = Solution.createSolution(myOptions.getSolutionNamespace(), descriptorFile, mpsProject);
-    SolutionDescriptor solutionDescriptor = solution.getModuleDescriptor();
-
-    ModelRoot modelRoot = new ModelRoot();
-    modelRoot.setPath(descriptorFile.getParent().getPath());
-
-    solutionDescriptor.getModelRoots().add(modelRoot);
-
-    solution.setSolutionDescriptor(solutionDescriptor,false);
-
-    return solution;
+    return Solution.createSolution(myOptions.getSolutionNamespace(), descriptorFile, mpsProject);
   }
 
   private Language createNewLanguage(MPSProject mpsProject) {

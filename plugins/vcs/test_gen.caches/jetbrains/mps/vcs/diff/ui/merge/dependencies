@@ -30,11 +30,11 @@
     <classNode dependClassName="jetbrains.mps.smodel.persistence.def.ModelPersistence" />
     <classNode dependClassName="jetbrains.mps.smodel.persistence.def.ModelReadException" />
     <classNode dependClassName="jetbrains.mps.util.Computable" />
-    <classNode dependClassName="jetbrains.mps.vcs.MergeBackupUtil" />
-    <classNode dependClassName="jetbrains.mps.vcs.MergeVersion" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.ui.common.DiffModelTree" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.ui.common.SimpleDiffRequest" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.ui.merge.MergeModelsDialog" />
+    <classNode dependClassName="jetbrains.mps.vcs.util.MergeBackupUtil" />
+    <classNode dependClassName="jetbrains.mps.vcs.util.MergeVersion" />
     <classNode dependClassName="jetbrains.mps.vfs.FileSystem" />
     <classNode dependClassName="jetbrains.mps.vfs.IFile" />
     <classNode dependClassName="org.apache.commons.lang.StringUtils" />

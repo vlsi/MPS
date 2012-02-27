@@ -34,8 +34,6 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     addAction(new AnalyzeStacktrace_Action());
     addAction(new CloneModel_Action());
     addAction(new CloneRoot_Action());
-    addAction(new CollapseAll_Action());
-    addAction(new Collapse_Action());
     addAction(new CopyModelName_Action());
     addAction(new CopyModuleName_Action());
     addAction(new CopyNodeName_Action());
@@ -50,15 +48,13 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     addAction(new DeletePropertyAction_Action());
     addAction(new DeleteReferenceAction_Action());
     addAction(new EditNode_Action());
-    addAction(new ExpandAll_Action());
     addAction(new ExpandNode_Action());
-    addAction(new Expand_Action());
     addAction(new FastFindNodeUsages_Action());
+    addAction(new FindModelUsages_Action());
     addAction(new FindNext_Action());
     addAction(new FindPrevious_Action());
     addAction(new FindSpecificNodeUsages_Action());
     addAction(new Find_Action());
-    addAction(new FoldSelection_Action());
     addAction(new GoByCurrentReferenceToIDEA_Action());
     addAction(new GoToNode_Action());
     addAction(new GoToRule_Action());
@@ -124,7 +120,6 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     addGroup(new DevkitActions_ActionGroup());
     addGroup(new Edit_ActionGroup());
     addGroup(new EditorInternal_ActionGroup());
-    addGroup(new EditorLeftPanelMenu_ActionGroup());
     addGroup(new EditorPopupEx_ActionGroup());
     addGroup(new EditorPopupEx_Goto_ActionGroup());
     addGroup(new EditorPopup_Show_ActionGroup());
@@ -134,9 +129,9 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     addGroup(new Favorites_ActionGroup());
     addGroup(new FileActions_ActionGroup());
     addGroup(new FileSystemNewActions_ActionGroup());
+    addGroup(new FindModelUsages_ActionGroup());
     addGroup(new FindUsages_ActionGroup());
     addGroup(new FolderActions_ActionGroup());
-    addGroup(new Folding_ActionGroup());
     addGroup(new GeneratorActions_ActionGroup());
     addGroup(new GeneratorNewActions_ActionGroup());
     addGroup(new GoByReference_ActionGroup());
@@ -158,7 +153,6 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     addGroup(new NamespaceNewActions_ActionGroup());
     addGroup(new NodeActionsInternal_ActionGroup());
     addGroup(new NodeActions_ActionGroup());
-    addGroup(new NodeRefactoring_ActionGroup());
     addGroup(new PackageActions_ActionGroup());
     addGroup(new PackageNewActions_ActionGroup());
     addGroup(new PrintNodePosition_Addition_ActionGroup());
@@ -191,6 +185,7 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     insertInterfaceGroupIntoAnother("RunContextGroup", NodeActions_ActionGroup.ID, null);
     insertInterfaceGroupIntoAnother("RunContextGroup", ProjectActions_ActionGroup.ID, ProjectActions_ActionGroup.LABEL_ID_runConfig);
     insertInterfaceGroupIntoAnother("RunContextGroup", "jetbrains.mps.ide.editor.actions.EditorPopup_ActionGroup", null);
+    insertInterfaceGroupIntoAnother("jetbrains.mps.ide.platform.actions.NodeRefactoring_ActionGroup", NodeActions_ActionGroup.ID, NodeActions_ActionGroup.LABEL_ID_refactoring);
   }
 
   public void adjustRegularGroups() {
@@ -199,7 +194,6 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     insertGroupIntoAnother(Bookmarks_ActionGroup.ID, "EditMenu", null);
     insertGroupIntoAnother(Build_ActionGroup.ID, "BuildMenu", null);
     insertGroupIntoAnother(Edit_ActionGroup.ID, "IDE_Edit_ActionGrouptoplevel", null);
-    insertGroupIntoAnother(Folding_ActionGroup.ID, "EditorPopup_ActionGroupfolding", null);
     insertGroupIntoAnother(Goto_ActionGroup.ID, "GoToMenu", null);
     insertGroupIntoAnother(GoByReference_ActionGroup.ID, "GoToEditorPopupAddition_ActionGrouprefs", null);
     insertGroupIntoAnother(NodeActionsInternal_ActionGroup.ID, NodeActions_ActionGroup.ID, null);
@@ -216,7 +210,6 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     insertGroupIntoAnother(PackageNewActions_ActionGroup.ID, PackageActions_ActionGroup.ID, PackageActions_ActionGroup.LABEL_ID_newActions);
     insertGroupIntoAnother(ModelRefactoring_ActionGroup.ID, ModelActions_ActionGroup.ID, ModelActions_ActionGroup.LABEL_ID_refactoring);
     insertGroupIntoAnother(SolutionRefactoring_ActionGroup.ID, CommonModuleActions_ActionGroup.ID, CommonModuleActions_ActionGroup.LABEL_ID_refactoring);
-    insertGroupIntoAnother(NodeRefactoring_ActionGroup.ID, FindUsages_ActionGroup.ID, FindUsages_ActionGroup.LABEL_ID_refactoring);
     insertGroupIntoAnother(CreateRootNode_ActionGroup.ID, ModelNewActions_ActionGroup.ID, ModelNewActions_ActionGroup.LABEL_ID_newRoot);
     insertGroupIntoAnother(CreateRootNode_ActionGroup.ID, PackageNewActions_ActionGroup.ID, null);
     insertGroupIntoAnother(Tools_ActionGroup.ID, "ToolsMenu", null);
@@ -229,6 +222,7 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     insertGroupIntoAnother(EditorPopup_Show_ActionGroup.ID, "EditorPopup_ActionGroupshowIn", null);
     insertGroupIntoAnother(EditorPopupEx_ActionGroup.ID, "EditorPopup_ActionGroupnew", null);
     insertGroupIntoAnother(EditorPopupEx_Goto_ActionGroup.ID, "GoToEditorPopupAddition_ActionGroupother", null);
+    insertGroupIntoAnother(FindModelUsages_ActionGroup.ID, ModelActions_ActionGroup.ID, ModelActions_ActionGroup.LABEL_ID_modelUsages);
     insertGroupIntoAnother(AddToFavoritesGroup_ActionGroup.ID, FavoritesPopup_ActionGroup.ID, FavoritesPopup_ActionGroup.LABEL_ID_addToFavorites);
     insertGroupIntoAnother(Analyze_ActionGroup.ID, "AnalyzeMenu", null);
     insertGroupIntoAnother(CommonModuleActions_ActionGroup.ID, GeneratorActions_ActionGroup.ID, GeneratorActions_ActionGroup.LABEL_ID_commonModule);

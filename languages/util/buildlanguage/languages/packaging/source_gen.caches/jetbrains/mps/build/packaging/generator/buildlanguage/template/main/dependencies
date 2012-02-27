@@ -2,6 +2,7 @@
 <dependenciesRoot>
   <dependency className="jetbrains.mps.build.packaging.generator.buildlanguage.template.main.QueriesGenerated" file="QueriesGenerated.java">
     <classNode dependClassName="java.io.File" />
+    <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Comparable" />
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Integer" />

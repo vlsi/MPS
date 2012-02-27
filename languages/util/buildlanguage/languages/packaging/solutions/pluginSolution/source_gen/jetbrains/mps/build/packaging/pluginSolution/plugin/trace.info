@@ -1931,7 +1931,7 @@
     <nodeInfo nodeId="5487985028841940708" fileName="ModelStep.java" startLine="21" startPosition="65" endLine="24" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ModelStep#(Lcom/intellij/openapi/project/Project;Ljetbrains/mps/build/packaging/pluginSolution/plugin/AbstractBuildGenerator;Ljetbrains/mps/build/packaging/pluginSolution/plugin/IErrorHandler;)V" />
     <nodeInfo nodeId="5487985028841940873" fileName="ModelStep.java" startLine="71" startPosition="66" endLine="74" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="5487985028841940890" fileName="ModelStep.java" startLine="75" startPosition="92" endLine="78" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5487985028841940903" fileName="ModelStep.java" startLine="79" startPosition="86" endLine="82" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5487985028841940903" fileName="ModelStep.java" startLine="79" startPosition="100" endLine="82" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="5487985028841940960" fileName="ModelStep.java" startLine="105" startPosition="48" endLine="108" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="5487985028841940724" fileName="ModelStep.java" startLine="25" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setChecked#(Z)V" />
     <nodeInfo nodeId="5487985028841940737" fileName="ModelStep.java" startLine="29" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getChecked#()Z" />
@@ -1977,7 +1977,7 @@
       <varInfo nodeId="5487985028841940720" varName="handler" />
       <varInfo nodeId="5487985028841940716" varName="project" />
     </scopeInfo>
-    <scopeInfo nodeId="5487985028841940902" fileName="ModelStep.java" startLine="79" startPosition="86" endLine="82" endPosition="17" />
+    <scopeInfo nodeId="5487985028841940902" fileName="ModelStep.java" startLine="79" startPosition="100" endLine="82" endPosition="17" />
     <scopeInfo nodeId="5487985028841940724" fileName="ModelStep.java" startLine="25" startPosition="0" endLine="29" endPosition="0">
       <varInfo nodeId="5487985028841940727" varName="checked" />
     </scopeInfo>

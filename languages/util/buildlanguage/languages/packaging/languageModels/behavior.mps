@@ -3472,7 +3472,7 @@
                       </node>
                     </node>
                     <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="8177148268721488538">
-                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="vsqj.~AbstractModule%dgetStubPaths()%cjava%dutil%dSet" resolveInfo="getStubPaths" />
+                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="vsqj.~AbstractModule%dgetStubPaths()%cjava%dutil%dCollection" resolveInfo="getStubPaths" />
                     </node>
                   </node>
                 </node>
@@ -3539,8 +3539,9 @@
         <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="1480356222699429451">
           <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="1480356222699429452">
             <property name="name" nameId="tpck.1169194664001" value="paths" />
-            <node role="type" roleId="tpee.5680397130376446158" type="tp2q.SetType" typeId="tp2q.1226511727824" id="4497960860044796841">
-              <node role="elementType" roleId="tp2q.1226511765987" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="4497960860044796842">
+            <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5320408887897022133">
+              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="k7g3.~Collection" resolveInfo="Collection" />
+              <node role="parameter" roleId="tpee.1109201940907" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5320408887897022332">
                 <link role="classifier" roleId="tpee.1107535924139" targetNodeId="vsqj.~StubPath" resolveInfo="StubPath" />
               </node>
             </node>
@@ -3565,8 +3566,17 @@
                   <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4777659345279794559" resolveInfo="convertSeparators" />
                   <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="15744161390535929">
                     <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="15744161390535891">
-                      <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="4777659345279827137">
-                        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1480356222699429452" resolveInfo="paths" />
+                      <node role="operand" roleId="tpee.1197027771414" type="tpee.ParenthesizedExpression" typeId="tpee.1079359253375" id="5320408887897022361">
+                        <node role="expression" roleId="tpee.1079359253376" type="tpee.CastExpression" typeId="tpee.1070534934090" id="5320408887897022362">
+                          <node role="type" roleId="tpee.1070534934091" type="tp2q.CollectionType" typeId="tp2q.7125221305512719026" id="5320408887897022371">
+                            <node role="elementType" roleId="tp2q.5686963296372573084" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5320408887897022379">
+                              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="vsqj.~StubPath" resolveInfo="StubPath" />
+                            </node>
+                          </node>
+                          <node role="expression" roleId="tpee.1070534934092" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="5320408887897022364">
+                            <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1480356222699429452" resolveInfo="paths" />
+                          </node>
+                        </node>
                       </node>
                       <node role="operation" roleId="tpee.1197027833540" type="tp2q.WhereOperation" typeId="tp2q.1202120902084" id="15744161390535895">
                         <node role="closure" roleId="tp2q.1204796294226" type="tp2c.ClosureLiteral" typeId="tp2c.1199569711397" id="15744161390535896">
@@ -3669,7 +3679,7 @@
                     </node>
                   </node>
                   <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2739262311775160057">
-                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="vsqj.~AbstractModule%dgetSModelRoots()%cjava%dutil%dSet" resolveInfo="getSModelRoots" />
+                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="vsqj.~AbstractModule%dgetSModelRoots()%cjava%dutil%dCollection" resolveInfo="getSModelRoots" />
                   </node>
                 </node>
               </node>
@@ -3735,7 +3745,7 @@
                                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1175062284955672139" resolveInfo="it" />
                               </node>
                               <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1175062284955672147">
-                                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="vsqj.~AbstractModule%dgetSModelRoots()%cjava%dutil%dSet" resolveInfo="getSModelRoots" />
+                                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="vsqj.~AbstractModule%dgetSModelRoots()%cjava%dutil%dCollection" resolveInfo="getSModelRoots" />
                               </node>
                             </node>
                           </node>
@@ -3953,7 +3963,7 @@
                                 </node>
                               </node>
                               <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1480356222699429629">
-                                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cu2c.~Language%dgetRuntimeStubPaths()%cjava%dutil%dSet" resolveInfo="getRuntimeStubPaths" />
+                                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cu2c.~Language%dgetRuntimeStubPaths()%cjava%dutil%dCollection" resolveInfo="getRuntimeStubPaths" />
                               </node>
                             </node>
                           </node>
@@ -3998,7 +4008,7 @@
                       </node>
                     </node>
                     <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="264380905730924410">
-                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cu2c.~Language%dgetRuntimeModulesReferences()%cjava%dutil%dSet" resolveInfo="getRuntimeModulesReferences" />
+                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cu2c.~Language%dgetRuntimeModulesReferences()%cjava%dutil%dCollection" resolveInfo="getRuntimeModulesReferences" />
                     </node>
                   </node>
                   <node role="body" roleId="tpee.1154032183016" type="tpee.StatementList" typeId="tpee.1068580123136" id="264380905730923655">
@@ -4940,7 +4950,7 @@
       <property name="name" nameId="tpck.1169194664001" value="getClassPathExcludingIdea" />
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PrivateVisibility" typeId="tpee.1146644623116" id="2000252915626233692" />
       <node role="returnType" roleId="tpee.1068580123133" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2000252915626233693">
-        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="k7g3.~Set" resolveInfo="Set" />
+        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="k7g3.~Collection" resolveInfo="Collection" />
         <node role="parameter" roleId="tpee.1109201940907" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2000252915626233694">
           <link role="classifier" roleId="tpee.1107535924139" targetNodeId="vsqj.~StubPath" resolveInfo="StubPath" />
         </node>
@@ -4959,7 +4969,7 @@
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2000252915626233690" resolveInfo="module" />
               </node>
               <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2000252915626305100">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="vsqj.~AbstractModule%dgetStubPaths()%cjava%dutil%dSet" resolveInfo="getStubPaths" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="vsqj.~AbstractModule%dgetStubPaths()%cjava%dutil%dCollection" resolveInfo="getStubPaths" />
               </node>
             </node>
             <node role="condition" roleId="tpee.1163668914799" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2000252915626233709">
@@ -4975,7 +4985,7 @@
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2000252915626233690" resolveInfo="module" />
               </node>
               <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2000252915626233700">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="vsqj.~AbstractModule%dgetAllStubPaths()%cjava%dutil%dSet" resolveInfo="getAllStubPaths" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="vsqj.~AbstractModule%dgetAllStubPaths()%cjava%dutil%dCollection" resolveInfo="getAllStubPaths" />
               </node>
             </node>
           </node>

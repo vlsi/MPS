@@ -23,6 +23,7 @@
     <classNode dependClassName="java.util.TreeSet" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.CollectionSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.DequeSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISequenceClosure" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />

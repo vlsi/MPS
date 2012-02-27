@@ -31,7 +31,7 @@ public class PluginSolution_ApplicationPlugin extends BaseApplicationPlugin {
   }
 
   public void adjustRegularGroups() {
-    insertGroupIntoAnother(ShowAsIntentions_ActionGroup.ID, "ActionsAsIntentions", null);
+    insertGroupIntoAnother(ShowAsIntentions_ActionGroup.ID, "jetbrains.mps.ide.editor.actions.ActionsAsIntentions_ActionGroup", null);
     insertGroupIntoAnother(BehaviourPopup_ActionGroup.ID, "jetbrains.mps.ide.editor.actions.EditorPopup_ActionGroup", null);
     insertGroupIntoAnother(BehaviorCodeOverrideImplementMenuGroup_ActionGroup.ID, Code_ActionGroup.ID, Code_ActionGroup.LABEL_ID_overrideImplement);
   }

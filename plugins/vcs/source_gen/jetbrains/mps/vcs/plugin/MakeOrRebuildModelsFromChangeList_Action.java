@@ -10,6 +10,7 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import java.util.List;
 import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.vcs.platform.actions.VcsActionsUtil;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.make.IMakeService;

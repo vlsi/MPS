@@ -15,7 +15,7 @@ import jetbrains.mps.util.Condition;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.project.SModelRoot;
-import jetbrains.mps.internal.collections.runtime.SetSequence;
+import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class ModelStep extends TwoOptionsStep<SModelDescriptor> {
@@ -76,7 +76,7 @@ public class ModelStep extends TwoOptionsStep<SModelDescriptor> {
               if (modelFile == null) {
                 return false;
               }
-              for (SModelRoot root : SetSequence.fromSet(solution.getSModelRoots())) {
+              for (SModelRoot root : CollectionSequence.fromCollection(solution.getSModelRoots())) {
                 if (modelFile.getPath().startsWith(root.getPath())) {
                   return true;
                 }

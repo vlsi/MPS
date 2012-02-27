@@ -119,6 +119,7 @@
     <classNode dependClassName="jetbrains.mps.ide.ui.MPSTreeNode" />
     <classNode dependClassName="jetbrains.mps.ide.ui.treeMessages.TreeMessage" />
     <classNode dependClassName="jetbrains.mps.ide.vfs.VirtualFileUtils" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.CollectionSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IVisitor" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />

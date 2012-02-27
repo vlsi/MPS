@@ -8,8 +8,8 @@
   <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="cllol0k6uon23imzi3i8ftyndeqrkqk" />
   <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" hash="-3g2jui8rirnxhruh8t7p7qk3adnr3f9" />
   <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="do4uh4fd3dqp1s55v9l4e6fg8bob2ht" />
-  <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="-d6gktujerh7kvr1llych0hnevxuxpuy" />
-  <dep model="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)" hash="-aq7se6ad6cff3znlzuwjmj55hkfnntx" />
+  <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="-z9apu2jgvnwo2rksn2wr6ei9vh9scw" />
+  <dep model="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)" hash="-9uox200f79kg280dd3xzxbsmty1n1q2" />
   <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" hash="-emft066258aq93gaz2a92o9hgdjvvc4" />
   <dep model="r:00000000-0000-4000-0000-011c89590580(jetbrains.mps.baseLanguage.logging.generator.baseLanguage.template.main@generator)" hash="-4f29bsebzf4thz56vqxm63bzjl2mgg7" />
   <dep model="r:10bf3684-5fb2-4fa0-9dd9-1d05589df2e9(jetbrains.mps.xmlQuery.runtime)" hash="4wkk9xwdxlhyc1ticmdue5mfawqr8q2" />

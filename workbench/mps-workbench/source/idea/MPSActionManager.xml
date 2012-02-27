@@ -154,9 +154,6 @@
       <action id="ConsoleView.Copy" class="com.intellij.execution.impl.ConsoleViewImpl$CopyAction"/>
     </group>
 
-    <group id="ActionsAsIntentions" popup="true">
-    </group>
-
     <action id="Find" class="com.intellij.openapi.editor.actions.IncrementalFindAction" icon="/actions/menu-find.png"/>
     <action id="Replace" class="com.intellij.openapi.editor.actions.ReplaceAction" icon="/actions/menu-replace.png"/>
     <action id="FindNext" class="com.intellij.ide.actions.SearchAgainAction"/>

@@ -18,7 +18,7 @@ import java.util.List;
 import java.io.File;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import jetbrains.mps.internal.collections.runtime.SetSequence;
+import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import jetbrains.mps.ide.java.parser.JavaCompiler;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.ide.java.util.StubResolver;
@@ -82,7 +82,7 @@ public class MigrateSourcesToMPS_Action extends BaseAction {
       }
 
       List<File> sourcePaths = ListSequence.fromList(new ArrayList<File>());
-      for (String path : SetSequence.fromSet(moduleDescr.getSourcePaths())) {
+      for (String path : CollectionSequence.fromCollection(moduleDescr.getSourcePaths())) {
         ListSequence.fromList(sourcePaths).addElement(new File(path));
       }
       JavaCompiler javaCompiler = new JavaCompiler(((IOperationContext) MapSequence.fromMap(_params).get("context")), ((IModule) MapSequence.fromMap(_params).get("module")), sourcePaths, false);

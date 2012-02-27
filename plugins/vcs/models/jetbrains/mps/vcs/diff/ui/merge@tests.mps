@@ -16,20 +16,21 @@
   <import index="e2lb" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(java.lang@java_stub)" version="-1" />
   <import index="9it7" modelUID="f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#com.intellij.openapi.extensions(MPS.Workbench/com.intellij.openapi.extensions@java_stub)" version="-1" />
   <import index="hxfr" modelUID="f:java_stub#920eaa0e-ecca-46bc-bee7-4e5c59213dd6#jetbrains.mps(Testbench/jetbrains.mps@java_stub)" version="-1" />
-  <import index="zwkq" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#org.jdom(org.jdom@java_stub)" version="-1" implicit="yes" />
+  <import index="fylj" modelUID="f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#com.intellij.openapi(com.intellij.openapi@java_stub)" version="-1" />
+  <import index="f4j" modelUID="f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#com.intellij.mock(com.intellij.mock@java_stub)" version="-1" />
+  <import index="rfkh" modelUID="f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#jetbrains.mps.ide.bookmark(jetbrains.mps.ide.bookmark@java_stub)" version="-1" />
+  <import index="fxg7" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(java.io@java_stub)" version="-1" />
+  <import index="cu2c" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" version="-1" />
+  <import index="59et" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.vfs(jetbrains.mps.vfs@java_stub)" version="-1" />
+  <import index="ur19" modelUID="r:d58d9938-2526-431c-a5fe-6bbbfeb64ac2(jetbrains.mps.vcs.util)" version="-1" />
+  <import index="dbrf" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#javax.swing(javax.swing@java_stub)" version="-1" />
+  <import index="xqpa" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang.reflect(java.lang.reflect@java_stub)" version="-1" />
+  <import index="xn28" modelUID="f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#com.intellij.idea(com.intellij.idea@java_stub)" version="-1" />
+  <import index="lq3" modelUID="f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#com.intellij.openapi.ui(MPS.Workbench/com.intellij.openapi.ui@java_stub)" version="-1" />
+  <import index="zwkq" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#org.jdom(org.jdom@java_stub)" version="-1" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="-1" implicit="yes" />
-  <import index="dbrf" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#javax.swing(javax.swing@java_stub)" version="-1" implicit="yes" />
-  <import index="cu2c" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" version="-1" implicit="yes" />
-  <import index="rfkh" modelUID="f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#jetbrains.mps.ide.bookmark(jetbrains.mps.ide.bookmark@java_stub)" version="-1" implicit="yes" />
-  <import index="xn28" modelUID="f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#com.intellij.idea(com.intellij.idea@java_stub)" version="-1" implicit="yes" />
-  <import index="fxg7" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(java.io@java_stub)" version="-1" implicit="yes" />
-  <import index="xqpa" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang.reflect(java.lang.reflect@java_stub)" version="-1" implicit="yes" />
-  <import index="fylj" modelUID="f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#com.intellij.openapi(com.intellij.openapi@java_stub)" version="-1" implicit="yes" />
-  <import index="f4j" modelUID="f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#com.intellij.mock(com.intellij.mock@java_stub)" version="-1" implicit="yes" />
-  <import index="59et" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.vfs(jetbrains.mps.vfs@java_stub)" version="-1" implicit="yes" />
   <import index="tp2c" modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="3" implicit="yes" />
-  <import index="lq3" modelUID="f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#com.intellij.openapi.ui(MPS.Workbench/com.intellij.openapi.ui@java_stub)" version="-1" implicit="yes" />
   <roots>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="7314351270975557769">
       <property name="abstractClass" nameId="tpee.1075300953594" value="false" />
@@ -624,8 +625,8 @@
                   </node>
                 </node>
                 <node role="initializer" roleId="tpee.1068431790190" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="7314351270975601928">
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="rtk5.1619763311840993428" resolveInfo="loadZippedModels" />
-                  <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="rtk5.7184641355071650417" resolveInfo="MergeBackupUtil" />
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ur19.3531370237489972691" resolveInfo="loadZippedModels" />
+                  <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="ur19.3531370237489972135" resolveInfo="MergeBackupUtil" />
                   <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="7314351270975557967">
                     <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="7314351270975557968">
                       <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="fxg7.~File%d&lt;init&gt;(java%dlang%dString)" resolveInfo="File" />
@@ -640,7 +641,7 @@
                     </node>
                   </node>
                   <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.EnumValuesExpression" typeId="tpee.1224573963862" id="7314351270975601946">
-                    <link role="enumClass" roleId="tpee.1224573974191" targetNodeId="rtk5.4340499048742530936" resolveInfo="MergeVersion" />
+                    <link role="enumClass" roleId="tpee.1224573974191" targetNodeId="ur19.3531370237490043789" resolveInfo="MergeVersion" />
                   </node>
                 </node>
               </node>
@@ -784,7 +785,7 @@
                     <property name="name" nameId="tpck.1169194664001" value="dialog" />
                     <property name="isFinal" nameId="tpee.1176718929932" value="false" />
                     <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="6358648183276601696">
-                      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="wenr.708166622413807476" resolveInfo="MergeModelsDialogNew" />
+                      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="wenr.708166622413807476" resolveInfo="MergeModelsDialog" />
                     </node>
                     <node role="initializer" roleId="tpee.1068431790190" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7314351270975558038">
                       <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="7314351270975558039">
@@ -798,7 +799,7 @@
                             <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="7314351270975609503">
                               <node role="expression" roleId="tpee.1068580123156" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="7314351270975609504">
                                 <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="7314351270975609505">
-                                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="wenr.708166622413807578" resolveInfo="MergeModelsDialogNew" />
+                                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="wenr.708166622413807578" resolveInfo="MergeModelsDialog" />
                                   <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ArrayAccessExpression" typeId="tpee.1173175405605" id="7314351270975609506">
                                     <node role="array" roleId="tpee.1173175590490" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="7314351270975609507">
                                       <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7314351270975557853" resolveInfo="models" />

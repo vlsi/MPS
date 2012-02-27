@@ -1,18 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <solution name="jetbrains.mps.ide.vcs" uuid="b0d98700-54f0-4c39-a8e0-bb27733b8b38" compileInMPS="false">
   <models>
-    <modelRoot path="${mps_home}/plugins/git4idea/lib/git4idea.jar">
-      <manager moduleId="f3061a53-9226-4cc5-a443-f952ceaf5816" className="jetbrains.mps.baseLanguage.stubs.JavaStubs" />
-    </modelRoot>
-    <modelRoot path="${mps_home}/plugins/svn4ideaOld/lib/sequence-library.jar">
-      <manager moduleId="f3061a53-9226-4cc5-a443-f952ceaf5816" className="jetbrains.mps.baseLanguage.stubs.JavaStubs" />
-    </modelRoot>
-    <modelRoot path="${mps_home}/plugins/svn4ideaOld/lib/svn4ideaOld.jar">
-      <manager moduleId="f3061a53-9226-4cc5-a443-f952ceaf5816" className="jetbrains.mps.baseLanguage.stubs.JavaStubs" />
-    </modelRoot>
-    <modelRoot path="${mps_home}/plugins/svn4ideaOld/lib/svnkit.jar">
-      <manager moduleId="f3061a53-9226-4cc5-a443-f952ceaf5816" className="jetbrains.mps.baseLanguage.stubs.JavaStubs" />
-    </modelRoot>
     <modelRoot path="${solution_descriptor}/models" />
   </models>
   <sourcePath />
@@ -25,6 +13,7 @@
     <dependency reexport="false">985c8c6a-64b4-486d-a91e-7d4112742556(jetbrains.mps.baseLanguage#1129914002933)</dependency>
     <dependency reexport="false">83f155ff-422c-4b5a-a2f2-b459302dd215(jetbrains.mps.baseLanguage.unitTest.libs)</dependency>
     <dependency reexport="false">019b622b-0aef-4dd3-86d0-4eef01f3f6bb(jetbrains.mps.ide)</dependency>
+    <dependency reexport="false">5b1f863d-65a0-41a6-a801-33896be24202(jetbrains.mps.ide.editor)</dependency>
     <dependency reexport="false">8f6725be-608d-433b-98fd-844f816eb05f(jetbrains.mps.ide.make)</dependency>
     <dependency reexport="false">8d29d73f-ed99-4652-ae0a-083cdfe53c34(jetbrains.mps.ide.platform)</dependency>
     <dependency reexport="false">6fd1293f-7f65-4ffd-99dc-4719eca7c171(jetbrains.mps.ide.vcs.platform)</dependency>
@@ -47,7 +36,6 @@
     <usedLanguage>f61473f9-130f-42f6-b98d-6c438812c2f6(jetbrains.mps.baseLanguage.unitTest)</usedLanguage>
     <usedLanguage>28f9e497-3b42-4291-aeba-0a1039153ab1(jetbrains.mps.lang.plugin)</usedLanguage>
     <usedLanguage>7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.lang.smodel)</usedLanguage>
-    <usedLanguage>774bf8a0-62e5-41e1-af63-f4812e60e48b(jetbrains.mps.baseLanguage.checkedDots)</usedLanguage>
   </usedLanguages>
 </solution>
 

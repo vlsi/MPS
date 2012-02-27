@@ -5,7 +5,6 @@
   <language namespace="28f9e497-3b42-4291-aeba-0a1039153ab1(jetbrains.mps.lang.plugin)" />
   <language namespace="64d34fcd-ad02-4e73-aff8-a581124c2e30(jetbrains.mps.lang.findUsages)" />
   <language namespace="774bf8a0-62e5-41e1-af63-f4812e60e48b(jetbrains.mps.baseLanguage.checkedDots)" />
-  <language namespace="443f4c36-fcf5-4eb6-9500-8d06ed259e3e(jetbrains.mps.baseLanguage.classifiers)" />
   <devkit namespace="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   <import index="tpce" modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
   <import index="tpci" modelUID="r:00000000-0000-4000-0000-011c8959028e(jetbrains.mps.lang.structure.findUsages)" version="-1" />
@@ -14,12 +13,9 @@
   <import index="tpcn" modelUID="r:00000000-0000-4000-0000-011c8959028b(jetbrains.mps.lang.structure.behavior)" version="-1" />
   <import index="k7g3" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(java.util@java_stub)" version="-1" />
   <import index="e2lb" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(java.lang@java_stub)" version="-1" />
-  <import index="dbrf" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#javax.swing(javax.swing@java_stub)" version="-1" />
-  <import index="osf5" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#javax.swing.tree(javax.swing.tree@java_stub)" version="-1" />
   <import index="ge2m" modelUID="r:bd8551c6-e2e3-4499-a261-45b0c886d1d1(jetbrains.mps.refactoring.framework)" version="-1" />
   <import index="5fm0" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.ide.findusages.model(MPS.Core/jetbrains.mps.ide.findusages.model@java_stub)" version="-1" />
   <import index="vsqj" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.project(MPS.Core/jetbrains.mps.project@java_stub)" version="-1" />
-  <import index="176a" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.refactoring.framework(MPS.Core/jetbrains.mps.refactoring.framework@java_stub)" version="-1" />
   <import index="cu2c" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)" version="-1" />
   <import index="kqhl" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.project.structure.modules(MPS.Core/jetbrains.mps.project.structure.modules@java_stub)" version="-1" />
   <import index="tp2c" modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="3" implicit="yes" />
@@ -196,8 +192,8 @@
               </node>
               <node role="inputSequence" roleId="tp2q.1153944424730" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1347577327951781595">
                 <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1347577327951781596">
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="176a.~RefactoringUtil%dgetLanguageAndItsExtendingLanguageModels(jetbrains%dmps%dproject%dProject,jetbrains%dmps%dsmodel%dLanguage)%cjava%dutil%dMap" resolveInfo="getLanguageAndItsExtendingLanguageModels" />
-                  <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="176a.~RefactoringUtil" resolveInfo="RefactoringUtil" />
+                  <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="ge2m.4792031542972804837" resolveInfo="RefactoringUtil" />
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ge2m.4792031542972805414" resolveInfo="getLanguageAndItsExtendingLanguageModels" />
                   <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1347577327951781597">
                     <node role="operand" roleId="tpee.1197027771414" type="tp1h.RefactoringContext_ConceptFunctionParameter" typeId="tp1h.7953996722066256458" id="1347577327951781598" />
                     <node role="operation" roleId="tpee.1197027833540" type="tp1h.MainProjectOperation" typeId="tp1h.8113680833395644310" id="8113680833395857487" />
@@ -396,8 +392,8 @@
               </node>
             </node>
             <node role="initializer" roleId="tpee.1068431790190" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1347577327951781727">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="176a.~RefactoringUtil%dgetLanguageAndItsExtendingLanguageModels(jetbrains%dmps%dproject%dProject,jetbrains%dmps%dsmodel%dLanguage)%cjava%dutil%dMap" resolveInfo="getLanguageAndItsExtendingLanguageModels" />
-              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="176a.~RefactoringUtil" resolveInfo="RefactoringUtil" />
+              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="ge2m.4792031542972804837" resolveInfo="RefactoringUtil" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ge2m.4792031542972805414" resolveInfo="getLanguageAndItsExtendingLanguageModels" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1347577327951781728">
                 <node role="operand" roleId="tpee.1197027771414" type="tp1h.RefactoringContext_ConceptFunctionParameter" typeId="tp1h.7953996722066256458" id="1347577327951781729" />
                 <node role="operation" roleId="tpee.1197027833540" type="tp1h.MainProjectOperation" typeId="tp1h.8113680833395644310" id="8113680833395857488" />
@@ -620,8 +616,8 @@
               </node>
             </node>
             <node role="initializer" roleId="tpee.1068431790190" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1347577327951781869">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="176a.~RefactoringUtil%dgetLanguageAndItsExtendingLanguageModels(jetbrains%dmps%dproject%dProject,jetbrains%dmps%dsmodel%dLanguage)%cjava%dutil%dMap" resolveInfo="getLanguageAndItsExtendingLanguageModels" />
-              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="176a.~RefactoringUtil" resolveInfo="RefactoringUtil" />
+              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="ge2m.4792031542972804837" resolveInfo="RefactoringUtil" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ge2m.4792031542972805414" resolveInfo="getLanguageAndItsExtendingLanguageModels" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1347577327951781870">
                 <node role="operand" roleId="tpee.1197027771414" type="tp1h.RefactoringContext_ConceptFunctionParameter" typeId="tp1h.7953996722066256458" id="1347577327951781871" />
                 <node role="operation" roleId="tpee.1197027833540" type="tp1h.MainProjectOperation" typeId="tp1h.8113680833395644310" id="8113680833395857489" />
@@ -2320,13 +2316,13 @@
                     </node>
                   </node>
                 </node>
-                <node role="initializer" roleId="tpee.1068431790190" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="3068114543317980598">
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="176a.~RefactoringUtil%dgetLanguageAndItsExtendingLanguageModels(jetbrains%dmps%dproject%dProject,jetbrains%dmps%dsmodel%dLanguage)%cjava%dutil%dMap" resolveInfo="getLanguageAndItsExtendingLanguageModels" />
-                  <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="176a.~RefactoringUtil" resolveInfo="RefactoringUtil" />
-                  <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="3068114543317980599">
+                <node role="initializer" roleId="tpee.1068431790190" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="4930770434913632382">
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ge2m.4792031542972805414" resolveInfo="getLanguageAndItsExtendingLanguageModels" />
+                  <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="ge2m.4792031542972804837" resolveInfo="RefactoringUtil" />
+                  <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="4930770434913632383">
                     <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3068114543317980571" resolveInfo="project" />
                   </node>
-                  <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="3068114543317980600">
+                  <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="4930770434913632384">
                     <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3068114543317980579" resolveInfo="sourceLanguage" />
                   </node>
                 </node>
@@ -2414,13 +2410,13 @@
                     </node>
                   </node>
                 </node>
-                <node role="initializer" roleId="tpee.1068431790190" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="3068114543317980636">
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="176a.~RefactoringUtil%dgetLanguageAndItsExtendingLanguageModels(jetbrains%dmps%dproject%dProject,jetbrains%dmps%dsmodel%dLanguage)%cjava%dutil%dMap" resolveInfo="getLanguageAndItsExtendingLanguageModels" />
-                  <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="176a.~RefactoringUtil" resolveInfo="RefactoringUtil" />
-                  <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="3068114543317980637">
+                <node role="initializer" roleId="tpee.1068431790190" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="4930770434913632385">
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ge2m.4792031542972805414" resolveInfo="getLanguageAndItsExtendingLanguageModels" />
+                  <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="ge2m.4792031542972804837" resolveInfo="RefactoringUtil" />
+                  <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="4930770434913632386">
                     <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3068114543317980571" resolveInfo="project" />
                   </node>
-                  <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="3068114543317980638">
+                  <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="4930770434913632387">
                     <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3068114543317980619" resolveInfo="targetLanguage" />
                   </node>
                 </node>

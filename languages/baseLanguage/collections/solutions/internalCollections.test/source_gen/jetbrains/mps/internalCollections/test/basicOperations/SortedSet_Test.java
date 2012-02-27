@@ -12,6 +12,7 @@ import java.util.Comparator;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.util.Collection;
 import jetbrains.mps.internal.collections.runtime.IterableUtils;
+import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 
@@ -60,9 +61,9 @@ public class SortedSet_Test extends Util_Test {
   public void test_collection() throws Exception {
     SortedSet<String> ts = SortedSetSequence.fromSetAndArray(new TreeSet<String>(), "a", "b");
     Collection<String> cs = ts;
-    Assert.assertEquals("a b", IterableUtils.join(Sequence.fromIterable(cs), " "));
+    Assert.assertEquals("a b", IterableUtils.join(CollectionSequence.fromCollection(cs), " "));
     SortedSetSequence.fromSet(ts).addElement("c");
-    Assert.assertEquals("a b c", IterableUtils.join(Sequence.fromIterable(cs), " "));
+    Assert.assertEquals("a b c", IterableUtils.join(CollectionSequence.fromCollection(cs), " "));
   }
 
   public void test_unmodifiable() throws Exception {

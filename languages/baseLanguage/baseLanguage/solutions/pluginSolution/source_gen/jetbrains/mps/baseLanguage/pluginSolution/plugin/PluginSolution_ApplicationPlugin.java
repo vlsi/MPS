@@ -6,7 +6,6 @@ import jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin;
 import com.intellij.openapi.extensions.PluginId;
 import jetbrains.mps.lang.intentions.pluginSolution.plugin.GenerationActions_ActionGroup;
 import jetbrains.mps.ide.actions.ModelActionsInternal_ActionGroup;
-import jetbrains.mps.ide.actions.NodeRefactoring_ActionGroup;
 import jetbrains.mps.ide.actions.NodeActionsInternal_ActionGroup;
 import jetbrains.mps.ide.actions.Tools_ActionGroup;
 import jetbrains.mps.lang.dataFlow.pluginSolution.plugin.DFAActions_ActionGroup;
@@ -78,15 +77,15 @@ public class PluginSolution_ApplicationPlugin extends BaseApplicationPlugin {
   public void adjustRegularGroups() {
     insertGroupIntoAnother(GenerateActions_ActionGroup.ID, GenerationActions_ActionGroup.ID, null);
     insertGroupIntoAnother(BaseLanguageModelActionsInternal_ActionGroup.ID, ModelActionsInternal_ActionGroup.ID, null);
-    insertGroupIntoAnother(RefactoringAddition_ActionGroup.ID, NodeRefactoring_ActionGroup.ID, null);
+    insertGroupIntoAnother(RefactoringAddition_ActionGroup.ID, "jetbrains.mps.ide.platform.actions.NodeRefactoring_ActionGroup", null);
     insertGroupIntoAnother(BaseLanguageEditorPopup_ActionGroup.ID, "jetbrains.mps.ide.editor.actions.EditorPopup_ActionGroup", null);
     insertGroupIntoAnother(BaseLanguageNodeActionsInternal_ActionGroup.ID, NodeActionsInternal_ActionGroup.ID, null);
     insertGroupIntoAnother(BaseLanguageToolsAddition_ActionGroup.ID, Tools_ActionGroup.ID, Tools_ActionGroup.LABEL_ID_customTools);
     insertGroupIntoAnother(AnalyzersActions_ActionGroup.ID, DFAActions_ActionGroup.ID, null);
     insertGroupIntoAnother(BaseLangugeCodeOverrideImplementMenuGroup_ActionGroup.ID, Code_ActionGroup.ID, Code_ActionGroup.LABEL_ID_overrideImplement);
     insertGroupIntoAnother(BaseLangaugeCodeCommentsMenuGroup_ActionGroup.ID, Code_ActionGroup.ID, Code_ActionGroup.LABEL_ID_comments);
-    insertGroupIntoAnother(RefactoringAdditions_ActionGroup.ID, NodeRefactoring_ActionGroup.ID, null);
-    insertGroupIntoAnother(ShowAsIntentions_ActionGroup.ID, "ActionsAsIntentions", null);
+    insertGroupIntoAnother(RefactoringAdditions_ActionGroup.ID, "jetbrains.mps.ide.platform.actions.NodeRefactoring_ActionGroup", null);
+    insertGroupIntoAnother(ShowAsIntentions_ActionGroup.ID, "jetbrains.mps.ide.editor.actions.ActionsAsIntentions_ActionGroup", null);
   }
 
   public List<BaseKeymapChanges> initKeymaps() {

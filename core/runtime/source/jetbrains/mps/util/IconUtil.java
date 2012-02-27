@@ -27,6 +27,8 @@ import java.net.URL;
 /**
  * @author Evgeny Gerashchenko
  * @since 1/13/12
+ *
+ * TODO FIXME remove "this" from core-runtime, move to mps-platform
  */
 public class IconUtil {
   @Nullable
