@@ -24,6 +24,7 @@ import com.intellij.psi.PsiManager;
 import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
 import jetbrains.mps.generator.traceInfo.TraceInfoCache;
 import jetbrains.mps.generator.traceInfo.TraceInfoUtil;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SNode;
@@ -40,6 +41,7 @@ import org.jetbrains.annotations.Nullable;
  * some stuff as: node, psi file.
  */
 public class GeneratedSourcePosition {
+    public static final String UNIT_CONCEPT = "jetbrains.mps.lang.traceable.structure.UnitConcept";
     private final String myTypeName;
     private final String myFileName;
     private final int myLineNumber;
@@ -116,6 +118,6 @@ public class GeneratedSourcePosition {
         TraceablePositionInfo position = debugInfo.getPositionForNode(node.getSNodeId().toString());
         if (position == null) return null;
 
-        return new GeneratedSourcePosition(TraceInfoUtil.getUnitName(node.getContainingRoot()), position.getFileName(), position.getStartLine());
+        return new GeneratedSourcePosition(debugInfo.getUnitNameForLine(position.getFileName(), position.getStartLine()), position.getFileName(), position.getStartLine());
     }
 }

@@ -18,6 +18,7 @@ package jetbrains.mps.idea.debugger.breakpoints;
 
 import com.intellij.debugger.SourcePosition;
 import com.intellij.debugger.engine.JVMNameUtil;
+import com.intellij.debugger.engine.TopLevelParentClassProvider;
 import com.intellij.debugger.ui.breakpoints.BreakpointWithHighlighter;
 import com.intellij.psi.PsiClass;
 import com.intellij.psi.util.PsiUtil;
@@ -26,6 +27,8 @@ import jetbrains.mps.generator.traceInfo.TraceInfoUtil;
 import jetbrains.mps.idea.debugger.GeneratedSourcePosition;
 import jetbrains.mps.smodel.SNode;
 import org.jetbrains.annotations.Nullable;
+
+import java.util.Arrays;
 
 /*package private*/ class BreakpointPainter extends BreakpointPainterEx<BreakpointWithHighlighter> {
     public BreakpointPainter(BreakpointWithHighlighter breakpoint) {
@@ -44,7 +47,11 @@ import org.jetbrains.annotations.Nullable;
         String className = null;
         PsiClass psiClass = JVMNameUtil.getClassAt(sourcePosition);
         if (PsiUtil.isLocalOrAnonymousClass(psiClass)) {
-            // todo
+            PsiClass parentClass = TopLevelParentClassProvider.getTopLevelParentClass(psiClass);
+            if (parentClass == null) {
+                return null;
+            }
+            className = JVMNameUtil.getNonAnonymousClassName(parentClass);
         } else {
             className = JVMNameUtil.getNonAnonymousClassName(psiClass);
         }
