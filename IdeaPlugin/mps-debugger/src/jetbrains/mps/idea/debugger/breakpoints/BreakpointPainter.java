@@ -19,6 +19,8 @@ package jetbrains.mps.idea.debugger.breakpoints;
 import com.intellij.debugger.SourcePosition;
 import com.intellij.debugger.engine.JVMNameUtil;
 import com.intellij.debugger.ui.breakpoints.BreakpointWithHighlighter;
+import com.intellij.psi.PsiClass;
+import com.intellij.psi.util.PsiUtil;
 import jetbrains.mps.debugger.core.breakpoints.BreakpointPainterEx;
 import jetbrains.mps.generator.traceInfo.TraceInfoUtil;
 import jetbrains.mps.idea.debugger.GeneratedSourcePosition;
@@ -38,9 +40,13 @@ import org.jetbrains.annotations.Nullable;
     @Nullable
     public static SNode getNodeForBreakpoint(BreakpointWithHighlighter breakpoint) {
         SourcePosition sourcePosition = breakpoint.getSourcePosition();
-        String className = breakpoint.getClassName();
-        if (className == null) {
-            className = JVMNameUtil.getSourcePositionClassDisplayName(null, sourcePosition);
+
+        String className = null;
+        PsiClass psiClass = JVMNameUtil.getClassAt(sourcePosition);
+        if (PsiUtil.isLocalOrAnonymousClass(psiClass)) {
+            // todo
+        } else {
+            className = JVMNameUtil.getNonAnonymousClassName(psiClass);
         }
         if (className == null) return null;
         return new GeneratedSourcePosition(className, sourcePosition.getFile().getName(), breakpoint.getLineIndex() + 1).getNode();
