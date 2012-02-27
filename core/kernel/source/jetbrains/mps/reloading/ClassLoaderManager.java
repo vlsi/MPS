@@ -127,14 +127,6 @@ public class ClassLoaderManager implements CoreComponent {
       LanguageRegistry.getInstance().reloadLanguages();
       monitor.advance(1);
 
-      monitor.step("Reloading classes...");
-      callListeners(new ListenerCaller() {
-        public void call(ReloadListener l) {
-          l.load();
-        }
-      });
-      monitor.advance(1);
-
       monitor.step("Rebuilding ui...");
       callListeners(new ListenerCaller() {
         public void call(ReloadListener l) {
