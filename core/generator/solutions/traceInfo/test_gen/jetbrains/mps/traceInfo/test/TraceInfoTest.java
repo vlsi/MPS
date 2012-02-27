@@ -82,7 +82,7 @@ public class TraceInfoTest {
       method.invoke();
     } catch (Throwable t) {
       StackTraceElement stackTraceElement = t.getStackTrace()[0];
-      SNode node = TraceInfoUtil.getNode(stackTraceElement.getClassName(), stackTraceElement.getFileName(), stackTraceElement.getLineNumber());
+      SNode node = TraceInfoUtil.getJavaNode(stackTraceElement.getClassName(), stackTraceElement.getFileName(), stackTraceElement.getLineNumber());
       // <node> 
       return node;
     }

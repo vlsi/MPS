@@ -64,7 +64,7 @@ public class GeneratedSourcePosition {
 
     @Nullable
     public SNode getNode() {
-        return TraceInfoUtil.getNode(myTypeName, myFileName, myLineNumber);
+        return TraceInfoUtil.getJavaNode(myTypeName, myFileName, myLineNumber);
     }
 
     @Nullable
