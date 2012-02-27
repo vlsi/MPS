@@ -38,11 +38,6 @@ import java.util.concurrent.CopyOnWriteArrayList;
 
 public class ClassLoaderManager implements CoreComponent {
   private static final Logger LOG = Logger.getLogger(ClassLoaderManager.class);
-  private ReloadAdapter myReloadHandler = new ReloadAdapter() {
-    public void unload() {
-      myRepository.invalidateCaches();
-    }
-  };
 
   private static ClassLoaderManager INSTANCE;
 
@@ -54,10 +49,9 @@ public class ClassLoaderManager implements CoreComponent {
 
   private final Object myLock = new Object();
   private RuntimeEnvironment<ModuleReference> myRuntimeEnvironment;
-  private MPSModuleRepository myRepository;
 
-  public ClassLoaderManager(MPSModuleRepository repository) {
-    myRepository = repository;
+  public ClassLoaderManager() {
+
   }
 
   public void init() {
@@ -66,11 +60,9 @@ public class ClassLoaderManager implements CoreComponent {
     }
     INSTANCE = this;
 
-    addReloadHandler(myReloadHandler);
   }
 
   public void dispose() {
-    removeReloadHandler(myReloadHandler);
     INSTANCE = null;
   }
 
@@ -115,14 +107,10 @@ public class ClassLoaderManager implements CoreComponent {
   public void reloadAll(@NotNull ProgressMonitor monitor) {
     LOG.assertCanWrite();
 
-    monitor.start("Reloading classes...", 7);
+    monitor.start("Reloading classes...", 6);
     try {
       monitor.step("Updating classpath...");
       updateClassPath();
-      monitor.advance(1);
-
-      monitor.step("Refreshing models...");
-      SModelRepository.getInstance().refreshModels();
       monitor.advance(1);
 
       monitor.step("Updating stub models...");
@@ -182,13 +170,14 @@ public class ClassLoaderManager implements CoreComponent {
   }
 
   public void updateClassPath() {
+    MPSModuleRepository repo = MPSModuleRepository.getInstance();
     synchronized (myLock) {
       if (myRuntimeEnvironment == null) {
         myRuntimeEnvironment = createRuntimeEnvironment();
       }
 
       Set<ModuleReference> added = new HashSet<ModuleReference>();
-      for (IModule m : myRepository.getAllModules()) {
+      for (IModule m : repo.getAllModules()) {
         boolean containsBundle;
         synchronized (myLock) {
           containsBundle = myRuntimeEnvironment.get(m.getModuleReference()) != null;
@@ -200,7 +189,7 @@ public class ClassLoaderManager implements CoreComponent {
         }
       }
 
-      for (IModule m : myRepository.getAllModules()) {
+      for (IModule m : repo.getAllModules()) {
         RBundle<ModuleReference> b = myRuntimeEnvironment.get(m.getModuleReference());
         assert b != null : "There is no budle for module " + m.getModuleFqName();
         b.clearDependencies();
@@ -218,7 +207,7 @@ public class ClassLoaderManager implements CoreComponent {
 
       List<RBundle> toRemove = new ArrayList<RBundle>();
       for (RBundle<ModuleReference> b : myRuntimeEnvironment.getBundles()) {
-        if (myRepository.getModule(b.getId()) == null) {
+        if (repo.getModule(b.getId()) == null) {
           toRemove.add(b);
         }
       }
@@ -232,7 +221,7 @@ public class ClassLoaderManager implements CoreComponent {
 
   private void addModule(ModuleReference ref) {
     synchronized (myLock) {
-      IModule module = myRepository.getModule(ref);
+      IModule module = MPSModuleRepository.getInstance().getModule(ref);
 
       if (module == null) {
         throw new RuntimeException("Can't find module : " + ref.getModuleFqName());
