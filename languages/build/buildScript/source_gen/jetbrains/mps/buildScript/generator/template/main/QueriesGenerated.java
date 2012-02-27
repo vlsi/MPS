@@ -12,21 +12,20 @@ import jetbrains.mps.buildScript.behavior.BuildLayout_NamedContainer_Behavior;
 import jetbrains.mps.buildScript.behavior.BuildSourcePath_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.internal.collections.runtime.ILeftCombinator;
-import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.buildScript.behavior.BuildString_Behavior;
 import jetbrains.mps.buildScript.behavior.BuildSource_JavaModule_Behavior;
 import jetbrains.mps.buildScript.behavior.BuildProject_Behavior;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.generator.template.IfMacroContext;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import jetbrains.mps.generator.template.MappingScriptContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.buildScript.util.GenerationUtil;
-import jetbrains.mps.buildScript.behavior.BuildStringPart_Behavior;
 
 public class QueriesGenerated {
   public static boolean baseMappingRule_Condition_5248329904288166450(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
@@ -106,14 +105,10 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_8237269006869516510(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    if (ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "value", true)).isNotEmpty()) {
-      return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "value", true)).foldLeft("", new ILeftCombinator<SNode, String>() {
-        public String combine(String s, SNode it) {
-          return s + check_x583g4_a0a0a0a0a0a81(it);
-        }
-      });
-    }
-    return SPropertyOperations.getString(_context.getNode(), "name").toUpperCase();
+    return ((SLinkOperations.getTarget(_context.getNode(), "value", true) == null) ?
+      "" :
+      BuildString_Behavior.call_getText_4380385936562005550(SLinkOperations.getTarget(_context.getNode(), "value", true))
+    );
   }
 
   public static Object propertyMacro_GetPropertyValue_8237269006869516519(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -121,7 +116,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_6420586245471622081(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "value", true)).isEmpty();
+    return (SLinkOperations.getTarget(_context.getNode(), "value", true) == null);
   }
 
   public static Object propertyMacro_GetPropertyValue_8237269006869525279(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -411,12 +406,5 @@ public class QueriesGenerated {
     for (SNode buildProject : ListSequence.fromList(SModelOperations.getRoots(_context.getModel(), "jetbrains.mps.buildScript.structure.BuildProject"))) {
       buildProject.putUserObject(GenerationUtil.SCRIPTS_DIR_PROPERTY, BuildProject_Behavior.call_getScriptsPath_4796668409958419284(buildProject, Context.defaulContext(_context)));
     }
-  }
-
-  private static String check_x583g4_a0a0a0a0a0a81(SNode checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return BuildStringPart_Behavior.call_getText_4380385936562037054(checkedDotOperand);
-    }
-    return null;
   }
 }

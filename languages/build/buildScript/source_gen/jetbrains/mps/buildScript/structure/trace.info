@@ -288,53 +288,38 @@
     <unitInfo nodeId="3542413272732750877" fileName="BuildAspect.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.buildScript.structure.BuildAspect" />
   </root>
   <root nodeId="3767587139141066978">
-    <nodeInfo nodeId="3767587139141066978" fileName="BuildVariableMacro.java" startLine="12" startPosition="52" endLine="13" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
-    <nodeInfo nodeId="3767587139141066978" fileName="BuildVariableMacro.java" startLine="13" startPosition="96" endLine="14" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="VALUE" />
-    <nodeInfo nodeId="3767587139141066978" fileName="BuildVariableMacro.java" startLine="16" startPosition="41" endLine="17" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="3767587139141066978" fileName="BuildVariableMacro.java" startLine="20" startPosition="31" endLine="21" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3767587139141066978" fileName="BuildVariableMacro.java" startLine="24" startPosition="45" endLine="25" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3767587139141066978" fileName="BuildVariableMacro.java" startLine="28" startPosition="44" endLine="29" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3767587139141066978" fileName="BuildVariableMacro.java" startLine="32" startPosition="46" endLine="33" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3767587139141066978" fileName="BuildVariableMacro.java" startLine="36" startPosition="71" endLine="37" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3767587139141066978" fileName="BuildVariableMacro.java" startLine="40" startPosition="73" endLine="41" endPosition="185" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3767587139141066978" fileName="BuildVariableMacro.java" startLine="44" startPosition="59" endLine="45" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3767587139141066978" fileName="BuildVariableMacro.java" startLine="15" startPosition="0" endLine="18" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="BuildVariableMacro#(Ljetbrains/mps/smodel/SNode;)V" />
-    <nodeInfo nodeId="3767587139141066978" fileName="BuildVariableMacro.java" startLine="19" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getValuesCount#()I" />
-    <nodeInfo nodeId="3767587139141066978" fileName="BuildVariableMacro.java" startLine="23" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="values#()Ljava/util/Iterator;" />
-    <nodeInfo nodeId="3767587139141066978" fileName="BuildVariableMacro.java" startLine="27" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getValues#()Ljava/util/List;" />
-    <nodeInfo nodeId="3767587139141066978" fileName="BuildVariableMacro.java" startLine="31" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addValue#(Ljetbrains/mps/smodel/INodeAdapter;)V" />
-    <nodeInfo nodeId="3767587139141066978" fileName="BuildVariableMacro.java" startLine="35" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="insertValue#(Ljetbrains/mps/smodel/INodeAdapter;Ljetbrains/mps/smodel/INodeAdapter;)V" />
-    <nodeInfo nodeId="3767587139141066978" fileName="BuildVariableMacro.java" startLine="39" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="newInstance#(Ljetbrains/mps/smodel/SModel;Z)Ljetbrains/mps/buildScript/structure/BuildVariableMacro;" />
-    <nodeInfo nodeId="3767587139141066978" fileName="BuildVariableMacro.java" startLine="43" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="newInstance#(Ljetbrains/mps/smodel/SModel;)Ljetbrains/mps/buildScript/structure/BuildVariableMacro;" />
-    <scopeInfo nodeId="3767587139141066978" fileName="BuildVariableMacro.java" startLine="16" startPosition="41" endLine="17" endPosition="16" />
-    <scopeInfo nodeId="3767587139141066978" fileName="BuildVariableMacro.java" startLine="20" startPosition="31" endLine="21" endPosition="56" />
-    <scopeInfo nodeId="3767587139141066978" fileName="BuildVariableMacro.java" startLine="24" startPosition="45" endLine="25" endPosition="74" />
-    <scopeInfo nodeId="3767587139141066978" fileName="BuildVariableMacro.java" startLine="28" startPosition="44" endLine="29" endPosition="77" />
-    <scopeInfo nodeId="3767587139141066978" fileName="BuildVariableMacro.java" startLine="32" startPosition="46" endLine="33" endPosition="50" />
-    <scopeInfo nodeId="3767587139141066978" fileName="BuildVariableMacro.java" startLine="36" startPosition="71" endLine="37" endPosition="59" />
-    <scopeInfo nodeId="3767587139141066978" fileName="BuildVariableMacro.java" startLine="40" startPosition="73" endLine="41" endPosition="185" />
-    <scopeInfo nodeId="3767587139141066978" fileName="BuildVariableMacro.java" startLine="44" startPosition="59" endLine="45" endPosition="53" />
-    <scopeInfo nodeId="3767587139141066978" fileName="BuildVariableMacro.java" startLine="15" startPosition="0" endLine="18" endPosition="3">
+    <nodeInfo nodeId="3767587139141066978" fileName="BuildVariableMacro.java" startLine="10" startPosition="52" endLine="11" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
+    <nodeInfo nodeId="3767587139141066978" fileName="BuildVariableMacro.java" startLine="11" startPosition="96" endLine="12" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="VALUE" />
+    <nodeInfo nodeId="3767587139141066978" fileName="BuildVariableMacro.java" startLine="14" startPosition="41" endLine="15" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="3767587139141066978" fileName="BuildVariableMacro.java" startLine="18" startPosition="33" endLine="19" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3767587139141066978" fileName="BuildVariableMacro.java" startLine="22" startPosition="42" endLine="23" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3767587139141066978" fileName="BuildVariableMacro.java" startLine="26" startPosition="73" endLine="27" endPosition="185" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3767587139141066978" fileName="BuildVariableMacro.java" startLine="30" startPosition="59" endLine="31" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3767587139141066978" fileName="BuildVariableMacro.java" startLine="13" startPosition="0" endLine="16" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="BuildVariableMacro#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="3767587139141066978" fileName="BuildVariableMacro.java" startLine="17" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getValue#()Ljetbrains/mps/smodel/INodeAdapter;" />
+    <nodeInfo nodeId="3767587139141066978" fileName="BuildVariableMacro.java" startLine="21" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setValue#(Ljetbrains/mps/smodel/INodeAdapter;)V" />
+    <nodeInfo nodeId="3767587139141066978" fileName="BuildVariableMacro.java" startLine="25" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="newInstance#(Ljetbrains/mps/smodel/SModel;Z)Ljetbrains/mps/buildScript/structure/BuildVariableMacro;" />
+    <nodeInfo nodeId="3767587139141066978" fileName="BuildVariableMacro.java" startLine="29" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="newInstance#(Ljetbrains/mps/smodel/SModel;)Ljetbrains/mps/buildScript/structure/BuildVariableMacro;" />
+    <scopeInfo nodeId="3767587139141066978" fileName="BuildVariableMacro.java" startLine="14" startPosition="41" endLine="15" endPosition="16" />
+    <scopeInfo nodeId="3767587139141066978" fileName="BuildVariableMacro.java" startLine="18" startPosition="33" endLine="19" endPosition="84" />
+    <scopeInfo nodeId="3767587139141066978" fileName="BuildVariableMacro.java" startLine="22" startPosition="42" endLine="23" endPosition="51" />
+    <scopeInfo nodeId="3767587139141066978" fileName="BuildVariableMacro.java" startLine="26" startPosition="73" endLine="27" endPosition="185" />
+    <scopeInfo nodeId="3767587139141066978" fileName="BuildVariableMacro.java" startLine="30" startPosition="59" endLine="31" endPosition="53" />
+    <scopeInfo nodeId="3767587139141066978" fileName="BuildVariableMacro.java" startLine="13" startPosition="0" endLine="16" endPosition="3">
       <varInfo nodeId="3767587139141066978" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="3767587139141066978" fileName="BuildVariableMacro.java" startLine="19" startPosition="0" endLine="23" endPosition="0" />
-    <scopeInfo nodeId="3767587139141066978" fileName="BuildVariableMacro.java" startLine="23" startPosition="0" endLine="27" endPosition="0" />
-    <scopeInfo nodeId="3767587139141066978" fileName="BuildVariableMacro.java" startLine="27" startPosition="0" endLine="31" endPosition="0" />
-    <scopeInfo nodeId="3767587139141066978" fileName="BuildVariableMacro.java" startLine="31" startPosition="0" endLine="35" endPosition="0">
+    <scopeInfo nodeId="3767587139141066978" fileName="BuildVariableMacro.java" startLine="17" startPosition="0" endLine="21" endPosition="0" />
+    <scopeInfo nodeId="3767587139141066978" fileName="BuildVariableMacro.java" startLine="21" startPosition="0" endLine="25" endPosition="0">
       <varInfo nodeId="3767587139141066978" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="3767587139141066978" fileName="BuildVariableMacro.java" startLine="35" startPosition="0" endLine="39" endPosition="0">
-      <varInfo nodeId="3767587139141066978" varName="node" />
-      <varInfo nodeId="3767587139141066978" varName="prev" />
-    </scopeInfo>
-    <scopeInfo nodeId="3767587139141066978" fileName="BuildVariableMacro.java" startLine="39" startPosition="0" endLine="43" endPosition="0">
+    <scopeInfo nodeId="3767587139141066978" fileName="BuildVariableMacro.java" startLine="25" startPosition="0" endLine="29" endPosition="0">
       <varInfo nodeId="3767587139141066978" varName="init" />
       <varInfo nodeId="3767587139141066978" varName="sm" />
     </scopeInfo>
-    <scopeInfo nodeId="3767587139141066978" fileName="BuildVariableMacro.java" startLine="43" startPosition="0" endLine="47" endPosition="0">
+    <scopeInfo nodeId="3767587139141066978" fileName="BuildVariableMacro.java" startLine="29" startPosition="0" endLine="33" endPosition="0">
       <varInfo nodeId="3767587139141066978" varName="sm" />
     </scopeInfo>
-    <unitInfo nodeId="3767587139141066978" fileName="BuildVariableMacro.java" startLine="12" startPosition="0" endLine="48" endPosition="0" unitName="jetbrains.mps.buildScript.structure.BuildVariableMacro" />
+    <unitInfo nodeId="3767587139141066978" fileName="BuildVariableMacro.java" startLine="10" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.buildScript.structure.BuildVariableMacro" />
   </root>
   <root nodeId="4380385936562003279">
     <nodeInfo nodeId="4380385936562003279" fileName="BuildString.java" startLine="13" startPosition="46" endLine="14" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />

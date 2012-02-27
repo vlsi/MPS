@@ -61,5 +61,49 @@ public class buildScriptMigration_MigrationScript extends BaseMigrationScript {
         return false;
       }
     });
+    this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
+      public String getName() {
+        return "wow2";
+      }
+
+      public String getAdditionalInfo() {
+        return "wow2";
+      }
+
+      public String getFqNameOfConceptToSearchInstances() {
+        return "jetbrains.mps.buildScript.structure.BuildVariableMacro";
+      }
+
+      public boolean isApplicableInstanceNode(SNode node) {
+        return ListSequence.fromList(SNodeOperations.getChildren(node)).any(new IWhereFilter<SNode>() {
+          public boolean accept(SNode it) {
+            return SNodeOperations.isInstanceOf(it, "jetbrains.mps.buildScript.structure.BuildStringPart");
+          }
+        });
+      }
+
+      public void doUpdateInstanceNode(final SNode node) {
+        Iterable<SNode> seq = ListSequence.fromList(SNodeOperations.getChildren(node)).where(new IWhereFilter<SNode>() {
+          public boolean accept(SNode it) {
+            return SNodeOperations.isInstanceOf(it, "jetbrains.mps.buildScript.structure.BuildStringPart");
+          }
+        }).select(new ISelector<SNode, SNode>() {
+          public SNode select(SNode it) {
+            return SNodeOperations.cast(it, "jetbrains.mps.buildScript.structure.BuildStringPart");
+          }
+        }).toListSequence();
+        Sequence.fromIterable(seq).visitAll(new IVisitor<SNode>() {
+          public void visit(SNode it) {
+            node.removeChild(it);
+          }
+        });
+        SLinkOperations.setNewChild(node, "value", "jetbrains.mps.buildScript.structure.BuildString");
+        ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "value", true), "parts", true)).addSequence(Sequence.fromIterable(seq));
+      }
+
+      public boolean isShowAsIntention() {
+        return false;
+      }
+    });
   }
 }

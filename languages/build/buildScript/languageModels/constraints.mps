@@ -68,6 +68,11 @@
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Macro" />
       <link role="concept" roleId="tp1t.1213093996982" targetNodeId="3ior.3767587139141066978" resolveInfo="BuildVariableMacro" />
     </node>
+    <node type="tp1t.ConceptConstraints" typeId="tp1t.1213093968558" id="4380385936562359245">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Names" />
+      <link role="concept" roleId="tp1t.1213093996982" targetNodeId="3ior.4903714810883702015" resolveInfo="BuildStringPart" />
+      <link role="defaultConcreteConcept" roleId="tp1t.1213106917431" targetNodeId="3ior.4903714810883702019" resolveInfo="BuildTextStringPart" />
+    </node>
   </roots>
   <root id="7389400916848182167">
     <node role="referent" roleId="tp1t.1213100494875" type="tp1t.NodeReferentConstraint" typeId="tp1t.1148687176410" id="7389400916848182168">
@@ -301,7 +306,7 @@
                 </node>
               </node>
               <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="4380385936562211635">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="vbkb.4380385936562005550" resolveInfo="getName" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="vbkb.4380385936562005550" resolveInfo="getText" />
               </node>
             </node>
           </node>
@@ -340,5 +345,6 @@
       </node>
     </node>
   </root>
+  <root id="4380385936562359245" />
 </model>
 

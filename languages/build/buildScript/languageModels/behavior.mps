@@ -1982,7 +1982,7 @@
   </root>
   <root id="4380385936562003287">
     <node role="method" roleId="1i04.1225194240805" type="1i04.ConceptMethodDeclaration" typeId="1i04.1225194472830" id="4380385936562005550">
-      <property name="name" nameId="tpck.1169194664001" value="getName" />
+      <property name="name" nameId="tpck.1169194664001" value="getText" />
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="4380385936562005551" />
       <node role="returnType" roleId="tpee.1068580123133" type="tpee.StringType" typeId="tpee.1225271177708" id="4380385936562034056" />
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="4380385936562005553">

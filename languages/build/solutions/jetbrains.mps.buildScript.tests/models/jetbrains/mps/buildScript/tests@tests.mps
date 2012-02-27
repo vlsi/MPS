@@ -1038,13 +1038,15 @@
         </node>
         <node role="macros" roleId="3ior.5617550519002745378" type="3ior.BuildVariableMacro" typeId="3ior.3767587139141066978" id="384280137912153736">
           <property name="name" nameId="tpck.1169194664001" value="MPS" />
-          <node role="value" roleId="3ior.6420586245471595686" type="3ior.BuildTextStringPart" typeId="3ior.4903714810883702019" id="384280137912153738">
-            <property name="text" nameId="3ior.4903714810883755350" value="MPS-" />
-          </node>
-          <node role="value" roleId="3ior.6420586245471595686" type="3ior.BuildVarRefStringPart" typeId="3ior.4903714810883702017" id="384280137912153739">
-            <link role="macro" roleId="3ior.4903714810883702018" targetNodeId="384280137912153734" resolveInfo="build.number" />
-            <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="384280137912153740">
-              <property name="name" nameId="tpck.1169194664001" value="referenceVariable" />
+          <node role="value" roleId="3ior.4380385936562281299" type="3ior.BuildString" typeId="3ior.4380385936562003279" id="4380385936562316095">
+            <node role="parts" roleId="3ior.4903714810883783243" type="3ior.BuildTextStringPart" typeId="3ior.4903714810883702019" id="384280137912153738">
+              <property name="text" nameId="3ior.4903714810883755350" value="MPS-" />
+            </node>
+            <node role="parts" roleId="3ior.4903714810883783243" type="3ior.BuildVarRefStringPart" typeId="3ior.4903714810883702017" id="384280137912153739">
+              <link role="macro" roleId="3ior.4903714810883702018" targetNodeId="384280137912153734" resolveInfo="build.number" />
+              <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="384280137912153740">
+                <property name="name" nameId="tpck.1169194664001" value="referenceVariable" />
+              </node>
             </node>
           </node>
         </node>
@@ -1062,12 +1064,14 @@
         <node role="layout" roleId="3ior.5617550519002745372" type="3ior.BuildLayout" typeId="3ior.5617550519002745364" id="384280137912153750" />
         <node role="macros" roleId="3ior.5617550519002745378" type="3ior.BuildVariableMacro" typeId="3ior.3767587139141066978" id="384280137912153751">
           <property name="name" nameId="tpck.1169194664001" value="forward" />
-          <node role="value" roleId="3ior.6420586245471595686" type="3ior.BuildTextStringPart" typeId="3ior.4903714810883702019" id="384280137912153757">
-            <property name="text" nameId="3ior.4903714810883755350" value="blabla" />
-          </node>
-          <node role="value" roleId="3ior.6420586245471595686" type="3ior.BuildVarRefStringPart" typeId="3ior.4903714810883702017" id="384280137912153758">
-            <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="384280137912153759">
-              <property name="name" nameId="tpck.1169194664001" value="forwardReference" />
+          <node role="value" roleId="3ior.4380385936562281299" type="3ior.BuildString" typeId="3ior.4380385936562003279" id="4380385936562316094">
+            <node role="parts" roleId="3ior.4903714810883783243" type="3ior.BuildTextStringPart" typeId="3ior.4903714810883702019" id="384280137912153757">
+              <property name="text" nameId="3ior.4903714810883755350" value="blabla" />
+            </node>
+            <node role="parts" roleId="3ior.4903714810883783243" type="3ior.BuildVarRefStringPart" typeId="3ior.4903714810883702017" id="384280137912153758">
+              <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="384280137912153759">
+                <property name="name" nameId="tpck.1169194664001" value="forwardReference" />
+              </node>
             </node>
           </node>
         </node>
@@ -1079,12 +1083,14 @@
         </node>
         <node role="macros" roleId="3ior.5617550519002745378" type="3ior.BuildVariableMacro" typeId="3ior.3767587139141066978" id="384280137912153755">
           <property name="name" nameId="tpck.1169194664001" value="backward" />
-          <node role="value" roleId="3ior.6420586245471595686" type="3ior.BuildTextStringPart" typeId="3ior.4903714810883702019" id="384280137912153761">
-            <property name="text" nameId="3ior.4903714810883755350" value="blabla" />
-          </node>
-          <node role="value" roleId="3ior.6420586245471595686" type="3ior.BuildVarRefStringPart" typeId="3ior.4903714810883702017" id="384280137912153762">
-            <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="384280137912153763">
-              <property name="name" nameId="tpck.1169194664001" value="backwardReference" />
+          <node role="value" roleId="3ior.4380385936562281299" type="3ior.BuildString" typeId="3ior.4380385936562003279" id="4380385936562316096">
+            <node role="parts" roleId="3ior.4903714810883783243" type="3ior.BuildTextStringPart" typeId="3ior.4903714810883702019" id="384280137912153761">
+              <property name="text" nameId="3ior.4903714810883755350" value="blabla" />
+            </node>
+            <node role="parts" roleId="3ior.4903714810883783243" type="3ior.BuildVarRefStringPart" typeId="3ior.4903714810883702017" id="384280137912153762">
+              <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="384280137912153763">
+                <property name="name" nameId="tpck.1169194664001" value="backwardReference" />
+              </node>
             </node>
           </node>
         </node>
