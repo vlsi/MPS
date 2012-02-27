@@ -84,11 +84,7 @@ public class ExtensionRegistry extends BaseExtensionRegistry implements CoreComp
   public void loadExtensionDescriptors() {
     if (!myInitialLoadHappened.compareAndSet(false, true)) return;
 
-    ModelAccess.instance().runWriteAction(new Runnable() {
-      public void run() {
-        reloadExtensionDescriptors();
-      }
-    });
+    reloadExtensionDescriptors();
   }
 
   public void reloadExtensionDescriptors() {
@@ -102,17 +98,17 @@ public class ExtensionRegistry extends BaseExtensionRegistry implements CoreComp
     Set<IModule> existing = new HashSet<IModule>(myModuleToNamespace.keySet());
     for (IModule mod : MPSModuleRepository.getInstance().getAllModules()) {
       String namespace = mod.getModuleFqName();
-      if (!myExtensionDescriptors.containsKey(namespace)) {
-        existing.remove(mod);
-        ExtensionDescriptor desc = findExtensionDescriptor(mod);
-        if (desc != null) {
-          myModuleToNamespace.put(mod, namespace);
-          myExtensionDescriptors.put(namespace, desc);
-          registerExtensionDescriptor(desc);
-        }
-      } else {
-        // duplicate module, ignore
-      }
+
+      // duplicate module, ignore
+      if (myExtensionDescriptors.containsKey(namespace)) continue;
+
+      existing.remove(mod);
+      ExtensionDescriptor desc = findExtensionDescriptor(mod);
+      if (desc == null) continue;
+
+      myModuleToNamespace.put(mod, namespace);
+      myExtensionDescriptors.put(namespace, desc);
+      registerExtensionDescriptor(desc);
     }
     for (IModule mod : existing) {
       myModuleToNamespace.remove(mod);
