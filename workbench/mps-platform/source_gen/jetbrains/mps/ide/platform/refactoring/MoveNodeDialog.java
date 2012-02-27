@@ -24,16 +24,17 @@ public class MoveNodeDialog extends ModelOrNodeChooserDialog {
     setVerticalStretch(2.0f);
   }
 
-  protected void doRefactoringAction() {
+  protected boolean doRefactoringAction() {
     Object selectedObject = myChooser.getSelectedObject();
     if (!(selectedObject instanceof SNode)) {
       JOptionPane.showMessageDialog(myChooser.getComponent(), "Choose node", "Node can't be moved", JOptionPane.INFORMATION_MESSAGE);
-      return;
+      return false;
     }
     if (myNodeFilter == null || myNodeFilter.checkForObject(((SNode) selectedObject), myNodeToMove, myNodeToMove.getModel().getModelDescriptor(), myChooser.getComponent())) {
       mySelectedObject = ((SNode) selectedObject);
-      dispose();
+      return true;
     }
+    return false;
   }
 
   public void setFilter(MoveNodeDialog.NodeFilter filter) {

@@ -26,11 +26,6 @@ public abstract class RefactoringDialog extends DialogWrapper {
     return myRefactorAction;
   }
 
-  @Override
-  protected void doOKAction() {
-    doRefactoringAction();
-  }
-
   protected Action[] createActions() {
     List<Action> actions = ListSequence.fromList(new ArrayList<Action>());
     ListSequence.fromList(actions).addElement(getRefactorAction());
@@ -44,7 +39,13 @@ public abstract class RefactoringDialog extends DialogWrapper {
     myRefactorAction = new RefactoringDialog.RefactorAction();
   }
 
-  protected abstract void doRefactoringAction();
+  /**
+   * This method will be called on pressing "Refactor" button in dialog.
+   * 
+   * 
+   * @return true if the dialog can be closed and false to prevent dialog from closing and continue working with it
+   */
+  protected abstract boolean doRefactoringAction();
 
   private class RefactorAction extends AbstractAction {
     public RefactorAction() {
@@ -53,7 +54,9 @@ public abstract class RefactoringDialog extends DialogWrapper {
     }
 
     public void actionPerformed(ActionEvent event) {
-      doRefactoringAction();
+      if (doRefactoringAction()) {
+        close(DialogWrapper.OK_EXIT_CODE);
+      }
     }
   }
 }

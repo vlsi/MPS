@@ -10,10 +10,8 @@ import javax.swing.KeyStroke;
 public class Default_KeymapChanges extends BaseKeymapChanges {
   public Default_KeymapChanges() {
     // simple 
-    addSimpleShortcut("jetbrains.mps.baseLanguage.pluginSolution.plugin.ChangeMethodSignature_Action", getShortcut("ctrl F6"));
     addSimpleShortcut("jetbrains.mps.baseLanguage.pluginSolution.plugin.CommentLine_Action", getShortcut("ctrl SLASH"));
     addSimpleShortcut("jetbrains.mps.baseLanguage.pluginSolution.plugin.CommentStatements_Action", getShortcut("ctrl shift SLASH"));
-    addSimpleShortcut("jetbrains.mps.baseLanguage.pluginSolution.plugin.ConvertAnonymousClass_Action", getShortcut(" F6"));
     addSimpleShortcut("jetbrains.mps.baseLanguage.pluginSolution.plugin.ExtractMethod_Action", getShortcut("ctrl alt M"));
     addSimpleShortcut("jetbrains.mps.baseLanguage.pluginSolution.plugin.GoToInheritedClassifier_Action", getShortcut("ctrl alt B"));
     addSimpleShortcut("jetbrains.mps.baseLanguage.pluginSolution.plugin.GoToOverridenMethod_Action", getShortcut("ctrl U"));
@@ -23,10 +21,7 @@ public class Default_KeymapChanges extends BaseKeymapChanges {
     addSimpleShortcut("jetbrains.mps.baseLanguage.pluginSolution.plugin.IntroduceConstant_Action", getShortcut("ctrl alt C"));
     addSimpleShortcut("jetbrains.mps.baseLanguage.pluginSolution.plugin.IntroduceField_Action", getShortcut("ctrl alt F"));
     addSimpleShortcut("jetbrains.mps.baseLanguage.pluginSolution.plugin.IntroduceVariable_Action", getShortcut("ctrl alt V"));
-    addSimpleShortcut("jetbrains.mps.baseLanguage.pluginSolution.plugin.MoveStaticField_Action", getShortcut(" F6"));
-    addSimpleShortcut("jetbrains.mps.baseLanguage.pluginSolution.plugin.MoveStaticMethod_Action", getShortcut(" F6"));
     addSimpleShortcut("jetbrains.mps.baseLanguage.pluginSolution.plugin.OverrideMethod_Action", getShortcut("ctrl O"));
-    addSimpleShortcut("jetbrains.mps.baseLanguage.pluginSolution.plugin.RenameMethod_Action", getShortcut("shift F6"));
     addSimpleShortcut("jetbrains.mps.baseLanguage.pluginSolution.plugin.RenameVariable_Action", getShortcut("shift F6"));
     addSimpleShortcut("jetbrains.mps.baseLanguage.pluginSolution.plugin.ShowMembers_Action", getShortcut("ctrl F12"));
     addSimpleShortcut("jetbrains.mps.baseLanguage.pluginSolution.plugin.UncommentStatements_Action", getShortcut("ctrl shift SLASH"));

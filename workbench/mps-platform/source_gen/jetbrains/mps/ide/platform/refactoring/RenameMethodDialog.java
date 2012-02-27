@@ -33,8 +33,8 @@ public class RenameMethodDialog extends RenameDialog {
     return myPanel;
   }
 
-  protected void doRefactoringAction() {
+  protected boolean doRefactoringAction() {
     myIsOverriding = myOverridingCheckBox.isSelected();
-    super.doRefactoringAction();
+    return super.doRefactoringAction();
   }
 }

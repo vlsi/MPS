@@ -12,6 +12,7 @@ import java.util.List;
 import jetbrains.mps.plugins.pluginparts.custom.BaseCustomApplicationPlugin;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
+import jetbrains.mps.workbench.action.BaseKeymapChanges;
 
 public class Java_ApplicationPlugin extends BaseApplicationPlugin {
   private PluginId myId = PluginId.getId("jetbrains.mps.ide.java");
@@ -25,19 +26,27 @@ public class Java_ApplicationPlugin extends BaseApplicationPlugin {
 
   public void createGroups() {
     // actions w/o parameters 
+    addAction(new ChangeMethodSignature_Action());
+    addAction(new ConvertAnonymousClass_Action());
     addAction(new GetModelContentsFromSource_Action());
     addAction(new GetModuleContentsFromSource_Action());
+    addAction(new MakeFieldFinal_Action());
+    addAction(new MakeFieldStatic_Action());
     addAction(new MigrateSourcesToMPS_Action());
+    addAction(new MoveStaticField_Action());
+    addAction(new MoveStaticMethod_Action());
     addAction(new NewModelFromSource_Action());
     addAction(new PasteAsJavaClass_Action());
     addAction(new PasteAsJavaMethods_Action());
     addAction(new PasteAsJavaStatements_Action());
+    addAction(new RenameMethod_Action());
     addAction(new ResolveStubReferencesToMPSGlobal_Action());
     addAction(new ResolveStubReferencesToMPS_Action());
     // groups 
     addGroup(new EditorPopup_ActionGroup());
     addGroup(new ModelActions_ActionGroup());
     addGroup(new ModelNewActions_ActionGroup());
+    addGroup(new RefactoringAdditions_ActionGroup());
     addGroup(new SolutionActionsEx_ActionGroup());
   }
 
@@ -46,6 +55,7 @@ public class Java_ApplicationPlugin extends BaseApplicationPlugin {
     insertGroupIntoAnother(ModelNewActions_ActionGroup.ID, GeneratorNewActions_ActionGroup.ID, GeneratorNewActions_ActionGroup.LABEL_ID_newModel);
     insertGroupIntoAnother(ModelNewActions_ActionGroup.ID, LanguageNewActions_ActionGroup.ID, LanguageNewActions_ActionGroup.LABEL_ID_newModel);
     insertGroupIntoAnother(ModelNewActions_ActionGroup.ID, SolutionNewActions_ActionGroup.ID, SolutionNewActions_ActionGroup.LABEL_ID_newModel);
+    insertGroupIntoAnother(RefactoringAdditions_ActionGroup.ID, "jetbrains.mps.ide.platform.actions.NodeRefactoring_ActionGroup", null);
     insertGroupIntoAnother(ModelActions_ActionGroup.ID, jetbrains.mps.ide.actions.ModelActions_ActionGroup.ID, jetbrains.mps.ide.actions.ModelActions_ActionGroup.LABEL_ID_paste);
     insertGroupIntoAnother(EditorPopup_ActionGroup.ID, "EditorPopup_ActionGrouppaste", null);
   }
@@ -53,6 +63,12 @@ public class Java_ApplicationPlugin extends BaseApplicationPlugin {
   public List<BaseCustomApplicationPlugin> initCustomParts() {
     List<BaseCustomApplicationPlugin> res = ListSequence.fromList(new ArrayList<BaseCustomApplicationPlugin>());
     addCustomPart(res, new PasteJavaTextAsNodes_CustomApplicationPlugin());
+    return res;
+  }
+
+  public List<BaseKeymapChanges> initKeymaps() {
+    List<BaseKeymapChanges> res = ListSequence.fromList(new ArrayList<BaseKeymapChanges>());
+    ListSequence.fromList(res).addElement(new Default_KeymapChanges());
     return res;
   }
 
