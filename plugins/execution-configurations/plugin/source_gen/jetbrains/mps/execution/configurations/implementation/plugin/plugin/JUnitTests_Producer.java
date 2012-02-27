@@ -210,7 +210,7 @@ public class JUnitTests_Producer {
       setSourceElement(new MPSPsiElement(source));
       boolean containsTest = false;
       for (SNode testCase : source) {
-        if (ListSequence.fromList(((List<SNode>) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(testCase, "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase"), "virtual_getTestMethods_2148145109766218395", new Class[]{SNode.class}))).isNotEmpty()) {
+        if (ListSequence.fromList(((List<SNode>) BehaviorManager.getInstance().invoke(Object.class, testCase, "virtual_getTestMethods_2148145109766218395", new Class[]{SNode.class}))).isNotEmpty()) {
           containsTest = true;
           break;
         }
@@ -250,7 +250,7 @@ public class JUnitTests_Producer {
 
     protected JUnitTests_Configuration doCreateConfiguration(final List<SNode> source) {
       setSourceElement(new MPSPsiElement(source));
-      JUnitTests_Configuration configuration = new JUnitTests_Configuration(getContext().getProject(), (JUnitTests_Configuration_Factory) getConfigurationFactory(), ((String) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(ListSequence.fromList(source).first(), "jetbrains.mps.baseLanguage.unitTest.structure.ITestMethod"), "virtual_getTestName_1216136419751", new Class[]{SNode.class})) + ",...");
+      JUnitTests_Configuration configuration = new JUnitTests_Configuration(getContext().getProject(), (JUnitTests_Configuration_Factory) getConfigurationFactory(), ((String) BehaviorManager.getInstance().invoke(Object.class, ListSequence.fromList(source).first(), "virtual_getTestName_1216136419751", new Class[]{SNode.class})) + ",...");
       configuration.getJUnitSettings().setRunType(JUnitRunTypes2.METHOD);
       configuration.getJUnitSettings().setTestMethods(TestUtils.nodesToCloneableList(source));
       return configuration;

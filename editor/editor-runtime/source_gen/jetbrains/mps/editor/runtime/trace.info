@@ -1,5 +1,55 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <root nodeId="4952318787899710481">
+    <nodeInfo nodeId="4952318787899710482" fileName="AbstractLeftEditorHighlighterMessage.java" startLine="15" startPosition="126" endLine="16" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myTooltip" />
+    <nodeInfo nodeId="4952318787899710496" fileName="AbstractLeftEditorHighlighterMessage.java" startLine="18" startPosition="101" endLine="19" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="4952318787899710501" fileName="AbstractLeftEditorHighlighterMessage.java" startLine="19" startPosition="33" endLine="20" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4952318787899710524" fileName="AbstractLeftEditorHighlighterMessage.java" startLine="28" startPosition="53" endLine="29" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4952318787899710535" fileName="AbstractLeftEditorHighlighterMessage.java" startLine="34" startPosition="66" endLine="35" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4952318787899710541" fileName="AbstractLeftEditorHighlighterMessage.java" startLine="35" startPosition="98" endLine="36" endPosition="116" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4952318787899710560" fileName="AbstractLeftEditorHighlighterMessage.java" startLine="37" startPosition="5" endLine="38" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4952318787899710567" fileName="AbstractLeftEditorHighlighterMessage.java" startLine="41" startPosition="34" endLine="42" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4952318787899710573" fileName="AbstractLeftEditorHighlighterMessage.java" startLine="45" startPosition="38" endLine="46" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4952318787899710580" fileName="AbstractLeftEditorHighlighterMessage.java" startLine="49" startPosition="33" endLine="50" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4952318787899710486" fileName="AbstractLeftEditorHighlighterMessage.java" startLine="17" startPosition="0" endLine="21" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="AbstractLeftEditorHighlighterMessage#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/nodeEditor/EditorMessageOwner;Ljava/lang/String;)V" />
+    <nodeInfo nodeId="4952318787899710507" fileName="AbstractLeftEditorHighlighterMessage.java" startLine="22" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="paint#(Ljava/awt/Graphics;Ljetbrains/mps/nodeEditor/EditorComponent;Ljetbrains/mps/nodeEditor/cells/EditorCell;)V" />
+    <nodeInfo nodeId="4952318787899710533" fileName="AbstractLeftEditorHighlighterMessage.java" startLine="33" startPosition="48" endLine="37" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4952318787899710563" fileName="AbstractLeftEditorHighlighterMessage.java" startLine="40" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getTooltipText#()Ljava/lang/String;" />
+    <nodeInfo nodeId="4952318787899710569" fileName="AbstractLeftEditorHighlighterMessage.java" startLine="44" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getMouseOverCursor#()Ljava/awt/Cursor;" />
+    <nodeInfo nodeId="4952318787899710576" fileName="AbstractLeftEditorHighlighterMessage.java" startLine="48" startPosition="0" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="showInGutter#()Z" />
+    <nodeInfo nodeId="4952318787899710518" fileName="AbstractLeftEditorHighlighterMessage.java" startLine="26" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isValid#(Ljetbrains/mps/nodeEditor/EditorComponent;)Z" />
+    <nodeInfo nodeId="4952318787899710527" fileName="AbstractLeftEditorHighlighterMessage.java" startLine="31" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="sameAs#(Ljetbrains/mps/nodeEditor/EditorMessage;)Z" />
+    <scopeInfo nodeId="4952318787899710516" fileName="AbstractLeftEditorHighlighterMessage.java" startLine="24" startPosition="84" endLine="24" endPosition="84" />
+    <scopeInfo nodeId="4952318787899710523" fileName="AbstractLeftEditorHighlighterMessage.java" startLine="28" startPosition="53" endLine="29" endPosition="16" />
+    <scopeInfo nodeId="4952318787899710566" fileName="AbstractLeftEditorHighlighterMessage.java" startLine="41" startPosition="34" endLine="42" endPosition="21" />
+    <scopeInfo nodeId="4952318787899710572" fileName="AbstractLeftEditorHighlighterMessage.java" startLine="45" startPosition="38" endLine="46" endPosition="58" />
+    <scopeInfo nodeId="4952318787899710579" fileName="AbstractLeftEditorHighlighterMessage.java" startLine="49" startPosition="33" endLine="50" endPosition="17" />
+    <scopeInfo nodeId="4952318787899710495" fileName="AbstractLeftEditorHighlighterMessage.java" startLine="18" startPosition="101" endLine="20" endPosition="24" />
+    <scopeInfo nodeId="4952318787899710534" fileName="AbstractLeftEditorHighlighterMessage.java" startLine="34" startPosition="66" endLine="36" endPosition="116">
+      <varInfo nodeId="4952318787899710536" varName="other" />
+    </scopeInfo>
+    <scopeInfo nodeId="4952318787899710486" fileName="AbstractLeftEditorHighlighterMessage.java" startLine="17" startPosition="0" endLine="21" endPosition="3">
+      <varInfo nodeId="4952318787899710487" varName="node" />
+      <varInfo nodeId="4952318787899710489" varName="owner" />
+      <varInfo nodeId="4952318787899710491" varName="tooltip" />
+    </scopeInfo>
+    <scopeInfo nodeId="4952318787899710507" fileName="AbstractLeftEditorHighlighterMessage.java" startLine="22" startPosition="0" endLine="26" endPosition="0">
+      <varInfo nodeId="4952318787899710514" varName="cell" />
+      <varInfo nodeId="4952318787899710512" varName="component" />
+      <varInfo nodeId="4952318787899710510" varName="graphics" />
+    </scopeInfo>
+    <scopeInfo nodeId="4952318787899710563" fileName="AbstractLeftEditorHighlighterMessage.java" startLine="40" startPosition="0" endLine="44" endPosition="0" />
+    <scopeInfo nodeId="4952318787899710569" fileName="AbstractLeftEditorHighlighterMessage.java" startLine="44" startPosition="0" endLine="48" endPosition="0" />
+    <scopeInfo nodeId="4952318787899710576" fileName="AbstractLeftEditorHighlighterMessage.java" startLine="48" startPosition="0" endLine="52" endPosition="0" />
+    <scopeInfo nodeId="4952318787899710518" fileName="AbstractLeftEditorHighlighterMessage.java" startLine="26" startPosition="0" endLine="31" endPosition="0">
+      <varInfo nodeId="4952318787899710521" varName="component" />
+    </scopeInfo>
+    <scopeInfo nodeId="4952318787899710532" fileName="AbstractLeftEditorHighlighterMessage.java" startLine="33" startPosition="48" endLine="38" endPosition="17" />
+    <scopeInfo nodeId="4952318787899710527" fileName="AbstractLeftEditorHighlighterMessage.java" startLine="31" startPosition="0" endLine="40" endPosition="0">
+      <varInfo nodeId="4952318787899710530" varName="message" />
+    </scopeInfo>
+    <unitInfo nodeId="4952318787899710481" fileName="AbstractLeftEditorHighlighterMessage.java" startLine="15" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.editor.runtime.AbstractLeftEditorHighlighterMessage" />
+  </root>
   <root nodeId="6090996390710375685">
     <nodeInfo nodeId="6090996390710375690" fileName="ParametersInformation.java" startLine="25" startPosition="74" endLine="26" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6090996390710375700" fileName="ParametersInformation.java" startLine="29" startPosition="90" endLine="30" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -107,8 +157,8 @@
     <nodeInfo nodeId="6774261846361407496" fileName="ExtractComponentUtil.java" startLine="33" startPosition="25" endLine="34" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6774261846361407502" fileName="ExtractComponentUtil.java" startLine="34" startPosition="54" endLine="35" endPosition="140" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6774261846361407508" fileName="ExtractComponentUtil.java" startLine="35" startPosition="140" endLine="36" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6774261846361407515" fileName="ExtractComponentUtil.java" startLine="36" startPosition="66" endLine="37" endPosition="305" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6774261846361407524" fileName="ExtractComponentUtil.java" startLine="37" startPosition="305" endLine="38" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6774261846361407515" fileName="ExtractComponentUtil.java" startLine="36" startPosition="66" endLine="37" endPosition="226" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6774261846361407524" fileName="ExtractComponentUtil.java" startLine="37" startPosition="226" endLine="38" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6774261846361407533" fileName="ExtractComponentUtil.java" startLine="38" startPosition="96" endLine="39" endPosition="124" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6774261846361407539" fileName="ExtractComponentUtil.java" startLine="39" startPosition="124" endLine="40" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6774261846361407546" fileName="ExtractComponentUtil.java" startLine="40" startPosition="82" endLine="41" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />

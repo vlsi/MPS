@@ -1559,10 +1559,10 @@
     <nodeInfo nodeId="1229718163909" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="301" startPosition="208" endLine="302" endPosition="542" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1229718256918" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="306" startPosition="7" endLine="307" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1229718256918" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="307" startPosition="51" endLine="308" endPosition="208" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1229718256918" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="308" startPosition="208" endLine="309" endPosition="522" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1229718256918" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="308" startPosition="208" endLine="309" endPosition="521" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1229718281813" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="312" startPosition="7" endLine="313" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1229718281813" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="313" startPosition="51" endLine="314" endPosition="208" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1229718281813" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="314" startPosition="208" endLine="315" endPosition="668" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1229718281813" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="314" startPosition="208" endLine="315" endPosition="665" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1221579075452" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="320" startPosition="46" endLine="321" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1221579075452" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="325" startPosition="5" endLine="326" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1221579075452" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="326" startPosition="117" endLine="327" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -1805,10 +1805,10 @@
     <nodeInfo nodeId="1229010173422" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="533" startPosition="57" endLine="535" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_nx7618_a0a1a0a1y0a#()V" />
     <nodeInfo nodeId="3294521177951941199" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="590" startPosition="56" endLine="592" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_nx7618_a0a0a0db0a#()V" />
     <nodeInfo nodeId="1232131983880" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="621" startPosition="58" endLine="623" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_nx7618_a0a0a0db0a_0#()V" />
-    <nodeInfo nodeId="1238700837040" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="650" startPosition="59" endLine="652" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_nx7618_a1a0a0a0a03a0#()V" />
-    <nodeInfo nodeId="1232127044844" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="707" startPosition="60" endLine="709" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_nx7618_a1a0a0a0a0eb0a#()V" />
-    <nodeInfo nodeId="1232127050376" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="736" startPosition="60" endLine="738" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_nx7618_a2a0a0a0a0eb0a#()V" />
-    <nodeInfo nodeId="1232127055533" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="765" startPosition="60" endLine="767" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_nx7618_a3a0a0a0a0eb0a#()V" />
+    <nodeInfo nodeId="1238700837040" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="650" startPosition="58" endLine="652" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_nx7618_a2a0a0a0eb0a#()V" />
+    <nodeInfo nodeId="1232127044844" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="707" startPosition="59" endLine="709" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_nx7618_a2a0a0a0a03a0#()V" />
+    <nodeInfo nodeId="1232127050376" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="736" startPosition="59" endLine="738" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_nx7618_a3a0a0a0a03a0#()V" />
+    <nodeInfo nodeId="1232127055533" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="765" startPosition="59" endLine="767" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_nx7618_a4a0a0a0a03a0#()V" />
     <nodeInfo nodeId="1221579075659" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="131" startPosition="158" endLine="134" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1221579075818" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="146" startPosition="38" endLine="149" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1221579075840" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="149" startPosition="11" endLine="152" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -2005,10 +2005,10 @@
     <scopeInfo nodeId="1229010173422" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="534" startPosition="48" endLine="534" endPosition="48" />
     <scopeInfo nodeId="3294521177951941199" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="591" startPosition="47" endLine="591" endPosition="47" />
     <scopeInfo nodeId="1232131983880" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="622" startPosition="49" endLine="622" endPosition="49" />
-    <scopeInfo nodeId="1238700837040" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="651" startPosition="50" endLine="651" endPosition="50" />
-    <scopeInfo nodeId="1232127044844" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="708" startPosition="51" endLine="708" endPosition="51" />
-    <scopeInfo nodeId="1232127050376" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="737" startPosition="51" endLine="737" endPosition="51" />
-    <scopeInfo nodeId="1232127055533" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="766" startPosition="51" endLine="766" endPosition="51" />
+    <scopeInfo nodeId="1238700837040" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="651" startPosition="49" endLine="651" endPosition="49" />
+    <scopeInfo nodeId="1232127044844" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="708" startPosition="50" endLine="708" endPosition="50" />
+    <scopeInfo nodeId="1232127050376" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="737" startPosition="50" endLine="737" endPosition="50" />
+    <scopeInfo nodeId="1232127055533" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="766" startPosition="50" endLine="766" endPosition="50" />
     <scopeInfo nodeId="1229279829876" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="52" startPosition="76" endLine="53" endPosition="101" />
     <scopeInfo nodeId="1221579075532" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="63" startPosition="100" endLine="64" endPosition="53" />
     <scopeInfo nodeId="1228999475018" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="65" startPosition="115" endLine="66" endPosition="53" />
@@ -2073,12 +2073,12 @@
     <scopeInfo nodeId="1229010173422" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="576" startPosition="18" endLine="578" endPosition="41" />
     <scopeInfo nodeId="3294521177951941199" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="590" startPosition="56" endLine="592" endPosition="5" />
     <scopeInfo nodeId="1232131983880" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="621" startPosition="58" endLine="623" endPosition="5" />
-    <scopeInfo nodeId="1238700837040" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="650" startPosition="59" endLine="652" endPosition="5" />
+    <scopeInfo nodeId="1238700837040" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="650" startPosition="58" endLine="652" endPosition="5" />
     <scopeInfo nodeId="1238700837040" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="667" startPosition="18" endLine="669" endPosition="41" />
     <scopeInfo nodeId="1238700837040" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="693" startPosition="18" endLine="695" endPosition="41" />
-    <scopeInfo nodeId="1232127044844" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="707" startPosition="60" endLine="709" endPosition="5" />
-    <scopeInfo nodeId="1232127050376" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="736" startPosition="60" endLine="738" endPosition="5" />
-    <scopeInfo nodeId="1232127055533" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="765" startPosition="60" endLine="767" endPosition="5" />
+    <scopeInfo nodeId="1232127044844" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="707" startPosition="59" endLine="709" endPosition="5" />
+    <scopeInfo nodeId="1232127050376" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="736" startPosition="59" endLine="738" endPosition="5" />
+    <scopeInfo nodeId="1232127055533" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="765" startPosition="59" endLine="767" endPosition="5" />
     <scopeInfo nodeId="1221579075466" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="46" startPosition="9" endLine="49" endPosition="314">
       <varInfo nodeId="1221579075466" varName="_info_12389875345" />
       <varInfo nodeId="1221579075466" varName="_nodeToCheck_1029348928467" />
@@ -2144,11 +2144,11 @@
       <varInfo nodeId="1229718163909" varName="_info_12389875345" />
       <varInfo nodeId="1229718163909" varName="_nodeToCheck_1029348928467" />
     </scopeInfo>
-    <scopeInfo nodeId="1229718256918" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="306" startPosition="7" endLine="309" endPosition="522">
+    <scopeInfo nodeId="1229718256918" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="306" startPosition="7" endLine="309" endPosition="521">
       <varInfo nodeId="1229718256918" varName="_info_12389875345" />
       <varInfo nodeId="1229718256918" varName="_nodeToCheck_1029348928467" />
     </scopeInfo>
-    <scopeInfo nodeId="1229718281813" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="312" startPosition="7" endLine="315" endPosition="668">
+    <scopeInfo nodeId="1229718281813" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="312" startPosition="7" endLine="315" endPosition="665">
       <varInfo nodeId="1229718281813" varName="_info_12389875345" />
       <varInfo nodeId="1229718281813" varName="_nodeToCheck_1029348928467" />
     </scopeInfo>
@@ -2617,10 +2617,10 @@
     <unitInfo nodeId="4542977447015145885" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="364" startPosition="0" endLine="392" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.typesystem.typeof_ClosureLiteral_InferenceRule$QuotationClass_nx7618_a0a0a1a0a0o0a" />
     <unitInfo nodeId="1229010173422" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="533" startPosition="0" endLine="589" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.typesystem.typeof_ClosureLiteral_InferenceRule$QuotationClass_nx7618_a0a1a0a1y0a" />
     <unitInfo nodeId="1229001009902" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="424" startPosition="0" endLine="532" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.typesystem.typeof_ClosureLiteral_InferenceRule$QuotationClass_nx7618_a0a1a81a0" />
-    <unitInfo nodeId="1238700837040" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="650" startPosition="0" endLine="706" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.typesystem.typeof_ClosureLiteral_InferenceRule$QuotationClass_nx7618_a1a0a0a0a03a0" />
-    <unitInfo nodeId="1232127044844" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="707" startPosition="0" endLine="735" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.typesystem.typeof_ClosureLiteral_InferenceRule$QuotationClass_nx7618_a1a0a0a0a0eb0a" />
-    <unitInfo nodeId="1232127050376" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="736" startPosition="0" endLine="764" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.typesystem.typeof_ClosureLiteral_InferenceRule$QuotationClass_nx7618_a2a0a0a0a0eb0a" />
-    <unitInfo nodeId="1232127055533" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="765" startPosition="0" endLine="793" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.typesystem.typeof_ClosureLiteral_InferenceRule$QuotationClass_nx7618_a3a0a0a0a0eb0a" />
+    <unitInfo nodeId="1232127044844" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="707" startPosition="0" endLine="735" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.typesystem.typeof_ClosureLiteral_InferenceRule$QuotationClass_nx7618_a2a0a0a0a03a0" />
+    <unitInfo nodeId="1238700837040" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="650" startPosition="0" endLine="706" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.typesystem.typeof_ClosureLiteral_InferenceRule$QuotationClass_nx7618_a2a0a0a0eb0a" />
+    <unitInfo nodeId="1232127050376" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="736" startPosition="0" endLine="764" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.typesystem.typeof_ClosureLiteral_InferenceRule$QuotationClass_nx7618_a3a0a0a0a03a0" />
+    <unitInfo nodeId="1232127055533" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="765" startPosition="0" endLine="793" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.typesystem.typeof_ClosureLiteral_InferenceRule$QuotationClass_nx7618_a4a0a0a0a03a0" />
   </root>
   <root nodeId="1225797528199">
     <nodeInfo nodeId="3143009324072631644" fileName="typeof_InvokeFunctionOperation_InferenceRule.java" startLine="26" startPosition="119" endLine="27" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

@@ -22,11 +22,11 @@ import org.jetbrains.annotations.NotNull;
 import java.util.*;
 
 public class RefUpdateUtil {
-  public static boolean updateModelRefs(Set<SModelReference> refs) {
+  public static boolean updateModelRefs(Collection<SModelReference> refs) {
     Set<SModelReference> remove = new HashSet<SModelReference>();
-    Set<SModelReference> add = new HashSet<SModelReference>();
+    Set<SModelReference> add = new LinkedHashSet<SModelReference>();
 
-    for (SModelReference ref:refs){
+    for (SModelReference ref : refs) {
       SModelReference newRef = ref.update();
       if (ref.differs(newRef)) {
         remove.add(ref);
@@ -40,11 +40,11 @@ public class RefUpdateUtil {
     return !remove.isEmpty();
   }
 
-  public static boolean updateModuleRefs(Set<ModuleReference> refs) {
+  public static boolean updateModuleRefs(Collection<ModuleReference> refs) {
     Set<ModuleReference> remove = new HashSet<ModuleReference>();
-    Set<ModuleReference> add = new HashSet<ModuleReference>();
+    Set<ModuleReference> add = new LinkedHashSet<ModuleReference>();
 
-    for (ModuleReference ref:refs){
+    for (ModuleReference ref : refs) {
       ModuleReference newRef = ref.update();
       if (ref.differs(newRef)) {
         remove.add(ref);
@@ -58,7 +58,7 @@ public class RefUpdateUtil {
     return !remove.isEmpty();
   }
 
-  public static boolean updateDependencies(Set<Dependency> deps) {
+  public static boolean updateDependencies(Collection<Dependency> deps) {
     boolean changed = false;
     for (Dependency dep : deps) {
       ModuleReference ref = dep.getModuleRef();

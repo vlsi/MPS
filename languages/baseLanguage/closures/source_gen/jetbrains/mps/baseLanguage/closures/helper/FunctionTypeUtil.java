@@ -79,7 +79,7 @@ with_throws:
     for (SNode tt : ttypes) {
       SNode clstt = SNodeOperations.as(tt, "jetbrains.mps.baseLanguage.structure.ClassifierType");
       if (clstt != null) {
-        if (!(Classifier_Behavior.call_isDescendant_7165541881557222913(SLinkOperations.getTarget(clstt, "classifier", false), SLinkOperations.getTarget(new FunctionTypeUtil.QuotationClass_2t0coq_a0a0a0a0b0c0d().createNode(), "classifier", false)))) {
+        if (!(Classifier_Behavior.call_isDescendant_7165541881557222913(SLinkOperations.getTarget(clstt, "classifier", false), SLinkOperations.getTarget(new FunctionTypeUtil.QuotationClass_2t0coq_a0b0a0a1a2a3().createNode(), "classifier", false)))) {
           for (int i = 0; i < ListSequence.fromList(visited).count(); ++i) {
             SNode restt = ListSequence.fromList(visited).getElement(i);
             if (Classifier_Behavior.call_isDescendant_7165541881557222913(SLinkOperations.getTarget(restt, "classifier", false), SLinkOperations.getTarget(clstt, "classifier", false))) {
@@ -363,8 +363,8 @@ with_tvd:
     }
   }
 
-  public static class QuotationClass_2t0coq_a0a0a0a0b0c0d {
-    public QuotationClass_2t0coq_a0a0a0a0b0c0d() {
+  public static class QuotationClass_2t0coq_a0b0a0a1a2a3 {
+    public QuotationClass_2t0coq_a0b0a0a1a2a3() {
     }
 
     public SNode createNode() {

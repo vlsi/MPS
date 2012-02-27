@@ -208,7 +208,7 @@ public class ProjectStructureModule extends AbstractModule implements CoreCompon
   }
 
   @Override
-  public Set<ModuleReference> getUsedLanguagesReferences() {
+  public Collection<ModuleReference> getUsedLanguagesReferences() {
     return Collections.singleton(BootstrapLanguages.PROJECT);
   }
 

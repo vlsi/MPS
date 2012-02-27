@@ -14,6 +14,7 @@ import jetbrains.mps.ide.actions.EditorTabActions_ActionGroup;
 import jetbrains.mps.ide.actions.Goto_ActionGroup;
 import jetbrains.mps.ide.actions.AnalyzeModule_ActionGroup;
 import jetbrains.mps.ide.actions.NamespaceNewActions_ActionGroup;
+import jetbrains.mps.ide.actions.LanguageActions_ActionGroup;
 import jetbrains.mps.ide.actions.NodeActions_ActionGroup;
 import java.util.List;
 import jetbrains.mps.workbench.action.BaseKeymapChanges;
@@ -34,7 +35,10 @@ public class Mpsdevkit_ApplicationPlugin extends BaseApplicationPlugin {
     // actions w/o parameters 
     addAction(new AddAccessoryModel_Action());
     addAction(new CellProperties_Action());
+    addAction(new CreateDefaultEditor_Action());
     addAction(new DeleteGenerator_Action());
+    addAction(new FindLanguageConceptsUsages_Action());
+    addAction(new FindLanguageUsages_Action());
     addAction(new GoToConceptDeclaration_Action());
     addAction(new GoToEditorDeclaration_Action());
     addAction(new GoToRules_Action());
@@ -64,10 +68,12 @@ public class Mpsdevkit_ApplicationPlugin extends BaseApplicationPlugin {
     addGroup(new AccessoriesGroupActions_ActionGroup());
     addGroup(new DevKitTools_ActionGroup());
     addGroup(new EditorInternalEx_ActionGroup());
+    addGroup(new FindLanguageUsages_ActionGroup());
     addGroup(new GenerateEditorPopup_ActionGroup());
     addGroup(new GenerationTraceActions_ActionGroup());
     addGroup(new GeneratorActions_Delete_ActionGroup());
     addGroup(new GotoConceptAspect_ActionGroup());
+    addGroup(new IntentionsGroup_ActionGroup());
     addGroup(new LanguageActionsEx_ActionGroup());
     addGroup(new LanguageNewActionsEx_ActionGroup());
     addGroup(new LanguageNewCustomPartActions_ActionGroup());
@@ -93,10 +99,12 @@ public class Mpsdevkit_ApplicationPlugin extends BaseApplicationPlugin {
     insertGroupIntoAnother(GotoConceptAspect_ActionGroup.ID, Goto_ActionGroup.ID, Goto_ActionGroup.LABEL_ID_gotoConceptAspects);
     insertGroupIntoAnother(GotoConceptAspect_ActionGroup.ID, "GoToEditorPopupAddition_ActionGroupother", null);
     insertGroupIntoAnother(LanguageActionsEx_ActionGroup.ID, AnalyzeModule_ActionGroup.ID, null);
+    insertGroupIntoAnother(IntentionsGroup_ActionGroup.ID, "jetbrains.mps.ide.editor.actions.ActionsAsIntentions_ActionGroup", null);
     insertGroupIntoAnother(DevKitTools_ActionGroup.ID, Tools_ActionGroup.ID, Tools_ActionGroup.LABEL_ID_devkitTools);
     insertGroupIntoAnother(EditorInternalEx_ActionGroup.ID, DebugActions_ActionGroup.ID, DebugActions_ActionGroup.LABEL_ID_editor);
     insertGroupIntoAnother(LanguageNewCustomPartActions_ActionGroup.ID, LanguageNewActions_ActionGroup.ID, LanguageNewActions_ActionGroup.LABEL_ID_newAspect);
     insertGroupIntoAnother(NamespaceNewActionsEx_ActionGroup.ID, NamespaceNewActions_ActionGroup.ID, null);
+    insertGroupIntoAnother(FindLanguageUsages_ActionGroup.ID, LanguageActions_ActionGroup.ID, LanguageActions_ActionGroup.LABEL_ID_find_usages);
     insertGroupIntoAnother(TraceActions_ActionGroup.ID, DebugActions_ActionGroup.ID, DebugActions_ActionGroup.LABEL_ID_trace);
     insertGroupIntoAnother(ShowNodeIn_ActionGroup.ID, EditorTabActions_ActionGroup.ID, EditorTabActions_ActionGroup.LABEL_ID_showIn);
     insertGroupIntoAnother(ShowNodeIn_ActionGroup.ID, NodeActions_ActionGroup.ID, NodeActions_ActionGroup.LABEL_ID_showIn);

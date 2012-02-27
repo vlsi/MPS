@@ -23,6 +23,7 @@ import com.intellij.openapi.ui.popup.JBPopupFactory;
 import com.intellij.openapi.ui.popup.ListPopup;
 import com.intellij.openapi.util.Pair;
 import com.intellij.ui.awt.RelativePoint;
+import jetbrains.mps.ide.actions.MPSActions;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.intentions.*;
@@ -340,7 +341,7 @@ public class IntentionsSupport {
     ListPopup popup = ModelAccess.instance().runReadAction(new Computable<ListPopup>() {
       public ListPopup compute() {
         BaseGroup group = getIntentionsGroup();
-        addActionsAsIntentions(ActionManager.getInstance().getAction("ActionsAsIntentions"), group, dataContext);
+        addActionsAsIntentions(ActionManager.getInstance().getAction(MPSActions.ACTIONS_AS_INTENTIONS_GROUP), group, dataContext);
         ListPopup popup = null;
         if (group != null) {
           popup = JBPopupFactory.getInstance()

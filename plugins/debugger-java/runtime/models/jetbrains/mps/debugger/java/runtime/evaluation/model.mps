@@ -4022,7 +4022,7 @@
                     </node>
                   </node>
                   <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2792333437699453775">
-                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="vsqj.~IModule%dgetImplicitlyImportedLanguages(jetbrains%dmps%dsmodel%dSModelDescriptor)%cjava%dutil%dSet" resolveInfo="getImplicitlyImportedLanguages" />
+                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="vsqj.~IModule%dgetImplicitlyImportedLanguages(jetbrains%dmps%dsmodel%dSModelDescriptor)%cjava%dutil%dCollection" resolveInfo="getImplicitlyImportedLanguages" />
                     <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="2792333437699453829">
                       <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2792333437699453818" resolveInfo="descriptor" />
                     </node>

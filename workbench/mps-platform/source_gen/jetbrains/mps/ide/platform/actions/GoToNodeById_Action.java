@@ -59,8 +59,8 @@ public class GoToNodeById_Action extends BaseAction {
     if (MapSequence.fromMap(_params).get("context") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("model", event.getData(MPSCommonDataKeys.CONTEXT_MODEL));
-    if (MapSequence.fromMap(_params).get("model") == null) {
+    MapSequence.fromMap(_params).put("CONTEXT_MODEL", event.getData(MPSCommonDataKeys.CONTEXT_MODEL));
+    if (MapSequence.fromMap(_params).get("CONTEXT_MODEL") == null) {
       return false;
     }
     return true;
@@ -68,7 +68,7 @@ public class GoToNodeById_Action extends BaseAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      String value = JOptionPane.showInputDialog(((Frame) MapSequence.fromMap(_params).get("frame")), "Enter node ID:", "Find node in model " + ((SModelDescriptor) MapSequence.fromMap(_params).get("model")).getLongName(), JOptionPane.QUESTION_MESSAGE);
+      String value = JOptionPane.showInputDialog(((Frame) MapSequence.fromMap(_params).get("frame")), "Enter node ID:", "Find node in model " + ((SModelDescriptor) MapSequence.fromMap(_params).get("CONTEXT_MODEL")).getLongName(), JOptionPane.QUESTION_MESSAGE);
       if (value == null) {
         return;
       }
@@ -82,7 +82,7 @@ public class GoToNodeById_Action extends BaseAction {
       ModelAccess.instance().runReadInEDT(new Runnable() {
         public void run() {
           SNode node;
-          node = ((SModelDescriptor) MapSequence.fromMap(_params).get("model")).getSModel().getNodeById(id);
+          node = ((SModelDescriptor) MapSequence.fromMap(_params).get("CONTEXT_MODEL")).getSModel().getNodeById(id);
           if (node == null) {
             JOptionPane.showMessageDialog(((Frame) MapSequence.fromMap(_params).get("frame")), "Can't find node with id " + trimmedValue);
             return;

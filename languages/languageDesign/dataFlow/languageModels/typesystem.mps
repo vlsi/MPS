@@ -5,7 +5,6 @@
   <language namespace="7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.lang.smodel)" />
   <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
   <language namespace="3a13115c-633c-4c5c-bbcc-75c4219e9555(jetbrains.mps.lang.quotation)" />
-  <language namespace="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" />
   <language namespace="83888646-71ce-4f1c-9c53-c54016f6ad4f(jetbrains.mps.baseLanguage.collections)" />
   <language namespace="7fa12e9c-b949-4976-b4fa-19accbc320b4(jetbrains.mps.lang.dataFlow)" />
   <devkit namespace="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
@@ -53,7 +52,7 @@
         <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="1206443439853">
           <property name="name" nameId="tpck.1169194664001" value="builder" />
           <node role="type" roleId="tpee.5680397130376446158" type="tp25.SNodeType" typeId="tp25.1138055754698" id="1206443439854">
-            <link role="concept" roleId="tp25.1138405853777" targetNodeId="tp41.1206442055221" resolveInfo="DataFlowBuilder" />
+            <link role="concept" roleId="tp25.1138405853777" targetNodeId="tp41.1206442055221" resolveInfo="DataFlowBuilderDeclaration" />
           </node>
           <node role="initializer" roleId="tpee.1068431790190" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1206443463066">
             <node role="operand" roleId="tpee.1197027771414" type="tpd4.ApplicableNodeReference" typeId="tpd4.1174650418652" id="1206443447106">
@@ -127,7 +126,7 @@
     </node>
     <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="1206444740873">
       <property name="name" nameId="tpck.1169194664001" value="nodeToCheck" />
-      <link role="concept" roleId="tpd4.1174642800329" targetNodeId="tp41.1206444622344" resolveInfo="EmitVariableStatement" />
+      <link role="concept" roleId="tpd4.1174642800329" targetNodeId="tp41.1206444622344" resolveInfo="BaseEmitVariableStatement" />
     </node>
   </root>
   <root id="1206445108940">
@@ -207,7 +206,7 @@
     </node>
     <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="2959643274329928497">
       <property name="name" nameId="tpck.1169194664001" value="getCodeForStatement" />
-      <link role="concept" roleId="tpd4.1174642800329" targetNodeId="tp41.2959643274329928484" resolveInfo="GetCodeForStatement" />
+      <link role="concept" roleId="tpd4.1174642800329" targetNodeId="tp41.2959643274329928484" resolveInfo="GetCodeForExpression" />
     </node>
   </root>
   <root id="8105845398178352624">

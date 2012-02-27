@@ -8,14 +8,23 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
-import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
+import jetbrains.mps.baseLanguage.util.plugin.refactorings.InlineVariableRefactoring;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.baseLanguage.util.plugin.refactorings.InlineVariableAssignmentRefactoring;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.baseLanguage.util.plugin.refactorings.InlineVariableReferenceRefactoring;
+import com.intellij.openapi.ui.Messages;
 import java.awt.Frame;
 import jetbrains.mps.nodeEditor.EditorContext;
 
@@ -30,13 +39,8 @@ public class InlineLocalVariable_Action extends BaseAction {
   }
 
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    final Wrappers._boolean result = new Wrappers._boolean();
-    ModelAccess.instance().runReadAction(new Runnable() {
-      public void run() {
-        result.value = InlineVariableRefactoring.isApplicable(((SNode) MapSequence.fromMap(_params).get("node")));
-      }
-    });
-    return result.value && !(((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).isReadOnly());
+    boolean result = SNodeOperations.isInstanceOf(((SNode) MapSequence.fromMap(_params).get("node")), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration") || SNodeOperations.isInstanceOf(((SNode) MapSequence.fromMap(_params).get("node")), "jetbrains.mps.baseLanguage.structure.LocalVariableReference");
+    return result && !(((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).isReadOnly());
   }
 
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
@@ -84,21 +88,57 @@ public class InlineLocalVariable_Action extends BaseAction {
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       final Wrappers._T<InlineVariableRefactoring> ref = new Wrappers._T<InlineVariableRefactoring>();
-      boolean isAvailable;
+
+      final Wrappers._boolean isAvailable = new Wrappers._boolean(true);
+      String messageDialogTitle = "Inline Variable";
+      final Wrappers._T<String> infoMessage = new Wrappers._T<String>(null);
+      final Wrappers._T<String> yesNoMessage = new Wrappers._T<String>(null);
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
-          ref.value = InlineVariableRefactoring.createRefactoring(((SNode) MapSequence.fromMap(_params).get("node")));
+          if (SNodeOperations.isInstanceOf(((SNode) MapSequence.fromMap(_params).get("node")), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration")) {
+            SNode localVariableDeclaration = SNodeOperations.cast(((SNode) MapSequence.fromMap(_params).get("node")), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration");
+            InlineVariableAssignmentRefactoring inlineVARef = new InlineVariableAssignmentRefactoring(localVariableDeclaration);
+
+            if ((SLinkOperations.getTarget(localVariableDeclaration, "initializer", true) == null)) {
+              isAvailable.value = false;
+            }
+
+            String variableName = SPropertyOperations.getString(localVariableDeclaration, "name");
+            int nodesCount = ListSequence.fromList(inlineVARef.getNodesToRefactor()).count();
+            if (nodesCount == 0) {
+              infoMessage.value = "Variable " + variableName + " is never used";
+            } else {
+              yesNoMessage.value = "Inline local variable '" + variableName + "'? (" + NameUtil.formatNumericalString(nodesCount, "occurence") + ")";
+            }
+
+            ref.value = inlineVARef;
+          } else {
+            SNode localVariableReference = SNodeOperations.cast(((SNode) MapSequence.fromMap(_params).get("node")), "jetbrains.mps.baseLanguage.structure.LocalVariableReference");
+            ref.value = new InlineVariableReferenceRefactoring(localVariableReference);
+          }
         }
       });
-      isAvailable = ref.value.checkRefactoring(((Frame) MapSequence.fromMap(_params).get("frame")));
-      if (isAvailable) {
-        ModelAccess.instance().runWriteActionInCommand(new Runnable() {
-          public void run() {
-            SNode result = ref.value.doRefactoring();
-            ((EditorContext) MapSequence.fromMap(_params).get("editorContext")).select(result);
-          }
-        });
+      if (!(isAvailable.value)) {
+        return;
       }
+
+      if (infoMessage.value != null) {
+        Messages.showInfoMessage(((Frame) MapSequence.fromMap(_params).get("frame")), infoMessage.value, messageDialogTitle);
+        return;
+      }
+      if (yesNoMessage.value != null) {
+        int code = Messages.showYesNoDialog(((Frame) MapSequence.fromMap(_params).get("frame")), yesNoMessage.value, messageDialogTitle, null);
+        if (code != 0) {
+          return;
+        }
+      }
+
+      ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+        public void run() {
+          SNode result = ref.value.doRefactoring();
+          ((EditorContext) MapSequence.fromMap(_params).get("editorContext")).select(result);
+        }
+      });
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "InlineLocalVariable", t);

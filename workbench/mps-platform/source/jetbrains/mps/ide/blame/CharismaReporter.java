@@ -16,6 +16,8 @@
 package jetbrains.mps.ide.blame;
 
 import com.intellij.ide.DataManager;
+import com.intellij.openapi.actionSystem.DataContext;
+import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import com.intellij.openapi.diagnostic.ErrorReportSubmitter;
 import com.intellij.openapi.diagnostic.IdeaLoggingEvent;
 import com.intellij.openapi.diagnostic.SubmittedReportInfo;
@@ -23,7 +25,6 @@ import com.intellij.openapi.diagnostic.SubmittedReportInfo.SubmissionStatus;
 import com.intellij.openapi.project.Project;
 import com.intellij.util.Consumer;
 import jetbrains.mps.ide.ThreadUtils;
-import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.ide.blame.dialog.BlameDialog;
 import jetbrains.mps.ide.blame.dialog.BlameDialogComponent;
 import jetbrains.mps.ide.blame.perform.Response;
@@ -43,8 +44,9 @@ public class CharismaReporter extends ErrorReportSubmitter {
       consumer.consume(new SubmittedReportInfo(null, null, SubmissionStatus.FAILED));
       return;
     }
+    final DataContext dataContext = DataManager.getInstance().getDataContext(parentComponent);
+    final Project project = PlatformDataKeys.PROJECT.getData(dataContext);
 
-    Project project = MPSCommonDataKeys.PROJECT.getData(DataManager.getInstance().getDataContext());
     BlameDialog blameDialog = BlameDialogComponent.getInstance().createDialog(project, parentComponent);
     blameDialog.addEx(events[0].getThrowable());
     blameDialog.setIssueTitle(events[0].getMessage());

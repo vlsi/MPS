@@ -63,7 +63,7 @@ public class CustomMPSApplication_Configuration_RunProfileState implements RunPr
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         SNode mpsbuild = ListSequence.fromList(SNodeOperations.getDescendants(layout, "jetbrains.mps.build.custommps.structure.MPSBuild", false, new String[]{})).first();
-        isMPSBuildIncluded.value = ((Boolean) BehaviorManager.getInstance().invoke(Boolean.class, SNodeOperations.cast(mpsbuild, "jetbrains.mps.build.packaging.structure.AbstractProjectComponent"), "call_included_1213877333807", new Class[]{SNode.class, SNode.class}, configuration));
+        isMPSBuildIncluded.value = ((Boolean) BehaviorManager.getInstance().invoke(Boolean.class, mpsbuild, "call_included_1213877333807", new Class[]{SNode.class, SNode.class}, configuration));
       }
     });
 

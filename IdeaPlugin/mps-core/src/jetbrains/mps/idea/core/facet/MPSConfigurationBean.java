@@ -22,10 +22,7 @@ import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
 import org.jetbrains.annotations.NonNls;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Set;
-import java.util.UUID;
+import java.util.*;
 
 /**
  * evgeny, 10/26/11
@@ -100,7 +97,7 @@ public class MPSConfigurationBean {
   }
 
   public void setUsedLanguages(String[] usedLanguages) {
-    Set<ModuleReference> usedLanguageReferences = myDescriptor.getUsedLanguages();
+    Collection<ModuleReference> usedLanguageReferences = myDescriptor.getUsedLanguages();
     usedLanguageReferences.clear();
     for (String usedLanguage : usedLanguages) {
       usedLanguageReferences.add(ModuleReference.fromString(usedLanguage));

@@ -24,7 +24,7 @@ import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 import java.util.Collection;
-import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import java.util.Comparator;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
@@ -61,7 +61,7 @@ public class SurroundWithIntentions_ActionGroup extends GeneratedActionGroup {
       final EditorContext context = event.getData(MPSEditorDataKeys.EDITOR_CONTEXT);
 
       Collection<Pair<Intention, SNode>> intentions = IntentionsManager.getInstance().getAvailableIntentions(query, node, context);
-      for (Pair<Intention, SNode> pair : Sequence.fromIterable(intentions)) {
+      for (Pair<Intention, SNode> pair : CollectionSequence.fromCollection(intentions)) {
         ListSequence.fromList(groupItems).addElement(MultiTuple.<Intention,SNode>from(pair.getFirst(), pair.getSecond()));
       }
       if (ListSequence.fromList(groupItems).isEmpty()) {

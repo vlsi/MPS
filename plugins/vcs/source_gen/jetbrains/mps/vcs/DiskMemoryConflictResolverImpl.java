@@ -16,12 +16,14 @@ import java.io.IOException;
 import jetbrains.mps.smodel.ModelAccess;
 import com.intellij.openapi.ui.Messages;
 import jetbrains.mps.util.FileUtil;
+import jetbrains.mps.vcs.util.MergeBackupUtil;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.smodel.persistence.def.ModelReadException;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.project.ProjectManager;
 import jetbrains.mps.vcs.diff.ui.ModelDifferenceDialog;
 import javax.swing.SwingUtilities;
+import jetbrains.mps.vcs.util.ModelVersion;
 
 public class DiskMemoryConflictResolverImpl extends DiskMemoryConflictResolver {
   protected static Log log = LogFactory.getLog(DiskMemoryConflictResolverImpl.class);

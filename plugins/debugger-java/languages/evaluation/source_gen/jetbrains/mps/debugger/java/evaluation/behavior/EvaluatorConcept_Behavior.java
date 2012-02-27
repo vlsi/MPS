@@ -63,7 +63,7 @@ public class EvaluatorConcept_Behavior {
       return EvaluatorConcept_Behavior.call_getPresentation_9172312269976661829(thisNode, SLinkOperations.getTarget(SNodeOperations.cast(lastStatement, "jetbrains.mps.baseLanguage.structure.ExpressionStatement"), "expression", true)) + suffix;
     }
 
-    return ((String) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(lastStatement, "jetbrains.mps.lang.core.structure.BaseConcept"), "virtual_getPresentation_1213877396640", new Class[]{SNode.class})) + suffix;
+    return ((String) BehaviorManager.getInstance().invoke(Object.class, lastStatement, "virtual_getPresentation_1213877396640", new Class[]{SNode.class})) + suffix;
   }
 
   public static String call_getPresentation_9172312269976661829(SNode thisNode, @Nullable SNode expression) {
@@ -88,11 +88,11 @@ public class EvaluatorConcept_Behavior {
     }
 
     if (SNodeOperations.isInstanceOf(expression, "jetbrains.mps.baseLanguage.structure.GenericNewExpression")) {
-      return "new " + ((String) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(SLinkOperations.getTarget(SNodeOperations.cast(expression, "jetbrains.mps.baseLanguage.structure.GenericNewExpression"), "creator", true), "jetbrains.mps.lang.core.structure.BaseConcept"), "virtual_getPresentation_1213877396640", new Class[]{SNode.class}));
+      return "new " + ((String) BehaviorManager.getInstance().invoke(Object.class, SLinkOperations.getTarget(SNodeOperations.cast(expression, "jetbrains.mps.baseLanguage.structure.GenericNewExpression"), "creator", true), "virtual_getPresentation_1213877396640", new Class[]{SNode.class}));
     }
 
     if (SConceptPropertyOperations.getBoolean(expression, "constant")) {
-      return ((Object) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(expression, "jetbrains.mps.baseLanguage.structure.Expression"), "virtual_getCompileTimeConstantValue_1238860310638", new Class[]{SNode.class, IModule.class}, SNodeOperations.getModel(thisNode).getModelDescriptor().getModule())) + "";
+      return ((Object) BehaviorManager.getInstance().invoke(Object.class, expression, "virtual_getCompileTimeConstantValue_1238860310638", new Class[]{SNode.class, IModule.class}, SNodeOperations.getModel(thisNode).getModelDescriptor().getModule())) + "";
     }
 
     return BaseConcept_Behavior.call_getPresentation_1213877396640(expression);
@@ -115,7 +115,7 @@ public class EvaluatorConcept_Behavior {
         }
       }) + ")";
     }
-    return ((String) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(operation, "jetbrains.mps.lang.core.structure.BaseConcept"), "virtual_getPresentation_1213877396640", new Class[]{SNode.class}));
+    return ((String) BehaviorManager.getInstance().invoke(Object.class, operation, "virtual_getPresentation_1213877396640", new Class[]{SNode.class}));
   }
 
   public static List<SNode> call_getThrowableTypes_5211667636169798157(SNode thisNode) {
