@@ -115,12 +115,8 @@ public class ClassLoaderManager implements CoreComponent {
   public void reloadAll(@NotNull ProgressMonitor monitor) {
     LOG.assertCanWrite();
 
-    monitor.start("Reloading classes...", 8);
+    monitor.start("Reloading classes...", 7);
     try {
-      monitor.step("Performing cleanup...");
-      CleanupManager.getInstance().cleanup();
-      monitor.advance(1);
-
       monitor.step("Updating classpath...");
       updateClassPath();
       monitor.advance(1);

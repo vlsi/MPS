@@ -17,6 +17,7 @@ package jetbrains.mps;
 
 import jetbrains.mps.cache.CachesManager;
 import jetbrains.mps.checkers.CheckersComponent;
+import jetbrains.mps.cleanup.CleanupManager;
 import jetbrains.mps.components.ComponentPlugin;
 import jetbrains.mps.datatransfer.CopyPasteManager;
 import jetbrains.mps.datatransfer.PasteWrappersManager;
@@ -81,6 +82,7 @@ public class MPSCore extends ComponentPlugin {
 
     final ClassLoaderManager classLoaderManager = init(new ClassLoaderManager(myModuleRepository));
     init(new QueryMethodGenerated(classLoaderManager));
+    init(new CleanupManager(classLoaderManager));
     final ConceptRegistry conceptRegistry = init(new ConceptRegistry());
     init(new LanguageRegistry(myModuleRepository, classLoaderManager, conceptRegistry));
     init(new ExtensionRegistry());
