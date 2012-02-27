@@ -57,7 +57,7 @@ public class JavaStackTraceFilter implements Filter {
 
         SNode node = null;
         if (split.length >= 2) {
-          node = TraceInfoUtil.getNode(pkg, split[0], Integer.parseInt(split[1]));
+          node = TraceInfoUtil.getJavaNode(pkg, split[0], Integer.parseInt(split[1]));
         }
         if (node == null) {
           return null;
