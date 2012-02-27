@@ -10,19 +10,22 @@ import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.smodel.SNode;
 import org.jetbrains.annotations.NonNls;
+import java.util.List;
+import jetbrains.mps.traceInfo.TraceablePositionInfo;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.Computable;
-import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.traceInfo.UnitPositionInfo;
 import jetbrains.mps.traceInfo.PositionInfo;
-import java.util.List;
 import jetbrains.mps.util.Mapper;
 import jetbrains.mps.traceInfo.DebugInfoRoot;
 import java.util.Set;
-import jetbrains.mps.traceInfo.TraceablePositionInfo;
 import jetbrains.mps.traceInfo.ScopePositionInfo;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class TraceInfoUtil {
   public TraceInfoUtil() {
@@ -59,6 +62,82 @@ public class TraceInfoUtil {
   @Nullable
   public static SNode getNode(@NonNls String className, final String file, final int position) {
     return check_4iwlxm_a0a3(getAllTraceableNodes(className, file, position));
+  }
+
+  /**
+   * Java-specific method for finding the most suitable node from position in java code.
+   * 
+   * @param unitName name of a java class
+   * @param fileName name of a source file
+   * @param lineNumber line number
+   * @return node
+   */
+  @Nullable
+  public static SNode getJavaNode(@NonNls String unitName, final String fileName, final int lineNumber) {
+    return TraceInfoUtilComponent.getInstance().findInTraceInfo(unitName, new _FunctionTypes._return_P2_E0<SNode, DebugInfo, SModelDescriptor>() {
+      public SNode invoke(DebugInfo info, SModelDescriptor modelDescriptor) {
+        List<TraceablePositionInfo> resultList = info.getTraceableInfoForPosition(fileName, lineNumber);
+        if (resultList == null || ListSequence.fromList(resultList).isEmpty()) {
+          return null;
+        }
+
+        SModel model = modelDescriptor.getSModel();
+
+        Iterable<TraceablePositionInfo> sorted = ListSequence.fromList(resultList).sort(new ISelector<TraceablePositionInfo, Comparable<?>>() {
+          public Comparable<?> select(TraceablePositionInfo it) {
+            return it;
+          }
+        }, true);
+        final TraceablePositionInfo firstPositionInfo = Sequence.fromIterable(sorted).first();
+        String nodeId = firstPositionInfo.getNodeId();
+        // here we do some magic to fix the following bug: 
+        // each node in base language owns a '\n' symbol in a previous line 
+        // in the following code we will never get 'for' node quering line 1: 
+        // 1.  for (...) { 
+        // 2.    some statement 
+        // 3.  } 
+        // since 'some statement' takes lines 1-2 instead of just line 2 
+        if (Sequence.fromIterable(sorted).count() > 1 && firstPositionInfo.getStartLine() == lineNumber && firstPositionInfo.getLineDistance() > 0) {
+          nodeId = ListSequence.fromList(Sequence.fromIterable(sorted).toListSequence()).getElement(1).getNodeId();
+        }
+        // here we have another example of how not to write code 
+        // this is a hack fixing MPS-8644 
+        // the problem is with the BlockStatement which sometimes generates to nothing, but is still present in .debug 
+        // so in the code like this: 
+        // 1. { 
+        // 2. statement 
+        // 3. } 
+        // block statement occupy the same place as "statement" because this code generates into: 
+        // 1. statement 
+        // the solution is simple: 
+        // among all node with same position we select the deepest 
+        if (Sequence.fromIterable(sorted).count() > 1) {
+          Iterable<TraceablePositionInfo> sameSpacePositions = Sequence.fromIterable(sorted).where(new IWhereFilter<TraceablePositionInfo>() {
+            public boolean accept(TraceablePositionInfo it) {
+              return firstPositionInfo.isOccupyTheSameSpace(it);
+            }
+          });
+          if (Sequence.fromIterable(sameSpacePositions).count() > 1) {
+            SNode currentNode = model.getNodeById(firstPositionInfo.getNodeId());
+            boolean finished = false;
+            while (!(finished)) {
+              finished = true;
+              for (TraceablePositionInfo otherPos : Sequence.fromIterable(sameSpacePositions)) {
+                SNode otherNode = model.getNodeById(otherPos.getNodeId());
+                if ((otherNode != null) && otherNode.isDescendantOf(currentNode, false)) {
+                  currentNode = otherNode;
+                  finished = false;
+                  break;
+                }
+              }
+            }
+            return currentNode;
+          }
+        }
+        return model.getNodeById(nodeId);
+
+      }
+    }, TraceInfoUtilComponent.DEFAULT_MAPPER);
   }
 
   @Nullable
