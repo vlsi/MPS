@@ -279,7 +279,11 @@ public class DebugInfo {
         ListSequence.fromList(resultList).addElement(element);
       }
     }
-    return resultList;
+    return ListSequence.fromList(resultList).sort(new ISelector<T, Comparable<?>>() {
+      public Comparable<?> select(T it) {
+        return it.getStartLine();
+      }
+    }, false).toListSequence();
   }
 
   @NotNull

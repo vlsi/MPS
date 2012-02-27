@@ -235,7 +235,7 @@
     <classNode dependClassName="jetbrains.mps.debug.api.programState.ILocation" />
     <classNode dependClassName="jetbrains.mps.debug.api.programState.IStackFrame" />
     <classNode dependClassName="jetbrains.mps.debug.api.programState.NullLocation" />
-    <classNode dependClassName="jetbrains.mps.generator.traceInfo.TraceInfoUtilComponent" />
+    <classNode dependClassName="jetbrains.mps.generator.traceInfo.TraceInfoUtil" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="com.intellij.openapi.components.ProjectComponent" />

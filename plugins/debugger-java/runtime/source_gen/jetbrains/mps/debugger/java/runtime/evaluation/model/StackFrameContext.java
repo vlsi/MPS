@@ -13,7 +13,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.debug.runtime.java.programState.proxies.JavaStackFrame;
 import com.sun.jdi.StackFrame;
 import com.sun.jdi.Location;
-import jetbrains.mps.generator.traceInfo.TraceInfoUtilComponent;
+import jetbrains.mps.generator.traceInfo.TraceInfoUtil;
 import org.jetbrains.annotations.NotNull;
 import java.util.List;
 import jetbrains.mps.reloading.ClasspathStringCollector;
@@ -31,7 +31,6 @@ import java.util.LinkedHashMap;
 import com.sun.jdi.LocalVariable;
 import com.sun.jdi.Type;
 import com.sun.jdi.ClassNotLoadedException;
-import jetbrains.mps.generator.traceInfo.TraceInfoUtil;
 import com.sun.jdi.InvalidStackFrameException;
 import com.sun.jdi.AbsentInformationException;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
@@ -88,7 +87,7 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
       if (stackFrame != null) {
         try {
           Location location = stackFrame.location();
-          locationNode = TraceInfoUtilComponent.getInstance().getNode(location.declaringType().name(), location.sourceName(), location.lineNumber());
+          locationNode = TraceInfoUtil.getNode(location.declaringType().name(), location.sourceName(), location.lineNumber());
         } catch (Throwable t) {
           if (log.isErrorEnabled()) {
             log.error("", t);

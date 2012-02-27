@@ -22,6 +22,7 @@ import jetbrains.mps.traceInfo.DebugInfoRoot;
 import java.util.Set;
 import jetbrains.mps.traceInfo.TraceablePositionInfo;
 import jetbrains.mps.traceInfo.ScopePositionInfo;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class TraceInfoUtil {
   public TraceInfoUtil() {
@@ -57,11 +58,7 @@ public class TraceInfoUtil {
 
   @Nullable
   public static SNode getNode(@NonNls String className, final String file, final int position) {
-    return TraceInfoUtilComponent.getInstance().findInTraceInfo(className, new _FunctionTypes._return_P2_E0<SNode, DebugInfo, SModelDescriptor>() {
-      public SNode invoke(DebugInfo info, SModelDescriptor descriptor) {
-        return info.getNodeForLine(file, position, descriptor.getSModel());
-      }
-    });
+    return check_4iwlxm_a0a3(getAllTraceableNodes(className, file, position));
   }
 
   @Nullable
@@ -100,14 +97,11 @@ public class TraceInfoUtil {
   }
 
   @Nullable
+  @Deprecated
   public static <T extends PositionInfo> List<SNode> getAllNodes(@NotNull final String className, final String file, final int position, final Mapper<DebugInfoRoot, ? extends Set<T>> positionsGetter) {
-    return ModelAccess.instance().runReadAction(new Computable<List<SNode>>() {
-      public List<SNode> compute() {
-        return TraceInfoUtilComponent.getInstance().getAllNodes(className, file, position, new _FunctionTypes._return_P1_E0<Set<T>, DebugInfoRoot>() {
-          public Set<T> invoke(DebugInfoRoot info) {
-            return positionsGetter.value(info);
-          }
-        });
+    return TraceInfoUtilComponent.getInstance().getAllNodes(className, file, position, new _FunctionTypes._return_P1_E0<Set<T>, DebugInfoRoot>() {
+      public Set<T> invoke(DebugInfoRoot info) {
+        return positionsGetter.value(info);
       }
     });
   }
@@ -140,5 +134,12 @@ public class TraceInfoUtil {
         return key.getUnitPositions();
       }
     });
+  }
+
+  private static SNode check_4iwlxm_a0a3(List<SNode> checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return ListSequence.fromList(checkedDotOperand).first();
+    }
+    return null;
   }
 }

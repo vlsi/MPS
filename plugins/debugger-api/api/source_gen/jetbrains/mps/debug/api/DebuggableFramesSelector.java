@@ -8,7 +8,7 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.debug.api.programState.ILocation;
 import jetbrains.mps.debug.api.programState.NullLocation;
 import jetbrains.mps.smodel.SNodePointer;
-import jetbrains.mps.generator.traceInfo.TraceInfoUtilComponent;
+import jetbrains.mps.generator.traceInfo.TraceInfoUtil;
 import org.apache.commons.lang.ObjectUtils;
 
 public class DebuggableFramesSelector implements IDebuggableFramesSelector {
@@ -49,13 +49,13 @@ public class DebuggableFramesSelector implements IDebuggableFramesSelector {
     if (location instanceof NullLocation) {
       return false;
     }
-    SNodePointer nodePointer = TraceInfoUtilComponent.getInstance().getNodePointer(location.getUnitName(), location.getFileName(), location.getLineNumber());
+    SNodePointer nodePointer = TraceInfoUtil.getNodePointer(location.getUnitName(), location.getFileName(), location.getLineNumber());
     return nodePointer != null;
   }
 
   @Override
   public boolean isDebuggablePosition(String unitName, String fileName, int position) {
-    SNodePointer node = TraceInfoUtilComponent.getInstance().getNodePointer(unitName, fileName, position);
+    SNodePointer node = TraceInfoUtil.getNodePointer(unitName, fileName, position);
     return node != null;
   }
 
@@ -64,8 +64,8 @@ public class DebuggableFramesSelector implements IDebuggableFramesSelector {
     if (ObjectUtils.equals(lastUnitName, nextUnitName) && lastLineNumber == nextLineNumber && lastFrameCount == nextFrameCount) {
       return true;
     }
-    SNodePointer lastPointer = TraceInfoUtilComponent.getInstance().getNodePointer(lastUnitName, lastFileName, lastLineNumber);
-    SNodePointer nextPointer = TraceInfoUtilComponent.getInstance().getNodePointer(nextUnitName, nextFileName, nextLineNumber);
+    SNodePointer lastPointer = TraceInfoUtil.getNodePointer(lastUnitName, lastFileName, lastLineNumber);
+    SNodePointer nextPointer = TraceInfoUtil.getNodePointer(nextUnitName, nextFileName, nextLineNumber);
     return eq_xhry8p_a0d0e(lastPointer, nextPointer);
   }
 

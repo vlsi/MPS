@@ -271,7 +271,6 @@
     <classNode dependClassName="jetbrains.mps.debug.runtime.java.programState.proxies.JavaStackFrame" />
     <classNode dependClassName="jetbrains.mps.debugger.java.runtime.evaluation.model.VariableDescription" />
     <classNode dependClassName="jetbrains.mps.generator.traceInfo.TraceInfoUtil" />
-    <classNode dependClassName="jetbrains.mps.generator.traceInfo.TraceInfoUtilComponent" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations" />

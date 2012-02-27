@@ -28,9 +28,6 @@ import java.util.Set;
 import jetbrains.mps.traceInfo.DebugInfoRoot;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import jetbrains.mps.smodel.SNodePointer;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.util.Computable;
 
 public class TraceInfoUtilComponent implements CoreComponent {
   private static TraceInfoUtilComponent INSTANCE;
@@ -144,11 +141,17 @@ public class TraceInfoUtilComponent implements CoreComponent {
           }
         });
         List<SNode> nodes = ListSequence.fromList(new ArrayList<SNode>());
-        if (infoForPosition.isEmpty()) {
+        if (ListSequence.fromList(infoForPosition).isEmpty()) {
           return null;
         }
         for (T info : infoForPosition) {
-          nodes.add(descriptor.getSModel().getNodeById(info.getNodeId()));
+          SNode node = descriptor.getSModel().getNodeById(info.getNodeId());
+          if (node != null) {
+            nodes.add(node);
+          }
+        }
+        if (ListSequence.fromList(nodes).isEmpty()) {
+          return null;
         }
         return nodes;
       }
@@ -157,28 +160,6 @@ public class TraceInfoUtilComponent implements CoreComponent {
 
   public <T extends PositionInfo> List<SNode> getAllNodes(@NonNls String unitName, String file, int lineNumber, _FunctionTypes._return_P1_E0<? extends Set<T>, ? super DebugInfoRoot> positionsGetter) {
     return getAllNodes(unitName, file, lineNumber, positionsGetter, DEFAULT_MAPPER);
-  }
-
-  @Nullable
-  public SNode getNode(@NonNls String unitName, final String fileName, final int lineNumber) {
-    return findInTraceInfo(unitName, new _FunctionTypes._return_P2_E0<SNode, DebugInfo, SModelDescriptor>() {
-      public SNode invoke(DebugInfo info, SModelDescriptor descriptor) {
-        return info.getNodeForLine(fileName, lineNumber, descriptor.getSModel());
-      }
-    });
-  }
-
-  @Nullable
-  public SNodePointer getNodePointer(@NonNls final String unitName, final String fileName, final int lineNumber) {
-    return ModelAccess.instance().runReadAction(new Computable<SNodePointer>() {
-      public SNodePointer compute() {
-        SNode node = getNode(unitName, fileName, lineNumber);
-        if (node != null) {
-          return new SNodePointer(node);
-        }
-        return null;
-      }
-    });
   }
 
   public static TraceInfoUtilComponent getInstance() {
