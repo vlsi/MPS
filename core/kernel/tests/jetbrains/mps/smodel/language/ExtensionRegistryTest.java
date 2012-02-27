@@ -49,7 +49,7 @@ public class ExtensionRegistryTest {
   public void createContext() {
     context = new Mockery();
     if (ExtensionRegistry.getInstance() == null) {
-      myExtensionRegistry = new ExtensionRegistry();
+      myExtensionRegistry = new ExtensionRegistry(null);
       myExtensionRegistry.init();
     }
   }

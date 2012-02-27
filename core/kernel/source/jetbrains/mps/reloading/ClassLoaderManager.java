@@ -111,16 +111,16 @@ public class ClassLoaderManager implements CoreComponent {
       updateClassPath();
       monitor.advance(1);
 
-      monitor.step("Updating stub models...");
-      LibrariesLoader.getInstance().loadNewLibs();
-      monitor.advance(1);
-
       monitor.step("Disposing old classes...");
       callListeners(new ListenerCaller() {
         public void call(ReloadListener l) {
           l.unload();
         }
       });
+      monitor.advance(1);
+
+      monitor.step("Updating stub models...");
+      LibrariesLoader.getInstance().loadNewLibs();
       monitor.advance(1);
 
       monitor.step("Updating language registry...");
