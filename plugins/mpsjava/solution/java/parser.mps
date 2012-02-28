@@ -32,7 +32,6 @@
   <import index="mzqo" modelUID="f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#jetbrains.mps.ide.dialogs(MPS.Workbench/jetbrains.mps.ide.dialogs@java_stub)" version="-1" />
   <import index="5r5x" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#org.eclipse.jdt.internal.compiler.lookup(MPS.Core/org.eclipse.jdt.internal.compiler.lookup@java_stub)" version="-1" />
   <import index="n8sb" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.project.structure.model(MPS.Core/jetbrains.mps.project.structure.model@java_stub)" version="-1" />
-  <import index="v38v" modelUID="f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#jetbrains.mps.ide.ui(MPS.Workbench/jetbrains.mps.ide.ui@java_stub)" version="-1" />
   <import index="msyo" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.util(MPS.Core/jetbrains.mps.util@java_stub)" version="-1" />
   <import index="7q5n" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#org.eclipse.jdt.internal.compiler.impl(MPS.Core/org.eclipse.jdt.internal.compiler.impl@java_stub)" version="-1" />
   <import index="p6y2" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#org.eclipse.jdt.internal.compiler.parser(MPS.Core/org.eclipse.jdt.internal.compiler.parser@java_stub)" version="-1" />
@@ -42,6 +41,7 @@
   <import index="u4l0" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#org.eclipse.jdt.internal.compiler.problem(MPS.Core/org.eclipse.jdt.internal.compiler.problem@java_stub)" version="-1" />
   <import index="to5d" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.logging(MPS.Core/jetbrains.mps.logging@java_stub)" version="-1" />
   <import index="8iu6" modelUID="f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#jetbrains.mps.ide.project(MPS.Workbench/jetbrains.mps.ide.project@java_stub)" version="-1" />
+  <import index="4tq0" modelUID="f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#jetbrains.mps.platform.ui(MPS.Workbench/jetbrains.mps.platform.ui@java_stub)" version="-1" />
   <import index="dbrf" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#javax.swing(JDK/javax.swing@java_stub)" version="-1" implicit="yes" />
   <import index="lcqf" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#javax.swing.event(JDK/javax.swing.event@java_stub)" version="-1" implicit="yes" />
   <import index="e2lb" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" version="-1" implicit="yes" />
@@ -115,8 +115,8 @@
     <node role="staticInnerClassifiers" roleId="tpee.1178616825527" type="tpee.ClassConcept" typeId="tpee.1068390468198" id="5646944109420273442">
       <property name="name" nameId="tpck.1169194664001" value="FileData" />
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="5646944109420291031" />
-      <node role="implementedInterface" roleId="tpee.1095933932569" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5646944109420291032">
-        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="v38v.~CheckBoxNodeRenderer$NodeData" resolveInfo="CheckBoxNodeRenderer.NodeData" />
+      <node role="implementedInterface" roleId="tpee.1095933932569" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="8063607872455132269">
+        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="4tq0.~CheckBoxNodeRenderer$NodeData" resolveInfo="CheckBoxNodeRenderer.NodeData" />
       </node>
       <node role="field" roleId="tpee.1068390468199" type="tpee.FieldDeclaration" typeId="tpee.1068390468200" id="5646944109420291033">
         <property name="name" nameId="tpck.1169194664001" value="myFile" />
@@ -888,7 +888,7 @@
             <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="dbrf.~JTree%dsetCellRenderer(javax%dswing%dtree%dTreeCellRenderer)%cvoid" resolveInfo="setCellRenderer" />
             <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="5646944109420291132">
               <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="5646944109420291133">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="v38v.~CheckBoxNodeRenderer%d&lt;init&gt;()" resolveInfo="CheckBoxNodeRenderer" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4tq0.~CheckBoxNodeRenderer%d&lt;init&gt;()" resolveInfo="CheckBoxNodeRenderer" />
               </node>
             </node>
           </node>
@@ -900,8 +900,8 @@
               <node role="creator" roleId="tpee.1145553007750" type="tpee.AnonymousClassCreator" typeId="tpee.1182160077978" id="5646944109420291137">
                 <node role="cls" roleId="tpee.1182160096073" type="tpee.AnonymousClass" typeId="tpee.1170345865475" id="5646944109420291138">
                   <property name="name" nameId="tpck.1169194664001" value="" />
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="v38v.~CheckBoxNodeRenderer$CheckBoxNodeEditor%d&lt;init&gt;()" resolveInfo="CheckBoxNodeRenderer.CheckBoxNodeEditor" />
-                  <link role="classifier" roleId="tpee.1170346070688" targetNodeId="v38v.~CheckBoxNodeRenderer$CheckBoxNodeEditor" resolveInfo="CheckBoxNodeRenderer.CheckBoxNodeEditor" />
+                  <link role="classifier" roleId="tpee.1170346070688" targetNodeId="4tq0.~CheckBoxNodeRenderer$CheckBoxNodeEditor" resolveInfo="CheckBoxNodeRenderer.CheckBoxNodeEditor" />
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4tq0.~CheckBoxNodeRenderer$CheckBoxNodeEditor%d&lt;init&gt;()" resolveInfo="CheckBoxNodeRenderer.CheckBoxNodeEditor" />
                   <node role="typeParameter" roleId="tpee.1201186121363" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5646944109420291139">
                     <link role="classifier" roleId="tpee.1107535924139" targetNodeId="5646944109420273442" resolveInfo="ClasspathSelectionTree.FileData" />
                   </node>
@@ -927,7 +927,7 @@
                               <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="5646944109420291042" resolveInfo="ClasspathSelectionTree.FileData" />
                               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="5646944109420298952">
                                 <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalInstanceMethodCall" typeId="tpee.3066917033203108594" id="5646944109420298953">
-                                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="v38v.~CheckBoxNodeRenderer$CheckBoxNodeEditor%dgetObject()%cjetbrains%dmps%dide%dui%dCheckBoxNodeRenderer$NodeData" resolveInfo="getObject" />
+                                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4tq0.~CheckBoxNodeRenderer$CheckBoxNodeEditor%dgetObject()%cjetbrains%dmps%dplatform%dui%dCheckBoxNodeRenderer$NodeData" resolveInfo="getObject" />
                                 </node>
                                 <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="5646944109420298954">
                                   <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="5646944109420291049" resolveInfo="getFile" />

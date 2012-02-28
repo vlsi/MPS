@@ -8,7 +8,7 @@ import java.util.Map;
 import java.io.File;
 import jetbrains.mps.reloading.IClassPathItem;
 import java.util.HashMap;
-import jetbrains.mps.ide.ui.CheckBoxNodeRenderer;
+import jetbrains.mps.platform.ui.CheckBoxNodeRenderer;
 import java.util.List;
 import javax.swing.event.TreeWillExpandListener;
 import javax.swing.event.TreeExpansionEvent;
