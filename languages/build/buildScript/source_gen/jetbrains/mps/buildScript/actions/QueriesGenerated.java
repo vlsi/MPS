@@ -27,8 +27,11 @@ import jetbrains.mps.smodel.action.IChildNodeSetter;
 import jetbrains.mps.smodel.action.AbstractChildNodeSetter;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.action.ModelActions;
-import jetbrains.mps.smodel.action.DefaultSimpleSubstituteAction;
+import jetbrains.mps.scope.Scope;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
+import jetbrains.mps.smodel.action.DefaultSimpleSubstituteAction;
 import org.apache.commons.lang.StringUtils;
 import java.util.regex.Matcher;
 import jetbrains.mps.smodel.action.SideTransformActionsBuilderContext;
@@ -36,9 +39,7 @@ import jetbrains.mps.smodel.action.AbstractSideTransformHintSubstituteAction;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
 
 public class QueriesGenerated {
-  private static Pattern REGEXP_x583g4_a0a0a0c0a0a0a0c0a0b0g = Pattern.compile("[\\$].*", 0);
-  private static Pattern REGEXP_x583g4_a0a0a0a2a0a0a0a2a0a2a6 = Pattern.compile("[^\\$].*", 0);
-  private static Pattern REGEXP_x583g4_a0a0b0d0a0a0a0c0a0c0g = Pattern.compile("[^\\$].*", 0);
+  private static Pattern REGEXP_x583g4_a0a0b0b0a0a0a0c0a0c0h = Pattern.compile("[^\\$].*", 0);
 
   public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_BuildSourceMacroRelativePath_7321017245477126429(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
     return (SLinkOperations.getTarget(_context.getSourceNode(), "compositePart", true) == null);
@@ -117,25 +118,82 @@ public class QueriesGenerated {
     return result;
   }
 
+  public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_BuildString_631271972589842683(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
+    List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
+    {
+      SNode wrappedConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.buildScript.structure.BuildStringPart");
+      IChildNodeSetter setter = new AbstractChildNodeSetter() {
+        public SNode wrapNode(SNode nodeToWrap, SModel model) {
+          SNode res = SConceptOperations.createNewNode("jetbrains.mps.buildScript.structure.BuildString", null);
+          ListSequence.fromList(SLinkOperations.getTargets(res, "parts", true)).addElement(nodeToWrap);
+          return res;
+        }
+
+        public boolean returnSmallPart(SNode nodeToWrap) {
+          return false;
+        }
+
+        public SNode doExecute(SNode pn, SNode oc, SNode nc, IScope sc) {
+          SNode wrappedNode = this.wrapNode(nc, nc.getModel());
+          _context.getChildSetter().execute(_context.getParentNode(), _context.getCurrentTargetNode(), wrappedNode, operationContext.getScope());
+          if (this.returnSmallPart(nc)) {
+            return nc;
+          } else {
+            return wrappedNode;
+          }
+        }
+      };
+      ListSequence.fromList(result).addSequence(ListSequence.fromList(ModelActions.createChildSubstituteActions(_context.getParentNode(), _context.getCurrentTargetNode(), wrappedConcept, setter, operationContext)));
+    }
+    return result;
+  }
+
   public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_BuildStringPart_4903714810883808412(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
     List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
     {
       SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.buildScript.structure.BuildVarRefStringPart");
       SNode childConcept = (SNode) _context.getChildConcept();
-      if (outputConcept == null || SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
-        ListSequence.fromList(result).addElement(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
-          public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-            return SNodeFactoryOperations.createNewNode(model, "jetbrains.mps.buildScript.structure.BuildVarRefStringPart", null);
+      if (SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
+        Computable computable = new Computable() {
+          public Object compute() {
+            Scope scope = Scope.getScope(((_context.getCurrentTargetNode() != null) ?
+              _context.getCurrentTargetNode() :
+              _context.getParentNode()
+            ), null, SConceptOperations.findConceptDeclaration("jetbrains.mps.buildScript.structure.BuildMacro"));
+            if (scope == null) {
+              return null;
+            }
+            return ListSequence.fromList(scope.getAvailableElements(null)).where(new IWhereFilter<SNode>() {
+              public boolean accept(SNode it) {
+                return SNodeOperations.isInstanceOf(it, "jetbrains.mps.buildScript.structure.BuildVariableMacro");
+              }
+            }).select(new ISelector<SNode, SNode>() {
+              public SNode select(SNode it) {
+                return SNodeOperations.cast(it, "jetbrains.mps.buildScript.structure.BuildVariableMacro");
+              }
+            }).toListSequence();
           }
+        };
+        Iterable<SNode> queryResult = (Iterable) computable.compute();
+        if (queryResult != null) {
+          for (final SNode item : queryResult) {
+            ListSequence.fromList(result).addElement(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
+              public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
+                SNode res = SNodeFactoryOperations.createNewNode(model, "jetbrains.mps.buildScript.structure.BuildVarRefStringPart", null);
+                SLinkOperations.setTarget(res, "macro", (item), false);
+                return res;
+              }
 
-          public boolean hasSubstitute() {
-            return true;
-          }
+              public String getMatchingText(String pattern) {
+                return "$" + SPropertyOperations.getString((item), "name");
+              }
 
-          public boolean canSubstitute_internal(String pattern, boolean strictly) {
-            return StringUtils.isEmpty(pattern) || REGEXP_x583g4_a0a0a0c0a0a0a0c0a0b0g.matcher(pattern).matches();
+              public String getVisibleMatchingText(String pattern) {
+                return this.getMatchingText(pattern);
+              }
+            });
           }
-        });
+        }
       }
     }
     {
@@ -149,20 +207,12 @@ public class QueriesGenerated {
             return buildText;
           }
 
-          public boolean hasSubstitute() {
-            return true;
-          }
-
-          public boolean canSubstitute_internal(String pattern, boolean strictly) {
-            return StringUtils.isEmpty(pattern) || (REGEXP_x583g4_a0a0a0a2a0a0a0a2a0a2a6.matcher(pattern).matches());
-          }
-
           public String getMatchingText(String pattern) {
             if (StringUtils.isEmpty(pattern)) {
               return "text";
             }
             {
-              Pattern _pattern_0 = REGEXP_x583g4_a0a0b0d0a0a0a0c0a0c0g;
+              Pattern _pattern_0 = REGEXP_x583g4_a0a0b0b0a0a0a0c0a0c0h;
               Matcher _matcher_0 = _pattern_0.matcher(pattern);
               if (_matcher_0.find()) {
                 return pattern;

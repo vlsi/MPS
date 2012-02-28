@@ -18,4 +18,12 @@ public class BuildVarRefStringPart_Behavior {
     }
     return "${" + macroName + "}";
   }
+
+  public static boolean virtual_isLastPositionAllowed_624440001685490925(SNode thisNode) {
+    return (SNodeOperations.getNextSibling(thisNode) == null);
+  }
+
+  public static boolean virtual_isFirstPositionAllowed_624440001685459414(SNode thisNode) {
+    return !(SNodeOperations.isInstanceOf(SNodeOperations.getPrevSibling(thisNode), "jetbrains.mps.buildScript.structure.BuildTextStringPart"));
+  }
 }

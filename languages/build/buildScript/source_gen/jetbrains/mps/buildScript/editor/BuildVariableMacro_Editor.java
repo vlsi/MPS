@@ -30,7 +30,7 @@ public class BuildVariableMacro_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_cnoc6t_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "variable");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "var");
     editorCell.setCellId("Constant_cnoc6t_a0");
     buildStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
