@@ -293,7 +293,8 @@ public class FileUtil {
       if (writer != null) {
         try {
           writer.close();
-        } catch (IOException e) {}
+        } catch (IOException e) {
+        }
       }
     }
   }
@@ -469,7 +470,9 @@ public class FileUtil {
         relative.append("..").append(pathSeparator);
       }
     }
-    relative.append(targetPath.substring(common.length()));
+    if (targetPath.length() > common.length()) {
+      relative.append(targetPath.substring(common.length()));
+    }
     return relative.toString();
   }
 
@@ -485,8 +488,8 @@ public class FileUtil {
       }
     }
   }
-  
-  public static boolean canWrite(File f){
+
+  public static boolean canWrite(File f) {
     while (!f.exists()) {
       f = f.getParentFile();
       if (f == null) {
