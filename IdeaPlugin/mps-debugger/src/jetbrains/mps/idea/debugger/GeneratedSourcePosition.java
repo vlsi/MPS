@@ -41,7 +41,6 @@ import org.jetbrains.annotations.Nullable;
  * some stuff as: node, psi file.
  */
 public class GeneratedSourcePosition {
-    public static final String UNIT_CONCEPT = "jetbrains.mps.lang.traceable.structure.UnitConcept";
     private final String myTypeName;
     private final String myFileName;
     private final int myLineNumber;
