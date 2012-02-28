@@ -15,8 +15,9 @@
   -->
 
 <idea-plugin version="2">
-  <name>jetbrains.mps.debugger</name>
-  <description>Java Debugger Integration For MPS Plugin</description>
+  <id>jetbrains.mps.debugger</id>
+  <name>MPS Java Debugger Support</name>
+  <description>Java debugger integration with MPS plugin</description>
   <version>1.0</version>
   <vendor>JetBrains</vendor>
   <idea-version since-build="8000"/>
