@@ -7,7 +7,6 @@ import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
@@ -21,20 +20,11 @@ public class BuildSource_JavaLibraryClasses_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_kwwkhw_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_kwwkhw_a");
-    editorCell.addEditorCell(this.createConstant_kwwkhw_a0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_kwwkhw_b0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_kwwkhw_a0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_kwwkhw_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "classes:");
-    editorCell.setCellId("Constant_kwwkhw_a0");
-    buildStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-  private EditorCell createRefNode_kwwkhw_b0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_kwwkhw_a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("resset");
     provider.setNoTargetText("<no resset>");

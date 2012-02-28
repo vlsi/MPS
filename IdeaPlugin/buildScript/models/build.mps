@@ -150,14 +150,8 @@
     </node>
     <node role="parts" roleId="3ior.7389400916848080626" type="3ior.BuildSource_JavaLibrary" typeId="3ior.6057319140845467763" id="7926701909975931629">
       <property name="name" nameId="tpck.1169194664001" value="core-libraries" />
-      <node role="elements" roleId="3ior.6057319140845478673" type="3ior.BuildSource_JavaLibraryClasses" typeId="3ior.6057319140845478671" id="7926701909975931663">
-        <node role="resset" roleId="3ior.5248329904288198648" type="3ior.BuildInputFiles" typeId="3ior.5248329904287794596" id="7926701909975931665">
-          <node role="dir" roleId="3ior.5248329904287794598" type="3ior.BuildSourceMacroRelativePath" typeId="3ior.7389400916848153117" id="7926701909975931667">
-            <link role="macro" roleId="3ior.7389400916848153130" targetNodeId="7926701909975931632" resolveInfo="idea_home" />
-            <node role="compositePart" roleId="3ior.7321017245477039051" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="7926701909975931669">
-              <property name="head" nameId="3ior.8618885170173601779" value="lib" />
-            </node>
-          </node>
+      <node role="elements" roleId="3ior.6057319140845478673" type="3ior.BuildSource_JavaLibraryClasses" typeId="3ior.6057319140845478671" id="1258644073389160361">
+        <node role="resset" roleId="3ior.5248329904288198648" type="3ior.BuildSource_JavaLibraryClassFiles" typeId="3ior.1258644073389103449" id="1258644073389160362">
           <node role="selectors" roleId="3ior.5248329904287794679" type="3ior.BuildFileIncludeSelector" typeId="3ior.5248329904288051100" id="7926701909975931670">
             <property name="pattern" nameId="3ior.5248329904288051101" value="org.eclipse.jdt.core_3.5.2.v_981_R35x.jar" />
           </node>
@@ -185,15 +179,21 @@
           <node role="selectors" roleId="3ior.5248329904287794679" type="3ior.BuildFileIncludeSelector" typeId="3ior.5248329904288051100" id="7926701909975931686">
             <property name="pattern" nameId="3ior.5248329904288051101" value="commons-logging-1.1.1.jar" />
           </node>
+          <node role="dir" roleId="3ior.5248329904287794598" type="3ior.BuildSourceMacroRelativePath" typeId="3ior.7389400916848153117" id="1258644073389160364">
+            <link role="macro" roleId="3ior.7389400916848153130" targetNodeId="7926701909975931632" resolveInfo="idea_home" />
+            <node role="compositePart" roleId="3ior.7321017245477039051" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="1258644073389160365">
+              <property name="head" nameId="3ior.8618885170173601779" value="lib" />
+            </node>
+          </node>
         </node>
       </node>
       <node role="elements" roleId="3ior.6057319140845478673" type="3ior.BuildSource_JavaLibraryClasses" typeId="3ior.6057319140845478671" id="1277685309310600650">
-        <node role="resset" roleId="3ior.5248329904288198648" type="3ior.BuildInputSingleFile" typeId="3ior.5248329904287794582" id="1277685309310600651">
-          <node role="path" roleId="3ior.5248329904287794586" type="3ior.BuildSourceMacroRelativePath" typeId="3ior.7389400916848153117" id="1277685309310600652">
+        <node role="resset" roleId="3ior.5248329904288198648" type="3ior.BuildSource_JavaLibraryJar" typeId="3ior.1258644073388922138" id="1258644073389162551">
+          <node role="path" roleId="3ior.5248329904287794586" type="3ior.BuildSourceMacroRelativePath" typeId="3ior.7389400916848153117" id="1258644073389162552">
             <link role="macro" roleId="3ior.7389400916848153130" targetNodeId="1277685309310599419" resolveInfo="mps_home" />
-            <node role="compositePart" roleId="3ior.7321017245477039051" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="1277685309310600653">
+            <node role="compositePart" roleId="3ior.7321017245477039051" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="1258644073389162553">
               <property name="head" nameId="3ior.8618885170173601779" value="lib" />
-              <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="1277685309310600654">
+              <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="1258644073389162554">
                 <property name="head" nameId="3ior.8618885170173601779" value="asm.jar" />
               </node>
             </node>
@@ -201,12 +201,12 @@
         </node>
       </node>
       <node role="elements" roleId="3ior.6057319140845478673" type="3ior.BuildSource_JavaLibraryClasses" typeId="3ior.6057319140845478671" id="1277685309310600655">
-        <node role="resset" roleId="3ior.5248329904288198648" type="3ior.BuildInputSingleFile" typeId="3ior.5248329904287794582" id="1277685309310600656">
-          <node role="path" roleId="3ior.5248329904287794586" type="3ior.BuildSourceMacroRelativePath" typeId="3ior.7389400916848153117" id="1277685309310600657">
+        <node role="resset" roleId="3ior.5248329904288198648" type="3ior.BuildSource_JavaLibraryJar" typeId="3ior.1258644073388922138" id="1258644073389162555">
+          <node role="path" roleId="3ior.5248329904287794586" type="3ior.BuildSourceMacroRelativePath" typeId="3ior.7389400916848153117" id="1258644073389162556">
             <link role="macro" roleId="3ior.7389400916848153130" targetNodeId="1277685309310599419" resolveInfo="mps_home" />
-            <node role="compositePart" roleId="3ior.7321017245477039051" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="1277685309310600658">
+            <node role="compositePart" roleId="3ior.7321017245477039051" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="1258644073389162557">
               <property name="head" nameId="3ior.8618885170173601779" value="lib" />
-              <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="1277685309310600659">
+              <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="1258644073389162558">
                 <property name="head" nameId="3ior.8618885170173601779" value="diffutils-1.2.1.jar" />
               </node>
             </node>
@@ -217,25 +217,25 @@
     <node role="parts" roleId="3ior.7389400916848080626" type="3ior.BuildSource_JavaLibrary" typeId="3ior.6057319140845467763" id="1277685309310600631">
       <property name="name" nameId="tpck.1169194664001" value="idea-libraries" />
       <node role="elements" roleId="3ior.6057319140845478673" type="3ior.BuildSource_JavaLibraryClasses" typeId="3ior.6057319140845478671" id="1277685309310600632">
-        <node role="resset" roleId="3ior.5248329904288198648" type="3ior.BuildInputFiles" typeId="3ior.5248329904287794596" id="1277685309310600634">
-          <node role="dir" roleId="3ior.5248329904287794598" type="3ior.BuildSourceMacroRelativePath" typeId="3ior.7389400916848153117" id="1277685309310600636">
+        <node role="resset" roleId="3ior.5248329904288198648" type="3ior.BuildSource_JavaLibraryClassFiles" typeId="3ior.1258644073389103449" id="1258644073389162559">
+          <node role="dir" roleId="3ior.5248329904287794598" type="3ior.BuildSourceMacroRelativePath" typeId="3ior.7389400916848153117" id="1258644073389162560">
             <link role="macro" roleId="3ior.7389400916848153130" targetNodeId="7926701909975931632" resolveInfo="idea_home" />
-            <node role="compositePart" roleId="3ior.7321017245477039051" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="1277685309310600638">
+            <node role="compositePart" roleId="3ior.7321017245477039051" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="1258644073389162561">
               <property name="head" nameId="3ior.8618885170173601779" value="lib" />
             </node>
           </node>
-          <node role="selectors" roleId="3ior.5248329904287794679" type="3ior.BuildFileIncludeSelector" typeId="3ior.5248329904288051100" id="1277685309310600639">
+          <node role="selectors" roleId="3ior.5248329904287794679" type="3ior.BuildFileIncludeSelector" typeId="3ior.5248329904288051100" id="1258644073389162562">
             <property name="pattern" nameId="3ior.5248329904288051101" value="*.jar" />
           </node>
         </node>
       </node>
       <node role="elements" roleId="3ior.6057319140845478673" type="3ior.BuildSource_JavaLibraryClasses" typeId="3ior.6057319140845478671" id="1277685309310600640">
-        <node role="resset" roleId="3ior.5248329904288198648" type="3ior.BuildInputSingleFile" typeId="3ior.5248329904287794582" id="1277685309310600641">
-          <node role="path" roleId="3ior.5248329904287794586" type="3ior.BuildSourceMacroRelativePath" typeId="3ior.7389400916848153117" id="1277685309310600642">
+        <node role="resset" roleId="3ior.5248329904288198648" type="3ior.BuildSource_JavaLibraryJar" typeId="3ior.1258644073388922138" id="1258644073389162563">
+          <node role="path" roleId="3ior.5248329904287794586" type="3ior.BuildSourceMacroRelativePath" typeId="3ior.7389400916848153117" id="1258644073389162564">
             <link role="macro" roleId="3ior.7389400916848153130" targetNodeId="1277685309310599419" resolveInfo="mps_home" />
-            <node role="compositePart" roleId="3ior.7321017245477039051" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="1277685309310600643">
+            <node role="compositePart" roleId="3ior.7321017245477039051" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="1258644073389162565">
               <property name="head" nameId="3ior.8618885170173601779" value="lib" />
-              <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="1277685309310600648">
+              <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="1258644073389162566">
                 <property name="head" nameId="3ior.8618885170173601779" value="asm.jar" />
               </node>
             </node>
@@ -243,12 +243,12 @@
         </node>
       </node>
       <node role="elements" roleId="3ior.6057319140845478673" type="3ior.BuildSource_JavaLibraryClasses" typeId="3ior.6057319140845478671" id="1277685309310600644">
-        <node role="resset" roleId="3ior.5248329904288198648" type="3ior.BuildInputSingleFile" typeId="3ior.5248329904287794582" id="1277685309310600645">
-          <node role="path" roleId="3ior.5248329904287794586" type="3ior.BuildSourceMacroRelativePath" typeId="3ior.7389400916848153117" id="1277685309310600646">
+        <node role="resset" roleId="3ior.5248329904288198648" type="3ior.BuildSource_JavaLibraryJar" typeId="3ior.1258644073388922138" id="1258644073389162567">
+          <node role="path" roleId="3ior.5248329904287794586" type="3ior.BuildSourceMacroRelativePath" typeId="3ior.7389400916848153117" id="1258644073389162568">
             <link role="macro" roleId="3ior.7389400916848153130" targetNodeId="1277685309310599419" resolveInfo="mps_home" />
-            <node role="compositePart" roleId="3ior.7321017245477039051" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="1277685309310600647">
+            <node role="compositePart" roleId="3ior.7321017245477039051" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="1258644073389162569">
               <property name="head" nameId="3ior.8618885170173601779" value="lib" />
-              <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="1277685309310600649">
+              <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="1258644073389162570">
                 <property name="head" nameId="3ior.8618885170173601779" value="diffutils-1.2.1.jar" />
               </node>
             </node>
@@ -259,20 +259,20 @@
     <node role="parts" roleId="3ior.7389400916848080626" type="3ior.BuildSource_JavaLibrary" typeId="3ior.6057319140845467763" id="1930569293341277368">
       <property name="name" nameId="tpck.1169194664001" value="idea-ant" />
       <node role="elements" roleId="3ior.6057319140845478673" type="3ior.BuildSource_JavaLibraryClasses" typeId="3ior.6057319140845478671" id="1930569293341277369">
-        <node role="resset" roleId="3ior.5248329904288198648" type="3ior.BuildInputFiles" typeId="3ior.5248329904287794596" id="1930569293341277371">
-          <node role="dir" roleId="3ior.5248329904287794598" type="3ior.BuildSourceMacroRelativePath" typeId="3ior.7389400916848153117" id="1930569293341277373">
+        <node role="resset" roleId="3ior.5248329904288198648" type="3ior.BuildSource_JavaLibraryClassFiles" typeId="3ior.1258644073389103449" id="1258644073389162571">
+          <node role="dir" roleId="3ior.5248329904287794598" type="3ior.BuildSourceMacroRelativePath" typeId="3ior.7389400916848153117" id="1258644073389162572">
             <link role="macro" roleId="3ior.7389400916848153130" targetNodeId="7926701909975931632" resolveInfo="idea_home" />
-            <node role="compositePart" roleId="3ior.7321017245477039051" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="1930569293341277374">
+            <node role="compositePart" roleId="3ior.7321017245477039051" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="1258644073389162573">
               <property name="head" nameId="3ior.8618885170173601779" value="lib" />
-              <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="1277685309310600674">
+              <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="1258644073389162574">
                 <property name="head" nameId="3ior.8618885170173601779" value="ant" />
-                <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="1277685309310600675">
+                <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="1258644073389162575">
                   <property name="head" nameId="3ior.8618885170173601779" value="lib" />
                 </node>
               </node>
             </node>
           </node>
-          <node role="selectors" roleId="3ior.5248329904287794679" type="3ior.BuildFileIncludeSelector" typeId="3ior.5248329904288051100" id="1930569293341277378">
+          <node role="selectors" roleId="3ior.5248329904287794679" type="3ior.BuildFileIncludeSelector" typeId="3ior.5248329904288051100" id="1258644073389162576">
             <property name="pattern" nameId="3ior.5248329904288051101" value="*.jar" />
           </node>
         </node>
@@ -281,12 +281,12 @@
     <node role="parts" roleId="3ior.7389400916848080626" type="3ior.BuildSource_JavaLibrary" typeId="3ior.6057319140845467763" id="1277685309310600661">
       <property name="name" nameId="tpck.1169194664001" value="junit-4.10" />
       <node role="elements" roleId="3ior.6057319140845478673" type="3ior.BuildSource_JavaLibraryClasses" typeId="3ior.6057319140845478671" id="1277685309310600662">
-        <node role="resset" roleId="3ior.5248329904288198648" type="3ior.BuildInputSingleFile" typeId="3ior.5248329904287794582" id="1277685309310600669">
-          <node role="path" roleId="3ior.5248329904287794586" type="3ior.BuildSourceMacroRelativePath" typeId="3ior.7389400916848153117" id="1277685309310600671">
+        <node role="resset" roleId="3ior.5248329904288198648" type="3ior.BuildSource_JavaLibraryJar" typeId="3ior.1258644073388922138" id="1258644073389162577">
+          <node role="path" roleId="3ior.5248329904287794586" type="3ior.BuildSourceMacroRelativePath" typeId="3ior.7389400916848153117" id="1258644073389162578">
             <link role="macro" roleId="3ior.7389400916848153130" targetNodeId="7926701909975931632" resolveInfo="idea_home" />
-            <node role="compositePart" roleId="3ior.7321017245477039051" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="1277685309310600672">
+            <node role="compositePart" roleId="3ior.7321017245477039051" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="1258644073389162579">
               <property name="head" nameId="3ior.8618885170173601779" value="lib" />
-              <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="1277685309310600673">
+              <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="1258644073389162580">
                 <property name="head" nameId="3ior.8618885170173601779" value="junit-4.10.jar" />
               </node>
             </node>

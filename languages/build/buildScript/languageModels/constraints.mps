@@ -44,7 +44,7 @@
       <link role="concept" roleId="tp1t.1213093996982" targetNodeId="3ior.7389400916848073784" resolveInfo="BuildSource_JavaModule" />
     </node>
     <node type="tp1t.ConceptConstraints" typeId="tp1t.1213093968558" id="6647099934206924807">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="Project.Java" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Project.Java.Library" />
       <link role="concept" roleId="tp1t.1213093996982" targetNodeId="3ior.6057319140845467763" resolveInfo="BuildSource_JavaLibrary" />
     </node>
     <node type="tp1t.ConceptConstraints" typeId="tp1t.1213093968558" id="4903714810883755357">
@@ -52,7 +52,7 @@
       <link role="concept" roleId="tp1t.1213093996982" targetNodeId="3ior.4903714810883702019" resolveInfo="BuildTextStringPart" />
     </node>
     <node type="tp1t.ConceptConstraints" typeId="tp1t.1213093968558" id="5248329904288343261">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="Project.Java" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Project.Java.Sources" />
       <link role="concept" roleId="tp1t.1213093996982" targetNodeId="3ior.5248329904288265468" resolveInfo="BuildSource_JavaSources" />
       <link role="defaultConcreteConcept" roleId="tp1t.1213106917431" targetNodeId="3ior.7389400916848073810" resolveInfo="BuildSource_JavaContentRoot" />
     </node>
@@ -72,6 +72,23 @@
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Names" />
       <link role="concept" roleId="tp1t.1213093996982" targetNodeId="3ior.4903714810883702015" resolveInfo="BuildStringPart" />
       <link role="defaultConcreteConcept" roleId="tp1t.1213106917431" targetNodeId="3ior.4903714810883702019" resolveInfo="BuildTextStringPart" />
+    </node>
+    <node type="tp1t.ConceptConstraints" typeId="tp1t.1213093968558" id="1258644073388922137">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Project.Java.Library" />
+      <link role="concept" roleId="tp1t.1213093996982" targetNodeId="3ior.6057319140845478671" resolveInfo="BuildSource_JavaLibraryClasses" />
+    </node>
+    <node type="tp1t.ConceptConstraints" typeId="tp1t.1213093968558" id="1258644073388922142">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Project.Java.Library" />
+      <link role="concept" roleId="tp1t.1213093996982" targetNodeId="3ior.1258644073388922138" resolveInfo="BuildSource_JavaLibraryJar" />
+    </node>
+    <node type="tp1t.ConceptConstraints" typeId="tp1t.1213093968558" id="1258644073389103233">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="SourcePath" />
+      <link role="concept" roleId="tp1t.1213093996982" targetNodeId="3ior.7389400916848073790" resolveInfo="BuildSourcePath" />
+      <link role="defaultConcreteConcept" roleId="tp1t.1213106917431" targetNodeId="3ior.5481553824944787378" resolveInfo="BuildSourceProjectRelativePath" />
+    </node>
+    <node type="tp1t.ConceptConstraints" typeId="tp1t.1213093968558" id="1258644073389103451">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Project.Java.Library" />
+      <link role="concept" roleId="tp1t.1213093996982" targetNodeId="3ior.1258644073389103449" resolveInfo="BuildSource_JavaLibraryClassFiles" />
     </node>
   </roots>
   <root id="7389400916848182167">
@@ -346,5 +363,76 @@
     </node>
   </root>
   <root id="4380385936562359245" />
+  <root id="1258644073388922137">
+    <node role="canBeParent" roleId="tp1t.1213106478122" type="tp1t.ConstraintFunction_CanBeAParent" typeId="tp1t.1203001093456" id="1258644073389093527">
+      <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="1258644073389093528">
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1258644073389093529">
+          <node role="expression" roleId="tpee.1068580123156" type="tpee.OrExpression" typeId="tpee.1080223426719" id="1258644073389103454">
+            <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1258644073389103460">
+              <node role="operand" roleId="tpee.1197027771414" type="tp1t.ConstraintFunctionParameter_childConcept" typeId="tp1t.1203001236505" id="1258644073389103457" />
+              <node role="operation" roleId="tpee.1197027833540" type="tp25.Concept_IsExactlyOperation" typeId="tp25.1172326502327" id="1258644073389103465">
+                <node role="conceptArgument" roleId="tp25.1206733650006" type="tp25.RefConcept_Reference" typeId="tp25.1177026924588" id="1258644073389103467">
+                  <link role="conceptDeclaration" roleId="tp25.1177026940964" targetNodeId="3ior.1258644073389103449" resolveInfo="BuildSource_JavaLibraryClassFiles" />
+                </node>
+              </node>
+            </node>
+            <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1258644073389093538">
+              <node role="operand" roleId="tpee.1197027771414" type="tp1t.ConstraintFunctionParameter_childConcept" typeId="tp1t.1203001236505" id="1258644073389093530" />
+              <node role="operation" roleId="tpee.1197027833540" type="tp25.Concept_IsExactlyOperation" typeId="tp25.1172326502327" id="1258644073389093543">
+                <node role="conceptArgument" roleId="tp25.1206733650006" type="tp25.RefConcept_Reference" typeId="tp25.1177026924588" id="1258644073389093545">
+                  <link role="conceptDeclaration" roleId="tp25.1177026940964" targetNodeId="3ior.1258644073388922138" resolveInfo="BuildSource_JavaLibraryJar" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </root>
+  <root id="1258644073388922142">
+    <node role="canBeChild" roleId="tp1t.1213106463729" type="tp1t.ConstraintFunction_CanBeAChild" typeId="tp1t.1202989531578" id="1258644073388922143">
+      <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="1258644073388922144">
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1258644073389101487">
+          <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1258644073389102963">
+            <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1258644073389101491">
+              <node role="operand" roleId="tpee.1197027771414" type="tp1t.ConstraintFunctionParameter_parentNode" typeId="tp1t.1202989658459" id="1258644073389101488" />
+              <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_GetAncestorOperation" typeId="tp25.1171407110247" id="1258644073389102953">
+                <node role="parameter" roleId="tp25.1144104376918" type="tp25.OperationParm_Concept" typeId="tp25.1144101972840" id="1258644073389102954">
+                  <node role="conceptArgument" roleId="tp25.1207343664468" type="tp25.RefConcept_Reference" typeId="tp25.1177026924588" id="1258644073389102958">
+                    <link role="conceptDeclaration" roleId="tp25.1177026940964" targetNodeId="3ior.6057319140845467763" resolveInfo="BuildSource_JavaLibrary" />
+                  </node>
+                </node>
+                <node role="parameter" roleId="tp25.1144104376918" type="tp25.OperationParm_Inclusion" typeId="tp25.1144100932627" id="1258644073389102960" />
+              </node>
+            </node>
+            <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_IsNotNullOperation" typeId="tp25.1172008320231" id="1258644073389102969" />
+          </node>
+        </node>
+      </node>
+    </node>
+  </root>
+  <root id="1258644073389103233" />
+  <root id="1258644073389103451">
+    <node role="canBeChild" roleId="tp1t.1213106463729" type="tp1t.ConstraintFunction_CanBeAChild" typeId="tp1t.1202989531578" id="1258644073389103468">
+      <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="1258644073389103469">
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1258644073389103470">
+          <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1258644073389103471">
+            <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1258644073389103472">
+              <node role="operand" roleId="tpee.1197027771414" type="tp1t.ConstraintFunctionParameter_parentNode" typeId="tp1t.1202989658459" id="1258644073389103473" />
+              <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_GetAncestorOperation" typeId="tp25.1171407110247" id="1258644073389103474">
+                <node role="parameter" roleId="tp25.1144104376918" type="tp25.OperationParm_Concept" typeId="tp25.1144101972840" id="1258644073389103475">
+                  <node role="conceptArgument" roleId="tp25.1207343664468" type="tp25.RefConcept_Reference" typeId="tp25.1177026924588" id="1258644073389103476">
+                    <link role="conceptDeclaration" roleId="tp25.1177026940964" targetNodeId="3ior.6057319140845467763" resolveInfo="BuildSource_JavaLibrary" />
+                  </node>
+                </node>
+                <node role="parameter" roleId="tp25.1144104376918" type="tp25.OperationParm_Inclusion" typeId="tp25.1144100932627" id="1258644073389103477" />
+              </node>
+            </node>
+            <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_IsNotNullOperation" typeId="tp25.1172008320231" id="1258644073389103478" />
+          </node>
+        </node>
+      </node>
+    </node>
+  </root>
 </model>
 

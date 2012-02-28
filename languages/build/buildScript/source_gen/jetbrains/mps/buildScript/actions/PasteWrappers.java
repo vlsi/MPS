@@ -30,6 +30,22 @@ public class PasteWrappers {
         return cp;
       }
     });
+    ListSequence.fromList(result).addElement(new PasteWrapper() {
+      public String getSourceConceptFqName() {
+        return "jetbrains.mps.buildScript.structure.BuildInputResourceSet";
+      }
+
+      public String getTargetConceptFqName() {
+        return "jetbrains.mps.buildScript.structure.BuildSource_JavaLibraryElement";
+      }
+
+      public SNode wrap(PasteWrapperContext _context) {
+        SNode nn = SModelOperations.createNewNode(SNodeOperations.getModel(_context.getSourceNode()), "jetbrains.mps.buildScript.structure.BuildSource_JavaLibraryClasses", null);
+        SLinkOperations.setTarget(nn, "resset", _context.getSourceNode(), true);
+        return nn;
+
+      }
+    });
     return result;
   }
 }

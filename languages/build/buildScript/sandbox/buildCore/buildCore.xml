@@ -8,11 +8,10 @@
   <property name="buildCore.deploy.dir" location="${build.dir}/artifacts/buildCore.artifacts" />
   
   <path id="path.java.library.apache-collections">
-    <fileset file="${build_langs}/build.ipr" />
+    <fileset file="${build_langs}/build.jar" />
     <fileset dir="${mps_home}">
       <include name="**/*.jar" />
     </fileset>
-    <fileset dir="${basedir}"></fileset>
   </path>
   
   <target name="build" depends="check, assemble" />

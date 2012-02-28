@@ -8,10 +8,10 @@ import jetbrains.mps.smodel.action.SideTransformPreconditionContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.action.NodeSetupContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.List;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
 import jetbrains.mps.smodel.action.NodeSubstituteActionsFactoryContext;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
@@ -34,12 +34,13 @@ import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.smodel.action.DefaultSimpleSubstituteAction;
 import org.apache.commons.lang.StringUtils;
 import java.util.regex.Matcher;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.smodel.action.SideTransformActionsBuilderContext;
 import jetbrains.mps.smodel.action.AbstractSideTransformHintSubstituteAction;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
 
 public class QueriesGenerated {
-  private static Pattern REGEXP_x583g4_a0a0b0b0a0a0a0c0a0c0h = Pattern.compile("[^\\$].*", 0);
+  private static Pattern REGEXP_x583g4_a0a0b0b0a0a0a0c0a0c0j = Pattern.compile("[^\\$].*", 0);
 
   public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_BuildSourceMacroRelativePath_7321017245477126429(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
     return (SLinkOperations.getTarget(_context.getSourceNode(), "compositePart", true) == null);
@@ -58,6 +59,19 @@ public class QueriesGenerated {
   public static void nodeFactory_NodeSetup_BuildSourceProjectRelativePath_5481553824944787387(final IOperationContext operationContext, final NodeSetupContext _context) {
     if (SNodeOperations.isInstanceOf(_context.getSampleNode(), "jetbrains.mps.buildScript.structure.BuildSourceMacroRelativePath")) {
       SLinkOperations.setTarget(_context.getNewNode(), "compositePart", SNodeOperations.copyNode(SLinkOperations.getTarget(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.buildScript.structure.BuildSourceMacroRelativePath"), "compositePart", true)), true);
+    }
+  }
+
+  public static void nodeFactory_NodeSetup_BuildInputSingleFile_1258644073389160371(final IOperationContext operationContext, final NodeSetupContext _context) {
+    if (SNodeOperations.isInstanceOf(_context.getSampleNode(), "jetbrains.mps.buildScript.structure.BuildInputSingleFile")) {
+      SLinkOperations.setTarget(_context.getNewNode(), "path", SLinkOperations.getTarget(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.buildScript.structure.BuildInputSingleFile"), "path", true), true);
+    }
+  }
+
+  public static void nodeFactory_NodeSetup_BuildInputFiles_1258644073389160422(final IOperationContext operationContext, final NodeSetupContext _context) {
+    if (SNodeOperations.isInstanceOf(_context.getSampleNode(), "jetbrains.mps.buildScript.structure.BuildInputFiles")) {
+      SLinkOperations.setTarget(_context.getNewNode(), "dir", SLinkOperations.getTarget(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.buildScript.structure.BuildInputFiles"), "dir", true), true);
+      ListSequence.fromList(SLinkOperations.getTargets(_context.getNewNode(), "selectors", true)).addSequence(ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.buildScript.structure.BuildInputFiles"), "selectors", true)));
     }
   }
 
@@ -212,7 +226,7 @@ public class QueriesGenerated {
               return "text";
             }
             {
-              Pattern _pattern_0 = REGEXP_x583g4_a0a0b0b0a0a0a0c0a0c0h;
+              Pattern _pattern_0 = REGEXP_x583g4_a0a0b0b0a0a0a0c0a0c0j;
               Matcher _matcher_0 = _pattern_0.matcher(pattern);
               if (_matcher_0.find()) {
                 return pattern;
@@ -226,6 +240,61 @@ public class QueriesGenerated {
           }
         });
       }
+    }
+    return result;
+  }
+
+  public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_BuildSource_JavaLibraryClasses_1258644073389099676(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
+    List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
+    {
+      SNode wrappedConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.buildScript.structure.BuildSource_JavaLibraryJar");
+      IChildNodeSetter setter = new AbstractChildNodeSetter() {
+        public SNode wrapNode(SNode nodeToWrap, SModel model) {
+          SNode n = SModelOperations.createNewNode(model, "jetbrains.mps.buildScript.structure.BuildSource_JavaLibraryClasses", null);
+          SLinkOperations.setTarget(n, "resset", nodeToWrap, true);
+          return n;
+        }
+
+        public boolean returnSmallPart(SNode nodeToWrap) {
+          return false;
+        }
+
+        public SNode doExecute(SNode pn, SNode oc, SNode nc, IScope sc) {
+          SNode wrappedNode = this.wrapNode(nc, nc.getModel());
+          _context.getChildSetter().execute(_context.getParentNode(), _context.getCurrentTargetNode(), wrappedNode, operationContext.getScope());
+          if (this.returnSmallPart(nc)) {
+            return nc;
+          } else {
+            return wrappedNode;
+          }
+        }
+      };
+      ListSequence.fromList(result).addSequence(ListSequence.fromList(ModelActions.createChildSubstituteActions(_context.getParentNode(), _context.getCurrentTargetNode(), wrappedConcept, setter, operationContext)));
+    }
+    {
+      SNode wrappedConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.buildScript.structure.BuildSource_JavaLibraryClassFiles");
+      IChildNodeSetter setter = new AbstractChildNodeSetter() {
+        public SNode wrapNode(SNode nodeToWrap, SModel model) {
+          SNode n = SModelOperations.createNewNode(model, "jetbrains.mps.buildScript.structure.BuildSource_JavaLibraryClasses", null);
+          SLinkOperations.setTarget(n, "resset", nodeToWrap, true);
+          return n;
+        }
+
+        public boolean returnSmallPart(SNode nodeToWrap) {
+          return false;
+        }
+
+        public SNode doExecute(SNode pn, SNode oc, SNode nc, IScope sc) {
+          SNode wrappedNode = this.wrapNode(nc, nc.getModel());
+          _context.getChildSetter().execute(_context.getParentNode(), _context.getCurrentTargetNode(), wrappedNode, operationContext.getScope());
+          if (this.returnSmallPart(nc)) {
+            return nc;
+          } else {
+            return wrappedNode;
+          }
+        }
+      };
+      ListSequence.fromList(result).addSequence(ListSequence.fromList(ModelActions.createChildSubstituteActions(_context.getParentNode(), _context.getCurrentTargetNode(), wrappedConcept, setter, operationContext)));
     }
     return result;
   }
