@@ -128,6 +128,7 @@ public class XmlElement_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Collection_vc3gub_a0a3a_0");
     {
       Style style = editorCell.getStyle();
+      style.set(StyleAttributes.SELECTABLE, false);
       style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
     }
     editorCell.addEditorCell(this.createCollection_vc3gub_a0a0d0(editorContext, node));
