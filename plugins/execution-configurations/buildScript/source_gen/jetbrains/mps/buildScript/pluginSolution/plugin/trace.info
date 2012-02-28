@@ -5,21 +5,23 @@
   <unitInfo fileName="RunConfigurationsInitializer_CustomApplicationPlugin.java" startLine="18" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.buildScript.pluginSolution.plugin.RunConfigurationsInitializer_CustomApplicationPlugin" />
   <unitInfo fileName="RunConfigurationsInitializer_CustomApplicationPlugin.java" startLine="37" startPosition="108" endLine="48" endPosition="5" unitName="jetbrains.mps.buildScript.pluginSolution.plugin.RunConfigurationsInitializer_CustomApplicationPlugin$1" />
   <root nodeId="1357788371930488530">
-    <nodeInfo nodeId="1357788371930488530" fileName="Extension_CanEditBaseDir_.java" startLine="9" startPosition="38" endLine="10" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="1357788371930491095" fileName="Extension_CanEditBaseDir_.java" startLine="13" startPosition="64" endLine="14" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="1357788371930491092" fileName="Extension_CanEditBaseDir_.java" startLine="16" startPosition="31" endLine="17" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1357788371930488530" fileName="Extension_CanEditBaseDir_.java" startLine="8" startPosition="115" endLine="11" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Extension_CanEditBaseDir_#()V" />
-    <nodeInfo nodeId="1357788371930491090" fileName="Extension_CanEditBaseDir_.java" startLine="15" startPosition="56" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#()Ljava/lang/Boolean;" />
-    <nodeInfo nodeId="1357788371930491089" fileName="Extension_CanEditBaseDir_.java" startLine="14" startPosition="67" endLine="19" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1357788371930488530" fileName="Extension_CanEditBaseDir_.java" startLine="12" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="get#()Ljetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_return_P0_E0;" />
-    <scopeInfo nodeId="1357788371930488530" fileName="Extension_CanEditBaseDir_.java" startLine="9" startPosition="38" endLine="10" endPosition="54" />
-    <scopeInfo nodeId="1357788371930491091" fileName="Extension_CanEditBaseDir_.java" startLine="16" startPosition="31" endLine="17" endPosition="20" />
-    <scopeInfo nodeId="1357788371930488530" fileName="Extension_CanEditBaseDir_.java" startLine="8" startPosition="115" endLine="11" endPosition="3" />
-    <scopeInfo nodeId="1357788371930491090" fileName="Extension_CanEditBaseDir_.java" startLine="15" startPosition="56" endLine="19" endPosition="0" />
-    <scopeInfo nodeId="1357788371930488530" fileName="Extension_CanEditBaseDir_.java" startLine="13" startPosition="64" endLine="19" endPosition="6" />
-    <scopeInfo nodeId="1357788371930488530" fileName="Extension_CanEditBaseDir_.java" startLine="12" startPosition="0" endLine="21" endPosition="0" />
-    <unitInfo nodeId="1357788371930488530" fileName="Extension_CanEditBaseDir_.java" startLine="8" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.buildScript.pluginSolution.plugin.Extension_CanEditBaseDir_" />
-    <unitInfo nodeId="1357788371930491090" fileName="Extension_CanEditBaseDir_.java" startLine="15" startPosition="15" endLine="19" endPosition="5" unitName="jetbrains.mps.buildScript.pluginSolution.plugin.Extension_CanEditBaseDir_$1" />
+    <nodeInfo nodeId="1357788371930488530" fileName="Extension_CanEditBaseDir_.java" startLine="11" startPosition="38" endLine="12" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="1357788371930491095" fileName="Extension_CanEditBaseDir_.java" startLine="15" startPosition="79" endLine="16" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="1357788371930491092" fileName="Extension_CanEditBaseDir_.java" startLine="18" startPosition="38" endLine="19" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1357788371930488530" fileName="Extension_CanEditBaseDir_.java" startLine="10" startPosition="130" endLine="13" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Extension_CanEditBaseDir_#()V" />
+    <nodeInfo nodeId="1357788371930491090" fileName="Extension_CanEditBaseDir_.java" startLine="17" startPosition="63" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/Boolean;" />
+    <nodeInfo nodeId="1357788371930491089" fileName="Extension_CanEditBaseDir_.java" startLine="16" startPosition="67" endLine="21" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1357788371930488530" fileName="Extension_CanEditBaseDir_.java" startLine="14" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="get#()Ljetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_return_P1_E0;" />
+    <scopeInfo nodeId="1357788371930488530" fileName="Extension_CanEditBaseDir_.java" startLine="11" startPosition="38" endLine="12" endPosition="54" />
+    <scopeInfo nodeId="1357788371930491091" fileName="Extension_CanEditBaseDir_.java" startLine="18" startPosition="38" endLine="19" endPosition="75" />
+    <scopeInfo nodeId="1357788371930488530" fileName="Extension_CanEditBaseDir_.java" startLine="10" startPosition="130" endLine="13" endPosition="3" />
+    <scopeInfo nodeId="1357788371930491090" fileName="Extension_CanEditBaseDir_.java" startLine="17" startPosition="63" endLine="21" endPosition="0">
+      <varInfo nodeId="1357788371930491090" varName="p" />
+    </scopeInfo>
+    <scopeInfo nodeId="1357788371930488530" fileName="Extension_CanEditBaseDir_.java" startLine="15" startPosition="79" endLine="21" endPosition="6" />
+    <scopeInfo nodeId="1357788371930488530" fileName="Extension_CanEditBaseDir_.java" startLine="14" startPosition="0" endLine="23" endPosition="0" />
+    <unitInfo nodeId="1357788371930488530" fileName="Extension_CanEditBaseDir_.java" startLine="10" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.buildScript.pluginSolution.plugin.Extension_CanEditBaseDir_" />
+    <unitInfo nodeId="1357788371930491090" fileName="Extension_CanEditBaseDir_.java" startLine="17" startPosition="15" endLine="21" endPosition="5" unitName="jetbrains.mps.buildScript.pluginSolution.plugin.Extension_CanEditBaseDir_$1" />
   </root>
   <root nodeId="3767587139140991018">
     <nodeInfo nodeId="3767587139140991018" fileName="BuildScript_Producer.java" startLine="16" startPosition="35" endLine="17" endPosition="143" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="CONFIGURATION_FACTORY_CLASS_NAME" />

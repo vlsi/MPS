@@ -164,7 +164,7 @@ public class BuildProject_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_vny568_h0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "dependencies:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "macros:");
     editorCell.setCellId("Constant_vny568_h0");
     buildStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     {
@@ -187,7 +187,7 @@ public class BuildProject_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_vny568_k0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "macros:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "dependencies:");
     editorCell.setCellId("Constant_vny568_k0");
     buildStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     {
@@ -353,9 +353,9 @@ public class BuildProject_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createRefNodeList_vny568_i0(EditorContext editorContext, SNode node) {
-    AbstractCellListHandler handler = new BuildProject_Editor.dependenciesListHandler_vny568_i0(node, "dependencies", editorContext);
+    AbstractCellListHandler handler = new BuildProject_Editor.macrosListHandler_vny568_i0(node, "macros", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
-    editorCell.setCellId("refNodeList_dependencies");
+    editorCell.setCellId("refNodeList_macros");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE, true);
@@ -367,9 +367,9 @@ public class BuildProject_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createRefNodeList_vny568_l0(EditorContext editorContext, SNode node) {
-    AbstractCellListHandler handler = new BuildProject_Editor.macrosListHandler_vny568_l0(node, "macros", editorContext);
+    AbstractCellListHandler handler = new BuildProject_Editor.dependenciesListHandler_vny568_l0(node, "dependencies", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
-    editorCell.setCellId("refNodeList_macros");
+    editorCell.setCellId("refNodeList_dependencies");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE, true);
@@ -475,7 +475,7 @@ public class BuildProject_Editor extends DefaultNodeEditor {
   }
 
   private static boolean renderingCondition_vny568_a0(SNode node, EditorContext editorContext, IScope scope) {
-    return BuildProject_Behavior.canEditBaseDir_8419583202466289469();
+    return BuildProject_Behavior.call_canEditBaseDir_631271972590018330(node);
   }
 
   private static JComponent _QueryFunction_JComponent_vny568_a2a0(final SNode node, final EditorContext editorContext) {
@@ -518,8 +518,8 @@ public class BuildProject_Editor extends DefaultNodeEditor {
     }
   }
 
-  private static class dependenciesListHandler_vny568_i0 extends RefNodeListHandler {
-    public dependenciesListHandler_vny568_i0(SNode ownerNode, String childRole, EditorContext context) {
+  private static class macrosListHandler_vny568_i0 extends RefNodeListHandler {
+    public macrosListHandler_vny568_i0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
@@ -554,8 +554,8 @@ public class BuildProject_Editor extends DefaultNodeEditor {
     }
   }
 
-  private static class macrosListHandler_vny568_l0 extends RefNodeListHandler {
-    public macrosListHandler_vny568_l0(SNode ownerNode, String childRole, EditorContext context) {
+  private static class dependenciesListHandler_vny568_l0 extends RefNodeListHandler {
+    public dependenciesListHandler_vny568_l0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 

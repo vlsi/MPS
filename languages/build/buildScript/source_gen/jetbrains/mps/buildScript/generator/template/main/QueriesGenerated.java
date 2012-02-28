@@ -191,7 +191,12 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_5178006408628664059(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return BuildProject_Behavior.call_getBasePathRelativeToScriptsPath_5178006408628632053(_context.getNode(), Context.defaulContext(_context));
+    try {
+      BuildProject_Behavior.call_getBasePathRelativeToScriptsPath_5178006408628632053(_context.getNode(), Context.defaulContext(_context));
+    } catch (Exception ex) {
+      _context.showErrorMessage(_context.getNode(), ex.toString());
+    }
+    return "??????";
   }
 
   public static Object propertyMacro_GetPropertyValue_1117643560963351184(final IOperationContext operationContext, final PropertyMacroContext _context) {

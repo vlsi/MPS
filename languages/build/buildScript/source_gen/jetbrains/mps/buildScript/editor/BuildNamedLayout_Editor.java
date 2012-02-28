@@ -27,51 +27,51 @@ import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultReferenceSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 
-public class BuildArtifact_Editor extends DefaultNodeEditor {
+public class BuildNamedLayout_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_ibs4dy_a(editorContext, node);
+    return this.createCollection_yt8ri3_a(editorContext, node);
   }
 
-  private EditorCell createCollection_ibs4dy_a(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_yt8ri3_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_ibs4dy_a");
-    editorCell.addEditorCell(this.createConstant_ibs4dy_a0(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_ibs4dy_b0(editorContext, node));
-    editorCell.addEditorCell(this.createCollection_ibs4dy_c0(editorContext, node));
+    editorCell.setCellId("Collection_yt8ri3_a");
+    editorCell.addEditorCell(this.createConstant_yt8ri3_a0(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_yt8ri3_b0(editorContext, node));
+    editorCell.addEditorCell(this.createCollection_yt8ri3_c0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createCollection_ibs4dy_c0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_yt8ri3_c0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_ibs4dy_c0");
+    editorCell.setCellId("Collection_yt8ri3_c0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
     }
-    editorCell.addEditorCell(this.createRefNodeList_ibs4dy_a2a(editorContext, node));
-    if (renderingCondition_ibs4dy_a1c0(node, editorContext, editorContext.getOperationContext().getScope())) {
-      editorCell.addEditorCell(this.createConstant_ibs4dy_b2a(editorContext, node));
+    editorCell.addEditorCell(this.createRefNodeList_yt8ri3_a2a(editorContext, node));
+    if (renderingCondition_yt8ri3_a1c0(node, editorContext, editorContext.getOperationContext().getScope())) {
+      editorCell.addEditorCell(this.createConstant_yt8ri3_b2a(editorContext, node));
     }
     return editorCell;
   }
 
-  private EditorCell createConstant_ibs4dy_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "artifact");
-    editorCell.setCellId("Constant_ibs4dy_a0");
+  private EditorCell createConstant_yt8ri3_a0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "layout");
+    editorCell.setCellId("Constant_yt8ri3_a0");
     buildStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_ibs4dy_b2a(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_yt8ri3_b2a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
-    editorCell.setCellId("Constant_ibs4dy_b2a");
+    editorCell.setCellId("Constant_yt8ri3_b2a");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createRefNodeList_ibs4dy_a2a(EditorContext editorContext, SNode node) {
-    AbstractCellListHandler handler = new BuildArtifact_Editor.childrenListHandler_ibs4dy_a2a(node, "children", editorContext);
+  private EditorCell createRefNodeList_yt8ri3_a2a(EditorContext editorContext, SNode node) {
+    AbstractCellListHandler handler = new BuildNamedLayout_Editor.childrenListHandler_yt8ri3_a2a(node, "children", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_children");
     {
@@ -82,7 +82,7 @@ public class BuildArtifact_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createProperty_ibs4dy_b0(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_yt8ri3_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("name");
     provider.setNoTargetText("<no name>");
@@ -104,12 +104,12 @@ public class BuildArtifact_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_ibs4dy_a1c0(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_yt8ri3_a1c0(SNode node, EditorContext editorContext, IScope scope) {
     return !(SNodeOperations.isInstanceOf(ListSequence.fromList(SLinkOperations.getTargets(node, "children", true)).last(), "jetbrains.mps.buildScript.structure.BuildLayout_AbstractContainer"));
   }
 
-  private static class childrenListHandler_ibs4dy_a2a extends RefNodeListHandler {
-    public childrenListHandler_ibs4dy_a2a(SNode ownerNode, String childRole, EditorContext context) {
+  private static class childrenListHandler_yt8ri3_a2a extends RefNodeListHandler {
+    public childrenListHandler_yt8ri3_a2a(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 

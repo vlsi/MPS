@@ -136,7 +136,7 @@
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="3542413272732529456">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Layout" />
-      <property name="name" nameId="tpck.1169194664001" value="BuildArtifact" />
+      <property name="name" nameId="tpck.1169194664001" value="BuildNamedLayout" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="3542413272732750877" resolveInfo="BuildAspect" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="3542413272732750877">
@@ -582,8 +582,12 @@
       <link role="target" roleId="tpce.1071599976176" targetNodeId="7389400916848036997" resolveInfo="BuildLayout_Node" />
     </node>
     <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="3542413272732529458">
-      <property name="value" nameId="tpce.1105725733873" value="artifact" />
+      <property name="value" nameId="tpce.1105725733873" value="layout" />
       <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="631271972589949534">
+      <property name="value" nameId="tpce.1105725733873" value="custom named layout" />
+      <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473914776" resolveInfo="shortDescription" />
     </node>
     <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="3542413272732757045">
       <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tpck.1169194658468" resolveInfo="INamedConcept" />

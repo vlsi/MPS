@@ -103,11 +103,11 @@ public class BuildProject_Behavior {
     return new CompositeScope(ListSequence.fromList(scopes).toGenericArray(Scope.class));
   }
 
-  public static boolean canEditBaseDir_8419583202466289469() {
-    ExtensionPoint<_FunctionTypes._return_P0_E0<? extends Boolean>> point = ExtensionPoint.<_FunctionTypes._return_P0_E0<? extends Boolean>>generify(new ExtensionPoint("jetbrains.mps.buildScript.CanEditBaseDir", _FunctionTypes._return_P0_E0.class));
-    return Sequence.fromIterable(point.getObjects()).findFirst(new IWhereFilter<_FunctionTypes._return_P0_E0<? extends Boolean>>() {
-      public boolean accept(_FunctionTypes._return_P0_E0<? extends Boolean> it) {
-        return it.invoke();
+  public static boolean call_canEditBaseDir_631271972590018330(final SNode thisNode) {
+    ExtensionPoint<_FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>> point = ExtensionPoint.<_FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>>generify(new ExtensionPoint("jetbrains.mps.buildScript.CanEditBaseDir", _FunctionTypes._return_P1_E0.class));
+    return Sequence.fromIterable(point.getObjects()).findFirst(new IWhereFilter<_FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>>() {
+      public boolean accept(_FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode> it) {
+        return it.invoke(thisNode);
       }
     }) != null;
   }

@@ -6,8 +6,8 @@ import jetbrains.mps.lang.core.behavior.INamedConcept_BehaviorDescriptor;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 
-public class BuildArtifact_BehaviorDescriptor extends BuildAspect_BehaviorDescriptor implements INamedConcept_BehaviorDescriptor {
-  public BuildArtifact_BehaviorDescriptor() {
+public class BuildNamedLayout_BehaviorDescriptor extends BuildAspect_BehaviorDescriptor implements INamedConcept_BehaviorDescriptor {
+  public BuildNamedLayout_BehaviorDescriptor() {
   }
 
   public String virtual_getFqName_1213877404258(SNode thisNode) {
@@ -16,6 +16,6 @@ public class BuildArtifact_BehaviorDescriptor extends BuildAspect_BehaviorDescri
 
   @Override
   public String getConceptFqName() {
-    return "jetbrains.mps.buildScript.structure.BuildArtifact";
+    return "jetbrains.mps.buildScript.structure.BuildNamedLayout";
   }
 }
