@@ -28,7 +28,7 @@ public enum JUnitRunTypes2 {
         for (String method : ListSequence.fromList(configuration.getTestMethods())) {
           SNodePointer pointer = TestUtils.stringToPointer(method);
           if (pointer == null || pointer.getNode() == null || TestNodeWrapperFactory.tryToWrap(pointer.getNode()) == null) {
-            return "Could not find test method for id " + method + "";
+            return "Could not find test method for id " + method + ".";
           }
         }
       }
@@ -50,7 +50,7 @@ public enum JUnitRunTypes2 {
         for (String testCase : ListSequence.fromList(configuration.getTestCases())) {
           SNodePointer pointer = TestUtils.stringToPointer(testCase);
           if (pointer == null || pointer.getNode() == null || TestNodeWrapperFactory.tryToWrap(pointer.getNode()) == null) {
-            return "Could not find test case for id " + testCase + "";
+            return "Could not find test case for id " + testCase + ".";
           }
         }
       }
@@ -77,7 +77,7 @@ public enum JUnitRunTypes2 {
         return "Could not find model " + configuration.getModel();
       }
       if (Sequence.fromIterable(TestUtils.getModelTests(model)).isEmpty()) {
-        return "No tests found in model " + configuration.getModel() + "";
+        return "No tests found in model " + configuration.getModel() + ".";
       }
       return null;
     }

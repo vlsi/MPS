@@ -155,7 +155,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_7806358006983619352(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return NodeNameUtil.getNamespace(INamedConcept_Behavior.call_getFqName_1213877404258(RunConfiguration_Behavior.call_getExecutor_3754890006475713427(_context.getNode()))) + "" + IGeneratedToClass_Behavior.call_getGeneratedClassName_946964771156905488(RunConfiguration_Behavior.call_getExecutor_3754890006475713427(_context.getNode()));
+    return NodeNameUtil.getNamespace(INamedConcept_Behavior.call_getFqName_1213877404258(RunConfiguration_Behavior.call_getExecutor_3754890006475713427(_context.getNode()))) + "." + IGeneratedToClass_Behavior.call_getGeneratedClassName_946964771156905488(RunConfiguration_Behavior.call_getExecutor_3754890006475713427(_context.getNode()));
   }
 
   public static Object propertyMacro_GetPropertyValue_7806358006983619390(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -201,7 +201,7 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_2256484787298832716(final IOperationContext operationContext, final PropertyMacroContext _context) {
     SNode configuration = SNodeOperations.cast(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "configuration", true), "persistentConfiguration", false), "jetbrains.mps.execution.configurations.structure.RunConfiguration");
-    return IGeneratedToClass_Behavior.call_getNamespace_2256484787298834694(configuration) + "" + RunConfiguration_Behavior.call_getGeneratedFactoryName_2256484787298832736(configuration);
+    return IGeneratedToClass_Behavior.call_getNamespace_2256484787298834694(configuration) + "." + RunConfiguration_Behavior.call_getGeneratedFactoryName_2256484787298832736(configuration);
   }
 
   public static Object propertyMacro_GetPropertyValue_529406319400357394(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -214,7 +214,7 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_7952658987872215075(final IOperationContext operationContext, final PropertyMacroContext _context) {
     SNode configuration = SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "creator", true), "jetbrains.mps.execution.configurations.structure.RunConfigurationCreator"), "configuration", false);
-    return IGeneratedToClass_Behavior.call_getNamespace_2256484787298834694(configuration) + "" + RunConfiguration_Behavior.call_getGeneratedFactoryName_2256484787298832736(configuration);
+    return IGeneratedToClass_Behavior.call_getNamespace_2256484787298834694(configuration) + "." + RunConfiguration_Behavior.call_getGeneratedFactoryName_2256484787298832736(configuration);
   }
 
   public static Object propertyMacro_GetPropertyValue_2572811016744697082(final IOperationContext operationContext, final PropertyMacroContext _context) {

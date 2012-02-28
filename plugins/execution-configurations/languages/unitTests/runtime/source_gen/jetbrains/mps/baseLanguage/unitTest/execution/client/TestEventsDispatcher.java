@@ -26,8 +26,8 @@ public class TestEventsDispatcher {
       // (which means they has errors -- could not be found or something) 
       List<String> lostTests = this.myState.getUnusedMethods();
       for (String lostTest : lostTests) {
-        String lostMethodName = lostTest.substring(lostTest.lastIndexOf("") + 1);
-        String lostClassName = lostTest.substring(0, lostTest.lastIndexOf(""));
+        String lostMethodName = lostTest.substring(lostTest.lastIndexOf(".") + 1);
+        String lostClassName = lostTest.substring(0, lostTest.lastIndexOf("."));
         this.myState.looseTest(lostClassName, lostMethodName);
       }
     }

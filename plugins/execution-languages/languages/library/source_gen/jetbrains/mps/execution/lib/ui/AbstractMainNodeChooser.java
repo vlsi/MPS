@@ -58,7 +58,7 @@ public abstract class AbstractMainNodeChooser extends BaseChooserComponent {
           setNode(null);
           return;
         }
-        int lastDot = text.lastIndexOf("");
+        int lastDot = text.lastIndexOf(".");
         if (lastDot <= 0) {
           setNode(null);
           return;
@@ -123,7 +123,7 @@ public abstract class AbstractMainNodeChooser extends BaseChooserComponent {
       if (longName.equals("")) {
         return node.getSNodeId().toString();
       }
-      return longName + "" + node.getSNodeId().toString();
+      return longName + "." + node.getSNodeId().toString();
     }
   }
 

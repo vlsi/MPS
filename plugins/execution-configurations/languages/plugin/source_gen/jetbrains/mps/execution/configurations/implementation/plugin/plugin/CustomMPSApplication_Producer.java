@@ -57,7 +57,7 @@ public class CustomMPSApplication_Producer {
         return null;
       }
 
-      CustomMPSApplication_Configuration configuration = new CustomMPSApplication_Configuration(getContext().getProject(), (CustomMPSApplication_Configuration_Factory) getConfigurationFactory(), SPropertyOperations.getString(layout.value, "name") + "" + SPropertyOperations.getString(source, "name"));
+      CustomMPSApplication_Configuration configuration = new CustomMPSApplication_Configuration(getContext().getProject(), (CustomMPSApplication_Configuration_Factory) getConfigurationFactory(), SPropertyOperations.getString(layout.value, "name") + "." + SPropertyOperations.getString(source, "name"));
       configuration.getNode().setNode(layout.value);
       configuration.setConfigurationId(configurationId.value);
       return configuration;

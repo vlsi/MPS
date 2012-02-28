@@ -31,18 +31,18 @@ public class CheckTestStateListener implements TestStateListener {
       if (test.isTestCase()) {
         ListSequence.fromList(result).addSequence(Sequence.fromIterable(test.getTestMethods()).select(new ISelector<ITestNodeWrapper, String>() {
           public String select(ITestNodeWrapper method) {
-            return test.getFqName() + "" + method.getName();
+            return test.getFqName() + "." + method.getName();
           }
         }));
       } else {
-        ListSequence.fromList(result).addElement(test.getTestCase().getFqName() + "" + test.getName());
+        ListSequence.fromList(result).addElement(test.getTestCase().getFqName() + "." + test.getName());
       }
     }
     return result;
   }
 
   public void onLooseTest(String className, String methodName) {
-    myMessages.append("Lost test: ").append(className).append("").append(methodName).append("\n");
+    myMessages.append("Lost test: ").append(className).append(".").append(methodName).append("\n");
   }
 
   public void onTestFailure(TestEvent event) {
@@ -62,7 +62,7 @@ public class CheckTestStateListener implements TestStateListener {
   }
 
   private String getNameFromEvent(TestEvent event) {
-    return event.getTestCaseName() + "" + event.getTestMethodName();
+    return event.getTestCaseName() + "." + event.getTestMethodName();
   }
 
   public void onTestEnd(TestEvent event) {

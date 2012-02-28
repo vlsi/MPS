@@ -189,7 +189,7 @@ public class UnitTestViewComponent extends JPanel implements Disposable {
 
   public void initSplitterProportion(final Splitter splitter, float defaultProportion, final String id) {
     final PropertiesComponent propertiesComponent = PropertiesComponent.getInstance();
-    String value = propertiesComponent.getValue(UnitTestViewComponent.SPLITTER_SIZE_PROPERTY + "" + id);
+    String value = propertiesComponent.getValue(UnitTestViewComponent.SPLITTER_SIZE_PROPERTY + "." + id);
     float proportion = defaultProportion;
     if (StringUtils.isNotEmpty(value)) {
       try {
@@ -201,7 +201,7 @@ public class UnitTestViewComponent extends JPanel implements Disposable {
     splitter.addPropertyChangeListener(new PropertyChangeListener() {
       public void propertyChange(PropertyChangeEvent event) {
         if (event.getPropertyName().equals(Splitter.PROP_PROPORTION)) {
-          propertiesComponent.setValue(UnitTestViewComponent.SPLITTER_SIZE_PROPERTY + "" + id, String.valueOf(splitter.getProportion()));
+          propertiesComponent.setValue(UnitTestViewComponent.SPLITTER_SIZE_PROPERTY + "." + id, String.valueOf(splitter.getProportion()));
         }
       }
     });

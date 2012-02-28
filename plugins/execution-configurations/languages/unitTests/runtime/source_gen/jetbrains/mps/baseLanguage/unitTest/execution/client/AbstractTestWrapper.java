@@ -113,7 +113,7 @@ public abstract class AbstractTestWrapper<N extends SNode> implements ITestNodeW
         throw new UnsupportedOperationException("Should override getFqName for not INamedConcept: " + SNodeOperations.getConceptDeclaration(node));
       }
     }
-    return testCase.getFqName() + "" + getName();
+    return testCase.getFqName() + "." + getName();
   }
 
   public String getCachedFqName() {
