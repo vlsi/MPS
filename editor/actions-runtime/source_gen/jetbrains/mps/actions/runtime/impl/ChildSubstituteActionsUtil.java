@@ -89,7 +89,7 @@ public class ChildSubstituteActionsUtil {
 
   public static List<INodeSubstituteAction> invokeActionFactory(SNode builder, SNode parentNode, SNode currentChild, SNode childConcept, IChildNodeSetter childSetter, IOperationContext context) {
 
-    String methodName = ((String) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(builder, "jetbrains.mps.lang.actions.structure.NodeSubstituteActionsBuilder"), "call_getBuilderQueryMethodName_1220278926652", new Class[]{SNode.class}));
+    String methodName = ((String) BehaviorManager.getInstance().invoke(Object.class, builder, "call_getBuilderQueryMethodName_1220278926652", new Class[]{SNode.class}));
     try {
       return (List<INodeSubstituteAction>) QueryMethodGenerated.invoke(methodName, context, new NodeSubstituteActionsFactoryContext(parentNode, currentChild, childConcept, childSetter), SNodeOperations.getModel(builder));
     } catch (Throwable t) {
@@ -157,7 +157,7 @@ public class ChildSubstituteActionsUtil {
 
     SNode precondition = SLinkOperations.getTarget(actionsBuilder, "precondition", true);
     if (precondition != null) {
-      String methodName = ((String) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(actionsBuilder, "jetbrains.mps.lang.actions.structure.NodeSubstituteActionsBuilder"), "call_getPreconditionQueryMethodName_1220278671791", new Class[]{SNode.class}));
+      String methodName = ((String) BehaviorManager.getInstance().invoke(Object.class, actionsBuilder, "call_getPreconditionQueryMethodName_1220278671791", new Class[]{SNode.class}));
       try {
         return (Boolean) QueryMethodGenerated.invoke(methodName, context, new NodeSubstitutePreconditionContext(parentNode, concept, currentTarget, link, wrapped), SNodeOperations.getModel(actionsBuilder));
       } catch (Exception e) {

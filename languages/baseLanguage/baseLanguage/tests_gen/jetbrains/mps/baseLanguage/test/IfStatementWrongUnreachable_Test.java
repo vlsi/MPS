@@ -28,12 +28,12 @@ public class IfStatementWrongUnreachable_Test extends BaseTransformationTest {
   public static class TestBody extends BaseTestBody {
     public void test_TypesCheck1217864879944() throws Exception {
       SNode operation = SNodeOperations.cast(this.getRealNodeById("1217864879944"), "jetbrains.mps.lang.test.structure.NodeOperation");
-      BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(operation, "jetbrains.mps.lang.test.structure.NodeOperation"), "virtual_perform_1215601182156", new Class[]{SNode.class, SNode.class}, this.getRealNodeById("1217861284985"));
+      BehaviorManager.getInstance().invoke(Object.class, operation, "virtual_perform_1215601182156", new Class[]{SNode.class, SNode.class}, this.getRealNodeById("1217861284985"));
     }
 
     public void test_TypesCheck1217864892290() throws Exception {
       SNode operation = SNodeOperations.cast(this.getRealNodeById("1217864892290"), "jetbrains.mps.lang.test.structure.NodeOperation");
-      BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(operation, "jetbrains.mps.lang.test.structure.NodeOperation"), "virtual_perform_1215601182156", new Class[]{SNode.class, SNode.class}, this.getRealNodeById("1217864474226"));
+      BehaviorManager.getInstance().invoke(Object.class, operation, "virtual_perform_1215601182156", new Class[]{SNode.class, SNode.class}, this.getRealNodeById("1217864474226"));
     }
   }
 }

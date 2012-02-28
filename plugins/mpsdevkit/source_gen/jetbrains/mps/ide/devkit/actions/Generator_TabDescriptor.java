@@ -75,7 +75,7 @@ public class Generator_TabDescriptor extends EditorTabDescriptor {
 
   public List<SNode> getNodes(SNode node) {
     Set<SNode> nodes = SetSequence.fromSet(new HashSet<SNode>());
-    SetSequence.fromSet(nodes).addSequence(ListSequence.fromList(((List<SNode>) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(node, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"), "call_findGeneratorFragments_6409339300305625383", new Class[]{SNode.class}))));
+    SetSequence.fromSet(nodes).addSequence(ListSequence.fromList(((List<SNode>) BehaviorManager.getInstance().invoke(Object.class, node, "call_findGeneratorFragments_6409339300305625383", new Class[]{SNode.class}))));
     return SetSequence.fromSet(nodes).toListSequence();
   }
 
@@ -91,7 +91,7 @@ public class Generator_TabDescriptor extends EditorTabDescriptor {
     boolean isInterface = SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration");
     if (rootable || isInterface) {
       boolean isNeedRootTemplate = true;
-      for (SNode genFragment : ((List<SNode>) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(node, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"), "call_findGeneratorFragments_6409339300305625383", new Class[]{SNode.class}))) {
+      for (SNode genFragment : ((List<SNode>) BehaviorManager.getInstance().invoke(Object.class, node, "call_findGeneratorFragments_6409339300305625383", new Class[]{SNode.class}))) {
         if ((AttributeOperations.getAttribute(genFragment, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.generator.structure.RootTemplateAnnotation"))) != null)) {
           isNeedRootTemplate = false;
           break;
@@ -193,7 +193,7 @@ public class Generator_TabDescriptor extends EditorTabDescriptor {
         SModel model = SNodeOperations.getModel(mapping.value);
         if (SConceptOperations.isSubConceptOf(concept, "jetbrains.mps.lang.structure.structure.IConceptAspect")) {
           result.value = ConceptEditorHelper.createNewConceptAspectInstance(node, concept, model);
-          BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(mapping.value, "jetbrains.mps.lang.generator.structure.MappingConfiguration"), "call_addMember_3166264919334415805", new Class[]{SNode.class, SNode.class}, result.value);
+          BehaviorManager.getInstance().invoke(Object.class, mapping.value, "call_addMember_3166264919334415805", new Class[]{SNode.class, SNode.class}, result.value);
         } else if (SConceptOperations.isSubConceptOf(concept, "jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence") || SNodeOperations.isInstanceOf(result.value, "jetbrains.mps.lang.generator.structure.InlineTemplateWithContext_RuleConsequence")) {
           SNode mappingRule = SLinkOperations.addNewChild(mapping.value, "reductionMappingRule", "jetbrains.mps.lang.generator.structure.Reduction_MappingRule");
           SLinkOperations.setTarget(mappingRule, "applicableConcept", node, false);
@@ -204,7 +204,7 @@ public class Generator_TabDescriptor extends EditorTabDescriptor {
           AttributeOperations.setAttribute(result.value, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.generator.structure.RootTemplateAnnotation")), rootTemplateNode);
           SPropertyOperations.set(SNodeOperations.cast(result.value, "jetbrains.mps.lang.core.structure.INamedConcept"), "name", SPropertyOperations.getString(node, "name"));
           SModelOperations.addRootNode(model, result.value);
-          BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(mapping.value, "jetbrains.mps.lang.generator.structure.MappingConfiguration"), "call_addMember_3166264919334415805", new Class[]{SNode.class, SNode.class}, result.value);
+          BehaviorManager.getInstance().invoke(Object.class, mapping.value, "call_addMember_3166264919334415805", new Class[]{SNode.class, SNode.class}, result.value);
         }
       }
     });

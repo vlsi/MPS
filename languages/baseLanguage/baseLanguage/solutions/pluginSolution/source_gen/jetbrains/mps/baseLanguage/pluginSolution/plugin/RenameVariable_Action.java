@@ -18,7 +18,9 @@ import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import java.awt.Frame;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.ide.platform.refactoring.RenameDialog;
+import jetbrains.mps.project.MPSProject;
 
 public class RenameVariable_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -64,26 +66,30 @@ public class RenameVariable_Action extends BaseAction {
     if (MapSequence.fromMap(_params).get("node") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("frame", event.getData(MPSCommonDataKeys.FRAME));
-    if (MapSequence.fromMap(_params).get("frame") == null) {
-      return false;
-    }
     MapSequence.fromMap(_params).put("editorComponent", event.getData(MPSEditorDataKeys.EDITOR_COMPONENT));
     if (MapSequence.fromMap(_params).get("editorComponent") == null) {
       return false;
     }
+    MapSequence.fromMap(_params).put("project", event.getData(MPSCommonDataKeys.MPS_PROJECT));
     return true;
   }
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       final Wrappers._T<SNode> varDeclNode = new Wrappers._T<SNode>();
+      final Wrappers._T<String> oldName = new Wrappers._T<String>();
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
           varDeclNode.value = SLinkOperations.getTarget(((SNode) MapSequence.fromMap(_params).get("node")), "variableDeclaration", false);
+          oldName.value = SPropertyOperations.getString(varDeclNode.value, "name");
         }
       });
-      new RenameRefactoringDialog(((Frame) MapSequence.fromMap(_params).get("frame")), "Variable", varDeclNode.value).showDialog();
+      final String newName = RenameDialog.getNewName(((MPSProject) MapSequence.fromMap(_params).get("project")).getProject(), oldName.value, "Variable");
+      ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+        public void run() {
+          SPropertyOperations.set(varDeclNode.value, "name", newName);
+        }
+      });
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "RenameVariable", t);

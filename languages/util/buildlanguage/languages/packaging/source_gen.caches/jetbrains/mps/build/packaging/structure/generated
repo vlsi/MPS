@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="c3wqs0lrpn024p61cxk2adxm86s3a1a">
+<dependencies version="2" modelHash="3aoyeu4rf9ctnzcgk1rx8cjx8jfx55">
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-5p0rdl0tgxw43gzmkd4qcpqszqapgi2" />
   <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="4omvvbk0d8lyk69308obh4bn5fpnvyc" />
   <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="cllol0k6uon23imzi3i8ftyndeqrkqk" />
@@ -265,7 +265,7 @@
   <source id="4159241239519649208" name="Plugin" hash="-cshugk5w9758on2yu2dv05gmp43bz20">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="6108265972537166326" name="Branding" hash="-2y92325tp71so90t8823hc10nrn75dn">
+  <source id="6108265972537166326" name="Branding" hash="-7h6magyb4fstxykgb4jjl7onbis0p6f">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="6108265972537229343" name="WelcomeScreen" hash="aem2e72tdtfszf881fupbeg14xqdngl">

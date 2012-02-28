@@ -119,9 +119,9 @@ public class IconManager {
         RowIcon result = new RowIcon(2);
         result.setIcon(mainIcon, 0);
         if (!(withoutAdditional)) {
-          result.setIcon(((Icon) BehaviorManager.getInstance().invoke(Object.class, jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.cast(node, "jetbrains.mps.lang.core.structure.BaseConcept"), "virtual_getAdditionalIcon_5017341185733863694", new Class[]{SNode.class})), 1);
+          result.setIcon(((Icon) BehaviorManager.getInstance().invoke(Object.class, node, "virtual_getAdditionalIcon_5017341185733863694", new Class[]{SNode.class})), 1);
         }
-        List<Icon> markIcons = ((List<Icon>) BehaviorManager.getInstance().invoke(Object.class, jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.cast(node, "jetbrains.mps.lang.core.structure.BaseConcept"), "virtual_getMarkIcons_3923831204883340393", new Class[]{SNode.class}));
+        List<Icon> markIcons = ((List<Icon>) BehaviorManager.getInstance().invoke(Object.class, node, "virtual_getMarkIcons_3923831204883340393", new Class[]{SNode.class}));
         if (markIcons != null) {
           LayeredIcon layeredIcon = new LayeredIcon(markIcons.size() + 1);
           layeredIcon.setIcon(result, 0);

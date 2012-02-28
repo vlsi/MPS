@@ -80,11 +80,11 @@ public class CopyThisDown_Action extends BaseAction {
         while (SNodeOperations.getParent(nodeToCopy) != null) {
           SNode parent = SNodeOperations.getParent(nodeToCopy);
           String role = nodeToCopy.getRole_();
-          SNode link = ((SNode) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(SNodeOperations.getConceptDeclaration(parent), "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"), "call_findLinkDeclaration_1213877394467", new Class[]{SNode.class, String.class}, role));
+          SNode link = ((SNode) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.getConceptDeclaration(parent), "call_findLinkDeclaration_1213877394467", new Class[]{SNode.class, String.class}, role));
           if (link == null) {
             return;
           }
-          if (!(((Boolean) BehaviorManager.getInstance().invoke(Boolean.class, SNodeOperations.cast(link, "jetbrains.mps.lang.structure.structure.LinkDeclaration"), "call_isSingular_1213877254557", new Class[]{SNode.class})))) {
+          if (!(((Boolean) BehaviorManager.getInstance().invoke(Boolean.class, link, "call_isSingular_1213877254557", new Class[]{SNode.class})))) {
             SNode copy = SNodeOperations.copyNode(nodeToCopy);
             parent.insertChild(nodeToCopy, role, copy);
             ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getEditorContext().selectWRTFocusPolicy(copy);
@@ -98,7 +98,7 @@ public class CopyThisDown_Action extends BaseAction {
         SNode lastNode = ListSequence.fromList(((List<SNode>) MapSequence.fromMap(_params).get("inputNodes"))).last();
         String role = firstNode.getRole_();
         SNode parent = SNodeOperations.getParent(firstNode);
-        SNode link = ((SNode) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(SNodeOperations.getConceptDeclaration(parent), "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"), "call_findLinkDeclaration_1213877394467", new Class[]{SNode.class, String.class}, role));
+        SNode link = ((SNode) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.getConceptDeclaration(parent), "call_findLinkDeclaration_1213877394467", new Class[]{SNode.class, String.class}, role));
         if (link == null) {
           return;
         }

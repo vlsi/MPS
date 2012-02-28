@@ -523,7 +523,7 @@ public class QueriesGenerated {
   }
 
   public static boolean baseMappingRule_Condition_5795621707561237847(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return Classifier_Behavior.call_isDescendant_7165541881557222913(SLinkOperations.getTarget(TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(_context.getNode()), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.ClassifierType"), true), "classifier", false), SLinkOperations.getTarget(new QueriesGenerated.QuotationClass_x583g4_a0a0a0a89().createNode(), "classifier", false));
+    return Classifier_Behavior.call_isDescendant_7165541881557222913(SLinkOperations.getTarget(TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(_context.getNode()), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.ClassifierType"), true), "classifier", false), SLinkOperations.getTarget(new QueriesGenerated.QuotationClass_x583g4_a0b0a0ud().createNode(), "classifier", false));
   }
 
   public static boolean baseMappingRule_Condition_169948565230101800(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
@@ -3056,8 +3056,8 @@ public class QueriesGenerated {
     }
   }
 
-  public static class QuotationClass_x583g4_a0a0a0a89 {
-    public QuotationClass_x583g4_a0a0a0a89() {
+  public static class QuotationClass_x583g4_a0b0a0ud {
+    public QuotationClass_x583g4_a0b0a0ud() {
     }
 
     public SNode createNode() {

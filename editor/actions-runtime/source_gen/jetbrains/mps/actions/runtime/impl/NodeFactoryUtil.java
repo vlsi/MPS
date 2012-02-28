@@ -16,8 +16,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.util.QueryMethodGenerated;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.action.NodeSetupContext;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class NodeFactoryUtil {
   private static final Logger LOG = Logger.getLogger(NodeFactoryUtil.class);
@@ -47,7 +47,7 @@ public class NodeFactoryUtil {
       return;
     }
     try {
-      QueryMethodGenerated.invoke(((String) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(factory, "jetbrains.mps.lang.actions.structure.NodeFactory"), "call_getQueryMethodName_1220279061997", new Class[]{SNode.class})), null, new NodeSetupContext(newNode, sampleNode, enclosingNode, model), SNodeOperations.getModel(factory));
+      QueryMethodGenerated.invoke(((String) BehaviorManager.getInstance().invoke(Object.class, factory, "call_getQueryMethodName_1220279061997", new Class[]{SNode.class})), null, new NodeSetupContext(newNode, sampleNode, enclosingNode, model), SNodeOperations.getModel(factory));
     } catch (Exception e) {
       LOG.error(e);
     }

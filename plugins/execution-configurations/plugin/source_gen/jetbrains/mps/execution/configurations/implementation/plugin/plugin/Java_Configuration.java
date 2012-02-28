@@ -52,7 +52,7 @@ public class Java_Configuration extends BaseMpsRunConfiguration implements IPers
     }
   }), new _FunctionTypes._return_P1_E0<Boolean, SNode>() {
     public Boolean invoke(SNode node) {
-      return ((Boolean) BehaviorManager.getInstance().invoke(Boolean.class, SNodeOperations.cast(SNodeOperations.cast(node, "jetbrains.mps.lang.core.structure.BaseConcept"), "jetbrains.mps.lang.core.structure.BaseConcept"), "virtual_isRunnable_7941158526576616752", new Class[]{SNode.class}));
+      return ((Boolean) BehaviorManager.getInstance().invoke(Boolean.class, SNodeOperations.cast(node, "jetbrains.mps.lang.core.structure.BaseConcept"), "virtual_isRunnable_7941158526576616752", new Class[]{SNode.class}));
     }
   }), MultiTuple.<SNode,_FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>>from(ModelAccess.instance().runReadAction(new Computable<SNode>() {
     public SNode compute() {
@@ -60,7 +60,7 @@ public class Java_Configuration extends BaseMpsRunConfiguration implements IPers
     }
   }), new _FunctionTypes._return_P1_E0<Boolean, SNode>() {
     public Boolean invoke(SNode node) {
-      return ((Boolean) BehaviorManager.getInstance().invoke(Boolean.class, SNodeOperations.cast(SNodeOperations.cast(node, "jetbrains.mps.execution.util.structure.IMainClass"), "jetbrains.mps.execution.util.structure.IMainClass"), "virtual_isNodeRunnable_4666195181811081448", new Class[]{SNode.class})) && Java_Command.isUnitNode(node);
+      return ((Boolean) BehaviorManager.getInstance().invoke(Boolean.class, SNodeOperations.cast(node, "jetbrains.mps.execution.util.structure.IMainClass"), "virtual_isNodeRunnable_4666195181811081448", new Class[]{SNode.class})) && Java_Command.isUnitNode(node);
     }
   })))).toListSequence());
   private JavaRunParameters_Configuration myRunParameters = new JavaRunParameters_Configuration();
@@ -75,7 +75,7 @@ public class Java_Configuration extends BaseMpsRunConfiguration implements IPers
       final Wrappers._boolean hasMainMethod = new Wrappers._boolean();
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
-          hasMainMethod.value = (((SNode) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(SNodeOperations.cast(Java_Configuration.this.getNode().getNode(), "jetbrains.mps.baseLanguage.structure.ClassConcept"), "jetbrains.mps.baseLanguage.structure.ClassConcept"), "call_getMainMethod_1213877355884", new Class[]{SNode.class})) == null);
+          hasMainMethod.value = (((SNode) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(Java_Configuration.this.getNode().getNode(), "jetbrains.mps.baseLanguage.structure.ClassConcept"), "call_getMainMethod_1213877355884", new Class[]{SNode.class})) == null);
         }
       });
       if (hasMainMethod.value) {

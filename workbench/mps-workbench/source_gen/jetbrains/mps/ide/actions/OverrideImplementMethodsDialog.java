@@ -61,7 +61,7 @@ public class OverrideImplementMethodsDialog extends GroupedNodesChooser {
   @Override
   protected String getText(SNode node) {
     if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.Classifier")) {
-      return ((String) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.Classifier"), "jetbrains.mps.lang.core.structure.INamedConcept"), "virtual_getFqName_1213877404258", new Class[]{SNode.class}));
+      return ((String) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.Classifier"), "virtual_getFqName_1213877404258", new Class[]{SNode.class}));
     }
     return super.getText(node);
   }
@@ -114,7 +114,7 @@ public class OverrideImplementMethodsDialog extends GroupedNodesChooser {
   public static Iterable<SNode> sortMethods(SNode baseClass, Iterable<SNode> methods) {
     final Map<SNode, Integer> containerIndex = MapSequence.fromMap(new HashMap<SNode, Integer>());
     int i = 1;
-    for (SNode c : ((List<SNode>) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(baseClass, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "call_getAllSuperClassifiers_4892662966716545618", new Class[]{SNode.class}))) {
+    for (SNode c : ((List<SNode>) BehaviorManager.getInstance().invoke(Object.class, baseClass, "call_getAllSuperClassifiers_4892662966716545618", new Class[]{SNode.class}))) {
       MapSequence.fromMap(containerIndex).put(c, i++);
     }
     return Sequence.fromIterable(methods).sort(new Comparator<SNode>() {

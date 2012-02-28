@@ -65,7 +65,7 @@ public class JUnit4TestWrapper extends AbstractTestWrapper<SNode> {
 
   private static String check_rdmqn1_a0a1(SNode checkedDotOperand, JUnit4TestWrapper checkedDotThisExpression) {
     if (null != checkedDotOperand) {
-      return ((String) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(checkedDotOperand, "jetbrains.mps.lang.core.structure.INamedConcept"), "virtual_getFqName_1213877404258", new Class[]{SNode.class}));
+      return ((String) BehaviorManager.getInstance().invoke(Object.class, checkedDotOperand, "virtual_getFqName_1213877404258", new Class[]{SNode.class}));
     }
     return null;
   }
