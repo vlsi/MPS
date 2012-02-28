@@ -33,6 +33,8 @@ import com.intellij.openapi.wm.ToolWindow;
 import com.intellij.openapi.wm.ToolWindowId;
 import com.intellij.openapi.wm.ToolWindowManager;
 import com.intellij.ui.components.JBScrollPane;
+import com.intellij.util.ui.update.MergingUpdateQueue;
+import com.intellij.util.ui.update.Update;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.IdeMain.TestMode;
 import jetbrains.mps.ide.ThreadUtils;
@@ -81,6 +83,7 @@ public class ProjectPane extends BaseLogicalViewProjectPane {
   };
 
   private MyScrollPane myScrollPane;
+  private MergingUpdateQueue myUpdateQueue = new MergingUpdateQueue("Project Pane Updates Queue", 500, true, myScrollPane,null,null,true);
 
   public static final String ID = ProjectViewPane.ID;
 
@@ -108,6 +111,7 @@ public class ProjectPane extends BaseLogicalViewProjectPane {
   public ProjectPane(Project project, ProjectView projectView) {
     super(project);
     myProjectView = projectView;
+    myUpdateQueue.setRestartTimerOnAdd(true);
   }
 
   @Override
@@ -168,7 +172,11 @@ public class ProjectPane extends BaseLogicalViewProjectPane {
   }
 
   public ActionCallback updateFromRoot(boolean restoreExpandedPaths) {
-    getTree().rebuildLater();
+    myUpdateQueue.queue(new Update(null) {
+      public void run() {
+        getTree().rebuildNow();
+      }
+    });
     return new ActionCallback(); // todo
   }
 
@@ -203,8 +211,12 @@ public class ProjectPane extends BaseLogicalViewProjectPane {
   }
 
   public void rebuildTree() {
-    getTree().rebuildNow();
-    getTree().expandProjectNode();
+    myUpdateQueue.queue(new Update(null) {
+      public void run() {
+        getTree().rebuildNow();
+        getTree().expandProjectNode();
+      }
+    });
   }
 
   public void activate() {

@@ -49,6 +49,7 @@ public class ProjectPaneModifiedMarker extends TreeNodeVisitor {
   private void updateNodeLater(final MPSTreeNode node, final Icon icon) {
     SwingUtilities.invokeLater(new Runnable() {
       public void run() {
+        if (!checkDisposed(node)) return;
         node.setIcon(icon);
         node.updateNodePresentationInTree();
       }

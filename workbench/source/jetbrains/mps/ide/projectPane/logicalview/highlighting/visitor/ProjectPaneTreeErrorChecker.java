@@ -98,6 +98,8 @@ public class ProjectPaneTreeErrorChecker extends TreeNodeVisitor {
   private void updateNodeLater(final MPSTreeNode node, final String tooltipText, final boolean isWarning) {
     SwingUtilities.invokeLater(new Runnable() {
       public void run() {
+        if (!checkDisposed(node)) return;
+
         node.setErrorState(tooltipText == null ? ErrorState.NONE : (isWarning ? ErrorState.WARNING : ErrorState.ERROR));
         node.setTooltipText(tooltipText);
         node.updateNodePresentationInTree();

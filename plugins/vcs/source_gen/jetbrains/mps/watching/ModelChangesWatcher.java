@@ -9,17 +9,19 @@ import com.intellij.openapi.project.ProjectManager;
 import com.intellij.openapi.vfs.VirtualFileManager;
 import java.util.Set;
 import java.util.HashSet;
-import com.intellij.util.ui.Timer;
 import com.intellij.openapi.vfs.VirtualFileManagerListener;
 import com.intellij.util.messages.MessageBusConnection;
 import com.intellij.openapi.vfs.newvfs.BulkFileListener;
-import com.intellij.openapi.project.Project;
-import com.intellij.openapi.vcs.ProjectLevelVcsManager;
+import com.intellij.util.ui.update.MergingUpdateQueue;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.MPSCore;
-import com.intellij.openapi.application.ApplicationManager;
-import com.intellij.openapi.application.ModalityState;
+import com.intellij.util.ui.update.Update;
+import com.intellij.openapi.project.Project;
+import com.intellij.openapi.vcs.ProjectLevelVcsManager;
+import com.intellij.openapi.progress.ProgressManager;
+import com.intellij.openapi.progress.Task;
+import com.intellij.openapi.progress.ProgressIndicator;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.library.ProjectLibraryManager;
 import jetbrains.mps.library.Library;
@@ -30,6 +32,7 @@ import java.io.File;
 import com.intellij.openapi.util.io.FileUtil;
 import java.io.IOException;
 import com.intellij.openapi.util.Computable;
+import com.intellij.openapi.application.ApplicationManager;
 import java.util.List;
 import com.intellij.openapi.vfs.newvfs.events.VFileEvent;
 import com.intellij.openapi.vfs.VfsUtil;
@@ -40,14 +43,13 @@ import com.intellij.openapi.application.Application;
 public class ModelChangesWatcher implements ApplicationComponent {
   public static final Logger LOG = Logger.getLogger(ModelChangesWatcher.class);
 
+  private int myBans = 0;
   private final MessageBus myBus;
   private final ProjectManager myProjectManager;
   private final VirtualFileManager myVirtualFileManager;
   private volatile ReloadSession myReloadSession;
   private final Object myLock = new Object();
   private final Set<ModelChangesWatcher.IReloadListener> myReloadListeners = new HashSet<ModelChangesWatcher.IReloadListener>();
-  private final Timer myTimer;
-  private int myBans = 0;
   private final VirtualFileManagerListener myVirtualFileManagerListener = new VirtualFileManagerListener() {
     public void beforeRefreshStart(boolean async) {
       suspendTasksProcessing();
@@ -59,23 +61,13 @@ public class ModelChangesWatcher implements ApplicationComponent {
   };
   private MessageBusConnection myConnection;
   private BulkFileListener myBusListener = new ModelChangesWatcher.BulkFileChangesListener();
+  private MergingUpdateQueue myQueue = new MergingUpdateQueue("Model Changes Watcher Queue", 500, true, null, null, null, true);
 
   public ModelChangesWatcher(MessageBus bus, ProjectManager projectManager, VirtualFileManager virtualFileManager) {
     myBus = bus;
     myVirtualFileManager = virtualFileManager;
     myProjectManager = projectManager;
-    myTimer = new Timer("Model Changes Watcher", 50) {
-      protected void onTimer() throws InterruptedException {
-        synchronized (myLock) {
-          if (myReloadSession != null) {
-            doReload();
-          }
-          myTimer.suspend();
-        }
-      }
-    };
-    myTimer.setTakeInitialDelay(true);
-    myTimer.suspend();
+    myQueue.setRestartTimerOnAdd(true);
   }
 
   public void tryToResumeTasksProcessing() {
@@ -84,24 +76,13 @@ public class ModelChangesWatcher implements ApplicationComponent {
       if (myBans != 0) {
         return;
       }
-      if (myReloadSession == null) {
-        return;
-      }
-      if (!(myReloadSession.hasAnythingToDo())) {
-        return;
-      }
-      for (Project project : myProjectManager.getOpenProjects()) {
-        if (project.getComponent(ProjectLevelVcsManager.class).isBackgroundVcsOperationRunning()) {
-          return;
-        }
-      }
-      myTimer.resume();
+      myQueue.resume();
     }
   }
 
   public void suspendTasksProcessing() {
     synchronized (myLock) {
-      myTimer.suspend();
+      myQueue.suspend();
       myBans++;
     }
   }
@@ -129,15 +110,39 @@ public class ModelChangesWatcher implements ApplicationComponent {
     myVirtualFileManager.removeVirtualFileManagerListener(myVirtualFileManagerListener);
   }
 
-  private void doReload() {
-    final ReloadSession session = myReloadSession;
-    myReloadSession = null;
-    if (session.hasAnythingToDo()) {
-      ApplicationManager.getApplication().invokeLater(new Runnable() {
+  private void queueReload() {
+    synchronized (myLock) {
+      if (myReloadSession == null) {
+        return;
+      }
+      if (!(myReloadSession.hasAnythingToDo())) {
+        return;
+      }
+      myQueue.queue(new Update(null) {
         public void run() {
-          session.doReload();
+          for (Project project : myProjectManager.getOpenProjects()) {
+            if (project.getComponent(ProjectLevelVcsManager.class).isBackgroundVcsOperationRunning()) {
+              queueReload();
+              return;
+            }
+          }
+          synchronized (myLock) {
+            if (myReloadSession == null) {
+              return;
+            }
+            final ReloadSession session = myReloadSession;
+            if (!(session.hasAnythingToDo())) {
+              return;
+            }
+            myReloadSession = null;
+            ProgressManager.getInstance().run(new Task.Modal(null, "Reloading", false) {
+              public void run(@NotNull final ProgressIndicator progressIndicator) {
+                session.doReload(progressIndicator);
+              }
+            });
+          }
         }
-      }, ModalityState.NON_MODAL);
+      });
     }
   }
 
@@ -284,9 +289,7 @@ public class ModelChangesWatcher implements ApplicationComponent {
           }
           processAfterEvent(path, event, myReloadSession);
         }
-        if (myBans == 0) {
-          myTimer.resume();
-        }
+        queueReload();
       }
     }
 

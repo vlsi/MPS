@@ -214,6 +214,10 @@
     </component>
 
     <component>
+      <implementation-class>jetbrains.mps.ide.generator.index.IndexBasedLanguageModelDigest</implementation-class>
+    </component>
+
+    <component>
       <implementation-class>jetbrains.mps.ide.undo.OnReloadingUndoCleaner</implementation-class>
     </component>
 
