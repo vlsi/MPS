@@ -20,13 +20,16 @@ import com.intellij.debugger.DebuggerManagerEx;
 import com.intellij.debugger.ui.breakpoints.Breakpoint;
 import com.intellij.debugger.ui.breakpoints.BreakpointManagerListener;
 import com.intellij.debugger.ui.breakpoints.BreakpointWithHighlighter;
+import com.intellij.debugger.ui.breakpoints.FieldBreakpoint;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.ProjectComponent;
 import com.intellij.openapi.editor.Document;
 import com.intellij.openapi.fileEditor.FileEditorManager;
 import com.intellij.openapi.project.Project;
 import com.intellij.psi.PsiDocumentManager;
+import com.intellij.psi.PsiField;
 import com.intellij.psi.PsiFile;
+import com.intellij.psi.util.PsiTreeUtil;
 import jetbrains.mps.debugger.core.breakpoints.BreakpointsUiComponentEx;
 import jetbrains.mps.ide.editor.util.EditorComponentUtil;
 import jetbrains.mps.idea.debugger.GeneratedSourcePosition;
@@ -140,13 +143,33 @@ public class IdeaBreakpointsUiComponent extends BreakpointsUiComponentEx<Breakpo
         if (psiFile == null) return;
         Document document = PsiDocumentManager.getInstance(myProject).getDocument(psiFile);
 
-        BreakpointWithHighlighter breakpoint = myDebuggerManager.getBreakpointManager().addFieldBreakpoint(document, sourcePosition.getLineNumber());
+        BreakpointWithHighlighter breakpoint = addFieldBreakpoint(document, psiFile, sourcePosition);
         if (breakpoint == null) {
             breakpoint = myDebuggerManager.getBreakpointManager().addMethodBreakpoint(document, sourcePosition.getLineNumber());
         }
         if (breakpoint == null) {
             breakpoint = myDebuggerManager.getBreakpointManager().addLineBreakpoint(document, sourcePosition.getLineNumber());
         }
+    }
+
+    private FieldBreakpoint addFieldBreakpoint(Document document, PsiFile psiFile, GeneratedSourcePosition sourcePosition) {
+        int lineStartOffset = document.getLineStartOffset(sourcePosition.getLineNumber());
+        int nextLineStartOffset = document.getLineStartOffset(sourcePosition.getLineNumber() + 1);
+
+        PsiField psiField = null;
+
+        for (int i = lineStartOffset; i < nextLineStartOffset; i++) {
+            // really? I cant just find a field by a line?
+            psiField = PsiTreeUtil.findElementOfClassAtRange(psiFile, i, nextLineStartOffset, PsiField.class);
+            if (psiField != null) {
+                break;
+            }
+        }
+        if (psiField == null) {
+            return null;
+        }
+
+        return myDebuggerManager.getBreakpointManager().addFieldBreakpoint(document, psiField.getTextOffset());
     }
 
     @Override
