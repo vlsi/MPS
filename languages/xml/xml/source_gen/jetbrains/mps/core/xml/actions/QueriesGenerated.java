@@ -23,7 +23,12 @@ import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.core.xml.constraints.XmlNameUtil;
 import java.util.regex.Matcher;
 import jetbrains.mps.smodel.action.SideTransformActionsBuilderContext;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
+import jetbrains.mps.smodel.action.ModelActions;
+import jetbrains.mps.smodel.action.AbstractChildNodeSetter;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.smodel.action.NodeSubstituteActionWrapper;
+import org.jetbrains.annotations.Nullable;
+import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.smodel.action.AbstractSideTransformHintSubstituteAction;
 
 public class QueriesGenerated {
@@ -269,24 +274,24 @@ public class QueriesGenerated {
   public static List<INodeSubstituteAction> sideTransform_ActionsFactory_XmlBaseAttribute_6666499814681619356(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
     List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
     {
-      SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.core.xml.structure.XmlBaseAttribute");
-      Iterable<SNode> concepts;
-      concepts = SConceptOperations.getAllSubConcepts(concept, _context.getModel(), operationContext.getScope());
-      for (final SNode subconcept : concepts) {
-        if (!(SNodeOperations.isInstanceOf(subconcept, "jetbrains.mps.lang.structure.structure.ConceptDeclaration"))) {
-          continue;
+      final String[] lastPattern = new String[1];
+      List<INodeSubstituteAction> list = ModelActions.createChildSubstituteActions(_context.getSourceNode(), null, SConceptOperations.findConceptDeclaration("jetbrains.mps.core.xml.structure.XmlBaseAttribute"), new AbstractChildNodeSetter() {
+        public SNode doExecute(SNode parentNode, SNode oldChild, SNode newChild, IScope p3) {
+          return substitute(newChild, lastPattern[0]);
         }
-        if (SConceptPropertyOperations.getBoolean(subconcept, "abstract")) {
-          continue;
+
+        private SNode substitute(SNode result, String pattern) {
+          SNode element = SNodeOperations.cast(SNodeOperations.getParent(_context.getSourceNode()), "jetbrains.mps.core.xml.structure.XmlElement");
+          int index = ListSequence.fromList(SLinkOperations.getTargets(element, "attributes", true)).indexOf(_context.getSourceNode());
+          return ListSequence.fromList(SLinkOperations.getTargets(element, "attributes", true)).insertElement(index + 1, result);
         }
-        ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(subconcept, _context.getSourceNode()) {
-          public SNode doSubstitute(String pattern) {
-            SNode result = SNodeFactoryOperations.createNewNode(NameUtil.nodeFQName(subconcept), null);
-            {
-              SNode element = SNodeOperations.cast(SNodeOperations.getParent(_context.getSourceNode()), "jetbrains.mps.core.xml.structure.XmlElement");
-              int index = ListSequence.fromList(SLinkOperations.getTargets(element, "attributes", true)).indexOf(_context.getSourceNode());
-              return ListSequence.fromList(SLinkOperations.getTargets(element, "attributes", true)).insertElement(index + 1, result);
-            }
+      }, operationContext);
+      for (final INodeSubstituteAction action : list) {
+        ListSequence.fromList(result).addElement(new NodeSubstituteActionWrapper(action) {
+          @Override
+          public SNode substitute(@Nullable EditorContext context, String pattern) {
+            lastPattern[0] = pattern;
+            return super.substitute(context, pattern);
           }
         });
       }
@@ -297,20 +302,22 @@ public class QueriesGenerated {
   public static List<INodeSubstituteAction> sideTransform_ActionsFactory_XmlElement_6666499814681529662(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
     List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
     {
-      SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.core.xml.structure.XmlBaseAttribute");
-      Iterable<SNode> concepts;
-      concepts = SConceptOperations.getAllSubConcepts(concept, _context.getModel(), operationContext.getScope());
-      for (final SNode subconcept : concepts) {
-        if (!(SNodeOperations.isInstanceOf(subconcept, "jetbrains.mps.lang.structure.structure.ConceptDeclaration"))) {
-          continue;
+      final String[] lastPattern = new String[1];
+      List<INodeSubstituteAction> list = ModelActions.createChildSubstituteActions(_context.getSourceNode(), null, SConceptOperations.findConceptDeclaration("jetbrains.mps.core.xml.structure.XmlBaseAttribute"), new AbstractChildNodeSetter() {
+        public SNode doExecute(SNode parentNode, SNode oldChild, SNode newChild, IScope p3) {
+          return substitute(newChild, lastPattern[0]);
         }
-        if (SConceptPropertyOperations.getBoolean(subconcept, "abstract")) {
-          continue;
+
+        private SNode substitute(SNode result, String pattern) {
+          return ListSequence.fromList(SLinkOperations.getTargets(_context.getSourceNode(), "attributes", true)).insertElement(0, result);
         }
-        ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(subconcept, _context.getSourceNode()) {
-          public SNode doSubstitute(String pattern) {
-            SNode result = SNodeFactoryOperations.createNewNode(NameUtil.nodeFQName(subconcept), null);
-            return ListSequence.fromList(SLinkOperations.getTargets(_context.getSourceNode(), "attributes", true)).insertElement(0, result);
+      }, operationContext);
+      for (final INodeSubstituteAction action : list) {
+        ListSequence.fromList(result).addElement(new NodeSubstituteActionWrapper(action) {
+          @Override
+          public SNode substitute(@Nullable EditorContext context, String pattern) {
+            lastPattern[0] = pattern;
+            return super.substitute(context, pattern);
           }
         });
       }
@@ -376,20 +383,22 @@ public class QueriesGenerated {
   public static List<INodeSubstituteAction> sideTransform_ActionsFactory_XmlContent_6999033275467483657(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
     List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
     {
-      SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.core.xml.structure.XmlContent");
-      Iterable<SNode> concepts;
-      concepts = SConceptOperations.getAllSubConcepts(concept, _context.getModel(), operationContext.getScope());
-      for (final SNode subconcept : concepts) {
-        if (!(SNodeOperations.isInstanceOf(subconcept, "jetbrains.mps.lang.structure.structure.ConceptDeclaration"))) {
-          continue;
+      final String[] lastPattern = new String[1];
+      List<INodeSubstituteAction> list = ModelActions.createChildSubstituteActions(_context.getSourceNode(), null, SConceptOperations.findConceptDeclaration("jetbrains.mps.core.xml.structure.XmlContent"), new AbstractChildNodeSetter() {
+        public SNode doExecute(SNode parentNode, SNode oldChild, SNode newChild, IScope p3) {
+          return substitute(newChild, lastPattern[0]);
         }
-        if (SConceptPropertyOperations.getBoolean(subconcept, "abstract")) {
-          continue;
+
+        private SNode substitute(SNode result, String pattern) {
+          return SNodeOperations.insertNextSiblingChild(_context.getSourceNode(), result);
         }
-        ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(subconcept, _context.getSourceNode()) {
-          public SNode doSubstitute(String pattern) {
-            SNode result = SNodeFactoryOperations.createNewNode(NameUtil.nodeFQName(subconcept), null);
-            return SNodeOperations.insertNextSiblingChild(_context.getSourceNode(), result);
+      }, operationContext);
+      for (final INodeSubstituteAction action : list) {
+        ListSequence.fromList(result).addElement(new NodeSubstituteActionWrapper(action) {
+          @Override
+          public SNode substitute(@Nullable EditorContext context, String pattern) {
+            lastPattern[0] = pattern;
+            return super.substitute(context, pattern);
           }
         });
       }
@@ -400,20 +409,22 @@ public class QueriesGenerated {
   public static List<INodeSubstituteAction> sideTransform_ActionsFactory_XmlValuePart_3080189811177408103(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
     List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
     {
-      SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.core.xml.structure.XmlValuePart");
-      Iterable<SNode> concepts;
-      concepts = SConceptOperations.getAllSubConcepts(concept, _context.getModel(), operationContext.getScope());
-      for (final SNode subconcept : concepts) {
-        if (!(SNodeOperations.isInstanceOf(subconcept, "jetbrains.mps.lang.structure.structure.ConceptDeclaration"))) {
-          continue;
+      final String[] lastPattern = new String[1];
+      List<INodeSubstituteAction> list = ModelActions.createChildSubstituteActions(_context.getSourceNode(), null, SConceptOperations.findConceptDeclaration("jetbrains.mps.core.xml.structure.XmlValuePart"), new AbstractChildNodeSetter() {
+        public SNode doExecute(SNode parentNode, SNode oldChild, SNode newChild, IScope p3) {
+          return substitute(newChild, lastPattern[0]);
         }
-        if (SConceptPropertyOperations.getBoolean(subconcept, "abstract")) {
-          continue;
+
+        private SNode substitute(SNode result, String pattern) {
+          return SNodeOperations.insertNextSiblingChild(_context.getSourceNode(), result);
         }
-        ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(subconcept, _context.getSourceNode()) {
-          public SNode doSubstitute(String pattern) {
-            SNode result = SNodeFactoryOperations.createNewNode(NameUtil.nodeFQName(subconcept), null);
-            return SNodeOperations.insertNextSiblingChild(_context.getSourceNode(), result);
+      }, operationContext);
+      for (final INodeSubstituteAction action : list) {
+        ListSequence.fromList(result).addElement(new NodeSubstituteActionWrapper(action) {
+          @Override
+          public SNode substitute(@Nullable EditorContext context, String pattern) {
+            lastPattern[0] = pattern;
+            return super.substitute(context, pattern);
           }
         });
       }

@@ -171,29 +171,29 @@
     <unitInfo nodeId="1622293396949044245" fileName="XmlComment_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.core.xml.behavior.XmlComment_Behavior" />
   </root>
   <root nodeId="3080189811177259777">
-    <nodeInfo nodeId="3080189811177259824" fileName="XmlAttribute_Behavior.java" startLine="13" startPosition="81" endLine="14" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3080189811177259897" fileName="XmlAttribute_Behavior.java" startLine="16" startPosition="215" endLine="17" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3080189811177259838" fileName="XmlAttribute_Behavior.java" startLine="19" startPosition="5" endLine="20" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3080189811177259777" fileName="XmlAttribute_Behavior.java" startLine="9" startPosition="36" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
-    <nodeInfo nodeId="3080189811177259850" fileName="XmlAttribute_Behavior.java" startLine="15" startPosition="76" endLine="18" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3080189811177259828" fileName="XmlAttribute_Behavior.java" startLine="14" startPosition="27" endLine="19" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="3080189811177259777" fileName="XmlAttribute_Behavior.java" startLine="12" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_isMultiline_3080189811177259788#(Ljetbrains/mps/smodel/SNode;)Z" />
-    <scopeInfo nodeId="3080189811177259779" fileName="XmlAttribute_Behavior.java" startLine="10" startPosition="43" endLine="10" endPosition="43" />
-    <scopeInfo nodeId="3080189811177259851" fileName="XmlAttribute_Behavior.java" startLine="16" startPosition="215" endLine="17" endPosition="22" />
-    <scopeInfo nodeId="3080189811177259777" fileName="XmlAttribute_Behavior.java" startLine="9" startPosition="36" endLine="12" endPosition="0">
+    <nodeInfo nodeId="3080189811177259824" fileName="XmlAttribute_Behavior.java" startLine="12" startPosition="81" endLine="13" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3080189811177259897" fileName="XmlAttribute_Behavior.java" startLine="15" startPosition="147" endLine="16" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3080189811177259838" fileName="XmlAttribute_Behavior.java" startLine="18" startPosition="5" endLine="19" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3080189811177259777" fileName="XmlAttribute_Behavior.java" startLine="8" startPosition="36" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="2453196008732232331" fileName="XmlAttribute_Behavior.java" startLine="14" startPosition="76" endLine="17" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3080189811177259828" fileName="XmlAttribute_Behavior.java" startLine="13" startPosition="27" endLine="18" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="3080189811177259777" fileName="XmlAttribute_Behavior.java" startLine="11" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_isMultiline_3080189811177259788#(Ljetbrains/mps/smodel/SNode;)Z" />
+    <scopeInfo nodeId="3080189811177259779" fileName="XmlAttribute_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
+    <scopeInfo nodeId="2453196008732232332" fileName="XmlAttribute_Behavior.java" startLine="15" startPosition="147" endLine="16" endPosition="22" />
+    <scopeInfo nodeId="3080189811177259777" fileName="XmlAttribute_Behavior.java" startLine="8" startPosition="36" endLine="11" endPosition="0">
       <varInfo nodeId="3080189811177259777" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="3080189811177259829" fileName="XmlAttribute_Behavior.java" startLine="15" startPosition="76" endLine="18" endPosition="7" />
-    <scopeInfo nodeId="3080189811177259828" fileName="XmlAttribute_Behavior.java" startLine="14" startPosition="27" endLine="19" endPosition="5">
+    <scopeInfo nodeId="3080189811177259829" fileName="XmlAttribute_Behavior.java" startLine="14" startPosition="76" endLine="17" endPosition="7" />
+    <scopeInfo nodeId="3080189811177259828" fileName="XmlAttribute_Behavior.java" startLine="13" startPosition="27" endLine="18" endPosition="5">
       <varInfo nodeId="3080189811177259831" varName="part" />
     </scopeInfo>
-    <scopeInfo nodeId="3080189811177259818" fileName="XmlAttribute_Behavior.java" startLine="13" startPosition="81" endLine="20" endPosition="18">
+    <scopeInfo nodeId="3080189811177259818" fileName="XmlAttribute_Behavior.java" startLine="12" startPosition="81" endLine="19" endPosition="18">
       <varInfo nodeId="3080189811177259825" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="3080189811177259777" fileName="XmlAttribute_Behavior.java" startLine="12" startPosition="0" endLine="22" endPosition="0">
+    <scopeInfo nodeId="3080189811177259777" fileName="XmlAttribute_Behavior.java" startLine="11" startPosition="0" endLine="21" endPosition="0">
       <varInfo nodeId="3080189811177259777" varName="thisNode" />
     </scopeInfo>
-    <unitInfo nodeId="3080189811177259777" fileName="XmlAttribute_Behavior.java" startLine="9" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.core.xml.behavior.XmlAttribute_Behavior" />
+    <unitInfo nodeId="3080189811177259777" fileName="XmlAttribute_Behavior.java" startLine="8" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.core.xml.behavior.XmlAttribute_Behavior" />
   </root>
   <root nodeId="3080189811177259785">
     <nodeInfo nodeId="3080189811177259785" fileName="XmlBaseAttribute_Behavior.java" startLine="11" startPosition="40" endLine="12" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="PARAMETERS_3080189811177259788" />

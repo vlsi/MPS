@@ -1,4 +1,4 @@
-<lkd asd="sdf&sdf;&sad;sfd">
+<lkd asd="sdf&sdf;&sad;sfd&amp;&amp;">
   <asd>
     asd
     asd<![CDATA[asd]]>
@@ -13,7 +13,7 @@
     <asdas>
         adsad<![CDATA[asd]]><!--sdf-->asd<![CDATA[asda]]><![CDATA[asd]]>asdsd<!--sfsdf-->asd
         asd
-        asd</asdas>
+        asd&asd;</asdas>
   </asa>
   <sdf:ssdf sdf="asd&quot;">
     asd sdlk sdfl

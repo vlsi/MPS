@@ -4,7 +4,6 @@ package jetbrains.mps.core.xml.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class XmlAttribute_Behavior {
   public static void init(SNode thisNode) {
@@ -13,7 +12,7 @@ public class XmlAttribute_Behavior {
   public static boolean virtual_isMultiline_3080189811177259788(SNode thisNode) {
     boolean result = false;
     for (SNode part : SLinkOperations.getTargets(thisNode, "value", true)) {
-      if (SNodeOperations.isInstanceOf(part, "jetbrains.mps.core.xml.structure.XmlTextValue") && SNodeOperations.isInstanceOf(SNodeOperations.getPrevSibling(part), "jetbrains.mps.core.xml.structure.XmlTextValue")) {
+      if (XmlValuePart_Behavior.call_onNewLine_3080189811177340422(part) || XmlValuePart_Behavior.call_hasNewLineAfter_3080189811177340429(part)) {
         result = true;
       }
     }

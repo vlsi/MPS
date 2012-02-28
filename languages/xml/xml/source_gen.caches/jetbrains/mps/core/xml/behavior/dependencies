@@ -24,8 +24,8 @@
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.core.xml.behavior.XmlAttribute_Behavior" file="XmlAttribute_Behavior.java">
+    <classNode dependClassName="jetbrains.mps.core.xml.behavior.XmlValuePart_Behavior" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.core.xml.behavior.XmlAttribute_BehaviorDescriptor" file="XmlAttribute_BehaviorDescriptor.java">
