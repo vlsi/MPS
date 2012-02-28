@@ -22,11 +22,12 @@ import jetbrains.mps.baseLanguage.scopes.ClassAccessKind;
 import jetbrains.mps.baseLanguage.search.VisibilityUtil;
 import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
+import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
-import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
@@ -127,8 +128,22 @@ public class Classifier_Behavior {
     return members;
   }
 
-  public static List<SNode> virtual_getMembers_2201875424515824604(SNode thisNode, SNode kind) {
+  public static List<SNode> virtual_getMembers_2201875424515824604(SNode thisNode, final SNode kind) {
     // returns all accessible classifier members in classifier 
+
+    if (!(SConceptPropertyOperations.getBoolean(SNodeOperations.castConcept(kind, "jetbrains.mps.baseLanguage.structure.ClassifierMember"), "inheritableMember"))) {
+      List<SNode> result = new ArrayList<SNode>();
+      ListSequence.fromList(result).addSequence(ListSequence.fromList(IMemberContainer_Behavior.call_getMembers_1213877531970(thisNode)).where(new IWhereFilter<SNode>() {
+        public boolean accept(SNode it) {
+          return SNodeOperations.isInstanceOf(it, NameUtil.nodeFQName(kind));
+        }
+      }).select(new ISelector<SNode, SNode>() {
+        public SNode select(SNode it) {
+          return SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.ClassifierMember");
+        }
+      }));
+      return result;
+    }
 
     // standard java logic: 
     // 1) collect all inherited classifier members and filter based on access level 
