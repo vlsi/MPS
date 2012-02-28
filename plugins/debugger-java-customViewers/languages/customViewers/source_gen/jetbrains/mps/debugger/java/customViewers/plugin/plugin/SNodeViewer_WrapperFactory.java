@@ -92,7 +92,7 @@ public class SNodeViewer_WrapperFactory extends ValueWrapperFactory {
         public String invoke() throws EvaluationException {
           return getValuePresentation((IObjectValueProxy) myValueProxy);
         }
-      }, "");
+      }, super.getValuePresentation());
     }
 
     protected String getValuePresentation(IObjectValueProxy value) throws EvaluationException {
