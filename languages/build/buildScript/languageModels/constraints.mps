@@ -27,10 +27,6 @@
     <node type="tp1t.ConceptConstraints" typeId="tp1t.1213093968558" id="3542413272732788550">
       <link role="concept" roleId="tp1t.1213093996982" targetNodeId="3ior.3542413272732750877" resolveInfo="BuildAspect" />
     </node>
-    <node type="tp1t.ConceptConstraints" typeId="tp1t.1213093968558" id="7321017245477086834">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="SourcePath" />
-      <link role="concept" roleId="tp1t.1213093996982" targetNodeId="3ior.7321017245476976379" resolveInfo="BuildRelativePath" />
-    </node>
     <node type="tp1t.ConceptConstraints" typeId="tp1t.1213093968558" id="193602448594327350">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Macro" />
       <link role="concept" roleId="tp1t.1213093996982" targetNodeId="3ior.193602448594247602" resolveInfo="ExportedMacroInternal" />
@@ -152,46 +148,6 @@
             <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_IsInstanceOfOperation" typeId="tp25.1139621453865" id="3542413272732620716">
               <node role="conceptArgument" roleId="tp25.1177027386292" type="tp25.RefConcept_Reference" typeId="tp25.1177026924588" id="3542413272732620718">
                 <link role="conceptDeclaration" roleId="tp25.1177026940964" targetNodeId="3ior.5617550519002745363" resolveInfo="BuildProject" />
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-  </root>
-  <root id="7321017245477086834">
-    <node role="property" roleId="tp1t.1213098023997" type="tp1t.NodePropertyConstraint" typeId="tp1t.1147467115080" id="7321017245477086835">
-      <link role="applicableProperty" roleId="tp1t.1147467295099" targetNodeId="3ior.5481553824944787385" resolveInfo="relativePath" />
-      <node role="propertyGetter" roleId="tp1t.1147468630220" type="tp1t.ConstraintFunction_PropertyGetter" typeId="tp1t.1147467790433" id="7321017245477086836">
-        <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="7321017245477086837">
-          <node role="statement" roleId="tpee.1068581517665" type="tpee.IfStatement" typeId="tpee.1068580123159" id="1793232355800877145">
-            <node role="ifTrue" roleId="tpee.1068580123161" type="tpee.StatementList" typeId="tpee.1068580123136" id="1793232355800877146">
-              <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="1793232355800877169">
-                <node role="expression" roleId="tpee.1068581517676" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="1793232355800877171">
-                  <property name="value" nameId="tpee.1070475926801" value="" />
-                </node>
-              </node>
-            </node>
-            <node role="condition" roleId="tpee.1068580123160" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1793232355800877162">
-              <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1793232355800877152">
-                <node role="operand" roleId="tpee.1197027771414" type="tp1t.ConstraintsFunctionParameter_node" typeId="tp1t.1147468365020" id="1793232355800877149" />
-                <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="1793232355800877158">
-                  <link role="link" roleId="tp25.1138056516764" targetNodeId="3ior.7321017245477039051" />
-                </node>
-              </node>
-              <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_IsNullOperation" typeId="tp25.1171999116870" id="1793232355800877168" />
-            </node>
-          </node>
-          <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="7321017245477086838">
-            <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7321017245477086845">
-              <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7321017245477086840">
-                <node role="operand" roleId="tpee.1197027771414" type="tp1t.ConstraintsFunctionParameter_node" typeId="tp1t.1147468365020" id="7321017245477086839" />
-                <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="7321017245477086844">
-                  <link role="link" roleId="tp25.1138056516764" targetNodeId="3ior.7321017245477039051" />
-                </node>
-              </node>
-              <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="7321017245477086849">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="vbkb.8618885170173674800" resolveInfo="getPath" />
               </node>
             </node>
           </node>

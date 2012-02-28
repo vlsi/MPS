@@ -4,7 +4,7 @@ package jetbrains.mps.buildScript.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.buildScript.util.Context;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.structure.BehaviorDescriptor;
 import jetbrains.mps.smodel.structure.ConceptRegistry;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -24,7 +24,14 @@ public class BuildRelativePath_Behavior {
     if (!(basePath.endsWith("/"))) {
       basePath = basePath + "/";
     }
-    return basePath + SPropertyOperations.getString(thisNode, "relativePath");
+    return basePath + BuildRelativePath_Behavior.call_getPathTail_1258644073389171001(thisNode);
+  }
+
+  public static String call_getPathTail_1258644073389171001(SNode thisNode) {
+    if ((SLinkOperations.getTarget(thisNode, "compositePart", true) == null)) {
+      return "";
+    }
+    return BuildCompositePath_Behavior.call_getPath_8618885170173674800(SLinkOperations.getTarget(thisNode, "compositePart", true));
   }
 
   public static String call_getBasePath_4959435991187140515(SNode thisNode, Context context) {

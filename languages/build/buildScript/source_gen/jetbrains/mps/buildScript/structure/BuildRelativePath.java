@@ -9,19 +9,10 @@ import jetbrains.mps.project.GlobalScope;
 
 public class BuildRelativePath extends BuildSourcePath {
   public static final String concept = "jetbrains.mps.buildScript.structure.BuildRelativePath";
-  public static final String RELATIVE_PATH = "relativePath";
   public static final String COMPOSITE_PART = "compositePart";
 
   public BuildRelativePath(SNode node) {
     super(node);
-  }
-
-  public String getRelativePath() {
-    return this.getProperty(BuildRelativePath.RELATIVE_PATH);
-  }
-
-  public void setRelativePath(String value) {
-    this.setProperty(BuildRelativePath.RELATIVE_PATH, value);
   }
 
   public BuildCompositePath getCompositePart() {

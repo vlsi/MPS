@@ -4,7 +4,6 @@ package jetbrains.mps.buildScript.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import org.apache.commons.lang.StringUtils;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.buildScript.util.Context;
 
 public class BuildSourceProjectRelativePath_Behavior {
@@ -12,9 +11,10 @@ public class BuildSourceProjectRelativePath_Behavior {
   }
 
   public static String virtual_getRelativePath_5481553824944787371(SNode thisNode) {
-    return (StringUtils.isEmpty(SPropertyOperations.getString(thisNode, "relativePath")) ?
+    String tail = BuildRelativePath_Behavior.call_getPathTail_1258644073389171001(thisNode);
+    return (StringUtils.isEmpty(tail) ?
       "${basedir}" :
-      "${basedir}/" + SPropertyOperations.getString(thisNode, "relativePath")
+      "${basedir}/" + tail
     );
   }
 

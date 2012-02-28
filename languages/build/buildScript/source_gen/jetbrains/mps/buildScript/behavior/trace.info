@@ -193,50 +193,60 @@
     <nodeInfo nodeId="4959435991187147114" fileName="BuildRelativePath_Behavior.java" startLine="19" startPosition="98" endLine="20" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4959435991187147136" fileName="BuildRelativePath_Behavior.java" startLine="21" startPosition="27" endLine="22" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5408212584423084967" fileName="BuildRelativePath_Behavior.java" startLine="24" startPosition="36" endLine="25" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4959435991187145477" fileName="BuildRelativePath_Behavior.java" startLine="26" startPosition="5" endLine="27" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4959435991187140512" fileName="BuildRelativePath_Behavior.java" startLine="30" startPosition="94" endLine="31" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4959435991187140512" fileName="BuildRelativePath_Behavior.java" startLine="31" startPosition="113" endLine="32" endPosition="225" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4959435991187140512" fileName="BuildRelativePath_Behavior.java" startLine="35" startPosition="127" endLine="36" endPosition="270" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4959435991187145477" fileName="BuildRelativePath_Behavior.java" startLine="26" startPosition="5" endLine="27" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1793232355800877169" fileName="BuildRelativePath_Behavior.java" startLine="31" startPosition="79" endLine="32" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7321017245477086838" fileName="BuildRelativePath_Behavior.java" startLine="33" startPosition="5" endLine="34" endPosition="132" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4959435991187140512" fileName="BuildRelativePath_Behavior.java" startLine="37" startPosition="94" endLine="38" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4959435991187140512" fileName="BuildRelativePath_Behavior.java" startLine="38" startPosition="113" endLine="39" endPosition="225" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4959435991187140512" fileName="BuildRelativePath_Behavior.java" startLine="42" startPosition="127" endLine="43" endPosition="270" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4959435991187140512" fileName="BuildRelativePath_Behavior.java" startLine="15" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
     <nodeInfo nodeId="4959435991187147125" fileName="BuildRelativePath_Behavior.java" startLine="20" startPosition="105" endLine="23" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="5408212584423084953" fileName="BuildRelativePath_Behavior.java" startLine="23" startPosition="5" endLine="26" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4959435991187140512" fileName="BuildRelativePath_Behavior.java" startLine="34" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="callSuper_getBasePath_4959435991187140515#(Ljetbrains/mps/smodel/SNode;Ljava/lang/String;Ljetbrains/mps/buildScript/util/Context;)Ljava/lang/String;" />
-    <nodeInfo nodeId="4959435991187140512" fileName="BuildRelativePath_Behavior.java" startLine="29" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getBasePath_4959435991187140515#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/buildScript/util/Context;)Ljava/lang/String;" />
+    <nodeInfo nodeId="1793232355800877145" fileName="BuildRelativePath_Behavior.java" startLine="30" startPosition="77" endLine="33" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4959435991187140512" fileName="BuildRelativePath_Behavior.java" startLine="41" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="callSuper_getBasePath_4959435991187140515#(Ljetbrains/mps/smodel/SNode;Ljava/lang/String;Ljetbrains/mps/buildScript/util/Context;)Ljava/lang/String;" />
+    <nodeInfo nodeId="4959435991187140512" fileName="BuildRelativePath_Behavior.java" startLine="36" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getBasePath_4959435991187140515#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/buildScript/util/Context;)Ljava/lang/String;" />
+    <nodeInfo nodeId="4959435991187140512" fileName="BuildRelativePath_Behavior.java" startLine="29" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getPathTail_1258644073389171001#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;" />
     <nodeInfo nodeId="4959435991187140512" fileName="BuildRelativePath_Behavior.java" startLine="18" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getLocalPath_5481553824944787364#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/buildScript/util/Context;)Ljava/lang/String;" />
     <scopeInfo nodeId="4959435991187140514" fileName="BuildRelativePath_Behavior.java" startLine="16" startPosition="43" endLine="16" endPosition="43" />
     <scopeInfo nodeId="4959435991187147126" fileName="BuildRelativePath_Behavior.java" startLine="21" startPosition="27" endLine="22" endPosition="18" />
     <scopeInfo nodeId="5408212584423084954" fileName="BuildRelativePath_Behavior.java" startLine="24" startPosition="36" endLine="25" endPosition="32" />
-    <scopeInfo nodeId="4959435991187140512" fileName="BuildRelativePath_Behavior.java" startLine="35" startPosition="127" endLine="36" endPosition="270" />
-    <scopeInfo nodeId="4959435991187140512" fileName="BuildRelativePath_Behavior.java" startLine="30" startPosition="94" endLine="32" endPosition="225">
+    <scopeInfo nodeId="1793232355800877146" fileName="BuildRelativePath_Behavior.java" startLine="31" startPosition="79" endLine="32" endPosition="16" />
+    <scopeInfo nodeId="4959435991187140512" fileName="BuildRelativePath_Behavior.java" startLine="42" startPosition="127" endLine="43" endPosition="270" />
+    <scopeInfo nodeId="4959435991187140512" fileName="BuildRelativePath_Behavior.java" startLine="37" startPosition="94" endLine="39" endPosition="225">
       <varInfo nodeId="4959435991187140512" varName="descriptor" />
     </scopeInfo>
     <scopeInfo nodeId="4959435991187140512" fileName="BuildRelativePath_Behavior.java" startLine="15" startPosition="0" endLine="18" endPosition="0">
       <varInfo nodeId="4959435991187140512" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="4959435991187140512" fileName="BuildRelativePath_Behavior.java" startLine="34" startPosition="0" endLine="38" endPosition="0">
+    <scopeInfo nodeId="1258644073389171004" fileName="BuildRelativePath_Behavior.java" startLine="30" startPosition="77" endLine="34" endPosition="132" />
+    <scopeInfo nodeId="4959435991187140512" fileName="BuildRelativePath_Behavior.java" startLine="41" startPosition="0" endLine="45" endPosition="0">
       <varInfo nodeId="4959435991187140512" varName="callerConceptFqName" />
       <varInfo nodeId="4959435991187166488" varName="context" />
       <varInfo nodeId="4959435991187140512" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="4959435991187140512" fileName="BuildRelativePath_Behavior.java" startLine="29" startPosition="0" endLine="34" endPosition="0">
+    <scopeInfo nodeId="4959435991187140512" fileName="BuildRelativePath_Behavior.java" startLine="36" startPosition="0" endLine="41" endPosition="0">
       <varInfo nodeId="4959435991187166488" varName="context" />
       <varInfo nodeId="4959435991187140512" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="4959435991187145471" fileName="BuildRelativePath_Behavior.java" startLine="19" startPosition="98" endLine="27" endPosition="78">
+    <scopeInfo nodeId="4959435991187140512" fileName="BuildRelativePath_Behavior.java" startLine="29" startPosition="0" endLine="36" endPosition="0">
+      <varInfo nodeId="4959435991187140512" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="4959435991187145471" fileName="BuildRelativePath_Behavior.java" startLine="19" startPosition="98" endLine="27" endPosition="96">
       <varInfo nodeId="4959435991187147115" varName="basePath" />
     </scopeInfo>
     <scopeInfo nodeId="4959435991187140512" fileName="BuildRelativePath_Behavior.java" startLine="18" startPosition="0" endLine="29" endPosition="0">
       <varInfo nodeId="4959435991187166475" varName="context" />
       <varInfo nodeId="4959435991187140512" varName="thisNode" />
     </scopeInfo>
-    <unitInfo nodeId="4959435991187140512" fileName="BuildRelativePath_Behavior.java" startLine="13" startPosition="0" endLine="39" endPosition="0" unitName="jetbrains.mps.buildScript.behavior.BuildRelativePath_Behavior" />
+    <unitInfo nodeId="4959435991187140512" fileName="BuildRelativePath_Behavior.java" startLine="13" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.buildScript.behavior.BuildRelativePath_Behavior" />
   </root>
   <root nodeId="4959435991187146226">
     <nodeInfo nodeId="3968971886499095235" fileName="BuildSourceMacroRelativePath_Behavior.java" startLine="15" startPosition="97" endLine="16" endPosition="133" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1258644073389171027" fileName="BuildSourceMacroRelativePath_Behavior.java" startLine="19" startPosition="84" endLine="20" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4959435991187146226" fileName="BuildSourceMacroRelativePath_Behavior.java" startLine="11" startPosition="52" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
     <nodeInfo nodeId="4959435991187146226" fileName="BuildSourceMacroRelativePath_Behavior.java" startLine="14" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getBasePath_4959435991187140515#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/buildScript/util/Context;)Ljava/lang/String;" />
-    <nodeInfo nodeId="5248329904288246607" fileName="BuildSourceMacroRelativePath_Behavior.java" startLine="19" startPosition="84" endLine="23" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4959435991187146226" fileName="BuildSourceMacroRelativePath_Behavior.java" startLine="18" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getRelativePath_5481553824944787371#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;" />
+    <nodeInfo nodeId="5248329904288246607" fileName="BuildSourceMacroRelativePath_Behavior.java" startLine="20" startPosition="92" endLine="24" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4959435991187146226" fileName="BuildSourceMacroRelativePath_Behavior.java" startLine="18" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getRelativePath_5481553824944787371#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;" />
     <scopeInfo nodeId="4959435991187146228" fileName="BuildSourceMacroRelativePath_Behavior.java" startLine="12" startPosition="43" endLine="12" endPosition="43" />
     <scopeInfo nodeId="4959435991187146231" fileName="BuildSourceMacroRelativePath_Behavior.java" startLine="15" startPosition="97" endLine="16" endPosition="133" />
     <scopeInfo nodeId="4959435991187146226" fileName="BuildSourceMacroRelativePath_Behavior.java" startLine="11" startPosition="52" endLine="14" endPosition="0">
@@ -246,11 +256,13 @@
       <varInfo nodeId="4959435991187166490" varName="context" />
       <varInfo nodeId="4959435991187146226" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="1117643560963342680" fileName="BuildSourceMacroRelativePath_Behavior.java" startLine="19" startPosition="84" endLine="23" endPosition="6" />
-    <scopeInfo nodeId="4959435991187146226" fileName="BuildSourceMacroRelativePath_Behavior.java" startLine="18" startPosition="0" endLine="25" endPosition="0">
+    <scopeInfo nodeId="1117643560963342680" fileName="BuildSourceMacroRelativePath_Behavior.java" startLine="19" startPosition="84" endLine="24" endPosition="6">
+      <varInfo nodeId="1258644073389171028" varName="tail" />
+    </scopeInfo>
+    <scopeInfo nodeId="4959435991187146226" fileName="BuildSourceMacroRelativePath_Behavior.java" startLine="18" startPosition="0" endLine="26" endPosition="0">
       <varInfo nodeId="4959435991187146226" varName="thisNode" />
     </scopeInfo>
-    <unitInfo nodeId="4959435991187146226" fileName="BuildSourceMacroRelativePath_Behavior.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.buildScript.behavior.BuildSourceMacroRelativePath_Behavior" />
+    <unitInfo nodeId="4959435991187146226" fileName="BuildSourceMacroRelativePath_Behavior.java" startLine="11" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.buildScript.behavior.BuildSourceMacroRelativePath_Behavior" />
   </root>
   <root nodeId="4959435991187146972">
     <nodeInfo nodeId="4959435991187166628" fileName="BuildFolderMacro_Behavior.java" startLine="17" startPosition="91" endLine="18" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -455,25 +467,28 @@
     <unitInfo nodeId="5481553824944787361" fileName="BuildSourcePath_Behavior.java" startLine="13" startPosition="0" endLine="47" endPosition="0" unitName="jetbrains.mps.buildScript.behavior.BuildSourcePath_Behavior" />
   </root>
   <root nodeId="5481553824944831598">
+    <nodeInfo nodeId="1258644073389171036" fileName="BuildSourceProjectRelativePath_Behavior.java" startLine="13" startPosition="84" endLine="14" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4959435991187146214" fileName="BuildSourceProjectRelativePath_Behavior.java" startLine="21" startPosition="97" endLine="22" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5481553824944831598" fileName="BuildSourceProjectRelativePath_Behavior.java" startLine="10" startPosition="54" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
-    <nodeInfo nodeId="5248329904288254965" fileName="BuildSourceProjectRelativePath_Behavior.java" startLine="14" startPosition="84" endLine="18" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5481553824944831598" fileName="BuildSourceProjectRelativePath_Behavior.java" startLine="9" startPosition="54" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="5248329904288254965" fileName="BuildSourceProjectRelativePath_Behavior.java" startLine="14" startPosition="92" endLine="18" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5481553824944831598" fileName="BuildSourceProjectRelativePath_Behavior.java" startLine="20" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getBasePath_4959435991187140515#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/buildScript/util/Context;)Ljava/lang/String;" />
-    <nodeInfo nodeId="5481553824944831598" fileName="BuildSourceProjectRelativePath_Behavior.java" startLine="13" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getRelativePath_5481553824944787371#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;" />
-    <scopeInfo nodeId="5481553824944831600" fileName="BuildSourceProjectRelativePath_Behavior.java" startLine="11" startPosition="43" endLine="11" endPosition="43" />
+    <nodeInfo nodeId="5481553824944831598" fileName="BuildSourceProjectRelativePath_Behavior.java" startLine="12" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getRelativePath_5481553824944787371#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;" />
+    <scopeInfo nodeId="5481553824944831600" fileName="BuildSourceProjectRelativePath_Behavior.java" startLine="10" startPosition="43" endLine="10" endPosition="43" />
     <scopeInfo nodeId="4959435991187146210" fileName="BuildSourceProjectRelativePath_Behavior.java" startLine="21" startPosition="97" endLine="22" endPosition="47" />
-    <scopeInfo nodeId="5481553824944831598" fileName="BuildSourceProjectRelativePath_Behavior.java" startLine="10" startPosition="54" endLine="13" endPosition="0">
+    <scopeInfo nodeId="5481553824944831598" fileName="BuildSourceProjectRelativePath_Behavior.java" startLine="9" startPosition="54" endLine="12" endPosition="0">
       <varInfo nodeId="5481553824944831598" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="5481553824944831603" fileName="BuildSourceProjectRelativePath_Behavior.java" startLine="14" startPosition="84" endLine="18" endPosition="6" />
     <scopeInfo nodeId="5481553824944831598" fileName="BuildSourceProjectRelativePath_Behavior.java" startLine="20" startPosition="0" endLine="24" endPosition="0">
       <varInfo nodeId="4959435991187146211" varName="context" />
       <varInfo nodeId="5481553824944831598" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="5481553824944831598" fileName="BuildSourceProjectRelativePath_Behavior.java" startLine="13" startPosition="0" endLine="20" endPosition="0">
+    <scopeInfo nodeId="5481553824944831603" fileName="BuildSourceProjectRelativePath_Behavior.java" startLine="13" startPosition="84" endLine="18" endPosition="6">
+      <varInfo nodeId="1258644073389171037" varName="tail" />
+    </scopeInfo>
+    <scopeInfo nodeId="5481553824944831598" fileName="BuildSourceProjectRelativePath_Behavior.java" startLine="12" startPosition="0" endLine="20" endPosition="0">
       <varInfo nodeId="5481553824944831598" varName="thisNode" />
     </scopeInfo>
-    <unitInfo nodeId="5481553824944831598" fileName="BuildSourceProjectRelativePath_Behavior.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.buildScript.behavior.BuildSourceProjectRelativePath_Behavior" />
+    <unitInfo nodeId="5481553824944831598" fileName="BuildSourceProjectRelativePath_Behavior.java" startLine="9" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.buildScript.behavior.BuildSourceProjectRelativePath_Behavior" />
   </root>
   <root nodeId="5584673629410192611">
     <nodeInfo nodeId="5584673629410321098" fileName="BuildLayout_Behavior.java" startLine="12" startPosition="116" endLine="13" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

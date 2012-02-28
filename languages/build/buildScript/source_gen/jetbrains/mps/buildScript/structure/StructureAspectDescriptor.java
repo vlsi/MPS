@@ -76,7 +76,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 29:
         return new CompiledConceptDescriptor("jetbrains.mps.buildScript.structure.BuildProjectPart", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{});
       case 30:
-        return new CompiledConceptDescriptor("jetbrains.mps.buildScript.structure.BuildRelativePath", "jetbrains.mps.buildScript.structure.BuildSourcePath", false, new String[]{"jetbrains.mps.buildScript.structure.BuildSourcePath"}, new String[]{"relativePath"}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.buildScript.structure.BuildRelativePath", "jetbrains.mps.buildScript.structure.BuildSourcePath", false, new String[]{"jetbrains.mps.buildScript.structure.BuildSourcePath"}, new String[]{}, new String[]{});
       case 31:
         return new CompiledConceptDescriptor("jetbrains.mps.buildScript.structure.BuildSourceMacroRelativePath", "jetbrains.mps.buildScript.structure.BuildRelativePath", false, new String[]{"jetbrains.mps.buildScript.structure.BuildRelativePath"}, new String[]{}, new String[]{"macro"});
       case 32:
