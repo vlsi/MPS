@@ -13,7 +13,6 @@
   <unitInfo fileName="Includes_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.gwt.client.behavior.Includes_BehaviorDescriptor" />
   <unitInfo fileName="Inherits_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.gwt.client.behavior.Inherits_BehaviorDescriptor" />
   <unitInfo fileName="Path_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.gwt.client.behavior.Path_BehaviorDescriptor" />
-  <unitInfo fileName="PatternFilter_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.gwt.client.behavior.PatternFilter_Behavior" />
   <unitInfo fileName="PatternFilter_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.gwt.client.behavior.PatternFilter_BehaviorDescriptor" />
   <unitInfo fileName="PatternHolder_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.gwt.client.behavior.PatternHolder_BehaviorDescriptor" />
   <unitInfo fileName="Pattern_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.gwt.client.behavior.Pattern_BehaviorDescriptor" />
