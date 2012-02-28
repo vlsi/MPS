@@ -27,6 +27,21 @@
     </scopeInfo>
     <unitInfo nodeId="1143458983612877046" fileName="SimpleDuplicatesFinder.java" startLine="12" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.baseLanguage.util.plugin.refactorings.SimpleDuplicatesFinder" />
   </root>
+  <root nodeId="1514868709970875555">
+    <nodeInfo nodeId="1514868709970875562" fileName="RenameUtil.java" startLine="14" startPosition="121" endLine="15" endPosition="116" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1514868709970875569" fileName="RenameUtil.java" startLine="16" startPosition="5" endLine="17" endPosition="163" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1514868709970875577" fileName="RenameUtil.java" startLine="9" startPosition="25" endLine="11" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="RenameUtil#()V" />
+    <nodeInfo nodeId="1514868709970875560" fileName="RenameUtil.java" startLine="13" startPosition="70" endLine="16" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1514868709970875556" fileName="RenameUtil.java" startLine="12" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getMethodDeclaration#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
+    <scopeInfo nodeId="1514868709970875579" fileName="RenameUtil.java" startLine="10" startPosition="23" endLine="10" endPosition="23" />
+    <scopeInfo nodeId="1514868709970875561" fileName="RenameUtil.java" startLine="14" startPosition="121" endLine="15" endPosition="116" />
+    <scopeInfo nodeId="1514868709970875577" fileName="RenameUtil.java" startLine="9" startPosition="25" endLine="11" endPosition="3" />
+    <scopeInfo nodeId="1514868709970875559" fileName="RenameUtil.java" startLine="13" startPosition="70" endLine="17" endPosition="163" />
+    <scopeInfo nodeId="1514868709970875556" fileName="RenameUtil.java" startLine="12" startPosition="0" endLine="19" endPosition="0">
+      <varInfo nodeId="1514868709970875574" varName="methodOrMethodCall" />
+    </scopeInfo>
+    <unitInfo nodeId="1514868709970875555" fileName="RenameUtil.java" startLine="9" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.baseLanguage.util.plugin.refactorings.RenameUtil" />
+  </root>
   <root nodeId="1769066237347579005">
     <nodeInfo nodeId="1769066237347591962" fileName="MethodDuplicatesFinder.java" startLine="18" startPosition="37" endLine="19" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNodesToFind" />
     <nodeInfo nodeId="1769066237347591966" fileName="MethodDuplicatesFinder.java" startLine="19" startPosition="36" endLine="20" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myMapping" />
