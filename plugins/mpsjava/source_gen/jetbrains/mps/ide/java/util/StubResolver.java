@@ -28,7 +28,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import java.util.HashMap;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
-import jetbrains.mps.ide.actions.MissingDependenciesFixer;
+import jetbrains.mps.kernel.model.MissingDependenciesFixer;
 import jetbrains.mps.project.OptimizeImportsHelper;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.project.MPSProject;
@@ -104,7 +104,7 @@ public class StubResolver {
       }
     });
     if (Sequence.fromIterable(modelsToAdd).isNotEmpty()) {
-      new MissingDependenciesFixer(null, model.getModelDescriptor()).fix(false);
+      new MissingDependenciesFixer(model.getModelDescriptor()).fix(false);
     }
 
     int cnt = StubResolver.resolveReferences(toResolve, models, context);

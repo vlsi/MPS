@@ -177,6 +177,11 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     insertInterfaceGroupIntoAnother("VcsGroup", ModelActions_ActionGroup.ID, ModelActions_ActionGroup.LABEL_ID_ideavcs);
     insertInterfaceGroupIntoAnother("VcsGroup", "EditorPopup_ActionGroupvcs", null);
     insertInterfaceGroupIntoAnother("NavbarPopupMenu", AbstractFileActions_ActionGroup.ID, AbstractFileActions_ActionGroup.LABEL_ID_ideaActions);
+    insertInterfaceGroupIntoAnother("jetbrains.mps.ide.java.actions.SolutionActionsEx_ActionGroup", SolutionActions_ActionGroup.ID, SolutionActions_ActionGroup.LABEL_ID_contents);
+    insertInterfaceGroupIntoAnother("jetbrains.mps.ide.java.actions.ModelNewActions_ActionGroup", GeneratorNewActions_ActionGroup.ID, GeneratorNewActions_ActionGroup.LABEL_ID_newModel);
+    insertInterfaceGroupIntoAnother("jetbrains.mps.ide.java.actions.ModelNewActions_ActionGroup", LanguageNewActions_ActionGroup.ID, LanguageNewActions_ActionGroup.LABEL_ID_newModel);
+    insertInterfaceGroupIntoAnother("jetbrains.mps.ide.java.actions.ModelNewActions_ActionGroup", SolutionNewActions_ActionGroup.ID, SolutionNewActions_ActionGroup.LABEL_ID_newModel);
+    insertInterfaceGroupIntoAnother("jetbrains.mps.ide.java.actions.ModelActions_ActionGroup", ModelActions_ActionGroup.ID, ModelActions_ActionGroup.LABEL_ID_paste);
     insertInterfaceGroupIntoAnother("RunContextGroup", CommonModuleActions_ActionGroup.ID, CommonModuleActions_ActionGroup.LABEL_ID_run);
     insertInterfaceGroupIntoAnother("RunContextGroup", EditorTabActions_ActionGroup.ID, null);
     insertInterfaceGroupIntoAnother("RunContextGroup", JUnitTestCaseActions_ActionGroup.ID, null);

@@ -1,0 +1,56 @@
+<components>
+  <actions>
+    <action id="jetbrains.mps.ide.java.actions.ChangeMethodSignature_Action" class="jetbrains.mps.ide.java.actions.ChangeMethodSignature_Action">
+      <keyboard-shortcut first-keystroke="ctrl F6" keymap="$default"/>
+    </action>
+    <action id="jetbrains.mps.ide.java.actions.ConvertAnonymousClass_Action" class="jetbrains.mps.ide.java.actions.ConvertAnonymousClass_Action">
+      <keyboard-shortcut first-keystroke=" F6" keymap="$default"/>
+    </action>
+    <action id="jetbrains.mps.ide.java.actions.GetModelContentsFromSource_Action" class="jetbrains.mps.ide.java.actions.GetModelContentsFromSource_Action"/>
+    <action id="jetbrains.mps.ide.java.actions.GetModuleContentsFromSource_Action" class="jetbrains.mps.ide.java.actions.GetModuleContentsFromSource_Action"/>
+    <action id="jetbrains.mps.ide.java.actions.MakeFieldFinal_Action" class="jetbrains.mps.ide.java.actions.MakeFieldFinal_Action"/>
+    <action id="jetbrains.mps.ide.java.actions.MakeFieldStatic_Action" class="jetbrains.mps.ide.java.actions.MakeFieldStatic_Action"/>
+    <action id="jetbrains.mps.ide.java.actions.MigrateSourcesToMPS_Action" class="jetbrains.mps.ide.java.actions.MigrateSourcesToMPS_Action"/>
+    <action id="jetbrains.mps.ide.java.actions.MoveStaticField_Action" class="jetbrains.mps.ide.java.actions.MoveStaticField_Action">
+      <keyboard-shortcut first-keystroke=" F6" keymap="$default"/>
+    </action>
+    <action id="jetbrains.mps.ide.java.actions.MoveStaticMethod_Action" class="jetbrains.mps.ide.java.actions.MoveStaticMethod_Action">
+      <keyboard-shortcut first-keystroke=" F6" keymap="$default"/>
+    </action>
+    <action id="jetbrains.mps.ide.java.actions.NewModelFromSource_Action" class="jetbrains.mps.ide.java.actions.NewModelFromSource_Action"/>
+    <action id="jetbrains.mps.ide.java.actions.PasteAsJavaClass_Action" class="jetbrains.mps.ide.java.actions.PasteAsJavaClass_Action"/>
+    <action id="jetbrains.mps.ide.java.actions.PasteAsJavaMethods_Action" class="jetbrains.mps.ide.java.actions.PasteAsJavaMethods_Action"/>
+    <action id="jetbrains.mps.ide.java.actions.PasteAsJavaStatements_Action" class="jetbrains.mps.ide.java.actions.PasteAsJavaStatements_Action"/>
+    <action id="jetbrains.mps.ide.java.actions.RenameMethod_Action" class="jetbrains.mps.ide.java.actions.RenameMethod_Action">
+      <keyboard-shortcut first-keystroke="shift F6" keymap="$default"/>
+    </action>
+    <action id="jetbrains.mps.ide.java.actions.ResolveStubReferencesToMPS_Action" class="jetbrains.mps.ide.java.actions.ResolveStubReferencesToMPS_Action"/>
+    <group id="jetbrains.mps.ide.java.actions.SolutionActionsEx_ActionGroup">
+      <reference ref="jetbrains.mps.ide.java.actions.GetModuleContentsFromSource_Action"/>
+      <reference ref="jetbrains.mps.ide.java.actions.MigrateSourcesToMPS_Action"/>
+    </group>
+    <group id="jetbrains.mps.ide.java.actions.ModelNewActions_ActionGroup">
+      <reference ref="jetbrains.mps.ide.java.actions.NewModelFromSource_Action"/>
+    </group>
+    <group id="jetbrains.mps.ide.java.actions.RefactoringAdditions_ActionGroup">
+      <reference ref="jetbrains.mps.ide.java.actions.ConvertAnonymousClass_Action"/>
+      <reference ref="jetbrains.mps.ide.java.actions.ChangeMethodSignature_Action"/>
+      <reference ref="jetbrains.mps.ide.java.actions.RenameMethod_Action"/>
+      <reference ref="jetbrains.mps.ide.java.actions.MakeFieldFinal_Action"/>
+      <reference ref="jetbrains.mps.ide.java.actions.MakeFieldStatic_Action"/>
+      <reference ref="jetbrains.mps.ide.java.actions.MoveStaticField_Action"/>
+      <reference ref="jetbrains.mps.ide.java.actions.MoveStaticMethod_Action"/>
+      <add-to-group group-id="jetbrains.mps.ide.platform.actions.NodeRefactoring_ActionGroup" anchor="last"/>
+    </group>
+    <group id="jetbrains.mps.ide.java.actions.ModelActions_ActionGroup">
+      <reference ref="jetbrains.mps.ide.java.actions.PasteAsJavaClass_Action"/>
+      <reference ref="jetbrains.mps.ide.java.actions.GetModelContentsFromSource_Action"/>
+      <reference ref="jetbrains.mps.ide.java.actions.ResolveStubReferencesToMPS_Action"/>
+    </group>
+    <group id="jetbrains.mps.ide.java.actions.EditorPopup_ActionGroup">
+      <reference ref="jetbrains.mps.ide.java.actions.PasteAsJavaStatements_Action"/>
+      <reference ref="jetbrains.mps.ide.java.actions.PasteAsJavaMethods_Action"/>
+      <add-to-group group-id="EditorPopup_ActionGrouppaste" anchor="last"/>
+    </group>
+  </actions>
+</components>

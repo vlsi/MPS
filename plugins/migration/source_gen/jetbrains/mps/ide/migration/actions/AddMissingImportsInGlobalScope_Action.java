@@ -9,15 +9,12 @@ import org.apache.commons.logging.LogFactory;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
-import jetbrains.mps.internal.collections.runtime.MapSequence;
-import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
-import jetbrains.mps.ide.actions.MissingDependenciesFixer;
-import java.awt.Frame;
+import jetbrains.mps.kernel.model.MissingDependenciesFixer;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.progress.EmptyProgressMonitor;
@@ -47,10 +44,6 @@ public class AddMissingImportsInGlobalScope_Action extends BaseAction {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.fromMap(_params).put("frame", event.getData(MPSCommonDataKeys.FRAME));
-    if (MapSequence.fromMap(_params).get("frame") == null) {
-      return false;
-    }
     return true;
   }
 
@@ -67,7 +60,7 @@ public class AddMissingImportsInGlobalScope_Action extends BaseAction {
           continue;
         }
 
-        new MissingDependenciesFixer(((Frame) MapSequence.fromMap(_params).get("frame")), model).fix(false);
+        new MissingDependenciesFixer(model).fix(false);
         model.getModule().invalidateCaches();
       }
       ModelAccess.instance().runWriteAction(new Runnable() {
