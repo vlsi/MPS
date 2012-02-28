@@ -119,6 +119,11 @@ public class ReducedGenerationWorker extends GeneratorWorker {
     }
   }
 
+  @Override
+  protected void showStatistic() {
+    // do nothing 
+  }
+
   private IScriptController configureFacets(final Map<String, String> fileHashes, final List<String> writtenFiles, final List<String> deletedFiles) {
     IModifiableGenerationSettings settings = GenerationSettingsProvider.getInstance().getGenerationSettings();
     settings.setIncremental(true);

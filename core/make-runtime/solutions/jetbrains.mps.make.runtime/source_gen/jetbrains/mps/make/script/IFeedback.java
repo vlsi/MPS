@@ -19,6 +19,11 @@ public interface IFeedback {
     Severity(String severity) {
       this.severity = severity;
     }
+
+    @Override
+    public String toString() {
+      return severity.toUpperCase();
+    }
   }
 
   public static abstract class Stub implements IFeedback {
@@ -86,6 +91,15 @@ public interface IFeedback {
 
     public String getMessage() {
       return message;
+    }
+
+    @Override
+    public String toString() {
+      String msg = getSeverity().toString() + " - " + getMessage().toString();
+      return (getException() != null ?
+        msg + " (" + getException().toString() + ")" :
+        msg
+      );
     }
 
     @Override

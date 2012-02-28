@@ -22,11 +22,15 @@ import com.intellij.openapi.compiler.*;
 import com.intellij.openapi.module.Module;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vfs.VirtualFile;
+import com.intellij.pom.Navigatable;
 import jetbrains.mps.fileTypes.MPSFileTypeFactory;
 import jetbrains.mps.generator.GenerationFacade;
+import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.idea.core.MPSBundle;
 import jetbrains.mps.idea.core.facet.MPSFacet;
 import jetbrains.mps.idea.core.facet.MPSFacetType;
+import jetbrains.mps.openapi.navigation.NavigationSupport;
+import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.util.JavaNameUtil;
@@ -40,6 +44,8 @@ import java.io.DataOutput;
 import java.io.File;
 import java.io.IOException;
 import java.util.*;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  * Created by IntelliJ IDEA.
@@ -50,6 +56,7 @@ import java.util.*;
  */
 public class MPSCompiler2 implements SourceGeneratingCompiler {
 
+  public static final Pattern TRANS_MODEL = Pattern.compile("\\[(\\d+)\\].*\\s([a-zA-Z_][a-zA-Z_0-9]*)@(\\d+_\\d+)");
   private Project myProject;
 
   public MPSCompiler2(Project project) {
@@ -93,7 +100,7 @@ public class MPSCompiler2 implements SourceGeneratingCompiler {
         boolean hasNamespace = namespace != null && namespace.trim().length() > 0;
 
         if (!hasNamespace) {
-          context.addMessage(CompilerMessageCategory.ERROR, MPSBundle.message("compiler.facetproblem.no_namespace", module.getName()), null, 0, 0);
+          context.addMessage(CompilerMessageCategory.ERROR, MPSBundle.message("compiler.facetproblem.no_namespace", module.getName()), null, -1, -1);
           ok &= false;
         }
       }
@@ -155,10 +162,11 @@ public class MPSCompiler2 implements SourceGeneratingCompiler {
     final List<File> generatedModelFiles = new ArrayList<File>();
     final List<File> filesToRefresh = new ArrayList<File>();
 
-    String cachesOutputRoot = MPSCompilerPaths.getCachesOutputPath(this, moduleToFiles.keySet().iterator().next(), isTest.cardinality() > 0);
+    Module singleModule = moduleToFiles.keySet().iterator().next();
+    String cachesOutputRoot = MPSCompilerPaths.getCachesOutputPath(this, singleModule, isTest.cardinality() > 0);
 
     // facet test start
-    executeMPSMake(context, facetToModels, new File(outputRootDirectory.getPath()), new File(cachesOutputRoot), generatedModelFiles, filesToRefresh);
+    executeMPSMake(context, singleModule, facetToModels, new File(outputRootDirectory.getPath()), new File(cachesOutputRoot), generatedModelFiles, filesToRefresh);
     // facet test end
 
     // TODO: this is only needed in case we're generating into one of the source folders
@@ -177,7 +185,7 @@ public class MPSCompiler2 implements SourceGeneratingCompiler {
     return new MyGenerationItem(module, ref, modelFile, path, generated);
   }
 
-  private void executeMPSMake(final CompileContext context, Map<MPSFacet, List<SModelDescriptor>> facetToModels, File outputRootDir, File cachesOutputRootDir, /*out*/List<File> generatedModelFiles, /*out*/List<File> filesToRefresh) {
+  private void executeMPSMake(final CompileContext context, final Module module, Map<MPSFacet, List<SModelDescriptor>> facetToModels, File outputRootDir, File cachesOutputRootDir, /*out*/List<File> generatedModelFiles, /*out*/List<File> filesToRefresh) {
     MPSMakeConfiguration makeConfiguration = new MPSMakeConfiguration();
     makeConfiguration.addProperty("OUTPUT_ROOT_DIR", outputRootDir.getAbsolutePath());
     makeConfiguration.addProperty("CACHES_OUTPUT_ROOT_DIR", cachesOutputRootDir.getAbsolutePath());
@@ -195,7 +203,7 @@ public class MPSCompiler2 implements SourceGeneratingCompiler {
       makeConfiguration.addConfiguredModels(modelsToMake);
       File moduleFile = new File(facet.getModule().getModuleFilePath());
       if (!moduleFile.exists() || !moduleFile.isFile()) {
-        context.addMessage(CompilerMessageCategory.ERROR, MPSBundle.getString("module.file.not.found"), null, 0, 0);
+        context.addMessage(CompilerMessageCategory.ERROR, MPSBundle.getString("module.file.not.found"), null, -1, -1);
         return;
       }
       makeConfiguration.addConfiguredModules(Collections.singletonList(moduleFile));
@@ -219,21 +227,42 @@ public class MPSCompiler2 implements SourceGeneratingCompiler {
 
         @Override
         public void error(String text) {
-          context.addMessage(CompilerMessageCategory.ERROR, text, null, 0, 0);
+          addMessage(text, CompilerMessageCategory.ERROR);
         }
 
         @Override
         public void warning(String text) {
-          context.addMessage(CompilerMessageCategory.WARNING, text, null, 0, 0);
+          addMessage(text, CompilerMessageCategory.WARNING);
         }
 
         @Override
         public void info(String text) {
-          context.addMessage(CompilerMessageCategory.INFORMATION, text, null, 0, 0);
+          addMessage(text, CompilerMessageCategory.INFORMATION);
+        }
+
+        private void addMessage(final String text, final CompilerMessageCategory category) {
+          final ModelNodeNavigatable navigatable = extractNavigatable(text, module);
+          if (navigatable != null) {
+            ModelAccess.instance().runReadAction(new Runnable() {
+              @Override
+              public void run() {
+                String path = null;
+                SModel model = navigatable.lookupModel();
+                if (model != null && model.getModelDescriptor() instanceof DefaultSModelDescriptor) {
+                  path = "file://"+((DefaultSModelDescriptor) model.getModelDescriptor()).getSource().getFile().getPath();
+                }
+
+                context.addMessage(category, text, path, -1, -1, navigatable);
+              }
+            });
+          }
+          else {
+            context.addMessage(category, text, null, -1, -1);
+          }
         }
       });
     } else {
-      context.addMessage(CompilerMessageCategory.ERROR, MPSBundle.getString("invalid.mps.make.configuration"), null, 0, 0);
+      context.addMessage(CompilerMessageCategory.ERROR, MPSBundle.getString("invalid.mps.make.configuration"), null, -1, -1);
     }
 
     for (File file : writtenFiles) {
@@ -244,6 +273,16 @@ public class MPSCompiler2 implements SourceGeneratingCompiler {
     }
   }
 
+  private ModelNodeNavigatable extractNavigatable (String errorMsg, Module module) {
+    Matcher matcher = TRANS_MODEL.matcher(errorMsg);
+    if (errorMsg != null && matcher.find()) {
+      String nodeId = matcher.group(1);
+      String modelName = matcher.group(2);
+      return new ModelNodeNavigatable(modelName, nodeId, module);
+    }
+    return null;
+  }
+  
   @NotNull
   @Override
   public String getDescription() {
@@ -258,6 +297,62 @@ public class MPSCompiler2 implements SourceGeneratingCompiler {
   @Override
   public ValidityState createValidityState(DataInput in) throws IOException {
     return GeneratedValidityState.load(in);
+  }
+
+  private static class ModelNodeNavigatable implements Navigatable {
+
+    private String modelName;
+    private String nodeId;
+    private Module module;
+
+    public ModelNodeNavigatable(String modelName, String nodeId, Module module) {
+      this.modelName = modelName;
+      this.nodeId = nodeId;
+      this.module = module;
+    }
+
+    @Override
+    public void navigate(final boolean requestFocus) {
+      ModelAccess.instance().runReadAction(new Runnable() {
+        @Override
+        public void run() {
+          SModel model = lookupModel();
+          if (model == null) return;
+          SNode node = model.getNodeById(nodeId);
+          if (node != null) {
+            ProjectOperationContext context = new ProjectOperationContext(ProjectHelper.toMPSProject(module.getProject()));
+            NavigationSupport.getInstance().openNode(context, node, requestFocus, true);
+          }
+        }
+      });
+    }
+
+    /**
+     * Requires read action.
+     * @return
+     */
+    public SModel lookupModel() {
+      ModelAccess.assertLegalRead();
+      SModel model = null;
+      MPSFacet facet = FacetManager.getInstance(module).getFacetByType(MPSFacetType.ID);
+      SModelRepository smrepo = SModelRepository.getInstance();
+      for (SModelDescriptor smd: smrepo.getModelDescriptors(facet.getSolution())) {
+        if (smd.getSModelReference().getLongName().equals(modelName)) {
+          model = smd.getSModel();
+        }
+      }
+      return model;
+    }
+
+    @Override
+    public boolean canNavigate() {
+      return true;
+    }
+
+    @Override
+    public boolean canNavigateToSource() {
+      return true;
+    }
   }
 
 
