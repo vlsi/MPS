@@ -83,10 +83,6 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(_context.getNode(), "returnType", true);
   }
 
-  public static SNode sourceNodeQuery_2348361366766892510(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), "body", true);
-  }
-
   public static SNode sourceNodeQuery_2348361366767161082(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "expression", true);
   }
@@ -101,6 +97,10 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_2329648364425741780(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ThisExpression", null);
+  }
+
+  public static Iterable sourceNodesQuery_6179462514687507588(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+    return SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getNode(), "body", true), "statement", true);
   }
 
   public static Iterable sourceNodesQuery_2348361366766716197(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
