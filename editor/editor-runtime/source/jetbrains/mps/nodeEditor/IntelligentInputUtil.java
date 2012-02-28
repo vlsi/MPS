@@ -245,7 +245,7 @@ public class IntelligentInputUtil {
       }
 
       INodeSubstituteAction rtItem = rtMatchingActions.get(0);
-      final SNode yetNewNode = rtItem.substitute(editorContext, smallPattern);
+      final SNode yetNewNode = rtItem.substitute(editorContext, tail);
 
       editorContext.flushEvents();
 
