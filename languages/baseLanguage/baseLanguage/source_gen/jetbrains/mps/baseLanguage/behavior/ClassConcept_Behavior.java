@@ -26,6 +26,7 @@ import java.util.HashSet;
 import java.util.Queue;
 import jetbrains.mps.internal.collections.runtime.QueueSequence;
 import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.scope.Scope;
 import jetbrains.mps.lang.core.behavior.ScopeProvider_Behavior;
 import jetbrains.mps.smodel.structure.BehaviorDescriptor;
@@ -246,7 +247,31 @@ public class ClassConcept_Behavior {
     return result;
   }
 
+  public static List<SNode> virtual_getMembers_2201875424515824604(SNode thisNode, SNode kind) {
+    if (SConceptOperations.isSubConceptOf(kind, "jetbrains.mps.baseLanguage.structure.ThisConstructorKind")) {
+      return SLinkOperations.getTargets(thisNode, "constructor", true);
+    }
+    if (SConceptOperations.isSubConceptOf(kind, "jetbrains.mps.baseLanguage.structure.SuperConstructorKind")) {
+      SNode superClass = SLinkOperations.getTarget(SLinkOperations.getTarget(thisNode, "superclass", true), "classifier", false);
+
+      if (Classifier_Behavior.call_isSame_4855996797771684010(superClass, SNodeOperations.getNode("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Object"))) {
+        return new ArrayList<SNode>();
+      }
+      final int accessLevel = Classifier_Behavior.call_getAccessLevelFor_8083692786967356648(superClass, ListSequence.fromList(SNodeOperations.getChildren(thisNode)).getElement(0), SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ThisConstructorKind"));
+      // todo: ? strange... =( 
+      return ListSequence.fromListWithValues(new ArrayList<SNode>(), ListSequence.fromList(Classifier_Behavior.call_getMembers_2201875424515824604(superClass, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ThisConstructorKind"))).where(new IWhereFilter<SNode>() {
+        public boolean accept(SNode it) {
+          return ClassifierMember_Behavior.call_isVisible_8083692786967482069(it, accessLevel);
+        }
+      }));
+    }
+    return Classifier_Behavior.callSuper_getMembers_2201875424515824604(thisNode, "jetbrains.mps.baseLanguage.structure.ClassConcept", kind);
+  }
+
   public static Scope virtual_getScope_3734116213129936182(SNode thisNode, SNode kind, SNode child) {
+    if (SConceptOperations.isSubConceptOf(kind, "jetbrains.mps.baseLanguage.structure.ThisConstructorKind") || SConceptOperations.isSubConceptOf(kind, "jetbrains.mps.baseLanguage.structure.SuperConstructorKind")) {
+      return Classifier_Behavior.call_getVisibleMembers_8083692786967356611(thisNode, child, kind);
+    }
     // <node> 
     return ScopeProvider_Behavior.callSuper_getScope_3734116213129936182(thisNode, "jetbrains.mps.baseLanguage.structure.ClassConcept", kind, child);
   }

@@ -1128,6 +1128,22 @@
       <property name="name" nameId="tpck.1169194664001" value="LocalPropertyReference" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="1068431790191" resolveInfo="Expression" />
     </node>
+    <node type="tpce.InterfaceConceptDeclaration" typeId="tpce.1169125989551" id="2406048883599609633">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="scopes" />
+      <property name="name" nameId="tpck.1169194664001" value="SuperConstructorKind" />
+    </node>
+    <node type="tpce.InterfaceConceptDeclaration" typeId="tpce.1169125989551" id="2406048883599831972">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="scopes" />
+      <property name="name" nameId="tpck.1169194664001" value="ThisConstructorKind" />
+    </node>
+    <node type="tpce.InterfaceConceptDeclaration" typeId="tpce.1169125989551" id="2406048883600014110">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="scopes" />
+      <property name="name" nameId="tpck.1169194664001" value="ClassifierMemberKind" />
+    </node>
+    <node type="tpce.InterfaceConceptDeclaration" typeId="tpce.1169125989551" id="2406048883600049315">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="scopes" />
+      <property name="name" nameId="tpck.1169194664001" value="InheritableClassifierMemberKind" />
+    </node>
   </roots>
   <root id="1068498886294">
     <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="1107215415034">
@@ -4337,6 +4353,22 @@
       <property name="role" nameId="tpce.1071599776563" value="property" />
       <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
       <link role="target" roleId="tpce.1071599976176" targetNodeId="1201370618622" resolveInfo="Property" />
+    </node>
+  </root>
+  <root id="2406048883599609633">
+    <node role="extends" roleId="tpce.1169127546356" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="2406048883600049317">
+      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="2406048883600014110" resolveInfo="ClassifierMemberKind" />
+    </node>
+  </root>
+  <root id="2406048883599831972">
+    <node role="extends" roleId="tpce.1169127546356" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="2406048883600049319">
+      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="2406048883600014110" resolveInfo="ClassifierMemberKind" />
+    </node>
+  </root>
+  <root id="2406048883600014110" />
+  <root id="2406048883600049315">
+    <node role="extends" roleId="tpce.1169127546356" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="2406048883600049334">
+      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="2406048883600014110" resolveInfo="ClassifierMemberKind" />
     </node>
   </root>
 </model>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="BaseLanguage_Language.java" startLine="9" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.BaseLanguage_Language" />
-  <unitInfo fileName="StructureAspectDescriptor.java" startLine="10" startPosition="0" endLine="515" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.StructureAspectDescriptor" />
+  <unitInfo fileName="StructureAspectDescriptor.java" startLine="10" startPosition="0" endLine="523" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.StructureAspectDescriptor" />
   <root nodeId="1023687332192347378">
     <nodeInfo nodeId="1023687332192347378" fileName="IVariableReference.java" startLine="7" startPosition="58" endLine="8" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <unitInfo nodeId="1023687332192347378" fileName="IVariableReference.java" startLine="7" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.IVariableReference" />
@@ -10848,6 +10848,22 @@
       <varInfo nodeId="1830039279190439966" varName="sm" />
     </scopeInfo>
     <unitInfo nodeId="1830039279190439966" fileName="AdditionalForLoopVariable.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.AdditionalForLoopVariable" />
+  </root>
+  <root nodeId="2406048883599609633">
+    <nodeInfo nodeId="2406048883599609633" fileName="SuperConstructorKind.java" startLine="6" startPosition="68" endLine="7" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
+    <unitInfo nodeId="2406048883599609633" fileName="SuperConstructorKind.java" startLine="6" startPosition="0" endLine="9" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.SuperConstructorKind" />
+  </root>
+  <root nodeId="2406048883599831972">
+    <nodeInfo nodeId="2406048883599831972" fileName="ThisConstructorKind.java" startLine="6" startPosition="67" endLine="7" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
+    <unitInfo nodeId="2406048883599831972" fileName="ThisConstructorKind.java" startLine="6" startPosition="0" endLine="9" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.ThisConstructorKind" />
+  </root>
+  <root nodeId="2406048883600014110">
+    <nodeInfo nodeId="2406048883600014110" fileName="ClassifierMemberKind.java" startLine="7" startPosition="60" endLine="8" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
+    <unitInfo nodeId="2406048883600014110" fileName="ClassifierMemberKind.java" startLine="7" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.ClassifierMemberKind" />
+  </root>
+  <root nodeId="2406048883600049315">
+    <nodeInfo nodeId="2406048883600049315" fileName="InheritableClassifierMemberKind.java" startLine="6" startPosition="79" endLine="7" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
+    <unitInfo nodeId="2406048883600049315" fileName="InheritableClassifierMemberKind.java" startLine="6" startPosition="0" endLine="9" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.InheritableClassifierMemberKind" />
   </root>
   <root nodeId="2580416627845338977">
     <nodeInfo nodeId="2580416627845338977" fileName="ImplicitAnnotationInstanceValue.java" startLine="14" startPosition="103" endLine="15" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />

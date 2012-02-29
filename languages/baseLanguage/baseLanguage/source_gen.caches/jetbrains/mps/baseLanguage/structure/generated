@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="638ero4vy0lyec5citca6v16l823bp">
+<dependencies version="2" modelHash="-1tijlelfk0q0r2b8gks154aj2ysmg4m">
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
@@ -223,6 +223,10 @@
     <dep root="1241540912639" />
     <dep root="1461424660015405635" />
     <dep root="1830039279190439966" />
+    <dep root="2406048883599609633" />
+    <dep root="2406048883599831972" />
+    <dep root="2406048883600014110" />
+    <dep root="2406048883600049315" />
     <dep root="2580416627845338977" />
     <dep root="2948164764175055168" />
     <dep root="3066917033203108594" />
@@ -320,7 +324,6 @@
   </source>
   <source id="1068499141036" name="BaseMethodCall" hash="-5pmamch2m2yzw2f0cmei35st9go5zwg">
     <dep root="1068390468200" />
-    <dep root="1068431474542" />
     <dep root="1068431790189" />
     <dep root="1068431790191" />
     <dep root="1068498886292" />
@@ -5455,10 +5458,9 @@
     <dep root="1068431474542" />
     <dep root="1068431790189" />
     <dep root="1068431790191" />
-    <dep root="1068499141036" />
     <dep root="1068581242863" />
     <dep root="1070475926800" />
-    <dep root="1081236700937" />
+    <dep root="1083260308424" />
     <dep root="1107535904670" />
     <dep root="1145552809883" />
     <dep root="1145552977093" />
@@ -6735,6 +6737,30 @@
     <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="LocalPropertyReference.java" />
+  </source>
+  <source id="2406048883599609633" name="SuperConstructorKind" hash="-2v4hnji0jsxvnnkoy9rjn6lbbghvlkl">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" />
+    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
+    <file name="SuperConstructorKind.java" />
+  </source>
+  <source id="2406048883599831972" name="ThisConstructorKind" hash="1or5qja6qgvsxzfx9q79wdzlfmw3eic">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" />
+    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
+    <file name="ThisConstructorKind.java" />
+  </source>
+  <source id="2406048883600014110" name="ClassifierMemberKind" hash="-32tr9k82fkwoov6mzfrchqqrz19f5mc">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" />
+    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
+    <file name="ClassifierMemberKind.java" />
+  </source>
+  <source id="2406048883600049315" name="InheritableClassifierMemberKind" hash="-7m9jibehhnvzyuzdayn6yb3qpbakd80">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" />
+    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
+    <file name="InheritableClassifierMemberKind.java" />
   </source>
 </dependencies>
 

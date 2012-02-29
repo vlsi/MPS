@@ -619,6 +619,10 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.structure.IVisible" />
     <classNode extendsClassName="jetbrains.mps.smodel.INodeAdapter" />
   </dependency>
+  <dependency className="jetbrains.mps.baseLanguage.structure.ClassifierMemberKind" file="ClassifierMemberKind.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode extendsClassName="jetbrains.mps.smodel.INodeAdapter" />
+  </dependency>
   <dependency className="jetbrains.mps.baseLanguage.structure.ClassifierType" file="ClassifierType.java">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Iterator" />
@@ -1289,6 +1293,11 @@
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
+  </dependency>
+  <dependency className="jetbrains.mps.baseLanguage.structure.InheritableClassifierMemberKind" file="InheritableClassifierMemberKind.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.structure.ClassifierMemberKind" />
+    <classNode extendsClassName="jetbrains.mps.smodel.INodeAdapter" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.structure.InstanceInitializer" file="InstanceInitializer.java">
     <classNode dependClassName="java.lang.String" />
@@ -2161,6 +2170,11 @@
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
   </dependency>
+  <dependency className="jetbrains.mps.baseLanguage.structure.SuperConstructorKind" file="SuperConstructorKind.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.structure.ClassifierMemberKind" />
+    <classNode extendsClassName="jetbrains.mps.smodel.INodeAdapter" />
+  </dependency>
   <dependency className="jetbrains.mps.baseLanguage.structure.SuperMethodCall" file="SuperMethodCall.java">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.structure.BaseMethodCall" />
@@ -2235,6 +2249,11 @@
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
+  </dependency>
+  <dependency className="jetbrains.mps.baseLanguage.structure.ThisConstructorKind" file="ThisConstructorKind.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.structure.ClassifierMemberKind" />
+    <classNode extendsClassName="jetbrains.mps.smodel.INodeAdapter" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.structure.ThisExpression" file="ThisExpression.java">
     <classNode dependClassName="java.lang.String" />
