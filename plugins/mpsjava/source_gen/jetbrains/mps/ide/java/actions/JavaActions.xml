@@ -1,8 +1,5 @@
 <components>
   <actions>
-    <action id="jetbrains.mps.ide.java.actions.ChangeMethodSignature_Action" class="jetbrains.mps.ide.java.actions.ChangeMethodSignature_Action">
-      <keyboard-shortcut first-keystroke="ctrl F6" keymap="$default"/>
-    </action>
     <action id="jetbrains.mps.ide.java.actions.ConvertAnonymousClass_Action" class="jetbrains.mps.ide.java.actions.ConvertAnonymousClass_Action">
       <keyboard-shortcut first-keystroke=" F6" keymap="$default"/>
     </action>
@@ -34,7 +31,6 @@
     </group>
     <group id="jetbrains.mps.ide.java.actions.RefactoringAdditions_ActionGroup">
       <reference ref="jetbrains.mps.ide.java.actions.ConvertAnonymousClass_Action"/>
-      <reference ref="jetbrains.mps.ide.java.actions.ChangeMethodSignature_Action"/>
       <reference ref="jetbrains.mps.ide.java.actions.RenameMethod_Action"/>
       <reference ref="jetbrains.mps.ide.java.actions.MakeFieldFinal_Action"/>
       <reference ref="jetbrains.mps.ide.java.actions.MakeFieldStatic_Action"/>
