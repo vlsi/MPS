@@ -6,6 +6,7 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.ide.java.parser.FeatureKind;
+import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.SModel;
 import java.awt.datatransfer.Transferable;
 import com.intellij.ide.CopyPasteManagerEx;
@@ -15,6 +16,7 @@ import java.io.IOException;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.ide.java.parser.JavaCompiler;
 import java.io.File;
+import jetbrains.mps.ide.project.ProjectHelper;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import javax.swing.JOptionPane;
@@ -35,20 +37,20 @@ public class JavaPaster {
   public JavaPaster() {
   }
 
-  public void pasteJava(SNode anchor, IOperationContext operationContext, FeatureKind featureKind) {
+  public void pasteJava(SNode anchor, IOperationContext operationContext, FeatureKind featureKind, Project project) {
     String javaCode = getStringFromClipboard();
     if (javaCode == null) {
       return;
     }
-    pasteJavaAsNode(anchor, anchor.getModel(), javaCode, operationContext, featureKind);
+    pasteJavaAsNode(anchor, anchor.getModel(), javaCode, operationContext, featureKind, project);
   }
 
-  public void pasteJavaAsClass(SModel model, IOperationContext operationContext) {
+  public void pasteJavaAsClass(SModel model, IOperationContext operationContext, Project project) {
     String javaCode = getStringFromClipboard();
     if (javaCode == null) {
       return;
     }
-    pasteJavaAsNode(null, model, javaCode, operationContext, FeatureKind.CLASS);
+    pasteJavaAsNode(null, model, javaCode, operationContext, FeatureKind.CLASS, project);
   }
 
   public String getStringFromClipboard() {
@@ -77,9 +79,9 @@ public class JavaPaster {
     return null;
   }
 
-  public void pasteJavaAsNode(SNode anchor, final SModel model, String javaCode, IOperationContext operationContext, FeatureKind featureKind) {
+  public void pasteJavaAsNode(SNode anchor, final SModel model, String javaCode, IOperationContext operationContext, FeatureKind featureKind, Project project) {
     IModule module = model.getModelDescriptor().getModule();
-    JavaCompiler javaCompiler = new JavaCompiler(operationContext, module, (File) null, false, model);
+    JavaCompiler javaCompiler = new JavaCompiler(operationContext, module, (File) null, false, model, ProjectHelper.toIdeaProject(project));
     try {
       List<SNode> nodes = javaCompiler.compileIsolated(javaCode, featureKind);
       if (ListSequence.fromList(nodes).isEmpty()) {
@@ -137,10 +139,10 @@ public class JavaPaster {
     return true;
   }
 
-  public static List<SNode> getStatementsFromJavaText(String javaCode, SModel model, IOperationContext context) {
+  public static List<SNode> getStatementsFromJavaText(String javaCode, SModel model, IOperationContext context, Project project) {
     IModule module = model.getModelDescriptor().getModule();
     try {
-      return new JavaCompiler(context, module, (File) null, false, model).compileIsolated(javaCode, FeatureKind.STATEMENTS);
+      return new JavaCompiler(context, module, (File) null, false, model, ProjectHelper.toIdeaProject(project)).compileIsolated(javaCode, FeatureKind.STATEMENTS);
     } catch (ConversionFailedException e) {
     }
     return new ArrayList<SNode>();

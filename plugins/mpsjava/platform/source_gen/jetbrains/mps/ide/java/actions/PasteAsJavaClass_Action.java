@@ -17,6 +17,7 @@ import jetbrains.mps.ide.java.util.JavaPaster;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.project.MPSProject;
 
 public class PasteAsJavaClass_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -59,12 +60,13 @@ public class PasteAsJavaClass_Action extends BaseAction {
     if (MapSequence.fromMap(_params).get("model") == null) {
       return false;
     }
+    MapSequence.fromMap(_params).put("mpsProject", event.getData(MPSCommonDataKeys.MPS_PROJECT));
     return true;
   }
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      new JavaPaster().pasteJavaAsClass(((SModelDescriptor) MapSequence.fromMap(_params).get("model")).getSModel(), ((IOperationContext) MapSequence.fromMap(_params).get("operationContext")));
+      new JavaPaster().pasteJavaAsClass(((SModelDescriptor) MapSequence.fromMap(_params).get("model")).getSModel(), ((IOperationContext) MapSequence.fromMap(_params).get("operationContext")), ((MPSProject) MapSequence.fromMap(_params).get("mpsProject")));
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "PasteAsJavaClass", t);

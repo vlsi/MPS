@@ -30,8 +30,8 @@ import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.ide.java.parser.JavaCompiler;
-import jetbrains.mps.ide.projectPane.ProjectPane;
 import com.intellij.openapi.project.Project;
+import jetbrains.mps.ide.projectPane.ProjectPane;
 import javax.swing.tree.TreeNode;
 import jetbrains.mps.ide.StereotypeProvider;
 
@@ -154,7 +154,7 @@ public class NewModelFromSource_Action extends BaseAction {
         }
         IFile resultFile = treeFileChooser.showDialog(((Frame) MapSequence.fromMap(_params).get("frame")));
         if (resultFile != null) {
-          JavaCompiler javaCompiler = new JavaCompiler(((IOperationContext) MapSequence.fromMap(_params).get("context")), ((IModule) MapSequence.fromMap(_params).get("module")), new File(resultFile.getPath()), false, sModel);
+          JavaCompiler javaCompiler = new JavaCompiler(((IOperationContext) MapSequence.fromMap(_params).get("context")), ((IModule) MapSequence.fromMap(_params).get("module")), new File(resultFile.getPath()), false, sModel, ((Project) MapSequence.fromMap(_params).get("project")));
           javaCompiler.compile();
         }
         SModelDescriptor modelDescriptor = result;

@@ -436,10 +436,10 @@ public class CopyPasteUtil {
     return myDataConverter != null && myDataConverter.canPasteAsNodes(model, anchor);
   }
 
-  public static synchronized PasteNodeData getConvertedFromClipboard(SModel model) {
+  public static synchronized PasteNodeData getConvertedFromClipboard(SModel model, Project project) {
     return (myDataConverter == null ?
       null :
-      myDataConverter.getPasteNodeData(model)
+      myDataConverter.getPasteNodeData(model, project)
     );
   }
 
@@ -448,15 +448,15 @@ public class CopyPasteUtil {
     return ListSequence.fromList(nodes).isNotEmpty() || isConversionAvailable(model, anchor);
   }
 
-  public static synchronized void pasteNodes(SModel model, SNode anchor) {
+  public static synchronized void pasteNodes(SModel model, SNode anchor, Project project) {
     if (myDataConverter != null) {
-      myDataConverter.pasteAsNodes(model, anchor);
+      myDataConverter.pasteAsNodes(model, anchor, project);
     }
   }
 
   public static interface IDataConverter {
     public boolean canPasteAsNodes(SModel model, SNode anchor);
-    public void pasteAsNodes(SModel model, SNode anchor);
-    public PasteNodeData getPasteNodeData(SModel model);
+    public void pasteAsNodes(SModel model, SNode anchor, Project project);
+    public PasteNodeData getPasteNodeData(SModel model, Project project);
   }
 }

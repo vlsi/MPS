@@ -21,8 +21,8 @@ import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import jetbrains.mps.ide.java.parser.JavaCompiler;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.ide.java.util.StubResolver;
 import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.ide.java.util.StubResolver;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 
@@ -85,7 +85,7 @@ public class MigrateSourcesToMPS_Action extends BaseAction {
       for (String path : CollectionSequence.fromCollection(moduleDescr.getSourcePaths())) {
         ListSequence.fromList(sourcePaths).addElement(new File(path));
       }
-      JavaCompiler javaCompiler = new JavaCompiler(((IOperationContext) MapSequence.fromMap(_params).get("context")), ((IModule) MapSequence.fromMap(_params).get("module")), sourcePaths, false);
+      JavaCompiler javaCompiler = new JavaCompiler(((IOperationContext) MapSequence.fromMap(_params).get("context")), ((IModule) MapSequence.fromMap(_params).get("module")), sourcePaths, false, ((MPSProject) MapSequence.fromMap(_params).get("project")).getProject());
       javaCompiler.compile();
       // re-resolve references to just imported models 
       new StubResolver(javaCompiler.getAffectedModels()).resolveInProject(((MPSProject) MapSequence.fromMap(_params).get("project")), ((IOperationContext) MapSequence.fromMap(_params).get("context")));

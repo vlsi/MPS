@@ -10,6 +10,7 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.ide.datatransfer.TextPasteUtil;
+import jetbrains.mps.project.Project;
 import jetbrains.mps.ide.java.parser.FeatureKind;
 import jetbrains.mps.datatransfer.PasteNodeData;
 import jetbrains.mps.ide.datatransfer.SNodeTransferable;
@@ -39,18 +40,18 @@ public class JavaCopyPasteDataConverter implements ApplicationComponent, CopyPas
     return text != null && text.length() > MIN_TEXT_LENGTH_TO_CONVERT;
   }
 
-  public void pasteAsNodes(SModel model, SNode anchor) {
+  public void pasteAsNodes(SModel model, SNode anchor, Project project) {
     String text = TextPasteUtil.getStringFromClipboard();
     if (text != null && text.length() > MIN_TEXT_LENGTH_TO_CONVERT) {
-      new JavaPaster().pasteJavaAsNode(anchor, model, text, null, FeatureKind.STATEMENTS);
+      new JavaPaster().pasteJavaAsNode(anchor, model, text, null, FeatureKind.STATEMENTS, project);
     }
   }
 
-  public PasteNodeData getPasteNodeData(SModel model) {
+  public PasteNodeData getPasteNodeData(SModel model, Project project) {
     // requires write action :( 
     String text = TextPasteUtil.getStringFromClipboard();
     if (text != null && text.length() > MIN_TEXT_LENGTH_TO_CONVERT) {
-      SNodeTransferable transferable = new SNodeTransferable(JavaPaster.getStatementsFromJavaText(text, model, null), text);
+      SNodeTransferable transferable = new SNodeTransferable(JavaPaster.getStatementsFromJavaText(text, model, null, project), text);
       return transferable.createNodeData(model);
     }
     return null;

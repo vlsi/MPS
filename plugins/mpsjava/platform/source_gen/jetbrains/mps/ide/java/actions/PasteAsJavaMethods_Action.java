@@ -16,6 +16,7 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.ide.java.parser.FeatureKind;
+import jetbrains.mps.project.MPSProject;
 
 public class PasteAsJavaMethods_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -57,12 +58,13 @@ public class PasteAsJavaMethods_Action extends BaseAction {
     if (MapSequence.fromMap(_params).get("anchorNode") == null) {
       return false;
     }
+    MapSequence.fromMap(_params).put("mpsProject", event.getData(MPSCommonDataKeys.MPS_PROJECT));
     return true;
   }
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      new JavaPaster().pasteJava(((SNode) MapSequence.fromMap(_params).get("anchorNode")), ((IOperationContext) MapSequence.fromMap(_params).get("operationContext")), FeatureKind.CLASS_CONTENT);
+      new JavaPaster().pasteJava(((SNode) MapSequence.fromMap(_params).get("anchorNode")), ((IOperationContext) MapSequence.fromMap(_params).get("operationContext")), FeatureKind.CLASS_CONTENT, ((MPSProject) MapSequence.fromMap(_params).get("mpsProject")));
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "PasteAsJavaMethods", t);

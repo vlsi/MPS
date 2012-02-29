@@ -23,6 +23,7 @@ import jetbrains.mps.vfs.IFile;
 import java.awt.Frame;
 import jetbrains.mps.ide.java.parser.JavaCompiler;
 import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.project.MPSProject;
 
 public class GetModelContentsFromSource_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -72,6 +73,7 @@ public class GetModelContentsFromSource_Action extends BaseAction {
     if (MapSequence.fromMap(_params).get("model") == null) {
       return false;
     }
+    MapSequence.fromMap(_params).put("mpsProject", event.getData(MPSCommonDataKeys.MPS_PROJECT));
     return true;
   }
 
@@ -104,7 +106,7 @@ public class GetModelContentsFromSource_Action extends BaseAction {
       }
       IFile result = treeFileChooser.showDialog(((Frame) MapSequence.fromMap(_params).get("frame")));
       if (result != null) {
-        JavaCompiler javaCompiler = new JavaCompiler(((IOperationContext) MapSequence.fromMap(_params).get("context")), module, new File(result.getPath()), false, sModel);
+        JavaCompiler javaCompiler = new JavaCompiler(((IOperationContext) MapSequence.fromMap(_params).get("context")), module, new File(result.getPath()), false, sModel, ((MPSProject) MapSequence.fromMap(_params).get("mpsProject")).getProject());
         javaCompiler.compile();
       }
     } catch (Throwable t) {

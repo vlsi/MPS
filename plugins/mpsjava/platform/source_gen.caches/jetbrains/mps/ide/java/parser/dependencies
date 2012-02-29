@@ -1,5 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
+  <dependency className="jetbrains.mps.ide.java.parser.ClassPathDialog" file="ClassPathDialog.java">
+    <classNode dependClassName="com.intellij.openapi.project.Project" />
+    <classNode dependClassName="com.intellij.ui.ScrollPaneFactory" />
+    <classNode dependClassName="com.intellij.ui.components.JBList" />
+    <classNode dependClassName="java.awt.BorderLayout" />
+    <classNode dependClassName="java.io.File" />
+    <classNode dependClassName="java.lang.Iterable" />
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="java.util.HashMap" />
+    <classNode dependClassName="java.util.LinkedHashSet" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="java.util.Map" />
+    <classNode dependClassName="java.util.Set" />
+    <classNode dependClassName="javax.swing.DefaultListCellRenderer" />
+    <classNode dependClassName="javax.swing.DefaultListModel" />
+    <classNode dependClassName="javax.swing.JComponent" />
+    <classNode dependClassName="javax.swing.JList" />
+    <classNode dependClassName="javax.swing.JPanel" />
+    <classNode dependClassName="javax.swing.JScrollPane" />
+    <classNode dependClassName="javax.swing.JSplitPane" />
+    <classNode dependClassName="javax.swing.ListCellRenderer" />
+    <classNode dependClassName="javax.swing.ListModel" />
+    <classNode dependClassName="javax.swing.border.TitledBorder" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.Tuples" />
+    <classNode dependClassName="jetbrains.mps.ide.java.parser.ClasspathSelectionTree" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
+    <classNode dependClassName="jetbrains.mps.reloading.IClassPathItem" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode extendsClassName="com.intellij.openapi.ui.DialogWrapper" />
+    <classNode extendsClassName="jetbrains.mps.ide.java.parser.ClasspathObserver" />
+  </dependency>
   <dependency className="jetbrains.mps.ide.java.parser.ClasspathObserver" file="ClasspathObserver.java">
     <classNode dependClassName="jetbrains.mps.reloading.IClassPathItem" />
   </dependency>
@@ -86,6 +123,7 @@
     <classNode dependClassName="jetbrains.mps.util.NameUtil" />
   </dependency>
   <dependency className="jetbrains.mps.ide.java.parser.JavaCompiler" file="JavaCompiler.java">
+    <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="java.io.File" />
     <classNode dependClassName="java.lang.Character" />
     <classNode dependClassName="java.lang.Integer" />
@@ -104,16 +142,15 @@
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="java.util.Set" />
-    <classNode dependClassName="java.util.Vector" />
     <classNode dependClassName="javax.swing.JOptionPane" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.Tuples" />
+    <classNode dependClassName="jetbrains.mps.ide.java.parser.ClassPathDialog" />
     <classNode dependClassName="jetbrains.mps.ide.java.parser.CommentHelper" />
     <classNode dependClassName="jetbrains.mps.ide.java.parser.CommentRecorderParser" />
     <classNode dependClassName="jetbrains.mps.ide.java.parser.FeatureKind" />
     <classNode dependClassName="jetbrains.mps.ide.java.parser.JavaConverterTreeBuilder" />
     <classNode dependClassName="jetbrains.mps.ide.java.parser.ReferentsCreator" />
     <classNode dependClassName="jetbrains.mps.ide.java.parser.SourceWrapper" />
-    <classNode dependClassName="jetbrains.mps.ide.java.parser.UIComponents" />
     <classNode dependClassName="jetbrains.mps.ide.messages.MessagesViewTool" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
@@ -420,40 +457,6 @@
     <classNode dependClassName="org.eclipse.jdt.internal.compiler.lookup.TypeBinding" />
     <classNode dependClassName="org.eclipse.jdt.internal.compiler.lookup.TypeVariableBinding" />
     <classNode dependClassName="org.eclipse.jdt.internal.compiler.lookup.WildcardBinding" />
-  </dependency>
-  <dependency className="jetbrains.mps.ide.java.parser.UIComponents" file="UIComponents.java">
-    <classNode dependClassName="com.intellij.ui.ScrollPaneFactory" />
-    <classNode dependClassName="java.awt.BorderLayout" />
-    <classNode dependClassName="java.awt.FlowLayout" />
-    <classNode dependClassName="java.awt.Frame" />
-    <classNode dependClassName="java.awt.HeadlessException" />
-    <classNode dependClassName="java.awt.event.ActionEvent" />
-    <classNode dependClassName="java.io.File" />
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.util.ArrayList" />
-    <classNode dependClassName="java.util.HashMap" />
-    <classNode dependClassName="java.util.LinkedHashSet" />
-    <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="java.util.Map" />
-    <classNode dependClassName="java.util.Set" />
-    <classNode dependClassName="javax.swing.AbstractAction" />
-    <classNode dependClassName="javax.swing.DefaultListCellRenderer" />
-    <classNode dependClassName="javax.swing.JButton" />
-    <classNode dependClassName="javax.swing.JComponent" />
-    <classNode dependClassName="javax.swing.JPanel" />
-    <classNode dependClassName="javax.swing.JScrollPane" />
-    <classNode dependClassName="javax.swing.JSplitPane" />
-    <classNode dependClassName="jetbrains.mps.ide.dialogs.DialogDimensionsSettings" />
-    <classNode dependClassName="jetbrains.mps.ide.java.parser.ClasspathSelectionTree" />
-    <classNode dependClassName="jetbrains.mps.ide.project.ProjectHelper" />
-    <classNode dependClassName="jetbrains.mps.reloading.IClassPathItem" />
-    <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
-    <classNode dependClassName="jetbrains.mps.workbench.dialogs.project.components.parts.boundpanels.BoundListPanel" />
-    <classNode dependClassName="org.jdesktop.observablecollections.ObservableCollections" />
-    <classNode dependClassName="org.jdesktop.observablecollections.ObservableList" />
-    <classNode extendsClassName="jetbrains.mps.ide.java.parser.ClasspathObserver" />
-    <classNode extendsClassName="jetbrains.mps.workbench.dialogs.project.BaseBindedDialog" />
   </dependency>
 </dependenciesRoot>
 

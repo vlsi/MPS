@@ -18,6 +18,7 @@ import org.eclipse.jdt.internal.compiler.CompilationResult;
 import java.io.File;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.IOperationContext;
+import com.intellij.openapi.project.Project;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.util.NameUtil;
@@ -42,7 +43,6 @@ import java.util.LinkedHashSet;
 import org.eclipse.jdt.core.compiler.CategorizedProblem;
 import org.eclipse.jdt.core.compiler.IProblem;
 import javax.swing.JOptionPane;
-import java.util.Vector;
 import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.project.structure.modules.ClassPathEntry;
 import jetbrains.mps.reloading.FileClassPathItem;
@@ -76,26 +76,28 @@ public class JavaCompiler {
   private SModel myBaseModelToAddSource;
   private String myPrefix = null;
   private IOperationContext myContext;
+  private Project myProject;
   /*package*/ boolean mySetOutputPath;
 
-  public JavaCompiler(IOperationContext context, IModule module, File sourceDir, boolean setOutputPath) {
-    this(context, module, sourceDir, setOutputPath, null);
+  public JavaCompiler(IOperationContext context, IModule module, File sourceDir, boolean setOutputPath, Project project) {
+    this(context, module, sourceDir, setOutputPath, null, project);
   }
 
-  public JavaCompiler(IOperationContext context, IModule module, File sourceDir, boolean setOutputPath, SModel model) {
-    this(context, module, Sequence.<File>singleton(sourceDir), setOutputPath, model);
+  public JavaCompiler(IOperationContext context, IModule module, File sourceDir, boolean setOutputPath, SModel model, Project project) {
+    this(context, module, Sequence.<File>singleton(sourceDir), setOutputPath, model, project);
   }
 
-  public JavaCompiler(IOperationContext context, IModule module, Iterable<File> sourceDirs, boolean setOutputPath) {
-    this(context, module, sourceDirs, setOutputPath, null);
+  public JavaCompiler(IOperationContext context, IModule module, Iterable<File> sourceDirs, boolean setOutputPath, Project project) {
+    this(context, module, sourceDirs, setOutputPath, null, project);
   }
 
-  public JavaCompiler(IOperationContext context, IModule module, Iterable<File> sourceDirs, boolean setOutputPath, SModel model) {
+  public JavaCompiler(IOperationContext context, IModule module, Iterable<File> sourceDirs, boolean setOutputPath, SModel model, Project project) {
     myContext = context;
     myModule = module;
     mySourceDirs = ListSequence.fromListWithValues(new ArrayList<File>(), sourceDirs);
     myBaseModelToAddSource = model;
     mySetOutputPath = setOutputPath;
+    myProject = project;
   }
 
   private File getGeneralSourceDirectory() {
@@ -326,9 +328,10 @@ public class JavaCompiler {
     if (!(fqNames.isEmpty()) && myContext != null) {
       int option = JOptionPane.showConfirmDialog(null, "Some imports in source code were not resolved.\nDo you want to specify classpaths for unresolved imports?");
       if (option == JOptionPane.YES_OPTION) {
-        UIComponents.MyDialog dialog = UIComponents.createClasspathsDialog(myContext, mySourceDirs, new Vector<String>(fqNames));
-        dialog.setVisible(true);
-        List<IClassPathItem> list = dialog.getChosenClassPaths();
+        ClassPathDialog dialog = new ClassPathDialog(myProject, mySourceDirs, ListSequence.fromListWithValues(new ArrayList<String>(), fqNames));
+        dialog.show();
+
+        List<IClassPathItem> list = dialog.getChoosenClassPath();
         if (!(list.isEmpty())) {
           for (IClassPathItem classpath : list) {
             myClassPathItem.add(classpath);
