@@ -12,6 +12,9 @@
       <sourceFolder url="file://$MODULE_DIR$/../../plugins/vcs/common/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../plugins/vcs/common/source" isTestSource="false" />
     </content>
+    <content url="file://$MODULE_DIR$/../../plugins/vcs/core">
+      <sourceFolder url="file://$MODULE_DIR$/../../plugins/vcs/core/source_gen" isTestSource="false" />
+    </content>
     <orderEntry type="jdk" jdkName="IDEA IC" jdkType="IDEA JDK" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="mps-core" />
