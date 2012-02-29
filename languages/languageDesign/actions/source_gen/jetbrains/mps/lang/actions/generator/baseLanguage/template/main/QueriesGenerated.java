@@ -264,6 +264,14 @@ public class QueriesGenerated {
     return concept;
   }
 
+  public static Object referenceMacro_GetReferent_8563583177260684024(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+    SNode outputConcept = SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.lang.actions.structure.ConceptPart"), "concept", false);
+    if (outputConcept == null) {
+      _context.showWarningMessage(SNodeOperations.getParent(_context.getNode()), "output concept is not specified");
+    }
+    return outputConcept;
+  }
+
   public static Object referenceMacro_GetReferent_1220274221901(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "wrappedConcept", false);
   }
