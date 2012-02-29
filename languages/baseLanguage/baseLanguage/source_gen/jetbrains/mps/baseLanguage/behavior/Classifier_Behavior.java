@@ -25,7 +25,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.internal.collections.runtime.ISelector;
-import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import jetbrains.mps.internal.collections.runtime.Sequence;
@@ -131,9 +130,12 @@ public class Classifier_Behavior {
   public static List<SNode> virtual_getMembers_2201875424515824604(SNode thisNode, final SNode kind) {
     // returns all accessible classifier members in classifier 
 
+    if (!(SConceptOperations.isSubConceptOf(kind, "jetbrains.mps.baseLanguage.structure.ClassifierMember"))) {
+      // todo: ? 
+      return new ArrayList<SNode>();
+    }
     if (!(SConceptPropertyOperations.getBoolean(SNodeOperations.castConcept(kind, "jetbrains.mps.baseLanguage.structure.ClassifierMember"), "inheritableMember"))) {
-      List<SNode> result = new ArrayList<SNode>();
-      ListSequence.fromList(result).addSequence(ListSequence.fromList(IMemberContainer_Behavior.call_getMembers_1213877531970(thisNode)).where(new IWhereFilter<SNode>() {
+      return ListSequence.fromListWithValues(new ArrayList<SNode>(), ListSequence.fromList(IMemberContainer_Behavior.call_getMembers_1213877531970(thisNode)).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
           return SNodeOperations.isInstanceOf(it, NameUtil.nodeFQName(kind));
         }
@@ -142,7 +144,6 @@ public class Classifier_Behavior {
           return SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.ClassifierMember");
         }
       }));
-      return result;
     }
 
     // standard java logic: 
@@ -162,29 +163,7 @@ public class Classifier_Behavior {
       }));
     }
 
-    // 2) overriding based on "signature" concept  
-    if (SConceptOperations.isSubConceptOf(kind, "jetbrains.mps.baseLanguage.structure.VariableDeclaration")) {
-      return Classifier_Behavior.call_overrideMembersBySigature_2201875424516179874(thisNode, kind, pretenders, new _FunctionTypes._return_P1_E0<String, SNode>() {
-        public String invoke(SNode member) {
-          return SPropertyOperations.getString(SNodeOperations.cast(member, "jetbrains.mps.baseLanguage.structure.VariableDeclaration"), "name");
-        }
-      });
-    }
-
-    if (SConceptOperations.isSubConceptOf(kind, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration")) {
-      return Classifier_Behavior.call_overrideMembersBySigature_2201875424516179874(thisNode, kind, pretenders, new _FunctionTypes._return_P1_E0<String, SNode>() {
-        public String invoke(SNode member) {
-          // todo: ? 
-          SNode method = SNodeOperations.cast(member, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration");
-          return SPropertyOperations.getString(method, "name") + "(" + BaseMethodDeclaration_Behavior.call_getErasureSignature_2830572026628006618(method) + ")";
-        }
-      });
-    }
-
-    return null;
-  }
-
-  public static List<SNode> call_overrideMembersBySigature_2201875424516179874(SNode thisNode, final SNode kind, List<SNode> membersToOverride, final _FunctionTypes._return_P1_E0<? extends Object, ? super SNode> signatureTranform) {
+    // 2) overriding based on "signature" 
     Set<Object> signatures = SetSequence.fromSet(new HashSet());
     List<SNode> result = new ArrayList<SNode>();
 
@@ -201,14 +180,14 @@ public class Classifier_Behavior {
     ListSequence.fromList(result).addSequence(Sequence.fromIterable(members));
     SetSequence.fromSet(signatures).addSequence(Sequence.fromIterable(members).select(new ISelector<SNode, Object>() {
       public Object select(SNode it) {
-        return signatureTranform.invoke(it);
+        return ClassifierMember_Behavior.call_getSignatureForOverriding_274804607996650333(it);
       }
     }));
 
     Map<Object, Integer> signatureToMembersCount = MapSequence.fromMap(new HashMap<Object, Integer>());
-    for (Object signature : ListSequence.fromList(membersToOverride).select(new ISelector<SNode, Object>() {
+    for (Object signature : ListSequence.fromList(pretenders).select(new ISelector<SNode, Object>() {
       public Object select(SNode it) {
-        return signatureTranform.invoke(it);
+        return ClassifierMember_Behavior.call_getSignatureForOverriding_274804607996650333(it);
       }
     })) {
       MapSequence.fromMap(signatureToMembersCount).put(signature, (MapSequence.fromMap(signatureToMembersCount).containsKey(signature) ?
@@ -217,8 +196,8 @@ public class Classifier_Behavior {
       ));
     }
 
-    for (SNode node : membersToOverride) {
-      Object signature = signatureTranform.invoke(node);
+    for (SNode node : pretenders) {
+      Object signature = ClassifierMember_Behavior.call_getSignatureForOverriding_274804607996650333(node);
       if ((int) MapSequence.fromMap(signatureToMembersCount).get(signature) == 1 && !(SetSequence.fromSet(signatures).contains(signature))) {
         ListSequence.fromList(result).addElement(node);
       }
@@ -358,7 +337,7 @@ public class Classifier_Behavior {
   }
 
   public static SNode call_getWithResolvedTypevars_3305065273710852527(SNode thisNode, SNode t, SNode ancestor, SNode method, SNode baseMethod) {
-    SNode coercedType = TypeChecker.getInstance().getRuntimeSupport().coerce_(Classifier_Behavior.call_getThisType_3305065273710880775(thisNode), new Classifier_Behavior.Pattern_qw8l7c_a1a0a0a52(ancestor), true);
+    SNode coercedType = TypeChecker.getInstance().getRuntimeSupport().coerce_(Classifier_Behavior.call_getThisType_3305065273710880775(thisNode), new Classifier_Behavior.Pattern_qw8l7c_a1a0a0a42(ancestor), true);
     if (SNodeOperations.isInstanceOf(t, "jetbrains.mps.baseLanguage.structure.TypeVariableReference")) {
       return Classifier_Behavior.call_getResolvedVar_3305065273710881245(thisNode, SNodeOperations.cast(t, "jetbrains.mps.baseLanguage.structure.TypeVariableReference"), ancestor, coercedType, method, baseMethod);
     } else {
@@ -583,26 +562,26 @@ public class Classifier_Behavior {
     );
   }
 
-  public static class Pattern_qw8l7c_a1a0a0a52 extends GeneratedMatchingPattern implements IMatchingPattern {
+  public static class Pattern_qw8l7c_a1a0a0a42 extends GeneratedMatchingPattern implements IMatchingPattern {
     /*package*/ List<SNode> patternVar_l;
     /*package*/ SNode patternVar_foo;
-    /*package*/ Object AntiquotationField_qw8l7c_a0a0a0a0a42;
+    /*package*/ Object AntiquotationField_qw8l7c_a0a0a0a0a32;
 
-    public Pattern_qw8l7c_a1a0a0a52(Object parameter_qw8l7c_a0a0a0a0a42) {
-      this.AntiquotationField_qw8l7c_a0a0a0a0a42 = parameter_qw8l7c_a0a0a0a0a42;
+    public Pattern_qw8l7c_a1a0a0a42(Object parameter_qw8l7c_a0a0a0a0a32) {
+      this.AntiquotationField_qw8l7c_a0a0a0a0a32 = parameter_qw8l7c_a0a0a0a0a32;
     }
 
     public boolean match(SNode nodeToMatch) {
       {
-        SNode nodeToMatch_Classifier_Behavior_qw8l7c_a0a0a0a42;
-        nodeToMatch_Classifier_Behavior_qw8l7c_a0a0a0a42 = nodeToMatch;
-        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_Classifier_Behavior_qw8l7c_a0a0a0a42.getConceptFqName()))) {
+        SNode nodeToMatch_Classifier_Behavior_qw8l7c_a0a0a0a32;
+        nodeToMatch_Classifier_Behavior_qw8l7c_a0a0a0a32 = nodeToMatch;
+        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_Classifier_Behavior_qw8l7c_a0a0a0a32.getConceptFqName()))) {
           return false;
         }
         {
           SNode referent;
-          referent = (SNode) this.AntiquotationField_qw8l7c_a0a0a0a0a42;
-          if (nodeToMatch_Classifier_Behavior_qw8l7c_a0a0a0a42.getReferent("classifier") != referent) {
+          referent = (SNode) this.AntiquotationField_qw8l7c_a0a0a0a0a32;
+          if (nodeToMatch_Classifier_Behavior_qw8l7c_a0a0a0a32.getReferent("classifier") != referent) {
             return false;
           }
         }
@@ -610,7 +589,7 @@ public class Classifier_Behavior {
           String childRole_Classifier_Behavior_qw8l7c_ = "parameter";
           this.patternVar_l = ListSequence.fromList(new ArrayList<SNode>());
           patternVar_foo = null;
-          for (SNode childVar : nodeToMatch_Classifier_Behavior_qw8l7c_a0a0a0a42.getChildren(childRole_Classifier_Behavior_qw8l7c_)) {
+          for (SNode childVar : nodeToMatch_Classifier_Behavior_qw8l7c_a0a0a0a32.getChildren(childRole_Classifier_Behavior_qw8l7c_)) {
             patternVar_foo = childVar;
             ListSequence.fromList(this.patternVar_l).addElement(childVar);
           }

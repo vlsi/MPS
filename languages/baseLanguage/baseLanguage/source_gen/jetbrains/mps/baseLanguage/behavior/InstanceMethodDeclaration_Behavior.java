@@ -68,6 +68,12 @@ public class InstanceMethodDeclaration_Behavior {
     return null;
   }
 
+  public static Object virtual_getSignatureForOverriding_274804607996650333(SNode thisNode) {
+    // todo: 1) maybe in baseMethodDeclaration? 
+    // todo: 2) why string? maybe tuple? 
+    return SPropertyOperations.getString(thisNode, "name") + "(" + BaseMethodDeclaration_Behavior.call_getErasureSignature_2830572026628006618(thisNode) + ")";
+  }
+
   public static Icon call_getAdditionalIcon_8884554759541381512(SNode thisNode) {
     BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
     return (Icon) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"), "virtual_getAdditionalIcon_5017341185733863694", PARAMETERS_8884554759541381512);

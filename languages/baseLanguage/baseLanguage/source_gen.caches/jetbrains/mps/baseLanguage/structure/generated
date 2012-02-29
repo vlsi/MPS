@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-1tijlelfk0q0r2b8gks154aj2ysmg4m">
+<dependencies version="2" modelHash="-720soz9uifjler2677gm1e46j022icx">
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
@@ -225,8 +225,6 @@
     <dep root="1830039279190439966" />
     <dep root="2406048883599609633" />
     <dep root="2406048883599831972" />
-    <dep root="2406048883600014110" />
-    <dep root="2406048883600049315" />
     <dep root="2580416627845338977" />
     <dep root="2948164764175055168" />
     <dep root="3066917033203108594" />
@@ -375,7 +373,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="Expression.java" />
   </source>
-  <source id="1068390468200" name="FieldDeclaration" hash="c3708uijyt5s3baulzy9w3c1bmmv38u">
+  <source id="1068390468200" name="FieldDeclaration" hash="160oks0s7saehe2047dn6iv4qep8pp6">
     <dep root="1068431790189" />
     <dep root="1068431790191" />
     <dep root="1068498886292" />
@@ -908,7 +906,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="IfStatement.java" />
   </source>
-  <source id="1068580123165" name="InstanceMethodDeclaration" hash="de6nc46r4xgor9o2dpqixq45jla1ojv">
+  <source id="1068580123165" name="InstanceMethodDeclaration" hash="9evxfqeef3z6ybytjdn3p3sixz9qbbg">
     <dep root="1068390468200" />
     <dep root="1068431790189" />
     <dep root="1068431790191" />
@@ -1216,7 +1214,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="VoidType.java" />
   </source>
-  <source id="1070462154015" name="StaticFieldDeclaration" hash="-ylkyet4i04culy42oa4xc8mdoxld60">
+  <source id="1070462154015" name="StaticFieldDeclaration" hash="2srkyeq3nff9okiiknijliow17r2wqa">
     <dep root="1068390468200" />
     <dep root="1068431790189" />
     <dep root="1068431790191" />
@@ -1684,7 +1682,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="StaticMethodCall.java" />
   </source>
-  <source id="1081236700938" name="StaticMethodDeclaration" hash="-efdxbmjffo6x0mebb5occtyxis71sx6">
+  <source id="1081236700938" name="StaticMethodDeclaration" hash="-dnbdecd1nmnp1nfwc7n6obhkip14u4e">
     <dep root="1068390468200" />
     <dep root="1068431790189" />
     <dep root="1068431790191" />
@@ -3750,7 +3748,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="VarType.java" />
   </source>
-  <source id="1178285077437" name="ClassifierMember" hash="5rhph27dmhbdbluwbmuvqxwgdmwtk5v">
+  <source id="1178285077437" name="ClassifierMember" hash="-6kd4fk11dyjxmi5ld4re3m8aep596cq">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" />
     <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
@@ -5300,6 +5298,7 @@
     <dep root="1068498886292" />
     <dep root="1068580123132" />
     <dep root="1068580123136" />
+    <dep root="1070534644030" />
     <dep root="1146644584814" />
     <dep root="1178549954367" />
     <dep root="4972933694980447171" />
@@ -5460,6 +5459,7 @@
     <dep root="1068431790191" />
     <dep root="1068581242863" />
     <dep root="1070475926800" />
+    <dep root="1081236700937" />
     <dep root="1083260308424" />
     <dep root="1107535904670" />
     <dep root="1145552809883" />
@@ -6738,29 +6738,17 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="LocalPropertyReference.java" />
   </source>
-  <source id="2406048883599609633" name="SuperConstructorKind" hash="-2v4hnji0jsxvnnkoy9rjn6lbbghvlkl">
+  <source id="2406048883599609633" name="SuperConstructorKind" hash="awcp6kmhn68z7kir8roarm79dz0a2g">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" />
     <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
     <file name="SuperConstructorKind.java" />
   </source>
-  <source id="2406048883599831972" name="ThisConstructorKind" hash="1or5qja6qgvsxzfx9q79wdzlfmw3eic">
+  <source id="2406048883599831972" name="ThisConstructorKind" hash="b1xvul037krm4wld5f85208741p5vjj">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" />
     <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
     <file name="ThisConstructorKind.java" />
-  </source>
-  <source id="2406048883600014110" name="ClassifierMemberKind" hash="-32tr9k82fkwoov6mzfrchqqrz19f5mc">
-    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
-    <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" />
-    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
-    <file name="ClassifierMemberKind.java" />
-  </source>
-  <source id="2406048883600049315" name="InheritableClassifierMemberKind" hash="-7m9jibehhnvzyuzdayn6yb3qpbakd80">
-    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
-    <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" />
-    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
-    <file name="InheritableClassifierMemberKind.java" />
   </source>
 </dependencies>
 

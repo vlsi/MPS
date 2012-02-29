@@ -1136,14 +1136,6 @@
       <property name="virtualPackage" nameId="tpck.1193676396447" value="scopes" />
       <property name="name" nameId="tpck.1169194664001" value="ThisConstructorKind" />
     </node>
-    <node type="tpce.InterfaceConceptDeclaration" typeId="tpce.1169125989551" id="2406048883600014110">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="scopes" />
-      <property name="name" nameId="tpck.1169194664001" value="ClassifierMemberKind" />
-    </node>
-    <node type="tpce.InterfaceConceptDeclaration" typeId="tpce.1169125989551" id="2406048883600049315">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="scopes" />
-      <property name="name" nameId="tpck.1169194664001" value="InheritableClassifierMemberKind" />
-    </node>
   </roots>
   <root id="1068498886294">
     <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="1107215415034">
@@ -1197,8 +1189,8 @@
     <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="2496361171403550860">
       <link role="intfc" roleId="tpce.1169127628841" targetNodeId="356a.5067982036267369891" resolveInfo="TraceableConcept" />
     </node>
-    <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.BooleanConceptProperty" typeId="tpce.1105725574259" id="7518909260608358340">
-      <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="7518909260608358339" resolveInfo="inheritableMember" />
+    <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.BooleanConceptProperty" typeId="tpce.1105725574259" id="274804607996650331">
+      <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="274804607996650332" resolveInfo="inheritableMember" />
     </node>
   </root>
   <root id="1068390468198">
@@ -1569,8 +1561,8 @@
     <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="1210720584589">
       <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tpck.1196978630214" resolveInfo="IResolveInfo" />
     </node>
-    <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.BooleanConceptProperty" typeId="tpce.1105725574259" id="7518909260608358341">
-      <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="7518909260608358339" resolveInfo="inheritableMember" />
+    <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.BooleanConceptProperty" typeId="tpce.1105725574259" id="274804607996650413">
+      <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="274804607996650332" resolveInfo="inheritableMember" />
     </node>
   </root>
   <root id="1068580320020">
@@ -1722,7 +1714,7 @@
   </root>
   <root id="1070462154015">
     <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.BooleanConceptProperty" typeId="tpce.1105725574259" id="7518909260608358343">
-      <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="7518909260608358339" resolveInfo="inheritableMember" />
+      <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="274804607996650332" resolveInfo="inheritableMember" />
     </node>
     <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="1178291753349">
       <link role="intfc" roleId="tpce.1169127628841" targetNodeId="1178285077437" resolveInfo="ClassifierMember" />
@@ -2002,7 +1994,7 @@
       <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tpck.1196978630214" resolveInfo="IResolveInfo" />
     </node>
     <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.BooleanConceptProperty" typeId="tpce.1105725574259" id="7518909260608358344">
-      <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="7518909260608358339" resolveInfo="inheritableMember" />
+      <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="274804607996650332" resolveInfo="inheritableMember" />
     </node>
   </root>
   <root id="1081256982272">
@@ -3143,9 +3135,8 @@
     <node role="extends" roleId="tpce.1169127546356" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="1178549989306">
       <link role="intfc" roleId="tpce.1169127628841" targetNodeId="1178549954367" resolveInfo="IVisible" />
     </node>
-    <node role="conceptPropertyDeclaration" roleId="tpce.1137467167200" type="tpce.BooleanConceptPropertyDeclaration" typeId="tpce.1105725240314" id="7518909260608358339">
+    <node role="conceptPropertyDeclaration" roleId="tpce.1137467167200" type="tpce.BooleanConceptPropertyDeclaration" typeId="tpce.1105725240314" id="274804607996650332">
       <property name="name" nameId="tpck.1169194664001" value="inheritableMember" />
-      <property name="inheritable" nameId="tpce.1218571350029" value="true" />
     </node>
   </root>
   <root id="1178549954367">
@@ -4355,21 +4346,7 @@
       <link role="target" roleId="tpce.1071599976176" targetNodeId="1201370618622" resolveInfo="Property" />
     </node>
   </root>
-  <root id="2406048883599609633">
-    <node role="extends" roleId="tpce.1169127546356" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="2406048883600049317">
-      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="2406048883600014110" resolveInfo="ClassifierMemberKind" />
-    </node>
-  </root>
-  <root id="2406048883599831972">
-    <node role="extends" roleId="tpce.1169127546356" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="2406048883600049319">
-      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="2406048883600014110" resolveInfo="ClassifierMemberKind" />
-    </node>
-  </root>
-  <root id="2406048883600014110" />
-  <root id="2406048883600049315">
-    <node role="extends" roleId="tpce.1169127546356" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="2406048883600049334">
-      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="2406048883600014110" resolveInfo="ClassifierMemberKind" />
-    </node>
-  </root>
+  <root id="2406048883599609633" />
+  <root id="2406048883599831972" />
 </model>
 
