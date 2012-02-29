@@ -92,7 +92,7 @@ public class MainMakeTests extends AbstractMakeTest {
     assertTrue(files.size() > 4);
   }
 
-  public void testMainModel() {
+  public void testMainModel() throws Exception {
     CompilerManagerImpl.testSetup();
 
     ModuleRootManager mrm = ModuleRootManager.getInstance(myFacet.getModule());

@@ -37,6 +37,11 @@ import jetbrains.mps.idea.core.make.MPSCompilerComponent;
 import jetbrains.mps.vfs.IFile;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.concurrent.BrokenBarrierException;
+import java.util.concurrent.CyclicBarrier;
+import java.util.concurrent.Semaphore;
 
 /**
  * Created by IntelliJ IDEA.
@@ -47,6 +52,8 @@ import java.io.IOException;
  */
 public abstract class AbstractMakeTest extends DataMPSFixtureTestCase {
 
+  private List<Asserter> asserters = new ArrayList<Asserter>();
+  
   protected void prepareTestData(MPSFacetConfiguration configuration, final IFile source) throws Exception {
     final ModuleRootManager mrm = ModuleRootManager.getInstance(configuration.getFacet().getModule());
     ApplicationManager.getApplication().runWriteAction(new Runnable() {
@@ -105,16 +112,27 @@ public abstract class AbstractMakeTest extends DataMPSFixtureTestCase {
     if (prj instanceof ComponentManagerImpl) {
       ((ComponentManagerImpl) prj).setTemporarilyDisposed(true);
     }
+    assertAsserters();
   }
 
+  private void assertAsserters () throws Exception {
+    for (Asserter ass: asserters) {
+      ass.doAssert();
+    }
+    asserters.clear();
+  }
+  
+  protected void assertOnTeardown (Asserter ass) {
+    asserters.add(ass);
+  }
 
   protected void assertExists(VirtualFile dir, String relPath) {
-    assertNotNull("Not found: " + dir, dir);
+    assertNotNull("Directory is null", dir);
     assertNotNull("Not found: " + dir.getPath() + "/" + relPath, dir.findFileByRelativePath(relPath));
   }
 
   protected void assertNotExists(VirtualFile dir, String relPath) {
-    assertNotNull("Not found: " + dir, dir);
+    assertNotNull("Directory is null", dir);
     assertNull("Shouldn't be here: " + dir.getPath() + "/" + relPath, dir.findFileByRelativePath(relPath));
   }
 
@@ -122,11 +140,15 @@ public abstract class AbstractMakeTest extends DataMPSFixtureTestCase {
     assertTrue(dir.findFileByRelativePath(relPath).getChildren().length == count);
   }
 
-  protected void assertCompiles(CompilerManager cm) {
+  protected void assertCompiles(CompilerManager cm) throws Exception {
+    assertCompiles(cm, 0, 0);
+  }
+
+  protected void assertCompiles(CompilerManager cm, final int errors, final int warns) {
     class Result {
-      boolean aborted;
-      int errors;
-      int warnings;
+      boolean aborted = true;
+      int errors = -1;
+      int warnings = -1;
     }
     final Result res = new Result();
     cm.compile(myFacet.getModule(), new CompileStatusNotification() {
@@ -137,13 +159,24 @@ public abstract class AbstractMakeTest extends DataMPSFixtureTestCase {
         res.warnings = warnings;
       }
     });
-
-    assertFalse(res.aborted);
-    assertSame(0, res.errors);
-    assertSame(0, res.warnings);
+    assertOnTeardown(new Asserter() {
+      @Override
+      public void doAssert() throws Exception {
+        assertFalse(res.aborted);
+        assertSame(errors, res.errors);
+        assertSame(warns, res.warnings);
+      }
+    });
   }
 
   protected VirtualFileSystem getVFS() {
     return VirtualFileManager.getInstance().getFileSystem("file");
   }
+
+  private interface Asserter {
+    void doAssert () throws Exception;
+  }
+  
+
+
 }

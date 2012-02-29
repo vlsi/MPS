@@ -62,7 +62,7 @@ public class ComplicatedMakeTests extends AbstractMakeTest {
     secondPass=true;
   }
 
-  public void testGeneratingMultiModels() {
+  public void testGeneratingMultiModels() throws Exception {
     CompilerManagerImpl.testSetup();
 
     ModuleRootManager mrm = ModuleRootManager.getInstance(myFacet.getModule());
@@ -78,7 +78,7 @@ public class ComplicatedMakeTests extends AbstractMakeTest {
     assertTrue(moduleDir.findChild("src") == null);
 
     CompilerManager cm = CompilerManager.getInstance(myFacet.getModule().getProject());
-    assertCompiles(cm);
+    assertCompiles(cm, 1, 0);
 
     MPSCompiler2[] mpscs = cm.getCompilers(MPSCompiler2.class);
     assertSame(1, mpscs.length);
@@ -106,7 +106,7 @@ public class ComplicatedMakeTests extends AbstractMakeTest {
 
   }
 
-  public void testGeneratingMultiModels2nd() {
+  public void testGeneratingMultiModels2nd() throws Exception {
     CompilerManagerImpl.testSetup();
 
     ModuleRootManager mrm = ModuleRootManager.getInstance(myFacet.getModule());

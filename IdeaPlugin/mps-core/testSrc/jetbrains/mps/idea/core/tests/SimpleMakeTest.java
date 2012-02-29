@@ -49,7 +49,7 @@ public class SimpleMakeTest extends AbstractMakeTest {
   }
 
 
-  public void testGeneratingIntoHiddenDir() {
+  public void testGeneratingIntoHiddenDir() throws Exception {
     CompilerManagerImpl.testSetup();
 
     ModuleRootManager mrm = ModuleRootManager.getInstance(myFacet.getModule());
@@ -65,7 +65,7 @@ public class SimpleMakeTest extends AbstractMakeTest {
     assertTrue(moduleDir.findChild("source_gen") == null);
 
     CompilerManager cm = CompilerManager.getInstance(myFacet.getModule().getProject());
-    assertCompiles(cm);
+    assertCompiles(cm, 1, 0);
 
     MPSCompiler2[] mpscs = cm.getCompilers(MPSCompiler2.class);
     assertSame(1, mpscs.length);
