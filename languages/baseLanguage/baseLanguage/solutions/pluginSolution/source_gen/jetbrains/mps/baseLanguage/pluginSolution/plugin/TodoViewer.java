@@ -26,7 +26,7 @@ import jetbrains.mps.ide.findusages.view.treeholder.treeview.INodeRepresentator;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.ide.findusages.view.treeholder.tree.TextOptions;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.ide.projectPane.Icons;
+import jetbrains.mps.ide.icons.IdeIcons;
 import java.util.List;
 import jetbrains.mps.ide.findusages.model.CategoryKind;
 import java.util.Arrays;
@@ -119,7 +119,7 @@ public class TodoViewer extends JPanel {
     }
 
     public Icon getCategoryIcon(String category) {
-      return Icons.CLOSED_FOLDER;
+      return IdeIcons.CLOSED_FOLDER;
     }
 
     public List<CategoryKind> getCategoryKinds() {

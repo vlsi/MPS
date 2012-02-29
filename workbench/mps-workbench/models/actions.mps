@@ -15556,8 +15556,8 @@
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="3858094006307874176">
               <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="1qcs.~Presentation%dsetIcon(javax%dswing%dIcon)%cvoid" resolveInfo="setIcon" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="3858094006307874178">
-                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="gcfa.~Icons%dOPENED_FOLDER" resolveInfo="OPENED_FOLDER" />
-                <link role="classifier" roleId="tpee.1144433057691" targetNodeId="gcfa.~Icons" resolveInfo="Icons" />
+                <link role="classifier" roleId="tpee.1144433057691" targetNodeId="amqn.~IdeIcons" resolveInfo="IdeIcons" />
+                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="amqn.~IdeIcons%dOPENED_FOLDER" resolveInfo="OPENED_FOLDER" />
               </node>
             </node>
           </node>

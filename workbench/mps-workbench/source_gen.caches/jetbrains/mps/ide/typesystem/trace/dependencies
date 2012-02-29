@@ -118,6 +118,7 @@
     <classNode dependClassName="javax.swing.JComponent" />
     <classNode dependClassName="javax.swing.JSplitPane" />
     <classNode dependClassName="javax.swing.SwingUtilities" />
+    <classNode dependClassName="jetbrains.mps.ide.icons.IdeIcons" />
     <classNode dependClassName="jetbrains.mps.ide.tools.BaseTool" />
     <classNode dependClassName="jetbrains.mps.ide.typesystem.trace.TraceSettings" />
     <classNode dependClassName="jetbrains.mps.ide.typesystem.trace.TypeSystemStateTree" />

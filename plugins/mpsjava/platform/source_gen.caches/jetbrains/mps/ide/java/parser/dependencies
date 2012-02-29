@@ -19,9 +19,9 @@
     <classNode dependClassName="javax.swing.tree.DefaultTreeModel" />
     <classNode dependClassName="javax.swing.tree.ExpandVetoException" />
     <classNode dependClassName="javax.swing.tree.TreePath" />
+    <classNode dependClassName="jetbrains.mps.ide.icons.IdeIcons" />
     <classNode dependClassName="jetbrains.mps.ide.java.parser.ClasspathObserver" />
     <classNode dependClassName="jetbrains.mps.ide.platform.ui.CheckBoxNodeRenderer" />
-    <classNode dependClassName="jetbrains.mps.ide.projectPane.Icons" />
     <classNode dependClassName="jetbrains.mps.logging.Logger" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.MPSColors" />
     <classNode dependClassName="jetbrains.mps.reloading.ClassPathFactory" />

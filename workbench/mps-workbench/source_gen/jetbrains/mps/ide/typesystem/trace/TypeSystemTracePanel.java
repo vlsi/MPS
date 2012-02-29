@@ -22,6 +22,7 @@ import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import com.intellij.openapi.actionSystem.ToggleAction;
 import jetbrains.mps.ide.typesystem.trace.icons.Icons;
 import com.intellij.openapi.actionSystem.AnActionEvent;
+import jetbrains.mps.ide.icons.IdeIcons;
 import jetbrains.mps.workbench.action.BaseAction;
 import java.util.Map;
 import jetbrains.mps.workbench.action.ActionUtils;
@@ -106,7 +107,7 @@ public class TypeSystemTracePanel extends JPanel {
         myTraceTree.expandAll();
       }
     };
-    ToggleAction showTypesExpansion = new ToggleAction("Show types expansion", "Show types expansion", jetbrains.mps.ide.projectPane.Icons.OPENED_FOLDER) {
+    ToggleAction showTypesExpansion = new ToggleAction("Show types expansion", "Show types expansion", IdeIcons.OPENED_FOLDER) {
       private boolean mySelected = TraceSettings.isShowTypesExpansion();
 
       public boolean isSelected(AnActionEvent e) {

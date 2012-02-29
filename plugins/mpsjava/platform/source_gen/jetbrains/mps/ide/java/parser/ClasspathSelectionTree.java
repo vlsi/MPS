@@ -19,7 +19,7 @@ import javax.swing.tree.DefaultTreeModel;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.reloading.ClassPathFactory;
 import javax.swing.Icon;
-import jetbrains.mps.ide.projectPane.Icons;
+import jetbrains.mps.ide.icons.IdeIcons;
 import java.awt.Color;
 import jetbrains.mps.nodeEditor.MPSColors;
 import javax.swing.tree.DefaultMutableTreeNode;
@@ -122,9 +122,9 @@ public class ClasspathSelectionTree extends Tree {
     public Icon getIcon(boolean expanded) {
       if (myFile.isDirectory()) {
         if (expanded) {
-          return Icons.OPENED_FOLDER;
+          return IdeIcons.OPENED_FOLDER;
         } else {
-          return Icons.CLOSED_FOLDER;
+          return IdeIcons.CLOSED_FOLDER;
         }
       }
       return null;

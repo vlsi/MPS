@@ -9,7 +9,7 @@ import org.apache.commons.logging.LogFactory;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
-import jetbrains.mps.ide.projectPane.Icons;
+import jetbrains.mps.ide.icons.IdeIcons;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import com.intellij.openapi.vfs.VirtualFile;
@@ -35,7 +35,7 @@ public class NewDirectory_Action extends BaseAction {
 
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
-      event.getPresentation().setIcon(Icons.OPENED_FOLDER);
+      event.getPresentation().setIcon(IdeIcons.OPENED_FOLDER);
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action doUpdate method failed. Action:" + "NewDirectory", t);

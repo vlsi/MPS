@@ -1893,7 +1893,9 @@
     <scopeInfo nodeId="6573807532044001589" fileName="CommentStatements_Action.java" startLine="59" startPosition="57" endLine="63" endPosition="11" />
     <scopeInfo nodeId="6573807532044001589" fileName="CommentStatements_Action.java" startLine="74" startPosition="5" endLine="78" endPosition="5" />
     <scopeInfo nodeId="6573807532044001589" fileName="CommentStatements_Action.java" startLine="26" startPosition="0" endLine="31" endPosition="3" />
-    <scopeInfo nodeId="6573807532044001589" fileName="CommentStatements_Action.java" startLine="58" startPosition="26" endLine="64" endPosition="9" />
+    <scopeInfo nodeId="6573807532044001589" fileName="CommentStatements_Action.java" startLine="58" startPosition="26" endLine="64" endPosition="9">
+      <varInfo nodeId="6573807532044001589" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="6573807532044001589" fileName="CommentStatements_Action.java" startLine="82" startPosition="96" endLine="90" endPosition="5" />
     <scopeInfo nodeId="6573807532044001589" fileName="CommentStatements_Action.java" startLine="37" startPosition="89" endLine="48" endPosition="5" />
     <scopeInfo nodeId="6573807532044001589" fileName="CommentStatements_Action.java" startLine="81" startPosition="0" endLine="92" endPosition="0">
@@ -4949,7 +4951,7 @@
     <nodeInfo nodeId="6573807532044005695" fileName="TodoViewer.java" startLine="114" startPosition="51" endLine="115" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6573807532044005701" fileName="TodoViewer.java" startLine="115" startPosition="45" endLine="116" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6573807532044005709" fileName="TodoViewer.java" startLine="117" startPosition="7" endLine="118" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6573807532044005721" fileName="TodoViewer.java" startLine="121" startPosition="50" endLine="122" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6573807532044005721" fileName="TodoViewer.java" startLine="121" startPosition="50" endLine="122" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6573807532044005728" fileName="TodoViewer.java" startLine="125" startPosition="50" endLine="126" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6573807532044005632" fileName="TodoViewer.java" startLine="95" startPosition="80" endLine="97" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MyNodeRepresentator#()V" />
     <nodeInfo nodeId="6573807532044005823" fileName="TodoViewer.java" startLine="59" startPosition="25" endLine="62" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -4983,7 +4985,7 @@
     <scopeInfo nodeId="6573807532044005641" fileName="TodoViewer.java" startLine="100" startPosition="47" endLine="101" endPosition="72" />
     <scopeInfo nodeId="6573807532044005657" fileName="TodoViewer.java" startLine="104" startPosition="55" endLine="105" endPosition="117" />
     <scopeInfo nodeId="6573807532044005671" fileName="TodoViewer.java" startLine="108" startPosition="34" endLine="109" endPosition="34" />
-    <scopeInfo nodeId="6573807532044005720" fileName="TodoViewer.java" startLine="121" startPosition="50" endLine="122" endPosition="33" />
+    <scopeInfo nodeId="6573807532044005720" fileName="TodoViewer.java" startLine="121" startPosition="50" endLine="122" endPosition="36" />
     <scopeInfo nodeId="6573807532044005727" fileName="TodoViewer.java" startLine="125" startPosition="50" endLine="126" endPosition="63" />
     <scopeInfo nodeId="6573807532044005632" fileName="TodoViewer.java" startLine="95" startPosition="80" endLine="97" endPosition="5" />
     <scopeInfo nodeId="6573807532044005694" fileName="TodoViewer.java" startLine="114" startPosition="51" endLine="116" endPosition="36">

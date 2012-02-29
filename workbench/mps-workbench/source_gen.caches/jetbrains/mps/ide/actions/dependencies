@@ -1922,7 +1922,7 @@
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="javax.swing.Icon" />
     <classNode dependClassName="javax.swing.SwingUtilities" />
-    <classNode dependClassName="jetbrains.mps.ide.projectPane.Icons" />
+    <classNode dependClassName="jetbrains.mps.ide.icons.IdeIcons" />
     <classNode dependClassName="jetbrains.mps.ide.projectPane.fileSystem.FileViewProjectPane" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />

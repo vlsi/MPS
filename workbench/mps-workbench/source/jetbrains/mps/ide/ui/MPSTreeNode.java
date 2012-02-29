@@ -17,7 +17,7 @@ package jetbrains.mps.ide.ui;
 
 import com.intellij.openapi.actionSystem.ActionGroup;
 import jetbrains.mps.ide.ThreadUtils;
-import jetbrains.mps.ide.projectPane.Icons;
+import jetbrains.mps.ide.icons.IdeIcons;
 import jetbrains.mps.ide.ui.treeMessages.TreeMessage;
 import jetbrains.mps.ide.ui.treeMessages.TreeMessageOwner;
 import jetbrains.mps.logging.Logger;
@@ -48,8 +48,8 @@ public abstract class MPSTreeNode extends DefaultMutableTreeNode implements Iter
   private MPSTree myTree;
   private boolean myAdded;
 
-  private Icon myCollapsedIcon = Icons.CLOSED_FOLDER;
-  private Icon myExpandedIcon = Icons.OPENED_FOLDER;
+  private Icon myCollapsedIcon = IdeIcons.CLOSED_FOLDER;
+  private Icon myExpandedIcon = IdeIcons.OPENED_FOLDER;
   private String myNodeIdentifier;
   private String myText;
   private String myAdditionalText = null;

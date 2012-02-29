@@ -25,7 +25,6 @@
   <import index="eimf" modelUID="f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#com.intellij.ui.components(MPS.Workbench/com.intellij.ui.components@java_stub)" version="-1" />
   <import index="rjau" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.newTypesystem.operation.equation(MPS.Core/jetbrains.mps.newTypesystem.operation.equation@java_stub)" version="-1" />
   <import index="jhl3" modelUID="f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#jetbrains.mps.ide.typesystem.trace.icons(MPS.Workbench/jetbrains.mps.ide.typesystem.trace.icons@java_stub)" version="-1" />
-  <import index="gcfa" modelUID="f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#jetbrains.mps.ide.projectPane(MPS.Workbench/jetbrains.mps.ide.projectPane@java_stub)" version="-1" />
   <import index="7l43" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.newTypesystem.operation.block(MPS.Core/jetbrains.mps.newTypesystem.operation.block@java_stub)" version="-1" />
   <import index="jsgz" modelUID="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor.cells(MPS.Editor/jetbrains.mps.nodeEditor.cells@java_stub)" version="-1" />
   <import index="ua2a" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.typesystem.inference(MPS.Core/jetbrains.mps.typesystem.inference@java_stub)" version="-1" />
@@ -4121,8 +4120,8 @@
                     <property name="value" nameId="tpee.1070475926801" value="Show types expansion" />
                   </node>
                   <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="5373792471289412547">
-                    <link role="classifier" roleId="tpee.1144433057691" targetNodeId="gcfa.~Icons" resolveInfo="Icons" />
-                    <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="gcfa.~Icons%dOPENED_FOLDER" resolveInfo="OPENED_FOLDER" />
+                    <link role="classifier" roleId="tpee.1144433057691" targetNodeId="amqn.~IdeIcons" resolveInfo="IdeIcons" />
+                    <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="amqn.~IdeIcons%dOPENED_FOLDER" resolveInfo="OPENED_FOLDER" />
                   </node>
                 </node>
               </node>

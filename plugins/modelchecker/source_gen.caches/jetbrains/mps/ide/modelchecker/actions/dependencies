@@ -494,11 +494,12 @@
     <classNode dependClassName="jetbrains.mps.ide.findusages.view.UsagesView" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.view.treeholder.tree.TextOptions" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.view.treeholder.treeview.ViewOptions" />
+    <classNode dependClassName="jetbrains.mps.ide.icons.IdeIcons" />
+    <classNode dependClassName="jetbrains.mps.ide.messages.Icons" />
     <classNode dependClassName="jetbrains.mps.ide.modelchecker.actions.ModelChecker" />
     <classNode dependClassName="jetbrains.mps.ide.modelchecker.actions.ModelCheckerIssue" />
     <classNode dependClassName="jetbrains.mps.ide.modelchecker.actions.ModelCheckerIssueFinder" />
     <classNode dependClassName="jetbrains.mps.ide.project.ProjectHelper" />
-    <classNode dependClassName="jetbrains.mps.ide.projectPane.Icons" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />

@@ -64,4 +64,6 @@ public class IdeIcons {
   public static final Icon ROLLBACK = new ImageIcon(IdeIcons.class.getResource("vc/rollback.png"));
   public static final Icon APPLY = new ImageIcon(IdeIcons.class.getResource("vc/apply.png"));
   public static final Icon EXCLUDE = new ImageIcon(IdeIcons.class.getResource("vc/exclude.png"));
+  public static final Icon OPENED_FOLDER = new ImageIcon(IdeIcons.class.getResource("fileSystem/icons/TreeOpened.png"));
+  public static final Icon CLOSED_FOLDER = new ImageIcon(IdeIcons.class.getResource("fileSystem/icons/TreeClosed.png"));
 }

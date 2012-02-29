@@ -9419,8 +9419,8 @@
     <nodeInfo nodeId="3858094006307618582" fileName="NewDirectory_Action.java" startLine="30" startPosition="32" endLine="31" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="3858094006307618582" fileName="NewDirectory_Action.java" startLine="31" startPosition="33" endLine="32" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3858094006307618582" fileName="NewDirectory_Action.java" startLine="32" startPosition="35" endLine="33" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3858094006307618582" fileName="NewDirectory_Action.java" startLine="37" startPosition="9" endLine="38" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="3858094006307874171" fileName="NewDirectory_Action.java" startLine="37" startPosition="9" endLine="38" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3858094006307618582" fileName="NewDirectory_Action.java" startLine="37" startPosition="9" endLine="38" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="3858094006307874171" fileName="NewDirectory_Action.java" startLine="37" startPosition="9" endLine="38" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3858094006307618582" fileName="NewDirectory_Action.java" startLine="40" startPosition="33" endLine="41" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3858094006307618582" fileName="NewDirectory_Action.java" startLine="42" startPosition="7" endLine="43" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3858094006307618582" fileName="NewDirectory_Action.java" startLine="48" startPosition="53" endLine="49" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -9470,8 +9470,8 @@
       <varInfo nodeId="3858094006307874056" varName="e" />
     </scopeInfo>
     <scopeInfo nodeId="3858094006307874058" fileName="NewDirectory_Action.java" startLine="85" startPosition="39" endLine="85" endPosition="39" />
-    <scopeInfo nodeId="3858094006307618582" fileName="NewDirectory_Action.java" startLine="37" startPosition="9" endLine="38" endPosition="59" />
-    <scopeInfo nodeId="3858094006307874170" fileName="NewDirectory_Action.java" startLine="37" startPosition="9" endLine="38" endPosition="59" />
+    <scopeInfo nodeId="3858094006307618582" fileName="NewDirectory_Action.java" startLine="37" startPosition="9" endLine="38" endPosition="62" />
+    <scopeInfo nodeId="3858094006307874170" fileName="NewDirectory_Action.java" startLine="37" startPosition="9" endLine="38" endPosition="62" />
     <scopeInfo nodeId="3858094006307618582" fileName="NewDirectory_Action.java" startLine="40" startPosition="33" endLine="41" endPosition="87" />
     <scopeInfo nodeId="3858094006307618582" fileName="NewDirectory_Action.java" startLine="48" startPosition="53" endLine="49" endPosition="19" />
     <scopeInfo nodeId="3858094006307618582" fileName="NewDirectory_Action.java" startLine="52" startPosition="67" endLine="53" endPosition="19" />
@@ -13570,9 +13570,7 @@
     <scopeInfo nodeId="7889360268649425705" fileName="SetNodePackage_Action.java" startLine="36" startPosition="0" endLine="41" endPosition="3" />
     <scopeInfo nodeId="7889360268649440578" fileName="SetNodePackage_Action.java" startLine="43" startPosition="87" endLine="48" endPosition="7" />
     <scopeInfo nodeId="1680229125543348954" fileName="SetNodePackage_Action.java" startLine="104" startPosition="59" endLine="109" endPosition="0" />
-    <scopeInfo nodeId="7889360268649425705" fileName="SetNodePackage_Action.java" startLine="80" startPosition="26" endLine="86" endPosition="9">
-      <varInfo nodeId="7889360268649425705" varName="node" />
-    </scopeInfo>
+    <scopeInfo nodeId="7889360268649425705" fileName="SetNodePackage_Action.java" startLine="80" startPosition="26" endLine="86" endPosition="9" />
     <scopeInfo nodeId="1680229125543349051" fileName="SetNodePackage_Action.java" startLine="118" startPosition="111" endLine="124" endPosition="13" />
     <scopeInfo nodeId="7889360268649425705" fileName="SetNodePackage_Action.java" startLine="42" startPosition="0" endLine="50" endPosition="0">
       <varInfo nodeId="7889360268649425705" varName="_params" />

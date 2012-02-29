@@ -43,8 +43,9 @@ import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.findusages.view.treeholder.treeview.INodeRepresentator;
 import jetbrains.mps.ide.findusages.view.treeholder.tree.TextOptions;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.ide.projectPane.Icons;
+import jetbrains.mps.ide.icons.IdeIcons;
 import org.apache.commons.lang.StringUtils;
+import jetbrains.mps.ide.messages.Icons;
 import org.apache.commons.lang.StringEscapeUtils;
 import jetbrains.mps.ide.findusages.model.CategoryKind;
 import java.util.Arrays;
@@ -238,7 +239,7 @@ public abstract class ModelCheckerViewer extends JPanel {
     }
 
     public Icon getResultsIcon() {
-      return Icons.CLOSED_FOLDER;
+      return IdeIcons.CLOSED_FOLDER;
     }
 
     public String getCategoryText(TextOptions options, String category, boolean isResultsSection) {
@@ -252,14 +253,14 @@ public abstract class ModelCheckerViewer extends JPanel {
     public Icon getCategoryIcon(String category) {
       if (StringUtils.isNotEmpty(category)) {
         if (category.startsWith(ModelChecker.SEVERITY_ERROR)) {
-          return jetbrains.mps.ide.messages.Icons.ERROR_ICON;
+          return Icons.ERROR_ICON;
         } else if (category.startsWith(ModelChecker.SEVERITY_WARNING)) {
-          return jetbrains.mps.ide.messages.Icons.WARNING_ICON;
+          return Icons.WARNING_ICON;
         } else if (category.startsWith(ModelChecker.SEVERITY_INFO)) {
-          return jetbrains.mps.ide.messages.Icons.INFORMATION_ICON;
+          return Icons.INFORMATION_ICON;
         }
       }
-      return Icons.CLOSED_FOLDER;
+      return IdeIcons.CLOSED_FOLDER;
     }
 
     @NotNull
