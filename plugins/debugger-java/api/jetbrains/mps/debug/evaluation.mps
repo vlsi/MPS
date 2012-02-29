@@ -1465,13 +1465,8 @@
               </node>
             </node>
             <node role="catchBody" roleId="tpee.1164903359218" type="tpee.StatementList" typeId="tpee.1068580123136" id="4963955491753977096">
-              <node role="statement" roleId="tpee.1068581517665" type="tpee.SingleLineComment" typeId="tpee.6329021646629104954" id="4963955491753986494">
-                <node role="commentPart" roleId="tpee.6329021646629175155" type="tpee.TextCommentPart" typeId="tpee.6329021646629104957" id="4963955491753986495">
-                  <property name="text" nameId="tpee.6329021646629104958" value="some unknown exception -- better inform about it" />
-                </node>
-              </node>
               <node role="statement" roleId="tpee.1068581517665" type="tpib.LogStatement" typeId="tpib.1167227138527" id="4963955491753986490">
-                <property name="severity" nameId="tpib.1167245565795" value="error" />
+                <property name="severity" nameId="tpib.1167245565795" value="debug" />
                 <property name="hasException" nameId="tpib.1167228628751" value="true" />
                 <node role="logExpression" roleId="tpib.1167227463056" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="4963955491753986491" />
                 <node role="exception" roleId="tpib.1167227561449" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="4963955491753986492">
