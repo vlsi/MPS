@@ -118,6 +118,10 @@ public abstract class AbstractMakeTest extends DataMPSFixtureTestCase {
     assertNull("Shouldn't be here: " + dir.getPath() + "/" + relPath, dir.findFileByRelativePath(relPath));
   }
 
+  protected void assertChildrenCount(VirtualFile dir, String relPath, int count) {
+    assertTrue(dir.findFileByRelativePath(relPath).getChildren().length == count);
+  }
+
   protected void assertCompiles(CompilerManager cm) {
     class Result {
       boolean aborted;
