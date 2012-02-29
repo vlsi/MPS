@@ -390,7 +390,8 @@ public class Classifier_Behavior {
       }
     } else if (SConceptOperations.isSubConceptOf(kind, "jetbrains.mps.baseLanguage.structure.ClassifierMember")) {
       // todo: go up? 
-      return Classifier_Behavior.call_getVisibleMembers_8083692786967356611(thisNode, child, kind);
+      return CompositeWithParentScope.from(Classifier_Behavior.call_getVisibleMembers_8083692786967356611(thisNode, child, kind), thisNode, kind);
+      // <node> 
     }
     return null;
   }
