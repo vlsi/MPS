@@ -66,7 +66,7 @@ public class ChildSubstituteActionsUtil {
       if (applicableConcept == null) {
         continue;
       }
-      if (SConceptOperations.isSubConceptOf(applicableConcept, NameUtil.nodeFQName(childConcept))) {
+      if (SConceptOperations.isSubConceptOf(applicableConcept, NameUtil.nodeFQName(childConcept)) || SConceptOperations.isSubConceptOf(childConcept, NameUtil.nodeFQName(applicableConcept))) {
         if (satisfiesPrecondition(actionsBuilder, parentNode, applicableConcept, link, currentChild, wrapped, context)) {
           ListSequence.fromList(allBuilders).addElement(actionsBuilder);
         }

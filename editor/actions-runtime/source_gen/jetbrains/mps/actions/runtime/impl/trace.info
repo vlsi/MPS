@@ -55,7 +55,7 @@
     <nodeInfo nodeId="2114063490211317342" fileName="ChildSubstituteActionsUtil.java" startLine="46" startPosition="141" endLine="49" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
     <nodeInfo nodeId="2263578067951145097" fileName="ChildSubstituteActionsUtil.java" startLine="56" startPosition="22" endLine="59" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="2263578067951145164" fileName="ChildSubstituteActionsUtil.java" startLine="65" startPosition="102" endLine="68" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2263578067951145172" fileName="ChildSubstituteActionsUtil.java" startLine="69" startPosition="100" endLine="72" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2263578067951145172" fileName="ChildSubstituteActionsUtil.java" startLine="69" startPosition="191" endLine="72" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="8875053940362049885" fileName="ChildSubstituteActionsUtil.java" startLine="115" startPosition="49" endLine="118" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="3129492436284095593" fileName="ChildSubstituteActionsUtil.java" startLine="142" startPosition="80" endLine="145" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="980957902828767857" fileName="ChildSubstituteActionsUtil.java" startLine="81" startPosition="114" endLine="85" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" />
@@ -114,7 +114,7 @@
       <varInfo nodeId="2114063490211303981" varName="e" />
     </scopeInfo>
     <scopeInfo nodeId="2114063490211303973" fileName="ChildSubstituteActionsUtil.java" startLine="163" startPosition="29" endLine="165" endPosition="21" />
-    <scopeInfo nodeId="2263578067951145171" fileName="ChildSubstituteActionsUtil.java" startLine="69" startPosition="100" endLine="72" endPosition="9" />
+    <scopeInfo nodeId="2263578067951145171" fileName="ChildSubstituteActionsUtil.java" startLine="69" startPosition="191" endLine="72" endPosition="9" />
     <scopeInfo nodeId="980957902828767857" fileName="ChildSubstituteActionsUtil.java" startLine="81" startPosition="114" endLine="85" endPosition="0">
       <varInfo nodeId="980957902828767857" varName="part" />
     </scopeInfo>
