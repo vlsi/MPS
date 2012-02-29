@@ -564,6 +564,10 @@
         <include name="models/**/*"/>
         <include name="src/**/*"/>
       </fileset>
+      <fileset dir="${base_dir}/IdeaPlugin/tests/makeTestBroken">
+        <include name="makeTestBroken.iml"/>
+        <include name="models/**/*"/>
+      </fileset>
     </copy>
     <jar destfile="${dist.dir}/mps-core/lib/mps-plugin-tests.jar">
       <fileset dir="${build_dir}/mpsplugintests_jar"/>
