@@ -91,7 +91,6 @@ public class ExtensionRegistry extends BaseExtensionRegistry implements CoreComp
   // can be called multiple times
   public void loadExtensionDescriptors() {
     if (!myInitialLoadHappened.compareAndSet(false, true)) return;
-
     reloadExtensionDescriptors();
   }
 
