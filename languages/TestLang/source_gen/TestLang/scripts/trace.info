@@ -578,9 +578,9 @@
     <nodeInfo nodeId="8461667031989782289" fileName="CheckThisConstructorScopes_MigrationScript.java" startLine="49" startPosition="47" endLine="50" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8461667031989782297" fileName="CheckThisConstructorScopes_MigrationScript.java" startLine="52" startPosition="45" endLine="53" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8461667031989782304" fileName="CheckThisConstructorScopes_MigrationScript.java" startLine="54" startPosition="9" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="8461667031989782305" fileName="CheckThisConstructorScopes_MigrationScript.java" startLine="55" startPosition="0" endLine="56" endPosition="216" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8461667031989782305" fileName="CheckThisConstructorScopes_MigrationScript.java" startLine="55" startPosition="0" endLine="56" endPosition="213" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8461667031989782221" fileName="CheckThisConstructorScopes_MigrationScript.java" startLine="59" startPosition="52" endLine="60" endPosition="194" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8461667031989782229" fileName="CheckThisConstructorScopes_MigrationScript.java" startLine="60" startPosition="194" endLine="61" endPosition="206" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8461667031989782229" fileName="CheckThisConstructorScopes_MigrationScript.java" startLine="60" startPosition="194" endLine="61" endPosition="203" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8461667031989782217" fileName="CheckThisConstructorScopes_MigrationScript.java" startLine="64" startPosition="42" endLine="65" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8461667031989782258" fileName="CheckThisConstructorScopes_MigrationScript.java" startLine="37" startPosition="0" endLine="40" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="8461667031989782265" fileName="CheckThisConstructorScopes_MigrationScript.java" startLine="40" startPosition="9" endLine="43" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -604,7 +604,7 @@
     <scopeInfo nodeId="8461667031989782288" fileName="CheckThisConstructorScopes_MigrationScript.java" startLine="49" startPosition="47" endLine="50" endPosition="23" />
     <scopeInfo nodeId="8461667031989782296" fileName="CheckThisConstructorScopes_MigrationScript.java" startLine="52" startPosition="45" endLine="53" endPosition="23" />
     <scopeInfo nodeId="8461667031989782217" fileName="CheckThisConstructorScopes_MigrationScript.java" startLine="64" startPosition="42" endLine="65" endPosition="21" />
-    <scopeInfo nodeId="8461667031989782220" fileName="CheckThisConstructorScopes_MigrationScript.java" startLine="59" startPosition="52" endLine="61" endPosition="206">
+    <scopeInfo nodeId="8461667031989782220" fileName="CheckThisConstructorScopes_MigrationScript.java" startLine="59" startPosition="52" endLine="61" endPosition="203">
       <varInfo nodeId="8461667031989782222" varName="ref" />
     </scopeInfo>
     <scopeInfo nodeId="8461667031989782217" fileName="CheckThisConstructorScopes_MigrationScript.java" startLine="19" startPosition="76" endLine="23" endPosition="0" />
@@ -614,7 +614,7 @@
     <scopeInfo nodeId="8461667031989782217" fileName="CheckThisConstructorScopes_MigrationScript.java" startLine="58" startPosition="0" endLine="63" endPosition="0">
       <varInfo nodeId="8461667031989782217" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="8461667031989782239" fileName="CheckThisConstructorScopes_MigrationScript.java" startLine="32" startPosition="59" endLine="56" endPosition="216">
+    <scopeInfo nodeId="8461667031989782239" fileName="CheckThisConstructorScopes_MigrationScript.java" startLine="32" startPosition="59" endLine="56" endPosition="213">
       <varInfo nodeId="8461667031989782241" varName="excludingPrefix" />
       <varInfo nodeId="8461667031989782273" varName="name" />
       <varInfo nodeId="8461667031989782250" varName="ref" />

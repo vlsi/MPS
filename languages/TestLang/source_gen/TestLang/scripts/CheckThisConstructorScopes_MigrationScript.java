@@ -53,12 +53,12 @@ public class CheckThisConstructorScopes_MigrationScript extends BaseMigrationScr
           return false;
         }
 
-        return !(Utils.checkScopes(node, Utils.getOldScopeFromRef(ref), Utils.getNewScopeFromRef(ref, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ConstructorDeclaration")), true));
+        return !(Utils.checkScopes(node, Utils.getOldScopeFromRef(ref), Utils.getNewScopeFromRef(ref, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ThisConstructorKind")), true));
       }
 
       public void doUpdateInstanceNode(SNode node) {
         SReference ref = SNodeOperations.getReference(node, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.ConstructorInvocationStatement", "constructorDeclaration"));
-        Utils.checkScopes(node, Utils.getOldScopeFromRef(ref), Utils.getNewScopeFromRef(ref, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ConstructorDeclaration")), true);
+        Utils.checkScopes(node, Utils.getOldScopeFromRef(ref), Utils.getNewScopeFromRef(ref, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ThisConstructorKind")), true);
       }
 
       public boolean isShowAsIntention() {

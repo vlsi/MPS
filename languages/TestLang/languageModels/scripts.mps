@@ -1410,7 +1410,7 @@
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8461667031989782222" resolveInfo="ref" />
                 </node>
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tp25.ConceptRefExpression" typeId="tp25.1172424058054" id="8461667031989782236">
-                  <link role="conceptDeclaration" roleId="tp25.1172424100906" targetNodeId="tpee.1068580123140" resolveInfo="ConstructorDeclaration" />
+                  <link role="conceptDeclaration" roleId="tp25.1172424100906" targetNodeId="tpee.2406048883599831972" resolveInfo="ThisConstructorKind" />
                 </node>
               </node>
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.BooleanConstant" typeId="tpee.1068580123137" id="8461667031989782237">
@@ -1584,7 +1584,7 @@
                     <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8461667031989782250" resolveInfo="ref" />
                   </node>
                   <node role="actualArgument" roleId="tpee.1068499141038" type="tp25.ConceptRefExpression" typeId="tp25.1172424058054" id="8461667031989782313">
-                    <link role="conceptDeclaration" roleId="tp25.1172424100906" targetNodeId="tpee.1068580123140" resolveInfo="ConstructorDeclaration" />
+                    <link role="conceptDeclaration" roleId="tp25.1172424100906" targetNodeId="tpee.2406048883599831972" resolveInfo="ThisConstructorKind" />
                   </node>
                 </node>
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.BooleanConstant" typeId="tpee.1068580123137" id="8461667031989782314">
