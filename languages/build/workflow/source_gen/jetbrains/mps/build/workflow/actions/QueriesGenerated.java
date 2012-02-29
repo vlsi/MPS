@@ -89,29 +89,33 @@ public class QueriesGenerated {
   public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_BwfFileSet_7926701909975921570(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
     List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
     {
-      SNode wrappedConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.core.xml.structure.XmlBaseElement");
-      IChildNodeSetter setter = new AbstractChildNodeSetter() {
-        public SNode wrapNode(SNode nodeToWrap, SModel model) {
-          SNode cp = SModelOperations.createNewNode(model, "jetbrains.mps.build.workflow.structure.BwfFileSet", null);
-          ListSequence.fromList(SLinkOperations.getTargets(cp, "elements", true)).addElement(nodeToWrap);
-          return cp;
-        }
-
-        public boolean returnSmallPart(SNode nodeToWrap) {
-          return false;
-        }
-
-        public SNode doExecute(SNode pn, SNode oc, SNode nc, IScope sc) {
-          SNode wrappedNode = this.wrapNode(nc, nc.getModel());
-          _context.getChildSetter().execute(_context.getParentNode(), _context.getCurrentTargetNode(), wrappedNode, operationContext.getScope());
-          if (this.returnSmallPart(nc)) {
-            return nc;
-          } else {
-            return wrappedNode;
+      SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.build.workflow.structure.BwfFileSet");
+      SNode childConcept = (SNode) _context.getChildConcept();
+      if (SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
+        SNode wrappedConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.core.xml.structure.XmlBaseElement");
+        IChildNodeSetter setter = new AbstractChildNodeSetter() {
+          public SNode wrapNode(SNode nodeToWrap, SModel model) {
+            SNode cp = SModelOperations.createNewNode(model, "jetbrains.mps.build.workflow.structure.BwfFileSet", null);
+            ListSequence.fromList(SLinkOperations.getTargets(cp, "elements", true)).addElement(nodeToWrap);
+            return cp;
           }
-        }
-      };
-      ListSequence.fromList(result).addSequence(ListSequence.fromList(ModelActions.createChildSubstituteActions(_context.getParentNode(), _context.getCurrentTargetNode(), wrappedConcept, setter, operationContext)));
+
+          public boolean returnSmallPart(SNode nodeToWrap) {
+            return false;
+          }
+
+          public SNode doExecute(SNode pn, SNode oc, SNode nc, IScope sc) {
+            SNode wrappedNode = this.wrapNode(nc, nc.getModel());
+            _context.getChildSetter().execute(_context.getParentNode(), _context.getCurrentTargetNode(), wrappedNode, operationContext.getScope());
+            if (this.returnSmallPart(nc)) {
+              return nc;
+            } else {
+              return wrappedNode;
+            }
+          }
+        };
+        ListSequence.fromList(result).addSequence(ListSequence.fromList(ModelActions.createChildSubstituteActions(_context.getParentNode(), _context.getCurrentTargetNode(), wrappedConcept, setter, operationContext)));
+      }
     }
     return result;
   }
@@ -119,29 +123,33 @@ public class QueriesGenerated {
   public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_BwfJavaDependency_7926701909975917808(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
     List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
     {
-      SNode wrappedConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.core.xml.structure.XmlBaseElement");
-      IChildNodeSetter setter = new AbstractChildNodeSetter() {
-        public SNode wrapNode(SNode nodeToWrap, SModel model) {
-          SNode cp = SModelOperations.createNewNode(model, "jetbrains.mps.build.workflow.structure.BwfJavaClassPath", null);
-          SLinkOperations.setTarget(cp, "classpath", nodeToWrap, true);
-          return cp;
-        }
-
-        public boolean returnSmallPart(SNode nodeToWrap) {
-          return false;
-        }
-
-        public SNode doExecute(SNode pn, SNode oc, SNode nc, IScope sc) {
-          SNode wrappedNode = this.wrapNode(nc, nc.getModel());
-          _context.getChildSetter().execute(_context.getParentNode(), _context.getCurrentTargetNode(), wrappedNode, operationContext.getScope());
-          if (this.returnSmallPart(nc)) {
-            return nc;
-          } else {
-            return wrappedNode;
+      SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.build.workflow.structure.BwfJavaClassPath");
+      SNode childConcept = (SNode) _context.getChildConcept();
+      if (SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
+        SNode wrappedConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.core.xml.structure.XmlBaseElement");
+        IChildNodeSetter setter = new AbstractChildNodeSetter() {
+          public SNode wrapNode(SNode nodeToWrap, SModel model) {
+            SNode cp = SModelOperations.createNewNode(model, "jetbrains.mps.build.workflow.structure.BwfJavaClassPath", null);
+            SLinkOperations.setTarget(cp, "classpath", nodeToWrap, true);
+            return cp;
           }
-        }
-      };
-      ListSequence.fromList(result).addSequence(ListSequence.fromList(ModelActions.createChildSubstituteActions(_context.getParentNode(), _context.getCurrentTargetNode(), wrappedConcept, setter, operationContext)));
+
+          public boolean returnSmallPart(SNode nodeToWrap) {
+            return false;
+          }
+
+          public SNode doExecute(SNode pn, SNode oc, SNode nc, IScope sc) {
+            SNode wrappedNode = this.wrapNode(nc, nc.getModel());
+            _context.getChildSetter().execute(_context.getParentNode(), _context.getCurrentTargetNode(), wrappedNode, operationContext.getScope());
+            if (this.returnSmallPart(nc)) {
+              return nc;
+            } else {
+              return wrappedNode;
+            }
+          }
+        };
+        ListSequence.fromList(result).addSequence(ListSequence.fromList(ModelActions.createChildSubstituteActions(_context.getParentNode(), _context.getCurrentTargetNode(), wrappedConcept, setter, operationContext)));
+      }
     }
     return result;
   }
