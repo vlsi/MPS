@@ -293,7 +293,8 @@ public class FileUtil {
       if (writer != null) {
         try {
           writer.close();
-        } catch (IOException e) {}
+        } catch (IOException e) {
+        }
       }
     }
   }
@@ -487,8 +488,8 @@ public class FileUtil {
       }
     }
   }
-  
-  public static boolean canWrite(File f){
+
+  public static boolean canWrite(File f) {
     while (!f.exists()) {
       f = f.getParentFile();
       if (f == null) {

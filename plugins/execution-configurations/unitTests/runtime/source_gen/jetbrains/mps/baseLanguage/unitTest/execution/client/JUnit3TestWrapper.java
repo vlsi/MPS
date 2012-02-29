@@ -13,7 +13,6 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class JUnit3TestWrapper extends AbstractTestWrapper<SNode> {
   public JUnit3TestWrapper(SNode classConcept) {
@@ -51,7 +50,7 @@ public class JUnit3TestWrapper extends AbstractTestWrapper<SNode> {
 
   private static String check_qb7e7i_a0a1(SNode checkedDotOperand, JUnit3TestWrapper checkedDotThisExpression) {
     if (null != checkedDotOperand) {
-      return ((String) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(checkedDotOperand, "jetbrains.mps.lang.core.structure.INamedConcept"), "virtual_getFqName_1213877404258", new Class[]{SNode.class}));
+      return ((String) BehaviorManager.getInstance().invoke(Object.class, checkedDotOperand, "virtual_getFqName_1213877404258", new Class[]{SNode.class}));
     }
     return null;
   }

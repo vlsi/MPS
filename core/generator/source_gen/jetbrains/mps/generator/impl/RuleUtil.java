@@ -339,7 +339,7 @@ public class RuleUtil {
   }
 
   public static String getVarMacro_Name(SNode macro) {
-    return ((String) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(macro, "jetbrains.mps.lang.generator.structure.VarMacro"), "call_getName_2721957369897649366", new Class[]{SNode.class}));
+    return ((String) BehaviorManager.getInstance().invoke(Object.class, macro, "call_getName_2721957369897649366", new Class[]{SNode.class}));
   }
 
   public static SNode getVarMacro_Query(SNode macro) {

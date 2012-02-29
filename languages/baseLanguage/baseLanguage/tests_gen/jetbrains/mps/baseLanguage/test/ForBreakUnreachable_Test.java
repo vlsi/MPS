@@ -22,7 +22,7 @@ public class ForBreakUnreachable_Test extends BaseTransformationTest {
   public static class TestBody extends BaseTestBody {
     public void test_TypesCheck9092976468699800071() throws Exception {
       SNode operation = SNodeOperations.cast(this.getRealNodeById("9092976468699800071"), "jetbrains.mps.lang.test.structure.NodeOperation");
-      BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(operation, "jetbrains.mps.lang.test.structure.NodeOperation"), "virtual_perform_1215601182156", new Class[]{SNode.class, SNode.class}, this.getRealNodeById("9092976468699800032"));
+      BehaviorManager.getInstance().invoke(Object.class, operation, "virtual_perform_1215601182156", new Class[]{SNode.class, SNode.class}, this.getRealNodeById("9092976468699800032"));
     }
   }
 }

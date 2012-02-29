@@ -24,7 +24,7 @@ public class CellUtil {
 
   public static void setupIDeprecatableStyles(SNode node, EditorCell cell) {
     SNode deprecatable = SNodeOperations.as(node, "jetbrains.mps.lang.core.structure.IDeprecatable");
-    if (deprecatable != null && (((Boolean) BehaviorManager.getInstance().invoke(Boolean.class, SNodeOperations.cast(deprecatable, "jetbrains.mps.lang.core.structure.IDeprecatable"), "virtual_isDeprecated_1224609060727", new Class[]{SNode.class})) || ((Boolean) BehaviorManager.getInstance().invoke(Boolean.class, SNodeOperations.cast(SNodeOperations.getConceptDeclaration(deprecatable), "jetbrains.mps.lang.core.structure.IDeprecatable"), "virtual_isDeprecated_1224609060727", new Class[]{SNode.class})))) {
+    if (deprecatable != null && (((Boolean) BehaviorManager.getInstance().invoke(Boolean.class, deprecatable, "virtual_isDeprecated_1224609060727", new Class[]{SNode.class})) || ((Boolean) BehaviorManager.getInstance().invoke(Boolean.class, SNodeOperations.getConceptDeclaration(deprecatable), "virtual_isDeprecated_1224609060727", new Class[]{SNode.class})))) {
       cell.getStyle().set(StyleAttributes.STRIKE_OUT, true);
     }
   }
@@ -37,7 +37,7 @@ public class CellUtil {
   }
 
   public static SNode getConceptPropertyDeclaration(SNode node, final String conceptPropertyName) {
-    return ListSequence.fromList(((List<SNode>) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(SNodeOperations.getConceptDeclaration(node), "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"), "call_getConceptPropertyDeclarations_1213877394562", new Class[]{SNode.class}))).findFirst(new IWhereFilter<SNode>() {
+    return ListSequence.fromList(((List<SNode>) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.getConceptDeclaration(node), "call_getConceptPropertyDeclarations_1213877394562", new Class[]{SNode.class}))).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return conceptPropertyName.equals(SPropertyOperations.getString(it, "name"));
       }

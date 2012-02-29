@@ -219,11 +219,11 @@ public class MethodDeclarationsFixer extends EditorCheckerAdapter {
   }
 
   private Map<SNode, SNode> getTypeByTypeVar(SNode methodCall) {
-    return ((Map<SNode, SNode>) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(methodCall, "jetbrains.mps.baseLanguage.structure.IMethodCall"), "virtual_getTypesByTypeVars_851115533308208851", new Class[]{SNode.class}));
+    return ((Map<SNode, SNode>) BehaviorManager.getInstance().invoke(Object.class, methodCall, "virtual_getTypesByTypeVars_851115533308208851", new Class[]{SNode.class}));
   }
 
   public List<SNode> getCandidates(SNode methodCall, String methodName) {
-    return ((List<SNode>) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(methodCall, "jetbrains.mps.baseLanguage.structure.IMethodCall"), "virtual_getAvailableMethodDeclarations_5776618742611315379", new Class[]{SNode.class, String.class}, methodName));
+    return ((List<SNode>) BehaviorManager.getInstance().invoke(Object.class, methodCall, "virtual_getAvailableMethodDeclarations_5776618742611315379", new Class[]{SNode.class, String.class}, methodName));
   }
 
   private void methodDeclarationNameChanged(SNode method, Map<SNode, SNode> resolveTargets) {

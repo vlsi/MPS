@@ -2853,8 +2853,8 @@
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="245" startPosition="85" endLine="245" endPosition="86" conceptFqName="jetbrains.mps.gtext.structure.GText" />
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="245" startPosition="86" endLine="245" endPosition="86" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="245" startPosition="86" endLine="245" endPosition="86" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
-    <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="245" startPosition="86" endLine="245" endPosition="86" conceptFqName="jetbrains.mps.gtext.structure.GText" />
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="245" startPosition="86" endLine="245" endPosition="88" conceptFqName="jetbrains.mps.gtext.structure.GText" />
+    <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="245" startPosition="86" endLine="245" endPosition="86" conceptFqName="jetbrains.mps.gtext.structure.GText" />
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="245" startPosition="88" endLine="245" endPosition="97" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="245" startPosition="88" endLine="245" endPosition="97" conceptFqName="jetbrains.mps.gtext.structure.GText" />
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="245" startPosition="97" endLine="245" endPosition="98" conceptFqName="jetbrains.mps.gtext.structure.GText" />
@@ -4025,9 +4025,9 @@
     <nodeInfo nodeId="4362199797783345398" fileName="CopyThisDown_Action.java" startLine="78" startPosition="117" endLine="79" endPosition="121" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4362199797783345408" fileName="CopyThisDown_Action.java" startLine="80" startPosition="63" endLine="81" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4362199797783345414" fileName="CopyThisDown_Action.java" startLine="81" startPosition="63" endLine="82" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4362199797783345421" fileName="CopyThisDown_Action.java" startLine="82" startPosition="46" endLine="83" endPosition="310" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4362199797783345421" fileName="CopyThisDown_Action.java" startLine="82" startPosition="46" endLine="83" endPosition="219" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4362199797783345432" fileName="CopyThisDown_Action.java" startLine="84" startPosition="29" endLine="85" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4362199797783345438" fileName="CopyThisDown_Action.java" startLine="87" startPosition="228" endLine="88" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4362199797783345438" fileName="CopyThisDown_Action.java" startLine="87" startPosition="148" endLine="88" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4362199797783345444" fileName="CopyThisDown_Action.java" startLine="88" startPosition="62" endLine="89" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4362199797783345452" fileName="CopyThisDown_Action.java" startLine="89" startPosition="55" endLine="90" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4362199797783345461" fileName="CopyThisDown_Action.java" startLine="90" startPosition="130" endLine="91" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -4037,7 +4037,7 @@
     <nodeInfo nodeId="4362199797783345499" fileName="CopyThisDown_Action.java" startLine="97" startPosition="120" endLine="98" endPosition="118" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4362199797783345507" fileName="CopyThisDown_Action.java" startLine="98" startPosition="118" endLine="99" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4362199797783345514" fileName="CopyThisDown_Action.java" startLine="99" startPosition="43" endLine="100" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4362199797783345520" fileName="CopyThisDown_Action.java" startLine="100" startPosition="60" endLine="101" endPosition="308" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4362199797783345520" fileName="CopyThisDown_Action.java" startLine="100" startPosition="60" endLine="101" endPosition="217" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4362199797783345531" fileName="CopyThisDown_Action.java" startLine="102" startPosition="27" endLine="103" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4362199797783345543" fileName="CopyThisDown_Action.java" startLine="105" startPosition="129" endLine="106" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4362199797783345553" fileName="CopyThisDown_Action.java" startLine="107" startPosition="9" endLine="108" endPosition="132" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -4049,8 +4049,8 @@
     <nodeInfo nodeId="4362199797783345393" fileName="CopyThisDown_Action.java" startLine="51" startPosition="95" endLine="54" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="4362199797783345393" fileName="CopyThisDown_Action.java" startLine="55" startPosition="107" endLine="58" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="4362199797783345393" fileName="CopyThisDown_Action.java" startLine="69" startPosition="5" endLine="72" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4362199797783345430" fileName="CopyThisDown_Action.java" startLine="83" startPosition="310" endLine="86" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4362199797783345529" fileName="CopyThisDown_Action.java" startLine="101" startPosition="308" endLine="104" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4362199797783345430" fileName="CopyThisDown_Action.java" startLine="83" startPosition="219" endLine="86" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4362199797783345529" fileName="CopyThisDown_Action.java" startLine="101" startPosition="217" endLine="104" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="4362199797783345535" fileName="CopyThisDown_Action.java" startLine="104" startPosition="9" endLine="107" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="4362199797783345393" fileName="CopyThisDown_Action.java" startLine="110" startPosition="27" endLine="113" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="4362199797783345393" fileName="CopyThisDown_Action.java" startLine="110" startPosition="27" endLine="113" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -4105,7 +4105,7 @@
     <scopeInfo nodeId="4362199797783345393" fileName="CopyThisDown_Action.java" startLine="43" startPosition="27" endLine="47" endPosition="44" />
     <scopeInfo nodeId="4362199797783345393" fileName="CopyThisDown_Action.java" startLine="54" startPosition="5" endLine="58" endPosition="5" />
     <scopeInfo nodeId="4362199797783345393" fileName="CopyThisDown_Action.java" startLine="26" startPosition="0" endLine="31" endPosition="3" />
-    <scopeInfo nodeId="4362199797783345437" fileName="CopyThisDown_Action.java" startLine="87" startPosition="228" endLine="92" endPosition="19">
+    <scopeInfo nodeId="4362199797783345437" fileName="CopyThisDown_Action.java" startLine="87" startPosition="148" endLine="92" endPosition="19">
       <varInfo nodeId="4362199797783345439" varName="copy" />
     </scopeInfo>
     <scopeInfo nodeId="4362199797783345393" fileName="CopyThisDown_Action.java" startLine="59" startPosition="5" endLine="68" endPosition="7">
@@ -5742,7 +5742,7 @@
     <nodeInfo nodeId="7791284463049114056" fileName="EditorActionUtils.java" startLine="150" startPosition="5" endLine="151" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7791284463049114072" fileName="EditorActionUtils.java" startLine="154" startPosition="63" endLine="155" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7791284463049114084" fileName="EditorActionUtils.java" startLine="157" startPosition="25" endLine="158" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7791284463049114095" fileName="EditorActionUtils.java" startLine="158" startPosition="104" endLine="159" endPosition="267" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7791284463049114095" fileName="EditorActionUtils.java" startLine="158" startPosition="104" endLine="159" endPosition="187" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7791284463049114107" fileName="EditorActionUtils.java" startLine="161" startPosition="7" endLine="162" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7791284463049114117" fileName="EditorActionUtils.java" startLine="165" startPosition="60" endLine="166" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7791284463049114125" fileName="EditorActionUtils.java" startLine="23" startPosition="32" endLine="25" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="EditorActionUtils#()V" />
@@ -5792,7 +5792,7 @@
     <scopeInfo nodeId="7791284463049114125" fileName="EditorActionUtils.java" startLine="23" startPosition="32" endLine="25" endPosition="3" />
     <scopeInfo nodeId="7791284463049113830" fileName="EditorActionUtils.java" startLine="64" startPosition="136" endLine="66" endPosition="85" />
     <scopeInfo nodeId="7791284463049113922" fileName="EditorActionUtils.java" startLine="89" startPosition="136" endLine="91" endPosition="86" />
-    <scopeInfo nodeId="7791284463049114083" fileName="EditorActionUtils.java" startLine="157" startPosition="25" endLine="159" endPosition="267">
+    <scopeInfo nodeId="7791284463049114083" fileName="EditorActionUtils.java" startLine="157" startPosition="25" endLine="159" endPosition="187">
       <varInfo nodeId="7791284463049114085" varName="linkDeclaration" />
     </scopeInfo>
     <scopeInfo nodeId="130230197973334063" fileName="EditorActionUtils.java" startLine="26" startPosition="0" endLine="30" endPosition="0">

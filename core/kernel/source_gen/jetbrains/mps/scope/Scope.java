@@ -69,7 +69,7 @@ public abstract class Scope {
     SNode prev = fromChild;
     while (curr != null) {
       if (SNodeOperations.isInstanceOf(curr, "jetbrains.mps.lang.core.structure.ScopeProvider")) {
-        Scope scope = ((Scope) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(SNodeOperations.cast(curr, "jetbrains.mps.lang.core.structure.ScopeProvider"), "jetbrains.mps.lang.core.structure.ScopeProvider"), "virtual_getScope_3734116213129936182", new Class[]{SNode.class, SNode.class, SNode.class}, kind, prev));
+        Scope scope = ((Scope) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(curr, "jetbrains.mps.lang.core.structure.ScopeProvider"), "virtual_getScope_3734116213129936182", new Class[]{SNode.class, SNode.class, SNode.class}, kind, prev));
         if (scope != null) {
           return scope;
         }

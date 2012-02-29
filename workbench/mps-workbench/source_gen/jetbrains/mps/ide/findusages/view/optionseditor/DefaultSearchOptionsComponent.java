@@ -39,7 +39,7 @@ public class DefaultSearchOptionsComponent implements ProjectComponent, Persiste
     final FindUsagesOptions result = new FindUsagesOptions();
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        FindersOptions findersOptions = new FindersOptions(((String) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(SNodeOperations.getNode("r:00000000-0000-4000-0000-011c8959028e(jetbrains.mps.lang.structure.findUsages)", "1197636141662"), "jetbrains.mps.lang.findUsages.structure.FinderDeclaration"), "call_getGeneratedClassLongName_1213877240120", new Class[]{SNode.class})), ((String) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(SNodeOperations.getNode("r:00000000-0000-4000-0000-011c8959028e(jetbrains.mps.lang.structure.findUsages)", "1197632773078"), "jetbrains.mps.lang.findUsages.structure.FinderDeclaration"), "call_getGeneratedClassLongName_1213877240120", new Class[]{SNode.class})));
+        FindersOptions findersOptions = new FindersOptions(((String) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.getNode("r:00000000-0000-4000-0000-011c8959028e(jetbrains.mps.lang.structure.findUsages)", "1197636141662"), "call_getGeneratedClassLongName_1213877240120", new Class[]{SNode.class})), ((String) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.getNode("r:00000000-0000-4000-0000-011c8959028e(jetbrains.mps.lang.structure.findUsages)", "1197632773078"), "call_getGeneratedClassLongName_1213877240120", new Class[]{SNode.class})));
         result.setOption(findersOptions);
       }
     });

@@ -389,7 +389,7 @@
     <nodeInfo nodeId="352677614185351898" fileName="Ant_Command.java" startLine="162" startPosition="44" endLine="163" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="352677614185351913" fileName="Ant_Command.java" startLine="168" startPosition="67" endLine="169" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="352677614185351919" fileName="Ant_Command.java" startLine="171" startPosition="25" endLine="172" endPosition="228" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="352677614185351939" fileName="Ant_Command.java" startLine="172" startPosition="228" endLine="173" endPosition="249" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="352677614185351939" fileName="Ant_Command.java" startLine="172" startPosition="228" endLine="173" endPosition="178" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="352677614185351948" fileName="Ant_Command.java" startLine="175" startPosition="7" endLine="176" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="352677614185351960" fileName="Ant_Command.java" startLine="179" startPosition="59" endLine="180" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="352677614185351966" fileName="Ant_Command.java" startLine="182" startPosition="30" endLine="183" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -455,7 +455,7 @@
     <scopeInfo nodeId="352677614185351677" fileName="Ant_Command.java" startLine="112" startPosition="80" endLine="114" endPosition="199">
       <varInfo nodeId="352677614185351679" varName="targetName" />
     </scopeInfo>
-    <scopeInfo nodeId="352677614185351918" fileName="Ant_Command.java" startLine="171" startPosition="25" endLine="173" endPosition="249" />
+    <scopeInfo nodeId="352677614185351918" fileName="Ant_Command.java" startLine="171" startPosition="25" endLine="173" endPosition="178" />
     <scopeInfo nodeId="352677614185351672" fileName="Ant_Command.java" startLine="84" startPosition="68" endLine="88" endPosition="16" />
     <scopeInfo nodeId="352677614185351672" fileName="Ant_Command.java" startLine="91" startPosition="64" endLine="95" endPosition="16" />
     <scopeInfo nodeId="352677614185351672" fileName="Ant_Command.java" startLine="98" startPosition="56" endLine="102" endPosition="16" />

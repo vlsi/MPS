@@ -117,7 +117,7 @@ public abstract class AbstractMainNodeChooser extends BaseChooserComponent {
 
   public String getFqName(SNode node) {
     if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.core.structure.INamedConcept")) {
-      return ((String) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(SNodeOperations.cast(node, "jetbrains.mps.lang.core.structure.INamedConcept"), "jetbrains.mps.lang.core.structure.INamedConcept"), "virtual_getFqName_1213877404258", new Class[]{SNode.class}));
+      return ((String) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(node, "jetbrains.mps.lang.core.structure.INamedConcept"), "virtual_getFqName_1213877404258", new Class[]{SNode.class}));
     } else {
       String longName = SNodeOperations.getModel(node).getLongName();
       if (longName.equals("")) {

@@ -28,7 +28,7 @@ public class UnavailableConceptsChecker extends SpecificChecker {
       }
       SNode concept = SNodeOperations.getConceptDeclaration(node);
       if (concept == null) {
-        addIssue(results, node, "Cannot find concept \"" + ((String) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(concept, "jetbrains.mps.lang.core.structure.INamedConcept"), "virtual_getFqName_1213877404258", new Class[]{SNode.class})) + "\"", ModelChecker.SEVERITY_ERROR, "unavailable concept", null);
+        addIssue(results, node, "Cannot find concept \"" + ((String) BehaviorManager.getInstance().invoke(Object.class, concept, "virtual_getFqName_1213877404258", new Class[]{SNode.class})) + "\"", ModelChecker.SEVERITY_ERROR, "unavailable concept", null);
       }
     }
     monitor.done();

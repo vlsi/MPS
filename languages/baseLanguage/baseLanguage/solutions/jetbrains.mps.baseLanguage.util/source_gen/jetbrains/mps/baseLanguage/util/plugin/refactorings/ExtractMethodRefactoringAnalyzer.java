@@ -9,7 +9,6 @@ import jetbrains.mps.lang.dataFlow.framework.AnalysisResult;
 import jetbrains.mps.lang.dataFlow.framework.VarSet;
 import java.util.Set;
 import jetbrains.mps.lang.dataFlow.framework.instructions.WriteInstruction;
-import jetbrains.mps.baseLanguage.behavior.IExtractMethodRefactoringProcessor;
 import jetbrains.mps.lang.dataFlow.DataFlowManager;
 import jetbrains.mps.lang.dataFlow.framework.analyzers.ReachabilityAnalyzer;
 import jetbrains.mps.lang.dataFlow.framework.analyzers.LivenessAnalyzer;
@@ -29,12 +28,9 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.LinkedHashMap;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
-import jetbrains.mps.baseLanguage.behavior.IParameter_Behavior;
-import jetbrains.mps.baseLanguage.behavior.IExtractMethodAvailable_Behavior;
-import jetbrains.mps.baseLanguage.behavior.AbstractExtractMethodRefactoringProcessor;
+import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.dataFlow.framework.instructions.ReadInstruction;
-import jetbrains.mps.baseLanguage.behavior.VariableDeclaration_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class ExtractMethodRefactoringAnalyzer {
@@ -246,7 +242,7 @@ public class ExtractMethodRefactoringAnalyzer {
     for (SNode node : ListSequence.fromList(this.myPartToExtract)) {
       for (SNode parameter : ListSequence.fromList(SNodeOperations.getDescendants(node, "jetbrains.mps.baseLanguage.structure.IParameter", true, new String[]{}))) {
         SNode expressionType = TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(parameter), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.Type"), true);
-        MapSequence.fromMap(result).put(IParameter_Behavior.call_getDeclaration_1225282371351(parameter), new MethodParameter(IParameter_Behavior.call_getDeclaration_1225282371351(parameter), expressionType, IParameter_Behavior.call_getParameterName_1225280611056(parameter), parameter));
+        MapSequence.fromMap(result).put(((SNode) BehaviorManager.getInstance().invoke(Object.class, parameter, "virtual_getDeclaration_1225282371351", new Class[]{SNode.class})), new MethodParameter(((SNode) BehaviorManager.getInstance().invoke(Object.class, parameter, "virtual_getDeclaration_1225282371351", new Class[]{SNode.class})), expressionType, ((String) BehaviorManager.getInstance().invoke(Object.class, parameter, "virtual_getParameterName_1225280611056", new Class[]{SNode.class})), parameter));
       }
     }
     return ListSequence.fromListWithValues(new ArrayList<MethodParameter>(), MapSequence.fromMap(result).values());
@@ -268,7 +264,7 @@ public class ExtractMethodRefactoringAnalyzer {
       this.myProcessor = new ClassExtractMethodRefactoringProcessor(classConcept, this.myPartToExtract);
     } else if (SNodeOperations.getAncestor(first, "jetbrains.mps.baseLanguage.structure.IExtractMethodAvailable", false, false) != null) {
       SNode extractable = SNodeOperations.getAncestor(first, "jetbrains.mps.baseLanguage.structure.IExtractMethodAvailable", false, false);
-      this.myProcessor = IExtractMethodAvailable_Behavior.call_getExtractMethodRefactoringProcessor_1221393367929(extractable, this.myPartToExtract);
+      this.myProcessor = ((IExtractMethodRefactoringProcessor) BehaviorManager.getInstance().invoke(Object.class, extractable, "virtual_getExtractMethodRefactoringProcessor_1221393367929", new Class[]{SNode.class, List.class}, this.myPartToExtract));
     } else {
       this.myProcessor = new AbstractExtractMethodRefactoringProcessor(null, this.myPartToExtract);
       shouldChooseOuterContainer = true;
@@ -308,7 +304,7 @@ public class ExtractMethodRefactoringAnalyzer {
         SNode type = TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(declaration), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.Type"), true);
         SNode reference;
         if (SNodeOperations.isInstanceOf(declaration, "jetbrains.mps.baseLanguage.structure.VariableDeclaration")) {
-          reference = VariableDeclaration_Behavior.call_createReference_1213877517482(SNodeOperations.cast(declaration, "jetbrains.mps.baseLanguage.structure.VariableDeclaration"));
+          reference = ((SNode) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(declaration, "jetbrains.mps.baseLanguage.structure.VariableDeclaration"), "virtual_createReference_1213877517482", new Class[]{SNode.class}));
         } else {
           reference = ((SNode) read.getSource());
         }
@@ -332,7 +328,7 @@ public class ExtractMethodRefactoringAnalyzer {
                 SNode type = TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(declaration), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.Type"), true);
                 SNode reference;
                 if (SNodeOperations.isInstanceOf(declaration, "jetbrains.mps.baseLanguage.structure.VariableDeclaration")) {
-                  reference = VariableDeclaration_Behavior.call_createReference_1213877517482(SNodeOperations.cast(declaration, "jetbrains.mps.baseLanguage.structure.VariableDeclaration"));
+                  reference = ((SNode) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(declaration, "jetbrains.mps.baseLanguage.structure.VariableDeclaration"), "virtual_createReference_1213877517482", new Class[]{SNode.class}));
                 } else {
                   reference = ((SNode) read.getSource());
                 }

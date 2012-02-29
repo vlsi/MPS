@@ -47,7 +47,7 @@ public class Find_Usages_TabDescriptor extends EditorTabDescriptor {
   }
 
   public List<SNode> getNodes(SNode node) {
-    return ((List<SNode>) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(node, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"), "call_findConceptAspectCollection_1567570417158062208", new Class[]{SNode.class, LanguageAspect.class}, LanguageAspect.FIND_USAGES));
+    return ((List<SNode>) BehaviorManager.getInstance().invoke(Object.class, node, "call_findConceptAspectCollection_1567570417158062208", new Class[]{SNode.class, LanguageAspect.class}, LanguageAspect.FIND_USAGES));
   }
 
   public boolean isSingle() {

@@ -91,16 +91,16 @@ public class TextGenerator {
     SModel outputModel = status.getOutputModel();
     if (outputModel == null) return !hasErrors;
 
-    StringBuilder[] buffers = new StringBuilder[]{new StringBuilder(8192), new StringBuilder(32768) };
+    StringBuilder[] buffers = new StringBuilder[]{new StringBuilder(8192), new StringBuilder(32768)};
 
     for (SNode outputNode : outputModel.roots()) {
       try {
         buffers[0].setLength(0);
         buffers[1].setLength(0);
-        if(buffers[0].capacity() > 100000) {
+        if (buffers[0].capacity() > 100000) {
           buffers[0] = new StringBuilder(8192);
         }
-        if(buffers[1].capacity() > 200000) {
+        if (buffers[1].capacity() > 200000) {
           buffers[1] = new StringBuilder(32768);
         }
         TextGenerationResult result = TextGenerationUtil.generateText(context, outputNode, myFailIfNoTextgen, myGenerateDebugInfo, buffers);
@@ -224,7 +224,7 @@ public class TextGenerator {
     for (SNode outputRootNode : outputNodeContents.keySet()) {
       String name = getFileName(outputRootNode);
       if (name == null) {
-        Message m = new Message(MessageKind.ERROR, "Can't create file with no name. Root node ["+outputRootNode.getSNodeId()+"] in model "+outputRootNode.getModel().getSModelFqName());
+        Message m = new Message(MessageKind.ERROR, "Can't create file with no name. Root node [" + outputRootNode.getSNodeId() + "] in model " + outputRootNode.getModel().getSModelFqName());
         m.setHintObject(new SNodePointer(outputRootNode));
         myTextGenProblems.add(m);
         continue;
@@ -276,7 +276,7 @@ public class TextGenerator {
   private void generateCaches(GenerationStatus status) {
     for (CacheGenerator g : myCacheGenerators) {
       try {
-        if(g != null) {
+        if (g != null) {
           g.generateCache(status, myStreamHandler);
         }
       } catch (Throwable t) {
