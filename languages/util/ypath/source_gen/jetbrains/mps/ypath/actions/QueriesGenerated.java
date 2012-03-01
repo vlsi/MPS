@@ -16,13 +16,13 @@ import jetbrains.mps.smodel.action.NodeSubstituteActionsFactoryContext;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.smodel.action.ChildSubstituteActionsHelper;
+import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.smodel.action.IChildNodeSetter;
 import jetbrains.mps.smodel.action.AbstractChildNodeSetter;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.action.ModelActions;
-import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.ypath.behavior.FeatureUtil;
 import jetbrains.mps.smodel.action.DefaultChildNodeSubstituteAction;
@@ -152,29 +152,33 @@ public class QueriesGenerated {
   public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_VisitParameterDeclaration_1180018851746(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
     List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
     {
-      SNode wrappedConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Type");
-      IChildNodeSetter setter = new AbstractChildNodeSetter() {
-        public SNode wrapNode(SNode nodeToWrap, SModel model) {
-          SNode vpd = SNodeFactoryOperations.createNewNode(model, "jetbrains.mps.ypath.structure.VisitParameterDeclaration", null);
-          SLinkOperations.setTarget(vpd, "type", nodeToWrap, true);
-          return vpd;
-        }
-
-        public boolean returnSmallPart(SNode nodeToWrap) {
-          return false;
-        }
-
-        public SNode doExecute(SNode pn, SNode oc, SNode nc, IScope sc) {
-          SNode wrappedNode = this.wrapNode(nc, nc.getModel());
-          _context.getChildSetter().execute(_context.getParentNode(), _context.getCurrentTargetNode(), wrappedNode, operationContext.getScope());
-          if (this.returnSmallPart(nc)) {
-            return nc;
-          } else {
-            return wrappedNode;
+      SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.ypath.structure.VisitParameterDeclaration");
+      SNode childConcept = (SNode) _context.getChildConcept();
+      if (SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
+        SNode wrappedConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Type");
+        IChildNodeSetter setter = new AbstractChildNodeSetter() {
+          public SNode wrapNode(SNode nodeToWrap, SModel model) {
+            SNode vpd = SNodeFactoryOperations.createNewNode(model, "jetbrains.mps.ypath.structure.VisitParameterDeclaration", null);
+            SLinkOperations.setTarget(vpd, "type", nodeToWrap, true);
+            return vpd;
           }
-        }
-      };
-      ListSequence.fromList(result).addSequence(ListSequence.fromList(ModelActions.createChildSubstituteActions(_context.getParentNode(), _context.getCurrentTargetNode(), wrappedConcept, setter, operationContext)));
+
+          public boolean returnSmallPart(SNode nodeToWrap) {
+            return false;
+          }
+
+          public SNode doExecute(SNode pn, SNode oc, SNode nc, IScope sc) {
+            SNode wrappedNode = this.wrapNode(nc, nc.getModel());
+            _context.getChildSetter().execute(_context.getParentNode(), _context.getCurrentTargetNode(), wrappedNode, operationContext.getScope());
+            if (this.returnSmallPart(nc)) {
+              return nc;
+            } else {
+              return wrappedNode;
+            }
+          }
+        };
+        ListSequence.fromList(result).addSequence(ListSequence.fromList(ModelActions.createChildSubstituteActions(_context.getParentNode(), _context.getCurrentTargetNode(), wrappedConcept, setter, operationContext)));
+      }
     }
     return result;
   }

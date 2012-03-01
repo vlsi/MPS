@@ -17,6 +17,7 @@ package jetbrains.mps;
 
 import jetbrains.mps.cache.CachesManager;
 import jetbrains.mps.checkers.CheckersComponent;
+import jetbrains.mps.cleanup.CleanupManager;
 import jetbrains.mps.components.ComponentPlugin;
 import jetbrains.mps.datatransfer.CopyPasteManager;
 import jetbrains.mps.datatransfer.PasteWrappersManager;
@@ -52,6 +53,7 @@ public class MPSCore extends ComponentPlugin {
   private boolean mergeDriverMode = false;
 
   private MPSCore() {
+
   }
 
   private SModelRepository myModelRepository;
@@ -67,8 +69,10 @@ public class MPSCore extends ComponentPlugin {
     super.init();
 
     // repositories
-    myModelRepository = init(new SModelRepository());
-    myModuleRepository = init(new MPSModuleRepository());
+    ClassLoaderManager classLoaderManager = init(new ClassLoaderManager());
+    CleanupManager cleanupManager = init(new CleanupManager(classLoaderManager));
+    myModelRepository = init(new SModelRepository(classLoaderManager));
+    myModuleRepository = init(new MPSModuleRepository(classLoaderManager, cleanupManager));
     myGlobalSModelEventsManager = init(new GlobalSModelEventsManager(myModelRepository));
 
     init(new PathMacros());
@@ -79,11 +83,10 @@ public class MPSCore extends ComponentPlugin {
     init(new CommandEventsManager(myModelRepository, myGlobalSModelEventsManager));
     init(new LibrariesLoader(myModuleRepository));
 
-    final ClassLoaderManager classLoaderManager = init(new ClassLoaderManager(myModuleRepository));
     init(new QueryMethodGenerated(classLoaderManager));
-    final ConceptRegistry conceptRegistry = init(new ConceptRegistry());
+    ConceptRegistry conceptRegistry = init(new ConceptRegistry());
     init(new LanguageRegistry(myModuleRepository, classLoaderManager, conceptRegistry));
-    init(new ExtensionRegistry());
+    init(new ExtensionRegistry(classLoaderManager, myModuleRepository));
     init(new LanguageHierarchyCache(myModuleRepository));
     init(new StructureAspectInterpreted());
     init(new OldBehaviorManager(classLoaderManager));
