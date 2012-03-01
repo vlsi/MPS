@@ -445,6 +445,43 @@
       </manifest>
     </jar>
 
+    <!-- Java support plugin -->
+    <mkdir dir="${build_dir}/mpsjava_jar"/>
+    <javac2 destdir="${build_dir}/mpsjava_jar" fork="true"
+            memorymaximumsize="1024m"
+            includeantruntime="false"
+            debug="${javac.debug}" debuglevel="lines,vars,source">
+      <compilerarg value="-Xlint:none"/>
+      <src>
+        <path path="${base_dir}/plugins/mpsjava/platform/source_gen"/>
+      </src>
+      <classpath>
+        <fileset dir="${dist.dir}/mps-core/lib" includes="*.jar"/>
+        <fileset dir="${ideaPath}/lib" includes="*.jar"/>
+      </classpath>
+    </javac2>
+    <copy includeemptydirs="false" todir="${build_dir}/mpsjava_jar">
+      <fileset dir="${base_dir}/plugins/mpsjava/platform/source_gen" includes="**/*.png, **/*.properties, **/*.xml"/>
+    </copy>
+    <copy file="${base_dir}/IdeaPlugin/mps-java/META-INF/plugin.xml"
+          tofile="${build_dir}/mpsjava_jar/META-INF/plugin.xml">
+      <filterchain>
+        <tokenfilter>
+          <replaceregex pattern="../classes/META-INF/" replace="" flags="gi"/>
+          <replaceregex pattern="../classes/jetbrains/" replace="../jetbrains/" flags="gi"/>
+        </tokenfilter>
+      </filterchain>
+    </copy>
+    <jar destfile="${dist.dir}/mps-java.jar">
+      <fileset dir="${build_dir}/mpsjava_jar"/>
+      <manifest>
+        <attribute name="Built-By" value="${user.name}"/>
+        <attribute name="Implementation-Vendor" value="JetBrains s.r.o."/>
+        <attribute name="Implementation-Title" value="MPS Java IDE support"/>
+        <attribute name="Implementation-Version" value="1.0"/>
+      </manifest>
+    </jar>
+
     <!-- languages -->
     <mkdir dir="${build_dir}/languages_jar"/>
     <javac2 destdir="${build_dir}/languages_jar" fork="true"
