@@ -129,8 +129,15 @@
       <keyboard-shortcut first-keystroke="ctrl UP" keymap="Mac OS X"/>
       <keyboard-shortcut first-keystroke="ctrl W" keymap="Mac OS X"/>
     </action>
+    <action id="jetbrains.mps.ide.editor.actions.ShowGenerationActions_Action" class="jetbrains.mps.ide.editor.actions.ShowGenerationActions_Action">
+      <keyboard-shortcut first-keystroke="alt INSERT" keymap="$default"/>
+      <keyboard-shortcut first-keystroke="ctrl N" keymap="Mac OS X"/>
+    </action>
     <action id="jetbrains.mps.ide.editor.actions.core.ShowNodeMessages_Action" class="jetbrains.mps.ide.editor.actions.core.ShowNodeMessages_Action">
       <keyboard-shortcut first-keystroke="alt shift M" keymap="$default"/>
+    </action>
+    <action id="jetbrains.mps.ide.editor.actions.ShowSurroundWithIntentions_Action" class="jetbrains.mps.ide.editor.actions.ShowSurroundWithIntentions_Action">
+      <keyboard-shortcut first-keystroke="ctrl alt T" keymap="$default"/>
     </action>
     <group id="EditorPopup_ActionGroupnew"/>
     <group id="EditorPopup_ActionGroupshowIn"/>
@@ -241,6 +248,12 @@
       <reference ref="jetbrains.mps.ide.editor.actions.DoNotSuppressErrors_Action"/>
     </group>
     <group id="jetbrains.mps.ide.editor.actions.ActionsAsIntentions_ActionGroup" popup="true"/>
+    <group id="jetbrains.mps.ide.editor.actions.SpecificIntentions_ActionGroup">
+      <reference ref="jetbrains.mps.ide.editor.actions.ShowGenerationActions_Action"/>
+      <reference ref="jetbrains.mps.ide.editor.actions.ShowSurroundWithIntentions_Action"/>
+      <add-to-group group-id="EditorPopup_ActionGroupintentions" anchor="last"/>
+    </group>
+    <group id="jetbrains.mps.ide.editor.actions.GenerationActions_ActionGroup"/>
     <group id="jetbrains.mps.ide.editor.actions.RefactoringActions_ActionGroup">
       <reference ref="jetbrains.mps.ide.platform.actions.NodeRefactoring_ActionGroup"></reference>
       <add-to-group group-id="EditorPopup_ActionGrouprefactoring" anchor="last"/>
