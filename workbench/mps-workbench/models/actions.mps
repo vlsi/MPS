@@ -142,6 +142,7 @@
   <import index="cqb" modelUID="f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#jetbrains.mps.ide.findusages.findalgorithm.finders.specific(MPS.Workbench/jetbrains.mps.ide.findusages.findalgorithm.finders.specific@java_stub)" version="-1" />
   <import index="u42p" modelUID="r:986938bb-bdb1-4307-b062-e4647a4db0f9(jetbrains.mps.ide.platform.refactoring)" version="-1" />
   <import index="iwwu" modelUID="r:2c4d9270-b6d6-44af-aecd-e01a223680db(jetbrains.mps.kernel.model)" version="-1" />
+  <import index="9oh" modelUID="r:de82dfab-9448-49ba-813e-2b0579f7fb15(jetbrains.mps.ide.platform.actions)" version="-1" />
   <import index="tp4k" modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" version="23" implicit="yes" />
   <import index="tp25" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" implicit="yes" />
   <import index="tp2q" modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" implicit="yes" />
@@ -923,14 +924,6 @@
       <property name="keymap" nameId="tp4k.1562714432501166281" value="$default" />
       <property name="name" nameId="tpck.1169194664001" value="Default" />
     </node>
-    <node type="tp4k.InterfaceGroup" typeId="tp4k.1204383956737" id="796800879946262664">
-      <property name="name" nameId="tpck.1169194664001" value="IDEACode" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="Integration" />
-    </node>
-    <node type="tp4k.ActionGroupDeclaration" typeId="tp4k.1203087890642" id="796800879946376627">
-      <property name="name" nameId="tpck.1169194664001" value="Code" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="Menu.MainMenu" />
-    </node>
     <node type="tp4k.IdeaInitializerDescriptor" typeId="tp4k.5023285075122009364" id="3531023421907756759">
       <property name="id" nameId="tp4k.5023285075122009366" value="jebrains.mps.ide" />
       <property name="name" nameId="tpck.1169194664001" value="IDE" />
@@ -1220,6 +1213,10 @@
     <node type="tp4k.InterfaceGroup" typeId="tp4k.1204383956737" id="4193578441192323616">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Menu.ProjectPane.JavaBootstrap" />
       <property name="name" nameId="tpck.1169194664001" value="JavaModelActions" />
+    </node>
+    <node type="tp4k.ActionGroupDeclaration" typeId="tp4k.1203087890642" id="5176948551392218544">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Menu.MainMenu" />
+      <property name="name" nameId="tpck.1169194664001" value="StructureAdditions" />
     </node>
   </roots>
   <root id="1204991218714">
@@ -19632,30 +19629,6 @@
       </node>
     </node>
   </root>
-  <root id="796800879946262664">
-    <node role="groupID" roleId="tp4k.1206193920040" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="796800879946262667">
-      <property name="value" nameId="tpee.1070475926801" value="CodeMenu" />
-    </node>
-    <node role="contents" roleId="tp4k.1207148993063" type="tp4k.ElementListContents" typeId="tp4k.1207145163717" id="796800879946262666" />
-  </root>
-  <root id="796800879946376627">
-    <node role="contents" roleId="tp4k.1207145245948" type="tp4k.ElementListContents" typeId="tp4k.1207145163717" id="796800879946376635">
-      <node role="reference" roleId="tp4k.1207145201301" type="tp4k.ActionInstance" typeId="tp4k.1203088046679" id="5307017976806355433">
-        <link role="action" roleId="tp4k.1203088061055" targetNodeId="5307017976806272107" resolveInfo="ShowStructure" />
-      </node>
-      <node role="reference" roleId="tp4k.1207145201301" type="tp4k.GroupAnchor" typeId="tp4k.1203680534665" id="796800879946376637">
-        <property name="name" nameId="tpck.1169194664001" value="overrideImplement" />
-      </node>
-      <node role="reference" roleId="tp4k.1207145201301" type="tp4k.Separator" typeId="tp4k.1204908117386" id="796800879946376639" />
-      <node role="reference" roleId="tp4k.1207145201301" type="tp4k.GroupAnchor" typeId="tp4k.1203680534665" id="796800879946376641">
-        <property name="name" nameId="tpck.1169194664001" value="comments" />
-      </node>
-      <node role="reference" roleId="tp4k.1207145201301" type="tp4k.Separator" typeId="tp4k.1204908117386" id="796800879946376643" />
-    </node>
-    <node role="modifier" roleId="tp4k.1204991552650" type="tp4k.ModificationStatement" typeId="tp4k.1203092361741" id="796800879946376629">
-      <link role="modifiedGroup" roleId="tp4k.1203092736097" targetNodeId="796800879946262664" resolveInfo="IDEACode" />
-    </node>
-  </root>
   <root id="3531023421907756759" />
   <root id="2010440180771532928">
     <node role="constructionParameter" roleId="tp4k.1227008813498" type="tp4k.ActionConstructionParameterDeclaration" typeId="tp4k.1227008846812" id="2010440180771533390">
@@ -31473,6 +31446,17 @@
       <property name="value" nameId="tpee.1070475926801" value="jetbrains.mps.ide.java.actions.ModelActions_ActionGroup" />
     </node>
     <node role="contents" roleId="tp4k.1207148993063" type="tp4k.ElementListContents" typeId="tp4k.1207145163717" id="4193578441192323618" />
+  </root>
+  <root id="5176948551392218544">
+    <node role="contents" roleId="tp4k.1207145245948" type="tp4k.ElementListContents" typeId="tp4k.1207145163717" id="5176948551392218548">
+      <node role="reference" roleId="tp4k.1207145201301" type="tp4k.ActionInstance" typeId="tp4k.1203088046679" id="5176948551392218549">
+        <link role="action" roleId="tp4k.1203088061055" targetNodeId="5307017976806272107" resolveInfo="ShowStructure" />
+      </node>
+    </node>
+    <node role="modifier" roleId="tp4k.1204991552650" type="tp4k.ModificationStatement" typeId="tp4k.1203092361741" id="5176948551392218550">
+      <link role="modifiedGroup" roleId="tp4k.1203092736097" targetNodeId="9oh.5176948551392218551" resolveInfo="Code" />
+      <link role="point" roleId="tp4k.1204992316090" targetNodeId="9oh.5176948551392218553" resolveInfo="structure" />
+    </node>
   </root>
 </model>
 

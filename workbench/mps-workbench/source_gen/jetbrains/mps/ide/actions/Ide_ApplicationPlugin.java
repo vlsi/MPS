@@ -113,7 +113,6 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     addGroup(new Analyze_ActionGroup());
     addGroup(new Bookmarks_ActionGroup());
     addGroup(new Build_ActionGroup());
-    addGroup(new Code_ActionGroup());
     addGroup(new CommonModuleActions_ActionGroup());
     addGroup(new CreateRootNode_ActionGroup());
     addGroup(new DebugActions_ActionGroup());
@@ -165,6 +164,7 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     addGroup(new SolutionActions_ActionGroup());
     addGroup(new SolutionNewActions_ActionGroup());
     addGroup(new SolutionRefactoring_ActionGroup());
+    addGroup(new StructureAdditions_ActionGroup());
     addGroup(new ToolsInternal_ActionGroup());
     addGroup(new Tools_ActionGroup());
     addGroup(new TransientModulesActions_ActionGroup());
@@ -234,9 +234,9 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     insertGroupIntoAnother(CommonModuleActions_ActionGroup.ID, LanguageActions_ActionGroup.ID, LanguageActions_ActionGroup.LABEL_ID_commonModule);
     insertGroupIntoAnother(CommonModuleActions_ActionGroup.ID, SolutionActions_ActionGroup.ID, SolutionActions_ActionGroup.LABEL_ID_commonModule);
     insertGroupIntoAnother(MessagesViewActions_ActionGroup.ID, "MPS.MessagesView", null);
+    insertGroupIntoAnother(StructureAdditions_ActionGroup.ID, "Code_ActionGroupstructure", null);
     insertGroupIntoAnother(PrintNodePosition_Addition_ActionGroup.ID, EditorInternal_ActionGroup.ID, null);
     insertGroupIntoAnother(Search_ActionGroup.ID, "FindMenuGroup", null);
-    insertGroupIntoAnother(Code_ActionGroup.ID, "CodeMenu", null);
     insertGroupIntoAnother(FavoritesPopupWrapper_ActionGroup.ID, Favorites_ActionGroup.ID, Favorites_ActionGroup.LABEL_ID_popup);
     insertGroupIntoAnother(Favorites_ActionGroup.ID, CommonModuleActions_ActionGroup.ID, CommonModuleActions_ActionGroup.LABEL_ID_favorites);
     insertGroupIntoAnother(Favorites_ActionGroup.ID, ModelActions_ActionGroup.ID, ModelActions_ActionGroup.LABEL_ID_favorites);

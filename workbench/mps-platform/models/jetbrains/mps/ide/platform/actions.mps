@@ -40,6 +40,15 @@
       <property name="mnemonic" nameId="tp4k.1205160812895" value="r" />
       <property name="isPluginXmlGroup" nameId="tp4k.6368583333374291912" value="true" />
     </node>
+    <node type="tp4k.InterfaceGroup" typeId="tp4k.1204383956737" id="5176948551392218541">
+      <property name="name" nameId="tpck.1169194664001" value="IDEACode" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="BootstrapGroups" />
+    </node>
+    <node type="tp4k.ActionGroupDeclaration" typeId="tp4k.1203087890642" id="5176948551392218551">
+      <property name="name" nameId="tpck.1169194664001" value="Code" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="MainMenu" />
+      <property name="isPluginXmlGroup" nameId="tp4k.6368583333374291912" value="true" />
+    </node>
   </roots>
   <root id="1784947186835625272">
     <node role="shortcutChange" roleId="tp4k.1562714432501166199" type="tp4k.SimpleShortcutChange" typeId="tp4k.1562714432501166198" id="7000507154716606423">
@@ -343,6 +352,9 @@
       <node role="actionGroups" roleId="tp4k.331224023792854818" type="tp4k.ActionGroupRef" typeId="tp4k.331224023792854815" id="8784230320738947466">
         <link role="group" roleId="tp4k.331224023792854816" targetNodeId="lfzw.8784230320738943351" resolveInfo="CoreNodeRefactorings" />
       </node>
+      <node role="actionGroups" roleId="tp4k.331224023792854818" type="tp4k.ActionGroupRef" typeId="tp4k.331224023792854815" id="5176948551392218560">
+        <link role="group" roleId="tp4k.331224023792854816" targetNodeId="5176948551392218551" resolveInfo="Code" />
+      </node>
       <node role="keymapsRef" roleId="tp4k.331224023792855168" type="tp4k.KeymapRef" typeId="tp4k.331224023792855166" id="5978963343236798403">
         <link role="keymap" roleId="tp4k.331224023792855167" targetNodeId="1784947186835625272" resolveInfo="Default" />
       </node>
@@ -353,6 +365,30 @@
   </root>
   <root id="6714826334259354054">
     <node role="contents" roleId="tp4k.1207145245948" type="tp4k.ElementListContents" typeId="tp4k.1207145163717" id="6714826334259354057" />
+  </root>
+  <root id="5176948551392218541">
+    <node role="groupID" roleId="tp4k.1206193920040" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="5176948551392218542">
+      <property name="value" nameId="tpee.1070475926801" value="CodeMenu" />
+    </node>
+    <node role="contents" roleId="tp4k.1207148993063" type="tp4k.ElementListContents" typeId="tp4k.1207145163717" id="5176948551392218543" />
+  </root>
+  <root id="5176948551392218551">
+    <node role="contents" roleId="tp4k.1207145245948" type="tp4k.ElementListContents" typeId="tp4k.1207145163717" id="5176948551392218552">
+      <node role="reference" roleId="tp4k.1207145201301" type="tp4k.GroupAnchor" typeId="tp4k.1203680534665" id="5176948551392218553">
+        <property name="name" nameId="tpck.1169194664001" value="structure" />
+      </node>
+      <node role="reference" roleId="tp4k.1207145201301" type="tp4k.GroupAnchor" typeId="tp4k.1203680534665" id="5176948551392218554">
+        <property name="name" nameId="tpck.1169194664001" value="overrideImplement" />
+      </node>
+      <node role="reference" roleId="tp4k.1207145201301" type="tp4k.Separator" typeId="tp4k.1204908117386" id="5176948551392218555" />
+      <node role="reference" roleId="tp4k.1207145201301" type="tp4k.GroupAnchor" typeId="tp4k.1203680534665" id="5176948551392218556">
+        <property name="name" nameId="tpck.1169194664001" value="comments" />
+      </node>
+      <node role="reference" roleId="tp4k.1207145201301" type="tp4k.Separator" typeId="tp4k.1204908117386" id="5176948551392218557" />
+    </node>
+    <node role="modifier" roleId="tp4k.1204991552650" type="tp4k.ModificationStatement" typeId="tp4k.1203092361741" id="5176948551392218558">
+      <link role="modifiedGroup" roleId="tp4k.1203092736097" targetNodeId="5176948551392218541" resolveInfo="IDEACode" />
+    </node>
   </root>
 </model>
 

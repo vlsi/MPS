@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="IconContainer.java" startLine="8" startPosition="0" endLine="12" endPosition="0" unitName="jetbrains.mps.baseLanguage.pluginSolution.plugin.IconContainer" />
-  <unitInfo fileName="PluginSolution_ApplicationPlugin.java" startLine="17" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.baseLanguage.pluginSolution.plugin.PluginSolution_ApplicationPlugin" />
+  <unitInfo fileName="PluginSolution_ApplicationPlugin.java" startLine="16" startPosition="0" endLine="86" endPosition="0" unitName="jetbrains.mps.baseLanguage.pluginSolution.plugin.PluginSolution_ApplicationPlugin" />
   <unitInfo fileName="PluginSolution_ProjectPlugin.java" startLine="14" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.baseLanguage.pluginSolution.plugin.PluginSolution_ProjectPlugin" />
   <root nodeId="4276680440171585979">
     <nodeInfo nodeId="4276680440171585979" fileName="GenerateGetters_Action.java" startLine="34" startPosition="56" endLine="35" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
@@ -12430,7 +12430,6 @@
       <varInfo nodeId="8794595397332155309" varName="duplicate" />
     </scopeInfo>
     <unitInfo nodeId="8794595397332155300" fileName="MethodDuplicatesProcessor.java" startLine="17" startPosition="43" endLine="16" endPosition="0" />
-    <unitInfo nodeId="8794595397332155286" fileName="MethodDuplicatesProcessor.java" startLine="16" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.baseLanguage.pluginSolution.plugin.MethodDuplicatesProcessor" />
   </root>
   <root nodeId="8794595397332155338">
     <nodeInfo nodeId="8794595397332155347" fileName="VariableDuplicatesProcessor.java" startLine="15" startPosition="86" endLine="16" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myOwner" />

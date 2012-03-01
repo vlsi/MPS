@@ -1278,7 +1278,6 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.pluginSolution.plugin.ShowNullDFA_Action" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.pluginSolution.plugin.ShowTodoViewer_Action" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.pluginSolution.plugin.UncommentStatements_Action" />
-    <classNode dependClassName="jetbrains.mps.ide.actions.Code_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.ide.actions.ModelActionsInternal_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.ide.actions.NodeActionsInternal_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.ide.actions.Tools_ActionGroup" />
