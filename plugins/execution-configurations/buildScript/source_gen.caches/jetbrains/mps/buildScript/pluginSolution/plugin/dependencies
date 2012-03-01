@@ -145,7 +145,6 @@
   <dependency className="jetbrains.mps.buildScript.pluginSolution.plugin.Extension_CanEditBaseDir_" file="Extension_CanEditBaseDir_.java">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.smodel.structure.Extension" />
     <classNode extendsClassName="jetbrains.mps.smodel.structure.Default" />
