@@ -98,6 +98,9 @@ public class ClassConcept_Behavior {
   }
 
   public static boolean virtual_isDescendant_checkLoops_7165541881557222950(SNode thisNode, SNode nodeToCompare, Set<SNode> visited) {
+    if (Classifier_Behavior.call_isSame_4855996797771684010(nodeToCompare, SNodeOperations.getNode("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Object"))) {
+      return true;
+    }
     if (SetSequence.fromSet(visited).contains(thisNode)) {
       LOG.error("circular hierarchy in class " + INamedConcept_Behavior.call_getFqName_1213877404258(thisNode));
       return false;
@@ -251,7 +254,7 @@ public class ClassConcept_Behavior {
     return result;
   }
 
-  public static List<SNode> virtual_getMembers_2201875424515824604(final SNode thisNode, final SNode kind) {
+  public static List<SNode> virtual_getMembers_2201875424515824604(final SNode thisNode, SNode kind) {
     if (SConceptOperations.isSubConceptOf(kind, "jetbrains.mps.baseLanguage.structure.ThisConstructorKind")) {
       return SLinkOperations.getTargets(thisNode, "constructor", true);
     }
@@ -275,7 +278,7 @@ public class ClassConcept_Behavior {
       // todo: ? strange... =( 
       return ListSequence.fromListWithValues(new ArrayList<SNode>(), ListSequence.fromList(Classifier_Behavior.call_getMembers_2201875424515824604(superClass, kindForSuper)).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
-          return ClassifierMember_Behavior.call_isVisible_8083692786967482069(it, Classifier_Behavior.call_getAccessLevelFor_8083692786967356648(SNodeOperations.getAncestor(it, "jetbrains.mps.baseLanguage.structure.Classifier", false, false), ListSequence.fromList(SNodeOperations.getChildren(thisNode)).getElement(0), kind));
+          return ClassifierMember_Behavior.call_isVisible_8083692786967482069(it, thisNode);
         }
       }));
     }

@@ -18,8 +18,6 @@ import jetbrains.mps.scope.Scope;
 import jetbrains.mps.baseLanguage.scopes.SimpleScope;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.baseLanguage.scopes.ClassAccessKind;
-import jetbrains.mps.baseLanguage.search.VisibilityUtil;
 import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
@@ -77,39 +75,12 @@ public class Classifier_Behavior {
     return (List<SNode>) ss.getNodes();
   }
 
-  public static Scope virtual_getVisibleMembers_8083692786967356611(SNode thisNode, final SNode contextNode, final SNode kind) {
-    // <node> 
+  public static Scope virtual_getVisibleMembers_8083692786967356611(SNode thisNode, final SNode contextNode, SNode kind) {
     return new SimpleScope(ListSequence.fromList(Classifier_Behavior.call_getMembers_2201875424515824604(thisNode, kind)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return ClassifierMember_Behavior.call_isVisible_8083692786967482069(it, Classifier_Behavior.call_getAccessLevelFor_8083692786967356648(SNodeOperations.getAncestor(it, "jetbrains.mps.baseLanguage.structure.Classifier", false, false), contextNode, kind));
+        return ClassifierMember_Behavior.call_isVisible_8083692786967482069(it, contextNode);
       }
     }));
-  }
-
-  public static int call_getAccessLevelFor_8083692786967356648(SNode thisNode, SNode contextNode, SNode kind) {
-    // todo: in naive version (with ints) not extensionable =( 
-    int result = ClassAccessKind.PUBLIC;
-
-    // todo: maybe just in case of existance classifier around contextNode? 
-    if (eq_qw8l7c_a0e0e(VisibilityUtil.packageName(contextNode), VisibilityUtil.packageName(thisNode))) {
-      result = result | ClassAccessKind.PACKAGE;
-    }
-
-    SNode outerClassifier = Classifier_Behavior.getContextClassifier_6172562527426750080(contextNode);
-    if (outerClassifier == thisNode || ListSequence.fromList(SNodeOperations.getAncestors(thisNode, null, false)).contains(outerClassifier)) {
-      return ClassAccessKind.CLASS;
-    }
-
-    while ((outerClassifier != null)) {
-      if (outerClassifier == thisNode) {
-        result = result | ClassAccessKind.CLASS;
-      } else if (Classifier_Behavior.call_isDescendant_7165541881557222913(outerClassifier, thisNode)) {
-        result = result | ClassAccessKind.SUBCLASS;
-      }
-      outerClassifier = Classifier_Behavior.getContextClassifier_6172562527426750080(outerClassifier);
-    }
-
-    return result;
   }
 
   public static String virtual_getFqName_1213877404258(SNode thisNode) {
@@ -148,12 +119,12 @@ public class Classifier_Behavior {
 
     // standard java logic: 
     // 1) collect all inherited classifier members and filter based on access level 
-    List<SNode> pretenders = new ArrayList<SNode>();
+    Set<SNode> pretenders = SetSequence.fromSet(new HashSet());
     for (SNode classifier : Classifier_Behavior.call_getExtendedClassifiers_2201875424516179426(thisNode)) {
       // todo: ? strange... =( 
-      ListSequence.fromList(pretenders).addSequence(ListSequence.fromList(Classifier_Behavior.call_getMembers_2201875424515824604(classifier, kind)).where(new IWhereFilter<SNode>() {
+      SetSequence.fromSet(pretenders).addSequence(ListSequence.fromList(Classifier_Behavior.call_getMembers_2201875424515824604(classifier, kind)).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
-          return ClassifierMember_Behavior.call_isVisible_8083692786967482069(it, Classifier_Behavior.call_getAccessLevelFor_8083692786967356648(SNodeOperations.getAncestor(it, "jetbrains.mps.baseLanguage.structure.Classifier", false, false), ListSequence.fromList(SNodeOperations.getChildren(thisNode)).getElement(0), kind));
+          return ClassifierMember_Behavior.call_isVisible_8083692786967482069(it, thisNode);
         }
       }));
     }
@@ -180,7 +151,7 @@ public class Classifier_Behavior {
     }));
 
     Map<Object, Integer> signatureToMembersCount = MapSequence.fromMap(new HashMap<Object, Integer>());
-    for (Object signature : ListSequence.fromList(pretenders).select(new ISelector<SNode, Object>() {
+    for (Object signature : SetSequence.fromSet(pretenders).select(new ISelector<SNode, Object>() {
       public Object select(SNode it) {
         return ClassifierMember_Behavior.call_getSignatureForOverriding_274804607996650333(it);
       }
@@ -332,7 +303,7 @@ public class Classifier_Behavior {
   }
 
   public static SNode call_getWithResolvedTypevars_3305065273710852527(SNode thisNode, SNode t, SNode ancestor, SNode method, SNode baseMethod) {
-    SNode coercedType = TypeChecker.getInstance().getRuntimeSupport().coerce_(Classifier_Behavior.call_getThisType_3305065273710880775(thisNode), new Classifier_Behavior.Pattern_qw8l7c_a1a0a0a42(ancestor), true);
+    SNode coercedType = TypeChecker.getInstance().getRuntimeSupport().coerce_(Classifier_Behavior.call_getThisType_3305065273710880775(thisNode), new Classifier_Behavior.Pattern_qw8l7c_a1a0a0a32(ancestor), true);
     if (SNodeOperations.isInstanceOf(t, "jetbrains.mps.baseLanguage.structure.TypeVariableReference")) {
       return Classifier_Behavior.call_getResolvedVar_3305065273710881245(thisNode, SNodeOperations.cast(t, "jetbrains.mps.baseLanguage.structure.TypeVariableReference"), ancestor, coercedType, method, baseMethod);
     } else {
@@ -551,33 +522,26 @@ public class Classifier_Behavior {
     return SNodeOperations.getAncestor(expr, "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
   }
 
-  private static boolean eq_qw8l7c_a0e0e(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
-  }
-
-  public static class Pattern_qw8l7c_a1a0a0a42 extends GeneratedMatchingPattern implements IMatchingPattern {
+  public static class Pattern_qw8l7c_a1a0a0a32 extends GeneratedMatchingPattern implements IMatchingPattern {
     /*package*/ List<SNode> patternVar_l;
     /*package*/ SNode patternVar_foo;
-    /*package*/ Object AntiquotationField_qw8l7c_a0a0a0a0a32;
+    /*package*/ Object AntiquotationField_qw8l7c_a0a0a0a0a22;
 
-    public Pattern_qw8l7c_a1a0a0a42(Object parameter_qw8l7c_a0a0a0a0a32) {
-      this.AntiquotationField_qw8l7c_a0a0a0a0a32 = parameter_qw8l7c_a0a0a0a0a32;
+    public Pattern_qw8l7c_a1a0a0a32(Object parameter_qw8l7c_a0a0a0a0a22) {
+      this.AntiquotationField_qw8l7c_a0a0a0a0a22 = parameter_qw8l7c_a0a0a0a0a22;
     }
 
     public boolean match(SNode nodeToMatch) {
       {
-        SNode nodeToMatch_Classifier_Behavior_qw8l7c_a0a0a0a32;
-        nodeToMatch_Classifier_Behavior_qw8l7c_a0a0a0a32 = nodeToMatch;
-        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_Classifier_Behavior_qw8l7c_a0a0a0a32.getConceptFqName()))) {
+        SNode nodeToMatch_Classifier_Behavior_qw8l7c_a0a0a0a22;
+        nodeToMatch_Classifier_Behavior_qw8l7c_a0a0a0a22 = nodeToMatch;
+        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_Classifier_Behavior_qw8l7c_a0a0a0a22.getConceptFqName()))) {
           return false;
         }
         {
           SNode referent;
-          referent = (SNode) this.AntiquotationField_qw8l7c_a0a0a0a0a32;
-          if (nodeToMatch_Classifier_Behavior_qw8l7c_a0a0a0a32.getReferent("classifier") != referent) {
+          referent = (SNode) this.AntiquotationField_qw8l7c_a0a0a0a0a22;
+          if (nodeToMatch_Classifier_Behavior_qw8l7c_a0a0a0a22.getReferent("classifier") != referent) {
             return false;
           }
         }
@@ -585,7 +549,7 @@ public class Classifier_Behavior {
           String childRole_Classifier_Behavior_qw8l7c_ = "parameter";
           this.patternVar_l = ListSequence.fromList(new ArrayList<SNode>());
           patternVar_foo = null;
-          for (SNode childVar : nodeToMatch_Classifier_Behavior_qw8l7c_a0a0a0a32.getChildren(childRole_Classifier_Behavior_qw8l7c_)) {
+          for (SNode childVar : nodeToMatch_Classifier_Behavior_qw8l7c_a0a0a0a22.getChildren(childRole_Classifier_Behavior_qw8l7c_)) {
             patternVar_foo = childVar;
             ListSequence.fromList(this.patternVar_l).addElement(childVar);
           }

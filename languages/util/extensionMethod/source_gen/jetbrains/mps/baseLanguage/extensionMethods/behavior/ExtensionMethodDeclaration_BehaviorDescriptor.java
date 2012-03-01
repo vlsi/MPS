@@ -19,8 +19,8 @@ public class ExtensionMethodDeclaration_BehaviorDescriptor extends BaseMethodDec
     return ClassifierMember_Behavior.virtual_getSignatureForOverriding_274804607996650333(thisNode);
   }
 
-  public boolean virtual_isVisible_8083692786967482069(SNode thisNode, int classAccessKind) {
-    return ClassifierMember_Behavior.virtual_isVisible_8083692786967482069(thisNode, classAccessKind);
+  public boolean virtual_isVisible_8083692786967482069(SNode thisNode, SNode contextNode) {
+    return ClassifierMember_Behavior.virtual_isVisible_8083692786967482069(thisNode, contextNode);
   }
 
   @Override

@@ -59,8 +59,8 @@ public class StaticFieldDeclaration_BehaviorDescriptor extends VariableDeclarati
     return IBLDeprecatable_Behavior.virtual_isDeprecated_1224609060727(thisNode);
   }
 
-  public boolean virtual_isVisible_8083692786967482069(SNode thisNode, int classAccessKind) {
-    return ClassifierMember_Behavior.virtual_isVisible_8083692786967482069(thisNode, classAccessKind);
+  public boolean virtual_isVisible_8083692786967482069(SNode thisNode, SNode contextNode) {
+    return ClassifierMember_Behavior.virtual_isVisible_8083692786967482069(thisNode, contextNode);
   }
 
   @Override

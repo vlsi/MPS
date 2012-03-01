@@ -24,8 +24,8 @@ public class Property_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor 
     return ClassifierMember_Behavior.virtual_isStatic_8986964027630462944(thisNode);
   }
 
-  public boolean virtual_isVisible_8083692786967482069(SNode thisNode, int classAccessKind) {
-    return ClassifierMember_Behavior.virtual_isVisible_8083692786967482069(thisNode, classAccessKind);
+  public boolean virtual_isVisible_8083692786967482069(SNode thisNode, SNode contextNode) {
+    return ClassifierMember_Behavior.virtual_isVisible_8083692786967482069(thisNode, contextNode);
   }
 
   public String virtual_getFqName_1213877404258(SNode thisNode) {

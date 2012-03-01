@@ -27,8 +27,8 @@ public class ControlAbstractionDeclaration_BehaviorDescriptor extends GenericDec
     return HasAnnotation_Behavior.virtual_getChildrenToDisplayIntention_4025276038182319200(thisNode);
   }
 
-  public boolean virtual_isVisible_8083692786967482069(SNode thisNode, int classAccessKind) {
-    return ClassifierMember_Behavior.virtual_isVisible_8083692786967482069(thisNode, classAccessKind);
+  public boolean virtual_isVisible_8083692786967482069(SNode thisNode, SNode contextNode) {
+    return ClassifierMember_Behavior.virtual_isVisible_8083692786967482069(thisNode, contextNode);
   }
 
   public boolean virtual_canBeAnnotated_1233076312117(SNode thisNode) {
