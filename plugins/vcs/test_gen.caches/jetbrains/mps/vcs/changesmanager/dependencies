@@ -77,7 +77,7 @@
     <classNode dependClassName="jetbrains.mps.vcs.changesmanager.CurrentDifference" />
     <classNode dependClassName="jetbrains.mps.vcs.changesmanager.CurrentDifferenceRegistry" />
     <classNode dependClassName="jetbrains.mps.vcs.changesmanager.DummyFileEditor" />
-    <classNode dependClassName="jetbrains.mps.vcs.changesmanager.roots.NodeFileStatusMapping" />
+    <classNode dependClassName="jetbrains.mps.vcs.changesmanager.NodeFileStatusMapping" />
     <classNode dependClassName="jetbrains.mps.vcs.concrete.GitUtils" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.ChangeSet" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.ChangeSetBuilder" />

@@ -36,7 +36,6 @@ import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelFqName;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.vcs.changesmanager.roots.NodeFileStatusMapping;
 import java.util.List;
 import java.util.Arrays;
 import jetbrains.mps.smodel.ModelAccess;
