@@ -33,6 +33,14 @@
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode extendsClassName="jetbrains.mps.buildScript.util.Context" />
   </dependency>
+  <dependency className="jetbrains.mps.buildScript.tests.TestRelativePathHelper" file="TestRelativePathHelper.java">
+    <classNode dependClassName="java.io.File" />
+    <classNode dependClassName="java.io.IOException" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.buildScript.util.RelativePathHelper" />
+    <classNode dependClassName="org.junit.Assert" />
+    <classNode dependClassName="org.junit.Test" />
+  </dependency>
   <dependency className="jetbrains.mps.buildScript.tests.TestTemporalPaths_Test" file="TestTemporalPaths_Test.java">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Throwable" />

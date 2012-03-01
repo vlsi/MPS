@@ -78,7 +78,7 @@ public class Context {
   }
 
   public String getTmpPath_WithMacro(SNode node) {
-    return "${build.dir}/tmp/" + SPropertyOperations.getString(getBuildProject(node), "name") + ".tmp";
+    return "${build.dir}/tmp/" + SPropertyOperations.getString(getBuildProject(node), "name");
   }
 
   public String getDeployDirMacroName(SNode node) {
@@ -86,11 +86,11 @@ public class Context {
   }
 
   public String getDeployPath_WithMacro(SNode node) {
-    return "${build.dir}/artifacts/" + SPropertyOperations.getString(getBuildProject(node), "name") + ".artifacts";
+    return "${build.dir}/artifacts/" + SPropertyOperations.getString(getBuildProject(node), "name");
   }
 
   public String getVariablesDeployPath(SNode node) {
-    return getDeployPath_WithMacro(node) + "/" + getBuildProjectName(node) + ".variables.properties";
+    return getDeployPath_WithMacro(node) + "/variables.properties";
   }
 
   public List<SNode> getExportedMacro(SNode node) {

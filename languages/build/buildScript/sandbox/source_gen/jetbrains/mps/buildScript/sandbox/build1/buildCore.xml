@@ -4,8 +4,8 @@
   <property name="mps_home" location="${basedir}/../../../.." />
   <property name="build_langs" location="${mps_home}/languages/build" />
   <property name="MPS" value="MPS-${build.number}" />
-  <property name="buildCore.tmp" location="${build.dir}/tmp/buildCore.tmp" />
-  <property name="buildCore.deploy.dir" location="${build.dir}/artifacts/buildCore.artifacts" />
+  <property name="buildCore.tmp" location="${build.dir}/tmp/buildCore" />
+  <property name="buildCore.deploy.dir" location="${build.dir}/artifacts/buildCore" />
   
   <path id="path.java.library.apache-collections">
     <fileset file="${build_langs}/build.jar" />
@@ -51,7 +51,7 @@
       <fileset dir="${build.dir}/tmp/java.out.mps-core" />
       <fileset dir="${buildCore.tmp}/mps-core${ver}.jar" />
     </jar>
-    <echo file="${build.dir}/artifacts/buildCore.artifacts/buildCore.variables.properties">buildCore.build.number=${build.number}
+    <echo file="${build.dir}/artifacts/buildCore/variables.properties">buildCore.build.number=${build.number}
         buildCore.ver=${ver}
         buildCore.MPS=${MPS}
            </echo>
