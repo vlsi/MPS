@@ -14,15 +14,8 @@ public class GenerateActions_ActionGroup extends GeneratedActionGroup {
     this.setIsInternal(false);
     this.setPopup(false);
     try {
-      GenerateActions_ActionGroup.this.addAction("jetbrains.mps.baseLanguage.pluginSolution.plugin.GenerateConstructor_Action");
-      GenerateActions_ActionGroup.this.addAction("jetbrains.mps.baseLanguage.pluginSolution.plugin.GenerateGetters_Action");
-      GenerateActions_ActionGroup.this.addAction("jetbrains.mps.baseLanguage.pluginSolution.plugin.GenerateSetters_Action");
-      GenerateActions_ActionGroup.this.addAction("jetbrains.mps.baseLanguage.pluginSolution.plugin.GenerateGettersAndSetters_Action");
-      GenerateActions_ActionGroup.this.addAction("jetbrains.mps.baseLanguage.pluginSolution.plugin.GenerateEqualsAndHashCode_Action");
       GenerateActions_ActionGroup.this.addAction("jetbrains.mps.baseLanguage.pluginSolution.plugin.OverrideMethod_Action");
       GenerateActions_ActionGroup.this.addAction("jetbrains.mps.baseLanguage.pluginSolution.plugin.ImplementMethod_Action");
-      GenerateActions_ActionGroup.this.addAction("jetbrains.mps.baseLanguage.pluginSolution.plugin.GenerateMainMethod_Action");
-      GenerateActions_ActionGroup.this.addAction("jetbrains.mps.baseLanguage.pluginSolution.plugin.GenerateToString_Action");
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }

@@ -3,6 +3,13 @@
     <action id="jetbrains.mps.ide.java.actions.ConvertAnonymousClass_Action" class="jetbrains.mps.ide.java.actions.ConvertAnonymousClass_Action">
       <keyboard-shortcut first-keystroke=" F6" keymap="$default"/>
     </action>
+    <action id="jetbrains.mps.ide.java.actions.GenerateConstructor_Action" class="jetbrains.mps.ide.java.actions.GenerateConstructor_Action"/>
+    <action id="jetbrains.mps.ide.java.actions.GenerateEqualsAndHashCode_Action" class="jetbrains.mps.ide.java.actions.GenerateEqualsAndHashCode_Action"/>
+    <action id="jetbrains.mps.ide.java.actions.GenerateGettersAndSetters_Action" class="jetbrains.mps.ide.java.actions.GenerateGettersAndSetters_Action"/>
+    <action id="jetbrains.mps.ide.java.actions.GenerateGetters_Action" class="jetbrains.mps.ide.java.actions.GenerateGetters_Action"/>
+    <action id="jetbrains.mps.ide.java.actions.GenerateMainMethod_Action" class="jetbrains.mps.ide.java.actions.GenerateMainMethod_Action"/>
+    <action id="jetbrains.mps.ide.java.actions.GenerateSetters_Action" class="jetbrains.mps.ide.java.actions.GenerateSetters_Action"/>
+    <action id="jetbrains.mps.ide.java.actions.GenerateToString_Action" class="jetbrains.mps.ide.java.actions.GenerateToString_Action"/>
     <action id="jetbrains.mps.ide.java.actions.GetModelContentsFromSource_Action" class="jetbrains.mps.ide.java.actions.GetModelContentsFromSource_Action"/>
     <action id="jetbrains.mps.ide.java.actions.GetModuleContentsFromSource_Action" class="jetbrains.mps.ide.java.actions.GetModuleContentsFromSource_Action"/>
     <action id="jetbrains.mps.ide.java.actions.MakeFieldFinal_Action" class="jetbrains.mps.ide.java.actions.MakeFieldFinal_Action"/>
@@ -43,6 +50,15 @@
       <reference ref="jetbrains.mps.ide.java.actions.PasteAsJavaStatements_Action"/>
       <reference ref="jetbrains.mps.ide.java.actions.PasteAsJavaMethods_Action"/>
       <add-to-group group-id="EditorPopup_ActionGrouppaste" anchor="last"/>
+    </group>
+    <group id="jetbrains.mps.ide.java.actions.GenerateActions_ActionGroup">
+      <reference ref="jetbrains.mps.ide.java.actions.GenerateConstructor_Action"/>
+      <reference ref="jetbrains.mps.ide.java.actions.GenerateGetters_Action"/>
+      <reference ref="jetbrains.mps.ide.java.actions.GenerateSetters_Action"/>
+      <reference ref="jetbrains.mps.ide.java.actions.GenerateGettersAndSetters_Action"/>
+      <reference ref="jetbrains.mps.ide.java.actions.GenerateEqualsAndHashCode_Action"/>
+      <reference ref="jetbrains.mps.ide.java.actions.GenerateMainMethod_Action"/>
+      <reference ref="jetbrains.mps.ide.java.actions.GenerateToString_Action"/>
     </group>
   </actions>
 </components>
