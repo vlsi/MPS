@@ -27,12 +27,17 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 import jetbrains.mps.make.script.IScriptController;
 import java.util.concurrent.ExecutionException;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
+import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
+import jetbrains.mps.smodel.resources.ModelsToResources;
+import jetbrains.mps.generator.GenerationFacade;
+import jetbrains.mps.make.resources.IResource;
 import jetbrains.mps.generator.IModifiableGenerationSettings;
 import jetbrains.mps.generator.GenerationSettingsProvider;
 import jetbrains.mps.generator.GenerationOptions;
 import jetbrains.mps.make.script.IPropertiesPool;
 import jetbrains.mps.make.facet.ITarget;
-import jetbrains.mps.make.resources.IResource;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.progress.ProgressMonitor;
@@ -122,6 +127,25 @@ public class ReducedGenerationWorker extends GeneratorWorker {
   @Override
   protected void showStatistic() {
     // do nothing 
+  }
+
+  @Override
+  protected Iterable<IMResource> collectResources(IOperationContext context, final MpsWorker.ObjectsToProcess go) {
+    final Wrappers._T<Iterable<SModelDescriptor>> models = new Wrappers._T<Iterable<SModelDescriptor>>(null);
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        models.value = Sequence.fromIterable(models.value).concat(SetSequence.fromSet(go.getModels()));
+      }
+    });
+    return Sequence.fromIterable(new ModelsToResources(context, Sequence.fromIterable(models.value).where(new IWhereFilter<SModelDescriptor>() {
+      public boolean accept(SModelDescriptor smd) {
+        return GenerationFacade.canGenerate(smd);
+      }
+    })).resources(false)).select(new ISelector<IResource, IMResource>() {
+      public IMResource select(IResource r) {
+        return (IMResource) r;
+      }
+    });
   }
 
   private IScriptController configureFacets(final Map<String, String> fileHashes, final List<String> writtenFiles, final List<String> deletedFiles) {

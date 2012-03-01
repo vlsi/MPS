@@ -27,6 +27,10 @@ import jetbrains.mps.idea.core.facet.MPSFacetConfiguration;
 import jetbrains.mps.idea.core.make.MPSCompiler2;
 import jetbrains.mps.idea.core.make.MPSCompilerPaths;
 import jetbrains.mps.vfs.IFile;
+import org.junit.ClassRule;
+import org.junit.rules.TestRule;
+import org.junit.runner.Description;
+import org.junit.runners.model.Statement;
 
 import java.io.File;
 
@@ -39,8 +43,6 @@ import java.io.File;
  */
 public class ComplicatedMakeTests extends AbstractMakeTest {
 
-  private static boolean secondPass = false;
-
   @Override
   protected void prepareTestData(MPSFacetConfiguration configuration) throws Exception {
     Module module = configuration.getFacet().getModule();
@@ -48,18 +50,17 @@ public class ComplicatedMakeTests extends AbstractMakeTest {
     copyResource(moduleFileName, "makeTests.iml", "/tests/makeTests/makeTests.iml");
     final IFile codeModel = copyResource("models", "code.mps", "code.mps", "/tests/makeTests/models/code.mps");
     final IFile dataModel = copyResource("models", "data.mps", "data.mps", "/tests/makeTests/models/data.mps");
+    final IFile code2Model = copyResource("models", "code2.mps", "code2.mps", "/tests/makeTests/models/code2.mps");
+    final IFile data2Model = copyResource("models", "data2.mps", "data2.mps", "/tests/makeTests/models/data2.mps");
 
-    if (secondPass) {
-      final IFile caches = copyResource("", "caches.zip", "caches.zip", "/tests/makeTests/caches.zip");
-      String cachesOutputPath = MPSCompilerPaths.getCachesOutputPath(new MPSCompiler2(module.getProject()), module, false);
-      ZipUtil.extract(new File(caches.getPath()), new File(cachesOutputPath), null);
-      new File(cachesOutputPath, "code/generated").setLastModified(codeModel.lastModified()-1L);
-      new File(cachesOutputPath, "data/generated").setLastModified(dataModel.lastModified()-1L);
-    }
+    final IFile caches = copyResource("", "caches.zip", "caches.zip", "/tests/makeTests/caches.zip");
+    String cachesOutputPath = MPSCompilerPaths.getCachesOutputPath(new MPSCompiler2(module.getProject()), module, false);
+    ZipUtil.extract(new File(caches.getPath()), new File(cachesOutputPath), null);
+    new File(cachesOutputPath, "code/generated").setLastModified(codeModel.lastModified());
+    new File(cachesOutputPath, "data/generated").setLastModified(dataModel.lastModified());
 
     configuration.getState().setModelRootPaths(codeModel.getParent().getPath());
     prepareTestData(configuration, codeModel.getParent());
-    secondPass=true;
   }
 
   public void testGeneratingMultiModels() throws Exception {
@@ -70,9 +71,11 @@ public class ComplicatedMakeTests extends AbstractMakeTest {
     assertTrue(srs.length == 2);
     VirtualFile models = srs[0];
     assertEquals("models", models.getName());
-    assertTrue(models.getChildren().length == 2);
+    assertTrue(models.getChildren().length == 4);
     assertExists(models, "code.mps");
     assertExists(models, "data.mps");
+    assertExists(models, "code2.mps");
+    assertExists(models, "data2.mps");
 
     final VirtualFile moduleDir = models.getParent();
     assertTrue(moduleDir.findChild("src") == null);
@@ -86,57 +89,19 @@ public class ComplicatedMakeTests extends AbstractMakeTest {
     VirtualFile outputDir = moduleDir.findChild("src");
     assertNotNull("Not found output dir", outputDir);
     assertExists(outputDir, "code");
-    assertExists(outputDir, "code/Test.java");
-    assertExists(outputDir, "code/trace.info");
-    assertTrue(outputDir.findFileByRelativePath("code").getChildren().length == 2);
-
-    assertExists(models, "Manifest.java");
-    assertExists(models, "trace.info");
-    assertTrue(models.getChildren().length == 4);
-
-    getVFS().refresh(false);
-    assertNotExists(moduleDir, "source_gen");
-
-    VirtualFile cachesOutputDir = getVFS().findFileByPath(MPSCompilerPaths.getCachesOutputPath(mpscs[0], myFacet.getModule(), false));
-    assertExists(cachesOutputDir, "code");
-    assertExists(cachesOutputDir, "code/dependencies");
-    assertExists(cachesOutputDir, "code/generated");
-    assertExists(cachesOutputDir, "data/dependencies");
-    assertExists(cachesOutputDir, "data/generated");
-
-  }
-
-  public void testGeneratingMultiModels2nd() throws Exception {
-    CompilerManagerImpl.testSetup();
-
-    ModuleRootManager mrm = ModuleRootManager.getInstance(myFacet.getModule());
-    VirtualFile[] srs = mrm.getSourceRoots();
-    assertTrue(srs.length == 2);
-    VirtualFile models = srs[0];
-    assertEquals("models", models.getName());
-    assertTrue(models.getChildren().length == 2);
-    assertExists(models, "code.mps");
-    assertExists(models, "data.mps");
-
-    final VirtualFile moduleDir = models.getParent();
-    assertTrue(moduleDir.findChild("src") == null);
-
-    CompilerManager cm = CompilerManager.getInstance(myFacet.getModule().getProject());
-    assertCompiles(cm);
-
-    MPSCompiler2[] mpscs = cm.getCompilers(MPSCompiler2.class);
-    assertSame(1, mpscs.length);
-
-    VirtualFile outputDir = moduleDir.findChild("src");
-    assertNotNull("Not found output dir", outputDir);
-    assertExists(outputDir, "code");
     assertNotExists(outputDir, "code/Test.java");
     assertExists(outputDir, "code/trace.info");
-    assertChildrenCount(outputDir, "code", 1);
+    assertTrue(outputDir.findFileByRelativePath("code").getChildren().length == 1);
+
+    assertExists(outputDir, "code2");
+    assertExists(outputDir, "code2/Test2.java");
+    assertExists(outputDir, "code2/trace.info");
+    assertChildrenCount(outputDir, "code2", 2);
 
     assertNotExists(models, "Manifest.java");
+    assertExists(models, "Manifest2.java");
     assertExists(models, "trace.info");
-    assertTrue(models.getChildren().length == 3);
+    assertTrue(models.getChildren().length == 6);
 
     getVFS().refresh(false);
     assertNotExists(moduleDir, "source_gen");
@@ -149,4 +114,5 @@ public class ComplicatedMakeTests extends AbstractMakeTest {
     assertExists(cachesOutputDir, "data/generated");
 
   }
+
 }
