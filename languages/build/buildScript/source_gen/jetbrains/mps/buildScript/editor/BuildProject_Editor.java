@@ -33,6 +33,9 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperati
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import javax.swing.JComponent;
 import jetbrains.mps.ide.editor.util.EditorUtil;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.util.Computable;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
@@ -479,7 +482,23 @@ public class BuildProject_Editor extends DefaultNodeEditor {
   }
 
   private static JComponent _QueryFunction_JComponent_vny568_a2a0(final SNode node, final EditorContext editorContext) {
-    return EditorUtil.createSelectButton(node, "internalBaseDirectory", editorContext, false, Context.defaultContext().shrinkPath(node), Context.defaultContext().expandPath(node));
+    return EditorUtil.createSelectButton(node, "internalBaseDirectory", editorContext, false, new _FunctionTypes._return_P1_E0<String, String>() {
+      public String invoke(final String path) {
+        return ModelAccess.instance().runReadAction(new Computable<String>() {
+          public String compute() {
+            return Context.defaultContext().shrinkPath(SNodeOperations.getModel(node), path);
+          }
+        });
+      }
+    }, new _FunctionTypes._return_P1_E0<String, String>() {
+      public String invoke(final String path) {
+        return ModelAccess.instance().runReadAction(new Computable<String>() {
+          public String compute() {
+            return Context.defaultContext().expandPath(SNodeOperations.getModel(node), path);
+          }
+        });
+      }
+    });
   }
 
   private static class pluginsListHandler_vny568_f0 extends RefNodeListHandler {
