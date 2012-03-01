@@ -1210,15 +1210,15 @@
       <property name="name" nameId="tpck.1169194664001" value="RefactoringActions" />
     </node>
     <node type="tp4k.InterfaceGroup" typeId="tp4k.1204383956737" id="4193578441192323610">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="Menu.ProjectPane.Module.JavaBootstrap" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Menu.ProjectPane.JavaBootstrap" />
       <property name="name" nameId="tpck.1169194664001" value="JavaSolutionActions" />
     </node>
     <node type="tp4k.InterfaceGroup" typeId="tp4k.1204383956737" id="4193578441192323613">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="Menu.ProjectPane.Module.JavaBootstrap" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Menu.ProjectPane.JavaBootstrap" />
       <property name="name" nameId="tpck.1169194664001" value="JavaNewModelActions" />
     </node>
     <node type="tp4k.InterfaceGroup" typeId="tp4k.1204383956737" id="4193578441192323616">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="Menu.ProjectPane.Module.JavaBootstrap" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Menu.ProjectPane.JavaBootstrap" />
       <property name="name" nameId="tpck.1169194664001" value="JavaModelActions" />
     </node>
   </roots>
@@ -31460,7 +31460,7 @@
       <link role="point" roleId="tp4k.1204992316090" targetNodeId="1366781238034273719" resolveInfo="newModel" />
     </node>
     <node role="groupID" roleId="tp4k.1206193920040" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="4193578441192340649">
-      <property name="value" nameId="tpee.1070475926801" value="jetbrains.mps.ide.java.actions.ModelNewActions_ActionGroup" />
+      <property name="value" nameId="tpee.1070475926801" value="jetbrains.mps.ide.java.workbench.actions.ModelNewActions_ActionGroup" />
     </node>
     <node role="contents" roleId="tp4k.1207148993063" type="tp4k.ElementListContents" typeId="tp4k.1207145163717" id="4193578441192323615" />
   </root>

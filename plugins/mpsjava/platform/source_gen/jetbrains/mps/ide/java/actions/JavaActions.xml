@@ -14,7 +14,6 @@
     <action id="jetbrains.mps.ide.java.actions.MoveStaticMethod_Action" class="jetbrains.mps.ide.java.actions.MoveStaticMethod_Action">
       <keyboard-shortcut first-keystroke=" F6" keymap="$default"/>
     </action>
-    <action id="jetbrains.mps.ide.java.actions.NewModelFromSource_Action" class="jetbrains.mps.ide.java.actions.NewModelFromSource_Action"/>
     <action id="jetbrains.mps.ide.java.actions.PasteAsJavaClass_Action" class="jetbrains.mps.ide.java.actions.PasteAsJavaClass_Action"/>
     <action id="jetbrains.mps.ide.java.actions.PasteAsJavaMethods_Action" class="jetbrains.mps.ide.java.actions.PasteAsJavaMethods_Action"/>
     <action id="jetbrains.mps.ide.java.actions.PasteAsJavaStatements_Action" class="jetbrains.mps.ide.java.actions.PasteAsJavaStatements_Action"/>
@@ -25,9 +24,6 @@
     <group id="jetbrains.mps.ide.java.actions.SolutionActionsEx_ActionGroup">
       <reference ref="jetbrains.mps.ide.java.actions.GetModuleContentsFromSource_Action"/>
       <reference ref="jetbrains.mps.ide.java.actions.MigrateSourcesToMPS_Action"/>
-    </group>
-    <group id="jetbrains.mps.ide.java.actions.ModelNewActions_ActionGroup">
-      <reference ref="jetbrains.mps.ide.java.actions.NewModelFromSource_Action"/>
     </group>
     <group id="jetbrains.mps.ide.java.actions.RefactoringAdditions_ActionGroup">
       <reference ref="jetbrains.mps.ide.java.actions.ConvertAnonymousClass_Action"/>
