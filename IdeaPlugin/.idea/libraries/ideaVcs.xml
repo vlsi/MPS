@@ -1,12 +1,12 @@
 <component name="libraryTable">
   <library name="ideaVcs">
     <CLASSES>
-      <root url="file://$IDEA_PLUGINS_FOLDER$/git4idea/lib" />
-      <root url="file://$IDEA_PLUGINS_FOLDER$/svn4ideaOld/lib" />
+      <root url="file://$APPLICATION_HOME_DIR$/plugins/git4idea/lib" />
+      <root url="file://$APPLICATION_HOME_DIR$/plugins/svn4ideaOld/lib" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />
-    <jarDirectory url="file://$IDEA_PLUGINS_FOLDER$/git4idea/lib" recursive="false" />
-    <jarDirectory url="file://$IDEA_PLUGINS_FOLDER$/svn4ideaOld/lib" recursive="false" />
+    <jarDirectory url="file://$APPLICATION_HOME_DIR$/plugins/git4idea/lib" recursive="false" />
+    <jarDirectory url="file://$APPLICATION_HOME_DIR$/plugins/svn4ideaOld/lib" recursive="false" />
   </library>
 </component>
