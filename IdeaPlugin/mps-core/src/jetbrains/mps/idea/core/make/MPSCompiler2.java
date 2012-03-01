@@ -56,7 +56,7 @@ import java.util.regex.Pattern;
  */
 public class MPSCompiler2 implements SourceGeneratingCompiler {
 
-  public static final Pattern TRANS_MODEL = Pattern.compile("\\[(\\d+)\\].*\\s([a-zA-Z_][a-zA-Z_0-9]*)@(\\d+_\\d+)");
+  public static final Pattern TRANS_MODEL = Pattern.compile("\\[(\\d+)\\].*\\s([a-zA-Z_][a-zA-Z_0-9.]*)@(\\d+_\\d+)");
   private Project myProject;
 
   public MPSCompiler2(Project project) {
