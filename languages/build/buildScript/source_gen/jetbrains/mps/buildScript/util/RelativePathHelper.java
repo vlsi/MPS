@@ -41,6 +41,10 @@ public class RelativePathHelper {
     }
   }
 
+  public String getBasePath() {
+    return myBasePath;
+  }
+
   public static class PathException extends Exception {
     public PathException(Throwable cause, String message) {
       super(message, cause);

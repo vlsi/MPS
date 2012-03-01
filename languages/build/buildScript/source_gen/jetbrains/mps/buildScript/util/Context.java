@@ -19,11 +19,7 @@ import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.buildScript.behavior.BuildSourcePath_Behavior;
-import jetbrains.mps.vfs.IFile;
-import org.apache.commons.lang.StringUtils;
-import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.util.MacrosFactory;
+import jetbrains.mps.smodel.SModelDescriptor;
 import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -126,43 +122,24 @@ public class Context {
     });
   }
 
-  public String getDefaultBasePath(SModel model) {
-    IFile descriptorFile = this.getModule(model).getDescriptorFile();
-    assert descriptorFile != null : "Context " + this + " returned module " + this.getModule(model) + " for node " + model + " with null descriptor.";
-    return descriptorFile.getParent().getPath();
+  public RelativePathHelper getRelativePathHelper(SModel model) {
+    if (model.isTransient() && myGenerationContext != null) {
+      model = myGenerationContext.getOriginalInputModel();
+    }
+    SModelDescriptor modelDescriptor = model.getModelDescriptor();
+    if (model.isTransient() || modelDescriptor == null) {
+      return null;
+    }
+    IModule module = modelDescriptor.getModule();
+    if (module == null || module.getDescriptorFile() == null) {
+      return null;
+    }
+    String basePath = module.getDescriptorFile().getParent().getPath();
+    return new RelativePathHelper(basePath);
   }
 
-  public String shrinkPath(final SModel model, String fullPath) {
-    if (StringUtils.isEmpty(fullPath)) {
-      return "";
-    }
-    final Wrappers._T<IModule> module = new Wrappers._T<IModule>();
-    ModelAccess.instance().runReadAction(new Runnable() {
-      public void run() {
-        module.value = getModule(model);
-      }
-    });
-    return MacrosFactory.moduleDescriptor(module.value).shrinkPath(fullPath, module.value.getDescriptorFile()).replace("\\", "/");
-  }
-
-  public String expandPath(final SModel model, String shortPath) {
-    if (shortPath == null) {
-      shortPath = "";
-    }
-    final Wrappers._T<IModule> module = new Wrappers._T<IModule>();
-    ModelAccess.instance().runReadAction(new Runnable() {
-      public void run() {
-        module.value = getModule(model);
-      }
-    });
-    if (!(shortPath.startsWith("${"))) {
-      // path is probably relative to solution 
-      if (shortPath.startsWith("/")) {
-        shortPath = shortPath.substring(1);
-      }
-      return module.value.getDescriptorFile().getParent().getDescendant(shortPath).getPath();
-    }
-    return MacrosFactory.moduleDescriptor(module.value).expandPath(shortPath, module.value.getDescriptorFile()).replace("\\", "/");
+  public TemplateQueryContext getGenerationContext() {
+    return myGenerationContext;
   }
 
   @NotNull
