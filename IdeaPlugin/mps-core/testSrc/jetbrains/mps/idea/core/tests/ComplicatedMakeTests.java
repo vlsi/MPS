@@ -52,13 +52,6 @@ public class ComplicatedMakeTests extends AbstractMakeTest {
     final IFile dataModel = copyResource("models", "data.mps", "data.mps", "/tests/makeTests/models/data.mps");
     final IFile code2Model = copyResource("models", "code2.mps", "code2.mps", "/tests/makeTests/models/code2.mps");
     final IFile data2Model = copyResource("models", "data2.mps", "data2.mps", "/tests/makeTests/models/data2.mps");
-
-    final IFile caches = copyResource("", "caches.zip", "caches.zip", "/tests/makeTests/caches.zip");
-    String cachesOutputPath = MPSCompilerPaths.getCachesOutputPath(new MPSCompiler2(module.getProject()), module, false);
-    ZipUtil.extract(new File(caches.getPath()), new File(cachesOutputPath), null);
-    new File(cachesOutputPath, "code/generated").setLastModified(codeModel.lastModified());
-    new File(cachesOutputPath, "data/generated").setLastModified(dataModel.lastModified());
-
     configuration.getState().setModelRootPaths(codeModel.getParent().getPath());
     prepareTestData(configuration, codeModel.getParent());
   }
@@ -88,15 +81,36 @@ public class ComplicatedMakeTests extends AbstractMakeTest {
 
     VirtualFile outputDir = moduleDir.findChild("src");
     assertNotNull("Not found output dir", outputDir);
-    assertExists(outputDir, "code");
-    assertNotExists(outputDir, "code/Test.java");
+    assertExists(outputDir, "code/Test.java");
     assertExists(outputDir, "code/trace.info");
-    assertTrue(outputDir.findFileByRelativePath("code").getChildren().length == 1);
+    assertChildrenCount(outputDir, "code", 2);
 
     assertExists(outputDir, "code2");
     assertExists(outputDir, "code2/Test2.java");
     assertExists(outputDir, "code2/trace.info");
     assertChildrenCount(outputDir, "code2", 2);
+
+    assertExists(models, "Manifest.java");
+    assertExists(models, "Manifest2.java");
+    assertExists(models, "trace.info");
+    assertTrue(models.getChildren().length == 7);
+
+    String cachesOutputPath = MPSCompilerPaths.getCachesOutputPath(mpscs[0], myFacet.getModule(), false);
+    new File(cachesOutputPath, "code2/generated").delete();
+    new File(cachesOutputPath, "data2/generated").delete();
+
+    new File(outputDir.findFileByRelativePath("code/Test.java").getPath()).delete();
+    new File(models.findFileByRelativePath("Manifest.java").getPath()).delete();
+
+    getVFS().refresh(false);
+
+    // second compilation
+    assertCompiles(cm, 1, 0);
+
+    assertExists(outputDir, "code");
+    assertNotExists(outputDir, "code/Test.java");
+    assertExists(outputDir, "code/trace.info");
+    assertTrue(outputDir.findFileByRelativePath("code").getChildren().length == 1);
 
     assertNotExists(models, "Manifest.java");
     assertExists(models, "Manifest2.java");
@@ -112,7 +126,6 @@ public class ComplicatedMakeTests extends AbstractMakeTest {
     assertExists(cachesOutputDir, "code/generated");
     assertExists(cachesOutputDir, "data/dependencies");
     assertExists(cachesOutputDir, "data/generated");
-
   }
 
 }
