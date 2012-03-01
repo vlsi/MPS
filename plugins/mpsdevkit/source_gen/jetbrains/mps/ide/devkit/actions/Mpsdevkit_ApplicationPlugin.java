@@ -61,6 +61,7 @@ public class Mpsdevkit_ApplicationPlugin extends BaseApplicationPlugin {
     addAction(new ShowModelRepository_Action());
     addAction(new ShowModuleRepository_Action());
     addAction(new ShowNodeInExplorer_Action());
+    addAction(new ShowStructure_Action());
     addAction(new ShowTypeSystemTraceIncremental_Action());
     addAction(new ShowTypeSystemTrace_Action());
     addAction(new TestNodePath_Action());
@@ -83,6 +84,7 @@ public class Mpsdevkit_ApplicationPlugin extends BaseApplicationPlugin {
     addGroup(new ProjectNewActionsEx_ActionGroup());
     addGroup(new RepositoryToolsGroup_ActionGroup());
     addGroup(new ShowNodeIn_ActionGroup());
+    addGroup(new StructureAdditions_ActionGroup());
     addGroup(new TraceActions_ActionGroup());
   }
 
@@ -90,6 +92,7 @@ public class Mpsdevkit_ApplicationPlugin extends BaseApplicationPlugin {
     insertGroupIntoAnother(GenerateEditorPopup_ActionGroup.ID, "EditorPopup_ActionGroupgoto", null);
     insertGroupIntoAnother(ProjectNewActionsEx_ActionGroup.ID, ProjectNewActions_ActionGroup.ID, ProjectNewActions_ActionGroup.LABEL_ID_end);
     insertGroupIntoAnother(LanguageRefactoring_ActionGroup.ID, CommonModuleActions_ActionGroup.ID, CommonModuleActions_ActionGroup.LABEL_ID_refactoring);
+    insertGroupIntoAnother(StructureAdditions_ActionGroup.ID, "Code_ActionGroupstructure", null);
     insertGroupIntoAnother(RepositoryToolsGroup_ActionGroup.ID, Tools_ActionGroup.ID, Tools_ActionGroup.LABEL_ID_customTools);
     insertGroupIntoAnother(GenerationTraceActions_ActionGroup.ID, DebugActions_ActionGroup.ID, DebugActions_ActionGroup.LABEL_ID_generator);
     insertGroupIntoAnother(LanguageNewGenerator_ActionGroup.ID, LanguageNewActions_ActionGroup.ID, LanguageNewActions_ActionGroup.LABEL_ID_newSubModule);

@@ -842,8 +842,10 @@
     <classNode dependClassName="jetbrains.mps.ide.devkit.actions.ShowModuleRepository_Action" />
     <classNode dependClassName="jetbrains.mps.ide.devkit.actions.ShowNodeInExplorer_Action" />
     <classNode dependClassName="jetbrains.mps.ide.devkit.actions.ShowNodeIn_ActionGroup" />
+    <classNode dependClassName="jetbrains.mps.ide.devkit.actions.ShowStructure_Action" />
     <classNode dependClassName="jetbrains.mps.ide.devkit.actions.ShowTypeSystemTraceIncremental_Action" />
     <classNode dependClassName="jetbrains.mps.ide.devkit.actions.ShowTypeSystemTrace_Action" />
+    <classNode dependClassName="jetbrains.mps.ide.devkit.actions.StructureAdditions_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.ide.devkit.actions.TestNodePath_Action" />
     <classNode dependClassName="jetbrains.mps.ide.devkit.actions.TraceActions_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.ide.devkit.actions.Trace_KeymapChanges" />
@@ -1278,6 +1280,27 @@
     <classNode dependClassName="jetbrains.mps.logging.Logger" />
     <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup" />
   </dependency>
+  <dependency className="jetbrains.mps.ide.devkit.actions.ShowStructure_Action" file="ShowStructure_Action.java">
+    <classNode dependClassName="com.intellij.ide.structureView.StructureView" />
+    <classNode dependClassName="com.intellij.ide.structureView.StructureViewBuilder" />
+    <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
+    <classNode dependClassName="com.intellij.openapi.actionSystem.PlatformDataKeys" />
+    <classNode dependClassName="com.intellij.openapi.fileEditor.FileEditor" />
+    <classNode dependClassName="com.intellij.openapi.project.Project" />
+    <classNode dependClassName="com.intellij.openapi.ui.DialogWrapper" />
+    <classNode dependClassName="com.intellij.openapi.vfs.VirtualFile" />
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.lang.Throwable" />
+    <classNode dependClassName="java.util.Map" />
+    <classNode dependClassName="javax.swing.Icon" />
+    <classNode dependClassName="jetbrains.mps.ide.devkit.structureview.FileStructureDialog" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
+    <classNode dependClassName="org.apache.commons.logging.Log" />
+    <classNode dependClassName="org.apache.commons.logging.LogFactory" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
+  </dependency>
   <dependency className="jetbrains.mps.ide.devkit.actions.ShowTypeSystemTraceIncremental_Action" file="ShowTypeSystemTraceIncremental_Action.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.PlatformDataKeys" />
@@ -1325,6 +1348,12 @@
     <classNode dependClassName="org.apache.commons.logging.LogFactory" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
+  </dependency>
+  <dependency className="jetbrains.mps.ide.devkit.actions.StructureAdditions_ActionGroup" file="StructureAdditions_ActionGroup.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.lang.Throwable" />
+    <classNode dependClassName="jetbrains.mps.logging.Logger" />
+    <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup" />
   </dependency>
   <dependency className="jetbrains.mps.ide.devkit.actions.Structure_TabDescriptor" file="Structure_TabDescriptor.java">
     <classNode dependClassName="java.lang.Character" />

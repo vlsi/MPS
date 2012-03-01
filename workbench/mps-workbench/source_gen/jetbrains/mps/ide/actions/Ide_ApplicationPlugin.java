@@ -104,7 +104,6 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     addAction(new ShowNodeInInspector_Action());
     addAction(new ShowNodeInfo_Action());
     addAction(new ShowParameters_Action());
-    addAction(new ShowStructure_Action());
     addAction(new SubmitToTracker_Action());
     // groups 
     addGroup(new AbstractFileActions_ActionGroup());
@@ -164,7 +163,6 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     addGroup(new SolutionActions_ActionGroup());
     addGroup(new SolutionNewActions_ActionGroup());
     addGroup(new SolutionRefactoring_ActionGroup());
-    addGroup(new StructureAdditions_ActionGroup());
     addGroup(new ToolsInternal_ActionGroup());
     addGroup(new Tools_ActionGroup());
     addGroup(new TransientModulesActions_ActionGroup());
@@ -234,7 +232,6 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     insertGroupIntoAnother(CommonModuleActions_ActionGroup.ID, LanguageActions_ActionGroup.ID, LanguageActions_ActionGroup.LABEL_ID_commonModule);
     insertGroupIntoAnother(CommonModuleActions_ActionGroup.ID, SolutionActions_ActionGroup.ID, SolutionActions_ActionGroup.LABEL_ID_commonModule);
     insertGroupIntoAnother(MessagesViewActions_ActionGroup.ID, "MPS.MessagesView", null);
-    insertGroupIntoAnother(StructureAdditions_ActionGroup.ID, "Code_ActionGroupstructure", null);
     insertGroupIntoAnother(PrintNodePosition_Addition_ActionGroup.ID, EditorInternal_ActionGroup.ID, null);
     insertGroupIntoAnother(Search_ActionGroup.ID, "FindMenuGroup", null);
     insertGroupIntoAnother(FavoritesPopupWrapper_ActionGroup.ID, Favorites_ActionGroup.ID, Favorites_ActionGroup.LABEL_ID_popup);

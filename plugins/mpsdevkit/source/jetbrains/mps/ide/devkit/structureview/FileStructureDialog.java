@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.workbench.structureview;
+package jetbrains.mps.ide.devkit.structureview;
 
 import com.intellij.ide.IdeBundle;
 import com.intellij.ide.commander.CommanderPanel;
