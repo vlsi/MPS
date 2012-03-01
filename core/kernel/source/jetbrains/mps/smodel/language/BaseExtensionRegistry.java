@@ -22,13 +22,6 @@ import jetbrains.mps.util.misc.hash.HashMap;
 
 import java.util.*;
 
-/**
- * Created by IntelliJ IDEA.
- * User: fyodor
- * Date: 1/25/12
- * Time: 3:25 PM
- * To change this template use File | Settings | File Templates.
- */
 public class BaseExtensionRegistry {
   private Map<String, Collection<Extension>> myActiveExtensions = new HashMap<String, Collection<Extension>>();
   private Map<String, Collection<Extension>> myInactiveExtensions = new HashMap<String, Collection<Extension>>();

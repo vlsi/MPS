@@ -28,6 +28,8 @@ import jetbrains.mps.project.structure.modules.DevkitDescriptor;
 import jetbrains.mps.project.structure.modules.LanguageDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
+import jetbrains.mps.reloading.ClassLoaderManager;
+import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.ManyToManyMap;
 import jetbrains.mps.vfs.IFile;
@@ -41,6 +43,14 @@ import java.util.concurrent.CopyOnWriteArrayList;
 
 public class MPSModuleRepository implements CoreComponent {
   private static final Logger LOG = Logger.getLogger(MPSModuleRepository.class);
+  private ClassLoaderManager myClm;
+  private CleanupManager myCm;
+  private ReloadAdapter myHandler = new ReloadAdapter() {
+    public void unload() {
+      invalidateCaches();
+    }
+  };
+  private final CleanupListener myCleanupListener;
 
   public static MPSModuleRepository getInstance() {
     return MPSCore.getInstance().getModuleRepository();
@@ -58,7 +68,14 @@ public class MPSModuleRepository implements CoreComponent {
 
   private boolean myDirtyFlag = false;
 
-  public MPSModuleRepository() {
+  public MPSModuleRepository(ClassLoaderManager clm, CleanupManager cm) {
+    myClm = clm;
+    myCm = cm;
+    myCleanupListener = new CleanupListener() {
+      public void performCleanup() {
+        removeUnusedModules();
+      }
+    };
   }
 
   public static IModule checkRegistered(ModuleReference ref, IFile fileToReport) {
@@ -74,15 +91,13 @@ public class MPSModuleRepository implements CoreComponent {
   }
 
   public void init() {
-    CleanupManager.getInstance().addCleanupListener(new CleanupListener() {
-      public void performCleanup() {
-        removeUnusedModules();
-      }
-    });
+    myClm.addReloadHandler(myHandler);
+    myCm.addCleanupListener(myCleanupListener);
   }
 
   public void dispose() {
-
+    myCm.removeCleanupListener(myCleanupListener);
+    myClm.removeReloadHandler(myHandler);
   }
 
   public void invalidateCaches() {
