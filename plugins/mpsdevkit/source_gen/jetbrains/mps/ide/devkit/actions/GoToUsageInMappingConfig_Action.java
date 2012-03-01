@@ -16,7 +16,6 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.Generator;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
-import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.specific.MappingConfigFinder;
 import com.intellij.openapi.project.Project;
@@ -72,7 +71,7 @@ public class GoToUsageInMappingConfig_Action extends BaseAction {
     if (MapSequence.fromMap(_params).get("project") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("module", event.getData(MPSDataKeys.MODULE));
+    MapSequence.fromMap(_params).put("module", event.getData(MPSCommonDataKeys.MODULE));
     if (MapSequence.fromMap(_params).get("module") == null) {
       return false;
     }

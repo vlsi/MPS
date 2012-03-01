@@ -52,6 +52,8 @@ public class MPSCommonDataKeys extends PlatformDataKeys {
   public static final DataKey<SModelDescriptor> CONTEXT_MODEL = DataKey.create("MPS_Context_SModelDescriptor");
   @Description(description = "context module")
   public static final DataKey<IModule> CONTEXT_MODULE = DataKey.create("MPS_Context_IModule");
+  @Description(description = "selected module")
+  public static final DataKey<IModule> MODULE = DataKey.create("MPS_IModule");
 
   @Description(description = "selected model")
   public static final DataKey<SModelDescriptor> MODEL = DataKey.create("MPS_SModelDescriptor");

@@ -13,7 +13,6 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
-import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.ide.project.ProjectHelper;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import jetbrains.mps.ide.platform.refactoring.RefactoringAccess;
@@ -24,6 +23,7 @@ import java.util.ArrayList;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.project.IModule;
+import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.refactoring.framework.IRefactoringTarget;
 import jetbrains.mps.refactoring.framework.RefactoringUtil;
 import jetbrains.mps.refactoring.framework.OldRefactoringAdapter;
@@ -59,7 +59,7 @@ public class GenericRefactoringAction extends BaseAction {
     context.setSelectedNodes(getNodes(e, isOneTarget));
     context.setSelectedModel(e.getData(MPSCommonDataKeys.CONTEXT_MODEL));
     context.setSelectedModels(getModels(e, isOneTarget));
-    context.setSelectedModule(e.getData(MPSDataKeys.MODULE));
+    context.setSelectedModule(e.getData(MPSCommonDataKeys.MODULE));
     context.setSelectedModules(getModules(e, isOneTarget));
     // noinspection ConstantConditions 
     context.setSelectedProject(ProjectHelper.toMPSProject(e.getData(PlatformDataKeys.PROJECT)));
@@ -113,7 +113,7 @@ public class GenericRefactoringAction extends BaseAction {
 
   @NotNull
   private List<IModule> getModules(AnActionEvent e, boolean oneEntity) {
-    return getEntities(e, oneEntity, MPSDataKeys.MODULE, MPSDataKeys.MODULES);
+    return getEntities(e, oneEntity, MPSCommonDataKeys.MODULE, MPSDataKeys.MODULES);
   }
 
   protected void doUpdate(AnActionEvent e, Map<String, Object> _params) {

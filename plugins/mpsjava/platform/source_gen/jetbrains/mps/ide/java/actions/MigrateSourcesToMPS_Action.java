@@ -13,7 +13,6 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
-import jetbrains.mps.workbench.MPSDataKeys;
 import java.util.List;
 import java.io.File;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -63,7 +62,7 @@ public class MigrateSourcesToMPS_Action extends BaseAction {
     if (MapSequence.fromMap(_params).get("context") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("module", event.getData(MPSDataKeys.MODULE));
+    MapSequence.fromMap(_params).put("module", event.getData(MPSCommonDataKeys.MODULE));
     if (MapSequence.fromMap(_params).get("module") == null) {
       return false;
     }

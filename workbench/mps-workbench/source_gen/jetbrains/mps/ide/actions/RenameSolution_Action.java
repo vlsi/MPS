@@ -12,7 +12,6 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.project.Solution;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.ide.refactoring.RenameSolutionDialog;
 import java.awt.Frame;
 
@@ -52,7 +51,7 @@ public class RenameSolution_Action extends BaseAction {
     if (MapSequence.fromMap(_params).get("frame") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("module", event.getData(MPSDataKeys.MODULE));
+    MapSequence.fromMap(_params).put("module", event.getData(MPSCommonDataKeys.MODULE));
     if (MapSequence.fromMap(_params).get("module") == null) {
       return false;
     }

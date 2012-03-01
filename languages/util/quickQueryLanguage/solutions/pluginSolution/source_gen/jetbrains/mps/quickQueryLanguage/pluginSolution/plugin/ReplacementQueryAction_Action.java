@@ -11,7 +11,6 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
-import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.IOperationContext;
@@ -47,7 +46,7 @@ public class ReplacementQueryAction_Action extends BaseAction {
     if (MapSequence.fromMap(_params).get("context") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("langModule", event.getData(MPSDataKeys.MODULE));
+    MapSequence.fromMap(_params).put("langModule", event.getData(MPSCommonDataKeys.MODULE));
     if (MapSequence.fromMap(_params).get("langModule") == null) {
       return false;
     }
