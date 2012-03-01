@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-720soz9uifjler2677gm1e46j022icx">
+<dependencies version="2" modelHash="9xcn6u77sd53gonuftrjujb944hpja2">
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
@@ -254,6 +254,7 @@
     <dep root="6329021646629104955" />
     <dep root="6329021646629104957" />
     <dep root="6329021646629175143" />
+    <dep root="6617045035157661092" />
     <dep root="7024111702304495340" />
     <dep root="7024111702304501412" />
     <dep root="7024111702304501414" />
@@ -5298,7 +5299,6 @@
     <dep root="1068498886292" />
     <dep root="1068580123132" />
     <dep root="1068580123136" />
-    <dep root="1070534644030" />
     <dep root="1146644584814" />
     <dep root="1178549954367" />
     <dep root="4972933694980447171" />
@@ -5459,8 +5459,6 @@
     <dep root="1068431790191" />
     <dep root="1068581242863" />
     <dep root="1070475926800" />
-    <dep root="1081236700937" />
-    <dep root="1083260308424" />
     <dep root="1107535904670" />
     <dep root="1145552809883" />
     <dep root="1145552977093" />
@@ -6749,6 +6747,12 @@
     <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" />
     <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
     <file name="ThisConstructorKind.java" />
+  </source>
+  <source id="6617045035157661092" name="SuperMethodKind" hash="-10fvb311qkwx2v4i4gaxiklnlj8txvb">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" />
+    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
+    <file name="SuperMethodKind.java" />
   </source>
 </dependencies>
 

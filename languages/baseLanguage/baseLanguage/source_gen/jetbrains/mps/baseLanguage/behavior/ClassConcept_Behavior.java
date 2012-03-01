@@ -8,6 +8,7 @@ import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import java.util.ArrayList;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import javax.swing.Icon;
@@ -19,7 +20,6 @@ import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 import jetbrains.mps.baseLanguage.search.ClassifierAndSuperClassifiersScope;
 import jetbrains.mps.baseLanguage.search.IClassifiersSearchScope;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
 import jetbrains.mps.smodel.search.IsInstanceCondition;
 import java.util.HashSet;
@@ -58,9 +58,14 @@ public class ClassConcept_Behavior {
   }
 
   public static List<SNode> virtual_getExtendedClassifiers_2201875424516179426(SNode thisNode) {
-    Classifier_Behavior.callSuper_getExtendedClassifiers_2201875424516179426(thisNode, "jetbrains.mps.baseLanguage.structure.ClassConcept");
     List<SNode> extendsClassifiers = new ArrayList<SNode>();
-    ListSequence.fromList(extendsClassifiers).addElement(SLinkOperations.getTarget(SLinkOperations.getTarget(thisNode, "superclass", true), "classifier", false));
+    if (!(Classifier_Behavior.call_isSame_4855996797771684010(SNodeOperations.getNode("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Object"), thisNode))) {
+      SNode superClassifier = SLinkOperations.getTarget(SLinkOperations.getTarget(thisNode, "superclass", true), "classifier", false);
+      ListSequence.fromList(extendsClassifiers).addElement(((superClassifier != null) ?
+        superClassifier :
+        SNodeOperations.getNode("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Object")
+      ));
+    }
     ListSequence.fromList(extendsClassifiers).addSequence(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "implementedInterface", true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return (SLinkOperations.getTarget(it, "classifier", false) != null);
@@ -69,13 +74,12 @@ public class ClassConcept_Behavior {
       public SNode select(SNode it) {
         return SLinkOperations.getTarget(it, "classifier", false);
       }
-    }));
-    // todo: optimize 
-    return ListSequence.fromListWithValues(new ArrayList<SNode>(), ListSequence.fromList(extendsClassifiers).where(new IWhereFilter<SNode>() {
+    }).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return (it != null);
       }
     }));
+    return extendsClassifiers;
   }
 
   public static boolean virtual_isRunnable_7941158526576616752(SNode thisNode) {
@@ -247,21 +251,31 @@ public class ClassConcept_Behavior {
     return result;
   }
 
-  public static List<SNode> virtual_getMembers_2201875424515824604(SNode thisNode, SNode kind) {
+  public static List<SNode> virtual_getMembers_2201875424515824604(final SNode thisNode, final SNode kind) {
     if (SConceptOperations.isSubConceptOf(kind, "jetbrains.mps.baseLanguage.structure.ThisConstructorKind")) {
       return SLinkOperations.getTargets(thisNode, "constructor", true);
     }
-    if (SConceptOperations.isSubConceptOf(kind, "jetbrains.mps.baseLanguage.structure.SuperConstructorKind")) {
-      SNode superClass = SLinkOperations.getTarget(SLinkOperations.getTarget(thisNode, "superclass", true), "classifier", false);
-
-      if (Classifier_Behavior.call_isSame_4855996797771684010(superClass, SNodeOperations.getNode("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Object"))) {
+    if (SConceptOperations.isSubConceptOf(kind, "jetbrains.mps.baseLanguage.structure.SuperConstructorKind") || SConceptOperations.isSubConceptOf(kind, "jetbrains.mps.baseLanguage.structure.SuperMethodKind")) {
+      if (Classifier_Behavior.call_isSame_4855996797771684010(thisNode, SNodeOperations.getNode("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Object"))) {
         return new ArrayList<SNode>();
       }
-      final int accessLevel = Classifier_Behavior.call_getAccessLevelFor_8083692786967356648(superClass, ListSequence.fromList(SNodeOperations.getChildren(thisNode)).getElement(0), SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ThisConstructorKind"));
+      SNode superClass = SLinkOperations.getTarget(SLinkOperations.getTarget(thisNode, "superclass", true), "classifier", false);
+      if ((superClass == null)) {
+        superClass = SNodeOperations.getNode("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Object");
+      }
+
+      SNode kindForSuper;
+      if (SConceptOperations.isSubConceptOf(kind, "jetbrains.mps.baseLanguage.structure.SuperConstructorKind")) {
+        kindForSuper = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ThisConstructorKind");
+      } else {
+        kindForSuper = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration");
+      }
+
+      // todo: hack with children =( 
       // todo: ? strange... =( 
-      return ListSequence.fromListWithValues(new ArrayList<SNode>(), ListSequence.fromList(Classifier_Behavior.call_getMembers_2201875424515824604(superClass, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ThisConstructorKind"))).where(new IWhereFilter<SNode>() {
+      return ListSequence.fromListWithValues(new ArrayList<SNode>(), ListSequence.fromList(Classifier_Behavior.call_getMembers_2201875424515824604(superClass, kindForSuper)).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
-          return ClassifierMember_Behavior.call_isVisible_8083692786967482069(it, accessLevel);
+          return ClassifierMember_Behavior.call_isVisible_8083692786967482069(it, Classifier_Behavior.call_getAccessLevelFor_8083692786967356648(SNodeOperations.getAncestor(it, "jetbrains.mps.baseLanguage.structure.Classifier", false, false), ListSequence.fromList(SNodeOperations.getChildren(thisNode)).getElement(0), kind));
         }
       }));
     }
@@ -269,10 +283,9 @@ public class ClassConcept_Behavior {
   }
 
   public static Scope virtual_getScope_3734116213129936182(SNode thisNode, SNode kind, SNode child) {
-    if (SConceptOperations.isSubConceptOf(kind, "jetbrains.mps.baseLanguage.structure.ThisConstructorKind") || SConceptOperations.isSubConceptOf(kind, "jetbrains.mps.baseLanguage.structure.SuperConstructorKind")) {
+    if (SConceptOperations.isSubConceptOf(kind, "jetbrains.mps.baseLanguage.structure.ThisConstructorKind") || SConceptOperations.isSubConceptOf(kind, "jetbrains.mps.baseLanguage.structure.SuperConstructorKind") || SConceptOperations.isSubConceptOf(kind, "jetbrains.mps.baseLanguage.structure.SuperMethodKind")) {
       return Classifier_Behavior.call_getVisibleMembers_8083692786967356611(thisNode, child, kind);
     }
-    // <node> 
     return ScopeProvider_Behavior.callSuper_getScope_3734116213129936182(thisNode, "jetbrains.mps.baseLanguage.structure.ClassConcept", kind, child);
   }
 

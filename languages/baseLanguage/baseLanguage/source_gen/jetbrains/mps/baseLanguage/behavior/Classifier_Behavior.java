@@ -127,7 +127,7 @@ public class Classifier_Behavior {
     return members;
   }
 
-  public static List<SNode> virtual_getMembers_2201875424515824604(SNode thisNode, final SNode kind) {
+  public static List<SNode> virtual_getMembers_2201875424515824604(final SNode thisNode, final SNode kind) {
     // returns all accessible classifier members in classifier 
 
     if (!(SConceptOperations.isSubConceptOf(kind, "jetbrains.mps.baseLanguage.structure.ClassifierMember"))) {
@@ -150,15 +150,10 @@ public class Classifier_Behavior {
     // 1) collect all inherited classifier members and filter based on access level 
     List<SNode> pretenders = new ArrayList<SNode>();
     for (SNode classifier : Classifier_Behavior.call_getExtendedClassifiers_2201875424516179426(thisNode)) {
-      boolean isSamePackage = VisibilityUtil.packageName(thisNode).equals(VisibilityUtil.packageName(classifier));
-      final int accessLevel = ClassAccessKind.SUBCLASS | ((isSamePackage ?
-        ClassAccessKind.PACKAGE :
-        0
-      ));
       // todo: ? strange... =( 
       ListSequence.fromList(pretenders).addSequence(ListSequence.fromList(Classifier_Behavior.call_getMembers_2201875424515824604(classifier, kind)).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
-          return ClassifierMember_Behavior.call_isVisible_8083692786967482069(it, accessLevel);
+          return ClassifierMember_Behavior.call_isVisible_8083692786967482069(it, Classifier_Behavior.call_getAccessLevelFor_8083692786967356648(SNodeOperations.getAncestor(it, "jetbrains.mps.baseLanguage.structure.Classifier", false, false), ListSequence.fromList(SNodeOperations.getChildren(thisNode)).getElement(0), kind));
         }
       }));
     }

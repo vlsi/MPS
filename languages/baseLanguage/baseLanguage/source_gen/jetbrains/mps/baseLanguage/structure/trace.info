@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="BaseLanguage_Language.java" startLine="9" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.BaseLanguage_Language" />
-  <unitInfo fileName="StructureAspectDescriptor.java" startLine="10" startPosition="0" endLine="519" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.StructureAspectDescriptor" />
+  <unitInfo fileName="StructureAspectDescriptor.java" startLine="10" startPosition="0" endLine="521" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.StructureAspectDescriptor" />
   <root nodeId="1023687332192347378">
     <nodeInfo nodeId="1023687332192347378" fileName="IVariableReference.java" startLine="7" startPosition="58" endLine="8" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <unitInfo nodeId="1023687332192347378" fileName="IVariableReference.java" startLine="7" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.IVariableReference" />
@@ -11948,6 +11948,10 @@
       <varInfo nodeId="6329021646629175143" varName="sm" />
     </scopeInfo>
     <unitInfo nodeId="6329021646629175143" fileName="StatementCommentPart.java" startLine="10" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.StatementCommentPart" />
+  </root>
+  <root nodeId="6617045035157661092">
+    <nodeInfo nodeId="6617045035157661092" fileName="SuperMethodKind.java" startLine="7" startPosition="55" endLine="8" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
+    <unitInfo nodeId="6617045035157661092" fileName="SuperMethodKind.java" startLine="7" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.SuperMethodKind" />
   </root>
   <root nodeId="6734604082923916973">
     <nodeInfo nodeId="6734604082923916973" fileName="_HexNumberValue_PropertySupport.java" startLine="8" startPosition="44" endLine="9" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

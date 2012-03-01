@@ -15,8 +15,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.scope.Scope;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.scope.EmptyScope;
 
 public class StaticMethodCall_Behavior {
   public static void init(SNode thisNode) {
@@ -48,12 +46,7 @@ public class StaticMethodCall_Behavior {
   }
 
   public static Scope virtual_getScope_3734116213129936182(SNode thisNode, SNode kind, SNode child) {
-    if (SConceptOperations.isSubConceptOf(kind, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration")) {
-      return ((SLinkOperations.getTarget(thisNode, "classConcept", false) != null) ?
-        Classifier_Behavior.call_getVisibleMembers_8083692786967356611(SLinkOperations.getTarget(thisNode, "classConcept", false), thisNode, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration")) :
-        new EmptyScope()
-      );
-    }
+    // <node> 
     return null;
   }
 }
