@@ -21,7 +21,7 @@
   <version>1.0.0</version>
   <depends>jetbrains.mps.core</depends>
 
-  <xi:include href="../classes/jetbrains/mps/ide/actions/JavaActions.xml" xpointer="xpointer(/components/*)"/>
+  <xi:include href="../classes/jetbrains/mps/ide/java/actions/JavaActions.xml" xpointer="xpointer(/components/*)"/>
 
   <application-components>
     <component>
