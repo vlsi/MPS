@@ -82,7 +82,7 @@
   </actions>
 
   <extensions defaultExtensionNs="com.intellij">
-    <vcs.fileStatusProvider implementation="jetbrains.mps.vcs.changesmanager.roots.NodeFileStatusProvider"/>
+    <vcs.fileStatusProvider implementation="jetbrains.mps.vcs.changesmanager.NodeFileStatusProvider"/>
     <mps.TabColorProvider implementation="jetbrains.mps.vcs.changesmanager.roots.NodeTabColorProvider"/>
     <mps.treeCreationHandler implementation="jetbrains.mps.vcs.changesmanager.tree.ChangesTreeCreationHandler"/>
     <checkoutListener implementation="jetbrains.mps.vcs.integration.ProjectCheckoutListener"/>
