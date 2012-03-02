@@ -15,15 +15,7 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.buildScript.behavior.BuildProject_Behavior;
-import java.util.List;
-import java.util.ArrayList;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.buildScript.behavior.BuildSourcePath_Behavior;
 import jetbrains.mps.smodel.SModelDescriptor;
-import java.util.Set;
-import java.util.HashSet;
-import jetbrains.mps.smodel.SModelUtil_new;
-import jetbrains.mps.project.GlobalScope;
 
 public class Context {
   private Map<String, Object> myProperties = MapSequence.fromMap(new HashMap<String, Object>());
@@ -65,37 +57,6 @@ public class Context {
     return model.getModelDescriptor().getModule();
   }
 
-  public String getBasePath_Local(SNode node) {
-    return BuildProject_Behavior.call_getBasePath_4959435991187146924(this.getBuildProject(node), this);
-  }
-
-  public String getTmpDirMacroName(SNode node) {
-    return SPropertyOperations.getString(this.getBuildProject(node), "name") + ".tmp";
-  }
-
-  public String getTmpPath_WithMacro(SNode node) {
-    return "${build.dir}/tmp/" + SPropertyOperations.getString(getBuildProject(node), "name");
-  }
-
-  public String getDeployDirMacroName(SNode node) {
-    return SPropertyOperations.getString(this.getBuildProject(node), "name") + ".deploy.dir";
-  }
-
-  public String getDeployPath_WithMacro(SNode node) {
-    return "${build.dir}/artifacts/" + SPropertyOperations.getString(getBuildProject(node), "name");
-  }
-
-  public String getVariablesDeployPath(SNode node) {
-    return getDeployPath_WithMacro(node) + "/variables.properties";
-  }
-
-  public List<SNode> getExportedMacro(SNode node) {
-    List<SNode> exportedMacro = new ArrayList<SNode>();
-    ListSequence.fromList(exportedMacro).addElement(new Context.QuotationClass_lmsybr_a0a0b0l().createNode(getTmpPath_WithMacro(node), getTmpDirMacroName(node)));
-    ListSequence.fromList(exportedMacro).addElement(new Context.QuotationClass_lmsybr_a0a0c0l().createNode(getDeployPath_WithMacro(node), getDeployDirMacroName(node)));
-    return exportedMacro;
-  }
-
   public String getUniqueName(SNode node, String name) {
     Map<SNodeId, Integer> map = MapSequence.fromMap(myNamesIndex).get(name);
     if (map == null) {
@@ -113,13 +74,8 @@ public class Context {
     ));
   }
 
-  public String getDefaultScriptsPath(final SNode project) {
-    return BuildSourcePath_Behavior.call_getLocalPath_5481553824944787364(new Context.QuotationClass_lmsybr_a0a0a31().createNode(), new Context(this.myGenerationContext) {
-      @Override
-      protected SNode getBuildProject(SNode node) {
-        return project;
-      }
-    });
+  public String getBasePath_Local(SNode node) {
+    return BuildProject_Behavior.call_getBasePath_4959435991187146924(this.getBuildProject(node), this);
   }
 
   public RelativePathHelper getRelativePathHelper(SModel model) {
@@ -155,60 +111,5 @@ public class Context {
       gencontext.putSessionObject(Context.class, context);
     }
     return context;
-  }
-
-  public static class QuotationClass_lmsybr_a0a0b0l {
-    public QuotationClass_lmsybr_a0a0b0l() {
-    }
-
-    public SNode createNode(Object parameter_3, Object parameter_4) {
-      SNode result = null;
-      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_1 = null;
-      {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.buildScript.structure.ExportedMacroInternal", null, GlobalScope.getInstance(), false);
-        SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.setProperty("defaultPath", (String) parameter_3);
-        quotedNode1_2.setProperty("name", (String) parameter_4);
-        result = quotedNode1_2;
-      }
-      return result;
-    }
-  }
-
-  public static class QuotationClass_lmsybr_a0a0c0l {
-    public QuotationClass_lmsybr_a0a0c0l() {
-    }
-
-    public SNode createNode(Object parameter_3, Object parameter_4) {
-      SNode result = null;
-      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_1 = null;
-      {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.buildScript.structure.ExportedMacroInternal", null, GlobalScope.getInstance(), false);
-        SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.setProperty("defaultPath", (String) parameter_3);
-        quotedNode1_2.setProperty("name", (String) parameter_4);
-        result = quotedNode1_2;
-      }
-      return result;
-    }
-  }
-
-  public static class QuotationClass_lmsybr_a0a0a31 {
-    public QuotationClass_lmsybr_a0a0a31() {
-    }
-
-    public SNode createNode() {
-      SNode result = null;
-      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_1 = null;
-      {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.buildScript.structure.BuildSourceProjectRelativePath", null, GlobalScope.getInstance(), false);
-        SNode quotedNode1_2 = quotedNode_1;
-        result = quotedNode1_2;
-      }
-      return result;
-    }
   }
 }

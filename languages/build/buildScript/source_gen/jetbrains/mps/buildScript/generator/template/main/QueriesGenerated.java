@@ -159,6 +159,14 @@ public class QueriesGenerated {
     return SPropertyOperations.getString(_context.getNode(), "pattern");
   }
 
+  public static Object propertyMacro_GetPropertyValue_5368511706901764962(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return "${build.dir}/tmp/" + SPropertyOperations.getString(_context.getNode(), "name");
+  }
+
+  public static Object propertyMacro_GetPropertyValue_5368511706901764926(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return "${build.dir}/artifacts/" + SPropertyOperations.getString(_context.getNode(), "name");
+  }
+
   public static Object propertyMacro_GetPropertyValue_8743444040544771278(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return SPropertyOperations.getString(SLinkOperations.getTarget(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.buildScript.structure.BuildProjectDependency"), "script", false), "name") + ".artifacts";
   }
@@ -175,7 +183,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_5662391463398094397(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return Context.defaulContext(_context).getVariablesDeployPath(_context.getNode());
+    return "${build.layout}/variables.properties";
   }
 
   public static Object propertyMacro_GetPropertyValue_5662391463398078669(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -187,7 +195,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_5096397858823409284(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return Context.defaulContext(_context).getTmpPath_WithMacro(_context.getNode());
+    return "${build.tmp}";
   }
 
   public static Object propertyMacro_GetPropertyValue_5178006408628664059(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -372,10 +380,6 @@ public class QueriesGenerated {
 
   public static Iterable sourceNodesQuery_1117643560963307378(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "macros", true);
-  }
-
-  public static Iterable sourceNodesQuery_6420586245471523378(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return Context.defaulContext(_context).getExportedMacro(_context.getNode());
   }
 
   public static Iterable sourceNodesQuery_6647099934206970618(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {

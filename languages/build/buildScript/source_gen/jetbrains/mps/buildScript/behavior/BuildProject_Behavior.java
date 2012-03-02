@@ -51,7 +51,7 @@ public class BuildProject_Behavior {
     if ((SLinkOperations.getTarget(thisNode, "scriptsDir", true) != null)) {
       return BuildSourcePath_Behavior.call_getLocalPath_5481553824944787364(SLinkOperations.getTarget(thisNode, "scriptsDir", true), context);
     }
-    return context.getDefaultScriptsPath(thisNode);
+    return BuildProject_Behavior.call_getBasePath_4959435991187146924(thisNode, context);
   }
 
   public static String call_getBasePathRelativeToScriptsPath_5178006408628632053(SNode thisNode, Context context) {

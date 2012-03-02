@@ -10,7 +10,7 @@ public class BuildLayout_Behavior {
   }
 
   public static String virtual_getChildrenOutputDir_WithMacro_7389400916848004880(SNode thisNode, Context context) {
-    return "${" + context.getDeployDirMacroName(thisNode) + "}";
+    return "${build.layout}";
   }
 
   public static String virtual_getAssembleSubTaskId_1117643560963359375(SNode thisNode) {

@@ -2,8 +2,8 @@
   <property name="buildCore.artifacts" location="build/artifacts/buildCore.artifacts/buildCore.variables.properties" />
   <property file="${buildCore.artifacts}" />
   <property name="build.dir" location="build" />
-  <property name="buildPlugin.tmp" location="${build.dir}/tmp/buildPlugin" />
-  <property name="buildPlugin.deploy.dir" location="${build.dir}/artifacts/buildPlugin" />
+  <property name="build.tmp" location="${build.dir}/tmp/buildPlugin" />
+  <property name="build.layout" location="${build.dir}/artifacts/buildPlugin" />
   
   <target name="build" />
   
