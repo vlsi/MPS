@@ -9,6 +9,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.baseLanguage.scopes.ClassAccessKind;
 import jetbrains.mps.baseLanguage.search.VisibilityUtil;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
 import jetbrains.mps.smodel.structure.BehaviorDescriptor;
 import jetbrains.mps.smodel.structure.ConceptRegistry;
@@ -72,7 +73,8 @@ public class ClassifierMember_Behavior {
     SNode currentClassifier = Classifier_Behavior.getContextClassifier_6172562527426750080(thisNode);
 
     while ((outerClassifier != null)) {
-      if (Classifier_Behavior.call_isDescendant_7165541881557222913(outerClassifier, currentClassifier)) {
+      // <node> 
+      if (SetSequence.fromSet(Classifier_Behavior.call_getAllExtendedClassifiers_2907982978864985482(outerClassifier)).contains(currentClassifier)) {
         result = result | ClassAccessKind.SUBCLASS;
         break;
       }

@@ -26,9 +26,6 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import java.util.Map;
-import jetbrains.mps.internal.collections.runtime.MapSequence;
-import java.util.HashMap;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.LanguageID;
 import jetbrains.mps.typesystem.inference.TypeChecker;
@@ -150,22 +147,27 @@ public class Classifier_Behavior {
       }
     }));
 
-    Map<Object, Integer> signatureToMembersCount = MapSequence.fromMap(new HashMap<Object, Integer>());
-    for (Object signature : SetSequence.fromSet(pretenders).select(new ISelector<SNode, Object>() {
-      public Object select(SNode it) {
-        return ClassifierMember_Behavior.call_getSignatureForOverriding_274804607996650333(it);
-      }
-    })) {
-      MapSequence.fromMap(signatureToMembersCount).put(signature, (MapSequence.fromMap(signatureToMembersCount).containsKey(signature) ?
-        MapSequence.fromMap(signatureToMembersCount).get(signature) + 1 :
-        1
-      ));
-    }
+    // <node> 
+    // <node> 
 
-    for (SNode node : pretenders) {
+    // todo: fail ! 
+    for (SNode node : SetSequence.fromSet(pretenders).sort(new ISelector<SNode, Comparable<?>>() {
+      public Comparable<?> select(SNode it) {
+        if (SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration")) {
+          return (SPropertyOperations.getBoolean(SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"), "isAbstract") ?
+            1 :
+            2
+          );
+        } else {
+          return 0;
+        }
+      }
+    }, false)) {
       Object signature = ClassifierMember_Behavior.call_getSignatureForOverriding_274804607996650333(node);
-      if ((int) MapSequence.fromMap(signatureToMembersCount).get(signature) == 1 && !(SetSequence.fromSet(signatures).contains(signature))) {
+      // <node> 
+      if (!(SetSequence.fromSet(signatures).contains(signature))) {
         ListSequence.fromList(result).addElement(node);
+        SetSequence.fromSet(signatures).addElement(signature);
       }
     }
 
@@ -174,6 +176,24 @@ public class Classifier_Behavior {
 
   public static List<SNode> virtual_getExtendedClassifiers_2201875424516179426(SNode thisNode) {
     return new ArrayList<SNode>();
+  }
+
+  public static Set<SNode> call_getAllExtendedClassifiers_2907982978864985482(SNode thisNode) {
+    // should be cached // based on extended classifiers 
+    // without cyclic dependencies checking 
+    Set<SNode> result = SetSequence.fromSet(new HashSet());
+    Classifier_Behavior.call_getAllExtendedClassifiers_2907982978864985509(thisNode, result);
+    return result;
+  }
+
+  public static void call_getAllExtendedClassifiers_2907982978864985509(SNode thisNode, Set<SNode> nodes) {
+    if (SetSequence.fromSet(nodes).contains(thisNode)) {
+      return;
+    }
+    SetSequence.fromSet(nodes).addElement(thisNode);
+    for (SNode extended : Classifier_Behavior.call_getExtendedClassifiers_2201875424516179426(thisNode)) {
+      Classifier_Behavior.call_getAllExtendedClassifiers_2907982978864985509(extended, nodes);
+    }
   }
 
   public static String virtual_getPresentation_1213877396640(SNode thisNode) {
@@ -303,7 +323,7 @@ public class Classifier_Behavior {
   }
 
   public static SNode call_getWithResolvedTypevars_3305065273710852527(SNode thisNode, SNode t, SNode ancestor, SNode method, SNode baseMethod) {
-    SNode coercedType = TypeChecker.getInstance().getRuntimeSupport().coerce_(Classifier_Behavior.call_getThisType_3305065273710880775(thisNode), new Classifier_Behavior.Pattern_qw8l7c_a1a0a0a32(ancestor), true);
+    SNode coercedType = TypeChecker.getInstance().getRuntimeSupport().coerce_(Classifier_Behavior.call_getThisType_3305065273710880775(thisNode), new Classifier_Behavior.Pattern_qw8l7c_a1a0a0a52(ancestor), true);
     if (SNodeOperations.isInstanceOf(t, "jetbrains.mps.baseLanguage.structure.TypeVariableReference")) {
       return Classifier_Behavior.call_getResolvedVar_3305065273710881245(thisNode, SNodeOperations.cast(t, "jetbrains.mps.baseLanguage.structure.TypeVariableReference"), ancestor, coercedType, method, baseMethod);
     } else {
@@ -522,26 +542,26 @@ public class Classifier_Behavior {
     return SNodeOperations.getAncestor(expr, "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
   }
 
-  public static class Pattern_qw8l7c_a1a0a0a32 extends GeneratedMatchingPattern implements IMatchingPattern {
+  public static class Pattern_qw8l7c_a1a0a0a52 extends GeneratedMatchingPattern implements IMatchingPattern {
     /*package*/ List<SNode> patternVar_l;
     /*package*/ SNode patternVar_foo;
-    /*package*/ Object AntiquotationField_qw8l7c_a0a0a0a0a22;
+    /*package*/ Object AntiquotationField_qw8l7c_a0a0a0a0a42;
 
-    public Pattern_qw8l7c_a1a0a0a32(Object parameter_qw8l7c_a0a0a0a0a22) {
-      this.AntiquotationField_qw8l7c_a0a0a0a0a22 = parameter_qw8l7c_a0a0a0a0a22;
+    public Pattern_qw8l7c_a1a0a0a52(Object parameter_qw8l7c_a0a0a0a0a42) {
+      this.AntiquotationField_qw8l7c_a0a0a0a0a42 = parameter_qw8l7c_a0a0a0a0a42;
     }
 
     public boolean match(SNode nodeToMatch) {
       {
-        SNode nodeToMatch_Classifier_Behavior_qw8l7c_a0a0a0a22;
-        nodeToMatch_Classifier_Behavior_qw8l7c_a0a0a0a22 = nodeToMatch;
-        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_Classifier_Behavior_qw8l7c_a0a0a0a22.getConceptFqName()))) {
+        SNode nodeToMatch_Classifier_Behavior_qw8l7c_a0a0a0a42;
+        nodeToMatch_Classifier_Behavior_qw8l7c_a0a0a0a42 = nodeToMatch;
+        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_Classifier_Behavior_qw8l7c_a0a0a0a42.getConceptFqName()))) {
           return false;
         }
         {
           SNode referent;
-          referent = (SNode) this.AntiquotationField_qw8l7c_a0a0a0a0a22;
-          if (nodeToMatch_Classifier_Behavior_qw8l7c_a0a0a0a22.getReferent("classifier") != referent) {
+          referent = (SNode) this.AntiquotationField_qw8l7c_a0a0a0a0a42;
+          if (nodeToMatch_Classifier_Behavior_qw8l7c_a0a0a0a42.getReferent("classifier") != referent) {
             return false;
           }
         }
@@ -549,7 +569,7 @@ public class Classifier_Behavior {
           String childRole_Classifier_Behavior_qw8l7c_ = "parameter";
           this.patternVar_l = ListSequence.fromList(new ArrayList<SNode>());
           patternVar_foo = null;
-          for (SNode childVar : nodeToMatch_Classifier_Behavior_qw8l7c_a0a0a0a22.getChildren(childRole_Classifier_Behavior_qw8l7c_)) {
+          for (SNode childVar : nodeToMatch_Classifier_Behavior_qw8l7c_a0a0a0a42.getChildren(childRole_Classifier_Behavior_qw8l7c_)) {
             patternVar_foo = childVar;
             ListSequence.fromList(this.patternVar_l).addElement(childVar);
           }
