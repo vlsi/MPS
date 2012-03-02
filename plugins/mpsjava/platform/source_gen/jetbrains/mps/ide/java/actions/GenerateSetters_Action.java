@@ -9,24 +9,21 @@ import org.apache.commons.logging.LogFactory;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.internal.collections.runtime.MapSequence;
-import java.util.List;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.project.Project;
-import jetbrains.mps.nodeEditor.EditorContext;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
-import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.SNodePointer;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.internal.collections.runtime.ISelector;
-import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.project.Project;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -44,28 +41,8 @@ public class GenerateSetters_Action extends BaseAction {
   }
 
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    SNode classConcept = SNodeOperations.getAncestor(((SNode) ((SNode) MapSequence.fromMap(_params).get("node"))), "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
-    List<SNode> fields = SLinkOperations.getTargets(SNodeOperations.cast(classConcept, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "field", true);
-    if (ListSequence.fromList(fields).isEmpty()) {
-      return false;
-    }
-    boolean allSettersImplemented = true;
-    Project project = ((EditorContext) MapSequence.fromMap(_params).get("editorContext")).getOperationContext().getProject();
-    for (SNode fieldDeclaration : fields) {
-      final String setterName = GenerateGettersAndSettersUtil.getFieldSetterName(fieldDeclaration, project);
-      boolean fieldHasSetter = false;
-      if (ListSequence.fromList(SLinkOperations.getTargets(classConcept, "method", true)).any(new IWhereFilter<SNode>() {
-        public boolean accept(SNode method) {
-          return setterName.equals(SPropertyOperations.getString(method, "name"));
-        }
-      })) {
-        fieldHasSetter = true;
-      }
-      if (!(fieldHasSetter)) {
-        allSettersImplemented = false;
-      }
-    }
-    return !(allSettersImplemented);
+    SNode classConcept = GenerateSetters_Action.this.getClassConcept(_params);
+    return classConcept != null && Sequence.fromIterable(GenerateSetters_Action.this.getFieldDeclarationsWithoutSetters(classConcept, _params)).isNotEmpty();
   }
 
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
@@ -93,20 +70,16 @@ public class GenerateSetters_Action extends BaseAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      final Wrappers._T<SNodePointer[]> fields = new Wrappers._T<SNodePointer[]>();
-      final SNode classConcept = SNodeOperations.getAncestor(((SNode) ((SNode) MapSequence.fromMap(_params).get("node"))), "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
+      SNodePointer[] fields;
+      SNode classConcept = GenerateSetters_Action.this.getClassConcept(_params);
 
-      ModelAccess.instance().runReadAction(new Runnable() {
-        public void run() {
-          fields.value = ListSequence.fromList(SLinkOperations.getTargets(classConcept, "field", true)).select(new ISelector<SNode, SNodePointer>() {
-            public SNodePointer select(SNode it) {
-              return new SNodePointer(it);
-            }
-          }).toGenericArray(SNodePointer.class);
+      fields = Sequence.fromIterable(GenerateSetters_Action.this.getFieldDeclarationsWithoutSetters(classConcept, _params)).select(new ISelector<SNode, SNodePointer>() {
+        public SNodePointer select(SNode it) {
+          return new SNodePointer(it);
         }
-      });
+      }).toGenericArray(SNodePointer.class);
 
-      SelectFieldsDialog selectFieldsDialog = new SelectFieldsDialog(fields.value, false, ((EditorContext) MapSequence.fromMap(_params).get("editorContext")).getOperationContext().getProject());
+      SelectFieldsDialog selectFieldsDialog = new SelectFieldsDialog(fields, false, ((EditorContext) MapSequence.fromMap(_params).get("editorContext")).getOperationContext().getProject());
       selectFieldsDialog.setTitle("Select Fields to Generate Setters");
       selectFieldsDialog.show();
 
@@ -121,22 +94,11 @@ public class GenerateSetters_Action extends BaseAction {
       for (SNodePointer fieldPtr : selectedFields) {
         final SNode field = SNodeOperations.cast(fieldPtr.getNode(), "jetbrains.mps.baseLanguage.structure.FieldDeclaration");
         final String setterName = GenerateGettersAndSettersUtil.getFieldSetterName(field, project);
-        boolean setterIsAbsent = true;
-        if (ListSequence.fromList(SLinkOperations.getTargets(classConcept, "method", true)).any(new IWhereFilter<SNode>() {
-          public boolean accept(SNode method) {
-            return setterName.equals(SPropertyOperations.getString(method, "name")) && (int) ListSequence.fromList(SLinkOperations.getTargets(method, "parameter", true)).count() == 1;
-          }
-        })) {
-          setterIsAbsent = false;
-        }
-        if (!(setterIsAbsent)) {
-          continue;
-        }
         // Method creation begins 
         String parameterName = GenerateGettersAndSettersUtil.getParameterNameForField(field, project);
         SNode fieldReference = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference", null);
         SLinkOperations.setTarget(fieldReference, "variableDeclaration", field, false);
-        SNode added = ListSequence.fromList(SLinkOperations.getTargets(classConcept, "method", true)).addElement(new GenerateSetters_Action.QuotationClass_5cfua3_a0a0a9a51a0a3().createNode(fieldReference, SLinkOperations.getTarget(field, "type", true), parameterName, setterName));
+        SNode added = ListSequence.fromList(SLinkOperations.getTargets(classConcept, "method", true)).addElement(new GenerateSetters_Action.QuotationClass_5cfua3_a0a0a6a51a0a3().createNode(fieldReference, SLinkOperations.getTarget(field, "type", true), parameterName, setterName));
         lastAdded = added;
       }
       if (lastAdded != null) {
@@ -150,8 +112,26 @@ public class GenerateSetters_Action extends BaseAction {
     }
   }
 
-  public static class QuotationClass_5cfua3_a0a0a9a51a0a3 {
-    public QuotationClass_5cfua3_a0a0a9a51a0a3() {
+  private SNode getClassConcept(final Map<String, Object> _params) {
+    return SNodeOperations.getAncestor(((SNode) ((SNode) MapSequence.fromMap(_params).get("node"))), "jetbrains.mps.baseLanguage.structure.ClassConcept", true, false);
+  }
+
+  private Iterable<SNode> getFieldDeclarationsWithoutSetters(final SNode classConcept, final Map<String, Object> _params) {
+    final Project project = ((EditorContext) MapSequence.fromMap(_params).get("editorContext")).getOperationContext().getProject();
+    return ListSequence.fromList(SLinkOperations.getTargets(classConcept, "field", true)).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode field) {
+        final String setterName = GenerateGettersAndSettersUtil.getFieldSetterName(field, project);
+        return !(ListSequence.fromList(SLinkOperations.getTargets(classConcept, "method", true)).any(new IWhereFilter<SNode>() {
+          public boolean accept(SNode method) {
+            return setterName.equals(SPropertyOperations.getString(method, "name")) && (int) ListSequence.fromList(SLinkOperations.getTargets(method, "parameter", true)).count() == 1;
+          }
+        }));
+      }
+    });
+  }
+
+  public static class QuotationClass_5cfua3_a0a0a6a51a0a3 {
+    public QuotationClass_5cfua3_a0a0a6a51a0a3() {
     }
 
     public SNode createNode(Object parameter_21, Object parameter_22, Object parameter_23, Object parameter_24) {

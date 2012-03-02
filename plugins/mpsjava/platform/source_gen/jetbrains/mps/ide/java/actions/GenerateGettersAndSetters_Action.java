@@ -9,25 +9,21 @@ import org.apache.commons.logging.LogFactory;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.internal.collections.runtime.MapSequence;
-import java.util.List;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.project.Project;
-import jetbrains.mps.nodeEditor.EditorContext;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
-import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.SNodePointer;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.internal.collections.runtime.ISelector;
-import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.internal.collections.runtime.IVisitor;
+import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.project.Project;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -45,49 +41,8 @@ public class GenerateGettersAndSetters_Action extends BaseAction {
   }
 
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    SNode classConcept = SNodeOperations.getAncestor(((SNode) ((SNode) MapSequence.fromMap(_params).get("node"))), "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
-    List<SNode> fields = SLinkOperations.getTargets(classConcept, "field", true);
-    if (ListSequence.fromList(fields).isEmpty()) {
-      return false;
-    }
-    boolean allGettersImplemented = true;
-    Project project = ((EditorContext) MapSequence.fromMap(_params).get("editorContext")).getOperationContext().getProject();
-    for (SNode fieldDeclaration : fields) {
-      boolean hasCurrentFieldGetter = false;
-      final String getterName = GenerateGettersAndSettersUtil.getFieldGetterName(fieldDeclaration, project);
-      if (ListSequence.fromList(SLinkOperations.getTargets(classConcept, "method", true)).any(new IWhereFilter<SNode>() {
-        public boolean accept(SNode it) {
-          return getterName.equals(SPropertyOperations.getString(it, "name")) && ListSequence.fromList(SLinkOperations.getTargets(it, "parameter", true)).isEmpty();
-        }
-      })) {
-        hasCurrentFieldGetter = true;
-      }
-      if (!(hasCurrentFieldGetter)) {
-        allGettersImplemented = false;
-        break;
-      }
-    }
-    if (!(allGettersImplemented)) {
-      return true;
-    } else {
-      boolean hasAllSetters = true;
-      for (SNode field : fields) {
-        final String setterName = GenerateGettersAndSettersUtil.getFieldSetterName(field, project);
-        boolean hasCurrentFieldSetter = false;
-        if (ListSequence.fromList(SLinkOperations.getTargets(classConcept, "method", true)).any(new IWhereFilter<SNode>() {
-          public boolean accept(SNode it) {
-            return setterName.equals(SPropertyOperations.getString(it, "name")) && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(it, "returnType", true), "jetbrains.mps.baseLanguage.structure.VoidType");
-          }
-        })) {
-          hasCurrentFieldSetter = true;
-        }
-        if (!(hasCurrentFieldSetter)) {
-          hasAllSetters = false;
-          break;
-        }
-      }
-      return !(hasAllSetters);
-    }
+    SNode classConcept = GenerateGettersAndSetters_Action.this.getClassConcept(_params);
+    return classConcept != null && Sequence.fromIterable(GenerateGettersAndSetters_Action.this.getFieldDeclarationsWithoutGetterOrSetter(classConcept, _params)).isNotEmpty();
   }
 
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
@@ -115,19 +70,15 @@ public class GenerateGettersAndSetters_Action extends BaseAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      final SNode classConcept = SNodeOperations.getAncestor(((SNode) ((SNode) MapSequence.fromMap(_params).get("node"))), "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
-      final Wrappers._T<SNodePointer[]> fields = new Wrappers._T<SNodePointer[]>();
-      ModelAccess.instance().runReadAction(new Runnable() {
-        public void run() {
-          fields.value = ListSequence.fromList(SLinkOperations.getTargets(classConcept, "field", true)).select(new ISelector<SNode, SNodePointer>() {
-            public SNodePointer select(SNode it) {
-              return new SNodePointer(it);
-            }
-          }).toGenericArray(SNodePointer.class);
+      SNode classConcept = GenerateGettersAndSetters_Action.this.getClassConcept(_params);
+      SNodePointer[] fields;
+      fields = Sequence.fromIterable(GenerateGettersAndSetters_Action.this.getFieldDeclarationsWithoutGetterOrSetter(classConcept, _params)).select(new ISelector<SNode, SNodePointer>() {
+        public SNodePointer select(SNode it) {
+          return new SNodePointer(it);
         }
-      });
+      }).toGenericArray(SNodePointer.class);
 
-      SelectFieldsDialog selectFieldsDialog = new SelectFieldsDialog(fields.value, false, ((EditorContext) MapSequence.fromMap(_params).get("editorContext")).getOperationContext().getProject());
+      SelectFieldsDialog selectFieldsDialog = new SelectFieldsDialog(fields, false, ((EditorContext) MapSequence.fromMap(_params).get("editorContext")).getOperationContext().getProject());
       selectFieldsDialog.setTitle("Select Fields to Generate Getters and Setters");
       selectFieldsDialog.show();
 
@@ -142,35 +93,13 @@ public class GenerateGettersAndSetters_Action extends BaseAction {
       for (SNodePointer fieldPtr : selectedFields) {
         final SNode field = SNodeOperations.cast(fieldPtr.getNode(), "jetbrains.mps.baseLanguage.structure.FieldDeclaration");
         final String getterName = GenerateGettersAndSettersUtil.getFieldGetterName(field, project);
-        final Wrappers._boolean getterIsAbsent = new Wrappers._boolean(true);
-        ListSequence.fromList(SLinkOperations.getTargets(classConcept, "method", true)).visitAll(new IVisitor<SNode>() {
-          public void visit(SNode it) {
-            if (getterName.equals(SPropertyOperations.getString(it, "name")) && ListSequence.fromList(SLinkOperations.getTargets(it, "parameter", true)).isEmpty()) {
-              getterIsAbsent.value = false;
-            }
-          }
-        });
-        if (!(getterIsAbsent.value)) {
-          continue;
-        }
         SNode fieldReference = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference", null);
         SLinkOperations.setTarget(fieldReference, "variableDeclaration", field, false);
-        lastAdded = ListSequence.fromList(SLinkOperations.getTargets(classConcept, "method", true)).addElement(new GenerateGettersAndSetters_Action.QuotationClass_lel3v6_a0a0a7a41a0a3().createNode(SLinkOperations.getTarget(field, "type", true), fieldReference, getterName));
+        ListSequence.fromList(SLinkOperations.getTargets(classConcept, "method", true)).addElement(new GenerateGettersAndSetters_Action.QuotationClass_lel3v6_a0a0e0o0a0d().createNode(SLinkOperations.getTarget(field, "type", true), fieldReference, getterName));
 
         final String setterName = GenerateGettersAndSettersUtil.getFieldSetterName(field, project);
-        final Wrappers._boolean setterIsAbsent = new Wrappers._boolean(true);
-        ListSequence.fromList(SLinkOperations.getTargets(classConcept, "method", true)).visitAll(new IVisitor<SNode>() {
-          public void visit(SNode method) {
-            if (setterName.equals(SPropertyOperations.getString(method, "name")) && (int) ListSequence.fromList(SLinkOperations.getTargets(method, "parameter", true)).count() == 1) {
-              setterIsAbsent.value = false;
-            }
-          }
-        });
-        if (!(setterIsAbsent.value)) {
-          continue;
-        }
         String parameterName = GenerateGettersAndSettersUtil.getParameterNameForField(field, project);
-        lastAdded = ListSequence.fromList(SLinkOperations.getTargets(classConcept, "method", true)).addElement(new GenerateGettersAndSetters_Action.QuotationClass_lel3v6_a0a0a41a41a0a3().createNode(SNodeOperations.copyNode(fieldReference), SLinkOperations.getTarget(field, "type", true), parameterName, setterName));
+        lastAdded = ListSequence.fromList(SLinkOperations.getTargets(classConcept, "method", true)).addElement(new GenerateGettersAndSetters_Action.QuotationClass_lel3v6_a0a0a8a41a0a3().createNode(SNodeOperations.copyNode(fieldReference), SLinkOperations.getTarget(field, "type", true), parameterName, setterName));
       }
       if (lastAdded != null) {
         ((EditorContext) MapSequence.fromMap(_params).get("editorContext")).select(lastAdded);
@@ -182,8 +111,31 @@ public class GenerateGettersAndSetters_Action extends BaseAction {
     }
   }
 
-  public static class QuotationClass_lel3v6_a0a0a7a41a0a3 {
-    public QuotationClass_lel3v6_a0a0a7a41a0a3() {
+  private SNode getClassConcept(final Map<String, Object> _params) {
+    return SNodeOperations.getAncestor(((SNode) ((SNode) MapSequence.fromMap(_params).get("node"))), "jetbrains.mps.baseLanguage.structure.ClassConcept", true, false);
+  }
+
+  private Iterable<SNode> getFieldDeclarationsWithoutGetterOrSetter(final SNode classConcept, final Map<String, Object> _params) {
+    final Project project = ((EditorContext) MapSequence.fromMap(_params).get("editorContext")).getOperationContext().getProject();
+    return ListSequence.fromList(SLinkOperations.getTargets(classConcept, "field", true)).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode field) {
+        final String setterName = GenerateGettersAndSettersUtil.getFieldSetterName(field, project);
+        final String getterName = GenerateGettersAndSettersUtil.getFieldGetterName(field, project);
+        return !(ListSequence.fromList(SLinkOperations.getTargets(classConcept, "method", true)).any(new IWhereFilter<SNode>() {
+          public boolean accept(SNode method) {
+            return getterName.equals(SPropertyOperations.getString(method, "name")) && ListSequence.fromList(SLinkOperations.getTargets(method, "parameter", true)).isEmpty();
+          }
+        })) && !(ListSequence.fromList(SLinkOperations.getTargets(classConcept, "method", true)).any(new IWhereFilter<SNode>() {
+          public boolean accept(SNode method) {
+            return setterName.equals(SPropertyOperations.getString(method, "name")) && (int) ListSequence.fromList(SLinkOperations.getTargets(method, "parameter", true)).count() == 1;
+          }
+        }));
+      }
+    });
+  }
+
+  public static class QuotationClass_lel3v6_a0a0e0o0a0d {
+    public QuotationClass_lel3v6_a0a0e0o0a0d() {
     }
 
     public SNode createNode(Object parameter_13, Object parameter_14, Object parameter_15) {
@@ -246,8 +198,8 @@ public class GenerateGettersAndSetters_Action extends BaseAction {
     }
   }
 
-  public static class QuotationClass_lel3v6_a0a0a41a41a0a3 {
-    public QuotationClass_lel3v6_a0a0a41a41a0a3() {
+  public static class QuotationClass_lel3v6_a0a0a8a41a0a3 {
+    public QuotationClass_lel3v6_a0a0a8a41a0a3() {
     }
 
     public SNode createNode(Object parameter_21, Object parameter_22, Object parameter_23, Object parameter_24) {

@@ -9,13 +9,13 @@ import org.apache.commons.logging.LogFactory;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 import jetbrains.mps.nodeEditor.EditorContext;
@@ -35,7 +35,7 @@ public class GenerateMainMethod_Action extends BaseAction {
   }
 
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    SNode classConcept = SNodeOperations.getAncestor(((SNode) ((SNode) MapSequence.fromMap(_params).get("node"))), "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
+    SNode classConcept = GenerateMainMethod_Action.this.getClassConcept(_params);
     return !(ListSequence.fromList(SLinkOperations.getTargets(classConcept, "staticMethod", true)).any(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return "main".equals(SPropertyOperations.getString(it, "name")) && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(it, "returnType", true), "jetbrains.mps.baseLanguage.structure.VoidType") && (int) ListSequence.fromList(SLinkOperations.getTargets(it, "parameter", true)).count() == 1 && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(ListSequence.fromList(SLinkOperations.getTargets(it, "parameter", true)).first(), "type", true), "jetbrains.mps.baseLanguage.structure.ArrayType");
@@ -68,7 +68,7 @@ public class GenerateMainMethod_Action extends BaseAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      SNode classConcept = SNodeOperations.getAncestor(((SNode) ((SNode) MapSequence.fromMap(_params).get("node"))), "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
+      SNode classConcept = GenerateMainMethod_Action.this.getClassConcept(_params);
       SNode methodNode = new GenerateMainMethod_Action.QuotationClass_8edthv_a0a1a0a3().createNode();
       ListSequence.fromList(SLinkOperations.getTargets(classConcept, "staticMethod", true)).addElement(methodNode);
       ((EditorContext) MapSequence.fromMap(_params).get("editorContext")).select(SLinkOperations.getTarget(methodNode, "body", true));
@@ -77,6 +77,10 @@ public class GenerateMainMethod_Action extends BaseAction {
         log.error("User's action execute method failed. Action:" + "GenerateMainMethod", t);
       }
     }
+  }
+
+  private SNode getClassConcept(final Map<String, Object> _params) {
+    return SNodeOperations.getAncestor(((SNode) ((SNode) MapSequence.fromMap(_params).get("node"))), "jetbrains.mps.baseLanguage.structure.ClassConcept", true, false);
   }
 
   public static class QuotationClass_8edthv_a0a1a0a3 {

@@ -6,15 +6,15 @@ import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
+import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
@@ -40,9 +40,16 @@ public class GenerateConstructor_Action extends BaseAction {
     this.setExecuteOutsideCommand(false);
   }
 
+  public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
+    return GenerateConstructor_Action.this.getClassConcept(_params) != null;
+  }
+
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
-      this.enable(event.getPresentation());
+      {
+        boolean enabled = this.isApplicable(event, _params);
+        this.setEnabledState(event.getPresentation(), enabled);
+      }
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action doUpdate method failed. Action:" + "GenerateConstructor", t);
@@ -62,7 +69,7 @@ public class GenerateConstructor_Action extends BaseAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      SNode classConcept = SNodeOperations.getAncestor(((SNode) ((SNode) MapSequence.fromMap(_params).get("node"))), "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
+      SNode classConcept = GenerateConstructor_Action.this.getClassConcept(_params);
       SNode superclass;
       SNodePointer[] ctors = null;
       boolean needsShowConstructorsDialog = false;
@@ -140,12 +147,12 @@ public class GenerateConstructor_Action extends BaseAction {
         }
         for (SNodePointer fieldPtr : selectedFields) {
           SNode field = SNodeOperations.cast(fieldPtr.getNode(), "jetbrains.mps.baseLanguage.structure.FieldDeclaration");
-          SNode parameterDeclaration = new GenerateConstructor_Action.QuotationClass_oh4di0_a0a1a5a71a0a2().createNode(SNodeOperations.copyNode(SLinkOperations.getTarget(field, "type", true)), GenerateGettersAndSettersUtil.getParameterNameForField(field, project));
+          SNode parameterDeclaration = new GenerateConstructor_Action.QuotationClass_oh4di0_a0a1a5a71a0a3().createNode(SNodeOperations.copyNode(SLinkOperations.getTarget(field, "type", true)), GenerateGettersAndSettersUtil.getParameterNameForField(field, project));
           ListSequence.fromList(SLinkOperations.getTargets(constructor, "parameter", true)).addElement(parameterDeclaration);
           SNode expressionStatement = SNodeFactoryOperations.addNewChild(SLinkOperations.getTarget(constructor, "body", true), "statement", "jetbrains.mps.baseLanguage.structure.ExpressionStatement");
           SNode assignmentExpression = SNodeFactoryOperations.setNewChild(expressionStatement, "expression", "jetbrains.mps.baseLanguage.structure.AssignmentExpression");
-          SLinkOperations.setTarget(assignmentExpression, "lValue", new GenerateConstructor_Action.QuotationClass_oh4di0_a2a5a5a71a0a2().createNode(field), true);
-          SLinkOperations.setTarget(assignmentExpression, "rValue", new GenerateConstructor_Action.QuotationClass_oh4di0_a2a6a5a71a0a2().createNode(parameterDeclaration), true);
+          SLinkOperations.setTarget(assignmentExpression, "lValue", new GenerateConstructor_Action.QuotationClass_oh4di0_a2a5a5a71a0a3().createNode(field), true);
+          SLinkOperations.setTarget(assignmentExpression, "rValue", new GenerateConstructor_Action.QuotationClass_oh4di0_a2a6a5a71a0a3().createNode(parameterDeclaration), true);
         }
       }
       if (constructorDeclaration != null) {
@@ -158,8 +165,12 @@ public class GenerateConstructor_Action extends BaseAction {
     }
   }
 
-  public static class QuotationClass_oh4di0_a0a1a5a71a0a2 {
-    public QuotationClass_oh4di0_a0a1a5a71a0a2() {
+  private SNode getClassConcept(final Map<String, Object> _params) {
+    return SNodeOperations.getAncestor(((SNode) ((SNode) MapSequence.fromMap(_params).get("node"))), "jetbrains.mps.baseLanguage.structure.ClassConcept", true, false);
+  }
+
+  public static class QuotationClass_oh4di0_a0a1a5a71a0a3 {
+    public QuotationClass_oh4di0_a0a1a5a71a0a3() {
     }
 
     public SNode createNode(Object parameter_5, Object parameter_6) {
@@ -190,8 +201,8 @@ public class GenerateConstructor_Action extends BaseAction {
     }
   }
 
-  public static class QuotationClass_oh4di0_a2a5a5a71a0a2 {
-    public QuotationClass_oh4di0_a2a5a5a71a0a2() {
+  public static class QuotationClass_oh4di0_a2a5a5a71a0a3 {
+    public QuotationClass_oh4di0_a2a5a5a71a0a3() {
     }
 
     public SNode createNode(Object parameter_3) {
@@ -208,8 +219,8 @@ public class GenerateConstructor_Action extends BaseAction {
     }
   }
 
-  public static class QuotationClass_oh4di0_a2a6a5a71a0a2 {
-    public QuotationClass_oh4di0_a2a6a5a71a0a2() {
+  public static class QuotationClass_oh4di0_a2a6a5a71a0a3 {
+    public QuotationClass_oh4di0_a2a6a5a71a0a3() {
     }
 
     public SNode createNode(Object parameter_3) {
