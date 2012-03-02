@@ -24,14 +24,6 @@ public interface ReloadListener {
   void unload();
 
   /**
-   * If you want to load reloadable parts, do it here
-   * <p/>
-   * Precondition : reloadable parts of current component are be unloaded
-   * Postcondition : reloadable parts of current component loaded under a new classloader
-   */
-  void load();
-
-  /**
    * If you want to update UI after reload do it here.
    * <p/>
    * Precondition: all reloadable parts are reloaded under a new classloader

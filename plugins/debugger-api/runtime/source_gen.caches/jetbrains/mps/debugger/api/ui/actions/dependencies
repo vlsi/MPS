@@ -1,6 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
   <dependency className="jetbrains.mps.debugger.api.ui.actions.DebugRunMenu_ActionGroup" file="DebugRunMenu_ActionGroup.java">
+    <classNode dependClassName="com.intellij.openapi.actionSystem.ex.ActionManagerEx" />
+    <classNode dependClassName="com.intellij.openapi.extensions.PluginId" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.lang.Throwable" />
+    <classNode dependClassName="jetbrains.mps.logging.Logger" />
+    <classNode dependClassName="jetbrains.mps.workbench.action.LabelledAnchor" />
+    <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup" />
+  </dependency>
+  <dependency className="jetbrains.mps.debugger.api.ui.actions.DebugStepsMenu_ActionGroup" file="DebugStepsMenu_ActionGroup.java">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="jetbrains.mps.logging.Logger" />
@@ -149,6 +158,7 @@
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.debugger.api.ui.actions.DebugRunMenu_ActionGroup" />
+    <classNode dependClassName="jetbrains.mps.debugger.api.ui.actions.DebugStepsMenu_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.debugger.api.ui.actions.DebugTool_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.debugger.api.ui.actions.Debugger_KeymapChanges" />
     <classNode dependClassName="jetbrains.mps.debugger.api.ui.actions.EvaluateExpression_Action" />

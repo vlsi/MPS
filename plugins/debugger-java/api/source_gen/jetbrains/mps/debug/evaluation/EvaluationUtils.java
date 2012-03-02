@@ -242,9 +242,8 @@ public abstract class EvaluationUtils {
         log.info("", e);
       }
     } catch (EvaluationException e) {
-      // some unknown exception -- better inform about it 
-      if (log.isErrorEnabled()) {
-        log.error("", e);
+      if (log.isDebugEnabled()) {
+        log.debug("", e);
       }
     }
     return failure;
