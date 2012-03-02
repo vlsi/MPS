@@ -14,37 +14,37 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 public class TestTemporalPaths_Test extends BaseTransformationTest {
   @Test
   public void test_topLevelJar() throws Throwable {
-    this.initTest("${mps_langs}/build/build.ipr", "r:361d93bd-9223-4768-9e37-bcd7b8db1f40(jetbrains.mps.buildScript.tests@tests)");
+    this.initTest("${mps_home}/MPS.ipr", "r:361d93bd-9223-4768-9e37-bcd7b8db1f40(jetbrains.mps.buildScript.tests@tests)");
     this.runTest("jetbrains.mps.buildScript.tests.TestTemporalPaths_Test$TestBody", "test_topLevelJar", true);
   }
 
   @Test
   public void test_topLevelFolder() throws Throwable {
-    this.initTest("${mps_langs}/build/build.ipr", "r:361d93bd-9223-4768-9e37-bcd7b8db1f40(jetbrains.mps.buildScript.tests@tests)");
+    this.initTest("${mps_home}/MPS.ipr", "r:361d93bd-9223-4768-9e37-bcd7b8db1f40(jetbrains.mps.buildScript.tests@tests)");
     this.runTest("jetbrains.mps.buildScript.tests.TestTemporalPaths_Test$TestBody", "test_topLevelFolder", true);
   }
 
   @Test
   public void test_topInternalFolder() throws Throwable {
-    this.initTest("${mps_langs}/build/build.ipr", "r:361d93bd-9223-4768-9e37-bcd7b8db1f40(jetbrains.mps.buildScript.tests@tests)");
+    this.initTest("${mps_home}/MPS.ipr", "r:361d93bd-9223-4768-9e37-bcd7b8db1f40(jetbrains.mps.buildScript.tests@tests)");
     this.runTest("jetbrains.mps.buildScript.tests.TestTemporalPaths_Test$TestBody", "test_topInternalFolder", true);
   }
 
   @Test
   public void test_jarInFolder() throws Throwable {
-    this.initTest("${mps_langs}/build/build.ipr", "r:361d93bd-9223-4768-9e37-bcd7b8db1f40(jetbrains.mps.buildScript.tests@tests)");
+    this.initTest("${mps_home}/MPS.ipr", "r:361d93bd-9223-4768-9e37-bcd7b8db1f40(jetbrains.mps.buildScript.tests@tests)");
     this.runTest("jetbrains.mps.buildScript.tests.TestTemporalPaths_Test$TestBody", "test_jarInFolder", true);
   }
 
   @Test
   public void test_folderInJar() throws Throwable {
-    this.initTest("${mps_langs}/build/build.ipr", "r:361d93bd-9223-4768-9e37-bcd7b8db1f40(jetbrains.mps.buildScript.tests@tests)");
+    this.initTest("${mps_home}/MPS.ipr", "r:361d93bd-9223-4768-9e37-bcd7b8db1f40(jetbrains.mps.buildScript.tests@tests)");
     this.runTest("jetbrains.mps.buildScript.tests.TestTemporalPaths_Test$TestBody", "test_folderInJar", true);
   }
 
   @Test
   public void test_duplicatedNames() throws Throwable {
-    this.initTest("${mps_langs}/build/build.ipr", "r:361d93bd-9223-4768-9e37-bcd7b8db1f40(jetbrains.mps.buildScript.tests@tests)");
+    this.initTest("${mps_home}/MPS.ipr", "r:361d93bd-9223-4768-9e37-bcd7b8db1f40(jetbrains.mps.buildScript.tests@tests)");
     this.runTest("jetbrains.mps.buildScript.tests.TestTemporalPaths_Test$TestBody", "test_duplicatedNames", true);
   }
 
