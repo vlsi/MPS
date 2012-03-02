@@ -29,10 +29,13 @@
 
   <extensions defaultExtensionNs="com.intellij">
     <errorHandler implementation="jetbrains.mps.ide.blame.CharismaReporter"/>
+    <vcs.fileStatusProvider implementation="jetbrains.mps.vcs.changesmanager.NodeFileStatusProvider"/>
   </extensions>
   <project-components>
     <component>
       <implementation-class>jetbrains.mps.vcs.changesmanager.NodeFileStatusMapping</implementation-class>
     </component>
   </project-components>
+
+
 </idea-plugin>
