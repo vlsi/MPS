@@ -22,6 +22,7 @@ import com.intellij.ide.projectView.ViewSettings;
 import com.intellij.ide.util.treeView.AbstractTreeNode;
 import com.intellij.ide.util.treeView.ValidateableNode;
 import com.intellij.openapi.project.Project;
+import com.intellij.openapi.ui.Queryable;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.ide.editor.MPSEditorOpener;
 import jetbrains.mps.ide.icons.IconManager;
@@ -130,5 +131,15 @@ public class MPSProjectViewNode extends ProjectViewNode<SNodePointer> implements
   @Override
   public boolean isValid() {
     return getValue().getNode() != null;
+  }
+
+  @Override
+  public String toTestString(Queryable.PrintInfo printInfo) {
+    return ModelAccess.instance().runReadAction(new Computable<String>() {
+      @Override
+      public String compute() {
+        return getValue().getNode().getName();
+      }
+    });
   }
 }
