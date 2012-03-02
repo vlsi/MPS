@@ -128,6 +128,9 @@
       <property name="name" nameId="tpck.1169194664001" value="MuteBreakpoints" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="breakpoints" />
     </node>
+    <node type="tp4k.ActionGroupDeclaration" typeId="tp4k.1203087890642" id="9154600507441896288">
+      <property name="name" nameId="tpck.1169194664001" value="DebugStepsMenu" />
+    </node>
   </roots>
   <root id="7064627997011532320">
     <node role="parameter" roleId="tp4k.1217413222820" type="tp4k.ActionDataParameterDeclaration" typeId="tp4k.1217252042208" id="7064627997011532321">
@@ -1649,14 +1652,8 @@
   <root id="7064627997011532858">
     <node role="contents" roleId="tp4k.1207145245948" type="tp4k.ElementListContents" typeId="tp4k.1207145163717" id="7064627997011532859">
       <node role="reference" roleId="tp4k.1207145201301" type="tp4k.Separator" typeId="tp4k.1204908117386" id="7064627997011532860" />
-      <node role="reference" roleId="tp4k.1207145201301" type="tp4k.ActionInstance" typeId="tp4k.1203088046679" id="7064627997011532861">
-        <link role="action" roleId="tp4k.1203088061055" targetNodeId="7064627997011532759" resolveInfo="StepOver" />
-      </node>
-      <node role="reference" roleId="tp4k.1207145201301" type="tp4k.ActionInstance" typeId="tp4k.1203088046679" id="7064627997011532862">
-        <link role="action" roleId="tp4k.1203088061055" targetNodeId="7064627997011532701" resolveInfo="StepInto" />
-      </node>
-      <node role="reference" roleId="tp4k.1207145201301" type="tp4k.ActionInstance" typeId="tp4k.1203088046679" id="7064627997011532863">
-        <link role="action" roleId="tp4k.1203088061055" targetNodeId="7064627997011532730" resolveInfo="StepOut" />
+      <node role="reference" roleId="tp4k.1207145201301" type="tp4k.GroupAnchor" typeId="tp4k.1203680534665" id="9154600507441896295">
+        <property name="name" nameId="tpck.1169194664001" value="steps" />
       </node>
       <node role="reference" roleId="tp4k.1207145201301" type="tp4k.ActionInstance" typeId="tp4k.1203088046679" id="7064627997011532864">
         <link role="action" roleId="tp4k.1203088061055" targetNodeId="7064627997011532672" resolveInfo="Resume" />
@@ -1967,6 +1964,23 @@
       <node role="annotation" roleId="tpee.1188208488637" type="tpee.AnnotationInstance" typeId="tpee.1188207840427" id="2392684134639445081">
         <link role="annotation" roleId="tpee.1188208074048" targetNodeId="e2lb.~Override" resolveInfo="Override" />
       </node>
+    </node>
+  </root>
+  <root id="9154600507441896288">
+    <node role="contents" roleId="tp4k.1207145245948" type="tp4k.ElementListContents" typeId="tp4k.1207145163717" id="9154600507441896290">
+      <node role="reference" roleId="tp4k.1207145201301" type="tp4k.ActionInstance" typeId="tp4k.1203088046679" id="9154600507441896291">
+        <link role="action" roleId="tp4k.1203088061055" targetNodeId="7064627997011532759" resolveInfo="StepOver" />
+      </node>
+      <node role="reference" roleId="tp4k.1207145201301" type="tp4k.ActionInstance" typeId="tp4k.1203088046679" id="9154600507441896292">
+        <link role="action" roleId="tp4k.1203088061055" targetNodeId="7064627997011532701" resolveInfo="StepInto" />
+      </node>
+      <node role="reference" roleId="tp4k.1207145201301" type="tp4k.ActionInstance" typeId="tp4k.1203088046679" id="9154600507441896293">
+        <link role="action" roleId="tp4k.1203088061055" targetNodeId="7064627997011532730" resolveInfo="StepOut" />
+      </node>
+    </node>
+    <node role="modifier" roleId="tp4k.1204991552650" type="tp4k.ModificationStatement" typeId="tp4k.1203092361741" id="9154600507441896296">
+      <link role="modifiedGroup" roleId="tp4k.1203092736097" targetNodeId="7064627997011532858" resolveInfo="DebugRunMenu" />
+      <link role="point" roleId="tp4k.1204992316090" targetNodeId="9154600507441896295" resolveInfo="steps" />
     </node>
   </root>
 </model>

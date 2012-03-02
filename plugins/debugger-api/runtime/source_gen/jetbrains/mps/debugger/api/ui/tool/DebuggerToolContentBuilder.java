@@ -17,13 +17,13 @@ import com.intellij.execution.ui.ExecutionConsoleEx;
 import com.intellij.execution.ui.RunnerLayoutUi;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.actionSystem.ActionPlaces;
+import com.intellij.openapi.actionSystem.DefaultActionGroup;
+import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.ui.content.Content;
 import com.intellij.openapi.util.IconLoader;
 import com.intellij.execution.ui.layout.PlaceInGrid;
 import com.intellij.openapi.actionSystem.ActionGroup;
-import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import com.intellij.execution.runners.RestartAction;
-import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.ui.content.tabs.PinToolwindowTabAction;
 import com.intellij.execution.ui.actions.CloseAction;
 import javax.swing.JComponent;
@@ -70,6 +70,8 @@ public class DebuggerToolContentBuilder implements Disposable {
     buildUi(ui, console);
     DebuggerToolContentBuilder.MyRunContentDescriptor contentDescriptor = createDescriptorInternal(ui, profile);
     ui.getOptions().setLeftToolbar(createActionToolbar(ui, contentDescriptor), ActionPlaces.UNKNOWN);
+    // todo 
+    ui.getOptions().setTopToolbar(new DefaultActionGroup(ActionManager.getInstance().getAction("jetbrains.mps.debugger.api.ui.actions.DebugStepsMenu_ActionGroup")), ActionPlaces.UNKNOWN);
     return contentDescriptor;
   }
 
