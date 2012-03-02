@@ -12,6 +12,10 @@
     <action id="jetbrains.mps.ide.java.actions.GenerateToString_Action" class="jetbrains.mps.ide.java.actions.GenerateToString_Action"/>
     <action id="jetbrains.mps.ide.java.actions.GetModelContentsFromSource_Action" class="jetbrains.mps.ide.java.actions.GetModelContentsFromSource_Action"/>
     <action id="jetbrains.mps.ide.java.actions.GetModuleContentsFromSource_Action" class="jetbrains.mps.ide.java.actions.GetModuleContentsFromSource_Action"/>
+    <action id="jetbrains.mps.ide.java.actions.ImplementMethod_Action" class="jetbrains.mps.ide.java.actions.ImplementMethod_Action">
+      <keyboard-shortcut first-keystroke="ctrl I" keymap="$default"/>
+    </action>
+    <action id="jetbrains.mps.ide.java.actions.ImplementMethodsAsIntention_Action" class="jetbrains.mps.ide.java.actions.ImplementMethodsAsIntention_Action"/>
     <action id="jetbrains.mps.ide.java.actions.MakeFieldFinal_Action" class="jetbrains.mps.ide.java.actions.MakeFieldFinal_Action"/>
     <action id="jetbrains.mps.ide.java.actions.MakeFieldStatic_Action" class="jetbrains.mps.ide.java.actions.MakeFieldStatic_Action"/>
     <action id="jetbrains.mps.ide.java.actions.MigrateSourcesToMPS_Action" class="jetbrains.mps.ide.java.actions.MigrateSourcesToMPS_Action"/>
@@ -21,6 +25,10 @@
     <action id="jetbrains.mps.ide.java.actions.MoveStaticMethod_Action" class="jetbrains.mps.ide.java.actions.MoveStaticMethod_Action">
       <keyboard-shortcut first-keystroke=" F6" keymap="$default"/>
     </action>
+    <action id="jetbrains.mps.ide.java.actions.OverrideMethod_Action" class="jetbrains.mps.ide.java.actions.OverrideMethod_Action">
+      <keyboard-shortcut first-keystroke="ctrl O" keymap="$default"/>
+    </action>
+    <action id="jetbrains.mps.ide.java.actions.OverrideMethodsAsIntention_Action" class="jetbrains.mps.ide.java.actions.OverrideMethodsAsIntention_Action"/>
     <action id="jetbrains.mps.ide.java.actions.PasteAsJavaClass_Action" class="jetbrains.mps.ide.java.actions.PasteAsJavaClass_Action"/>
     <action id="jetbrains.mps.ide.java.actions.PasteAsJavaMethods_Action" class="jetbrains.mps.ide.java.actions.PasteAsJavaMethods_Action"/>
     <action id="jetbrains.mps.ide.java.actions.PasteAsJavaStatements_Action" class="jetbrains.mps.ide.java.actions.PasteAsJavaStatements_Action"/>
@@ -59,7 +67,19 @@
       <reference ref="jetbrains.mps.ide.java.actions.GenerateEqualsAndHashCode_Action"/>
       <reference ref="jetbrains.mps.ide.java.actions.GenerateMainMethod_Action"/>
       <reference ref="jetbrains.mps.ide.java.actions.GenerateToString_Action"/>
+      <reference ref="jetbrains.mps.ide.java.actions.ImplementMethod_Action"/>
+      <reference ref="jetbrains.mps.ide.java.actions.OverrideMethod_Action"/>
       <add-to-group group-id="jetbrains.mps.ide.editor.actions.GenerationActions_ActionGroup" anchor="last"/>
+    </group>
+    <group id="jetbrains.mps.ide.java.actions.CodeOverrideImplementMenu_ActionGroup">
+      <reference ref="jetbrains.mps.ide.java.actions.OverrideMethod_Action"/>
+      <reference ref="jetbrains.mps.ide.java.actions.ImplementMethod_Action"/>
+      <add-to-group group-id="Code_ActionGroupoverrideImplement" anchor="last"/>
+    </group>
+    <group id="jetbrains.mps.ide.java.actions.ShowAsIntentions_ActionGroup">
+      <reference ref="jetbrains.mps.ide.java.actions.ImplementMethodsAsIntention_Action"/>
+      <reference ref="jetbrains.mps.ide.java.actions.OverrideMethodsAsIntention_Action"/>
+      <add-to-group group-id="jetbrains.mps.ide.editor.actions.ActionsAsIntentions_ActionGroup" anchor="last"/>
     </group>
   </actions>
 </components>

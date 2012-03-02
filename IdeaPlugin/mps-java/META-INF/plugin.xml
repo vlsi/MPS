@@ -30,6 +30,9 @@
   </application-components>
 
   <project-components>
+    <component>
+      <implementation-class>jetbrains.mps.ide.java.actions.OverrideImplementMethodComponent</implementation-class>
+    </component>
   </project-components>
 
   <actions>
