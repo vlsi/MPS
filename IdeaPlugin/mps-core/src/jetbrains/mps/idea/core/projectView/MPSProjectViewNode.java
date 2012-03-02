@@ -44,6 +44,7 @@ import java.util.Collections;
  */
 public class MPSProjectViewNode extends ProjectViewNode<SNodePointer> implements ValidateableNode {
   private SNodePointer nodePointer;
+  private Icon myIcon;
 
   /**
    * Creates an instance of the project view node.
@@ -55,6 +56,7 @@ public class MPSProjectViewNode extends ProjectViewNode<SNodePointer> implements
   public MPSProjectViewNode(Project project, SNodePointer nodePointer, ViewSettings viewSettings) {
     super(project, nodePointer, viewSettings);
     this.nodePointer = nodePointer;
+    myIcon = IconManager.getIconFor(nodePointer.getNode());
   }
 
   @Override
@@ -79,7 +81,6 @@ public class MPSProjectViewNode extends ProjectViewNode<SNodePointer> implements
 
   @Override
   protected void update(PresentationData presentation) {
-    final Icon[] icon = new Icon[1];
     final String[] name = new String[1];
 
     ModelAccess.instance().runReadAction(new Runnable() {
@@ -89,7 +90,6 @@ public class MPSProjectViewNode extends ProjectViewNode<SNodePointer> implements
           name[0] = node.getName();
         } catch (Exception ex) {
           name[0] = "exc: " + ex.getMessage();
-          icon[0] = IconManager.getIconFor(node);
         }
 
         if (name[0] == null) {
@@ -99,7 +99,7 @@ public class MPSProjectViewNode extends ProjectViewNode<SNodePointer> implements
     });
 
     presentation.setPresentableText(name[0]);
-    presentation.setIcons(icon[0]);
+    presentation.setIcons(myIcon);
   }
 
   @Override
