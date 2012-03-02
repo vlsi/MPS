@@ -51,8 +51,6 @@
   <import index="devh" modelUID="f:java_stub#6fd1293f-7f65-4ffd-99dc-4719eca7c171#git4idea.config(jetbrains.mps.vcs.platform/git4idea.config@java_stub)" version="-1" />
   <import index="xl3n" modelUID="f:java_stub#6fd1293f-7f65-4ffd-99dc-4719eca7c171#git4idea.commands(jetbrains.mps.vcs.platform/git4idea.commands@java_stub)" version="-1" />
   <import index="k4jk" modelUID="f:java_stub#6fd1293f-7f65-4ffd-99dc-4719eca7c171#org.jetbrains.idea.svn(jetbrains.mps.vcs.platform/org.jetbrains.idea.svn@java_stub)" version="-1" />
-  <import index="d3r1" modelUID="f:java_stub#6fd1293f-7f65-4ffd-99dc-4719eca7c171#de.regnis.q.sequence.line(jetbrains.mps.vcs.platform/de.regnis.q.sequence.line@java_stub)" version="-1" />
-  <import index="w5jk" modelUID="f:java_stub#6fd1293f-7f65-4ffd-99dc-4719eca7c171#org.tmatesoft.svn.core.internal.wc(jetbrains.mps.vcs.platform/org.tmatesoft.svn.core.internal.wc@java_stub)" version="-1" />
   <import index="ur19" modelUID="r:d58d9938-2526-431c-a5fe-6bbbfeb64ac2(jetbrains.mps.vcs.util)" version="-1" />
   <import index="4gyo" modelUID="r:a178d3c3-970e-4352-b61c-4e55abc3bc24(jetbrains.mps.vcs.core.mergedriver)" version="-1" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />

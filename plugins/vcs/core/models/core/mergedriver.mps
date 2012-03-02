@@ -22,15 +22,17 @@
   <import index="bmv6" modelUID="r:e9c4e128-4808-4224-a92b-dbeed02eb860(jetbrains.mps.vcs.diff.merge)" version="-1" />
   <import index="bfxj" modelUID="r:5744ed46-c83f-47cd-94ce-f24d1f92d6a1(jetbrains.mps.vcs.diff)" version="-1" />
   <import index="ur19" modelUID="r:d58d9938-2526-431c-a5fe-6bbbfeb64ac2(jetbrains.mps.vcs.util)" version="-1" />
-  <import index="n0ft" modelUID="f:java_stub#6fd1293f-7f65-4ffd-99dc-4719eca7c171#org.tmatesoft.svn.core.wc(jetbrains.mps.ide.vcs.platform/org.tmatesoft.svn.core.wc@java_stub)" version="-1" />
-  <import index="w5jk" modelUID="f:java_stub#6fd1293f-7f65-4ffd-99dc-4719eca7c171#org.tmatesoft.svn.core.internal.wc(jetbrains.mps.ide.vcs.platform/org.tmatesoft.svn.core.internal.wc@java_stub)" version="-1" />
-  <import index="d3r1" modelUID="f:java_stub#6fd1293f-7f65-4ffd-99dc-4719eca7c171#de.regnis.q.sequence.line(jetbrains.mps.ide.vcs.platform/de.regnis.q.sequence.line@java_stub)" version="-1" />
+  <import index="jfhu" modelUID="f:java_stub#85836058-a162-41d7-bb1d-52e99d873f28#org.tmatesoft.svn.core.wc(jetbrains.mps.ide.vcs.core/org.tmatesoft.svn.core.wc@java_stub)" version="-1" />
+  <import index="sa9j" modelUID="f:java_stub#85836058-a162-41d7-bb1d-52e99d873f28#org.tmatesoft.svn.core.internal.wc(jetbrains.mps.ide.vcs.core/org.tmatesoft.svn.core.internal.wc@java_stub)" version="-1" />
+  <import index="dks6" modelUID="f:java_stub#85836058-a162-41d7-bb1d-52e99d873f28#de.regnis.q.sequence.line(jetbrains.mps.ide.vcs.core/de.regnis.q.sequence.line@java_stub)" version="-1" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <import index="tpib" modelUID="r:00000000-0000-4000-0000-011c8959057f(jetbrains.mps.baseLanguage.logging.structure)" version="0" implicit="yes" />
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="-1" implicit="yes" />
   <import index="tp2c" modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="3" implicit="yes" />
   <import index="tp2q" modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" implicit="yes" />
   <import index="cx9y" modelUID="r:309aeee7-bee8-445c-b31d-35928d1da75f(jetbrains.mps.baseLanguage.tuples.structure)" version="2" implicit="yes" />
+  <import index="n0ft" modelUID="f:java_stub#6fd1293f-7f65-4ffd-99dc-4719eca7c171#org.tmatesoft.svn.core.wc(jetbrains.mps.ide.vcs.platform/org.tmatesoft.svn.core.wc@java_stub)" version="-1" implicit="yes" />
+  <import index="w5jk" modelUID="f:java_stub#6fd1293f-7f65-4ffd-99dc-4719eca7c171#org.tmatesoft.svn.core.internal.wc(jetbrains.mps.ide.vcs.platform/org.tmatesoft.svn.core.internal.wc@java_stub)" version="-1" implicit="yes" />
   <roots>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="3342666646761693517">
       <property name="name" nameId="tpck.1169194664001" value="MergeDriverMain" />
@@ -3844,12 +3846,12 @@
         <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="3342666646761698661">
           <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="3342666646761698662">
             <property name="name" nameId="tpck.1169194664001" value="baseData" />
-            <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="3342666646761698663">
-              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="d3r1.~QSequenceLineRAData" resolveInfo="QSequenceLineRAData" />
+            <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2403976608777683364">
+              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="dks6.~QSequenceLineRAData" resolveInfo="QSequenceLineRAData" />
             </node>
             <node role="initializer" roleId="tpee.1068431790190" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="3342666646761698664">
               <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="3342666646761698665">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="d3r1.~QSequenceLineRAByteData%d&lt;init&gt;(byte[])" resolveInfo="QSequenceLineRAByteData" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="dks6.~QSequenceLineRAByteData%d&lt;init&gt;(byte[])" resolveInfo="QSequenceLineRAByteData" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="3342666646761698666">
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3342666646761698638" resolveInfo="baseContent" />
                 </node>
@@ -3861,11 +3863,11 @@
           <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="3342666646761698668">
             <property name="name" nameId="tpck.1169194664001" value="localData" />
             <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="3342666646761698669">
-              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="d3r1.~QSequenceLineRAData" resolveInfo="QSequenceLineRAData" />
+              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="dks6.~QSequenceLineRAData" resolveInfo="QSequenceLineRAData" />
             </node>
             <node role="initializer" roleId="tpee.1068431790190" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="3342666646761698670">
               <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="3342666646761698671">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="d3r1.~QSequenceLineRAByteData%d&lt;init&gt;(byte[])" resolveInfo="QSequenceLineRAByteData" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="dks6.~QSequenceLineRAByteData%d&lt;init&gt;(byte[])" resolveInfo="QSequenceLineRAByteData" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="3342666646761698672">
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3342666646761698641" resolveInfo="localContent" />
                 </node>
@@ -3877,11 +3879,11 @@
           <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="3342666646761698674">
             <property name="name" nameId="tpck.1169194664001" value="latestData" />
             <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="3342666646761698675">
-              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="d3r1.~QSequenceLineRAData" resolveInfo="QSequenceLineRAData" />
+              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="dks6.~QSequenceLineRAData" resolveInfo="QSequenceLineRAData" />
             </node>
             <node role="initializer" roleId="tpee.1068431790190" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="3342666646761698676">
               <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="3342666646761698677">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="d3r1.~QSequenceLineRAByteData%d&lt;init&gt;(byte[])" resolveInfo="QSequenceLineRAByteData" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="dks6.~QSequenceLineRAByteData%d&lt;init&gt;(byte[])" resolveInfo="QSequenceLineRAByteData" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="3342666646761698678">
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3342666646761698644" resolveInfo="latestContent" />
                 </node>

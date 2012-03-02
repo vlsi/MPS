@@ -4,7 +4,9 @@
     <modelRoot path="${mps_home}/plugins/svn4ideaOld/lib/sequence-library.jar">
       <manager moduleId="f3061a53-9226-4cc5-a443-f952ceaf5816" className="jetbrains.mps.baseLanguage.stubs.JavaStubs" />
     </modelRoot>
-    <modelRoot path="${mps_home}/plugins/svn4ideaOld/lib/svnkit.jar" />
+    <modelRoot path="${mps_home}/plugins/svn4ideaOld/lib/svnkit.jar">
+      <manager moduleId="f3061a53-9226-4cc5-a443-f952ceaf5816" className="jetbrains.mps.baseLanguage.stubs.JavaStubs" />
+    </modelRoot>
     <modelRoot path="${solution_descriptor}/models" />
   </models>
   <sourcePath />
