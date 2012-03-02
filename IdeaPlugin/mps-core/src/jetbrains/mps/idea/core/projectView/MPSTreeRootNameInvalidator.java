@@ -18,20 +18,17 @@ package jetbrains.mps.idea.core.projectView;
 
 import com.intellij.openapi.components.AbstractProjectComponent;
 import com.intellij.openapi.project.Project;
-import com.intellij.openapi.vfs.LocalFileSystem;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.psi.PsiManager;
 import com.intellij.psi.impl.PsiManagerEx;
 import com.intellij.psi.impl.PsiManagerImpl;
 import com.intellij.psi.impl.PsiTreeChangeEventImpl;
-import jetbrains.mps.smodel.DefaultSModelDescriptor;
 import jetbrains.mps.smodel.GlobalSModelEventsManager;
-import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.smodel.event.SModelCommandListener;
 import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.smodel.event.SModelPropertyEvent;
-import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.workbench.ModelUtil;
 
 import java.util.List;
 
@@ -43,12 +40,7 @@ public class MPSTreeRootNameInvalidator extends AbstractProjectComponent {
         SModelPropertyEvent event = (SModelPropertyEvent) e;
         if (!event.getNode().isRoot()) continue;
         if (!event.getPropertyName().equals(SNodeUtil.property_INamedConcept_name)) continue;
-        SModelDescriptor d = e.getModel().getModelDescriptor();
-        if (!(d instanceof DefaultSModelDescriptor)) continue;
-        DefaultSModelDescriptor dsmd = (DefaultSModelDescriptor) d;
-        IFile mf = dsmd.getModelFile();
-        if (mf == null) continue;
-        VirtualFile file = LocalFileSystem.getInstance().findFileByPath(mf.getPath());
+        VirtualFile file = ModelUtil.getFileByModel(e.getModel());
         if (file == null) continue;
 
         PsiManager instance = PsiManagerEx.getInstance(myProject);
