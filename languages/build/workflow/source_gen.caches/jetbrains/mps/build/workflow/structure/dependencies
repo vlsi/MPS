@@ -122,7 +122,6 @@
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Iterator" />
     <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="jetbrains.mps.build.workflow.structure.BwfDependency" />
     <classNode dependClassName="jetbrains.mps.build.workflow.structure.BwfProjectPart" />
     <classNode dependClassName="jetbrains.mps.build.workflow.structure.BwfTaskLibraryDependency" />
     <classNode dependClassName="jetbrains.mps.lang.core.structure.Attribute" />

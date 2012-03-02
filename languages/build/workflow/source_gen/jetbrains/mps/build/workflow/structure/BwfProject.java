@@ -23,7 +23,6 @@ public class BwfProject extends BaseConcept implements INamedConcept, ScopeProvi
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String PARTS = "parts";
   public static final String IMPORTS = "imports";
-  public static final String DEPENDENCIES = "dependencies";
   public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
 
   public BwfProject(SNode node) {
@@ -116,26 +115,6 @@ public class BwfProject extends BaseConcept implements INamedConcept, ScopeProvi
 
   public void insertImports(BwfTaskLibraryDependency prev, BwfTaskLibraryDependency node) {
     this.insertChild(prev, BwfProject.IMPORTS, node);
-  }
-
-  public int getDependenciesesCount() {
-    return this.getChildCount(BwfProject.DEPENDENCIES);
-  }
-
-  public Iterator<BwfDependency> dependencieses() {
-    return this.children(BwfDependency.class, BwfProject.DEPENDENCIES);
-  }
-
-  public List<BwfDependency> getDependencieses() {
-    return this.getChildren(BwfDependency.class, BwfProject.DEPENDENCIES);
-  }
-
-  public void addDependencies(BwfDependency node) {
-    this.addChild(BwfProject.DEPENDENCIES, node);
-  }
-
-  public void insertDependencies(BwfDependency prev, BwfDependency node) {
-    this.insertChild(prev, BwfProject.DEPENDENCIES, node);
   }
 
   public int getSmodelAttributesCount() {

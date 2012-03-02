@@ -101,7 +101,7 @@
     <nodeInfo nodeId="1841835149314794571" fileName="Context.java" startLine="93" startPosition="71" endLine="94" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1841835149314837166" fileName="Context.java" startLine="97" startPosition="54" endLine="98" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4959435991187166423" fileName="Context.java" startLine="102" startPosition="42" endLine="103" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1328620895328648466" fileName="Context.java" startLine="107" startPosition="78" endLine="108" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1328620895328648466" fileName="Context.java" startLine="107" startPosition="79" endLine="108" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1328620895328648500" fileName="Context.java" startLine="109" startPosition="26" endLine="110" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1328620895328648519" fileName="Context.java" startLine="110" startPosition="40" endLine="111" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1328620895328648442" fileName="Context.java" startLine="112" startPosition="5" endLine="113" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -123,7 +123,7 @@
     <nodeInfo nodeId="4959435991187166413" fileName="Context.java" startLine="100" startPosition="0" endLine="105" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="defaultContext#()Ljetbrains/mps/buildScript/util/Context;" />
     <nodeInfo nodeId="4959435991187147689" fileName="Context.java" startLine="31" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="put#(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/Object;" />
     <nodeInfo nodeId="6432389088572863312" fileName="Context.java" startLine="51" startPosition="0" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getModule#(Ljetbrains/mps/smodel/SModel;)Ljetbrains/mps/project/IModule;" />
-    <nodeInfo nodeId="1328620895328648431" fileName="Context.java" startLine="105" startPosition="0" endLine="115" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="defaulContext#(Ljetbrains/mps/generator/template/TemplateQueryContext;)Ljetbrains/mps/buildScript/util/Context;" />
+    <nodeInfo nodeId="1328620895328648431" fileName="Context.java" startLine="105" startPosition="0" endLine="115" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="defaultContext#(Ljetbrains/mps/generator/template/TemplateQueryContext;)Ljetbrains/mps/buildScript/util/Context;" />
     <nodeInfo nodeId="1841835149314794355" fileName="Context.java" startLine="80" startPosition="0" endLine="96" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getRelativePathHelper#(Ljetbrains/mps/smodel/SModel;)Ljetbrains/mps/buildScript/util/RelativePathHelper;" />
     <nodeInfo nodeId="4209004860870526317" fileName="Context.java" startLine="59" startPosition="0" endLine="76" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getUniqueName#(Ljetbrains/mps/smodel/SNode;Ljava/lang/String;)Ljava/lang/String;" />
     <scopeInfo nodeId="4959435991187147172" fileName="Context.java" startLine="25" startPosition="20" endLine="25" endPosition="20" />
@@ -163,7 +163,7 @@
       <varInfo nodeId="4959435991187166575" varName="key" />
     </scopeInfo>
     <scopeInfo nodeId="4959435991187166413" fileName="Context.java" startLine="100" startPosition="0" endLine="105" endPosition="0" />
-    <scopeInfo nodeId="1328620895328648434" fileName="Context.java" startLine="107" startPosition="78" endLine="113" endPosition="19">
+    <scopeInfo nodeId="1328620895328648434" fileName="Context.java" startLine="107" startPosition="79" endLine="113" endPosition="19">
       <varInfo nodeId="1328620895328648467" varName="context" />
     </scopeInfo>
     <scopeInfo nodeId="4959435991187147689" fileName="Context.java" startLine="31" startPosition="0" endLine="38" endPosition="0">

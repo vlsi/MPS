@@ -48,7 +48,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class QueriesGenerated {
-  private static Pattern REGEXP_x583g4_a0a0b0b0a0a0a0c0a0c0n = Pattern.compile("[^\\$].*", 0);
+  private static Pattern REGEXP_x583g4_a0a0b0b0a0a0a0c0a0c0o = Pattern.compile("[^\\$].*", 0);
 
   public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_BuildSourceMacroRelativePath_7321017245477126429(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
     return (SLinkOperations.getTarget(_context.getSourceNode(), "compositePart", true) == null);
@@ -56,6 +56,10 @@ public class QueriesGenerated {
 
   public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_BuildSourceProjectRelativePath_3877654905647401355(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
     return (SLinkOperations.getTarget(_context.getSourceNode(), "compositePart", true) == null);
+  }
+
+  public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_BuildProjectDependency_4129895186893506343(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
+    return (SLinkOperations.getTarget(_context.getSourceNode(), "artifacts", true) == null);
   }
 
   public static void nodeFactory_NodeSetup_BuildProject_6099797596647447257(final IOperationContext operationContext, final NodeSetupContext _context) {
@@ -69,7 +73,7 @@ public class QueriesGenerated {
     }
 
     SPropertyOperations.set(_context.getNewNode(), "internalBaseDirectory", ".");
-    SLinkOperations.setTarget(_context.getNewNode(), "scriptsDir", new QueriesGenerated.QuotationClass_x583g4_a2a6a2().createNode(), true);
+    SLinkOperations.setTarget(_context.getNewNode(), "scriptsDir", new QueriesGenerated.QuotationClass_x583g4_a2a6a3().createNode(), true);
   }
 
   public static void nodeFactory_NodeSetup_BuildSourceMacroRelativePath_7389400916848172016(final IOperationContext operationContext, final NodeSetupContext _context) {
@@ -275,7 +279,7 @@ public class QueriesGenerated {
               return "text";
             }
             {
-              Pattern _pattern_0 = REGEXP_x583g4_a0a0b0b0a0a0a0c0a0c0n;
+              Pattern _pattern_0 = REGEXP_x583g4_a0a0b0b0a0a0a0c0a0c0o;
               Matcher _matcher_0 = _pattern_0.matcher(pattern);
               if (_matcher_0.find()) {
                 return pattern;
@@ -448,8 +452,34 @@ public class QueriesGenerated {
     return result;
   }
 
-  public static class QuotationClass_x583g4_a2a6a2 {
-    public QuotationClass_x583g4_a2a6a2() {
+  public static List<INodeSubstituteAction> sideTransform_ActionsFactory_BuildProjectDependency_4129895186893506280(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
+    List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
+    {
+      SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.buildScript.structure.BuildProjectDependency");
+      ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
+        public SNode doSubstitute(String pattern) {
+          SNodeFactoryOperations.setNewChild(_context.getSourceNode(), "artifacts", "jetbrains.mps.buildScript.structure.BuildSourcePath");
+          return _context.getSourceNode();
+        }
+
+        public String getMatchingText(String pattern) {
+          return "(";
+        }
+
+        public String getVisibleMatchingText(String pattern) {
+          return this.getMatchingText(pattern);
+        }
+
+        public String getDescriptionText(String pattern) {
+          return "custom artifacts location";
+        }
+      });
+    }
+    return result;
+  }
+
+  public static class QuotationClass_x583g4_a2a6a3 {
+    public QuotationClass_x583g4_a2a6a3() {
     }
 
     public SNode createNode() {

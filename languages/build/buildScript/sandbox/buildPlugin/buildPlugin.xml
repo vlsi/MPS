@@ -1,9 +1,11 @@
 <project name="buildPlugin" basedir="../">
-  <property name="buildCore.artifacts" location="build/artifacts/buildCore.artifacts/buildCore.variables.properties" />
-  <property file="${buildCore.artifacts}" />
   <property name="build.dir" location="build" />
   <property name="build.tmp" location="${build.dir}/tmp/buildPlugin" />
   <property name="build.layout" location="${build.dir}/artifacts/buildPlugin" />
+  <property name="ds" location="${basedir}" />
+  <property name="artifacts.buildCore" location="${build.dir}/artifacts/buildCore" />
+  <property name="artifacts.buildA" location="${ds}/../../buildA" />
+  <property name="artifacts.buildB" location="../../solutions/buildB/build/artifacts/buildB" />
   
   <target name="build" />
   

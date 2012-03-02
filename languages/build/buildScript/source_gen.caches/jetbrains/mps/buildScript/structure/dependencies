@@ -295,6 +295,7 @@
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.buildScript.structure.BuildDependency" />
     <classNode dependClassName="jetbrains.mps.buildScript.structure.BuildProject" />
+    <classNode dependClassName="jetbrains.mps.buildScript.structure.BuildSourcePath" />
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />

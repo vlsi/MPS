@@ -20,10 +20,6 @@ public class BwfMacro_Editor extends DefaultNodeEditor {
     return this.createCollection_kawrig_a(editorContext, node);
   }
 
-  public EditorCell createInspectedCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_kawrig_a_0(editorContext, node);
-  }
-
   private EditorCell createCollection_kawrig_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_kawrig_a");
@@ -38,14 +34,6 @@ public class BwfMacro_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createProperty_kawrig_i0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_kawrig_j0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_kawrig_k0(editorContext, node));
-    return editorCell;
-  }
-
-  private EditorCell createCollection_kawrig_a_0(EditorContext editorContext, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_kawrig_a_0");
-    editorCell.addEditorCell(this.createConstant_kawrig_a0_0(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_kawrig_b0_0(editorContext, node));
     return editorCell;
   }
 
@@ -120,13 +108,6 @@ public class BwfMacro_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_kawrig_a0_0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "insert before property file");
-    editorCell.setCellId("Constant_kawrig_a0_0");
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
   private EditorCell createProperty_kawrig_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("name");
@@ -188,24 +169,6 @@ public class BwfMacro_Editor extends DefaultNodeEditor {
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_isLocation");
-    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    SNode attributeConcept = provider.getRoleAttribute();
-    Class attributeKind = provider.getRoleAttributeClass();
-    if (attributeConcept != null) {
-      IOperationContext opContext = editorContext.getOperationContext();
-      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
-      return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
-    } else
-    return editorCell;
-  }
-
-  private EditorCell createProperty_kawrig_b0_0(EditorContext editorContext, SNode node) {
-    CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
-    provider.setRole("beforeFiles");
-    provider.setNoTargetText("<no beforeFiles>");
-    EditorCell editorCell;
-    editorCell = provider.createEditorCell(editorContext);
-    editorCell.setCellId("property_beforeFiles");
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

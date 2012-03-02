@@ -1,0 +1,11 @@
+<project name="buildB">
+  <property name="build.dir" location="build" />
+  <property name="build.tmp" location="${build.dir}/tmp/buildB" />
+  <property name="build.layout" location="${build.dir}/artifacts/buildB" />
+  
+  <target name="build" />
+  
+  <target name="clean">
+    <delete dir="${build.dir}" />
+  </target>
+</project>

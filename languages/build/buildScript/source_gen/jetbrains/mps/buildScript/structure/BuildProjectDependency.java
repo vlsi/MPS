@@ -10,6 +10,7 @@ import jetbrains.mps.project.GlobalScope;
 public class BuildProjectDependency extends BuildDependency {
   public static final String concept = "jetbrains.mps.buildScript.structure.BuildProjectDependency";
   public static final String SCRIPT = "script";
+  public static final String ARTIFACTS = "artifacts";
 
   public BuildProjectDependency(SNode node) {
     super(node);
@@ -21,6 +22,14 @@ public class BuildProjectDependency extends BuildDependency {
 
   public void setScript(BuildProject node) {
     super.setReferent(BuildProjectDependency.SCRIPT, node);
+  }
+
+  public BuildSourcePath getArtifacts() {
+    return (BuildSourcePath) this.getChild(BuildSourcePath.class, BuildProjectDependency.ARTIFACTS);
+  }
+
+  public void setArtifacts(BuildSourcePath node) {
+    super.setChild(BuildProjectDependency.ARTIFACTS, node);
   }
 
   public static BuildProjectDependency newInstance(SModel sm, boolean init) {
