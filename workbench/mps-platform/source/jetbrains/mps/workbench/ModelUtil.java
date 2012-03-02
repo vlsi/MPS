@@ -25,12 +25,12 @@ import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.Nullable;
 
 public abstract class ModelUtil {
-  public static VirtualFile getFileByModel(@Nullable SModel model){
+  public static VirtualFile getFileByModel(@Nullable SModel model) {
     if (model == null || model.isDisposed()) return null;
     SModelDescriptor desc = model.getModelDescriptor();
     if (!(desc instanceof DefaultSModelDescriptor)) return null;
     IFile file = ((DefaultSModelDescriptor) desc).getModelFile();
-    if (file==null) return null;
+    if (file == null) return null;
     return VirtualFileUtils.getVirtualFile(file);
   }
 }
