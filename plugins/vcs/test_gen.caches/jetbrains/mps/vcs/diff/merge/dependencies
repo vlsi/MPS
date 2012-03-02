@@ -51,10 +51,10 @@
     <classNode dependClassName="jetbrains.mps.util.DifflibFacade" />
     <classNode dependClassName="jetbrains.mps.util.FileUtil" />
     <classNode dependClassName="jetbrains.mps.util.ReadUtil" />
+    <classNode dependClassName="jetbrains.mps.vcs.core.mergedriver.MergerRoleIdsHandler" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.ChangeSet" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.changes.ModelChange" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.merge.MergeSession" />
-    <classNode dependClassName="jetbrains.mps.vcs.mergedriver.MergerRoleIdsHandler" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
   </dependency>
