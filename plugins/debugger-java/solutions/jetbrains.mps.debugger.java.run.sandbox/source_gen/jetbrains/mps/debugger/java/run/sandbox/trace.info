@@ -2,66 +2,71 @@
 <debugInfo>
   <root nodeId="1876713722539579910">
     <nodeInfo nodeId="6814978825597953741" fileName="SeveralThreads.java" startLine="15" startPosition="25" endLine="16" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="774465993226016888" fileName="SeveralThreads.java" startLine="18" startPosition="32" endLine="19" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="774465993226016890" fileName="SeveralThreads.java" startLine="18" startPosition="32" endLine="19" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2524662747712063126" fileName="SeveralThreads.java" startLine="23" startPosition="15" endLine="24" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2524662747712063134" fileName="SeveralThreads.java" startLine="24" startPosition="47" endLine="25" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2524662747712063124" fileName="SeveralThreads.java" startLine="25" startPosition="94" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="2524662747712063143" fileName="SeveralThreads.java" startLine="26" startPosition="0" endLine="27" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2524662747712063154" fileName="SeveralThreads.java" startLine="27" startPosition="24" endLine="28" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2524662747712063125" fileName="SeveralThreads.java" startLine="28" startPosition="31" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="6647443673251160603" fileName="SeveralThreads.java" startLine="29" startPosition="0" endLine="30" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6647443673251160621" fileName="SeveralThreads.java" startLine="30" startPosition="56" endLine="31" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6647443673251160624" fileName="SeveralThreads.java" startLine="31" startPosition="16" endLine="32" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8841338956805577138" fileName="SeveralThreads.java" startLine="38" startPosition="18" endLine="39" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6647443673251160587" fileName="SeveralThreads.java" startLine="44" startPosition="9" endLine="45" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6647443673251160590" fileName="SeveralThreads.java" startLine="45" startPosition="50" endLine="46" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6647443673251160595" fileName="SeveralThreads.java" startLine="46" startPosition="47" endLine="47" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3921561759367115246" fileName="SeveralThreads.java" startLine="16" startPosition="18" endLine="17" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="668438249864250912" fileName="SeveralThreads.java" startLine="17" startPosition="14" endLine="18" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2228821930962805171" fileName="SeveralThreads.java" startLine="18" startPosition="14" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="774465993226016888" fileName="SeveralThreads.java" startLine="21" startPosition="32" endLine="22" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="774465993226016890" fileName="SeveralThreads.java" startLine="21" startPosition="32" endLine="22" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2524662747712063126" fileName="SeveralThreads.java" startLine="26" startPosition="15" endLine="27" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2524662747712063134" fileName="SeveralThreads.java" startLine="27" startPosition="47" endLine="28" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2524662747712063124" fileName="SeveralThreads.java" startLine="28" startPosition="94" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="2524662747712063143" fileName="SeveralThreads.java" startLine="29" startPosition="0" endLine="30" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2524662747712063154" fileName="SeveralThreads.java" startLine="30" startPosition="24" endLine="31" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2524662747712063125" fileName="SeveralThreads.java" startLine="31" startPosition="31" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="6647443673251160603" fileName="SeveralThreads.java" startLine="32" startPosition="0" endLine="33" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6647443673251160621" fileName="SeveralThreads.java" startLine="33" startPosition="56" endLine="34" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6647443673251160624" fileName="SeveralThreads.java" startLine="34" startPosition="16" endLine="35" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8841338956805577138" fileName="SeveralThreads.java" startLine="41" startPosition="18" endLine="42" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6647443673251160587" fileName="SeveralThreads.java" startLine="47" startPosition="9" endLine="48" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6647443673251160590" fileName="SeveralThreads.java" startLine="48" startPosition="50" endLine="49" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6647443673251160595" fileName="SeveralThreads.java" startLine="49" startPosition="47" endLine="50" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1876713722539579912" fileName="SeveralThreads.java" startLine="9" startPosition="29" endLine="11" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="SeveralThreads#()V" />
-    <nodeInfo nodeId="8841338956805577134" fileName="SeveralThreads.java" startLine="37" startPosition="15" endLine="40" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
-    <nodeInfo nodeId="774465993226016886" fileName="SeveralThreads.java" startLine="17" startPosition="74" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#()V" />
-    <nodeInfo nodeId="774465993226012619" fileName="SeveralThreads.java" startLine="16" startPosition="18" endLine="21" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6647443673251160579" fileName="SeveralThreads.java" startLine="43" startPosition="36" endLine="49" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="3756818665386149934" fileName="SeveralThreads.java" startLine="42" startPosition="0" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="doSomething#()V" />
-    <nodeInfo nodeId="6647443673251160601" fileName="SeveralThreads.java" startLine="22" startPosition="22" endLine="34" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="6814978825597950772" fileName="SeveralThreads.java" startLine="21" startPosition="10" endLine="35" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
-    <nodeInfo nodeId="6814978825597950763" fileName="SeveralThreads.java" startLine="14" startPosition="31" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="6814978825597945492" fileName="SeveralThreads.java" startLine="13" startPosition="42" endLine="37" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1876713722539579916" fileName="SeveralThreads.java" startLine="12" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="main#([Ljava/lang/String;)V" />
+    <nodeInfo nodeId="8841338956805577134" fileName="SeveralThreads.java" startLine="40" startPosition="15" endLine="43" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
+    <nodeInfo nodeId="774465993226016886" fileName="SeveralThreads.java" startLine="20" startPosition="74" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#()V" />
+    <nodeInfo nodeId="774465993226012619" fileName="SeveralThreads.java" startLine="19" startPosition="0" endLine="24" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6647443673251160579" fileName="SeveralThreads.java" startLine="46" startPosition="36" endLine="52" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="3756818665386149934" fileName="SeveralThreads.java" startLine="45" startPosition="0" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="doSomething#()V" />
+    <nodeInfo nodeId="6647443673251160601" fileName="SeveralThreads.java" startLine="25" startPosition="22" endLine="37" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="6814978825597950772" fileName="SeveralThreads.java" startLine="24" startPosition="10" endLine="38" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
+    <nodeInfo nodeId="6814978825597950763" fileName="SeveralThreads.java" startLine="14" startPosition="31" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="6814978825597945492" fileName="SeveralThreads.java" startLine="13" startPosition="42" endLine="40" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1876713722539579916" fileName="SeveralThreads.java" startLine="12" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="main#([Ljava/lang/String;)V" />
     <scopeInfo nodeId="1876713722539579915" fileName="SeveralThreads.java" startLine="10" startPosition="27" endLine="10" endPosition="27" />
-    <scopeInfo nodeId="6647443673251160616" fileName="SeveralThreads.java" startLine="33" startPosition="0" endLine="33" endPosition="44">
+    <scopeInfo nodeId="6647443673251160616" fileName="SeveralThreads.java" startLine="36" startPosition="0" endLine="36" endPosition="44">
       <varInfo nodeId="6647443673251160617" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="6647443673251160619" fileName="SeveralThreads.java" startLine="33" startPosition="44" endLine="33" endPosition="44" />
-    <scopeInfo nodeId="6647443673251160582" fileName="SeveralThreads.java" startLine="48" startPosition="0" endLine="48" endPosition="38">
+    <scopeInfo nodeId="6647443673251160619" fileName="SeveralThreads.java" startLine="36" startPosition="44" endLine="36" endPosition="44" />
+    <scopeInfo nodeId="6647443673251160582" fileName="SeveralThreads.java" startLine="51" startPosition="0" endLine="51" endPosition="38">
       <varInfo nodeId="6647443673251160583" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="6647443673251160585" fileName="SeveralThreads.java" startLine="48" startPosition="38" endLine="48" endPosition="38" />
-    <scopeInfo nodeId="774465993226016887" fileName="SeveralThreads.java" startLine="18" startPosition="32" endLine="19" endPosition="55" />
-    <scopeInfo nodeId="774465993226016889" fileName="SeveralThreads.java" startLine="18" startPosition="32" endLine="19" endPosition="55" />
-    <scopeInfo nodeId="8841338956805577136" fileName="SeveralThreads.java" startLine="38" startPosition="18" endLine="39" endPosition="20" />
+    <scopeInfo nodeId="6647443673251160585" fileName="SeveralThreads.java" startLine="51" startPosition="38" endLine="51" endPosition="38" />
+    <scopeInfo nodeId="774465993226016887" fileName="SeveralThreads.java" startLine="21" startPosition="32" endLine="22" endPosition="55" />
+    <scopeInfo nodeId="774465993226016889" fileName="SeveralThreads.java" startLine="21" startPosition="32" endLine="22" endPosition="55" />
+    <scopeInfo nodeId="8841338956805577136" fileName="SeveralThreads.java" startLine="41" startPosition="18" endLine="42" endPosition="20" />
     <scopeInfo nodeId="1876713722539579912" fileName="SeveralThreads.java" startLine="9" startPosition="29" endLine="11" endPosition="3" />
-    <scopeInfo nodeId="6647443673251160580" fileName="SeveralThreads.java" startLine="44" startPosition="9" endLine="47" endPosition="58" />
-    <scopeInfo nodeId="774465993226016886" fileName="SeveralThreads.java" startLine="17" startPosition="74" endLine="21" endPosition="0" />
-    <scopeInfo nodeId="3756818665386149937" fileName="SeveralThreads.java" startLine="43" startPosition="36" endLine="49" endPosition="5" />
-    <scopeInfo nodeId="6647443673251160602" fileName="SeveralThreads.java" startLine="23" startPosition="15" endLine="32" endPosition="24">
+    <scopeInfo nodeId="6647443673251160580" fileName="SeveralThreads.java" startLine="47" startPosition="9" endLine="50" endPosition="58" />
+    <scopeInfo nodeId="774465993226016886" fileName="SeveralThreads.java" startLine="20" startPosition="74" endLine="24" endPosition="0" />
+    <scopeInfo nodeId="3756818665386149937" fileName="SeveralThreads.java" startLine="46" startPosition="36" endLine="52" endPosition="5" />
+    <scopeInfo nodeId="6647443673251160602" fileName="SeveralThreads.java" startLine="26" startPosition="15" endLine="35" endPosition="24">
       <varInfo nodeId="2524662747712063135" varName="indexedTuple" />
       <varInfo nodeId="2524662747712063127" varName="tuple" />
     </scopeInfo>
-    <scopeInfo nodeId="3756818665386149934" fileName="SeveralThreads.java" startLine="42" startPosition="0" endLine="51" endPosition="0" />
-    <scopeInfo nodeId="6814978825597950774" fileName="SeveralThreads.java" startLine="22" startPosition="22" endLine="34" endPosition="11" />
-    <scopeInfo nodeId="6814978825597950766" fileName="SeveralThreads.java" startLine="15" startPosition="25" endLine="35" endPosition="9">
+    <scopeInfo nodeId="3756818665386149934" fileName="SeveralThreads.java" startLine="45" startPosition="0" endLine="54" endPosition="0" />
+    <scopeInfo nodeId="6814978825597950774" fileName="SeveralThreads.java" startLine="25" startPosition="22" endLine="37" endPosition="11" />
+    <scopeInfo nodeId="6814978825597950766" fileName="SeveralThreads.java" startLine="15" startPosition="25" endLine="38" endPosition="9">
       <varInfo nodeId="774465993226012620" varName="cl" />
       <varInfo nodeId="6814978825597953742" varName="i" />
+      <varInfo nodeId="3921561759367115247" varName="j" />
+      <varInfo nodeId="668438249864250913" varName="k" />
     </scopeInfo>
-    <scopeInfo nodeId="6814978825597950763" fileName="SeveralThreads.java" startLine="14" startPosition="31" endLine="37" endPosition="0" />
-    <scopeInfo nodeId="1876713722539579918" fileName="SeveralThreads.java" startLine="13" startPosition="42" endLine="40" endPosition="5" />
-    <scopeInfo nodeId="1876713722539579916" fileName="SeveralThreads.java" startLine="12" startPosition="0" endLine="42" endPosition="0">
+    <scopeInfo nodeId="6814978825597950763" fileName="SeveralThreads.java" startLine="14" startPosition="31" endLine="40" endPosition="0" />
+    <scopeInfo nodeId="1876713722539579918" fileName="SeveralThreads.java" startLine="13" startPosition="42" endLine="43" endPosition="5" />
+    <scopeInfo nodeId="1876713722539579916" fileName="SeveralThreads.java" startLine="12" startPosition="0" endLine="45" endPosition="0">
       <varInfo nodeId="1876713722539579920" varName="args" />
     </scopeInfo>
-    <unitInfo nodeId="1876713722539579910" fileName="SeveralThreads.java" startLine="9" startPosition="0" endLine="52" endPosition="0" unitName="jetbrains.mps.debugger.java.run.sandbox.SeveralThreads" />
-    <unitInfo nodeId="6814978825597950761" fileName="SeveralThreads.java" startLine="14" startPosition="19" endLine="37" endPosition="5" unitName="jetbrains.mps.debugger.java.run.sandbox.SeveralThreads$1" />
-    <unitInfo nodeId="774465993226016886" fileName="SeveralThreads.java" startLine="17" startPosition="44" endLine="21" endPosition="9" unitName="jetbrains.mps.debugger.java.run.sandbox.SeveralThreads$2" />
+    <unitInfo nodeId="1876713722539579910" fileName="SeveralThreads.java" startLine="9" startPosition="0" endLine="55" endPosition="0" unitName="jetbrains.mps.debugger.java.run.sandbox.SeveralThreads" />
+    <unitInfo nodeId="6814978825597950761" fileName="SeveralThreads.java" startLine="14" startPosition="19" endLine="40" endPosition="5" unitName="jetbrains.mps.debugger.java.run.sandbox.SeveralThreads$1" />
+    <unitInfo nodeId="774465993226016886" fileName="SeveralThreads.java" startLine="20" startPosition="44" endLine="24" endPosition="9" unitName="jetbrains.mps.debugger.java.run.sandbox.SeveralThreads$2" />
   </root>
   <root nodeId="236633587817012660">
     <nodeInfo nodeId="236633587817012671" fileName="BaseClass.java" startLine="10" startPosition="31" endLine="11" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

@@ -19,6 +19,8 @@ import jetbrains.mps.util.Condition;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.List;
+import com.intellij.openapi.application.ApplicationManager;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.awt.event.MouseEvent;
 import jetbrains.mps.smodel.ModelAccess;
 
@@ -151,6 +153,17 @@ public abstract class BreakpointsUiComponentEx<B> {
       editorComponent.getLeftEditorHighlighter().removeIconRenderer(node, BreakpointIconRenderrerEx.TYPE);
       editorComponent.repaint();
     }
+  }
+
+  public void repaintBreakpoints() {
+    ApplicationManager.getApplication().invokeLater(new Runnable() {
+      public void run() {
+        List<EditorComponent> allEditorComponents = EditorComponentUtil.getAllEditorComponents(myFileEditorManager, true);
+        for (EditorComponent component : ListSequence.fromList(allEditorComponents)) {
+          component.repaint();
+        }
+      }
+    });
   }
 
   private class MyLeftMarginMouseListener implements LeftMarginMouseListener {
