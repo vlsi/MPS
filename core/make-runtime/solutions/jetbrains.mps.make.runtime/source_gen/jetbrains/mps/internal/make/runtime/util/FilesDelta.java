@@ -4,16 +4,15 @@ package jetbrains.mps.internal.make.runtime.util;
 
 import jetbrains.mps.make.delta.IDelta;
 import jetbrains.mps.logging.Logger;
-import java.util.regex.Pattern;
 import jetbrains.mps.vfs.IFile;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
+import java.util.List;
 import jetbrains.mps.make.delta.IDeltaVisitor;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.internal.collections.runtime.IMapping;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import java.util.List;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import java.util.ArrayList;
@@ -24,22 +23,25 @@ import java.util.Arrays;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
-import java.util.regex.Matcher;
-import java.io.File;
+import jetbrains.mps.generator.info.GeneratorPathsComponent;
 
 public class FilesDelta implements IDelta {
   private static Logger LOG = Logger.getLogger(FilesDelta.class);
-  private static Pattern URL = Pattern.compile("[a-zA-Z]://(.*)");
-  private static final char SLASH_CHAR = '/';
-  private static final String SLASH = "/";
 
   private IFile rootDir;
   private Map<IFile, FilesDelta.Status> files = MapSequence.fromMap(new HashMap<IFile, FilesDelta.Status>());
+  private Map<IFile, List<IFile>> generatedChildren = MapSequence.fromMap(new HashMap<IFile, List<IFile>>());
   private String key;
 
   public FilesDelta(IFile dir) {
     this.rootDir = dir;
-    this.key = "(IFile)" + asDir(straighten(urlToPath(dir.getAbsolutePath())));
+    this.key = "(IFile)" + DirUtil.asDir(DirUtil.straighten(DirUtil.urlToPath(dir.getAbsolutePath())));
+  }
+
+  public FilesDelta(IFile dir, IFile cachesDir) {
+    this.rootDir = dir;
+    this.key = "(IFile)" + DirUtil.asDir(DirUtil.straighten(DirUtil.urlToPath(dir.getAbsolutePath())));
+    cacheGenChildren(dir, cachesDir);
   }
 
   private FilesDelta(FilesDelta copyFrom) {
@@ -121,10 +123,9 @@ public class FilesDelta implements IDelta {
       }
     }).select(new ISelector<IMapping<IFile, FilesDelta.Status>, String>() {
       public String select(IMapping<IFile, FilesDelta.Status> f) {
-        String path = straighten(urlToPath(f.key().getAbsolutePath()));
         return (f.key().isDirectory() ?
-          asDir(path) :
-          path
+          DirUtil.normalizeAsDir(f.key().getPath()) :
+          DirUtil.normalize(f.key().getPath())
         );
       }
     }).sort(new ISelector<String, Comparable<?>>() {
@@ -133,77 +134,74 @@ public class FilesDelta implements IDelta {
       }
     }, true).toListSequence().toGenericArray(String.class);
 
-    List<IFile> toDelete = ListSequence.fromList(new ArrayList<IFile>());
-    Queue<IFile> dirs = QueueSequence.fromQueueAndArray(new LinkedList<IFile>(), rootDir);
-    while (QueueSequence.fromQueue(dirs).isNotEmpty()) {
-      IFile dir = QueueSequence.fromQueue(dirs).removeFirstElement();
-      String dirpath = asDir(straighten(urlToPath(dir.getAbsolutePath())));
+    List<IFile> filesToDelete = ListSequence.fromList(new ArrayList<IFile>());
+
+    Queue<IFile> dirQueue = QueueSequence.fromQueueAndArray(new LinkedList<IFile>(), rootDir);
+    while (QueueSequence.fromQueue(dirQueue).isNotEmpty()) {
+      IFile dir = QueueSequence.fromQueue(dirQueue).removeFirstElement();
+      String dirpath = DirUtil.normalizeAsDir(dir.getPath());
       int diridx = Arrays.binarySearch(pathsToKeep, dirpath);
-      diridx = (diridx < 0 ?
-        -1 - diridx :
-        diridx
-      );
-      for (Tuples._2<IFile, String> fp : Sequence.fromIterable(((Iterable<IFile>) dir.getChildren())).select(new ISelector<IFile, Tuples._2<IFile, String>>() {
+
+      for (Tuples._2<IFile, String> fileAndPath : Sequence.fromIterable(getChildren(dir)).select(new ISelector<IFile, Tuples._2<IFile, String>>() {
         public Tuples._2<IFile, String> select(IFile f) {
-          return MultiTuple.<IFile,String>from(f, straighten(urlToPath(f.getAbsolutePath())));
+          return MultiTuple.<IFile,String>from(f, DirUtil.normalize(f.getPath()));
         }
       }).sort(new ISelector<Tuples._2<IFile, String>, Comparable<?>>() {
         public Comparable<?> select(Tuples._2<IFile, String> t) {
           return t._1();
         }
       }, true)) {
-        if (fp._0().isDirectory()) {
-          int fidx = Arrays.binarySearch(pathsToKeep, asDir(fp._1()));
+        if (fileAndPath._0().isDirectory()) {
+          int fidx = Arrays.binarySearch(pathsToKeep, DirUtil.normalizeAsDir(fileAndPath._1()));
           fidx = (fidx < 0 ?
             -1 - fidx :
             fidx
           );
-          if (fidx >= pathsToKeep.length || !(startsWith(pathsToKeep[fidx], fp._1()))) {
-            ListSequence.fromList(toDelete).addElement(fp._0());
+          if (fidx >= pathsToKeep.length || !(DirUtil.startsWith(pathsToKeep[fidx], fileAndPath._1()))) {
+            ListSequence.fromList(filesToDelete).addElement(fileAndPath._0());
             if (fidx >= pathsToKeep.length) {
               break;
             }
           } else if (fidx < pathsToKeep.length) {
-            QueueSequence.fromQueue(dirs).addLastElement(fp._0());
+            QueueSequence.fromQueue(dirQueue).addLastElement(fileAndPath._0());
           }
         } else {
-          int fidx = Arrays.binarySearch(pathsToKeep, fp._1());
-          if (fidx < 0 && (diridx >= pathsToKeep.length || !(same(dirpath, pathsToKeep[diridx])))) {
-            ListSequence.fromList(toDelete).addElement(fp._0());
+          int fidx = Arrays.binarySearch(pathsToKeep, fileAndPath._1());
+          if (fidx < 0 && diridx < 0) {
+            ListSequence.fromList(filesToDelete).addElement(fileAndPath._0());
           }
         }
       }
     }
-    return toDelete;
+
+    return filesToDelete;
   }
 
-  private String urlToPath(String maybeUrl) {
-    Matcher m = URL.matcher(maybeUrl);
-    return (m.matches() ?
-      m.group(1) :
-      maybeUrl
-    );
+  private void cacheGenChildren(IFile dir, IFile cachesDir) {
+    List<IFile> genChildren = GeneratorPathsComponent.getInstance().getGeneratedChildren(dir, cachesDir);
+    if (ListSequence.fromList(genChildren).isNotEmpty()) {
+      MapSequence.fromMap(generatedChildren).put(dir, ListSequence.fromListWithValues(new ArrayList<IFile>(), genChildren));
+    }
   }
 
-  private String straighten(String path) {
-    return path.replace(File.separatorChar, SLASH_CHAR);
-  }
-
-  private String asDir(String path) {
-    return (path.endsWith(SLASH) ?
-      path :
-      path + SLASH
-    );
+  private Iterable<IFile> getChildren(IFile dir) {
+    Iterable<IFile> realChilren = (Iterable<IFile>) dir.getChildren();
+    if (GeneratorPathsComponent.getInstance().isForeign(dir)) {
+      List<IFile> genChildren = MapSequence.fromMap(generatedChildren).get(dir);
+      return ListSequence.fromList(genChildren).intersect(Sequence.fromIterable(realChilren));
+    }
+    return realChilren;
   }
 
   private FilesDelta copy(FilesDelta that) {
-    if (startsWith(this.key, that.key)) {
+    if (DirUtil.startsWith(this.key, that.key)) {
       this.key = that.key;
       this.rootDir = that.rootDir;
-    } else if (!(startsWith(that.key, this.key))) {
+    } else if (!(DirUtil.startsWith(that.key, this.key))) {
       throw new IllegalArgumentException();
     }
     MapSequence.fromMap(files).putAll(that.files);
+    MapSequence.fromMap(generatedChildren).putAll(that.generatedChildren);
     return this;
   }
 
@@ -215,28 +213,7 @@ public class FilesDelta implements IDelta {
     if (that.key.equals(this.key)) {
       return true;
     }
-    return startsWith(that.key, this.key);
-  }
-
-  private boolean startsWith(String path, String prefix) {
-    return path.startsWith(prefix) && (path.length() == prefix.length() || prefix.endsWith(SLASH) || path.charAt(prefix.length()) == SLASH_CHAR);
-  }
-
-  private boolean same(String path1, String path2) {
-    if (path1.equals(path2)) {
-      return true;
-    }
-    if (path1.length() == path2.length()) {
-      return false;
-    }
-    if (path1.length() > path2.length()) {
-      {
-        Tuples._2<String, String> _tmp_32m4sw_a0c0o = MultiTuple.<String,String>from(path2, path1);
-        path1 = _tmp_32m4sw_a0c0o._0();
-        path2 = _tmp_32m4sw_a0c0o._1();
-      }
-    }
-    return path2.startsWith(path1) && path2.charAt(path1.length()) == SLASH_CHAR && (path2.length() - path1.length() == 1);
+    return DirUtil.startsWith(that.key, this.key);
   }
 
   public static class Visitor implements IDeltaVisitor {

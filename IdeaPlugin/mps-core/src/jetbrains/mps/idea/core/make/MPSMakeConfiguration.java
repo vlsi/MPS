@@ -43,7 +43,11 @@ public class MPSMakeConfiguration {
             myWhatToDo.putProperty(e.getKey(), e.getValue());
         }
     }
-    
+
+    public void addProperty (String key, String value) {
+        myWhatToDo.putProperty(key, value);
+    }
+
     public void setFailOnError(boolean failOnError) {
         myWhatToDo.updateFailOnError(failOnError);
     }

@@ -24,7 +24,9 @@ import org.junit.BeforeClass;
 import org.junit.runner.RunWith;
 
 
-@SuiteClassSymbols({"jetbrains.mps.tests.TestModule_closures_test",
+@SuiteClassSymbols({
+  "jetbrains.mps.tests.TestModule_jetbrains_mps_kernel",
+  "jetbrains.mps.tests.TestModule_closures_test",
   "jetbrains.mps.tests.TestModule_collections_trove_test",
   "jetbrains.mps.tests.TestModule_collections_unittest",
   "jetbrains.mps.tests.TestModule_dates_unittest",

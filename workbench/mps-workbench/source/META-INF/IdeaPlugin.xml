@@ -26,7 +26,6 @@
     <xi:include href="/META-INF/MPSPlatformExtensions.xml" xpointer="xpointer(/extensions/*)"/>
     <xi:include href="/META-INF/VcsExtensions.xml" xpointer="xpointer(/extensions/*)"/>
 
-    <lang.fileViewProviderFactory language="MPS" implementationClass="jetbrains.mps.MPSFileViewProviderFactory"/>
 
     <errorHandler implementation="jetbrains.mps.ide.blame.CharismaReporter"/>
 

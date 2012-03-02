@@ -4,88 +4,64 @@ package jetbrains.mps.internal.make.runtime.java;
 
 import jetbrains.mps.generator.generationTypes.StreamHandler;
 import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.vfs.IFile;
 import java.util.Set;
+import jetbrains.mps.vfs.IFile;
 import java.util.HashSet;
 import jetbrains.mps.internal.make.runtime.util.FilesDelta;
 import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
 import org.jdom.Element;
 import jetbrains.mps.make.delta.IDelta;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import java.util.List;
-import java.util.ArrayList;
+import jetbrains.mps.smodel.DefaultSModelDescriptor;
 
 public class JavaStreamHandler implements StreamHandler {
   private final SModelDescriptor myModelDescriptor;
-  private final IFile myOutputDir;
-  private final IFile myCachesOutputDir;
   private final Set<IFile> mySavedFiles = new HashSet<IFile>();
-  private FileProcessor myProcessor;
+  private FileProcessor myProcessor = new FileProcessor();
   private FilesDelta myOutputFileDelta;
   private FilesDelta myCachesFileDelta;
+  private IFile myModelOutputDir;
+  private IFile myModelCacheOutputDir;
 
   public JavaStreamHandler(SModelDescriptor modelDescriptor, IFile outputDir, IFile cachesOutputDir) {
     myModelDescriptor = modelDescriptor;
-    myOutputDir = outputDir;
-    myCachesOutputDir = cachesOutputDir;
-    myProcessor = new FileProcessor();
-    this.myOutputFileDelta = new FilesDelta(FileGenerationUtil.getDefaultOutputDir(myModelDescriptor, myOutputDir));
-    this.myCachesFileDelta = new FilesDelta(FileGenerationUtil.getDefaultOutputDir(myModelDescriptor, myCachesOutputDir));
+    IFile overriddenOutputDir = getOverriddenOutputDir(modelDescriptor);
+    IFile defaultOutputDir = FileGenerationUtil.getDefaultOutputDir(myModelDescriptor, outputDir);
+    this.myModelOutputDir = (overriddenOutputDir != null ?
+      overriddenOutputDir :
+      defaultOutputDir
+    );
+    this.myModelCacheOutputDir = FileGenerationUtil.getDefaultOutputDir(myModelDescriptor, cachesOutputDir);
+
+    this.myOutputFileDelta = new FilesDelta(myModelOutputDir, myModelCacheOutputDir);
+    this.myCachesFileDelta = new FilesDelta(myModelCacheOutputDir);
   }
 
   public void saveStream(String name, String content, boolean isCache) {
-    IFile outputRootDir = (isCache ?
-      myCachesOutputDir :
-      myOutputDir
-    );
-    IFile file = FileGenerationUtil.getDefaultOutputDir(myModelDescriptor, outputRootDir).getDescendant(name);
+    IFile file = getFile(name, isCache);
     myProcessor.saveContent(file, content);
     mySavedFiles.add(file);
-    ((isCache ?
-      myCachesFileDelta :
-      myOutputFileDelta
-    )).written(file);
+    getDelta(isCache).written(file);
   }
 
   public void saveStream(String name, Element content, boolean isCache) {
-    IFile outputRootDir = (isCache ?
-      myCachesOutputDir :
-      myOutputDir
-    );
-    IFile file = FileGenerationUtil.getDefaultOutputDir(myModelDescriptor, outputRootDir).getDescendant(name);
+    IFile file = getFile(name, isCache);
     myProcessor.saveContent(file, content);
     mySavedFiles.add(file);
-    ((isCache ?
-      myCachesFileDelta :
-      myOutputFileDelta
-    )).written(file);
+    getDelta(isCache).written(file);
   }
 
   public void saveStream(String name, byte[] content, boolean isCache) {
-    IFile outputRootDir = (isCache ?
-      myCachesOutputDir :
-      myOutputDir
-    );
-    IFile file = FileGenerationUtil.getDefaultOutputDir(myModelDescriptor, outputRootDir).getDescendant(name);
+    IFile file = getFile(name, isCache);
     myProcessor.saveContent(file, content);
     mySavedFiles.add(file);
-    ((isCache ?
-      myCachesFileDelta :
-      myOutputFileDelta
-    )).written(file);
+    getDelta(isCache).written(file);
   }
 
   public boolean touch(String name, boolean isCache) {
-    IFile outputRootDir = (isCache ?
-      myCachesOutputDir :
-      myOutputDir
-    );
-    IFile file = FileGenerationUtil.getDefaultOutputDir(myModelDescriptor, outputRootDir).getDescendant(name);
+    IFile file = getFile(name, isCache);
     mySavedFiles.add(file);
-    ((isCache ?
-      myCachesFileDelta :
-      myOutputFileDelta
-    )).kept(file);
+    getDelta(isCache).kept(file);
     return file.exists();
   }
 
@@ -98,31 +74,33 @@ public class JavaStreamHandler implements StreamHandler {
   }
 
   public void dispose() {
-    if (false) {
-      Set<IFile> directories = new HashSet<IFile>();
-      directories.add(myOutputDir);
-      directories.add(myCachesOutputDir);
-      for (IFile f : mySavedFiles) {
-        directories.add(f.getParent());
-      }
-      final List<IFile> filesToDelete = new ArrayList<IFile>();
-      for (IFile dir : directories) {
-        for (IFile outputDirectoryFile : dir.getChildren()) {
-          if (outputDirectoryFile.isDirectory()) {
-            continue;
-          }
-          if (mySavedFiles.contains(outputDirectoryFile)) {
-            continue;
-          }
-          // todo temporaty hack to fix tests (icons as resources) 
-          if (outputDirectoryFile.getName().endsWith(".png")) {
-            continue;
-          }
-          filesToDelete.add(outputDirectoryFile);
-        }
-      }
-      myProcessor.filesToDelete(filesToDelete);
-    }
     myProcessor.invalidateModel(myModelDescriptor);
+  }
+
+  private IFile getFile(String name, boolean isCache) {
+
+    IFile outputDir = (isCache ?
+      myModelCacheOutputDir :
+      myModelOutputDir
+    );
+    return outputDir.getDescendant(name);
+  }
+
+  private IFile getOverriddenOutputDir(SModelDescriptor md) {
+    if (md instanceof DefaultSModelDescriptor) {
+      boolean useModelFolder = Boolean.parseBoolean(((DefaultSModelDescriptor) md).getSModelHeader().getOptionalProperty("useModelFolderForGeneration"));
+      if (useModelFolder) {
+        IFile file = ((DefaultSModelDescriptor) md).getSource().getFile();
+        return file.getParent();
+      }
+    }
+    return null;
+  }
+
+  private FilesDelta getDelta(boolean isCache) {
+    return ((isCache ?
+      myCachesFileDelta :
+      myOutputFileDelta
+    ));
   }
 }

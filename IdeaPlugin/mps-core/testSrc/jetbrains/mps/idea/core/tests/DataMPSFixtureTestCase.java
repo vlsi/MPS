@@ -57,8 +57,14 @@ public abstract class DataMPSFixtureTestCase extends AbstractMPSFixtureTestCase 
 
     protected abstract void prepareTestData (MPSFacetConfiguration configuration) throws Exception;
     
-    protected IFile copyResource(String toDir, String toName, String fromPath) throws IOException{
-        IFile targetDir = FileSystem.getInstance().getFileByPath(myModule.getModuleFilePath());
+    protected IFile copyResource(String toPath, String resName, String fromPath) throws IOException{
+        IFile targetFile = FileSystem.getInstance().getFileByPath(toPath);
+
+        return copyResource(resName, fromPath, targetFile);
+    }
+
+    protected IFile copyResource(String toDir, String toName, String resName, String fromPath) throws IOException{
+        IFile targetDir = FileSystem.getInstance().getFileByPath(myModule.getModuleFilePath()).getParent();
         if (toDir != null) {
             targetDir = targetDir.getDescendant(toDir);
             if (!targetDir.exists()) {
@@ -67,16 +73,20 @@ public abstract class DataMPSFixtureTestCase extends AbstractMPSFixtureTestCase 
         }
         IFile targetFile = targetDir.getDescendant(toName);
 
+        return copyResource(resName, fromPath, targetFile);
+    }
+
+    private IFile copyResource(String resName, String fromPath, IFile targetFile) throws IOException {
         IFile sourceFile = FileSystem.getInstance().getFileByPath(System.getProperty("idea.plugins.path") + fromPath);
         if (sourceFile.exists()) {
             copyContent(sourceFile.openInputStream(), targetFile.openOutputStream());
         }
         else {
-            copyContent(DataMPSFixtureTestCase.this.getClass().getResourceAsStream(toName), targetFile.openOutputStream());
+            copyContent(DataMPSFixtureTestCase.this.getClass().getResourceAsStream(resName), targetFile.openOutputStream());
         }
         return FileSystem.getInstance().getFileByPath(targetFile.getPath());
     }
-    
+
     private void copyContent (InputStream is, OutputStream os) throws IOException {
         InputStream bis = null;
         OutputStream bos = null;

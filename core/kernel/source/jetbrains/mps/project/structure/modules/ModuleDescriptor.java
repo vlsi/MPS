@@ -37,6 +37,7 @@ public class ModuleDescriptor {
   private DeploymentDescriptor myDeploymentDescriptor;
 
   private Throwable myLoadException;
+  private boolean myUseTransientOutput;
 
   public ModuleDescriptor() {
     myModelRoots = new LinkedHashSet<ModelRoot>();
@@ -161,5 +162,13 @@ public class ModuleDescriptor {
     public int compare(Dependency dependency1, Dependency dependency2) {
       return myModuleRefComparator.compare(dependency1.getModuleRef(), dependency2.getModuleRef());
     }
+  }
+
+  public boolean isUseTransientOutput() {
+    return myUseTransientOutput;
+  }
+
+  public void setUseTransientOutput(boolean useTransientOutput) {
+    myUseTransientOutput = useTransientOutput;
   }
 }
