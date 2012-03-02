@@ -22,6 +22,7 @@ import com.intellij.ide.projectView.ViewSettings;
 import com.intellij.ide.util.treeView.AbstractTreeNode;
 import com.intellij.ide.util.treeView.ValidateableNode;
 import com.intellij.openapi.project.Project;
+import com.intellij.openapi.vcs.FileStatusManager;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.ide.editor.MPSEditorOpener;
 import jetbrains.mps.ide.project.ProjectHelper;
@@ -35,6 +36,7 @@ import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.*;
+import java.awt.*;
 import java.util.Collection;
 import java.util.Collections;
 
@@ -80,13 +82,22 @@ public class MPSProjectViewNode extends ProjectViewNode<SNodePointer> implements
         return Collections.emptyList();
     }
 
-    @Override
+  @Override
     protected void update(PresentationData presentation) {
         presentation.setPresentableText(myName);
         presentation.setIcons(icon);
+        Color statusColor = getNodeColor();
+       presentation.setForcedTextForeground(statusColor);
     }
 
-    @Override
+  private Color getNodeColor() {
+    final FileStatusManager fileStatusManager = FileStatusManager.getInstance(myProject);
+    Color statusColor = fileStatusManager != null ? fileStatusManager.getStatus(getVirtualFile()).getColor() : Color.BLACK;
+    if (statusColor == null) statusColor = Color.BLACK;
+    return statusColor;
+  }
+
+  @Override
     public void navigate(final boolean requestFocus) {
         ModelAccess.instance().runReadInEDT(new Runnable() {
             @Override
