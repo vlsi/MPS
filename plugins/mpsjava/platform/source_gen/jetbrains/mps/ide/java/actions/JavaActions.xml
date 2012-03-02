@@ -59,6 +59,7 @@
       <reference ref="jetbrains.mps.ide.java.actions.GenerateEqualsAndHashCode_Action"/>
       <reference ref="jetbrains.mps.ide.java.actions.GenerateMainMethod_Action"/>
       <reference ref="jetbrains.mps.ide.java.actions.GenerateToString_Action"/>
+      <add-to-group group-id="jetbrains.mps.ide.editor.actions.GenerationActions_ActionGroup" anchor="last"/>
     </group>
   </actions>
 </components>
