@@ -352,6 +352,10 @@ public class TransformatorImpl extends TransformatorBuilder.Transformator {
       }
     })) {
       SNode staticMethodCall = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StaticMethodCall", null);
+      // some concepts, such as :eq: extract static methods 
+      if (ListSequence.fromList(SNodeOperations.getDescendants(SNodeOperations.getContainingRoot(myWhatToEvaluate), "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration", false, new String[]{})).contains(SLinkOperations.getTarget(localStaticMethodCall, "baseMethodDeclaration", false))) {
+        continue;
+      }
       SLinkOperations.setTarget(staticMethodCall, "classConcept", SNodeOperations.cast(SNodeOperations.getParent(SLinkOperations.getTarget(localStaticMethodCall, "baseMethodDeclaration", false)), "jetbrains.mps.baseLanguage.structure.ClassConcept"), false);
       SLinkOperations.setTarget(staticMethodCall, "baseMethodDeclaration", SLinkOperations.getTarget(localStaticMethodCall, "baseMethodDeclaration", false), false);
       ListSequence.fromList(SLinkOperations.getTargets(staticMethodCall, "actualArgument", true)).addSequence(ListSequence.fromList(SLinkOperations.getTargets(localStaticMethodCall, "actualArgument", true)));
