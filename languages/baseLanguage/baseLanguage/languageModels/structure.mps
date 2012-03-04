@@ -3406,6 +3406,9 @@
     <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="1209153779629">
       <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tpck.1169194658468" resolveInfo="INamedConcept" />
     </node>
+    <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.BooleanConceptProperty" typeId="tpce.1105725574259" id="2907982978865104120">
+      <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="274804607996650332" resolveInfo="inheritableMember" />
+    </node>
   </root>
   <root id="1201372346056">
     <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.BooleanConceptProperty" typeId="tpce.1105725574259" id="1201372354479">

@@ -130,7 +130,9 @@ public class Classifier_Behavior {
     Set<Object> signatures = SetSequence.fromSet(new HashSet());
     List<SNode> result = new ArrayList<SNode>();
 
-    Iterable<SNode> members = ListSequence.fromList(IMemberContainer_Behavior.call_getMembers_1213877531970(thisNode)).where(new IWhereFilter<SNode>() {
+    // todo: ? 
+    // <node> 
+    Iterable<SNode> members = ListSequence.fromList(SNodeOperations.getChildren(thisNode)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, NameUtil.nodeFQName(kind));
       }
