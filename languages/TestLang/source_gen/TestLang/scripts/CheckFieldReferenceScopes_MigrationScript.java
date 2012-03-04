@@ -6,8 +6,8 @@ import jetbrains.mps.lang.script.runtime.BaseMigrationScript;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.lang.script.runtime.AbstractMigrationRefactoring;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import org.apache.commons.lang.StringUtils;
@@ -30,6 +30,11 @@ public class CheckFieldReferenceScopes_MigrationScript extends BaseMigrationScri
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
+        // todo: ! 
+        if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.debugger.java.privateMembers.structure.PrivateFieldReferenceOperation")) {
+          return false;
+        }
+
         String excludingPrefix = "123collection";
         String startsFrom = "";
 
@@ -53,12 +58,12 @@ public class CheckFieldReferenceScopes_MigrationScript extends BaseMigrationScri
           return false;
         }
 
-        return !(Utils.checkScopes(node, Utils.getOldScopeFromRef(ref), Utils.getNewScopeFromRef(ref, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.FieldDeclaration")), true));
+        return !(Utils.checkScopes(node, Utils.getOldScopeFromRef(ref), Utils.getNewScopeForIOperation(ref, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.FieldDeclaration")), true));
       }
 
       public void doUpdateInstanceNode(SNode node) {
         SReference ref = SNodeOperations.getReference(node, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.FieldReferenceOperation", "fieldDeclaration"));
-        Utils.checkScopes(node, Utils.getOldScopeFromRef(ref), Utils.getNewScopeFromRef(ref, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.FieldDeclaration")), true);
+        Utils.checkScopes(node, Utils.getOldScopeFromRef(ref), Utils.getNewScopeForIOperation(ref, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.FieldDeclaration")), true);
       }
 
       public boolean isShowAsIntention() {

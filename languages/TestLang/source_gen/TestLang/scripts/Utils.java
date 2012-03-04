@@ -10,12 +10,10 @@ import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.smodel.constraints.ModelConstraintsUtil;
-import java.util.List;
 import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
 import jetbrains.mps.baseLanguage.behavior.DotExpression_Behavior;
 import jetbrains.mps.baseLanguage.behavior.IOperation_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.baseLanguage.scopes.SimpleScope;
 
 public class Utils {
   private static Logger LOG = Logger.getLogger(Utils.class);
@@ -59,9 +57,8 @@ public class Utils {
   }
 
   public static Scope getNewScopeForIOperation(SReference ref, SNode kind) {
-    // ref from IOperation 
-    List<SNode> result = Classifier_Behavior.call_getMembers_2201875424515824604(DotExpression_Behavior.call_getClassifier_1213877410697(IOperation_Behavior.call_getDotExpression_1224687669172(SNodeOperations.cast(ref.getSourceNode(), "jetbrains.mps.baseLanguage.structure.IOperation"))), kind);
-    return new SimpleScope(result);
+    // ref should be from IOperation 
+    return Classifier_Behavior.call_getVisibleMembers_8083692786967356611(DotExpression_Behavior.call_getClassifier_1213877410697(IOperation_Behavior.call_getDotExpression_1224687669172(SNodeOperations.cast(ref.getSourceNode(), "jetbrains.mps.baseLanguage.structure.IOperation"))), ref.getSourceNode(), kind);
   }
 
   public static boolean isInComment(SNode node) {
