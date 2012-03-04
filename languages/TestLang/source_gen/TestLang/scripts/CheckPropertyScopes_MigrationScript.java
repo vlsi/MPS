@@ -53,12 +53,12 @@ public class CheckPropertyScopes_MigrationScript extends BaseMigrationScript {
           return false;
         }
 
-        return !(Utils.checkScopes(node, Utils.getOldScopeFromRef(ref), Utils.getNewScopeFromRef(ref, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Property")), true));
+        return !(Utils.checkScopes(node, Utils.getOldScopeFromRef(ref), Utils.getNewScopeForIOperation(ref, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Property")), true));
       }
 
       public void doUpdateInstanceNode(SNode node) {
         SReference ref = SNodeOperations.getReference(node, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.PropertyReference", "property"));
-        Utils.checkScopes(node, Utils.getOldScopeFromRef(ref), Utils.getNewScopeFromRef(ref, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Property")), true);
+        Utils.checkScopes(node, Utils.getOldScopeFromRef(ref), Utils.getNewScopeForIOperation(ref, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Property")), true);
       }
 
       public boolean isShowAsIntention() {
