@@ -61,7 +61,7 @@ public class IClassifier_Behavior {
       }
       if (SNodeOperations.isInstanceOf(IMember_Behavior.call_getVisiblity_1213877352965(member), "jetbrains.mps.baseLanguage.structure.ProtectedVisibility")) {
         SNode contextClassifier = IClassifier_Behavior.getContextClassifier_1213877527940(contextNode);
-        if (contextClassifier != null && TypeChecker.getInstance().getSubtypingManager().isSubtype(IClassifier_Behavior.call_createType_1213877527970(thisNode), IClassifier_Behavior.call_createType_1213877527970(contextClassifier))) {
+        if (contextClassifier != null && TypeChecker.getInstance().getSubtypingManager().isSubtype(IClassifier_Behavior.call_createType_1213877527970(contextClassifier), IClassifier_Behavior.call_createType_1213877527970(thisNode))) {
           ListSequence.fromList(result).addElement(member);
         }
       }
