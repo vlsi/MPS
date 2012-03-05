@@ -10026,46 +10026,48 @@
   <root nodeId="8838506468326925850">
     <nodeInfo nodeId="4535866081768291176" fileName="OverrideImplementMethodComponent.java" startLine="15" startPosition="141" endLine="16" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myState" />
     <nodeInfo nodeId="4535866081768177393" fileName="OverrideImplementMethodComponent.java" startLine="26" startPosition="36" endLine="27" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="9017026880110477666" fileName="OverrideImplementMethodComponent.java" startLine="33" startPosition="31" endLine="34" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4535866081768350955" fileName="OverrideImplementMethodComponent.java" startLine="37" startPosition="71" endLine="38" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4535866081768348941" fileName="OverrideImplementMethodComponent.java" startLine="41" startPosition="60" endLine="42" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="9017026880110478652" fileName="OverrideImplementMethodComponent.java" startLine="48" startPosition="29" endLine="49" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="addReturnsOnImplement" />
-    <nodeInfo nodeId="9017026880110478660" fileName="OverrideImplementMethodComponent.java" startLine="49" startPosition="49" endLine="50" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="addOverrideAnnotation" />
-    <nodeInfo nodeId="9017026880110478664" fileName="OverrideImplementMethodComponent.java" startLine="50" startPosition="48" endLine="51" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="removeAttributes" />
+    <nodeInfo nodeId="9017026880110477666" fileName="OverrideImplementMethodComponent.java" startLine="34" startPosition="26" endLine="35" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4535866081768350955" fileName="OverrideImplementMethodComponent.java" startLine="39" startPosition="71" endLine="40" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4535866081768348941" fileName="OverrideImplementMethodComponent.java" startLine="43" startPosition="60" endLine="44" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="9017026880110478652" fileName="OverrideImplementMethodComponent.java" startLine="50" startPosition="29" endLine="51" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="addReturnsOnImplement" />
+    <nodeInfo nodeId="9017026880110478660" fileName="OverrideImplementMethodComponent.java" startLine="51" startPosition="49" endLine="52" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="addOverrideAnnotation" />
+    <nodeInfo nodeId="9017026880110478664" fileName="OverrideImplementMethodComponent.java" startLine="52" startPosition="48" endLine="53" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="removeAttributes" />
     <nodeInfo nodeId="8838506468326925852" fileName="OverrideImplementMethodComponent.java" startLine="17" startPosition="0" endLine="19" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="OverrideImplementMethodComponent#(Lcom/intellij/openapi/project/Project;Ljetbrains/mps/ide/MPSCoreComponents;)V" />
-    <nodeInfo nodeId="9017026880110468802" fileName="OverrideImplementMethodComponent.java" startLine="52" startPosition="0" endLine="54" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="State#()V" />
+    <nodeInfo nodeId="9017026880110468802" fileName="OverrideImplementMethodComponent.java" startLine="54" startPosition="0" endLine="56" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="State#()V" />
     <nodeInfo nodeId="8838506468326993771" fileName="OverrideImplementMethodComponent.java" startLine="20" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="projectOpened#()V" />
     <nodeInfo nodeId="4535866081768177383" fileName="OverrideImplementMethodComponent.java" startLine="29" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="disposeComponent#()V" />
-    <nodeInfo nodeId="4535866081768177365" fileName="OverrideImplementMethodComponent.java" startLine="44" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="projectClosed#()V" />
-    <nodeInfo nodeId="4535866081768177379" fileName="OverrideImplementMethodComponent.java" startLine="32" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="initComponent#()V" />
-    <nodeInfo nodeId="4535866081768177373" fileName="OverrideImplementMethodComponent.java" startLine="36" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="loadState#(Ljetbrains/mps/ide/java/actions/OverrideImplementMethodComponent/State;)V" />
-    <nodeInfo nodeId="4535866081768177369" fileName="OverrideImplementMethodComponent.java" startLine="40" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getState#()Ljetbrains/mps/ide/java/actions/OverrideImplementMethodComponent/State;" />
+    <nodeInfo nodeId="7157902761908219761" fileName="OverrideImplementMethodComponent.java" startLine="33" startPosition="31" endLine="36" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4535866081768177365" fileName="OverrideImplementMethodComponent.java" startLine="46" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="projectClosed#()V" />
+    <nodeInfo nodeId="4535866081768177373" fileName="OverrideImplementMethodComponent.java" startLine="38" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="loadState#(Ljetbrains/mps/ide/java/actions/OverrideImplementMethodComponent/State;)V" />
+    <nodeInfo nodeId="4535866081768177369" fileName="OverrideImplementMethodComponent.java" startLine="42" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getState#()Ljetbrains/mps/ide/java/actions/OverrideImplementMethodComponent/State;" />
     <nodeInfo nodeId="4535866081768177387" fileName="OverrideImplementMethodComponent.java" startLine="23" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getComponentName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="4535866081768177379" fileName="OverrideImplementMethodComponent.java" startLine="32" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="initComponent#()V" />
     <scopeInfo nodeId="8838506468326925855" fileName="OverrideImplementMethodComponent.java" startLine="18" startPosition="94" endLine="18" endPosition="94" />
     <scopeInfo nodeId="8838506468326993774" fileName="OverrideImplementMethodComponent.java" startLine="21" startPosition="31" endLine="21" endPosition="31" />
     <scopeInfo nodeId="4535866081768177386" fileName="OverrideImplementMethodComponent.java" startLine="30" startPosition="34" endLine="30" endPosition="34" />
-    <scopeInfo nodeId="4535866081768177368" fileName="OverrideImplementMethodComponent.java" startLine="45" startPosition="31" endLine="45" endPosition="31" />
-    <scopeInfo nodeId="9017026880110468805" fileName="OverrideImplementMethodComponent.java" startLine="53" startPosition="20" endLine="53" endPosition="20" />
+    <scopeInfo nodeId="4535866081768177368" fileName="OverrideImplementMethodComponent.java" startLine="47" startPosition="31" endLine="47" endPosition="31" />
+    <scopeInfo nodeId="9017026880110468805" fileName="OverrideImplementMethodComponent.java" startLine="55" startPosition="20" endLine="55" endPosition="20" />
     <scopeInfo nodeId="4535866081768177392" fileName="OverrideImplementMethodComponent.java" startLine="26" startPosition="36" endLine="27" endPosition="46" />
-    <scopeInfo nodeId="4535866081768177382" fileName="OverrideImplementMethodComponent.java" startLine="33" startPosition="31" endLine="34" endPosition="59" />
-    <scopeInfo nodeId="4535866081768177378" fileName="OverrideImplementMethodComponent.java" startLine="37" startPosition="71" endLine="38" endPosition="20" />
-    <scopeInfo nodeId="4535866081768177372" fileName="OverrideImplementMethodComponent.java" startLine="41" startPosition="60" endLine="42" endPosition="19" />
+    <scopeInfo nodeId="7157902761908219762" fileName="OverrideImplementMethodComponent.java" startLine="34" startPosition="26" endLine="35" endPosition="61" />
+    <scopeInfo nodeId="4535866081768177378" fileName="OverrideImplementMethodComponent.java" startLine="39" startPosition="71" endLine="40" endPosition="20" />
+    <scopeInfo nodeId="4535866081768177372" fileName="OverrideImplementMethodComponent.java" startLine="43" startPosition="60" endLine="44" endPosition="19" />
     <scopeInfo nodeId="8838506468326925852" fileName="OverrideImplementMethodComponent.java" startLine="17" startPosition="0" endLine="19" endPosition="3">
       <varInfo nodeId="4450057996090661301" varName="coreComponents" />
       <varInfo nodeId="9017026880110500544" varName="project" />
     </scopeInfo>
-    <scopeInfo nodeId="9017026880110468802" fileName="OverrideImplementMethodComponent.java" startLine="52" startPosition="0" endLine="54" endPosition="5" />
+    <scopeInfo nodeId="9017026880110468802" fileName="OverrideImplementMethodComponent.java" startLine="54" startPosition="0" endLine="56" endPosition="5" />
     <scopeInfo nodeId="8838506468326993771" fileName="OverrideImplementMethodComponent.java" startLine="20" startPosition="0" endLine="23" endPosition="0" />
     <scopeInfo nodeId="4535866081768177383" fileName="OverrideImplementMethodComponent.java" startLine="29" startPosition="0" endLine="32" endPosition="0" />
-    <scopeInfo nodeId="4535866081768177365" fileName="OverrideImplementMethodComponent.java" startLine="44" startPosition="0" endLine="47" endPosition="0" />
-    <scopeInfo nodeId="4535866081768177379" fileName="OverrideImplementMethodComponent.java" startLine="32" startPosition="0" endLine="36" endPosition="0" />
-    <scopeInfo nodeId="4535866081768177373" fileName="OverrideImplementMethodComponent.java" startLine="36" startPosition="0" endLine="40" endPosition="0">
+    <scopeInfo nodeId="4535866081768177382" fileName="OverrideImplementMethodComponent.java" startLine="33" startPosition="31" endLine="36" endPosition="5" />
+    <scopeInfo nodeId="4535866081768177365" fileName="OverrideImplementMethodComponent.java" startLine="46" startPosition="0" endLine="49" endPosition="0" />
+    <scopeInfo nodeId="4535866081768177373" fileName="OverrideImplementMethodComponent.java" startLine="38" startPosition="0" endLine="42" endPosition="0">
       <varInfo nodeId="4535866081768177376" varName="state" />
     </scopeInfo>
-    <scopeInfo nodeId="4535866081768177369" fileName="OverrideImplementMethodComponent.java" startLine="40" startPosition="0" endLine="44" endPosition="0" />
+    <scopeInfo nodeId="4535866081768177369" fileName="OverrideImplementMethodComponent.java" startLine="42" startPosition="0" endLine="46" endPosition="0" />
     <scopeInfo nodeId="4535866081768177387" fileName="OverrideImplementMethodComponent.java" startLine="23" startPosition="0" endLine="29" endPosition="0" />
-    <unitInfo nodeId="8838506468326925850" fileName="OverrideImplementMethodComponent.java" startLine="13" startPosition="0" endLine="57" endPosition="0" unitName="jetbrains.mps.ide.java.actions.OverrideImplementMethodComponent" />
-    <unitInfo nodeId="9017026880110468800" fileName="OverrideImplementMethodComponent.java" startLine="48" startPosition="0" endLine="56" endPosition="0" unitName="jetbrains.mps.ide.java.actions.OverrideImplementMethodComponent$State" />
+    <scopeInfo nodeId="4535866081768177379" fileName="OverrideImplementMethodComponent.java" startLine="32" startPosition="0" endLine="38" endPosition="0" />
+    <unitInfo nodeId="8838506468326925850" fileName="OverrideImplementMethodComponent.java" startLine="13" startPosition="0" endLine="59" endPosition="0" unitName="jetbrains.mps.ide.java.actions.OverrideImplementMethodComponent" />
+    <unitInfo nodeId="9017026880110468800" fileName="OverrideImplementMethodComponent.java" startLine="50" startPosition="0" endLine="58" endPosition="0" unitName="jetbrains.mps.ide.java.actions.OverrideImplementMethodComponent$State" />
   </root>
 </debugInfo>
 

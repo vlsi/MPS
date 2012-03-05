@@ -31,7 +31,9 @@ public class OverrideImplementMethodComponent implements ProjectComponent, Persi
   }
 
   public void initComponent() {
-    myState = new OverrideImplementMethodComponent.State();
+    if (myState == null) {
+      myState = new OverrideImplementMethodComponent.State();
+    }
   }
 
   public void loadState(OverrideImplementMethodComponent.State state) {
