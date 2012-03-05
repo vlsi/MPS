@@ -23,6 +23,7 @@ public class Runtime_ApplicationPlugin extends BaseApplicationPlugin {
     // actions w/o parameters 
     addAction(new EvaluateExpression_Action());
     addAction(new ExportThreads_Action());
+    addAction(new GoToSource_Action());
     addAction(new Pause_Action());
     addAction(new Resume_Action());
     addAction(new StepInto_Action());
@@ -31,6 +32,7 @@ public class Runtime_ApplicationPlugin extends BaseApplicationPlugin {
     addAction(new ToggleBreakpoint_Action());
     addAction(new ViewBreakpoints_Action());
     // groups 
+    addGroup(new AbstractWatchableNodeActions_ActionGroup());
     addGroup(new DebugRunMenu_ActionGroup());
     addGroup(new DebugStepsMenu_ActionGroup());
     addGroup(new DebugTool_ActionGroup());

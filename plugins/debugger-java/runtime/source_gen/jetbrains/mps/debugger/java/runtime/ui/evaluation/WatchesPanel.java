@@ -6,9 +6,10 @@ import jetbrains.mps.debugger.java.runtime.SessionStopDisposer;
 import jetbrains.mps.debugger.java.runtime.evaluation.EvaluationProvider;
 import jetbrains.mps.debugger.java.runtime.evaluation.model.AbstractEvaluationModel;
 import com.intellij.openapi.application.ApplicationManager;
+import com.intellij.openapi.actionSystem.ActionToolbar;
 import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.actionSystem.ActionPlaces;
-import com.intellij.openapi.actionSystem.DefaultActionGroup;
+import jetbrains.mps.workbench.action.BaseGroup;
 import java.awt.BorderLayout;
 import com.intellij.ui.components.JBScrollPane;
 import com.intellij.openapi.actionSystem.ActionGroup;
@@ -65,7 +66,10 @@ public class WatchesPanel extends EvaluationUi {
         });
       }
     };
-    add(ActionManager.getInstance().createActionToolbar(ActionPlaces.UNKNOWN, new DefaultActionGroup(new EvaluationTreeActions.AddWatchAction(), new EvaluationTreeActions.RemoveWatchAction()), false).getComponent(), BorderLayout.WEST);
+    ActionToolbar toolbar = ActionManager.getInstance().createActionToolbar(ActionPlaces.UNKNOWN, ((BaseGroup) ActionManager.getInstance().getAction("jetbrains.mps.debugger.java.runtime.ui.actions.WatchesToolbarActions_ActionGroup")), false);
+    toolbar.setLayoutPolicy(ActionToolbar.WRAP_LAYOUT_POLICY);
+
+    add(toolbar.getComponent(), BorderLayout.WEST);
     add(new JBScrollPane(myTree), BorderLayout.CENTER);
   }
 
@@ -85,6 +89,6 @@ public class WatchesPanel extends EvaluationUi {
 
   @Override
   public ActionGroup getActionGroup() {
-    return new DefaultActionGroup(new EvaluationTreeActions.AddWatchAction(), new EvaluationTreeActions.EditWatchAction(), new EvaluationTreeActions.RemoveWatchAction());
+    return ((BaseGroup) ActionManager.getInstance().getAction("jetbrains.mps.debugger.java.runtime.ui.actions.WatchesAction_ActionGroup"));
   }
 }
