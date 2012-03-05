@@ -7,6 +7,9 @@ import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.scope.Scope;
+import jetbrains.mps.baseLanguage.scopes.ScopeUtils;
+import jetbrains.mps.baseLanguage.scopes.CompositeWithParentScope;
 import jetbrains.mps.smodel.structure.BehaviorDescriptor;
 import jetbrains.mps.smodel.structure.ConceptRegistry;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -22,8 +25,11 @@ public class ForeachStatement_Behavior {
     return ListSequence.fromListAndArray(new ArrayList<SNode>(), SLinkOperations.getTarget(thisNode, "variable", true));
   }
 
-  public static List<SNode> virtual_getOrderedParts_1955452033143960289(SNode thisNode) {
-    return ListSequence.fromListAndArray(new ArrayList<SNode>(), SLinkOperations.getTarget(thisNode, "iterable", true), SLinkOperations.getTarget(thisNode, "variable", true), SLinkOperations.getTarget(thisNode, "body", true));
+  public static Scope virtual_getScope_3734116213129936182(SNode thisNode, SNode kind, SNode child) {
+    if (ScopeUtils.comeFrom("body", thisNode, child)) {
+      return CompositeWithParentScope.from(SLinkOperations.getTarget(thisNode, "variable", true), thisNode, kind);
+    }
+    return null;
   }
 
   public static List<SNode> call_getScopeVariables_2496361171403550949(SNode thisNode) {

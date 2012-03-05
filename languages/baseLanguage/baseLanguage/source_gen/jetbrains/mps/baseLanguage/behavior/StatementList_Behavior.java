@@ -13,6 +13,7 @@ import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import java.util.ArrayList;
 import jetbrains.mps.scope.Scope;
+import jetbrains.mps.baseLanguage.scopes.CompositeWithParentScope;
 import jetbrains.mps.smodel.search.ISearchScope;
 import jetbrains.mps.smodel.search.SimpleSearchScope;
 import jetbrains.mps.scope.CompositeScope;
@@ -141,14 +142,8 @@ public class StatementList_Behavior {
 
   public static Scope virtual_getScope_3734116213129936182(SNode thisNode, SNode kind, SNode child) {
     if (SConceptOperations.isSubConceptOf(kind, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration")) {
-      Scope currentScope = new ISearchScope.Adapter(new SimpleSearchScope(StatementList_Behavior.call_getLocalVariableDeclarations_3986960521977638556(thisNode, child)));
-      Scope nextScope = Scope.getScope(SNodeOperations.getParent(thisNode), child, kind);
-      return (nextScope == null ?
-        currentScope :
-        new CompositeScope(currentScope, nextScope)
-      );
+      return CompositeWithParentScope.from(StatementList_Behavior.call_getLocalVariableDeclarations_3986960521977638556(thisNode, child), thisNode, kind);
     }
-
     return null;
   }
 

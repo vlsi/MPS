@@ -59,8 +59,8 @@
     <classNode dependClassName="java.util.HashSet" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.util.Set" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.scopes.HierarchyScopeProvider" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.scopes.ScopeProvider" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.scopes.CompositeWithParentScope" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.scopes.ScopeUtils" />
     <classNode dependClassName="jetbrains.mps.lang.core.behavior.BaseConcept_Behavior" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />

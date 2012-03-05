@@ -9,9 +9,9 @@ import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.util.ArrayList;
 import jetbrains.mps.scope.Scope;
-import jetbrains.mps.baseLanguage.scopes.ScopeProvider;
-import jetbrains.mps.baseLanguage.scopes.HierarchyScopeProvider;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.baseLanguage.scopes.ScopeUtils;
+import jetbrains.mps.baseLanguage.scopes.CompositeWithParentScope;
 import jetbrains.mps.smodel.structure.BehaviorDescriptor;
 import jetbrains.mps.smodel.structure.ConceptRegistry;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -77,11 +77,13 @@ public class ClosureLiteral_Behavior {
   }
 
   public static Scope virtual_getScope_3734116213129936182(SNode thisNode, SNode kind, SNode child) {
-    return ClosureLiteral_Behavior.call_getInnerScopeProvider_3261311029379768686(thisNode).getScope(thisNode, kind, child);
-  }
+    if (SConceptOperations.isSubConceptOf(kind, "jetbrains.mps.baseLanguage.structure.ParameterDeclaration")) {
+      if (ScopeUtils.comeFrom("body", thisNode, child)) {
+        return CompositeWithParentScope.from(SLinkOperations.getTargets(thisNode, "parameter", true), thisNode, kind);
+      }
+    }
 
-  public static ScopeProvider call_getInnerScopeProvider_3261311029379768686(SNode thisNode) {
-    return new HierarchyScopeProvider(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ParameterDeclaration"), SLinkOperations.getTargets(thisNode, "parameter", true), SLinkOperations.getTarget(thisNode, "body", true));
+    return null;
   }
 
   public static SNode call_getType_1229718192182(SNode thisNode, List<SNode> paramTypes, SNode resultType, SNode returnType, SNode termType, List<SNode> throwsTypes) {

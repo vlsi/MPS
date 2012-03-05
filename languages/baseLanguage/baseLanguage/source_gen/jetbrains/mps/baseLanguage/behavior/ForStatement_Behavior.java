@@ -7,6 +7,10 @@ import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.scope.Scope;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.baseLanguage.scopes.ScopeUtils;
+import jetbrains.mps.baseLanguage.scopes.CompositeWithParentScope;
 import jetbrains.mps.smodel.structure.BehaviorDescriptor;
 import jetbrains.mps.smodel.structure.ConceptRegistry;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -22,14 +26,19 @@ public class ForStatement_Behavior {
     return ListSequence.fromListAndArray(new ArrayList<SNode>(), SLinkOperations.getTarget(thisNode, "variable", true));
   }
 
-  public static List<SNode> virtual_getOrderedParts_1955452033143960289(SNode thisNode) {
-    List<SNode> variables = new ArrayList<SNode>();
-    ListSequence.fromList(variables).addElement(SLinkOperations.getTarget(thisNode, "variable", true));
-    ListSequence.fromList(variables).addElement(SLinkOperations.getTarget(thisNode, "condition", true));
-    ListSequence.fromList(variables).addSequence(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "iteration", true)));
-    ListSequence.fromList(variables).addSequence(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "additionalVar", true)));
-    ListSequence.fromList(variables).addElement(SLinkOperations.getTarget(thisNode, "body", true));
-    return variables;
+  public static Scope virtual_getScope_3734116213129936182(SNode thisNode, SNode kind, SNode child) {
+    if (SConceptOperations.isSubConceptOf(kind, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration")) {
+      // todo: change logic =( 
+      List<SNode> variables = new ArrayList<SNode>();
+      if ((SLinkOperations.getTarget(thisNode, "variable", true) != null) && !(ScopeUtils.comeFrom("variable", thisNode, child))) {
+        ListSequence.fromList(variables).addElement(SLinkOperations.getTarget(thisNode, "variable", true));
+      }
+      if (ScopeUtils.comeFrom("body", thisNode, child)) {
+        ListSequence.fromList(variables).addSequence(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "additionalVar", true)));
+      }
+      return CompositeWithParentScope.from(variables, thisNode, kind);
+    }
+    return null;
   }
 
   public static List<SNode> call_getScopeVariables_2496361171403550965(SNode thisNode) {

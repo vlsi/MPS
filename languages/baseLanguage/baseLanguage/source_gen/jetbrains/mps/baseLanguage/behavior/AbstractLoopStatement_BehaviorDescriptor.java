@@ -7,7 +7,6 @@ import jetbrains.mps.lang.core.behavior.ScopeProvider_BehaviorDescriptor;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.scope.Scope;
 import jetbrains.mps.lang.core.behavior.ScopeProvider_Behavior;
-import java.util.List;
 
 public abstract class AbstractLoopStatement_BehaviorDescriptor extends Statement_BehaviorDescriptor implements IContainer_BehaviorDescriptor, IContainsStatementList_BehaviorDescriptor, ScopeProvider_BehaviorDescriptor {
   public AbstractLoopStatement_BehaviorDescriptor() {
@@ -23,10 +22,6 @@ public abstract class AbstractLoopStatement_BehaviorDescriptor extends Statement
 
   public Scope virtual_getScope_7722139651431880752(SNode thisNode, SNode kind, String role, int index) {
     return ScopeProvider_Behavior.virtual_getScope_7722139651431880752(thisNode, kind, role, index);
-  }
-
-  public List<SNode> virtual_getOrderedParts_1955452033143960289(SNode thisNode) {
-    return AbstractLoopStatement_Behavior.virtual_getOrderedParts_1955452033143960289(thisNode);
   }
 
   public Scope virtual_getScope_3734116213129936182(SNode thisNode, SNode kind, SNode child) {

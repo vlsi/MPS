@@ -5,7 +5,6 @@ package jetbrains.mps.baseLanguage.scopes;
 import jetbrains.mps.scope.Scope;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.scope.CompositeScope;
-import java.util.List;
 
 public class CompositeWithParentScope {
   public static Scope from(Scope original, SNode node, SNode kind) {
@@ -17,11 +16,21 @@ public class CompositeWithParentScope {
     );
   }
 
-  public static Scope from(List<SNode> elements, SNode node, SNode kind) {
-    return from(new SimpleScope(elements), node, kind);
+  public static Scope from(Iterable<SNode> elements, SNode node, SNode kind) {
+    return (elements != null ?
+      from(new SimpleScope(elements), node, kind) :
+      parentScope(node, kind)
+    );
   }
 
   public static Scope from(SNode element, SNode node, SNode kind) {
-    return from(new SimpleScope(element), node, kind);
+    return ((element != null) ?
+      from(new SimpleScope(element), node, kind) :
+      parentScope(node, kind)
+    );
+  }
+
+  public static Scope parentScope(SNode node, SNode kind) {
+    return Scope.getScope(Scope.parent(node), node, kind);
   }
 }

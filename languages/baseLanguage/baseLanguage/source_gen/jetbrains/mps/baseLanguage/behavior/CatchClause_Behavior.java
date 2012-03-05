@@ -9,12 +9,11 @@ import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.scope.Scope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.smodel.search.ISearchScope;
-import jetbrains.mps.smodel.search.SimpleSearchScope;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.scope.CompositeScope;
+import jetbrains.mps.baseLanguage.scopes.ScopeUtils;
+import jetbrains.mps.baseLanguage.scopes.CompositeWithParentScope;
 import jetbrains.mps.smodel.structure.BehaviorDescriptor;
 import jetbrains.mps.smodel.structure.ConceptRegistry;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class CatchClause_Behavior {
@@ -29,12 +28,9 @@ public class CatchClause_Behavior {
 
   public static Scope virtual_getScope_3734116213129936182(SNode thisNode, SNode kind, SNode child) {
     if (SConceptOperations.isSubConceptOf(kind, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration")) {
-      Scope currentScope = new ISearchScope.Adapter(new SimpleSearchScope(ListSequence.fromListAndArray(new ArrayList<SNode>(), SLinkOperations.getTarget(thisNode, "throwable", true))));
-      Scope nextScope = Scope.getScope(SNodeOperations.getParent(thisNode), child, kind);
-      return (nextScope == null ?
-        currentScope :
-        new CompositeScope(currentScope, nextScope)
-      );
+      if (ScopeUtils.comeFrom("catchBody", thisNode, child)) {
+        return CompositeWithParentScope.from(SLinkOperations.getTarget(thisNode, "throwable", true), thisNode, kind);
+      }
     }
 
     return null;

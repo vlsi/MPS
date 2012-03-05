@@ -7,7 +7,6 @@ import java.util.LinkedHashSet;
 import jetbrains.mps.smodel.SNode;
 import java.util.List;
 import org.jetbrains.annotations.Nullable;
-import org.apache.commons.lang.StringUtils;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import org.jetbrains.annotations.NotNull;
@@ -32,7 +31,7 @@ public class SimpleScope extends Scope {
   }
 
   public List<SNode> getAvailableElements(@Nullable String prefix) {
-    boolean isEverything = StringUtils.isEmpty(prefix);
+    boolean isEverything = isEmpty(prefix);
     List<SNode> result = new ArrayList<SNode>();
 
     for (SNode node : nodes) {
@@ -59,9 +58,13 @@ public class SimpleScope extends Scope {
   @Nullable
   public String getReferenceText(SNode contextNode, @NotNull SNode target) {
     String resolveInfo = target.getResolveInfo();
-    if (StringUtils.isNotEmpty(resolveInfo)) {
+    if (!(isEmpty(resolveInfo))) {
       return resolveInfo;
     }
     return target.getPresentation();
+  }
+
+  private static boolean isEmpty(String s) {
+    return s == null || s.length() == 0;
   }
 }

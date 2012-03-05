@@ -10,8 +10,8 @@ import jetbrains.mps.baseLanguage.behavior.IFinalWrapper_BehaviorDescriptor;
 import jetbrains.mps.baseLanguage.behavior.IControlFlowInterrupter_BehaviorDescriptor;
 import jetbrains.mps.lang.core.behavior.ScopeProvider_BehaviorDescriptor;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.baseLanguage.behavior.IContainsStatementList_Behavior;
 import jetbrains.mps.baseLanguage.behavior.IStatementListContainer_Behavior;
+import jetbrains.mps.baseLanguage.behavior.IContainsStatementList_Behavior;
 import jetbrains.mps.baseLanguage.behavior.IMethodLike_Behavior;
 import java.util.List;
 import jetbrains.mps.scope.Scope;
@@ -25,12 +25,12 @@ public class ClosureLiteral_BehaviorDescriptor extends Expression_BehaviorDescri
     return ClosureLiteral_Behavior.virtual_getExpectedRetType_1239354342632(thisNode);
   }
 
-  public boolean virtual_isStatementListCompact_1237546693016(SNode thisNode) {
-    return IContainsStatementList_Behavior.virtual_isStatementListCompact_1237546693016(thisNode);
-  }
-
   public boolean virtual_isExecuteSynchronous_1230212745736(SNode thisNode) {
     return IStatementListContainer_Behavior.virtual_isExecuteSynchronous_1230212745736(thisNode);
+  }
+
+  public boolean virtual_isStatementListCompact_1237546693016(SNode thisNode) {
+    return IContainsStatementList_Behavior.virtual_isStatementListCompact_1237546693016(thisNode);
   }
 
   public boolean virtual_isStatementListCompactable_1237546012856(SNode thisNode) {

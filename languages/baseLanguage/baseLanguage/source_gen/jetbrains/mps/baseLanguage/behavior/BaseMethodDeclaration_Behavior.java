@@ -19,9 +19,9 @@ import jetbrains.mps.reloading.ReflectionUtil;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.scope.Scope;
+import jetbrains.mps.baseLanguage.scopes.ScopeUtils;
+import jetbrains.mps.baseLanguage.scopes.CompositeWithParentScope;
 import jetbrains.mps.lang.core.behavior.ScopeProvider_Behavior;
-import jetbrains.mps.baseLanguage.scopes.ScopeProvider;
-import jetbrains.mps.baseLanguage.scopes.HierarchyScopeProvider;
 import jetbrains.mps.smodel.structure.BehaviorDescriptor;
 import jetbrains.mps.smodel.structure.ConceptRegistry;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
@@ -235,17 +235,14 @@ public class BaseMethodDeclaration_Behavior {
   }
 
   public static Scope virtual_getScope_3734116213129936182(SNode thisNode, SNode kind, SNode child) {
-    Scope result = BaseMethodDeclaration_Behavior.call_getInnerScopeProvider_682237349250898095(thisNode).getScope(thisNode, kind, child);
-    if (result != null) {
-      return result;
+    if (SConceptOperations.isSubConceptOf(kind, "jetbrains.mps.baseLanguage.structure.ParameterDeclaration")) {
+      if (ScopeUtils.comeFrom("body", thisNode, child)) {
+        return CompositeWithParentScope.from(SLinkOperations.getTargets(thisNode, "parameter", true), thisNode, kind);
+      } else {
+        return null;
+      }
     }
     return ScopeProvider_Behavior.callSuper_getScope_3734116213129936182(thisNode, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", kind, child);
-    // <node> 
-    // <node> 
-  }
-
-  public static ScopeProvider call_getInnerScopeProvider_682237349250898095(SNode thisNode) {
-    return new HierarchyScopeProvider(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ParameterDeclaration"), SLinkOperations.getTargets(thisNode, "parameter", true), SLinkOperations.getTarget(thisNode, "body", true));
   }
 
   public static List<Icon> call_getMarkIcons_5039675756633081786(SNode thisNode) {

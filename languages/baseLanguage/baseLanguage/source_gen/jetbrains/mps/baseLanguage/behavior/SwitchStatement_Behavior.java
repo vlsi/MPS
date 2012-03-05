@@ -11,11 +11,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import java.util.List;
 import java.util.ArrayList;
-import jetbrains.mps.smodel.search.ISearchScope;
-import jetbrains.mps.smodel.search.SimpleSearchScope;
-import jetbrains.mps.scope.CompositeScope;
-import jetbrains.mps.baseLanguage.scopes.ScopeProvider;
-import jetbrains.mps.baseLanguage.scopes.HierarchyScopeProvider;
+import jetbrains.mps.baseLanguage.scopes.CompositeWithParentScope;
+import java.util.Arrays;
 
 public class SwitchStatement_Behavior {
   public static void init(SNode thisNode) {
@@ -52,27 +49,25 @@ public class SwitchStatement_Behavior {
         }
         ListSequence.fromList(variables).addSequence(ListSequence.fromList(StatementList_Behavior.call_getLocalVariableDeclarations_3986960521977638556(SLinkOperations.getTarget(caseNode, "body", true), null)));
       }
-      Scope currentScope = new ISearchScope.Adapter(new SimpleSearchScope(variables));
-      return (nextScope == null ?
-        currentScope :
-        new CompositeScope(currentScope, nextScope)
-      );
+      return CompositeWithParentScope.from(variables, thisNode, kind);
     }
 
-    return SwitchStatement_Behavior.call_getInnerScopeProvider_8967654016644457798(thisNode).getScope(thisNode, kind, child);
-    // <node> 
-  }
+    if (SConceptOperations.isSubConceptOf(kind, "jetbrains.mps.baseLanguage.structure.LoopLabel")) {
+      List<SNode> parameter = new ArrayList<SNode>();
+      if ((SLinkOperations.getTarget(thisNode, "switchLabel", true) != null)) {
+        ListSequence.fromList(parameter).addElement(SLinkOperations.getTarget(thisNode, "switchLabel", true));
+      }
+      SNode[] nodesInScope = new SNode[ListSequence.fromList(SLinkOperations.getTargets(thisNode, "case", true)).count() + 1];
+      for (int i = 0; i < ListSequence.fromList(SLinkOperations.getTargets(thisNode, "case", true)).count(); i++) {
+        nodesInScope[i] = ListSequence.fromList(SLinkOperations.getTargets(thisNode, "case", true)).getElement(i);
+      }
+      nodesInScope[nodesInScope.length - 1] = SLinkOperations.getTarget(thisNode, "defaultBlock", true);
 
-  public static ScopeProvider call_getInnerScopeProvider_8967654016644457798(SNode thisNode) {
-    List<SNode> parameter = new ArrayList<SNode>();
-    if ((SLinkOperations.getTarget(thisNode, "switchLabel", true) != null)) {
-      ListSequence.fromList(parameter).addElement(SLinkOperations.getTarget(thisNode, "switchLabel", true));
+      // todo: how to generialize? 
+      if (Arrays.asList(nodesInScope).contains(child)) {
+        return CompositeWithParentScope.from(parameter, thisNode, kind);
+      }
     }
-    SNode[] nodesInScope = new SNode[ListSequence.fromList(SLinkOperations.getTargets(thisNode, "case", true)).count() + 1];
-    for (int i = 0; i < ListSequence.fromList(SLinkOperations.getTargets(thisNode, "case", true)).count(); i++) {
-      nodesInScope[i] = ListSequence.fromList(SLinkOperations.getTargets(thisNode, "case", true)).getElement(i);
-    }
-    nodesInScope[nodesInScope.length - 1] = SLinkOperations.getTarget(thisNode, "defaultBlock", true);
-    return new HierarchyScopeProvider(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.LoopLabel"), parameter, nodesInScope);
+    return null;
   }
 }

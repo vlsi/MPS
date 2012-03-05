@@ -5,6 +5,7 @@ package jetbrains.mps.baseLanguage.behavior;
 import jetbrains.mps.lang.traceable.behavior.ScopeConcept_BehaviorDescriptor;
 import java.util.List;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.scope.Scope;
 
 public class ForStatement_BehaviorDescriptor extends AbstractForStatement_BehaviorDescriptor implements ScopeConcept_BehaviorDescriptor {
   public ForStatement_BehaviorDescriptor() {
@@ -14,8 +15,8 @@ public class ForStatement_BehaviorDescriptor extends AbstractForStatement_Behavi
     return ForStatement_Behavior.virtual_getScopeVariables_5067982036267369894(thisNode);
   }
 
-  public List<SNode> virtual_getOrderedParts_1955452033143960289(SNode thisNode) {
-    return ForStatement_Behavior.virtual_getOrderedParts_1955452033143960289(thisNode);
+  public Scope virtual_getScope_3734116213129936182(SNode thisNode, SNode kind, SNode child) {
+    return ForStatement_Behavior.virtual_getScope_3734116213129936182(thisNode, kind, child);
   }
 
   @Override
