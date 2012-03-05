@@ -24,7 +24,13 @@ def includeFile(String filepath) {
   s
 }
 
+target(patch: "Patch IDEA sources") {
+  new File("${guessHome(this)}/build/patches").listFiles().each {
+    ant.patch(patchfile: it.getAbsolutePath(), dir: "${guessHome(this)}", strip:1)
+  }}
+
 target(compile: "Compile project") {
+  depends(patch)
   loadProject()
 
   project.stage("Cleaning up sandbox folder")
