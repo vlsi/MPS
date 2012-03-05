@@ -75,10 +75,17 @@ public class MPSFacetConfiguration implements FacetConfiguration, PersistentStat
     }
 
     private void setConfigurationDefaults() {
+        if (myConfigurationBean.isUseTransientOutputFolder()) {
+            myConfigurationBean.setUseModuleSourceFolder(false);
+        }
+        else if (myConfigurationBean.isUseModuleSourceFolder()) {
+            myConfigurationBean.setUseTransientOutputFolder(false);
+        }
         if (myConfigurationBean.getGeneratorOutputPath() == null) {
             String moduleDirPath = PathUtil.getParentPath(myMpsFacet.getModule().getModuleFilePath());
             if (moduleDirPath != null) {
                 myConfigurationBean.setGeneratorOutputPath(moduleDirPath + FILE_SEPARATOR + SOURCE_GEN);
+                myConfigurationBean.setUseTransientOutputFolder(false);
                 myConfigurationBean.setUseModuleSourceFolder(false);
             }
         }

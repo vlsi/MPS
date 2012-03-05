@@ -20,7 +20,7 @@
   <import index="tp82" modelUID="r:00000000-0000-4000-0000-011c895903ee(jetbrains.mps.internalCollections.test.closures)" version="-1" />
   <import index="ijii" modelUID="r:76e159e6-4560-4446-8a14-1eeae92b1a00(jetbrains.mps.baseLanguage.tuples.test)" version="-1" />
   <import index="bwgg" modelUID="r:29a1b5f5-cf76-4978-a4ac-fe622e0f96ff(jetbrains.mps.debug.evaluation.transform.tests)" version="-1" />
-  <import index="6ymf" modelUID="r:fc539459-610a-408b-8472-ac3a7316412f(jetbrains.mps.traceInfo.test)" version="-1" />
+  <import index="6ymf" modelUID="r:fc539459-610a-408b-8472-ac3a7316412f(jetbrains.mps.traceInfo.test@tests)" version="-1" />
   <import index="tzu1" modelUID="r:f429894b-858b-4e34-87ae-2cfe2a061928(jetbrains.mps.lang.editor.selection.test)" version="-1" />
   <import index="lkuz" modelUID="r:8bac3b50-f9ad-4677-8274-76544dbc0da8(jetbrains.mps.lang.editor.table.matrix.test)" version="-1" />
   <import index="c1yb" modelUID="r:dc1400b5-0aa4-448e-8f15-11fb0ccb5c23(jetbrains.mps.lang.editor.table.stateMachine.test)" version="-1" />
@@ -60,6 +60,7 @@
   <import index="zn6b" modelUID="r:a822b011-296a-478b-9b72-dc6e0c3c30e7(test.ypath.util)" version="-1" />
   <import index="fw8r" modelUID="r:3160b573-ccb2-45e9-9d2a-2b5104766730(mf)" version="-1" />
   <import index="g7jn" modelUID="r:43e3e907-f65e-4358-a377-baa3670feacf(jetbrains.mps.samples.secretCompartmentLanguage.runtime.test)" version="-1" />
+  <import index="zac2" modelUID="r:e0863919-8493-440c-b44a-4137ee814e30(jetbrains.mps.project.iotests@tests)" version="-1" />
   <import index="pop3" modelUID="r:c8b27be8-26f9-4593-9ae5-f70dd005d131(jetbrains.mps.testbench.suite.structure)" version="-1" implicit="yes" />
   <roots>
     <node type="pop3.ModuleSuite" typeId="pop3.4504141816188599477" id="2712670354707830840" />
@@ -92,6 +93,7 @@
     <node type="pop3.ModuleSuite" typeId="pop3.4504141816188599477" id="1047721517261600280" />
     <node type="pop3.ModuleSuite" typeId="pop3.4504141816188599477" id="5934496548013521234" />
     <node type="pop3.ModuleSuite" typeId="pop3.4504141816188599477" id="2622946712629076727" />
+    <node type="pop3.ModuleSuite" typeId="pop3.4504141816188599477" id="3323419009398480325" />
   </roots>
   <root id="2712670354707830840">
     <node role="moduleRef" roleId="pop3.1280144168199507080" type="pop3.SolutionRef" typeId="pop3.1280144168199506908" id="2712670354707830841">
@@ -1849,6 +1851,18 @@
     </node>
     <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="2622946712629076729">
       <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="3zun.7036359038356271438" resolveInfo="Extension_Test" />
+    </node>
+  </root>
+  <root id="3323419009398480325">
+    <node role="moduleRef" roleId="pop3.1280144168199507080" type="pop3.SolutionRef" typeId="pop3.1280144168199506908" id="3323419009398480326">
+      <property name="moduleFQName" nameId="pop3.1280144168199506909" value="jetbrains.mps.kernel" />
+      <property name="moduleID" nameId="pop3.1280144168199506910" value="2d3c70e9-aab2-4870-8d8d-6036800e4103" />
+    </node>
+    <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="3323419009398480327">
+      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="zac2.557142600900560795" resolveInfo="DescriptorsIO_Test" />
+    </node>
+    <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="3323419009398480328">
+      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="zac2.3323419009397537122" resolveInfo="FacetDescriptorsIO_Test" />
     </node>
   </root>
 </model>

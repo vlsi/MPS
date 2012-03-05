@@ -18,7 +18,8 @@ package jetbrains.mps.library;
 import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.*;
-import jetbrains.mps.project.persistence.*;
+import jetbrains.mps.project.io.DescriptorIOFacade;
+import jetbrains.mps.project.persistence.DeploymentDescriptorPersistence;
 import jetbrains.mps.project.structure.model.ModelRoot;
 import jetbrains.mps.project.structure.model.RootReference;
 import jetbrains.mps.project.structure.modules.*;
@@ -43,20 +44,7 @@ public class ModulesMiner {
     return INSTANCE;
   }
 
-  private Map<String, Class<? extends IModule>> myExtensionsToModuleTypes = new LinkedHashMap<String, Class<? extends IModule>>();
-
   private ModulesMiner() {
-    initializeExtensionsToModuleTypesMap();
-  }
-
-  private void initializeExtensionsToModuleTypesMap() {
-    myExtensionsToModuleTypes.put(MPSExtentions.LANGUAGE, Language.class);
-    myExtensionsToModuleTypes.put(MPSExtentions.SOLUTION, Solution.class);
-    myExtensionsToModuleTypes.put(MPSExtentions.DEVKIT, DevKit.class);
-  }
-
-  public Set<String> getModuleExtensions() {
-    return new HashSet<String>(myExtensionsToModuleTypes.keySet());
   }
 
   public void readModuleDescriptors(Iterator<? extends RootReference> roots, MPSModuleOwner owner) {
@@ -119,7 +107,7 @@ public class ModulesMiner {
     }
 
     for (IFile file : files) {
-      if (hasModuleExtension(file)) {
+      if (isModuleFile(file)) {
         ModuleDescriptor moduleDescriptor = loadDescriptorOnly_internal(file, excludes);
         if (moduleDescriptor != null) {
           T descriptor = reader.read(new ModuleHandle(file, moduleDescriptor));
@@ -132,7 +120,7 @@ public class ModulesMiner {
 
     for (IFile childDir : files) {
       if (FileSystem.getInstance().isFileIgnored(childDir.getName())) continue;
-      if (hasModuleExtension(childDir)) continue;
+      if (isModuleFile(childDir)) continue;
       if (excludes.contains(childDir)) continue;
 
       if (childDir.getName().endsWith(".jar")) {
@@ -173,29 +161,7 @@ public class ModulesMiner {
         }
         return result;
       } else {
-
-        String extension = getModuleExtension(file.getName());
-        Class<? extends IModule> cls = myExtensionsToModuleTypes.get(extension);
-        try {
-          if (cls == Language.class) {
-            return LanguageDescriptorPersistence.loadLanguageDescriptor(file);
-          } else if (cls == Solution.class) {
-            return SolutionDescriptorPersistence.loadSolutionDescriptor(file);
-          } else {
-            return DevkitDescriptorPersistence.loadDevKitDescriptor(file);
-          }
-        } catch (ModuleReadException e) {
-          ModuleDescriptor md;
-          if (cls == Language.class) {
-            md = new LanguageDescriptor();
-          } else if (cls == Solution.class) {
-            md = new SolutionDescriptor();
-          } else {
-            md = new DevkitDescriptor();
-          }
-          ModuleDescriptorPersistence.loadBrokenModule(md, file, e);
-          return md;
-        }
+        return DescriptorIOFacade.getInstance().fromFileType(file).readFromFile(file);
       }
     } catch (Exception t) {
       LOG.error("Fail to load module from descriptor " + file.getPath(), t);
@@ -263,15 +229,8 @@ public class ModulesMiner {
     }
   }
 
-  private boolean hasModuleExtension(IFile file) {
-    return getModuleExtension(file.getName()) != null && !file.isDirectory();
-  }
-
-  private String getModuleExtension(String name) {
-    if (name.endsWith(MPSExtentions.DOT_LANGUAGE)) return MPSExtentions.LANGUAGE;
-    if (name.endsWith(MPSExtentions.DOT_SOLUTION)) return MPSExtentions.SOLUTION;
-    if (name.endsWith(MPSExtentions.DOT_DEVKIT)) return MPSExtentions.DEVKIT;
-    return null;
+  private boolean isModuleFile(IFile file) {
+    return !file.isDirectory() && DescriptorIOFacade.getInstance().fromFileType(file) != null;
   }
 
   private void assertCanWrite() {

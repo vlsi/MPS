@@ -18,6 +18,7 @@ package jetbrains.mps.idea.core.facet;
 
 import com.intellij.facet.Facet;
 import com.intellij.facet.FacetType;
+import com.intellij.openapi.diagnostic.Logger;
 import com.intellij.openapi.module.Module;
 import com.intellij.openapi.startup.StartupManager;
 import jetbrains.mps.ide.messages.MessagesViewTool;
@@ -36,7 +37,8 @@ import org.jetbrains.annotations.NotNull;
  * evgeny, 10/26/11
  */
 public class MPSFacet extends Facet<MPSFacetConfiguration> {
-  private Solution mySolution;
+    private static final Logger LOG = Logger.getInstance(MPSFacet.class);
+    private Solution mySolution;
 
   public MPSFacet(@NotNull FacetType facetType, @NotNull Module module, @NotNull String name, @NotNull MPSFacetConfiguration configuration, Facet underlyingFacet) {
     super(facetType, module, name, configuration, underlyingFacet);
@@ -64,7 +66,7 @@ public class MPSFacet extends Facet<MPSFacetConfiguration> {
 
             repository.addModule(mySolution = solution, mpsProject);
             mpsProject.addModule(mySolution.getModuleReference());
-            MessagesViewTool.log(project, MessageKind.INFORMATION, MPSBundle.message("facet.module.loaded", MPSFacet.this.mySolution.getModuleFqName()));
+            LOG.info(MPSBundle.message("facet.module.loaded", MPSFacet.this.mySolution.getModuleFqName()));
           }
         });
       }
@@ -76,7 +78,7 @@ public class MPSFacet extends Facet<MPSFacetConfiguration> {
     ModelAccess.instance().runWriteAction(new Runnable() {
       @Override
       public void run() {
-        MessagesViewTool.log(getModule().getProject(), MessageKind.INFORMATION, MPSBundle.message("facet.module.unloaded", mySolution.getModuleFqName()));
+        LOG.info(MPSBundle.message("facet.module.unloaded", mySolution.getModuleFqName()));
         MPSModuleRepository.getInstance().removeModule(mySolution);
         mySolution = null;
       }

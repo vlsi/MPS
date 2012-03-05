@@ -161,7 +161,6 @@ public class GeneratorWorker extends MpsWorker {
 
       p.projectClosed();
       disposeProject(p);
-      dispose();
       doneSomething = true;
     }
 
@@ -169,6 +168,12 @@ public class GeneratorWorker extends MpsWorker {
     LinkedHashSet<IModule> modules = new LinkedHashSet<IModule>();
     LinkedHashSet<SModelDescriptor> models = new LinkedHashSet<SModelDescriptor>();
     collectFromModuleFiles(modules);
+    // need to actually load the models 
+    ModelAccess.instance().runWriteAction(new Runnable() {
+      public void run() {
+        ClassLoaderManager.getInstance().reloadAll(new EmptyProgressMonitor());
+      }
+    });
     collectFromModelFiles(models);
     MpsWorker.ObjectsToProcess go = new MpsWorker.ObjectsToProcess(Collections.EMPTY_SET, modules, models);
     if (go.hasAnythingToGenerate()) {

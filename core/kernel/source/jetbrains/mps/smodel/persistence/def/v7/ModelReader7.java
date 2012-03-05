@@ -23,8 +23,10 @@ import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.nodeidmap.RegularNodeIdMap;
 import jetbrains.mps.smodel.persistence.def.IModelReader;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
+import jetbrains.mps.smodel.persistence.def.XmlStringUtil;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.xmlQuery.runtime.AttributeUtils;
+import org.jdom.Attribute;
 import org.jdom.Document;
 import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
@@ -50,8 +52,21 @@ public class ModelReader7 implements IModelReader {
     SModel model = new SModel(modelReference,new RegularNodeIdMap());
     model.setPersistenceVersion(getVersion());
     model.getSModelHeader().updateDefaults(header);
-    model.getSModelHeader().setVersion(AttributeUtils.integerWithDefault(rootElement.getAttributeValue(SModelHeader.VERSION), -1));
-    model.getSModelHeader().setDoNotGenerate(AttributeUtils.booleanWithDefault(rootElement.getAttributeValue(SModelHeader.DO_NOT_GENERATE), false));
+
+    for (Object att: rootElement.getAttributes()) {
+      String name = ((Attribute) att).getQualifiedName();
+      String value = ((Attribute) att).getValue();
+      if (SModelHeader.VERSION.equals(name)) {
+        model.getSModelHeader().setVersion(AttributeUtils.integerWithDefault(value, -1));
+      }
+      else if (SModelHeader.DO_NOT_GENERATE.equals(name)) {
+        model.getSModelHeader().setDoNotGenerate(AttributeUtils.booleanWithDefault(value, false));
+      }
+      else if (!ModelPersistence.MODEL_UID.equals(name)) {
+        model.getSModelHeader().setOptionalProperty(name, XmlStringUtil.unescapeXml(value));
+      }
+    }
+
     myHelper = new ReadHelper(modelReference);
     myLinkMap = new ModelLinkMap(model);
 

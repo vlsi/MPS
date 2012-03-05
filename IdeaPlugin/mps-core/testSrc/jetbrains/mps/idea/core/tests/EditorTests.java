@@ -63,8 +63,8 @@ public class EditorTests extends DataMPSFixtureTestCase {
 
     @Override
     protected void prepareTestData(MPSFacetConfiguration configuration) throws  Exception {
-        IFile test = copyResource("models", "test.mps", "/tests/editorTests/models/test.mps");
-        configuration.getState().setModelRootPaths(test.getParent().getPath());
+        IFile test = copyResource("models", "test.mps", "test.mps", "/tests/editorTests/models/test.mps");
+        configuration.getState().setModelRootPaths(new String[]{test.getParent().getPath()});
     }
 
     @Override
