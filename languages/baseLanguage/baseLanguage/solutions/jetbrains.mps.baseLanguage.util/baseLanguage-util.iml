@@ -15,6 +15,7 @@
     <orderEntry type="module" module-name="typesystemEngine" />
     <orderEntry type="module" module-name="baseLanguage-search" />
     <orderEntry type="module" module-name="Closures-runtime" />
+    <orderEntry type="module" module-name="Tuples-runtime" />
   </component>
 </module>
 

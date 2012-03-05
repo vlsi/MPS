@@ -28,8 +28,6 @@ public class PluginSolution_ApplicationPlugin extends BaseApplicationPlugin {
     addAction(new CommentLine_Action());
     addAction(new CommentStatements_Action());
     addAction(new ExtractMethod_Action());
-    addAction(new GoToInheritedClassifier_Action());
-    addAction(new GoToOverridenMethod_Action());
     addAction(new InlineLocalVariable_Action());
     addAction(new InlineMethod_Action());
     addAction(new IntroduceConstant_Action());

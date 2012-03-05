@@ -21,6 +21,7 @@
     <orderEntry type="module" module-name="collections-runtime" />
     <orderEntry type="module" module-name="typesystemIntegration" />
     <orderEntry type="module" module-name="generator-engine" />
+    <orderEntry type="module" module-name="findUsages-runtime" />
   </component>
 </module>
 

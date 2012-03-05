@@ -21,6 +21,7 @@ public class PluginSolution_ApplicationPlugin extends BaseApplicationPlugin {
 
   public void createGroups() {
     // actions w/o parameters 
+    addAction(new GoToOverridingMethod_Action());
     addAction(new ImplementBehaviorMethod_Action());
     addAction(new OverrideBehaviorMethod_Action());
     // groups 

@@ -31,6 +31,8 @@
     <orderEntry type="module" module-name="baseLanguage-util" />
     <orderEntry type="module" module-name="refactoring-runtime" />
     <orderEntry type="module" module-name="actions-runtime" />
+    <orderEntry type="module" module-name="baseLanguage-search" />
+    <orderEntry type="module" module-name="findUsages-runtime" />
   </component>
 </module>
 

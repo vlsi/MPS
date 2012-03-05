@@ -4,9 +4,6 @@ package jetbrains.mps.baseLanguage.pluginSolution.plugin;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import java.util.ArrayList;
-import com.intellij.openapi.extensions.PluginId;
 
 public class BaseLanguageEditorPopup_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(BaseLanguageEditorPopup_ActionGroup.class);
@@ -17,9 +14,6 @@ public class BaseLanguageEditorPopup_ActionGroup extends GeneratedActionGroup {
     this.setIsInternal(false);
     this.setPopup(false);
     try {
-      BaseLanguageEditorPopup_ActionGroup.this.addParameterizedAction(new GoToOverridingMethod_Action(ListSequence.fromListAndArray(new ArrayList<String>(), "jetbrains.mps.baseLanguage.findUsages.DerivedMethods_Finder")), PluginId.getId("jetbrains.mps.baseLanguage.pluginSolution"), ListSequence.fromListAndArray(new ArrayList<String>(), "jetbrains.mps.baseLanguage.findUsages.DerivedMethods_Finder"));
-      BaseLanguageEditorPopup_ActionGroup.this.addAction("jetbrains.mps.baseLanguage.pluginSolution.plugin.GoToOverridenMethod_Action");
-      BaseLanguageEditorPopup_ActionGroup.this.addAction("jetbrains.mps.baseLanguage.pluginSolution.plugin.GoToInheritedClassifier_Action");
       BaseLanguageEditorPopup_ActionGroup.this.addAction("jetbrains.mps.baseLanguage.pluginSolution.plugin.ShowMembers_Action");
     } catch (Throwable t) {
       LOG.error("User group error", t);

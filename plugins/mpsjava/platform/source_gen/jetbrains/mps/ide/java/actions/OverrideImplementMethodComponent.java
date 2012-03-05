@@ -28,6 +28,7 @@ public class OverrideImplementMethodComponent implements ProjectComponent, Persi
   }
 
   public void disposeComponent() {
+    myState = null;
   }
 
   public void initComponent() {

@@ -10,6 +10,7 @@ import javax.swing.KeyStroke;
 public class Default_KeymapChanges extends BaseKeymapChanges {
   public Default_KeymapChanges() {
     // simple 
+    addSimpleShortcut("jetbrains.mps.lang.behavior.pluginSolution.plugin.GoToOverridingMethod_Action", getShortcut("ctrl alt B"));
     addSimpleShortcut("jetbrains.mps.lang.behavior.pluginSolution.plugin.ImplementBehaviorMethod_Action", getShortcut("ctrl I"));
     addSimpleShortcut("jetbrains.mps.lang.behavior.pluginSolution.plugin.OverrideBehaviorMethod_Action", getShortcut("ctrl O"));
     // simple parameterized 

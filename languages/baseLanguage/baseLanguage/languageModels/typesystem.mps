@@ -17,7 +17,6 @@
   <import index="tp3r" modelUID="r:00000000-0000-4000-0000-011c8959034b(jetbrains.mps.lang.quotation.structure)" version="0" />
   <import index="tp25" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" />
   <import index="tp4f" modelUID="r:00000000-0000-4000-0000-011c89590373(jetbrains.mps.baseLanguage.classifiers.structure)" version="0" />
-  <import index="tpec" modelUID="r:00000000-0000-4000-0000-011c895902c8(jetbrains.mps.baseLanguage.plugin)" version="-1" />
   <import index="tpf8" modelUID="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" version="2" />
   <import index="tpd4" modelUID="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" version="3" />
   <import index="mu20" modelUID="r:fc94574f-a075-45e6-9927-48e7e87153e6(jetbrains.mps.analyzers.runtime.framework)" version="-1" />
@@ -39,6 +38,7 @@
   <import index="inbo" modelUID="r:22db907b-8239-4180-8797-e91cea0b9573(jetbrains.mps.smodel.search)" version="-1" />
   <import index="msyo" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.util(MPS.Core/jetbrains.mps.util@java_stub)" version="-1" />
   <import index="hxuy" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.lang.dataFlow.framework(MPS.Core/jetbrains.mps.lang.dataFlow.framework@java_stub)" version="-1" />
+  <import index="pz2c" modelUID="r:2a308ea0-c7e3-4fa5-a624-ad74ee5cfab5(jetbrains.mps.baseLanguage.util)" version="-1" />
   <import index="tp3t" modelUID="r:00000000-0000-4000-0000-011c89590345(jetbrains.mps.lang.pattern.structure)" version="0" implicit="yes" />
   <import index="bj1v" modelUID="r:8b09f5e2-b403-4747-aaa3-eac5acb1f753(jetbrains.mps.analyzers.structure)" version="0" implicit="yes" />
   <import index="cx9y" modelUID="r:309aeee7-bee8-445c-b31d-35928d1da75f(jetbrains.mps.baseLanguage.tuples.structure)" version="2" implicit="yes" />
@@ -26208,11 +26208,11 @@
         <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="2792291462223192832">
           <property name="name" nameId="tpck.1169194664001" value="finder" />
           <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2792291462223192833">
-            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="tpec.4726754564656529447" resolveInfo="OverridingMethodsFinder" />
+            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="pz2c.8432634623182691821" resolveInfo="OverridingMethodsFinder" />
           </node>
           <node role="initializer" roleId="tpee.1068431790190" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="2792291462223192834">
             <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="2792291462223192835">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tpec.4726754564656529905" resolveInfo="OverridingMethodsFinder" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="pz2c.8432634623182692279" resolveInfo="OverridingMethodsFinder" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpd4.ApplicableNodeReference" typeId="tpd4.1174650418652" id="2792291462223206071">
                 <link role="applicableNode" roleId="tpd4.1174650432090" targetNodeId="2792291462223192821" resolveInfo="classifier" />
               </node>
@@ -26229,7 +26229,7 @@
             <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2792291462223192832" resolveInfo="finder" />
           </node>
           <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2792291462223192841">
-            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tpec.4726754564656529448" resolveInfo="getOverridingMethods" />
+            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="pz2c.8432634623182691822" resolveInfo="getOverridingMethods" />
           </node>
         </node>
         <node role="body" roleId="tpee.1154032183016" type="tpee.StatementList" typeId="tpee.1068580123136" id="2792291462223192842">
@@ -26251,7 +26251,7 @@
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2792291462223192832" resolveInfo="finder" />
                 </node>
                 <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2792291462223192860">
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tpec.4726754564656529459" resolveInfo="getOverridenMethods" />
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="pz2c.8432634623182691833" resolveInfo="getOverridenMethods" />
                   <node role="actualArgument" roleId="tpee.1068499141038" type="tp2q.ForEachVariableReference" typeId="tp2q.1153944233411" id="2792291462223192861">
                     <link role="variable" roleId="tp2q.1153944258490" targetNodeId="2792291462223192838" resolveInfo="overridingMethod" />
                   </node>
@@ -26437,11 +26437,11 @@
         <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="1596333951698899858">
           <property name="name" nameId="tpck.1169194664001" value="finder" />
           <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1596333951698899859">
-            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="tpec.4726754564656529447" resolveInfo="OverridingMethodsFinder" />
+            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="pz2c.8432634623182691821" resolveInfo="OverridingMethodsFinder" />
           </node>
           <node role="initializer" roleId="tpee.1068431790190" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="1596333951698899860">
             <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="1596333951698899861">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tpec.4726754564656529905" resolveInfo="OverridingMethodsFinder" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="pz2c.8432634623182692279" resolveInfo="OverridingMethodsFinder" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpd4.ApplicableNodeReference" typeId="tpd4.1174650418652" id="1596333951698899862">
                 <link role="applicableNode" roleId="tpd4.1174650432090" targetNodeId="1596333951698899851" resolveInfo="classifier" />
               </node>
@@ -26458,7 +26458,7 @@
             <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1596333951698899858" resolveInfo="finder" />
           </node>
           <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1596333951698899867">
-            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tpec.4726754564656529448" resolveInfo="getOverridingMethods" />
+            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="pz2c.8432634623182691822" resolveInfo="getOverridingMethods" />
           </node>
         </node>
         <node role="body" roleId="tpee.1154032183016" type="tpee.StatementList" typeId="tpee.1068580123136" id="1596333951698899868">
@@ -26480,7 +26480,7 @@
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1596333951698899858" resolveInfo="finder" />
                 </node>
                 <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1596333951698899877">
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tpec.4726754564656529459" resolveInfo="getOverridenMethods" />
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="pz2c.8432634623182691833" resolveInfo="getOverridenMethods" />
                   <node role="actualArgument" roleId="tpee.1068499141038" type="tp2q.ForEachVariableReference" typeId="tp2q.1153944233411" id="1596333951698899878">
                     <link role="variable" roleId="tp2q.1153944258490" targetNodeId="1596333951698899864" resolveInfo="overridingMethod" />
                   </node>
@@ -28604,11 +28604,11 @@
         <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="4540477783368644605">
           <property name="name" nameId="tpck.1169194664001" value="finder" />
           <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="766349968122907518">
-            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="tpec.4726754564656529447" resolveInfo="OverridingMethodsFinder" />
+            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="pz2c.8432634623182691821" resolveInfo="OverridingMethodsFinder" />
           </node>
           <node role="initializer" roleId="tpee.1068431790190" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="4540477783368644607">
             <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="4540477783368644608">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tpec.4726754564656529905" resolveInfo="OverridingMethodsFinder" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="pz2c.8432634623182692279" resolveInfo="OverridingMethodsFinder" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpd4.ApplicableNodeReference" typeId="tpd4.1174650418652" id="4540477783368644609">
                 <link role="applicableNode" roleId="tpd4.1174650432090" targetNodeId="4540477783368644592" resolveInfo="classifier" />
               </node>
@@ -28629,7 +28629,7 @@
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4540477783368644605" resolveInfo="finder" />
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="4540477783368644662">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tpec.4726754564656529448" resolveInfo="getOverridingMethods" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="pz2c.8432634623182691822" resolveInfo="getOverridingMethods" />
             </node>
           </node>
         </node>

@@ -12,6 +12,15 @@
     <action id="jetbrains.mps.ide.java.actions.GenerateToString_Action" class="jetbrains.mps.ide.java.actions.GenerateToString_Action"/>
     <action id="jetbrains.mps.ide.java.actions.GetModelContentsFromSource_Action" class="jetbrains.mps.ide.java.actions.GetModelContentsFromSource_Action"/>
     <action id="jetbrains.mps.ide.java.actions.GetModuleContentsFromSource_Action" class="jetbrains.mps.ide.java.actions.GetModuleContentsFromSource_Action"/>
+    <action id="jetbrains.mps.ide.java.actions.GoToInheritedClassifier_Action" class="jetbrains.mps.ide.java.actions.GoToInheritedClassifier_Action">
+      <keyboard-shortcut first-keystroke="ctrl alt B" keymap="$default"/>
+    </action>
+    <action id="jetbrains.mps.ide.java.actions.GoToOverridenMethod_Action" class="jetbrains.mps.ide.java.actions.GoToOverridenMethod_Action">
+      <keyboard-shortcut first-keystroke="ctrl U" keymap="$default"/>
+    </action>
+    <action id="jetbrains.mps.ide.java.actions.GoToOverridingMethod_Action" class="jetbrains.mps.ide.java.actions.GoToOverridingMethod_Action">
+      <keyboard-shortcut first-keystroke="ctrl alt B" keymap="$default"/>
+    </action>
     <action id="jetbrains.mps.ide.java.actions.ImplementMethod_Action" class="jetbrains.mps.ide.java.actions.ImplementMethod_Action">
       <keyboard-shortcut first-keystroke="ctrl I" keymap="$default"/>
     </action>
@@ -55,6 +64,11 @@
       <reference ref="jetbrains.mps.ide.java.actions.ResolveStubReferencesToMPS_Action"/>
     </group>
     <group id="jetbrains.mps.ide.java.actions.EditorPopup_ActionGroup">
+      <reference ref="jetbrains.mps.ide.java.actions.GoToOverridingMethod_Action"/>
+      <reference ref="jetbrains.mps.ide.java.actions.GoToOverridenMethod_Action"/>
+      <reference ref="jetbrains.mps.ide.java.actions.GoToInheritedClassifier_Action"/>
+    </group>
+    <group id="jetbrains.mps.ide.java.actions.EditorPopup_paste_ActionGroup">
       <reference ref="jetbrains.mps.ide.java.actions.PasteAsJavaStatements_Action"/>
       <reference ref="jetbrains.mps.ide.java.actions.PasteAsJavaMethods_Action"/>
       <add-to-group group-id="EditorPopup_ActionGrouppaste" anchor="last"/>
