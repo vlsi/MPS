@@ -70,6 +70,7 @@ public class BreakpointsUiComponent extends BreakpointsUiComponentEx<IBreakpoint
 
   @Override
   public void initComponent() {
+    super.init();
     ApplicationManager.getApplication().executeOnPooledThread(new Runnable() {
       @Override
       public void run() {
@@ -86,6 +87,7 @@ public class BreakpointsUiComponent extends BreakpointsUiComponentEx<IBreakpoint
     myBreakpointsManagerComponent.removeChangeListener(myBreakpointManagerListener);
     DebugSessionManagerComponent component = myProject.getComponent(DebugSessionManagerComponent.class);
     component.removeDebugSessionListener(myDebugSessionListener);
+    super.dispose();
   }
 
   public void editBreakpointProperties(final ILocationBreakpoint breakpoint) {

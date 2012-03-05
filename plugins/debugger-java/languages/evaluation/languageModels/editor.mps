@@ -183,7 +183,7 @@
                   <property name="flag" nameId="tpc2.1186414551515" value="true" />
                 </node>
               </node>
-              <node role="cellLayout" roleId="tpc2.1106270802874" type="tpc2.CellLayout_Indent" typeId="tpc2.1237303669825" id="2205814982759384439" />
+              <node role="cellLayout" roleId="tpc2.1106270802874" type="tpc2.CellLayout_Vertical" typeId="tpc2.1106270571710" id="1033897841648258239" />
             </node>
           </node>
         </node>

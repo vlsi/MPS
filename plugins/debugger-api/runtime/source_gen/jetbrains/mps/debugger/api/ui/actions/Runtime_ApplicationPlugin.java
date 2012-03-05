@@ -32,6 +32,7 @@ public class Runtime_ApplicationPlugin extends BaseApplicationPlugin {
     addAction(new ViewBreakpoints_Action());
     // groups 
     addGroup(new DebugRunMenu_ActionGroup());
+    addGroup(new DebugStepsMenu_ActionGroup());
     addGroup(new DebugTool_ActionGroup());
   }
 
@@ -42,6 +43,7 @@ public class Runtime_ApplicationPlugin extends BaseApplicationPlugin {
 
   public void adjustRegularGroups() {
     insertGroupIntoAnother(DebugRunMenu_ActionGroup.ID, "RunMenu", null);
+    insertGroupIntoAnother(DebugStepsMenu_ActionGroup.ID, DebugRunMenu_ActionGroup.ID, DebugRunMenu_ActionGroup.LABEL_ID_steps);
   }
 
   public List<BaseKeymapChanges> initKeymaps() {
