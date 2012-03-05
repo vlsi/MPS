@@ -7,6 +7,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorMessageOwner;
 import javax.swing.Icon;
 import com.intellij.openapi.actionSystem.AnAction;
+import jetbrains.mps.workbench.action.BaseAction;
 import com.intellij.openapi.actionSystem.ActionManager;
 
 public class OverridenMethodEditorMessage extends AbstractOverrideEditorMessage {
@@ -31,6 +32,6 @@ public class OverridenMethodEditorMessage extends AbstractOverrideEditorMessage 
   }
 
   public AnAction getClickAction() {
-    return ActionManager.getInstance().getAction("jetbrains.mps.baseLanguage.pluginSolution.plugin.GoToOverridingMethod_Action#jetbrains.mps.baseLanguage.findUsages.DerivedMethods_Finder!");
+    return ((BaseAction) ActionManager.getInstance().getAction("jetbrains.mps.ide.java.actions.GoToOverridingMethod_Action"));
   }
 }

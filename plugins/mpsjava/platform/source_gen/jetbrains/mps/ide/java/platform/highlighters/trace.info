@@ -404,31 +404,31 @@
     <unitInfo nodeId="8432634623182579483" fileName="OverrideMethodsChecker.java" startLine="176" startPosition="144" endLine="180" endPosition="7" unitName="jetbrains.mps.ide.java.platform.highlighters.OverrideMethodsChecker$5" />
   </root>
   <root nodeId="8432634623182579833">
-    <nodeInfo nodeId="8432634623182579834" fileName="OverridenMethodEditorMessage.java" startLine="12" startPosition="81" endLine="13" endPosition="123" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="TYPE" />
-    <nodeInfo nodeId="8432634623182579852" fileName="OverridenMethodEditorMessage.java" startLine="14" startPosition="0" endLine="15" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="isOverriden" />
-    <nodeInfo nodeId="8432634623182579868" fileName="OverridenMethodEditorMessage.java" startLine="17" startPosition="112" endLine="18" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="8432634623182579872" fileName="OverridenMethodEditorMessage.java" startLine="18" startPosition="32" endLine="19" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8432634623182579896" fileName="OverridenMethodEditorMessage.java" startLine="29" startPosition="63" endLine="30" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8432634623182579902" fileName="OverridenMethodEditorMessage.java" startLine="33" startPosition="36" endLine="34" endPosition="190" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8432634623182579856" fileName="OverridenMethodEditorMessage.java" startLine="16" startPosition="0" endLine="20" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="OverridenMethodEditorMessage#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/nodeEditor/EditorMessageOwner;Ljava/lang/String;Z)V" />
-    <nodeInfo nodeId="8432634623182690087" fileName="OverridenMethodEditorMessage.java" startLine="22" startPosition="25" endLine="26" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8432634623182579892" fileName="OverridenMethodEditorMessage.java" startLine="28" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getType#()Ljetbrains/mps/nodeEditor/EditorMessageIconRenderer/IconRendererType;" />
-    <nodeInfo nodeId="8432634623182579898" fileName="OverridenMethodEditorMessage.java" startLine="32" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getClickAction#()Lcom/intellij/openapi/actionSystem/AnAction;" />
-    <nodeInfo nodeId="8432634623182579879" fileName="OverridenMethodEditorMessage.java" startLine="21" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getIcon#()Ljavax/swing/Icon;" />
-    <scopeInfo nodeId="8432634623182579895" fileName="OverridenMethodEditorMessage.java" startLine="29" startPosition="63" endLine="30" endPosition="16" />
-    <scopeInfo nodeId="8432634623182579901" fileName="OverridenMethodEditorMessage.java" startLine="33" startPosition="36" endLine="34" endPosition="190" />
-    <scopeInfo nodeId="8432634623182579867" fileName="OverridenMethodEditorMessage.java" startLine="17" startPosition="112" endLine="19" endPosition="33" />
-    <scopeInfo nodeId="8432634623182579856" fileName="OverridenMethodEditorMessage.java" startLine="16" startPosition="0" endLine="20" endPosition="3">
+    <nodeInfo nodeId="8432634623182579834" fileName="OverridenMethodEditorMessage.java" startLine="13" startPosition="81" endLine="14" endPosition="123" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="TYPE" />
+    <nodeInfo nodeId="8432634623182579852" fileName="OverridenMethodEditorMessage.java" startLine="15" startPosition="0" endLine="16" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="isOverriden" />
+    <nodeInfo nodeId="8432634623182579868" fileName="OverridenMethodEditorMessage.java" startLine="18" startPosition="112" endLine="19" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="8432634623182579872" fileName="OverridenMethodEditorMessage.java" startLine="19" startPosition="32" endLine="20" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8432634623182579896" fileName="OverridenMethodEditorMessage.java" startLine="30" startPosition="63" endLine="31" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4519712202472261630" fileName="OverridenMethodEditorMessage.java" startLine="34" startPosition="36" endLine="35" endPosition="126" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8432634623182579856" fileName="OverridenMethodEditorMessage.java" startLine="17" startPosition="0" endLine="21" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="OverridenMethodEditorMessage#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/nodeEditor/EditorMessageOwner;Ljava/lang/String;Z)V" />
+    <nodeInfo nodeId="8432634623182690087" fileName="OverridenMethodEditorMessage.java" startLine="23" startPosition="25" endLine="27" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8432634623182579892" fileName="OverridenMethodEditorMessage.java" startLine="29" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getType#()Ljetbrains/mps/nodeEditor/EditorMessageIconRenderer/IconRendererType;" />
+    <nodeInfo nodeId="8432634623182579898" fileName="OverridenMethodEditorMessage.java" startLine="33" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getClickAction#()Lcom/intellij/openapi/actionSystem/AnAction;" />
+    <nodeInfo nodeId="8432634623182579879" fileName="OverridenMethodEditorMessage.java" startLine="22" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getIcon#()Ljavax/swing/Icon;" />
+    <scopeInfo nodeId="8432634623182579895" fileName="OverridenMethodEditorMessage.java" startLine="30" startPosition="63" endLine="31" endPosition="16" />
+    <scopeInfo nodeId="8432634623182579901" fileName="OverridenMethodEditorMessage.java" startLine="34" startPosition="36" endLine="35" endPosition="126" />
+    <scopeInfo nodeId="8432634623182579867" fileName="OverridenMethodEditorMessage.java" startLine="18" startPosition="112" endLine="20" endPosition="33" />
+    <scopeInfo nodeId="8432634623182579856" fileName="OverridenMethodEditorMessage.java" startLine="17" startPosition="0" endLine="21" endPosition="3">
       <varInfo nodeId="8432634623182579857" varName="node" />
       <varInfo nodeId="8432634623182579863" varName="overriden" />
       <varInfo nodeId="8432634623182579859" varName="ovner" />
       <varInfo nodeId="8432634623182579861" varName="tooltip" />
     </scopeInfo>
-    <scopeInfo nodeId="8432634623182579882" fileName="OverridenMethodEditorMessage.java" startLine="22" startPosition="25" endLine="26" endPosition="6" />
-    <scopeInfo nodeId="8432634623182579892" fileName="OverridenMethodEditorMessage.java" startLine="28" startPosition="0" endLine="32" endPosition="0" />
-    <scopeInfo nodeId="8432634623182579898" fileName="OverridenMethodEditorMessage.java" startLine="32" startPosition="0" endLine="36" endPosition="0" />
-    <scopeInfo nodeId="8432634623182579879" fileName="OverridenMethodEditorMessage.java" startLine="21" startPosition="0" endLine="28" endPosition="0" />
-    <unitInfo nodeId="8432634623182579833" fileName="OverridenMethodEditorMessage.java" startLine="12" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.ide.java.platform.highlighters.OverridenMethodEditorMessage" />
+    <scopeInfo nodeId="8432634623182579882" fileName="OverridenMethodEditorMessage.java" startLine="23" startPosition="25" endLine="27" endPosition="6" />
+    <scopeInfo nodeId="8432634623182579892" fileName="OverridenMethodEditorMessage.java" startLine="29" startPosition="0" endLine="33" endPosition="0" />
+    <scopeInfo nodeId="8432634623182579898" fileName="OverridenMethodEditorMessage.java" startLine="33" startPosition="0" endLine="37" endPosition="0" />
+    <scopeInfo nodeId="8432634623182579879" fileName="OverridenMethodEditorMessage.java" startLine="22" startPosition="0" endLine="29" endPosition="0" />
+    <unitInfo nodeId="8432634623182579833" fileName="OverridenMethodEditorMessage.java" startLine="13" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.ide.java.platform.highlighters.OverridenMethodEditorMessage" />
   </root>
   <root nodeId="8432634623182579907">
     <nodeInfo nodeId="8432634623182579908" fileName="OverridingMethodEditorMessage.java" startLine="13" startPosition="82" endLine="14" endPosition="123" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="TYPE" />
