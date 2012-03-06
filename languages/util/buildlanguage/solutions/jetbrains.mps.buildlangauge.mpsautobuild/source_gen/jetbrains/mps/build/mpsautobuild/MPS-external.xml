@@ -608,7 +608,6 @@
     <antcall target="MPS-languages.pack.jetbrains.mps.lang.descriptor" />
     <antcall target="MPS-languages.pack.jetbrains.mps.lang.core.pluginSolution" />
     <antcall target="MPS-languages.pack.jetbrains.mps.lang.structure.pluginSolution" />
-    <antcall target="MPS-languages.pack.jetbrains.mps.lang.behavior.pluginSolution" />
     <antcall target="MPS-languages.pack.jetbrains.mps.lang.generator.pluginSolution" />
     <antcall target="MPS-languages.pack.jetbrains.mps.lang.plugin.pluginSolution" />
     <antcall target="MPS-languages.pack.jetbrains.mps.lang.quotation.pluginSolution" />

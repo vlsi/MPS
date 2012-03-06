@@ -15,6 +15,7 @@ public class IntentionsGroup_ActionGroup extends GeneratedActionGroup {
     this.setPopup(false);
     try {
       IntentionsGroup_ActionGroup.this.addAction("jetbrains.mps.ide.devkit.actions.CreateDefaultEditor_Action");
+      IntentionsGroup_ActionGroup.this.addAction("jetbrains.mps.ide.devkit.actions.ImplementBehaviorMethod_Action");
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }
