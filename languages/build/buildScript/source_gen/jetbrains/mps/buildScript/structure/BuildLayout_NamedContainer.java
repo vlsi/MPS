@@ -57,11 +57,11 @@ public class BuildLayout_NamedContainer extends BuildLayout_AbstractContainer im
     this.setProperty(BuildLayout_NamedContainer.VIRTUAL_PACKAGE, value);
   }
 
-  public BuildString getContainerName() {
-    return (BuildString) this.getChild(BuildString.class, BuildLayout_NamedContainer.CONTAINER_NAME);
+  public BuildStringNotEmpty getContainerName() {
+    return (BuildStringNotEmpty) this.getChild(BuildStringNotEmpty.class, BuildLayout_NamedContainer.CONTAINER_NAME);
   }
 
-  public void setContainerName(BuildString node) {
+  public void setContainerName(BuildStringNotEmpty node) {
     super.setChild(BuildLayout_NamedContainer.CONTAINER_NAME, node);
   }
 

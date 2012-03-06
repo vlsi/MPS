@@ -121,14 +121,6 @@ public class QueriesGenerated {
     return (SLinkOperations.getTarget(_context.getNode(), "value", true) == null);
   }
 
-  public static Object propertyMacro_GetPropertyValue_8237269006869525279(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(_context.getNode(), "defaultPath");
-  }
-
-  public static Object propertyMacro_GetPropertyValue_8237269006869525288(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(_context.getNode(), "name");
-  }
-
   public static Object propertyMacro_GetPropertyValue_1117643560963346388(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), "name");
   }

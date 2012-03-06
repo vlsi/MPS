@@ -138,10 +138,6 @@
       <property name="name" nameId="tpck.1169194664001" value="CompositePart" />
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="3ior.7321017245476976379" resolveInfo="BuildRelativePath" />
     </node>
-    <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="193602448594247642">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="Macro" />
-      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="3ior.193602448594247602" resolveInfo="ExportedMacroInternal" />
-    </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="6647099934206689696">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Plugins" />
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="3ior.6647099934206689694" resolveInfo="BuildPlugin" />
@@ -216,6 +212,14 @@
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Names" />
       <property name="name" nameId="tpck.1169194664001" value="delete_BuildStringPart" />
       <link role="applicableConcept" roleId="tpc2.1139535219968" targetNodeId="3ior.4903714810883702015" resolveInfo="BuildStringPart" />
+    </node>
+    <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="841011766565753077">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Layout" />
+      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="3ior.841011766565753074" resolveInfo="BuildLayout_Import" />
+    </node>
+    <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="841011766566102492">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Names" />
+      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="3ior.841011766566059607" resolveInfo="BuildStringNotEmpty" />
     </node>
   </roots>
   <root id="5617550519002745365">
@@ -2770,20 +2774,6 @@
       </node>
     </node>
   </root>
-  <root id="193602448594247642">
-    <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="193602448594247644">
-      <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Property" typeId="tpc2.1073389658414" id="193602448594247647">
-        <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tpck.1169194664001" resolveInfo="name" />
-      </node>
-      <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="193602448594247649">
-        <property name="text" nameId="tpc2.1073389577007" value="=" />
-      </node>
-      <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Property" typeId="tpc2.1073389658414" id="193602448594247651">
-        <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="3ior.193602448594247603" resolveInfo="defaultPath" />
-      </node>
-      <node role="cellLayout" roleId="tpc2.1106270802874" type="tpc2.CellLayout_Indent" typeId="tpc2.1237303669825" id="193602448594247646" />
-    </node>
-  </root>
   <root id="6647099934206689696">
     <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Error" typeId="tpc2.1075375595203" id="6647099934206700646">
       <property name="text" nameId="tpc2.1075375595204" value="&lt;no plugin&gt;" />
@@ -3802,6 +3792,38 @@
             </node>
           </node>
         </node>
+      </node>
+    </node>
+  </root>
+  <root id="841011766565753077">
+    <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="841011766565773800">
+      <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="841011766565773803">
+        <property name="text" nameId="tpc2.1073389577007" value="import" />
+        <link role="styleClass" roleId="tpc2.1186406756722" targetNodeId="1203598923024" resolveInfo="keyword" />
+        <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.EditableStyleClassItem" typeId="tpc2.1186414860679" id="841011766566187734">
+          <property name="flag" nameId="tpc2.1186414551515" value="true" />
+        </node>
+        <node role="menuDescriptor" roleId="tpc2.1164826688380" type="tpc2.CellMenuDescriptor" typeId="tpc2.1164824717996" id="841011766566180816">
+          <node role="cellMenuPart" roleId="tpc2.1164824815888" type="tpc2.CellMenuPart_ReplaceNode_CustomNodeConcept" typeId="tpc2.1164914519156" id="841011766566180817">
+            <link role="replacementConcept" roleId="tpc2.1164914727930" targetNodeId="3ior.7389400916848036997" resolveInfo="BuildLayout_Node" />
+          </node>
+        </node>
+      </node>
+      <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_RefCell" typeId="tpc2.1088013125922" id="841011766565773805">
+        <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="3ior.841011766565753076" />
+        <node role="editorComponent" roleId="tpc2.1088186146602" type="tpc2.InlineEditorComponent" typeId="tpc2.1088185857835" id="841011766565773806">
+          <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_ReferencePresentation" typeId="tpc2.625126330682908270" id="841011766565773811" />
+        </node>
+      </node>
+      <node role="cellLayout" roleId="tpc2.1106270802874" type="tpc2.CellLayout_Indent" typeId="tpc2.1237303669825" id="841011766565773802" />
+    </node>
+  </root>
+  <root id="841011766566102492">
+    <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_RefNodeList" typeId="tpc2.1073390211982" id="841011766566102494">
+      <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="3ior.4903714810883783243" />
+      <node role="cellLayout" roleId="tpc2.1140524464360" type="tpc2.CellLayout_Indent" typeId="tpc2.1237303669825" id="841011766566102495" />
+      <node role="emptyCellModel" roleId="tpc2.1140524464359" type="tpc2.CellModel_Error" typeId="tpc2.1075375595203" id="841011766566102815">
+        <property name="text" nameId="tpc2.1075375595204" value="&lt;empty&gt;" />
       </node>
     </node>
   </root>

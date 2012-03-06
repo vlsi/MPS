@@ -49,8 +49,8 @@
           <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="280273048052535267">
             <property name="name" nameId="tpck.1169194664001" value="test.jar" />
           </node>
-          <node role="containerName" roleId="3ior.4380385936562148502" type="3ior.BuildString" typeId="3ior.4380385936562003279" id="4380385936562229356">
-            <node role="parts" roleId="3ior.4903714810883783243" type="3ior.BuildTextStringPart" typeId="3ior.4903714810883702019" id="9029200373494108661">
+          <node role="containerName" roleId="3ior.4380385936562148502" type="3ior.BuildStringNotEmpty" typeId="3ior.841011766566059607" id="841011766566098924">
+            <node role="parts" roleId="3ior.4903714810883783243" type="3ior.BuildTextStringPart" typeId="3ior.4903714810883702019" id="841011766566098925">
               <property name="text" nameId="3ior.4903714810883755350" value="test.jar" />
             </node>
           </node>
@@ -73,8 +73,8 @@
                 <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="8104754176559709939">
                   <property name="name" nameId="tpck.1169194664001" value="internalFolder2" />
                 </node>
-                <node role="containerName" roleId="3ior.4380385936562148502" type="3ior.BuildString" typeId="3ior.4380385936562003279" id="4380385936562229371">
-                  <node role="parts" roleId="3ior.4903714810883783243" type="3ior.BuildTextStringPart" typeId="3ior.4903714810883702019" id="9029200373494108665">
+                <node role="containerName" roleId="3ior.4380385936562148502" type="3ior.BuildStringNotEmpty" typeId="3ior.841011766566059607" id="841011766566098932">
+                  <node role="parts" roleId="3ior.4903714810883783243" type="3ior.BuildTextStringPart" typeId="3ior.4903714810883702019" id="841011766566098933">
                     <property name="text" nameId="3ior.4903714810883755350" value="internalFolder2" />
                   </node>
                 </node>
@@ -82,14 +82,14 @@
               <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="8104754176559709901">
                 <property name="name" nameId="tpck.1169194664001" value="internalFolder" />
               </node>
-              <node role="containerName" roleId="3ior.4380385936562148502" type="3ior.BuildString" typeId="3ior.4380385936562003279" id="4380385936562229366">
-                <node role="parts" roleId="3ior.4903714810883783243" type="3ior.BuildTextStringPart" typeId="3ior.4903714810883702019" id="9029200373494108664">
+              <node role="containerName" roleId="3ior.4380385936562148502" type="3ior.BuildStringNotEmpty" typeId="3ior.841011766566059607" id="841011766566098930">
+                <node role="parts" roleId="3ior.4903714810883783243" type="3ior.BuildTextStringPart" typeId="3ior.4903714810883702019" id="841011766566098931">
                   <property name="text" nameId="3ior.4903714810883755350" value="internalFolder" />
                 </node>
               </node>
             </node>
-            <node role="containerName" roleId="3ior.4380385936562148502" type="3ior.BuildString" typeId="3ior.4380385936562003279" id="4380385936562229362">
-              <node role="parts" roleId="3ior.4903714810883783243" type="3ior.BuildTextStringPart" typeId="3ior.4903714810883702019" id="9029200373494108663">
+            <node role="containerName" roleId="3ior.4380385936562148502" type="3ior.BuildStringNotEmpty" typeId="3ior.841011766566059607" id="841011766566098928">
+              <node role="parts" roleId="3ior.4903714810883783243" type="3ior.BuildTextStringPart" typeId="3ior.4903714810883702019" id="841011766566098929">
                 <property name="text" nameId="3ior.4903714810883755350" value="test.jar" />
               </node>
             </node>
@@ -97,8 +97,8 @@
           <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="280273048052535291">
             <property name="name" nameId="tpck.1169194664001" value="folder" />
           </node>
-          <node role="containerName" roleId="3ior.4380385936562148502" type="3ior.BuildString" typeId="3ior.4380385936562003279" id="4380385936562229355">
-            <node role="parts" roleId="3ior.4903714810883783243" type="3ior.BuildTextStringPart" typeId="3ior.4903714810883702019" id="9029200373494108662">
+          <node role="containerName" roleId="3ior.4380385936562148502" type="3ior.BuildStringNotEmpty" typeId="3ior.841011766566059607" id="841011766566098926">
+            <node role="parts" roleId="3ior.4903714810883783243" type="3ior.BuildTextStringPart" typeId="3ior.4903714810883702019" id="841011766566098927">
               <property name="text" nameId="3ior.4903714810883755350" value="folder" />
             </node>
           </node>
@@ -114,14 +114,14 @@
             <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="7422876504327290552">
               <property name="name" nameId="tpck.1169194664001" value="internal" />
             </node>
-            <node role="containerName" roleId="3ior.4380385936562148502" type="3ior.BuildString" typeId="3ior.4380385936562003279" id="4380385936562229380">
-              <node role="parts" roleId="3ior.4903714810883783243" type="3ior.BuildTextStringPart" typeId="3ior.4903714810883702019" id="9029200373494108667">
+            <node role="containerName" roleId="3ior.4380385936562148502" type="3ior.BuildStringNotEmpty" typeId="3ior.841011766566059607" id="841011766566098935">
+              <node role="parts" roleId="3ior.4903714810883783243" type="3ior.BuildTextStringPart" typeId="3ior.4903714810883702019" id="841011766566098936">
                 <property name="text" nameId="3ior.4903714810883755350" value="internal" />
               </node>
             </node>
           </node>
-          <node role="containerName" roleId="3ior.4380385936562148502" type="3ior.BuildString" typeId="3ior.4380385936562003279" id="4380385936562229374">
-            <node role="parts" roleId="3ior.4903714810883783243" type="3ior.BuildTextStringPart" typeId="3ior.4903714810883702019" id="9029200373494108666">
+          <node role="containerName" roleId="3ior.4380385936562148502" type="3ior.BuildStringNotEmpty" typeId="3ior.841011766566059607" id="841011766566098939">
+            <node role="parts" roleId="3ior.4903714810883783243" type="3ior.BuildTextStringPart" typeId="3ior.4903714810883702019" id="841011766566098940">
               <property name="text" nameId="3ior.4903714810883755350" value="folder" />
             </node>
           </node>
@@ -139,20 +139,20 @@
               <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="4209004860870558816">
                 <property name="name" nameId="tpck.1169194664001" value="someFolder" />
               </node>
-              <node role="containerName" roleId="3ior.4380385936562148502" type="3ior.BuildString" typeId="3ior.4380385936562003279" id="4380385936562229368">
-                <node role="parts" roleId="3ior.4903714810883783243" type="3ior.BuildTextStringPart" typeId="3ior.4903714810883702019" id="9029200373494108670">
+              <node role="containerName" roleId="3ior.4380385936562148502" type="3ior.BuildStringNotEmpty" typeId="3ior.841011766566059607" id="841011766566098941">
+                <node role="parts" roleId="3ior.4903714810883783243" type="3ior.BuildTextStringPart" typeId="3ior.4903714810883702019" id="841011766566098942">
                   <property name="text" nameId="3ior.4903714810883755350" value="someFolder" />
                 </node>
               </node>
             </node>
-            <node role="containerName" roleId="3ior.4380385936562148502" type="3ior.BuildString" typeId="3ior.4380385936562003279" id="4380385936562229360">
-              <node role="parts" roleId="3ior.4903714810883783243" type="3ior.BuildTextStringPart" typeId="3ior.4903714810883702019" id="9029200373494108669">
+            <node role="containerName" roleId="3ior.4380385936562148502" type="3ior.BuildStringNotEmpty" typeId="3ior.841011766566059607" id="841011766566098947">
+              <node role="parts" roleId="3ior.4903714810883783243" type="3ior.BuildTextStringPart" typeId="3ior.4903714810883702019" id="841011766566098948">
                 <property name="text" nameId="3ior.4903714810883755350" value="some.jar" />
               </node>
             </node>
           </node>
-          <node role="containerName" roleId="3ior.4380385936562148502" type="3ior.BuildString" typeId="3ior.4380385936562003279" id="4380385936562229364">
-            <node role="parts" roleId="3ior.4903714810883783243" type="3ior.BuildTextStringPart" typeId="3ior.4903714810883702019" id="9029200373494108668">
+          <node role="containerName" roleId="3ior.4380385936562148502" type="3ior.BuildStringNotEmpty" typeId="3ior.841011766566059607" id="841011766566098937">
+            <node role="parts" roleId="3ior.4903714810883783243" type="3ior.BuildTextStringPart" typeId="3ior.4903714810883702019" id="841011766566098938">
               <property name="text" nameId="3ior.4903714810883755350" value="some.jar" />
             </node>
           </node>
@@ -164,14 +164,14 @@
             <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="4209004860870558815">
               <property name="name" nameId="tpck.1169194664001" value="someFolder_1" />
             </node>
-            <node role="containerName" roleId="3ior.4380385936562148502" type="3ior.BuildString" typeId="3ior.4380385936562003279" id="4380385936562229372">
-              <node role="parts" roleId="3ior.4903714810883783243" type="3ior.BuildTextStringPart" typeId="3ior.4903714810883702019" id="9029200373494108672">
+            <node role="containerName" roleId="3ior.4380385936562148502" type="3ior.BuildStringNotEmpty" typeId="3ior.841011766566059607" id="841011766566098943">
+              <node role="parts" roleId="3ior.4903714810883783243" type="3ior.BuildTextStringPart" typeId="3ior.4903714810883702019" id="841011766566098944">
                 <property name="text" nameId="3ior.4903714810883755350" value="someFolder" />
               </node>
             </node>
           </node>
-          <node role="containerName" roleId="3ior.4380385936562148502" type="3ior.BuildString" typeId="3ior.4380385936562003279" id="4380385936562229359">
-            <node role="parts" roleId="3ior.4903714810883783243" type="3ior.BuildTextStringPart" typeId="3ior.4903714810883702019" id="9029200373494108671">
+          <node role="containerName" roleId="3ior.4380385936562148502" type="3ior.BuildStringNotEmpty" typeId="3ior.841011766566059607" id="841011766566098945">
+            <node role="parts" roleId="3ior.4903714810883783243" type="3ior.BuildTextStringPart" typeId="3ior.4903714810883702019" id="841011766566098946">
               <property name="text" nameId="3ior.4903714810883755350" value="some.jar" />
             </node>
           </node>

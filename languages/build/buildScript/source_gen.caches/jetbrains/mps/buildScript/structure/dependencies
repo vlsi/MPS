@@ -175,6 +175,16 @@
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
   </dependency>
+  <dependency className="jetbrains.mps.buildScript.structure.BuildLayout_Import" file="BuildLayout_Import.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.buildScript.structure.BuildLayout_NamedContainer" />
+    <classNode dependClassName="jetbrains.mps.buildScript.structure.BuildLayout_Node" />
+    <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModel" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
+  </dependency>
   <dependency className="jetbrains.mps.buildScript.structure.BuildLayout_Jar" file="BuildLayout_Jar.java">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Iterator" />
@@ -207,7 +217,7 @@
     <classNode dependClassName="java.util.Iterator" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.buildScript.structure.BuildLayout_AbstractContainer" />
-    <classNode dependClassName="jetbrains.mps.buildScript.structure.BuildString" />
+    <classNode dependClassName="jetbrains.mps.buildScript.structure.BuildStringNotEmpty" />
     <classNode dependClassName="jetbrains.mps.lang.core.structure.Attribute" />
     <classNode dependClassName="jetbrains.mps.lang.core.structure.INamedConcept" />
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
@@ -499,6 +509,15 @@
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
   </dependency>
+  <dependency className="jetbrains.mps.buildScript.structure.BuildStringNotEmpty" file="BuildStringNotEmpty.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.buildScript.structure.BuildString" />
+    <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModel" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
+  </dependency>
   <dependency className="jetbrains.mps.buildScript.structure.BuildStringPart" file="BuildStringPart.java">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Iterator" />
@@ -534,15 +553,6 @@
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.buildScript.structure.BuildMacro" />
     <classNode dependClassName="jetbrains.mps.buildScript.structure.BuildString" />
-    <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModel" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
-    <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
-  </dependency>
-  <dependency className="jetbrains.mps.buildScript.structure.ExportedMacroInternal" file="ExportedMacroInternal.java">
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.buildScript.structure.BuildMacro" />
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />

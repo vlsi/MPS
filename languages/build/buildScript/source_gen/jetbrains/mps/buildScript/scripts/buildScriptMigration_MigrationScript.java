@@ -53,7 +53,7 @@ public class buildScriptMigration_MigrationScript extends BaseMigrationScript {
             node.removeChild(it);
           }
         });
-        SLinkOperations.setNewChild(node, "containerName", "jetbrains.mps.buildScript.structure.BuildString");
+        SLinkOperations.setNewChild(node, "containerName", "jetbrains.mps.buildScript.structure.BuildStringNotEmpty");
         ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "containerName", true), "parts", true)).addSequence(Sequence.fromIterable(seq));
       }
 
