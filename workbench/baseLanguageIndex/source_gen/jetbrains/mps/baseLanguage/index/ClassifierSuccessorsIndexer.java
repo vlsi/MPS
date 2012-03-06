@@ -42,7 +42,7 @@ public class ClassifierSuccessorsIndexer extends FileBasedIndexExtension<GlobalS
   }
 
   public int getVersion() {
-    return 3;
+    return 4;
   }
 
   public boolean dependsOnFileContent() {
@@ -106,7 +106,7 @@ public class ClassifierSuccessorsIndexer extends FileBasedIndexExtension<GlobalS
         }
 
         private void safeMap(SNode classifierType, SNode node) {
-          safeMap(classifierType.getReference(SPropertyOperations.getString(SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", "classifier"), "role")), node);
+          safeMap(classifierType.getReference("classifier"), node);
         }
 
         private void safeMap(SReference reference, SNode node) {
