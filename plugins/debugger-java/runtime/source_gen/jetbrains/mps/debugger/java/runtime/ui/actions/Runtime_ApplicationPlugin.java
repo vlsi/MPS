@@ -4,6 +4,7 @@ package jetbrains.mps.debugger.java.runtime.ui.actions;
 
 import jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin;
 import com.intellij.openapi.extensions.PluginId;
+import jetbrains.mps.debugger.api.ui.actions.AbstractWatchableNodeActions_ActionGroup;
 
 public class Runtime_ApplicationPlugin extends BaseApplicationPlugin {
   private PluginId myId = PluginId.getId("jetbrains.mps.debugger.java.runtime");
@@ -18,13 +19,16 @@ public class Runtime_ApplicationPlugin extends BaseApplicationPlugin {
   public void createGroups() {
     // actions w/o parameters 
     addAction(new AddWatchAction_Action());
+    addAction(new CopyValueAction_Action());
     addAction(new EditWatchAction_Action());
     addAction(new RemoveWatchAction_Action());
     // groups 
+    addGroup(new JavaWatchableNodeActions_ActionGroup());
     addGroup(new WatchesAction_ActionGroup());
     addGroup(new WatchesToolbarActions_ActionGroup());
   }
 
   public void adjustRegularGroups() {
+    insertGroupIntoAnother(JavaWatchableNodeActions_ActionGroup.ID, AbstractWatchableNodeActions_ActionGroup.ID, AbstractWatchableNodeActions_ActionGroup.LABEL_ID_copyValue);
   }
 }

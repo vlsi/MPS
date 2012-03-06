@@ -4,10 +4,14 @@ package jetbrains.mps.debugger.api.ui.actions;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.workbench.action.LabelledAnchor;
+import com.intellij.openapi.actionSystem.ex.ActionManagerEx;
+import com.intellij.openapi.extensions.PluginId;
 
 public class AbstractWatchableNodeActions_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(AbstractWatchableNodeActions_ActionGroup.class);
   public static final String ID = "jetbrains.mps.debugger.api.ui.actions.AbstractWatchableNodeActions_ActionGroup";
+  public static final String LABEL_ID_copyValue = ID + "copyValue";
 
   public AbstractWatchableNodeActions_ActionGroup() {
     super("AbstractWatchableNodeActions", ID);
@@ -15,6 +19,12 @@ public class AbstractWatchableNodeActions_ActionGroup extends GeneratedActionGro
     this.setPopup(false);
     try {
       AbstractWatchableNodeActions_ActionGroup.this.addAction("jetbrains.mps.debugger.api.ui.actions.GoToSource_Action");
+      {
+        LabelledAnchor action = new LabelledAnchor(AbstractWatchableNodeActions_ActionGroup.LABEL_ID_copyValue);
+        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
+        manager.registerAction(action.getId(), action, PluginId.getId("jetbrains.mps.debugger.api.runtime"));
+        AbstractWatchableNodeActions_ActionGroup.this.addAction(action);
+      }
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }

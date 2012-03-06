@@ -8,11 +8,6 @@ import jetbrains.mps.smodel.IOperationContext;
 import javax.swing.Icon;
 import jetbrains.mps.debug.api.programState.IValue;
 import java.util.List;
-import com.intellij.openapi.actionSystem.ActionGroup;
-import com.intellij.openapi.actionSystem.DefaultActionGroup;
-import com.intellij.openapi.actionSystem.AnAction;
-import com.intellij.openapi.actionSystem.AnActionEvent;
-import jetbrains.mps.ide.datatransfer.CopyPasteUtil;
 
 public class WatchableNode extends AbstractWatchableNode {
   private boolean myInitialized;
@@ -79,24 +74,5 @@ public class WatchableNode extends AbstractWatchableNode {
     }
     updatePresentation();
     myInitialized = true;
-  }
-
-  @Override
-  public ActionGroup getActionGroup() {
-    return new DefaultActionGroup(new AnAction("Copy Value") {
-      public void actionPerformed(AnActionEvent p0) {
-        IValue value = getValue();
-        if (value == null) {
-          return;
-        }
-        CopyPasteUtil.copyTextToClipboard(value.getValuePresentation());
-      }
-
-      @Override
-      public void update(AnActionEvent event) {
-        super.update(event);
-        event.getPresentation().setVisible(getValue() != null);
-      }
-    });
   }
 }

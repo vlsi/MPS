@@ -16,6 +16,25 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
+  <dependency className="jetbrains.mps.debugger.java.runtime.ui.actions.CopyValueAction_Action" file="CopyValueAction_Action.java">
+    <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
+    <classNode dependClassName="com.sun.jdi.Value" />
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.lang.Throwable" />
+    <classNode dependClassName="java.lang.UnsupportedOperationException" />
+    <classNode dependClassName="java.util.Map" />
+    <classNode dependClassName="javax.swing.Icon" />
+    <classNode dependClassName="jetbrains.mps.debug.api.programState.IValue" />
+    <classNode dependClassName="jetbrains.mps.debug.evaluation.proxies.MirrorUtil" />
+    <classNode dependClassName="jetbrains.mps.debug.runtime.java.programState.proxies.JavaValue" />
+    <classNode dependClassName="jetbrains.mps.debugger.api.ui.tree.VariablesTree" />
+    <classNode dependClassName="jetbrains.mps.ide.datatransfer.CopyPasteUtil" />
+    <classNode dependClassName="org.apache.commons.logging.Log" />
+    <classNode dependClassName="org.apache.commons.logging.LogFactory" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
+  </dependency>
   <dependency className="jetbrains.mps.debugger.java.runtime.ui.actions.EditWatchAction_Action" file="EditWatchAction_Action.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="java.lang.Object" />
@@ -31,6 +50,12 @@
     <classNode dependClassName="org.apache.commons.logging.LogFactory" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
+  </dependency>
+  <dependency className="jetbrains.mps.debugger.java.runtime.ui.actions.JavaWatchableNodeActions_ActionGroup" file="JavaWatchableNodeActions_ActionGroup.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.lang.Throwable" />
+    <classNode dependClassName="jetbrains.mps.logging.Logger" />
+    <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup" />
   </dependency>
   <dependency className="jetbrains.mps.debugger.java.runtime.ui.actions.RemoveWatchAction_Action" file="RemoveWatchAction_Action.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
@@ -52,8 +77,11 @@
   </dependency>
   <dependency className="jetbrains.mps.debugger.java.runtime.ui.actions.Runtime_ApplicationPlugin" file="Runtime_ApplicationPlugin.java">
     <classNode dependClassName="com.intellij.openapi.extensions.PluginId" />
+    <classNode dependClassName="jetbrains.mps.debugger.api.ui.actions.AbstractWatchableNodeActions_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.debugger.java.runtime.ui.actions.AddWatchAction_Action" />
+    <classNode dependClassName="jetbrains.mps.debugger.java.runtime.ui.actions.CopyValueAction_Action" />
     <classNode dependClassName="jetbrains.mps.debugger.java.runtime.ui.actions.EditWatchAction_Action" />
+    <classNode dependClassName="jetbrains.mps.debugger.java.runtime.ui.actions.JavaWatchableNodeActions_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.debugger.java.runtime.ui.actions.RemoveWatchAction_Action" />
     <classNode dependClassName="jetbrains.mps.debugger.java.runtime.ui.actions.WatchesAction_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.debugger.java.runtime.ui.actions.WatchesToolbarActions_ActionGroup" />
