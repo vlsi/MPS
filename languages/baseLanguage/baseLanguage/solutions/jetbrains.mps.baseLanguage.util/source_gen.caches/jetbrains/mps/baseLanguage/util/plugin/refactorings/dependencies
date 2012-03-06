@@ -647,23 +647,5 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.util.plugin.refactorings.VisibilityPanel" file="VisibilityPanel.java">
-    <classNode dependClassName="java.awt.GridBagConstraints" />
-    <classNode dependClassName="java.awt.GridBagLayout" />
-    <classNode dependClassName="java.awt.event.ActionEvent" />
-    <classNode dependClassName="java.util.ArrayList" />
-    <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="javax.swing.AbstractAction" />
-    <classNode dependClassName="javax.swing.ButtonGroup" />
-    <classNode dependClassName="javax.swing.JRadioButton" />
-    <classNode dependClassName="javax.swing.border.CompoundBorder" />
-    <classNode dependClassName="javax.swing.border.EmptyBorder" />
-    <classNode dependClassName="javax.swing.border.TitledBorder" />
-    <classNode dependClassName="javax.swing.event.ChangeEvent" />
-    <classNode dependClassName="javax.swing.event.ChangeListener" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.util.plugin.refactorings.VisibilityLevel" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
-    <classNode extendsClassName="javax.swing.JPanel" />
-  </dependency>
 </dependenciesRoot>
 

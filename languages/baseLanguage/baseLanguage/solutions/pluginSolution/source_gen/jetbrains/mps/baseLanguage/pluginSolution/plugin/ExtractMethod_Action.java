@@ -18,11 +18,12 @@ import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
+import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.baseLanguage.util.plugin.refactorings.ExtractMethodRefactoringParameters;
 import jetbrains.mps.baseLanguage.util.plugin.refactorings.ExtractMethodRefactoring;
 import jetbrains.mps.smodel.ModelAccess;
-import java.awt.Frame;
+import com.intellij.openapi.project.Project;
 import jetbrains.mps.nodeEditor.EditorContext;
 
 public class ExtractMethod_Action extends BaseAction {
@@ -71,16 +72,16 @@ public class ExtractMethod_Action extends BaseAction {
     if (MapSequence.fromMap(_params).get("nodes") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("frame", event.getData(MPSCommonDataKeys.FRAME));
-    if (MapSequence.fromMap(_params).get("frame") == null) {
-      return false;
-    }
     MapSequence.fromMap(_params).put("context", event.getData(MPSEditorDataKeys.EDITOR_CONTEXT));
     if (MapSequence.fromMap(_params).get("context") == null) {
       return false;
     }
     MapSequence.fromMap(_params).put("editorComponent", event.getData(MPSEditorDataKeys.EDITOR_COMPONENT));
     if (MapSequence.fromMap(_params).get("editorComponent") == null) {
+      return false;
+    }
+    MapSequence.fromMap(_params).put("project", event.getData(PlatformDataKeys.PROJECT));
+    if (MapSequence.fromMap(_params).get("project") == null) {
       return false;
     }
     return true;
@@ -97,9 +98,8 @@ public class ExtractMethod_Action extends BaseAction {
           params.value.setReturnType(refactoring.value.getMethodType());
         }
       });
-      ExtractMethodDialog dialog = new ExtractMethodDialog(((Frame) MapSequence.fromMap(_params).get("frame")), ((EditorContext) MapSequence.fromMap(_params).get("context")), params.value, refactoring.value);
-      dialog.showDialog();
-
+      ExtractMethodDialog dialog = new ExtractMethodDialog(((Project) MapSequence.fromMap(_params).get("project")), ((EditorContext) MapSequence.fromMap(_params).get("context")), params.value, refactoring.value);
+      dialog.show();
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "ExtractMethod", t);

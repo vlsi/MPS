@@ -150,9 +150,9 @@
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorMessage" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.pluginSolution.plugin.ExtractMethodDialog" file="ExtractMethodDialog.java">
+    <classNode dependClassName="com.intellij.openapi.project.Project" />
+    <classNode dependClassName="com.intellij.openapi.ui.DialogWrapper" />
     <classNode dependClassName="com.intellij.ui.DocumentAdapter" />
-    <classNode dependClassName="java.awt.Dimension" />
-    <classNode dependClassName="java.awt.Frame" />
     <classNode dependClassName="java.awt.GridBagConstraints" />
     <classNode dependClassName="java.awt.GridBagLayout" />
     <classNode dependClassName="java.awt.Insets" />
@@ -161,6 +161,7 @@
     <classNode dependClassName="java.awt.event.ItemEvent" />
     <classNode dependClassName="java.awt.event.ItemListener" />
     <classNode dependClassName="java.lang.Character" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.StringBuffer" />
@@ -182,14 +183,14 @@
     <classNode dependClassName="javax.swing.event.TableModelListener" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.pluginSolution.plugin.BLDialogs" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.pluginSolution.plugin.IconContainer" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.pluginSolution.plugin.IconResourceBundle_ExtractMethodIcons" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.pluginSolution.plugin.ParametersPanel" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.pluginSolution.plugin.ParametersTableModel" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.pluginSolution.plugin.VisibilityPanel" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.util.plugin.refactorings.ExtractMethodFactory" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.util.plugin.refactorings.ExtractMethodRefactoring" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.util.plugin.refactorings.ExtractMethodRefactoringParameters" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.util.plugin.refactorings.MethodMatch" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.util.plugin.refactorings.VisibilityPanel" />
     <classNode dependClassName="jetbrains.mps.ide.dialogs.DialogDimensionsSettings" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
@@ -200,13 +201,16 @@
     <classNode dependClassName="jetbrains.mps.smodel.SModelDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelReference" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode dependClassName="org.jetbrains.annotations.NonNls" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode extendsClassName="javax.swing.JPanel" />
     <classNode extendsClassName="jetbrains.mps.baseLanguage.pluginSolution.plugin.MethodDuplicatesProcessor" />
-    <classNode extendsClassName="jetbrains.mps.ide.dialogs.BaseDialog" />
+    <classNode extendsClassName="jetbrains.mps.ide.platform.refactoring.RefactoringDialog" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.pluginSolution.plugin.ExtractMethod_Action" file="ExtractMethod_Action.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
-    <classNode dependClassName="java.awt.Frame" />
+    <classNode dependClassName="com.intellij.openapi.actionSystem.PlatformDataKeys" />
+    <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.String" />
@@ -236,6 +240,15 @@
   <dependency className="jetbrains.mps.baseLanguage.pluginSolution.plugin.IconContainer" file="IconContainer.java">
     <classNode dependClassName="javax.swing.Icon" />
     <classNode dependClassName="jetbrains.mps.util.IconUtil" />
+  </dependency>
+  <dependency className="jetbrains.mps.baseLanguage.pluginSolution.plugin.IconResourceBundle_ExtractMethodIcons" file="IconResourceBundle_ExtractMethodIcons.java">
+    <classNode dependClassName="java.lang.Iterable" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.HashMap" />
+    <classNode dependClassName="java.util.Map" />
+    <classNode dependClassName="javax.swing.Icon" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.pluginSolution.plugin.IconContainer" />
+    <classNode extendsClassName="jetbrains.mps.resourceBundles.IconResourceBundle" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.pluginSolution.plugin.InlineLocalVariable_Action" file="InlineLocalVariable_Action.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
@@ -476,9 +489,9 @@
     <classNode dependClassName="javax.swing.JLabel" />
     <classNode dependClassName="javax.swing.JPanel" />
     <classNode dependClassName="javax.swing.JTextField" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.pluginSolution.plugin.VisibilityPanel" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.util.plugin.refactorings.IntroduceVariableRefactoring" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.util.plugin.refactorings.MoveRefactoringUtils" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.util.plugin.refactorings.VisibilityPanel" />
     <classNode dependClassName="jetbrains.mps.ide.dialogs.DialogDimensionsSettings" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorContext" />
@@ -760,21 +773,6 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.pluginSolution.plugin.TableWithControlsPanel" file="TableWithControlsPanel.java">
-    <classNode dependClassName="com.intellij.ui.table.JBTable" />
-    <classNode dependClassName="java.awt.GridBagConstraints" />
-    <classNode dependClassName="java.awt.GridBagLayout" />
-    <classNode dependClassName="java.awt.Insets" />
-    <classNode dependClassName="java.awt.event.ActionEvent" />
-    <classNode dependClassName="java.awt.event.ActionListener" />
-    <classNode dependClassName="javax.swing.JButton" />
-    <classNode dependClassName="javax.swing.JTable" />
-    <classNode dependClassName="javax.swing.ListSelectionModel" />
-    <classNode dependClassName="javax.swing.event.ListSelectionEvent" />
-    <classNode dependClassName="javax.swing.event.ListSelectionListener" />
-    <classNode extendsClassName="javax.swing.JPanel" />
-    <classNode extendsClassName="javax.swing.table.TableModel" />
-  </dependency>
   <dependency className="jetbrains.mps.baseLanguage.pluginSolution.plugin.ToDoHighlighter" file="ToDoHighlighter.java">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.LinkedHashSet" />
@@ -895,6 +893,24 @@
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorMessageOwner" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode extendsClassName="jetbrains.mps.baseLanguage.pluginSolution.plugin.DuplicatesProcessor" />
+  </dependency>
+  <dependency className="jetbrains.mps.baseLanguage.pluginSolution.plugin.VisibilityPanel" file="VisibilityPanel.java">
+    <classNode dependClassName="java.awt.GridBagConstraints" />
+    <classNode dependClassName="java.awt.GridBagLayout" />
+    <classNode dependClassName="java.awt.event.ActionEvent" />
+    <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="javax.swing.AbstractAction" />
+    <classNode dependClassName="javax.swing.ButtonGroup" />
+    <classNode dependClassName="javax.swing.JRadioButton" />
+    <classNode dependClassName="javax.swing.border.CompoundBorder" />
+    <classNode dependClassName="javax.swing.border.EmptyBorder" />
+    <classNode dependClassName="javax.swing.border.TitledBorder" />
+    <classNode dependClassName="javax.swing.event.ChangeEvent" />
+    <classNode dependClassName="javax.swing.event.ChangeListener" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.util.plugin.refactorings.VisibilityLevel" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode extendsClassName="javax.swing.JPanel" />
   </dependency>
 </dependenciesRoot>
 

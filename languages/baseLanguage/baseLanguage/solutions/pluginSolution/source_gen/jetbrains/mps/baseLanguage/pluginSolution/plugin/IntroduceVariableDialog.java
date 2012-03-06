@@ -7,7 +7,6 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import javax.swing.JPanel;
 import jetbrains.mps.smodel.SNode;
 import javax.swing.JCheckBox;
-import jetbrains.mps.baseLanguage.util.plugin.refactorings.VisibilityPanel;
 import javax.swing.JComboBox;
 import java.awt.Frame;
 import java.awt.GridBagLayout;
