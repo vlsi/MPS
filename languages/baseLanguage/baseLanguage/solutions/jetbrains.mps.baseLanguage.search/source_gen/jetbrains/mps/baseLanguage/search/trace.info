@@ -3034,6 +3034,18 @@
     <unitInfo nodeId="3896109655413979709" fileName="ClassifierSuccessors.java" startLine="12" startPosition="0" endLine="55" endPosition="0" unitName="jetbrains.mps.baseLanguage.search.ClassifierSuccessors" />
     <unitInfo nodeId="8118629307786920923" fileName="ClassifierSuccessors.java" startLine="50" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.baseLanguage.search.ClassifierSuccessors$Finder" />
   </root>
+  <root nodeId="4304267140677056130">
+    <nodeInfo nodeId="4304267140677056306" fileName="ClassifierUtils.java" startLine="12" startPosition="79" endLine="13" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4304267140677056132" fileName="ClassifierUtils.java" startLine="8" startPosition="30" endLine="10" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ClassifierUtils#()V" />
+    <nodeInfo nodeId="4304267140677056140" fileName="ClassifierUtils.java" startLine="11" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="resolveClassifierTypeVars#(Ljetbrains/mps/smodel/SNode;)Ljava/util/Map;" />
+    <scopeInfo nodeId="4304267140677056135" fileName="ClassifierUtils.java" startLine="9" startPosition="29" endLine="9" endPosition="29" />
+    <scopeInfo nodeId="4304267140677056143" fileName="ClassifierUtils.java" startLine="12" startPosition="79" endLine="13" endPosition="97" />
+    <scopeInfo nodeId="4304267140677056132" fileName="ClassifierUtils.java" startLine="8" startPosition="30" endLine="10" endPosition="3" />
+    <scopeInfo nodeId="4304267140677056140" fileName="ClassifierUtils.java" startLine="11" startPosition="0" endLine="15" endPosition="0">
+      <varInfo nodeId="4304267140677056157" varName="classifier" />
+    </scopeInfo>
+    <unitInfo nodeId="4304267140677056130" fileName="ClassifierUtils.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.search.ClassifierUtils" />
+  </root>
   <root nodeId="4579166930940566542">
     <nodeInfo nodeId="4579166930940578066" fileName="ParameterScope.java" startLine="15" startPosition="57" endLine="16" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="params" />
     <nodeInfo nodeId="8866852874177041155" fileName="ParameterScope.java" startLine="18" startPosition="44" endLine="19" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

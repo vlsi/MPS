@@ -15,8 +15,8 @@ public class ExtensionMethodDeclaration_BehaviorDescriptor extends BaseMethodDec
     return ClassifierMember_Behavior.virtual_isStatic_8986964027630462944(thisNode);
   }
 
-  public Object virtual_getSignatureForOverriding_274804607996650333(SNode thisNode) {
-    return ClassifierMember_Behavior.virtual_getSignatureForOverriding_274804607996650333(thisNode);
+  public Object virtual_getSignatureForOverriding_274804607996650333(SNode thisNode, SNode contextClassifier) {
+    return ClassifierMember_Behavior.virtual_getSignatureForOverriding_274804607996650333(thisNode, contextClassifier);
   }
 
   public boolean virtual_isVisible_8083692786967482069(SNode thisNode, SNode contextNode) {

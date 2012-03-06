@@ -148,6 +148,47 @@
     </scopeInfo>
     <unitInfo nodeId="3700100223624426201" fileName="CompositeWithParentScope.java" startLine="9" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.baseLanguage.scopes.CompositeWithParentScope" />
   </root>
+  <root nodeId="4304267140677045312">
+    <nodeInfo nodeId="3161373106581139095" fileName="MethodOverridingUtils.java" startLine="18" startPosition="104" endLine="19" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3161373106581139107" fileName="MethodOverridingUtils.java" startLine="20" startPosition="78" endLine="21" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3161373106581139113" fileName="MethodOverridingUtils.java" startLine="21" startPosition="65" endLine="22" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3161373106581139126" fileName="MethodOverridingUtils.java" startLine="23" startPosition="32" endLine="24" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="9107121562752364578" fileName="MethodOverridingUtils.java" startLine="26" startPosition="25" endLine="27" endPosition="229" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3161373106581139137" fileName="MethodOverridingUtils.java" startLine="28" startPosition="14" endLine="29" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3161373106581139151" fileName="MethodOverridingUtils.java" startLine="31" startPosition="5" endLine="32" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4304267140677056348" fileName="MethodOverridingUtils.java" startLine="35" startPosition="95" endLine="36" endPosition="162" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4304267140677045314" fileName="MethodOverridingUtils.java" startLine="14" startPosition="36" endLine="16" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MethodOverridingUtils#()V" />
+    <nodeInfo nodeId="3161373106581139135" fileName="MethodOverridingUtils.java" startLine="28" startPosition="12" endLine="30" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="3161373106581139119" fileName="MethodOverridingUtils.java" startLine="22" startPosition="79" endLine="25" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4304267140677056082" fileName="MethodOverridingUtils.java" startLine="34" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getMethodSignatureForOverriding#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;" />
+    <nodeInfo nodeId="3161373106581139131" fileName="MethodOverridingUtils.java" startLine="25" startPosition="7" endLine="30" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3161373106581139100" fileName="MethodOverridingUtils.java" startLine="19" startPosition="47" endLine="31" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="4304267140677056072" fileName="MethodOverridingUtils.java" startLine="17" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="createMethodParameterTypesString#(Ljetbrains/mps/smodel/SNode;Ljava/util/Map;)Ljava/lang/String;" />
+    <scopeInfo nodeId="4304267140677045317" fileName="MethodOverridingUtils.java" startLine="15" startPosition="35" endLine="15" endPosition="35" />
+    <scopeInfo nodeId="3161373106581139125" fileName="MethodOverridingUtils.java" startLine="23" startPosition="32" endLine="24" endPosition="27" />
+    <scopeInfo nodeId="3161373106581139142" fileName="MethodOverridingUtils.java" startLine="26" startPosition="25" endLine="27" endPosition="229" />
+    <scopeInfo nodeId="3161373106581139136" fileName="MethodOverridingUtils.java" startLine="28" startPosition="14" endLine="29" endPosition="26" />
+    <scopeInfo nodeId="4304267140677056085" fileName="MethodOverridingUtils.java" startLine="35" startPosition="95" endLine="36" endPosition="162" />
+    <scopeInfo nodeId="4304267140677045314" fileName="MethodOverridingUtils.java" startLine="14" startPosition="36" endLine="16" endPosition="3" />
+    <scopeInfo nodeId="4304267140677056082" fileName="MethodOverridingUtils.java" startLine="34" startPosition="0" endLine="38" endPosition="0">
+      <varInfo nodeId="4304267140677056105" varName="contextClassifier" />
+      <varInfo nodeId="4304267140677056111" varName="method" />
+    </scopeInfo>
+    <scopeInfo nodeId="3161373106581139106" fileName="MethodOverridingUtils.java" startLine="20" startPosition="78" endLine="30" endPosition="7">
+      <varInfo nodeId="3161373106581139108" varName="type" />
+    </scopeInfo>
+    <scopeInfo nodeId="3161373106581139100" fileName="MethodOverridingUtils.java" startLine="19" startPosition="47" endLine="31" endPosition="5">
+      <varInfo nodeId="3161373106581139104" varName="parm" />
+    </scopeInfo>
+    <scopeInfo nodeId="4304267140677056075" fileName="MethodOverridingUtils.java" startLine="18" startPosition="104" endLine="32" endPosition="29">
+      <varInfo nodeId="3161373106581139096" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="4304267140677056072" fileName="MethodOverridingUtils.java" startLine="17" startPosition="0" endLine="34" endPosition="0">
+      <varInfo nodeId="3161373106581137692" varName="method" />
+      <varInfo nodeId="3161373106581137694" varName="typeByTypeVar" />
+    </scopeInfo>
+    <unitInfo nodeId="4304267140677045312" fileName="MethodOverridingUtils.java" startLine="14" startPosition="0" endLine="39" endPosition="0" unitName="jetbrains.mps.baseLanguage.scopes.MethodOverridingUtils" />
+  </root>
   <root nodeId="5977339894440019487">
     <nodeInfo nodeId="5977339894440024856" fileName="ClassAccessKind.java" startLine="6" startPosition="34" endLine="7" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ANYTHING" />
     <nodeInfo nodeId="3860625225137054229" fileName="ClassAccessKind.java" startLine="7" startPosition="43" endLine="8" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="PUBLIC" />

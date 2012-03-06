@@ -13,8 +13,8 @@ public class EnumConstantDeclaration_BehaviorDescriptor extends BaseConcept_Beha
   public EnumConstantDeclaration_BehaviorDescriptor() {
   }
 
-  public Object virtual_getSignatureForOverriding_274804607996650333(SNode thisNode) {
-    return ClassifierMember_Behavior.virtual_getSignatureForOverriding_274804607996650333(thisNode);
+  public Object virtual_getSignatureForOverriding_274804607996650333(SNode thisNode, SNode contextClassifier) {
+    return ClassifierMember_Behavior.virtual_getSignatureForOverriding_274804607996650333(thisNode, contextClassifier);
   }
 
   public List<Icon> virtual_getMarkIcons_3923831204883340393(SNode thisNode) {

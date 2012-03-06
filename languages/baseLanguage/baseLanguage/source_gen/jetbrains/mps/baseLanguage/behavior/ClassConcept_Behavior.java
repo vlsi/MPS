@@ -267,20 +267,20 @@ public class ClassConcept_Behavior {
         superClass = SNodeOperations.getNode("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Object");
       }
 
-      SNode kindForSuper;
       if (SConceptOperations.isSubConceptOf(kind, "jetbrains.mps.baseLanguage.structure.SuperConstructorKind")) {
-        kindForSuper = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ThisConstructorKind");
-      } else {
-        kindForSuper = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration");
+        return ListSequence.fromListWithValues(new ArrayList<SNode>(), ListSequence.fromList(Classifier_Behavior.call_getMembers_2201875424515824604(superClass, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ThisConstructorKind"))).where(new IWhereFilter<SNode>() {
+          public boolean accept(SNode it) {
+            return ClassifierMember_Behavior.call_isVisible_8083692786967482069(it, thisNode);
+          }
+        }));
       }
-
-      // todo: hack with children =( 
-      // todo: ? strange... =( 
-      return ListSequence.fromListWithValues(new ArrayList<SNode>(), ListSequence.fromList(Classifier_Behavior.call_getMembers_2201875424515824604(superClass, kindForSuper)).where(new IWhereFilter<SNode>() {
-        public boolean accept(SNode it) {
-          return ClassifierMember_Behavior.call_isVisible_8083692786967482069(it, thisNode);
-        }
-      }));
+      if (SConceptOperations.isSubConceptOf(kind, "jetbrains.mps.baseLanguage.structure.SuperMethodKind")) {
+        return ListSequence.fromListWithValues(new ArrayList<SNode>(), ListSequence.fromList(Classifier_Behavior.call_getMembers_2201875424515824604(superClass, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"))).where(new IWhereFilter<SNode>() {
+          public boolean accept(SNode it) {
+            return !(BaseMethodDeclaration_Behavior.call_isAbstract_1232982539764(SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"))) && ClassifierMember_Behavior.call_isVisible_8083692786967482069(it, thisNode);
+          }
+        }));
+      }
     }
     return Classifier_Behavior.callSuper_getMembers_2201875424515824604(thisNode, "jetbrains.mps.baseLanguage.structure.ClassConcept", kind);
   }

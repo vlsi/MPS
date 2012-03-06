@@ -12,6 +12,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.baseLanguage.search.ClassifierAndSuperClassifiersScope;
 import jetbrains.mps.baseLanguage.search.IClassifiersSearchScope;
 import jetbrains.mps.smodel.search.IsInstanceCondition;
+import jetbrains.mps.baseLanguage.scopes.MethodOverridingUtils;
 import jetbrains.mps.smodel.structure.BehaviorDescriptor;
 import jetbrains.mps.smodel.structure.ConceptRegistry;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
@@ -68,10 +69,10 @@ public class InstanceMethodDeclaration_Behavior {
     return null;
   }
 
-  public static Object virtual_getSignatureForOverriding_274804607996650333(SNode thisNode) {
+  public static Object virtual_getSignatureForOverriding_274804607996650333(SNode thisNode, SNode contextClassifier) {
     // todo: 1) maybe in baseMethodDeclaration? 
     // todo: 2) why string? maybe tuple? 
-    return SPropertyOperations.getString(thisNode, "name") + "(" + BaseMethodDeclaration_Behavior.call_getErasureSignature_2830572026628006618(thisNode) + ")";
+    return MethodOverridingUtils.getMethodSignatureForOverriding(contextClassifier, thisNode);
   }
 
   public static Icon call_getAdditionalIcon_8884554759541381512(SNode thisNode) {

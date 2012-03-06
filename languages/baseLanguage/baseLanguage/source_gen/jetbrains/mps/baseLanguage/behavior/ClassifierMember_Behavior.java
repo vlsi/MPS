@@ -18,7 +18,7 @@ import jetbrains.mps.smodel.behaviour.BehaviorManager;
 public class ClassifierMember_Behavior {
   private static Class[] PARAMETERS_8986964027630462944 = {SNode.class};
   private static Class[] PARAMETERS_8083692786967482069 = {SNode.class, SNode.class};
-  private static Class[] PARAMETERS_274804607996650333 = {SNode.class};
+  private static Class[] PARAMETERS_274804607996650333 = {SNode.class, SNode.class};
   private static Logger LOG = Logger.getLogger(ClassifierMember_Behavior.class);
 
   public static void init(SNode thisNode) {
@@ -84,7 +84,7 @@ public class ClassifierMember_Behavior {
     return result;
   }
 
-  public static Object virtual_getSignatureForOverriding_274804607996650333(SNode thisNode) {
+  public static Object virtual_getSignatureForOverriding_274804607996650333(SNode thisNode, SNode contextClassifier) {
     if (SConceptPropertyOperations.getBoolean(thisNode, "inheritableMember")) {
       LOG.error("getSignatureForOverriding should be implemented in case of inheritable member");
     }
@@ -101,9 +101,9 @@ public class ClassifierMember_Behavior {
     return (Boolean) descriptor.invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.ClassifierMember"), "virtual_isVisible_8083692786967482069", PARAMETERS_8083692786967482069, contextNode);
   }
 
-  public static Object call_getSignatureForOverriding_274804607996650333(SNode thisNode) {
+  public static Object call_getSignatureForOverriding_274804607996650333(SNode thisNode, SNode contextClassifier) {
     BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (Object) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.ClassifierMember"), "virtual_getSignatureForOverriding_274804607996650333", PARAMETERS_274804607996650333);
+    return (Object) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.ClassifierMember"), "virtual_getSignatureForOverriding_274804607996650333", PARAMETERS_274804607996650333, contextClassifier);
   }
 
   public static boolean callSuper_isStatic_8986964027630462944(SNode thisNode, String callerConceptFqName) {
@@ -114,8 +114,8 @@ public class ClassifierMember_Behavior {
     return (Boolean) BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.ClassifierMember"), callerConceptFqName, "virtual_isVisible_8083692786967482069", PARAMETERS_8083692786967482069, contextNode);
   }
 
-  public static Object callSuper_getSignatureForOverriding_274804607996650333(SNode thisNode, String callerConceptFqName) {
-    return (Object) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.ClassifierMember"), callerConceptFqName, "virtual_getSignatureForOverriding_274804607996650333", PARAMETERS_274804607996650333);
+  public static Object callSuper_getSignatureForOverriding_274804607996650333(SNode thisNode, String callerConceptFqName, SNode contextClassifier) {
+    return (Object) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.ClassifierMember"), callerConceptFqName, "virtual_getSignatureForOverriding_274804607996650333", PARAMETERS_274804607996650333, contextClassifier);
   }
 
   private static boolean eq_i8o263_a0e0d(Object a, Object b) {

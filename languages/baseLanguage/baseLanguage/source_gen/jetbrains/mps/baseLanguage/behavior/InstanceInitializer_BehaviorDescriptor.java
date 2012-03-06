@@ -18,8 +18,8 @@ public class InstanceInitializer_BehaviorDescriptor extends BaseConcept_Behavior
     return IStatementListContainer_Behavior.virtual_isExecuteSynchronous_1230212745736(thisNode);
   }
 
-  public Object virtual_getSignatureForOverriding_274804607996650333(SNode thisNode) {
-    return ClassifierMember_Behavior.virtual_getSignatureForOverriding_274804607996650333(thisNode);
+  public Object virtual_getSignatureForOverriding_274804607996650333(SNode thisNode, SNode contextClassifier) {
+    return ClassifierMember_Behavior.virtual_getSignatureForOverriding_274804607996650333(thisNode, contextClassifier);
   }
 
   public Icon virtual_getAdditionalIcon_5017341185733863694(SNode thisNode) {

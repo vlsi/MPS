@@ -145,7 +145,7 @@ public class Classifier_Behavior {
     ListSequence.fromList(result).addSequence(Sequence.fromIterable(members));
     SetSequence.fromSet(signatures).addSequence(Sequence.fromIterable(members).select(new ISelector<SNode, Object>() {
       public Object select(SNode it) {
-        return ClassifierMember_Behavior.call_getSignatureForOverriding_274804607996650333(it);
+        return ClassifierMember_Behavior.call_getSignatureForOverriding_274804607996650333(it, thisNode);
       }
     }));
 
@@ -165,7 +165,7 @@ public class Classifier_Behavior {
         }
       }
     }, false)) {
-      Object signature = ClassifierMember_Behavior.call_getSignatureForOverriding_274804607996650333(node);
+      Object signature = ClassifierMember_Behavior.call_getSignatureForOverriding_274804607996650333(node, thisNode);
       // <node> 
       if (!(SetSequence.fromSet(signatures).contains(signature))) {
         ListSequence.fromList(result).addElement(node);

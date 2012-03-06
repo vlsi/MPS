@@ -114,7 +114,7 @@ public class FieldDeclaration_Behavior {
     return SPropertyOperations.getString(thisNode, "name");
   }
 
-  public static Object virtual_getSignatureForOverriding_274804607996650333(SNode thisNode) {
+  public static Object virtual_getSignatureForOverriding_274804607996650333(SNode thisNode, SNode contextClassifier) {
     return SPropertyOperations.getString(thisNode, "name");
   }
 

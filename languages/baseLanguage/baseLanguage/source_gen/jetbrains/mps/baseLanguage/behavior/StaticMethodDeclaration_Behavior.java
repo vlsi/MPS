@@ -58,7 +58,7 @@ public class StaticMethodDeclaration_Behavior {
     return IVisible_Behavior.call_getVisibilityIcon_5017341185733869581(thisNode);
   }
 
-  public static Object virtual_getSignatureForOverriding_274804607996650333(SNode thisNode) {
+  public static Object virtual_getSignatureForOverriding_274804607996650333(SNode thisNode, SNode contextClassifier) {
     return SPropertyOperations.getString(thisNode, "name") + "(" + BaseMethodDeclaration_Behavior.call_getErasureSignature_2830572026628006618(thisNode) + ")";
   }
 

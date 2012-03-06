@@ -18,8 +18,8 @@ public class StaticFieldDeclaration_BehaviorDescriptor extends VariableDeclarati
     return StaticFieldDeclaration_Behavior.virtual_isInitializable_1213877517488(thisNode);
   }
 
-  public Object virtual_getSignatureForOverriding_274804607996650333(SNode thisNode) {
-    return StaticFieldDeclaration_Behavior.virtual_getSignatureForOverriding_274804607996650333(thisNode);
+  public Object virtual_getSignatureForOverriding_274804607996650333(SNode thisNode, SNode contextClassifier) {
+    return StaticFieldDeclaration_Behavior.virtual_getSignatureForOverriding_274804607996650333(thisNode, contextClassifier);
   }
 
   public List<Icon> virtual_getMarkIcons_3923831204883340393(SNode thisNode) {
