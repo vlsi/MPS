@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.baseLanguage.index.ClassifierSuccessorsFinder" file="ClassifierSuccessorsFinder.java">
+  <dependency className="jetbrains.mps.ide.java.platform.index.ClassifierSuccessorsFinder" file="ClassifierSuccessorsFinder.java">
     <classNode dependClassName="com.intellij.openapi.module.Module" />
     <classNode dependClassName="com.intellij.openapi.project.DumbService" />
     <classNode dependClassName="com.intellij.openapi.vfs.VirtualFile" />
@@ -14,10 +14,10 @@
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="java.util.Queue" />
     <classNode dependClassName="java.util.Set" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.index.ClassifierSuccessorsIndexer" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.index.GlobalSNodeId" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.search.ClassifierSuccessors" />
     <classNode dependClassName="jetbrains.mps.ide.MPSCoreComponents" />
+    <classNode dependClassName="jetbrains.mps.ide.java.platform.index.ClassifierSuccessorsIndexer" />
+    <classNode dependClassName="jetbrains.mps.ide.java.platform.index.GlobalSNodeId" />
     <classNode dependClassName="jetbrains.mps.ide.project.ProjectHelper" />
     <classNode dependClassName="jetbrains.mps.ide.vfs.VirtualFileUtils" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
@@ -42,7 +42,7 @@
     <classNode extendsClassName="com.intellij.util.indexing.ValueProcessor" />
     <classNode extendsClassName="jetbrains.mps.baseLanguage.search.Finder" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.index.ClassifierSuccessorsIndexer" file="ClassifierSuccessorsIndexer.java">
+  <dependency className="jetbrains.mps.ide.java.platform.index.ClassifierSuccessorsIndexer" file="ClassifierSuccessorsIndexer.java">
     <classNode dependClassName="com.intellij.openapi.vfs.VirtualFile" />
     <classNode dependClassName="com.intellij.util.indexing.FileBasedIndex" />
     <classNode dependClassName="com.intellij.util.indexing.FileContent" />
@@ -55,10 +55,10 @@
     <classNode dependClassName="java.util.HashMap" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.util.Map" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.index.GlobalSNodeId" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.index.GlobalSNodeIdDescriptor" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.index.ListExternalizer" />
     <classNode dependClassName="jetbrains.mps.fileTypes.MPSFileTypeFactory" />
+    <classNode dependClassName="jetbrains.mps.ide.java.platform.index.GlobalSNodeId" />
+    <classNode dependClassName="jetbrains.mps.ide.java.platform.index.GlobalSNodeIdDescriptor" />
+    <classNode dependClassName="jetbrains.mps.ide.java.platform.index.ListExternalizer" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
@@ -73,7 +73,7 @@
     <classNode extendsClassName="com.intellij.util.indexing.FileBasedIndexExtension" />
     <classNode extendsClassName="com.intellij.util.indexing.InputFilter" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.index.GlobalSNodeId" file="GlobalSNodeId.java">
+  <dependency className="jetbrains.mps.ide.java.platform.index.GlobalSNodeId" file="GlobalSNodeId.java">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -85,15 +85,15 @@
     <classNode dependClassName="jetbrains.mps.smodel.SNodeId" />
     <classNode dependClassName="jetbrains.mps.smodel.SReference" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.index.GlobalSNodeIdDescriptor" file="GlobalSNodeIdDescriptor.java">
+  <dependency className="jetbrains.mps.ide.java.platform.index.GlobalSNodeIdDescriptor" file="GlobalSNodeIdDescriptor.java">
     <classNode dependClassName="java.io.DataInput" />
     <classNode dependClassName="java.io.DataOutput" />
     <classNode dependClassName="java.io.IOException" />
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.index.GlobalSNodeId" />
+    <classNode dependClassName="jetbrains.mps.ide.java.platform.index.GlobalSNodeId" />
     <classNode extendsClassName="com.intellij.util.io.KeyDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.index.ListExternalizer" file="ListExternalizer.java">
+  <dependency className="jetbrains.mps.ide.java.platform.index.ListExternalizer" file="ListExternalizer.java">
     <classNode dependClassName="java.io.DataInput" />
     <classNode dependClassName="java.io.DataOutput" />
     <classNode dependClassName="java.io.IOException" />

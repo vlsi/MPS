@@ -30,6 +30,9 @@
     <component>
       <implementation-class>jetbrains.mps.ide.java.util.JavaCopyPasteDataConverter</implementation-class>
     </component>
+    <component>
+      <implementation-class>jetbrains.mps.ide.java.platform.index.ClassifierSuccessorsFinder</implementation-class>
+    </component>
   </application-components>
 
   <project-components>
@@ -40,4 +43,8 @@
       <implementation-class>jetbrains.mps.ide.java.platform.highlighters.JavaHighlighters</implementation-class>
     </component>
   </project-components>
+
+  <extensions defaultExtensionNs="com.intellij">
+    <fileBasedIndex implementation="jetbrains.mps.ide.java.platform.index.ClassifierSuccessorsIndexer"/>
+  </extensions>
 </idea-plugin>
