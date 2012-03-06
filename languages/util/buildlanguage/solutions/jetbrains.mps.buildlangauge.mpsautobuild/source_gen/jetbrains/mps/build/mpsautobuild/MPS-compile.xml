@@ -8135,7 +8135,6 @@
     <path path="${base_dir}/languages/baseLanguage/baseLanguage/classes_gen" />
     <path path="${base_dir}/languages/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/classes_gen" />
     <path path="${base_dir}/languages/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.util/classes" />
-    <path path="${base_dir}/languages/baseLanguage/baseLanguage/solutions/pluginSolution/classes_gen" />
     <path path="${base_dir}/languages/baseLanguage/baseLanguageInternal/classes_gen" />
     <path path="${base_dir}/languages/baseLanguage/blTypes/classes_gen" />
     <path path="${base_dir}/languages/baseLanguage/classifiers/classes_gen" />
@@ -8164,7 +8163,6 @@
     <path path="${base_dir}/languages/languageDesign/behavior/languages/behavior/solutions/pluginSolution/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/constraints/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/dataFlow/classes_gen" />
-    <path path="${base_dir}/languages/languageDesign/dataFlow/solutions/pluginSolution/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/editor/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/editor/languages/table/runtime/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/findUsages/classes_gen" />
