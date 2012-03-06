@@ -10,7 +10,7 @@ import jetbrains.mps.smodel.SNode;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.smodel.SModelDescriptor;
 import com.intellij.openapi.vfs.VirtualFile;
-import jetbrains.mps.vcs.util.ConflictsUtil;
+import jetbrains.mps.vcs.platform.util.ConflictsUtil;
 import jetbrains.mps.util.NameUtil;
 import com.intellij.openapi.vcs.AbstractVcsHelper;
 import java.util.Arrays;

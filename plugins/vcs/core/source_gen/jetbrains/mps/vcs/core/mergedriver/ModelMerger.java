@@ -21,7 +21,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import java.io.File;
-import jetbrains.mps.vcs.util.MergeBackupUtil;
+import jetbrains.mps.vcs.util.MergeDriverBackupUtil;
 import java.io.IOException;
 
 /*package*/ class ModelMerger extends SimpleMerger {
@@ -125,7 +125,7 @@ import java.io.IOException;
 
   private Tuples._2<Integer, byte[]> backup(byte[] baseContent, byte[] localContent, byte[] latestContent) {
     try {
-      File zipModel = MergeBackupUtil.zipModel(new String[]{new String(baseContent, FileUtil.DEFAULT_CHARSET), new String(localContent, FileUtil.DEFAULT_CHARSET), new String(latestContent, FileUtil.DEFAULT_CHARSET)}, myModelFqName);
+      File zipModel = MergeDriverBackupUtil.zipModel(new String[]{new String(baseContent, FileUtil.DEFAULT_CHARSET), new String(localContent, FileUtil.DEFAULT_CHARSET), new String(latestContent, FileUtil.DEFAULT_CHARSET)}, myModelFqName);
       if (zipModel != null) {
         if (log.isInfoEnabled()) {
           log.info("Saved merge backup to " + zipModel);

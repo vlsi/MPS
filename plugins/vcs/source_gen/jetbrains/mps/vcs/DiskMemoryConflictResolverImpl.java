@@ -16,8 +16,9 @@ import java.io.IOException;
 import jetbrains.mps.smodel.ModelAccess;
 import com.intellij.openapi.ui.Messages;
 import jetbrains.mps.util.FileUtil;
-import jetbrains.mps.vcs.util.MergeBackupUtil;
+import jetbrains.mps.vcs.util.MergeDriverBackupUtil;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
+import jetbrains.mps.vcs.platform.util.MergeBackupUtil;
 import jetbrains.mps.smodel.persistence.def.ModelReadException;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.project.ProjectManager;
@@ -98,7 +99,7 @@ public class DiskMemoryConflictResolverImpl extends DiskMemoryConflictResolver {
 
   private static File doBackup(IFile modelFile, SModel inMemory) throws IOException {
     File tmp = FileUtil.createTmpDir();
-    MergeBackupUtil.writeContentsToFile(ModelPersistence.modelToString(inMemory), modelFile.getName(), tmp, DiskMemoryConflictResolverImpl.DiskMemoryConflictVersion.MEMORY.getSuffix());
+    MergeDriverBackupUtil.writeContentsToFile(ModelPersistence.modelToString(inMemory), modelFile.getName(), tmp, DiskMemoryConflictResolverImpl.DiskMemoryConflictVersion.MEMORY.getSuffix());
     if (modelFile.exists()) {
       com.intellij.openapi.util.io.FileUtil.copy(new File(modelFile.getPath()), new File(tmp.getAbsolutePath(), modelFile.getName() + "." + DiskMemoryConflictResolverImpl.DiskMemoryConflictVersion.FILE_SYSTEM.getSuffix()));
     }

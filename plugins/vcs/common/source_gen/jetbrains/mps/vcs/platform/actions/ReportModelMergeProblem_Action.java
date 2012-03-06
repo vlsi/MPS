@@ -28,7 +28,7 @@ import com.intellij.openapi.application.PathManager;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.io.FilenameFilter;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
-import jetbrains.mps.vcs.util.MergeBackupUtil;
+import jetbrains.mps.vcs.platform.util.MergeBackupUtil;
 import java.util.Arrays;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import com.intellij.openapi.ui.Messages;

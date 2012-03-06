@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import jetbrains.mps.vcs.core.mergedriver.FileType;
 import com.intellij.openapi.project.Project;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.vcs.util.PluginUtil;
+import jetbrains.mps.vcs.platform.util.PluginUtil;
 import com.intellij.openapi.vcs.VcsRoot;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;

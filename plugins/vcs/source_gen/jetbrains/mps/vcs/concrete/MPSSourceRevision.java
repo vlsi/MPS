@@ -4,7 +4,7 @@ package jetbrains.mps.vcs.concrete;
 
 import jetbrains.mps.ide.vcs.SourceRevision;
 import org.jetbrains.annotations.Nullable;
-import jetbrains.mps.vcs.util.PluginUtil;
+import jetbrains.mps.vcs.platform.util.PluginUtil;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.vfs.LocalFileSystem;
 import com.intellij.openapi.application.PathManager;

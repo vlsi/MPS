@@ -18,7 +18,7 @@ import jetbrains.mps.util.Computable;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
-import jetbrains.mps.vcs.util.ConflictsUtil;
+import jetbrains.mps.vcs.platform.util.ConflictsUtil;
 import java.util.List;
 import jetbrains.mps.vcs.diff.changes.ModelChange;
 import jetbrains.mps.smodel.SNodeId;

@@ -11,7 +11,7 @@ import jetbrains.mps.smodel.SNode;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.smodel.PropertySupport;
-import com.intellij.openapi.application.ApplicationManager;
+import jetbrains.mps.MPSCore;
 import org.apache.commons.lang.ObjectUtils;
 import jetbrains.mps.vcs.diff.changes.SetPropertyChange;
 import jetbrains.mps.smodel.SReference;
@@ -67,7 +67,7 @@ public class ChangeSetBuilder {
 
   public void buildForProperty(SNode oldNode, SNode newNode, String name) {
     PropertySupport propertySupport = new ChangeSetBuilder.DefaultPropertySupport();
-    if (ApplicationManager.getApplication() != null) {
+    if (MPSCore.getInstance().isMergeDriverMode()) {
       SNode propertyDeclaration = oldNode.getPropertyDeclaration(name);
       if (propertyDeclaration != null) {
         propertySupport = PropertySupport.getPropertySupport(propertyDeclaration);

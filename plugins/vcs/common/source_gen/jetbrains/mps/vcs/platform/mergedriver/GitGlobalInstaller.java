@@ -8,7 +8,7 @@ import java.io.File;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.application.PathManager;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.vcs.util.PluginUtil;
+import jetbrains.mps.vcs.platform.util.PluginUtil;
 import com.intellij.openapi.ui.Messages;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
