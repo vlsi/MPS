@@ -27,35 +27,35 @@
     <unitInfo nodeId="3024565449487105984" fileName="InstanceMethodCall_InstanceMethodScope.java" startLine="7" startPosition="0" endLine="12" endPosition="0" unitName="jetbrains.mps.baseLanguage.search.InstanceMethodCall_InstanceMethodScope" />
   </root>
   <root nodeId="3024565449487117498">
-    <nodeInfo nodeId="3024565449487117511" fileName="SuperMethodCall_InstanceMethodScope.java" startLine="14" startPosition="107" endLine="15" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="3024565449487117523" fileName="SuperMethodCall_InstanceMethodScope.java" startLine="19" startPosition="59" endLine="20" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3024565449487117529" fileName="SuperMethodCall_InstanceMethodScope.java" startLine="20" startPosition="50" endLine="21" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3024565449487117559" fileName="SuperMethodCall_InstanceMethodScope.java" startLine="24" startPosition="129" endLine="25" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3024565449487117564" fileName="SuperMethodCall_InstanceMethodScope.java" startLine="28" startPosition="5" endLine="29" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3024565449487117501" fileName="SuperMethodCall_InstanceMethodScope.java" startLine="13" startPosition="88" endLine="16" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="SuperMethodCall_InstanceMethodScope#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;)V" />
-    <nodeInfo nodeId="3024565449487117552" fileName="SuperMethodCall_InstanceMethodScope.java" startLine="23" startPosition="113" endLine="26" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3024565449487117547" fileName="SuperMethodCall_InstanceMethodScope.java" startLine="22" startPosition="30" endLine="27" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3024565449487117536" fileName="SuperMethodCall_InstanceMethodScope.java" startLine="21" startPosition="48" endLine="28" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="3024565449487117515" fileName="SuperMethodCall_InstanceMethodScope.java" startLine="17" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNodes#(Ljetbrains/mps/util/Condition;)Ljava/util/List;" />
-    <scopeInfo nodeId="3024565449487117510" fileName="SuperMethodCall_InstanceMethodScope.java" startLine="14" startPosition="107" endLine="15" endPosition="80" />
-    <scopeInfo nodeId="3024565449487117558" fileName="SuperMethodCall_InstanceMethodScope.java" startLine="24" startPosition="129" endLine="25" endPosition="27" />
-    <scopeInfo nodeId="3024565449487117501" fileName="SuperMethodCall_InstanceMethodScope.java" startLine="13" startPosition="88" endLine="16" endPosition="3">
+    <nodeInfo nodeId="3024565449487117511" fileName="SuperMethodCall_InstanceMethodScope.java" startLine="15" startPosition="107" endLine="16" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="3024565449487117523" fileName="SuperMethodCall_InstanceMethodScope.java" startLine="20" startPosition="59" endLine="21" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3024565449487117529" fileName="SuperMethodCall_InstanceMethodScope.java" startLine="21" startPosition="50" endLine="22" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3024565449487117559" fileName="SuperMethodCall_InstanceMethodScope.java" startLine="25" startPosition="129" endLine="26" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3024565449487117564" fileName="SuperMethodCall_InstanceMethodScope.java" startLine="29" startPosition="5" endLine="30" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3024565449487117501" fileName="SuperMethodCall_InstanceMethodScope.java" startLine="14" startPosition="88" endLine="17" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="SuperMethodCall_InstanceMethodScope#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="3024565449487117552" fileName="SuperMethodCall_InstanceMethodScope.java" startLine="24" startPosition="423" endLine="27" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3024565449487117547" fileName="SuperMethodCall_InstanceMethodScope.java" startLine="23" startPosition="30" endLine="28" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3024565449487117536" fileName="SuperMethodCall_InstanceMethodScope.java" startLine="22" startPosition="48" endLine="29" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="3024565449487117515" fileName="SuperMethodCall_InstanceMethodScope.java" startLine="18" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNodes#(Ljetbrains/mps/util/Condition;)Ljava/util/List;" />
+    <scopeInfo nodeId="3024565449487117510" fileName="SuperMethodCall_InstanceMethodScope.java" startLine="15" startPosition="107" endLine="16" endPosition="80" />
+    <scopeInfo nodeId="3024565449487117558" fileName="SuperMethodCall_InstanceMethodScope.java" startLine="25" startPosition="129" endLine="26" endPosition="27" />
+    <scopeInfo nodeId="3024565449487117501" fileName="SuperMethodCall_InstanceMethodScope.java" startLine="14" startPosition="88" endLine="17" endPosition="3">
       <varInfo nodeId="3024565449487117507" varName="contextNode" />
       <varInfo nodeId="3024565449487117504" varName="superclassType" />
     </scopeInfo>
-    <scopeInfo nodeId="3024565449487117551" fileName="SuperMethodCall_InstanceMethodScope.java" startLine="23" startPosition="113" endLine="26" endPosition="9" />
-    <scopeInfo nodeId="3024565449487117540" fileName="SuperMethodCall_InstanceMethodScope.java" startLine="22" startPosition="30" endLine="27" endPosition="7" />
-    <scopeInfo nodeId="3024565449487117536" fileName="SuperMethodCall_InstanceMethodScope.java" startLine="21" startPosition="48" endLine="28" endPosition="5">
+    <scopeInfo nodeId="3024565449487117551" fileName="SuperMethodCall_InstanceMethodScope.java" startLine="24" startPosition="423" endLine="27" endPosition="9" />
+    <scopeInfo nodeId="3024565449487117540" fileName="SuperMethodCall_InstanceMethodScope.java" startLine="23" startPosition="30" endLine="28" endPosition="7" />
+    <scopeInfo nodeId="3024565449487117536" fileName="SuperMethodCall_InstanceMethodScope.java" startLine="22" startPosition="48" endLine="29" endPosition="5">
       <varInfo nodeId="3024565449487117538" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="3024565449487117522" fileName="SuperMethodCall_InstanceMethodScope.java" startLine="19" startPosition="59" endLine="29" endPosition="18">
+    <scopeInfo nodeId="3024565449487117522" fileName="SuperMethodCall_InstanceMethodScope.java" startLine="20" startPosition="59" endLine="30" endPosition="18">
       <varInfo nodeId="3024565449487117524" varName="nodes" />
       <varInfo nodeId="3024565449487117530" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="3024565449487117515" fileName="SuperMethodCall_InstanceMethodScope.java" startLine="17" startPosition="0" endLine="31" endPosition="0">
+    <scopeInfo nodeId="3024565449487117515" fileName="SuperMethodCall_InstanceMethodScope.java" startLine="18" startPosition="0" endLine="32" endPosition="0">
       <varInfo nodeId="3024565449487117519" varName="condition" />
     </scopeInfo>
-    <unitInfo nodeId="3024565449487117498" fileName="SuperMethodCall_InstanceMethodScope.java" startLine="13" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.baseLanguage.search.SuperMethodCall_InstanceMethodScope" />
+    <unitInfo nodeId="3024565449487117498" fileName="SuperMethodCall_InstanceMethodScope.java" startLine="14" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.baseLanguage.search.SuperMethodCall_InstanceMethodScope" />
   </root>
   <root nodeId="3024565449487117567">
     <nodeInfo nodeId="3024565449487117756" fileName="VisibleClassConstructorsScope.java" startLine="26" startPosition="68" endLine="27" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
