@@ -902,6 +902,7 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.Classifier_Behavior" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.IMemberContainer_Behavior" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.StaticMethodDeclaration_Behavior" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.plugin.IconResourceBundle_Behavior" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.search.ClassifierAndSuperClassifiersScope" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.search.IClassifiersSearchScope" />
@@ -989,6 +990,7 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.Classifier_Behavior" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.scopes.ClassAccessKind" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.search.VisibilityUtil" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations" />
@@ -2448,6 +2450,7 @@
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.behavior.Interface_Behavior" file="Interface_Behavior.java">
     <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -2458,6 +2461,7 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
     <classNode dependClassName="jetbrains.mps.lang.core.behavior.INamedConcept_Behavior" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />

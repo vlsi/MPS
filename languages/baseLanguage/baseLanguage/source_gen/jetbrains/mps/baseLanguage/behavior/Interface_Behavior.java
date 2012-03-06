@@ -12,9 +12,10 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import java.util.HashSet;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.List;
-import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import java.util.ArrayList;
 import jetbrains.mps.smodel.structure.BehaviorDescriptor;
 import jetbrains.mps.smodel.structure.ConceptRegistry;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
@@ -72,7 +73,7 @@ public class Interface_Behavior {
   }
 
   public static List<SNode> virtual_getExtendedClassifiers_2201875424516179426(SNode thisNode) {
-    return ListSequence.fromListWithValues(new ArrayList<SNode>(), ListSequence.fromList(SLinkOperations.getTargets(thisNode, "extendedInterface", true)).where(new IWhereFilter<SNode>() {
+    Iterable<SNode> extendedClassifiers = ListSequence.fromList(SLinkOperations.getTargets(thisNode, "extendedInterface", true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return (SLinkOperations.getTarget(it, "classifier", false) != null);
       }
@@ -84,7 +85,12 @@ public class Interface_Behavior {
       public boolean accept(SNode it) {
         return (it != null);
       }
-    }));
+    });
+    if (Sequence.fromIterable(extendedClassifiers).isEmpty()) {
+      return ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.getNode("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Object"));
+    } else {
+      return ListSequence.fromListWithValues(new ArrayList<SNode>(), extendedClassifiers);
+    }
   }
 
   public static String call_getUnitName_2496361171403551004(SNode thisNode) {

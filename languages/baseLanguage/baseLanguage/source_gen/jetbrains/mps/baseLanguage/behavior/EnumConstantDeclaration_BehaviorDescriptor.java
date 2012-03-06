@@ -57,8 +57,8 @@ public class EnumConstantDeclaration_BehaviorDescriptor extends BaseConcept_Beha
     return EnumConstantDeclaration_Behavior.virtual_isStatic_8986964027630462944(thisNode);
   }
 
-  public boolean virtual_isVisible_8083692786967482069(SNode thisNode, SNode contextNode) {
-    return EnumConstantDeclaration_Behavior.virtual_isVisible_8083692786967482069(thisNode, contextNode);
+  public boolean virtual_isVisible_8083692786967482069(SNode thisNode, SNode contextClassifier, SNode contextNode) {
+    return EnumConstantDeclaration_Behavior.virtual_isVisible_8083692786967482069(thisNode, contextClassifier, contextNode);
   }
 
   public SNode virtual_getInstanceType_8008512149545154471(SNode thisNode) {

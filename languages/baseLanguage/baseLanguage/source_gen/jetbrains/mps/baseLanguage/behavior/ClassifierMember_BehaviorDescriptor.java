@@ -6,6 +6,6 @@ import jetbrains.mps.smodel.SNode;
 
 public interface ClassifierMember_BehaviorDescriptor extends IVisible_BehaviorDescriptor {
   public boolean virtual_isStatic_8986964027630462944(SNode thisNode);
-  public boolean virtual_isVisible_8083692786967482069(SNode thisNode, SNode contextNode);
+  public boolean virtual_isVisible_8083692786967482069(SNode thisNode, SNode contextClassifier, SNode contextNode);
   public Object virtual_getSignatureForOverriding_274804607996650333(SNode thisNode, SNode contextClassifier);
 }

@@ -27,8 +27,8 @@ public class StaticMethodDeclaration_BehaviorDescriptor extends BaseMethodDeclar
     return StaticMethodDeclaration_Behavior.virtual_getAdditionalIcon_5017341185733863694(thisNode);
   }
 
-  public boolean virtual_isVisible_8083692786967482069(SNode thisNode, SNode contextNode) {
-    return ClassifierMember_Behavior.virtual_isVisible_8083692786967482069(thisNode, contextNode);
+  public boolean virtual_isVisible_8083692786967482069(SNode thisNode, SNode contextClassifier, SNode contextNode) {
+    return ClassifierMember_Behavior.virtual_isVisible_8083692786967482069(thisNode, contextClassifier, contextNode);
   }
 
   public List<SNode> virtual_getChildrenToDisplayIntention_4025276038182319200(SNode thisNode) {

@@ -6,10 +6,11 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.baseLanguage.scopes.ClassAccessKind;
-import jetbrains.mps.baseLanguage.search.VisibilityUtil;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.baseLanguage.search.VisibilityUtil;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
+import jetbrains.mps.baseLanguage.scopes.ClassAccessKind;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
 import jetbrains.mps.smodel.structure.BehaviorDescriptor;
 import jetbrains.mps.smodel.structure.ConceptRegistry;
@@ -17,7 +18,7 @@ import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class ClassifierMember_Behavior {
   private static Class[] PARAMETERS_8986964027630462944 = {SNode.class};
-  private static Class[] PARAMETERS_8083692786967482069 = {SNode.class, SNode.class};
+  private static Class[] PARAMETERS_8083692786967482069 = {SNode.class, SNode.class, SNode.class};
   private static Class[] PARAMETERS_274804607996650333 = {SNode.class, SNode.class};
   private static Logger LOG = Logger.getLogger(ClassifierMember_Behavior.class);
 
@@ -28,8 +29,34 @@ public class ClassifierMember_Behavior {
     return false;
   }
 
-  public static boolean virtual_isVisible_8083692786967482069(SNode thisNode, SNode contextNode) {
-    int accessLevel = ClassifierMember_Behavior.call_getAccessLevelFor_8083692786967356648(thisNode, contextNode);
+  public static boolean virtual_isVisible_8083692786967482069(SNode thisNode, SNode contextClassifier, SNode contextNode) {
+    // public 
+    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(thisNode, "visibility", true), "jetbrains.mps.baseLanguage.structure.PublicVisibility")) {
+      return true;
+    }
+    // private 
+    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(thisNode, "visibility", true), "jetbrains.mps.baseLanguage.structure.PrivateVisibility")) {
+      return ListSequence.fromList(SNodeOperations.getAncestors(contextNode, "jetbrains.mps.baseLanguage.structure.Classifier", true)).last() == ListSequence.fromList(SNodeOperations.getAncestors(contextClassifier, "jetbrains.mps.baseLanguage.structure.Classifier", true)).last();
+    }
+    // default 
+    boolean isSamePackage = eq_i8o263_a0a5a2(VisibilityUtil.packageName(contextNode), VisibilityUtil.packageName(contextClassifier));
+    if ((SLinkOperations.getTarget(thisNode, "visibility", true) == null)) {
+      return isSamePackage;
+    }
+    // protected 
+    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(thisNode, "visibility", true), "jetbrains.mps.baseLanguage.structure.ProtectedVisibility")) {
+      if (isSamePackage) {
+        return true;
+      }
+      final SNode declarationClassifier = Classifier_Behavior.getContextClassifier_6172562527426750080(thisNode);
+      return ListSequence.fromList(SNodeOperations.getAncestors(contextNode, "jetbrains.mps.baseLanguage.structure.Classifier", true)).any(new IWhereFilter<SNode>() {
+        public boolean accept(SNode it) {
+          return SetSequence.fromSet(Classifier_Behavior.call_getAllExtendedClassifiers_2907982978864985482(it)).contains(declarationClassifier);
+        }
+      });
+    }
+
+    int accessLevel = ClassifierMember_Behavior.call_getAccessLevelFor_8083692786967356648(thisNode, contextClassifier, contextNode);
 
     // todo: ??? 
     boolean isPrivate = SNodeOperations.isInstanceOf(SLinkOperations.getTarget(thisNode, "visibility", true), "jetbrains.mps.baseLanguage.structure.PrivateVisibility");
@@ -48,17 +75,17 @@ public class ClassifierMember_Behavior {
     }
   }
 
-  public static int call_getAccessLevelFor_8083692786967356648(SNode thisNode, SNode contextNode) {
+  public static int call_getAccessLevelFor_8083692786967356648(SNode thisNode, SNode contextClassifier, SNode contextNode) {
     // todo: in naive version (with ints) not extensionable =( 
     int result = ClassAccessKind.PUBLIC;
 
     // package access 
-    if (eq_i8o263_a0e0d(VisibilityUtil.packageName(contextNode), VisibilityUtil.packageName(thisNode))) {
+    if (eq_i8o263_a0e0d(VisibilityUtil.packageName(contextNode), VisibilityUtil.packageName(contextClassifier))) {
       result = result | ClassAccessKind.PACKAGE;
     }
 
     // class access 
-    if (ListSequence.fromList(SNodeOperations.getAncestors(contextNode, "jetbrains.mps.baseLanguage.structure.Classifier", true)).last() == ListSequence.fromList(SNodeOperations.getAncestors(thisNode, "jetbrains.mps.baseLanguage.structure.Classifier", true)).last()) {
+    if (ListSequence.fromList(SNodeOperations.getAncestors(contextNode, "jetbrains.mps.baseLanguage.structure.Classifier", true)).last() == ListSequence.fromList(SNodeOperations.getAncestors(contextClassifier, "jetbrains.mps.baseLanguage.structure.Classifier", true)).last()) {
       result = result | ClassAccessKind.CLASS;
     }
 
@@ -70,7 +97,7 @@ public class ClassifierMember_Behavior {
       Classifier_Behavior.getContextClassifier_6172562527426750080(contextNode)
     );
 
-    SNode currentClassifier = Classifier_Behavior.getContextClassifier_6172562527426750080(thisNode);
+    SNode currentClassifier = contextClassifier;
 
     while ((outerClassifier != null)) {
       // <node> 
@@ -96,9 +123,9 @@ public class ClassifierMember_Behavior {
     return (Boolean) descriptor.invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.ClassifierMember"), "virtual_isStatic_8986964027630462944", PARAMETERS_8986964027630462944);
   }
 
-  public static boolean call_isVisible_8083692786967482069(SNode thisNode, SNode contextNode) {
+  public static boolean call_isVisible_8083692786967482069(SNode thisNode, SNode contextClassifier, SNode contextNode) {
     BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (Boolean) descriptor.invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.ClassifierMember"), "virtual_isVisible_8083692786967482069", PARAMETERS_8083692786967482069, contextNode);
+    return (Boolean) descriptor.invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.ClassifierMember"), "virtual_isVisible_8083692786967482069", PARAMETERS_8083692786967482069, contextClassifier, contextNode);
   }
 
   public static Object call_getSignatureForOverriding_274804607996650333(SNode thisNode, SNode contextClassifier) {
@@ -110,12 +137,19 @@ public class ClassifierMember_Behavior {
     return (Boolean) BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.ClassifierMember"), callerConceptFqName, "virtual_isStatic_8986964027630462944", PARAMETERS_8986964027630462944);
   }
 
-  public static boolean callSuper_isVisible_8083692786967482069(SNode thisNode, String callerConceptFqName, SNode contextNode) {
-    return (Boolean) BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.ClassifierMember"), callerConceptFqName, "virtual_isVisible_8083692786967482069", PARAMETERS_8083692786967482069, contextNode);
+  public static boolean callSuper_isVisible_8083692786967482069(SNode thisNode, String callerConceptFqName, SNode contextClassifier, SNode contextNode) {
+    return (Boolean) BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.ClassifierMember"), callerConceptFqName, "virtual_isVisible_8083692786967482069", PARAMETERS_8083692786967482069, contextClassifier, contextNode);
   }
 
   public static Object callSuper_getSignatureForOverriding_274804607996650333(SNode thisNode, String callerConceptFqName, SNode contextClassifier) {
     return (Object) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.ClassifierMember"), callerConceptFqName, "virtual_getSignatureForOverriding_274804607996650333", PARAMETERS_274804607996650333, contextClassifier);
+  }
+
+  private static boolean eq_i8o263_a0a5a2(Object a, Object b) {
+    return (a != null ?
+      a.equals(b) :
+      a == b
+    );
   }
 
   private static boolean eq_i8o263_a0e0d(Object a, Object b) {

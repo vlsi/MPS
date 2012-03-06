@@ -72,10 +72,10 @@ public class Classifier_Behavior {
     return (List<SNode>) ss.getNodes();
   }
 
-  public static Scope virtual_getVisibleMembers_8083692786967356611(SNode thisNode, final SNode contextNode, SNode kind) {
+  public static Scope virtual_getVisibleMembers_8083692786967356611(final SNode thisNode, final SNode contextNode, SNode kind) {
     return new SimpleScope(ListSequence.fromList(Classifier_Behavior.call_getMembers_2201875424515824604(thisNode, kind)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return ClassifierMember_Behavior.call_isVisible_8083692786967482069(it, contextNode);
+        return ClassifierMember_Behavior.call_isVisible_8083692786967482069(it, thisNode, contextNode);
       }
     }));
   }
@@ -116,12 +116,23 @@ public class Classifier_Behavior {
 
     // standard java logic: 
     // 1) collect all inherited classifier members and filter based on access level 
+    // todo: dirty hack with Object from interfaces and overriding =( 
+    Set<SNode> extendedClassifiers = SetSequence.fromSetWithValues(new HashSet(), Classifier_Behavior.call_getExtendedClassifiers_2201875424516179426(thisNode));
+    SetSequence.fromSet(extendedClassifiers).removeElement(SNodeOperations.getNode("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Object"));
+    if (SetSequence.fromSet(extendedClassifiers).all(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return !(SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.ClassConcept"));
+      }
+    })) {
+      SetSequence.fromSet(extendedClassifiers).addElement(SNodeOperations.getNode("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Object"));
+    }
+
     Set<SNode> pretenders = SetSequence.fromSet(new HashSet());
-    for (SNode classifier : Classifier_Behavior.call_getExtendedClassifiers_2201875424516179426(thisNode)) {
+    for (final SNode classifier : extendedClassifiers) {
       // todo: ? strange... =( 
       SetSequence.fromSet(pretenders).addSequence(ListSequence.fromList(Classifier_Behavior.call_getMembers_2201875424515824604(classifier, kind)).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
-          return ClassifierMember_Behavior.call_isVisible_8083692786967482069(it, thisNode);
+          return ClassifierMember_Behavior.call_isVisible_8083692786967482069(it, classifier, thisNode);
         }
       }));
     }
