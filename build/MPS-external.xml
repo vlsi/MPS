@@ -253,9 +253,6 @@
     </jar>
     <delete dir="${deploy.dir}/MPS/lib/mps-editor.jar.tmp" />
     <copy todir="${deploy.dir}/MPS/lib/mps-platform.jar.tmp">
-      <fileset dir="${mps_home}/workbench/baseLanguageIndex/classes_gen" />
-    </copy>
-    <copy todir="${deploy.dir}/MPS/lib/mps-platform.jar.tmp">
       <fileset dir="${mps_home}/workbench/mps-platform/classes" />
     </copy>
     <copy todir="${deploy.dir}/MPS/lib/mps-platform.jar.tmp">
