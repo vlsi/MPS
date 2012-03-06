@@ -262,7 +262,6 @@
       <fileset dir="${mps_home}/workbench/mps-debugger/classes" />
     </copy>
     <antcall target="MPS-languages.pack.jetbrains.mps.ide.platform" />
-    <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.index" />
     <mkdir dir="${deploy.dir}/MPS/lib/mps-platform.jar.tmp/modules" />
     <jar destfile="${deploy.dir}/MPS/lib/mps-platform.jar" duplicate="preserve" filesonly="true">
       <fileset dir="${deploy.dir}/MPS/lib/mps-platform.jar.tmp" />

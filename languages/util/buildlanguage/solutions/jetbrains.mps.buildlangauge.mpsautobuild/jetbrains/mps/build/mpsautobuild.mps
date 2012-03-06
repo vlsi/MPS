@@ -3013,11 +3013,6 @@
           <property name="name" nameId="tpck.1169194664001" value="jetbrains.mps.ide.platform" />
           <property name="doNotJar" nameId="tps4.2850282874221099799" value="true" />
         </node>
-        <node role="entry" roleId="tps4.1203617897549" type="tps4.Module" typeId="tps4.1203599702327" id="6700426045796014050">
-          <property name="id" nameId="tps4.1222447189012" value="cab85f8b-9525-42cb-8e6d-258ca6e56432" />
-          <property name="name" nameId="tpck.1169194664001" value="jetbrains.mps.baseLanguage.index" />
-          <property name="doNotJar" nameId="tps4.2850282874221099799" value="true" />
-        </node>
         <node role="title" roleId="tps4.1205340441197" type="tps4.SimpleString" typeId="tps4.1205339044029" id="6700426045796014051">
           <property name="name" nameId="tps4.1223641503366" value="modules" />
         </node>
