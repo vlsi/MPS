@@ -46,6 +46,7 @@ import java.awt.event.MouseEvent;
 import com.intellij.ide.DataManager;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.debug.api.breakpoints.ILocationBreakpoint;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.ide.dialogs.DialogDimensionsSettings;
 import org.jetbrains.annotations.NonNls;
@@ -419,7 +420,11 @@ public class BreakpointsBrowserDialog extends BaseDialog implements DataProvider
     }
     ModelAccess.instance().executeCommand(new Runnable() {
       public void run() {
-        NavigationSupport.getInstance().openNode(myContext, ((ILocationBreakpoint) breakpoint).getLocation().getSNode(), focus, select);
+        SNode node = ((ILocationBreakpoint) breakpoint).getLocation().getSNode();
+        if (node == null) {
+          return;
+        }
+        NavigationSupport.getInstance().openNode(myContext, node, focus, select);
       }
     }, project);
   }
