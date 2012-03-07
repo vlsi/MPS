@@ -93,11 +93,6 @@ public class Launcher {
   }
 
   private static void addMPSBootstrapJars(List<URL> classPath, String homePath, URL selfRootUrl) throws MalformedURLException {
-    File ideaPatchJar = new File(homePath + File.separator + "lib" + File.separator + "idea-patch.jar");
-    if (ideaPatchJar.exists()) {
-      classPath.add(ideaPatchJar.toURI().toURL());
-    }
-
     File mpsJar = new File(homePath + File.separator + "lib" + File.separator + "mps.jar");
     if (mpsJar.exists()) {
       classPath.add(mpsJar.toURI().toURL());
