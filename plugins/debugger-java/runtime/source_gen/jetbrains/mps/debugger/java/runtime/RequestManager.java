@@ -9,6 +9,10 @@ import java.util.Set;
 import com.sun.jdi.request.EventRequest;
 import com.intellij.util.containers.HashMap;
 import com.sun.jdi.request.EventRequestManager;
+import java.util.List;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.debugger.java.runtime.execution.DebuggerManagerThread;
 import org.jetbrains.annotations.NotNull;
@@ -26,12 +30,11 @@ import com.sun.jdi.request.AccessWatchpointRequest;
 import com.sun.jdi.Field;
 import com.sun.jdi.request.ModificationWatchpointRequest;
 import com.sun.jdi.request.ExceptionRequest;
-import java.util.List;
 import com.sun.jdi.request.StepRequest;
-import java.util.ArrayList;
 import com.sun.jdi.ThreadReference;
 import jetbrains.mps.debugger.java.runtime.requests.ClassPrepareRequestor;
 import com.sun.jdi.request.ClassPrepareRequest;
+import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.debugger.java.runtime.execution.DebuggerCommand;
 import jetbrains.mps.debug.api.BreakpointManagerComponent;
 import jetbrains.mps.debug.api.breakpoints.IBreakpoint;
@@ -48,6 +51,7 @@ public class RequestManager implements DebugProcessListener {
   private EventRequestManager myEventRequestManager;
   private DebugVMEventsProcessor myDebugEventsProcessor;
   private final Map<Requestor, String> myInvalidRequestsAndWarnings = new HashMap<Requestor, String>();
+  private final List<_FunctionTypes._void_P0_E0> myWarningsListeners = ListSequence.fromList(new ArrayList<_FunctionTypes._void_P0_E0>());
 
   public RequestManager(DebugVMEventsProcessor processor) {
     myDebugEventsProcessor = processor;
@@ -242,12 +246,25 @@ public class RequestManager implements DebugProcessListener {
   public void setInvalid(Requestor requestor, String message) {
     DebuggerManagerThread.assertIsManagerThread();
     myInvalidRequestsAndWarnings.put(requestor, message);
+    ListSequence.fromList(myWarningsListeners).visitAll(new IVisitor<_FunctionTypes._void_P0_E0>() {
+      public void visit(_FunctionTypes._void_P0_E0 it) {
+        it.invoke();
+      }
+    });
   }
 
   @Nullable
   public String getWarning(Requestor requestor) {
     DebuggerManagerThread.assertIsManagerThread();
     return myInvalidRequestsAndWarnings.get(requestor);
+  }
+
+  public void addWarningsListener(_FunctionTypes._void_P0_E0 listener) {
+    ListSequence.fromList(myWarningsListeners).addElement(listener);
+  }
+
+  public void removeWarningsListener(_FunctionTypes._void_P0_E0 listener) {
+    ListSequence.fromList(myWarningsListeners).removeElement(listener);
   }
 
   @Override
