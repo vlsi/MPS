@@ -88,7 +88,7 @@ import org.junit.AfterClass;
 public class ChangesManagerTest {
   private static final File DESTINATION_PROJECT_DIR = new File(FileUtil.getTempDir(), "testConflicts");
   private static final File PROJECT_ARCHIVE = new File("testbench/modules/fugue.zip");
-  private static final String PROJECT_FILE = "fugue.ipr";
+  private static final String PROJECT_FILE = "fugue.mpr";
   private static final String MODEL_PREFIX = "ru.geevee.fugue.";
   private static Project ourProject;
   private static boolean ourEnabled;
