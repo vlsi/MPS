@@ -130,7 +130,7 @@ public class GenerateTaskFilesCreationTest {
 
     WhatToDo whatToDo = new WhatToDo();
     whatToDo.putProperty(GenerateTask.COMPILE, Boolean.toString(true));
-    whatToDo.addProjectFile(new File(destdir.getAbsolutePath() + File.separator + projectName + File.separator + projectName + ".ipr"));
+    whatToDo.addProjectFile(new File(destdir.getAbsolutePath() + File.separator + projectName + File.separator + projectName + ".mpr"));
     doGenerate(whatToDo);
 
     return destdir;

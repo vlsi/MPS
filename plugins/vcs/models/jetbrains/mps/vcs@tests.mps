@@ -137,7 +137,7 @@
       </node>
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PrivateVisibility" typeId="tpee.1146644623116" id="7314351270975463266" />
       <node role="initializer" roleId="tpee.1068431790190" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="7314351270975463267">
-        <property name="value" nameId="tpee.1070475926801" value="simpleProject.ipr" />
+        <property name="value" nameId="tpee.1070475926801" value="simpleProject.mpr" />
       </node>
     </node>
     <node role="staticField" roleId="tpee.1128555889557" type="tpee.StaticFieldDeclaration" typeId="tpee.1070462154015" id="7314351270975463268">

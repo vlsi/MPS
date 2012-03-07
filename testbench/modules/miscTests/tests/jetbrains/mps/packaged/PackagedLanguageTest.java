@@ -38,7 +38,7 @@ import java.io.File;
 public class PackagedLanguageTest {
   private static final File DESTINATION_PROJECT_DIR = new File(FileUtil.getTempDir(), "testPackaged");
   private static final File PROJECT_ARCHIVE = new File("testbench/modules/testPackaged.zip");
-  private static final String PROJECT_FILE = "ProjectWithPackagedLanguage.ipr";
+  private static final String PROJECT_FILE = "ProjectWithPackagedLanguage.mpr";
   private static final String PACKAGED_LANGUAGE = "PackagedLanguage";
   private static final String PACKAGED_CONCEPT = "PackagedConcept";
 

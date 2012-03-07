@@ -16,7 +16,7 @@ public class Pre_LocalStaicFieldToStaticFieldReference_Test extends BaseTransfor
 
   @Test
   public void test_Pre_LocalStaicFieldToStaticFieldReference() throws Throwable {
-    this.initTest("${mps_home}/MPS.ipr", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest)");
+    this.initTest("${mps_home}/MPS.mpr", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest)");
     this.runTest("jetbrains.mps.editorTest.Pre_LocalStaicFieldToStaticFieldReference_Test$TestBody", "testMethod", false);
   }
 

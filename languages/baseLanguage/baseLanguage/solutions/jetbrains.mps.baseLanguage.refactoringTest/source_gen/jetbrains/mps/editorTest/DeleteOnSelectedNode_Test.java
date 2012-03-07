@@ -16,7 +16,7 @@ public class DeleteOnSelectedNode_Test extends BaseTransformationTest {
 
   @Test
   public void test_DeleteOnSelectedNode() throws Throwable {
-    this.initTest("${mps_home}/MPS.ipr", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest)");
+    this.initTest("${mps_home}/MPS.mpr", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest)");
     this.runTest("jetbrains.mps.editorTest.DeleteOnSelectedNode_Test$TestBody", "testMethod", false);
   }
 

@@ -16,7 +16,7 @@ public class HomeWithLineSelection_fromLastCell_Test extends BaseTransformationT
 
   @Test
   public void test_HomeWithLineSelection_fromLastCell() throws Throwable {
-    this.initTest("${mps_home}/MPS.ipr", "r:f429894b-858b-4e34-87ae-2cfe2a061928(jetbrains.mps.lang.editor.selection.test)");
+    this.initTest("${mps_home}/MPS.mpr", "r:f429894b-858b-4e34-87ae-2cfe2a061928(jetbrains.mps.lang.editor.selection.test)");
     this.runTest("jetbrains.mps.lang.editor.selection.test.HomeWithLineSelection_fromLastCell_Test$TestBody", "testMethod", false);
   }
 
