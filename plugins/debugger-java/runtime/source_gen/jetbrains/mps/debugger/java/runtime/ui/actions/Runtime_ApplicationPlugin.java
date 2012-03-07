@@ -30,6 +30,6 @@ public class Runtime_ApplicationPlugin extends BaseApplicationPlugin {
   }
 
   public void adjustRegularGroups() {
-    insertGroupIntoAnother(JavaWatchableNodeActions_ActionGroup.ID, AbstractWatchableNodeActions_ActionGroup.ID, AbstractWatchableNodeActions_ActionGroup.LABEL_ID_copyValue);
+    insertGroupIntoAnother(JavaWatchableNodeActions_ActionGroup.ID, AbstractWatchableNodeActions_ActionGroup.ID, AbstractWatchableNodeActions_ActionGroup.LABEL_ID_extentions);
   }
 }

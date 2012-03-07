@@ -81,6 +81,7 @@
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="4893181994832024376">
       <property name="name" nameId="tpck.1169194664001" value="CopyStackTraceToClipboard" />
       <property name="caption" nameId="tp4k.1205250923097" value="Copy Stacktrace to Clipboard" />
+      <property name="isAlwaysVisible" nameId="tp4k.1207149998849" value="true" />
     </node>
   </roots>
   <root id="8643693251546861612">
@@ -714,6 +715,7 @@
             </node>
           </node>
         </node>
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.Statement" typeId="tpee.1068580123157" id="6218363726715096349" />
         <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="2915139105446498540">
           <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="2915139105446498541">
             <property name="name" nameId="tpck.1169194664001" value="writer" />

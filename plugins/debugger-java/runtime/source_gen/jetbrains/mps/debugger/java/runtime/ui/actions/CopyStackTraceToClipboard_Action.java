@@ -20,7 +20,7 @@ public class CopyStackTraceToClipboard_Action extends BaseAction {
 
   public CopyStackTraceToClipboard_Action() {
     super("Copy Stacktrace to Clipboard", "", ICON);
-    this.setIsAlwaysVisible(false);
+    this.setIsAlwaysVisible(true);
     this.setExecuteOutsideCommand(false);
   }
 
@@ -49,6 +49,7 @@ public class CopyStackTraceToClipboard_Action extends BaseAction {
         return;
       }
       trowable.getStackTrace();
+
       StringWriter writer = new StringWriter();
       trowable.printStackTrace(new PrintWriter(writer));
       CopyPasteUtil.copyTextToClipboard(writer.toString());

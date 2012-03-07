@@ -268,8 +268,8 @@
     <nodeInfo nodeId="4893181994832024376" fileName="CopyStackTraceToClipboard_Action.java" startLine="17" startPosition="66" endLine="18" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
     <nodeInfo nodeId="4893181994832024376" fileName="CopyStackTraceToClipboard_Action.java" startLine="18" startPosition="40" endLine="19" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="log" />
     <nodeInfo nodeId="4893181994832024376" fileName="CopyStackTraceToClipboard_Action.java" startLine="21" startPosition="45" endLine="22" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="4893181994832024376" fileName="CopyStackTraceToClipboard_Action.java" startLine="22" startPosition="52" endLine="23" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4893181994832024376" fileName="CopyStackTraceToClipboard_Action.java" startLine="23" startPosition="35" endLine="24" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4893181994832024376" fileName="CopyStackTraceToClipboard_Action.java" startLine="22" startPosition="52" endLine="23" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4893181994832024376" fileName="CopyStackTraceToClipboard_Action.java" startLine="23" startPosition="34" endLine="24" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4893181994832024376" fileName="CopyStackTraceToClipboard_Action.java" startLine="28" startPosition="9" endLine="29" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="4893181994832024581" fileName="CopyStackTraceToClipboard_Action.java" startLine="28" startPosition="9" endLine="29" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4893181994832024376" fileName="CopyStackTraceToClipboard_Action.java" startLine="31" startPosition="33" endLine="32" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -279,34 +279,35 @@
     <nodeInfo nodeId="4893181994832024639" fileName="CopyStackTraceToClipboard_Action.java" startLine="46" startPosition="9" endLine="47" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4893181994832024677" fileName="CopyStackTraceToClipboard_Action.java" startLine="48" startPosition="29" endLine="49" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4893181994832024679" fileName="CopyStackTraceToClipboard_Action.java" startLine="50" startPosition="7" endLine="51" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2915139105446498540" fileName="CopyStackTraceToClipboard_Action.java" startLine="51" startPosition="31" endLine="52" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2915139105446498545" fileName="CopyStackTraceToClipboard_Action.java" startLine="52" startPosition="47" endLine="53" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4893181994832024890" fileName="CopyStackTraceToClipboard_Action.java" startLine="53" startPosition="56" endLine="54" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4893181994832024376" fileName="CopyStackTraceToClipboard_Action.java" startLine="56" startPosition="33" endLine="57" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6218363726715096349" fileName="CopyStackTraceToClipboard_Action.java" startLine="51" startPosition="31" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="2915139105446498540" fileName="CopyStackTraceToClipboard_Action.java" startLine="52" startPosition="0" endLine="53" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2915139105446498545" fileName="CopyStackTraceToClipboard_Action.java" startLine="53" startPosition="47" endLine="54" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4893181994832024890" fileName="CopyStackTraceToClipboard_Action.java" startLine="54" startPosition="56" endLine="55" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4893181994832024376" fileName="CopyStackTraceToClipboard_Action.java" startLine="57" startPosition="33" endLine="58" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4893181994832024376" fileName="CopyStackTraceToClipboard_Action.java" startLine="30" startPosition="27" endLine="33" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="4893181994832024376" fileName="CopyStackTraceToClipboard_Action.java" startLine="30" startPosition="27" endLine="33" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="4893181994832024376" fileName="CopyStackTraceToClipboard_Action.java" startLine="38" startPosition="95" endLine="41" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="4893181994832024651" fileName="CopyStackTraceToClipboard_Action.java" startLine="47" startPosition="87" endLine="50" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4893181994832024376" fileName="CopyStackTraceToClipboard_Action.java" startLine="55" startPosition="27" endLine="58" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="4893181994832024376" fileName="CopyStackTraceToClipboard_Action.java" startLine="55" startPosition="27" endLine="58" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4893181994832024376" fileName="CopyStackTraceToClipboard_Action.java" startLine="56" startPosition="27" endLine="59" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4893181994832024376" fileName="CopyStackTraceToClipboard_Action.java" startLine="56" startPosition="27" endLine="59" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="4893181994832024376" fileName="CopyStackTraceToClipboard_Action.java" startLine="20" startPosition="0" endLine="25" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="CopyStackTraceToClipboard_Action#()V" />
     <nodeInfo nodeId="4893181994832024376" fileName="CopyStackTraceToClipboard_Action.java" startLine="37" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="collectActionData#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)Z" />
     <nodeInfo nodeId="4893181994832024376" fileName="CopyStackTraceToClipboard_Action.java" startLine="27" startPosition="89" endLine="35" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
     <nodeInfo nodeId="4893181994832024376" fileName="CopyStackTraceToClipboard_Action.java" startLine="26" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doUpdate#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
-    <nodeInfo nodeId="4893181994832024376" fileName="CopyStackTraceToClipboard_Action.java" startLine="45" startPosition="96" endLine="59" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="4893181994832024376" fileName="CopyStackTraceToClipboard_Action.java" startLine="44" startPosition="0" endLine="61" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doExecute#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
+    <nodeInfo nodeId="4893181994832024376" fileName="CopyStackTraceToClipboard_Action.java" startLine="45" startPosition="96" endLine="60" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="4893181994832024376" fileName="CopyStackTraceToClipboard_Action.java" startLine="44" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doExecute#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
     <scopeInfo nodeId="4893181994832024376" fileName="CopyStackTraceToClipboard_Action.java" startLine="28" startPosition="9" endLine="29" endPosition="110" />
     <scopeInfo nodeId="4893181994832024388" fileName="CopyStackTraceToClipboard_Action.java" startLine="28" startPosition="9" endLine="29" endPosition="110" />
     <scopeInfo nodeId="4893181994832024376" fileName="CopyStackTraceToClipboard_Action.java" startLine="31" startPosition="33" endLine="32" endPosition="100" />
     <scopeInfo nodeId="4893181994832024376" fileName="CopyStackTraceToClipboard_Action.java" startLine="39" startPosition="53" endLine="40" endPosition="19" />
     <scopeInfo nodeId="4893181994832024652" fileName="CopyStackTraceToClipboard_Action.java" startLine="48" startPosition="29" endLine="49" endPosition="15" />
-    <scopeInfo nodeId="4893181994832024376" fileName="CopyStackTraceToClipboard_Action.java" startLine="56" startPosition="33" endLine="57" endPosition="99" />
+    <scopeInfo nodeId="4893181994832024376" fileName="CopyStackTraceToClipboard_Action.java" startLine="57" startPosition="33" endLine="58" endPosition="99" />
     <scopeInfo nodeId="4893181994832024376" fileName="CopyStackTraceToClipboard_Action.java" startLine="21" startPosition="45" endLine="24" endPosition="41" />
     <scopeInfo nodeId="4893181994832024376" fileName="CopyStackTraceToClipboard_Action.java" startLine="30" startPosition="27" endLine="33" endPosition="7" />
-    <scopeInfo nodeId="4893181994832024376" fileName="CopyStackTraceToClipboard_Action.java" startLine="55" startPosition="0" endLine="58" endPosition="7">
+    <scopeInfo nodeId="4893181994832024376" fileName="CopyStackTraceToClipboard_Action.java" startLine="56" startPosition="0" endLine="59" endPosition="7">
       <varInfo nodeId="4893181994832024376" varName="t" />
     </scopeInfo>
-    <scopeInfo nodeId="4893181994832024376" fileName="CopyStackTraceToClipboard_Action.java" startLine="55" startPosition="27" endLine="58" endPosition="7" />
+    <scopeInfo nodeId="4893181994832024376" fileName="CopyStackTraceToClipboard_Action.java" startLine="56" startPosition="27" endLine="59" endPosition="7" />
     <scopeInfo nodeId="4893181994832024376" fileName="CopyStackTraceToClipboard_Action.java" startLine="30" startPosition="0" endLine="34" endPosition="44">
       <varInfo nodeId="4893181994832024376" varName="t" />
     </scopeInfo>
@@ -318,7 +319,7 @@
       <varInfo nodeId="4893181994832024376" varName="event" />
     </scopeInfo>
     <scopeInfo nodeId="4893181994832024376" fileName="CopyStackTraceToClipboard_Action.java" startLine="27" startPosition="89" endLine="35" endPosition="5" />
-    <scopeInfo nodeId="4893181994832024376" fileName="CopyStackTraceToClipboard_Action.java" startLine="46" startPosition="9" endLine="54" endPosition="59">
+    <scopeInfo nodeId="4893181994832024376" fileName="CopyStackTraceToClipboard_Action.java" startLine="46" startPosition="9" endLine="55" endPosition="59">
       <varInfo nodeId="4893181994832024640" varName="trowable" />
       <varInfo nodeId="2915139105446498541" varName="writer" />
     </scopeInfo>
@@ -326,12 +327,12 @@
       <varInfo nodeId="4893181994832024376" varName="_params" />
       <varInfo nodeId="4893181994832024376" varName="event" />
     </scopeInfo>
-    <scopeInfo nodeId="4893181994832024376" fileName="CopyStackTraceToClipboard_Action.java" startLine="45" startPosition="96" endLine="59" endPosition="5" />
-    <scopeInfo nodeId="4893181994832024376" fileName="CopyStackTraceToClipboard_Action.java" startLine="44" startPosition="0" endLine="61" endPosition="0">
+    <scopeInfo nodeId="4893181994832024376" fileName="CopyStackTraceToClipboard_Action.java" startLine="45" startPosition="96" endLine="60" endPosition="5" />
+    <scopeInfo nodeId="4893181994832024376" fileName="CopyStackTraceToClipboard_Action.java" startLine="44" startPosition="0" endLine="62" endPosition="0">
       <varInfo nodeId="4893181994832024376" varName="_params" />
       <varInfo nodeId="4893181994832024376" varName="event" />
     </scopeInfo>
-    <unitInfo nodeId="4893181994832024376" fileName="CopyStackTraceToClipboard_Action.java" startLine="17" startPosition="0" endLine="62" endPosition="0" unitName="jetbrains.mps.debugger.java.runtime.ui.actions.CopyStackTraceToClipboard_Action" />
+    <unitInfo nodeId="4893181994832024376" fileName="CopyStackTraceToClipboard_Action.java" startLine="17" startPosition="0" endLine="63" endPosition="0" unitName="jetbrains.mps.debugger.java.runtime.ui.actions.CopyStackTraceToClipboard_Action" />
   </root>
   <root nodeId="8643693251546861612">
     <nodeInfo nodeId="8643693251546861612" fileName="WatchesTreeActions_ActionGroup.java" startLine="8" startPosition="74" endLine="9" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />

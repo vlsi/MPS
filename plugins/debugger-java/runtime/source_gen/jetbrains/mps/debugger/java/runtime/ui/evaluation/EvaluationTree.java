@@ -330,6 +330,17 @@ import jetbrains.mps.ide.messages.Icons;
     public Throwable getThrowable() {
       return myThrowable;
     }
+
+    @Override
+    public ActionGroup getActionGroup() {
+      DefaultActionGroup group = new DefaultActionGroup();
+      if (myActionGroup != null) {
+        group.add(myActionGroup);
+        group.add(new Separator());
+      }
+      group.add(((BaseGroup) ActionManager.getInstance().getAction("jetbrains.mps.debugger.api.ui.actions.AbstractWatchableNodeActions_ActionGroup")));
+      return group;
+    }
   }
 
   private static class EvaluatingTreeNode extends TextTreeNode implements EvaluationTree.EvaluationModelNode {
