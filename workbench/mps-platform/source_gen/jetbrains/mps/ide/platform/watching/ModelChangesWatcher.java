@@ -35,7 +35,11 @@ import java.util.List;
 import com.intellij.openapi.vfs.newvfs.events.VFileEvent;
 import com.intellij.openapi.application.Application;
 import com.intellij.util.Processor;
-import jetbrains.mps.fileTypes.MPSFileTypesManager;
+import com.intellij.openapi.vfs.newvfs.events.VFileContentChangeEvent;
+import com.intellij.openapi.vfs.newvfs.events.VFileCreateEvent;
+import com.intellij.openapi.vfs.newvfs.events.VFileDeleteEvent;
+import com.intellij.openapi.vfs.newvfs.events.VFileCopyEvent;
+import com.intellij.openapi.vfs.newvfs.events.VFileMoveEvent;
 
 public class ModelChangesWatcher implements ApplicationComponent {
   public static final Logger LOG = Logger.getLogger(ModelChangesWatcher.class);
@@ -231,7 +235,6 @@ public class ModelChangesWatcher implements ApplicationComponent {
       if (application.isDisposeInProgress() || application.isDisposed()) {
         return;
       }
-      boolean resume = false;
       synchronized (myLock) {
         if (myReloadSession == null) {
           myReloadSession = new ReloadSession(getReloadListeners());
@@ -244,24 +247,46 @@ public class ModelChangesWatcher implements ApplicationComponent {
             if (isUnderSignificantRoots(file)) {
               FileUtil.processFilesRecursively(file, new Processor<File>() {
                 public boolean process(File file) {
-                  processAfterEvent(file.getAbsolutePath(), new VFileEventDecorator(event, file.getAbsolutePath()), myReloadSession);
+                  processAfterEvent(file, event, myReloadSession);
                   return true;
                 }
               });
             }
           }
-          processAfterEvent(path, event, myReloadSession);
+          processAfterEvent(file, event, myReloadSession);
         }
         queueReload();
       }
     }
 
-    private void processAfterEvent(String filePath, VFileEvent event, ReloadSession reloadSession) {
-      ModelChangesWatcher.LOG.debug("Process after event for " + filePath);
-      ModelFileProcessor.getInstance().process(event, reloadSession);
-      if (MPSFileTypesManager.instance().isModuleFile(filePath)) {
-        ModelChangesWatcher.LOG.debug("Process after event for " + filePath);
-        ModuleFileProcessor.getInstance().process(event, reloadSession);
+    private void processAfterEvent(File realFile, VFileEvent event, ReloadSession reloadSession) {
+      ModelChangesWatcher.LOG.debug("Process after event for " + realFile);
+      ModelFileProcessor modelProcessor = new ModelFileProcessor(event.getFileSystem(), reloadSession);
+      ModuleFileProcessor moduleProcessor = new ModuleFileProcessor(event.getFileSystem(), reloadSession);
+      EventProcessor[] proc = new EventProcessor[]{modelProcessor, moduleProcessor};
+
+      for (EventProcessor p : proc) {
+        if (!(p.accepts(realFile.getPath()))) {
+          continue;
+        }
+
+        if (event instanceof VFileContentChangeEvent) {
+          if (VirtualFileUtils.isEventFromSave(event)) {
+            continue;
+          }
+          p.processContentChanged(event.getPath());
+        } else if (event instanceof VFileCreateEvent) {
+          p.processCreate(event.getPath());
+        } else if (event instanceof VFileDeleteEvent) {
+          p.processDelete(event.getPath());
+        } else if (event instanceof VFileCopyEvent) {
+          p.processCreate(event.getPath());
+        } else if (event instanceof VFileMoveEvent) {
+          VFileMoveEvent re = (VFileMoveEvent) event;
+          String name = re.getFile().getName();
+          p.processDelete(re.getOldParent().findChild(name).getPath());
+          p.processCreate(re.getNewParent().findChild(name).getPath());
+        }
       }
     }
   }

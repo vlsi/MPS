@@ -1,99 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <root nodeId="8474613039627889281">
-    <nodeInfo nodeId="8474613039627889420" fileName="EventProcessor.java" startLine="19" startPosition="51" endLine="20" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8474613039627889415" fileName="EventProcessor.java" startLine="22" startPosition="42" endLine="23" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8474613039627889410" fileName="EventProcessor.java" startLine="25" startPosition="44" endLine="26" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8474613039627889405" fileName="EventProcessor.java" startLine="28" startPosition="44" endLine="29" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8474613039627889400" fileName="EventProcessor.java" startLine="31" startPosition="42" endLine="32" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8474613039627889395" fileName="EventProcessor.java" startLine="34" startPosition="52" endLine="35" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8474613039627889322" fileName="EventProcessor.java" startLine="37" startPosition="47" endLine="38" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8474613039627889390" fileName="EventProcessor.java" startLine="39" startPosition="75" endLine="40" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8474613039627889385" fileName="EventProcessor.java" startLine="42" startPosition="66" endLine="43" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8474613039627889380" fileName="EventProcessor.java" startLine="45" startPosition="68" endLine="46" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8474613039627889375" fileName="EventProcessor.java" startLine="48" startPosition="68" endLine="49" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8474613039627889370" fileName="EventProcessor.java" startLine="51" startPosition="66" endLine="52" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8474613039627889365" fileName="EventProcessor.java" startLine="54" startPosition="76" endLine="55" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8474613039627889478" fileName="EventProcessor.java" startLine="78" startPosition="62" endLine="79" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8474613039627889282" fileName="EventProcessor.java" startLine="14" startPosition="43" endLine="16" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="EventProcessor#()V" />
-    <nodeInfo nodeId="8474613039627889358" fileName="EventProcessor.java" startLine="53" startPosition="12" endLine="56" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8474613039627889424" fileName="EventProcessor.java" startLine="59" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="processContentChanged#(Lcom/intellij/openapi/vfs/newvfs/events/VFileEvent;Ljetbrains/mps/ide/platform/watching/ReloadSession;)V" />
-    <nodeInfo nodeId="8474613039627889432" fileName="EventProcessor.java" startLine="62" startPosition="0" endLine="65" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="processCopy#(Lcom/intellij/openapi/vfs/newvfs/events/VFileEvent;Ljetbrains/mps/ide/platform/watching/ReloadSession;)V" />
-    <nodeInfo nodeId="8474613039627889440" fileName="EventProcessor.java" startLine="65" startPosition="0" endLine="68" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="processCreate#(Lcom/intellij/openapi/vfs/newvfs/events/VFileEvent;Ljetbrains/mps/ide/platform/watching/ReloadSession;)V" />
-    <nodeInfo nodeId="8474613039627889448" fileName="EventProcessor.java" startLine="68" startPosition="0" endLine="71" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="processDelete#(Lcom/intellij/openapi/vfs/newvfs/events/VFileEvent;Ljetbrains/mps/ide/platform/watching/ReloadSession;)V" />
-    <nodeInfo nodeId="8474613039627889456" fileName="EventProcessor.java" startLine="71" startPosition="0" endLine="74" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="processMove#(Lcom/intellij/openapi/vfs/newvfs/events/VFileEvent;Ljetbrains/mps/ide/platform/watching/ReloadSession;)V" />
-    <nodeInfo nodeId="8474613039627889464" fileName="EventProcessor.java" startLine="74" startPosition="0" endLine="77" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="processPropertyChanged#(Lcom/intellij/openapi/vfs/newvfs/events/VFileEvent;Ljetbrains/mps/ide/platform/watching/ReloadSession;)V" />
-    <nodeInfo nodeId="8474613039627889472" fileName="EventProcessor.java" startLine="77" startPosition="0" endLine="81" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="refreshAndGetVFile#(Lcom/intellij/openapi/vfs/newvfs/events/VFileEvent;)Lcom/intellij/openapi/vfs/VirtualFile;" />
-    <nodeInfo nodeId="8474613039627889352" fileName="EventProcessor.java" startLine="50" startPosition="12" endLine="56" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8474613039627889346" fileName="EventProcessor.java" startLine="47" startPosition="12" endLine="56" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8474613039627889340" fileName="EventProcessor.java" startLine="44" startPosition="12" endLine="56" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8474613039627889334" fileName="EventProcessor.java" startLine="41" startPosition="12" endLine="56" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8474613039627889328" fileName="EventProcessor.java" startLine="38" startPosition="71" endLine="56" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8474613039627889317" fileName="EventProcessor.java" startLine="36" startPosition="10" endLine="57" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8474613039627889313" fileName="EventProcessor.java" startLine="33" startPosition="10" endLine="57" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8474613039627889309" fileName="EventProcessor.java" startLine="30" startPosition="10" endLine="57" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8474613039627889305" fileName="EventProcessor.java" startLine="27" startPosition="10" endLine="57" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8474613039627889301" fileName="EventProcessor.java" startLine="24" startPosition="10" endLine="57" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8474613039627889297" fileName="EventProcessor.java" startLine="21" startPosition="10" endLine="57" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8474613039627889293" fileName="EventProcessor.java" startLine="18" startPosition="76" endLine="57" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8474613039627889285" fileName="EventProcessor.java" startLine="17" startPosition="0" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="process#(Lcom/intellij/openapi/vfs/newvfs/events/VFileEvent;Ljetbrains/mps/ide/platform/watching/ReloadSession;)V" />
-    <scopeInfo nodeId="8474613039627889284" fileName="EventProcessor.java" startLine="15" startPosition="32" endLine="15" endPosition="32" />
-    <scopeInfo nodeId="8474613039627889431" fileName="EventProcessor.java" startLine="60" startPosition="87" endLine="60" endPosition="87" />
-    <scopeInfo nodeId="8474613039627889439" fileName="EventProcessor.java" startLine="63" startPosition="77" endLine="63" endPosition="77" />
-    <scopeInfo nodeId="8474613039627889447" fileName="EventProcessor.java" startLine="66" startPosition="79" endLine="66" endPosition="79" />
-    <scopeInfo nodeId="8474613039627889455" fileName="EventProcessor.java" startLine="69" startPosition="79" endLine="69" endPosition="79" />
-    <scopeInfo nodeId="8474613039627889463" fileName="EventProcessor.java" startLine="72" startPosition="77" endLine="72" endPosition="77" />
-    <scopeInfo nodeId="8474613039627889471" fileName="EventProcessor.java" startLine="75" startPosition="88" endLine="75" endPosition="88" />
-    <scopeInfo nodeId="8474613039627889419" fileName="EventProcessor.java" startLine="19" startPosition="51" endLine="20" endPosition="50" />
-    <scopeInfo nodeId="8474613039627889414" fileName="EventProcessor.java" startLine="22" startPosition="42" endLine="23" endPosition="40" />
-    <scopeInfo nodeId="8474613039627889409" fileName="EventProcessor.java" startLine="25" startPosition="44" endLine="26" endPosition="42" />
-    <scopeInfo nodeId="8474613039627889404" fileName="EventProcessor.java" startLine="28" startPosition="44" endLine="29" endPosition="42" />
-    <scopeInfo nodeId="8474613039627889399" fileName="EventProcessor.java" startLine="31" startPosition="42" endLine="32" endPosition="40" />
-    <scopeInfo nodeId="8474613039627889394" fileName="EventProcessor.java" startLine="34" startPosition="52" endLine="35" endPosition="51" />
-    <scopeInfo nodeId="8474613039627889389" fileName="EventProcessor.java" startLine="39" startPosition="75" endLine="40" endPosition="52" />
-    <scopeInfo nodeId="8474613039627889384" fileName="EventProcessor.java" startLine="42" startPosition="66" endLine="43" endPosition="42" />
-    <scopeInfo nodeId="8474613039627889379" fileName="EventProcessor.java" startLine="45" startPosition="68" endLine="46" endPosition="44" />
-    <scopeInfo nodeId="8474613039627889374" fileName="EventProcessor.java" startLine="48" startPosition="68" endLine="49" endPosition="44" />
-    <scopeInfo nodeId="8474613039627889369" fileName="EventProcessor.java" startLine="51" startPosition="66" endLine="52" endPosition="42" />
-    <scopeInfo nodeId="8474613039627889364" fileName="EventProcessor.java" startLine="54" startPosition="76" endLine="55" endPosition="53" />
-    <scopeInfo nodeId="8474613039627889477" fileName="EventProcessor.java" startLine="78" startPosition="62" endLine="79" endPosition="75" />
-    <scopeInfo nodeId="8474613039627889282" fileName="EventProcessor.java" startLine="14" startPosition="43" endLine="16" endPosition="3" />
-    <scopeInfo nodeId="8474613039627889424" fileName="EventProcessor.java" startLine="59" startPosition="0" endLine="62" endPosition="0">
-      <varInfo nodeId="8474613039627889427" varName="event" />
-      <varInfo nodeId="8474613039627889429" varName="reloadSession" />
+    <nodeInfo nodeId="9045182831066294621" fileName="EventProcessor.java" startLine="8" startPosition="43" endLine="9" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="fs" />
+    <nodeInfo nodeId="9045182831066365359" fileName="EventProcessor.java" startLine="9" startPosition="33" endLine="10" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="s" />
+    <nodeInfo nodeId="9045182831066294624" fileName="EventProcessor.java" startLine="12" startPosition="64" endLine="13" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="9045182831066365362" fileName="EventProcessor.java" startLine="13" startPosition="17" endLine="14" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="9045182831066294509" fileName="EventProcessor.java" startLine="25" startPosition="57" endLine="26" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="9045182831066367115" fileName="EventProcessor.java" startLine="16" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accepts#(Ljava/lang/String;)Z" />
+    <nodeInfo nodeId="9045182831066365401" fileName="EventProcessor.java" startLine="18" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="processDelete#(Ljava/lang/String;)V" />
+    <nodeInfo nodeId="9045182831066365478" fileName="EventProcessor.java" startLine="20" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="processCreate#(Ljava/lang/String;)V" />
+    <nodeInfo nodeId="9045182831066366115" fileName="EventProcessor.java" startLine="22" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="processContentChanged#(Ljava/lang/String;)V" />
+    <nodeInfo nodeId="8474613039627890653" fileName="EventProcessor.java" startLine="11" startPosition="0" endLine="15" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="EventProcessor#(Lcom/intellij/openapi/vfs/VirtualFileSystem;Ljetbrains/mps/ide/platform/watching/ReloadSession;)V" />
+    <nodeInfo nodeId="8474613039627889472" fileName="EventProcessor.java" startLine="24" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="refreshAndGetVFile#(Ljava/lang/String;)Lcom/intellij/openapi/vfs/VirtualFile;" />
+    <scopeInfo nodeId="9045182831066294508" fileName="EventProcessor.java" startLine="25" startPosition="57" endLine="26" endPosition="45" />
+    <scopeInfo nodeId="8474613039627890655" fileName="EventProcessor.java" startLine="12" startPosition="64" endLine="14" endPosition="15" />
+    <scopeInfo nodeId="9045182831066367115" fileName="EventProcessor.java" startLine="16" startPosition="0" endLine="18" endPosition="0">
+      <varInfo nodeId="9045182831066367120" varName="path" />
     </scopeInfo>
-    <scopeInfo nodeId="8474613039627889432" fileName="EventProcessor.java" startLine="62" startPosition="0" endLine="65" endPosition="0">
-      <varInfo nodeId="8474613039627889435" varName="event" />
-      <varInfo nodeId="8474613039627889437" varName="reloadSession" />
+    <scopeInfo nodeId="9045182831066365401" fileName="EventProcessor.java" startLine="18" startPosition="0" endLine="20" endPosition="0">
+      <varInfo nodeId="9045182831066365404" varName="path" />
     </scopeInfo>
-    <scopeInfo nodeId="8474613039627889440" fileName="EventProcessor.java" startLine="65" startPosition="0" endLine="68" endPosition="0">
-      <varInfo nodeId="8474613039627889443" varName="event" />
-      <varInfo nodeId="8474613039627889445" varName="reloadSession" />
+    <scopeInfo nodeId="9045182831066365478" fileName="EventProcessor.java" startLine="20" startPosition="0" endLine="22" endPosition="0">
+      <varInfo nodeId="9045182831066365481" varName="path" />
     </scopeInfo>
-    <scopeInfo nodeId="8474613039627889448" fileName="EventProcessor.java" startLine="68" startPosition="0" endLine="71" endPosition="0">
-      <varInfo nodeId="8474613039627889451" varName="event" />
-      <varInfo nodeId="8474613039627889453" varName="reloadSession" />
+    <scopeInfo nodeId="9045182831066366115" fileName="EventProcessor.java" startLine="22" startPosition="0" endLine="24" endPosition="0">
+      <varInfo nodeId="9045182831066366118" varName="path" />
     </scopeInfo>
-    <scopeInfo nodeId="8474613039627889456" fileName="EventProcessor.java" startLine="71" startPosition="0" endLine="74" endPosition="0">
-      <varInfo nodeId="8474613039627889459" varName="event" />
-      <varInfo nodeId="8474613039627889461" varName="reloadSession" />
+    <scopeInfo nodeId="8474613039627890653" fileName="EventProcessor.java" startLine="11" startPosition="0" endLine="15" endPosition="3">
+      <varInfo nodeId="9045182831066294619" varName="fs" />
+      <varInfo nodeId="9045182831066365356" varName="s" />
     </scopeInfo>
-    <scopeInfo nodeId="8474613039627889464" fileName="EventProcessor.java" startLine="74" startPosition="0" endLine="77" endPosition="0">
-      <varInfo nodeId="8474613039627889467" varName="event" />
-      <varInfo nodeId="8474613039627889469" varName="reloadSession" />
+    <scopeInfo nodeId="8474613039627889472" fileName="EventProcessor.java" startLine="24" startPosition="0" endLine="28" endPosition="0">
+      <varInfo nodeId="9045182831066294603" varName="path" />
     </scopeInfo>
-    <scopeInfo nodeId="8474613039627889472" fileName="EventProcessor.java" startLine="77" startPosition="0" endLine="81" endPosition="0">
-      <varInfo nodeId="8474613039627889475" varName="event" />
-    </scopeInfo>
-    <scopeInfo nodeId="8474613039627889321" fileName="EventProcessor.java" startLine="37" startPosition="47" endLine="56" endPosition="7">
-      <varInfo nodeId="8474613039627889323" varName="eventDecorator" />
-    </scopeInfo>
-    <scopeInfo nodeId="8474613039627889292" fileName="EventProcessor.java" startLine="18" startPosition="76" endLine="57" endPosition="5" />
-    <scopeInfo nodeId="8474613039627889285" fileName="EventProcessor.java" startLine="17" startPosition="0" endLine="59" endPosition="0">
-      <varInfo nodeId="8474613039627889288" varName="event" />
-      <varInfo nodeId="8474613039627889290" varName="reloadSession" />
-    </scopeInfo>
-    <unitInfo nodeId="8474613039627889281" fileName="EventProcessor.java" startLine="14" startPosition="0" endLine="82" endPosition="0" unitName="jetbrains.mps.ide.platform.watching.EventProcessor" />
+    <unitInfo nodeId="8474613039627889281" fileName="EventProcessor.java" startLine="8" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.ide.platform.watching.EventProcessor" />
   </root>
   <root nodeId="8474613039627889602">
     <nodeInfo nodeId="8474613039627889612" fileName="SignificantRoots.java" startLine="15" startPosition="48" endLine="16" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -343,84 +283,70 @@
     <unitInfo nodeId="8474613039627890008" fileName="ReloadSession.java" startLine="165" startPosition="22" endLine="169" endPosition="9" unitName="jetbrains.mps.ide.platform.watching.ReloadSession$7" />
   </root>
   <root nodeId="8474613039627890132">
-    <nodeInfo nodeId="8474613039627890134" fileName="ModuleFileProcessor.java" startLine="14" startPosition="62" endLine="15" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="INSTANCE" />
-    <nodeInfo nodeId="8474613039627890161" fileName="ModuleFileProcessor.java" startLine="22" startPosition="53" endLine="23" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8474613039627890177" fileName="ModuleFileProcessor.java" startLine="24" startPosition="57" endLine="25" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8474613039627890191" fileName="ModuleFileProcessor.java" startLine="31" startPosition="77" endLine="32" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8474613039627890204" fileName="ModuleFileProcessor.java" startLine="36" startPosition="77" endLine="37" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8474613039627890217" fileName="ModuleFileProcessor.java" startLine="41" startPosition="79" endLine="42" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8474613039627890227" fileName="ModuleFileProcessor.java" startLine="43" startPosition="25" endLine="44" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8474613039627890237" fileName="ModuleFileProcessor.java" startLine="45" startPosition="26" endLine="46" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8474613039627890238" fileName="ModuleFileProcessor.java" startLine="47" startPosition="7" endLine="48" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8474613039627890252" fileName="ModuleFileProcessor.java" startLine="53" startPosition="79" endLine="54" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8474613039627890262" fileName="ModuleFileProcessor.java" startLine="55" startPosition="25" endLine="56" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8474613039627890146" fileName="ModuleFileProcessor.java" startLine="60" startPosition="51" endLine="61" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8474613039627890286" fileName="ModuleFileProcessor.java" startLine="66" startPosition="32" endLine="67" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8474613039627890139" fileName="ModuleFileProcessor.java" startLine="16" startPosition="0" endLine="18" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ModuleFileProcessor#()V" />
-    <nodeInfo nodeId="8474613039627890166" fileName="ModuleFileProcessor.java" startLine="23" startPosition="67" endLine="26" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8474613039627890232" fileName="ModuleFileProcessor.java" startLine="44" startPosition="52" endLine="47" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8474613039627890257" fileName="ModuleFileProcessor.java" startLine="54" startPosition="65" endLine="57" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8474613039627890142" fileName="ModuleFileProcessor.java" startLine="59" startPosition="0" endLine="63" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getInstance#()Ljetbrains/mps/ide/platform/watching/ModuleFileProcessor;" />
-    <nodeInfo nodeId="8474613039627890282" fileName="ModuleFileProcessor.java" startLine="65" startPosition="75" endLine="69" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="compute#()Ljetbrains/mps/project/IModule;" />
-    <nodeInfo nodeId="8474613039627890183" fileName="ModuleFileProcessor.java" startLine="29" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="processCopy#(Lcom/intellij/openapi/vfs/newvfs/events/VFileEvent;Ljetbrains/mps/ide/platform/watching/ReloadSession;)V" />
-    <nodeInfo nodeId="8474613039627890196" fileName="ModuleFileProcessor.java" startLine="34" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="processMove#(Lcom/intellij/openapi/vfs/newvfs/events/VFileEvent;Ljetbrains/mps/ide/platform/watching/ReloadSession;)V" />
-    <nodeInfo nodeId="8474613039627890274" fileName="ModuleFileProcessor.java" startLine="64" startPosition="66" endLine="69" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8474613039627890156" fileName="ModuleFileProcessor.java" startLine="21" startPosition="87" endLine="27" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8474613039627890222" fileName="ModuleFileProcessor.java" startLine="42" startPosition="65" endLine="49" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8474613039627890244" fileName="ModuleFileProcessor.java" startLine="51" startPosition="0" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="processDelete#(Lcom/intellij/openapi/vfs/newvfs/events/VFileEvent;Ljetbrains/mps/ide/platform/watching/ReloadSession;)V" />
-    <nodeInfo nodeId="8474613039627890268" fileName="ModuleFileProcessor.java" startLine="63" startPosition="0" endLine="71" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getModuleByEvent#(Lcom/intellij/openapi/vfs/newvfs/events/VFileEvent;)Ljetbrains/mps/project/IModule;" />
-    <nodeInfo nodeId="8474613039627890148" fileName="ModuleFileProcessor.java" startLine="19" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="processContentChanged#(Lcom/intellij/openapi/vfs/newvfs/events/VFileEvent;Ljetbrains/mps/ide/platform/watching/ReloadSession;)V" />
-    <nodeInfo nodeId="8474613039627890209" fileName="ModuleFileProcessor.java" startLine="39" startPosition="0" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="processCreate#(Lcom/intellij/openapi/vfs/newvfs/events/VFileEvent;Ljetbrains/mps/ide/platform/watching/ReloadSession;)V" />
-    <scopeInfo nodeId="8474613039627890141" fileName="ModuleFileProcessor.java" startLine="17" startPosition="37" endLine="17" endPosition="37" />
-    <scopeInfo nodeId="8474613039627890176" fileName="ModuleFileProcessor.java" startLine="24" startPosition="57" endLine="25" endPosition="47" />
-    <scopeInfo nodeId="8474613039627890190" fileName="ModuleFileProcessor.java" startLine="31" startPosition="77" endLine="32" endPosition="40" />
-    <scopeInfo nodeId="8474613039627890203" fileName="ModuleFileProcessor.java" startLine="36" startPosition="77" endLine="37" endPosition="40" />
-    <scopeInfo nodeId="8474613039627890236" fileName="ModuleFileProcessor.java" startLine="45" startPosition="26" endLine="46" endPosition="15" />
-    <scopeInfo nodeId="8474613039627890261" fileName="ModuleFileProcessor.java" startLine="55" startPosition="25" endLine="56" endPosition="45" />
-    <scopeInfo nodeId="8474613039627890145" fileName="ModuleFileProcessor.java" startLine="60" startPosition="51" endLine="61" endPosition="20" />
-    <scopeInfo nodeId="8474613039627890285" fileName="ModuleFileProcessor.java" startLine="66" startPosition="32" endLine="67" endPosition="122" />
-    <scopeInfo nodeId="8474613039627890139" fileName="ModuleFileProcessor.java" startLine="16" startPosition="0" endLine="18" endPosition="3" />
-    <scopeInfo nodeId="8474613039627890160" fileName="ModuleFileProcessor.java" startLine="22" startPosition="53" endLine="26" endPosition="7">
-      <varInfo nodeId="8474613039627890162" varName="module" />
+    <nodeInfo nodeId="9045182831066365715" fileName="ModuleFileProcessor.java" startLine="15" startPosition="69" endLine="16" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="8474613039627890252" fileName="ModuleFileProcessor.java" startLine="20" startPosition="45" endLine="21" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8474613039627890262" fileName="ModuleFileProcessor.java" startLine="22" startPosition="25" endLine="23" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="9045182831066367139" fileName="ModuleFileProcessor.java" startLine="27" startPosition="42" endLine="28" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8474613039627890217" fileName="ModuleFileProcessor.java" startLine="32" startPosition="45" endLine="33" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8474613039627890227" fileName="ModuleFileProcessor.java" startLine="34" startPosition="25" endLine="35" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8474613039627890237" fileName="ModuleFileProcessor.java" startLine="36" startPosition="26" endLine="37" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8474613039627890238" fileName="ModuleFileProcessor.java" startLine="38" startPosition="7" endLine="39" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8474613039627890161" fileName="ModuleFileProcessor.java" startLine="44" startPosition="53" endLine="45" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8474613039627890177" fileName="ModuleFileProcessor.java" startLine="46" startPosition="55" endLine="47" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8474613039627890286" fileName="ModuleFileProcessor.java" startLine="53" startPosition="32" endLine="54" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="9045182831066365708" fileName="ModuleFileProcessor.java" startLine="14" startPosition="62" endLine="17" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ModuleFileProcessor#(Lcom/intellij/openapi/vfs/VirtualFileSystem;Ljetbrains/mps/ide/platform/watching/ReloadSession;)V" />
+    <nodeInfo nodeId="8474613039627890257" fileName="ModuleFileProcessor.java" startLine="21" startPosition="63" endLine="24" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8474613039627890232" fileName="ModuleFileProcessor.java" startLine="35" startPosition="51" endLine="38" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8474613039627890166" fileName="ModuleFileProcessor.java" startLine="45" startPosition="63" endLine="48" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="9045182831066367131" fileName="ModuleFileProcessor.java" startLine="26" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accepts#(Ljava/lang/String;)Z" />
+    <nodeInfo nodeId="8474613039627890282" fileName="ModuleFileProcessor.java" startLine="52" startPosition="75" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="compute#()Ljetbrains/mps/project/IModule;" />
+    <nodeInfo nodeId="8474613039627890274" fileName="ModuleFileProcessor.java" startLine="51" startPosition="60" endLine="56" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8474613039627890222" fileName="ModuleFileProcessor.java" startLine="33" startPosition="63" endLine="40" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="9045182831066365153" fileName="ModuleFileProcessor.java" startLine="18" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="processDelete#(Ljava/lang/String;)V" />
+    <nodeInfo nodeId="8474613039627890148" fileName="ModuleFileProcessor.java" startLine="42" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="processContentChanged#(Ljava/lang/String;)V" />
+    <nodeInfo nodeId="8474613039627890268" fileName="ModuleFileProcessor.java" startLine="50" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getModuleByPath#(Ljava/lang/String;)Ljetbrains/mps/project/IModule;" />
+    <nodeInfo nodeId="9045182831066365201" fileName="ModuleFileProcessor.java" startLine="30" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="processCreate#(Ljava/lang/String;)V" />
+    <scopeInfo nodeId="9045182831066365714" fileName="ModuleFileProcessor.java" startLine="15" startPosition="69" endLine="16" endPosition="17" />
+    <scopeInfo nodeId="8474613039627890261" fileName="ModuleFileProcessor.java" startLine="22" startPosition="25" endLine="23" endPosition="33" />
+    <scopeInfo nodeId="9045182831066367136" fileName="ModuleFileProcessor.java" startLine="27" startPosition="42" endLine="28" endPosition="61" />
+    <scopeInfo nodeId="8474613039627890236" fileName="ModuleFileProcessor.java" startLine="36" startPosition="26" endLine="37" endPosition="15" />
+    <scopeInfo nodeId="8474613039627890176" fileName="ModuleFileProcessor.java" startLine="46" startPosition="55" endLine="47" endPosition="33" />
+    <scopeInfo nodeId="8474613039627890285" fileName="ModuleFileProcessor.java" startLine="53" startPosition="32" endLine="54" endPosition="111" />
+    <scopeInfo nodeId="9045182831066365708" fileName="ModuleFileProcessor.java" startLine="14" startPosition="62" endLine="17" endPosition="3">
+      <varInfo nodeId="9045182831066365709" varName="fs" />
+      <varInfo nodeId="9045182831066365711" varName="s" />
     </scopeInfo>
-    <scopeInfo nodeId="8474613039627890251" fileName="ModuleFileProcessor.java" startLine="53" startPosition="79" endLine="57" endPosition="5">
+    <scopeInfo nodeId="9045182831066365160" fileName="ModuleFileProcessor.java" startLine="20" startPosition="45" endLine="24" endPosition="5">
       <varInfo nodeId="8474613039627890253" varName="module" />
     </scopeInfo>
-    <scopeInfo nodeId="8474613039627890142" fileName="ModuleFileProcessor.java" startLine="59" startPosition="0" endLine="63" endPosition="0" />
-    <scopeInfo nodeId="8474613039627890282" fileName="ModuleFileProcessor.java" startLine="65" startPosition="75" endLine="69" endPosition="0" />
-    <scopeInfo nodeId="8474613039627890183" fileName="ModuleFileProcessor.java" startLine="29" startPosition="0" endLine="34" endPosition="0">
-      <varInfo nodeId="8474613039627890186" varName="event" />
-      <varInfo nodeId="8474613039627890188" varName="reloadSession" />
+    <scopeInfo nodeId="9045182831066367131" fileName="ModuleFileProcessor.java" startLine="26" startPosition="0" endLine="30" endPosition="0">
+      <varInfo nodeId="9045182831066367134" varName="path" />
     </scopeInfo>
-    <scopeInfo nodeId="8474613039627890196" fileName="ModuleFileProcessor.java" startLine="34" startPosition="0" endLine="39" endPosition="0">
-      <varInfo nodeId="8474613039627890199" varName="event" />
-      <varInfo nodeId="8474613039627890201" varName="reloadSession" />
+    <scopeInfo nodeId="8474613039627890155" fileName="ModuleFileProcessor.java" startLine="44" startPosition="53" endLine="48" endPosition="5">
+      <varInfo nodeId="8474613039627890162" varName="module" />
     </scopeInfo>
-    <scopeInfo nodeId="8474613039627890226" fileName="ModuleFileProcessor.java" startLine="43" startPosition="25" endLine="48" endPosition="44">
+    <scopeInfo nodeId="8474613039627890282" fileName="ModuleFileProcessor.java" startLine="52" startPosition="75" endLine="56" endPosition="0" />
+    <scopeInfo nodeId="8474613039627890226" fileName="ModuleFileProcessor.java" startLine="34" startPosition="25" endLine="39" endPosition="32">
       <varInfo nodeId="8474613039627890228" varName="vfile" />
     </scopeInfo>
-    <scopeInfo nodeId="8474613039627890273" fileName="ModuleFileProcessor.java" startLine="64" startPosition="66" endLine="69" endPosition="7" />
-    <scopeInfo nodeId="8474613039627890155" fileName="ModuleFileProcessor.java" startLine="21" startPosition="87" endLine="27" endPosition="5" />
-    <scopeInfo nodeId="8474613039627890216" fileName="ModuleFileProcessor.java" startLine="41" startPosition="79" endLine="49" endPosition="5">
+    <scopeInfo nodeId="8474613039627890273" fileName="ModuleFileProcessor.java" startLine="51" startPosition="60" endLine="56" endPosition="7" />
+    <scopeInfo nodeId="9045182831066365153" fileName="ModuleFileProcessor.java" startLine="18" startPosition="0" endLine="26" endPosition="0">
+      <varInfo nodeId="9045182831066365156" varName="path" />
+    </scopeInfo>
+    <scopeInfo nodeId="9045182831066365208" fileName="ModuleFileProcessor.java" startLine="32" startPosition="45" endLine="40" endPosition="5">
       <varInfo nodeId="8474613039627890218" varName="module" />
     </scopeInfo>
-    <scopeInfo nodeId="8474613039627890244" fileName="ModuleFileProcessor.java" startLine="51" startPosition="0" endLine="59" endPosition="0">
-      <varInfo nodeId="8474613039627890247" varName="event" />
-      <varInfo nodeId="8474613039627890249" varName="reloadSession" />
+    <scopeInfo nodeId="8474613039627890148" fileName="ModuleFileProcessor.java" startLine="42" startPosition="0" endLine="50" endPosition="0">
+      <varInfo nodeId="8474613039627890151" varName="path" />
     </scopeInfo>
-    <scopeInfo nodeId="8474613039627890268" fileName="ModuleFileProcessor.java" startLine="63" startPosition="0" endLine="71" endPosition="0">
-      <varInfo nodeId="8474613039627890271" varName="event" />
+    <scopeInfo nodeId="8474613039627890268" fileName="ModuleFileProcessor.java" startLine="50" startPosition="0" endLine="58" endPosition="0">
+      <varInfo nodeId="8474613039627890271" varName="path" />
     </scopeInfo>
-    <scopeInfo nodeId="8474613039627890148" fileName="ModuleFileProcessor.java" startLine="19" startPosition="0" endLine="29" endPosition="0">
-      <varInfo nodeId="8474613039627890151" varName="event" />
-      <varInfo nodeId="8474613039627890153" varName="reloadSession" />
+    <scopeInfo nodeId="9045182831066365201" fileName="ModuleFileProcessor.java" startLine="30" startPosition="0" endLine="42" endPosition="0">
+      <varInfo nodeId="9045182831066365204" varName="path" />
     </scopeInfo>
-    <scopeInfo nodeId="8474613039627890209" fileName="ModuleFileProcessor.java" startLine="39" startPosition="0" endLine="51" endPosition="0">
-      <varInfo nodeId="8474613039627890212" varName="event" />
-      <varInfo nodeId="8474613039627890214" varName="reloadSession" />
-    </scopeInfo>
-    <unitInfo nodeId="8474613039627890132" fileName="ModuleFileProcessor.java" startLine="14" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.ide.platform.watching.ModuleFileProcessor" />
-    <unitInfo nodeId="8474613039627890280" fileName="ModuleFileProcessor.java" startLine="65" startPosition="52" endLine="69" endPosition="5" unitName="jetbrains.mps.ide.platform.watching.ModuleFileProcessor$1" />
+    <unitInfo nodeId="8474613039627890132" fileName="ModuleFileProcessor.java" startLine="14" startPosition="0" endLine="59" endPosition="0" unitName="jetbrains.mps.ide.platform.watching.ModuleFileProcessor" />
+    <unitInfo nodeId="8474613039627890280" fileName="ModuleFileProcessor.java" startLine="52" startPosition="52" endLine="56" endPosition="5" unitName="jetbrains.mps.ide.platform.watching.ModuleFileProcessor$1" />
   </root>
   <root nodeId="8474613039627890296">
     <nodeInfo nodeId="8474613039627890324" fileName="ModelFocusSynchronizer.java" startLine="37" startPosition="29" endLine="38" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -505,146 +431,65 @@
     <unitInfo nodeId="8474613039627890308" fileName="ModelFocusSynchronizer.java" startLine="31" startPosition="38" endLine="72" endPosition="5" unitName="jetbrains.mps.ide.platform.watching.ModelFocusSynchronizer$1" />
     <unitInfo nodeId="8474613039627890322" fileName="ModelFocusSynchronizer.java" startLine="36" startPosition="48" endLine="70" endPosition="9" unitName="jetbrains.mps.ide.platform.watching.ModelFocusSynchronizer$2" />
   </root>
-  <root nodeId="8474613039627890471">
-    <nodeInfo nodeId="8474613039627890474" fileName="VFileEventDecorator.java" startLine="9" startPosition="53" endLine="10" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myPath" />
-    <nodeInfo nodeId="8474613039627890477" fileName="VFileEventDecorator.java" startLine="10" startPosition="30" endLine="11" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myEvent" />
-    <nodeInfo nodeId="8474613039627890488" fileName="VFileEventDecorator.java" startLine="13" startPosition="61" endLine="14" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="8474613039627890495" fileName="VFileEventDecorator.java" startLine="14" startPosition="55" endLine="15" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8474613039627890499" fileName="VFileEventDecorator.java" startLine="15" startPosition="20" endLine="16" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8474613039627890507" fileName="VFileEventDecorator.java" startLine="19" startPosition="34" endLine="20" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8474613039627890513" fileName="VFileEventDecorator.java" startLine="23" startPosition="27" endLine="24" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8474613039627890519" fileName="VFileEventDecorator.java" startLine="27" startPosition="32" endLine="28" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8474613039627890527" fileName="VFileEventDecorator.java" startLine="31" startPosition="44" endLine="32" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8474613039627890535" fileName="VFileEventDecorator.java" startLine="35" startPosition="28" endLine="36" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8474613039627890550" fileName="VFileEventDecorator.java" startLine="40" startPosition="20" endLine="41" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8474613039627890563" fileName="VFileEventDecorator.java" startLine="43" startPosition="50" endLine="44" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8474613039627890565" fileName="VFileEventDecorator.java" startLine="45" startPosition="5" endLine="46" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8474613039627890589" fileName="VFileEventDecorator.java" startLine="50" startPosition="8" endLine="51" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8474613039627890609" fileName="VFileEventDecorator.java" startLine="56" startPosition="8" endLine="57" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8474613039627890611" fileName="VFileEventDecorator.java" startLine="58" startPosition="5" endLine="59" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8474613039627890644" fileName="VFileEventDecorator.java" startLine="70" startPosition="7" endLine="71" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8474613039627890545" fileName="VFileEventDecorator.java" startLine="39" startPosition="35" endLine="42" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8474613039627890552" fileName="VFileEventDecorator.java" startLine="42" startPosition="5" endLine="45" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8474613039627890503" fileName="VFileEventDecorator.java" startLine="18" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="undecorate#()Lcom/intellij/openapi/vfs/newvfs/events/VFileEvent;" />
-    <nodeInfo nodeId="8474613039627890509" fileName="VFileEventDecorator.java" startLine="22" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPath#()Ljava/lang/String;" />
-    <nodeInfo nodeId="8474613039627890515" fileName="VFileEventDecorator.java" startLine="26" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getFile#()Lcom/intellij/openapi/vfs/VirtualFile;" />
-    <nodeInfo nodeId="8474613039627890523" fileName="VFileEventDecorator.java" startLine="30" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getFileSystem#()Lcom/intellij/openapi/vfs/VirtualFileSystem;" />
-    <nodeInfo nodeId="8474613039627890531" fileName="VFileEventDecorator.java" startLine="34" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isValid#()Z" />
-    <nodeInfo nodeId="8474613039627890617" fileName="VFileEventDecorator.java" startLine="62" startPosition="25" endLine="66" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8474613039627890628" fileName="VFileEventDecorator.java" startLine="66" startPosition="6" endLine="70" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8474613039627890480" fileName="VFileEventDecorator.java" startLine="12" startPosition="0" endLine="17" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="VFileEventDecorator#(Lcom/intellij/openapi/vfs/newvfs/events/VFileEvent;Ljava/lang/String;)V" />
-    <nodeInfo nodeId="8474613039627890571" fileName="VFileEventDecorator.java" startLine="46" startPosition="55" endLine="52" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8474613039627890591" fileName="VFileEventDecorator.java" startLine="52" startPosition="5" endLine="58" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8474613039627890613" fileName="VFileEventDecorator.java" startLine="61" startPosition="0" endLine="73" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hashCode#()I" />
-    <nodeInfo nodeId="8474613039627890539" fileName="VFileEventDecorator.java" startLine="38" startPosition="0" endLine="61" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="equals#(Ljava/lang/Object;)Z" />
-    <scopeInfo nodeId="8474613039627890506" fileName="VFileEventDecorator.java" startLine="19" startPosition="34" endLine="20" endPosition="19" />
-    <scopeInfo nodeId="8474613039627890512" fileName="VFileEventDecorator.java" startLine="23" startPosition="27" endLine="24" endPosition="18" />
-    <scopeInfo nodeId="8474613039627890518" fileName="VFileEventDecorator.java" startLine="27" startPosition="32" endLine="28" endPosition="29" />
-    <scopeInfo nodeId="8474613039627890526" fileName="VFileEventDecorator.java" startLine="31" startPosition="44" endLine="32" endPosition="35" />
-    <scopeInfo nodeId="8474613039627890534" fileName="VFileEventDecorator.java" startLine="35" startPosition="28" endLine="36" endPosition="29" />
-    <scopeInfo nodeId="8474613039627890549" fileName="VFileEventDecorator.java" startLine="40" startPosition="20" endLine="41" endPosition="18" />
-    <scopeInfo nodeId="8474613039627890562" fileName="VFileEventDecorator.java" startLine="43" startPosition="50" endLine="44" endPosition="19" />
-    <scopeInfo nodeId="8474613039627890588" fileName="VFileEventDecorator.java" startLine="50" startPosition="8" endLine="51" endPosition="19" />
-    <scopeInfo nodeId="8474613039627890608" fileName="VFileEventDecorator.java" startLine="56" startPosition="8" endLine="57" endPosition="19" />
-    <scopeInfo nodeId="8474613039627890487" fileName="VFileEventDecorator.java" startLine="13" startPosition="61" endLine="16" endPosition="18" />
-    <scopeInfo nodeId="8474613039627890503" fileName="VFileEventDecorator.java" startLine="18" startPosition="0" endLine="22" endPosition="0" />
-    <scopeInfo nodeId="8474613039627890509" fileName="VFileEventDecorator.java" startLine="22" startPosition="0" endLine="26" endPosition="0" />
-    <scopeInfo nodeId="8474613039627890515" fileName="VFileEventDecorator.java" startLine="26" startPosition="0" endLine="30" endPosition="0" />
-    <scopeInfo nodeId="8474613039627890523" fileName="VFileEventDecorator.java" startLine="30" startPosition="0" endLine="34" endPosition="0" />
-    <scopeInfo nodeId="8474613039627890531" fileName="VFileEventDecorator.java" startLine="34" startPosition="0" endLine="38" endPosition="0" />
-    <scopeInfo nodeId="8474613039627890480" fileName="VFileEventDecorator.java" startLine="12" startPosition="0" endLine="17" endPosition="3">
-      <varInfo nodeId="8474613039627890483" varName="event" />
-      <varInfo nodeId="8474613039627890485" varName="path" />
-    </scopeInfo>
-    <scopeInfo nodeId="8474613039627890616" fileName="VFileEventDecorator.java" startLine="62" startPosition="25" endLine="71" endPosition="18">
-      <varInfo nodeId="8474613039627890618" varName="result" />
-    </scopeInfo>
-    <scopeInfo nodeId="8474613039627890613" fileName="VFileEventDecorator.java" startLine="61" startPosition="0" endLine="73" endPosition="0" />
-    <scopeInfo nodeId="8474613039627890544" fileName="VFileEventDecorator.java" startLine="39" startPosition="35" endLine="59" endPosition="16">
-      <varInfo nodeId="8474613039627890566" varName="that" />
-    </scopeInfo>
-    <scopeInfo nodeId="8474613039627890539" fileName="VFileEventDecorator.java" startLine="38" startPosition="0" endLine="61" endPosition="0">
-      <varInfo nodeId="8474613039627890542" varName="o" />
-    </scopeInfo>
-    <unitInfo nodeId="8474613039627890471" fileName="VFileEventDecorator.java" startLine="9" startPosition="0" endLine="74" endPosition="0" unitName="jetbrains.mps.ide.platform.watching.VFileEventDecorator" />
-  </root>
   <root nodeId="8474613039627890646">
-    <nodeInfo nodeId="8474613039627890648" fileName="ModelFileProcessor.java" startLine="16" startPosition="61" endLine="17" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="INSTANCE" />
-    <nodeInfo nodeId="8474613039627890670" fileName="ModelFileProcessor.java" startLine="23" startPosition="77" endLine="24" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="9045182831066291995" fileName="ModelFileProcessor.java" startLine="28" startPosition="79" endLine="29" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8474613039627890683" fileName="ModelFileProcessor.java" startLine="33" startPosition="77" endLine="34" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8474613039627890687" fileName="ModelFileProcessor.java" startLine="34" startPosition="40" endLine="35" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8474613039627890693" fileName="ModelFileProcessor.java" startLine="35" startPosition="54" endLine="36" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8474613039627890709" fileName="ModelFileProcessor.java" startLine="36" startPosition="105" endLine="37" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8474613039627890722" fileName="ModelFileProcessor.java" startLine="41" startPosition="79" endLine="42" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8474613039627890731" fileName="ModelFileProcessor.java" startLine="42" startPosition="74" endLine="43" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8474613039627890743" fileName="ModelFileProcessor.java" startLine="44" startPosition="24" endLine="45" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8474613039627890753" fileName="ModelFileProcessor.java" startLine="46" startPosition="26" endLine="47" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8474613039627890754" fileName="ModelFileProcessor.java" startLine="48" startPosition="7" endLine="49" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8474613039627890768" fileName="ModelFileProcessor.java" startLine="53" startPosition="70" endLine="54" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8474613039627890775" fileName="ModelFileProcessor.java" startLine="54" startPosition="63" endLine="55" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8474613039627890787" fileName="ModelFileProcessor.java" startLine="56" startPosition="24" endLine="57" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8474613039627890788" fileName="ModelFileProcessor.java" startLine="58" startPosition="5" endLine="59" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8474613039627890796" fileName="ModelFileProcessor.java" startLine="60" startPosition="25" endLine="61" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8474613039627890800" fileName="ModelFileProcessor.java" startLine="62" startPosition="5" endLine="63" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8474613039627890660" fileName="ModelFileProcessor.java" startLine="66" startPosition="50" endLine="67" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8474613039627890653" fileName="ModelFileProcessor.java" startLine="18" startPosition="0" endLine="20" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ModelFileProcessor#()V" />
-    <nodeInfo nodeId="8474613039627890748" fileName="ModelFileProcessor.java" startLine="45" startPosition="52" endLine="48" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8474613039627890782" fileName="ModelFileProcessor.java" startLine="55" startPosition="91" endLine="58" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8474613039627890794" fileName="ModelFileProcessor.java" startLine="59" startPosition="39" endLine="62" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8474613039627890656" fileName="ModelFileProcessor.java" startLine="65" startPosition="0" endLine="69" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getInstance#()Ljetbrains/mps/ide/platform/watching/ModelFileProcessor;" />
-    <nodeInfo nodeId="8474613039627890662" fileName="ModelFileProcessor.java" startLine="21" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="processCopy#(Lcom/intellij/openapi/vfs/newvfs/events/VFileEvent;Ljetbrains/mps/ide/platform/watching/ReloadSession;)V" />
-    <nodeInfo nodeId="8474613039627889558" fileName="ModelFileProcessor.java" startLine="26" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="processDelete#(Lcom/intellij/openapi/vfs/newvfs/events/VFileEvent;Ljetbrains/mps/ide/platform/watching/ReloadSession;)V" />
-    <nodeInfo nodeId="8474613039627890738" fileName="ModelFileProcessor.java" startLine="43" startPosition="77" endLine="50" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8474613039627890675" fileName="ModelFileProcessor.java" startLine="31" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="processMove#(Lcom/intellij/openapi/vfs/newvfs/events/VFileEvent;Ljetbrains/mps/ide/platform/watching/ReloadSession;)V" />
-    <nodeInfo nodeId="8474613039627890714" fileName="ModelFileProcessor.java" startLine="39" startPosition="0" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="processCreate#(Lcom/intellij/openapi/vfs/newvfs/events/VFileEvent;Ljetbrains/mps/ide/platform/watching/ReloadSession;)V" />
-    <nodeInfo nodeId="8474613039627890760" fileName="ModelFileProcessor.java" startLine="52" startPosition="0" endLine="65" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="fileDeleted#(Ljava/lang/String;Ljetbrains/mps/ide/platform/watching/ReloadSession;)V" />
-    <scopeInfo nodeId="8474613039627890655" fileName="ModelFileProcessor.java" startLine="19" startPosition="36" endLine="19" endPosition="36" />
-    <scopeInfo nodeId="8474613039627890669" fileName="ModelFileProcessor.java" startLine="23" startPosition="77" endLine="24" endPosition="40" />
-    <scopeInfo nodeId="8474613039627889565" fileName="ModelFileProcessor.java" startLine="28" startPosition="79" endLine="29" endPosition="48" />
-    <scopeInfo nodeId="8474613039627890752" fileName="ModelFileProcessor.java" startLine="46" startPosition="26" endLine="47" endPosition="15" />
-    <scopeInfo nodeId="8474613039627890786" fileName="ModelFileProcessor.java" startLine="56" startPosition="24" endLine="57" endPosition="13" />
-    <scopeInfo nodeId="8474613039627890795" fileName="ModelFileProcessor.java" startLine="60" startPosition="25" endLine="61" endPosition="13" />
-    <scopeInfo nodeId="8474613039627890659" fileName="ModelFileProcessor.java" startLine="66" startPosition="50" endLine="67" endPosition="20" />
-    <scopeInfo nodeId="8474613039627890653" fileName="ModelFileProcessor.java" startLine="18" startPosition="0" endLine="20" endPosition="3" />
-    <scopeInfo nodeId="8474613039627890682" fileName="ModelFileProcessor.java" startLine="33" startPosition="77" endLine="37" endPosition="40">
-      <varInfo nodeId="8474613039627890688" varName="moveEvent" />
-      <varInfo nodeId="8474613039627890694" varName="oldPath" />
+    <nodeInfo nodeId="9045182831066365695" fileName="ModelFileProcessor.java" startLine="15" startPosition="68" endLine="16" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="9045182831066367128" fileName="ModelFileProcessor.java" startLine="19" startPosition="42" endLine="20" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8474613039627890768" fileName="ModelFileProcessor.java" startLine="24" startPosition="45" endLine="25" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8474613039627890775" fileName="ModelFileProcessor.java" startLine="25" startPosition="63" endLine="26" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8474613039627890787" fileName="ModelFileProcessor.java" startLine="27" startPosition="24" endLine="28" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8474613039627890788" fileName="ModelFileProcessor.java" startLine="29" startPosition="5" endLine="30" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8474613039627890796" fileName="ModelFileProcessor.java" startLine="31" startPosition="25" endLine="32" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8474613039627890800" fileName="ModelFileProcessor.java" startLine="33" startPosition="5" endLine="34" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8474613039627890722" fileName="ModelFileProcessor.java" startLine="38" startPosition="45" endLine="39" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8474613039627890731" fileName="ModelFileProcessor.java" startLine="39" startPosition="63" endLine="40" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8474613039627890743" fileName="ModelFileProcessor.java" startLine="41" startPosition="24" endLine="42" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8474613039627890753" fileName="ModelFileProcessor.java" startLine="43" startPosition="26" endLine="44" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8474613039627890754" fileName="ModelFileProcessor.java" startLine="45" startPosition="7" endLine="46" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="9045182831066366154" fileName="ModelFileProcessor.java" startLine="50" startPosition="53" endLine="51" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="9045182831066365691" fileName="ModelFileProcessor.java" startLine="14" startPosition="61" endLine="17" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ModelFileProcessor#(Lcom/intellij/openapi/vfs/VirtualFileSystem;Ljetbrains/mps/ide/platform/watching/ReloadSession;)V" />
+    <nodeInfo nodeId="8474613039627890782" fileName="ModelFileProcessor.java" startLine="26" startPosition="91" endLine="29" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8474613039627890794" fileName="ModelFileProcessor.java" startLine="30" startPosition="39" endLine="33" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8474613039627890748" fileName="ModelFileProcessor.java" startLine="42" startPosition="51" endLine="45" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="9045182831066367122" fileName="ModelFileProcessor.java" startLine="18" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accepts#(Ljava/lang/String;)Z" />
+    <nodeInfo nodeId="9045182831066366148" fileName="ModelFileProcessor.java" startLine="49" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="processContentChanged#(Ljava/lang/String;)V" />
+    <nodeInfo nodeId="8474613039627890738" fileName="ModelFileProcessor.java" startLine="40" startPosition="77" endLine="47" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8474613039627890714" fileName="ModelFileProcessor.java" startLine="36" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="processCreate#(Ljava/lang/String;)V" />
+    <nodeInfo nodeId="8474613039627889558" fileName="ModelFileProcessor.java" startLine="22" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="processDelete#(Ljava/lang/String;)V" />
+    <scopeInfo nodeId="9045182831066365693" fileName="ModelFileProcessor.java" startLine="15" startPosition="68" endLine="16" endPosition="17" />
+    <scopeInfo nodeId="9045182831066367127" fileName="ModelFileProcessor.java" startLine="19" startPosition="42" endLine="20" endPosition="16" />
+    <scopeInfo nodeId="8474613039627890786" fileName="ModelFileProcessor.java" startLine="27" startPosition="24" endLine="28" endPosition="13" />
+    <scopeInfo nodeId="8474613039627890795" fileName="ModelFileProcessor.java" startLine="31" startPosition="25" endLine="32" endPosition="13" />
+    <scopeInfo nodeId="8474613039627890752" fileName="ModelFileProcessor.java" startLine="43" startPosition="26" endLine="44" endPosition="15" />
+    <scopeInfo nodeId="9045182831066366153" fileName="ModelFileProcessor.java" startLine="50" startPosition="53" endLine="51" endPosition="41" />
+    <scopeInfo nodeId="9045182831066365691" fileName="ModelFileProcessor.java" startLine="14" startPosition="61" endLine="17" endPosition="3">
+      <varInfo nodeId="9045182831066365696" varName="fs" />
+      <varInfo nodeId="9045182831066365698" varName="s" />
     </scopeInfo>
-    <scopeInfo nodeId="8474613039627890656" fileName="ModelFileProcessor.java" startLine="65" startPosition="0" endLine="69" endPosition="0" />
-    <scopeInfo nodeId="8474613039627890662" fileName="ModelFileProcessor.java" startLine="21" startPosition="0" endLine="26" endPosition="0">
-      <varInfo nodeId="8474613039627890665" varName="event" />
-      <varInfo nodeId="8474613039627890667" varName="reloadSession" />
+    <scopeInfo nodeId="9045182831066367122" fileName="ModelFileProcessor.java" startLine="18" startPosition="0" endLine="22" endPosition="0">
+      <varInfo nodeId="9045182831066367125" varName="path" />
     </scopeInfo>
-    <scopeInfo nodeId="8474613039627889558" fileName="ModelFileProcessor.java" startLine="26" startPosition="0" endLine="31" endPosition="0">
-      <varInfo nodeId="8474613039627889561" varName="event" />
-      <varInfo nodeId="8474613039627889563" varName="reloadSession" />
+    <scopeInfo nodeId="9045182831066366148" fileName="ModelFileProcessor.java" startLine="49" startPosition="0" endLine="53" endPosition="0">
+      <varInfo nodeId="9045182831066366151" varName="path" />
     </scopeInfo>
-    <scopeInfo nodeId="8474613039627890742" fileName="ModelFileProcessor.java" startLine="44" startPosition="24" endLine="49" endPosition="43">
+    <scopeInfo nodeId="8474613039627890742" fileName="ModelFileProcessor.java" startLine="41" startPosition="24" endLine="46" endPosition="31">
       <varInfo nodeId="8474613039627890744" varName="vfile" />
     </scopeInfo>
-    <scopeInfo nodeId="8474613039627890675" fileName="ModelFileProcessor.java" startLine="31" startPosition="0" endLine="39" endPosition="0">
-      <varInfo nodeId="8474613039627890678" varName="event" />
-      <varInfo nodeId="8474613039627890680" varName="reloadSession" />
-    </scopeInfo>
-    <scopeInfo nodeId="8474613039627890721" fileName="ModelFileProcessor.java" startLine="41" startPosition="79" endLine="50" endPosition="5">
+    <scopeInfo nodeId="8474613039627890721" fileName="ModelFileProcessor.java" startLine="38" startPosition="45" endLine="47" endPosition="5">
       <varInfo nodeId="8474613039627890723" varName="ifile" />
       <varInfo nodeId="8474613039627890732" varName="model" />
     </scopeInfo>
-    <scopeInfo nodeId="8474613039627890767" fileName="ModelFileProcessor.java" startLine="53" startPosition="70" endLine="63" endPosition="43">
+    <scopeInfo nodeId="8474613039627889565" fileName="ModelFileProcessor.java" startLine="24" startPosition="45" endLine="34" endPosition="31">
       <varInfo nodeId="8474613039627890769" varName="ifile" />
       <varInfo nodeId="8474613039627890776" varName="model" />
       <varInfo nodeId="8474613039627890789" varName="module" />
     </scopeInfo>
-    <scopeInfo nodeId="8474613039627890714" fileName="ModelFileProcessor.java" startLine="39" startPosition="0" endLine="52" endPosition="0">
-      <varInfo nodeId="8474613039627890717" varName="event" />
-      <varInfo nodeId="8474613039627890719" varName="reloadSession" />
+    <scopeInfo nodeId="8474613039627890714" fileName="ModelFileProcessor.java" startLine="36" startPosition="0" endLine="49" endPosition="0">
+      <varInfo nodeId="9045182831066294586" varName="path" />
     </scopeInfo>
-    <scopeInfo nodeId="8474613039627890760" fileName="ModelFileProcessor.java" startLine="52" startPosition="0" endLine="65" endPosition="0">
-      <varInfo nodeId="8474613039627890763" varName="path" />
-      <varInfo nodeId="8474613039627890765" varName="reloadSession" />
+    <scopeInfo nodeId="8474613039627889558" fileName="ModelFileProcessor.java" startLine="22" startPosition="0" endLine="36" endPosition="0">
+      <varInfo nodeId="9045182831066294574" varName="path" />
     </scopeInfo>
-    <unitInfo nodeId="8474613039627890646" fileName="ModelFileProcessor.java" startLine="16" startPosition="0" endLine="70" endPosition="0" unitName="jetbrains.mps.ide.platform.watching.ModelFileProcessor" />
+    <unitInfo nodeId="8474613039627890646" fileName="ModelFileProcessor.java" startLine="14" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.ide.platform.watching.ModelFileProcessor" />
   </root>
   <root nodeId="8474613039627890805">
     <nodeInfo nodeId="8474613039627890853" fileName="ModelCacheReloader.java" startLine="25" startPosition="65" endLine="26" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myVirtualFileManager" />
@@ -729,296 +574,326 @@
     <unitInfo nodeId="8474613039627890806" fileName="ModelCacheReloader.java" startLine="67" startPosition="0" endLine="91" endPosition="0" unitName="jetbrains.mps.ide.platform.watching.ModelCacheReloader$CacheFileListener" />
   </root>
   <root nodeId="8474613039627890958">
-    <nodeInfo nodeId="8474613039627891298" fileName="ModelChangesWatcher.java" startLine="40" startPosition="66" endLine="41" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
-    <nodeInfo nodeId="8474613039627891303" fileName="ModelChangesWatcher.java" startLine="42" startPosition="0" endLine="43" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myBus" />
-    <nodeInfo nodeId="8474613039627891306" fileName="ModelChangesWatcher.java" startLine="43" startPosition="33" endLine="44" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myProjectManager" />
-    <nodeInfo nodeId="8474613039627891309" fileName="ModelChangesWatcher.java" startLine="44" startPosition="48" endLine="45" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myVirtualFileManager" />
-    <nodeInfo nodeId="8474613039627891312" fileName="ModelChangesWatcher.java" startLine="45" startPosition="56" endLine="46" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myReloadSession" />
-    <nodeInfo nodeId="8474613039627891315" fileName="ModelChangesWatcher.java" startLine="46" startPosition="49" endLine="47" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myLock" />
-    <nodeInfo nodeId="8474613039627891320" fileName="ModelChangesWatcher.java" startLine="47" startPosition="45" endLine="48" endPosition="128" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myReloadListeners" />
-    <nodeInfo nodeId="8474613039627891327" fileName="ModelChangesWatcher.java" startLine="48" startPosition="128" endLine="49" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myBans" />
-    <nodeInfo nodeId="8474613039627891331" fileName="ModelChangesWatcher.java" startLine="49" startPosition="25" endLine="50" endPosition="128" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myQueue" />
-    <nodeInfo nodeId="8474613039627891355" fileName="ModelChangesWatcher.java" startLine="52" startPosition="51" endLine="53" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8474613039627891363" fileName="ModelChangesWatcher.java" startLine="56" startPosition="51" endLine="57" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8474613039627891365" fileName="ModelChangesWatcher.java" startLine="59" startPosition="4" endLine="60" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myConnection" />
-    <nodeInfo nodeId="8474613039627891368" fileName="ModelChangesWatcher.java" startLine="60" startPosition="44" endLine="61" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myBusListener" />
-    <nodeInfo nodeId="8474613039627891386" fileName="ModelChangesWatcher.java" startLine="63" startPosition="62" endLine="64" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8474613039627891394" fileName="ModelChangesWatcher.java" startLine="67" startPosition="62" endLine="68" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8474613039627891396" fileName="ModelChangesWatcher.java" startLine="70" startPosition="4" endLine="71" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myMakeService" />
-    <nodeInfo nodeId="8474613039627891454" fileName="ModelChangesWatcher.java" startLine="73" startPosition="116" endLine="74" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8474613039627891458" fileName="ModelChangesWatcher.java" startLine="74" startPosition="16" endLine="75" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8474613039627891462" fileName="ModelChangesWatcher.java" startLine="75" startPosition="46" endLine="76" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8474613039627891466" fileName="ModelChangesWatcher.java" startLine="76" startPosition="38" endLine="77" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8474613039627891415" fileName="ModelChangesWatcher.java" startLine="81" startPosition="27" endLine="82" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8474613039627891423" fileName="ModelChangesWatcher.java" startLine="83" startPosition="24" endLine="84" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8474613039627891424" fileName="ModelChangesWatcher.java" startLine="85" startPosition="7" endLine="86" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8474613039627891435" fileName="ModelChangesWatcher.java" startLine="91" startPosition="27" endLine="92" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8474613039627891439" fileName="ModelChangesWatcher.java" startLine="92" startPosition="24" endLine="93" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8474613039627891475" fileName="ModelChangesWatcher.java" startLine="99" startPosition="36" endLine="100" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8474613039627891483" fileName="ModelChangesWatcher.java" startLine="103" startPosition="31" endLine="104" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8474613039627891495" fileName="ModelChangesWatcher.java" startLine="108" startPosition="21" endLine="109" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8474613039627891504" fileName="ModelChangesWatcher.java" startLine="111" startPosition="34" endLine="112" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8474613039627891512" fileName="ModelChangesWatcher.java" startLine="114" startPosition="5" endLine="115" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8474613039627891526" fileName="ModelChangesWatcher.java" startLine="119" startPosition="83" endLine="120" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8474613039627891532" fileName="ModelChangesWatcher.java" startLine="120" startPosition="37" endLine="121" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8474613039627891538" fileName="ModelChangesWatcher.java" startLine="121" startPosition="76" endLine="122" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8474613039627891560" fileName="ModelChangesWatcher.java" startLine="127" startPosition="31" endLine="128" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8474613039627891566" fileName="ModelChangesWatcher.java" startLine="130" startPosition="32" endLine="131" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8474613039627891571" fileName="ModelChangesWatcher.java" startLine="131" startPosition="51" endLine="132" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8474613039627891578" fileName="ModelChangesWatcher.java" startLine="133" startPosition="5" endLine="134" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8474613039627891583" fileName="ModelChangesWatcher.java" startLine="134" startPosition="88" endLine="135" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8474613039627891587" fileName="ModelChangesWatcher.java" startLine="135" startPosition="30" endLine="136" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8474613039627891603" fileName="ModelChangesWatcher.java" startLine="141" startPosition="36" endLine="142" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8474613039627891610" fileName="ModelChangesWatcher.java" startLine="144" startPosition="49" endLine="145" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8474613039627891611" fileName="ModelChangesWatcher.java" startLine="146" startPosition="7" endLine="147" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="8474613039627891639" fileName="ModelChangesWatcher.java" startLine="151" startPosition="103" endLine="152" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8474613039627891641" fileName="ModelChangesWatcher.java" startLine="152" startPosition="28" endLine="153" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8474613039627891650" fileName="ModelChangesWatcher.java" startLine="157" startPosition="42" endLine="158" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8474613039627891651" fileName="ModelChangesWatcher.java" startLine="159" startPosition="13" endLine="160" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8474613039627891661" fileName="ModelChangesWatcher.java" startLine="161" startPosition="47" endLine="162" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8474613039627891662" fileName="ModelChangesWatcher.java" startLine="163" startPosition="13" endLine="164" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8474613039627891680" fileName="ModelChangesWatcher.java" startLine="166" startPosition="83" endLine="167" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8474613039627891694" fileName="ModelChangesWatcher.java" startLine="176" startPosition="49" endLine="177" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8474613039627891716" fileName="ModelChangesWatcher.java" startLine="182" startPosition="73" endLine="183" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8474613039627891718" fileName="ModelChangesWatcher.java" startLine="185" startPosition="5" endLine="186" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8474613039627891729" fileName="ModelChangesWatcher.java" startLine="190" startPosition="38" endLine="191" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8474613039627891743" fileName="ModelChangesWatcher.java" startLine="196" startPosition="38" endLine="197" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8474613039627891756" fileName="ModelChangesWatcher.java" startLine="202" startPosition="38" endLine="203" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8474613039627891763" fileName="ModelChangesWatcher.java" startLine="203" startPosition="114" endLine="204" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8474613039627891768" fileName="ModelChangesWatcher.java" startLine="204" startPosition="42" endLine="205" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8474613039627891783" fileName="ModelChangesWatcher.java" startLine="210" startPosition="9" endLine="211" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8474613039627891785" fileName="ModelChangesWatcher.java" startLine="211" startPosition="31" endLine="212" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8474613039627891780" fileName="ModelChangesWatcher.java" startLine="213" startPosition="15" endLine="214" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8474613039627891403" fileName="ModelChangesWatcher.java" startLine="218" startPosition="48" endLine="219" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8474613039627891136" fileName="ModelChangesWatcher.java" startLine="229" startPosition="64" endLine="230" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8474613039627891149" fileName="ModelChangesWatcher.java" startLine="231" startPosition="74" endLine="232" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8474613039627891150" fileName="ModelChangesWatcher.java" startLine="233" startPosition="7" endLine="234" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8474613039627891162" fileName="ModelChangesWatcher.java" startLine="236" startPosition="38" endLine="237" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8474613039627891173" fileName="ModelChangesWatcher.java" startLine="239" startPosition="47" endLine="240" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8474613039627891179" fileName="ModelChangesWatcher.java" startLine="240" startPosition="40" endLine="241" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8474613039627891186" fileName="ModelChangesWatcher.java" startLine="241" startPosition="62" endLine="242" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8474613039627891225" fileName="ModelChangesWatcher.java" startLine="246" startPosition="51" endLine="247" endPosition="133" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8474613039627891237" fileName="ModelChangesWatcher.java" startLine="247" startPosition="133" endLine="248" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8474613039627891239" fileName="ModelChangesWatcher.java" startLine="252" startPosition="11" endLine="253" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8474613039627891244" fileName="ModelChangesWatcher.java" startLine="254" startPosition="9" endLine="255" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8474613039627891256" fileName="ModelChangesWatcher.java" startLine="259" startPosition="100" endLine="260" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8474613039627891263" fileName="ModelChangesWatcher.java" startLine="260" startPosition="75" endLine="261" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8474613039627891275" fileName="ModelChangesWatcher.java" startLine="262" startPosition="66" endLine="263" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8474613039627891282" fileName="ModelChangesWatcher.java" startLine="263" startPosition="77" endLine="264" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8474613039627891290" fileName="ModelChangesWatcher.java" startLine="269" startPosition="43" endLine="270" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="reloadStarted#()V" />
-    <nodeInfo nodeId="8474613039627891294" fileName="ModelChangesWatcher.java" startLine="270" startPosition="32" endLine="271" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="reloadFinished#()V" />
-    <nodeInfo nodeId="8474613039627890964" fileName="ModelChangesWatcher.java" startLine="222" startPosition="69" endLine="224" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="BulkFileChangesListener#()V" />
-    <nodeInfo nodeId="8474613039627891418" fileName="ModelChangesWatcher.java" startLine="82" startPosition="15" endLine="85" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8474613039627891502" fileName="ModelChangesWatcher.java" startLine="110" startPosition="12" endLine="113" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8474613039627891558" fileName="ModelChangesWatcher.java" startLine="126" startPosition="34" endLine="129" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8474613039627891598" fileName="ModelChangesWatcher.java" startLine="140" startPosition="27" endLine="143" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8474613039627891604" fileName="ModelChangesWatcher.java" startLine="143" startPosition="7" endLine="146" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8474613039627891645" fileName="ModelChangesWatcher.java" startLine="156" startPosition="33" endLine="159" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8474613039627891655" fileName="ModelChangesWatcher.java" startLine="160" startPosition="58" endLine="163" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8474613039627891709" fileName="ModelChangesWatcher.java" startLine="181" startPosition="49" endLine="184" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8474613039627891726" fileName="ModelChangesWatcher.java" startLine="189" startPosition="79" endLine="192" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.SynchronizedStatement" />
-    <nodeInfo nodeId="8474613039627891740" fileName="ModelChangesWatcher.java" startLine="195" startPosition="82" endLine="198" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.SynchronizedStatement" />
-    <nodeInfo nodeId="8474613039627890968" fileName="ModelChangesWatcher.java" startLine="225" startPosition="0" endLine="228" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="before#(Ljava/util/List;)V" />
-    <nodeInfo nodeId="8474613039627891140" fileName="ModelChangesWatcher.java" startLine="230" startPosition="74" endLine="233" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8474613039627891157" fileName="ModelChangesWatcher.java" startLine="235" startPosition="29" endLine="238" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8474613039627891349" fileName="ModelChangesWatcher.java" startLine="51" startPosition="108" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="beforeRefreshStart#(Z)V" />
-    <nodeInfo nodeId="8474613039627891357" fileName="ModelChangesWatcher.java" startLine="55" startPosition="0" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="afterRefreshFinish#(Z)V" />
-    <nodeInfo nodeId="8474613039627891380" fileName="ModelChangesWatcher.java" startLine="62" startPosition="91" endLine="66" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="sessionOpened#(Ljetbrains/mps/make/MakeNotification;)V" />
-    <nodeInfo nodeId="8474613039627891388" fileName="ModelChangesWatcher.java" startLine="66" startPosition="0" endLine="70" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="sessionClosed#(Ljetbrains/mps/make/MakeNotification;)V" />
-    <nodeInfo nodeId="8474613039627891432" fileName="ModelChangesWatcher.java" startLine="90" startPosition="40" endLine="94" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.SynchronizedStatement" />
-    <nodeInfo nodeId="8474613039627891479" fileName="ModelChangesWatcher.java" startLine="102" startPosition="0" endLine="106" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="initComponent#()V" />
-    <nodeInfo nodeId="8474613039627891500" fileName="ModelChangesWatcher.java" startLine="110" startPosition="10" endLine="114" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8474613039627891564" fileName="ModelChangesWatcher.java" startLine="129" startPosition="5" endLine="133" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8474613039627891631" fileName="ModelChangesWatcher.java" startLine="150" startPosition="70" endLine="154" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8474613039627891673" fileName="ModelChangesWatcher.java" startLine="165" startPosition="88" endLine="169" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#(Lcom/intellij/openapi/progress/ProgressIndicator;)V" />
-    <nodeInfo nodeId="8474613039627891689" fileName="ModelChangesWatcher.java" startLine="175" startPosition="0" endLine="179" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSignificantRoots#()Ljava/util/Set;" />
-    <nodeInfo nodeId="8474613039627891399" fileName="ModelChangesWatcher.java" startLine="217" startPosition="0" endLine="221" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="instance#()Ljetbrains/mps/ide/platform/watching/ModelChangesWatcher;" />
-    <nodeInfo nodeId="8474613039627891269" fileName="ModelChangesWatcher.java" startLine="261" startPosition="69" endLine="265" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8474613039627891524" fileName="ModelChangesWatcher.java" startLine="118" startPosition="44" endLine="123" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8474613039627891666" fileName="ModelChangesWatcher.java" startLine="164" startPosition="35" endLine="169" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8474613039627891704" fileName="ModelChangesWatcher.java" startLine="180" startPosition="54" endLine="185" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="8474613039627891753" fileName="ModelChangesWatcher.java" startLine="201" startPosition="73" endLine="206" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.SynchronizedStatement" />
-    <nodeInfo nodeId="8474613039627891219" fileName="ModelChangesWatcher.java" startLine="245" startPosition="76" endLine="250" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="process#(Ljava/io/File;)Z" />
-    <nodeInfo nodeId="8474613039627891442" fileName="ModelChangesWatcher.java" startLine="72" startPosition="0" endLine="78" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ModelChangesWatcher#(Lcom/intellij/util/messages/MessageBus;Lcom/intellij/openapi/project/ProjectManager;Lcom/intellij/openapi/vfs/VirtualFileManager;)V" />
-    <nodeInfo nodeId="8474613039627891471" fileName="ModelChangesWatcher.java" startLine="96" startPosition="0" endLine="102" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getComponentName#()Ljava/lang/String;" />
-    <nodeInfo nodeId="8474613039627891624" fileName="ModelChangesWatcher.java" startLine="149" startPosition="27" endLine="155" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="8474613039627891720" fileName="ModelChangesWatcher.java" startLine="188" startPosition="0" endLine="194" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addReloadListener#(Ljetbrains/mps/ide/platform/watching/ModelChangesWatcher/IReloadListener;)V" />
-    <nodeInfo nodeId="8474613039627891734" fileName="ModelChangesWatcher.java" startLine="194" startPosition="0" endLine="200" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="removeReloadListener#(Ljetbrains/mps/ide/platform/watching/ModelChangesWatcher/IReloadListener;)V" />
-    <nodeInfo nodeId="8474613039627891778" fileName="ModelChangesWatcher.java" startLine="209" startPosition="68" endLine="215" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
-    <nodeInfo nodeId="8474613039627891212" fileName="ModelChangesWatcher.java" startLine="244" startPosition="48" endLine="250" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8474613039627891412" fileName="ModelChangesWatcher.java" startLine="80" startPosition="44" endLine="87" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.SynchronizedStatement" />
-    <nodeInfo nodeId="8474613039627891428" fileName="ModelChangesWatcher.java" startLine="89" startPosition="0" endLine="96" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="suspendTasksProcessing#()V" />
-    <nodeInfo nodeId="8474613039627891490" fileName="ModelChangesWatcher.java" startLine="107" startPosition="47" endLine="114" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8474613039627891518" fileName="ModelChangesWatcher.java" startLine="117" startPosition="0" endLine="125" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="initComponent#(Z)V" />
-    <nodeInfo nodeId="8474613039627891748" fileName="ModelChangesWatcher.java" startLine="200" startPosition="0" endLine="208" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getReloadListeners#()Ljava/util/Set;" />
-    <nodeInfo nodeId="8474613039627891208" fileName="ModelChangesWatcher.java" startLine="243" startPosition="82" endLine="251" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8474613039627891343" fileName="ModelChangesWatcher.java" startLine="50" startPosition="128" endLine="59" endPosition="4" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myVirtualFileManagerListener" />
-    <nodeInfo nodeId="8474613039627891373" fileName="ModelChangesWatcher.java" startLine="61" startPosition="93" endLine="70" endPosition="4" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myMakeListener" />
-    <nodeInfo nodeId="8474613039627891698" fileName="ModelChangesWatcher.java" startLine="179" startPosition="0" endLine="188" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isUnderSignificantRoots#(Ljava/io/File;)Z" />
-    <nodeInfo nodeId="8474613039627891770" fileName="ModelChangesWatcher.java" startLine="208" startPosition="0" endLine="217" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="executeUnderBlockedReload#(Ljetbrains/mps/util/Computable;)null" />
-    <nodeInfo nodeId="8474613039627891246" fileName="ModelChangesWatcher.java" startLine="258" startPosition="0" endLine="267" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="processAfterEvent#(Ljava/lang/String;Lcom/intellij/openapi/vfs/newvfs/events/VFileEvent;Ljetbrains/mps/ide/platform/watching/ReloadSession;)V" />
-    <nodeInfo nodeId="8474613039627891408" fileName="ModelChangesWatcher.java" startLine="79" startPosition="0" endLine="89" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="tryToResumeTasksProcessing#()V" />
-    <nodeInfo nodeId="8474613039627891192" fileName="ModelChangesWatcher.java" startLine="242" startPosition="37" endLine="252" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8474613039627891486" fileName="ModelChangesWatcher.java" startLine="106" startPosition="0" endLine="117" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setMakeService#(Ljetbrains/mps/make/IMakeService;)V" />
-    <nodeInfo nodeId="8474613039627891554" fileName="ModelChangesWatcher.java" startLine="125" startPosition="0" endLine="138" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="disposeComponent#()V" />
-    <nodeInfo nodeId="8474613039627891642" fileName="ModelChangesWatcher.java" startLine="155" startPosition="11" endLine="170" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.SynchronizedStatement" />
-    <nodeInfo nodeId="8474613039627891168" fileName="ModelChangesWatcher.java" startLine="238" startPosition="9" endLine="254" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="8474613039627891154" fileName="ModelChangesWatcher.java" startLine="234" startPosition="29" endLine="256" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.SynchronizedStatement" />
-    <nodeInfo nodeId="8474613039627891620" fileName="ModelChangesWatcher.java" startLine="148" startPosition="38" endLine="172" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="8474613039627891612" fileName="ModelChangesWatcher.java" startLine="147" startPosition="0" endLine="172" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8474613039627891128" fileName="ModelChangesWatcher.java" startLine="228" startPosition="0" endLine="258" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="after#(Ljava/util/List;)V" />
-    <nodeInfo nodeId="8474613039627891595" fileName="ModelChangesWatcher.java" startLine="139" startPosition="30" endLine="173" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.SynchronizedStatement" />
-    <nodeInfo nodeId="8474613039627891591" fileName="ModelChangesWatcher.java" startLine="138" startPosition="0" endLine="175" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="queueReload#()V" />
-    <scopeInfo nodeId="8474613039627890967" fileName="ModelChangesWatcher.java" startLine="223" startPosition="39" endLine="223" endPosition="39" />
-    <scopeInfo nodeId="8474613039627890975" fileName="ModelChangesWatcher.java" startLine="226" startPosition="59" endLine="226" endPosition="59" />
-    <scopeInfo nodeId="8474613039627891354" fileName="ModelChangesWatcher.java" startLine="52" startPosition="51" endLine="53" endPosition="31" />
-    <scopeInfo nodeId="8474613039627891362" fileName="ModelChangesWatcher.java" startLine="56" startPosition="51" endLine="57" endPosition="35" />
-    <scopeInfo nodeId="8474613039627891385" fileName="ModelChangesWatcher.java" startLine="63" startPosition="62" endLine="64" endPosition="31" />
-    <scopeInfo nodeId="8474613039627891393" fileName="ModelChangesWatcher.java" startLine="67" startPosition="62" endLine="68" endPosition="35" />
-    <scopeInfo nodeId="8474613039627891422" fileName="ModelChangesWatcher.java" startLine="83" startPosition="24" endLine="84" endPosition="15" />
-    <scopeInfo nodeId="8474613039627891474" fileName="ModelChangesWatcher.java" startLine="99" startPosition="36" endLine="100" endPosition="35" />
-    <scopeInfo nodeId="8474613039627891482" fileName="ModelChangesWatcher.java" startLine="103" startPosition="31" endLine="104" endPosition="25" />
-    <scopeInfo nodeId="8474613039627891494" fileName="ModelChangesWatcher.java" startLine="108" startPosition="21" endLine="109" endPosition="37" />
-    <scopeInfo nodeId="8474613039627891503" fileName="ModelChangesWatcher.java" startLine="111" startPosition="34" endLine="112" endPosition="53" />
-    <scopeInfo nodeId="8474613039627891559" fileName="ModelChangesWatcher.java" startLine="127" startPosition="31" endLine="128" endPosition="13" />
-    <scopeInfo nodeId="8474613039627891602" fileName="ModelChangesWatcher.java" startLine="141" startPosition="36" endLine="142" endPosition="15" />
-    <scopeInfo nodeId="8474613039627891609" fileName="ModelChangesWatcher.java" startLine="144" startPosition="49" endLine="145" endPosition="15" />
-    <scopeInfo nodeId="8474613039627891649" fileName="ModelChangesWatcher.java" startLine="157" startPosition="42" endLine="158" endPosition="21" />
-    <scopeInfo nodeId="8474613039627891660" fileName="ModelChangesWatcher.java" startLine="161" startPosition="47" endLine="162" endPosition="21" />
-    <scopeInfo nodeId="8474613039627891679" fileName="ModelChangesWatcher.java" startLine="166" startPosition="83" endLine="167" endPosition="52" />
-    <scopeInfo nodeId="8474613039627891693" fileName="ModelChangesWatcher.java" startLine="176" startPosition="49" endLine="177" endPosition="64" />
-    <scopeInfo nodeId="8474613039627891715" fileName="ModelChangesWatcher.java" startLine="182" startPosition="73" endLine="183" endPosition="20" />
-    <scopeInfo nodeId="8474613039627891728" fileName="ModelChangesWatcher.java" startLine="190" startPosition="38" endLine="191" endPosition="38" />
-    <scopeInfo nodeId="8474613039627891742" fileName="ModelChangesWatcher.java" startLine="196" startPosition="38" endLine="197" endPosition="41" />
-    <scopeInfo nodeId="8474613039627891779" fileName="ModelChangesWatcher.java" startLine="213" startPosition="15" endLine="214" endPosition="35" />
-    <scopeInfo nodeId="8474613039627891402" fileName="ModelChangesWatcher.java" startLine="218" startPosition="48" endLine="219" endPosition="87" />
-    <scopeInfo nodeId="8474613039627891148" fileName="ModelChangesWatcher.java" startLine="231" startPosition="74" endLine="232" endPosition="15" />
-    <scopeInfo nodeId="8474613039627891161" fileName="ModelChangesWatcher.java" startLine="236" startPosition="38" endLine="237" endPosition="68" />
-    <scopeInfo nodeId="8474613039627891290" fileName="ModelChangesWatcher.java" startLine="269" startPosition="43" endLine="270" endPosition="32" />
-    <scopeInfo nodeId="8474613039627891294" fileName="ModelChangesWatcher.java" startLine="270" startPosition="32" endLine="271" endPosition="33" />
-    <scopeInfo nodeId="8474613039627891434" fileName="ModelChangesWatcher.java" startLine="91" startPosition="27" endLine="93" endPosition="15" />
-    <scopeInfo nodeId="8474613039627891565" fileName="ModelChangesWatcher.java" startLine="130" startPosition="32" endLine="132" endPosition="27" />
-    <scopeInfo nodeId="8474613039627891638" fileName="ModelChangesWatcher.java" startLine="151" startPosition="103" endLine="153" endPosition="21" />
-    <scopeInfo nodeId="8474613039627891782" fileName="ModelChangesWatcher.java" startLine="210" startPosition="9" endLine="212" endPosition="34" />
-    <scopeInfo nodeId="8474613039627890964" fileName="ModelChangesWatcher.java" startLine="222" startPosition="69" endLine="224" endPosition="5" />
-    <scopeInfo nodeId="8474613039627891224" fileName="ModelChangesWatcher.java" startLine="246" startPosition="51" endLine="248" endPosition="30" />
-    <scopeInfo nodeId="8474613039627891274" fileName="ModelChangesWatcher.java" startLine="262" startPosition="66" endLine="264" endPosition="72" />
-    <scopeInfo nodeId="8474613039627891501" fileName="ModelChangesWatcher.java" startLine="110" startPosition="12" endLine="113" endPosition="7" />
-    <scopeInfo nodeId="8474613039627891525" fileName="ModelChangesWatcher.java" startLine="119" startPosition="83" endLine="122" endPosition="87" />
-    <scopeInfo nodeId="8474613039627891708" fileName="ModelChangesWatcher.java" startLine="181" startPosition="49" endLine="184" endPosition="7" />
-    <scopeInfo nodeId="8474613039627891725" fileName="ModelChangesWatcher.java" startLine="189" startPosition="79" endLine="192" endPosition="5" />
-    <scopeInfo nodeId="8474613039627891739" fileName="ModelChangesWatcher.java" startLine="195" startPosition="82" endLine="198" endPosition="5" />
-    <scopeInfo nodeId="8474613039627891755" fileName="ModelChangesWatcher.java" startLine="202" startPosition="38" endLine="205" endPosition="23">
+    <nodeInfo nodeId="8474613039627891298" fileName="ModelChangesWatcher.java" startLine="44" startPosition="66" endLine="45" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
+    <nodeInfo nodeId="8474613039627891303" fileName="ModelChangesWatcher.java" startLine="46" startPosition="0" endLine="47" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myBus" />
+    <nodeInfo nodeId="8474613039627891306" fileName="ModelChangesWatcher.java" startLine="47" startPosition="33" endLine="48" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myProjectManager" />
+    <nodeInfo nodeId="8474613039627891309" fileName="ModelChangesWatcher.java" startLine="48" startPosition="48" endLine="49" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myVirtualFileManager" />
+    <nodeInfo nodeId="8474613039627891312" fileName="ModelChangesWatcher.java" startLine="49" startPosition="56" endLine="50" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myReloadSession" />
+    <nodeInfo nodeId="8474613039627891315" fileName="ModelChangesWatcher.java" startLine="50" startPosition="49" endLine="51" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myLock" />
+    <nodeInfo nodeId="8474613039627891320" fileName="ModelChangesWatcher.java" startLine="51" startPosition="45" endLine="52" endPosition="128" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myReloadListeners" />
+    <nodeInfo nodeId="8474613039627891327" fileName="ModelChangesWatcher.java" startLine="52" startPosition="128" endLine="53" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myBans" />
+    <nodeInfo nodeId="8474613039627891331" fileName="ModelChangesWatcher.java" startLine="53" startPosition="25" endLine="54" endPosition="128" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myQueue" />
+    <nodeInfo nodeId="8474613039627891355" fileName="ModelChangesWatcher.java" startLine="56" startPosition="51" endLine="57" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8474613039627891363" fileName="ModelChangesWatcher.java" startLine="60" startPosition="51" endLine="61" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8474613039627891365" fileName="ModelChangesWatcher.java" startLine="63" startPosition="4" endLine="64" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myConnection" />
+    <nodeInfo nodeId="8474613039627891368" fileName="ModelChangesWatcher.java" startLine="64" startPosition="44" endLine="65" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myBusListener" />
+    <nodeInfo nodeId="8474613039627891386" fileName="ModelChangesWatcher.java" startLine="67" startPosition="62" endLine="68" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8474613039627891394" fileName="ModelChangesWatcher.java" startLine="71" startPosition="62" endLine="72" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8474613039627891396" fileName="ModelChangesWatcher.java" startLine="74" startPosition="4" endLine="75" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myMakeService" />
+    <nodeInfo nodeId="8474613039627891454" fileName="ModelChangesWatcher.java" startLine="77" startPosition="116" endLine="78" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8474613039627891458" fileName="ModelChangesWatcher.java" startLine="78" startPosition="16" endLine="79" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8474613039627891462" fileName="ModelChangesWatcher.java" startLine="79" startPosition="46" endLine="80" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8474613039627891466" fileName="ModelChangesWatcher.java" startLine="80" startPosition="38" endLine="81" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8474613039627891415" fileName="ModelChangesWatcher.java" startLine="85" startPosition="27" endLine="86" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8474613039627891423" fileName="ModelChangesWatcher.java" startLine="87" startPosition="24" endLine="88" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8474613039627891424" fileName="ModelChangesWatcher.java" startLine="89" startPosition="7" endLine="90" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8474613039627891435" fileName="ModelChangesWatcher.java" startLine="95" startPosition="27" endLine="96" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8474613039627891439" fileName="ModelChangesWatcher.java" startLine="96" startPosition="24" endLine="97" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8474613039627891475" fileName="ModelChangesWatcher.java" startLine="103" startPosition="36" endLine="104" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8474613039627891483" fileName="ModelChangesWatcher.java" startLine="107" startPosition="31" endLine="108" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8474613039627891495" fileName="ModelChangesWatcher.java" startLine="112" startPosition="21" endLine="113" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8474613039627891504" fileName="ModelChangesWatcher.java" startLine="115" startPosition="34" endLine="116" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8474613039627891512" fileName="ModelChangesWatcher.java" startLine="118" startPosition="5" endLine="119" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8474613039627891526" fileName="ModelChangesWatcher.java" startLine="123" startPosition="83" endLine="124" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8474613039627891532" fileName="ModelChangesWatcher.java" startLine="124" startPosition="37" endLine="125" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8474613039627891538" fileName="ModelChangesWatcher.java" startLine="125" startPosition="76" endLine="126" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8474613039627891560" fileName="ModelChangesWatcher.java" startLine="131" startPosition="31" endLine="132" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8474613039627891566" fileName="ModelChangesWatcher.java" startLine="134" startPosition="32" endLine="135" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8474613039627891571" fileName="ModelChangesWatcher.java" startLine="135" startPosition="51" endLine="136" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8474613039627891578" fileName="ModelChangesWatcher.java" startLine="137" startPosition="5" endLine="138" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8474613039627891583" fileName="ModelChangesWatcher.java" startLine="138" startPosition="88" endLine="139" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8474613039627891587" fileName="ModelChangesWatcher.java" startLine="139" startPosition="30" endLine="140" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8474613039627891603" fileName="ModelChangesWatcher.java" startLine="145" startPosition="36" endLine="146" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8474613039627891610" fileName="ModelChangesWatcher.java" startLine="148" startPosition="49" endLine="149" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8474613039627891611" fileName="ModelChangesWatcher.java" startLine="150" startPosition="7" endLine="151" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="8474613039627891639" fileName="ModelChangesWatcher.java" startLine="155" startPosition="103" endLine="156" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8474613039627891641" fileName="ModelChangesWatcher.java" startLine="156" startPosition="28" endLine="157" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8474613039627891650" fileName="ModelChangesWatcher.java" startLine="161" startPosition="42" endLine="162" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8474613039627891651" fileName="ModelChangesWatcher.java" startLine="163" startPosition="13" endLine="164" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8474613039627891661" fileName="ModelChangesWatcher.java" startLine="165" startPosition="47" endLine="166" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8474613039627891662" fileName="ModelChangesWatcher.java" startLine="167" startPosition="13" endLine="168" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8474613039627891680" fileName="ModelChangesWatcher.java" startLine="170" startPosition="83" endLine="171" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8474613039627891694" fileName="ModelChangesWatcher.java" startLine="180" startPosition="49" endLine="181" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8474613039627891716" fileName="ModelChangesWatcher.java" startLine="186" startPosition="73" endLine="187" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8474613039627891718" fileName="ModelChangesWatcher.java" startLine="189" startPosition="5" endLine="190" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8474613039627891729" fileName="ModelChangesWatcher.java" startLine="194" startPosition="38" endLine="195" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8474613039627891743" fileName="ModelChangesWatcher.java" startLine="200" startPosition="38" endLine="201" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8474613039627891756" fileName="ModelChangesWatcher.java" startLine="206" startPosition="38" endLine="207" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8474613039627891763" fileName="ModelChangesWatcher.java" startLine="207" startPosition="114" endLine="208" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8474613039627891768" fileName="ModelChangesWatcher.java" startLine="208" startPosition="42" endLine="209" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8474613039627891783" fileName="ModelChangesWatcher.java" startLine="214" startPosition="9" endLine="215" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8474613039627891785" fileName="ModelChangesWatcher.java" startLine="215" startPosition="31" endLine="216" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8474613039627891780" fileName="ModelChangesWatcher.java" startLine="217" startPosition="15" endLine="218" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8474613039627891403" fileName="ModelChangesWatcher.java" startLine="222" startPosition="48" endLine="223" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8474613039627891136" fileName="ModelChangesWatcher.java" startLine="233" startPosition="64" endLine="234" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8474613039627891149" fileName="ModelChangesWatcher.java" startLine="235" startPosition="74" endLine="236" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8474613039627891162" fileName="ModelChangesWatcher.java" startLine="239" startPosition="38" endLine="240" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8474613039627891173" fileName="ModelChangesWatcher.java" startLine="242" startPosition="47" endLine="243" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8474613039627891179" fileName="ModelChangesWatcher.java" startLine="243" startPosition="40" endLine="244" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8474613039627891186" fileName="ModelChangesWatcher.java" startLine="244" startPosition="62" endLine="245" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8474613039627891225" fileName="ModelChangesWatcher.java" startLine="249" startPosition="51" endLine="250" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8474613039627891237" fileName="ModelChangesWatcher.java" startLine="250" startPosition="66" endLine="251" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8474613039627891239" fileName="ModelChangesWatcher.java" startLine="255" startPosition="11" endLine="256" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8474613039627891244" fileName="ModelChangesWatcher.java" startLine="257" startPosition="9" endLine="258" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8474613039627891256" fileName="ModelChangesWatcher.java" startLine="262" startPosition="98" endLine="263" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="9045182831066366212" fileName="ModelChangesWatcher.java" startLine="263" startPosition="75" endLine="264" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="9045182831066366260" fileName="ModelChangesWatcher.java" startLine="264" startPosition="103" endLine="265" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="9045182831066367170" fileName="ModelChangesWatcher.java" startLine="265" startPosition="106" endLine="266" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="9045182831066366259" fileName="ModelChangesWatcher.java" startLine="266" startPosition="84" endLine="267" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="9045182831066367240" fileName="ModelChangesWatcher.java" startLine="269" startPosition="47" endLine="270" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
+    <nodeInfo nodeId="9045182831066369964" fileName="ModelChangesWatcher.java" startLine="271" startPosition="9" endLine="272" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="9045182831066367244" fileName="ModelChangesWatcher.java" startLine="274" startPosition="56" endLine="275" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
+    <nodeInfo nodeId="9045182831066367251" fileName="ModelChangesWatcher.java" startLine="276" startPosition="11" endLine="277" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="9045182831066369668" fileName="ModelChangesWatcher.java" startLine="278" startPosition="55" endLine="279" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="9045182831066369927" fileName="ModelChangesWatcher.java" startLine="280" startPosition="55" endLine="281" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="9045182831066367303" fileName="ModelChangesWatcher.java" startLine="282" startPosition="53" endLine="283" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="9045182831066369939" fileName="ModelChangesWatcher.java" startLine="284" startPosition="53" endLine="285" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="9045182831066370122" fileName="ModelChangesWatcher.java" startLine="285" startPosition="53" endLine="286" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="9045182831066369945" fileName="ModelChangesWatcher.java" startLine="286" startPosition="47" endLine="287" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="9045182831066369952" fileName="ModelChangesWatcher.java" startLine="287" startPosition="71" endLine="288" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8474613039627891290" fileName="ModelChangesWatcher.java" startLine="294" startPosition="43" endLine="295" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="reloadStarted#()V" />
+    <nodeInfo nodeId="8474613039627891294" fileName="ModelChangesWatcher.java" startLine="295" startPosition="32" endLine="296" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="reloadFinished#()V" />
+    <nodeInfo nodeId="8474613039627890964" fileName="ModelChangesWatcher.java" startLine="226" startPosition="69" endLine="228" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="BulkFileChangesListener#()V" />
+    <nodeInfo nodeId="8474613039627891418" fileName="ModelChangesWatcher.java" startLine="86" startPosition="15" endLine="89" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8474613039627891502" fileName="ModelChangesWatcher.java" startLine="114" startPosition="12" endLine="117" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8474613039627891558" fileName="ModelChangesWatcher.java" startLine="130" startPosition="34" endLine="133" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8474613039627891598" fileName="ModelChangesWatcher.java" startLine="144" startPosition="27" endLine="147" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8474613039627891604" fileName="ModelChangesWatcher.java" startLine="147" startPosition="7" endLine="150" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8474613039627891645" fileName="ModelChangesWatcher.java" startLine="160" startPosition="33" endLine="163" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8474613039627891655" fileName="ModelChangesWatcher.java" startLine="164" startPosition="58" endLine="167" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8474613039627891709" fileName="ModelChangesWatcher.java" startLine="185" startPosition="49" endLine="188" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8474613039627891726" fileName="ModelChangesWatcher.java" startLine="193" startPosition="79" endLine="196" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.SynchronizedStatement" />
+    <nodeInfo nodeId="8474613039627891740" fileName="ModelChangesWatcher.java" startLine="199" startPosition="82" endLine="202" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.SynchronizedStatement" />
+    <nodeInfo nodeId="8474613039627890968" fileName="ModelChangesWatcher.java" startLine="229" startPosition="0" endLine="232" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="before#(Ljava/util/List;)V" />
+    <nodeInfo nodeId="8474613039627891140" fileName="ModelChangesWatcher.java" startLine="234" startPosition="74" endLine="237" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8474613039627891157" fileName="ModelChangesWatcher.java" startLine="238" startPosition="29" endLine="241" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="9045182831066367208" fileName="ModelChangesWatcher.java" startLine="268" startPosition="37" endLine="271" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="9045182831066366251" fileName="ModelChangesWatcher.java" startLine="273" startPosition="55" endLine="276" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8474613039627891349" fileName="ModelChangesWatcher.java" startLine="55" startPosition="108" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="beforeRefreshStart#(Z)V" />
+    <nodeInfo nodeId="8474613039627891357" fileName="ModelChangesWatcher.java" startLine="59" startPosition="0" endLine="63" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="afterRefreshFinish#(Z)V" />
+    <nodeInfo nodeId="8474613039627891380" fileName="ModelChangesWatcher.java" startLine="66" startPosition="91" endLine="70" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="sessionOpened#(Ljetbrains/mps/make/MakeNotification;)V" />
+    <nodeInfo nodeId="8474613039627891388" fileName="ModelChangesWatcher.java" startLine="70" startPosition="0" endLine="74" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="sessionClosed#(Ljetbrains/mps/make/MakeNotification;)V" />
+    <nodeInfo nodeId="8474613039627891432" fileName="ModelChangesWatcher.java" startLine="94" startPosition="40" endLine="98" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.SynchronizedStatement" />
+    <nodeInfo nodeId="8474613039627891479" fileName="ModelChangesWatcher.java" startLine="106" startPosition="0" endLine="110" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="initComponent#()V" />
+    <nodeInfo nodeId="8474613039627891500" fileName="ModelChangesWatcher.java" startLine="114" startPosition="10" endLine="118" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8474613039627891564" fileName="ModelChangesWatcher.java" startLine="133" startPosition="5" endLine="137" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8474613039627891631" fileName="ModelChangesWatcher.java" startLine="154" startPosition="70" endLine="158" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8474613039627891673" fileName="ModelChangesWatcher.java" startLine="169" startPosition="88" endLine="173" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#(Lcom/intellij/openapi/progress/ProgressIndicator;)V" />
+    <nodeInfo nodeId="8474613039627891689" fileName="ModelChangesWatcher.java" startLine="179" startPosition="0" endLine="183" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSignificantRoots#()Ljava/util/Set;" />
+    <nodeInfo nodeId="8474613039627891399" fileName="ModelChangesWatcher.java" startLine="221" startPosition="0" endLine="225" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="instance#()Ljetbrains/mps/ide/platform/watching/ModelChangesWatcher;" />
+    <nodeInfo nodeId="8474613039627891524" fileName="ModelChangesWatcher.java" startLine="122" startPosition="44" endLine="127" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8474613039627891666" fileName="ModelChangesWatcher.java" startLine="168" startPosition="35" endLine="173" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8474613039627891704" fileName="ModelChangesWatcher.java" startLine="184" startPosition="54" endLine="189" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="8474613039627891753" fileName="ModelChangesWatcher.java" startLine="205" startPosition="73" endLine="210" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.SynchronizedStatement" />
+    <nodeInfo nodeId="8474613039627891219" fileName="ModelChangesWatcher.java" startLine="248" startPosition="76" endLine="253" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="process#(Ljava/io/File;)Z" />
+    <nodeInfo nodeId="8474613039627891442" fileName="ModelChangesWatcher.java" startLine="76" startPosition="0" endLine="82" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ModelChangesWatcher#(Lcom/intellij/util/messages/MessageBus;Lcom/intellij/openapi/project/ProjectManager;Lcom/intellij/openapi/vfs/VirtualFileManager;)V" />
+    <nodeInfo nodeId="8474613039627891471" fileName="ModelChangesWatcher.java" startLine="100" startPosition="0" endLine="106" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getComponentName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="8474613039627891624" fileName="ModelChangesWatcher.java" startLine="153" startPosition="27" endLine="159" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="8474613039627891720" fileName="ModelChangesWatcher.java" startLine="192" startPosition="0" endLine="198" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addReloadListener#(Ljetbrains/mps/ide/platform/watching/ModelChangesWatcher/IReloadListener;)V" />
+    <nodeInfo nodeId="8474613039627891734" fileName="ModelChangesWatcher.java" startLine="198" startPosition="0" endLine="204" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="removeReloadListener#(Ljetbrains/mps/ide/platform/watching/ModelChangesWatcher/IReloadListener;)V" />
+    <nodeInfo nodeId="8474613039627891778" fileName="ModelChangesWatcher.java" startLine="213" startPosition="68" endLine="219" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
+    <nodeInfo nodeId="8474613039627891212" fileName="ModelChangesWatcher.java" startLine="247" startPosition="48" endLine="253" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8474613039627891412" fileName="ModelChangesWatcher.java" startLine="84" startPosition="44" endLine="91" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.SynchronizedStatement" />
+    <nodeInfo nodeId="8474613039627891428" fileName="ModelChangesWatcher.java" startLine="93" startPosition="0" endLine="100" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="suspendTasksProcessing#()V" />
+    <nodeInfo nodeId="8474613039627891490" fileName="ModelChangesWatcher.java" startLine="111" startPosition="47" endLine="118" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8474613039627891518" fileName="ModelChangesWatcher.java" startLine="121" startPosition="0" endLine="129" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="initComponent#(Z)V" />
+    <nodeInfo nodeId="8474613039627891748" fileName="ModelChangesWatcher.java" startLine="204" startPosition="0" endLine="212" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getReloadListeners#()Ljava/util/Set;" />
+    <nodeInfo nodeId="8474613039627891208" fileName="ModelChangesWatcher.java" startLine="246" startPosition="82" endLine="254" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8474613039627891343" fileName="ModelChangesWatcher.java" startLine="54" startPosition="128" endLine="63" endPosition="4" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myVirtualFileManagerListener" />
+    <nodeInfo nodeId="8474613039627891373" fileName="ModelChangesWatcher.java" startLine="65" startPosition="93" endLine="74" endPosition="4" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myMakeListener" />
+    <nodeInfo nodeId="8474613039627891698" fileName="ModelChangesWatcher.java" startLine="183" startPosition="0" endLine="192" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isUnderSignificantRoots#(Ljava/io/File;)Z" />
+    <nodeInfo nodeId="8474613039627891770" fileName="ModelChangesWatcher.java" startLine="212" startPosition="0" endLine="221" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="executeUnderBlockedReload#(Ljetbrains/mps/util/Computable;)null" />
+    <nodeInfo nodeId="8474613039627891408" fileName="ModelChangesWatcher.java" startLine="83" startPosition="0" endLine="93" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="tryToResumeTasksProcessing#()V" />
+    <nodeInfo nodeId="8474613039627891192" fileName="ModelChangesWatcher.java" startLine="245" startPosition="37" endLine="255" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8474613039627891486" fileName="ModelChangesWatcher.java" startLine="110" startPosition="0" endLine="121" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setMakeService#(Ljetbrains/mps/make/IMakeService;)V" />
+    <nodeInfo nodeId="8474613039627891554" fileName="ModelChangesWatcher.java" startLine="129" startPosition="0" endLine="142" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="disposeComponent#()V" />
+    <nodeInfo nodeId="8474613039627891642" fileName="ModelChangesWatcher.java" startLine="159" startPosition="11" endLine="174" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.SynchronizedStatement" />
+    <nodeInfo nodeId="8474613039627891168" fileName="ModelChangesWatcher.java" startLine="241" startPosition="9" endLine="257" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="9045182831066294462" fileName="ModelChangesWatcher.java" startLine="272" startPosition="0" endLine="289" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8474613039627891154" fileName="ModelChangesWatcher.java" startLine="237" startPosition="7" endLine="259" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.SynchronizedStatement" />
+    <nodeInfo nodeId="9045182831066367202" fileName="ModelChangesWatcher.java" startLine="267" startPosition="0" endLine="290" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="8474613039627891620" fileName="ModelChangesWatcher.java" startLine="152" startPosition="38" endLine="176" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="8474613039627891612" fileName="ModelChangesWatcher.java" startLine="151" startPosition="0" endLine="176" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8474613039627891128" fileName="ModelChangesWatcher.java" startLine="232" startPosition="0" endLine="261" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="after#(Ljava/util/List;)V" />
+    <nodeInfo nodeId="8474613039627891246" fileName="ModelChangesWatcher.java" startLine="261" startPosition="0" endLine="292" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="processAfterEvent#(Ljava/io/File;Lcom/intellij/openapi/vfs/newvfs/events/VFileEvent;Ljetbrains/mps/ide/platform/watching/ReloadSession;)V" />
+    <nodeInfo nodeId="8474613039627891595" fileName="ModelChangesWatcher.java" startLine="143" startPosition="30" endLine="177" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.SynchronizedStatement" />
+    <nodeInfo nodeId="8474613039627891591" fileName="ModelChangesWatcher.java" startLine="142" startPosition="0" endLine="179" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="queueReload#()V" />
+    <scopeInfo nodeId="8474613039627890967" fileName="ModelChangesWatcher.java" startLine="227" startPosition="39" endLine="227" endPosition="39" />
+    <scopeInfo nodeId="8474613039627890975" fileName="ModelChangesWatcher.java" startLine="230" startPosition="59" endLine="230" endPosition="59" />
+    <scopeInfo nodeId="8474613039627891354" fileName="ModelChangesWatcher.java" startLine="56" startPosition="51" endLine="57" endPosition="31" />
+    <scopeInfo nodeId="8474613039627891362" fileName="ModelChangesWatcher.java" startLine="60" startPosition="51" endLine="61" endPosition="35" />
+    <scopeInfo nodeId="8474613039627891385" fileName="ModelChangesWatcher.java" startLine="67" startPosition="62" endLine="68" endPosition="31" />
+    <scopeInfo nodeId="8474613039627891393" fileName="ModelChangesWatcher.java" startLine="71" startPosition="62" endLine="72" endPosition="35" />
+    <scopeInfo nodeId="8474613039627891422" fileName="ModelChangesWatcher.java" startLine="87" startPosition="24" endLine="88" endPosition="15" />
+    <scopeInfo nodeId="8474613039627891474" fileName="ModelChangesWatcher.java" startLine="103" startPosition="36" endLine="104" endPosition="35" />
+    <scopeInfo nodeId="8474613039627891482" fileName="ModelChangesWatcher.java" startLine="107" startPosition="31" endLine="108" endPosition="25" />
+    <scopeInfo nodeId="8474613039627891494" fileName="ModelChangesWatcher.java" startLine="112" startPosition="21" endLine="113" endPosition="37" />
+    <scopeInfo nodeId="8474613039627891503" fileName="ModelChangesWatcher.java" startLine="115" startPosition="34" endLine="116" endPosition="53" />
+    <scopeInfo nodeId="8474613039627891559" fileName="ModelChangesWatcher.java" startLine="131" startPosition="31" endLine="132" endPosition="13" />
+    <scopeInfo nodeId="8474613039627891602" fileName="ModelChangesWatcher.java" startLine="145" startPosition="36" endLine="146" endPosition="15" />
+    <scopeInfo nodeId="8474613039627891609" fileName="ModelChangesWatcher.java" startLine="148" startPosition="49" endLine="149" endPosition="15" />
+    <scopeInfo nodeId="8474613039627891649" fileName="ModelChangesWatcher.java" startLine="161" startPosition="42" endLine="162" endPosition="21" />
+    <scopeInfo nodeId="8474613039627891660" fileName="ModelChangesWatcher.java" startLine="165" startPosition="47" endLine="166" endPosition="21" />
+    <scopeInfo nodeId="8474613039627891679" fileName="ModelChangesWatcher.java" startLine="170" startPosition="83" endLine="171" endPosition="52" />
+    <scopeInfo nodeId="8474613039627891693" fileName="ModelChangesWatcher.java" startLine="180" startPosition="49" endLine="181" endPosition="64" />
+    <scopeInfo nodeId="8474613039627891715" fileName="ModelChangesWatcher.java" startLine="186" startPosition="73" endLine="187" endPosition="20" />
+    <scopeInfo nodeId="8474613039627891728" fileName="ModelChangesWatcher.java" startLine="194" startPosition="38" endLine="195" endPosition="38" />
+    <scopeInfo nodeId="8474613039627891742" fileName="ModelChangesWatcher.java" startLine="200" startPosition="38" endLine="201" endPosition="41" />
+    <scopeInfo nodeId="8474613039627891779" fileName="ModelChangesWatcher.java" startLine="217" startPosition="15" endLine="218" endPosition="35" />
+    <scopeInfo nodeId="8474613039627891402" fileName="ModelChangesWatcher.java" startLine="222" startPosition="48" endLine="223" endPosition="87" />
+    <scopeInfo nodeId="8474613039627891148" fileName="ModelChangesWatcher.java" startLine="235" startPosition="74" endLine="236" endPosition="15" />
+    <scopeInfo nodeId="8474613039627891161" fileName="ModelChangesWatcher.java" startLine="239" startPosition="38" endLine="240" endPosition="68" />
+    <scopeInfo nodeId="9045182831066367209" fileName="ModelChangesWatcher.java" startLine="269" startPosition="47" endLine="270" endPosition="19" />
+    <scopeInfo nodeId="9045182831066367242" fileName="ModelChangesWatcher.java" startLine="274" startPosition="56" endLine="275" endPosition="21" />
+    <scopeInfo nodeId="9045182831066369905" fileName="ModelChangesWatcher.java" startLine="278" startPosition="55" endLine="279" endPosition="43" />
+    <scopeInfo nodeId="9045182831066369926" fileName="ModelChangesWatcher.java" startLine="280" startPosition="55" endLine="281" endPosition="43" />
+    <scopeInfo nodeId="9045182831066369930" fileName="ModelChangesWatcher.java" startLine="282" startPosition="53" endLine="283" endPosition="43" />
+    <scopeInfo nodeId="8474613039627891290" fileName="ModelChangesWatcher.java" startLine="294" startPosition="43" endLine="295" endPosition="32" />
+    <scopeInfo nodeId="8474613039627891294" fileName="ModelChangesWatcher.java" startLine="295" startPosition="32" endLine="296" endPosition="33" />
+    <scopeInfo nodeId="8474613039627891434" fileName="ModelChangesWatcher.java" startLine="95" startPosition="27" endLine="97" endPosition="15" />
+    <scopeInfo nodeId="8474613039627891565" fileName="ModelChangesWatcher.java" startLine="134" startPosition="32" endLine="136" endPosition="27" />
+    <scopeInfo nodeId="8474613039627891638" fileName="ModelChangesWatcher.java" startLine="155" startPosition="103" endLine="157" endPosition="21" />
+    <scopeInfo nodeId="8474613039627891782" fileName="ModelChangesWatcher.java" startLine="214" startPosition="9" endLine="216" endPosition="34" />
+    <scopeInfo nodeId="8474613039627890964" fileName="ModelChangesWatcher.java" startLine="226" startPosition="69" endLine="228" endPosition="5" />
+    <scopeInfo nodeId="8474613039627891224" fileName="ModelChangesWatcher.java" startLine="249" startPosition="51" endLine="251" endPosition="30" />
+    <scopeInfo nodeId="8474613039627891501" fileName="ModelChangesWatcher.java" startLine="114" startPosition="12" endLine="117" endPosition="7" />
+    <scopeInfo nodeId="8474613039627891525" fileName="ModelChangesWatcher.java" startLine="123" startPosition="83" endLine="126" endPosition="87" />
+    <scopeInfo nodeId="8474613039627891708" fileName="ModelChangesWatcher.java" startLine="185" startPosition="49" endLine="188" endPosition="7" />
+    <scopeInfo nodeId="8474613039627891725" fileName="ModelChangesWatcher.java" startLine="193" startPosition="79" endLine="196" endPosition="5" />
+    <scopeInfo nodeId="8474613039627891739" fileName="ModelChangesWatcher.java" startLine="199" startPosition="82" endLine="202" endPosition="5" />
+    <scopeInfo nodeId="8474613039627891755" fileName="ModelChangesWatcher.java" startLine="206" startPosition="38" endLine="209" endPosition="23">
       <varInfo nodeId="8474613039627891757" varName="listeners" />
     </scopeInfo>
-    <scopeInfo nodeId="8474613039627890968" fileName="ModelChangesWatcher.java" startLine="225" startPosition="0" endLine="228" endPosition="0">
+    <scopeInfo nodeId="8474613039627890968" fileName="ModelChangesWatcher.java" startLine="229" startPosition="0" endLine="232" endPosition="0">
       <varInfo nodeId="8474613039627890971" varName="events" />
     </scopeInfo>
-    <scopeInfo nodeId="8474613039627891349" fileName="ModelChangesWatcher.java" startLine="51" startPosition="108" endLine="55" endPosition="0">
+    <scopeInfo nodeId="8474613039627891349" fileName="ModelChangesWatcher.java" startLine="55" startPosition="108" endLine="59" endPosition="0">
       <varInfo nodeId="8474613039627891352" varName="async" />
     </scopeInfo>
-    <scopeInfo nodeId="8474613039627891357" fileName="ModelChangesWatcher.java" startLine="55" startPosition="0" endLine="59" endPosition="0">
+    <scopeInfo nodeId="8474613039627891357" fileName="ModelChangesWatcher.java" startLine="59" startPosition="0" endLine="63" endPosition="0">
       <varInfo nodeId="8474613039627891360" varName="async" />
     </scopeInfo>
-    <scopeInfo nodeId="8474613039627891380" fileName="ModelChangesWatcher.java" startLine="62" startPosition="91" endLine="66" endPosition="0">
+    <scopeInfo nodeId="8474613039627891380" fileName="ModelChangesWatcher.java" startLine="66" startPosition="91" endLine="70" endPosition="0">
       <varInfo nodeId="8474613039627891383" varName="notification" />
     </scopeInfo>
-    <scopeInfo nodeId="8474613039627891388" fileName="ModelChangesWatcher.java" startLine="66" startPosition="0" endLine="70" endPosition="0">
+    <scopeInfo nodeId="8474613039627891388" fileName="ModelChangesWatcher.java" startLine="70" startPosition="0" endLine="74" endPosition="0">
       <varInfo nodeId="8474613039627891391" varName="notification" />
     </scopeInfo>
-    <scopeInfo nodeId="8474613039627891453" fileName="ModelChangesWatcher.java" startLine="73" startPosition="116" endLine="77" endPosition="39" />
-    <scopeInfo nodeId="8474613039627891431" fileName="ModelChangesWatcher.java" startLine="90" startPosition="40" endLine="94" endPosition="5" />
-    <scopeInfo nodeId="8474613039627891479" fileName="ModelChangesWatcher.java" startLine="102" startPosition="0" endLine="106" endPosition="0" />
-    <scopeInfo nodeId="8474613039627891630" fileName="ModelChangesWatcher.java" startLine="150" startPosition="70" endLine="154" endPosition="13" />
-    <scopeInfo nodeId="8474613039627891673" fileName="ModelChangesWatcher.java" startLine="165" startPosition="88" endLine="169" endPosition="0">
+    <scopeInfo nodeId="8474613039627891453" fileName="ModelChangesWatcher.java" startLine="77" startPosition="116" endLine="81" endPosition="39" />
+    <scopeInfo nodeId="8474613039627891431" fileName="ModelChangesWatcher.java" startLine="94" startPosition="40" endLine="98" endPosition="5" />
+    <scopeInfo nodeId="8474613039627891479" fileName="ModelChangesWatcher.java" startLine="106" startPosition="0" endLine="110" endPosition="0" />
+    <scopeInfo nodeId="8474613039627891630" fileName="ModelChangesWatcher.java" startLine="154" startPosition="70" endLine="158" endPosition="13" />
+    <scopeInfo nodeId="8474613039627891673" fileName="ModelChangesWatcher.java" startLine="169" startPosition="88" endLine="173" endPosition="0">
       <varInfo nodeId="8474613039627891676" varName="progressIndicator" />
     </scopeInfo>
-    <scopeInfo nodeId="8474613039627891689" fileName="ModelChangesWatcher.java" startLine="175" startPosition="0" endLine="179" endPosition="0" />
-    <scopeInfo nodeId="8474613039627891399" fileName="ModelChangesWatcher.java" startLine="217" startPosition="0" endLine="221" endPosition="0" />
-    <scopeInfo nodeId="8474613039627891414" fileName="ModelChangesWatcher.java" startLine="81" startPosition="27" endLine="86" endPosition="23" />
-    <scopeInfo nodeId="8474613039627891523" fileName="ModelChangesWatcher.java" startLine="118" startPosition="44" endLine="123" endPosition="5" />
-    <scopeInfo nodeId="8474613039627891704" fileName="ModelChangesWatcher.java" startLine="180" startPosition="54" endLine="185" endPosition="5">
+    <scopeInfo nodeId="8474613039627891689" fileName="ModelChangesWatcher.java" startLine="179" startPosition="0" endLine="183" endPosition="0" />
+    <scopeInfo nodeId="8474613039627891399" fileName="ModelChangesWatcher.java" startLine="221" startPosition="0" endLine="225" endPosition="0" />
+    <scopeInfo nodeId="9045182831066294502" fileName="ModelChangesWatcher.java" startLine="273" startPosition="55" endLine="277" endPosition="51" />
+    <scopeInfo nodeId="9045182831066369933" fileName="ModelChangesWatcher.java" startLine="284" startPosition="53" endLine="288" endPosition="71">
+      <varInfo nodeId="9045182831066370123" varName="name" />
+      <varInfo nodeId="9045182831066369940" varName="re" />
+    </scopeInfo>
+    <scopeInfo nodeId="8474613039627891414" fileName="ModelChangesWatcher.java" startLine="85" startPosition="27" endLine="90" endPosition="23" />
+    <scopeInfo nodeId="8474613039627891523" fileName="ModelChangesWatcher.java" startLine="122" startPosition="44" endLine="127" endPosition="5" />
+    <scopeInfo nodeId="8474613039627891704" fileName="ModelChangesWatcher.java" startLine="184" startPosition="54" endLine="189" endPosition="5">
       <varInfo nodeId="8474613039627891706" varName="f" />
     </scopeInfo>
-    <scopeInfo nodeId="8474613039627891752" fileName="ModelChangesWatcher.java" startLine="201" startPosition="73" endLine="206" endPosition="5" />
-    <scopeInfo nodeId="8474613039627891219" fileName="ModelChangesWatcher.java" startLine="245" startPosition="76" endLine="250" endPosition="0">
+    <scopeInfo nodeId="8474613039627891752" fileName="ModelChangesWatcher.java" startLine="205" startPosition="73" endLine="210" endPosition="5" />
+    <scopeInfo nodeId="8474613039627891219" fileName="ModelChangesWatcher.java" startLine="248" startPosition="76" endLine="253" endPosition="0">
       <varInfo nodeId="8474613039627891222" varName="file" />
     </scopeInfo>
-    <scopeInfo nodeId="8474613039627891442" fileName="ModelChangesWatcher.java" startLine="72" startPosition="0" endLine="78" endPosition="3">
+    <scopeInfo nodeId="8474613039627891442" fileName="ModelChangesWatcher.java" startLine="76" startPosition="0" endLine="82" endPosition="3">
       <varInfo nodeId="8474613039627891447" varName="bus" />
       <varInfo nodeId="8474613039627891449" varName="projectManager" />
       <varInfo nodeId="8474613039627891451" varName="virtualFileManager" />
     </scopeInfo>
-    <scopeInfo nodeId="8474613039627891471" fileName="ModelChangesWatcher.java" startLine="96" startPosition="0" endLine="102" endPosition="0" />
-    <scopeInfo nodeId="8474613039627891624" fileName="ModelChangesWatcher.java" startLine="149" startPosition="27" endLine="155" endPosition="11">
+    <scopeInfo nodeId="8474613039627891471" fileName="ModelChangesWatcher.java" startLine="100" startPosition="0" endLine="106" endPosition="0" />
+    <scopeInfo nodeId="8474613039627891624" fileName="ModelChangesWatcher.java" startLine="153" startPosition="27" endLine="159" endPosition="11">
       <varInfo nodeId="8474613039627891628" varName="project" />
     </scopeInfo>
-    <scopeInfo nodeId="8474613039627891703" fileName="ModelChangesWatcher.java" startLine="180" startPosition="54" endLine="186" endPosition="17" />
-    <scopeInfo nodeId="8474613039627891720" fileName="ModelChangesWatcher.java" startLine="188" startPosition="0" endLine="194" endPosition="0">
+    <scopeInfo nodeId="8474613039627891703" fileName="ModelChangesWatcher.java" startLine="184" startPosition="54" endLine="190" endPosition="17" />
+    <scopeInfo nodeId="8474613039627891720" fileName="ModelChangesWatcher.java" startLine="192" startPosition="0" endLine="198" endPosition="0">
       <varInfo nodeId="8474613039627891723" varName="listener" />
     </scopeInfo>
-    <scopeInfo nodeId="8474613039627891734" fileName="ModelChangesWatcher.java" startLine="194" startPosition="0" endLine="200" endPosition="0">
+    <scopeInfo nodeId="8474613039627891734" fileName="ModelChangesWatcher.java" startLine="198" startPosition="0" endLine="204" endPosition="0">
       <varInfo nodeId="8474613039627891737" varName="listener" />
     </scopeInfo>
-    <scopeInfo nodeId="8474613039627891777" fileName="ModelChangesWatcher.java" startLine="209" startPosition="68" endLine="215" endPosition="5" />
-    <scopeInfo nodeId="8474613039627891211" fileName="ModelChangesWatcher.java" startLine="244" startPosition="48" endLine="250" endPosition="17" />
-    <scopeInfo nodeId="8474613039627891255" fileName="ModelChangesWatcher.java" startLine="259" startPosition="100" endLine="265" endPosition="7" />
-    <scopeInfo nodeId="8474613039627891411" fileName="ModelChangesWatcher.java" startLine="80" startPosition="44" endLine="87" endPosition="5" />
-    <scopeInfo nodeId="8474613039627891428" fileName="ModelChangesWatcher.java" startLine="89" startPosition="0" endLine="96" endPosition="0" />
-    <scopeInfo nodeId="8474613039627891489" fileName="ModelChangesWatcher.java" startLine="107" startPosition="47" endLine="115" endPosition="23" />
-    <scopeInfo nodeId="8474613039627891518" fileName="ModelChangesWatcher.java" startLine="117" startPosition="0" endLine="125" endPosition="0">
+    <scopeInfo nodeId="8474613039627891777" fileName="ModelChangesWatcher.java" startLine="213" startPosition="68" endLine="219" endPosition="5" />
+    <scopeInfo nodeId="8474613039627891211" fileName="ModelChangesWatcher.java" startLine="247" startPosition="48" endLine="253" endPosition="17" />
+    <scopeInfo nodeId="8474613039627891411" fileName="ModelChangesWatcher.java" startLine="84" startPosition="44" endLine="91" endPosition="5" />
+    <scopeInfo nodeId="8474613039627891428" fileName="ModelChangesWatcher.java" startLine="93" startPosition="0" endLine="100" endPosition="0" />
+    <scopeInfo nodeId="8474613039627891489" fileName="ModelChangesWatcher.java" startLine="111" startPosition="47" endLine="119" endPosition="23" />
+    <scopeInfo nodeId="8474613039627891518" fileName="ModelChangesWatcher.java" startLine="121" startPosition="0" endLine="129" endPosition="0">
       <varInfo nodeId="8474613039627891519" varName="force" />
     </scopeInfo>
-    <scopeInfo nodeId="8474613039627891748" fileName="ModelChangesWatcher.java" startLine="200" startPosition="0" endLine="208" endPosition="0" />
-    <scopeInfo nodeId="8474613039627891207" fileName="ModelChangesWatcher.java" startLine="243" startPosition="82" endLine="251" endPosition="13" />
-    <scopeInfo nodeId="8474613039627891698" fileName="ModelChangesWatcher.java" startLine="179" startPosition="0" endLine="188" endPosition="0">
+    <scopeInfo nodeId="8474613039627891748" fileName="ModelChangesWatcher.java" startLine="204" startPosition="0" endLine="212" endPosition="0" />
+    <scopeInfo nodeId="8474613039627891207" fileName="ModelChangesWatcher.java" startLine="246" startPosition="82" endLine="254" endPosition="13" />
+    <scopeInfo nodeId="8474613039627891698" fileName="ModelChangesWatcher.java" startLine="183" startPosition="0" endLine="192" endPosition="0">
       <varInfo nodeId="8474613039627891701" varName="file" />
     </scopeInfo>
-    <scopeInfo nodeId="8474613039627891770" fileName="ModelChangesWatcher.java" startLine="208" startPosition="0" endLine="217" endPosition="0">
+    <scopeInfo nodeId="8474613039627891770" fileName="ModelChangesWatcher.java" startLine="212" startPosition="0" endLine="221" endPosition="0">
       <varInfo nodeId="8474613039627891774" varName="computable" />
     </scopeInfo>
-    <scopeInfo nodeId="8474613039627891246" fileName="ModelChangesWatcher.java" startLine="258" startPosition="0" endLine="267" endPosition="0">
-      <varInfo nodeId="8474613039627891251" varName="event" />
-      <varInfo nodeId="8474613039627891249" varName="filePath" />
-      <varInfo nodeId="8474613039627891253" varName="reloadSession" />
-    </scopeInfo>
-    <scopeInfo nodeId="8474613039627891408" fileName="ModelChangesWatcher.java" startLine="79" startPosition="0" endLine="89" endPosition="0" />
-    <scopeInfo nodeId="8474613039627891557" fileName="ModelChangesWatcher.java" startLine="126" startPosition="34" endLine="136" endPosition="24" />
-    <scopeInfo nodeId="8474613039627891486" fileName="ModelChangesWatcher.java" startLine="106" startPosition="0" endLine="117" endPosition="0">
+    <scopeInfo nodeId="8474613039627891408" fileName="ModelChangesWatcher.java" startLine="83" startPosition="0" endLine="93" endPosition="0" />
+    <scopeInfo nodeId="8474613039627891557" fileName="ModelChangesWatcher.java" startLine="130" startPosition="34" endLine="140" endPosition="24" />
+    <scopeInfo nodeId="8474613039627891486" fileName="ModelChangesWatcher.java" startLine="110" startPosition="0" endLine="121" endPosition="0">
       <varInfo nodeId="8474613039627891516" varName="ms" />
     </scopeInfo>
-    <scopeInfo nodeId="8474613039627891554" fileName="ModelChangesWatcher.java" startLine="125" startPosition="0" endLine="138" endPosition="0" />
-    <scopeInfo nodeId="8474613039627891644" fileName="ModelChangesWatcher.java" startLine="156" startPosition="33" endLine="169" endPosition="15">
+    <scopeInfo nodeId="8474613039627891554" fileName="ModelChangesWatcher.java" startLine="129" startPosition="0" endLine="142" endPosition="0" />
+    <scopeInfo nodeId="8474613039627891644" fileName="ModelChangesWatcher.java" startLine="160" startPosition="33" endLine="173" endPosition="15">
       <varInfo nodeId="8474613039627891652" varName="session" />
     </scopeInfo>
-    <scopeInfo nodeId="8474613039627891172" fileName="ModelChangesWatcher.java" startLine="239" startPosition="47" endLine="253" endPosition="58">
+    <scopeInfo nodeId="8474613039627891172" fileName="ModelChangesWatcher.java" startLine="242" startPosition="47" endLine="256" endPosition="58">
       <varInfo nodeId="8474613039627891187" varName="file" />
       <varInfo nodeId="8474613039627891174" varName="path" />
     </scopeInfo>
-    <scopeInfo nodeId="8474613039627891168" fileName="ModelChangesWatcher.java" startLine="238" startPosition="9" endLine="254" endPosition="9">
+    <scopeInfo nodeId="8474613039627891168" fileName="ModelChangesWatcher.java" startLine="241" startPosition="9" endLine="257" endPosition="9">
       <varInfo nodeId="8474613039627891170" varName="event" />
     </scopeInfo>
-    <scopeInfo nodeId="8474613039627891156" fileName="ModelChangesWatcher.java" startLine="235" startPosition="29" endLine="255" endPosition="22" />
-    <scopeInfo nodeId="8474613039627891623" fileName="ModelChangesWatcher.java" startLine="149" startPosition="27" endLine="170" endPosition="11" />
-    <scopeInfo nodeId="8474613039627891620" fileName="ModelChangesWatcher.java" startLine="148" startPosition="38" endLine="172" endPosition="0" />
-    <scopeInfo nodeId="8474613039627891135" fileName="ModelChangesWatcher.java" startLine="229" startPosition="64" endLine="256" endPosition="7">
-      <varInfo nodeId="8474613039627891137" varName="application" />
-      <varInfo nodeId="8474613039627891151" varName="resume" />
+    <scopeInfo nodeId="8474613039627891156" fileName="ModelChangesWatcher.java" startLine="238" startPosition="29" endLine="258" endPosition="22" />
+    <scopeInfo nodeId="8474613039627891623" fileName="ModelChangesWatcher.java" startLine="153" startPosition="27" endLine="174" endPosition="11" />
+    <scopeInfo nodeId="9045182831066367205" fileName="ModelChangesWatcher.java" startLine="268" startPosition="37" endLine="289" endPosition="9" />
+    <scopeInfo nodeId="9045182831066367202" fileName="ModelChangesWatcher.java" startLine="267" startPosition="0" endLine="290" endPosition="7">
+      <varInfo nodeId="9045182831066367202" varName="p" />
     </scopeInfo>
-    <scopeInfo nodeId="8474613039627891128" fileName="ModelChangesWatcher.java" startLine="228" startPosition="0" endLine="258" endPosition="0">
+    <scopeInfo nodeId="8474613039627891620" fileName="ModelChangesWatcher.java" startLine="152" startPosition="38" endLine="176" endPosition="0" />
+    <scopeInfo nodeId="8474613039627891135" fileName="ModelChangesWatcher.java" startLine="233" startPosition="64" endLine="259" endPosition="7">
+      <varInfo nodeId="8474613039627891137" varName="application" />
+    </scopeInfo>
+    <scopeInfo nodeId="8474613039627891255" fileName="ModelChangesWatcher.java" startLine="262" startPosition="98" endLine="290" endPosition="7">
+      <varInfo nodeId="9045182831066366213" varName="modelProcessor" />
+      <varInfo nodeId="9045182831066366261" varName="moduleProcessor" />
+      <varInfo nodeId="9045182831066367171" varName="proc" />
+    </scopeInfo>
+    <scopeInfo nodeId="8474613039627891128" fileName="ModelChangesWatcher.java" startLine="232" startPosition="0" endLine="261" endPosition="0">
       <varInfo nodeId="8474613039627891131" varName="events" />
     </scopeInfo>
-    <scopeInfo nodeId="8474613039627891597" fileName="ModelChangesWatcher.java" startLine="140" startPosition="27" endLine="172" endPosition="9" />
-    <scopeInfo nodeId="8474613039627891594" fileName="ModelChangesWatcher.java" startLine="139" startPosition="30" endLine="173" endPosition="5" />
-    <scopeInfo nodeId="8474613039627891591" fileName="ModelChangesWatcher.java" startLine="138" startPosition="0" endLine="175" endPosition="0" />
-    <unitInfo nodeId="8474613039627890958" fileName="ModelChangesWatcher.java" startLine="40" startPosition="0" endLine="274" endPosition="0" unitName="jetbrains.mps.ide.platform.watching.ModelChangesWatcher" />
-    <unitInfo nodeId="8474613039627891217" fileName="ModelChangesWatcher.java" startLine="245" startPosition="57" endLine="250" endPosition="15" unitName="jetbrains.mps.ide.platform.watching.ModelChangesWatcher$1" />
-    <unitInfo nodeId="8474613039627891348" fileName="ModelChangesWatcher.java" startLine="51" startPosition="78" endLine="59" endPosition="3" unitName="jetbrains.mps.ide.platform.watching.ModelChangesWatcher$1" />
-    <unitInfo nodeId="8474613039627891378" fileName="ModelChangesWatcher.java" startLine="62" startPosition="57" endLine="70" endPosition="3" unitName="jetbrains.mps.ide.platform.watching.ModelChangesWatcher$2" />
-    <unitInfo nodeId="8474613039627891618" fileName="ModelChangesWatcher.java" startLine="148" startPosition="24" endLine="172" endPosition="7" unitName="jetbrains.mps.ide.platform.watching.ModelChangesWatcher$3" />
-    <unitInfo nodeId="8474613039627891672" fileName="ModelChangesWatcher.java" startLine="165" startPosition="50" endLine="169" endPosition="13" unitName="jetbrains.mps.ide.platform.watching.ModelChangesWatcher$4" />
-    <unitInfo nodeId="8474613039627890961" fileName="ModelChangesWatcher.java" startLine="222" startPosition="0" endLine="268" endPosition="0" unitName="jetbrains.mps.ide.platform.watching.ModelChangesWatcher$BulkFileChangesListener" />
-    <unitInfo nodeId="8474613039627891288" fileName="ModelChangesWatcher.java" startLine="269" startPosition="0" endLine="273" endPosition="0" unitName="jetbrains.mps.ide.platform.watching.ModelChangesWatcher$IReloadListener" />
+    <scopeInfo nodeId="8474613039627891246" fileName="ModelChangesWatcher.java" startLine="261" startPosition="0" endLine="292" endPosition="0">
+      <varInfo nodeId="8474613039627891251" varName="event" />
+      <varInfo nodeId="8474613039627891249" varName="realFile" />
+      <varInfo nodeId="8474613039627891253" varName="reloadSession" />
+    </scopeInfo>
+    <scopeInfo nodeId="8474613039627891597" fileName="ModelChangesWatcher.java" startLine="144" startPosition="27" endLine="176" endPosition="9" />
+    <scopeInfo nodeId="8474613039627891594" fileName="ModelChangesWatcher.java" startLine="143" startPosition="30" endLine="177" endPosition="5" />
+    <scopeInfo nodeId="8474613039627891591" fileName="ModelChangesWatcher.java" startLine="142" startPosition="0" endLine="179" endPosition="0" />
+    <unitInfo nodeId="8474613039627890958" fileName="ModelChangesWatcher.java" startLine="44" startPosition="0" endLine="299" endPosition="0" unitName="jetbrains.mps.ide.platform.watching.ModelChangesWatcher" />
+    <unitInfo nodeId="8474613039627891217" fileName="ModelChangesWatcher.java" startLine="248" startPosition="57" endLine="253" endPosition="15" unitName="jetbrains.mps.ide.platform.watching.ModelChangesWatcher$1" />
+    <unitInfo nodeId="8474613039627891348" fileName="ModelChangesWatcher.java" startLine="55" startPosition="78" endLine="63" endPosition="3" unitName="jetbrains.mps.ide.platform.watching.ModelChangesWatcher$1" />
+    <unitInfo nodeId="8474613039627891378" fileName="ModelChangesWatcher.java" startLine="66" startPosition="57" endLine="74" endPosition="3" unitName="jetbrains.mps.ide.platform.watching.ModelChangesWatcher$2" />
+    <unitInfo nodeId="8474613039627891618" fileName="ModelChangesWatcher.java" startLine="152" startPosition="24" endLine="176" endPosition="7" unitName="jetbrains.mps.ide.platform.watching.ModelChangesWatcher$3" />
+    <unitInfo nodeId="8474613039627891672" fileName="ModelChangesWatcher.java" startLine="169" startPosition="50" endLine="173" endPosition="13" unitName="jetbrains.mps.ide.platform.watching.ModelChangesWatcher$4" />
+    <unitInfo nodeId="8474613039627890961" fileName="ModelChangesWatcher.java" startLine="226" startPosition="0" endLine="293" endPosition="0" unitName="jetbrains.mps.ide.platform.watching.ModelChangesWatcher$BulkFileChangesListener" />
+    <unitInfo nodeId="8474613039627891288" fileName="ModelChangesWatcher.java" startLine="294" startPosition="0" endLine="298" endPosition="0" unitName="jetbrains.mps.ide.platform.watching.ModelChangesWatcher$IReloadListener" />
   </root>
   <root nodeId="8474613039627945402">
     <nodeInfo nodeId="6475691738506453704" fileName="PluginSignificantRoots.java" startLine="9" startPosition="62" endLine="10" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myProjectManager" />
