@@ -15,6 +15,7 @@ public class JavaWatchableNodeActions_ActionGroup extends GeneratedActionGroup {
     this.setPopup(false);
     try {
       JavaWatchableNodeActions_ActionGroup.this.addAction("jetbrains.mps.debugger.java.runtime.ui.actions.CopyValueAction_Action");
+      JavaWatchableNodeActions_ActionGroup.this.addAction("jetbrains.mps.debugger.java.runtime.ui.actions.CopyStackTraceToClipboard_Action");
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }

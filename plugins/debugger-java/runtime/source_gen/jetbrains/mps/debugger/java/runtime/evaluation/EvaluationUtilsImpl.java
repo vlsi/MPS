@@ -43,6 +43,18 @@ import com.sun.jdi.DoubleValue;
 import com.sun.jdi.FloatValue;
 import com.sun.jdi.IntegerValue;
 import com.sun.jdi.LongValue;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import com.sun.jdi.ObjectReference;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.behaviour.BehaviorManager;
+import java.util.Set;
+import java.util.HashSet;
+import jetbrains.mps.smodel.SModelUtil_new;
+import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.smodel.SReference;
+import jetbrains.mps.smodel.SModelReference;
+import jetbrains.mps.smodel.SNodeId;
 
 public class EvaluationUtilsImpl extends EvaluationUtils {
   public EvaluationUtilsImpl() {
@@ -331,5 +343,75 @@ public class EvaluationUtilsImpl extends EvaluationUtils {
       return (PrimitiveValueProxy) valueProxy.invokeMethod("longValue", "()J");
     }
     throw new UnsupportedOperationException("Cant unbox value of type" + type);
+  }
+
+  public String getStringPresentation(@NotNull final Value value, @NotNull final ThreadReference threadReference) {
+    try {
+      return MirrorUtil.getInstance().getJavaValue(value).toString();
+    } catch (UnsupportedOperationException e) {
+      if (value instanceof ArrayReference) {
+        ArrayReference array = (ArrayReference) value;
+        StringBuffer buffer = new StringBuffer();
+        buffer.append("[");
+        int length = array.length();
+        int i = 0;
+        for (Value item : ListSequence.fromList(array.getValues())) {
+          buffer.append(getStringPresentation(item, threadReference));
+          if (i < length - 1) {
+            buffer.append(", ");
+          }
+          i++;
+        }
+        buffer.append("]");
+        return buffer.toString();
+      } else {
+        return EvaluationUtils.consumeEvaluationException(new EvaluationUtils.EvaluationInvocatable<String>() {
+          public String invoke() throws EvaluationException {
+            ObjectReference object = (ObjectReference) value;
+            IObjectValueProxy valueProxy = (IObjectValueProxy) MirrorUtil.getInstance().getValueProxy(object, threadReference);
+            SNode toString = new EvaluationUtilsImpl.QuotationClass_wi3cqi_a0a2a0a0a0a0a0a0a0y().createNode();
+            IValueProxy result = valueProxy.invokeMethod(SPropertyOperations.getString(toString, "name"), ((String) BehaviorManager.getInstance().invoke(Object.class, toString, "virtual_jniSignature_8847328628797656446", new Class[]{SNode.class})));
+            return getStringPresentation(result.getJDIValue(), threadReference);
+          }
+        }, null);
+      }
+    }
+  }
+
+  public static class QuotationClass_wi3cqi_a0a2a0a0a0a0a0a0a0y {
+    public QuotationClass_wi3cqi_a0a2a0a0a0a0a0a0a0y() {
+    }
+
+    public SNode createNode() {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_1 = null;
+      SNode quotedNode_2 = null;
+      SNode quotedNode_3 = null;
+      SNode quotedNode_4 = null;
+      {
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration", null, GlobalScope.getInstance(), false);
+        SNode quotedNode1_5 = quotedNode_1;
+        quotedNode1_5.setProperty("name", "toString");
+        {
+          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.PublicVisibility", null, GlobalScope.getInstance(), false);
+          SNode quotedNode1_6 = quotedNode_2;
+          quotedNode_1.addChild("visibility", quotedNode1_6);
+        }
+        {
+          quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StatementList", null, GlobalScope.getInstance(), false);
+          SNode quotedNode1_7 = quotedNode_3;
+          quotedNode_1.addChild("body", quotedNode1_7);
+        }
+        {
+          quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
+          SNode quotedNode1_8 = quotedNode_4;
+          quotedNode1_8.addReference(SReference.create("classifier", quotedNode1_8, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), SNodeId.fromString("~String")));
+          quotedNode_1.addChild("returnType", quotedNode1_8);
+        }
+        result = quotedNode1_5;
+      }
+      return result;
+    }
   }
 }

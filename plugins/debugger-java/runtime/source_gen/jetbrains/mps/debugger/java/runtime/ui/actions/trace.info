@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="Runtime_ApplicationPlugin.java" startLine="9" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.debugger.java.runtime.ui.actions.Runtime_ApplicationPlugin" />
+  <unitInfo fileName="Runtime_ApplicationPlugin.java" startLine="9" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.debugger.java.runtime.ui.actions.Runtime_ApplicationPlugin" />
   <root nodeId="3585489156472415414">
     <nodeInfo nodeId="3585489156472415414" fileName="plugin.xml" startLine="1" startPosition="0" endLine="1" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GIndent" />
     <nodeInfo nodeId="3585489156472415414" fileName="plugin.xml" startLine="1" startPosition="0" endLine="1" endPosition="10" conceptFqName="jetbrains.mps.gtext.structure.GText" />
@@ -106,8 +106,8 @@
     <nodeInfo nodeId="3585489156472415414" fileName="plugin.xml" startLine="12" startPosition="38" endLine="12" endPosition="39" conceptFqName="jetbrains.mps.gtext.structure.GText" />
     <nodeInfo nodeId="3585489156472415414" fileName="plugin.xml" startLine="12" startPosition="39" endLine="12" endPosition="39" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="3585489156472415414" fileName="plugin.xml" startLine="12" startPosition="39" endLine="12" endPosition="39" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
-    <nodeInfo nodeId="3585489156472415414" fileName="plugin.xml" startLine="12" startPosition="39" endLine="12" endPosition="41" conceptFqName="jetbrains.mps.gtext.structure.GText" />
     <nodeInfo nodeId="3585489156472415414" fileName="plugin.xml" startLine="12" startPosition="39" endLine="12" endPosition="39" conceptFqName="jetbrains.mps.gtext.structure.GText" />
+    <nodeInfo nodeId="3585489156472415414" fileName="plugin.xml" startLine="12" startPosition="39" endLine="12" endPosition="41" conceptFqName="jetbrains.mps.gtext.structure.GText" />
     <nodeInfo nodeId="3585489156472415414" fileName="plugin.xml" startLine="12" startPosition="41" endLine="12" endPosition="53" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="3585489156472415414" fileName="plugin.xml" startLine="12" startPosition="41" endLine="12" endPosition="53" conceptFqName="jetbrains.mps.gtext.structure.GText" />
     <nodeInfo nodeId="3585489156472415414" fileName="plugin.xml" startLine="12" startPosition="53" endLine="12" endPosition="54" conceptFqName="jetbrains.mps.gtext.structure.GText" />
@@ -251,38 +251,108 @@
     <nodeInfo nodeId="4613144939628065112" fileName="JavaWatchableNodeActions_ActionGroup.java" startLine="13" startPosition="42" endLine="14" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4613144939628065112" fileName="JavaWatchableNodeActions_ActionGroup.java" startLine="14" startPosition="30" endLine="15" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4613144939628065115" fileName="JavaWatchableNodeActions_ActionGroup.java" startLine="16" startPosition="9" endLine="17" endPosition="131" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4613144939628065112" fileName="JavaWatchableNodeActions_ActionGroup.java" startLine="18" startPosition="27" endLine="19" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4613144939628065112" fileName="JavaWatchableNodeActions_ActionGroup.java" startLine="15" startPosition="25" endLine="20" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="4613144939628065112" fileName="JavaWatchableNodeActions_ActionGroup.java" startLine="11" startPosition="0" endLine="21" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="JavaWatchableNodeActions_ActionGroup#()V" />
-    <scopeInfo nodeId="4613144939628065112" fileName="JavaWatchableNodeActions_ActionGroup.java" startLine="16" startPosition="9" endLine="17" endPosition="131" />
-    <scopeInfo nodeId="4613144939628065112" fileName="JavaWatchableNodeActions_ActionGroup.java" startLine="18" startPosition="0" endLine="19" endPosition="39">
+    <nodeInfo nodeId="8468903939742242945" fileName="JavaWatchableNodeActions_ActionGroup.java" startLine="17" startPosition="131" endLine="18" endPosition="141" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4613144939628065112" fileName="JavaWatchableNodeActions_ActionGroup.java" startLine="19" startPosition="27" endLine="20" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4613144939628065112" fileName="JavaWatchableNodeActions_ActionGroup.java" startLine="15" startPosition="25" endLine="21" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="4613144939628065112" fileName="JavaWatchableNodeActions_ActionGroup.java" startLine="11" startPosition="0" endLine="22" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="JavaWatchableNodeActions_ActionGroup#()V" />
+    <scopeInfo nodeId="4613144939628065112" fileName="JavaWatchableNodeActions_ActionGroup.java" startLine="19" startPosition="0" endLine="20" endPosition="39">
       <varInfo nodeId="4613144939628065112" varName="t" />
     </scopeInfo>
-    <scopeInfo nodeId="4613144939628065112" fileName="JavaWatchableNodeActions_ActionGroup.java" startLine="18" startPosition="27" endLine="19" endPosition="39" />
-    <scopeInfo nodeId="4613144939628065112" fileName="JavaWatchableNodeActions_ActionGroup.java" startLine="12" startPosition="49" endLine="20" endPosition="5" />
-    <scopeInfo nodeId="4613144939628065112" fileName="JavaWatchableNodeActions_ActionGroup.java" startLine="11" startPosition="0" endLine="21" endPosition="3" />
-    <unitInfo nodeId="4613144939628065112" fileName="JavaWatchableNodeActions_ActionGroup.java" startLine="8" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.debugger.java.runtime.ui.actions.JavaWatchableNodeActions_ActionGroup" />
+    <scopeInfo nodeId="4613144939628065112" fileName="JavaWatchableNodeActions_ActionGroup.java" startLine="19" startPosition="27" endLine="20" endPosition="39" />
+    <scopeInfo nodeId="4613144939628065112" fileName="JavaWatchableNodeActions_ActionGroup.java" startLine="16" startPosition="9" endLine="18" endPosition="141" />
+    <scopeInfo nodeId="4613144939628065112" fileName="JavaWatchableNodeActions_ActionGroup.java" startLine="12" startPosition="49" endLine="21" endPosition="5" />
+    <scopeInfo nodeId="4613144939628065112" fileName="JavaWatchableNodeActions_ActionGroup.java" startLine="11" startPosition="0" endLine="22" endPosition="3" />
+    <unitInfo nodeId="4613144939628065112" fileName="JavaWatchableNodeActions_ActionGroup.java" startLine="8" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.debugger.java.runtime.ui.actions.JavaWatchableNodeActions_ActionGroup" />
+  </root>
+  <root nodeId="4893181994832024376">
+    <nodeInfo nodeId="4893181994832024376" fileName="CopyStackTraceToClipboard_Action.java" startLine="17" startPosition="66" endLine="18" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
+    <nodeInfo nodeId="4893181994832024376" fileName="CopyStackTraceToClipboard_Action.java" startLine="18" startPosition="40" endLine="19" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="log" />
+    <nodeInfo nodeId="4893181994832024376" fileName="CopyStackTraceToClipboard_Action.java" startLine="21" startPosition="45" endLine="22" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="4893181994832024376" fileName="CopyStackTraceToClipboard_Action.java" startLine="22" startPosition="52" endLine="23" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4893181994832024376" fileName="CopyStackTraceToClipboard_Action.java" startLine="23" startPosition="35" endLine="24" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4893181994832024376" fileName="CopyStackTraceToClipboard_Action.java" startLine="28" startPosition="9" endLine="29" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4893181994832024581" fileName="CopyStackTraceToClipboard_Action.java" startLine="28" startPosition="9" endLine="29" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4893181994832024376" fileName="CopyStackTraceToClipboard_Action.java" startLine="31" startPosition="33" endLine="32" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4893181994832024376" fileName="CopyStackTraceToClipboard_Action.java" startLine="33" startPosition="7" endLine="34" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4893181994832024376" fileName="CopyStackTraceToClipboard_Action.java" startLine="39" startPosition="53" endLine="40" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4893181994832024376" fileName="CopyStackTraceToClipboard_Action.java" startLine="41" startPosition="5" endLine="42" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4893181994832024639" fileName="CopyStackTraceToClipboard_Action.java" startLine="46" startPosition="9" endLine="47" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4893181994832024677" fileName="CopyStackTraceToClipboard_Action.java" startLine="48" startPosition="29" endLine="49" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4893181994832024679" fileName="CopyStackTraceToClipboard_Action.java" startLine="50" startPosition="7" endLine="51" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2915139105446498540" fileName="CopyStackTraceToClipboard_Action.java" startLine="51" startPosition="31" endLine="52" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2915139105446498545" fileName="CopyStackTraceToClipboard_Action.java" startLine="52" startPosition="47" endLine="53" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4893181994832024890" fileName="CopyStackTraceToClipboard_Action.java" startLine="53" startPosition="56" endLine="54" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4893181994832024376" fileName="CopyStackTraceToClipboard_Action.java" startLine="56" startPosition="33" endLine="57" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4893181994832024376" fileName="CopyStackTraceToClipboard_Action.java" startLine="30" startPosition="27" endLine="33" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4893181994832024376" fileName="CopyStackTraceToClipboard_Action.java" startLine="30" startPosition="27" endLine="33" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4893181994832024376" fileName="CopyStackTraceToClipboard_Action.java" startLine="38" startPosition="95" endLine="41" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4893181994832024651" fileName="CopyStackTraceToClipboard_Action.java" startLine="47" startPosition="87" endLine="50" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4893181994832024376" fileName="CopyStackTraceToClipboard_Action.java" startLine="55" startPosition="27" endLine="58" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4893181994832024376" fileName="CopyStackTraceToClipboard_Action.java" startLine="55" startPosition="27" endLine="58" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4893181994832024376" fileName="CopyStackTraceToClipboard_Action.java" startLine="20" startPosition="0" endLine="25" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="CopyStackTraceToClipboard_Action#()V" />
+    <nodeInfo nodeId="4893181994832024376" fileName="CopyStackTraceToClipboard_Action.java" startLine="37" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="collectActionData#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)Z" />
+    <nodeInfo nodeId="4893181994832024376" fileName="CopyStackTraceToClipboard_Action.java" startLine="27" startPosition="89" endLine="35" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="4893181994832024376" fileName="CopyStackTraceToClipboard_Action.java" startLine="26" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doUpdate#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
+    <nodeInfo nodeId="4893181994832024376" fileName="CopyStackTraceToClipboard_Action.java" startLine="45" startPosition="96" endLine="59" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="4893181994832024376" fileName="CopyStackTraceToClipboard_Action.java" startLine="44" startPosition="0" endLine="61" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doExecute#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
+    <scopeInfo nodeId="4893181994832024376" fileName="CopyStackTraceToClipboard_Action.java" startLine="28" startPosition="9" endLine="29" endPosition="110" />
+    <scopeInfo nodeId="4893181994832024388" fileName="CopyStackTraceToClipboard_Action.java" startLine="28" startPosition="9" endLine="29" endPosition="110" />
+    <scopeInfo nodeId="4893181994832024376" fileName="CopyStackTraceToClipboard_Action.java" startLine="31" startPosition="33" endLine="32" endPosition="100" />
+    <scopeInfo nodeId="4893181994832024376" fileName="CopyStackTraceToClipboard_Action.java" startLine="39" startPosition="53" endLine="40" endPosition="19" />
+    <scopeInfo nodeId="4893181994832024652" fileName="CopyStackTraceToClipboard_Action.java" startLine="48" startPosition="29" endLine="49" endPosition="15" />
+    <scopeInfo nodeId="4893181994832024376" fileName="CopyStackTraceToClipboard_Action.java" startLine="56" startPosition="33" endLine="57" endPosition="99" />
+    <scopeInfo nodeId="4893181994832024376" fileName="CopyStackTraceToClipboard_Action.java" startLine="21" startPosition="45" endLine="24" endPosition="41" />
+    <scopeInfo nodeId="4893181994832024376" fileName="CopyStackTraceToClipboard_Action.java" startLine="30" startPosition="27" endLine="33" endPosition="7" />
+    <scopeInfo nodeId="4893181994832024376" fileName="CopyStackTraceToClipboard_Action.java" startLine="55" startPosition="0" endLine="58" endPosition="7">
+      <varInfo nodeId="4893181994832024376" varName="t" />
+    </scopeInfo>
+    <scopeInfo nodeId="4893181994832024376" fileName="CopyStackTraceToClipboard_Action.java" startLine="55" startPosition="27" endLine="58" endPosition="7" />
+    <scopeInfo nodeId="4893181994832024376" fileName="CopyStackTraceToClipboard_Action.java" startLine="30" startPosition="0" endLine="34" endPosition="44">
+      <varInfo nodeId="4893181994832024376" varName="t" />
+    </scopeInfo>
+    <scopeInfo nodeId="4893181994832024376" fileName="CopyStackTraceToClipboard_Action.java" startLine="30" startPosition="27" endLine="34" endPosition="44" />
+    <scopeInfo nodeId="4893181994832024376" fileName="CopyStackTraceToClipboard_Action.java" startLine="38" startPosition="95" endLine="42" endPosition="16" />
+    <scopeInfo nodeId="4893181994832024376" fileName="CopyStackTraceToClipboard_Action.java" startLine="20" startPosition="0" endLine="25" endPosition="3" />
+    <scopeInfo nodeId="4893181994832024376" fileName="CopyStackTraceToClipboard_Action.java" startLine="37" startPosition="0" endLine="44" endPosition="0">
+      <varInfo nodeId="4893181994832024376" varName="_params" />
+      <varInfo nodeId="4893181994832024376" varName="event" />
+    </scopeInfo>
+    <scopeInfo nodeId="4893181994832024376" fileName="CopyStackTraceToClipboard_Action.java" startLine="27" startPosition="89" endLine="35" endPosition="5" />
+    <scopeInfo nodeId="4893181994832024376" fileName="CopyStackTraceToClipboard_Action.java" startLine="46" startPosition="9" endLine="54" endPosition="59">
+      <varInfo nodeId="4893181994832024640" varName="trowable" />
+      <varInfo nodeId="2915139105446498541" varName="writer" />
+    </scopeInfo>
+    <scopeInfo nodeId="4893181994832024376" fileName="CopyStackTraceToClipboard_Action.java" startLine="26" startPosition="0" endLine="37" endPosition="0">
+      <varInfo nodeId="4893181994832024376" varName="_params" />
+      <varInfo nodeId="4893181994832024376" varName="event" />
+    </scopeInfo>
+    <scopeInfo nodeId="4893181994832024376" fileName="CopyStackTraceToClipboard_Action.java" startLine="45" startPosition="96" endLine="59" endPosition="5" />
+    <scopeInfo nodeId="4893181994832024376" fileName="CopyStackTraceToClipboard_Action.java" startLine="44" startPosition="0" endLine="61" endPosition="0">
+      <varInfo nodeId="4893181994832024376" varName="_params" />
+      <varInfo nodeId="4893181994832024376" varName="event" />
+    </scopeInfo>
+    <unitInfo nodeId="4893181994832024376" fileName="CopyStackTraceToClipboard_Action.java" startLine="17" startPosition="0" endLine="62" endPosition="0" unitName="jetbrains.mps.debugger.java.runtime.ui.actions.CopyStackTraceToClipboard_Action" />
   </root>
   <root nodeId="8643693251546861612">
-    <nodeInfo nodeId="8643693251546861612" fileName="WatchesAction_ActionGroup.java" startLine="8" startPosition="69" endLine="9" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
-    <nodeInfo nodeId="8643693251546861612" fileName="WatchesAction_ActionGroup.java" startLine="9" startPosition="80" endLine="10" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ID" />
-    <nodeInfo nodeId="8643693251546861612" fileName="WatchesAction_ActionGroup.java" startLine="12" startPosition="38" endLine="13" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="8643693251546861612" fileName="WatchesAction_ActionGroup.java" startLine="13" startPosition="31" endLine="14" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8643693251546861612" fileName="WatchesAction_ActionGroup.java" startLine="14" startPosition="30" endLine="15" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8643693251546861824" fileName="WatchesAction_ActionGroup.java" startLine="16" startPosition="9" endLine="17" endPosition="119" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8643693251546861829" fileName="WatchesAction_ActionGroup.java" startLine="17" startPosition="119" endLine="18" endPosition="120" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8643693251546861831" fileName="WatchesAction_ActionGroup.java" startLine="18" startPosition="120" endLine="19" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8643693251546861612" fileName="WatchesAction_ActionGroup.java" startLine="20" startPosition="27" endLine="21" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8643693251546861612" fileName="WatchesAction_ActionGroup.java" startLine="15" startPosition="25" endLine="22" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="8643693251546861612" fileName="WatchesAction_ActionGroup.java" startLine="11" startPosition="0" endLine="23" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="WatchesAction_ActionGroup#()V" />
-    <scopeInfo nodeId="8643693251546861612" fileName="WatchesAction_ActionGroup.java" startLine="20" startPosition="0" endLine="21" endPosition="39">
+    <nodeInfo nodeId="8643693251546861612" fileName="WatchesTreeActions_ActionGroup.java" startLine="8" startPosition="74" endLine="9" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
+    <nodeInfo nodeId="8643693251546861612" fileName="WatchesTreeActions_ActionGroup.java" startLine="9" startPosition="85" endLine="10" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ID" />
+    <nodeInfo nodeId="8643693251546861612" fileName="WatchesTreeActions_ActionGroup.java" startLine="12" startPosition="43" endLine="13" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="8643693251546861612" fileName="WatchesTreeActions_ActionGroup.java" startLine="13" startPosition="36" endLine="14" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8643693251546861612" fileName="WatchesTreeActions_ActionGroup.java" startLine="14" startPosition="30" endLine="15" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8643693251546861824" fileName="WatchesTreeActions_ActionGroup.java" startLine="16" startPosition="9" endLine="17" endPosition="124" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8643693251546861829" fileName="WatchesTreeActions_ActionGroup.java" startLine="17" startPosition="124" endLine="18" endPosition="125" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8643693251546861831" fileName="WatchesTreeActions_ActionGroup.java" startLine="18" startPosition="125" endLine="19" endPosition="127" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8643693251546861612" fileName="WatchesTreeActions_ActionGroup.java" startLine="20" startPosition="27" endLine="21" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8643693251546861612" fileName="WatchesTreeActions_ActionGroup.java" startLine="15" startPosition="25" endLine="22" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="8643693251546861612" fileName="WatchesTreeActions_ActionGroup.java" startLine="11" startPosition="0" endLine="23" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="WatchesTreeActions_ActionGroup#()V" />
+    <scopeInfo nodeId="8643693251546861612" fileName="WatchesTreeActions_ActionGroup.java" startLine="20" startPosition="0" endLine="21" endPosition="39">
       <varInfo nodeId="8643693251546861612" varName="t" />
     </scopeInfo>
-    <scopeInfo nodeId="8643693251546861612" fileName="WatchesAction_ActionGroup.java" startLine="20" startPosition="27" endLine="21" endPosition="39" />
-    <scopeInfo nodeId="8643693251546861612" fileName="WatchesAction_ActionGroup.java" startLine="16" startPosition="9" endLine="19" endPosition="122" />
-    <scopeInfo nodeId="8643693251546861612" fileName="WatchesAction_ActionGroup.java" startLine="12" startPosition="38" endLine="22" endPosition="5" />
-    <scopeInfo nodeId="8643693251546861612" fileName="WatchesAction_ActionGroup.java" startLine="11" startPosition="0" endLine="23" endPosition="3" />
-    <unitInfo nodeId="8643693251546861612" fileName="WatchesAction_ActionGroup.java" startLine="8" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.debugger.java.runtime.ui.actions.WatchesAction_ActionGroup" />
+    <scopeInfo nodeId="8643693251546861612" fileName="WatchesTreeActions_ActionGroup.java" startLine="20" startPosition="27" endLine="21" endPosition="39" />
+    <scopeInfo nodeId="8643693251546861612" fileName="WatchesTreeActions_ActionGroup.java" startLine="16" startPosition="9" endLine="19" endPosition="127" />
+    <scopeInfo nodeId="8643693251546861612" fileName="WatchesTreeActions_ActionGroup.java" startLine="12" startPosition="43" endLine="22" endPosition="5" />
+    <scopeInfo nodeId="8643693251546861612" fileName="WatchesTreeActions_ActionGroup.java" startLine="11" startPosition="0" endLine="23" endPosition="3" />
+    <unitInfo nodeId="8643693251546861612" fileName="WatchesTreeActions_ActionGroup.java" startLine="8" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.debugger.java.runtime.ui.actions.WatchesTreeActions_ActionGroup" />
   </root>
   <root nodeId="8643693251546861633">
     <nodeInfo nodeId="8643693251546861633" fileName="AddWatchAction_Action.java" startLine="17" startPosition="55" endLine="18" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
@@ -290,8 +360,8 @@
     <nodeInfo nodeId="8643693251546861633" fileName="AddWatchAction_Action.java" startLine="21" startPosition="34" endLine="22" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="8643693251546861633" fileName="AddWatchAction_Action.java" startLine="22" startPosition="48" endLine="23" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8643693251546861633" fileName="AddWatchAction_Action.java" startLine="23" startPosition="34" endLine="24" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2915139105446486220" fileName="AddWatchAction_Action.java" startLine="28" startPosition="9" endLine="29" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8643693251546861633" fileName="AddWatchAction_Action.java" startLine="28" startPosition="9" endLine="29" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2915139105446486220" fileName="AddWatchAction_Action.java" startLine="28" startPosition="9" endLine="29" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8643693251546861633" fileName="AddWatchAction_Action.java" startLine="28" startPosition="9" endLine="29" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="8643693251546861633" fileName="AddWatchAction_Action.java" startLine="31" startPosition="33" endLine="32" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8643693251546861633" fileName="AddWatchAction_Action.java" startLine="33" startPosition="7" endLine="34" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8643693251546861633" fileName="AddWatchAction_Action.java" startLine="39" startPosition="53" endLine="40" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -311,8 +381,8 @@
     <nodeInfo nodeId="8643693251546861633" fileName="AddWatchAction_Action.java" startLine="45" startPosition="96" endLine="55" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
     <nodeInfo nodeId="8643693251546861633" fileName="AddWatchAction_Action.java" startLine="26" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doUpdate#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
     <nodeInfo nodeId="8643693251546861633" fileName="AddWatchAction_Action.java" startLine="44" startPosition="0" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doExecute#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
-    <scopeInfo nodeId="8643693251546861633" fileName="AddWatchAction_Action.java" startLine="28" startPosition="9" endLine="29" endPosition="90" />
-    <scopeInfo nodeId="8643693251546861676" fileName="AddWatchAction_Action.java" startLine="28" startPosition="9" endLine="29" endPosition="90" />
+    <scopeInfo nodeId="8643693251546861633" fileName="AddWatchAction_Action.java" startLine="28" startPosition="9" endLine="29" endPosition="96" />
+    <scopeInfo nodeId="8643693251546861676" fileName="AddWatchAction_Action.java" startLine="28" startPosition="9" endLine="29" endPosition="96" />
     <scopeInfo nodeId="8643693251546861633" fileName="AddWatchAction_Action.java" startLine="31" startPosition="33" endLine="32" endPosition="89" />
     <scopeInfo nodeId="8643693251546861633" fileName="AddWatchAction_Action.java" startLine="39" startPosition="53" endLine="40" endPosition="19" />
     <scopeInfo nodeId="2915139105446486197" fileName="AddWatchAction_Action.java" startLine="48" startPosition="39" endLine="49" endPosition="64" />
@@ -478,87 +548,108 @@
     <unitInfo nodeId="8643693251546861757" fileName="EditWatchAction_Action.java" startLine="17" startPosition="0" endLine="57" endPosition="0" unitName="jetbrains.mps.debugger.java.runtime.ui.actions.EditWatchAction_Action" />
   </root>
   <root nodeId="8894158296385402494">
-    <nodeInfo nodeId="8894158296385402494" fileName="CopyValueAction_Action.java" startLine="19" startPosition="56" endLine="20" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
-    <nodeInfo nodeId="8894158296385402494" fileName="CopyValueAction_Action.java" startLine="20" startPosition="40" endLine="21" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="log" />
-    <nodeInfo nodeId="8894158296385402494" fileName="CopyValueAction_Action.java" startLine="23" startPosition="35" endLine="24" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="8894158296385402494" fileName="CopyValueAction_Action.java" startLine="24" startPosition="34" endLine="25" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8894158296385402494" fileName="CopyValueAction_Action.java" startLine="25" startPosition="35" endLine="26" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8894158296385402552" fileName="CopyValueAction_Action.java" startLine="31" startPosition="7" endLine="32" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8894158296385402499" fileName="CopyValueAction_Action.java" startLine="32" startPosition="88" endLine="33" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8894158296385402494" fileName="CopyValueAction_Action.java" startLine="36" startPosition="33" endLine="37" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8894158296385402494" fileName="CopyValueAction_Action.java" startLine="38" startPosition="7" endLine="39" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8894158296385402494" fileName="CopyValueAction_Action.java" startLine="44" startPosition="53" endLine="45" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8894158296385402494" fileName="CopyValueAction_Action.java" startLine="46" startPosition="5" endLine="47" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8894158296385402587" fileName="CopyValueAction_Action.java" startLine="51" startPosition="9" endLine="52" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8894158296385402631" fileName="CopyValueAction_Action.java" startLine="53" startPosition="59" endLine="54" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8894158296385402632" fileName="CopyValueAction_Action.java" startLine="55" startPosition="7" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="8894158296385402637" fileName="CopyValueAction_Action.java" startLine="56" startPosition="0" endLine="57" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8894158296385402750" fileName="CopyValueAction_Action.java" startLine="57" startPosition="48" endLine="58" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8894158296385402819" fileName="CopyValueAction_Action.java" startLine="59" startPosition="11" endLine="60" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7406771907178599532" fileName="CopyValueAction_Action.java" startLine="60" startPosition="74" endLine="61" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8894158296385432159" fileName="CopyValueAction_Action.java" startLine="62" startPosition="60" endLine="63" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8894158296385402494" fileName="CopyValueAction_Action.java" startLine="66" startPosition="33" endLine="67" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8894158296385402494" fileName="CopyValueAction_Action.java" startLine="35" startPosition="27" endLine="38" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8894158296385402494" fileName="CopyValueAction_Action.java" startLine="35" startPosition="27" endLine="38" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8894158296385402494" fileName="CopyValueAction_Action.java" startLine="43" startPosition="95" endLine="46" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8894158296385402611" fileName="CopyValueAction_Action.java" startLine="52" startPosition="86" endLine="55" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8894158296385402494" fileName="CopyValueAction_Action.java" startLine="65" startPosition="27" endLine="68" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8894158296385402494" fileName="CopyValueAction_Action.java" startLine="65" startPosition="27" endLine="68" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8894158296385402494" fileName="CopyValueAction_Action.java" startLine="30" startPosition="9" endLine="34" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8894158296385402494" fileName="CopyValueAction_Action.java" startLine="22" startPosition="0" endLine="27" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="CopyValueAction_Action#()V" />
-    <nodeInfo nodeId="8894158296385402758" fileName="CopyValueAction_Action.java" startLine="58" startPosition="44" endLine="64" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="8894158296385402494" fileName="CopyValueAction_Action.java" startLine="42" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="collectActionData#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)Z" />
-    <nodeInfo nodeId="8894158296385402494" fileName="CopyValueAction_Action.java" startLine="29" startPosition="89" endLine="40" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="8894158296385402494" fileName="CopyValueAction_Action.java" startLine="28" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doUpdate#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
-    <nodeInfo nodeId="8894158296385402494" fileName="CopyValueAction_Action.java" startLine="50" startPosition="96" endLine="69" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="8894158296385402494" fileName="CopyValueAction_Action.java" startLine="49" startPosition="0" endLine="71" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doExecute#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
-    <scopeInfo nodeId="8894158296385402494" fileName="CopyValueAction_Action.java" startLine="36" startPosition="33" endLine="37" endPosition="90" />
-    <scopeInfo nodeId="8894158296385402494" fileName="CopyValueAction_Action.java" startLine="44" startPosition="53" endLine="45" endPosition="19" />
-    <scopeInfo nodeId="8894158296385402612" fileName="CopyValueAction_Action.java" startLine="53" startPosition="59" endLine="54" endPosition="15" />
-    <scopeInfo nodeId="8894158296385402761" fileName="CopyValueAction_Action.java" startLine="62" startPosition="0" endLine="63" endPosition="63">
-      <varInfo nodeId="8894158296385402762" varName="cantGetValue" />
-    </scopeInfo>
-    <scopeInfo nodeId="8894158296385402764" fileName="CopyValueAction_Action.java" startLine="62" startPosition="60" endLine="63" endPosition="63" />
-    <scopeInfo nodeId="8894158296385402494" fileName="CopyValueAction_Action.java" startLine="66" startPosition="33" endLine="67" endPosition="89" />
-    <scopeInfo nodeId="8894158296385402498" fileName="CopyValueAction_Action.java" startLine="31" startPosition="7" endLine="33" endPosition="88">
+    <nodeInfo nodeId="8894158296385402494" fileName="CopyValueAction_Action.java" startLine="24" startPosition="56" endLine="25" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
+    <nodeInfo nodeId="8894158296385402494" fileName="CopyValueAction_Action.java" startLine="25" startPosition="40" endLine="26" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="log" />
+    <nodeInfo nodeId="8894158296385402494" fileName="CopyValueAction_Action.java" startLine="28" startPosition="35" endLine="29" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="8894158296385402494" fileName="CopyValueAction_Action.java" startLine="29" startPosition="34" endLine="30" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8894158296385402494" fileName="CopyValueAction_Action.java" startLine="30" startPosition="35" endLine="31" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8894158296385402552" fileName="CopyValueAction_Action.java" startLine="36" startPosition="7" endLine="37" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8894158296385402499" fileName="CopyValueAction_Action.java" startLine="37" startPosition="88" endLine="38" endPosition="145" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8894158296385402494" fileName="CopyValueAction_Action.java" startLine="41" startPosition="33" endLine="42" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8894158296385402494" fileName="CopyValueAction_Action.java" startLine="43" startPosition="7" endLine="44" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8894158296385402494" fileName="CopyValueAction_Action.java" startLine="49" startPosition="53" endLine="50" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8894158296385402494" fileName="CopyValueAction_Action.java" startLine="51" startPosition="5" endLine="52" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8894158296385402587" fileName="CopyValueAction_Action.java" startLine="56" startPosition="9" endLine="57" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8894158296385402631" fileName="CopyValueAction_Action.java" startLine="58" startPosition="59" endLine="59" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8894158296385402632" fileName="CopyValueAction_Action.java" startLine="60" startPosition="7" endLine="61" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="966640927460667997" fileName="CopyValueAction_Action.java" startLine="61" startPosition="0" endLine="62" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="966640927460668038" fileName="CopyValueAction_Action.java" startLine="63" startPosition="39" endLine="64" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="966640927460609454" fileName="CopyValueAction_Action.java" startLine="65" startPosition="7" endLine="66" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="966640927460655141" fileName="CopyValueAction_Action.java" startLine="66" startPosition="0" endLine="67" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="966640927460655443" fileName="CopyValueAction_Action.java" startLine="67" startPosition="82" endLine="68" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="966640927460655217" fileName="CopyValueAction_Action.java" startLine="68" startPosition="0" endLine="69" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="966640927460655258" fileName="CopyValueAction_Action.java" startLine="70" startPosition="27" endLine="71" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="966640927460604634" fileName="CopyValueAction_Action.java" startLine="72" startPosition="7" endLine="73" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="8894158296385402750" fileName="CopyValueAction_Action.java" startLine="73" startPosition="0" endLine="74" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1197124855361724920" fileName="CopyValueAction_Action.java" startLine="74" startPosition="54" endLine="75" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8894158296385402494" fileName="CopyValueAction_Action.java" startLine="77" startPosition="33" endLine="78" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="966640927460655440" fileName="CopyValueAction_Action.java" startLine="84" startPosition="36" endLine="85" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="966640927460655440" fileName="CopyValueAction_Action.java" startLine="86" startPosition="5" endLine="87" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="966640927460655435" fileName="CopyValueAction_Action.java" startLine="91" startPosition="36" endLine="92" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="966640927460655435" fileName="CopyValueAction_Action.java" startLine="93" startPosition="5" endLine="94" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8894158296385402494" fileName="CopyValueAction_Action.java" startLine="40" startPosition="27" endLine="43" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8894158296385402494" fileName="CopyValueAction_Action.java" startLine="40" startPosition="27" endLine="43" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8894158296385402494" fileName="CopyValueAction_Action.java" startLine="48" startPosition="95" endLine="51" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8894158296385402611" fileName="CopyValueAction_Action.java" startLine="57" startPosition="86" endLine="60" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="966640927460668010" fileName="CopyValueAction_Action.java" startLine="62" startPosition="113" endLine="65" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="966640927460655230" fileName="CopyValueAction_Action.java" startLine="69" startPosition="80" endLine="72" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8894158296385402494" fileName="CopyValueAction_Action.java" startLine="76" startPosition="27" endLine="79" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8894158296385402494" fileName="CopyValueAction_Action.java" startLine="76" startPosition="27" endLine="79" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="966640927460655440" fileName="CopyValueAction_Action.java" startLine="83" startPosition="83" endLine="86" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="966640927460655435" fileName="CopyValueAction_Action.java" startLine="90" startPosition="84" endLine="93" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8894158296385402494" fileName="CopyValueAction_Action.java" startLine="35" startPosition="9" endLine="39" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8894158296385402494" fileName="CopyValueAction_Action.java" startLine="27" startPosition="0" endLine="32" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="CopyValueAction_Action#()V" />
+    <nodeInfo nodeId="8894158296385402494" fileName="CopyValueAction_Action.java" startLine="47" startPosition="0" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="collectActionData#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)Z" />
+    <nodeInfo nodeId="966640927460655440" fileName="CopyValueAction_Action.java" startLine="82" startPosition="0" endLine="89" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_d54g7t_a0i0a#(Ljetbrains/mps/debug/runtime/java/programState/proxies/JavaThread;)Lcom/sun/jdi/ThreadReference;" />
+    <nodeInfo nodeId="966640927460655435" fileName="CopyValueAction_Action.java" startLine="89" startPosition="0" endLine="96" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_d54g7t_a0a8a0#(Ljetbrains/mps/debugger/java/runtime/JavaUiStateImpl;)Ljetbrains/mps/debug/runtime/java/programState/proxies/JavaThread;" />
+    <nodeInfo nodeId="8894158296385402494" fileName="CopyValueAction_Action.java" startLine="34" startPosition="89" endLine="45" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="8894158296385402494" fileName="CopyValueAction_Action.java" startLine="33" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doUpdate#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
+    <nodeInfo nodeId="8894158296385402494" fileName="CopyValueAction_Action.java" startLine="55" startPosition="96" endLine="80" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="8894158296385402494" fileName="CopyValueAction_Action.java" startLine="54" startPosition="0" endLine="82" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doExecute#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
+    <scopeInfo nodeId="8894158296385402494" fileName="CopyValueAction_Action.java" startLine="41" startPosition="33" endLine="42" endPosition="90" />
+    <scopeInfo nodeId="8894158296385402494" fileName="CopyValueAction_Action.java" startLine="49" startPosition="53" endLine="50" endPosition="19" />
+    <scopeInfo nodeId="8894158296385402612" fileName="CopyValueAction_Action.java" startLine="58" startPosition="59" endLine="59" endPosition="15" />
+    <scopeInfo nodeId="966640927460668011" fileName="CopyValueAction_Action.java" startLine="63" startPosition="39" endLine="64" endPosition="15" />
+    <scopeInfo nodeId="966640927460655231" fileName="CopyValueAction_Action.java" startLine="70" startPosition="27" endLine="71" endPosition="15" />
+    <scopeInfo nodeId="8894158296385402494" fileName="CopyValueAction_Action.java" startLine="77" startPosition="33" endLine="78" endPosition="89" />
+    <scopeInfo nodeId="966640927460655440" fileName="CopyValueAction_Action.java" startLine="84" startPosition="36" endLine="85" endPosition="43" />
+    <scopeInfo nodeId="966640927460655435" fileName="CopyValueAction_Action.java" startLine="91" startPosition="36" endLine="92" endPosition="43" />
+    <scopeInfo nodeId="8894158296385402498" fileName="CopyValueAction_Action.java" startLine="36" startPosition="7" endLine="38" endPosition="145">
       <varInfo nodeId="8894158296385402553" varName="value" />
     </scopeInfo>
-    <scopeInfo nodeId="8894158296385402759" fileName="CopyValueAction_Action.java" startLine="59" startPosition="11" endLine="61" endPosition="63">
-      <varInfo nodeId="8894158296385402820" varName="jvmValue" />
-    </scopeInfo>
-    <scopeInfo nodeId="8894158296385402494" fileName="CopyValueAction_Action.java" startLine="23" startPosition="35" endLine="26" endPosition="41" />
-    <scopeInfo nodeId="8894158296385402494" fileName="CopyValueAction_Action.java" startLine="35" startPosition="27" endLine="38" endPosition="7" />
-    <scopeInfo nodeId="8894158296385402494" fileName="CopyValueAction_Action.java" startLine="65" startPosition="0" endLine="68" endPosition="7">
+    <scopeInfo nodeId="8894158296385402494" fileName="CopyValueAction_Action.java" startLine="28" startPosition="35" endLine="31" endPosition="41" />
+    <scopeInfo nodeId="8894158296385402494" fileName="CopyValueAction_Action.java" startLine="40" startPosition="27" endLine="43" endPosition="7" />
+    <scopeInfo nodeId="8894158296385402494" fileName="CopyValueAction_Action.java" startLine="76" startPosition="0" endLine="79" endPosition="7">
       <varInfo nodeId="8894158296385402494" varName="t" />
     </scopeInfo>
-    <scopeInfo nodeId="8894158296385402494" fileName="CopyValueAction_Action.java" startLine="65" startPosition="27" endLine="68" endPosition="7" />
-    <scopeInfo nodeId="8894158296385402494" fileName="CopyValueAction_Action.java" startLine="30" startPosition="9" endLine="34" endPosition="7" />
-    <scopeInfo nodeId="8894158296385402494" fileName="CopyValueAction_Action.java" startLine="35" startPosition="0" endLine="39" endPosition="44">
+    <scopeInfo nodeId="8894158296385402494" fileName="CopyValueAction_Action.java" startLine="76" startPosition="27" endLine="79" endPosition="7" />
+    <scopeInfo nodeId="8894158296385402494" fileName="CopyValueAction_Action.java" startLine="35" startPosition="9" endLine="39" endPosition="7" />
+    <scopeInfo nodeId="8894158296385402494" fileName="CopyValueAction_Action.java" startLine="40" startPosition="0" endLine="44" endPosition="44">
       <varInfo nodeId="8894158296385402494" varName="t" />
     </scopeInfo>
-    <scopeInfo nodeId="8894158296385402494" fileName="CopyValueAction_Action.java" startLine="35" startPosition="27" endLine="39" endPosition="44" />
-    <scopeInfo nodeId="8894158296385402494" fileName="CopyValueAction_Action.java" startLine="43" startPosition="95" endLine="47" endPosition="16" />
-    <scopeInfo nodeId="8894158296385402494" fileName="CopyValueAction_Action.java" startLine="22" startPosition="0" endLine="27" endPosition="3" />
-    <scopeInfo nodeId="8894158296385402494" fileName="CopyValueAction_Action.java" startLine="42" startPosition="0" endLine="49" endPosition="0">
+    <scopeInfo nodeId="8894158296385402494" fileName="CopyValueAction_Action.java" startLine="40" startPosition="27" endLine="44" endPosition="44" />
+    <scopeInfo nodeId="8894158296385402494" fileName="CopyValueAction_Action.java" startLine="48" startPosition="95" endLine="52" endPosition="16" />
+    <scopeInfo nodeId="966640927460655440" fileName="CopyValueAction_Action.java" startLine="83" startPosition="83" endLine="87" endPosition="16" />
+    <scopeInfo nodeId="966640927460655435" fileName="CopyValueAction_Action.java" startLine="90" startPosition="84" endLine="94" endPosition="16" />
+    <scopeInfo nodeId="8894158296385402494" fileName="CopyValueAction_Action.java" startLine="27" startPosition="0" endLine="32" endPosition="3" />
+    <scopeInfo nodeId="8894158296385402494" fileName="CopyValueAction_Action.java" startLine="47" startPosition="0" endLine="54" endPosition="0">
       <varInfo nodeId="8894158296385402494" varName="_params" />
       <varInfo nodeId="8894158296385402494" varName="event" />
     </scopeInfo>
-    <scopeInfo nodeId="8894158296385402494" fileName="CopyValueAction_Action.java" startLine="29" startPosition="89" endLine="40" endPosition="5" />
-    <scopeInfo nodeId="8894158296385402494" fileName="CopyValueAction_Action.java" startLine="51" startPosition="9" endLine="64" endPosition="7">
-      <varInfo nodeId="8894158296385402638" varName="javaValue" />
+    <scopeInfo nodeId="966640927460655440" fileName="CopyValueAction_Action.java" startLine="82" startPosition="0" endLine="89" endPosition="0">
+      <varInfo nodeId="966640927460655440" varName="checkedDotOperand" />
+    </scopeInfo>
+    <scopeInfo nodeId="966640927460655435" fileName="CopyValueAction_Action.java" startLine="89" startPosition="0" endLine="96" endPosition="0">
+      <varInfo nodeId="966640927460655435" varName="checkedDotOperand" />
+    </scopeInfo>
+    <scopeInfo nodeId="8894158296385402494" fileName="CopyValueAction_Action.java" startLine="34" startPosition="89" endLine="45" endPosition="5" />
+    <scopeInfo nodeId="8894158296385402494" fileName="CopyValueAction_Action.java" startLine="33" startPosition="0" endLine="47" endPosition="0">
+      <varInfo nodeId="8894158296385402494" varName="_params" />
+      <varInfo nodeId="8894158296385402494" varName="event" />
+    </scopeInfo>
+    <scopeInfo nodeId="8894158296385402494" fileName="CopyValueAction_Action.java" startLine="56" startPosition="9" endLine="75" endPosition="111">
+      <varInfo nodeId="966640927460667998" varName="evaluationProvider" />
       <varInfo nodeId="8894158296385402751" varName="jdiValue" />
+      <varInfo nodeId="966640927460655218" varName="thread" />
+      <varInfo nodeId="966640927460655142" varName="uiState" />
       <varInfo nodeId="8894158296385402588" varName="value" />
     </scopeInfo>
-    <scopeInfo nodeId="8894158296385402494" fileName="CopyValueAction_Action.java" startLine="28" startPosition="0" endLine="42" endPosition="0">
+    <scopeInfo nodeId="8894158296385402494" fileName="CopyValueAction_Action.java" startLine="55" startPosition="96" endLine="80" endPosition="5" />
+    <scopeInfo nodeId="8894158296385402494" fileName="CopyValueAction_Action.java" startLine="54" startPosition="0" endLine="82" endPosition="0">
       <varInfo nodeId="8894158296385402494" varName="_params" />
       <varInfo nodeId="8894158296385402494" varName="event" />
     </scopeInfo>
-    <scopeInfo nodeId="8894158296385402494" fileName="CopyValueAction_Action.java" startLine="50" startPosition="96" endLine="69" endPosition="5" />
-    <scopeInfo nodeId="8894158296385402494" fileName="CopyValueAction_Action.java" startLine="49" startPosition="0" endLine="71" endPosition="0">
-      <varInfo nodeId="8894158296385402494" varName="_params" />
-      <varInfo nodeId="8894158296385402494" varName="event" />
-    </scopeInfo>
-    <unitInfo nodeId="8894158296385402494" fileName="CopyValueAction_Action.java" startLine="19" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.debugger.java.runtime.ui.actions.CopyValueAction_Action" />
+    <unitInfo nodeId="8894158296385402494" fileName="CopyValueAction_Action.java" startLine="24" startPosition="0" endLine="97" endPosition="0" unitName="jetbrains.mps.debugger.java.runtime.ui.actions.CopyValueAction_Action" />
   </root>
   <root nodeId="9133858534420786537">
     <nodeInfo nodeId="9133858534420786537" fileName="WatchesToolbarActions_ActionGroup.java" startLine="8" startPosition="77" endLine="9" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />

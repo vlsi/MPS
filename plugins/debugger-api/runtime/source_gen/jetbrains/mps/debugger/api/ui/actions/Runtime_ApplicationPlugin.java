@@ -21,7 +21,6 @@ public class Runtime_ApplicationPlugin extends BaseApplicationPlugin {
 
   public void createGroups() {
     // actions w/o parameters 
-    addAction(new CopyValue_Action());
     addAction(new DeleteBreakpointAction_Action());
     addAction(new EvaluateExpression_Action());
     addAction(new ExportThreads_Action());

@@ -26,7 +26,7 @@ public class AddWatchAction_Action extends BaseAction {
 
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
-      event.getPresentation().setEnabled(DebugActionsUtil.getDebugSession(event) != null);
+      event.getPresentation().setEnabled(DebugActionsUtil.getEvaluationProvider(event) != null);
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action doUpdate method failed. Action:" + "AddWatchAction", t);
