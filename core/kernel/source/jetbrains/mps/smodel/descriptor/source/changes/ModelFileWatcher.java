@@ -41,6 +41,10 @@ public class ModelFileWatcher {
 
   private ModelFileWatcherProvider myProvider = new IOModelFileWatcherProvider();
 
+  public ModelFileWatcherProvider getProvider() {
+    return myProvider;
+  }
+
   public void setProvider(@NotNull ModelFileWatcherProvider provider) {
     myProvider = provider;
   }

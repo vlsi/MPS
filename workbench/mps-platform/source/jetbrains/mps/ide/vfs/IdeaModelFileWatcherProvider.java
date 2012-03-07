@@ -27,33 +27,11 @@ import java.util.*;
 public class IdeaModelFileWatcherProvider implements ModelFileWatcherProvider {
   private Map<String, Set<FileBasedModelDataSource>> myFile2Source = new HashMap<String, Set<FileBasedModelDataSource>>();
 
-  public IdeaModelFileWatcherProvider(VirtualFileManager manager) {
-    VirtualFileManager.getInstance().addVirtualFileListener(new VirtualFileAdapter() {
-      public void contentsChanged(VirtualFileEvent event) {
-        if (!isEventFromSave(event)) {
-          VirtualFile file = event.getFile();
-          while (file != null) {
-            if (invalidate(file.getPath())) break;
-            file = file.getParent();
-          }
-        }
-      }
+  public IdeaModelFileWatcherProvider() {
 
-      public void fileDeleted(VirtualFileEvent event) {
-        VirtualFile file = event.getFile();
-        while (file != null) {
-          if (invalidate(file.getPath())) break;
-          file = file.getParent();
-        }
-      }
-    });
   }
 
-  private static boolean isEventFromSave(VirtualFileEvent event) {
-    return event.getRequestor() == IdeaFileSystemProvider.class;
-  }
-
-  private boolean invalidate(String path) {
+  public boolean invalidate(String path) {
     Set<FileBasedModelDataSource> sources = myFile2Source.get(path);
     if (sources == null || sources.isEmpty()) return false;
     for (FileBasedModelDataSource source : sources) {

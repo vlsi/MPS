@@ -23,17 +23,15 @@ import jetbrains.mps.smodel.descriptor.source.changes.ModelFileWatcher;
 import org.jetbrains.annotations.NotNull;
 
 public class IdeaModelFileWatcherInitializer implements ApplicationComponent {
-  private VirtualFileManager myManager;
+  public IdeaModelFileWatcherInitializer() {
 
-  public IdeaModelFileWatcherInitializer(VirtualFileManager manager) {
-    myManager = manager;
   }
 
   public void initComponent() {
     boolean useIoFile = MPSCore.getInstance().isTestMode() && "true".equals(System.getProperty("mps.vfs.useIoFile"));
     if (!useIoFile) {
       // setup model files watching
-      ModelFileWatcher.getInstance().setProvider(new IdeaModelFileWatcherProvider(myManager));
+      ModelFileWatcher.getInstance().setProvider(new IdeaModelFileWatcherProvider());
     }
   }
 

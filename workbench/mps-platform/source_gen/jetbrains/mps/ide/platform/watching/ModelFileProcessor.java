@@ -10,6 +10,9 @@ import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.SModelDescriptor;
 import com.intellij.openapi.vfs.VirtualFile;
+import jetbrains.mps.smodel.descriptor.source.changes.ModelFileWatcherProvider;
+import jetbrains.mps.smodel.descriptor.source.changes.ModelFileWatcher;
+import jetbrains.mps.ide.vfs.IdeaModelFileWatcherProvider;
 
 /*package*/ class ModelFileProcessor extends EventProcessor {
   public ModelFileProcessor(VirtualFileSystem fs, ReloadSession s) {
@@ -22,6 +25,7 @@ import com.intellij.openapi.vfs.VirtualFile;
 
   @Override
   protected void processDelete(String path) {
+    invalidate(path);
     IFile ifile = FileSystem.getInstance().getFileByPath(path);
     final EditableSModelDescriptor model = SModelRepository.getInstance().findModel(ifile);
     if (model == null) {
@@ -48,6 +52,17 @@ import com.intellij.openapi.vfs.VirtualFile;
   }
 
   protected void processContentChanged(String path) {
-    // this is done by ReloadableSources 
+    invalidate(path);
+  }
+
+  private void invalidate(String path) {
+    ModelFileWatcherProvider provider = ModelFileWatcher.getInstance().getProvider();
+    if (provider instanceof IdeaModelFileWatcherProvider) {
+      VirtualFile file = fs.findFileByPath(path);
+      while (file != null) {
+        ((IdeaModelFileWatcherProvider) provider).invalidate(file.getPath());
+        file = file.getParent();
+      }
+    }
   }
 }

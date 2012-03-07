@@ -71,12 +71,14 @@ public class ModelChangesWatcher implements ApplicationComponent {
     }
   };
   private IMakeService myMakeService;
+  private SignificantRoots mySignRoots;
 
-  public ModelChangesWatcher(MessageBus bus, ProjectManager projectManager, VirtualFileManager virtualFileManager) {
+  public ModelChangesWatcher(MessageBus bus, ProjectManager projectManager, VirtualFileManager virtualFileManager, SignificantRoots signRoots) {
     myBus = bus;
     myVirtualFileManager = virtualFileManager;
     myProjectManager = projectManager;
     myQueue.setRestartTimerOnAdd(true);
+    mySignRoots = signRoots;
   }
 
   public void tryToResumeTasksProcessing() {
@@ -176,7 +178,7 @@ public class ModelChangesWatcher implements ApplicationComponent {
   }
 
   public Set<VirtualFile> getSignificantRoots() {
-    return SignificantRoots.getInstance().getSignificantRoots();
+    return mySignRoots.getSignificantRoots();
   }
 
   private boolean isUnderSignificantRoots(File file) {
