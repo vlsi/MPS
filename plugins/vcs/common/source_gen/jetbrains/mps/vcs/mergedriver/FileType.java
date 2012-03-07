@@ -17,7 +17,7 @@ public enum FileType {
   LANGUAGE(".mpl", "language"),
   SOLUTION(".msd", "solution"),
   DEVKIT(".devkit", "dev-kit"),
-  PROJECT(".ipr", "project"),
+  PROJECT(".mpr", "project"),
   TRACE_CACHE("trace.info", "debugInfo"),
   GENERATOR_DEPENDENCIES("generated", "dependencies"),
   JAVA_DEPENDENCIES("dependencies", "dependenciesRoot");
