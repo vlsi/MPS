@@ -3171,83 +3171,84 @@
     <unitInfo nodeId="4745461552198991278" fileName="AddMainMethod_Intention.java" startLine="62" startPosition="0" endLine="116" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.AddMainMethod_Intention$QuotationClass_gghypg_a0a0a7" />
   </root>
   <root nodeId="1236187435379">
-    <nodeInfo nodeId="1236187435379" fileName="MakeMethodAbstarct_Intention.java" startLine="20" startPosition="30" endLine="21" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1236187435379" fileName="MakeMethodAbstarct_Intention.java" startLine="24" startPosition="36" endLine="25" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1236187435379" fileName="MakeMethodAbstarct_Intention.java" startLine="28" startPosition="37" endLine="29" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1236187435379" fileName="MakeMethodAbstarct_Intention.java" startLine="32" startPosition="44" endLine="33" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1236187435379" fileName="MakeMethodAbstarct_Intention.java" startLine="44" startPosition="58" endLine="45" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1236187435379" fileName="MakeMethodAbstarct_Intention.java" startLine="46" startPosition="5" endLine="47" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4975090607137411447" fileName="MakeMethodAbstarct_Intention.java" startLine="50" startPosition="90" endLine="51" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4975090607137411455" fileName="MakeMethodAbstarct_Intention.java" startLine="52" startPosition="30" endLine="53" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="224249931928959397" fileName="MakeMethodAbstarct_Intention.java" startLine="54" startPosition="5" endLine="55" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="224249931928959420" fileName="MakeMethodAbstarct_Intention.java" startLine="56" startPosition="117" endLine="57" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4975090607137411460" fileName="MakeMethodAbstarct_Intention.java" startLine="58" startPosition="5" endLine="59" endPosition="144" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4975090607137411478" fileName="MakeMethodAbstarct_Intention.java" startLine="61" startPosition="39" endLine="62" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4975090607137411484" fileName="MakeMethodAbstarct_Intention.java" startLine="64" startPosition="7" endLine="65" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1236187518965" fileName="MakeMethodAbstarct_Intention.java" startLine="68" startPosition="76" endLine="69" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1236187435379" fileName="MakeMethodAbstarct_Intention.java" startLine="72" startPosition="37" endLine="73" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1236187435379" fileName="MakeMethodAbstarct_Intention.java" startLine="16" startPosition="86" endLine="18" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MakeMethodAbstarct_Intention#()V" />
-    <nodeInfo nodeId="1236187435379" fileName="MakeMethodAbstarct_Intention.java" startLine="43" startPosition="84" endLine="46" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4975090607137411453" fileName="MakeMethodAbstarct_Intention.java" startLine="51" startPosition="56" endLine="54" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="224249931928959406" fileName="MakeMethodAbstarct_Intention.java" startLine="55" startPosition="139" endLine="58" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1236187435379" fileName="MakeMethodAbstarct_Intention.java" startLine="19" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getConcept#()Ljava/lang/String;" />
-    <nodeInfo nodeId="1236187435379" fileName="MakeMethodAbstarct_Intention.java" startLine="23" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isParameterized#()Z" />
-    <nodeInfo nodeId="1236187435379" fileName="MakeMethodAbstarct_Intention.java" startLine="27" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isErrorIntention#()Z" />
-    <nodeInfo nodeId="1236187435379" fileName="MakeMethodAbstarct_Intention.java" startLine="31" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isAvailableInChildNodes#()Z" />
-    <nodeInfo nodeId="1236187505489" fileName="MakeMethodAbstarct_Intention.java" startLine="36" startPosition="85" endLine="40" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4975090607137411476" fileName="MakeMethodAbstarct_Intention.java" startLine="60" startPosition="118" endLine="64" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" />
-    <nodeInfo nodeId="1236187435379" fileName="MakeMethodAbstarct_Intention.java" startLine="67" startPosition="0" endLine="71" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/nodeEditor/EditorContext;)V" />
-    <nodeInfo nodeId="1236187435379" fileName="MakeMethodAbstarct_Intention.java" startLine="71" startPosition="0" endLine="75" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getLocationString#()Ljava/lang/String;" />
-    <nodeInfo nodeId="4975090607137411469" fileName="MakeMethodAbstarct_Intention.java" startLine="59" startPosition="144" endLine="64" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1236187435379" fileName="MakeMethodAbstarct_Intention.java" startLine="35" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescription#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/nodeEditor/EditorContext;)Ljava/lang/String;" />
-    <nodeInfo nodeId="1236187435379" fileName="MakeMethodAbstarct_Intention.java" startLine="42" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicable#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/nodeEditor/EditorContext;)Z" />
-    <nodeInfo nodeId="1236187435379" fileName="MakeMethodAbstarct_Intention.java" startLine="49" startPosition="0" endLine="67" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableToNode#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/nodeEditor/EditorContext;)Z" />
-    <scopeInfo nodeId="1236187435379" fileName="MakeMethodAbstarct_Intention.java" startLine="17" startPosition="41" endLine="17" endPosition="41" />
-    <scopeInfo nodeId="1236187435379" fileName="MakeMethodAbstarct_Intention.java" startLine="20" startPosition="30" endLine="21" endPosition="76" />
-    <scopeInfo nodeId="1236187435379" fileName="MakeMethodAbstarct_Intention.java" startLine="24" startPosition="36" endLine="25" endPosition="17" />
-    <scopeInfo nodeId="1236187435379" fileName="MakeMethodAbstarct_Intention.java" startLine="28" startPosition="37" endLine="29" endPosition="17" />
-    <scopeInfo nodeId="1236187435379" fileName="MakeMethodAbstarct_Intention.java" startLine="32" startPosition="44" endLine="33" endPosition="16" />
-    <scopeInfo nodeId="1236187435379" fileName="MakeMethodAbstarct_Intention.java" startLine="44" startPosition="58" endLine="45" endPosition="19" />
-    <scopeInfo nodeId="4975090607137411454" fileName="MakeMethodAbstarct_Intention.java" startLine="52" startPosition="30" endLine="53" endPosition="18" />
-    <scopeInfo nodeId="224249931928959407" fileName="MakeMethodAbstarct_Intention.java" startLine="56" startPosition="117" endLine="57" endPosition="19" />
-    <scopeInfo nodeId="4975090607137411477" fileName="MakeMethodAbstarct_Intention.java" startLine="61" startPosition="39" endLine="62" endPosition="113" />
-    <scopeInfo nodeId="1236187435383" fileName="MakeMethodAbstarct_Intention.java" startLine="68" startPosition="76" endLine="69" endPosition="108" />
-    <scopeInfo nodeId="1236187435379" fileName="MakeMethodAbstarct_Intention.java" startLine="72" startPosition="37" endLine="73" endPosition="51" />
-    <scopeInfo nodeId="1236187435379" fileName="MakeMethodAbstarct_Intention.java" startLine="16" startPosition="86" endLine="18" endPosition="3" />
-    <scopeInfo nodeId="1236187435379" fileName="MakeMethodAbstarct_Intention.java" startLine="19" startPosition="0" endLine="23" endPosition="0" />
-    <scopeInfo nodeId="1236187435379" fileName="MakeMethodAbstarct_Intention.java" startLine="23" startPosition="0" endLine="27" endPosition="0" />
-    <scopeInfo nodeId="1236187435379" fileName="MakeMethodAbstarct_Intention.java" startLine="27" startPosition="0" endLine="31" endPosition="0" />
-    <scopeInfo nodeId="1236187435379" fileName="MakeMethodAbstarct_Intention.java" startLine="31" startPosition="0" endLine="35" endPosition="0" />
-    <scopeInfo nodeId="1236187435381" fileName="MakeMethodAbstarct_Intention.java" startLine="36" startPosition="85" endLine="40" endPosition="6" />
-    <scopeInfo nodeId="1236187435379" fileName="MakeMethodAbstarct_Intention.java" startLine="43" startPosition="84" endLine="47" endPosition="16" />
-    <scopeInfo nodeId="4975090607137411476" fileName="MakeMethodAbstarct_Intention.java" startLine="60" startPosition="118" endLine="64" endPosition="0">
+    <nodeInfo nodeId="1236187435379" fileName="MakeMethodAbstarct_Intention.java" startLine="21" startPosition="30" endLine="22" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1236187435379" fileName="MakeMethodAbstarct_Intention.java" startLine="25" startPosition="36" endLine="26" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1236187435379" fileName="MakeMethodAbstarct_Intention.java" startLine="29" startPosition="37" endLine="30" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1236187435379" fileName="MakeMethodAbstarct_Intention.java" startLine="33" startPosition="44" endLine="34" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1236187435379" fileName="MakeMethodAbstarct_Intention.java" startLine="45" startPosition="58" endLine="46" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1236187435379" fileName="MakeMethodAbstarct_Intention.java" startLine="47" startPosition="5" endLine="48" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4975090607137411447" fileName="MakeMethodAbstarct_Intention.java" startLine="51" startPosition="90" endLine="52" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4975090607137411455" fileName="MakeMethodAbstarct_Intention.java" startLine="53" startPosition="30" endLine="54" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="224249931928959397" fileName="MakeMethodAbstarct_Intention.java" startLine="55" startPosition="5" endLine="56" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="224249931928959420" fileName="MakeMethodAbstarct_Intention.java" startLine="57" startPosition="117" endLine="58" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4975090607137411460" fileName="MakeMethodAbstarct_Intention.java" startLine="59" startPosition="5" endLine="60" endPosition="144" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4975090607137411478" fileName="MakeMethodAbstarct_Intention.java" startLine="62" startPosition="39" endLine="63" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4975090607137411484" fileName="MakeMethodAbstarct_Intention.java" startLine="65" startPosition="7" endLine="66" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1236187518965" fileName="MakeMethodAbstarct_Intention.java" startLine="69" startPosition="76" endLine="70" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="9045182831066305496" fileName="MakeMethodAbstarct_Intention.java" startLine="70" startPosition="108" endLine="71" endPosition="128" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1236187435379" fileName="MakeMethodAbstarct_Intention.java" startLine="74" startPosition="37" endLine="75" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1236187435379" fileName="MakeMethodAbstarct_Intention.java" startLine="17" startPosition="86" endLine="19" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MakeMethodAbstarct_Intention#()V" />
+    <nodeInfo nodeId="1236187435379" fileName="MakeMethodAbstarct_Intention.java" startLine="44" startPosition="84" endLine="47" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4975090607137411453" fileName="MakeMethodAbstarct_Intention.java" startLine="52" startPosition="56" endLine="55" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="224249931928959406" fileName="MakeMethodAbstarct_Intention.java" startLine="56" startPosition="139" endLine="59" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1236187435379" fileName="MakeMethodAbstarct_Intention.java" startLine="20" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getConcept#()Ljava/lang/String;" />
+    <nodeInfo nodeId="1236187435379" fileName="MakeMethodAbstarct_Intention.java" startLine="24" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isParameterized#()Z" />
+    <nodeInfo nodeId="1236187435379" fileName="MakeMethodAbstarct_Intention.java" startLine="28" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isErrorIntention#()Z" />
+    <nodeInfo nodeId="1236187435379" fileName="MakeMethodAbstarct_Intention.java" startLine="32" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isAvailableInChildNodes#()Z" />
+    <nodeInfo nodeId="1236187505489" fileName="MakeMethodAbstarct_Intention.java" startLine="37" startPosition="85" endLine="41" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4975090607137411476" fileName="MakeMethodAbstarct_Intention.java" startLine="61" startPosition="118" endLine="65" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" />
+    <nodeInfo nodeId="1236187435379" fileName="MakeMethodAbstarct_Intention.java" startLine="73" startPosition="0" endLine="77" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getLocationString#()Ljava/lang/String;" />
+    <nodeInfo nodeId="4975090607137411469" fileName="MakeMethodAbstarct_Intention.java" startLine="60" startPosition="144" endLine="65" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1236187435379" fileName="MakeMethodAbstarct_Intention.java" startLine="68" startPosition="0" endLine="73" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/nodeEditor/EditorContext;)V" />
+    <nodeInfo nodeId="1236187435379" fileName="MakeMethodAbstarct_Intention.java" startLine="36" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescription#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/nodeEditor/EditorContext;)Ljava/lang/String;" />
+    <nodeInfo nodeId="1236187435379" fileName="MakeMethodAbstarct_Intention.java" startLine="43" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicable#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/nodeEditor/EditorContext;)Z" />
+    <nodeInfo nodeId="1236187435379" fileName="MakeMethodAbstarct_Intention.java" startLine="50" startPosition="0" endLine="68" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableToNode#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/nodeEditor/EditorContext;)Z" />
+    <scopeInfo nodeId="1236187435379" fileName="MakeMethodAbstarct_Intention.java" startLine="18" startPosition="41" endLine="18" endPosition="41" />
+    <scopeInfo nodeId="1236187435379" fileName="MakeMethodAbstarct_Intention.java" startLine="21" startPosition="30" endLine="22" endPosition="76" />
+    <scopeInfo nodeId="1236187435379" fileName="MakeMethodAbstarct_Intention.java" startLine="25" startPosition="36" endLine="26" endPosition="17" />
+    <scopeInfo nodeId="1236187435379" fileName="MakeMethodAbstarct_Intention.java" startLine="29" startPosition="37" endLine="30" endPosition="17" />
+    <scopeInfo nodeId="1236187435379" fileName="MakeMethodAbstarct_Intention.java" startLine="33" startPosition="44" endLine="34" endPosition="16" />
+    <scopeInfo nodeId="1236187435379" fileName="MakeMethodAbstarct_Intention.java" startLine="45" startPosition="58" endLine="46" endPosition="19" />
+    <scopeInfo nodeId="4975090607137411454" fileName="MakeMethodAbstarct_Intention.java" startLine="53" startPosition="30" endLine="54" endPosition="18" />
+    <scopeInfo nodeId="224249931928959407" fileName="MakeMethodAbstarct_Intention.java" startLine="57" startPosition="117" endLine="58" endPosition="19" />
+    <scopeInfo nodeId="4975090607137411477" fileName="MakeMethodAbstarct_Intention.java" startLine="62" startPosition="39" endLine="63" endPosition="113" />
+    <scopeInfo nodeId="1236187435379" fileName="MakeMethodAbstarct_Intention.java" startLine="74" startPosition="37" endLine="75" endPosition="51" />
+    <scopeInfo nodeId="1236187435379" fileName="MakeMethodAbstarct_Intention.java" startLine="17" startPosition="86" endLine="19" endPosition="3" />
+    <scopeInfo nodeId="1236187435383" fileName="MakeMethodAbstarct_Intention.java" startLine="69" startPosition="76" endLine="71" endPosition="128" />
+    <scopeInfo nodeId="1236187435379" fileName="MakeMethodAbstarct_Intention.java" startLine="20" startPosition="0" endLine="24" endPosition="0" />
+    <scopeInfo nodeId="1236187435379" fileName="MakeMethodAbstarct_Intention.java" startLine="24" startPosition="0" endLine="28" endPosition="0" />
+    <scopeInfo nodeId="1236187435379" fileName="MakeMethodAbstarct_Intention.java" startLine="28" startPosition="0" endLine="32" endPosition="0" />
+    <scopeInfo nodeId="1236187435379" fileName="MakeMethodAbstarct_Intention.java" startLine="32" startPosition="0" endLine="36" endPosition="0" />
+    <scopeInfo nodeId="1236187435381" fileName="MakeMethodAbstarct_Intention.java" startLine="37" startPosition="85" endLine="41" endPosition="6" />
+    <scopeInfo nodeId="1236187435379" fileName="MakeMethodAbstarct_Intention.java" startLine="44" startPosition="84" endLine="48" endPosition="16" />
+    <scopeInfo nodeId="4975090607137411476" fileName="MakeMethodAbstarct_Intention.java" startLine="61" startPosition="118" endLine="65" endPosition="0">
       <varInfo nodeId="4975090607137411476" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="1236187435379" fileName="MakeMethodAbstarct_Intention.java" startLine="67" startPosition="0" endLine="71" endPosition="0">
+    <scopeInfo nodeId="1236187435379" fileName="MakeMethodAbstarct_Intention.java" startLine="73" startPosition="0" endLine="77" endPosition="0" />
+    <scopeInfo nodeId="1236187435379" fileName="MakeMethodAbstarct_Intention.java" startLine="68" startPosition="0" endLine="73" endPosition="0">
       <varInfo nodeId="1236187435379" varName="editorContext" />
       <varInfo nodeId="1236187435379" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1236187435379" fileName="MakeMethodAbstarct_Intention.java" startLine="71" startPosition="0" endLine="75" endPosition="0" />
-    <scopeInfo nodeId="1236187435379" fileName="MakeMethodAbstarct_Intention.java" startLine="35" startPosition="0" endLine="42" endPosition="0">
+    <scopeInfo nodeId="1236187435379" fileName="MakeMethodAbstarct_Intention.java" startLine="36" startPosition="0" endLine="43" endPosition="0">
       <varInfo nodeId="1236187435379" varName="editorContext" />
       <varInfo nodeId="1236187435379" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1236187435379" fileName="MakeMethodAbstarct_Intention.java" startLine="42" startPosition="0" endLine="49" endPosition="0">
+    <scopeInfo nodeId="1236187435379" fileName="MakeMethodAbstarct_Intention.java" startLine="43" startPosition="0" endLine="50" endPosition="0">
       <varInfo nodeId="1236187435379" varName="editorContext" />
       <varInfo nodeId="1236187435379" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="4975090607137411446" fileName="MakeMethodAbstarct_Intention.java" startLine="50" startPosition="90" endLine="65" endPosition="60">
+    <scopeInfo nodeId="4975090607137411446" fileName="MakeMethodAbstarct_Intention.java" startLine="51" startPosition="90" endLine="66" endPosition="60">
       <varInfo nodeId="224249931928959398" varName="containingClassifier" />
       <varInfo nodeId="4975090607137411448" varName="contextNode" />
       <varInfo nodeId="4975090607137411470" varName="includingBodies" />
       <varInfo nodeId="4975090607137411461" varName="includingStatementLists" />
     </scopeInfo>
-    <scopeInfo nodeId="1236187435379" fileName="MakeMethodAbstarct_Intention.java" startLine="49" startPosition="0" endLine="67" endPosition="0">
+    <scopeInfo nodeId="1236187435379" fileName="MakeMethodAbstarct_Intention.java" startLine="50" startPosition="0" endLine="68" endPosition="0">
       <varInfo nodeId="1236187435379" varName="editorContext" />
       <varInfo nodeId="1236187435379" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="1236187435379" fileName="MakeMethodAbstarct_Intention.java" startLine="16" startPosition="0" endLine="76" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.MakeMethodAbstarct_Intention" />
-    <unitInfo nodeId="4975090607137411476" fileName="MakeMethodAbstarct_Intention.java" startLine="60" startPosition="95" endLine="64" endPosition="5" unitName="jetbrains.mps.baseLanguage.intentions.MakeMethodAbstarct_Intention$1" />
+    <unitInfo nodeId="1236187435379" fileName="MakeMethodAbstarct_Intention.java" startLine="17" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.MakeMethodAbstarct_Intention" />
+    <unitInfo nodeId="4975090607137411476" fileName="MakeMethodAbstarct_Intention.java" startLine="61" startPosition="95" endLine="65" endPosition="5" unitName="jetbrains.mps.baseLanguage.intentions.MakeMethodAbstarct_Intention$1" />
   </root>
   <root nodeId="1238764345596">
     <nodeInfo nodeId="1238764345596" fileName="IterateOverIterable_Intention.java" startLine="21" startPosition="87" endLine="22" endPosition="195" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SNODE_POINTER_w1n2qe_a0a0a0a0b0c0a0a0b0a0a0a6" />
