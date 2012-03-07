@@ -10,6 +10,8 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.baseLanguage.search.VisibilityUtil;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import java.util.Set;
 import jetbrains.mps.baseLanguage.scopes.ClassAccessKind;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
 import jetbrains.mps.smodel.structure.BehaviorDescriptor;
@@ -29,7 +31,7 @@ public class ClassifierMember_Behavior {
     return false;
   }
 
-  public static boolean virtual_isVisible_8083692786967482069(SNode thisNode, SNode contextClassifier, SNode contextNode) {
+  public static boolean virtual_isVisible_8083692786967482069(SNode thisNode, final SNode contextClassifier, SNode contextNode) {
     // public 
     if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(thisNode, "visibility", true), "jetbrains.mps.baseLanguage.structure.PublicVisibility")) {
       return true;
@@ -39,24 +41,41 @@ public class ClassifierMember_Behavior {
       return ListSequence.fromList(SNodeOperations.getAncestors(contextNode, "jetbrains.mps.baseLanguage.structure.Classifier", true)).last() == ListSequence.fromList(SNodeOperations.getAncestors(contextClassifier, "jetbrains.mps.baseLanguage.structure.Classifier", true)).last();
     }
     // default 
-    boolean isSamePackage = eq_i8o263_a0a5a2(VisibilityUtil.packageName(contextNode), VisibilityUtil.packageName(contextClassifier));
+    String contextNodePackage = VisibilityUtil.packageName(contextNode);
+    String contextClassifierPackage = VisibilityUtil.packageName(contextClassifier);
+    String declarationClassifierPackage = VisibilityUtil.packageName(Classifier_Behavior.getContextClassifier_6172562527426750080(thisNode));
     if ((SLinkOperations.getTarget(thisNode, "visibility", true) == null)) {
-      return isSamePackage;
+      return eq_i8o263_a0a0i0c(contextNodePackage, contextClassifierPackage);
     }
     // protected 
     if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(thisNode, "visibility", true), "jetbrains.mps.baseLanguage.structure.ProtectedVisibility")) {
-      if (isSamePackage) {
+      if (eq_i8o263_a0a0k0c(contextNodePackage, declarationClassifierPackage)) {
         return true;
       }
-      final SNode declarationClassifier = Classifier_Behavior.getContextClassifier_6172562527426750080(thisNode);
-      return ListSequence.fromList(SNodeOperations.getAncestors(contextNode, "jetbrains.mps.baseLanguage.structure.Classifier", true)).any(new IWhereFilter<SNode>() {
+
+      // two cases: 1) from class 2) from dot expression 
+      Iterable<SNode> possibleClassifiers = ListSequence.fromList(SNodeOperations.getAncestors(contextNode, "jetbrains.mps.baseLanguage.structure.Classifier", true)).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
-          return SetSequence.fromSet(Classifier_Behavior.call_getAllExtendedClassifiers_2907982978864985482(it)).contains(declarationClassifier);
+          return SetSequence.fromSet(Classifier_Behavior.call_getAllExtendedClassifiers_2907982978864985482(it)).contains(contextClassifier);
         }
       });
+      if (!(SNodeOperations.isInstanceOf(contextNode, "jetbrains.mps.baseLanguage.structure.DotExpression"))) {
+        // 1 
+        return Sequence.fromIterable(possibleClassifiers).isNotEmpty();
+      } else {
+        // 2 
+        SNode leftClassifier = DotExpression_Behavior.call_getClassifier_1213877410697(SNodeOperations.cast(contextNode, "jetbrains.mps.baseLanguage.structure.DotExpression"));
+        final Set<SNode> extendedClassifiers = Classifier_Behavior.call_getAllExtendedClassifiers_2907982978864985482(leftClassifier);
+        return Sequence.fromIterable(possibleClassifiers).any(new IWhereFilter<SNode>() {
+          public boolean accept(SNode it) {
+            return SetSequence.fromSet(extendedClassifiers).contains(it);
+          }
+        });
+      }
     }
 
     int accessLevel = ClassifierMember_Behavior.call_getAccessLevelFor_8083692786967356648(thisNode, contextClassifier, contextNode);
+
 
     // todo: ??? 
     boolean isPrivate = SNodeOperations.isInstanceOf(SLinkOperations.getTarget(thisNode, "visibility", true), "jetbrains.mps.baseLanguage.structure.PrivateVisibility");
@@ -145,7 +164,14 @@ public class ClassifierMember_Behavior {
     return (Object) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.ClassifierMember"), callerConceptFqName, "virtual_getSignatureForOverriding_274804607996650333", PARAMETERS_274804607996650333, contextClassifier);
   }
 
-  private static boolean eq_i8o263_a0a5a2(Object a, Object b) {
+  private static boolean eq_i8o263_a0a0i0c(Object a, Object b) {
+    return (a != null ?
+      a.equals(b) :
+      a == b
+    );
+  }
+
+  private static boolean eq_i8o263_a0a0k0c(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b
