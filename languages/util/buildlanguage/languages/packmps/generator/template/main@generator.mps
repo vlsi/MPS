@@ -710,7 +710,7 @@
     </node>
     <node role="item" roleId="tpih.1184639733180" type="tpih.GLine" typeId="tpih.1166926309597" id="8037435193861318518">
       <node role="item" roleId="tpih.1166928665191" type="tpih.GText" typeId="tpih.1164412789837" id="8037435193861318519">
-        <property name="text" nameId="tpih.1164413036326" value="idea-patch.jar" />
+        <property name="text" nameId="tpih.1164413036326" value="mps-resources_en.jar" />
         <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.PropertyMacro" typeId="tpf8.1087833241328" id="8037435193861318520">
           <property name="propertyName" nameId="tpck.1757699476691236117" value="text" />
           <node role="propertyValueFunction" roleId="tpf8.1167756362303" type="tpf8.PropertyMacro_GetPropertyValue" typeId="tpf8.1167756080639" id="8037435193861318521">
@@ -753,7 +753,7 @@
                     <node role="leftExpression" roleId="tp25.1140138123956" type="tpee.DotExpression" typeId="tpee.1197027756228" id="5428983789737856401">
                       <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="5428983789737856394">
                         <node role="operand" roleId="tpee.1197027771414" type="tp25.NodeRefExpression" typeId="tp25.1219352745532" id="5428983789737856390">
-                          <link role="referentNode" roleId="tp25.1219352800908" targetNodeId="fthv.8431776905956472694" resolveInfo="idea-patch.jar" />
+                          <link role="referentNode" roleId="tp25.1219352800908" targetNodeId="fthv.8431776905956472694" resolveInfo="mps-resources_en.jar" />
                         </node>
                         <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkListAccess" typeId="tp25.1138056282393" id="5428983789737856399">
                           <link role="link" roleId="tp25.1138056546658" targetNodeId="tps4.701559220729212646" />
