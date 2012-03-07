@@ -11,6 +11,7 @@ import java.util.ArrayList;
 import com.intellij.execution.ExecutionManager;
 import com.intellij.openapi.project.Project;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import com.intellij.execution.ui.RunContentDescriptor;
 import com.intellij.execution.ui.RunContentManager;
 import java.util.Set;
@@ -57,6 +58,7 @@ public class DebugSessionManagerComponent implements ProjectComponent {
   public void projectClosed() {
   }
 
+  @Nullable
   public AbstractDebugSession getDebugSessionByCurrentTab() {
     RunContentDescriptor contentDescriptor = myExecutionManager.getContentManager().getSelectedContent();
     if (contentDescriptor == null) {
