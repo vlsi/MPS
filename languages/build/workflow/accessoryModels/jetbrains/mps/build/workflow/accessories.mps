@@ -32,9 +32,9 @@
         <link role="target" roleId="8xvf.2769948622284574295" targetNodeId="7306485738221390870" resolveInfo="processResources" />
       </node>
     </node>
-    <node role="parts" roleId="8xvf.7306485738221391508" type="8xvf.BwfTask" typeId="8xvf.2769948622284546675" id="7306485738221390876">
-      <property name="name" nameId="tpck.1169194664001" value="assemble" />
-      <node role="dependencies" roleId="8xvf.2769948622284574302" type="8xvf.BwfTaskDependency" typeId="8xvf.2769948622284574294" id="7306485738221390878">
+    <node role="parts" roleId="8xvf.7306485738221391508" type="8xvf.BwfTaskPart" typeId="8xvf.3961775458390032824" id="4701820937132277086">
+      <link role="task" roleId="8xvf.3961775458390032825" targetNodeId="4701820937132277082" resolveInfo="assemble" />
+      <node role="additionalDependencies" roleId="8xvf.3961775458390352322" type="8xvf.BwfTaskDependency" typeId="8xvf.2769948622284574294" id="4701820937132277088">
         <link role="target" roleId="8xvf.2769948622284574295" targetNodeId="7306485738221390868" resolveInfo="classes" />
       </node>
     </node>
@@ -55,9 +55,6 @@
       <node role="additionalDependencies" roleId="8xvf.3961775458390352322" type="8xvf.BwfTaskDependency" typeId="8xvf.2769948622284574294" id="7306485738221455027">
         <link role="target" roleId="8xvf.2769948622284574295" targetNodeId="7306485738221390881" resolveInfo="check" />
       </node>
-      <node role="additionalDependencies" roleId="8xvf.3961775458390352322" type="8xvf.BwfTaskDependency" typeId="8xvf.2769948622284574294" id="7306485738221455029">
-        <link role="target" roleId="8xvf.2769948622284574295" targetNodeId="7306485738221390876" resolveInfo="assemble" />
-      </node>
     </node>
     <node role="imports" roleId="8xvf.7306485738221455030" type="8xvf.BwfTaskLibraryDependency" typeId="8xvf.7306485738221471031" id="7306485738221487426">
       <link role="target" roleId="8xvf.7306485738221471032" targetNodeId="7306485738221408315" resolveInfo="common" />
@@ -69,8 +66,14 @@
       <property name="defaultValue" nameId="8xvf.6896005762093571402" value="build" />
       <property name="isLocation" nameId="8xvf.6896005762093571407" value="true" />
     </node>
+    <node role="parts" roleId="8xvf.7306485738221391508" type="8xvf.BwfTask" typeId="8xvf.2769948622284546675" id="4701820937132277082">
+      <property name="name" nameId="tpck.1169194664001" value="assemble" />
+    </node>
     <node role="parts" roleId="8xvf.7306485738221391508" type="8xvf.BwfTask" typeId="8xvf.2769948622284546675" id="7306485738221408317">
       <property name="name" nameId="tpck.1169194664001" value="build" />
+      <node role="dependencies" roleId="8xvf.2769948622284574302" type="8xvf.BwfTaskDependency" typeId="8xvf.2769948622284574294" id="4701820937132277093">
+        <link role="target" roleId="8xvf.2769948622284574295" targetNodeId="4701820937132277082" resolveInfo="assemble" />
+      </node>
     </node>
     <node role="parts" roleId="8xvf.7306485738221391508" type="8xvf.BwfTask" typeId="8xvf.2769948622284546675" id="7306485738221390898">
       <property name="name" nameId="tpck.1169194664001" value="clean" />

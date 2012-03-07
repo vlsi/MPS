@@ -42,18 +42,6 @@
     <fileset file="${idea_home}/lib/junit-4.10.jar" />
   </path>
   
-  <target name="build" depends="check, assemble" />
-  
-  <target name="clean">
-    <delete dir="${build.dir}" />
-  </target>
-  
-  <target name="compileJava" depends="java.compile.mps-tuples, java.compile.mps-closures, java.compile.mps-collections, java.compile.mps-core, java.compile.mps-editor-api, java.compile.mps-ant, java.compile.mps-platform, java.compile.mps-editor, java.compile.mps-plugin" />
-  
-  <target name="processResources" />
-  
-  <target name="classes" depends="compileJava, processResources" />
-  
   <target name="assemble" depends="classes">
     <mkdir dir="${build.layout}/mps-core" />
     <mkdir dir="${build.layout}/mps-core/lib" />
@@ -83,6 +71,18 @@
     </jar>
     <echo file="${build.layout}/variables.properties"></echo>
   </target>
+  
+  <target name="build" depends="assemble, check" />
+  
+  <target name="clean">
+    <delete dir="${build.dir}" />
+  </target>
+  
+  <target name="compileJava" depends="java.compile.mps-tuples, java.compile.mps-closures, java.compile.mps-collections, java.compile.mps-core, java.compile.mps-editor-api, java.compile.mps-ant, java.compile.mps-platform, java.compile.mps-editor, java.compile.mps-plugin" />
+  
+  <target name="processResources" />
+  
+  <target name="classes" depends="compileJava, processResources" />
   
   <target name="test" depends="classes" />
   

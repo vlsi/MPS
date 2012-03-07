@@ -284,6 +284,10 @@
       <property name="name" nameId="tpck.1169194664001" value="BuildStringNotEmpty" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="4380385936562003279" resolveInfo="BuildString" />
     </node>
+    <node type="tpce.InterfaceConceptDeclaration" typeId="tpce.1169125989551" id="841011766566205091">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Dependencies" />
+      <property name="name" nameId="tpck.1169194664001" value="BuildExternalDependency" />
+    </node>
   </roots>
   <root id="5617550519002745363">
     <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="5204048710541015587">
@@ -867,7 +871,11 @@
       <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
       <link role="target" roleId="tpce.1071599976176" targetNodeId="7389400916848050060" resolveInfo="BuildLayout_NamedContainer" />
     </node>
+    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="841011766566205110">
+      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="841011766566205091" resolveInfo="BuildExternalDependency" />
+    </node>
   </root>
   <root id="841011766566059607" />
+  <root id="841011766566205091" />
 </model>
 

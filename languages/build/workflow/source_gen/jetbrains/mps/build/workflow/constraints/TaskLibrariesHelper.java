@@ -16,6 +16,7 @@ import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import java.util.Map;
 import java.util.HashMap;
 import jetbrains.mps.smodel.CopyUtil;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.Queue;
 import jetbrains.mps.internal.collections.runtime.QueueSequence;
 import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
@@ -62,6 +63,11 @@ public class TaskLibrariesHelper {
         SNode targetNode = ref.getTargetNodeSilently();
         if (map.containsKey(targetNode)) {
           n.setReferent(ref.getRole(), map.get(targetNode));
+        } else {
+          SNode containingRoot = targetNode.getContainingRoot();
+          if (SNodeOperations.isInstanceOf(containingRoot, "jetbrains.mps.build.workflow.structure.BwfTaskLibrary")) {
+            genContext.showErrorMessage(n, "task library is not imported");
+          }
         }
       }
     }

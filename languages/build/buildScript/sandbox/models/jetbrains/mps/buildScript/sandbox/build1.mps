@@ -253,6 +253,9 @@
                 <property name="text" nameId="3ior.4903714810883755350" value="test" />
               </node>
             </node>
+            <node role="children" roleId="3ior.7389400916848037006" type="3ior.BuildLayout_Import" typeId="3ior.841011766565753074" id="841011766566205048">
+              <link role="target" roleId="3ior.841011766565753076" targetNodeId="1117643560963371565" resolveInfo="inrelease.zip" />
+            </node>
           </node>
           <node role="containerName" roleId="3ior.4380385936562148502" type="3ior.BuildStringNotEmpty" typeId="3ior.841011766566059607" id="841011766566097361">
             <node role="parts" roleId="3ior.4903714810883783243" type="3ior.BuildTextStringPart" typeId="3ior.4903714810883702019" id="841011766566097362">

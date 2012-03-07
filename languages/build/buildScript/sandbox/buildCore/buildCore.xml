@@ -14,18 +14,6 @@
     </fileset>
   </path>
   
-  <target name="build" depends="check, assemble" />
-  
-  <target name="clean">
-    <delete dir="${build.dir}" />
-  </target>
-  
-  <target name="compileJava" depends="java.compile.mps-core" />
-  
-  <target name="processResources" />
-  
-  <target name="classes" depends="compileJava, processResources" />
-  
   <target name="assemble" depends="classes">
     <mkdir dir="${build.layout}/default" />
     <mkdir dir="${build.tmp}/release.zip" />
@@ -55,6 +43,18 @@
         buildCore.ver=${ver}
         buildCore.MPS=${MPS}</echo>
   </target>
+  
+  <target name="build" depends="assemble, check" />
+  
+  <target name="clean">
+    <delete dir="${build.dir}" />
+  </target>
+  
+  <target name="compileJava" depends="java.compile.mps-core" />
+  
+  <target name="processResources" />
+  
+  <target name="classes" depends="compileJava, processResources" />
   
   <target name="test" depends="classes" />
   

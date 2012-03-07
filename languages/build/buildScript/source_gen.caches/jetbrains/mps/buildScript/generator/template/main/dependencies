@@ -10,6 +10,7 @@
     <classNode dependClassName="jetbrains.mps.buildScript.behavior.BuildSourcePath_Behavior" />
     <classNode dependClassName="jetbrains.mps.buildScript.behavior.BuildSource_JavaModule_Behavior" />
     <classNode dependClassName="jetbrains.mps.buildScript.behavior.BuildString_Behavior" />
+    <classNode dependClassName="jetbrains.mps.buildScript.generator.util.FetchDependenciesProcessor" />
     <classNode dependClassName="jetbrains.mps.buildScript.util.Context" />
     <classNode dependClassName="jetbrains.mps.buildScript.util.GenerationUtil" />
     <classNode dependClassName="jetbrains.mps.buildScript.util.RelativePathHelper" />

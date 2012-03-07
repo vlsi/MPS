@@ -3,7 +3,11 @@
   <property name="build.tmp" location="${build.dir}/tmp/buildA" />
   <property name="build.layout" location="${build.dir}/artifacts/buildA" />
   
-  <target name="build" />
+  <target name="assemble">
+    <echo file="${build.layout}/variables.properties"></echo>
+  </target>
+  
+  <target name="build" depends="assemble" />
   
   <target name="clean">
     <delete dir="${build.dir}" />

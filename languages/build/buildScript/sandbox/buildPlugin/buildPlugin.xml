@@ -7,7 +7,18 @@
   <property name="artifacts.buildA" location="${ds}/../../buildA" />
   <property name="artifacts.buildB" location="../../solutions/buildB/build/artifacts/buildB" />
   
-  <target name="build" />
+  <target name="assemble">
+    <mkdir dir="${build.layout}/xx" />
+    <mkdir dir="${build.tmp}/xx" />
+    <mkdir dir="${build.tmp}/xx/test" />
+    <copy todir="${build.tmp}/xx/test"><!--TODO--></copy>
+    <jar destfile="${build.layout}/xx/xx">
+      <fileset dir="${build.tmp}/xx" />
+    </jar>
+    <echo file="${build.layout}/variables.properties"></echo>
+  </target>
+  
+  <target name="build" depends="assemble" />
   
   <target name="clean">
     <delete dir="${build.dir}" />

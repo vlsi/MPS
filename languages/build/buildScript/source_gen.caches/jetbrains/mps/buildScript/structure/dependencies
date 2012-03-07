@@ -24,6 +24,10 @@
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
   </dependency>
+  <dependency className="jetbrains.mps.buildScript.structure.BuildExternalDependency" file="BuildExternalDependency.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode extendsClassName="jetbrains.mps.smodel.INodeAdapter" />
+  </dependency>
   <dependency className="jetbrains.mps.buildScript.structure.BuildFileExcludeSelector" file="BuildFileExcludeSelector.java">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.buildScript.structure.BuildFileSelector" />
@@ -177,8 +181,12 @@
   </dependency>
   <dependency className="jetbrains.mps.buildScript.structure.BuildLayout_Import" file="BuildLayout_Import.java">
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.Iterator" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.buildScript.structure.BuildExternalDependency" />
     <classNode dependClassName="jetbrains.mps.buildScript.structure.BuildLayout_NamedContainer" />
     <classNode dependClassName="jetbrains.mps.buildScript.structure.BuildLayout_Node" />
+    <classNode dependClassName="jetbrains.mps.lang.core.structure.Attribute" />
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />

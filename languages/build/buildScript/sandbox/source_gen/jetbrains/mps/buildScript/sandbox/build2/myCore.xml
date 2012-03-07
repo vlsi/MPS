@@ -24,13 +24,13 @@
   
   <target name="classes" depends="compileJava, processResources" />
   
-  <target name="assemble" depends="classes" />
-  
   <target name="test" depends="classes" />
   
   <target name="check" depends="test" />
   
-  <target name="build" depends="check, assemble">
+  <target name="assemble" depends="classes" />
+  
+  <target name="build" depends="assemble, check">
     <mkdir asd="aaaa" />
     <javac asd="asd" ssdf="asd">
       asdassda
