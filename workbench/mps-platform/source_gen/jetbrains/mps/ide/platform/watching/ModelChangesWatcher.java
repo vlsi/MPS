@@ -33,10 +33,9 @@ import jetbrains.mps.util.Computable;
 import com.intellij.openapi.application.ApplicationManager;
 import java.util.List;
 import com.intellij.openapi.vfs.newvfs.events.VFileEvent;
-import com.intellij.openapi.vfs.VfsUtil;
+import com.intellij.openapi.application.Application;
 import com.intellij.util.Processor;
 import jetbrains.mps.fileTypes.MPSFileTypesManager;
-import com.intellij.openapi.application.Application;
 
 public class ModelChangesWatcher implements ApplicationComponent {
   public static final Logger LOG = Logger.getLogger(ModelChangesWatcher.class);
@@ -184,7 +183,7 @@ public class ModelChangesWatcher implements ApplicationComponent {
         return true;
       }
     }
-    return true; //todo for Misha Muhin
+    return false;
   }
 
   public void addReloadListener(ModelChangesWatcher.IReloadListener listener) {
@@ -225,43 +224,6 @@ public class ModelChangesWatcher implements ApplicationComponent {
     }
 
     public void before(List<? extends VFileEvent> events) {
-      synchronized (myLock) {
-        if (myReloadSession == null) {
-          myReloadSession = new ReloadSession(getReloadListeners());
-        }
-        final ReloadSession reloadSession = myReloadSession;
-        for (final VFileEvent event : events) {
-          String filePath = event.getPath();
-          VirtualFile file = event.getFile();
-          if (file == null) {
-            continue;
-          }
-          if (file.isDirectory() && file.exists() && (file.getChildren() != null) && file.isInLocalFileSystem()) {
-            if (isUnderSignificantRoots(VirtualFileUtils.toFile(file))) {
-              VfsUtil.processFilesRecursively(file, new Processor<VirtualFile>() {
-                public boolean process(VirtualFile file) {
-                  processBeforeEvent(new VFileEventDecorator(event, file.getPath()), file.getPath(), reloadSession);
-                  return true;
-                }
-              });
-            }
-          } else
-          if (!(file.isDirectory())) {
-            processBeforeEvent(event, filePath, reloadSession);
-          }
-        }
-      }
-    }
-
-    private void processBeforeEvent(VFileEvent event, String filePath, ReloadSession reloadSession) {
-      if (MPSFileTypesManager.instance().isModelFile(filePath)) {
-        ModelChangesWatcher.LOG.debug("Process before event for " + filePath);
-        BeforeModelEventProcessor.getInstance().process(event, reloadSession);
-      } else
-      if (MPSFileTypesManager.instance().isModuleFile(filePath)) {
-        ModelChangesWatcher.LOG.debug("Process before event for " + filePath);
-        BeforeModuleEventProcessor.getInstance().process(event, reloadSession);
-      }
     }
 
     public void after(final List<? extends VFileEvent> events) {

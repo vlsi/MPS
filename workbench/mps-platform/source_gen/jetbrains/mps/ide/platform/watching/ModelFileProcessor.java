@@ -25,6 +25,11 @@ import jetbrains.mps.project.IModule;
   }
 
   @Override
+  protected void processDelete(VFileEvent event, ReloadSession reloadSession) {
+    fileDeleted(event.getPath(), reloadSession);
+  }
+
+  @Override
   protected void processMove(VFileEvent event, ReloadSession reloadSession) {
     processCreate(event, reloadSession);
     VFileMoveEvent moveEvent = (VFileMoveEvent) event;

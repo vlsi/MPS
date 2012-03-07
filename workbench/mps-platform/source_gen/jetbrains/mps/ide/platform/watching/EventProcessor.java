@@ -78,8 +78,4 @@ import com.intellij.openapi.vfs.VirtualFile;
   protected VirtualFile refreshAndGetVFile(VFileEvent event) {
     return event.getFileSystem().refreshAndFindFileByPath(event.getPath());
   }
-
-  protected VirtualFile getVFile(VFileEvent event) {
-    return event.getFileSystem().findFileByPath(event.getPath());
-  }
 }
