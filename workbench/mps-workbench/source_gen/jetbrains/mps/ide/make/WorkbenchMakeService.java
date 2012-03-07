@@ -17,7 +17,7 @@ import java.util.Collections;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.plugins.PluginReloader;
-import jetbrains.mps.watching.ModelChangesWatcher;
+import jetbrains.mps.ide.platform.watching.ModelChangesWatcher;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.generator.GenerationSettingsProvider;
 import jetbrains.mps.ide.generator.GenerationSettings;

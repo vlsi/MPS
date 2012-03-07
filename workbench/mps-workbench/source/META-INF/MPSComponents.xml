@@ -38,16 +38,20 @@
       <implementation-class>com.intellij.psi.stubs.SerializationManagerImpl</implementation-class>
     </component>
     <component>
-      <implementation-class>jetbrains.mps.watching.ModelChangesWatcher</implementation-class>
+      <implementation-class>jetbrains.mps.ide.platform.watching.ModelChangesWatcher</implementation-class>
     </component>
     <component>
-      <implementation-class>jetbrains.mps.watching.ModelFocusSynchronizer</implementation-class>
+      <implementation-class>jetbrains.mps.ide.platform.watching.ModelFocusSynchronizer</implementation-class>
     </component>
     <component>
       <implementation-class>jetbrains.mps.watching.WatchedRoots</implementation-class>
     </component>
     <component>
-      <implementation-class>jetbrains.mps.watching.ModelCacheReloader</implementation-class>
+      <interface-class>jetbrains.mps.ide.platform.watching.SignificantRoots</interface-class>
+      <implementation-class>jetbrains.mps.watching.MPSSignificantRoots</implementation-class>
+    </component>
+    <component>
+      <implementation-class>jetbrains.mps.ide.platform.watching.ModelCacheReloader</implementation-class>
     </component>
     <component>
       <implementation-class>jetbrains.mps.ide.refactoring.RefactoringAccessImpl</implementation-class>

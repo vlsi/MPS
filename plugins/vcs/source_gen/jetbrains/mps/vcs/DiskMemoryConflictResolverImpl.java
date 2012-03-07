@@ -9,7 +9,7 @@ import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.DefaultSModelDescriptor;
 import com.intellij.openapi.application.ApplicationManager;
-import jetbrains.mps.watching.ModelChangesWatcher;
+import jetbrains.mps.ide.platform.watching.ModelChangesWatcher;
 import jetbrains.mps.util.Computable;
 import java.io.File;
 import java.io.IOException;

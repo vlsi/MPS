@@ -18,7 +18,7 @@ import jetbrains.mps.ide.project.ProjectHelper;
 import com.intellij.openapi.vcs.impl.projectlevelman.AllVcses;
 import com.intellij.openapi.vcs.VcsShowConfirmationOption;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
-import jetbrains.mps.watching.ModelChangesWatcher;
+import jetbrains.mps.ide.platform.watching.ModelChangesWatcher;
 import javax.swing.SwingUtilities;
 import java.lang.reflect.InvocationTargetException;
 import com.intellij.openapi.vcs.ProjectLevelVcsManager;

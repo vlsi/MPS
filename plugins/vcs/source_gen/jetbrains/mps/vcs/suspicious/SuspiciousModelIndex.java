@@ -4,7 +4,7 @@ package jetbrains.mps.vcs.suspicious;
 
 import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.project.ProjectManager;
-import jetbrains.mps.watching.ModelChangesWatcher;
+import jetbrains.mps.ide.platform.watching.ModelChangesWatcher;
 import com.intellij.openapi.vfs.VirtualFileManager;
 import jetbrains.mps.smodel.DefaultSModelDescriptor;
 import jetbrains.mps.project.AbstractModule;

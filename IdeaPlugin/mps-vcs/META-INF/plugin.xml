@@ -26,7 +26,17 @@
 
   <xi:include href="../classes/jetbrains/mps/vcs/platform/actions/MPSVcs.xml" xpointer="xpointer(/components/*)"/>
   <xi:include href="../classes/META-INF/VcsCommon.xml" xpointer="xpointer(/components/*)"/>
-
+  <application-components>
+    <component>
+      <implementation-class>jetbrains.mps.ide.platform.watching.ModelChangesWatcher</implementation-class>
+    </component>
+    <component>
+      <implementation-class>jetbrains.mps.ide.platform.watching.ModelFocusSynchronizer</implementation-class>
+    </component>
+    <component>
+      <implementation-class>jetbrains.mps.ide.platform.watching.ModelCacheReloader</implementation-class>
+    </component>
+  </application-components>
   <extensions defaultExtensionNs="com.intellij">
     <errorHandler implementation="jetbrains.mps.ide.blame.CharismaReporter"/>
     <vcs.fileStatusProvider implementation="jetbrains.mps.vcs.changesmanager.NodeFileStatusProvider"/>
