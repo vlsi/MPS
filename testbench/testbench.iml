@@ -26,7 +26,6 @@
     <orderEntry type="module" module-name="MPSSupport" />
     <orderEntry type="module" module-name="typesystemEngine" />
     <orderEntry type="module" module-name="trove.runtime" />
-    <orderEntry type="module" module-name="resources" />
     <orderEntry type="module" module-name="Tuples-runtime" />
     <orderEntry type="module" module-name="vcs" />
     <orderEntry type="module" module-name="miscTests" />
