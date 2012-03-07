@@ -43,11 +43,9 @@
     <classNode dependClassName="com.intellij.openapi.vfs.VirtualFileManager" />
     <classNode dependClassName="com.intellij.openapi.vfs.VirtualFileManagerListener" />
     <classNode dependClassName="com.intellij.openapi.vfs.newvfs.events.VFileContentChangeEvent" />
-    <classNode dependClassName="com.intellij.openapi.vfs.newvfs.events.VFileCopyEvent" />
     <classNode dependClassName="com.intellij.openapi.vfs.newvfs.events.VFileCreateEvent" />
     <classNode dependClassName="com.intellij.openapi.vfs.newvfs.events.VFileDeleteEvent" />
     <classNode dependClassName="com.intellij.openapi.vfs.newvfs.events.VFileEvent" />
-    <classNode dependClassName="com.intellij.openapi.vfs.newvfs.events.VFileMoveEvent" />
     <classNode dependClassName="com.intellij.util.Processor" />
     <classNode dependClassName="com.intellij.util.messages.MessageBus" />
     <classNode dependClassName="com.intellij.util.messages.MessageBusConnection" />
