@@ -69,7 +69,6 @@
     <jar destfile="${build.layout}/mps-core/lib/mps-plugin.jar">
       <fileset dir="${build.dir}/tmp/java.out.mps-plugin" />
     </jar>
-    <echo file="${build.layout}/variables.properties"></echo>
   </target>
   
   <target name="build" depends="assemble, check" />

@@ -5,20 +5,20 @@ package jetbrains.mps.buildScript.behavior;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.buildScript.util.Context;
 
-public class BuildLayout_BehaviorDescriptor extends BuildLayout_AbstractContainer_BehaviorDescriptor {
+public class BuildLayout_BehaviorDescriptor extends BuildLayout_AbstractContainer_BehaviorDescriptor implements BuildLayout_Container_BehaviorDescriptor {
   public BuildLayout_BehaviorDescriptor() {
   }
 
-  public String virtual_getChildrenOutputDir_WithMacro_7389400916848004880(SNode thisNode, Context context) {
-    return BuildLayout_Behavior.virtual_getChildrenOutputDir_WithMacro_7389400916848004880(thisNode, context);
+  public String virtual_getAssembleSubTaskId_4701820937132344052(SNode thisNode) {
+    return BuildLayout_Behavior.virtual_getAssembleSubTaskId_4701820937132344052(thisNode);
   }
 
-  public String virtual_getPrepareSubTaskId_1117643560963359337(SNode thisNode) {
-    return BuildLayout_Behavior.virtual_getPrepareSubTaskId_1117643560963359337(thisNode);
+  public String virtual_getPrepareSubTaskId_4701820937132344041(SNode thisNode) {
+    return BuildLayout_Behavior.virtual_getPrepareSubTaskId_4701820937132344041(thisNode);
   }
 
-  public String virtual_getAssembleSubTaskId_1117643560963359375(SNode thisNode) {
-    return BuildLayout_Behavior.virtual_getAssembleSubTaskId_1117643560963359375(thisNode);
+  public String virtual_getChildrenOutputDir_WithMacro_4701820937132344011(SNode thisNode, Context context) {
+    return BuildLayout_Behavior.virtual_getChildrenOutputDir_WithMacro_4701820937132344011(thisNode, context);
   }
 
   @Override

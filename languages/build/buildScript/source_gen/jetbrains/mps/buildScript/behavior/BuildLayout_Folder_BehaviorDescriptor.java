@@ -9,8 +9,8 @@ public class BuildLayout_Folder_BehaviorDescriptor extends BuildLayout_NamedCont
   public BuildLayout_Folder_BehaviorDescriptor() {
   }
 
-  public String virtual_getChildrenOutputDir_WithMacro_7389400916848004880(SNode thisNode, Context context) {
-    return BuildLayout_Folder_Behavior.virtual_getChildrenOutputDir_WithMacro_7389400916848004880(thisNode, context);
+  public String virtual_getChildrenOutputDir_WithMacro_4701820937132344011(SNode thisNode, Context context) {
+    return BuildLayout_Folder_Behavior.virtual_getChildrenOutputDir_WithMacro_4701820937132344011(thisNode, context);
   }
 
   @Override

@@ -9,7 +9,7 @@ public class BuildLayout_Folder_Behavior {
   public static void init(SNode thisNode) {
   }
 
-  public static String virtual_getChildrenOutputDir_WithMacro_7389400916848004880(SNode thisNode, Context context) {
+  public static String virtual_getChildrenOutputDir_WithMacro_4701820937132344011(SNode thisNode, Context context) {
     return BuildLayout_NamedContainer_Behavior.call_getOutputPath_WithMacro_280273048052535414(thisNode, context);
   }
 }

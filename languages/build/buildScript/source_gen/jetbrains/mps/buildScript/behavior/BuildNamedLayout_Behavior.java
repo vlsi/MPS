@@ -4,13 +4,14 @@ package jetbrains.mps.buildScript.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.buildScript.util.Context;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
-public class BuildLayout_Behavior {
+public class BuildNamedLayout_Behavior {
   public static void init(SNode thisNode) {
   }
 
   public static String virtual_getChildrenOutputDir_WithMacro_4701820937132344011(SNode thisNode, Context context) {
-    return "${build.layout}";
+    return "${build.layout." + SPropertyOperations.getString(thisNode, "name") + "}";
   }
 
   public static String virtual_getAssembleSubTaskId_4701820937132344052(SNode thisNode) {

@@ -4,10 +4,23 @@ package jetbrains.mps.buildScript.behavior;
 
 import jetbrains.mps.lang.core.behavior.INamedConcept_BehaviorDescriptor;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.buildScript.util.Context;
 import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 
-public class BuildNamedLayout_BehaviorDescriptor extends BuildAspect_BehaviorDescriptor implements INamedConcept_BehaviorDescriptor {
+public class BuildNamedLayout_BehaviorDescriptor extends BuildAspect_BehaviorDescriptor implements INamedConcept_BehaviorDescriptor, BuildLayout_Container_BehaviorDescriptor {
   public BuildNamedLayout_BehaviorDescriptor() {
+  }
+
+  public String virtual_getAssembleSubTaskId_4701820937132344052(SNode thisNode) {
+    return BuildNamedLayout_Behavior.virtual_getAssembleSubTaskId_4701820937132344052(thisNode);
+  }
+
+  public String virtual_getPrepareSubTaskId_4701820937132344041(SNode thisNode) {
+    return BuildNamedLayout_Behavior.virtual_getPrepareSubTaskId_4701820937132344041(thisNode);
+  }
+
+  public String virtual_getChildrenOutputDir_WithMacro_4701820937132344011(SNode thisNode, Context context) {
+    return BuildNamedLayout_Behavior.virtual_getChildrenOutputDir_WithMacro_4701820937132344011(thisNode, context);
   }
 
   public String virtual_getFqName_1213877404258(SNode thisNode) {

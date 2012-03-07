@@ -24,13 +24,13 @@ public class BuildLayout_NamedContainer_Behavior {
     );
   }
 
-  public static String virtual_getChildrenOutputDir_WithMacro_7389400916848004880(SNode thisNode, Context context) {
+  public static String virtual_getChildrenOutputDir_WithMacro_4701820937132344011(SNode thisNode, Context context) {
     return "${build.tmp}/" + context.getUniqueName(thisNode, SPropertyOperations.getString(thisNode, "name"));
   }
 
   public static String call_getOutputPath_WithMacro_280273048052535414(SNode thisNode, Context context) {
-    if ((SNodeOperations.getParent(thisNode) != null) && SNodeOperations.isInstanceOf(SNodeOperations.getParent(thisNode), "jetbrains.mps.buildScript.structure.BuildLayout_AbstractContainer")) {
-      String parentChildrenTargetDir = BuildLayout_AbstractContainer_Behavior.call_getChildrenOutputDir_WithMacro_7389400916848004880(SNodeOperations.cast(SNodeOperations.getParent(thisNode), "jetbrains.mps.buildScript.structure.BuildLayout_AbstractContainer"), context);
+    if ((SNodeOperations.getParent(thisNode) != null) && SNodeOperations.isInstanceOf(SNodeOperations.getParent(thisNode), "jetbrains.mps.buildScript.structure.BuildLayout_Container")) {
+      String parentChildrenTargetDir = BuildLayout_Container_Behavior.call_getChildrenOutputDir_WithMacro_4701820937132344011(SNodeOperations.cast(SNodeOperations.getParent(thisNode), "jetbrains.mps.buildScript.structure.BuildLayout_Container"), context);
       return parentChildrenTargetDir + "/" + SPropertyOperations.getString(thisNode, "name");
     }
     return null;

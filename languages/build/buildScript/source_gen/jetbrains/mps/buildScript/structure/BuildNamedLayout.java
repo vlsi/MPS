@@ -5,20 +5,20 @@ package jetbrains.mps.buildScript.structure;
 import jetbrains.mps.lang.core.structure.INamedConcept;
 import jetbrains.mps.smodel.SNode;
 import java.util.Iterator;
-import java.util.List;
 import jetbrains.mps.lang.core.structure.Attribute;
+import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class BuildNamedLayout extends BuildAspect implements INamedConcept {
+public class BuildNamedLayout extends BuildAspect implements INamedConcept, BuildLayout_Container {
   public static final String concept = "jetbrains.mps.buildScript.structure.BuildNamedLayout";
   public static final String NAME = "name";
   public static final String SHORT_DESCRIPTION = "shortDescription";
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
-  public static final String CHILDREN = "children";
   public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
+  public static final String CHILDREN = "children";
 
   public BuildNamedLayout(SNode node) {
     super(node);
@@ -56,26 +56,6 @@ public class BuildNamedLayout extends BuildAspect implements INamedConcept {
     this.setProperty(BuildNamedLayout.VIRTUAL_PACKAGE, value);
   }
 
-  public int getChildrensCount() {
-    return this.getChildCount(BuildNamedLayout.CHILDREN);
-  }
-
-  public Iterator<BuildLayout_Node> childrens() {
-    return this.children(BuildLayout_Node.class, BuildNamedLayout.CHILDREN);
-  }
-
-  public List<BuildLayout_Node> getChildrens() {
-    return this.getChildren(BuildLayout_Node.class, BuildNamedLayout.CHILDREN);
-  }
-
-  public void addChildren(BuildLayout_Node node) {
-    this.addChild(BuildNamedLayout.CHILDREN, node);
-  }
-
-  public void insertChildren(BuildLayout_Node prev, BuildLayout_Node node) {
-    this.insertChild(prev, BuildNamedLayout.CHILDREN, node);
-  }
-
   public int getSmodelAttributesCount() {
     return this.getChildCount(BuildNamedLayout.SMODEL_ATTRIBUTE);
   }
@@ -94,6 +74,26 @@ public class BuildNamedLayout extends BuildAspect implements INamedConcept {
 
   public void insertSmodelAttribute(Attribute prev, Attribute node) {
     this.insertChild(prev, BuildNamedLayout.SMODEL_ATTRIBUTE, node);
+  }
+
+  public int getChildrensCount() {
+    return this.getChildCount(BuildNamedLayout.CHILDREN);
+  }
+
+  public Iterator<BuildLayout_Node> childrens() {
+    return this.children(BuildLayout_Node.class, BuildNamedLayout.CHILDREN);
+  }
+
+  public List<BuildLayout_Node> getChildrens() {
+    return this.getChildren(BuildLayout_Node.class, BuildNamedLayout.CHILDREN);
+  }
+
+  public void addChildren(BuildLayout_Node node) {
+    this.addChild(BuildNamedLayout.CHILDREN, node);
+  }
+
+  public void insertChildren(BuildLayout_Node prev, BuildLayout_Node node) {
+    this.insertChild(prev, BuildNamedLayout.CHILDREN, node);
   }
 
   public static BuildNamedLayout newInstance(SModel sm, boolean init) {

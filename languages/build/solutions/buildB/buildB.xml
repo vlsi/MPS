@@ -3,9 +3,7 @@
   <property name="build.tmp" location="${build.dir}/tmp/buildB" />
   <property name="build.layout" location="${build.dir}/artifacts/buildB" />
   
-  <target name="assemble">
-    <echo file="${build.layout}/variables.properties"></echo>
-  </target>
+  <target name="assemble" />
   
   <target name="build" depends="assemble" />
   

@@ -5,16 +5,45 @@ package jetbrains.mps.buildScript.structure;
 import jetbrains.mps.smodel.SNode;
 import java.util.Iterator;
 import java.util.List;
+import jetbrains.mps.lang.core.structure.Attribute;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class BuildLayout_AbstractContainer extends BuildLayout_Node {
+public class BuildLayout_AbstractContainer extends BuildLayout_Node implements BuildLayout_Container {
   public static final String concept = "jetbrains.mps.buildScript.structure.BuildLayout_AbstractContainer";
+  public static final String SHORT_DESCRIPTION = "shortDescription";
+  public static final String ALIAS = "alias";
+  public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String CHILDREN = "children";
+  public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
 
   public BuildLayout_AbstractContainer(SNode node) {
     super(node);
+  }
+
+  public String getShortDescription() {
+    return this.getProperty(BuildLayout_AbstractContainer.SHORT_DESCRIPTION);
+  }
+
+  public void setShortDescription(String value) {
+    this.setProperty(BuildLayout_AbstractContainer.SHORT_DESCRIPTION, value);
+  }
+
+  public String getAlias() {
+    return this.getProperty(BuildLayout_AbstractContainer.ALIAS);
+  }
+
+  public void setAlias(String value) {
+    this.setProperty(BuildLayout_AbstractContainer.ALIAS, value);
+  }
+
+  public String getVirtualPackage() {
+    return this.getProperty(BuildLayout_AbstractContainer.VIRTUAL_PACKAGE);
+  }
+
+  public void setVirtualPackage(String value) {
+    this.setProperty(BuildLayout_AbstractContainer.VIRTUAL_PACKAGE, value);
   }
 
   public int getChildrensCount() {
@@ -35,6 +64,26 @@ public class BuildLayout_AbstractContainer extends BuildLayout_Node {
 
   public void insertChildren(BuildLayout_Node prev, BuildLayout_Node node) {
     this.insertChild(prev, BuildLayout_AbstractContainer.CHILDREN, node);
+  }
+
+  public int getSmodelAttributesCount() {
+    return this.getChildCount(BuildLayout_AbstractContainer.SMODEL_ATTRIBUTE);
+  }
+
+  public Iterator<Attribute> smodelAttributes() {
+    return this.children(Attribute.class, BuildLayout_AbstractContainer.SMODEL_ATTRIBUTE);
+  }
+
+  public List<Attribute> getSmodelAttributes() {
+    return this.getChildren(Attribute.class, BuildLayout_AbstractContainer.SMODEL_ATTRIBUTE);
+  }
+
+  public void addSmodelAttribute(Attribute node) {
+    this.addChild(BuildLayout_AbstractContainer.SMODEL_ATTRIBUTE, node);
+  }
+
+  public void insertSmodelAttribute(Attribute prev, Attribute node) {
+    this.insertChild(prev, BuildLayout_AbstractContainer.SMODEL_ATTRIBUTE, node);
   }
 
   public static BuildLayout_AbstractContainer newInstance(SModel sm, boolean init) {

@@ -8,6 +8,7 @@
   <property name="artifacts.buildB" location="../../solutions/buildB/build/artifacts/buildB" />
   
   <target name="assemble">
+    <aaa></aaa>
     <mkdir dir="${build.layout}/xx" />
     <mkdir dir="${build.tmp}/xx" />
     <mkdir dir="${build.tmp}/xx/test" />
@@ -15,12 +16,19 @@
     <jar destfile="${build.layout}/xx/xx">
       <fileset dir="${build.tmp}/xx" />
     </jar>
-    <echo file="${build.layout}/variables.properties"></echo>
   </target>
   
   <target name="build" depends="assemble" />
   
   <target name="clean">
     <delete dir="${build.dir}" />
+  </target>
+  
+  <target name="layout.custom1">
+    <mkdir dir="${build.tmp}/qas.zip" />
+    <mkdir dir="${build.tmp}/qas.zip/a" />
+    <zip destfile="${build.layout.custom1}/qas.zip">
+      <fileset dir="${build.tmp}/qas.zip" />
+    </zip>
   </target>
 </project>
