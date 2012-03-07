@@ -15,7 +15,7 @@
       <property name="name" nameId="tpck.1169194664001" value="refScopesInInputLang" />
     </node>
     <node type="tp5g.TestInfo" typeId="tp5g.5097124989038916362" id="5934496548013527349">
-      <property name="projectPath" nameId="tp5g.5097124989038916363" value="${mps_home}/MPS.ipr" />
+      <property name="projectPath" nameId="tp5g.5097124989038916363" value="${mps_home}/MPS.mpr" />
     </node>
     <node type="tp5g.EditorTestCase" typeId="tp5g.1229187653856" id="3715568794894753648">
       <property name="name" nameId="tpck.1169194664001" value="refScopeInInputLang_paramConflict" />

@@ -17,6 +17,7 @@ package jetbrains.mps.nodeEditor;
 
 import com.intellij.ide.*;
 import com.intellij.openapi.actionSystem.*;
+import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.keymap.KeymapManager;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vfs.VirtualFile;
@@ -36,6 +37,7 @@ import jetbrains.mps.ide.actions.MPSActions;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 import jetbrains.mps.ide.project.ProjectHelper;
+import jetbrains.mps.ide.projectView.ProjectViewSelectInProvider;
 import jetbrains.mps.ide.tooltips.MPSToolTipManager;
 import jetbrains.mps.ide.tooltips.TooltipComponent;
 import jetbrains.mps.intentions.BaseIntention;
@@ -72,7 +74,6 @@ import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.WeakSet;
 import jetbrains.mps.util.annotation.UseCarefully;
 import jetbrains.mps.workbench.ActionPlace;
-import jetbrains.mps.workbench.ModelUtil;
 import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.workbench.action.BaseAction;
 import jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile;
@@ -429,7 +430,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
         }
         EditorCell selectedCell = getSelectedCell();
         if (e.getClickCount() == 2 && myRootCell.findLeaf(e.getX(), e.getY()) == selectedCell &&
-            selectedCell instanceof EditorCell_Label) {
+          selectedCell instanceof EditorCell_Label) {
           ((EditorCell_Label) selectedCell).selectAll();
           repaint();
         }
@@ -517,7 +518,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
       public void focusLost(FocusEvent e) {
         repaint();
         if (myNodeSubstituteChooser.getWindow() != null &&
-            (myNodeSubstituteChooser.getWindow().isAncestorOf(e.getOppositeComponent()) || myNodeSubstituteChooser.getWindow() == e.getOppositeComponent()))
+          (myNodeSubstituteChooser.getWindow().isAncestorOf(e.getOppositeComponent()) || myNodeSubstituteChooser.getWindow() == e.getOppositeComponent()))
           return;
         deactivateSubstituteChooser();
       }
@@ -1040,9 +1041,9 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     baseGroup.setPopup(false);
 
     DefaultActionGroup group = ActionUtils.groupFromActions(
-        baseGroup,
-        new Separator(),
-        getCellActionsGroup()
+      baseGroup,
+      new Separator(),
+      getCellActionsGroup()
     );
 
     JPopupMenu popupMenu = ActionManager.getInstance().createActionPopupMenu(ActionPlaces.EDITOR_POPUP, group).getComponent();
@@ -1254,11 +1255,11 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
    */
   private boolean isInvalid() {
     return getEditorContext() == null ||
-        getEditedNode() == null ||
-        getEditedNode().isDisposed() ||
-        getEditedNode().getModel() == null ||
-        getEditedNode().getModel().isDisposed() ||
-        getEditedNode().getModel().getModelDescriptor() == null;
+      getEditedNode() == null ||
+      getEditedNode().isDisposed() ||
+      getEditedNode().getModel() == null ||
+      getEditedNode().getModel().isDisposed() ||
+      getEditedNode().getModel().getModelDescriptor() == null;
   }
 
   private void addOurListeners(@NotNull SModelDescriptor sm) {
@@ -1778,7 +1779,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
                           ModelAccess.instance().runReadAction(new Runnable() {
                             public void run() {
                               GoToTypeErrorRuleUtil.goToRuleById(myOperationContext, new Pair<String, String>(herror.getRuleModel(),
-                                  herror.getRuleId()));
+                                herror.getRuleId()));
                               dialog.dispose();
                             }
                           });
@@ -1789,7 +1790,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
                       ModelAccess.instance().runReadAction(new Runnable() {
                         public void run() {
                           GoToTypeErrorRuleUtil.goToRuleById(myOperationContext, new Pair<String, String>(herror.getRuleModel(),
-                              herror.getRuleId()));
+                            herror.getRuleId()));
                           dialog.dispose();
                         }
                       });
@@ -1973,26 +1974,26 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
         if (width <= viewportWidth) {
           int x1 = Math.max(0, x0 + width - viewportWidth);
           scrollToRectIfNotVisible(
-              expandRectangleOneLine(
-                  new Rectangle(
-                      x1, largestVerticalBigCell.getY(),
-                      x0 - x1 + width, largestVerticalBigCell.getHeight()
-                  )));
+            expandRectangleOneLine(
+              new Rectangle(
+                x1, largestVerticalBigCell.getY(),
+                x0 - x1 + width, largestVerticalBigCell.getHeight()
+              )));
         } else {
           scrollToRectIfNotVisible(
-              expandRectangleOneLine(
-                  new Rectangle(
-                      x0 - SCROLL_GAP, largestVerticalBigCell.getY(),
-                      viewportWidth + SCROLL_GAP, largestVerticalBigCell.getHeight()
-                  )));
+            expandRectangleOneLine(
+              new Rectangle(
+                x0 - SCROLL_GAP, largestVerticalBigCell.getY(),
+                viewportWidth + SCROLL_GAP, largestVerticalBigCell.getHeight()
+              )));
         }
       } else {
         scrollToRectIfNotVisible(
-            expandRectangleOneLine(
-                new Rectangle(
-                    x0, largestVerticalBigCell.getY(),
-                    width, largestVerticalBigCell.getHeight()
-                )));
+          expandRectangleOneLine(
+            new Rectangle(
+              x0, largestVerticalBigCell.getY(),
+              width, largestVerticalBigCell.getHeight()
+            )));
       }
     }
   }
@@ -2027,13 +2028,13 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
       g.setColor(CARET_ROW_COLOR);
       g.fillRect(0, deepestCell.getY(), getWidth(),
-          deepestCell.getHeight() - deepestCell.getTopInset() - deepestCell.getBottomInset());
+        deepestCell.getHeight() - deepestCell.getTopInset() - deepestCell.getBottomInset());
 
       g.setColor(new Color(230, 230, 190));
       g.fillRect(deepestCell.getX() + label.getLeftInset(),
-          deepestCell.getY(),
-          deepestCell.getWidth() - label.getLeftInset() - label.getRightInset(),
-          deepestCell.getHeight() - deepestCell.getTopInset() - deepestCell.getBottomInset());
+        deepestCell.getY(),
+        deepestCell.getWidth() - label.getLeftInset() - label.getRightInset(),
+        deepestCell.getHeight() - deepestCell.getTopInset() - deepestCell.getBottomInset());
     }
 
     List<AdditionalPainter> additionalPainters = getAdditionalPainters();
@@ -2344,14 +2345,14 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     }
     String pattern = patternEditor.getPattern();
     boolean trySubstituteNow =
-        !patternEditor.getText().equals(substituteInfo.getOriginalText()) || // user changed text or cell has no text
-            pattern.equals(patternEditor.getText()); // caret at the end
+      !patternEditor.getText().equals(substituteInfo.getOriginalText()) || // user changed text or cell has no text
+        pattern.equals(patternEditor.getText()); // caret at the end
 
 
     // 1st - try to do substitution with current pattern (if cursor at the end of text)
     if (trySubstituteNow) {
       List<INodeSubstituteAction> matchingActions = isSmart ? substituteInfo.getSmartMatchingActions(pattern, false, editorCell) :
-          substituteInfo.getMatchingActions(pattern, false);
+        substituteInfo.getMatchingActions(pattern, false);
       if (matchingActions.size() == 1 && pattern.length() > 0) {
         matchingActions.get(0).substitute(this.getEditorContext(), pattern);
         return true;
@@ -2521,7 +2522,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
   protected void setEditorContext(EditorContext editorContext) {
     assert editorContext == null || editorContext.getOperationContext() == null
-        || editorContext.getOperationContext().getModule() != null || editorContext.getOperationContext().isTestMode();
+      || editorContext.getOperationContext().getModule() != null || editorContext.getOperationContext().isTestMode();
     myEditorContext = editorContext;
   }
 
@@ -2606,48 +2607,15 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     if (dataId.equals(LangDataKeys.VIRTUAL_FILE.getName())) {
       return getVirtualFile();
     }
+
     if (dataId.equals(SelectInContext.DATA_KEY.getName())) {
-      VirtualFile modelFile = ModelAccess.instance().runReadAction(new Computable<VirtualFile>() {
-        public VirtualFile compute() {
-          SNode node = myNode;
-          return node == null ? null : ModelUtil.getFileByModel(node.getModel());
-        }
-      });
-      return new VirtualFileSelectInContext(ProjectHelper.toIdeaProject(getCurrentProject()), modelFile);
+      ProjectViewSelectInProvider selectInHelper = ApplicationManager.getApplication().getComponent(ProjectViewSelectInProvider.class);
+      if (selectInHelper == null) return null;
+      return selectInHelper.getContext(getCurrentProject(), myNodePointer);
     }
 
     //not found
     return null;
-  }
-
-  private static class VirtualFileSelectInContext implements SelectInContext {
-    private final Project myProject;
-    private final VirtualFile myVirtualFile;
-
-    public VirtualFileSelectInContext(final Project project, final VirtualFile virtualFile) {
-      myProject = project;
-      myVirtualFile = virtualFile;
-    }
-
-    @NotNull
-    public Project getProject() {
-      return myProject;
-    }
-
-    @NotNull
-    public VirtualFile getVirtualFile() {
-      return myVirtualFile;
-    }
-
-    @Nullable
-    public Object getSelectorInFile() {
-      return myVirtualFile;
-    }
-
-    @Nullable
-    public FileEditorProvider getFileEditorProvider() {
-      return null;
-    }
   }
 
   private void handleEvents(List<SModelEvent> events) {

@@ -20,6 +20,7 @@
     <classNode extendsClassName="jetbrains.mps.debugger.core.EditorCellPainter" />
   </dependency>
   <dependency className="jetbrains.mps.debugger.core.breakpoints.BreakpointsUiComponentEx" file="BreakpointsUiComponentEx.java">
+    <classNode dependClassName="com.intellij.openapi.application.ApplicationManager" />
     <classNode dependClassName="com.intellij.openapi.fileEditor.FileEditorManager" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="com.intellij.util.messages.MessageBusConnection" />
@@ -32,6 +33,7 @@
     <classNode dependClassName="jetbrains.mps.debugger.core.breakpoints.BreakpointPainterEx" />
     <classNode dependClassName="jetbrains.mps.generator.traceInfo.TraceInfoCache" />
     <classNode dependClassName="jetbrains.mps.ide.editor.util.EditorComponentUtil" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorComponent" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell" />

@@ -10,13 +10,9 @@ import jetbrains.mps.debug.api.DebugSessionManagerComponent;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.fileEditor.FileEditorManager;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.debug.api.programState.IStackFrame;
 import jetbrains.mps.debug.api.programState.ILocation;
-import jetbrains.mps.debug.api.programState.NullLocation;
-import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.generator.traceInfo.TraceInfoUtil;
 import jetbrains.mps.debug.api.SessionChangeAdapter;
 
 public class CurrentLinePositionComponent extends CurrentLinePositionComponentEx<AbstractDebugSession> implements ProjectComponent {
@@ -55,31 +51,17 @@ public class CurrentLinePositionComponent extends CurrentLinePositionComponentEx
     super.dispose();
   }
 
-  protected Tuples._3<String, String, Integer> getPosition(AbstractDebugSession session) {
-    IStackFrame stackFrame = session.getUiState().getStackFrame();
-    if (stackFrame != null) {
-      ILocation location = stackFrame.getLocation();
-      if (location != null && !((location instanceof NullLocation))) {
-        String unitName = location.getUnitName();
-        String fileName = location.getFileName();
-        int lineNumber = location.getLineNumber();
-        return MultiTuple.<String,String,Integer>from(unitName, fileName, lineNumber);
-      }
-    }
-    return null;
+  protected AbstractDebugSession getCurrentSession() {
+    return myProject.getComponent(DebugSessionManagerComponent.class).getDebugSessionByCurrentTab();
   }
 
   public SNode getNode(AbstractDebugSession session) {
-    Tuples._3<String, String, Integer> position = getPosition(session);
-    if (position == null) {
-      return null;
+    IStackFrame stackFrame = session.getUiState().getStackFrame();
+    if (stackFrame != null) {
+      ILocation location = stackFrame.getLocation();
+      return session.getDebuggableFramesSelector().getNode(location);
     }
-
-    String unitName = position._0();
-    String fileName = position._1();
-    int lineNumber = (int) position._2();
-
-    return TraceInfoUtil.getNode(unitName, fileName, lineNumber);
+    return null;
   }
 
   private class MyCurrentDebugSessionListener implements DebugSessionManagerComponent.DebugSessionListener {
