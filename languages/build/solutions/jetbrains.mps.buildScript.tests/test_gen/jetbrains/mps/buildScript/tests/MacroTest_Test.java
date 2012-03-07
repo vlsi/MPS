@@ -19,43 +19,43 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 public class MacroTest_Test extends BaseTransformationTest {
   @Test
   public void test_normalScope() throws Throwable {
-    this.initTest("${mps_home}/MPS.ipr", "r:361d93bd-9223-4768-9e37-bcd7b8db1f40(jetbrains.mps.buildScript.tests@tests)");
+    this.initTest("${mps_home}/MPS.mpr", "r:361d93bd-9223-4768-9e37-bcd7b8db1f40(jetbrains.mps.buildScript.tests@tests)");
     this.runTest("jetbrains.mps.buildScript.tests.MacroTest_Test$TestBody", "test_normalScope", true);
   }
 
   @Test
   public void test_onlySeePreviouslyDeclaredMacro() throws Throwable {
-    this.initTest("${mps_home}/MPS.ipr", "r:361d93bd-9223-4768-9e37-bcd7b8db1f40(jetbrains.mps.buildScript.tests@tests)");
+    this.initTest("${mps_home}/MPS.mpr", "r:361d93bd-9223-4768-9e37-bcd7b8db1f40(jetbrains.mps.buildScript.tests@tests)");
     this.runTest("jetbrains.mps.buildScript.tests.MacroTest_Test$TestBody", "test_onlySeePreviouslyDeclaredMacro", true);
   }
 
   @Test
   public void test_doNotSeeItsefl() throws Throwable {
-    this.initTest("${mps_home}/MPS.ipr", "r:361d93bd-9223-4768-9e37-bcd7b8db1f40(jetbrains.mps.buildScript.tests@tests)");
+    this.initTest("${mps_home}/MPS.mpr", "r:361d93bd-9223-4768-9e37-bcd7b8db1f40(jetbrains.mps.buildScript.tests@tests)");
     this.runTest("jetbrains.mps.buildScript.tests.MacroTest_Test$TestBody", "test_doNotSeeItsefl", true);
   }
 
   @Test
   public void test_doNotSeeImported() throws Throwable {
-    this.initTest("${mps_home}/MPS.ipr", "r:361d93bd-9223-4768-9e37-bcd7b8db1f40(jetbrains.mps.buildScript.tests@tests)");
+    this.initTest("${mps_home}/MPS.mpr", "r:361d93bd-9223-4768-9e37-bcd7b8db1f40(jetbrains.mps.buildScript.tests@tests)");
     this.runTest("jetbrains.mps.buildScript.tests.MacroTest_Test$TestBody", "test_doNotSeeImported", true);
   }
 
   @Test
   public void test_seeImportedVariableInScope() throws Throwable {
-    this.initTest("${mps_home}/MPS.ipr", "r:361d93bd-9223-4768-9e37-bcd7b8db1f40(jetbrains.mps.buildScript.tests@tests)");
+    this.initTest("${mps_home}/MPS.mpr", "r:361d93bd-9223-4768-9e37-bcd7b8db1f40(jetbrains.mps.buildScript.tests@tests)");
     this.runTest("jetbrains.mps.buildScript.tests.MacroTest_Test$TestBody", "test_seeImportedVariableInScope", true);
   }
 
   @Test
   public void test_doNotSeeForwardVariabletInScope() throws Throwable {
-    this.initTest("${mps_home}/MPS.ipr", "r:361d93bd-9223-4768-9e37-bcd7b8db1f40(jetbrains.mps.buildScript.tests@tests)");
+    this.initTest("${mps_home}/MPS.mpr", "r:361d93bd-9223-4768-9e37-bcd7b8db1f40(jetbrains.mps.buildScript.tests@tests)");
     this.runTest("jetbrains.mps.buildScript.tests.MacroTest_Test$TestBody", "test_doNotSeeForwardVariabletInScope", true);
   }
 
   @Test
   public void test_seeBackwardVariableInScope() throws Throwable {
-    this.initTest("${mps_home}/MPS.ipr", "r:361d93bd-9223-4768-9e37-bcd7b8db1f40(jetbrains.mps.buildScript.tests@tests)");
+    this.initTest("${mps_home}/MPS.mpr", "r:361d93bd-9223-4768-9e37-bcd7b8db1f40(jetbrains.mps.buildScript.tests@tests)");
     this.runTest("jetbrains.mps.buildScript.tests.MacroTest_Test$TestBody", "test_seeBackwardVariableInScope", true);
   }
 
