@@ -45,21 +45,24 @@ public class IdeaModuleSolutionDescriptorIO implements DescriptorIO<SolutionDesc
         final String result_56japk_a11a0a0e0a = mex.expandMacros(mpsConf.getGeneratorOutputPath());
         result_56japk_a0a0e0a.setOutputPath(result_56japk_a11a0a0e0a);
 
-        for (String mrp : mpsConf.getModelRootPaths()) {
-          ModelRoot mr = new ModelRoot();
-          mr.setPath(mex.expandMacros(mrp));
+        if (mpsConf.getModelRootPaths() != null) {
+          for (String mrp : mpsConf.getModelRootPaths()) {
+            ModelRoot mr = new ModelRoot();
+            mr.setPath(mex.expandMacros(mrp));
 
-          // TODO: model root manager 
+            // TODO: model root manager 
 
-          result_56japk_a0a0e0a.getModelRoots().add(mr);
+            result_56japk_a0a0e0a.getModelRoots().add(mr);
+          }
         }
 
         // TODO: stub model entries 
 
         // TODO: dependencies 
-
-        for (String usedLang : mpsConf.getUsedLanguages()) {
-          result_56japk_a0a0e0a.getUsedLanguages().add(ModuleReference.fromString(usedLang));
+        if (mpsConf.getUsedLanguages() != null) {
+          for (String usedLang : mpsConf.getUsedLanguages()) {
+            result_56japk_a0a0e0a.getUsedLanguages().add(ModuleReference.fromString(usedLang));
+          }
         }
 
         // TODO: devkits 
