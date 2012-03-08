@@ -11,7 +11,7 @@
     <unitInfo nodeId="4993211115183387839" fileName="buildCore.xml" startLine="1" startPosition="0" endLine="76" endPosition="10" unitName="jetbrains.mps.buildScript.sandbox.build1.buildCore" />
   </root>
   <root nodeId="4993211115183416028">
-    <unitInfo nodeId="4993211115183416028" fileName="buildPlugin.xml" startLine="1" startPosition="0" endLine="38" endPosition="10" unitName="jetbrains.mps.buildScript.sandbox.build1.buildPlugin" />
+    <unitInfo nodeId="4993211115183416028" fileName="buildPlugin.xml" startLine="1" startPosition="0" endLine="41" endPosition="10" unitName="jetbrains.mps.buildScript.sandbox.build1.buildPlugin" />
   </root>
 </debugInfo>
 

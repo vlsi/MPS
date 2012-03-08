@@ -68,19 +68,7 @@ public class VisibleArtifacts {
   }
 
   public SNode toOriginalNode(SNode node) {
-    if (SNodeOperations.getModel(node).isTransient()) {
-      if (genContext == null) {
-        throw new IllegalStateException("transient model is not expected");
-      }
-      SNode originalNode = genContext.getOriginalCopiedInputNode(node);
-      if ((originalNode != null)) {
-        return originalNode;
-      } else {
-        genContext.showErrorMessage(node, "cannot resolve dependency on transient model, no original node is available");
-      }
-      return null;
-    }
-    return node;
+    return DependenciesHelper.getOriginalNode(node, genContext);
   }
 
   public SNode getProject() {

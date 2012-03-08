@@ -10,16 +10,19 @@
   <target name="assemble">
     <aaa></aaa>
     <mkdir dir="${build.layout}/xx" />
-    <mkdir dir="${build.tmp}/xx" />
-    <mkdir dir="${build.tmp}/xx/test" />
-    <copy todir="${build.tmp}/xx/test"><!--TODO--></copy>
+    <mkdir dir="${build.tmp}/default/xx" />
+    <mkdir dir="${build.tmp}/default/xx/test" />
+    <copy todir="${build.tmp}/default/xx/test">
+      <fileset file="${build.tmp}/deps/buildCore/release.zip/inrelease.zip" />
+    </copy>
     <jar destfile="${build.layout}/xx/xx">
-      <fileset dir="${build.tmp}/xx" />
+      <fileset dir="${build.tmp}/default/xx" />
     </jar>
   </target>
   
   <target name="fetchDependencies">
     <mkdir dir="${build.tmp}/deps/buildCore/release.zip" />
+    <unzip src="${artifacts.buildCore}/default/release.zip" dest="${build.tmp}/deps/buildCore/release.zip" />
   </target>
   
   <target name="build" depends="assemble" />
@@ -29,10 +32,10 @@
   </target>
   
   <target name="layout.custom1">
-    <mkdir dir="${build.tmp}/qas.zip" />
-    <mkdir dir="${build.tmp}/qas.zip/a" />
+    <mkdir dir="${build.tmp}/custom1/qas.zip" />
+    <mkdir dir="${build.tmp}/custom1/qas.zip/a" />
     <zip destfile="${build.layout.custom1}/qas.zip">
-      <fileset dir="${build.tmp}/qas.zip" />
+      <fileset dir="${build.tmp}/custom1/qas.zip" />
     </zip>
   </target>
 </project>

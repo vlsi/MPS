@@ -12,7 +12,7 @@ import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class BuildLayout_Zip_Behavior {
+public class BuildLayout_Jar_Behavior {
   public static void init(SNode thisNode) {
   }
 
@@ -31,8 +31,8 @@ public class BuildLayout_Zip_Behavior {
     }
     if (needUnpack) {
       String tempPath = helper.getPathProvider().createTempPath(SPropertyOperations.getString(thisNode, "name"), "deps", SPropertyOperations.getString(SNodeOperations.getAncestor(thisNode, "jetbrains.mps.buildScript.structure.BuildProject", false, false), "name"));
-      helper.emit(new BuildLayout_Zip_Behavior.QuotationClass_a0cuzf_a0a0b0h0b().createNode(tempPath));
-      helper.emit(new BuildLayout_Zip_Behavior.QuotationClass_a0cuzf_a0a0c0h0b().createNode(zipLocation, tempPath));
+      helper.emit(new BuildLayout_Jar_Behavior.QuotationClass_20awhq_a0a0b0h0b().createNode(tempPath));
+      helper.emit(new BuildLayout_Jar_Behavior.QuotationClass_20awhq_a0a0c0h0b().createNode(zipLocation, tempPath));
       helper.contentLocations().put(thisNode, tempPath);
     }
   }
@@ -41,8 +41,8 @@ public class BuildLayout_Zip_Behavior {
     return true;
   }
 
-  public static class QuotationClass_a0cuzf_a0a0b0h0b {
-    public QuotationClass_a0cuzf_a0a0b0h0b() {
+  public static class QuotationClass_20awhq_a0a0b0h0b {
+    public QuotationClass_20awhq_a0a0b0h0b() {
     }
 
     public SNode createNode(Object parameter_9) {
@@ -80,8 +80,8 @@ public class BuildLayout_Zip_Behavior {
     }
   }
 
-  public static class QuotationClass_a0cuzf_a0a0c0h0b {
-    public QuotationClass_a0cuzf_a0a0c0h0b() {
+  public static class QuotationClass_20awhq_a0a0c0h0b {
+    public QuotationClass_20awhq_a0a0c0h0b() {
     }
 
     public SNode createNode(Object parameter_13, Object parameter_14) {

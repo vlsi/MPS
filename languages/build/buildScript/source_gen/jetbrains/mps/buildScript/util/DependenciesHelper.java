@@ -5,6 +5,7 @@ package jetbrains.mps.buildScript.util;
 import java.util.Map;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.generator.template.TemplateQueryContext;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class DependenciesHelper {
   private final Map<SNode, String> locationMap;
@@ -21,5 +22,21 @@ public class DependenciesHelper {
 
   public Map<SNode, String> contentLocations() {
     return contentLocationMap;
+  }
+
+  public static SNode getOriginalNode(SNode node, TemplateQueryContext genContext) {
+    if (SNodeOperations.getModel(node).isTransient()) {
+      if (genContext == null) {
+        throw new IllegalStateException("transient model is not expected");
+      }
+      SNode originalNode = genContext.getOriginalCopiedInputNode(node);
+      if ((originalNode != null)) {
+        return originalNode;
+      } else {
+        genContext.showErrorMessage(node, "cannot resolve dependency on transient model, no original node is available");
+      }
+      return null;
+    }
+    return node;
   }
 }

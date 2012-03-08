@@ -22,10 +22,12 @@
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
   </dependency>
   <dependency className="jetbrains.mps.buildScript.util.DependenciesHelper" file="DependenciesHelper.java">
+    <classNode dependClassName="java.lang.IllegalStateException" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="jetbrains.mps.buildScript.util.GenerationUtil" />
     <classNode dependClassName="jetbrains.mps.generator.template.TemplateQueryContext" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.buildScript.util.GenerationUtil" file="GenerationUtil.java">
@@ -97,12 +99,12 @@
     <classNode extendsClassName="jetbrains.mps.buildScript.util.DependenciesHelper" />
   </dependency>
   <dependency className="jetbrains.mps.buildScript.util.VisibleArtifacts" file="VisibleArtifacts.java">
-    <classNode dependClassName="java.lang.IllegalStateException" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.HashMap" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.util.Map" />
+    <classNode dependClassName="jetbrains.mps.buildScript.util.DependenciesHelper" />
     <classNode dependClassName="jetbrains.mps.generator.template.TemplateQueryContext" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />

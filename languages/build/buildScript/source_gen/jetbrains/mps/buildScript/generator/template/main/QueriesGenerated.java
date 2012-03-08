@@ -9,12 +9,12 @@ import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.buildScript.behavior.BuildLayout_Container_Behavior;
 import jetbrains.mps.buildScript.util.Context;
 import jetbrains.mps.buildScript.behavior.BuildLayout_NamedContainer_Behavior;
-import jetbrains.mps.buildScript.behavior.BuildSourcePath_Behavior;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.buildScript.util.DependenciesHelper;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.buildScript.behavior.BuildSourcePath_Behavior;
 import jetbrains.mps.buildScript.behavior.BuildString_Behavior;
-import jetbrains.mps.buildScript.behavior.BuildSource_JavaModule_Behavior;
-import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.buildScript.behavior.BuildProject_Behavior;
 import jetbrains.mps.buildScript.util.RelativePathHelper;
 import org.apache.commons.lang.StringUtils;
@@ -111,6 +111,30 @@ public class QueriesGenerated {
     return BuildLayout_Container_Behavior.call_getChildrenOutputDir_WithMacro_4701820937132344011(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.buildScript.structure.BuildLayout_Container"), Context.defaultContext(_context));
   }
 
+  public static Object propertyMacro_GetPropertyValue_6547494638219491804(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    SNode project = SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.buildScript.structure.BuildProject", false, false);
+    if (project == null) {
+      _context.showErrorMessage(_context.getNode(), "no context project defined");
+      return "???";
+    }
+    DependenciesHelper helper = new DependenciesHelper(_context, project);
+    String val = helper.locations().get(DependenciesHelper.getOriginalNode(SLinkOperations.getTarget(_context.getNode(), "target", false), _context));
+    if (val == null) {
+      _context.showErrorMessage(_context.getNode(), "no location for " + SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "target", false), "name"));
+    }
+    return val;
+  }
+
+  public static Object propertyMacro_GetPropertyValue_6547494638219491807(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    if (BuildLayout_NamedContainer_Behavior.call_isFile_6547494638219485308(SLinkOperations.getTarget(_context.getNode(), "target", false))) {
+      return "file";
+    }
+    if (!(BuildLayout_NamedContainer_Behavior.call_isFolder_6547494638219485301(SLinkOperations.getTarget(_context.getNode(), "target", false)))) {
+      _context.showErrorMessage(_context.getNode(), "cannot import abstract element, should be file or folder");
+    }
+    return "dir";
+  }
+
   public static Object propertyMacro_GetPropertyValue_4701820937132270643(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return "copy.artifacts." + _context.getNode().getId();
   }
@@ -143,7 +167,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1117643560963346427(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return BuildSource_JavaModule_Behavior.call_getOutputFolder_1117643560963346267(_context.getNode());
+    return Context.defaultContext(_context).getTempPath(_context.getNode(), SPropertyOperations.getString(_context.getNode(), "name"), "java", "out");
   }
 
   public static Object propertyMacro_GetPropertyValue_7926701909975671869(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -235,7 +259,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1117643560963351184(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return BuildSource_JavaModule_Behavior.call_getOutputFolder_1117643560963346267(SLinkOperations.getTarget(_context.getNode(), "module", false));
+    return Context.defaultContext(_context).getTempPath(SLinkOperations.getTarget(_context.getNode(), "module", false), SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "module", false), "name"), "java", "out");
   }
 
   public static Object referenceMacro_GetReferent_1117643560963363815(final IOperationContext operationContext, final ReferenceMacroContext _context) {

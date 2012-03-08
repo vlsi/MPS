@@ -46,30 +46,32 @@
     <mkdir dir="${build.layout}/mps-core" />
     <mkdir dir="${build.layout}/mps-core/lib" />
     <jar destfile="${build.layout}/mps-core/lib/mps-tuples.jar">
-      <fileset dir="${build.dir}/tmp/java.out.mps-tuples" />
+      <fileset dir="${build.tmp}/java/out/mps-tuples" />
     </jar>
     <jar destfile="${build.layout}/mps-core/lib/mps-closures.jar">
-      <fileset dir="${build.dir}/tmp/java.out.mps-closures" />
+      <fileset dir="${build.tmp}/java/out/mps-closures" />
     </jar>
     <jar destfile="${build.layout}/mps-core/lib/mps-collections.jar">
-      <fileset dir="${build.dir}/tmp/java.out.mps-collections" />
+      <fileset dir="${build.tmp}/java/out/mps-collections" />
     </jar>
     <jar destfile="${build.layout}/mps-core/lib/mps-core.jar">
-      <fileset dir="${build.dir}/tmp/java.out.mps-core" />
+      <fileset dir="${build.tmp}/java/out/mps-core" />
     </jar>
     <jar destfile="${build.layout}/mps-core/lib/mps-backend.jar">
-      <fileset dir="${build.dir}/tmp/java.out.mps-ant" />
+      <fileset dir="${build.tmp}/java/out/mps-ant" />
     </jar>
     <jar destfile="${build.layout}/mps-core/lib/mps-platform.jar">
-      <fileset dir="${build.dir}/tmp/java.out.mps-platform" />
+      <fileset dir="${build.tmp}/java/out/mps-platform" />
     </jar>
     <jar destfile="${build.layout}/mps-core/lib/mps-editor.jar">
-      <fileset dir="${build.dir}/tmp/java.out.mps-editor" />
+      <fileset dir="${build.tmp}/java/out/mps-editor" />
     </jar>
     <jar destfile="${build.layout}/mps-core/lib/mps-plugin.jar">
-      <fileset dir="${build.dir}/tmp/java.out.mps-plugin" />
+      <fileset dir="${build.tmp}/java/out/mps-plugin" />
     </jar>
   </target>
+  
+  <target name="fetchDependencies" />
   
   <target name="build" depends="assemble, check" />
   
@@ -88,8 +90,8 @@
   <target name="check" depends="test" />
   
   <target name="java.compile.mps-tuples">
-    <mkdir dir="${build.dir}/tmp/java.out.mps-tuples" />
-    <javac destdir="${build.dir}/tmp/java.out.mps-tuples">
+    <mkdir dir="${build.tmp}/java/out/mps-tuples" />
+    <javac destdir="${build.tmp}/java/out/mps-tuples">
       <compilerarg value="-Xlint:none" />
       <src path="${mps_langs}/baseLanguage/tuples/runtime/source_gen" />
       <classpath></classpath>
@@ -97,8 +99,8 @@
   </target>
   
   <target name="java.compile.mps-closures">
-    <mkdir dir="${build.dir}/tmp/java.out.mps-closures" />
-    <javac destdir="${build.dir}/tmp/java.out.mps-closures">
+    <mkdir dir="${build.tmp}/java/out/mps-closures" />
+    <javac destdir="${build.tmp}/java/out/mps-closures">
       <compilerarg value="-Xlint:none" />
       <src path="${mps_langs}/baseLanguage/closures/runtime/source_gen" />
       <classpath></classpath>
@@ -106,17 +108,17 @@
   </target>
   
   <target name="java.compile.mps-collections" depends="java.compile.mps-closures">
-    <mkdir dir="${build.dir}/tmp/java.out.mps-collections" />
-    <javac destdir="${build.dir}/tmp/java.out.mps-collections">
+    <mkdir dir="${build.tmp}/java/out/mps-collections" />
+    <javac destdir="${build.tmp}/java/out/mps-collections">
       <compilerarg value="-Xlint:none" />
       <src path="${mps_langs}/baseLanguage/collections/runtime/source_gen" />
-      <classpath path="${build.dir}/tmp/java.out.mps-closures" />
+      <classpath path="${build.tmp}/java/out/mps-closures" />
     </javac>
   </target>
   
   <target name="java.compile.mps-core" depends="java.compile.mps-closures, java.compile.mps-collections, java.compile.mps-tuples">
-    <mkdir dir="${build.dir}/tmp/java.out.mps-core" />
-    <javac destdir="${build.dir}/tmp/java.out.mps-core">
+    <mkdir dir="${build.tmp}/java/out/mps-core" />
+    <javac destdir="${build.tmp}/java/out/mps-core">
       <compilerarg value="-Xlint:none" />
       <src>
         <pathelement path="${mps_core}/runtime/source" />
@@ -146,48 +148,48 @@
       </src>
       <classpath>
         <path refid="path.java.library.core-libraries" />
-        <pathelement path="${build.dir}/tmp/java.out.mps-closures" />
-        <pathelement path="${build.dir}/tmp/java.out.mps-collections" />
-        <pathelement path="${build.dir}/tmp/java.out.mps-tuples" />
+        <pathelement path="${build.tmp}/java/out/mps-closures" />
+        <pathelement path="${build.tmp}/java/out/mps-collections" />
+        <pathelement path="${build.tmp}/java/out/mps-tuples" />
       </classpath>
     </javac>
   </target>
   
   <target name="java.compile.mps-editor-api" depends="java.compile.mps-core, java.compile.mps-closures, java.compile.mps-collections, java.compile.mps-tuples">
-    <mkdir dir="${build.dir}/tmp/java.out.mps-editor-api" />
-    <javac destdir="${build.dir}/tmp/java.out.mps-editor-api">
+    <mkdir dir="${build.tmp}/java/out/mps-editor-api" />
+    <javac destdir="${build.tmp}/java/out/mps-editor-api">
       <compilerarg value="-Xlint:none" />
       <src path="${mps_home}/editor/editor-api/source" />
       <classpath>
-        <pathelement path="${build.dir}/tmp/java.out.mps-core" />
-        <pathelement path="${build.dir}/tmp/java.out.mps-closures" />
-        <pathelement path="${build.dir}/tmp/java.out.mps-collections" />
-        <pathelement path="${build.dir}/tmp/java.out.mps-tuples" />
+        <pathelement path="${build.tmp}/java/out/mps-core" />
+        <pathelement path="${build.tmp}/java/out/mps-closures" />
+        <pathelement path="${build.tmp}/java/out/mps-collections" />
+        <pathelement path="${build.tmp}/java/out/mps-tuples" />
         <path refid="path.java.library.core-libraries" />
       </classpath>
     </javac>
   </target>
   
   <target name="java.compile.mps-ant" depends="java.compile.mps-closures, java.compile.mps-collections, java.compile.mps-tuples, java.compile.mps-core">
-    <mkdir dir="${build.dir}/tmp/java.out.mps-ant" />
-    <javac destdir="${build.dir}/tmp/java.out.mps-ant">
+    <mkdir dir="${build.tmp}/java/out/mps-ant" />
+    <javac destdir="${build.tmp}/java/out/mps-ant">
       <compilerarg value="-Xlint:none" />
       <src path="${mps_langs}/util/buildlanguage/ant/source_gen" />
       <classpath>
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-ant" />
         <path refid="path.java.library.junit-4.10" />
-        <pathelement path="${build.dir}/tmp/java.out.mps-closures" />
-        <pathelement path="${build.dir}/tmp/java.out.mps-collections" />
-        <pathelement path="${build.dir}/tmp/java.out.mps-tuples" />
-        <pathelement path="${build.dir}/tmp/java.out.mps-core" />
+        <pathelement path="${build.tmp}/java/out/mps-closures" />
+        <pathelement path="${build.tmp}/java/out/mps-collections" />
+        <pathelement path="${build.tmp}/java/out/mps-tuples" />
+        <pathelement path="${build.tmp}/java/out/mps-core" />
       </classpath>
     </javac>
   </target>
   
   <target name="java.compile.mps-platform" depends="java.compile.mps-closures, java.compile.mps-collections, java.compile.mps-tuples, java.compile.mps-core, java.compile.mps-editor-api">
-    <mkdir dir="${build.dir}/tmp/java.out.mps-platform" />
-    <javac destdir="${build.dir}/tmp/java.out.mps-platform">
+    <mkdir dir="${build.tmp}/java/out/mps-platform" />
+    <javac destdir="${build.tmp}/java/out/mps-platform">
       <compilerarg value="-Xlint:none" />
       <src>
         <pathelement path="${mps_home}/workbench/mps-platform/source" />
@@ -195,18 +197,18 @@
       </src>
       <classpath>
         <path refid="path.java.library.idea-libraries" />
-        <pathelement path="${build.dir}/tmp/java.out.mps-closures" />
-        <pathelement path="${build.dir}/tmp/java.out.mps-collections" />
-        <pathelement path="${build.dir}/tmp/java.out.mps-tuples" />
-        <pathelement path="${build.dir}/tmp/java.out.mps-core" />
-        <pathelement path="${build.dir}/tmp/java.out.mps-editor-api" />
+        <pathelement path="${build.tmp}/java/out/mps-closures" />
+        <pathelement path="${build.tmp}/java/out/mps-collections" />
+        <pathelement path="${build.tmp}/java/out/mps-tuples" />
+        <pathelement path="${build.tmp}/java/out/mps-core" />
+        <pathelement path="${build.tmp}/java/out/mps-editor-api" />
       </classpath>
     </javac>
   </target>
   
   <target name="java.compile.mps-editor" depends="java.compile.mps-closures, java.compile.mps-collections, java.compile.mps-tuples, java.compile.mps-core, java.compile.mps-platform, java.compile.mps-editor-api">
-    <mkdir dir="${build.dir}/tmp/java.out.mps-editor" />
-    <javac destdir="${build.dir}/tmp/java.out.mps-editor">
+    <mkdir dir="${build.tmp}/java/out/mps-editor" />
+    <javac destdir="${build.tmp}/java/out/mps-editor">
       <compilerarg value="-Xlint:none" />
       <src>
         <pathelement path="${mps_home}/editor/editor-api/source" />
@@ -221,32 +223,32 @@
       </src>
       <classpath>
         <path refid="path.java.library.idea-libraries" />
-        <pathelement path="${build.dir}/tmp/java.out.mps-closures" />
-        <pathelement path="${build.dir}/tmp/java.out.mps-collections" />
-        <pathelement path="${build.dir}/tmp/java.out.mps-tuples" />
-        <pathelement path="${build.dir}/tmp/java.out.mps-core" />
-        <pathelement path="${build.dir}/tmp/java.out.mps-platform" />
-        <pathelement path="${build.dir}/tmp/java.out.mps-editor-api" />
+        <pathelement path="${build.tmp}/java/out/mps-closures" />
+        <pathelement path="${build.tmp}/java/out/mps-collections" />
+        <pathelement path="${build.tmp}/java/out/mps-tuples" />
+        <pathelement path="${build.tmp}/java/out/mps-core" />
+        <pathelement path="${build.tmp}/java/out/mps-platform" />
+        <pathelement path="${build.tmp}/java/out/mps-editor-api" />
       </classpath>
     </javac>
   </target>
   
   <target name="java.compile.mps-plugin" depends="java.compile.mps-closures, java.compile.mps-collections, java.compile.mps-tuples, java.compile.mps-core, java.compile.mps-platform, java.compile.mps-editor, java.compile.mps-ant, java.compile.mps-editor-api">
-    <mkdir dir="${build.dir}/tmp/java.out.mps-plugin" />
-    <javac destdir="${build.dir}/tmp/java.out.mps-plugin">
+    <mkdir dir="${build.tmp}/java/out/mps-plugin" />
+    <javac destdir="${build.tmp}/java/out/mps-plugin">
       <compilerarg value="-Xlint:none" />
       <src path="${mps_home}/IdeaPlugin/mps-core/src" />
       <classpath>
         <path refid="path.java.library.idea-libraries" />
         <path refid="path.java.library.idea-ant" />
-        <pathelement path="${build.dir}/tmp/java.out.mps-closures" />
-        <pathelement path="${build.dir}/tmp/java.out.mps-collections" />
-        <pathelement path="${build.dir}/tmp/java.out.mps-tuples" />
-        <pathelement path="${build.dir}/tmp/java.out.mps-core" />
-        <pathelement path="${build.dir}/tmp/java.out.mps-platform" />
-        <pathelement path="${build.dir}/tmp/java.out.mps-editor" />
-        <pathelement path="${build.dir}/tmp/java.out.mps-ant" />
-        <pathelement path="${build.dir}/tmp/java.out.mps-editor-api" />
+        <pathelement path="${build.tmp}/java/out/mps-closures" />
+        <pathelement path="${build.tmp}/java/out/mps-collections" />
+        <pathelement path="${build.tmp}/java/out/mps-tuples" />
+        <pathelement path="${build.tmp}/java/out/mps-core" />
+        <pathelement path="${build.tmp}/java/out/mps-platform" />
+        <pathelement path="${build.tmp}/java/out/mps-editor" />
+        <pathelement path="${build.tmp}/java/out/mps-ant" />
+        <pathelement path="${build.tmp}/java/out/mps-editor-api" />
       </classpath>
     </javac>
   </target>

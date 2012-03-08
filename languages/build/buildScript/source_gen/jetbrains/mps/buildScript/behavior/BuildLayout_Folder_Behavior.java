@@ -18,6 +18,12 @@ public class BuildLayout_Folder_Behavior {
   public static void virtual_unpack_7128123785277710736(SNode thisNode, UnpackHelper helper) {
     SNode parent = helper.parent(thisNode);
     String parentLocation = helper.contentLocations().get(parent);
-    helper.locations().put(thisNode, parentLocation + "/" + helper.toString(SLinkOperations.getTarget(thisNode, "containerName", true)));
+    String folderLocation = parentLocation + "/" + helper.toString(SLinkOperations.getTarget(thisNode, "containerName", true));
+    helper.locations().put(thisNode, folderLocation);
+    helper.contentLocations().put(thisNode, folderLocation);
+  }
+
+  public static boolean virtual_isFolder_6547494638219485301(SNode thisNode) {
+    return true;
   }
 }

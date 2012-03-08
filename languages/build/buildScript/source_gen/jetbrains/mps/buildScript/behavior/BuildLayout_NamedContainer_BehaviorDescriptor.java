@@ -11,6 +11,14 @@ public abstract class BuildLayout_NamedContainer_BehaviorDescriptor extends Buil
   public BuildLayout_NamedContainer_BehaviorDescriptor() {
   }
 
+  public boolean virtual_isFile_6547494638219485308(SNode thisNode) {
+    return BuildLayout_NamedContainer_Behavior.virtual_isFile_6547494638219485308(thisNode);
+  }
+
+  public boolean virtual_isFolder_6547494638219485301(SNode thisNode) {
+    return BuildLayout_NamedContainer_Behavior.virtual_isFolder_6547494638219485301(thisNode);
+  }
+
   public String virtual_getReferenceText_841011766566134611(SNode thisNode) {
     return BuildLayout_NamedContainer_Behavior.virtual_getReferenceText_841011766566134611(thisNode);
   }

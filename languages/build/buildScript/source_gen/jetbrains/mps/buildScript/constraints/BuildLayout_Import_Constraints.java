@@ -90,7 +90,11 @@ public class BuildLayout_Import_Constraints extends BaseConstraintsDescriptor {
                 }
               }).translate(new ITranslator2<SNode, SNode>() {
                 public Iterable<SNode> translate(SNode it) {
-                  return SNodeOperations.getDescendants(SLinkOperations.getTarget(SNodeOperations.cast(it, "jetbrains.mps.buildScript.structure.BuildProjectDependency"), "script", false), "jetbrains.mps.buildScript.structure.BuildLayout_NamedContainer", false, new String[]{});
+                  return ListSequence.fromList(SNodeOperations.getDescendants(SLinkOperations.getTarget(SNodeOperations.cast(it, "jetbrains.mps.buildScript.structure.BuildProjectDependency"), "script", false), "jetbrains.mps.buildScript.structure.BuildLayout_NamedContainer", false, new String[]{})).where(new IWhereFilter<SNode>() {
+                    public boolean accept(SNode nc) {
+                      return BuildLayout_NamedContainer_Behavior.call_isFile_6547494638219485308(nc) || BuildLayout_NamedContainer_Behavior.call_isFolder_6547494638219485301(nc);
+                    }
+                  });
                 }
               }).toListSequence();
               return new Scope() {

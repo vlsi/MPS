@@ -8,10 +8,10 @@
     <classNode dependClassName="jetbrains.mps.buildScript.behavior.BuildLayout_NamedContainer_Behavior" />
     <classNode dependClassName="jetbrains.mps.buildScript.behavior.BuildProject_Behavior" />
     <classNode dependClassName="jetbrains.mps.buildScript.behavior.BuildSourcePath_Behavior" />
-    <classNode dependClassName="jetbrains.mps.buildScript.behavior.BuildSource_JavaModule_Behavior" />
     <classNode dependClassName="jetbrains.mps.buildScript.behavior.BuildString_Behavior" />
     <classNode dependClassName="jetbrains.mps.buildScript.generator.util.FetchDependenciesProcessor" />
     <classNode dependClassName="jetbrains.mps.buildScript.util.Context" />
+    <classNode dependClassName="jetbrains.mps.buildScript.util.DependenciesHelper" />
     <classNode dependClassName="jetbrains.mps.buildScript.util.GenerationUtil" />
     <classNode dependClassName="jetbrains.mps.buildScript.util.RelativePathHelper" />
     <classNode dependClassName="jetbrains.mps.generator.template.BaseMappingRuleContext" />

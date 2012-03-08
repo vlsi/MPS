@@ -5,16 +5,26 @@ package jetbrains.mps.buildScript.behavior;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.buildScript.util.Context;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.structure.BehaviorDescriptor;
 import jetbrains.mps.smodel.structure.ConceptRegistry;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class BuildLayout_NamedContainer_Behavior {
+  private static Class[] PARAMETERS_6547494638219485301 = {SNode.class};
+  private static Class[] PARAMETERS_6547494638219485308 = {SNode.class};
   private static Class[] PARAMETERS_841011766566134611 = {SNode.class};
 
   public static void init(SNode thisNode) {
+  }
+
+  public static boolean virtual_isFolder_6547494638219485301(SNode thisNode) {
+    return false;
+  }
+
+  public static boolean virtual_isFile_6547494638219485308(SNode thisNode) {
+    return false;
   }
 
   public static String virtual_getReferenceText_841011766566134611(SNode thisNode) {
@@ -25,7 +35,11 @@ public class BuildLayout_NamedContainer_Behavior {
   }
 
   public static String virtual_getChildrenOutputDir_WithMacro_4701820937132344011(SNode thisNode, Context context) {
-    return context.getTempPath(thisNode, SPropertyOperations.getString(thisNode, "name"));
+    SNode nlayout = SNodeOperations.getAncestor(thisNode, "jetbrains.mps.buildScript.structure.BuildNamedLayout", true, false);
+    return context.getTempPath(thisNode, SPropertyOperations.getString(thisNode, "name"), ((nlayout != null) ?
+      SPropertyOperations.getString(nlayout, "name") :
+      "default"
+    ));
   }
 
   public static String call_getOutputPath_WithMacro_280273048052535414(SNode thisNode, Context context) {
@@ -36,9 +50,27 @@ public class BuildLayout_NamedContainer_Behavior {
     return null;
   }
 
+  public static boolean call_isFolder_6547494638219485301(SNode thisNode) {
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
+    return (Boolean) descriptor.invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.buildScript.structure.BuildLayout_NamedContainer"), "virtual_isFolder_6547494638219485301", PARAMETERS_6547494638219485301);
+  }
+
+  public static boolean call_isFile_6547494638219485308(SNode thisNode) {
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
+    return (Boolean) descriptor.invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.buildScript.structure.BuildLayout_NamedContainer"), "virtual_isFile_6547494638219485308", PARAMETERS_6547494638219485308);
+  }
+
   public static String call_getReferenceText_841011766566134611(SNode thisNode) {
     BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
     return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.buildScript.structure.BuildLayout_NamedContainer"), "virtual_getReferenceText_841011766566134611", PARAMETERS_841011766566134611);
+  }
+
+  public static boolean callSuper_isFolder_6547494638219485301(SNode thisNode, String callerConceptFqName) {
+    return (Boolean) BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.buildScript.structure.BuildLayout_NamedContainer"), callerConceptFqName, "virtual_isFolder_6547494638219485301", PARAMETERS_6547494638219485301);
+  }
+
+  public static boolean callSuper_isFile_6547494638219485308(SNode thisNode, String callerConceptFqName) {
+    return (Boolean) BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.buildScript.structure.BuildLayout_NamedContainer"), callerConceptFqName, "virtual_isFile_6547494638219485308", PARAMETERS_6547494638219485308);
   }
 
   public static String callSuper_getReferenceText_841011766566134611(SNode thisNode, String callerConceptFqName) {

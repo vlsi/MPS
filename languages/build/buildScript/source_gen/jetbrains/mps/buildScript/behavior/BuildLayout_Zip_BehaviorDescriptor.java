@@ -9,6 +9,10 @@ public class BuildLayout_Zip_BehaviorDescriptor extends BuildLayout_NamedContain
   public BuildLayout_Zip_BehaviorDescriptor() {
   }
 
+  public boolean virtual_isFile_6547494638219485308(SNode thisNode) {
+    return BuildLayout_Zip_Behavior.virtual_isFile_6547494638219485308(thisNode);
+  }
+
   public void virtual_unpack_7128123785277710736(SNode thisNode, UnpackHelper helper) {
     BuildLayout_Zip_Behavior.virtual_unpack_7128123785277710736(thisNode, helper);
   }
