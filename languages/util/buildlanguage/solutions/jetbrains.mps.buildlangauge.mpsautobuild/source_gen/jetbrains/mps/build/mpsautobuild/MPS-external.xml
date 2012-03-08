@@ -31,8 +31,8 @@
     <mkdir dir="${deploy.dir}/MPS/lib/MPS-src.zip.tmp/help-build.repack.sources/testbench" />
     <mkdir dir="${deploy.dir}/MPS/lib/MPS-src.zip.tmp/help-build.repack.sources" />
     <mkdir dir="${deploy.dir}/MPS/lib/MPS-src.zip.tmp" />
-    <mkdir dir="${deploy.dir}/MPS/lib/mps-resources_en.tmp" />
-    <mkdir dir="${deploy.dir}/MPS/lib/mps-resources_en.tmp" />
+    <mkdir dir="${deploy.dir}/MPS/lib/mps-resources.jar.tmp" />
+    <mkdir dir="${deploy.dir}/MPS/lib/mps-resources_en.jar.tmp" />
     <mkdir dir="${deploy.dir}/MPS/lib/mps-core.jar.tmp/modules" />
     <mkdir dir="${deploy.dir}/MPS/lib/mps-core.jar.tmp" />
     <mkdir dir="${deploy.dir}/MPS/lib/mps-editor-api.jar.tmp" />
@@ -166,20 +166,20 @@
       <zipfileset dir="${deploy.dir}/MPS/lib/MPS-src.zip.tmp" includes="**/*.java" />
     </zip>
     <delete dir="${deploy.dir}/MPS/lib/MPS-src.zip.tmp" />
-    <copy todir="${deploy.dir}/MPS/lib/mps-resources_en.tmp">
+    <copy todir="${deploy.dir}/MPS/lib/mps-resources.jar.tmp">
       <fileset dir="${mps_home}/workbench/resources/classes" />
     </copy>
-    <jar destfile="${deploy.dir}/MPS/lib/mps-resources_en" duplicate="preserve" filesonly="true">
-      <fileset dir="${deploy.dir}/MPS/lib/mps-resources_en.tmp" />
+    <jar destfile="${deploy.dir}/MPS/lib/mps-resources.jar" duplicate="preserve" filesonly="true">
+      <fileset dir="${deploy.dir}/MPS/lib/mps-resources.jar.tmp" />
     </jar>
-    <delete dir="${deploy.dir}/MPS/lib/mps-resources_en.tmp" />
-    <copy todir="${deploy.dir}/MPS/lib/mps-resources_en.tmp">
+    <delete dir="${deploy.dir}/MPS/lib/mps-resources.jar.tmp" />
+    <copy todir="${deploy.dir}/MPS/lib/mps-resources_en.jar.tmp">
       <fileset dir="${mps_home}/workbench/resources_en/classes" />
     </copy>
-    <jar destfile="${deploy.dir}/MPS/lib/mps-resources_en" duplicate="preserve" filesonly="true">
-      <fileset dir="${deploy.dir}/MPS/lib/mps-resources_en.tmp" />
+    <jar destfile="${deploy.dir}/MPS/lib/mps-resources_en.jar" duplicate="preserve" filesonly="true">
+      <fileset dir="${deploy.dir}/MPS/lib/mps-resources_en.jar.tmp" />
     </jar>
-    <delete dir="${deploy.dir}/MPS/lib/mps-resources_en.tmp" />
+    <delete dir="${deploy.dir}/MPS/lib/mps-resources_en.jar.tmp" />
     <copy todir="${deploy.dir}/MPS/lib/mps-core.jar.tmp">
       <fileset dir="${mps_home}/core/analyzers/classes" />
     </copy>
@@ -757,8 +757,8 @@
     <delete dir="${deploy.dir}/MPS/lib/MPS-src.zip.tmp" />
     <delete dir="${deploy.dir}/MPS/samples.zip.tmp" />
     <delete dir="${deploy.dir}/${build.number}-buildTools.zip.tmp" />
-    <delete dir="${deploy.dir}/MPS/lib/mps-resources_en.tmp" />
-    <delete dir="${deploy.dir}/MPS/lib/mps-resources_en.tmp" />
+    <delete dir="${deploy.dir}/MPS/lib/mps-resources.jar.tmp" />
+    <delete dir="${deploy.dir}/MPS/lib/mps-resources_en.jar.tmp" />
     <delete dir="${deploy.dir}/MPS/lib/mps-core.jar.tmp" />
     <delete dir="${deploy.dir}/MPS/lib/mps-editor-api.jar.tmp" />
     <delete dir="${deploy.dir}/MPS/lib/mps-editor.jar.tmp" />

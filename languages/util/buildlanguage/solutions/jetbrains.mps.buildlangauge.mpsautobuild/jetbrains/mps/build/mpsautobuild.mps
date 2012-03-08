@@ -1485,7 +1485,7 @@
       </node>
       <node role="delete" roleId="tps4.1239622410040" type="tps4.Delete" typeId="tps4.1204122781510" id="8431776905956472703" />
       <node role="title" roleId="tps4.1205340441197" type="tps4.SimpleString" typeId="tps4.1205339044029" id="8431776905956472704">
-        <property name="name" nameId="tps4.1223641503366" value="mps-resources_en" />
+        <property name="name" nameId="tps4.1223641503366" value="mps-resources.jar" />
       </node>
     </node>
   </root>
@@ -4353,7 +4353,7 @@
       </node>
       <node role="delete" roleId="tps4.1239622410040" type="tps4.Delete" typeId="tps4.1204122781510" id="4155373682043500281" />
       <node role="title" roleId="tps4.1205340441197" type="tps4.SimpleString" typeId="tps4.1205339044029" id="4155373682043500282">
-        <property name="name" nameId="tps4.1223641503366" value="mps-resources_en" />
+        <property name="name" nameId="tps4.1223641503366" value="mps-resources_en.jar" />
       </node>
     </node>
   </root>
