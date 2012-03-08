@@ -4,9 +4,9 @@ package jetbrains.mps.buildScript.tests;
 
 import jetbrains.mps.buildScript.util.Context;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.generator.template.TemplateQueryContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.reloading.CommonPaths;
+import jetbrains.mps.generator.template.TemplateQueryContext;
 import java.util.Map;
 import java.util.HashMap;
 import jetbrains.mps.smodel.IOperationContext;
@@ -21,7 +21,7 @@ public class TestContext extends Context {
   public static final String DEPLOY = "${" + DEPLOY_MACRO + "}";
 
   public TestContext(SModel currentModel) {
-    super((TemplateQueryContext) new TestContext.TestGenContext(currentModel));
+    super(new TestContext.TestGenContext(currentModel));
   }
 
   @Override
