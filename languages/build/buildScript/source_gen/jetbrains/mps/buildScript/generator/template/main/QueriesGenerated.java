@@ -178,6 +178,26 @@ public class QueriesGenerated {
     return "java.library." + SPropertyOperations.getString(_context.getNode(), "name");
   }
 
+  public static Object propertyMacro_GetPropertyValue_6547494638219610715(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    SNode project = SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.buildScript.structure.BuildProject", false, false);
+    if (project == null) {
+      _context.showErrorMessage(_context.getNode(), "no context project defined");
+      return "???";
+    }
+    DependenciesHelper helper = new DependenciesHelper(_context, project);
+    SNode layoutNode = helper.artifacts().get(DependenciesHelper.getOriginalNode(SLinkOperations.getTarget(_context.getNode(), "module", false), _context));
+    if (layoutNode == null) {
+      _context.showErrorMessage(_context.getNode(), "java module " + SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "module", false), "name") + " was not found in the layout");
+      return "???";
+    }
+    String val = helper.locations().get(layoutNode);
+    if (val == null) {
+      _context.showErrorMessage(_context.getNode(), "no location for java module " + SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "module", false), "name"));
+      return "???";
+    }
+    return val;
+  }
+
   public static Object propertyMacro_GetPropertyValue_5248329904288079406(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return BuildSourcePath_Behavior.call_getRelativePath_5481553824944787371(SLinkOperations.getTarget(_context.getNode(), "dir", true));
   }
@@ -380,6 +400,10 @@ public class QueriesGenerated {
 
   public static boolean ifMacro_Condition_4701820937132270614(final IOperationContext operationContext, final IfMacroContext _context) {
     return SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.buildScript.structure.BuildLayout_Container") && BuildLayout_Container_Behavior.call_getAssembleSubTaskId_4701820937132344052(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.buildScript.structure.BuildLayout_Container")) != null;
+  }
+
+  public static boolean ifMacro_Condition_6547494638219610612(final IOperationContext operationContext, final IfMacroContext _context) {
+    return SNodeOperations.getContainingRoot(_context.getNode()) == SNodeOperations.getContainingRoot(SLinkOperations.getTarget(_context.getNode(), "module", false));
   }
 
   public static boolean ifMacro_Condition_4701820937132337397(final IOperationContext operationContext, final IfMacroContext _context) {

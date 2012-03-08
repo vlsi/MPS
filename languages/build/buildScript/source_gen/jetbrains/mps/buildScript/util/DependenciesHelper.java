@@ -4,16 +4,19 @@ package jetbrains.mps.buildScript.util;
 
 import java.util.Map;
 import jetbrains.mps.smodel.SNode;
+import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.generator.template.TemplateQueryContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class DependenciesHelper {
   private final Map<SNode, String> locationMap;
   private final Map<SNode, String> contentLocationMap;
+  private final Map<Object, SNode> idToArtifactMap;
 
-  public DependenciesHelper(TemplateQueryContext genContext, SNode project) {
+  public DependenciesHelper(@NotNull TemplateQueryContext genContext, SNode project) {
     this.locationMap = GenerationUtil.<SNode,String>getSessionMap(project, genContext, "location");
     this.contentLocationMap = GenerationUtil.<SNode,String>getSessionMap(project, genContext, "contentLocation");
+    this.idToArtifactMap = GenerationUtil.<Object,SNode>getSessionMap(project, genContext, "IDToArtifact");
   }
 
   public Map<SNode, String> locations() {
@@ -22,6 +25,10 @@ public class DependenciesHelper {
 
   public Map<SNode, String> contentLocations() {
     return contentLocationMap;
+  }
+
+  public Map<Object, SNode> artifacts() {
+    return idToArtifactMap;
   }
 
   public static SNode getOriginalNode(SNode node, TemplateQueryContext genContext) {

@@ -8,6 +8,7 @@ import java.util.Map;
 import java.util.HashMap;
 import java.util.List;
 import java.util.ArrayList;
+import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -17,10 +18,12 @@ public class VisibleArtifacts {
   private final TemplateQueryContext genContext;
   private final Map<SNode, SNode> parentMap = new HashMap<SNode, SNode>();
   private final List<SNode> visibleArtifacts = new ArrayList<SNode>();
+  private DependenciesHelper dependenciesHelper;
 
-  public VisibleArtifacts(SNode project, TemplateQueryContext genContext) {
+  public VisibleArtifacts(SNode project, @NotNull TemplateQueryContext genContext) {
     this.project = project;
     this.genContext = genContext;
+    this.dependenciesHelper = new DependenciesHelper(genContext, project);
   }
 
   public void collect() {
@@ -85,5 +88,9 @@ public class VisibleArtifacts {
 
   public SNode parent(SNode node) {
     return parentMap.get(node);
+  }
+
+  public void registerEntity(Object id, SNode location) {
+    dependenciesHelper.artifacts().put(id, location);
   }
 }

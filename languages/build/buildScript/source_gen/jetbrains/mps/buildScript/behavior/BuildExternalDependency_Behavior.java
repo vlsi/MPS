@@ -15,10 +15,6 @@ public class BuildExternalDependency_Behavior {
   public static void init(SNode thisNode) {
   }
 
-  public static Iterable<SNode> virtual_getDependencyTargets_841011766566205095(SNode thisNode, VisibleArtifacts artifacts) {
-    return null;
-  }
-
   public static Iterable<SNode> call_getDependencyTargets_841011766566205095(SNode thisNode, VisibleArtifacts artifacts) {
     BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
     return (Iterable<SNode>) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.buildScript.structure.BuildExternalDependency"), "virtual_getDependencyTargets_841011766566205095", PARAMETERS_841011766566205095, artifacts);

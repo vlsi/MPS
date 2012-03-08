@@ -36,6 +36,10 @@ public class FetchDependenciesProcessor {
     artifacts.collect();
     for (SNode dep : SNodeOperations.getDescendants(project, "jetbrains.mps.buildScript.structure.BuildExternalDependency", false, new String[]{})) {
       Iterable<SNode> dependencyTargets = BuildExternalDependency_Behavior.call_getDependencyTargets_841011766566205095(dep, artifacts);
+      if (dependencyTargets == null) {
+        continue;
+      }
+
       for (SNode node : dependencyTargets) {
         if (SNodeOperations.getModel(node).isTransient()) {
           genContext.showErrorMessage(dep, "returned dependency in transient model: " + node.getDebugText());

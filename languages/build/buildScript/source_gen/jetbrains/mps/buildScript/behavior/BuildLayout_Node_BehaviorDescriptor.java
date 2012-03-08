@@ -14,6 +14,10 @@ public abstract class BuildLayout_Node_BehaviorDescriptor extends BaseConcept_Be
     BuildLayout_Node_Behavior.virtual_unpack_7128123785277710736(thisNode, helper);
   }
 
+  public boolean virtual_exports_6547494638219603457(SNode thisNode, Object object) {
+    return BuildLayout_Node_Behavior.virtual_exports_6547494638219603457(thisNode, object);
+  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.buildScript.structure.BuildLayout_Node";

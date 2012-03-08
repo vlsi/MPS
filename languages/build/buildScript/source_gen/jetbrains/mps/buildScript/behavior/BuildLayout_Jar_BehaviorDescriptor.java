@@ -17,6 +17,10 @@ public class BuildLayout_Jar_BehaviorDescriptor extends BuildLayout_NamedContain
     BuildLayout_Jar_Behavior.virtual_unpack_7128123785277710736(thisNode, helper);
   }
 
+  public boolean virtual_exports_6547494638219603457(SNode thisNode, Object object) {
+    return BuildLayout_Jar_Behavior.virtual_exports_6547494638219603457(thisNode, object);
+  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.buildScript.structure.BuildLayout_Jar";

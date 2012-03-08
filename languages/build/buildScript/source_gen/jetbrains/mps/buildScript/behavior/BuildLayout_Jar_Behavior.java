@@ -7,6 +7,8 @@ import jetbrains.mps.buildScript.util.UnpackHelper;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -39,6 +41,20 @@ public class BuildLayout_Jar_Behavior {
 
   public static boolean virtual_isFile_6547494638219485308(SNode thisNode) {
     return true;
+  }
+
+  public static boolean virtual_exports_6547494638219603457(SNode thisNode, Object object) {
+    if (object instanceof SNode) {
+      final SNode node = (SNode) object;
+      if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.buildScript.structure.BuildSource_JavaModule")) {
+        return ListSequence.fromList(SLinkOperations.getTargets(thisNode, "children", true)).any(new IWhereFilter<SNode>() {
+          public boolean accept(SNode it) {
+            return SNodeOperations.isInstanceOf(it, "jetbrains.mps.buildScript.structure.BuildLayout_JavaOutput") && SLinkOperations.getTarget(SNodeOperations.cast(it, "jetbrains.mps.buildScript.structure.BuildLayout_JavaOutput"), "module", false) == node;
+          }
+        });
+      }
+    }
+    return false;
   }
 
   public static class QuotationClass_20awhq_a0a0b0h0b {

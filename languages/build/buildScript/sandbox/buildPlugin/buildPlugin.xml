@@ -7,14 +7,11 @@
   <property name="artifacts.buildA" location="${ds}/../../buildA" />
   <property name="artifacts.buildB" location="../../solutions/buildB/build/artifacts/buildB" />
   
-  <target name="assemble">
+  <target name="assemble" depends="classes">
     <aaa></aaa>
     <mkdir dir="${build.layout}/xx" />
     <mkdir dir="${build.tmp}/default/xx" />
     <mkdir dir="${build.tmp}/default/xx/test" />
-    <copy todir="${build.tmp}/default/xx/test">
-      <fileset file="${build.tmp}/deps/buildCore/release.zip/inrelease.zip" />
-    </copy>
     <jar destfile="${build.layout}/xx/xx">
       <fileset dir="${build.tmp}/default/xx" />
     </jar>
@@ -23,17 +20,43 @@
   <target name="fetchDependencies">
     <mkdir dir="${build.tmp}/deps/buildCore/release.zip" />
     <unzip src="${artifacts.buildCore}/default/release.zip" dest="${build.tmp}/deps/buildCore/release.zip" />
+    <mkdir dir="${build.tmp}/deps/buildCore/inrelease.zip" />
+    <unzip src="${build.tmp}/deps/buildCore/release.zip/inrelease.zip" dest="${build.tmp}/deps/buildCore/inrelease.zip" />
   </target>
   
-  <target name="build" depends="assemble" />
+  <target name="build" depends="assemble, check" />
   
   <target name="clean">
     <delete dir="${build.dir}" />
   </target>
   
+  <target name="compileJava" depends="java.compile.test1" />
+  
+  <target name="processResources" />
+  
+  <target name="classes" depends="compileJava, processResources" />
+  
+  <target name="test" depends="classes" />
+  
+  <target name="check" depends="test" />
+  
+  <target name="java.compile.test1">
+    <mkdir dir="${build.tmp}/java/out/test1" />
+    <javac destdir="${build.tmp}/java/out/test1">
+      <compilerarg value="-Xlint:none" />
+      <src></src>
+      <classpath>
+        <fileset file="${build.tmp}/deps/buildCore/inrelease.zip/mps-core${varsof.buildCore.ver}.jar" />
+      </classpath>
+    </javac>
+  </target>
+  
   <target name="layout.custom1">
     <mkdir dir="${build.tmp}/custom1/qas.zip" />
     <mkdir dir="${build.tmp}/custom1/qas.zip/a" />
+    <jar destfile="${build.tmp}/custom1/qas.zip/a/test1.jar">
+      <fileset dir="${build.tmp}/java/out/test1" />
+    </jar>
     <zip destfile="${build.layout.custom1}/qas.zip">
       <fileset dir="${build.tmp}/custom1/qas.zip" />
     </zip>
