@@ -65,7 +65,7 @@ public class TraceInfoTest {
   }
 
   private void invokeTest(final _FunctionTypes._void_P0_E0 test) {
-    Project project = TestMain.loadProject(new File(PathManager.getHomePath() + "/core/kernel/traceinfo/traceInfo.ipr"));
+    Project project = TestMain.loadProject(new File(PathManager.getHomePath() + "/core/kernel/traceinfo/traceInfo.mpr"));
     try {
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
@@ -82,7 +82,7 @@ public class TraceInfoTest {
       method.invoke();
     } catch (Throwable t) {
       StackTraceElement stackTraceElement = t.getStackTrace()[0];
-      SNode node = TraceInfoUtil.getNode(stackTraceElement.getClassName(), stackTraceElement.getFileName(), stackTraceElement.getLineNumber());
+      SNode node = TraceInfoUtil.getJavaNode(stackTraceElement.getClassName(), stackTraceElement.getFileName(), stackTraceElement.getLineNumber());
       // <node> 
       return node;
     }

@@ -14,7 +14,7 @@ import jetbrains.mps.smodel.behaviour.BehaviorManager;
 public class TestExpectedType_Test extends BaseTransformationTest {
   @Test
   public void test_TypesCheck4395293866213260523() throws Throwable {
-    this.initTest("${mps_home}/MPS.ipr", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test)");
+    this.initTest("${mps_home}/MPS.mpr", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test)");
     this.runTest("jetbrains.mps.baseLanguage.test.TestExpectedType_Test$TestBody", "test_TypesCheck4395293866213260523", true);
   }
 

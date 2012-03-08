@@ -48,7 +48,17 @@ public class JavaStackTraceFilter implements Filter {
 
     final SNodePointer nodeToShow = ModelAccess.instance().runReadAction(new Computable<SNodePointer>() {
       public SNodePointer compute() {
-        final SNode node = TraceInfoUtil.getNodes(methodName, position);
+        int lastDot = methodName.lastIndexOf(".");
+        String pkg = ((lastDot == -1 ?
+          "" :
+          methodName.substring(0, lastDot)
+        ));
+        String[] split = position.split(":");
+
+        SNode node = null;
+        if (split.length >= 2) {
+          node = TraceInfoUtil.getJavaNode(pkg, split[0], Integer.parseInt(split[1]));
+        }
         if (node == null) {
           return null;
         }
