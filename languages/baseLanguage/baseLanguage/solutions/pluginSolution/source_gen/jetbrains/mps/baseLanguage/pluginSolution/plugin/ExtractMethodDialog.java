@@ -35,7 +35,6 @@ import javax.swing.border.Border;
 import javax.swing.border.CompoundBorder;
 import javax.swing.border.TitledBorder;
 import javax.swing.border.EmptyBorder;
-import jetbrains.mps.ide.dialogs.DialogDimensionsSettings;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -72,7 +71,6 @@ public class ExtractMethodDialog extends RefactoringDialog {
     super(project, true);
     setTitle("Extract Method");
 
-    // <node> 
     myContext = context;
     myParameters = params;
     myRefactoring = refactoring;
@@ -294,10 +292,6 @@ public class ExtractMethodDialog extends RefactoringDialog {
     });
   }
 
-  public DialogDimensionsSettings.DialogDimensions getDefaultDimensionSettings() {
-    return new DialogDimensionsSettings.DialogDimensions(100, 200, 500, 400);
-  }
-
   public void chooseStaticContainer() {
     final Wrappers._T<SModelDescriptor> model = new Wrappers._T<SModelDescriptor>();
     ModelAccess.instance().runReadAction(new Runnable() {
@@ -306,18 +300,32 @@ public class ExtractMethodDialog extends RefactoringDialog {
         model.value = myRefactoringModel.getModelDescriptor();
       }
     });
-    myStaticTarget = BLDialogs.showStaticContainerChooser(this.myContext.getOperationContext(), model.value);
+
+    final BaseChooseNodeDialog dialog = new BaseChooseNodeDialog(myProject, myContext.getOperationContext(), model.value, "Choose class") {
+      protected boolean isAcceptable(SNode node) {
+        return SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.ClassConcept") || SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.IStaticContainerForMethods");
+      }
+    };
+    dialog.show();
+
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        myStaticTarget = (dialog.getResult() != null ?
+          dialog.getResult().getNode() :
+          null
+        );
+      }
+    });
     if (myStaticTarget == null) {
       myRefactoringModel = null;
     }
-
   }
 
   @Nullable
   @NonNls
   @Override
   protected String getDimensionServiceKey() {
-    return "MPS_ExtractMethodDialog";
+    return getClass().getName();
   }
 
   /**

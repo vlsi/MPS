@@ -16,44 +16,48 @@
     <classNode dependClassName="jetbrains.mps.ide.dialogs.DialogDimensionsSettings" />
     <classNode extendsClassName="jetbrains.mps.ide.dialogs.BaseDialog" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.pluginSolution.plugin.BLDialogs" file="BLDialogs.java">
-    <classNode dependClassName="jetbrains.mps.baseLanguage.pluginSolution.plugin.BaseChooseNodeDialog" />
-    <classNode dependClassName="jetbrains.mps.ide.project.ProjectHelper" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
-    <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModelDescriptor" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
-  </dependency>
   <dependency className="jetbrains.mps.baseLanguage.pluginSolution.plugin.BaseChooseNodeDialog" file="BaseChooseNodeDialog.java">
+    <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="com.intellij.ui.ScrollPaneFactory" />
-    <classNode dependClassName="java.awt.Dialog" />
-    <classNode dependClassName="java.awt.Frame" />
+    <classNode dependClassName="com.intellij.ui.treeStructure.SimpleTree" />
+    <classNode dependClassName="java.awt.Dimension" />
     <classNode dependClassName="java.awt.HeadlessException" />
+    <classNode dependClassName="java.lang.Comparable" />
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.util.ArrayList" />
-    <classNode dependClassName="java.util.Collections" />
     <classNode dependClassName="java.util.HashSet" />
     <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="javax.swing.JComponent" />
     <classNode dependClassName="javax.swing.JScrollPane" />
-    <classNode dependClassName="jetbrains.mps.ide.dialogs.DialogDimensionsSettings" />
-    <classNode dependClassName="jetbrains.mps.ide.ui.MPSTree" />
-    <classNode dependClassName="jetbrains.mps.ide.ui.MPSTreeNode" />
-    <classNode dependClassName="jetbrains.mps.ide.ui.TextTreeNode" />
-    <classNode dependClassName="jetbrains.mps.ide.ui.smodel.SModelTreeNode" />
-    <classNode dependClassName="jetbrains.mps.ide.ui.smodel.SNodeTreeNode" />
+    <classNode dependClassName="javax.swing.event.TreeSelectionEvent" />
+    <classNode dependClassName="javax.swing.event.TreeSelectionListener" />
+    <classNode dependClassName="javax.swing.tree.DefaultMutableTreeNode" />
+    <classNode dependClassName="javax.swing.tree.DefaultTreeModel" />
+    <classNode dependClassName="javax.swing.tree.TreeSelectionModel" />
+    <classNode dependClassName="jetbrains.mps.ide.platform.modeltree.ModelTreeBuilder" />
+    <classNode dependClassName="jetbrains.mps.ide.platform.modeltree.ModelTreeCellRenderer" />
+    <classNode dependClassName="jetbrains.mps.ide.platform.modeltree.ModelTreeNode" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
     <classNode dependClassName="jetbrains.mps.project.AbstractModule" />
     <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
+    <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelReference" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelStereotype" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
-    <classNode dependClassName="jetbrains.mps.util.Condition" />
-    <classNode dependClassName="jetbrains.mps.util.ToStringComparator" />
-    <classNode extendsClassName="jetbrains.mps.ide.dialogs.BaseDialog" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
+    <classNode dependClassName="org.jetbrains.annotations.NonNls" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode extendsClassName="com.intellij.openapi.ui.DialogWrapper" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.pluginSolution.plugin.BaseLangaugeCodeCommentsMenuGroup_ActionGroup" file="BaseLangaugeCodeCommentsMenuGroup_ActionGroup.java">
     <classNode dependClassName="java.lang.String" />
@@ -182,7 +186,7 @@
     <classNode dependClassName="javax.swing.event.TableModelEvent" />
     <classNode dependClassName="javax.swing.event.TableModelListener" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.pluginSolution.plugin.BLDialogs" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.pluginSolution.plugin.BaseChooseNodeDialog" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.pluginSolution.plugin.IconResourceBundle_ExtractMethodIcons" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.pluginSolution.plugin.ParametersPanel" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.pluginSolution.plugin.ParametersTableModel" />
@@ -191,7 +195,6 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.util.plugin.refactorings.ExtractMethodRefactoring" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.util.plugin.refactorings.ExtractMethodRefactoringParameters" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.util.plugin.refactorings.MethodMatch" />
-    <classNode dependClassName="jetbrains.mps.ide.dialogs.DialogDimensionsSettings" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
