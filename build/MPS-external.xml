@@ -27,7 +27,6 @@
     <mkdir dir="${deploy.dir}/MPS/lib/MPS-src.zip.tmp/help-build.repack.sources/core" />
     <mkdir dir="${deploy.dir}/MPS/lib/MPS-src.zip.tmp/help-build.repack.sources/languages" />
     <mkdir dir="${deploy.dir}/MPS/lib/MPS-src.zip.tmp/help-build.repack.sources/plugins" />
-    <mkdir dir="${deploy.dir}/MPS/lib/MPS-src.zip.tmp/help-build.repack.sources/resources" />
     <mkdir dir="${deploy.dir}/MPS/lib/MPS-src.zip.tmp/help-build.repack.sources/workbench" />
     <mkdir dir="${deploy.dir}/MPS/lib/MPS-src.zip.tmp/help-build.repack.sources/testbench" />
     <mkdir dir="${deploy.dir}/MPS/lib/MPS-src.zip.tmp/help-build.repack.sources" />
@@ -149,9 +148,6 @@
     </copy>
     <copy todir="${deploy.dir}/MPS/lib/MPS-src.zip.tmp/help-build.repack.sources/plugins">
       <fileset dir="${mps_home}/plugins" excludes="**/sandbox/**, " includes="**/*.java, **/*.java" />
-    </copy>
-    <copy todir="${deploy.dir}/MPS/lib/MPS-src.zip.tmp/help-build.repack.sources/resources">
-      <fileset dir="${mps_home}/resources" excludes="**/sandbox/**, " includes="**/*.java, **/*.java" />
     </copy>
     <copy todir="${deploy.dir}/MPS/lib/MPS-src.zip.tmp/help-build.repack.sources/workbench">
       <fileset dir="${mps_home}/workbench" excludes="**/sandbox/**, " includes="**/*.java, **/*.java" />
