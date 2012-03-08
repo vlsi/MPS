@@ -6,6 +6,7 @@ import java.util.Set;
 import java.util.HashSet;
 import java.util.Arrays;
 import java.util.concurrent.ConcurrentMap;
+import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.generator.template.TemplateQueryContext;
 import jetbrains.mps.smodel.SNode;
 import org.apache.commons.lang.StringUtils;
@@ -15,7 +16,7 @@ public class PathProvider {
 
   private ConcurrentMap<String, String> usedNames;
 
-  public PathProvider(TemplateQueryContext genContext, SNode project) {
+  public PathProvider(@NotNull TemplateQueryContext genContext, SNode project) {
     this.usedNames = GenerationUtil.<String,String>getSessionMap(project, genContext, "location");
   }
 
