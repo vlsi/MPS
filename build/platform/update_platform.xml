@@ -14,7 +14,7 @@
   ~ limitations under the License.
   -->
 <project name="update_platform" default="default" basedir="..">
-  <property name="main.url" value="http://buildserver.labs.intellij.net/guestAuth/repository/download/bt2501/latest.lastSuccessful"/>
+  <property name="main.url" value="http://buildserver.labs.intellij.net/guestAuth/repository/download/bt2501/.lastPinned"/>
   <property name="platform.file" value="platform.zip"/>
   <property name="platform.src.file" value="platform.src.zip"/>
 
