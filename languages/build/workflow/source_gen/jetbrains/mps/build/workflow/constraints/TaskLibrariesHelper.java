@@ -17,10 +17,13 @@ import java.util.Map;
 import java.util.HashMap;
 import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import java.util.HashSet;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.Queue;
 import jetbrains.mps.internal.collections.runtime.QueueSequence;
 import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
-import jetbrains.mps.internal.collections.runtime.SetSequence;
 
 public class TaskLibrariesHelper {
   private SNode project;
@@ -75,6 +78,29 @@ public class TaskLibrariesHelper {
     for (int i = parts.size() - 1; i >= 0; i--) {
       ListSequence.fromList(SLinkOperations.getTargets(project, "parts", true)).insertElement(0, parts.get(i));
     }
+
+    // cleanup => remove empty taskss 
+    Set<SNode> emptyTasks = new HashSet<SNode>(ListSequence.fromList(SLinkOperations.getTargets(project, "parts", true)).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.workflow.structure.BwfTask") && ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(it, "jetbrains.mps.build.workflow.structure.BwfTask"), "dependencies", true)).isEmpty() && ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(it, "jetbrains.mps.build.workflow.structure.BwfTask"), "subTasks", true)).isEmpty();
+      }
+    }).select(new ISelector<SNode, SNode>() {
+      public SNode select(SNode it) {
+        return SNodeOperations.cast(it, "jetbrains.mps.build.workflow.structure.BwfTask");
+      }
+    }).toListSequence());
+    if (!(emptyTasks.isEmpty())) {
+      for (SNode n : project.getDescendantsIterable(null, true)) {
+        for (SReference ref : n.getReferences()) {
+          SNode targetNode = ref.getTargetNodeSilently();
+          emptyTasks.remove(targetNode);
+        }
+        if (emptyTasks.isEmpty()) {
+          break;
+        }
+      }
+    }
+    ListSequence.fromList(SLinkOperations.getTargets(project, "parts", true)).removeSequence(SetSequence.fromSet(emptyTasks));
   }
 
   public static void closure(Set<SNode> libs) {

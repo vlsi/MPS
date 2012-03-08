@@ -30,8 +30,6 @@
   
   <target name="assemble" depends="classes" />
   
-  <target name="fetchDependencies" />
-  
   <target name="build" depends="assemble, check">
     <mkdir asd="aaaa" />
     <javac asd="asd" ssdf="asd">
