@@ -1,8 +1,81 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <unitInfo fileName="AnalyzersActions_ActionGroup.java" startLine="8" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.baseLanguage.pluginSolution.plugin.AnalyzersActions_ActionGroup" />
+  <unitInfo fileName="BaseChooseNodeDialog.java" startLine="42" startPosition="0" endLine="156" endPosition="0" unitName="jetbrains.mps.baseLanguage.pluginSolution.plugin.BaseChooseNodeDialog" />
+  <unitInfo fileName="BaseChooseNodeDialog.java" startLine="76" startPosition="86" endLine="80" endPosition="5" unitName="jetbrains.mps.baseLanguage.pluginSolution.plugin.BaseChooseNodeDialog$1" />
+  <unitInfo fileName="BaseChooseNodeDialog.java" startLine="80" startPosition="16" endLine="84" endPosition="5" unitName="jetbrains.mps.baseLanguage.pluginSolution.plugin.BaseChooseNodeDialog$2" />
+  <unitInfo fileName="BaseChooseNodeDialog.java" startLine="102" startPosition="8" endLine="127" endPosition="5" unitName="jetbrains.mps.baseLanguage.pluginSolution.plugin.BaseChooseNodeDialog$3" />
+  <unitInfo fileName="BaseChooseNodeDialog.java" startLine="105" startPosition="50" endLine="109" endPosition="11" unitName="jetbrains.mps.baseLanguage.pluginSolution.plugin.BaseChooseNodeDialog$4" />
+  <unitInfo fileName="BaseChooseNodeDialog.java" startLine="115" startPosition="250" endLine="119" endPosition="9" unitName="jetbrains.mps.baseLanguage.pluginSolution.plugin.BaseChooseNodeDialog$4" />
+  <unitInfo fileName="BaseChooseNodeDialog.java" startLine="128" startPosition="60" endLine="142" endPosition="5" unitName="jetbrains.mps.baseLanguage.pluginSolution.plugin.BaseChooseNodeDialog$4" />
+  <unitInfo fileName="BaseLangaugeCodeCommentsMenuGroup_ActionGroup.java" startLine="8" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.baseLanguage.pluginSolution.plugin.BaseLangaugeCodeCommentsMenuGroup_ActionGroup" />
+  <unitInfo fileName="BaseLanguageCustomPlugin_CustomProjectPlugin.java" startLine="10" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.baseLanguage.pluginSolution.plugin.BaseLanguageCustomPlugin_CustomProjectPlugin" />
+  <unitInfo fileName="BaseLanguageEditorPopup_ActionGroup.java" startLine="8" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.baseLanguage.pluginSolution.plugin.BaseLanguageEditorPopup_ActionGroup" />
+  <unitInfo fileName="BaseLanguageModelActionsInternal_ActionGroup.java" startLine="8" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.baseLanguage.pluginSolution.plugin.BaseLanguageModelActionsInternal_ActionGroup" />
+  <unitInfo fileName="BaseLanguageNodeActionsInternal_ActionGroup.java" startLine="8" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.baseLanguage.pluginSolution.plugin.BaseLanguageNodeActionsInternal_ActionGroup" />
+  <unitInfo fileName="BaseLanguageToolsAddition_ActionGroup.java" startLine="8" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.baseLanguage.pluginSolution.plugin.BaseLanguageToolsAddition_ActionGroup" />
+  <unitInfo fileName="CommentLine_Action.java" startLine="21" startPosition="0" endLine="111" endPosition="0" unitName="jetbrains.mps.baseLanguage.pluginSolution.plugin.CommentLine_Action" />
+  <unitInfo fileName="CommentStatements_Action.java" startLine="23" startPosition="0" endLine="93" endPosition="0" unitName="jetbrains.mps.baseLanguage.pluginSolution.plugin.CommentStatements_Action" />
   <unitInfo fileName="IconContainer.java" startLine="8" startPosition="0" endLine="12" endPosition="0" unitName="jetbrains.mps.baseLanguage.pluginSolution.plugin.IconContainer" />
+  <unitInfo fileName="InlineLocalVariable_Action.java" startLine="31" startPosition="0" endLine="149" endPosition="0" unitName="jetbrains.mps.baseLanguage.pluginSolution.plugin.InlineLocalVariable_Action" />
+  <unitInfo fileName="InlineLocalVariable_Action.java" startLine="96" startPosition="47" endLine="120" endPosition="7" unitName="jetbrains.mps.baseLanguage.pluginSolution.plugin.InlineLocalVariable_Action$1" />
+  <unitInfo fileName="InlineLocalVariable_Action.java" startLine="136" startPosition="57" endLine="141" endPosition="7" unitName="jetbrains.mps.baseLanguage.pluginSolution.plugin.InlineLocalVariable_Action$2" />
+  <unitInfo fileName="InlineMethodDialog.java" startLine="25" startPosition="0" endLine="132" endPosition="0" unitName="jetbrains.mps.baseLanguage.pluginSolution.plugin.InlineMethodDialog" />
+  <unitInfo fileName="InlineMethodDialog.java" startLine="74" startPosition="45" endLine="78" endPosition="5" unitName="jetbrains.mps.baseLanguage.pluginSolution.plugin.InlineMethodDialog$1" />
+  <unitInfo fileName="InlineMethodDialog.java" startLine="118" startPosition="48" endLine="122" endPosition="5" unitName="jetbrains.mps.baseLanguage.pluginSolution.plugin.InlineMethodDialog$2" />
+  <unitInfo fileName="InlineMethodDialogModel.java" startLine="25" startPosition="0" endLine="155" endPosition="0" unitName="jetbrains.mps.baseLanguage.pluginSolution.plugin.InlineMethodDialogModel" />
+  <unitInfo fileName="InlineMethodDialogModel.java" startLine="55" startPosition="44" endLine="63" endPosition="7" unitName="jetbrains.mps.baseLanguage.pluginSolution.plugin.InlineMethodDialogModel$1" />
+  <unitInfo fileName="InlineMethodDialogModel.java" startLine="57" startPosition="51" endLine="61" endPosition="11" unitName="jetbrains.mps.baseLanguage.pluginSolution.plugin.InlineMethodDialogModel$2" />
+  <unitInfo fileName="InlineMethodDialogModel.java" startLine="79" startPosition="55" endLine="92" endPosition="5" unitName="jetbrains.mps.baseLanguage.pluginSolution.plugin.InlineMethodDialogModel$2" />
+  <unitInfo fileName="InlineMethodDialogModel.java" startLine="35" startPosition="45" endLine="44" endPosition="5" unitName="jetbrains.mps.baseLanguage.pluginSolution.plugin.InlineMethodDialogModel$3" />
+  <unitInfo fileName="InlineMethodDialogModel.java" startLine="46" startPosition="45" endLine="50" endPosition="5" unitName="jetbrains.mps.baseLanguage.pluginSolution.plugin.InlineMethodDialogModel$4" />
+  <unitInfo fileName="InlineMethodDialogModel.java" startLine="146" startPosition="54" endLine="151" endPosition="5" unitName="jetbrains.mps.baseLanguage.pluginSolution.plugin.InlineMethodDialogModel$5" />
+  <unitInfo fileName="InlineMethodRefactoringAnalyzer.java" startLine="33" startPosition="0" endLine="132" endPosition="0" unitName="jetbrains.mps.baseLanguage.pluginSolution.plugin.InlineMethodRefactoringAnalyzer" />
+  <unitInfo fileName="InlineMethodRefactoringAnalyzer.java" startLine="46" startPosition="42" endLine="54" endPosition="5" unitName="jetbrains.mps.baseLanguage.pluginSolution.plugin.InlineMethodRefactoringAnalyzer$1" />
+  <unitInfo fileName="InlineMethodRefactoringAnalyzer.java" startLine="48" startPosition="49" endLine="52" endPosition="9" unitName="jetbrains.mps.baseLanguage.pluginSolution.plugin.InlineMethodRefactoringAnalyzer$2" />
+  <unitInfo fileName="InlineMethodRefactoringAnalyzer.java" startLine="56" startPosition="45" endLine="67" endPosition="5" unitName="jetbrains.mps.baseLanguage.pluginSolution.plugin.InlineMethodRefactoringAnalyzer$2" />
+  <unitInfo fileName="InlineMethod_Action.java" startLine="25" startPosition="0" endLine="103" endPosition="0" unitName="jetbrains.mps.baseLanguage.pluginSolution.plugin.InlineMethod_Action" />
+  <unitInfo fileName="InlineMethod_Action.java" startLine="37" startPosition="45" endLine="41" endPosition="5" unitName="jetbrains.mps.baseLanguage.pluginSolution.plugin.InlineMethod_Action$1" />
+  <unitInfo fileName="IntroduceVariableDialog.java" startLine="29" startPosition="0" endLine="156" endPosition="0" unitName="jetbrains.mps.baseLanguage.pluginSolution.plugin.IntroduceVariableDialog" />
+  <unitInfo fileName="IntroduceVariableDialog.java" startLine="56" startPosition="38" endLine="60" endPosition="5" unitName="jetbrains.mps.baseLanguage.pluginSolution.plugin.IntroduceVariableDialog$1" />
+  <unitInfo fileName="IntroduceVariableDialog.java" startLine="65" startPosition="33" endLine="71" endPosition="5" unitName="jetbrains.mps.baseLanguage.pluginSolution.plugin.IntroduceVariableDialog$2" />
+  <unitInfo fileName="IntroduceVariableDialog.java" startLine="90" startPosition="45" endLine="95" endPosition="5" unitName="jetbrains.mps.baseLanguage.pluginSolution.plugin.IntroduceVariableDialog$3" />
+  <unitInfo fileName="IntroduceVariableDialog.java" startLine="131" startPosition="55" endLine="136" endPosition="5" unitName="jetbrains.mps.baseLanguage.pluginSolution.plugin.IntroduceVariableDialog$4" />
+  <unitInfo fileName="IntroduceVariable_Action.java" startLine="24" startPosition="0" endLine="102" endPosition="0" unitName="jetbrains.mps.baseLanguage.pluginSolution.plugin.IntroduceVariable_Action" />
+  <unitInfo fileName="IntroduceVariable_Action.java" startLine="84" startPosition="47" endLine="88" endPosition="7" unitName="jetbrains.mps.baseLanguage.pluginSolution.plugin.IntroduceVariable_Action$1" />
+  <unitInfo fileName="LocalVariableIntroducer.java" startLine="26" startPosition="0" endLine="85" endPosition="0" unitName="jetbrains.mps.baseLanguage.pluginSolution.plugin.LocalVariableIntroducer" />
+  <unitInfo fileName="LocalVariableIntroducer.java" startLine="39" startPosition="30" endLine="44" endPosition="7" unitName="jetbrains.mps.baseLanguage.pluginSolution.plugin.LocalVariableIntroducer$1" />
+  <unitInfo fileName="LocalVariableIntroducer.java" startLine="45" startPosition="35" endLine="50" endPosition="7" unitName="jetbrains.mps.baseLanguage.pluginSolution.plugin.LocalVariableIntroducer$2" />
+  <unitInfo fileName="LocalVariableIntroducer.java" startLine="62" startPosition="55" endLine="67" endPosition="5" unitName="jetbrains.mps.baseLanguage.pluginSolution.plugin.LocalVariableIntroducer$3" />
+  <unitInfo fileName="ParameterTypeCellEditor.java" startLine="15" startPosition="0" endLine="39" endPosition="0" unitName="jetbrains.mps.baseLanguage.pluginSolution.plugin.ParameterTypeCellEditor" />
+  <unitInfo fileName="ParameterTypeCellEditor.java" startLine="30" startPosition="35" endLine="34" endPosition="5" unitName="jetbrains.mps.baseLanguage.pluginSolution.plugin.ParameterTypeCellEditor$1" />
+  <unitInfo fileName="ParametersPanel.java" startLine="31" startPosition="0" endLine="133" endPosition="0" unitName="jetbrains.mps.baseLanguage.pluginSolution.plugin.ParametersPanel" />
+  <unitInfo fileName="ParametersPanel.java" startLine="59" startPosition="69" endLine="65" endPosition="5" unitName="jetbrains.mps.baseLanguage.pluginSolution.plugin.ParametersPanel$1" />
+  <unitInfo fileName="ParametersPanel.java" startLine="69" startPosition="48" endLine="73" endPosition="5" unitName="jetbrains.mps.baseLanguage.pluginSolution.plugin.ParametersPanel$2" />
+  <unitInfo fileName="ParametersPanel.java" startLine="121" startPosition="37" endLine="127" endPosition="5" unitName="jetbrains.mps.baseLanguage.pluginSolution.plugin.ParametersPanel$3" />
+  <unitInfo fileName="ParametersTableModel.java" startLine="10" startPosition="0" endLine="82" endPosition="0" unitName="jetbrains.mps.baseLanguage.pluginSolution.plugin.ParametersTableModel" />
   <unitInfo fileName="PluginSolution_ApplicationPlugin.java" startLine="16" startPosition="0" endLine="67" endPosition="0" unitName="jetbrains.mps.baseLanguage.pluginSolution.plugin.PluginSolution_ApplicationPlugin" />
   <unitInfo fileName="PluginSolution_ProjectPlugin.java" startLine="14" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.baseLanguage.pluginSolution.plugin.PluginSolution_ProjectPlugin" />
+  <unitInfo fileName="ProblemsDialog.java" startLine="17" startPosition="0" endLine="52" endPosition="0" unitName="jetbrains.mps.baseLanguage.pluginSolution.plugin.ProblemsDialog" />
+  <unitInfo fileName="RenameVariable_Action.java" startLine="25" startPosition="0" endLine="100" endPosition="0" unitName="jetbrains.mps.baseLanguage.pluginSolution.plugin.RenameVariable_Action" />
+  <unitInfo fileName="RenameVariable_Action.java" startLine="81" startPosition="47" endLine="86" endPosition="7" unitName="jetbrains.mps.baseLanguage.pluginSolution.plugin.RenameVariable_Action$1" />
+  <unitInfo fileName="RenameVariable_Action.java" startLine="88" startPosition="57" endLine="92" endPosition="7" unitName="jetbrains.mps.baseLanguage.pluginSolution.plugin.RenameVariable_Action$2" />
+  <unitInfo fileName="ShowMembers_Action.java" startLine="25" startPosition="0" endLine="97" endPosition="0" unitName="jetbrains.mps.baseLanguage.pluginSolution.plugin.ShowMembers_Action" />
+  <unitInfo fileName="ShowMembers_Action.java" startLine="80" startPosition="47" endLine="84" endPosition="7" unitName="jetbrains.mps.baseLanguage.pluginSolution.plugin.ShowMembers_Action$1" />
+  <unitInfo fileName="ShowNullDFA_Action.java" startLine="22" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.baseLanguage.pluginSolution.plugin.ShowNullDFA_Action" />
+  <unitInfo fileName="ShowTodoViewer_Action.java" startLine="17" startPosition="0" endLine="59" endPosition="0" unitName="jetbrains.mps.baseLanguage.pluginSolution.plugin.ShowTodoViewer_Action" />
+  <unitInfo fileName="ToDoHighlighter.java" startLine="21" startPosition="0" endLine="57" endPosition="0" unitName="jetbrains.mps.baseLanguage.pluginSolution.plugin.ToDoHighlighter" />
+  <unitInfo fileName="ToDoMessage.java" startLine="13" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.baseLanguage.pluginSolution.plugin.ToDoMessage" />
+  <unitInfo fileName="TodoFinder.java" startLine="16" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.baseLanguage.pluginSolution.plugin.TodoFinder" />
+  <unitInfo fileName="TodoViewer.java" startLine="37" startPosition="0" endLine="136" endPosition="0" unitName="jetbrains.mps.baseLanguage.pluginSolution.plugin.TodoViewer" />
+  <unitInfo fileName="TodoViewer.java" startLine="50" startPosition="25" endLine="56" endPosition="5" unitName="jetbrains.mps.baseLanguage.pluginSolution.plugin.TodoViewer$1" />
+  <unitInfo fileName="TodoViewer.java" startLine="78" startPosition="23" endLine="82" endPosition="5" unitName="jetbrains.mps.baseLanguage.pluginSolution.plugin.TodoViewer$2" />
+  <unitInfo fileName="TodoViewer.java" startLine="86" startPosition="42" endLine="92" endPosition="5" unitName="jetbrains.mps.baseLanguage.pluginSolution.plugin.TodoViewer$3" />
+  <unitInfo fileName="TodoViewer.java" startLine="95" startPosition="0" endLine="135" endPosition="0" unitName="jetbrains.mps.baseLanguage.pluginSolution.plugin.TodoViewer$MyNodeRepresentator" />
+  <unitInfo fileName="TodoViewer_Tool.java" startLine="14" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.baseLanguage.pluginSolution.plugin.TodoViewer_Tool" />
+  <unitInfo fileName="UncommentStatements_Action.java" startLine="21" startPosition="0" endLine="86" endPosition="0" unitName="jetbrains.mps.baseLanguage.pluginSolution.plugin.UncommentStatements_Action" />
+  <unitInfo fileName="VisibilityPanel.java" startLine="22" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.baseLanguage.pluginSolution.plugin.VisibilityPanel" />
+  <unitInfo fileName="VisibilityPanel.java" startLine="70" startPosition="47" endLine="74" endPosition="5" unitName="jetbrains.mps.baseLanguage.pluginSolution.plugin.VisibilityPanel$1" />
   <root nodeId="4936888184331830663">
     <nodeInfo nodeId="4936888184331830805" fileName="VisibilityPanel.java" startLine="22" startPosition="45" endLine="23" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myResult" />
     <nodeInfo nodeId="4936888184331830809" fileName="VisibilityPanel.java" startLine="23" startPosition="61" endLine="24" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myChangeListeners" />
@@ -2767,7 +2840,7 @@
     <nodeInfo nodeId="2729784546174561159" fileName="ExtractMethodDialog.java" startLine="358" startPosition="96" endLine="359" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2729784546174874532" fileName="ExtractMethodDialog.java" startLine="363" startPosition="5" endLine="364" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="2729784546174874486" fileName="ExtractMethodDialog.java" startLine="364" startPosition="78" endLine="365" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2729784546174561187" fileName="ExtractMethodDialog.java" startLine="366" startPosition="33" endLine="367" endPosition="129" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2729784546174561187" fileName="ExtractMethodDialog.java" startLine="366" startPosition="33" endLine="367" endPosition="135" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4936888184331825007" fileName="ExtractMethodDialog.java" startLine="368" startPosition="5" endLine="369" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8794595397331724989" fileName="ExtractMethodDialog.java" startLine="372" startPosition="78" endLine="373" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myMethod" />
     <nodeInfo nodeId="8794595397331724997" fileName="ExtractMethodDialog.java" startLine="375" startPosition="77" endLine="376" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
@@ -2890,7 +2963,7 @@
     <scopeInfo nodeId="2729784546174578372" fileName="ExtractMethodDialog.java" startLine="344" startPosition="37" endLine="345" endPosition="34" />
     <scopeInfo nodeId="2729784546174561099" fileName="ExtractMethodDialog.java" startLine="347" startPosition="37" endLine="348" endPosition="31" />
     <scopeInfo nodeId="2729784546174578431" fileName="ExtractMethodDialog.java" startLine="349" startPosition="16" endLine="350" endPosition="23" />
-    <scopeInfo nodeId="2729784546174561186" fileName="ExtractMethodDialog.java" startLine="366" startPosition="33" endLine="367" endPosition="129" />
+    <scopeInfo nodeId="2729784546174561186" fileName="ExtractMethodDialog.java" startLine="366" startPosition="33" endLine="367" endPosition="135" />
     <scopeInfo nodeId="8794595397331725015" fileName="ExtractMethodDialog.java" startLine="380" startPosition="51" endLine="381" endPosition="72" />
     <scopeInfo nodeId="8794595397331725108" fileName="ExtractMethodDialog.java" startLine="405" startPosition="69" endLine="406" endPosition="104" />
     <scopeInfo nodeId="8794595397331725171" fileName="ExtractMethodDialog.java" startLine="420" startPosition="145" endLine="421" endPosition="124" />
@@ -3872,18 +3945,18 @@
   <root nodeId="8794595397332155133">
     <nodeInfo nodeId="8794595397332155269" fileName="DuplicatesProcessor.java" startLine="11" startPosition="46" endLine="12" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myEditorContext" />
     <nodeInfo nodeId="8794595397332155277" fileName="DuplicatesProcessor.java" startLine="14" startPosition="53" endLine="15" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8794595397332155138" fileName="DuplicatesProcessor.java" startLine="18" startPosition="43" endLine="19" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8794595397332155138" fileName="DuplicatesProcessor.java" startLine="18" startPosition="60" endLine="19" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8794595397332155150" fileName="DuplicatesProcessor.java" startLine="21" startPosition="26" endLine="22" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8794595397332155158" fileName="DuplicatesProcessor.java" startLine="22" startPosition="76" endLine="23" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8794595397332155169" fileName="DuplicatesProcessor.java" startLine="23" startPosition="91" endLine="24" endPosition="147" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8794595397332155183" fileName="DuplicatesProcessor.java" startLine="24" startPosition="147" endLine="25" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8794595397332155187" fileName="DuplicatesProcessor.java" startLine="25" startPosition="28" endLine="26" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8794595397332155169" fileName="DuplicatesProcessor.java" startLine="23" startPosition="91" endLine="24" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8794595397332155183" fileName="DuplicatesProcessor.java" startLine="24" startPosition="72" endLine="25" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8794595397332155187" fileName="DuplicatesProcessor.java" startLine="25" startPosition="22" endLine="26" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8794595397332155197" fileName="DuplicatesProcessor.java" startLine="27" startPosition="71" endLine="28" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8794595397332155208" fileName="DuplicatesProcessor.java" startLine="29" startPosition="9" endLine="30" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8794595397332155218" fileName="DuplicatesProcessor.java" startLine="31" startPosition="69" endLine="32" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8794595397332155228" fileName="DuplicatesProcessor.java" startLine="33" startPosition="80" endLine="34" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8794595397332155218" fileName="DuplicatesProcessor.java" startLine="31" startPosition="66" endLine="32" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8794595397332155228" fileName="DuplicatesProcessor.java" startLine="33" startPosition="69" endLine="34" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8794595397332155233" fileName="DuplicatesProcessor.java" startLine="34" startPosition="37" endLine="35" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8794595397332155242" fileName="DuplicatesProcessor.java" startLine="36" startPosition="76" endLine="37" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+    <nodeInfo nodeId="8794595397332155242" fileName="DuplicatesProcessor.java" startLine="36" startPosition="72" endLine="37" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
     <nodeInfo nodeId="8794595397332155248" fileName="DuplicatesProcessor.java" startLine="39" startPosition="14" endLine="40" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8794595397332155246" fileName="DuplicatesProcessor.java" startLine="39" startPosition="12" endLine="41" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="8794595397332155256" fileName="DuplicatesProcessor.java" startLine="44" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorMessages#(null)Ljava/util/List;" />
@@ -3893,13 +3966,13 @@
     <nodeInfo nodeId="8794595397332155216" fileName="DuplicatesProcessor.java" startLine="30" startPosition="105" endLine="38" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="8794595397332155146" fileName="DuplicatesProcessor.java" startLine="20" startPosition="59" endLine="41" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="8794595397332155142" fileName="DuplicatesProcessor.java" startLine="19" startPosition="31" endLine="42" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="8794595397332155134" fileName="DuplicatesProcessor.java" startLine="17" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="process#(Ljava/util/List;)V" />
+    <nodeInfo nodeId="8794595397332155134" fileName="DuplicatesProcessor.java" startLine="17" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="process#(Ljava/util/List;Lcom/intellij/openapi/project/Project;)V" />
     <scopeInfo nodeId="8794595397332155276" fileName="DuplicatesProcessor.java" startLine="14" startPosition="53" endLine="15" endPosition="35" />
     <scopeInfo nodeId="8794595397332155196" fileName="DuplicatesProcessor.java" startLine="27" startPosition="71" endLine="28" endPosition="94" />
-    <scopeInfo nodeId="8794595397332155217" fileName="DuplicatesProcessor.java" startLine="31" startPosition="69" endLine="32" endPosition="37" />
-    <scopeInfo nodeId="8794595397332155241" fileName="DuplicatesProcessor.java" startLine="36" startPosition="76" endLine="37" endPosition="16" />
+    <scopeInfo nodeId="8794595397332155217" fileName="DuplicatesProcessor.java" startLine="31" startPosition="66" endLine="32" endPosition="37" />
+    <scopeInfo nodeId="8794595397332155241" fileName="DuplicatesProcessor.java" startLine="36" startPosition="72" endLine="37" endPosition="16" />
     <scopeInfo nodeId="8794595397332155247" fileName="DuplicatesProcessor.java" startLine="39" startPosition="14" endLine="40" endPosition="35" />
-    <scopeInfo nodeId="8794595397332155227" fileName="DuplicatesProcessor.java" startLine="33" startPosition="80" endLine="35" endPosition="28" />
+    <scopeInfo nodeId="8794595397332155227" fileName="DuplicatesProcessor.java" startLine="33" startPosition="69" endLine="35" endPosition="28" />
     <scopeInfo nodeId="8794595397332155256" fileName="DuplicatesProcessor.java" startLine="44" startPosition="0" endLine="46" endPosition="0">
       <varInfo nodeId="8794595397332155261" varName="duplicate" />
     </scopeInfo>
@@ -3921,11 +3994,12 @@
     <scopeInfo nodeId="8794595397332155142" fileName="DuplicatesProcessor.java" startLine="19" startPosition="31" endLine="42" endPosition="5">
       <varInfo nodeId="8794595397332155142" varName="duplicate" />
     </scopeInfo>
-    <scopeInfo nodeId="8794595397332155137" fileName="DuplicatesProcessor.java" startLine="18" startPosition="43" endLine="42" endPosition="5">
+    <scopeInfo nodeId="8794595397332155137" fileName="DuplicatesProcessor.java" startLine="18" startPosition="60" endLine="42" endPosition="5">
       <varInfo nodeId="8794595397332155139" varName="replaceAll" />
     </scopeInfo>
     <scopeInfo nodeId="8794595397332155134" fileName="DuplicatesProcessor.java" startLine="17" startPosition="0" endLine="44" endPosition="0">
       <varInfo nodeId="8794595397332155253" varName="duplicates" />
+      <varInfo nodeId="595947643761824112" varName="project" />
     </scopeInfo>
     <unitInfo nodeId="8794595397332155133" fileName="DuplicatesProcessor.java" startLine="11" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.baseLanguage.pluginSolution.plugin.DuplicatesProcessor" />
   </root>
@@ -3953,7 +4027,6 @@
       <varInfo nodeId="8794595397332155309" varName="duplicate" />
     </scopeInfo>
     <unitInfo nodeId="8794595397332155300" fileName="MethodDuplicatesProcessor.java" startLine="17" startPosition="43" endLine="16" endPosition="0" />
-    <unitInfo nodeId="8794595397332155286" fileName="MethodDuplicatesProcessor.java" startLine="16" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.baseLanguage.pluginSolution.plugin.MethodDuplicatesProcessor" />
   </root>
   <root nodeId="8794595397332155338">
     <nodeInfo nodeId="8794595397332155347" fileName="VariableDuplicatesProcessor.java" startLine="15" startPosition="86" endLine="16" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myOwner" />
@@ -3973,54 +4046,66 @@
     <unitInfo nodeId="8794595397332155338" fileName="VariableDuplicatesProcessor.java" startLine="15" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.baseLanguage.pluginSolution.plugin.VariableDuplicatesProcessor" />
   </root>
   <root nodeId="8794595397332155375">
-    <nodeInfo nodeId="8794595397332155386" fileName="AskDialog.java" startLine="12" startPosition="43" endLine="13" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myPanel" />
-    <nodeInfo nodeId="8794595397332155389" fileName="AskDialog.java" startLine="13" startPosition="25" endLine="14" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myResult" />
-    <nodeInfo nodeId="8794595397332155398" fileName="AskDialog.java" startLine="16" startPosition="46" endLine="17" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="8794595397332155401" fileName="AskDialog.java" startLine="17" startPosition="23" endLine="18" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8794595397332155408" fileName="AskDialog.java" startLine="18" startPosition="32" endLine="19" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8794595397332155426" fileName="AskDialog.java" startLine="22" startPosition="43" endLine="23" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8794595397332155434" fileName="AskDialog.java" startLine="27" startPosition="23" endLine="28" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8794595397332155440" fileName="AskDialog.java" startLine="28" startPosition="55" endLine="29" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8794595397332155457" fileName="AskDialog.java" startLine="33" startPosition="22" endLine="34" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8794595397332155463" fileName="AskDialog.java" startLine="34" startPosition="51" endLine="35" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8794595397332155480" fileName="AskDialog.java" startLine="39" startPosition="23" endLine="40" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8794595397332155486" fileName="AskDialog.java" startLine="40" startPosition="59" endLine="41" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8794595397332155503" fileName="AskDialog.java" startLine="45" startPosition="26" endLine="46" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8794595397332155509" fileName="AskDialog.java" startLine="46" startPosition="55" endLine="47" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8794595397332155526" fileName="AskDialog.java" startLine="51" startPosition="82" endLine="52" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8794595397332155538" fileName="AskDialog.java" startLine="55" startPosition="46" endLine="56" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8794595397332155382" fileName="AskDialog.java" startLine="64" startPosition="0" endLine="66" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="DialogResults#()V" />
-    <nodeInfo nodeId="8794595397332155422" fileName="AskDialog.java" startLine="21" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getMainComponent#()Ljavax/swing/JComponent;" />
-    <nodeInfo nodeId="8794595397332155534" fileName="AskDialog.java" startLine="54" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getResult#()Ljetbrains/mps/baseLanguage/pluginSolution/plugin/AskDialog/DialogResults;" />
-    <nodeInfo nodeId="8794595397332155394" fileName="AskDialog.java" startLine="15" startPosition="0" endLine="20" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="AskDialog#(Ljava/awt/Frame;Ljava/lang/String;)V" />
-    <nodeInfo nodeId="8794595397332155522" fileName="AskDialog.java" startLine="49" startPosition="0" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDefaultDimensionSettings#()Ljetbrains/mps/ide/dialogs/DialogDimensionsSettings/DialogDimensions;" />
-    <nodeInfo nodeId="8794595397332155430" fileName="AskDialog.java" startLine="25" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="onYes#()V" />
-    <nodeInfo nodeId="8794595397332155453" fileName="AskDialog.java" startLine="31" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="onNo#()V" />
-    <nodeInfo nodeId="8794595397332155476" fileName="AskDialog.java" startLine="37" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="onAll#()V" />
-    <nodeInfo nodeId="8794595397332155499" fileName="AskDialog.java" startLine="43" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="onCancel#()V" />
-    <scopeInfo nodeId="8794595397332155385" fileName="AskDialog.java" startLine="65" startPosition="21" endLine="65" endPosition="21" />
-    <scopeInfo nodeId="8794595397332155425" fileName="AskDialog.java" startLine="22" startPosition="43" endLine="23" endPosition="24" />
-    <scopeInfo nodeId="8794595397332155525" fileName="AskDialog.java" startLine="51" startPosition="82" endLine="52" endPosition="77" />
-    <scopeInfo nodeId="8794595397332155537" fileName="AskDialog.java" startLine="55" startPosition="46" endLine="56" endPosition="25" />
-    <scopeInfo nodeId="8794595397332155433" fileName="AskDialog.java" startLine="27" startPosition="23" endLine="29" endPosition="19" />
-    <scopeInfo nodeId="8794595397332155456" fileName="AskDialog.java" startLine="33" startPosition="22" endLine="35" endPosition="19" />
-    <scopeInfo nodeId="8794595397332155479" fileName="AskDialog.java" startLine="39" startPosition="23" endLine="41" endPosition="19" />
-    <scopeInfo nodeId="8794595397332155502" fileName="AskDialog.java" startLine="45" startPosition="26" endLine="47" endPosition="19" />
-    <scopeInfo nodeId="8794595397332155382" fileName="AskDialog.java" startLine="64" startPosition="0" endLine="66" endPosition="5" />
-    <scopeInfo nodeId="8794595397332155397" fileName="AskDialog.java" startLine="16" startPosition="46" endLine="19" endPosition="59" />
-    <scopeInfo nodeId="8794595397332155422" fileName="AskDialog.java" startLine="21" startPosition="0" endLine="25" endPosition="0" />
-    <scopeInfo nodeId="8794595397332155534" fileName="AskDialog.java" startLine="54" startPosition="0" endLine="58" endPosition="0" />
-    <scopeInfo nodeId="8794595397332155394" fileName="AskDialog.java" startLine="15" startPosition="0" endLine="20" endPosition="3">
-      <varInfo nodeId="8794595397332155417" varName="frame" />
+    <nodeInfo nodeId="8794595397332155389" fileName="AskDialog.java" startLine="14" startPosition="46" endLine="15" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myResult" />
+    <nodeInfo nodeId="8794595397332155398" fileName="AskDialog.java" startLine="17" startPosition="50" endLine="18" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="8596795858658568276" fileName="AskDialog.java" startLine="18" startPosition="25" endLine="19" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="595947643761809679" fileName="AskDialog.java" startLine="19" startPosition="24" endLine="20" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8794595397332155538" fileName="AskDialog.java" startLine="23" startPosition="46" endLine="24" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="595947643761809729" fileName="AskDialog.java" startLine="28" startPosition="44" endLine="29" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8794595397332155408" fileName="AskDialog.java" startLine="29" startPosition="32" endLine="30" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="595947643761809712" fileName="AskDialog.java" startLine="30" startPosition="52" endLine="31" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="595947643761809806" fileName="AskDialog.java" startLine="35" startPosition="38" endLine="36" endPosition="234" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="595947643761810831" fileName="AskDialog.java" startLine="40" startPosition="32" endLine="41" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="595947643761810824" fileName="AskDialog.java" startLine="41" startPosition="46" endLine="42" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="595947643761810627" fileName="AskDialog.java" startLine="45" startPosition="74" endLine="46" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myValue" />
+    <nodeInfo nodeId="595947643761810942" fileName="AskDialog.java" startLine="48" startPosition="78" endLine="49" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ThisConstructorInvocation" />
+    <nodeInfo nodeId="595947643761810945" fileName="AskDialog.java" startLine="49" startPosition="18" endLine="50" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="595947643761810620" fileName="AskDialog.java" startLine="53" startPosition="59" endLine="54" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="595947643761810779" fileName="AskDialog.java" startLine="54" startPosition="26" endLine="55" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="595947643761810637" fileName="AskDialog.java" startLine="58" startPosition="48" endLine="59" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="595947643761810664" fileName="AskDialog.java" startLine="59" startPosition="25" endLine="60" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8794595397332155382" fileName="AskDialog.java" startLine="69" startPosition="0" endLine="71" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="DialogResults#()V" />
+    <nodeInfo nodeId="8794595397332155534" fileName="AskDialog.java" startLine="22" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getResult#()Ljetbrains/mps/baseLanguage/pluginSolution/plugin/AskDialog/DialogResults;" />
+    <nodeInfo nodeId="595947643761810903" fileName="AskDialog.java" startLine="47" startPosition="0" endLine="51" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="AskDialogAction#(Ljetbrains/mps/baseLanguage/pluginSolution/plugin/AskDialog/DialogResults;Z)V" />
+    <nodeInfo nodeId="595947643761810578" fileName="AskDialog.java" startLine="52" startPosition="0" endLine="56" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="AskDialogAction#(Ljetbrains/mps/baseLanguage/pluginSolution/plugin/AskDialog/DialogResults;)V" />
+    <nodeInfo nodeId="8794595397332155394" fileName="AskDialog.java" startLine="16" startPosition="0" endLine="21" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="AskDialog#(Lcom/intellij/openapi/project/Project;Ljava/lang/String;)V" />
+    <nodeInfo nodeId="595947643761809800" fileName="AskDialog.java" startLine="33" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createActions#()[Ljavax/swing/Action;" />
+    <nodeInfo nodeId="595947643761810631" fileName="AskDialog.java" startLine="57" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doAction#(Ljava/awt/event/ActionEvent;)V" />
+    <nodeInfo nodeId="595947643761810819" fileName="AskDialog.java" startLine="38" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doCancelAction#()V" />
+    <nodeInfo nodeId="595947643761809685" fileName="AskDialog.java" startLine="26" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCenterPanel#()Ljavax/swing/JComponent;" />
+    <scopeInfo nodeId="8794595397332155385" fileName="AskDialog.java" startLine="70" startPosition="21" endLine="70" endPosition="21" />
+    <scopeInfo nodeId="8794595397332155537" fileName="AskDialog.java" startLine="23" startPosition="46" endLine="24" endPosition="25" />
+    <scopeInfo nodeId="595947643761809804" fileName="AskDialog.java" startLine="35" startPosition="38" endLine="36" endPosition="234" />
+    <scopeInfo nodeId="595947643761810822" fileName="AskDialog.java" startLine="40" startPosition="32" endLine="42" endPosition="27" />
+    <scopeInfo nodeId="595947643761810906" fileName="AskDialog.java" startLine="48" startPosition="78" endLine="50" endPosition="59" />
+    <scopeInfo nodeId="595947643761810581" fileName="AskDialog.java" startLine="53" startPosition="59" endLine="55" endPosition="22" />
+    <scopeInfo nodeId="595947643761810636" fileName="AskDialog.java" startLine="58" startPosition="48" endLine="60" endPosition="40" />
+    <scopeInfo nodeId="8794595397332155382" fileName="AskDialog.java" startLine="69" startPosition="0" endLine="71" endPosition="5" />
+    <scopeInfo nodeId="8794595397332155397" fileName="AskDialog.java" startLine="17" startPosition="50" endLine="20" endPosition="11" />
+    <scopeInfo nodeId="595947643761809689" fileName="AskDialog.java" startLine="28" startPosition="44" endLine="31" endPosition="17">
+      <varInfo nodeId="595947643761809730" varName="panel" />
+    </scopeInfo>
+    <scopeInfo nodeId="8794595397332155534" fileName="AskDialog.java" startLine="22" startPosition="0" endLine="26" endPosition="0" />
+    <scopeInfo nodeId="595947643761810903" fileName="AskDialog.java" startLine="47" startPosition="0" endLine="51" endPosition="5">
+      <varInfo nodeId="595947643761810912" varName="isDefault" />
+      <varInfo nodeId="595947643761810907" varName="value" />
+    </scopeInfo>
+    <scopeInfo nodeId="595947643761810578" fileName="AskDialog.java" startLine="52" startPosition="0" endLine="56" endPosition="5">
+      <varInfo nodeId="595947643761810624" varName="value" />
+    </scopeInfo>
+    <scopeInfo nodeId="8794595397332155394" fileName="AskDialog.java" startLine="16" startPosition="0" endLine="21" endPosition="3">
+      <varInfo nodeId="8794595397332155417" varName="project" />
       <varInfo nodeId="8794595397332155419" varName="text" />
     </scopeInfo>
-    <scopeInfo nodeId="8794595397332155522" fileName="AskDialog.java" startLine="49" startPosition="0" endLine="54" endPosition="0" />
-    <scopeInfo nodeId="8794595397332155430" fileName="AskDialog.java" startLine="25" startPosition="0" endLine="31" endPosition="0" />
-    <scopeInfo nodeId="8794595397332155453" fileName="AskDialog.java" startLine="31" startPosition="0" endLine="37" endPosition="0" />
-    <scopeInfo nodeId="8794595397332155476" fileName="AskDialog.java" startLine="37" startPosition="0" endLine="43" endPosition="0" />
-    <scopeInfo nodeId="8794595397332155499" fileName="AskDialog.java" startLine="43" startPosition="0" endLine="49" endPosition="0" />
-    <unitInfo nodeId="8794595397332155375" fileName="AskDialog.java" startLine="12" startPosition="0" endLine="69" endPosition="0" unitName="jetbrains.mps.baseLanguage.pluginSolution.plugin.AskDialog" />
-    <unitInfo nodeId="8794595397332155376" fileName="AskDialog.java" startLine="59" startPosition="0" endLine="68" endPosition="0" unitName="jetbrains.mps.baseLanguage.pluginSolution.plugin.AskDialog$DialogResults" />
+    <scopeInfo nodeId="595947643761809800" fileName="AskDialog.java" startLine="33" startPosition="0" endLine="38" endPosition="0" />
+    <scopeInfo nodeId="595947643761810631" fileName="AskDialog.java" startLine="57" startPosition="0" endLine="62" endPosition="0">
+      <varInfo nodeId="595947643761810634" varName="event" />
+    </scopeInfo>
+    <scopeInfo nodeId="595947643761810819" fileName="AskDialog.java" startLine="38" startPosition="0" endLine="44" endPosition="0" />
+    <scopeInfo nodeId="595947643761809685" fileName="AskDialog.java" startLine="26" startPosition="0" endLine="33" endPosition="0" />
+    <unitInfo nodeId="8794595397332155375" fileName="AskDialog.java" startLine="14" startPosition="0" endLine="74" endPosition="0" unitName="jetbrains.mps.baseLanguage.pluginSolution.plugin.AskDialog" />
+    <unitInfo nodeId="595947643761810576" fileName="AskDialog.java" startLine="45" startPosition="0" endLine="63" endPosition="0" unitName="jetbrains.mps.baseLanguage.pluginSolution.plugin.AskDialog$AskDialogAction" />
+    <unitInfo nodeId="8794595397332155376" fileName="AskDialog.java" startLine="64" startPosition="0" endLine="73" endPosition="0" unitName="jetbrains.mps.baseLanguage.pluginSolution.plugin.AskDialog$DialogResults" />
   </root>
 </debugInfo>
 

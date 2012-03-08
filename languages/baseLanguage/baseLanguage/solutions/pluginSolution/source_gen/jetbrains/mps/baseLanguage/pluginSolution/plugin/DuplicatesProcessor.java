@@ -4,9 +4,9 @@ package jetbrains.mps.baseLanguage.pluginSolution.plugin;
 
 import jetbrains.mps.nodeEditor.EditorContext;
 import java.util.List;
+import com.intellij.openapi.project.Project;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.nodeEditor.EditorMessage;
-import jetbrains.mps.ide.project.ProjectHelper;
 
 public abstract class DuplicatesProcessor<T> {
   protected EditorContext myEditorContext;
@@ -15,25 +15,25 @@ public abstract class DuplicatesProcessor<T> {
     this.myEditorContext = context;
   }
 
-  public void process(List<T> duplicates) {
+  public void process(List<T> duplicates, Project project) {
     boolean replaceAll = false;
     for (T duplicate : ListSequence.fromList(duplicates)) {
       if (!(replaceAll)) {
         List<EditorMessage> messages = this.createEditorMessages(duplicate);
         this.myEditorContext.getNodeEditorComponent().getHighlightManager().mark(messages);
-        AskDialog dialog = new AskDialog(ProjectHelper.toMainFrame(this.myEditorContext.getOperationContext().getProject()), "Process Duplicates");
-        dialog.showDialog();
+        AskDialog dialog = new AskDialog(project, "Process Duplicates");
+        dialog.show();
         AskDialog.DialogResults shouldSubstitute = dialog.getResult();
         for (EditorMessage message : ListSequence.fromList(messages)) {
           this.myEditorContext.getNodeEditorComponent().getHighlightManager().unmark(message);
         }
         myEditorContext.getNodeEditorComponent().getHighlightManager().repaintAndRebuildEditorMessages();
-        if (shouldSubstitute == AskDialog.DialogResults.SUBSTITUTE) {
+        if (shouldSubstitute == AskDialog.DialogResults.Replace) {
           this.substitute(duplicate);
-        } else if (shouldSubstitute == AskDialog.DialogResults.SUBSTITUTE_ALL) {
+        } else if (shouldSubstitute == AskDialog.DialogResults.All) {
           this.substitute(duplicate);
           replaceAll = true;
-        } else if (shouldSubstitute == AskDialog.DialogResults.CANCEL_ALL) {
+        } else if (shouldSubstitute == AskDialog.DialogResults.Cancel) {
           break;
         }
       } else {

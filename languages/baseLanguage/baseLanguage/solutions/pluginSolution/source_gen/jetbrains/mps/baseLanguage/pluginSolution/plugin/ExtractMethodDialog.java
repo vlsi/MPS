@@ -364,7 +364,7 @@ public class ExtractMethodDialog extends RefactoringDialog {
     //  manually closing dialog + returning false from thsi method in the end 
     close(DialogWrapper.OK_EXIT_CODE);
     if ((result.value != null)) {
-      new ExtractMethodDialog.MyMethodDuplicatesProcessor(this.myContext, result.value).process(this.myRefactoring.getMatches());
+      new ExtractMethodDialog.MyMethodDuplicatesProcessor(myContext, result.value).process(this.myRefactoring.getMatches(), myProject);
     }
     return false;
   }
