@@ -69,6 +69,9 @@
     <node role="parts" roleId="8xvf.7306485738221391508" type="8xvf.BwfTask" typeId="8xvf.2769948622284546675" id="4701820937132277082">
       <property name="name" nameId="tpck.1169194664001" value="assemble" />
     </node>
+    <node role="parts" roleId="8xvf.7306485738221391508" type="8xvf.BwfTask" typeId="8xvf.2769948622284546675" id="7128123785277844790">
+      <property name="name" nameId="tpck.1169194664001" value="fetchDependencies" />
+    </node>
     <node role="parts" roleId="8xvf.7306485738221391508" type="8xvf.BwfTask" typeId="8xvf.2769948622284546675" id="7306485738221408317">
       <property name="name" nameId="tpck.1169194664001" value="build" />
       <node role="dependencies" roleId="8xvf.2769948622284574302" type="8xvf.BwfTaskDependency" typeId="8xvf.2769948622284574294" id="4701820937132277093">

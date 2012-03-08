@@ -14,7 +14,7 @@ public class BuildVarRefStringPart_Behavior {
   public static String virtual_getText_4380385936562037054(SNode thisNode) {
     String macroName = SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "macro", false), "name");
     if (SNodeOperations.getAncestor(SLinkOperations.getTarget(thisNode, "macro", false), "jetbrains.mps.buildScript.structure.BuildProject", false, false) != SNodeOperations.getAncestor(thisNode, "jetbrains.mps.buildScript.structure.BuildProject", false, false)) {
-      macroName = SPropertyOperations.getString(SNodeOperations.getAncestor(SLinkOperations.getTarget(thisNode, "macro", false), "jetbrains.mps.buildScript.structure.BuildProject", false, false), "name") + ".var." + macroName;
+      macroName = "varsof." + SPropertyOperations.getString(SNodeOperations.getAncestor(SLinkOperations.getTarget(thisNode, "macro", false), "jetbrains.mps.buildScript.structure.BuildProject", false, false), "name") + "." + macroName;
     }
     return "${" + macroName + "}";
   }

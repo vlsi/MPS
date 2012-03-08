@@ -31,17 +31,16 @@ public class VisibleArtifacts {
       }
 
       SNode target = SLinkOperations.getTarget(projectDependency, "script", false);
-      collectInScript(dep, target);
+      collectInScript(projectDependency, target);
     }
   }
 
   private void collectInScript(SNode parent, SNode target) {
     target = SNodeOperations.as(toOriginalNode(target), "jetbrains.mps.buildScript.structure.BuildProject");
-    if (target == null || parentMap.containsKey(target)) {
+    if (target == null) {
       return;
     }
 
-    parentMap.put(target, parent);
     for (SNode node : SLinkOperations.getTargets(SLinkOperations.getTarget(target, "layout", true), "children", true)) {
       collectInLayout(parent, node);
     }
@@ -84,11 +83,19 @@ public class VisibleArtifacts {
     return node;
   }
 
+  public SNode getProject() {
+    return project;
+  }
+
   public Iterable<SNode> getArtifacts() {
     return ListSequence.fromList(visibleArtifacts).asUnmodifiable();
   }
 
   public boolean contains(SNode node) {
     return parentMap.containsKey(node);
+  }
+
+  public SNode parent(SNode node) {
+    return parentMap.get(node);
   }
 }

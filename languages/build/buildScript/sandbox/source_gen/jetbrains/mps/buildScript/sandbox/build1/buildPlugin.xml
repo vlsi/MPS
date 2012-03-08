@@ -18,6 +18,10 @@
     </jar>
   </target>
   
+  <target name="fetchDependencies">
+    <mkdir dir="${build.tmp}/deps/buildCore/release.zip" />
+  </target>
+  
   <target name="build" depends="assemble" />
   
   <target name="clean">

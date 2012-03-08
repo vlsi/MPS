@@ -5,7 +5,6 @@ package jetbrains.mps.buildScript.util;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
-import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.generator.template.TemplateQueryContext;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.SNode;
@@ -14,12 +13,12 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.SModel;
+import java.util.concurrent.ConcurrentMap;
 import jetbrains.mps.buildScript.behavior.BuildProject_Behavior;
 import jetbrains.mps.smodel.SModelDescriptor;
 
 public class Context {
   private Map<String, Object> myProperties = MapSequence.fromMap(new HashMap<String, Object>());
-  private Map<String, Map<SNodeId, Integer>> myNamesIndex = MapSequence.fromMap(new HashMap<String, Map<SNodeId, Integer>>());
   private TemplateQueryContext myGenerationContext;
 
   public Context() {
@@ -57,21 +56,21 @@ public class Context {
     return model.getModelDescriptor().getModule();
   }
 
-  public String getUniqueName(SNode node, String name) {
-    Map<SNodeId, Integer> map = MapSequence.fromMap(myNamesIndex).get(name);
-    if (map == null) {
-      map = MapSequence.fromMap(new HashMap<SNodeId, Integer>());
-      MapSequence.fromMap(myNamesIndex).put(name, map);
+  public String getTempPath(SNode node, String name, String... categories) {
+    assert myGenerationContext != null;
+
+    SNode project = getBuildProject(node);
+    ConcurrentMap<SNode, String> sessionMap = GenerationUtil.<SNode,String>getSessionMap(project, myGenerationContext, "Context_tempPath");
+    String result = sessionMap.get(node);
+    if (result != null) {
+      return result;
     }
-    Integer integer = MapSequence.fromMap(map).get(node.getSNodeId());
-    if (integer == null) {
-      integer = MapSequence.fromMap(map).count();
-      MapSequence.fromMap(map).put(node.getSNodeId(), integer);
+
+    result = new PathProvider(myGenerationContext, project).createTempPath(name, categories);
+    if (sessionMap.putIfAbsent(node, result) != null) {
+      result = sessionMap.get(node);
     }
-    return name + (((integer == 0) ?
-      "" :
-      "_" + integer
-    ));
+    return result;
   }
 
   public String getBasePath_Local(SNode node) {

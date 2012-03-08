@@ -11,13 +11,6 @@ import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
-import jetbrains.mps.nodeEditor.cells.ModelAccessor;
-import jetbrains.mps.buildScript.behavior.BuildLayout_NamedContainer_Behavior;
-import jetbrains.mps.buildScript.util.Context;
-import jetbrains.mps.util.EqualUtil;
-import jetbrains.mps.nodeEditor.CellActionType;
-import jetbrains.mps.nodeEditor.cellActions.CellAction_Empty;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.nodeEditor.FocusPolicy;
@@ -52,8 +45,6 @@ public class BuildLayout_NamedContainer_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Collection_yrra5q_a_0");
     editorCell.addEditorCell(this.createConstant_yrra5q_a0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_yrra5q_b0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_yrra5q_c0(editorContext, node));
-    editorCell.addEditorCell(this.createReadOnlyModelAccessor_yrra5q_d0(editorContext, node));
     return editorCell;
   }
 
@@ -71,31 +62,6 @@ public class BuildLayout_NamedContainer_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "name");
     editorCell.setCellId("Constant_yrra5q_a0");
     editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-  private EditorCell createConstant_yrra5q_c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "path");
-    editorCell.setCellId("Constant_yrra5q_c0");
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-  private EditorCell createReadOnlyModelAccessor_yrra5q_d0(final EditorContext editorContext, final SNode node) {
-    EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
-      public String getText() {
-        return BuildLayout_NamedContainer_Behavior.call_getOutputPath_WithMacro_280273048052535414(node, new Context());
-      }
-
-      public void setText(String s) {
-      }
-
-      public boolean isValidText(String s) {
-        return EqualUtil.equals(s, this.getText());
-      }
-    }, node);
-    editorCell.setAction(CellActionType.DELETE, new CellAction_Empty());
-    editorCell.setCellId("ReadOnlyModelAccessor_yrra5q_d0");
     return editorCell;
   }
 

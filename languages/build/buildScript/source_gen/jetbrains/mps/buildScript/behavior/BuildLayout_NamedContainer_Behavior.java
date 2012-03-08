@@ -25,7 +25,7 @@ public class BuildLayout_NamedContainer_Behavior {
   }
 
   public static String virtual_getChildrenOutputDir_WithMacro_4701820937132344011(SNode thisNode, Context context) {
-    return "${build.tmp}/" + context.getUniqueName(thisNode, SPropertyOperations.getString(thisNode, "name"));
+    return context.getTempPath(thisNode, SPropertyOperations.getString(thisNode, "name"));
   }
 
   public static String call_getOutputPath_WithMacro_280273048052535414(SNode thisNode, Context context) {

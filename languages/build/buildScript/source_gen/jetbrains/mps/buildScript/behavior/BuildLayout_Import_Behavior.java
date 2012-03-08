@@ -13,6 +13,10 @@ public class BuildLayout_Import_Behavior {
   }
 
   public static Iterable<SNode> virtual_getDependencyTargets_841011766566205095(SNode thisNode, VisibleArtifacts artifacts) {
+    if (SNodeOperations.getContainingRoot(thisNode) == SNodeOperations.getContainingRoot(SLinkOperations.getTarget(thisNode, "target", false))) {
+      return null;
+    }
+
     SNode target = SNodeOperations.as(artifacts.toOriginalNode(SLinkOperations.getTarget(thisNode, "target", false)), "jetbrains.mps.buildScript.structure.BuildLayout_NamedContainer");
     if (target != null && artifacts.contains(target)) {
       return Sequence.<SNode>singleton(target);

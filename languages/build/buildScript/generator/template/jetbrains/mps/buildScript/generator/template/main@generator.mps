@@ -44,7 +44,7 @@
       <property name="name" nameId="tpck.1169194664001" value="reduce_PluginToImport" />
     </node>
     <node type="tpf8.MappingScript" typeId="tpf8.1195499912406" id="809559803149973642">
-      <property name="name" nameId="tpck.1169194664001" value="putDestdir" />
+      <property name="name" nameId="tpck.1169194664001" value="store_destdir" />
       <property name="scriptKind" nameId="tpf8.1195595592106" value="pre_processing" />
       <property name="modifiesModel" nameId="tpf8.1195595611951" value="true" />
     </node>
@@ -2267,7 +2267,10 @@
       <link role="template" roleId="tpf8.1167514355421" targetNodeId="3595702787188038546" resolveInfo="build" />
     </node>
     <node role="preMappingScript" roleId="tpf8.1195502100749" type="tpf8.MappingScriptReference" typeId="tpf8.1195502151594" id="809559803149975516">
-      <link role="mappingScript" roleId="tpf8.1195502167610" targetNodeId="809559803149973642" resolveInfo="putDestdir" />
+      <link role="mappingScript" roleId="tpf8.1195502167610" targetNodeId="809559803149973642" resolveInfo="store_destdir" />
+    </node>
+    <node role="preMappingScript" roleId="tpf8.1195502100749" type="tpf8.MappingScriptReference" typeId="tpf8.1195502151594" id="2283296853107180336">
+      <link role="mappingScript" roleId="tpf8.1195502167610" targetNodeId="841011766566205059" resolveInfo="prepare_dependencies" />
     </node>
   </root>
   <root id="3595702787188038546">

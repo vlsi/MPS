@@ -5,6 +5,8 @@
   
   <target name="assemble" />
   
+  <target name="fetchDependencies" />
+  
   <target name="build" depends="assemble" />
   
   <target name="clean">

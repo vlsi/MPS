@@ -44,6 +44,8 @@
         buildCore.MPS=${MPS}</echo>
   </target>
   
+  <target name="fetchDependencies" />
+  
   <target name="build" depends="assemble, check" />
   
   <target name="clean">
