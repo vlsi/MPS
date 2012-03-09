@@ -319,7 +319,13 @@
           <node role="children" roleId="3ior.7389400916848037006" type="3ior.BuildLayout_Jar" typeId="3ior.7389400916848050074" id="6547494638219607268">
             <node role="containerName" roleId="3ior.4380385936562148502" type="3ior.BuildStringNotEmpty" typeId="3ior.841011766566059607" id="6547494638219607269">
               <node role="parts" roleId="3ior.4903714810883783243" type="3ior.BuildTextStringPart" typeId="3ior.4903714810883702019" id="6547494638219607271">
-                <property name="text" nameId="3ior.4903714810883755350" value="test1.jar" />
+                <property name="text" nameId="3ior.4903714810883755350" value="test1" />
+              </node>
+              <node role="parts" roleId="3ior.4903714810883783243" type="3ior.BuildVarRefStringPart" typeId="3ior.4903714810883702017" id="6547494638219688108">
+                <link role="macro" roleId="3ior.4903714810883702018" targetNodeId="8237269006869507396" resolveInfo="ver" />
+              </node>
+              <node role="parts" roleId="3ior.4903714810883783243" type="3ior.BuildTextStringPart" typeId="3ior.4903714810883702019" id="6547494638219688107">
+                <property name="text" nameId="3ior.4903714810883755350" value=".jar" />
               </node>
             </node>
             <node role="children" roleId="3ior.7389400916848037006" type="3ior.BuildLayout_JavaOutput" typeId="3ior.5966744135495979931" id="6547494638219607272">

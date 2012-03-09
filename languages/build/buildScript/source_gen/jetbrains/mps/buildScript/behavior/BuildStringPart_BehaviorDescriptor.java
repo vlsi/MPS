@@ -5,6 +5,7 @@ package jetbrains.mps.buildScript.behavior;
 import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 import jetbrains.mps.lang.core.behavior.INamedConcept_BehaviorDescriptor;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.buildScript.util.MacroHelper;
 import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 
 public abstract class BuildStringPart_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements INamedConcept_BehaviorDescriptor {
@@ -19,8 +20,8 @@ public abstract class BuildStringPart_BehaviorDescriptor extends BaseConcept_Beh
     return BuildStringPart_Behavior.virtual_punctuationLeft_5096397858823356723(thisNode);
   }
 
-  public String virtual_getText_4380385936562037054(SNode thisNode) {
-    return BuildStringPart_Behavior.virtual_getText_4380385936562037054(thisNode);
+  public String virtual_getText_4380385936562037054(SNode thisNode, MacroHelper helper) {
+    return BuildStringPart_Behavior.virtual_getText_4380385936562037054(thisNode, helper);
   }
 
   public boolean virtual_isFirstPositionAllowed_624440001685459414(SNode thisNode) {

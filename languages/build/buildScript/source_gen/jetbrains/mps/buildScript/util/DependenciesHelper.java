@@ -12,11 +12,13 @@ public class DependenciesHelper {
   private final Map<SNode, String> locationMap;
   private final Map<SNode, String> contentLocationMap;
   private final Map<Object, SNode> idToArtifactMap;
+  protected final MacroHelper macros;
 
   public DependenciesHelper(@NotNull TemplateQueryContext genContext, SNode project) {
     this.locationMap = GenerationUtil.<SNode,String>getSessionMap(project, genContext, "location");
     this.contentLocationMap = GenerationUtil.<SNode,String>getSessionMap(project, genContext, "contentLocation");
     this.idToArtifactMap = GenerationUtil.<Object,SNode>getSessionMap(project, genContext, "IDToArtifact");
+    this.macros = new MacroHelper.MacroContext(project, genContext).getMacros(project);
   }
 
   public Map<SNode, String> locations() {

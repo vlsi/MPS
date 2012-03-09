@@ -6,6 +6,10 @@
   <property name="artifacts.buildCore" location="${build.dir}/artifacts/buildCore" />
   <property name="artifacts.buildA" location="${ds}/../../buildA" />
   <property name="artifacts.buildB" location="../../solutions/buildB/build/artifacts/buildB" />
+  <property file="${artifacts.buildCore}/variables.properties" prefix="import.buildCore" />
+  <property name="buildCore.build.number" value="import.buildCore.buildCore.build.number" />
+  <property name="buildCore.ver" value="import.buildCore.buildCore.ver" />
+  <property name="buildCore.MPS" value="import.buildCore.buildCore.MPS" />
   
   <target name="assemble" depends="classes">
     <aaa></aaa>
@@ -15,6 +19,9 @@
     <jar destfile="${build.layout}/xx/xx">
       <fileset dir="${build.tmp}/default/xx" />
     </jar>
+    <echo file="${build.layout}/variables.properties">buildCore.build.number=${buildCore.build.number}
+        buildCore.ver=${buildCore.ver}
+        buildCore.MPS=${buildCore.MPS}</echo>
   </target>
   
   <target name="fetchDependencies">
@@ -46,7 +53,7 @@
       <compilerarg value="-Xlint:none" />
       <src></src>
       <classpath>
-        <fileset file="${build.tmp}/deps/buildCore/inrelease.zip/mps-core${varsof.buildCore.ver}.jar" />
+        <fileset file="${build.tmp}/deps/buildCore/inrelease.zip/mps-core${buildCore.ver}.jar" />
       </classpath>
     </javac>
   </target>
@@ -54,7 +61,7 @@
   <target name="layout.custom1">
     <mkdir dir="${build.tmp}/custom1/qas.zip" />
     <mkdir dir="${build.tmp}/custom1/qas.zip/a" />
-    <jar destfile="${build.tmp}/custom1/qas.zip/a/test1.jar">
+    <jar destfile="${build.tmp}/custom1/qas.zip/a/test1${buildCore.ver}.jar">
       <fileset dir="${build.tmp}/java/out/test1" />
     </jar>
     <zip destfile="${build.layout.custom1}/qas.zip">

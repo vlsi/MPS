@@ -14,7 +14,6 @@ import jetbrains.mps.project.GlobalScope;
 
 public class BuildMacro extends BaseConcept implements INamedConcept {
   public static final String concept = "jetbrains.mps.buildScript.structure.BuildMacro";
-  public static final String CPR_Public = "public";
   public static final String NAME = "name";
   public static final String SHORT_DESCRIPTION = "shortDescription";
   public static final String ALIAS = "alias";

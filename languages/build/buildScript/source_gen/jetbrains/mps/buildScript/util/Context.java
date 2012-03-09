@@ -44,6 +44,15 @@ public class Context {
     return SNodeOperations.getAncestor(node, "jetbrains.mps.buildScript.structure.BuildProject", true, false);
   }
 
+  public MacroHelper getMacros(SNode context) {
+    SNode buildProject = getBuildProject(context);
+    buildProject = SNodeOperations.as(DependenciesHelper.getOriginalNode(buildProject, myGenerationContext), "jetbrains.mps.buildScript.structure.BuildProject");
+    if (buildProject == null) {
+      return null;
+    }
+    return new MacroHelper.MacroContext(buildProject, myGenerationContext).getMacros(buildProject);
+  }
+
   public String getBuildProjectName(SNode node) {
     return SPropertyOperations.getString(getBuildProject(node), "name");
   }

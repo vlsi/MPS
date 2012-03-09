@@ -15,7 +15,6 @@ import jetbrains.mps.scope.Scope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.buildScript.util.ScopeUtil;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
@@ -87,7 +86,7 @@ public class BuildProject_Behavior {
       // we are imported => give away only public macro 
       rootScope = ScopeUtil.where(rootScope, new _FunctionTypes._return_P1_E0<Boolean, SNode>() {
         public Boolean invoke(SNode node) {
-          return SConceptPropertyOperations.getBoolean(SNodeOperations.cast(node, "jetbrains.mps.buildScript.structure.BuildMacro"), "public");
+          return BuildMacro_Behavior.call_isPublic_6547494638219688113(SNodeOperations.cast(node, "jetbrains.mps.buildScript.structure.BuildMacro"));
         }
       });
     }

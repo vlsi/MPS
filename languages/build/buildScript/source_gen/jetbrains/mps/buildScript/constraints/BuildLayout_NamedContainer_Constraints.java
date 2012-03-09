@@ -29,7 +29,7 @@ public class BuildLayout_NamedContainer_Constraints extends BaseConstraintsDescr
       @Override
       public Object getValue(SNode node, IScope scope) {
         String propertyName = "name";
-        return BuildString_Behavior.call_getText_4380385936562005550(SLinkOperations.getTarget(node, "containerName", true));
+        return BuildString_Behavior.call_getText_4380385936562005550(SLinkOperations.getTarget(node, "containerName", true), null);
       }
     });
     return properties;

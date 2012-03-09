@@ -105,6 +105,10 @@
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="8292198017262926601">
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="8xvf.8292198017262926588" resolveInfo="BwfDependency" />
     </node>
+    <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="6520682027040940626">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Structure" />
+      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="8xvf.6520682027040940623" resolveInfo="BwfMacroListImport" />
+    </node>
   </roots>
   <root id="2769948622284546682">
     <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="7389400916847962446">
@@ -1065,6 +1069,31 @@
   <root id="8292198017262926601">
     <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Property" typeId="tpc2.1073389658414" id="8292198017262926603">
       <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="8xvf.8292198017262926600" resolveInfo="path" />
+    </node>
+  </root>
+  <root id="6520682027040940626">
+    <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="6520682027040951595">
+      <node role="cellLayout" roleId="tpc2.1106270802874" type="tpc2.CellLayout_Indent" typeId="tpc2.1237303669825" id="6520682027040951596" />
+      <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="6520682027040951597">
+        <property name="text" nameId="tpc2.1073389577007" value="import macros from" />
+        <link role="styleClass" roleId="tpc2.1186406756722" targetNodeId="1203598923024" resolveInfo="keyword" />
+      </node>
+      <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Property" typeId="tpc2.1073389658414" id="6520682027040951599">
+        <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="8xvf.6520682027040940625" resolveInfo="propertiesFile" />
+      </node>
+      <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="6520682027040951601">
+        <property name="text" nameId="tpc2.1073389577007" value="prefix" />
+        <link role="styleClass" roleId="tpc2.1186406756722" targetNodeId="1203598923024" resolveInfo="keyword" />
+      </node>
+      <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Property" typeId="tpc2.1073389658414" id="6520682027040951603">
+        <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="8xvf.6520682027040940624" resolveInfo="prefix" />
+        <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.IndentLayoutNewLineStyleClassItem" typeId="tpc2.1237308012275" id="6520682027040951606">
+          <property name="flag" nameId="tpc2.1186414551515" value="true" />
+        </node>
+      </node>
+      <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="6520682027040951605">
+        <property name="text" nameId="tpc2.1073389577007" value="" />
+      </node>
     </node>
   </root>
 </model>

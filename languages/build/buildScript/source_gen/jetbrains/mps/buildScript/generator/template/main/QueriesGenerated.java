@@ -18,10 +18,12 @@ import jetbrains.mps.buildScript.behavior.BuildString_Behavior;
 import jetbrains.mps.buildScript.behavior.BuildProject_Behavior;
 import jetbrains.mps.buildScript.util.RelativePathHelper;
 import org.apache.commons.lang.StringUtils;
+import jetbrains.mps.buildScript.util.MacroHelper;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.generator.template.IfMacroContext;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import jetbrains.mps.generator.template.MappingScriptContext;
@@ -150,7 +152,7 @@ public class QueriesGenerated {
   public static Object propertyMacro_GetPropertyValue_8237269006869516510(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return ((SLinkOperations.getTarget(_context.getNode(), "value", true) == null) ?
       "" :
-      BuildString_Behavior.call_getText_4380385936562005550(SLinkOperations.getTarget(_context.getNode(), "value", true))
+      BuildString_Behavior.call_getText_4380385936562005550(SLinkOperations.getTarget(_context.getNode(), "value", true), Context.defaultContext(_context).getMacros(_context.getNode()))
     );
   }
 
@@ -258,12 +260,28 @@ public class QueriesGenerated {
     }
   }
 
+  public static Object propertyMacro_GetPropertyValue_6520682027041002227(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return "${artifacts." + SPropertyOperations.getString(SLinkOperations.getTarget(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.buildScript.structure.BuildProjectDependency"), "script", false), "name") + "}/variables.properties";
+  }
+
+  public static Object propertyMacro_GetPropertyValue_6520682027041002310(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return ((MacroHelper) _context.getVariable("var:macroHelper")).getPrefix(_context.getNode());
+  }
+
+  public static Object propertyMacro_GetPropertyValue_6520682027040940551(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return ((MacroHelper) _context.getVariable("var:macroHelper")).getName(_context.getNode());
+  }
+
+  public static Object propertyMacro_GetPropertyValue_6520682027041001064(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return ((MacroHelper) _context.getVariable("var:macroHelper")).getImportName(_context.getNode());
+  }
+
   public static Object propertyMacro_GetPropertyValue_5662391463398094397(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return "${build.layout}/variables.properties";
   }
 
   public static Object propertyMacro_GetPropertyValue_5662391463398078669(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return Context.defaultContext(_context).getBuildProjectName(_context.getNode()) + "." + SPropertyOperations.getString(_context.getNode(), "name") + "=${" + SPropertyOperations.getString(_context.getNode(), "name") + "}";
+    return ((MacroHelper) _context.getVariable("var:macroHelper")).getExportName(_context.getNode()) + "=${" + ((MacroHelper) _context.getVariable("var:macroHelper")).getName(_context.getNode()) + "}";
   }
 
   public static Object propertyMacro_GetPropertyValue_3595702787188242919(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -406,12 +424,9 @@ public class QueriesGenerated {
     return SNodeOperations.getContainingRoot(_context.getNode()) == SNodeOperations.getContainingRoot(SLinkOperations.getTarget(_context.getNode(), "module", false));
   }
 
-  public static boolean ifMacro_Condition_4701820937132337397(final IOperationContext operationContext, final IfMacroContext _context) {
-    return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "macros", true)).where(new IWhereFilter<SNode>() {
-      public boolean accept(SNode it) {
-        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.buildScript.structure.BuildVariableMacro");
-      }
-    }).isNotEmpty();
+  public static boolean ifMacro_Condition_6520682027040886838(final IOperationContext operationContext, final IfMacroContext _context) {
+    Iterable<SNode> s = (Iterable<SNode>) ((MacroHelper) _context.getVariable("var:macroHelper")).getMacrosToExport();
+    return Sequence.fromIterable(s).isNotEmpty();
   }
 
   public static SNode sourceNodeQuery_5248329904288175557(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -486,6 +501,14 @@ public class QueriesGenerated {
     });
   }
 
+  public static Iterable sourceNodesQuery_6520682027041002163(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+    return (Iterable<SNode>) ((MacroHelper) _context.getVariable("var:macroHelper")).getVarsContainers();
+  }
+
+  public static Iterable sourceNodesQuery_6520682027040940372(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+    return (Iterable<SNode>) ((MacroHelper) _context.getVariable("var:macroHelper")).getMacrosToImport();
+  }
+
   public static Iterable sourceNodesQuery_6647099934206970618(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "plugins", true);
   }
@@ -503,11 +526,7 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_5662391463398047139(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "macros", true)).where(new IWhereFilter<SNode>() {
-      public boolean accept(SNode it) {
-        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.buildScript.structure.BuildVariableMacro");
-      }
-    });
+    return (Iterable<SNode>) ((MacroHelper) _context.getVariable("var:macroHelper")).getMacrosToExport();
   }
 
   public static Iterable sourceNodesQuery_6647099934206970591(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
@@ -536,5 +555,9 @@ public class QueriesGenerated {
       _context.showErrorMessage(_context.getNode(), "no base path for script " + SPropertyOperations.getString(_context.getNode(), "name"));
     }
     return basePath;
+  }
+
+  public static Object insertMacro_varValue_6520682027040940450(final IOperationContext operationContext, final TemplateQueryContext _context) {
+    return new MacroHelper.MacroContext(_context.getNode(), _context).getMacros(_context.getNode());
   }
 }

@@ -10,10 +10,7 @@ import java.util.HashSet;
 import jetbrains.mps.generator.template.TemplateQueryContext;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.buildScript.behavior.BuildLayout_PathElement_Behavior;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.buildScript.behavior.BuildStringPart_Behavior;
+import jetbrains.mps.buildScript.behavior.BuildString_Behavior;
 
 public class UnpackHelper extends DependenciesHelper {
   private final VisibleArtifacts visible;
@@ -22,6 +19,7 @@ public class UnpackHelper extends DependenciesHelper {
   private boolean evaluated = false;
   private final List<SNode> statements = new ArrayList<SNode>();
   private PathProvider myPathProvider;
+  private TemplateQueryContext genContext;
 
   public UnpackHelper(VisibleArtifacts visible, Iterable<SNode> required, TemplateQueryContext genContext) {
     super(genContext, visible.getProject());
@@ -31,6 +29,7 @@ public class UnpackHelper extends DependenciesHelper {
     for (SNode node : required) {
       add(node);
     }
+    this.genContext = genContext;
   }
 
   private void add(SNode n) {
@@ -69,19 +68,7 @@ public class UnpackHelper extends DependenciesHelper {
   }
 
   public String toString(SNode text) {
-    StringBuilder sb = new StringBuilder();
-    for (SNode n : ListSequence.fromList(SLinkOperations.getTargets(text, "parts", true))) {
-      if (SNodeOperations.isInstanceOf(n, "jetbrains.mps.buildScript.structure.BuildVarRefStringPart")) {
-        sb.append("${");
-        SNode macro = SLinkOperations.getTarget(SNodeOperations.cast(n, "jetbrains.mps.buildScript.structure.BuildVarRefStringPart"), "macro", false);
-        sb.append("varsof." + SPropertyOperations.getString(SNodeOperations.getAncestor(macro, "jetbrains.mps.buildScript.structure.BuildProject", false, false), "name") + "." + SPropertyOperations.getString(macro, "name"));
-        sb.append("}");
-        // TODO register macro 
-        continue;
-      }
-      sb.append(BuildStringPart_Behavior.call_getText_4380385936562037054(n));
-    }
-    return sb.toString();
+    return BuildString_Behavior.call_getText_4380385936562005550(text, macros);
   }
 
   public List<SNode> getStatements() {

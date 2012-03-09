@@ -394,9 +394,20 @@
     <classNode extendsClassName="java.lang.Cloneable" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
+  <dependency className="jetbrains.mps.buildScript.behavior.BuildMacro_Behavior" file="BuildMacro_Behavior.java">
+    <classNode dependClassName="java.lang.Boolean" />
+    <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorManager" />
+    <classNode dependClassName="jetbrains.mps.smodel.structure.BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.smodel.structure.ConceptRegistry" />
+  </dependency>
   <dependency className="jetbrains.mps.buildScript.behavior.BuildMacro_BehaviorDescriptor" file="BuildMacro_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.buildScript.behavior.BuildMacro_Behavior" />
     <classNode dependClassName="jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.core.behavior.INamedConcept_Behavior" />
     <classNode dependClassName="jetbrains.mps.lang.core.behavior.INamedConcept_BehaviorDescriptor" />
@@ -461,6 +472,7 @@
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
+    <classNode dependClassName="jetbrains.mps.buildScript.behavior.BuildMacro_Behavior" />
     <classNode dependClassName="jetbrains.mps.buildScript.behavior.BuildSourcePath_Behavior" />
     <classNode dependClassName="jetbrains.mps.buildScript.util.Context" />
     <classNode dependClassName="jetbrains.mps.buildScript.util.RelativePathHelper" />
@@ -470,7 +482,6 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
@@ -681,6 +692,7 @@
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.buildScript.util.MacroHelper" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorManager" />
@@ -691,6 +703,7 @@
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.buildScript.behavior.BuildStringPart_Behavior" />
+    <classNode dependClassName="jetbrains.mps.buildScript.util.MacroHelper" />
     <classNode dependClassName="jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.core.behavior.INamedConcept_Behavior" />
     <classNode dependClassName="jetbrains.mps.lang.core.behavior.INamedConcept_BehaviorDescriptor" />
@@ -702,6 +715,7 @@
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.StringBuilder" />
     <classNode dependClassName="jetbrains.mps.buildScript.behavior.BuildStringPart_Behavior" />
+    <classNode dependClassName="jetbrains.mps.buildScript.util.MacroHelper" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
@@ -714,6 +728,7 @@
   </dependency>
   <dependency className="jetbrains.mps.buildScript.behavior.BuildTextStringPart_Behavior" file="BuildTextStringPart_Behavior.java">
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.buildScript.util.MacroHelper" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
   </dependency>
@@ -722,11 +737,13 @@
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.buildScript.behavior.BuildStringPart_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.buildScript.behavior.BuildTextStringPart_Behavior" />
+    <classNode dependClassName="jetbrains.mps.buildScript.util.MacroHelper" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.buildScript.behavior.BuildVarRefStringPart_Behavior" file="BuildVarRefStringPart_Behavior.java">
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.buildScript.util.MacroHelper" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
@@ -737,13 +754,19 @@
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.buildScript.behavior.BuildStringPart_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.buildScript.behavior.BuildVarRefStringPart_Behavior" />
+    <classNode dependClassName="jetbrains.mps.buildScript.util.MacroHelper" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
+  </dependency>
+  <dependency className="jetbrains.mps.buildScript.behavior.BuildVariableMacro_Behavior" file="BuildVariableMacro_Behavior.java">
+    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.buildScript.behavior.BuildVariableMacro_BehaviorDescriptor" file="BuildVariableMacro_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.buildScript.behavior.BuildMacro_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.buildScript.behavior.BuildVariableMacro_Behavior" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
 </dependenciesRoot>

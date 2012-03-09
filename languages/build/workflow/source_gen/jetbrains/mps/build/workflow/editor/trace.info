@@ -2625,6 +2625,160 @@
     <unitInfo nodeId="5248329904288177749" fileName="rt_SubTask_AfterOrBefore.java" startLine="13" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.build.workflow.editor.rt_SubTask_AfterOrBefore" />
     <unitInfo nodeId="5248329904288177749" fileName="rt_SubTask_AfterOrBefore.java" startLine="18" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.build.workflow.editor.rt_SubTask_AfterOrBefore$rt_SubTask_AfterOrBefore_RIGHT_TRANSFORM" />
   </root>
+  <root nodeId="6520682027040940626">
+    <nodeInfo nodeId="6520682027040940626" fileName="BwfMacroListImport_Editor.java" startLine="19" startPosition="79" endLine="20" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6520682027040951595" fileName="BwfMacroListImport_Editor.java" startLine="23" startPosition="89" endLine="24" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6520682027040951595" fileName="BwfMacroListImport_Editor.java" startLine="24" startPosition="96" endLine="25" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="6520682027040951595" fileName="BwfMacroListImport_Editor.java" startLine="24" startPosition="96" endLine="25" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6520682027040951595" fileName="BwfMacroListImport_Editor.java" startLine="25" startPosition="48" endLine="26" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="6520682027040951595" fileName="BwfMacroListImport_Editor.java" startLine="25" startPosition="48" endLine="26" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6520682027040951595" fileName="BwfMacroListImport_Editor.java" startLine="26" startPosition="81" endLine="27" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="6520682027040951595" fileName="BwfMacroListImport_Editor.java" startLine="26" startPosition="81" endLine="27" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6520682027040951595" fileName="BwfMacroListImport_Editor.java" startLine="27" startPosition="81" endLine="28" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="6520682027040951595" fileName="BwfMacroListImport_Editor.java" startLine="27" startPosition="81" endLine="28" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6520682027040951595" fileName="BwfMacroListImport_Editor.java" startLine="28" startPosition="81" endLine="29" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="6520682027040951595" fileName="BwfMacroListImport_Editor.java" startLine="28" startPosition="81" endLine="29" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6520682027040951595" fileName="BwfMacroListImport_Editor.java" startLine="29" startPosition="81" endLine="30" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="6520682027040951595" fileName="BwfMacroListImport_Editor.java" startLine="29" startPosition="81" endLine="30" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6520682027040951595" fileName="BwfMacroListImport_Editor.java" startLine="30" startPosition="81" endLine="31" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6520682027040951597" fileName="BwfMacroListImport_Editor.java" startLine="34" startPosition="88" endLine="35" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6520682027040951597" fileName="BwfMacroListImport_Editor.java" startLine="35" startPosition="104" endLine="36" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6520682027040951597" fileName="BwfMacroListImport_Editor.java" startLine="36" startPosition="47" endLine="37" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6520682027040951597" fileName="BwfMacroListImport_Editor.java" startLine="37" startPosition="71" endLine="38" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6520682027040951597" fileName="BwfMacroListImport_Editor.java" startLine="38" startPosition="34" endLine="39" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6520682027040951601" fileName="BwfMacroListImport_Editor.java" startLine="42" startPosition="88" endLine="43" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6520682027040951601" fileName="BwfMacroListImport_Editor.java" startLine="43" startPosition="92" endLine="44" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6520682027040951601" fileName="BwfMacroListImport_Editor.java" startLine="44" startPosition="47" endLine="45" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6520682027040951601" fileName="BwfMacroListImport_Editor.java" startLine="45" startPosition="71" endLine="46" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6520682027040951601" fileName="BwfMacroListImport_Editor.java" startLine="46" startPosition="34" endLine="47" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6520682027040951605" fileName="BwfMacroListImport_Editor.java" startLine="50" startPosition="88" endLine="51" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6520682027040951605" fileName="BwfMacroListImport_Editor.java" startLine="51" startPosition="86" endLine="52" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="6520682027040951605" fileName="BwfMacroListImport_Editor.java" startLine="51" startPosition="86" endLine="52" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6520682027040951605" fileName="BwfMacroListImport_Editor.java" startLine="52" startPosition="47" endLine="53" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6520682027040951605" fileName="BwfMacroListImport_Editor.java" startLine="53" startPosition="34" endLine="54" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6520682027040951599" fileName="BwfMacroListImport_Editor.java" startLine="57" startPosition="88" endLine="58" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6520682027040951599" fileName="BwfMacroListImport_Editor.java" startLine="58" startPosition="82" endLine="59" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6520682027040951599" fileName="BwfMacroListImport_Editor.java" startLine="59" startPosition="39" endLine="60" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6520682027040951599" fileName="BwfMacroListImport_Editor.java" startLine="60" startPosition="52" endLine="61" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6520682027040951599" fileName="BwfMacroListImport_Editor.java" startLine="61" startPosition="26" endLine="62" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6520682027040951599" fileName="BwfMacroListImport_Editor.java" startLine="62" startPosition="58" endLine="63" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="6520682027040951599" fileName="BwfMacroListImport_Editor.java" startLine="62" startPosition="58" endLine="63" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6520682027040951599" fileName="BwfMacroListImport_Editor.java" startLine="63" startPosition="52" endLine="64" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6520682027040951599" fileName="BwfMacroListImport_Editor.java" startLine="64" startPosition="73" endLine="65" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6520682027040951599" fileName="BwfMacroListImport_Editor.java" startLine="65" startPosition="57" endLine="66" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6520682027040951599" fileName="BwfMacroListImport_Editor.java" startLine="67" startPosition="35" endLine="68" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6520682027040951599" fileName="BwfMacroListImport_Editor.java" startLine="68" startPosition="72" endLine="69" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6520682027040951599" fileName="BwfMacroListImport_Editor.java" startLine="69" startPosition="78" endLine="70" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6520682027040951599" fileName="BwfMacroListImport_Editor.java" startLine="71" startPosition="10" endLine="72" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6520682027040951603" fileName="BwfMacroListImport_Editor.java" startLine="75" startPosition="88" endLine="76" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6520682027040951603" fileName="BwfMacroListImport_Editor.java" startLine="76" startPosition="82" endLine="77" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6520682027040951603" fileName="BwfMacroListImport_Editor.java" startLine="77" startPosition="31" endLine="78" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6520682027040951603" fileName="BwfMacroListImport_Editor.java" startLine="78" startPosition="44" endLine="79" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6520682027040951603" fileName="BwfMacroListImport_Editor.java" startLine="79" startPosition="26" endLine="80" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6520682027040951603" fileName="BwfMacroListImport_Editor.java" startLine="80" startPosition="58" endLine="81" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6520682027040951603" fileName="BwfMacroListImport_Editor.java" startLine="82" startPosition="5" endLine="83" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6520682027040951603" fileName="BwfMacroListImport_Editor.java" startLine="83" startPosition="42" endLine="84" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6520682027040951603" fileName="BwfMacroListImport_Editor.java" startLine="85" startPosition="5" endLine="86" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6520682027040951603" fileName="BwfMacroListImport_Editor.java" startLine="86" startPosition="73" endLine="87" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6520682027040951603" fileName="BwfMacroListImport_Editor.java" startLine="87" startPosition="57" endLine="88" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6520682027040951603" fileName="BwfMacroListImport_Editor.java" startLine="89" startPosition="35" endLine="90" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6520682027040951603" fileName="BwfMacroListImport_Editor.java" startLine="90" startPosition="72" endLine="91" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6520682027040951603" fileName="BwfMacroListImport_Editor.java" startLine="91" startPosition="78" endLine="92" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6520682027040951603" fileName="BwfMacroListImport_Editor.java" startLine="93" startPosition="10" endLine="94" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6520682027040951597" fileName="BwfMacroListImport_Editor.java" startLine="35" startPosition="104" endLine="37" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="6520682027040951601" fileName="BwfMacroListImport_Editor.java" startLine="43" startPosition="92" endLine="45" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="6520682027040951599" fileName="BwfMacroListImport_Editor.java" startLine="61" startPosition="26" endLine="64" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="6520682027040940626" fileName="BwfMacroListImport_Editor.java" startLine="18" startPosition="66" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/nodeEditor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="6520682027040951603" fileName="BwfMacroListImport_Editor.java" startLine="81" startPosition="44" endLine="85" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="6520682027040951603" fileName="BwfMacroListImport_Editor.java" startLine="80" startPosition="58" endLine="85" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="6520682027040951599" fileName="BwfMacroListImport_Editor.java" startLine="66" startPosition="59" endLine="72" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6520682027040951603" fileName="BwfMacroListImport_Editor.java" startLine="88" startPosition="59" endLine="94" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6520682027040951605" fileName="BwfMacroListImport_Editor.java" startLine="49" startPosition="0" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_5bz59z_e0#(Ljetbrains/mps/nodeEditor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="6520682027040951603" fileName="BwfMacroListImport_Editor.java" startLine="79" startPosition="26" endLine="86" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="6520682027040951597" fileName="BwfMacroListImport_Editor.java" startLine="33" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_5bz59z_a0#(Ljetbrains/mps/nodeEditor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="6520682027040951601" fileName="BwfMacroListImport_Editor.java" startLine="41" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_5bz59z_c0#(Ljetbrains/mps/nodeEditor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="6520682027040951595" fileName="BwfMacroListImport_Editor.java" startLine="22" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_5bz59z_a#(Ljetbrains/mps/nodeEditor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="6520682027040951599" fileName="BwfMacroListImport_Editor.java" startLine="56" startPosition="0" endLine="74" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createProperty_5bz59z_b0#(Ljetbrains/mps/nodeEditor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="6520682027040951603" fileName="BwfMacroListImport_Editor.java" startLine="74" startPosition="0" endLine="96" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createProperty_5bz59z_d0#(Ljetbrains/mps/nodeEditor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <scopeInfo nodeId="6520682027040940626" fileName="BwfMacroListImport_Editor.java" startLine="19" startPosition="79" endLine="20" endPosition="63" />
+    <scopeInfo nodeId="6520682027040951595" fileName="BwfMacroListImport_Editor.java" startLine="24" startPosition="96" endLine="25" endPosition="48" />
+    <scopeInfo nodeId="6520682027040951595" fileName="BwfMacroListImport_Editor.java" startLine="25" startPosition="48" endLine="26" endPosition="81" />
+    <scopeInfo nodeId="6520682027040951595" fileName="BwfMacroListImport_Editor.java" startLine="26" startPosition="81" endLine="27" endPosition="81" />
+    <scopeInfo nodeId="6520682027040951595" fileName="BwfMacroListImport_Editor.java" startLine="27" startPosition="81" endLine="28" endPosition="81" />
+    <scopeInfo nodeId="6520682027040951595" fileName="BwfMacroListImport_Editor.java" startLine="28" startPosition="81" endLine="29" endPosition="81" />
+    <scopeInfo nodeId="6520682027040951595" fileName="BwfMacroListImport_Editor.java" startLine="29" startPosition="81" endLine="30" endPosition="81" />
+    <scopeInfo nodeId="6520682027040951605" fileName="BwfMacroListImport_Editor.java" startLine="51" startPosition="86" endLine="52" endPosition="47" />
+    <scopeInfo nodeId="6520682027040951599" fileName="BwfMacroListImport_Editor.java" startLine="62" startPosition="58" endLine="63" endPosition="52" />
+    <scopeInfo nodeId="6520682027040951597" fileName="BwfMacroListImport_Editor.java" startLine="35" startPosition="104" endLine="37" endPosition="71" />
+    <scopeInfo nodeId="6520682027040951601" fileName="BwfMacroListImport_Editor.java" startLine="43" startPosition="92" endLine="45" endPosition="71" />
+    <scopeInfo nodeId="6520682027040951603" fileName="BwfMacroListImport_Editor.java" startLine="82" startPosition="5" endLine="84" endPosition="62">
+      <varInfo nodeId="6520682027040951603" varName="style" />
+    </scopeInfo>
+    <scopeInfo nodeId="6520682027040951599" fileName="BwfMacroListImport_Editor.java" startLine="61" startPosition="26" endLine="64" endPosition="73" />
+    <scopeInfo nodeId="6520682027040951599" fileName="BwfMacroListImport_Editor.java" startLine="67" startPosition="35" endLine="70" endPosition="105">
+      <varInfo nodeId="6520682027040951599" varName="manager" />
+      <varInfo nodeId="6520682027040951599" varName="opContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="6520682027040951603" fileName="BwfMacroListImport_Editor.java" startLine="89" startPosition="35" endLine="92" endPosition="105">
+      <varInfo nodeId="6520682027040951603" varName="manager" />
+      <varInfo nodeId="6520682027040951603" varName="opContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="6520682027040940626" fileName="BwfMacroListImport_Editor.java" startLine="18" startPosition="66" endLine="22" endPosition="0">
+      <varInfo nodeId="6520682027040940626" varName="editorContext" />
+      <varInfo nodeId="6520682027040940626" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="6520682027040951605" fileName="BwfMacroListImport_Editor.java" startLine="50" startPosition="88" endLine="54" endPosition="22">
+      <varInfo nodeId="6520682027040951605" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="6520682027040951597" fileName="BwfMacroListImport_Editor.java" startLine="34" startPosition="88" endLine="39" endPosition="22">
+      <varInfo nodeId="6520682027040951597" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="6520682027040951601" fileName="BwfMacroListImport_Editor.java" startLine="42" startPosition="88" endLine="47" endPosition="22">
+      <varInfo nodeId="6520682027040951601" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="6520682027040951603" fileName="BwfMacroListImport_Editor.java" startLine="80" startPosition="58" endLine="85" endPosition="5" />
+    <scopeInfo nodeId="6520682027040951605" fileName="BwfMacroListImport_Editor.java" startLine="49" startPosition="0" endLine="56" endPosition="0">
+      <varInfo nodeId="6520682027040951605" varName="editorContext" />
+      <varInfo nodeId="6520682027040951605" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="6520682027040951603" fileName="BwfMacroListImport_Editor.java" startLine="79" startPosition="26" endLine="86" endPosition="73" />
+    <scopeInfo nodeId="6520682027040951595" fileName="BwfMacroListImport_Editor.java" startLine="23" startPosition="89" endLine="31" endPosition="22">
+      <varInfo nodeId="6520682027040951595" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="6520682027040951597" fileName="BwfMacroListImport_Editor.java" startLine="33" startPosition="0" endLine="41" endPosition="0">
+      <varInfo nodeId="6520682027040951597" varName="editorContext" />
+      <varInfo nodeId="6520682027040951597" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="6520682027040951601" fileName="BwfMacroListImport_Editor.java" startLine="41" startPosition="0" endLine="49" endPosition="0">
+      <varInfo nodeId="6520682027040951601" varName="editorContext" />
+      <varInfo nodeId="6520682027040951601" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="6520682027040951595" fileName="BwfMacroListImport_Editor.java" startLine="22" startPosition="0" endLine="33" endPosition="0">
+      <varInfo nodeId="6520682027040951595" varName="editorContext" />
+      <varInfo nodeId="6520682027040951595" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="6520682027040951599" fileName="BwfMacroListImport_Editor.java" startLine="57" startPosition="88" endLine="72" endPosition="22">
+      <varInfo nodeId="6520682027040951599" varName="attributeConcept" />
+      <varInfo nodeId="6520682027040951599" varName="attributeKind" />
+      <varInfo nodeId="6520682027040951599" varName="editorCell" />
+      <varInfo nodeId="6520682027040951599" varName="provider" />
+    </scopeInfo>
+    <scopeInfo nodeId="6520682027040951599" fileName="BwfMacroListImport_Editor.java" startLine="56" startPosition="0" endLine="74" endPosition="0">
+      <varInfo nodeId="6520682027040951599" varName="editorContext" />
+      <varInfo nodeId="6520682027040951599" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="6520682027040951603" fileName="BwfMacroListImport_Editor.java" startLine="75" startPosition="88" endLine="94" endPosition="22">
+      <varInfo nodeId="6520682027040951603" varName="attributeConcept" />
+      <varInfo nodeId="6520682027040951603" varName="attributeKind" />
+      <varInfo nodeId="6520682027040951603" varName="editorCell" />
+      <varInfo nodeId="6520682027040951603" varName="provider" />
+    </scopeInfo>
+    <scopeInfo nodeId="6520682027040951603" fileName="BwfMacroListImport_Editor.java" startLine="74" startPosition="0" endLine="96" endPosition="0">
+      <varInfo nodeId="6520682027040951603" varName="editorContext" />
+      <varInfo nodeId="6520682027040951603" varName="node" />
+    </scopeInfo>
+    <unitInfo nodeId="6520682027040940626" fileName="BwfMacroListImport_Editor.java" startLine="18" startPosition="0" endLine="97" endPosition="0" unitName="jetbrains.mps.build.workflow.editor.BwfMacroListImport_Editor" />
+  </root>
   <root nodeId="6647099934206976116">
     <nodeInfo nodeId="6647099934206976116" fileName="BwfJavaDependency_Editor.java" startLine="12" startPosition="79" endLine="13" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6647099934206976118" fileName="BwfJavaDependency_Editor.java" startLine="16" startPosition="84" endLine="17" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
