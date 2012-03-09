@@ -9,9 +9,11 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.baseLanguage.search.VisibilityUtil;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.internal.collections.runtime.SetSequence;
+import jetbrains.mps.baseLanguage.scopes.ClassifierScopeUtils;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.util.Set;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
+import java.util.HashSet;
 import jetbrains.mps.baseLanguage.scopes.ClassAccessKind;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
 import jetbrains.mps.smodel.structure.BehaviorDescriptor;
@@ -56,7 +58,7 @@ public class ClassifierMember_Behavior {
       // two cases: 1) from class 2) from dot expression 
       Iterable<SNode> possibleClassifiers = ListSequence.fromList(SNodeOperations.getAncestors(contextNode, "jetbrains.mps.baseLanguage.structure.Classifier", true)).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
-          return SetSequence.fromSet(Classifier_Behavior.call_getAllExtendedClassifiers_2907982978864985482(it)).contains(contextClassifier);
+          return ListSequence.fromList(ClassifierScopeUtils.getExtendedClassifiers(it)).contains(contextClassifier);
         }
       });
       if (!(SNodeOperations.isInstanceOf(contextNode, "jetbrains.mps.baseLanguage.structure.DotExpression"))) {
@@ -65,7 +67,7 @@ public class ClassifierMember_Behavior {
       } else {
         // 2 
         SNode leftClassifier = DotExpression_Behavior.call_getClassifier_1213877410697(SNodeOperations.cast(contextNode, "jetbrains.mps.baseLanguage.structure.DotExpression"));
-        final Set<SNode> extendedClassifiers = Classifier_Behavior.call_getAllExtendedClassifiers_2907982978864985482(leftClassifier);
+        final Set<SNode> extendedClassifiers = SetSequence.fromSetWithValues(new HashSet(), ClassifierScopeUtils.getExtendedClassifiers(leftClassifier));
         return Sequence.fromIterable(possibleClassifiers).any(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
             return SetSequence.fromSet(extendedClassifiers).contains(it);

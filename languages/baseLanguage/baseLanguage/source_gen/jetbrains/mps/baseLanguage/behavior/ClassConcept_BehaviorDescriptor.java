@@ -70,7 +70,7 @@ public class ClassConcept_BehaviorDescriptor extends Classifier_BehaviorDescript
     return ClassConcept_Behavior.virtual_getScope_3734116213129936182(thisNode, kind, child);
   }
 
-  public List<SNode> virtual_getMembers_2201875424515824604(SNode thisNode, SNode kind) {
+  public Scope virtual_getMembers_2201875424515824604(SNode thisNode, SNode kind) {
     return ClassConcept_Behavior.virtual_getMembers_2201875424515824604(thisNode, kind);
   }
 

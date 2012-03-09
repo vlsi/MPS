@@ -8,7 +8,9 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.scope.Scope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.baseLanguage.scopes.SimpleScope;
 
 public class EnumClass_Behavior {
   public static void init(SNode thisNode) {
@@ -43,9 +45,9 @@ public class EnumClass_Behavior {
     return true;
   }
 
-  public static List<SNode> virtual_getMembers_2201875424515824604(SNode thisNode, SNode kind) {
+  public static Scope virtual_getMembers_2201875424515824604(SNode thisNode, SNode kind) {
     if (SConceptOperations.isSubConceptOf(kind, "jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration")) {
-      return SLinkOperations.getTargets(thisNode, "enumConstant", true);
+      return new SimpleScope(SLinkOperations.getTargets(thisNode, "enumConstant", true));
     } else {
       return Classifier_Behavior.callSuper_getMembers_2201875424515824604(thisNode, "jetbrains.mps.baseLanguage.structure.EnumClass", kind);
     }
