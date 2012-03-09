@@ -78,6 +78,17 @@ public class VisibleArtifacts {
     return project;
   }
 
+  public void needsFetch(SNode node) {
+    if ((node == null)) {
+      return;
+    }
+    node = toOriginalNode(node);
+    if ((node == null)) {
+      return;
+    }
+    dependenciesHelper.requiresFetch().put(node, "");
+  }
+
   public Iterable<SNode> getArtifacts() {
     return ListSequence.fromList(visibleArtifacts).asUnmodifiable();
   }

@@ -53,7 +53,7 @@
   
   <target name="check" depends="test" />
   
-  <target name="java.compile.test1">
+  <target name="java.compile.test1" depends="fetchDependencies">
     <mkdir dir="${build.tmp}/java/out/test1" />
     <javac destdir="${build.tmp}/java/out/test1">
       <compilerarg value="-Xlint:none" />

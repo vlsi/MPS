@@ -21,6 +21,7 @@ public class BuildSource_JavaDependencyModule_Behavior {
     for (SNode artifact : artifacts.getArtifacts()) {
       if (BuildLayout_Node_Behavior.call_exports_6547494638219603457(artifact, target)) {
         artifacts.registerEntity(target, artifact);
+        artifacts.needsFetch(SNodeOperations.getParent(thisNode));
         return Sequence.<SNode>singleton(artifact);
       }
     }

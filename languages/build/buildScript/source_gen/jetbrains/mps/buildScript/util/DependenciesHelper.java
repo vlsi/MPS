@@ -12,6 +12,7 @@ public class DependenciesHelper {
   private final Map<SNode, String> locationMap;
   private final Map<SNode, String> contentLocationMap;
   private final Map<Object, SNode> idToArtifactMap;
+  private final Map<SNode, String> requiresFetch;
   protected final MacroHelper macros;
 
   public DependenciesHelper(@NotNull TemplateQueryContext genContext, SNode project) {
@@ -19,6 +20,7 @@ public class DependenciesHelper {
     this.contentLocationMap = GenerationUtil.<SNode,String>getSessionMap(project, genContext, "contentLocation");
     this.idToArtifactMap = GenerationUtil.<Object,SNode>getSessionMap(project, genContext, "IDToArtifact");
     this.macros = new MacroHelper.MacroContext(project, genContext).getMacros(project);
+    this.requiresFetch = GenerationUtil.<SNode,String>getSessionMap(project, genContext, "requiresFetch");
   }
 
   public Map<SNode, String> locations() {
@@ -31,6 +33,10 @@ public class DependenciesHelper {
 
   public Map<Object, SNode> artifacts() {
     return idToArtifactMap;
+  }
+
+  public Map<SNode, String> requiresFetch() {
+    return requiresFetch;
   }
 
   public static SNode getOriginalNode(SNode node, TemplateQueryContext genContext) {

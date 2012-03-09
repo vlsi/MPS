@@ -63,6 +63,7 @@
     <classNode dependClassName="jetbrains.mps.build.workflow.structure.BwfFileSet" />
     <classNode dependClassName="jetbrains.mps.build.workflow.structure.BwfJavaDependency" />
     <classNode dependClassName="jetbrains.mps.build.workflow.structure.BwfProjectPart" />
+    <classNode dependClassName="jetbrains.mps.build.workflow.structure.BwfTaskDependency" />
     <classNode dependClassName="jetbrains.mps.lang.core.structure.Attribute" />
     <classNode dependClassName="jetbrains.mps.lang.core.structure.INamedConcept" />
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />

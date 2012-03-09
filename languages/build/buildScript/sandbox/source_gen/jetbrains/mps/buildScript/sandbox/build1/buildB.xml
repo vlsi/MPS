@@ -6,7 +6,7 @@
   <property file="${artifacts.buildA}/variables.properties" prefix="import.buildA" />
   <property name="buildA.aver" value="${import.buildA.buildA.aver}" />
   
-  <target name="assemble">
+  <target name="assemble" depends="fetchDependencies">
     <mkdir dir="${build.layout}/result" />
     <mkdir dir="${build.layout}/result/A-${buildA.aver}" />
     <copy todir="${build.layout}/result/A-${buildA.aver}">

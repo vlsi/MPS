@@ -20,6 +20,7 @@ public class BwfJavaModule extends BwfProjectPart implements INamedConcept {
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String SOURCES = "sources";
   public static final String DEPENDENCIES = "dependencies";
+  public static final String TASK_DEPS = "taskDeps";
   public static final String SMODEL_ATTRIBUTE = "smodelAttribute";
 
   public BwfJavaModule(SNode node) {
@@ -92,6 +93,26 @@ public class BwfJavaModule extends BwfProjectPart implements INamedConcept {
 
   public void insertDependencies(BwfJavaDependency prev, BwfJavaDependency node) {
     this.insertChild(prev, BwfJavaModule.DEPENDENCIES, node);
+  }
+
+  public int getTaskDepsesCount() {
+    return this.getChildCount(BwfJavaModule.TASK_DEPS);
+  }
+
+  public Iterator<BwfTaskDependency> taskDepses() {
+    return this.children(BwfTaskDependency.class, BwfJavaModule.TASK_DEPS);
+  }
+
+  public List<BwfTaskDependency> getTaskDepses() {
+    return this.getChildren(BwfTaskDependency.class, BwfJavaModule.TASK_DEPS);
+  }
+
+  public void addTaskDeps(BwfTaskDependency node) {
+    this.addChild(BwfJavaModule.TASK_DEPS, node);
+  }
+
+  public void insertTaskDeps(BwfTaskDependency prev, BwfTaskDependency node) {
+    this.insertChild(prev, BwfJavaModule.TASK_DEPS, node);
   }
 
   public int getSmodelAttributesCount() {
