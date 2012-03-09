@@ -25,18 +25,17 @@ import com.intellij.openapi.vcs.ProjectLevelVcsManager;
 import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.progress.Task;
 import com.intellij.openapi.progress.ProgressIndicator;
-import java.io.File;
 import jetbrains.mps.util.Computable;
 import com.intellij.openapi.application.ApplicationManager;
 import java.util.List;
 import com.intellij.openapi.vfs.newvfs.events.VFileEvent;
 import com.intellij.openapi.application.Application;
-import com.intellij.openapi.util.io.FileUtil;
-import com.intellij.util.Processor;
 import com.intellij.openapi.vfs.newvfs.events.VFileContentChangeEvent;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import com.intellij.openapi.vfs.newvfs.events.VFileCreateEvent;
 import com.intellij.openapi.vfs.newvfs.events.VFileDeleteEvent;
+import com.intellij.openapi.vfs.newvfs.events.VFileCopyEvent;
+import com.intellij.openapi.vfs.newvfs.events.VFileMoveEvent;
 
 public class ModelChangesWatcher implements ApplicationComponent {
   public static final Logger LOG = Logger.getLogger(ModelChangesWatcher.class);
@@ -70,14 +69,12 @@ public class ModelChangesWatcher implements ApplicationComponent {
     }
   };
   private IMakeService myMakeService;
-  private SignificantRoots mySignRoots;
 
-  public ModelChangesWatcher(MessageBus bus, ProjectManager projectManager, VirtualFileManager virtualFileManager, SignificantRoots signRoots) {
+  public ModelChangesWatcher(MessageBus bus, ProjectManager projectManager, VirtualFileManager virtualFileManager) {
     myBus = bus;
     myVirtualFileManager = virtualFileManager;
     myProjectManager = projectManager;
     myQueue.setRestartTimerOnAdd(true);
-    mySignRoots = signRoots;
   }
 
   public void tryToResumeTasksProcessing() {
@@ -176,10 +173,6 @@ public class ModelChangesWatcher implements ApplicationComponent {
     }
   }
 
-  private boolean isUnderSignificantRoots(File file) {
-    return mySignRoots.isUnderSignificantRoots(file);
-  }
-
   public void addReloadListener(ModelChangesWatcher.IReloadListener listener) {
     synchronized (myReloadListeners) {
       myReloadListeners.add(listener);
@@ -230,36 +223,21 @@ public class ModelChangesWatcher implements ApplicationComponent {
           myReloadSession = new ReloadSession(getReloadListeners());
         }
         for (final VFileEvent event : events) {
-          String path = event.getPath();
           ModelChangesWatcher.LOG.debug("Got event " + event);
-          File file = new File(path);
-          if (!(isUnderSignificantRoots(file))) {
-            continue;
-          }
-
-          if (file.isDirectory()) {
-            FileUtil.processFilesRecursively(file, new Processor<File>() {
-              public boolean process(File file) {
-                processAfterEvent(file, event, myReloadSession);
-                return true;
-              }
-            });
-          } else {
-            processAfterEvent(file, event, myReloadSession);
-          }
+          processAfterEvent(event, myReloadSession);
         }
         queueReload();
       }
     }
 
-    private void processAfterEvent(File realFile, VFileEvent event, ReloadSession reloadSession) {
-      ModelChangesWatcher.LOG.debug("Process after event for " + realFile);
+    private void processAfterEvent(VFileEvent event, ReloadSession reloadSession) {
+      ModelChangesWatcher.LOG.debug("Process after event for " + event.getPath());
       ModelFileProcessor modelProcessor = new ModelFileProcessor(event.getFileSystem(), reloadSession);
       ModuleFileProcessor moduleProcessor = new ModuleFileProcessor(event.getFileSystem(), reloadSession);
       EventProcessor[] proc = new EventProcessor[]{modelProcessor, moduleProcessor};
 
       for (EventProcessor p : proc) {
-        if (!(p.accepts(realFile.getPath()))) {
+        if (!(p.accepts(event.getPath()))) {
           continue;
         }
 
@@ -267,11 +245,18 @@ public class ModelChangesWatcher implements ApplicationComponent {
           if (VirtualFileUtils.isEventFromSave(event)) {
             continue;
           }
-          p.processContentChanged(realFile.getPath());
+          p.processContentChanged(event.getPath());
         } else if (event instanceof VFileCreateEvent) {
-          p.processCreate(realFile.getPath());
+          p.processCreate(event.getPath());
         } else if (event instanceof VFileDeleteEvent) {
-          p.processDelete(realFile.getPath());
+          p.processDelete(event.getPath());
+        } else if (event instanceof VFileCopyEvent) {
+          p.processCreate(event.getPath());
+        } else if (event instanceof VFileMoveEvent) {
+          VFileMoveEvent re = (VFileMoveEvent) event;
+          String name = re.getFile().getName();
+          p.processDelete(event.getPath());
+          p.processCreate(re.getNewParent().findChild(name).getPath());
         }
       }
     }

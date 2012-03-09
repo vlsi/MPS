@@ -47,10 +47,6 @@
       <implementation-class>jetbrains.mps.watching.WatchedRoots</implementation-class>
     </component>
     <component>
-      <interface-class>jetbrains.mps.ide.platform.watching.SignificantRoots</interface-class>
-      <implementation-class>jetbrains.mps.watching.MPSSignificantRoots</implementation-class>
-    </component>
-    <component>
       <implementation-class>jetbrains.mps.ide.platform.watching.ModelCacheReloader</implementation-class>
     </component>
     <component>

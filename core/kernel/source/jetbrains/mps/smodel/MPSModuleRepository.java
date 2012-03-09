@@ -459,21 +459,6 @@ public class MPSModuleRepository implements CoreComponent {
     return result;
   }
 
-  public IModule getModuleForModelFile(String path) {
-    assertCanRead();
-
-    for (IModule module : getAllModules()) {
-      Collection<SModelRoot> smodelRoots = module.getSModelRoots();
-      for (SModelRoot root : smodelRoots) {
-        String rootPath = root.getPath();
-        if (path.startsWith(rootPath)) {
-          return module;
-        }
-      }
-    }
-    return null;
-  }
-
   private void assertCanRead() {
     if (!ModelAccess.instance().canRead()) {
       throw new IllegalStateException("Can't read");

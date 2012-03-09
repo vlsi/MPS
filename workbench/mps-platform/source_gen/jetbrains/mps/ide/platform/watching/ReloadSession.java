@@ -10,7 +10,6 @@ import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.LinkedHashSet;
 import jetbrains.mps.project.IModule;
-import com.intellij.openapi.project.Project;
 import java.util.HashSet;
 import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.smodel.ModelAccess;
@@ -24,6 +23,8 @@ import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.ISelector;
+import java.util.Collection;
+import jetbrains.mps.project.SModelRoot;
 
 /*package*/ class ReloadSession {
   private static final Logger LOG = Logger.getLogger(ReloadSession.class);
@@ -32,7 +33,6 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
   private final Set<VirtualFile> myNewModelVFiles = SetSequence.fromSet(new LinkedHashSet<VirtualFile>());
   private final Set<IModule> myChangedModules = SetSequence.fromSet(new LinkedHashSet<IModule>());
   private final Set<VirtualFile> myNewModuleVFiles = SetSequence.fromSet(new LinkedHashSet<VirtualFile>());
-  private final Set<Project> myChangedProjects = SetSequence.fromSet(new LinkedHashSet<Project>());
   private final Set<IModule> myDeletedModules = SetSequence.fromSet(new HashSet<IModule>());
   private final Set<ModelChangesWatcher.IReloadListener> myReloadListeners;
 
@@ -44,9 +44,6 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
     LOG.debug("Starting reload for:\n" + ((SetSequence.fromSet(myChangedModules).isEmpty() ?
       "" :
       "Changed modules : " + myChangedModules + "\n"
-    )) + ((SetSequence.fromSet(myChangedProjects).isEmpty() ?
-      "" :
-      "Changed projects : " + myChangedProjects + "\n"
     )) + ((SetSequence.fromSet(myNewModelVFiles).isEmpty() ?
       "" :
       "New models : " + myNewModelVFiles + "\n"
@@ -89,7 +86,6 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
       }
       fireReloadFinished();
     }
-
   }
 
   private void fireReloadStarted() {
@@ -153,7 +149,7 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
           if (!(virtualFile.exists())) {
             continue;
           }
-          IModule module = MPSModuleRepository.getInstance().getModuleForModelFile(FileUtil.getCanonicalPath(virtualFile.getPath()));
+          IModule module = getModuleForModelFile(FileUtil.getCanonicalPath(virtualFile.getPath()));
           if (module != null) {
             SetSequence.fromSet(myChangedModules).addElement(module);
           }
@@ -191,15 +187,24 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
     SetSequence.fromSet(myNewModuleVFiles).addElement(vfile);
   }
 
-  public void addChangedProject(Project project) {
-    SetSequence.fromSet(myChangedProjects).addElement(project);
-  }
-
   public void addDeletedModule(IModule module) {
     SetSequence.fromSet(myDeletedModules).addElement(module);
   }
 
   public boolean hasAnythingToDo() {
-    return ReloadableSources.getInstance().needsReloading() || SetSequence.fromSet(myChangedModules).isNotEmpty() || SetSequence.fromSet(myChangedProjects).isNotEmpty() || SetSequence.fromSet(myNewModelVFiles).isNotEmpty() || SetSequence.fromSet(myNewModuleVFiles).isNotEmpty() || SetSequence.fromSet(myDeletedModules).isNotEmpty();
+    return ReloadableSources.getInstance().needsReloading() || SetSequence.fromSet(myChangedModules).isNotEmpty() || SetSequence.fromSet(myNewModelVFiles).isNotEmpty() || SetSequence.fromSet(myNewModuleVFiles).isNotEmpty() || SetSequence.fromSet(myDeletedModules).isNotEmpty();
+  }
+
+  public IModule getModuleForModelFile(String path) {
+    for (IModule module : MPSModuleRepository.getInstance().getAllModules()) {
+      Collection<SModelRoot> smodelRoots = module.getSModelRoots();
+      for (SModelRoot root : smodelRoots) {
+        String rootPath = root.getPath();
+        if (path.startsWith(rootPath)) {
+          return module;
+        }
+      }
+    }
+    return null;
   }
 }
