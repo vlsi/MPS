@@ -12,14 +12,15 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import org.jetbrains.annotations.NotNull;
+import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import java.util.List;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.baseLanguage.behavior.IMemberContainer_Behavior;
-import jetbrains.mps.workbench.dialogs.choosers.CommonChoosers;
-import java.awt.Frame;
+import jetbrains.mps.ide.platform.dialogs.choosers.NodeChooserDialog;
+import com.intellij.openapi.project.Project;
 import jetbrains.mps.nodeEditor.EditorComponent;
 
 public class ShowMembers_Action extends BaseAction {
@@ -54,8 +55,8 @@ public class ShowMembers_Action extends BaseAction {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.fromMap(_params).put("frame", event.getData(MPSCommonDataKeys.FRAME));
-    if (MapSequence.fromMap(_params).get("frame") == null) {
+    MapSequence.fromMap(_params).put("projct", event.getData(PlatformDataKeys.PROJECT));
+    if (MapSequence.fromMap(_params).get("projct") == null) {
       return false;
     }
     {
@@ -82,7 +83,12 @@ public class ShowMembers_Action extends BaseAction {
           members.value = IMemberContainer_Behavior.call_getMembers_1213877531970(SNodeOperations.getAncestor(((SNode) MapSequence.fromMap(_params).get("node")), "jetbrains.mps.baseLanguage.structure.IMemberContainer", true, false));
         }
       });
-      SNode snode = CommonChoosers.showDialogNodeChooser(((Frame) MapSequence.fromMap(_params).get("frame")), members.value);
+
+      NodeChooserDialog nodeChooserDialog = new NodeChooserDialog(((Project) MapSequence.fromMap(_params).get("projct")), members.value);
+      nodeChooserDialog.setModal(true);
+      nodeChooserDialog.show();
+      SNode snode = nodeChooserDialog.getResult();
+
       if (snode == null) {
         return;
       }
