@@ -18,9 +18,9 @@ import jetbrains.mps.progress.ProgressMonitorAdapter;
 import jetbrains.mps.ide.findusages.model.SearchResult;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.baseLanguage.util.plugin.refactorings.InlineMethodRefactoring;
-import jetbrains.mps.ide.refactoring.RefactoringViewAction;
-import jetbrains.mps.ide.refactoring.RefactoringViewItem;
-import jetbrains.mps.ide.refactoring.RefactoringView;
+import jetbrains.mps.ide.platform.refactoring.RefactoringViewAction;
+import jetbrains.mps.ide.platform.refactoring.RefactoringViewItem;
+import jetbrains.mps.ide.platform.refactoring.RefactoringAccess;
 
 public class InlineMethodDialogModel {
   private boolean myForAll;
@@ -149,6 +149,6 @@ public class InlineMethodDialogModel {
         InlineMethodDialogModel.this.doRefactoring();
       }
     };
-    this.myOperationContext.getComponent(RefactoringView.class).showRefactoringView(ProjectHelper.toIdeaProject(myOperationContext.getProject()), refactoringViewAction, this.myResults, false);
+    RefactoringAccess.getInstance().showRefactoringView(ProjectHelper.toIdeaProject(myOperationContext.getProject()), refactoringViewAction, this.myResults, false, "refactoring");
   }
 }

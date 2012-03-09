@@ -13,7 +13,10 @@ import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.refactoring.framework.RefactoringOptionsDialog;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.ide.platform.refactoring.RefactoringViewAction;
+import jetbrains.mps.ide.platform.refactoring.RefactoringViewItem;
 import javax.swing.SwingUtilities;
+import jetbrains.mps.ide.platform.refactoring.RefactoringAccess;
 import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.progress.Task;
 import org.jetbrains.annotations.NotNull;
@@ -90,7 +93,6 @@ public class RefactoringFacadeImpl extends RefactoringFacade {
       public void run() {
         ModelAccess.instance().runReadAction(new Runnable() {
           public void run() {
-            RefactoringView refactorintView = refactoringContext.getCurrentOperationContext().getComponent(RefactoringView.class);
             RefactoringViewAction okAction = new RefactoringViewAction() {
               public void performAction(final RefactoringViewItem refactoringViewItem) {
                 new Thread() {
@@ -106,7 +108,7 @@ public class RefactoringFacadeImpl extends RefactoringFacade {
               }
             };
             List<SModel> modelsToGenerate = getModelsToGenerate(refactoringContext.getRefactoring(), refactoringContext);
-            refactorintView.showRefactoringView(refactoringContext, okAction, searchResults, !(modelsToGenerate.isEmpty()));
+            RefactoringAccess.getInstance().showRefactoringView(ProjectHelper.toIdeaProject(refactoringContext.getSelectedProject()), okAction, searchResults, !(modelsToGenerate.isEmpty()), refactoringContext.getRefactoring().getUserFriendlyName());
           }
         });
       }

@@ -16,6 +16,7 @@ public class AskDialog extends DialogWrapper {
 
   public AskDialog(Project project, String text) {
     super(project, true);
+    setTitle(text);
     setResizable(false);
     init();
   }

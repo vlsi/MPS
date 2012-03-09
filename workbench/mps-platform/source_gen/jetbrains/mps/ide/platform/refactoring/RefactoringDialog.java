@@ -22,7 +22,7 @@ public abstract class RefactoringDialog extends DialogWrapper {
     myProject = project;
   }
 
-  private final Action getRefactorAction() {
+  protected final Action getRefactorAction() {
     return myRefactorAction;
   }
 

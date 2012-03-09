@@ -12,6 +12,8 @@ import jetbrains.mps.ide.platform.refactoring.ModelElementTargetChooser;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.ide.platform.refactoring.RefactoringViewAction;
+import jetbrains.mps.ide.findusages.model.SearchResults;
 
 public class RefactoringAccessImpl extends RefactoringAccess implements ApplicationComponent {
   private RefactoringFacade myRefactoringFacade;
@@ -39,6 +41,11 @@ public class RefactoringAccessImpl extends RefactoringAccess implements Applicat
 
   public ModelElementTargetChooser createTargetChooser(Project project, SNode node) {
     return new ModelOrNodeChooser(project, node);
+  }
+
+  public void showRefactoringView(Project project, RefactoringViewAction callback, SearchResults searchResults, boolean hasModelsToGenerate, String name) {
+    RefactoringView refactoringView = project.getComponent(RefactoringView.class);
+    refactoringView.showRefactoringView(project, callback, searchResults, hasModelsToGenerate, name);
   }
 
   public RefactoringFacade getRefactoringFacade() {

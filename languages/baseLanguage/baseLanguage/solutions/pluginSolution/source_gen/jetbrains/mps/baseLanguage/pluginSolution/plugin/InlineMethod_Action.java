@@ -21,6 +21,7 @@ import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.smodel.IOperationContext;
+import java.awt.Frame;
 
 public class InlineMethod_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -91,7 +92,7 @@ public class InlineMethod_Action extends BaseAction {
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       InlineMethodDialog dialog = new InlineMethodDialog(((SNode) MapSequence.fromMap(_params).get("node")), ((Project) MapSequence.fromMap(_params).get("project")), ((IOperationContext) MapSequence.fromMap(_params).get("operationContext")));
-      dialog.tryToShow();
+      dialog.tryToShow(((Frame) MapSequence.fromMap(_params).get("frame")));
       dialog.pack();
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
