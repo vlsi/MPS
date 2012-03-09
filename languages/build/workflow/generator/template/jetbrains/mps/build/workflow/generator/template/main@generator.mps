@@ -1228,6 +1228,12 @@
             </node>
           </node>
         </node>
+        <node role="attributes" roleId="iuxj.6666499814681415861" type="iuxj.XmlAttribute" typeId="iuxj.6666499814681447923" id="6520682027041194267">
+          <property name="attrName" nameId="iuxj.6666499814681447926" value="default" />
+          <node role="value" roleId="iuxj.6666499814681541918" type="iuxj.XmlTextValue" typeId="iuxj.6666499814681541919" id="6520682027041194268">
+            <property name="text" nameId="iuxj.6666499814681541920" value="build" />
+          </node>
+        </node>
         <node role="attributes" roleId="iuxj.6666499814681415861" type="iuxj.XmlAttribute" typeId="iuxj.6666499814681447923" id="5178006408628612335">
           <property name="attrName" nameId="iuxj.6666499814681447926" value="basedir" />
           <node role="value" roleId="iuxj.6666499814681541918" type="iuxj.XmlTextValue" typeId="iuxj.6666499814681541919" id="5178006408628612336">

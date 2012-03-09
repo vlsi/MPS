@@ -1,4 +1,4 @@
-<project name="buildA" basedir="../">
+<project name="buildA" default="build" basedir="../">
   <property name="build.dir" location="build" />
   <property name="build.tmp" location="${build.dir}/tmp/buildA" />
   <property name="build.layout" location="${build.dir}/artifacts/buildA" />

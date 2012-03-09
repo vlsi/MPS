@@ -1,4 +1,4 @@
-<project name="buildB">
+<project name="buildB" default="build">
   <property name="build.dir" location="build" />
   <property name="build.tmp" location="${build.dir}/tmp/buildB" />
   <property name="build.layout" location="${build.dir}/artifacts/buildB" />
@@ -13,6 +13,10 @@
       <fileset dir="${build.tmp}/deps/buildA/A-_dl_{aver}.zip/A" />
     </copy>
     <echo file="${build.layout}/variables.properties">buildA.aver=${buildA.aver}</echo>
+  </target>
+  
+  <target name="buildDependents">
+    <ant antfile="../../buildScript/sandbox/buildA/buildA.xml" inheritAll="false" useNativeBasedir="true" />
   </target>
   
   <target name="fetchDependencies">

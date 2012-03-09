@@ -1,4 +1,4 @@
-<project name="buildPlugin" basedir="../">
+<project name="buildPlugin" default="build" basedir="../">
   <property name="build.dir" location="build" />
   <property name="build.tmp" location="${build.dir}/tmp/buildPlugin" />
   <property name="build.layout" location="${build.dir}/artifacts/buildPlugin" />
@@ -28,6 +28,12 @@
         buildCore.MPS=${buildCore.MPS}
         buildA.aver1=${buildA.aver1}
         buildA.aver1=${buildA.aver1}</echo>
+  </target>
+  
+  <target name="buildDependents">
+    <ant antfile="buildCore/buildCore.xml" inheritAll="false" useNativeBasedir="true" />
+    <ant antfile="buildA/buildA.xml" inheritAll="false" useNativeBasedir="true" />
+    <ant antfile="../../solutions/buildB/buildB.xml" inheritAll="false" useNativeBasedir="true" />
   </target>
   
   <target name="fetchDependencies">
