@@ -29,6 +29,8 @@ import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.ui.Messages;
 import com.intellij.openapi.vcs.AbstractVcsHelper;
+
+import java.io.File;
 import java.util.Arrays;
 import java.util.List;
 import com.intellij.openapi.vcs.changes.ChangeListManagerImpl;
@@ -158,6 +160,10 @@ public class MPSVcsManager implements ProjectComponent {
 
   public static class StubChangeListManagerGate implements ChangeListManagerGate {
     public StubChangeListManagerGate() {
+    }
+
+    public FileStatus getStatus(File file) {
+      return null;
     }
 
     public List<LocalChangeList> getListsCopy() {
