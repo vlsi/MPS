@@ -32,7 +32,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 7:
         return new CompiledConceptDescriptor("jetbrains.mps.build.workflow.structure.BwfJavaModuleReference", "jetbrains.mps.build.workflow.structure.BwfJavaDependency", false, new String[]{"jetbrains.mps.build.workflow.structure.BwfJavaDependency"}, new String[]{}, new String[]{"target"});
       case 8:
-        return new CompiledConceptDescriptor("jetbrains.mps.build.workflow.structure.BwfMacro", "jetbrains.mps.build.workflow.structure.BwfProjectPart", false, new String[]{"jetbrains.mps.build.workflow.structure.BwfProjectPart", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{"defaultValue", "exportToProperiesFile", "isLocation"}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.build.workflow.structure.BwfMacro", "jetbrains.mps.build.workflow.structure.BwfProjectPart", false, new String[]{"jetbrains.mps.build.workflow.structure.BwfProjectPart", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{"defaultValue", "exportToProperiesFile", "isLocation", "uninitialized"}, new String[]{});
       case 9:
         return new CompiledConceptDescriptor("jetbrains.mps.build.workflow.structure.BwfMacroListImport", "jetbrains.mps.build.workflow.structure.BwfProjectPart", false, new String[]{"jetbrains.mps.build.workflow.structure.BwfProjectPart"}, new String[]{"prefix", "propertiesFile"}, new String[]{});
       case 10:

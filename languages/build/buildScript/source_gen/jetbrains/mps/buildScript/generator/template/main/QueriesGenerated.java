@@ -5,13 +5,13 @@ package jetbrains.mps.buildScript.generator.template.main;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.generator.template.BaseMappingRuleContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.buildScript.behavior.BuildLayout_Container_Behavior;
 import jetbrains.mps.buildScript.util.Context;
 import jetbrains.mps.buildScript.behavior.BuildLayout_NamedContainer_Behavior;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.buildScript.util.DependenciesHelper;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.buildScript.behavior.BuildSourcePath_Behavior;
 import jetbrains.mps.buildScript.behavior.BuildString_Behavior;
@@ -42,6 +42,10 @@ public class QueriesGenerated {
 
   public static boolean baseMappingRule_Condition_4701820937132270526(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
     return !(SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.buildScript.structure.BuildLayout_ContainerAcceptingFileSet"));
+  }
+
+  public static boolean baseMappingRule_Condition_6921160174096663332(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
+    return (SLinkOperations.getTarget(_context.getNode(), "defaultPath", true) == null);
   }
 
   public static Object propertyMacro_GetPropertyValue_1117643560963267883(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -142,6 +146,10 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_4701820937132270643(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return "copy.artifacts." + _context.getNode().getId();
+  }
+
+  public static Object propertyMacro_GetPropertyValue_6921160174096729094(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(_context.getNode(), "name");
   }
 
   public static Object propertyMacro_GetPropertyValue_1117643560963307392(final IOperationContext operationContext, final PropertyMacroContext _context) {

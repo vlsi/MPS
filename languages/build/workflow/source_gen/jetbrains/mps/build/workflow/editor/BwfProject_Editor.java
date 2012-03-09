@@ -215,6 +215,7 @@ public class BwfProject_Editor extends DefaultNodeEditor {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("baseDirectory");
     provider.setNoTargetText("<no baseDirectory>");
+    provider.setAllowsEmptyTarget(true);
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_baseDirectory");

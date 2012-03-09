@@ -1,4 +1,4 @@
-<project name="myCore" basedir=".">
+<project name="myCore" default="build" basedir=".">
   <property file="${ant.file.myCore}/../myCore.properties" />
   <property name="build.dir" location="build" />
   <property name="aaa" location="${aaa.relative}" />
