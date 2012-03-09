@@ -31,11 +31,11 @@ public class MoveUpDialog extends RefactoringDialog {
 
   }
 
-  protected boolean doRefactoringAction() {
+  protected void doRefactoringAction() {
     final Object treeNode = this.myPanel.getSelectedObject();
     if (treeNode == null || !(treeNode instanceof ChildHierarchyTreeNode)) {
       JOptionPane.showMessageDialog(this.myPanel, "Choose Concept or Interface", this.myNodeType + " can't be moved", JOptionPane.INFORMATION_MESSAGE);
-      return false;
+      return;
     }
     final Wrappers._T<SNode> result = new Wrappers._T<SNode>();
     ModelAccess.instance().runReadAction(new Runnable() {
@@ -45,7 +45,7 @@ public class MoveUpDialog extends RefactoringDialog {
     });
 
     this.myConcept = (SNode) result.value;
-    return true;
+    super.doRefactoringAction();
   }
 
   @Nullable

@@ -42,10 +42,10 @@ public abstract class RefactoringDialog extends DialogWrapper {
   /**
    * This method will be called on pressing "Refactor" button in dialog.
    * 
-   * 
-   * @return true if the dialog can be closed and false to prevent dialog from closing and continue working with it
    */
-  protected abstract boolean doRefactoringAction();
+  protected void doRefactoringAction() {
+    close(OK_EXIT_CODE);
+  }
 
   private class RefactorAction extends AbstractAction {
     public RefactorAction() {
@@ -54,9 +54,7 @@ public abstract class RefactoringDialog extends DialogWrapper {
     }
 
     public void actionPerformed(ActionEvent event) {
-      if (doRefactoringAction()) {
-        close(DialogWrapper.OK_EXIT_CODE);
-      }
+      doRefactoringAction();
     }
   }
 }

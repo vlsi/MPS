@@ -15,9 +15,10 @@ import jetbrains.mps.nodeEditor.EditorComponent;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
+import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
-import java.awt.Frame;
+import com.intellij.openapi.project.Project;
 import jetbrains.mps.nodeEditor.EditorContext;
 import javax.swing.JOptionPane;
 
@@ -70,8 +71,8 @@ public class IntroduceField_Action extends BaseAction {
     if (MapSequence.fromMap(_params).get("context") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("frame", event.getData(MPSCommonDataKeys.FRAME));
-    if (MapSequence.fromMap(_params).get("frame") == null) {
+    MapSequence.fromMap(_params).put("project", event.getData(PlatformDataKeys.PROJECT));
+    if (MapSequence.fromMap(_params).get("project") == null) {
       return false;
     }
     return true;
@@ -87,8 +88,8 @@ public class IntroduceField_Action extends BaseAction {
         }
       });
       if (error.value == null) {
-        IntroduceFieldDialog dialog = new IntroduceFieldDialog(((Frame) MapSequence.fromMap(_params).get("frame")), introducer, ((EditorContext) MapSequence.fromMap(_params).get("context")));
-        dialog.showDialog();
+        IntroduceFieldDialog dialog = new IntroduceFieldDialog(((Project) MapSequence.fromMap(_params).get("project")), introducer, ((EditorContext) MapSequence.fromMap(_params).get("context")));
+        dialog.show();
       } else {
         JOptionPane.showMessageDialog(((EditorComponent) MapSequence.fromMap(_params).get("component")), error.value, "Error", JOptionPane.ERROR_MESSAGE);
       }

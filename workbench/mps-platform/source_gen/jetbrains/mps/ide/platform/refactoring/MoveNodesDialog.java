@@ -23,13 +23,12 @@ public class MoveNodesDialog extends ModelOrNodeChooserDialog {
 
   }
 
-  protected boolean doRefactoringAction() {
+  protected void doRefactoringAction() {
     Object selectedObject = myChooser.getSelectedObject();
     if (myFilter == null || myFilter.checkForObject(selectedObject, myModel, myChooser.getComponent())) {
       mySelectedObject = selectedObject;
-      return true;
+      super.doRefactoringAction();
     }
-    return false;
   }
 
   @Nullable

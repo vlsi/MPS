@@ -108,12 +108,10 @@ public class InlineMethodDialog extends RefactoringDialog {
   /**
    * This method will be called on pressing "Refactor" button in dialog.
    * 
-   * 
-   * @return true if the dialog can be closed and false to prevent dialog from closing and continue working with it
    */
-  protected boolean doRefactoringAction() {
+  protected void doRefactoringAction() {
     myModel.onOk(myProject);
-    return true;
+    super.doRefactoringAction();
   }
 
   @Nullable

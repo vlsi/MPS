@@ -104,7 +104,7 @@ public class ChangeMethodSignatureDialog extends RefactoringDialog {
     return panel;
   }
 
-  protected boolean doRefactoringAction() {
+  protected void doRefactoringAction() {
     final Wrappers._T<List<SNode>> methodsToRefactor = new Wrappers._T<List<SNode>>(new ArrayList<SNode>());
     ProgressManager.getInstance().run(new Task.Modal(myProject, "Search for overriding methods", true) {
       public void run(@NotNull final ProgressIndicator indicator) {
@@ -120,7 +120,7 @@ public class ChangeMethodSignatureDialog extends RefactoringDialog {
     for (SNode method : ListSequence.fromList(methodsToRefactor.value)) {
       ListSequence.fromList(myRefactorings).addElement(new ChangeMethodSignatureRefactoring(this.myParameters, method));
     }
-    return true;
+    super.doRefactoringAction();
   }
 
   @Override

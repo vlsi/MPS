@@ -41,7 +41,6 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import org.jetbrains.annotations.NonNls;
 import javax.swing.JOptionPane;
 import jetbrains.mps.smodel.SModelReference;
-import com.intellij.openapi.ui.DialogWrapper;
 import jetbrains.mps.baseLanguage.util.plugin.refactorings.MethodMatch;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
@@ -331,14 +330,12 @@ public class ExtractMethodDialog extends RefactoringDialog {
   /**
    * This method will be called on pressing "Refactor" button in dialog.
    * 
-   * 
-   * @return true if the dialog can be closed and false to prevent dialog from closing and continue working with it
    */
-  protected boolean doRefactoringAction() {
+  protected void doRefactoringAction() {
     final Wrappers._T<SNode> result = new Wrappers._T<SNode>(null);
     if (!(myCanRefactor)) {
       JOptionPane.showMessageDialog(myPanel, "Can't refactor\n" + this.myErrors, "Can't perform refactoring", JOptionPane.ERROR_MESSAGE);
-      return false;
+      return;
     } else {
       if (myExtractIntoOuterContainer) {
         if (myStaticTarget == null) {
@@ -347,7 +344,7 @@ public class ExtractMethodDialog extends RefactoringDialog {
         if (myStaticTarget != null) {
           setStaticContainer();
         } else {
-          return false;
+          return;
         }
       }
       ModelAccess.instance().runWriteActionInCommand(new Runnable() {
@@ -361,12 +358,10 @@ public class ExtractMethodDialog extends RefactoringDialog {
         }
       });
     }
-    //  manually closing dialog + returning false from thsi method in the end 
-    close(DialogWrapper.OK_EXIT_CODE);
+    super.doRefactoringAction();
     if ((result.value != null)) {
       new ExtractMethodDialog.MyMethodDuplicatesProcessor(myContext, result.value).process(this.myRefactoring.getMatches(), myProject);
     }
-    return false;
   }
 
   public class MyMethodDuplicatesProcessor extends MethodDuplicatesProcessor {

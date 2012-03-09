@@ -70,12 +70,12 @@ public class SModelReferenceDialog extends RefactoringDialog {
     super.init();
   }
 
-  protected boolean doRefactoringAction() {
+  protected void doRefactoringAction() {
     Object item = myChooser.getChosenElement();
     if (item instanceof BaseModelItem) {
       selectedModel = ((BaseModelItem) item).getModelReference();
     }
-    return true;
+    super.doRefactoringAction();
   }
 
   @Nullable
