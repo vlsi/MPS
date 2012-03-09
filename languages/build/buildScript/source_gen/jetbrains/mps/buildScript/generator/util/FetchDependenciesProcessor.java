@@ -14,6 +14,7 @@ import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -62,6 +63,7 @@ public class FetchDependenciesProcessor {
       SLinkOperations.setTarget(taskpart, "task", SLinkOperations.getTarget(new FetchDependenciesProcessor.QuotationClass_t02zqv_a0a0c0h0a().createNode(), "target", false), false);
       ListSequence.fromList(SLinkOperations.getTargets(wf, "parts", true)).addElement(taskpart);
       SNode stask = SModelOperations.createNewNode(SNodeOperations.getModel(project), "jetbrains.mps.build.workflow.structure.BwfSubTask", null);
+      SPropertyOperations.set(stask, "name", "fetch");
       ListSequence.fromList(SLinkOperations.getTargets(taskpart, "subTasks", true)).addElement(stask);
       ListSequence.fromList(SLinkOperations.getTargets(stask, "statements", true)).addSequence(ListSequence.fromList(statements));
       ListSequence.fromList(SLinkOperations.getTargets(project, "aspects", true)).addElement(wf);
