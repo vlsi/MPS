@@ -26,13 +26,13 @@
   <unitInfo fileName="InlineLocalVariable_Action.java" startLine="31" startPosition="0" endLine="149" endPosition="0" unitName="jetbrains.mps.baseLanguage.pluginSolution.plugin.InlineLocalVariable_Action" />
   <unitInfo fileName="InlineLocalVariable_Action.java" startLine="96" startPosition="47" endLine="120" endPosition="7" unitName="jetbrains.mps.baseLanguage.pluginSolution.plugin.InlineLocalVariable_Action$1" />
   <unitInfo fileName="InlineLocalVariable_Action.java" startLine="136" startPosition="57" endLine="141" endPosition="7" unitName="jetbrains.mps.baseLanguage.pluginSolution.plugin.InlineLocalVariable_Action$2" />
-  <unitInfo fileName="InlineMethodDialogModel.java" startLine="25" startPosition="0" endLine="155" endPosition="0" unitName="jetbrains.mps.baseLanguage.pluginSolution.plugin.InlineMethodDialogModel" />
-  <unitInfo fileName="InlineMethodDialogModel.java" startLine="55" startPosition="44" endLine="63" endPosition="7" unitName="jetbrains.mps.baseLanguage.pluginSolution.plugin.InlineMethodDialogModel$1" />
-  <unitInfo fileName="InlineMethodDialogModel.java" startLine="57" startPosition="51" endLine="61" endPosition="11" unitName="jetbrains.mps.baseLanguage.pluginSolution.plugin.InlineMethodDialogModel$2" />
-  <unitInfo fileName="InlineMethodDialogModel.java" startLine="79" startPosition="55" endLine="92" endPosition="5" unitName="jetbrains.mps.baseLanguage.pluginSolution.plugin.InlineMethodDialogModel$2" />
-  <unitInfo fileName="InlineMethodDialogModel.java" startLine="35" startPosition="45" endLine="44" endPosition="5" unitName="jetbrains.mps.baseLanguage.pluginSolution.plugin.InlineMethodDialogModel$3" />
-  <unitInfo fileName="InlineMethodDialogModel.java" startLine="46" startPosition="45" endLine="50" endPosition="5" unitName="jetbrains.mps.baseLanguage.pluginSolution.plugin.InlineMethodDialogModel$4" />
-  <unitInfo fileName="InlineMethodDialogModel.java" startLine="146" startPosition="54" endLine="151" endPosition="5" unitName="jetbrains.mps.baseLanguage.pluginSolution.plugin.InlineMethodDialogModel$5" />
+  <unitInfo fileName="InlineMethodDialogModel.java" startLine="27" startPosition="0" endLine="163" endPosition="0" unitName="jetbrains.mps.baseLanguage.pluginSolution.plugin.InlineMethodDialogModel" />
+  <unitInfo fileName="InlineMethodDialogModel.java" startLine="59" startPosition="44" endLine="67" endPosition="7" unitName="jetbrains.mps.baseLanguage.pluginSolution.plugin.InlineMethodDialogModel$1" />
+  <unitInfo fileName="InlineMethodDialogModel.java" startLine="61" startPosition="51" endLine="65" endPosition="11" unitName="jetbrains.mps.baseLanguage.pluginSolution.plugin.InlineMethodDialogModel$2" />
+  <unitInfo fileName="InlineMethodDialogModel.java" startLine="83" startPosition="55" endLine="96" endPosition="5" unitName="jetbrains.mps.baseLanguage.pluginSolution.plugin.InlineMethodDialogModel$2" />
+  <unitInfo fileName="InlineMethodDialogModel.java" startLine="38" startPosition="45" endLine="48" endPosition="5" unitName="jetbrains.mps.baseLanguage.pluginSolution.plugin.InlineMethodDialogModel$3" />
+  <unitInfo fileName="InlineMethodDialogModel.java" startLine="50" startPosition="45" endLine="54" endPosition="5" unitName="jetbrains.mps.baseLanguage.pluginSolution.plugin.InlineMethodDialogModel$4" />
+  <unitInfo fileName="InlineMethodDialogModel.java" startLine="154" startPosition="54" endLine="159" endPosition="5" unitName="jetbrains.mps.baseLanguage.pluginSolution.plugin.InlineMethodDialogModel$5" />
   <unitInfo fileName="InlineMethodRefactoringAnalyzer.java" startLine="33" startPosition="0" endLine="132" endPosition="0" unitName="jetbrains.mps.baseLanguage.pluginSolution.plugin.InlineMethodRefactoringAnalyzer" />
   <unitInfo fileName="InlineMethodRefactoringAnalyzer.java" startLine="46" startPosition="42" endLine="54" endPosition="5" unitName="jetbrains.mps.baseLanguage.pluginSolution.plugin.InlineMethodRefactoringAnalyzer$1" />
   <unitInfo fileName="InlineMethodRefactoringAnalyzer.java" startLine="48" startPosition="49" endLine="52" endPosition="9" unitName="jetbrains.mps.baseLanguage.pluginSolution.plugin.InlineMethodRefactoringAnalyzer$2" />
@@ -58,7 +58,8 @@
   <unitInfo fileName="ParametersTableModel.java" startLine="10" startPosition="0" endLine="82" endPosition="0" unitName="jetbrains.mps.baseLanguage.pluginSolution.plugin.ParametersTableModel" />
   <unitInfo fileName="PluginSolution_ApplicationPlugin.java" startLine="16" startPosition="0" endLine="67" endPosition="0" unitName="jetbrains.mps.baseLanguage.pluginSolution.plugin.PluginSolution_ApplicationPlugin" />
   <unitInfo fileName="PluginSolution_ProjectPlugin.java" startLine="14" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.baseLanguage.pluginSolution.plugin.PluginSolution_ProjectPlugin" />
-  <unitInfo fileName="ProblemsDialog.java" startLine="17" startPosition="0" endLine="52" endPosition="0" unitName="jetbrains.mps.baseLanguage.pluginSolution.plugin.ProblemsDialog" />
+  <unitInfo fileName="ProblemsDialog.java" startLine="20" startPosition="0" endLine="64" endPosition="0" unitName="jetbrains.mps.baseLanguage.pluginSolution.plugin.ProblemsDialog" />
+  <unitInfo fileName="ProblemsDialog.java" startLine="55" startPosition="25" endLine="60" endPosition="5" unitName="jetbrains.mps.baseLanguage.pluginSolution.plugin.ProblemsDialog$1" />
   <unitInfo fileName="RenameVariable_Action.java" startLine="25" startPosition="0" endLine="100" endPosition="0" unitName="jetbrains.mps.baseLanguage.pluginSolution.plugin.RenameVariable_Action" />
   <unitInfo fileName="RenameVariable_Action.java" startLine="81" startPosition="47" endLine="86" endPosition="7" unitName="jetbrains.mps.baseLanguage.pluginSolution.plugin.RenameVariable_Action$1" />
   <unitInfo fileName="RenameVariable_Action.java" startLine="88" startPosition="57" endLine="92" endPosition="7" unitName="jetbrains.mps.baseLanguage.pluginSolution.plugin.RenameVariable_Action$2" />
@@ -285,9 +286,7 @@
     <scopeInfo nodeId="6573807532044001589" fileName="CommentStatements_Action.java" startLine="59" startPosition="57" endLine="63" endPosition="11" />
     <scopeInfo nodeId="6573807532044001589" fileName="CommentStatements_Action.java" startLine="74" startPosition="5" endLine="78" endPosition="5" />
     <scopeInfo nodeId="6573807532044001589" fileName="CommentStatements_Action.java" startLine="26" startPosition="0" endLine="31" endPosition="3" />
-    <scopeInfo nodeId="6573807532044001589" fileName="CommentStatements_Action.java" startLine="58" startPosition="26" endLine="64" endPosition="9">
-      <varInfo nodeId="6573807532044001589" varName="node" />
-    </scopeInfo>
+    <scopeInfo nodeId="6573807532044001589" fileName="CommentStatements_Action.java" startLine="58" startPosition="26" endLine="64" endPosition="9" />
     <scopeInfo nodeId="6573807532044001589" fileName="CommentStatements_Action.java" startLine="82" startPosition="96" endLine="90" endPosition="5" />
     <scopeInfo nodeId="6573807532044001589" fileName="CommentStatements_Action.java" startLine="37" startPosition="89" endLine="48" endPosition="5" />
     <scopeInfo nodeId="6573807532044001589" fileName="CommentStatements_Action.java" startLine="81" startPosition="0" endLine="92" endPosition="0">
@@ -2170,21 +2169,23 @@
     <unitInfo nodeId="6573807532044006750" fileName="Default_KeymapChanges.java" startLine="10" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.baseLanguage.pluginSolution.plugin.Default_KeymapChanges" />
   </root>
   <root nodeId="8794595397331538933">
-    <nodeInfo nodeId="8794595397331538937" fileName="InlineMethodDialog.java" startLine="28" startPosition="59" endLine="29" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myText" />
-    <nodeInfo nodeId="8794595397331538942" fileName="InlineMethodDialog.java" startLine="29" startPosition="39" endLine="30" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myErrors" />
-    <nodeInfo nodeId="8794595397331538945" fileName="InlineMethodDialog.java" startLine="30" startPosition="26" endLine="31" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myModel" />
-    <nodeInfo nodeId="3748064186690649897" fileName="InlineMethodDialog.java" startLine="31" startPosition="42" endLine="32" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myPreviewAction" />
-    <nodeInfo nodeId="3748064186690562929" fileName="InlineMethodDialog.java" startLine="34" startPosition="94" endLine="35" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="3748064186690562944" fileName="InlineMethodDialog.java" startLine="35" startPosition="25" endLine="36" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5918389564640658579" fileName="InlineMethodDialog.java" startLine="36" startPosition="30" endLine="37" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5918389564640658578" fileName="InlineMethodDialog.java" startLine="37" startPosition="24" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="8794595397331538962" fileName="InlineMethodDialog.java" startLine="38" startPosition="0" endLine="39" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3748064186690649288" fileName="InlineMethodDialog.java" startLine="39" startPosition="71" endLine="40" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8794595397331539084" fileName="InlineMethodDialog.java" startLine="43" startPosition="37" endLine="44" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8794595397331539091" fileName="InlineMethodDialog.java" startLine="44" startPosition="61" endLine="45" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8794595397331539098" fileName="InlineMethodDialog.java" startLine="45" startPosition="58" endLine="46" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8794595397331539103" fileName="InlineMethodDialog.java" startLine="46" startPosition="42" endLine="47" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8794595397331539134" fileName="InlineMethodDialog.java" startLine="47" startPosition="115" endLine="48" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8794595397331538942" fileName="InlineMethodDialog.java" startLine="26" startPosition="59" endLine="27" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myErrors" />
+    <nodeInfo nodeId="8794595397331538945" fileName="InlineMethodDialog.java" startLine="27" startPosition="26" endLine="28" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myModel" />
+    <nodeInfo nodeId="3748064186690649897" fileName="InlineMethodDialog.java" startLine="28" startPosition="42" endLine="29" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myPreviewAction" />
+    <nodeInfo nodeId="3748064186690562929" fileName="InlineMethodDialog.java" startLine="31" startPosition="94" endLine="32" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="3748064186690562944" fileName="InlineMethodDialog.java" startLine="32" startPosition="25" endLine="33" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5918389564640658579" fileName="InlineMethodDialog.java" startLine="33" startPosition="30" endLine="34" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5918389564640658578" fileName="InlineMethodDialog.java" startLine="34" startPosition="24" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="8794595397331538962" fileName="InlineMethodDialog.java" startLine="35" startPosition="0" endLine="36" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3748064186690649288" fileName="InlineMethodDialog.java" startLine="36" startPosition="71" endLine="37" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8794595397331539084" fileName="InlineMethodDialog.java" startLine="40" startPosition="37" endLine="41" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5918389564640879543" fileName="InlineMethodDialog.java" startLine="41" startPosition="42" endLine="42" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5918389564640858400" fileName="InlineMethodDialog.java" startLine="42" startPosition="80" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="8794595397331539091" fileName="InlineMethodDialog.java" startLine="43" startPosition="0" endLine="44" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8794595397331539098" fileName="InlineMethodDialog.java" startLine="44" startPosition="60" endLine="45" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8794595397331539103" fileName="InlineMethodDialog.java" startLine="45" startPosition="42" endLine="46" endPosition="127" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8794595397331539134" fileName="InlineMethodDialog.java" startLine="46" startPosition="127" endLine="47" endPosition="123" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5918389564640819513" fileName="InlineMethodDialog.java" startLine="47" startPosition="123" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="8794595397331539147" fileName="InlineMethodDialog.java" startLine="49" startPosition="31" endLine="50" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8794595397331539180" fileName="InlineMethodDialog.java" startLine="52" startPosition="42" endLine="53" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8794595397331539185" fileName="InlineMethodDialog.java" startLine="53" startPosition="32" endLine="54" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -2197,164 +2198,158 @@
     <nodeInfo nodeId="8794595397331539201" fileName="InlineMethodDialog.java" startLine="67" startPosition="25" endLine="68" endPosition="118" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8794595397331539227" fileName="InlineMethodDialog.java" startLine="71" startPosition="32" endLine="72" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8794595397331539218" fileName="InlineMethodDialog.java" startLine="73" startPosition="12" endLine="74" endPosition="124" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8794595397331539335" fileName="InlineMethodDialog.java" startLine="78" startPosition="122" endLine="79" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8794595397331539340" fileName="InlineMethodDialog.java" startLine="79" startPosition="52" endLine="80" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8794595397331539346" fileName="InlineMethodDialog.java" startLine="80" startPosition="37" endLine="81" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8794595397331539352" fileName="InlineMethodDialog.java" startLine="81" startPosition="16" endLine="82" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8794595397331539358" fileName="InlineMethodDialog.java" startLine="82" startPosition="16" endLine="83" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8794595397331539364" fileName="InlineMethodDialog.java" startLine="83" startPosition="18" endLine="84" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8794595397331539382" fileName="InlineMethodDialog.java" startLine="86" startPosition="50" endLine="87" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3748064186690702998" fileName="InlineMethodDialog.java" startLine="87" startPosition="58" endLine="88" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8794595397331539393" fileName="InlineMethodDialog.java" startLine="90" startPosition="7" endLine="91" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8794595397331539398" fileName="InlineMethodDialog.java" startLine="91" startPosition="23" endLine="92" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8794595397331539404" fileName="InlineMethodDialog.java" startLine="92" startPosition="36" endLine="93" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8794595397331539409" fileName="InlineMethodDialog.java" startLine="96" startPosition="82" endLine="97" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3748064186690649494" fileName="InlineMethodDialog.java" startLine="101" startPosition="44" endLine="102" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3748064186690649303" fileName="InlineMethodDialog.java" startLine="102" startPosition="51" endLine="103" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3748064186690649308" fileName="InlineMethodDialog.java" startLine="103" startPosition="52" endLine="104" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3748064186690649314" fileName="InlineMethodDialog.java" startLine="104" startPosition="37" endLine="105" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3748064186690649325" fileName="InlineMethodDialog.java" startLine="105" startPosition="38" endLine="106" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3748064186690649331" fileName="InlineMethodDialog.java" startLine="106" startPosition="16" endLine="107" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3748064186690649337" fileName="InlineMethodDialog.java" startLine="107" startPosition="16" endLine="108" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3748064186690649343" fileName="InlineMethodDialog.java" startLine="108" startPosition="18" endLine="109" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3748064186690649353" fileName="InlineMethodDialog.java" startLine="109" startPosition="25" endLine="110" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3748064186690649358" fileName="InlineMethodDialog.java" startLine="110" startPosition="33" endLine="111" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3748064186690649364" fileName="InlineMethodDialog.java" startLine="111" startPosition="37" endLine="112" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3748064186690649375" fileName="InlineMethodDialog.java" startLine="112" startPosition="38" endLine="113" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3748064186690649381" fileName="InlineMethodDialog.java" startLine="113" startPosition="16" endLine="114" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3748064186690649387" fileName="InlineMethodDialog.java" startLine="114" startPosition="16" endLine="115" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3748064186690649393" fileName="InlineMethodDialog.java" startLine="115" startPosition="18" endLine="116" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3748064186690606370" fileName="InlineMethodDialog.java" startLine="116" startPosition="37" endLine="117" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3748064186690649729" fileName="InlineMethodDialog.java" startLine="121" startPosition="41" endLine="122" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3748064186690649937" fileName="InlineMethodDialog.java" startLine="122" startPosition="33" endLine="123" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3748064186690649984" fileName="InlineMethodDialog.java" startLine="127" startPosition="38" endLine="128" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8794595397331539256" fileName="InlineMethodDialog.java" startLine="137" startPosition="43" endLine="138" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3748064186690649641" fileName="InlineMethodDialog.java" startLine="138" startPosition="19" endLine="139" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3748064186690649817" fileName="InlineMethodDialog.java" startLine="143" startPosition="28" endLine="144" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="3748064186690649864" fileName="InlineMethodDialog.java" startLine="147" startPosition="48" endLine="148" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1522842590009003419" fileName="InlineMethodDialog.java" startLine="148" startPosition="24" endLine="149" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8794595397331539382" fileName="InlineMethodDialog.java" startLine="80" startPosition="50" endLine="81" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3748064186690702998" fileName="InlineMethodDialog.java" startLine="81" startPosition="58" endLine="82" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8794595397331539393" fileName="InlineMethodDialog.java" startLine="84" startPosition="7" endLine="85" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8794595397331539398" fileName="InlineMethodDialog.java" startLine="85" startPosition="23" endLine="86" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8794595397331539404" fileName="InlineMethodDialog.java" startLine="86" startPosition="33" endLine="87" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3748064186690649494" fileName="InlineMethodDialog.java" startLine="91" startPosition="44" endLine="92" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3748064186690649393" fileName="InlineMethodDialog.java" startLine="92" startPosition="50" endLine="93" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3748064186690606370" fileName="InlineMethodDialog.java" startLine="93" startPosition="55" endLine="94" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3748064186690649729" fileName="InlineMethodDialog.java" startLine="98" startPosition="41" endLine="99" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3748064186690649937" fileName="InlineMethodDialog.java" startLine="99" startPosition="33" endLine="100" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3748064186690649984" fileName="InlineMethodDialog.java" startLine="104" startPosition="38" endLine="105" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8794595397331539256" fileName="InlineMethodDialog.java" startLine="114" startPosition="43" endLine="115" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3748064186690649641" fileName="InlineMethodDialog.java" startLine="115" startPosition="28" endLine="116" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5918389564640862162" fileName="InlineMethodDialog.java" startLine="121" startPosition="43" endLine="122" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5918389564640862172" fileName="InlineMethodDialog.java" startLine="122" startPosition="32" endLine="123" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5918389564640862153" fileName="InlineMethodDialog.java" startLine="123" startPosition="51" endLine="124" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3748064186690649817" fileName="InlineMethodDialog.java" startLine="128" startPosition="28" endLine="129" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="3748064186690649864" fileName="InlineMethodDialog.java" startLine="132" startPosition="48" endLine="133" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1522842590009003419" fileName="InlineMethodDialog.java" startLine="133" startPosition="33" endLine="134" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8794595397331539216" fileName="InlineMethodDialog.java" startLine="73" startPosition="10" endLine="75" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8794595397331539145" fileName="InlineMethodDialog.java" startLine="48" startPosition="109" endLine="51" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3748064186690649798" fileName="InlineMethodDialog.java" startLine="142" startPosition="72" endLine="145" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="PreviewAction#()V" />
+    <nodeInfo nodeId="8794595397331539145" fileName="InlineMethodDialog.java" startLine="48" startPosition="0" endLine="51" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3748064186690649798" fileName="InlineMethodDialog.java" startLine="127" startPosition="72" endLine="130" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="PreviewAction#()V" />
     <nodeInfo nodeId="8794595397331539199" fileName="InlineMethodDialog.java" startLine="66" startPosition="57" endLine="70" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="8794595397331539406" fileName="InlineMethodDialog.java" startLine="95" startPosition="0" endLine="99" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDefaultDimensionSettings#()Ljetbrains/mps/ide/dialogs/DialogDimensionsSettings/DialogDimensions;" />
     <nodeInfo nodeId="8794595397331539158" fileName="InlineMethodDialog.java" startLine="56" startPosition="10" endLine="61" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="8794595397331539198" fileName="InlineMethodDialog.java" startLine="65" startPosition="52" endLine="70" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8794595397331539210" fileName="InlineMethodDialog.java" startLine="70" startPosition="7" endLine="75" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8794595397331539377" fileName="InlineMethodDialog.java" startLine="85" startPosition="70" endLine="90" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="actionPerformed#(Ljava/awt/event/ActionEvent;)V" />
-    <nodeInfo nodeId="3748064186690649747" fileName="InlineMethodDialog.java" startLine="125" startPosition="0" endLine="130" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createActions#()[Ljavax/swing/Action;" />
-    <nodeInfo nodeId="3748064186690649811" fileName="InlineMethodDialog.java" startLine="146" startPosition="0" endLine="151" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doAction#(Ljava/awt/event/ActionEvent;)V" />
-    <nodeInfo nodeId="8794595397331539370" fileName="InlineMethodDialog.java" startLine="84" startPosition="51" endLine="90" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3748064186690649724" fileName="InlineMethodDialog.java" startLine="119" startPosition="0" endLine="125" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createDefaultActions#()V" />
-    <nodeInfo nodeId="8794595397331538948" fileName="InlineMethodDialog.java" startLine="33" startPosition="0" endLine="41" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="InlineMethodDialog#(Ljetbrains/mps/smodel/SNode;Lcom/intellij/openapi/project/Project;Ljetbrains/mps/smodel/IOperationContext;)V" />
+    <nodeInfo nodeId="8794595397331539377" fileName="InlineMethodDialog.java" startLine="79" startPosition="70" endLine="84" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="actionPerformed#(Ljava/awt/event/ActionEvent;)V" />
+    <nodeInfo nodeId="3748064186690649747" fileName="InlineMethodDialog.java" startLine="102" startPosition="0" endLine="107" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createActions#()[Ljavax/swing/Action;" />
+    <nodeInfo nodeId="3748064186690649811" fileName="InlineMethodDialog.java" startLine="131" startPosition="0" endLine="136" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doAction#(Ljava/awt/event/ActionEvent;)V" />
+    <nodeInfo nodeId="8794595397331539370" fileName="InlineMethodDialog.java" startLine="78" startPosition="115" endLine="84" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3748064186690649724" fileName="InlineMethodDialog.java" startLine="96" startPosition="0" endLine="102" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createDefaultActions#()V" />
+    <nodeInfo nodeId="3748064186690606365" fileName="InlineMethodDialog.java" startLine="89" startPosition="0" endLine="96" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCenterPanel#()Ljavax/swing/JComponent;" />
+    <nodeInfo nodeId="8794595397331538948" fileName="InlineMethodDialog.java" startLine="30" startPosition="0" endLine="38" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="InlineMethodDialog#(Ljetbrains/mps/smodel/SNode;Lcom/intellij/openapi/project/Project;Ljetbrains/mps/smodel/IOperationContext;)V" />
+    <nodeInfo nodeId="5918389564640862147" fileName="InlineMethodDialog.java" startLine="118" startPosition="0" endLine="126" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNorthPanel#()Ljavax/swing/JComponent;" />
     <nodeInfo nodeId="8794595397331539157" fileName="InlineMethodDialog.java" startLine="51" startPosition="5" endLine="61" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3748064186690649631" fileName="InlineMethodDialog.java" startLine="130" startPosition="0" endLine="141" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doRefactoringAction#()Z" />
+    <nodeInfo nodeId="3748064186690649631" fileName="InlineMethodDialog.java" startLine="107" startPosition="0" endLine="118" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doRefactoringAction#()Z" />
+    <nodeInfo nodeId="8794595397331539321" fileName="InlineMethodDialog.java" startLine="77" startPosition="0" endLine="89" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createButton#(Ljavax/swing/ButtonGroup;Ljavax/swing/JPanel;ZLjava/lang/String;)Ljavax/swing/JRadioButton;" />
     <nodeInfo nodeId="8794595397331539196" fileName="InlineMethodDialog.java" startLine="64" startPosition="0" endLine="77" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="tryToShow#(Ljava/awt/Component;)V" />
-    <nodeInfo nodeId="8794595397331539321" fileName="InlineMethodDialog.java" startLine="77" startPosition="0" endLine="95" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createButton#(Ljavax/swing/ButtonGroup;Ljavax/swing/JPanel;IZLjava/lang/String;)Ljavax/swing/JRadioButton;" />
-    <nodeInfo nodeId="3748064186690606365" fileName="InlineMethodDialog.java" startLine="99" startPosition="0" endLine="119" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCenterPanel#()Ljavax/swing/JComponent;" />
-    <nodeInfo nodeId="8794595397331539082" fileName="InlineMethodDialog.java" startLine="42" startPosition="0" endLine="64" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCheckBoxes#()Ljavax/swing/JPanel;" />
+    <nodeInfo nodeId="8794595397331539082" fileName="InlineMethodDialog.java" startLine="39" startPosition="0" endLine="64" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCheckBoxes#()Ljavax/swing/JPanel;" />
     <scopeInfo nodeId="8794595397331539146" fileName="InlineMethodDialog.java" startLine="49" startPosition="31" endLine="50" endPosition="32" />
     <scopeInfo nodeId="8794595397331539200" fileName="InlineMethodDialog.java" startLine="67" startPosition="25" endLine="68" endPosition="118" />
     <scopeInfo nodeId="8794595397331539226" fileName="InlineMethodDialog.java" startLine="71" startPosition="32" endLine="72" endPosition="18" />
     <scopeInfo nodeId="8794595397331539217" fileName="InlineMethodDialog.java" startLine="73" startPosition="12" endLine="74" endPosition="124" />
-    <scopeInfo nodeId="8794595397331539408" fileName="InlineMethodDialog.java" startLine="96" startPosition="82" endLine="97" endPosition="77" />
-    <scopeInfo nodeId="3748064186690649751" fileName="InlineMethodDialog.java" startLine="127" startPosition="38" endLine="128" endPosition="81" />
-    <scopeInfo nodeId="3748064186690649801" fileName="InlineMethodDialog.java" startLine="143" startPosition="28" endLine="144" endPosition="23" />
-    <scopeInfo nodeId="8794595397331539381" fileName="InlineMethodDialog.java" startLine="86" startPosition="50" endLine="88" endPosition="43" />
-    <scopeInfo nodeId="3748064186690649728" fileName="InlineMethodDialog.java" startLine="121" startPosition="41" endLine="123" endPosition="61" />
-    <scopeInfo nodeId="3748064186690649640" fileName="InlineMethodDialog.java" startLine="137" startPosition="43" endLine="139" endPosition="16" />
-    <scopeInfo nodeId="3748064186690649816" fileName="InlineMethodDialog.java" startLine="147" startPosition="48" endLine="149" endPosition="40" />
+    <scopeInfo nodeId="3748064186690649751" fileName="InlineMethodDialog.java" startLine="104" startPosition="38" endLine="105" endPosition="81" />
+    <scopeInfo nodeId="3748064186690649801" fileName="InlineMethodDialog.java" startLine="128" startPosition="28" endLine="129" endPosition="23" />
+    <scopeInfo nodeId="8794595397331539381" fileName="InlineMethodDialog.java" startLine="80" startPosition="50" endLine="82" endPosition="43" />
+    <scopeInfo nodeId="3748064186690649728" fileName="InlineMethodDialog.java" startLine="98" startPosition="41" endLine="100" endPosition="61" />
+    <scopeInfo nodeId="3748064186690649640" fileName="InlineMethodDialog.java" startLine="114" startPosition="43" endLine="116" endPosition="16" />
+    <scopeInfo nodeId="3748064186690649816" fileName="InlineMethodDialog.java" startLine="132" startPosition="48" endLine="134" endPosition="40" />
     <scopeInfo nodeId="8794595397331539179" fileName="InlineMethodDialog.java" startLine="52" startPosition="42" endLine="55" endPosition="40" />
-    <scopeInfo nodeId="3748064186690649798" fileName="InlineMethodDialog.java" startLine="142" startPosition="72" endLine="145" endPosition="5" />
+    <scopeInfo nodeId="3748064186690606369" fileName="InlineMethodDialog.java" startLine="91" startPosition="44" endLine="94" endPosition="17">
+      <varInfo nodeId="3748064186690649495" varName="panel" />
+    </scopeInfo>
+    <scopeInfo nodeId="5918389564640862151" fileName="InlineMethodDialog.java" startLine="121" startPosition="43" endLine="124" endPosition="17">
+      <varInfo nodeId="5918389564640862163" varName="label" />
+    </scopeInfo>
+    <scopeInfo nodeId="3748064186690649798" fileName="InlineMethodDialog.java" startLine="127" startPosition="72" endLine="130" endPosition="5" />
     <scopeInfo nodeId="8794595397331539159" fileName="InlineMethodDialog.java" startLine="56" startPosition="12" endLine="60" endPosition="39" />
     <scopeInfo nodeId="8794595397331539199" fileName="InlineMethodDialog.java" startLine="66" startPosition="57" endLine="70" endPosition="0" />
-    <scopeInfo nodeId="8794595397331539406" fileName="InlineMethodDialog.java" startLine="95" startPosition="0" endLine="99" endPosition="0" />
-    <scopeInfo nodeId="8794595397331539377" fileName="InlineMethodDialog.java" startLine="85" startPosition="70" endLine="90" endPosition="0">
+    <scopeInfo nodeId="8794595397331539377" fileName="InlineMethodDialog.java" startLine="79" startPosition="70" endLine="84" endPosition="0">
       <varInfo nodeId="8794595397331539378" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="3748064186690649747" fileName="InlineMethodDialog.java" startLine="125" startPosition="0" endLine="130" endPosition="0" />
-    <scopeInfo nodeId="3748064186690649811" fileName="InlineMethodDialog.java" startLine="146" startPosition="0" endLine="151" endPosition="0">
+    <scopeInfo nodeId="3748064186690649747" fileName="InlineMethodDialog.java" startLine="102" startPosition="0" endLine="107" endPosition="0" />
+    <scopeInfo nodeId="3748064186690649811" fileName="InlineMethodDialog.java" startLine="131" startPosition="0" endLine="136" endPosition="0">
       <varInfo nodeId="3748064186690649814" varName="event" />
     </scopeInfo>
-    <scopeInfo nodeId="8794595397331538955" fileName="InlineMethodDialog.java" startLine="34" startPosition="94" endLine="40" endPosition="11" />
-    <scopeInfo nodeId="3748064186690649724" fileName="InlineMethodDialog.java" startLine="119" startPosition="0" endLine="125" endPosition="0" />
-    <scopeInfo nodeId="8794595397331538948" fileName="InlineMethodDialog.java" startLine="33" startPosition="0" endLine="41" endPosition="3">
+    <scopeInfo nodeId="8794595397331538955" fileName="InlineMethodDialog.java" startLine="31" startPosition="94" endLine="37" endPosition="11" />
+    <scopeInfo nodeId="3748064186690649724" fileName="InlineMethodDialog.java" startLine="96" startPosition="0" endLine="102" endPosition="0" />
+    <scopeInfo nodeId="3748064186690606365" fileName="InlineMethodDialog.java" startLine="89" startPosition="0" endLine="96" endPosition="0" />
+    <scopeInfo nodeId="8794595397331538948" fileName="InlineMethodDialog.java" startLine="30" startPosition="0" endLine="38" endPosition="3">
       <varInfo nodeId="8794595397331538949" varName="node" />
       <varInfo nodeId="8794595397331538953" varName="operationContext" />
       <varInfo nodeId="8794595397331538951" varName="project" />
     </scopeInfo>
-    <scopeInfo nodeId="8794595397331539197" fileName="InlineMethodDialog.java" startLine="65" startPosition="52" endLine="75" endPosition="5" />
-    <scopeInfo nodeId="3748064186690649631" fileName="InlineMethodDialog.java" startLine="130" startPosition="0" endLine="141" endPosition="0" />
-    <scopeInfo nodeId="8794595397331539196" fileName="InlineMethodDialog.java" startLine="64" startPosition="0" endLine="77" endPosition="0">
-      <varInfo nodeId="3748064186690649610" varName="parentComponent" />
-    </scopeInfo>
-    <scopeInfo nodeId="8794595397331539334" fileName="InlineMethodDialog.java" startLine="78" startPosition="122" endLine="93" endPosition="19">
+    <scopeInfo nodeId="5918389564640862147" fileName="InlineMethodDialog.java" startLine="118" startPosition="0" endLine="126" endPosition="0" />
+    <scopeInfo nodeId="8794595397331539334" fileName="InlineMethodDialog.java" startLine="78" startPosition="115" endLine="87" endPosition="19">
       <varInfo nodeId="8794595397331539371" varName="button1" />
-      <varInfo nodeId="8794595397331539336" varName="c" />
     </scopeInfo>
-    <scopeInfo nodeId="3748064186690606369" fileName="InlineMethodDialog.java" startLine="101" startPosition="44" endLine="117" endPosition="17">
-      <varInfo nodeId="3748064186690649304" varName="c" />
-      <varInfo nodeId="3748064186690649495" varName="panel" />
-    </scopeInfo>
-    <scopeInfo nodeId="8794595397331539321" fileName="InlineMethodDialog.java" startLine="77" startPosition="0" endLine="95" endPosition="0">
+    <scopeInfo nodeId="8794595397331539197" fileName="InlineMethodDialog.java" startLine="65" startPosition="52" endLine="75" endPosition="5" />
+    <scopeInfo nodeId="3748064186690649631" fileName="InlineMethodDialog.java" startLine="107" startPosition="0" endLine="118" endPosition="0" />
+    <scopeInfo nodeId="8794595397331539321" fileName="InlineMethodDialog.java" startLine="77" startPosition="0" endLine="89" endPosition="0">
       <varInfo nodeId="8794595397331539326" varName="checkboxesPanel" />
       <varInfo nodeId="8794595397331539330" varName="forAll" />
       <varInfo nodeId="8794595397331539324" varName="group" />
       <varInfo nodeId="8794595397331539332" varName="text" />
-      <varInfo nodeId="8794595397331539328" varName="y" />
     </scopeInfo>
-    <scopeInfo nodeId="8794595397331539083" fileName="InlineMethodDialog.java" startLine="43" startPosition="37" endLine="62" endPosition="27">
+    <scopeInfo nodeId="8794595397331539196" fileName="InlineMethodDialog.java" startLine="64" startPosition="0" endLine="77" endPosition="0">
+      <varInfo nodeId="3748064186690649610" varName="parentComponent" />
+    </scopeInfo>
+    <scopeInfo nodeId="8794595397331539083" fileName="InlineMethodDialog.java" startLine="40" startPosition="37" endLine="62" endPosition="27">
       <varInfo nodeId="8794595397331539104" varName="button1" />
       <varInfo nodeId="8794595397331539135" varName="button2" />
       <varInfo nodeId="8794595397331539085" varName="checkboxesPanel" />
       <varInfo nodeId="8794595397331539099" varName="group" />
     </scopeInfo>
-    <scopeInfo nodeId="3748064186690606365" fileName="InlineMethodDialog.java" startLine="99" startPosition="0" endLine="119" endPosition="0" />
-    <scopeInfo nodeId="8794595397331539082" fileName="InlineMethodDialog.java" startLine="42" startPosition="0" endLine="64" endPosition="0" />
-    <unitInfo nodeId="8794595397331538933" fileName="InlineMethodDialog.java" startLine="28" startPosition="0" endLine="153" endPosition="0" unitName="jetbrains.mps.baseLanguage.pluginSolution.plugin.InlineMethodDialog" />
+    <scopeInfo nodeId="8794595397331539082" fileName="InlineMethodDialog.java" startLine="39" startPosition="0" endLine="64" endPosition="0" />
+    <unitInfo nodeId="8794595397331538933" fileName="InlineMethodDialog.java" startLine="26" startPosition="0" endLine="138" endPosition="0" unitName="jetbrains.mps.baseLanguage.pluginSolution.plugin.InlineMethodDialog" />
     <unitInfo nodeId="8794595397331539199" fileName="InlineMethodDialog.java" startLine="66" startPosition="45" endLine="70" endPosition="5" unitName="jetbrains.mps.baseLanguage.pluginSolution.plugin.InlineMethodDialog$1" />
-    <unitInfo nodeId="8794595397331539376" fileName="InlineMethodDialog.java" startLine="85" startPosition="48" endLine="90" endPosition="5" unitName="jetbrains.mps.baseLanguage.pluginSolution.plugin.InlineMethodDialog$2" />
-    <unitInfo nodeId="3748064186690649796" fileName="InlineMethodDialog.java" startLine="142" startPosition="0" endLine="152" endPosition="0" unitName="jetbrains.mps.baseLanguage.pluginSolution.plugin.InlineMethodDialog$PreviewAction" />
+    <unitInfo nodeId="8794595397331539376" fileName="InlineMethodDialog.java" startLine="79" startPosition="48" endLine="84" endPosition="5" unitName="jetbrains.mps.baseLanguage.pluginSolution.plugin.InlineMethodDialog$2" />
+    <unitInfo nodeId="3748064186690649796" fileName="InlineMethodDialog.java" startLine="127" startPosition="0" endLine="137" endPosition="0" unitName="jetbrains.mps.baseLanguage.pluginSolution.plugin.InlineMethodDialog$PreviewAction" />
   </root>
   <root nodeId="8794595397331624334">
-    <nodeInfo nodeId="8794595397331624335" fileName="ProblemsDialog.java" startLine="17" startPosition="48" endLine="18" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myPanel" />
-    <nodeInfo nodeId="8794595397331624338" fileName="ProblemsDialog.java" startLine="18" startPosition="25" endLine="19" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myModel" />
-    <nodeInfo nodeId="8794595397331624346" fileName="ProblemsDialog.java" startLine="21" startPosition="84" endLine="22" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="8794595397331624349" fileName="ProblemsDialog.java" startLine="22" startPosition="38" endLine="23" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8794595397331624355" fileName="ProblemsDialog.java" startLine="23" startPosition="25" endLine="24" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8794595397331624366" fileName="ProblemsDialog.java" startLine="24" startPosition="52" endLine="25" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8794595397331624374" fileName="ProblemsDialog.java" startLine="25" startPosition="80" endLine="26" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8794595397331624379" fileName="ProblemsDialog.java" startLine="26" startPosition="28" endLine="27" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8794595397331624384" fileName="ProblemsDialog.java" startLine="27" startPosition="36" endLine="28" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8794595397331624389" fileName="ProblemsDialog.java" startLine="28" startPosition="27" endLine="29" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8794595397331624401" fileName="ProblemsDialog.java" startLine="29" startPosition="56" endLine="30" endPosition="161" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8794595397331624422" fileName="ProblemsDialog.java" startLine="33" startPosition="43" endLine="34" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8794595397331624430" fileName="ProblemsDialog.java" startLine="38" startPosition="26" endLine="39" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8794595397331624434" fileName="ProblemsDialog.java" startLine="39" startPosition="19" endLine="40" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8794595397331624453" fileName="ProblemsDialog.java" startLine="44" startPosition="26" endLine="45" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8794595397331624469" fileName="ProblemsDialog.java" startLine="48" startPosition="82" endLine="49" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8794595397331624418" fileName="ProblemsDialog.java" startLine="32" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getMainComponent#()Ljavax/swing/JComponent;" />
-    <nodeInfo nodeId="8794595397331624466" fileName="ProblemsDialog.java" startLine="47" startPosition="0" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDefaultDimensionSettings#()Ljetbrains/mps/ide/dialogs/DialogDimensionsSettings/DialogDimensions;" />
-    <nodeInfo nodeId="8794595397331624449" fileName="ProblemsDialog.java" startLine="42" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="onCancel#()V" />
-    <nodeInfo nodeId="8794595397331624426" fileName="ProblemsDialog.java" startLine="36" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="onIgnore#()V" />
-    <nodeInfo nodeId="8794595397331624342" fileName="ProblemsDialog.java" startLine="20" startPosition="0" endLine="31" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ProblemsDialog#(Ljava/awt/Frame;Ljava/lang/String;Ljetbrains/mps/baseLanguage/pluginSolution/plugin/InlineMethodDialogModel;)V" />
-    <scopeInfo nodeId="8794595397331624421" fileName="ProblemsDialog.java" startLine="33" startPosition="43" endLine="34" endPosition="24" />
-    <scopeInfo nodeId="8794595397331624452" fileName="ProblemsDialog.java" startLine="44" startPosition="26" endLine="45" endPosition="19" />
-    <scopeInfo nodeId="8794595397331624468" fileName="ProblemsDialog.java" startLine="48" startPosition="82" endLine="49" endPosition="77" />
-    <scopeInfo nodeId="8794595397331624429" fileName="ProblemsDialog.java" startLine="38" startPosition="26" endLine="40" endPosition="26" />
-    <scopeInfo nodeId="8794595397331624418" fileName="ProblemsDialog.java" startLine="32" startPosition="0" endLine="36" endPosition="0" />
-    <scopeInfo nodeId="8794595397331624466" fileName="ProblemsDialog.java" startLine="47" startPosition="0" endLine="51" endPosition="0" />
-    <scopeInfo nodeId="8794595397331624449" fileName="ProblemsDialog.java" startLine="42" startPosition="0" endLine="47" endPosition="0" />
-    <scopeInfo nodeId="8794595397331624426" fileName="ProblemsDialog.java" startLine="36" startPosition="0" endLine="42" endPosition="0" />
-    <scopeInfo nodeId="8794595397331624345" fileName="ProblemsDialog.java" startLine="21" startPosition="84" endLine="30" endPosition="161">
-      <varInfo nodeId="8794595397331624367" varName="area" />
+    <nodeInfo nodeId="8794595397331624338" fileName="ProblemsDialog.java" startLine="20" startPosition="51" endLine="21" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myModel" />
+    <nodeInfo nodeId="5918389564640729697" fileName="ProblemsDialog.java" startLine="21" startPosition="42" endLine="22" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myErrors" />
+    <nodeInfo nodeId="5918389564640729855" fileName="ProblemsDialog.java" startLine="22" startPosition="26" endLine="23" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myIgnoreAction" />
+    <nodeInfo nodeId="5918389564640729570" fileName="ProblemsDialog.java" startLine="25" startPosition="88" endLine="26" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="5918389564640729594" fileName="ProblemsDialog.java" startLine="26" startPosition="25" endLine="27" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5918389564640719655" fileName="ProblemsDialog.java" startLine="27" startPosition="34" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="8794595397331624349" fileName="ProblemsDialog.java" startLine="28" startPosition="0" endLine="29" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5918389564640729704" fileName="ProblemsDialog.java" startLine="29" startPosition="20" endLine="30" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5918389564640729603" fileName="ProblemsDialog.java" startLine="30" startPosition="22" endLine="31" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5918389564640729750" fileName="ProblemsDialog.java" startLine="35" startPosition="44" endLine="36" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8794595397331624366" fileName="ProblemsDialog.java" startLine="36" startPosition="52" endLine="37" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8794595397331624374" fileName="ProblemsDialog.java" startLine="37" startPosition="82" endLine="38" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8794595397331624379" fileName="ProblemsDialog.java" startLine="38" startPosition="28" endLine="39" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8794595397331624384" fileName="ProblemsDialog.java" startLine="39" startPosition="36" endLine="40" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8794595397331624389" fileName="ProblemsDialog.java" startLine="40" startPosition="27" endLine="41" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8794595397331624401" fileName="ProblemsDialog.java" startLine="41" startPosition="49" endLine="42" endPosition="154" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5918389564640764657" fileName="ProblemsDialog.java" startLine="42" startPosition="154" endLine="43" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5918389564640729740" fileName="ProblemsDialog.java" startLine="43" startPosition="50" endLine="44" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5918389564640729796" fileName="ProblemsDialog.java" startLine="48" startPosition="38" endLine="49" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5918389564640729808" fileName="ProblemsDialog.java" startLine="53" startPosition="41" endLine="54" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5918389564640729907" fileName="ProblemsDialog.java" startLine="56" startPosition="50" endLine="57" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5918389564640729934" fileName="ProblemsDialog.java" startLine="57" startPosition="25" endLine="58" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5918389564640729938" fileName="ProblemsDialog.java" startLine="60" startPosition="6" endLine="61" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5918389564640729790" fileName="ProblemsDialog.java" startLine="46" startPosition="0" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createActions#()[Ljavax/swing/Action;" />
+    <nodeInfo nodeId="5918389564640729900" fileName="ProblemsDialog.java" startLine="55" startPosition="70" endLine="60" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doAction#(Ljava/awt/event/ActionEvent;)V" />
+    <nodeInfo nodeId="5918389564640729866" fileName="ProblemsDialog.java" startLine="54" startPosition="33" endLine="60" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8794595397331624342" fileName="ProblemsDialog.java" startLine="24" startPosition="0" endLine="32" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ProblemsDialog#(Lcom/intellij/openapi/project/Project;Ljava/lang/String;Ljetbrains/mps/baseLanguage/pluginSolution/plugin/InlineMethodDialogModel;)V" />
+    <nodeInfo nodeId="5918389564640729803" fileName="ProblemsDialog.java" startLine="51" startPosition="0" endLine="63" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createDefaultActions#()V" />
+    <nodeInfo nodeId="5918389564640729605" fileName="ProblemsDialog.java" startLine="33" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCenterPanel#()Ljavax/swing/JComponent;" />
+    <scopeInfo nodeId="5918389564640729794" fileName="ProblemsDialog.java" startLine="48" startPosition="38" endLine="49" endPosition="59" />
+    <scopeInfo nodeId="5918389564640729905" fileName="ProblemsDialog.java" startLine="56" startPosition="50" endLine="58" endPosition="42" />
+    <scopeInfo nodeId="5918389564640729790" fileName="ProblemsDialog.java" startLine="46" startPosition="0" endLine="51" endPosition="0" />
+    <scopeInfo nodeId="5918389564640729900" fileName="ProblemsDialog.java" startLine="55" startPosition="70" endLine="60" endPosition="0">
+      <varInfo nodeId="5918389564640729903" varName="event" />
     </scopeInfo>
-    <scopeInfo nodeId="8794595397331624342" fileName="ProblemsDialog.java" startLine="20" startPosition="0" endLine="31" endPosition="3">
+    <scopeInfo nodeId="8794595397331624345" fileName="ProblemsDialog.java" startLine="25" startPosition="88" endLine="31" endPosition="11" />
+    <scopeInfo nodeId="8794595397331624342" fileName="ProblemsDialog.java" startLine="24" startPosition="0" endLine="32" endPosition="3">
       <varInfo nodeId="8794595397331624413" varName="errors" />
-      <varInfo nodeId="8794595397331624411" varName="frame" />
       <varInfo nodeId="8794595397331624415" varName="model" />
+      <varInfo nodeId="8794595397331624411" varName="project" />
     </scopeInfo>
-    <unitInfo nodeId="8794595397331624334" fileName="ProblemsDialog.java" startLine="17" startPosition="0" endLine="52" endPosition="0" unitName="jetbrains.mps.baseLanguage.pluginSolution.plugin.ProblemsDialog" />
+    <scopeInfo nodeId="5918389564640729806" fileName="ProblemsDialog.java" startLine="53" startPosition="41" endLine="61" endPosition="58" />
+    <scopeInfo nodeId="5918389564640729609" fileName="ProblemsDialog.java" startLine="35" startPosition="44" endLine="44" endPosition="17">
+      <varInfo nodeId="8794595397331624367" varName="area" />
+      <varInfo nodeId="5918389564640729751" varName="panel" />
+    </scopeInfo>
+    <scopeInfo nodeId="5918389564640729803" fileName="ProblemsDialog.java" startLine="51" startPosition="0" endLine="63" endPosition="0" />
+    <scopeInfo nodeId="5918389564640729605" fileName="ProblemsDialog.java" startLine="33" startPosition="0" endLine="46" endPosition="0" />
+    <unitInfo nodeId="8794595397331624334" fileName="ProblemsDialog.java" startLine="20" startPosition="0" endLine="64" endPosition="0" unitName="jetbrains.mps.baseLanguage.pluginSolution.plugin.ProblemsDialog" />
+    <unitInfo nodeId="5918389564640729898" fileName="ProblemsDialog.java" startLine="55" startPosition="25" endLine="60" endPosition="5" unitName="jetbrains.mps.baseLanguage.pluginSolution.plugin.ProblemsDialog$1" />
   </root>
   <root nodeId="8794595397331624477">
     <nodeInfo nodeId="8794595397331624649" fileName="InlineMethodRefactoringAnalyzer.java" startLine="33" startPosition="46" endLine="34" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myOperationContext" />
@@ -2506,175 +2501,185 @@
     <unitInfo nodeId="8794595397331624501" fileName="InlineMethodRefactoringAnalyzer.java" startLine="56" startPosition="45" endLine="67" endPosition="5" unitName="jetbrains.mps.baseLanguage.pluginSolution.plugin.InlineMethodRefactoringAnalyzer$2" />
   </root>
   <root nodeId="8794595397331624813">
-    <nodeInfo nodeId="8794595397331625028" fileName="InlineMethodDialogModel.java" startLine="25" startPosition="38" endLine="26" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myForAll" />
-    <nodeInfo nodeId="8794595397331625031" fileName="InlineMethodDialogModel.java" startLine="26" startPosition="27" endLine="27" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myResults" />
-    <nodeInfo nodeId="8794595397331625035" fileName="InlineMethodDialogModel.java" startLine="27" startPosition="41" endLine="28" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myMethod" />
-    <nodeInfo nodeId="8794595397331625038" fileName="InlineMethodDialogModel.java" startLine="28" startPosition="25" endLine="29" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCall" />
-    <nodeInfo nodeId="8794595397331625041" fileName="InlineMethodDialogModel.java" startLine="29" startPosition="35" endLine="30" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myIsContainsSelfCalls" />
-    <nodeInfo nodeId="8794595397331625044" fileName="InlineMethodDialogModel.java" startLine="30" startPosition="40" endLine="31" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myIsPreview" />
-    <nodeInfo nodeId="8794595397331625047" fileName="InlineMethodDialogModel.java" startLine="31" startPosition="30" endLine="32" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myOperationContext" />
-    <nodeInfo nodeId="8794595397331625078" fileName="InlineMethodDialogModel.java" startLine="37" startPosition="111" endLine="38" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8794595397331625059" fileName="InlineMethodDialogModel.java" startLine="39" startPosition="16" endLine="40" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8794595397331625067" fileName="InlineMethodDialogModel.java" startLine="40" startPosition="76" endLine="41" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8794595397331625089" fileName="InlineMethodDialogModel.java" startLine="44" startPosition="7" endLine="45" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8794595397331625098" fileName="InlineMethodDialogModel.java" startLine="47" startPosition="25" endLine="48" endPosition="152" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8794595397331624839" fileName="InlineMethodDialogModel.java" startLine="58" startPosition="31" endLine="59" endPosition="173" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8794595397331624862" fileName="InlineMethodDialogModel.java" startLine="67" startPosition="27" endLine="68" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8794595397331624870" fileName="InlineMethodDialogModel.java" startLine="69" startPosition="32" endLine="70" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8794595397331624876" fileName="InlineMethodDialogModel.java" startLine="70" startPosition="31" endLine="71" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8794595397331624889" fileName="InlineMethodDialogModel.java" startLine="71" startPosition="130" endLine="72" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8794595397331624900" fileName="InlineMethodDialogModel.java" startLine="73" startPosition="12" endLine="74" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8794595397331624938" fileName="InlineMethodDialogModel.java" startLine="82" startPosition="124" endLine="83" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8794595397331624946" fileName="InlineMethodDialogModel.java" startLine="83" startPosition="87" endLine="84" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8794595397331624950" fileName="InlineMethodDialogModel.java" startLine="85" startPosition="11" endLine="86" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8794595397331624915" fileName="InlineMethodDialogModel.java" startLine="87" startPosition="16" endLine="88" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8794595397331624925" fileName="InlineMethodDialogModel.java" startLine="88" startPosition="115" endLine="89" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8794595397331624961" fileName="InlineMethodDialogModel.java" startLine="95" startPosition="30" endLine="96" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8794595397331624969" fileName="InlineMethodDialogModel.java" startLine="97" startPosition="32" endLine="98" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8794595397331624975" fileName="InlineMethodDialogModel.java" startLine="98" startPosition="30" endLine="99" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8794595397331624988" fileName="InlineMethodDialogModel.java" startLine="99" startPosition="130" endLine="100" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8794595397331624999" fileName="InlineMethodDialogModel.java" startLine="101" startPosition="12" endLine="102" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8794595397331625006" fileName="InlineMethodDialogModel.java" startLine="106" startPosition="46" endLine="107" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8794595397331625017" fileName="InlineMethodDialogModel.java" startLine="110" startPosition="34" endLine="111" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8794595397331625023" fileName="InlineMethodDialogModel.java" startLine="114" startPosition="36" endLine="115" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8794595397331625116" fileName="InlineMethodDialogModel.java" startLine="118" startPosition="33" endLine="119" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8794595397331625120" fileName="InlineMethodDialogModel.java" startLine="119" startPosition="23" endLine="120" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8794595397331625125" fileName="InlineMethodDialogModel.java" startLine="121" startPosition="30" endLine="122" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8794595397331625144" fileName="InlineMethodDialogModel.java" startLine="123" startPosition="12" endLine="124" endPosition="116" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8794595397331625160" fileName="InlineMethodDialogModel.java" startLine="125" startPosition="5" endLine="126" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8794595397331625175" fileName="InlineMethodDialogModel.java" startLine="130" startPosition="27" endLine="131" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8794595397331625184" fileName="InlineMethodDialogModel.java" startLine="132" startPosition="12" endLine="133" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8794595397331625192" fileName="InlineMethodDialogModel.java" startLine="137" startPosition="39" endLine="138" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8794595397331625200" fileName="InlineMethodDialogModel.java" startLine="141" startPosition="44" endLine="142" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8794595397331625220" fileName="InlineMethodDialogModel.java" startLine="147" startPosition="57" endLine="148" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8794595397331625224" fileName="InlineMethodDialogModel.java" startLine="148" startPosition="19" endLine="149" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3748064186690643452" fileName="InlineMethodDialogModel.java" startLine="151" startPosition="6" endLine="152" endPosition="179" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8794595397331624898" fileName="InlineMethodDialogModel.java" startLine="73" startPosition="10" endLine="75" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8794595397331624997" fileName="InlineMethodDialogModel.java" startLine="101" startPosition="10" endLine="103" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8794595397331625142" fileName="InlineMethodDialogModel.java" startLine="123" startPosition="10" endLine="125" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8794595397331625182" fileName="InlineMethodDialogModel.java" startLine="132" startPosition="10" endLine="134" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8794595397331625057" fileName="InlineMethodDialogModel.java" startLine="39" startPosition="14" endLine="42" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8794595397331624913" fileName="InlineMethodDialogModel.java" startLine="87" startPosition="14" endLine="90" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8794595397331625096" fileName="InlineMethodDialogModel.java" startLine="46" startPosition="57" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="8794595397331624837" fileName="InlineMethodDialogModel.java" startLine="57" startPosition="63" endLine="61" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="8794595397331624930" fileName="InlineMethodDialogModel.java" startLine="81" startPosition="52" endLine="85" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="8794595397331625003" fileName="InlineMethodDialogModel.java" startLine="105" startPosition="0" endLine="109" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setForAll#(Z)V" />
-    <nodeInfo nodeId="8794595397331625014" fileName="InlineMethodDialogModel.java" startLine="109" startPosition="0" endLine="113" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isForAll#()Z" />
-    <nodeInfo nodeId="8794595397331625021" fileName="InlineMethodDialogModel.java" startLine="113" startPosition="0" endLine="117" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isRecusive#()Z" />
-    <nodeInfo nodeId="8794595397331625188" fileName="InlineMethodDialogModel.java" startLine="136" startPosition="0" endLine="140" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getMethodDeclaration#()Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="8794595397331625196" fileName="InlineMethodDialogModel.java" startLine="140" startPosition="0" endLine="144" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getMethodCall#()Ljetbrains/mps/baseLanguage/util/plugin/refactorings/MethodCallAdapter;" />
-    <nodeInfo nodeId="8794595397331625095" fileName="InlineMethodDialogModel.java" startLine="45" startPosition="47" endLine="50" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8794595397331624836" fileName="InlineMethodDialogModel.java" startLine="56" startPosition="69" endLine="61" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8794595397331625123" fileName="InlineMethodDialogModel.java" startLine="120" startPosition="45" endLine="125" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8794595397331625173" fileName="InlineMethodDialogModel.java" startLine="129" startPosition="29" endLine="134" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8794595397331625214" fileName="InlineMethodDialogModel.java" startLine="146" startPosition="79" endLine="151" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="performAction#(Ljetbrains/mps/ide/platform/refactoring/RefactoringViewItem;)V" />
-    <nodeInfo nodeId="8794595397331625056" fileName="InlineMethodDialogModel.java" startLine="36" startPosition="25" endLine="42" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8794595397331625207" fileName="InlineMethodDialogModel.java" startLine="145" startPosition="32" endLine="151" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8794595397331624868" fileName="InlineMethodDialogModel.java" startLine="68" startPosition="42" endLine="75" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8794595397331624967" fileName="InlineMethodDialogModel.java" startLine="96" startPosition="42" endLine="103" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8794595397331624830" fileName="InlineMethodDialogModel.java" startLine="55" startPosition="178" endLine="63" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#(Lcom/intellij/openapi/progress/ProgressIndicator;)V" />
-    <nodeInfo nodeId="8794595397331625170" fileName="InlineMethodDialogModel.java" startLine="128" startPosition="0" endLine="136" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="ignore#()V" />
-    <nodeInfo nodeId="8794595397331625054" fileName="InlineMethodDialogModel.java" startLine="35" startPosition="57" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="8794595397331624818" fileName="InlineMethodDialogModel.java" startLine="54" startPosition="24" endLine="63" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8794595397331625053" fileName="InlineMethodDialogModel.java" startLine="34" startPosition="88" endLine="44" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8794595397331624909" fileName="InlineMethodDialogModel.java" startLine="80" startPosition="25" endLine="90" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8794595397331625204" fileName="InlineMethodDialogModel.java" startLine="144" startPosition="0" endLine="154" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doPreview#()V" />
-    <nodeInfo nodeId="8794595397331624816" fileName="InlineMethodDialogModel.java" startLine="53" startPosition="30" endLine="64" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8794595397331624859" fileName="InlineMethodDialogModel.java" startLine="66" startPosition="0" endLine="77" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="onOk#()V" />
-    <nodeInfo nodeId="8794595397331624958" fileName="InlineMethodDialogModel.java" startLine="94" startPosition="0" endLine="105" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="preview#()V" />
-    <nodeInfo nodeId="8794595397331625112" fileName="InlineMethodDialogModel.java" startLine="117" startPosition="0" endLine="128" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="findProblems#()Ljava/lang/String;" />
-    <nodeInfo nodeId="8794595397331624907" fileName="InlineMethodDialogModel.java" startLine="79" startPosition="67" endLine="92" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="8794595397331624814" fileName="InlineMethodDialogModel.java" startLine="52" startPosition="0" endLine="66" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="findUssages#()V" />
-    <nodeInfo nodeId="8794595397331624906" fileName="InlineMethodDialogModel.java" startLine="78" startPosition="32" endLine="92" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8794595397331624904" fileName="InlineMethodDialogModel.java" startLine="77" startPosition="0" endLine="94" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doRefactoring#()V" />
-    <nodeInfo nodeId="8794595397331625050" fileName="InlineMethodDialogModel.java" startLine="33" startPosition="0" endLine="51" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="InlineMethodDialogModel#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/IOperationContext;)V" />
-    <scopeInfo nodeId="8794595397331625077" fileName="InlineMethodDialogModel.java" startLine="37" startPosition="111" endLine="38" endPosition="139" />
-    <scopeInfo nodeId="8794595397331625097" fileName="InlineMethodDialogModel.java" startLine="47" startPosition="25" endLine="48" endPosition="152" />
-    <scopeInfo nodeId="8794595397331624838" fileName="InlineMethodDialogModel.java" startLine="58" startPosition="31" endLine="59" endPosition="173" />
-    <scopeInfo nodeId="8794595397331624899" fileName="InlineMethodDialogModel.java" startLine="73" startPosition="12" endLine="74" endPosition="27" />
-    <scopeInfo nodeId="8794595397331624998" fileName="InlineMethodDialogModel.java" startLine="101" startPosition="12" endLine="102" endPosition="23" />
-    <scopeInfo nodeId="8794595397331625005" fileName="InlineMethodDialogModel.java" startLine="106" startPosition="46" endLine="107" endPosition="27" />
-    <scopeInfo nodeId="8794595397331625016" fileName="InlineMethodDialogModel.java" startLine="110" startPosition="34" endLine="111" endPosition="25" />
-    <scopeInfo nodeId="8794595397331625022" fileName="InlineMethodDialogModel.java" startLine="114" startPosition="36" endLine="115" endPosition="38" />
-    <scopeInfo nodeId="8794595397331625124" fileName="InlineMethodDialogModel.java" startLine="121" startPosition="30" endLine="122" endPosition="99" />
-    <scopeInfo nodeId="8794595397331625143" fileName="InlineMethodDialogModel.java" startLine="123" startPosition="12" endLine="124" endPosition="116" />
-    <scopeInfo nodeId="8794595397331625174" fileName="InlineMethodDialogModel.java" startLine="130" startPosition="27" endLine="131" endPosition="23" />
-    <scopeInfo nodeId="8794595397331625183" fileName="InlineMethodDialogModel.java" startLine="132" startPosition="12" endLine="133" endPosition="27" />
-    <scopeInfo nodeId="8794595397331625191" fileName="InlineMethodDialogModel.java" startLine="137" startPosition="39" endLine="138" endPosition="25" />
-    <scopeInfo nodeId="8794595397331625199" fileName="InlineMethodDialogModel.java" startLine="141" startPosition="44" endLine="142" endPosition="23" />
-    <scopeInfo nodeId="8794595397331625058" fileName="InlineMethodDialogModel.java" startLine="39" startPosition="16" endLine="41" endPosition="109" />
-    <scopeInfo nodeId="8794595397331624937" fileName="InlineMethodDialogModel.java" startLine="82" startPosition="124" endLine="84" endPosition="29">
+    <nodeInfo nodeId="8794595397331625028" fileName="InlineMethodDialogModel.java" startLine="27" startPosition="38" endLine="28" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myForAll" />
+    <nodeInfo nodeId="8794595397331625031" fileName="InlineMethodDialogModel.java" startLine="28" startPosition="27" endLine="29" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myResults" />
+    <nodeInfo nodeId="8794595397331625035" fileName="InlineMethodDialogModel.java" startLine="29" startPosition="41" endLine="30" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myMethod" />
+    <nodeInfo nodeId="8794595397331625038" fileName="InlineMethodDialogModel.java" startLine="30" startPosition="25" endLine="31" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCall" />
+    <nodeInfo nodeId="8794595397331625041" fileName="InlineMethodDialogModel.java" startLine="31" startPosition="35" endLine="32" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myIsContainsSelfCalls" />
+    <nodeInfo nodeId="8794595397331625044" fileName="InlineMethodDialogModel.java" startLine="32" startPosition="40" endLine="33" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myIsPreview" />
+    <nodeInfo nodeId="8794595397331625047" fileName="InlineMethodDialogModel.java" startLine="33" startPosition="30" endLine="34" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myOperationContext" />
+    <nodeInfo nodeId="5918389564640871692" fileName="InlineMethodDialogModel.java" startLine="34" startPosition="47" endLine="35" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myMethodPresentation" />
+    <nodeInfo nodeId="8794595397331625078" fileName="InlineMethodDialogModel.java" startLine="40" startPosition="111" endLine="41" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8794595397331625059" fileName="InlineMethodDialogModel.java" startLine="42" startPosition="16" endLine="43" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8794595397331625067" fileName="InlineMethodDialogModel.java" startLine="43" startPosition="76" endLine="44" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5918389564640871697" fileName="InlineMethodDialogModel.java" startLine="45" startPosition="9" endLine="46" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8794595397331625089" fileName="InlineMethodDialogModel.java" startLine="48" startPosition="7" endLine="49" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8794595397331625098" fileName="InlineMethodDialogModel.java" startLine="51" startPosition="25" endLine="52" endPosition="152" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8794595397331624839" fileName="InlineMethodDialogModel.java" startLine="62" startPosition="31" endLine="63" endPosition="173" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8794595397331624862" fileName="InlineMethodDialogModel.java" startLine="71" startPosition="42" endLine="72" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8794595397331624870" fileName="InlineMethodDialogModel.java" startLine="73" startPosition="32" endLine="74" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8794595397331624876" fileName="InlineMethodDialogModel.java" startLine="74" startPosition="31" endLine="75" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8794595397331624889" fileName="InlineMethodDialogModel.java" startLine="75" startPosition="74" endLine="76" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8794595397331624900" fileName="InlineMethodDialogModel.java" startLine="77" startPosition="12" endLine="78" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8794595397331624938" fileName="InlineMethodDialogModel.java" startLine="86" startPosition="124" endLine="87" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8794595397331624946" fileName="InlineMethodDialogModel.java" startLine="87" startPosition="87" endLine="88" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8794595397331624950" fileName="InlineMethodDialogModel.java" startLine="89" startPosition="11" endLine="90" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8794595397331624915" fileName="InlineMethodDialogModel.java" startLine="91" startPosition="16" endLine="92" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8794595397331624925" fileName="InlineMethodDialogModel.java" startLine="92" startPosition="115" endLine="93" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8794595397331624961" fileName="InlineMethodDialogModel.java" startLine="99" startPosition="45" endLine="100" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8794595397331624969" fileName="InlineMethodDialogModel.java" startLine="101" startPosition="32" endLine="102" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8794595397331624975" fileName="InlineMethodDialogModel.java" startLine="102" startPosition="30" endLine="103" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8794595397331624988" fileName="InlineMethodDialogModel.java" startLine="103" startPosition="74" endLine="104" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8794595397331624999" fileName="InlineMethodDialogModel.java" startLine="105" startPosition="12" endLine="106" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8794595397331625006" fileName="InlineMethodDialogModel.java" startLine="110" startPosition="46" endLine="111" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8794595397331625017" fileName="InlineMethodDialogModel.java" startLine="114" startPosition="34" endLine="115" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8794595397331625023" fileName="InlineMethodDialogModel.java" startLine="118" startPosition="36" endLine="119" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8794595397331625116" fileName="InlineMethodDialogModel.java" startLine="122" startPosition="33" endLine="123" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8794595397331625120" fileName="InlineMethodDialogModel.java" startLine="123" startPosition="23" endLine="124" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8794595397331625125" fileName="InlineMethodDialogModel.java" startLine="125" startPosition="30" endLine="126" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8794595397331625144" fileName="InlineMethodDialogModel.java" startLine="127" startPosition="12" endLine="128" endPosition="116" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8794595397331625160" fileName="InlineMethodDialogModel.java" startLine="129" startPosition="5" endLine="130" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8794595397331625175" fileName="InlineMethodDialogModel.java" startLine="134" startPosition="27" endLine="135" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8794595397331625184" fileName="InlineMethodDialogModel.java" startLine="136" startPosition="12" endLine="137" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8794595397331625192" fileName="InlineMethodDialogModel.java" startLine="141" startPosition="39" endLine="142" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5918389564640871727" fileName="InlineMethodDialogModel.java" startLine="145" startPosition="41" endLine="146" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8794595397331625200" fileName="InlineMethodDialogModel.java" startLine="149" startPosition="44" endLine="150" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8794595397331625220" fileName="InlineMethodDialogModel.java" startLine="155" startPosition="57" endLine="156" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8794595397331625224" fileName="InlineMethodDialogModel.java" startLine="156" startPosition="19" endLine="157" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3748064186690643452" fileName="InlineMethodDialogModel.java" startLine="159" startPosition="6" endLine="160" endPosition="179" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8794595397331624898" fileName="InlineMethodDialogModel.java" startLine="77" startPosition="10" endLine="79" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8794595397331624997" fileName="InlineMethodDialogModel.java" startLine="105" startPosition="10" endLine="107" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8794595397331625142" fileName="InlineMethodDialogModel.java" startLine="127" startPosition="10" endLine="129" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8794595397331625182" fileName="InlineMethodDialogModel.java" startLine="136" startPosition="10" endLine="138" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8794595397331625057" fileName="InlineMethodDialogModel.java" startLine="42" startPosition="14" endLine="45" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8794595397331624913" fileName="InlineMethodDialogModel.java" startLine="91" startPosition="14" endLine="94" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8794595397331625096" fileName="InlineMethodDialogModel.java" startLine="50" startPosition="57" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="8794595397331624837" fileName="InlineMethodDialogModel.java" startLine="61" startPosition="63" endLine="65" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="8794595397331624930" fileName="InlineMethodDialogModel.java" startLine="85" startPosition="52" endLine="89" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="8794595397331625003" fileName="InlineMethodDialogModel.java" startLine="109" startPosition="0" endLine="113" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setForAll#(Z)V" />
+    <nodeInfo nodeId="8794595397331625014" fileName="InlineMethodDialogModel.java" startLine="113" startPosition="0" endLine="117" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isForAll#()Z" />
+    <nodeInfo nodeId="8794595397331625021" fileName="InlineMethodDialogModel.java" startLine="117" startPosition="0" endLine="121" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isRecusive#()Z" />
+    <nodeInfo nodeId="8794595397331625188" fileName="InlineMethodDialogModel.java" startLine="140" startPosition="0" endLine="144" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getMethodDeclaration#()Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="5918389564640871722" fileName="InlineMethodDialogModel.java" startLine="144" startPosition="0" endLine="148" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getMethodPresentation#()Ljava/lang/String;" />
+    <nodeInfo nodeId="8794595397331625196" fileName="InlineMethodDialogModel.java" startLine="148" startPosition="0" endLine="152" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getMethodCall#()Ljetbrains/mps/baseLanguage/util/plugin/refactorings/MethodCallAdapter;" />
+    <nodeInfo nodeId="8794595397331625095" fileName="InlineMethodDialogModel.java" startLine="49" startPosition="47" endLine="54" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8794595397331624836" fileName="InlineMethodDialogModel.java" startLine="60" startPosition="69" endLine="65" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8794595397331625123" fileName="InlineMethodDialogModel.java" startLine="124" startPosition="45" endLine="129" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8794595397331625173" fileName="InlineMethodDialogModel.java" startLine="133" startPosition="29" endLine="138" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8794595397331625214" fileName="InlineMethodDialogModel.java" startLine="154" startPosition="79" endLine="159" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="performAction#(Ljetbrains/mps/ide/platform/refactoring/RefactoringViewItem;)V" />
+    <nodeInfo nodeId="8794595397331625056" fileName="InlineMethodDialogModel.java" startLine="39" startPosition="25" endLine="45" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8794595397331625207" fileName="InlineMethodDialogModel.java" startLine="153" startPosition="32" endLine="159" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8794595397331624868" fileName="InlineMethodDialogModel.java" startLine="72" startPosition="42" endLine="79" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8794595397331624967" fileName="InlineMethodDialogModel.java" startLine="100" startPosition="42" endLine="107" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8794595397331624830" fileName="InlineMethodDialogModel.java" startLine="59" startPosition="178" endLine="67" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#(Lcom/intellij/openapi/progress/ProgressIndicator;)V" />
+    <nodeInfo nodeId="8794595397331625170" fileName="InlineMethodDialogModel.java" startLine="132" startPosition="0" endLine="140" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="ignore#()V" />
+    <nodeInfo nodeId="8794595397331624818" fileName="InlineMethodDialogModel.java" startLine="58" startPosition="24" endLine="67" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8794595397331625054" fileName="InlineMethodDialogModel.java" startLine="38" startPosition="57" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="8794595397331624909" fileName="InlineMethodDialogModel.java" startLine="84" startPosition="25" endLine="94" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8794595397331625204" fileName="InlineMethodDialogModel.java" startLine="152" startPosition="0" endLine="162" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doPreview#()V" />
+    <nodeInfo nodeId="8794595397331625053" fileName="InlineMethodDialogModel.java" startLine="37" startPosition="88" endLine="48" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8794595397331624816" fileName="InlineMethodDialogModel.java" startLine="57" startPosition="30" endLine="68" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8794595397331624859" fileName="InlineMethodDialogModel.java" startLine="70" startPosition="0" endLine="81" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="onOk#(Lcom/intellij/openapi/project/Project;)V" />
+    <nodeInfo nodeId="8794595397331624958" fileName="InlineMethodDialogModel.java" startLine="98" startPosition="0" endLine="109" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="preview#(Lcom/intellij/openapi/project/Project;)V" />
+    <nodeInfo nodeId="8794595397331625112" fileName="InlineMethodDialogModel.java" startLine="121" startPosition="0" endLine="132" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="findProblems#()Ljava/lang/String;" />
+    <nodeInfo nodeId="8794595397331624907" fileName="InlineMethodDialogModel.java" startLine="83" startPosition="67" endLine="96" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="8794595397331624814" fileName="InlineMethodDialogModel.java" startLine="56" startPosition="0" endLine="70" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="findUssages#()V" />
+    <nodeInfo nodeId="8794595397331624906" fileName="InlineMethodDialogModel.java" startLine="82" startPosition="32" endLine="96" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8794595397331624904" fileName="InlineMethodDialogModel.java" startLine="81" startPosition="0" endLine="98" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doRefactoring#()V" />
+    <nodeInfo nodeId="8794595397331625050" fileName="InlineMethodDialogModel.java" startLine="36" startPosition="0" endLine="55" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="InlineMethodDialogModel#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/IOperationContext;)V" />
+    <scopeInfo nodeId="8794595397331625077" fileName="InlineMethodDialogModel.java" startLine="40" startPosition="111" endLine="41" endPosition="139" />
+    <scopeInfo nodeId="8794595397331625097" fileName="InlineMethodDialogModel.java" startLine="51" startPosition="25" endLine="52" endPosition="152" />
+    <scopeInfo nodeId="8794595397331624838" fileName="InlineMethodDialogModel.java" startLine="62" startPosition="31" endLine="63" endPosition="173" />
+    <scopeInfo nodeId="8794595397331624899" fileName="InlineMethodDialogModel.java" startLine="77" startPosition="12" endLine="78" endPosition="27" />
+    <scopeInfo nodeId="8794595397331624998" fileName="InlineMethodDialogModel.java" startLine="105" startPosition="12" endLine="106" endPosition="23" />
+    <scopeInfo nodeId="8794595397331625005" fileName="InlineMethodDialogModel.java" startLine="110" startPosition="46" endLine="111" endPosition="27" />
+    <scopeInfo nodeId="8794595397331625016" fileName="InlineMethodDialogModel.java" startLine="114" startPosition="34" endLine="115" endPosition="25" />
+    <scopeInfo nodeId="8794595397331625022" fileName="InlineMethodDialogModel.java" startLine="118" startPosition="36" endLine="119" endPosition="38" />
+    <scopeInfo nodeId="8794595397331625124" fileName="InlineMethodDialogModel.java" startLine="125" startPosition="30" endLine="126" endPosition="99" />
+    <scopeInfo nodeId="8794595397331625143" fileName="InlineMethodDialogModel.java" startLine="127" startPosition="12" endLine="128" endPosition="116" />
+    <scopeInfo nodeId="8794595397331625174" fileName="InlineMethodDialogModel.java" startLine="134" startPosition="27" endLine="135" endPosition="23" />
+    <scopeInfo nodeId="8794595397331625183" fileName="InlineMethodDialogModel.java" startLine="136" startPosition="12" endLine="137" endPosition="27" />
+    <scopeInfo nodeId="8794595397331625191" fileName="InlineMethodDialogModel.java" startLine="141" startPosition="39" endLine="142" endPosition="25" />
+    <scopeInfo nodeId="5918389564640871725" fileName="InlineMethodDialogModel.java" startLine="145" startPosition="41" endLine="146" endPosition="32" />
+    <scopeInfo nodeId="8794595397331625199" fileName="InlineMethodDialogModel.java" startLine="149" startPosition="44" endLine="150" endPosition="23" />
+    <scopeInfo nodeId="8794595397331625058" fileName="InlineMethodDialogModel.java" startLine="42" startPosition="16" endLine="44" endPosition="109" />
+    <scopeInfo nodeId="8794595397331624937" fileName="InlineMethodDialogModel.java" startLine="86" startPosition="124" endLine="88" endPosition="29">
       <varInfo nodeId="8794595397331624939" varName="ref" />
     </scopeInfo>
-    <scopeInfo nodeId="8794595397331624914" fileName="InlineMethodDialogModel.java" startLine="87" startPosition="16" endLine="89" endPosition="27">
+    <scopeInfo nodeId="8794595397331624914" fileName="InlineMethodDialogModel.java" startLine="91" startPosition="16" endLine="93" endPosition="27">
       <varInfo nodeId="8794595397331624916" varName="ref" />
     </scopeInfo>
-    <scopeInfo nodeId="8794595397331625219" fileName="InlineMethodDialogModel.java" startLine="147" startPosition="57" endLine="149" endPosition="53" />
-    <scopeInfo nodeId="8794595397331624869" fileName="InlineMethodDialogModel.java" startLine="69" startPosition="32" endLine="72" endPosition="26">
+    <scopeInfo nodeId="8794595397331625219" fileName="InlineMethodDialogModel.java" startLine="155" startPosition="57" endLine="157" endPosition="53" />
+    <scopeInfo nodeId="8794595397331624869" fileName="InlineMethodDialogModel.java" startLine="73" startPosition="32" endLine="76" endPosition="20">
       <varInfo nodeId="8794595397331624877" varName="dialog" />
     </scopeInfo>
-    <scopeInfo nodeId="8794595397331624968" fileName="InlineMethodDialogModel.java" startLine="97" startPosition="32" endLine="100" endPosition="26">
+    <scopeInfo nodeId="8794595397331624968" fileName="InlineMethodDialogModel.java" startLine="101" startPosition="32" endLine="104" endPosition="20">
       <varInfo nodeId="8794595397331624976" varName="dialog" />
     </scopeInfo>
-    <scopeInfo nodeId="8794595397331625096" fileName="InlineMethodDialogModel.java" startLine="46" startPosition="57" endLine="50" endPosition="0" />
-    <scopeInfo nodeId="8794595397331624837" fileName="InlineMethodDialogModel.java" startLine="57" startPosition="63" endLine="61" endPosition="0" />
-    <scopeInfo nodeId="8794595397331624930" fileName="InlineMethodDialogModel.java" startLine="81" startPosition="52" endLine="85" endPosition="11">
+    <scopeInfo nodeId="8794595397331625096" fileName="InlineMethodDialogModel.java" startLine="50" startPosition="57" endLine="54" endPosition="0" />
+    <scopeInfo nodeId="8794595397331624837" fileName="InlineMethodDialogModel.java" startLine="61" startPosition="63" endLine="65" endPosition="0" />
+    <scopeInfo nodeId="8794595397331624930" fileName="InlineMethodDialogModel.java" startLine="85" startPosition="52" endLine="89" endPosition="11">
       <varInfo nodeId="8794595397331624930" varName="res" />
     </scopeInfo>
-    <scopeInfo nodeId="8794595397331625003" fileName="InlineMethodDialogModel.java" startLine="105" startPosition="0" endLine="109" endPosition="0">
+    <scopeInfo nodeId="8794595397331625003" fileName="InlineMethodDialogModel.java" startLine="109" startPosition="0" endLine="113" endPosition="0">
       <varInfo nodeId="8794595397331625012" varName="forAll" />
     </scopeInfo>
-    <scopeInfo nodeId="8794595397331625014" fileName="InlineMethodDialogModel.java" startLine="109" startPosition="0" endLine="113" endPosition="0" />
-    <scopeInfo nodeId="8794595397331625021" fileName="InlineMethodDialogModel.java" startLine="113" startPosition="0" endLine="117" endPosition="0" />
-    <scopeInfo nodeId="8794595397331625188" fileName="InlineMethodDialogModel.java" startLine="136" startPosition="0" endLine="140" endPosition="0" />
-    <scopeInfo nodeId="8794595397331625196" fileName="InlineMethodDialogModel.java" startLine="140" startPosition="0" endLine="144" endPosition="0" />
-    <scopeInfo nodeId="8794595397331624835" fileName="InlineMethodDialogModel.java" startLine="56" startPosition="69" endLine="61" endPosition="13" />
-    <scopeInfo nodeId="8794595397331624929" fileName="InlineMethodDialogModel.java" startLine="81" startPosition="52" endLine="86" endPosition="76" />
-    <scopeInfo nodeId="8794595397331625172" fileName="InlineMethodDialogModel.java" startLine="129" startPosition="29" endLine="134" endPosition="5" />
-    <scopeInfo nodeId="8794595397331625214" fileName="InlineMethodDialogModel.java" startLine="146" startPosition="79" endLine="151" endPosition="0">
+    <scopeInfo nodeId="8794595397331625014" fileName="InlineMethodDialogModel.java" startLine="113" startPosition="0" endLine="117" endPosition="0" />
+    <scopeInfo nodeId="8794595397331625021" fileName="InlineMethodDialogModel.java" startLine="117" startPosition="0" endLine="121" endPosition="0" />
+    <scopeInfo nodeId="8794595397331625188" fileName="InlineMethodDialogModel.java" startLine="140" startPosition="0" endLine="144" endPosition="0" />
+    <scopeInfo nodeId="5918389564640871722" fileName="InlineMethodDialogModel.java" startLine="144" startPosition="0" endLine="148" endPosition="0" />
+    <scopeInfo nodeId="8794595397331625196" fileName="InlineMethodDialogModel.java" startLine="148" startPosition="0" endLine="152" endPosition="0" />
+    <scopeInfo nodeId="8794595397331624835" fileName="InlineMethodDialogModel.java" startLine="60" startPosition="69" endLine="65" endPosition="13" />
+    <scopeInfo nodeId="8794595397331624929" fileName="InlineMethodDialogModel.java" startLine="85" startPosition="52" endLine="90" endPosition="76" />
+    <scopeInfo nodeId="8794595397331625172" fileName="InlineMethodDialogModel.java" startLine="133" startPosition="29" endLine="138" endPosition="5" />
+    <scopeInfo nodeId="8794595397331625214" fileName="InlineMethodDialogModel.java" startLine="154" startPosition="79" endLine="159" endPosition="0">
       <varInfo nodeId="8794595397331625217" varName="p0" />
     </scopeInfo>
-    <scopeInfo nodeId="8794595397331625055" fileName="InlineMethodDialogModel.java" startLine="36" startPosition="25" endLine="42" endPosition="9" />
-    <scopeInfo nodeId="8794595397331625206" fileName="InlineMethodDialogModel.java" startLine="145" startPosition="32" endLine="152" endPosition="179">
+    <scopeInfo nodeId="8794595397331625055" fileName="InlineMethodDialogModel.java" startLine="39" startPosition="25" endLine="46" endPosition="97" />
+    <scopeInfo nodeId="8794595397331625206" fileName="InlineMethodDialogModel.java" startLine="153" startPosition="32" endLine="160" endPosition="179">
       <varInfo nodeId="8794595397331625208" varName="refactoringViewAction" />
     </scopeInfo>
-    <scopeInfo nodeId="8794595397331624830" fileName="InlineMethodDialogModel.java" startLine="55" startPosition="178" endLine="63" endPosition="0">
+    <scopeInfo nodeId="8794595397331624830" fileName="InlineMethodDialogModel.java" startLine="59" startPosition="178" endLine="67" endPosition="0">
       <varInfo nodeId="8794595397331624831" varName="indicator" />
     </scopeInfo>
-    <scopeInfo nodeId="8794595397331624861" fileName="InlineMethodDialogModel.java" startLine="67" startPosition="27" endLine="75" endPosition="5">
+    <scopeInfo nodeId="8794595397331624861" fileName="InlineMethodDialogModel.java" startLine="71" startPosition="42" endLine="79" endPosition="5">
       <varInfo nodeId="8794595397331624863" varName="problems" />
     </scopeInfo>
-    <scopeInfo nodeId="8794595397331624960" fileName="InlineMethodDialogModel.java" startLine="95" startPosition="30" endLine="103" endPosition="5">
+    <scopeInfo nodeId="8794595397331624960" fileName="InlineMethodDialogModel.java" startLine="99" startPosition="45" endLine="107" endPosition="5">
       <varInfo nodeId="8794595397331624962" varName="problems" />
     </scopeInfo>
-    <scopeInfo nodeId="8794595397331625115" fileName="InlineMethodDialogModel.java" startLine="118" startPosition="33" endLine="126" endPosition="64">
+    <scopeInfo nodeId="8794595397331625115" fileName="InlineMethodDialogModel.java" startLine="122" startPosition="33" endLine="130" endPosition="64">
       <varInfo nodeId="8794595397331625121" varName="analyzer" />
     </scopeInfo>
-    <scopeInfo nodeId="8794595397331625170" fileName="InlineMethodDialogModel.java" startLine="128" startPosition="0" endLine="136" endPosition="0" />
-    <scopeInfo nodeId="8794595397331625054" fileName="InlineMethodDialogModel.java" startLine="35" startPosition="57" endLine="44" endPosition="0" />
-    <scopeInfo nodeId="8794595397331624817" fileName="InlineMethodDialogModel.java" startLine="54" startPosition="24" endLine="63" endPosition="9" />
-    <scopeInfo nodeId="8794595397331624908" fileName="InlineMethodDialogModel.java" startLine="80" startPosition="25" endLine="90" endPosition="9" />
-    <scopeInfo nodeId="8794595397331625204" fileName="InlineMethodDialogModel.java" startLine="144" startPosition="0" endLine="154" endPosition="0" />
-    <scopeInfo nodeId="8794595397331624815" fileName="InlineMethodDialogModel.java" startLine="53" startPosition="30" endLine="64" endPosition="5" />
-    <scopeInfo nodeId="8794595397331624859" fileName="InlineMethodDialogModel.java" startLine="66" startPosition="0" endLine="77" endPosition="0" />
-    <scopeInfo nodeId="8794595397331624958" fileName="InlineMethodDialogModel.java" startLine="94" startPosition="0" endLine="105" endPosition="0" />
-    <scopeInfo nodeId="8794595397331625112" fileName="InlineMethodDialogModel.java" startLine="117" startPosition="0" endLine="128" endPosition="0" />
-    <scopeInfo nodeId="8794595397331624907" fileName="InlineMethodDialogModel.java" startLine="79" startPosition="67" endLine="92" endPosition="0" />
-    <scopeInfo nodeId="8794595397331624814" fileName="InlineMethodDialogModel.java" startLine="52" startPosition="0" endLine="66" endPosition="0" />
-    <scopeInfo nodeId="8794595397331624905" fileName="InlineMethodDialogModel.java" startLine="78" startPosition="32" endLine="92" endPosition="7" />
-    <scopeInfo nodeId="8794595397331625052" fileName="InlineMethodDialogModel.java" startLine="34" startPosition="88" endLine="50" endPosition="7" />
-    <scopeInfo nodeId="8794595397331624904" fileName="InlineMethodDialogModel.java" startLine="77" startPosition="0" endLine="94" endPosition="0" />
-    <scopeInfo nodeId="8794595397331625050" fileName="InlineMethodDialogModel.java" startLine="33" startPosition="0" endLine="51" endPosition="3">
+    <scopeInfo nodeId="8794595397331625170" fileName="InlineMethodDialogModel.java" startLine="132" startPosition="0" endLine="140" endPosition="0" />
+    <scopeInfo nodeId="8794595397331624817" fileName="InlineMethodDialogModel.java" startLine="58" startPosition="24" endLine="67" endPosition="9" />
+    <scopeInfo nodeId="8794595397331625054" fileName="InlineMethodDialogModel.java" startLine="38" startPosition="57" endLine="48" endPosition="0" />
+    <scopeInfo nodeId="8794595397331624908" fileName="InlineMethodDialogModel.java" startLine="84" startPosition="25" endLine="94" endPosition="9" />
+    <scopeInfo nodeId="8794595397331625204" fileName="InlineMethodDialogModel.java" startLine="152" startPosition="0" endLine="162" endPosition="0" />
+    <scopeInfo nodeId="8794595397331624815" fileName="InlineMethodDialogModel.java" startLine="57" startPosition="30" endLine="68" endPosition="5" />
+    <scopeInfo nodeId="8794595397331624859" fileName="InlineMethodDialogModel.java" startLine="70" startPosition="0" endLine="81" endPosition="0">
+      <varInfo nodeId="5918389564640760599" varName="project" />
+    </scopeInfo>
+    <scopeInfo nodeId="8794595397331624958" fileName="InlineMethodDialogModel.java" startLine="98" startPosition="0" endLine="109" endPosition="0">
+      <varInfo nodeId="5918389564640760607" varName="project" />
+    </scopeInfo>
+    <scopeInfo nodeId="8794595397331625112" fileName="InlineMethodDialogModel.java" startLine="121" startPosition="0" endLine="132" endPosition="0" />
+    <scopeInfo nodeId="8794595397331624907" fileName="InlineMethodDialogModel.java" startLine="83" startPosition="67" endLine="96" endPosition="0" />
+    <scopeInfo nodeId="8794595397331624814" fileName="InlineMethodDialogModel.java" startLine="56" startPosition="0" endLine="70" endPosition="0" />
+    <scopeInfo nodeId="8794595397331624905" fileName="InlineMethodDialogModel.java" startLine="82" startPosition="32" endLine="96" endPosition="7" />
+    <scopeInfo nodeId="8794595397331625052" fileName="InlineMethodDialogModel.java" startLine="37" startPosition="88" endLine="54" endPosition="7" />
+    <scopeInfo nodeId="8794595397331624904" fileName="InlineMethodDialogModel.java" startLine="81" startPosition="0" endLine="98" endPosition="0" />
+    <scopeInfo nodeId="8794595397331625050" fileName="InlineMethodDialogModel.java" startLine="36" startPosition="0" endLine="55" endPosition="3">
       <varInfo nodeId="8794595397331625107" varName="node" />
       <varInfo nodeId="8794595397331625109" varName="operationContext" />
     </scopeInfo>
-    <unitInfo nodeId="8794595397331624813" fileName="InlineMethodDialogModel.java" startLine="25" startPosition="0" endLine="155" endPosition="0" unitName="jetbrains.mps.baseLanguage.pluginSolution.plugin.InlineMethodDialogModel" />
-    <unitInfo nodeId="8794595397331624823" fileName="InlineMethodDialogModel.java" startLine="55" startPosition="44" endLine="63" endPosition="7" unitName="jetbrains.mps.baseLanguage.pluginSolution.plugin.InlineMethodDialogModel$1" />
-    <unitInfo nodeId="8794595397331624837" fileName="InlineMethodDialogModel.java" startLine="57" startPosition="51" endLine="61" endPosition="11" unitName="jetbrains.mps.baseLanguage.pluginSolution.plugin.InlineMethodDialogModel$2" />
-    <unitInfo nodeId="8794595397331624907" fileName="InlineMethodDialogModel.java" startLine="79" startPosition="55" endLine="92" endPosition="5" unitName="jetbrains.mps.baseLanguage.pluginSolution.plugin.InlineMethodDialogModel$2" />
-    <unitInfo nodeId="8794595397331625054" fileName="InlineMethodDialogModel.java" startLine="35" startPosition="45" endLine="44" endPosition="5" unitName="jetbrains.mps.baseLanguage.pluginSolution.plugin.InlineMethodDialogModel$3" />
-    <unitInfo nodeId="8794595397331625096" fileName="InlineMethodDialogModel.java" startLine="46" startPosition="45" endLine="50" endPosition="5" unitName="jetbrains.mps.baseLanguage.pluginSolution.plugin.InlineMethodDialogModel$4" />
-    <unitInfo nodeId="8794595397331625212" fileName="InlineMethodDialogModel.java" startLine="146" startPosition="54" endLine="151" endPosition="5" unitName="jetbrains.mps.baseLanguage.pluginSolution.plugin.InlineMethodDialogModel$5" />
+    <unitInfo nodeId="8794595397331624813" fileName="InlineMethodDialogModel.java" startLine="27" startPosition="0" endLine="163" endPosition="0" unitName="jetbrains.mps.baseLanguage.pluginSolution.plugin.InlineMethodDialogModel" />
+    <unitInfo nodeId="8794595397331624823" fileName="InlineMethodDialogModel.java" startLine="59" startPosition="44" endLine="67" endPosition="7" unitName="jetbrains.mps.baseLanguage.pluginSolution.plugin.InlineMethodDialogModel$1" />
+    <unitInfo nodeId="8794595397331624837" fileName="InlineMethodDialogModel.java" startLine="61" startPosition="51" endLine="65" endPosition="11" unitName="jetbrains.mps.baseLanguage.pluginSolution.plugin.InlineMethodDialogModel$2" />
+    <unitInfo nodeId="8794595397331624907" fileName="InlineMethodDialogModel.java" startLine="83" startPosition="55" endLine="96" endPosition="5" unitName="jetbrains.mps.baseLanguage.pluginSolution.plugin.InlineMethodDialogModel$2" />
+    <unitInfo nodeId="8794595397331625054" fileName="InlineMethodDialogModel.java" startLine="38" startPosition="45" endLine="48" endPosition="5" unitName="jetbrains.mps.baseLanguage.pluginSolution.plugin.InlineMethodDialogModel$3" />
+    <unitInfo nodeId="8794595397331625096" fileName="InlineMethodDialogModel.java" startLine="50" startPosition="45" endLine="54" endPosition="5" unitName="jetbrains.mps.baseLanguage.pluginSolution.plugin.InlineMethodDialogModel$4" />
+    <unitInfo nodeId="8794595397331625212" fileName="InlineMethodDialogModel.java" startLine="154" startPosition="54" endLine="159" endPosition="5" unitName="jetbrains.mps.baseLanguage.pluginSolution.plugin.InlineMethodDialogModel$5" />
   </root>
   <root nodeId="8794595397331724987">
     <nodeInfo nodeId="8794595397331725291" fileName="ExtractMethodDialog.java" startLine="50" startPosition="60" endLine="51" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myPanel" />

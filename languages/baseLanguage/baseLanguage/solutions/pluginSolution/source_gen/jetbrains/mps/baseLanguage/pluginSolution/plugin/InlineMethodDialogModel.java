@@ -8,6 +8,7 @@ import jetbrains.mps.baseLanguage.util.plugin.refactorings.MethodCallAdapter;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
 import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.progress.Task;
 import jetbrains.mps.ide.project.ProjectHelper;
@@ -15,6 +16,7 @@ import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.baseLanguage.util.plugin.refactorings.MethodRefactoringUtils;
 import jetbrains.mps.progress.ProgressMonitorAdapter;
+import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.findusages.model.SearchResult;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.baseLanguage.util.plugin.refactorings.InlineMethodRefactoring;
@@ -30,6 +32,7 @@ public class InlineMethodDialogModel {
   private boolean myIsContainsSelfCalls;
   private boolean myIsPreview;
   private IOperationContext myOperationContext;
+  private String myMethodPresentation;
 
   public InlineMethodDialogModel(final SNode node, IOperationContext operationContext) {
     ModelAccess.instance().runReadAction(new Runnable() {
@@ -40,6 +43,7 @@ public class InlineMethodDialogModel {
           InlineMethodDialogModel.this.myCall = new MethodCallAdapter(node);
           InlineMethodDialogModel.this.myMethod = InlineMethodDialogModel.this.myCall.getMethodDeclaration();
         }
+        myMethodPresentation = BaseConcept_Behavior.call_getPresentation_1213877396640(myMethod);
       }
     });
     this.myOperationContext = operationContext;
@@ -64,12 +68,12 @@ public class InlineMethodDialogModel {
     }
   }
 
-  /*package*/ void onOk() {
+  /*package*/ void onOk(Project project) {
     String problems = this.findProblems();
     if (problems.length() > 0) {
       this.myIsPreview = false;
-      ProblemsDialog dialog = new ProblemsDialog(ProjectHelper.toMainFrame(this.myOperationContext.getProject()), problems, this);
-      dialog.showDialog();
+      ProblemsDialog dialog = new ProblemsDialog(project, problems, this);
+      dialog.show();
     } else {
       this.doRefactoring();
     }
@@ -92,12 +96,12 @@ public class InlineMethodDialogModel {
     });
   }
 
-  /*package*/ void preview() {
+  /*package*/ void preview(Project project) {
     String problems = this.findProblems();
     if (problems.length() > 0) {
       this.myIsPreview = true;
-      ProblemsDialog dialog = new ProblemsDialog(ProjectHelper.toMainFrame(this.myOperationContext.getProject()), problems, this);
-      dialog.showDialog();
+      ProblemsDialog dialog = new ProblemsDialog(project, problems, this);
+      dialog.show();
     } else {
       this.doPreview();
     }
@@ -136,6 +140,10 @@ public class InlineMethodDialogModel {
 
   public SNode getMethodDeclaration() {
     return this.myMethod;
+  }
+
+  public String getMethodPresentation() {
+    return myMethodPresentation;
   }
 
   public MethodCallAdapter getMethodCall() {
