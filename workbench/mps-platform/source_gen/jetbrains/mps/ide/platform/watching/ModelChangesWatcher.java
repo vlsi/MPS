@@ -177,17 +177,8 @@ public class ModelChangesWatcher implements ApplicationComponent {
     }
   }
 
-  public Set<VirtualFile> getSignificantRoots() {
-    return mySignRoots.getSignificantRoots();
-  }
-
   private boolean isUnderSignificantRoots(File file) {
-    for (VirtualFile f : getSignificantRoots()) {
-      if (FileUtil.isAncestor(VirtualFileUtils.toFile(f), file, false)) {
-        return true;
-      }
-    }
-    return false;
+    return mySignRoots.isUnderSignificantRoots(file);
   }
 
   public void addReloadListener(ModelChangesWatcher.IReloadListener listener) {

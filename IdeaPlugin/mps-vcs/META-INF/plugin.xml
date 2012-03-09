@@ -36,6 +36,10 @@
     <component>
       <implementation-class>jetbrains.mps.ide.platform.watching.ModelCacheReloader</implementation-class>
     </component>
+    <component>
+      <interface-class>jetbrains.mps.ide.platform.watching.SignificantRoots</interface-class>
+      <implementation-class>jetbrains.mps.ide.platform.watching.PluginSignificantRoots</implementation-class>
+    </component>
   </application-components>
   <extensions defaultExtensionNs="com.intellij">
     <errorHandler implementation="jetbrains.mps.ide.blame.CharismaReporter"/>
