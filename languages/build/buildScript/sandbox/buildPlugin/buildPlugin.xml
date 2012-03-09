@@ -4,12 +4,16 @@
   <property name="build.layout" location="${build.dir}/artifacts/buildPlugin" />
   <property name="ds" location="${basedir}" />
   <property name="artifacts.buildCore" location="${build.dir}/artifacts/buildCore" />
-  <property name="artifacts.buildA" location="${ds}/../../buildA" />
+  <property name="artifacts.buildA" location="${build.dir}/artifacts/buildA" />
   <property name="artifacts.buildB" location="../../solutions/buildB/build/artifacts/buildB" />
   <property file="${artifacts.buildCore}/variables.properties" prefix="import.buildCore" />
-  <property name="buildCore.build.number" value="import.buildCore.buildCore.build.number" />
-  <property name="buildCore.ver" value="import.buildCore.buildCore.ver" />
-  <property name="buildCore.MPS" value="import.buildCore.buildCore.MPS" />
+  <property file="${artifacts.buildA}/variables.properties" prefix="import.buildA" />
+  <property file="${artifacts.buildB}/variables.properties" prefix="import.buildB" />
+  <property name="buildCore.build.number" value="${import.buildCore.buildCore.build.number}" />
+  <property name="buildCore.ver" value="${import.buildCore.buildCore.ver}" />
+  <property name="buildCore.MPS" value="${import.buildCore.buildCore.MPS}" />
+  <property name="buildA.aver1" value="${import.buildB.buildB.aver}" />
+  <property name="buildA.aver1" value="${import.buildB.buildB.aver}" />
   
   <target name="assemble" depends="classes">
     <aaa></aaa>
@@ -21,7 +25,9 @@
     </jar>
     <echo file="${build.layout}/variables.properties">buildCore.build.number=${buildCore.build.number}
         buildCore.ver=${buildCore.ver}
-        buildCore.MPS=${buildCore.MPS}</echo>
+        buildCore.MPS=${buildCore.MPS}
+        buildA.aver1=${buildA.aver1}
+        buildA.aver1=${buildA.aver1}</echo>
   </target>
   
   <target name="fetchDependencies">

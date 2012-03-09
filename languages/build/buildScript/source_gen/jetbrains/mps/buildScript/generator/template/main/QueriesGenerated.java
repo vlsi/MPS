@@ -273,7 +273,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_6520682027041001064(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return ((MacroHelper) _context.getVariable("var:macroHelper")).getImportName(_context.getNode());
+    return "${" + ((MacroHelper) _context.getVariable("var:macroHelper")).getImportName(_context.getNode()) + "}";
   }
 
   public static Object propertyMacro_GetPropertyValue_5662391463398094397(final IOperationContext operationContext, final PropertyMacroContext _context) {

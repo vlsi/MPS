@@ -58,34 +58,37 @@ public class PathProvider {
       }
       switch (c) {
         case '/':
-          sb.append("{slash}");
+          sb.append("_sl_");
           break;
         case '\\':
-          sb.append("{bslash}");
+          sb.append("_bs_");
           break;
         case '>':
-          sb.append("{gt}");
+          sb.append("_gt_");
           break;
         case '<':
-          sb.append("{lt}");
+          sb.append("_lt_");
           break;
         case '"':
-          sb.append("{quot}");
+          sb.append("_quot_");
           break;
         case '|':
-          sb.append("{bar}");
+          sb.append("_bar_");
           break;
         case ':':
-          sb.append("{colon}");
+          sb.append("_colon_");
           break;
         case '*':
-          sb.append("{star}");
+          sb.append("_star_");
           break;
         case '?':
-          sb.append("{qmark}");
+          sb.append("_qmark_");
           break;
         case '%':
-          sb.append("{percent}");
+          sb.append("_perc_");
+          break;
+        case '$':
+          sb.append("_dl_");
           break;
         default:
           sb.append(c);

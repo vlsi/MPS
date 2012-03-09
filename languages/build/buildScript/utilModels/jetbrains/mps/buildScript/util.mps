@@ -3357,7 +3357,7 @@
                       <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="4640279023716772353">
                         <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="e2lb.~StringBuilder%dappend(java%dlang%dString)%cjava%dlang%dStringBuilder" resolveInfo="append" />
                         <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="4640279023716772354">
-                          <property name="value" nameId="tpee.1070475926801" value="{slash}" />
+                          <property name="value" nameId="tpee.1070475926801" value="_sl_" />
                         </node>
                       </node>
                     </node>
@@ -3378,7 +3378,7 @@
                       <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="4640279023716772701">
                         <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="e2lb.~StringBuilder%dappend(java%dlang%dString)%cjava%dlang%dStringBuilder" resolveInfo="append" />
                         <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="4640279023716772702">
-                          <property name="value" nameId="tpee.1070475926801" value="{bslash}" />
+                          <property name="value" nameId="tpee.1070475926801" value="_bs_" />
                         </node>
                       </node>
                     </node>
@@ -3399,7 +3399,7 @@
                       <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="4640279023716772636">
                         <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="e2lb.~StringBuilder%dappend(java%dlang%dString)%cjava%dlang%dStringBuilder" resolveInfo="append" />
                         <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="4640279023716772637">
-                          <property name="value" nameId="tpee.1070475926801" value="{gt}" />
+                          <property name="value" nameId="tpee.1070475926801" value="_gt_" />
                         </node>
                       </node>
                     </node>
@@ -3420,7 +3420,7 @@
                       <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="4640279023716772626">
                         <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="e2lb.~StringBuilder%dappend(java%dlang%dString)%cjava%dlang%dStringBuilder" resolveInfo="append" />
                         <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="4640279023716772627">
-                          <property name="value" nameId="tpee.1070475926801" value="{lt}" />
+                          <property name="value" nameId="tpee.1070475926801" value="_lt_" />
                         </node>
                       </node>
                     </node>
@@ -3441,7 +3441,7 @@
                       <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="4640279023716772647">
                         <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="e2lb.~StringBuilder%dappend(java%dlang%dString)%cjava%dlang%dStringBuilder" resolveInfo="append" />
                         <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="4640279023716772648">
-                          <property name="value" nameId="tpee.1070475926801" value="{quot}" />
+                          <property name="value" nameId="tpee.1070475926801" value="_quot_" />
                         </node>
                       </node>
                     </node>
@@ -3462,7 +3462,7 @@
                       <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="4640279023716772658">
                         <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="e2lb.~StringBuilder%dappend(java%dlang%dString)%cjava%dlang%dStringBuilder" resolveInfo="append" />
                         <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="4640279023716772659">
-                          <property name="value" nameId="tpee.1070475926801" value="{bar}" />
+                          <property name="value" nameId="tpee.1070475926801" value="_bar_" />
                         </node>
                       </node>
                     </node>
@@ -3483,7 +3483,7 @@
                       <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="4640279023716772691">
                         <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="e2lb.~StringBuilder%dappend(java%dlang%dString)%cjava%dlang%dStringBuilder" resolveInfo="append" />
                         <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="4640279023716772692">
-                          <property name="value" nameId="tpee.1070475926801" value="{colon}" />
+                          <property name="value" nameId="tpee.1070475926801" value="_colon_" />
                         </node>
                       </node>
                     </node>
@@ -3504,7 +3504,7 @@
                       <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="4640279023716772667">
                         <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="e2lb.~StringBuilder%dappend(java%dlang%dString)%cjava%dlang%dStringBuilder" resolveInfo="append" />
                         <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="4640279023716772668">
-                          <property name="value" nameId="tpee.1070475926801" value="{star}" />
+                          <property name="value" nameId="tpee.1070475926801" value="_star_" />
                         </node>
                       </node>
                     </node>
@@ -3525,7 +3525,7 @@
                       <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="4640279023716772712">
                         <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="e2lb.~StringBuilder%dappend(java%dlang%dString)%cjava%dlang%dStringBuilder" resolveInfo="append" />
                         <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="4640279023716772713">
-                          <property name="value" nameId="tpee.1070475926801" value="{qmark}" />
+                          <property name="value" nameId="tpee.1070475926801" value="_qmark_" />
                         </node>
                       </node>
                     </node>
@@ -3546,12 +3546,33 @@
                       <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="4640279023716772721">
                         <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="e2lb.~StringBuilder%dappend(java%dlang%dString)%cjava%dlang%dStringBuilder" resolveInfo="append" />
                         <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="4640279023716772722">
-                          <property name="value" nameId="tpee.1070475926801" value="{percent}" />
+                          <property name="value" nameId="tpee.1070475926801" value="_perc_" />
                         </node>
                       </node>
                     </node>
                   </node>
                   <node role="statement" roleId="tpee.1068581517665" type="tpee.BreakStatement" typeId="tpee.1081855346303" id="4640279023716772723" />
+                </node>
+              </node>
+              <node role="case" roleId="tpee.1163670772911" type="tpee.SwitchCase" typeId="tpee.1163670641947" id="6520682027041146486">
+                <node role="body" roleId="tpee.1163670683720" type="tpee.StatementList" typeId="tpee.1068580123136" id="6520682027041146488">
+                  <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="6520682027041146501">
+                    <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="6520682027041146523">
+                      <node role="operand" roleId="tpee.1197027771414" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="6520682027041146502">
+                        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4640279023716771510" resolveInfo="sb" />
+                      </node>
+                      <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="6520682027041146528">
+                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="e2lb.~StringBuilder%dappend(java%dlang%dString)%cjava%dlang%dStringBuilder" resolveInfo="append" />
+                        <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="6520682027041146529">
+                          <property name="value" nameId="tpee.1070475926801" value="_dl_" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                  <node role="statement" roleId="tpee.1068581517665" type="tpee.BreakStatement" typeId="tpee.1081855346303" id="6520682027041146540" />
+                </node>
+                <node role="expression" roleId="tpee.1163670677455" type="tpee.CharConstant" typeId="tpee.1200397529627" id="6520682027041146500">
+                  <property name="charConstant" nameId="tpee.1200397540847" value="$" />
                 </node>
               </node>
             </node>

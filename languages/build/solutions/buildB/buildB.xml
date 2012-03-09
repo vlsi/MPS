@@ -2,8 +2,23 @@
   <property name="build.dir" location="build" />
   <property name="build.tmp" location="${build.dir}/tmp/buildB" />
   <property name="build.layout" location="${build.dir}/artifacts/buildB" />
+  <property name="artifacts.buildA" location="../../buildScript/sandbox/build/artifacts/buildA" />
+  <property file="${artifacts.buildA}/variables.properties" prefix="import.buildA" />
+  <property name="buildA.aver" value="${import.buildA.buildA.aver}" />
   
-  <target name="assemble" />
+  <target name="assemble">
+    <mkdir dir="${build.layout}/result" />
+    <mkdir dir="${build.layout}/result/A-${buildA.aver}" />
+    <copy todir="${build.layout}/result/A-${buildA.aver}">
+      <fileset dir="${build.tmp}/deps/buildA/A-_dl_{aver}.zip/A" />
+    </copy>
+    <echo file="${build.layout}/variables.properties">buildA.aver=${buildA.aver}</echo>
+  </target>
+  
+  <target name="fetchDependencies">
+    <mkdir dir="${build.tmp}/deps/buildA/A-_dl_{aver}.zip" />
+    <unzip src="${artifacts.buildA}/result/A-${buildA.aver}.zip" dest="${build.tmp}/deps/buildA/A-_dl_{aver}.zip" />
+  </target>
   
   <target name="build" depends="assemble" />
   
