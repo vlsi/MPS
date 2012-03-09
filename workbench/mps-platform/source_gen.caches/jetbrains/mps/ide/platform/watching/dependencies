@@ -39,7 +39,6 @@
     <classNode dependClassName="com.intellij.openapi.project.ProjectManager" />
     <classNode dependClassName="com.intellij.openapi.util.io.FileUtil" />
     <classNode dependClassName="com.intellij.openapi.vcs.ProjectLevelVcsManager" />
-    <classNode dependClassName="com.intellij.openapi.vfs.VirtualFile" />
     <classNode dependClassName="com.intellij.openapi.vfs.VirtualFileManager" />
     <classNode dependClassName="com.intellij.openapi.vfs.VirtualFileManagerListener" />
     <classNode dependClassName="com.intellij.openapi.vfs.newvfs.events.VFileContentChangeEvent" />
@@ -134,8 +133,7 @@
   </dependency>
   <dependency className="jetbrains.mps.ide.platform.watching.PluginSignificantRoots" file="PluginSignificantRoots.java">
     <classNode dependClassName="com.intellij.openapi.project.ProjectManager" />
-    <classNode dependClassName="com.intellij.openapi.vfs.VirtualFile" />
-    <classNode dependClassName="java.util.Set" />
+    <classNode dependClassName="java.io.File" />
     <classNode extendsClassName="jetbrains.mps.ide.platform.watching.SignificantRoots" />
   </dependency>
   <dependency className="jetbrains.mps.ide.platform.watching.ReloadSession" file="ReloadSession.java">
@@ -168,8 +166,7 @@
   </dependency>
   <dependency className="jetbrains.mps.ide.platform.watching.SignificantRoots" file="SignificantRoots.java">
     <classNode dependClassName="com.intellij.openapi.application.ApplicationManager" />
-    <classNode dependClassName="com.intellij.openapi.vfs.VirtualFile" />
-    <classNode dependClassName="java.util.Set" />
+    <classNode dependClassName="java.io.File" />
   </dependency>
 </dependenciesRoot>
 
