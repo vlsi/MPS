@@ -68,7 +68,7 @@ public class LibraryInitializer {
 
     //load new
     HashSet<String> toLoad = new HashSet<String>(newLibs);
-    toUnload.removeAll(loadedLibs);
+    toLoad.removeAll(loadedLibs);
     for (String loadLib : toLoad) {
       MPSModuleOwner owner = new MPSModuleOwner() {
       };
