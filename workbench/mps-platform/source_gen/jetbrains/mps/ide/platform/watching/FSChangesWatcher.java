@@ -37,15 +37,15 @@ import com.intellij.openapi.vfs.newvfs.events.VFileDeleteEvent;
 import com.intellij.openapi.vfs.newvfs.events.VFileCopyEvent;
 import com.intellij.openapi.vfs.newvfs.events.VFileMoveEvent;
 
-public class ModelChangesWatcher implements ApplicationComponent {
-  public static final Logger LOG = Logger.getLogger(ModelChangesWatcher.class);
+public class FSChangesWatcher implements ApplicationComponent {
+  public static final Logger LOG = Logger.getLogger(FSChangesWatcher.class);
 
   private final MessageBus myBus;
   private final ProjectManager myProjectManager;
   private final VirtualFileManager myVirtualFileManager;
   private volatile ReloadSession myReloadSession;
   private final Object myLock = new Object();
-  private final Set<ModelChangesWatcher.IReloadListener> myReloadListeners = new HashSet<ModelChangesWatcher.IReloadListener>();
+  private final Set<FSChangesWatcher.IReloadListener> myReloadListeners = new HashSet<FSChangesWatcher.IReloadListener>();
   private int myBans = 0;
   private MergingUpdateQueue myQueue = new MergingUpdateQueue("Model Changes Watcher Queue", 500, true, null, null, null, true);
   private final VirtualFileManagerListener myVirtualFileManagerListener = new VirtualFileManagerListener() {
@@ -58,7 +58,7 @@ public class ModelChangesWatcher implements ApplicationComponent {
     }
   };
   private MessageBusConnection myConnection;
-  private BulkFileListener myBusListener = new ModelChangesWatcher.BulkFileChangesListener();
+  private BulkFileListener myBusListener = new FSChangesWatcher.BulkFileChangesListener();
   private IMakeNotificationListener myMakeListener = new IMakeNotificationListener.Stub() {
     public void sessionOpened(MakeNotification notification) {
       suspendTasksProcessing();
@@ -70,7 +70,7 @@ public class ModelChangesWatcher implements ApplicationComponent {
   };
   private IMakeService myMakeService;
 
-  public ModelChangesWatcher(MessageBus bus, ProjectManager projectManager, VirtualFileManager virtualFileManager) {
+  public FSChangesWatcher(MessageBus bus, ProjectManager projectManager, VirtualFileManager virtualFileManager) {
     myBus = bus;
     myVirtualFileManager = virtualFileManager;
     myProjectManager = projectManager;
@@ -173,21 +173,21 @@ public class ModelChangesWatcher implements ApplicationComponent {
     }
   }
 
-  public void addReloadListener(ModelChangesWatcher.IReloadListener listener) {
+  public void addReloadListener(FSChangesWatcher.IReloadListener listener) {
     synchronized (myReloadListeners) {
       myReloadListeners.add(listener);
     }
   }
 
-  public void removeReloadListener(ModelChangesWatcher.IReloadListener listener) {
+  public void removeReloadListener(FSChangesWatcher.IReloadListener listener) {
     synchronized (myReloadListeners) {
       myReloadListeners.remove(listener);
     }
   }
 
-  private Set<ModelChangesWatcher.IReloadListener> getReloadListeners() {
+  private Set<FSChangesWatcher.IReloadListener> getReloadListeners() {
     synchronized (myReloadListeners) {
-      HashSet<ModelChangesWatcher.IReloadListener> listeners = new HashSet<ModelChangesWatcher.IReloadListener>();
+      HashSet<FSChangesWatcher.IReloadListener> listeners = new HashSet<FSChangesWatcher.IReloadListener>();
       listeners.addAll(myReloadListeners);
       return listeners;
     }
@@ -202,8 +202,8 @@ public class ModelChangesWatcher implements ApplicationComponent {
     }
   }
 
-  public static ModelChangesWatcher instance() {
-    return ApplicationManager.getApplication().getComponent(ModelChangesWatcher.class);
+  public static FSChangesWatcher instance() {
+    return ApplicationManager.getApplication().getComponent(FSChangesWatcher.class);
   }
 
   private class BulkFileChangesListener implements BulkFileListener {
@@ -223,7 +223,7 @@ public class ModelChangesWatcher implements ApplicationComponent {
           myReloadSession = new ReloadSession(getReloadListeners());
         }
         for (final VFileEvent event : events) {
-          ModelChangesWatcher.LOG.debug("Got event " + event);
+          FSChangesWatcher.LOG.debug("Got event " + event);
           processAfterEvent(event, myReloadSession);
         }
         queueReload();
@@ -231,7 +231,7 @@ public class ModelChangesWatcher implements ApplicationComponent {
     }
 
     private void processAfterEvent(VFileEvent event, ReloadSession reloadSession) {
-      ModelChangesWatcher.LOG.debug("Process after event for " + event.getPath());
+      FSChangesWatcher.LOG.debug("Process after event for " + event.getPath());
       ModelFileProcessor modelProcessor = new ModelFileProcessor(event.getFileSystem(), reloadSession);
       ModuleFileProcessor moduleProcessor = new ModuleFileProcessor(event.getFileSystem(), reloadSession);
       EventProcessor[] proc = new EventProcessor[]{modelProcessor, moduleProcessor};

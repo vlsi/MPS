@@ -34,9 +34,9 @@ import jetbrains.mps.project.SModelRoot;
   private final Set<IModule> myChangedModules = SetSequence.fromSet(new LinkedHashSet<IModule>());
   private final Set<VirtualFile> myNewModuleVFiles = SetSequence.fromSet(new LinkedHashSet<VirtualFile>());
   private final Set<IModule> myDeletedModules = SetSequence.fromSet(new HashSet<IModule>());
-  private final Set<ModelChangesWatcher.IReloadListener> myReloadListeners;
+  private final Set<FSChangesWatcher.IReloadListener> myReloadListeners;
 
-  public ReloadSession(Set<ModelChangesWatcher.IReloadListener> reloadListeners) {
+  public ReloadSession(Set<FSChangesWatcher.IReloadListener> reloadListeners) {
     myReloadListeners = reloadListeners;
   }
 
@@ -89,13 +89,13 @@ import jetbrains.mps.project.SModelRoot;
   }
 
   private void fireReloadStarted() {
-    for (ModelChangesWatcher.IReloadListener l : myReloadListeners) {
+    for (FSChangesWatcher.IReloadListener l : myReloadListeners) {
       l.reloadStarted();
     }
   }
 
   private void fireReloadFinished() {
-    for (ModelChangesWatcher.IReloadListener l : myReloadListeners) {
+    for (FSChangesWatcher.IReloadListener l : myReloadListeners) {
       l.reloadFinished();
     }
   }

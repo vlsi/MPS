@@ -4,7 +4,7 @@ package jetbrains.mps.vcs.suspicious;
 
 import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.project.ProjectManager;
-import jetbrains.mps.ide.platform.watching.ModelChangesWatcher;
+import jetbrains.mps.ide.platform.watching.FSChangesWatcher;
 import com.intellij.openapi.vfs.VirtualFileManager;
 import jetbrains.mps.smodel.DefaultSModelDescriptor;
 import jetbrains.mps.project.AbstractModule;
@@ -35,11 +35,11 @@ import jetbrains.mps.vcs.MPSVcsManager;
 
 public class SuspiciousModelIndex implements ApplicationComponent {
   private final ProjectManager myProjectManager;
-  private final ModelChangesWatcher myWatcher;
+  private final FSChangesWatcher myWatcher;
   private final VirtualFileManager myVirtualFileManager;
   private TaskQueue<Conflictable> myTaskQueue;
 
-  public SuspiciousModelIndex(ProjectManager manager, ModelChangesWatcher watcher, VirtualFileManager vfManager) {
+  public SuspiciousModelIndex(ProjectManager manager, FSChangesWatcher watcher, VirtualFileManager vfManager) {
     myProjectManager = manager;
     myWatcher = watcher;
     myVirtualFileManager = vfManager;
@@ -85,7 +85,7 @@ public class SuspiciousModelIndex implements ApplicationComponent {
   public void mergeModels(List<Conflictable> models) {
     final Collection<Conflictable> merged = showMergeDialog(models);
     if (merged.isEmpty()) {
-      ModelChangesWatcher.instance().tryToResumeTasksProcessing();
+      FSChangesWatcher.instance().tryToResumeTasksProcessing();
       return;
     }
     ApplicationManager.getApplication().invokeLater(new Runnable() {
@@ -99,7 +99,7 @@ public class SuspiciousModelIndex implements ApplicationComponent {
             }
           });
         } finally {
-          ModelChangesWatcher.instance().tryToResumeTasksProcessing();
+          FSChangesWatcher.instance().tryToResumeTasksProcessing();
         }
       }
     }, ModalityState.NON_MODAL);
@@ -128,7 +128,7 @@ public class SuspiciousModelIndex implements ApplicationComponent {
         toReload.add(conflictable);
       }
     }
-    ModelChangesWatcher.instance().suspendTasksProcessing();
+    FSChangesWatcher.instance().suspendTasksProcessing();
     for (final Project project : toMerge.keySet()) {
       final List<VirtualFile> virtualFileList = new ArrayList<VirtualFile>();
       ApplicationManager.getApplication().invokeAndWait(new Runnable() {
@@ -176,7 +176,7 @@ public class SuspiciousModelIndex implements ApplicationComponent {
   }
 
   private class MyTaskQueue extends TaskQueue<Conflictable> {
-    public MyTaskQueue(ProjectManager manager, ModelChangesWatcher watcher, VirtualFileManager virtualFileManager) {
+    public MyTaskQueue(ProjectManager manager, FSChangesWatcher watcher, VirtualFileManager virtualFileManager) {
       super(manager, watcher, virtualFileManager);
     }
 
