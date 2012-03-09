@@ -46,6 +46,9 @@ public class Context {
 
   public MacroHelper getMacros(SNode context) {
     SNode buildProject = getBuildProject(context);
+    if (buildProject == null) {
+      return null;
+    }
     buildProject = SNodeOperations.as(DependenciesHelper.getOriginalNode(buildProject, myGenerationContext), "jetbrains.mps.buildScript.structure.BuildProject");
     if (buildProject == null) {
       return null;
