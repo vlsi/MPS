@@ -21,7 +21,6 @@ import org.jetbrains.annotations.NotNull;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Set;
 
 public class ModelFileWatcher {
 
@@ -51,17 +50,17 @@ public class ModelFileWatcher {
 
   //-----------real stuff----------
 
-  private Map<FileBasedModelDataSource,Collection<String>> mySource2Files = new HashMap<FileBasedModelDataSource, Collection<String>>();
+  private Map<FileBasedModelDataSource, Collection<String>> mySource2Files = new HashMap<FileBasedModelDataSource, Collection<String>>();
 
   public void startListening(FileBasedModelDataSource source) {
     assert !mySource2Files.containsKey(source);
     Collection<String> files = source.getFilesToListen();
     mySource2Files.put(source, files);
-    myProvider.startListening(source,files);
+    myProvider.startListening(source, files);
   }
 
   public void stopListening(FileBasedModelDataSource source) {
     assert mySource2Files.containsKey(source);
-    myProvider.stopListening(source,mySource2Files.remove(source));
+    myProvider.stopListening(source, mySource2Files.remove(source));
   }
 }
