@@ -16,8 +16,8 @@
 package jetbrains.mps.smodel.descriptor.source.changes;
 
 import jetbrains.mps.smodel.descriptor.source.FileBasedModelDataSource;
-import org.jetbrains.annotations.NotNull;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
@@ -36,31 +36,35 @@ public class ModelFileWatcher {
     return INSTANCE;
   }
 
-  //-----------component stuff----------
-
-  private ModelFileWatcherProvider myProvider = new IOModelFileWatcherProvider();
-
-  public ModelFileWatcherProvider getProvider() {
-    return myProvider;
-  }
-
-  public void setProvider(@NotNull ModelFileWatcherProvider provider) {
-    myProvider = provider;
-  }
-
   //-----------real stuff----------
 
-  private Map<FileBasedModelDataSource, Collection<String>> mySource2Files = new HashMap<FileBasedModelDataSource, Collection<String>>();
+  private Map<String, Collection<FileBasedModelDataSource>> myFiles2Sources = new HashMap<String, Collection<FileBasedModelDataSource>>();
+  private Map<FileBasedModelDataSource, Collection<String>> mySources2Files = new HashMap<FileBasedModelDataSource, Collection<String>>();
+
+  public Collection<FileBasedModelDataSource> getSourcesForFile(String path) {
+    return myFiles2Sources.get(path);
+  }
 
   public void startListening(FileBasedModelDataSource source) {
-    assert !mySource2Files.containsKey(source);
+    assert !mySources2Files.containsKey(source);
     Collection<String> files = source.getFilesToListen();
-    mySource2Files.put(source, files);
-    myProvider.startListening(source, files);
+    for (String path : files) {
+      Collection<FileBasedModelDataSource> sources = myFiles2Sources.get(path);
+      if (sources == null) {
+        sources = new ArrayList<FileBasedModelDataSource>();
+        myFiles2Sources.put(path, sources);
+      }
+      sources.add(source);
+    }
+    mySources2Files.put(source, files);
   }
 
   public void stopListening(FileBasedModelDataSource source) {
-    assert mySource2Files.containsKey(source);
-    myProvider.stopListening(source, mySource2Files.remove(source));
+    Collection<String> removed = mySources2Files.remove(source);
+    for (String path : removed) {
+      Collection<FileBasedModelDataSource> sources = myFiles2Sources.get(path);
+      if (sources == null) continue;
+      sources.remove(source);
+    }
   }
 }
