@@ -21,9 +21,11 @@ import com.intellij.facet.Facet;
 import com.intellij.facet.FacetManager;
 import com.intellij.facet.FacetManagerAdapter;
 import com.intellij.openapi.module.Module;
+import com.intellij.openapi.roots.CompilerModuleExtension;
 import com.intellij.openapi.roots.ModuleRootEvent;
 import com.intellij.openapi.roots.ModuleRootListener;
 import com.intellij.openapi.roots.ModuleRootManager;
+import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.util.messages.MessageBusConnection;
 import jetbrains.mps.idea.core.facet.MPSFacet;
 import jetbrains.mps.idea.core.facet.MPSFacetType;
@@ -185,4 +187,19 @@ public class SolutionIdea extends Solution {
     }
     return true;
   }
+
+    @Override
+    public IFile getClassesGen() {
+        IFile descriptorFile = getDescriptorFile();
+        if (descriptorFile != null && descriptorFile.isReadOnly()) {
+            return super.getClassesGen();
+        }
+
+        CompilerModuleExtension compilerModuleExtension = ModuleRootManager.getInstance(myModule).getModuleExtension(CompilerModuleExtension.class);
+        VirtualFile compilerOutputPath = compilerModuleExtension.getCompilerOutputPath();
+        if (compilerOutputPath == null) {
+            return null;
+        }
+        return FileSystem.getInstance().getFileByPath(compilerOutputPath.getPath());
+    }
 }
