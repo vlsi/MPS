@@ -17,6 +17,7 @@ package jetbrains.mps.smodel.descriptor.source;
 
 import gnu.trove.THashSet;
 import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelFqName;
 import jetbrains.mps.smodel.SModelId;
@@ -31,8 +32,8 @@ import java.util.Set;
 public abstract class StubModelDataSource extends FileBasedModelDataSource {
   private final Set<String> myStubPaths = new THashSet<String>();
 
-  public StubModelDataSource() {
-
+  public StubModelDataSource(ModuleReference origin) {
+    super(origin);
   }
 
   public String toString() {

@@ -319,8 +319,8 @@
     <nodeInfo nodeId="4003657351907888253" fileName="MpsWorker.java" startLine="285" startPosition="32" endLine="286" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4003657351907888245" fileName="MpsWorker.java" startLine="287" startPosition="14" endLine="288" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4003657351907888260" fileName="MpsWorker.java" startLine="289" startPosition="7" endLine="290" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4733928027687412894" fileName="MpsWorker.java" startLine="290" startPosition="43" endLine="291" endPosition="120" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4733928027687412919" fileName="MpsWorker.java" startLine="291" startPosition="120" endLine="292" endPosition="124" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4733928027687412894" fileName="MpsWorker.java" startLine="290" startPosition="43" endLine="291" endPosition="126" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4733928027687412919" fileName="MpsWorker.java" startLine="291" startPosition="126" endLine="292" endPosition="124" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4003657351907888288" fileName="MpsWorker.java" startLine="293" startPosition="34" endLine="294" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4003657351907888282" fileName="MpsWorker.java" startLine="295" startPosition="14" endLine="296" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4003657351907888216" fileName="MpsWorker.java" startLine="298" startPosition="36" endLine="299" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -838,7 +838,6 @@
       <varInfo nodeId="4003657351907888028" varName="modules" />
     </scopeInfo>
     <unitInfo nodeId="4003657351907888740" fileName="MpsWorker.java" startLine="245" startPosition="17" endLine="46" endPosition="0" />
-    <unitInfo nodeId="4003657351907886982" fileName="MpsWorker.java" startLine="431" startPosition="0" endLine="456" endPosition="0" unitName="jetbrains.mps.build.ant.MpsWorker$LogLogger" />
     <unitInfo nodeId="4003657351907886911" fileName="MpsWorker.java" startLine="369" startPosition="0" endLine="401" endPosition="0" unitName="jetbrains.mps.build.ant.MpsWorker$MyMessageHandlerAppender" />
     <unitInfo nodeId="4003657351907886995" fileName="MpsWorker.java" startLine="457" startPosition="0" endLine="487" endPosition="0" unitName="jetbrains.mps.build.ant.MpsWorker$ObjectsToProcess" />
     <unitInfo nodeId="4003657351907886951" fileName="MpsWorker.java" startLine="406" startPosition="0" endLine="417" endPosition="0" unitName="jetbrains.mps.build.ant.MpsWorker$ProjectComponentLogger" />

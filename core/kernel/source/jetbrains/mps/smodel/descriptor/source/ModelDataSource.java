@@ -16,6 +16,8 @@
 package jetbrains.mps.smodel.descriptor.source;
 
 import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.structure.model.ModelRoot;
+import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.loading.ModelLoadResult;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
 import jetbrains.mps.smodel.SModelDescriptor;
@@ -40,7 +42,9 @@ public interface ModelDataSource {
 
   boolean saveModel(SModelDescriptor descriptor);
 
-  //------model deletion handling------
+  //------model changes handling------
+
+  ModuleReference getOrigin();
 
   // todo move to loadSModel - return null in case no model is there
   boolean hasModel(SModelDescriptor d);

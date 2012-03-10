@@ -6,6 +6,7 @@ import jetbrains.mps.util.annotation.ImmutableObject;
 import jetbrains.mps.smodel.descriptor.source.FileBasedModelDataSource;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.smodel.SModelReference;
+import jetbrains.mps.project.structure.modules.ModuleReference;
 import java.util.Collection;
 import java.util.Collections;
 import jetbrains.mps.smodel.persistence.def.DescriptorLoadResult;
@@ -23,7 +24,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.project.structure.model.ModelRoot;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
-import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.project.SModelRoot;
@@ -34,7 +34,8 @@ public class FileStubSource extends FileBasedModelDataSource {
   private final IFile myFile;
   private SModelReference ref;
 
-  public FileStubSource(IFile file, SModelReference ref) {
+  public FileStubSource(ModuleReference origin, IFile file, SModelReference ref) {
+    super(origin);
     myFile = file;
     this.ref = ref;
   }
