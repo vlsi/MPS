@@ -32,6 +32,9 @@
     <component>
       <implementation-class>jetbrains.mps.idea.debugger.breakpoints.IdeaBreakpointsUiComponent</implementation-class>
     </component>
+    <component>
+      <implementation-class>jetbrains.mps.idea.debugger.TraceFileToResourcesAddition</implementation-class>
+    </component>
   </project-components>
 
   <actions>
