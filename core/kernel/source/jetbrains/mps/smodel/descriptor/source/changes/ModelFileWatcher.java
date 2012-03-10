@@ -17,10 +17,7 @@ package jetbrains.mps.smodel.descriptor.source.changes;
 
 import jetbrains.mps.smodel.descriptor.source.FileBasedModelDataSource;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 public class ModelFileWatcher {
 
@@ -38,33 +35,18 @@ public class ModelFileWatcher {
 
   //-----------real stuff----------
 
-  private Map<String, Collection<FileBasedModelDataSource>> myFiles2Sources = new HashMap<String, Collection<FileBasedModelDataSource>>();
   private Map<FileBasedModelDataSource, Collection<String>> mySources2Files = new HashMap<FileBasedModelDataSource, Collection<String>>();
 
-  public Collection<FileBasedModelDataSource> getSourcesForFile(String path) {
-    return myFiles2Sources.get(path);
+  public Map<FileBasedModelDataSource, Collection<String>> getSources2Files() {
+    return Collections.unmodifiableMap(mySources2Files);
   }
 
   public void startListening(FileBasedModelDataSource source) {
     assert !mySources2Files.containsKey(source);
-    Collection<String> files = source.getFilesToListen();
-    for (String path : files) {
-      Collection<FileBasedModelDataSource> sources = myFiles2Sources.get(path);
-      if (sources == null) {
-        sources = new ArrayList<FileBasedModelDataSource>();
-        myFiles2Sources.put(path, sources);
-      }
-      sources.add(source);
-    }
-    mySources2Files.put(source, files);
+    mySources2Files.put(source, source.getFilesToListen());
   }
 
   public void stopListening(FileBasedModelDataSource source) {
-    Collection<String> removed = mySources2Files.remove(source);
-    for (String path : removed) {
-      Collection<FileBasedModelDataSource> sources = myFiles2Sources.get(path);
-      if (sources == null) continue;
-      sources.remove(source);
-    }
+    mySources2Files.remove(source);
   }
 }
