@@ -73,7 +73,7 @@ public class LibrariesLoader implements CoreComponent {
       if (!(m instanceof AbstractModule)) continue;
       if (myLoadedModules.contains(m.getModuleReference())) continue;
       myLoadedModules.add(m.getModuleReference());
-      ((AbstractModule) m).loadNewModels();
+      ((AbstractModule) m).updateModelsSet();
     }
   }
 

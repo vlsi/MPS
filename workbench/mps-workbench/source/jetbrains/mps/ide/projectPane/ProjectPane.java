@@ -40,8 +40,8 @@ import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.IdeMain.TestMode;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.editor.MPSFileNodeEditor;
-import jetbrains.mps.ide.platform.watching.ModelChangesWatcher;
-import jetbrains.mps.ide.platform.watching.ModelChangesWatcher.IReloadListener;
+import jetbrains.mps.ide.platform.watching.FSChangesWatcher;
+import jetbrains.mps.ide.platform.watching.FSChangesWatcher.IReloadListener;
 import jetbrains.mps.ide.projectPane.logicalview.ProjectPaneTree;
 import jetbrains.mps.ide.projectPane.logicalview.ProjectTree;
 import jetbrains.mps.ide.projectPane.logicalview.ProjectTreeFindHelper;
@@ -116,7 +116,7 @@ public class ProjectPane extends BaseLogicalViewProjectPane {
     super(project);
     myProjectView = projectView;
     myUpdateQueue.setRestartTimerOnAdd(true);
-    ApplicationManager.getApplication().getComponent(ModelChangesWatcher.class).addReloadListener(new IReloadListener() {
+    ApplicationManager.getApplication().getComponent(FSChangesWatcher.class).addReloadListener(new IReloadListener() {
       @Override
       public void reloadStarted() {
 

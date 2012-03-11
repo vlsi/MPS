@@ -17,7 +17,7 @@ import java.util.Collections;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.plugins.PluginReloader;
-import jetbrains.mps.ide.platform.watching.ModelChangesWatcher;
+import jetbrains.mps.ide.platform.watching.FSChangesWatcher;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.generator.GenerationSettingsProvider;
 import jetbrains.mps.ide.generator.GenerationSettings;
@@ -70,9 +70,9 @@ public class WorkbenchMakeService extends AbstractMakeService implements IMakeSe
   private volatile AtomicReference<Future<IResult>> currentProcess = new AtomicReference<Future<IResult>>();
   private List<IMakeNotificationListener> listeners = Collections.synchronizedList(ListSequence.fromList(new ArrayList<IMakeNotificationListener>()));
   private PluginReloader pluginReloader;
-  private ModelChangesWatcher watcher;
+  private FSChangesWatcher watcher;
 
-  public WorkbenchMakeService(PluginReloader pluginReloader, ModelChangesWatcher watcher) {
+  public WorkbenchMakeService(PluginReloader pluginReloader, FSChangesWatcher watcher) {
     this.pluginReloader = pluginReloader;
     this.watcher = watcher;
   }

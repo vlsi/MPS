@@ -9,7 +9,7 @@ import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.DefaultSModelDescriptor;
 import com.intellij.openapi.application.ApplicationManager;
-import jetbrains.mps.ide.platform.watching.ModelChangesWatcher;
+import jetbrains.mps.ide.platform.watching.FSChangesWatcher;
 import jetbrains.mps.util.Computable;
 import java.io.File;
 import java.io.IOException;
@@ -35,7 +35,7 @@ public class DiskMemoryConflictResolverImpl extends DiskMemoryConflictResolver {
   public void resolveDiskMemoryConflict(final IFile file, final SModel model, final DefaultSModelDescriptor modelDescriptor) {
     ApplicationManager.getApplication().invokeLater(new Runnable() {
       public void run() {
-        boolean needSave = ModelChangesWatcher.instance().executeUnderBlockedReload(new Computable<Boolean>() {
+        boolean needSave = FSChangesWatcher.instance().executeUnderBlockedReload(new Computable<Boolean>() {
           public Boolean compute() {
             try {
               File backupFile = doBackup(file, model);

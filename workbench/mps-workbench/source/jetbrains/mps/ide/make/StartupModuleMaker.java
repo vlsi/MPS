@@ -21,7 +21,7 @@ import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.startup.StartupManager;
 import jetbrains.mps.ide.messages.MessagesViewTool;
-import jetbrains.mps.ide.platform.watching.ModelChangesWatcher;
+import jetbrains.mps.ide.platform.watching.FSChangesWatcher;
 import jetbrains.mps.library.ProjectLibraryManager;
 import jetbrains.mps.make.ModuleMaker;
 import jetbrains.mps.messages.IMessage;
@@ -41,7 +41,7 @@ import java.util.LinkedHashSet;
 
 public class StartupModuleMaker extends AbstractProjectComponent {
   @SuppressWarnings({"UnusedDeclaration"})
-  public StartupModuleMaker(Project project, MPSProject mpsProject, ProjectLibraryManager plm, final ModelChangesWatcher watcher) {
+  public StartupModuleMaker(Project project, MPSProject mpsProject, ProjectLibraryManager plm, final FSChangesWatcher watcher) {
     super(project);
 
     final ProgressIndicator indicator = ProgressManager.getInstance().getProgressIndicator();

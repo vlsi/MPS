@@ -37,7 +37,7 @@ public class JavaStubs extends AbstractModelRootManager {
 
   /*package*/ IClassPathItem create(String path) {
     try {
-      return ClassPathFactory.getInstance().createFromPath(path, "JavaStubs");
+      return ClassPathFactory.getInstance().createFromPathFS(path, "JavaStubs");
     } catch (IOException e) {
       e.printStackTrace();
       // To change body of catch statement use File | Settings | File Templates. 
@@ -56,7 +56,7 @@ public class JavaStubs extends AbstractModelRootManager {
           smd = (BaseStubModelDescriptor) descriptor;
           ListSequence.fromList(result).addElement(descriptor);
         } else {
-          smd = new JavaStubModelDescriptor(modelReference, new JavaStubModelDataSource(LanguageID.JAVA, false), module);
+          smd = new JavaStubModelDescriptor(modelReference, new JavaStubModelDataSource(module.getModuleReference(), LanguageID.JAVA, false), module);
           ListSequence.fromList(result).addElement(smd);
         }
         ((JavaStubModelDataSource) smd.getSource()).addPath(JavaStubs.this.child(startPath, subpackage));
