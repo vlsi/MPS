@@ -31,7 +31,6 @@ import jetbrains.mps.project.structure.modules.SolutionDescriptor;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.util.Condition;
-import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.ManyToManyMap;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.IFileUtils;
@@ -140,12 +139,12 @@ public class MPSModuleRepository implements CoreComponent {
 
   public List<IModule> findModulesUnderDir(IFile file) {
     assertCanRead();
-    assert file.isDirectory();
+    assert file.isDirectory() : file.getPath();
 
-    List<IModule> result  = new ArrayList<IModule>();
+    List<IModule> result = new ArrayList<IModule>();
     String dirPath = file.getPath();
     for (String path : myCanonicalFileToModuleMap.keySet()) {
-      if (path.startsWith(dirPath)){
+      if (path.startsWith(dirPath)) {
         result.add(myCanonicalFileToModuleMap.get(path));
       }
     }
