@@ -4,6 +4,8 @@ package jetbrains.mps.debugger.api.ui.tree;
 
 import jetbrains.mps.ide.ui.MPSTree;
 import com.intellij.openapi.actionSystem.DataProvider;
+import com.intellij.openapi.actionSystem.DataKey;
+import jetbrains.mps.debug.api.programState.IValue;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.debug.api.AbstractUiState;
 import com.intellij.openapi.project.Project;
@@ -38,6 +40,7 @@ import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 
 public class VariablesTree extends MPSTree implements DataProvider {
   private static final String COMMAND_OPEN_NODE_IN_PROJECT = "COMMAND_OPEN_NODE_IN_PROJECT";
+  public static final DataKey<IValue> MPS_DEBUGGER_VALUE = DataKey.create("MPS_DEBUGGER_VALUE");
 
   @NotNull
   private AbstractUiState myUiState;
@@ -177,6 +180,13 @@ public class VariablesTree extends MPSTree implements DataProvider {
       AbstractWatchableNode selectedNode = findSelectedNode();
       if (selectedNode != null) {
         return selectedNode.getNode();
+      }
+    } else if (dataId.equals(MPS_DEBUGGER_VALUE.getName())) {
+      AbstractWatchableNode selectedNode = findSelectedNode();
+      if (selectedNode != null) {
+        if (selectedNode instanceof WatchableNode) {
+          return ((WatchableNode) selectedNode).getValue();
+        }
       }
     }
     return null;

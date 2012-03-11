@@ -5,10 +5,11 @@
     <content url="file://$MODULE_DIR$" />
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="module" module-name="idea-patch" exported="" />
     <orderEntry type="library" exported="" name="Guava" level="project" />
     <orderEntry type="library" exported="" name="Idea-plaform" level="project" />
     <orderEntry type="library" exported="" name="Annotations" level="project" />
+    <orderEntry type="module" module-name="resources" />
+    <orderEntry type="module" module-name="resources_en" />
   </component>
 </module>
 

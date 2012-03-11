@@ -31,21 +31,22 @@ import jetbrains.mps.debug.api.breakpoints.IBreakpointsProvider;
 import org.jetbrains.annotations.Nullable;
 import com.intellij.openapi.actionSystem.ActionGroup;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
-import jetbrains.mps.ide.projectPane.Icons;
+import jetbrains.mps.workbench.action.BaseAction;
+import jetbrains.mps.workbench.dialogs.project.components.parts.actions.icons.Icons;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.smodel.ModelAccess;
 import com.intellij.openapi.actionSystem.Separator;
 import com.intellij.openapi.actionSystem.ToggleAction;
-import javax.swing.KeyStroke;
-import java.awt.event.KeyEvent;
 import javax.swing.AbstractAction;
 import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import javax.swing.KeyStroke;
+import java.awt.event.KeyEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import com.intellij.ide.DataManager;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.debug.api.breakpoints.ILocationBreakpoint;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.ide.dialogs.DialogDimensionsSettings;
 import org.jetbrains.annotations.NonNls;
@@ -59,8 +60,6 @@ public class BreakpointsBrowserDialog extends BaseDialog implements DataProvider
   private final BreakpointManagerComponent myBreakpointsManager;
   private final BreakpointProvidersManager myProvidersManager;
   private final BreakpointsUiComponent myBreakpointsUi;
-  private AnAction myShowNodeAction;
-  private AnAction myGotoNodeAction;
   private AnAction myDeleteBreakpointAction;
   private final JScrollPane myBreakpointsScrollPane;
   private final BreakpointsView[] myViews;
@@ -162,61 +161,10 @@ public class BreakpointsBrowserDialog extends BaseDialog implements DataProvider
   private ActionGroup createActions() {
     //  create actions 
     DefaultActionGroup group = new DefaultActionGroup();
-    myGotoNodeAction = new AnAction("Go To", "Go To Source", Icons.REFERENCE_ICON) {
-      @Override
-      public void actionPerformed(AnActionEvent e) {
-        IBreakpoint breakpoint = getBreakpoint(e);
-        if (breakpoint == null) {
-          return;
-        }
-        dispose();
-        openNode(breakpoint, true, true);
-      }
-
-      @Override
-      public void update(AnActionEvent e) {
-        e.getPresentation().setEnabled(getBreakpoint(e) != null);
-      }
-    };
-    group.add(myGotoNodeAction);
-    myShowNodeAction = new AnAction("View Source", "View Source", Icons.TEXT_ICON) {
-      @Override
-      public void actionPerformed(AnActionEvent e) {
-        IBreakpoint breakpoint = getBreakpoint(e);
-        if (breakpoint == null) {
-          return;
-        }
-        openNode(breakpoint, false, true);
-      }
-
-      @Override
-      public void update(AnActionEvent e) {
-        e.getPresentation().setEnabled(getBreakpoint(e) != null);
-      }
-    };
-    group.add(myShowNodeAction);
-    DefaultActionGroup addActionGroup = new DefaultActionGroup("Add Breakpoint", true) {
-      @Override
-      public void update(AnActionEvent e) {
-        super.update(e);
-        e.getPresentation().setIcon(jetbrains.mps.workbench.dialogs.project.components.parts.actions.icons.Icons.ADD);
-      }
-    };
-    for (final IBreakpointKind kind : myProvidersManager.getAllKinds()) {
-      IBreakpointsProvider provider = myProvidersManager.getProvider(kind);
-      if (provider != null && provider.canCreateFromUi(kind)) {
-        //  TODO can't we ask this from kind?? 
-        AnAction addBreakpoointAction = new AnAction(kind.getPresentation(), "Create " + kind.getPresentation(), null) {
-          @Override
-          public void actionPerformed(AnActionEvent e) {
-            myBreakpointsUi.createFromUi(kind);
-          }
-        };
-        addActionGroup.add(addBreakpoointAction);
-      }
-    }
-    group.add(addActionGroup);
-    myDeleteBreakpointAction = new AnAction("Delete", "Delete Breakpoint", jetbrains.mps.workbench.dialogs.project.components.parts.actions.icons.Icons.REMOVE) {
+    group.add(((BaseAction) ActionManager.getInstance().getAction("jetbrains.mps.debugger.api.ui.actions.GoToBreakpointSourceAction_Action")));
+    group.add(((BaseAction) ActionManager.getInstance().getAction("jetbrains.mps.debugger.api.ui.actions.ViewBreakpointSourceAction_Action")));
+    group.add(createAddActionGroup());
+    myDeleteBreakpointAction = new AnAction("Delete", "Delete Breakpoint", Icons.REMOVE) {
       @Override
       public void actionPerformed(AnActionEvent e) {
         final IBreakpoint breakpoint = getBreakpoint(e);
@@ -236,7 +184,7 @@ public class BreakpointsBrowserDialog extends BaseDialog implements DataProvider
         e.getPresentation().setEnabled(getBreakpoint(e) != null);
       }
     };
-    group.add(myDeleteBreakpointAction);
+    group.add(((BaseAction) ActionManager.getInstance().getAction("jetbrains.mps.debugger.api.ui.actions.DeleteBreakpointAction_Action")));
     group.add(new Separator());
     group.add(new ToggleAction("Tree View", "Toggle Tree/List View", jetbrains.mps.debugger.api.ui.icons.Icons.SHOW_AS_TREE) {
       @Override
@@ -353,8 +301,32 @@ public class BreakpointsBrowserDialog extends BaseDialog implements DataProvider
     return group;
   }
 
+  private DefaultActionGroup createAddActionGroup() {
+    DefaultActionGroup addActionGroup = new DefaultActionGroup("Add Breakpoint", true) {
+      @Override
+      public void update(AnActionEvent e) {
+        super.update(e);
+        e.getPresentation().setIcon(Icons.ADD);
+      }
+    };
+    for (final IBreakpointKind kind : myProvidersManager.getAllKinds()) {
+      IBreakpointsProvider provider = myProvidersManager.getProvider(kind);
+      if (provider != null && provider.canCreateFromUi(kind)) {
+        //  TODO can't we ask this from kind?? 
+        AnAction addBreakpoointAction = new AnAction(kind.getPresentation(), "Create " + kind.getPresentation(), null) {
+          @Override
+          public void actionPerformed(AnActionEvent e) {
+            myBreakpointsUi.createFromUi(kind);
+          }
+        };
+        addActionGroup.add(addBreakpoointAction);
+      }
+    }
+    return addActionGroup;
+  }
+
   private IBreakpoint getBreakpoint(AnActionEvent e) {
-    return BreakpointsView.MPS_BREAKPOINT.getData(e.getDataContext());
+    return BreakpointsUtil.MPS_BREAKPOINT.getData(e.getDataContext());
   }
 
   private boolean isTreeView() {
@@ -367,36 +339,30 @@ public class BreakpointsBrowserDialog extends BaseDialog implements DataProvider
     myBreakpointsScrollPane.setViewportView(myViews[myCurrentViewIndex].getMainComponent());
   }
 
+  protected AbstractAction createWrapper(final AnAction action) {
+    return new AbstractAction() {
+      @Override
+      public void actionPerformed(ActionEvent e) {
+        action.actionPerformed(createEvent(action));
+      }
+    };
+  }
+
   private void registerActionsOnViews() {
     for (BreakpointsView myView : myViews) {
       //  show on enter 
       myView.getMainComponent().getInputMap().put(KeyStroke.getKeyStroke(KeyEvent.VK_ENTER, 0), COMMAND_SHOW_NODE);
-      myView.getMainComponent().getActionMap().put(COMMAND_SHOW_NODE, new AbstractAction() {
-        @Override
-        public void actionPerformed(ActionEvent e) {
-          myShowNodeAction.actionPerformed(createEvent(myShowNodeAction));
-        }
-      });
+      myView.getMainComponent().getActionMap().put(COMMAND_SHOW_NODE, createWrapper(((BaseAction) ActionManager.getInstance().getAction("jetbrains.mps.debugger.api.ui.actions.ViewBreakpointSourceAction_Action"))));
       //  open on f4 
-      myView.getMainComponent().registerKeyboardAction(new AbstractAction() {
-        @Override
-        public void actionPerformed(ActionEvent e) {
-          myGotoNodeAction.actionPerformed(createEvent(myGotoNodeAction));
-        }
-      }, KeyStroke.getKeyStroke("F4"), JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
+      myView.getMainComponent().registerKeyboardAction(createWrapper(((BaseAction) ActionManager.getInstance().getAction("jetbrains.mps.debugger.api.ui.actions.GoToBreakpointSourceAction_Action"))), KeyStroke.getKeyStroke("F4"), JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
       //  delete on del 
-      myView.getMainComponent().registerKeyboardAction(new ActionListener() {
-        @Override
-        public void actionPerformed(ActionEvent e) {
-          myDeleteBreakpointAction.actionPerformed(createEvent(myDeleteBreakpointAction));
-        }
-      }, KeyStroke.getKeyStroke("DELETE"), JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
+      myView.getMainComponent().registerKeyboardAction(createWrapper(((BaseAction) ActionManager.getInstance().getAction("jetbrains.mps.debugger.api.ui.actions.DeleteBreakpointAction_Action"))), KeyStroke.getKeyStroke("DELETE"), JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
       //  open on double click 
       myView.getMainComponent().addMouseListener(new MouseAdapter() {
         @Override
         public void mouseClicked(MouseEvent e) {
           if (e.getClickCount() == 2) {
-            IBreakpoint breakpoint = BreakpointsView.MPS_BREAKPOINT.getData(myViews[myCurrentViewIndex]);
+            IBreakpoint breakpoint = BreakpointsUtil.MPS_BREAKPOINT.getData(myViews[myCurrentViewIndex]);
             if (breakpoint == null) {
               return;
             }
@@ -419,7 +385,11 @@ public class BreakpointsBrowserDialog extends BaseDialog implements DataProvider
     }
     ModelAccess.instance().executeCommand(new Runnable() {
       public void run() {
-        NavigationSupport.getInstance().openNode(myContext, ((ILocationBreakpoint) breakpoint).getLocation().getSNode(), focus, select);
+        SNode node = ((ILocationBreakpoint) breakpoint).getLocation().getSNode();
+        if (node == null) {
+          return;
+        }
+        NavigationSupport.getInstance().openNode(myContext, node, focus, select);
       }
     }, project);
   }
@@ -442,6 +412,9 @@ public class BreakpointsBrowserDialog extends BaseDialog implements DataProvider
   @Override
   @Nullable
   public Object getData(@NonNls String dataId) {
+    if (BreakpointsUtil.MPS_BREAKPOINTS_BROWSER_DIALOG.is(dataId)) {
+      return this;
+    }
     return myViews[myCurrentViewIndex].getData(dataId);
   }
 

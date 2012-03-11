@@ -278,7 +278,7 @@ public class LowLevelEvaluationModel extends AbstractEvaluationModel {
         }
       });
     }
-    ModelAccess.instance().runReadAction(new Runnable() {
+    ModelAccess.instance().runWriteActionInCommand(new Runnable() {
       public void run() {
         fillVariables();
       }

@@ -33,6 +33,9 @@
     <component>
       <implementation-class>jetbrains.mps.idea.core.refactoring.RefactoringAccessImpl</implementation-class>
     </component>
+    <component>
+      <implementation-class>jetbrains.mps.ide.projectView.ProjectViewSelectInProvider</implementation-class>
+    </component>
   </application-components>
 
   <xi:include href="../classes/META-INF/MPSCore.xml" xpointer="xpointer(/components/*)"/>
@@ -51,6 +54,9 @@
     </component>
     <component>
       <implementation-class>jetbrains.mps.idea.core.IdeaLibLoader</implementation-class>
+    </component>
+    <component>
+      <implementation-class>jetbrains.mps.idea.core.projectView.MPSTreeRootNameInvalidator</implementation-class>
     </component>
   </project-components>
 

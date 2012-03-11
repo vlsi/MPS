@@ -4793,7 +4793,7 @@
       <property name="name" nameId="tpck.1169194664001" value="PROJECT" />
       <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="3342666646761725633" resolveInfo="FileType" />
       <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="3342666646761725621">
-        <property name="value" nameId="tpee.1070475926801" value=".ipr" />
+        <property name="value" nameId="tpee.1070475926801" value=".mpr" />
       </node>
       <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="3342666646761725622">
         <property name="value" nameId="tpee.1070475926801" value="project" />

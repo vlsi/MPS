@@ -16,7 +16,7 @@ public class refScopesInInputLang_Test extends BaseTransformationTest {
 
   @Test
   public void test_refScopesInInputLang() throws Throwable {
-    this.initTest("${mps_home}/MPS.ipr", "r:2ab484bd-6d9e-44f0-999f-0e78b0351ba4(jetbrains.mps.transformation.test.inputModels.test_refScopeEditorTests)");
+    this.initTest("${mps_home}/MPS.mpr", "r:2ab484bd-6d9e-44f0-999f-0e78b0351ba4(jetbrains.mps.transformation.test.inputModels.test_refScopeEditorTests)");
     this.runTest("jetbrains.mps.transformation.test.inputModels.test_refScopeEditorTests.refScopesInInputLang_Test$TestBody", "testMethod", false);
   }
 

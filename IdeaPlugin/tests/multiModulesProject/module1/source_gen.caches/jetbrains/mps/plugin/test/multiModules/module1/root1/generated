@@ -1,10 +1,3 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-e3ls3n036kx30hxxjmrm73b8skmcx5f">
-  <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" hash="-3g2jui8rirnxhruh8t7p7qk3adnr3f9" />
-  <common hash="-2a04j9epyui5n6ioqithzzbzxqejlwt" />
-  <source id="8304702789090825519" name="MPSC2" hash="41sqftntofztxzmxr5cj161xl0f1gme">
-    <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
-    <file name="MPSC2.java" />
-  </source>
-</dependencies>
+<dependencies version="2" modelHash="-e3ls3n036kx30hxxjmrm73b8skmcx5f" />
 

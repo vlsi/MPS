@@ -445,23 +445,27 @@ public class ModelPersistence {
 
     public void startElement(String uri, String localName, String qName, Attributes attributes) throws SAXException {
       if (MODEL.equals(qName)) {
-        String uid = attributes.getValue(MODEL_UID);
-        if (uid != null) {
-          myResult.setUID(uid);
-        }
-        String version = attributes.getValue(SModelHeader.VERSION);
-        if (version != null) {
-          try {
-            myResult.setVersion(Integer.parseInt(version));
-          } catch (NumberFormatException ignored) {
+        for (int idx = 0; idx < attributes.getLength(); idx++) {
+          String name = attributes.getQName(idx);
+          String value = attributes.getValue(idx);
+          if (MODEL_UID.equals(name)) {
+            myResult.setUID(value);
+          }
+          else if (SModelHeader.VERSION.equals(name)) {
+            try {
+              myResult.setVersion(Integer.parseInt(value));
+            } catch (NumberFormatException ignored) {
+            }
+          }
+          else if (SModelHeader.DO_NOT_GENERATE.equals(name)) {
+            myResult.setDoNotGenerate(Boolean.parseBoolean(value));
+          }
+          else {
+            myResult.getHeader().setOptionalProperty(name, XmlStringUtil.unescapeXml(value));
           }
         }
-        String doNotGenerate = attributes.getValue(SModelHeader.DO_NOT_GENERATE);
-        if (doNotGenerate != null) {
-          myResult.setDoNotGenerate(Boolean.parseBoolean(doNotGenerate));
-        }
-
-      } else if (PERSISTENCE.equals(qName)) {
+      }
+      else if (PERSISTENCE.equals(qName)) {
         String s = attributes.getValue(PERSISTENCE_VERSION);
         if (s != null) {
           try {

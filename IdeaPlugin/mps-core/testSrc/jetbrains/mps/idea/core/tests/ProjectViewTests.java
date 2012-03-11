@@ -22,6 +22,7 @@ import com.intellij.facet.FacetTypeRegistry;
 import com.intellij.facet.ModifiableFacetModel;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.module.Module;
+import com.intellij.openapi.ui.Queryable;
 import com.intellij.openapi.vfs.VirtualFileManager;
 import com.intellij.projectView.BaseProjectViewTestCase;
 import jetbrains.mps.idea.core.facet.MPSFacet;
@@ -38,8 +39,9 @@ public class ProjectViewTests extends BaseProjectViewTestCase {
 
     public void testShowRoots() throws Exception {
         getProjectTreeStructure().setProviders(new MPSTreeStructureProvider());
-        assertStructureEqual(getPackageDirectory(), "PsiDirectory: package1\n" +
-                " PsiFile(plain text):main.mps\n" +
+        myPrintInfo = new Queryable.PrintInfo();
+        assertStructureEqual(getPackageDirectory(), "package1\n" +
+                " main.mps\n" +
                 "  ConcoleUtil\n" +
                 "  MainClass\n" +
                 "  ProjectKind\n" +

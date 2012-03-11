@@ -22,9 +22,11 @@ import com.intellij.ide.projectView.ViewSettings;
 import com.intellij.ide.util.treeView.AbstractTreeNode;
 import com.intellij.ide.util.treeView.ValidateableNode;
 import com.intellij.openapi.project.Project;
+import com.intellij.openapi.ui.Queryable;
 import com.intellij.openapi.vcs.FileStatusManager;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.ide.editor.MPSEditorOpener;
+import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
@@ -44,51 +46,66 @@ import java.util.Collections;
  * evgeny, 11/9/11
  */
 public class MPSProjectViewNode extends ProjectViewNode<SNodePointer> implements ValidateableNode {
+  private SNodePointer nodePointer;
+  private Icon myIcon;
 
-    private Icon icon;
-
-    /**
-     * Creates an instance of the project view node.
-     *
-     * @param project      the project containing the node.
-     * @param name         the object represented by the project view node
-     * @param icon         ? part of value
-     * @param nodePointer  ? part of value
-     * @param viewSettings the settings of the project view.
-     */
-    public MPSProjectViewNode(Project project, String name, Icon icon, SNodePointer nodePointer, ViewSettings viewSettings) {
-        super(project, nodePointer, viewSettings);
-        myName = name;
-        this.icon = icon;                       // in update() ?
-    }
-
-    @Override
-    public boolean contains(@NotNull VirtualFile file) {
-        if (file instanceof MPSNodeVirtualFile) {
-            SNodePointer ptr = ((MPSNodeVirtualFile) file).getSNodePointer();
-            return ptr.equals(getValue());
-        }
-        return false;
-    }
-
-    @Override
-    public VirtualFile getVirtualFile() {
-        return MPSNodesVirtualFileSystem.getInstance().getFileFor(getValue());
-    }
-
-    @NotNull
-    @Override
-    public Collection<? extends AbstractTreeNode> getChildren() {
-        return Collections.emptyList();
-    }
+  /**
+   * Creates an instance of the project view node.
+   *
+   * @param project      the project containing the node.
+   * @param nodePointer  ? part of value
+   * @param viewSettings the settings of the project view.
+   */
+  public MPSProjectViewNode(Project project, SNodePointer nodePointer, ViewSettings viewSettings) {
+    super(project, nodePointer, viewSettings);
+    this.nodePointer = nodePointer;
+    myIcon = IconManager.getIconFor(nodePointer.getNode());
+  }
 
   @Override
-    protected void update(PresentationData presentation) {
-        presentation.setPresentableText(myName);
-        presentation.setIcons(icon);
-        Color statusColor = getNodeColor();
-       presentation.setForcedTextForeground(statusColor);
+  public boolean contains(@NotNull VirtualFile file) {
+    if (file instanceof MPSNodeVirtualFile) {
+      SNodePointer ptr = ((MPSNodeVirtualFile) file).getSNodePointer();
+      return ptr.equals(getValue());
     }
+    return false;
+  }
+
+  @Override
+  public VirtualFile getVirtualFile() {
+    return MPSNodesVirtualFileSystem.getInstance().getFileFor(getValue());
+  }
+
+  @NotNull
+  @Override
+  public Collection<? extends AbstractTreeNode> getChildren() {
+    return Collections.emptyList();
+  }
+
+  @Override
+  protected void update(PresentationData presentation) {
+    final String[] name = new String[1];
+
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        SNode node = nodePointer.getNode();
+        try {
+          name[0] = node.getName();
+        } catch (Exception ex) {
+          name[0] = "exc: " + ex.getMessage();
+        }
+
+        if (name[0] == null) {
+          name[0] = "unnamed";
+        }
+      }
+    });
+
+    presentation.setPresentableText(name[0]);
+    presentation.setIcons(myIcon);
+    Color statusColor = getNodeColor();
+    presentation.setForcedTextForeground(statusColor);
+  }
 
   private Color getNodeColor() {
     final FileStatusManager fileStatusManager = FileStatusManager.getInstance(myProject);
@@ -98,34 +115,42 @@ public class MPSProjectViewNode extends ProjectViewNode<SNodePointer> implements
   }
 
   @Override
-    public void navigate(final boolean requestFocus) {
-        ModelAccess.instance().runReadInEDT(new Runnable() {
-            @Override
-            public void run() {
-                SNode root = getValue().getNode();
-                if (root == null) return;
+  public void navigate(final boolean requestFocus) {
+    ModelAccess.instance().runReadInEDT(new Runnable() {
+      public void run() {
+        SNode root = getValue().getNode();
+        if (root == null) return;
 
-                ProjectOperationContext context = new ProjectOperationContext(ProjectHelper.toMPSProject(getProject()));
+        ProjectOperationContext context = new ProjectOperationContext(ProjectHelper.toMPSProject(getProject()));
 
-                // TODO implement NavigationSupport!!!!! get rid of MPSEditorOpener
-                new MPSEditorOpener(getProject()).openNode(root, context, requestFocus, false);
-                // TODO use NavigationSupport.getInstance().openNode(context, root, requestFocus, true);
-            }
-        });
-    }
+        // TODO implement NavigationSupport!!!!! get rid of MPSEditorOpener
+        new MPSEditorOpener(getProject()).openNode(root, context, requestFocus, false);
+        // TODO use NavigationSupport.getInstance().openNode(context, root, requestFocus, true);
+      }
+    });
+  }
 
-    @Override
-    public boolean canNavigate() {
-        return ModelAccess.instance().runReadAction(new Computable<Boolean>() {
-            @Override
-            public Boolean compute() {
-                return getValue().getNode() != null;
-            }
-        });
-    }
-
-    @Override
-    public boolean isValid() {
+  @Override
+  public boolean canNavigate() {
+    return ModelAccess.instance().runReadAction(new Computable<Boolean>() {
+      public Boolean compute() {
         return getValue().getNode() != null;
-    }
+      }
+    });
+  }
+
+  @Override
+  public boolean isValid() {
+    return getValue().getNode() != null;
+  }
+
+  @Override
+  public String toTestString(Queryable.PrintInfo printInfo) {
+    return ModelAccess.instance().runReadAction(new Computable<String>() {
+      @Override
+      public String compute() {
+        return getValue().getNode().getName();
+      }
+    });
+  }
 }

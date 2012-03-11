@@ -17,6 +17,7 @@ package jetbrains.mps.nodeEditor;
 
 import com.intellij.ide.*;
 import com.intellij.openapi.actionSystem.*;
+import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.keymap.KeymapManager;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vfs.VirtualFile;
@@ -36,6 +37,7 @@ import jetbrains.mps.ide.actions.MPSActions;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 import jetbrains.mps.ide.project.ProjectHelper;
+import jetbrains.mps.ide.projectView.ProjectViewSelectInProvider;
 import jetbrains.mps.ide.tooltips.MPSToolTipManager;
 import jetbrains.mps.ide.tooltips.TooltipComponent;
 import jetbrains.mps.intentions.BaseIntention;
@@ -52,7 +54,6 @@ import jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteChooser;
 import jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.NodeSubstitutePatternEditor;
 import jetbrains.mps.nodeEditor.cells.*;
-import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.folding.*;
 import jetbrains.mps.nodeEditor.highlighter.EditorComponentCreateListener;
 import jetbrains.mps.nodeEditor.leftHighlighter.LeftEditorHighlighter;
@@ -75,7 +76,6 @@ import jetbrains.mps.util.annotation.UseCarefully;
 import jetbrains.mps.workbench.ActionPlace;
 import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.workbench.action.BaseAction;
-import jetbrains.mps.workbench.action.BaseGroup;
 import jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile;
 import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
 import org.jetbrains.annotations.NonNls;
@@ -2606,6 +2606,12 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     }
     if (dataId.equals(LangDataKeys.VIRTUAL_FILE.getName())) {
       return getVirtualFile();
+    }
+
+    if (dataId.equals(SelectInContext.DATA_KEY.getName())) {
+      ProjectViewSelectInProvider selectInHelper = ApplicationManager.getApplication().getComponent(ProjectViewSelectInProvider.class);
+      if (selectInHelper == null) return null;
+      return selectInHelper.getContext(getCurrentProject(), myNodePointer);
     }
 
     //not found

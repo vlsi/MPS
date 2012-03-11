@@ -208,8 +208,8 @@
       <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="cx9y.1238853782547" resolveInfo="IndexedTupleLiteral" />
       <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.InlineTemplate_RuleConsequence" typeId="tpf8.1177093525992" id="1238933455709">
         <node role="templateNode" roleId="tpf8.1177093586806" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="7992933469059501216">
-          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="1238930968805" resolveInfo="from" />
           <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="qqyk.~MultiTuple" resolveInfo="MultiTuple" />
+          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="qqyk.~MultiTuple%dfrom(java%dlang%dObject)%cjetbrains%dmps%dbaseLanguage%dtuples%druntime%dTuples$_1" resolveInfo="from" />
           <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.Expression" typeId="tpee.1068431790191" id="7992933469059501217">
             <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.CopySrcListMacro" typeId="tpf8.1114729360583" id="7992933469059501218">
               <node role="sourceNodesQuery" roleId="tpf8.1168278589236" type="tpf8.SourceSubstituteMacro_SourceNodesQuery" typeId="tpf8.1167951910403" id="7992933469059501219">
@@ -339,8 +339,8 @@
       <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="cx9y.1238853782547" resolveInfo="IndexedTupleLiteral" />
       <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.InlineTemplate_RuleConsequence" typeId="tpf8.1177093525992" id="6272899139367941093">
         <node role="templateNode" roleId="tpf8.1177093586806" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="6272899139367941094">
-          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="1238930968805" resolveInfo="from" />
           <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="qqyk.~MultiTuple" resolveInfo="MultiTuple" />
+          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="qqyk.~MultiTuple%dfrom(java%dlang%dObject)%cjetbrains%dmps%dbaseLanguage%dtuples%druntime%dTuples$_1" resolveInfo="from" />
           <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.Expression" typeId="tpee.1068431790191" id="6272899139367941095">
             <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.CopySrcListMacro" typeId="tpf8.1114729360583" id="6272899139367941096">
               <node role="sourceNodesQuery" roleId="tpf8.1168278589236" type="tpf8.SourceSubstituteMacro_SourceNodesQuery" typeId="tpf8.1167951910403" id="6272899139367941097">
@@ -467,8 +467,8 @@
       <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="cx9y.1238853782547" resolveInfo="IndexedTupleLiteral" />
       <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.InlineTemplate_RuleConsequence" typeId="tpf8.1177093525992" id="6272899139367872552">
         <node role="templateNode" roleId="tpf8.1177093586806" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="6272899139367872553">
-          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="1238930968805" resolveInfo="from" />
           <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="qqyk.~MultiTuple" resolveInfo="MultiTuple" />
+          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="qqyk.~MultiTuple%dfrom(java%dlang%dObject)%cjetbrains%dmps%dbaseLanguage%dtuples%druntime%dTuples$_1" resolveInfo="from" />
           <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.Expression" typeId="tpee.1068431790191" id="6272899139367872554">
             <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.CopySrcListMacro" typeId="tpf8.1114729360583" id="6272899139367872555">
               <node role="sourceNodesQuery" roleId="tpf8.1168278589236" type="tpf8.SourceSubstituteMacro_SourceNodesQuery" typeId="tpf8.1167951910403" id="6272899139367872556">

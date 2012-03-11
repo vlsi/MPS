@@ -693,409 +693,430 @@
     <unitInfo nodeId="2891782949125146436" fileName="DebugVMEventsProcessor.java" startLine="415" startPosition="0" endLine="442" endPosition="0" unitName="jetbrains.mps.debugger.java.runtime.DebugVMEventsProcessor$StopCommand" />
   </root>
   <root nodeId="2891782949125147778">
-    <nodeInfo nodeId="2891782949125167707" fileName="RequestManager.java" startLine="42" startPosition="61" endLine="43" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
-    <nodeInfo nodeId="2891782949125167712" fileName="RequestManager.java" startLine="43" startPosition="75" endLine="44" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="REQUESTOR" />
-    <nodeInfo nodeId="2891782949125167717" fileName="RequestManager.java" startLine="44" startPosition="55" endLine="45" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="CLASS_NAME" />
-    <nodeInfo nodeId="2891782949125167722" fileName="RequestManager.java" startLine="46" startPosition="0" endLine="47" endPosition="126" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myRequestorToBelongedRequests" />
-    <nodeInfo nodeId="2891782949125167733" fileName="RequestManager.java" startLine="47" startPosition="126" endLine="48" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myEventRequestManager" />
-    <nodeInfo nodeId="2891782949125167736" fileName="RequestManager.java" startLine="48" startPosition="52" endLine="49" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myDebugEventsProcessor" />
-    <nodeInfo nodeId="2891782949125167739" fileName="RequestManager.java" startLine="49" startPosition="56" endLine="50" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myInvalidRequestsAndWarnings" />
-    <nodeInfo nodeId="2891782949125167754" fileName="RequestManager.java" startLine="52" startPosition="59" endLine="53" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2891782949125167758" fileName="RequestManager.java" startLine="53" startPosition="39" endLine="54" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2891782949125167767" fileName="RequestManager.java" startLine="57" startPosition="52" endLine="58" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2891782949125167775" fileName="RequestManager.java" startLine="62" startPosition="56" endLine="63" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2891782949125167797" fileName="RequestManager.java" startLine="71" startPosition="62" endLine="72" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2891782949125167806" fileName="RequestManager.java" startLine="73" startPosition="66" endLine="74" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2891782949125167808" fileName="RequestManager.java" startLine="75" startPosition="5" endLine="76" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2891782949125167825" fileName="RequestManager.java" startLine="79" startPosition="95" endLine="80" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2891782949125167829" fileName="RequestManager.java" startLine="80" startPosition="40" endLine="81" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2891782949125167843" fileName="RequestManager.java" startLine="84" startPosition="75" endLine="85" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2891782949125167856" fileName="RequestManager.java" startLine="86" startPosition="25" endLine="87" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2891782949125167862" fileName="RequestManager.java" startLine="87" startPosition="43" endLine="88" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2891782949125167868" fileName="RequestManager.java" startLine="89" startPosition="5" endLine="90" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2891782949125167879" fileName="RequestManager.java" startLine="93" startPosition="51" endLine="94" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2891782949125167887" fileName="RequestManager.java" startLine="95" startPosition="49" endLine="96" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2891782949125167888" fileName="RequestManager.java" startLine="97" startPosition="5" endLine="98" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2891782949125167901" fileName="RequestManager.java" startLine="99" startPosition="27" endLine="100" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2891782949125167922" fileName="RequestManager.java" startLine="103" startPosition="11" endLine="104" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2891782949125205829" fileName="RequestManager.java" startLine="105" startPosition="43" endLine="106" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="2891782949125205831" fileName="RequestManager.java" startLine="106" startPosition="79" endLine="107" endPosition="136" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="2891782949125205833" fileName="RequestManager.java" startLine="107" startPosition="136" endLine="108" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="2891782949125167936" fileName="RequestManager.java" startLine="108" startPosition="69" endLine="109" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2891782949125167949" fileName="RequestManager.java" startLine="110" startPosition="51" endLine="111" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2891782949125167961" fileName="RequestManager.java" startLine="112" startPosition="57" endLine="113" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2891782949125167966" fileName="RequestManager.java" startLine="116" startPosition="9" endLine="117" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2891782949125205835" fileName="RequestManager.java" startLine="118" startPosition="54" endLine="119" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="2891782949125167914" fileName="RequestManager.java" startLine="120" startPosition="37" endLine="121" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2891782949125205837" fileName="RequestManager.java" startLine="126" startPosition="97" endLine="127" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="2891782949125167979" fileName="RequestManager.java" startLine="127" startPosition="45" endLine="128" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2891782949125167981" fileName="RequestManager.java" startLine="128" startPosition="50" endLine="129" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2891782949125167988" fileName="RequestManager.java" startLine="129" startPosition="88" endLine="130" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2891782949125167992" fileName="RequestManager.java" startLine="130" startPosition="36" endLine="131" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2891782949125168002" fileName="RequestManager.java" startLine="134" startPosition="100" endLine="135" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2891782949125168004" fileName="RequestManager.java" startLine="135" startPosition="50" endLine="136" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2891782949125168010" fileName="RequestManager.java" startLine="136" startPosition="82" endLine="137" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2891782949125168015" fileName="RequestManager.java" startLine="137" startPosition="33" endLine="138" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2891782949125168019" fileName="RequestManager.java" startLine="138" startPosition="36" endLine="139" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2891782949125168029" fileName="RequestManager.java" startLine="142" startPosition="98" endLine="143" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2891782949125168031" fileName="RequestManager.java" startLine="143" startPosition="50" endLine="144" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2891782949125168037" fileName="RequestManager.java" startLine="144" startPosition="80" endLine="145" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2891782949125168042" fileName="RequestManager.java" startLine="145" startPosition="33" endLine="146" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2891782949125168046" fileName="RequestManager.java" startLine="146" startPosition="36" endLine="147" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2891782949125168056" fileName="RequestManager.java" startLine="150" startPosition="98" endLine="151" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2891782949125168058" fileName="RequestManager.java" startLine="151" startPosition="50" endLine="152" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2891782949125168065" fileName="RequestManager.java" startLine="152" startPosition="97" endLine="153" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2891782949125168069" fileName="RequestManager.java" startLine="153" startPosition="36" endLine="154" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2891782949125168079" fileName="RequestManager.java" startLine="157" startPosition="110" endLine="158" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2891782949125168081" fileName="RequestManager.java" startLine="158" startPosition="50" endLine="159" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2891782949125168088" fileName="RequestManager.java" startLine="159" startPosition="109" endLine="160" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2891782949125168092" fileName="RequestManager.java" startLine="160" startPosition="36" endLine="161" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2891782949125168102" fileName="RequestManager.java" startLine="164" startPosition="101" endLine="165" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2891782949125168104" fileName="RequestManager.java" startLine="165" startPosition="50" endLine="166" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2891782949125168113" fileName="RequestManager.java" startLine="166" startPosition="99" endLine="167" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2891782949125168117" fileName="RequestManager.java" startLine="167" startPosition="36" endLine="168" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2891782949125168127" fileName="RequestManager.java" startLine="171" startPosition="72" endLine="172" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2891782949125168138" fileName="RequestManager.java" startLine="173" startPosition="53" endLine="174" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2891782949125205839" fileName="RequestManager.java" startLine="175" startPosition="5" endLine="176" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="2891782949125168142" fileName="RequestManager.java" startLine="176" startPosition="48" endLine="177" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2891782949125168147" fileName="RequestManager.java" startLine="177" startPosition="40" endLine="178" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2891782949125168154" fileName="RequestManager.java" startLine="181" startPosition="41" endLine="182" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2891782949125205841" fileName="RequestManager.java" startLine="182" startPosition="50" endLine="183" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="2891782949125168156" fileName="RequestManager.java" startLine="183" startPosition="52" endLine="184" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2891782949125168170" fileName="RequestManager.java" startLine="185" startPosition="34" endLine="186" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2891782949125168185" fileName="RequestManager.java" startLine="187" startPosition="48" endLine="188" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2891782949125205843" fileName="RequestManager.java" startLine="188" startPosition="59" endLine="189" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="2891782949125168198" fileName="RequestManager.java" startLine="190" startPosition="80" endLine="191" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2891782949125205845" fileName="RequestManager.java" startLine="193" startPosition="7" endLine="194" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="2891782949125168208" fileName="RequestManager.java" startLine="195" startPosition="48" endLine="196" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2891782949125168218" fileName="RequestManager.java" startLine="197" startPosition="32" endLine="198" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2891782949125168226" fileName="RequestManager.java" startLine="198" startPosition="86" endLine="199" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2891782949125168236" fileName="RequestManager.java" startLine="200" startPosition="37" endLine="201" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2891782949125168241" fileName="RequestManager.java" startLine="204" startPosition="7" endLine="205" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2891782949125168258" fileName="RequestManager.java" startLine="209" startPosition="126" endLine="210" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2891782949125168260" fileName="RequestManager.java" startLine="210" startPosition="25" endLine="211" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2891782949125168269" fileName="RequestManager.java" startLine="211" startPosition="115" endLine="212" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2891782949125168274" fileName="RequestManager.java" startLine="212" startPosition="48" endLine="213" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2891782949125168278" fileName="RequestManager.java" startLine="213" startPosition="52" endLine="214" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2891782949125205847" fileName="RequestManager.java" startLine="217" startPosition="106" endLine="218" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="2891782949125205849" fileName="RequestManager.java" startLine="218" startPosition="49" endLine="219" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="2891782949125205851" fileName="RequestManager.java" startLine="219" startPosition="46" endLine="220" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="2891782949125168288" fileName="RequestManager.java" startLine="220" startPosition="20" endLine="221" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2891782949125168290" fileName="RequestManager.java" startLine="221" startPosition="50" endLine="222" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2891782949125168296" fileName="RequestManager.java" startLine="222" startPosition="109" endLine="223" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2891782949125168308" fileName="RequestManager.java" startLine="226" startPosition="108" endLine="227" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2891782949125168314" fileName="RequestManager.java" startLine="227" startPosition="96" endLine="228" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2891782949125168319" fileName="RequestManager.java" startLine="228" startPosition="76" endLine="229" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2891782949125168324" fileName="RequestManager.java" startLine="229" startPosition="50" endLine="230" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2891782949125168330" fileName="RequestManager.java" startLine="230" startPosition="59" endLine="231" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2891782949125168334" fileName="RequestManager.java" startLine="231" startPosition="60" endLine="232" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2891782949125205853" fileName="RequestManager.java" startLine="235" startPosition="51" endLine="236" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="2891782949125168342" fileName="RequestManager.java" startLine="236" startPosition="57" endLine="237" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2891782949125168344" fileName="RequestManager.java" startLine="237" startPosition="50" endLine="238" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2891782949125168352" fileName="RequestManager.java" startLine="238" startPosition="50" endLine="239" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2891782949125168364" fileName="RequestManager.java" startLine="242" startPosition="63" endLine="243" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2891782949125168366" fileName="RequestManager.java" startLine="243" startPosition="50" endLine="244" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2891782949125168378" fileName="RequestManager.java" startLine="248" startPosition="49" endLine="249" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2891782949125168380" fileName="RequestManager.java" startLine="249" startPosition="50" endLine="250" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2891782949125205855" fileName="RequestManager.java" startLine="254" startPosition="34" endLine="255" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="2891782949125168416" fileName="RequestManager.java" startLine="267" startPosition="94" endLine="268" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2891782949125168420" fileName="RequestManager.java" startLine="268" startPosition="33" endLine="269" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2891782949125168432" fileName="RequestManager.java" startLine="273" startPosition="72" endLine="274" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2891782949125205857" fileName="RequestManager.java" startLine="274" startPosition="93" endLine="275" endPosition="134" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="2891782949125168546" fileName="RequestManager.java" startLine="278" startPosition="48" endLine="279" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2891782949125168564" fileName="RequestManager.java" startLine="281" startPosition="53" endLine="282" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2891782949125168465" fileName="RequestManager.java" startLine="290" startPosition="49" endLine="291" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2891782949125168466" fileName="RequestManager.java" startLine="292" startPosition="5" endLine="293" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2891782949125168481" fileName="RequestManager.java" startLine="294" startPosition="75" endLine="295" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2891782949125168497" fileName="RequestManager.java" startLine="296" startPosition="30" endLine="297" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2891782949125168580" fileName="RequestManager.java" startLine="306" startPosition="37" endLine="307" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2891782949125168592" fileName="RequestManager.java" startLine="317" startPosition="37" endLine="318" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2891782949125167799" fileName="RequestManager.java" startLine="72" startPosition="50" endLine="75" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2891782949125167881" fileName="RequestManager.java" startLine="94" startPosition="50" endLine="97" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2891782949125167896" fileName="RequestManager.java" startLine="98" startPosition="87" endLine="101" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2891782949125167954" fileName="RequestManager.java" startLine="111" startPosition="55" endLine="114" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2891782949125168133" fileName="RequestManager.java" startLine="172" startPosition="53" endLine="175" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2891782949125168191" fileName="RequestManager.java" startLine="189" startPosition="106" endLine="192" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2891782949125168231" fileName="RequestManager.java" startLine="199" startPosition="41" endLine="202" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2891782949125168559" fileName="RequestManager.java" startLine="280" startPosition="79" endLine="283" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2891782949125168459" fileName="RequestManager.java" startLine="289" startPosition="67" endLine="292" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2891782949125168492" fileName="RequestManager.java" startLine="295" startPosition="103" endLine="298" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2891782949125168575" fileName="RequestManager.java" startLine="305" startPosition="57" endLine="308" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2891782949125168587" fileName="RequestManager.java" startLine="316" startPosition="57" endLine="319" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2891782949125167748" fileName="RequestManager.java" startLine="51" startPosition="0" endLine="55" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="RequestManager#(Ljetbrains/mps/debugger/java/runtime/DebugVMEventsProcessor;)V" />
-    <nodeInfo nodeId="2891782949125167763" fileName="RequestManager.java" startLine="56" startPosition="0" endLine="60" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getVMRequestManager#()Lcom/sun/jdi/request/EventRequestManager;" />
-    <nodeInfo nodeId="2891782949125167777" fileName="RequestManager.java" startLine="63" startPosition="50" endLine="67" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2891782949125167851" fileName="RequestManager.java" startLine="85" startPosition="76" endLine="89" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2891782949125168391" fileName="RequestManager.java" startLine="257" startPosition="0" endLine="261" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="paused#(Ljetbrains/mps/debugger/java/runtime/SuspendContext;)V" />
-    <nodeInfo nodeId="2891782949125168399" fileName="RequestManager.java" startLine="261" startPosition="0" endLine="265" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="resumed#(Ljetbrains/mps/debugger/java/runtime/SuspendContext;)V" />
-    <nodeInfo nodeId="2891782949125167817" fileName="RequestManager.java" startLine="78" startPosition="0" endLine="83" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="registerRequestInternal#(Ljetbrains/mps/debugger/java/runtime/requests/Requestor;Lcom/sun/jdi/request/EventRequest;)V" />
-    <nodeInfo nodeId="2891782949125168356" fileName="RequestManager.java" startLine="241" startPosition="0" endLine="246" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setInvalid#(Ljetbrains/mps/debugger/java/runtime/requests/Requestor;Ljava/lang/String;)V" />
-    <nodeInfo nodeId="2891782949125168386" fileName="RequestManager.java" startLine="252" startPosition="0" endLine="257" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="connectorIsReady#()V" />
-    <nodeInfo nodeId="2891782949125168552" fileName="RequestManager.java" startLine="279" startPosition="101" endLine="284" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="2891782949125167944" fileName="RequestManager.java" startLine="109" startPosition="114" endLine="115" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2891782949125168372" fileName="RequestManager.java" startLine="246" startPosition="0" endLine="252" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getWarning#(Ljetbrains/mps/debugger/java/runtime/requests/Requestor;)Ljava/lang/String;" />
-    <nodeInfo nodeId="2891782949125168407" fileName="RequestManager.java" startLine="265" startPosition="0" endLine="271" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="processDetached#(Ljetbrains/mps/debugger/java/runtime/DebugVMEventsProcessor;Z)V" />
-    <nodeInfo nodeId="2891782949125168472" fileName="RequestManager.java" startLine="293" startPosition="56" endLine="299" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2891782949125168048" fileName="RequestManager.java" startLine="149" startPosition="0" endLine="156" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createFieldAccessRequest#(Ljetbrains/mps/debugger/java/runtime/breakpoints/JavaBreakpoint;Lcom/sun/jdi/Field;)Lcom/sun/jdi/request/AccessWatchpointRequest;" />
-    <nodeInfo nodeId="2891782949125168071" fileName="RequestManager.java" startLine="156" startPosition="0" endLine="163" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createFieldModificationRequest#(Ljetbrains/mps/debugger/java/runtime/breakpoints/JavaBreakpoint;Lcom/sun/jdi/Field;)Lcom/sun/jdi/request/ModificationWatchpointRequest;" />
-    <nodeInfo nodeId="2891782949125168094" fileName="RequestManager.java" startLine="163" startPosition="0" endLine="170" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createExceptionRequest#(Ljetbrains/mps/debugger/java/runtime/breakpoints/JavaBreakpoint;Lcom/sun/jdi/ReferenceType;)Lcom/sun/jdi/request/ExceptionRequest;" />
-    <nodeInfo nodeId="2891782949125168180" fileName="RequestManager.java" startLine="186" startPosition="83" endLine="193" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="2891782949125168213" fileName="RequestManager.java" startLine="196" startPosition="57" endLine="203" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2891782949125168336" fileName="RequestManager.java" startLine="234" startPosition="0" endLine="241" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="enableRequest#(Lcom/sun/jdi/request/EventRequest;)V" />
-    <nodeInfo nodeId="2891782949125168519" fileName="RequestManager.java" startLine="303" startPosition="171" endLine="310" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#(Ljetbrains/mps/debugger/java/runtime/DebugVMEventsProcessor;)V" />
-    <nodeInfo nodeId="2891782949125168540" fileName="RequestManager.java" startLine="314" startPosition="171" endLine="321" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#(Ljetbrains/mps/debugger/java/runtime/DebugVMEventsProcessor;)V" />
-    <nodeInfo nodeId="2891782949125167971" fileName="RequestManager.java" startLine="125" startPosition="0" endLine="133" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createBreakpointRequest#(Ljetbrains/mps/debugger/java/runtime/breakpoints/JavaBreakpoint;Lcom/sun/jdi/Location;)Lcom/sun/jdi/request/BreakpointRequest;" />
-    <nodeInfo nodeId="2891782949125167994" fileName="RequestManager.java" startLine="133" startPosition="0" endLine="141" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createMethodEntryRequest#(Ljetbrains/mps/debugger/java/runtime/breakpoints/JavaBreakpoint;Lcom/sun/jdi/ReferenceType;)Lcom/sun/jdi/request/MethodEntryRequest;" />
-    <nodeInfo nodeId="2891782949125168021" fileName="RequestManager.java" startLine="141" startPosition="0" endLine="149" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createMethodExitRequest#(Ljetbrains/mps/debugger/java/runtime/breakpoints/JavaBreakpoint;Lcom/sun/jdi/ReferenceType;)Lcom/sun/jdi/request/MethodExitRequest;" />
-    <nodeInfo nodeId="2891782949125168246" fileName="RequestManager.java" startLine="208" startPosition="0" endLine="216" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createStepRequest#(Ljetbrains/mps/debugger/java/runtime/StepRequestor;ILcom/sun/jdi/ThreadReference;I)Lcom/sun/jdi/request/StepRequest;" />
-    <nodeInfo nodeId="2891782949125168509" fileName="RequestManager.java" startLine="302" startPosition="82" endLine="310" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2891782949125168530" fileName="RequestManager.java" startLine="313" startPosition="82" endLine="321" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2891782949125167769" fileName="RequestManager.java" startLine="60" startPosition="0" endLine="69" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="findRequestor#(Lcom/sun/jdi/request/EventRequest;)Ljetbrains/mps/debugger/java/runtime/requests/Requestor;" />
-    <nodeInfo nodeId="2891782949125167790" fileName="RequestManager.java" startLine="69" startPosition="0" endLine="78" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="findRequests#(Ljetbrains/mps/debugger/java/runtime/requests/Requestor;)Ljava/util/Set;" />
-    <nodeInfo nodeId="2891782949125167835" fileName="RequestManager.java" startLine="83" startPosition="0" endLine="92" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="registerRequest#(Ljetbrains/mps/debugger/java/runtime/requests/Requestor;Lcom/sun/jdi/request/EventRequest;)V" />
-    <nodeInfo nodeId="2891782949125168280" fileName="RequestManager.java" startLine="216" startPosition="0" endLine="225" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="callbackOnPrepareClasses#(Ljetbrains/mps/debugger/java/runtime/requests/ClassPrepareRequestor;Ljava/lang/String;)V" />
-    <nodeInfo nodeId="2891782949125168300" fileName="RequestManager.java" startLine="225" startPosition="0" endLine="234" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createClassPrepareRequest#(Ljetbrains/mps/debugger/java/runtime/requests/ClassPrepareRequestor;Ljava/lang/String;)Lcom/sun/jdi/request/ClassPrepareRequest;" />
-    <nodeInfo nodeId="2891782949125168119" fileName="RequestManager.java" startLine="170" startPosition="0" endLine="180" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="initRequest#(Ljetbrains/mps/debugger/java/runtime/breakpoints/JavaBreakpoint;Lcom/sun/jdi/request/EventRequest;)V" />
-    <nodeInfo nodeId="2891782949125168203" fileName="RequestManager.java" startLine="194" startPosition="39" endLine="204" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="2891782949125168449" fileName="RequestManager.java" startLine="276" startPosition="63" endLine="286" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="action#()V" />
-    <nodeInfo nodeId="2891782949125168440" fileName="RequestManager.java" startLine="275" startPosition="134" endLine="286" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2891782949125168503" fileName="RequestManager.java" startLine="301" startPosition="0" endLine="312" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="createClassPrepareRequests#(Ljetbrains/mps/debugger/java/runtime/breakpoints/JavaBreakpoint;)V" />
-    <nodeInfo nodeId="2891782949125168524" fileName="RequestManager.java" startLine="312" startPosition="0" endLine="323" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="removeClassPrepareRequests#(Ljetbrains/mps/debugger/java/runtime/breakpoints/JavaBreakpoint;)V" />
-    <nodeInfo nodeId="2891782949125167931" fileName="RequestManager.java" startLine="104" startPosition="85" endLine="116" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2891782949125168453" fileName="RequestManager.java" startLine="288" startPosition="0" endLine="301" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="processClassPrepared#(Lcom/sun/jdi/event/ClassPrepareEvent;)V" />
-    <nodeInfo nodeId="2891782949125168425" fileName="RequestManager.java" startLine="271" startPosition="0" endLine="288" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="processAttached#(Ljetbrains/mps/debugger/java/runtime/DebugVMEventsProcessor;)V" />
-    <nodeInfo nodeId="2891782949125167907" fileName="RequestManager.java" startLine="102" startPosition="49" endLine="122" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="2891782949125167902" fileName="RequestManager.java" startLine="101" startPosition="5" endLine="123" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="2891782949125168163" fileName="RequestManager.java" startLine="184" startPosition="74" endLine="206" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2891782949125168151" fileName="RequestManager.java" startLine="180" startPosition="0" endLine="208" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="deleteStepRequests#()V" />
-    <nodeInfo nodeId="2891782949125167873" fileName="RequestManager.java" startLine="92" startPosition="0" endLine="125" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="deleteRequests#(Ljetbrains/mps/debugger/java/runtime/requests/Requestor;)V" />
-    <scopeInfo nodeId="2891782949125168397" fileName="RequestManager.java" startLine="259" startPosition="62" endLine="259" endPosition="62" />
-    <scopeInfo nodeId="2891782949125168405" fileName="RequestManager.java" startLine="263" startPosition="63" endLine="263" endPosition="63" />
-    <scopeInfo nodeId="2891782949125167766" fileName="RequestManager.java" startLine="57" startPosition="52" endLine="58" endPosition="33" />
-    <scopeInfo nodeId="2891782949125167805" fileName="RequestManager.java" startLine="73" startPosition="66" endLine="74" endPosition="36" />
-    <scopeInfo nodeId="2891782949125167886" fileName="RequestManager.java" startLine="95" startPosition="49" endLine="96" endPosition="13" />
-    <scopeInfo nodeId="2891782949125167900" fileName="RequestManager.java" startLine="99" startPosition="27" endLine="100" endPosition="13" />
-    <scopeInfo nodeId="2891782949125167960" fileName="RequestManager.java" startLine="112" startPosition="57" endLine="113" endPosition="68" />
-    <scopeInfo nodeId="2891782949125167908" fileName="RequestManager.java" startLine="118" startPosition="0" endLine="119" endPosition="39">
+    <nodeInfo nodeId="2891782949125167707" fileName="RequestManager.java" startLine="45" startPosition="61" endLine="46" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
+    <nodeInfo nodeId="2891782949125167712" fileName="RequestManager.java" startLine="46" startPosition="75" endLine="47" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="REQUESTOR" />
+    <nodeInfo nodeId="2891782949125167717" fileName="RequestManager.java" startLine="47" startPosition="55" endLine="48" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="CLASS_NAME" />
+    <nodeInfo nodeId="2891782949125167722" fileName="RequestManager.java" startLine="49" startPosition="0" endLine="50" endPosition="126" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myRequestorToBelongedRequests" />
+    <nodeInfo nodeId="2891782949125167733" fileName="RequestManager.java" startLine="50" startPosition="126" endLine="51" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myEventRequestManager" />
+    <nodeInfo nodeId="2891782949125167736" fileName="RequestManager.java" startLine="51" startPosition="52" endLine="52" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myDebugEventsProcessor" />
+    <nodeInfo nodeId="2891782949125167739" fileName="RequestManager.java" startLine="52" startPosition="56" endLine="53" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myInvalidRequestsAndWarnings" />
+    <nodeInfo nodeId="7578254065929053853" fileName="RequestManager.java" startLine="53" startPosition="103" endLine="54" endPosition="138" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myWarningsListeners" />
+    <nodeInfo nodeId="2891782949125167754" fileName="RequestManager.java" startLine="56" startPosition="59" endLine="57" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2891782949125167758" fileName="RequestManager.java" startLine="57" startPosition="39" endLine="58" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2891782949125167767" fileName="RequestManager.java" startLine="61" startPosition="52" endLine="62" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2891782949125167775" fileName="RequestManager.java" startLine="66" startPosition="56" endLine="67" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2891782949125167797" fileName="RequestManager.java" startLine="75" startPosition="62" endLine="76" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2891782949125167806" fileName="RequestManager.java" startLine="77" startPosition="66" endLine="78" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2891782949125167808" fileName="RequestManager.java" startLine="79" startPosition="5" endLine="80" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2891782949125167825" fileName="RequestManager.java" startLine="83" startPosition="95" endLine="84" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2891782949125167829" fileName="RequestManager.java" startLine="84" startPosition="40" endLine="85" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2891782949125167843" fileName="RequestManager.java" startLine="88" startPosition="75" endLine="89" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2891782949125167856" fileName="RequestManager.java" startLine="90" startPosition="25" endLine="91" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2891782949125167862" fileName="RequestManager.java" startLine="91" startPosition="43" endLine="92" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2891782949125167868" fileName="RequestManager.java" startLine="93" startPosition="5" endLine="94" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2891782949125167879" fileName="RequestManager.java" startLine="97" startPosition="51" endLine="98" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2891782949125167887" fileName="RequestManager.java" startLine="99" startPosition="49" endLine="100" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2891782949125167888" fileName="RequestManager.java" startLine="101" startPosition="5" endLine="102" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2891782949125167901" fileName="RequestManager.java" startLine="103" startPosition="27" endLine="104" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2891782949125167922" fileName="RequestManager.java" startLine="107" startPosition="11" endLine="108" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2891782949125205829" fileName="RequestManager.java" startLine="109" startPosition="43" endLine="110" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="2891782949125205831" fileName="RequestManager.java" startLine="110" startPosition="79" endLine="111" endPosition="136" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="2891782949125205833" fileName="RequestManager.java" startLine="111" startPosition="136" endLine="112" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="2891782949125167936" fileName="RequestManager.java" startLine="112" startPosition="69" endLine="113" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2891782949125167949" fileName="RequestManager.java" startLine="114" startPosition="51" endLine="115" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2891782949125167961" fileName="RequestManager.java" startLine="116" startPosition="57" endLine="117" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2891782949125167966" fileName="RequestManager.java" startLine="120" startPosition="9" endLine="121" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2891782949125205835" fileName="RequestManager.java" startLine="122" startPosition="54" endLine="123" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="2891782949125167914" fileName="RequestManager.java" startLine="124" startPosition="37" endLine="125" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2891782949125205837" fileName="RequestManager.java" startLine="130" startPosition="97" endLine="131" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="2891782949125167979" fileName="RequestManager.java" startLine="131" startPosition="45" endLine="132" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2891782949125167981" fileName="RequestManager.java" startLine="132" startPosition="50" endLine="133" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2891782949125167988" fileName="RequestManager.java" startLine="133" startPosition="88" endLine="134" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2891782949125167992" fileName="RequestManager.java" startLine="134" startPosition="36" endLine="135" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2891782949125168002" fileName="RequestManager.java" startLine="138" startPosition="100" endLine="139" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2891782949125168004" fileName="RequestManager.java" startLine="139" startPosition="50" endLine="140" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2891782949125168010" fileName="RequestManager.java" startLine="140" startPosition="82" endLine="141" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2891782949125168015" fileName="RequestManager.java" startLine="141" startPosition="33" endLine="142" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2891782949125168019" fileName="RequestManager.java" startLine="142" startPosition="36" endLine="143" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2891782949125168029" fileName="RequestManager.java" startLine="146" startPosition="98" endLine="147" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2891782949125168031" fileName="RequestManager.java" startLine="147" startPosition="50" endLine="148" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2891782949125168037" fileName="RequestManager.java" startLine="148" startPosition="80" endLine="149" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2891782949125168042" fileName="RequestManager.java" startLine="149" startPosition="33" endLine="150" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2891782949125168046" fileName="RequestManager.java" startLine="150" startPosition="36" endLine="151" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2891782949125168056" fileName="RequestManager.java" startLine="154" startPosition="98" endLine="155" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2891782949125168058" fileName="RequestManager.java" startLine="155" startPosition="50" endLine="156" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2891782949125168065" fileName="RequestManager.java" startLine="156" startPosition="97" endLine="157" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2891782949125168069" fileName="RequestManager.java" startLine="157" startPosition="36" endLine="158" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2891782949125168079" fileName="RequestManager.java" startLine="161" startPosition="110" endLine="162" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2891782949125168081" fileName="RequestManager.java" startLine="162" startPosition="50" endLine="163" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2891782949125168088" fileName="RequestManager.java" startLine="163" startPosition="109" endLine="164" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2891782949125168092" fileName="RequestManager.java" startLine="164" startPosition="36" endLine="165" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2891782949125168102" fileName="RequestManager.java" startLine="168" startPosition="101" endLine="169" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2891782949125168104" fileName="RequestManager.java" startLine="169" startPosition="50" endLine="170" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2891782949125168113" fileName="RequestManager.java" startLine="170" startPosition="99" endLine="171" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2891782949125168117" fileName="RequestManager.java" startLine="171" startPosition="36" endLine="172" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2891782949125168127" fileName="RequestManager.java" startLine="175" startPosition="72" endLine="176" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2891782949125168138" fileName="RequestManager.java" startLine="177" startPosition="53" endLine="178" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2891782949125205839" fileName="RequestManager.java" startLine="179" startPosition="5" endLine="180" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="2891782949125168142" fileName="RequestManager.java" startLine="180" startPosition="48" endLine="181" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2891782949125168147" fileName="RequestManager.java" startLine="181" startPosition="40" endLine="182" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2891782949125168154" fileName="RequestManager.java" startLine="185" startPosition="41" endLine="186" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2891782949125205841" fileName="RequestManager.java" startLine="186" startPosition="50" endLine="187" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="2891782949125168156" fileName="RequestManager.java" startLine="187" startPosition="52" endLine="188" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2891782949125168170" fileName="RequestManager.java" startLine="189" startPosition="34" endLine="190" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2891782949125168185" fileName="RequestManager.java" startLine="191" startPosition="48" endLine="192" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2891782949125205843" fileName="RequestManager.java" startLine="192" startPosition="59" endLine="193" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="2891782949125168198" fileName="RequestManager.java" startLine="194" startPosition="80" endLine="195" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2891782949125205845" fileName="RequestManager.java" startLine="197" startPosition="7" endLine="198" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="2891782949125168208" fileName="RequestManager.java" startLine="199" startPosition="48" endLine="200" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2891782949125168218" fileName="RequestManager.java" startLine="201" startPosition="32" endLine="202" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2891782949125168226" fileName="RequestManager.java" startLine="202" startPosition="86" endLine="203" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2891782949125168236" fileName="RequestManager.java" startLine="204" startPosition="37" endLine="205" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2891782949125168241" fileName="RequestManager.java" startLine="208" startPosition="7" endLine="209" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2891782949125168258" fileName="RequestManager.java" startLine="213" startPosition="126" endLine="214" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2891782949125168260" fileName="RequestManager.java" startLine="214" startPosition="25" endLine="215" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2891782949125168269" fileName="RequestManager.java" startLine="215" startPosition="115" endLine="216" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2891782949125168274" fileName="RequestManager.java" startLine="216" startPosition="48" endLine="217" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2891782949125168278" fileName="RequestManager.java" startLine="217" startPosition="52" endLine="218" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2891782949125205847" fileName="RequestManager.java" startLine="221" startPosition="106" endLine="222" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="2891782949125205849" fileName="RequestManager.java" startLine="222" startPosition="49" endLine="223" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="2891782949125205851" fileName="RequestManager.java" startLine="223" startPosition="46" endLine="224" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="2891782949125168288" fileName="RequestManager.java" startLine="224" startPosition="20" endLine="225" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2891782949125168290" fileName="RequestManager.java" startLine="225" startPosition="50" endLine="226" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2891782949125168296" fileName="RequestManager.java" startLine="226" startPosition="109" endLine="227" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2891782949125168308" fileName="RequestManager.java" startLine="230" startPosition="108" endLine="231" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2891782949125168314" fileName="RequestManager.java" startLine="231" startPosition="96" endLine="232" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2891782949125168319" fileName="RequestManager.java" startLine="232" startPosition="76" endLine="233" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2891782949125168324" fileName="RequestManager.java" startLine="233" startPosition="50" endLine="234" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2891782949125168330" fileName="RequestManager.java" startLine="234" startPosition="59" endLine="235" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2891782949125168334" fileName="RequestManager.java" startLine="235" startPosition="60" endLine="236" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2891782949125205853" fileName="RequestManager.java" startLine="239" startPosition="51" endLine="240" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="2891782949125168342" fileName="RequestManager.java" startLine="240" startPosition="57" endLine="241" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2891782949125168344" fileName="RequestManager.java" startLine="241" startPosition="50" endLine="242" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2891782949125168352" fileName="RequestManager.java" startLine="242" startPosition="50" endLine="243" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2891782949125168364" fileName="RequestManager.java" startLine="246" startPosition="63" endLine="247" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2891782949125168366" fileName="RequestManager.java" startLine="247" startPosition="50" endLine="248" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7578254065929102150" fileName="RequestManager.java" startLine="250" startPosition="56" endLine="251" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2891782949125168378" fileName="RequestManager.java" startLine="257" startPosition="49" endLine="258" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2891782949125168380" fileName="RequestManager.java" startLine="258" startPosition="50" endLine="259" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7578254065929102248" fileName="RequestManager.java" startLine="262" startPosition="72" endLine="263" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7578254065929102216" fileName="RequestManager.java" startLine="266" startPosition="75" endLine="267" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2891782949125205855" fileName="RequestManager.java" startLine="271" startPosition="34" endLine="272" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="2891782949125168416" fileName="RequestManager.java" startLine="284" startPosition="94" endLine="285" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2891782949125168420" fileName="RequestManager.java" startLine="285" startPosition="33" endLine="286" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2891782949125168432" fileName="RequestManager.java" startLine="290" startPosition="72" endLine="291" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2891782949125205857" fileName="RequestManager.java" startLine="291" startPosition="93" endLine="292" endPosition="134" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="2891782949125168546" fileName="RequestManager.java" startLine="295" startPosition="48" endLine="296" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2891782949125168564" fileName="RequestManager.java" startLine="298" startPosition="53" endLine="299" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2891782949125168465" fileName="RequestManager.java" startLine="307" startPosition="49" endLine="308" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2891782949125168466" fileName="RequestManager.java" startLine="309" startPosition="5" endLine="310" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2891782949125168481" fileName="RequestManager.java" startLine="311" startPosition="75" endLine="312" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2891782949125168497" fileName="RequestManager.java" startLine="313" startPosition="30" endLine="314" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2891782949125168580" fileName="RequestManager.java" startLine="323" startPosition="37" endLine="324" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2891782949125168592" fileName="RequestManager.java" startLine="334" startPosition="37" endLine="335" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2891782949125167799" fileName="RequestManager.java" startLine="76" startPosition="50" endLine="79" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2891782949125167881" fileName="RequestManager.java" startLine="98" startPosition="50" endLine="101" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2891782949125167896" fileName="RequestManager.java" startLine="102" startPosition="87" endLine="105" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2891782949125167954" fileName="RequestManager.java" startLine="115" startPosition="55" endLine="118" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2891782949125168133" fileName="RequestManager.java" startLine="176" startPosition="53" endLine="179" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2891782949125168191" fileName="RequestManager.java" startLine="193" startPosition="106" endLine="196" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2891782949125168231" fileName="RequestManager.java" startLine="203" startPosition="41" endLine="206" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2891782949125168559" fileName="RequestManager.java" startLine="297" startPosition="79" endLine="300" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2891782949125168459" fileName="RequestManager.java" startLine="306" startPosition="67" endLine="309" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2891782949125168492" fileName="RequestManager.java" startLine="312" startPosition="103" endLine="315" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2891782949125168575" fileName="RequestManager.java" startLine="322" startPosition="57" endLine="325" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2891782949125168587" fileName="RequestManager.java" startLine="333" startPosition="57" endLine="336" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2891782949125167748" fileName="RequestManager.java" startLine="55" startPosition="0" endLine="59" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="RequestManager#(Ljetbrains/mps/debugger/java/runtime/DebugVMEventsProcessor;)V" />
+    <nodeInfo nodeId="2891782949125167763" fileName="RequestManager.java" startLine="60" startPosition="0" endLine="64" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getVMRequestManager#()Lcom/sun/jdi/request/EventRequestManager;" />
+    <nodeInfo nodeId="2891782949125167777" fileName="RequestManager.java" startLine="67" startPosition="50" endLine="71" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2891782949125167851" fileName="RequestManager.java" startLine="89" startPosition="76" endLine="93" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7578254065929102146" fileName="RequestManager.java" startLine="249" startPosition="100" endLine="253" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visit#(Ljetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_void_P0_E0;)V" />
+    <nodeInfo nodeId="7578254065929102180" fileName="RequestManager.java" startLine="261" startPosition="0" endLine="265" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addWarningsListener#(Ljetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_void_P0_E0;)V" />
+    <nodeInfo nodeId="7578254065929102202" fileName="RequestManager.java" startLine="265" startPosition="0" endLine="269" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="removeWarningsListener#(Ljetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_void_P0_E0;)V" />
+    <nodeInfo nodeId="2891782949125168391" fileName="RequestManager.java" startLine="274" startPosition="0" endLine="278" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="paused#(Ljetbrains/mps/debugger/java/runtime/SuspendContext;)V" />
+    <nodeInfo nodeId="2891782949125168399" fileName="RequestManager.java" startLine="278" startPosition="0" endLine="282" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="resumed#(Ljetbrains/mps/debugger/java/runtime/SuspendContext;)V" />
+    <nodeInfo nodeId="2891782949125167817" fileName="RequestManager.java" startLine="82" startPosition="0" endLine="87" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="registerRequestInternal#(Ljetbrains/mps/debugger/java/runtime/requests/Requestor;Lcom/sun/jdi/request/EventRequest;)V" />
+    <nodeInfo nodeId="7578254065929102123" fileName="RequestManager.java" startLine="248" startPosition="57" endLine="253" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2891782949125168386" fileName="RequestManager.java" startLine="269" startPosition="0" endLine="274" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="connectorIsReady#()V" />
+    <nodeInfo nodeId="2891782949125168552" fileName="RequestManager.java" startLine="296" startPosition="101" endLine="301" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="2891782949125167944" fileName="RequestManager.java" startLine="113" startPosition="114" endLine="119" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2891782949125168372" fileName="RequestManager.java" startLine="255" startPosition="0" endLine="261" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getWarning#(Ljetbrains/mps/debugger/java/runtime/requests/Requestor;)Ljava/lang/String;" />
+    <nodeInfo nodeId="2891782949125168407" fileName="RequestManager.java" startLine="282" startPosition="0" endLine="288" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="processDetached#(Ljetbrains/mps/debugger/java/runtime/DebugVMEventsProcessor;Z)V" />
+    <nodeInfo nodeId="2891782949125168472" fileName="RequestManager.java" startLine="310" startPosition="56" endLine="316" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2891782949125168048" fileName="RequestManager.java" startLine="153" startPosition="0" endLine="160" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createFieldAccessRequest#(Ljetbrains/mps/debugger/java/runtime/breakpoints/JavaBreakpoint;Lcom/sun/jdi/Field;)Lcom/sun/jdi/request/AccessWatchpointRequest;" />
+    <nodeInfo nodeId="2891782949125168071" fileName="RequestManager.java" startLine="160" startPosition="0" endLine="167" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createFieldModificationRequest#(Ljetbrains/mps/debugger/java/runtime/breakpoints/JavaBreakpoint;Lcom/sun/jdi/Field;)Lcom/sun/jdi/request/ModificationWatchpointRequest;" />
+    <nodeInfo nodeId="2891782949125168094" fileName="RequestManager.java" startLine="167" startPosition="0" endLine="174" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createExceptionRequest#(Ljetbrains/mps/debugger/java/runtime/breakpoints/JavaBreakpoint;Lcom/sun/jdi/ReferenceType;)Lcom/sun/jdi/request/ExceptionRequest;" />
+    <nodeInfo nodeId="2891782949125168180" fileName="RequestManager.java" startLine="190" startPosition="83" endLine="197" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="2891782949125168213" fileName="RequestManager.java" startLine="200" startPosition="57" endLine="207" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2891782949125168336" fileName="RequestManager.java" startLine="238" startPosition="0" endLine="245" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="enableRequest#(Lcom/sun/jdi/request/EventRequest;)V" />
+    <nodeInfo nodeId="2891782949125168519" fileName="RequestManager.java" startLine="320" startPosition="171" endLine="327" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#(Ljetbrains/mps/debugger/java/runtime/DebugVMEventsProcessor;)V" />
+    <nodeInfo nodeId="2891782949125168540" fileName="RequestManager.java" startLine="331" startPosition="171" endLine="338" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#(Ljetbrains/mps/debugger/java/runtime/DebugVMEventsProcessor;)V" />
+    <nodeInfo nodeId="2891782949125167971" fileName="RequestManager.java" startLine="129" startPosition="0" endLine="137" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createBreakpointRequest#(Ljetbrains/mps/debugger/java/runtime/breakpoints/JavaBreakpoint;Lcom/sun/jdi/Location;)Lcom/sun/jdi/request/BreakpointRequest;" />
+    <nodeInfo nodeId="2891782949125167994" fileName="RequestManager.java" startLine="137" startPosition="0" endLine="145" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createMethodEntryRequest#(Ljetbrains/mps/debugger/java/runtime/breakpoints/JavaBreakpoint;Lcom/sun/jdi/ReferenceType;)Lcom/sun/jdi/request/MethodEntryRequest;" />
+    <nodeInfo nodeId="2891782949125168021" fileName="RequestManager.java" startLine="145" startPosition="0" endLine="153" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createMethodExitRequest#(Ljetbrains/mps/debugger/java/runtime/breakpoints/JavaBreakpoint;Lcom/sun/jdi/ReferenceType;)Lcom/sun/jdi/request/MethodExitRequest;" />
+    <nodeInfo nodeId="2891782949125168246" fileName="RequestManager.java" startLine="212" startPosition="0" endLine="220" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createStepRequest#(Ljetbrains/mps/debugger/java/runtime/StepRequestor;ILcom/sun/jdi/ThreadReference;I)Lcom/sun/jdi/request/StepRequest;" />
+    <nodeInfo nodeId="2891782949125168509" fileName="RequestManager.java" startLine="319" startPosition="82" endLine="327" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2891782949125168530" fileName="RequestManager.java" startLine="330" startPosition="82" endLine="338" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2891782949125167769" fileName="RequestManager.java" startLine="64" startPosition="0" endLine="73" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="findRequestor#(Lcom/sun/jdi/request/EventRequest;)Ljetbrains/mps/debugger/java/runtime/requests/Requestor;" />
+    <nodeInfo nodeId="2891782949125167790" fileName="RequestManager.java" startLine="73" startPosition="0" endLine="82" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="findRequests#(Ljetbrains/mps/debugger/java/runtime/requests/Requestor;)Ljava/util/Set;" />
+    <nodeInfo nodeId="2891782949125167835" fileName="RequestManager.java" startLine="87" startPosition="0" endLine="96" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="registerRequest#(Ljetbrains/mps/debugger/java/runtime/requests/Requestor;Lcom/sun/jdi/request/EventRequest;)V" />
+    <nodeInfo nodeId="2891782949125168280" fileName="RequestManager.java" startLine="220" startPosition="0" endLine="229" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="callbackOnPrepareClasses#(Ljetbrains/mps/debugger/java/runtime/requests/ClassPrepareRequestor;Ljava/lang/String;)V" />
+    <nodeInfo nodeId="2891782949125168300" fileName="RequestManager.java" startLine="229" startPosition="0" endLine="238" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createClassPrepareRequest#(Ljetbrains/mps/debugger/java/runtime/requests/ClassPrepareRequestor;Ljava/lang/String;)Lcom/sun/jdi/request/ClassPrepareRequest;" />
+    <nodeInfo nodeId="2891782949125168119" fileName="RequestManager.java" startLine="174" startPosition="0" endLine="184" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="initRequest#(Ljetbrains/mps/debugger/java/runtime/breakpoints/JavaBreakpoint;Lcom/sun/jdi/request/EventRequest;)V" />
+    <nodeInfo nodeId="2891782949125168203" fileName="RequestManager.java" startLine="198" startPosition="39" endLine="208" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="2891782949125168356" fileName="RequestManager.java" startLine="245" startPosition="0" endLine="255" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setInvalid#(Ljetbrains/mps/debugger/java/runtime/requests/Requestor;Ljava/lang/String;)V" />
+    <nodeInfo nodeId="2891782949125168449" fileName="RequestManager.java" startLine="293" startPosition="63" endLine="303" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="action#()V" />
+    <nodeInfo nodeId="2891782949125168440" fileName="RequestManager.java" startLine="292" startPosition="134" endLine="303" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2891782949125168503" fileName="RequestManager.java" startLine="318" startPosition="0" endLine="329" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="createClassPrepareRequests#(Ljetbrains/mps/debugger/java/runtime/breakpoints/JavaBreakpoint;)V" />
+    <nodeInfo nodeId="2891782949125168524" fileName="RequestManager.java" startLine="329" startPosition="0" endLine="340" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="removeClassPrepareRequests#(Ljetbrains/mps/debugger/java/runtime/breakpoints/JavaBreakpoint;)V" />
+    <nodeInfo nodeId="2891782949125167931" fileName="RequestManager.java" startLine="108" startPosition="85" endLine="120" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2891782949125168453" fileName="RequestManager.java" startLine="305" startPosition="0" endLine="318" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="processClassPrepared#(Lcom/sun/jdi/event/ClassPrepareEvent;)V" />
+    <nodeInfo nodeId="2891782949125168425" fileName="RequestManager.java" startLine="288" startPosition="0" endLine="305" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="processAttached#(Ljetbrains/mps/debugger/java/runtime/DebugVMEventsProcessor;)V" />
+    <nodeInfo nodeId="2891782949125167907" fileName="RequestManager.java" startLine="106" startPosition="49" endLine="126" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="2891782949125167902" fileName="RequestManager.java" startLine="105" startPosition="5" endLine="127" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="2891782949125168163" fileName="RequestManager.java" startLine="188" startPosition="74" endLine="210" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2891782949125168151" fileName="RequestManager.java" startLine="184" startPosition="0" endLine="212" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="deleteStepRequests#()V" />
+    <nodeInfo nodeId="2891782949125167873" fileName="RequestManager.java" startLine="96" startPosition="0" endLine="129" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="deleteRequests#(Ljetbrains/mps/debugger/java/runtime/requests/Requestor;)V" />
+    <scopeInfo nodeId="2891782949125168397" fileName="RequestManager.java" startLine="276" startPosition="62" endLine="276" endPosition="62" />
+    <scopeInfo nodeId="2891782949125168405" fileName="RequestManager.java" startLine="280" startPosition="63" endLine="280" endPosition="63" />
+    <scopeInfo nodeId="2891782949125167766" fileName="RequestManager.java" startLine="61" startPosition="52" endLine="62" endPosition="33" />
+    <scopeInfo nodeId="2891782949125167805" fileName="RequestManager.java" startLine="77" startPosition="66" endLine="78" endPosition="36" />
+    <scopeInfo nodeId="2891782949125167886" fileName="RequestManager.java" startLine="99" startPosition="49" endLine="100" endPosition="13" />
+    <scopeInfo nodeId="2891782949125167900" fileName="RequestManager.java" startLine="103" startPosition="27" endLine="104" endPosition="13" />
+    <scopeInfo nodeId="2891782949125167960" fileName="RequestManager.java" startLine="116" startPosition="57" endLine="117" endPosition="68" />
+    <scopeInfo nodeId="2891782949125167908" fileName="RequestManager.java" startLine="122" startPosition="0" endLine="123" endPosition="39">
       <varInfo nodeId="2891782949125167910" varName="ignored" />
     </scopeInfo>
-    <scopeInfo nodeId="2891782949125167909" fileName="RequestManager.java" startLine="118" startPosition="54" endLine="119" endPosition="39" />
-    <scopeInfo nodeId="2891782949125167912" fileName="RequestManager.java" startLine="120" startPosition="0" endLine="121" endPosition="21">
+    <scopeInfo nodeId="2891782949125167909" fileName="RequestManager.java" startLine="122" startPosition="54" endLine="123" endPosition="39" />
+    <scopeInfo nodeId="2891782949125167912" fileName="RequestManager.java" startLine="124" startPosition="0" endLine="125" endPosition="21">
       <varInfo nodeId="2891782949125167919" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="2891782949125167913" fileName="RequestManager.java" startLine="120" startPosition="37" endLine="121" endPosition="21" />
-    <scopeInfo nodeId="2891782949125168137" fileName="RequestManager.java" startLine="173" startPosition="53" endLine="174" endPosition="47" />
-    <scopeInfo nodeId="2891782949125168197" fileName="RequestManager.java" startLine="190" startPosition="80" endLine="191" endPosition="32" />
-    <scopeInfo nodeId="2891782949125168235" fileName="RequestManager.java" startLine="200" startPosition="37" endLine="201" endPosition="60" />
-    <scopeInfo nodeId="2891782949125168389" fileName="RequestManager.java" startLine="254" startPosition="34" endLine="255" endPosition="17" />
-    <scopeInfo nodeId="2891782949125168563" fileName="RequestManager.java" startLine="281" startPosition="53" endLine="282" endPosition="92" />
-    <scopeInfo nodeId="2891782949125168464" fileName="RequestManager.java" startLine="290" startPosition="49" endLine="291" endPosition="13" />
-    <scopeInfo nodeId="2891782949125168496" fileName="RequestManager.java" startLine="296" startPosition="30" endLine="297" endPosition="71" />
-    <scopeInfo nodeId="2891782949125168579" fileName="RequestManager.java" startLine="306" startPosition="37" endLine="307" endPosition="58" />
-    <scopeInfo nodeId="2891782949125168591" fileName="RequestManager.java" startLine="317" startPosition="37" endLine="318" endPosition="67" />
-    <scopeInfo nodeId="2891782949125167753" fileName="RequestManager.java" startLine="52" startPosition="59" endLine="54" endPosition="57" />
-    <scopeInfo nodeId="2891782949125167824" fileName="RequestManager.java" startLine="79" startPosition="95" endLine="81" endPosition="46" />
-    <scopeInfo nodeId="2891782949125167855" fileName="RequestManager.java" startLine="86" startPosition="25" endLine="88" endPosition="59" />
-    <scopeInfo nodeId="2891782949125168363" fileName="RequestManager.java" startLine="242" startPosition="63" endLine="244" endPosition="57" />
-    <scopeInfo nodeId="2891782949125168377" fileName="RequestManager.java" startLine="248" startPosition="49" endLine="250" endPosition="55" />
-    <scopeInfo nodeId="2891782949125168415" fileName="RequestManager.java" startLine="267" startPosition="94" endLine="269" endPosition="42" />
-    <scopeInfo nodeId="2891782949125168558" fileName="RequestManager.java" startLine="280" startPosition="79" endLine="283" endPosition="11" />
-    <scopeInfo nodeId="2891782949125168574" fileName="RequestManager.java" startLine="305" startPosition="57" endLine="308" endPosition="9" />
-    <scopeInfo nodeId="2891782949125168586" fileName="RequestManager.java" startLine="316" startPosition="57" endLine="319" endPosition="9" />
-    <scopeInfo nodeId="2891782949125167748" fileName="RequestManager.java" startLine="51" startPosition="0" endLine="55" endPosition="3">
+    <scopeInfo nodeId="2891782949125167913" fileName="RequestManager.java" startLine="124" startPosition="37" endLine="125" endPosition="21" />
+    <scopeInfo nodeId="2891782949125168137" fileName="RequestManager.java" startLine="177" startPosition="53" endLine="178" endPosition="47" />
+    <scopeInfo nodeId="2891782949125168197" fileName="RequestManager.java" startLine="194" startPosition="80" endLine="195" endPosition="32" />
+    <scopeInfo nodeId="2891782949125168235" fileName="RequestManager.java" startLine="204" startPosition="37" endLine="205" endPosition="60" />
+    <scopeInfo nodeId="7578254065929102147" fileName="RequestManager.java" startLine="250" startPosition="56" endLine="251" endPosition="20" />
+    <scopeInfo nodeId="7578254065929102183" fileName="RequestManager.java" startLine="262" startPosition="72" endLine="263" endPosition="68" />
+    <scopeInfo nodeId="7578254065929102205" fileName="RequestManager.java" startLine="266" startPosition="75" endLine="267" endPosition="71" />
+    <scopeInfo nodeId="2891782949125168389" fileName="RequestManager.java" startLine="271" startPosition="34" endLine="272" endPosition="17" />
+    <scopeInfo nodeId="2891782949125168563" fileName="RequestManager.java" startLine="298" startPosition="53" endLine="299" endPosition="92" />
+    <scopeInfo nodeId="2891782949125168464" fileName="RequestManager.java" startLine="307" startPosition="49" endLine="308" endPosition="13" />
+    <scopeInfo nodeId="2891782949125168496" fileName="RequestManager.java" startLine="313" startPosition="30" endLine="314" endPosition="71" />
+    <scopeInfo nodeId="2891782949125168579" fileName="RequestManager.java" startLine="323" startPosition="37" endLine="324" endPosition="58" />
+    <scopeInfo nodeId="2891782949125168591" fileName="RequestManager.java" startLine="334" startPosition="37" endLine="335" endPosition="67" />
+    <scopeInfo nodeId="2891782949125167753" fileName="RequestManager.java" startLine="56" startPosition="59" endLine="58" endPosition="57" />
+    <scopeInfo nodeId="2891782949125167824" fileName="RequestManager.java" startLine="83" startPosition="95" endLine="85" endPosition="46" />
+    <scopeInfo nodeId="2891782949125167855" fileName="RequestManager.java" startLine="90" startPosition="25" endLine="92" endPosition="59" />
+    <scopeInfo nodeId="2891782949125168377" fileName="RequestManager.java" startLine="257" startPosition="49" endLine="259" endPosition="55" />
+    <scopeInfo nodeId="2891782949125168415" fileName="RequestManager.java" startLine="284" startPosition="94" endLine="286" endPosition="42" />
+    <scopeInfo nodeId="2891782949125168558" fileName="RequestManager.java" startLine="297" startPosition="79" endLine="300" endPosition="11" />
+    <scopeInfo nodeId="2891782949125168574" fileName="RequestManager.java" startLine="322" startPosition="57" endLine="325" endPosition="9" />
+    <scopeInfo nodeId="2891782949125168586" fileName="RequestManager.java" startLine="333" startPosition="57" endLine="336" endPosition="9" />
+    <scopeInfo nodeId="2891782949125167748" fileName="RequestManager.java" startLine="55" startPosition="0" endLine="59" endPosition="3">
       <varInfo nodeId="2891782949125167751" varName="processor" />
     </scopeInfo>
-    <scopeInfo nodeId="2891782949125167763" fileName="RequestManager.java" startLine="56" startPosition="0" endLine="60" endPosition="0" />
-    <scopeInfo nodeId="2891782949125167948" fileName="RequestManager.java" startLine="110" startPosition="51" endLine="114" endPosition="13" />
-    <scopeInfo nodeId="2891782949125168055" fileName="RequestManager.java" startLine="150" startPosition="98" endLine="154" endPosition="19">
+    <scopeInfo nodeId="2891782949125167763" fileName="RequestManager.java" startLine="60" startPosition="0" endLine="64" endPosition="0" />
+    <scopeInfo nodeId="2891782949125167948" fileName="RequestManager.java" startLine="114" startPosition="51" endLine="118" endPosition="13" />
+    <scopeInfo nodeId="2891782949125168055" fileName="RequestManager.java" startLine="154" startPosition="98" endLine="158" endPosition="19">
       <varInfo nodeId="2891782949125168059" varName="request" />
     </scopeInfo>
-    <scopeInfo nodeId="2891782949125168078" fileName="RequestManager.java" startLine="157" startPosition="110" endLine="161" endPosition="19">
+    <scopeInfo nodeId="2891782949125168078" fileName="RequestManager.java" startLine="161" startPosition="110" endLine="165" endPosition="19">
       <varInfo nodeId="2891782949125168082" varName="request" />
     </scopeInfo>
-    <scopeInfo nodeId="2891782949125168101" fileName="RequestManager.java" startLine="164" startPosition="101" endLine="168" endPosition="19">
+    <scopeInfo nodeId="2891782949125168101" fileName="RequestManager.java" startLine="168" startPosition="101" endLine="172" endPosition="19">
       <varInfo nodeId="2891782949125168105" varName="request" />
     </scopeInfo>
-    <scopeInfo nodeId="2891782949125168341" fileName="RequestManager.java" startLine="235" startPosition="51" endLine="239" endPosition="21" />
-    <scopeInfo nodeId="2891782949125168391" fileName="RequestManager.java" startLine="257" startPosition="0" endLine="261" endPosition="0">
+    <scopeInfo nodeId="2891782949125168341" fileName="RequestManager.java" startLine="239" startPosition="51" endLine="243" endPosition="21" />
+    <scopeInfo nodeId="7578254065929102146" fileName="RequestManager.java" startLine="249" startPosition="100" endLine="253" endPosition="0">
+      <varInfo nodeId="7578254065929102146" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="7578254065929102180" fileName="RequestManager.java" startLine="261" startPosition="0" endLine="265" endPosition="0">
+      <varInfo nodeId="7578254065929102191" varName="listener" />
+    </scopeInfo>
+    <scopeInfo nodeId="7578254065929102202" fileName="RequestManager.java" startLine="265" startPosition="0" endLine="269" endPosition="0">
+      <varInfo nodeId="7578254065929102206" varName="listener" />
+    </scopeInfo>
+    <scopeInfo nodeId="2891782949125168391" fileName="RequestManager.java" startLine="274" startPosition="0" endLine="278" endPosition="0">
       <varInfo nodeId="2891782949125168394" varName="suspendContext" />
     </scopeInfo>
-    <scopeInfo nodeId="2891782949125168399" fileName="RequestManager.java" startLine="261" startPosition="0" endLine="265" endPosition="0">
+    <scopeInfo nodeId="2891782949125168399" fileName="RequestManager.java" startLine="278" startPosition="0" endLine="282" endPosition="0">
       <varInfo nodeId="2891782949125168402" varName="suspendContext" />
     </scopeInfo>
-    <scopeInfo nodeId="2891782949125168480" fileName="RequestManager.java" startLine="294" startPosition="75" endLine="298" endPosition="7">
+    <scopeInfo nodeId="2891782949125168480" fileName="RequestManager.java" startLine="311" startPosition="75" endLine="315" endPosition="7">
       <varInfo nodeId="2891782949125168482" varName="requestor" />
     </scopeInfo>
-    <scopeInfo nodeId="2891782949125167774" fileName="RequestManager.java" startLine="62" startPosition="56" endLine="67" endPosition="6" />
-    <scopeInfo nodeId="2891782949125167796" fileName="RequestManager.java" startLine="71" startPosition="62" endLine="76" endPosition="83" />
-    <scopeInfo nodeId="2891782949125167817" fileName="RequestManager.java" startLine="78" startPosition="0" endLine="83" endPosition="0">
+    <scopeInfo nodeId="2891782949125167774" fileName="RequestManager.java" startLine="66" startPosition="56" endLine="71" endPosition="6" />
+    <scopeInfo nodeId="2891782949125167796" fileName="RequestManager.java" startLine="75" startPosition="62" endLine="80" endPosition="83" />
+    <scopeInfo nodeId="2891782949125167817" fileName="RequestManager.java" startLine="82" startPosition="0" endLine="87" endPosition="0">
       <varInfo nodeId="2891782949125167822" varName="request" />
       <varInfo nodeId="2891782949125167820" varName="requestor" />
     </scopeInfo>
-    <scopeInfo nodeId="2891782949125167978" fileName="RequestManager.java" startLine="126" startPosition="97" endLine="131" endPosition="19">
+    <scopeInfo nodeId="2891782949125167978" fileName="RequestManager.java" startLine="130" startPosition="97" endLine="135" endPosition="19">
       <varInfo nodeId="2891782949125167982" varName="request" />
     </scopeInfo>
-    <scopeInfo nodeId="2891782949125168001" fileName="RequestManager.java" startLine="134" startPosition="100" endLine="139" endPosition="19">
+    <scopeInfo nodeId="2891782949125168001" fileName="RequestManager.java" startLine="138" startPosition="100" endLine="143" endPosition="19">
       <varInfo nodeId="2891782949125168005" varName="request" />
     </scopeInfo>
-    <scopeInfo nodeId="2891782949125168028" fileName="RequestManager.java" startLine="142" startPosition="98" endLine="147" endPosition="19">
+    <scopeInfo nodeId="2891782949125168028" fileName="RequestManager.java" startLine="146" startPosition="98" endLine="151" endPosition="19">
       <varInfo nodeId="2891782949125168032" varName="request" />
     </scopeInfo>
-    <scopeInfo nodeId="2891782949125168184" fileName="RequestManager.java" startLine="187" startPosition="48" endLine="192" endPosition="9">
+    <scopeInfo nodeId="2891782949125168184" fileName="RequestManager.java" startLine="191" startPosition="48" endLine="196" endPosition="9">
       <varInfo nodeId="2891782949125168186" varName="threadReference" />
     </scopeInfo>
-    <scopeInfo nodeId="2891782949125168217" fileName="RequestManager.java" startLine="197" startPosition="32" endLine="202" endPosition="11">
+    <scopeInfo nodeId="2891782949125168217" fileName="RequestManager.java" startLine="201" startPosition="32" endLine="206" endPosition="11">
       <varInfo nodeId="2891782949125168219" varName="requestSet" />
     </scopeInfo>
-    <scopeInfo nodeId="2891782949125168257" fileName="RequestManager.java" startLine="209" startPosition="126" endLine="214" endPosition="23">
+    <scopeInfo nodeId="2891782949125168257" fileName="RequestManager.java" startLine="213" startPosition="126" endLine="218" endPosition="23">
       <varInfo nodeId="2891782949125168261" varName="stepRequest" />
     </scopeInfo>
-    <scopeInfo nodeId="2891782949125168356" fileName="RequestManager.java" startLine="241" startPosition="0" endLine="246" endPosition="0">
-      <varInfo nodeId="2891782949125168361" varName="message" />
-      <varInfo nodeId="2891782949125168359" varName="requestor" />
-    </scopeInfo>
-    <scopeInfo nodeId="2891782949125168386" fileName="RequestManager.java" startLine="252" startPosition="0" endLine="257" endPosition="0" />
-    <scopeInfo nodeId="2891782949125168552" fileName="RequestManager.java" startLine="279" startPosition="101" endLine="284" endPosition="9">
+    <scopeInfo nodeId="2891782949125168386" fileName="RequestManager.java" startLine="269" startPosition="0" endLine="274" endPosition="0" />
+    <scopeInfo nodeId="2891782949125168552" fileName="RequestManager.java" startLine="296" startPosition="101" endLine="301" endPosition="9">
       <varInfo nodeId="2891782949125168556" varName="breakpoint" />
     </scopeInfo>
-    <scopeInfo nodeId="2891782949125167842" fileName="RequestManager.java" startLine="84" startPosition="75" endLine="90" endPosition="24">
+    <scopeInfo nodeId="2891782949125167842" fileName="RequestManager.java" startLine="88" startPosition="75" endLine="94" endPosition="24">
       <varInfo nodeId="2891782949125167844" varName="reqSet" />
     </scopeInfo>
-    <scopeInfo nodeId="2891782949125168287" fileName="RequestManager.java" startLine="217" startPosition="106" endLine="223" endPosition="33">
+    <scopeInfo nodeId="2891782949125168287" fileName="RequestManager.java" startLine="221" startPosition="106" endLine="227" endPosition="33">
       <varInfo nodeId="2891782949125168291" varName="classPrepareRequest" />
     </scopeInfo>
-    <scopeInfo nodeId="2891782949125168307" fileName="RequestManager.java" startLine="226" startPosition="108" endLine="232" endPosition="31">
+    <scopeInfo nodeId="2891782949125168307" fileName="RequestManager.java" startLine="230" startPosition="108" endLine="236" endPosition="31">
       <varInfo nodeId="2891782949125168309" varName="classPrepareRequest" />
     </scopeInfo>
-    <scopeInfo nodeId="2891782949125168372" fileName="RequestManager.java" startLine="246" startPosition="0" endLine="252" endPosition="0">
+    <scopeInfo nodeId="2891782949125168372" fileName="RequestManager.java" startLine="255" startPosition="0" endLine="261" endPosition="0">
       <varInfo nodeId="2891782949125168375" varName="requestor" />
     </scopeInfo>
-    <scopeInfo nodeId="2891782949125168407" fileName="RequestManager.java" startLine="265" startPosition="0" endLine="271" endPosition="0">
+    <scopeInfo nodeId="2891782949125168407" fileName="RequestManager.java" startLine="282" startPosition="0" endLine="288" endPosition="0">
       <varInfo nodeId="2891782949125168413" varName="closedByUser" />
       <varInfo nodeId="2891782949125168410" varName="process" />
     </scopeInfo>
-    <scopeInfo nodeId="2891782949125168545" fileName="RequestManager.java" startLine="278" startPosition="48" endLine="284" endPosition="9">
+    <scopeInfo nodeId="2891782949125168545" fileName="RequestManager.java" startLine="295" startPosition="48" endLine="301" endPosition="9">
       <varInfo nodeId="2891782949125168547" varName="breakpointManager" />
     </scopeInfo>
-    <scopeInfo nodeId="2891782949125168048" fileName="RequestManager.java" startLine="149" startPosition="0" endLine="156" endPosition="0">
+    <scopeInfo nodeId="2891782949125168048" fileName="RequestManager.java" startLine="153" startPosition="0" endLine="160" endPosition="0">
       <varInfo nodeId="2891782949125168053" varName="field" />
       <varInfo nodeId="2891782949125168051" varName="requestor" />
     </scopeInfo>
-    <scopeInfo nodeId="2891782949125168071" fileName="RequestManager.java" startLine="156" startPosition="0" endLine="163" endPosition="0">
+    <scopeInfo nodeId="2891782949125168071" fileName="RequestManager.java" startLine="160" startPosition="0" endLine="167" endPosition="0">
       <varInfo nodeId="2891782949125168076" varName="field" />
       <varInfo nodeId="2891782949125168074" varName="requestor" />
     </scopeInfo>
-    <scopeInfo nodeId="2891782949125168094" fileName="RequestManager.java" startLine="163" startPosition="0" endLine="170" endPosition="0">
+    <scopeInfo nodeId="2891782949125168094" fileName="RequestManager.java" startLine="167" startPosition="0" endLine="174" endPosition="0">
       <varInfo nodeId="2891782949125168099" varName="reference" />
       <varInfo nodeId="2891782949125168097" varName="requestor" />
     </scopeInfo>
-    <scopeInfo nodeId="2891782949125168126" fileName="RequestManager.java" startLine="171" startPosition="72" endLine="178" endPosition="44">
+    <scopeInfo nodeId="2891782949125168126" fileName="RequestManager.java" startLine="175" startPosition="72" endLine="182" endPosition="44">
       <varInfo nodeId="2891782949125168128" varName="suspendPolicy" />
     </scopeInfo>
-    <scopeInfo nodeId="2891782949125168180" fileName="RequestManager.java" startLine="186" startPosition="83" endLine="193" endPosition="7">
+    <scopeInfo nodeId="2891782949125168180" fileName="RequestManager.java" startLine="190" startPosition="83" endLine="197" endPosition="7">
       <varInfo nodeId="2891782949125168182" varName="request" />
     </scopeInfo>
-    <scopeInfo nodeId="2891782949125168336" fileName="RequestManager.java" startLine="234" startPosition="0" endLine="241" endPosition="0">
+    <scopeInfo nodeId="2891782949125168336" fileName="RequestManager.java" startLine="238" startPosition="0" endLine="245" endPosition="0">
       <varInfo nodeId="2891782949125168339" varName="request" />
     </scopeInfo>
-    <scopeInfo nodeId="2891782949125168519" fileName="RequestManager.java" startLine="303" startPosition="171" endLine="310" endPosition="0">
+    <scopeInfo nodeId="2891782949125168363" fileName="RequestManager.java" startLine="246" startPosition="63" endLine="253" endPosition="7" />
+    <scopeInfo nodeId="2891782949125168519" fileName="RequestManager.java" startLine="320" startPosition="171" endLine="327" endPosition="0">
       <varInfo nodeId="2891782949125168522" varName="processor" />
     </scopeInfo>
-    <scopeInfo nodeId="2891782949125168540" fileName="RequestManager.java" startLine="314" startPosition="171" endLine="321" endPosition="0">
+    <scopeInfo nodeId="2891782949125168540" fileName="RequestManager.java" startLine="331" startPosition="171" endLine="338" endPosition="0">
       <varInfo nodeId="2891782949125168543" varName="processor" />
     </scopeInfo>
-    <scopeInfo nodeId="2891782949125167971" fileName="RequestManager.java" startLine="125" startPosition="0" endLine="133" endPosition="0">
+    <scopeInfo nodeId="2891782949125167971" fileName="RequestManager.java" startLine="129" startPosition="0" endLine="137" endPosition="0">
       <varInfo nodeId="2891782949125167976" varName="location" />
       <varInfo nodeId="2891782949125167974" varName="requestor" />
     </scopeInfo>
-    <scopeInfo nodeId="2891782949125167994" fileName="RequestManager.java" startLine="133" startPosition="0" endLine="141" endPosition="0">
+    <scopeInfo nodeId="2891782949125167994" fileName="RequestManager.java" startLine="137" startPosition="0" endLine="145" endPosition="0">
       <varInfo nodeId="2891782949125167997" varName="requestor" />
       <varInfo nodeId="2891782949125167999" varName="type" />
     </scopeInfo>
-    <scopeInfo nodeId="2891782949125168021" fileName="RequestManager.java" startLine="141" startPosition="0" endLine="149" endPosition="0">
+    <scopeInfo nodeId="2891782949125168021" fileName="RequestManager.java" startLine="145" startPosition="0" endLine="153" endPosition="0">
       <varInfo nodeId="2891782949125168024" varName="requestor" />
       <varInfo nodeId="2891782949125168026" varName="type" />
     </scopeInfo>
-    <scopeInfo nodeId="2891782949125168207" fileName="RequestManager.java" startLine="195" startPosition="48" endLine="203" endPosition="9">
+    <scopeInfo nodeId="2891782949125168207" fileName="RequestManager.java" startLine="199" startPosition="48" endLine="207" endPosition="9">
       <varInfo nodeId="2891782949125168209" varName="requestor" />
     </scopeInfo>
-    <scopeInfo nodeId="2891782949125168246" fileName="RequestManager.java" startLine="208" startPosition="0" endLine="216" endPosition="0">
+    <scopeInfo nodeId="2891782949125168246" fileName="RequestManager.java" startLine="212" startPosition="0" endLine="220" endPosition="0">
       <varInfo nodeId="2891782949125168249" varName="requestor" />
       <varInfo nodeId="2891782949125168253" varName="stepThread" />
       <varInfo nodeId="2891782949125168251" varName="stepType" />
       <varInfo nodeId="2891782949125168255" varName="suspendPolicy" />
     </scopeInfo>
-    <scopeInfo nodeId="2891782949125168508" fileName="RequestManager.java" startLine="302" startPosition="82" endLine="310" endPosition="7" />
-    <scopeInfo nodeId="2891782949125168529" fileName="RequestManager.java" startLine="313" startPosition="82" endLine="321" endPosition="7" />
-    <scopeInfo nodeId="2891782949125167769" fileName="RequestManager.java" startLine="60" startPosition="0" endLine="69" endPosition="0">
+    <scopeInfo nodeId="2891782949125168508" fileName="RequestManager.java" startLine="319" startPosition="82" endLine="327" endPosition="7" />
+    <scopeInfo nodeId="2891782949125168529" fileName="RequestManager.java" startLine="330" startPosition="82" endLine="338" endPosition="7" />
+    <scopeInfo nodeId="2891782949125167769" fileName="RequestManager.java" startLine="64" startPosition="0" endLine="73" endPosition="0">
       <varInfo nodeId="2891782949125167772" varName="request" />
     </scopeInfo>
-    <scopeInfo nodeId="2891782949125167790" fileName="RequestManager.java" startLine="69" startPosition="0" endLine="78" endPosition="0">
+    <scopeInfo nodeId="2891782949125167790" fileName="RequestManager.java" startLine="73" startPosition="0" endLine="82" endPosition="0">
       <varInfo nodeId="2891782949125167794" varName="requestor" />
     </scopeInfo>
-    <scopeInfo nodeId="2891782949125167835" fileName="RequestManager.java" startLine="83" startPosition="0" endLine="92" endPosition="0">
+    <scopeInfo nodeId="2891782949125167835" fileName="RequestManager.java" startLine="87" startPosition="0" endLine="96" endPosition="0">
       <varInfo nodeId="2891782949125167840" varName="request" />
       <varInfo nodeId="2891782949125167838" varName="requestor" />
     </scopeInfo>
-    <scopeInfo nodeId="2891782949125168280" fileName="RequestManager.java" startLine="216" startPosition="0" endLine="225" endPosition="0">
+    <scopeInfo nodeId="2891782949125168280" fileName="RequestManager.java" startLine="220" startPosition="0" endLine="229" endPosition="0">
       <varInfo nodeId="2891782949125168285" varName="classOrPatternToBeLoaded" />
       <varInfo nodeId="2891782949125168283" varName="requestor" />
     </scopeInfo>
-    <scopeInfo nodeId="2891782949125168300" fileName="RequestManager.java" startLine="225" startPosition="0" endLine="234" endPosition="0">
+    <scopeInfo nodeId="2891782949125168300" fileName="RequestManager.java" startLine="229" startPosition="0" endLine="238" endPosition="0">
       <varInfo nodeId="2891782949125168305" varName="className" />
       <varInfo nodeId="2891782949125168303" varName="requestor" />
     </scopeInfo>
-    <scopeInfo nodeId="2891782949125167935" fileName="RequestManager.java" startLine="105" startPosition="43" endLine="115" endPosition="11">
+    <scopeInfo nodeId="2891782949125167935" fileName="RequestManager.java" startLine="109" startPosition="43" endLine="119" endPosition="11">
       <varInfo nodeId="2891782949125167937" varName="allTargetRequestorRequests" />
     </scopeInfo>
-    <scopeInfo nodeId="2891782949125168119" fileName="RequestManager.java" startLine="170" startPosition="0" endLine="180" endPosition="0">
+    <scopeInfo nodeId="2891782949125168119" fileName="RequestManager.java" startLine="174" startPosition="0" endLine="184" endPosition="0">
       <varInfo nodeId="2891782949125168124" varName="req" />
       <varInfo nodeId="2891782949125168122" varName="requestor" />
     </scopeInfo>
-    <scopeInfo nodeId="2891782949125168203" fileName="RequestManager.java" startLine="194" startPosition="39" endLine="204" endPosition="7">
+    <scopeInfo nodeId="2891782949125168203" fileName="RequestManager.java" startLine="198" startPosition="39" endLine="208" endPosition="7">
       <varInfo nodeId="2891782949125168205" varName="stepRequest" />
     </scopeInfo>
-    <scopeInfo nodeId="2891782949125168449" fileName="RequestManager.java" startLine="276" startPosition="63" endLine="286" endPosition="0" />
-    <scopeInfo nodeId="2891782949125168458" fileName="RequestManager.java" startLine="289" startPosition="67" endLine="299" endPosition="5">
+    <scopeInfo nodeId="2891782949125168356" fileName="RequestManager.java" startLine="245" startPosition="0" endLine="255" endPosition="0">
+      <varInfo nodeId="2891782949125168361" varName="message" />
+      <varInfo nodeId="2891782949125168359" varName="requestor" />
+    </scopeInfo>
+    <scopeInfo nodeId="2891782949125168449" fileName="RequestManager.java" startLine="293" startPosition="63" endLine="303" endPosition="0" />
+    <scopeInfo nodeId="2891782949125168458" fileName="RequestManager.java" startLine="306" startPosition="67" endLine="316" endPosition="5">
       <varInfo nodeId="2891782949125168467" varName="refType" />
     </scopeInfo>
-    <scopeInfo nodeId="2891782949125168503" fileName="RequestManager.java" startLine="301" startPosition="0" endLine="312" endPosition="0">
+    <scopeInfo nodeId="2891782949125168503" fileName="RequestManager.java" startLine="318" startPosition="0" endLine="329" endPosition="0">
       <varInfo nodeId="2891782949125168506" varName="breakpoint" />
     </scopeInfo>
-    <scopeInfo nodeId="2891782949125168524" fileName="RequestManager.java" startLine="312" startPosition="0" endLine="323" endPosition="0">
+    <scopeInfo nodeId="2891782949125168524" fileName="RequestManager.java" startLine="329" startPosition="0" endLine="340" endPosition="0">
       <varInfo nodeId="2891782949125168527" varName="breakpoint" />
     </scopeInfo>
-    <scopeInfo nodeId="2891782949125168431" fileName="RequestManager.java" startLine="273" startPosition="72" endLine="286" endPosition="7" />
-    <scopeInfo nodeId="2891782949125168453" fileName="RequestManager.java" startLine="288" startPosition="0" endLine="301" endPosition="0">
+    <scopeInfo nodeId="2891782949125168431" fileName="RequestManager.java" startLine="290" startPosition="72" endLine="303" endPosition="7" />
+    <scopeInfo nodeId="2891782949125168453" fileName="RequestManager.java" startLine="305" startPosition="0" endLine="318" endPosition="0">
       <varInfo nodeId="2891782949125168456" varName="event" />
     </scopeInfo>
-    <scopeInfo nodeId="2891782949125167921" fileName="RequestManager.java" startLine="103" startPosition="11" endLine="117" endPosition="58">
+    <scopeInfo nodeId="2891782949125167921" fileName="RequestManager.java" startLine="107" startPosition="11" endLine="121" endPosition="58">
       <varInfo nodeId="2891782949125167923" varName="targetRequestor" />
     </scopeInfo>
-    <scopeInfo nodeId="2891782949125168425" fileName="RequestManager.java" startLine="271" startPosition="0" endLine="288" endPosition="0">
+    <scopeInfo nodeId="2891782949125168425" fileName="RequestManager.java" startLine="288" startPosition="0" endLine="305" endPosition="0">
       <varInfo nodeId="2891782949125168428" varName="process" />
     </scopeInfo>
-    <scopeInfo nodeId="2891782949125167906" fileName="RequestManager.java" startLine="102" startPosition="49" endLine="122" endPosition="7" />
-    <scopeInfo nodeId="2891782949125168169" fileName="RequestManager.java" startLine="185" startPosition="34" endLine="205" endPosition="58">
+    <scopeInfo nodeId="2891782949125167906" fileName="RequestManager.java" startLine="106" startPosition="49" endLine="126" endPosition="7" />
+    <scopeInfo nodeId="2891782949125168169" fileName="RequestManager.java" startLine="189" startPosition="34" endLine="209" endPosition="58">
       <varInfo nodeId="2891782949125168171" varName="toDelete" />
     </scopeInfo>
-    <scopeInfo nodeId="2891782949125167902" fileName="RequestManager.java" startLine="101" startPosition="5" endLine="123" endPosition="5">
+    <scopeInfo nodeId="2891782949125167902" fileName="RequestManager.java" startLine="105" startPosition="5" endLine="127" endPosition="5">
       <varInfo nodeId="2891782949125167904" varName="request" />
     </scopeInfo>
-    <scopeInfo nodeId="2891782949125168153" fileName="RequestManager.java" startLine="181" startPosition="41" endLine="206" endPosition="5">
+    <scopeInfo nodeId="2891782949125168153" fileName="RequestManager.java" startLine="185" startPosition="41" endLine="210" endPosition="5">
       <varInfo nodeId="2891782949125168157" varName="stepRequests" />
     </scopeInfo>
-    <scopeInfo nodeId="2891782949125168151" fileName="RequestManager.java" startLine="180" startPosition="0" endLine="208" endPosition="0" />
-    <scopeInfo nodeId="2891782949125167878" fileName="RequestManager.java" startLine="93" startPosition="51" endLine="123" endPosition="5">
+    <scopeInfo nodeId="2891782949125168151" fileName="RequestManager.java" startLine="184" startPosition="0" endLine="212" endPosition="0" />
+    <scopeInfo nodeId="2891782949125167878" fileName="RequestManager.java" startLine="97" startPosition="51" endLine="127" endPosition="5">
       <varInfo nodeId="2891782949125167889" varName="requests" />
     </scopeInfo>
-    <scopeInfo nodeId="2891782949125167873" fileName="RequestManager.java" startLine="92" startPosition="0" endLine="125" endPosition="0">
+    <scopeInfo nodeId="2891782949125167873" fileName="RequestManager.java" startLine="96" startPosition="0" endLine="129" endPosition="0">
       <varInfo nodeId="2891782949125167876" varName="requestor" />
     </scopeInfo>
-    <unitInfo nodeId="2891782949125147778" fileName="RequestManager.java" startLine="42" startPosition="0" endLine="324" endPosition="0" unitName="jetbrains.mps.debugger.java.runtime.RequestManager" />
-    <unitInfo nodeId="2891782949125168448" fileName="RequestManager.java" startLine="276" startPosition="44" endLine="286" endPosition="5" unitName="jetbrains.mps.debugger.java.runtime.RequestManager$1" />
-    <unitInfo nodeId="2891782949125168518" fileName="RequestManager.java" startLine="303" startPosition="110" endLine="310" endPosition="5" unitName="jetbrains.mps.debugger.java.runtime.RequestManager$2" />
-    <unitInfo nodeId="2891782949125168539" fileName="RequestManager.java" startLine="314" startPosition="110" endLine="321" endPosition="5" unitName="jetbrains.mps.debugger.java.runtime.RequestManager$3" />
+    <unitInfo nodeId="2891782949125147778" fileName="RequestManager.java" startLine="45" startPosition="0" endLine="341" endPosition="0" unitName="jetbrains.mps.debugger.java.runtime.RequestManager" />
+    <unitInfo nodeId="7578254065929102146" fileName="RequestManager.java" startLine="249" startPosition="60" endLine="253" endPosition="5" unitName="jetbrains.mps.debugger.java.runtime.RequestManager$1" />
+    <unitInfo nodeId="2891782949125168448" fileName="RequestManager.java" startLine="293" startPosition="44" endLine="303" endPosition="5" unitName="jetbrains.mps.debugger.java.runtime.RequestManager$2" />
+    <unitInfo nodeId="2891782949125168518" fileName="RequestManager.java" startLine="320" startPosition="110" endLine="327" endPosition="5" unitName="jetbrains.mps.debugger.java.runtime.RequestManager$3" />
+    <unitInfo nodeId="2891782949125168539" fileName="RequestManager.java" startLine="331" startPosition="110" endLine="338" endPosition="5" unitName="jetbrains.mps.debugger.java.runtime.RequestManager$4" />
   </root>
   <root nodeId="2891782949125148024">
     <nodeInfo nodeId="2891782949125148027" fileName="JavaUiStateImpl.java" startLine="28" startPosition="50" endLine="29" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
@@ -2045,212 +2066,222 @@
     <unitInfo nodeId="2891782949125170518" fileName="DebugProcessListener.java" startLine="7" startPosition="0" endLine="14" endPosition="0" unitName="jetbrains.mps.debugger.java.runtime.DebugProcessListener" />
   </root>
   <root nodeId="2891782949125170617">
-    <nodeInfo nodeId="2891782949125170649" fileName="DebugSession.java" startLine="15" startPosition="73" endLine="16" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myEventsProcessor" />
-    <nodeInfo nodeId="2891782949125170652" fileName="DebugSession.java" startLine="16" startPosition="57" endLine="17" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myIsMute" />
-    <nodeInfo nodeId="2891782949125170656" fileName="DebugSession.java" startLine="17" startPosition="44" endLine="18" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myEvaluationProvider" />
-    <nodeInfo nodeId="2891782949125170667" fileName="DebugSession.java" startLine="20" startPosition="74" endLine="21" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="2891782949125170669" fileName="DebugSession.java" startLine="21" startPosition="13" endLine="22" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2891782949125170673" fileName="DebugSession.java" startLine="22" startPosition="40" endLine="23" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2891782949125170678" fileName="DebugSession.java" startLine="23" startPosition="81" endLine="24" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2891782949125170690" fileName="DebugSession.java" startLine="27" startPosition="45" endLine="28" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2891782949125170699" fileName="DebugSession.java" startLine="31" startPosition="24" endLine="32" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2891782949125170710" fileName="DebugSession.java" startLine="33" startPosition="26" endLine="34" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2891782949125205943" fileName="DebugSession.java" startLine="35" startPosition="5" endLine="36" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="2891782949125170711" fileName="DebugSession.java" startLine="36" startPosition="43" endLine="37" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2891782949125170720" fileName="DebugSession.java" startLine="40" startPosition="23" endLine="41" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2891782949125170730" fileName="DebugSession.java" startLine="44" startPosition="47" endLine="45" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2891782949125170739" fileName="DebugSession.java" startLine="48" startPosition="26" endLine="49" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2891782949125170746" fileName="DebugSession.java" startLine="52" startPosition="26" endLine="53" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2891782949125170753" fileName="DebugSession.java" startLine="56" startPosition="25" endLine="57" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2891782949125170760" fileName="DebugSession.java" startLine="60" startPosition="44" endLine="61" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2891782949125170768" fileName="DebugSession.java" startLine="64" startPosition="59" endLine="65" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2891782949125170772" fileName="DebugSession.java" startLine="65" startPosition="41" endLine="66" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2891782949125170778" fileName="DebugSession.java" startLine="66" startPosition="48" endLine="67" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
-    <nodeInfo nodeId="2891782949125170785" fileName="DebugSession.java" startLine="67" startPosition="96" endLine="68" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
-    <nodeInfo nodeId="2891782949125170790" fileName="DebugSession.java" startLine="68" startPosition="79" endLine="69" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2891782949125170800" fileName="DebugSession.java" startLine="72" startPosition="54" endLine="73" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2891782949125170808" fileName="DebugSession.java" startLine="76" startPosition="53" endLine="77" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2891782949125170812" fileName="DebugSession.java" startLine="77" startPosition="41" endLine="78" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2891782949125170824" fileName="DebugSession.java" startLine="81" startPosition="36" endLine="82" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2891782949125170828" fileName="DebugSession.java" startLine="82" startPosition="41" endLine="83" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2891782949125170837" fileName="DebugSession.java" startLine="83" startPosition="64" endLine="84" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2891782949125170841" fileName="DebugSession.java" startLine="84" startPosition="30" endLine="85" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2891782949125170849" fileName="DebugSession.java" startLine="88" startPosition="54" endLine="89" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2891782949125170853" fileName="DebugSession.java" startLine="89" startPosition="41" endLine="90" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2891782949125170867" fileName="DebugSession.java" startLine="94" startPosition="71" endLine="95" endPosition="125" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2891782949125170876" fileName="DebugSession.java" startLine="95" startPosition="125" endLine="96" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2891782949125170893" fileName="DebugSession.java" startLine="104" startPosition="27" endLine="105" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2891782949125171004" fileName="DebugSession.java" startLine="114" startPosition="33" endLine="115" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2891782949125171013" fileName="DebugSession.java" startLine="115" startPosition="105" endLine="116" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2891782949125171029" fileName="DebugSession.java" startLine="118" startPosition="49" endLine="119" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2891782949125171045" fileName="DebugSession.java" startLine="120" startPosition="27" endLine="121" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2891782949125205945" fileName="DebugSession.java" startLine="121" startPosition="60" endLine="122" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="2891782949125171039" fileName="DebugSession.java" startLine="123" startPosition="24" endLine="124" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2891782949125171050" fileName="DebugSession.java" startLine="127" startPosition="13" endLine="128" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2891782949125171054" fileName="DebugSession.java" startLine="128" startPosition="28" endLine="129" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2891782949125170908" fileName="DebugSession.java" startLine="133" startPosition="12" endLine="134" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2891782949125170912" fileName="DebugSession.java" startLine="134" startPosition="22" endLine="135" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2891782949125170933" fileName="DebugSession.java" startLine="140" startPosition="54" endLine="141" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2891782949125170942" fileName="DebugSession.java" startLine="144" startPosition="77" endLine="145" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2891782949125170948" fileName="DebugSession.java" startLine="153" startPosition="64" endLine="154" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2891782949125170952" fileName="DebugSession.java" startLine="154" startPosition="68" endLine="155" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2891782949125170955" fileName="DebugSession.java" startLine="155" startPosition="28" endLine="156" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2891782949125170961" fileName="DebugSession.java" startLine="160" startPosition="65" endLine="161" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2891782949125170965" fileName="DebugSession.java" startLine="161" startPosition="69" endLine="162" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2891782949125170968" fileName="DebugSession.java" startLine="162" startPosition="29" endLine="163" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2891782949125170974" fileName="DebugSession.java" startLine="167" startPosition="74" endLine="168" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2891782949125170981" fileName="DebugSession.java" startLine="172" startPosition="96" endLine="173" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2891782949125170985" fileName="DebugSession.java" startLine="173" startPosition="69" endLine="174" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2891782949125170993" fileName="DebugSession.java" startLine="174" startPosition="82" endLine="175" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2891782949125205947" fileName="DebugSession.java" startLine="175" startPosition="44" endLine="176" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="2891782949125171037" fileName="DebugSession.java" startLine="123" startPosition="22" endLine="125" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2891782949125170624" fileName="DebugSession.java" startLine="148" startPosition="67" endLine="150" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MyDebugProcessAdapter#()V" />
-    <nodeInfo nodeId="2891782949125170705" fileName="DebugSession.java" startLine="32" startPosition="55" endLine="35" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2891782949125170906" fileName="DebugSession.java" startLine="133" startPosition="10" endLine="136" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2891782949125170686" fileName="DebugSession.java" startLine="26" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createUiState#()Ljetbrains/mps/debugger/java/runtime/JavaUiStateImpl;" />
-    <nodeInfo nodeId="2891782949125170716" fileName="DebugSession.java" startLine="39" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="pause#()V" />
-    <nodeInfo nodeId="2891782949125170724" fileName="DebugSession.java" startLine="43" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="stop#(Z)V" />
-    <nodeInfo nodeId="2891782949125170735" fileName="DebugSession.java" startLine="47" startPosition="0" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="stepOver#()V" />
-    <nodeInfo nodeId="2891782949125170742" fileName="DebugSession.java" startLine="51" startPosition="0" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="stepInto#()V" />
-    <nodeInfo nodeId="2891782949125170749" fileName="DebugSession.java" startLine="55" startPosition="0" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="stepOut#()V" />
-    <nodeInfo nodeId="2891782949125170756" fileName="DebugSession.java" startLine="59" startPosition="0" endLine="63" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canShowEvaluationDialog#()Z" />
-    <nodeInfo nodeId="2891782949125170796" fileName="DebugSession.java" startLine="71" startPosition="0" endLine="75" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getEventsProcessor#()Ljetbrains/mps/debugger/java/runtime/DebugVMEventsProcessor;" />
-    <nodeInfo nodeId="2891782949125170882" fileName="DebugSession.java" startLine="98" startPosition="0" endLine="102" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="sessionUnregistered#(Ljetbrains/mps/debug/api/DebugSessionManagerComponent;)V" />
-    <nodeInfo nodeId="2891782949125170936" fileName="DebugSession.java" startLine="143" startPosition="0" endLine="147" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setEvaluationProvider#(Ljetbrains/mps/debug/api/evaluation/IEvaluationProvider;)V" />
-    <nodeInfo nodeId="2891782949125170802" fileName="DebugSession.java" startLine="75" startPosition="0" endLine="80" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="pause#(Ljetbrains/mps/debugger/java/runtime/SuspendContext;)V" />
-    <nodeInfo nodeId="2891782949125170843" fileName="DebugSession.java" startLine="87" startPosition="0" endLine="92" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="resume#(Ljetbrains/mps/debugger/java/runtime/SuspendContext;)V" />
-    <nodeInfo nodeId="2891782949125170889" fileName="DebugSession.java" startLine="102" startPosition="0" endLine="107" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isMute#()Z" />
-    <nodeInfo nodeId="2891782949125170929" fileName="DebugSession.java" startLine="138" startPosition="0" endLine="143" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getEvaluationProvider#()Ljetbrains/mps/debug/api/evaluation/IEvaluationProvider;" />
-    <nodeInfo nodeId="2891782949125170637" fileName="DebugSession.java" startLine="165" startPosition="0" endLine="170" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="processAttached#(Ljetbrains/mps/debugger/java/runtime/DebugVMEventsProcessor;)V" />
-    <nodeInfo nodeId="2891782949125170659" fileName="DebugSession.java" startLine="19" startPosition="0" endLine="25" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="DebugSession#(Ljetbrains/mps/debugger/java/runtime/DebugVMEventsProcessor;Lcom/intellij/openapi/project/Project;)V" />
-    <nodeInfo nodeId="2891782949125170861" fileName="DebugSession.java" startLine="92" startPosition="0" endLine="98" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="sessionRegistered#(Ljetbrains/mps/debug/api/DebugSessionManagerComponent;)V" />
-    <nodeInfo nodeId="2891782949125171035" fileName="DebugSession.java" startLine="119" startPosition="64" endLine="125" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2891782949125170820" fileName="DebugSession.java" startLine="80" startPosition="0" endLine="87" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="refresh#()Ljetbrains/mps/debugger/java/runtime/JavaUiStateImpl;" />
-    <nodeInfo nodeId="2891782949125170627" fileName="DebugSession.java" startLine="151" startPosition="0" endLine="158" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="paused#(Ljetbrains/mps/debugger/java/runtime/SuspendContext;)V" />
-    <nodeInfo nodeId="2891782949125170632" fileName="DebugSession.java" startLine="158" startPosition="0" endLine="165" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="resumed#(Ljetbrains/mps/debugger/java/runtime/SuspendContext;)V" />
-    <nodeInfo nodeId="2891782949125170762" fileName="DebugSession.java" startLine="63" startPosition="0" endLine="71" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="step#(Ljetbrains/mps/debugger/java/runtime/DebugVMEventsProcessor/StepType;)V" />
-    <nodeInfo nodeId="2891782949125170642" fileName="DebugSession.java" startLine="170" startPosition="0" endLine="178" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="processDetached#(Ljetbrains/mps/debugger/java/runtime/DebugVMEventsProcessor;Z)V" />
-    <nodeInfo nodeId="2891782949125170695" fileName="DebugSession.java" startLine="30" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="resume#()V" />
-    <nodeInfo nodeId="2891782949125171024" fileName="DebugSession.java" startLine="117" startPosition="48" endLine="126" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2891782949125171019" fileName="DebugSession.java" startLine="116" startPosition="82" endLine="127" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="2891782949125170999" fileName="DebugSession.java" startLine="113" startPosition="50" endLine="130" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2891782949125170925" fileName="DebugSession.java" startLine="111" startPosition="75" endLine="132" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="action#()V" />
-    <nodeInfo nodeId="2891782949125170916" fileName="DebugSession.java" startLine="110" startPosition="41" endLine="132" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2891782949125170902" fileName="DebugSession.java" startLine="109" startPosition="51" endLine="136" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2891782949125170896" fileName="DebugSession.java" startLine="107" startPosition="0" endLine="138" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="muteBreakpoints#(Z)V" />
-    <scopeInfo nodeId="2891782949125170887" fileName="DebugSession.java" startLine="100" startPosition="73" endLine="100" endPosition="73" />
-    <scopeInfo nodeId="2891782949125170946" fileName="DebugSession.java" startLine="149" startPosition="37" endLine="149" endPosition="37" />
-    <scopeInfo nodeId="2891782949125170689" fileName="DebugSession.java" startLine="27" startPosition="45" endLine="28" endPosition="43" />
-    <scopeInfo nodeId="2891782949125170709" fileName="DebugSession.java" startLine="33" startPosition="26" endLine="34" endPosition="13" />
-    <scopeInfo nodeId="2891782949125170719" fileName="DebugSession.java" startLine="40" startPosition="23" endLine="41" endPosition="30" />
-    <scopeInfo nodeId="2891782949125170729" fileName="DebugSession.java" startLine="44" startPosition="47" endLine="45" endPosition="46" />
-    <scopeInfo nodeId="2891782949125170738" fileName="DebugSession.java" startLine="48" startPosition="26" endLine="49" endPosition="47" />
-    <scopeInfo nodeId="2891782949125170745" fileName="DebugSession.java" startLine="52" startPosition="26" endLine="53" endPosition="47" />
-    <scopeInfo nodeId="2891782949125170752" fileName="DebugSession.java" startLine="56" startPosition="25" endLine="57" endPosition="46" />
-    <scopeInfo nodeId="2891782949125170759" fileName="DebugSession.java" startLine="60" startPosition="44" endLine="61" endPosition="16" />
-    <scopeInfo nodeId="2891782949125170799" fileName="DebugSession.java" startLine="72" startPosition="54" endLine="73" endPosition="29" />
-    <scopeInfo nodeId="2891782949125170892" fileName="DebugSession.java" startLine="104" startPosition="27" endLine="105" endPosition="20" />
-    <scopeInfo nodeId="2891782949125171038" fileName="DebugSession.java" startLine="123" startPosition="24" endLine="124" endPosition="71" />
-    <scopeInfo nodeId="2891782949125170932" fileName="DebugSession.java" startLine="140" startPosition="54" endLine="141" endPosition="32" />
-    <scopeInfo nodeId="2891782949125170941" fileName="DebugSession.java" startLine="144" startPosition="77" endLine="145" endPosition="46" />
-    <scopeInfo nodeId="2891782949125170973" fileName="DebugSession.java" startLine="167" startPosition="74" endLine="168" endPosition="69" />
-    <scopeInfo nodeId="2891782949125170807" fileName="DebugSession.java" startLine="76" startPosition="53" endLine="78" endPosition="57">
+    <nodeInfo nodeId="2891782949125170649" fileName="DebugSession.java" startLine="20" startPosition="73" endLine="21" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myEventsProcessor" />
+    <nodeInfo nodeId="2891782949125170652" fileName="DebugSession.java" startLine="21" startPosition="57" endLine="22" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myIsMute" />
+    <nodeInfo nodeId="2891782949125170656" fileName="DebugSession.java" startLine="22" startPosition="44" endLine="23" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myEvaluationProvider" />
+    <nodeInfo nodeId="2891782949125170667" fileName="DebugSession.java" startLine="25" startPosition="74" endLine="26" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="2891782949125170669" fileName="DebugSession.java" startLine="26" startPosition="13" endLine="27" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2891782949125170673" fileName="DebugSession.java" startLine="27" startPosition="40" endLine="28" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2891782949125170678" fileName="DebugSession.java" startLine="28" startPosition="81" endLine="29" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="24227610116477700" fileName="DebugSession.java" startLine="33" startPosition="92" endLine="34" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2891782949125170690" fileName="DebugSession.java" startLine="39" startPosition="45" endLine="40" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2891782949125170699" fileName="DebugSession.java" startLine="43" startPosition="24" endLine="44" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2891782949125170710" fileName="DebugSession.java" startLine="45" startPosition="26" endLine="46" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2891782949125205943" fileName="DebugSession.java" startLine="47" startPosition="5" endLine="48" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="2891782949125170711" fileName="DebugSession.java" startLine="48" startPosition="43" endLine="49" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2891782949125170720" fileName="DebugSession.java" startLine="52" startPosition="23" endLine="53" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2891782949125170730" fileName="DebugSession.java" startLine="56" startPosition="47" endLine="57" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2891782949125170739" fileName="DebugSession.java" startLine="60" startPosition="26" endLine="61" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2891782949125170746" fileName="DebugSession.java" startLine="64" startPosition="26" endLine="65" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2891782949125170753" fileName="DebugSession.java" startLine="68" startPosition="25" endLine="69" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2891782949125170760" fileName="DebugSession.java" startLine="72" startPosition="44" endLine="73" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2891782949125170768" fileName="DebugSession.java" startLine="76" startPosition="59" endLine="77" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2891782949125170772" fileName="DebugSession.java" startLine="77" startPosition="41" endLine="78" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2891782949125170778" fileName="DebugSession.java" startLine="78" startPosition="48" endLine="79" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
+    <nodeInfo nodeId="2891782949125170785" fileName="DebugSession.java" startLine="79" startPosition="96" endLine="80" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
+    <nodeInfo nodeId="2891782949125170790" fileName="DebugSession.java" startLine="80" startPosition="79" endLine="81" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2891782949125170800" fileName="DebugSession.java" startLine="84" startPosition="54" endLine="85" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2891782949125170808" fileName="DebugSession.java" startLine="88" startPosition="53" endLine="89" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2891782949125170812" fileName="DebugSession.java" startLine="89" startPosition="41" endLine="90" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2891782949125170824" fileName="DebugSession.java" startLine="93" startPosition="36" endLine="94" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2891782949125170828" fileName="DebugSession.java" startLine="94" startPosition="41" endLine="95" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2891782949125170837" fileName="DebugSession.java" startLine="95" startPosition="64" endLine="96" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2891782949125170841" fileName="DebugSession.java" startLine="96" startPosition="30" endLine="97" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2891782949125170849" fileName="DebugSession.java" startLine="100" startPosition="54" endLine="101" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2891782949125170853" fileName="DebugSession.java" startLine="101" startPosition="41" endLine="102" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2891782949125170867" fileName="DebugSession.java" startLine="106" startPosition="71" endLine="107" endPosition="125" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2891782949125170876" fileName="DebugSession.java" startLine="107" startPosition="125" endLine="108" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2891782949125170893" fileName="DebugSession.java" startLine="116" startPosition="27" endLine="117" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2891782949125171004" fileName="DebugSession.java" startLine="126" startPosition="33" endLine="127" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2891782949125171013" fileName="DebugSession.java" startLine="127" startPosition="105" endLine="128" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2891782949125171029" fileName="DebugSession.java" startLine="130" startPosition="49" endLine="131" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2891782949125171045" fileName="DebugSession.java" startLine="132" startPosition="27" endLine="133" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2891782949125205945" fileName="DebugSession.java" startLine="133" startPosition="60" endLine="134" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="2891782949125171039" fileName="DebugSession.java" startLine="135" startPosition="24" endLine="136" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2891782949125171050" fileName="DebugSession.java" startLine="139" startPosition="13" endLine="140" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2891782949125171054" fileName="DebugSession.java" startLine="140" startPosition="28" endLine="141" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2891782949125170908" fileName="DebugSession.java" startLine="145" startPosition="12" endLine="146" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2891782949125170912" fileName="DebugSession.java" startLine="146" startPosition="22" endLine="147" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2891782949125170933" fileName="DebugSession.java" startLine="152" startPosition="54" endLine="153" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2891782949125170942" fileName="DebugSession.java" startLine="156" startPosition="77" endLine="157" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2891782949125170948" fileName="DebugSession.java" startLine="165" startPosition="64" endLine="166" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2891782949125170952" fileName="DebugSession.java" startLine="166" startPosition="68" endLine="167" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2891782949125170955" fileName="DebugSession.java" startLine="167" startPosition="28" endLine="168" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2891782949125170961" fileName="DebugSession.java" startLine="172" startPosition="65" endLine="173" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2891782949125170965" fileName="DebugSession.java" startLine="173" startPosition="69" endLine="174" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2891782949125170968" fileName="DebugSession.java" startLine="174" startPosition="29" endLine="175" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2891782949125170974" fileName="DebugSession.java" startLine="179" startPosition="74" endLine="180" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2891782949125170981" fileName="DebugSession.java" startLine="184" startPosition="96" endLine="185" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2891782949125170985" fileName="DebugSession.java" startLine="185" startPosition="69" endLine="186" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2891782949125170993" fileName="DebugSession.java" startLine="186" startPosition="82" endLine="187" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2891782949125205947" fileName="DebugSession.java" startLine="187" startPosition="44" endLine="188" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="2891782949125171037" fileName="DebugSession.java" startLine="135" startPosition="22" endLine="137" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2891782949125170624" fileName="DebugSession.java" startLine="160" startPosition="67" endLine="162" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MyDebugProcessAdapter#()V" />
+    <nodeInfo nodeId="2891782949125170705" fileName="DebugSession.java" startLine="44" startPosition="55" endLine="47" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2891782949125170906" fileName="DebugSession.java" startLine="145" startPosition="10" endLine="148" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2891782949125170686" fileName="DebugSession.java" startLine="38" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createUiState#()Ljetbrains/mps/debugger/java/runtime/JavaUiStateImpl;" />
+    <nodeInfo nodeId="2891782949125170716" fileName="DebugSession.java" startLine="51" startPosition="0" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="pause#()V" />
+    <nodeInfo nodeId="2891782949125170724" fileName="DebugSession.java" startLine="55" startPosition="0" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="stop#(Z)V" />
+    <nodeInfo nodeId="2891782949125170735" fileName="DebugSession.java" startLine="59" startPosition="0" endLine="63" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="stepOver#()V" />
+    <nodeInfo nodeId="2891782949125170742" fileName="DebugSession.java" startLine="63" startPosition="0" endLine="67" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="stepInto#()V" />
+    <nodeInfo nodeId="2891782949125170749" fileName="DebugSession.java" startLine="67" startPosition="0" endLine="71" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="stepOut#()V" />
+    <nodeInfo nodeId="2891782949125170756" fileName="DebugSession.java" startLine="71" startPosition="0" endLine="75" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canShowEvaluationDialog#()Z" />
+    <nodeInfo nodeId="2891782949125170796" fileName="DebugSession.java" startLine="83" startPosition="0" endLine="87" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getEventsProcessor#()Ljetbrains/mps/debugger/java/runtime/DebugVMEventsProcessor;" />
+    <nodeInfo nodeId="2891782949125170882" fileName="DebugSession.java" startLine="110" startPosition="0" endLine="114" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="sessionUnregistered#(Ljetbrains/mps/debug/api/DebugSessionManagerComponent;)V" />
+    <nodeInfo nodeId="2891782949125170936" fileName="DebugSession.java" startLine="155" startPosition="0" endLine="159" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setEvaluationProvider#(Ljetbrains/mps/debug/api/evaluation/IEvaluationProvider;)V" />
+    <nodeInfo nodeId="2891782949125170802" fileName="DebugSession.java" startLine="87" startPosition="0" endLine="92" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="pause#(Ljetbrains/mps/debugger/java/runtime/SuspendContext;)V" />
+    <nodeInfo nodeId="2891782949125170843" fileName="DebugSession.java" startLine="99" startPosition="0" endLine="104" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="resume#(Ljetbrains/mps/debugger/java/runtime/SuspendContext;)V" />
+    <nodeInfo nodeId="2891782949125170889" fileName="DebugSession.java" startLine="114" startPosition="0" endLine="119" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isMute#()Z" />
+    <nodeInfo nodeId="2891782949125170929" fileName="DebugSession.java" startLine="150" startPosition="0" endLine="155" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getEvaluationProvider#()Ljetbrains/mps/debug/api/evaluation/IEvaluationProvider;" />
+    <nodeInfo nodeId="2891782949125170637" fileName="DebugSession.java" startLine="177" startPosition="0" endLine="182" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="processAttached#(Ljetbrains/mps/debugger/java/runtime/DebugVMEventsProcessor;)V" />
+    <nodeInfo nodeId="24227610116484072" fileName="DebugSession.java" startLine="30" startPosition="65" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNode#(Ljava/lang/String;Ljava/lang/String;I)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="2891782949125170861" fileName="DebugSession.java" startLine="104" startPosition="0" endLine="110" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="sessionRegistered#(Ljetbrains/mps/debug/api/DebugSessionManagerComponent;)V" />
+    <nodeInfo nodeId="2891782949125171035" fileName="DebugSession.java" startLine="131" startPosition="64" endLine="137" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="24227610116484057" fileName="DebugSession.java" startLine="29" startPosition="91" endLine="36" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2891782949125170820" fileName="DebugSession.java" startLine="92" startPosition="0" endLine="99" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="refresh#()Ljetbrains/mps/debugger/java/runtime/JavaUiStateImpl;" />
+    <nodeInfo nodeId="2891782949125170627" fileName="DebugSession.java" startLine="163" startPosition="0" endLine="170" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="paused#(Ljetbrains/mps/debugger/java/runtime/SuspendContext;)V" />
+    <nodeInfo nodeId="2891782949125170632" fileName="DebugSession.java" startLine="170" startPosition="0" endLine="177" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="resumed#(Ljetbrains/mps/debugger/java/runtime/SuspendContext;)V" />
+    <nodeInfo nodeId="2891782949125170762" fileName="DebugSession.java" startLine="75" startPosition="0" endLine="83" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="step#(Ljetbrains/mps/debugger/java/runtime/DebugVMEventsProcessor/StepType;)V" />
+    <nodeInfo nodeId="2891782949125170642" fileName="DebugSession.java" startLine="182" startPosition="0" endLine="190" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="processDetached#(Ljetbrains/mps/debugger/java/runtime/DebugVMEventsProcessor;Z)V" />
+    <nodeInfo nodeId="2891782949125170695" fileName="DebugSession.java" startLine="42" startPosition="0" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="resume#()V" />
+    <nodeInfo nodeId="2891782949125171024" fileName="DebugSession.java" startLine="129" startPosition="48" endLine="138" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2891782949125171019" fileName="DebugSession.java" startLine="128" startPosition="82" endLine="139" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="2891782949125170659" fileName="DebugSession.java" startLine="24" startPosition="0" endLine="37" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="DebugSession#(Ljetbrains/mps/debugger/java/runtime/DebugVMEventsProcessor;Lcom/intellij/openapi/project/Project;)V" />
+    <nodeInfo nodeId="2891782949125170999" fileName="DebugSession.java" startLine="125" startPosition="50" endLine="142" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2891782949125170925" fileName="DebugSession.java" startLine="123" startPosition="75" endLine="144" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="action#()V" />
+    <nodeInfo nodeId="2891782949125170916" fileName="DebugSession.java" startLine="122" startPosition="41" endLine="144" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2891782949125170902" fileName="DebugSession.java" startLine="121" startPosition="51" endLine="148" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2891782949125170896" fileName="DebugSession.java" startLine="119" startPosition="0" endLine="150" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="muteBreakpoints#(Z)V" />
+    <scopeInfo nodeId="2891782949125170887" fileName="DebugSession.java" startLine="112" startPosition="73" endLine="112" endPosition="73" />
+    <scopeInfo nodeId="2891782949125170946" fileName="DebugSession.java" startLine="161" startPosition="37" endLine="161" endPosition="37" />
+    <scopeInfo nodeId="24227610116484084" fileName="DebugSession.java" startLine="33" startPosition="92" endLine="34" endPosition="71" />
+    <scopeInfo nodeId="2891782949125170689" fileName="DebugSession.java" startLine="39" startPosition="45" endLine="40" endPosition="43" />
+    <scopeInfo nodeId="2891782949125170709" fileName="DebugSession.java" startLine="45" startPosition="26" endLine="46" endPosition="13" />
+    <scopeInfo nodeId="2891782949125170719" fileName="DebugSession.java" startLine="52" startPosition="23" endLine="53" endPosition="30" />
+    <scopeInfo nodeId="2891782949125170729" fileName="DebugSession.java" startLine="56" startPosition="47" endLine="57" endPosition="46" />
+    <scopeInfo nodeId="2891782949125170738" fileName="DebugSession.java" startLine="60" startPosition="26" endLine="61" endPosition="47" />
+    <scopeInfo nodeId="2891782949125170745" fileName="DebugSession.java" startLine="64" startPosition="26" endLine="65" endPosition="47" />
+    <scopeInfo nodeId="2891782949125170752" fileName="DebugSession.java" startLine="68" startPosition="25" endLine="69" endPosition="46" />
+    <scopeInfo nodeId="2891782949125170759" fileName="DebugSession.java" startLine="72" startPosition="44" endLine="73" endPosition="16" />
+    <scopeInfo nodeId="2891782949125170799" fileName="DebugSession.java" startLine="84" startPosition="54" endLine="85" endPosition="29" />
+    <scopeInfo nodeId="2891782949125170892" fileName="DebugSession.java" startLine="116" startPosition="27" endLine="117" endPosition="20" />
+    <scopeInfo nodeId="2891782949125171038" fileName="DebugSession.java" startLine="135" startPosition="24" endLine="136" endPosition="71" />
+    <scopeInfo nodeId="2891782949125170932" fileName="DebugSession.java" startLine="152" startPosition="54" endLine="153" endPosition="32" />
+    <scopeInfo nodeId="2891782949125170941" fileName="DebugSession.java" startLine="156" startPosition="77" endLine="157" endPosition="46" />
+    <scopeInfo nodeId="2891782949125170973" fileName="DebugSession.java" startLine="179" startPosition="74" endLine="180" endPosition="69" />
+    <scopeInfo nodeId="2891782949125170807" fileName="DebugSession.java" startLine="88" startPosition="53" endLine="90" endPosition="57">
       <varInfo nodeId="2891782949125170809" varName="state" />
     </scopeInfo>
-    <scopeInfo nodeId="2891782949125170848" fileName="DebugSession.java" startLine="88" startPosition="54" endLine="90" endPosition="58">
+    <scopeInfo nodeId="2891782949125170848" fileName="DebugSession.java" startLine="100" startPosition="54" endLine="102" endPosition="58">
       <varInfo nodeId="2891782949125170850" varName="state" />
     </scopeInfo>
-    <scopeInfo nodeId="2891782949125170866" fileName="DebugSession.java" startLine="94" startPosition="71" endLine="96" endPosition="36">
+    <scopeInfo nodeId="2891782949125170866" fileName="DebugSession.java" startLine="106" startPosition="71" endLine="108" endPosition="36">
       <varInfo nodeId="2891782949125170868" varName="vmManager" />
     </scopeInfo>
-    <scopeInfo nodeId="2891782949125171044" fileName="DebugSession.java" startLine="120" startPosition="27" endLine="122" endPosition="84" />
-    <scopeInfo nodeId="2891782949125170907" fileName="DebugSession.java" startLine="133" startPosition="12" endLine="135" endPosition="42" />
-    <scopeInfo nodeId="2891782949125170624" fileName="DebugSession.java" startLine="148" startPosition="67" endLine="150" endPosition="5" />
-    <scopeInfo nodeId="2891782949125170947" fileName="DebugSession.java" startLine="153" startPosition="64" endLine="156" endPosition="43" />
-    <scopeInfo nodeId="2891782949125170960" fileName="DebugSession.java" startLine="160" startPosition="65" endLine="163" endPosition="44" />
-    <scopeInfo nodeId="2891782949125170666" fileName="DebugSession.java" startLine="20" startPosition="74" endLine="24" endPosition="91" />
-    <scopeInfo nodeId="2891782949125170686" fileName="DebugSession.java" startLine="26" startPosition="0" endLine="30" endPosition="0" />
-    <scopeInfo nodeId="2891782949125170716" fileName="DebugSession.java" startLine="39" startPosition="0" endLine="43" endPosition="0" />
-    <scopeInfo nodeId="2891782949125170724" fileName="DebugSession.java" startLine="43" startPosition="0" endLine="47" endPosition="0">
+    <scopeInfo nodeId="2891782949125171044" fileName="DebugSession.java" startLine="132" startPosition="27" endLine="134" endPosition="84" />
+    <scopeInfo nodeId="2891782949125170907" fileName="DebugSession.java" startLine="145" startPosition="12" endLine="147" endPosition="42" />
+    <scopeInfo nodeId="2891782949125170624" fileName="DebugSession.java" startLine="160" startPosition="67" endLine="162" endPosition="5" />
+    <scopeInfo nodeId="2891782949125170947" fileName="DebugSession.java" startLine="165" startPosition="64" endLine="168" endPosition="43" />
+    <scopeInfo nodeId="2891782949125170960" fileName="DebugSession.java" startLine="172" startPosition="65" endLine="175" endPosition="44" />
+    <scopeInfo nodeId="2891782949125170686" fileName="DebugSession.java" startLine="38" startPosition="0" endLine="42" endPosition="0" />
+    <scopeInfo nodeId="2891782949125170716" fileName="DebugSession.java" startLine="51" startPosition="0" endLine="55" endPosition="0" />
+    <scopeInfo nodeId="2891782949125170724" fileName="DebugSession.java" startLine="55" startPosition="0" endLine="59" endPosition="0">
       <varInfo nodeId="2891782949125170727" varName="terminateTargetVM" />
     </scopeInfo>
-    <scopeInfo nodeId="2891782949125170735" fileName="DebugSession.java" startLine="47" startPosition="0" endLine="51" endPosition="0" />
-    <scopeInfo nodeId="2891782949125170742" fileName="DebugSession.java" startLine="51" startPosition="0" endLine="55" endPosition="0" />
-    <scopeInfo nodeId="2891782949125170749" fileName="DebugSession.java" startLine="55" startPosition="0" endLine="59" endPosition="0" />
-    <scopeInfo nodeId="2891782949125170756" fileName="DebugSession.java" startLine="59" startPosition="0" endLine="63" endPosition="0" />
-    <scopeInfo nodeId="2891782949125170796" fileName="DebugSession.java" startLine="71" startPosition="0" endLine="75" endPosition="0" />
-    <scopeInfo nodeId="2891782949125170823" fileName="DebugSession.java" startLine="81" startPosition="36" endLine="85" endPosition="20">
+    <scopeInfo nodeId="2891782949125170735" fileName="DebugSession.java" startLine="59" startPosition="0" endLine="63" endPosition="0" />
+    <scopeInfo nodeId="2891782949125170742" fileName="DebugSession.java" startLine="63" startPosition="0" endLine="67" endPosition="0" />
+    <scopeInfo nodeId="2891782949125170749" fileName="DebugSession.java" startLine="67" startPosition="0" endLine="71" endPosition="0" />
+    <scopeInfo nodeId="2891782949125170756" fileName="DebugSession.java" startLine="71" startPosition="0" endLine="75" endPosition="0" />
+    <scopeInfo nodeId="2891782949125170796" fileName="DebugSession.java" startLine="83" startPosition="0" endLine="87" endPosition="0" />
+    <scopeInfo nodeId="2891782949125170823" fileName="DebugSession.java" startLine="93" startPosition="36" endLine="97" endPosition="20">
       <varInfo nodeId="2891782949125170829" varName="newState" />
       <varInfo nodeId="2891782949125170825" varName="state" />
     </scopeInfo>
-    <scopeInfo nodeId="2891782949125170882" fileName="DebugSession.java" startLine="98" startPosition="0" endLine="102" endPosition="0">
+    <scopeInfo nodeId="2891782949125170882" fileName="DebugSession.java" startLine="110" startPosition="0" endLine="114" endPosition="0">
       <varInfo nodeId="2891782949125170885" varName="manager" />
     </scopeInfo>
-    <scopeInfo nodeId="2891782949125170936" fileName="DebugSession.java" startLine="143" startPosition="0" endLine="147" endPosition="0">
+    <scopeInfo nodeId="2891782949125170936" fileName="DebugSession.java" startLine="155" startPosition="0" endLine="159" endPosition="0">
       <varInfo nodeId="2891782949125170939" varName="evaluationProvider" />
     </scopeInfo>
-    <scopeInfo nodeId="2891782949125170980" fileName="DebugSession.java" startLine="172" startPosition="96" endLine="176" endPosition="20" />
-    <scopeInfo nodeId="2891782949125170767" fileName="DebugSession.java" startLine="64" startPosition="59" endLine="69" endPosition="42">
+    <scopeInfo nodeId="2891782949125170980" fileName="DebugSession.java" startLine="184" startPosition="96" endLine="188" endPosition="20" />
+    <scopeInfo nodeId="2891782949125170767" fileName="DebugSession.java" startLine="76" startPosition="59" endLine="81" endPosition="42">
       <varInfo nodeId="2891782949125170773" varName="context" />
       <varInfo nodeId="2891782949125170769" varName="state" />
     </scopeInfo>
-    <scopeInfo nodeId="2891782949125170802" fileName="DebugSession.java" startLine="75" startPosition="0" endLine="80" endPosition="0">
+    <scopeInfo nodeId="2891782949125170802" fileName="DebugSession.java" startLine="87" startPosition="0" endLine="92" endPosition="0">
       <varInfo nodeId="2891782949125170805" varName="suspendContext" />
     </scopeInfo>
-    <scopeInfo nodeId="2891782949125170843" fileName="DebugSession.java" startLine="87" startPosition="0" endLine="92" endPosition="0">
+    <scopeInfo nodeId="2891782949125170843" fileName="DebugSession.java" startLine="99" startPosition="0" endLine="104" endPosition="0">
       <varInfo nodeId="2891782949125170846" varName="suspendContext" />
     </scopeInfo>
-    <scopeInfo nodeId="2891782949125170889" fileName="DebugSession.java" startLine="102" startPosition="0" endLine="107" endPosition="0" />
-    <scopeInfo nodeId="2891782949125170929" fileName="DebugSession.java" startLine="138" startPosition="0" endLine="143" endPosition="0" />
-    <scopeInfo nodeId="2891782949125170637" fileName="DebugSession.java" startLine="165" startPosition="0" endLine="170" endPosition="0">
+    <scopeInfo nodeId="2891782949125170889" fileName="DebugSession.java" startLine="114" startPosition="0" endLine="119" endPosition="0" />
+    <scopeInfo nodeId="2891782949125170929" fileName="DebugSession.java" startLine="150" startPosition="0" endLine="155" endPosition="0" />
+    <scopeInfo nodeId="2891782949125170637" fileName="DebugSession.java" startLine="177" startPosition="0" endLine="182" endPosition="0">
       <varInfo nodeId="2891782949125170640" varName="process" />
     </scopeInfo>
-    <scopeInfo nodeId="2891782949125170659" fileName="DebugSession.java" startLine="19" startPosition="0" endLine="25" endPosition="3">
-      <varInfo nodeId="2891782949125170662" varName="eventsProcessor" />
-      <varInfo nodeId="2891782949125170664" varName="p" />
+    <scopeInfo nodeId="24227610116484072" fileName="DebugSession.java" startLine="30" startPosition="65" endLine="36" endPosition="0">
+      <varInfo nodeId="24227610116484076" varName="fileName" />
+      <varInfo nodeId="24227610116484079" varName="position" />
+      <varInfo nodeId="24227610116484073" varName="unitName" />
     </scopeInfo>
-    <scopeInfo nodeId="2891782949125170698" fileName="DebugSession.java" startLine="31" startPosition="24" endLine="37" endPosition="38">
+    <scopeInfo nodeId="2891782949125170698" fileName="DebugSession.java" startLine="43" startPosition="24" endLine="49" endPosition="38">
       <varInfo nodeId="2891782949125170700" varName="context" />
     </scopeInfo>
-    <scopeInfo nodeId="2891782949125170861" fileName="DebugSession.java" startLine="92" startPosition="0" endLine="98" endPosition="0">
+    <scopeInfo nodeId="2891782949125170861" fileName="DebugSession.java" startLine="104" startPosition="0" endLine="110" endPosition="0">
       <varInfo nodeId="2891782949125170864" varName="manager" />
     </scopeInfo>
-    <scopeInfo nodeId="2891782949125170820" fileName="DebugSession.java" startLine="80" startPosition="0" endLine="87" endPosition="0" />
-    <scopeInfo nodeId="2891782949125171028" fileName="DebugSession.java" startLine="118" startPosition="49" endLine="125" endPosition="17">
+    <scopeInfo nodeId="2891782949125170820" fileName="DebugSession.java" startLine="92" startPosition="0" endLine="99" endPosition="0" />
+    <scopeInfo nodeId="2891782949125171028" fileName="DebugSession.java" startLine="130" startPosition="49" endLine="137" endPosition="17">
       <varInfo nodeId="2891782949125171030" varName="breakpoint" />
     </scopeInfo>
-    <scopeInfo nodeId="2891782949125170627" fileName="DebugSession.java" startLine="151" startPosition="0" endLine="158" endPosition="0">
+    <scopeInfo nodeId="2891782949125170627" fileName="DebugSession.java" startLine="163" startPosition="0" endLine="170" endPosition="0">
       <varInfo nodeId="2891782949125170630" varName="suspendContext" />
     </scopeInfo>
-    <scopeInfo nodeId="2891782949125170632" fileName="DebugSession.java" startLine="158" startPosition="0" endLine="165" endPosition="0">
+    <scopeInfo nodeId="2891782949125170632" fileName="DebugSession.java" startLine="170" startPosition="0" endLine="177" endPosition="0">
       <varInfo nodeId="2891782949125170635" varName="suspendContext" />
     </scopeInfo>
-    <scopeInfo nodeId="2891782949125170762" fileName="DebugSession.java" startLine="63" startPosition="0" endLine="71" endPosition="0">
+    <scopeInfo nodeId="2891782949125170762" fileName="DebugSession.java" startLine="75" startPosition="0" endLine="83" endPosition="0">
       <varInfo nodeId="2891782949125170765" varName="type" />
     </scopeInfo>
-    <scopeInfo nodeId="2891782949125170642" fileName="DebugSession.java" startLine="170" startPosition="0" endLine="178" endPosition="0">
+    <scopeInfo nodeId="2891782949125170642" fileName="DebugSession.java" startLine="182" startPosition="0" endLine="190" endPosition="0">
       <varInfo nodeId="2891782949125170647" varName="closedByUser" />
       <varInfo nodeId="2891782949125170645" varName="process" />
     </scopeInfo>
-    <scopeInfo nodeId="2891782949125170695" fileName="DebugSession.java" startLine="30" startPosition="0" endLine="39" endPosition="0" />
-    <scopeInfo nodeId="2891782949125171023" fileName="DebugSession.java" startLine="117" startPosition="48" endLine="126" endPosition="15" />
-    <scopeInfo nodeId="2891782949125171019" fileName="DebugSession.java" startLine="116" startPosition="82" endLine="127" endPosition="13">
+    <scopeInfo nodeId="2891782949125170695" fileName="DebugSession.java" startLine="42" startPosition="0" endLine="51" endPosition="0" />
+    <scopeInfo nodeId="2891782949125171023" fileName="DebugSession.java" startLine="129" startPosition="48" endLine="138" endPosition="15" />
+    <scopeInfo nodeId="2891782949125170666" fileName="DebugSession.java" startLine="25" startPosition="74" endLine="36" endPosition="6" />
+    <scopeInfo nodeId="2891782949125171019" fileName="DebugSession.java" startLine="128" startPosition="82" endLine="139" endPosition="13">
       <varInfo nodeId="2891782949125171021" varName="bp" />
     </scopeInfo>
-    <scopeInfo nodeId="2891782949125171003" fileName="DebugSession.java" startLine="114" startPosition="33" endLine="129" endPosition="48">
+    <scopeInfo nodeId="2891782949125170659" fileName="DebugSession.java" startLine="24" startPosition="0" endLine="37" endPosition="3">
+      <varInfo nodeId="2891782949125170662" varName="eventsProcessor" />
+      <varInfo nodeId="2891782949125170664" varName="p" />
+    </scopeInfo>
+    <scopeInfo nodeId="2891782949125171003" fileName="DebugSession.java" startLine="126" startPosition="33" endLine="141" endPosition="48">
       <varInfo nodeId="2891782949125171005" varName="breakpoints" />
       <varInfo nodeId="2891782949125171014" varName="requestManager" />
     </scopeInfo>
-    <scopeInfo nodeId="2891782949125170998" fileName="DebugSession.java" startLine="113" startPosition="50" endLine="130" endPosition="11" />
-    <scopeInfo nodeId="2891782949125170925" fileName="DebugSession.java" startLine="111" startPosition="75" endLine="132" endPosition="0" />
-    <scopeInfo nodeId="2891782949125170915" fileName="DebugSession.java" startLine="110" startPosition="41" endLine="132" endPosition="9" />
-    <scopeInfo nodeId="2891782949125170901" fileName="DebugSession.java" startLine="109" startPosition="51" endLine="136" endPosition="5" />
-    <scopeInfo nodeId="2891782949125170896" fileName="DebugSession.java" startLine="107" startPosition="0" endLine="138" endPosition="0">
+    <scopeInfo nodeId="2891782949125170998" fileName="DebugSession.java" startLine="125" startPosition="50" endLine="142" endPosition="11" />
+    <scopeInfo nodeId="2891782949125170925" fileName="DebugSession.java" startLine="123" startPosition="75" endLine="144" endPosition="0" />
+    <scopeInfo nodeId="2891782949125170915" fileName="DebugSession.java" startLine="122" startPosition="41" endLine="144" endPosition="9" />
+    <scopeInfo nodeId="2891782949125170901" fileName="DebugSession.java" startLine="121" startPosition="51" endLine="148" endPosition="5" />
+    <scopeInfo nodeId="2891782949125170896" fileName="DebugSession.java" startLine="119" startPosition="0" endLine="150" endPosition="0">
       <varInfo nodeId="2891782949125170899" varName="mute" />
     </scopeInfo>
-    <unitInfo nodeId="2891782949125170617" fileName="DebugSession.java" startLine="15" startPosition="0" endLine="180" endPosition="0" unitName="jetbrains.mps.debugger.java.runtime.DebugSession" />
-    <unitInfo nodeId="2891782949125170924" fileName="DebugSession.java" startLine="111" startPosition="56" endLine="132" endPosition="7" unitName="jetbrains.mps.debugger.java.runtime.DebugSession$1" />
-    <unitInfo nodeId="2891782949125170621" fileName="DebugSession.java" startLine="148" startPosition="0" endLine="179" endPosition="0" unitName="jetbrains.mps.debugger.java.runtime.DebugSession$MyDebugProcessAdapter" />
+    <unitInfo nodeId="2891782949125170617" fileName="DebugSession.java" startLine="20" startPosition="0" endLine="192" endPosition="0" unitName="jetbrains.mps.debugger.java.runtime.DebugSession" />
+    <unitInfo nodeId="24227610116484070" fileName="DebugSession.java" startLine="30" startPosition="37" endLine="36" endPosition="5" unitName="jetbrains.mps.debugger.java.runtime.DebugSession$1" />
+    <unitInfo nodeId="2891782949125170924" fileName="DebugSession.java" startLine="123" startPosition="56" endLine="144" endPosition="7" unitName="jetbrains.mps.debugger.java.runtime.DebugSession$2" />
+    <unitInfo nodeId="2891782949125170621" fileName="DebugSession.java" startLine="160" startPosition="0" endLine="191" endPosition="0" unitName="jetbrains.mps.debugger.java.runtime.DebugSession$MyDebugProcessAdapter" />
   </root>
   <root nodeId="2891782949125171059">
     <nodeInfo nodeId="2891782949125171061" fileName="SuspendContext.java" startLine="20" startPosition="38" endLine="21" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
@@ -2650,7 +2681,6 @@
     <scopeInfo nodeId="2891782949125171385" fileName="SuspendManager.java" startLine="227" startPosition="0" endLine="249" endPosition="0" />
     <scopeInfo nodeId="2891782949125171362" fileName="SuspendManager.java" startLine="191" startPosition="0" endLine="214" endPosition="0" />
     <unitInfo nodeId="2891782949125171479" fileName="SuspendManager.java" startLine="62" startPosition="27" endLine="17" endPosition="0" />
-    <unitInfo nodeId="2891782949125171334" fileName="SuspendManager.java" startLine="17" startPosition="0" endLine="251" endPosition="0" unitName="jetbrains.mps.debugger.java.runtime.SuspendManager" />
     <unitInfo nodeId="2891782949125171430" fileName="SuspendManager.java" startLine="37" startPosition="47" endLine="43" endPosition="5" unitName="jetbrains.mps.debugger.java.runtime.SuspendManager$1" />
     <unitInfo nodeId="2891782949125171488" fileName="SuspendManager.java" startLine="56" startPosition="27" endLine="60" endPosition="7" unitName="jetbrains.mps.debugger.java.runtime.SuspendManager$3" />
     <unitInfo nodeId="2891782949125145718" fileName="SuspendManager.java" startLine="187" startPosition="0" endLine="220" endPosition="0" unitName="jetbrains.mps.debugger.java.runtime.SuspendManager$SuspendContextByItSelf" />

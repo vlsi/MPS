@@ -178,6 +178,12 @@ public class FacetTests extends AbstractMPSFixtureTestCase {
         assertEquals(generatorOutputPath, myFacet.getSolution().getGeneratorOutputPath());
     }
 
+    public void testDefaultOutput () {
+        MPSConfigurationBean configurationBean = myFacet.getConfiguration().getState();
+        assertFalse(configurationBean.isUseTransientOutputFolder());
+        assertFalse(configurationBean.isUseModuleSourceFolder());
+    }
+
     public void testAddRemoveDependencies() throws Exception {
         final Module module2 = addModuleAndSetupFixture(myProjectBuilder);
         MPSFacet mpsFacet2 = addMPSFacet(module2);
