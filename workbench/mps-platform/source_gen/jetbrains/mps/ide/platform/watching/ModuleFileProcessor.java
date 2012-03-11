@@ -187,7 +187,7 @@ import java.util.Collections;
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         res.value = (file.isDirectory() ?
-          repo.findModulesUnderDir(mpsFile) :
+          repo.findModulesUnderDir(file.getPath()) :
           Collections.singletonList(repo.getModuleByFile(mpsFile))
         );
       }

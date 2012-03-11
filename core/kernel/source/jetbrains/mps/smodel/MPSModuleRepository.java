@@ -137,12 +137,10 @@ public class MPSModuleRepository implements CoreComponent {
     return myCanonicalFileToModuleMap.get(IFileUtils.getCanonicalPath(file));
   }
 
-  public List<IModule> findModulesUnderDir(IFile file) {
+  public List<IModule> findModulesUnderDir(String dirPath) {
     assertCanRead();
-    assert file.isDirectory() : file.getPath();
 
     List<IModule> result = new ArrayList<IModule>();
-    String dirPath = file.getPath();
     for (String path : myCanonicalFileToModuleMap.keySet()) {
       if (path.startsWith(dirPath)) {
         result.add(myCanonicalFileToModuleMap.get(path));
