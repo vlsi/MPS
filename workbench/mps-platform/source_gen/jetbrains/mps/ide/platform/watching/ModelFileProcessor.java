@@ -73,18 +73,11 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 
   @Override
   protected void processCreate(VirtualFile file) {
-    List<IModule> modules = findModelRootIntersection(file);
-    Set<ModuleReference> mrefs = toModuleRefs(modules);
-
-    SetSequence.fromSet(myModulesWithChangedModelSets).addSequence(ListSequence.fromList(modules));
-
     List<FileBasedModelDataSource> sources = findSourceIntersection(file);
-    for (Iterator<FileBasedModelDataSource> i = ListSequence.fromList(sources).iterator(); i.hasNext();) {
-      if (SetSequence.fromSet(mrefs).contains(i.next().getOrigin())) {
-        i.remove();
-      }
-    }
     SetSequence.fromSet(myInvalidatedSources).addSequence(ListSequence.fromList(sources));
+
+    List<IModule> modules = findModelRootIntersection(file);
+    SetSequence.fromSet(myModulesWithChangedModelSets).addSequence(ListSequence.fromList(modules));
   }
 
   protected void processContentChanged(VirtualFile file) {
