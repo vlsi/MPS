@@ -68,11 +68,15 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 
   @Override
   protected void processDelete(VirtualFile file) {
-    SetSequence.fromSet(myModulesWithChangedModelSets).addSequence(ListSequence.fromList(findModelRootIntersection(file)));
+    invalidateModelsAndRoots(file);
   }
 
   @Override
   protected void processCreate(VirtualFile file) {
+    invalidateModelsAndRoots(file);
+  }
+
+  private void invalidateModelsAndRoots(VirtualFile file) {
     List<FileBasedModelDataSource> sources = findSourceIntersection(file);
     SetSequence.fromSet(myInvalidatedSources).addSequence(ListSequence.fromList(sources));
 

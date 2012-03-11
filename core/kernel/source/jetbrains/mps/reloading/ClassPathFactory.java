@@ -39,6 +39,24 @@ public class ClassPathFactory {
   private List<CompositeClassPathItem> myCompositeClassPathItems = new ArrayList<CompositeClassPathItem>();
 
   @NotNull
+  public RealClassPathItem createFromPathFS(String path, @Nullable String requestor) throws IOException {
+    boolean jared = path.contains("!/");
+    boolean exists = jared ? FileSystem.getInstance().getFileByPath(path).exists() : new File(path).exists();
+    if (!exists) {
+      String moduleString = requestor == null ? "" : (" in " + requestor.toString());
+      String message = "Can't load class path item " + path + moduleString + "." + (new File(path).isDirectory() ? " Execute make in IDEA." : "");
+      LOG.debug(message, new Throwable());
+      return new NonExistingClassPathItem(path);
+    }
+
+    if (!jared && new File(path).isDirectory()) {
+      return new FileClassPathItem(path);
+    } else {
+      return new JarFileClassPathItem(path);
+    }
+  }
+
+  @NotNull
   public RealClassPathItem createFromPath(String path, @Nullable String requestor) throws IOException {
     if (myCache.containsKey(path)) return myCache.get(path);
 

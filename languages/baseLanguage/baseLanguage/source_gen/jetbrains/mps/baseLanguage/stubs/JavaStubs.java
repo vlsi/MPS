@@ -37,7 +37,7 @@ public class JavaStubs extends AbstractModelRootManager {
 
   /*package*/ IClassPathItem create(String path) {
     try {
-      return ClassPathFactory.getInstance().createFromPath(path, "JavaStubs");
+      return ClassPathFactory.getInstance().createFromPathFS(path, "JavaStubs");
     } catch (IOException e) {
       e.printStackTrace();
       // To change body of catch statement use File | Settings | File Templates. 
