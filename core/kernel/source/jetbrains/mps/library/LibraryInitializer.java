@@ -16,6 +16,7 @@
 package jetbrains.mps.library;
 
 import jetbrains.mps.cleanup.CleanupManager;
+import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.library.ModulesMiner.ModuleHandle;
 import jetbrains.mps.library.contributor.LibraryContributor;
 import jetbrains.mps.project.IModule;
@@ -25,17 +26,38 @@ import jetbrains.mps.smodel.language.ExtensionRegistry;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.util.PathManager;
 import jetbrains.mps.vfs.FileSystem;
-import jetbrains.mps.vfs.IFile;
 
 import java.util.*;
 import java.util.concurrent.CopyOnWriteArrayList;
 
-public class LibraryInitializer {
+public class LibraryInitializer implements CoreComponent {
+  private static LibraryInitializer INSTANCE;
+
+  public static LibraryInitializer getInstance() {
+    return INSTANCE;
+  }
+
   private Set<String> myLoadedLibs = new HashSet<String>();
   private Map<String, MPSModuleOwner> myLibsToOwners = new HashMap<String, MPSModuleOwner>();
 
-  private MPSModuleRepository myRepo = MPSModuleRepository.getInstance();
-  private ClassLoaderManager myCLM = ClassLoaderManager.getInstance();
+  private MPSModuleRepository myRepo;
+  private ClassLoaderManager myCLM;
+
+  public void init() {
+    if (INSTANCE != null) {
+      throw new IllegalStateException("double initialization");
+    }
+    INSTANCE = this;
+  }
+
+  public void dispose() {
+    INSTANCE = null;
+  }
+
+  public LibraryInitializer(MPSModuleRepository repo, ClassLoaderManager clm) {
+    myRepo = repo;
+    myCLM = clm;
+  }
 
   public void update() {
     update(false);
@@ -55,25 +77,25 @@ public class LibraryInitializer {
     myLoadedLibs = newLibs;
   }
 
-  public Set<String> getLibs(){
+  public Set<String> getLibs() {
     return myLibsToOwners.keySet();
   }
 
-  public List<IModule> registerNewModules(String lib, Collection<ModuleHandle> modules){
+  public List<IModule> registerNewModules(String lib, Collection<ModuleHandle> modules) {
     ModelAccess.assertLegalWrite();
 
     MPSModuleOwner owner = myLibsToOwners.get(lib);
-    assert owner!=null;
+    assert owner != null;
 
     List<IModule> loaded = new ArrayList<IModule>();
-    for (ModuleHandle m:modules){
+    for (ModuleHandle m : modules) {
       IModule module = MPSModuleRepository.getInstance().registerModule(m, owner);
       module.onModuleLoad();
       loaded.add(module);
     }
     return loaded;
   }
-  
+
   private void reload(Set<String> loadedLibs, Set<String> newLibs, boolean refreshFiles) {
     ModelAccess.assertLegalWrite();
 
@@ -135,19 +157,6 @@ public class LibraryInitializer {
         }
       }
     }
-  }
-
-
-  //----------singleton
-
-  private static LibraryInitializer ourInstance = new LibraryInitializer();
-
-  public static LibraryInitializer getInstance() {
-    return ourInstance;
-  }
-
-  private LibraryInitializer() {
-
   }
 
   //----------ext point
