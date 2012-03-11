@@ -64,7 +64,7 @@ public class JUnitTests_Configuration_RunProfileState extends DebuggerRunProfile
     TestRunState runState = new TestRunState(nodeWrappers);
     TestEventsDispatcher eventsDispatcher = new TestEventsDispatcher(runState);
     ConsoleView console = ConsoleCreator.createConsoleView(project, false);
-    console.addMessageFilter(new JavaStackTraceFilter());
+    console.addMessageFilter(new JavaStackTraceFilter(project));
     final UnitTestViewComponent viewComponent = new UnitTestViewComponent(project, new ProjectOperationContext(ProjectHelper.toMPSProject(project)), console, runState, new _FunctionTypes._void_P0_E0() {
       public void invoke() {
         if (process != null) {
