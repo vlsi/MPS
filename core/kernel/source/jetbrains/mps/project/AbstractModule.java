@@ -477,6 +477,7 @@ public abstract class AbstractModule implements IModule {
 
       for (SModelDescriptor md : smRepo.getModelDescriptors(this)) {
         if (allLoadedModels.contains(md.getSModelReference())) continue;
+        if (!(md instanceof BaseSModelDescriptorWithSource)) continue;
         smRepo.unRegisterModelDescriptor(md, this);
       }
     }
