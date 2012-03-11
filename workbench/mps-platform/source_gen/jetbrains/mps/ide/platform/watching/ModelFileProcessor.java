@@ -7,8 +7,6 @@ import jetbrains.mps.smodel.descriptor.source.FileBasedModelDataSource;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.project.structure.modules.ModuleReference;
-import java.util.Iterator;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.smodel.descriptor.source.ReloadableSources;
 import com.intellij.openapi.progress.ProgressIndicator;
@@ -26,6 +24,7 @@ import jetbrains.mps.smodel.descriptor.source.changes.ModelFileWatcher;
 import java.io.File;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import com.intellij.openapi.util.io.FileUtil;
+import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 
 /*package*/ class ModelFileProcessor extends EventProcessor {
@@ -36,13 +35,6 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
   }
 
   public void validateModules(Iterable<IModule> modules) {
-    // todo validate modules from ReloadableSources even if we haven't invalidated them by our own 
-    Set<ModuleReference> toValidate = toModuleRefs(modules);
-    for (Iterator<FileBasedModelDataSource> i = SetSequence.fromSet(myInvalidatedSources).iterator(); i.hasNext();) {
-      if (SetSequence.fromSet(toValidate).contains(i.next().getOrigin())) {
-        i.remove();
-      }
-    }
     SetSequence.fromSet(myModulesWithChangedModelSets).removeSequence(Sequence.fromIterable(modules));
   }
 
