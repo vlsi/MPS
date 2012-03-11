@@ -6,34 +6,44 @@ import java.util.Set;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
+import java.util.Map;
+import jetbrains.mps.project.Project;
+import java.util.List;
+import jetbrains.mps.library.ModulesMiner;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
+import java.util.HashMap;
 import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.library.LibraryInitializer;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.fileTypes.MPSFileTypesManager;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import java.util.List;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.internal.collections.runtime.ISelector;
-import jetbrains.mps.smodel.Generator;
-import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import java.util.ArrayList;
+import jetbrains.mps.internal.collections.runtime.IVisitor;
+import jetbrains.mps.project.ProjectManager;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.FileSystem;
+import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.smodel.Generator;
+import java.util.ArrayList;
+import jetbrains.mps.project.structure.modules.ModuleReference;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
 import java.util.Collections;
 
 /*package*/ class ModuleFileProcessor extends EventProcessor {
   private final Set<IModule> myChangedModules = SetSequence.fromSet(new HashSet<IModule>());
   private final Set<IModule> myDeletedModules = SetSequence.fromSet(new HashSet<IModule>());
+  private final Map<Project, List<ModulesMiner.ModuleHandle>> myNewProjectModules = MapSequence.fromMap(new HashMap<Project, List<ModulesMiner.ModuleHandle>>());
+  private final Map<String, List<ModulesMiner.ModuleHandle>> myNewLibModules = MapSequence.fromMap(new HashMap<String, List<ModulesMiner.ModuleHandle>>());
   private final Set<IModule> myProcessedModules = SetSequence.fromSet(new HashSet<IModule>());
-  private boolean myNeedReload = false;
 
   public ModuleFileProcessor() {
   }
 
   protected boolean isEmpty() {
-    return SetSequence.fromSet(myChangedModules).isEmpty() && SetSequence.fromSet(myDeletedModules).isEmpty() && !(myNeedReload);
+    return SetSequence.fromSet(myChangedModules).isEmpty() && SetSequence.fromSet(myDeletedModules).isEmpty() && MapSequence.fromMap(myNewLibModules).isEmpty() && MapSequence.fromMap(myNewProjectModules).isEmpty();
   }
 
   public void update(ProgressIndicator indicator) {
@@ -50,9 +60,14 @@ import java.util.Collections;
       MPSModuleRepository.getInstance().removeModule(module);
       SetSequence.fromSet(myProcessedModules).addElement(module);
     }
-    if (myNeedReload) {
-      // update lib modules 
-      // update project modules 
+    // update lib modules 
+    for (String lib : SetSequence.fromSet(MapSequence.fromMap(myNewLibModules).keySet())) {
+      List<IModule> newModules = LibraryInitializer.getInstance().registerNewModules(lib, MapSequence.fromMap(myNewLibModules).get(lib));
+      SetSequence.fromSet(myProcessedModules).addSequence(ListSequence.fromList(newModules));
+    }
+    // update project modules 
+    for (Project project : SetSequence.fromSet(MapSequence.fromMap(myNewProjectModules).keySet())) {
+      addNewModules(project, MapSequence.fromMap(myNewProjectModules).get(project));
     }
   }
 
@@ -75,8 +90,57 @@ import java.util.Collections;
 
   @Override
   protected void processCreate(VirtualFile file) {
-    if (file.isDirectory() || MPSFileTypesManager.instance().isModuleFile(file)) {
-      myNeedReload = true;
+    // process libraries 
+    final String path = file.getPath();
+    Iterable<String> libs = LibraryInitializer.getInstance().getLibs();
+
+    String lib = Sequence.fromIterable(libs).where(new IWhereFilter<String>() {
+      public boolean accept(String it) {
+        return path.startsWith(it);
+      }
+    }).first();
+    if (lib != null) {
+      readModulesFrom(lib, path);
+    } else {
+      Sequence.fromIterable(libs).where(new IWhereFilter<String>() {
+        public boolean accept(String it) {
+          return it.startsWith(path);
+        }
+      }).visitAll(new IVisitor<String>() {
+        public void visit(String it) {
+          readModulesFrom(it, it);
+        }
+      });
+    }
+
+    // process projects 
+    for (Project project : ProjectManager.getInstance().getOpenProjects()) {
+      for (String p : project.getWatchedModulesPaths()) {
+        if (p.startsWith(file.getPath())) {
+          IFile moduleFile = FileSystem.getInstance().getFileByPath(p);
+          List<ModulesMiner.ModuleHandle> module = ModulesMiner.getInstance().collectModules(moduleFile, false);
+          List<ModulesMiner.ModuleHandle> oldList = MapSequence.fromMap(myNewProjectModules).get(project);
+          if (oldList == null) {
+            MapSequence.fromMap(myNewProjectModules).put(project, module);
+          } else {
+            ListSequence.fromList(oldList).addSequence(ListSequence.fromList(module));
+          }
+        }
+      }
+    }
+  }
+
+  private void readModulesFrom(String lib, String path) {
+    List<ModulesMiner.ModuleHandle> modules = ModulesMiner.getInstance().collectModules(FileSystem.getInstance().getFileByPath(path), false);
+    if (ListSequence.fromList(modules).isEmpty()) {
+      return;
+    }
+
+    List<ModulesMiner.ModuleHandle> oldList = MapSequence.fromMap(myNewLibModules).get(lib);
+    if (oldList == null) {
+      MapSequence.fromMap(myNewLibModules).put(lib, modules);
+    } else {
+      ListSequence.fromList(oldList).addSequence(ListSequence.fromList(modules));
     }
   }
 
@@ -102,6 +166,17 @@ import java.util.Collections;
         );
       }
     });
+  }
+
+  public List<IModule> addNewModules(Project p, List<ModulesMiner.ModuleHandle> modules) {
+    ArrayList<IModule> result = new ArrayList<IModule>();
+    for (ModulesMiner.ModuleHandle m : modules) {
+      IModule module = MPSModuleRepository.getInstance().registerModule(m, p);
+      ModuleReference mr = module.getModuleReference();
+      p.addModule(mr);
+      result.add(module);
+    }
+    return result;
   }
 
   private static List<IModule> getModulesByFile(final VirtualFile file) {

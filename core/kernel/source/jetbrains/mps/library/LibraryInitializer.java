@@ -16,6 +16,7 @@
 package jetbrains.mps.library;
 
 import jetbrains.mps.cleanup.CleanupManager;
+import jetbrains.mps.library.ModulesMiner.ModuleHandle;
 import jetbrains.mps.library.contributor.LibraryContributor;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.reloading.ClassLoaderManager;
@@ -24,6 +25,7 @@ import jetbrains.mps.smodel.language.ExtensionRegistry;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.util.PathManager;
 import jetbrains.mps.vfs.FileSystem;
+import jetbrains.mps.vfs.IFile;
 
 import java.util.*;
 import java.util.concurrent.CopyOnWriteArrayList;
@@ -34,7 +36,6 @@ public class LibraryInitializer {
 
   private MPSModuleRepository myRepo = MPSModuleRepository.getInstance();
   private ClassLoaderManager myCLM = ClassLoaderManager.getInstance();
-  private volatile boolean myReloading = false;
 
   public void update() {
     update(false);
@@ -54,10 +55,27 @@ public class LibraryInitializer {
     myLoadedLibs = newLibs;
   }
 
-  private void reload(Set<String> loadedLibs, Set<String> newLibs, boolean refreshFiles) {
+  public Set<String> getLibs(){
+    return myLibsToOwners.keySet();
+  }
+
+  public List<IModule> registerNewModules(String lib, Collection<ModuleHandle> modules){
     ModelAccess.assertLegalWrite();
 
-    setLoadingState(true);
+    MPSModuleOwner owner = myLibsToOwners.get(lib);
+    assert owner!=null;
+
+    List<IModule> loaded = new ArrayList<IModule>();
+    for (ModuleHandle m:modules){
+      IModule module = MPSModuleRepository.getInstance().registerModule(m, owner);
+      module.onModuleLoad();
+      loaded.add(module);
+    }
+    return loaded;
+  }
+  
+  private void reload(Set<String> loadedLibs, Set<String> newLibs, boolean refreshFiles) {
+    ModelAccess.assertLegalWrite();
 
     //unload
     HashSet<String> toUnload = new HashSet<String>(loadedLibs);
@@ -83,8 +101,6 @@ public class LibraryInitializer {
     myCLM.initRuntimeEnvironment();
     LanguageRegistry.getInstance().loadLanguages();
     ExtensionRegistry.getInstance().loadExtensionDescriptors();
-
-    setLoadingState(false);
   }
 
   protected void fireOnLoad(final MPSModuleOwner owner) {
@@ -144,15 +160,5 @@ public class LibraryInitializer {
 
   public void removeContributor(LibraryContributor c) {
     myContributors.remove(c);
-  }
-
-  //---------reload events
-
-  private void setLoadingState(boolean started) {
-    myReloading = started;
-  }
-
-  public boolean isReloading() {
-    return myReloading;
   }
 }

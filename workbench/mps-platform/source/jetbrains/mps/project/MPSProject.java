@@ -20,6 +20,8 @@ import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 
 import java.io.File;
+import java.util.Collections;
+import java.util.List;
 
 public class MPSProject extends Project implements ProjectComponent {
   protected com.intellij.openapi.project.Project myProject;
@@ -71,6 +73,11 @@ public class MPSProject extends Project implements ProjectComponent {
   @Override
   public String getName() {
     return getProject().getName();
+  }
+
+  @Override
+  public List<String> getWatchedModulesPaths() {
+    return Collections.emptyList();
   }
 
   @Deprecated

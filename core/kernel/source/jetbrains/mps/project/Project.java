@@ -37,6 +37,8 @@ public abstract class Project implements MPSModuleOwner {
     return myScope;
   }
 
+  public abstract List<String> getWatchedModulesPaths();
+  
   @NotNull
   public List<IModule> getModules() {
     List<IModule> result = new ArrayList<IModule>();
