@@ -360,7 +360,7 @@ public abstract class AbstractModule implements IModule {
   }
 
   protected void reloadAfterDescriptorChange() {
-    loadNewModels();
+    updateModelsSet();
 
     updatePackagedDescriptorClasspath();
     invalidateClassPath();
@@ -445,9 +445,10 @@ public abstract class AbstractModule implements IModule {
     return result;
   }
 
-  public void loadNewModels() {
+  public void updateModelsSet() {
     mySModelRoots.clear();
 
+    List<SModelReference> allLoadedModels = new ArrayList<SModelReference>();
     ModuleDescriptor descriptor = getModuleDescriptor();
     if (descriptor != null) {
       SModelRepository smRepo = SModelRepository.getInstance();
@@ -457,19 +458,26 @@ public abstract class AbstractModule implements IModule {
           SModelRoot root = new SModelRoot(modelRoot);
           mySModelRoots.add(root);
           IModelRootManager manager = root.getManager();
-          if (manager != null) {
-            for (SModelDescriptor model : manager.load(root.getModelRoot(), this)) {
-              if (smRepo.getModelDescriptor(model.getSModelReference()) == null) {
-                smRepo.registerModelDescriptor(model, this);
-              }
+          if (manager == null) continue;
+          //model with model root manager not yet loaded - should be loaded after classes reloading
+
+          Collection<SModelDescriptor> models = manager.load(root.getModelRoot(), this);
+          for (SModelDescriptor model : models) {
+            allLoadedModels.add(model.getSModelReference());
+            if (smRepo.getModelDescriptor(model.getSModelReference()) == null) {
+              smRepo.registerModelDescriptor(model, this);
             }
           }
-          //model with model root manager not yet loaded - should be loaded after classes reloading
         } catch (ManagerNotFoundException e) {
           //LOG.warning("Error loading models from root: prefix: \"" + modelRoot.getPrefix() + "\" path: \"" + modelRoot.getPath() + "\". Requested by: " + this, e);
         } catch (Exception e) {
           LOG.error("Error loading models from root: " + "\" path: \"" + modelRoot.getPath() + "\". Requested by: " + this, e);
         }
+      }
+
+      for (SModelDescriptor md : smRepo.getModelDescriptors(this)) {
+        if (allLoadedModels.contains(md.getSModelReference())) continue;
+        smRepo.unRegisterModelDescriptor(md, this);
       }
     }
 
