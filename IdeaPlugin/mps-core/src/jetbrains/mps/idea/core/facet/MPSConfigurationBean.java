@@ -22,7 +22,10 @@ import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
 import org.jetbrains.annotations.NonNls;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
+import java.util.UUID;
 
 /**
  * evgeny, 10/26/11
@@ -31,10 +34,10 @@ public class MPSConfigurationBean {
   @NonNls
   static final String SOLUTION_FILE_NAME = "solution";
 
-    @Transient
-    private final SolutionDescriptor myDescriptor;
-    private boolean myUseModuleSourceFolder = false;
-    private boolean myUseTransientOutputFolder = false;
+  @Transient
+  private final SolutionDescriptor myDescriptor;
+  private boolean myUseModuleSourceFolder = false;
+  private boolean myUseTransientOutputFolder = false;
 
   public MPSConfigurationBean() {
     myDescriptor = new SolutionDescriptor();
@@ -58,17 +61,17 @@ public class MPSConfigurationBean {
     myUseModuleSourceFolder = use;
   }
 
-    public boolean isUseModuleSourceFolder() {
-        return myUseModuleSourceFolder;
-    }
+  public boolean isUseModuleSourceFolder() {
+    return myUseModuleSourceFolder;
+  }
 
-    public boolean isUseTransientOutputFolder() {
-        return myUseTransientOutputFolder;
-    }
+  public boolean isUseTransientOutputFolder() {
+    return myUseTransientOutputFolder;
+  }
 
-    public void setUseTransientOutputFolder(boolean useTransientOutputFolder) {
-        this.myUseTransientOutputFolder = useTransientOutputFolder;
-    }
+  public void setUseTransientOutputFolder(boolean useTransientOutputFolder) {
+    this.myUseTransientOutputFolder = useTransientOutputFolder;
+  }
 
   public String getGeneratorOutputPath() {
     return myDescriptor.getOutputPath();
