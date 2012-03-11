@@ -121,8 +121,16 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
   }
 
   private boolean intersects(VirtualFile vf1, VirtualFile vf2) {
+    if (vf1 == null || vf2 == null) {
+      return false;
+    }
+
     File f1 = VirtualFileUtils.toFile(vf1);
     File f2 = VirtualFileUtils.toFile(vf2);
+    if (f1 == null || f2 == null) {
+      return false;
+    }
+
     return FileUtil.isAncestor(f1, f2, false) || FileUtil.isAncestor(f2, f1, false);
   }
 
