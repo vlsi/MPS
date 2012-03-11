@@ -225,7 +225,7 @@ public class TransformatorImpl extends TransformatorBuilder.Transformator {
         } else {
           fqNameNode = TransformationUtil.createStringLiteral(SConceptPropertyOperations.getString(componentType, "alias"));
         }
-        // todo multi-array 
+        // todo multi-arraycal 
         SNode size = SLinkOperations.getTarget(ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(SLinkOperations.getTarget(newExpression, "creator", true), "jetbrains.mps.baseLanguage.structure.ArrayCreator"), "dimensionExpression", true)).first(), "expression", true);
 
         TransformationUtil.replaceArrayConstructor(newExpression, fqNameNode, size);
