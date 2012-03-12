@@ -289,33 +289,42 @@
     <nodeInfo nodeId="6784047278245018095" fileName="ModelFileProcessor.java" startLine="43" startPosition="87" endLine="44" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6784047278245016847" fileName="ModelFileProcessor.java" startLine="46" startPosition="87" endLine="47" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8474613039627889851" fileName="ModelFileProcessor.java" startLine="48" startPosition="5" endLine="49" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6784047278245094166" fileName="ModelFileProcessor.java" startLine="52" startPosition="47" endLine="53" endPosition="147" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6784047278245094166" fileName="ModelFileProcessor.java" startLine="52" startPosition="47" endLine="53" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5573243241919304599" fileName="ModelFileProcessor.java" startLine="57" startPosition="50" endLine="58" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5573243241919304595" fileName="ModelFileProcessor.java" startLine="62" startPosition="50" endLine="63" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5573243241919304574" fileName="ModelFileProcessor.java" startLine="66" startPosition="59" endLine="67" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5573243241919304579" fileName="ModelFileProcessor.java" startLine="67" startPosition="74" endLine="68" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5573243241919304574" fileName="ModelFileProcessor.java" startLine="66" startPosition="59" endLine="67" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5573243241919304579" fileName="ModelFileProcessor.java" startLine="67" startPosition="81" endLine="68" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5573243241919304584" fileName="ModelFileProcessor.java" startLine="68" startPosition="90" endLine="69" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="5573243241919304585" fileName="ModelFileProcessor.java" startLine="69" startPosition="0" endLine="70" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5573243241919304590" fileName="ModelFileProcessor.java" startLine="70" startPosition="60" endLine="71" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6784047278245097124" fileName="ModelFileProcessor.java" startLine="74" startPosition="58" endLine="75" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6784047278245206036" fileName="ModelFileProcessor.java" startLine="78" startPosition="69" endLine="79" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6784047278245206075" fileName="ModelFileProcessor.java" startLine="82" startPosition="59" endLine="83" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
-    <nodeInfo nodeId="6784047278245206076" fileName="ModelFileProcessor.java" startLine="84" startPosition="9" endLine="85" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6784047278245206085" fileName="ModelFileProcessor.java" startLine="85" startPosition="54" endLine="86" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="6784047278245206086" fileName="ModelFileProcessor.java" startLine="88" startPosition="5" endLine="89" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6784047278245205872" fileName="ModelFileProcessor.java" startLine="92" startPosition="83" endLine="93" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6784047278245204241" fileName="ModelFileProcessor.java" startLine="93" startPosition="106" endLine="94" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6784047278245205903" fileName="ModelFileProcessor.java" startLine="97" startPosition="50" endLine="98" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
-    <nodeInfo nodeId="6784047278245205883" fileName="ModelFileProcessor.java" startLine="99" startPosition="9" endLine="100" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6784047278245206035" fileName="ModelFileProcessor.java" startLine="100" startPosition="62" endLine="101" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="6784047278245205851" fileName="ModelFileProcessor.java" startLine="103" startPosition="5" endLine="104" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5978443222856194187" fileName="ModelFileProcessor.java" startLine="108" startPosition="37" endLine="109" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="268001112906905931" fileName="ModelFileProcessor.java" startLine="110" startPosition="5" endLine="111" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5573243241919304585" fileName="ModelFileProcessor.java" startLine="69" startPosition="0" endLine="70" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5573243241919304590" fileName="ModelFileProcessor.java" startLine="70" startPosition="67" endLine="71" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6784047278245097124" fileName="ModelFileProcessor.java" startLine="74" startPosition="58" endLine="75" endPosition="118" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6784047278245206036" fileName="ModelFileProcessor.java" startLine="78" startPosition="88" endLine="79" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="530588068880205972" fileName="ModelFileProcessor.java" startLine="79" startPosition="72" endLine="80" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="530588068880205980" fileName="ModelFileProcessor.java" startLine="80" startPosition="33" endLine="81" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="530588068880205982" fileName="ModelFileProcessor.java" startLine="81" startPosition="0" endLine="82" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6784047278245206075" fileName="ModelFileProcessor.java" startLine="85" startPosition="49" endLine="86" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
+    <nodeInfo nodeId="6784047278245206076" fileName="ModelFileProcessor.java" startLine="87" startPosition="9" endLine="88" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="530588068880206061" fileName="ModelFileProcessor.java" startLine="89" startPosition="24" endLine="90" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6784047278245206085" fileName="ModelFileProcessor.java" startLine="91" startPosition="16" endLine="92" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+    <nodeInfo nodeId="6784047278245206086" fileName="ModelFileProcessor.java" startLine="95" startPosition="5" endLine="96" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6784047278245205872" fileName="ModelFileProcessor.java" startLine="99" startPosition="102" endLine="100" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6784047278245204241" fileName="ModelFileProcessor.java" startLine="100" startPosition="106" endLine="101" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="530588068880205963" fileName="ModelFileProcessor.java" startLine="101" startPosition="110" endLine="102" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="530588068880205970" fileName="ModelFileProcessor.java" startLine="102" startPosition="33" endLine="103" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="6784047278245205903" fileName="ModelFileProcessor.java" startLine="106" startPosition="37" endLine="107" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
+    <nodeInfo nodeId="6784047278245205883" fileName="ModelFileProcessor.java" startLine="108" startPosition="9" endLine="109" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="530588068880206073" fileName="ModelFileProcessor.java" startLine="110" startPosition="24" endLine="111" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="530588068880206078" fileName="ModelFileProcessor.java" startLine="112" startPosition="16" endLine="113" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+    <nodeInfo nodeId="6784047278245205851" fileName="ModelFileProcessor.java" startLine="116" startPosition="5" endLine="117" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5978443222856194187" fileName="ModelFileProcessor.java" startLine="121" startPosition="37" endLine="122" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="268001112906905931" fileName="ModelFileProcessor.java" startLine="123" startPosition="5" endLine="124" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="9045182831066365691" fileName="ModelFileProcessor.java" startLine="28" startPosition="0" endLine="30" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ModelFileProcessor#()V" />
+    <nodeInfo nodeId="530588068880206065" fileName="ModelFileProcessor.java" startLine="91" startPosition="14" endLine="93" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="530588068880206076" fileName="ModelFileProcessor.java" startLine="112" startPosition="14" endLine="114" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="6784047278245016842" fileName="ModelFileProcessor.java" startLine="45" startPosition="5" endLine="48" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="6784047278245206064" fileName="ModelFileProcessor.java" startLine="81" startPosition="89" endLine="84" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6784047278245204288" fileName="ModelFileProcessor.java" startLine="96" startPosition="79" endLine="99" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5978443222856194138" fileName="ModelFileProcessor.java" startLine="107" startPosition="54" endLine="110" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6784047278245206064" fileName="ModelFileProcessor.java" startLine="84" startPosition="89" endLine="87" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6784047278245204288" fileName="ModelFileProcessor.java" startLine="105" startPosition="76" endLine="108" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5978443222856194138" fileName="ModelFileProcessor.java" startLine="120" startPosition="54" endLine="123" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="8526829049878372398" fileName="ModelFileProcessor.java" startLine="31" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="validateModules#(Ljava/lang/Iterable;)V" />
     <nodeInfo nodeId="6472945657448278758" fileName="ModelFileProcessor.java" startLine="35" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isEmpty#()Z" />
     <nodeInfo nodeId="6784047278245018090" fileName="ModelFileProcessor.java" startLine="41" startPosition="66" endLine="45" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
@@ -323,26 +332,32 @@
     <nodeInfo nodeId="9045182831066366148" fileName="ModelFileProcessor.java" startLine="73" startPosition="0" endLine="77" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="processContentChanged#(Lcom/intellij/openapi/vfs/VirtualFile;)V" />
     <nodeInfo nodeId="8474613039627889558" fileName="ModelFileProcessor.java" startLine="55" startPosition="0" endLine="60" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="processDelete#(Lcom/intellij/openapi/vfs/VirtualFile;)V" />
     <nodeInfo nodeId="8474613039627890714" fileName="ModelFileProcessor.java" startLine="60" startPosition="0" endLine="65" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="processCreate#(Lcom/intellij/openapi/vfs/VirtualFile;)V" />
-    <nodeInfo nodeId="6784047278245206058" fileName="ModelFileProcessor.java" startLine="80" startPosition="101" endLine="87" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="6784047278245204270" fileName="ModelFileProcessor.java" startLine="95" startPosition="111" endLine="102" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="6784047278245204291" fileName="ModelFileProcessor.java" startLine="106" startPosition="0" endLine="113" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="intersects#(Ljava/lang/String;Ljava/lang/String;)Z" />
+    <nodeInfo nodeId="530588068880206056" fileName="ModelFileProcessor.java" startLine="88" startPosition="54" endLine="93" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="530588068880206071" fileName="ModelFileProcessor.java" startLine="109" startPosition="62" endLine="114" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6784047278245204291" fileName="ModelFileProcessor.java" startLine="119" startPosition="0" endLine="126" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="intersects#(Ljava/lang/String;Ljava/lang/String;)Z" />
     <nodeInfo nodeId="5573243241919304569" fileName="ModelFileProcessor.java" startLine="65" startPosition="0" endLine="73" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invalidateModelsAndRoots#(Lcom/intellij/openapi/vfs/VirtualFile;)V" />
-    <nodeInfo nodeId="6784047278245206052" fileName="ModelFileProcessor.java" startLine="79" startPosition="72" endLine="88" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="6784047278245204252" fileName="ModelFileProcessor.java" startLine="94" startPosition="110" endLine="103" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="6784047278245206058" fileName="ModelFileProcessor.java" startLine="83" startPosition="59" endLine="94" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="6784047278245204270" fileName="ModelFileProcessor.java" startLine="104" startPosition="111" endLine="115" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="8526829049878372477" fileName="ModelFileProcessor.java" startLine="39" startPosition="0" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="update#(Lcom/intellij/openapi/progress/ProgressIndicator;)V" />
-    <nodeInfo nodeId="6784047278245094241" fileName="ModelFileProcessor.java" startLine="77" startPosition="0" endLine="91" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="findModelRootIntersection#(Lcom/intellij/openapi/vfs/VirtualFile;)Ljava/util/List;" />
-    <nodeInfo nodeId="6784047278245094907" fileName="ModelFileProcessor.java" startLine="91" startPosition="0" endLine="106" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="findSourceIntersection#(Lcom/intellij/openapi/vfs/VirtualFile;)Ljava/util/List;" />
+    <nodeInfo nodeId="6784047278245206052" fileName="ModelFileProcessor.java" startLine="82" startPosition="78" endLine="95" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="6784047278245204252" fileName="ModelFileProcessor.java" startLine="103" startPosition="0" endLine="116" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="6784047278245094241" fileName="ModelFileProcessor.java" startLine="77" startPosition="0" endLine="98" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="findModelRootIntersection#(Lcom/intellij/openapi/vfs/VirtualFile;Z)Ljava/util/List;" />
+    <nodeInfo nodeId="6784047278245094907" fileName="ModelFileProcessor.java" startLine="98" startPosition="0" endLine="119" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="findSourceIntersection#(Lcom/intellij/openapi/vfs/VirtualFile;Z)Ljava/util/List;" />
     <scopeInfo nodeId="9045182831066365693" fileName="ModelFileProcessor.java" startLine="29" startPosition="31" endLine="29" endPosition="31" />
     <scopeInfo nodeId="8526829049878372400" fileName="ModelFileProcessor.java" startLine="32" startPosition="58" endLine="33" endPosition="102" />
     <scopeInfo nodeId="6472945657448278761" fileName="ModelFileProcessor.java" startLine="36" startPosition="31" endLine="37" endPosition="182" />
     <scopeInfo nodeId="6784047278245016845" fileName="ModelFileProcessor.java" startLine="46" startPosition="87" endLine="47" endPosition="26" />
-    <scopeInfo nodeId="9045182831066367127" fileName="ModelFileProcessor.java" startLine="52" startPosition="47" endLine="53" endPosition="147" />
+    <scopeInfo nodeId="9045182831066367127" fileName="ModelFileProcessor.java" startLine="52" startPosition="47" endLine="53" endPosition="159" />
     <scopeInfo nodeId="8474613039627889565" fileName="ModelFileProcessor.java" startLine="57" startPosition="50" endLine="58" endPosition="35" />
     <scopeInfo nodeId="8474613039627890721" fileName="ModelFileProcessor.java" startLine="62" startPosition="50" endLine="63" endPosition="35" />
-    <scopeInfo nodeId="9045182831066366153" fileName="ModelFileProcessor.java" startLine="74" startPosition="58" endLine="75" endPosition="111" />
-    <scopeInfo nodeId="6784047278245206074" fileName="ModelFileProcessor.java" startLine="82" startPosition="59" endLine="83" endPosition="19" />
-    <scopeInfo nodeId="6784047278245205901" fileName="ModelFileProcessor.java" startLine="97" startPosition="50" endLine="98" endPosition="19" />
-    <scopeInfo nodeId="5978443222856194139" fileName="ModelFileProcessor.java" startLine="108" startPosition="37" endLine="109" endPosition="19" />
+    <scopeInfo nodeId="9045182831066366153" fileName="ModelFileProcessor.java" startLine="74" startPosition="58" endLine="75" endPosition="118" />
+    <scopeInfo nodeId="6784047278245206074" fileName="ModelFileProcessor.java" startLine="85" startPosition="49" endLine="86" endPosition="19" />
+    <scopeInfo nodeId="530588068880206057" fileName="ModelFileProcessor.java" startLine="89" startPosition="24" endLine="90" endPosition="21" />
+    <scopeInfo nodeId="530588068880206066" fileName="ModelFileProcessor.java" startLine="91" startPosition="16" endLine="92" endPosition="16" />
+    <scopeInfo nodeId="6784047278245205901" fileName="ModelFileProcessor.java" startLine="106" startPosition="37" endLine="107" endPosition="19" />
+    <scopeInfo nodeId="530588068880206072" fileName="ModelFileProcessor.java" startLine="110" startPosition="24" endLine="111" endPosition="21" />
+    <scopeInfo nodeId="530588068880206077" fileName="ModelFileProcessor.java" startLine="112" startPosition="16" endLine="113" endPosition="16" />
+    <scopeInfo nodeId="5978443222856194139" fileName="ModelFileProcessor.java" startLine="121" startPosition="37" endLine="122" endPosition="19" />
     <scopeInfo nodeId="9045182831066365691" fileName="ModelFileProcessor.java" startLine="28" startPosition="0" endLine="30" endPosition="3" />
     <scopeInfo nodeId="6784047278245018093" fileName="ModelFileProcessor.java" startLine="42" startPosition="79" endLine="44" endPosition="35" />
     <scopeInfo nodeId="6784047278245016842" fileName="ModelFileProcessor.java" startLine="45" startPosition="5" endLine="48" endPosition="5">
@@ -361,7 +376,7 @@
     <scopeInfo nodeId="9045182831066366148" fileName="ModelFileProcessor.java" startLine="73" startPosition="0" endLine="77" endPosition="0">
       <varInfo nodeId="9045182831066366151" varName="file" />
     </scopeInfo>
-    <scopeInfo nodeId="6784047278245204293" fileName="ModelFileProcessor.java" startLine="107" startPosition="54" endLine="111" endPosition="54" />
+    <scopeInfo nodeId="6784047278245204293" fileName="ModelFileProcessor.java" startLine="120" startPosition="54" endLine="124" endPosition="54" />
     <scopeInfo nodeId="8474613039627889558" fileName="ModelFileProcessor.java" startLine="55" startPosition="0" endLine="60" endPosition="0">
       <varInfo nodeId="9045182831066294574" varName="file" />
     </scopeInfo>
@@ -372,17 +387,7 @@
       <varInfo nodeId="5573243241919304567" varName="modules" />
       <varInfo nodeId="5573243241919304566" varName="sources" />
     </scopeInfo>
-    <scopeInfo nodeId="6784047278245206063" fileName="ModelFileProcessor.java" startLine="81" startPosition="89" endLine="86" endPosition="14" />
-    <scopeInfo nodeId="6784047278245204273" fileName="ModelFileProcessor.java" startLine="96" startPosition="79" endLine="101" endPosition="14" />
-    <scopeInfo nodeId="6784047278245206057" fileName="ModelFileProcessor.java" startLine="80" startPosition="101" endLine="87" endPosition="7" />
-    <scopeInfo nodeId="6784047278245206058" fileName="ModelFileProcessor.java" startLine="80" startPosition="101" endLine="87" endPosition="7">
-      <varInfo nodeId="6784047278245206058" varName="smr" />
-    </scopeInfo>
-    <scopeInfo nodeId="6784047278245204255" fileName="ModelFileProcessor.java" startLine="95" startPosition="111" endLine="102" endPosition="7" />
-    <scopeInfo nodeId="6784047278245204270" fileName="ModelFileProcessor.java" startLine="95" startPosition="111" endLine="102" endPosition="7">
-      <varInfo nodeId="6784047278245204270" varName="path" />
-    </scopeInfo>
-    <scopeInfo nodeId="6784047278245204291" fileName="ModelFileProcessor.java" startLine="106" startPosition="0" endLine="113" endPosition="0">
+    <scopeInfo nodeId="6784047278245204291" fileName="ModelFileProcessor.java" startLine="119" startPosition="0" endLine="126" endPosition="0">
       <varInfo nodeId="6784047278245204296" varName="vf1" />
       <varInfo nodeId="6784047278245204298" varName="vf2" />
     </scopeInfo>
@@ -390,29 +395,44 @@
       <varInfo nodeId="5573243241919304568" varName="file" />
     </scopeInfo>
     <scopeInfo nodeId="8526829049878372479" fileName="ModelFileProcessor.java" startLine="40" startPosition="51" endLine="49" endPosition="82" />
-    <scopeInfo nodeId="6784047278245206052" fileName="ModelFileProcessor.java" startLine="79" startPosition="72" endLine="88" endPosition="5">
-      <varInfo nodeId="6784047278245206052" varName="module" />
+    <scopeInfo nodeId="6784047278245206063" fileName="ModelFileProcessor.java" startLine="84" startPosition="89" endLine="93" endPosition="9" />
+    <scopeInfo nodeId="6784047278245204273" fileName="ModelFileProcessor.java" startLine="105" startPosition="76" endLine="114" endPosition="9" />
+    <scopeInfo nodeId="6784047278245206057" fileName="ModelFileProcessor.java" startLine="83" startPosition="59" endLine="94" endPosition="7" />
+    <scopeInfo nodeId="6784047278245206058" fileName="ModelFileProcessor.java" startLine="83" startPosition="59" endLine="94" endPosition="7">
+      <varInfo nodeId="6784047278245206058" varName="smr" />
     </scopeInfo>
-    <scopeInfo nodeId="6784047278245204252" fileName="ModelFileProcessor.java" startLine="94" startPosition="110" endLine="103" endPosition="5">
-      <varInfo nodeId="6784047278245204252" varName="entry" />
-    </scopeInfo>
-    <scopeInfo nodeId="6784047278245094243" fileName="ModelFileProcessor.java" startLine="78" startPosition="69" endLine="89" endPosition="15">
-      <varInfo nodeId="6784047278245206037" varName="res" />
+    <scopeInfo nodeId="6784047278245204255" fileName="ModelFileProcessor.java" startLine="104" startPosition="111" endLine="115" endPosition="7" />
+    <scopeInfo nodeId="6784047278245204270" fileName="ModelFileProcessor.java" startLine="104" startPosition="111" endLine="115" endPosition="7">
+      <varInfo nodeId="6784047278245204270" varName="p" />
     </scopeInfo>
     <scopeInfo nodeId="8526829049878372477" fileName="ModelFileProcessor.java" startLine="39" startPosition="0" endLine="51" endPosition="0">
       <varInfo nodeId="404594887366252461" varName="indicator" />
     </scopeInfo>
-    <scopeInfo nodeId="6784047278245094909" fileName="ModelFileProcessor.java" startLine="92" startPosition="83" endLine="104" endPosition="15">
+    <scopeInfo nodeId="6784047278245206052" fileName="ModelFileProcessor.java" startLine="82" startPosition="78" endLine="95" endPosition="5">
+      <varInfo nodeId="6784047278245206052" varName="module" />
+    </scopeInfo>
+    <scopeInfo nodeId="6784047278245204252" fileName="ModelFileProcessor.java" startLine="103" startPosition="0" endLine="116" endPosition="5">
+      <varInfo nodeId="6784047278245204252" varName="entry" />
+    </scopeInfo>
+    <scopeInfo nodeId="6784047278245094243" fileName="ModelFileProcessor.java" startLine="78" startPosition="88" endLine="96" endPosition="15">
+      <varInfo nodeId="530588068880205983" varName="modules" />
+      <varInfo nodeId="530588068880205973" varName="path" />
+      <varInfo nodeId="6784047278245206037" varName="res" />
+    </scopeInfo>
+    <scopeInfo nodeId="6784047278245094909" fileName="ModelFileProcessor.java" startLine="99" startPosition="102" endLine="117" endPosition="15">
+      <varInfo nodeId="530588068880205964" varName="path" />
       <varInfo nodeId="6784047278245205873" varName="res" />
       <varInfo nodeId="6784047278245204242" varName="s2f" />
     </scopeInfo>
-    <scopeInfo nodeId="6784047278245094241" fileName="ModelFileProcessor.java" startLine="77" startPosition="0" endLine="91" endPosition="0">
+    <scopeInfo nodeId="6784047278245094241" fileName="ModelFileProcessor.java" startLine="77" startPosition="0" endLine="98" endPosition="0">
       <varInfo nodeId="6784047278245094245" varName="file" />
+      <varInfo nodeId="530588068880206052" varName="onlyFirst" />
     </scopeInfo>
-    <scopeInfo nodeId="6784047278245094907" fileName="ModelFileProcessor.java" startLine="91" startPosition="0" endLine="106" endPosition="0">
+    <scopeInfo nodeId="6784047278245094907" fileName="ModelFileProcessor.java" startLine="98" startPosition="0" endLine="119" endPosition="0">
       <varInfo nodeId="6784047278245094946" varName="file" />
+      <varInfo nodeId="530588068880206069" varName="onlyFirst" />
     </scopeInfo>
-    <unitInfo nodeId="8474613039627890646" fileName="ModelFileProcessor.java" startLine="25" startPosition="0" endLine="114" endPosition="0" unitName="jetbrains.mps.ide.platform.watching.ModelFileProcessor" />
+    <unitInfo nodeId="8474613039627890646" fileName="ModelFileProcessor.java" startLine="25" startPosition="0" endLine="127" endPosition="0" unitName="jetbrains.mps.ide.platform.watching.ModelFileProcessor" />
   </root>
   <root nodeId="8474613039627890805">
     <nodeInfo nodeId="8474613039627890853" fileName="ModelCacheReloader.java" startLine="25" startPosition="65" endLine="26" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myVirtualFileManager" />

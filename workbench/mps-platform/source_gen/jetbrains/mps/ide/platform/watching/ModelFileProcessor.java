@@ -50,7 +50,7 @@ import jetbrains.mps.smodel.descriptor.source.changes.ModelFileWatcher;
   }
 
   protected boolean accepts(VirtualFile file) {
-    return ListSequence.fromList(findSourceIntersection(file)).isNotEmpty() || ListSequence.fromList(findModelRootIntersection(file)).isNotEmpty();
+    return ListSequence.fromList(findModelRootIntersection(file, true)).isNotEmpty() || ListSequence.fromList(findSourceIntersection(file, true)).isNotEmpty();
   }
 
   @Override
@@ -64,41 +64,54 @@ import jetbrains.mps.smodel.descriptor.source.changes.ModelFileWatcher;
   }
 
   private void invalidateModelsAndRoots(VirtualFile file) {
-    List<FileBasedModelDataSource> sources = findSourceIntersection(file);
+    List<FileBasedModelDataSource> sources = findSourceIntersection(file, false);
     SetSequence.fromSet(myInvalidatedSources).addSequence(ListSequence.fromList(sources));
 
-    List<IModule> modules = findModelRootIntersection(file);
+    List<IModule> modules = findModelRootIntersection(file, false);
     SetSequence.fromSet(myModulesWithChangedModelSets).addSequence(ListSequence.fromList(modules));
   }
 
   protected void processContentChanged(VirtualFile file) {
-    SetSequence.fromSet(myInvalidatedSources).addSequence(ListSequence.fromList(findSourceIntersection(file)));
+    SetSequence.fromSet(myInvalidatedSources).addSequence(ListSequence.fromList(findSourceIntersection(file, false)));
   }
 
-  private List<IModule> findModelRootIntersection(VirtualFile file) {
+  private List<IModule> findModelRootIntersection(VirtualFile file, boolean onlyFirst) {
     List<IModule> res = ListSequence.fromList(new ArrayList<IModule>());
-    for (IModule module : ListSequence.fromList(MPSModuleRepository.getInstance().getAllModules())) {
+    String path = file.getPath();
+
+    List<IModule> modules = MPSModuleRepository.getInstance().getAllModules();
+    for (IModule module : ListSequence.fromList(modules)) {
       for (SModelRoot smr : CollectionSequence.fromCollection(module.getSModelRoots())) {
-        if (!(intersects(file.getPath(), smr.getPath()))) {
+        if (!(intersects(path, smr.getPath()))) {
           continue;
         }
         ListSequence.fromList(res).addElement(module);
-        break;
+        if (onlyFirst) {
+          return res;
+        } else {
+          break;
+        }
       }
     }
     return res;
   }
 
-  private List<FileBasedModelDataSource> findSourceIntersection(VirtualFile file) {
+  private List<FileBasedModelDataSource> findSourceIntersection(VirtualFile file, boolean onlyFirst) {
     List<FileBasedModelDataSource> res = ListSequence.fromList(new ArrayList<FileBasedModelDataSource>());
     Map<FileBasedModelDataSource, Collection<String>> s2f = ModelFileWatcher.getInstance().getSources2Files();
+    String path = file.getPath();
+
     for (Map.Entry<FileBasedModelDataSource, Collection<String>> entry : SetSequence.fromSet(s2f.entrySet())) {
-      for (String path : CollectionSequence.fromCollection(entry.getValue())) {
-        if (!(intersects(file.getPath(), path))) {
+      for (String p : CollectionSequence.fromCollection(entry.getValue())) {
+        if (!(intersects(path, p))) {
           continue;
         }
         ListSequence.fromList(res).addElement(entry.getKey());
-        break;
+        if (onlyFirst) {
+          return res;
+        } else {
+          break;
+        }
       }
     }
     return res;
