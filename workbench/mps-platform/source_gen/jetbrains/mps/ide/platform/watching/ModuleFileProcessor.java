@@ -186,10 +186,15 @@ import java.util.Collections;
 
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        res.value = (file.isDirectory() ?
-          repo.findModulesUnderDir(file.getPath()) :
-          Collections.singletonList(repo.getModuleByFile(mpsFile))
-        );
+        if (file.isDirectory()) {
+          res.value = repo.findModulesUnderDir(file.getPath());
+        } else {
+          IModule module = repo.getModuleByFile(mpsFile);
+          res.value = (module == null ?
+            Collections.<IModule>emptyList() :
+            Collections.singletonList(module)
+          );
+        }
       }
     });
     return res.value;
