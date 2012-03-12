@@ -20,6 +20,7 @@ import com.intellij.openapi.components.PersistentStateComponent;
 import com.intellij.openapi.components.State;
 import com.intellij.openapi.components.Storage;
 import com.intellij.openapi.project.Project;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -36,17 +37,24 @@ import java.util.List;
 
 public class MPSProjectMigrationState extends AbstractProjectComponent {
 
-  private final Project myProject;
-
   private List<MPSProjectMigrationListener> myMigrationListeners =
     Collections.synchronizedList(new ArrayList<MPSProjectMigrationListener>());
   private boolean myMigrationInProgress = false;
+  private Object myAgent;
 
   protected MPSProjectMigrationState(com.intellij.openapi.project.Project project, MPSProjectVersion version) {
     super(project);
-    myProject = project;
   }
 
+  public boolean hasMigrationAgent () {
+    return myAgent != null;
+  }
+  
+  public void setMigrationAgent (@Nullable Object agent) {
+    if (myAgent != null && agent != null) throw new IllegalStateException("already has an agent");
+    myAgent = agent;
+  }
+  
   public boolean isMigrationRequired () {
     Version version = myProject.getComponent(MPSProjectVersion.class).getVersion();
     return version.isMajorUpdate(MPSProjectVersion.CURRENT) ||

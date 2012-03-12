@@ -202,6 +202,14 @@
     </component>
 
     <component>
+      <implementation-class>jetbrains.mps.project.MPSProjectMigrationState</implementation-class>
+    </component>
+    
+    <component>
+      <implementation-class>jetbrains.mps.project.MPSProjectVersion</implementation-class>
+    </component>
+
+    <component>
       <implementation-class>jetbrains.mps.ide.generator.TransientModelsComponent</implementation-class>
     </component>
 
