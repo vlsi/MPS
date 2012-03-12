@@ -210,7 +210,7 @@ public class TransformatorImpl extends TransformatorBuilder.Transformator {
         return TransformationUtil.isUnprocessed(it) && TransformationUtil.isUnprocessed(SLinkOperations.getTarget(it, "creator", true));
       }
     })) {
-      if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(newExpression, "creator", true), "jetbrains.mps.baseLanguage.structure.ClassCreator")) {
+      if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(newExpression, "creator", true), "jetbrains.mps.baseLanguage.structure.ClassCreator") && !(SNodeOperations.isInstanceOf(SNodeOperations.getParent(newExpression), "jetbrains.mps.baseLanguage.structure.ThrowStatement"))) {
         SNode constructor = SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(newExpression, "creator", true), "jetbrains.mps.baseLanguage.structure.ClassCreator"), "baseMethodDeclaration", false);
         SNode fqNameNode = TransformationUtil.createClassFqNameNode(myModel, SNodeOperations.getAncestor(constructor, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false));
         SNode jnSignature = TransformationUtil.createStringLiteral(TransformationUtil.getJniSignature(constructor));
@@ -225,7 +225,7 @@ public class TransformatorImpl extends TransformatorBuilder.Transformator {
         } else {
           fqNameNode = TransformationUtil.createStringLiteral(SConceptPropertyOperations.getString(componentType, "alias"));
         }
-        // todo multi-array 
+        // todo multi-arraycal 
         SNode size = SLinkOperations.getTarget(ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(SLinkOperations.getTarget(newExpression, "creator", true), "jetbrains.mps.baseLanguage.structure.ArrayCreator"), "dimensionExpression", true)).first(), "expression", true);
 
         TransformationUtil.replaceArrayConstructor(newExpression, fqNameNode, size);
@@ -248,11 +248,13 @@ public class TransformatorImpl extends TransformatorBuilder.Transformator {
         return TransformationUtil.isUnprocessed(it);
       }
     })) {
-      TransformationUtil.replaceConstructor(newExpression, TransformationUtil.createStringLiteral(SPropertyOperations.getString(newExpression, "fqClassName")), TransformationUtil.createStringLiteral(TransformationUtil.getJniSignature(ListSequence.fromList(SLinkOperations.getTargets(newExpression, "actualArgument", true)).select(new ISelector<SNode, SNode>() {
-        public SNode select(SNode it) {
-          return SNodeOperations.cast(TypeChecker.getInstance().getTypeOf(it), "jetbrains.mps.baseLanguage.structure.Type");
-        }
-      }), new TransformatorImpl.QuotationClass_s72qk1_a1a2a0a2a5().createNode())), SLinkOperations.getTargets(newExpression, "actualArgument", true));
+      if (!(SNodeOperations.isInstanceOf(SNodeOperations.getParent(newExpression), "jetbrains.mps.baseLanguage.structure.ThrowStatement"))) {
+        TransformationUtil.replaceConstructor(newExpression, TransformationUtil.createStringLiteral(SPropertyOperations.getString(newExpression, "fqClassName")), TransformationUtil.createStringLiteral(TransformationUtil.getJniSignature(ListSequence.fromList(SLinkOperations.getTargets(newExpression, "actualArgument", true)).select(new ISelector<SNode, SNode>() {
+          public SNode select(SNode it) {
+            return SNodeOperations.cast(TypeChecker.getInstance().getTypeOf(it), "jetbrains.mps.baseLanguage.structure.Type");
+          }
+        }), new TransformatorImpl.QuotationClass_s72qk1_a1a2a0a0a2a5().createNode())), SLinkOperations.getTargets(newExpression, "actualArgument", true));
+      }
     }
   }
 
@@ -751,8 +753,8 @@ public class TransformatorImpl extends TransformatorBuilder.Transformator {
     return order;
   }
 
-  public static class QuotationClass_s72qk1_a1a2a0a2a5 {
-    public QuotationClass_s72qk1_a1a2a0a2a5() {
+  public static class QuotationClass_s72qk1_a1a2a0a0a2a5 {
+    public QuotationClass_s72qk1_a1a2a0a0a2a5() {
     }
 
     public SNode createNode() {

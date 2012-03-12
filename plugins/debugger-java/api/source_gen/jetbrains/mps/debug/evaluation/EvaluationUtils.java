@@ -90,6 +90,8 @@ public abstract class EvaluationUtils {
 
   public abstract PrimitiveValueProxy unboxValue(IObjectValueProxy valueProxy) throws EvaluationException;
 
+  public abstract String getStringPresentation(@NotNull Value value, ThreadReference reference);
+
   public static EvaluationUtils getInstance() {
     synchronized (LOCK) {
       return INSTANCE;

@@ -233,9 +233,9 @@
 
         <!-- baseLanguage search -->
         <path
-                path="${base_dir}/languages/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/source_gen"/>
+            path="${base_dir}/languages/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/source_gen"/>
         <path
-                path="${base_dir}/languages/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.util/source_gen"/>
+            path="${base_dir}/languages/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.util/source_gen"/>
       </src>
     </javac>
     <jar destfile="${dist.dir}/mps-core/lib/mps-core.jar">
@@ -466,7 +466,7 @@
       </manifest>
     </jar>
 
-    <!-- Java support plugin -->
+    <!-- mps java plugin -->
     <mkdir dir="${build_dir}/mpsjava_jar"/>
     <javac2 destdir="${build_dir}/mpsjava_jar" fork="true"
             memorymaximumsize="1024m"
@@ -474,14 +474,19 @@
             debug="${javac.debug}" debuglevel="lines,vars,source">
       <compilerarg value="-Xlint:none"/>
       <src>
+        <path path="${base_dir}/workbench/mps-debugger/source_gen"/>
+        <path path="${base_dir}/IdeaPlugin/mps-java/debugger/src"/>
         <path path="${base_dir}/plugins/mpsjava/platform/source_gen"/>
       </src>
       <classpath>
         <fileset dir="${dist.dir}/mps-core/lib" includes="*.jar"/>
         <fileset dir="${ideaPath}/lib" includes="*.jar"/>
+        <fileset file="${base_dir}/lib/tools.jar"/>
       </classpath>
     </javac2>
     <copy includeemptydirs="false" todir="${build_dir}/mpsjava_jar">
+      <fileset dir="${base_dir}/workbench/mps-debugger/source_gen" includes="**/*.png, **/*.properties, **/*.xml"/>
+      <fileset dir="${base_dir}/IdeaPlugin/mps-java/debugger/src" includes="**/*.png, **/*.properties, **/*.xml"/>
       <fileset dir="${base_dir}/plugins/mpsjava/platform/source_gen" includes="**/*.png, **/*.properties, **/*.xml"/>
     </copy>
     <copy file="${base_dir}/IdeaPlugin/mps-java/META-INF/plugin.xml"
@@ -498,47 +503,7 @@
       <manifest>
         <attribute name="Built-By" value="${user.name}"/>
         <attribute name="Implementation-Vendor" value="JetBrains s.r.o."/>
-        <attribute name="Implementation-Title" value="MPS Java IDE support"/>
-        <attribute name="Implementation-Version" value="1.0"/>
-      </manifest>
-    </jar>
-
-    <!-- debugger plugin -->
-    <mkdir dir="${build_dir}/mpsdebugger_jar"/>
-    <javac2 destdir="${build_dir}/mpsdebugger_jar" fork="true"
-            memorymaximumsize="1024m"
-            includeantruntime="false"
-            debug="${javac.debug}" debuglevel="lines,vars,source">
-      <compilerarg value="-Xlint:none"/>
-      <src>
-        <path path="${base_dir}/workbench/mps-debugger/source_gen"/>
-        <path path="${base_dir}/IdeaPlugin/mps-debugger/src"/>
-      </src>
-      <classpath>
-        <fileset dir="${dist.dir}/mps-core/lib" includes="*.jar"/>
-        <fileset dir="${ideaPath}/lib" includes="*.jar"/>
-        <fileset file="${base_dir}/lib/tools.jar"/>
-      </classpath>
-    </javac2>
-    <copy includeemptydirs="false" todir="${build_dir}/mpsdebugger_jar">
-      <fileset dir="${base_dir}/workbench/mps-debugger/source_gen" includes="**/*.png, **/*.properties, **/*.xml"/>
-      <fileset dir="${base_dir}/IdeaPlugin/mps-debugger/src" includes="**/*.png, **/*.properties, **/*.xml"/>
-    </copy>
-    <copy file="${base_dir}/IdeaPlugin/mps-debugger/META-INF/plugin.xml"
-          tofile="${build_dir}/mpsdebugger_jar/META-INF/plugin.xml">
-      <filterchain>
-        <tokenfilter>
-          <replaceregex pattern="../classes/META-INF/" replace="" flags="gi"/>
-          <replaceregex pattern="../classes/jetbrains/" replace="../jetbrains/" flags="gi"/>
-        </tokenfilter>
-      </filterchain>
-    </copy>
-    <jar destfile="${dist.dir}/mps-debugger.jar">
-      <fileset dir="${build_dir}/mpsdebugger_jar"/>
-      <manifest>
-        <attribute name="Built-By" value="${user.name}"/>
-        <attribute name="Implementation-Vendor" value="JetBrains s.r.o."/>
-        <attribute name="Implementation-Title" value="MPS Version Control support"/>
+        <attribute name="Implementation-Title" value="MPS BaseLanguage support"/>
         <attribute name="Implementation-Version" value="1.0"/>
       </manifest>
     </jar>
@@ -730,7 +695,6 @@
       </zipfileset>
       <zipfileset file="${dist.dir}/mps-vcs.jar"/>
       <zipfileset file="${dist.dir}/mps-java.jar"/>
-      <zipfileset file="${dist.dir}/mps-debugger.jar"/>
     </zip>
   </target>
 

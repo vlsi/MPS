@@ -30,6 +30,7 @@ public class DebugCollections {
     DebugCollections.testLinkedList();
     DebugCollections.testSet();
     DebugCollections.testForeach();
+    System.out.println(i);
   }
 
   public static void testMap() {

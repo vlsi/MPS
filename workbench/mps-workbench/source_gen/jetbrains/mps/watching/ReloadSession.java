@@ -59,6 +59,7 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
       "" :
       "Deleted modules : " + myDeletedModules + "\n"
     )));
+    fireReloadStarted();
     try {
       if (!(SetSequence.fromSet(myNewModuleVFiles).isEmpty())) {
         if (log.isInfoEnabled()) {

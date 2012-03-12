@@ -3,7 +3,6 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/mps-core/mps-core.iml" filepath="$PROJECT_DIR$/mps-core/mps-core.iml" />
-      <module fileurl="file://$PROJECT_DIR$/mps-debugger/mps-debugger.iml" filepath="$PROJECT_DIR$/mps-debugger/mps-debugger.iml" />
       <module fileurl="file://$PROJECT_DIR$/mps-java/mps-java.iml" filepath="$PROJECT_DIR$/mps-java/mps-java.iml" />
       <module fileurl="file://$PROJECT_DIR$/mps-startup/mps-startup.iml" filepath="$PROJECT_DIR$/mps-startup/mps-startup.iml" />
       <module fileurl="file://$PROJECT_DIR$/mps-vcs/mps-vcs.iml" filepath="$PROJECT_DIR$/mps-vcs/mps-vcs.iml" />

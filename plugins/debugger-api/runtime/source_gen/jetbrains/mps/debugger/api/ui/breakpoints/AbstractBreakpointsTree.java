@@ -145,7 +145,7 @@ import javax.swing.UIManager;
       return null;
     }
     Object node = path.getLastPathComponent();
-    if (BreakpointsView.MPS_BREAKPOINT.is(dataId)) {
+    if (BreakpointsUtil.MPS_BREAKPOINT.is(dataId)) {
       if (node instanceof AbstractBreakpointsTree.BreakpointTreeNode) {
         AbstractBreakpointsTree.BreakpointTreeNode breakpointNode = (AbstractBreakpointsTree.BreakpointTreeNode) node;
         return ((AbstractBreakpointsTree.BreakpointNodeData) breakpointNode.getUserObject()).myBreakpoint;

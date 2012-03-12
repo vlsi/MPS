@@ -17,6 +17,7 @@
 <idea-plugin version="2" xmlns:xi="http://www.w3.org/2001/XInclude">
   <id>jetbrains.mps.java</id>
   <name>MPS BaseLanguage support</name>
+  <description>Support of MPS baseLanguage</description>
   <category>Custom Languages</category>
   <version>1.0.0</version>
   <depends>jetbrains.mps.core</depends>
@@ -34,6 +35,15 @@
 
   <project-components>
     <component>
+      <implementation-class>jetbrains.mps.idea.debugger.IdeaDebuggerPositionHighlighter</implementation-class>
+    </component>
+    <component>
+      <implementation-class>jetbrains.mps.idea.debugger.breakpoints.IdeaBreakpointsUiComponent</implementation-class>
+    </component>
+    <component>
+      <implementation-class>jetbrains.mps.idea.debugger.TraceFileToResourcesAddition</implementation-class>
+    </component>    
+    <component>
       <implementation-class>jetbrains.mps.ide.java.actions.OverrideImplementMethodComponent</implementation-class>
     </component>
     <component>
@@ -45,6 +55,7 @@
   </actions>
 
   <extensions defaultExtensionNs="com.intellij">
+    <debugger.positionManagerFactory implementation="jetbrains.mps.idea.debugger.MpsPositionManagerFactory"/>
     <fileBasedIndex implementation="jetbrains.mps.ide.java.platform.index.ClassifierSuccessorsIndexer"/>
   </extensions>
 </idea-plugin>

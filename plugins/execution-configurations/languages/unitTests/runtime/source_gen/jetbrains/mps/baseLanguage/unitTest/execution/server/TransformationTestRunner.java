@@ -10,6 +10,7 @@ import com.intellij.openapi.application.impl.ApplicationImpl;
 import com.intellij.openapi.application.ApplicationManager;
 import org.junit.internal.requests.ClassRequest;
 import org.junit.runner.Runner;
+import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.internal.builders.JUnit4Builder;
 
 public class TransformationTestRunner extends TestRunner {
@@ -59,9 +60,17 @@ public class TransformationTestRunner extends TestRunner {
 
     @Override
     public Runner getRunner() {
-      Runner runner = new JUnit4Builder().safeRunnerForClass(myClass);
-      if (runner != null) {
-        return runner;
+      Class<? extends BaseTransformationTest> clazz = null;
+      try {
+        clazz = myClass.asSubclass(BaseTransformationTest.class);
+      } catch (ClassCastException e) {
+        // not transformation test, something else 
+      }
+      if (clazz != null) {
+        Runner runner = new JUnit4Builder().safeRunnerForClass(myClass);
+        if (runner != null) {
+          return runner;
+        }
       }
       return super.getRunner();
     }

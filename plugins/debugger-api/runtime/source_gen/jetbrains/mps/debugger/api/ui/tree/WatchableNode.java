@@ -59,7 +59,7 @@ public class WatchableNode extends AbstractWatchableNode {
     return value == null || !(value.isStructure());
   }
 
-  protected IValue getValue() {
+  public IValue getValue() {
     return myWatchable.getValue();
   }
 
