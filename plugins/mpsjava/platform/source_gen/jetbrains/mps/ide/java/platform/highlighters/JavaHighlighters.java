@@ -6,15 +6,16 @@ import com.intellij.openapi.components.ProjectComponent;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.internal.collections.runtime.backports.Deque;
 import jetbrains.mps.nodeEditor.checking.BaseEditorChecker;
+import jetbrains.mps.internal.collections.runtime.DequeSequence;
+import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
 import jetbrains.mps.ide.MPSCoreComponents;
 import jetbrains.mps.nodeEditor.Highlighter;
-import jetbrains.mps.internal.collections.runtime.DequeSequence;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 
 public class JavaHighlighters implements ProjectComponent {
   private Project myProject;
-  private Deque<BaseEditorChecker> myCheckers;
+  private Deque<BaseEditorChecker> myCheckers = DequeSequence.fromDeque(new LinkedList<BaseEditorChecker>());
 
   public JavaHighlighters(Project project, MPSCoreComponents coreComponents) {
     myProject = project;
@@ -28,8 +29,11 @@ public class JavaHighlighters implements ProjectComponent {
 
   public void initComponent() {
     Highlighter highlighter = getHighlighter();
-    addChecker(new OverrideMethodsChecker(), highlighter);
-    addChecker(new ToDoHighlighter(), highlighter);
+    highlighter.addChecker(DequeSequence.fromDeque(myCheckers).pushElement(new OverrideMethodsChecker()));
+    highlighter.addChecker(DequeSequence.fromDeque(myCheckers).pushElement(new ToDoHighlighter()));
+    MethodDeclarationsFixer mdf = new MethodDeclarationsFixer();
+    highlighter.addChecker(DequeSequence.fromDeque(myCheckers).pushElement(mdf));
+    mdf.init();
   }
 
   public void disposeComponent() {
@@ -41,11 +45,6 @@ public class JavaHighlighters implements ProjectComponent {
     }
 
     myProject = null;
-  }
-
-  private void addChecker(BaseEditorChecker checker, Highlighter highlighter) {
-    DequeSequence.fromDeque(myCheckers).pushElement(checker);
-    highlighter.addChecker(checker);
   }
 
   @NonNls

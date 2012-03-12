@@ -70,8 +70,6 @@
     <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.pluginSolution.plugin.BaseLanguageCustomPlugin_CustomProjectPlugin" file="BaseLanguageCustomPlugin_CustomProjectPlugin.java">
-    <classNode dependClassName="jetbrains.mps.ide.editor.MethodDeclarationsFixer" />
-    <classNode dependClassName="jetbrains.mps.nodeEditor.Highlighter" />
     <classNode dependClassName="jetbrains.mps.project.MPSProject" />
     <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.custom.BaseCustomProjectPlugin" />
   </dependency>
