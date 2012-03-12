@@ -5,10 +5,6 @@ package jetbrains.mps.baseLanguage.pluginSolution.plugin;
 import jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin;
 import com.intellij.openapi.extensions.PluginId;
 import jetbrains.mps.lang.dataFlow.pluginSolution.plugin.DFAActions_ActionGroup;
-import java.util.List;
-import jetbrains.mps.workbench.action.BaseKeymapChanges;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import java.util.ArrayList;
 
 public class PluginSolution_ApplicationPlugin extends BaseApplicationPlugin {
   private PluginId myId = PluginId.getId("jetbrains.mps.baseLanguage.pluginSolution");
@@ -22,27 +18,12 @@ public class PluginSolution_ApplicationPlugin extends BaseApplicationPlugin {
 
   public void createGroups() {
     // actions w/o parameters 
-    addAction(new ExtractMethod_Action());
-    addAction(new InlineLocalVariable_Action());
-    addAction(new InlineMethod_Action());
-    addAction(new IntroduceConstant_Action());
-    addAction(new IntroduceField_Action());
-    addAction(new IntroduceVariable_Action());
-    addAction(new RenameVariable_Action());
     addAction(new ShowNullDFA_Action());
     // groups 
     addGroup(new AnalyzersActions_ActionGroup());
-    addGroup(new RefactoringAddition_ActionGroup());
   }
 
   public void adjustRegularGroups() {
-    insertGroupIntoAnother(RefactoringAddition_ActionGroup.ID, "jetbrains.mps.ide.platform.actions.NodeRefactoring_ActionGroup", null);
     insertGroupIntoAnother(AnalyzersActions_ActionGroup.ID, DFAActions_ActionGroup.ID, null);
-  }
-
-  public List<BaseKeymapChanges> initKeymaps() {
-    List<BaseKeymapChanges> res = ListSequence.fromList(new ArrayList<BaseKeymapChanges>());
-    ListSequence.fromList(res).addElement(new Default_KeymapChanges());
-    return res;
   }
 }

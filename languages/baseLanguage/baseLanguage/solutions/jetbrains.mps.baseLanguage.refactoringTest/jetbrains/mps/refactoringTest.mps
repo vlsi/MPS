@@ -26,7 +26,7 @@
   <import index="1qcs" modelUID="f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#com.intellij.openapi.actionSystem(MPS.Workbench/com.intellij.openapi.actionSystem@java_stub)" version="-1" />
   <import index="5fm0" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.ide.findusages.model(MPS.Core/jetbrains.mps.ide.findusages.model@java_stub)" version="-1" />
   <import index="cu2c" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)" version="-1" />
-  <import index="z76a" modelUID="r:dfc27cab-2d08-4c79-ac99-e95209e18392(jetbrains.mps.baseLanguage.pluginSolution.plugin)" version="-1" />
+  <import index="tvc" modelUID="r:04a4e07b-6b42-4834-848a-987fb6edcd08(jetbrains.mps.ide.java.platform.refactorings)" version="-1" />
   <import index="tp5g" modelUID="r:00000000-0000-4000-0000-011c89590388(jetbrains.mps.lang.test.structure)" version="4" implicit="yes" />
   <import index="tp2c" modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="3" implicit="yes" />
   <import index="tp2q" modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" implicit="yes" />
@@ -8017,11 +8017,11 @@
           <node role="condition" roleId="tpe3.1171981057159" type="tpee.NotEqualsExpression" typeId="tpee.1073239437375" id="1230052989299">
             <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="1230052989300" />
             <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1230052989301">
-              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="z76a.8794595397331624477" resolveInfo="InlineMethodRefactoringAnalyzer" />
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="z76a.8794595397331624658" resolveInfo="getErrors" />
+              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="tvc.4507335185602808421" resolveInfo="InlineMethodRefactoringAnalyzer" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tvc.4507335185602808637" resolveInfo="getErrors" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="1230052989302">
                 <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="1230052989303">
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="z76a.8794595397331625050" resolveInfo="InlineMethodDialogModel" />
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tvc.4507335185602808216" resolveInfo="InlineMethodDialogModel" />
                   <node role="actualArgument" roleId="tpee.1068499141038" type="tp5g.TestNodeReference" typeId="tp5g.1210674524691" id="1230052989304">
                     <link role="declaration" roleId="tp5g.1210674534086" targetNodeId="1230052989293" resolveInfo="definition" />
                   </node>
@@ -8071,11 +8071,11 @@
           <node role="condition" roleId="tpe3.1171981057159" type="tpee.NotEqualsExpression" typeId="tpee.1073239437375" id="1230052989326">
             <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="1230052989327" />
             <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1230052989328">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="z76a.8794595397331624658" resolveInfo="getErrors" />
-              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="z76a.8794595397331624477" resolveInfo="InlineMethodRefactoringAnalyzer" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tvc.4507335185602808637" resolveInfo="getErrors" />
+              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="tvc.4507335185602808421" resolveInfo="InlineMethodRefactoringAnalyzer" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="1230052989329">
                 <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="1230052989330">
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="z76a.8794595397331625050" resolveInfo="InlineMethodDialogModel" />
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tvc.4507335185602808216" resolveInfo="InlineMethodDialogModel" />
                   <node role="actualArgument" roleId="tpee.1068499141038" type="tp5g.TestNodeReference" typeId="tp5g.1210674524691" id="1230052989331">
                     <link role="declaration" roleId="tp5g.1210674534086" targetNodeId="1230052989319" resolveInfo="call" />
                   </node>
@@ -10225,11 +10225,11 @@
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="1230053187447">
         <node role="statement" roleId="tpee.1068581517665" type="tpe3.AssertIsNull" typeId="tpe3.1172028177041" id="1230053187448">
           <node role="expression" roleId="tpe3.1172028236559" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1230053187449">
-            <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="z76a.8794595397331624477" resolveInfo="InlineMethodRefactoringAnalyzer" />
-            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="z76a.8794595397331624658" resolveInfo="getErrors" />
+            <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="tvc.4507335185602808421" resolveInfo="InlineMethodRefactoringAnalyzer" />
+            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tvc.4507335185602808637" resolveInfo="getErrors" />
             <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="1230053187450">
               <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="1230053187451">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="z76a.8794595397331625050" resolveInfo="InlineMethodDialogModel" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tvc.4507335185602808216" resolveInfo="InlineMethodDialogModel" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tp5g.TestNodeReference" typeId="tp5g.1210674524691" id="1230053187452">
                   <link role="declaration" roleId="tp5g.1210674534086" targetNodeId="1230053187327" resolveInfo="call1" />
                 </node>
@@ -10242,11 +10242,11 @@
           <node role="condition" roleId="tpe3.1171981057159" type="tpee.NotEqualsExpression" typeId="tpee.1073239437375" id="1230053187455">
             <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="1230053187456" />
             <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1230053187457">
-              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="z76a.8794595397331624477" resolveInfo="InlineMethodRefactoringAnalyzer" />
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="z76a.8794595397331624658" resolveInfo="getErrors" />
+              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="tvc.4507335185602808421" resolveInfo="InlineMethodRefactoringAnalyzer" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tvc.4507335185602808637" resolveInfo="getErrors" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="1230053187458">
                 <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="1230053187459">
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="z76a.8794595397331625050" resolveInfo="InlineMethodDialogModel" />
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tvc.4507335185602808216" resolveInfo="InlineMethodDialogModel" />
                   <node role="actualArgument" roleId="tpee.1068499141038" type="tp5g.TestNodeReference" typeId="tp5g.1210674524691" id="1230053187460">
                     <link role="declaration" roleId="tp5g.1210674534086" targetNodeId="1230053187333" resolveInfo="call2" />
                   </node>
@@ -10258,11 +10258,11 @@
         </node>
         <node role="statement" roleId="tpee.1068581517665" type="tpe3.AssertIsNull" typeId="tpe3.1172028177041" id="1230053187462">
           <node role="expression" roleId="tpe3.1172028236559" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1230053187463">
-            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="z76a.8794595397331624658" resolveInfo="getErrors" />
-            <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="z76a.8794595397331624477" resolveInfo="InlineMethodRefactoringAnalyzer" />
+            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tvc.4507335185602808637" resolveInfo="getErrors" />
+            <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="tvc.4507335185602808421" resolveInfo="InlineMethodRefactoringAnalyzer" />
             <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="1230053187464">
               <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="1230053187465">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="z76a.8794595397331625050" resolveInfo="InlineMethodDialogModel" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tvc.4507335185602808216" resolveInfo="InlineMethodDialogModel" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tp5g.TestNodeReference" typeId="tp5g.1210674524691" id="1230053187466">
                   <link role="declaration" roleId="tp5g.1210674534086" targetNodeId="1230053187338" resolveInfo="call3" />
                 </node>
@@ -10273,11 +10273,11 @@
         </node>
         <node role="statement" roleId="tpee.1068581517665" type="tpe3.AssertIsNull" typeId="tpe3.1172028177041" id="1230053187468">
           <node role="expression" roleId="tpe3.1172028236559" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1230053187469">
-            <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="z76a.8794595397331624477" resolveInfo="InlineMethodRefactoringAnalyzer" />
-            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="z76a.8794595397331624658" resolveInfo="getErrors" />
+            <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="tvc.4507335185602808421" resolveInfo="InlineMethodRefactoringAnalyzer" />
+            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tvc.4507335185602808637" resolveInfo="getErrors" />
             <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="1230053187470">
               <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="1230053187471">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="z76a.8794595397331625050" resolveInfo="InlineMethodDialogModel" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tvc.4507335185602808216" resolveInfo="InlineMethodDialogModel" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tp5g.TestNodeReference" typeId="tp5g.1210674524691" id="1230053187472">
                   <link role="declaration" roleId="tp5g.1210674534086" targetNodeId="1230053187343" resolveInfo="call4" />
                 </node>
@@ -10290,11 +10290,11 @@
           <node role="condition" roleId="tpe3.1171981057159" type="tpee.NotEqualsExpression" typeId="tpee.1073239437375" id="1230053187475">
             <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="1230053187476" />
             <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1230053187477">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="z76a.8794595397331624658" resolveInfo="getErrors" />
-              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="z76a.8794595397331624477" resolveInfo="InlineMethodRefactoringAnalyzer" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tvc.4507335185602808637" resolveInfo="getErrors" />
+              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="tvc.4507335185602808421" resolveInfo="InlineMethodRefactoringAnalyzer" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="1230053187478">
                 <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="1230053187479">
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="z76a.8794595397331625050" resolveInfo="InlineMethodDialogModel" />
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tvc.4507335185602808216" resolveInfo="InlineMethodDialogModel" />
                   <node role="actualArgument" roleId="tpee.1068499141038" type="tp5g.TestNodeReference" typeId="tp5g.1210674524691" id="1230053187480">
                     <link role="declaration" roleId="tp5g.1210674534086" targetNodeId="1230053187348" resolveInfo="call5" />
                   </node>
@@ -10306,11 +10306,11 @@
         </node>
         <node role="statement" roleId="tpee.1068581517665" type="tpe3.AssertIsNull" typeId="tpe3.1172028177041" id="1230053187482">
           <node role="expression" roleId="tpe3.1172028236559" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1230053187483">
-            <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="z76a.8794595397331624477" resolveInfo="InlineMethodRefactoringAnalyzer" />
-            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="z76a.8794595397331624658" resolveInfo="getErrors" />
+            <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="tvc.4507335185602808421" resolveInfo="InlineMethodRefactoringAnalyzer" />
+            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tvc.4507335185602808637" resolveInfo="getErrors" />
             <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="1230053187484">
               <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="1230053187485">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="z76a.8794595397331625050" resolveInfo="InlineMethodDialogModel" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tvc.4507335185602808216" resolveInfo="InlineMethodDialogModel" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tp5g.TestNodeReference" typeId="tp5g.1210674524691" id="1230053187486">
                   <link role="declaration" roleId="tp5g.1210674534086" targetNodeId="1230053187352" resolveInfo="call6" />
                 </node>
@@ -10400,11 +10400,11 @@
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="1230053187524">
         <node role="statement" roleId="tpee.1068581517665" type="tpe3.AssertIsNull" typeId="tpe3.1172028177041" id="1230053187525">
           <node role="expression" roleId="tpe3.1172028236559" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1230053187526">
-            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="z76a.8794595397331624658" resolveInfo="getErrors" />
-            <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="z76a.8794595397331624477" resolveInfo="InlineMethodRefactoringAnalyzer" />
+            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tvc.4507335185602808637" resolveInfo="getErrors" />
+            <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="tvc.4507335185602808421" resolveInfo="InlineMethodRefactoringAnalyzer" />
             <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="1230053187527">
               <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="1230053187528">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="z76a.8794595397331625050" resolveInfo="InlineMethodDialogModel" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tvc.4507335185602808216" resolveInfo="InlineMethodDialogModel" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tp5g.TestNodeReference" typeId="tp5g.1210674524691" id="1230053187529">
                   <link role="declaration" roleId="tp5g.1210674534086" targetNodeId="1230053187519" resolveInfo="call" />
                 </node>

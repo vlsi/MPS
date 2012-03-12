@@ -9,6 +9,9 @@
     <action id="jetbrains.mps.ide.java.actions.ConvertAnonymousClass_Action" class="jetbrains.mps.ide.java.actions.ConvertAnonymousClass_Action">
       <keyboard-shortcut first-keystroke=" F6" keymap="$default"/>
     </action>
+    <action id="jetbrains.mps.ide.java.actions.ExtractMethod_Action" class="jetbrains.mps.ide.java.actions.ExtractMethod_Action">
+      <keyboard-shortcut first-keystroke="ctrl alt M" keymap="$default"/>
+    </action>
     <action id="jetbrains.mps.ide.java.actions.GenerateConstructor_Action" class="jetbrains.mps.ide.java.actions.GenerateConstructor_Action"/>
     <action id="jetbrains.mps.ide.java.actions.GenerateEqualsAndHashCode_Action" class="jetbrains.mps.ide.java.actions.GenerateEqualsAndHashCode_Action"/>
     <action id="jetbrains.mps.ide.java.actions.GenerateGettersAndSetters_Action" class="jetbrains.mps.ide.java.actions.GenerateGettersAndSetters_Action"/>
@@ -31,6 +34,21 @@
       <keyboard-shortcut first-keystroke="ctrl I" keymap="$default"/>
     </action>
     <action id="jetbrains.mps.ide.java.actions.ImplementMethodsAsIntention_Action" class="jetbrains.mps.ide.java.actions.ImplementMethodsAsIntention_Action"/>
+    <action id="jetbrains.mps.ide.java.actions.InlineLocalVariable_Action" class="jetbrains.mps.ide.java.actions.InlineLocalVariable_Action">
+      <keyboard-shortcut first-keystroke="ctrl alt N" keymap="$default"/>
+    </action>
+    <action id="jetbrains.mps.ide.java.actions.InlineMethod_Action" class="jetbrains.mps.ide.java.actions.InlineMethod_Action">
+      <keyboard-shortcut first-keystroke="ctrl alt N" keymap="$default"/>
+    </action>
+    <action id="jetbrains.mps.ide.java.actions.IntroduceConstant_Action" class="jetbrains.mps.ide.java.actions.IntroduceConstant_Action">
+      <keyboard-shortcut first-keystroke="ctrl alt C" keymap="$default"/>
+    </action>
+    <action id="jetbrains.mps.ide.java.actions.IntroduceField_Action" class="jetbrains.mps.ide.java.actions.IntroduceField_Action">
+      <keyboard-shortcut first-keystroke="ctrl alt F" keymap="$default"/>
+    </action>
+    <action id="jetbrains.mps.ide.java.actions.IntroduceVariable_Action" class="jetbrains.mps.ide.java.actions.IntroduceVariable_Action">
+      <keyboard-shortcut first-keystroke="ctrl alt V" keymap="$default"/>
+    </action>
     <action id="jetbrains.mps.ide.java.actions.MakeFieldFinal_Action" class="jetbrains.mps.ide.java.actions.MakeFieldFinal_Action"/>
     <action id="jetbrains.mps.ide.java.actions.MakeFieldStatic_Action" class="jetbrains.mps.ide.java.actions.MakeFieldStatic_Action"/>
     <action id="jetbrains.mps.ide.java.actions.MigrateSourcesToMPS_Action" class="jetbrains.mps.ide.java.actions.MigrateSourcesToMPS_Action"/>
@@ -50,6 +68,9 @@
     <action id="jetbrains.mps.ide.java.actions.RenameMethod_Action" class="jetbrains.mps.ide.java.actions.RenameMethod_Action">
       <keyboard-shortcut first-keystroke="shift F6" keymap="$default"/>
     </action>
+    <action id="jetbrains.mps.ide.java.actions.RenameVariable_Action" class="jetbrains.mps.ide.java.actions.RenameVariable_Action">
+      <keyboard-shortcut first-keystroke="shift F6" keymap="$default"/>
+    </action>
     <action id="jetbrains.mps.ide.java.actions.ResolveStubReferencesToMPS_Action" class="jetbrains.mps.ide.java.actions.ResolveStubReferencesToMPS_Action"/>
     <action id="jetbrains.mps.ide.java.actions.ShowMembers_Action" class="jetbrains.mps.ide.java.actions.ShowMembers_Action">
       <keyboard-shortcut first-keystroke="ctrl F12" keymap="$default"/>
@@ -63,11 +84,18 @@
     </group>
     <group id="jetbrains.mps.ide.java.actions.RefactoringAdditions_ActionGroup">
       <reference ref="jetbrains.mps.ide.java.actions.ConvertAnonymousClass_Action"/>
-      <reference ref="jetbrains.mps.ide.java.actions.RenameMethod_Action"/>
+      <reference ref="jetbrains.mps.ide.java.actions.ExtractMethod_Action"/>
+      <reference ref="jetbrains.mps.ide.java.actions.InlineLocalVariable_Action"/>
+      <reference ref="jetbrains.mps.ide.java.actions.InlineMethod_Action"/>
+      <reference ref="jetbrains.mps.ide.java.actions.IntroduceConstant_Action"/>
+      <reference ref="jetbrains.mps.ide.java.actions.IntroduceField_Action"/>
+      <reference ref="jetbrains.mps.ide.java.actions.IntroduceVariable_Action"/>
       <reference ref="jetbrains.mps.ide.java.actions.MakeFieldFinal_Action"/>
       <reference ref="jetbrains.mps.ide.java.actions.MakeFieldStatic_Action"/>
       <reference ref="jetbrains.mps.ide.java.actions.MoveStaticField_Action"/>
       <reference ref="jetbrains.mps.ide.java.actions.MoveStaticMethod_Action"/>
+      <reference ref="jetbrains.mps.ide.java.actions.RenameMethod_Action"/>
+      <reference ref="jetbrains.mps.ide.java.actions.RenameVariable_Action"/>
       <add-to-group group-id="jetbrains.mps.ide.platform.actions.NodeRefactoring_ActionGroup" anchor="last"/>
     </group>
     <group id="jetbrains.mps.ide.java.actions.ModelActions_ActionGroup">

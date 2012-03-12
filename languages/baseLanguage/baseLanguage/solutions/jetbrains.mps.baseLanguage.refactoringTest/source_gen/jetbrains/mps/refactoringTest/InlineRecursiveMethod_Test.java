@@ -7,8 +7,8 @@ import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
 import junit.framework.Assert;
-import jetbrains.mps.baseLanguage.pluginSolution.plugin.InlineMethodRefactoringAnalyzer;
-import jetbrains.mps.baseLanguage.pluginSolution.plugin.InlineMethodDialogModel;
+import jetbrains.mps.ide.java.platform.refactorings.InlineMethodRefactoringAnalyzer;
+import jetbrains.mps.ide.java.platform.refactorings.InlineMethodDialogModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 @MPSLaunch
