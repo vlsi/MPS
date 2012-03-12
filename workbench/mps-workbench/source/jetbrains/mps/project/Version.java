@@ -27,7 +27,7 @@ import java.util.regex.Pattern;
  */
 public class Version implements Comparable<Version> {
   
-  private static Pattern VERSION = Pattern.compile("(\\d+)\\.\\(d+)\\.?(\\d)?");
+  private static Pattern VERSION = Pattern.compile("(\\d+)\\.(\\d+)\\.?(\\d)?");
   
   private final String myMajor;
   private final String myMinor;
