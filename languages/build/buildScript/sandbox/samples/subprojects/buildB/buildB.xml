@@ -2,7 +2,7 @@
   <property name="build.dir" location="build" />
   <property name="build.tmp" location="${build.dir}/tmp/buildB" />
   <property name="build.layout" location="${build.dir}/artifacts/buildB" />
-  <property name="artifacts.buildA" location="../../buildScript/sandbox/build/artifacts/buildA" />
+  <property name="artifacts.buildA" location="../../build/artifacts/buildA" />
   <property file="${artifacts.buildA}/variables.properties" prefix="import.buildA" />
   <property name="buildA.aver" value="${import.buildA.buildA.aver}" />
   
@@ -22,7 +22,7 @@
   </target>
   
   <target name="buildDependents">
-    <ant antfile="../../buildScript/sandbox/buildA/buildA.xml" inheritAll="false" useNativeBasedir="true" />
+    <ant antfile="../../buildA/buildA.xml" inheritAll="false" useNativeBasedir="true" />
   </target>
   
   <target name="fetchDependencies">

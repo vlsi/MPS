@@ -10,18 +10,20 @@
   <import index="iuxj" modelUID="r:64db3a92-5968-4a73-b456-34504a2d97a6(jetbrains.mps.core.xml.structure)" version="-1" implicit="yes" />
   <roots>
     <node type="3ior.BuildProject" typeId="3ior.5617550519002745363" id="4129895186893541504">
-      <property name="internalBaseDirectory" nameId="3ior.5204048710541015587" value="." />
+      <property name="internalBaseDirectory" nameId="3ior.5204048710541015587" value="samples" />
       <property name="name" nameId="tpck.1169194664001" value="buildA" />
     </node>
     <node type="3ior.BuildProject" typeId="3ior.5617550519002745363" id="4129895186893541508">
-      <property name="internalBaseDirectory" nameId="3ior.5204048710541015587" value="../../solutions/buildB" />
+      <property name="internalBaseDirectory" nameId="3ior.5204048710541015587" value="samples/subprojects/buildB" />
       <property name="name" nameId="tpck.1169194664001" value="buildB" />
     </node>
     <node type="3ior.BuildProject" typeId="3ior.5617550519002745363" id="4993211115183416028">
       <property name="name" nameId="tpck.1169194664001" value="buildPlugin" />
+      <property name="internalBaseDirectory" nameId="3ior.5204048710541015587" value="samples" />
     </node>
     <node type="3ior.BuildProject" typeId="3ior.5617550519002745363" id="4993211115183387839">
       <property name="name" nameId="tpck.1169194664001" value="buildCore" />
+      <property name="internalBaseDirectory" nameId="3ior.5204048710541015587" value="samples" />
     </node>
   </roots>
   <root id="4129895186893541504">
