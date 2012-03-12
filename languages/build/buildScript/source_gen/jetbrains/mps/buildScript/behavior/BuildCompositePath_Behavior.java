@@ -5,6 +5,7 @@ package jetbrains.mps.buildScript.behavior;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.buildScript.util.MacroHelper;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -23,6 +24,14 @@ public class BuildCompositePath_Behavior {
       return SPropertyOperations.getString(thisNode, "head") + "/" + BuildCompositePath_Behavior.call_getPath_8618885170173674800(SLinkOperations.getTarget(thisNode, "tail", true));
     }
     return SPropertyOperations.getString(thisNode, "head");
+  }
+
+  public static String call_getLastSegment_1368030936106771152(SNode thisNode, MacroHelper helper) {
+    SNode last = thisNode;
+    while ((SLinkOperations.getTarget(last, "tail", true) != null)) {
+      last = SLinkOperations.getTarget(last, "tail", true);
+    }
+    return SPropertyOperations.getString(last, "head");
   }
 
   public static String call_getPathToHead_3968971886499106107(SNode thisNode) {

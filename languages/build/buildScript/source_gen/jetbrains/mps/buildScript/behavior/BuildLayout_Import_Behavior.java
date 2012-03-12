@@ -17,7 +17,7 @@ public class BuildLayout_Import_Behavior {
       return null;
     }
 
-    SNode target = SNodeOperations.as(artifacts.toOriginalNode(SLinkOperations.getTarget(thisNode, "target", false)), "jetbrains.mps.buildScript.structure.BuildLayout_NamedContainer");
+    SNode target = SNodeOperations.as(artifacts.toOriginalNode(SLinkOperations.getTarget(thisNode, "target", false)), "jetbrains.mps.buildScript.structure.BuildLayout_Node");
     if (target != null && artifacts.contains(target)) {
       artifacts.needsFetch(SNodeOperations.getAncestorWhereConceptInList(thisNode, new String[]{"jetbrains.mps.buildScript.structure.BuildLayout", "jetbrains.mps.buildScript.structure.BuildNamedLayout"}, false, false));
       return Sequence.<SNode>singleton(target);

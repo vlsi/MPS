@@ -15,6 +15,9 @@
     <copy todir="${build.layout}/result/A-${buildA.aver}">
       <fileset file="${build.tmp}/deps/buildA/A-_dl_{aver}.zip/module-A.jar" />
     </copy>
+    <copy todir="${build.layout}/result/A-${buildA.aver}">
+      <fileset file="${build.tmp}/deps/buildA/A-_dl_{aver}.zip/abcde.jar" />
+    </copy>
     <jar destfile="${build.layout}/result/A-${buildA.aver}/module-B.jar">
       <fileset dir="${build.tmp}/java/out/module-B" />
     </jar>

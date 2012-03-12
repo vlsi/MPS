@@ -18,7 +18,7 @@ public class BuildLayout_Folder_Behavior {
   public static void virtual_unpack_7128123785277710736(SNode thisNode, UnpackHelper helper) {
     SNode parent = helper.parent(thisNode);
     String parentLocation = helper.contentLocations().get(parent);
-    String folderLocation = parentLocation + "/" + helper.toString(SLinkOperations.getTarget(thisNode, "containerName", true));
+    String folderLocation = parentLocation + "/" + BuildString_Behavior.call_getText_4380385936562005550(SLinkOperations.getTarget(thisNode, "containerName", true), helper.getMacroHelper());
     helper.locations().put(thisNode, folderLocation);
     helper.contentLocations().put(thisNode, folderLocation);
   }

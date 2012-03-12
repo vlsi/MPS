@@ -5,6 +5,7 @@ package jetbrains.mps.buildScript.behavior;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.buildScript.util.Context;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.buildScript.util.MacroHelper;
 import jetbrains.mps.smodel.structure.BehaviorDescriptor;
 import jetbrains.mps.smodel.structure.ConceptRegistry;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -32,6 +33,13 @@ public class BuildRelativePath_Behavior {
       return "";
     }
     return BuildCompositePath_Behavior.call_getPath_8618885170173674800(SLinkOperations.getTarget(thisNode, "compositePart", true));
+  }
+
+  public static String virtual_getLastSegment_1368030936106771141(SNode thisNode, MacroHelper helper) {
+    return ((SLinkOperations.getTarget(thisNode, "compositePart", true) != null) ?
+      BuildCompositePath_Behavior.call_getLastSegment_1368030936106771152(SLinkOperations.getTarget(thisNode, "compositePart", true), helper) :
+      null
+    );
   }
 
   public static String call_getBasePath_4959435991187140515(SNode thisNode, Context context) {

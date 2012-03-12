@@ -1,94 +1,88 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <root nodeId="2590001334067667566">
-    <nodeInfo nodeId="2590001334067676262" fileName="UnpackHelper.java" startLine="15" startPosition="54" endLine="16" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="visible" />
-    <nodeInfo nodeId="7128123785277681135" fileName="UnpackHelper.java" startLine="16" startPosition="41" endLine="17" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="required" />
-    <nodeInfo nodeId="7128123785277702361" fileName="UnpackHelper.java" startLine="17" startPosition="62" endLine="18" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="requiredSet" />
-    <nodeInfo nodeId="7128123785277721817" fileName="UnpackHelper.java" startLine="18" startPosition="62" endLine="19" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="evaluated" />
-    <nodeInfo nodeId="7128123785277724042" fileName="UnpackHelper.java" startLine="19" startPosition="36" endLine="20" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="statements" />
-    <nodeInfo nodeId="4640279023716863607" fileName="UnpackHelper.java" startLine="20" startPosition="64" endLine="21" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myPathProvider" />
-    <nodeInfo nodeId="6520682027041018460" fileName="UnpackHelper.java" startLine="21" startPosition="38" endLine="22" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="genContext" />
-    <nodeInfo nodeId="4640279023716659294" fileName="UnpackHelper.java" startLine="24" startPosition="108" endLine="25" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="2590001334067676265" fileName="UnpackHelper.java" startLine="25" startPosition="44" endLine="26" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7128123785277830934" fileName="UnpackHelper.java" startLine="26" startPosition="27" endLine="27" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7128123785277840246" fileName="UnpackHelper.java" startLine="27" startPosition="77" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="7128123785277702265" fileName="UnpackHelper.java" startLine="29" startPosition="33" endLine="30" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6520682027041018463" fileName="UnpackHelper.java" startLine="31" startPosition="5" endLine="32" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7128123785277702257" fileName="UnpackHelper.java" startLine="36" startPosition="32" endLine="37" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7128123785277702258" fileName="UnpackHelper.java" startLine="38" startPosition="5" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="7128123785277702144" fileName="UnpackHelper.java" startLine="39" startPosition="0" endLine="40" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7128123785277702311" fileName="UnpackHelper.java" startLine="41" startPosition="25" endLine="42" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7128123785277702325" fileName="UnpackHelper.java" startLine="43" startPosition="5" endLine="44" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7128123785277723667" fileName="UnpackHelper.java" startLine="48" startPosition="20" endLine="49" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7128123785277723672" fileName="UnpackHelper.java" startLine="50" startPosition="5" endLine="51" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7128123785277723669" fileName="UnpackHelper.java" startLine="51" startPosition="21" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="7128123785277710747" fileName="UnpackHelper.java" startLine="53" startPosition="30" endLine="54" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7128123785277710680" fileName="UnpackHelper.java" startLine="58" startPosition="38" endLine="59" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7128123785277752040" fileName="UnpackHelper.java" startLine="62" startPosition="30" endLine="63" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7128123785277723735" fileName="UnpackHelper.java" startLine="66" startPosition="35" endLine="67" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6520682027041026850" fileName="UnpackHelper.java" startLine="70" startPosition="38" endLine="71" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7128123785277844829" fileName="UnpackHelper.java" startLine="74" startPosition="38" endLine="75" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4640279023716863659" fileName="UnpackHelper.java" startLine="78" startPosition="41" endLine="79" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7128123785277681130" fileName="UnpackHelper.java" startLine="28" startPosition="0" endLine="31" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="7128123785277702209" fileName="UnpackHelper.java" startLine="35" startPosition="29" endLine="38" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7128123785277702282" fileName="UnpackHelper.java" startLine="40" startPosition="37" endLine="43" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7128123785277721822" fileName="UnpackHelper.java" startLine="47" startPosition="22" endLine="50" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7128123785277710718" fileName="UnpackHelper.java" startLine="52" startPosition="0" endLine="55" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="7128123785277710673" fileName="UnpackHelper.java" startLine="57" startPosition="0" endLine="61" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isRequired#(Ljetbrains/mps/smodel/SNode;)Z" />
-    <nodeInfo nodeId="2590001334067676309" fileName="UnpackHelper.java" startLine="61" startPosition="0" endLine="65" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="emit#(Ljetbrains/mps/smodel/SNode;)V" />
-    <nodeInfo nodeId="7128123785277723728" fileName="UnpackHelper.java" startLine="65" startPosition="0" endLine="69" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="parent#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="7128123785277840764" fileName="UnpackHelper.java" startLine="69" startPosition="0" endLine="73" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="toString#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;" />
-    <nodeInfo nodeId="7128123785277844825" fileName="UnpackHelper.java" startLine="73" startPosition="0" endLine="77" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getStatements#()Ljava/util/List;" />
-    <nodeInfo nodeId="4640279023716863655" fileName="UnpackHelper.java" startLine="77" startPosition="0" endLine="81" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPathProvider#()Ljetbrains/mps/buildScript/util/PathProvider;" />
-    <nodeInfo nodeId="2590001334067667568" fileName="UnpackHelper.java" startLine="23" startPosition="0" endLine="33" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="UnpackHelper#(Ljetbrains/mps/buildScript/util/VisibleArtifacts;Ljava/lang/Iterable;Ljetbrains/mps/generator/template/TemplateQueryContext;)V" />
-    <nodeInfo nodeId="7128123785277710711" fileName="UnpackHelper.java" startLine="46" startPosition="0" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="eval#()V" />
-    <nodeInfo nodeId="7128123785277702132" fileName="UnpackHelper.java" startLine="34" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="add#(Ljetbrains/mps/smodel/SNode;)V" />
-    <scopeInfo nodeId="7128123785277681131" fileName="UnpackHelper.java" startLine="29" startPosition="33" endLine="30" endPosition="16" />
-    <scopeInfo nodeId="7128123785277702210" fileName="UnpackHelper.java" startLine="36" startPosition="32" endLine="37" endPosition="13" />
-    <scopeInfo nodeId="7128123785277702283" fileName="UnpackHelper.java" startLine="41" startPosition="25" endLine="42" endPosition="18" />
-    <scopeInfo nodeId="7128123785277721823" fileName="UnpackHelper.java" startLine="48" startPosition="20" endLine="49" endPosition="13" />
-    <scopeInfo nodeId="7128123785277710719" fileName="UnpackHelper.java" startLine="53" startPosition="30" endLine="54" endPosition="80" />
-    <scopeInfo nodeId="7128123785277710676" fileName="UnpackHelper.java" startLine="58" startPosition="38" endLine="59" endPosition="35" />
-    <scopeInfo nodeId="2590001334067676312" fileName="UnpackHelper.java" startLine="62" startPosition="30" endLine="63" endPosition="53" />
-    <scopeInfo nodeId="7128123785277723731" fileName="UnpackHelper.java" startLine="66" startPosition="35" endLine="67" endPosition="32" />
-    <scopeInfo nodeId="7128123785277840767" fileName="UnpackHelper.java" startLine="70" startPosition="38" endLine="71" endPosition="79" />
-    <scopeInfo nodeId="7128123785277844828" fileName="UnpackHelper.java" startLine="74" startPosition="38" endLine="75" endPosition="62" />
-    <scopeInfo nodeId="4640279023716863658" fileName="UnpackHelper.java" startLine="78" startPosition="41" endLine="79" endPosition="26" />
-    <scopeInfo nodeId="7128123785277681130" fileName="UnpackHelper.java" startLine="28" startPosition="0" endLine="31" endPosition="5">
+    <nodeInfo nodeId="2590001334067676262" fileName="UnpackHelper.java" startLine="14" startPosition="54" endLine="15" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="visible" />
+    <nodeInfo nodeId="7128123785277681135" fileName="UnpackHelper.java" startLine="15" startPosition="41" endLine="16" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="required" />
+    <nodeInfo nodeId="7128123785277702361" fileName="UnpackHelper.java" startLine="16" startPosition="62" endLine="17" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="requiredSet" />
+    <nodeInfo nodeId="7128123785277721817" fileName="UnpackHelper.java" startLine="17" startPosition="62" endLine="18" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="evaluated" />
+    <nodeInfo nodeId="7128123785277724042" fileName="UnpackHelper.java" startLine="18" startPosition="36" endLine="19" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="statements" />
+    <nodeInfo nodeId="4640279023716863607" fileName="UnpackHelper.java" startLine="19" startPosition="64" endLine="20" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myPathProvider" />
+    <nodeInfo nodeId="6520682027041018460" fileName="UnpackHelper.java" startLine="20" startPosition="38" endLine="21" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="genContext" />
+    <nodeInfo nodeId="4640279023716659294" fileName="UnpackHelper.java" startLine="23" startPosition="108" endLine="24" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="2590001334067676265" fileName="UnpackHelper.java" startLine="24" startPosition="44" endLine="25" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7128123785277830934" fileName="UnpackHelper.java" startLine="25" startPosition="27" endLine="26" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7128123785277840246" fileName="UnpackHelper.java" startLine="26" startPosition="77" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="7128123785277702265" fileName="UnpackHelper.java" startLine="28" startPosition="33" endLine="29" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6520682027041018463" fileName="UnpackHelper.java" startLine="30" startPosition="5" endLine="31" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7128123785277702257" fileName="UnpackHelper.java" startLine="35" startPosition="32" endLine="36" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7128123785277702258" fileName="UnpackHelper.java" startLine="37" startPosition="5" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="7128123785277702144" fileName="UnpackHelper.java" startLine="38" startPosition="0" endLine="39" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7128123785277702311" fileName="UnpackHelper.java" startLine="40" startPosition="25" endLine="41" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7128123785277702325" fileName="UnpackHelper.java" startLine="42" startPosition="5" endLine="43" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7128123785277723667" fileName="UnpackHelper.java" startLine="47" startPosition="20" endLine="48" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7128123785277723672" fileName="UnpackHelper.java" startLine="49" startPosition="5" endLine="50" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7128123785277723669" fileName="UnpackHelper.java" startLine="50" startPosition="21" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="7128123785277710747" fileName="UnpackHelper.java" startLine="52" startPosition="30" endLine="53" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7128123785277710680" fileName="UnpackHelper.java" startLine="57" startPosition="38" endLine="58" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7128123785277752040" fileName="UnpackHelper.java" startLine="61" startPosition="30" endLine="62" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7128123785277723735" fileName="UnpackHelper.java" startLine="65" startPosition="35" endLine="66" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7128123785277844829" fileName="UnpackHelper.java" startLine="69" startPosition="38" endLine="70" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4640279023716863659" fileName="UnpackHelper.java" startLine="73" startPosition="41" endLine="74" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7128123785277681130" fileName="UnpackHelper.java" startLine="27" startPosition="0" endLine="30" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="7128123785277702209" fileName="UnpackHelper.java" startLine="34" startPosition="29" endLine="37" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7128123785277702282" fileName="UnpackHelper.java" startLine="39" startPosition="37" endLine="42" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7128123785277721822" fileName="UnpackHelper.java" startLine="46" startPosition="22" endLine="49" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7128123785277710718" fileName="UnpackHelper.java" startLine="51" startPosition="0" endLine="54" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="7128123785277710673" fileName="UnpackHelper.java" startLine="56" startPosition="0" endLine="60" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isRequired#(Ljetbrains/mps/smodel/SNode;)Z" />
+    <nodeInfo nodeId="2590001334067676309" fileName="UnpackHelper.java" startLine="60" startPosition="0" endLine="64" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="emit#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="7128123785277723728" fileName="UnpackHelper.java" startLine="64" startPosition="0" endLine="68" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="parent#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="7128123785277844825" fileName="UnpackHelper.java" startLine="68" startPosition="0" endLine="72" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getStatements#()Ljava/util/List;" />
+    <nodeInfo nodeId="4640279023716863655" fileName="UnpackHelper.java" startLine="72" startPosition="0" endLine="76" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPathProvider#()Ljetbrains/mps/buildScript/util/PathProvider;" />
+    <nodeInfo nodeId="2590001334067667568" fileName="UnpackHelper.java" startLine="22" startPosition="0" endLine="32" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="UnpackHelper#(Ljetbrains/mps/buildScript/util/VisibleArtifacts;Ljava/lang/Iterable;Ljetbrains/mps/generator/template/TemplateQueryContext;)V" />
+    <nodeInfo nodeId="7128123785277710711" fileName="UnpackHelper.java" startLine="45" startPosition="0" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="eval#()V" />
+    <nodeInfo nodeId="7128123785277702132" fileName="UnpackHelper.java" startLine="33" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="add#(Ljetbrains/mps/smodel/SNode;)V" />
+    <scopeInfo nodeId="7128123785277681131" fileName="UnpackHelper.java" startLine="28" startPosition="33" endLine="29" endPosition="16" />
+    <scopeInfo nodeId="7128123785277702210" fileName="UnpackHelper.java" startLine="35" startPosition="32" endLine="36" endPosition="13" />
+    <scopeInfo nodeId="7128123785277702283" fileName="UnpackHelper.java" startLine="40" startPosition="25" endLine="41" endPosition="18" />
+    <scopeInfo nodeId="7128123785277721823" fileName="UnpackHelper.java" startLine="47" startPosition="20" endLine="48" endPosition="13" />
+    <scopeInfo nodeId="7128123785277710719" fileName="UnpackHelper.java" startLine="52" startPosition="30" endLine="53" endPosition="80" />
+    <scopeInfo nodeId="7128123785277710676" fileName="UnpackHelper.java" startLine="57" startPosition="38" endLine="58" endPosition="35" />
+    <scopeInfo nodeId="2590001334067676312" fileName="UnpackHelper.java" startLine="61" startPosition="30" endLine="62" endPosition="53" />
+    <scopeInfo nodeId="7128123785277723731" fileName="UnpackHelper.java" startLine="65" startPosition="35" endLine="66" endPosition="32" />
+    <scopeInfo nodeId="7128123785277844828" fileName="UnpackHelper.java" startLine="69" startPosition="38" endLine="70" endPosition="62" />
+    <scopeInfo nodeId="4640279023716863658" fileName="UnpackHelper.java" startLine="73" startPosition="41" endLine="74" endPosition="26" />
+    <scopeInfo nodeId="7128123785277681130" fileName="UnpackHelper.java" startLine="27" startPosition="0" endLine="30" endPosition="5">
       <varInfo nodeId="7128123785277681132" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="7128123785277710718" fileName="UnpackHelper.java" startLine="52" startPosition="0" endLine="55" endPosition="5">
+    <scopeInfo nodeId="7128123785277710718" fileName="UnpackHelper.java" startLine="51" startPosition="0" endLine="54" endPosition="5">
       <varInfo nodeId="7128123785277710720" varName="n" />
     </scopeInfo>
-    <scopeInfo nodeId="7128123785277710673" fileName="UnpackHelper.java" startLine="57" startPosition="0" endLine="61" endPosition="0">
+    <scopeInfo nodeId="7128123785277710673" fileName="UnpackHelper.java" startLine="56" startPosition="0" endLine="60" endPosition="0">
       <varInfo nodeId="7128123785277710678" varName="n" />
     </scopeInfo>
-    <scopeInfo nodeId="2590001334067676309" fileName="UnpackHelper.java" startLine="61" startPosition="0" endLine="65" endPosition="0">
+    <scopeInfo nodeId="2590001334067676309" fileName="UnpackHelper.java" startLine="60" startPosition="0" endLine="64" endPosition="0">
       <varInfo nodeId="2590001334067676313" varName="st" />
     </scopeInfo>
-    <scopeInfo nodeId="7128123785277723728" fileName="UnpackHelper.java" startLine="65" startPosition="0" endLine="69" endPosition="0">
+    <scopeInfo nodeId="7128123785277723728" fileName="UnpackHelper.java" startLine="64" startPosition="0" endLine="68" endPosition="0">
       <varInfo nodeId="7128123785277723733" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="7128123785277840764" fileName="UnpackHelper.java" startLine="69" startPosition="0" endLine="73" endPosition="0">
-      <varInfo nodeId="7128123785277840769" varName="text" />
-    </scopeInfo>
-    <scopeInfo nodeId="7128123785277844825" fileName="UnpackHelper.java" startLine="73" startPosition="0" endLine="77" endPosition="0" />
-    <scopeInfo nodeId="4640279023716863655" fileName="UnpackHelper.java" startLine="77" startPosition="0" endLine="81" endPosition="0" />
-    <scopeInfo nodeId="2590001334067667571" fileName="UnpackHelper.java" startLine="24" startPosition="108" endLine="32" endPosition="33" />
-    <scopeInfo nodeId="7128123785277710714" fileName="UnpackHelper.java" startLine="47" startPosition="22" endLine="55" endPosition="5" />
-    <scopeInfo nodeId="7128123785277702135" fileName="UnpackHelper.java" startLine="35" startPosition="29" endLine="44" endPosition="50">
+    <scopeInfo nodeId="7128123785277844825" fileName="UnpackHelper.java" startLine="68" startPosition="0" endLine="72" endPosition="0" />
+    <scopeInfo nodeId="4640279023716863655" fileName="UnpackHelper.java" startLine="72" startPosition="0" endLine="76" endPosition="0" />
+    <scopeInfo nodeId="2590001334067667571" fileName="UnpackHelper.java" startLine="23" startPosition="108" endLine="31" endPosition="33" />
+    <scopeInfo nodeId="7128123785277710714" fileName="UnpackHelper.java" startLine="46" startPosition="22" endLine="54" endPosition="5" />
+    <scopeInfo nodeId="7128123785277702135" fileName="UnpackHelper.java" startLine="34" startPosition="29" endLine="43" endPosition="50">
       <varInfo nodeId="7128123785277702145" varName="parent" />
     </scopeInfo>
-    <scopeInfo nodeId="2590001334067667568" fileName="UnpackHelper.java" startLine="23" startPosition="0" endLine="33" endPosition="3">
+    <scopeInfo nodeId="2590001334067667568" fileName="UnpackHelper.java" startLine="22" startPosition="0" endLine="32" endPosition="3">
       <varInfo nodeId="7128123785277830928" varName="genContext" />
       <varInfo nodeId="7128123785277681119" varName="required" />
       <varInfo nodeId="2590001334067676253" varName="visible" />
     </scopeInfo>
-    <scopeInfo nodeId="7128123785277710711" fileName="UnpackHelper.java" startLine="46" startPosition="0" endLine="57" endPosition="0" />
-    <scopeInfo nodeId="7128123785277702132" fileName="UnpackHelper.java" startLine="34" startPosition="0" endLine="46" endPosition="0">
+    <scopeInfo nodeId="7128123785277710711" fileName="UnpackHelper.java" startLine="45" startPosition="0" endLine="56" endPosition="0" />
+    <scopeInfo nodeId="7128123785277702132" fileName="UnpackHelper.java" startLine="33" startPosition="0" endLine="45" endPosition="0">
       <varInfo nodeId="7128123785277702141" varName="n" />
     </scopeInfo>
-    <unitInfo nodeId="2590001334067667566" fileName="UnpackHelper.java" startLine="15" startPosition="0" endLine="82" endPosition="0" unitName="jetbrains.mps.buildScript.util.UnpackHelper" />
+    <unitInfo nodeId="2590001334067667566" fileName="UnpackHelper.java" startLine="14" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.buildScript.util.UnpackHelper" />
   </root>
   <root nodeId="3767587139141109579">
     <nodeInfo nodeId="3767587139141108530" fileName="ScopeUtil.java" startLine="33" startPosition="42" endLine="34" endPosition="133" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -313,47 +307,51 @@
     <nodeInfo nodeId="4640279023716660562" fileName="DependenciesHelper.java" startLine="30" startPosition="48" endLine="31" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6547494638219610803" fileName="DependenciesHelper.java" startLine="34" startPosition="41" endLine="35" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6520682027041156438" fileName="DependenciesHelper.java" startLine="38" startPosition="45" endLine="39" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6547494638219491296" fileName="DependenciesHelper.java" startLine="44" startPosition="31" endLine="45" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
-    <nodeInfo nodeId="6547494638219491303" fileName="DependenciesHelper.java" startLine="46" startPosition="7" endLine="47" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6547494638219491312" fileName="DependenciesHelper.java" startLine="48" startPosition="35" endLine="49" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6547494638219491319" fileName="DependenciesHelper.java" startLine="50" startPosition="14" endLine="51" endPosition="121" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6547494638219491325" fileName="DependenciesHelper.java" startLine="52" startPosition="7" endLine="53" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6547494638219491333" fileName="DependenciesHelper.java" startLine="54" startPosition="5" endLine="55" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6547494638219491317" fileName="DependenciesHelper.java" startLine="50" startPosition="12" endLine="52" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="6547494638219491294" fileName="DependenciesHelper.java" startLine="43" startPosition="55" endLine="46" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1368030936106771682" fileName="DependenciesHelper.java" startLine="42" startPosition="39" endLine="43" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6547494638219491296" fileName="DependenciesHelper.java" startLine="48" startPosition="31" endLine="49" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
+    <nodeInfo nodeId="6547494638219491303" fileName="DependenciesHelper.java" startLine="50" startPosition="7" endLine="51" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6547494638219491312" fileName="DependenciesHelper.java" startLine="52" startPosition="35" endLine="53" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6547494638219491319" fileName="DependenciesHelper.java" startLine="54" startPosition="14" endLine="55" endPosition="121" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6547494638219491325" fileName="DependenciesHelper.java" startLine="56" startPosition="7" endLine="57" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6547494638219491333" fileName="DependenciesHelper.java" startLine="58" startPosition="5" endLine="59" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6547494638219491317" fileName="DependenciesHelper.java" startLine="54" startPosition="12" endLine="56" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="6547494638219491294" fileName="DependenciesHelper.java" startLine="47" startPosition="55" endLine="50" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="4640279023716660548" fileName="DependenciesHelper.java" startLine="25" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="locations#()Ljava/util/Map;" />
     <nodeInfo nodeId="4640279023716660556" fileName="DependenciesHelper.java" startLine="29" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="contentLocations#()Ljava/util/Map;" />
     <nodeInfo nodeId="6547494638219610796" fileName="DependenciesHelper.java" startLine="33" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="artifacts#()Ljava/util/Map;" />
     <nodeInfo nodeId="6520682027041156432" fileName="DependenciesHelper.java" startLine="37" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="requiresFetch#()Ljava/util/Map;" />
-    <nodeInfo nodeId="6547494638219491310" fileName="DependenciesHelper.java" startLine="47" startPosition="71" endLine="52" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1368030936106771678" fileName="DependenciesHelper.java" startLine="41" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getMacroHelper#()Ljetbrains/mps/buildScript/util/MacroHelper;" />
+    <nodeInfo nodeId="6547494638219491310" fileName="DependenciesHelper.java" startLine="51" startPosition="71" endLine="56" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="4640279023716659262" fileName="DependenciesHelper.java" startLine="17" startPosition="0" endLine="24" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="DependenciesHelper#(Ljetbrains/mps/generator/template/TemplateQueryContext;Ljetbrains/mps/smodel/SNode;)V" />
-    <nodeInfo nodeId="6547494638219491292" fileName="DependenciesHelper.java" startLine="42" startPosition="84" endLine="54" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6547494638219491288" fileName="DependenciesHelper.java" startLine="41" startPosition="0" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getOriginalNode#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/generator/template/TemplateQueryContext;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="6547494638219491292" fileName="DependenciesHelper.java" startLine="46" startPosition="84" endLine="58" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6547494638219491288" fileName="DependenciesHelper.java" startLine="45" startPosition="0" endLine="61" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getOriginalNode#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/generator/template/TemplateQueryContext;)Ljetbrains/mps/smodel/SNode;" />
     <scopeInfo nodeId="4640279023716660553" fileName="DependenciesHelper.java" startLine="26" startPosition="41" endLine="27" endPosition="23" />
     <scopeInfo nodeId="4640279023716660561" fileName="DependenciesHelper.java" startLine="30" startPosition="48" endLine="31" endPosition="30" />
     <scopeInfo nodeId="6547494638219610799" fileName="DependenciesHelper.java" startLine="34" startPosition="41" endLine="35" endPosition="27" />
     <scopeInfo nodeId="6520682027041156437" fileName="DependenciesHelper.java" startLine="38" startPosition="45" endLine="39" endPosition="25" />
-    <scopeInfo nodeId="6547494638219491295" fileName="DependenciesHelper.java" startLine="44" startPosition="31" endLine="45" endPosition="75" />
-    <scopeInfo nodeId="6547494638219491311" fileName="DependenciesHelper.java" startLine="48" startPosition="35" endLine="49" endPosition="28" />
-    <scopeInfo nodeId="6547494638219491318" fileName="DependenciesHelper.java" startLine="50" startPosition="14" endLine="51" endPosition="121" />
+    <scopeInfo nodeId="1368030936106771681" fileName="DependenciesHelper.java" startLine="42" startPosition="39" endLine="43" endPosition="18" />
+    <scopeInfo nodeId="6547494638219491295" fileName="DependenciesHelper.java" startLine="48" startPosition="31" endLine="49" endPosition="75" />
+    <scopeInfo nodeId="6547494638219491311" fileName="DependenciesHelper.java" startLine="52" startPosition="35" endLine="53" endPosition="28" />
+    <scopeInfo nodeId="6547494638219491318" fileName="DependenciesHelper.java" startLine="54" startPosition="14" endLine="55" endPosition="121" />
     <scopeInfo nodeId="4640279023716660548" fileName="DependenciesHelper.java" startLine="25" startPosition="0" endLine="29" endPosition="0" />
     <scopeInfo nodeId="4640279023716660556" fileName="DependenciesHelper.java" startLine="29" startPosition="0" endLine="33" endPosition="0" />
     <scopeInfo nodeId="6547494638219610796" fileName="DependenciesHelper.java" startLine="33" startPosition="0" endLine="37" endPosition="0" />
     <scopeInfo nodeId="6520682027041156432" fileName="DependenciesHelper.java" startLine="37" startPosition="0" endLine="41" endPosition="0" />
+    <scopeInfo nodeId="1368030936106771678" fileName="DependenciesHelper.java" startLine="41" startPosition="0" endLine="45" endPosition="0" />
     <scopeInfo nodeId="4640279023716659265" fileName="DependenciesHelper.java" startLine="18" startPosition="86" endLine="23" endPosition="106" />
     <scopeInfo nodeId="4640279023716659262" fileName="DependenciesHelper.java" startLine="17" startPosition="0" endLine="24" endPosition="3">
       <varInfo nodeId="4640279023716659266" varName="genContext" />
       <varInfo nodeId="4640279023716659284" varName="project" />
     </scopeInfo>
-    <scopeInfo nodeId="6547494638219491293" fileName="DependenciesHelper.java" startLine="43" startPosition="55" endLine="53" endPosition="18">
+    <scopeInfo nodeId="6547494638219491293" fileName="DependenciesHelper.java" startLine="47" startPosition="55" endLine="57" endPosition="18">
       <varInfo nodeId="6547494638219491304" varName="originalNode" />
     </scopeInfo>
-    <scopeInfo nodeId="6547494638219491291" fileName="DependenciesHelper.java" startLine="42" startPosition="84" endLine="55" endPosition="16" />
-    <scopeInfo nodeId="6547494638219491288" fileName="DependenciesHelper.java" startLine="41" startPosition="0" endLine="57" endPosition="0">
+    <scopeInfo nodeId="6547494638219491291" fileName="DependenciesHelper.java" startLine="46" startPosition="84" endLine="59" endPosition="16" />
+    <scopeInfo nodeId="6547494638219491288" fileName="DependenciesHelper.java" startLine="45" startPosition="0" endLine="61" endPosition="0">
       <varInfo nodeId="6547494638219491339" varName="genContext" />
       <varInfo nodeId="6547494638219491336" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="4640279023716659260" fileName="DependenciesHelper.java" startLine="11" startPosition="0" endLine="58" endPosition="0" unitName="jetbrains.mps.buildScript.util.DependenciesHelper" />
+    <unitInfo nodeId="4640279023716659260" fileName="DependenciesHelper.java" startLine="11" startPosition="0" endLine="62" endPosition="0" unitName="jetbrains.mps.buildScript.util.DependenciesHelper" />
   </root>
   <root nodeId="4640279023716695628">
     <nodeInfo nodeId="4640279023716772910" fileName="PathProvider.java" startLine="14" startPosition="27" endLine="15" endPosition="278" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="reservedNames" />

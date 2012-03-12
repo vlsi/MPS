@@ -21,7 +21,7 @@ public class BuildLayout_Jar_Behavior {
   public static void virtual_unpack_7128123785277710736(SNode thisNode, UnpackHelper helper) {
     SNode parent = helper.parent(thisNode);
     String parentLocation = helper.contentLocations().get(parent);
-    String zipLocation = parentLocation + "/" + helper.toString(SLinkOperations.getTarget(thisNode, "containerName", true));
+    String zipLocation = parentLocation + "/" + BuildString_Behavior.call_getText_4380385936562005550(SLinkOperations.getTarget(thisNode, "containerName", true), helper.getMacroHelper());
     helper.locations().put(thisNode, zipLocation);
 
     boolean needUnpack = false;

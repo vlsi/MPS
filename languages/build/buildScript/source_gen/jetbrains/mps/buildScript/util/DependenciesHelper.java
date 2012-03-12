@@ -39,6 +39,10 @@ public class DependenciesHelper {
     return requiresFetch;
   }
 
+  public MacroHelper getMacroHelper() {
+    return macros;
+  }
+
   public static SNode getOriginalNode(SNode node, TemplateQueryContext genContext) {
     if (SNodeOperations.getModel(node).isTransient()) {
       if (genContext == null) {

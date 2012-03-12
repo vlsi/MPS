@@ -10,7 +10,6 @@ import java.util.HashSet;
 import jetbrains.mps.generator.template.TemplateQueryContext;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.buildScript.behavior.BuildLayout_PathElement_Behavior;
-import jetbrains.mps.buildScript.behavior.BuildString_Behavior;
 
 public class UnpackHelper extends DependenciesHelper {
   private final VisibleArtifacts visible;
@@ -65,10 +64,6 @@ public class UnpackHelper extends DependenciesHelper {
 
   public SNode parent(SNode node) {
     return visible.parent(node);
-  }
-
-  public String toString(SNode text) {
-    return BuildString_Behavior.call_getText_4380385936562005550(text, macros);
   }
 
   public List<SNode> getStatements() {

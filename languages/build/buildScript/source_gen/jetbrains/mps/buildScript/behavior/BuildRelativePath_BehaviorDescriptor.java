@@ -4,6 +4,7 @@ package jetbrains.mps.buildScript.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.buildScript.util.Context;
+import jetbrains.mps.buildScript.util.MacroHelper;
 import org.jetbrains.annotations.Nullable;
 
 public abstract class BuildRelativePath_BehaviorDescriptor extends BuildSourcePath_BehaviorDescriptor {
@@ -12,6 +13,10 @@ public abstract class BuildRelativePath_BehaviorDescriptor extends BuildSourcePa
 
   public String virtual_getLocalPath_5481553824944787364(SNode thisNode, Context context) {
     return BuildRelativePath_Behavior.virtual_getLocalPath_5481553824944787364(thisNode, context);
+  }
+
+  public String virtual_getLastSegment_1368030936106771141(SNode thisNode, MacroHelper helper) {
+    return BuildRelativePath_Behavior.virtual_getLastSegment_1368030936106771141(thisNode, helper);
   }
 
   @Override
