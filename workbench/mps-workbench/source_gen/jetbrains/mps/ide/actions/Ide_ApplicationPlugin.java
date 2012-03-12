@@ -104,6 +104,7 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     addAction(new ShowNodeInInspector_Action());
     addAction(new ShowNodeInfo_Action());
     addAction(new ShowParameters_Action());
+    addAction(new ShowTodoViewer_Action());
     addAction(new SubmitToTracker_Action());
     // groups 
     addGroup(new AbstractFileActions_ActionGroup());

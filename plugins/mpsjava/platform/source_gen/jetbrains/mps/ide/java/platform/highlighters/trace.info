@@ -1,6 +1,61 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="IconContainer.java" startLine="8" startPosition="0" endLine="14" endPosition="0" unitName="jetbrains.mps.ide.java.platform.highlighters.IconContainer" />
+  <root nodeId="5916754392152656752">
+    <nodeInfo nodeId="5916754392152656773" fileName="ToDoHighlighter.java" startLine="23" startPosition="139" endLine="24" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5916754392152656780" fileName="ToDoHighlighter.java" startLine="24" startPosition="90" endLine="25" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5916754392152656794" fileName="ToDoHighlighter.java" startLine="27" startPosition="139" endLine="28" endPosition="128" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5916754392152656819" fileName="ToDoHighlighter.java" startLine="32" startPosition="157" endLine="33" endPosition="145" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5916754392152656840" fileName="ToDoHighlighter.java" startLine="35" startPosition="5" endLine="36" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5916754392152656848" fileName="ToDoHighlighter.java" startLine="39" startPosition="79" endLine="40" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5916754392152656858" fileName="ToDoHighlighter.java" startLine="42" startPosition="60" endLine="43" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5916754392152656874" fileName="ToDoHighlighter.java" startLine="47" startPosition="59" endLine="48" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5916754392152656886" fileName="ToDoHighlighter.java" startLine="50" startPosition="5" endLine="51" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5916754392152656753" fileName="ToDoHighlighter.java" startLine="19" startPosition="59" endLine="21" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ToDoHighlighter#()V" />
+    <nodeInfo nodeId="5916754392152656792" fileName="ToDoHighlighter.java" startLine="26" startPosition="142" endLine="29" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5916754392152656817" fileName="ToDoHighlighter.java" startLine="31" startPosition="151" endLine="34" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5916754392152656856" fileName="ToDoHighlighter.java" startLine="41" startPosition="101" endLine="44" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5916754392152656872" fileName="ToDoHighlighter.java" startLine="46" startPosition="101" endLine="49" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5916754392152656790" fileName="ToDoHighlighter.java" startLine="25" startPosition="26" endLine="30" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="5916754392152656815" fileName="ToDoHighlighter.java" startLine="30" startPosition="5" endLine="35" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="5916754392152656854" fileName="ToDoHighlighter.java" startLine="40" startPosition="41" endLine="45" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5916754392152656870" fileName="ToDoHighlighter.java" startLine="45" startPosition="5" endLine="50" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5916754392152656842" fileName="ToDoHighlighter.java" startLine="38" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isPropertyEventDramatical#(Ljetbrains/mps/smodel/event/SModelPropertyEvent;)Z" />
+    <nodeInfo nodeId="5916754392152656759" fileName="ToDoHighlighter.java" startLine="22" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createMessages#(Ljetbrains/mps/smodel/SNode;Ljava/util/List;ZLjetbrains/mps/nodeEditor/EditorContext;)Ljava/util/Set;" />
+    <scopeInfo nodeId="5916754392152656756" fileName="ToDoHighlighter.java" startLine="20" startPosition="28" endLine="20" endPosition="28" />
+    <scopeInfo nodeId="5916754392152656793" fileName="ToDoHighlighter.java" startLine="27" startPosition="139" endLine="28" endPosition="128" />
+    <scopeInfo nodeId="5916754392152656818" fileName="ToDoHighlighter.java" startLine="32" startPosition="157" endLine="33" endPosition="145" />
+    <scopeInfo nodeId="5916754392152656857" fileName="ToDoHighlighter.java" startLine="42" startPosition="60" endLine="43" endPosition="20" />
+    <scopeInfo nodeId="5916754392152656873" fileName="ToDoHighlighter.java" startLine="47" startPosition="59" endLine="48" endPosition="20" />
+    <scopeInfo nodeId="5916754392152656753" fileName="ToDoHighlighter.java" startLine="19" startPosition="59" endLine="21" endPosition="3" />
+    <scopeInfo nodeId="5916754392152656791" fileName="ToDoHighlighter.java" startLine="26" startPosition="142" endLine="29" endPosition="7" />
+    <scopeInfo nodeId="5916754392152656816" fileName="ToDoHighlighter.java" startLine="31" startPosition="151" endLine="34" endPosition="7" />
+    <scopeInfo nodeId="5916754392152656855" fileName="ToDoHighlighter.java" startLine="41" startPosition="101" endLine="44" endPosition="7" />
+    <scopeInfo nodeId="5916754392152656871" fileName="ToDoHighlighter.java" startLine="46" startPosition="101" endLine="49" endPosition="7" />
+    <scopeInfo nodeId="5916754392152656790" fileName="ToDoHighlighter.java" startLine="25" startPosition="26" endLine="30" endPosition="5">
+      <varInfo nodeId="5916754392152656813" varName="remark" />
+    </scopeInfo>
+    <scopeInfo nodeId="5916754392152656815" fileName="ToDoHighlighter.java" startLine="30" startPosition="5" endLine="35" endPosition="5">
+      <varInfo nodeId="5916754392152656838" varName="textCommentPart" />
+    </scopeInfo>
+    <scopeInfo nodeId="5916754392152656847" fileName="ToDoHighlighter.java" startLine="39" startPosition="79" endLine="51" endPosition="17">
+      <varInfo nodeId="5916754392152656849" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="5916754392152656772" fileName="ToDoHighlighter.java" startLine="23" startPosition="139" endLine="36" endPosition="20">
+      <varInfo nodeId="5916754392152656774" varName="messages" />
+      <varInfo nodeId="5916754392152656781" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="5916754392152656842" fileName="ToDoHighlighter.java" startLine="38" startPosition="0" endLine="53" endPosition="0">
+      <varInfo nodeId="5916754392152656845" varName="propertyEvent" />
+    </scopeInfo>
+    <scopeInfo nodeId="5916754392152656759" fileName="ToDoHighlighter.java" startLine="22" startPosition="0" endLine="38" endPosition="0">
+      <varInfo nodeId="5916754392152656770" varName="editorContext" />
+      <varInfo nodeId="5916754392152656765" varName="events" />
+      <varInfo nodeId="5916754392152656763" varName="rootNode" />
+      <varInfo nodeId="5916754392152656768" varName="wasCheckedOnce" />
+    </scopeInfo>
+    <unitInfo nodeId="5916754392152656752" fileName="ToDoHighlighter.java" startLine="19" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.ide.java.platform.highlighters.ToDoHighlighter" />
+  </root>
   <root nodeId="8432634623182578751">
     <nodeInfo nodeId="8432634623182578752" fileName="AbstractOverrideEditorMessage.java" startLine="15" startPosition="98" endLine="16" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myReturnTypeCellFinder" />
     <nodeInfo nodeId="8432634623182578767" fileName="AbstractOverrideEditorMessage.java" startLine="18" startPosition="94" endLine="19" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
@@ -535,47 +590,61 @@
     <unitInfo nodeId="8432634623182690059" fileName="IconResourceBundle_OverrideImplements.java" startLine="13" startPosition="40" endLine="20" endPosition="3" unitName="jetbrains.mps.ide.java.platform.highlighters.IconResourceBundle_OverrideImplements$1" />
   </root>
   <root nodeId="8432634623182781100">
-    <nodeInfo nodeId="8432634623182782110" fileName="JavaHighlighters.java" startLine="12" startPosition="59" endLine="13" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myProject" />
-    <nodeInfo nodeId="8432634623182792510" fileName="JavaHighlighters.java" startLine="13" startPosition="28" endLine="14" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myOverrideMethodsChecker" />
-    <nodeInfo nodeId="8432634623182782114" fileName="JavaHighlighters.java" startLine="16" startPosition="78" endLine="17" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8432634623182792468" fileName="JavaHighlighters.java" startLine="26" startPosition="31" endLine="27" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8432634623182792466" fileName="JavaHighlighters.java" startLine="27" startPosition="47" endLine="28" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8432634623182792549" fileName="JavaHighlighters.java" startLine="31" startPosition="34" endLine="32" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8432634623182792553" fileName="JavaHighlighters.java" startLine="32" startPosition="47" endLine="33" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8432634623182792594" fileName="JavaHighlighters.java" startLine="33" startPosition="56" endLine="34" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8432634623182792563" fileName="JavaHighlighters.java" startLine="34" startPosition="39" endLine="35" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8432634623182782140" fileName="JavaHighlighters.java" startLine="35" startPosition="36" endLine="36" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8432634623182792464" fileName="JavaHighlighters.java" startLine="41" startPosition="36" endLine="42" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8432634623182792457" fileName="JavaHighlighters.java" startLine="45" startPosition="40" endLine="46" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8432634623182781102" fileName="JavaHighlighters.java" startLine="15" startPosition="0" endLine="18" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="JavaHighlighters#(Lcom/intellij/openapi/project/Project;Ljetbrains/mps/ide/MPSCoreComponents;)V" />
-    <nodeInfo nodeId="8432634623182781107" fileName="JavaHighlighters.java" startLine="19" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="projectOpened#()V" />
-    <nodeInfo nodeId="8432634623182781111" fileName="JavaHighlighters.java" startLine="22" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="projectClosed#()V" />
-    <nodeInfo nodeId="8432634623182792410" fileName="JavaHighlighters.java" startLine="44" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getHighlighter#()Ljetbrains/mps/nodeEditor/Highlighter;" />
-    <nodeInfo nodeId="8432634623182781115" fileName="JavaHighlighters.java" startLine="25" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="initComponent#()V" />
-    <nodeInfo nodeId="8432634623182781123" fileName="JavaHighlighters.java" startLine="38" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getComponentName#()Ljava/lang/String;" />
-    <nodeInfo nodeId="8432634623182781119" fileName="JavaHighlighters.java" startLine="30" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="disposeComponent#()V" />
-    <scopeInfo nodeId="8432634623182781110" fileName="JavaHighlighters.java" startLine="20" startPosition="31" endLine="20" endPosition="31" />
-    <scopeInfo nodeId="8432634623182781114" fileName="JavaHighlighters.java" startLine="23" startPosition="31" endLine="23" endPosition="31" />
-    <scopeInfo nodeId="8432634623182781105" fileName="JavaHighlighters.java" startLine="16" startPosition="78" endLine="17" endPosition="24" />
-    <scopeInfo nodeId="8432634623182781128" fileName="JavaHighlighters.java" startLine="41" startPosition="36" endLine="42" endPosition="30" />
-    <scopeInfo nodeId="8432634623182792413" fileName="JavaHighlighters.java" startLine="45" startPosition="40" endLine="46" endPosition="53" />
-    <scopeInfo nodeId="8432634623182781118" fileName="JavaHighlighters.java" startLine="26" startPosition="31" endLine="28" endPosition="84">
-      <varInfo nodeId="8432634623182792469" varName="highlighter" />
-    </scopeInfo>
-    <scopeInfo nodeId="8432634623182781102" fileName="JavaHighlighters.java" startLine="15" startPosition="0" endLine="18" endPosition="3">
+    <nodeInfo nodeId="8432634623182782110" fileName="JavaHighlighters.java" startLine="15" startPosition="59" endLine="16" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myProject" />
+    <nodeInfo nodeId="5916754392152657189" fileName="JavaHighlighters.java" startLine="16" startPosition="28" endLine="17" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCheckers" />
+    <nodeInfo nodeId="8432634623182782114" fileName="JavaHighlighters.java" startLine="19" startPosition="78" endLine="20" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8432634623182792468" fileName="JavaHighlighters.java" startLine="29" startPosition="31" endLine="30" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5916754392152657279" fileName="JavaHighlighters.java" startLine="30" startPosition="47" endLine="31" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5916754392152657355" fileName="JavaHighlighters.java" startLine="31" startPosition="58" endLine="32" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8432634623182792549" fileName="JavaHighlighters.java" startLine="35" startPosition="34" endLine="36" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5916754392152657423" fileName="JavaHighlighters.java" startLine="37" startPosition="62" endLine="38" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5916754392152657457" fileName="JavaHighlighters.java" startLine="38" startPosition="83" endLine="39" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5916754392152657394" fileName="JavaHighlighters.java" startLine="39" startPosition="41" endLine="40" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="507451686397445611" fileName="JavaHighlighters.java" startLine="41" startPosition="5" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="8432634623182782140" fileName="JavaHighlighters.java" startLine="42" startPosition="0" endLine="43" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5916754392152657213" fileName="JavaHighlighters.java" startLine="46" startPosition="79" endLine="47" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5916754392152657245" fileName="JavaHighlighters.java" startLine="47" startPosition="61" endLine="48" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8432634623182792464" fileName="JavaHighlighters.java" startLine="53" startPosition="36" endLine="54" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8432634623182792457" fileName="JavaHighlighters.java" startLine="57" startPosition="40" endLine="58" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8432634623182781102" fileName="JavaHighlighters.java" startLine="18" startPosition="0" endLine="21" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="JavaHighlighters#(Lcom/intellij/openapi/project/Project;Ljetbrains/mps/ide/MPSCoreComponents;)V" />
+    <nodeInfo nodeId="8432634623182781107" fileName="JavaHighlighters.java" startLine="22" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="projectOpened#()V" />
+    <nodeInfo nodeId="8432634623182781111" fileName="JavaHighlighters.java" startLine="25" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="projectClosed#()V" />
+    <nodeInfo nodeId="8432634623182792410" fileName="JavaHighlighters.java" startLine="56" startPosition="0" endLine="60" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getHighlighter#()Ljetbrains/mps/nodeEditor/Highlighter;" />
+    <nodeInfo nodeId="5916754392152657363" fileName="JavaHighlighters.java" startLine="36" startPosition="47" endLine="41" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
+    <nodeInfo nodeId="5916754392152657199" fileName="JavaHighlighters.java" startLine="45" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addChecker#(Ljetbrains/mps/nodeEditor/checking/BaseEditorChecker;Ljetbrains/mps/nodeEditor/Highlighter;)V" />
+    <nodeInfo nodeId="8432634623182781115" fileName="JavaHighlighters.java" startLine="28" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="initComponent#()V" />
+    <nodeInfo nodeId="8432634623182781123" fileName="JavaHighlighters.java" startLine="50" startPosition="0" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getComponentName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="8432634623182781119" fileName="JavaHighlighters.java" startLine="34" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="disposeComponent#()V" />
+    <scopeInfo nodeId="8432634623182781110" fileName="JavaHighlighters.java" startLine="23" startPosition="31" endLine="23" endPosition="31" />
+    <scopeInfo nodeId="8432634623182781114" fileName="JavaHighlighters.java" startLine="26" startPosition="31" endLine="26" endPosition="31" />
+    <scopeInfo nodeId="8432634623182781105" fileName="JavaHighlighters.java" startLine="19" startPosition="78" endLine="20" endPosition="24" />
+    <scopeInfo nodeId="8432634623182781128" fileName="JavaHighlighters.java" startLine="53" startPosition="36" endLine="54" endPosition="30" />
+    <scopeInfo nodeId="8432634623182792413" fileName="JavaHighlighters.java" startLine="57" startPosition="40" endLine="58" endPosition="53" />
+    <scopeInfo nodeId="5916754392152657202" fileName="JavaHighlighters.java" startLine="46" startPosition="79" endLine="48" endPosition="36" />
+    <scopeInfo nodeId="8432634623182781102" fileName="JavaHighlighters.java" startLine="18" startPosition="0" endLine="21" endPosition="3">
       <varInfo nodeId="4450057996090661301" varName="coreComponents" />
       <varInfo nodeId="9017026880110500544" varName="project" />
     </scopeInfo>
-    <scopeInfo nodeId="8432634623182781107" fileName="JavaHighlighters.java" startLine="19" startPosition="0" endLine="22" endPosition="0" />
-    <scopeInfo nodeId="8432634623182781111" fileName="JavaHighlighters.java" startLine="22" startPosition="0" endLine="25" endPosition="0" />
-    <scopeInfo nodeId="8432634623182792410" fileName="JavaHighlighters.java" startLine="44" startPosition="0" endLine="48" endPosition="0" />
-    <scopeInfo nodeId="8432634623182781115" fileName="JavaHighlighters.java" startLine="25" startPosition="0" endLine="30" endPosition="0" />
-    <scopeInfo nodeId="8432634623182781122" fileName="JavaHighlighters.java" startLine="31" startPosition="34" endLine="36" endPosition="21">
+    <scopeInfo nodeId="8432634623182781107" fileName="JavaHighlighters.java" startLine="22" startPosition="0" endLine="25" endPosition="0" />
+    <scopeInfo nodeId="8432634623182781111" fileName="JavaHighlighters.java" startLine="25" startPosition="0" endLine="28" endPosition="0" />
+    <scopeInfo nodeId="8432634623182781118" fileName="JavaHighlighters.java" startLine="29" startPosition="31" endLine="32" endPosition="51">
+      <varInfo nodeId="8432634623182792469" varName="highlighter" />
+    </scopeInfo>
+    <scopeInfo nodeId="5916754392152657365" fileName="JavaHighlighters.java" startLine="37" startPosition="62" endLine="40" endPosition="24">
+      <varInfo nodeId="5916754392152657424" varName="checker" />
+    </scopeInfo>
+    <scopeInfo nodeId="8432634623182792410" fileName="JavaHighlighters.java" startLine="56" startPosition="0" endLine="60" endPosition="0" />
+    <scopeInfo nodeId="5916754392152657199" fileName="JavaHighlighters.java" startLine="45" startPosition="0" endLine="50" endPosition="0">
+      <varInfo nodeId="5916754392152657206" varName="checker" />
+      <varInfo nodeId="5916754392152657209" varName="highlighter" />
+    </scopeInfo>
+    <scopeInfo nodeId="8432634623182781115" fileName="JavaHighlighters.java" startLine="28" startPosition="0" endLine="34" endPosition="0" />
+    <scopeInfo nodeId="8432634623182781123" fileName="JavaHighlighters.java" startLine="50" startPosition="0" endLine="56" endPosition="0" />
+    <scopeInfo nodeId="8432634623182781122" fileName="JavaHighlighters.java" startLine="35" startPosition="34" endLine="43" endPosition="21">
       <varInfo nodeId="8432634623182792550" varName="highlighter" />
     </scopeInfo>
-    <scopeInfo nodeId="8432634623182781123" fileName="JavaHighlighters.java" startLine="38" startPosition="0" endLine="44" endPosition="0" />
-    <scopeInfo nodeId="8432634623182781119" fileName="JavaHighlighters.java" startLine="30" startPosition="0" endLine="38" endPosition="0" />
-    <unitInfo nodeId="8432634623182781100" fileName="JavaHighlighters.java" startLine="12" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.ide.java.platform.highlighters.JavaHighlighters" />
+    <scopeInfo nodeId="8432634623182781119" fileName="JavaHighlighters.java" startLine="34" startPosition="0" endLine="45" endPosition="0" />
+    <unitInfo nodeId="8432634623182781100" fileName="JavaHighlighters.java" startLine="15" startPosition="0" endLine="61" endPosition="0" unitName="jetbrains.mps.ide.java.platform.highlighters.JavaHighlighters" />
   </root>
 </debugInfo>
 

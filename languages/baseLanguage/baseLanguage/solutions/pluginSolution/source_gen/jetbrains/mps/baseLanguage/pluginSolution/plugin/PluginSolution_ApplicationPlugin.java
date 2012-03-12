@@ -6,7 +6,6 @@ import jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin;
 import com.intellij.openapi.extensions.PluginId;
 import jetbrains.mps.ide.actions.ModelActionsInternal_ActionGroup;
 import jetbrains.mps.ide.actions.NodeActionsInternal_ActionGroup;
-import jetbrains.mps.ide.actions.Tools_ActionGroup;
 import jetbrains.mps.lang.dataFlow.pluginSolution.plugin.DFAActions_ActionGroup;
 import java.util.List;
 import jetbrains.mps.workbench.action.BaseKeymapChanges;
@@ -36,7 +35,6 @@ public class PluginSolution_ApplicationPlugin extends BaseApplicationPlugin {
     addAction(new RenameVariable_Action());
     addAction(new ShowMembers_Action());
     addAction(new ShowNullDFA_Action());
-    addAction(new ShowTodoViewer_Action());
     addAction(new UncommentStatements_Action());
     // groups 
     addGroup(new AnalyzersActions_ActionGroup());
@@ -44,7 +42,6 @@ public class PluginSolution_ApplicationPlugin extends BaseApplicationPlugin {
     addGroup(new BaseLanguageEditorPopup_ActionGroup());
     addGroup(new BaseLanguageModelActionsInternal_ActionGroup());
     addGroup(new BaseLanguageNodeActionsInternal_ActionGroup());
-    addGroup(new BaseLanguageToolsAddition_ActionGroup());
     addGroup(new RefactoringAddition_ActionGroup());
   }
 
@@ -53,7 +50,6 @@ public class PluginSolution_ApplicationPlugin extends BaseApplicationPlugin {
     insertGroupIntoAnother(RefactoringAddition_ActionGroup.ID, "jetbrains.mps.ide.platform.actions.NodeRefactoring_ActionGroup", null);
     insertGroupIntoAnother(BaseLanguageEditorPopup_ActionGroup.ID, "jetbrains.mps.ide.editor.actions.EditorPopup_ActionGroup", null);
     insertGroupIntoAnother(BaseLanguageNodeActionsInternal_ActionGroup.ID, NodeActionsInternal_ActionGroup.ID, null);
-    insertGroupIntoAnother(BaseLanguageToolsAddition_ActionGroup.ID, Tools_ActionGroup.ID, Tools_ActionGroup.LABEL_ID_customTools);
     insertGroupIntoAnother(AnalyzersActions_ActionGroup.ID, DFAActions_ActionGroup.ID, null);
     insertGroupIntoAnother(BaseLangaugeCodeCommentsMenuGroup_ActionGroup.ID, "Code_ActionGroupcomments", null);
   }
