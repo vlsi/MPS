@@ -22,8 +22,6 @@ public class PluginSolution_ApplicationPlugin extends BaseApplicationPlugin {
 
   public void createGroups() {
     // actions w/o parameters 
-    addAction(new CommentLine_Action());
-    addAction(new CommentStatements_Action());
     addAction(new ExtractMethod_Action());
     addAction(new InlineLocalVariable_Action());
     addAction(new InlineMethod_Action());
@@ -33,10 +31,8 @@ public class PluginSolution_ApplicationPlugin extends BaseApplicationPlugin {
     addAction(new RenameVariable_Action());
     addAction(new ShowMembers_Action());
     addAction(new ShowNullDFA_Action());
-    addAction(new UncommentStatements_Action());
     // groups 
     addGroup(new AnalyzersActions_ActionGroup());
-    addGroup(new BaseLangaugeCodeCommentsMenuGroup_ActionGroup());
     addGroup(new BaseLanguageEditorPopup_ActionGroup());
     addGroup(new RefactoringAddition_ActionGroup());
   }
@@ -45,7 +41,6 @@ public class PluginSolution_ApplicationPlugin extends BaseApplicationPlugin {
     insertGroupIntoAnother(RefactoringAddition_ActionGroup.ID, "jetbrains.mps.ide.platform.actions.NodeRefactoring_ActionGroup", null);
     insertGroupIntoAnother(BaseLanguageEditorPopup_ActionGroup.ID, "jetbrains.mps.ide.editor.actions.EditorPopup_ActionGroup", null);
     insertGroupIntoAnother(AnalyzersActions_ActionGroup.ID, DFAActions_ActionGroup.ID, null);
-    insertGroupIntoAnother(BaseLangaugeCodeCommentsMenuGroup_ActionGroup.ID, "Code_ActionGroupcomments", null);
   }
 
   public List<BaseKeymapChanges> initKeymaps() {

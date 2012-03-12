@@ -1,5 +1,11 @@
 <components>
   <actions>
+    <action id="jetbrains.mps.ide.java.actions.CommentLine_Action" class="jetbrains.mps.ide.java.actions.CommentLine_Action">
+      <keyboard-shortcut first-keystroke="ctrl SLASH" keymap="$default"/>
+    </action>
+    <action id="jetbrains.mps.ide.java.actions.CommentStatements_Action" class="jetbrains.mps.ide.java.actions.CommentStatements_Action">
+      <keyboard-shortcut first-keystroke="ctrl shift SLASH" keymap="$default"/>
+    </action>
     <action id="jetbrains.mps.ide.java.actions.ConvertAnonymousClass_Action" class="jetbrains.mps.ide.java.actions.ConvertAnonymousClass_Action">
       <keyboard-shortcut first-keystroke=" F6" keymap="$default"/>
     </action>
@@ -45,6 +51,9 @@
       <keyboard-shortcut first-keystroke="shift F6" keymap="$default"/>
     </action>
     <action id="jetbrains.mps.ide.java.actions.ResolveStubReferencesToMPS_Action" class="jetbrains.mps.ide.java.actions.ResolveStubReferencesToMPS_Action"/>
+    <action id="jetbrains.mps.ide.java.actions.UncommentStatements_Action" class="jetbrains.mps.ide.java.actions.UncommentStatements_Action">
+      <keyboard-shortcut first-keystroke="ctrl shift SLASH" keymap="$default"/>
+    </action>
     <group id="jetbrains.mps.ide.java.actions.SolutionActionsEx_ActionGroup">
       <reference ref="jetbrains.mps.ide.java.actions.GetModuleContentsFromSource_Action"/>
       <reference ref="jetbrains.mps.ide.java.actions.MigrateSourcesToMPS_Action"/>
@@ -90,6 +99,12 @@
       <reference ref="jetbrains.mps.ide.java.actions.OverrideMethod_Action"/>
       <reference ref="jetbrains.mps.ide.java.actions.ImplementMethod_Action"/>
       <add-to-group group-id="Code_ActionGroupoverrideImplement" anchor="last"/>
+    </group>
+    <group id="jetbrains.mps.ide.java.actions.CodeCommentMenu_ActionGroup">
+      <reference ref="jetbrains.mps.ide.java.actions.CommentStatements_Action"/>
+      <reference ref="jetbrains.mps.ide.java.actions.UncommentStatements_Action"/>
+      <reference ref="jetbrains.mps.ide.java.actions.CommentLine_Action"/>
+      <add-to-group group-id="Code_ActionGroupcomments" anchor="last"/>
     </group>
     <group id="jetbrains.mps.ide.java.actions.ShowAsIntentions_ActionGroup">
       <reference ref="jetbrains.mps.ide.java.actions.ImplementMethodsAsIntention_Action"/>

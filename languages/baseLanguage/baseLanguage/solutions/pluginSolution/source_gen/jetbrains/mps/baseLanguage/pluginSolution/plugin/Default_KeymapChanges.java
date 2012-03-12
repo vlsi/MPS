@@ -10,8 +10,6 @@ import javax.swing.KeyStroke;
 public class Default_KeymapChanges extends BaseKeymapChanges {
   public Default_KeymapChanges() {
     // simple 
-    addSimpleShortcut("jetbrains.mps.baseLanguage.pluginSolution.plugin.CommentLine_Action", getShortcut("ctrl SLASH"));
-    addSimpleShortcut("jetbrains.mps.baseLanguage.pluginSolution.plugin.CommentStatements_Action", getShortcut("ctrl shift SLASH"));
     addSimpleShortcut("jetbrains.mps.baseLanguage.pluginSolution.plugin.ExtractMethod_Action", getShortcut("ctrl alt M"));
     addSimpleShortcut("jetbrains.mps.baseLanguage.pluginSolution.plugin.InlineLocalVariable_Action", getShortcut("ctrl alt N"));
     addSimpleShortcut("jetbrains.mps.baseLanguage.pluginSolution.plugin.InlineMethod_Action", getShortcut("ctrl alt N"));
@@ -20,7 +18,6 @@ public class Default_KeymapChanges extends BaseKeymapChanges {
     addSimpleShortcut("jetbrains.mps.baseLanguage.pluginSolution.plugin.IntroduceVariable_Action", getShortcut("ctrl alt V"));
     addSimpleShortcut("jetbrains.mps.baseLanguage.pluginSolution.plugin.RenameVariable_Action", getShortcut("shift F6"));
     addSimpleShortcut("jetbrains.mps.baseLanguage.pluginSolution.plugin.ShowMembers_Action", getShortcut("ctrl F12"));
-    addSimpleShortcut("jetbrains.mps.baseLanguage.pluginSolution.plugin.UncommentStatements_Action", getShortcut("ctrl shift SLASH"));
     // simple parameterized 
     // complex 
   }
