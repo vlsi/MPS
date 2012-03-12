@@ -54,8 +54,6 @@ public class MPSProjectVersion extends AbstractProjectComponent implements Persi
     myVersion = version;
   }
 
-
-
   public static class MyState{
     public String version;
   }
