@@ -17,7 +17,6 @@ public class Default_KeymapChanges extends BaseKeymapChanges {
     addSimpleShortcut("jetbrains.mps.baseLanguage.pluginSolution.plugin.IntroduceField_Action", getShortcut("ctrl alt F"));
     addSimpleShortcut("jetbrains.mps.baseLanguage.pluginSolution.plugin.IntroduceVariable_Action", getShortcut("ctrl alt V"));
     addSimpleShortcut("jetbrains.mps.baseLanguage.pluginSolution.plugin.RenameVariable_Action", getShortcut("shift F6"));
-    addSimpleShortcut("jetbrains.mps.baseLanguage.pluginSolution.plugin.ShowMembers_Action", getShortcut("ctrl F12"));
     // simple parameterized 
     // complex 
   }
