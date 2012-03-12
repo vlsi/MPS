@@ -1,5 +1,5 @@
 <project name="buildLanguage-default" default="main">
-  <property file="${ant.file}/../buildLanguage.properties" />
+  <property file="${ant.file.buildLanguage-default}/../buildLanguage.properties" />
   <import file="${ant.file.buildLanguage-default}/../buildLanguage-compile.xml" />
   <import file="${ant.file.buildLanguage-default}/../buildLanguage-languages.xml" />
   <target name="main" depends="compile,clean.before,folders.create,do.the.job,clean.after" />
@@ -22,6 +22,7 @@
   </target>
   <target name="do.the.job" depends="folders.create">
     <antcall target="buildLanguage-languages.pack.jetbrains.mps.core.xml" />
+    <antcall target="buildLanguage-languages.pack.jetbrains.mps.core.properties" />
     <antcall target="buildLanguage-languages.pack.jetbrains.mps.buildScript" />
     <antcall target="buildLanguage-languages.pack.jetbrains.mps.build.workflow" />
     <mkdir dir="${deploy.dir}/mps-build/languages" />

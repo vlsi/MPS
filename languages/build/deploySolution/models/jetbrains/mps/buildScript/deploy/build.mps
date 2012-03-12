@@ -67,6 +67,10 @@
           <property name="id" nameId="tps4.1222447189012" value="479c7a8c-02f9-43b5-9139-d910cb22f298" />
           <property name="name" nameId="tpck.1169194664001" value="jetbrains.mps.core.xml" />
         </node>
+        <node role="entry" roleId="tps4.1203617897549" type="tps4.Module" typeId="tps4.1203599702327" id="3364920969597706787">
+          <property name="id" nameId="tps4.1222447189012" value="58f98fef-90ad-4b72-a390-fad66ec7005a" />
+          <property name="name" nameId="tpck.1169194664001" value="jetbrains.mps.core.properties" />
+        </node>
         <node role="entry" roleId="tps4.1203617897549" type="tps4.Module" typeId="tps4.1203599702327" id="6431569506312887157">
           <property name="id" nameId="tps4.1222447189012" value="798100da-4f0a-421a-b991-71f8c50ce5d2" />
           <property name="name" nameId="tpck.1169194664001" value="jetbrains.mps.buildScript" />
