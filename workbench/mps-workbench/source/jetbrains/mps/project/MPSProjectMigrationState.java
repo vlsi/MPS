@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2012 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,9 +15,21 @@
  */
 package jetbrains.mps.project;
 
-import com.intellij.openapi.components.*;
-import com.intellij.openapi.project.Project;
-import jetbrains.mps.project.MPSProjectVersion.MyState;
+import com.intellij.openapi.components.AbstractProjectComponent;
+import com.intellij.openapi.components.PersistentStateComponent;
+import com.intellij.openapi.components.State;
+import com.intellij.openapi.components.Storage;
+import com.intellij.openapi.project.*;
+import jetbrains.mps.project.MPSProjectMigrationState.MyState;
+
+/**
+ * Created by IntelliJ IDEA.
+ * User: fyodor
+ * Date: 3/12/12
+ * Time: 2:16 PM
+ * To change this template use File | Settings | File Templates.
+ */
+
 
 @State(
   name = "ProjectVersion",
@@ -28,33 +40,22 @@ import jetbrains.mps.project.MPSProjectVersion.MyState;
     )
   }
 )
-public class MPSProjectVersion extends AbstractProjectComponent implements PersistentStateComponent<MyState>{
-  public static final Version CURRENT = Version.fromString("2.0");
-  private Version myVersion = Version.fromString("1.5");
+public class MPSProjectMigrationState extends AbstractProjectComponent implements PersistentStateComponent<MPSProjectMigrationState.MyState>{
 
-  protected MPSProjectVersion(Project project) {
+  private final MPSProjectVersion myVersion;
+
+  protected MPSProjectMigrationState(com.intellij.openapi.project.Project project, MPSProjectVersion version) {
     super(project);
-  }
-
-  public MyState getState() {
-    MyState res = new MyState();
-    res.version = myVersion.toString();
-    return res;
-  }
-
-  public void loadState(MyState state) {
-    myVersion = Version.fromString(state.version);
-  }
-
-  public Version getVersion() {
-    return myVersion;
-  }
-
-  public void setVersion(Version version) {
     myVersion = version;
   }
 
+  public MyState getState() {
+    return null;
+  }
 
+  public void loadState(MyState state) {
+
+  }
 
   public static class MyState{
     public String version;
