@@ -21,11 +21,6 @@ import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import java.util.Map;
 import java.util.Collection;
 import jetbrains.mps.smodel.descriptor.source.changes.ModelFileWatcher;
-import java.io.File;
-import jetbrains.mps.ide.vfs.VirtualFileUtils;
-import com.intellij.openapi.util.io.FileUtil;
-import jetbrains.mps.project.structure.modules.ModuleReference;
-import jetbrains.mps.internal.collections.runtime.ISelector;
 
 /*package*/ class ModelFileProcessor extends EventProcessor {
   private final Set<FileBasedModelDataSource> myInvalidatedSources = SetSequence.fromSet(new HashSet<FileBasedModelDataSource>());
@@ -84,7 +79,7 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
     List<IModule> res = ListSequence.fromList(new ArrayList<IModule>());
     for (IModule module : ListSequence.fromList(MPSModuleRepository.getInstance().getAllModules())) {
       for (SModelRoot smr : CollectionSequence.fromCollection(module.getSModelRoots())) {
-        if (!(intersects(file, file.getFileSystem().findFileByPath(smr.getPath())))) {
+        if (!(intersects(file.getPath(), smr.getPath()))) {
           continue;
         }
         ListSequence.fromList(res).addElement(module);
@@ -99,7 +94,7 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
     Map<FileBasedModelDataSource, Collection<String>> s2f = ModelFileWatcher.getInstance().getSources2Files();
     for (Map.Entry<FileBasedModelDataSource, Collection<String>> entry : SetSequence.fromSet(s2f.entrySet())) {
       for (String path : CollectionSequence.fromCollection(entry.getValue())) {
-        if (!(intersects(file, file.getFileSystem().findFileByPath(path)))) {
+        if (!(intersects(file.getPath(), path))) {
           continue;
         }
         ListSequence.fromList(res).addElement(entry.getKey());
@@ -109,25 +104,10 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
     return res;
   }
 
-  private boolean intersects(VirtualFile vf1, VirtualFile vf2) {
+  private boolean intersects(String vf1, String vf2) {
     if (vf1 == null || vf2 == null) {
       return false;
     }
-
-    File f1 = VirtualFileUtils.toFile(vf1);
-    File f2 = VirtualFileUtils.toFile(vf2);
-    if (f1 == null || f2 == null) {
-      return false;
-    }
-
-    return FileUtil.isAncestor(f1, f2, false) || FileUtil.isAncestor(f2, f1, false);
-  }
-
-  private Set<ModuleReference> toModuleRefs(Iterable<IModule> modules) {
-    return SetSequence.fromSetWithValues(new HashSet<ModuleReference>(), Sequence.fromIterable(modules).select(new ISelector<IModule, ModuleReference>() {
-      public ModuleReference select(IModule it) {
-        return it.getModuleReference();
-      }
-    }).toListSequence());
+    return vf1.startsWith(vf2) || vf2.startsWith(vf1);
   }
 }
