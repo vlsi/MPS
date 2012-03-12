@@ -34,6 +34,6 @@ public class BwfJavaClassPath_Constraints extends BaseConstraintsDescriptor {
   }
 
   public static boolean static_canBeAParent(SNode node, SNode childNode, SNode childConcept, SNode link, final IOperationContext operationContext) {
-    return SConceptOperations.isExactly(childConcept, "jetbrains.mps.core.xml.structure.XmlElement") || SConceptOperations.isExactly(childConcept, "jetbrains.mps.build.workflow.structure.BwfPathReference");
+    return SConceptOperations.isExactly(childConcept, "jetbrains.mps.core.xml.structure.XmlElement") || SConceptOperations.isExactly(childConcept, "jetbrains.mps.build.workflow.structure.BwfPathReference") || SConceptOperations.isSubConceptOf(childConcept, "jetbrains.mps.lang.core.structure.NodeAttribute");
   }
 }

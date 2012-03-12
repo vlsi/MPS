@@ -56,6 +56,7 @@
       <src path="${basedir}/moduleB/src" />
       <classpath>
         <fileset file="${build.tmp}/deps/buildA/A-_dl_{aver}.zip/module-A.jar" />
+        <fileset file="${build.tmp}/deps/buildA/A-_dl_{aver}.zip/abcde.jar" />
       </classpath>
     </javac>
   </target>
