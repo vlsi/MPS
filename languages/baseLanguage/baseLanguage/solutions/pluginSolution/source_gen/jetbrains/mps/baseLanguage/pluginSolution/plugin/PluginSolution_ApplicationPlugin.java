@@ -4,8 +4,6 @@ package jetbrains.mps.baseLanguage.pluginSolution.plugin;
 
 import jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin;
 import com.intellij.openapi.extensions.PluginId;
-import jetbrains.mps.ide.actions.ModelActionsInternal_ActionGroup;
-import jetbrains.mps.ide.actions.NodeActionsInternal_ActionGroup;
 import jetbrains.mps.lang.dataFlow.pluginSolution.plugin.DFAActions_ActionGroup;
 import java.util.List;
 import jetbrains.mps.workbench.action.BaseKeymapChanges;
@@ -40,16 +38,12 @@ public class PluginSolution_ApplicationPlugin extends BaseApplicationPlugin {
     addGroup(new AnalyzersActions_ActionGroup());
     addGroup(new BaseLangaugeCodeCommentsMenuGroup_ActionGroup());
     addGroup(new BaseLanguageEditorPopup_ActionGroup());
-    addGroup(new BaseLanguageModelActionsInternal_ActionGroup());
-    addGroup(new BaseLanguageNodeActionsInternal_ActionGroup());
     addGroup(new RefactoringAddition_ActionGroup());
   }
 
   public void adjustRegularGroups() {
-    insertGroupIntoAnother(BaseLanguageModelActionsInternal_ActionGroup.ID, ModelActionsInternal_ActionGroup.ID, null);
     insertGroupIntoAnother(RefactoringAddition_ActionGroup.ID, "jetbrains.mps.ide.platform.actions.NodeRefactoring_ActionGroup", null);
     insertGroupIntoAnother(BaseLanguageEditorPopup_ActionGroup.ID, "jetbrains.mps.ide.editor.actions.EditorPopup_ActionGroup", null);
-    insertGroupIntoAnother(BaseLanguageNodeActionsInternal_ActionGroup.ID, NodeActionsInternal_ActionGroup.ID, null);
     insertGroupIntoAnother(AnalyzersActions_ActionGroup.ID, DFAActions_ActionGroup.ID, null);
     insertGroupIntoAnother(BaseLangaugeCodeCommentsMenuGroup_ActionGroup.ID, "Code_ActionGroupcomments", null);
   }

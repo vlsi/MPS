@@ -79,18 +79,6 @@
     <classNode dependClassName="jetbrains.mps.logging.Logger" />
     <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.pluginSolution.plugin.BaseLanguageModelActionsInternal_ActionGroup" file="BaseLanguageModelActionsInternal_ActionGroup.java">
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.lang.Throwable" />
-    <classNode dependClassName="jetbrains.mps.logging.Logger" />
-    <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup" />
-  </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.pluginSolution.plugin.BaseLanguageNodeActionsInternal_ActionGroup" file="BaseLanguageNodeActionsInternal_ActionGroup.java">
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.lang.Throwable" />
-    <classNode dependClassName="jetbrains.mps.logging.Logger" />
-    <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup" />
-  </dependency>
   <dependency className="jetbrains.mps.baseLanguage.pluginSolution.plugin.CommentLine_Action" file="CommentLine_Action.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="java.lang.Object" />
@@ -629,8 +617,6 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.pluginSolution.plugin.AnalyzersActions_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.pluginSolution.plugin.BaseLangaugeCodeCommentsMenuGroup_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.pluginSolution.plugin.BaseLanguageEditorPopup_ActionGroup" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.pluginSolution.plugin.BaseLanguageModelActionsInternal_ActionGroup" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.pluginSolution.plugin.BaseLanguageNodeActionsInternal_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.pluginSolution.plugin.CommentLine_Action" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.pluginSolution.plugin.CommentStatements_Action" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.pluginSolution.plugin.Default_KeymapChanges" />
@@ -645,8 +631,6 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.pluginSolution.plugin.ShowMembers_Action" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.pluginSolution.plugin.ShowNullDFA_Action" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.pluginSolution.plugin.UncommentStatements_Action" />
-    <classNode dependClassName="jetbrains.mps.ide.actions.ModelActionsInternal_ActionGroup" />
-    <classNode dependClassName="jetbrains.mps.ide.actions.NodeActionsInternal_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.lang.dataFlow.pluginSolution.plugin.DFAActions_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.workbench.action.BaseKeymapChanges" />

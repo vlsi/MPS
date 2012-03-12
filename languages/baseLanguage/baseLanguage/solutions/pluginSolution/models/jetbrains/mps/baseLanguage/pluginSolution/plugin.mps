@@ -63,7 +63,6 @@
   <import index="qfni" modelUID="r:bfb6ca7e-5411-4ee0-a5c0-1edd33370efd(jetbrains.mps.ide.platform.dialogs.choosers)" version="-1" />
   <import index="tpcu" modelUID="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" version="-1" />
   <import index="bj1v" modelUID="r:8b09f5e2-b403-4747-aaa3-eac5acb1f753(jetbrains.mps.analyzers.structure)" version="0" implicit="yes" />
-  <import index="tprs" modelUID="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)" version="-1" implicit="yes" />
   <import index="tp4f" modelUID="r:00000000-0000-4000-0000-011c89590373(jetbrains.mps.baseLanguage.classifiers.structure)" version="0" implicit="yes" />
   <import index="tp4k" modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" version="5" implicit="yes" />
   <import index="tp25" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="-1" implicit="yes" />
@@ -71,10 +70,6 @@
   <import index="tp2q" modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" implicit="yes" />
   <import index="m373" modelUID="r:4095af4f-a097-4799-aaa9-03df087ddfa6(jetbrains.mps.baseLanguage.javadoc.structure)" version="5" implicit="yes" />
   <roots>
-    <node type="tp4k.ActionGroupDeclaration" typeId="tp4k.1203087890642" id="6573807532044001586">
-      <property name="name" nameId="tpck.1169194664001" value="BaseLanguageModelActionsInternal" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="Actions.Groups" />
-    </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="6573807532044001589">
       <property name="name" nameId="tpck.1169194664001" value="CommentStatements" />
       <property name="caption" nameId="tp4k.1205250923097" value="Comment Statements" />
@@ -137,10 +132,6 @@
     </node>
     <node type="tp4k.ActionGroupDeclaration" typeId="tp4k.1203087890642" id="6573807532044002828">
       <property name="name" nameId="tpck.1169194664001" value="BaseLanguageEditorPopup" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="Actions.Groups" />
-    </node>
-    <node type="tp4k.ActionGroupDeclaration" typeId="tp4k.1203087890642" id="6573807532044002839">
-      <property name="name" nameId="tpck.1169194664001" value="BaseLanguageNodeActionsInternal" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Actions.Groups" />
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="6573807532044003134">
@@ -254,12 +245,6 @@
       <property name="name" nameId="tpck.1169194664001" value="ExtractMethodIcons" />
     </node>
   </roots>
-  <root id="6573807532044001586">
-    <node role="modifier" roleId="tp4k.1204991552650" type="tp4k.ModificationStatement" typeId="tp4k.1203092361741" id="6573807532044001587">
-      <link role="modifiedGroup" roleId="tp4k.1203092736097" targetNodeId="tprs.1205163054135" resolveInfo="ModelActionsInternal" />
-    </node>
-    <node role="contents" roleId="tp4k.1207145245948" type="tp4k.ElementListContents" typeId="tp4k.1207145163717" id="6573807532044001588" />
-  </root>
   <root id="6573807532044001589">
     <node role="executeFunction" roleId="tp4k.1203083461638" type="tp4k.ExecuteBlock" typeId="tp4k.1203083511112" id="6573807532044001590">
       <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="6573807532044001591">
@@ -2057,12 +2042,6 @@
         <link role="action" roleId="tp4k.1203088061055" targetNodeId="6573807532044003134" resolveInfo="ShowMembers" />
       </node>
     </node>
-  </root>
-  <root id="6573807532044002839">
-    <node role="modifier" roleId="tp4k.1204991552650" type="tp4k.ModificationStatement" typeId="tp4k.1203092361741" id="6573807532044002840">
-      <link role="modifiedGroup" roleId="tp4k.1203092736097" targetNodeId="tprs.1204991217354" resolveInfo="NodeActionsInternal" />
-    </node>
-    <node role="contents" roleId="tp4k.1207145245948" type="tp4k.ElementListContents" typeId="tp4k.1207145163717" id="6573807532044002841" />
   </root>
   <root id="6573807532044003134">
     <node role="executeFunction" roleId="tp4k.1203083461638" type="tp4k.ExecuteBlock" typeId="tp4k.1203083511112" id="6573807532044003135">
