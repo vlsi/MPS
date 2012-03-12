@@ -46,6 +46,7 @@ import jetbrains.mps.vcs.diff.ui.common.Bounds;
 import com.intellij.openapi.ui.Messages;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import com.intellij.openapi.wm.WindowManager;
+import javax.swing.SwingUtilities;
 import jetbrains.mps.vcs.diff.ui.common.DiffModelTree;
 import jetbrains.mps.workbench.action.BaseAction;
 import java.util.Arrays;
@@ -90,6 +91,9 @@ public class ModelDifferenceDialog extends DialogWrapper {
     final Dimension size = DimensionService.getInstance().getSize(getDimensionServiceKey(), myProject);
     if (size == null) {
       DimensionService.getInstance().setSize(getDimensionServiceKey(), new Dimension(500, 700));
+      setSize(500, 700);
+    } else {
+      setSize(((int) size.getWidth()), ((int) size.getHeight()));
     }
     init();
   }
@@ -214,8 +218,12 @@ public class ModelDifferenceDialog extends DialogWrapper {
         }
       }
     });
+    SwingUtilities.invokeLater(new Runnable() {
+      public void run() {
+        rootDialog.value.toFront();
+      }
+    });
     rootDialog.value.show();
-    rootDialog.value.toFront();
   }
 
   /*package*/ void rootDialogClosed() {

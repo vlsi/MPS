@@ -74,7 +74,7 @@ public class MergeRootsDialog extends DialogWrapper {
   private DefaultActionGroup myActionGroup;
 
   public MergeRootsDialog(MergeModelsDialog mergeModelsDialog, MergeSession mergeSession, SNodeId rootId, String rootName) {
-    super(mergeModelsDialog.getProject());
+    super(mergeModelsDialog.getOwner(), true);
     setTitle("Merging " + rootName);
     myConflictChecker = new ChangeEditorMessage.ConflictChecker() {
       public boolean isChangeConflicted(ModelChange ch) {
@@ -131,11 +131,11 @@ public class MergeRootsDialog extends DialogWrapper {
     final Dimension size = DimensionService.getInstance().getSize(getDimensionServiceKey());
     if (size == null) {
       DimensionService.getInstance().setSize(getDimensionServiceKey(), new Dimension(width - 100, height - 100));
+      setSize(width - 100, height - 100);
+    } else {
+      setSize(((int) size.getWidth()), ((int) size.getHeight()));
     }
     setLocation(50, 50);
-
-
-
     init();
 
   }

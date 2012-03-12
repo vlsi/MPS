@@ -43,6 +43,7 @@ import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import com.intellij.openapi.ui.Messages;
+import javax.swing.SwingUtilities;
 import jetbrains.mps.vcs.diff.changes.MetadataChange;
 import jetbrains.mps.vcs.diff.ui.common.DiffModelTree;
 import jetbrains.mps.internal.collections.runtime.ISelector;
@@ -102,6 +103,9 @@ public class MergeModelsDialog extends DialogWrapper {
     final Dimension size = DimensionService.getInstance().getSize(getDimensionServiceKey());
     if (size == null) {
       DimensionService.getInstance().setSize(getDimensionServiceKey(), new Dimension(500, 450));
+      setSize(400, 500);
+    } else {
+      setSize(((int) size.getWidth()), ((int) size.getHeight()));
     }
     init();
   }
@@ -267,8 +271,12 @@ public class MergeModelsDialog extends DialogWrapper {
         mergeRootsDialog.value = new MergeRootsDialog(MergeModelsDialog.this, myMergeSession, rootId, myMergeTree.getNameForRoot(rootId));
       }
     });
+    SwingUtilities.invokeLater(new Runnable() {
+      public void run() {
+        mergeRootsDialog.value.toFront();
+      }
+    });
     mergeRootsDialog.value.show();
-    mergeRootsDialog.value.toFront();
   }
 
   public boolean isAcceptYoursTheirsEnabled() {
