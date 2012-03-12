@@ -4,29 +4,28 @@ package jetbrains.mps.ide.platform.dialogs.choosers;
 
 import com.intellij.openapi.ui.DialogWrapper;
 import jetbrains.mps.workbench.actions.goTo.matcher.ChooseByNamePanel;
-import jetbrains.mps.workbench.choose.nodes.BaseNodeModel;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.workbench.choose.nodes.BaseNodeModel;
 import com.intellij.navigation.NavigationItem;
 import jetbrains.mps.workbench.choose.nodes.BaseNodeItem;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.smodel.IScope;
-import org.jetbrains.annotations.Nullable;
-import javax.swing.JComponent;
 import jetbrains.mps.workbench.actions.goTo.matcher.MpsPopupFactory;
 import com.intellij.ide.util.gotoByName.ChooseByNamePopupComponent;
 import com.intellij.openapi.application.ModalityState;
+import org.jetbrains.annotations.Nullable;
+import javax.swing.JComponent;
 import java.awt.Dimension;
 
 public class NodeChooserDialog extends DialogWrapper {
   private ChooseByNamePanel myChooser;
-  private BaseNodeModel myGoToNodeModel;
 
   public NodeChooserDialog(Project project, final Iterable<SNode> nodes) {
     super(project, true);
     setTitle("Choose Node");
 
-    myGoToNodeModel = new BaseNodeModel(project) {
+    BaseNodeModel goToNodeModel = new BaseNodeModel(project) {
       @Override
       public NavigationItem doGetNavigationItem(SNode node) {
         return new BaseNodeItem(node) {
@@ -53,18 +52,18 @@ public class NodeChooserDialog extends DialogWrapper {
         return false;
       }
     };
+    myChooser = MpsPopupFactory.createPanelForNode(goToNodeModel, false);
+    myChooser.invoke(new ChooseByNamePopupComponent.Callback() {
+      public void elementChosen(Object element) {
+        doOKAction();
+      }
+    }, ModalityState.stateForComponent(getWindow()), false);
 
     init();
   }
 
   @Nullable
   protected JComponent createCenterPanel() {
-    myChooser = MpsPopupFactory.createPanelForNode(myGoToNodeModel, false);
-    myChooser.invoke(new ChooseByNamePopupComponent.Callback() {
-      public void elementChosen(Object element) {
-        doOKAction();
-      }
-    }, ModalityState.any(), false);
     myChooser.getPanel().setPreferredSize(new Dimension(400, 500));
     return myChooser.getPanel();
   }

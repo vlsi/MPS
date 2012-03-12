@@ -85,7 +85,6 @@ public class ShowMembers_Action extends BaseAction {
       });
 
       NodeChooserDialog nodeChooserDialog = new NodeChooserDialog(((Project) MapSequence.fromMap(_params).get("projct")), members.value);
-      nodeChooserDialog.setModal(true);
       nodeChooserDialog.show();
       SNode snode = nodeChooserDialog.getResult();
 

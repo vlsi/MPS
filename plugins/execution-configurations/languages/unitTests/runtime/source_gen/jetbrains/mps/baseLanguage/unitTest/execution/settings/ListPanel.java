@@ -16,7 +16,7 @@ import com.intellij.openapi.actionSystem.AnAction;
 import jetbrains.mps.workbench.dialogs.project.components.parts.actions.ListAddAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.workbench.dialogs.choosers.CommonChoosers;
+import jetbrains.mps.ide.platform.dialogs.choosers.NodeChooserDialog;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.baseLanguage.unitTest.execution.client.TestNodeWrapperFactory;
@@ -81,7 +81,11 @@ public class ListPanel extends JPanel {
     AnAction add = new ListAddAction(this.myListComponent) {
       protected int doAdd(AnActionEvent p0) {
         List<SNode> nodesList = getCandidates();
-        final SNode resultNode = CommonChoosers.showDialogNodeChooser(ListPanel.this, (List<SNode>) nodesList);
+
+        NodeChooserDialog chooserDialog = new NodeChooserDialog(myProject, nodesList);
+        chooserDialog.show();
+        final SNode resultNode = chooserDialog.getResult();
+
         if (resultNode == null) {
           return -1;
         }
