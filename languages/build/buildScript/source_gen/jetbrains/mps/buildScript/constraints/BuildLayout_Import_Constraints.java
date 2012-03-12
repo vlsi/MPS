@@ -13,18 +13,13 @@ import jetbrains.mps.smodel.runtime.ReferenceScopeProvider;
 import jetbrains.mps.smodel.runtime.base.BaseScopeProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.runtime.ReferencePresentationContext;
-import jetbrains.mps.buildScript.behavior.BuildLayout_NamedContainer_Behavior;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.scope.Scope;
+import jetbrains.mps.buildScript.util.ScopeUtil;
+import jetbrains.mps.scope.ModelPlusImportedScope;
+import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
-import java.util.List;
-import jetbrains.mps.internal.collections.runtime.ITranslator2;
-import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.scope.EmptyScope;
 
 public class BuildLayout_Import_Constraints extends BaseConstraintsDescriptor {
@@ -54,19 +49,16 @@ public class BuildLayout_Import_Constraints extends BaseConstraintsDescriptor {
 
           @Override
           public String getPresentation(final IOperationContext operationContext, final ReferencePresentationContext _context) {
-            String target = BuildLayout_NamedContainer_Behavior.call_getReferenceText_841011766566134611(_context.getParameterNode());
+            SNode contextProject = SNodeOperations.getAncestor(_context.getContextNode(), "jetbrains.mps.buildScript.structure.BuildProject", true, false);
+            String target = null;
             if ((_context.getContextNode() != null)) {
-              SNode contextProject = SNodeOperations.getAncestor(_context.getContextNode(), "jetbrains.mps.buildScript.structure.BuildProject", true, false);
-              final SNode parameterProject = SNodeOperations.getAncestor(_context.getParameterNode(), "jetbrains.mps.buildScript.structure.BuildProject", true, false);
-              if ((contextProject != null) && (parameterProject != null)) {
-                if (ListSequence.fromList(SLinkOperations.getTargets(contextProject, "dependencies", true)).any(new IWhereFilter<SNode>() {
-                  public boolean accept(SNode it) {
-                    return SNodeOperations.isInstanceOf(it, "jetbrains.mps.buildScript.structure.BuildProjectDependency") && SLinkOperations.getTarget(SNodeOperations.cast(it, "jetbrains.mps.buildScript.structure.BuildProjectDependency"), "script", false) == parameterProject;
-                  }
-                })) {
-                  target = SPropertyOperations.getString(parameterProject, "name") + "/" + target;
-                }
+              Scope importedArtifactsScope = ScopeUtil.getVisibleArtifactsScope(contextProject);
+              if (importedArtifactsScope != null && !(importedArtifactsScope instanceof ModelPlusImportedScope)) {
+                target = importedArtifactsScope.getReferenceText(_context.getContextNode(), _context.getParameterNode());
               }
+            }
+            if (target == null) {
+              target = BaseConcept_Behavior.call_getPresentation_1213877396640(_context.getParameterNode());
             }
             return (_context.getSmartReference() ?
               "import " + target :
@@ -83,45 +75,7 @@ public class BuildLayout_Import_Constraints extends BaseConstraintsDescriptor {
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             SNode contextProject = SNodeOperations.getAncestor(_context.getContextNode(), "jetbrains.mps.buildScript.structure.BuildProject", true, false);
             if ((contextProject != null)) {
-              // TODO rewrite 
-              final List<SNode> list = ListSequence.fromList(SLinkOperations.getTargets(contextProject, "dependencies", true)).where(new IWhereFilter<SNode>() {
-                public boolean accept(SNode it) {
-                  return SNodeOperations.isInstanceOf(it, "jetbrains.mps.buildScript.structure.BuildProjectDependency");
-                }
-              }).translate(new ITranslator2<SNode, SNode>() {
-                public Iterable<SNode> translate(SNode it) {
-                  return ListSequence.fromList(SNodeOperations.getDescendants(SLinkOperations.getTarget(SNodeOperations.cast(it, "jetbrains.mps.buildScript.structure.BuildProjectDependency"), "script", false), "jetbrains.mps.buildScript.structure.BuildLayout_NamedContainer", false, new String[]{})).where(new IWhereFilter<SNode>() {
-                    public boolean accept(SNode nc) {
-                      return BuildLayout_NamedContainer_Behavior.call_isFile_6547494638219485308(nc) || BuildLayout_NamedContainer_Behavior.call_isFolder_6547494638219485301(nc);
-                    }
-                  });
-                }
-              }).toListSequence();
-              return new Scope() {
-                /**
-                 * javadoc suxx
-                 */
-                public List<SNode> getAvailableElements(@Nullable String prefix) {
-                  return list;
-                }
-
-                /**
-                 * javadoc suxx
-                 */
-                @Nullable
-                public SNode resolve(SNode contextNode, @NotNull String refText) {
-                  return null;
-                }
-
-                /**
-                 * javadoc suxx
-                 */
-                @Nullable
-                public String getReferenceText(SNode contextNode, @NotNull SNode node) {
-                  return null;
-                }
-              };
-
+              return ScopeUtil.getVisibleArtifactsScope(contextProject);
             }
             return new EmptyScope();
           }

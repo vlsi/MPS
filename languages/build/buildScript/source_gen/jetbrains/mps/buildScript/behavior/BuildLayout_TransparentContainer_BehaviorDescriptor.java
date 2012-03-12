@@ -6,7 +6,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.buildScript.util.UnpackHelper;
 import jetbrains.mps.buildScript.util.Context;
 
-public abstract class BuildLayout_TransparentContainer_BehaviorDescriptor extends BuildLayout_AbstractContainer_BehaviorDescriptor implements BuildLayout_PathElement_BehaviorDescriptor {
+public abstract class BuildLayout_TransparentContainer_BehaviorDescriptor extends BuildLayout_AbstractContainer_BehaviorDescriptor {
   public BuildLayout_TransparentContainer_BehaviorDescriptor() {
   }
 

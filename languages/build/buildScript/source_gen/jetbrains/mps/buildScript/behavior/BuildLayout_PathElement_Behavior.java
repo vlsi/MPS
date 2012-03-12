@@ -11,6 +11,7 @@ import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class BuildLayout_PathElement_Behavior {
   private static Class[] PARAMETERS_7128123785277710736 = {SNode.class, UnpackHelper.class};
+  private static Class[] PARAMETERS_1368030936106665465 = {SNode.class, SNode.class, StringBuilder.class};
 
   public static void init(SNode thisNode) {
   }
@@ -20,7 +21,16 @@ public class BuildLayout_PathElement_Behavior {
     descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.buildScript.structure.BuildLayout_PathElement"), "virtual_unpack_7128123785277710736", PARAMETERS_7128123785277710736, helper);
   }
 
+  public static void call_appendName_1368030936106665465(SNode thisNode, SNode parent, StringBuilder sb) {
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
+    descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.buildScript.structure.BuildLayout_PathElement"), "virtual_appendName_1368030936106665465", PARAMETERS_1368030936106665465, parent, sb);
+  }
+
   public static void callSuper_unpack_7128123785277710736(SNode thisNode, String callerConceptFqName, UnpackHelper helper) {
     BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.buildScript.structure.BuildLayout_PathElement"), callerConceptFqName, "virtual_unpack_7128123785277710736", PARAMETERS_7128123785277710736, helper);
+  }
+
+  public static void callSuper_appendName_1368030936106665465(SNode thisNode, String callerConceptFqName, SNode parent, StringBuilder sb) {
+    BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.buildScript.structure.BuildLayout_PathElement"), callerConceptFqName, "virtual_appendName_1368030936106665465", PARAMETERS_1368030936106665465, parent, sb);
   }
 }

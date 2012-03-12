@@ -74,13 +74,13 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 28:
         return new CompiledConceptDescriptor("jetbrains.mps.buildScript.structure.BuildLayout_PathElement", null, true, new String[]{}, new String[]{}, new String[]{});
       case 29:
-        return new CompiledConceptDescriptor("jetbrains.mps.buildScript.structure.BuildLayout_TransparentContainer", "jetbrains.mps.buildScript.structure.BuildLayout_AbstractContainer", false, new String[]{"jetbrains.mps.buildScript.structure.BuildLayout_AbstractContainer", "jetbrains.mps.buildScript.structure.BuildLayout_PathElement"}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.buildScript.structure.BuildLayout_TransparentContainer", "jetbrains.mps.buildScript.structure.BuildLayout_AbstractContainer", false, new String[]{"jetbrains.mps.buildScript.structure.BuildLayout_AbstractContainer"}, new String[]{}, new String[]{});
       case 30:
         return new CompiledConceptDescriptor("jetbrains.mps.buildScript.structure.BuildLayout_Zip", "jetbrains.mps.buildScript.structure.BuildLayout_NamedContainer", false, new String[]{"jetbrains.mps.buildScript.structure.BuildLayout_NamedContainer", "jetbrains.mps.buildScript.structure.BuildLayout_ContainerAcceptingFileSet"}, new String[]{}, new String[]{});
       case 31:
         return new CompiledConceptDescriptor("jetbrains.mps.buildScript.structure.BuildMacro", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{}, new String[]{});
       case 32:
-        return new CompiledConceptDescriptor("jetbrains.mps.buildScript.structure.BuildNamedLayout", "jetbrains.mps.buildScript.structure.BuildAspect", false, new String[]{"jetbrains.mps.buildScript.structure.BuildAspect", "jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.buildScript.structure.BuildLayout_Container"}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.buildScript.structure.BuildNamedLayout", "jetbrains.mps.buildScript.structure.BuildAspect", false, new String[]{"jetbrains.mps.buildScript.structure.BuildAspect", "jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.buildScript.structure.BuildLayout_Container", "jetbrains.mps.buildScript.structure.BuildLayout_PathElement"}, new String[]{}, new String[]{});
       case 33:
         return new CompiledConceptDescriptor("jetbrains.mps.buildScript.structure.BuildPlugin", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{});
       case 34:

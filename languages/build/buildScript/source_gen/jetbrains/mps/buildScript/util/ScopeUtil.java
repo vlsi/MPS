@@ -17,6 +17,12 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.lang.core.behavior.ScopeProvider_Behavior;
+import jetbrains.mps.project.IModule;
+import jetbrains.mps.scope.ModelPlusImportedScope;
+import jetbrains.mps.buildScript.behavior.BuildLayout_Node_Behavior;
+import org.apache.commons.lang.StringUtils;
+import java.util.ArrayList;
+import jetbrains.mps.buildScript.behavior.BuildLayout_PathElement_Behavior;
 
 public class ScopeUtil {
   public ScopeUtil() {
@@ -58,5 +64,93 @@ public class ScopeUtil {
         return ScopeProvider_Behavior.call_getScope_3734116213129936182(it, concept, child);
       }
     });
+  }
+
+  public static Scope getVisibleArtifactsScope(SNode project) {
+    if (SNodeOperations.getModel(project).isTransient()) {
+      IModule transientModule = SNodeOperations.getModel(project).getModelDescriptor().getModule();
+      return new ModelPlusImportedScope(SNodeOperations.getModel(project), false, transientModule.getScope(), "jetbrains.mps.buildScript.structure.BuildLayout_Node");
+    }
+    VisibleArtifacts artifacts = new VisibleArtifacts(project, null);
+    artifacts.collect();
+    return new ScopeUtil.VisibleArtifactsScope(artifacts);
+  }
+
+  private static class VisibleArtifactsScope extends Scope {
+    private VisibleArtifacts artifacts;
+
+    public VisibleArtifactsScope(VisibleArtifacts artifacts) {
+      this.artifacts = artifacts;
+    }
+
+    private Iterable<SNode> getAllNodes() {
+      return Sequence.fromIterable(artifacts.getArtifacts()).where(new IWhereFilter<SNode>() {
+        public boolean accept(SNode it) {
+          return BuildLayout_Node_Behavior.call_isFile_1368030936106753986(it) || BuildLayout_Node_Behavior.call_isFolder_1368030936106753980(it);
+        }
+      });
+    }
+
+    public List<SNode> getAvailableElements(@Nullable String prefix) {
+      if (StringUtils.isEmpty(prefix)) {
+        return Sequence.fromIterable(getAllNodes()).toListSequence();
+      }
+      List<SNode> result = new ArrayList<SNode>();
+      for (SNode n : getAllNodes()) {
+        String name = getName(n);
+        if (prefix == null || name.startsWith(prefix)) {
+          ListSequence.fromList(result).addElement(n);
+        }
+      }
+      return result;
+    }
+
+    public SNode resolve(SNode contextNode, String refText) {
+      SNode result = null;
+      for (SNode n : getAllNodes()) {
+        String name = getName(n);
+        if (name.equals(refText)) {
+          if (result == null) {
+            result = n;
+          } else {
+            return null;
+          }
+        }
+      }
+      return result;
+    }
+
+    public String getReferenceText(SNode contextNode, SNode node) {
+      if (node == null || !(SNodeOperations.isInstanceOf(node, "jetbrains.mps.buildScript.structure.BuildLayout_Node"))) {
+        return null;
+      }
+
+      String result = getName(SNodeOperations.cast(node, "jetbrains.mps.buildScript.structure.BuildLayout_Node"));
+      for (SNode n : getAllNodes()) {
+        if (n == node) {
+          continue;
+        }
+        String name = getName(n);
+        if (name.equals(result)) {
+          // ambiguity 
+          return null;
+        }
+      }
+      return result;
+    }
+
+    private String getName(SNode node) {
+      StringBuilder sb = new StringBuilder();
+      appendName(node, sb);
+      return sb.toString();
+    }
+
+    private void appendName(SNode node, StringBuilder sb) {
+      SNode parent = artifacts.parent(node);
+      if ((parent != null)) {
+        appendName(parent, sb);
+      }
+      BuildLayout_PathElement_Behavior.call_appendName_1368030936106665465(node, parent, sb);
+    }
   }
 }

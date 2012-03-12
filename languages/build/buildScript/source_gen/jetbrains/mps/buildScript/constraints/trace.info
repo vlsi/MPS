@@ -546,128 +546,75 @@
     <unitInfo nodeId="8237269006869472775" fileName="BuildLayout_NamedContainer_Constraints.java" startLine="23" startPosition="31" endLine="34" endPosition="5" unitName="jetbrains.mps.buildScript.constraints.BuildLayout_NamedContainer_Constraints$1" />
   </root>
   <root nodeId="841011766565773812">
-    <nodeInfo nodeId="841011766565773812" fileName="BuildLayout_Import_Constraints.java" startLine="30" startPosition="79" endLine="31" endPosition="191" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="breakingNode_gjnfdd_a0a2a0a0a1a0b0a1a0" />
-    <nodeInfo nodeId="841011766565773812" fileName="BuildLayout_Import_Constraints.java" startLine="33" startPosition="43" endLine="34" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="841011766565773812" fileName="BuildLayout_Import_Constraints.java" startLine="38" startPosition="83" endLine="39" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="841011766565773812" fileName="BuildLayout_Import_Constraints.java" startLine="42" startPosition="44" endLine="43" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="841011766565773812" fileName="BuildLayout_Import_Constraints.java" startLine="51" startPosition="44" endLine="52" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="841011766566134594" fileName="BuildLayout_Import_Constraints.java" startLine="56" startPosition="128" endLine="57" endPosition="134" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="841011766566139866" fileName="BuildLayout_Import_Constraints.java" startLine="58" startPosition="54" endLine="59" endPosition="157" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="841011766566139926" fileName="BuildLayout_Import_Constraints.java" startLine="59" startPosition="157" endLine="60" endPosition="167" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="841011766566140065" fileName="BuildLayout_Import_Constraints.java" startLine="63" startPosition="51" endLine="64" endPosition="276" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="841011766566140185" fileName="BuildLayout_Import_Constraints.java" startLine="66" startPosition="21" endLine="67" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="841011766565773812" fileName="BuildLayout_Import_Constraints.java" startLine="78" startPosition="61" endLine="79" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="841011766566141825" fileName="BuildLayout_Import_Constraints.java" startLine="83" startPosition="122" endLine="84" endPosition="155" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="841011766566152138" fileName="BuildLayout_Import_Constraints.java" startLine="85" startPosition="43" endLine="86" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="841011766566152154" fileName="BuildLayout_Import_Constraints.java" startLine="88" startPosition="49" endLine="89" endPosition="120" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6547494638219491062" fileName="BuildLayout_Import_Constraints.java" startLine="94" startPosition="53" endLine="95" endPosition="178" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="841011766566175706" fileName="BuildLayout_Import_Constraints.java" startLine="104" startPosition="82" endLine="105" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="841011766566175708" fileName="BuildLayout_Import_Constraints.java" startLine="112" startPosition="82" endLine="113" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="841011766566175710" fileName="BuildLayout_Import_Constraints.java" startLine="120" startPosition="88" endLine="121" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="841011766566141837" fileName="BuildLayout_Import_Constraints.java" startLine="123" startPosition="16" endLine="124" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="841011766566179105" fileName="BuildLayout_Import_Constraints.java" startLine="125" startPosition="13" endLine="126" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="841011766565773812" fileName="BuildLayout_Import_Constraints.java" startLine="130" startPosition="7" endLine="131" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="841011766565773812" fileName="BuildLayout_Import_Constraints.java" startLine="32" startPosition="0" endLine="35" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="BuildLayout_Import_Constraints#()V" />
-    <nodeInfo nodeId="841011766566140061" fileName="BuildLayout_Import_Constraints.java" startLine="62" startPosition="139" endLine="66" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" />
-    <nodeInfo nodeId="841011766566134744" fileName="BuildLayout_Import_Constraints.java" startLine="70" startPosition="13" endLine="74" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="841011766566152152" fileName="BuildLayout_Import_Constraints.java" startLine="87" startPosition="160" endLine="91" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" />
-    <nodeInfo nodeId="6547494638219491058" fileName="BuildLayout_Import_Constraints.java" startLine="93" startPosition="333" endLine="97" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" />
-    <nodeInfo nodeId="841011766565773812" fileName="BuildLayout_Import_Constraints.java" startLine="40" startPosition="85" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hasOwnScopeProvider#()Z" />
-    <nodeInfo nodeId="841011766565773812" fileName="BuildLayout_Import_Constraints.java" startLine="49" startPosition="40" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hasPresentation#()Z" />
-    <nodeInfo nodeId="841011766565773812" fileName="BuildLayout_Import_Constraints.java" startLine="76" startPosition="0" endLine="81" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSearchScopeValidatorNode#()Ljetbrains/mps/smodel/SNodePointer;" />
-    <nodeInfo nodeId="841011766566152164" fileName="BuildLayout_Import_Constraints.java" startLine="92" startPosition="60" endLine="97" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="841011766566140005" fileName="BuildLayout_Import_Constraints.java" startLine="61" startPosition="75" endLine="68" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="841011766566175643" fileName="BuildLayout_Import_Constraints.java" startLine="100" startPosition="34" endLine="107" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getAvailableElements#(Ljava/lang/String;)Ljava/util/List;" />
-    <nodeInfo nodeId="841011766566152162" fileName="BuildLayout_Import_Constraints.java" startLine="91" startPosition="61" endLine="99" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="translate#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="841011766566175656" fileName="BuildLayout_Import_Constraints.java" startLine="107" startPosition="0" endLine="115" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="resolve#(Ljetbrains/mps/smodel/SNode;Ljava/lang/String;)Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="841011766566175678" fileName="BuildLayout_Import_Constraints.java" startLine="115" startPosition="0" endLine="123" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getReferenceText#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;" />
-    <nodeInfo nodeId="841011766566139946" fileName="BuildLayout_Import_Constraints.java" startLine="60" startPosition="167" endLine="69" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="841011766566139835" fileName="BuildLayout_Import_Constraints.java" startLine="57" startPosition="134" endLine="70" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="841011766566152141" fileName="BuildLayout_Import_Constraints.java" startLine="86" startPosition="30" endLine="99" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="841011766565773812" fileName="BuildLayout_Import_Constraints.java" startLine="54" startPosition="0" endLine="76" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPresentation#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/runtime/ReferencePresentationContext;)Ljava/lang/String;" />
-    <nodeInfo nodeId="841011766566177415" fileName="BuildLayout_Import_Constraints.java" startLine="99" startPosition="34" endLine="123" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="841011766566141835" fileName="BuildLayout_Import_Constraints.java" startLine="84" startPosition="155" endLine="125" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="841011766565773812" fileName="BuildLayout_Import_Constraints.java" startLine="81" startPosition="0" endLine="128" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createScope#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/runtime/ReferenceConstraintsContext;)Ljetbrains/mps/scope/Scope;" />
-    <nodeInfo nodeId="841011766565773812" fileName="BuildLayout_Import_Constraints.java" startLine="48" startPosition="56" endLine="128" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="841011766565773812" fileName="BuildLayout_Import_Constraints.java" startLine="45" startPosition="0" endLine="130" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getScopeProvider#()Ljetbrains/mps/smodel/runtime/ReferenceScopeProvider;" />
-    <nodeInfo nodeId="841011766565773812" fileName="BuildLayout_Import_Constraints.java" startLine="39" startPosition="75" endLine="130" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="841011766565773812" fileName="BuildLayout_Import_Constraints.java" startLine="36" startPosition="0" endLine="133" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNotDefaultReferences#()Ljava/util/Map;" />
-    <scopeInfo nodeId="841011766565773812" fileName="BuildLayout_Import_Constraints.java" startLine="33" startPosition="43" endLine="34" endPosition="68" />
-    <scopeInfo nodeId="841011766565773812" fileName="BuildLayout_Import_Constraints.java" startLine="42" startPosition="44" endLine="43" endPosition="20" />
-    <scopeInfo nodeId="841011766565773812" fileName="BuildLayout_Import_Constraints.java" startLine="51" startPosition="44" endLine="52" endPosition="24" />
-    <scopeInfo nodeId="841011766566140062" fileName="BuildLayout_Import_Constraints.java" startLine="63" startPosition="51" endLine="64" endPosition="276" />
-    <scopeInfo nodeId="841011766566140006" fileName="BuildLayout_Import_Constraints.java" startLine="66" startPosition="21" endLine="67" endPosition="98" />
-    <scopeInfo nodeId="841011766565773812" fileName="BuildLayout_Import_Constraints.java" startLine="78" startPosition="61" endLine="79" endPosition="58" />
-    <scopeInfo nodeId="841011766566152153" fileName="BuildLayout_Import_Constraints.java" startLine="88" startPosition="49" endLine="89" endPosition="120" />
-    <scopeInfo nodeId="6547494638219491059" fileName="BuildLayout_Import_Constraints.java" startLine="94" startPosition="53" endLine="95" endPosition="178" />
-    <scopeInfo nodeId="841011766566175655" fileName="BuildLayout_Import_Constraints.java" startLine="104" startPosition="82" endLine="105" endPosition="30" />
-    <scopeInfo nodeId="841011766566175677" fileName="BuildLayout_Import_Constraints.java" startLine="112" startPosition="82" endLine="113" endPosition="30" />
-    <scopeInfo nodeId="841011766566175701" fileName="BuildLayout_Import_Constraints.java" startLine="120" startPosition="88" endLine="121" endPosition="30" />
-    <scopeInfo nodeId="841011766565773812" fileName="BuildLayout_Import_Constraints.java" startLine="32" startPosition="0" endLine="35" endPosition="3" />
-    <scopeInfo nodeId="841011766566140061" fileName="BuildLayout_Import_Constraints.java" startLine="62" startPosition="139" endLine="66" endPosition="0">
-      <varInfo nodeId="841011766566140061" varName="it" />
+    <nodeInfo nodeId="841011766565773812" fileName="BuildLayout_Import_Constraints.java" startLine="25" startPosition="79" endLine="26" endPosition="191" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="breakingNode_gjnfdd_a0a2a0a0a1a0b0a1a0" />
+    <nodeInfo nodeId="841011766565773812" fileName="BuildLayout_Import_Constraints.java" startLine="28" startPosition="43" endLine="29" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="841011766565773812" fileName="BuildLayout_Import_Constraints.java" startLine="33" startPosition="83" endLine="34" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="841011766565773812" fileName="BuildLayout_Import_Constraints.java" startLine="37" startPosition="44" endLine="38" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="841011766565773812" fileName="BuildLayout_Import_Constraints.java" startLine="46" startPosition="44" endLine="47" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1368030936106707788" fileName="BuildLayout_Import_Constraints.java" startLine="51" startPosition="128" endLine="52" endPosition="155" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="841011766566134594" fileName="BuildLayout_Import_Constraints.java" startLine="52" startPosition="155" endLine="53" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1368030936106707803" fileName="BuildLayout_Import_Constraints.java" startLine="54" startPosition="54" endLine="55" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1368030936106708413" fileName="BuildLayout_Import_Constraints.java" startLine="56" startPosition="114" endLine="57" endPosition="121" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1368030936106708390" fileName="BuildLayout_Import_Constraints.java" startLine="60" startPosition="33" endLine="61" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="841011766565773812" fileName="BuildLayout_Import_Constraints.java" startLine="70" startPosition="61" endLine="71" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="841011766566141825" fileName="BuildLayout_Import_Constraints.java" startLine="75" startPosition="122" endLine="76" endPosition="155" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1368030936106707779" fileName="BuildLayout_Import_Constraints.java" startLine="77" startPosition="43" endLine="78" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="841011766566179105" fileName="BuildLayout_Import_Constraints.java" startLine="79" startPosition="13" endLine="80" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="841011766565773812" fileName="BuildLayout_Import_Constraints.java" startLine="84" startPosition="7" endLine="85" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="841011766565773812" fileName="BuildLayout_Import_Constraints.java" startLine="27" startPosition="0" endLine="30" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="BuildLayout_Import_Constraints#()V" />
+    <nodeInfo nodeId="1368030936106707810" fileName="BuildLayout_Import_Constraints.java" startLine="55" startPosition="96" endLine="58" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1368030936106708363" fileName="BuildLayout_Import_Constraints.java" startLine="59" startPosition="13" endLine="62" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="841011766566141835" fileName="BuildLayout_Import_Constraints.java" startLine="76" startPosition="155" endLine="79" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="841011766566134744" fileName="BuildLayout_Import_Constraints.java" startLine="62" startPosition="13" endLine="66" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="841011766565773812" fileName="BuildLayout_Import_Constraints.java" startLine="35" startPosition="85" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hasOwnScopeProvider#()Z" />
+    <nodeInfo nodeId="841011766565773812" fileName="BuildLayout_Import_Constraints.java" startLine="44" startPosition="40" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hasPresentation#()Z" />
+    <nodeInfo nodeId="841011766565773812" fileName="BuildLayout_Import_Constraints.java" startLine="68" startPosition="0" endLine="73" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSearchScopeValidatorNode#()Ljetbrains/mps/smodel/SNodePointer;" />
+    <nodeInfo nodeId="841011766566139835" fileName="BuildLayout_Import_Constraints.java" startLine="53" startPosition="33" endLine="59" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="841011766565773812" fileName="BuildLayout_Import_Constraints.java" startLine="73" startPosition="0" endLine="82" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createScope#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/runtime/ReferenceConstraintsContext;)Ljetbrains/mps/scope/Scope;" />
+    <nodeInfo nodeId="841011766565773812" fileName="BuildLayout_Import_Constraints.java" startLine="49" startPosition="0" endLine="68" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPresentation#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/runtime/ReferencePresentationContext;)Ljava/lang/String;" />
+    <nodeInfo nodeId="841011766565773812" fileName="BuildLayout_Import_Constraints.java" startLine="43" startPosition="56" endLine="82" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="841011766565773812" fileName="BuildLayout_Import_Constraints.java" startLine="40" startPosition="0" endLine="84" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getScopeProvider#()Ljetbrains/mps/smodel/runtime/ReferenceScopeProvider;" />
+    <nodeInfo nodeId="841011766565773812" fileName="BuildLayout_Import_Constraints.java" startLine="34" startPosition="75" endLine="84" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="841011766565773812" fileName="BuildLayout_Import_Constraints.java" startLine="31" startPosition="0" endLine="87" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNotDefaultReferences#()Ljava/util/Map;" />
+    <scopeInfo nodeId="841011766565773812" fileName="BuildLayout_Import_Constraints.java" startLine="28" startPosition="43" endLine="29" endPosition="68" />
+    <scopeInfo nodeId="841011766565773812" fileName="BuildLayout_Import_Constraints.java" startLine="37" startPosition="44" endLine="38" endPosition="20" />
+    <scopeInfo nodeId="841011766565773812" fileName="BuildLayout_Import_Constraints.java" startLine="46" startPosition="44" endLine="47" endPosition="24" />
+    <scopeInfo nodeId="1368030936106707811" fileName="BuildLayout_Import_Constraints.java" startLine="56" startPosition="114" endLine="57" endPosition="121" />
+    <scopeInfo nodeId="1368030936106708364" fileName="BuildLayout_Import_Constraints.java" startLine="60" startPosition="33" endLine="61" endPosition="108" />
+    <scopeInfo nodeId="841011766565773812" fileName="BuildLayout_Import_Constraints.java" startLine="70" startPosition="61" endLine="71" endPosition="58" />
+    <scopeInfo nodeId="841011766566141836" fileName="BuildLayout_Import_Constraints.java" startLine="77" startPosition="43" endLine="78" endPosition="72" />
+    <scopeInfo nodeId="841011766565773812" fileName="BuildLayout_Import_Constraints.java" startLine="27" startPosition="0" endLine="30" endPosition="3" />
+    <scopeInfo nodeId="841011766566139836" fileName="BuildLayout_Import_Constraints.java" startLine="54" startPosition="54" endLine="58" endPosition="15">
+      <varInfo nodeId="1368030936106707804" varName="importedArtifactsScope" />
     </scopeInfo>
-    <scopeInfo nodeId="841011766566152152" fileName="BuildLayout_Import_Constraints.java" startLine="87" startPosition="160" endLine="91" endPosition="0">
-      <varInfo nodeId="841011766566152152" varName="it" />
-    </scopeInfo>
-    <scopeInfo nodeId="6547494638219491058" fileName="BuildLayout_Import_Constraints.java" startLine="93" startPosition="333" endLine="97" endPosition="0">
-      <varInfo nodeId="6547494638219491058" varName="nc" />
-    </scopeInfo>
-    <scopeInfo nodeId="841011766565773812" fileName="BuildLayout_Import_Constraints.java" startLine="40" startPosition="85" endLine="45" endPosition="0" />
-    <scopeInfo nodeId="841011766565773812" fileName="BuildLayout_Import_Constraints.java" startLine="49" startPosition="40" endLine="54" endPosition="0" />
-    <scopeInfo nodeId="841011766565773812" fileName="BuildLayout_Import_Constraints.java" startLine="76" startPosition="0" endLine="81" endPosition="0" />
-    <scopeInfo nodeId="841011766566152163" fileName="BuildLayout_Import_Constraints.java" startLine="92" startPosition="60" endLine="97" endPosition="21" />
-    <scopeInfo nodeId="841011766566139947" fileName="BuildLayout_Import_Constraints.java" startLine="61" startPosition="75" endLine="68" endPosition="17" />
-    <scopeInfo nodeId="841011766566175643" fileName="BuildLayout_Import_Constraints.java" startLine="100" startPosition="34" endLine="107" endPosition="0">
-      <varInfo nodeId="841011766566175646" varName="prefix" />
-    </scopeInfo>
-    <scopeInfo nodeId="841011766566152162" fileName="BuildLayout_Import_Constraints.java" startLine="91" startPosition="61" endLine="99" endPosition="0">
-      <varInfo nodeId="841011766566152162" varName="it" />
-    </scopeInfo>
-    <scopeInfo nodeId="841011766566175656" fileName="BuildLayout_Import_Constraints.java" startLine="107" startPosition="0" endLine="115" endPosition="0">
-      <varInfo nodeId="841011766566175659" varName="contextNode" />
-      <varInfo nodeId="841011766566175661" varName="refText" />
-    </scopeInfo>
-    <scopeInfo nodeId="841011766566175678" fileName="BuildLayout_Import_Constraints.java" startLine="115" startPosition="0" endLine="123" endPosition="0">
-      <varInfo nodeId="841011766566175681" varName="contextNode" />
-      <varInfo nodeId="841011766566175683" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="841011766566139836" fileName="BuildLayout_Import_Constraints.java" startLine="58" startPosition="54" endLine="69" endPosition="15">
-      <varInfo nodeId="841011766566139867" varName="contextProject" />
-      <varInfo nodeId="841011766566139927" varName="parameterProject" />
-    </scopeInfo>
-    <scopeInfo nodeId="841011766565775575" fileName="BuildLayout_Import_Constraints.java" startLine="56" startPosition="128" endLine="74" endPosition="14">
-      <varInfo nodeId="841011766566134595" varName="target" />
-    </scopeInfo>
-    <scopeInfo nodeId="841011766565773812" fileName="BuildLayout_Import_Constraints.java" startLine="54" startPosition="0" endLine="76" endPosition="0">
-      <varInfo nodeId="841011766565773812" varName="_context" />
-      <varInfo nodeId="841011766565773812" varName="operationContext" />
-    </scopeInfo>
-    <scopeInfo nodeId="841011766566141836" fileName="BuildLayout_Import_Constraints.java" startLine="85" startPosition="43" endLine="124" endPosition="0">
-      <varInfo nodeId="841011766566152142" varName="list" />
-    </scopeInfo>
-    <scopeInfo nodeId="841011766565773812" fileName="BuildLayout_Import_Constraints.java" startLine="83" startPosition="122" endLine="126" endPosition="36" />
-    <scopeInfo nodeId="841011766566141824" fileName="BuildLayout_Import_Constraints.java" startLine="83" startPosition="122" endLine="126" endPosition="36">
+    <scopeInfo nodeId="841011766565773812" fileName="BuildLayout_Import_Constraints.java" startLine="35" startPosition="85" endLine="40" endPosition="0" />
+    <scopeInfo nodeId="841011766565773812" fileName="BuildLayout_Import_Constraints.java" startLine="44" startPosition="40" endLine="49" endPosition="0" />
+    <scopeInfo nodeId="841011766565773812" fileName="BuildLayout_Import_Constraints.java" startLine="68" startPosition="0" endLine="73" endPosition="0" />
+    <scopeInfo nodeId="841011766565773812" fileName="BuildLayout_Import_Constraints.java" startLine="75" startPosition="122" endLine="80" endPosition="36" />
+    <scopeInfo nodeId="841011766566141824" fileName="BuildLayout_Import_Constraints.java" startLine="75" startPosition="122" endLine="80" endPosition="36">
       <varInfo nodeId="841011766566141826" varName="contextProject" />
     </scopeInfo>
-    <scopeInfo nodeId="841011766565773812" fileName="BuildLayout_Import_Constraints.java" startLine="81" startPosition="0" endLine="128" endPosition="0">
+    <scopeInfo nodeId="841011766565773812" fileName="BuildLayout_Import_Constraints.java" startLine="73" startPosition="0" endLine="82" endPosition="0">
       <varInfo nodeId="841011766565773812" varName="_context" />
       <varInfo nodeId="841011766565773812" varName="operationContext" />
     </scopeInfo>
-    <scopeInfo nodeId="841011766565773812" fileName="BuildLayout_Import_Constraints.java" startLine="48" startPosition="56" endLine="128" endPosition="10" />
-    <scopeInfo nodeId="841011766565773812" fileName="BuildLayout_Import_Constraints.java" startLine="45" startPosition="0" endLine="130" endPosition="0" />
-    <scopeInfo nodeId="841011766565773812" fileName="BuildLayout_Import_Constraints.java" startLine="38" startPosition="83" endLine="131" endPosition="22">
+    <scopeInfo nodeId="841011766565775575" fileName="BuildLayout_Import_Constraints.java" startLine="51" startPosition="128" endLine="66" endPosition="14">
+      <varInfo nodeId="1368030936106707789" varName="contextProject" />
+      <varInfo nodeId="841011766566134595" varName="target" />
+    </scopeInfo>
+    <scopeInfo nodeId="841011766565773812" fileName="BuildLayout_Import_Constraints.java" startLine="49" startPosition="0" endLine="68" endPosition="0">
+      <varInfo nodeId="841011766565773812" varName="_context" />
+      <varInfo nodeId="841011766565773812" varName="operationContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="841011766565773812" fileName="BuildLayout_Import_Constraints.java" startLine="43" startPosition="56" endLine="82" endPosition="10" />
+    <scopeInfo nodeId="841011766565773812" fileName="BuildLayout_Import_Constraints.java" startLine="40" startPosition="0" endLine="84" endPosition="0" />
+    <scopeInfo nodeId="841011766565773812" fileName="BuildLayout_Import_Constraints.java" startLine="33" startPosition="83" endLine="85" endPosition="22">
       <varInfo nodeId="841011766565773812" varName="references" />
     </scopeInfo>
-    <scopeInfo nodeId="841011766565773812" fileName="BuildLayout_Import_Constraints.java" startLine="36" startPosition="0" endLine="133" endPosition="0" />
-    <unitInfo nodeId="841011766565773812" fileName="BuildLayout_Import_Constraints.java" startLine="30" startPosition="0" endLine="134" endPosition="0" unitName="jetbrains.mps.buildScript.constraints.BuildLayout_Import_Constraints" />
-    <unitInfo nodeId="841011766565773812" fileName="BuildLayout_Import_Constraints.java" startLine="40" startPosition="33" endLine="130" endPosition="5" unitName="jetbrains.mps.buildScript.constraints.BuildLayout_Import_Constraints$1" />
-    <unitInfo nodeId="841011766565773812" fileName="BuildLayout_Import_Constraints.java" startLine="49" startPosition="19" endLine="128" endPosition="9" unitName="jetbrains.mps.buildScript.constraints.BuildLayout_Import_Constraints$2" />
-    <unitInfo nodeId="841011766566140061" fileName="BuildLayout_Import_Constraints.java" startLine="62" startPosition="116" endLine="66" endPosition="17" unitName="jetbrains.mps.buildScript.constraints.BuildLayout_Import_Constraints$3" />
-    <unitInfo nodeId="841011766566152152" fileName="BuildLayout_Import_Constraints.java" startLine="87" startPosition="137" endLine="91" endPosition="15" unitName="jetbrains.mps.buildScript.constraints.BuildLayout_Import_Constraints$3" />
-    <unitInfo nodeId="841011766566152162" fileName="BuildLayout_Import_Constraints.java" startLine="91" startPosition="31" endLine="99" endPosition="15" unitName="jetbrains.mps.buildScript.constraints.BuildLayout_Import_Constraints$3" />
-    <unitInfo nodeId="841011766566175641" fileName="BuildLayout_Import_Constraints.java" startLine="100" startPosition="25" endLine="123" endPosition="15" unitName="jetbrains.mps.buildScript.constraints.BuildLayout_Import_Constraints$3" />
-    <unitInfo nodeId="6547494638219491058" fileName="BuildLayout_Import_Constraints.java" startLine="93" startPosition="310" endLine="97" endPosition="19" unitName="jetbrains.mps.buildScript.constraints.BuildLayout_Import_Constraints$4" />
+    <scopeInfo nodeId="841011766565773812" fileName="BuildLayout_Import_Constraints.java" startLine="31" startPosition="0" endLine="87" endPosition="0" />
+    <unitInfo nodeId="841011766565773812" fileName="BuildLayout_Import_Constraints.java" startLine="25" startPosition="0" endLine="88" endPosition="0" unitName="jetbrains.mps.buildScript.constraints.BuildLayout_Import_Constraints" />
+    <unitInfo nodeId="841011766565773812" fileName="BuildLayout_Import_Constraints.java" startLine="35" startPosition="33" endLine="84" endPosition="5" unitName="jetbrains.mps.buildScript.constraints.BuildLayout_Import_Constraints$1" />
+    <unitInfo nodeId="841011766565773812" fileName="BuildLayout_Import_Constraints.java" startLine="44" startPosition="19" endLine="82" endPosition="9" unitName="jetbrains.mps.buildScript.constraints.BuildLayout_Import_Constraints$2" />
   </root>
 </debugInfo>
 

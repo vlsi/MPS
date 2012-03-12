@@ -10,12 +10,12 @@ public class BuildLayout_Folder_BehaviorDescriptor extends BuildLayout_NamedCont
   public BuildLayout_Folder_BehaviorDescriptor() {
   }
 
-  public boolean virtual_isFolder_6547494638219485301(SNode thisNode) {
-    return BuildLayout_Folder_Behavior.virtual_isFolder_6547494638219485301(thisNode);
-  }
-
   public void virtual_unpack_7128123785277710736(SNode thisNode, UnpackHelper helper) {
     BuildLayout_Folder_Behavior.virtual_unpack_7128123785277710736(thisNode, helper);
+  }
+
+  public boolean virtual_isFolder_1368030936106753980(SNode thisNode) {
+    return BuildLayout_Folder_Behavior.virtual_isFolder_1368030936106753980(thisNode);
   }
 
   public String virtual_getChildrenOutputDir_WithMacro_4701820937132344011(SNode thisNode, Context context) {

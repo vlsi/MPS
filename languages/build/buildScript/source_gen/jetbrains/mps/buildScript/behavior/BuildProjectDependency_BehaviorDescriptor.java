@@ -13,6 +13,10 @@ public class BuildProjectDependency_BehaviorDescriptor extends BuildDependency_B
     BuildProjectDependency_Behavior.virtual_unpack_7128123785277710736(thisNode, helper);
   }
 
+  public void virtual_appendName_1368030936106665465(SNode thisNode, SNode parent, StringBuilder sb) {
+    BuildProjectDependency_Behavior.virtual_appendName_1368030936106665465(thisNode, parent, sb);
+  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.buildScript.structure.BuildProjectDependency";

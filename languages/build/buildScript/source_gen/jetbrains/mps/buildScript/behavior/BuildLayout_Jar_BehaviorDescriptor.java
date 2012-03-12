@@ -9,16 +9,16 @@ public class BuildLayout_Jar_BehaviorDescriptor extends BuildLayout_NamedContain
   public BuildLayout_Jar_BehaviorDescriptor() {
   }
 
-  public boolean virtual_isFile_6547494638219485308(SNode thisNode) {
-    return BuildLayout_Jar_Behavior.virtual_isFile_6547494638219485308(thisNode);
-  }
-
   public void virtual_unpack_7128123785277710736(SNode thisNode, UnpackHelper helper) {
     BuildLayout_Jar_Behavior.virtual_unpack_7128123785277710736(thisNode, helper);
   }
 
   public boolean virtual_exports_6547494638219603457(SNode thisNode, Object object) {
     return BuildLayout_Jar_Behavior.virtual_exports_6547494638219603457(thisNode, object);
+  }
+
+  public boolean virtual_isFile_1368030936106753986(SNode thisNode) {
+    return BuildLayout_Jar_Behavior.virtual_isFile_1368030936106753986(thisNode);
   }
 
   @Override

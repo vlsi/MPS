@@ -23,7 +23,7 @@ public class BuildLayout_Folder_Behavior {
     helper.contentLocations().put(thisNode, folderLocation);
   }
 
-  public static boolean virtual_isFolder_6547494638219485301(SNode thisNode) {
+  public static boolean virtual_isFolder_1368030936106753980(SNode thisNode) {
     return true;
   }
 }

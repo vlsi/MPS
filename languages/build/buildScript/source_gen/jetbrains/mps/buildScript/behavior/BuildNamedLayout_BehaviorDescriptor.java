@@ -4,15 +4,24 @@ package jetbrains.mps.buildScript.behavior;
 
 import jetbrains.mps.lang.core.behavior.INamedConcept_BehaviorDescriptor;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.buildScript.util.UnpackHelper;
 import jetbrains.mps.buildScript.util.Context;
 import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 
-public class BuildNamedLayout_BehaviorDescriptor extends BuildAspect_BehaviorDescriptor implements INamedConcept_BehaviorDescriptor, BuildLayout_Container_BehaviorDescriptor {
+public class BuildNamedLayout_BehaviorDescriptor extends BuildAspect_BehaviorDescriptor implements INamedConcept_BehaviorDescriptor, BuildLayout_Container_BehaviorDescriptor, BuildLayout_PathElement_BehaviorDescriptor {
   public BuildNamedLayout_BehaviorDescriptor() {
   }
 
   public String virtual_getAssembleSubTaskId_4701820937132344052(SNode thisNode) {
     return BuildNamedLayout_Behavior.virtual_getAssembleSubTaskId_4701820937132344052(thisNode);
+  }
+
+  public void virtual_unpack_7128123785277710736(SNode thisNode, UnpackHelper helper) {
+    BuildNamedLayout_Behavior.virtual_unpack_7128123785277710736(thisNode, helper);
+  }
+
+  public void virtual_appendName_1368030936106665465(SNode thisNode, SNode parent, StringBuilder sb) {
+    BuildNamedLayout_Behavior.virtual_appendName_1368030936106665465(thisNode, parent, sb);
   }
 
   public String virtual_getPrepareSubTaskId_4701820937132344041(SNode thisNode) {

@@ -12,6 +12,8 @@ import jetbrains.mps.buildScript.util.Context;
 import jetbrains.mps.buildScript.behavior.BuildLayout_NamedContainer_Behavior;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.buildScript.util.DependenciesHelper;
+import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
+import jetbrains.mps.buildScript.behavior.BuildLayout_Node_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.buildScript.behavior.BuildSourcePath_Behavior;
 import jetbrains.mps.buildScript.behavior.BuildString_Behavior;
@@ -137,16 +139,16 @@ public class QueriesGenerated {
     DependenciesHelper helper = new DependenciesHelper(_context, project);
     String val = helper.locations().get(DependenciesHelper.getOriginalNode(SLinkOperations.getTarget(_context.getNode(), "target", false), _context));
     if (val == null) {
-      _context.showErrorMessage(_context.getNode(), "no location for " + SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "target", false), "name"));
+      _context.showErrorMessage(_context.getNode(), "no location for " + BaseConcept_Behavior.call_getPresentation_1213877396640(SLinkOperations.getTarget(_context.getNode(), "target", false)));
     }
     return val;
   }
 
   public static Object propertyMacro_GetPropertyValue_6547494638219491807(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    if (BuildLayout_NamedContainer_Behavior.call_isFile_6547494638219485308(SLinkOperations.getTarget(_context.getNode(), "target", false))) {
+    if (BuildLayout_Node_Behavior.call_isFile_1368030936106753986(SLinkOperations.getTarget(_context.getNode(), "target", false))) {
       return "file";
     }
-    if (!(BuildLayout_NamedContainer_Behavior.call_isFolder_6547494638219485301(SLinkOperations.getTarget(_context.getNode(), "target", false)))) {
+    if (!(BuildLayout_Node_Behavior.call_isFolder_1368030936106753980(SLinkOperations.getTarget(_context.getNode(), "target", false)))) {
       _context.showErrorMessage(_context.getNode(), "cannot import abstract element, should be file or folder");
     }
     return "dir";

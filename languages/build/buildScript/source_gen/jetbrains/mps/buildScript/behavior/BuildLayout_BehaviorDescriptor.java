@@ -13,6 +13,10 @@ public class BuildLayout_BehaviorDescriptor extends BuildLayout_AbstractContaine
     return BuildLayout_Behavior.virtual_getAssembleSubTaskId_4701820937132344052(thisNode);
   }
 
+  public void virtual_appendName_1368030936106665465(SNode thisNode, SNode parent, StringBuilder sb) {
+    BuildLayout_Behavior.virtual_appendName_1368030936106665465(thisNode, parent, sb);
+  }
+
   public String virtual_getPrepareSubTaskId_4701820937132344041(SNode thisNode) {
     return BuildLayout_Behavior.virtual_getPrepareSubTaskId_4701820937132344041(thisNode);
   }

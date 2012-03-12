@@ -8,9 +8,9 @@ import java.util.Map;
 import java.util.HashMap;
 import java.util.List;
 import java.util.ArrayList;
-import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class VisibleArtifacts {
@@ -20,10 +20,16 @@ public class VisibleArtifacts {
   private final List<SNode> visibleArtifacts = new ArrayList<SNode>();
   private DependenciesHelper dependenciesHelper;
 
-  public VisibleArtifacts(SNode project, @NotNull TemplateQueryContext genContext) {
+  public VisibleArtifacts(SNode project, @Nullable TemplateQueryContext genContext) {
     this.project = project;
     this.genContext = genContext;
-    this.dependenciesHelper = new DependenciesHelper(genContext, project);
+    this.dependenciesHelper = (genContext != null ?
+      new DependenciesHelper(genContext, project) :
+      null
+    );
+    if (genContext == null && SNodeOperations.getModel(project).isTransient()) {
+      throw new IllegalArgumentException("cannot instantiate VisibleArtifacts for transient model without generation context");
+    }
   }
 
   public void collect() {
@@ -78,17 +84,6 @@ public class VisibleArtifacts {
     return project;
   }
 
-  public void needsFetch(SNode node) {
-    if ((node == null)) {
-      return;
-    }
-    node = toOriginalNode(node);
-    if ((node == null)) {
-      return;
-    }
-    dependenciesHelper.requiresFetch().put(node, "");
-  }
-
   public Iterable<SNode> getArtifacts() {
     return ListSequence.fromList(visibleArtifacts).asUnmodifiable();
   }
@@ -101,7 +96,24 @@ public class VisibleArtifacts {
     return parentMap.get(node);
   }
 
+  public void needsFetch(SNode node) {
+    if ((node == null)) {
+      return;
+    }
+    node = toOriginalNode(node);
+    if ((node == null)) {
+      return;
+    }
+    if (dependenciesHelper == null) {
+      throw new IllegalStateException("needsFetch() should be called in generation context only");
+    }
+    dependenciesHelper.requiresFetch().put(node, "");
+  }
+
   public void registerEntity(Object id, SNode location) {
+    if (dependenciesHelper == null) {
+      throw new IllegalStateException("registerEntity() should be called in generation context only");
+    }
     dependenciesHelper.artifacts().put(id, location);
   }
 }

@@ -39,7 +39,7 @@ public class BuildLayout_Jar_Behavior {
     }
   }
 
-  public static boolean virtual_isFile_6547494638219485308(SNode thisNode) {
+  public static boolean virtual_isFile_1368030936106753986(SNode thisNode) {
     return true;
   }
 

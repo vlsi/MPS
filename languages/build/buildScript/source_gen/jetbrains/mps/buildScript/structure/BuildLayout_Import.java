@@ -46,11 +46,11 @@ public class BuildLayout_Import extends BuildLayout_Node implements BuildExterna
     this.setProperty(BuildLayout_Import.VIRTUAL_PACKAGE, value);
   }
 
-  public BuildLayout_NamedContainer getTarget() {
-    return (BuildLayout_NamedContainer) this.getReferent(BuildLayout_NamedContainer.class, BuildLayout_Import.TARGET);
+  public BuildLayout_Node getTarget() {
+    return (BuildLayout_Node) this.getReferent(BuildLayout_Node.class, BuildLayout_Import.TARGET);
   }
 
-  public void setTarget(BuildLayout_NamedContainer node) {
+  public void setTarget(BuildLayout_Node node) {
     super.setReferent(BuildLayout_Import.TARGET, node);
   }
 

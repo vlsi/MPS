@@ -16,4 +16,9 @@ public class BuildProjectDependency_Behavior {
     helper.locations().put(thisNode, location);
     helper.contentLocations().put(thisNode, location);
   }
+
+  public static void virtual_appendName_1368030936106665465(SNode thisNode, SNode parent, StringBuilder sb) {
+    sb.append(SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "script", false), "name"));
+    sb.append("::");
+  }
 }

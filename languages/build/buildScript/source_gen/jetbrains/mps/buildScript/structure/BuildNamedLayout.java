@@ -11,7 +11,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class BuildNamedLayout extends BuildAspect implements INamedConcept, BuildLayout_Container {
+public class BuildNamedLayout extends BuildAspect implements INamedConcept, BuildLayout_Container, BuildLayout_PathElement {
   public static final String concept = "jetbrains.mps.buildScript.structure.BuildNamedLayout";
   public static final String NAME = "name";
   public static final String SHORT_DESCRIPTION = "shortDescription";
