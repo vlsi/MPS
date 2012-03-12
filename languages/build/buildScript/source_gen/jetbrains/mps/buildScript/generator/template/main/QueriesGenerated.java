@@ -100,6 +100,14 @@ public class QueriesGenerated {
     return BuildLayout_Container_Behavior.call_getAssembleSubTaskId_4701820937132344052(_context.getNode());
   }
 
+  public static Object propertyMacro_GetPropertyValue_2913098736709502287(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return BuildLayout_Container_Behavior.call_getPrepareSubTaskId_4701820937132344041(_context.getNode());
+  }
+
+  public static Object propertyMacro_GetPropertyValue_2913098736709502392(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return BuildLayout_Container_Behavior.call_getAssembleSubTaskId_4701820937132344052(_context.getNode());
+  }
+
   public static Object propertyMacro_GetPropertyValue_5248329904288079307(final IOperationContext operationContext, final PropertyMacroContext _context) {
     if (!(SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.buildScript.structure.BuildLayout_Container"))) {
       _context.showErrorMessage(_context.getNode(), "parent should be layout container");
@@ -360,6 +368,14 @@ public class QueriesGenerated {
     return BuildLayout_Container_Behavior.call_getAssembleSubTaskId_4701820937132344052(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.buildScript.structure.BuildLayout_Container"));
   }
 
+  public static Object referenceMacro_GetReferent_2913098736709502314(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+    return BuildLayout_Container_Behavior.call_getPrepareSubTaskId_4701820937132344041(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.buildScript.structure.BuildLayout_Container"));
+  }
+
+  public static Object referenceMacro_GetReferent_2913098736709502421(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+    return BuildLayout_Container_Behavior.call_getAssembleSubTaskId_4701820937132344052(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.buildScript.structure.BuildLayout_Container"));
+  }
+
   public static Object referenceMacro_GetReferent_5248329904288129346(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     return BuildLayout_Container_Behavior.call_getPrepareSubTaskId_4701820937132344041(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.buildScript.structure.BuildLayout_Container"));
   }
@@ -437,6 +453,14 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_1117643560963363876(final IOperationContext operationContext, final IfMacroContext _context) {
+    return SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.buildScript.structure.BuildLayout_Container") && BuildLayout_Container_Behavior.call_getAssembleSubTaskId_4701820937132344052(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.buildScript.structure.BuildLayout_Container")) != null;
+  }
+
+  public static boolean ifMacro_Condition_2913098736709502295(final IOperationContext operationContext, final IfMacroContext _context) {
+    return SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.buildScript.structure.BuildLayout_Container") && BuildLayout_Container_Behavior.call_getPrepareSubTaskId_4701820937132344041(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.buildScript.structure.BuildLayout_Container")) != null;
+  }
+
+  public static boolean ifMacro_Condition_2913098736709502402(final IOperationContext operationContext, final IfMacroContext _context) {
     return SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.buildScript.structure.BuildLayout_Container") && BuildLayout_Container_Behavior.call_getAssembleSubTaskId_4701820937132344052(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.buildScript.structure.BuildLayout_Container")) != null;
   }
 

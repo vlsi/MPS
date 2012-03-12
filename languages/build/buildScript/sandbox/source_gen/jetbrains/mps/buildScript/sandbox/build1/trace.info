@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <root nodeId="4129895186893541504">
-    <unitInfo nodeId="4129895186893541504" fileName="buildA.xml" startLine="1" startPosition="0" endLine="47" endPosition="10" unitName="jetbrains.mps.buildScript.sandbox.build1.buildA" />
+    <unitInfo nodeId="4129895186893541504" fileName="buildA.xml" startLine="1" startPosition="0" endLine="54" endPosition="10" unitName="jetbrains.mps.buildScript.sandbox.build1.buildA" />
   </root>
   <root nodeId="4129895186893541508">
     <unitInfo nodeId="4129895186893541508" fileName="buildB.xml" startLine="1" startPosition="0" endLine="59" endPosition="10" unitName="jetbrains.mps.buildScript.sandbox.build1.buildB" />

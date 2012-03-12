@@ -25,6 +25,21 @@
     </node>
   </roots>
   <root id="4129895186893541504">
+    <node role="parts" roleId="3ior.7389400916848080626" type="3ior.BuildSource_JavaLibrary" typeId="3ior.6057319140845467763" id="2913098736709499395">
+      <property name="name" nameId="tpck.1169194664001" value="abcde-lib" />
+      <node role="elements" roleId="3ior.6057319140845478673" type="3ior.BuildSource_JavaLibraryClasses" typeId="3ior.6057319140845478671" id="2913098736709499396">
+        <node role="resset" roleId="3ior.5248329904288198648" type="3ior.BuildSource_JavaLibraryJar" typeId="3ior.1258644073388922138" id="2913098736709499399">
+          <node role="path" roleId="3ior.5248329904287794586" type="3ior.BuildSourceProjectRelativePath" typeId="3ior.5481553824944787378" id="2913098736709499400">
+            <node role="compositePart" roleId="3ior.7321017245477039051" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="2913098736709499401">
+              <property name="head" nameId="3ior.8618885170173601779" value="buildA" />
+              <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="2913098736709499402">
+                <property name="head" nameId="3ior.8618885170173601779" value="abcde.jar" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
     <node role="parts" roleId="3ior.7389400916848080626" type="3ior.BuildSource_JavaModule" typeId="3ior.7389400916848073784" id="6921160174096491317">
       <property name="name" nameId="tpck.1169194664001" value="module-A" />
       <node role="sources" roleId="3ior.7389400916848073826" type="3ior.BuildSource_JavaContentRoot" typeId="3ior.7389400916848073810" id="6921160174096491322">
@@ -37,6 +52,9 @@
           <property name="kind" nameId="3ior.5248329904288265467" value="source" />
           <property name="relativePath" nameId="3ior.2754769020641429191" value="src" />
         </node>
+      </node>
+      <node role="dependencies" roleId="3ior.2754769020641646251" type="3ior.BuildSource_JavaDependencyLibrary" typeId="3ior.4993211115183250894" id="2913098736709500511">
+        <link role="library" roleId="3ior.4993211115183250895" targetNodeId="2913098736709499395" resolveInfo="abcde-lib" />
       </node>
     </node>
     <node role="macros" roleId="3ior.5617550519002745378" type="3ior.BuildVariableMacro" typeId="3ior.3767587139141066978" id="6520682027041143022">
@@ -94,6 +112,21 @@
                     <property name="head" nameId="3ior.8618885170173601779" value="testdata" />
                     <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="6520682027041143049">
                       <property name="head" nameId="3ior.8618885170173601779" value="a.txt" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="children" roleId="3ior.7389400916848037006" type="3ior.BuildLayout_JavaLibrary" typeId="3ior.2913098736709465755" id="2913098736709501630">
+            <link role="library" roleId="3ior.2913098736709465758" targetNodeId="2913098736709499395" resolveInfo="abcde-lib" />
+            <node role="children" roleId="3ior.7389400916848037006" type="3ior.BuildLayout_Copy" typeId="3ior.5248329904287857081" id="2913098736709501631">
+              <node role="fileset" roleId="3ior.5248329904287857082" type="3ior.BuildInputSingleFile" typeId="3ior.5248329904287794582" id="2913098736709501632">
+                <node role="path" roleId="3ior.5248329904287794586" type="3ior.BuildSourceProjectRelativePath" typeId="3ior.5481553824944787378" id="2913098736709501633">
+                  <node role="compositePart" roleId="3ior.7321017245477039051" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="2913098736709501634">
+                    <property name="head" nameId="3ior.8618885170173601779" value="buildA" />
+                    <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="2913098736709501635">
+                      <property name="head" nameId="3ior.8618885170173601779" value="abcde.jar" />
                     </node>
                   </node>
                 </node>

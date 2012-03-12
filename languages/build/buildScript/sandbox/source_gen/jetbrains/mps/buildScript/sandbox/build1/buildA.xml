@@ -4,6 +4,10 @@
   <property name="build.layout" location="${build.dir}/artifacts/buildA" />
   <property name="aver" value="12.10" />
   
+  <path id="path.java.library.abcde-lib">
+    <fileset file="${basedir}/buildA/abcde.jar" />
+  </path>
+  
   <target name="assemble" depends="classes">
     <mkdir dir="${build.layout}/result" />
     <mkdir dir="${build.tmp}/default/A-_dl_{aver}.zip" />
@@ -13,6 +17,9 @@
     <mkdir dir="${build.tmp}/default/A-_dl_{aver}.zip/A" />
     <copy todir="${build.tmp}/default/A-_dl_{aver}.zip/A">
       <fileset file="${basedir}/testdata/a.txt" />
+    </copy>
+    <copy todir="${build.tmp}/default/A-_dl_{aver}.zip">
+      <fileset file="${basedir}/buildA/abcde.jar" />
     </copy>
     <zip destfile="${build.layout}/result/A-${aver}.zip">
       <fileset dir="${build.tmp}/default/A-_dl_{aver}.zip" />
@@ -41,7 +48,7 @@
     <javac destdir="${build.tmp}/java/out/module-A">
       <compilerarg value="-Xlint:none" />
       <src path="${basedir}/buildA/src" />
-      <classpath></classpath>
+      <classpath refid="path.java.library.abcde-lib" />
     </javac>
   </target>
 </project>

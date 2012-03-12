@@ -10,6 +10,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class BuildLayout_Node_Behavior {
+  private static Class[] PARAMETERS_7128123785277723766 = {SNode.class, UnpackHelper.class};
   private static Class[] PARAMETERS_6547494638219603457 = {SNode.class, Object.class};
 
   public static void init(SNode thisNode) {
@@ -23,9 +24,18 @@ public class BuildLayout_Node_Behavior {
     return false;
   }
 
+  public static void call_unpack_7128123785277723766(SNode thisNode, UnpackHelper helper) {
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
+    descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.buildScript.structure.BuildLayout_Node"), "virtual_unpack_7128123785277710736", PARAMETERS_7128123785277723766, helper);
+  }
+
   public static boolean call_exports_6547494638219603457(SNode thisNode, Object object) {
     BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
     return (Boolean) descriptor.invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.buildScript.structure.BuildLayout_Node"), "virtual_exports_6547494638219603457", PARAMETERS_6547494638219603457, object);
+  }
+
+  public static void callSuper_unpack_7128123785277723766(SNode thisNode, String callerConceptFqName, UnpackHelper helper) {
+    BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.buildScript.structure.BuildLayout_Node"), callerConceptFqName, "virtual_unpack_7128123785277710736", PARAMETERS_7128123785277723766, helper);
   }
 
   public static boolean callSuper_exports_6547494638219603457(SNode thisNode, String callerConceptFqName, Object object) {

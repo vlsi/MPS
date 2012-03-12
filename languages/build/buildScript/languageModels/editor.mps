@@ -225,6 +225,14 @@
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Workflow" />
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="3ior.4701820937132281259" resolveInfo="BuildCustomWorkflow" />
     </node>
+    <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="2913098736709383091">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Layout" />
+      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="3ior.2913098736709313156" resolveInfo="BuildLayout_TransparentContainer" />
+    </node>
+    <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="2913098736709465756">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Layout.Java" />
+      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="3ior.2913098736709465755" resolveInfo="BuildLayout_JavaLibrary" />
+    </node>
   </roots>
   <root id="5617550519002745365">
     <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="7389400916847962446">
@@ -3827,6 +3835,61 @@
           <property name="flag" nameId="tpc2.1186414551515" value="true" />
         </node>
       </node>
+    </node>
+  </root>
+  <root id="2913098736709383091">
+    <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="2913098736709383093">
+      <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_ConceptProperty" typeId="tpc2.1137553248617" id="2913098736709383094">
+        <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tpck.1137473891462" resolveInfo="alias" />
+        <link role="styleClass" roleId="tpc2.1186406756722" targetNodeId="1203598953979" resolveInfo="outputLayout" />
+        <node role="menuDescriptor" roleId="tpc2.1164826688380" type="tpc2.CellMenuDescriptor" typeId="tpc2.1164824717996" id="2913098736709383095">
+          <node role="cellMenuPart" roleId="tpc2.1164824815888" type="tpc2.CellMenuPart_ReplaceNode_CustomNodeConcept" typeId="tpc2.1164914519156" id="2913098736709383096">
+            <link role="replacementConcept" roleId="tpc2.1164914727930" targetNodeId="3ior.7389400916848050060" resolveInfo="BuildLayout_NamedContainer" />
+          </node>
+        </node>
+        <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.IndentLayoutNewLineStyleClassItem" typeId="tpc2.1237308012275" id="2913098736709383105">
+          <property name="flag" nameId="tpc2.1186414551515" value="true" />
+        </node>
+      </node>
+      <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Component" typeId="tpc2.1078939183254" id="2913098736709383099">
+        <link role="editorComponent" roleId="tpc2.1078939183255" targetNodeId="7389400916848036998" resolveInfo="BuildLayout_containerElements" />
+        <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.IndentLayoutIndentStyleClassItem" typeId="tpc2.1237307900041" id="2913098736709383100">
+          <property name="flag" nameId="tpc2.1186414551515" value="true" />
+        </node>
+      </node>
+      <node role="cellLayout" roleId="tpc2.1106270802874" type="tpc2.CellLayout_Indent" typeId="tpc2.1237303669825" id="2913098736709383101" />
+    </node>
+  </root>
+  <root id="2913098736709465756">
+    <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="2913098736709465759">
+      <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="2913098736709465776">
+        <property name="text" nameId="tpc2.1073389577007" value="java library" />
+        <link role="styleClass" roleId="tpc2.1186406756722" targetNodeId="1203598953979" resolveInfo="outputLayout" />
+        <node role="menuDescriptor" roleId="tpc2.1164826688380" type="tpc2.CellMenuDescriptor" typeId="tpc2.1164824717996" id="2913098736709465777">
+          <node role="cellMenuPart" roleId="tpc2.1164824815888" type="tpc2.CellMenuPart_ReplaceNode_CustomNodeConcept" typeId="tpc2.1164914519156" id="2913098736709465778">
+            <link role="replacementConcept" roleId="tpc2.1164914727930" targetNodeId="3ior.7389400916848004876" resolveInfo="BuildLayout_AbstractContainer" />
+          </node>
+        </node>
+      </node>
+      <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_RefCell" typeId="tpc2.1088013125922" id="2913098736709465769">
+        <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="3ior.2913098736709465758" />
+        <node role="editorComponent" roleId="tpc2.1088186146602" type="tpc2.InlineEditorComponent" typeId="tpc2.1088185857835" id="2913098736709465770">
+          <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Property" typeId="tpc2.1073389658414" id="2913098736709465772">
+            <property name="readOnly" nameId="tpc2.1140017977771" value="true" />
+            <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tpck.1169194664001" resolveInfo="name" />
+          </node>
+        </node>
+        <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.IndentLayoutNewLineStyleClassItem" typeId="tpc2.1237308012275" id="2913098736709465773">
+          <property name="flag" nameId="tpc2.1186414551515" value="true" />
+        </node>
+      </node>
+      <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Component" typeId="tpc2.1078939183254" id="2913098736709465765">
+        <link role="editorComponent" roleId="tpc2.1078939183255" targetNodeId="7389400916848036998" resolveInfo="BuildLayout_containerElements" />
+        <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.IndentLayoutIndentStyleClassItem" typeId="tpc2.1237307900041" id="2913098736709465766">
+          <property name="flag" nameId="tpc2.1186414551515" value="true" />
+        </node>
+      </node>
+      <node role="cellLayout" roleId="tpc2.1106270802874" type="tpc2.CellLayout_Indent" typeId="tpc2.1237303669825" id="2913098736709465767" />
     </node>
   </root>
 </model>
