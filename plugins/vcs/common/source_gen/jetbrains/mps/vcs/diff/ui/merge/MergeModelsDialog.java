@@ -228,15 +228,15 @@ public class MergeModelsDialog extends DialogWrapper {
     }
 
     if (conflictsOnly) {
-      Messages.showInfoMessage(this.getWindow(), "You have unresolved model property conflicts. Please resolve them manually using \"Accept Theirs\" or \"Accept Yours\":" + sb.toString(), "Model Properites Changes");
+      Messages.showInfoMessage(this.getOwner(), "You have unresolved model property conflicts. Please resolve them manually using \"Accept Theirs\" or \"Accept Yours\":" + sb.toString(), "Model Properites Changes");
     } else if (allResolved) {
       if (sb.length() == 0) {
-        Messages.showInfoMessage(this.getWindow(), "You have excluded all model property changes.", "Model Properites Changes");
+        Messages.showInfoMessage(this.getOwner(), "You have excluded all model property changes.", "Model Properites Changes");
       } else {
-        Messages.showInfoMessage(this.getWindow(), "You have applied the following changes:" + sb.toString(), "Model Properites Changes");
+        Messages.showInfoMessage(this.getOwner(), "You have applied the following changes:" + sb.toString(), "Model Properites Changes");
       }
     } else {
-      int ans = Messages.showYesNoCancelDialog(this.getWindow(), "There are pending model properties changes:" + sb.toString() + "\n\nDo you want to apply them all?", "Merge Model Properties", Messages.getQuestionIcon());
+      int ans = Messages.showYesNoCancelDialog(this.getOwner(), "There are pending model properties changes:" + sb.toString() + "\n\nDo you want to apply them all?", "Merge Model Properties", Messages.getQuestionIcon());
       if (ans == Messages.YES) {
         ModelAccess.instance().runWriteActionInCommand(new Runnable() {
           public void run() {
