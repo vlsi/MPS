@@ -274,6 +274,41 @@
     <classNode extendsClassName="jetbrains.mps.ide.ui.MPSTreeNode" />
     <classNode extendsClassName="jetbrains.mps.ide.ui.NodeData" />
   </dependency>
+  <dependency className="jetbrains.mps.debugger.api.ui.breakpoints.InTextPositionComponent" file="InTextPositionComponent.java">
+    <classNode dependClassName="com.intellij.openapi.application.ApplicationManager" />
+    <classNode dependClassName="com.intellij.openapi.editor.Document" />
+    <classNode dependClassName="com.intellij.openapi.editor.colors.EditorColorsManager" />
+    <classNode dependClassName="com.intellij.openapi.editor.colors.EditorColorsScheme" />
+    <classNode dependClassName="com.intellij.openapi.editor.colors.TextAttributesKey" />
+    <classNode dependClassName="com.intellij.openapi.editor.ex.MarkupModelEx" />
+    <classNode dependClassName="com.intellij.openapi.editor.impl.DocumentMarkupModel" />
+    <classNode dependClassName="com.intellij.openapi.editor.markup.HighlighterLayer" />
+    <classNode dependClassName="com.intellij.openapi.editor.markup.RangeHighlighter" />
+    <classNode dependClassName="com.intellij.openapi.editor.markup.TextAttributes" />
+    <classNode dependClassName="com.intellij.openapi.fileEditor.FileDocumentManager" />
+    <classNode dependClassName="com.intellij.openapi.project.Project" />
+    <classNode dependClassName="com.intellij.openapi.vfs.VirtualFile" />
+    <classNode dependClassName="java.lang.Integer" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.Runnable" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.Tuples" />
+    <classNode dependClassName="jetbrains.mps.debug.api.AbstractDebugSession" />
+    <classNode dependClassName="jetbrains.mps.debug.api.DebugSessionManagerComponent" />
+    <classNode dependClassName="jetbrains.mps.debug.api.SessionChangeListener" />
+    <classNode dependClassName="jetbrains.mps.debug.api.programState.ILocation" />
+    <classNode dependClassName="jetbrains.mps.debug.api.programState.IStackFrame" />
+    <classNode dependClassName="jetbrains.mps.debug.api.programState.NullLocation" />
+    <classNode dependClassName="jetbrains.mps.ide.actions.FileOpenUtil" />
+    <classNode dependClassName="org.jetbrains.annotations.NonNls" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode extendsClassName="com.intellij.openapi.components.ProjectComponent" />
+    <classNode extendsClassName="jetbrains.mps.debug.api.DebugSessionListener" />
+    <classNode extendsClassName="jetbrains.mps.debug.api.SessionChangeAdapter" />
+  </dependency>
   <dependency className="jetbrains.mps.debugger.api.ui.breakpoints.JPanelWithCheckbox" file="JPanelWithCheckbox.java">
     <classNode dependClassName="java.awt.Color" />
     <classNode dependClassName="java.awt.GridBagConstraints" />

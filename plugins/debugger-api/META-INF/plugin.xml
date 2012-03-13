@@ -48,6 +48,10 @@
       <implementation-class>jetbrains.mps.debugger.api.ui.breakpoints.CurrentLinePositionComponent
       </implementation-class>
     </component>
+    <component>
+      <implementation-class>jetbrains.mps.debugger.api.ui.breakpoints.InTextPositionComponent
+      </implementation-class>
+    </component>
   </project-components>
 
   <actions>

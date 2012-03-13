@@ -23,17 +23,16 @@ public class DebugSession extends AbstractDebugSession<JavaUiStateImpl> {
   private IEvaluationProvider myEvaluationProvider;
 
   public DebugSession(DebugVMEventsProcessor eventsProcessor, Project p) {
-    super(p);
-    myEventsProcessor = eventsProcessor;
-    myEventsProcessor.setDebuggableFramesSelector(getDebuggableFramesSelector());
-    eventsProcessor.getMulticaster().addListener(new DebugSession.MyDebugProcessAdapter());
-    myDebuggableFramesSelector = new DebuggableFramesSelector() {
+    super(p, new DebuggableFramesSelector(p) {
       @Nullable
       @Override
       public SNode getNode(@NonNls String unitName, @NonNls String fileName, int position) {
         return TraceInfoUtil.getJavaNode(unitName, fileName, position);
       }
-    };
+    });
+    myEventsProcessor = eventsProcessor;
+    myEventsProcessor.setDebuggableFramesSelector(getDebuggableFramesSelector());
+    eventsProcessor.getMulticaster().addListener(new DebugSession.MyDebugProcessAdapter());
   }
 
   protected JavaUiStateImpl createUiState() {
