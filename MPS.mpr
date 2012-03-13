@@ -118,12 +118,11 @@
       <modulePath path="${project}/languages/baseLanguage/unitTest/solutions/pluginSolution/pluginSolution.msd" folder="baseLanguage.unitTest" />
       <modulePath path="${project}/languages/baseLanguage/unitTest/solutions/sandbox/jetbrains.mps.baseLanguage.unitTest.sandbox.msd" folder="baseLanguage.unitTest" />
       <modulePath path="${project}/languages/baseLanguage/unitTest/unitTest.mpl" folder="baseLanguage.unitTest" />
-      <modulePath path="${project}/languages/build/build/build.mpl" folder="build" />
-      <modulePath path="${project}/languages/build/deploySolution/deploy.msd" folder="build" />
-      <modulePath path="${project}/languages/build/solutions/jetbrains.mps.build.pluginSolution/pluginSolution.msd" folder="build" />
-      <modulePath path="${project}/languages/build/solutions/jetbrains.mps.build.sandbox/sandbox.msd" folder="build" />
-      <modulePath path="${project}/languages/build/solutions/jetbrains.mps.build.tests/tests.msd" folder="build" />
-      <modulePath path="${project}/languages/build/workflow/workflow.mpl" folder="build" />
+      <modulePath path="${project}/plugins/mpsbuild/languages/build/build.mpl" folder="build" />
+      <modulePath path="${project}/plugins/mpsbuild/languages/deploySolution/deploy.msd" folder="build" />
+      <modulePath path="${project}/plugins/mpsbuild/languages/solutions/jetbrains.mps.build.sandbox/sandbox.msd" folder="build" />
+      <modulePath path="${project}/plugins/mpsbuild/languages/solutions/jetbrains.mps.build.tests/tests.msd" folder="build" />
+      <modulePath path="${project}/plugins/mpsbuild/languages/workflow/workflow.mpl" folder="build" />
       <modulePath path="${project}/languages/core/core/languageDescriptor.mpl" folder="core.language-design" />
       <modulePath path="${project}/languages/core/core/solutions/pluginSolution/pluginSolution.msd" folder="core.language-design" />
       <modulePath path="${project}/languages/languageDesign/actions/languageDescriptor.mpl" folder="core.language-design" />
