@@ -205,8 +205,9 @@
                 <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="5584673629410321297">
                   <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="5584673629410321148" resolveInfo="TestContext" />
                   <node role="actualArgument" roleId="tpee.1068499141038" type="tp25.ModelReferenceExpression" typeId="tp25.559557797393017698" id="6547494638219682692">
-                    <property name="name" nameId="tp25.559557797393017702" value="jetbrains.mps.buildScript.tests" />
+                    <property name="name" nameId="tp25.559557797393017702" value="jetbrains.mps.build.tests" />
                     <property name="stereotype" nameId="tp25.559557797393021807" value="tests" />
+                    <property name="fqName" nameId="tp25.559557797393041554" value="jetbrains.mps.buildScrit.tests@tests" />
                   </node>
                 </node>
               </node>
@@ -239,8 +240,9 @@
                 <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="5584673629410321299">
                   <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="5584673629410321148" resolveInfo="TestContext" />
                   <node role="actualArgument" roleId="tpee.1068499141038" type="tp25.ModelReferenceExpression" typeId="tp25.559557797393017698" id="6547494638219682693">
-                    <property name="name" nameId="tp25.559557797393017702" value="jetbrains.mps.buildScript.tests" />
+                    <property name="name" nameId="tp25.559557797393017702" value="jetbrains.mps.build.tests" />
                     <property name="stereotype" nameId="tp25.559557797393021807" value="tests" />
+                    <property name="fqName" nameId="tp25.559557797393041554" value="jetbrains.mps.build.tests@tests" />
                   </node>
                 </node>
               </node>
@@ -272,9 +274,10 @@
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="7422876504327290563">
                 <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="7422876504327290564">
                   <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="5584673629410321148" resolveInfo="TestContext" />
-                  <node role="actualArgument" roleId="tpee.1068499141038" type="tp25.ModelReferenceExpression" typeId="tp25.559557797393017698" id="6547494638219682694">
-                    <property name="name" nameId="tp25.559557797393017702" value="jetbrains.mps.buildScript.tests" />
+                  <node role="actualArgument" roleId="tpee.1068499141038" type="tp25.ModelReferenceExpression" typeId="tp25.559557797393017698" id="201407363702256258">
+                    <property name="name" nameId="tp25.559557797393017702" value="jetbrains.mps.build.tests" />
                     <property name="stereotype" nameId="tp25.559557797393021807" value="tests" />
+                    <property name="fqName" nameId="tp25.559557797393041554" value="jetbrains.mps.build.tests@tests" />
                   </node>
                 </node>
               </node>
@@ -306,9 +309,10 @@
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="5584673629410321300">
                 <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="5584673629410321301">
                   <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="5584673629410321148" resolveInfo="TestContext" />
-                  <node role="actualArgument" roleId="tpee.1068499141038" type="tp25.ModelReferenceExpression" typeId="tp25.559557797393017698" id="6547494638219682695">
-                    <property name="name" nameId="tp25.559557797393017702" value="jetbrains.mps.buildScript.tests" />
+                  <node role="actualArgument" roleId="tpee.1068499141038" type="tp25.ModelReferenceExpression" typeId="tp25.559557797393017698" id="201407363702256259">
+                    <property name="name" nameId="tp25.559557797393017702" value="jetbrains.mps.build.tests" />
                     <property name="stereotype" nameId="tp25.559557797393021807" value="tests" />
+                    <property name="fqName" nameId="tp25.559557797393041554" value="jetbrains.mps.build.tests@tests" />
                   </node>
                 </node>
               </node>
@@ -330,9 +334,10 @@
             <node role="initializer" roleId="tpee.1068431790190" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="4209004860870549131">
               <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="4209004860870549132">
                 <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="5584673629410321148" resolveInfo="TestContext" />
-                <node role="actualArgument" roleId="tpee.1068499141038" type="tp25.ModelReferenceExpression" typeId="tp25.559557797393017698" id="6547494638219682696">
-                  <property name="name" nameId="tp25.559557797393017702" value="jetbrains.mps.buildScript.tests" />
+                <node role="actualArgument" roleId="tpee.1068499141038" type="tp25.ModelReferenceExpression" typeId="tp25.559557797393017698" id="201407363702256260">
+                  <property name="name" nameId="tp25.559557797393017702" value="jetbrains.mps.build.tests" />
                   <property name="stereotype" nameId="tp25.559557797393021807" value="tests" />
+                  <property name="fqName" nameId="tp25.559557797393041554" value="jetbrains.mps.build.tests@tests" />
                 </node>
               </node>
             </node>
@@ -397,9 +402,10 @@
             <node role="initializer" roleId="tpee.1068431790190" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="4209004860870558826">
               <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="4209004860870558827">
                 <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="5584673629410321148" resolveInfo="TestContext" />
-                <node role="actualArgument" roleId="tpee.1068499141038" type="tp25.ModelReferenceExpression" typeId="tp25.559557797393017698" id="6547494638219682697">
-                  <property name="name" nameId="tp25.559557797393017702" value="jetbrains.mps.buildScript.tests" />
+                <node role="actualArgument" roleId="tpee.1068499141038" type="tp25.ModelReferenceExpression" typeId="tp25.559557797393017698" id="201407363702256261">
+                  <property name="name" nameId="tp25.559557797393017702" value="jetbrains.mps.build.tests" />
                   <property name="stereotype" nameId="tp25.559557797393021807" value="tests" />
+                  <property name="fqName" nameId="tp25.559557797393041554" value="jetbrains.mps.build.tests@tests" />
                 </node>
               </node>
             </node>
