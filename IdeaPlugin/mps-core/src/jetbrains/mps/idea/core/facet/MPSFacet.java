@@ -62,22 +62,6 @@ public class MPSFacet extends Facet<MPSFacetConfiguration> {
           @Override
           public void run() {
             SolutionDescriptor solutionDescriptor = getConfiguration().getState().getSolutionDescriptor();
-            for (OrderEntry e : ModuleRootManager.getInstance(getModule()).getOrderEntries()) {
-              if (!(e instanceof LibraryOrderEntry)) continue;
-
-              LibraryOrderEntry loe = (LibraryOrderEntry) e;
-              if (!loe.isModuleLevel()) continue;
-
-              Library library = loe.getLibrary();
-              if (library == null) continue;
-
-              for (VirtualFile f : library.getFiles(OrderRootType.CLASSES)) {
-                ModelRoot mr = new ModelRoot();
-                mr.setPath(f.getPath());
-                mr.setManager(LanguageID.JAVA_MANAGER);
-                solutionDescriptor.getModelRoots().add(mr);
-              }
-            }
             Solution solution = new SolutionIdea(getModule(), solutionDescriptor);
             com.intellij.openapi.project.Project project = getModule().getProject();
             Project mpsProject = ProjectHelper.toMPSProject(project);
