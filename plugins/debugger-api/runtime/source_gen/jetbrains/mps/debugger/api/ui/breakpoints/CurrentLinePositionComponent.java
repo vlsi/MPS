@@ -59,7 +59,7 @@ public class CurrentLinePositionComponent extends CurrentLinePositionComponentEx
     IStackFrame stackFrame = session.getUiState().getStackFrame();
     if (stackFrame != null) {
       ILocation location = stackFrame.getLocation();
-      return session.getDebuggableFramesSelector().getNode(location);
+      return session.getDebuggableFramesSelector().getPositionProvider().getNode(location);
     }
     return null;
   }

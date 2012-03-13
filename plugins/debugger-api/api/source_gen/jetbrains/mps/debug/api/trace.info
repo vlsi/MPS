@@ -541,130 +541,81 @@
     <unitInfo nodeId="4474271214082913514" fileName="AbstractUiState.java" startLine="15" startPosition="0" endLine="165" endPosition="0" unitName="jetbrains.mps.debug.api.AbstractUiState" />
   </root>
   <root nodeId="4474271214082913515">
-    <nodeInfo nodeId="1331672133304148678" fileName="DebuggableFramesSelector.java" startLine="22" startPosition="76" endLine="23" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myProject" />
-    <nodeInfo nodeId="1331672133304148683" fileName="DebuggableFramesSelector.java" startLine="25" startPosition="52" endLine="26" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4474271214082913538" fileName="DebuggableFramesSelector.java" startLine="32" startPosition="37" endLine="33" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4474271214082913545" fileName="DebuggableFramesSelector.java" startLine="36" startPosition="27" endLine="37" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4474271214082913547" fileName="DebuggableFramesSelector.java" startLine="38" startPosition="5" endLine="39" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4474271214082913560" fileName="DebuggableFramesSelector.java" startLine="43" startPosition="72" endLine="44" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4474271214082913573" fileName="DebuggableFramesSelector.java" startLine="46" startPosition="37" endLine="47" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4474271214082913575" fileName="DebuggableFramesSelector.java" startLine="48" startPosition="7" endLine="49" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4474271214082913583" fileName="DebuggableFramesSelector.java" startLine="51" startPosition="27" endLine="52" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4474271214082913585" fileName="DebuggableFramesSelector.java" startLine="53" startPosition="5" endLine="54" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4474271214082913621" fileName="DebuggableFramesSelector.java" startLine="58" startPosition="64" endLine="59" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4474271214082913643" fileName="DebuggableFramesSelector.java" startLine="63" startPosition="103" endLine="64" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4474271214082913681" fileName="DebuggableFramesSelector.java" startLine="69" startPosition="129" endLine="70" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1053276000964841970" fileName="DebuggableFramesSelector.java" startLine="71" startPosition="5" endLine="72" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1053276000964841997" fileName="DebuggableFramesSelector.java" startLine="72" startPosition="91" endLine="73" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4474271214082913697" fileName="DebuggableFramesSelector.java" startLine="73" startPosition="91" endLine="74" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="24227610116476407" fileName="DebuggableFramesSelector.java" startLine="79" startPosition="63" endLine="80" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="24227610116477496" fileName="DebuggableFramesSelector.java" startLine="81" startPosition="5" endLine="82" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="24227610116477922" fileName="DebuggableFramesSelector.java" startLine="88" startPosition="37" endLine="89" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="24227610116477942" fileName="DebuggableFramesSelector.java" startLine="90" startPosition="27" endLine="91" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="24227610116477946" fileName="DebuggableFramesSelector.java" startLine="92" startPosition="9" endLine="93" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1331672133304164104" fileName="DebuggableFramesSelector.java" startLine="100" startPosition="63" endLine="101" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1331672133304164117" fileName="DebuggableFramesSelector.java" startLine="102" startPosition="5" endLine="103" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="397237541325772536" fileName="DebuggableFramesSelector.java" startLine="107" startPosition="80" endLine="108" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="24227610116477715" fileName="DebuggableFramesSelector.java" startLine="113" startPosition="63" endLine="114" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="24227610116477724" fileName="DebuggableFramesSelector.java" startLine="115" startPosition="5" endLine="116" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="24227610116477700" fileName="DebuggableFramesSelector.java" startLine="120" startPosition="88" endLine="121" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4474271214082913518" fileName="DebuggableFramesSelector.java" startLine="24" startPosition="0" endLine="27" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="DebuggableFramesSelector#(Lcom/intellij/openapi/project/Project;)V" />
-    <nodeInfo nodeId="4474271214082913534" fileName="DebuggableFramesSelector.java" startLine="31" startPosition="38" endLine="34" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4474271214082913540" fileName="DebuggableFramesSelector.java" startLine="35" startPosition="5" endLine="38" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4474271214082913569" fileName="DebuggableFramesSelector.java" startLine="45" startPosition="38" endLine="48" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4474271214082913578" fileName="DebuggableFramesSelector.java" startLine="50" startPosition="5" endLine="53" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4474271214082913668" fileName="DebuggableFramesSelector.java" startLine="68" startPosition="197" endLine="71" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="24227610116476386" fileName="DebuggableFramesSelector.java" startLine="78" startPosition="69" endLine="81" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="24227610116477931" fileName="DebuggableFramesSelector.java" startLine="89" startPosition="59" endLine="92" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1331672133304164102" fileName="DebuggableFramesSelector.java" startLine="99" startPosition="60" endLine="102" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="24227610116477713" fileName="DebuggableFramesSelector.java" startLine="112" startPosition="54" endLine="115" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1053276000964842022" fileName="DebuggableFramesSelector.java" startLine="124" startPosition="62" endLine="128" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4474271214082913529" fileName="DebuggableFramesSelector.java" startLine="30" startPosition="75" endLine="35" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="4474271214082913588" fileName="DebuggableFramesSelector.java" startLine="56" startPosition="0" endLine="61" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isDebuggableFrame#(Ljetbrains/mps/debug/api/programState/IStackFrame;)Z" />
-    <nodeInfo nodeId="4474271214082913626" fileName="DebuggableFramesSelector.java" startLine="61" startPosition="0" endLine="66" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isDebuggablePosition#(Ljava/lang/String;Ljava/lang/String;I)Z" />
-    <nodeInfo nodeId="397237541325772522" fileName="DebuggableFramesSelector.java" startLine="105" startPosition="0" endLine="110" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getFile#(Ljava/lang/String;Ljava/lang/String;)Lcom/intellij/openapi/vfs/VirtualFile;" />
-    <nodeInfo nodeId="24227610116477688" fileName="DebuggableFramesSelector.java" startLine="118" startPosition="0" endLine="123" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNode#(Ljava/lang/String;Ljava/lang/String;I)Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="4474271214082913564" fileName="DebuggableFramesSelector.java" startLine="44" startPosition="18" endLine="50" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="1053276000964842022" fileName="DebuggableFramesSelector.java" startLine="123" startPosition="0" endLine="130" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="eq_xhry8p_a0d0e#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
-    <nodeInfo nodeId="24227610116476327" fileName="DebuggableFramesSelector.java" startLine="76" startPosition="0" endLine="84" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSNodePointer#(Ljetbrains/mps/debug/api/programState/ILocation;)Ljetbrains/mps/smodel/SNodePointer;" />
-    <nodeInfo nodeId="24227610116477903" fileName="DebuggableFramesSelector.java" startLine="87" startPosition="80" endLine="95" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="compute#()Ljetbrains/mps/smodel/SNodePointer;" />
-    <nodeInfo nodeId="1331672133304164087" fileName="DebuggableFramesSelector.java" startLine="97" startPosition="0" endLine="105" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getFile#(Ljetbrains/mps/debug/api/programState/ILocation;)Lcom/intellij/openapi/vfs/VirtualFile;" />
-    <nodeInfo nodeId="24227610116477706" fileName="DebuggableFramesSelector.java" startLine="110" startPosition="0" endLine="118" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNode#(Ljetbrains/mps/debug/api/programState/ILocation;)Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="24227610116477879" fileName="DebuggableFramesSelector.java" startLine="86" startPosition="121" endLine="95" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4474271214082913648" fileName="DebuggableFramesSelector.java" startLine="66" startPosition="0" endLine="76" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isSamePosition#(Ljava/lang/String;Ljava/lang/String;IILjava/lang/String;Ljava/lang/String;II)Z" />
-    <nodeInfo nodeId="4474271214082913522" fileName="DebuggableFramesSelector.java" startLine="28" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="findDeepestDebuggableFrame#(Ljava/util/List;)Ljetbrains/mps/debug/api/programState/IStackFrame;" />
-    <nodeInfo nodeId="24227610116477480" fileName="DebuggableFramesSelector.java" startLine="84" startPosition="0" endLine="97" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSNodePointer#(Ljava/lang/String;Ljava/lang/String;I)Ljetbrains/mps/smodel/SNodePointer;" />
-    <nodeInfo nodeId="4474271214082913553" fileName="DebuggableFramesSelector.java" startLine="41" startPosition="0" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="findDeepestDebuggableFrameIndex#(Ljava/util/List;)I" />
-    <scopeInfo nodeId="4474271214082913521" fileName="DebuggableFramesSelector.java" startLine="25" startPosition="52" endLine="26" endPosition="24" />
-    <scopeInfo nodeId="4474271214082913537" fileName="DebuggableFramesSelector.java" startLine="32" startPosition="37" endLine="33" endPosition="21" />
-    <scopeInfo nodeId="4474271214082913544" fileName="DebuggableFramesSelector.java" startLine="36" startPosition="27" endLine="37" endPosition="18" />
-    <scopeInfo nodeId="4474271214082913572" fileName="DebuggableFramesSelector.java" startLine="46" startPosition="37" endLine="47" endPosition="21" />
-    <scopeInfo nodeId="4474271214082913582" fileName="DebuggableFramesSelector.java" startLine="51" startPosition="27" endLine="52" endPosition="38" />
-    <scopeInfo nodeId="4474271214082913594" fileName="DebuggableFramesSelector.java" startLine="58" startPosition="64" endLine="59" endPosition="96" />
-    <scopeInfo nodeId="4474271214082913635" fileName="DebuggableFramesSelector.java" startLine="63" startPosition="103" endLine="64" endPosition="104" />
-    <scopeInfo nodeId="4474271214082913680" fileName="DebuggableFramesSelector.java" startLine="69" startPosition="129" endLine="70" endPosition="18" />
-    <scopeInfo nodeId="24227610116476387" fileName="DebuggableFramesSelector.java" startLine="79" startPosition="63" endLine="80" endPosition="18" />
-    <scopeInfo nodeId="24227610116477932" fileName="DebuggableFramesSelector.java" startLine="90" startPosition="27" endLine="91" endPosition="22" />
-    <scopeInfo nodeId="1331672133304164103" fileName="DebuggableFramesSelector.java" startLine="100" startPosition="63" endLine="101" endPosition="18" />
-    <scopeInfo nodeId="397237541325772524" fileName="DebuggableFramesSelector.java" startLine="107" startPosition="80" endLine="108" endPosition="64" />
-    <scopeInfo nodeId="24227610116477714" fileName="DebuggableFramesSelector.java" startLine="113" startPosition="63" endLine="114" endPosition="18" />
-    <scopeInfo nodeId="24227610116477699" fileName="DebuggableFramesSelector.java" startLine="120" startPosition="88" endLine="121" endPosition="63" />
-    <scopeInfo nodeId="4474271214082913518" fileName="DebuggableFramesSelector.java" startLine="24" startPosition="0" endLine="27" endPosition="3">
+    <nodeInfo nodeId="1331672133304148678" fileName="DebuggableFramesSelector.java" startLine="14" startPosition="76" endLine="15" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myProject" />
+    <nodeInfo nodeId="4701043456212925511" fileName="DebuggableFramesSelector.java" startLine="15" startPosition="34" endLine="16" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myProvider" />
+    <nodeInfo nodeId="1331672133304148683" fileName="DebuggableFramesSelector.java" startLine="18" startPosition="52" endLine="19" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4701043456212925514" fileName="DebuggableFramesSelector.java" startLine="19" startPosition="24" endLine="20" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4474271214082913538" fileName="DebuggableFramesSelector.java" startLine="26" startPosition="37" endLine="27" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4474271214082913545" fileName="DebuggableFramesSelector.java" startLine="30" startPosition="27" endLine="31" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4474271214082913547" fileName="DebuggableFramesSelector.java" startLine="32" startPosition="5" endLine="33" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4474271214082913560" fileName="DebuggableFramesSelector.java" startLine="37" startPosition="72" endLine="38" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4474271214082913573" fileName="DebuggableFramesSelector.java" startLine="40" startPosition="37" endLine="41" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4474271214082913575" fileName="DebuggableFramesSelector.java" startLine="42" startPosition="7" endLine="43" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4474271214082913583" fileName="DebuggableFramesSelector.java" startLine="45" startPosition="27" endLine="46" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4474271214082913585" fileName="DebuggableFramesSelector.java" startLine="47" startPosition="5" endLine="48" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4474271214082913621" fileName="DebuggableFramesSelector.java" startLine="52" startPosition="64" endLine="53" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4474271214082913643" fileName="DebuggableFramesSelector.java" startLine="57" startPosition="103" endLine="58" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4474271214082913681" fileName="DebuggableFramesSelector.java" startLine="63" startPosition="129" endLine="64" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1053276000964841970" fileName="DebuggableFramesSelector.java" startLine="65" startPosition="5" endLine="66" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1053276000964841997" fileName="DebuggableFramesSelector.java" startLine="66" startPosition="111" endLine="67" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4474271214082913697" fileName="DebuggableFramesSelector.java" startLine="67" startPosition="111" endLine="68" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4701043456212939241" fileName="DebuggableFramesSelector.java" startLine="72" startPosition="49" endLine="73" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4474271214082913534" fileName="DebuggableFramesSelector.java" startLine="25" startPosition="38" endLine="28" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4474271214082913540" fileName="DebuggableFramesSelector.java" startLine="29" startPosition="5" endLine="32" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4474271214082913569" fileName="DebuggableFramesSelector.java" startLine="39" startPosition="38" endLine="42" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4474271214082913578" fileName="DebuggableFramesSelector.java" startLine="44" startPosition="5" endLine="47" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4474271214082913668" fileName="DebuggableFramesSelector.java" startLine="62" startPosition="197" endLine="65" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4474271214082913518" fileName="DebuggableFramesSelector.java" startLine="17" startPosition="0" endLine="21" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="DebuggableFramesSelector#(Lcom/intellij/openapi/project/Project;)V" />
+    <nodeInfo nodeId="1053276000964842022" fileName="DebuggableFramesSelector.java" startLine="76" startPosition="62" endLine="80" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4474271214082913529" fileName="DebuggableFramesSelector.java" startLine="24" startPosition="75" endLine="29" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="4474271214082913588" fileName="DebuggableFramesSelector.java" startLine="50" startPosition="0" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isDebuggableFrame#(Ljetbrains/mps/debug/api/programState/IStackFrame;)Z" />
+    <nodeInfo nodeId="4474271214082913626" fileName="DebuggableFramesSelector.java" startLine="55" startPosition="0" endLine="60" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isDebuggablePosition#(Ljava/lang/String;Ljava/lang/String;I)Z" />
+    <nodeInfo nodeId="4701043456212939236" fileName="DebuggableFramesSelector.java" startLine="70" startPosition="0" endLine="75" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPositionProvider#()Ljetbrains/mps/debug/api/source/PositionProvider;" />
+    <nodeInfo nodeId="4474271214082913564" fileName="DebuggableFramesSelector.java" startLine="38" startPosition="18" endLine="44" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="1053276000964842022" fileName="DebuggableFramesSelector.java" startLine="75" startPosition="0" endLine="82" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="eq_xhry8p_a0d0e#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
+    <nodeInfo nodeId="4474271214082913648" fileName="DebuggableFramesSelector.java" startLine="60" startPosition="0" endLine="70" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isSamePosition#(Ljava/lang/String;Ljava/lang/String;IILjava/lang/String;Ljava/lang/String;II)Z" />
+    <nodeInfo nodeId="4474271214082913522" fileName="DebuggableFramesSelector.java" startLine="22" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="findDeepestDebuggableFrame#(Ljava/util/List;)Ljetbrains/mps/debug/api/programState/IStackFrame;" />
+    <nodeInfo nodeId="4474271214082913553" fileName="DebuggableFramesSelector.java" startLine="35" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="findDeepestDebuggableFrameIndex#(Ljava/util/List;)I" />
+    <scopeInfo nodeId="4474271214082913537" fileName="DebuggableFramesSelector.java" startLine="26" startPosition="37" endLine="27" endPosition="21" />
+    <scopeInfo nodeId="4474271214082913544" fileName="DebuggableFramesSelector.java" startLine="30" startPosition="27" endLine="31" endPosition="18" />
+    <scopeInfo nodeId="4474271214082913572" fileName="DebuggableFramesSelector.java" startLine="40" startPosition="37" endLine="41" endPosition="21" />
+    <scopeInfo nodeId="4474271214082913582" fileName="DebuggableFramesSelector.java" startLine="45" startPosition="27" endLine="46" endPosition="38" />
+    <scopeInfo nodeId="4474271214082913594" fileName="DebuggableFramesSelector.java" startLine="52" startPosition="64" endLine="53" endPosition="74" />
+    <scopeInfo nodeId="4474271214082913635" fileName="DebuggableFramesSelector.java" startLine="57" startPosition="103" endLine="58" endPosition="83" />
+    <scopeInfo nodeId="4474271214082913680" fileName="DebuggableFramesSelector.java" startLine="63" startPosition="129" endLine="64" endPosition="18" />
+    <scopeInfo nodeId="4701043456212939239" fileName="DebuggableFramesSelector.java" startLine="72" startPosition="49" endLine="73" endPosition="22" />
+    <scopeInfo nodeId="4474271214082913521" fileName="DebuggableFramesSelector.java" startLine="18" startPosition="52" endLine="20" endPosition="49" />
+    <scopeInfo nodeId="4474271214082913533" fileName="DebuggableFramesSelector.java" startLine="25" startPosition="38" endLine="28" endPosition="7" />
+    <scopeInfo nodeId="4474271214082913518" fileName="DebuggableFramesSelector.java" startLine="17" startPosition="0" endLine="21" endPosition="3">
       <varInfo nodeId="1331672133304146151" varName="project" />
     </scopeInfo>
-    <scopeInfo nodeId="4474271214082913533" fileName="DebuggableFramesSelector.java" startLine="31" startPosition="38" endLine="34" endPosition="7" />
-    <scopeInfo nodeId="4474271214082913568" fileName="DebuggableFramesSelector.java" startLine="45" startPosition="38" endLine="49" endPosition="14" />
-    <scopeInfo nodeId="24227610116476332" fileName="DebuggableFramesSelector.java" startLine="78" startPosition="69" endLine="82" endPosition="101" />
-    <scopeInfo nodeId="1331672133304164090" fileName="DebuggableFramesSelector.java" startLine="99" startPosition="60" endLine="103" endPosition="92" />
-    <scopeInfo nodeId="24227610116477712" fileName="DebuggableFramesSelector.java" startLine="112" startPosition="54" endLine="116" endPosition="93" />
-    <scopeInfo nodeId="1053276000964842022" fileName="DebuggableFramesSelector.java" startLine="124" startPosition="62" endLine="128" endPosition="6" />
-    <scopeInfo nodeId="4474271214082913529" fileName="DebuggableFramesSelector.java" startLine="30" startPosition="75" endLine="35" endPosition="5">
+    <scopeInfo nodeId="4474271214082913568" fileName="DebuggableFramesSelector.java" startLine="39" startPosition="38" endLine="43" endPosition="14" />
+    <scopeInfo nodeId="1053276000964842022" fileName="DebuggableFramesSelector.java" startLine="76" startPosition="62" endLine="80" endPosition="6" />
+    <scopeInfo nodeId="4474271214082913529" fileName="DebuggableFramesSelector.java" startLine="24" startPosition="75" endLine="29" endPosition="5">
       <varInfo nodeId="4474271214082913531" varName="frame" />
     </scopeInfo>
-    <scopeInfo nodeId="4474271214082913588" fileName="DebuggableFramesSelector.java" startLine="56" startPosition="0" endLine="61" endPosition="0">
+    <scopeInfo nodeId="4474271214082913588" fileName="DebuggableFramesSelector.java" startLine="50" startPosition="0" endLine="55" endPosition="0">
       <varInfo nodeId="4474271214082913591" varName="frame" />
     </scopeInfo>
-    <scopeInfo nodeId="4474271214082913626" fileName="DebuggableFramesSelector.java" startLine="61" startPosition="0" endLine="66" endPosition="0">
+    <scopeInfo nodeId="4474271214082913626" fileName="DebuggableFramesSelector.java" startLine="55" startPosition="0" endLine="60" endPosition="0">
       <varInfo nodeId="4474271214082913631" varName="fileName" />
       <varInfo nodeId="4474271214082913633" varName="position" />
       <varInfo nodeId="4474271214082913629" varName="unitName" />
     </scopeInfo>
-    <scopeInfo nodeId="24227610116477906" fileName="DebuggableFramesSelector.java" startLine="88" startPosition="37" endLine="93" endPosition="38">
-      <varInfo nodeId="24227610116477923" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="397237541325772522" fileName="DebuggableFramesSelector.java" startLine="105" startPosition="0" endLine="110" endPosition="0">
-      <varInfo nodeId="397237541325773820" varName="fileName" />
-      <varInfo nodeId="397237541325773813" varName="unitName" />
-    </scopeInfo>
-    <scopeInfo nodeId="24227610116477688" fileName="DebuggableFramesSelector.java" startLine="118" startPosition="0" endLine="123" endPosition="0">
-      <varInfo nodeId="24227610116477692" varName="fileName" />
-      <varInfo nodeId="24227610116477695" varName="position" />
-      <varInfo nodeId="24227610116477689" varName="unitName" />
-    </scopeInfo>
-    <scopeInfo nodeId="4474271214082913564" fileName="DebuggableFramesSelector.java" startLine="44" startPosition="18" endLine="50" endPosition="5">
+    <scopeInfo nodeId="4701043456212939236" fileName="DebuggableFramesSelector.java" startLine="70" startPosition="0" endLine="75" endPosition="0" />
+    <scopeInfo nodeId="4474271214082913564" fileName="DebuggableFramesSelector.java" startLine="38" startPosition="18" endLine="44" endPosition="5">
       <varInfo nodeId="4474271214082913566" varName="frame" />
     </scopeInfo>
-    <scopeInfo nodeId="4474271214082913667" fileName="DebuggableFramesSelector.java" startLine="68" startPosition="197" endLine="74" endPosition="53">
+    <scopeInfo nodeId="4474271214082913667" fileName="DebuggableFramesSelector.java" startLine="62" startPosition="197" endLine="68" endPosition="53">
       <varInfo nodeId="1053276000964841971" varName="lastPointer" />
       <varInfo nodeId="1053276000964841998" varName="nextPointer" />
     </scopeInfo>
-    <scopeInfo nodeId="1053276000964842022" fileName="DebuggableFramesSelector.java" startLine="123" startPosition="0" endLine="130" endPosition="0">
+    <scopeInfo nodeId="1053276000964842022" fileName="DebuggableFramesSelector.java" startLine="75" startPosition="0" endLine="82" endPosition="0">
       <varInfo nodeId="1053276000964842022" varName="a" />
       <varInfo nodeId="1053276000964842022" varName="b" />
     </scopeInfo>
-    <scopeInfo nodeId="24227610116476327" fileName="DebuggableFramesSelector.java" startLine="76" startPosition="0" endLine="84" endPosition="0">
-      <varInfo nodeId="24227610116476328" varName="location" />
-    </scopeInfo>
-    <scopeInfo nodeId="24227610116477903" fileName="DebuggableFramesSelector.java" startLine="87" startPosition="80" endLine="95" endPosition="0" />
-    <scopeInfo nodeId="1331672133304164087" fileName="DebuggableFramesSelector.java" startLine="97" startPosition="0" endLine="105" endPosition="0">
-      <varInfo nodeId="1331672133304164092" varName="location" />
-    </scopeInfo>
-    <scopeInfo nodeId="24227610116477706" fileName="DebuggableFramesSelector.java" startLine="110" startPosition="0" endLine="118" endPosition="0">
-      <varInfo nodeId="24227610116477707" varName="location" />
-    </scopeInfo>
-    <scopeInfo nodeId="4474271214082913528" fileName="DebuggableFramesSelector.java" startLine="30" startPosition="75" endLine="39" endPosition="25" />
-    <scopeInfo nodeId="24227610116477491" fileName="DebuggableFramesSelector.java" startLine="86" startPosition="121" endLine="95" endPosition="7" />
-    <scopeInfo nodeId="4474271214082913648" fileName="DebuggableFramesSelector.java" startLine="66" startPosition="0" endLine="76" endPosition="0">
+    <scopeInfo nodeId="4474271214082913528" fileName="DebuggableFramesSelector.java" startLine="24" startPosition="75" endLine="33" endPosition="25" />
+    <scopeInfo nodeId="4474271214082913648" fileName="DebuggableFramesSelector.java" startLine="60" startPosition="0" endLine="70" endPosition="0">
       <varInfo nodeId="4474271214082913653" varName="lastFileName" />
       <varInfo nodeId="4474271214082913657" varName="lastFrameCount" />
       <varInfo nodeId="4474271214082913655" varName="lastLineNumber" />
@@ -674,22 +625,16 @@
       <varInfo nodeId="4474271214082913663" varName="nextLineNumber" />
       <varInfo nodeId="4474271214082913659" varName="nextUnitName" />
     </scopeInfo>
-    <scopeInfo nodeId="4474271214082913559" fileName="DebuggableFramesSelector.java" startLine="43" startPosition="72" endLine="54" endPosition="13">
+    <scopeInfo nodeId="4474271214082913559" fileName="DebuggableFramesSelector.java" startLine="37" startPosition="72" endLine="48" endPosition="13">
       <varInfo nodeId="4474271214082913561" varName="index" />
     </scopeInfo>
-    <scopeInfo nodeId="4474271214082913522" fileName="DebuggableFramesSelector.java" startLine="28" startPosition="0" endLine="41" endPosition="0">
+    <scopeInfo nodeId="4474271214082913522" fileName="DebuggableFramesSelector.java" startLine="22" startPosition="0" endLine="35" endPosition="0">
       <varInfo nodeId="4474271214082913525" varName="frames" />
     </scopeInfo>
-    <scopeInfo nodeId="24227610116477480" fileName="DebuggableFramesSelector.java" startLine="84" startPosition="0" endLine="97" endPosition="0">
-      <varInfo nodeId="24227610116477484" varName="fileName" />
-      <varInfo nodeId="24227610116477487" varName="position" />
-      <varInfo nodeId="24227610116477481" varName="unitName" />
-    </scopeInfo>
-    <scopeInfo nodeId="4474271214082913553" fileName="DebuggableFramesSelector.java" startLine="41" startPosition="0" endLine="56" endPosition="0">
+    <scopeInfo nodeId="4474271214082913553" fileName="DebuggableFramesSelector.java" startLine="35" startPosition="0" endLine="50" endPosition="0">
       <varInfo nodeId="4474271214082913556" varName="frames" />
     </scopeInfo>
-    <unitInfo nodeId="4474271214082913515" fileName="DebuggableFramesSelector.java" startLine="22" startPosition="0" endLine="131" endPosition="0" unitName="jetbrains.mps.debug.api.DebuggableFramesSelector" />
-    <unitInfo nodeId="24227610116477901" fileName="DebuggableFramesSelector.java" startLine="87" startPosition="52" endLine="95" endPosition="5" unitName="jetbrains.mps.debug.api.DebuggableFramesSelector$1" />
+    <unitInfo nodeId="4474271214082913515" fileName="DebuggableFramesSelector.java" startLine="14" startPosition="0" endLine="83" endPosition="0" unitName="jetbrains.mps.debug.api.DebuggableFramesSelector" />
   </root>
   <root nodeId="4474271214082913702">
     <nodeInfo nodeId="4474271214082913759" fileName="DebugSessionManagerComponent.java" startLine="21" startPosition="71" endLine="22" endPosition="135" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myProcessesToSessions" />
@@ -903,36 +848,28 @@
     <unitInfo nodeId="4474271214082913743" fileName="DebugSessionManagerComponent.java" startLine="169" startPosition="0" endLine="187" endPosition="0" unitName="jetbrains.mps.debug.api.DebugSessionManagerComponent$MyRunContentListener" />
   </root>
   <root nodeId="4474271214082914203">
-    <nodeInfo nodeId="4474271214082914213" fileName="IDebuggableFramesSelector.java" startLine="15" startPosition="74" endLine="16" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="findDeepestDebuggableFrameIndex#(Ljava/util/List;)I" />
-    <nodeInfo nodeId="4474271214082914220" fileName="IDebuggableFramesSelector.java" startLine="16" startPosition="71" endLine="17" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isDebuggableFrame#(Ljetbrains/mps/debug/api/programState/IStackFrame;)Z" />
-    <nodeInfo nodeId="4474271214082914227" fileName="IDebuggableFramesSelector.java" startLine="17" startPosition="63" endLine="18" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isDebuggablePosition#(Ljava/lang/String;Ljava/lang/String;I)Z" />
-    <nodeInfo nodeId="24227610116476318" fileName="IDebuggableFramesSelector.java" startLine="22" startPosition="196" endLine="23" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNode#(Ljetbrains/mps/debug/api/programState/ILocation;)Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="24227610116477427" fileName="IDebuggableFramesSelector.java" startLine="23" startPosition="43" endLine="24" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNode#(Ljava/lang/String;Ljava/lang/String;I)Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="4474271214082914205" fileName="IDebuggableFramesSelector.java" startLine="13" startPosition="44" endLine="15" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="findDeepestDebuggableFrame#(Ljava/util/List;)Ljetbrains/mps/debug/api/programState/IStackFrame;" />
-    <nodeInfo nodeId="4474271214082914237" fileName="IDebuggableFramesSelector.java" startLine="18" startPosition="102" endLine="22" endPosition="196" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isSamePosition#(Ljava/lang/String;Ljava/lang/String;IILjava/lang/String;Ljava/lang/String;II)Z" />
-    <scopeInfo nodeId="4474271214082914213" fileName="IDebuggableFramesSelector.java" startLine="15" startPosition="74" endLine="16" endPosition="71">
+    <nodeInfo nodeId="4474271214082914213" fileName="IDebuggableFramesSelector.java" startLine="14" startPosition="74" endLine="15" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="findDeepestDebuggableFrameIndex#(Ljava/util/List;)I" />
+    <nodeInfo nodeId="4474271214082914220" fileName="IDebuggableFramesSelector.java" startLine="15" startPosition="71" endLine="16" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isDebuggableFrame#(Ljetbrains/mps/debug/api/programState/IStackFrame;)Z" />
+    <nodeInfo nodeId="4474271214082914227" fileName="IDebuggableFramesSelector.java" startLine="16" startPosition="63" endLine="17" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isDebuggablePosition#(Ljava/lang/String;Ljava/lang/String;I)Z" />
+    <nodeInfo nodeId="4701043456212939534" fileName="IDebuggableFramesSelector.java" startLine="21" startPosition="196" endLine="22" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPositionProvider#()Ljetbrains/mps/debug/api/source/PositionProvider;" />
+    <nodeInfo nodeId="4474271214082914205" fileName="IDebuggableFramesSelector.java" startLine="12" startPosition="44" endLine="14" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="findDeepestDebuggableFrame#(Ljava/util/List;)Ljetbrains/mps/debug/api/programState/IStackFrame;" />
+    <nodeInfo nodeId="4474271214082914237" fileName="IDebuggableFramesSelector.java" startLine="17" startPosition="102" endLine="21" endPosition="196" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isSamePosition#(Ljava/lang/String;Ljava/lang/String;IILjava/lang/String;Ljava/lang/String;II)Z" />
+    <scopeInfo nodeId="4474271214082914213" fileName="IDebuggableFramesSelector.java" startLine="14" startPosition="74" endLine="15" endPosition="71">
       <varInfo nodeId="4474271214082914216" varName="frames" />
     </scopeInfo>
-    <scopeInfo nodeId="4474271214082914220" fileName="IDebuggableFramesSelector.java" startLine="16" startPosition="71" endLine="17" endPosition="63">
+    <scopeInfo nodeId="4474271214082914220" fileName="IDebuggableFramesSelector.java" startLine="15" startPosition="71" endLine="16" endPosition="63">
       <varInfo nodeId="4474271214082914223" varName="frame" />
     </scopeInfo>
-    <scopeInfo nodeId="4474271214082914227" fileName="IDebuggableFramesSelector.java" startLine="17" startPosition="63" endLine="18" endPosition="102">
+    <scopeInfo nodeId="4474271214082914227" fileName="IDebuggableFramesSelector.java" startLine="16" startPosition="63" endLine="17" endPosition="102">
       <varInfo nodeId="4474271214082914232" varName="fileName" />
       <varInfo nodeId="4474271214082914234" varName="position" />
       <varInfo nodeId="4474271214082914230" varName="unitName" />
     </scopeInfo>
-    <scopeInfo nodeId="24227610116476318" fileName="IDebuggableFramesSelector.java" startLine="22" startPosition="196" endLine="23" endPosition="43">
-      <varInfo nodeId="24227610116476323" varName="location" />
-    </scopeInfo>
-    <scopeInfo nodeId="24227610116477427" fileName="IDebuggableFramesSelector.java" startLine="23" startPosition="43" endLine="24" endPosition="87">
-      <varInfo nodeId="24227610116477439" varName="fileName" />
-      <varInfo nodeId="24227610116477442" varName="position" />
-      <varInfo nodeId="24227610116477433" varName="unitName" />
-    </scopeInfo>
-    <scopeInfo nodeId="4474271214082914205" fileName="IDebuggableFramesSelector.java" startLine="13" startPosition="44" endLine="15" endPosition="74">
+    <scopeInfo nodeId="4701043456212939534" fileName="IDebuggableFramesSelector.java" startLine="21" startPosition="196" endLine="22" endPosition="48" />
+    <scopeInfo nodeId="4474271214082914205" fileName="IDebuggableFramesSelector.java" startLine="12" startPosition="44" endLine="14" endPosition="74">
       <varInfo nodeId="4474271214082914208" varName="frames" />
     </scopeInfo>
-    <scopeInfo nodeId="4474271214082914237" fileName="IDebuggableFramesSelector.java" startLine="18" startPosition="102" endLine="22" endPosition="196">
+    <scopeInfo nodeId="4474271214082914237" fileName="IDebuggableFramesSelector.java" startLine="17" startPosition="102" endLine="21" endPosition="196">
       <varInfo nodeId="4474271214082914242" varName="lastFileName" />
       <varInfo nodeId="4474271214082914246" varName="lastFrameCount" />
       <varInfo nodeId="4474271214082914244" varName="lastLineNumber" />
@@ -942,7 +879,7 @@
       <varInfo nodeId="4474271214082914252" varName="nextLineNumber" />
       <varInfo nodeId="4474271214082914248" varName="nextUnitName" />
     </scopeInfo>
-    <unitInfo nodeId="4474271214082914203" fileName="IDebuggableFramesSelector.java" startLine="13" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.debug.api.IDebuggableFramesSelector" />
+    <unitInfo nodeId="4474271214082914203" fileName="IDebuggableFramesSelector.java" startLine="12" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.debug.api.IDebuggableFramesSelector" />
   </root>
   <root nodeId="4474271214082914260">
     <nodeInfo nodeId="4474271214082914262" fileName="BreakpointInfo.java" startLine="8" startPosition="29" endLine="9" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myModelReference" />

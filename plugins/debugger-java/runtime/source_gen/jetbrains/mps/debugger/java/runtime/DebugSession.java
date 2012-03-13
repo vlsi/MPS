@@ -6,28 +6,29 @@ import jetbrains.mps.debug.api.AbstractDebugSession;
 import jetbrains.mps.debug.api.evaluation.IEvaluationProvider;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.debug.api.DebuggableFramesSelector;
-import org.jetbrains.annotations.Nullable;
-import jetbrains.mps.smodel.SNode;
-import org.jetbrains.annotations.NonNls;
-import jetbrains.mps.generator.traceInfo.TraceInfoUtil;
+import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.debug.api.source.PositionProvider;
 import jetbrains.mps.debug.api.DebugSessionManagerComponent;
 import jetbrains.mps.debugger.java.runtime.execution.DebuggerCommand;
 import java.util.Set;
 import jetbrains.mps.debug.api.breakpoints.IBreakpoint;
 import jetbrains.mps.debugger.java.runtime.breakpoints.JavaBreakpoint;
-import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
+import jetbrains.mps.smodel.SNode;
+import org.jetbrains.annotations.NonNls;
+import jetbrains.mps.generator.traceInfo.TraceInfoUtil;
 
 public class DebugSession extends AbstractDebugSession<JavaUiStateImpl> {
   private final DebugVMEventsProcessor myEventsProcessor;
   private volatile boolean myIsMute = false;
   private IEvaluationProvider myEvaluationProvider;
 
-  public DebugSession(DebugVMEventsProcessor eventsProcessor, Project p) {
+  public DebugSession(DebugVMEventsProcessor eventsProcessor, final Project p) {
     super(p, new DebuggableFramesSelector(p) {
-      @Nullable
+      @NotNull
       @Override
-      public SNode getNode(@NonNls String unitName, @NonNls String fileName, int position) {
-        return TraceInfoUtil.getJavaNode(unitName, fileName, position);
+      public PositionProvider getPositionProvider() {
+        return new DebugSession.JavaPositionProvider(p);
       }
     });
     myEventsProcessor = eventsProcessor;
@@ -154,6 +155,18 @@ public class DebugSession extends AbstractDebugSession<JavaUiStateImpl> {
 
   public void setEvaluationProvider(IEvaluationProvider evaluationProvider) {
     myEvaluationProvider = evaluationProvider;
+  }
+
+  public static class JavaPositionProvider extends PositionProvider {
+    public JavaPositionProvider(Project project) {
+      super(project);
+    }
+
+    @Nullable
+    @Override
+    public SNode getNode(@NonNls String unitName, @NonNls String fileName, int position) {
+      return TraceInfoUtil.getJavaNode(unitName, fileName, position);
+    }
   }
 
   private class MyDebugProcessAdapter extends DebugProcessAdapter {

@@ -11,21 +11,16 @@ import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.debug.api.AbstractDebugSession;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
-import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
-import com.intellij.openapi.vfs.VirtualFile;
-import jetbrains.mps.ide.actions.FileOpenUtil;
 import com.intellij.openapi.application.ApplicationManager;
+import jetbrains.mps.debug.api.source.TextSourcePosition;
+import jetbrains.mps.ide.actions.FileOpenUtil;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.debug.api.programState.IStackFrame;
-import jetbrains.mps.debug.api.programState.ILocation;
-import jetbrains.mps.debug.api.programState.NullLocation;
-import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
+import jetbrains.mps.debug.api.source.SourcePosition;
 import com.intellij.openapi.editor.Document;
 import com.intellij.openapi.fileEditor.FileDocumentManager;
-import com.intellij.openapi.editor.colors.EditorColorsScheme;
-import com.intellij.openapi.editor.colors.EditorColorsManager;
 import com.intellij.openapi.editor.markup.TextAttributes;
-import com.intellij.openapi.editor.colors.TextAttributesKey;
+import java.awt.Color;
 import com.intellij.openapi.editor.ex.MarkupModelEx;
 import com.intellij.openapi.editor.impl.DocumentMarkupModel;
 import com.intellij.openapi.editor.markup.HighlighterLayer;
@@ -72,12 +67,25 @@ public class InTextPositionComponent implements ProjectComponent {
   }
 
   public void reAttachPainter(AbstractDebugSession session) {
-    detachPainter();
-    attachPainter(session);
+    final _FunctionTypes._void_P0_E0 detach = detachPainterRunnable();
+    final _FunctionTypes._void_P0_E0 attach = attachPainterRunnable(session);
+    if (detach != null || attach != null) {
+      ApplicationManager.getApplication().invokeLater(new Runnable() {
+        public void run() {
+          check_uzwzqp_a0a0a0a0a0a2a7(detach);
+          check_uzwzqp_a1a0a0a0a0a2a7(attach);
+        }
+      });
+
+    }
   }
 
   private _FunctionTypes._void_P0_E0 attachPainterRunnable(AbstractDebugSession session, final boolean open) {
-    final Tuples._2<VirtualFile, Integer> location = getLocation(session);
+    if (session == null) {
+      return null;
+    }
+
+    final TextSourcePosition location = getLocation(session);
     if (location == null) {
       return null;
     }
@@ -86,15 +94,19 @@ public class InTextPositionComponent implements ProjectComponent {
       public void invoke() {
         myHighlighter = createHighlighter(location);
         if (open) {
-          FileOpenUtil.openFile(myProject, location._0(), (int) location._1());
+          FileOpenUtil.openFile(myProject, location.getFile(), location.getLineNumber());
         }
       }
     };
   }
 
-  private void attachPainter(AbstractDebugSession session) {
+  private _FunctionTypes._void_P0_E0 attachPainterRunnable(AbstractDebugSession session) {
     AbstractDebugSession currentSession = getCurrentSession();
-    final _FunctionTypes._void_P0_E0 runnable = attachPainterRunnable(session, currentSession != null && session == currentSession);
+    return attachPainterRunnable(session, currentSession != null && session == currentSession);
+  }
+
+  public void detachPainter() {
+    final _FunctionTypes._void_P0_E0 runnable = detachPainterRunnable();
     if (runnable == null) {
       return;
     }
@@ -105,46 +117,64 @@ public class InTextPositionComponent implements ProjectComponent {
     });
   }
 
-  public void detachPainter() {
+  public _FunctionTypes._void_P0_E0 detachPainterRunnable() {
     if (myHighlighter != null) {
-      RangeHighlighter highlighter = myHighlighter;
-      myHighlighter = null;
-      highlighter.dispose();
+      return new _FunctionTypes._void_P0_E0() {
+        public void invoke() {
+          RangeHighlighter highlighter = myHighlighter;
+          myHighlighter = null;
+          highlighter.dispose();
+        }
+      };
     }
+    return null;
   }
 
   @Nullable
-  public Tuples._2<VirtualFile, Integer> getLocation(AbstractDebugSession session) {
+  public TextSourcePosition getLocation(AbstractDebugSession session) {
     IStackFrame stackFrame = session.getUiState().getStackFrame();
     if (stackFrame != null) {
-      ILocation location = stackFrame.getLocation();
-      if (!(location instanceof NullLocation)) {
-        VirtualFile file = FileOpenUtil.findFile(myProject, location.getUnitName(), location.getFileName());
-        if (file != null) {
-          return MultiTuple.<VirtualFile,Integer>from(file, location.getLineNumber());
-        }
+      SourcePosition position = session.getDebuggableFramesSelector().getPositionProvider().getPosition(stackFrame.getLocation());
+      if (position instanceof TextSourcePosition) {
+        return ((TextSourcePosition) position);
       }
     }
     return null;
   }
 
   @Nullable
-  public RangeHighlighter createHighlighter(Tuples._2<VirtualFile, Integer> location) {
-    int lineIndex = (int) location._1();
-    Document document = FileDocumentManager.getInstance().getDocument(location._0());
+  public RangeHighlighter createHighlighter(TextSourcePosition location) {
+    Document document = FileDocumentManager.getInstance().getDocument(location.getFile());
     if (document == null) {
       return null;
     }
-    if (lineIndex < 0 || lineIndex >= document.getLineCount()) {
+    if (location.getLineNumber() < 0 || location.getLineNumber() >= document.getLineCount()) {
       return null;
     }
-    EditorColorsScheme scheme = EditorColorsManager.getInstance().getGlobalScheme();
-    TextAttributes attributes = scheme.getAttributes(TextAttributesKey.createTextAttributesKey("CurrentLine"));
-    RangeHighlighter highlighter = ((MarkupModelEx) DocumentMarkupModel.forDocument(document, myProject, true)).addPersistentLineHighlighter(lineIndex, HighlighterLayer.SELECTION - 1, attributes);
+
+    TextAttributes attributes = new TextAttributes();
+    attributes.setForegroundColor(Color.WHITE);
+    attributes.setBackgroundColor(Color.BLUE);
+
+    RangeHighlighter highlighter = ((MarkupModelEx) DocumentMarkupModel.forDocument(document, myProject, true)).addPersistentLineHighlighter(location.getLineNumber() - 1, HighlighterLayer.SELECTION - 1, attributes);
     if (highlighter == null || !(highlighter.isValid())) {
       return null;
     }
     return highlighter;
+  }
+
+  private static void check_uzwzqp_a0a0a0a0a0a2a7(_FunctionTypes._void_P0_E0 checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      checkedDotOperand.invoke();
+    }
+
+  }
+
+  private static void check_uzwzqp_a1a0a0a0a0a2a7(_FunctionTypes._void_P0_E0 checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      checkedDotOperand.invoke();
+    }
+
   }
 
   private class MyCurrentDebugSessionListener implements DebugSessionManagerComponent.DebugSessionListener {

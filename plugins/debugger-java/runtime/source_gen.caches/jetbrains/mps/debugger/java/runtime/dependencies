@@ -45,6 +45,7 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode extendsClassName="jetbrains.mps.debug.api.AbstractDebugSession" />
+    <classNode extendsClassName="jetbrains.mps.debug.api.source.PositionProvider" />
     <classNode extendsClassName="jetbrains.mps.debugger.java.runtime.DebugProcessAdapter" />
   </dependency>
   <dependency className="jetbrains.mps.debugger.java.runtime.DebugVMEventsProcessor" file="DebugVMEventsProcessor.java">

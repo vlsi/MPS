@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debugInfo>
+  <root nodeId="4701043456212906539">
+    <nodeInfo nodeId="4701043456212908756" fileName="PositionProvider.java" startLine="21" startPosition="31" endLine="22" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myProject" />
+    <nodeInfo nodeId="4701043456212908761" fileName="PositionProvider.java" startLine="24" startPosition="44" endLine="25" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4701043456212906582" fileName="PositionProvider.java" startLine="30" startPosition="63" endLine="31" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4701043456212908771" fileName="PositionProvider.java" startLine="32" startPosition="5" endLine="33" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4701043456212908787" fileName="PositionProvider.java" startLine="34" startPosition="23" endLine="35" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4701043456212908797" fileName="PositionProvider.java" startLine="36" startPosition="5" endLine="37" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4701043456212908831" fileName="PositionProvider.java" startLine="38" startPosition="23" endLine="39" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4701043456212924334" fileName="PositionProvider.java" startLine="40" startPosition="5" endLine="41" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4701043456212925649" fileName="PositionProvider.java" startLine="45" startPosition="103" endLine="46" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4701043456212925656" fileName="PositionProvider.java" startLine="47" startPosition="23" endLine="48" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4701043456212925663" fileName="PositionProvider.java" startLine="49" startPosition="5" endLine="50" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4701043456212925670" fileName="PositionProvider.java" startLine="51" startPosition="23" endLine="52" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4701043456212925680" fileName="PositionProvider.java" startLine="53" startPosition="5" endLine="54" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="24227610116476407" fileName="PositionProvider.java" startLine="59" startPosition="63" endLine="60" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="24227610116477496" fileName="PositionProvider.java" startLine="61" startPosition="5" endLine="62" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="24227610116477922" fileName="PositionProvider.java" startLine="68" startPosition="37" endLine="69" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="24227610116477942" fileName="PositionProvider.java" startLine="70" startPosition="27" endLine="71" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="24227610116477946" fileName="PositionProvider.java" startLine="72" startPosition="9" endLine="73" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1331672133304164104" fileName="PositionProvider.java" startLine="80" startPosition="63" endLine="81" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1331672133304164117" fileName="PositionProvider.java" startLine="82" startPosition="5" endLine="83" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="397237541325772536" fileName="PositionProvider.java" startLine="87" startPosition="80" endLine="88" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="24227610116477715" fileName="PositionProvider.java" startLine="93" startPosition="63" endLine="94" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="24227610116477724" fileName="PositionProvider.java" startLine="95" startPosition="5" endLine="96" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="24227610116477700" fileName="PositionProvider.java" startLine="100" startPosition="88" endLine="101" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4701043456212906541" fileName="PositionProvider.java" startLine="23" startPosition="0" endLine="26" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="PositionProvider#(Lcom/intellij/openapi/project/Project;)V" />
+    <nodeInfo nodeId="4701043456212906554" fileName="PositionProvider.java" startLine="29" startPosition="67" endLine="32" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4701043456212908778" fileName="PositionProvider.java" startLine="33" startPosition="50" endLine="36" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4701043456212908804" fileName="PositionProvider.java" startLine="37" startPosition="41" endLine="40" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4701043456212925654" fileName="PositionProvider.java" startLine="46" startPosition="72" endLine="49" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4701043456212925668" fileName="PositionProvider.java" startLine="50" startPosition="51" endLine="53" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="24227610116476386" fileName="PositionProvider.java" startLine="58" startPosition="69" endLine="61" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="24227610116477931" fileName="PositionProvider.java" startLine="69" startPosition="59" endLine="72" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1331672133304164102" fileName="PositionProvider.java" startLine="79" startPosition="60" endLine="82" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="24227610116477713" fileName="PositionProvider.java" startLine="92" startPosition="54" endLine="95" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="397237541325772522" fileName="PositionProvider.java" startLine="85" startPosition="0" endLine="90" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getFile#(Ljava/lang/String;Ljava/lang/String;)Lcom/intellij/openapi/vfs/VirtualFile;" />
+    <nodeInfo nodeId="24227610116477688" fileName="PositionProvider.java" startLine="98" startPosition="0" endLine="103" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNode#(Ljava/lang/String;Ljava/lang/String;I)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="24227610116476327" fileName="PositionProvider.java" startLine="56" startPosition="0" endLine="64" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSNodePointer#(Ljetbrains/mps/debug/api/programState/ILocation;)Ljetbrains/mps/smodel/SNodePointer;" />
+    <nodeInfo nodeId="24227610116477903" fileName="PositionProvider.java" startLine="67" startPosition="80" endLine="75" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="compute#()Ljetbrains/mps/smodel/SNodePointer;" />
+    <nodeInfo nodeId="1331672133304164087" fileName="PositionProvider.java" startLine="77" startPosition="0" endLine="85" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getFile#(Ljetbrains/mps/debug/api/programState/ILocation;)Lcom/intellij/openapi/vfs/VirtualFile;" />
+    <nodeInfo nodeId="24227610116477706" fileName="PositionProvider.java" startLine="90" startPosition="0" endLine="98" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNode#(Ljetbrains/mps/debug/api/programState/ILocation;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="24227610116477879" fileName="PositionProvider.java" startLine="66" startPosition="121" endLine="75" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4701043456212925635" fileName="PositionProvider.java" startLine="43" startPosition="0" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPosition#(Ljava/lang/String;Ljava/lang/String;I)Ljetbrains/mps/debug/api/source/SourcePosition;" />
+    <nodeInfo nodeId="24227610116477480" fileName="PositionProvider.java" startLine="64" startPosition="0" endLine="77" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSNodePointer#(Ljava/lang/String;Ljava/lang/String;I)Ljetbrains/mps/smodel/SNodePointer;" />
+    <nodeInfo nodeId="4701043456212906545" fileName="PositionProvider.java" startLine="27" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPosition#(Ljetbrains/mps/debug/api/programState/ILocation;)Ljetbrains/mps/debug/api/source/SourcePosition;" />
+    <scopeInfo nodeId="4701043456212906544" fileName="PositionProvider.java" startLine="24" startPosition="44" endLine="25" endPosition="24" />
+    <scopeInfo nodeId="4701043456212906556" fileName="PositionProvider.java" startLine="30" startPosition="63" endLine="31" endPosition="18" />
+    <scopeInfo nodeId="4701043456212908779" fileName="PositionProvider.java" startLine="34" startPosition="23" endLine="35" endPosition="42" />
+    <scopeInfo nodeId="4701043456212908805" fileName="PositionProvider.java" startLine="38" startPosition="23" endLine="39" endPosition="68" />
+    <scopeInfo nodeId="4701043456212925655" fileName="PositionProvider.java" startLine="47" startPosition="23" endLine="48" endPosition="42" />
+    <scopeInfo nodeId="4701043456212925669" fileName="PositionProvider.java" startLine="51" startPosition="23" endLine="52" endPosition="54" />
+    <scopeInfo nodeId="24227610116476387" fileName="PositionProvider.java" startLine="59" startPosition="63" endLine="60" endPosition="18" />
+    <scopeInfo nodeId="24227610116477932" fileName="PositionProvider.java" startLine="70" startPosition="27" endLine="71" endPosition="22" />
+    <scopeInfo nodeId="1331672133304164103" fileName="PositionProvider.java" startLine="80" startPosition="63" endLine="81" endPosition="18" />
+    <scopeInfo nodeId="397237541325772524" fileName="PositionProvider.java" startLine="87" startPosition="80" endLine="88" endPosition="64" />
+    <scopeInfo nodeId="24227610116477714" fileName="PositionProvider.java" startLine="93" startPosition="63" endLine="94" endPosition="18" />
+    <scopeInfo nodeId="24227610116477699" fileName="PositionProvider.java" startLine="100" startPosition="88" endLine="101" endPosition="63" />
+    <scopeInfo nodeId="4701043456212906541" fileName="PositionProvider.java" startLine="23" startPosition="0" endLine="26" endPosition="3">
+      <varInfo nodeId="4701043456212908752" varName="project" />
+    </scopeInfo>
+    <scopeInfo nodeId="24227610116476332" fileName="PositionProvider.java" startLine="58" startPosition="69" endLine="62" endPosition="101" />
+    <scopeInfo nodeId="1331672133304164090" fileName="PositionProvider.java" startLine="79" startPosition="60" endLine="83" endPosition="92" />
+    <scopeInfo nodeId="24227610116477712" fileName="PositionProvider.java" startLine="92" startPosition="54" endLine="96" endPosition="93" />
+    <scopeInfo nodeId="24227610116477906" fileName="PositionProvider.java" startLine="68" startPosition="37" endLine="73" endPosition="38">
+      <varInfo nodeId="24227610116477923" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="397237541325772522" fileName="PositionProvider.java" startLine="85" startPosition="0" endLine="90" endPosition="0">
+      <varInfo nodeId="397237541325773820" varName="fileName" />
+      <varInfo nodeId="397237541325773813" varName="unitName" />
+    </scopeInfo>
+    <scopeInfo nodeId="24227610116477688" fileName="PositionProvider.java" startLine="98" startPosition="0" endLine="103" endPosition="0">
+      <varInfo nodeId="24227610116477692" varName="fileName" />
+      <varInfo nodeId="24227610116477695" varName="position" />
+      <varInfo nodeId="24227610116477689" varName="unitName" />
+    </scopeInfo>
+    <scopeInfo nodeId="24227610116476327" fileName="PositionProvider.java" startLine="56" startPosition="0" endLine="64" endPosition="0">
+      <varInfo nodeId="24227610116476328" varName="location" />
+    </scopeInfo>
+    <scopeInfo nodeId="24227610116477903" fileName="PositionProvider.java" startLine="67" startPosition="80" endLine="75" endPosition="0" />
+    <scopeInfo nodeId="1331672133304164087" fileName="PositionProvider.java" startLine="77" startPosition="0" endLine="85" endPosition="0">
+      <varInfo nodeId="1331672133304164092" varName="location" />
+    </scopeInfo>
+    <scopeInfo nodeId="24227610116477706" fileName="PositionProvider.java" startLine="90" startPosition="0" endLine="98" endPosition="0">
+      <varInfo nodeId="24227610116477707" varName="location" />
+    </scopeInfo>
+    <scopeInfo nodeId="4701043456212925637" fileName="PositionProvider.java" startLine="45" startPosition="103" endLine="54" endPosition="16">
+      <varInfo nodeId="4701043456212925664" varName="file" />
+      <varInfo nodeId="4701043456212925650" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="24227610116477491" fileName="PositionProvider.java" startLine="66" startPosition="121" endLine="75" endPosition="7" />
+    <scopeInfo nodeId="4701043456212906548" fileName="PositionProvider.java" startLine="29" startPosition="67" endLine="41" endPosition="16">
+      <varInfo nodeId="4701043456212908798" varName="file" />
+      <varInfo nodeId="4701043456212908772" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="4701043456212925635" fileName="PositionProvider.java" startLine="43" startPosition="0" endLine="56" endPosition="0">
+      <varInfo nodeId="4701043456212925697" varName="fileName" />
+      <varInfo nodeId="4701043456212925706" varName="lineNumber" />
+      <varInfo nodeId="4701043456212925691" varName="unitName" />
+    </scopeInfo>
+    <scopeInfo nodeId="24227610116477480" fileName="PositionProvider.java" startLine="64" startPosition="0" endLine="77" endPosition="0">
+      <varInfo nodeId="24227610116477484" varName="fileName" />
+      <varInfo nodeId="24227610116477487" varName="position" />
+      <varInfo nodeId="24227610116477481" varName="unitName" />
+    </scopeInfo>
+    <scopeInfo nodeId="4701043456212906545" fileName="PositionProvider.java" startLine="27" startPosition="0" endLine="43" endPosition="0">
+      <varInfo nodeId="4701043456212906550" varName="location" />
+    </scopeInfo>
+    <unitInfo nodeId="4701043456212906539" fileName="PositionProvider.java" startLine="21" startPosition="0" endLine="104" endPosition="0" unitName="jetbrains.mps.debugger.api.ui.source.PositionProvider" />
+    <unitInfo nodeId="24227610116477901" fileName="PositionProvider.java" startLine="67" startPosition="52" endLine="75" endPosition="5" unitName="jetbrains.mps.debugger.api.ui.source.PositionProvider$1" />
+  </root>
+</debugInfo>
+

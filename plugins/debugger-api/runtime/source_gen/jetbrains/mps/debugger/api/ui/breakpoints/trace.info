@@ -1,202 +1,243 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <root nodeId="3081435682357896886">
-    <nodeInfo nodeId="3081435682357900929" fileName="InTextPositionComponent.java" startLine="34" startPosition="66" endLine="35" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myChangeListener" />
-    <nodeInfo nodeId="3081435682357900934" fileName="InTextPositionComponent.java" startLine="35" startPosition="111" endLine="36" endPosition="158" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCurrentDebugSessionListener" />
-    <nodeInfo nodeId="3081435682357912341" fileName="InTextPositionComponent.java" startLine="36" startPosition="158" endLine="37" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myProject" />
-    <nodeInfo nodeId="3081435682357952433" fileName="InTextPositionComponent.java" startLine="37" startPosition="34" endLine="38" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myHighlighter" />
-    <nodeInfo nodeId="3081435682357912347" fileName="InTextPositionComponent.java" startLine="40" startPosition="51" endLine="41" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3081435682357901127" fileName="InTextPositionComponent.java" startLine="50" startPosition="31" endLine="51" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3081435682357901134" fileName="InTextPositionComponent.java" startLine="51" startPosition="104" endLine="52" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3081435682357912366" fileName="InTextPositionComponent.java" startLine="55" startPosition="34" endLine="56" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3081435682357912373" fileName="InTextPositionComponent.java" startLine="56" startPosition="104" endLine="57" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3081435682357900911" fileName="InTextPositionComponent.java" startLine="62" startPosition="36" endLine="63" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3081435682357912390" fileName="InTextPositionComponent.java" startLine="66" startPosition="54" endLine="67" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3081435682357952598" fileName="InTextPositionComponent.java" startLine="70" startPosition="67" endLine="71" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3081435682357952572" fileName="InTextPositionComponent.java" startLine="74" startPosition="61" endLine="75" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3081435682357952575" fileName="InTextPositionComponent.java" startLine="75" startPosition="20" endLine="76" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3081435682357952239" fileName="InTextPositionComponent.java" startLine="79" startPosition="110" endLine="80" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3081435682357952277" fileName="InTextPositionComponent.java" startLine="81" startPosition="27" endLine="82" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4475430585170123327" fileName="InTextPositionComponent.java" startLine="83" startPosition="5" endLine="84" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="3081435682357952447" fileName="InTextPositionComponent.java" startLine="86" startPosition="28" endLine="87" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3081435682357952727" fileName="InTextPositionComponent.java" startLine="88" startPosition="19" endLine="89" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3081435682357952949" fileName="InTextPositionComponent.java" startLine="95" startPosition="60" endLine="96" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4475430585170133630" fileName="InTextPositionComponent.java" startLine="96" startPosition="62" endLine="97" endPosition="132" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4475430585170133688" fileName="InTextPositionComponent.java" startLine="98" startPosition="27" endLine="99" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4475430585170133689" fileName="InTextPositionComponent.java" startLine="102" startPosition="25" endLine="103" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3081435682357952534" fileName="InTextPositionComponent.java" startLine="109" startPosition="32" endLine="110" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3081435682357952543" fileName="InTextPositionComponent.java" startLine="110" startPosition="51" endLine="111" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3081435682357952503" fileName="InTextPositionComponent.java" startLine="111" startPosition="27" endLine="112" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3081435682357912503" fileName="InTextPositionComponent.java" startLine="117" startPosition="84" endLine="118" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3081435682357912516" fileName="InTextPositionComponent.java" startLine="119" startPosition="29" endLine="120" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3081435682357912655" fileName="InTextPositionComponent.java" startLine="121" startPosition="48" endLine="122" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3081435682357912668" fileName="InTextPositionComponent.java" startLine="123" startPosition="27" endLine="124" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3081435682357912703" fileName="InTextPositionComponent.java" startLine="127" startPosition="5" endLine="128" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3081435682357916025" fileName="InTextPositionComponent.java" startLine="132" startPosition="87" endLine="133" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3081435682357916092" fileName="InTextPositionComponent.java" startLine="133" startPosition="40" endLine="134" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3081435682357916143" fileName="InTextPositionComponent.java" startLine="135" startPosition="27" endLine="136" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3081435682357913557" fileName="InTextPositionComponent.java" startLine="138" startPosition="64" endLine="139" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3081435682357913559" fileName="InTextPositionComponent.java" startLine="140" startPosition="5" endLine="141" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3081435682357913567" fileName="InTextPositionComponent.java" startLine="141" startPosition="84" endLine="142" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3081435682357913574" fileName="InTextPositionComponent.java" startLine="142" startPosition="111" endLine="143" endPosition="196" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3081435682357913597" fileName="InTextPositionComponent.java" startLine="144" startPosition="58" endLine="145" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3081435682357915989" fileName="InTextPositionComponent.java" startLine="146" startPosition="5" endLine="147" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3081435682357901090" fileName="InTextPositionComponent.java" startLine="155" startPosition="58" endLine="156" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3081435682357912424" fileName="InTextPositionComponent.java" startLine="160" startPosition="69" endLine="161" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3081435682357912481" fileName="InTextPositionComponent.java" startLine="165" startPosition="56" endLine="166" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3081435682357901117" fileName="InTextPositionComponent.java" startLine="166" startPosition="22" endLine="167" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3081435682357900955" fileName="InTextPositionComponent.java" startLine="176" startPosition="60" endLine="177" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3081435682357900965" fileName="InTextPositionComponent.java" startLine="181" startPosition="54" endLine="182" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3081435682357900975" fileName="InTextPositionComponent.java" startLine="186" startPosition="55" endLine="187" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3081435682357901080" fileName="InTextPositionComponent.java" startLine="150" startPosition="108" endLine="152" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MyCurrentDebugSessionListener#()V" />
-    <nodeInfo nodeId="3081435682357900945" fileName="InTextPositionComponent.java" startLine="171" startPosition="70" endLine="173" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MySessionChangeListener#()V" />
-    <nodeInfo nodeId="3081435682357896888" fileName="InTextPositionComponent.java" startLine="39" startPosition="0" endLine="42" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="InTextPositionComponent#(Lcom/intellij/openapi/project/Project;)V" />
-    <nodeInfo nodeId="3081435682357900886" fileName="InTextPositionComponent.java" startLine="43" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="projectOpened#()V" />
-    <nodeInfo nodeId="3081435682357900890" fileName="InTextPositionComponent.java" startLine="46" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="projectClosed#()V" />
-    <nodeInfo nodeId="3081435682357952248" fileName="InTextPositionComponent.java" startLine="80" startPosition="74" endLine="83" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4475430585170123298" fileName="InTextPositionComponent.java" startLine="87" startPosition="52" endLine="90" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4475430585170133649" fileName="InTextPositionComponent.java" startLine="97" startPosition="132" endLine="100" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3081435682357912707" fileName="InTextPositionComponent.java" startLine="122" startPosition="108" endLine="125" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3081435682357916114" fileName="InTextPositionComponent.java" startLine="134" startPosition="85" endLine="137" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3081435682357913546" fileName="InTextPositionComponent.java" startLine="137" startPosition="5" endLine="140" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3081435682357913591" fileName="InTextPositionComponent.java" startLine="143" startPosition="196" endLine="146" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3081435682357912386" fileName="InTextPositionComponent.java" startLine="65" startPosition="0" endLine="69" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getCurrentSession#()Ljetbrains/mps/debug/api/AbstractDebugSession;" />
-    <nodeInfo nodeId="3081435682357912407" fileName="InTextPositionComponent.java" startLine="69" startPosition="0" endLine="73" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="currentSessionChanged#(Ljetbrains/mps/debug/api/AbstractDebugSession;)V" />
-    <nodeInfo nodeId="4475430585170133626" fileName="InTextPositionComponent.java" startLine="101" startPosition="68" endLine="105" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="3081435682357900894" fileName="InTextPositionComponent.java" startLine="49" startPosition="0" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="initComponent#()V" />
-    <nodeInfo nodeId="3081435682357900898" fileName="InTextPositionComponent.java" startLine="54" startPosition="0" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="disposeComponent#()V" />
-    <nodeInfo nodeId="3081435682357912456" fileName="InTextPositionComponent.java" startLine="73" startPosition="0" endLine="78" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="reAttachPainter#(Ljetbrains/mps/debug/api/AbstractDebugSession;)V" />
-    <nodeInfo nodeId="4475430585170123363" fileName="InTextPositionComponent.java" startLine="100" startPosition="5" endLine="105" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3081435682357952475" fileName="InTextPositionComponent.java" startLine="108" startPosition="31" endLine="113" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3081435682357901084" fileName="InTextPositionComponent.java" startLine="153" startPosition="0" endLine="158" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="registered#(Ljetbrains/mps/debug/api/AbstractDebugSession;)V" />
-    <nodeInfo nodeId="3081435682357901096" fileName="InTextPositionComponent.java" startLine="158" startPosition="0" endLine="163" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="currentSessionChanged#(Ljetbrains/mps/debug/api/AbstractDebugSession;)V" />
-    <nodeInfo nodeId="3081435682357900949" fileName="InTextPositionComponent.java" startLine="174" startPosition="0" endLine="179" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="stateChanged#(Ljetbrains/mps/debug/api/AbstractDebugSession;)V" />
-    <nodeInfo nodeId="3081435682357900959" fileName="InTextPositionComponent.java" startLine="179" startPosition="0" endLine="184" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="paused#(Ljetbrains/mps/debug/api/AbstractDebugSession;)V" />
-    <nodeInfo nodeId="3081435682357900969" fileName="InTextPositionComponent.java" startLine="184" startPosition="0" endLine="189" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="resumed#(Ljetbrains/mps/debug/api/AbstractDebugSession;)V" />
-    <nodeInfo nodeId="3081435682357900902" fileName="InTextPositionComponent.java" startLine="59" startPosition="0" endLine="65" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getComponentName#()Ljava/lang/String;" />
-    <nodeInfo nodeId="3081435682357912737" fileName="InTextPositionComponent.java" startLine="120" startPosition="52" endLine="126" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3081435682357901108" fileName="InTextPositionComponent.java" startLine="163" startPosition="0" endLine="169" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="detached#(Ljetbrains/mps/debug/api/AbstractDebugSession;)V" />
-    <nodeInfo nodeId="4475430585170123325" fileName="InTextPositionComponent.java" startLine="85" startPosition="45" endLine="92" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#()V" />
-    <nodeInfo nodeId="4475430585170123324" fileName="InTextPositionComponent.java" startLine="84" startPosition="0" endLine="92" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3081435682357912468" fileName="InTextPositionComponent.java" startLine="107" startPosition="0" endLine="115" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="detachPainter#()V" />
-    <nodeInfo nodeId="3081435682357912511" fileName="InTextPositionComponent.java" startLine="118" startPosition="66" endLine="127" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3081435682357952814" fileName="InTextPositionComponent.java" startLine="94" startPosition="0" endLine="107" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="attachPainter#(Ljetbrains/mps/debug/api/AbstractDebugSession;)V" />
-    <nodeInfo nodeId="3081435682357912496" fileName="InTextPositionComponent.java" startLine="115" startPosition="0" endLine="130" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getLocation#(Ljetbrains/mps/debug/api/AbstractDebugSession;)Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_2;" />
-    <nodeInfo nodeId="3081435682357952221" fileName="InTextPositionComponent.java" startLine="78" startPosition="0" endLine="94" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="attachPainterRunnable#(Ljetbrains/mps/debug/api/AbstractDebugSession;Z)Ljetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_void_P0_E0;" />
-    <nodeInfo nodeId="3081435682357913513" fileName="InTextPositionComponent.java" startLine="130" startPosition="0" endLine="149" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createHighlighter#(Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_2;)Lcom/intellij/openapi/editor/markup/RangeHighlighter;" />
-    <scopeInfo nodeId="3081435682357900889" fileName="InTextPositionComponent.java" startLine="44" startPosition="31" endLine="44" endPosition="31" />
-    <scopeInfo nodeId="3081435682357900893" fileName="InTextPositionComponent.java" startLine="47" startPosition="31" endLine="47" endPosition="31" />
-    <scopeInfo nodeId="3081435682357901083" fileName="InTextPositionComponent.java" startLine="151" startPosition="45" endLine="151" endPosition="45" />
-    <scopeInfo nodeId="3081435682357900948" fileName="InTextPositionComponent.java" startLine="172" startPosition="39" endLine="172" endPosition="39" />
-    <scopeInfo nodeId="3081435682357896891" fileName="InTextPositionComponent.java" startLine="40" startPosition="51" endLine="41" endPosition="24" />
-    <scopeInfo nodeId="3081435682357900907" fileName="InTextPositionComponent.java" startLine="62" startPosition="36" endLine="63" endPosition="37" />
-    <scopeInfo nodeId="3081435682357912389" fileName="InTextPositionComponent.java" startLine="66" startPosition="54" endLine="67" endPosition="100" />
-    <scopeInfo nodeId="3081435682357912410" fileName="InTextPositionComponent.java" startLine="70" startPosition="67" endLine="71" endPosition="29" />
-    <scopeInfo nodeId="3081435682357952249" fileName="InTextPositionComponent.java" startLine="81" startPosition="27" endLine="82" endPosition="18" />
-    <scopeInfo nodeId="4475430585170123299" fileName="InTextPositionComponent.java" startLine="88" startPosition="19" endLine="89" endPosition="79" />
-    <scopeInfo nodeId="4475430585170133650" fileName="InTextPositionComponent.java" startLine="98" startPosition="27" endLine="99" endPosition="13" />
-    <scopeInfo nodeId="4475430585170133629" fileName="InTextPositionComponent.java" startLine="102" startPosition="25" endLine="103" endPosition="26" />
-    <scopeInfo nodeId="3081435682357912708" fileName="InTextPositionComponent.java" startLine="123" startPosition="27" endLine="124" endPosition="86" />
-    <scopeInfo nodeId="3081435682357916115" fileName="InTextPositionComponent.java" startLine="135" startPosition="27" endLine="136" endPosition="18" />
-    <scopeInfo nodeId="3081435682357913556" fileName="InTextPositionComponent.java" startLine="138" startPosition="64" endLine="139" endPosition="18" />
-    <scopeInfo nodeId="3081435682357913596" fileName="InTextPositionComponent.java" startLine="144" startPosition="58" endLine="145" endPosition="18" />
-    <scopeInfo nodeId="3081435682357901089" fileName="InTextPositionComponent.java" startLine="155" startPosition="58" endLine="156" endPosition="50" />
-    <scopeInfo nodeId="3081435682357901101" fileName="InTextPositionComponent.java" startLine="160" startPosition="69" endLine="161" endPosition="66" />
-    <scopeInfo nodeId="3081435682357900954" fileName="InTextPositionComponent.java" startLine="176" startPosition="60" endLine="177" endPosition="31" />
-    <scopeInfo nodeId="3081435682357900964" fileName="InTextPositionComponent.java" startLine="181" startPosition="54" endLine="182" endPosition="31" />
-    <scopeInfo nodeId="3081435682357900974" fileName="InTextPositionComponent.java" startLine="186" startPosition="55" endLine="187" endPosition="22" />
-    <scopeInfo nodeId="3081435682357900897" fileName="InTextPositionComponent.java" startLine="50" startPosition="31" endLine="52" endPosition="69">
+    <nodeInfo nodeId="3081435682357900929" fileName="InTextPositionComponent.java" startLine="29" startPosition="66" endLine="30" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myChangeListener" />
+    <nodeInfo nodeId="3081435682357900934" fileName="InTextPositionComponent.java" startLine="30" startPosition="111" endLine="31" endPosition="158" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCurrentDebugSessionListener" />
+    <nodeInfo nodeId="3081435682357912341" fileName="InTextPositionComponent.java" startLine="31" startPosition="158" endLine="32" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myProject" />
+    <nodeInfo nodeId="3081435682357952433" fileName="InTextPositionComponent.java" startLine="32" startPosition="34" endLine="33" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myHighlighter" />
+    <nodeInfo nodeId="3081435682357912347" fileName="InTextPositionComponent.java" startLine="35" startPosition="51" endLine="36" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3081435682357901127" fileName="InTextPositionComponent.java" startLine="45" startPosition="31" endLine="46" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3081435682357901134" fileName="InTextPositionComponent.java" startLine="46" startPosition="104" endLine="47" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3081435682357912366" fileName="InTextPositionComponent.java" startLine="50" startPosition="34" endLine="51" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3081435682357912373" fileName="InTextPositionComponent.java" startLine="51" startPosition="104" endLine="52" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3081435682357900911" fileName="InTextPositionComponent.java" startLine="57" startPosition="36" endLine="58" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3081435682357912390" fileName="InTextPositionComponent.java" startLine="61" startPosition="54" endLine="62" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3081435682357952598" fileName="InTextPositionComponent.java" startLine="65" startPosition="67" endLine="66" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2053776437919293698" fileName="InTextPositionComponent.java" startLine="69" startPosition="61" endLine="70" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2053776437919293713" fileName="InTextPositionComponent.java" startLine="70" startPosition="70" endLine="71" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2053776437919293814" fileName="InTextPositionComponent.java" startLine="74" startPosition="27" endLine="75" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2053776437919294121" fileName="InTextPositionComponent.java" startLine="75" startPosition="46" endLine="76" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2053776437919293723" fileName="InTextPositionComponent.java" startLine="78" startPosition="9" endLine="79" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="4891781523060234279" fileName="InTextPositionComponent.java" startLine="84" startPosition="26" endLine="85" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4891781523060234278" fileName="InTextPositionComponent.java" startLine="86" startPosition="5" endLine="87" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="3081435682357952239" fileName="InTextPositionComponent.java" startLine="87" startPosition="0" endLine="88" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3081435682357952277" fileName="InTextPositionComponent.java" startLine="89" startPosition="27" endLine="90" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4475430585170123327" fileName="InTextPositionComponent.java" startLine="91" startPosition="5" endLine="92" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="3081435682357952447" fileName="InTextPositionComponent.java" startLine="94" startPosition="28" endLine="95" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3081435682357952727" fileName="InTextPositionComponent.java" startLine="96" startPosition="19" endLine="97" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3081435682357952949" fileName="InTextPositionComponent.java" startLine="103" startPosition="90" endLine="104" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2053776437919293697" fileName="InTextPositionComponent.java" startLine="104" startPosition="62" endLine="105" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2053776437919293663" fileName="InTextPositionComponent.java" startLine="108" startPosition="31" endLine="109" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2053776437919293673" fileName="InTextPositionComponent.java" startLine="110" startPosition="27" endLine="111" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2053776437919293689" fileName="InTextPositionComponent.java" startLine="114" startPosition="25" endLine="115" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2053776437919293624" fileName="InTextPositionComponent.java" startLine="123" startPosition="30" endLine="124" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2053776437919293628" fileName="InTextPositionComponent.java" startLine="124" startPosition="55" endLine="125" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2053776437919293632" fileName="InTextPositionComponent.java" startLine="125" startPosition="31" endLine="126" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2053776437919293657" fileName="InTextPositionComponent.java" startLine="129" startPosition="5" endLine="130" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3081435682357912503" fileName="InTextPositionComponent.java" startLine="134" startPosition="71" endLine="135" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4701043456212940133" fileName="InTextPositionComponent.java" startLine="136" startPosition="29" endLine="137" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4701043456212941446" fileName="InTextPositionComponent.java" startLine="138" startPosition="51" endLine="139" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3081435682357912703" fileName="InTextPositionComponent.java" startLine="141" startPosition="5" endLine="142" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3081435682357916092" fileName="InTextPositionComponent.java" startLine="146" startPosition="74" endLine="147" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3081435682357916143" fileName="InTextPositionComponent.java" startLine="148" startPosition="27" endLine="149" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3081435682357913557" fileName="InTextPositionComponent.java" startLine="151" startPosition="94" endLine="152" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3750828679477962252" fileName="InTextPositionComponent.java" startLine="153" startPosition="5" endLine="154" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="3750828679477962246" fileName="InTextPositionComponent.java" startLine="154" startPosition="0" endLine="155" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4917940203194277554" fileName="InTextPositionComponent.java" startLine="155" startPosition="53" endLine="156" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4917940203194290182" fileName="InTextPositionComponent.java" startLine="156" startPosition="47" endLine="157" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3750828679477962253" fileName="InTextPositionComponent.java" startLine="157" startPosition="46" endLine="158" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="3081435682357913574" fileName="InTextPositionComponent.java" startLine="158" startPosition="0" endLine="159" endPosition="215" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3081435682357913597" fileName="InTextPositionComponent.java" startLine="160" startPosition="58" endLine="161" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3081435682357915989" fileName="InTextPositionComponent.java" startLine="162" startPosition="5" endLine="163" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2053776437919294109" fileName="InTextPositionComponent.java" startLine="167" startPosition="36" endLine="168" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2053776437919294109" fileName="InTextPositionComponent.java" startLine="169" startPosition="5" endLine="170" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="2053776437919294150" fileName="InTextPositionComponent.java" startLine="174" startPosition="36" endLine="175" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2053776437919294150" fileName="InTextPositionComponent.java" startLine="176" startPosition="5" endLine="177" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="3081435682357901090" fileName="InTextPositionComponent.java" startLine="185" startPosition="58" endLine="186" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3081435682357912424" fileName="InTextPositionComponent.java" startLine="190" startPosition="69" endLine="191" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3081435682357912481" fileName="InTextPositionComponent.java" startLine="195" startPosition="56" endLine="196" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3081435682357901117" fileName="InTextPositionComponent.java" startLine="196" startPosition="22" endLine="197" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3081435682357900955" fileName="InTextPositionComponent.java" startLine="206" startPosition="60" endLine="207" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3081435682357900965" fileName="InTextPositionComponent.java" startLine="211" startPosition="54" endLine="212" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3081435682357900975" fileName="InTextPositionComponent.java" startLine="216" startPosition="55" endLine="217" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3081435682357901080" fileName="InTextPositionComponent.java" startLine="180" startPosition="108" endLine="182" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MyCurrentDebugSessionListener#()V" />
+    <nodeInfo nodeId="3081435682357900945" fileName="InTextPositionComponent.java" startLine="201" startPosition="70" endLine="203" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MySessionChangeListener#()V" />
+    <nodeInfo nodeId="3081435682357896888" fileName="InTextPositionComponent.java" startLine="34" startPosition="0" endLine="37" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="InTextPositionComponent#(Lcom/intellij/openapi/project/Project;)V" />
+    <nodeInfo nodeId="3081435682357900886" fileName="InTextPositionComponent.java" startLine="38" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="projectOpened#()V" />
+    <nodeInfo nodeId="3081435682357900890" fileName="InTextPositionComponent.java" startLine="41" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="projectClosed#()V" />
+    <nodeInfo nodeId="4891781523060234247" fileName="InTextPositionComponent.java" startLine="83" startPosition="110" endLine="86" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3081435682357952248" fileName="InTextPositionComponent.java" startLine="88" startPosition="61" endLine="91" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4475430585170123298" fileName="InTextPositionComponent.java" startLine="95" startPosition="52" endLine="98" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2053776437919293671" fileName="InTextPositionComponent.java" startLine="109" startPosition="72" endLine="112" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4701043456212940148" fileName="InTextPositionComponent.java" startLine="137" startPosition="130" endLine="140" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3081435682357916114" fileName="InTextPositionComponent.java" startLine="147" startPosition="90" endLine="150" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3081435682357913546" fileName="InTextPositionComponent.java" startLine="150" startPosition="5" endLine="153" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3081435682357913591" fileName="InTextPositionComponent.java" startLine="159" startPosition="215" endLine="162" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2053776437919294109" fileName="InTextPositionComponent.java" startLine="166" startPosition="97" endLine="169" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2053776437919294150" fileName="InTextPositionComponent.java" startLine="173" startPosition="97" endLine="176" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3081435682357912386" fileName="InTextPositionComponent.java" startLine="60" startPosition="0" endLine="64" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getCurrentSession#()Ljetbrains/mps/debug/api/AbstractDebugSession;" />
+    <nodeInfo nodeId="3081435682357912407" fileName="InTextPositionComponent.java" startLine="64" startPosition="0" endLine="68" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="currentSessionChanged#(Ljetbrains/mps/debug/api/AbstractDebugSession;)V" />
+    <nodeInfo nodeId="2053776437919293685" fileName="InTextPositionComponent.java" startLine="113" startPosition="68" endLine="117" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="3081435682357900894" fileName="InTextPositionComponent.java" startLine="44" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="initComponent#()V" />
+    <nodeInfo nodeId="3081435682357900898" fileName="InTextPositionComponent.java" startLine="49" startPosition="0" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="disposeComponent#()V" />
+    <nodeInfo nodeId="2053776437919293806" fileName="InTextPositionComponent.java" startLine="73" startPosition="70" endLine="78" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="3081435682357952814" fileName="InTextPositionComponent.java" startLine="102" startPosition="0" endLine="107" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="attachPainterRunnable#(Ljetbrains/mps/debug/api/AbstractDebugSession;)Ljetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_void_P0_E0;" />
+    <nodeInfo nodeId="2053776437919293677" fileName="InTextPositionComponent.java" startLine="112" startPosition="5" endLine="117" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3081435682357901084" fileName="InTextPositionComponent.java" startLine="183" startPosition="0" endLine="188" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="registered#(Ljetbrains/mps/debug/api/AbstractDebugSession;)V" />
+    <nodeInfo nodeId="3081435682357901096" fileName="InTextPositionComponent.java" startLine="188" startPosition="0" endLine="193" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="currentSessionChanged#(Ljetbrains/mps/debug/api/AbstractDebugSession;)V" />
+    <nodeInfo nodeId="3081435682357900949" fileName="InTextPositionComponent.java" startLine="204" startPosition="0" endLine="209" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="stateChanged#(Ljetbrains/mps/debug/api/AbstractDebugSession;)V" />
+    <nodeInfo nodeId="3081435682357900959" fileName="InTextPositionComponent.java" startLine="209" startPosition="0" endLine="214" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="paused#(Ljetbrains/mps/debug/api/AbstractDebugSession;)V" />
+    <nodeInfo nodeId="3081435682357900969" fileName="InTextPositionComponent.java" startLine="214" startPosition="0" endLine="219" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="resumed#(Ljetbrains/mps/debug/api/AbstractDebugSession;)V" />
+    <nodeInfo nodeId="3081435682357900902" fileName="InTextPositionComponent.java" startLine="54" startPosition="0" endLine="60" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getComponentName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="2053776437919293798" fileName="InTextPositionComponent.java" startLine="72" startPosition="43" endLine="78" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2053776437919293654" fileName="InTextPositionComponent.java" startLine="122" startPosition="47" endLine="128" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#()V" />
+    <nodeInfo nodeId="3081435682357912511" fileName="InTextPositionComponent.java" startLine="135" startPosition="66" endLine="141" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3081435682357901108" fileName="InTextPositionComponent.java" startLine="193" startPosition="0" endLine="199" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="detached#(Ljetbrains/mps/debug/api/AbstractDebugSession;)V" />
+    <nodeInfo nodeId="4475430585170123325" fileName="InTextPositionComponent.java" startLine="93" startPosition="45" endLine="100" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#()V" />
+    <nodeInfo nodeId="2053776437919293652" fileName="InTextPositionComponent.java" startLine="121" startPosition="32" endLine="128" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2053776437919294109" fileName="InTextPositionComponent.java" startLine="165" startPosition="0" endLine="172" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_uzwzqp_a0a0a0a0a0a2a7#(Ljetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_void_P0_E0;)V" />
+    <nodeInfo nodeId="2053776437919294150" fileName="InTextPositionComponent.java" startLine="172" startPosition="0" endLine="179" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_uzwzqp_a1a0a0a0a0a2a7#(Ljetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_void_P0_E0;)V" />
+    <nodeInfo nodeId="4475430585170123324" fileName="InTextPositionComponent.java" startLine="92" startPosition="0" endLine="100" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2053776437919293721" fileName="InTextPositionComponent.java" startLine="71" startPosition="77" endLine="80" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2053776437919293619" fileName="InTextPositionComponent.java" startLine="120" startPosition="61" endLine="129" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3081435682357912468" fileName="InTextPositionComponent.java" startLine="107" startPosition="0" endLine="119" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="detachPainter#()V" />
+    <nodeInfo nodeId="3081435682357912496" fileName="InTextPositionComponent.java" startLine="132" startPosition="0" endLine="144" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getLocation#(Ljetbrains/mps/debug/api/AbstractDebugSession;)Ljetbrains/mps/debug/api/source/TextSourcePosition;" />
+    <nodeInfo nodeId="2053776437919293615" fileName="InTextPositionComponent.java" startLine="119" startPosition="0" endLine="132" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="detachPainterRunnable#()Ljetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_void_P0_E0;" />
+    <nodeInfo nodeId="3081435682357912456" fileName="InTextPositionComponent.java" startLine="68" startPosition="0" endLine="82" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="reAttachPainter#(Ljetbrains/mps/debug/api/AbstractDebugSession;)V" />
+    <nodeInfo nodeId="3081435682357952221" fileName="InTextPositionComponent.java" startLine="82" startPosition="0" endLine="102" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="attachPainterRunnable#(Ljetbrains/mps/debug/api/AbstractDebugSession;Z)Ljetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_void_P0_E0;" />
+    <nodeInfo nodeId="3081435682357913513" fileName="InTextPositionComponent.java" startLine="144" startPosition="0" endLine="165" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createHighlighter#(Ljetbrains/mps/debug/api/source/TextSourcePosition;)Lcom/intellij/openapi/editor/markup/RangeHighlighter;" />
+    <scopeInfo nodeId="3081435682357900889" fileName="InTextPositionComponent.java" startLine="39" startPosition="31" endLine="39" endPosition="31" />
+    <scopeInfo nodeId="3081435682357900893" fileName="InTextPositionComponent.java" startLine="42" startPosition="31" endLine="42" endPosition="31" />
+    <scopeInfo nodeId="3081435682357901083" fileName="InTextPositionComponent.java" startLine="181" startPosition="45" endLine="181" endPosition="45" />
+    <scopeInfo nodeId="3081435682357900948" fileName="InTextPositionComponent.java" startLine="202" startPosition="39" endLine="202" endPosition="39" />
+    <scopeInfo nodeId="3081435682357896891" fileName="InTextPositionComponent.java" startLine="35" startPosition="51" endLine="36" endPosition="24" />
+    <scopeInfo nodeId="3081435682357900907" fileName="InTextPositionComponent.java" startLine="57" startPosition="36" endLine="58" endPosition="37" />
+    <scopeInfo nodeId="3081435682357912389" fileName="InTextPositionComponent.java" startLine="61" startPosition="54" endLine="62" endPosition="100" />
+    <scopeInfo nodeId="3081435682357912410" fileName="InTextPositionComponent.java" startLine="65" startPosition="67" endLine="66" endPosition="29" />
+    <scopeInfo nodeId="4891781523060234248" fileName="InTextPositionComponent.java" startLine="84" startPosition="26" endLine="85" endPosition="18" />
+    <scopeInfo nodeId="3081435682357952249" fileName="InTextPositionComponent.java" startLine="89" startPosition="27" endLine="90" endPosition="18" />
+    <scopeInfo nodeId="4475430585170123299" fileName="InTextPositionComponent.java" startLine="96" startPosition="19" endLine="97" endPosition="89" />
+    <scopeInfo nodeId="2053776437919293672" fileName="InTextPositionComponent.java" startLine="110" startPosition="27" endLine="111" endPosition="13" />
+    <scopeInfo nodeId="2053776437919293688" fileName="InTextPositionComponent.java" startLine="114" startPosition="25" endLine="115" endPosition="26" />
+    <scopeInfo nodeId="4701043456212940149" fileName="InTextPositionComponent.java" startLine="138" startPosition="51" endLine="139" endPosition="47" />
+    <scopeInfo nodeId="3081435682357916115" fileName="InTextPositionComponent.java" startLine="148" startPosition="27" endLine="149" endPosition="18" />
+    <scopeInfo nodeId="3081435682357913556" fileName="InTextPositionComponent.java" startLine="151" startPosition="94" endLine="152" endPosition="18" />
+    <scopeInfo nodeId="3081435682357913596" fileName="InTextPositionComponent.java" startLine="160" startPosition="58" endLine="161" endPosition="18" />
+    <scopeInfo nodeId="2053776437919294109" fileName="InTextPositionComponent.java" startLine="167" startPosition="36" endLine="168" endPosition="33" />
+    <scopeInfo nodeId="2053776437919294150" fileName="InTextPositionComponent.java" startLine="174" startPosition="36" endLine="175" endPosition="33" />
+    <scopeInfo nodeId="3081435682357901089" fileName="InTextPositionComponent.java" startLine="185" startPosition="58" endLine="186" endPosition="50" />
+    <scopeInfo nodeId="3081435682357901101" fileName="InTextPositionComponent.java" startLine="190" startPosition="69" endLine="191" endPosition="66" />
+    <scopeInfo nodeId="3081435682357900954" fileName="InTextPositionComponent.java" startLine="206" startPosition="60" endLine="207" endPosition="31" />
+    <scopeInfo nodeId="3081435682357900964" fileName="InTextPositionComponent.java" startLine="211" startPosition="54" endLine="212" endPosition="31" />
+    <scopeInfo nodeId="3081435682357900974" fileName="InTextPositionComponent.java" startLine="216" startPosition="55" endLine="217" endPosition="22" />
+    <scopeInfo nodeId="3081435682357900897" fileName="InTextPositionComponent.java" startLine="45" startPosition="31" endLine="47" endPosition="69">
       <varInfo nodeId="3081435682357901128" varName="component" />
     </scopeInfo>
-    <scopeInfo nodeId="3081435682357900901" fileName="InTextPositionComponent.java" startLine="55" startPosition="34" endLine="57" endPosition="72">
+    <scopeInfo nodeId="3081435682357900901" fileName="InTextPositionComponent.java" startLine="50" startPosition="34" endLine="52" endPosition="72">
       <varInfo nodeId="3081435682357912367" varName="component" />
     </scopeInfo>
-    <scopeInfo nodeId="3081435682357912459" fileName="InTextPositionComponent.java" startLine="74" startPosition="61" endLine="76" endPosition="27" />
-    <scopeInfo nodeId="3081435682357901080" fileName="InTextPositionComponent.java" startLine="150" startPosition="108" endLine="152" endPosition="5" />
-    <scopeInfo nodeId="3081435682357901113" fileName="InTextPositionComponent.java" startLine="165" startPosition="56" endLine="167" endPosition="53" />
-    <scopeInfo nodeId="3081435682357900945" fileName="InTextPositionComponent.java" startLine="171" startPosition="70" endLine="173" endPosition="5" />
-    <scopeInfo nodeId="3081435682357896888" fileName="InTextPositionComponent.java" startLine="39" startPosition="0" endLine="42" endPosition="3">
+    <scopeInfo nodeId="2053776437919293809" fileName="InTextPositionComponent.java" startLine="74" startPosition="27" endLine="76" endPosition="46" />
+    <scopeInfo nodeId="3081435682357952817" fileName="InTextPositionComponent.java" startLine="103" startPosition="90" endLine="105" endPosition="95">
+      <varInfo nodeId="3081435682357952950" varName="currentSession" />
+    </scopeInfo>
+    <scopeInfo nodeId="3081435682357901080" fileName="InTextPositionComponent.java" startLine="180" startPosition="108" endLine="182" endPosition="5" />
+    <scopeInfo nodeId="3081435682357901113" fileName="InTextPositionComponent.java" startLine="195" startPosition="56" endLine="197" endPosition="53" />
+    <scopeInfo nodeId="3081435682357900945" fileName="InTextPositionComponent.java" startLine="201" startPosition="70" endLine="203" endPosition="5" />
+    <scopeInfo nodeId="3081435682357896888" fileName="InTextPositionComponent.java" startLine="34" startPosition="0" endLine="37" endPosition="3">
       <varInfo nodeId="3081435682357912339" varName="project" />
     </scopeInfo>
-    <scopeInfo nodeId="3081435682357900886" fileName="InTextPositionComponent.java" startLine="43" startPosition="0" endLine="46" endPosition="0" />
-    <scopeInfo nodeId="3081435682357900890" fileName="InTextPositionComponent.java" startLine="46" startPosition="0" endLine="49" endPosition="0" />
-    <scopeInfo nodeId="3081435682357952477" fileName="InTextPositionComponent.java" startLine="109" startPosition="32" endLine="112" endPosition="28">
-      <varInfo nodeId="3081435682357952535" varName="highlighter" />
+    <scopeInfo nodeId="3081435682357900886" fileName="InTextPositionComponent.java" startLine="38" startPosition="0" endLine="41" endPosition="0" />
+    <scopeInfo nodeId="3081435682357900890" fileName="InTextPositionComponent.java" startLine="41" startPosition="0" endLine="44" endPosition="0" />
+    <scopeInfo nodeId="2053776437919293655" fileName="InTextPositionComponent.java" startLine="123" startPosition="30" endLine="126" endPosition="32">
+      <varInfo nodeId="2053776437919293625" varName="highlighter" />
     </scopeInfo>
-    <scopeInfo nodeId="3081435682357912386" fileName="InTextPositionComponent.java" startLine="65" startPosition="0" endLine="69" endPosition="0" />
-    <scopeInfo nodeId="3081435682357912407" fileName="InTextPositionComponent.java" startLine="69" startPosition="0" endLine="73" endPosition="0">
+    <scopeInfo nodeId="3081435682357912386" fileName="InTextPositionComponent.java" startLine="60" startPosition="0" endLine="64" endPosition="0" />
+    <scopeInfo nodeId="3081435682357912407" fileName="InTextPositionComponent.java" startLine="64" startPosition="0" endLine="68" endPosition="0">
       <varInfo nodeId="3081435682357912414" varName="session" />
     </scopeInfo>
-    <scopeInfo nodeId="4475430585170123326" fileName="InTextPositionComponent.java" startLine="86" startPosition="28" endLine="90" endPosition="9" />
-    <scopeInfo nodeId="4475430585170133626" fileName="InTextPositionComponent.java" startLine="101" startPosition="68" endLine="105" endPosition="0" />
-    <scopeInfo nodeId="3081435682357912738" fileName="InTextPositionComponent.java" startLine="121" startPosition="48" endLine="125" endPosition="9">
-      <varInfo nodeId="3081435682357912656" varName="file" />
+    <scopeInfo nodeId="4475430585170123326" fileName="InTextPositionComponent.java" startLine="94" startPosition="28" endLine="98" endPosition="9" />
+    <scopeInfo nodeId="2053776437919293685" fileName="InTextPositionComponent.java" startLine="113" startPosition="68" endLine="117" endPosition="0" />
+    <scopeInfo nodeId="3081435682357912515" fileName="InTextPositionComponent.java" startLine="136" startPosition="29" endLine="140" endPosition="7">
+      <varInfo nodeId="4701043456212940134" varName="position" />
     </scopeInfo>
-    <scopeInfo nodeId="3081435682357900894" fileName="InTextPositionComponent.java" startLine="49" startPosition="0" endLine="54" endPosition="0" />
-    <scopeInfo nodeId="3081435682357900898" fileName="InTextPositionComponent.java" startLine="54" startPosition="0" endLine="59" endPosition="0" />
-    <scopeInfo nodeId="3081435682357912456" fileName="InTextPositionComponent.java" startLine="73" startPosition="0" endLine="78" endPosition="0">
-      <varInfo nodeId="3081435682357912463" varName="session" />
-    </scopeInfo>
-    <scopeInfo nodeId="3081435682357912471" fileName="InTextPositionComponent.java" startLine="108" startPosition="31" endLine="113" endPosition="5" />
-    <scopeInfo nodeId="3081435682357901084" fileName="InTextPositionComponent.java" startLine="153" startPosition="0" endLine="158" endPosition="0">
-      <varInfo nodeId="3081435682357901087" varName="session" />
-    </scopeInfo>
-    <scopeInfo nodeId="3081435682357901096" fileName="InTextPositionComponent.java" startLine="158" startPosition="0" endLine="163" endPosition="0">
-      <varInfo nodeId="3081435682357901099" varName="session" />
-    </scopeInfo>
-    <scopeInfo nodeId="3081435682357900949" fileName="InTextPositionComponent.java" startLine="174" startPosition="0" endLine="179" endPosition="0">
-      <varInfo nodeId="3081435682357900952" varName="session" />
-    </scopeInfo>
-    <scopeInfo nodeId="3081435682357900959" fileName="InTextPositionComponent.java" startLine="179" startPosition="0" endLine="184" endPosition="0">
-      <varInfo nodeId="3081435682357900962" varName="session" />
-    </scopeInfo>
-    <scopeInfo nodeId="3081435682357900969" fileName="InTextPositionComponent.java" startLine="184" startPosition="0" endLine="189" endPosition="0">
-      <varInfo nodeId="3081435682357900972" varName="session" />
-    </scopeInfo>
-    <scopeInfo nodeId="3081435682357900902" fileName="InTextPositionComponent.java" startLine="59" startPosition="0" endLine="65" endPosition="0" />
-    <scopeInfo nodeId="3081435682357901108" fileName="InTextPositionComponent.java" startLine="163" startPosition="0" endLine="169" endPosition="0">
-      <varInfo nodeId="3081435682357901111" varName="session" />
-    </scopeInfo>
-    <scopeInfo nodeId="4475430585170123325" fileName="InTextPositionComponent.java" startLine="85" startPosition="45" endLine="92" endPosition="0" />
-    <scopeInfo nodeId="3081435682357912515" fileName="InTextPositionComponent.java" startLine="119" startPosition="29" endLine="126" endPosition="7">
-      <varInfo nodeId="3081435682357912517" varName="location" />
-    </scopeInfo>
-    <scopeInfo nodeId="3081435682357912468" fileName="InTextPositionComponent.java" startLine="107" startPosition="0" endLine="115" endPosition="0" />
-    <scopeInfo nodeId="3081435682357952817" fileName="InTextPositionComponent.java" startLine="95" startPosition="60" endLine="105" endPosition="7">
-      <varInfo nodeId="3081435682357952950" varName="currentSession" />
-      <varInfo nodeId="4475430585170133631" varName="runnable" />
-    </scopeInfo>
-    <scopeInfo nodeId="3081435682357912499" fileName="InTextPositionComponent.java" startLine="117" startPosition="84" endLine="128" endPosition="16">
-      <varInfo nodeId="3081435682357912504" varName="stackFrame" />
-    </scopeInfo>
-    <scopeInfo nodeId="3081435682357952224" fileName="InTextPositionComponent.java" startLine="79" startPosition="110" endLine="92" endPosition="6">
-      <varInfo nodeId="3081435682357952240" varName="location" />
-    </scopeInfo>
-    <scopeInfo nodeId="3081435682357952814" fileName="InTextPositionComponent.java" startLine="94" startPosition="0" endLine="107" endPosition="0">
+    <scopeInfo nodeId="2053776437919294109" fileName="InTextPositionComponent.java" startLine="166" startPosition="97" endLine="170" endPosition="0" />
+    <scopeInfo nodeId="2053776437919294150" fileName="InTextPositionComponent.java" startLine="173" startPosition="97" endLine="177" endPosition="0" />
+    <scopeInfo nodeId="3081435682357900894" fileName="InTextPositionComponent.java" startLine="44" startPosition="0" endLine="49" endPosition="0" />
+    <scopeInfo nodeId="3081435682357900898" fileName="InTextPositionComponent.java" startLine="49" startPosition="0" endLine="54" endPosition="0" />
+    <scopeInfo nodeId="2053776437919293806" fileName="InTextPositionComponent.java" startLine="73" startPosition="70" endLine="78" endPosition="0" />
+    <scopeInfo nodeId="3081435682357952814" fileName="InTextPositionComponent.java" startLine="102" startPosition="0" endLine="107" endPosition="0">
       <varInfo nodeId="3081435682357952845" varName="session" />
     </scopeInfo>
-    <scopeInfo nodeId="3081435682357912496" fileName="InTextPositionComponent.java" startLine="115" startPosition="0" endLine="130" endPosition="0">
+    <scopeInfo nodeId="3081435682357901084" fileName="InTextPositionComponent.java" startLine="183" startPosition="0" endLine="188" endPosition="0">
+      <varInfo nodeId="3081435682357901087" varName="session" />
+    </scopeInfo>
+    <scopeInfo nodeId="3081435682357901096" fileName="InTextPositionComponent.java" startLine="188" startPosition="0" endLine="193" endPosition="0">
+      <varInfo nodeId="3081435682357901099" varName="session" />
+    </scopeInfo>
+    <scopeInfo nodeId="3081435682357900949" fileName="InTextPositionComponent.java" startLine="204" startPosition="0" endLine="209" endPosition="0">
+      <varInfo nodeId="3081435682357900952" varName="session" />
+    </scopeInfo>
+    <scopeInfo nodeId="3081435682357900959" fileName="InTextPositionComponent.java" startLine="209" startPosition="0" endLine="214" endPosition="0">
+      <varInfo nodeId="3081435682357900962" varName="session" />
+    </scopeInfo>
+    <scopeInfo nodeId="3081435682357900969" fileName="InTextPositionComponent.java" startLine="214" startPosition="0" endLine="219" endPosition="0">
+      <varInfo nodeId="3081435682357900972" varName="session" />
+    </scopeInfo>
+    <scopeInfo nodeId="3081435682357900902" fileName="InTextPositionComponent.java" startLine="54" startPosition="0" endLine="60" endPosition="0" />
+    <scopeInfo nodeId="2053776437919293654" fileName="InTextPositionComponent.java" startLine="122" startPosition="47" endLine="128" endPosition="0" />
+    <scopeInfo nodeId="3081435682357901108" fileName="InTextPositionComponent.java" startLine="193" startPosition="0" endLine="199" endPosition="0">
+      <varInfo nodeId="3081435682357901111" varName="session" />
+    </scopeInfo>
+    <scopeInfo nodeId="2053776437919293722" fileName="InTextPositionComponent.java" startLine="72" startPosition="43" endLine="79" endPosition="0" />
+    <scopeInfo nodeId="4475430585170123325" fileName="InTextPositionComponent.java" startLine="93" startPosition="45" endLine="100" endPosition="0" />
+    <scopeInfo nodeId="2053776437919293623" fileName="InTextPositionComponent.java" startLine="121" startPosition="32" endLine="128" endPosition="8" />
+    <scopeInfo nodeId="2053776437919294109" fileName="InTextPositionComponent.java" startLine="165" startPosition="0" endLine="172" endPosition="0">
+      <varInfo nodeId="2053776437919294109" varName="checkedDotOperand" />
+    </scopeInfo>
+    <scopeInfo nodeId="2053776437919294150" fileName="InTextPositionComponent.java" startLine="172" startPosition="0" endLine="179" endPosition="0">
+      <varInfo nodeId="2053776437919294150" varName="checkedDotOperand" />
+    </scopeInfo>
+    <scopeInfo nodeId="3081435682357912499" fileName="InTextPositionComponent.java" startLine="134" startPosition="71" endLine="142" endPosition="16">
+      <varInfo nodeId="3081435682357912504" varName="stackFrame" />
+    </scopeInfo>
+    <scopeInfo nodeId="3081435682357912471" fileName="InTextPositionComponent.java" startLine="108" startPosition="31" endLine="117" endPosition="7">
+      <varInfo nodeId="2053776437919293664" varName="runnable" />
+    </scopeInfo>
+    <scopeInfo nodeId="2053776437919293618" fileName="InTextPositionComponent.java" startLine="120" startPosition="61" endLine="130" endPosition="16" />
+    <scopeInfo nodeId="3081435682357912459" fileName="InTextPositionComponent.java" startLine="69" startPosition="61" endLine="80" endPosition="5">
+      <varInfo nodeId="2053776437919293714" varName="attach" />
+      <varInfo nodeId="2053776437919293699" varName="detach" />
+    </scopeInfo>
+    <scopeInfo nodeId="3081435682357912468" fileName="InTextPositionComponent.java" startLine="107" startPosition="0" endLine="119" endPosition="0" />
+    <scopeInfo nodeId="3081435682357912496" fileName="InTextPositionComponent.java" startLine="132" startPosition="0" endLine="144" endPosition="0">
       <varInfo nodeId="3081435682357912534" varName="session" />
     </scopeInfo>
-    <scopeInfo nodeId="3081435682357913516" fileName="InTextPositionComponent.java" startLine="132" startPosition="87" endLine="147" endPosition="23">
-      <varInfo nodeId="3081435682357913568" varName="attributes" />
+    <scopeInfo nodeId="2053776437919293615" fileName="InTextPositionComponent.java" startLine="119" startPosition="0" endLine="132" endPosition="0" />
+    <scopeInfo nodeId="3081435682357912456" fileName="InTextPositionComponent.java" startLine="68" startPosition="0" endLine="82" endPosition="0">
+      <varInfo nodeId="3081435682357912463" varName="session" />
+    </scopeInfo>
+    <scopeInfo nodeId="3081435682357952224" fileName="InTextPositionComponent.java" startLine="83" startPosition="110" endLine="100" endPosition="6">
+      <varInfo nodeId="3081435682357952240" varName="location" />
+    </scopeInfo>
+    <scopeInfo nodeId="3081435682357913516" fileName="InTextPositionComponent.java" startLine="146" startPosition="74" endLine="163" endPosition="23">
+      <varInfo nodeId="3750828679477962247" varName="attributes" />
       <varInfo nodeId="3081435682357916093" varName="document" />
       <varInfo nodeId="3081435682357913575" varName="highlighter" />
-      <varInfo nodeId="3081435682357916026" varName="lineIndex" />
-      <varInfo nodeId="3081435682357913560" varName="scheme" />
     </scopeInfo>
-    <scopeInfo nodeId="3081435682357952221" fileName="InTextPositionComponent.java" startLine="78" startPosition="0" endLine="94" endPosition="0">
+    <scopeInfo nodeId="3081435682357952221" fileName="InTextPositionComponent.java" startLine="82" startPosition="0" endLine="102" endPosition="0">
       <varInfo nodeId="3081435682357952720" varName="open" />
       <varInfo nodeId="3081435682357952228" varName="session" />
     </scopeInfo>
-    <scopeInfo nodeId="3081435682357913513" fileName="InTextPositionComponent.java" startLine="130" startPosition="0" endLine="149" endPosition="0">
+    <scopeInfo nodeId="3081435682357913513" fileName="InTextPositionComponent.java" startLine="144" startPosition="0" endLine="165" endPosition="0">
       <varInfo nodeId="3081435682357913529" varName="location" />
     </scopeInfo>
-    <unitInfo nodeId="3081435682357896886" fileName="InTextPositionComponent.java" startLine="34" startPosition="0" endLine="191" endPosition="0" unitName="jetbrains.mps.debugger.api.ui.breakpoints.InTextPositionComponent" />
-    <unitInfo nodeId="4475430585170123325" fileName="InTextPositionComponent.java" startLine="85" startPosition="15" endLine="92" endPosition="5" unitName="jetbrains.mps.debugger.api.ui.breakpoints.InTextPositionComponent$1" />
-    <unitInfo nodeId="4475430585170133624" fileName="InTextPositionComponent.java" startLine="101" startPosition="56" endLine="105" endPosition="5" unitName="jetbrains.mps.debugger.api.ui.breakpoints.InTextPositionComponent$2" />
-    <unitInfo nodeId="3081435682357901077" fileName="InTextPositionComponent.java" startLine="150" startPosition="0" endLine="170" endPosition="0" unitName="jetbrains.mps.debugger.api.ui.breakpoints.InTextPositionComponent$MyCurrentDebugSessionListener" />
-    <unitInfo nodeId="3081435682357900942" fileName="InTextPositionComponent.java" startLine="171" startPosition="0" endLine="190" endPosition="0" unitName="jetbrains.mps.debugger.api.ui.breakpoints.InTextPositionComponent$MySessionChangeListener" />
+    <unitInfo nodeId="3081435682357896886" fileName="InTextPositionComponent.java" startLine="29" startPosition="0" endLine="221" endPosition="0" unitName="jetbrains.mps.debugger.api.ui.breakpoints.InTextPositionComponent" />
+    <unitInfo nodeId="2053776437919293804" fileName="InTextPositionComponent.java" startLine="73" startPosition="58" endLine="78" endPosition="7" unitName="jetbrains.mps.debugger.api.ui.breakpoints.InTextPositionComponent$1" />
+    <unitInfo nodeId="4475430585170123325" fileName="InTextPositionComponent.java" startLine="93" startPosition="15" endLine="100" endPosition="5" unitName="jetbrains.mps.debugger.api.ui.breakpoints.InTextPositionComponent$2" />
+    <unitInfo nodeId="2053776437919293683" fileName="InTextPositionComponent.java" startLine="113" startPosition="56" endLine="117" endPosition="5" unitName="jetbrains.mps.debugger.api.ui.breakpoints.InTextPositionComponent$3" />
+    <unitInfo nodeId="2053776437919293654" fileName="InTextPositionComponent.java" startLine="122" startPosition="17" endLine="128" endPosition="7" unitName="jetbrains.mps.debugger.api.ui.breakpoints.InTextPositionComponent$4" />
+    <unitInfo nodeId="3081435682357901077" fileName="InTextPositionComponent.java" startLine="180" startPosition="0" endLine="200" endPosition="0" unitName="jetbrains.mps.debugger.api.ui.breakpoints.InTextPositionComponent$MyCurrentDebugSessionListener" />
+    <unitInfo nodeId="3081435682357900942" fileName="InTextPositionComponent.java" startLine="201" startPosition="0" endLine="220" endPosition="0" unitName="jetbrains.mps.debugger.api.ui.breakpoints.InTextPositionComponent$MySessionChangeListener" />
   </root>
   <root nodeId="4474271214083111858">
     <nodeInfo nodeId="4474271214083125309" fileName="GroupedTree.java" startLine="20" startPosition="97" endLine="21" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myContext" />
@@ -1608,7 +1649,7 @@
     <nodeInfo nodeId="1053276000964475653" fileName="CurrentLinePositionComponent.java" startLine="54" startPosition="54" endLine="55" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="24227610116477599" fileName="CurrentLinePositionComponent.java" startLine="58" startPosition="54" endLine="59" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="24227610116477612" fileName="CurrentLinePositionComponent.java" startLine="60" startPosition="29" endLine="61" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="24227610116477681" fileName="CurrentLinePositionComponent.java" startLine="61" startPosition="52" endLine="62" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="24227610116477681" fileName="CurrentLinePositionComponent.java" startLine="61" startPosition="52" endLine="62" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="24227610116481270" fileName="CurrentLinePositionComponent.java" startLine="63" startPosition="5" endLine="64" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4474271214083121791" fileName="CurrentLinePositionComponent.java" startLine="72" startPosition="58" endLine="73" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5885822637699011145" fileName="CurrentLinePositionComponent.java" startLine="77" startPosition="77" endLine="78" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -1646,7 +1687,7 @@
     <scopeInfo nodeId="4474271214083121866" fileName="CurrentLinePositionComponent.java" startLine="93" startPosition="60" endLine="94" endPosition="31" />
     <scopeInfo nodeId="4474271214083121874" fileName="CurrentLinePositionComponent.java" startLine="98" startPosition="59" endLine="99" endPosition="36" />
     <scopeInfo nodeId="4474271214083121882" fileName="CurrentLinePositionComponent.java" startLine="103" startPosition="60" endLine="104" endPosition="34" />
-    <scopeInfo nodeId="24227610116477611" fileName="CurrentLinePositionComponent.java" startLine="60" startPosition="29" endLine="62" endPosition="69">
+    <scopeInfo nodeId="24227610116477611" fileName="CurrentLinePositionComponent.java" startLine="60" startPosition="29" endLine="62" endPosition="91">
       <varInfo nodeId="24227610116477613" varName="location" />
     </scopeInfo>
     <scopeInfo nodeId="4474271214083121343" fileName="CurrentLinePositionComponent.java" startLine="67" startPosition="108" endLine="69" endPosition="5" />
