@@ -11,7 +11,7 @@
       <modulePath path="${mps_langs}/xml/xml/sandbox/sandbox.msd" />
       <modulePath path="${mps_langs}/xml/xml/xml.mpl" />
       <modulePath path="${project}/build/build.mpl" />
-      <modulePath path="${project}/build/sandbox/sandbox.msd" />
+      <modulePath path="${project}/build/solutions/jetbrains.mps.build.sandbox/sandbox.msd" />
       <modulePath path="${project}/deploySolution/deploy.msd" />
       <modulePath path="${project}/mps/mps.mpl" folder="" />
       <modulePath path="${project}/solutions/jetbrains.mps.buildScript.tests/tests.msd" folder="" />
