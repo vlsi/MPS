@@ -39,6 +39,7 @@ public abstract class BaseProjectTool extends BaseTool implements ProjectCompone
   }
 
   public void initComponent() {
+    createTool();
     StartupManager.getInstance(getProject()).registerPostStartupActivity(new Runnable() {
       public void run() {
         registerLater();
@@ -49,4 +50,6 @@ public abstract class BaseProjectTool extends BaseTool implements ProjectCompone
   public void disposeComponent() {
     unregister();
   }
+
+  protected abstract void createTool ();
 }

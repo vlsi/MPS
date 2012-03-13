@@ -20,6 +20,7 @@ import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.application.ex.ApplicationManagerEx;
 import com.intellij.openapi.components.AbstractProjectComponent;
 import com.intellij.openapi.project.Project;
+import com.intellij.openapi.startup.StartupManager;
 import com.intellij.openapi.ui.Messages;
 import jetbrains.mps.project.MPSProjectMigrationState;
 
@@ -47,8 +48,21 @@ public class MigrationAssistant extends AbstractProjectComponent {
 
   @Override
   public void projectOpened() {
-    if (myProject.getComponent(MPSProjectMigrationState.class).isMigrationRequired()) {
-      Messages.showWarningDialog(myProject, "This project requires migration", "Migration Assistant");
+//    if (true) return;
+    final MPSProjectMigrationState migrationState = myProject.getComponent(MPSProjectMigrationState.class);
+    if (migrationState.isMigrationRequired()) {
+      StartupManager.getInstance(myProject).registerPostStartupActivity(new Runnable() {
+        public void run() {
+          int i = Messages.showOkCancelDialog(myProject, "This project requires migration", "Migration Assistant", "Proceed", "Abort", null);
+          if (i == 0) {
+            migrationState.migrationStarted();
+            migrationState.migrationFinished();
+          }
+          else {
+            migrationState.migrationAborted();
+          }
+        }
+      });
     }
   }
 }

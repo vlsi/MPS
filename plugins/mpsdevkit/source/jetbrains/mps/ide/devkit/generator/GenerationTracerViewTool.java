@@ -60,7 +60,10 @@ public class GenerationTracerViewTool extends BaseProjectTool {
 
   public void initComponent() {
     super.initComponent();
+  }
 
+  @Override
+  protected void createTool() {
     StartupManager.getInstance(getProject()).registerPostStartupActivity(new Runnable() {
       public void run() {
         SwingUtilities.invokeLater(new Runnable() {

@@ -4,7 +4,6 @@ package jetbrains.mps.ide.hierarchy;
 
 import jetbrains.mps.ide.tools.BaseProjectTool;
 import javax.swing.JPanel;
-import javax.swing.ButtonGroup;
 import jetbrains.mps.smodel.IOperationContext;
 import javax.swing.JScrollPane;
 import com.intellij.ide.OccurenceNavigatorSupport;
@@ -52,8 +51,7 @@ import com.intellij.ide.OccurenceNavigator;
 public abstract class AbstractHierarchyView extends BaseProjectTool {
   protected AbstractHierarchyTree myHierarchyTree;
   protected HierarchyTreeNode myTreeNode;
-  protected JPanel myComponent = new AbstractHierarchyView.RootPanel();
-  protected ButtonGroup myButtonGroup = new ButtonGroup();
+  protected JPanel myComponent;
   protected IOperationContext myContext;
   public JScrollPane myScrollPane;
   private OccurenceNavigatorSupport myOccurenceNavigator;
@@ -64,6 +62,17 @@ public abstract class AbstractHierarchyView extends BaseProjectTool {
 
   public void initComponent() {
     super.initComponent();
+  }
+
+  @Override
+  public void disposeComponent() {
+    if (myHierarchyTree == null) {
+      return;
+    }
+    myHierarchyTree.dispose();
+  }
+
+  protected void createTool() {
     myHierarchyTree = createHierarchyTree(false);
     myOccurenceNavigator = new OccurenceNavigatorSupport(myHierarchyTree) {
       @Nullable
@@ -106,6 +115,7 @@ public abstract class AbstractHierarchyView extends BaseProjectTool {
     myHierarchyTree.setRootVisible(true);
     myHierarchyTree.fireTreeCreated(getProject());
     final JPanel panel = new JPanel(new BorderLayout());
+    this.myComponent = new AbstractHierarchyView.RootPanel();
     myComponent.add(panel, BorderLayout.NORTH);
     myScrollPane = ScrollPaneFactory.createScrollPane(myHierarchyTree);
     myComponent.add(myScrollPane, BorderLayout.CENTER);
@@ -116,11 +126,6 @@ public abstract class AbstractHierarchyView extends BaseProjectTool {
         panel.add(buttonsPanel, BorderLayout.WEST);
       }
     });
-  }
-
-  @Override
-  public void disposeComponent() {
-    myHierarchyTree.dispose();
   }
 
   protected abstract AbstractHierarchyTree createHierarchyTree(boolean isParentHierarchy);

@@ -31,6 +31,8 @@ import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.progress.ProgressMonitorAdapter;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.project.MPSProjectMigrationListener;
+import jetbrains.mps.project.MPSProjectMigrationState;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
@@ -40,10 +42,40 @@ import jetbrains.mps.watching.ModelChangesWatcher;
 import java.util.LinkedHashSet;
 
 public class StartupModuleMaker extends AbstractProjectComponent {
-  @SuppressWarnings({"UnusedDeclaration"})
-  public StartupModuleMaker(Project project, MPSProject mpsProject, ProjectLibraryManager plm, final ModelChangesWatcher watcher) {
-    super(project);
+  private final ModelChangesWatcher myWatcher;
 
+  @SuppressWarnings({"UnusedDeclaration"})
+  public StartupModuleMaker(Project project, MPSProject mpsProject, ProjectLibraryManager plm, ModelChangesWatcher watcher, MPSProjectMigrationState migrationState) {
+    super(project);
+    myWatcher = watcher;
+  }
+
+  @Override
+  public void projectOpened() {
+    final MPSProjectMigrationState migrationState = myProject.getComponent(MPSProjectMigrationState.class);
+    if (migrationState.isMigrationRequired() && migrationState.hasMigrationAgent()) {
+      migrationState.addMigrationListener(new MPSProjectMigrationListener.DEFAULT() {
+        @Override
+        public void migrationFinished(Project mpsProject) {
+          proceed();
+        }
+        @Override
+        public void migrationAborted(Project project) {
+//          proceed();
+        }
+
+        private void proceed () {
+          migrationState.removeMigrationListener(this);
+          compileProjectModules(false);
+        }
+      });
+    }
+    else {
+      compileProjectModules(true);
+    }
+  }
+
+  private void compileProjectModules(boolean early) {
     final ProgressIndicator indicator = ProgressManager.getInstance().getProgressIndicator();
     final ProgressMonitor monitor = indicator != null ? new ProgressMonitorAdapter(indicator) : new EmptyProgressMonitor();
 
@@ -57,7 +89,7 @@ public class StartupModuleMaker extends AbstractProjectComponent {
 
           final ModuleMaker maker = new ModuleMaker(new MessageHandler(), MessageKind.ERROR);
 
-          watcher.executeUnderBlockedReload(new Computable<Object>() {
+          myWatcher.executeUnderBlockedReload(new Computable<Object>() {
             public Object compute() {
               maker.make(new LinkedHashSet<IModule>(MPSModuleRepository.getInstance().getAllModules()), monitor.subTask(9));
               return null;
@@ -65,23 +97,29 @@ public class StartupModuleMaker extends AbstractProjectComponent {
           });
         }
       });
-
-      //the pre-startup activity is needed because all project components must be already instantiated when first class reload happens
-      StartupManager.getInstance(project).registerPreStartupActivity(new Runnable() {
-        public void run() {
-          ModelAccess.instance().runWriteAction(new Runnable() {
-            public void run() {
-              ClassLoaderManager.getInstance().reloadAll(indicator != null ? new ProgressMonitorAdapter(indicator) : new EmptyProgressMonitor());
-            }
-          });
-        }
-      });
-
+      reloadClasses(indicator, early);
     } finally {
       monitor.done();
     }
   }
 
+  private void reloadClasses(final ProgressIndicator indicator, boolean asPreStartup) {
+    final Runnable reloadTask = new Runnable() {
+      public void run() {
+        ClassLoaderManager.getInstance().reloadAll(indicator != null ? new ProgressMonitorAdapter(indicator) : new EmptyProgressMonitor());
+      }
+    };
+    if (asPreStartup) {
+      //the pre-startup activity is needed because all project components must be already instantiated when first class reload happens
+      StartupManager.getInstance(myProject).registerPreStartupActivity(new Runnable() {
+        public void run() {
+          ModelAccess.instance().runWriteAction(reloadTask);
+        }
+      });
+    }else {
+      ModelAccess.instance().runWriteAction(reloadTask);
+    }
+  }
 
   private class MessageHandler implements IMessageHandler {
     private MessagesViewTool mvt;

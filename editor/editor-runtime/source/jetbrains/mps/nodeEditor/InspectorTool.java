@@ -49,7 +49,7 @@ public class InspectorTool extends BaseProjectTool implements EditorInspector {
 
   private JPanel myComponent;
   private InspectorEditorComponent myInspectorComponent;
-  private MyMessagePanel myMessagePanel = new MyMessagePanel();
+  private MyMessagePanel myMessagePanel;
   private FileEditor myFileEditor;
 
   public InspectorTool(Project project) {
@@ -58,11 +58,22 @@ public class InspectorTool extends BaseProjectTool implements EditorInspector {
 
   public void initComponent() {
     super.initComponent();
+
+  }
+
+  public void disposeComponent() {
+    if (myInspectorComponent == null) return;
+    myInspectorComponent.dispose();
+  }
+
+  @Override
+  protected void createTool() {
     StartupManager.getInstance(getProject()).registerStartupActivity(new Runnable() {
       @Override
       public void run() {
         SwingUtilities.invokeLater(new Runnable() {
           public void run() {
+            InspectorTool.this.myMessagePanel = new MyMessagePanel();
             myComponent = new MyPanel();
             myInspectorComponent = new InspectorEditorComponent();
             myComponent.add(myInspectorComponent.getExternalComponent(), BorderLayout.CENTER);
@@ -72,11 +83,6 @@ public class InspectorTool extends BaseProjectTool implements EditorInspector {
         });
       }
     });
-  }
-
-  public void disposeComponent() {
-    if (myInspectorComponent == null) return;
-    myInspectorComponent.dispose();
   }
 
   protected boolean isInitiallyAvailable() {
