@@ -23,12 +23,6 @@ import javax.swing.Icon;
 import javax.swing.JPopupMenu;
 import java.awt.Cursor;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Alexander Shatalin
- *
- * @see com.intellij.openapi.editor.markup.GutterIconRenderer was used as prototype
- */
 public interface EditorMessageIconRenderer {
 
   Icon getIcon();

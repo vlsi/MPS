@@ -36,13 +36,6 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.*;
 
-/**
- * Created by IntelliJ IDEA.
- * User: fyodor
- * Date: 1/10/12
- * Time: 2:58 PM
- * To change this template use File | Settings | File Templates.
- */
 public class MPSMakeLauncher {
 
     private static final Logger LOG = Logger.getInstance(MPSMakeLauncher.class);

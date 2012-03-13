@@ -43,13 +43,6 @@ import java.util.concurrent.BrokenBarrierException;
 import java.util.concurrent.CyclicBarrier;
 import java.util.concurrent.Semaphore;
 
-/**
- * Created by IntelliJ IDEA.
- * User: fyodor
- * Date: 2/15/12
- * Time: 10:26 AM
- * To change this template use File | Settings | File Templates.
- */
 public abstract class AbstractMakeTest extends DataMPSFixtureTestCase {
 
   private List<Asserter> asserters = new ArrayList<Asserter>();

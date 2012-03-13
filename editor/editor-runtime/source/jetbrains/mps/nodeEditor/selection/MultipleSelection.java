@@ -15,12 +15,5 @@
  */
 package jetbrains.mps.nodeEditor.selection;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Alexander Shatalin
- * Date: 1/13/11
- * Time: 7:43 PM
- * To change this template use File | Settings | File Templates.
- */
 public interface MultipleSelection extends Selection {
 }

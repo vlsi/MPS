@@ -17,13 +17,6 @@ package jetbrains.mps.plugins.applicationplugins;
 
 import jetbrains.mps.workbench.action.BaseAction;
 
-/**
- * Created by IntelliJ IDEA.
- * User: fyodor
- * Date: 12/9/11
- * Time: 2:25 PM
- * To change this template use File | Settings | File Templates.
- */
 public interface IActionsRegistry {
 
   void addParameterizedAction(BaseAction action, Object... params);

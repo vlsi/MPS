@@ -18,12 +18,6 @@ package jetbrains.mps.newTypesystem.operation.equation;
 import jetbrains.mps.newTypesystem.state.State;
 import jetbrains.mps.smodel.SNode;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Ilya.Lintsbakh
- * Date: Oct 8, 2010
- * Time: 1:17:49 PM
- */
 public class RemoveEquationOperation extends AbstractEquationOperation {
   public RemoveEquationOperation(SNode child, SNode parent, SNode source) {
     super(child, parent, source, null);

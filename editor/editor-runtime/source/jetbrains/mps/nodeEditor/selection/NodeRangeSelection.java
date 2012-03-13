@@ -30,13 +30,6 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Alexander Shatalin
- * Date: 1/13/11
- * Time: 7:55 PM
- * To change this template use File | Settings | File Templates.
- */
 public class NodeRangeSelection extends AbstractMultipleSelection implements MultipleSelection {
   private static final String ROLE_PROPERTY_NAME = "role";
   private static final String MODEL_ID_PROPERTY_NAME = "modelId";

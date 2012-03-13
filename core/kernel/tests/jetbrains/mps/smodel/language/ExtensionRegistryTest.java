@@ -30,13 +30,6 @@ import java.util.*;
 
 import static org.junit.Assert.*;
 
-/**
- * Created by IntelliJ IDEA.
- * User: fyodor
- * Date: 20.01.2012
- * Time: 21:30
- * To change this template use File | Settings | File Templates.
- */
 @RunWith(JMock.class)
 public class ExtensionRegistryTest {
 

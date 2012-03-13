@@ -15,12 +15,6 @@
  */
 package jetbrains.mps.newTypesystem;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Ilya.Lintsbakh
- * Date: Jan 12, 2011
- * Time: 6:49:55 PM
- */
 public class TypeSystemException extends RuntimeException {
   public TypeSystemException(String s) {
     super(s);

@@ -20,12 +20,6 @@ import jetbrains.mps.newTypesystem.state.State;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Ilya.Lintsbakh
- * Date: Sep 15, 2010
- * Time: 12:54:50 PM
- */
 public class AddEquationOperation extends AbstractEquationOperation {
   public AddEquationOperation(SNode child, SNode parent, SNode source, EquationInfo info) {
     super(child, parent, source, info);

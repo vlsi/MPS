@@ -28,13 +28,6 @@ import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 
-/**
- * Created by IntelliJ IDEA.
- * User: shatalin
- * Date: 11/16/11
- * Time: 2:11 PM
- * To change this template use File | Settings | File Templates.
- */
 public class UsedLanguagesTable extends MpsElementsTable<ModuleReference> {
     public static Comparator<ModuleReference> MODULE_REFERENCE_COMPARATOR = new ModuleReferenceComparator();
 

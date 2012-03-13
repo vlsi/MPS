@@ -17,13 +17,6 @@ package jetbrains.mps.smodel.structure;
 
 import java.util.Collections;
 
-/**
- * Created by IntelliJ IDEA.
- * User: fyodor
- * Date: 1/20/12
- * Time: 4:13 PM
- * To change this template use File | Settings | File Templates.
- */
 public interface  ExtensionDescriptor {
 
   Iterable<? extends ExtensionPoint> getExtensionPoints();

@@ -17,12 +17,6 @@ package jetbrains.mps.newTypesystem.operation;
 
 import jetbrains.mps.smodel.SNode;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Ilya.Lintsbakh
- * Date: Feb 14, 2011
- * Time: 8:05:15 PM
- */
 public class ProcessReplacementRuleOperation extends AddRemarkOperation {
   private SNode mySubType;
   private SNode mySuperType;

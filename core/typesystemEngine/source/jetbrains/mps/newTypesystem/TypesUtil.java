@@ -34,12 +34,6 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Set;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Ilya.Lintsbakh
- * Date: Sep 24, 2010
- * Time: 12:42:45 PM
- */
 public class TypesUtil {
 
   public static boolean isVariable(SNode node) {

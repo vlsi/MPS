@@ -29,13 +29,6 @@ import jetbrains.mps.vfs.IFile;
 
 import java.io.File;
 
-/**
- * Created by IntelliJ IDEA.
- * User: fyodor
- * Date: 2/29/12
- * Time: 10:45 AM
- * To change this template use File | Settings | File Templates.
- */
 public class BrokenMakeTest extends AbstractMakeTest {
   @Override
   protected void prepareTestData(MPSFacetConfiguration configuration) throws Exception {

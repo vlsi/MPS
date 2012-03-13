@@ -21,12 +21,6 @@ import jetbrains.mps.smodel.SNode;
 
 import java.util.List;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Ilya.Lintsbakh
- * Date: Dec 13, 2010
- * Time: 6:32:14 PM
- */
 public abstract class AbstractBlockOperation extends AbstractOperation {
   Block myBlock;
 

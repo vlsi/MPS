@@ -15,12 +15,6 @@
  */
 package jetbrains.mps.nodeEditor.attribute;
 
-/**
- * Created by IntelliJ IDEA.
- * Date: 15.12.2010
- * Time: 17:03:33
- * To change this template use File | Settings | File Templates.
- */
 public enum AttributeKind {
   NODE, REFERENCE, PROPERTY, NOTHING;
 

@@ -18,13 +18,6 @@ package jetbrains.mps.nodeEditor.selection;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import org.jetbrains.annotations.NotNull;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Alexander Shatalin
- * Date: 10/21/11
- * Time: 5:11 PM
- * To change this template use File | Settings | File Templates.
- */
 public abstract class AbstractSelection implements Selection {
   private EditorComponent myEditorComponent;
 

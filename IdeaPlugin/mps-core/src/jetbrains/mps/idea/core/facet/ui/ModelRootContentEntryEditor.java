@@ -32,13 +32,6 @@ import org.jetbrains.annotations.NotNull;
 
 import java.io.File;
 
-/**
- * Created by IntelliJ IDEA.
- * User: shatalin
- * Date: 11/11/11
- * Time: 7:09 PM
- * To change this template use File | Settings | File Templates.
- */
 public class ModelRootContentEntryEditor extends ContentEntryEditor {
     private DummyContentEntry myContentEntry;
 
