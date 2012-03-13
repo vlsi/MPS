@@ -27,6 +27,8 @@
   <dependency className="jetbrains.mps.debug.api.source.SourcePosition" file="SourcePosition.java" />
   <dependency className="jetbrains.mps.debug.api.source.TextSourcePosition" file="TextSourcePosition.java">
     <classNode dependClassName="com.intellij.openapi.vfs.VirtualFile" />
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.debug.api.source.SourcePosition" />
   </dependency>

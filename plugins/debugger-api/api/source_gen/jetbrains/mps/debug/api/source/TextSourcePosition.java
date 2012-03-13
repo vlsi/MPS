@@ -21,4 +21,34 @@ public class TextSourcePosition extends SourcePosition {
   public int getLineNumber() {
     return myLine;
   }
+
+  @Override
+  public int hashCode() {
+    return myFile.hashCode() + 19 * myLine;
+  }
+
+  @Override
+  public boolean equals(Object object) {
+    if (object == null || !(object instanceof TextSourcePosition)) {
+      return false;
+    }
+
+    TextSourcePosition position = ((TextSourcePosition) object);
+
+    return eq_e6q8aw_a0a4a3_0(myFile, position.myFile) && eq_e6q8aw_a0a4a3(myLine, position.myLine);
+  }
+
+  private static boolean eq_e6q8aw_a0a4a3(Object a, Object b) {
+    return (a != null ?
+      a.equals(b) :
+      a == b
+    );
+  }
+
+  private static boolean eq_e6q8aw_a0a4a3_0(Object a, Object b) {
+    return (a != null ?
+      a.equals(b) :
+      a == b
+    );
+  }
 }
