@@ -18,15 +18,13 @@ import javax.swing.Action;
 import java.awt.event.ActionEvent;
 
 public class ProblemsDialog extends DialogWrapper {
-  private InlineMethodDialogModel myModel;
   private String myErrors;
   private DialogWrapper.DialogWrapperAction myIgnoreAction;
 
-  public ProblemsDialog(Project project, String errors, InlineMethodDialogModel model) {
+  public ProblemsDialog(Project project, String errors) {
     super(project, true);
     setTitle("Problems detected");
 
-    myModel = model;
     myErrors = errors;
     init();
   }
@@ -54,8 +52,7 @@ public class ProblemsDialog extends DialogWrapper {
     super.createDefaultActions();
     myIgnoreAction = new DialogWrapper.DialogWrapperAction("Ignore") {
       protected void doAction(ActionEvent event) {
-        myModel.ignore();
-        close(DialogWrapper.OK_EXIT_CODE);
+        close(DialogWrapper.NEXT_USER_EXIT_CODE);
       }
     };
     myIgnoreAction.putValue(DEFAULT_ACTION, Boolean.TRUE);

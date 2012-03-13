@@ -20,15 +20,6 @@ import jetbrains.mps.ide.findusages.model.SearchResult;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.baseLanguage.util.plugin.refactorings.InlineMethodRefactoring;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.baseLanguage.util.plugin.refactorings.MethodCallAdapter;
-import jetbrains.mps.lang.dataFlow.framework.Program;
-import jetbrains.mps.lang.dataFlow.DataFlowManager;
-import jetbrains.mps.lang.dataFlow.framework.instructions.Instruction;
-import jetbrains.mps.lang.dataFlow.framework.instructions.RetInstruction;
-import jetbrains.mps.lang.dataFlow.framework.instructions.NopInstruction;
-import java.util.Set;
-import jetbrains.mps.internal.collections.runtime.SetSequence;
 
 public class InlineMethodRefactoringAnalyzer {
   private IOperationContext myOperationContext;
@@ -41,7 +32,7 @@ public class InlineMethodRefactoringAnalyzer {
     this.myMethod = method;
   }
 
-  public String findProblems(final boolean forAll, final SearchResults<SNode> ussages) {
+  public String findProblems(final SearchResults<SNode> ussages) {
     final Wrappers._T<List<SNode>> myOverriding = new Wrappers._T<List<SNode>>(new ArrayList<SNode>());
     ProgressManager.getInstance().run(new Task.Modal(ProjectHelper.toIdeaProject(InlineMethodRefactoringAnalyzer.this.myOperationContext.getProject()), "Search for overriding methods", true) {
       public void run(@NotNull final ProgressIndicator indicator) {
@@ -56,7 +47,7 @@ public class InlineMethodRefactoringAnalyzer {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         errors.append(InlineMethodRefactoringAnalyzer.this.getOverridingErrors(myOverriding.value));
-        if (forAll) {
+        if (ussages != null) {
           for (SearchResult<SNode> res : ListSequence.fromList(ussages.getSearchResults())) {
             InlineMethodRefactoringAnalyzer.this.appendRefactoringProblems(res.getObject(), errors);
           }
@@ -83,49 +74,5 @@ public class InlineMethodRefactoringAnalyzer {
   private void appendRefactoringProblems(SNode node, StringBuffer errors) {
     InlineMethodRefactoring ref = new InlineMethodRefactoring(node);
     errors.append(ref.getProblems());
-  }
-
-  public static String getErrors(InlineMethodDialogModel methodModel) {
-    if ((SLinkOperations.getTarget(methodModel.getMethodDeclaration(), "body", true) == null) || SNodeOperations.isInstanceOf(SLinkOperations.getTarget(methodModel.getMethodDeclaration(), "body", true), "jetbrains.mps.baseLanguage.structure.StubStatementList")) {
-      return "No sources attached";
-    }
-    if (methodModel.getMethodCall() == null && isContainsSelfCalls(methodModel.getMethodDeclaration())) {
-      return "Method is recursive";
-    }
-    if (isReturnBreaksExecitionFlow(SLinkOperations.getTarget(methodModel.getMethodDeclaration(), "body", true))) {
-      return "Return breaks execution flow";
-    }
-    return null;
-  }
-
-  /*package*/ static boolean isContainsSelfCalls(SNode method) {
-    for (SNode call : ListSequence.fromList(SNodeOperations.getDescendants(method, null, false, new String[]{}))) {
-      if (MethodCallAdapter.isMethodCall(call)) {
-        if (new MethodCallAdapter(call).getMethodDeclaration() == method) {
-          return true;
-        }
-      }
-    }
-    return false;
-  }
-
-  /*package*/ static boolean isReturnBreaksExecitionFlow(SNode body) {
-    Program program = DataFlowManager.getInstance().buildProgramFor(body);
-    for (Instruction instruction : ListSequence.fromList(program.getInstructions())) {
-      if (instruction instanceof RetInstruction) {
-        Instruction next = program.get(instruction.getIndex() + 1);
-        while (!(next.equals(program.getEnd()))) {
-          if (next instanceof NopInstruction) {
-            return true;
-          }
-          Set<Instruction> succ = next.succ();
-          if (SetSequence.fromSet(succ).count() != 1) {
-            return true;
-          }
-          next = SetSequence.fromSet(succ).first();
-        }
-      }
-    }
-    return false;
   }
 }

@@ -7,8 +7,7 @@ import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
 import junit.framework.Assert;
-import jetbrains.mps.ide.java.platform.refactorings.InlineMethodRefactoringAnalyzer;
-import jetbrains.mps.ide.java.platform.refactorings.InlineMethodDialogModel;
+import jetbrains.mps.baseLanguage.util.plugin.refactorings.InlineMethodModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 @MPSLaunch
@@ -23,7 +22,7 @@ public class InlineWithNoSourcesAttached_Test extends BaseTransformationTest {
   public static class TestBody extends BaseTestBody {
     public void test_InlineWithNoSourcesAttached() throws Exception {
       this.addNodeById("1230052989307");
-      Assert.assertTrue(InlineMethodRefactoringAnalyzer.getErrors(new InlineMethodDialogModel(SNodeOperations.cast(this.getNodeById("1230052989317"), "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation"), null)) != null);
+      Assert.assertTrue(new InlineMethodModel(SNodeOperations.cast(this.getNodeById("1230052989317"), "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation")).getErrors() != null);
     }
   }
 }

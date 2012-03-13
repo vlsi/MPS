@@ -135,6 +135,9 @@
     <classNode extendsClassName="jetbrains.mps.resourceBundles.IconResourceBundle" />
   </dependency>
   <dependency className="jetbrains.mps.ide.java.platform.refactorings.InlineMethodDialog" file="InlineMethodDialog.java">
+    <classNode dependClassName="com.intellij.openapi.progress.ProgressIndicator" />
+    <classNode dependClassName="com.intellij.openapi.progress.ProgressManager" />
+    <classNode dependClassName="com.intellij.openapi.progress.Task" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="com.intellij.openapi.ui.DialogWrapper" />
     <classNode dependClassName="java.awt.BorderLayout" />
@@ -153,26 +156,9 @@
     <classNode dependClassName="javax.swing.JPanel" />
     <classNode dependClassName="javax.swing.JRadioButton" />
     <classNode dependClassName="javax.swing.border.EmptyBorder" />
-    <classNode dependClassName="jetbrains.mps.ide.java.platform.refactorings.InlineMethodDialogModel" />
-    <classNode dependClassName="jetbrains.mps.ide.java.platform.refactorings.InlineMethodRefactoringAnalyzer" />
-    <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
-    <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
-    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
-    <classNode extendsClassName="com.intellij.openapi.ui.DialogWrapperAction" />
-    <classNode extendsClassName="jetbrains.mps.ide.platform.refactoring.RefactoringDialog" />
-  </dependency>
-  <dependency className="jetbrains.mps.ide.java.platform.refactorings.InlineMethodDialogModel" file="InlineMethodDialogModel.java">
-    <classNode dependClassName="com.intellij.openapi.progress.ProgressIndicator" />
-    <classNode dependClassName="com.intellij.openapi.progress.ProgressManager" />
-    <classNode dependClassName="com.intellij.openapi.progress.Task" />
-    <classNode dependClassName="com.intellij.openapi.project.Project" />
-    <classNode dependClassName="java.lang.Class" />
-    <classNode dependClassName="java.lang.Object" />
-    <classNode dependClassName="java.lang.Runnable" />
-    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.util.plugin.refactorings.InlineMethodModel" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.util.plugin.refactorings.InlineMethodRefactoring" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.util.plugin.refactorings.MethodCallAdapter" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.util.plugin.refactorings.MethodRefactoringUtils" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.model.SearchResult" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.model.SearchResults" />
@@ -188,8 +174,10 @@
     <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
-    <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorManager" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode extendsClassName="com.intellij.openapi.ui.DialogWrapperAction" />
+    <classNode extendsClassName="jetbrains.mps.ide.platform.refactoring.RefactoringDialog" />
   </dependency>
   <dependency className="jetbrains.mps.ide.java.platform.refactorings.InlineMethodRefactoringAnalyzer" file="InlineMethodRefactoringAnalyzer.java">
     <classNode dependClassName="com.intellij.openapi.progress.ProgressIndicator" />
@@ -200,23 +188,13 @@
     <classNode dependClassName="java.lang.StringBuffer" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.util.plugin.refactorings.InlineMethodRefactoring" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.util.plugin.refactorings.MethodCallAdapter" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.util.plugin.refactorings.MethodRefactoringUtils" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.model.SearchResult" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.model.SearchResults" />
-    <classNode dependClassName="jetbrains.mps.ide.java.platform.refactorings.InlineMethodDialogModel" />
     <classNode dependClassName="jetbrains.mps.ide.project.ProjectHelper" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
-    <classNode dependClassName="jetbrains.mps.lang.dataFlow.DataFlowManager" />
-    <classNode dependClassName="jetbrains.mps.lang.dataFlow.framework.Program" />
-    <classNode dependClassName="jetbrains.mps.lang.dataFlow.framework.instructions.Instruction" />
-    <classNode dependClassName="jetbrains.mps.lang.dataFlow.framework.instructions.NopInstruction" />
-    <classNode dependClassName="jetbrains.mps.lang.dataFlow.framework.instructions.RetInstruction" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.progress.ProgressMonitorAdapter" />
     <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
@@ -385,7 +363,6 @@
     <classNode dependClassName="javax.swing.JTextArea" />
     <classNode dependClassName="javax.swing.ScrollPaneConstants" />
     <classNode dependClassName="javax.swing.border.EmptyBorder" />
-    <classNode dependClassName="jetbrains.mps.ide.java.platform.refactorings.InlineMethodDialogModel" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode extendsClassName="com.intellij.openapi.ui.DialogWrapper" />
   </dependency>

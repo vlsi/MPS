@@ -7,8 +7,7 @@ import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
 import junit.framework.Assert;
-import jetbrains.mps.ide.java.platform.refactorings.InlineMethodRefactoringAnalyzer;
-import jetbrains.mps.ide.java.platform.refactorings.InlineMethodDialogModel;
+import jetbrains.mps.baseLanguage.util.plugin.refactorings.InlineMethodModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 @MPSLaunch
@@ -23,12 +22,12 @@ public class CheckInlineCanBePerformed_Test extends BaseTransformationTest {
   public static class TestBody extends BaseTestBody {
     public void test_CheckInlineCanBePerformed() throws Exception {
       this.addNodeById("1230053187318");
-      Assert.assertNull(InlineMethodRefactoringAnalyzer.getErrors(new InlineMethodDialogModel(SNodeOperations.cast(this.getNodeById("1230053187326"), "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation"), null)));
-      Assert.assertTrue(InlineMethodRefactoringAnalyzer.getErrors(new InlineMethodDialogModel(SNodeOperations.cast(this.getNodeById("1230053187332"), "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation"), null)) != null);
-      Assert.assertNull(InlineMethodRefactoringAnalyzer.getErrors(new InlineMethodDialogModel(SNodeOperations.cast(this.getNodeById("1230053187337"), "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation"), null)));
-      Assert.assertNull(InlineMethodRefactoringAnalyzer.getErrors(new InlineMethodDialogModel(SNodeOperations.cast(this.getNodeById("1230053187342"), "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation"), null)));
-      Assert.assertTrue(InlineMethodRefactoringAnalyzer.getErrors(new InlineMethodDialogModel(SNodeOperations.cast(this.getNodeById("1230053187347"), "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation"), null)) != null);
-      Assert.assertNull(InlineMethodRefactoringAnalyzer.getErrors(new InlineMethodDialogModel(SNodeOperations.cast(this.getNodeById("1230053187351"), "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation"), null)));
+      Assert.assertNull(new InlineMethodModel(SNodeOperations.cast(this.getNodeById("1230053187326"), "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation")).getErrors());
+      Assert.assertTrue(new InlineMethodModel(SNodeOperations.cast(this.getNodeById("1230053187332"), "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation")).getErrors() != null);
+      Assert.assertNull(new InlineMethodModel(SNodeOperations.cast(this.getNodeById("1230053187337"), "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation")).getErrors());
+      Assert.assertNull(new InlineMethodModel(SNodeOperations.cast(this.getNodeById("1230053187342"), "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation")).getErrors());
+      Assert.assertTrue(new InlineMethodModel(SNodeOperations.cast(this.getNodeById("1230053187347"), "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation")).getErrors() != null);
+      Assert.assertNull(new InlineMethodModel(SNodeOperations.cast(this.getNodeById("1230053187351"), "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation")).getErrors());
     }
   }
 }
