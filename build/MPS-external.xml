@@ -118,6 +118,7 @@
     <mkdir dir="${deploy.dir}/MPS/languages/execution" />
     <mkdir dir="${deploy.dir}/MPS/languages/make" />
     <mkdir dir="${deploy.dir}/MPS/languages/build" />
+    <mkdir dir="${deploy.dir}/MPS/languages/xml" />
     <mkdir dir="${deploy.dir}/MPS/languages/util/ui" />
     <mkdir dir="${deploy.dir}/MPS/languages/util/editor" />
     <mkdir dir="${deploy.dir}/MPS/languages/util" />
@@ -643,9 +644,11 @@
     <mkdir dir="${deploy.dir}/MPS/languages/make" />
     <antcall target="MPS-languages.pack.jetbrains.mps.build" />
     <antcall target="MPS-languages.pack.jetbrains.mps.build.workflow" />
-    <antcall target="MPS-languages.pack.jetbrains.mps.core.xml" />
+    <antcall target="MPS-languages.pack.jetbrains.mps.build.mps" />
     <antcall target="MPS-languages.pack.jetbrains.mps.core.properties" />
     <mkdir dir="${deploy.dir}/MPS/languages/build" />
+    <antcall target="MPS-languages.pack.jetbrains.mps.core.xml" />
+    <mkdir dir="${deploy.dir}/MPS/languages/xml" />
     <antcall target="MPS-languages.pack.jetbrains.mps.xml.deprecated" />
     <antcall target="MPS-languages.pack.jetbrains.mps.xml.deprecated.pluginSolution" />
     <antcall target="MPS-languages.pack.jetbrains.mps.uiLanguage" />
