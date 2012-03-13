@@ -121,7 +121,8 @@
       <modulePath path="${project}/languages/build/build/build.mpl" folder="build" />
       <modulePath path="${project}/languages/build/solutions/jetbrains.mps.build.sandbox/sandbox.msd" folder="build" />
       <modulePath path="${project}/languages/build/deploySolution/deploy.msd" folder="build" />
-      <modulePath path="${project}/languages/build/solutions/jetbrains.mps.buildScript.tests/tests.msd" folder="build" />
+      <modulePath path="${project}/languages/build/solutions/jetbrains.mps.build.tests/tests.msd" folder="build" />
+      <modulePath path="${project}/languages/build/solutions/jetbrains.mps.build.pluginSolution/pluginSolution.msd" folder="build" />
       <modulePath path="${project}/languages/build/workflow/workflow.mpl" folder="build" />
       <modulePath path="${project}/languages/core/core/languageDescriptor.mpl" folder="core.language-design" />
       <modulePath path="${project}/languages/core/core/solutions/pluginSolution/pluginSolution.msd" folder="core.language-design" />
