@@ -833,7 +833,7 @@
     <nodeInfo nodeId="6520682027041001481" fileName="MacroHelper.java" startLine="69" startPosition="9" endLine="70" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6520682027041001614" fileName="MacroHelper.java" startLine="71" startPosition="32" endLine="72" endPosition="147" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6520682027041001794" fileName="MacroHelper.java" startLine="72" startPosition="147" endLine="73" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6520682027040859586" fileName="MacroHelper.java" startLine="74" startPosition="9" endLine="75" endPosition="145" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6520682027040859586" fileName="MacroHelper.java" startLine="74" startPosition="9" endLine="75" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6520682027040857117" fileName="MacroHelper.java" startLine="80" startPosition="71" endLine="81" endPosition="138" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6520682027040857156" fileName="MacroHelper.java" startLine="82" startPosition="31" endLine="83" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6520682027040857200" fileName="MacroHelper.java" startLine="83" startPosition="78" endLine="84" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -1027,7 +1027,7 @@
     <scopeInfo nodeId="6520682027040854531" fileName="MacroHelper.java" startLine="182" startPosition="13" endLine="191" endPosition="24">
       <varInfo nodeId="6520682027040856379" varName="helper" />
     </scopeInfo>
-    <scopeInfo nodeId="6520682027040859515" fileName="MacroHelper.java" startLine="65" startPosition="54" endLine="75" endPosition="145">
+    <scopeInfo nodeId="6520682027040859515" fileName="MacroHelper.java" startLine="65" startPosition="54" endLine="75" endPosition="57">
       <varInfo nodeId="6520682027041001482" varName="depprefix" />
       <varInfo nodeId="6520682027040860069" varName="exportName" />
     </scopeInfo>

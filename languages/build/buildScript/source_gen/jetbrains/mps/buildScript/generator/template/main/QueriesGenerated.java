@@ -10,13 +10,12 @@ import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.buildScript.behavior.BuildLayout_Container_Behavior;
 import jetbrains.mps.buildScript.util.Context;
 import jetbrains.mps.buildScript.behavior.BuildLayout_NamedContainer_Behavior;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.buildScript.util.DependenciesHelper;
-import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
 import jetbrains.mps.buildScript.behavior.BuildLayout_Node_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.buildScript.behavior.BuildSourcePath_Behavior;
 import jetbrains.mps.buildScript.behavior.BuildString_Behavior;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.buildScript.util.DependenciesHelper;
 import jetbrains.mps.buildScript.behavior.BuildProject_Behavior;
 import jetbrains.mps.buildScript.util.RelativePathHelper;
 import org.apache.commons.lang.StringUtils;
@@ -32,6 +31,7 @@ import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import java.util.Collections;
 import java.util.List;
 import java.util.ArrayList;
+import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.generator.template.MappingScriptContext;
 import jetbrains.mps.buildScript.util.GenerationUtil;
@@ -134,21 +134,19 @@ public class QueriesGenerated {
       _context.showErrorMessage(_context.getNode(), "parent should be layout container");
       return "???";
     }
-    return BuildLayout_Container_Behavior.call_getChildrenOutputDir_WithMacro_4701820937132344011(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.buildScript.structure.BuildLayout_Container"), Context.defaultContext(_context));
+    String result = BuildLayout_Container_Behavior.call_getChildrenOutputDir_WithMacro_4701820937132344011(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.buildScript.structure.BuildLayout_Container"), Context.defaultContext(_context));
+    if (BuildLayout_Node_Behavior.call_isFolder_1368030936106753980(SLinkOperations.getTarget(_context.getNode(), "target", false))) {
+      String location = ((String) _context.getVariable("var:targetLocation"));
+      int lastSlash = location.lastIndexOf('/');
+      if (lastSlash >= 0) {
+        result += location.substring(lastSlash);
+      }
+    }
+    return result;
   }
 
   public static Object propertyMacro_GetPropertyValue_6547494638219491804(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    SNode project = SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.buildScript.structure.BuildProject", false, false);
-    if (project == null) {
-      _context.showErrorMessage(_context.getNode(), "no context project defined");
-      return "???";
-    }
-    DependenciesHelper helper = new DependenciesHelper(_context, project);
-    String val = helper.locations().get(DependenciesHelper.getOriginalNode(SLinkOperations.getTarget(_context.getNode(), "target", false), _context));
-    if (val == null) {
-      _context.showErrorMessage(_context.getNode(), "no location for " + BaseConcept_Behavior.call_getPresentation_1213877396640(SLinkOperations.getTarget(_context.getNode(), "target", false)));
-    }
-    return val;
+    return ((String) _context.getVariable("var:targetLocation"));
   }
 
   public static Object propertyMacro_GetPropertyValue_6547494638219491807(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -668,6 +666,20 @@ public class QueriesGenerated {
 
       new FetchDependenciesProcessor(root, _context).process();
     }
+  }
+
+  public static Object insertMacro_varValue_7517237557345560699(final IOperationContext operationContext, final TemplateQueryContext _context) {
+    SNode project = SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.buildScript.structure.BuildProject", false, false);
+    if (project == null) {
+      _context.showErrorMessage(_context.getNode(), "no context project defined");
+      return "???";
+    }
+    DependenciesHelper helper = new DependenciesHelper(_context, project);
+    String val = helper.locations().get(DependenciesHelper.getOriginalNode(SLinkOperations.getTarget(_context.getNode(), "target", false), _context));
+    if (val == null) {
+      _context.showErrorMessage(_context.getNode(), "no location for " + BaseConcept_Behavior.call_getPresentation_1213877396640(SLinkOperations.getTarget(_context.getNode(), "target", false)));
+    }
+    return val;
   }
 
   public static Object insertMacro_varValue_4129895186893528603(final IOperationContext operationContext, final TemplateQueryContext _context) {

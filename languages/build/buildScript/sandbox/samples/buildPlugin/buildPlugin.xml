@@ -12,8 +12,8 @@
   <property name="buildCore.build.number" value="${import.buildCore.buildCore.build.number}" />
   <property name="buildCore.ver" value="${import.buildCore.buildCore.ver}" />
   <property name="buildCore.MPS" value="${import.buildCore.buildCore.MPS}" />
-  <property name="buildA.aver1" value="${import.buildB.buildB.aver}" />
-  <property name="buildA.aver1" value="${import.buildB.buildB.aver}" />
+  <property name="buildA.aver1" value="${import.buildB.buildA.aver}" />
+  <property name="buildA.aver1" value="${import.buildB.buildA.aver}" />
   
   <target name="assemble" depends="classes">
     <aaa></aaa>

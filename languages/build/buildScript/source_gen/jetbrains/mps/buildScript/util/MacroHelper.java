@@ -72,7 +72,7 @@ public final class MacroHelper {
           depprefix = makeUnique("import." + SPropertyOperations.getString(SLinkOperations.getTarget(dep, "script", false), "name"), usedPrefixes);
           depPrefixes.put(dep, depprefix);
         }
-        add(m, depprefix + "." + SPropertyOperations.getString(depProject, "name") + "." + SPropertyOperations.getString(m, "name"), exportName);
+        add(m, depprefix + "." + exportName, exportName);
       }
     }
   }
