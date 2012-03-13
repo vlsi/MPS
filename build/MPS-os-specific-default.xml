@@ -122,7 +122,8 @@
     <delete dir="${deploy.dir}/MPS/lib/MPS-src.zip.tmp" />
     <delete dir="${deploy.dir}/MPS/samples.zip.tmp" />
     <delete dir="${deploy.dir}/${build.number}-buildTools.zip.tmp" />
-    <delete dir="${deploy.dir}/MPS/lib/idea-patch.jar.tmp" />
+    <delete dir="${deploy.dir}/MPS/lib/mps-resources.jar.tmp" />
+    <delete dir="${deploy.dir}/MPS/lib/mps-resources_en.jar.tmp" />
     <delete dir="${deploy.dir}/MPS/lib/mps-core.jar.tmp" />
     <delete dir="${deploy.dir}/MPS/lib/mps-editor-api.jar.tmp" />
     <delete dir="${deploy.dir}/MPS/lib/mps-editor.jar.tmp" />

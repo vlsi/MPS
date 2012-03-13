@@ -23,7 +23,7 @@ public class DebugCollections {
 
   public static void main(String[] args) {
     int[] i = {1, 2};
-    int k;
+    int k = 0;
     DebugCollections.testList();
     DebugCollections.testMap();
     DebugCollections.testSortedMap();

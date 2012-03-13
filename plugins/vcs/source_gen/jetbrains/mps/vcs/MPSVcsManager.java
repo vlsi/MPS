@@ -33,6 +33,7 @@ import java.util.Arrays;
 import java.util.List;
 import com.intellij.openapi.vcs.changes.ChangeListManagerImpl;
 import com.intellij.openapi.vcs.changes.ChangeListManagerGate;
+import java.io.File;
 import com.intellij.openapi.vcs.changes.LocalChangeList;
 import org.jetbrains.annotations.Nullable;
 import java.util.Collection;
@@ -158,6 +159,10 @@ public class MPSVcsManager implements ProjectComponent {
 
   public static class StubChangeListManagerGate implements ChangeListManagerGate {
     public StubChangeListManagerGate() {
+    }
+
+    public FileStatus getStatus(File file) {
+      return null;
     }
 
     public List<LocalChangeList> getListsCopy() {

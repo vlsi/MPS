@@ -19,7 +19,8 @@ editor/actions-runtime/classes
 editor/intentions-runtime/classes
 editor/typesystemIntegration/classes
 :workbench
-workbench/idea-patch/classes
+workbench/resources/classes
+workbench/resources_en/classes
 languages/languageDesign/test/classes_gen
 languages/util/runConfigurations/classes
 languages/util/uiLanguage/runtime/classes
