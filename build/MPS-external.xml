@@ -443,7 +443,6 @@
     <mkdir dir="${deploy.dir}/MPS/plugins/debugger-api/META-INF" />
     <antcall target="MPS-languages.pack.jetbrains.mps.debugger.api.runtime" />
     <antcall target="MPS-languages.pack.jetbrains.mps.debugger.api.api" />
-    <antcall target="MPS-languages.pack.jetbrains.mps.traceInfo.cache" />
     <mkdir dir="${deploy.dir}/MPS/plugins/debugger-api/solutions" />
     <mkdir dir="${deploy.dir}/MPS/plugins/debugger-api" />
     <copy todir="${deploy.dir}/MPS/plugins/debugger-java/lib/debugger-java.jar.tmp">
