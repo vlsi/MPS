@@ -19,8 +19,8 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.vfs.FileSystem;
-import jetbrains.mps.buildScript.behavior.BuildProject_Behavior;
-import jetbrains.mps.buildScript.util.Context;
+import jetbrains.mps.build.behavior.BuildProject_Behavior;
+import jetbrains.mps.build.util.Context;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -61,7 +61,7 @@ public class BuildScript_Configuration_RunProfileState implements RunProfileStat
     final Wrappers._T<String> mainTaskName = new Wrappers._T<String>();
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        SNode node = SNodeOperations.cast(myRunConfiguration.getNode().getNode(), "jetbrains.mps.buildScript.structure.BuildProject");
+        SNode node = SNodeOperations.cast(myRunConfiguration.getNode().getNode(), "jetbrains.mps.build.structure.BuildProject");
         file.value = FileSystem.getInstance().getFileByPath(BuildProject_Behavior.call_getScriptsPath_4796668409958419284(node, Context.defaultContext()));
         // todo 
         file.value = file.value.getDescendant(SPropertyOperations.getString(node, "name") + ".xml");

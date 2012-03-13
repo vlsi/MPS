@@ -118,8 +118,8 @@
       <modulePath path="${project}/languages/baseLanguage/unitTest/solutions/pluginSolution/pluginSolution.msd" folder="baseLanguage.unitTest" />
       <modulePath path="${project}/languages/baseLanguage/unitTest/solutions/sandbox/jetbrains.mps.baseLanguage.unitTest.sandbox.msd" folder="baseLanguage.unitTest" />
       <modulePath path="${project}/languages/baseLanguage/unitTest/unitTest.mpl" folder="baseLanguage.unitTest" />
-      <modulePath path="${project}/languages/build/buildScript/buildScript.mpl" folder="build" />
-      <modulePath path="${project}/languages/build/buildScript/sandbox/sandbox.msd" folder="build" />
+      <modulePath path="${project}/languages/build/build/build.mpl" folder="build" />
+      <modulePath path="${project}/languages/build/build/sandbox/sandbox.msd" folder="build" />
       <modulePath path="${project}/languages/build/deploySolution/deploy.msd" folder="build" />
       <modulePath path="${project}/languages/build/solutions/jetbrains.mps.buildScript.tests/tests.msd" folder="build" />
       <modulePath path="${project}/languages/build/workflow/workflow.mpl" folder="build" />

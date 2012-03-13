@@ -5,7 +5,7 @@ package jetbrains.mps.buildScript.tests;
 import junit.framework.TestCase;
 import java.io.File;
 import org.junit.Assert;
-import jetbrains.mps.buildScript.util.RelativePathHelper;
+import jetbrains.mps.build.util.RelativePathHelper;
 
 public class TestRelativePathHelper_Test extends TestCase {
   public void test_testRelPaths() throws Exception {

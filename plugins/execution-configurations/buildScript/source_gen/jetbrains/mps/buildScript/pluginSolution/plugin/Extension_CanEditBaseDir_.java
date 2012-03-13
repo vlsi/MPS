@@ -8,7 +8,7 @@ import jetbrains.mps.smodel.SNode;
 
 public class Extension_CanEditBaseDir_ extends Extension.Default<_FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>> {
   public Extension_CanEditBaseDir_() {
-    super("jetbrains.mps.buildScript.CanEditBaseDir");
+    super("jetbrains.mps.build.CanEditBaseDir");
   }
 
   public _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode> get() {

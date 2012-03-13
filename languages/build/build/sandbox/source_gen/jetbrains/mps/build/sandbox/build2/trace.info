@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debugInfo>
+  <root nodeId="2769948622284624385">
+    <unitInfo nodeId="2769948622284624385" fileName="myCore.properties" startLine="1" startPosition="0" endLine="3" endPosition="0" unitName="jetbrains.mps.build.sandbox.build2.myCore" />
+    <unitInfo nodeId="2769948622284624385" fileName="myCore.xml" startLine="1" startPosition="0" endLine="147" endPosition="10" unitName="jetbrains.mps.build.sandbox.build2.myCore" />
+  </root>
+</debugInfo>
+

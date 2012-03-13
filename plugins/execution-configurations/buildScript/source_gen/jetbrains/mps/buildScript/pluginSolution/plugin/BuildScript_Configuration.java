@@ -41,7 +41,7 @@ public class BuildScript_Configuration extends BaseMpsRunConfiguration implement
   private BuildScript_Configuration.MyState myState = new BuildScript_Configuration.MyState();
   private Node_Configuration myNode = new Node_Configuration(ModelAccess.instance().runReadAction(new Computable<SNode>() {
     public SNode compute() {
-      return SConceptOperations.findConceptDeclaration("jetbrains.mps.buildScript.structure.BuildProject");
+      return SConceptOperations.findConceptDeclaration("jetbrains.mps.build.structure.BuildProject");
     }
   }), new _FunctionTypes._return_P1_E0<Boolean, SNode>() {
     public Boolean invoke(SNode node) {

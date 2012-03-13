@@ -31,14 +31,14 @@
     <classNode dependClassName="jetbrains.mps.smodel.IScope" />
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
-    <classNode extendsClassName="jetbrains.mps.buildScript.util.Context" />
+    <classNode extendsClassName="jetbrains.mps.build.util.Context" />
     <classNode extendsClassName="jetbrains.mps.generator.template.TemplateQueryContext" />
   </dependency>
   <dependency className="jetbrains.mps.buildScript.tests.TestRelativePathHelper_Test" file="TestRelativePathHelper_Test.java">
     <classNode dependClassName="java.io.File" />
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.buildScript.util.RelativePathHelper" />
+    <classNode dependClassName="jetbrains.mps.build.util.RelativePathHelper" />
     <classNode dependClassName="org.junit.Assert" />
     <classNode extendsClassName="junit.framework.TestCase" />
   </dependency>
@@ -46,7 +46,7 @@
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.util.plugin.run.MPSLaunch" />
-    <classNode dependClassName="jetbrains.mps.buildScript.behavior.BuildLayout_NamedContainer_Behavior" />
+    <classNode dependClassName="jetbrains.mps.build.behavior.BuildLayout_NamedContainer_Behavior" />
     <classNode dependClassName="jetbrains.mps.buildScript.tests.TestContext" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelReference" />
