@@ -6,18 +6,18 @@
   <component name="Encoding" useUTFGuessing="true" native2AsciiForPropertiesFiles="false" />
   <component name="MPSProject">
     <projectModules>
-      <modulePath path="${mps_langs}/util/properties/properties.mpl" folder="" />
-      <modulePath path="${mps_langs}/util/properties/sandbox/sandbox.msd" folder="" />
-      <modulePath path="${mps_langs}/xml/xml/sandbox/sandbox.msd" />
-      <modulePath path="${mps_langs}/xml/xml/xml.mpl" />
+      <modulePath path="${mps_home}/IdeaPlugin/buildScript/plugin.msd" folder="" />
+      <modulePath path="${mps_home}/languages/util/properties/properties.mpl" folder="" />
+      <modulePath path="${mps_home}/languages/util/properties/sandbox/sandbox.msd" folder="" />
+      <modulePath path="${mps_home}/languages/xml/xml/sandbox/sandbox.msd" />
+      <modulePath path="${mps_home}/languages/xml/xml/xml.mpl" />
+      <modulePath path="${mps_home}/plugins/execution-configurations/buildScript/pluginSolution.msd" />
       <modulePath path="${project}/build/build.mpl" />
       <modulePath path="${project}/build/sandbox/sandbox.msd" />
       <modulePath path="${project}/deploySolution/deploy.msd" />
       <modulePath path="${project}/mps/mps.mpl" folder="" />
       <modulePath path="${project}/solutions/jetbrains.mps.buildScript.tests/tests.msd" folder="" />
       <modulePath path="${project}/workflow/workflow.mpl" folder="" />
-      <modulePath path="$PROJECT_DIR$/../../IdeaPlugin/buildScript/plugin.msd" folder="" />
-      <modulePath path="$PROJECT_DIR$/../../plugins/execution-configurations/buildScript/pluginSolution.msd" />
     </projectModules>
     <genConfs />
   </component>
@@ -26,7 +26,7 @@
     <option name="version" value="2.0" />
   </component>
   <component name="VcsDirectoryMappings">
-    <mapping directory="$PROJECT_DIR$/../.." vcs="Git" />
+    <mapping directory="$APPLICATION_HOME_DIR$" vcs="Git" />
   </component>
 </project>
 

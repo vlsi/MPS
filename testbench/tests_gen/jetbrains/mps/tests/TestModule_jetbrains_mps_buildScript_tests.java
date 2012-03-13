@@ -5,7 +5,7 @@ package jetbrains.mps.tests;
 import jetbrains.mps.testbench.junit.runners.ModuleSymbolicSuite;
 import org.junit.runner.RunWith;
 
-@ModuleSymbolicSuite.ModuleClassSymbols(classes = {"jetbrains.mps.buildScript.tests.MacroTest_Test", "jetbrains.mps.buildScript.tests.TestTemporalPaths_Test"}, tests = {"test_normalScope,test_onlySeePreviouslyDeclaredMacro,test_doNotSeeItsefl,test_doNotSeeImported,test_seeImportedVariableInScope,test_doNotSeeForwardVariabletInScope,test_seeBackwardVariableInScope", "test_topLevelJar,test_topLevelFolder,test_topInternalFolder,test_jarInFolder,test_folderInJar,test_duplicatedNames"})
+@ModuleSymbolicSuite.ModuleClassSymbols(classes = {"jetbrains.mps.build.tests.MacroTest_Test", "jetbrains.mps.build.tests.TestTemporalPaths_Test"}, tests = {"test_normalScope,test_onlySeePreviouslyDeclaredMacro,test_doNotSeeItsefl,test_doNotSeeImported,test_seeImportedVariableInScope,test_doNotSeeForwardVariabletInScope,test_seeBackwardVariableInScope", "test_topLevelJar,test_topLevelFolder,test_topInternalFolder,test_jarInFolder,test_folderInJar,test_duplicatedNames"})
 @ModuleSymbolicSuite.ModuleReference("39742b07-848c-43a7-be0a-845055dd3333(jetbrains.mps.buildScript.tests)")
 @RunWith(ModuleSymbolicSuite.class)
 public class TestModule_jetbrains_mps_buildScript_tests {
