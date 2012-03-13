@@ -218,6 +218,7 @@
     <antcall target="MPS-languages.pack.jetbrains.mps.refactoring.runtime" />
     <antcall target="MPS-languages.pack.jetbrains.mps.lang.pattern.runtime" />
     <antcall target="MPS-languages.pack.jetbrains.mps.traceInfo" />
+    <antcall target="MPS-languages.pack.jetbrains.mps.traceInfo.cache" />
     <antcall target="MPS-languages.pack.jetbrains.mps.dataFlow.runtime" />
     <antcall target="MPS-languages.pack.stubUtils" />
     <antcall target="MPS-languages.pack.jetbrains.mps.typesystemEngine" />
@@ -644,7 +645,6 @@
     <antcall target="MPS-languages.pack.jetbrains.mps.build.workflow" />
     <antcall target="MPS-languages.pack.jetbrains.mps.core.xml" />
     <antcall target="MPS-languages.pack.jetbrains.mps.core.properties" />
-    <antcall target="MPS-languages.pack.jetbrains.mps.traceInfo.cache" />
     <mkdir dir="${deploy.dir}/MPS/languages/build" />
     <antcall target="MPS-languages.pack.jetbrains.mps.xml.deprecated" />
     <antcall target="MPS-languages.pack.jetbrains.mps.xml.deprecated.pluginSolution" />
