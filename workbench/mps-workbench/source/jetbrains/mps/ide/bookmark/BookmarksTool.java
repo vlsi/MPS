@@ -49,10 +49,6 @@ public class BookmarksTool extends BaseProjectTool implements PersistentStateCom
     super(project, "Bookmarks", -1, null, ToolWindowAnchor.BOTTOM, true);
   }
 
-  public void initComponent() {
-    super.initComponent();
-  }
-
   @Override
   protected void createTool() {
     myBookmarkManager = getProject().getComponent(BookmarkManager.class);

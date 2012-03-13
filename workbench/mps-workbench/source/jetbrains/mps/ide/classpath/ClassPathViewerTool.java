@@ -51,10 +51,6 @@ public class ClassPathViewerTool extends BaseProjectTool {
 
   }
 
-  public void initComponent() {
-    super.initComponent();
-  }
-
   @Override
   protected void createTool() {
     this.myComponent = new JPanel(new BorderLayout());

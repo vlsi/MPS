@@ -58,10 +58,6 @@ public class GenerationTracerViewTool extends BaseProjectTool {
     myNoTabsComponent = new NoTabsComponent(this);
   }
 
-  public void initComponent() {
-    super.initComponent();
-  }
-
   @Override
   protected void createTool() {
     StartupManager.getInstance(getProject()).registerPostStartupActivity(new Runnable() {

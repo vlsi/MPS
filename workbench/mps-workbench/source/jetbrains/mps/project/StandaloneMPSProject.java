@@ -108,16 +108,12 @@ public class StandaloneMPSProject extends MPSProject implements PersistentStateC
       migrationState.addMigrationListener(new MPSProjectMigrationListener.DEFAULT() {
         @Override
         public void migrationFinished(Project mpsProject) {
-          proceed();
+          migrationState.removeMigrationListener(this);
+          initProject();
         }
         @Override
         public void migrationAborted(Project project) {
-//          proceed();
-        }
-
-        private void proceed () {
           migrationState.removeMigrationListener(this);
-          initProject();
         }
       });
     }

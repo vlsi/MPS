@@ -60,10 +60,6 @@ public abstract class AbstractHierarchyView extends BaseProjectTool {
     super(project, id, number, icon, ToolWindowAnchor.RIGHT, true);
   }
 
-  public void initComponent() {
-    super.initComponent();
-  }
-
   @Override
   public void disposeComponent() {
     if (myHierarchyTree == null) {

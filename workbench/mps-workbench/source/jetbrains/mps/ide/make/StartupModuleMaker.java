@@ -59,16 +59,12 @@ public class StartupModuleMaker extends AbstractProjectComponent {
       migrationState.addMigrationListener(new MPSProjectMigrationListener.DEFAULT() {
         @Override
         public void migrationFinished(Project mpsProject) {
-          proceed();
+          migrationState.removeMigrationListener(this);
+          compileProjectModulesWithProgress(false);
         }
         @Override
         public void migrationAborted(Project project) {
-//          proceed();
-        }
-
-        private void proceed () {
           migrationState.removeMigrationListener(this);
-          compileProjectModulesWithProgress(false);
         }
       });
     }

@@ -48,10 +48,6 @@ public class OutputViewTool extends BaseProjectTool {
     super(project, "Output", 6, Icons.OUTPUT_VIEW_ICON, ToolWindowAnchor.BOTTOM, true);
   }
 
-  public void initComponent() {
-    super.initComponent();
-  }
-
   @Override
   protected void createTool() {
     this.myComponent = new JPanel(new BorderLayout());

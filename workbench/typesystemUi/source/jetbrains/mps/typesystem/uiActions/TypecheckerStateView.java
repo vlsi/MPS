@@ -35,10 +35,6 @@ public class TypecheckerStateView extends BaseProjectTool {
     return myComponent;
   }
 
-  public void initComponent() {
-    super.initComponent();
-  }
-
   @Override
   protected void createTool() {
     this.myComponent = new TypecheckerStateViewComponent(new ProjectOperationContext(ProjectHelper.toMPSProject(getProject())));

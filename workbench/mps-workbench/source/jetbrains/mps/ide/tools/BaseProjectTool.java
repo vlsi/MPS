@@ -19,6 +19,8 @@ import com.intellij.openapi.components.ProjectComponent;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.startup.StartupManager;
 import com.intellij.openapi.wm.ToolWindowAnchor;
+import jetbrains.mps.project.MPSProjectMigrationListener;
+import jetbrains.mps.project.MPSProjectMigrationState;
 
 import javax.swing.Icon;
 
@@ -32,6 +34,23 @@ public abstract class BaseProjectTool extends BaseTool implements ProjectCompone
   }
 
   public void projectOpened() {
+    final MPSProjectMigrationState migrationState = getProject().getComponent(MPSProjectMigrationState.class);
+    if (migrationState.isMigrationRequired() && migrationState.hasMigrationAgent()) {
+      migrationState.addMigrationListener(new MPSProjectMigrationListener.DEFAULT() {
+        @Override
+        public void migrationFinished(Project mpsProject) {
+          migrationState.removeMigrationListener(this);
+          createAndRegisterTool(false);
+        }
+        @Override
+        public void migrationAborted(Project project) {
+          migrationState.removeMigrationListener(this);
+        }
+      });
+    }
+    else {
+      createAndRegisterTool(true);
+    }
   }
 
   public void projectClosed() {
@@ -39,12 +58,20 @@ public abstract class BaseProjectTool extends BaseTool implements ProjectCompone
   }
 
   public void initComponent() {
+  }
+
+  private void createAndRegisterTool(final boolean early) {
     createTool();
-    StartupManager.getInstance(getProject()).registerPostStartupActivity(new Runnable() {
-      public void run() {
-        registerLater();
-      }
-    });
+    if (early) {
+      StartupManager.getInstance(getProject()).registerPostStartupActivity(new Runnable() {
+        public void run() {
+          registerLater();
+        }
+      });
+    }
+    else {
+      registerLater();
+    }
   }
 
   public void disposeComponent() {

@@ -34,11 +34,6 @@ public class HierarchyViewTool extends AbstractHierarchyView {
   }
 
   @Override
-  public void initComponent() {
-    super.initComponent();
-  }
-
-  @Override
   public void disposeComponent() {
     super.disposeComponent();
     if (myHierarchyTree == null) {

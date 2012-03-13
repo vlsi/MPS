@@ -85,17 +85,13 @@ public class ProjectLibraryManager extends BaseLibraryManager implements Project
       migrationState.addMigrationListener(new MPSProjectMigrationListener.DEFAULT() {
         @Override
         public void migrationFinished(Project mpsProject) {
-          proceed();
+          migrationState.removeMigrationListener(this);
+          loadLibraries();
         }
         @Override
         public void migrationAborted(Project project) {
-//          proceed();
-        }
-        
-        private void proceed () {
           migrationState.removeMigrationListener(this);
-          loadLibraries();
-        } 
+        }
       });
     }
     else {
