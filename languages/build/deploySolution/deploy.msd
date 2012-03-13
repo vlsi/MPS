@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<solution name="jetbrains.mps.buildScript.deploy" uuid="fa038be6-a55d-4179-9e80-8add85605900" compileInMPS="true">
+<solution name="jetbrains.mps.build.deploy" uuid="fa038be6-a55d-4179-9e80-8add85605900" compileInMPS="true">
   <models>
     <modelRoot path="${solution_descriptor}/models" />
   </models>
