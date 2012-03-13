@@ -15,11 +15,13 @@
  */
 package jetbrains.mps.ide.make;
 
+import com.intellij.openapi.application.ex.ApplicationManagerEx;
 import com.intellij.openapi.components.AbstractProjectComponent;
 import com.intellij.openapi.progress.ProgressIndicator;
 import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.startup.StartupManager;
+import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.messages.MessagesViewTool;
 import jetbrains.mps.library.ProjectLibraryManager;
 import jetbrains.mps.make.ModuleMaker;
@@ -66,13 +68,23 @@ public class StartupModuleMaker extends AbstractProjectComponent {
 
         private void proceed () {
           migrationState.removeMigrationListener(this);
-          compileProjectModules(false);
+          compileProjectModulesWithProgress(false);
         }
       });
     }
     else {
-      compileProjectModules(true);
+      compileProjectModulesWithProgress(true);
     }
+  }
+
+
+  private void compileProjectModulesWithProgress (final boolean early) {
+    ApplicationManagerEx.getApplicationEx().runProcessWithProgressSynchronously(new Runnable() {
+      @Override
+      public void run() {
+        compileProjectModules(early);
+      }
+    }, "Compiling", false, myProject);
   }
 
   private void compileProjectModules(boolean early) {
@@ -117,7 +129,12 @@ public class StartupModuleMaker extends AbstractProjectComponent {
         }
       });
     }else {
-      ModelAccess.instance().runWriteAction(reloadTask);
+      ThreadUtils.runInUIThreadNoWait(new Runnable() {
+        @Override
+        public void run() {
+          ModelAccess.instance().runWriteAction(reloadTask);
+        }
+      });
     }
   }
 
