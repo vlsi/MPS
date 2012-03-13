@@ -640,7 +640,7 @@
     <mkdir dir="${deploy.dir}/MPS/languages/execution" />
     <antcall target="MPS-languages.pack.jetbrains.mps.build.reduced" />
     <mkdir dir="${deploy.dir}/MPS/languages/make" />
-    <antcall target="MPS-languages.pack.jetbrains.mps.buildScript" />
+    <antcall target="MPS-languages.pack.jetbrains.mps.build" />
     <antcall target="MPS-languages.pack.jetbrains.mps.build.workflow" />
     <antcall target="MPS-languages.pack.jetbrains.mps.core.xml" />
     <antcall target="MPS-languages.pack.jetbrains.mps.core.properties" />
