@@ -141,6 +141,9 @@ public class RootDifferenceDialog extends DialogWrapper implements DataProvider 
     final Dimension size = DimensionService.getInstance().getSize(getDimensionServiceKey());
     if (size == null) {
       DimensionService.getInstance().setSize(getDimensionServiceKey(), new Dimension(width - 100, height - 100));
+      setSize(width - 100, height - 100);
+    } else {
+      setSize((int) size.getWidth(), ((int) size.getHeight()));
     }
     init();
   }
