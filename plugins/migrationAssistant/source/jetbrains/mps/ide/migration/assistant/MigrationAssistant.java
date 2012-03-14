@@ -15,20 +15,12 @@
  */
 package jetbrains.mps.ide.migration.assistant;
 
-import com.intellij.notification.Notification;
-import com.intellij.notification.NotificationDisplayType;
-import com.intellij.notification.Notifications;
-import com.intellij.openapi.application.Application;
 import com.intellij.openapi.application.ApplicationManager;
-import com.intellij.openapi.application.ex.ApplicationManagerEx;
 import com.intellij.openapi.components.AbstractProjectComponent;
 import com.intellij.openapi.project.Project;
-import com.intellij.openapi.project.ProjectManager;
-import com.intellij.openapi.project.ProjectUtil;
 import com.intellij.openapi.project.ex.ProjectManagerEx;
 import com.intellij.openapi.startup.StartupManager;
 import com.intellij.openapi.ui.Messages;
-import com.intellij.util.ui.UIUtil;
 import jetbrains.mps.project.MPSProjectMigrationState;
 
 /**
@@ -59,33 +51,45 @@ public class MigrationAssistant extends AbstractProjectComponent {
 
   @Override
   public void projectOpened() {
-//    if (true) return;
     final MPSProjectMigrationState migrationState = myProject.getComponent(MPSProjectMigrationState.class);
     if (migrationState.isMigrationRequired()) {
-      StartupManager.getInstance(myProject).registerPostStartupActivity(new Runnable() {
-        public void run() {
-          int i = Messages.showOkCancelDialog(myProject, "This project requires migration", "Migration Assistant", "Proceed", "Abort", null);
-          if (i == 0) {
-            migrationState.migrationStarted();
-            migrationState.migrationFinished();
-          }
-          else {
-            migrationState.migrationAborted();
-            StartupManager.getInstance(myProject).runWhenProjectIsInitialized(new Runnable() {
-              @Override
-              public void run() {
-                ApplicationManager.getApplication().invokeLater(new Runnable() {
-                    @Override
-                    public void run() {
-                      ProjectManagerEx.getInstanceEx().closeAndDispose(myProject);
-                    }
-                  });
-                }
-              }
-              );
-            }
-          }
-      });
+      initiateMigration(migrationState);
     }
   }
+
+  private void initiateMigration(final MPSProjectMigrationState migrationState) {
+    StartupManager.getInstance(myProject).registerPostStartupActivity(new Runnable() {
+      public void run() {
+        int i = Messages.showOkCancelDialog(myProject, "This project requires migration", "Migration Assistant", "Proceed", "Abort", null);
+        if (i == 0) {
+          doMigration();
+        }
+        else {
+          abortMigration();
+        }
+      }
+    });
+  }
+
+  private void abortMigration() {
+    myMigrationState.migrationAborted();
+    StartupManager.getInstance(myProject).runWhenProjectIsInitialized(new Runnable() {
+      @Override
+      public void run() {
+        ApplicationManager.getApplication().invokeLater(new Runnable() {
+          @Override
+          public void run() {
+            ProjectManagerEx.getInstanceEx().closeAndDispose(myProject);
+          }
+        });
+        }
+      }
+    );
+  }
+
+  private void doMigration() {
+    myMigrationState.migrationStarted();
+    myMigrationState.migrationFinished();
+  }
+
 }
