@@ -858,6 +858,7 @@
       <zipfileset dir="${base_dir}/plugins/mpsbuild/languages/mps/source_gen" includes="**/*.java" erroronmissingdir="false" />
       <zipfileset dir="${base_dir}/plugins/mpsbuild/languages/mps/test_gen" includes="**/*.java" erroronmissingdir="false" />
       <zipfileset file="${base_dir}/plugins/mpsbuild/languages/mps/mps.mpl" prefix="module" />
+      <zipfileset dir="${base_dir}/plugins/mpsbuild/languages/mps/generator/template" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/generator/template" />
       <zipfileset dir="${base_dir}/plugins/mpsbuild/languages/mps/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
     </jar>
     <jar destfile="${deploy.dir}/MPS/plugins/mpsbuild/languages/jetbrains.mps.build.mps.jar" compress="true" duplicate="preserve" filesonly="true">
