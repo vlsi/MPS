@@ -17,18 +17,17 @@
 package jetbrains.mps.idea.core.tests;
 
 import com.intellij.compiler.CompilerManagerImpl;
-import com.intellij.openapi.compiler.CompileContext;
-import com.intellij.openapi.compiler.CompileStatusNotification;
 import com.intellij.openapi.compiler.CompilerManager;
 import com.intellij.openapi.compiler.CompilerPaths;
 import com.intellij.openapi.roots.ModuleRootManager;
 import com.intellij.openapi.vfs.VirtualFile;
-import com.intellij.openapi.vfs.VirtualFileManager;
-import com.intellij.openapi.vfs.VirtualFileSystem;
 import jetbrains.mps.idea.core.facet.MPSFacetConfiguration;
 import jetbrains.mps.idea.core.make.MPSCompiler2;
 import jetbrains.mps.idea.core.make.MPSCompilerPaths;
+import jetbrains.mps.project.structure.model.ModelRoot;
 import jetbrains.mps.vfs.IFile;
+
+import java.util.ArrayList;
 
 /**
  * Created by IntelliJ IDEA.
@@ -44,7 +43,9 @@ public class SimpleMakeTest extends AbstractMakeTest {
     String moduleFileName = configuration.getFacet().getModule().getModuleFilePath();
     copyResource(moduleFileName, "simple.iml", "/tests/simple/simple.iml");
     final IFile model = copyResource("models", "simple.mps", "simple.mps", "/tests/simple/models/simple.mps");
-    configuration.getState().setModelRootPaths(model.getParent().getPath());
+    ArrayList<ModelRoot> roots = new ArrayList<ModelRoot>();
+    roots.add(new ModelRoot(model.getParent().getPath()));
+    configuration.getState().setModelRoots(roots);
     prepareTestData(configuration, model.getParent());
   }
 
