@@ -1082,7 +1082,7 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.TypeVariableDeclaration_Behavior" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.plugin.IconResourceBundle_Behavior" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.scopes.CachedClassifierMembersScope" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.scopes.BLCachedScopes" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.scopes.CompositeWithParentScope" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.scopes.FilteringScope" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.scopes.SimpleScope" />

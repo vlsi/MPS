@@ -25,7 +25,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperati
 import jetbrains.mps.baseLanguage.scopes.SimpleScope;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.baseLanguage.scopes.CachedClassifierMembersScope;
+import jetbrains.mps.baseLanguage.scopes.BLCachedScopes;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import jetbrains.mps.internal.collections.runtime.ISelector;
@@ -113,7 +113,7 @@ public class Classifier_Behavior {
       }));
     }
 
-    return CachedClassifierMembersScope.from(thisNode, kind, true, new _FunctionTypes._return_P0_E0<SimpleScope>() {
+    return BLCachedScopes.forClassifierMembers(thisNode, kind, true, new _FunctionTypes._return_P0_E0<SimpleScope>() {
       public SimpleScope invoke() {
         // standard java logic: 
         // 1) collect all inherited classifier members and filter based on access level 
