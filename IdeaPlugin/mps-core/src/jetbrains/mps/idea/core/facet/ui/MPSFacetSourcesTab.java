@@ -83,12 +83,19 @@ public class MPSFacetSourcesTab {
 
   public void setData(MPSConfigurationBean data) {
     for (ModelRoot modelRoot : data.getModelRoots()) {
+      if (modelRoot.getManager() != null) continue;
       addModelRoot(modelRoot);
     }
   }
 
   public void getData(MPSConfigurationBean data) {
-    data.setModelRoots(getModelRoots());
+    Collection<ModelRoot> modelRoots = getModelRoots();
+    for (ModelRoot mr:data.getModelRoots()){
+      if (mr.getManager()==null)continue;
+      modelRoots.add(mr);
+    }
+
+    data.setModelRoots(modelRoots);
   }
 
   public boolean isModified(MPSConfigurationBean data) {
