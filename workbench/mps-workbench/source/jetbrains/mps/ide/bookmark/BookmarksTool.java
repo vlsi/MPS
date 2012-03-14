@@ -69,7 +69,10 @@ public class BookmarksTool extends BaseProjectTool implements PersistentStateCom
   }
 
   public MyState getState() {
-    return new MyState(myTree.saveState());
+    if (myTree != null) {
+      this.myTreeState = myTree.saveState();
+    }
+    return new MyState(myTreeState);
   }
 
   public void loadState(final MyState state) {

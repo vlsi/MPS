@@ -7,6 +7,7 @@ import com.intellij.openapi.components.Storage;
 import com.intellij.openapi.components.ProjectComponent;
 import com.intellij.openapi.components.PersistentStateComponent;
 import org.jdom.Element;
+import jetbrains.mps.logging.Logger;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.make.StartupModuleMaker;
 import jetbrains.mps.smodel.ModelAccess;
@@ -25,6 +26,7 @@ import org.jetbrains.annotations.NotNull;
 })
 public class DefaultSearchOptionsComponent implements ProjectComponent, PersistentStateComponent<Element> {
   private static final String DEFAULT_SEARCH_OPTIONS = "default_search_options";
+  private static Logger LOG = Logger.getLogger(DefaultSearchOptionsComponent.class);
 
   private FindUsagesOptions myDefaultSearchOptions;
   private Project myProject;
@@ -62,17 +64,20 @@ public class DefaultSearchOptionsComponent implements ProjectComponent, Persiste
   }
 
   public Element getState() {
-    Element defaultFindOptionsXML = new Element(DEFAULT_SEARCH_OPTIONS);
-    try {
-      myDefaultSearchOptions.write(defaultFindOptionsXML, myProject.getComponent(MPSProject.class));
-    } catch (CantSaveSomethingException e) {
-      throw new RuntimeException("this exception shouldn't be thrown");
+    if (myDefaultSearchOptions != null) {
+      Element defaultFindOptionsXML = new Element(DEFAULT_SEARCH_OPTIONS);
+      try {
+        myDefaultSearchOptions.write(defaultFindOptionsXML, myProject.getComponent(MPSProject.class));
+
+      } catch (CantSaveSomethingException e) {
+        LOG.error("error saving options", e);
+      }
     }
-    return defaultFindOptionsXML;
+    return myState;
   }
 
   public void loadState(Element state) {
-    this.myState = state;
+    this.myState = (Element) state.clone();
     if (myDefaultSearchOptions != null) {
       readOptions(myState);
     }
@@ -96,6 +101,7 @@ public class DefaultSearchOptionsComponent implements ProjectComponent, Persiste
     try {
       myDefaultSearchOptions.read(state, myProject.getComponent(MPSProject.class));
     } catch (CantLoadSomethingException e) {
+      LOG.error("error reading options", e);
       myDefaultSearchOptions = new FindUsagesOptions(new FindersOptions(), new ScopeOptions(), new ViewOptions());
     }
   }
