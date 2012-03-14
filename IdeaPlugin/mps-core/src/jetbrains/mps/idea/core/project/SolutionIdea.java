@@ -28,7 +28,6 @@ import com.intellij.util.messages.MessageBusConnection;
 import jetbrains.mps.idea.core.facet.MPSFacet;
 import jetbrains.mps.idea.core.facet.MPSFacetType;
 import jetbrains.mps.project.ModuleId;
-import jetbrains.mps.project.SModelRoot;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.structure.model.ModelRoot;
 import jetbrains.mps.project.structure.modules.Dependency;
@@ -202,6 +201,11 @@ public class SolutionIdea extends Solution {
   }
 
   private void addLibs(SolutionDescriptor solutionDescriptor) {
+    for (Iterator<ModelRoot> i = solutionDescriptor.getModelRoots().iterator(); i.hasNext(); ) {
+      if (i.next().getManager() == null) continue;//regular model
+      i.remove();
+    }
+
     for (OrderEntry e : ModuleRootManager.getInstance(myModule).getOrderEntries()) {
       if (!(e instanceof LibraryOrderEntry)) continue;
 
@@ -215,6 +219,8 @@ public class SolutionIdea extends Solution {
         ModelRoot mr = new ModelRoot();
         mr.setPath(getLocalPath(f));
         mr.setManager(LanguageID.JAVA_MANAGER);
+
+        if (solutionDescriptor.getModelRoots().contains(mr)) continue;
         solutionDescriptor.getModelRoots().add(mr);
       }
     }

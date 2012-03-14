@@ -22,18 +22,14 @@ import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
 import org.jetbrains.annotations.NonNls;
 
-import java.util.ArrayList;
 import java.util.Collection;
-import java.util.List;
+import java.util.Collections;
 import java.util.UUID;
 
 /**
  * evgeny, 10/26/11
  */
 public class MPSConfigurationBean {
-  @NonNls
-  static final String SOLUTION_FILE_NAME = "solution";
-
   @Transient
   private final SolutionDescriptor myDescriptor;
   private boolean myUseModuleSourceFolder = false;
@@ -81,21 +77,13 @@ public class MPSConfigurationBean {
     myDescriptor.setOutputPath(outputPath);
   }
 
-  public String[] getModelRootPaths() {
-    List<String> result = new ArrayList<String>();
-    for (ModelRoot modelRoot : myDescriptor.getModelRoots()) {
-      result.add(modelRoot.getPath());
-    }
-    return result.toArray(new String[result.size()]);
+  public Collection<ModelRoot> getModelRoots() {
+    return myDescriptor.getModelRoots();
   }
 
-  public void setModelRootPaths(String... paths) {
+  public void setModelRoots(Collection<ModelRoot> paths) {
     myDescriptor.getModelRoots().clear();
-    for (String path : paths) {
-      ModelRoot modelRoot = new ModelRoot();
-      modelRoot.setPath(path);
-      myDescriptor.getModelRoots().add(modelRoot);
-    }
+    myDescriptor.getModelRoots().addAll(paths);
   }
 
   public String[] getUsedLanguages() {
