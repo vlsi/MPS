@@ -24,6 +24,7 @@ import org.jetbrains.annotations.NonNls;
 
 import java.util.Collection;
 import java.util.Collections;
+import java.util.HashSet;
 import java.util.UUID;
 
 /**
@@ -78,7 +79,7 @@ public class MPSConfigurationBean {
   }
 
   public Collection<ModelRoot> getModelRoots() {
-    return myDescriptor.getModelRoots();
+    return new HashSet(myDescriptor.getModelRoots());
   }
 
   public void setModelRoots(Collection<ModelRoot> paths) {

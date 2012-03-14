@@ -33,6 +33,7 @@ import jetbrains.mps.project.structure.model.ModelRoot;
 import org.jetbrains.annotations.NotNull;
 
 import java.io.File;
+import java.util.Collection;
 
 /**
  * evgeny, 10/26/11
@@ -65,7 +66,9 @@ public class MPSFrameworkSupportProvider extends FacetBasedFrameworkSupportProvi
     MPSConfigurationBean configurationBean = mpsFacet.getConfiguration().getState();
     ModelRoot mr = new ModelRoot();
     mr.setPath(modelDirectoryPath);
-    configurationBean.getModelRoots().add(mr);
+    Collection<ModelRoot> oldRoots = configurationBean.getModelRoots();
+    oldRoots.add(mr);
+    configurationBean.setModelRoots(oldRoots);
 
     if (sourceFolder != null) {
       configurationBean.setGeneratorOutputPath(sourceFolder.getFile().getPath());
