@@ -262,16 +262,12 @@
     </jar>
     <delete dir="${deploy.dir}/MPS/lib/mps-editor.jar.tmp" />
     <copy todir="${deploy.dir}/MPS/lib/mps-platform.jar.tmp">
-      <fileset dir="${mps_home}/workbench/baseLanguageIndex/classes_gen" />
-    </copy>
-    <copy todir="${deploy.dir}/MPS/lib/mps-platform.jar.tmp">
       <fileset dir="${mps_home}/workbench/mps-platform/classes" />
     </copy>
     <copy todir="${deploy.dir}/MPS/lib/mps-platform.jar.tmp">
       <fileset dir="${mps_home}/workbench/mps-debugger/classes" />
     </copy>
     <antcall target="MPS-languages.pack.jetbrains.mps.ide.platform" />
-    <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.index" />
     <mkdir dir="${deploy.dir}/MPS/lib/mps-platform.jar.tmp/modules" />
     <jar destfile="${deploy.dir}/MPS/lib/mps-platform.jar" duplicate="preserve" filesonly="true">
       <fileset dir="${deploy.dir}/MPS/lib/mps-platform.jar.tmp" />
@@ -625,9 +621,7 @@
     <antcall target="MPS-languages.pack.jetbrains.mps.lang.descriptor" />
     <antcall target="MPS-languages.pack.jetbrains.mps.lang.core.pluginSolution" />
     <antcall target="MPS-languages.pack.jetbrains.mps.lang.structure.pluginSolution" />
-    <antcall target="MPS-languages.pack.jetbrains.mps.lang.behavior.pluginSolution" />
     <antcall target="MPS-languages.pack.jetbrains.mps.lang.generator.pluginSolution" />
-    <antcall target="MPS-languages.pack.jetbrains.mps.lang.intentions.pluginSolution" />
     <antcall target="MPS-languages.pack.jetbrains.mps.lang.plugin.pluginSolution" />
     <antcall target="MPS-languages.pack.jetbrains.mps.lang.quotation.pluginSolution" />
     <antcall target="MPS-languages.pack.jetbrains.mps.lang.script.pluginSolution" />

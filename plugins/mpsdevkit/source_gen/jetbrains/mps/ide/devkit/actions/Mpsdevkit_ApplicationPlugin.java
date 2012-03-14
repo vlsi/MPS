@@ -41,9 +41,11 @@ public class Mpsdevkit_ApplicationPlugin extends BaseApplicationPlugin {
     addAction(new FindLanguageUsages_Action());
     addAction(new GoToConceptDeclaration_Action());
     addAction(new GoToEditorDeclaration_Action());
+    addAction(new GoToOverridingMethod_Action());
     addAction(new GoToRules_Action());
     addAction(new GoToUsageInMappingConfig_Action());
     addAction(new HighlightCellDependencies_Action());
+    addAction(new ImplementBehaviorMethod_Action());
     addAction(new InstallIDEAPlugin_Action());
     addAction(new LanguageHierarchy_Action());
     addAction(new LanguagePaths_Action());
@@ -52,6 +54,7 @@ public class Mpsdevkit_ApplicationPlugin extends BaseApplicationPlugin {
     addAction(new NewDevKit_Action());
     addAction(new NewGenerator_Action());
     addAction(new NewLanguage_Action());
+    addAction(new OverrideBehaviorMethod_Action());
     addAction(new PrintNodeID_Action());
     addAction(new ReloadAll_Action());
     addAction(new RenameLanguage_Action());
@@ -61,11 +64,14 @@ public class Mpsdevkit_ApplicationPlugin extends BaseApplicationPlugin {
     addAction(new ShowModelRepository_Action());
     addAction(new ShowModuleRepository_Action());
     addAction(new ShowNodeInExplorer_Action());
+    addAction(new ShowStructure_Action());
     addAction(new ShowTypeSystemTraceIncremental_Action());
     addAction(new ShowTypeSystemTrace_Action());
     addAction(new TestNodePath_Action());
     // groups 
     addGroup(new AccessoriesGroupActions_ActionGroup());
+    addGroup(new BehaviorCodeOverrideImplementMenuGroup_ActionGroup());
+    addGroup(new BehaviourPopup_ActionGroup());
     addGroup(new DevKitTools_ActionGroup());
     addGroup(new EditorInternalEx_ActionGroup());
     addGroup(new FindLanguageUsages_ActionGroup());
@@ -83,6 +89,7 @@ public class Mpsdevkit_ApplicationPlugin extends BaseApplicationPlugin {
     addGroup(new ProjectNewActionsEx_ActionGroup());
     addGroup(new RepositoryToolsGroup_ActionGroup());
     addGroup(new ShowNodeIn_ActionGroup());
+    addGroup(new StructureAdditions_ActionGroup());
     addGroup(new TraceActions_ActionGroup());
   }
 
@@ -90,10 +97,13 @@ public class Mpsdevkit_ApplicationPlugin extends BaseApplicationPlugin {
     insertGroupIntoAnother(GenerateEditorPopup_ActionGroup.ID, "EditorPopup_ActionGroupgoto", null);
     insertGroupIntoAnother(ProjectNewActionsEx_ActionGroup.ID, ProjectNewActions_ActionGroup.ID, ProjectNewActions_ActionGroup.LABEL_ID_end);
     insertGroupIntoAnother(LanguageRefactoring_ActionGroup.ID, CommonModuleActions_ActionGroup.ID, CommonModuleActions_ActionGroup.LABEL_ID_refactoring);
+    insertGroupIntoAnother(StructureAdditions_ActionGroup.ID, "Code_ActionGroupstructure", null);
     insertGroupIntoAnother(RepositoryToolsGroup_ActionGroup.ID, Tools_ActionGroup.ID, Tools_ActionGroup.LABEL_ID_customTools);
     insertGroupIntoAnother(GenerationTraceActions_ActionGroup.ID, DebugActions_ActionGroup.ID, DebugActions_ActionGroup.LABEL_ID_generator);
     insertGroupIntoAnother(LanguageNewGenerator_ActionGroup.ID, LanguageNewActions_ActionGroup.ID, LanguageNewActions_ActionGroup.LABEL_ID_newSubModule);
     insertGroupIntoAnother(LanguageNewActionsEx_ActionGroup.ID, LanguageNewActions_ActionGroup.ID, LanguageNewActions_ActionGroup.LABEL_ID_newModel);
+    insertGroupIntoAnother(BehaviourPopup_ActionGroup.ID, "jetbrains.mps.ide.editor.actions.EditorPopup_ActionGroup", null);
+    insertGroupIntoAnother(BehaviorCodeOverrideImplementMenuGroup_ActionGroup.ID, "Code_ActionGroupoverrideImplement", null);
     insertGroupIntoAnother(GeneratorActions_Delete_ActionGroup.ID, GeneratorActions_ActionGroup.ID, GeneratorActions_ActionGroup.LABEL_ID_delete);
     insertGroupIntoAnother(GotoConceptAspect_ActionGroup.ID, EditorTabActions_ActionGroup.ID, EditorTabActions_ActionGroup.LABEL_ID_gotoConceptAspects);
     insertGroupIntoAnother(GotoConceptAspect_ActionGroup.ID, Goto_ActionGroup.ID, Goto_ActionGroup.LABEL_ID_gotoConceptAspects);

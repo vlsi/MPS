@@ -32,7 +32,7 @@ public class MoveNodeDialog extends ModelOrNodeChooserDialog {
     }
     if (myNodeFilter == null || myNodeFilter.checkForObject(((SNode) selectedObject), myNodeToMove, myNodeToMove.getModel().getModelDescriptor(), myChooser.getComponent())) {
       mySelectedObject = ((SNode) selectedObject);
-      dispose();
+      super.doRefactoringAction();
     }
   }
 

@@ -1,6 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="ConstraintsAspectDescriptor.java" startLine="9" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.baseLanguage.tuples.constraints.ConstraintsAspectDescriptor" />
+  <unitInfo fileName="NamedTupleComponentAccessOperation_Constraints.java" startLine="30" startPosition="0" endLine="108" endPosition="0" unitName="jetbrains.mps.baseLanguage.tuples.constraints.NamedTupleComponentAccessOperation_Constraints" />
+  <unitInfo fileName="NamedTupleComponentAccessOperation_Constraints.java" startLine="57" startPosition="32" endLine="68" endPosition="5" unitName="jetbrains.mps.baseLanguage.tuples.constraints.NamedTupleComponentAccessOperation_Constraints$1" />
+  <unitInfo fileName="NamedTupleComponentAccessOperation_Constraints.java" startLine="75" startPosition="36" endLine="100" endPosition="5" unitName="jetbrains.mps.baseLanguage.tuples.constraints.NamedTupleComponentAccessOperation_Constraints$2" />
+  <unitInfo fileName="NamedTupleComponentAccessOperation_Constraints.java" startLine="84" startPosition="19" endLine="98" endPosition="9" unitName="jetbrains.mps.baseLanguage.tuples.constraints.NamedTupleComponentAccessOperation_Constraints$3" />
+  <unitInfo fileName="NamedTupleComponentAccessOperation_Constraints.java" startLine="87" startPosition="452" endLine="91" endPosition="13" unitName="jetbrains.mps.baseLanguage.tuples.constraints.NamedTupleComponentAccessOperation_Constraints$4" />
+  <unitInfo fileName="NamedTupleComponentDeclaration_Constraints.java" startLine="7" startPosition="0" endLine="12" endPosition="0" unitName="jetbrains.mps.baseLanguage.tuples.constraints.NamedTupleComponentDeclaration_Constraints" />
+  <unitInfo fileName="NamedTupleComponentReference_Constraints.java" startLine="23" startPosition="0" endLine="62" endPosition="0" unitName="jetbrains.mps.baseLanguage.tuples.constraints.NamedTupleComponentReference_Constraints" />
+  <unitInfo fileName="NamedTupleComponentReference_Constraints.java" startLine="33" startPosition="47" endLine="58" endPosition="5" unitName="jetbrains.mps.baseLanguage.tuples.constraints.NamedTupleComponentReference_Constraints$1" />
+  <unitInfo fileName="NamedTupleComponentReference_Constraints.java" startLine="42" startPosition="19" endLine="56" endPosition="9" unitName="jetbrains.mps.baseLanguage.tuples.constraints.NamedTupleComponentReference_Constraints$2" />
+  <unitInfo fileName="NamedTupleComponentReference_Constraints.java" startLine="45" startPosition="306" endLine="49" endPosition="13" unitName="jetbrains.mps.baseLanguage.tuples.constraints.NamedTupleComponentReference_Constraints$3" />
   <root nodeId="1239575860624">
     <nodeInfo nodeId="1239575860624" fileName="NamedTupleComponentDeclaration_Constraints.java" startLine="8" startPosition="55" endLine="9" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="1239575860624" fileName="NamedTupleComponentDeclaration_Constraints.java" startLine="7" startPosition="91" endLine="10" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="NamedTupleComponentDeclaration_Constraints#()V" />
