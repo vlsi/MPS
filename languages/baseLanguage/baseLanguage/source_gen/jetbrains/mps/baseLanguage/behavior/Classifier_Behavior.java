@@ -167,10 +167,10 @@ public class Classifier_Behavior {
           public Comparable<?> select(SNode it) {
             if (SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration")) {
               SNode method = SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration");
-              if (SNodeOperations.getParent(method) == SNodeOperations.getNode("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Object")) {
+              if (BaseMethodDeclaration_Behavior.call_isAbstract_1232982539764(method)) {
                 return 1;
               }
-              if (BaseMethodDeclaration_Behavior.call_isAbstract_1232982539764(method)) {
+              if (SNodeOperations.getParent(method) == SNodeOperations.getNode("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Object")) {
                 return 2;
               }
               return 3;
