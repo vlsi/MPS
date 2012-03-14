@@ -17,12 +17,26 @@ package jetbrains.mps.project.structure.model;
 
 import org.apache.commons.lang.ObjectUtils;
 
-public class ModelRoot {
+//should implement Comparable in order to be saved from idea-plugin
+public class ModelRoot implements Comparable<ModelRoot> {
   public static final String PATH = "path";
   public static final String MANAGER = "manager";
 
   private String myPath;
   private ModelRootManager myManager;
+
+  public ModelRoot() {
+
+  }
+
+  public ModelRoot(String path) {
+    myPath = path;
+  }
+
+  public ModelRoot(String path, ModelRootManager manager) {
+    myPath = path;
+    myManager = manager;
+  }
 
   public String getPath() {
     return myPath;
@@ -64,5 +78,16 @@ public class ModelRoot {
     result.myManager = myManager == null ? null : myManager.getCopy();
 
     return result;
+  }
+
+  @Override
+  public int compareTo(ModelRoot o) {
+    int pc = myPath.compareTo(o.myPath);
+    if (pc != 0) return pc;
+
+    pc = myManager.getClassName().compareTo(o.myManager.getClassName());
+    if (pc != 0) return pc;
+
+    return myManager.getModuleId().compareTo(o.myManager.getModuleId());
   }
 }
