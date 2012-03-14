@@ -1,4 +1,4 @@
-<project name="buildMpsA" default="build" basedir="../">
+<project name="buildMpsA" default="build">
   <property name="build.dir" location="build" />
   <property name="build.tmp" location="${build.dir}/tmp/buildMpsA" />
   <property name="build.layout" location="${build.dir}/artifacts/buildMpsA" />

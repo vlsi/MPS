@@ -8,7 +8,7 @@
   <import index="kdzh" modelUID="r:0353b795-df17-4050-9687-ee47eeb7094f(jetbrains.mps.build.mps.structure)" version="-1" implicit="yes" />
   <roots>
     <node type="3ior.BuildProject" typeId="3ior.5617550519002745363" id="5253498789149585672">
-      <property name="internalBaseDirectory" nameId="3ior.5204048710541015587" value="." />
+      <property name="internalBaseDirectory" nameId="3ior.5204048710541015587" value="samples" />
       <property name="name" nameId="tpck.1169194664001" value="buildMpsA" />
     </node>
   </roots>
@@ -23,11 +23,7 @@
         <link role="module" roleId="kdzh.3189788309731928317" targetNodeId="3189788309731933923" resolveInfo="javamod" />
       </node>
     </node>
-    <node role="scriptsDir" roleId="3ior.4796668409958418110" type="3ior.BuildSourceProjectRelativePath" typeId="3ior.5481553824944787378" id="5253498789149585673">
-      <node role="compositePart" roleId="3ior.7321017245477039051" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="5253498789149585674">
-        <property name="head" nameId="3ior.8618885170173601779" value="build" />
-      </node>
-    </node>
+    <node role="scriptsDir" roleId="3ior.4796668409958418110" type="3ior.BuildSourceProjectRelativePath" typeId="3ior.5481553824944787378" id="3189788309732144700" />
     <node role="layout" roleId="3ior.5617550519002745372" type="3ior.BuildLayout" typeId="3ior.5617550519002745364" id="5253498789149585675" />
     <node role="parts" roleId="3ior.7389400916848080626" type="kdzh.BuildMps_Language" typeId="kdzh.3189788309731840248" id="3189788309731903988">
       <property name="name" nameId="tpck.1169194664001" value="mylang" />

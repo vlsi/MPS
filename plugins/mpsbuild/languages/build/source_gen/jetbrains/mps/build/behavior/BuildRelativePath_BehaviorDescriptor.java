@@ -4,8 +4,8 @@ package jetbrains.mps.build.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.build.util.Context;
-import jetbrains.mps.build.util.MacroHelper;
 import org.jetbrains.annotations.Nullable;
+import jetbrains.mps.build.util.MacroHelper;
 
 public abstract class BuildRelativePath_BehaviorDescriptor extends BuildSourcePath_BehaviorDescriptor {
   public BuildRelativePath_BehaviorDescriptor() {
@@ -13,6 +13,11 @@ public abstract class BuildRelativePath_BehaviorDescriptor extends BuildSourcePa
 
   public String virtual_getLocalPath_5481553824944787364(SNode thisNode, Context context) {
     return BuildRelativePath_Behavior.virtual_getLocalPath_5481553824944787364(thisNode, context);
+  }
+
+  @Nullable
+  public String virtual_getBasePath_4959435991187140515(SNode thisNode, Context context) {
+    return BuildRelativePath_Behavior.virtual_getBasePath_4959435991187140515(thisNode, context);
   }
 
   public String virtual_getLastSegment_1368030936106771141(SNode thisNode, MacroHelper helper) {
@@ -23,7 +28,4 @@ public abstract class BuildRelativePath_BehaviorDescriptor extends BuildSourcePa
   public String getConceptFqName() {
     return "jetbrains.mps.build.structure.BuildRelativePath";
   }
-
-  @Nullable
-  public abstract String virtual_getBasePath_4959435991187140515(SNode thisNode, Context context);
 }
