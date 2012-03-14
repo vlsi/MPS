@@ -10,7 +10,6 @@
       <sourceFolder url="file://$MODULE_DIR$/test_gen" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/common/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/common/source" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/core/source_gen" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
@@ -34,6 +33,7 @@
     <orderEntry type="module" module-name="mps-editor" />
     <orderEntry type="library" name="Log4j" level="project" />
     <orderEntry type="module" module-name="mpsmake" />
+    <orderEntry type="module" module-name="vcs-core" />
   </component>
 </module>
 
