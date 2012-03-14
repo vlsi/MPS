@@ -7,13 +7,27 @@ import java.util.Arrays;
 import jetbrains.mps.smodel.runtime.interpreted.BehaviorAspectInterpreted;
 
 public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor {
-  private static String[] stringSwitchCases_846f5o_a0a0a = new String[]{};
+  private static String[] stringSwitchCases_846f5o_a0a0a = new String[]{"jetbrains.mps.build.mps.structure.BuildMps_Language", "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyOnJavaModule", "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyOnModule", "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyUseLanguage", "jetbrains.mps.build.mps.structure.BuildMps_ModuleJavaSource", "jetbrains.mps.build.mps.structure.BuildMps_ModuleSolutionRuntime", "jetbrains.mps.build.mps.structure.BuildMps_Solution"};
 
   public BehaviorAspectDescriptor() {
   }
 
   public BehaviorDescriptor getDescriptor(String fqName) {
     switch (Arrays.binarySearch(stringSwitchCases_846f5o_a0a0a, fqName)) {
+      case 2:
+        return new BuildMps_ModuleDependencyOnModule_BehaviorDescriptor();
+      case 4:
+        return new BuildMps_ModuleJavaSource_BehaviorDescriptor();
+      case 6:
+        return new BuildMps_Solution_BehaviorDescriptor();
+      case 0:
+        return new BuildMps_Language_BehaviorDescriptor();
+      case 3:
+        return new BuildMps_ModuleDependencyUseLanguage_BehaviorDescriptor();
+      case 1:
+        return new BuildMps_ModuleDependencyOnJavaModule_BehaviorDescriptor();
+      case 5:
+        return new BuildMps_ModuleSolutionRuntime_BehaviorDescriptor();
       default:
         return BehaviorAspectInterpreted.getInstance().getDescriptor(fqName);
     }

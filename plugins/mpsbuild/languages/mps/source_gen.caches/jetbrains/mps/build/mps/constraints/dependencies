@@ -1,3 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependenciesRoot />
+<dependenciesRoot>
+  <dependency className="jetbrains.mps.build.mps.constraints.BuildMps_Module_Constraints" file="BuildMps_Module_Constraints.java">
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
+  </dependency>
+  <dependency className="jetbrains.mps.build.mps.constraints.ConstraintsAspectDescriptor" file="ConstraintsAspectDescriptor.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.Arrays" />
+    <classNode dependClassName="jetbrains.mps.build.mps.constraints.BuildMps_Module_Constraints" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.ConstraintsDescriptor" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.ConstraintsAspectDescriptor" />
+  </dependency>
+</dependenciesRoot>
 

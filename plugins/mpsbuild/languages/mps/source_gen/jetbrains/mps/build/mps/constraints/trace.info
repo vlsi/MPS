@@ -1,3 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debugInfo />
+<debugInfo>
+  <unitInfo fileName="ConstraintsAspectDescriptor.java" startLine="9" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.build.mps.constraints.ConstraintsAspectDescriptor" />
+  <root nodeId="5253498789149498065">
+    <nodeInfo nodeId="5253498789149498065" fileName="BuildMps_Module_Constraints.java" startLine="8" startPosition="40" endLine="9" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="5253498789149498065" fileName="BuildMps_Module_Constraints.java" startLine="7" startPosition="76" endLine="10" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="BuildMps_Module_Constraints#()V" />
+    <scopeInfo nodeId="5253498789149498065" fileName="BuildMps_Module_Constraints.java" startLine="8" startPosition="40" endLine="9" endPosition="63" />
+    <scopeInfo nodeId="5253498789149498065" fileName="BuildMps_Module_Constraints.java" startLine="7" startPosition="76" endLine="10" endPosition="3" />
+    <unitInfo nodeId="5253498789149498065" fileName="BuildMps_Module_Constraints.java" startLine="7" startPosition="0" endLine="12" endPosition="0" unitName="jetbrains.mps.build.mps.constraints.BuildMps_Module_Constraints" />
+  </root>
+</debugInfo>
 
