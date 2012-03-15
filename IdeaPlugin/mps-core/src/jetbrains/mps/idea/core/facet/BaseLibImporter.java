@@ -22,6 +22,7 @@ import com.intellij.openapi.roots.OrderRootType;
 import com.intellij.openapi.roots.impl.libraries.ProjectLibraryTable;
 import com.intellij.openapi.roots.libraries.Library;
 import com.intellij.openapi.roots.libraries.LibraryTable;
+import com.intellij.openapi.roots.libraries.LibraryTable.Listener;
 import com.intellij.openapi.roots.ui.configuration.projectRoot.LibrariesContainer;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.ide.MPSCoreComponents;
@@ -39,26 +40,23 @@ import java.util.List;
 import java.util.UUID;
 
 public abstract class BaseLibImporter implements MPSModuleOwner {
+  private final Listener myListener = new MyListener();
+
   public void initComponent() {
     ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
         for (Library l : getLibTable().getLibraries()) {
-          SolutionDescriptor sd = new SolutionDescriptor();
-          sd.setNamespace(l.getName());
-          sd.setUUID(UUID.randomUUID().toString());
-          for (VirtualFile f : l.getFiles(OrderRootType.CLASSES)) {
-            ModelRoot modelRoot = new ModelRoot(LibHelper.getLocalPath(f), LanguageID.JAVA_MANAGER);
-            sd.getModelRoots().add(modelRoot);
-          }
-          Solution.newInstance(sd, BaseLibImporter.this);
+          addModuleForLibrary(l);
         }
       }
     });
+    getLibTable().addListener(myListener);
   }
 
   protected abstract LibraryTable getLibTable();
 
   public void disposeComponent() {
+    getLibTable().removeListener(myListener);
     ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
         MPSModuleRepository.getInstance().unRegisterModules(BaseLibImporter.this);
@@ -69,5 +67,39 @@ public abstract class BaseLibImporter implements MPSModuleOwner {
   @NotNull
   public String getComponentName() {
     return getClass().getSimpleName();
+  }
+
+  protected void addModuleForLibrary(Library l) {
+    SolutionDescriptor sd = new SolutionDescriptor();
+    sd.setNamespace(l.getName());
+    sd.setUUID(UUID.randomUUID().toString());
+    for (VirtualFile f : l.getFiles(OrderRootType.CLASSES)) {
+      ModelRoot modelRoot = new ModelRoot(LibHelper.getLocalPath(f), LanguageID.JAVA_MANAGER);
+      sd.getModelRoots().add(modelRoot);
+    }
+    Solution.newInstance(sd, this);
+  }
+
+  protected void removeModuleForLibrary(Library l) {
+      //todo
+  }
+
+  private class MyListener implements Listener {
+    public void afterLibraryAdded(Library newLibrary) {
+      addModuleForLibrary(newLibrary);
+    }
+
+    public void afterLibraryRenamed(Library library) {
+        Solution s = LibHelper.findSolutionForLibrary(library);
+        //todo update models
+    }
+
+    public void beforeLibraryRemoved(Library library) {
+      removeModuleForLibrary(library);
+    }
+
+    public void afterLibraryRemoved(Library library) {
+
+    }
   }
 }

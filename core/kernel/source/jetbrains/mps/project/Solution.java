@@ -80,6 +80,16 @@ public class Solution extends AbstractModule {
 
   //this is for stubs framework & tests only. Can be later converted into subclass
   public static Solution newInstance(SolutionDescriptor descriptor, MPSModuleOwner moduleOwner) {
+    ModuleReference mref = descriptor.getModuleReference();
+    MPSModuleRepository repo = MPSModuleRepository.getInstance();
+    if (repo.existsModule(mref)) {
+      IModule module = repo.getSolution(mref);
+      IFile file = FileSystem.getInstance().getFileByPath("NO FILE");
+      ModuleHandle handle = new ModuleHandle(file, module.getModuleDescriptor());
+      repo.registerModule(handle, moduleOwner);
+      return (Solution) module;
+    }
+
     Solution solution = new Solution() {
       public String getGeneratorOutputPath() {
         return null;
@@ -94,13 +104,8 @@ public class Solution extends AbstractModule {
       }
     };
 
-    IModule d = MPSModuleRepository.checkRegistered(descriptor.getModuleReference(), FileSystem.getInstance().getFileByPath("NO FILE"));
-    if (d != null) {
-      return (Solution) d;
-    }
-
     solution.setSolutionDescriptor(descriptor, false);
-    MPSModuleRepository.getInstance().addModule(solution, moduleOwner);
+    repo.addModule(solution, moduleOwner);
 
     return solution;
   }

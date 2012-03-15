@@ -20,6 +20,7 @@ import com.intellij.openapi.module.Module;
 import com.intellij.openapi.roots.LibraryOrderEntry;
 import com.intellij.openapi.roots.ModuleRootManager;
 import com.intellij.openapi.roots.OrderEntry;
+import com.intellij.openapi.roots.libraries.Library;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.MPSModuleRepository;
@@ -34,11 +35,15 @@ public class LibHelper {
       if (!(oe instanceof LibraryOrderEntry)) continue;
       LibraryOrderEntry loe = (LibraryOrderEntry) oe;
       if (loe.isModuleLevel()) continue;
-      Solution s = MPSModuleRepository.getInstance().getSolution(loe.getLibrary().getName());
+      Solution s = findSolutionForLibrary(loe.getLibrary());
       if (s == null) continue;
       result.add(s);
     }
     return result;
+  }
+
+  public static Solution findSolutionForLibrary(Library library) {
+    return MPSModuleRepository.getInstance().getSolution(library.getName());
   }
 
   public static String getLocalPath(VirtualFile f) {
