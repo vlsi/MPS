@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="TypesystemDescriptor.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.build.mps.typesystem.TypesystemDescriptor" />
+  <unitInfo fileName="TypesystemDescriptor.java" startLine="8" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.build.mps.typesystem.TypesystemDescriptor" />
   <root nodeId="4278635856200804509">
     <nodeInfo nodeId="1258644073389052168" fileName="check_BuildMps_ModuleJarRuntime_NonTypesystemRule.java" startLine="21" startPosition="121" endLine="22" endPosition="143" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1258644073389052213" fileName="check_BuildMps_ModuleJarRuntime_NonTypesystemRule.java" startLine="24" startPosition="7" endLine="25" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -44,6 +44,50 @@
       <varInfo nodeId="4278635856200804509" varName="typeCheckingContext" />
     </scopeInfo>
     <unitInfo nodeId="4278635856200804509" fileName="check_BuildMps_ModuleJarRuntime_NonTypesystemRule.java" startLine="17" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.build.mps.typesystem.check_BuildMps_ModuleJarRuntime_NonTypesystemRule" />
+  </root>
+  <root nodeId="4278635856200826398">
+    <nodeInfo nodeId="4278635856200826401" fileName="check_BuildMps_ModuleDependencyJar_NonTypesystemRule.java" startLine="21" startPosition="121" endLine="22" endPosition="143" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4278635856200826411" fileName="check_BuildMps_ModuleDependencyJar_NonTypesystemRule.java" startLine="24" startPosition="7" endLine="25" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4278635856200826411" fileName="check_BuildMps_ModuleDependencyJar_NonTypesystemRule.java" startLine="25" startPosition="60" endLine="26" endPosition="247" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4278635856200826398" fileName="check_BuildMps_ModuleDependencyJar_NonTypesystemRule.java" startLine="31" startPosition="46" endLine="32" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4278635856200826398" fileName="check_BuildMps_ModuleDependencyJar_NonTypesystemRule.java" startLine="36" startPosition="5" endLine="37" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4278635856200826398" fileName="check_BuildMps_ModuleDependencyJar_NonTypesystemRule.java" startLine="37" startPosition="117" endLine="38" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4278635856200826398" fileName="check_BuildMps_ModuleDependencyJar_NonTypesystemRule.java" startLine="42" startPosition="30" endLine="43" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4278635856200826398" fileName="check_BuildMps_ModuleDependencyJar_NonTypesystemRule.java" startLine="17" startPosition="146" endLine="19" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="check_BuildMps_ModuleDependencyJar_NonTypesystemRule#()V" />
+    <nodeInfo nodeId="4278635856200826411" fileName="check_BuildMps_ModuleDependencyJar_NonTypesystemRule.java" startLine="23" startPosition="76" endLine="27" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4278635856200826398" fileName="check_BuildMps_ModuleDependencyJar_NonTypesystemRule.java" startLine="30" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getApplicableConceptFQName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="4278635856200826398" fileName="check_BuildMps_ModuleDependencyJar_NonTypesystemRule.java" startLine="35" startPosition="68" endLine="39" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4278635856200826398" fileName="check_BuildMps_ModuleDependencyJar_NonTypesystemRule.java" startLine="41" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="overrides#()Z" />
+    <nodeInfo nodeId="4278635856200826409" fileName="check_BuildMps_ModuleDependencyJar_NonTypesystemRule.java" startLine="22" startPosition="143" endLine="28" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4278635856200826398" fileName="check_BuildMps_ModuleDependencyJar_NonTypesystemRule.java" startLine="34" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableAndPattern#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
+    <nodeInfo nodeId="4278635856200826398" fileName="check_BuildMps_ModuleDependencyJar_NonTypesystemRule.java" startLine="20" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="applyRule#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
+    <scopeInfo nodeId="4278635856200826398" fileName="check_BuildMps_ModuleDependencyJar_NonTypesystemRule.java" startLine="18" startPosition="65" endLine="18" endPosition="65" />
+    <scopeInfo nodeId="4278635856200826398" fileName="check_BuildMps_ModuleDependencyJar_NonTypesystemRule.java" startLine="31" startPosition="46" endLine="32" endPosition="76" />
+    <scopeInfo nodeId="4278635856200826398" fileName="check_BuildMps_ModuleDependencyJar_NonTypesystemRule.java" startLine="42" startPosition="30" endLine="43" endPosition="17" />
+    <scopeInfo nodeId="4278635856200826398" fileName="check_BuildMps_ModuleDependencyJar_NonTypesystemRule.java" startLine="17" startPosition="146" endLine="19" endPosition="3" />
+    <scopeInfo nodeId="4278635856200826411" fileName="check_BuildMps_ModuleDependencyJar_NonTypesystemRule.java" startLine="24" startPosition="7" endLine="26" endPosition="247">
+      <varInfo nodeId="4278635856200826411" varName="_reporter_2309309498" />
+      <varInfo nodeId="4278635856200826411" varName="errorTarget" />
+    </scopeInfo>
+    <scopeInfo nodeId="4278635856200826398" fileName="check_BuildMps_ModuleDependencyJar_NonTypesystemRule.java" startLine="36" startPosition="5" endLine="38" endPosition="45">
+      <varInfo nodeId="4278635856200826398" varName="b" />
+    </scopeInfo>
+    <scopeInfo nodeId="4278635856200826410" fileName="check_BuildMps_ModuleDependencyJar_NonTypesystemRule.java" startLine="23" startPosition="76" endLine="27" endPosition="7" />
+    <scopeInfo nodeId="4278635856200826398" fileName="check_BuildMps_ModuleDependencyJar_NonTypesystemRule.java" startLine="30" startPosition="0" endLine="34" endPosition="0" />
+    <scopeInfo nodeId="4278635856200826398" fileName="check_BuildMps_ModuleDependencyJar_NonTypesystemRule.java" startLine="35" startPosition="68" endLine="39" endPosition="5" />
+    <scopeInfo nodeId="4278635856200826398" fileName="check_BuildMps_ModuleDependencyJar_NonTypesystemRule.java" startLine="41" startPosition="0" endLine="45" endPosition="0" />
+    <scopeInfo nodeId="4278635856200826399" fileName="check_BuildMps_ModuleDependencyJar_NonTypesystemRule.java" startLine="21" startPosition="121" endLine="28" endPosition="5">
+      <varInfo nodeId="4278635856200826402" varName="relativePath" />
+    </scopeInfo>
+    <scopeInfo nodeId="4278635856200826398" fileName="check_BuildMps_ModuleDependencyJar_NonTypesystemRule.java" startLine="34" startPosition="0" endLine="41" endPosition="0">
+      <varInfo nodeId="4278635856200826398" varName="argument" />
+    </scopeInfo>
+    <scopeInfo nodeId="4278635856200826398" fileName="check_BuildMps_ModuleDependencyJar_NonTypesystemRule.java" startLine="20" startPosition="0" endLine="30" endPosition="0">
+      <varInfo nodeId="4278635856200826398" varName="jarEntry" />
+      <varInfo nodeId="4278635856200826398" varName="status" />
+      <varInfo nodeId="4278635856200826398" varName="typeCheckingContext" />
+    </scopeInfo>
+    <unitInfo nodeId="4278635856200826398" fileName="check_BuildMps_ModuleDependencyJar_NonTypesystemRule.java" startLine="17" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.build.mps.typesystem.check_BuildMps_ModuleDependencyJar_NonTypesystemRule" />
   </root>
 </debugInfo>
 

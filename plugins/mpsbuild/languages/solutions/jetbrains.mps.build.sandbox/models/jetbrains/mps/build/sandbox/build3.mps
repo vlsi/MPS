@@ -61,6 +61,16 @@
       <node role="dependencies" roleId="kdzh.5253498789149547704" type="kdzh.BuildMps_ModuleDependencyExtendLanguage" typeId="kdzh.4278635856200794926" id="4278635856200804371">
         <link role="language" roleId="kdzh.4278635856200794928" targetNodeId="3189788309731903988" resolveInfo="mylang" />
       </node>
+      <node role="dependencies" roleId="kdzh.5253498789149547704" type="kdzh.BuildMps_ModuleDependencyJar" typeId="kdzh.4278635856200826393" id="4278635856200835553">
+        <node role="path" roleId="kdzh.4278635856200826394" type="3ior.BuildSourceProjectRelativePath" typeId="3ior.5481553824944787378" id="4278635856200835554">
+          <node role="compositePart" roleId="3ior.7321017245477039051" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="4278635856200835555">
+            <property name="head" nameId="3ior.8618885170173601779" value="ada" />
+            <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="4278635856200835556">
+              <property name="head" nameId="3ior.8618885170173601779" value="asds.jar" />
+            </node>
+          </node>
+        </node>
+      </node>
       <node role="runtime" roleId="kdzh.3189788309731917348" type="kdzh.BuildMps_ModuleJarRuntime" typeId="kdzh.4278635856200804496" id="4278635856200815133">
         <node role="path" roleId="kdzh.4278635856200804500" type="3ior.BuildSourceProjectRelativePath" typeId="3ior.5481553824944787378" id="4278635856200815134">
           <node role="compositePart" roleId="3ior.7321017245477039051" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="4278635856200817612">
@@ -87,6 +97,21 @@
               </node>
             </node>
           </node>
+        </node>
+      </node>
+      <node role="sources" roleId="kdzh.5253498789149547825" type="kdzh.BuildMps_ModuleModelRoot" typeId="kdzh.4278635856200817744" id="4278635856200826384">
+        <node role="folder" roleId="kdzh.4278635856200817746" type="3ior.BuildSourceProjectRelativePath" typeId="3ior.5481553824944787378" id="4278635856200826385">
+          <node role="compositePart" roleId="3ior.7321017245477039051" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="4278635856200826386">
+            <property name="head" nameId="3ior.8618885170173601779" value="buildA" />
+            <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="4278635856200826387">
+              <property name="head" nameId="3ior.8618885170173601779" value="" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="sources" roleId="kdzh.5253498789149547825" type="kdzh.BuildMps_ModuleJavaSource" typeId="kdzh.5253498789149588970" id="4278635856200826389">
+        <node role="sources" roleId="kdzh.5253498789149588972" type="3ior.BuildInputFiles" typeId="3ior.5248329904287794596" id="4278635856200826390">
+          <node role="dir" roleId="3ior.5248329904287794598" type="3ior.BuildSourceProjectRelativePath" typeId="3ior.5481553824944787378" id="4278635856200826391" />
         </node>
       </node>
     </node>

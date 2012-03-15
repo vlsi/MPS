@@ -8,7 +8,7 @@ import jetbrains.mps.smodel.runtime.impl.CompiledConceptDescriptor;
 import jetbrains.mps.smodel.runtime.interpreted.StructureAspectInterpreted;
 
 public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.StructureAspectDescriptor {
-  private static String[] stringSwitchCases_1htk8d_a0a0a = new String[]{"jetbrains.mps.build.mps.structure.BuildMps_Language", "jetbrains.mps.build.mps.structure.BuildMps_Module", "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependency", "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyExtendLanguage", "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyOnJavaModule", "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyOnModule", "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyOnModuleById", "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyUseLanguage", "jetbrains.mps.build.mps.structure.BuildMps_ModuleJarRuntime", "jetbrains.mps.build.mps.structure.BuildMps_ModuleJavaSource", "jetbrains.mps.build.mps.structure.BuildMps_ModuleRuntime", "jetbrains.mps.build.mps.structure.BuildMps_ModuleSolutionRuntime", "jetbrains.mps.build.mps.structure.BuildMps_ModuleSource", "jetbrains.mps.build.mps.structure.BuildMps_Solution"};
+  private static String[] stringSwitchCases_1htk8d_a0a0a = new String[]{"jetbrains.mps.build.mps.structure.BuildMps_Language", "jetbrains.mps.build.mps.structure.BuildMps_Module", "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependency", "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyExtendLanguage", "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyJar", "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyOnJavaModule", "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyOnModule", "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyOnModuleById", "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyUseLanguage", "jetbrains.mps.build.mps.structure.BuildMps_ModuleJarRuntime", "jetbrains.mps.build.mps.structure.BuildMps_ModuleJavaSource", "jetbrains.mps.build.mps.structure.BuildMps_ModuleModelRoot", "jetbrains.mps.build.mps.structure.BuildMps_ModuleRuntime", "jetbrains.mps.build.mps.structure.BuildMps_ModuleSolutionRuntime", "jetbrains.mps.build.mps.structure.BuildMps_ModuleSource", "jetbrains.mps.build.mps.structure.BuildMps_Solution"};
 
   public StructureAspectDescriptor() {
   }
@@ -24,24 +24,28 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 3:
         return new CompiledConceptDescriptor("jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyExtendLanguage", "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependency", false, new String[]{"jetbrains.mps.build.mps.structure.BuildMps_ModuleDependency"}, new String[]{}, new String[]{"language"});
       case 4:
-        return new CompiledConceptDescriptor("jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyOnJavaModule", "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependency", false, new String[]{"jetbrains.mps.build.mps.structure.BuildMps_ModuleDependency"}, new String[]{"reexport"}, new String[]{"module"});
+        return new CompiledConceptDescriptor("jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyJar", "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependency", false, new String[]{"jetbrains.mps.build.mps.structure.BuildMps_ModuleDependency"}, new String[]{}, new String[]{});
       case 5:
-        return new CompiledConceptDescriptor("jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyOnModule", "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependency", false, new String[]{"jetbrains.mps.build.mps.structure.BuildMps_ModuleDependency"}, new String[]{"reexport"}, new String[]{"module"});
+        return new CompiledConceptDescriptor("jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyOnJavaModule", "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependency", false, new String[]{"jetbrains.mps.build.mps.structure.BuildMps_ModuleDependency"}, new String[]{"reexport"}, new String[]{"module"});
       case 6:
-        return new CompiledConceptDescriptor("jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyOnModuleById", "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependency", false, new String[]{"jetbrains.mps.build.mps.structure.BuildMps_ModuleDependency"}, new String[]{"targetName", "targetId", "reexport"}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyOnModule", "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependency", false, new String[]{"jetbrains.mps.build.mps.structure.BuildMps_ModuleDependency"}, new String[]{"reexport"}, new String[]{"module"});
       case 7:
-        return new CompiledConceptDescriptor("jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyUseLanguage", "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependency", false, new String[]{"jetbrains.mps.build.mps.structure.BuildMps_ModuleDependency"}, new String[]{}, new String[]{"language"});
+        return new CompiledConceptDescriptor("jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyOnModuleById", "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependency", false, new String[]{"jetbrains.mps.build.mps.structure.BuildMps_ModuleDependency"}, new String[]{"targetName", "targetId", "reexport"}, new String[]{});
       case 8:
-        return new CompiledConceptDescriptor("jetbrains.mps.build.mps.structure.BuildMps_ModuleJarRuntime", "jetbrains.mps.build.mps.structure.BuildMps_ModuleRuntime", false, new String[]{"jetbrains.mps.build.mps.structure.BuildMps_ModuleRuntime"}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyUseLanguage", "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependency", false, new String[]{"jetbrains.mps.build.mps.structure.BuildMps_ModuleDependency"}, new String[]{}, new String[]{"language"});
       case 9:
-        return new CompiledConceptDescriptor("jetbrains.mps.build.mps.structure.BuildMps_ModuleJavaSource", "jetbrains.mps.build.mps.structure.BuildMps_ModuleSource", false, new String[]{"jetbrains.mps.build.mps.structure.BuildMps_ModuleSource"}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.build.mps.structure.BuildMps_ModuleJarRuntime", "jetbrains.mps.build.mps.structure.BuildMps_ModuleRuntime", false, new String[]{"jetbrains.mps.build.mps.structure.BuildMps_ModuleRuntime"}, new String[]{}, new String[]{});
       case 10:
-        return new CompiledConceptDescriptor("jetbrains.mps.build.mps.structure.BuildMps_ModuleRuntime", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.build.mps.structure.BuildMps_ModuleJavaSource", "jetbrains.mps.build.mps.structure.BuildMps_ModuleSource", false, new String[]{"jetbrains.mps.build.mps.structure.BuildMps_ModuleSource"}, new String[]{}, new String[]{});
       case 11:
-        return new CompiledConceptDescriptor("jetbrains.mps.build.mps.structure.BuildMps_ModuleSolutionRuntime", "jetbrains.mps.build.mps.structure.BuildMps_ModuleRuntime", false, new String[]{"jetbrains.mps.build.mps.structure.BuildMps_ModuleRuntime"}, new String[]{}, new String[]{"solution"});
+        return new CompiledConceptDescriptor("jetbrains.mps.build.mps.structure.BuildMps_ModuleModelRoot", "jetbrains.mps.build.mps.structure.BuildMps_ModuleSource", false, new String[]{"jetbrains.mps.build.mps.structure.BuildMps_ModuleSource"}, new String[]{}, new String[]{});
       case 12:
-        return new CompiledConceptDescriptor("jetbrains.mps.build.mps.structure.BuildMps_ModuleSource", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.build.mps.structure.BuildMps_ModuleRuntime", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{});
       case 13:
+        return new CompiledConceptDescriptor("jetbrains.mps.build.mps.structure.BuildMps_ModuleSolutionRuntime", "jetbrains.mps.build.mps.structure.BuildMps_ModuleRuntime", false, new String[]{"jetbrains.mps.build.mps.structure.BuildMps_ModuleRuntime"}, new String[]{}, new String[]{"solution"});
+      case 14:
+        return new CompiledConceptDescriptor("jetbrains.mps.build.mps.structure.BuildMps_ModuleSource", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{});
+      case 15:
         return new CompiledConceptDescriptor("jetbrains.mps.build.mps.structure.BuildMps_Solution", "jetbrains.mps.build.mps.structure.BuildMps_Module", false, new String[]{"jetbrains.mps.build.mps.structure.BuildMps_Module"}, new String[]{}, new String[]{});
       default:
         return StructureAspectInterpreted.getInstance().getDescriptor(conceptFqName);
