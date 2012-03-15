@@ -16,38 +16,73 @@
 package jetbrains.mps.project;
 
 import jetbrains.mps.util.annotation.ImmutableObject;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.UUID;
 
 @ImmutableObject
-public class ModuleId {
-  public static ModuleId generate() {
-    return new ModuleId(UUID.randomUUID());
+public abstract class ModuleId {
+  private static final char NAME_ID_PREFIX = '~';
+
+  public static ModuleId regular() {
+    return new Regular(UUID.randomUUID());
   }
 
-  public static ModuleId fromString(String text) {
-    if (text == null) return null;
-    return new ModuleId(UUID.fromString(text));
+  public static ModuleId foreign(String name) {
+    return new Foreign(name);
   }
 
-  private final UUID myUid;
-
-  private ModuleId(UUID uid) {
-    myUid = uid;
+  public static ModuleId fromString(@NotNull String text) {
+    if (text.charAt(0) == NAME_ID_PREFIX) {
+      return new Foreign(text.substring(1));
+    } else {
+      return new Regular(UUID.fromString(text));
+    }
   }
 
-  public boolean equals(Object obj) {
-    if (!(obj instanceof ModuleId)) return false;
+  private static class Regular extends ModuleId {
+    private final UUID myUid;
 
-    ModuleId id = (ModuleId) obj;
-    return id.myUid.equals(myUid);
+    private Regular(UUID uid) {
+      myUid = uid;
+    }
+
+    public boolean equals(Object obj) {
+      if (!(obj instanceof Regular)) return false;
+
+      Regular id = (Regular) obj;
+      return id.myUid.equals(myUid);
+    }
+
+    public int hashCode() {
+      return myUid.hashCode();
+    }
+
+    public String toString() {
+      return myUid.toString();
+    }
   }
 
-  public int hashCode() {
-    return myUid.hashCode();
-  }
+  private static class Foreign extends ModuleId {
+    private final String myName;
 
-  public String toString() {
-    return myUid.toString();
+    private Foreign(String name) {
+      myName = name;
+    }
+
+    public boolean equals(Object obj) {
+      if (!(obj instanceof Foreign)) return false;
+
+      Foreign id = (Foreign) obj;
+      return id.myName.equals(myName);
+    }
+
+    public int hashCode() {
+      return myName.hashCode();
+    }
+
+    public String toString() {
+      return NAME_ID_PREFIX + myName;
+    }
   }
 }
