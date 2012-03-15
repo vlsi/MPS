@@ -24,13 +24,6 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.Map;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Alexander Shatalin
- * Date: 1/13/11
- * Time: 7:12 PM
- * To change this template use File | Settings | File Templates.
- */
 public class EditorCellLabelSelection extends EditorCellSelection {
   private static final String HAS_NON_TRIVIAL_SELECTION_PROPERTY_NAME = "hasNonTrivialSelection";
   private static final String SELECTION_START_PROPERTY_NAME = "selectionStart";

@@ -19,9 +19,11 @@ package jetbrains.mps.idea.core.refactoring;
 import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.MPSCoreComponents;
+import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.platform.refactoring.ModelElementTargetChooser;
 import jetbrains.mps.ide.platform.refactoring.RefactoringAccess;
 import jetbrains.mps.ide.platform.refactoring.RefactoringFacade;
+import jetbrains.mps.ide.platform.refactoring.RefactoringViewAction;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SNode;
 import org.jetbrains.annotations.NotNull;
@@ -69,4 +71,9 @@ public class RefactoringAccessImpl extends RefactoringAccess implements Applicat
   public ModelElementTargetChooser createTargetChooser(Project project, SModelDescriptor model) {
     throw new UnsupportedOperationException();
   }
+
+    @Override
+    public void showRefactoringView(Project project, RefactoringViewAction callback, SearchResults searchResults, boolean hasModelsToGenerate, String name) {
+        throw new UnsupportedOperationException();
+    }
 }

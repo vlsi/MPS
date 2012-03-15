@@ -30,13 +30,6 @@ import jetbrains.mps.vfs.IFile;
 import java.io.File;
 import java.util.ArrayList;
 
-/**
- * Created by IntelliJ IDEA.
- * User: fyodor
- * Date: 2/22/12
- * Time: 4:47 PM
- * To change this template use File | Settings | File Templates.
- */
 public class ComplicatedMakeTests extends AbstractMakeTest {
 
   @Override

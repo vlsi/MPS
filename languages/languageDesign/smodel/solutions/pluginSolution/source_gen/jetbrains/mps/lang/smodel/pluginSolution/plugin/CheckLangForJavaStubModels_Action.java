@@ -12,7 +12,6 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.smodel.Language;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
@@ -61,7 +60,7 @@ public class CheckLangForJavaStubModels_Action extends BaseAction {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.fromMap(_params).put("module", event.getData(MPSDataKeys.MODULE));
+    MapSequence.fromMap(_params).put("module", event.getData(MPSCommonDataKeys.MODULE));
     if (MapSequence.fromMap(_params).get("module") == null) {
       return false;
     }

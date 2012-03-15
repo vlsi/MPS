@@ -14,7 +14,7 @@
   ~ limitations under the License.
   -->
 <!DOCTYPE idea-plugin PUBLIC "Plugin/DTD" "http://plugins.intellij.net/plugin.dtd">
-<idea-plugin>
+<idea-plugin version="2" xmlns:xi="http://www.w3.org/2001/XInclude">
   <id>jetbrains.mps.ide.java</id>
   <name>Java Integration</name>
   <description>Allows importing sources from Java into MPS</description>
@@ -22,14 +22,29 @@
   <vendor url="http://www.jetbrains.com/mps/">JetBrains</vendor>
   <idea-version since-build="3000"/>
 
+  <xi:include href="../classes/jetbrains/mps/ide/java/actions/JavaActions.xml" xpointer="xpointer(/components/*)"/>
+  <xi:include href="../classes/jetbrains/mps/ide/java/workbench/actions/JavaWorkbenchActions.xml"
+              xpointer="xpointer(/components/*)"/>
 
   <application-components>
     <component>
-      <implementation-class>jetbrains.mps.ide.java.actions.Java_PluginInitializer</implementation-class>
+      <implementation-class>jetbrains.mps.ide.java.util.JavaCopyPasteDataConverter</implementation-class>
+    </component>
+    <component>
+      <implementation-class>jetbrains.mps.ide.java.platform.index.ClassifierSuccessorsFinder</implementation-class>
     </component>
   </application-components>
 
   <project-components>
-
+    <component>
+      <implementation-class>jetbrains.mps.ide.java.actions.OverrideImplementMethodComponent</implementation-class>
+    </component>
+    <component>
+      <implementation-class>jetbrains.mps.ide.java.platform.highlighters.JavaHighlighters</implementation-class>
+    </component>
   </project-components>
+
+  <extensions defaultExtensionNs="com.intellij">
+    <fileBasedIndex implementation="jetbrains.mps.ide.java.platform.index.ClassifierSuccessorsIndexer"/>
+  </extensions>
 </idea-plugin>

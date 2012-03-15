@@ -27,12 +27,6 @@ import jetbrains.mps.util.Pair;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by IntelliJ IDEA.
- * Date: 26.10.2010
- * Time: 16:33:41
- * To change this template use File | Settings | File Templates.
- */
 public class QuickFixAdapter extends BaseIntention  {
   private QuickFix_Runtime myQuickFix;
   private boolean myIsError;

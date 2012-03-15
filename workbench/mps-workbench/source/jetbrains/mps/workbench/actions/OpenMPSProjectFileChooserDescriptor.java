@@ -22,13 +22,6 @@ import jetbrains.mps.project.MPSExtentions;
 
 import javax.swing.Icon;
 
-/**
- * Created by IntelliJ IDEA.
- * User: fyodor
- * Date: 3/6/12
- * Time: 11:58 AM
- * To change this template use File | Settings | File Templates.
- */
 public class OpenMPSProjectFileChooserDescriptor extends FileChooserDescriptor{
   public OpenMPSProjectFileChooserDescriptor(boolean chooseFiles) {
     super(chooseFiles, true, chooseFiles, chooseFiles, false, false);

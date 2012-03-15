@@ -17,12 +17,6 @@ package jetbrains.mps.newTypesystem.operation;
 
 import jetbrains.mps.newTypesystem.state.State;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Ilya.Lintsbakh
- * Date: Jan 17, 2011
- * Time: 9:53:43 PM
- */
 public class SolveInequalitiesOperation extends AbstractOperation {
   private Runnable myAction = null;
 

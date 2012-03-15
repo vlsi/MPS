@@ -21,13 +21,6 @@ import com.intellij.util.ui.ItemRemovable;
 import javax.swing.table.AbstractTableModel;
 import java.util.*;
 
-/**
- * Created by IntelliJ IDEA.
- * User: shatalin
- * Date: 11/16/11
- * Time: 2:18 PM
- * To change this template use File | Settings | File Templates.
- */
 public class MpsElementsTableModel<T> extends AbstractTableModel implements ItemRemovable {
     private List<T> myElements = Collections.emptyList();
     private Comparator<T> myComparator;

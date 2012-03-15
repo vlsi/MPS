@@ -11,7 +11,6 @@
       <module fileurl="file://$PROJECT_DIR$/core/ant/ant.iml" filepath="$PROJECT_DIR$/core/ant/ant.iml" group="languages" />
       <module fileurl="file://$PROJECT_DIR$/languages/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/baseLanguage-search.iml" filepath="$PROJECT_DIR$/languages/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/baseLanguage-search.iml" group="languages" />
       <module fileurl="file://$PROJECT_DIR$/languages/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.util/baseLanguage-util.iml" filepath="$PROJECT_DIR$/languages/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.util/baseLanguage-util.iml" group="languages" />
-      <module fileurl="file://$PROJECT_DIR$/workbench/baseLanguageIndex/baseLanguageIndex.iml" filepath="$PROJECT_DIR$/workbench/baseLanguageIndex/baseLanguageIndex.iml" group="workbench" />
       <module fileurl="file://$PROJECT_DIR$/languages/baseLanguage/collections/runtime/collections-runtime.iml" filepath="$PROJECT_DIR$/languages/baseLanguage/collections/runtime/collections-runtime.iml" group="languages" />
       <module fileurl="file://$PROJECT_DIR$/plugins/debugger-api/debugger-api.iml" filepath="$PROJECT_DIR$/plugins/debugger-api/debugger-api.iml" group="plugins" />
       <module fileurl="file://$PROJECT_DIR$/plugins/debugger-java/debugger-java.iml" filepath="$PROJECT_DIR$/plugins/debugger-java/debugger-java.iml" group="plugins" />

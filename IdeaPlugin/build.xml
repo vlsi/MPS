@@ -477,6 +477,7 @@
       <src>
         <path path="${base_dir}/workbench/mps-debugger/source_gen"/>
         <path path="${base_dir}/IdeaPlugin/mps-java/debugger/src"/>
+        <path path="${base_dir}/plugins/mpsjava/platform/source_gen"/>
       </src>
       <classpath>
         <fileset dir="${dist.dir}/mps-core/lib" includes="*.jar"/>
@@ -484,9 +485,10 @@
         <fileset file="${base_dir}/lib/tools.jar"/>
       </classpath>
     </javac2>
-    <copy includeemptydirs="false" todir="${build_dir}/mpsdebugger_jar">
+    <copy includeemptydirs="false" todir="${build_dir}/mpsjava_jar">
       <fileset dir="${base_dir}/workbench/mps-debugger/source_gen" includes="**/*.png, **/*.properties, **/*.xml"/>
       <fileset dir="${base_dir}/IdeaPlugin/mps-java/debugger/src" includes="**/*.png, **/*.properties, **/*.xml"/>
+      <fileset dir="${base_dir}/plugins/mpsjava/platform/source_gen" includes="**/*.png, **/*.properties, **/*.xml"/>
     </copy>
     <copy file="${base_dir}/IdeaPlugin/mps-java/META-INF/plugin.xml"
           tofile="${build_dir}/mpsjava_jar/META-INF/plugin.xml">
@@ -507,25 +509,101 @@
       </manifest>
     </jar>
 
+    <!-- languages -->
+    <mkdir dir="${build_dir}/languages_jar"/>
+    <javac2 destdir="${build_dir}/languages_jar" fork="true"
+            memorymaximumsize="1024m"
+            includeantruntime="false"
+            debug="${javac.debug}" debuglevel="lines,vars,source">
+      <compilerarg value="-Xlint:none"/>
+      <src>
+        <!-- core -->
+        <path path="${base_dir}/languages/core/core/source_gen"/>
+        <!-- languageDesign -->
+        <path path="${base_dir}/languages/languageDesign/actions/source_gen"/>
+        <path path="${base_dir}/languages/languageDesign/behavior/languages/behavior/source_gen"/>
+        <path path="${base_dir}/languages/languageDesign/constraints/source_gen"/>
+        <path path="${base_dir}/languages/languageDesign/dataFlow/source_gen"/>
+        <path path="${base_dir}/languages/languageDesign/editor/source_gen"/>
+        <!--path path="${base_dir}/languages/languageDesign/editor/languages/table/runtime/source_gen"/-->
+        <path path="${base_dir}/languages/languageDesign/editor/languages/table/source_gen"/>
+        <!--path path="${base_dir}/languages/languageDesign/editor/languages/tableTests/source_gen"/-->
+        <path path="${base_dir}/languages/languageDesign/editor/languages/editorTest/source_gen"/>
+        <path path="${base_dir}/languages/languageDesign/extension/source_gen"/>
+        <path path="${base_dir}/languages/languageDesign/findUsages/source_gen"/>
+        <path path="${base_dir}/languages/languageDesign/generator/languages/descriptor/source_gen"/>
+        <path path="${base_dir}/languages/languageDesign/generator/languages/errorReporting/source_gen"/>
+        <path path="${base_dir}/languages/languageDesign/generator/languages/generationContext/source_gen"/>
+        <path path="${base_dir}/languages/languageDesign/generator/languages/generationParameters/source_gen"/>
+        <path path="${base_dir}/languages/languageDesign/generator/languages/templateLanguage/source_gen"/>
+        <path path="${base_dir}/languages/languageDesign/intentions/source_gen"/>
+        <path path="${base_dir}/languages/languageDesign/make/languages/facet/source_gen"/>
+        <path path="${base_dir}/languages/languageDesign/make/languages/outlook/source_gen"/>
+        <path path="${base_dir}/languages/languageDesign/make/languages/script/source_gen"/>
+        <path path="${base_dir}/languages/languageDesign/pattern/source_gen"/>
+        <path path="${base_dir}/languages/languageDesign/pattern/languages/testLang/source_gen"/>
+        <path path="${base_dir}/languages/languageDesign/plugin/source_gen"/>
+        <!--path path="${base_dir}/languages/languageDesign/plugin/solutions/runtime/source_gen"/-->
+        <path path="${base_dir}/languages/languageDesign/project/source_gen"/>
+        <path path="${base_dir}/languages/languageDesign/quotation/source_gen"/>
+        <path path="${base_dir}/languages/languageDesign/refactoring/source_gen"/>
+        <path path="${base_dir}/languages/languageDesign/script/source_gen"/>
+        <path path="${base_dir}/languages/languageDesign/sharedConcepts/source_gen"/>
+        <path path="${base_dir}/languages/languageDesign/smodel/source_gen"/>
+        <path path="${base_dir}/languages/languageDesign/smodel/languages/smodelTests/source_gen"/>
+        <path path="${base_dir}/languages/languageDesign/structure/source_gen"/>
+        <path path="${base_dir}/languages/languageDesign/stubs/source_gen"/>
+        <path path="${base_dir}/languages/languageDesign/test/source_gen"/>
+        <!--path path="${base_dir}/languages/languageDesign/test/solutions/jetbrains.mps.lang.test.runtime/source_gen"/-->
+        <path path="${base_dir}/languages/languageDesign/textGen/source_gen"/>
+        <path path="${base_dir}/languages/languageDesign/traceable/source_gen"/>
+        <path path="${base_dir}/languages/languageDesign/typesystem/source_gen"/>
+        <path path="${base_dir}/languages/languageDesign/typesystem/languages/test/source_gen"/>
+        <!-- baseLanguage -->
+        <path path="${base_dir}/languages/baseLanguage/baseLanguage/source_gen"/>
+        <path path="${base_dir}/languages/baseLanguage/baseLanguageInternal/source_gen"/>
+        <path path="${base_dir}/languages/baseLanguage/blTypes/source_gen"/>
+        <path path="${base_dir}/languages/baseLanguage/checkDot/languages/checkedDots/source_gen"/>
+        <path path="${base_dir}/languages/baseLanguage/classifiers/source_gen"/>
+        <path path="${base_dir}/languages/baseLanguage/closures/source_gen"/>
+        <path path="${base_dir}/languages/baseLanguage/collections/source_gen"/>
+        <!--path path="${base_dir}/languages/baseLanguage/collections/languages/trove/runtime/source_gen"/-->
+        <path path="${base_dir}/languages/baseLanguage/collections/languages/trove/source_gen"/>
+        <path path="${base_dir}/languages/baseLanguage/constructors/source_gen"/>
+        <path path="${base_dir}/languages/baseLanguage/javadoc/source_gen"/>
+        <path path="${base_dir}/languages/baseLanguage/jdk7/languages/jdk7/source_gen"/>
+        <path path="${base_dir}/languages/baseLanguage/logging/source_gen"/>
+        <path path="${base_dir}/languages/baseLanguage/overloadedOperators/languages/overloadedOperators/source_gen"/>
+        <path path="${base_dir}/languages/baseLanguage/tuples/languages/tuples/source_gen"/>
+        <!--path path="${base_dir}/languages/baseLanguage/tuples/solutions/jetbrains.mps.baseLanguage.tuples.shared/source_gen"/-->
+        <path path="${base_dir}/languages/baseLanguage/unitTest/source_gen"/>
+      </src>
+      <classpath>
+        <fileset dir="${dist.dir}/mps-core/lib" includes="*.jar"/>
+        <fileset dir="${ideaPath}/lib" includes="*.jar"/>
+        <fileset dir="${ideaPath}/lib/ant/lib" includes="*.jar"/>
+      </classpath>
+    </javac2>
+
   </target>
 
-    <target name="compileTests" depends="compile">
-        <mkdir dir="${build_dir}/mpsplugintests_jar"/>
-        <javac2 destdir="${build_dir}/mpsplugintests_jar" fork="true"
-                memorymaximumsize="1024m"
-                includeantruntime="false"
-                debug="${javac.debug}" debuglevel="lines,vars,source">
-            <compilerarg value="-Xlint:none"/>
-            <src>
-                <!-- plugin tests -->
-                <path path="${base_dir}/IdeaPlugin/mps-core/testSrc"/>
-                <path path="${base_dir}/languages/languageDesign/editor/tests/jetbrains.mps.lang.editor.tests/testSrc"/>
-                <path path="${base_dir}/languages/languageDesign/editor/tests/jetbrains.mps.lang.editor.tests/source_gen"/>
-                <path path="${base_dir}/languages/languageDesign/test/solutions/jetbrains.mps.lang.test.runtime/source_gen"/>
-                <path path="${base_dir}/testbench/source"/>
-                <path path="${base_dir}/testbench/source_gen"/>
-            </src>
-            <classpath>
+  <target name="compileTests" depends="compile">
+    <mkdir dir="${build_dir}/mpsplugintests_jar"/>
+    <javac2 destdir="${build_dir}/mpsplugintests_jar" fork="true"
+            memorymaximumsize="1024m"
+            includeantruntime="false"
+            debug="${javac.debug}" debuglevel="lines,vars,source">
+      <compilerarg value="-Xlint:none"/>
+      <src>
+        <!-- plugin tests -->
+        <path path="${base_dir}/IdeaPlugin/mps-core/testSrc"/>
+        <path path="${base_dir}/languages/languageDesign/editor/tests/jetbrains.mps.lang.editor.tests/testSrc"/>
+        <path path="${base_dir}/languages/languageDesign/editor/tests/jetbrains.mps.lang.editor.tests/source_gen"/>
+        <path path="${base_dir}/languages/languageDesign/test/solutions/jetbrains.mps.lang.test.runtime/source_gen"/>
+        <path path="${base_dir}/testbench/source"/>
+        <path path="${base_dir}/testbench/source_gen"/>
+      </src>
+      <classpath>
         <fileset dir="${dist.dir}/mps-core/lib" includes="*.jar"/>
         <fileset dir="${ideaPath}/lib" includes="*.jar"/>
         <fileset dir="${ideaPath}/lib/ant/lib" includes="*.jar"/>

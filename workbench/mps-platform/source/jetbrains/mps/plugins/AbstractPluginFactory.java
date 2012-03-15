@@ -15,15 +15,6 @@
  */
 package jetbrains.mps.plugins;
 
-/**
- * Created by IntelliJ IDEA.
- * User: fyodor
- * Date: 12/9/11
- * Time: 4:45 PM
- * To change this template use File | Settings | File Templates.
- */
 public abstract class AbstractPluginFactory {
-
   public abstract <T> T create(Class<T> klass);
-
 }

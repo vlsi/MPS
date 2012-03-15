@@ -27,9 +27,8 @@ public class MoveNodesDialog extends ModelOrNodeChooserDialog {
     Object selectedObject = myChooser.getSelectedObject();
     if (myFilter == null || myFilter.checkForObject(selectedObject, myModel, myChooser.getComponent())) {
       mySelectedObject = selectedObject;
-      dispose();
+      super.doRefactoringAction();
     }
-
   }
 
   @Nullable

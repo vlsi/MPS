@@ -20,7 +20,7 @@ import jetbrains.mps.ide.findusages.CantSaveSomethingException;
 import jetbrains.mps.ide.findusages.view.treeholder.tree.TextOptions;
 import jetbrains.mps.ide.findusages.view.treeholder.treeview.INodeRepresentator;
 import jetbrains.mps.ide.findusages.view.treeholder.treeview.path.PathItemRole;
-import jetbrains.mps.ide.projectPane.Icons;
+import jetbrains.mps.ide.icons.IdeIcons;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.util.NameUtil;
 import org.jdom.Element;
@@ -68,7 +68,7 @@ public class CategoryNodeData extends BaseNodeData {
   @Override
   public Icon getIcon() {
     if (myNodeRepresentator == null) {
-      return Icons.CLOSED_FOLDER;
+      return IdeIcons.CLOSED_FOLDER;
     } else {
       return myNodeRepresentator.getCategoryIcon(myCategory);
     }

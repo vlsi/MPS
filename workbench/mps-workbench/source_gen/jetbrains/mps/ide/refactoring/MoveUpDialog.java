@@ -45,7 +45,7 @@ public class MoveUpDialog extends RefactoringDialog {
     });
 
     this.myConcept = (SNode) result.value;
-    this.dispose();
+    super.doRefactoringAction();
   }
 
   @Nullable

@@ -9,8 +9,10 @@
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.ClassLoader" />
     <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.lang.StringBuffer" />
     <classNode dependClassName="java.lang.System" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.lang.reflect.InvocationTargetException" />
@@ -50,8 +52,11 @@
     <classNode dependClassName="jetbrains.mps.smodel.descriptor.EditableSModelDescriptor" />
     <classNode dependClassName="jetbrains.mps.util.Computable" />
     <classNode dependClassName="org.apache.commons.lang.StringUtils" />
+    <classNode dependClassName="org.eclipse.jdt.core.compiler.CategorizedProblem" />
+    <classNode dependClassName="org.eclipse.jdt.internal.compiler.CompilationResult" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode extendsClassName="jetbrains.mps.compiler.CompilationResultAdapter" />
     <classNode extendsClassName="jetbrains.mps.generator.IncrementalGenerationStrategy" />
   </dependency>
   <dependency className="jetbrains.mps.debugger.java.runtime.evaluation.model.EvaluationAuxModule" file="EvaluationAuxModule.java">

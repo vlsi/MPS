@@ -23,12 +23,6 @@ import jetbrains.mps.util.NameUtil;
 import java.util.HashMap;
 import java.util.Map;
 
-/**
- * Created by IntelliJ IDEA.
- * Date: 26.10.2010
- * Time: 16:41:58
- * To change this template use File | Settings | File Templates.
- */
 public class BaseQuickFixProvider implements QuickFixProvider {
   private static final Logger LOG = Logger.getLogger(BaseQuickFixProvider.class);
 

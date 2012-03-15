@@ -16,7 +16,6 @@ import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
-import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.Computable;
@@ -85,7 +84,7 @@ public class GoToEditorDeclaration_Action extends BaseAction {
     if (MapSequence.fromMap(_params).get("scope") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("module", event.getData(MPSDataKeys.MODULE));
+    MapSequence.fromMap(_params).put("module", event.getData(MPSCommonDataKeys.MODULE));
     if (MapSequence.fromMap(_params).get("module") == null) {
       return false;
     }

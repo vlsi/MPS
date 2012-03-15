@@ -79,7 +79,7 @@ public class SModelReferenceDialog extends RefactoringDialog {
     if (item instanceof BaseModelItem) {
       selectedModel = ((BaseModelItem) item).getModelReference();
     }
-    dispose();
+    super.doRefactoringAction();
   }
 
   @Nullable

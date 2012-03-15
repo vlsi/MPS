@@ -10,7 +10,6 @@ import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
-import jetbrains.mps.workbench.MPSDataKeys;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
@@ -54,7 +53,7 @@ public class OptimizeModuleImports_Action extends BaseAction {
     if (MapSequence.fromMap(_params).get("context") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("module", event.getData(MPSDataKeys.MODULE));
+    MapSequence.fromMap(_params).put("module", event.getData(MPSCommonDataKeys.MODULE));
     if (MapSequence.fromMap(_params).get("module") == null) {
       return false;
     }

@@ -20,13 +20,6 @@ import jetbrains.mps.smodel.SModel;
 
 import javax.swing.*;
 
-/**
- * Created by IntelliJ IDEA.
- * User: fyodor
- * Date: 2/21/12
- * Time: 1:57 PM
- * To change this template use File | Settings | File Templates.
- */
 public class ModelPathsTab {
   public static final String USE_MODEL_FOLDER_FOR_GENERATION = "useModelFolderForGeneration";
   private JPanel myRootPane;

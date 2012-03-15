@@ -73,6 +73,12 @@
           <property name="name" nameId="tpck.1169194664001" value="anchor" />
           <node role="type" roleId="tpee.5680397130376446158" type="tp25.SNodeType" typeId="tp25.1138055754698" id="1963440973928800240" />
         </node>
+        <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="912131512389473552">
+          <property name="name" nameId="tpck.1169194664001" value="project" />
+          <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="912131512389473554">
+            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="vsqj.~Project" resolveInfo="Project" />
+          </node>
+        </node>
       </node>
       <node role="method" roleId="tpee.1107880067339" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="1963440973928775591">
         <property name="isAbstract" nameId="tpee.1178608670077" value="true" />
@@ -85,6 +91,12 @@
         <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="1963440973928796469">
           <property name="name" nameId="tpck.1169194664001" value="model" />
           <node role="type" roleId="tpee.5680397130376446158" type="tp25.SModelType" typeId="tp25.1143226024141" id="1963440973928796470" />
+        </node>
+        <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="912131512389473557">
+          <property name="name" nameId="tpck.1169194664001" value="project" />
+          <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="912131512389473558">
+            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="vsqj.~Project" resolveInfo="Project" />
+          </node>
         </node>
       </node>
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1963440973928775581" />
@@ -4334,6 +4346,9 @@
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="2376886526343717477">
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1963440973928775639" resolveInfo="model" />
                 </node>
+                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="7906476754414899014">
+                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7906476754414899011" resolveInfo="project" />
+                </node>
               </node>
             </node>
             <node role="condition" roleId="tpee.1163668914799" type="tpee.EqualsExpression" typeId="tpee.1068580123152" id="2376886526343717478">
@@ -4348,6 +4363,12 @@
       <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="1963440973928775639">
         <property name="name" nameId="tpck.1169194664001" value="model" />
         <node role="type" roleId="tpee.5680397130376446158" type="tp25.SModelType" typeId="tp25.1143226024141" id="1963440973928775640" />
+      </node>
+      <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="7906476754414899011">
+        <property name="name" nameId="tpck.1169194664001" value="project" />
+        <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="7906476754414899012">
+          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="vsqj.~Project" resolveInfo="Project" />
+        </node>
       </node>
     </node>
     <node role="staticMethod" roleId="tpee.1070462273904" type="tpee.StaticMethodDeclaration" typeId="tpee.1081236700938" id="1963440973928800246">
@@ -4423,6 +4444,9 @@
                   <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="1963440973928800245">
                     <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1963440973928800241" resolveInfo="anchor" />
                   </node>
+                  <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="7906476754414899010">
+                    <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7906476754414899007" resolveInfo="project" />
+                  </node>
                 </node>
               </node>
             </node>
@@ -4436,6 +4460,12 @@
       <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="1963440973928800241">
         <property name="name" nameId="tpck.1169194664001" value="anchor" />
         <node role="type" roleId="tpee.5680397130376446158" type="tp25.SNodeType" typeId="tp25.1138055754698" id="1963440973928800243" />
+      </node>
+      <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="7906476754414899007">
+        <property name="name" nameId="tpck.1169194664001" value="project" />
+        <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="7906476754414899008">
+          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="vsqj.~Project" resolveInfo="Project" />
+        </node>
       </node>
     </node>
   </root>

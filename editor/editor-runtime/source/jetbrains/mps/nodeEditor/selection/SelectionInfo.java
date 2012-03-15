@@ -30,13 +30,6 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Map.Entry;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Alexander Shatalin
- * Date: 1/28/11
- * Time: 6:10 PM
- * To change this template use File | Settings | File Templates.
- */
 public class SelectionInfo {
   private static final Logger LOG = Logger.getLogger(SelectionInfo.class);
 
