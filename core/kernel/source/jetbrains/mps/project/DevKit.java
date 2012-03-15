@@ -140,7 +140,7 @@ public class DevKit extends AbstractModule implements MPSModuleOwner {
     myDescriptor = descriptor;
 
     if (myDescriptor.getNamespace() != null) {
-      ModuleReference mp = new ModuleReference(myDescriptor.getNamespace(), myDescriptor.getUUID());
+      ModuleReference mp = new ModuleReference(myDescriptor.getNamespace(), myDescriptor.getId());
       setModuleReference(mp);
     }
 

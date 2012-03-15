@@ -46,6 +46,7 @@ public class ModuleReference {
     this(moduleFqName, (ModuleId) null);
   }
 
+  @Deprecated
   public ModuleReference(String moduleFqName, String moduleId) {
     this(moduleFqName, ModuleId.fromString(moduleId));
   }

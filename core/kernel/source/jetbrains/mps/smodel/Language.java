@@ -286,7 +286,7 @@ public class Language extends AbstractModule implements MPSModuleOwner {
   public void setLanguageDescriptor(final LanguageDescriptor newDescriptor, boolean reloadClasses) {
     myLanguageDescriptor = newDescriptor;
 
-    ModuleReference reference = new ModuleReference(myLanguageDescriptor.getNamespace(), myLanguageDescriptor.getUUID());
+    ModuleReference reference = new ModuleReference(myLanguageDescriptor.getNamespace(), myLanguageDescriptor.getId());
     setModuleReference(reference);
 
     reloadAfterDescriptorChange();

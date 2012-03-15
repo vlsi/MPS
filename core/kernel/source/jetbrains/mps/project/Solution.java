@@ -158,10 +158,10 @@ public class Solution extends AbstractModule {
 
     ModuleReference mp;
     if (mySolutionDescriptor.getNamespace() != null) {
-      mp = new ModuleReference(mySolutionDescriptor.getNamespace(), mySolutionDescriptor.getUUID());
+      mp = new ModuleReference(mySolutionDescriptor.getNamespace(), mySolutionDescriptor.getId());
     } else {
       assert myDescriptorFile != null;
-      mp = new ModuleReference(myDescriptorFile.getPath(), mySolutionDescriptor.getUUID());
+      mp = new ModuleReference(myDescriptorFile.getPath(), mySolutionDescriptor.getId());
     }
 
     setModuleReference(mp);
