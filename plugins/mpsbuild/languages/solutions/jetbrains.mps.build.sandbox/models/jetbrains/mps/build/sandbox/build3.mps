@@ -17,10 +17,24 @@
       <property name="name" nameId="tpck.1169194664001" value="javamod" />
     </node>
     <node role="parts" roleId="3ior.7389400916848080626" type="kdzh.BuildMps_Solution" typeId="kdzh.3189788309731840247" id="3189788309731987319">
-      <property name="name" nameId="tpck.1169194664001" value="rsol" />
-      <property name="uuid" nameId="kdzh.6370754048397540898" value="8d29d73f-ed99-4652-ae0a-083cdfe53c34" />
+      <property name="name" nameId="tpck.1169194664001" value="jetbrains.mps.build.tests" />
+      <property name="uuid" nameId="kdzh.6370754048397540898" value="39742b07-848c-43a7-be0a-845055dd3333" />
       <node role="dependencies" roleId="kdzh.5253498789149547704" type="kdzh.BuildMps_ModuleDependencyOnJavaModule" typeId="kdzh.3189788309731928315" id="3189788309732033977">
         <link role="module" roleId="kdzh.3189788309731928317" targetNodeId="3189788309731933923" resolveInfo="javamod" />
+      </node>
+      <node role="path" roleId="kdzh.5248329904287794586" type="3ior.BuildSourceProjectRelativePath" typeId="3ior.5481553824944787378" id="4278635856200794625">
+        <node role="compositePart" roleId="3ior.7321017245477039051" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="4278635856200794626">
+          <property name="head" nameId="3ior.8618885170173601779" value=".." />
+          <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="4278635856200794627">
+            <property name="head" nameId="3ior.8618885170173601779" value=".." />
+            <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="4278635856200794628">
+              <property name="head" nameId="3ior.8618885170173601779" value="jetbrains.mps.build.tests" />
+              <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="4278635856200794629">
+                <property name="head" nameId="3ior.8618885170173601779" value="tests.msd" />
+              </node>
+            </node>
+          </node>
+        </node>
       </node>
     </node>
     <node role="scriptsDir" roleId="3ior.4796668409958418110" type="3ior.BuildSourceProjectRelativePath" typeId="3ior.5481553824944787378" id="3189788309732144700" />
@@ -32,8 +46,13 @@
         <property name="reexport" nameId="kdzh.5253498789149547713" value="false" />
         <link role="module" roleId="kdzh.5253498789149547705" targetNodeId="3189788309731903980" resolveInfo="jetbrains.mps.build.sandbox" />
       </node>
+      <node role="dependencies" roleId="kdzh.5253498789149547704" type="kdzh.BuildMps_ModuleDependencyOnModuleById" typeId="kdzh.4278635856200673695" id="4278635856200761800">
+        <property name="targetName" nameId="kdzh.4278635856200673696" value="sdasd" />
+        <property name="targetId" nameId="kdzh.4278635856200673697" value="asdasdad" />
+        <property name="reexport" nameId="kdzh.4278635856200673698" value="true" />
+      </node>
       <node role="runtime" roleId="kdzh.3189788309731917348" type="kdzh.BuildMps_ModuleSolutionRuntime" typeId="kdzh.3189788309731981027" id="3189788309731987317">
-        <link role="solution" roleId="kdzh.3189788309731981028" targetNodeId="3189788309731987319" resolveInfo="rsol" />
+        <link role="solution" roleId="kdzh.3189788309731981028" targetNodeId="3189788309731987319" resolveInfo="jetbrains.mps.build.tests" />
       </node>
     </node>
     <node role="parts" roleId="3ior.7389400916848080626" type="kdzh.BuildMps_Solution" typeId="kdzh.3189788309731840247" id="3189788309731903980">
