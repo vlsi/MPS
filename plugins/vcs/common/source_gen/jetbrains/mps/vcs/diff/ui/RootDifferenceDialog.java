@@ -132,24 +132,22 @@ public class RootDifferenceDialog extends DialogWrapper implements DataProvider 
     DisplayMode displayMode = check_vu2gar_a0ab0b(check_vu2gar_a0a62a1(GraphicsEnvironment.getLocalGraphicsEnvironment()));
     int width = (displayMode == null ?
       800 :
-      displayMode.getWidth()
+      displayMode.getWidth() - 100
     );
     int height = (displayMode == null ?
       600 :
-      displayMode.getHeight()
+      displayMode.getHeight() - 100
     );
-    final Dimension size = DimensionService.getInstance().getSize(getDimensionServiceKey());
+    myContainer.setPreferredSize(new Dimension(width, height));
+    Dimension size = DimensionService.getInstance().getSize(getDimensionServiceKey());
     if (size == null) {
-      DimensionService.getInstance().setSize(getDimensionServiceKey(), new Dimension(width - 100, height - 100));
-      setSize(width - 100, height - 100);
-    } else {
-      setSize((int) size.getWidth(), ((int) size.getHeight()));
+      myContainer.setPreferredSize(new Dimension(width, height));
     }
     init();
   }
 
   public String getDimensionServiceKey() {
-    return "#jetbrains.mps.vcs.diff.ui.RootDifferenceDialog";
+    return getClass().getName();
   }
 
   @Nullable

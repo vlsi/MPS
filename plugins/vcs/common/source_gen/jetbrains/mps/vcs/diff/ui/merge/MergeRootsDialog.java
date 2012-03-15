@@ -34,6 +34,7 @@ import java.awt.DisplayMode;
 import java.awt.GraphicsEnvironment;
 import java.awt.Dimension;
 import com.intellij.openapi.util.DimensionService;
+import java.awt.Point;
 import jetbrains.mps.vcs.diff.ui.common.DiffChangeGroupLayout;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
@@ -122,20 +123,21 @@ public class MergeRootsDialog extends DialogWrapper {
     DisplayMode displayMode = check_3816sg_a0hb0a(check_3816sg_a0a33a0(GraphicsEnvironment.getLocalGraphicsEnvironment()));
     int width = (displayMode == null ?
       800 :
-      displayMode.getWidth()
+      displayMode.getWidth() - 100
     );
     int height = (displayMode == null ?
       600 :
-      displayMode.getHeight()
+      displayMode.getHeight() - 100
     );
     final Dimension size = DimensionService.getInstance().getSize(getDimensionServiceKey());
     if (size == null) {
-      DimensionService.getInstance().setSize(getDimensionServiceKey(), new Dimension(width - 100, height - 100));
-      setSize(width - 100, height - 100);
-    } else {
-      setSize(((int) size.getWidth()), ((int) size.getHeight()));
+      myContainer.setPreferredSize(new Dimension(width, height));
     }
-    setLocation(50, 50);
+
+    final Point location = DimensionService.getInstance().getLocation(getDimensionServiceKey());
+    if (location == null) {
+      setLocation(50, 50);
+    }
     init();
 
   }
@@ -154,7 +156,7 @@ public class MergeRootsDialog extends DialogWrapper {
   }
 
   public String getDimensionServiceKey() {
-    return "#jetbrains.mps.vcs.diff.ui.merge.MergeRootsdialog";
+    return getClass().getName();
   }
 
   public void rehighlight() {

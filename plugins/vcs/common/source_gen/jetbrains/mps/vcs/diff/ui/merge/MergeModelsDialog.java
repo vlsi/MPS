@@ -102,16 +102,13 @@ public class MergeModelsDialog extends DialogWrapper {
     myPanel.add(ScrollPaneFactory.createScrollPane(myMergeTree), BorderLayout.CENTER);
     final Dimension size = DimensionService.getInstance().getSize(getDimensionServiceKey());
     if (size == null) {
-      DimensionService.getInstance().setSize(getDimensionServiceKey(), new Dimension(500, 450));
-      setSize(400, 500);
-    } else {
-      setSize(((int) size.getWidth()), ((int) size.getHeight()));
+      myPanel.setPreferredSize(new Dimension(500, 450));
     }
     init();
   }
 
   public String getDimensionServiceKey() {
-    return "#jetbrains.mps.vcs.diff.ui.merge.MergeModelsdialog";
+    return getClass().getName();
   }
 
   protected void doOKAction() {
