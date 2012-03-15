@@ -39,7 +39,6 @@ import java.util.Collection;
  * evgeny, 10/26/11
  */
 public class MPSFrameworkSupportProvider extends FacetBasedFrameworkSupportProvider {
-
   private MPSFrameworkSupportConfigurable myConfigurable;
 
   public MPSFrameworkSupportProvider() {

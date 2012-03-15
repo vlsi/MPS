@@ -36,6 +36,9 @@
     <component>
       <implementation-class>jetbrains.mps.ide.projectView.ProjectViewSelectInProvider</implementation-class>
     </component>
+    <component>
+      <implementation-class>jetbrains.mps.idea.core.facet.MPSGlobalLibImporter</implementation-class>
+    </component>
   </application-components>
 
   <xi:include href="../classes/META-INF/MPSCore.xml" xpointer="xpointer(/components/*)"/>
@@ -46,6 +49,9 @@
               xpointer="xpointer(/components/*)"/>
 
   <project-components>
+    <component>
+      <implementation-class>jetbrains.mps.idea.core.facet.MPSProjectLibImporter</implementation-class>
+    </component>
     <component>
       <implementation-class>jetbrains.mps.project.MPSProject</implementation-class>
     </component>

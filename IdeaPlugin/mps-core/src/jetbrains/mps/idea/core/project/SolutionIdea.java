@@ -25,6 +25,7 @@ import com.intellij.openapi.roots.*;
 import com.intellij.openapi.roots.libraries.Library;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.util.messages.MessageBusConnection;
+import jetbrains.mps.idea.core.facet.LibHelper;
 import jetbrains.mps.idea.core.facet.MPSFacet;
 import jetbrains.mps.idea.core.facet.MPSFacetType;
 import jetbrains.mps.project.ModuleId;
@@ -124,7 +125,7 @@ public class SolutionIdea extends Solution {
           myDependencies.add(dep);
         }
       }
-      for (Module usedModule : usedModules) {
+      for (Module usedModule: usedModules) {
         MPSFacet usedModuleMPSFacet = FacetManager.getInstance(usedModule).getFacetByType(MPSFacetType.ID);
         if (usedModuleMPSFacet != null && usedModuleMPSFacet.wasInitialized()) {
           Dependency dep = new Dependency();
@@ -132,6 +133,10 @@ public class SolutionIdea extends Solution {
           dep.setReexport(false);
           myDependencies.add(dep);
         }
+      }
+
+      for (Solution s : LibHelper.getAllLibsToImport()) {
+        myDependencies.add(new Dependency(s.getModuleReference(), false));
       }
     }
     return myDependencies;
@@ -217,7 +222,7 @@ public class SolutionIdea extends Solution {
 
       for (VirtualFile f : library.getFiles(OrderRootType.CLASSES)) {
         ModelRoot mr = new ModelRoot();
-        mr.setPath(getLocalPath(f));
+        mr.setPath(LibHelper.getLocalPath(f));
         mr.setManager(LanguageID.JAVA_MANAGER);
 
         if (solutionDescriptor.getModelRoots().contains(mr)) continue;
@@ -226,10 +231,4 @@ public class SolutionIdea extends Solution {
     }
   }
 
-  private String getLocalPath(VirtualFile f) {
-    String path = f.getPath();
-    int index = path.indexOf("!");
-    if (index < 0) return path;
-    return path.substring(0, index);
-  }
 }
