@@ -138,7 +138,7 @@
     <delete dir="${deploy.dir}/MPS/plugins/ideaIntegration.jar.tmp" />
     <delete dir="${deploy.dir}/MPS/plugins/vcs.jar.tmp" />
     <delete dir="${deploy.dir}/MPS/plugins/mpsmake.jar.tmp" />
-    <delete dir="${deploy.dir}/MPS/plugins/migration.jar.tmp" />
+    <delete dir="${deploy.dir}/MPS/plugins/migrationAssistant.jar.tmp" />
     <delete dir="${deploy.dir}/MPS/plugins/mpsjava.jar.tmp" />
     <delete dir="${deploy.dir}/MPS/plugins/modelchecker.jar.tmp" />
     <delete dir="${deploy.dir}/MPS/plugins/samples.jar.tmp" />
