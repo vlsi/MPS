@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-6x5qhmzqnwj8jaweb0vulkpgpih910r">
+<dependencies version="2" modelHash="-4371td9a96htdlzlo4g7wir9fw5wd1d">
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-5p0rdl0tgxw43gzmkd4qcpqszqapgi2" />
   <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="-z9apu2jgvnwo2rksn2wr6ei9vh9scw" />
   <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" hash="-ad6sacrydlyivgq1a8s9zj6b37xpgsf" />
@@ -57,7 +57,7 @@
     <file name="mps.sh" />
     <file name="mps.vmoptions" />
   </common>
-  <source id="2235195415637073459" name="MPS" hash="9dick3d3gjmw65qlczsx6q2r85ra3s8">
+  <source id="2235195415637073459" name="MPS" hash="-654a9cxcj13vre30fk81u068n7jjfqs">
     <dep root="2235195415637076848" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" />

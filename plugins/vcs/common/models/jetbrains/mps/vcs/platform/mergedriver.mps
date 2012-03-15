@@ -4722,7 +4722,6 @@
                                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8688150419538752868" resolveInfo="it" />
                               </node>
                               <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.PlusExpression" typeId="tpee.1068581242875" id="8688150419538752908">
-                                <property name="right_transform_hint" value="true" />
                                 <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="8688150419538752871">
                                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1903565688283060348" resolveInfo="mpsCorePath" />
                                 </node>
@@ -4892,7 +4891,6 @@
                                       <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8688150419538753097" resolveInfo="it" />
                                     </node>
                                     <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.PlusExpression" typeId="tpee.1068581242875" id="8688150419538753094">
-                                      <property name="right_transform_hint" value="true" />
                                       <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="8688150419538753095">
                                         <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1903565688283060348" resolveInfo="mpsCorePath" />
                                       </node>
