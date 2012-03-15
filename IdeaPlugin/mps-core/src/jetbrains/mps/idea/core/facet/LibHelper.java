@@ -16,27 +16,31 @@
 
 package jetbrains.mps.idea.core.facet;
 
-import com.intellij.openapi.application.ApplicationManager;
-import com.intellij.openapi.project.Project;
-import com.intellij.openapi.project.ProjectManager;
+import com.intellij.openapi.module.Module;
+import com.intellij.openapi.roots.LibraryOrderEntry;
+import com.intellij.openapi.roots.ModuleRootManager;
+import com.intellij.openapi.roots.OrderEntry;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.project.Solution;
+import jetbrains.mps.smodel.MPSModuleRepository;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class LibHelper {
-  public static List<Solution> getAllLibsToImport(){
+  public static List<Solution> getAllLibsToImport(Module module) {
     List<Solution> result = new ArrayList<Solution>();
-    MPSGlobalLibImporter gi = ApplicationManager.getApplication().getComponent(MPSGlobalLibImporter.class);
-    result.addAll(gi.getLibsToImport());
-    for (Project p:ProjectManager.getInstance().getOpenProjects()){
-      MPSProjectLibImporter pi = p.getComponent(MPSProjectLibImporter.class);
-      result.addAll(pi.getLibsToImport());
+    for (OrderEntry oe : ModuleRootManager.getInstance(module).getOrderEntries()) {
+      if (!(oe instanceof LibraryOrderEntry)) continue;
+      LibraryOrderEntry loe = (LibraryOrderEntry) oe;
+      if (loe.isModuleLevel()) continue;
+      Solution s = MPSModuleRepository.getInstance().getSolution(loe.getLibrary().getName());
+      if (s == null) continue;
+      result.add(s);
     }
     return result;
   }
-  
+
   public static String getLocalPath(VirtualFile f) {
     String path = f.getPath();
     int index = path.indexOf("!");

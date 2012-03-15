@@ -135,7 +135,7 @@ public class SolutionIdea extends Solution {
         }
       }
 
-      for (Solution s : LibHelper.getAllLibsToImport()) {
+      for (Solution s : LibHelper.getAllLibsToImport(myModule)) {
         myDependencies.add(new Dependency(s.getModuleReference(), false));
       }
     }

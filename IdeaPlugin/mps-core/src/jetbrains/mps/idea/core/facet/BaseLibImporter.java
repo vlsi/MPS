@@ -39,12 +39,6 @@ import java.util.List;
 import java.util.UUID;
 
 public abstract class BaseLibImporter implements MPSModuleOwner {
-  private final List<Solution> myLoadedLibs = new ArrayList<Solution>();
-
-  public List<Solution> getLibsToImport() {
-    return myLoadedLibs;
-  }
-
   public void initComponent() {
     ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
@@ -56,8 +50,7 @@ public abstract class BaseLibImporter implements MPSModuleOwner {
             ModelRoot modelRoot = new ModelRoot(LibHelper.getLocalPath(f), LanguageID.JAVA_MANAGER);
             sd.getModelRoots().add(modelRoot);
           }
-          Solution s = Solution.newInstance(sd, BaseLibImporter.this);
-          myLoadedLibs.add(s);
+          Solution.newInstance(sd, BaseLibImporter.this);
         }
       }
     });
@@ -66,7 +59,11 @@ public abstract class BaseLibImporter implements MPSModuleOwner {
   protected abstract LibraryTable getLibTable();
 
   public void disposeComponent() {
-    MPSModuleRepository.getInstance().unRegisterModules(this);
+    ModelAccess.instance().runWriteAction(new Runnable() {
+      public void run() {
+        MPSModuleRepository.getInstance().unRegisterModules(BaseLibImporter.this);
+      }
+    });
   }
 
   @NotNull
