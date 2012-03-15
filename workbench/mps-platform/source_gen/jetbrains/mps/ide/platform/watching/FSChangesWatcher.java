@@ -4,6 +4,8 @@ package jetbrains.mps.ide.platform.watching;
 
 import com.intellij.openapi.components.ApplicationComponent;
 import jetbrains.mps.logging.Logger;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import com.intellij.util.messages.MessageBus;
 import com.intellij.openapi.project.ProjectManager;
 import com.intellij.openapi.vfs.VirtualFileManager;
@@ -40,6 +42,7 @@ import com.intellij.openapi.vfs.newvfs.events.VFileMoveEvent;
 
 public class FSChangesWatcher implements ApplicationComponent {
   public static final Logger LOG = Logger.getLogger(FSChangesWatcher.class);
+  protected static Log log = LogFactory.getLog(FSChangesWatcher.class);
 
   private final MessageBus myBus;
   private final ProjectManager myProjectManager;
@@ -236,6 +239,12 @@ public class FSChangesWatcher implements ApplicationComponent {
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
           for (EventProcessor p : reloadSession.getProcessors()) {
+            if (event.getFile() == null) {
+              if (log.isWarnEnabled()) {
+                log.warn("event.getFile() is null. Event: " + event.getClass().getName() + "; path=" + event.getPath());
+              }
+              continue;
+            }
             if (!(p.accepts(event.getFile()))) {
               continue;
             }
