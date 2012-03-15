@@ -36,6 +36,16 @@
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
   </dependency>
+  <dependency className="jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyExtendLanguage" file="BuildMps_ModuleDependencyExtendLanguage.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.build.mps.structure.BuildMps_Language" />
+    <classNode dependClassName="jetbrains.mps.build.mps.structure.BuildMps_ModuleDependency" />
+    <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModel" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
+  </dependency>
   <dependency className="jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyOnJavaModule" file="BuildMps_ModuleDependencyOnJavaModule.java">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.build.mps.structure.BuildMps_ModuleDependency" />
@@ -69,6 +79,16 @@
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.build.mps.structure.BuildMps_Language" />
     <classNode dependClassName="jetbrains.mps.build.mps.structure.BuildMps_ModuleDependency" />
+    <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModel" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
+  </dependency>
+  <dependency className="jetbrains.mps.build.mps.structure.BuildMps_ModuleJarRuntime" file="BuildMps_ModuleJarRuntime.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.build.mps.structure.BuildMps_ModuleRuntime" />
+    <classNode dependClassName="jetbrains.mps.build.structure.BuildSourcePath" />
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
