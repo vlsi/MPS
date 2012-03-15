@@ -46,8 +46,8 @@ public class DevKit extends AbstractModule implements MPSModuleOwner {
     DevkitDescriptor descriptor;
     if (descriptorFile.exists()) {
       descriptor = DevkitDescriptorPersistence.loadDevKitDescriptor(descriptorFile);
-      if (descriptor.getUUID() == null) {
-        descriptor.setUUID(UUID.randomUUID().toString());
+      if (descriptor.getId() == null) {
+        descriptor.setId(ModuleId.regular());
         DevkitDescriptorPersistence.saveDevKitDescriptor(descriptor, descriptorFile);
       }
     } else {
@@ -69,7 +69,7 @@ public class DevKit extends AbstractModule implements MPSModuleOwner {
   private static DevkitDescriptor createNewDescriptor(String namespace, IFile descriptorFile) {
     DevkitDescriptor descriptor = new DevkitDescriptor();
     descriptor.setNamespace(namespace);
-    descriptor.setUUID(UUID.randomUUID().toString());
+    descriptor.setId(ModuleId.regular());
     return descriptor;
   }
 
@@ -88,13 +88,13 @@ public class DevKit extends AbstractModule implements MPSModuleOwner {
     DevkitDescriptor devKitDescriptor;
     if (handle.getDescriptor() != null) {
       devKitDescriptor = (DevkitDescriptor) handle.getDescriptor();
-      if (devKitDescriptor.getUUID() == null) {
-        devKitDescriptor.setUUID(UUID.randomUUID().toString());
+      if (devKitDescriptor.getId() == null) {
+        devKitDescriptor.setId(ModuleId.regular());
         DevkitDescriptorPersistence.saveDevKitDescriptor(devKitDescriptor, handle.getFile());
       }
     } else {
       devKitDescriptor = new DevkitDescriptor();
-      devKitDescriptor.setUUID(UUID.randomUUID().toString());
+      devKitDescriptor.setId(ModuleId.regular());
     }
 
 

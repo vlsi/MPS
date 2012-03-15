@@ -58,8 +58,8 @@ public class Solution extends AbstractModule {
     SolutionDescriptor descriptor;
     if (descriptorFile.exists()) {
       descriptor = (SolutionDescriptor) ModulesMiner.getInstance().loadModuleDescriptor(descriptorFile);
-      if (descriptor.getUUID() == null) {
-        descriptor.setUUID(UUID.randomUUID().toString());
+      if (descriptor.getId() == null) {
+        descriptor.setId(ModuleId.regular());
         SolutionDescriptorPersistence.saveSolutionDescriptor(descriptorFile, descriptor);
       }
     } else {
@@ -124,13 +124,13 @@ public class Solution extends AbstractModule {
     SolutionDescriptor descriptor;
     if (handle.getDescriptor() != null) {
       descriptor = (SolutionDescriptor) handle.getDescriptor();
-      if (descriptor.getUUID() == null) {
-        descriptor.setUUID(UUID.randomUUID().toString());
+      if (descriptor.getId() == null) {
+        descriptor.setId(ModuleId.regular());
         SolutionDescriptorPersistence.saveSolutionDescriptor(handle.getFile(), descriptor);
       }
     } else {
       descriptor = new SolutionDescriptor();
-      descriptor.setUUID(UUID.randomUUID().toString());
+      descriptor.setId(ModuleId.regular());
     }
     solution.myDescriptorFile = handle.getFile();
 
@@ -224,7 +224,7 @@ public class Solution extends AbstractModule {
   private static SolutionDescriptor createNewDescriptor(String namespace, IFile descriptorFile) {
     SolutionDescriptor descriptor = new SolutionDescriptor();
     descriptor.setNamespace(namespace);
-    descriptor.setUUID(UUID.randomUUID().toString());
+    descriptor.setId(ModuleId.regular());
 
     IFile modelsDir = descriptorFile.getParent().getDescendant(SOLUTION_MODELS);
     if (modelsDir.exists() && modelsDir.getChildren().size() != 0) {
