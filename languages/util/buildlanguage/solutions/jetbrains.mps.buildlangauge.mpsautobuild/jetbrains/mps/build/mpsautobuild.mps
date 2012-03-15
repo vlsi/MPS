@@ -299,17 +299,109 @@
             </node>
           </node>
         </node>
-        <node role="entry" roleId="tps4.1203617897549" type="tps4.Plugin" typeId="tps4.4159241239519649208" id="888657369809591775">
-          <node role="sourcePath" roleId="tps4.4159241239519649209" type="tps4.Path" typeId="tps4.1220973916698" id="888657369809591776">
-            <node role="macro" roleId="tps4.1220976095387" type="tps4.MacroReference" typeId="tps4.1220976052975" id="888657369809591779">
-              <property name="name" nameId="tps4.1220976068141" value="mps_home" />
+        <node role="entry" roleId="tps4.1203617897549" type="tps4.Folder" typeId="tps4.1203598512427" id="813539524952025408">
+          <node role="title" roleId="tps4.1205340441197" type="tps4.SimpleString" typeId="tps4.1205339044029" id="813539524952025411">
+            <property name="name" nameId="tps4.1223641503366" value="vcs" />
+          </node>
+          <node role="entry" roleId="tps4.1203617897549" type="tps4.Folder" typeId="tps4.1203598512427" id="813539524952025413">
+            <node role="title" roleId="tps4.1205340441197" type="tps4.SimpleString" typeId="tps4.1205339044029" id="813539524952025416">
+              <property name="name" nameId="tps4.1223641503366" value="lib" />
             </node>
-            <node role="compositePathComponent" roleId="tps4.1220974249696" type="tps4.CompositePathComponent" typeId="tps4.1220973992845" id="888657369809591778">
-              <node role="pathComponent" roleId="tps4.1220978161990" type="tps4.PathComponent" typeId="tps4.1220973955905" id="888657369809591780">
-                <property name="path" nameId="tps4.1220974398640" value="plugins" />
+            <node role="entry" roleId="tps4.1203617897549" type="tps4.Jar" typeId="tps4.1203598417283" id="813539524952025437">
+              <node role="delete" roleId="tps4.1239622410040" type="tps4.Delete" typeId="tps4.1204122781510" id="813539524952025438" />
+              <node role="title" roleId="tps4.1205340441197" type="tps4.SimpleString" typeId="tps4.1205339044029" id="813539524952025439">
+                <property name="name" nameId="tps4.1223641503366" value="vcs.jar" />
               </node>
-              <node role="pathComponent" roleId="tps4.1220978161990" type="tps4.PathComponent" typeId="tps4.1220973955905" id="888657369809591782">
-                <property name="path" nameId="tps4.1220974398640" value="vcs" />
+              <node role="entry" roleId="tps4.1203617897549" type="tps4.Copy" typeId="tps4.1204015075559" id="813539524952025472">
+                <property name="name" nameId="tpck.1169194664001" value="" />
+                <property name="excludes" nameId="tps4.1204107538752" value="" />
+                <node role="sourcePath" roleId="tps4.1220974847213" type="tps4.Path" typeId="tps4.1220973916698" id="813539524952025473">
+                  <node role="macro" roleId="tps4.1220976095387" type="tps4.MacroReference" typeId="tps4.1220976052975" id="813539524952025475">
+                    <property name="name" nameId="tps4.1220976068141" value="mps_home" />
+                  </node>
+                  <node role="compositePathComponent" roleId="tps4.1220974249696" type="tps4.CompositePathComponent" typeId="tps4.1220973992845" id="813539524952025477">
+                    <node role="pathComponent" roleId="tps4.1220978161990" type="tps4.PathComponent" typeId="tps4.1220973955905" id="813539524952025478">
+                      <property name="path" nameId="tps4.1220974398640" value="plugins" />
+                    </node>
+                    <node role="pathComponent" roleId="tps4.1220978161990" type="tps4.PathComponent" typeId="tps4.1220973955905" id="813539524952025481">
+                      <property name="path" nameId="tps4.1220974398640" value="vcs" />
+                    </node>
+                    <node role="pathComponent" roleId="tps4.1220978161990" type="tps4.PathComponent" typeId="tps4.1220973955905" id="813539524952025482">
+                      <property name="path" nameId="tps4.1220974398640" value="classes" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node role="entry" roleId="tps4.1203617897549" type="tps4.Folder" typeId="tps4.1203598512427" id="3730834058322529125">
+                <node role="entry" roleId="tps4.1203617897549" type="tps4.Replace" typeId="tps4.1212485154251" id="813539524952025441">
+                  <node role="sourcePath" roleId="tps4.1220981955937" type="tps4.Path" typeId="tps4.1220973916698" id="813539524952025442">
+                    <node role="macro" roleId="tps4.1220976095387" type="tps4.MacroReference" typeId="tps4.1220976052975" id="813539524952025443">
+                      <property name="name" nameId="tps4.1220976068141" value="mps_home" />
+                    </node>
+                    <node role="compositePathComponent" roleId="tps4.1220974249696" type="tps4.CompositePathComponent" typeId="tps4.1220973992845" id="813539524952025444">
+                      <node role="pathComponent" roleId="tps4.1220978161990" type="tps4.PathComponent" typeId="tps4.1220973955905" id="813539524952025445">
+                        <property name="path" nameId="tps4.1220974398640" value="plugins" />
+                      </node>
+                      <node role="pathComponent" roleId="tps4.1220978161990" type="tps4.PathComponent" typeId="tps4.1220973955905" id="813539524952025449">
+                        <property name="path" nameId="tps4.1220974398640" value="vcs" />
+                      </node>
+                      <node role="pathComponent" roleId="tps4.1220978161990" type="tps4.PathComponent" typeId="tps4.1220973955905" id="813539524952025468">
+                        <property name="path" nameId="tps4.1220974398640" value="META-INF" />
+                      </node>
+                      <node role="pathComponent" roleId="tps4.1220978161990" type="tps4.PathComponent" typeId="tps4.1220973955905" id="813539524952025470">
+                        <property name="path" nameId="tps4.1220974398640" value="plugin.xml" />
+                      </node>
+                    </node>
+                  </node>
+                  <node role="replacingPair" roleId="tps4.1212485610544" type="tps4.Pair" typeId="tps4.1212485500119" id="813539524952025461">
+                    <node role="first" roleId="tps4.1212485511583" type="tps4.SimpleString" typeId="tps4.1205339044029" id="813539524952025464">
+                      <property name="name" nameId="tps4.1223641503366" value="../classes/jetbrains/" />
+                    </node>
+                    <node role="second" roleId="tps4.1212485518918" type="tps4.SimpleString" typeId="tps4.1205339044029" id="813539524952025465">
+                      <property name="name" nameId="tps4.1223641503366" value="../jetbrains/" />
+                    </node>
+                  </node>
+                  <node role="replacingPair" roleId="tps4.1212485610544" type="tps4.Pair" typeId="tps4.1212485500119" id="813539524952025452">
+                    <node role="first" roleId="tps4.1212485511583" type="tps4.SimpleString" typeId="tps4.1205339044029" id="813539524952025455">
+                      <property name="name" nameId="tps4.1223641503366" value="../classes/META-INF/" />
+                    </node>
+                    <node role="second" roleId="tps4.1212485518918" type="tps4.SimpleString" typeId="tps4.1205339044029" id="9108009692376365444">
+                      <property name="name" nameId="tps4.1223641503366" value="./" />
+                    </node>
+                  </node>
+                </node>
+                <node role="title" roleId="tps4.1205340441197" type="tps4.SimpleString" typeId="tps4.1205339044029" id="3730834058322529128">
+                  <property name="name" nameId="tps4.1223641503366" value="META-INF" />
+                </node>
+              </node>
+            </node>
+            <node role="entry" roleId="tps4.1203617897549" type="tps4.Jar" typeId="tps4.1203598417283" id="813539524952025418">
+              <node role="delete" roleId="tps4.1239622410040" type="tps4.Delete" typeId="tps4.1204122781510" id="813539524952025419" />
+              <node role="entry" roleId="tps4.1203617897549" type="tps4.Copy" typeId="tps4.1204015075559" id="813539524952025421">
+                <property name="name" nameId="tpck.1169194664001" value="" />
+                <property name="excludes" nameId="tps4.1204107538752" value="" />
+                <node role="sourcePath" roleId="tps4.1220974847213" type="tps4.Path" typeId="tps4.1220973916698" id="813539524952025422">
+                  <node role="macro" roleId="tps4.1220976095387" type="tps4.MacroReference" typeId="tps4.1220976052975" id="813539524952025425">
+                    <property name="name" nameId="tps4.1220976068141" value="mps_home" />
+                  </node>
+                  <node role="compositePathComponent" roleId="tps4.1220974249696" type="tps4.CompositePathComponent" typeId="tps4.1220973992845" id="813539524952025426">
+                    <node role="pathComponent" roleId="tps4.1220978161990" type="tps4.PathComponent" typeId="tps4.1220973955905" id="813539524952025427">
+                      <property name="path" nameId="tps4.1220974398640" value="plugins" />
+                    </node>
+                    <node role="pathComponent" roleId="tps4.1220978161990" type="tps4.PathComponent" typeId="tps4.1220973955905" id="813539524952025430">
+                      <property name="path" nameId="tps4.1220974398640" value="vcs" />
+                    </node>
+                    <node role="pathComponent" roleId="tps4.1220978161990" type="tps4.PathComponent" typeId="tps4.1220973955905" id="813539524952025432">
+                      <property name="path" nameId="tps4.1220974398640" value="lib" />
+                    </node>
+                    <node role="pathComponent" roleId="tps4.1220978161990" type="tps4.PathComponent" typeId="tps4.1220973955905" id="813539524952025434">
+                      <property name="path" nameId="tps4.1220974398640" value="classes" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node role="title" roleId="tps4.1205340441197" type="tps4.SimpleString" typeId="tps4.1205339044029" id="813539524952025428">
+                <property name="name" nameId="tps4.1223641503366" value="mps-vcs-core.jar" />
               </node>
             </node>
           </node>
