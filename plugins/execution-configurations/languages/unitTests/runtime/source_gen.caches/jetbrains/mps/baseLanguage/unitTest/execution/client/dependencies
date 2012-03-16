@@ -250,6 +250,7 @@
     <classNode dependClassName="jetbrains.mps.project.ModuleId" />
     <classNode dependClassName="jetbrains.mps.reloading.ClasspathStringCollector" />
     <classNode dependClassName="jetbrains.mps.smodel.MPSModuleRepository" />
+    <classNode dependClassName="jetbrains.mps.util.annotation.ToRemove" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.unitTest.execution.client.TestRunState" file="TestRunState.java">
     <classNode dependClassName="com.intellij.openapi.util.Key" />
