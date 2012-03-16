@@ -7,6 +7,9 @@ import java.util.List;
 import java.util.ArrayList;
 import java.util.concurrent.atomic.AtomicReference;
 import com.intellij.openapi.project.Project;
+import jetbrains.mps.debug.api.source.CompositePositionProvider;
+import jetbrains.mps.debug.api.source.NodePositionProvider;
+import jetbrains.mps.debug.api.source.TextPositionProvider;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.util.annotation.UseCarefully;
 import org.jetbrains.annotations.Nullable;
@@ -21,7 +24,7 @@ public abstract class AbstractDebugSession<State extends AbstractUiState> {
   protected final Project myProject;
 
   public AbstractDebugSession(Project p) {
-    this(p, new DebuggableFramesSelector(p));
+    this(p, new DebuggableFramesSelector(p, new CompositePositionProvider(new NodePositionProvider(), new TextPositionProvider(p))));
   }
 
   public AbstractDebugSession(Project p, IDebuggableFramesSelector framesSelector) {

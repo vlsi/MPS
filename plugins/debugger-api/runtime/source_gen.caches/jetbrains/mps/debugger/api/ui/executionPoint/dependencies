@@ -10,6 +10,8 @@
     <classNode dependClassName="jetbrains.mps.debug.api.SessionChangeListener" />
     <classNode dependClassName="jetbrains.mps.debug.api.programState.ILocation" />
     <classNode dependClassName="jetbrains.mps.debug.api.programState.IStackFrame" />
+    <classNode dependClassName="jetbrains.mps.debug.api.source.NodeSourcePosition" />
+    <classNode dependClassName="jetbrains.mps.debug.api.source.SourcePosition" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="com.intellij.openapi.components.ProjectComponent" />

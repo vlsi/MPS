@@ -13,6 +13,8 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.debug.api.programState.IStackFrame;
 import jetbrains.mps.debug.api.programState.ILocation;
+import jetbrains.mps.debug.api.source.SourcePosition;
+import jetbrains.mps.debug.api.source.NodeSourcePosition;
 import jetbrains.mps.debug.api.SessionChangeAdapter;
 
 public class CurrentLinePositionComponent extends CurrentLinePositionComponentEx<AbstractDebugSession> implements ProjectComponent {
@@ -59,7 +61,11 @@ public class CurrentLinePositionComponent extends CurrentLinePositionComponentEx
     IStackFrame stackFrame = session.getUiState().getStackFrame();
     if (stackFrame != null) {
       ILocation location = stackFrame.getLocation();
-      return session.getDebuggableFramesSelector().getPositionProvider().getNode(location);
+      SourcePosition position = session.getDebuggableFramesSelector().getPositionProvider().getPosition(location);
+      return (position instanceof NodeSourcePosition ?
+        ((NodeSourcePosition) position).getNode() :
+        null
+      );
     }
     return null;
   }
