@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <unitInfo fileName="IErrorHandler.java" startLine="6" startPosition="0" endLine="9" endPosition="0" unitName="jetbrains.mps.build.packaging.pluginSolution.plugin.IErrorHandler" />
+  <unitInfo fileName="NodeData.java" startLine="8" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.build.packaging.pluginSolution.plugin.NodeData" />
   <unitInfo fileName="PluginSolution_ApplicationPlugin.java" startLine="9" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.build.packaging.pluginSolution.plugin.PluginSolution_ApplicationPlugin" />
   <root nodeId="5487985028841936100">
     <nodeInfo nodeId="5487985028841936108" fileName="PackagingLanguageGenerator.java" startLine="20" startPosition="55" endLine="21" endPosition="120" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -1158,8 +1160,8 @@
     <nodeInfo nodeId="5487985028841938731" fileName="GenerateBuildWizard.java" startLine="32" startPosition="49" endLine="33" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
     <nodeInfo nodeId="5487985028841938735" fileName="GenerateBuildWizard.java" startLine="33" startPosition="25" endLine="34" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5487985028841938739" fileName="GenerateBuildWizard.java" startLine="34" startPosition="21" endLine="35" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5487985028841938745" fileName="GenerateBuildWizard.java" startLine="38" startPosition="31" endLine="39" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5487985028841938747" fileName="GenerateBuildWizard.java" startLine="39" startPosition="23" endLine="40" endPosition="120" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5487985028841938747" fileName="GenerateBuildWizard.java" startLine="38" startPosition="31" endLine="39" endPosition="120" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5487985028841938745" fileName="GenerateBuildWizard.java" startLine="39" startPosition="120" endLine="40" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5487985028841938775" fileName="GenerateBuildWizard.java" startLine="43" startPosition="31" endLine="44" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5487985028841938777" fileName="GenerateBuildWizard.java" startLine="44" startPosition="23" endLine="45" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5487985028841938847" fileName="GenerateBuildWizard.java" startLine="48" startPosition="28" endLine="49" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -1179,7 +1181,7 @@
     <nodeInfo nodeId="5487985028841938843" fileName="GenerateBuildWizard.java" startLine="47" startPosition="0" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="initWizard#()V" />
     <scopeInfo nodeId="5487985028841938804" fileName="GenerateBuildWizard.java" startLine="15" startPosition="43" endLine="16" endPosition="50" />
     <scopeInfo nodeId="5487985028841938719" fileName="GenerateBuildWizard.java" startLine="27" startPosition="29" endLine="28" endPosition="16" />
-    <scopeInfo nodeId="5487985028841938744" fileName="GenerateBuildWizard.java" startLine="38" startPosition="31" endLine="40" endPosition="120" />
+    <scopeInfo nodeId="5487985028841938744" fileName="GenerateBuildWizard.java" startLine="38" startPosition="31" endLine="40" endPosition="23" />
     <scopeInfo nodeId="5487985028841938774" fileName="GenerateBuildWizard.java" startLine="43" startPosition="31" endLine="45" endPosition="32" />
     <scopeInfo nodeId="5487985028841938799" fileName="GenerateBuildWizard.java" startLine="14" startPosition="64" endLine="18" endPosition="0">
       <varInfo nodeId="5487985028841938802" varName="text" />
