@@ -22,7 +22,9 @@ import com.intellij.openapi.roots.ModuleRootManager;
 import com.intellij.openapi.roots.OrderEntry;
 import com.intellij.openapi.roots.libraries.Library;
 import com.intellij.openapi.vfs.VirtualFile;
+import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.project.Solution;
+import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.MPSModuleRepository;
 
 import java.util.ArrayList;
@@ -43,7 +45,8 @@ public class LibHelper {
   }
 
   public static Solution findSolutionForLibrary(Library library) {
-    return MPSModuleRepository.getInstance().getSolution(library.getName());
+    ModuleReference ref = new ModuleReference(null, ModuleId.foreign(library.getName()));
+    return MPSModuleRepository.getInstance().getSolution(ref);
   }
 
   public static String getLocalPath(VirtualFile f) {
