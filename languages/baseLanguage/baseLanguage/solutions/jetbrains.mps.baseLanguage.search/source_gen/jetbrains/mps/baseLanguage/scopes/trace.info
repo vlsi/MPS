@@ -208,35 +208,41 @@
     <unitInfo nodeId="4304267140677045312" fileName="ClassifierScopeUtils.java" startLine="14" startPosition="0" endLine="51" endPosition="0" unitName="jetbrains.mps.baseLanguage.scopes.ClassifierScopeUtils" />
   </root>
   <root nodeId="4748674287775003937">
-    <nodeInfo nodeId="4748674287775009333" fileName="TransactionCacheUtils.java" startLine="12" startPosition="126" endLine="13" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4748674287775009350" fileName="TransactionCacheUtils.java" startLine="13" startPosition="63" endLine="14" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4748674287775009350" fileName="TransactionCacheUtils.java" startLine="13" startPosition="138" endLine="14" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4748674287775009359" fileName="TransactionCacheUtils.java" startLine="15" startPosition="20" endLine="16" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4748674287775009365" fileName="TransactionCacheUtils.java" startLine="17" startPosition="5" endLine="18" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4748674287775009383" fileName="TransactionCacheUtils.java" startLine="18" startPosition="28" endLine="19" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4748674287775012038" fileName="TransactionCacheUtils.java" startLine="22" startPosition="121" endLine="23" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4748674287775003939" fileName="TransactionCacheUtils.java" startLine="8" startPosition="36" endLine="10" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TransactionCacheUtils#()V" />
+    <nodeInfo nodeId="4748674287775012038" fileName="TransactionCacheUtils.java" startLine="22" startPosition="121" endLine="23" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3660196414914466048" fileName="TransactionCacheUtils.java" startLine="26" startPosition="126" endLine="27" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4748674287775003939" fileName="TransactionCacheUtils.java" startLine="9" startPosition="36" endLine="11" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TransactionCacheUtils#()V" />
     <nodeInfo nodeId="4748674287775009357" fileName="TransactionCacheUtils.java" startLine="14" startPosition="25" endLine="17" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="4748674287775012009" fileName="TransactionCacheUtils.java" startLine="21" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getFromCache#(Ljava/lang/Class;nullLjetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_return_P1_E0;)null" />
-    <nodeInfo nodeId="4748674287775003944" fileName="TransactionCacheUtils.java" startLine="11" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getFromCache#(Ljava/lang/String;nullLjetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_return_P1_E0;)null" />
-    <scopeInfo nodeId="4748674287775003942" fileName="TransactionCacheUtils.java" startLine="9" startPosition="35" endLine="9" endPosition="35" />
+    <nodeInfo nodeId="3660196414914466045" fileName="TransactionCacheUtils.java" startLine="25" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getFromCache#(Ljava/lang/String;nullLjetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_return_P1_E0;)null" />
+    <nodeInfo nodeId="4748674287775003944" fileName="TransactionCacheUtils.java" startLine="12" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getFromCache#(Ljetbrains/mps/smodel/TransactionCache;nullLjetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_return_P1_E0;)null" />
+    <scopeInfo nodeId="4748674287775003942" fileName="TransactionCacheUtils.java" startLine="10" startPosition="35" endLine="10" endPosition="35" />
     <scopeInfo nodeId="4748674287775009358" fileName="TransactionCacheUtils.java" startLine="15" startPosition="20" endLine="16" endPosition="15" />
-    <scopeInfo nodeId="4748674287775012012" fileName="TransactionCacheUtils.java" startLine="22" startPosition="121" endLine="23" endPosition="55" />
-    <scopeInfo nodeId="4748674287775003939" fileName="TransactionCacheUtils.java" startLine="8" startPosition="36" endLine="10" endPosition="3" />
+    <scopeInfo nodeId="4748674287775012012" fileName="TransactionCacheUtils.java" startLine="22" startPosition="121" endLine="23" endPosition="94" />
+    <scopeInfo nodeId="3660196414914466047" fileName="TransactionCacheUtils.java" startLine="26" startPosition="126" endLine="27" endPosition="98" />
+    <scopeInfo nodeId="4748674287775003939" fileName="TransactionCacheUtils.java" startLine="9" startPosition="36" endLine="11" endPosition="3" />
     <scopeInfo nodeId="4748674287775012009" fileName="TransactionCacheUtils.java" startLine="21" startPosition="0" endLine="25" endPosition="0">
       <varInfo nodeId="4748674287775012017" varName="clazz" />
       <varInfo nodeId="4748674287775012023" varName="creator" />
       <varInfo nodeId="4748674287775012019" varName="key" />
     </scopeInfo>
-    <scopeInfo nodeId="4748674287775003947" fileName="TransactionCacheUtils.java" startLine="12" startPosition="126" endLine="19" endPosition="29">
-      <varInfo nodeId="4748674287775009334" varName="cache" />
+    <scopeInfo nodeId="3660196414914466045" fileName="TransactionCacheUtils.java" startLine="25" startPosition="0" endLine="29" endPosition="0">
+      <varInfo nodeId="3660196414914466059" varName="cacheName" />
+      <varInfo nodeId="3660196414914466063" varName="creator" />
+      <varInfo nodeId="3660196414914466061" varName="key" />
+    </scopeInfo>
+    <scopeInfo nodeId="4748674287775003947" fileName="TransactionCacheUtils.java" startLine="13" startPosition="138" endLine="19" endPosition="29">
       <varInfo nodeId="4748674287775009351" varName="v" />
     </scopeInfo>
-    <scopeInfo nodeId="4748674287775003944" fileName="TransactionCacheUtils.java" startLine="11" startPosition="0" endLine="21" endPosition="0">
-      <varInfo nodeId="4748674287775009320" varName="cacheName" />
+    <scopeInfo nodeId="4748674287775003944" fileName="TransactionCacheUtils.java" startLine="12" startPosition="0" endLine="21" endPosition="0">
+      <varInfo nodeId="3660196414914449082" varName="cache" />
       <varInfo nodeId="4748674287775009325" varName="creator" />
       <varInfo nodeId="4748674287775009318" varName="key" />
     </scopeInfo>
-    <unitInfo nodeId="4748674287775003937" fileName="TransactionCacheUtils.java" startLine="8" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.baseLanguage.scopes.TransactionCacheUtils" />
+    <unitInfo nodeId="4748674287775003937" fileName="TransactionCacheUtils.java" startLine="9" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.baseLanguage.scopes.TransactionCacheUtils" />
   </root>
   <root nodeId="5829311132863985864">
     <nodeInfo nodeId="5829311132863985914" fileName="BLCachedScopes.java" startLine="15" startPosition="162" endLine="16" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

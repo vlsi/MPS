@@ -19,7 +19,11 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.containers.ConcurrentHashSet;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
 import java.util.Set;
+import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
 
@@ -41,6 +45,9 @@ public abstract class ModelAccess implements ModelCommandExecutor {
       return Boolean.FALSE;
     }
   };
+
+  protected final Object myTransactionCachesLock = new Object();
+  protected Map<String, TransactionCache> myTransactionCaches = new ConcurrentHashMap<String, TransactionCache>();
 
   protected ModelAccess() {
 
@@ -183,6 +190,41 @@ public abstract class ModelAccess implements ModelCommandExecutor {
 
   private boolean isReadEnabledFlag() {
     return Boolean.TRUE == myReadEnabledFlag.get();
+  }
+
+  public <K, V> TransactionCache<K, V> getTransactionCache(String cacheName) {
+    if (myTransactionCaches.containsKey(cacheName)) {
+      return (TransactionCache<K, V>) myTransactionCaches.get(cacheName);
+    } else {
+      synchronized (myTransactionCachesLock) {
+        if (myTransactionCaches.containsKey(cacheName)) {
+          return (TransactionCache<K, V>) myTransactionCaches.get(cacheName);
+        }
+
+        TransactionCache<K, V> cache = new TransactionCache<K, V>();
+        myTransactionCaches.put(cacheName, cache);
+
+        return cache;
+      }
+    }
+  }
+
+  public <K, V> TransactionCache<K, V> getTransactionCache(Class<?> clazz) {
+    return getTransactionCache(clazz.getName());
+  }
+
+  public void clearTransactionCaches() {
+    LOG.warning("Clearing transaction caches");
+    
+    List<TransactionCache> caches = new ArrayList<TransactionCache>();
+
+    synchronized (myTransactionCachesLock) {
+      caches.addAll(myTransactionCaches.values());
+    }
+
+    for (TransactionCache cache : caches) {
+      cache.clear();
+    }
   }
 
   public void dispose() {

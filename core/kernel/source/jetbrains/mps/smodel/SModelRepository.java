@@ -22,6 +22,7 @@ import jetbrains.mps.cleanup.CleanupManager;
 import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
+import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.smodel.event.SModelFileChangedEvent;
 import jetbrains.mps.smodel.event.SModelListener;
 import jetbrains.mps.smodel.event.SModelRenamedEvent;
@@ -496,6 +497,14 @@ public class SModelRepository implements CoreComponent {
       SModelDescriptor md = event.getModelDescriptor();
       if (md instanceof EditableSModelDescriptor) {
         addModelToFileCache(((EditableSModelDescriptor) md));
+      }
+    }
+
+    @Override
+    public void eventFired(SModelEvent event) {
+      // todo: =(
+      if (event.isChangeEvent()) {
+        ModelAccess.instance().clearTransactionCaches();
       }
     }
   }

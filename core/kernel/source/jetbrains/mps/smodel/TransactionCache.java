@@ -21,19 +21,12 @@ import org.jetbrains.annotations.Nullable;
 import java.util.concurrent.ConcurrentHashMap;
 
 public class TransactionCache<K, V> {
-  private static TransactionCache INSTANCE = new TransactionCache();
-
   public ConcurrentHashMap<K, V> inner = new ConcurrentHashMap<K, V>();
-  
-  private TransactionCache() {
-  }
 
-  public static <K, V> TransactionCache<K, V> instance() {
-    return INSTANCE;
+  protected TransactionCache() {
   }
 
   /**
-   *
    * @param key
    * @param value
    * @return new value associated with key
