@@ -15,6 +15,10 @@ public class Interface_BehaviorDescriptor extends Classifier_BehaviorDescriptor 
     return Interface_Behavior.virtual_getExtendedClassifiers_2201875424516179426(thisNode);
   }
 
+  public Iterable<SNode> virtual_doOverride_7343816061617019844(SNode thisNode, SNode kind, List<SNode> equalSignatureMembers) {
+    return Interface_Behavior.virtual_doOverride_7343816061617019844(thisNode, kind, equalSignatureMembers);
+  }
+
   public boolean virtual_isDeprecated_1224609060727(SNode thisNode) {
     return IBLDeprecatable_Behavior.virtual_isDeprecated_1224609060727(thisNode);
   }

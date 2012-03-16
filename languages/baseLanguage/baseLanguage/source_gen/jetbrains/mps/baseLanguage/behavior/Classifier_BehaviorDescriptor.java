@@ -71,6 +71,10 @@ public abstract class Classifier_BehaviorDescriptor extends GenericDeclaration_B
     return Classifier_Behavior.virtual_getVisibleMembers_8083692786967356611(thisNode, contextNode, kind);
   }
 
+  public Iterable<SNode> virtual_doOverride_7343816061617019844(SNode thisNode, SNode kind, List<SNode> equalSignatureMembers) {
+    return Classifier_Behavior.virtual_doOverride_7343816061617019844(thisNode, kind, equalSignatureMembers);
+  }
+
   public Icon virtual_getAdditionalIcon_5017341185733863694(SNode thisNode) {
     return Classifier_Behavior.virtual_getAdditionalIcon_5017341185733863694(thisNode);
   }

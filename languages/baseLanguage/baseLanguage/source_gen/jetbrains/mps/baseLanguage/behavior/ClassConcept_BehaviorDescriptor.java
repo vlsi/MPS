@@ -18,6 +18,10 @@ public class ClassConcept_BehaviorDescriptor extends Classifier_BehaviorDescript
     return ClassConcept_Behavior.virtual_getExtendedClassifiers_2201875424516179426(thisNode);
   }
 
+  public Iterable<SNode> virtual_doOverride_7343816061617019844(SNode thisNode, SNode kind, List<SNode> equalSignatureMembers) {
+    return ClassConcept_Behavior.virtual_doOverride_7343816061617019844(thisNode, kind, equalSignatureMembers);
+  }
+
   public List<Icon> virtual_getMarkIcons_3923831204883340393(SNode thisNode) {
     return ClassConcept_Behavior.virtual_getMarkIcons_3923831204883340393(thisNode);
   }
