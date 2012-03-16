@@ -14,7 +14,6 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
-import jetbrains.mps.baseLanguage.scopes.ClassAccessKind;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
 import jetbrains.mps.smodel.structure.BehaviorDescriptor;
 import jetbrains.mps.smodel.structure.ConceptRegistry;
@@ -76,60 +75,7 @@ public class ClassifierMember_Behavior {
       }
     }
 
-    int accessLevel = ClassifierMember_Behavior.call_getAccessLevelFor_8083692786967356648(thisNode, contextClassifier, contextNode);
-
-
-    // todo: ??? 
-    boolean isPrivate = SNodeOperations.isInstanceOf(SLinkOperations.getTarget(thisNode, "visibility", true), "jetbrains.mps.baseLanguage.structure.PrivateVisibility");
-    boolean isDefault = (SLinkOperations.getTarget(thisNode, "visibility", true) == null);
-    boolean isProtected = SNodeOperations.isInstanceOf(SLinkOperations.getTarget(thisNode, "visibility", true), "jetbrains.mps.baseLanguage.structure.ProtectedVisibility");
-    boolean isPublic = SNodeOperations.isInstanceOf(SLinkOperations.getTarget(thisNode, "visibility", true), "jetbrains.mps.baseLanguage.structure.PublicVisibility");
-
-    if ((accessLevel & ClassAccessKind.CLASS) != 0) {
-      return true;
-    } else if ((accessLevel & ClassAccessKind.PACKAGE) != 0) {
-      return isPublic || isProtected || isDefault;
-    } else if ((accessLevel & ClassAccessKind.SUBCLASS) != 0) {
-      return isPublic || isProtected;
-    } else {
-      return isPublic;
-    }
-  }
-
-  public static int call_getAccessLevelFor_8083692786967356648(SNode thisNode, SNode contextClassifier, SNode contextNode) {
-    // todo: in naive version (with ints) not extensionable =( 
-    int result = ClassAccessKind.PUBLIC;
-
-    // package access 
-    if (eq_i8o263_a0e0d(VisibilityUtil.packageName(contextNode), VisibilityUtil.packageName(contextClassifier))) {
-      result = result | ClassAccessKind.PACKAGE;
-    }
-
-    // class access 
-    if (ListSequence.fromList(SNodeOperations.getAncestors(contextNode, "jetbrains.mps.baseLanguage.structure.Classifier", true)).last() == ListSequence.fromList(SNodeOperations.getAncestors(contextClassifier, "jetbrains.mps.baseLanguage.structure.Classifier", true)).last()) {
-      result = result | ClassAccessKind.CLASS;
-    }
-
-    // subclass access 
-
-    // todo: do it in right way using scopes 
-    SNode outerClassifier = (SNodeOperations.isInstanceOf(contextNode, "jetbrains.mps.baseLanguage.structure.Classifier") ?
-      SNodeOperations.cast(contextNode, "jetbrains.mps.baseLanguage.structure.Classifier") :
-      Classifier_Behavior.getContextClassifier_6172562527426750080(contextNode)
-    );
-
-    SNode currentClassifier = contextClassifier;
-
-    while ((outerClassifier != null)) {
-      // <node> 
-      if (SetSequence.fromSet(Classifier_Behavior.call_getAllExtendedClassifiers_2907982978864985482(outerClassifier)).contains(currentClassifier)) {
-        result = result | ClassAccessKind.SUBCLASS;
-        break;
-      }
-      outerClassifier = Classifier_Behavior.getContextClassifier_6172562527426750080(outerClassifier);
-    }
-
-    return result;
+    return false;
   }
 
   public static Object virtual_getSignatureForOverriding_274804607996650333(SNode thisNode, SNode contextClassifier) {
@@ -174,13 +120,6 @@ public class ClassifierMember_Behavior {
   }
 
   private static boolean eq_i8o263_a0a0k0c(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
-  }
-
-  private static boolean eq_i8o263_a0e0d(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b
