@@ -348,61 +348,74 @@
     <unitInfo nodeId="3990508698139424665" fileName="CppDebugSession.java" startLine="143" startPosition="0" endLine="146" endPosition="0" unitName="jetbrains.mps.nanoc.debug.CppDebugSession$DebugSessionAction" />
   </root>
   <root nodeId="3990508698139429713">
-    <nodeInfo nodeId="3990508698139429716" fileName="CppUiStateImpl.java" startLine="15" startPosition="48" endLine="16" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myThread" />
-    <nodeInfo nodeId="3990508698139429724" fileName="CppUiStateImpl.java" startLine="18" startPosition="60" endLine="19" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="3990508698139429733" fileName="CppUiStateImpl.java" startLine="22" startPosition="82" endLine="23" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="3990508698139429735" fileName="CppUiStateImpl.java" startLine="23" startPosition="19" endLine="24" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3990508698139429743" fileName="CppUiStateImpl.java" startLine="27" startPosition="36" endLine="28" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3990508698139429751" fileName="CppUiStateImpl.java" startLine="32" startPosition="37" endLine="33" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3990508698139429758" fileName="CppUiStateImpl.java" startLine="33" startPosition="55" endLine="34" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3990508698139429763" fileName="CppUiStateImpl.java" startLine="34" startPosition="23" endLine="35" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3990508698139429776" fileName="CppUiStateImpl.java" startLine="39" startPosition="27" endLine="40" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3990508698139429778" fileName="CppUiStateImpl.java" startLine="41" startPosition="5" endLine="42" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3990508698139429790" fileName="CppUiStateImpl.java" startLine="45" startPosition="41" endLine="46" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3990508698139429799" fileName="CppUiStateImpl.java" startLine="49" startPosition="34" endLine="50" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3990508698139429809" fileName="CppUiStateImpl.java" startLine="53" startPosition="76" endLine="54" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3990508698139429819" fileName="CppUiStateImpl.java" startLine="57" startPosition="78" endLine="58" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3990508698139429719" fileName="CppUiStateImpl.java" startLine="17" startPosition="0" endLine="20" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="CppUiStateImpl#(Ljetbrains/mps/debug/api/AbstractDebugSession;)V" />
-    <nodeInfo nodeId="3990508698139429771" fileName="CppUiStateImpl.java" startLine="38" startPosition="38" endLine="41" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3990508698139429726" fileName="CppUiStateImpl.java" startLine="21" startPosition="0" endLine="25" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="CppUiStateImpl#(Ljetbrains/mps/debug/api/AbstractDebugSession;Ljetbrains/mps/nanoc/debug/programState/DefaultThread;)V" />
-    <nodeInfo nodeId="3990508698139429739" fileName="CppUiStateImpl.java" startLine="26" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getThread#()Ljetbrains/mps/nanoc/debug/programState/DefaultThread;" />
-    <nodeInfo nodeId="3990508698139429786" fileName="CppUiStateImpl.java" startLine="44" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isPausedOnBreakpoint#()Z" />
-    <nodeInfo nodeId="3990508698139429795" fileName="CppUiStateImpl.java" startLine="48" startPosition="0" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="findThread#()Ljetbrains/mps/debug/api/programState/IThread;" />
-    <nodeInfo nodeId="3990508698139429802" fileName="CppUiStateImpl.java" startLine="52" startPosition="0" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="selectThreadInternal#(Ljetbrains/mps/debug/api/programState/IThread;)Ljetbrains/mps/debug/api/AbstractUiState;" />
-    <nodeInfo nodeId="3990508698139429812" fileName="CppUiStateImpl.java" startLine="56" startPosition="0" endLine="60" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="selectFrameInternal#(Ljetbrains/mps/debug/api/programState/IStackFrame;)Ljetbrains/mps/debug/api/AbstractUiState;" />
-    <nodeInfo nodeId="3990508698139429746" fileName="CppUiStateImpl.java" startLine="30" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getThreads#()Ljava/util/List;" />
-    <nodeInfo nodeId="3990508698139429767" fileName="CppUiStateImpl.java" startLine="37" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getStackFrame#()Ljetbrains/mps/debug/api/programState/IStackFrame;" />
-    <scopeInfo nodeId="3990508698139429723" fileName="CppUiStateImpl.java" startLine="18" startPosition="60" endLine="19" endPosition="19" />
-    <scopeInfo nodeId="3990508698139429742" fileName="CppUiStateImpl.java" startLine="27" startPosition="36" endLine="28" endPosition="20" />
-    <scopeInfo nodeId="3990508698139429775" fileName="CppUiStateImpl.java" startLine="39" startPosition="27" endLine="40" endPosition="18" />
-    <scopeInfo nodeId="3990508698139429789" fileName="CppUiStateImpl.java" startLine="45" startPosition="41" endLine="46" endPosition="45" />
-    <scopeInfo nodeId="3990508698139429798" fileName="CppUiStateImpl.java" startLine="49" startPosition="34" endLine="50" endPosition="20" />
-    <scopeInfo nodeId="3990508698139429808" fileName="CppUiStateImpl.java" startLine="53" startPosition="76" endLine="54" endPosition="16" />
-    <scopeInfo nodeId="3990508698139429818" fileName="CppUiStateImpl.java" startLine="57" startPosition="78" endLine="58" endPosition="16" />
-    <scopeInfo nodeId="3990508698139429732" fileName="CppUiStateImpl.java" startLine="22" startPosition="82" endLine="24" endPosition="22" />
-    <scopeInfo nodeId="3990508698139429719" fileName="CppUiStateImpl.java" startLine="17" startPosition="0" endLine="20" endPosition="3">
+    <nodeInfo nodeId="3990508698139429716" fileName="CppUiStateImpl.java" startLine="15" startPosition="48" endLine="16" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myThread" />
+    <nodeInfo nodeId="7664399755427829736" fileName="CppUiStateImpl.java" startLine="16" startPosition="39" endLine="17" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myFrame" />
+    <nodeInfo nodeId="7664399755427870525" fileName="CppUiStateImpl.java" startLine="19" startPosition="60" endLine="20" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ThisConstructorInvocation" />
+    <nodeInfo nodeId="7664399755427870519" fileName="CppUiStateImpl.java" startLine="23" startPosition="82" endLine="24" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ThisConstructorInvocation" />
+    <nodeInfo nodeId="7664399755427829779" fileName="CppUiStateImpl.java" startLine="27" startPosition="93" endLine="28" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="7664399755427829781" fileName="CppUiStateImpl.java" startLine="28" startPosition="19" endLine="29" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7664399755427829785" fileName="CppUiStateImpl.java" startLine="29" startPosition="22" endLine="30" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3990508698139429743" fileName="CppUiStateImpl.java" startLine="33" startPosition="36" endLine="34" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3990508698139429751" fileName="CppUiStateImpl.java" startLine="38" startPosition="37" endLine="39" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3990508698139429758" fileName="CppUiStateImpl.java" startLine="39" startPosition="55" endLine="40" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3990508698139429763" fileName="CppUiStateImpl.java" startLine="40" startPosition="23" endLine="41" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3990508698139429776" fileName="CppUiStateImpl.java" startLine="45" startPosition="27" endLine="46" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3990508698139429778" fileName="CppUiStateImpl.java" startLine="47" startPosition="5" endLine="48" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3990508698139429790" fileName="CppUiStateImpl.java" startLine="51" startPosition="41" endLine="52" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3990508698139429799" fileName="CppUiStateImpl.java" startLine="55" startPosition="34" endLine="56" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3990508698139429809" fileName="CppUiStateImpl.java" startLine="59" startPosition="76" endLine="60" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7664399755427829830" fileName="CppUiStateImpl.java" startLine="64" startPosition="27" endLine="65" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7664399755427829425" fileName="CppUiStateImpl.java" startLine="66" startPosition="5" endLine="67" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3990508698139429719" fileName="CppUiStateImpl.java" startLine="18" startPosition="0" endLine="21" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="CppUiStateImpl#(Ljetbrains/mps/debug/api/AbstractDebugSession;)V" />
+    <nodeInfo nodeId="3990508698139429726" fileName="CppUiStateImpl.java" startLine="22" startPosition="0" endLine="25" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="CppUiStateImpl#(Ljetbrains/mps/debug/api/AbstractDebugSession;Ljetbrains/mps/nanoc/debug/programState/DefaultThread;)V" />
+    <nodeInfo nodeId="3990508698139429771" fileName="CppUiStateImpl.java" startLine="44" startPosition="38" endLine="47" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7664399755427829802" fileName="CppUiStateImpl.java" startLine="63" startPosition="60" endLine="66" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3990508698139429739" fileName="CppUiStateImpl.java" startLine="32" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getThread#()Ljetbrains/mps/nanoc/debug/programState/DefaultThread;" />
+    <nodeInfo nodeId="3990508698139429786" fileName="CppUiStateImpl.java" startLine="50" startPosition="0" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isPausedOnBreakpoint#()Z" />
+    <nodeInfo nodeId="3990508698139429795" fileName="CppUiStateImpl.java" startLine="54" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="findThread#()Ljetbrains/mps/debug/api/programState/IThread;" />
+    <nodeInfo nodeId="3990508698139429802" fileName="CppUiStateImpl.java" startLine="58" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="selectThreadInternal#(Ljetbrains/mps/debug/api/programState/IThread;)Ljetbrains/mps/debug/api/AbstractUiState;" />
+    <nodeInfo nodeId="7664399755427829772" fileName="CppUiStateImpl.java" startLine="26" startPosition="0" endLine="31" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="CppUiStateImpl#(Ljetbrains/mps/debug/api/AbstractDebugSession;Ljetbrains/mps/nanoc/debug/programState/DefaultThread;I)V" />
+    <nodeInfo nodeId="3990508698139429746" fileName="CppUiStateImpl.java" startLine="36" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getThreads#()Ljava/util/List;" />
+    <nodeInfo nodeId="3990508698139429767" fileName="CppUiStateImpl.java" startLine="43" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getStackFrame#()Ljetbrains/mps/debug/api/programState/IStackFrame;" />
+    <nodeInfo nodeId="7664399755427829417" fileName="CppUiStateImpl.java" startLine="62" startPosition="0" endLine="69" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="selectFrameInternal#(I)Ljetbrains/mps/debug/api/AbstractUiState;" />
+    <scopeInfo nodeId="3990508698139429723" fileName="CppUiStateImpl.java" startLine="19" startPosition="60" endLine="20" endPosition="24" />
+    <scopeInfo nodeId="3990508698139429732" fileName="CppUiStateImpl.java" startLine="23" startPosition="82" endLine="24" endPosition="29" />
+    <scopeInfo nodeId="3990508698139429742" fileName="CppUiStateImpl.java" startLine="33" startPosition="36" endLine="34" endPosition="20" />
+    <scopeInfo nodeId="3990508698139429775" fileName="CppUiStateImpl.java" startLine="45" startPosition="27" endLine="46" endPosition="18" />
+    <scopeInfo nodeId="3990508698139429789" fileName="CppUiStateImpl.java" startLine="51" startPosition="41" endLine="52" endPosition="45" />
+    <scopeInfo nodeId="3990508698139429798" fileName="CppUiStateImpl.java" startLine="55" startPosition="34" endLine="56" endPosition="20" />
+    <scopeInfo nodeId="3990508698139429808" fileName="CppUiStateImpl.java" startLine="59" startPosition="76" endLine="60" endPosition="16" />
+    <scopeInfo nodeId="7664399755427829803" fileName="CppUiStateImpl.java" startLine="64" startPosition="27" endLine="65" endPosition="18" />
+    <scopeInfo nodeId="3990508698139429719" fileName="CppUiStateImpl.java" startLine="18" startPosition="0" endLine="21" endPosition="3">
       <varInfo nodeId="3990508698139429721" varName="session" />
     </scopeInfo>
-    <scopeInfo nodeId="3990508698139429750" fileName="CppUiStateImpl.java" startLine="32" startPosition="37" endLine="35" endPosition="16">
-      <varInfo nodeId="3990508698139429752" varName="list" />
-    </scopeInfo>
-    <scopeInfo nodeId="3990508698139429726" fileName="CppUiStateImpl.java" startLine="21" startPosition="0" endLine="25" endPosition="3">
+    <scopeInfo nodeId="3990508698139429726" fileName="CppUiStateImpl.java" startLine="22" startPosition="0" endLine="25" endPosition="3">
       <varInfo nodeId="3990508698139429728" varName="session" />
       <varInfo nodeId="3990508698139429730" varName="thread" />
     </scopeInfo>
-    <scopeInfo nodeId="3990508698139429739" fileName="CppUiStateImpl.java" startLine="26" startPosition="0" endLine="30" endPosition="0" />
-    <scopeInfo nodeId="3990508698139429770" fileName="CppUiStateImpl.java" startLine="38" startPosition="38" endLine="42" endPosition="39" />
-    <scopeInfo nodeId="3990508698139429786" fileName="CppUiStateImpl.java" startLine="44" startPosition="0" endLine="48" endPosition="0" />
-    <scopeInfo nodeId="3990508698139429795" fileName="CppUiStateImpl.java" startLine="48" startPosition="0" endLine="52" endPosition="0" />
-    <scopeInfo nodeId="3990508698139429802" fileName="CppUiStateImpl.java" startLine="52" startPosition="0" endLine="56" endPosition="0">
+    <scopeInfo nodeId="7664399755427829778" fileName="CppUiStateImpl.java" startLine="27" startPosition="93" endLine="30" endPosition="20" />
+    <scopeInfo nodeId="3990508698139429750" fileName="CppUiStateImpl.java" startLine="38" startPosition="37" endLine="41" endPosition="16">
+      <varInfo nodeId="3990508698139429752" varName="list" />
+    </scopeInfo>
+    <scopeInfo nodeId="3990508698139429739" fileName="CppUiStateImpl.java" startLine="32" startPosition="0" endLine="36" endPosition="0" />
+    <scopeInfo nodeId="3990508698139429770" fileName="CppUiStateImpl.java" startLine="44" startPosition="38" endLine="48" endPosition="45" />
+    <scopeInfo nodeId="3990508698139429786" fileName="CppUiStateImpl.java" startLine="50" startPosition="0" endLine="54" endPosition="0" />
+    <scopeInfo nodeId="3990508698139429795" fileName="CppUiStateImpl.java" startLine="54" startPosition="0" endLine="58" endPosition="0" />
+    <scopeInfo nodeId="3990508698139429802" fileName="CppUiStateImpl.java" startLine="58" startPosition="0" endLine="62" endPosition="0">
       <varInfo nodeId="3990508698139429805" varName="thread" />
     </scopeInfo>
-    <scopeInfo nodeId="3990508698139429812" fileName="CppUiStateImpl.java" startLine="56" startPosition="0" endLine="60" endPosition="0">
-      <varInfo nodeId="3990508698139429815" varName="frame" />
+    <scopeInfo nodeId="7664399755427829422" fileName="CppUiStateImpl.java" startLine="63" startPosition="60" endLine="67" endPosition="71" />
+    <scopeInfo nodeId="7664399755427829772" fileName="CppUiStateImpl.java" startLine="26" startPosition="0" endLine="31" endPosition="3">
+      <varInfo nodeId="7664399755427829789" varName="frame" />
+      <varInfo nodeId="7664399755427829774" varName="session" />
+      <varInfo nodeId="7664399755427829776" varName="thread" />
     </scopeInfo>
-    <scopeInfo nodeId="3990508698139429746" fileName="CppUiStateImpl.java" startLine="30" startPosition="0" endLine="37" endPosition="0" />
-    <scopeInfo nodeId="3990508698139429767" fileName="CppUiStateImpl.java" startLine="37" startPosition="0" endLine="44" endPosition="0" />
-    <unitInfo nodeId="3990508698139429713" fileName="CppUiStateImpl.java" startLine="15" startPosition="0" endLine="61" endPosition="0" unitName="jetbrains.mps.nanoc.debug.CppUiStateImpl" />
+    <scopeInfo nodeId="3990508698139429746" fileName="CppUiStateImpl.java" startLine="36" startPosition="0" endLine="43" endPosition="0" />
+    <scopeInfo nodeId="3990508698139429767" fileName="CppUiStateImpl.java" startLine="43" startPosition="0" endLine="50" endPosition="0" />
+    <scopeInfo nodeId="7664399755427829417" fileName="CppUiStateImpl.java" startLine="62" startPosition="0" endLine="69" endPosition="0">
+      <varInfo nodeId="7664399755427829420" varName="frame" />
+    </scopeInfo>
+    <unitInfo nodeId="3990508698139429713" fileName="CppUiStateImpl.java" startLine="15" startPosition="0" endLine="70" endPosition="0" unitName="jetbrains.mps.nanoc.debug.CppUiStateImpl" />
   </root>
   <root nodeId="3990508698139430350">
     <nodeInfo nodeId="3990508698139430359" fileName="CppUiState.java" startLine="9" startPosition="54" endLine="10" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />

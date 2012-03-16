@@ -13,15 +13,21 @@ import jetbrains.mps.debug.api.AbstractUiState;
 import org.jetbrains.annotations.Nullable;
 
 public class CppUiStateImpl extends CppUiState {
-  private DefaultThread myThread;
+  private final DefaultThread myThread;
+  private final int myFrame;
 
   /*package*/ CppUiStateImpl(AbstractDebugSession session) {
-    super(session);
+    this(session, null);
   }
 
   /*package*/ CppUiStateImpl(AbstractDebugSession session, DefaultThread thread) {
+    this(session, thread, 0);
+  }
+
+  /*package*/ CppUiStateImpl(AbstractDebugSession session, DefaultThread thread, int frame) {
     super(session);
     myThread = thread;
+    myFrame = frame;
   }
 
   public DefaultThread getThread() {
@@ -39,7 +45,7 @@ public class CppUiStateImpl extends CppUiState {
     if (myThread == null) {
       return null;
     }
-    return myThread.getFrames().get(0);
+    return myThread.getFrames().get(myFrame);
   }
 
   public boolean isPausedOnBreakpoint() {
@@ -54,7 +60,10 @@ public class CppUiStateImpl extends CppUiState {
     return this;
   }
 
-  protected AbstractUiState selectFrameInternal(@Nullable IStackFrame frame) {
-    return this;
+  protected AbstractUiState selectFrameInternal(int frame) {
+    if (myFrame == frame) {
+      return this;
+    }
+    return new CppUiStateImpl(myAbstractDebugSession, myThread, frame);
   }
 }
