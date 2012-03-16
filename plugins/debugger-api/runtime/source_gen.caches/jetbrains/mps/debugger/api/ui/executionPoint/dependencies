@@ -26,7 +26,12 @@
     <classNode dependClassName="com.intellij.openapi.editor.markup.RangeHighlighter" />
     <classNode dependClassName="com.intellij.openapi.editor.markup.TextAttributes" />
     <classNode dependClassName="com.intellij.openapi.fileEditor.FileDocumentManager" />
+    <classNode dependClassName="com.intellij.openapi.fileEditor.FileEditorManager" />
+    <classNode dependClassName="com.intellij.openapi.fileEditor.FileEditorManagerAdapter" />
+    <classNode dependClassName="com.intellij.openapi.fileEditor.FileEditorManagerListener" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
+    <classNode dependClassName="com.intellij.openapi.vfs.VirtualFile" />
+    <classNode dependClassName="com.intellij.util.messages.MessageBusConnection" />
     <classNode dependClassName="java.awt.Color" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Runnable" />

@@ -7,6 +7,11 @@ import jetbrains.mps.debug.api.SessionChangeListener;
 import jetbrains.mps.debug.api.DebugSessionManagerComponent;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.editor.markup.RangeHighlighter;
+import com.intellij.openapi.fileEditor.FileEditorManager;
+import com.intellij.util.messages.MessageBusConnection;
+import com.intellij.openapi.fileEditor.FileEditorManagerListener;
+import com.intellij.openapi.fileEditor.FileEditorManagerAdapter;
+import com.intellij.openapi.vfs.VirtualFile;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.debug.api.AbstractDebugSession;
@@ -31,9 +36,12 @@ public class InTextPositionComponent implements ProjectComponent {
   private final DebugSessionManagerComponent.DebugSessionListener myCurrentDebugSessionListener = new InTextPositionComponent.MyCurrentDebugSessionListener();
   private final Project myProject;
   private volatile RangeHighlighter myHighlighter;
+  private final FileEditorManager myEditorManager;
+  private MessageBusConnection myConnection;
 
-  public InTextPositionComponent(Project project) {
+  public InTextPositionComponent(Project project, FileEditorManager fileEditorManager) {
     myProject = project;
+    myEditorManager = fileEditorManager;
   }
 
   public void projectOpened() {
@@ -45,9 +53,22 @@ public class InTextPositionComponent implements ProjectComponent {
   public void initComponent() {
     DebugSessionManagerComponent component = myProject.getComponent(DebugSessionManagerComponent.class);
     component.addDebugSessionListener(myCurrentDebugSessionListener);
+    myConnection = myProject.getMessageBus().connect();
+    myConnection.subscribe(FileEditorManagerListener.FILE_EDITOR_MANAGER, new FileEditorManagerAdapter() {
+      @Override
+      public void fileOpened(FileEditorManager manager, VirtualFile file) {
+        reAttachPainter(getCurrentSession(), false);
+      }
+
+      @Override
+      public void fileClosed(FileEditorManager manager, VirtualFile file) {
+        reAttachPainter(getCurrentSession(), false);
+      }
+    });
   }
 
   public void disposeComponent() {
+    myConnection.disconnect();
     DebugSessionManagerComponent component = myProject.getComponent(DebugSessionManagerComponent.class);
     component.removeDebugSessionListener(myCurrentDebugSessionListener);
   }
@@ -74,6 +95,20 @@ public class InTextPositionComponent implements ProjectComponent {
         public void run() {
           check_uzwzqp_a0a0a0a0a0a2a7(detach);
           check_uzwzqp_a1a0a0a0a0a2a7(attach);
+        }
+      });
+
+    }
+  }
+
+  public void reAttachPainter(AbstractDebugSession session, boolean open) {
+    final _FunctionTypes._void_P0_E0 detach = detachPainterRunnable();
+    final _FunctionTypes._void_P0_E0 attach = attachPainterRunnable(session, open);
+    if (detach != null || attach != null) {
+      ApplicationManager.getApplication().invokeLater(new Runnable() {
+        public void run() {
+          check_uzwzqp_a0a0a0a0a0a2a8(detach);
+          check_uzwzqp_a1a0a0a0a0a2a8(attach);
         }
       });
 
@@ -171,6 +206,20 @@ public class InTextPositionComponent implements ProjectComponent {
   }
 
   private static void check_uzwzqp_a1a0a0a0a0a2a7(_FunctionTypes._void_P0_E0 checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      checkedDotOperand.invoke();
+    }
+
+  }
+
+  private static void check_uzwzqp_a0a0a0a0a0a2a8(_FunctionTypes._void_P0_E0 checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      checkedDotOperand.invoke();
+    }
+
+  }
+
+  private static void check_uzwzqp_a1a0a0a0a0a2a8(_FunctionTypes._void_P0_E0 checkedDotOperand) {
     if (null != checkedDotOperand) {
       checkedDotOperand.invoke();
     }
