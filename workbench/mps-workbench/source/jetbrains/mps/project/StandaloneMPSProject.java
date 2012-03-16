@@ -77,7 +77,7 @@ public class StandaloneMPSProject extends MPSProject implements PersistentStateC
 
   public Element getState() {
     if (myProject.getPresentableUrl() == null || myProjectDescriptor == null) {
-      return new Element("state");
+      return myProjectElement;
     }
 
     return ModelAccess.instance().runReadAction(new Computable<Element>() {
