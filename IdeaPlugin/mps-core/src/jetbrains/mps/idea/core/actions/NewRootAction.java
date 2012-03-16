@@ -50,13 +50,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-/**
- * Created by IntelliJ IDEA.
- * User: shatalin
- * Date: 1/24/12
- * Time: 7:07 PM
- * To change this template use File | Settings | File Templates.
- */
 public class NewRootAction extends AnAction {
     private EditableSModelDescriptor myModelDescriptor;
     private Project myProject;

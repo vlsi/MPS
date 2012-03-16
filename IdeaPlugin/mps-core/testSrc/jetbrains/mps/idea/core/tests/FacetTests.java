@@ -44,13 +44,6 @@ import java.util.Collection;
 import java.util.List;
 import java.util.Set;
 
-/**
- * Created by IntelliJ IDEA.
- * User: shatalin
- * Date: 11/22/11
- * Time: 6:37 PM
- * To change this template use File | Settings | File Templates.
- */
 public class FacetTests extends AbstractMPSFixtureTestCase {
 
     public void testFacetInitialized() {

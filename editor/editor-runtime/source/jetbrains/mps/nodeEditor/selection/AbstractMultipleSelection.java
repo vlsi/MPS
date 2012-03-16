@@ -29,13 +29,6 @@ import java.awt.Rectangle;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Alexander Shatalin
- * Date: 6/16/11
- * Time: 11:16 AM
- * To change this template use File | Settings | File Templates.
- */
 public abstract class AbstractMultipleSelection extends AbstractSelection implements MultipleSelection {
   @NotNull
   private List<EditorCell> mySelectedCells;

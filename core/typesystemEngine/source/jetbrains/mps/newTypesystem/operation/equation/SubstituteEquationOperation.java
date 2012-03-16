@@ -19,12 +19,6 @@ import jetbrains.mps.newTypesystem.operation.AbstractOperation;
 import jetbrains.mps.newTypesystem.state.State;
 import jetbrains.mps.smodel.SNode;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Ilya.Lintsbakh
- * Date: Oct 8, 2010
- * Time: 1:19:19 PM
- */
 public class SubstituteEquationOperation extends AbstractOperation {
   private final AddEquationOperation myAdded;
   private final RemoveEquationOperation myRemoved;

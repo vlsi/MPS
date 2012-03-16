@@ -27,13 +27,6 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Alexander Shatalin
- * Date: 1/13/11
- * Time: 7:11 PM
- * To change this template use File | Settings | File Templates.
- */
 public class EditorCellSelection extends AbstractSelection implements SingularSelection {
   private static final String CARET_X_PROPERTY_NAME = "caretX";
   private static final String CARET_X_RELATIVE_PROPERTY_NAME = "caretXRelative";

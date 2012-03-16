@@ -45,13 +45,6 @@ import org.apache.log4j.BasicConfigurator;
 import javax.swing.*;
 import java.io.File;
 
-/**
- * Created by IntelliJ IDEA.
- * User: shatalin
- * Date: 11/22/11
- * Time: 4:15 PM
- * To change this template use File | Settings | File Templates.
- */
 public abstract class AbstractMPSFixtureTestCase extends UsefulTestCase {
     private static int ourIndex = 0;
     private static boolean TRACE_ON_HACK = false;

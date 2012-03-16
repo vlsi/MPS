@@ -18,13 +18,6 @@ package jetbrains.mps.smodel.persistence.def;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 
-/**
- * Created by IntelliJ IDEA.
- * User: fyodor
- * Date: 2/21/12
- * Time: 4:04 PM
- * To change this template use File | Settings | File Templates.
- */
 public class XmlStringUtil {
 
   private XmlStringUtil () {} // non-instantiable

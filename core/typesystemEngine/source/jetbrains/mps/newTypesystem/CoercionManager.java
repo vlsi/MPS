@@ -27,12 +27,6 @@ import jetbrains.mps.util.Pair;
 
 import java.util.List;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Ilya.Lintsbakh
- * Date: Dec 13, 2010
- * Time: 1:43:09 PM
- */
 public class CoercionManager {
   private TypeChecker myTypeChecker;
   private SubTypingManagerNew mySubTyping;

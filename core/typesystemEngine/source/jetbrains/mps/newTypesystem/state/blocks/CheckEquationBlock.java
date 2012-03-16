@@ -25,12 +25,6 @@ import jetbrains.mps.util.Pair;
 import java.util.List;
 import java.util.Set;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Ilya.Lintsbakh
- * Date: 4/12/11
- * Time: 2:12 PM
- */
 public class CheckEquationBlock extends RelationBlock {
   public CheckEquationBlock(State state, SNode left, SNode right, RelationKind kind, EquationInfo equationInfo) {
     super(state, left, right, kind, equationInfo);

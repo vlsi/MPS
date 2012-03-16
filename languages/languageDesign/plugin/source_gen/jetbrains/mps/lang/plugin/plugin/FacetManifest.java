@@ -14,6 +14,7 @@ public class FacetManifest implements IFacetManifest {
 
   public FacetManifest() {
     ListSequence.fromList(facets).addElement(new Binaries_Facet());
+    ListSequence.fromList(facets).addElement(new CopyPluginXml_Facet());
   }
 
   public Iterable<IFacet> facets() {

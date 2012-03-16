@@ -24,12 +24,6 @@ import jetbrains.mps.util.Pair;
 import java.util.List;
 import java.util.Set;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Ilya.Lintsbakh
- * Date: Sep 15, 2010
- * Time: 5:56:54 PM
- */
 public class WhenConcreteBlock extends Block {
   private final Runnable myRunnable;
   private final SNode myArgument;

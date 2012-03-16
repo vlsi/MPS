@@ -17,13 +17,6 @@ package jetbrains.mps.nodeEditor.selection;
 
 import jetbrains.mps.nodeEditor.EditorComponent;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Alexander Shatalin
- * Date: 1/27/11
- * Time: 9:00 PM
- * To change this template use File | Settings | File Templates.
- */
 public abstract class SingularSelectionListenerAdapter implements SelectionListener {
   @Override
   public void selectionChanged(EditorComponent editorComponent, Selection oldSelection, Selection newSelection) {

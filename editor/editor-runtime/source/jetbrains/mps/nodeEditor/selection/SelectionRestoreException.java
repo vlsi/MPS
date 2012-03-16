@@ -19,12 +19,6 @@ package jetbrains.mps.nodeEditor.selection;
  * This exception should be used to indicate that selection wa not properly restored
  * most probably because of the changes in corresponding places in model. This is normal
  * situation, so this exception should be skipped and should not be logged as error.
- *
- * Created by IntelliJ IDEA.
- * User: Alexander Shatalin
- * Date: 1/29/11
- * Time: 4:54 PM
- * To change this template use File | Settings | File Templates.
  */
 public class SelectionRestoreException extends Exception {
   public SelectionRestoreException() {

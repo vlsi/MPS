@@ -30,9 +30,6 @@ import java.io.File;
 import java.lang.reflect.InvocationTargetException;
 import java.util.Arrays;
 
-/**
- * Created by IntelliJ IDEA.
- */
 public class TransformationTests {
 
   @Test

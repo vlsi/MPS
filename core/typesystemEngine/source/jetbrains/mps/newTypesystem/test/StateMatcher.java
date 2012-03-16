@@ -22,12 +22,6 @@ import jetbrains.mps.newTypesystem.state.blocks.Block;
 
 import java.util.Set;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Ilya.Lintsbakh
- * Date: Dec 16, 2010
- * Time: 3:49:28 PM
- */
 public class StateMatcher {
 
   public static boolean match(State state1, State state2) {

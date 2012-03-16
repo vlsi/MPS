@@ -21,13 +21,6 @@ import jetbrains.mps.vfs.IFile;
 
 import java.util.Set;
 
-/**
- * Created by IntelliJ IDEA.
- * User: shatalin
- * Date: 2/9/12
- * Time: 4:04 PM
- * To change this template use File | Settings | File Templates.
- */
 public class MPSDataKeys {
     public static final DataKey<Set<IFile>> MODEL_FILES = DataKey.create("mps.model.files");
 }

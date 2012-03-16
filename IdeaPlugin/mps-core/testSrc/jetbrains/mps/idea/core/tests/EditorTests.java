@@ -39,13 +39,6 @@ import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by IntelliJ IDEA.
- * User: fyodor
- * Date: 12/12/11
- * Time: 5:04 PM
- * To change this template use File | Settings | File Templates.
- */
 public class EditorTests extends DataMPSFixtureTestCase {
 
     private List<BaseTransformationTest> tests = new ArrayList<BaseTransformationTest>();

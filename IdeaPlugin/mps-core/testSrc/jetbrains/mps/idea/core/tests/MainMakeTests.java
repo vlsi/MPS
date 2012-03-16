@@ -34,13 +34,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
-/**
- * Created by IntelliJ IDEA.
- * User: fyodor
- * Date: 1/12/12
- * Time: 4:44 PM
- * To change this template use File | Settings | File Templates.
- */
 public class MainMakeTests extends AbstractMakeTest {
 
   @Override
