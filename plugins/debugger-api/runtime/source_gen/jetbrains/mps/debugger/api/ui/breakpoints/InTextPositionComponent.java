@@ -13,7 +13,7 @@ import jetbrains.mps.debug.api.AbstractDebugSession;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import com.intellij.openapi.application.ApplicationManager;
 import jetbrains.mps.debug.api.source.TextSourcePosition;
-import jetbrains.mps.ide.actions.FileOpenUtil;
+import jetbrains.mps.ide.common.FileOpenUtil;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.debug.api.programState.IStackFrame;
 import jetbrains.mps.debug.api.source.SourcePosition;

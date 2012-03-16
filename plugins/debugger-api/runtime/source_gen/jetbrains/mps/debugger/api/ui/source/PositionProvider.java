@@ -15,7 +15,7 @@ import org.jetbrains.annotations.NonNls;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.ide.actions.FileOpenUtil;
+import jetbrains.mps.ide.common.FileOpenUtil;
 import jetbrains.mps.generator.traceInfo.TraceInfoUtil;
 
 public class PositionProvider {

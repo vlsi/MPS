@@ -15,6 +15,7 @@ import com.intellij.execution.filters.HyperlinkInfo;
 import jetbrains.mps.ide.navigation.NodeNavigatable;
 import jetbrains.mps.ide.project.ProjectHelper;
 import com.intellij.openapi.vfs.VirtualFile;
+import jetbrains.mps.ide.common.FileOpenUtil;
 
 public class JavaStackTraceFilter implements Filter {
   private static String STRING_START = "at ";
