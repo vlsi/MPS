@@ -16,8 +16,8 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.workbench.actions.goTo.matcher.MpsPopupFactory;
 import com.intellij.ide.util.gotoByName.ChooseByNamePopupComponent;
 import com.intellij.openapi.application.ModalityState;
-import org.jetbrains.annotations.Nullable;
 import javax.swing.JComponent;
+import org.jetbrains.annotations.Nullable;
 
 public class SModelReferenceDialog extends RefactoringDialog {
   protected static String REFACTORING_NAME = "Move Concepts";
@@ -66,8 +66,12 @@ public class SModelReferenceDialog extends RefactoringDialog {
       public void elementChosen(Object p0) {
         doRefactoringAction();
       }
-    }, ModalityState.current(), false);
+    }, ModalityState.stateForComponent(getWindow()), false);
     super.init();
+  }
+
+  public JComponent getPreferredFocusedComponent() {
+    return myChooser.getPreferredFocusedComponent();
   }
 
   protected void doRefactoringAction() {
