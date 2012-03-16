@@ -27,6 +27,9 @@ public class RefactoringFacadeImpl extends RefactoringFacade {
 
   @Override
   public void execute(RefactoringContext context) {
+    if (!context.getRefactoring().init(context)) {
+      return;
+    }
     executeSimple(context);
   }
 

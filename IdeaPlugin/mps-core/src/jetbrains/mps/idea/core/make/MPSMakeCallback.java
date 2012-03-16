@@ -16,13 +16,6 @@
 
 package jetbrains.mps.idea.core.make;
 
-/**
- * Created by IntelliJ IDEA.
- * User: fyodor
- * Date: 1/16/12
- * Time: 12:40 PM
- * To change this template use File | Settings | File Templates.
- */
 public class MPSMakeCallback {
 
     public void makeFinished () {}

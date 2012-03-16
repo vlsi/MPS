@@ -15,13 +15,6 @@
  */
 package jetbrains.mps.smodel;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Alexander Shatalin
- * Date: 1/23/12
- * Time: 3:08 PM
- * To change this template use File | Settings | File Templates.
- */
 public class Trace {
   private static final Object UNREGISTER_NODE_KEY = new Object();
 

@@ -34,6 +34,7 @@
     <orderEntry type="module" module-name="refactoring-runtime" />
     <orderEntry type="module" module-name="baseLanguage-util" />
     <orderEntry type="module" module-name="Tuples-runtime" />
+    <orderEntry type="module" module-name="typesystemEngine" />
   </component>
 </module>
 

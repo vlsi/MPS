@@ -15,8 +15,7 @@
  */
 package jetbrains.mps.migration20.stages;
 
-import com.intellij.openapi.wm.WindowManager;
-import jetbrains.mps.ide.actions.MissingDependenciesFixer;
+import jetbrains.mps.kernel.model.MissingDependenciesFixer;
 import jetbrains.mps.library.BootstrapLanguages_DevKit;
 import jetbrains.mps.library.GeneralPurpose_DevKit;
 import jetbrains.mps.library.LanguageDesign_DevKit;
@@ -49,7 +48,7 @@ public class DependenciesCorrectionStage implements MigrationStage {
     for (SModelDescriptor model : p.getProjectModels()) {
       if (!(model instanceof EditableSModelDescriptor)) continue;
       if (model.getModule() == null) continue;
-      new MissingDependenciesFixer(WindowManager.getInstance().getFrame(p.getProject()), model).fix(false);
+      new MissingDependenciesFixer(model).fix(false);
     }
     SModelRepository.getInstance().saveAll();
     ClassLoaderManager.getInstance().reloadAll(new EmptyProgressMonitor());

@@ -73,18 +73,6 @@ public class CommonChoosers {
     return dialog.getResult();
   }
 
-  public static SNode showDialogNodeChooser(final Component parent, final List<SNode> values) {
-    Window window = parent instanceof Window ? (Window) parent : SwingUtilities.getWindowAncestor(parent);
-    NodeChooserDialog dialog;
-    if (window instanceof Frame) {
-      dialog = new NodeChooserDialog((Frame) window, values);
-    } else {
-      dialog = new NodeChooserDialog((Dialog) window, values);
-    }
-    dialog.showDialog();
-    return dialog.getResult();
-  }
-
   public static List<SModelReference> showDialogModelCollectionChooser(Component parent, List<SModelReference> models, @Nullable List<SModelReference> nonProjectModels) {
     return showDialogModelChooser_internal(parent, models, nonProjectModels, true);
   }

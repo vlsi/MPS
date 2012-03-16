@@ -10,7 +10,7 @@ import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
-import java.awt.Frame;
+import jetbrains.mps.kernel.model.MissingDependenciesFixer;
 import jetbrains.mps.smodel.SModelDescriptor;
 
 public class AddMissingImports_Action extends BaseAction {
@@ -42,16 +42,12 @@ public class AddMissingImports_Action extends BaseAction {
     if (MapSequence.fromMap(_params).get("modelDescriptor") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("frame", event.getData(MPSCommonDataKeys.FRAME));
-    if (MapSequence.fromMap(_params).get("frame") == null) {
-      return false;
-    }
     return true;
   }
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      new MissingDependenciesFixer(((Frame) MapSequence.fromMap(_params).get("frame")), ((SModelDescriptor) MapSequence.fromMap(_params).get("modelDescriptor"))).fix(true);
+      new MissingDependenciesFixer(((SModelDescriptor) MapSequence.fromMap(_params).get("modelDescriptor"))).fix(true);
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "AddMissingImports", t);

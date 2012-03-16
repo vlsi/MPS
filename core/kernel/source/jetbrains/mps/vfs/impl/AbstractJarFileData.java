@@ -24,13 +24,6 @@ import java.util.Set;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipFile;
 
-/**
- * Created by IntelliJ IDEA.
- * User: fyodor
- * Date: 1/11/12
- * Time: 2:40 PM
- * To change this template use File | Settings | File Templates.
- */
 public class AbstractJarFileData {
   protected File myFile;
 

@@ -34,13 +34,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-/**
- * Created by IntelliJ IDEA.
- * User: shatalin
- * Date: 11/22/11
- * Time: 11:12 AM
- * To change this template use File | Settings | File Templates.
- */
 public class MarkModelRootAction extends AnAction {
     public MarkModelRootAction() {
         super(MPSBundle.message("mark.as.model.root.action"), null, null);

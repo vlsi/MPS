@@ -24,12 +24,6 @@ import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Ilya.Lintsbakh
- * Date: Sep 10, 2010
- * Time: 6:11:49 PM
- */
 public abstract class AbstractOperation {
   private List<AbstractOperation> myConsequences;
   protected SNode mySource = null;

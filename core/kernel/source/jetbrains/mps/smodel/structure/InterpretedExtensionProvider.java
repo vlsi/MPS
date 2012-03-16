@@ -15,13 +15,6 @@
  */
 package jetbrains.mps.smodel.structure;
 
-/**
- * Created by IntelliJ IDEA.
- * User: fyodor
- * Date: 1/20/12
- * Time: 4:14 PM
- * To change this template use File | Settings | File Templates.
- */
 public class InterpretedExtensionProvider extends DescriptorProvider<ExtensionDescriptor> {
 
   private static final InterpretedExtensionDesc INTERPRETED_EXTENSION = new InterpretedExtensionDesc();

@@ -27,12 +27,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Ilya.Lintsbakh
- * Date: 3/11/11
- * Time: 6:44 PM
- */
 public class ComparableRelation extends AbstractRelation {
   public boolean accept(RelationKind kind) {
     return kind.isComparable();

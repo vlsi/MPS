@@ -48,8 +48,6 @@ public class Icons extends IdeIcons {
   public static final Icon MESSAGE_VIEW_ICON = new ImageIcon(Icons.class.getResource("nodes/messageView.png"));
   public static final Icon HISTORY_VIEW_ICON = new ImageIcon(Icons.class.getResource("nodes/historyView.png"));
 
-  public static final Icon OPENED_FOLDER = new ImageIcon(Icons.class.getResource("fileSystem/icons/TreeOpened.png"));
-  public static final Icon CLOSED_FOLDER = new ImageIcon(Icons.class.getResource("fileSystem/icons/TreeClosed.png"));
   public static final Icon OPENED_FOLDER_GOTHIC = new ImageIcon(Icons.class.getResource("other/openedFolder_gothic.png"));
   public static final Icon CLOSED_FOLDER_GOTHIC = new ImageIcon(Icons.class.getResource("other/closedFolder_gothic.png"));
 

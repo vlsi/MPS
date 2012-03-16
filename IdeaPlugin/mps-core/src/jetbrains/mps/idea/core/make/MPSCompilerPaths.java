@@ -23,13 +23,6 @@ import org.jetbrains.annotations.NonNls;
 
 import java.io.File;
 
-/**
- * Created by IntelliJ IDEA.
- * User: fyodor
- * Date: 2/15/12
- * Time: 11:05 AM
- * To change this template use File | Settings | File Templates.
- */
 public class MPSCompilerPaths {
     // Shamelessly copied over from the IDEA sources
 

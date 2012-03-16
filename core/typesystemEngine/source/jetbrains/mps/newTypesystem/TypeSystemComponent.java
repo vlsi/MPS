@@ -33,12 +33,6 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.*;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Ilya.Lintsbakh
- * Date: 1/31/11
- * Time: 4:58 PM
- */
 class TypeSystemComponent extends CheckingComponent {
   private static final Logger LOG = Logger.getLogger(TypeSystemComponent.class);
 

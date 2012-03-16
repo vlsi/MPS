@@ -24,13 +24,6 @@ import org.jetbrains.annotations.NotNull;
 import java.awt.Graphics2D;
 import java.util.List;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Alexander Shatalin
- * Date: 1/13/11
- * Time: 6:40 PM
- * To change this template use File | Settings | File Templates.
- */
 public interface Selection {
   @NotNull
   EditorComponent getEditorComponent();

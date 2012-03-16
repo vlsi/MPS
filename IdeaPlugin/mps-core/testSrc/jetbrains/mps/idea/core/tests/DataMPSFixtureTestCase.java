@@ -24,13 +24,6 @@ import jetbrains.mps.vfs.IFile;
 
 import java.io.*;
 
-/**
- * Created by IntelliJ IDEA.
- * User: fyodor
- * Date: 1/13/12
- * Time: 10:23 AM
- * To change this template use File | Settings | File Templates.
- */
 public abstract class DataMPSFixtureTestCase extends AbstractMPSFixtureTestCase {
     @Override
     protected void preConfigureFacet(final MPSFacetConfiguration configuration) {
