@@ -18,7 +18,10 @@ package jetbrains.mps.project.structure.modules;
 import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.project.structure.model.ModelRoot;
 
-import java.util.*;
+import java.util.Collection;
+import java.util.Comparator;
+import java.util.LinkedHashSet;
+import java.util.TreeSet;
 
 public class ModuleDescriptor {
   private static final ModuleReferenceComparator MODULE_REFERENCE_COMPARATOR = new ModuleReferenceComparator();
@@ -51,7 +54,8 @@ public class ModuleDescriptor {
 
   @Deprecated //replaced with ModuleId
   public String getUUID() {
-    return getId().toString();
+    ModuleId id = getId();
+    return id == null ? null : id.toString();
   }
 
   @Deprecated //replaced with ModuleId
