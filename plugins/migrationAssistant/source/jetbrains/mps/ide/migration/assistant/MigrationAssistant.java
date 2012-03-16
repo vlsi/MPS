@@ -21,6 +21,8 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.project.ex.ProjectManagerEx;
 import com.intellij.openapi.startup.StartupManager;
 import com.intellij.openapi.ui.Messages;
+import com.intellij.openapi.util.AsyncResult;
+import com.intellij.openapi.util.AsyncResult.Handler;
 import jetbrains.mps.project.MPSProjectMigrationState;
 
 /**
@@ -60,19 +62,25 @@ public class MigrationAssistant extends AbstractProjectComponent {
   private void initiateMigration(final MPSProjectMigrationState migrationState) {
     StartupManager.getInstance(myProject).registerPostStartupActivity(new Runnable() {
       public void run() {
-        int i = Messages.showOkCancelDialog(myProject, "This project requires migration", "Migration Assistant", "Proceed", "Abort", null);
-        if (i == 0) {
-          doMigration();
-        }
-        else {
-          abortMigration();
-        }
+        MigrationAssistantWizard wizard = new MigrationAssistantWizard("Migration", myProject);
+        AsyncResult<Boolean> result = wizard.showAndGetOk();
+        result.doWhenDone(new Handler<Boolean>() {
+          @Override
+          public void run(Boolean ok) {
+            if (ok) {
+              myMigrationState.migrationFinished();
+            }
+            else {
+              myMigrationState.migrationAborted();
+              forceCloseProject();
+            }
+          }
+        });
       }
     });
   }
 
-  private void abortMigration() {
-    myMigrationState.migrationAborted();
+  private void forceCloseProject() {
     StartupManager.getInstance(myProject).runWhenProjectIsInitialized(new Runnable() {
       @Override
       public void run() {
@@ -85,11 +93,6 @@ public class MigrationAssistant extends AbstractProjectComponent {
         }
       }
     );
-  }
-
-  private void doMigration() {
-    myMigrationState.migrationStarted();
-    myMigrationState.migrationFinished();
   }
 
 }
