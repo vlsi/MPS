@@ -4,11 +4,9 @@
   <language namespace="aee9cad2-acd4-4608-aef2-0004f6a1cdbd(jetbrains.mps.lang.actions)" />
   <language namespace="95f8a3e6-f994-4ca0-a65e-763c9bae2d3b(jetbrains.mps.make.script)" />
   <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
-  <language namespace="83888646-71ce-4f1c-9c53-c54016f6ad4f(jetbrains.mps.baseLanguage.collections)" />
   <language namespace="7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.lang.smodel)" />
   <language namespace="13744753-c81f-424a-9c1b-cf8943bf4e86(jetbrains.mps.lang.sharedConcepts)" />
   <language namespace="3a13115c-633c-4c5c-bbcc-75c4219e9555(jetbrains.mps.lang.quotation)" />
-  <language namespace="7a5dda62-9140-4668-ab76-d5ed1746f2b2(jetbrains.mps.lang.typesystem)" />
   <devkit namespace="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   <import index="q9ra" modelUID="r:308041c6-80bc-4e26-b4b1-473fd45c9339(jetbrains.mps.make.script.structure)" version="-1" />
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
@@ -60,7 +58,7 @@
             <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="7077360340906499528">
               <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="2360002718792464610">
                 <node role="expression" roleId="tpee.1068580123156" type="tp25.SEnumOperationInvocation" typeId="tp25.1240930118027" id="2360002718792464611">
-                  <link role="enumDeclaration" roleId="tp25.1240930118028" targetNodeId="q9ra.2360002718792446682" resolveInfo="ResultType" />
+                  <link role="enumDeclaration" roleId="tp25.1240930118028" targetNodeId="q9ra.2360002718792446682" resolveInfo="Result" />
                   <node role="operation" roleId="tp25.1240930317927" type="tp25.SEnum_MembersOperation" typeId="tp25.1240930444980" id="2360002718792464613" />
                 </node>
               </node>
@@ -93,7 +91,7 @@
                       <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7077360340906499735" resolveInfo="rs" />
                     </node>
                     <node role="operation" roleId="tpee.1197027833540" type="tp25.SPropertyAccess" typeId="tp25.1138056022639" id="7077360340906499748">
-                      <link role="property" roleId="tp25.1138056395725" targetNodeId="q9ra.7077360340906447918" resolveInfo="ok" />
+                      <link role="property" roleId="tp25.1138056395725" targetNodeId="q9ra.7077360340906447918" resolveInfo="result" />
                     </node>
                   </node>
                 </node>
@@ -116,7 +114,7 @@
             </node>
           </node>
           <node role="type" roleId="tpdg.1177337679534" type="tp25.SEnumMemberType" typeId="tp25.1240170042401" id="2360002718792464609">
-            <link role="enum" roleId="tp25.1240170836027" targetNodeId="q9ra.2360002718792446682" resolveInfo="ResultType" />
+            <link role="enum" roleId="tp25.1240170836027" targetNodeId="q9ra.2360002718792446682" resolveInfo="Result" />
           </node>
         </node>
       </node>
@@ -364,13 +362,13 @@
         </node>
       </node>
       <node role="part" roleId="tpdg.1177324142645" type="tpdg.ConceptSubstitutePart" typeId="tpdg.1180134965967" id="3297237684108594965">
-        <link role="concept" roleId="tpdg.1180135092669" targetNodeId="q9ra.187226666892683652" resolveInfo="DoneWorkStatement" />
+        <link role="concept" roleId="tpdg.1180135092669" targetNodeId="q9ra.187226666892683652" resolveInfo="AdvanceWorkStatement" />
       </node>
       <node role="part" roleId="tpdg.1177324142645" type="tpdg.ConceptSubstitutePart" typeId="tpdg.1180134965967" id="3297237684108594967">
         <link role="concept" roleId="tpdg.1180135092669" targetNodeId="q9ra.187226666892683655" resolveInfo="FinishWorkStatement" />
       </node>
       <node role="part" roleId="tpdg.1177324142645" type="tpdg.AddMenuPart" typeId="tpdg.1177323996388" id="187226666892821425">
-        <link role="concept" roleId="tpdg.1177333551023" targetNodeId="q9ra.187226666892683652" resolveInfo="DoneWorkStatement" />
+        <link role="concept" roleId="tpdg.1177333551023" targetNodeId="q9ra.187226666892683652" resolveInfo="AdvanceWorkStatement" />
         <node role="part" roleId="tpdg.1177333559040" type="tpdg.ParameterizedSubstituteMenuPart" typeId="tpdg.1177337641126" id="187226666892821426">
           <node role="type" roleId="tpdg.1177337679534" type="tp25.SNodeType" typeId="tp25.1138055754698" id="187226666892821432">
             <link role="concept" roleId="tp25.1138405853777" targetNodeId="q9ra.187226666892683650" resolveInfo="BeginWorkStatement" />
@@ -433,7 +431,7 @@
                   <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.PlusExpression" typeId="tpee.1068581242875" id="187226666892821470">
                     <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.DotExpression" typeId="tpee.1197027756228" id="187226666892821464">
                       <node role="operand" roleId="tpee.1197027771414" type="tp25.ConceptRefExpression" typeId="tp25.1172424058054" id="187226666892821463">
-                        <link role="conceptDeclaration" roleId="tp25.1172424100906" targetNodeId="q9ra.187226666892683652" resolveInfo="DoneWorkStatement" />
+                        <link role="conceptDeclaration" roleId="tp25.1172424100906" targetNodeId="q9ra.187226666892683652" resolveInfo="AdvanceWorkStatement" />
                       </node>
                       <node role="operation" roleId="tpee.1197027833540" type="tp25.SConceptPropertyAccess" typeId="tp25.1145994841052" id="187226666892821469">
                         <link role="conceptProperty" roleId="tp25.1145994841055" targetNodeId="tpck.1137473891462" resolveInfo="alias" />
