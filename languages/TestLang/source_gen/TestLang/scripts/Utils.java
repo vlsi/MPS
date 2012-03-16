@@ -10,9 +10,9 @@ import java.util.Set;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.scope.Scope;
+import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
-import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.smodel.constraints.ModelConstraintsUtil;
 import jetbrains.mps.baseLanguage.behavior.IOperation_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -71,7 +71,7 @@ public class Utils {
     }
   }
 
-  public static Set<SNode> getNodes(String profilerKey, _FunctionTypes._return_P0_E0<? extends Scope> scopeProvider) {
+  public static Set<SNode> getNodes(String profilerKey, _FunctionTypes._return_P0_E0<? extends Scope> scopeProvider, SReference ref) {
     Set<SNode> result = SetSequence.fromSet(new HashSet());
     long time = System.currentTimeMillis();
     try {
@@ -83,7 +83,11 @@ public class Utils {
     } catch (Exception e) {
       // todo: ? 
     }
-    addDataToProfile(profilerKey, System.currentTimeMillis() - time);
+    time = System.currentTimeMillis() - time;
+    if (time > 2 * 1000) {
+      LOG.warning("too long... " + time + "@" + profilerKey + ":" + ref.getSourceNode().getModel().getSModelFqName().getLongName() + "/" + ref.getSourceNode().getId() + "/" + ref.getRole());
+    }
+    addDataToProfile(profilerKey, time);
     return result;
   }
 
@@ -110,7 +114,7 @@ public class Utils {
         ModelConstraintsUtil.ReferenceDescriptor descriptor = ModelConstraintsUtil.getReferenceDescriptor(ref, null);
         return descriptor.getScope();
       }
-    });
+    }, ref);
   }
 
   public static Set<SNode> getNewScopeFromRef(final SReference ref, final SNode kind) {
@@ -118,7 +122,7 @@ public class Utils {
       public Scope invoke() {
         return Scope.getScope(ref.getSourceNode(), ref.getSourceNode(), kind);
       }
-    });
+    }, ref);
   }
 
   public static Set<SNode> getNewScopeForIOperation(final SReference ref, final SNode kind) {
@@ -128,7 +132,7 @@ public class Utils {
         SNode dotExpression = IOperation_Behavior.call_getDotExpression_1224687669172(SNodeOperations.cast(ref.getSourceNode(), "jetbrains.mps.baseLanguage.structure.IOperation"));
         return Classifier_Behavior.call_getVisibleMembers_8083692786967356611(DotExpression_Behavior.call_getClassifier_1213877410697(dotExpression), dotExpression, kind);
       }
-    });
+    }, ref);
   }
 
   public static boolean isInComment(SNode node) {
