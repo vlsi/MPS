@@ -61,7 +61,7 @@ public abstract class BaseProjectTool extends BaseTool implements ProjectCompone
   }
 
   private void createAndRegisterTool(final boolean early) {
-    createTool();
+    createTool(early);
     if (early) {
       StartupManager.getInstance(getProject()).registerPostStartupActivity(new Runnable() {
         public void run() {
@@ -78,5 +78,13 @@ public abstract class BaseProjectTool extends BaseTool implements ProjectCompone
     unregister();
   }
 
-  protected abstract void createTool ();
+  /** Either this method or the one without parameters must be implemented. Not both.*/
+  protected void createTool (boolean early) {
+    createTool();
+  }
+
+  /** Either this method or the one with boolean parameter must be implemented. Not both.*/
+  protected void createTool () {
+    throw new UnsupportedOperationException();
+  }
 }
