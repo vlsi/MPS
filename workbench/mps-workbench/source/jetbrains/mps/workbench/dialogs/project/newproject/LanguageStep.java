@@ -16,10 +16,8 @@
 package jetbrains.mps.workbench.dialogs.project.newproject;
 
 import com.intellij.ide.wizard.CommitStepException;
-import com.intellij.util.PathUtil;
 import jetbrains.mps.ide.common.PathField;
 import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.workbench.dialogs.project.newproject.icons.Icons;
 import org.jetbrains.annotations.NotNull;
@@ -139,7 +137,7 @@ public class LanguageStep extends BaseStep {
       if (myNamespace.getText().length() == 0) {
         throw new CommitStepException("Enter namespace");
       }
-      if (MPSModuleRepository.getInstance().getModuleByUID(myNamespace.getText()) != null) {
+      if (MPSModuleRepository.getInstance().getModuleByFqName(myNamespace.getText()) != null) {
         throw new CommitStepException("Language namespace already exists");
       }
       if (NameUtil.shortNameFromLongName(myNamespace.getText()).length() == 0) {

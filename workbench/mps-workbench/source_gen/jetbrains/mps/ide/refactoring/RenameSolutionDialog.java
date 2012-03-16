@@ -52,7 +52,7 @@ public class RenameSolutionDialog extends BaseDialog {
     boolean renamed = ModelAccess.instance().runWriteActionInCommand(new Computable<Boolean>() {
       public Boolean compute() {
         final String fqName = myLanguageNameField.getText();
-        if (MPSModuleRepository.getInstance().getModuleByUID(fqName) != null) {
+        if (MPSModuleRepository.getInstance().getModuleByFqName(fqName) != null) {
           setErrorText("Duplicate solution name");
           return false;
         }

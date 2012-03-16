@@ -25,7 +25,7 @@ public class MacrosUtil {
     IModule module = null;
 
     if (nodeModuleUID != null) {
-      module = MPSModuleRepository.getInstance().getModuleByUID(nodeModuleUID);
+      module = MPSModuleRepository.getInstance().getModuleByFqName(nodeModuleUID);
       if (module != null) {
         moduleDescriptorFile = module.getDescriptorFile();
       }

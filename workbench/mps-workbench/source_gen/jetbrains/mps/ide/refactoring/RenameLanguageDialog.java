@@ -77,7 +77,7 @@ public class RenameLanguageDialog extends BaseDialog {
   public void buttonOk() {
     final boolean needToRegenerate = myRegenerateLanguage.getModel().isSelected();
     final String fqName = myLanguageNameField.getText();
-    if (MPSModuleRepository.getInstance().getModuleByUID(fqName) != null) {
+    if (MPSModuleRepository.getInstance().getModuleByFqName(fqName) != null) {
       setErrorText("Duplicate language name");
       return;
     }

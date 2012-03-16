@@ -44,7 +44,7 @@ public class CheckUtil {
     }
 
     String samplesPath = PathManager.getHomePath() + File.separator + "samples";
-    List<IModule> sampleModules = MPSModuleRepository.getInstance().getAllModulesInDirectory(FileSystem.getInstance().getFileByPath(samplesPath));
+    List<IModule> sampleModules = MPSModuleRepository.getInstance().findModulesUnderDir(samplesPath);
     for (IModule module : ListSequence.fromList(sampleModules)) {
       if (!(module.isCompileInMPS())) {
         String msg = "Module " + module.getModuleFqName() + " is a sample, but is not compiled in MPS";

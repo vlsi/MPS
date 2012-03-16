@@ -37,7 +37,7 @@ public class ModuleHolder implements IHolder<IModule> {
   }
 
   public IModule getObject() {
-    return MPSModuleRepository.getInstance().getModuleByUID(myModuleUID);
+    return MPSModuleRepository.getInstance().getModuleByFqName(myModuleUID);
   }
 
   @NotNull

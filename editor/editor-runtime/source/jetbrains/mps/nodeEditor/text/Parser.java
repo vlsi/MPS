@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.nodeEditor.text;
 
-import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
@@ -28,7 +27,7 @@ public class Parser {
   public static List<SNode> parse(String input, SModel model, String languageNamespace) {
     Class cls;
     try {
-      Language l = (Language) MPSModuleRepository.getInstance().getModuleByUID(languageNamespace);
+      Language l = (Language) MPSModuleRepository.getInstance().getModuleByFqName(languageNamespace);
       String name = languageNamespace + ".parser.Parser";
       cls = l.getClass(name);
     } catch (Exception e) {

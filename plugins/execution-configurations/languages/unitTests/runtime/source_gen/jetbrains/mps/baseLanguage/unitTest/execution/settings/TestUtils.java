@@ -216,7 +216,7 @@ __switch__:
     if (StringUtils.isEmpty(moduleName)) {
       return null;
     }
-    return MPSModuleRepository.getInstance().getModuleByUID(moduleName);
+    return MPSModuleRepository.getInstance().getModuleByFqName(moduleName);
   }
 
   public static Iterable<ITestNodeWrapper> getModelTests(@NotNull SModel model) {

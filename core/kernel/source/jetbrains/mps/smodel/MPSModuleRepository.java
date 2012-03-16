@@ -56,7 +56,6 @@ public class MPSModuleRepository implements CoreComponent {
     return MPSCore.getInstance().getModuleRepository();
   }
 
-  private Map<String, IModule> myCanonicalFileToModuleMap = new ConcurrentHashMap<String, IModule>();
   private Map<String, IModule> myFqNameToModulesMap = new ConcurrentHashMap<String, IModule>();
   private Map<ModuleId, IModule> myIdToModuleMap = new ConcurrentHashMap<ModuleId, IModule>();
 
@@ -78,18 +77,6 @@ public class MPSModuleRepository implements CoreComponent {
     };
   }
 
-  public static IModule checkRegistered(ModuleReference ref, IFile fileToReport) {
-    MPSModuleRepository repository = getInstance();
-    if (!repository.existsModule(ref)) return null;
-    LOG.error(
-      "Attempting to load module " + ref.getModuleFqName() + " for the second time.\n" +
-        "Registered module is loaded from " + repository.getModule(ref).getDescriptorFile().getPath() + ";\n" +
-        "New module is loaded from " + fileToReport.getPath() + ".\n" +
-        "Returning registered module."
-    );
-    return repository.getModule(ref);
-  }
-
   public void init() {
     myClm.addReloadHandler(myHandler);
     myCm.addCleanupListener(myCleanupListener);
@@ -100,87 +87,11 @@ public class MPSModuleRepository implements CoreComponent {
     myClm.removeReloadHandler(myHandler);
   }
 
-  public void invalidateCaches() {
-    ModelAccess.instance().runReadAction(new Runnable() {
-      public void run() {
-        for (Project p : ProjectManager.getInstance().getOpenProjects()) {
-          p.getScope().invalidateCaches();
-        }
-
-        for (IModule m : getAllModules()) {
-          m.invalidateCaches();
-        }
-        SModelUtil.clearCaches();
-      }
-    });
-  }
-
-  public boolean existsModule(ModuleReference ref) {
-    return getModule(ref) != null;
-  }
-
-  public boolean existsModule(IModule module, MPSModuleOwner owner) {
-    assertCanRead();
-
-    return myModuleToOwners.contains(module, owner);
-  }
-
-  public Set<MPSModuleOwner> getOwners(IModule module) {
-    assertCanRead();
-
-    return myModuleToOwners.getByFirst(module);
-  }
-
-  public IModule getModuleByFile(IFile file) {
-    assertCanRead();
-
-    return myCanonicalFileToModuleMap.get(IFileUtils.getCanonicalPath(file));
-  }
-
-  public List<IModule> findModulesUnderDir(String dirPath) {
-    assertCanRead();
-
-    List<IModule> result = new ArrayList<IModule>();
-    for (String path : myCanonicalFileToModuleMap.keySet()) {
-      if (path.startsWith(dirPath)) {
-        result.add(myCanonicalFileToModuleMap.get(path));
-      }
-    }
-    return result;
-  }
-
-  //todo rename to getByFqName
-  public IModule getModuleByUID(String moduleUID) {
-    return myFqNameToModulesMap.get(moduleUID);
-  }
-
-  public IModule getModuleById(ModuleId moduleId) {
-    assertCanRead();
-
-    if (moduleId == null) return null;
-    return myIdToModuleMap.get(moduleId);
-  }
-
-  public void moduleFqNameChanged(IModule module, String oldName) {
-    ModelAccess.assertLegalWrite();
-
-    if (myFqNameToModulesMap.get(oldName) != module || myFqNameToModulesMap.containsKey(module.getModuleFqName())) {
-      throw new IllegalStateException();
-    }
-    myFqNameToModulesMap.remove(oldName);
-    myFqNameToModulesMap.put(module.getModuleFqName(), module);
-  }
-
-  public IModule getModule(@NotNull ModuleReference ref) {
-    if (ref.getModuleId() != null) {
-      return myIdToModuleMap.get(ref.getModuleId());
-    }
-    return myFqNameToModulesMap.get(ref.getModuleFqName());
-  }
+  //-----------------register/unregister-merge-----------
 
   /*
-   *   TODO merge with addModule
-   */
+  *   TODO merge with addModule
+  */
   public <TM extends IModule> TM registerModule(ModuleHandle handle, MPSModuleOwner owner) {
     ModelAccess.assertLegalWrite();
 
@@ -209,29 +120,11 @@ public class MPSModuleRepository implements CoreComponent {
     return (TM) module;
   }
 
-  private void addCanonicalFile(@Nullable IFile file, IModule module) {
-    if (file != null) {
-      String canonicalDescriptorPath = IFileUtils.getCanonicalPath(file);
-      if (canonicalDescriptorPath != null && !myCanonicalFileToModuleMap.containsKey(canonicalDescriptorPath)) {
-        myCanonicalFileToModuleMap.put(canonicalDescriptorPath, module);
-      }
-    }
-  }
-
-  private void removeModuleFile(@Nullable IFile file) {
-    if (file != null) {
-      String canonicalPath = IFileUtils.getCanonicalPath(file);
-      if (canonicalPath != null) {
-        myCanonicalFileToModuleMap.remove(canonicalPath);
-      }
-    }
-  }
-
   public void addModule(IModule module, MPSModuleOwner owner) {
     ModelAccess.assertLegalWrite();
 
     myDirtyFlag = true;
-    if (existsModule(module, owner)) {
+    if (existsModule(module.getModuleReference())) {
       throw new IllegalStateException("Couldn't add module \"" + module.getModuleFqName() + "\" : this module is already registered with this very owner: " + owner);
     }
     addCanonicalFile(module.getDescriptorFile(), module);
@@ -306,6 +199,68 @@ public class MPSModuleRepository implements CoreComponent {
     fireRepositoryChanged();
   }
 
+  //----------------exists-merge------------------------
+
+  public boolean existsModule(ModuleReference ref) {
+    return getModule(ref) != null;
+  }
+
+  public static IModule checkRegistered(ModuleReference ref, IFile fileToReport) {
+    MPSModuleRepository repository = getInstance();
+    if (!repository.existsModule(ref)) return null;
+    LOG.error(
+      "Attempting to load module " + ref.getModuleFqName() + " for the second time.\n" +
+        "Registered module is loaded from " + repository.getModule(ref).getDescriptorFile().getPath() + ";\n" +
+        "New module is loaded from " + fileToReport.getPath() + ".\n" +
+        "Returning registered module."
+    );
+    return repository.getModule(ref);
+  }
+
+  //---------------get by-----------------------------
+
+  public Set<IModule> getAllModules() {
+    return Collections.unmodifiableSet(myModules);
+  }
+
+  public List<IModule> getModules(MPSModuleOwner moduleOwner) {
+    return getModules(moduleOwner, IModule.class);
+  }
+
+  public Set<MPSModuleOwner> getOwners(IModule module) {
+    assertCanRead();
+
+    return myModuleToOwners.getByFirst(module);
+  }
+
+  public IModule getModuleByFqName(String fqName) {
+    return myFqNameToModulesMap.get(fqName);
+  }
+
+  public IModule getModuleById(ModuleId moduleId) {
+    assertCanRead();
+
+    if (moduleId == null) return null;
+    return myIdToModuleMap.get(moduleId);
+  }
+
+  //--------------------------------------------------
+
+  public void invalidateCaches() {
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        for (Project p : ProjectManager.getInstance().getOpenProjects()) {
+          p.getScope().invalidateCaches();
+        }
+
+        for (IModule m : getAllModules()) {
+          m.invalidateCaches();
+        }
+        SModelUtil.clearCaches();
+      }
+    });
+  }
+
   public void removeUnusedModules() {
     ModelAccess.assertLegalWrite();
 
@@ -362,120 +317,12 @@ public class MPSModuleRepository implements CoreComponent {
     return toBeRemoved;
   }
 
-  public Language getLanguage(String namespace) {
-    return (Language) myFqNameToModulesMap.get(namespace);
-  }
-
-  public Language getLanguage(ModuleReference ref) {
-    return (Language) getModule(ref);
-  }
-
-  public Generator getGenerator(ModuleReference ref) {
-    return (Generator) getModule(ref);
-  }
-
-  public DevKit getDevKit(String namespace) {
-    return (DevKit) myFqNameToModulesMap.get(namespace);
-  }
-
-  public DevKit getDevKit(ModuleReference ref) {
-    return (DevKit) getModule(ref);
-  }
-
-  public Solution getSolution(String namespace) {
-    return (Solution) myFqNameToModulesMap.get(namespace);
-  }
-
-  public Solution getSolution(ModuleReference ref) {
-    return (Solution) getModule(ref);
-  }
-
-  public <MT extends IModule> List<MT> getModules(MPSModuleOwner moduleOwner, Class<MT> cls) {
-    assertCanRead();
-
-    List<MT> list = new LinkedList<MT>();
-    Set<IModule> modules = myModuleToOwners.getBySecond(moduleOwner);
-    if (modules != null) {
-      for (IModule m : modules) {
-        if (cls == null || cls.isInstance(m)) {
-          list.add((MT) m);
-        }
-      }
-    }
-    return list;
-  }
-
-  public List<Language> getLanguages(MPSModuleOwner moduleOwner) {
-    return getModules(moduleOwner, Language.class);
-  }
-
-  public List<DevKit> getDevKits(MPSModuleOwner moduleOwner) {
-    return getModules(moduleOwner, DevKit.class);
-  }
-
-  public List<IModule> getModules(MPSModuleOwner moduleOwner) {
-    return getModules(moduleOwner, IModule.class);
-  }
-
-  private <MT extends IModule> List<MT> getAllModules(Class<MT> cls) {
-    assertCanRead();
-
-    List<MT> result = new ArrayList<MT>();
-    for (IModule module : myModules) {
-      if (cls.isInstance(module)) result.add((MT) module);
-    }
-    return result;
-  }
-
-  public List<Language> getAllLanguages() {
-    return getAllModules(Language.class);
-  }
-
-  public List<Solution> getAllSolutions() {
-    return getAllModules(Solution.class);
-  }
-
-  public List<DevKit> getAllDevkits() {
-    return getAllModules(DevKit.class);
-  }
-
-  public List<Generator> getAllGenerators() {
-    return getAllModules(Generator.class);
-  }
-
-  public List<IModule> getAllModules() {
-    return getAllModules(IModule.class);
-  }
-
-  public Set<Language> getAllExtendingLanguages(Language l) {
-    Set<Language> result = new HashSet<Language>();
-    for (Language lang : getAllLanguages()) {
-      if (lang.getExtendedLanguages().contains(l)) {
-        result.add(lang);
-      }
-    }
-    return result;
-  }
-
-  public List<IModule> getAllModulesInDirectory(IFile file) {
-    assertCanRead();
-
-    String path = IFileUtils.getCanonicalPath(file);
-    List<IModule> result = new ArrayList<IModule>();
-    for (IModule m : getAllModules()) {
-      String moduleCanonicalPath = IFileUtils.getCanonicalPath(m.getDescriptorFile());
-      if (moduleCanonicalPath != null && moduleCanonicalPath.startsWith(path)) {
-        result.add(m);
-      }
-    }
-    return result;
-  }
-
   private void assertCanRead() {
-    if (!ModelAccess.instance().canRead()) {
-      throw new IllegalStateException("Can't read");
-    }
+    if (ModelAccess.instance().canRead()) return;
+    throw new IllegalStateException("Can't read");
   }
+
+  //------------------listeners--------------------
 
   public void addModuleRepositoryListener(ModuleRepositoryListener listener) {
     myModuleListeners.add(listener);
@@ -544,4 +391,149 @@ public class MPSModuleRepository implements CoreComponent {
       listener.moduleInitialized(module);
     }
   }
+
+  //-----------------some strange stuff
+
+  public void moduleFqNameChanged(IModule module, String oldName) {
+    ModelAccess.assertLegalWrite();
+
+    if (myFqNameToModulesMap.get(oldName) != module || myFqNameToModulesMap.containsKey(module.getModuleFqName())) {
+      throw new IllegalStateException();
+    }
+    myFqNameToModulesMap.remove(oldName);
+    myFqNameToModulesMap.put(module.getModuleFqName(), module);
+  }
+
+  //-----------------by file
+
+  private Map<String, IModule> myCanonicalFileToModuleMap = new ConcurrentHashMap<String, IModule>();
+
+  public IModule getModuleByFile(IFile file) {
+    assertCanRead();
+
+    return myCanonicalFileToModuleMap.get(IFileUtils.getCanonicalPath(file));
+  }
+
+  private void addCanonicalFile(@Nullable IFile file, IModule module) {
+    if (file != null) {
+      String canonicalDescriptorPath = IFileUtils.getCanonicalPath(file);
+      if (canonicalDescriptorPath != null && !myCanonicalFileToModuleMap.containsKey(canonicalDescriptorPath)) {
+        myCanonicalFileToModuleMap.put(canonicalDescriptorPath, module);
+      }
+    }
+  }
+
+  private void removeModuleFile(@Nullable IFile file) {
+    if (file != null) {
+      String canonicalPath = IFileUtils.getCanonicalPath(file);
+      if (canonicalPath != null) {
+        myCanonicalFileToModuleMap.remove(canonicalPath);
+      }
+    }
+  }
+
+  public List<IModule> findModulesUnderDir(String dirPath) {
+    assertCanRead();
+
+    List<IModule> result = new ArrayList<IModule>();
+    for (String path : myCanonicalFileToModuleMap.keySet()) {
+      if (path.startsWith(dirPath)) {
+        result.add(myCanonicalFileToModuleMap.get(path));
+      }
+    }
+    return result;
+  }
+
+  //-------------------DEPRECATED
+
+  public IModule getModule(@NotNull ModuleReference ref) {
+    if (ref.getModuleId() != null) {
+      return myIdToModuleMap.get(ref.getModuleId());
+    }
+    return myFqNameToModulesMap.get(ref.getModuleFqName());
+  }
+
+  public Set<Language> getAllExtendingLanguages(Language l) {
+    Set<Language> result = new HashSet<Language>();
+    for (Language lang : getAllLanguages()) {
+      if (lang.getExtendedLanguages().contains(l)) {
+        result.add(lang);
+      }
+    }
+    return result;
+  }
+
+  public DevKit getDevKit(String namespace) {
+    return (DevKit) myFqNameToModulesMap.get(namespace);
+  }
+
+  public DevKit getDevKit(ModuleReference ref) {
+    return (DevKit) getModule(ref);
+  }
+
+  public Solution getSolution(String namespace) {
+    return (Solution) myFqNameToModulesMap.get(namespace);
+  }
+
+  public Solution getSolution(ModuleReference ref) {
+    return (Solution) getModule(ref);
+  }
+
+  public <MT extends IModule> List<MT> getModules(MPSModuleOwner moduleOwner, Class<MT> cls) {
+    assertCanRead();
+
+    List<MT> list = new LinkedList<MT>();
+    Set<IModule> modules = myModuleToOwners.getBySecond(moduleOwner);
+    if (modules != null) {
+      for (IModule m : modules) {
+        if (cls == null || cls.isInstance(m)) {
+          list.add((MT) m);
+        }
+      }
+    }
+    return list;
+  }
+
+  public List<Language> getAllLanguages() {
+    return getAllModules(Language.class);
+  }
+
+  public List<Solution> getAllSolutions() {
+    return getAllModules(Solution.class);
+  }
+
+  public List<DevKit> getAllDevkits() {
+    return getAllModules(DevKit.class);
+  }
+
+  public List<Generator> getAllGenerators() {
+    return getAllModules(Generator.class);
+  }
+
+  public <MT extends IModule> List<MT> getAllModules(Class<MT> cls) {
+    assertCanRead();
+
+    List<MT> result = new ArrayList<MT>();
+    for (IModule module : myModules) {
+      if (cls.isInstance(module)) result.add((MT) module);
+    }
+    return result;
+  }
+
+  public List<Language> getLanguages(MPSModuleOwner moduleOwner) {
+    return getModules(moduleOwner, Language.class);
+  }
+
+  public Language getLanguage(String namespace) {
+    return (Language) myFqNameToModulesMap.get(namespace);
+  }
+
+  public Language getLanguage(ModuleReference ref) {
+    return (Language) getModule(ref);
+  }
+
+  public Generator getGenerator(ModuleReference ref) {
+    return (Generator) getModule(ref);
+  }
+
 }

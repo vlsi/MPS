@@ -113,7 +113,7 @@ public abstract class AbstractBuildGenerator {
     if (text.equals("")) {
       return false;
     }
-    IModule moduleWithSelectedName = MPSModuleRepository.getInstance().getModuleByUID(text);
+    IModule moduleWithSelectedName = MPSModuleRepository.getInstance().getModuleByFqName(text);
     return moduleWithSelectedName == null;
   }
 

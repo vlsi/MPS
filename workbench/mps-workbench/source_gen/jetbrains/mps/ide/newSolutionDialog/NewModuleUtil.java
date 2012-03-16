@@ -37,7 +37,7 @@ public class NewModuleUtil {
     if (namespace.length() == 0) {
       return "Namespace should be specified";
     }
-    if (MPSModuleRepository.getInstance().getModuleByUID(namespace) != null) {
+    if (MPSModuleRepository.getInstance().getModuleByFqName(namespace) != null) {
       return "Module namespace already exists";
     }
     if (NameUtil.shortNameFromLongName(namespace).length() == 0) {
