@@ -44,13 +44,11 @@ import java.util.concurrent.CopyOnWriteArrayList;
 public class MPSModuleRepository implements CoreComponent {
   private static final Logger LOG = Logger.getLogger(MPSModuleRepository.class);
   private ClassLoaderManager myClm;
-  private CleanupManager myCm;
   private ReloadAdapter myHandler = new ReloadAdapter() {
     public void unload() {
       invalidateCaches();
     }
   };
-  private final CleanupListener myCleanupListener;
 
   public static MPSModuleRepository getInstance() {
     return MPSCore.getInstance().getModuleRepository();
@@ -65,25 +63,15 @@ public class MPSModuleRepository implements CoreComponent {
 
   private List<ModuleRepositoryListener> myModuleListeners = new CopyOnWriteArrayList<ModuleRepositoryListener>();
 
-  private boolean myDirtyFlag = false;
-
-  public MPSModuleRepository(ClassLoaderManager clm, CleanupManager cm) {
+  public MPSModuleRepository(ClassLoaderManager clm) {
     myClm = clm;
-    myCm = cm;
-    myCleanupListener = new CleanupListener() {
-      public void performCleanup() {
-        removeUnusedModules();
-      }
-    };
   }
 
   public void init() {
     myClm.addReloadHandler(myHandler);
-    myCm.addCleanupListener(myCleanupListener);
   }
 
   public void dispose() {
-    myCm.removeCleanupListener(myCleanupListener);
     myClm.removeReloadHandler(myHandler);
   }
 
@@ -95,7 +83,6 @@ public class MPSModuleRepository implements CoreComponent {
   public <TM extends IModule> TM registerModule(ModuleHandle handle, MPSModuleOwner owner) {
     ModelAccess.assertLegalWrite();
 
-    myDirtyFlag = true;
     String canonicalPath = IFileUtils.getCanonicalPath(handle.getFile());
     IModule module = myCanonicalFileToModuleMap.get(canonicalPath);
     if (module == null) {
@@ -123,7 +110,6 @@ public class MPSModuleRepository implements CoreComponent {
   public void addModule(IModule module, MPSModuleOwner owner) {
     ModelAccess.assertLegalWrite();
 
-    myDirtyFlag = true;
     if (existsModule(module.getModuleReference())) {
       throw new IllegalStateException("Couldn't add module \"" + module.getModuleFqName() + "\" : this module is already registered with this very owner: " + owner);
     }
@@ -179,7 +165,6 @@ public class MPSModuleRepository implements CoreComponent {
   public void unRegisterModules(MPSModuleOwner owner, Condition<IModule> condition) {
     ModelAccess.assertLegalWrite();
 
-    myDirtyFlag = true;
     Set<IModule> modules = new HashSet<IModule>(myModuleToOwners.getBySecond(owner));
     for (IModule m : modules) {
       if (condition.met(m)) {
@@ -193,7 +178,6 @@ public class MPSModuleRepository implements CoreComponent {
   public void unRegisterModules(MPSModuleOwner owner) {
     ModelAccess.assertLegalWrite();
 
-    myDirtyFlag = true;
     myModuleToOwners.clearSecond(owner);
     invalidateCaches();
     fireRepositoryChanged();
@@ -259,62 +243,6 @@ public class MPSModuleRepository implements CoreComponent {
         SModelUtil.clearCaches();
       }
     });
-  }
-
-  public void removeUnusedModules() {
-    ModelAccess.assertLegalWrite();
-
-    if (!myDirtyFlag) return;
-
-    myDirtyFlag = false;
-    for (IModule m : getModulesToBeRemoved()) {
-      fireBeforeModuleRemoved(m);
-      m.dispose();
-      removeModule(m);
-    }
-    //todo: do the similar thing with module stubs
-  }
-
-  private Set<IModule> getModulesToBeRemoved() {
-    Set<MPSModuleOwner> rootOwners = new HashSet<MPSModuleOwner>();
-    for (IModule m : myModules) {
-      for (MPSModuleOwner owner : myModuleToOwners.getByFirst(m)) {
-        if (owner instanceof IModule) continue;
-        rootOwners.add(owner);
-      }
-    }
-
-    Set<IModule> visibleModules = new HashSet<IModule>(myModules.size());
-    for (IModule m : myModules) {
-      if (m instanceof Solution && ((Solution) m).isStub()) {
-        visibleModules.add(m);
-        continue;
-      }
-
-      for (MPSModuleOwner r : rootOwners) {
-        if (myModuleToOwners.contains(m, r)) {
-          visibleModules.add(m);
-        }
-      }
-    }
-
-    Set<IModule> toAdd;
-    do {
-      toAdd = new HashSet<IModule>();
-      for (IModule m : myModules) {
-        if (visibleModules.contains(m)) continue;
-        for (IModule v : visibleModules) {
-          if (!(v instanceof MPSModuleOwner)) continue;
-          if (!myModuleToOwners.contains(m, (MPSModuleOwner) v)) continue;
-          toAdd.add(m);
-        }
-      }
-      visibleModules.addAll(toAdd);
-    } while (!toAdd.isEmpty());
-
-    Set<IModule> toBeRemoved = new HashSet<IModule>(myModules);
-    toBeRemoved.removeAll(visibleModules);
-    return toBeRemoved;
   }
 
   private void assertCanRead() {
