@@ -20,9 +20,10 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.action.ModelActions;
+import jetbrains.mps.smodel.action.DefaultSimpleSubstituteAction;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.smodel.action.SideTransformActionsBuilderContext;
 import jetbrains.mps.smodel.action.AbstractSideTransformHintSubstituteAction;
-import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 
 public class QueriesGenerated {
   public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_BuildMps_ModuleDependencyOnModule_5253498789149547751(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
@@ -74,6 +75,74 @@ public class QueriesGenerated {
           }
         };
         ListSequence.fromList(result).addSequence(ListSequence.fromList(ModelActions.createChildSubstituteActions(_context.getParentNode(), _context.getCurrentTargetNode(), wrappedConcept, setter, operationContext)));
+      }
+    }
+    return result;
+  }
+
+  public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_BuildMps_AbstractModule_322010710376066509(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
+    List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
+    {
+      SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.build.mps.structure.BuildMps_AbstractModule");
+      SNode childConcept = (SNode) _context.getChildConcept();
+      if (outputConcept == null || SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
+        ListSequence.fromList(result).addElement(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
+          public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
+            SNode lang = SNodeFactoryOperations.createNewNode(model, "jetbrains.mps.build.mps.structure.BuildMps_Language", null);
+            SNodeFactoryOperations.setNewChild(lang, "path", "jetbrains.mps.build.structure.BuildSourcePath");
+            return lang;
+          }
+
+          public String getMatchingText(String pattern) {
+            return "mps language from file";
+          }
+
+          public String getVisibleMatchingText(String pattern) {
+            return this.getMatchingText(pattern);
+          }
+        });
+      }
+    }
+    {
+      SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.build.mps.structure.BuildMps_AbstractModule");
+      SNode childConcept = (SNode) _context.getChildConcept();
+      if (outputConcept == null || SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
+        ListSequence.fromList(result).addElement(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
+          public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
+            SNode lang = SNodeFactoryOperations.createNewNode(model, "jetbrains.mps.build.mps.structure.BuildMps_Solution", null);
+            SNodeFactoryOperations.setNewChild(lang, "path", "jetbrains.mps.build.structure.BuildSourcePath");
+            return lang;
+          }
+
+          public String getMatchingText(String pattern) {
+            return "mps solution from file";
+          }
+
+          public String getVisibleMatchingText(String pattern) {
+            return this.getMatchingText(pattern);
+          }
+        });
+      }
+    }
+    {
+      SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.build.mps.structure.BuildMps_AbstractModule");
+      SNode childConcept = (SNode) _context.getChildConcept();
+      if (outputConcept == null || SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
+        ListSequence.fromList(result).addElement(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
+          public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
+            SNode lang = SNodeFactoryOperations.createNewNode(model, "jetbrains.mps.build.mps.structure.BuildMps_DevKit", null);
+            SNodeFactoryOperations.setNewChild(lang, "path", "jetbrains.mps.build.structure.BuildSourcePath");
+            return lang;
+          }
+
+          public String getMatchingText(String pattern) {
+            return "mps devkit from file";
+          }
+
+          public String getVisibleMatchingText(String pattern) {
+            return this.getMatchingText(pattern);
+          }
+        });
       }
     }
     return result;

@@ -74,6 +74,12 @@ public class BuildMps_DevKit_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_pa0pfb_d0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_pa0pfb_d0");
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
+      style.set(StyleAttributes.INDENT_LAYOUT_ON_NEW_LINE, true);
+      style.set(StyleAttributes.SELECTABLE, false);
+    }
     editorCell.addEditorCell(this.createConstant_pa0pfb_a3a(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_pa0pfb_b3a(editorContext, node));
     return editorCell;

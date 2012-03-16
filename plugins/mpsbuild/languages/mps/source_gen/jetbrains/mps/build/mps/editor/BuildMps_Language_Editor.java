@@ -74,6 +74,12 @@ public class BuildMps_Language_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_ucemm3_d0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_ucemm3_d0");
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
+      style.set(StyleAttributes.INDENT_LAYOUT_ON_NEW_LINE, true);
+      style.set(StyleAttributes.SELECTABLE, false);
+    }
     editorCell.addEditorCell(this.createConstant_ucemm3_a3a(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_ucemm3_b3a(editorContext, node));
     return editorCell;

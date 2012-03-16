@@ -74,6 +74,12 @@ public class BuildMps_Module_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_ncpkep_d0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_ncpkep_d0");
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
+      style.set(StyleAttributes.INDENT_LAYOUT_ON_NEW_LINE, true);
+      style.set(StyleAttributes.SELECTABLE, false);
+    }
     editorCell.addEditorCell(this.createConstant_ncpkep_a3a(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_ncpkep_b3a(editorContext, node));
     return editorCell;
