@@ -34,7 +34,7 @@ import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.baseLanguage.scopes.FilteringScope;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.lang.core.behavior.ScopeProvider_Behavior;
-import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.baseLanguage.scopes.OverridingPolicies;
 import jetbrains.mps.smodel.structure.BehaviorDescriptor;
 import jetbrains.mps.smodel.structure.ConceptRegistry;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
@@ -298,57 +298,8 @@ public class ClassConcept_Behavior {
     return ScopeProvider_Behavior.callSuper_getScope_3734116213129936182(thisNode, "jetbrains.mps.baseLanguage.structure.ClassConcept", kind, child);
   }
 
-  public static Iterable<SNode> virtual_doOverride_7343816061617019844(final SNode thisNode, SNode kind, List<SNode> equalSignatureMembers) {
-    if (ListSequence.fromList(equalSignatureMembers).where(new IWhereFilter<SNode>() {
-      public boolean accept(SNode it) {
-        return SNodeOperations.getParent(it) == thisNode;
-      }
-    }).isNotEmpty()) {
-      return ListSequence.fromList(equalSignatureMembers).where(new IWhereFilter<SNode>() {
-        public boolean accept(SNode it) {
-          return SNodeOperations.getParent(it) == thisNode;
-        }
-      });
-    }
-
-    if (ListSequence.fromList(equalSignatureMembers).count() < 2) {
-      return equalSignatureMembers;
-    }
-
-    // size >= 2 
-    // not overrided in current class 
-    // possible variants: StaticFields and InstanceMethods (intersect of Interface and Classes) 
-    if (SConceptOperations.isSubConceptOf(kind, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration")) {
-      return ListSequence.fromList(new ArrayList<SNode>());
-    }
-
-    if (SConceptOperations.isSubConceptOf(kind, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration")) {
-      Iterable<SNode> nonAbstractMethods = ListSequence.fromList(equalSignatureMembers).where(new IWhereFilter<SNode>() {
-        public boolean accept(SNode it) {
-          return !(BaseMethodDeclaration_Behavior.call_isAbstract_1232982539764(SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration")));
-        }
-      }).select(new ISelector<SNode, SNode>() {
-        public SNode select(SNode it) {
-          return SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration");
-        }
-      });
-      if (Sequence.fromIterable(nonAbstractMethods).isNotEmpty()) {
-        if ((int) Sequence.fromIterable(nonAbstractMethods).count() == 1) {
-          return nonAbstractMethods;
-        } else {
-          return Sequence.fromIterable(nonAbstractMethods).where(new IWhereFilter<SNode>() {
-            public boolean accept(SNode it) {
-              return SNodeOperations.getParent(it) != SNodeOperations.getNode("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Object");
-            }
-          });
-        }
-      } else {
-        return ListSequence.fromList(equalSignatureMembers).take(1);
-      }
-    }
-
-    // by default 
-    return equalSignatureMembers;
+  public static Iterable<SNode> virtual_doOverride_7343816061617019844(SNode thisNode, SNode kind, List<SNode> equalSignatureMembers) {
+    return OverridingPolicies.doClassLikeOverride(thisNode, kind, equalSignatureMembers);
   }
 
   public static boolean call_isRunnable_7941158526576616766(SNode thisNode) {

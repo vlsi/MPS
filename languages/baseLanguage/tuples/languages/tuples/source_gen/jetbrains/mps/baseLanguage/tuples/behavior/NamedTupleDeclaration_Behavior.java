@@ -10,6 +10,9 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.util.List;
 import java.util.ArrayList;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.baseLanguage.scopes.OverridingPolicies;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.smodel.structure.BehaviorDescriptor;
 import jetbrains.mps.smodel.structure.ConceptRegistry;
@@ -51,13 +54,34 @@ public class NamedTupleDeclaration_Behavior {
     return result;
   }
 
+  public static List<SNode> virtual_getExtendedClassifiers_2201875424516179426(SNode thisNode) {
+    List<SNode> result = new ArrayList<SNode>();
+    if ((SLinkOperations.getTarget(SLinkOperations.getTarget(thisNode, "extended", true), "classifier", false) != null)) {
+      ListSequence.fromList(result).addElement(SLinkOperations.getTarget(SLinkOperations.getTarget(thisNode, "extended", true), "classifier", false));
+    }
+    ListSequence.fromList(result).addSequence(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "implements", true)).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return (SLinkOperations.getTarget(it, "classifier", false) != null);
+      }
+    }).select(new ISelector<SNode, SNode>() {
+      public SNode select(SNode it) {
+        return SLinkOperations.getTarget(it, "classifier", false);
+      }
+    }));
+    return result;
+  }
+
+  public static Iterable<SNode> virtual_doOverride_7343816061617019844(SNode thisNode, SNode kind, List<SNode> equalSignatureMembers) {
+    return OverridingPolicies.doClassLikeOverride(thisNode, kind, equalSignatureMembers);
+  }
+
   public static SNode virtual_getThisType_3305065273710880775(SNode thisNode) {
     _FunctionTypes._return_P1_E0<? extends SNode, ? super SNode> tvd2tvr = new _FunctionTypes._return_P1_E0<SNode, Object>() {
       public SNode invoke(Object tvr) {
-        return new NamedTupleDeclaration_Behavior.QuotationClass_ds5lpv_a0a0a0a0d().createNode(tvr);
+        return new NamedTupleDeclaration_Behavior.QuotationClass_ds5lpv_a0a0a0a0f().createNode(tvr);
       }
     };
-    return new NamedTupleDeclaration_Behavior.QuotationClass_ds5lpv_a0b0d().createNode(thisNode, ListSequence.fromList(SLinkOperations.getTargets(thisNode, "typeVariableDeclaration", true)).select(tvd2tvr).toListSequence());
+    return new NamedTupleDeclaration_Behavior.QuotationClass_ds5lpv_a0b0f().createNode(thisNode, ListSequence.fromList(SLinkOperations.getTargets(thisNode, "typeVariableDeclaration", true)).select(tvd2tvr).toListSequence());
   }
 
   public static SNode call_getThisType_6742265879766289824(SNode thisNode) {
@@ -69,8 +93,8 @@ public class NamedTupleDeclaration_Behavior {
     return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.tuples.structure.NamedTupleDeclaration"), callerConceptFqName, "virtual_getThisType_3305065273710880775", PARAMETERS_6742265879766289824);
   }
 
-  public static class QuotationClass_ds5lpv_a0a0a0a0d {
-    public QuotationClass_ds5lpv_a0a0a0a0d() {
+  public static class QuotationClass_ds5lpv_a0a0a0a0f {
+    public QuotationClass_ds5lpv_a0a0a0a0f() {
     }
 
     public SNode createNode(Object parameter_3) {
@@ -87,8 +111,8 @@ public class NamedTupleDeclaration_Behavior {
     }
   }
 
-  public static class QuotationClass_ds5lpv_a0b0d {
-    public QuotationClass_ds5lpv_a0b0d() {
+  public static class QuotationClass_ds5lpv_a0b0f {
+    public QuotationClass_ds5lpv_a0b0f() {
     }
 
     public SNode createNode(Object parameter_4, Object parameter_5) {

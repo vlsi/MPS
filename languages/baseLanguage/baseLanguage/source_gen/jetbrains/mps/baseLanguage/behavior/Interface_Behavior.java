@@ -16,7 +16,7 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.util.ArrayList;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.baseLanguage.scopes.OverridingPolicies;
 import jetbrains.mps.smodel.structure.BehaviorDescriptor;
 import jetbrains.mps.smodel.structure.ConceptRegistry;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
@@ -94,57 +94,8 @@ public class Interface_Behavior {
     }
   }
 
-  public static Iterable<SNode> virtual_doOverride_7343816061617019844(final SNode thisNode, SNode kind, List<SNode> equalSignatureMembers) {
-    if (ListSequence.fromList(equalSignatureMembers).where(new IWhereFilter<SNode>() {
-      public boolean accept(SNode it) {
-        return SNodeOperations.getParent(it) == thisNode;
-      }
-    }).isNotEmpty()) {
-      return ListSequence.fromList(equalSignatureMembers).where(new IWhereFilter<SNode>() {
-        public boolean accept(SNode it) {
-          return SNodeOperations.getParent(it) == thisNode;
-        }
-      });
-    }
-
-    if (ListSequence.fromList(equalSignatureMembers).count() < 2) {
-      return equalSignatureMembers;
-    }
-
-    // size >= 2 
-    // not overrided in current class 
-    // possible variants: StaticFields and InstanceMethods (intersect of Interfaces and maybe Object class) 
-    if (SConceptOperations.isSubConceptOf(kind, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration")) {
-      return ListSequence.fromList(new ArrayList<SNode>());
-    }
-
-    if (SConceptOperations.isSubConceptOf(kind, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration")) {
-      Iterable<SNode> methods = ListSequence.fromList(equalSignatureMembers).where(new IWhereFilter<SNode>() {
-        public boolean accept(SNode it) {
-          return SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration");
-        }
-      }).select(new ISelector<SNode, SNode>() {
-        public SNode select(SNode it) {
-          return SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration");
-        }
-      });
-      if (Sequence.fromIterable(methods).isNotEmpty()) {
-        if ((int) Sequence.fromIterable(methods).count() == 1) {
-          return methods;
-        } else {
-          return Sequence.fromIterable(methods).where(new IWhereFilter<SNode>() {
-            public boolean accept(SNode it) {
-              return SNodeOperations.getParent(it) != SNodeOperations.getNode("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Object");
-            }
-          }).take(1);
-        }
-      } else {
-        return ListSequence.fromList(new ArrayList<SNode>());
-      }
-    }
-
-    // by default 
-    return equalSignatureMembers;
+  public static Iterable<SNode> virtual_doOverride_7343816061617019844(SNode thisNode, SNode kind, List<SNode> equalSignatureMembers) {
+    return OverridingPolicies.doInterfaceLikeOverriding(thisNode, kind, equalSignatureMembers);
   }
 
   public static String call_getUnitName_2496361171403551004(SNode thisNode) {
