@@ -8,7 +8,6 @@
   <language namespace="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
   <language namespace="7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.lang.smodel)" />
   <language namespace="3a13115c-633c-4c5c-bbcc-75c4219e9555(jetbrains.mps.lang.quotation)" />
-  <language namespace="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" />
   <devkit namespace="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   <import index="cx9y" modelUID="r:309aeee7-bee8-445c-b31d-35928d1da75f(jetbrains.mps.baseLanguage.tuples.structure)" version="2" />
   <import index="tpcu" modelUID="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" version="-1" />
@@ -704,7 +703,7 @@
                       </node>
                       <node role="operation" roleId="tpee.1197027833540" type="tp2q.SelectOperation" typeId="tp2q.1202128969694" id="6742265879766300871">
                         <node role="closure" roleId="tp2q.1204796294226" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="6742265879766300885">
-                          <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="6742265879766300877" resolveInfo="cls" />
+                          <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="6742265879766300877" resolveInfo="tvd2tvr" />
                         </node>
                       </node>
                     </node>
