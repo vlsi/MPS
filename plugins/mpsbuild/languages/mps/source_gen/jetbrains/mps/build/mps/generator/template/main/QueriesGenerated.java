@@ -10,6 +10,7 @@ import jetbrains.mps.build.behavior.BuildProject_Behavior;
 import jetbrains.mps.build.util.Context;
 import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.build.mps.util.VisibleModules;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.build.mps.util.ModuleLoader;
@@ -27,6 +28,9 @@ public class QueriesGenerated {
         continue;
       }
 
+      VisibleModules visibleModules = new VisibleModules(project, _context);
+      visibleModules.collect();
+
       for (SNode part : SLinkOperations.getTargets(project, "parts", true)) {
         if (!(SNodeOperations.isInstanceOf(part, "jetbrains.mps.build.mps.structure.BuildMps_Module"))) {
           continue;
@@ -36,7 +40,7 @@ public class QueriesGenerated {
           continue;
         }
 
-        new ModuleLoader(module, workingDir, _context).load();
+        new ModuleLoader(module, visibleModules, workingDir, _context).load();
       }
     }
   }

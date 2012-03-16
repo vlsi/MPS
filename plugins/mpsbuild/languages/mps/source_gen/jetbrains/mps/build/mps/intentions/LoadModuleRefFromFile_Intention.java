@@ -4,6 +4,7 @@ package jetbrains.mps.build.mps.intentions;
 
 import jetbrains.mps.intentions.BaseIntention;
 import jetbrains.mps.intentions.Intention;
+import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -11,9 +12,12 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.build.behavior.BuildProject_Behavior;
 import jetbrains.mps.build.util.Context;
 import org.apache.commons.lang.StringUtils;
+import jetbrains.mps.build.mps.util.VisibleModules;
 import jetbrains.mps.build.mps.util.ModuleLoader;
 
 public class LoadModuleRefFromFile_Intention extends BaseIntention implements Intention {
+  private static Logger LOG = Logger.getLogger(LoadModuleRefFromFile_Intention.class);
+
   public LoadModuleRefFromFile_Intention() {
   }
 
@@ -60,7 +64,14 @@ public class LoadModuleRefFromFile_Intention extends BaseIntention implements In
     }
 
 
-    new ModuleLoader(node, workingDir, null).importModule();
+    try {
+      VisibleModules visible = new VisibleModules(project, null);
+      visible.collect();
+      new ModuleLoader(node, visible, workingDir, null).importModule();
+    } catch (ModuleLoader.ModuleLoaderException ex) {
+      LOG.error(ex.getMessage(), ex);
+      // TODO report? 
+    }
   }
 
   public String getLocationString() {

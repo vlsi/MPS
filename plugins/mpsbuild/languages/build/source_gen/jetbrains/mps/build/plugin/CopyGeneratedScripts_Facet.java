@@ -26,7 +26,6 @@ import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.make.script.IFeedback;
-import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.vfs.IFileUtils;
@@ -112,7 +111,7 @@ public class CopyGeneratedScripts_Facet extends IFacet.Stub {
                     return true;
                   }
                 });
-                ThreadUtils.runInUIThreadAndWait(new Runnable() {
+                FileSystem.getInstance().runWriteTransaction(new Runnable() {
                   public void run() {
                     ModelAccess.instance().requireWrite(new Runnable() {
                       public void run() {
