@@ -53,7 +53,7 @@ public class VisibleModules {
           QueueSequence.fromQueue(queue).addLastElement(depproj);
         }
       }
-      ListSequence.fromList(allModules).addSequence(ListSequence.fromList(SNodeOperations.getDescendants(project, "jetbrains.mps.build.mps.structure.BuildMps_Module", false, new String[]{})));
+      ListSequence.fromList(allModules).addSequence(ListSequence.fromList(SNodeOperations.getDescendants(project, "jetbrains.mps.build.mps.structure.BuildMps_AbstractModule", false, new String[]{})));
     }
     for (SNode module : allModules) {
       if (moduleById.containsKey(SPropertyOperations.getString(module, "uuid"))) {

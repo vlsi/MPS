@@ -40,7 +40,7 @@ public class QueriesGenerated {
           continue;
         }
 
-        new ModuleLoader(module, visibleModules, workingDir, _context).load();
+        new ModuleLoader(module, visibleModules, workingDir, _context).loadAndCheck();
       }
     }
   }

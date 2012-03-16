@@ -116,6 +116,10 @@ public class Context {
 
   @NotNull
   public static Context defaultContext(final TemplateQueryContext gencontext) {
+    if (gencontext == null) {
+      return defaultContext();
+    }
+
     Context context = ((Context) gencontext.getSessionObject(Context.class));
     if (context == null) {
       context = new Context(gencontext);

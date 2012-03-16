@@ -616,7 +616,7 @@ public class BuildMps_Language_Editor extends DefaultNodeEditor {
         Style style = editorCell.getStyle();
         style.set(StyleAttributes.EDITABLE, true);
       }
-      editorCell.setDefaultText("<no dependencies>");
+      editorCell.setDefaultText("<no runtime>");
       return editorCell;
     }
   }
@@ -769,7 +769,7 @@ public class BuildMps_Language_Editor extends DefaultNodeEditor {
         Style style = editorCell.getStyle();
         style.set(StyleAttributes.EDITABLE, true);
       }
-      editorCell.setDefaultText("<no dependencies>");
+      editorCell.setDefaultText("<no runtime>");
       return editorCell;
     }
   }

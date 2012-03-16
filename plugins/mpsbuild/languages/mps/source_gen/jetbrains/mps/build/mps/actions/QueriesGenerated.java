@@ -41,6 +41,10 @@ public class QueriesGenerated {
     return (SLinkOperations.getTarget(_context.getSourceNode(), "path", true) == null);
   }
 
+  public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_BuildMps_DevKit_322010710375870611(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
+    return (SLinkOperations.getTarget(_context.getSourceNode(), "path", true) == null);
+  }
+
   public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_BuildMps_ModuleSource_3189788309731979156(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
     List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
     {
@@ -142,6 +146,28 @@ public class QueriesGenerated {
   }
 
   public static List<INodeSubstituteAction> sideTransform_ActionsFactory_BuildMps_Module_3189788309731994246(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
+    List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
+    {
+      SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.build.mps.structure.BuildMps_Module");
+      ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
+        public SNode doSubstitute(String pattern) {
+          SNodeFactoryOperations.setNewChild(_context.getSourceNode(), "path", "jetbrains.mps.build.structure.BuildSourcePath");
+          return _context.getSourceNode();
+        }
+
+        public String getMatchingText(String pattern) {
+          return "load from";
+        }
+
+        public String getVisibleMatchingText(String pattern) {
+          return this.getMatchingText(pattern);
+        }
+      });
+    }
+    return result;
+  }
+
+  public static List<INodeSubstituteAction> sideTransform_ActionsFactory_BuildMps_DevKit_322010710375870610(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
     List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
     {
       SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.build.mps.structure.BuildMps_Module");
