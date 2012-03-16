@@ -79,16 +79,24 @@ public abstract class BaseLibImporter implements MPSModuleOwner {
   }
 
   private class MyListener implements Listener {
-    public void afterLibraryAdded(Library newLibrary) {
-      addModuleForLibrary(newLibrary);
+    public void afterLibraryAdded(final Library newLibrary) {
+      ModelAccess.instance().runWriteAction(new Runnable() {
+        public void run() {
+          addModuleForLibrary(newLibrary);
+        }
+      });
     }
 
     public void afterLibraryRenamed(Library library) {
       //todo update models
     }
 
-    public void beforeLibraryRemoved(Library library) {
-      removeModuleForLibrary(library);
+    public void beforeLibraryRemoved(final Library library) {
+      ModelAccess.instance().runWriteAction(new Runnable() {
+        public void run() {
+          removeModuleForLibrary(library);
+        }
+      });
     }
 
     public void afterLibraryRemoved(Library library) {
