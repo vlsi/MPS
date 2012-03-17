@@ -39,6 +39,10 @@ public abstract class Classifier_BehaviorDescriptor extends GenericDeclaration_B
     return Classifier_Behavior.virtual_getThisType_3305065273710880775(thisNode);
   }
 
+  public List<SNode> virtual_getExtendedClassifierTypes_2201875424516179426(SNode thisNode) {
+    return Classifier_Behavior.virtual_getExtendedClassifierTypes_2201875424516179426(thisNode);
+  }
+
   public boolean virtual_checkLoops_3980490811621705344(SNode thisNode) {
     return Classifier_Behavior.virtual_checkLoops_3980490811621705344(thisNode);
   }
@@ -61,10 +65,6 @@ public abstract class Classifier_BehaviorDescriptor extends GenericDeclaration_B
 
   public Scope virtual_getMembers_2201875424515824604(SNode thisNode, SNode kind) {
     return Classifier_Behavior.virtual_getMembers_2201875424515824604(thisNode, kind);
-  }
-
-  public List<SNode> virtual_getExtendedClassifiers_2201875424516179426(SNode thisNode) {
-    return Classifier_Behavior.virtual_getExtendedClassifiers_2201875424516179426(thisNode);
   }
 
   public Scope virtual_getVisibleMembers_8083692786967356611(SNode thisNode, SNode contextNode, SNode kind) {

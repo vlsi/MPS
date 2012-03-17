@@ -122,7 +122,11 @@ public class Classifier_Behavior {
         // standard java logic: 
         // 1) collect all inherited classifier members and filter based on access level 
         Set<SNode> pretenders = SetSequence.fromSet(new HashSet());
-        for (final SNode classifier : Classifier_Behavior.call_getExtendedClassifiers_2201875424516179426(thisNode)) {
+        for (final SNode classifier : ListSequence.fromList(Classifier_Behavior.call_getExtendedClassifierTypes_2201875424516179426(thisNode)).select(new ISelector<SNode, SNode>() {
+          public SNode select(SNode it) {
+            return SLinkOperations.getTarget(it, "classifier", false);
+          }
+        })) {
           // todo: ? strange... =( 
           Iterable<SNode> nodes = ListSequence.fromList(Classifier_Behavior.call_getMembers_2201875424515824604(classifier, kind).getAvailableElements(null)).where(new IWhereFilter<SNode>() {
             public boolean accept(SNode it) {
@@ -169,8 +173,6 @@ public class Classifier_Behavior {
           ListSequence.fromList(result).addSequence(Sequence.fromIterable(Classifier_Behavior.call_doOverride_7343816061617019844(thisNode, kind, MapSequence.fromMap(signatureToMembers).get(signature))));
         }
 
-        // <node> 
-
         return new SimpleScope(result);
       }
     });
@@ -180,7 +182,12 @@ public class Classifier_Behavior {
     return equalSignatureMembers;
   }
 
-  public static List<SNode> virtual_getExtendedClassifiers_2201875424516179426(SNode thisNode) {
+  public static List<SNode> virtual_getExtendedClassifierTypes_2201875424516179426(final SNode thisNode) {
+    // todo: maybe use typesystem instead of this method??? 
+    // <node> 
+    // <node> 
+    // <node> 
+
     return new ArrayList<SNode>();
   }
 
@@ -197,8 +204,8 @@ public class Classifier_Behavior {
       return;
     }
     SetSequence.fromSet(nodes).addElement(thisNode);
-    for (SNode extended : Classifier_Behavior.call_getExtendedClassifiers_2201875424516179426(thisNode)) {
-      Classifier_Behavior.call_getAllExtendedClassifiers_2907982978864985509(extended, nodes);
+    for (SNode extended : Classifier_Behavior.call_getExtendedClassifierTypes_2201875424516179426(thisNode)) {
+      Classifier_Behavior.call_getAllExtendedClassifiers_2907982978864985509(SLinkOperations.getTarget(extended, "classifier", false), nodes);
     }
   }
 
@@ -408,9 +415,9 @@ public class Classifier_Behavior {
     return (Iterable<SNode>) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.Classifier"), "virtual_doOverride_7343816061617019844", PARAMETERS_7343816061617019844, kind, equalSignatureMembers);
   }
 
-  public static List<SNode> call_getExtendedClassifiers_2201875424516179426(SNode thisNode) {
+  public static List<SNode> call_getExtendedClassifierTypes_2201875424516179426(SNode thisNode) {
     BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (List<SNode>) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.Classifier"), "virtual_getExtendedClassifiers_2201875424516179426", PARAMETERS_2201875424516179426);
+    return (List<SNode>) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.Classifier"), "virtual_getExtendedClassifierTypes_2201875424516179426", PARAMETERS_2201875424516179426);
   }
 
   public static boolean call_hasStaticMemebers_1214840444586(SNode thisNode) {
@@ -474,8 +481,8 @@ public class Classifier_Behavior {
     return (Iterable<SNode>) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.Classifier"), callerConceptFqName, "virtual_doOverride_7343816061617019844", PARAMETERS_7343816061617019844, kind, equalSignatureMembers);
   }
 
-  public static List<SNode> callSuper_getExtendedClassifiers_2201875424516179426(SNode thisNode, String callerConceptFqName) {
-    return (List<SNode>) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.Classifier"), callerConceptFqName, "virtual_getExtendedClassifiers_2201875424516179426", PARAMETERS_2201875424516179426);
+  public static List<SNode> callSuper_getExtendedClassifierTypes_2201875424516179426(SNode thisNode, String callerConceptFqName) {
+    return (List<SNode>) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.Classifier"), callerConceptFqName, "virtual_getExtendedClassifierTypes_2201875424516179426", PARAMETERS_2201875424516179426);
   }
 
   public static boolean callSuper_hasStaticMemebers_1214840444586(SNode thisNode, String callerConceptFqName) {

@@ -4,18 +4,14 @@ package jetbrains.mps.baseLanguage.behavior;
 
 import jetbrains.mps.lang.traceable.behavior.UnitConcept_BehaviorDescriptor;
 import jetbrains.mps.lang.core.behavior.ScopeProvider_BehaviorDescriptor;
-import java.util.List;
 import jetbrains.mps.smodel.SNode;
+import java.util.List;
 import javax.swing.Icon;
 import java.util.Set;
 import jetbrains.mps.scope.Scope;
 
 public class ClassConcept_BehaviorDescriptor extends Classifier_BehaviorDescriptor implements IBLDeprecatable_BehaviorDescriptor, UnitConcept_BehaviorDescriptor, ScopeProvider_BehaviorDescriptor {
   public ClassConcept_BehaviorDescriptor() {
-  }
-
-  public List<SNode> virtual_getExtendedClassifiers_2201875424516179426(SNode thisNode) {
-    return ClassConcept_Behavior.virtual_getExtendedClassifiers_2201875424516179426(thisNode);
   }
 
   public Iterable<SNode> virtual_doOverride_7343816061617019844(SNode thisNode, SNode kind, List<SNode> equalSignatureMembers) {
@@ -44,6 +40,10 @@ public class ClassConcept_BehaviorDescriptor extends Classifier_BehaviorDescript
 
   public boolean virtual_checkLoops_3980490811621705349(SNode thisNode, Set<SNode> visited) {
     return ClassConcept_Behavior.virtual_checkLoops_3980490811621705349(thisNode, visited);
+  }
+
+  public List<SNode> virtual_getExtendedClassifierTypes_2201875424516179426(SNode thisNode) {
+    return ClassConcept_Behavior.virtual_getExtendedClassifierTypes_2201875424516179426(thisNode);
   }
 
   public boolean virtual_hasStaticMemebers_1214840444586(SNode thisNode) {

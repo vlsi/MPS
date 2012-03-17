@@ -6,8 +6,8 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.util.List;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.scope.Scope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.baseLanguage.scopes.SimpleScope;
@@ -25,11 +25,12 @@ public class EnumClass_Behavior {
     return null;
   }
 
-  public static List<SNode> virtual_getExtendedClassifiers_2201875424516179426(SNode thisNode) {
-    List<SNode> extended = Classifier_Behavior.callSuper_getExtendedClassifiers_2201875424516179426(thisNode, "jetbrains.mps.baseLanguage.structure.EnumClass");
-    if (!(ListSequence.fromList(extended).contains(SNodeOperations.getNode("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Enum")))) {
+  public static List<SNode> virtual_getExtendedClassifierTypes_2201875424516179426(SNode thisNode) {
+    List<SNode> extended = Classifier_Behavior.callSuper_getExtendedClassifierTypes_2201875424516179426(thisNode, "jetbrains.mps.baseLanguage.structure.EnumClass");
+    SNode enumType = Classifier_Behavior.call_getThisType_3305065273710880775(SNodeOperations.getNode("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Enum"));
+    if (!(ListSequence.fromList(extended).contains(enumType))) {
       // todo: WTF??? 
-      ListSequence.fromList(extended).addElement(SNodeOperations.getNode("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Enum"));
+      ListSequence.fromList(extended).addElement(enumType);
     }
     return extended;
   }

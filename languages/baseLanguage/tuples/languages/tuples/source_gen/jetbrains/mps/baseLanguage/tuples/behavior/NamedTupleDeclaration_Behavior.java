@@ -10,9 +10,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.util.List;
 import java.util.ArrayList;
+import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.baseLanguage.scopes.OverridingPolicies;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.smodel.structure.BehaviorDescriptor;
@@ -54,22 +53,14 @@ public class NamedTupleDeclaration_Behavior {
     return result;
   }
 
-  public static List<SNode> virtual_getExtendedClassifiers_2201875424516179426(SNode thisNode) {
+  public static List<SNode> virtual_getExtendedClassifierTypes_2201875424516179426(SNode thisNode) {
     List<SNode> result = new ArrayList<SNode>();
-    if ((SLinkOperations.getTarget(SLinkOperations.getTarget(thisNode, "extended", true), "classifier", false) != null)) {
-      ListSequence.fromList(result).addElement(SLinkOperations.getTarget(SLinkOperations.getTarget(thisNode, "extended", true), "classifier", false));
+    if ((SLinkOperations.getTarget(thisNode, "extended", true) != null)) {
+      ListSequence.fromList(result).addElement(SLinkOperations.getTarget(thisNode, "extended", true));
     } else {
-      ListSequence.fromList(result).addElement(SNodeOperations.getNode("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Object"));
+      ListSequence.fromList(result).addElement(Classifier_Behavior.call_getThisType_3305065273710880775(SNodeOperations.getNode("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Object")));
     }
-    ListSequence.fromList(result).addSequence(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "implements", true)).where(new IWhereFilter<SNode>() {
-      public boolean accept(SNode it) {
-        return (SLinkOperations.getTarget(it, "classifier", false) != null);
-      }
-    }).select(new ISelector<SNode, SNode>() {
-      public SNode select(SNode it) {
-        return SLinkOperations.getTarget(it, "classifier", false);
-      }
-    }));
+    ListSequence.fromList(result).addSequence(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "implements", true)));
     return result;
   }
 

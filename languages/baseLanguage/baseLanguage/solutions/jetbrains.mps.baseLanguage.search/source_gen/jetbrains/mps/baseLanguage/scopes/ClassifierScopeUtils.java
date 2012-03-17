@@ -9,7 +9,15 @@ import jetbrains.mps.baseLanguage.search.GenericTypesUtil;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import java.util.Set;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
+import java.util.HashMap;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
+import java.util.LinkedHashSet;
 import java.util.List;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.Iterator;
 
 public class ClassifierScopeUtils {
   private ClassifierScopeUtils() {
@@ -37,14 +45,50 @@ public class ClassifierScopeUtils {
   }
 
   public static Map<SNode, SNode> resolveClassifierTypeVars(SNode classifier) {
-    return getCache(classifier).getTypeByTypeVariableMap();
+    return getClassifierAndSuperClassifiersData(classifier).typeByTypeVariable;
   }
 
-  public static List<SNode> getExtendedClassifiers(SNode classifier) {
-    return getCache(classifier).getClassifiers();
+  public static Set<SNode> getExtendedClassifiers(SNode classifier) {
+    return getClassifierAndSuperClassifiersData(classifier).classifiers;
   }
 
-  public static ClassifierAndSuperClassifiersCache getCache(SNode classifier) {
-    return ClassifierAndSuperClassifiersCache.getInstance(classifier);
+  private static ClassifierScopeUtils.ClassifierAndSuperClassifiersData getClassifierAndSuperClassifiersData(final SNode classifier) {
+    return TransactionCacheUtils.getFromCache(ClassifierScopeUtils.class, classifier, new _FunctionTypes._return_P1_E0<ClassifierScopeUtils.ClassifierAndSuperClassifiersData, SNode>() {
+      public ClassifierScopeUtils.ClassifierAndSuperClassifiersData invoke(SNode classifier) {
+        return new ClassifierScopeUtils.ClassifierAndSuperClassifiersData(classifier);
+      }
+    });
+  }
+
+  private static class ClassifierAndSuperClassifiersData {
+    /*package*/ final Set<SNode> classifiers;
+    /*package*/ final Map<SNode, SNode> typeByTypeVariable;
+
+    /*package*/ ClassifierAndSuperClassifiersData(SNode topClassifier) {
+      typeByTypeVariable = MapSequence.fromMap(new HashMap<SNode, SNode>());
+      classifiers = SetSequence.fromSet(new LinkedHashSet<SNode>());
+      collectImplementedAndExtended(topClassifier, null);
+    }
+
+    private void collectImplementedAndExtended(SNode classifier, List<SNode> typeParms) {
+      if ((classifier == null) || SetSequence.fromSet(classifiers).contains(classifier)) {
+        return;
+      }
+      SetSequence.fromSet(classifiers).addElement(classifier);
+      if (ListSequence.fromList(typeParms).isNotEmpty()) {
+        Iterator<SNode> typeVars = ListSequence.fromList(SLinkOperations.getTargets(classifier, "typeVariableDeclaration", true)).iterator();
+        for (SNode typeParm : typeParms) {
+          if (!(typeVars.hasNext())) {
+            break;
+          }
+          SNode typeVar = typeVars.next();
+          MapSequence.fromMap(typeByTypeVariable).put(typeVar, typeParm);
+        }
+      }
+
+      for (SNode superType : ((List<SNode>) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(classifier, "jetbrains.mps.baseLanguage.structure.Classifier"), "virtual_getExtendedClassifierTypes_2201875424516179426", new Class[]{SNode.class}))) {
+        collectImplementedAndExtended(SLinkOperations.getTarget(superType, "classifier", false), SLinkOperations.getTargets(superType, "parameter", true));
+      }
+    }
   }
 }

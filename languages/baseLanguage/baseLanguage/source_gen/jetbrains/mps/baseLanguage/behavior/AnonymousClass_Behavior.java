@@ -5,11 +5,11 @@ package jetbrains.mps.baseLanguage.behavior;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.util.List;
-import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.smodel.structure.BehaviorDescriptor;
@@ -34,10 +34,8 @@ public class AnonymousClass_Behavior {
     return AnonymousClass_Behavior.call_getJavaName_2977939203456914071(thisNode);
   }
 
-  public static List<SNode> virtual_getExtendedClassifiers_2201875424516179426(SNode thisNode) {
-    List<SNode> result = new ArrayList<SNode>();
-    ListSequence.fromList(result).addElement(SLinkOperations.getTarget(thisNode, "classifier", false));
-    return result;
+  public static List<SNode> virtual_getExtendedClassifierTypes_2201875424516179426(SNode thisNode) {
+    return ListSequence.fromListAndArray(new ArrayList<SNode>(), ClassConcept_Behavior.call_getSuperclass_1240936569950(thisNode));
   }
 
   public static String call_getJavaName_2977939203456914071(SNode thisNode) {
