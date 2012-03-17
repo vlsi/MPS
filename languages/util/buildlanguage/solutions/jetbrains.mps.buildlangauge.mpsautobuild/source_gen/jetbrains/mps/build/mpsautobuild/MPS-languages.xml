@@ -117,11 +117,11 @@
     <fail unless="base_dir" message="Property base_dir unspecified." />
     <mkdir dir="${deploy.dir}/MPS/lib/mps-core.jar.tmp/modules/jetbrains.mps.generator" />
     <copy todir="${deploy.dir}/MPS/lib/mps-core.jar.tmp/modules/jetbrains.mps.generator">
-      <fileset file="${base_dir}/core/generator/solutions/jetbrains.mps.generator.msd" />
-      <fileset dir="${base_dir}/core/generator/solutions" includes="icons/**, resources/**" />
+      <fileset file="${base_dir}/core/generator/solutions/generator/jetbrains.mps.generator.msd" />
+      <fileset dir="${base_dir}/core/generator/solutions/generator" includes="icons/**, resources/**" />
     </copy>
-    <copy todir="${deploy.dir}/MPS/lib/mps-core.jar.tmp/modules/jetbrains.mps.generator/generator">
-      <fileset dir="${base_dir}/core/generator/solutions/generator" includes="**/*.mps, **/*.metadata, **/*.history" />
+    <copy todir="${deploy.dir}/MPS/lib/mps-core.jar.tmp/modules/jetbrains.mps.generator/models">
+      <fileset dir="${base_dir}/core/generator/solutions/generator/models" includes="**/*.mps, **/*.metadata, **/*.history" />
     </copy>
   </target>
   <target name="pack.jetbrains.mps.make.runtime">
