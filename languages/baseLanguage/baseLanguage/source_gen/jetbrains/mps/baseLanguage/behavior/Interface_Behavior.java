@@ -75,7 +75,7 @@ public class Interface_Behavior {
   public static List<SNode> virtual_getExtendedClassifierTypes_2201875424516179426(SNode thisNode) {
     Iterable<SNode> extendedClassifiers = ListSequence.fromList(SLinkOperations.getTargets(thisNode, "extendedInterface", true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return (it != null);
+        return (SLinkOperations.getTarget(it, "classifier", false) != null);
       }
     });
     if (Sequence.fromIterable(extendedClassifiers).isEmpty()) {

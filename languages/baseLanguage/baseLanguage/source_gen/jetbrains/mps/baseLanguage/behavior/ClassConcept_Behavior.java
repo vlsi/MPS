@@ -66,14 +66,14 @@ public class ClassConcept_Behavior {
     List<SNode> extendsClassifiers = new ArrayList<SNode>();
     if (!(Classifier_Behavior.call_isSame_4855996797771684010(SNodeOperations.getNode("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Object"), thisNode))) {
       SNode superClassifier = SLinkOperations.getTarget(thisNode, "superclass", true);
-      ListSequence.fromList(extendsClassifiers).addElement(((superClassifier != null) ?
+      ListSequence.fromList(extendsClassifiers).addElement(((SLinkOperations.getTarget(superClassifier, "classifier", false) != null) ?
         superClassifier :
         Classifier_Behavior.call_getThisType_3305065273710880775(SNodeOperations.getNode("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Object"))
       ));
     }
     ListSequence.fromList(extendsClassifiers).addSequence(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "implementedInterface", true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return (it != null);
+        return (SLinkOperations.getTarget(it, "classifier", false) != null);
       }
     }));
     return extendsClassifiers;

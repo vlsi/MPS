@@ -126,6 +126,10 @@ public class Classifier_Behavior {
           public SNode select(SNode it) {
             return SLinkOperations.getTarget(it, "classifier", false);
           }
+        }).where(new IWhereFilter<SNode>() {
+          public boolean accept(SNode it) {
+            return (it != null);
+          }
         })) {
           // todo: ? strange... =( 
           Iterable<SNode> nodes = ListSequence.fromList(Classifier_Behavior.call_getMembers_2201875424515824604(classifier, kind).getAvailableElements(null)).where(new IWhereFilter<SNode>() {
