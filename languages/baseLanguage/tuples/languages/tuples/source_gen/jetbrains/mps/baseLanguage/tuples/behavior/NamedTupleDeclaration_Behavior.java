@@ -10,13 +10,13 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.util.List;
 import java.util.ArrayList;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.baseLanguage.scopes.OverridingPolicies;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.smodel.structure.BehaviorDescriptor;
 import jetbrains.mps.smodel.structure.ConceptRegistry;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import java.util.Set;
 import java.util.HashSet;
@@ -58,6 +58,8 @@ public class NamedTupleDeclaration_Behavior {
     List<SNode> result = new ArrayList<SNode>();
     if ((SLinkOperations.getTarget(SLinkOperations.getTarget(thisNode, "extended", true), "classifier", false) != null)) {
       ListSequence.fromList(result).addElement(SLinkOperations.getTarget(SLinkOperations.getTarget(thisNode, "extended", true), "classifier", false));
+    } else {
+      ListSequence.fromList(result).addElement(SNodeOperations.getNode("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Object"));
     }
     ListSequence.fromList(result).addSequence(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "implements", true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
