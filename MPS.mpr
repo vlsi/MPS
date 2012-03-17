@@ -50,9 +50,9 @@
       <modulePath path="${project}/core/ant/jetbrains.mps.build.antsupport.msd" folder="core" />
       <modulePath path="${project}/core/dependencies/dependencies.msd" folder="core" />
       <modulePath path="${project}/core/findUsages-runtime/runtime.msd" folder="core" />
-      <modulePath path="${project}/core/generator/solutions/jetbrains.mps.generator.msd" folder="core" />
+      <modulePath path="${project}/core/generator/solutions/generator/jetbrains.mps.generator.msd" folder="core" />
       <modulePath path="${project}/core/generator/solutions/tests/tests.msd" folder="core.generator" />
-      <modulePath path="${project}/core/generator/solutions/traceInfo/jetbrains.mps.traceInfo.test.msd" folder="traceInfo" />
+      <modulePath path="${project}/core/generator/solutions/traceInfo/tests/jetbrains.mps.traceInfo.test.msd" folder="traceInfo" />
       <modulePath path="${project}/core/generator/solutions/traceInfo/util/cache.msd" folder="traceInfo" />
       <modulePath path="${project}/core/kernel/dataFlowRuntime/jetbrains.mps.dataFlow.runtime.msd" folder="core.kernel" />
       <modulePath path="${project}/core/kernel/kernelSolution/jetbrains.mps.kernel.msd" folder="core.kernel" />
