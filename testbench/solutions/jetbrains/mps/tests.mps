@@ -1178,7 +1178,7 @@
     </node>
   </root>
   <root id="2712670354707844815">
-    <node role="moduleRef" roleId="pop3.1280144168199507080" type="pop3.SolutionRef" typeId="pop3.1280144168199506908" id="2712670354707844816">
+    <node role="moduleRef" roleId="pop3.1280144168199507080" type="pop3.SolutionRef" typeId="pop3.1280144168199506908" id="9057501376498921026">
       <property name="moduleFQName" nameId="pop3.1280144168199506909" value="jetbrains.mps.traceInfo.test" />
       <property name="moduleID" nameId="pop3.1280144168199506910" value="415bc577-86ca-46a6-b873-4670fd19e169" />
     </node>

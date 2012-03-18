@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<<<<<<< HEAD
 <dependencies version="2" modelHash="bbgudmugi218feuhmz8v7xttbzsjkys">
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-5p0rdl0tgxw43gzmkd4qcpqszqapgi2" />
   <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="-z9apu2jgvnwo2rksn2wr6ei9vh9scw" />
@@ -164,4 +165,7 @@
   <source id="3413212504041565455" name="mps-editor-api.jar" hash="fh27pvagz1f7qk2hhc9zleydv0q5ly" />
   <source id="4155373682043500272" name="mps-resources_en.jar" hash="n34lpnhrackqycq0e2p1am1vvels6u" />
 </dependencies>
+=======
+<dependencies version="2" modelHash="2e1g910xq5559zzvxo3lrzwde9ji4r8" />
+>>>>>>> origin/master
 
