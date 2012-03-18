@@ -4,21 +4,17 @@ package jetbrains.mps.ide.migration.migration21;
 
 import jetbrains.mps.project.MPSProject;
 import java.util.List;
-import jetbrains.mps.smodel.Language;
+
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import com.intellij.openapi.ui.Messages;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.project.Solution;
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
-import jetbrains.mps.smodel.SNode;
 import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.util.NameUtil;
@@ -33,12 +29,10 @@ import jetbrains.mps.ide.newSolutionDialog.NewModuleUtil;
 import jetbrains.mps.project.StandaloneMPSProject;
 import jetbrains.mps.project.structure.modules.SolutionKind;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.mps.smodel.SModelFqName;
 import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
 import java.util.Arrays;
 import jetbrains.mps.ide.platform.refactoring.RefactoringAccess;
-import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.project.ModuleId;
 
@@ -60,7 +54,7 @@ public class PluginMoveHelper {
     });
     Iterable<Language> problems = Sequence.fromIterable(refLangs).where(new IWhereFilter<Language>() {
       public boolean accept(Language it) {
-        return MPSModuleRepository.getInstance().getSolution(makePluginSolutionName(it, SOLUTION_NAME)) != null;
+        return ModuleRepositoryFacade.getInstance().getModule(makePluginSolutionName(it, SOLUTION_NAME), Solution.class) != null;
       }
     });
 
@@ -100,7 +94,7 @@ public class PluginMoveHelper {
         }).visitAll(new IVisitor<SNode>() {
           public void visit(SNode it) {
             String langName = NameUtil.namespaceFromLongName(solution.getModuleFqName());
-            Language lang = MPSModuleRepository.getInstance().getLanguage(langName);
+            Language lang = ModuleRepositoryFacade.getInstance().getModule(langName, Language.class);
             if (lang == null) {
               return;
             }
@@ -147,7 +141,7 @@ public class PluginMoveHelper {
 
   private void movePluginOut(Language l) {
     String solutionName = makePluginSolutionName(l, SOLUTION_NAME);
-    Solution s = MPSModuleRepository.getInstance().getSolution(solutionName);
+    Solution s = ModuleRepositoryFacade.getInstance().getModule(solutionName, Solution.class);
     if (s == null) {
       s = NewModuleUtil.createSolution(solutionName, l.getBundleHome().getDescendant("solutions").getDescendant(SOLUTION_NAME).getPath(), myProject, false);
 

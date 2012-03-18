@@ -26,17 +26,13 @@ import jetbrains.mps.project.structure.modules.DevkitDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.reloading.ClassLoaderManager;
-import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.MPSModuleOwner;
-import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.ToStringComparator;
 import jetbrains.mps.vfs.IFile;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-import java.util.UUID;
 
 public class DevKit extends AbstractModule implements MPSModuleOwner {
   private static final Logger LOG = Logger.getLogger(DevKit.class);
@@ -103,7 +99,7 @@ public class DevKit extends AbstractModule implements MPSModuleOwner {
     MPSModuleRepository repository = MPSModuleRepository.getInstance();
     if (repository.existsModule(devKitDescriptor.getModuleReference())) {
       LOG.error("Loading module " + devKitDescriptor.getNamespace() + " for the second time");
-      return repository.getDevKit(devKitDescriptor.getModuleReference());
+      return ModuleRepositoryFacade.getInstance().getModule(devKitDescriptor.getModuleReference(), DevKit.class);
     }
 
     result.setDevKitDescriptor(devKitDescriptor, false);
@@ -185,7 +181,7 @@ public class DevKit extends AbstractModule implements MPSModuleOwner {
     List<Language> langs = new ArrayList<Language>();
     for (ModuleReference l : myDescriptor.getExportedLanguages()) {
       ModuleReference ref = ModuleReference.fromString(l.getModuleFqName());
-      Language lang = MPSModuleRepository.getInstance().getLanguage(ref);
+      Language lang = ModuleRepositoryFacade.getInstance().getModule(ref, Language.class);
       if (lang != null) {
         langs.add(lang);
       }
@@ -222,7 +218,7 @@ public class DevKit extends AbstractModule implements MPSModuleOwner {
     List<DevKit> result = new ArrayList<DevKit>();
     for (ModuleReference ref : myDescriptor.getExtendedDevkits()) {
       String uid = ref.getModuleFqName();
-      DevKit devKit = MPSModuleRepository.getInstance().getDevKit(uid);
+      DevKit devKit = ModuleRepositoryFacade.getInstance().getModule(uid, DevKit.class);
       if (devKit != null) {
         result.add(devKit);
       }
@@ -248,7 +244,7 @@ public class DevKit extends AbstractModule implements MPSModuleOwner {
     List<Solution> result = new ArrayList<Solution>();
     for (ModuleReference ref : myDescriptor.getExportedSolutions()) {
       String uid = ref.getModuleFqName();
-      Solution solution = MPSModuleRepository.getInstance().getSolution(uid);
+      Solution solution = ModuleRepositoryFacade.getInstance().getModule(uid, Solution.class);
       if (solution == null) continue;
       result.add(solution);
     }

@@ -30,12 +30,12 @@ import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.runtime.BytecodeLocator;
 import jetbrains.mps.smodel.MPSModuleOwner;
 import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 
 import java.net.URL;
-import java.util.UUID;
 
 /**
  * Igor Alshannikov
@@ -83,7 +83,7 @@ public class Solution extends AbstractModule {
     ModuleReference mref = descriptor.getModuleReference();
     MPSModuleRepository repo = MPSModuleRepository.getInstance();
     if (repo.existsModule(mref)) {
-      IModule module = repo.getSolution(mref);
+      IModule module = ModuleRepositoryFacade.getInstance().getModule(mref, Solution.class);
       IFile file = FileSystem.getInstance().getFileByPath("NO FILE");
       ModuleHandle handle = new ModuleHandle(file, module.getModuleDescriptor());
       repo.registerModule(handle, moduleOwner);

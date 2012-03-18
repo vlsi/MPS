@@ -1425,7 +1425,7 @@ public final class SNode {
 
   public Language getLanguage() {
     String languageNamespace = getLanguageNamespace();
-    return MPSModuleRepository.getInstance().getLanguage(languageNamespace);
+    return ModuleRepositoryFacade.getInstance().getModule(languageNamespace,Language.class);
   }
 
   public void setRoleInParent(String newRoleInParent) {//todo add undo

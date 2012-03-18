@@ -8,13 +8,10 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.fileTypes.MPSFileTypesManager;
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Computable;
-import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.smodel.MPSModuleRepository;
 import com.intellij.openapi.actionSystem.Presentation;
 
 public class ShowInLogicalView extends AbstractVcsAction {
@@ -42,7 +39,7 @@ public class ShowInLogicalView extends AbstractVcsAction {
     if (MPSFileTypesManager.instance().isModuleFile(selectedFile)) {
       IModule module = ModelAccess.instance().runReadAction(new Computable<IModule>() {
         public IModule compute() {
-          return MPSModuleRepository.getInstance().getModuleByFile(VirtualFileUtils.toIFile(selectedFile));
+          return ModuleFileTracker.getInstance().getModuleByFile(VirtualFileUtils.toIFile(selectedFile));
         }
       });
       if (module != null) {

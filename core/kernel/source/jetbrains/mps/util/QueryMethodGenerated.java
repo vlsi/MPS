@@ -162,7 +162,7 @@ public class QueryMethodGenerated implements CoreComponent {
 
       assert namespace.endsWith(".structure");
       String languageNamespace = className.substring(0, namespace.length() - ".structure".length());
-      Language l = MPSModuleRepository.getInstance().getLanguage(languageNamespace);
+      Language l = ModuleRepositoryFacade.getInstance().getModule(languageNamespace, Language.class);
 
 
       Class cls;

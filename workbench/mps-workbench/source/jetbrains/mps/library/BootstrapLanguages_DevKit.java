@@ -17,12 +17,12 @@ package jetbrains.mps.library;
 
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.structure.modules.ModuleReference;
-import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.ModuleRepositoryFacade;
 
 public class BootstrapLanguages_DevKit {
   public static final ModuleReference MODULE_REFERENCE = ModuleReference.fromString("e073aac8-8c71-4c23-be71-86bf7a6df0a2(jetbrains.mps.devkit.bootstrap-languages)");
 
   public static DevKit get() {
-    return MPSModuleRepository.getInstance().getDevKit(MODULE_REFERENCE);
+    return ModuleRepositoryFacade.getInstance().getModule(MODULE_REFERENCE, DevKit.class);
   }
 }

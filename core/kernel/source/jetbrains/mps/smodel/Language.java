@@ -97,7 +97,7 @@ public class Language extends AbstractModule implements MPSModuleOwner {
     MPSModuleRepository repository = MPSModuleRepository.getInstance();
     if (repository.existsModule(descriptor.getModuleReference())) {
       LOG.error("Loading module " + descriptor.getNamespace() + " for the second time");
-      return repository.getLanguage(descriptor.getModuleReference());
+      return ModuleRepositoryFacade.getInstance().getModule(descriptor.getModuleReference(),Language.class);
     }
 
     language.setLanguageDescriptor(descriptor, false);

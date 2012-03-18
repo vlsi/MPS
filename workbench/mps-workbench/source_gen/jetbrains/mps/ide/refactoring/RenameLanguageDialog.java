@@ -15,6 +15,7 @@ import java.awt.GridBagConstraints;
 import java.awt.Insets;
 import javax.swing.JLabel;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.util.Computable;
 import javax.swing.JComponent;
 import jetbrains.mps.ide.dialogs.DialogDimensionsSettings;
@@ -112,7 +113,7 @@ public class RenameLanguageDialog extends BaseDialog {
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
           langs.add(myLanguage);
-          langs.addAll(MPSModuleRepository.getInstance().getAllExtendingLanguages(myLanguage));
+          langs.addAll(ModuleRepositoryFacade.getInstance().getAllExtendingLanguages(myLanguage));
         }
       });
       for (final Language l : langs) {

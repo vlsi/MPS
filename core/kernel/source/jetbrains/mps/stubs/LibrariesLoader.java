@@ -104,7 +104,7 @@ public class LibrariesLoader implements CoreComponent {
       if (myLoadedSolutions.containsKey(id)) continue;
 
       myLoadedSolutions.put(id, libDescrs.get(d));
-      Solution library = myModuleRepository.getSolution(new ModuleReference(d.getModuleName(), d.getModuleId()));
+      Solution library = ModuleRepositoryFacade.getInstance().getModule(new ModuleReference(d.getModuleName(), d.getModuleId()), Solution.class);
       assert library != null : d.getModuleName();
 
       SolutionDescriptor sd = library.getModuleDescriptor();
@@ -126,7 +126,7 @@ public class LibrariesLoader implements CoreComponent {
   private Map<BaseLibStubDescriptor, ModuleReference> createLibDescrs() {
     Map<BaseLibStubDescriptor, ModuleReference> result = new HashMap<BaseLibStubDescriptor, ModuleReference>();
 
-    List<Language> languages = myModuleRepository.getAllLanguages();
+    List<Language> languages = (List<Language>) ModuleRepositoryFacade.getInstance().getAllModules(Language.class);
     for (Language l : languages) {
       SModelDescriptor descriptor = LanguageAspect.STUBS.get(l);
       if (descriptor == null) continue;

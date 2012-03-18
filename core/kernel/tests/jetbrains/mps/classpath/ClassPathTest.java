@@ -38,8 +38,9 @@ import jetbrains.mps.project.structure.project.ProjectDescriptor;
 import jetbrains.mps.reloading.ClassPathFactory;
 import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.reloading.JarFileClassPathItem;
-import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.util.PathManager;
 import jetbrains.mps.vfs.FileSystem;
@@ -100,8 +101,8 @@ public class ClassPathTest extends BaseMPSTest {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         List<IModule> modulesToCheck = new ArrayList<IModule>();
-        modulesToCheck.addAll(MPSModuleRepository.getInstance().getAllLanguages());
-        modulesToCheck.addAll(MPSModuleRepository.getInstance().getAllSolutions());
+        modulesToCheck.addAll(ModuleRepositoryFacade.getInstance().getAllModules(Language.class));
+        modulesToCheck.addAll(ModuleRepositoryFacade.getInstance().getAllModules(Solution.class));
         modulesToCheck.removeAll(project.getProjectModules(Solution.class));
 
         //collect class2module info

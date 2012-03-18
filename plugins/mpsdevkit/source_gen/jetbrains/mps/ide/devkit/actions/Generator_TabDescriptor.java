@@ -4,8 +4,9 @@ package jetbrains.mps.ide.devkit.actions;
 
 import jetbrains.mps.ide.editorTabs.EditorTabDescriptor;
 import javax.swing.Icon;
+
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.IconUtil;
-import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.annotations.Nullable;
 import java.util.List;
@@ -19,9 +20,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleReference;
-import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.workbench.MPSDataKeys;
@@ -29,9 +27,7 @@ import com.intellij.ide.DataManager;
 import javax.swing.JFrame;
 import com.intellij.openapi.wm.WindowManager;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.kernel.model.SModelUtil;
-import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.ide.dialogs.project.creation.NewGeneratorDialog;
 import java.util.ArrayList;
 import jetbrains.mps.generator.GenerationFacade;
@@ -99,7 +95,7 @@ public class Generator_TabDescriptor extends EditorTabDescriptor {
       }
       if (isNeedRootTemplate) {
         for (ModuleReference moduleRef : SNodeOperations.getModel(node).importedLanguages()) {
-          Language language = MPSModuleRepository.getInstance().getLanguage(moduleRef);
+          Language language = ModuleRepositoryFacade.getInstance().getModule(moduleRef, Language.class);
           if (language == null) {
             continue;
           }

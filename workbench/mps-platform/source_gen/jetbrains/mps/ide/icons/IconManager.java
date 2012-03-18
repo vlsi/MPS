@@ -7,19 +7,15 @@ import java.awt.MediaTracker;
 import java.util.Map;
 import javax.swing.Icon;
 import java.util.HashMap;
-import jetbrains.mps.smodel.LanguageAspect;
+
+import jetbrains.mps.smodel.*;
+
 import java.awt.Component;
 import java.awt.Graphics;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.Computable;
-import jetbrains.mps.smodel.SNodeOperations;
 import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelStereotype;
-import jetbrains.mps.smodel.DefaultSModelDescriptor;
 import com.intellij.ui.LayeredIcon;
 import com.intellij.util.Icons;
 import com.intellij.ui.RowIcon;
@@ -27,20 +23,15 @@ import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.Language;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.util.MacrosFactory;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.smodel.SNodeUtil;
-import jetbrains.mps.smodel.MPSModuleRepository;
+
 import java.lang.reflect.Method;
-import jetbrains.mps.smodel.SModelReference;
-import jetbrains.mps.smodel.SModelDescriptor;
+
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.DevKit;
-import jetbrains.mps.smodel.MPSModuleOwner;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.vfs.IFile;
 import javax.swing.ImageIcon;
@@ -181,7 +172,7 @@ public class IconManager {
   public static Icon getIconForNamespace(String namespace) {
     String className = namespace + ".icons.Icons";
     try {
-      Language language = MPSModuleRepository.getInstance().getLanguage(namespace);
+      Language language = ModuleRepositoryFacade.getInstance().getModule(namespace, Language.class);
       if (language == null) {
         LOG.error("Can't find a language " + namespace);
       } else {

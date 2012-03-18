@@ -20,7 +20,7 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.project.structure.modules.mappingpriorities.*;
 import jetbrains.mps.smodel.Generator;
-import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.language.LanguageRuntime;
 
@@ -108,7 +108,7 @@ public class TemplateUtil {
   }
 
   public static TemplateModule createInterpretedGenerator(LanguageRuntime sourceLanguage, String moduleReference) {
-    Generator g = MPSModuleRepository.getInstance().getGenerator(ModuleReference.fromString(moduleReference));
+    Generator g = ModuleRepositoryFacade.getInstance().getModule(ModuleReference.fromString(moduleReference), Generator.class);
     if (g == null) {
       LOG.error("language " + sourceLanguage.getNamespace() + " doesn't contain generator `" + moduleReference + "': try to regenerate language");
       return null;

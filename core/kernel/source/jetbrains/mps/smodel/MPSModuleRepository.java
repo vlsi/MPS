@@ -83,8 +83,7 @@ public class MPSModuleRepository implements CoreComponent {
   public <TM extends IModule> TM registerModule(ModuleHandle handle, MPSModuleOwner owner) {
     ModelAccess.assertLegalWrite();
 
-    String canonicalPath = IFileUtils.getCanonicalPath(handle.getFile());
-    IModule module = myCanonicalFileToModuleMap.get(canonicalPath);
+    IModule module   = ModuleFileTracker.getInstance().getModuleByFile(handle.getFile());
     if (module == null) {
       if (handle.getDescriptor() instanceof LanguageDescriptor) {
         module = Language.createLanguage(null, handle, owner);
@@ -331,94 +330,8 @@ public class MPSModuleRepository implements CoreComponent {
 
   //-------------------DEPRECATED
 
+  @Deprecated //use ModuleRepositoryFacade instead
   public IModule getModule(@NotNull ModuleReference ref) {
-    if (ref.getModuleId() != null) {
-      return myIdToModuleMap.get(ref.getModuleId());
-    }
-    return myFqNameToModulesMap.get(ref.getModuleFqName());
+    return ModuleRepositoryFacade.getInstance().getModule(ref);
   }
-
-  public Set<Language> getAllExtendingLanguages(Language l) {
-    Set<Language> result = new HashSet<Language>();
-    for (Language lang : getAllLanguages()) {
-      if (lang.getExtendedLanguages().contains(l)) {
-        result.add(lang);
-      }
-    }
-    return result;
-  }
-
-  public DevKit getDevKit(String namespace) {
-    return (DevKit) myFqNameToModulesMap.get(namespace);
-  }
-
-  public DevKit getDevKit(ModuleReference ref) {
-    return (DevKit) getModule(ref);
-  }
-
-  public Solution getSolution(String namespace) {
-    return (Solution) myFqNameToModulesMap.get(namespace);
-  }
-
-  public Solution getSolution(ModuleReference ref) {
-    return (Solution) getModule(ref);
-  }
-
-  public <MT extends IModule> List<MT> getModules(MPSModuleOwner moduleOwner, Class<MT> cls) {
-    assertCanRead();
-
-    List<MT> list = new LinkedList<MT>();
-    Set<IModule> modules = myModuleToOwners.getBySecond(moduleOwner);
-    if (modules != null) {
-      for (IModule m : modules) {
-        if (cls == null || cls.isInstance(m)) {
-          list.add((MT) m);
-        }
-      }
-    }
-    return list;
-  }
-
-  public List<Language> getAllLanguages() {
-    return getAllModules(Language.class);
-  }
-
-  public List<Solution> getAllSolutions() {
-    return getAllModules(Solution.class);
-  }
-
-  public List<DevKit> getAllDevkits() {
-    return getAllModules(DevKit.class);
-  }
-
-  public List<Generator> getAllGenerators() {
-    return getAllModules(Generator.class);
-  }
-
-  public <MT extends IModule> List<MT> getAllModules(Class<MT> cls) {
-    assertCanRead();
-
-    List<MT> result = new ArrayList<MT>();
-    for (IModule module : myModules) {
-      if (cls.isInstance(module)) result.add((MT) module);
-    }
-    return result;
-  }
-
-  public List<Language> getLanguages(MPSModuleOwner moduleOwner) {
-    return getModules(moduleOwner, Language.class);
-  }
-
-  public Language getLanguage(String namespace) {
-    return (Language) myFqNameToModulesMap.get(namespace);
-  }
-
-  public Language getLanguage(ModuleReference ref) {
-    return (Language) getModule(ref);
-  }
-
-  public Generator getGenerator(ModuleReference ref) {
-    return (Generator) getModule(ref);
-  }
-
 }

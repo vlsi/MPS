@@ -4,18 +4,14 @@ package jetbrains.mps.lang.script.runtime;
 
 import jetbrains.mps.logging.Logger;
 import java.util.List;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.LanguageAspect;
-import jetbrains.mps.smodel.SModel;
+
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
-import jetbrains.mps.smodel.SNodePointer;
-import jetbrains.mps.smodel.IOperationContext;
+
 import java.util.ArrayList;
 import jetbrains.mps.lang.script.util.ScriptNameUtil;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.smodel.MPSModuleRepository;
+
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 import jetbrains.mps.kernel.model.SModelUtil;
@@ -56,7 +52,7 @@ public class MigrationScriptUtil {
     Class<BaseMigrationScript> aClass;
     String languageNamespace = NameUtil.namespaceFromLongName(fqClassName);
     languageNamespace = languageNamespace.substring(0, languageNamespace.length() - ".scripts".length());
-    Language l = MPSModuleRepository.getInstance().getLanguage(languageNamespace);
+    Language l = ModuleRepositoryFacade.getInstance().getModule(languageNamespace, Language.class);
     if (l == null) {
       LOG.error("can't find a language " + languageNamespace);
       return null;
