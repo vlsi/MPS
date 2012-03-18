@@ -207,14 +207,16 @@ public class MPSModuleRepository implements CoreComponent {
     return Collections.unmodifiableSet(myModules);
   }
 
-  public List<IModule> getModules(MPSModuleOwner moduleOwner) {
-    return getModules(moduleOwner, IModule.class);
+  public Set<IModule> getModules(MPSModuleOwner moduleOwner) {
+    assertCanRead();
+
+    return Collections.unmodifiableSet(myModuleToOwners.getBySecond(moduleOwner));
   }
 
   public Set<MPSModuleOwner> getOwners(IModule module) {
     assertCanRead();
 
-    return myModuleToOwners.getByFirst(module);
+    return Collections.unmodifiableSet(myModuleToOwners.getByFirst(module));
   }
 
   public IModule getModuleByFqName(String fqName) {
