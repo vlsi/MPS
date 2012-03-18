@@ -334,46 +334,6 @@ public class MPSModuleRepository implements CoreComponent {
     myFqNameToModulesMap.put(module.getModuleFqName(), module);
   }
 
-  //-----------------by file
-
-  private Map<String, IModule> myCanonicalFileToModuleMap = new ConcurrentHashMap<String, IModule>();
-
-  public IModule getModuleByFile(IFile file) {
-    assertCanRead();
-
-    return myCanonicalFileToModuleMap.get(IFileUtils.getCanonicalPath(file));
-  }
-
-  private void addCanonicalFile(@Nullable IFile file, IModule module) {
-    if (file != null) {
-      String canonicalDescriptorPath = IFileUtils.getCanonicalPath(file);
-      if (canonicalDescriptorPath != null && !myCanonicalFileToModuleMap.containsKey(canonicalDescriptorPath)) {
-        myCanonicalFileToModuleMap.put(canonicalDescriptorPath, module);
-      }
-    }
-  }
-
-  private void removeModuleFile(@Nullable IFile file) {
-    if (file != null) {
-      String canonicalPath = IFileUtils.getCanonicalPath(file);
-      if (canonicalPath != null) {
-        myCanonicalFileToModuleMap.remove(canonicalPath);
-      }
-    }
-  }
-
-  public List<IModule> findModulesUnderDir(String dirPath) {
-    assertCanRead();
-
-    List<IModule> result = new ArrayList<IModule>();
-    for (String path : myCanonicalFileToModuleMap.keySet()) {
-      if (path.startsWith(dirPath)) {
-        result.add(myCanonicalFileToModuleMap.get(path));
-      }
-    }
-    return result;
-  }
-
   //-------------------DEPRECATED
 
   public IModule getModule(@NotNull ModuleReference ref) {

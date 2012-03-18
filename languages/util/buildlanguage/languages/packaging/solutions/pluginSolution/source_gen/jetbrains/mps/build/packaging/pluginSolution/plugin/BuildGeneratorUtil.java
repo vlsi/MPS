@@ -16,10 +16,11 @@ import java.io.File;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.util.Computable;
-import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.ModuleFileTracker;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
 import jetbrains.mps.project.structure.model.ModelRoot;
 import jetbrains.mps.project.persistence.SolutionDescriptorPersistence;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.library.ModulesMiner;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 
@@ -58,7 +59,7 @@ public class BuildGeneratorUtil {
     if (solutionFile.exists()) {
       IModule module = ModelAccess.instance().runReadAction(new Computable<IModule>() {
         public IModule compute() {
-          return MPSModuleRepository.getInstance().getModuleByFile(solutionFile);
+          return ModuleFileTracker.getInstance().getModuleByFile(solutionFile);
         }
       });
       if (module instanceof Solution) {

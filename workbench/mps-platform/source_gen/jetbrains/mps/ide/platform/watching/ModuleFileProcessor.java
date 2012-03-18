@@ -30,6 +30,7 @@ import java.util.ArrayList;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.ModuleFileTracker;
 import java.util.Collections;
 
 /*package*/ class ModuleFileProcessor extends EventProcessor {
@@ -181,15 +182,15 @@ import java.util.Collections;
 
   private static List<IModule> getModulesByFile(final VirtualFile file) {
     final Wrappers._T<List<IModule>> res = new Wrappers._T<List<IModule>>(ListSequence.fromList(new ArrayList<IModule>()));
-    final MPSModuleRepository repo = MPSModuleRepository.getInstance();
+    MPSModuleRepository repo = MPSModuleRepository.getInstance();
     final IFile mpsFile = FileSystem.getInstance().getFileByPath(file.getPath());
 
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         if (file.isDirectory()) {
-          res.value = repo.findModulesUnderDir(file.getPath());
+          res.value = ModuleFileTracker.getInstance().findModulesUnderDir(file.getPath());
         } else {
-          IModule module = repo.getModuleByFile(mpsFile);
+          IModule module = ModuleFileTracker.getInstance().getModuleByFile(mpsFile);
           res.value = (module == null ?
             Collections.<IModule>emptyList() :
             Collections.singletonList(module)
