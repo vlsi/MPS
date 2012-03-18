@@ -113,8 +113,6 @@ public class MPSModuleRepository implements CoreComponent {
     if (existsModule(module.getModuleReference())) {
       throw new IllegalStateException("Couldn't add module \"" + module.getModuleFqName() + "\" : this module is already registered with this very owner: " + owner);
     }
-    addCanonicalFile(module.getDescriptorFile(), module);
-    addCanonicalFile(ModulesMiner.getRealDescriptorFile(module), module);
 
     String moduleFqName = module.getModuleFqName();
 
@@ -155,9 +153,6 @@ public class MPSModuleRepository implements CoreComponent {
     if (module.getModuleReference().getModuleId() != null) {
       myIdToModuleMap.remove(module.getModuleReference().getModuleId());
     }
-
-    removeModuleFile(descriptorFile);
-    removeModuleFile(ModulesMiner.getRealDescriptorFile(module));
 
     fireModuleRemoved(module);
   }

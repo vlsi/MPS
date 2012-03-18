@@ -15,6 +15,8 @@
  */
 package jetbrains.mps.smodel;
 
+import jetbrains.mps.components.CoreComponent;
+import jetbrains.mps.library.ModulesMiner;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.IFileUtils;
@@ -25,10 +27,31 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
-public class ModuleFileTracker {
+public class ModuleFileTracker implements CoreComponent {
+  private static ModuleFileTracker INSTANCE;
+  private MPSModuleRepository myRepo;
+  private final ModuleRepositoryAdapter myListener = new MyModuleRepositoryListener();
 
-  public static ModuleFileTracker getInstance(){
-    return null;
+  public ModuleFileTracker(MPSModuleRepository repo) {
+    myRepo = repo;
+  }
+
+  public static ModuleFileTracker getInstance() {
+    return INSTANCE;
+  }
+
+  public void init() {
+    if (INSTANCE != null) {
+      throw new IllegalStateException("double initialization");
+    }
+
+    myRepo.addModuleRepositoryListener(myListener);
+    INSTANCE = this;
+  }
+
+  public void dispose() {
+    INSTANCE = null;
+    myRepo.removeModuleRepositoryListener(myListener);
   }
 
   private Map<String, IModule> myCanonicalFileToModuleMap = new ConcurrentHashMap<String, IModule>();
@@ -65,5 +88,19 @@ public class ModuleFileTracker {
     return result;
   }
 
+  private class MyModuleRepositoryListener extends ModuleRepositoryAdapter {
+    public void beforeModuleRemoved(IModule module) {
+      IFile file = module.getDescriptorFile();
+      if (file == null) return;
+      removeModuleFile(file);
+      removeModuleFile(ModulesMiner.getRealDescriptorFile(module));
+    }
 
+    public void moduleAdded(IModule module) {
+      IFile file = module.getDescriptorFile();
+      if (file == null) return;
+      addCanonicalFile(file, module);
+      addCanonicalFile(ModulesMiner.getRealDescriptorFile(module), module);
+    }
+  }
 }
