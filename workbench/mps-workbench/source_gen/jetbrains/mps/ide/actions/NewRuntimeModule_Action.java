@@ -18,6 +18,7 @@ import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.workbench.choose.modules.BaseModuleModel;
 import com.intellij.openapi.project.Project;
@@ -90,7 +91,7 @@ public class NewRuntimeModule_Action extends BaseAction {
       final List<IModule> modules = ListSequence.fromList(new ArrayList<IModule>());
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
-          ListSequence.fromList(modules).addSequence(ListSequence.fromList(MPSModuleRepository.getInstance().getAllModules()));
+          ListSequence.fromList(modules).addSequence(SetSequence.fromSet(MPSModuleRepository.getInstance().getAllModules()));
         }
       });
       BaseModuleModel baseSolutionModel = new BaseModuleModel(((Project) MapSequence.fromMap(_params).get("project")), "runtime module") {

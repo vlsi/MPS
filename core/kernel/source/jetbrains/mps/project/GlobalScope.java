@@ -76,7 +76,7 @@ public class GlobalScope extends BaseScope implements CoreComponent {
   }
 
   public Iterable<IModule> getVisibleModules() {
-    return Collections.unmodifiableList(myMPSModuleRepository.getAllModules());
+    return Collections.unmodifiableSet(myMPSModuleRepository.getAllModules());
   }
 
   public SModelDescriptor getModelDescriptor(SModelReference modelReference) {

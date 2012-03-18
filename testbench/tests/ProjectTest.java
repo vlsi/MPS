@@ -37,10 +37,7 @@ import org.junit.runners.model.FrameworkMethod;
 import org.junit.runners.model.TestClass;
 
 import java.io.File;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.List;
+import java.util.*;
 
 
 /**
@@ -105,13 +102,15 @@ public class ProjectTest {
     HELPER.setMacro("samples_home", System.getProperty("user.dir") + "/samples");
     List<Object[]> fixtures = new ArrayList<Object[]>();
     mpsProject = TestMain.loadProject(new File(System.getProperty("user.dir") + PROJECT));
-    List<IModule> allModules = ModelAccess.instance().runReadAction(new Computable<List<IModule>>() {
+    Set<IModule> allModules = ModelAccess.instance().runReadAction(new Computable<Set<IModule>>() {
       @Override
-      public List<IModule> compute() {
+      public Set<IModule> compute() {
         return MPSModuleRepository.getInstance().getAllModules();
       }
     });
-    Collections.sort(allModules, new Comparator<IModule>() {
+    
+    List<IModule> mlist=new ArrayList<IModule>(allModules);
+    Collections.sort(mlist, new Comparator<IModule>() {
       @Override
       public int compare(IModule m1, IModule m2) {
         String fqName1 = m1.getModuleFqName();
@@ -119,19 +118,16 @@ public class ProjectTest {
         return fqName1.compareTo(fqName2);
       }
     });
-    for (IModule module : allModules) {
-      if (needsGeneration(module) && !(module instanceof Generator)) {
-        fixtures.add(new Object[]{new Fixture(module, mpsProject)});
-      }
+    for (IModule module : mlist) {
+      if (!needsGeneration(module) || module instanceof Generator) continue;
+      fixtures.add(new Object[]{new Fixture(module, mpsProject)});
     }
     return fixtures;
   }
 
   private static boolean needsGeneration(IModule module) {
     for (SModelDescriptor descriptor : module.getOwnModelDescriptors()) {
-      if (descriptor.isGeneratable()) {
-        return true;
-      }
+      if (descriptor.isGeneratable()) return true;
     }
     return false;
   }

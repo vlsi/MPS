@@ -683,7 +683,7 @@
     <nodeInfo nodeId="8171674901904390895" fileName="UpgradeModulePersistenceGlobally_Action.java" startLine="29" startPosition="27" endLine="32" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="8171674901904390895" fileName="UpgradeModulePersistenceGlobally_Action.java" startLine="29" startPosition="27" endLine="32" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="8171674901904390895" fileName="UpgradeModulePersistenceGlobally_Action.java" startLine="37" startPosition="95" endLine="40" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8171674901904390904" fileName="UpgradeModulePersistenceGlobally_Action.java" startLine="46" startPosition="103" endLine="49" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8171674901904390904" fileName="UpgradeModulePersistenceGlobally_Action.java" startLine="46" startPosition="101" endLine="49" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="8171674901904390895" fileName="UpgradeModulePersistenceGlobally_Action.java" startLine="52" startPosition="27" endLine="55" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="8171674901904390895" fileName="UpgradeModulePersistenceGlobally_Action.java" startLine="52" startPosition="27" endLine="55" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="8171674901904390895" fileName="UpgradeModulePersistenceGlobally_Action.java" startLine="19" startPosition="0" endLine="24" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="UpgradeModulePersistenceGlobally_Action#()V" />
@@ -709,7 +709,7 @@
     </scopeInfo>
     <scopeInfo nodeId="8171674901904390895" fileName="UpgradeModulePersistenceGlobally_Action.java" startLine="29" startPosition="27" endLine="33" endPosition="44" />
     <scopeInfo nodeId="8171674901904390895" fileName="UpgradeModulePersistenceGlobally_Action.java" startLine="37" startPosition="95" endLine="41" endPosition="16" />
-    <scopeInfo nodeId="8171674901904390903" fileName="UpgradeModulePersistenceGlobally_Action.java" startLine="46" startPosition="103" endLine="50" endPosition="22" />
+    <scopeInfo nodeId="8171674901904390903" fileName="UpgradeModulePersistenceGlobally_Action.java" startLine="46" startPosition="101" endLine="50" endPosition="22" />
     <scopeInfo nodeId="8171674901904390895" fileName="UpgradeModulePersistenceGlobally_Action.java" startLine="19" startPosition="0" endLine="24" endPosition="3" />
     <scopeInfo nodeId="8171674901904390895" fileName="UpgradeModulePersistenceGlobally_Action.java" startLine="45" startPosition="9" endLine="51" endPosition="7" />
     <scopeInfo nodeId="8171674901904390898" fileName="UpgradeModulePersistenceGlobally_Action.java" startLine="45" startPosition="9" endLine="51" endPosition="7">
@@ -883,7 +883,7 @@
     <nodeInfo nodeId="8270100142762047306" fileName="OptimizeImportsInGlobalScope_Action.java" startLine="49" startPosition="5" endLine="50" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8270100142762047306" fileName="OptimizeImportsInGlobalScope_Action.java" startLine="51" startPosition="62" endLine="52" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8270100142762047306" fileName="OptimizeImportsInGlobalScope_Action.java" startLine="53" startPosition="5" endLine="54" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8270100142762047316" fileName="OptimizeImportsInGlobalScope_Action.java" startLine="59" startPosition="103" endLine="60" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8270100142762047316" fileName="OptimizeImportsInGlobalScope_Action.java" startLine="59" startPosition="101" endLine="60" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8270100142762047320" fileName="OptimizeImportsInGlobalScope_Action.java" startLine="60" startPosition="27" endLine="61" endPosition="132" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8270100142762047330" fileName="OptimizeImportsInGlobalScope_Action.java" startLine="62" startPosition="41" endLine="63" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8270100142762047345" fileName="OptimizeImportsInGlobalScope_Action.java" startLine="64" startPosition="48" endLine="65" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -928,7 +928,7 @@
     <scopeInfo nodeId="8270100142762047306" fileName="OptimizeImportsInGlobalScope_Action.java" startLine="28" startPosition="0" endLine="33" endPosition="3" />
     <scopeInfo nodeId="8270100142762047306" fileName="OptimizeImportsInGlobalScope_Action.java" startLine="35" startPosition="89" endLine="43" endPosition="5" />
     <scopeInfo nodeId="8270100142762047306" fileName="OptimizeImportsInGlobalScope_Action.java" startLine="46" startPosition="95" endLine="54" endPosition="16" />
-    <scopeInfo nodeId="8270100142762047315" fileName="OptimizeImportsInGlobalScope_Action.java" startLine="59" startPosition="103" endLine="69" endPosition="35">
+    <scopeInfo nodeId="8270100142762047315" fileName="OptimizeImportsInGlobalScope_Action.java" startLine="59" startPosition="101" endLine="69" endPosition="35">
       <varInfo nodeId="8270100142762047321" varName="helper" />
       <varInfo nodeId="8270100142762047317" varName="report" />
     </scopeInfo>
@@ -1146,8 +1146,8 @@
     <nodeInfo nodeId="8325776762397714308" fileName="plugin.xml" startLine="12" startPosition="34" endLine="12" endPosition="35" conceptFqName="jetbrains.mps.gtext.structure.GText" />
     <nodeInfo nodeId="8325776762397714308" fileName="plugin.xml" startLine="12" startPosition="35" endLine="12" endPosition="35" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="8325776762397714308" fileName="plugin.xml" startLine="12" startPosition="35" endLine="12" endPosition="35" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
-    <nodeInfo nodeId="8325776762397714308" fileName="plugin.xml" startLine="12" startPosition="35" endLine="12" endPosition="37" conceptFqName="jetbrains.mps.gtext.structure.GText" />
     <nodeInfo nodeId="8325776762397714308" fileName="plugin.xml" startLine="12" startPosition="35" endLine="12" endPosition="35" conceptFqName="jetbrains.mps.gtext.structure.GText" />
+    <nodeInfo nodeId="8325776762397714308" fileName="plugin.xml" startLine="12" startPosition="35" endLine="12" endPosition="37" conceptFqName="jetbrains.mps.gtext.structure.GText" />
     <nodeInfo nodeId="8325776762397714308" fileName="plugin.xml" startLine="12" startPosition="37" endLine="12" endPosition="49" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="8325776762397714308" fileName="plugin.xml" startLine="12" startPosition="37" endLine="12" endPosition="49" conceptFqName="jetbrains.mps.gtext.structure.GText" />
     <nodeInfo nodeId="8325776762397714308" fileName="plugin.xml" startLine="12" startPosition="49" endLine="12" endPosition="50" conceptFqName="jetbrains.mps.gtext.structure.GText" />

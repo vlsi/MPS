@@ -10,7 +10,7 @@ import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import java.util.Collection;
@@ -50,7 +50,7 @@ public class AddSourcesToModelRoots_Action extends BaseAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      for (IModule module : ListSequence.fromList(MPSModuleRepository.getInstance().getAllModules())) {
+      for (IModule module : SetSequence.fromSet(MPSModuleRepository.getInstance().getAllModules())) {
         ModuleDescriptor descriptor = module.getModuleDescriptor();
         if (descriptor == null) {
           continue;
