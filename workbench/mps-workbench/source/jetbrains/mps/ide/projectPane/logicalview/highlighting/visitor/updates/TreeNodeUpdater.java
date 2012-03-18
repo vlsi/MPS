@@ -21,6 +21,7 @@ import com.intellij.util.ui.Timer;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
 import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.Pair;
 
 import java.util.List;
@@ -34,7 +35,7 @@ public class TreeNodeUpdater {
   public TreeNodeUpdater() {
     myTimer = new Timer("ProjectPane Tree Updater", 500) {
       protected void onTimer() throws InterruptedException {
-        ApplicationManager.getApplication().invokeLater(new Runnable() {
+        ModelAccess.instance().runReadInEDT(new Runnable() {
           public void run() {
             process();
           }
