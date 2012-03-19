@@ -32,6 +32,7 @@ import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.smodel.persistence.IModelRootManager;
 import jetbrains.mps.util.*;
+import jetbrains.mps.util.misc.hash.*;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import org.apache.commons.lang.ObjectUtils;
@@ -40,6 +41,8 @@ import org.jetbrains.annotations.NotNull;
 import java.io.IOException;
 import java.net.URL;
 import java.util.*;
+import java.util.HashSet;
+import java.util.LinkedHashSet;
 
 public abstract class AbstractModule implements IModule {
   private static final Logger LOG = Logger.getLogger(AbstractModule.class);
@@ -445,18 +448,22 @@ public abstract class AbstractModule implements IModule {
     return result;
   }
 
-  public void updateModelsSet() {
-    mySModelRoots.clear();
+  public final void updateModelsSet() {
+    mySModelRoots = doUpdateModelsSet();
+    fireModuleInitialized();
+  }
 
+  protected Set<SModelRoot> doUpdateModelsSet() {
     List<SModelReference> allLoadedModels = new ArrayList<SModelReference>();
     ModuleDescriptor descriptor = getModuleDescriptor();
+    Set<SModelRoot> result = new jetbrains.mps.util.misc.hash.HashSet<SModelRoot>();
     if (descriptor != null) {
       SModelRepository smRepo = SModelRepository.getInstance();
       Collection<ModelRoot> roots = descriptor.getModelRoots();
       for (ModelRoot modelRoot : roots) {
         try {
           SModelRoot root = new SModelRoot(modelRoot);
-          mySModelRoots.add(root);
+          result.add(root);
           IModelRootManager manager = root.getManager();
           if (manager == null) continue;
           //model with model root manager not yet loaded - should be loaded after classes reloading
@@ -481,8 +488,7 @@ public abstract class AbstractModule implements IModule {
         smRepo.unRegisterModelDescriptor(md, this);
       }
     }
-
-    fireModuleInitialized();
+    return result;
   }
 
   protected void fireModuleInitialized() {
