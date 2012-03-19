@@ -106,10 +106,6 @@ public class Language extends AbstractModule implements MPSModuleOwner {
       }
     });
 
-    for (Generator generator : getGenerators()) {
-      generator.dispose();
-    }
-
     super.reloadAfterDescriptorChange();
     revalidateGenerators();
   }
@@ -208,9 +204,13 @@ public class Language extends AbstractModule implements MPSModuleOwner {
   }
 
   private void revalidateGenerators() {
+    MPSModuleRepository repo = MPSModuleRepository.getInstance();
+    for (Generator g : getGenerators()) {
+      repo.unregisterModule(g, this);
+    }
     for (GeneratorDescriptor generatorDescriptor : getModuleDescriptor().getGenerators()) {
       Generator generator = new Generator(this, generatorDescriptor);
-      MPSModuleRepository.getInstance().registerModule(generator, this);
+      repo.registerModule(generator, this);
     }
   }
 
