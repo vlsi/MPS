@@ -7,8 +7,9 @@ import jetbrains.mps.ide.dialogs.DialogDimensionsSettings;
 import javax.swing.JPanel;
 import com.intellij.openapi.ui.TextFieldWithBrowseButton;
 import javax.swing.JTextField;
-import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.Generator;
+
+import jetbrains.mps.smodel.*;
+
 import java.awt.Frame;
 import java.awt.HeadlessException;
 import java.awt.GridBagLayout;
@@ -25,8 +26,6 @@ import java.io.File;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import com.intellij.ide.DataManager;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.ModelCommandExecutor;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.project.MPSProject;
@@ -35,15 +34,12 @@ import jetbrains.mps.project.structure.modules.LanguageDescriptor;
 import jetbrains.mps.project.structure.modules.GeneratorDescriptor;
 import jetbrains.mps.project.structure.model.ModelRoot;
 import jetbrains.mps.library.GeneralPurpose_DevKit;
+
+import java.util.Collection;
 import java.util.List;
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.SModelStereotype;
+
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
-import jetbrains.mps.smodel.SModelFqName;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.BootstrapLanguages;
 import jetbrains.mps.project.structure.modules.ModuleReference;
-import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
@@ -194,8 +190,7 @@ public class NewGeneratorDialog extends BaseDialog {
         language.save();
       }
     });
-    List<Generator> generators = language.getGenerators();
-    return generators.get(generators.size() - 1);
+    return (Generator) MPSModuleRepository.getInstance().getModuleById(generatorDescriptor.getId());
   }
 
   private String getTemplateModelPrefix(Language sourceLanguage) {

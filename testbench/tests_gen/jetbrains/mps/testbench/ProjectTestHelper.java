@@ -138,7 +138,7 @@ public class ProjectTestHelper {
       }
     }).translate(new ITranslator2<IModule, IModule>() {
       public Iterable<IModule> translate(IModule it) {
-        return Collections.<IModule>unmodifiableList(((Language) it).getGenerators());
+        return Collections.<IModule>unmodifiableCollection(((Language) it).getGenerators());
       }
     }));
   }

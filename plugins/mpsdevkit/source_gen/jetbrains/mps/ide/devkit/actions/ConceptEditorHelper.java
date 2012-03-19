@@ -99,7 +99,7 @@ public class ConceptEditorHelper {
     }
 
     public boolean met(SModelDescriptor modelDescriptor) {
-      for (Generator generator : ListSequence.fromList(this.myLanguage.getGenerators())) {
+      for (Generator generator : ListSequence.fromIterable(this.myLanguage.getGenerators())) {
         if (generator.getOwnTemplateModels().contains(modelDescriptor)) {
           return true;
         }

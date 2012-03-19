@@ -254,7 +254,7 @@ __switch__:
       }
     });
     if (module instanceof Language) {
-      for (Generator gen : ListSequence.fromList(((Language) module).getGenerators())) {
+      for (Generator gen : ListSequence.fromIterable(((Language) module).getGenerators())) {
         models = Sequence.fromIterable(models).concat(Sequence.fromIterable(modelsToMake(gen)));
       }
     }

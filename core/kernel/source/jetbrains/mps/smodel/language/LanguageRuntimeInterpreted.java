@@ -50,7 +50,7 @@ public class LanguageRuntimeInterpreted extends LanguageRuntime {
   public LanguageRuntimeInterpreted(Language language) {
     myLanguage = language;
 
-    List<Generator> generators = language.getGenerators();
+    Collection<Generator> generators = language.getGenerators();
     if (generators.isEmpty()) {
       myTemplateModules = null;
     } else {
