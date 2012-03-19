@@ -55,6 +55,8 @@ import java.util.Map.Entry;
  */
 public class GenerationTestBase {
   private static boolean DEBUG = false;
+  private final MPSModuleOwner myOwner = new MPSModuleOwner() {
+  };
 
   @BeforeClass
   public static void init() throws Exception {
@@ -123,16 +125,13 @@ public class GenerationTestBase {
     }
   }
 
-  private final MPSModuleOwner myOwner = new MPSModuleOwner() {
-  };
-
   protected void doTestIncrementalGeneration(final Project p, final SModelDescriptor originalModel, final ModelChangeRunnable... changeModel) throws IOException {
     String randomName = "testxw" + Math.abs(UUID.randomUUID().getLeastSignificantBits()) + "." + originalModel.getModule().getModuleFqName();
     String randomId = UUID.randomUUID().toString();
     final TestModule tm = new TestModule(randomName, randomId, originalModel.getModule());
     ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
-        MPSModuleRepository.getInstance().registerModule(tm, );
+        MPSModuleRepository.getInstance().registerModule(tm, myOwner);
       }
     });
 
