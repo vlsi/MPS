@@ -27,55 +27,64 @@ import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.IdeMain.TestMode;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.kernel.model.SModelUtil;
+import jetbrains.mps.library.ModulesMiner;
+import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.StandaloneMPSProject;
+import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.project.structure.project.ProjectDescriptor;
 import jetbrains.mps.project.validation.ModelValidator;
 import jetbrains.mps.project.validation.ModuleValidatorFactory;
+import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.typesystemEngine.checker.TypesystemChecker;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.FileUtil;
-import jetbrains.mps.vfs.IFile;
 import org.apache.log4j.BasicConfigurator;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 
-import javax.swing.SwingUtilities;
+import javax.swing.*;
 import java.io.File;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 import java.util.Set;
 
+import static org.junit.Assert.assertNotNull;
+
 public class CheckProjectStructureHelper {
 
-  private final ModelsExtractor myModelsExtractor = new ModelsExtractor(false);
   private static long myErrors;
   private static long myWarnings;
-
-  /**
-   * An opaque token to represent testing state.
-   */
-  public static abstract class Token {
-  }
+  private MPSProject myProject;
 
   public CheckProjectStructureHelper() {
   }
 
-  public void load(final Iterable<IFile> files) {
+  public static void loadModules(final Collection<ModulesMiner.ModuleHandle> handles) {
     try {
       SwingUtilities.invokeAndWait(new Runnable() {
         @Override
         public void run() {
           ModelAccess.instance().runWriteAction(new Runnable() {
             public void run() {
-              myModelsExtractor.loadModels(files);
+              MPSModuleOwner mpsModuleOwner = new MPSModuleOwner() {
+              };
 
-              // ???
-              Testbench.reloadAll();
+              for (ModulesMiner.ModuleHandle handle : handles) {
+                if (handle.getFile().getName().endsWith(".iml")) {
+                  // temporary ignore .iml files
+                  continue;
+                }
+
+                MPSModuleRepository.getInstance().registerModule(handle, mpsModuleOwner);
+              }
+
+              ClassLoaderManager.getInstance().reloadAll(new EmptyProgressMonitor());
             }
           });
         }
@@ -85,32 +94,70 @@ public class CheckProjectStructureHelper {
     }
   }
 
-  public List<String> check(Token token, List<IFile> files) {
-    return ((PrivToken) token).check(files);
+  public List<String> check(ModulesMiner.ModuleHandle moduleHandle) {
+    ModuleReference moduleReference = moduleHandle.getDescriptor().getModuleReference();
+    IModule module = MPSModuleRepository.getInstance().getModule(moduleReference);
+    assertNotNull("module " + moduleHandle.getFile().getPath() + " was not loaded", module);
+
+    Collection<SModelDescriptor> models = new ModelsExtractor(module, false).getModels();
+
+    return checkModels(models);
   }
 
-  public List<String> checkStructure(Token token, List<IFile> files) {
-    return ((PrivToken) token).checkStructure(files);
+  public List<String> checkStructure(ModulesMiner.ModuleHandle moduleHandle) {
+    ModuleReference moduleReference = moduleHandle.getDescriptor().getModuleReference();
+    IModule module = MPSModuleRepository.getInstance().getModule(moduleReference);
+    assertNotNull("module " + moduleHandle.getFile().getPath() + " was not loaded", module);
+
+    Collection<SModelDescriptor> models = new ModelsExtractor(module, true).getModels();
+
+    return checkStructure(models);
   }
 
-  public List<String> checkGenerationStatus(Token token, List<IFile> files) {
-    return ((PrivToken) token).checkGenerationStatus(files);
+  public List<String> checkGenerationStatus(ModulesMiner.ModuleHandle moduleHandle) {
+    ModuleReference moduleReference = moduleHandle.getDescriptor().getModuleReference();
+    IModule module = MPSModuleRepository.getInstance().getModule(moduleReference);
+    assertNotNull("module " + moduleHandle.getFile().getPath() + " was not loaded", module);
+
+    Collection<SModelDescriptor> models = new ModelsExtractor(module, false).getModels();
+
+    return checkModelsGenerationStatus(models);
   }
 
-  public List<String> checkModule(Token token, List<IFile> files) {
-    return ((PrivToken) token).checkModule(files);
+  public List<String> checkModule(ModulesMiner.ModuleHandle moduleHandle) {
+    ModuleReference moduleReference = moduleHandle.getDescriptor().getModuleReference();
+    IModule module = MPSModuleRepository.getInstance().getModule(moduleReference);
+    assertNotNull("module " + moduleHandle.getFile().getPath() + " was not loaded", module);
+
+    List<IModule> modules = new ArrayList<IModule>();
+    modules.add(module);
+    if (module instanceof Language) {
+      modules.addAll(((Language) module).getGenerators());
+    }
+
+    return checkModules(modules);
   }
 
-  public List<String> checkTypeSystem(Token token, List<IFile> files) {
-    return ((PrivToken) token).checkTypeSystem(files);
+  public List<String> checkTypeSystem(ModulesMiner.ModuleHandle moduleHandle) {
+    ModuleReference moduleReference = moduleHandle.getDescriptor().getModuleReference();
+    IModule module = MPSModuleRepository.getInstance().getModule(moduleReference);
+    assertNotNull("module " + moduleHandle.getFile().getPath() + " was not loaded", module);
+
+    Collection<SModelDescriptor> models = new ModelsExtractor(module, false).getModels();
+    return applyChecker(new TypesystemChecker(), models);
   }
 
-  public List<String> checkConstraints(Token token, List<IFile> files) {
-    return ((PrivToken) token).checkConstraints(files);
+  public List<String> checkConstraints(ModulesMiner.ModuleHandle moduleHandle) {
+    ModuleReference moduleReference = moduleHandle.getDescriptor().getModuleReference();
+    IModule module = MPSModuleRepository.getInstance().getModule(moduleReference);
+    assertNotNull("module " + moduleHandle.getFile().getPath() + " was not loaded", module);
+
+    Collection<SModelDescriptor> models = new ModelsExtractor(module, false).getModels();
+    return applyChecker(new LanguageChecker(), models);
   }
 
-  public void cleanUp(Token tok) {
-    ((PrivToken) tok).cleanUp();
+  public void cleanUp() {
+    doCleanUp(myProject);
   }
 
   public String formatErrors(List<String> errors) {
@@ -123,7 +170,7 @@ public class CheckProjectStructureHelper {
     return sb.toString();
   }
 
-  public Token init(String[][] macros) {
+  public void init(String[][] macros) {
     BasicConfigurator.configure();
     Logger.getRootLogger().setLevel(Level.INFO);
     Testbench.initLogging();
@@ -145,95 +192,14 @@ public class CheckProjectStructureHelper {
     project.init(new ProjectDescriptor());
     myErrors = 0;
     myWarnings = 0;
-    return new PrivToken(project);
+    myProject = project;
   }
 
   public void dispose() {
     TestMain.disposeMPS();
-    myModelsExtractor.clear();
   }
 
   // Private
-
-  private class PrivToken extends Token {
-    private final MPSProject project;
-
-    public PrivToken(MPSProject project) {
-      this.project = project;
-    }
-
-    public List<String> check(Iterable<IFile> files) {
-      return CheckProjectStructureHelper.this.doCheck(files, project);
-    }
-
-    public List<String> checkStructure(List<IFile> files) {
-      return CheckProjectStructureHelper.this.doCheckStructure(files, project);
-    }
-
-    public List<String> checkGenerationStatus(List<IFile> files) {
-      return CheckProjectStructureHelper.this.doCheckGenerationStatus(files, project);
-    }
-
-    public List<String> checkModule(List<IFile> files) {
-      return CheckProjectStructureHelper.this.doCheckModule(files, project);
-    }
-
-    public List<String> checkTypeSystem(List<IFile> files) {
-      return CheckProjectStructureHelper.this.doApplyChecker(files, new TypesystemChecker());
-    }
-
-    public List<String> checkConstraints(List<IFile> files) {
-      return CheckProjectStructureHelper.this.doApplyChecker(files, new LanguageChecker());
-    }
-
-    public void cleanUp() {
-      CheckProjectStructureHelper.this.doCleanUp(project);
-    }
-  }
-
-  private List<String> doCheck(Iterable<IFile> files, MPSProject project) {
-    ModelsExtractor me = new ModelsExtractor(false);
-    me.loadModels(files);
-
-    // ???
-    //Testbench.reloadAll();
-
-    return checkModels(me.getModels());
-  }
-
-  private List<String> doCheckStructure(List<IFile> files, MPSProject project) {
-    ModelsExtractor me = new ModelsExtractor(true);
-    me.loadModels(files);
-
-    // ???
-    //Testbench.reloadAll();
-
-    return checkStructure(me.getModels());
-  }
-
-  private List<String> doCheckGenerationStatus(List<IFile> files, MPSProject project) {
-    ModelsExtractor me = new ModelsExtractor(false);
-    me.loadModels(files);
-
-    // ???
-    //Testbench.reloadAll();
-
-    return checkModelsGenerationStatus(me.getModels());
-  }
-
-  private List<String> doCheckModule(List<IFile> files, MPSProject project) {
-    ModelsExtractor me = new ModelsExtractor(false);
-    me.loadModels(files);
-
-    return checkModules(me.getModules(files));
-  }
-
-  private List<String> doApplyChecker(List<IFile> files, jetbrains.mps.checkers.INodeChecker checker) {
-    ModelsExtractor me = new ModelsExtractor(false);
-    me.loadModels(files);
-    return applyChecker(checker, me.getModels());
-  }
-
 
   private void doCleanUp(final MPSProject project) {
     ThreadUtils.runInUIThreadAndWait(new Runnable() {
@@ -356,7 +322,7 @@ public class CheckProjectStructureHelper {
             Set<IErrorReporter> errorReporters = null;
             try {
               errorReporters = checker.getErrors(root, operationContext);
-            }  catch (IllegalStateException e) {
+            } catch (IllegalStateException e) {
               errors.add(e.getMessage());
             }
             for (IErrorReporter reporter : errorReporters) {

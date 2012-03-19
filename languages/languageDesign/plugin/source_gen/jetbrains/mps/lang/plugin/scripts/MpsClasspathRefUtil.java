@@ -44,6 +44,9 @@ import jetbrains.mps.internal.collections.runtime.CollectionSequence;
         if (modelRef == null) {
           continue;
         }
+        if (modelRef.equals(oldModelRef)) {
+          break;
+        }
         ref.setTargetSModelReference(modelRef);
         // check reference - sometimes same package can be in several modules 
         if ((SLinkOperations.getTargetNode(ref) == null)) {
@@ -58,13 +61,14 @@ import jetbrains.mps.internal.collections.runtime.CollectionSequence;
           Collection<Dependency> dependencies = module.getModuleDescriptor().getDependencies();
           Dependency dep = CollectionSequence.fromCollection(((Collection<Dependency>) dependencies)).findFirst(new IWhereFilter<Dependency>() {
             public boolean accept(Dependency it) {
-              return it.getModuleRef().equals(MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString("37a3367b-1fb2-44d8-aa6b-18075e74e003")).getModuleReference());
+              return it.getModuleRef().getModuleFqName().contains("MPS.Classpath");
             }
           });
           // get re-export from MPS.Classpath, then should be checked manually 
           module.addDependency(newModule.getModuleReference(), dep != null && dep.isReexport());
-          dependencies.remove(dep);
-          // <node> 
+          if (dep != null) {
+            dependencies.remove(dep);
+          }
         }
         break;
       }

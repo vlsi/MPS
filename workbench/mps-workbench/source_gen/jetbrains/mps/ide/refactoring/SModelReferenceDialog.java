@@ -66,7 +66,7 @@ public class SModelReferenceDialog extends RefactoringDialog {
       public void elementChosen(Object p0) {
         doRefactoringAction();
       }
-    }, ModalityState.current(), false);
+    }, ModalityState.stateForComponent(getWindow()), false);
     super.init();
   }
 

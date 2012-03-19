@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dependenciesRoot>
+  <dependency className="jetbrains.mps.build.deploy.build.buildLanguage-compile" file="buildLanguage-compile.xml" />
+  <dependency className="jetbrains.mps.build.deploy.build.buildLanguage-default" file="buildLanguage-default.xml" />
+  <dependency className="jetbrains.mps.build.deploy.build.buildLanguage-languages" file="buildLanguage-languages.xml" />
+  <dependency className="jetbrains.mps.build.deploy.build.buildLanguage" file="buildLanguage.properties" />
+</dependenciesRoot>
+

@@ -2,25 +2,24 @@
 <model modelUID="r:00000000-0000-4000-0000-011c895902dc(jetbrains.mps.baseLanguage.blTypes.editor)">
   <persistence version="7" />
   <language namespace="18bc6592-03a6-4e29-a83a-7ff23bde13ba(jetbrains.mps.lang.editor)" />
-  <devkit namespace="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   <import index="tpdt" modelUID="r:00000000-0000-4000-0000-011c895902dd(jetbrains.mps.baseLanguage.blTypes.structure)" version="-1" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
   <import index="tpc2" modelUID="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" version="32" implicit="yes" />
   <roots>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="1159268590362">
-      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tpdt.1159268590033" />
+      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tpdt.1159268590033" resolveInfo="PrimitiveTypeDescriptor" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="1159268661793">
-      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tpdt.1159268661480" />
+      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tpdt.1159268661480" resolveInfo="PrimitiveTypeRef" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="1159276917821">
-      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tpdt.1159276917520" />
+      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tpdt.1159276917520" resolveInfo="FunctionType" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="1161696750123">
-      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tpdt.1161696749760" />
+      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tpdt.1161696749760" resolveInfo="BLArrayType" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="1162556281717">
-      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tpdt.1162556266355" />
+      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tpdt.1162556266355" resolveInfo="BarConcept" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="1209476308551">
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tpdt.1209476003624" resolveInfo="FooConcept" />
@@ -32,7 +31,7 @@
         <property name="text" nameId="tpc2.1073389577007" value="Primitive" />
       </node>
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Property" typeId="tpc2.1073389658414" id="1159268590365">
-        <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tpck.1169194664001" />
+        <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tpck.1169194664001" resolveInfo="name" />
         <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.FontStyleStyleClassItem" typeId="tpc2.1186403751766" id="1214314934224">
           <property name="style" nameId="tpc2.1186403771423" value="ITALIC" />
         </node>
@@ -55,7 +54,7 @@
         <node role="editorComponent" roleId="tpc2.1088186146602" type="tpc2.InlineEditorComponent" typeId="tpc2.1088185857835" id="1159268661796">
           <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Property" typeId="tpc2.1073389658414" id="1159268661797">
             <property name="readOnly" nameId="tpc2.1140017977771" value="true" />
-            <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tpck.1169194664001" />
+            <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tpck.1169194664001" resolveInfo="name" />
             <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.FontStyleStyleClassItem" typeId="tpc2.1186403751766" id="1214314934159">
               <property name="style" nameId="tpc2.1186403771423" value="ITALIC" />
             </node>
