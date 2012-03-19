@@ -48,37 +48,6 @@ public class Solution extends AbstractModule {
 
   }
 
-  //todo move to NewModuleUtil
-  public static Solution createNewSolution(String namespace, IFile descriptorFile, MPSModuleOwner moduleOwner) {
-    assert !descriptorFile.exists();
-
-    SolutionDescriptor descriptor = createNewDescriptor(namespace, descriptorFile);
-    SolutionDescriptorPersistence.saveSolutionDescriptor(descriptorFile, descriptor);
-
-    return newInstance(ModulesMiner.getInstance().loadModuleHandle(descriptorFile),moduleOwner);
-  }
-
-  private static SolutionDescriptor createNewDescriptor(String namespace, IFile descriptorFile) {
-    SolutionDescriptor descriptor = new SolutionDescriptor();
-    descriptor.setNamespace(namespace);
-    descriptor.setId(ModuleId.regular());
-
-    IFile modelsDir = descriptorFile.getParent().getDescendant(SOLUTION_MODELS);
-    if (modelsDir.exists() && modelsDir.getChildren().size() != 0) {
-      throw new IllegalStateException("Trying to create a solution in an existing solution's directory");
-    } else {
-      modelsDir.mkdirs();
-    }
-
-    // default descriptorModel roots
-    ModelRoot modelRoot = new ModelRoot();
-    modelRoot.setPath(modelsDir.getPath());
-    descriptor.getModelRoots().add(modelRoot);
-    return descriptor;
-  }
-  //todo end
-
-
   //this is for stubs framework & tests only. Can be later converted into subclass
   public static Solution newInstance(SolutionDescriptor descriptor, MPSModuleOwner moduleOwner) {
     Solution solution = new Solution() {

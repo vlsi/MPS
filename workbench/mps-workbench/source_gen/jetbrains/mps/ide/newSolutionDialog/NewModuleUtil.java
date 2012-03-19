@@ -5,18 +5,20 @@ package jetbrains.mps.ide.newSolutionDialog;
 import javax.lang.model.SourceVersion;
 import jetbrains.mps.ide.NewModuleCheckUtil;
 import java.io.File;
-import jetbrains.mps.project.MPSExtentions;
+
+import jetbrains.mps.library.ModulesMiner;
+import jetbrains.mps.project.*;
+import jetbrains.mps.project.persistence.SolutionDescriptorPersistence;
+import jetbrains.mps.project.structure.model.ModelRoot;
+import jetbrains.mps.project.structure.modules.SolutionDescriptor;
+import jetbrains.mps.smodel.MPSModuleOwner;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.smodel.Language;
-import jetbrains.mps.project.Solution;
-import jetbrains.mps.project.IModule;
-import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.project.StandaloneMPSProject;
 import jetbrains.mps.vfs.FileSystem;
 
 public class NewModuleUtil {
@@ -78,11 +80,40 @@ public class NewModuleUtil {
   public static Solution createSolution(String namespace, String rootPath, MPSProject p, boolean reload) {
     return NewModuleUtil.createModule(MPSExtentions.DOT_SOLUTION, namespace, rootPath, p, new _FunctionTypes._return_P3_E0<Solution, String, IFile, MPSProject>() {
       public Solution invoke(String s, IFile f, MPSProject p) {
-        return Solution.createNewSolution(s, f, p);
+        return createNewSolution(s, f, p);
       }
     }, new _FunctionTypes._void_P1_E0<ModuleDescriptor>() {
       public void invoke(ModuleDescriptor d) {
       }
     }, reload);
   }
+
+  public static Solution createNewSolution(String namespace, IFile descriptorFile, MPSModuleOwner moduleOwner) {
+    assert !descriptorFile.exists();
+
+    SolutionDescriptor descriptor = createNewDescriptor(namespace, descriptorFile);
+    SolutionDescriptorPersistence.saveSolutionDescriptor(descriptorFile, descriptor);
+
+    return Solution.newInstance(ModulesMiner.getInstance().loadModuleHandle(descriptorFile),moduleOwner);
+  }
+
+  private static SolutionDescriptor createNewDescriptor(String namespace, IFile descriptorFile) {
+    SolutionDescriptor descriptor = new SolutionDescriptor();
+    descriptor.setNamespace(namespace);
+    descriptor.setId(ModuleId.regular());
+
+    IFile modelsDir = descriptorFile.getParent().getDescendant(Solution.SOLUTION_MODELS);
+    if (modelsDir.exists() && modelsDir.getChildren().size() != 0) {
+      throw new IllegalStateException("Trying to create a solution in an existing solution's directory");
+    } else {
+      modelsDir.mkdirs();
+    }
+
+    // default descriptorModel roots
+    ModelRoot modelRoot = new ModelRoot();
+    modelRoot.setPath(modelsDir.getPath());
+    descriptor.getModelRoots().add(modelRoot);
+    return descriptor;
+  }
+
 }

@@ -23,6 +23,7 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.project.ex.ProjectManagerEx;
 import com.intellij.openapi.startup.StartupManager;
 import com.intellij.platform.ProjectBaseDirectory;
+import jetbrains.mps.ide.newSolutionDialog.NewModuleUtil;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.library.LanguageDesign_DevKit;
 import jetbrains.mps.project.*;
@@ -164,7 +165,7 @@ public class ProjectFactory {
     String descriptorPath = myOptions.getSolutionPath() + File.separator + descriptorFileName;
     IFile descriptorFile = FileSystem.getInstance().getFileByPath(descriptorPath);
 
-    return Solution.createNewSolution(myOptions.getSolutionNamespace(), descriptorFile, mpsProject);
+    return NewModuleUtil.createNewSolution(myOptions.getSolutionNamespace(), descriptorFile, mpsProject);
   }
 
   private Language createNewLanguage(MPSProject mpsProject) {
