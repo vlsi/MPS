@@ -25,17 +25,20 @@ import com.intellij.openapi.progress.Task;
 import com.intellij.openapi.progress.Task.Modal;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.wm.impl.status.InlineProgressIndicator;
+import com.intellij.ui.components.JBCheckBox;
+import com.intellij.ui.components.JBList;
+import com.intellij.ui.components.JBScrollPane;
 import com.intellij.util.ui.Timer;
 import com.intellij.util.ui.UIUtil;
 import jetbrains.mps.project.MPSProjectMigrationState;
 
-import javax.swing.JComponent;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
+import javax.swing.*;
 import java.awt.BorderLayout;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.awt.Component;
+import java.awt.Font;
+import java.awt.Graphics;
+import java.awt.font.TextAttribute;
+import java.util.*;
 
 /**
  * Created by IntelliJ IDEA.
@@ -46,8 +49,27 @@ import java.util.List;
  */
 public class MigrationAssistantWizard extends AbstractWizardEx {
 
-
   private static final List<String> STEP_IDS = new ArrayList<String>();
+
+  private static Icon ICON = new ImageIcon(MigrationAssistantWizard.class.getResource("newProject.png"));
+  private static Icon EXCLUDE = new ImageIcon(MigrationAssistantWizard.class.getResource("cross.png"));
+  private static Icon CHECK = new ImageIcon(MigrationAssistantWizard.class.getResource("check.png"));
+  private static Icon EMPTY = new Icon() {
+    @Override
+    public void paintIcon(Component component, Graphics graphics, int i, int i1) {
+    }
+
+    @Override
+    public int getIconWidth() {
+      return 12;
+    }
+
+    @Override
+    public int getIconHeight() {
+      return 12;
+    }
+  };
+
   
   public MigrationAssistantWizard(String title, Project project) {
     super(title, project, Arrays.asList(
@@ -65,7 +87,7 @@ public class MigrationAssistantWizard extends AbstractWizardEx {
 
   protected boolean canCancel () {
     for (AbstractWizardStepEx step : mySteps) {
-      if (!((MyStep)step).isPostComplete()) {
+      if (((MyStep)step).isPostComplete()) {
         return false;
       }
     }
@@ -75,6 +97,7 @@ public class MigrationAssistantWizard extends AbstractWizardEx {
   private static abstract class MyStep extends  AbstractWizardStepEx {
 
     protected Project myProject;
+    protected JComponent myComponent;
     private String myId;
 
     public MyStep(Project project, String title, String id) {
@@ -102,6 +125,16 @@ public class MigrationAssistantWizard extends AbstractWizardEx {
     }
 
     @Override
+    public Icon getIcon() {
+      return ICON;
+    }
+
+    @Override
+    public JComponent getComponent() {
+      return myComponent;
+    }
+
+    @Override
     public JComponent getPreferredFocusedComponent() {
       return null;
     }
@@ -119,6 +152,12 @@ public class MigrationAssistantWizard extends AbstractWizardEx {
     public boolean isPostComplete() {
       return false;
     }
+
+    protected void createComponent() {
+      this.myComponent = new JPanel(new BorderLayout(5,5));
+      myComponent.setBorder(BorderFactory.createEtchedBorder());
+    }
+
   }
   
   private static class InitialStep extends MyStep {
@@ -146,16 +185,69 @@ public class MigrationAssistantWizard extends AbstractWizardEx {
 
   private static class MigrationsActionsStep extends MyStep {
 
-    private final JLabel myComponent;
-
     public MigrationsActionsStep(Project project) {
       super(project, "List Of Migration Actions", "actionsList");
-      myComponent = new JLabel("List of migrations");
+      createComponent();
+
     }
 
-    @Override
-    public JComponent getComponent() {
-      return myComponent;
+    protected final void createComponent() {
+      super.createComponent();
+      JLabel label = new JLabel("List of migrations");
+
+      myComponent.add(label, BorderLayout.NORTH);
+
+      JBList list = new JBList(
+        "Abc",
+        "Xyz",
+        "Abc",
+        "Xyz",
+        "Abc",
+        "Xyz"
+        );
+      
+      final List<Integer> excluded = Arrays.asList(3,5);
+      list.setCellRenderer(new DefaultListCellRenderer() {
+
+        private Font myStrikeFont;
+        private Font myFont;
+
+        @Override
+        public Component getListCellRendererComponent(JList jList, Object o, int i, boolean b, boolean b1) {
+          super.getListCellRendererComponent(jList, o, i, b, b1);
+          if (excluded.contains(i)) {
+            setIcon(EXCLUDE);
+            setEnabled(false);
+            setFont(getStrikeFont());
+          }
+          else {
+            setIcon(EMPTY);
+            setEnabled(true);
+            setFont(getOriginalFont());
+          }
+          return this;
+        }
+
+        private Font getStrikeFont() {
+          if (myStrikeFont == null) {
+            Map<TextAttribute,Object> attributes = new HashMap<TextAttribute, Object>(getFont().getAttributes());
+            attributes.put(TextAttribute.STRIKETHROUGH, TextAttribute.STRIKETHROUGH_ON);
+            myFont = getFont();
+            myStrikeFont = myFont.deriveFont(attributes);
+          }
+          return myStrikeFont;
+        }
+
+        private Font getOriginalFont () {
+          if (myFont == null) {
+            this.myFont = getFont();
+          }
+          return myFont;
+        }
+      });
+
+      myComponent.add(new JBScrollPane(list), BorderLayout.CENTER);
+
     }
 
     @Override
@@ -166,17 +258,21 @@ public class MigrationAssistantWizard extends AbstractWizardEx {
 
   private static class MigrationsProgressStep extends MyStep {
 
-    private final JComponent myComponent;
     private boolean myStarted;
     private boolean myFinished;
     private final Task myTask;
-    private final InlineProgressIndicator myProgressIndicator;
+    private InlineProgressIndicator myProgressIndicator;
 
     public MigrationsProgressStep(Project project) {
       super(project, "Migration progress", "progress");
       myTask = createTask();
       myProgressIndicator = new InlineProgressIndicator(true, myTask);
-      myComponent = new JPanel(new BorderLayout(5,5));
+      createComponent();
+    }
+
+    @Override
+    protected final void createComponent() {
+      super.createComponent();
       myComponent.add(new JLabel("Migration progress"), BorderLayout.NORTH);
       myComponent.add(myProgressIndicator.getComponent(), BorderLayout.SOUTH);
     }
@@ -214,11 +310,6 @@ public class MigrationAssistantWizard extends AbstractWizardEx {
           }.start();
         }
       };
-    }
-
-    @Override
-    public JComponent getComponent() {
-      return myComponent;
     }
 
     @Override
@@ -295,7 +386,7 @@ public class MigrationAssistantWizard extends AbstractWizardEx {
 
     @Override
     public boolean isPostComplete() {
-      return true;
+      return myShown;
     }
   }
 
