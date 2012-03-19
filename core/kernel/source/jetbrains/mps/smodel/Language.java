@@ -74,30 +74,11 @@ public class Language extends AbstractModule implements MPSModuleOwner {
 
   private List<Language> myAllExtendedLanguages;
 
-  //this is for stubs framework & tests only. Can be later converted into subclass
-  public static Language newInstance(LanguageDescriptor descriptor, MPSModuleOwner moduleOwner) {
-    Language language = new Language() {
-      public String getGeneratorOutputPath() {
-        return null;
-      }
-
-      public String getTestsGeneratorOutputPath() {
-        return null;
-      }
-    };
-    language.setLanguageDescriptor(descriptor, false);
-
-
-    MPSModuleRepository.getInstance().registerModule(language, moduleOwner);
-
-    return language;
-  }
-
   public static Language newInstance(ModuleHandle handle, MPSModuleOwner moduleOwner) {
     Language language = new Language();
     LanguageDescriptor descriptor = ((LanguageDescriptor) handle.getDescriptor());
     assert descriptor != null;
-    assert descriptor.getId()!=null;
+    assert descriptor.getId() != null;
 
     IModule d = checkRegistered(descriptor.getModuleReference(), handle.getFile());
     if (d != null) return (Language) d;
@@ -112,7 +93,7 @@ public class Language extends AbstractModule implements MPSModuleOwner {
     return language;
   }
 
-  private Language() {
+  protected Language() {
 
   }
 
@@ -467,7 +448,6 @@ public class Language extends AbstractModule implements MPSModuleOwner {
       LOG.warning("Trying to save packaged language " + getModuleFqName(), new Exception());
       return;
     }
-    if (getDescriptorFile() == null) return;
     LanguageDescriptorPersistence.saveLanguageDescriptor(myDescriptorFile, getModuleDescriptor());
   }
 

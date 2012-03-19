@@ -24,6 +24,7 @@ import jetbrains.mps.project.structure.modules.SolutionDescriptor;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleOwner;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
+import jetbrains.mps.smodel.TestLanguage;
 import jetbrains.mps.testbench.WriteAction;
 import jetbrains.mps.util.IterableUtil;
 import org.junit.After;
@@ -128,6 +129,6 @@ public class DependenciesTests {
     String uuid = UUID.randomUUID().toString();
     d.setNamespace(uuid);
     d.setId(ModuleId.fromString(uuid));
-    return Language.newInstance(d, OWNER);
+    return TestLanguage.newInstance(d, OWNER);
   }
 }

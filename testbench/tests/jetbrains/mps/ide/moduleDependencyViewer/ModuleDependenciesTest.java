@@ -25,6 +25,7 @@ import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
 import jetbrains.mps.library.ModulesMiner.ModuleHandle;
 import jetbrains.mps.project.*;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
+import jetbrains.mps.smodel.TestLanguage;
 import jetbrains.mps.testbench.WriteAction;
 import jetbrains.mps.project.structure.modules.DevkitDescriptor;
 import jetbrains.mps.project.structure.modules.LanguageDescriptor;
@@ -203,7 +204,7 @@ public class ModuleDependenciesTest {
     String uuid = UUID.randomUUID().toString();
     d.setNamespace(uuid);
     d.setId(ModuleId.fromString(uuid));
-    return Language.newInstance(d, OWNER);
+    return TestLanguage.newInstance(d, OWNER);
   }
 
   private DevKit createDevKit() {
