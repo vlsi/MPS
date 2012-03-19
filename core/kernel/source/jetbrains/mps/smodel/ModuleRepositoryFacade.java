@@ -105,7 +105,7 @@ public class ModuleRepositoryFacade {
   public static IModule createModule(ModuleHandle handle, MPSModuleOwner owner){
     IModule module;
     if (handle.getDescriptor() instanceof LanguageDescriptor) {
-      module = Language.createLanguage(handle.getDescriptor().getNamespace(), handle, owner);
+      module = Language.newInstance(handle, owner);
     } else if (handle.getDescriptor() instanceof SolutionDescriptor) {
       module = Solution.newInstance(handle, owner);
     } else if (handle.getDescriptor() instanceof DevkitDescriptor) {

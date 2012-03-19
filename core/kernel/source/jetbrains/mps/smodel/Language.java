@@ -24,6 +24,7 @@ import jetbrains.mps.project.*;
 import jetbrains.mps.project.dependency.LanguageDependenciesManager;
 import jetbrains.mps.project.dependency.ModuleDependenciesManager;
 import jetbrains.mps.project.persistence.LanguageDescriptorPersistence;
+import jetbrains.mps.project.persistence.SolutionDescriptorPersistence;
 import jetbrains.mps.project.structure.model.ModelRoot;
 import jetbrains.mps.project.structure.modules.*;
 import jetbrains.mps.reloading.ClassLoaderManager;
@@ -73,15 +74,6 @@ public class Language extends AbstractModule implements MPSModuleOwner {
 
   private List<Language> myAllExtendedLanguages;
 
-  @Deprecated
-  public static Language createLanguage(String namespace, IFile descriptorFile, MPSModuleOwner moduleOwner) {
-    ModuleDescriptor desciptor = null;
-    if (descriptorFile.exists()) {
-      desciptor = ModulesMiner.getInstance().loadModuleDescriptor(descriptorFile);
-    }
-    return createLanguage(namespace, new ModuleHandle(descriptorFile, desciptor), moduleOwner);
-  }
-
   //this is for stubs framework & tests only. Can be later converted into subclass
   public static Language newInstance(LanguageDescriptor descriptor, MPSModuleOwner moduleOwner) {
     Language language = new Language() {
@@ -98,31 +90,21 @@ public class Language extends AbstractModule implements MPSModuleOwner {
     return registerInRepository(language, moduleOwner);
   }
 
-  public static Language createLanguage(String namespace, ModuleHandle handle, MPSModuleOwner moduleOwner) {
-    LanguageDescriptor languageDescriptor;
-    if (handle.getDescriptor() != null) {
-      languageDescriptor = (LanguageDescriptor) handle.getDescriptor();
-      if (languageDescriptor.getId() == null) {
-        languageDescriptor.setId(ModuleId.regular());
-        LanguageDescriptorPersistence.saveLanguageDescriptor(handle.getFile(), languageDescriptor);
-      }
-    } else {
-      languageDescriptor = createNewDescriptor(namespace, handle.getFile());
-    }
-
-    MPSModuleRepository repository = MPSModuleRepository.getInstance();
-    IModule m = checkRegistered(languageDescriptor.getModuleReference(), handle.getFile());
-    if (m != null) {
-      return (Language) m;
-    }
-
+  public static Language newInstance(ModuleHandle handle, MPSModuleOwner moduleOwner) {
     Language language = new Language();
+    LanguageDescriptor descriptor = ((LanguageDescriptor) handle.getDescriptor());
+    assert descriptor != null;
+    assert descriptor.getId()!=null;
+
+    IModule d = checkRegistered(descriptor.getModuleReference(), handle.getFile());
+    if (d != null) return (Language) d;
+
+    language.setLanguageDescriptor(descriptor, false);
     language.myDescriptorFile = handle.getFile();
 
-    language.setLanguageDescriptor(languageDescriptor, false);
-    repository.registerModule(language, moduleOwner);
+    LibrariesLoader.createLanguageLibs(moduleOwner, language, descriptor, MPSModuleRepository.getInstance());
 
-    LibrariesLoader.createLanguageLibs(moduleOwner, language, languageDescriptor, repository);
+    MPSModuleRepository.getInstance().registerModule(language, moduleOwner);
 
     return language;
   }
@@ -692,23 +674,6 @@ public class Language extends AbstractModule implements MPSModuleOwner {
     res.addAll(super.getStubModelEntriesToIncludeOrExclude());
     res.addAll(getRuntimeModelsEntries());
     return res;
-  }
-
-  private static LanguageDescriptor createNewDescriptor(String languageNamespace, IFile descriptorFile) {
-    LanguageDescriptor languageDescriptor = new LanguageDescriptor();
-    languageDescriptor.setNamespace(languageNamespace);
-    languageDescriptor.setId(ModuleId.regular());
-
-    IFile languageModels = descriptorFile.getParent().getDescendant(LANGUAGE_MODELS);
-    if (languageModels.exists()) {
-      throw new IllegalStateException("Trying to create a language in an existing language's directory");
-    }
-
-    // default descriptorModel roots
-    jetbrains.mps.project.structure.model.ModelRoot modelRoot = new jetbrains.mps.project.structure.model.ModelRoot();
-    modelRoot.setPath(languageModels.getPath());
-    languageDescriptor.getModelRoots().add(modelRoot);
-    return languageDescriptor;
   }
 
   private class CachesInvalidator extends SModelAdapter {

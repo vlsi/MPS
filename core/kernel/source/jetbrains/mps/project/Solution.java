@@ -72,18 +72,14 @@ public class Solution extends AbstractModule {
     Solution solution = new Solution();
     SolutionDescriptor descriptor = ((SolutionDescriptor) handle.getDescriptor());
     assert descriptor != null;
-
-    descriptor = (SolutionDescriptor) handle.getDescriptor();
-    if (descriptor.getId() == null) {
-      descriptor.setId(ModuleId.regular());
-      SolutionDescriptorPersistence.saveSolutionDescriptor(handle.getFile(), descriptor);
-    }
-    solution.myDescriptorFile = handle.getFile();
+    assert descriptor.getId()!=null;
 
     IModule d = checkRegistered(descriptor.getModuleReference(), handle.getFile());
     if (d != null) return (Solution) d;
 
     solution.setSolutionDescriptor(descriptor, false);
+    solution.myDescriptorFile = handle.getFile();
+
     MPSModuleRepository.getInstance().registerModule(solution, moduleOwner);
 
     return solution;

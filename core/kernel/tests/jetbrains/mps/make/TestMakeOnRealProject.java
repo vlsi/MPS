@@ -33,6 +33,7 @@ import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.persistence.SolutionDescriptorPersistence;
 import jetbrains.mps.project.structure.model.ModelRoot;
+import jetbrains.mps.project.structure.modules.LanguageDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
 import jetbrains.mps.smodel.*;
@@ -290,12 +291,18 @@ public class TestMakeOnRealProject {
   private Language createNewLanguage() {
     String languageNamespace = "TestLanguage";
     IFile descriptorFile = myTmpDir.getDescendant(languageNamespace + File.separator + languageNamespace + MPSExtentions.DOT_LANGUAGE);
-    Language language = Language.createLanguage(languageNamespace, descriptorFile, myModuleOwner);
-    language.getModuleDescriptor().getRuntimeModules().add(myCreatedRuntimeSolution.getModuleReference());
-    descriptorFile.createNewFile();
-    language.save();
+    LanguageDescriptor d = new LanguageDescriptor();
+    d.setId(ModuleId.regular());
+    d.setNamespace(languageNamespace);
+    d.getRuntimeModules().add(myCreatedRuntimeSolution.getModuleReference());
 
-    return language;
+    ModelRoot modelRoot = new ModelRoot();
+    IFile languageModels = descriptorFile.getParent().getDescendant(Language.LANGUAGE_MODELS);
+    modelRoot.setPath(languageModels.getPath());
+    d.getModelRoots().add(modelRoot);
+
+    ModuleHandle handle = ModulesMiner.getInstance().loadModuleHandle(descriptorFile);
+    return Language.newInstance(handle, myModuleOwner);
   }
 
   private Solution createNewSolution() {
@@ -304,8 +311,8 @@ public class TestMakeOnRealProject {
     String fileName = descriptorFile.getName();
 
     SolutionDescriptor solutionDescriptor = new SolutionDescriptor();
-    String name = fileName.substring(0, fileName.length() - 4);
     solutionDescriptor.setId(ModuleId.regular());
+    String name = fileName.substring(0, fileName.length() - 4);
     solutionDescriptor.setNamespace(name);
     solutionDescriptor.getUsedLanguages().add(myCreatedLanguage.getModuleReference());
 
@@ -314,8 +321,6 @@ public class TestMakeOnRealProject {
 
     solutionDescriptor.getModelRoots().add(modelRoot);
     
-    descriptorFile.createNewFile();
-
     SolutionDescriptorPersistence.saveSolutionDescriptor(descriptorFile, solutionDescriptor);
 
     ModuleHandle handle = ModulesMiner.getInstance().loadModuleHandle(descriptorFile);

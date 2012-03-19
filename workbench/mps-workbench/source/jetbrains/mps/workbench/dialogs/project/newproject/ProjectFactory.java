@@ -173,7 +173,7 @@ public class ProjectFactory {
     String descriptorPath = myOptions.getLanguagePath() + File.separator + descriptorFileName;
     IFile descriptorFile = FileSystem.getInstance().getFileByPath(descriptorPath);
 
-    Language language = Language.createLanguage(myOptions.getLanguageNamespace(), descriptorFile, mpsProject);
+    Language language = NewModuleUtil.createNewLanguage(myOptions.getLanguageNamespace(), descriptorFile, mpsProject);
     LanguageDescriptor languageDescriptor = language.getModuleDescriptor();
     languageDescriptor.getUsedDevkits().add(LanguageDesign_DevKit.MODULE_REFERENCE);
     

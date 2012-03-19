@@ -8,8 +8,10 @@ import java.io.File;
 
 import jetbrains.mps.library.ModulesMiner;
 import jetbrains.mps.project.*;
+import jetbrains.mps.project.persistence.LanguageDescriptorPersistence;
 import jetbrains.mps.project.persistence.SolutionDescriptorPersistence;
 import jetbrains.mps.project.structure.model.ModelRoot;
+import jetbrains.mps.project.structure.modules.LanguageDescriptor;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
 import jetbrains.mps.smodel.MPSModuleOwner;
 import jetbrains.mps.smodel.MPSModuleRepository;
@@ -91,13 +93,13 @@ public class NewModuleUtil {
   public static Solution createNewSolution(String namespace, IFile descriptorFile, MPSModuleOwner moduleOwner) {
     assert !descriptorFile.exists();
 
-    SolutionDescriptor descriptor = createNewDescriptor(namespace, descriptorFile);
+    SolutionDescriptor descriptor = createNewSolutionDescriptor(namespace, descriptorFile);
     SolutionDescriptorPersistence.saveSolutionDescriptor(descriptorFile, descriptor);
 
     return Solution.newInstance(ModulesMiner.getInstance().loadModuleHandle(descriptorFile),moduleOwner);
   }
 
-  private static SolutionDescriptor createNewDescriptor(String namespace, IFile descriptorFile) {
+  private static SolutionDescriptor createNewSolutionDescriptor(String namespace, IFile descriptorFile) {
     SolutionDescriptor descriptor = new SolutionDescriptor();
     descriptor.setNamespace(namespace);
     descriptor.setId(ModuleId.regular());
@@ -114,6 +116,32 @@ public class NewModuleUtil {
     modelRoot.setPath(modelsDir.getPath());
     descriptor.getModelRoots().add(modelRoot);
     return descriptor;
+  }
+  
+  public static Language createNewLanguage(String namespace, IFile descriptorFile, MPSModuleOwner moduleOwner) {
+    assert !descriptorFile.exists();
+
+    LanguageDescriptor descriptor = createNewLanguageDescriptor(namespace, descriptorFile);
+    LanguageDescriptorPersistence.saveLanguageDescriptor(descriptorFile, descriptor);
+
+    return Language.newInstance(ModulesMiner.getInstance().loadModuleHandle(descriptorFile), moduleOwner);
+  }
+
+  private static LanguageDescriptor createNewLanguageDescriptor(String languageNamespace, IFile descriptorFile) {
+    LanguageDescriptor languageDescriptor = new LanguageDescriptor();
+    languageDescriptor.setNamespace(languageNamespace);
+    languageDescriptor.setId(ModuleId.regular());
+
+    IFile languageModels = descriptorFile.getParent().getDescendant(Language.LANGUAGE_MODELS);
+    if (languageModels.exists()) {
+      throw new IllegalStateException("Trying to create a language in an existing language's directory");
+    }
+
+    // default descriptorModel roots
+    ModelRoot modelRoot = new jetbrains.mps.project.structure.model.ModelRoot();
+    modelRoot.setPath(languageModels.getPath());
+    languageDescriptor.getModelRoots().add(modelRoot);
+    return languageDescriptor;
   }
 
 }
