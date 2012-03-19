@@ -49,8 +49,11 @@ public class CommonPaths {
         addCoreJars(result);
       } else if (type == ClassType.EDITOR) {
         addEditorJars(result);
+      } else if (type == ClassType.PLATFORM) {
+        addIdeaJars(result);
       } else if (type == ClassType.WORKBENCH) {
         addIdeaJars(result);
+        addWorkbenchJars(result);
       }
     }
     return itemToPath(result);
@@ -139,6 +142,7 @@ public class CommonPaths {
     addCoreJars(result);
     addEditorJars(result);
     addIdeaJars(result);
+    addWorkbenchJars(result);
     addToolsJar(result);
     addClasses(result, PathManager.getHomePath());
     return result;
@@ -169,14 +173,17 @@ public class CommonPaths {
 
   private static void addIdeaJars(CompositeClassPathItem result) {
     addIfExists(result, "/lib/mps-platform.jar");
-    addIfExists(result, "/lib/mps-workbench.jar");
     addIfExists(result, "/lib/platform-api.jar");
     addIfExists(result, "/lib/platform.jar");
     addIfExists(result, "/lib/execution-api.jar");
     addIfExists(result, "/lib/util.jar");
     addIfExists(result, "/lib/extensions.jar");
-    addIfExists(result, "/lib/junit-4.8.2.jar");
     addIfExists(result, "/lib/picocontainer.jar");
+  }
+
+  private static void addWorkbenchJars(CompositeClassPathItem result) {
+    addIfExists(result, "/lib/mps-workbench.jar");
+    addIfExists(result, "/lib/junit-4.8.2.jar");
   }
 
   private static void addToolsJar(CompositeClassPathItem result) {
