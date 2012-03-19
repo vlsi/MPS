@@ -18,7 +18,6 @@ import java.util.HashSet;
 
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.IScope;
-import java.util.UUID;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelRepository;
@@ -41,9 +40,7 @@ public class EvaluationAuxModule extends AbstractModule {
   protected static Log log = LogFactory.getLog(EvaluationAuxModule.class);
 
   private Project myProject;
-  private IModule myInvocationContext;
   private final Set<StubPath> myStubPaths = SetSequence.fromSet(new HashSet<StubPath>());
-  private final Set<SModelRoot> myModelRoots = SetSequence.fromSet(new HashSet<SModelRoot>());
   private final Set<ModuleReference> myUsedLanguages = SetSequence.fromSet(new HashSet<ModuleReference>());
   private volatile IScope myScope;
 
@@ -51,42 +48,15 @@ public class EvaluationAuxModule extends AbstractModule {
     this.myProject = project;
     ModuleReference reference = new ModuleReference("Debug Evaluation Aux Module", ModuleId.regular());
     this.setModuleReference(reference);
-    this.init();
-  }
-
-  public void init() {
-    MPSModuleRepository.getInstance().registerModule(EvaluationAuxModule.this, this.getMPSProject());
-  }
-
-  public void dispose() {
-    super.dispose();
-    ModelAccess.instance().runWriteAction(new Runnable() {
-      public void run() {
-        EvaluationAuxModule.this.clearAll();
-        MPSModuleRepository.getInstance().unregisterModule(EvaluationAuxModule.this,getMPSProject());
-        SModelRepository.getInstance().unRegisterModelDescriptors(EvaluationAuxModule.this);
-        SetSequence.fromSet(myStubPaths).clear();
-        SetSequence.fromSet(myModelRoots).clear();
-        CleanupManager.getInstance().cleanup();
-        // loaded stubs are removed from model repository 
-      }
-    });
   }
 
   public MPSProject getMPSProject() {
     return this.myProject.getComponent(MPSProject.class);
   }
 
-  public void setInvocationContext(IModule invocationContext) {
-    this.myInvocationContext = invocationContext;
-  }
-
   @Nullable
   public Class getClass(String fqName) {
-    if (this.myInvocationContext == null) {
-      return null;
-    }
-    return this.myInvocationContext.getClass(fqName);
+    return null;
   }
 
   @NotNull
@@ -144,14 +114,8 @@ public class EvaluationAuxModule extends AbstractModule {
   }
 
   @Override
-  public Set<SModelRoot> getSModelRoots() {
-    return myModelRoots;
-  }
-
-  @Override
-  public void updateModelsSet() {
-    SetSequence.fromSet(myModelRoots).clear();
-
+  protected Set<SModelRoot> doUpdateModelsSet() {
+    Set<SModelRoot> result = new HashSet<SModelRoot>();
     for (StubPath stub : SetSequence.fromSet(myStubPaths)) {
       ModelRoot root = new ModelRoot();
       root.setPath(stub.getPath());
@@ -164,21 +128,14 @@ public class EvaluationAuxModule extends AbstractModule {
             SModelRepository.getInstance().registerModelDescriptor(descriptor, this);
           }
         }
-        SetSequence.fromSet(myModelRoots).addElement(smodelRoot);
+        result.add(smodelRoot);
       } catch (Exception e) {
         if (log.isErrorEnabled()) {
           log.error("", e);
         }
       }
     }
-
-    fireModuleInitialized();
-  }
-
-  public void clearAll() {
-    // model is already disposed by EmbeddableEditor 
-    this.invalidateCaches();
-    this.setInvocationContext(null);
+    return result;
   }
 
   @NotNull

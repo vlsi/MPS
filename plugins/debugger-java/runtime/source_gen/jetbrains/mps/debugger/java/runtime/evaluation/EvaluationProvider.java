@@ -11,6 +11,8 @@ import java.util.ArrayList;
 import jetbrains.mps.debug.api.DebugSessionManagerComponent;
 import jetbrains.mps.debug.api.AbstractDebugSession;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
+import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import com.intellij.openapi.application.ApplicationManager;
 import jetbrains.mps.smodel.IOperationContext;
@@ -56,6 +58,7 @@ public class EvaluationProvider implements IEvaluationProvider {
     ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
         module.value = new EvaluationAuxModule(myDebugSession.getProject());
+        MPSModuleRepository.getInstance().registerModule(module.value, myDebugSession.getProject().getComponent(MPSProject.class));
       }
     });
 
@@ -67,11 +70,7 @@ public class EvaluationProvider implements IEvaluationProvider {
   private synchronized void dispose() {
     final EvaluationAuxModule module = myAuxModule;
     myAuxModule = null;
-    ApplicationManager.getApplication().invokeLater(new Runnable() {
-      public void run() {
-        module.dispose();
-      }
-    });
+    MPSModuleRepository.getInstance().unregisterModule(module,getDebugSession().getProject().getComponent(MPSProject.class));
   }
 
   @Override
