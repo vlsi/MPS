@@ -40,15 +40,20 @@ public abstract class TreeNodeVisitor {
     }
     myExecutor.execute(new Runnable() {
       public void run() {
+        boolean disposed = ModelAccess.instance().runReadAction(new Computable<Boolean>() {
+          public Boolean compute() {
+            return !TreeNodeUpdater.checkDisposed(node);
+          }
+        });
+        if (disposed) return;
+
+        Project project = ProjectHelper.toIdeaProject(node.getOperationContext().getProject());
+        if (project != null) {
+          DumbService.getInstance(project).waitForSmartMode();
+        }
+
         ModelAccess.instance().runReadAction(new Runnable() {
           public void run() {
-            if (!TreeNodeUpdater.checkDisposed(node)) return;
-
-            Project project = ProjectHelper.toIdeaProject(node.getOperationContext().getProject());
-            if (project != null) {
-              DumbService.getInstance(project).waitForSmartMode();
-            }
-
             if (node instanceof SModelTreeNode) {
               visitModelNode(((SModelTreeNode) node));
             }
