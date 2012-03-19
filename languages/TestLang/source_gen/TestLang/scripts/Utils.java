@@ -14,9 +14,11 @@ import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import jetbrains.mps.smodel.constraints.ModelConstraintsUtil;
-import jetbrains.mps.baseLanguage.behavior.IOperation_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.baseLanguage.behavior.IOperation_Behavior;
 import jetbrains.mps.baseLanguage.behavior.DotExpression_Behavior;
 
 public class Utils {
@@ -38,7 +40,7 @@ public class Utils {
           public void run() {
             while (true) {
               synchronized (Utils.watchingLock) {
-                if (System.currentTimeMillis() - Utils.lastUpdateTime > 4000) {
+                if (System.currentTimeMillis() - Utils.lastUpdateTime > 10000) {
                   if (MapSequence.fromMap(Utils.timeSummary).count() != 0) {
                     LOG.warning("!!! Time summary " + Utils.timeSummary);
                     MapSequence.fromMap(Utils.timeSummary).clear();
@@ -118,6 +120,13 @@ public class Utils {
   }
 
   public static Set<SNode> getNewScopeFromRef(final SReference ref, final SNode kind) {
+    if (ref.getSourceNode().isInstanceOfConcept(SNodeOperations.getNode("r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)", "1081236700937"))) {
+      return getNodes("new scope/from ref", new _FunctionTypes._return_P0_E0<Scope>() {
+        public Scope invoke() {
+          return Classifier_Behavior.call_getVisibleMembers_8083692786967356611(SLinkOperations.getTarget(SNodeOperations.cast(ref.getSourceNode(), "jetbrains.mps.baseLanguage.structure.StaticMethodCall"), "classConcept", false), ref.getSourceNode(), SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration"));
+        }
+      }, ref);
+    }
     return getNodes("new scope/from ref", new _FunctionTypes._return_P0_E0<Scope>() {
       public Scope invoke() {
         return Scope.getScope(ref.getSourceNode(), ref.getSourceNode(), kind);
