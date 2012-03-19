@@ -79,9 +79,6 @@ public class Language extends AbstractModule implements MPSModuleOwner {
     assert descriptor != null;
     assert descriptor.getId() != null;
 
-    IModule d = checkRegistered(descriptor.getModuleReference(), handle.getFile());
-    if (d != null) return (Language) d;
-
     Language language = new Language();
     language.setLanguageDescriptor(descriptor, false);
     language.myDescriptorFile = handle.getFile();

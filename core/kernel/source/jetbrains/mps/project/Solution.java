@@ -53,9 +53,6 @@ public class Solution extends AbstractModule {
     assert descriptor != null;
     assert descriptor.getId() != null;
 
-    IModule d = checkRegistered(descriptor.getModuleReference(), handle.getFile());
-    if (d != null) return (Solution) d;
-
     solution.setSolutionDescriptor(descriptor, false);
     solution.myDescriptorFile = handle.getFile();
 
