@@ -17,6 +17,7 @@ package jetbrains.mps.ide.migration.assistant;
 
 import com.intellij.ide.wizard.AbstractWizardEx;
 import com.intellij.ide.wizard.AbstractWizardStepEx;
+import com.intellij.ide.wizard.AbstractWizardStepEx.Listener;
 import com.intellij.ide.wizard.CommitStepException;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.application.ex.ApplicationEx;
@@ -30,6 +31,7 @@ import com.intellij.ui.components.JBList;
 import com.intellij.ui.components.JBScrollPane;
 import com.intellij.util.ui.Timer;
 import com.intellij.util.ui.UIUtil;
+import jetbrains.mps.ide.migration.assistant.MigrationProcessor.Callback;
 import jetbrains.mps.project.MPSProjectMigrationState;
 
 import javax.swing.*;
@@ -77,6 +79,20 @@ public class MigrationAssistantWizard extends AbstractWizardEx {
       new MigrationsActionsStep(project),
       new MigrationsProgressStep(project),
       new MigrationsFinishedStep((project))));
+  }
+
+  @Override
+  public void addStep(AbstractWizardStepEx step) {
+    super.addStep(step);
+    step.addStepListener(new Listener() {
+      @Override
+      public void doNextAction() {}
+
+      @Override
+      public void stateChanged() {
+        updateStep();
+      }
+    });
   }
 
   @Override
@@ -193,67 +209,37 @@ public class MigrationAssistantWizard extends AbstractWizardEx {
 
     protected final void createComponent() {
       super.createComponent();
+      MigrationProcessor processor = myProject.getComponent(MigrationProcessor.class);
+
       JLabel label = new JLabel("List of migrations");
-
       myComponent.add(label, BorderLayout.NORTH);
+      JBList list = new JBList(processor.getActions());
 
-      JBList list = new JBList(
-        "Abc",
-        "Xyz",
-        "Abc",
-        "Xyz",
-        "Abc",
-        "Xyz"
-        );
-      
-      final List<Integer> excluded = Arrays.asList(3,5);
-      list.setCellRenderer(new DefaultListCellRenderer() {
-
-        private Font myStrikeFont;
-        private Font myFont;
-
-        @Override
-        public Component getListCellRendererComponent(JList jList, Object o, int i, boolean b, boolean b1) {
-          super.getListCellRendererComponent(jList, o, i, b, b1);
-          if (excluded.contains(i)) {
-            setIcon(EXCLUDE);
-            setEnabled(false);
-            setFont(getStrikeFont());
-          }
-          else {
-            setIcon(EMPTY);
-            setEnabled(true);
-            setFont(getOriginalFont());
-          }
-          return this;
-        }
-
-        private Font getStrikeFont() {
-          if (myStrikeFont == null) {
-            Map<TextAttribute,Object> attributes = new HashMap<TextAttribute, Object>(getFont().getAttributes());
-            attributes.put(TextAttribute.STRIKETHROUGH, TextAttribute.STRIKETHROUGH_ON);
-            myFont = getFont();
-            myStrikeFont = myFont.deriveFont(attributes);
-          }
-          return myStrikeFont;
-        }
-
-        private Font getOriginalFont () {
-          if (myFont == null) {
-            this.myFont = getFont();
-          }
-          return myFont;
-        }
-      });
+      Set<Object> excluded = Collections.synchronizedSet(new HashSet<Object>());
+      excluded.add(processor.getActions().get(3));
+      excluded.add(processor.getActions().get(5));
+      list.setCellRenderer(new MyListCellRenderer(excluded, Collections.emptySet()));
 
       myComponent.add(new JBScrollPane(list), BorderLayout.CENTER);
 
     }
 
     @Override
+    public void commit(CommitType commitType) throws CommitStepException {
+      if (CommitType.Next == commitType) {
+        MigrationProcessor processor = myProject.getComponent(MigrationProcessor.class);
+        List<?> actions = new ArrayList<Object>(processor.getActions());
+        actions.remove(5);
+        actions.remove(3);
+        processor.setSelectedActions(actions);
+      }
+    }
+
+    @Override
     public boolean isComplete() {
       return true;
     }
+
   }
 
   private static class MigrationsProgressStep extends MyStep {
@@ -262,6 +248,9 @@ public class MigrationAssistantWizard extends AbstractWizardEx {
     private boolean myFinished;
     private final Task myTask;
     private InlineProgressIndicator myProgressIndicator;
+    private final Set<Object> myMarked = Collections.synchronizedSet(new HashSet<Object>());;
+    private final Set<Object> myExcluded = Collections.synchronizedSet(new HashSet<Object>());
+    private JBList myList;
 
     public MigrationsProgressStep(Project project) {
       super(project, "Migration progress", "progress");
@@ -273,7 +262,12 @@ public class MigrationAssistantWizard extends AbstractWizardEx {
     @Override
     protected final void createComponent() {
       super.createComponent();
+      MigrationProcessor processor = myProject.getComponent(MigrationProcessor.class);
+
       myComponent.add(new JLabel("Migration progress"), BorderLayout.NORTH);
+      myList = new JBList(processor.getActions());
+      myList.setCellRenderer(new MyListCellRenderer(myExcluded, myMarked));
+      myComponent.add(new JBScrollPane(myList), BorderLayout.CENTER);
       myComponent.add(myProgressIndicator.getComponent(), BorderLayout.SOUTH);
     }
 
@@ -281,33 +275,33 @@ public class MigrationAssistantWizard extends AbstractWizardEx {
       return new Modal(myProject, "executing", false) {
         @Override
         public void run(final ProgressIndicator indicator) {
-          indicator.setIndeterminate(true);
-          final int[] steps = new int[] {1};
-          new Timer("foo", 1000) {
+          MigrationProcessor processor = myProject.getComponent(MigrationProcessor.class);
+          final List<?> actions = processor.getActions();
+          myExcluded.addAll(actions);
+          myExcluded.removeAll(processor.getSelectedActions());
+          processor.addCallback(new Callback() {
             @Override
-            protected void onTimer() throws InterruptedException {
-              final int step = steps[0]++;
-              if (step > 10) {
-                this.dispose();
-                myFinished = true;
-                UIUtil.invokeLaterIfNeeded(new Runnable() {
-                  @Override
-                  public void run() {
-                    indicator.setFraction(1.0);
-                    fireStateChanged();
-                  }
-                });
-              } else {
-                UIUtil.invokeLaterIfNeeded(new Runnable() {
-                  @Override
-                  public void run() {
-                    indicator.setIndeterminate(false);
-                    indicator.setFraction((double) step / 10);
-                  }
-                });
-              }
+            public void startingAction(Object action) {
+              indicator.setIndeterminate(false);
             }
-          }.start();
+
+            @Override
+            public void finishedAction(Object action) {
+              indicator.setFraction((double) (actions.indexOf(action)+1) / actions.size());
+              myMarked.add(action);
+              myList.ensureIndexIsVisible(actions.indexOf(action));
+              myList.repaint();
+            }
+
+            @Override
+            public void finishedAll() {
+              indicator.setFraction(1.0);
+              myFinished = true;
+              fireStateChanged();
+            }
+          });
+          indicator.setIndeterminate(true);
+          processor.startProcessing();
         }
       };
     }
@@ -320,9 +314,7 @@ public class MigrationAssistantWizard extends AbstractWizardEx {
         MPSProjectMigrationState migrationState = myProject.getComponent(MPSProjectMigrationState.class);
         migrationState.migrationStarted();
         this.myStarted = true;
-
         runProcessWithProgressSynchronously(myTask, myProgressIndicator);
-
       }
     }
 
@@ -387,6 +379,57 @@ public class MigrationAssistantWizard extends AbstractWizardEx {
     @Override
     public boolean isPostComplete() {
       return myShown;
+    }
+  }
+
+  private static class MyListCellRenderer extends DefaultListCellRenderer {
+
+    private Font myStrikeFont;
+    private Font myFont;
+    private final Set<?> myExcluded;
+    private final Set<?> myMarked;
+
+    public MyListCellRenderer(Set<?> excluded, Set<?> marked) {
+      myExcluded = excluded;
+      myMarked = marked;
+    }
+
+    @Override
+    public Component getListCellRendererComponent(JList list, Object value, int index, boolean iss, boolean chf) {
+      super.getListCellRendererComponent(list, value, index, iss, chf);
+      if (myExcluded.contains(value)) {
+        setIcon(EXCLUDE);
+        setEnabled(false);
+        setFont(getStrikeFont());
+      }
+      else if (myMarked.contains(value)) {
+        setIcon(CHECK);
+        setEnabled(true);
+        setFont(getOriginalFont());
+      }
+      else {
+        setIcon(EMPTY);
+        setEnabled(true);
+        setFont(getOriginalFont());
+      }
+      return this;
+    }
+
+    private Font getStrikeFont() {
+      if (myStrikeFont == null) {
+        Map<TextAttribute,Object> attributes = new HashMap<TextAttribute, Object>(getFont().getAttributes());
+        attributes.put(TextAttribute.STRIKETHROUGH, TextAttribute.STRIKETHROUGH_ON);
+        myFont = getFont();
+        myStrikeFont = myFont.deriveFont(attributes);
+      }
+      return myStrikeFont;
+    }
+
+    private Font getOriginalFont () {
+      if (myFont == null) {
+        this.myFont = getFont();
+      }
+      return myFont;
     }
   }
 
