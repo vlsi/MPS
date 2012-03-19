@@ -29,7 +29,8 @@ import jetbrains.mps.ide.IdeMain;
 import com.intellij.util.PathUtil;
 
 public class CommandLineGenerator {
-  private static final Iterable<String> libJars = Arrays.asList("asm.jar", "diffutils-1.2.1.jar", "mps-closures.jar", "mps-collections.jar", "mps-tuples.jar", "mps-core.jar");
+  private static final Iterable<String> mpsLibJars = Arrays.asList("mps-closures.jar", "mps-collections.jar", "mps-tuples.jar", "mps-core.jar");
+  private static Iterable<String> mpsAddJars = Arrays.asList("asm.jar", "diffutils-1.2.1.jar");
   private static final Iterable<String> ideaLibJars = Arrays.asList("jdom.jar", "log4j.jar", "trove4j.jar", "annotations.jar", "commons-lang-2.4.jar", "commons-logging-1.1.1.jar");
   protected static Log log = LogFactory.getLog(CommandLineGenerator.class);
 
@@ -71,7 +72,12 @@ public class CommandLineGenerator {
     final Wrappers._T<String> mpsCorePath = new Wrappers._T<String>(PathManager.getLibPath());
     File mpsCore = new File(mpsCorePath.value + File.separator + "mps-core.jar");
     if (mpsCore.exists()) {
-      SetSequence.fromSet(classpathItems).addSequence(Sequence.fromIterable(libJars).select(new ISelector<String, String>() {
+      SetSequence.fromSet(classpathItems).addSequence(Sequence.fromIterable(mpsLibJars).select(new ISelector<String, String>() {
+        public String select(String it) {
+          return mpsCorePath.value + File.separator + it;
+        }
+      }));
+      SetSequence.fromSet(classpathItems).addSequence(Sequence.fromIterable(mpsAddJars).select(new ISelector<String, String>() {
         public String select(String it) {
           return mpsCorePath.value + File.separator + it;
         }
@@ -81,7 +87,12 @@ public class CommandLineGenerator {
       mpsCorePath.value = PathManager.getPluginsPath() + File.separator + "mps-core" + File.separator + "lib";
       mpsCore = new File(mpsCorePath.value + File.separator + "mps-core.jar");
       if (mpsCore.exists()) {
-        SetSequence.fromSet(classpathItems).addSequence(Sequence.fromIterable(libJars).select(new ISelector<String, String>() {
+        SetSequence.fromSet(classpathItems).addSequence(Sequence.fromIterable(mpsLibJars).select(new ISelector<String, String>() {
+          public String select(String it) {
+            return mpsCorePath.value + File.separator + it;
+          }
+        }));
+        SetSequence.fromSet(classpathItems).addSequence(Sequence.fromIterable(mpsAddJars).select(new ISelector<String, String>() {
           public String select(String it) {
             return mpsCorePath.value + File.separator + it;
           }
@@ -124,6 +135,11 @@ public class CommandLineGenerator {
     SetSequence.fromSet(classpathItems).addSequence(Sequence.fromIterable(classes).select(new ISelector<Class, String>() {
       public String select(Class c) {
         return PathUtil.getJarPathForClass(c);
+      }
+    }));
+    SetSequence.fromSet(classpathItems).addSequence(Sequence.fromIterable(mpsAddJars).select(new ISelector<String, String>() {
+      public String select(String it) {
+        return PathManager.getLibPath() + File.separator + it;
       }
     }));
     return classpathItems;
