@@ -75,23 +75,24 @@ public class MPSModuleRepository implements CoreComponent {
     assert moduleId != null : "module with null id is added to repository: fqName=" + moduleFqName + "; file=" + module.getDescriptorFile();
 
     IModule existing = getModuleById(moduleId);
-    if (existing == null) {
-      if (myFqNameToModulesMap.containsKey(moduleFqName)) {
-        IModule m = myFqNameToModulesMap.get(moduleFqName);
-        LOG.warning("duplicate module name " + moduleFqName + " : module with the same UID exists at " + m.getDescriptorFile() + " and " + module.getDescriptorFile(), m);
-      }
-
-      myFqNameToModulesMap.put(moduleFqName, module);
-      myIdToModuleMap.put(module.getModuleReference().getModuleId(), module);
-      myModules.add(module);
+    if (existing != null) {
+      myModuleToOwners.addLink(existing, owner);
+      return (T) existing;
     }
 
-    myModuleToOwners.addLink(module, owner);
+    if (myFqNameToModulesMap.containsKey(moduleFqName)) {
+      IModule m = myFqNameToModulesMap.get(moduleFqName);
+      LOG.warning("duplicate module name " + moduleFqName + " : module with the same UID exists at " + m.getDescriptorFile() + " and " + module.getDescriptorFile(), m);
+    }
 
+    myFqNameToModulesMap.put(moduleFqName, module);
+    myIdToModuleMap.put(module.getModuleReference().getModuleId(), module);
+    myModules.add(module);
+
+    myModuleToOwners.addLink(module, owner);
     invalidateCaches();
     fireModuleAdded(module);
-    
-    return existing != null ? (T) existing : module;
+    return module;
   }
 
   public void unregisterModule(IModule module, MPSModuleOwner owner) {
