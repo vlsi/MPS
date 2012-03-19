@@ -56,6 +56,7 @@ public class SModelRepository implements CoreComponent {
   private final List<SModelRepositoryListener> mySModelRepositoryListeners = new ArrayList<SModelRepositoryListener>();
 
   private SModelListener myModelsListener = new ModelChangeListener();
+  private boolean myWasError = false;
 
   public SModelRepository(ClassLoaderManager manager) {
     myManager = manager;
@@ -74,73 +75,7 @@ public class SModelRepository implements CoreComponent {
     myManager.removeReloadHandler(myHandler);
   }
 
-  public void refreshModels() {
-    ModelAccess.instance().runWriteAction(new Runnable() {
-      public void run() {
-        LOG.debug("Model refresh");
-
-        for (SModelDescriptor m : getModelDescriptors()) {
-          m.refresh();
-        }
-
-        LOG.debug("Model refresh done");
-      }
-    });
-  }
-
-  public EditableSModelDescriptor findModel(IFile modelFile) {
-    String canonicalPath = IFileUtils.getCanonicalPath(modelFile);
-    return myCanonicalPathsToModelDescriptorMap.get(canonicalPath);
-  }
-
-  public void addModelRepositoryListener(@NotNull SModelRepositoryListener l) {
-    synchronized (myListenersLock) {
-      mySModelRepositoryListeners.add(l);
-    }
-  }
-
-  public void removeModelRepositoryListener(@NotNull SModelRepositoryListener l) {
-    synchronized (myListenersLock) {
-      mySModelRepositoryListeners.remove(l);
-    }
-  }
-
-  private List<SModelRepositoryListener> listeners() {
-    synchronized (myListenersLock) {
-      return new ArrayList<SModelRepositoryListener>(mySModelRepositoryListeners);
-    }
-  }
-
-  public List<SModelDescriptor> getModelDescriptors() {
-    synchronized (myModelsLock) {
-      return new ArrayList<SModelDescriptor>(myModelsWithOwners.keySet());
-    }
-  }
-
-  public List<SModelDescriptor> getModelDescriptorsByModelName(String modelName) {
-    List<SModelDescriptor> result = new ArrayList<SModelDescriptor>();
-    for (SModelDescriptor d : getModelDescriptors()) {
-      if (modelName.equals(d.getLongName())) {
-        result.add(d);
-      }
-    }
-    return result;
-  }
-
-  public void deleteModel(SModelDescriptor modelDescriptor) {
-    ModelAccess.assertLegalWrite();
-
-    fireModelWillBeDeletedEvent(modelDescriptor);
-    removeModelDescriptor(modelDescriptor);
-
-    if (modelDescriptor instanceof EditableSModelDescriptor) {
-      IFile modelFile = ((EditableSModelDescriptor) modelDescriptor).getModelFile();
-      if (modelFile != null && modelFile.exists()) {
-        modelFile.delete();
-      }
-    }
-    SModelRepository.getInstance().fireModelDeletedEvent(modelDescriptor);
-  }
+  //--------------------register/unregister----------------------
 
   public void registerModelDescriptor(SModelDescriptor modelDescriptor, ModelOwner owner) {
     synchronized (myModelsLock) {
@@ -236,15 +171,43 @@ public class SModelRepository implements CoreComponent {
     }
   }
 
-  private void addListeners(SModelDescriptor modelDescriptor) {
-    modelDescriptor.addModelListener(myModelsListener);
+  public void deleteModel(SModelDescriptor modelDescriptor) {
+    ModelAccess.assertLegalWrite();
+
+    fireModelWillBeDeletedEvent(modelDescriptor);
+    removeModelDescriptor(modelDescriptor);
+
+    if (modelDescriptor instanceof EditableSModelDescriptor) {
+      IFile modelFile = ((EditableSModelDescriptor) modelDescriptor).getModelFile();
+      if (modelFile != null && modelFile.exists()) {
+        modelFile.delete();
+      }
+    }
+    SModelRepository.getInstance().fireModelDeletedEvent(modelDescriptor);
   }
 
-  private void removeListeners(SModelDescriptor modelDescriptor) {
-    modelDescriptor.removeModelListener(myModelsListener);
+  //----------------------------get-----------------------------
+
+  public EditableSModelDescriptor findModel(IFile modelFile) {
+    String canonicalPath = IFileUtils.getCanonicalPath(modelFile);
+    return myCanonicalPathsToModelDescriptorMap.get(canonicalPath);
   }
 
-  private boolean myWasError = false;
+  public List<SModelDescriptor> getModelDescriptors() {
+    synchronized (myModelsLock) {
+      return new ArrayList<SModelDescriptor>(myModelsWithOwners.keySet());
+    }
+  }
+
+  public List<SModelDescriptor> getModelDescriptorsByModelName(String modelName) {
+    List<SModelDescriptor> result = new ArrayList<SModelDescriptor>();
+    for (SModelDescriptor d : getModelDescriptors()) {
+      if (modelName.equals(d.getLongName())) {
+        result.add(d);
+      }
+    }
+    return result;
+  }
 
   public SModelDescriptor getModelDescriptor(SModelReference modelReference) {
     if (modelReference == null) return null;
@@ -275,6 +238,17 @@ public class SModelRepository implements CoreComponent {
       return new ArrayList<SModelDescriptor>(result);
     }
   }
+
+  public Set<ModelOwner> getOwners(SModelDescriptor modelDescriptor) {
+    synchronized (myModelsLock) {
+      List<ModelOwner> modelOwners = myModelsWithOwners.get(modelDescriptor);
+      if (modelOwners == null || modelOwners.size() == 0) return Collections.emptySet();
+      if (modelOwners.size() == 1) return Collections.singleton(modelOwners.get(0));
+      return new HashSet<ModelOwner>(modelOwners);
+    }
+  }
+
+  //----------------------------stuff-----------------------------
 
   private void addModelToFileCache(EditableSModelDescriptor modelDescriptor) {
     IFile modelFile = modelDescriptor.getModelFile();
@@ -325,13 +299,46 @@ public class SModelRepository implements CoreComponent {
     }
   }
 
-  public Set<ModelOwner> getOwners(SModelDescriptor modelDescriptor) {
-    synchronized (myModelsLock) {
-      List<ModelOwner> modelOwners = myModelsWithOwners.get(modelDescriptor);
-      if (modelOwners == null || modelOwners.size() == 0) return Collections.emptySet();
-      if (modelOwners.size() == 1) return Collections.singleton(modelOwners.get(0));
-      return new HashSet<ModelOwner>(modelOwners);
+  public void refreshModels() {
+    ModelAccess.instance().runWriteAction(new Runnable() {
+      public void run() {
+        LOG.debug("Model refresh");
+
+        for (SModelDescriptor m : getModelDescriptors()) {
+          m.refresh();
+        }
+
+        LOG.debug("Model refresh done");
+      }
+    });
+  }
+
+  //---------------------------events----------------------------
+
+  public void addModelRepositoryListener(@NotNull SModelRepositoryListener l) {
+    synchronized (myListenersLock) {
+      mySModelRepositoryListeners.add(l);
     }
+  }
+
+  public void removeModelRepositoryListener(@NotNull SModelRepositoryListener l) {
+    synchronized (myListenersLock) {
+      mySModelRepositoryListeners.remove(l);
+    }
+  }
+
+  private List<SModelRepositoryListener> listeners() {
+    synchronized (myListenersLock) {
+      return new ArrayList<SModelRepositoryListener>(mySModelRepositoryListeners);
+    }
+  }
+
+  private void addListeners(SModelDescriptor modelDescriptor) {
+    modelDescriptor.addModelListener(myModelsListener);
+  }
+
+  private void removeListeners(SModelDescriptor modelDescriptor) {
+    modelDescriptor.removeModelListener(myModelsListener);
   }
 
   private void fireBeforeModelRemoved(SModelDescriptor modelDescriptor) {
@@ -433,7 +440,6 @@ public class SModelRepository implements CoreComponent {
       }
     }
   }
-
 
   //-------todo: changed functionality - is better to be moved to SModelDescriptor fully
 
