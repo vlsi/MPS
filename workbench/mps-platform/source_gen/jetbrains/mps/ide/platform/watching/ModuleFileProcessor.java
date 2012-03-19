@@ -56,7 +56,6 @@ import java.util.Collections;
     }
     for (final IModule module : myDeletedModules) {
       indicator.setText2("Unloading removed module " + module.getModuleFqName());
-      module.dispose();
       ModuleRepositoryFacade.getInstance().removeModuleForced(module);
       SetSequence.fromSet(myProcessedModules).addElement(module);
     }
