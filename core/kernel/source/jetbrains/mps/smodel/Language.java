@@ -51,7 +51,6 @@ public class Language extends AbstractModule implements MPSModuleOwner {
   public static final String LANGUAGE_MODELS = "languageModels";
 
   private LanguageDescriptor myLanguageDescriptor;
-  private List<Generator> myGenerators = new ArrayList<Generator>();
 
   private ConcurrentHashMap<String, SNode> myNameToConceptCache = new ConcurrentHashMap<String, SNode>();
   //the following is needed because we can't store null values in myNameToConceptCache, as long as it's a ConcurrentHashMap
@@ -209,11 +208,9 @@ public class Language extends AbstractModule implements MPSModuleOwner {
   }
 
   private void revalidateGenerators() {
-    myGenerators.clear();
     for (GeneratorDescriptor generatorDescriptor : getModuleDescriptor().getGenerators()) {
       Generator generator = new Generator(this, generatorDescriptor);
-      generator = MPSModuleRepository.getInstance().registerModule(generator, this);
-      myGenerators.add(generator);
+      MPSModuleRepository.getInstance().registerModule(generator, this);
     }
   }
 
@@ -224,12 +221,6 @@ public class Language extends AbstractModule implements MPSModuleOwner {
     //To unregister it correctly from different services we need it and its models    
     SModelRepository.getInstance().unRegisterModelDescriptors(this);
     ModuleRepositoryFacade.getInstance().unregisterModules(this);
-    if (myGenerators != null) {
-      for (Generator generator : myGenerators) {
-        generator.dispose();
-      }
-      myGenerators.clear();
-    }
   }
 
   public LanguageDescriptor getModuleDescriptor() {
@@ -270,8 +261,8 @@ public class Language extends AbstractModule implements MPSModuleOwner {
     return getStructureModelDescriptor().getVersion();
   }
 
-  public List<Generator> getGenerators() {
-    return new ArrayList<Generator>(myGenerators);
+  public Collection<Generator> getGenerators() {
+    return ModuleRepositoryFacade.getInstance().getModules(this, Generator.class);
   }
 
   public void rename(String newNamespace) {

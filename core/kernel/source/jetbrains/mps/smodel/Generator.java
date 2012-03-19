@@ -112,12 +112,6 @@ public class Generator extends AbstractModule {
     return getSourceLanguage().getRuntimeStubPaths();
   }
 
-  public void dispose() {
-    super.dispose();
-    SModelRepository.getInstance().unRegisterModelDescriptors(this);
-    ModuleRepositoryFacade.getInstance().removeModuleForced(this);
-  }
-
   public List<SModelDescriptor> getOwnTemplateModels() {
     List<SModelDescriptor> templateModels = new ArrayList<SModelDescriptor>();
     for (SModelDescriptor modelDescriptor : getOwnModelDescriptors()) {
