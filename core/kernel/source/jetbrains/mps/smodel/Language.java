@@ -144,7 +144,7 @@ public class Language extends AbstractModule implements MPSModuleOwner {
   }
 
   protected void reloadAfterDescriptorChange() {
-    MPSModuleRepository.getInstance().unRegisterModules(this, new Condition<IModule>() {
+    ModuleRepositoryFacade.getInstance().unregisterModules(this, new Condition<IModule>() {
       public boolean met(IModule m) {
         return !(m instanceof Solution && ((Solution) m).isStub());
       }
@@ -266,7 +266,7 @@ public class Language extends AbstractModule implements MPSModuleOwner {
     //Call this method before you remove it and its models from repositories
     //To unregister it correctly from different services we need it and its models    
     SModelRepository.getInstance().unRegisterModelDescriptors(this);
-    MPSModuleRepository.getInstance().unRegisterModules(this);
+    ModuleRepositoryFacade.getInstance().unregisterModules(this);
     if (myGenerators != null) {
       for (Generator generator : myGenerators) {
         generator.dispose();

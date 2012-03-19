@@ -34,6 +34,7 @@ import jetbrains.mps.project.structure.project.ProjectDescriptor;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
@@ -207,7 +208,7 @@ public class StandaloneMPSProject extends MPSProject implements PersistentStateC
   }
 
   public void update() {
-    MPSModuleRepository.getInstance().unRegisterModules(this);
+    ModuleRepositoryFacade.getInstance().unregisterModules(this);
 
     readModules();
     ClassLoaderManager.getInstance().reloadAll(new EmptyProgressMonitor());
@@ -245,7 +246,7 @@ public class StandaloneMPSProject extends MPSProject implements PersistentStateC
       public void run() {
         ClassLoaderManager.getInstance().unloadAll(new EmptyProgressMonitor());
 
-        MPSModuleRepository.getInstance().unRegisterModules(StandaloneMPSProject.this);
+        ModuleRepositoryFacade.getInstance().unregisterModules(StandaloneMPSProject.this);
 
         CleanupManager.getInstance().cleanup();
 

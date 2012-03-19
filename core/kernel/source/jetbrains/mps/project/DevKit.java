@@ -130,8 +130,8 @@ public class DevKit extends AbstractModule implements MPSModuleOwner {
 
   public void setDevKitDescriptor(DevkitDescriptor descriptor, boolean reloadClasses) {
     MPSModuleRepository moduleRepo = MPSModuleRepository.getInstance();
-    moduleRepo.unRegisterModules(this);
-    moduleRepo.unRegisterModules(myGenerationOnlyModelsModelOwner);
+    ModuleRepositoryFacade.getInstance().unregisterModules(this);
+    ModuleRepositoryFacade.getInstance().unregisterModules(myGenerationOnlyModelsModelOwner);
 
     myDescriptor = descriptor;
 
@@ -160,7 +160,7 @@ public class DevKit extends AbstractModule implements MPSModuleOwner {
 
   //why?   [Mihail Muhin]
   protected void reloadAfterDescriptorChange() {
-    MPSModuleRepository.getInstance().unRegisterModules(this);
+    ModuleRepositoryFacade.getInstance().unregisterModules(this);
     super.reloadAfterDescriptorChange();
   }
 
@@ -168,8 +168,8 @@ public class DevKit extends AbstractModule implements MPSModuleOwner {
     super.dispose();
 
     SModelRepository.getInstance().unRegisterModelDescriptors(this);
-    MPSModuleRepository.getInstance().unRegisterModules(this);
-    MPSModuleRepository.getInstance().unRegisterModules(myGenerationOnlyModelsModelOwner);
+    ModuleRepositoryFacade.getInstance().unregisterModules(this);
+    ModuleRepositoryFacade.getInstance().unregisterModules(myGenerationOnlyModelsModelOwner);
   }
 
   @Override

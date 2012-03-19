@@ -5,10 +5,10 @@ package jetbrains.mps.build.ant;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.logging.Logger;
 import java.io.File;
-import jetbrains.mps.smodel.ModelAccess;
+
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.progress.EmptyProgressMonitor;
-import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.cleanup.CleanupManager;
 import jetbrains.mps.project.ProjectManager;
 import java.util.Set;
@@ -33,7 +33,6 @@ import jetbrains.mps.util.MacrosFactory;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.xmlQuery.runtime.AttributeUtils;
 import jetbrains.mps.project.structure.project.testconfigurations.ModelsTestConfiguration;
-import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.project.structure.project.testconfigurations.ModuleTestConfiguration;
 
 public class FileMPSProject extends Project {
@@ -72,7 +71,7 @@ public class FileMPSProject extends Project {
     ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
         ClassLoaderManager.getInstance().unloadAll(new EmptyProgressMonitor());
-        MPSModuleRepository.getInstance().unRegisterModules(FileMPSProject.this);
+        ModuleRepositoryFacade.getInstance().unregisterModules(FileMPSProject.this);
         CleanupManager.getInstance().cleanup();
         if (ProjectManager.getInstance().getOpenProjects().length > 0) {
           ClassLoaderManager.getInstance().reloadAll(new EmptyProgressMonitor());

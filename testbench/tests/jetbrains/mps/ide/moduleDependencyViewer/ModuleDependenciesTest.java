@@ -27,13 +27,13 @@ import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.project.Solution;
+import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.testbench.WriteAction;
 import jetbrains.mps.project.structure.modules.DevkitDescriptor;
 import jetbrains.mps.project.structure.modules.LanguageDescriptor;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleOwner;
-import jetbrains.mps.smodel.MPSModuleRepository;
 import org.junit.After;
 import org.junit.BeforeClass;
 import org.junit.Rule;
@@ -58,7 +58,7 @@ public class ModuleDependenciesTest {
 
   @After
   public void afterTest() {
-    MPSModuleRepository.getInstance().unRegisterModules(OWNER);
+    ModuleRepositoryFacade.getInstance().unregisterModules(OWNER);
     CleanupManager.getInstance().cleanup();
   }
 

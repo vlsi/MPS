@@ -78,7 +78,7 @@ public class ModuleRepositoryFacade {
     return result;
   }
 
-  public void unRegisterModules(MPSModuleOwner owner, Condition<IModule> condition) {
+  public void unregisterModules(MPSModuleOwner owner, Condition<IModule> condition) {
     for (IModule module : REPO.getModules(owner)) {
       if (condition.met(module)) {
         REPO.unregisterModule(module, owner);
@@ -86,7 +86,7 @@ public class ModuleRepositoryFacade {
     }
   }
 
-  public void unRegisterModules(MPSModuleOwner owner) {
+  public void unregisterModules(MPSModuleOwner owner) {
     for (IModule module : REPO.getModules(owner)) {
       REPO.unregisterModule(module, owner);
     }

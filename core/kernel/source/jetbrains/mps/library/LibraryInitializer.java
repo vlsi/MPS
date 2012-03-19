@@ -103,7 +103,7 @@ public class LibraryInitializer implements CoreComponent {
     HashSet<String> toUnload = new HashSet<String>(loadedLibs);
     toUnload.removeAll(newLibs);
     for (String unloadLib : toUnload) {
-      myRepo.unRegisterModules(myLibsToOwners.remove(unloadLib));
+      ModuleRepositoryFacade.getInstance().unregisterModules(myLibsToOwners.remove(unloadLib));
     }
 
     //load new
