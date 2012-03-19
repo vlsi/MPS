@@ -25,7 +25,9 @@ import com.intellij.openapi.progress.ProgressIndicator;
 import com.intellij.openapi.progress.Task;
 import com.intellij.openapi.progress.Task.Modal;
 import com.intellij.openapi.project.Project;
+import com.intellij.openapi.ui.Messages;
 import com.intellij.openapi.wm.impl.status.InlineProgressIndicator;
+import com.intellij.ui.components.JBCheckBox;
 import com.intellij.ui.components.JBList;
 import com.intellij.ui.components.JBScrollPane;
 import jetbrains.mps.ide.migration.assistant.MigrationProcessor.Callback;
@@ -95,6 +97,14 @@ public class MigrationAssistantWizard extends AbstractWizardEx {
   }
 
   @Override
+  public void doCancelAction() {
+    super.doCancelAction();
+    if (!canCancel()) {
+      Messages.showErrorDialog(getContentPane(), "Can't cancel.");
+    }
+  }
+
+  @Override
   protected void updateStep() {
     super.updateStep();
     getCancelAction().setEnabled(canCancel());
@@ -130,6 +140,11 @@ public class MigrationAssistantWizard extends AbstractWizardEx {
     @Override
     public Object getNextStepId() {
       int idx = STEP_IDS.indexOf(myId) + 1;
+      return idx < STEP_IDS.size() ? STEP_IDS.get(idx) : null;
+    }
+    
+    protected Object getSkipNextStepId() {
+      int idx = STEP_IDS.indexOf(myId) + 2;
       return idx < STEP_IDS.size() ? STEP_IDS.get(idx) : null;
     }
 
@@ -172,22 +187,26 @@ public class MigrationAssistantWizard extends AbstractWizardEx {
       this.myComponent = new JPanel(new BorderLayout(5,5));
       myComponent.setBorder(BorderFactory.createEtchedBorder());
     }
-
   }
   
   private static class InitialStep extends MyStep {
 
-    private final JLabel myComponent;
-
+    private JBCheckBox mySelectActions;
 
     public InitialStep(Project project) {
       super(project, "Migration Required", "initial");
-      myComponent = new JLabel("Step component");
+      createComponent();
     }
 
     @Override
-    public JComponent getComponent() {
-      return myComponent;
+    protected final void createComponent() {
+      super.createComponent();
+      JLabel label = new JLabel("Welcome to Migration Assistant!");
+      myComponent.add(label, BorderLayout.NORTH);
+
+      mySelectActions = new JBCheckBox("Select Migration Actions");
+      mySelectActions.setSelected(false);
+      myComponent.add(mySelectActions, BorderLayout.SOUTH);
     }
 
     @Override
@@ -195,7 +214,10 @@ public class MigrationAssistantWizard extends AbstractWizardEx {
       return true;
     }
 
-
+    @Override
+    public Object getNextStepId() {
+      return mySelectActions.isSelected() ? super.getNextStepId() : super.getSkipNextStepId();
+    }
   }
 
   private static class MigrationsActionsStep extends MyStep {
@@ -225,7 +247,7 @@ public class MigrationAssistantWizard extends AbstractWizardEx {
       myComponent.add(label, BorderLayout.NORTH);
 
       myList = new JBList(processor.getActions());
-      myList.getSelectionModel().addListSelectionListener(new ListSelectionListener() {
+        myList.getSelectionModel().addListSelectionListener(new ListSelectionListener() {
         @Override
         public void valueChanged(ListSelectionEvent e) {
           updateButtons();
@@ -423,7 +445,7 @@ public class MigrationAssistantWizard extends AbstractWizardEx {
     }
 
     private Task createTask() {
-      return new Modal(myProject, "executing", false) {
+      return new Modal(myProject, "Executing", false) {
         @Override
         public void run(final ProgressIndicator indicator) {
           final MigrationProcessor processor = myProject.getComponent(MigrationProcessor.class);
