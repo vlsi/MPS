@@ -33,7 +33,6 @@ import jetbrains.mps.reloading.CompositeClassPathItem;
 import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
-import jetbrains.mps.stubs.LibrariesLoader;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.PathManager;
 import jetbrains.mps.util.containers.ConcurrentHashSet;
@@ -79,21 +78,22 @@ public class Language extends AbstractModule implements MPSModuleOwner {
     assert descriptor != null;
     assert descriptor.getId() != null;
 
-    Language language = new Language();
-    language.setLanguageDescriptor(descriptor, false);
-    language.myDescriptorFile = handle.getFile();
+    Language language = new Language(descriptor, handle.getFile());
 
     Language registered = MPSModuleRepository.getInstance().registerModule(language, moduleOwner);
 
     if (registered == language) {
-      LibrariesLoader.createLanguageLibs(moduleOwner, language, descriptor, MPSModuleRepository.getInstance());
+      language.setLanguageDescriptor(descriptor, false);
+      createLanguageLibs(language, descriptor, MPSModuleRepository.getInstance());
     }
 
     return registered;
   }
 
-  protected Language() {
-
+  protected Language(LanguageDescriptor descriptor, IFile file) {
+    myDescriptorFile = file;
+    myLanguageDescriptor = descriptor;
+    setModuleReference(descriptor.getModuleReference());
   }
 
   protected ModuleDependenciesManager createDependenciesManager() {
@@ -656,6 +656,28 @@ public class Language extends AbstractModule implements MPSModuleOwner {
     res.addAll(super.getStubModelEntriesToIncludeOrExclude());
     res.addAll(getRuntimeModelsEntries());
     return res;
+  }
+
+  private static void createLanguageLibs(Language language, LanguageDescriptor languageDescriptor, MPSModuleRepository repository) {
+    List<SolutionDescriptor> solutionDescriptors = createLanguageLibraryDescriptors(languageDescriptor);
+
+    for (SolutionDescriptor sd : solutionDescriptors) {
+      jetbrains.mps.project.StubSolution.newInstance(sd, language);
+    }
+  }
+
+  private static List<SolutionDescriptor> createLanguageLibraryDescriptors(LanguageDescriptor ld) {
+    List<SolutionDescriptor> result = new ArrayList<SolutionDescriptor>();
+    for (jetbrains.mps.project.structure.modules.StubSolution ss : ld.getStubSolutions()) {
+      SolutionDescriptor descriptor = new SolutionDescriptor();
+      descriptor.setId(ss.getId());
+      descriptor.setNamespace(ss.getName());
+
+      descriptor.setCompileInMPS(false);
+
+      result.add(descriptor);
+    }
+    return result;
   }
 
   private class CachesInvalidator extends SModelAdapter {

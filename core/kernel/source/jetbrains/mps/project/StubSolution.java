@@ -18,16 +18,23 @@ package jetbrains.mps.project;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
 import jetbrains.mps.smodel.MPSModuleOwner;
 import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.vfs.IFile;
 
 public class StubSolution extends Solution {
+  protected StubSolution(SolutionDescriptor descriptor, IFile file) {
+    super(descriptor, file);
+  }
+
   //this is for stubs framework & tests only. Can be later converted into subclass
   public static Solution newInstance(SolutionDescriptor descriptor, MPSModuleOwner moduleOwner) {
-    Solution solution = new StubSolution();
-    solution.setSolutionDescriptor(descriptor, false);
+    Solution solution = new StubSolution(descriptor, null);
 
-    solution = MPSModuleRepository.getInstance().registerModule(solution, moduleOwner);
+    Solution registered = MPSModuleRepository.getInstance().registerModule(solution, moduleOwner);
+    if (registered == solution) {
+      solution.setSolutionDescriptor(descriptor, false);
+    }
 
-    return solution;
+    return registered;
   }
 
   public String getGeneratorOutputPath() {

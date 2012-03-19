@@ -41,22 +41,25 @@ public class Solution extends AbstractModule {
   private SolutionDescriptor mySolutionDescriptor;
   public static final String SOLUTION_MODELS = "models";
 
-  // -------------------------------------------------------------------
-
-  protected Solution() {
-
-  }
-
   public static Solution newInstance(ModuleHandle handle, MPSModuleOwner moduleOwner) {
-    Solution solution = new Solution();
     SolutionDescriptor descriptor = ((SolutionDescriptor) handle.getDescriptor());
     assert descriptor != null;
     assert descriptor.getId() != null;
 
-    solution.setSolutionDescriptor(descriptor, false);
-    solution.myDescriptorFile = handle.getFile();
+    Solution solution = new Solution(descriptor, handle.getFile());
 
-    return MPSModuleRepository.getInstance().registerModule(solution, moduleOwner);
+    Solution registered = MPSModuleRepository.getInstance().registerModule(solution, moduleOwner);
+    if (registered == solution) {
+      solution.setSolutionDescriptor(descriptor, false);
+    }
+
+    return registered;
+  }
+
+  protected Solution(SolutionDescriptor descriptor, IFile file) {
+    myDescriptorFile = file;
+    mySolutionDescriptor = descriptor;
+    setModuleReference(descriptor.getModuleReference());
   }
 
   public SolutionDescriptor getModuleDescriptor() {

@@ -16,14 +16,23 @@
 package jetbrains.mps.smodel;
 
 import jetbrains.mps.project.structure.modules.LanguageDescriptor;
+import jetbrains.mps.vfs.IFile;
 
 public class TestLanguage extends Language {
+  private TestLanguage(LanguageDescriptor descriptor, IFile file) {
+    super(descriptor, file);
+  }
+
   //this is for tests only. Can be later converted into subclass
   public static Language newInstance(LanguageDescriptor descriptor, MPSModuleOwner moduleOwner) {
-    Language language = new TestLanguage();
-    language.setLanguageDescriptor(descriptor, false);
+    Language language = new TestLanguage(descriptor,null);
 
-    return MPSModuleRepository.getInstance().registerModule(language, moduleOwner);
+    Language registered = MPSModuleRepository.getInstance().registerModule(language, moduleOwner);
+    if (registered==language){
+      language.setLanguageDescriptor(descriptor, false);
+    }
+
+    return registered;
   }
 
   public String getGeneratorOutputPath() {

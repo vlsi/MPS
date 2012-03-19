@@ -35,23 +35,27 @@ import java.util.List;
 
 public class DevKit extends AbstractModule implements MPSModuleOwner {
   public static DevKit newInstance(ModuleHandle handle, MPSModuleOwner moduleOwner) {
-    DevKit result = new DevKit();
     DevkitDescriptor descriptor = (DevkitDescriptor) handle.getDescriptor();
     assert descriptor != null;
     assert descriptor.getId() != null;
 
-    result.setDevKitDescriptor(descriptor, false);
-    result.myDescriptorFile = handle.getFile();
+    DevKit result = new DevKit(descriptor, handle.getFile());
 
-    return MPSModuleRepository.getInstance().registerModule(result, moduleOwner);
+    DevKit registered = MPSModuleRepository.getInstance().registerModule(result, moduleOwner);
+    if (registered == result) {
+      result.setDevKitDescriptor(descriptor, false);
+    }
+    return registered;
   }
 
   private DevkitDescriptor myDescriptor;
   private IFile myDescriptorFile;
   private MPSModuleOwner myGenerationOnlyModelsModelOwner = this;
 
-  public DevKit() {
-
+  private DevKit(DevkitDescriptor descriptor, IFile file) {
+    myDescriptorFile = file;
+    myDescriptor = descriptor;
+    setModuleReference(descriptor.getModuleReference());
   }
 
   public IFile getDescriptorFile() {
