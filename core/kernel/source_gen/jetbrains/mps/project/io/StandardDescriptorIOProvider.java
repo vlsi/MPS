@@ -131,7 +131,7 @@ public class StandardDescriptorIOProvider implements DescriptorIOProvider {
     }
 
     public void writeToFile(DevkitDescriptor dd, IFile file) {
-      DevkitDescriptorPersistence.saveDevKitDescriptor(dd, file);
+      DevkitDescriptorPersistence.saveDevKitDescriptor(file, dd);
     }
 
     public DevkitDescriptor readFromXml(Element element, IFile anchorFile) {

@@ -8,9 +8,11 @@ import java.io.File;
 
 import jetbrains.mps.library.ModulesMiner;
 import jetbrains.mps.project.*;
+import jetbrains.mps.project.persistence.DevkitDescriptorPersistence;
 import jetbrains.mps.project.persistence.LanguageDescriptorPersistence;
 import jetbrains.mps.project.persistence.SolutionDescriptorPersistence;
 import jetbrains.mps.project.structure.model.ModelRoot;
+import jetbrains.mps.project.structure.modules.DevkitDescriptor;
 import jetbrains.mps.project.structure.modules.LanguageDescriptor;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
 import jetbrains.mps.smodel.MPSModuleOwner;
@@ -143,5 +145,22 @@ public class NewModuleUtil {
     languageDescriptor.getModelRoots().add(modelRoot);
     return languageDescriptor;
   }
+
+  private static DevkitDescriptor createNewDevkitDescriptor(String namespace) {
+    DevkitDescriptor d = new DevkitDescriptor();
+    d.setNamespace(namespace);
+    d.setId(ModuleId.regular());
+    return d;
+  }
+
+  public static DevKit createNewDevkit(String namespace, IFile descriptorFile, MPSModuleOwner moduleOwner) {
+    assert !descriptorFile.exists();
+
+    DevkitDescriptor descriptor = createNewDevkitDescriptor(namespace);
+    DevkitDescriptorPersistence.saveDevKitDescriptor(descriptorFile, descriptor);
+
+    return DevKit.newInstance(ModulesMiner.getInstance().loadModuleHandle(descriptorFile), moduleOwner);
+  }
+
 
 }

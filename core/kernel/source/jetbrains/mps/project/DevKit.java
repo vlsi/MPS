@@ -34,46 +34,17 @@ import java.util.Collections;
 import java.util.List;
 
 public class DevKit extends AbstractModule implements MPSModuleOwner {
-  public static DevKit createDevkit(String namespace, IFile descriptorFile, MPSModuleOwner moduleOwner) {
-    DevKit devKit = new DevKit();
-    DevkitDescriptor descriptor;
-    if (descriptorFile.exists()) {
-      descriptor = DevkitDescriptorPersistence.loadDevKitDescriptor(descriptorFile);
-      if (descriptor.getId() == null) {
-        descriptor.setId(ModuleId.regular());
-        DevkitDescriptorPersistence.saveDevKitDescriptor(descriptor, descriptorFile);
-      }
-    } else {
-      DevkitDescriptor d = new DevkitDescriptor();
-      d.setNamespace(namespace);
-      d.setId(ModuleId.regular());
-      descriptor = d;
-    }
-    devKit.myDescriptorFile = descriptorFile;
-
-    IModule d = checkRegistered(descriptor.getModuleReference(), descriptorFile);
-    if (d != null) {
-      return (DevKit) d;
-    }
-
-    devKit.setDevKitDescriptor(descriptor, false);
-    MPSModuleRepository.getInstance().registerModule(devKit, moduleOwner);
-
-    return devKit;
-  }
-
   public static DevKit newInstance(ModuleHandle handle, MPSModuleOwner moduleOwner) {
     DevKit result = new DevKit();
+    DevkitDescriptor descriptor = (DevkitDescriptor) handle.getDescriptor();
+    assert descriptor != null;
+    assert descriptor.getId() != null;
 
-    DevkitDescriptor devKitDescriptor = (DevkitDescriptor) handle.getDescriptor();
-    assert devKitDescriptor != null;
+    IModule d = checkRegistered(descriptor.getModuleReference(), handle.getFile());
+    if (d != null) return (DevKit) d;
 
-    if (devKitDescriptor.getId() == null) {
-      devKitDescriptor.setId(ModuleId.regular());
-      DevkitDescriptorPersistence.saveDevKitDescriptor(devKitDescriptor, handle.getFile());
-    }
+    result.setDevKitDescriptor(descriptor, false);
     result.myDescriptorFile = handle.getFile();
-    result.setDevKitDescriptor(devKitDescriptor, false);
 
     return registerInRepository(result, moduleOwner);
   }
@@ -245,7 +216,7 @@ public class DevKit extends AbstractModule implements MPSModuleOwner {
   }
 
   public void save() {
-    DevkitDescriptorPersistence.saveDevKitDescriptor(getModuleDescriptor(), myDescriptorFile);
+    DevkitDescriptorPersistence.saveDevKitDescriptor(myDescriptorFile, getModuleDescriptor());
   }
 
   public String getName() {
