@@ -14,9 +14,10 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.project.StubPath;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.project.structure.model.ModelRoot;
+import jetbrains.mps.smodel.LanguageID;
 import java.util.Collection;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
-import jetbrains.mps.smodel.LanguageID;
 import jetbrains.mps.project.SModelRoot;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.Generator;
@@ -68,6 +69,10 @@ public class Module_Behavior {
     return Sequence.fromIterable(((Iterable<StubPath>) ((AbstractModule) Module_Behavior.call_getModule_1213877515148(thisNode)).getStubPaths())).where(new IWhereFilter<StubPath>() {
       public boolean accept(StubPath it) {
         return !(it.getPath().endsWith(".jar"));
+      }
+    }).isNotEmpty() || Sequence.fromIterable(((Iterable<ModelRoot>) Module_Behavior.call_getModule_1213877515148(thisNode).getModuleDescriptor().getModelRoots())).where(new IWhereFilter<ModelRoot>() {
+      public boolean accept(ModelRoot it) {
+        return LanguageID.JAVA_MANAGER.equals(it.getManager()) && !(it.getPath().endsWith(".jar"));
       }
     }).isNotEmpty();
   }

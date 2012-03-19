@@ -2244,6 +2244,7 @@
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
         </dependencies>
+        <library jar="jetbrains.mps.baseLanguage.unitTest.execution.jar" />
         <sources jar="jetbrains.mps.baseLanguage.unitTest.execution-src.jar" descriptor="jetbrains.mps.baseLanguage.unitTest.runtime.msd" />
       </module>
     </echoxml>
@@ -3554,6 +3555,7 @@
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
         </dependencies>
         <runtime jar="/lib/commons-lang-2.4.jar" />
+        <library jar="jetbrains.mps.baseLanguage.jar" />
         <sources jar="jetbrains.mps.baseLanguage-src.jar" descriptor="baseLanguage.mpl" />
       </module>
     </echoxml>
@@ -4397,6 +4399,7 @@
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
         </dependencies>
+        <library jar="jetbrains.mps.baseLanguage.classifiers.jar" />
         <sources jar="jetbrains.mps.baseLanguage.classifiers-src.jar" descriptor="classifiers.mpl" />
       </module>
     </echoxml>
@@ -5459,6 +5462,7 @@
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
         </dependencies>
+        <library jar="jetbrains.mps.lang.actions.jar" />
         <sources jar="jetbrains.mps.lang.actions-src.jar" descriptor="languageDescriptor.mpl" />
       </module>
     </echoxml>
@@ -7281,6 +7285,7 @@
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
         </dependencies>
+        <library jar="jetbrains.mps.lang.sharedConcepts.jar" />
         <sources jar="jetbrains.mps.lang.sharedConcepts-src.jar" descriptor="sharedConcepts.mpl" />
       </module>
     </echoxml>
@@ -7421,6 +7426,7 @@
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
         </dependencies>
+        <library jar="jetbrains.mps.lang.smodel.jar" />
         <sources jar="jetbrains.mps.lang.smodel-src.jar" descriptor="smodel.mpl" />
       </module>
     </echoxml>
@@ -7844,6 +7850,7 @@
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
         </dependencies>
         <runtime jar="/lib/guava-r09.jar" />
+        <library jar="jetbrains.mps.lang.structure.jar" />
         <sources jar="jetbrains.mps.lang.structure-src.jar" descriptor="languageDescriptor.mpl" />
       </module>
     </echoxml>
@@ -7984,6 +7991,7 @@
           <module ref="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
           <module ref="fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)" />
         </dependencies>
+        <library jar="jetbrains.mps.lang.core.jar" />
         <sources jar="jetbrains.mps.lang.core-src.jar" descriptor="languageDescriptor.mpl" />
       </module>
     </echoxml>
