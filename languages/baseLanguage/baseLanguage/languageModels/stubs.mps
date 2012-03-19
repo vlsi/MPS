@@ -399,9 +399,13 @@
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="4381823297881500021">
           <node role="expression" roleId="tpee.1068580123156" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="4381823297881500022">
             <node role="creator" roleId="tpee.1145553007750" type="tp2q.ListCreatorWithInit" typeId="tp2q.1160600644654" id="4381823297881500023">
-              <node role="copyFrom" roleId="tp2q.1237731803878" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="4381823297881520429">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="n13f.~CommonPaths%dgetTestbenchPaths()%cjava%dutil%dList" resolveInfo="getTestbenchPaths" />
+              <node role="copyFrom" roleId="tp2q.1237731803878" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1967068695235992495">
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="n13f.~CommonPaths%dgetMPSPaths(jetbrains%dmps%dClasspathReader$ClassType%d%d%d)%cjava%dutil%dList" resolveInfo="getMPSPaths" />
                 <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="n13f.~CommonPaths" resolveInfo="CommonPaths" />
+                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="1967068695235992511">
+                  <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="1p1s.~ClasspathReader$ClassType%dTEST" resolveInfo="TEST" />
+                  <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="1p1s.~ClasspathReader$ClassType" resolveInfo="ClasspathReader.ClassType" />
+                </node>
               </node>
               <node role="elementType" roleId="tp2q.1237721435807" type="tpee.StringType" typeId="tpee.1225271177708" id="4381823297881500025" />
             </node>

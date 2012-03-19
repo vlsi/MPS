@@ -197,10 +197,9 @@
     <path path="${base_dir}/lib/trove4j.jar" />
     <path path="${base_dir}/lib/util.jar" />
     <path path="${base_dir}/lib/xstream.jar" />
-    <path path="${base_dir}/workbench/mps-debugger/classes" />
+    <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
-    <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
     <path path="${base_dir}/workbench/mps-workbench/classes" />
     <path path="${base_dir}/workbench/resources/classes" />
@@ -884,7 +883,6 @@
     <path path="${base_dir}/plugins/execution-languages/languages/deprecated.runtime/classes_gen" />
     <path path="${base_dir}/plugins/execution-languages/languages/library/classes_gen" />
     <path path="${base_dir}/testbench/classes" />
-    <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
@@ -1025,7 +1023,6 @@
     <path path="${base_dir}/plugins/execution-languages/languages/deprecated.runtime/classes_gen" />
     <path path="${base_dir}/plugins/execution-languages/languages/library/classes_gen" />
     <path path="${base_dir}/testbench/classes" />
-    <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
@@ -1203,7 +1200,6 @@
     <path path="${base_dir}/plugins/execution-languages/languages/deprecated.runtime/classes_gen" />
     <path path="${base_dir}/plugins/execution-languages/languages/library/classes_gen" />
     <path path="${base_dir}/testbench/classes" />
-    <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
@@ -1344,7 +1340,6 @@
     <path path="${base_dir}/plugins/execution-languages/languages/deprecated.runtime/classes_gen" />
     <path path="${base_dir}/plugins/execution-languages/languages/library/classes_gen" />
     <path path="${base_dir}/testbench/classes" />
-    <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
@@ -1485,7 +1480,6 @@
     <path path="${base_dir}/plugins/execution-languages/languages/deprecated.runtime/classes_gen" />
     <path path="${base_dir}/plugins/execution-languages/languages/library/classes_gen" />
     <path path="${base_dir}/testbench/classes" />
-    <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
@@ -1626,7 +1620,6 @@
     <path path="${base_dir}/plugins/execution-languages/languages/deprecated.runtime/classes_gen" />
     <path path="${base_dir}/plugins/execution-languages/languages/library/classes_gen" />
     <path path="${base_dir}/testbench/classes" />
-    <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
@@ -1767,7 +1760,6 @@
     <path path="${base_dir}/plugins/execution-languages/languages/deprecated.runtime/classes_gen" />
     <path path="${base_dir}/plugins/execution-languages/languages/library/classes_gen" />
     <path path="${base_dir}/testbench/classes" />
-    <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
@@ -1908,7 +1900,6 @@
     <path path="${base_dir}/plugins/execution-languages/languages/deprecated.runtime/classes_gen" />
     <path path="${base_dir}/plugins/execution-languages/languages/library/classes_gen" />
     <path path="${base_dir}/testbench/classes" />
-    <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
@@ -2050,7 +2041,6 @@
     <path path="${base_dir}/plugins/execution-languages/languages/deprecated.runtime/classes_gen" />
     <path path="${base_dir}/plugins/execution-languages/languages/library/classes_gen" />
     <path path="${base_dir}/testbench/classes" />
-    <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
@@ -2193,7 +2183,6 @@
     <path path="${base_dir}/plugins/execution-languages/languages/deprecated.runtime/classes_gen" />
     <path path="${base_dir}/plugins/execution-languages/languages/library/classes_gen" />
     <path path="${base_dir}/testbench/classes" />
-    <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
@@ -2344,7 +2333,6 @@
     <path path="${base_dir}/plugins/execution-languages/languages/deprecated.runtime/classes_gen" />
     <path path="${base_dir}/plugins/execution-languages/languages/library/classes_gen" />
     <path path="${base_dir}/testbench/classes" />
-    <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
@@ -2396,6 +2384,7 @@
     <path path="${base_dir}/lib/util.jar" />
     <path path="${base_dir}/lib/xstream.jar" />
     <path path="${base_dir}/plugins/execution-configurations/languages/baseLanguage/jetbrains.mps.baseLanguage.execution.startup/classes_gen" />
+    <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
@@ -2535,7 +2524,6 @@
     <path path="${base_dir}/plugins/execution-languages/languages/deprecated.runtime/classes_gen" />
     <path path="${base_dir}/plugins/execution-languages/languages/library/classes_gen" />
     <path path="${base_dir}/testbench/classes" />
-    <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
@@ -2676,7 +2664,6 @@
     <path path="${base_dir}/plugins/execution-languages/languages/deprecated.runtime/classes_gen" />
     <path path="${base_dir}/plugins/execution-languages/languages/library/classes_gen" />
     <path path="${base_dir}/testbench/classes" />
-    <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
@@ -2816,7 +2803,6 @@
     <path path="${base_dir}/plugins/execution-languages/languages/deprecated.runtime/classes_gen" />
     <path path="${base_dir}/plugins/execution-languages/languages/library/classes_gen" />
     <path path="${base_dir}/testbench/classes" />
-    <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
@@ -2958,7 +2944,6 @@
     <path path="${base_dir}/plugins/execution-languages/languages/deprecated.runtime/classes_gen" />
     <path path="${base_dir}/plugins/execution-languages/languages/library/classes_gen" />
     <path path="${base_dir}/testbench/classes" />
-    <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
@@ -3151,7 +3136,6 @@
     <path path="${base_dir}/plugins/execution-languages/languages/deprecated.runtime/classes_gen" />
     <path path="${base_dir}/plugins/execution-languages/languages/library/classes_gen" />
     <path path="${base_dir}/testbench/classes" />
-    <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
@@ -3298,7 +3282,6 @@
     <path path="${base_dir}/plugins/execution-languages/languages/deprecated.runtime/classes_gen" />
     <path path="${base_dir}/plugins/execution-languages/languages/library/classes_gen" />
     <path path="${base_dir}/testbench/classes" />
-    <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
@@ -3440,7 +3423,6 @@
     <path path="${base_dir}/plugins/execution-languages/languages/deprecated.runtime/classes_gen" />
     <path path="${base_dir}/plugins/execution-languages/languages/library/classes_gen" />
     <path path="${base_dir}/testbench/classes" />
-    <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
@@ -3581,7 +3563,6 @@
     <path path="${base_dir}/plugins/execution-languages/languages/deprecated.runtime/classes_gen" />
     <path path="${base_dir}/plugins/execution-languages/languages/library/classes_gen" />
     <path path="${base_dir}/testbench/classes" />
-    <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
@@ -3746,7 +3727,6 @@
     <path path="${base_dir}/plugins/execution-languages/languages/deprecated.runtime/classes_gen" />
     <path path="${base_dir}/plugins/execution-languages/languages/library/classes_gen" />
     <path path="${base_dir}/testbench/classes" />
-    <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
@@ -3892,7 +3872,6 @@
     <path path="${base_dir}/plugins/execution-languages/languages/deprecated.runtime/classes_gen" />
     <path path="${base_dir}/plugins/execution-languages/languages/library/classes_gen" />
     <path path="${base_dir}/testbench/classes" />
-    <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
@@ -4036,7 +4015,6 @@
     <path path="${base_dir}/plugins/mpsbuild/languages/build/classes_gen" />
     <path path="${base_dir}/plugins/mpsbuild/languages/workflow/classes_gen" />
     <path path="${base_dir}/testbench/classes" />
-    <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
@@ -4178,7 +4156,6 @@
     <path path="${base_dir}/plugins/execution-languages/languages/deprecated.runtime/classes_gen" />
     <path path="${base_dir}/plugins/execution-languages/languages/library/classes_gen" />
     <path path="${base_dir}/testbench/classes" />
-    <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
@@ -4319,7 +4296,6 @@
     <path path="${base_dir}/plugins/execution-languages/languages/deprecated.runtime/classes_gen" />
     <path path="${base_dir}/plugins/execution-languages/languages/library/classes_gen" />
     <path path="${base_dir}/testbench/classes" />
-    <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
@@ -4459,7 +4435,6 @@
     <path path="${base_dir}/plugins/execution-languages/languages/deprecated.runtime/classes_gen" />
     <path path="${base_dir}/plugins/execution-languages/languages/library/classes_gen" />
     <path path="${base_dir}/testbench/classes" />
-    <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
@@ -4599,7 +4574,6 @@
     <path path="${base_dir}/plugins/execution-languages/languages/deprecated.runtime/classes_gen" />
     <path path="${base_dir}/plugins/execution-languages/languages/library/classes_gen" />
     <path path="${base_dir}/testbench/classes" />
-    <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
@@ -4744,7 +4718,6 @@
     <path path="${base_dir}/plugins/mpsbuild/languages/mps/classes_gen" />
     <path path="${base_dir}/plugins/mpsbuild/languages/workflow/classes_gen" />
     <path path="${base_dir}/testbench/classes" />
-    <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
@@ -4885,7 +4858,6 @@
     <path path="${base_dir}/plugins/execution-languages/languages/deprecated.runtime/classes_gen" />
     <path path="${base_dir}/plugins/execution-languages/languages/library/classes_gen" />
     <path path="${base_dir}/testbench/classes" />
-    <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
@@ -5026,7 +4998,6 @@
     <path path="${base_dir}/plugins/execution-languages/languages/deprecated.runtime/classes_gen" />
     <path path="${base_dir}/plugins/execution-languages/languages/library/classes_gen" />
     <path path="${base_dir}/testbench/classes" />
-    <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
@@ -5166,7 +5137,6 @@
     <path path="${base_dir}/plugins/execution-languages/languages/deprecated.runtime/classes_gen" />
     <path path="${base_dir}/plugins/execution-languages/languages/library/classes_gen" />
     <path path="${base_dir}/testbench/classes" />
-    <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
@@ -5309,7 +5279,6 @@
     <path path="${base_dir}/plugins/execution-languages/languages/library/classes_gen" />
     <path path="${base_dir}/plugins/mpsbuild/languages/workflow/classes_gen" />
     <path path="${base_dir}/testbench/classes" />
-    <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
@@ -5450,7 +5419,6 @@
     <path path="${base_dir}/plugins/execution-languages/languages/deprecated.runtime/classes_gen" />
     <path path="${base_dir}/plugins/execution-languages/languages/library/classes_gen" />
     <path path="${base_dir}/testbench/classes" />
-    <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
@@ -5591,7 +5559,6 @@
     <path path="${base_dir}/plugins/execution-languages/languages/deprecated.runtime/classes_gen" />
     <path path="${base_dir}/plugins/execution-languages/languages/library/classes_gen" />
     <path path="${base_dir}/testbench/classes" />
-    <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
@@ -5732,7 +5699,6 @@
     <path path="${base_dir}/plugins/execution-languages/languages/deprecated.runtime/classes_gen" />
     <path path="${base_dir}/plugins/execution-languages/languages/library/classes_gen" />
     <path path="${base_dir}/testbench/classes" />
-    <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
@@ -5873,7 +5839,6 @@
     <path path="${base_dir}/plugins/execution-languages/languages/deprecated.runtime/classes_gen" />
     <path path="${base_dir}/plugins/execution-languages/languages/library/classes_gen" />
     <path path="${base_dir}/testbench/classes" />
-    <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
@@ -6013,7 +5978,6 @@
     <path path="${base_dir}/plugins/execution-languages/languages/deprecated.runtime/classes_gen" />
     <path path="${base_dir}/plugins/execution-languages/languages/library/classes_gen" />
     <path path="${base_dir}/testbench/classes" />
-    <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
@@ -6153,7 +6117,6 @@
     <path path="${base_dir}/plugins/execution-languages/languages/deprecated.runtime/classes_gen" />
     <path path="${base_dir}/plugins/execution-languages/languages/library/classes_gen" />
     <path path="${base_dir}/testbench/classes" />
-    <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
@@ -6297,7 +6260,6 @@
     <path path="${base_dir}/plugins/execution-languages/languages/deprecated.runtime/classes_gen" />
     <path path="${base_dir}/plugins/execution-languages/languages/library/classes_gen" />
     <path path="${base_dir}/testbench/classes" />
-    <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
@@ -6439,7 +6401,6 @@
     <path path="${base_dir}/plugins/execution-languages/languages/deprecated.runtime/classes_gen" />
     <path path="${base_dir}/plugins/execution-languages/languages/library/classes_gen" />
     <path path="${base_dir}/testbench/classes" />
-    <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
@@ -6585,7 +6546,6 @@
     <path path="${base_dir}/plugins/execution-languages/languages/deprecated.runtime/classes_gen" />
     <path path="${base_dir}/plugins/execution-languages/languages/library/classes_gen" />
     <path path="${base_dir}/testbench/classes" />
-    <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
@@ -6726,7 +6686,6 @@
     <path path="${base_dir}/plugins/execution-languages/languages/deprecated/classes_gen" />
     <path path="${base_dir}/plugins/execution-languages/languages/library/classes_gen" />
     <path path="${base_dir}/testbench/classes" />
-    <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
@@ -6866,7 +6825,6 @@
     <path path="${base_dir}/plugins/execution-languages/languages/deprecated.runtime/classes_gen" />
     <path path="${base_dir}/plugins/execution-languages/languages/library/classes_gen" />
     <path path="${base_dir}/testbench/classes" />
-    <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
@@ -7013,7 +6971,6 @@
     <path path="${base_dir}/plugins/execution-languages/languages/deprecated.runtime/classes_gen" />
     <path path="${base_dir}/plugins/execution-languages/languages/library/classes_gen" />
     <path path="${base_dir}/testbench/classes" />
-    <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
@@ -7153,7 +7110,6 @@
     <path path="${base_dir}/plugins/execution-languages/languages/deprecated.runtime/classes_gen" />
     <path path="${base_dir}/plugins/execution-languages/languages/library/classes_gen" />
     <path path="${base_dir}/testbench/classes" />
-    <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
@@ -7294,7 +7250,6 @@
     <path path="${base_dir}/plugins/execution-languages/languages/deprecated.runtime/classes_gen" />
     <path path="${base_dir}/plugins/execution-languages/languages/library/classes_gen" />
     <path path="${base_dir}/testbench/classes" />
-    <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
@@ -7437,7 +7392,6 @@
     <path path="${base_dir}/plugins/execution-languages/languages/deprecated.runtime/classes_gen" />
     <path path="${base_dir}/plugins/execution-languages/languages/library/classes_gen" />
     <path path="${base_dir}/testbench/classes" />
-    <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
@@ -7578,7 +7532,6 @@
     <path path="${base_dir}/plugins/execution-languages/languages/deprecated.runtime/classes_gen" />
     <path path="${base_dir}/plugins/execution-languages/languages/library/classes_gen" />
     <path path="${base_dir}/testbench/classes" />
-    <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
@@ -7732,7 +7685,6 @@
     <path path="${base_dir}/plugins/execution-languages/languages/deprecated.runtime/classes_gen" />
     <path path="${base_dir}/plugins/execution-languages/languages/library/classes_gen" />
     <path path="${base_dir}/testbench/classes" />
-    <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
@@ -7873,7 +7825,6 @@
     <path path="${base_dir}/plugins/execution-languages/languages/deprecated.runtime/classes_gen" />
     <path path="${base_dir}/plugins/execution-languages/languages/library/classes_gen" />
     <path path="${base_dir}/testbench/classes" />
-    <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
@@ -8013,7 +7964,6 @@
     <path path="${base_dir}/plugins/execution-languages/languages/deprecated.runtime/classes_gen" />
     <path path="${base_dir}/plugins/execution-languages/languages/library/classes_gen" />
     <path path="${base_dir}/testbench/classes" />
-    <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
@@ -8154,7 +8104,6 @@
     <path path="${base_dir}/plugins/execution-languages/languages/deprecated.runtime/classes_gen" />
     <path path="${base_dir}/plugins/execution-languages/languages/library/classes_gen" />
     <path path="${base_dir}/testbench/classes" />
-    <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
@@ -8295,7 +8244,6 @@
     <path path="${base_dir}/plugins/execution-languages/languages/deprecated.runtime/classes_gen" />
     <path path="${base_dir}/plugins/execution-languages/languages/library/classes_gen" />
     <path path="${base_dir}/testbench/classes" />
-    <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
@@ -8436,7 +8384,6 @@
     <path path="${base_dir}/plugins/execution-languages/languages/deprecated.runtime/classes_gen" />
     <path path="${base_dir}/plugins/execution-languages/languages/library/classes_gen" />
     <path path="${base_dir}/testbench/classes" />
-    <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
@@ -8577,7 +8524,6 @@
     <path path="${base_dir}/plugins/execution-languages/languages/deprecated.runtime/classes_gen" />
     <path path="${base_dir}/plugins/execution-languages/languages/library/classes_gen" />
     <path path="${base_dir}/testbench/classes" />
-    <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
@@ -8718,7 +8664,6 @@
     <path path="${base_dir}/plugins/execution-languages/languages/deprecated.runtime/classes_gen" />
     <path path="${base_dir}/plugins/execution-languages/languages/library/classes_gen" />
     <path path="${base_dir}/testbench/classes" />
-    <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
@@ -8859,7 +8804,6 @@
     <path path="${base_dir}/plugins/execution-languages/languages/deprecated.runtime/classes_gen" />
     <path path="${base_dir}/plugins/execution-languages/languages/library/classes_gen" />
     <path path="${base_dir}/testbench/classes" />
-    <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
@@ -8999,7 +8943,6 @@
     <path path="${base_dir}/plugins/execution-languages/languages/deprecated.runtime/classes_gen" />
     <path path="${base_dir}/plugins/execution-languages/languages/library/classes_gen" />
     <path path="${base_dir}/testbench/classes" />
-    <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
@@ -9140,7 +9083,6 @@
     <path path="${base_dir}/plugins/execution-languages/languages/deprecated.runtime/classes_gen" />
     <path path="${base_dir}/plugins/execution-languages/languages/library/classes_gen" />
     <path path="${base_dir}/testbench/classes" />
-    <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
@@ -9281,7 +9223,6 @@
     <path path="${base_dir}/plugins/execution-languages/languages/deprecated.runtime/classes_gen" />
     <path path="${base_dir}/plugins/execution-languages/languages/library/classes_gen" />
     <path path="${base_dir}/testbench/classes" />
-    <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
@@ -9422,7 +9363,6 @@
     <path path="${base_dir}/plugins/execution-languages/languages/deprecated.runtime/classes_gen" />
     <path path="${base_dir}/plugins/execution-languages/languages/library/classes_gen" />
     <path path="${base_dir}/testbench/classes" />
-    <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
@@ -9563,7 +9503,6 @@
     <path path="${base_dir}/plugins/execution-languages/languages/deprecated.runtime/classes_gen" />
     <path path="${base_dir}/plugins/execution-languages/languages/library/classes_gen" />
     <path path="${base_dir}/testbench/classes" />
-    <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
@@ -9704,7 +9643,6 @@
     <path path="${base_dir}/plugins/execution-languages/languages/deprecated.runtime/classes_gen" />
     <path path="${base_dir}/plugins/execution-languages/languages/library/classes_gen" />
     <path path="${base_dir}/testbench/classes" />
-    <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
@@ -9845,7 +9783,6 @@
     <path path="${base_dir}/plugins/execution-languages/languages/deprecated.runtime/classes_gen" />
     <path path="${base_dir}/plugins/execution-languages/languages/library/classes_gen" />
     <path path="${base_dir}/testbench/classes" />
-    <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
@@ -9985,7 +9922,6 @@
     <path path="${base_dir}/plugins/execution-languages/languages/deprecated.runtime/classes_gen" />
     <path path="${base_dir}/plugins/execution-languages/languages/library/classes_gen" />
     <path path="${base_dir}/testbench/classes" />
-    <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
@@ -10126,7 +10062,6 @@
     <path path="${base_dir}/plugins/execution-languages/languages/deprecated.runtime/classes_gen" />
     <path path="${base_dir}/plugins/execution-languages/languages/library/classes_gen" />
     <path path="${base_dir}/testbench/classes" />
-    <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
@@ -10267,7 +10202,6 @@
     <path path="${base_dir}/plugins/execution-languages/languages/deprecated.runtime/classes_gen" />
     <path path="${base_dir}/plugins/execution-languages/languages/library/classes_gen" />
     <path path="${base_dir}/testbench/classes" />
-    <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
@@ -10408,7 +10342,6 @@
     <path path="${base_dir}/plugins/execution-languages/languages/deprecated.runtime/classes_gen" />
     <path path="${base_dir}/plugins/execution-languages/languages/library/classes_gen" />
     <path path="${base_dir}/testbench/classes" />
-    <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
@@ -10549,7 +10482,6 @@
     <path path="${base_dir}/plugins/execution-languages/languages/deprecated.runtime/classes_gen" />
     <path path="${base_dir}/plugins/execution-languages/languages/library/classes_gen" />
     <path path="${base_dir}/testbench/classes" />
-    <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
@@ -10689,7 +10621,6 @@
     <path path="${base_dir}/plugins/execution-languages/languages/deprecated.runtime/classes_gen" />
     <path path="${base_dir}/plugins/execution-languages/languages/library/classes_gen" />
     <path path="${base_dir}/testbench/classes" />
-    <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
@@ -10830,7 +10761,6 @@
     <path path="${base_dir}/plugins/execution-languages/languages/deprecated.runtime/classes_gen" />
     <path path="${base_dir}/plugins/execution-languages/languages/library/classes_gen" />
     <path path="${base_dir}/testbench/classes" />
-    <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
@@ -10976,7 +10906,6 @@
     <path path="${base_dir}/plugins/execution-languages/languages/deprecated.runtime/classes_gen" />
     <path path="${base_dir}/plugins/execution-languages/languages/library/classes_gen" />
     <path path="${base_dir}/testbench/classes" />
-    <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
@@ -11118,7 +11047,6 @@
     <path path="${base_dir}/plugins/execution-languages/languages/deprecated.runtime/classes_gen" />
     <path path="${base_dir}/plugins/execution-languages/languages/library/classes_gen" />
     <path path="${base_dir}/testbench/classes" />
-    <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
@@ -11264,7 +11192,6 @@
     <path path="${base_dir}/plugins/execution-languages/languages/deprecated.runtime/classes_gen" />
     <path path="${base_dir}/plugins/execution-languages/languages/library/classes_gen" />
     <path path="${base_dir}/testbench/classes" />
-    <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
@@ -11405,7 +11332,6 @@
     <path path="${base_dir}/plugins/execution-languages/languages/deprecated.runtime/classes_gen" />
     <path path="${base_dir}/plugins/execution-languages/languages/library/classes_gen" />
     <path path="${base_dir}/testbench/classes" />
-    <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
@@ -11545,7 +11471,6 @@
     <path path="${base_dir}/plugins/execution-languages/languages/deprecated.runtime/classes_gen" />
     <path path="${base_dir}/plugins/execution-languages/languages/library/classes_gen" />
     <path path="${base_dir}/testbench/classes" />
-    <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
@@ -11597,6 +11522,7 @@
     <path path="${base_dir}/lib/trove4j.jar" />
     <path path="${base_dir}/lib/util.jar" />
     <path path="${base_dir}/lib/xstream.jar" />
+    <path path="${base_dir}/testbench/classes" />
     <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
@@ -11737,7 +11663,6 @@
     <path path="${base_dir}/plugins/execution-languages/languages/deprecated.runtime/classes_gen" />
     <path path="${base_dir}/plugins/execution-languages/languages/library/classes_gen" />
     <path path="${base_dir}/testbench/classes" />
-    <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
@@ -11879,7 +11804,6 @@
     <path path="${base_dir}/plugins/execution-languages/languages/deprecated.runtime/classes_gen" />
     <path path="${base_dir}/plugins/execution-languages/languages/library/classes_gen" />
     <path path="${base_dir}/testbench/classes" />
-    <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
@@ -12022,7 +11946,6 @@
     <path path="${base_dir}/plugins/execution-languages/languages/deprecated.runtime/classes_gen" />
     <path path="${base_dir}/plugins/execution-languages/languages/library/classes_gen" />
     <path path="${base_dir}/testbench/classes" />
-    <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
@@ -12167,7 +12090,6 @@
     <path path="${base_dir}/plugins/execution-languages/languages/deprecated.runtime/classes_gen" />
     <path path="${base_dir}/plugins/execution-languages/languages/library/classes_gen" />
     <path path="${base_dir}/testbench/classes" />
-    <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
@@ -12312,7 +12234,6 @@
     <path path="${base_dir}/plugins/execution-languages/languages/deprecated.runtime/classes_gen" />
     <path path="${base_dir}/plugins/execution-languages/languages/library/classes_gen" />
     <path path="${base_dir}/testbench/classes" />
-    <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
@@ -12456,7 +12377,6 @@
     <path path="${base_dir}/plugins/execution-languages/languages/deprecated.runtime/classes_gen" />
     <path path="${base_dir}/plugins/execution-languages/languages/library/classes_gen" />
     <path path="${base_dir}/testbench/classes" />
-    <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
@@ -12597,7 +12517,6 @@
     <path path="${base_dir}/plugins/execution-languages/languages/deprecated.runtime/classes_gen" />
     <path path="${base_dir}/plugins/execution-languages/languages/library/classes_gen" />
     <path path="${base_dir}/testbench/classes" />
-    <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
@@ -12739,7 +12658,6 @@
     <path path="${base_dir}/plugins/execution-languages/languages/deprecated.runtime/classes_gen" />
     <path path="${base_dir}/plugins/execution-languages/languages/library/classes_gen" />
     <path path="${base_dir}/testbench/classes" />
-    <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
@@ -12880,7 +12798,6 @@
     <path path="${base_dir}/plugins/execution-languages/languages/deprecated.runtime/classes_gen" />
     <path path="${base_dir}/plugins/execution-languages/languages/library/classes_gen" />
     <path path="${base_dir}/testbench/classes" />
-    <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
@@ -13026,7 +12943,6 @@
     <path path="${base_dir}/plugins/execution-languages/languages/deprecated.runtime/classes_gen" />
     <path path="${base_dir}/plugins/execution-languages/languages/library/classes_gen" />
     <path path="${base_dir}/testbench/classes" />
-    <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
@@ -13171,7 +13087,6 @@
     <path path="${base_dir}/plugins/execution-languages/languages/deprecated.runtime/classes_gen" />
     <path path="${base_dir}/plugins/execution-languages/languages/library/classes_gen" />
     <path path="${base_dir}/testbench/classes" />
-    <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
@@ -13328,7 +13243,6 @@
     <path path="${base_dir}/plugins/execution-languages/languages/deprecated.runtime/classes_gen" />
     <path path="${base_dir}/plugins/execution-languages/languages/library/classes_gen" />
     <path path="${base_dir}/testbench/classes" />
-    <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
@@ -13473,7 +13387,6 @@
     <path path="${base_dir}/plugins/execution-languages/languages/deprecated.runtime/classes_gen" />
     <path path="${base_dir}/plugins/execution-languages/languages/library/classes_gen" />
     <path path="${base_dir}/testbench/classes" />
-    <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
@@ -13621,7 +13534,6 @@
     <path path="${base_dir}/plugins/execution-languages/languages/deprecated.runtime/classes_gen" />
     <path path="${base_dir}/plugins/execution-languages/languages/library/classes_gen" />
     <path path="${base_dir}/testbench/classes" />
-    <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
@@ -13762,7 +13674,6 @@
     <path path="${base_dir}/plugins/execution-languages/languages/deprecated.runtime/classes_gen" />
     <path path="${base_dir}/plugins/execution-languages/languages/library/classes_gen" />
     <path path="${base_dir}/testbench/classes" />
-    <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
@@ -13906,7 +13817,6 @@
     <path path="${base_dir}/plugins/execution-languages/languages/deprecated.runtime/classes_gen" />
     <path path="${base_dir}/plugins/execution-languages/languages/library/classes_gen" />
     <path path="${base_dir}/testbench/classes" />
-    <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
@@ -14056,7 +13966,6 @@
     <path path="${base_dir}/plugins/execution-languages/languages/deprecated.runtime/classes_gen" />
     <path path="${base_dir}/plugins/execution-languages/languages/library/classes_gen" />
     <path path="${base_dir}/testbench/classes" />
-    <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
@@ -14197,7 +14106,6 @@
     <path path="${base_dir}/plugins/execution-languages/languages/deprecated.runtime/classes_gen" />
     <path path="${base_dir}/plugins/execution-languages/languages/library/classes_gen" />
     <path path="${base_dir}/testbench/classes" />
-    <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
@@ -14338,7 +14246,6 @@
     <path path="${base_dir}/plugins/execution-languages/languages/deprecated.runtime/classes_gen" />
     <path path="${base_dir}/plugins/execution-languages/languages/library/classes_gen" />
     <path path="${base_dir}/testbench/classes" />
-    <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
@@ -14481,7 +14388,6 @@
     <path path="${base_dir}/plugins/execution-languages/languages/deprecated.runtime/classes_gen" />
     <path path="${base_dir}/plugins/execution-languages/languages/library/classes_gen" />
     <path path="${base_dir}/testbench/classes" />
-    <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
@@ -14641,7 +14547,6 @@
     <path path="${base_dir}/plugins/execution-languages/languages/deprecated.runtime/classes_gen" />
     <path path="${base_dir}/plugins/execution-languages/languages/library/classes_gen" />
     <path path="${base_dir}/testbench/classes" />
-    <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
@@ -14789,7 +14694,6 @@
     <path path="${base_dir}/plugins/execution-languages/languages/deprecated.runtime/classes_gen" />
     <path path="${base_dir}/plugins/execution-languages/languages/library/classes_gen" />
     <path path="${base_dir}/testbench/classes" />
-    <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />
@@ -14933,7 +14837,6 @@
     <path path="${base_dir}/plugins/execution-languages/languages/deprecated.runtime/classes_gen" />
     <path path="${base_dir}/plugins/execution-languages/languages/library/classes_gen" />
     <path path="${base_dir}/testbench/classes" />
-    <path path="${base_dir}/testbench/testclasses" />
     <path path="${base_dir}/workbench/mps-debugger/classes" />
     <path path="${base_dir}/workbench/mps-editor/classes" />
     <path path="${base_dir}/workbench/mps-platform/classes" />

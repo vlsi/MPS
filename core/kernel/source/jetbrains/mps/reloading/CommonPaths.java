@@ -54,13 +54,11 @@ public class CommonPaths {
       } else if (type == ClassType.WORKBENCH) {
         addIdeaJars(result);
         addWorkbenchJars(result);
+      } else if (type == ClassType.TEST) {
+        addTestJars(result);
       }
     }
     return itemToPath(result);
-  }
-
-  public static List<String> getTestbenchPaths() {
-    return itemToPath(getTestbenchClassPath());
   }
 
   public static List<String> getJDKPath() {
@@ -186,6 +184,10 @@ public class CommonPaths {
     addIfExists(result, "/lib/junit-4.8.2.jar");
   }
 
+  private static void addTestJars(CompositeClassPathItem result) {
+    addIfExists(result, "/lib/mps-test.jar");
+  }
+
   private static void addToolsJar(CompositeClassPathItem result) {
     addIfExists(result, "/lib/tools.jar");
   }
@@ -207,17 +209,6 @@ public class CommonPaths {
   private static String libPath() {
     return PathManager.getHomePath() + File.separator + "lib"
       + File.separator;
-  }
-
-  //------classpaths : Testbench--------
-
-  public static IClassPathItem getTestbenchClassPath() {
-    CompositeClassPathItem result = new CompositeClassPathItem();
-
-    addIfExists(result, "/testbench/classes");
-    addIfExists(result, "/testbench/testclasses");
-
-    return result;
   }
 
   private static void addIfExists(CompositeClassPathItem item, String path) {

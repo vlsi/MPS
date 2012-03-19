@@ -11,6 +11,7 @@ import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.reloading.CommonPaths;
+import jetbrains.mps.ClasspathReader;
 
 public class Testbench_StubDescriptor extends BaseLibStubDescriptor {
   public Testbench_StubDescriptor() {
@@ -29,6 +30,6 @@ public class Testbench_StubDescriptor extends BaseLibStubDescriptor {
   }
 
   public List<String> getPaths() {
-    return ListSequence.fromListWithValues(new ArrayList<String>(), CommonPaths.getTestbenchPaths());
+    return ListSequence.fromListWithValues(new ArrayList<String>(), CommonPaths.getMPSPaths(ClasspathReader.ClassType.TEST));
   }
 }
