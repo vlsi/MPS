@@ -41,8 +41,6 @@ public class TransientModelsModule extends AbstractModule {
   private Set<String> myModelsToKeep = new ConcurrentHashSet<String>();
   private Map<SModelFqName, SModelDescriptor> myModels = new ConcurrentHashMap<SModelFqName, SModelDescriptor>();
   private Set<SModelDescriptor> myPublished = new ConcurrentHashSet<SModelDescriptor>();
-  private final MPSModuleOwner myOwner = new MPSModuleOwner() {
-  };
 
   //the second parameter is needed because there is a time dependency -
   //MPSProject must be disposed after TransientModelsModule for
@@ -53,15 +51,6 @@ public class TransientModelsModule extends AbstractModule {
     myOriginalModule = original;
     ModuleReference reference = ModuleReference.fromString(original.getModuleFqName() + "@transient" + ourModuleCounter.getAndIncrement());
     setModuleReference(reference);
-  }
-
-  public void initModule() {
-    MPSModuleRepository.getInstance().registerModule(TransientModelsModule.this, myOwner);
-  }
-
-  public void disposeModule() {
-    clearAll();
-    MPSModuleRepository.getInstance().unregisterModule(TransientModelsModule.this, myOwner);
   }
 
   public Class getClass(String fqName) {
@@ -102,7 +91,6 @@ public class TransientModelsModule extends AbstractModule {
 
   public void clearAll() {
     removeAll();
-    SModelRepository.getInstance().unRegisterModelDescriptors(this);
     invalidateCaches();
     myModelsToKeep.clear();
     myPublished.clear();
