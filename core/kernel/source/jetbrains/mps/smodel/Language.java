@@ -83,9 +83,13 @@ public class Language extends AbstractModule implements MPSModuleOwner {
     language.setLanguageDescriptor(descriptor, false);
     language.myDescriptorFile = handle.getFile();
 
-    LibrariesLoader.createLanguageLibs(moduleOwner, language, descriptor, MPSModuleRepository.getInstance());
+    Language registered = MPSModuleRepository.getInstance().registerModule(language, moduleOwner);
 
-    return MPSModuleRepository.getInstance().registerModule(language, moduleOwner);
+    if (registered == language) {
+      LibrariesLoader.createLanguageLibs(moduleOwner, language, descriptor, MPSModuleRepository.getInstance());
+    }
+
+    return registered;
   }
 
   protected Language() {
