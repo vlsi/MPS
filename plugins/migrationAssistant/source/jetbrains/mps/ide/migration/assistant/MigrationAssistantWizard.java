@@ -26,21 +26,20 @@ import com.intellij.openapi.progress.Task;
 import com.intellij.openapi.progress.Task.Modal;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.wm.impl.status.InlineProgressIndicator;
-import com.intellij.ui.components.JBCheckBox;
 import com.intellij.ui.components.JBList;
 import com.intellij.ui.components.JBScrollPane;
-import com.intellij.util.ui.Timer;
-import com.intellij.util.ui.UIUtil;
 import jetbrains.mps.ide.migration.assistant.MigrationProcessor.Callback;
 import jetbrains.mps.project.MPSProjectMigrationState;
 
 import javax.swing.*;
-import java.awt.BorderLayout;
-import java.awt.Component;
-import java.awt.Font;
-import java.awt.Graphics;
+import javax.swing.event.ListSelectionEvent;
+import javax.swing.event.ListSelectionListener;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.font.TextAttribute;
 import java.util.*;
+import java.util.List;
 
 /**
  * Created by IntelliJ IDEA.
@@ -201,6 +200,14 @@ public class MigrationAssistantWizard extends AbstractWizardEx {
 
   private static class MigrationsActionsStep extends MyStep {
 
+    private JBList myList;
+    private JButton myIncludeBtn;
+    private JButton myExcludeBtn;
+    private JButton mySelectAllBtn;
+    private JButton myInvertBtn;
+    private final Set<Object> myExcludedActions = Collections.synchronizedSet(new HashSet<Object>());
+    private final Set<Object> myAllActions = Collections.synchronizedSet(new HashSet<Object>());
+
     public MigrationsActionsStep(Project project) {
       super(project, "List Of Migration Actions", "actionsList");
       createComponent();
@@ -210,36 +217,180 @@ public class MigrationAssistantWizard extends AbstractWizardEx {
     protected final void createComponent() {
       super.createComponent();
       MigrationProcessor processor = myProject.getComponent(MigrationProcessor.class);
+      myAllActions.addAll(processor.getActions());
+      myExcludedActions.addAll(processor.getActions());
+      myExcludedActions.removeAll(processor.getSelectedActions());
 
       JLabel label = new JLabel("List of migrations");
       myComponent.add(label, BorderLayout.NORTH);
-      JBList list = new JBList(processor.getActions());
 
-      Set<Object> excluded = Collections.synchronizedSet(new HashSet<Object>());
-      excluded.add(processor.getActions().get(3));
-      excluded.add(processor.getActions().get(5));
-      list.setCellRenderer(new MyListCellRenderer(excluded, Collections.emptySet()));
+      myList = new JBList(processor.getActions());
+      myList.getSelectionModel().addListSelectionListener(new ListSelectionListener() {
+        @Override
+        public void valueChanged(ListSelectionEvent e) {
+          updateButtons();
+        }
+      });
+      myList.setCellRenderer(new MyListCellRenderer(myExcludedActions, Collections.emptySet()));
 
-      myComponent.add(new JBScrollPane(list), BorderLayout.CENTER);
+      JPanel listPanel = new JPanel(new BorderLayout(5,5));
+      listPanel.add(new JBScrollPane(myList), BorderLayout.CENTER);
 
+      JPanel buttonsPanel = createButtonsPanel();
+      listPanel.add(buttonsPanel, BorderLayout.EAST);
+      myComponent.add(listPanel, BorderLayout.CENTER);
+    }
+
+    private JPanel createButtonsPanel() {
+      GridBagLayout layout = new GridBagLayout();
+      JPanel buttonsPanel = new JPanel(layout);
+
+      GridBagConstraints gbc = new GridBagConstraints(0, 0,1,1,1.,0.,GridBagConstraints.FIRST_LINE_START, GridBagConstraints.HORIZONTAL, new Insets(0,0,0,0), 0, 0);
+
+      myIncludeBtn = new JButton("Include");
+      myIncludeBtn.setMnemonic('I');
+      myIncludeBtn.addActionListener(new ActionListener() {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+          handleInclude();
+        }
+      });
+      buttonsPanel.add(myIncludeBtn);
+      layout.setConstraints(myIncludeBtn, gbc);
+
+      gbc.gridy++;
+      gbc.anchor = GridBagConstraints.LINE_START;
+      myExcludeBtn = new JButton("Exclude");
+      myExcludeBtn.setMnemonic('x');
+      myExcludeBtn.addActionListener(new ActionListener() {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+          handleExclude();
+        }
+      });
+      buttonsPanel.add(myExcludeBtn);
+      layout.setConstraints(myExcludeBtn, gbc);
+
+      gbc.gridy++;
+      gbc.weighty = 1.;
+      gbc.fill = GridBagConstraints.BOTH;
+      JLabel emptyLabel = new JLabel("");
+      buttonsPanel.add(emptyLabel);
+      layout.setConstraints(emptyLabel, gbc);
+
+      mySelectAllBtn = new JButton("Select All");
+      mySelectAllBtn.setMnemonic('A');
+      mySelectAllBtn.addActionListener(new ActionListener() {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+          handleSelectAll();
+        }
+      });
+      gbc.gridy++;
+      gbc.weighty = 0.;
+      gbc.fill = GridBagConstraints.HORIZONTAL;
+      buttonsPanel.add(mySelectAllBtn);
+      layout.setConstraints(mySelectAllBtn, gbc);
+
+      myInvertBtn = new JButton("Invert Selection");
+      myInvertBtn.setMnemonic('v');
+      myInvertBtn.addActionListener(new ActionListener() {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+          handleInvertSelection();
+        }
+      });
+      gbc.gridy++;
+      buttonsPanel.add(myInvertBtn);
+      gbc.anchor = GridBagConstraints.LAST_LINE_START;
+      layout.setConstraints(myInvertBtn, gbc);
+      return buttonsPanel;
+    }
+
+    private void handleInvertSelection() {
+      int[] selectedIndices = myList.getSelectedIndices();
+      int[] newSelectedIndices = new int[myList.getModel().getSize() - selectedIndices.length];
+      for (int i = 0, j = 0; i < myList.getModel().getSize(); i++) {
+        if (Arrays.binarySearch(selectedIndices, i) < 0) {
+          newSelectedIndices[j++] = i;
+        }
+      }
+      myList.setSelectedIndices(newSelectedIndices);
+      updateButtons();
+    }
+
+    private void handleSelectAll() {
+      if (myList.getModel().getSize() > 0) {
+        myList.getSelectionModel().setSelectionInterval(0, myList.getModel().getSize()-1);
+        updateButtons();
+      }
+    }
+
+    private void handleExclude() {
+      List<Object> selectedValues = Arrays.asList(myList.getSelectedValues());
+      myExcludedActions.addAll(selectedValues);
+      updateList();
+      updateButtons();
+      fireStateChanged();
+    }
+
+    private void handleInclude() {
+      List<Object> selectedValues = Arrays.asList(myList.getSelectedValues());
+      myExcludedActions.removeAll(selectedValues);
+      updateList();
+      updateButtons();
+      fireStateChanged();
+    }
+
+    private void updateButtons () {
+      List<Object> selectedValues = Arrays.asList(myList.getSelectedValues());
+      if (selectedValues.isEmpty()) {
+        myIncludeBtn.setEnabled(false);
+        myExcludeBtn.setEnabled(false);
+      }
+      boolean anyExcluded = false;
+      for (Object selectedValue : selectedValues) {
+        anyExcluded |= myExcludedActions.contains(selectedValue);
+      }
+      if (!anyExcluded) {
+        myIncludeBtn.setEnabled(false);
+        myExcludeBtn.setEnabled(true);
+      }
+      else if (myExcludedActions.containsAll(selectedValues)){
+        myIncludeBtn.setEnabled(true);
+        myExcludeBtn.setEnabled(false);
+      }
+      else {
+        myIncludeBtn.setEnabled(true);
+        myExcludeBtn.setEnabled(true);
+      }
+    }
+
+    private void updateList() {
+      myList.repaint();
+    }
+
+    @Override
+    public boolean isComplete() {
+      return !myExcludedActions.containsAll(myAllActions);
+    }
+
+    @Override
+    public void _init() {
+      super._init();
+      updateButtons();
     }
 
     @Override
     public void commit(CommitType commitType) throws CommitStepException {
       if (CommitType.Next == commitType) {
+        if (myExcludedActions.containsAll(myAllActions)) throw new CommitStepException("No actions selected");
         MigrationProcessor processor = myProject.getComponent(MigrationProcessor.class);
         List<?> actions = new ArrayList<Object>(processor.getActions());
-        actions.remove(5);
-        actions.remove(3);
+        actions.removeAll(myExcludedActions);
         processor.setSelectedActions(actions);
       }
     }
-
-    @Override
-    public boolean isComplete() {
-      return true;
-    }
-
   }
 
   private static class MigrationsProgressStep extends MyStep {
@@ -275,7 +426,7 @@ public class MigrationAssistantWizard extends AbstractWizardEx {
       return new Modal(myProject, "executing", false) {
         @Override
         public void run(final ProgressIndicator indicator) {
-          MigrationProcessor processor = myProject.getComponent(MigrationProcessor.class);
+          final MigrationProcessor processor = myProject.getComponent(MigrationProcessor.class);
           final List<?> actions = processor.getActions();
           myExcluded.addAll(actions);
           myExcluded.removeAll(processor.getSelectedActions());
@@ -295,6 +446,7 @@ public class MigrationAssistantWizard extends AbstractWizardEx {
 
             @Override
             public void finishedAll() {
+              processor.removeCallback(this);
               indicator.setFraction(1.0);
               myFinished = true;
               fireStateChanged();

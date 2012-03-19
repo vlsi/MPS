@@ -85,15 +85,14 @@ public class MigrationProcessor extends AbstractProjectComponent{
   
   public void startProcessing () {
     if (!myStarted.compareAndSet(false, true)) throw new IllegalStateException("already processing");
-    
+
     final ArrayList<Object> actionsCopy = new ArrayList<Object>(mySelectedActions);
 
-    final int[] steps = new int[]{0};
-
     new Timer("foo", 300) {
+      int myStep = 0;
       @Override
       protected void onTimer() throws InterruptedException {
-        final int step = steps[0]++;
+        final int step = myStep++;
         if (step >= actionsCopy.size()) {
           this.dispose();
           myFinished.set(true);
@@ -119,7 +118,11 @@ public class MigrationProcessor extends AbstractProjectComponent{
   public void addCallback (Callback callback) {
     myCallbacks.add(callback);
   }
-  
+
+  public void removeCallback (Callback callback) {
+    myCallbacks.remove(callback);
+  }
+
   private void fireStartingAction(Object action) {
     for (Callback callback: myCallbacks) {
       callback.startingAction(action);        
