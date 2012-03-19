@@ -107,11 +107,10 @@ public class DevKit extends AbstractModule implements MPSModuleOwner {
   }
 
   public void dispose() {
-    super.dispose();
-
-    SModelRepository.getInstance().unRegisterModelDescriptors(this);
     ModuleRepositoryFacade.getInstance().unregisterModules(this);
     ModuleRepositoryFacade.getInstance().unregisterModules(myGenerationOnlyModelsModelOwner);
+
+    super.dispose();
   }
 
   @Override

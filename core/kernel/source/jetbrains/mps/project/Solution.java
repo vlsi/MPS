@@ -95,11 +95,6 @@ public class Solution extends AbstractModule {
     invalidateCaches();
   }
 
-  public void dispose() {
-    super.dispose();
-    SModelRepository.getInstance().unRegisterModelDescriptors(this);
-  }
-
   public void save() {
     SolutionDescriptorPersistence.saveSolutionDescriptor(myDescriptorFile, getModuleDescriptor());
   }

@@ -160,7 +160,6 @@ public class ProjectStructureModule extends AbstractModule implements CoreCompon
     clearAll();
     ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
-        ProjectStructureModule.super.dispose();
         MPSModuleRepository.getInstance().unregisterModule(ProjectStructureModule.this, myOwner);
       }
     });
