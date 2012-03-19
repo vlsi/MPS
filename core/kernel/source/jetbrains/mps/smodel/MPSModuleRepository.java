@@ -109,6 +109,8 @@ public class MPSModuleRepository implements CoreComponent {
       myFqNameToModulesMap.remove(module.getModuleFqName());
       invalidateCaches();
       fireModuleRemoved(module);
+      
+      module.dispose();
     } else {
       invalidateCaches();
       fireRepositoryChanged();
