@@ -429,6 +429,7 @@ public abstract class AbstractModule implements IModule {
 
   public void dispose() {
     mySModelRoots.clear();
+    SModelRepository.getInstance().unRegisterModelDescriptors(this);
   }
 
   public List<String> getSourcePaths() {
