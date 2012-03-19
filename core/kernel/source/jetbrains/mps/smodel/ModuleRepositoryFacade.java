@@ -17,6 +17,7 @@ package jetbrains.mps.smodel;
 
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.structure.modules.ModuleReference;
+import jetbrains.mps.util.Condition;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -75,5 +76,26 @@ public class ModuleRepositoryFacade {
       }
     }
     return result;
+  }
+
+  public void unRegisterModules(MPSModuleOwner owner, Condition<IModule> condition) {
+    for (IModule module : REPO.getModules(owner)) {
+      if (condition.met(module)) {
+        REPO.unregisterModule(module, owner);
+      }
+    }
+  }
+
+  public void unRegisterModules(MPSModuleOwner owner) {
+    for (IModule module : REPO.getModules(owner)) {
+      REPO.unregisterModule(module, owner);
+    }
+  }
+
+  //intended to use only when module is removed physically
+  public void removeModuleForced(IModule module) {
+    for (MPSModuleOwner owner : REPO.getOwners(module)) {
+      REPO.unregisterModule(module, owner);
+    }
   }
 }

@@ -44,19 +44,16 @@ public class MPSModuleRepository implements CoreComponent {
       invalidateCaches();
     }
   };
+  private List<ModuleRepositoryListener> myModuleListeners = new CopyOnWriteArrayList<ModuleRepositoryListener>();
+
+  private Set<IModule> myModules = new LinkedHashSet<IModule>();
+  private Map<String, IModule> myFqNameToModulesMap = new ConcurrentHashMap<String, IModule>();
+  private Map<ModuleId, IModule> myIdToModuleMap = new ConcurrentHashMap<ModuleId, IModule>();
+  private ManyToManyMap<IModule, MPSModuleOwner> myModuleToOwners = new ManyToManyMap<IModule, MPSModuleOwner>();
 
   public static MPSModuleRepository getInstance() {
     return MPSCore.getInstance().getModuleRepository();
   }
-
-  private Map<String, IModule> myFqNameToModulesMap = new ConcurrentHashMap<String, IModule>();
-  private Map<ModuleId, IModule> myIdToModuleMap = new ConcurrentHashMap<ModuleId, IModule>();
-
-  private Set<IModule> myModules = new LinkedHashSet<IModule>();
-
-  private ManyToManyMap<IModule, MPSModuleOwner> myModuleToOwners = new ManyToManyMap<IModule, MPSModuleOwner>();
-
-  private List<ModuleRepositoryListener> myModuleListeners = new CopyOnWriteArrayList<ModuleRepositoryListener>();
 
   public MPSModuleRepository(ClassLoaderManager clm) {
     myClm = clm;
@@ -72,104 +69,50 @@ public class MPSModuleRepository implements CoreComponent {
 
   //-----------------register/unregister-merge-----------
 
-  /*
-  *   TODO merge with addModule
-  */
-  public <TM extends IModule> TM registerModule(ModuleHandle handle, MPSModuleOwner owner) {
+  public void registerModule(IModule module, MPSModuleOwner owner) {
     ModelAccess.assertLegalWrite();
-
-    IModule module   = ModuleFileTracker.getInstance().getModuleByFile(handle.getFile());
-    if (module == null) {
-      if (handle.getDescriptor() instanceof LanguageDescriptor) {
-        module = Language.createLanguage(null, handle, owner);
-      } else if (handle.getDescriptor() instanceof SolutionDescriptor) {
-        module = Solution.newInstance(handle, owner);
-      } else if (handle.getDescriptor() instanceof DevkitDescriptor) {
-        module = DevKit.newInstance(handle, owner);
-      } else {
-        throw new IllegalArgumentException("Unknown module " + handle.getFile().getName());
-      }
-    } else {
-      if (owner == module) {
-        LOG.warning("module " + module + " wants to own itself: will be collected very quickly", module);
-      }
-      myModuleToOwners.addLink(module, owner);
-      myModules.add(module);
-    }
-    invalidateCaches();
-    fireModuleAdded(module);
-    return (TM) module;
-  }
-
-  public void addModule(IModule module, MPSModuleOwner owner) {
-    ModelAccess.assertLegalWrite();
-
-    if (getModule(module.getModuleReference()) != null) {
-      throw new IllegalStateException("Couldn't add module \"" + module.getModuleFqName() + "\" : this module is already registered with this very owner: " + owner);
-    }
-
-    String moduleFqName = module.getModuleFqName();
-
-    if (myFqNameToModulesMap.containsKey(moduleFqName)) {
-      IModule m = myFqNameToModulesMap.get(moduleFqName);
-      LOG.error("duplicate module name " + moduleFqName + " : module with the same UID exists at " + m.getDescriptorFile() + " and " + module.getDescriptorFile(), m);
-    }
-
-    myFqNameToModulesMap.put(moduleFqName, module);
 
     ModuleId moduleId = module.getModuleReference().getModuleId();
-    if (moduleId != null) {
-      if (myIdToModuleMap.containsKey(moduleId)) {
-        LOG.warning("duplicate module name " + module.getModuleReference() + " module with the same id already exists " + myIdToModuleMap.get(moduleId).getModuleReference());
+    String moduleFqName = module.getModuleFqName();
+
+    assert moduleId!=null:"module with nul id is added to repository: fqName="+moduleFqName+"; file="+module.getDescriptorFile();
+
+    IModule existing = getModuleById(moduleId);
+    if (existing==null){
+      if (myFqNameToModulesMap.containsKey(moduleFqName)) {
+        IModule m = myFqNameToModulesMap.get(moduleFqName);
+        LOG.warning("duplicate module name " + moduleFqName + " : module with the same UID exists at " + m.getDescriptorFile() + " and " + module.getDescriptorFile(), m);
       }
 
+      myFqNameToModulesMap.put(moduleFqName, module);
       myIdToModuleMap.put(module.getModuleReference().getModuleId(), module);
+      myModules.add(module);
     }
 
     myModuleToOwners.addLink(module, owner);
-    myModules.add(module);
 
+    invalidateCaches();
     fireModuleAdded(module);
   }
 
-  public void removeModule(IModule module) {
+  public void unregisterModule(IModule module, MPSModuleOwner owner) {
     ModelAccess.assertLegalWrite();
 
-    if (!myModules.contains(module)) {
-      return;
-    }
+    assert myModules.contains(module):"trying to unregister non-registered module: fqName="+module.getModuleFqName()+"; file="+module.getDescriptorFile();
 
-    IFile descriptorFile = module.getDescriptorFile();
-
-    myModuleToOwners.clearFirst(module);
-    myModules.remove(module);
-    myFqNameToModulesMap.remove(module.getModuleFqName());
-    if (module.getModuleReference().getModuleId() != null) {
+    myModuleToOwners.removeLink(module,owner);
+    boolean remove = myModuleToOwners.getByFirst(module).isEmpty();
+    if (remove){
+      fireBeforeModuleRemoved(module);
+      myModules.remove(module);
       myIdToModuleMap.remove(module.getModuleReference().getModuleId());
+      myFqNameToModulesMap.remove(module.getModuleFqName());
+      invalidateCaches();
+      fireModuleRemoved(module);
+    } else {
+      invalidateCaches();
+      fireRepositoryChanged();
     }
-
-    fireModuleRemoved(module);
-  }
-
-  public void unRegisterModules(MPSModuleOwner owner, Condition<IModule> condition) {
-    ModelAccess.assertLegalWrite();
-
-    Set<IModule> modules = new HashSet<IModule>(myModuleToOwners.getBySecond(owner));
-    for (IModule m : modules) {
-      if (condition.met(m)) {
-        myModuleToOwners.removeLink(m, owner);
-      }
-    }
-    invalidateCaches();
-    fireRepositoryChanged();
-  }
-
-  public void unRegisterModules(MPSModuleOwner owner) {
-    ModelAccess.assertLegalWrite();
-
-    myModuleToOwners.clearSecond(owner);
-    invalidateCaches();
-    fireRepositoryChanged();
   }
 
   //---------------get by-----------------------------
