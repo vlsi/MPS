@@ -9,6 +9,7 @@ import java.util.Map;
 import java.util.List;
 import java.util.LinkedHashMap;
 import org.apache.tools.ant.Project;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -31,6 +32,7 @@ public class WhatToDo {
   private static final String FAIL_ON_ERROR = "FAIL_ON_ERROR";
   private static final String LOG_LEVEL = "LOG_LEVEL";
   private static final String LIBRARY_COMPILE = "LIBRARY_COMPILE";
+  private static final String MPS_PARAMETER = "MPS_PARAMETER";
 
   private final Set<File> myModels = new LinkedHashSet<File>();
   private final Set<File> myModules = new LinkedHashSet<File>();
@@ -42,6 +44,7 @@ public class WhatToDo {
   private final Map<String, String> myMacro = new LinkedHashMap<String, String>();
   private int myLogLevel = Project.MSG_INFO;
   private final Map<String, String> myProperties = new LinkedHashMap<String, String>();
+  private final List<String> myParameters = ListSequence.fromList(new ArrayList<String>());
 
   public WhatToDo() {
   }
@@ -169,6 +172,18 @@ public class WhatToDo {
     return myLogLevel;
   }
 
+  public void addParameter(String parameter) {
+    ListSequence.fromList(myParameters).addElement(parameter);
+  }
+
+  public List<String> getParameters() {
+    return myParameters;
+  }
+
+  public void updateParameters(List<String> parameters) {
+    ListSequence.fromList(myParameters).addSequence(ListSequence.fromList(parameters));
+  }
+
   public void cloneTo(Object dest) {
     Class<? extends WhatToDo> srcClass = this.getClass();
     Class<? extends Object> destClass = dest.getClass();
@@ -244,6 +259,9 @@ public class WhatToDo {
       sb.append("]");
       sb.append(myMacro.get(macroName));
       sb.append(" ");
+    }
+    for (String parameter : myParameters) {
+      sb.append(MPS_PARAMETER).append("=").append(parameter).append(" ");
     }
     for (String name : myProperties.keySet()) {
       sb.append(name);
@@ -363,6 +381,8 @@ public class WhatToDo {
         } else
         if (propertyValuePair[0].equals(LOG_LEVEL)) {
           whatToDo.myLogLevel = Integer.parseInt(propertyValuePair[1]);
+        } else if (propertyValuePair[0].equals(MPS_PARAMETER)) {
+          whatToDo.addParameter(propertyValuePair[1]);
         } else
         if (propertyValuePair.length == 2) {
           whatToDo.putProperty(propertyValuePair[0], propertyValuePair[1]);
