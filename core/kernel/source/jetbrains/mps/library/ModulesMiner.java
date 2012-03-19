@@ -151,6 +151,10 @@ public class ModulesMiner {
     }
   }
 
+  public ModuleHandle loadModuleHandle (IFile file){
+    return new ModuleHandle(file,loadModuleDescriptor(file));
+  }
+  
   public ModuleDescriptor loadModuleDescriptor(IFile file) {
     try {
       String filePath = file.getPath();

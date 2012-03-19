@@ -24,12 +24,15 @@ import jetbrains.mps.TestMain;
 import jetbrains.mps.cleanup.CleanupManager;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.IdeMain.TestMode;
+import jetbrains.mps.library.ModulesMiner;
+import jetbrains.mps.library.ModulesMiner.ModuleHandle;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.persistence.SolutionDescriptorPersistence;
 import jetbrains.mps.project.structure.model.ModelRoot;
+import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.vfs.FileSystem;
@@ -278,7 +281,8 @@ public class TestMakeOnRealProject {
     solutionDescriptor.getModelRoots().add(modelRoot);
     runtimeSolutionDescriptorFile.createNewFile();
     SolutionDescriptorPersistence.saveSolutionDescriptor(runtimeSolutionDescriptorFile, solutionDescriptor);
-    return Solution.newInstance(runtimeSolutionDescriptorFile, myModuleOwner);
+    ModuleHandle handle = ModulesMiner.getInstance().loadModuleHandle(runtimeSolutionDescriptorFile);
+    return Solution.newInstance(handle, myModuleOwner);
   }
 
   private Language createNewLanguage() {
@@ -311,7 +315,8 @@ public class TestMakeOnRealProject {
 
     SolutionDescriptorPersistence.saveSolutionDescriptor(descriptorFile, solutionDescriptor);
 
-    return Solution.newInstance(descriptorFile, myModuleOwner);
+    ModuleHandle handle = ModulesMiner.getInstance().loadModuleHandle(descriptorFile);
+    return Solution.newInstance(handle, myModuleOwner);
   }
 
 }

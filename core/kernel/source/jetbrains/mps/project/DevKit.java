@@ -17,7 +17,6 @@ package jetbrains.mps.project;
 
 import jetbrains.mps.library.ModulesMiner;
 import jetbrains.mps.library.ModulesMiner.ModuleHandle;
-import jetbrains.mps.logging.Logger;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.project.dependency.DevkitDependenciesManager;
 import jetbrains.mps.project.dependency.ModuleDependenciesManager;
@@ -35,8 +34,6 @@ import java.util.Collections;
 import java.util.List;
 
 public class DevKit extends AbstractModule implements MPSModuleOwner {
-  private static final Logger LOG = Logger.getLogger(DevKit.class);
-
   public static DevKit createDevkit(String namespace, IFile descriptorFile, MPSModuleOwner moduleOwner) {
     DevKit devKit = new DevKit();
     DevkitDescriptor descriptor;
@@ -65,40 +62,20 @@ public class DevKit extends AbstractModule implements MPSModuleOwner {
     return devKit;
   }
 
-  private static DevkitDescriptor createNewDescriptor(String namespace) {
-    DevkitDescriptor descriptor = new DevkitDescriptor();
-    descriptor.setNamespace(namespace);
-    descriptor.setId(ModuleId.regular());
-    return descriptor;
-  }
-
-  @Deprecated
-  public static DevKit newInstance(IFile descriptorFile, MPSModuleOwner moduleOwner) {
-    ModuleDescriptor desciptor = null;
-    if (descriptorFile.exists()) {
-      desciptor = ModulesMiner.getInstance().loadModuleDescriptor(descriptorFile);
-    }
-    return newInstance(new ModuleHandle(descriptorFile, desciptor), moduleOwner);
-  }
-
   public static DevKit newInstance(ModuleHandle handle, MPSModuleOwner moduleOwner) {
     DevKit result = new DevKit();
 
-    DevkitDescriptor devKitDescriptor;
-    if (handle.getDescriptor() != null) {
-      devKitDescriptor = (DevkitDescriptor) handle.getDescriptor();
-      if (devKitDescriptor.getId() == null) {
-        devKitDescriptor.setId(ModuleId.regular());
-        DevkitDescriptorPersistence.saveDevKitDescriptor(devKitDescriptor, handle.getFile());
-      }
-    } else {
-      devKitDescriptor = new DevkitDescriptor();
+    DevkitDescriptor devKitDescriptor = (DevkitDescriptor) handle.getDescriptor();
+    assert devKitDescriptor != null;
+
+    if (devKitDescriptor.getId() == null) {
       devKitDescriptor.setId(ModuleId.regular());
+      DevkitDescriptorPersistence.saveDevKitDescriptor(devKitDescriptor, handle.getFile());
     }
     result.myDescriptorFile = handle.getFile();
     result.setDevKitDescriptor(devKitDescriptor, false);
 
-    return registerInRepository(result,moduleOwner);
+    return registerInRepository(result, moduleOwner);
   }
 
   private DevkitDescriptor myDescriptor;

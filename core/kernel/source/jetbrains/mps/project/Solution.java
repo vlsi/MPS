@@ -93,27 +93,15 @@ public class Solution extends AbstractModule {
     return registerInRepository(solution, moduleOwner);
   }
 
-  @Deprecated
-  public static Solution newInstance(IFile descriptorFile, MPSModuleOwner moduleOwner) {
-    ModuleDescriptor desciptor = null;
-    if (descriptorFile.exists()) {
-      desciptor = ModulesMiner.getInstance().loadModuleDescriptor(descriptorFile);
-    }
-    return newInstance(new ModuleHandle(descriptorFile, desciptor), moduleOwner);
-  }
-
   public static Solution newInstance(ModuleHandle handle, MPSModuleOwner moduleOwner) {
     Solution solution = new Solution();
-    SolutionDescriptor descriptor;
-    if (handle.getDescriptor() != null) {
-      descriptor = (SolutionDescriptor) handle.getDescriptor();
-      if (descriptor.getId() == null) {
-        descriptor.setId(ModuleId.regular());
-        SolutionDescriptorPersistence.saveSolutionDescriptor(handle.getFile(), descriptor);
-      }
-    } else {
-      descriptor = new SolutionDescriptor();
+    SolutionDescriptor descriptor = ((SolutionDescriptor) handle.getDescriptor());
+    assert descriptor != null;
+
+    descriptor = (SolutionDescriptor) handle.getDescriptor();
+    if (descriptor.getId() == null) {
       descriptor.setId(ModuleId.regular());
+      SolutionDescriptorPersistence.saveSolutionDescriptor(handle.getFile(), descriptor);
     }
     solution.myDescriptorFile = handle.getFile();
 
