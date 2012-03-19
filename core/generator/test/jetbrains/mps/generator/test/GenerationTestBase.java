@@ -29,10 +29,7 @@ import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.project.Project;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.testbench.PerformanceMessenger;
@@ -126,10 +123,19 @@ public class GenerationTestBase {
     }
   }
 
+  private final MPSModuleOwner myOwner = new MPSModuleOwner() {
+  };
+
   protected void doTestIncrementalGeneration(final Project p, final SModelDescriptor originalModel, final ModelChangeRunnable... changeModel) throws IOException {
     String randomName = "testxw" + Math.abs(UUID.randomUUID().getLeastSignificantBits()) + "." + originalModel.getModule().getModuleFqName();
     String randomId = UUID.randomUUID().toString();
     final TestModule tm = new TestModule(randomName, randomId, originalModel.getModule());
+    ModelAccess.instance().runWriteAction(new Runnable() {
+      public void run() {
+        MPSModuleRepository.getInstance().registerModule(tm, );
+      }
+    });
+
     final SModelDescriptor[] descr1 = new SModelDescriptor[]{null};
     try {
       ModelAccess.instance().runReadAction(new Runnable() {
@@ -245,7 +251,11 @@ public class GenerationTestBase {
         System.out.println();
       }
     } finally {
-      tm.dispose();
+      ModelAccess.instance().runWriteAction(new Runnable() {
+        public void run() {
+          MPSModuleRepository.getInstance().unregisterModule(tm,myOwner);
+        }
+      });
     }
   }
 
