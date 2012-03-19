@@ -17,7 +17,10 @@ package jetbrains.mps.library;
 
 import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.project.*;
+import jetbrains.mps.project.DevKit;
+import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.ProjectPathUtil;
+import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.io.DescriptorIOFacade;
 import jetbrains.mps.project.persistence.DeploymentDescriptorPersistence;
 import jetbrains.mps.project.structure.model.ModelRoot;
@@ -75,7 +78,18 @@ public class ModulesMiner {
     readModuleDescriptors(dir, new HashSet<IFile>(), result, refreshFiles, new DescriptorReader<IModule>() {
       @Override
       public IModule read(ModuleHandle handle) {
-        return MPSModuleRepository.getInstance().registerModule(handle, owner);
+        IModule module;
+        if (handle.getDescriptor() instanceof LanguageDescriptor) {
+          module = Language.createLanguage(handle.getDescriptor().getNamespace(), handle, owner);
+        } else if (handle.getDescriptor() instanceof SolutionDescriptor) {
+          module = Solution.newInstance(handle, owner);
+        } else if (handle.getDescriptor() instanceof DevkitDescriptor) {
+          module = DevKit.newInstance(handle, owner);
+        } else {
+          throw new IllegalArgumentException("Unknown module " + handle.getFile().getName());
+        }
+        MPSModuleRepository.getInstance().registerModule(module, owner);
+        return module;
       }
     });
     return result;
