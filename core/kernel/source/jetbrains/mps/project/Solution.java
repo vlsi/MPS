@@ -59,9 +59,7 @@ public class Solution extends AbstractModule {
     solution.setSolutionDescriptor(descriptor, false);
     solution.myDescriptorFile = handle.getFile();
 
-    MPSModuleRepository.getInstance().registerModule(solution, moduleOwner);
-
-    return solution;
+    return MPSModuleRepository.getInstance().registerModule(solution, moduleOwner);
   }
 
   public SolutionDescriptor getModuleDescriptor() {

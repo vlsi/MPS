@@ -88,9 +88,7 @@ public class Language extends AbstractModule implements MPSModuleOwner {
 
     LibrariesLoader.createLanguageLibs(moduleOwner, language, descriptor, MPSModuleRepository.getInstance());
 
-    MPSModuleRepository.getInstance().registerModule(language, moduleOwner);
-
-    return language;
+    return MPSModuleRepository.getInstance().registerModule(language, moduleOwner);
   }
 
   protected Language() {
@@ -213,7 +211,7 @@ public class Language extends AbstractModule implements MPSModuleOwner {
     myGenerators.clear();
     for (GeneratorDescriptor generatorDescriptor : getModuleDescriptor().getGenerators()) {
       Generator generator = new Generator(this, generatorDescriptor);
-      MPSModuleRepository.getInstance().registerModule(generator, this);
+      generator = MPSModuleRepository.getInstance().registerModule(generator, this);
       myGenerators.add(generator);
     }
   }

@@ -46,9 +46,7 @@ public class DevKit extends AbstractModule implements MPSModuleOwner {
     result.setDevKitDescriptor(descriptor, false);
     result.myDescriptorFile = handle.getFile();
 
-    MPSModuleRepository.getInstance().registerModule(result, moduleOwner);
-
-    return result;
+    return MPSModuleRepository.getInstance().registerModule(result, moduleOwner);
   }
 
   private DevkitDescriptor myDescriptor;

@@ -66,7 +66,7 @@ public class MPSModuleRepository implements CoreComponent {
 
   //-----------------register/unregister-merge-----------
 
-  public void registerModule(IModule module, MPSModuleOwner owner) {
+  public <T extends IModule> T registerModule(T module, MPSModuleOwner owner) {
     ModelAccess.assertLegalWrite();
 
     ModuleId moduleId = module.getModuleReference().getModuleId();
@@ -90,6 +90,8 @@ public class MPSModuleRepository implements CoreComponent {
 
     invalidateCaches();
     fireModuleAdded(module);
+    
+    return existing != null ? (T) existing : module;
   }
 
   public void unregisterModule(IModule module, MPSModuleOwner owner) {

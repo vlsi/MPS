@@ -25,7 +25,7 @@ public class StubSolution extends Solution {
     Solution solution = new StubSolution();
     solution.setSolutionDescriptor(descriptor, false);
 
-    MPSModuleRepository.getInstance().registerModule(solution, moduleOwner);
+    solution = MPSModuleRepository.getInstance().registerModule(solution, moduleOwner);
 
     return solution;
   }

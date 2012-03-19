@@ -23,9 +23,7 @@ public class TestLanguage extends Language {
     Language language = new TestLanguage();
     language.setLanguageDescriptor(descriptor, false);
 
-    MPSModuleRepository.getInstance().registerModule(language, moduleOwner);
-
-    return language;
+    return MPSModuleRepository.getInstance().registerModule(language, moduleOwner);
   }
 
   public String getGeneratorOutputPath() {
