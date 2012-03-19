@@ -17,6 +17,7 @@
     <orderEntry type="module" module-name="mps-workbench" />
     <orderEntry type="library" name="Idea-plaform" level="project" />
     <orderEntry type="module" module-name="mps-platform" />
+    <orderEntry type="library" name="Tools" level="project" />
   </component>
 </module>
 

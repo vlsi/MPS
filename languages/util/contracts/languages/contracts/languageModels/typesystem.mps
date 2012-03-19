@@ -2,9 +2,7 @@
 <model modelUID="r:25ace809-bc3a-401e-bad3-caa877e546fb(jetbrains.mps.baseLanguage.contracts.typesystem)">
   <persistence version="7" />
   <language namespace="7a5dda62-9140-4668-ab76-d5ed1746f2b2(jetbrains.mps.lang.typesystem)" />
-  <language namespace="c1b26490-e316-44a3-bb8e-c9120732af93(jetbrains.mps.baseLanguage.contracts)" />
   <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
-  <language namespace="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" />
   <language namespace="83888646-71ce-4f1c-9c53-c54016f6ad4f(jetbrains.mps.baseLanguage.collections)" />
   <language namespace="3a13115c-633c-4c5c-bbcc-75c4219e9555(jetbrains.mps.lang.quotation)" />
   <language namespace="7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.lang.smodel)" />
@@ -155,11 +153,11 @@
               <property name="value" nameId="tpee.1070475926801" value="conditions outside interface" />
             </node>
             <node role="nodeToReport" roleId="tpd4.1227096802790" type="tpd4.ApplicableNodeReference" typeId="tpd4.1174650418652" id="8892289062514322779">
-              <link role="applicableNode" roleId="tpd4.1174650432090" targetNodeId="8892289062513987727" resolveInfo="methodPreconditions" />
+              <link role="applicableNode" roleId="tpd4.1174650432090" targetNodeId="8892289062513987727" resolveInfo="methodConditions" />
             </node>
             <node role="helginsIntention" roleId="tpd4.1227096802791" type="tpd4.TypesystemIntention" typeId="tpd4.1210784285454" id="8892289062514055186">
               <property name="applyImmediately" nameId="tpd4.1216127910019" value="true" />
-              <link role="quickFix" roleId="tpd4.1216388525179" targetNodeId="8892289062513982023" resolveInfo="fixMethodPrecondition" />
+              <link role="quickFix" roleId="tpd4.1216388525179" targetNodeId="8892289062513982023" resolveInfo="fixMethodConditions" />
               <node role="actualArgument" roleId="tpd4.1210784493590" type="tpd4.TypesystemIntentionArgument" typeId="tpd4.1210784384552" id="2329648364424245415">
                 <link role="quickFixArgument" roleId="tpd4.1216386999476" targetNodeId="2329648364423953066" resolveInfo="methodConditions" />
                 <node role="value" roleId="tpd4.1210784642750" type="tpd4.ApplicableNodeReference" typeId="tpd4.1174650418652" id="2329648364424245417">
@@ -173,7 +171,7 @@
           <node role="expression" roleId="tpee.1081516765348" type="tpee.DotExpression" typeId="tpee.1197027756228" id="8892289062514009091">
             <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="8892289062514009092">
               <node role="operand" roleId="tpee.1197027771414" type="tpd4.ApplicableNodeReference" typeId="tpd4.1174650418652" id="8892289062514009093">
-                <link role="applicableNode" roleId="tpd4.1174650432090" targetNodeId="8892289062513987727" resolveInfo="methodPreconditions" />
+                <link role="applicableNode" roleId="tpd4.1174650432090" targetNodeId="8892289062513987727" resolveInfo="methodConditions" />
               </node>
               <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_GetAncestorOperation" typeId="tp25.1171407110247" id="8892289062514009094">
                 <node role="parameter" roleId="tp25.1144104376918" type="tp25.OperationParm_Concept" typeId="tp25.1144101972840" id="8892289062514009095">
@@ -194,7 +192,7 @@
     </node>
     <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="8892289062513987727">
       <property name="name" nameId="tpck.1169194664001" value="methodConditions" />
-      <link role="concept" roleId="tpd4.1174642800329" targetNodeId="gw7r.332248429538005856" resolveInfo="MethodPreconditions" />
+      <link role="concept" roleId="tpd4.1174642800329" targetNodeId="gw7r.332248429538005856" resolveInfo="MethodConditions" />
     </node>
   </root>
   <root id="2329648364425265334">

@@ -8,7 +8,6 @@
   <language namespace="3a13115c-633c-4c5c-bbcc-75c4219e9555(jetbrains.mps.lang.quotation)" />
   <language namespace="28f9e497-3b42-4291-aeba-0a1039153ab1(jetbrains.mps.lang.plugin)" />
   <import index="fxg7" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" version="-1" />
-  <import index="wwve" modelUID="f:java_stub#77c9a130-703f-4530-bf21-6580757768d0#difflib(jetbrains.mps.build.antsupport/difflib@java_stub)" version="-1" />
   <import index="k7g3" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" version="-1" />
   <import index="msyo" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.util(MPS.Core/jetbrains.mps.util@java_stub)" version="-1" />
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="-1" />
@@ -23,6 +22,7 @@
   <import index="9ymv" modelUID="r:b8feab60-1700-41b4-b4af-29cbd0faef88(jetbrains.mps.build.ant.generation.unittest)" version="-1" />
   <import index="n13f" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.reloading(MPS.Core/jetbrains.mps.reloading@java_stub)" version="-1" />
   <import index="yo81" modelUID="r:4ea5a78b-cb8a-4831-b227-f7860a22491d(jetbrains.mps.make.resources)" version="-1" />
+  <import index="b860" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#difflib(MPS.Core/difflib@java_stub)" version="-1" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <import index="tp2c" modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="3" implicit="yes" />
   <import index="tp25" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="-1" implicit="yes" />
@@ -799,12 +799,12 @@
                         <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="5487985028841923206">
                           <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="5487985028841923207">
                             <property name="name" nameId="tpck.1169194664001" value="patch" />
-                            <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5487985028841923208">
-                              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="wwve.~Patch" resolveInfo="Patch" />
+                            <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="8923293935010720308">
+                              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="b860.~Patch" resolveInfo="Patch" />
                             </node>
                             <node role="initializer" roleId="tpee.1068431790190" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="5487985028841923209">
-                              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="wwve.~DiffUtils%ddiff(java%dutil%dList,java%dutil%dList)%cdifflib%dPatch" resolveInfo="diff" />
-                              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="wwve.~DiffUtils" resolveInfo="DiffUtils" />
+                              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="b860.~DiffUtils" resolveInfo="DiffUtils" />
+                              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="b860.~DiffUtils%ddiff(java%dutil%dList,java%dutil%dList)%cdifflib%dPatch" resolveInfo="diff" />
                               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="5487985028841923210">
                                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5487985028841923193" resolveInfo="olines" />
                               </node>
@@ -823,8 +823,8 @@
                                 </node>
                                 <node role="operation" roleId="tpee.1197027833540" type="tp2q.AddAllElementsOperation" typeId="tp2q.1160666733551" id="5487985028841923217">
                                   <node role="argument" roleId="tp2q.1160666822012" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="5487985028841923218">
-                                    <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="wwve.~DiffUtils" resolveInfo="DiffUtils" />
-                                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="wwve.~DiffUtils%dgenerateUnifiedDiff(java%dlang%dString,java%dlang%dString,java%dutil%dList,difflib%dPatch,int)%cjava%dutil%dList" resolveInfo="generateUnifiedDiff" />
+                                    <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="b860.~DiffUtils" resolveInfo="DiffUtils" />
+                                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="b860.~DiffUtils%dgenerateUnifiedDiff(java%dlang%dString,java%dlang%dString,java%dutil%dList,difflib%dPatch,int)%cjava%dutil%dList" resolveInfo="generateUnifiedDiff" />
                                     <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="5487985028841923219">
                                       <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="5487985028841923220">
                                         <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5487985028841923170" resolveInfo="onext" />
@@ -862,7 +862,7 @@
                                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5487985028841923207" resolveInfo="patch" />
                                 </node>
                                 <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="5487985028841923232">
-                                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="wwve.~Patch%dgetDeltas()%cjava%dutil%dList" resolveInfo="getDeltas" />
+                                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="b860.~Patch%dgetDeltas()%cjava%dutil%dList" resolveInfo="getDeltas" />
                                 </node>
                               </node>
                               <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="5487985028841923233">

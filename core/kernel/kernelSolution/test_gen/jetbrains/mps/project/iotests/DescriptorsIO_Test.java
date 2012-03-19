@@ -13,7 +13,7 @@ import jetbrains.mps.project.structure.modules.SolutionDescriptor;
 import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.project.structure.modules.Dependency;
-import jetbrains.mps.ide.ThreadUtils;
+import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.project.io.DescriptorIOException;
 import org.custommonkey.xmlunit.XMLAssert;
@@ -43,7 +43,7 @@ public class DescriptorsIO_Test extends TestCase {
     final IFile solFile = TestUtils.tmpFile("solution.msd");
     DescriptorIOProvider diof = DescriptorIOFacade.getInstance().standardProvider();
     final DescriptorIO<SolutionDescriptor> sdio = diof.solutionDescriptorIO();
-    ThreadUtils.runInUIThreadAndWait(new Runnable() {
+    FileSystem.getInstance().runWriteTransaction(new Runnable() {
       public void run() {
         ModelAccess.instance().runWriteAction(new Runnable() {
           public void run() {
@@ -82,7 +82,7 @@ public class DescriptorsIO_Test extends TestCase {
     ld.setNamespace("jetbrains.mps.project.iotests.testLanguage");
     final IFile langFile = TestUtils.tmpFile("language.mpl");
     final DescriptorIOProvider diof = DescriptorIOFacade.getInstance().standardProvider();
-    ThreadUtils.runInUIThreadAndWait(new Runnable() {
+    FileSystem.getInstance().runWriteTransaction(new Runnable() {
       public void run() {
         ModelAccess.instance().runWriteAction(new Runnable() {
           public void run() {
@@ -95,6 +95,7 @@ public class DescriptorsIO_Test extends TestCase {
         });
       }
     });
+
     XMLAssert.assertXMLEqual("<language namespace=\"jetbrains.mps.project.iotests.testLanguage\" uuid=\"defe1a08-4c21-11e1-b31b-6cf049e62fe5\" compileInMPS=\"true\" doNotGenerateAdapters=\"false\"><sourcePath /><models /><accessoryModels /><generators /><extendedLanguages /></language>", TestUtils.readXml(langFile));
   }
 
@@ -118,7 +119,7 @@ public class DescriptorsIO_Test extends TestCase {
     dkd.setNamespace("jetbrains.mps.project.iotests.testDevkit");
     final IFile dkFile = TestUtils.tmpFile("devkit.devkit");
     final DescriptorIOProvider diof = DescriptorIOFacade.getInstance().standardProvider();
-    ThreadUtils.runInUIThreadAndWait(new Runnable() {
+    FileSystem.getInstance().runWriteTransaction(new Runnable() {
       public void run() {
         ModelAccess.instance().runWriteAction(new Runnable() {
           public void run() {

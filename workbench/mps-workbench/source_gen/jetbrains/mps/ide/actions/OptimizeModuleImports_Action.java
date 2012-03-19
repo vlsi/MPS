@@ -10,12 +10,14 @@ import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
+import jetbrains.mps.workbench.MPSDataKeys;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.project.OptimizeImportsHelper;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.project.IModule;
+import java.util.List;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.SModelRepository;
@@ -53,8 +55,8 @@ public class OptimizeModuleImports_Action extends BaseAction {
     if (MapSequence.fromMap(_params).get("context") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("module", event.getData(MPSCommonDataKeys.MODULE));
-    if (MapSequence.fromMap(_params).get("module") == null) {
+    MapSequence.fromMap(_params).put("modules", event.getData(MPSDataKeys.MODULES));
+    if (MapSequence.fromMap(_params).get("modules") == null) {
       return false;
     }
     MapSequence.fromMap(_params).put("project", event.getData(PlatformDataKeys.PROJECT));
@@ -70,13 +72,15 @@ public class OptimizeModuleImports_Action extends BaseAction {
       ModelAccess.instance().runWriteActionInCommand(new Runnable() {
         public void run() {
           OptimizeImportsHelper helper = new OptimizeImportsHelper(((IOperationContext) MapSequence.fromMap(_params).get("context")));
-          if (((IModule) MapSequence.fromMap(_params).get("module")) instanceof Solution) {
-            report.value = helper.optimizeSolutionImports(((Solution) ((IModule) MapSequence.fromMap(_params).get("module"))));
-          } else if (((IModule) MapSequence.fromMap(_params).get("module")) instanceof Language) {
-            report.value = helper.optimizeLanguageImports(((Language) ((IModule) MapSequence.fromMap(_params).get("module"))));
+          for (IModule module : ((List<IModule>) MapSequence.fromMap(_params).get("modules"))) {
+            if (module instanceof Solution) {
+              report.value += helper.optimizeSolutionImports(((Solution) module));
+            } else if (module instanceof Language) {
+              report.value += helper.optimizeLanguageImports(((Language) module));
+            }
+            SModelRepository.getInstance().saveAll();
+            module.save();
           }
-          SModelRepository.getInstance().saveAll();
-          ((IModule) MapSequence.fromMap(_params).get("module")).save();
           ClassLoaderManager.getInstance().reloadAll(new EmptyProgressMonitor());
         }
       });

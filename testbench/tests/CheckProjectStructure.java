@@ -47,7 +47,7 @@ public class CheckProjectStructure {
     } else if (handle.getFile().getName().endsWith(".msd")) {
       return handle.getDescriptor().getNamespace() + " [solution]";
     }
-    return handle.getFile().getName();
+    return handle.getFile().getName() + " - " + handle.getDescriptor().getNamespace();
   }
 
   @Parameters

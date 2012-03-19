@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <model modelUID="r:3c4a7381-bf37-4a8f-8776-247668cff8c1(jetbrains.mps.baseLanguage.checkedDots.actions)">
   <persistence version="7" />
-  <language namespace="774bf8a0-62e5-41e1-af63-f4812e60e48b(jetbrains.mps.baseLanguage.checkedDots)" />
   <language namespace="aee9cad2-acd4-4608-aef2-0004f6a1cdbd(jetbrains.mps.lang.actions)" />
   <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
   <language namespace="7a5dda62-9140-4668-ab76-d5ed1746f2b2(jetbrains.mps.lang.typesystem)" />
-  <language namespace="83888646-71ce-4f1c-9c53-c54016f6ad4f(jetbrains.mps.baseLanguage.collections)" />
   <language namespace="7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.lang.smodel)" />
   <devkit namespace="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   <import index="pxpg" modelUID="r:5a550369-d6d9-4c89-a89b-1bb748dc20b3(jetbrains.mps.baseLanguage.checkedDots.structure)" version="-1" />
@@ -43,7 +41,7 @@
         </node>
       </node>
       <node role="part" roleId="tpdg.1177442283389" type="tpdg.AddMenuPart" typeId="tpdg.1177323996388" id="4079382982702714345">
-        <link role="concept" roleId="tpdg.1177333551023" targetNodeId="pxpg.4079382982702596667" resolveInfo="CheckedDot" />
+        <link role="concept" roleId="tpdg.1177333551023" targetNodeId="pxpg.4079382982702596667" resolveInfo="CheckedDotExpression" />
         <node role="part" roleId="tpdg.1177333559040" type="tpdg.SimpleSideTransformMenuPart" typeId="tpdg.1177498013932" id="4079382982702714346">
           <node role="handler" roleId="tpdg.1177498207384" type="tpdg.QueryFunction_SideTransform_Handler" typeId="tpdg.1177498227294" id="4079382982702714347">
             <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="4079382982702714348">
@@ -51,7 +49,7 @@
                 <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="4079382982702714351">
                   <property name="name" nameId="tpck.1169194664001" value="operationExpression" />
                   <node role="type" roleId="tpee.5680397130376446158" type="tp25.SNodeType" typeId="tp25.1138055754698" id="4079382982702714352">
-                    <link role="concept" roleId="tp25.1138405853777" targetNodeId="pxpg.4079382982702596667" resolveInfo="CheckedDot" />
+                    <link role="concept" roleId="tp25.1138405853777" targetNodeId="pxpg.4079382982702596667" resolveInfo="CheckedDotExpression" />
                   </node>
                   <node role="initializer" roleId="tpee.1068431790190" type="tpee.DotExpression" typeId="tpee.1197027756228" id="4079382982702714353">
                     <node role="operand" roleId="tpee.1197027771414" type="tpdg.ConceptFunctionParameter_sourceNode" typeId="tpdg.1177497140107" id="4079382982702714354" />
@@ -110,7 +108,7 @@
       <property name="side" nameId="tpdg.1215605257730" value="left" />
       <link role="applicableConcept" roleId="tpdg.1138079221462" targetNodeId="tpee.1197027803184" resolveInfo="IOperation" />
       <node role="part" roleId="tpdg.1177442283389" type="tpdg.AddMenuPart" typeId="tpdg.1177323996388" id="7404423900570111862">
-        <link role="concept" roleId="tpdg.1177333551023" targetNodeId="pxpg.4079382982702596667" resolveInfo="CheckedDot" />
+        <link role="concept" roleId="tpdg.1177333551023" targetNodeId="pxpg.4079382982702596667" resolveInfo="CheckedDotExpression" />
         <node role="part" roleId="tpdg.1177333559040" type="tpdg.SimpleSideTransformMenuPart" typeId="tpdg.1177498013932" id="7404423900570111864">
           <node role="handler" roleId="tpdg.1177498207384" type="tpdg.QueryFunction_SideTransform_Handler" typeId="tpdg.1177498227294" id="7404423900570111865">
             <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="7404423900570111866">
@@ -132,7 +130,7 @@
                 <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="7404423900570136787">
                   <property name="name" nameId="tpck.1169194664001" value="checkedDot" />
                   <node role="type" roleId="tpee.5680397130376446158" type="tp25.SNodeType" typeId="tp25.1138055754698" id="7404423900570136788">
-                    <link role="concept" roleId="tp25.1138405853777" targetNodeId="pxpg.4079382982702596667" resolveInfo="CheckedDot" />
+                    <link role="concept" roleId="tp25.1138405853777" targetNodeId="pxpg.4079382982702596667" resolveInfo="CheckedDotExpression" />
                   </node>
                   <node role="initializer" roleId="tpee.1068431790190" type="tpee.DotExpression" typeId="tpee.1197027756228" id="5227621747121669662">
                     <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="5227621747121669661">

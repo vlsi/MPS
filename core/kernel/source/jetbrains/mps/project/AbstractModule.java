@@ -276,6 +276,7 @@ public abstract class AbstractModule implements IModule {
       descriptor.getDeploymentDescriptor().getLibraries().add(bundleHomeFile.getName());
     }
 
+    // stub libraries
     List<ModelRoot> toRemove = new ArrayList<ModelRoot>();
     for (ModelRoot sme : descriptor.getStubModelEntries()) {
       String path = sme.getPath();
@@ -286,6 +287,19 @@ public abstract class AbstractModule implements IModule {
       toRemove.add(sme);
     }
     descriptor.getStubModelEntries().removeAll(toRemove);
+
+    // stub model roots
+    toRemove.clear();
+    for (ModelRoot sme : descriptor.getModelRoots()) {
+      if (!LanguageID.JAVA_MANAGER.equals(sme.getManager())) continue;
+
+      String path = sme.getPath();
+      if (packagedSourcesPath == null || !FileUtil.getCanonicalPath(path).toLowerCase().startsWith(packagedSourcesPath)) {
+        String shrinked = MacrosFactory.moduleDescriptor(this).shrinkPath(path, getDescriptorFile());
+        if (MacrosFactory.containsNonMPSMacros(shrinked)) continue;
+      }
+      toRemove.add(sme);
+    }
     descriptor.getModelRoots().removeAll(toRemove);
 
     DeploymentDescriptor dd = descriptor.getDeploymentDescriptor();
