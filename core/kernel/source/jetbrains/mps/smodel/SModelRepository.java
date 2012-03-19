@@ -438,21 +438,11 @@ public class SModelRepository implements CoreComponent {
   //-------todo: changed functionality - is better to be moved to SModelDescriptor fully
 
   @Deprecated
-  private void markChanged(SModel model, boolean changed) {
+  public void markChanged(SModel model) {
     SModelDescriptor modelDescriptor = model.getModelDescriptor();
     if (modelDescriptor instanceof EditableSModelDescriptor) {
-      ((EditableSModelDescriptor) modelDescriptor).setChanged(changed);
+      ((EditableSModelDescriptor) modelDescriptor).setChanged(true);
     }
-  }
-
-  @Deprecated
-  public void markChanged(SModel model) {
-    markChanged(model, true);
-  }
-
-  @Deprecated
-  public void markUnchanged(SModel model) {
-    markChanged(model, false);
   }
 
   @Deprecated
